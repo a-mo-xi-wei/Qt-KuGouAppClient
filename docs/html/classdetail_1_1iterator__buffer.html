@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: iterator_buffer&lt; OutputIt, T, Traits &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classdetail_1_1iterator__buffer.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classdetail_1_1iterator__buffer-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">iterator_buffer&lt; OutputIt, T, Traits &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="base_8h_source.html">base.h</a>&gt;</code></p>
+<div class="dynheader">
+类 iterator_buffer&lt; OutputIt, T, Traits &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer__inherit__graph.png" border="0" usemap="#aiterator__buffer_3_01_output_it_00_01_t_00_01_traits_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="aiterator__buffer_3_01_output_it_00_01_t_00_01_traits_01_4_inherit__map" id="aiterator__buffer_3_01_output_it_00_01_t_00_01_traits_01_4_inherit__map">
+<area shape="rect" title=" " alt="" coords="23,80,186,123"/>
+<area shape="rect" href="structdetail_1_1buffer__traits.html" title=" " alt="" coords="5,5,95,32"/>
+<area shape="poly" title=" " alt="" coords="69,43,93,78,89,81,65,46"/>
+<area shape="rect" href="classdetail_1_1buffer.html" title="A contiguous memory buffer with an optional growing ability." alt="" coords="118,5,203,32"/>
+<area shape="poly" title=" " alt="" coords="145,46,121,81,117,78,141,43"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+iterator_buffer&lt; OutputIt, T, Traits &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer__coll__graph.png" border="0" usemap="#aiterator__buffer_3_01_output_it_00_01_t_00_01_traits_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aiterator__buffer_3_01_output_it_00_01_t_00_01_traits_01_4_coll__map" id="aiterator__buffer_3_01_output_it_00_01_t_00_01_traits_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="5,172,169,215"/>
+<area shape="rect" href="structdetail_1_1buffer__traits.html" title=" " alt="" coords="6,96,96,123"/>
+<area shape="poly" title=" " alt="" coords="65,136,81,171,76,173,60,138"/>
+<area shape="rect" href="classdetail_1_1buffer.html" title="A contiguous memory buffer with an optional growing ability." alt="" coords="120,96,204,123"/>
+<area shape="poly" title=" " alt="" coords="142,136,107,174,103,170,138,132"/>
+<area shape="rect" href="classdetail_1_1buffer.html" title="A contiguous memory buffer with an optional growing ability." alt="" coords="120,5,204,32"/>
+<area shape="poly" title=" " alt="" coords="164,48,164,95,159,95,159,48"/>
+<area shape="poly" title=" " alt="" coords="221,10,230,19,222,27,205,30,204,25,220,22,225,19,218,14"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a28b94290b70b10e0a49eed2b6b768512" id="r_a28b94290b70b10e0a49eed2b6b768512"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28b94290b70b10e0a49eed2b6b768512">iterator_buffer</a> (OutputIt <a class="el" href="#a8beeafa504ff32a4741c7bec45e4d42c">out</a>, size_t n=<a class="el" href="#ab97ac0146c71910e69f6614463a9e23fac98fc17a313fb39a0af4f6e2d9b31569">buffer_size</a>)</td></tr>
+<tr class="separator:a28b94290b70b10e0a49eed2b6b768512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a860f4febb4126fa07c823448f96ea1de" id="r_a860f4febb4126fa07c823448f96ea1de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a860f4febb4126fa07c823448f96ea1de">iterator_buffer</a> (<a class="el" href="classdetail_1_1iterator__buffer.html">iterator_buffer</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:a860f4febb4126fa07c823448f96ea1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0441dce81c84bce7dfdb16a771d8485" id="r_ad0441dce81c84bce7dfdb16a771d8485"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0441dce81c84bce7dfdb16a771d8485">~iterator_buffer</a> ()</td></tr>
+<tr class="separator:ad0441dce81c84bce7dfdb16a771d8485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8beeafa504ff32a4741c7bec45e4d42c" id="r_a8beeafa504ff32a4741c7bec45e4d42c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8beeafa504ff32a4741c7bec45e4d42c">out</a> () -&gt; OutputIt</td></tr>
+<tr class="separator:a8beeafa504ff32a4741c7bec45e4d42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2c5a7b659f59faa879fb26d38ebc79" id="r_afd2c5a7b659f59faa879fb26d38ebc79"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2c5a7b659f59faa879fb26d38ebc79">count</a> () const -&gt; size_t</td></tr>
+<tr class="separator:afd2c5a7b659f59faa879fb26d38ebc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structdetail_1_1buffer__traits"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_structdetail_1_1buffer__traits')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="structdetail_1_1buffer__traits.html">buffer_traits</a></td></tr>
+<tr class="memitem:abfb783cfc14f26ad4534d9be6a8c8764 inherit pub_methods_structdetail_1_1buffer__traits" id="r_abfb783cfc14f26ad4534d9be6a8c8764"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1buffer__traits.html#abfb783cfc14f26ad4534d9be6a8c8764">buffer_traits</a> (size_t)</td></tr>
+<tr class="separator:abfb783cfc14f26ad4534d9be6a8c8764 inherit pub_methods_structdetail_1_1buffer__traits"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf743ae9ae9780ce373bf14026423802 inherit pub_methods_structdetail_1_1buffer__traits" id="r_aaf743ae9ae9780ce373bf14026423802"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1buffer__traits.html#aaf743ae9ae9780ce373bf14026423802">count</a> () const -&gt; size_t</td></tr>
+<tr class="separator:aaf743ae9ae9780ce373bf14026423802 inherit pub_methods_structdetail_1_1buffer__traits"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018e03e6983ebefba9b9f296b3f023bb inherit pub_methods_structdetail_1_1buffer__traits" id="r_a018e03e6983ebefba9b9f296b3f023bb"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1buffer__traits.html#a018e03e6983ebefba9b9f296b3f023bb">limit</a> (size_t size) const -&gt; size_t</td></tr>
+<tr class="separator:a018e03e6983ebefba9b9f296b3f023bb inherit pub_methods_structdetail_1_1buffer__traits"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classdetail_1_1buffer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classdetail_1_1buffer')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classdetail_1_1buffer.html">buffer&lt; T &gt;</a></td></tr>
+<tr class="memitem:a4b1d79a13fc8e394d1626ce07bad3f23 inherit pub_methods_classdetail_1_1buffer" id="r_a4b1d79a13fc8e394d1626ce07bad3f23"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a4b1d79a13fc8e394d1626ce07bad3f23">buffer</a> (const <a class="el" href="classdetail_1_1buffer.html">buffer</a> &amp;)=delete</td></tr>
+<tr class="separator:a4b1d79a13fc8e394d1626ce07bad3f23 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57696ba2e1a9e3122b637dbc77055ecd inherit pub_methods_classdetail_1_1buffer" id="r_a57696ba2e1a9e3122b637dbc77055ecd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a57696ba2e1a9e3122b637dbc77055ecd">operator=</a> (const <a class="el" href="classdetail_1_1buffer.html">buffer</a> &amp;)=delete</td></tr>
+<tr class="separator:a57696ba2e1a9e3122b637dbc77055ecd inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81466e5cd0ae27cefba5f6dc7a1d20d3 inherit pub_methods_classdetail_1_1buffer" id="r_a81466e5cd0ae27cefba5f6dc7a1d20d3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a81466e5cd0ae27cefba5f6dc7a1d20d3">begin</a> () noexcept -&gt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *</td></tr>
+<tr class="separator:a81466e5cd0ae27cefba5f6dc7a1d20d3 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648e922e02113059c05350c2c8279c21 inherit pub_methods_classdetail_1_1buffer" id="r_a648e922e02113059c05350c2c8279c21"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a648e922e02113059c05350c2c8279c21">end</a> () noexcept -&gt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *</td></tr>
+<tr class="separator:a648e922e02113059c05350c2c8279c21 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d2c562f22d500b20b71c36aa8fe139f inherit pub_methods_classdetail_1_1buffer" id="r_a5d2c562f22d500b20b71c36aa8fe139f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a5d2c562f22d500b20b71c36aa8fe139f">begin</a> () const noexcept -&gt; const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *</td></tr>
+<tr class="separator:a5d2c562f22d500b20b71c36aa8fe139f inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12091de4a9887b4aa8e6b8c1866d1eb4 inherit pub_methods_classdetail_1_1buffer" id="r_a12091de4a9887b4aa8e6b8c1866d1eb4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a12091de4a9887b4aa8e6b8c1866d1eb4">end</a> () const noexcept -&gt; const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *</td></tr>
+<tr class="separator:a12091de4a9887b4aa8e6b8c1866d1eb4 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68960381f66fdfeb44116fe4337b5824 inherit pub_methods_classdetail_1_1buffer" id="r_a68960381f66fdfeb44116fe4337b5824"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a68960381f66fdfeb44116fe4337b5824">size</a> () const noexcept -&gt; size_t</td></tr>
+<tr class="memdesc:a68960381f66fdfeb44116fe4337b5824 inherit pub_methods_classdetail_1_1buffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of this buffer.  <br /></td></tr>
+<tr class="separator:a68960381f66fdfeb44116fe4337b5824 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d7524075a743cdee22d08ea77d9a3a inherit pub_methods_classdetail_1_1buffer" id="r_af5d7524075a743cdee22d08ea77d9a3a"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#af5d7524075a743cdee22d08ea77d9a3a">capacity</a> () const noexcept -&gt; size_t</td></tr>
+<tr class="memdesc:af5d7524075a743cdee22d08ea77d9a3a inherit pub_methods_classdetail_1_1buffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the capacity of this buffer.  <br /></td></tr>
+<tr class="separator:af5d7524075a743cdee22d08ea77d9a3a inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a799a7f7a56dd002312b8527dac63cc9c inherit pub_methods_classdetail_1_1buffer" id="r_a799a7f7a56dd002312b8527dac63cc9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a799a7f7a56dd002312b8527dac63cc9c">data</a> () noexcept -&gt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *</td></tr>
+<tr class="memdesc:a799a7f7a56dd002312b8527dac63cc9c inherit pub_methods_classdetail_1_1buffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the buffer data (not null-terminated).  <br /></td></tr>
+<tr class="separator:a799a7f7a56dd002312b8527dac63cc9c inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa69ce051e679bb9f4b013ead48d47716 inherit pub_methods_classdetail_1_1buffer" id="r_aa69ce051e679bb9f4b013ead48d47716"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#aa69ce051e679bb9f4b013ead48d47716">data</a> () const noexcept -&gt; const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *</td></tr>
+<tr class="separator:aa69ce051e679bb9f4b013ead48d47716 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa929ed394c759c288bb39941bc7672e3 inherit pub_methods_classdetail_1_1buffer" id="r_aa929ed394c759c288bb39941bc7672e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#aa929ed394c759c288bb39941bc7672e3">clear</a> ()</td></tr>
+<tr class="memdesc:aa929ed394c759c288bb39941bc7672e3 inherit pub_methods_classdetail_1_1buffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears this buffer.  <br /></td></tr>
+<tr class="separator:aa929ed394c759c288bb39941bc7672e3 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310b21616efbe3ba241654707cd5cfbd inherit pub_methods_classdetail_1_1buffer" id="r_a310b21616efbe3ba241654707cd5cfbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a310b21616efbe3ba241654707cd5cfbd">try_resize</a> (size_t <a class="el" href="namespacedetail.html#a25e934f3e2c5280160c34cb21a8db91c">count</a>)</td></tr>
+<tr class="separator:a310b21616efbe3ba241654707cd5cfbd inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af93487837b9783ebe188656ae7420280 inherit pub_methods_classdetail_1_1buffer" id="r_af93487837b9783ebe188656ae7420280"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#af93487837b9783ebe188656ae7420280">try_reserve</a> (size_t new_capacity)</td></tr>
+<tr class="separator:af93487837b9783ebe188656ae7420280 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e90c321dbbab4f6dbdaf45baa10e86 inherit pub_methods_classdetail_1_1buffer" id="r_a22e90c321dbbab4f6dbdaf45baa10e86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a22e90c321dbbab4f6dbdaf45baa10e86">push_back</a> (const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;<a class="el" href="classdetail_1_1value.html">value</a>)</td></tr>
+<tr class="separator:a22e90c321dbbab4f6dbdaf45baa10e86 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a6f4db5b08e99334e02564a94b786c5 inherit pub_methods_classdetail_1_1buffer" id="r_a6a6f4db5b08e99334e02564a94b786c5"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a>&gt; </td></tr>
+<tr class="memitem:a6a6f4db5b08e99334e02564a94b786c5 inherit pub_methods_classdetail_1_1buffer"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#acebe0f930dd6aecc374db251062e9d10">FMT_CONSTEXPR20</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a6a6f4db5b08e99334e02564a94b786c5">append</a> (const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a> *<a class="el" href="classdetail_1_1buffer.html#a81466e5cd0ae27cefba5f6dc7a1d20d3">begin</a>, const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a> *<a class="el" href="classdetail_1_1buffer.html#a648e922e02113059c05350c2c8279c21">end</a>)</td></tr>
+<tr class="memdesc:a6a6f4db5b08e99334e02564a94b786c5 inherit pub_methods_classdetail_1_1buffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends data to the end of the buffer.  <br /></td></tr>
+<tr class="separator:a6a6f4db5b08e99334e02564a94b786c5 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62584ed945b7181e6dca3b9edd6e526 inherit pub_methods_classdetail_1_1buffer" id="r_ad62584ed945b7181e6dca3b9edd6e526"><td class="memTemplParams" colspan="2">template&lt;typename Idx&gt; </td></tr>
+<tr class="memitem:ad62584ed945b7181e6dca3b9edd6e526 inherit pub_methods_classdetail_1_1buffer"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#ad62584ed945b7181e6dca3b9edd6e526">operator[]</a> (Idx <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) -&gt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;</td></tr>
+<tr class="separator:ad62584ed945b7181e6dca3b9edd6e526 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae11c4257fb083c98eb12d5ddb4add240 inherit pub_methods_classdetail_1_1buffer" id="r_ae11c4257fb083c98eb12d5ddb4add240"><td class="memTemplParams" colspan="2">template&lt;typename Idx&gt; </td></tr>
+<tr class="memitem:ae11c4257fb083c98eb12d5ddb4add240 inherit pub_methods_classdetail_1_1buffer"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#ae11c4257fb083c98eb12d5ddb4add240">operator[]</a> (Idx <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) const -&gt; const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;</td></tr>
+<tr class="separator:ae11c4257fb083c98eb12d5ddb4add240 inherit pub_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:ab97ac0146c71910e69f6614463a9e23f" id="r_ab97ac0146c71910e69f6614463a9e23f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#ab97ac0146c71910e69f6614463a9e23fac98fc17a313fb39a0af4f6e2d9b31569">buffer_size</a> = 256
+ }</td></tr>
+<tr class="separator:ab97ac0146c71910e69f6614463a9e23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:adac116554b543b7c4228c018a85882f5" id="r_adac116554b543b7c4228c018a85882f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adac116554b543b7c4228c018a85882f5">flush</a> ()</td></tr>
+<tr class="separator:adac116554b543b7c4228c018a85882f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:a0160bbc66812f49af07e00e7bd82836b" id="r_a0160bbc66812f49af07e00e7bd82836b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0160bbc66812f49af07e00e7bd82836b">grow</a> (<a class="el" href="classdetail_1_1buffer.html">buffer</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt; &amp;buf, size_t)</td></tr>
+<tr class="separator:a0160bbc66812f49af07e00e7bd82836b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a4af409b276d6d28b84bc1d8b2aedb8be" id="r_a4af409b276d6d28b84bc1d8b2aedb8be"><td class="memItemLeft" align="right" valign="top">OutputIt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4af409b276d6d28b84bc1d8b2aedb8be">out_</a></td></tr>
+<tr class="separator:a4af409b276d6d28b84bc1d8b2aedb8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1372f80a44efdb1fc9bfe588d13ae5cf" id="r_a1372f80a44efdb1fc9bfe588d13ae5cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1372f80a44efdb1fc9bfe588d13ae5cf">data_</a> [<a class="el" href="#ab97ac0146c71910e69f6614463a9e23fac98fc17a313fb39a0af4f6e2d9b31569">buffer_size</a>]</td></tr>
+<tr class="separator:a1372f80a44efdb1fc9bfe588d13ae5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_types_classdetail_1_1buffer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classdetail_1_1buffer')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classdetail_1_1buffer.html">buffer&lt; T &gt;</a></td></tr>
+<tr class="memitem:afb9ded5f49336ae503bb9f2035ea902b inherit pub_types_classdetail_1_1buffer" id="r_afb9ded5f49336ae503bb9f2035ea902b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#afb9ded5f49336ae503bb9f2035ea902b">value_type</a> = <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></td></tr>
+<tr class="separator:afb9ded5f49336ae503bb9f2035ea902b inherit pub_types_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98a2432df95afe641c3847268f579e8 inherit pub_types_classdetail_1_1buffer" id="r_ac98a2432df95afe641c3847268f579e8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#ac98a2432df95afe641c3847268f579e8">const_reference</a> = const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&amp;</td></tr>
+<tr class="separator:ac98a2432df95afe641c3847268f579e8 inherit pub_types_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classdetail_1_1buffer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classdetail_1_1buffer')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="classdetail_1_1buffer.html">buffer&lt; T &gt;</a></td></tr>
+<tr class="memitem:a8ad572da40d8ed1d499d66149ff66725 inherit pro_methods_classdetail_1_1buffer" id="r_a8ad572da40d8ed1d499d66149ff66725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a8ad572da40d8ed1d499d66149ff66725">buffer</a> (<a class="el" href="classdetail_1_1buffer.html#a538571c1c57a30b11cae19723a9ceed1">grow_fun</a> grow, size_t sz) noexcept</td></tr>
+<tr class="separator:a8ad572da40d8ed1d499d66149ff66725 inherit pro_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e045e147555f1cc8df22ff08ee36cc8 inherit pro_methods_classdetail_1_1buffer" id="r_a4e045e147555f1cc8df22ff08ee36cc8"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a4e045e147555f1cc8df22ff08ee36cc8">buffer</a> (<a class="el" href="classdetail_1_1buffer.html#a538571c1c57a30b11cae19723a9ceed1">grow_fun</a> grow, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *p=nullptr, size_t sz=0, size_t cap=0) noexcept</td></tr>
+<tr class="separator:a4e045e147555f1cc8df22ff08ee36cc8 inherit pro_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ca1e5bc70df7b8978f64a266437a4c inherit pro_methods_classdetail_1_1buffer" id="r_ae7ca1e5bc70df7b8978f64a266437a4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#acebe0f930dd6aecc374db251062e9d10">FMT_CONSTEXPR20</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#ae7ca1e5bc70df7b8978f64a266437a4c">~buffer</a> ()=default</td></tr>
+<tr class="separator:ae7ca1e5bc70df7b8978f64a266437a4c inherit pro_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d7dd98082c7caf86bd0462236eb795 inherit pro_methods_classdetail_1_1buffer" id="r_af0d7dd98082c7caf86bd0462236eb795"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#af0d7dd98082c7caf86bd0462236eb795">buffer</a> (<a class="el" href="classdetail_1_1buffer.html">buffer</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:af0d7dd98082c7caf86bd0462236eb795 inherit pro_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b20893f72b1ce6bc1d22299c8ec48a inherit pro_methods_classdetail_1_1buffer" id="r_a88b20893f72b1ce6bc1d22299c8ec48a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1buffer.html#a88b20893f72b1ce6bc1d22299c8ec48a">set</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *buf_data, size_t buf_capacity) noexcept</td></tr>
+<tr class="memdesc:a88b20893f72b1ce6bc1d22299c8ec48a inherit pro_methods_classdetail_1_1buffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the buffer data and capacity.  <br /></td></tr>
+<tr class="separator:a88b20893f72b1ce6bc1d22299c8ec48a inherit pro_methods_classdetail_1_1buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="ab97ac0146c71910e69f6614463a9e23f" name="ab97ac0146c71910e69f6614463a9e23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab97ac0146c71910e69f6614463a9e23f">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ab97ac0146c71910e69f6614463a9e23fac98fc17a313fb39a0af4f6e2d9b31569" name="ab97ac0146c71910e69f6614463a9e23fac98fc17a313fb39a0af4f6e2d9b31569"></a>buffer_size&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a28b94290b70b10e0a49eed2b6b768512" name="a28b94290b70b10e0a49eed2b6b768512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b94290b70b10e0a49eed2b6b768512">&#9670;&#160;</a></span>iterator_buffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1iterator__buffer.html">iterator_buffer</a> </td>
+          <td>(</td>
+          <td class="paramtype">OutputIt</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#ab97ac0146c71910e69f6614463a9e23fac98fc17a313fb39a0af4f6e2d9b31569">buffer_size</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_a28b94290b70b10e0a49eed2b6b768512_cgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_a28b94290b70b10e0a49eed2b6b768512_cgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_a28b94290b70b10e0a49eed2b6b768512_cgraph" id="aclassdetail_1_1iterator__buffer_a28b94290b70b10e0a49eed2b6b768512_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,106,107"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a8ad572da40d8ed1d499d66149ff66725" title=" " alt="" coords="251,29,383,56"/>
+<area shape="poly" title=" " alt="" coords="105,77,153,65,235,51,236,56,154,71,106,82"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a0160bbc66812f49af07e00e7bd82836b" title=" " alt="" coords="154,80,203,107"/>
+<area shape="poly" title=" " alt="" coords="106,100,138,99,138,104,106,105"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a8beeafa504ff32a4741c7bec45e4d42c" title=" " alt="" coords="159,131,198,157"/>
+<area shape="poly" title=" " alt="" coords="91,105,145,128,143,133,89,110"/>
+<area shape="poly" title=" " alt="" coords="293,30,289,21,291,11,301,5,317,3,334,5,343,12,340,16,332,10,317,8,303,10,296,14,294,20,298,28"/>
+<area shape="poly" title=" " alt="" coords="153,89,121,87,121,82,153,83"/>
+<area shape="poly" title=" " alt="" coords="202,82,264,59,265,64,204,87"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#adac116554b543b7c4228c018a85882f5" title=" " alt="" coords="292,131,342,157"/>
+<area shape="poly" title=" " alt="" coords="204,100,279,127,277,132,202,105"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a68960381f66fdfeb44116fe4337b5824" title="Returns the size of this buffer." alt="" coords="435,55,559,81"/>
+<area shape="poly" title=" " alt="" coords="203,89,420,71,420,77,204,94"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a81466e5cd0ae27cefba5f6dc7a1d20d3" title=" " alt="" coords="431,105,563,132"/>
+<area shape="poly" title=" " alt="" coords="342,138,416,127,416,133,343,143"/>
+<area shape="rect" href="classdetail_1_1buffer.html#aa929ed394c759c288bb39941bc7672e3" title="Clears this buffer." alt="" coords="433,156,561,183"/>
+<area shape="poly" title=" " alt="" coords="343,145,418,155,417,161,342,150"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a648e922e02113059c05350c2c8279c21" title=" " alt="" coords="436,207,558,233"/>
+<area shape="poly" title=" " alt="" coords="343,153,432,192,446,198,444,203,430,197,341,157"/>
+<area shape="rect" href="structdetail_1_1buffer__traits.html#a018e03e6983ebefba9b9f296b3f023bb" title=" " alt="" coords="433,257,561,300"/>
+<area shape="poly" title=" " alt="" coords="333,156,376,197,433,243,438,247,435,251,430,247,372,201,330,160"/>
+<area shape="poly" title=" " alt="" coords="341,131,430,91,444,85,446,90,432,96,343,135"/>
+<area shape="poly" title=" " alt="" coords="199,141,277,141,277,147,199,147"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_a28b94290b70b10e0a49eed2b6b768512_icgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_a28b94290b70b10e0a49eed2b6b768512_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_a28b94290b70b10e0a49eed2b6b768512_icgraph" id="aclassdetail_1_1iterator__buffer_a28b94290b70b10e0a49eed2b6b768512_icgraph">
+<area shape="rect" title=" " alt="" coords="251,5,351,32"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a0160bbc66812f49af07e00e7bd82836b" title=" " alt="" coords="154,5,203,32"/>
+<area shape="poly" title=" " alt="" coords="235,30,203,29,203,23,236,25"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a860f4febb4126fa07c823448f96ea1de" title=" " alt="" coords="5,31,106,57"/>
+<area shape="poly" title=" " alt="" coords="242,39,203,47,153,50,106,50,106,44,153,45,203,41,241,34"/>
+<area shape="poly" title=" " alt="" coords="218,8,251,7,251,12,218,13"/>
+<area shape="poly" title=" " alt="" coords="139,29,106,36,105,31,138,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a860f4febb4126fa07c823448f96ea1de" name="a860f4febb4126fa07c823448f96ea1de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a860f4febb4126fa07c823448f96ea1de">&#9670;&#160;</a></span>iterator_buffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1iterator__buffer.html">iterator_buffer</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1iterator__buffer.html">iterator_buffer</a>&lt; OutputIt, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, Traits &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_a860f4febb4126fa07c823448f96ea1de_cgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_a860f4febb4126fa07c823448f96ea1de_cgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_a860f4febb4126fa07c823448f96ea1de_cgraph" id="aclassdetail_1_1iterator__buffer_a860f4febb4126fa07c823448f96ea1de_cgraph">
+<area shape="rect" title=" " alt="" coords="5,132,106,159"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a0160bbc66812f49af07e00e7bd82836b" title=" " alt="" coords="154,107,203,133"/>
+<area shape="poly" title=" " alt="" coords="106,132,138,125,139,131,107,138"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a28b94290b70b10e0a49eed2b6b768512" title=" " alt="" coords="251,157,351,184"/>
+<area shape="poly" title=" " alt="" coords="106,148,236,161,235,167,106,153"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a8ad572da40d8ed1d499d66149ff66725" title=" " alt="" coords="399,131,532,157"/>
+<area shape="poly" title=" " alt="" coords="204,119,384,135,384,140,203,125"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#adac116554b543b7c4228c018a85882f5" title=" " alt="" coords="580,107,629,133"/>
+<area shape="poly" title=" " alt="" coords="203,112,261,100,343,89,437,84,485,86,532,92,566,101,564,106,531,97,485,92,437,90,343,95,262,106,204,117"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a68960381f66fdfeb44116fe4337b5824" title="Returns the size of this buffer." alt="" coords="680,5,805,32"/>
+<area shape="poly" title=" " alt="" coords="197,104,222,89,250,76,361,47,474,29,578,20,665,16,665,21,579,25,474,34,362,52,252,81,224,94,200,108"/>
+<area shape="poly" title=" " alt="" coords="198,131,238,151,235,155,196,136"/>
+<area shape="poly" title=" " alt="" coords="441,131,437,122,440,112,450,106,466,104,483,107,492,113,488,118,481,112,465,109,451,111,444,116,442,122,446,129"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a81466e5cd0ae27cefba5f6dc7a1d20d3" title=" " alt="" coords="677,56,808,83"/>
+<area shape="poly" title=" " alt="" coords="628,109,689,86,691,91,630,114"/>
+<area shape="rect" href="classdetail_1_1buffer.html#aa929ed394c759c288bb39941bc7672e3" title="Clears this buffer." alt="" coords="678,107,807,133"/>
+<area shape="poly" title=" " alt="" coords="629,117,663,117,663,123,629,123"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a648e922e02113059c05350c2c8279c21" title=" " alt="" coords="682,157,803,184"/>
+<area shape="poly" title=" " alt="" coords="630,126,691,149,689,154,628,131"/>
+<area shape="rect" href="structdetail_1_1buffer__traits.html#a018e03e6983ebefba9b9f296b3f023bb" title=" " alt="" coords="678,208,807,251"/>
+<area shape="poly" title=" " alt="" coords="618,132,644,162,679,194,683,197,680,202,675,198,640,166,614,135"/>
+<area shape="poly" title=" " alt="" coords="613,105,639,74,675,42,683,37,686,42,679,46,643,77,617,108"/>
+<area shape="poly" title=" " alt="" coords="281,159,216,130,219,125,283,154"/>
+<area shape="poly" title=" " alt="" coords="351,160,384,155,385,160,352,165"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a8beeafa504ff32a4741c7bec45e4d42c" title=" " alt="" coords="446,181,485,208"/>
+<area shape="poly" title=" " alt="" coords="352,175,431,187,430,192,351,181"/>
+<area shape="poly" title=" " alt="" coords="484,186,530,167,572,140,575,145,533,172,487,191"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0441dce81c84bce7dfdb16a771d8485" name="ad0441dce81c84bce7dfdb16a771d8485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0441dce81c84bce7dfdb16a771d8485">&#9670;&#160;</a></span>~iterator_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="classdetail_1_1iterator__buffer.html">iterator_buffer</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_ad0441dce81c84bce7dfdb16a771d8485_cgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_ad0441dce81c84bce7dfdb16a771d8485_cgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_ad0441dce81c84bce7dfdb16a771d8485_cgraph" id="aclassdetail_1_1iterator__buffer_ad0441dce81c84bce7dfdb16a771d8485_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,114,133"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#adac116554b543b7c4228c018a85882f5" title=" " alt="" coords="162,107,211,133"/>
+<area shape="poly" title=" " alt="" coords="114,117,147,117,147,123,114,123"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a81466e5cd0ae27cefba5f6dc7a1d20d3" title=" " alt="" coords="259,5,390,32"/>
+<area shape="poly" title=" " alt="" coords="195,105,221,74,257,42,265,37,268,42,261,46,225,77,199,108"/>
+<area shape="rect" href="classdetail_1_1buffer.html#aa929ed394c759c288bb39941bc7672e3" title="Clears this buffer." alt="" coords="260,56,389,83"/>
+<area shape="poly" title=" " alt="" coords="210,109,271,86,273,91,212,114"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a648e922e02113059c05350c2c8279c21" title=" " alt="" coords="264,107,385,133"/>
+<area shape="poly" title=" " alt="" coords="211,117,249,117,249,123,211,123"/>
+<area shape="rect" href="structdetail_1_1buffer__traits.html#a018e03e6983ebefba9b9f296b3f023bb" title=" " alt="" coords="260,157,389,200"/>
+<area shape="poly" title=" " alt="" coords="212,128,260,149,258,153,210,133"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a68960381f66fdfeb44116fe4337b5824" title="Returns the size of this buffer." alt="" coords="262,224,387,251"/>
+<area shape="poly" title=" " alt="" coords="197,132,223,171,240,191,261,210,267,214,264,219,257,214,236,195,218,174,193,135"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="afd2c5a7b659f59faa879fb26d38ebc79" name="afd2c5a7b659f59faa879fb26d38ebc79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2c5a7b659f59faa879fb26d38ebc79">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_afd2c5a7b659f59faa879fb26d38ebc79_cgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_afd2c5a7b659f59faa879fb26d38ebc79_cgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_afd2c5a7b659f59faa879fb26d38ebc79_cgraph" id="aclassdetail_1_1iterator__buffer_afd2c5a7b659f59faa879fb26d38ebc79_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,59,32"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a68960381f66fdfeb44116fe4337b5824" title="Returns the size of this buffer." alt="" coords="107,5,231,32"/>
+<area shape="poly" title=" " alt="" coords="59,16,91,16,91,21,59,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adac116554b543b7c4228c018a85882f5" name="adac116554b543b7c4228c018a85882f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac116554b543b7c4228c018a85882f5">&#9670;&#160;</a></span>flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void flush </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_adac116554b543b7c4228c018a85882f5_cgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_adac116554b543b7c4228c018a85882f5_cgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_adac116554b543b7c4228c018a85882f5_cgraph" id="aclassdetail_1_1iterator__buffer_adac116554b543b7c4228c018a85882f5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,55,133"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a81466e5cd0ae27cefba5f6dc7a1d20d3" title=" " alt="" coords="103,5,234,32"/>
+<area shape="poly" title=" " alt="" coords="39,105,65,74,101,42,109,37,112,42,104,46,69,77,43,108"/>
+<area shape="rect" href="classdetail_1_1buffer.html#aa929ed394c759c288bb39941bc7672e3" title="Clears this buffer." alt="" coords="104,56,232,83"/>
+<area shape="poly" title=" " alt="" coords="54,109,115,86,117,91,56,114"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a648e922e02113059c05350c2c8279c21" title=" " alt="" coords="108,107,229,133"/>
+<area shape="poly" title=" " alt="" coords="55,117,92,117,92,123,55,123"/>
+<area shape="rect" href="structdetail_1_1buffer__traits.html#a018e03e6983ebefba9b9f296b3f023bb" title=" " alt="" coords="104,157,232,200"/>
+<area shape="poly" title=" " alt="" coords="56,128,104,149,102,153,54,133"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a68960381f66fdfeb44116fe4337b5824" title="Returns the size of this buffer." alt="" coords="106,224,230,251"/>
+<area shape="poly" title=" " alt="" coords="41,132,66,171,84,191,104,210,111,214,108,219,101,214,80,195,62,174,37,135"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_adac116554b543b7c4228c018a85882f5_icgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_adac116554b543b7c4228c018a85882f5_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_adac116554b543b7c4228c018a85882f5_icgraph" id="aclassdetail_1_1iterator__buffer_adac116554b543b7c4228c018a85882f5_icgraph">
+<area shape="rect" title=" " alt="" coords="458,56,508,83"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a0160bbc66812f49af07e00e7bd82836b" title=" " alt="" coords="332,5,381,32"/>
+<area shape="poly" title=" " alt="" coords="443,56,380,31,382,26,445,51"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a8beeafa504ff32a4741c7bec45e4d42c" title=" " alt="" coords="336,56,376,83"/>
+<area shape="poly" title=" " alt="" coords="443,72,376,72,376,67,443,67"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#ad0441dce81c84bce7dfdb16a771d8485" title=" " alt="" coords="302,107,410,133"/>
+<area shape="poly" title=" " alt="" coords="445,87,393,109,391,104,443,82"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a860f4febb4126fa07c823448f96ea1de" title=" " alt="" coords="5,5,106,32"/>
+<area shape="poly" title=" " alt="" coords="316,21,106,21,106,16,316,16"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a28b94290b70b10e0a49eed2b6b768512" title=" " alt="" coords="154,31,254,57"/>
+<area shape="poly" title=" " alt="" coords="317,36,255,47,254,42,316,31"/>
+<area shape="poly" title=" " alt="" coords="255,24,331,13,332,19,256,29"/>
+<area shape="poly" title=" " alt="" coords="138,35,106,30,107,25,139,30"/>
+<area shape="poly" title=" " alt="" coords="320,66,254,55,255,50,321,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0160bbc66812f49af07e00e7bd82836b" name="a0160bbc66812f49af07e00e7bd82836b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0160bbc66812f49af07e00e7bd82836b">&#9670;&#160;</a></span>grow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void grow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1buffer.html">buffer</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_a0160bbc66812f49af07e00e7bd82836b_cgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_a0160bbc66812f49af07e00e7bd82836b_cgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_a0160bbc66812f49af07e00e7bd82836b_cgraph" id="aclassdetail_1_1iterator__buffer_a0160bbc66812f49af07e00e7bd82836b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,173,55,200"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a8ad572da40d8ed1d499d66149ff66725" title=" " alt="" coords="251,123,383,149"/>
+<area shape="poly" title=" " alt="" coords="54,174,102,159,170,146,235,139,236,144,171,152,103,164,56,179"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#adac116554b543b7c4228c018a85882f5" title=" " alt="" coords="431,123,481,149"/>
+<area shape="poly" title=" " alt="" coords="46,171,71,151,101,132,173,100,251,84,318,74,348,75,384,84,409,95,430,110,427,115,406,100,382,89,347,81,318,79,251,89,175,105,104,137,74,155,49,175"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a68960381f66fdfeb44116fe4337b5824" title="Returns the size of this buffer." alt="" coords="532,224,656,251"/>
+<area shape="poly" title=" " alt="" coords="56,195,103,209,215,226,327,235,431,238,517,237,517,243,431,243,327,240,214,231,102,215,54,200"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a28b94290b70b10e0a49eed2b6b768512" title=" " alt="" coords="103,173,203,200"/>
+<area shape="poly" title=" " alt="" coords="55,191,87,193,87,198,55,197"/>
+<area shape="poly" title=" " alt="" coords="293,123,289,114,291,104,301,98,317,96,334,99,343,105,340,110,332,104,317,101,303,103,296,108,294,114,298,121"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a81466e5cd0ae27cefba5f6dc7a1d20d3" title=" " alt="" coords="529,72,660,99"/>
+<area shape="poly" title=" " alt="" coords="480,125,541,102,543,107,482,130"/>
+<area shape="rect" href="classdetail_1_1buffer.html#aa929ed394c759c288bb39941bc7672e3" title="Clears this buffer." alt="" coords="530,123,658,149"/>
+<area shape="poly" title=" " alt="" coords="481,133,515,133,515,139,481,139"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a648e922e02113059c05350c2c8279c21" title=" " alt="" coords="534,173,655,200"/>
+<area shape="poly" title=" " alt="" coords="482,142,543,165,541,170,480,147"/>
+<area shape="rect" href="structdetail_1_1buffer__traits.html#a018e03e6983ebefba9b9f296b3f023bb" title=" " alt="" coords="530,5,658,48"/>
+<area shape="poly" title=" " alt="" coords="466,121,492,90,527,58,532,54,535,59,530,62,496,94,470,124"/>
+<area shape="poly" title=" " alt="" coords="469,148,495,179,530,210,538,214,535,219,527,214,491,182,465,151"/>
+<area shape="poly" title=" " alt="" coords="102,180,70,181,70,176,102,175"/>
+<area shape="poly" title=" " alt="" coords="198,170,256,152,258,157,200,175"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a8beeafa504ff32a4741c7bec45e4d42c" title=" " alt="" coords="298,173,337,200"/>
+<area shape="poly" title=" " alt="" coords="204,184,282,184,282,189,204,189"/>
+<area shape="poly" title=" " alt="" coords="337,177,416,148,418,153,338,182"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_a0160bbc66812f49af07e00e7bd82836b_icgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_a0160bbc66812f49af07e00e7bd82836b_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_a0160bbc66812f49af07e00e7bd82836b_icgraph" id="aclassdetail_1_1iterator__buffer_a0160bbc66812f49af07e00e7bd82836b_icgraph">
+<area shape="rect" title=" " alt="" coords="302,31,351,57"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a860f4febb4126fa07c823448f96ea1de" title=" " alt="" coords="5,5,106,32"/>
+<area shape="poly" title=" " alt="" coords="287,30,254,21,176,15,106,17,106,11,177,9,254,16,288,25"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a28b94290b70b10e0a49eed2b6b768512" title=" " alt="" coords="154,31,254,57"/>
+<area shape="poly" title=" " alt="" coords="286,55,254,56,254,50,286,50"/>
+<area shape="poly" title=" " alt="" coords="269,32,302,34,301,39,269,38"/>
+<area shape="poly" title=" " alt="" coords="138,35,106,30,107,25,139,30"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8beeafa504ff32a4741c7bec45e4d42c" name="a8beeafa504ff32a4741c7bec45e4d42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8beeafa504ff32a4741c7bec45e4d42c">&#9670;&#160;</a></span>out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto out </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; OutputIt </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_a8beeafa504ff32a4741c7bec45e4d42c_cgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_a8beeafa504ff32a4741c7bec45e4d42c_cgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_a8beeafa504ff32a4741c7bec45e4d42c_cgraph" id="aclassdetail_1_1iterator__buffer_a8beeafa504ff32a4741c7bec45e4d42c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,45,133"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#adac116554b543b7c4228c018a85882f5" title=" " alt="" coords="93,107,142,133"/>
+<area shape="poly" title=" " alt="" coords="45,117,77,117,77,123,45,123"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a81466e5cd0ae27cefba5f6dc7a1d20d3" title=" " alt="" coords="190,5,321,32"/>
+<area shape="poly" title=" " alt="" coords="126,105,152,74,188,42,196,37,199,42,192,46,156,77,130,108"/>
+<area shape="rect" href="classdetail_1_1buffer.html#aa929ed394c759c288bb39941bc7672e3" title="Clears this buffer." alt="" coords="192,56,320,83"/>
+<area shape="poly" title=" " alt="" coords="141,109,202,86,204,91,143,114"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a648e922e02113059c05350c2c8279c21" title=" " alt="" coords="195,107,316,133"/>
+<area shape="poly" title=" " alt="" coords="142,117,180,117,180,123,142,123"/>
+<area shape="rect" href="structdetail_1_1buffer__traits.html#a018e03e6983ebefba9b9f296b3f023bb" title=" " alt="" coords="192,157,320,200"/>
+<area shape="poly" title=" " alt="" coords="143,128,191,149,189,153,141,133"/>
+<area shape="rect" href="classdetail_1_1buffer.html#a68960381f66fdfeb44116fe4337b5824" title="Returns the size of this buffer." alt="" coords="194,224,318,251"/>
+<area shape="poly" title=" " alt="" coords="128,132,154,171,171,191,192,210,198,214,195,219,188,214,167,195,149,174,124,135"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1iterator__buffer_a8beeafa504ff32a4741c7bec45e4d42c_icgraph.png" border="0" usemap="#aclassdetail_1_1iterator__buffer_a8beeafa504ff32a4741c7bec45e4d42c_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1iterator__buffer_a8beeafa504ff32a4741c7bec45e4d42c_icgraph" id="aclassdetail_1_1iterator__buffer_a8beeafa504ff32a4741c7bec45e4d42c_icgraph">
+<area shape="rect" title=" " alt="" coords="399,5,439,32"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a28b94290b70b10e0a49eed2b6b768512" title=" " alt="" coords="251,5,351,32"/>
+<area shape="poly" title=" " alt="" coords="384,21,352,21,352,16,384,16"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a0160bbc66812f49af07e00e7bd82836b" title=" " alt="" coords="154,5,203,32"/>
+<area shape="poly" title=" " alt="" coords="235,30,203,29,203,23,236,25"/>
+<area shape="rect" href="classdetail_1_1iterator__buffer.html#a860f4febb4126fa07c823448f96ea1de" title=" " alt="" coords="5,31,106,57"/>
+<area shape="poly" title=" " alt="" coords="242,39,203,47,153,50,106,50,106,44,153,45,203,41,241,34"/>
+<area shape="poly" title=" " alt="" coords="218,8,251,7,251,12,218,13"/>
+<area shape="poly" title=" " alt="" coords="139,29,106,36,105,31,138,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a1372f80a44efdb1fc9bfe588d13ae5cf" name="a1372f80a44efdb1fc9bfe588d13ae5cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1372f80a44efdb1fc9bfe588d13ae5cf">&#9670;&#160;</a></span>data_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> data_[<a class="el" href="#ab97ac0146c71910e69f6614463a9e23fac98fc17a313fb39a0af4f6e2d9b31569">buffer_size</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4af409b276d6d28b84bc1d8b2aedb8be" name="a4af409b276d6d28b84bc1d8b2aedb8be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af409b276d6d28b84bc1d8b2aedb8be">&#9670;&#160;</a></span>out_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Traits = buffer_traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OutputIt out_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="base_8h_source.html">base.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacedetail.html">detail</a></li><li class="navelem"><a class="el" href="classdetail_1_1iterator__buffer.html">iterator_buffer</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

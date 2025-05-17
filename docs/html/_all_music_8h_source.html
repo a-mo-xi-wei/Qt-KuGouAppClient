@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AllMusic.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_all_music_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">AllMusic.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_all_music_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef ALLMUSIC_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define ALLMUSIC_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_all_widget_8h.html">AllWidget/AllWidget.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_all_love_8h.html">AllLove/AllLove.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_all_song_list_8h.html">AllSongList/AllSongList.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_all_recent_8h.html">AllRecent/AllRecent.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_all_local_8h.html">AllLocal/AllLocal.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="_all_paid_8h.html">AllPaid/AllPaid.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="_all_cloud_disk_8h.html">AllCloudDisk/AllCloudDisk.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="_sort_option_menu_8h.html">SortOptionMenu.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span><a class="code hl_class" href="class_q_button_group.html">QButtonGroup</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">class </span>AllMusic;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_all_music.html">   40</a></span><span class="keyword">class </span><a class="code hl_function" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb">AllMusic</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    Q_OBJECT</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb">AllMusic</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="class_all_music.html#a1f50909165bb4852ed113023df5adbaa">~AllMusic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#aebc31945fa34b123ada488d5710cce62">initIndexLab</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#a0880fc715278119401b0b218adc8ade6">initStackedWidget</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#acd49958707a3d6e81ea739107a67c6a0">initAllWidget</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#a932b23d58d9caad0c0294b78fdd12b49">initAllLove</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#af394e10687f6b4ff9cb0b61bea405829">initAllSongList</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#a5dbb5d2e3871003952f783aa238b0624">initAllRecent</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#a4bded8d5668f04b0f57a57ce9f6594c4">initAllLocal</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#accec89bda858e77891a21593603d3642">initAllPaid</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#ad6973c2856d85dfe89d87c160ce7275d">initAllCloudDisk</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#aeab41b278e449a68fbd1c98c9e1516a8">getMenuPosition</a>(<span class="keyword">const</span> QPoint &amp;pos);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#ab868524a9562cda1f7b60b4220e2248e">enableButton</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;<a class="code hl_variable" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_all_music.html#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a>(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_all_music.html#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a856eaeee6a1f7ac6d6dccda800d0c73e">on_all_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a7ae7b07f8aa40cffcb6e6405496cb16b">on_love_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a5376070f2e4d281780eeb0acdfa09f74">on_song_list_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#ad90447e96324131fa50f5e06b6fd7d3e">on_recent_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a121616fb0697eb3fb4a4ec4a4d0b0f1e">on_local_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a4b14cbc7909901a75d7b739a0dd0aa61">on_paid_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#aa23c49fca0482fa24b6f4653f5870612">on_cloud_disk_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#aed92bccc3e67d6b8357d2db9feeb950d">on_all_play_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a5a83c2a1a01b6ca11afa5b2dee86efa6">on_all_download_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a3bf0900994ed5bb1214f318f4b4dfa8e">on_all_share_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#aaa210fe1ad480900bd4f8f9ea0a8a110">on_all_sort_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a09def86a7fb828301cda3661d5643003">on_all_batch_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a77868991ec35ce1ee03a62521bbf03c5">onDefaultSort</a>();</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a58cc37eb1a69f43d22e93dbd0a8e32ba">onAddTimeSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a8b57469ce5cde9101bd38466a5138bd9">onSongNameSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a88cff94b79f2aab5610fd6df85c77d39">onSingerSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a1bf3aea4b068e67501d5614655eff022">onDurationSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a2deab31ea0dab5b0953202e8135f6236">onPlayCountSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_all_music.html#a2ff39f94b18025fc9f33a0e9a9d75734">onRandomSort</a>();</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>signals:</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="class_all_music.html#aa23356daca3ed71116d6ae55df2991f4">  240</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_all_music.html#aa23356daca3ed71116d6ae55df2991f4">find_more_music</a>();</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="class_all_music.html#a8d55c8e7c8ae06d72e03b8954f7f0f2b">  243</a></span>    Ui::AllMusic *<a class="code hl_variable" href="class_all_music.html#a8d55c8e7c8ae06d72e03b8954f7f0f2b">ui</a>;                                    </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="class_all_music.html#ad47442fcf7db8bd0dab09d79ad4c1d47">  244</a></span>    std::unique_ptr&lt;QButtonGroup&gt;   <a class="code hl_variable" href="class_all_music.html#ad47442fcf7db8bd0dab09d79ad4c1d47">m_buttonGroup</a>;       </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="class_all_music.html#a5176fa261c341ba914ef046a5e015ae2">  245</a></span>    std::unique_ptr&lt;AllWidget&gt;      <a class="code hl_variable" href="class_all_music.html#a5176fa261c341ba914ef046a5e015ae2">m_allWidget</a>;         </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="class_all_music.html#a10c678aeba53197436b92b7764a31cc5">  246</a></span>    std::unique_ptr&lt;AllLove&gt;        <a class="code hl_variable" href="class_all_music.html#a10c678aeba53197436b92b7764a31cc5">m_allLove</a>;           </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="class_all_music.html#a45ba0b809b9d9082d7fd0500e1610817">  247</a></span>    std::unique_ptr&lt;AllSongList&gt;    <a class="code hl_variable" href="class_all_music.html#a45ba0b809b9d9082d7fd0500e1610817">m_allSongList</a>;       </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="class_all_music.html#a687125747511856c1245daf2b16ee51f">  248</a></span>    std::unique_ptr&lt;AllRecent&gt;      <a class="code hl_variable" href="class_all_music.html#a687125747511856c1245daf2b16ee51f">m_allRecent</a>;         </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="class_all_music.html#a7b605486ea747053f336a5754b51d078">  249</a></span>    std::unique_ptr&lt;AllLocal&gt;       <a class="code hl_variable" href="class_all_music.html#a7b605486ea747053f336a5754b51d078">m_allLocal</a>;          </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="class_all_music.html#a7456d3925a2ae1606dfd959cbc2292e6">  250</a></span>    std::unique_ptr&lt;AllPaid&gt;        <a class="code hl_variable" href="class_all_music.html#a7456d3925a2ae1606dfd959cbc2292e6">m_allPaid</a>;           </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="class_all_music.html#a137dac7de4886c0041293971f4a63fd3">  251</a></span>    std::unique_ptr&lt;AllCloudDisk&gt;   <a class="code hl_variable" href="class_all_music.html#a137dac7de4886c0041293971f4a63fd3">m_allCloudDisk</a>;      </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="class_all_music.html#ab6c42d383d83d4acdfb5081e799c29da">  252</a></span>    QAction *<a class="code hl_variable" href="class_all_music.html#ab6c42d383d83d4acdfb5081e799c29da">m_searchAction</a>{};                             </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="class_all_music.html#ad67a8f8c13a90fda48f45117bdcdb4fd">  253</a></span>    <a class="code hl_class" href="class_sort_option_menu.html">SortOptionMenu</a> *<a class="code hl_variable" href="class_all_music.html#ad67a8f8c13a90fda48f45117bdcdb4fd">m_sortOptMenu</a>{};                       </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="class_all_music.html#a75b61709efacdeb4b9b337132b7fbb7f">  254</a></span>    QPoint <a class="code hl_variable" href="class_all_music.html#a75b61709efacdeb4b9b337132b7fbb7f">m_menuPosition</a>;                               </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>};</div>
+</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="preprocessor">#endif </span><span class="comment">// ALLMUSIC_H</span></div>
+<div class="ttc" id="a_all_cloud_disk_8h_html"><div class="ttname"><a href="_all_cloud_disk_8h.html">AllCloudDisk.h</a></div><div class="ttdoc">定义 AllCloudDisk 类，提供云盘音乐界面</div></div>
+<div class="ttc" id="a_all_local_8h_html"><div class="ttname"><a href="_all_local_8h.html">AllLocal.h</a></div><div class="ttdoc">定义 AllLocal 类，提供本地音乐界面</div></div>
+<div class="ttc" id="a_all_love_8h_html"><div class="ttname"><a href="_all_love_8h.html">AllLove.h</a></div><div class="ttdoc">定义 AllLove 类，提供收藏音乐界面</div></div>
+<div class="ttc" id="a_all_paid_8h_html"><div class="ttname"><a href="_all_paid_8h.html">AllPaid.h</a></div><div class="ttdoc">定义 AllPaid 类，提供付费音乐界面</div></div>
+<div class="ttc" id="a_all_recent_8h_html"><div class="ttname"><a href="_all_recent_8h.html">AllRecent.h</a></div><div class="ttdoc">定义 AllRecent 类，提供最近播放音乐界面</div></div>
+<div class="ttc" id="a_all_song_list_8h_html"><div class="ttname"><a href="_all_song_list_8h.html">AllSongList.h</a></div><div class="ttdoc">定义 AllSongList 类，提供歌单界面</div></div>
+<div class="ttc" id="a_all_widget_8h_html"><div class="ttname"><a href="_all_widget_8h.html">AllWidget.h</a></div><div class="ttdoc">定义 AllWidget 类，提供全部音乐界面</div></div>
+<div class="ttc" id="a_my_search_line_edit_8cpp_html_aa12d082c0f752ab7313a2cf16522a3df"><div class="ttname"><a href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a></div><div class="ttdeci">std::once_flag flag</div><div class="ttdoc">单次初始化标志，确保原始宽度只设置一次</div><div class="ttdef"><b>定义</b> MySearchLineEdit.cpp:21</div></div>
+<div class="ttc" id="a_sort_option_menu_8h_html"><div class="ttname"><a href="_sort_option_menu_8h.html">SortOptionMenu.h</a></div><div class="ttdoc">定义 SortOptionMenu 类，提供歌曲排序选项菜单功能</div></div>
+<div class="ttc" id="aclass_all_music_html_a0880fc715278119401b0b218adc8ade6"><div class="ttname"><a href="class_all_music.html#a0880fc715278119401b0b218adc8ade6">AllMusic::initStackedWidget</a></div><div class="ttdeci">void initStackedWidget()</div><div class="ttdoc">初始化堆栈窗口</div><div class="ttdef"><b>定义</b> AllMusic.cpp:185</div></div>
+<div class="ttc" id="aclass_all_music_html_a09def86a7fb828301cda3661d5643003"><div class="ttname"><a href="class_all_music.html#a09def86a7fb828301cda3661d5643003">AllMusic::on_all_batch_toolButton_clicked</a></div><div class="ttdeci">void on_all_batch_toolButton_clicked()</div><div class="ttdoc">处理批量操作按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:536</div></div>
+<div class="ttc" id="aclass_all_music_html_a10c678aeba53197436b92b7764a31cc5"><div class="ttname"><a href="class_all_music.html#a10c678aeba53197436b92b7764a31cc5">AllMusic::m_allLove</a></div><div class="ttdeci">std::unique_ptr&lt; AllLove &gt; m_allLove</div><div class="ttdoc">收藏音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.h:246</div></div>
+<div class="ttc" id="aclass_all_music_html_a121616fb0697eb3fb4a4ec4a4d0b0f1e"><div class="ttname"><a href="class_all_music.html#a121616fb0697eb3fb4a4ec4a4d0b0f1e">AllMusic::on_local_pushButton_clicked</a></div><div class="ttdeci">void on_local_pushButton_clicked()</div><div class="ttdoc">处理本地按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:431</div></div>
+<div class="ttc" id="aclass_all_music_html_a137dac7de4886c0041293971f4a63fd3"><div class="ttname"><a href="class_all_music.html#a137dac7de4886c0041293971f4a63fd3">AllMusic::m_allCloudDisk</a></div><div class="ttdeci">std::unique_ptr&lt; AllCloudDisk &gt; m_allCloudDisk</div><div class="ttdoc">云盘音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.h:251</div></div>
+<div class="ttc" id="aclass_all_music_html_a1bf3aea4b068e67501d5614655eff022"><div class="ttname"><a href="class_all_music.html#a1bf3aea4b068e67501d5614655eff022">AllMusic::onDurationSort</a></div><div class="ttdeci">void onDurationSort(const bool &amp;down)</div><div class="ttdoc">按时长排序</div><div class="ttdef"><b>定义</b> AllMusic.cpp:589</div></div>
+<div class="ttc" id="aclass_all_music_html_a1f50909165bb4852ed113023df5adbaa"><div class="ttname"><a href="class_all_music.html#a1f50909165bb4852ed113023df5adbaa">AllMusic::~AllMusic</a></div><div class="ttdeci">~AllMusic() override</div><div class="ttdoc">析构函数，清理资源</div><div class="ttdef"><b>定义</b> AllMusic.cpp:62</div></div>
+<div class="ttc" id="aclass_all_music_html_a2deab31ea0dab5b0953202e8135f6236"><div class="ttname"><a href="class_all_music.html#a2deab31ea0dab5b0953202e8135f6236">AllMusic::onPlayCountSort</a></div><div class="ttdeci">void onPlayCountSort(const bool &amp;down)</div><div class="ttdoc">按播放次数排序</div><div class="ttdef"><b>定义</b> AllMusic.cpp:598</div></div>
+<div class="ttc" id="aclass_all_music_html_a2ff39f94b18025fc9f33a0e9a9d75734"><div class="ttname"><a href="class_all_music.html#a2ff39f94b18025fc9f33a0e9a9d75734">AllMusic::onRandomSort</a></div><div class="ttdeci">void onRandomSort()</div><div class="ttdoc">随机排序</div><div class="ttdef"><b>定义</b> AllMusic.cpp:606</div></div>
+<div class="ttc" id="aclass_all_music_html_a3bf0900994ed5bb1214f318f4b4dfa8e"><div class="ttname"><a href="class_all_music.html#a3bf0900994ed5bb1214f318f4b4dfa8e">AllMusic::on_all_share_toolButton_clicked</a></div><div class="ttdeci">void on_all_share_toolButton_clicked()</div><div class="ttdoc">处理分享按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:528</div></div>
+<div class="ttc" id="aclass_all_music_html_a45ba0b809b9d9082d7fd0500e1610817"><div class="ttname"><a href="class_all_music.html#a45ba0b809b9d9082d7fd0500e1610817">AllMusic::m_allSongList</a></div><div class="ttdeci">std::unique_ptr&lt; AllSongList &gt; m_allSongList</div><div class="ttdoc">歌单控件</div><div class="ttdef"><b>定义</b> AllMusic.h:247</div></div>
+<div class="ttc" id="aclass_all_music_html_a4b14cbc7909901a75d7b739a0dd0aa61"><div class="ttname"><a href="class_all_music.html#a4b14cbc7909901a75d7b739a0dd0aa61">AllMusic::on_paid_pushButton_clicked</a></div><div class="ttdeci">void on_paid_pushButton_clicked()</div><div class="ttdoc">处理已购按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:458</div></div>
+<div class="ttc" id="aclass_all_music_html_a4bded8d5668f04b0f57a57ce9f6594c4"><div class="ttname"><a href="class_all_music.html#a4bded8d5668f04b0f57a57ce9f6594c4">AllMusic::initAllLocal</a></div><div class="ttdeci">void initAllLocal()</div><div class="ttdoc">初始化本地音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.cpp:248</div></div>
+<div class="ttc" id="aclass_all_music_html_a5176fa261c341ba914ef046a5e015ae2"><div class="ttname"><a href="class_all_music.html#a5176fa261c341ba914ef046a5e015ae2">AllMusic::m_allWidget</a></div><div class="ttdeci">std::unique_ptr&lt; AllWidget &gt; m_allWidget</div><div class="ttdoc">全部音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.h:245</div></div>
+<div class="ttc" id="aclass_all_music_html_a5376070f2e4d281780eeb0acdfa09f74"><div class="ttname"><a href="class_all_music.html#a5376070f2e4d281780eeb0acdfa09f74">AllMusic::on_song_list_pushButton_clicked</a></div><div class="ttdeci">void on_song_list_pushButton_clicked()</div><div class="ttdoc">处理歌单按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:377</div></div>
+<div class="ttc" id="aclass_all_music_html_a58cc37eb1a69f43d22e93dbd0a8e32ba"><div class="ttname"><a href="class_all_music.html#a58cc37eb1a69f43d22e93dbd0a8e32ba">AllMusic::onAddTimeSort</a></div><div class="ttdeci">void onAddTimeSort(const bool &amp;down)</div><div class="ttdoc">按添加时间排序</div><div class="ttdef"><b>定义</b> AllMusic.cpp:562</div></div>
+<div class="ttc" id="aclass_all_music_html_a5a83c2a1a01b6ca11afa5b2dee86efa6"><div class="ttname"><a href="class_all_music.html#a5a83c2a1a01b6ca11afa5b2dee86efa6">AllMusic::on_all_download_toolButton_clicked</a></div><div class="ttdeci">void on_all_download_toolButton_clicked()</div><div class="ttdoc">处理下载按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:520</div></div>
+<div class="ttc" id="aclass_all_music_html_a5dbb5d2e3871003952f783aa238b0624"><div class="ttname"><a href="class_all_music.html#a5dbb5d2e3871003952f783aa238b0624">AllMusic::initAllRecent</a></div><div class="ttdeci">void initAllRecent()</div><div class="ttdoc">初始化最近播放控件</div><div class="ttdef"><b>定义</b> AllMusic.cpp:238</div></div>
+<div class="ttc" id="aclass_all_music_html_a64c818ba8964b8bb3b244005b4c57afb"><div class="ttname"><a href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb">AllMusic::AllMusic</a></div><div class="ttdeci">AllMusic(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化音乐管理界面</div><div class="ttdef"><b>定义</b> AllMusic.cpp:27</div></div>
+<div class="ttc" id="aclass_all_music_html_a687125747511856c1245daf2b16ee51f"><div class="ttname"><a href="class_all_music.html#a687125747511856c1245daf2b16ee51f">AllMusic::m_allRecent</a></div><div class="ttdeci">std::unique_ptr&lt; AllRecent &gt; m_allRecent</div><div class="ttdoc">最近播放控件</div><div class="ttdef"><b>定义</b> AllMusic.h:248</div></div>
+<div class="ttc" id="aclass_all_music_html_a7456d3925a2ae1606dfd959cbc2292e6"><div class="ttname"><a href="class_all_music.html#a7456d3925a2ae1606dfd959cbc2292e6">AllMusic::m_allPaid</a></div><div class="ttdeci">std::unique_ptr&lt; AllPaid &gt; m_allPaid</div><div class="ttdoc">已购音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.h:250</div></div>
+<div class="ttc" id="aclass_all_music_html_a7523c71b2bf60975302287ec8923f80e"><div class="ttname"><a href="class_all_music.html#a7523c71b2bf60975302287ec8923f80e">AllMusic::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标按下事件</div><div class="ttdef"><b>定义</b> AllMusic.cpp:920</div></div>
+<div class="ttc" id="aclass_all_music_html_a75b61709efacdeb4b9b337132b7fbb7f"><div class="ttname"><a href="class_all_music.html#a75b61709efacdeb4b9b337132b7fbb7f">AllMusic::m_menuPosition</a></div><div class="ttdeci">QPoint m_menuPosition</div><div class="ttdoc">菜单显示位置</div><div class="ttdef"><b>定义</b> AllMusic.h:254</div></div>
+<div class="ttc" id="aclass_all_music_html_a77868991ec35ce1ee03a62521bbf03c5"><div class="ttname"><a href="class_all_music.html#a77868991ec35ce1ee03a62521bbf03c5">AllMusic::onDefaultSort</a></div><div class="ttdeci">void onDefaultSort()</div><div class="ttdoc">默认排序</div><div class="ttdef"><b>定义</b> AllMusic.cpp:553</div></div>
+<div class="ttc" id="aclass_all_music_html_a7ae7b07f8aa40cffcb6e6405496cb16b"><div class="ttname"><a href="class_all_music.html#a7ae7b07f8aa40cffcb6e6405496cb16b">AllMusic::on_love_pushButton_clicked</a></div><div class="ttdeci">void on_love_pushButton_clicked()</div><div class="ttdoc">处理收藏按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:350</div></div>
+<div class="ttc" id="aclass_all_music_html_a7b605486ea747053f336a5754b51d078"><div class="ttname"><a href="class_all_music.html#a7b605486ea747053f336a5754b51d078">AllMusic::m_allLocal</a></div><div class="ttdeci">std::unique_ptr&lt; AllLocal &gt; m_allLocal</div><div class="ttdoc">本地音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.h:249</div></div>
+<div class="ttc" id="aclass_all_music_html_a7eb87a6d4464680c455d278d1d32eba6"><div class="ttname"><a href="class_all_music.html#a7eb87a6d4464680c455d278d1d32eba6">AllMusic::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) override</div><div class="ttdoc">事件过滤器</div><div class="ttdef"><b>定义</b> AllMusic.cpp:617</div></div>
+<div class="ttc" id="aclass_all_music_html_a856eaeee6a1f7ac6d6dccda800d0c73e"><div class="ttname"><a href="class_all_music.html#a856eaeee6a1f7ac6d6dccda800d0c73e">AllMusic::on_all_pushButton_clicked</a></div><div class="ttdeci">void on_all_pushButton_clicked()</div><div class="ttdoc">处理全部按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:323</div></div>
+<div class="ttc" id="aclass_all_music_html_a88cff94b79f2aab5610fd6df85c77d39"><div class="ttname"><a href="class_all_music.html#a88cff94b79f2aab5610fd6df85c77d39">AllMusic::onSingerSort</a></div><div class="ttdeci">void onSingerSort(const bool &amp;down)</div><div class="ttdoc">按歌手排序</div><div class="ttdef"><b>定义</b> AllMusic.cpp:580</div></div>
+<div class="ttc" id="aclass_all_music_html_a8b57469ce5cde9101bd38466a5138bd9"><div class="ttname"><a href="class_all_music.html#a8b57469ce5cde9101bd38466a5138bd9">AllMusic::onSongNameSort</a></div><div class="ttdeci">void onSongNameSort(const bool &amp;down)</div><div class="ttdoc">按歌曲名称排序</div><div class="ttdef"><b>定义</b> AllMusic.cpp:571</div></div>
+<div class="ttc" id="aclass_all_music_html_a8d55c8e7c8ae06d72e03b8954f7f0f2b"><div class="ttname"><a href="class_all_music.html#a8d55c8e7c8ae06d72e03b8954f7f0f2b">AllMusic::ui</a></div><div class="ttdeci">Ui::AllMusic * ui</div><div class="ttdoc">UI 指针</div><div class="ttdef"><b>定义</b> AllMusic.h:243</div></div>
+<div class="ttc" id="aclass_all_music_html_a932b23d58d9caad0c0294b78fdd12b49"><div class="ttname"><a href="class_all_music.html#a932b23d58d9caad0c0294b78fdd12b49">AllMusic::initAllLove</a></div><div class="ttdeci">void initAllLove()</div><div class="ttdoc">初始化收藏音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.cpp:218</div></div>
+<div class="ttc" id="aclass_all_music_html_aa23356daca3ed71116d6ae55df2991f4"><div class="ttname"><a href="class_all_music.html#aa23356daca3ed71116d6ae55df2991f4">AllMusic::find_more_music</a></div><div class="ttdeci">void find_more_music()</div><div class="ttdoc">搜索更多音乐信号</div></div>
+<div class="ttc" id="aclass_all_music_html_aa23c49fca0482fa24b6f4653f5870612"><div class="ttname"><a href="class_all_music.html#aa23c49fca0482fa24b6f4653f5870612">AllMusic::on_cloud_disk_pushButton_clicked</a></div><div class="ttdeci">void on_cloud_disk_pushButton_clicked()</div><div class="ttdoc">处理云盘按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:485</div></div>
+<div class="ttc" id="aclass_all_music_html_aaa210fe1ad480900bd4f8f9ea0a8a110"><div class="ttname"><a href="class_all_music.html#aaa210fe1ad480900bd4f8f9ea0a8a110">AllMusic::on_all_sort_toolButton_clicked</a></div><div class="ttdeci">void on_all_sort_toolButton_clicked()</div><div class="ttdoc">处理排序按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:544</div></div>
+<div class="ttc" id="aclass_all_music_html_ab6c42d383d83d4acdfb5081e799c29da"><div class="ttname"><a href="class_all_music.html#ab6c42d383d83d4acdfb5081e799c29da">AllMusic::m_searchAction</a></div><div class="ttdeci">QAction * m_searchAction</div><div class="ttdoc">搜索动作</div><div class="ttdef"><b>定义</b> AllMusic.h:252</div></div>
+<div class="ttc" id="aclass_all_music_html_ab868524a9562cda1f7b60b4220e2248e"><div class="ttname"><a href="class_all_music.html#ab868524a9562cda1f7b60b4220e2248e">AllMusic::enableButton</a></div><div class="ttdeci">void enableButton(const bool &amp;flag) const</div><div class="ttdoc">启用或禁用按钮</div><div class="ttdef"><b>定义</b> AllMusic.cpp:309</div></div>
+<div class="ttc" id="aclass_all_music_html_accec89bda858e77891a21593603d3642"><div class="ttname"><a href="class_all_music.html#accec89bda858e77891a21593603d3642">AllMusic::initAllPaid</a></div><div class="ttdeci">void initAllPaid()</div><div class="ttdoc">初始化已购音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.cpp:258</div></div>
+<div class="ttc" id="aclass_all_music_html_acd49958707a3d6e81ea739107a67c6a0"><div class="ttname"><a href="class_all_music.html#acd49958707a3d6e81ea739107a67c6a0">AllMusic::initAllWidget</a></div><div class="ttdeci">void initAllWidget()</div><div class="ttdoc">初始化全部音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.cpp:207</div></div>
+<div class="ttc" id="aclass_all_music_html_ad47442fcf7db8bd0dab09d79ad4c1d47"><div class="ttname"><a href="class_all_music.html#ad47442fcf7db8bd0dab09d79ad4c1d47">AllMusic::m_buttonGroup</a></div><div class="ttdeci">std::unique_ptr&lt; QButtonGroup &gt; m_buttonGroup</div><div class="ttdoc">按钮组</div><div class="ttdef"><b>定义</b> AllMusic.h:244</div></div>
+<div class="ttc" id="aclass_all_music_html_ad67a8f8c13a90fda48f45117bdcdb4fd"><div class="ttname"><a href="class_all_music.html#ad67a8f8c13a90fda48f45117bdcdb4fd">AllMusic::m_sortOptMenu</a></div><div class="ttdeci">SortOptionMenu * m_sortOptMenu</div><div class="ttdoc">排序选项菜单</div><div class="ttdef"><b>定义</b> AllMusic.h:253</div></div>
+<div class="ttc" id="aclass_all_music_html_ad6973c2856d85dfe89d87c160ce7275d"><div class="ttname"><a href="class_all_music.html#ad6973c2856d85dfe89d87c160ce7275d">AllMusic::initAllCloudDisk</a></div><div class="ttdeci">void initAllCloudDisk()</div><div class="ttdoc">初始化云盘音乐控件</div><div class="ttdef"><b>定义</b> AllMusic.cpp:268</div></div>
+<div class="ttc" id="aclass_all_music_html_ad90447e96324131fa50f5e06b6fd7d3e"><div class="ttname"><a href="class_all_music.html#ad90447e96324131fa50f5e06b6fd7d3e">AllMusic::on_recent_pushButton_clicked</a></div><div class="ttdeci">void on_recent_pushButton_clicked()</div><div class="ttdoc">处理最近按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:404</div></div>
+<div class="ttc" id="aclass_all_music_html_aeab41b278e449a68fbd1c98c9e1516a8"><div class="ttname"><a href="class_all_music.html#aeab41b278e449a68fbd1c98c9e1516a8">AllMusic::getMenuPosition</a></div><div class="ttdeci">void getMenuPosition(const QPoint &amp;pos)</div><div class="ttdoc">获取菜单显示位置</div><div class="ttdef"><b>定义</b> AllMusic.cpp:279</div></div>
+<div class="ttc" id="aclass_all_music_html_aebc31945fa34b123ada488d5710cce62"><div class="ttname"><a href="class_all_music.html#aebc31945fa34b123ada488d5710cce62">AllMusic::initIndexLab</a></div><div class="ttdeci">void initIndexLab()</div><div class="ttdoc">初始化索引标签</div><div class="ttdef"><b>定义</b> AllMusic.cpp:157</div></div>
+<div class="ttc" id="aclass_all_music_html_aed92bccc3e67d6b8357d2db9feeb950d"><div class="ttname"><a href="class_all_music.html#aed92bccc3e67d6b8357d2db9feeb950d">AllMusic::on_all_play_toolButton_clicked</a></div><div class="ttdeci">void on_all_play_toolButton_clicked()</div><div class="ttdoc">处理全部播放按钮点击</div><div class="ttdef"><b>定义</b> AllMusic.cpp:512</div></div>
+<div class="ttc" id="aclass_all_music_html_af394e10687f6b4ff9cb0b61bea405829"><div class="ttname"><a href="class_all_music.html#af394e10687f6b4ff9cb0b61bea405829">AllMusic::initAllSongList</a></div><div class="ttdeci">void initAllSongList()</div><div class="ttdoc">初始化歌单控件</div><div class="ttdef"><b>定义</b> AllMusic.cpp:228</div></div>
+<div class="ttc" id="aclass_all_music_html_afba6e95967cc3eb25fd518f7bde6ec04"><div class="ttname"><a href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04">AllMusic::initUi</a></div><div class="ttdeci">void initUi()</div><div class="ttdoc">初始化界面</div><div class="ttdef"><b>定义</b> AllMusic.cpp:70</div></div>
+<div class="ttc" id="aclass_q_button_group_html"><div class="ttname"><a href="class_q_button_group.html">QButtonGroup</a></div><div class="ttdoc">Qt 按钮组类，用于管理互斥按钮</div></div>
+<div class="ttc" id="aclass_sort_option_menu_html"><div class="ttname"><a href="class_sort_option_menu.html">SortOptionMenu</a></div><div class="ttdoc">歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式</div><div class="ttdef"><b>定义</b> SortOptionMenu.h:26</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_498ec84b4a3180a9b28d4c2c2e263734.html">AllMusic</a></li><li class="navelem"><a class="el" href="_all_music_8h.html">AllMusic.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

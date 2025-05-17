@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: swscale.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('swscale_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">swscale.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="swscale_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2001-2011 Michael Niedermayer &lt;michaelni@gmx.at&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifndef SWSCALE_SWSCALE_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define SWSCALE_SWSCALE_H</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="avutil_8h.html">libavutil/avutil.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">libavutil/log.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="pixfmt_8h.html">libavutil/pixfmt.h</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="tools_2ffmpeg_2win64_2include_2libswscale_2version_8h.html">version.h</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="group__libsws.html#gac879a3ada8130d32ba02a9265bfef253">   45</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="group__libsws.html#gac879a3ada8130d32ba02a9265bfef253">swscale_version</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="group__libsws.html#gab2d9cdff8aba8e5bb9e3691de864dc52">   50</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="group__libsws.html#gab2d9cdff8aba8e5bb9e3691de864dc52">swscale_configuration</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="group__libsws.html#ga5bc0b8f0d5c6702635fc93105208a0f9">   55</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="group__libsws.html#ga5bc0b8f0d5c6702635fc93105208a0f9">swscale_license</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/* values for the flags, the stuff on the command line is different */</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="group__libsws.html#ga6110064d9edfbec77ca5c3279cb75c31">   58</a></span><span class="preprocessor">#define SWS_FAST_BILINEAR     1</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="group__libsws.html#ga26b45a2c6df7c1637feab34fbb21a9bb">   59</a></span><span class="preprocessor">#define SWS_BILINEAR          2</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="group__libsws.html#ga02a4ee9d3c158e842941873d2cf83b9f">   60</a></span><span class="preprocessor">#define SWS_BICUBIC           4</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="group__libsws.html#ga5a8a563c525f7a71ef33368a782157a0">   61</a></span><span class="preprocessor">#define SWS_X                 8</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="group__libsws.html#gaae31eb0722e375c12d4fe7a028694491">   62</a></span><span class="preprocessor">#define SWS_POINT          0x10</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="group__libsws.html#ga702a05689a18ccd170e64fb664ebca57">   63</a></span><span class="preprocessor">#define SWS_AREA           0x20</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__libsws.html#ga867d1e9ac9ad1eafc33cc3e94041b091">   64</a></span><span class="preprocessor">#define SWS_BICUBLIN       0x40</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="group__libsws.html#ga6f8f44a4d92bc09eed63984bc3acf94a">   65</a></span><span class="preprocessor">#define SWS_GAUSS          0x80</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="group__libsws.html#ga783824f7ce78aff026e9f71f97be00be">   66</a></span><span class="preprocessor">#define SWS_SINC          0x100</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__libsws.html#gaae77dad7fc203836ce365378b35da167">   67</a></span><span class="preprocessor">#define SWS_LANCZOS       0x200</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="group__libsws.html#gaff798131b2051020f5539baddeeb4e12">   68</a></span><span class="preprocessor">#define SWS_SPLINE        0x400</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="group__libsws.html#ga3f5d541ffe1c4bf8a216c54f0de8eb11">   70</a></span><span class="preprocessor">#define SWS_SRC_V_CHR_DROP_MASK     0x30000</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="group__libsws.html#ga77331b2b4b9648ca47a3ca307a2151c5">   71</a></span><span class="preprocessor">#define SWS_SRC_V_CHR_DROP_SHIFT    16</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group__libsws.html#gad4a209577e10d655c2495349a96bb611">   73</a></span><span class="preprocessor">#define SWS_PARAM_DEFAULT           123456</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="group__libsws.html#ga4cc80734dcb486c315ca2061363c6ede">   75</a></span><span class="preprocessor">#define SWS_PRINT_INFO              0x1000</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">//the following 3 flags are not completely implemented</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">//internal chrominance subsampling info</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="group__libsws.html#ga4af3bbc6d873caa5ac0bef06f534e3c6">   79</a></span><span class="preprocessor">#define SWS_FULL_CHR_H_INT    0x2000</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">//input subsampling info</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="group__libsws.html#ga4b086de7216852cfc2e40f576285fc97">   81</a></span><span class="preprocessor">#define SWS_FULL_CHR_H_INP    0x4000</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="group__libsws.html#ga2d1c4cc56bf45e13ee8ce7e3bc199397">   82</a></span><span class="preprocessor">#define SWS_DIRECT_BGR        0x8000</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="group__libsws.html#ga2f63481f9ac7c35ea5ee7075f15c040e">   83</a></span><span class="preprocessor">#define SWS_ACCURATE_RND      0x40000</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="group__libsws.html#ga0042bbf5ffe1952e9794a0056792f89f">   84</a></span><span class="preprocessor">#define SWS_BITEXACT          0x80000</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="group__libsws.html#ga8ba8294c18e0dae9b7883aff1b5f7e89">   85</a></span><span class="preprocessor">#define SWS_ERROR_DIFFUSION  0x800000</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="group__libsws.html#gacc8f46b6954cae7d891a041793e2e751">   87</a></span><span class="preprocessor">#define SWS_MAX_REDUCE_CUTOFF 0.002</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="group__libsws.html#gab5d1f9b6f50c155496b358d348ed6f36">   89</a></span><span class="preprocessor">#define SWS_CS_ITU709         1</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="group__libsws.html#gaae1a28de2fd6fdd21a082bcc10ce6cb9">   90</a></span><span class="preprocessor">#define SWS_CS_FCC            4</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="group__libsws.html#gaf9de144a406b66c68bd29cdcaefaeee5">   91</a></span><span class="preprocessor">#define SWS_CS_ITU601         5</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group__libsws.html#gab3795e86c9f475f206a187d937c7f4fa">   92</a></span><span class="preprocessor">#define SWS_CS_ITU624         5</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="group__libsws.html#gac7287919a348578d8452c42c03d65042">   93</a></span><span class="preprocessor">#define SWS_CS_SMPTE170M      5</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="group__libsws.html#ga8a066eae69a34d9d60c73c40628094e4">   94</a></span><span class="preprocessor">#define SWS_CS_SMPTE240M      7</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="group__libsws.html#ga1867c2c57f3c0d18fa72592e30e7d3c2">   95</a></span><span class="preprocessor">#define SWS_CS_DEFAULT        5</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="group__libsws.html#ga0c8f55463ce3bd8904dedd7e73f29050">   96</a></span><span class="preprocessor">#define SWS_CS_BT2020         9</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="group__libsws.html#ga8c2a7d79bda5281ee2acdda359379f9e">  105</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> *<a class="code hl_function" href="group__libsws.html#ga8c2a7d79bda5281ee2acdda359379f9e">sws_getCoefficients</a>(<span class="keywordtype">int</span> colorspace);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">// when used for filters they must have an odd number of elements</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">// coeffs cannot be shared between vectors</span></div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="};">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="struct_sws_vector.html">  109</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="struct_sws_vector.html#a38cd6d23ed1cfb0e676053a520520390">  110</a></span>    <span class="keywordtype">double</span> *<a class="code hl_variable" href="struct_sws_vector.html#a38cd6d23ed1cfb0e676053a520520390">coeff</a>;              </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="struct_sws_vector.html#a9f59b34b1f25fe00023291b678246bcc">  111</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_sws_vector.html#a9f59b34b1f25fe00023291b678246bcc">length</a>;                 </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="group__libsws.html#ga9903e4683796e886b8be703cbc849e84">  112</a></span>} <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a>;</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">// vectors can be shared</span></div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="};">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="struct_sws_filter.html">  115</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="struct_sws_filter.html#aeb867c3687d89c8c1ae694aa3b3aa5bb">  116</a></span>    <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_variable" href="struct_sws_filter.html#aeb867c3687d89c8c1ae694aa3b3aa5bb">lumH</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="struct_sws_filter.html#ac7c7bbe4bd6eae3d48324517b193111c">  117</a></span>    <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_variable" href="struct_sws_filter.html#ac7c7bbe4bd6eae3d48324517b193111c">lumV</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="struct_sws_filter.html#ae02d4afc1fd0979cdc881360bbb6f07e">  118</a></span>    <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_variable" href="struct_sws_filter.html#ae02d4afc1fd0979cdc881360bbb6f07e">chrH</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="struct_sws_filter.html#a0bcabadd81ac9e6f730d8645ace2c811">  119</a></span>    <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_variable" href="struct_sws_filter.html#a0bcabadd81ac9e6f730d8645ace2c811">chrV</a>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="group__libsws.html#gaed49e40b2ec4227883104d9a82b94cdf">  120</a></span>} <a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a>;</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">struct </span>SwsContext;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="group__libsws.html#gab5e631b602510bd3fa3a5a7d509e573d">  128</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__libsws.html#gab5e631b602510bd3fa3a5a7d509e573d">sws_isSupportedInput</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="group__libsws.html#ga6885dc8ec36e8f2e701924263aa92cb0">  134</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__libsws.html#ga6885dc8ec36e8f2e701924263aa92cb0">sws_isSupportedOutput</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="group__libsws.html#ga67f865ce22ae986ea84f4d7ce60ef182">  141</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__libsws.html#ga67f865ce22ae986ea84f4d7ce60ef182">sws_isSupportedEndiannessConversion</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="group__libsws.html#gaa01c5d817e4edae0691df48dba612cb8">  148</a></span><span class="keyword">struct </span>SwsContext *<a class="code hl_function" href="group__libsws.html#gaa01c5d817e4edae0691df48dba612cb8">sws_alloc_context</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><a class="code hl_define" href="attributes_8h.html#a93f17e0f0b53a66e7b5eceb3dff2918f">av_warn_unused_result</a></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="group__libsws.html#ga2120f2a4fb3aa075cb0aff06eb5b55cb">  157</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__libsws.html#ga2120f2a4fb3aa075cb0aff06eb5b55cb">sws_init_context</a>(<span class="keyword">struct</span> SwsContext *sws_context, <a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> *srcFilter, <a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> *dstFilter);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="group__libsws.html#gad3af0ca76f071dbe0173444db9882932">  163</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#gad3af0ca76f071dbe0173444db9882932">sws_freeContext</a>(<span class="keyword">struct</span> SwsContext *swsContext);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="group__libsws.html#ga638914a845d4e4fe683cec3caaff734e">  186</a></span><span class="keyword">struct </span>SwsContext *<a class="code hl_function" href="group__libsws.html#ga638914a845d4e4fe683cec3caaff734e">sws_getContext</a>(<span class="keywordtype">int</span> srcW, <span class="keywordtype">int</span> srcH, <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> srcFormat,</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                                  <span class="keywordtype">int</span> dstW, <span class="keywordtype">int</span> dstH, <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> dstFormat,</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                                  <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, <a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> *srcFilter,</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                                  <a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> *dstFilter, <span class="keyword">const</span> <span class="keywordtype">double</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a5c586586e43adddacf9f74b10ec40a0b">param</a>);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="group__libsws.html#gae531c9754c9205d90ad6800015046d74">  217</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__libsws.html#gae531c9754c9205d90ad6800015046d74">sws_scale</a>(<span class="keyword">struct</span> SwsContext *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<span class="keyword">const</span> srcSlice[],</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>              <span class="keyword">const</span> <span class="keywordtype">int</span> srcStride[], <span class="keywordtype">int</span> srcSliceY, <span class="keywordtype">int</span> srcSliceH,</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>              <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>[], <span class="keyword">const</span> <span class="keywordtype">int</span> dstStride[]);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="group__libsws.html#ga541bdffa8149f5f9203664f955faa040">  231</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__libsws.html#ga541bdffa8149f5f9203664f955faa040">sws_setColorspaceDetails</a>(<span class="keyword">struct</span> SwsContext *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>, <span class="keyword">const</span> <span class="keywordtype">int</span> inv_table[4],</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                             <span class="keywordtype">int</span> srcRange, <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ae45e70612085f6f870e2d650029e5510">table</a>[4], <span class="keywordtype">int</span> dstRange,</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                             <span class="keywordtype">int</span> brightness, <span class="keywordtype">int</span> contrast, <span class="keywordtype">int</span> saturation);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="group__libsws.html#ga098dc4b69a97b616fc35791aec249ff1">  238</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__libsws.html#ga098dc4b69a97b616fc35791aec249ff1">sws_getColorspaceDetails</a>(<span class="keyword">struct</span> SwsContext *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>, <span class="keywordtype">int</span> **inv_table,</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                             <span class="keywordtype">int</span> *srcRange, <span class="keywordtype">int</span> **<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ae45e70612085f6f870e2d650029e5510">table</a>, <span class="keywordtype">int</span> *dstRange,</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                             <span class="keywordtype">int</span> *brightness, <span class="keywordtype">int</span> *contrast, <span class="keywordtype">int</span> *saturation);</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="group__libsws.html#ga7dfc79582bea9aaf0bcf4bb308c0f3f0">  245</a></span><a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_function" href="group__libsws.html#ga7dfc79582bea9aaf0bcf4bb308c0f3f0">sws_allocVec</a>(<span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="group__libsws.html#ga873f630c7ae479fee1597924a2409fcd">  251</a></span><a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_function" href="group__libsws.html#ga873f630c7ae479fee1597924a2409fcd">sws_getGaussianVec</a>(<span class="keywordtype">double</span> variance, <span class="keywordtype">double</span> quality);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="group__libsws.html#gaf79fd6cabde06a0f2d118eb373bf83c6">  256</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#gaf79fd6cabde06a0f2d118eb373bf83c6">sws_scaleVec</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <span class="keywordtype">double</span> scalar);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="group__libsws.html#gab40ce33fa0a432f1ba57dda9f740380d">  261</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#gab40ce33fa0a432f1ba57dda9f740380d">sws_normalizeVec</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <span class="keywordtype">double</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#aa352f2804b9902ac30769c00dde75d5f">height</a>);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="preprocessor">#if FF_API_SWS_VECTOR</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="group__libsws.html#gaeeb1e50eb770c12c4f0e4ab5c9dc673e">  264</a></span><a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_function" href="group__libsws.html#gaeeb1e50eb770c12c4f0e4ab5c9dc673e">sws_getConstVec</a>(<span class="keywordtype">double</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="group__libsws.html#ga7db9f7f643cc43be798cc8b01d0642bb">  265</a></span><a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_function" href="group__libsws.html#ga7db9f7f643cc43be798cc8b01d0642bb">sws_getIdentityVec</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="group__libsws.html#ga90a7634854479a5a172c54939bd07101">  266</a></span><a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga90a7634854479a5a172c54939bd07101">sws_convVec</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="group__libsws.html#ga18063bec21c8b2ff9ff9edd611a7f01f">  267</a></span><a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga18063bec21c8b2ff9ff9edd611a7f01f">sws_addVec</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="group__libsws.html#ga0124c4e8cb7405220d671794c4351f70">  268</a></span><a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga0124c4e8cb7405220d671794c4351f70">sws_subVec</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="group__libsws.html#ga3c303b7b0c40ca2d3df6c3467869e26b">  269</a></span><a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga3c303b7b0c40ca2d3df6c3467869e26b">sws_shiftVec</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <span class="keywordtype">int</span> shift);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="group__libsws.html#ga0dcd39786f079f6af49bf66b8519e178">  270</a></span><a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_function" href="group__libsws.html#ga0dcd39786f079f6af49bf66b8519e178">sws_cloneVec</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="group__libsws.html#ga8b005054bbaed15d803d966186de2ee4">  271</a></span><a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga8b005054bbaed15d803d966186de2ee4">sws_printVec2</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> *log_ctx, <span class="keywordtype">int</span> log_level);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="group__libsws.html#ga5745e8384365fd5c6b0a3241d6ab767b">  274</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga5745e8384365fd5c6b0a3241d6ab767b">sws_freeVec</a>(<a class="code hl_struct" href="struct_sws_vector.html">SwsVector</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="group__libsws.html#ga62206af736294f8cd90716877223d2af">  276</a></span><a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> *<a class="code hl_function" href="group__libsws.html#ga62206af736294f8cd90716877223d2af">sws_getDefaultFilter</a>(<span class="keywordtype">float</span> lumaGBlur, <span class="keywordtype">float</span> chromaGBlur,</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                                <span class="keywordtype">float</span> lumaSharpen, <span class="keywordtype">float</span> chromaSharpen,</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                                <span class="keywordtype">float</span> chromaHShift, <span class="keywordtype">float</span> chromaVShift,</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                                <span class="keywordtype">int</span> verbose);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="group__libsws.html#ga17b762761f7a53d596841ac0f2d4a2b5">  280</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga17b762761f7a53d596841ac0f2d4a2b5">sws_freeFilter</a>(<a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter</a>);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="group__libsws.html#ga11e2a5826833e5cfe41be62d1a6338ed">  294</a></span><span class="keyword">struct </span>SwsContext *<a class="code hl_function" href="group__libsws.html#ga11e2a5826833e5cfe41be62d1a6338ed">sws_getCachedContext</a>(<span class="keyword">struct</span> SwsContext *<a class="code hl_class" href="classcontext.html">context</a>,</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                                        <span class="keywordtype">int</span> srcW, <span class="keywordtype">int</span> srcH, <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> srcFormat,</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                                        <span class="keywordtype">int</span> dstW, <span class="keywordtype">int</span> dstH, <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> dstFormat,</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                                        <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, <a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> *srcFilter,</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                                        <a class="code hl_struct" href="struct_sws_filter.html">SwsFilter</a> *dstFilter, <span class="keyword">const</span> <span class="keywordtype">double</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a5c586586e43adddacf9f74b10ec40a0b">param</a>);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno"><a class="line" href="group__libsws.html#ga2a140989dfed29dd91065352b6a52840">  310</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga2a140989dfed29dd91065352b6a52840">sws_convertPalette8ToPacked32</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>, <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <span class="keywordtype">int</span> num_pixels, <span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *palette);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="group__libsws.html#ga3c3d094eb840e10fbc3a37c20a6c8585">  322</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__libsws.html#ga3c3d094eb840e10fbc3a37c20a6c8585">sws_convertPalette8ToPacked24</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>, <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <span class="keywordtype">int</span> num_pixels, <span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *palette);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span></div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="group__libsws.html#ga9952d942bbc700df8b9913a854ae36a3">  330</a></span><span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> *<a class="code hl_function" href="group__libsws.html#ga9952d942bbc700df8b9913a854ae36a3">sws_get_class</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="preprocessor">#endif </span><span class="comment">/* SWSCALE_SWSCALE_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:29</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_aa352f2804b9902ac30769c00dde75d5f"><div class="ttname"><a href="_s_d_l__opengl_8h.html#aa352f2804b9902ac30769c00dde75d5f">height</a></div><div class="ttdeci">GLint GLint GLsizei GLsizei height</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1572</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a0f71581a41fd2264c8944126dabbd010"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a></div><div class="ttdeci">GLboolean GLboolean GLboolean b</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1417</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a1f2d7f8147412c43ba2303a56f97ee73"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a></div><div class="ttdeci">const GLubyte * c</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:13129</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a3309789fc188587d666cda5ece79cf82"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a></div><div class="ttdeci">GLboolean GLboolean GLboolean GLboolean a</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1417</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a5c586586e43adddacf9f74b10ec40a0b"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a5c586586e43adddacf9f74b10ec40a0b">param</a></div><div class="ttdeci">GLfloat param</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:668</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a72e0fdf0f845ded60b1fada9e9195cd7"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a></div><div class="ttdeci">GLenum src</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2011</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a92034251bfd455d524a9b5610cddba00"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a></div><div class="ttdeci">GLenum GLenum dst</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2011</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa9459b47e7388437191d2d9a69c10d98"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a></div><div class="ttdeci">GLbitfield flags</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1754</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab3664546554b8fc4b0b5a1a981ad97ec"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter</a></div><div class="ttdeci">GLint GLint GLint GLint GLint GLint GLint GLbitfield GLenum filter</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1492</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab9c919755bde3b34349e23a32b4e0fa7"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a></div><div class="ttdeci">GLuint GLsizei GLsizei * length</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:961</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ae45e70612085f6f870e2d650029e5510"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ae45e70612085f6f870e2d650029e5510">table</a></div><div class="ttdeci">GLenum GLenum GLsizei void * table</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:3010</div></div>
+<div class="ttc" id="aattributes_8h_html_a93f17e0f0b53a66e7b5eceb3dff2918f"><div class="ttname"><a href="attributes_8h.html#a93f17e0f0b53a66e7b5eceb3dff2918f">av_warn_unused_result</a></div><div class="ttdeci">#define av_warn_unused_result</div><div class="ttdef"><b>定义</b> attributes.h:58</div></div>
+<div class="ttc" id="aattributes_8h_html_aa6d076561d3a9eea4729ee632652de02"><div class="ttname"><a href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a></div><div class="ttdeci">#define attribute_deprecated</div><div class="ttdef"><b>定义</b> attributes.h:98</div></div>
+<div class="ttc" id="aavutil_8h_html"><div class="ttname"><a href="avutil_8h.html">avutil.h</a></div><div class="ttdoc">Convenience header that includes libavutil&#39;s core.</div></div>
+<div class="ttc" id="aclasscontext_html"><div class="ttname"><a href="classcontext.html">context</a></div><div class="ttdef"><b>定义</b> base.h:2627</div></div>
+<div class="ttc" id="agroup__libsws_html_ga0124c4e8cb7405220d671794c4351f70"><div class="ttname"><a href="group__libsws.html#ga0124c4e8cb7405220d671794c4351f70">sws_subVec</a></div><div class="ttdeci">attribute_deprecated void sws_subVec(SwsVector *a, SwsVector *b)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga098dc4b69a97b616fc35791aec249ff1"><div class="ttname"><a href="group__libsws.html#ga098dc4b69a97b616fc35791aec249ff1">sws_getColorspaceDetails</a></div><div class="ttdeci">int sws_getColorspaceDetails(struct SwsContext *c, int **inv_table, int *srcRange, int **table, int *dstRange, int *brightness, int *contrast, int *saturation)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga0dcd39786f079f6af49bf66b8519e178"><div class="ttname"><a href="group__libsws.html#ga0dcd39786f079f6af49bf66b8519e178">sws_cloneVec</a></div><div class="ttdeci">attribute_deprecated SwsVector * sws_cloneVec(SwsVector *a)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga11e2a5826833e5cfe41be62d1a6338ed"><div class="ttname"><a href="group__libsws.html#ga11e2a5826833e5cfe41be62d1a6338ed">sws_getCachedContext</a></div><div class="ttdeci">struct SwsContext * sws_getCachedContext(struct SwsContext *context, int srcW, int srcH, enum AVPixelFormat srcFormat, int dstW, int dstH, enum AVPixelFormat dstFormat, int flags, SwsFilter *srcFilter, SwsFilter *dstFilter, const double *param)</div><div class="ttdoc">Check if context can be reused, otherwise reallocate a new one.</div></div>
+<div class="ttc" id="agroup__libsws_html_ga17b762761f7a53d596841ac0f2d4a2b5"><div class="ttname"><a href="group__libsws.html#ga17b762761f7a53d596841ac0f2d4a2b5">sws_freeFilter</a></div><div class="ttdeci">void sws_freeFilter(SwsFilter *filter)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga18063bec21c8b2ff9ff9edd611a7f01f"><div class="ttname"><a href="group__libsws.html#ga18063bec21c8b2ff9ff9edd611a7f01f">sws_addVec</a></div><div class="ttdeci">attribute_deprecated void sws_addVec(SwsVector *a, SwsVector *b)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga2120f2a4fb3aa075cb0aff06eb5b55cb"><div class="ttname"><a href="group__libsws.html#ga2120f2a4fb3aa075cb0aff06eb5b55cb">sws_init_context</a></div><div class="ttdeci">av_warn_unused_result int sws_init_context(struct SwsContext *sws_context, SwsFilter *srcFilter, SwsFilter *dstFilter)</div><div class="ttdoc">Initialize the swscaler context sws_context.</div></div>
+<div class="ttc" id="agroup__libsws_html_ga2a140989dfed29dd91065352b6a52840"><div class="ttname"><a href="group__libsws.html#ga2a140989dfed29dd91065352b6a52840">sws_convertPalette8ToPacked32</a></div><div class="ttdeci">void sws_convertPalette8ToPacked32(const uint8_t *src, uint8_t *dst, int num_pixels, const uint8_t *palette)</div><div class="ttdoc">Convert an 8-bit paletted frame into a frame with a color depth of 32 bits.</div></div>
+<div class="ttc" id="agroup__libsws_html_ga3c303b7b0c40ca2d3df6c3467869e26b"><div class="ttname"><a href="group__libsws.html#ga3c303b7b0c40ca2d3df6c3467869e26b">sws_shiftVec</a></div><div class="ttdeci">attribute_deprecated void sws_shiftVec(SwsVector *a, int shift)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga3c3d094eb840e10fbc3a37c20a6c8585"><div class="ttname"><a href="group__libsws.html#ga3c3d094eb840e10fbc3a37c20a6c8585">sws_convertPalette8ToPacked24</a></div><div class="ttdeci">void sws_convertPalette8ToPacked24(const uint8_t *src, uint8_t *dst, int num_pixels, const uint8_t *palette)</div><div class="ttdoc">Convert an 8-bit paletted frame into a frame with a color depth of 24 bits.</div></div>
+<div class="ttc" id="agroup__libsws_html_ga541bdffa8149f5f9203664f955faa040"><div class="ttname"><a href="group__libsws.html#ga541bdffa8149f5f9203664f955faa040">sws_setColorspaceDetails</a></div><div class="ttdeci">int sws_setColorspaceDetails(struct SwsContext *c, const int inv_table[4], int srcRange, const int table[4], int dstRange, int brightness, int contrast, int saturation)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga5745e8384365fd5c6b0a3241d6ab767b"><div class="ttname"><a href="group__libsws.html#ga5745e8384365fd5c6b0a3241d6ab767b">sws_freeVec</a></div><div class="ttdeci">void sws_freeVec(SwsVector *a)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga5bc0b8f0d5c6702635fc93105208a0f9"><div class="ttname"><a href="group__libsws.html#ga5bc0b8f0d5c6702635fc93105208a0f9">swscale_license</a></div><div class="ttdeci">const char * swscale_license(void)</div><div class="ttdoc">Return the libswscale license.</div></div>
+<div class="ttc" id="agroup__libsws_html_ga62206af736294f8cd90716877223d2af"><div class="ttname"><a href="group__libsws.html#ga62206af736294f8cd90716877223d2af">sws_getDefaultFilter</a></div><div class="ttdeci">SwsFilter * sws_getDefaultFilter(float lumaGBlur, float chromaGBlur, float lumaSharpen, float chromaSharpen, float chromaHShift, float chromaVShift, int verbose)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga638914a845d4e4fe683cec3caaff734e"><div class="ttname"><a href="group__libsws.html#ga638914a845d4e4fe683cec3caaff734e">sws_getContext</a></div><div class="ttdeci">struct SwsContext * sws_getContext(int srcW, int srcH, enum AVPixelFormat srcFormat, int dstW, int dstH, enum AVPixelFormat dstFormat, int flags, SwsFilter *srcFilter, SwsFilter *dstFilter, const double *param)</div><div class="ttdoc">Allocate and return an SwsContext.</div></div>
+<div class="ttc" id="agroup__libsws_html_ga67f865ce22ae986ea84f4d7ce60ef182"><div class="ttname"><a href="group__libsws.html#ga67f865ce22ae986ea84f4d7ce60ef182">sws_isSupportedEndiannessConversion</a></div><div class="ttdeci">int sws_isSupportedEndiannessConversion(enum AVPixelFormat pix_fmt)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga6885dc8ec36e8f2e701924263aa92cb0"><div class="ttname"><a href="group__libsws.html#ga6885dc8ec36e8f2e701924263aa92cb0">sws_isSupportedOutput</a></div><div class="ttdeci">int sws_isSupportedOutput(enum AVPixelFormat pix_fmt)</div><div class="ttdoc">Return a positive value if pix_fmt is a supported output format, 0 otherwise.</div></div>
+<div class="ttc" id="agroup__libsws_html_ga7db9f7f643cc43be798cc8b01d0642bb"><div class="ttname"><a href="group__libsws.html#ga7db9f7f643cc43be798cc8b01d0642bb">sws_getIdentityVec</a></div><div class="ttdeci">attribute_deprecated SwsVector * sws_getIdentityVec(void)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga7dfc79582bea9aaf0bcf4bb308c0f3f0"><div class="ttname"><a href="group__libsws.html#ga7dfc79582bea9aaf0bcf4bb308c0f3f0">sws_allocVec</a></div><div class="ttdeci">SwsVector * sws_allocVec(int length)</div><div class="ttdoc">Allocate and return an uninitialized vector with length coefficients.</div></div>
+<div class="ttc" id="agroup__libsws_html_ga873f630c7ae479fee1597924a2409fcd"><div class="ttname"><a href="group__libsws.html#ga873f630c7ae479fee1597924a2409fcd">sws_getGaussianVec</a></div><div class="ttdeci">SwsVector * sws_getGaussianVec(double variance, double quality)</div><div class="ttdoc">Return a normalized Gaussian curve used to filter stuff quality = 3 is high quality,...</div></div>
+<div class="ttc" id="agroup__libsws_html_ga8b005054bbaed15d803d966186de2ee4"><div class="ttname"><a href="group__libsws.html#ga8b005054bbaed15d803d966186de2ee4">sws_printVec2</a></div><div class="ttdeci">attribute_deprecated void sws_printVec2(SwsVector *a, AVClass *log_ctx, int log_level)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga8c2a7d79bda5281ee2acdda359379f9e"><div class="ttname"><a href="group__libsws.html#ga8c2a7d79bda5281ee2acdda359379f9e">sws_getCoefficients</a></div><div class="ttdeci">const int * sws_getCoefficients(int colorspace)</div><div class="ttdoc">Return a pointer to yuv&lt;-&gt;rgb coefficients for the given colorspace suitable for sws_setColorspaceDet...</div></div>
+<div class="ttc" id="agroup__libsws_html_ga90a7634854479a5a172c54939bd07101"><div class="ttname"><a href="group__libsws.html#ga90a7634854479a5a172c54939bd07101">sws_convVec</a></div><div class="ttdeci">attribute_deprecated void sws_convVec(SwsVector *a, SwsVector *b)</div></div>
+<div class="ttc" id="agroup__libsws_html_ga9952d942bbc700df8b9913a854ae36a3"><div class="ttname"><a href="group__libsws.html#ga9952d942bbc700df8b9913a854ae36a3">sws_get_class</a></div><div class="ttdeci">const AVClass * sws_get_class(void)</div><div class="ttdoc">Get the AVClass for swsContext.</div></div>
+<div class="ttc" id="agroup__libsws_html_gaa01c5d817e4edae0691df48dba612cb8"><div class="ttname"><a href="group__libsws.html#gaa01c5d817e4edae0691df48dba612cb8">sws_alloc_context</a></div><div class="ttdeci">struct SwsContext * sws_alloc_context(void)</div><div class="ttdoc">Allocate an empty SwsContext.</div></div>
+<div class="ttc" id="agroup__libsws_html_gab2d9cdff8aba8e5bb9e3691de864dc52"><div class="ttname"><a href="group__libsws.html#gab2d9cdff8aba8e5bb9e3691de864dc52">swscale_configuration</a></div><div class="ttdeci">const char * swscale_configuration(void)</div><div class="ttdoc">Return the libswscale build-time configuration.</div></div>
+<div class="ttc" id="agroup__libsws_html_gab40ce33fa0a432f1ba57dda9f740380d"><div class="ttname"><a href="group__libsws.html#gab40ce33fa0a432f1ba57dda9f740380d">sws_normalizeVec</a></div><div class="ttdeci">void sws_normalizeVec(SwsVector *a, double height)</div><div class="ttdoc">Scale all the coefficients of a so that their sum equals height.</div></div>
+<div class="ttc" id="agroup__libsws_html_gab5e631b602510bd3fa3a5a7d509e573d"><div class="ttname"><a href="group__libsws.html#gab5e631b602510bd3fa3a5a7d509e573d">sws_isSupportedInput</a></div><div class="ttdeci">int sws_isSupportedInput(enum AVPixelFormat pix_fmt)</div><div class="ttdoc">Return a positive value if pix_fmt is a supported input format, 0 otherwise.</div></div>
+<div class="ttc" id="agroup__libsws_html_gac879a3ada8130d32ba02a9265bfef253"><div class="ttname"><a href="group__libsws.html#gac879a3ada8130d32ba02a9265bfef253">swscale_version</a></div><div class="ttdeci">unsigned swscale_version(void)</div></div>
+<div class="ttc" id="agroup__libsws_html_gad3af0ca76f071dbe0173444db9882932"><div class="ttname"><a href="group__libsws.html#gad3af0ca76f071dbe0173444db9882932">sws_freeContext</a></div><div class="ttdeci">void sws_freeContext(struct SwsContext *swsContext)</div><div class="ttdoc">Free the swscaler context swsContext.</div></div>
+<div class="ttc" id="agroup__libsws_html_gae531c9754c9205d90ad6800015046d74"><div class="ttname"><a href="group__libsws.html#gae531c9754c9205d90ad6800015046d74">sws_scale</a></div><div class="ttdeci">int sws_scale(struct SwsContext *c, const uint8_t *const srcSlice[], const int srcStride[], int srcSliceY, int srcSliceH, uint8_t *const dst[], const int dstStride[])</div><div class="ttdoc">Scale the image slice in srcSlice and put the resulting scaled slice in the image in dst.</div></div>
+<div class="ttc" id="agroup__libsws_html_gaeeb1e50eb770c12c4f0e4ab5c9dc673e"><div class="ttname"><a href="group__libsws.html#gaeeb1e50eb770c12c4f0e4ab5c9dc673e">sws_getConstVec</a></div><div class="ttdeci">attribute_deprecated SwsVector * sws_getConstVec(double c, int length)</div></div>
+<div class="ttc" id="agroup__libsws_html_gaf79fd6cabde06a0f2d118eb373bf83c6"><div class="ttname"><a href="group__libsws.html#gaf79fd6cabde06a0f2d118eb373bf83c6">sws_scaleVec</a></div><div class="ttdeci">void sws_scaleVec(SwsVector *a, double scalar)</div><div class="ttdoc">Scale all the coefficients of a by the scalar value.</div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="apixfmt_8h_html"><div class="ttname"><a href="pixfmt_8h.html">pixfmt.h</a></div><div class="ttdoc">pixel format definitions</div></div>
+<div class="ttc" id="apixfmt_8h_html_a9a8e335cf3be472042bc9f0cf80cd4c5"><div class="ttname"><a href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a></div><div class="ttdeci">AVPixelFormat</div><div class="ttdoc">Pixel format.</div><div class="ttdef"><b>定义</b> pixfmt.h:60</div></div>
+<div class="ttc" id="astruct_a_v_class_html"><div class="ttname"><a href="struct_a_v_class.html">AVClass</a></div><div class="ttdoc">Describe the class of an AVClass context structure.</div><div class="ttdef"><b>定义</b> log.h:67</div></div>
+<div class="ttc" id="astruct_sws_filter_html"><div class="ttname"><a href="struct_sws_filter.html">SwsFilter</a></div><div class="ttdef"><b>定义</b> swscale.h:115</div></div>
+<div class="ttc" id="astruct_sws_filter_html_a0bcabadd81ac9e6f730d8645ace2c811"><div class="ttname"><a href="struct_sws_filter.html#a0bcabadd81ac9e6f730d8645ace2c811">SwsFilter::chrV</a></div><div class="ttdeci">SwsVector * chrV</div><div class="ttdef"><b>定义</b> swscale.h:119</div></div>
+<div class="ttc" id="astruct_sws_filter_html_ac7c7bbe4bd6eae3d48324517b193111c"><div class="ttname"><a href="struct_sws_filter.html#ac7c7bbe4bd6eae3d48324517b193111c">SwsFilter::lumV</a></div><div class="ttdeci">SwsVector * lumV</div><div class="ttdef"><b>定义</b> swscale.h:117</div></div>
+<div class="ttc" id="astruct_sws_filter_html_ae02d4afc1fd0979cdc881360bbb6f07e"><div class="ttname"><a href="struct_sws_filter.html#ae02d4afc1fd0979cdc881360bbb6f07e">SwsFilter::chrH</a></div><div class="ttdeci">SwsVector * chrH</div><div class="ttdef"><b>定义</b> swscale.h:118</div></div>
+<div class="ttc" id="astruct_sws_filter_html_aeb867c3687d89c8c1ae694aa3b3aa5bb"><div class="ttname"><a href="struct_sws_filter.html#aeb867c3687d89c8c1ae694aa3b3aa5bb">SwsFilter::lumH</a></div><div class="ttdeci">SwsVector * lumH</div><div class="ttdef"><b>定义</b> swscale.h:116</div></div>
+<div class="ttc" id="astruct_sws_vector_html"><div class="ttname"><a href="struct_sws_vector.html">SwsVector</a></div><div class="ttdef"><b>定义</b> swscale.h:109</div></div>
+<div class="ttc" id="astruct_sws_vector_html_a38cd6d23ed1cfb0e676053a520520390"><div class="ttname"><a href="struct_sws_vector.html#a38cd6d23ed1cfb0e676053a520520390">SwsVector::coeff</a></div><div class="ttdeci">double * coeff</div><div class="ttdoc">pointer to the list of coefficients</div><div class="ttdef"><b>定义</b> swscale.h:110</div></div>
+<div class="ttc" id="astruct_sws_vector_html_a9f59b34b1f25fe00023291b678246bcc"><div class="ttname"><a href="struct_sws_vector.html#a9f59b34b1f25fe00023291b678246bcc">SwsVector::length</a></div><div class="ttdeci">int length</div><div class="ttdoc">number of coefficients in the vector</div><div class="ttdef"><b>定义</b> swscale.h:111</div></div>
+<div class="ttc" id="atools_2ffmpeg_2win64_2include_2libswscale_2version_8h_html"><div class="ttname"><a href="tools_2ffmpeg_2win64_2include_2libswscale_2version_8h.html">version.h</a></div><div class="ttdoc">swscale version macros</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_f26029fe823e2ffa8eea2919a6dcd9cb.html">libswscale</a></li><li class="navelem"><a class="el" href="swscale_8h.html">swscale.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

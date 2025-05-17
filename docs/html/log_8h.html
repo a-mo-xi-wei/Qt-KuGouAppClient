@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: log.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('log_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">log.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="avutil_8h_source.html">avutil.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="attributes_8h_source.html">attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h_source.html">version.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+log.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="log_8h__incl.png" border="0" usemap="#alog_8h" alt=""/></div>
+<map name="alog_8h" id="alog_8h">
+<area shape="rect" title=" " alt="" coords="875,5,924,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,74,107"/>
+<area shape="poly" title=" " alt="" coords="874,23,561,37,330,55,93,83,89,83,88,78,92,77,330,49,561,31,874,18"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="868,80,931,107"/>
+<area shape="poly" title=" " alt="" coords="895,33,893,65,888,64,890,32"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="340,304,427,331"/>
+<area shape="poly" title=" " alt="" coords="875,25,726,45,622,62,510,84,402,112,306,146,265,165,232,186,206,207,190,231,186,243,190,254,206,264,240,275,326,299,324,304,238,281,204,268,185,258,180,243,185,228,202,204,229,181,263,160,304,141,400,107,509,79,621,57,725,39,874,20"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="1434,229,1509,256"/>
+<area shape="poly" title=" " alt="" coords="925,17,1016,20,1078,26,1148,37,1221,54,1295,78,1365,110,1429,153,1453,182,1467,214,1462,216,1448,184,1426,157,1363,115,1293,83,1220,59,1147,42,1078,31,1015,25,925,22"/>
+<area shape="poly" title=" " alt="" coords="904,79,906,47,911,48,909,80"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="858,155,941,181"/>
+<area shape="poly" title=" " alt="" coords="902,107,902,139,897,139,897,107"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="1434,304,1509,331"/>
+<area shape="poly" title=" " alt="" coords="932,93,1039,99,1183,110,1326,128,1385,139,1428,152,1461,166,1486,180,1506,199,1523,228,1527,246,1522,264,1500,295,1496,292,1517,262,1522,246,1518,230,1501,202,1482,184,1458,171,1427,157,1384,144,1325,133,1183,116,1038,104,931,99"/>
+<area shape="poly" title=" " alt="" coords="932,93,1033,98,1168,108,1301,126,1354,138,1394,152,1414,165,1431,181,1458,214,1454,218,1427,185,1410,169,1392,157,1353,143,1300,131,1168,113,1033,103,932,98"/>
+<area shape="rect" href="error_8h.html" title="error code definitions" alt="" coords="1036,304,1094,331"/>
+<area shape="poly" title=" " alt="" coords="932,101,977,117,1029,143,1080,180,1102,202,1119,228,1124,246,1119,265,1095,295,1091,292,1114,262,1118,246,1114,230,1097,206,1076,184,1027,148,975,122,931,106"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="346,229,421,256"/>
+<area shape="poly" title=" " alt="" coords="868,106,437,229,435,224,866,101"/>
+<area shape="rect" href="mathematics_8h.html" title=" " alt="" coords="292,155,400,181"/>
+<area shape="poly" title=" " alt="" coords="868,101,416,160,415,155,867,96"/>
+<area shape="rect" href="pixfmt_8h.html" title="pixel format definitions" alt="" coords="1312,155,1380,181"/>
+<area shape="poly" title=" " alt="" coords="932,97,1297,156,1297,161,931,102"/>
+<area shape="poly" title=" " alt="" coords="941,151,959,155,967,168,964,176,957,182,954,177,960,173,962,168,956,160,940,157"/>
+<area shape="rect" title=" " alt="" coords="1112,379,1173,405"/>
+<area shape="poly" title=" " alt="" coords="941,166,984,169,1032,178,1079,197,1100,210,1119,228,1138,260,1148,296,1150,333,1149,363,1143,363,1145,333,1142,297,1133,262,1115,231,1097,215,1076,201,1030,183,983,174,941,171"/>
+<area shape="rect" title=" " alt="" coords="767,229,845,256"/>
+<area shape="poly" title=" " alt="" coords="885,184,836,222,833,218,882,180"/>
+<area shape="rect" title=" " alt="" coords="580,304,643,331"/>
+<area shape="poly" title=" " alt="" coords="867,184,757,232,696,265,644,298,641,293,694,261,754,227,865,179"/>
+<area shape="rect" title=" " alt="" coords="445,229,506,256"/>
+<area shape="poly" title=" " alt="" coords="858,178,711,199,525,232,522,233,521,227,524,227,710,194,857,172"/>
+<area shape="rect" title=" " alt="" coords="251,304,316,331"/>
+<area shape="poly" title=" " alt="" coords="858,175,727,193,648,209,570,232,545,245,519,258,469,275,428,286,331,306,330,301,427,280,468,270,517,254,542,240,568,227,647,204,727,188,857,170"/>
+<area shape="rect" title=" " alt="" coords="869,229,930,256"/>
+<area shape="poly" title=" " alt="" coords="902,182,902,214,897,214,897,182"/>
+<area shape="rect" title=" " alt="" coords="953,229,1016,256"/>
+<area shape="poly" title=" " alt="" coords="916,180,961,217,957,221,913,184"/>
+<area shape="rect" title=" " alt="" coords="1041,229,1105,256"/>
+<area shape="poly" title=" " alt="" coords="931,179,1030,220,1027,225,929,184"/>
+<area shape="poly" title=" " alt="" coords="859,182,785,202,703,232,680,245,655,258,600,277,543,291,443,311,442,305,542,286,598,272,653,254,677,241,701,227,783,197,857,177"/>
+<area shape="poly" title=" " alt="" coords="942,176,1161,227,1419,298,1418,303,1160,232,941,181"/>
+<area shape="poly" title=" " alt="" coords="941,170,1144,188,1279,204,1419,226,1419,231,1278,210,1143,193,941,175"/>
+<area shape="rect" href="avconfig_8h.html" title=" " alt="" coords="1282,229,1411,256"/>
+<area shape="poly" title=" " alt="" coords="942,173,1267,226,1266,231,941,179"/>
+<area shape="rect" href="mem_8h.html" title="Memory handling functions" alt="" coords="581,229,642,256"/>
+<area shape="poly" title=" " alt="" coords="859,182,658,233,656,227,858,177"/>
+<area shape="poly" title=" " alt="" coords="1474,257,1474,288,1469,288,1469,257"/>
+<area shape="poly" title=" " alt="" coords="635,226,860,112,863,116,637,231"/>
+<area shape="poly" title=" " alt="" coords="614,257,614,288,609,288,609,257"/>
+<area shape="poly" title=" " alt="" coords="581,254,563,259,331,306,330,301,562,253,580,249"/>
+<area shape="poly" title=" " alt="" coords="581,256,439,301,437,296,579,251"/>
+<area shape="poly" title=" " alt="" coords="643,246,1021,306,1020,312,642,252"/>
+<area shape="poly" title=" " alt="" coords="1080,329,1120,366,1116,370,1076,333"/>
+<area shape="rect" title=" " alt="" coords="1019,379,1087,405"/>
+<area shape="poly" title=" " alt="" coords="1065,332,1060,364,1055,363,1060,331"/>
+<area shape="poly" title=" " alt="" coords="422,253,566,299,564,304,420,258"/>
+<area shape="poly" title=" " alt="" coords="368,259,315,297,312,292,365,254"/>
+<area shape="poly" title=" " alt="" coords="386,257,386,288,381,288,381,257"/>
+<area shape="poly" title=" " alt="" coords="370,180,441,219,438,224,367,184"/>
+<area shape="poly" title=" " alt="" coords="293,177,264,183,236,194,210,209,190,231,185,240,185,249,195,266,214,282,238,295,236,300,211,286,191,269,180,250,180,239,185,228,207,205,234,189,263,178,291,172"/>
+<area shape="poly" title=" " alt="" coords="344,182,334,216,333,236,337,255,347,274,360,291,356,294,342,277,332,257,328,236,329,215,338,181"/>
+<area shape="poly" title=" " alt="" coords="355,181,373,214,368,217,350,183"/>
+<area shape="rect" href="intfloat_8h.html" title=" " alt="" coords="200,229,271,256"/>
+<area shape="poly" title=" " alt="" coords="328,184,269,223,266,218,325,180"/>
+<area shape="poly" title=" " alt="" coords="246,255,269,290,265,293,242,258"/>
+<area shape="poly" title=" " alt="" coords="262,254,345,294,343,299,260,259"/>
+<area shape="poly" title=" " alt="" coords="1369,180,1438,219,1435,224,1367,184"/>
+<area shape="poly" title=" " alt="" coords="1349,182,1349,214,1344,214,1344,182"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="log_8h__dep__incl.png" border="0" usemap="#alog_8hdep" alt=""/></div>
+<map name="alog_8hdep" id="alog_8hdep">
+<area shape="rect" title=" " alt="" coords="916,5,965,32"/>
+<area shape="rect" href="avassert_8h.html" title="simple assert() macros that are a bit more flexible than ISO C assert()." alt="" coords="410,155,492,181"/>
+<area shape="poly" title=" " alt="" coords="902,34,494,157,492,152,900,29"/>
+<area shape="rect" href="avcodec_8h.html" title="Libavcodec external API header" alt="" coords="1253,379,1334,405"/>
+<area shape="poly" title=" " alt="" coords="981,24,1094,45,1232,77,1315,95,1395,106,1469,115,1537,127,1596,146,1623,161,1647,179,1669,202,1688,230,1704,263,1716,303,1721,318,1716,332,1689,352,1648,367,1598,377,1542,385,1428,393,1335,394,1335,389,1428,387,1542,380,1597,372,1647,361,1686,347,1712,329,1715,318,1711,305,1699,265,1683,232,1665,205,1644,183,1620,165,1594,151,1535,132,1468,120,1394,112,1315,101,1231,83,1093,51,980,29"/>
+<area shape="rect" href="avformat_8h.html" title="Main libavformat public API header" alt="" coords="311,453,394,480"/>
+<area shape="poly" title=" " alt="" coords="900,23,741,28,638,36,532,48,433,66,350,92,318,107,294,125,279,145,274,167,274,318,281,359,299,396,322,428,342,451,338,455,317,431,295,399,276,361,269,319,269,166,274,143,290,121,315,103,348,87,432,61,531,43,638,30,741,23,900,18"/>
+<area shape="rect" href="avdevice_8h.html" title="Main libavdevice API header" alt="" coords="394,528,479,555"/>
+<area shape="poly" title=" " alt="" coords="900,23,772,26,600,35,431,53,362,66,312,82,277,98,248,113,230,134,225,148,223,167,223,393,228,422,241,446,261,467,285,485,341,512,395,529,393,534,339,517,282,490,257,471,237,449,223,423,218,394,218,167,220,147,225,132,245,109,274,93,310,78,361,61,430,48,599,30,771,21,900,18"/>
+<area shape="rect" href="avfilter_8h.html" title="Main libavfilter public API header" alt="" coords="632,304,703,331"/>
+<area shape="poly" title=" " alt="" coords="901,26,783,40,630,65,554,83,487,104,434,128,414,142,400,156,395,168,400,180,420,201,442,210,468,216,499,227,644,301,642,306,497,232,467,221,440,215,417,206,396,183,390,168,396,153,411,138,431,124,485,99,553,78,629,60,782,34,900,21"/>
+<area shape="rect" href="avio_8h.html" title="Buffered I/O operations" alt="" coords="314,304,370,331"/>
+<area shape="poly" title=" " alt="" coords="901,25,678,43,557,60,508,70,472,82,444,97,424,111,407,130,389,156,370,196,357,238,346,304,340,303,352,237,365,194,385,153,403,126,420,107,441,92,470,78,507,65,556,54,677,37,900,19"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="909,80,972,107"/>
+<area shape="poly" title=" " alt="" coords="934,47,936,79,931,80,929,48"/>
+<area shape="rect" href="hwcontext_8h.html" title=" " alt="" coords="1470,304,1563,331"/>
+<area shape="poly" title=" " alt="" coords="981,25,1053,41,1146,67,1248,104,1298,127,1346,152,1398,190,1445,232,1509,302,1505,305,1441,236,1395,194,1343,157,1296,131,1246,109,1144,72,1051,46,980,30"/>
+<area shape="rect" href="opt_8h.html" title="AVOptions" alt="" coords="1610,229,1660,256"/>
+<area shape="poly" title=" " alt="" coords="981,17,1137,17,1355,24,1467,32,1571,42,1660,58,1725,78,1765,97,1798,120,1809,134,1815,149,1814,165,1805,183,1791,199,1774,212,1735,230,1695,240,1661,243,1660,238,1694,234,1733,225,1771,208,1787,195,1801,180,1809,164,1809,150,1804,136,1794,124,1762,101,1724,82,1659,63,1571,48,1467,37,1355,30,1137,23,981,22"/>
+<area shape="rect" href="swscale_8h.html" title="external API header" alt="" coords="1711,155,1791,181"/>
+<area shape="poly" title=" " alt="" coords="981,19,1145,25,1369,36,1576,54,1651,65,1694,78,1714,94,1730,115,1749,153,1745,156,1726,118,1710,98,1691,82,1650,70,1576,59,1368,41,1145,30,980,24"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="673,677,776,704"/>
+<area shape="poly" title=" " alt="" coords="1274,419,1242,451,1202,482,1145,518,1084,551,961,608,850,651,767,679,765,674,848,646,959,603,1081,546,1142,514,1199,478,1238,447,1270,415"/>
+<area shape="poly" title=" " alt="" coords="1238,400,395,465,394,459,1237,395"/>
+<area shape="rect" href="dirac_8h.html" title="Interface to Dirac Decoder/Encoder" alt="" coords="1264,453,1324,480"/>
+<area shape="poly" title=" " alt="" coords="1296,421,1296,453,1291,453,1291,421"/>
+<area shape="rect" href="dv__profile_8h.html" title=" " alt="" coords="1348,453,1437,480"/>
+<area shape="poly" title=" " alt="" coords="1325,413,1377,451,1374,455,1322,417"/>
+<area shape="rect" href="mediacodec_8h.html" title=" " alt="" coords="1461,453,1564,480"/>
+<area shape="poly" title=" " alt="" coords="1347,408,1475,450,1473,455,1345,413"/>
+<area shape="rect" href="vdpau_8h.html" title="Public libavcodec VDPAU header." alt="" coords="903,453,970,480"/>
+<area shape="poly" title=" " alt="" coords="1239,406,984,456,971,459,970,454,983,451,1238,400"/>
+<area shape="rect" href="videotoolbox_8h.html" title="Public libavcodec Videotoolbox header." alt="" coords="994,453,1100,480"/>
+<area shape="poly" title=" " alt="" coords="1239,412,1091,455,1090,450,1237,407"/>
+<area shape="rect" href="xvmc_8h.html" title="Public libavcodec XvMC header." alt="" coords="1124,453,1189,480"/>
+<area shape="poly" title=" " alt="" coords="1258,415,1182,455,1179,450,1255,411"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="457,752,552,779"/>
+<area shape="poly" title=" " alt="" coords="673,712,544,754,542,749,671,707"/>
+<area shape="rect" href="_video_player_8cpp.html" title=" " alt="" coords="576,752,692,779"/>
+<area shape="poly" title=" " alt="" coords="699,716,651,754,648,750,695,712"/>
+<area shape="rect" href="_video_player___audio_thread_8cpp.html" title=" " alt="" coords="716,752,912,779"/>
+<area shape="poly" title=" " alt="" coords="754,712,800,750,797,754,750,716"/>
+<area shape="rect" href="_video_player___video_thread_8cpp.html" title=" " alt="" coords="936,752,1132,779"/>
+<area shape="poly" title=" " alt="" coords="792,705,980,749,979,754,791,710"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="392,827,502,853"/>
+<area shape="poly" title=" " alt="" coords="487,793,459,828,455,825,483,789"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="526,827,600,853"/>
+<area shape="poly" title=" " alt="" coords="526,789,555,825,551,828,522,793"/>
+<area shape="poly" title=" " alt="" coords="360,494,369,524,384,553,405,580,424,597,478,627,528,647,580,663,673,681,672,686,579,668,526,652,475,632,421,602,401,583,380,556,364,526,355,496"/>
+<area shape="rect" href="_p_c_m_frame_8h.html" title=" " alt="" coords="212,528,312,555"/>
+<area shape="poly" title=" " alt="" coords="327,492,279,530,276,526,323,488"/>
+<area shape="poly" title=" " alt="" coords="380,488,424,526,420,530,377,493"/>
+<area shape="rect" href="_p_c_m_frame_8cpp.html" title=" " alt="" coords="205,603,318,629"/>
+<area shape="poly" title=" " alt="" coords="264,570,264,602,259,602,259,570"/>
+<area shape="rect" href="_pcm_player_8h.html" title=" " alt="" coords="84,603,181,629"/>
+<area shape="poly" title=" " alt="" coords="227,565,157,604,154,600,225,560"/>
+<area shape="poly" title=" " alt="" coords="196,627,469,662,673,682,673,688,468,667,195,632"/>
+<area shape="rect" href="_pcm_player_8cpp.html" title=" " alt="" coords="5,677,116,704"/>
+<area shape="poly" title=" " alt="" coords="111,642,75,679,71,675,107,639"/>
+<area shape="rect" href="_pcm_player___s_d_l_8h.html" title=" " alt="" coords="140,677,269,704"/>
+<area shape="poly" title=" " alt="" coords="158,639,194,675,190,679,154,642"/>
+<area shape="poly" title=" " alt="" coords="669,346,671,405,683,487,698,566,724,676,719,678,693,567,677,488,666,406,664,346"/>
+<area shape="rect" href="buffersink_8h.html" title="memory buffer sink API for audio and video" alt="" coords="680,379,769,405"/>
+<area shape="poly" title=" " alt="" coords="689,341,717,377,713,380,684,345"/>
+<area shape="rect" href="buffersrc_8h.html" title="Memory buffer source API." alt="" coords="793,379,875,405"/>
+<area shape="poly" title=" " alt="" coords="711,335,806,376,804,380,709,340"/>
+<area shape="poly" title=" " alt="" coords="727,421,727,677,722,677,722,421"/>
+<area shape="poly" title=" " alt="" coords="827,421,732,678,727,676,822,419"/>
+<area shape="poly" title=" " alt="" coords="346,346,354,453,349,453,341,346"/>
+<area shape="poly" title=" " alt="" coords="947,65,945,33,950,32,952,64"/>
+<area shape="poly" title=" " alt="" coords="894,103,725,125,512,157,493,161,492,155,511,152,724,120,893,98"/>
+<area shape="poly" title=" " alt="" coords="988,94,1068,100,1163,111,1251,128,1286,139,1311,152,1356,191,1373,212,1386,233,1393,255,1395,279,1391,305,1380,332,1369,348,1355,361,1325,380,1322,376,1352,357,1365,344,1375,329,1386,303,1390,279,1388,256,1381,235,1369,215,1352,195,1308,157,1284,144,1250,133,1163,116,1068,105,987,100"/>
+<area shape="poly" title=" " alt="" coords="894,102,819,119,779,135,743,157,726,172,712,191,691,233,678,273,672,304,666,303,673,272,686,231,708,188,723,169,740,153,777,130,817,114,893,97"/>
+<area shape="rect" href="audio__fifo_8h.html" title="Audio FIFO Buffer" alt="" coords="834,229,922,256"/>
+<area shape="poly" title=" " alt="" coords="937,122,918,182,889,230,885,228,913,180,932,121"/>
+<area shape="rect" href="eval_8h.html" title="simple arithmetic expression evaluator" alt="" coords="1028,155,1085,181"/>
+<area shape="poly" title=" " alt="" coords="975,113,1038,152,1035,156,972,118"/>
+<area shape="rect" href="fifo_8h.html" title="a very simple circular buffer FIFO implementation" alt="" coords="853,155,903,181"/>
+<area shape="poly" title=" " alt="" coords="922,120,891,156,887,153,918,117"/>
+<area shape="rect" href="file_8h.html" title="Misc file utilities." alt="" coords="1226,155,1276,181"/>
+<area shape="poly" title=" " alt="" coords="988,101,1092,123,1215,152,1227,156,1225,161,1213,157,1091,128,987,106"/>
+<area shape="rect" href="frame_8h.html" title="reference&#45;counted frame API" alt="" coords="1197,229,1262,256"/>
+<area shape="poly" title=" " alt="" coords="988,93,1066,97,1157,107,1238,124,1270,137,1291,153,1296,163,1297,175,1288,196,1270,215,1251,231,1247,227,1267,211,1283,193,1292,174,1291,165,1286,156,1267,142,1237,129,1156,112,1065,102,988,98"/>
+<area shape="rect" href="imgutils_8h.html" title="misc image utilities" alt="" coords="554,528,631,555"/>
+<area shape="poly" title=" " alt="" coords="893,99,851,105,804,115,755,132,711,157,690,176,671,197,640,246,619,300,605,356,597,410,594,459,594,527,589,527,589,459,592,409,600,355,614,298,636,243,666,194,686,172,708,152,753,127,802,110,850,99,893,94"/>
+<area shape="rect" href="mem_8h.html" title="Memory handling functions" alt="" coords="567,155,628,181"/>
+<area shape="poly" title=" " alt="" coords="894,106,648,157,630,161,629,156,647,152,893,101"/>
+<area shape="poly" title=" " alt="" coords="988,92,1075,96,1192,105,1322,123,1452,152,1499,169,1545,189,1616,227,1613,231,1543,194,1497,174,1450,157,1321,128,1191,111,1075,101,987,98"/>
+<area shape="rect" href="samplefmt_8h.html" title=" " alt="" coords="1108,155,1202,181"/>
+<area shape="poly" title=" " alt="" coords="988,108,1119,152,1117,157,986,113"/>
+<area shape="poly" title=" " alt="" coords="988,96,1711,160,1710,166,988,102"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libpostproc_2version_8h.html" title="Libpostproc version macros" alt="" coords="754,155,828,181"/>
+<area shape="poly" title=" " alt="" coords="902,116,819,156,816,152,900,111"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libswresample_2version_8h.html" title="Libswresample version macros" alt="" coords="946,229,1020,256"/>
+<area shape="poly" title=" " alt="" coords="952,121,962,154,982,228,977,230,957,155,947,122"/>
+<area shape="poly" title=" " alt="" coords="880,197,880,229,875,229,875,197"/>
+<area shape="poly" title=" " alt="" coords="1278,251,1322,269,1343,284,1359,303,1363,314,1363,325,1353,347,1335,365,1316,380,1313,376,1332,361,1349,344,1358,324,1358,315,1354,305,1339,288,1320,274,1276,256"/>
+<area shape="poly" title=" " alt="" coords="1182,250,978,269,847,286,716,307,704,309,703,304,715,301,847,280,978,264,1182,245"/>
+<area shape="rect" href="downmix__info_8h.html" title="audio downmix medatata" alt="" coords="903,304,1015,331"/>
+<area shape="poly" title=" " alt="" coords="1183,259,1007,306,1006,301,1182,254"/>
+<area shape="poly" title=" " alt="" coords="1278,253,1470,302,1469,307,1277,259"/>
+<area shape="rect" href="mastering__display__metadata_8h.html" title=" " alt="" coords="1040,304,1238,331"/>
+<area shape="poly" title=" " alt="" coords="1204,268,1156,306,1153,302,1201,264"/>
+<area shape="rect" href="stereo3d_8h.html" title="Stereoscopic video" alt="" coords="1262,304,1344,331"/>
+<area shape="poly" title=" " alt="" coords="1255,265,1292,302,1289,306,1252,269"/>
+<area shape="rect" href="swresample_8h.html" title="libswresample public header" alt="" coords="727,304,829,331"/>
+<area shape="poly" title=" " alt="" coords="1182,254,830,310,829,305,1181,249"/>
+<area shape="poly" title=" " alt="" coords="1464,338,1334,381,1332,375,1463,333"/>
+<area shape="poly" title=" " alt="" coords="838,335,867,352,890,377,893,391,890,406,876,450,858,493,815,572,770,637,737,679,733,675,766,633,810,569,853,490,871,448,885,405,888,392,885,380,864,356,836,339"/>
+<area shape="poly" title=" " alt="" coords="609,567,628,597,652,628,680,654,708,675,704,679,677,658,648,631,624,600,604,570"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="379,229,462,256"/>
+<area shape="poly" title=" " alt="" coords="554,190,453,231,451,226,552,185"/>
+<area shape="poly" title=" " alt="" coords="397,269,357,306,354,302,394,265"/>
+<area shape="poly" title=" " alt="" coords="449,218,505,180,554,152,653,123,753,105,842,96,908,93,909,98,842,101,754,111,654,128,556,157,508,184,452,222"/>
+<area shape="poly" title=" " alt="" coords="478,229,485,234,488,243,480,255,462,259,461,254,477,251,483,242,481,237,475,233"/>
+<area shape="rect" href="display_8h.html" title="Display matrix" alt="" coords="488,603,561,629"/>
+<area shape="poly" title=" " alt="" coords="454,264,473,281,491,303,513,344,518,364,519,391,519,468,526,602,521,602,514,468,514,391,513,365,508,346,486,305,470,285,450,268"/>
+<area shape="rect" href="pixelutils_8h.html" title=" " alt="" coords="394,304,477,331"/>
+<area shape="poly" title=" " alt="" coords="429,271,435,303,430,304,423,272"/>
+<area shape="poly" title=" " alt="" coords="574,632,690,674,688,679,573,637"/>
+<area shape="poly" title=" " alt="" coords="1673,262,1696,280,1716,302,1730,325,1738,344,1742,391,1742,543,1739,553,1732,562,1708,579,1669,594,1618,608,1489,632,1336,651,1014,678,776,690,776,685,1014,672,1335,646,1489,627,1617,603,1667,589,1705,574,1729,558,1735,551,1737,542,1737,391,1732,345,1725,327,1712,306,1692,284,1670,267"/>
+<area shape="poly" title=" " alt="" coords="1633,272,1607,393,1592,451,1577,482,1558,489,1521,495,1403,505,1063,519,542,531,479,537,479,532,542,525,1063,513,1403,500,1520,490,1556,484,1573,478,1587,449,1602,392,1628,271"/>
+<area shape="rect" href="avdct_8h.html" title=" " alt="" coords="1638,304,1702,331"/>
+<area shape="poly" title=" " alt="" coords="1650,269,1666,302,1661,305,1645,271"/>
+<area shape="poly" title=" " alt="" coords="1151,197,1137,229,1113,258,1076,277,1033,286,945,290,910,292,887,297,882,302,881,307,893,329,917,346,955,360,1002,371,1055,378,1164,386,1253,388,1253,394,1164,392,1054,384,1001,376,953,365,915,351,889,332,875,308,877,299,884,293,909,287,945,285,1032,281,1075,272,1110,254,1132,226,1146,195"/>
+<area shape="poly" title=" " alt="" coords="1129,193,1078,231,1034,258,987,275,947,285,877,292,805,295,716,307,704,309,703,304,715,301,805,290,876,287,946,279,986,270,1031,254,1075,227,1126,189"/>
+<area shape="poly" title=" " alt="" coords="1094,188,923,232,922,227,1093,183"/>
+<area shape="poly" title=" " alt="" coords="1181,190,1219,227,1215,231,1177,194"/>
+<area shape="poly" title=" " alt="" coords="1141,196,1114,229,1078,258,981,280,830,309,829,304,979,275,1075,254,1111,225,1137,192"/>
+<area shape="poly" title=" " alt="" coords="1217,179,1449,214,1610,236,1609,241,1448,220,1217,184"/>
+<area shape="poly" title=" " alt="" coords="1778,191,1800,214,1821,244,1837,279,1843,316,1843,543,1840,554,1833,564,1805,582,1762,599,1706,613,1562,638,1391,657,1210,671,1035,681,776,691,776,685,1035,675,1209,665,1390,651,1561,632,1704,608,1760,593,1803,578,1829,560,1836,552,1838,542,1838,316,1832,280,1816,247,1795,218,1774,194"/>
+<area shape="rect" href="postprocess_8h.html" title="external API header" alt="" coords="706,229,810,256"/>
+<area shape="poly" title=" " alt="" coords="781,197,766,230,761,228,777,194"/>
+<area shape="poly" title=" " alt="" coords="934,264,815,306,813,301,932,259"/>
+</map>
+</div>
+</div>
+<p><a href="log_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_class.html">AVClass</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describe the class of an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> context structure.  <a href="struct_a_v_class.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ad0e526bec7e5efded0893bfed967fe94" id="r_ad0e526bec7e5efded0893bfed967fe94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0e526bec7e5efded0893bfed967fe94">AV_IS_INPUT_DEVICE</a>(category)</td></tr>
+<tr class="separator:ad0e526bec7e5efded0893bfed967fe94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95810fbec46199cb25ccddae6b900bd8" id="r_a95810fbec46199cb25ccddae6b900bd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95810fbec46199cb25ccddae6b900bd8">AV_IS_OUTPUT_DEVICE</a>(category)</td></tr>
+<tr class="separator:a95810fbec46199cb25ccddae6b900bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11e329935b59b83ca722b66674f37fd4" id="r_ga11e329935b59b83ca722b66674f37fd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#ga11e329935b59b83ca722b66674f37fd4">AV_LOG_QUIET</a>&#160;&#160;&#160;-8</td></tr>
+<tr class="memdesc:ga11e329935b59b83ca722b66674f37fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print no output.  <br /></td></tr>
+<tr class="separator:ga11e329935b59b83ca722b66674f37fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09623098406ba81d130824ac742d146e" id="r_ga09623098406ba81d130824ac742d146e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#ga09623098406ba81d130824ac742d146e">AV_LOG_PANIC</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga09623098406ba81d130824ac742d146e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Something went really wrong and we will crash now.  <br /></td></tr>
+<tr class="separator:ga09623098406ba81d130824ac742d146e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96970a2980bf6ad28cd403e7dc52d6c5" id="r_ga96970a2980bf6ad28cd403e7dc52d6c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#ga96970a2980bf6ad28cd403e7dc52d6c5">AV_LOG_FATAL</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:ga96970a2980bf6ad28cd403e7dc52d6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Something went wrong and recovery is not possible.  <br /></td></tr>
+<tr class="separator:ga96970a2980bf6ad28cd403e7dc52d6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffe151ff4cd8a24b2e77ac8d9616c85c" id="r_gaffe151ff4cd8a24b2e77ac8d9616c85c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#gaffe151ff4cd8a24b2e77ac8d9616c85c">AV_LOG_ERROR</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memdesc:gaffe151ff4cd8a24b2e77ac8d9616c85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Something went wrong and cannot losslessly be recovered.  <br /></td></tr>
+<tr class="separator:gaffe151ff4cd8a24b2e77ac8d9616c85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85b57516ca703cc47d9bbe5f4658c716" id="r_ga85b57516ca703cc47d9bbe5f4658c716"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#ga85b57516ca703cc47d9bbe5f4658c716">AV_LOG_WARNING</a>&#160;&#160;&#160;24</td></tr>
+<tr class="memdesc:ga85b57516ca703cc47d9bbe5f4658c716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Something somehow does not look correct.  <br /></td></tr>
+<tr class="separator:ga85b57516ca703cc47d9bbe5f4658c716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad172eacfed8653e454c6fdcbe53baab3" id="r_gad172eacfed8653e454c6fdcbe53baab3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#gad172eacfed8653e454c6fdcbe53baab3">AV_LOG_INFO</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:gad172eacfed8653e454c6fdcbe53baab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard information.  <br /></td></tr>
+<tr class="separator:gad172eacfed8653e454c6fdcbe53baab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b58b28e2d429b930b69db19877f76a8" id="r_ga9b58b28e2d429b930b69db19877f76a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#ga9b58b28e2d429b930b69db19877f76a8">AV_LOG_VERBOSE</a>&#160;&#160;&#160;40</td></tr>
+<tr class="memdesc:ga9b58b28e2d429b930b69db19877f76a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detailed information.  <br /></td></tr>
+<tr class="separator:ga9b58b28e2d429b930b69db19877f76a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b7221c3afd06848486776bd834a58a5" id="r_ga5b7221c3afd06848486776bd834a58a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#ga5b7221c3afd06848486776bd834a58a5">AV_LOG_DEBUG</a>&#160;&#160;&#160;48</td></tr>
+<tr class="memdesc:ga5b7221c3afd06848486776bd834a58a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stuff which is only useful for libav* developers.  <br /></td></tr>
+<tr class="separator:ga5b7221c3afd06848486776bd834a58a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga030300ea4843c53b2fe178a434964b39" id="r_ga030300ea4843c53b2fe178a434964b39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#ga030300ea4843c53b2fe178a434964b39">AV_LOG_TRACE</a>&#160;&#160;&#160;56</td></tr>
+<tr class="memdesc:ga030300ea4843c53b2fe178a434964b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extremely verbose debugging, useful for libav* development.  <br /></td></tr>
+<tr class="separator:ga030300ea4843c53b2fe178a434964b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad87b54332d00f280bf5db0fd2f56f340" id="r_gad87b54332d00f280bf5db0fd2f56f340"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html#gad87b54332d00f280bf5db0fd2f56f340">AV_LOG_MAX_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group__lavu__log__constants.html#ga030300ea4843c53b2fe178a434964b39">AV_LOG_TRACE</a> - <a class="el" href="group__lavu__log__constants.html#ga11e329935b59b83ca722b66674f37fd4">AV_LOG_QUIET</a>)</td></tr>
+<tr class="separator:gad87b54332d00f280bf5db0fd2f56f340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ff5a41a9e5e2969f1b125d4bb6ce536" id="r_ga7ff5a41a9e5e2969f1b125d4bb6ce536"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga7ff5a41a9e5e2969f1b125d4bb6ce536">AV_LOG_C</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="memdesc:ga7ff5a41a9e5e2969f1b125d4bb6ce536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets additional colors for extended debugging sessions.  <br /></td></tr>
+<tr class="separator:ga7ff5a41a9e5e2969f1b125d4bb6ce536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cdf5cd331b17e80e8308124f05a6db8" id="r_ga6cdf5cd331b17e80e8308124f05a6db8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga6cdf5cd331b17e80e8308124f05a6db8">AV_LOG_SKIP_REPEATED</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga6cdf5cd331b17e80e8308124f05a6db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip repeated messages, this requires the user app to use <a class="el" href="group__lavu__log.html#gabd386ffd4b27637cf34e98d5d1a6e8ae" title="Send the specified message to the log if the level is less than or equal to the current av_log_level.">av_log()</a> instead of (f)printf as the 2 would otherwise interfere and lead to "Last message repeated x times" messages below (f)printf messages with some bad luck.  <br /></td></tr>
+<tr class="separator:ga6cdf5cd331b17e80e8308124f05a6db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b447fa5f9d7e243be4634878ed1a0ca" id="r_ga8b447fa5f9d7e243be4634878ed1a0ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga8b447fa5f9d7e243be4634878ed1a0ca">AV_LOG_PRINT_LEVEL</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ga8b447fa5f9d7e243be4634878ed1a0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include the log severity in messages originating from codecs.  <br /></td></tr>
+<tr class="separator:ga8b447fa5f9d7e243be4634878ed1a0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a56f1ed7b1ab5801b834afc119af7f338" id="r_a56f1ed7b1ab5801b834afc119af7f338"><td class="memItemLeft" align="right" valign="top">typedef struct AVClass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56f1ed7b1ab5801b834afc119af7f338">AVClass</a></td></tr>
+<tr class="memdesc:a56f1ed7b1ab5801b834afc119af7f338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describe the class of an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> context structure.  <br /></td></tr>
+<tr class="separator:a56f1ed7b1ab5801b834afc119af7f338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:aeb1c06cc3e47a029ca6afeac782ac8f9" id="r_aeb1c06cc3e47a029ca6afeac782ac8f9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9">AVClassCategory</a> { <br />
+&#160;&#160;<a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a71af9d0d8f60e47a7a83046e27dadefa">AV_CLASS_CATEGORY_NA</a> = 0
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a0b907bb25d241484062534be320001d1">AV_CLASS_CATEGORY_INPUT</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a922ed45f6aaa6e0bdcdcdcfa20e5f6a4">AV_CLASS_CATEGORY_OUTPUT</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a25e15ba6dba2dcd767d69c04eaa38a59">AV_CLASS_CATEGORY_MUXER</a>
+, <br />
+&#160;&#160;<a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a86a70f4c26b01f85c4c23433322eec2c">AV_CLASS_CATEGORY_DEMUXER</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9ae22f8fa66b02cff95fb04ec963713a4c">AV_CLASS_CATEGORY_ENCODER</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9af24522b3c299ba8b85a5a00574d43b2b">AV_CLASS_CATEGORY_DECODER</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a78b8da9853ff87127b31ceb9a78f3a37">AV_CLASS_CATEGORY_FILTER</a>
+, <br />
+&#160;&#160;<a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a2aa971aa717aa1f2b812ed1358ff7fbf">AV_CLASS_CATEGORY_BITSTREAM_FILTER</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a2852542cb189f4d25e470ee67e09ff6a">AV_CLASS_CATEGORY_SWSCALER</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9acf18a1d69313a920e4a5229c86de8e1c">AV_CLASS_CATEGORY_SWRESAMPLER</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a6facbfe512802ca4b03378f5c4bd2aa2">AV_CLASS_CATEGORY_DEVICE_VIDEO_OUTPUT</a> = 40
+, <br />
+&#160;&#160;<a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a73fb8c6b471b22685e8d2836f25ca6c7">AV_CLASS_CATEGORY_DEVICE_VIDEO_INPUT</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a4acd911842413e1bd9e1387f7b6b5e4b">AV_CLASS_CATEGORY_DEVICE_AUDIO_OUTPUT</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9aacba77c66d969c8dbd8b9597e9b98869">AV_CLASS_CATEGORY_DEVICE_AUDIO_INPUT</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a47ac8b5cb587a90463644ccab01ce71b">AV_CLASS_CATEGORY_DEVICE_OUTPUT</a>
+, <br />
+&#160;&#160;<a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9ace341ef5b34a656419e6ae61474334e1">AV_CLASS_CATEGORY_DEVICE_INPUT</a>
+, <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a6500b5dc52e5485b497c3f7228ce637f">AV_CLASS_CATEGORY_NB</a>
+<br />
+ }</td></tr>
+<tr class="separator:aeb1c06cc3e47a029ca6afeac782ac8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gabd386ffd4b27637cf34e98d5d1a6e8ae" id="r_gabd386ffd4b27637cf34e98d5d1a6e8ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#gabd386ffd4b27637cf34e98d5d1a6e8ae">av_log</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *avcl, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="attributes_8h.html#a4b078d4b8e02c0f452ee1dcaa7d983d3">av_printf_format</a>(3</td></tr>
+<tr class="memdesc:gabd386ffd4b27637cf34e98d5d1a6e8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the specified message to the log if the level is less than or equal to the current av_log_level.  <br /></td></tr>
+<tr class="separator:gabd386ffd4b27637cf34e98d5d1a6e8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d72fb598cff2c8385069a1fc2ee5812" id="r_ga6d72fb598cff2c8385069a1fc2ee5812"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga6d72fb598cff2c8385069a1fc2ee5812">av_vlog</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *avcl, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list vl)</td></tr>
+<tr class="memdesc:ga6d72fb598cff2c8385069a1fc2ee5812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the specified message to the log if the level is less than or equal to the current av_log_level.  <br /></td></tr>
+<tr class="separator:ga6d72fb598cff2c8385069a1fc2ee5812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8ada5cc5722548d8698650b05207904" id="r_gae8ada5cc5722548d8698650b05207904"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#gae8ada5cc5722548d8698650b05207904">av_log_get_level</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gae8ada5cc5722548d8698650b05207904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current log level  <br /></td></tr>
+<tr class="separator:gae8ada5cc5722548d8698650b05207904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fd32c74db581e3e2e7f35d277bb1e24" id="r_ga1fd32c74db581e3e2e7f35d277bb1e24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga1fd32c74db581e3e2e7f35d277bb1e24">av_log_set_level</a> (int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>)</td></tr>
+<tr class="memdesc:ga1fd32c74db581e3e2e7f35d277bb1e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the log level  <br /></td></tr>
+<tr class="separator:ga1fd32c74db581e3e2e7f35d277bb1e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14034761faf581a8b9ed6ef19b313708" id="r_ga14034761faf581a8b9ed6ef19b313708"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga14034761faf581a8b9ed6ef19b313708">av_log_set_callback</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>(*callback)(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *, int, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *, va_list))</td></tr>
+<tr class="memdesc:ga14034761faf581a8b9ed6ef19b313708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the logging callback  <br /></td></tr>
+<tr class="separator:ga14034761faf581a8b9ed6ef19b313708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5bd132d2e4ac6f9843ef6d8e3c05050a" id="r_ga5bd132d2e4ac6f9843ef6d8e3c05050a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga5bd132d2e4ac6f9843ef6d8e3c05050a">av_log_default_callback</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *avcl, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list vl)</td></tr>
+<tr class="memdesc:ga5bd132d2e4ac6f9843ef6d8e3c05050a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default logging callback  <br /></td></tr>
+<tr class="separator:ga5bd132d2e4ac6f9843ef6d8e3c05050a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e2d13acd5bf1c5790faa60edae84cf0" id="r_ga1e2d13acd5bf1c5790faa60edae84cf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga1e2d13acd5bf1c5790faa60edae84cf0">av_default_item_name</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *ctx)</td></tr>
+<tr class="memdesc:ga1e2d13acd5bf1c5790faa60edae84cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the context name  <br /></td></tr>
+<tr class="separator:ga1e2d13acd5bf1c5790faa60edae84cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga796896ca6a991fda200e8363777aeea3" id="r_ga796896ca6a991fda200e8363777aeea3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9">AVClassCategory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga796896ca6a991fda200e8363777aeea3">av_default_get_category</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="separator:ga796896ca6a991fda200e8363777aeea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed9e57ccba2adc41864f54f47dfcccec" id="r_gaed9e57ccba2adc41864f54f47dfcccec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#gaed9e57ccba2adc41864f54f47dfcccec">av_log_format_line</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list vl, char *line, int line_size, int *print_prefix)</td></tr>
+<tr class="memdesc:gaed9e57ccba2adc41864f54f47dfcccec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format a line of log the same way as the default callback.  <br /></td></tr>
+<tr class="separator:gaed9e57ccba2adc41864f54f47dfcccec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c595c96d63711069accb9c60549e84f" id="r_ga0c595c96d63711069accb9c60549e84f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga0c595c96d63711069accb9c60549e84f">av_log_format_line2</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list vl, char *line, int line_size, int *print_prefix)</td></tr>
+<tr class="memdesc:ga0c595c96d63711069accb9c60549e84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format a line of log the same way as the default callback.  <br /></td></tr>
+<tr class="separator:ga0c595c96d63711069accb9c60549e84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8143cc9a7cd364af1ff525c6181c0ce" id="r_gaf8143cc9a7cd364af1ff525c6181c0ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#gaf8143cc9a7cd364af1ff525c6181c0ce">av_log_set_flags</a> (int <a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>)</td></tr>
+<tr class="separator:gaf8143cc9a7cd364af1ff525c6181c0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86a29f38fba2fdb9579d5fa3bbf6f8bf" id="r_ga86a29f38fba2fdb9579d5fa3bbf6f8bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log.html#ga86a29f38fba2fdb9579d5fa3bbf6f8bf">av_log_get_flags</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="separator:ga86a29f38fba2fdb9579d5fa3bbf6f8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ad0e526bec7e5efded0893bfed967fe94" name="ad0e526bec7e5efded0893bfed967fe94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e526bec7e5efded0893bfed967fe94">&#9670;&#160;</a></span>AV_IS_INPUT_DEVICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_IS_INPUT_DEVICE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((category) == <a class="code hl_enumvalue" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a73fb8c6b471b22685e8d2836f25ca6c7">AV_CLASS_CATEGORY_DEVICE_VIDEO_INPUT</a>) || \</div>
+<div class="line">     ((category) == <a class="code hl_enumvalue" href="#aeb1c06cc3e47a029ca6afeac782ac8f9aacba77c66d969c8dbd8b9597e9b98869">AV_CLASS_CATEGORY_DEVICE_AUDIO_INPUT</a>) || \</div>
+<div class="line">     ((category) == <a class="code hl_enumvalue" href="#aeb1c06cc3e47a029ca6afeac782ac8f9ace341ef5b34a656419e6ae61474334e1">AV_CLASS_CATEGORY_DEVICE_INPUT</a>))</div>
+<div class="ttc" id="alog_8h_html_aeb1c06cc3e47a029ca6afeac782ac8f9a73fb8c6b471b22685e8d2836f25ca6c7"><div class="ttname"><a href="#aeb1c06cc3e47a029ca6afeac782ac8f9a73fb8c6b471b22685e8d2836f25ca6c7">AV_CLASS_CATEGORY_DEVICE_VIDEO_INPUT</a></div><div class="ttdeci">@ AV_CLASS_CATEGORY_DEVICE_VIDEO_INPUT</div><div class="ttdef"><b>定义</b> log.h:42</div></div>
+<div class="ttc" id="alog_8h_html_aeb1c06cc3e47a029ca6afeac782ac8f9aacba77c66d969c8dbd8b9597e9b98869"><div class="ttname"><a href="#aeb1c06cc3e47a029ca6afeac782ac8f9aacba77c66d969c8dbd8b9597e9b98869">AV_CLASS_CATEGORY_DEVICE_AUDIO_INPUT</a></div><div class="ttdeci">@ AV_CLASS_CATEGORY_DEVICE_AUDIO_INPUT</div><div class="ttdef"><b>定义</b> log.h:44</div></div>
+<div class="ttc" id="alog_8h_html_aeb1c06cc3e47a029ca6afeac782ac8f9ace341ef5b34a656419e6ae61474334e1"><div class="ttname"><a href="#aeb1c06cc3e47a029ca6afeac782ac8f9ace341ef5b34a656419e6ae61474334e1">AV_CLASS_CATEGORY_DEVICE_INPUT</a></div><div class="ttdeci">@ AV_CLASS_CATEGORY_DEVICE_INPUT</div><div class="ttdef"><b>定义</b> log.h:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a95810fbec46199cb25ccddae6b900bd8" name="a95810fbec46199cb25ccddae6b900bd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95810fbec46199cb25ccddae6b900bd8">&#9670;&#160;</a></span>AV_IS_OUTPUT_DEVICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_IS_OUTPUT_DEVICE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((category) == <a class="code hl_enumvalue" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a6facbfe512802ca4b03378f5c4bd2aa2">AV_CLASS_CATEGORY_DEVICE_VIDEO_OUTPUT</a>) || \</div>
+<div class="line">     ((category) == <a class="code hl_enumvalue" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a4acd911842413e1bd9e1387f7b6b5e4b">AV_CLASS_CATEGORY_DEVICE_AUDIO_OUTPUT</a>) || \</div>
+<div class="line">     ((category) == <a class="code hl_enumvalue" href="#aeb1c06cc3e47a029ca6afeac782ac8f9a47ac8b5cb587a90463644ccab01ce71b">AV_CLASS_CATEGORY_DEVICE_OUTPUT</a>))</div>
+<div class="ttc" id="alog_8h_html_aeb1c06cc3e47a029ca6afeac782ac8f9a47ac8b5cb587a90463644ccab01ce71b"><div class="ttname"><a href="#aeb1c06cc3e47a029ca6afeac782ac8f9a47ac8b5cb587a90463644ccab01ce71b">AV_CLASS_CATEGORY_DEVICE_OUTPUT</a></div><div class="ttdeci">@ AV_CLASS_CATEGORY_DEVICE_OUTPUT</div><div class="ttdef"><b>定义</b> log.h:45</div></div>
+<div class="ttc" id="alog_8h_html_aeb1c06cc3e47a029ca6afeac782ac8f9a4acd911842413e1bd9e1387f7b6b5e4b"><div class="ttname"><a href="#aeb1c06cc3e47a029ca6afeac782ac8f9a4acd911842413e1bd9e1387f7b6b5e4b">AV_CLASS_CATEGORY_DEVICE_AUDIO_OUTPUT</a></div><div class="ttdeci">@ AV_CLASS_CATEGORY_DEVICE_AUDIO_OUTPUT</div><div class="ttdef"><b>定义</b> log.h:43</div></div>
+<div class="ttc" id="alog_8h_html_aeb1c06cc3e47a029ca6afeac782ac8f9a6facbfe512802ca4b03378f5c4bd2aa2"><div class="ttname"><a href="#aeb1c06cc3e47a029ca6afeac782ac8f9a6facbfe512802ca4b03378f5c4bd2aa2">AV_CLASS_CATEGORY_DEVICE_VIDEO_OUTPUT</a></div><div class="ttdeci">@ AV_CLASS_CATEGORY_DEVICE_VIDEO_OUTPUT</div><div class="ttdef"><b>定义</b> log.h:41</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a56f1ed7b1ab5801b834afc119af7f338" name="a56f1ed7b1ab5801b834afc119af7f338"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56f1ed7b1ab5801b834afc119af7f338">&#9670;&#160;</a></span>AVClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVClass AVClass</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Describe the class of an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> context structure. </p>
+<p>That is an arbitrary struct of which the first field is a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> struct (e.g. <a class="el" href="struct_a_v_codec_context.html" title="main external API structure.">AVCodecContext</a>, <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> etc.). </p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="aeb1c06cc3e47a029ca6afeac782ac8f9" name="aeb1c06cc3e47a029ca6afeac782ac8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb1c06cc3e47a029ca6afeac782ac8f9">&#9670;&#160;</a></span>AVClassCategory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#aeb1c06cc3e47a029ca6afeac782ac8f9">AVClassCategory</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a71af9d0d8f60e47a7a83046e27dadefa" name="aeb1c06cc3e47a029ca6afeac782ac8f9a71af9d0d8f60e47a7a83046e27dadefa"></a>AV_CLASS_CATEGORY_NA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a0b907bb25d241484062534be320001d1" name="aeb1c06cc3e47a029ca6afeac782ac8f9a0b907bb25d241484062534be320001d1"></a>AV_CLASS_CATEGORY_INPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a922ed45f6aaa6e0bdcdcdcfa20e5f6a4" name="aeb1c06cc3e47a029ca6afeac782ac8f9a922ed45f6aaa6e0bdcdcdcfa20e5f6a4"></a>AV_CLASS_CATEGORY_OUTPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a25e15ba6dba2dcd767d69c04eaa38a59" name="aeb1c06cc3e47a029ca6afeac782ac8f9a25e15ba6dba2dcd767d69c04eaa38a59"></a>AV_CLASS_CATEGORY_MUXER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a86a70f4c26b01f85c4c23433322eec2c" name="aeb1c06cc3e47a029ca6afeac782ac8f9a86a70f4c26b01f85c4c23433322eec2c"></a>AV_CLASS_CATEGORY_DEMUXER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9ae22f8fa66b02cff95fb04ec963713a4c" name="aeb1c06cc3e47a029ca6afeac782ac8f9ae22f8fa66b02cff95fb04ec963713a4c"></a>AV_CLASS_CATEGORY_ENCODER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9af24522b3c299ba8b85a5a00574d43b2b" name="aeb1c06cc3e47a029ca6afeac782ac8f9af24522b3c299ba8b85a5a00574d43b2b"></a>AV_CLASS_CATEGORY_DECODER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a78b8da9853ff87127b31ceb9a78f3a37" name="aeb1c06cc3e47a029ca6afeac782ac8f9a78b8da9853ff87127b31ceb9a78f3a37"></a>AV_CLASS_CATEGORY_FILTER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a2aa971aa717aa1f2b812ed1358ff7fbf" name="aeb1c06cc3e47a029ca6afeac782ac8f9a2aa971aa717aa1f2b812ed1358ff7fbf"></a>AV_CLASS_CATEGORY_BITSTREAM_FILTER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a2852542cb189f4d25e470ee67e09ff6a" name="aeb1c06cc3e47a029ca6afeac782ac8f9a2852542cb189f4d25e470ee67e09ff6a"></a>AV_CLASS_CATEGORY_SWSCALER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9acf18a1d69313a920e4a5229c86de8e1c" name="aeb1c06cc3e47a029ca6afeac782ac8f9acf18a1d69313a920e4a5229c86de8e1c"></a>AV_CLASS_CATEGORY_SWRESAMPLER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a6facbfe512802ca4b03378f5c4bd2aa2" name="aeb1c06cc3e47a029ca6afeac782ac8f9a6facbfe512802ca4b03378f5c4bd2aa2"></a>AV_CLASS_CATEGORY_DEVICE_VIDEO_OUTPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a73fb8c6b471b22685e8d2836f25ca6c7" name="aeb1c06cc3e47a029ca6afeac782ac8f9a73fb8c6b471b22685e8d2836f25ca6c7"></a>AV_CLASS_CATEGORY_DEVICE_VIDEO_INPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a4acd911842413e1bd9e1387f7b6b5e4b" name="aeb1c06cc3e47a029ca6afeac782ac8f9a4acd911842413e1bd9e1387f7b6b5e4b"></a>AV_CLASS_CATEGORY_DEVICE_AUDIO_OUTPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9aacba77c66d969c8dbd8b9597e9b98869" name="aeb1c06cc3e47a029ca6afeac782ac8f9aacba77c66d969c8dbd8b9597e9b98869"></a>AV_CLASS_CATEGORY_DEVICE_AUDIO_INPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a47ac8b5cb587a90463644ccab01ce71b" name="aeb1c06cc3e47a029ca6afeac782ac8f9a47ac8b5cb587a90463644ccab01ce71b"></a>AV_CLASS_CATEGORY_DEVICE_OUTPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9ace341ef5b34a656419e6ae61474334e1" name="aeb1c06cc3e47a029ca6afeac782ac8f9ace341ef5b34a656419e6ae61474334e1"></a>AV_CLASS_CATEGORY_DEVICE_INPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb1c06cc3e47a029ca6afeac782ac8f9a6500b5dc52e5485b497c3f7228ce637f" name="aeb1c06cc3e47a029ca6afeac782ac8f9a6500b5dc52e5485b497c3f7228ce637f"></a>AV_CLASS_CATEGORY_NB&#160;</td><td class="fielddoc"><p>not part of ABI/API </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="log_8h.html">log.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

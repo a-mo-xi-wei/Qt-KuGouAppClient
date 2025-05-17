@@ -1,0 +1,1486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AVOptions</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__avoptions.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">专题</a> &#124;
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">AVOptions<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__data.html">Data Structures</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>AVOptions provide a generic system to declare options on arbitrary structs ("objects").  
+<a href="#details">更多...</a></p>
+<div class="dynheader">
+AVOptions 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__avoptions.png" border="0" usemap="#agroup____avoptions" alt=""/></div>
+<map name="agroup____avoptions" id="agroup____avoptions">
+<area shape="rect" title="AVOptions provide a generic system to declare options on arbitrary structs (&quot;objects&quot;)." alt="" coords="167,56,250,83"/>
+<area shape="rect" href="group__opt__eval__funcs.html" title="This group of functions can be used to evaluate option strings and get numbers out of them." alt="" coords="298,5,462,32"/>
+<area shape="rect" href="group__opt__get__funcs.html" title="Those functions get a value of the option with the given name from an object." alt="" coords="300,56,460,83"/>
+<area shape="rect" href="group__opt__set__funcs.html" title="Those functions set the field of obj with the given name to value." alt="" coords="300,107,460,133"/>
+<area shape="rect" href="group__lavu__data.html" title=" " alt="" coords="5,56,119,83"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+专题</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__opt__eval__funcs.html">Evaluating option strings</a></td></tr>
+<tr class="memdesc:group__opt__eval__funcs"><td class="mdescLeft">&#160;</td><td class="mdescRight">This group of functions can be used to evaluate option strings and get numbers out of them. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__opt__set__funcs.html">Option setting functions</a></td></tr>
+<tr class="memdesc:group__opt__set__funcs"><td class="mdescLeft">&#160;</td><td class="mdescRight">Those functions set the field of obj with the given name to value. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__opt__get__funcs.html">Option getting functions</a></td></tr>
+<tr class="memdesc:group__opt__get__funcs"><td class="mdescLeft">&#160;</td><td class="mdescRight">Those functions get a value of the option with the given name from an object. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_option.html">AVOption</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a>  <a href="struct_a_v_option.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_option_range.html">AVOptionRange</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single allowed range of values, or a single allowed value.  <a href="struct_a_v_option_range.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_option_ranges.html">AVOptionRanges</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of <a class="el" href="struct_a_v_option_range.html" title="A single allowed range of values, or a single allowed value.">AVOptionRange</a> structs.  <a href="struct_a_v_option_ranges.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga25801ba4fc9b5313eb33ec84e082dd72" id="r_ga25801ba4fc9b5313eb33ec84e082dd72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga25801ba4fc9b5313eb33ec84e082dd72">AV_OPT_SEARCH_CHILDREN</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memdesc:ga25801ba4fc9b5313eb33ec84e082dd72"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_search.html" title="搜索界面类，管理推荐、排行、专题和频道页面">Search</a> in possible children of the given object first.  <br /></td></tr>
+<tr class="separator:ga25801ba4fc9b5313eb33ec84e082dd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa764998552a6f6f66a47ecd52b345caa" id="r_gaa764998552a6f6f66a47ecd52b345caa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa764998552a6f6f66a47ecd52b345caa">AV_OPT_SEARCH_FAKE_OBJ</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="memdesc:gaa764998552a6f6f66a47ecd52b345caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The obj passed to <a class="el" href="#ga9ad3a0b722a9815f15e3df512290d618" title="Look for an option in an object.">av_opt_find()</a> is fake &ndash; only a double pointer to <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> instead of a required pointer to a struct containing <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>.  <br /></td></tr>
+<tr class="separator:gaa764998552a6f6f66a47ecd52b345caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga821eea4d28ffec3b26a9eef413ff9ed4" id="r_ga821eea4d28ffec3b26a9eef413ff9ed4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga821eea4d28ffec3b26a9eef413ff9ed4">AV_OPT_ALLOW_NULL</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="memdesc:ga821eea4d28ffec3b26a9eef413ff9ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">In av_opt_get, return NULL if the option has a pointer type and is set to NULL, rather than returning an empty string.  <br /></td></tr>
+<tr class="separator:ga821eea4d28ffec3b26a9eef413ff9ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1f10d07c79eec8bd1a8e1b91817e1b1a" id="r_ga1f10d07c79eec8bd1a8e1b91817e1b1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1f10d07c79eec8bd1a8e1b91817e1b1a">AV_OPT_MULTI_COMPONENT_RANGE</a>&#160;&#160;&#160;(1 &lt;&lt; 12)</td></tr>
+<tr class="memdesc:ga1f10d07c79eec8bd1a8e1b91817e1b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows av_opt_query_ranges and av_opt_query_ranges_default to return more than one component for certain option types.  <br /></td></tr>
+<tr class="separator:ga1f10d07c79eec8bd1a8e1b91817e1b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga844ea4db9927936ea0cfc98e0113750f" id="r_ga844ea4db9927936ea0cfc98e0113750f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga844ea4db9927936ea0cfc98e0113750f">AV_OPT_SERIALIZE_SKIP_DEFAULTS</a>&#160;&#160;&#160;0x00000001</td></tr>
+<tr class="memdesc:ga844ea4db9927936ea0cfc98e0113750f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize options that are not set to default values only.  <br /></td></tr>
+<tr class="separator:ga844ea4db9927936ea0cfc98e0113750f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49bfd169f5bcde70fb38fc036a524d3a" id="r_ga49bfd169f5bcde70fb38fc036a524d3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga49bfd169f5bcde70fb38fc036a524d3a">AV_OPT_SERIALIZE_OPT_FLAGS_EXACT</a>&#160;&#160;&#160;0x00000002</td></tr>
+<tr class="memdesc:ga49bfd169f5bcde70fb38fc036a524d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize options that exactly match opt_flags only.  <br /></td></tr>
+<tr class="separator:ga49bfd169f5bcde70fb38fc036a524d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:gac7d2b6f338b15cba99b36a76f3b99d81" id="r_gac7d2b6f338b15cba99b36a76f3b99d81"><td class="memItemLeft" align="right" valign="top">typedef struct AVOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac7d2b6f338b15cba99b36a76f3b99d81">AVOption</a></td></tr>
+<tr class="memdesc:gac7d2b6f338b15cba99b36a76f3b99d81"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a>  <br /></td></tr>
+<tr class="separator:gac7d2b6f338b15cba99b36a76f3b99d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9bef99908016b6b875441bda2deaae31" id="r_ga9bef99908016b6b875441bda2deaae31"><td class="memItemLeft" align="right" valign="top">typedef struct AVOptionRange&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9bef99908016b6b875441bda2deaae31">AVOptionRange</a></td></tr>
+<tr class="memdesc:ga9bef99908016b6b875441bda2deaae31"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single allowed range of values, or a single allowed value.  <br /></td></tr>
+<tr class="separator:ga9bef99908016b6b875441bda2deaae31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7ad285d705354db2f1f4a721aadd516" id="r_gaf7ad285d705354db2f1f4a721aadd516"><td class="memItemLeft" align="right" valign="top">typedef struct AVOptionRanges&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf7ad285d705354db2f1f4a721aadd516">AVOptionRanges</a></td></tr>
+<tr class="memdesc:gaf7ad285d705354db2f1f4a721aadd516"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of <a class="el" href="struct_a_v_option_range.html" title="A single allowed range of values, or a single allowed value.">AVOptionRange</a> structs.  <br /></td></tr>
+<tr class="separator:gaf7ad285d705354db2f1f4a721aadd516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:gabd75aa30eb8ad6387672df9a1fa79444" id="r_gabd75aa30eb8ad6387672df9a1fa79444"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabd75aa30eb8ad6387672df9a1fa79444">AVOptionType</a> { <br />
+&#160;&#160;<a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a7aaeee142b88a3078ddc57c644b49a7e">AV_OPT_TYPE_FLAGS</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444ac068b8f6afeeb293a13aeabb5d702411">AV_OPT_TYPE_INT</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a94d540a5b928da813ff94d9367a1078a">AV_OPT_TYPE_INT64</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444ae0b49ec51847a758ceb46976083da2e5">AV_OPT_TYPE_DOUBLE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444ae91d3f6cbac4a4de2a6e880ac2a52d1a">AV_OPT_TYPE_FLOAT</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444afadddce95ad3b690dd38644b458b96c4">AV_OPT_TYPE_STRING</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a74ba464440564230a72b95b39593cbfc">AV_OPT_TYPE_RATIONAL</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a2689966edbe494482dfdfaa4efdf95d3">AV_OPT_TYPE_BINARY</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444aed6f0d8e5b8f3edcaea01c15ab43aefd">AV_OPT_TYPE_DICT</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444aa6d3f68edfa4b60e970e7422b7193dd0">AV_OPT_TYPE_UINT64</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a0fa9f07d428bdc32495fe55c365c5329">AV_OPT_TYPE_CONST</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a078f280b98b49a9f585c5d479b711d9a">AV_OPT_TYPE_IMAGE_SIZE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a114085ba9877df34de060124877d8274">AV_OPT_TYPE_PIXEL_FMT</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a711661923db91bbbd4abdec0efa5ff0a">AV_OPT_TYPE_SAMPLE_FMT</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a9429811abc62d4a564ec56938df0a572">AV_OPT_TYPE_VIDEO_RATE</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a2e3a2fc47ae688f28cc4abe59452a032">AV_OPT_TYPE_DURATION</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444afdcd13cbd184901b05e27595e647fadc">AV_OPT_TYPE_COLOR</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444a5628c270688d2ec28643dfff825dbe26">AV_OPT_TYPE_CHANNEL_LAYOUT</a>
+, <a class="el" href="#ggabd75aa30eb8ad6387672df9a1fa79444af3898696f46dc79b74b708d8fa4b52a7">AV_OPT_TYPE_BOOL</a>
+<br />
+ }</td></tr>
+<tr class="separator:gabd75aa30eb8ad6387672df9a1fa79444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26ee57183cb7fc006204b68d7fc65e4e" id="r_ga26ee57183cb7fc006204b68d7fc65e4e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#gga26ee57183cb7fc006204b68d7fc65e4eaa836a939d74606db85ce1f09470d1605">AV_OPT_FLAG_IMPLICIT_KEY</a> = 1
+ }</td></tr>
+<tr class="separator:ga26ee57183cb7fc006204b68d7fc65e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gaf7394e27d34208b24af8bb4b4a11741b" id="r_gaf7394e27d34208b24af8bb4b4a11741b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf7394e27d34208b24af8bb4b4a11741b">av_opt_show2</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *av_log_obj, int req_flags, int rej_flags)</td></tr>
+<tr class="memdesc:gaf7394e27d34208b24af8bb4b4a11741b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the obj options.  <br /></td></tr>
+<tr class="separator:gaf7394e27d34208b24af8bb4b4a11741b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4ca968e9058b39b2da630ad0a091bdb" id="r_gad4ca968e9058b39b2da630ad0a091bdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad4ca968e9058b39b2da630ad0a091bdb">av_opt_set_defaults</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:gad4ca968e9058b39b2da630ad0a091bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the values of all <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> fields to their default values.  <br /></td></tr>
+<tr class="separator:gad4ca968e9058b39b2da630ad0a091bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeef5479b31ac29a6a55eb9d108d6225f" id="r_gaeef5479b31ac29a6a55eb9d108d6225f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeef5479b31ac29a6a55eb9d108d6225f">av_opt_set_defaults2</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#afeef49fced1d77edc7cd83985beed6a5">mask</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:gaeef5479b31ac29a6a55eb9d108d6225f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the values of all <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> fields to their default values.  <br /></td></tr>
+<tr class="separator:gaeef5479b31ac29a6a55eb9d108d6225f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab48669d1326f7d47ef39e5702e34abd2" id="r_gab48669d1326f7d47ef39e5702e34abd2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab48669d1326f7d47ef39e5702e34abd2">av_set_options_string</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *ctx, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *opts, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *key_val_sep, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *pairs_sep)</td></tr>
+<tr class="memdesc:gab48669d1326f7d47ef39e5702e34abd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the key/value pairs list in opts.  <br /></td></tr>
+<tr class="separator:gab48669d1326f7d47ef39e5702e34abd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa936b1aa7caca67b21cd50819c2b9fb1" id="r_gaa936b1aa7caca67b21cd50819c2b9fb1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa936b1aa7caca67b21cd50819c2b9fb1">av_opt_set_from_string</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *ctx, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *opts, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> *shorthand, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *key_val_sep, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *pairs_sep)</td></tr>
+<tr class="memdesc:gaa936b1aa7caca67b21cd50819c2b9fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the key-value pairs list in opts.  <br /></td></tr>
+<tr class="separator:gaa936b1aa7caca67b21cd50819c2b9fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac14db824af52baf8181406e98d116097" id="r_gac14db824af52baf8181406e98d116097"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac14db824af52baf8181406e98d116097">av_opt_free</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>)</td></tr>
+<tr class="memdesc:gac14db824af52baf8181406e98d116097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free all allocated objects in obj.  <br /></td></tr>
+<tr class="separator:gac14db824af52baf8181406e98d116097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1436a3afc8dbc70ed9e70c8287dcc766" id="r_ga1436a3afc8dbc70ed9e70c8287dcc766"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1436a3afc8dbc70ed9e70c8287dcc766">av_opt_flag_is_set</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *field_name, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *flag_name)</td></tr>
+<tr class="memdesc:ga1436a3afc8dbc70ed9e70c8287dcc766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a particular flag is set in a flags field.  <br /></td></tr>
+<tr class="separator:ga1436a3afc8dbc70ed9e70c8287dcc766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1a88e8f152d7835f111b1ef8813fb2e" id="r_gaf1a88e8f152d7835f111b1ef8813fb2e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf1a88e8f152d7835f111b1ef8813fb2e">av_opt_set_dict</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, struct <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **options)</td></tr>
+<tr class="memdesc:gaf1a88e8f152d7835f111b1ef8813fb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all the options from a given dictionary on an object.  <br /></td></tr>
+<tr class="separator:gaf1a88e8f152d7835f111b1ef8813fb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1824a600b215f1807e77b5f6cfa58586" id="r_ga1824a600b215f1807e77b5f6cfa58586"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1824a600b215f1807e77b5f6cfa58586">av_opt_set_dict2</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, struct <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **options, int search_flags)</td></tr>
+<tr class="memdesc:ga1824a600b215f1807e77b5f6cfa58586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all the options from a given dictionary on an object.  <br /></td></tr>
+<tr class="separator:ga1824a600b215f1807e77b5f6cfa58586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e459af4e23415b8eb9b05aee81c933c" id="r_ga1e459af4e23415b8eb9b05aee81c933c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e459af4e23415b8eb9b05aee81c933c">av_opt_get_key_value</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **ropts, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *key_val_sep, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *pairs_sep, unsigned <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, char **rkey, char **rval)</td></tr>
+<tr class="memdesc:ga1e459af4e23415b8eb9b05aee81c933c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a key-value pair from the beginning of a string.  <br /></td></tr>
+<tr class="separator:ga1e459af4e23415b8eb9b05aee81c933c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ad3a0b722a9815f15e3df512290d618" id="r_ga9ad3a0b722a9815f15e3df512290d618"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9ad3a0b722a9815f15e3df512290d618">av_opt_find</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *unit, int opt_flags, int search_flags)</td></tr>
+<tr class="memdesc:ga9ad3a0b722a9815f15e3df512290d618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look for an option in an object.  <br /></td></tr>
+<tr class="separator:ga9ad3a0b722a9815f15e3df512290d618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25d2940b96b13eaec40fd2234ca9dca0" id="r_ga25d2940b96b13eaec40fd2234ca9dca0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga25d2940b96b13eaec40fd2234ca9dca0">av_opt_find2</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *unit, int opt_flags, int search_flags, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **target_obj)</td></tr>
+<tr class="memdesc:ga25d2940b96b13eaec40fd2234ca9dca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look for an option in an object.  <br /></td></tr>
+<tr class="separator:ga25d2940b96b13eaec40fd2234ca9dca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafbe418a443aa11838ac10318df5d96f7" id="r_gafbe418a443aa11838ac10318df5d96f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafbe418a443aa11838ac10318df5d96f7">av_opt_next</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *prev)</td></tr>
+<tr class="memdesc:gafbe418a443aa11838ac10318df5d96f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all AVOptions belonging to obj.  <br /></td></tr>
+<tr class="separator:gafbe418a443aa11838ac10318df5d96f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac93347d7be97385868d17e7284356df4" id="r_gac93347d7be97385868d17e7284356df4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac93347d7be97385868d17e7284356df4">av_opt_child_next</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *prev)</td></tr>
+<tr class="memdesc:gac93347d7be97385868d17e7284356df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over AVOptions-enabled children of obj.  <br /></td></tr>
+<tr class="separator:gac93347d7be97385868d17e7284356df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f40ebbb91a4d4b702fe3ca9ade9f3a9" id="r_ga4f40ebbb91a4d4b702fe3ca9ade9f3a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4f40ebbb91a4d4b702fe3ca9ade9f3a9">av_opt_child_class_next</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *parent, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *prev)</td></tr>
+<tr class="memdesc:ga4f40ebbb91a4d4b702fe3ca9ade9f3a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over potential AVOptions-enabled children of parent.  <br /></td></tr>
+<tr class="separator:ga4f40ebbb91a4d4b702fe3ca9ade9f3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4196faffe5fe1eee21e08395957693c1" id="r_ga4196faffe5fe1eee21e08395957693c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4196faffe5fe1eee21e08395957693c1">av_opt_ptr</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *avclass, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>)</td></tr>
+<tr class="memdesc:ga4196faffe5fe1eee21e08395957693c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a pointer to the requested field in a struct.  <br /></td></tr>
+<tr class="separator:ga4196faffe5fe1eee21e08395957693c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga880756f24644ff66c806ed2d9ab3d790" id="r_ga880756f24644ff66c806ed2d9ab3d790"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga880756f24644ff66c806ed2d9ab3d790">av_opt_freep_ranges</a> (<a class="el" href="struct_a_v_option_ranges.html">AVOptionRanges</a> **ranges)</td></tr>
+<tr class="memdesc:ga880756f24644ff66c806ed2d9ab3d790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free an <a class="el" href="struct_a_v_option_ranges.html" title="List of AVOptionRange structs.">AVOptionRanges</a> struct and set it to NULL.  <br /></td></tr>
+<tr class="separator:ga880756f24644ff66c806ed2d9ab3d790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9751db4da3e0facd522f5b345f4001ef" id="r_ga9751db4da3e0facd522f5b345f4001ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9751db4da3e0facd522f5b345f4001ef">av_opt_query_ranges</a> (<a class="el" href="struct_a_v_option_ranges.html">AVOptionRanges</a> **, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a2c826a83964b85167f50f7bf527badf1">key</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:ga9751db4da3e0facd522f5b345f4001ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of allowed ranges for the given option.  <br /></td></tr>
+<tr class="separator:ga9751db4da3e0facd522f5b345f4001ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bcbbef33c677ddbf37d423dcb9c7833" id="r_ga0bcbbef33c677ddbf37d423dcb9c7833"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0bcbbef33c677ddbf37d423dcb9c7833">av_opt_copy</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *dest, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:ga0bcbbef33c677ddbf37d423dcb9c7833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy options from src object into dest object.  <br /></td></tr>
+<tr class="separator:ga0bcbbef33c677ddbf37d423dcb9c7833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e50bee09b6a374cc54237314892c001" id="r_ga4e50bee09b6a374cc54237314892c001"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4e50bee09b6a374cc54237314892c001">av_opt_query_ranges_default</a> (<a class="el" href="struct_a_v_option_ranges.html">AVOptionRanges</a> **, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a2c826a83964b85167f50f7bf527badf1">key</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:ga4e50bee09b6a374cc54237314892c001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a default list of allowed ranges for the given option.  <br /></td></tr>
+<tr class="separator:ga4e50bee09b6a374cc54237314892c001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ca54258a4c5ac18999dd19b4444c15a" id="r_ga3ca54258a4c5ac18999dd19b4444c15a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ca54258a4c5ac18999dd19b4444c15a">av_opt_is_set_to_default</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *o)</td></tr>
+<tr class="memdesc:ga3ca54258a4c5ac18999dd19b4444c15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if given option is set to its default value.  <br /></td></tr>
+<tr class="separator:ga3ca54258a4c5ac18999dd19b4444c15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa37a02c9d3e6d9f049f2e7174811f5fb" id="r_gaa37a02c9d3e6d9f049f2e7174811f5fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa37a02c9d3e6d9f049f2e7174811f5fb">av_opt_is_set_to_default_by_name</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>, int search_flags)</td></tr>
+<tr class="memdesc:gaa37a02c9d3e6d9f049f2e7174811f5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if given option is set to its default value.  <br /></td></tr>
+<tr class="separator:gaa37a02c9d3e6d9f049f2e7174811f5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga523122ff19a79f2867a9da29bbafa33b" id="r_ga523122ff19a79f2867a9da29bbafa33b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga523122ff19a79f2867a9da29bbafa33b">av_opt_serialize</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, int opt_flags, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, char **<a class="el" href="_s_d_l__opengl__glext_8h.html#a76461e97a098d2c9ae20ac193d3825ae">buffer</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char key_val_sep, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char pairs_sep)</td></tr>
+<tr class="memdesc:ga523122ff19a79f2867a9da29bbafa33b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize object's options.  <br /></td></tr>
+<tr class="separator:ga523122ff19a79f2867a9da29bbafa33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>AVOptions provide a generic system to declare options on arbitrary structs ("objects"). </p>
+<p>An option can have a help text, a type and a range of possible values. Options may then be enumerated, read and written to.</p>
+<h1><a class="anchor" id="avoptions_implement"></a>
+Implementing AVOptions</h1>
+<p>This section describes how to add AVOptions capabilities to a struct.</p>
+<p>All AVOptions-related information is stored in an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>. Therefore the first member of the struct should be a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> describing it. The option field of the <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> must be set to a NULL-terminated static array of AVOptions. Each <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> must have a non-empty name, a type, a default value and for number-type AVOptions also a range of allowed values. It must also declare an offset in bytes from the start of the struct, where the field associated with this <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> is located. Other fields in the <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> struct should also be set when applicable, but are not required.</p>
+<p>The following example illustrates an AVOptions-enabled struct: </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>test_struct {</div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> *<span class="keyword">class</span>;</div>
+<div class="line">    <span class="keywordtype">int</span>      int_opt;</div>
+<div class="line">    <span class="keywordtype">char</span>    *str_opt;</div>
+<div class="line">    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *bin_opt;</div>
+<div class="line">    <span class="keywordtype">int</span>      bin_len;</div>
+<div class="line">} test_struct;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_option.html">AVOption</a> test_options[] = {</div>
+<div class="line">  { <span class="stringliteral">&quot;test_int&quot;</span>, <span class="stringliteral">&quot;This is a test option of int type.&quot;</span>, offsetof(test_struct, int_opt),</div>
+<div class="line">    <a class="code hl_enumvalue" href="#ggabd75aa30eb8ad6387672df9a1fa79444ac068b8f6afeeb293a13aeabb5d702411">AV_OPT_TYPE_INT</a>, { .i64 = -1 }, INT_MIN, INT_MAX },</div>
+<div class="line">  { <span class="stringliteral">&quot;test_str&quot;</span>, <span class="stringliteral">&quot;This is a test option of string type.&quot;</span>, offsetof(test_struct, str_opt),</div>
+<div class="line">    <a class="code hl_enumvalue" href="#ggabd75aa30eb8ad6387672df9a1fa79444afadddce95ad3b690dd38644b458b96c4">AV_OPT_TYPE_STRING</a> },</div>
+<div class="line">  { <span class="stringliteral">&quot;test_bin&quot;</span>, <span class="stringliteral">&quot;This is a test option of binary type.&quot;</span>, offsetof(test_struct, bin_opt),</div>
+<div class="line">    <a class="code hl_enumvalue" href="#ggabd75aa30eb8ad6387672df9a1fa79444a2689966edbe494482dfdfaa4efdf95d3">AV_OPT_TYPE_BINARY</a> },</div>
+<div class="line">  { <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> },</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> test_class = {</div>
+<div class="line">    .class_name = <span class="stringliteral">&quot;test class&quot;</span>,</div>
+<div class="line">    .item_name  = <a class="code hl_function" href="group__lavu__log.html#ga1e2d13acd5bf1c5790faa60edae84cf0">av_default_item_name</a>,</div>
+<div class="line">    .option     = test_options,</div>
+<div class="line">    .version    = <a class="code hl_define" href="group__lavu__ver.html#ga36e17e3fc9bcbe5c55820a8ac8b47e3c">LIBAVUTIL_VERSION_INT</a>,</div>
+<div class="line">};</div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:29</div></div>
+<div class="ttc" id="abegin__code_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>定义</b> begin_code.h:165</div></div>
+<div class="ttc" id="agroup__avoptions_html_ggabd75aa30eb8ad6387672df9a1fa79444a2689966edbe494482dfdfaa4efdf95d3"><div class="ttname"><a href="#ggabd75aa30eb8ad6387672df9a1fa79444a2689966edbe494482dfdfaa4efdf95d3">AV_OPT_TYPE_BINARY</a></div><div class="ttdeci">@ AV_OPT_TYPE_BINARY</div><div class="ttdoc">offset must point to a pointer immediately followed by an int for the length</div><div class="ttdef"><b>定义</b> opt.h:229</div></div>
+<div class="ttc" id="agroup__avoptions_html_ggabd75aa30eb8ad6387672df9a1fa79444ac068b8f6afeeb293a13aeabb5d702411"><div class="ttname"><a href="#ggabd75aa30eb8ad6387672df9a1fa79444ac068b8f6afeeb293a13aeabb5d702411">AV_OPT_TYPE_INT</a></div><div class="ttdeci">@ AV_OPT_TYPE_INT</div><div class="ttdef"><b>定义</b> opt.h:223</div></div>
+<div class="ttc" id="agroup__avoptions_html_ggabd75aa30eb8ad6387672df9a1fa79444afadddce95ad3b690dd38644b458b96c4"><div class="ttname"><a href="#ggabd75aa30eb8ad6387672df9a1fa79444afadddce95ad3b690dd38644b458b96c4">AV_OPT_TYPE_STRING</a></div><div class="ttdeci">@ AV_OPT_TYPE_STRING</div><div class="ttdef"><b>定义</b> opt.h:227</div></div>
+<div class="ttc" id="agroup__lavu__log_html_ga1e2d13acd5bf1c5790faa60edae84cf0"><div class="ttname"><a href="group__lavu__log.html#ga1e2d13acd5bf1c5790faa60edae84cf0">av_default_item_name</a></div><div class="ttdeci">const char * av_default_item_name(void *ctx)</div><div class="ttdoc">Return the context name</div></div>
+<div class="ttc" id="agroup__lavu__ver_html_ga36e17e3fc9bcbe5c55820a8ac8b47e3c"><div class="ttname"><a href="group__lavu__ver.html#ga36e17e3fc9bcbe5c55820a8ac8b47e3c">LIBAVUTIL_VERSION_INT</a></div><div class="ttdeci">#define LIBAVUTIL_VERSION_INT</div><div class="ttdef"><b>定义</b> tools/ffmpeg/win64/include/libavutil/version.h:85</div></div>
+<div class="ttc" id="astruct_a_v_class_html"><div class="ttname"><a href="struct_a_v_class.html">AVClass</a></div><div class="ttdoc">Describe the class of an AVClass context structure.</div><div class="ttdef"><b>定义</b> log.h:67</div></div>
+<div class="ttc" id="astruct_a_v_option_html"><div class="ttname"><a href="struct_a_v_option.html">AVOption</a></div><div class="ttdoc">AVOption</div><div class="ttdef"><b>定义</b> opt.h:246</div></div>
+</div><!-- fragment --><p>Next, when allocating your struct, you must ensure that the <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> pointer is set to the correct value. Then, <a class="el" href="#gad4ca968e9058b39b2da630ad0a091bdb" title="Set the values of all AVOption fields to their default values.">av_opt_set_defaults()</a> can be called to initialize defaults. After that the struct is ready to be used with the AVOptions API.</p>
+<p>When cleaning up, you may use the <a class="el" href="#gac14db824af52baf8181406e98d116097" title="Free all allocated objects in obj.">av_opt_free()</a> function to automatically free all the allocated string and binary options.</p>
+<p>Continuing with the above example:</p>
+<div class="fragment"><div class="line">test_struct *alloc_test_struct(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    test_struct *ret = <a class="code hl_function" href="group__lavu__mem__funcs.html#ga3dc1cbd0f18fd550b0bfaad4bc5b6d01">av_mallocz</a>(<span class="keyword">sizeof</span>(*ret));</div>
+<div class="line">    ret-&gt;class = &amp;test_class;</div>
+<div class="line">    <a class="code hl_function" href="#gad4ca968e9058b39b2da630ad0a091bdb">av_opt_set_defaults</a>(ret);</div>
+<div class="line">    <span class="keywordflow">return</span> ret;</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordtype">void</span> free_test_struct(test_struct **foo)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_function" href="#gac14db824af52baf8181406e98d116097">av_opt_free</a>(*foo);</div>
+<div class="line">    <a class="code hl_function" href="group__lavu__mem__funcs.html#ga0cc84043ea2167ad005c86e11d0bcdba">av_freep</a>(foo);</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__avoptions_html_gac14db824af52baf8181406e98d116097"><div class="ttname"><a href="#gac14db824af52baf8181406e98d116097">av_opt_free</a></div><div class="ttdeci">void av_opt_free(void *obj)</div><div class="ttdoc">Free all allocated objects in obj.</div></div>
+<div class="ttc" id="agroup__avoptions_html_gad4ca968e9058b39b2da630ad0a091bdb"><div class="ttname"><a href="#gad4ca968e9058b39b2da630ad0a091bdb">av_opt_set_defaults</a></div><div class="ttdeci">void av_opt_set_defaults(void *s)</div><div class="ttdoc">Set the values of all AVOption fields to their default values.</div></div>
+<div class="ttc" id="agroup__lavu__mem__funcs_html_ga0cc84043ea2167ad005c86e11d0bcdba"><div class="ttname"><a href="group__lavu__mem__funcs.html#ga0cc84043ea2167ad005c86e11d0bcdba">av_freep</a></div><div class="ttdeci">void av_freep(void *ptr)</div><div class="ttdoc">Free a memory block which has been allocated with a function of av_malloc() or av_realloc() family,...</div></div>
+<div class="ttc" id="agroup__lavu__mem__funcs_html_ga3dc1cbd0f18fd550b0bfaad4bc5b6d01"><div class="ttname"><a href="group__lavu__mem__funcs.html#ga3dc1cbd0f18fd550b0bfaad4bc5b6d01">av_mallocz</a></div><div class="ttdeci">void * av_mallocz(size_t size) av_malloc_attrib av_alloc_size(1)</div><div class="ttdoc">Allocate a memory block with alignment suitable for all memory accesses (including vectors if availab...</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="avoptions_implement_nesting"></a>
+Nesting</h2>
+<p>It may happen that an AVOptions-enabled struct contains another AVOptions-enabled struct as a member (e.g. <a class="el" href="struct_a_v_codec_context.html" title="main external API structure.">AVCodecContext</a> in libavcodec exports generic options, while its priv_data field exports codec-specific options). In such a case, it is possible to set up the parent struct to export a child's options. To do that, simply implement <a class="el" href="struct_a_v_class.html#a60b736c539b55d2bfc8ce6a05482dfe5" title="Return next AVOptions-enabled child or NULL">AVClass.child_next()</a> and <a class="el" href="struct_a_v_class.html#a4e01d22d8921f4ede493bf5ed4bd258d" title="Return an AVClass corresponding to the next potential AVOptions-enabled child.">AVClass.child_class_next()</a> in the parent struct's <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>. Assuming that the test_struct from above now also contains a child_struct field:</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>child_struct {</div>
+<div class="line">    <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> *<span class="keyword">class</span>;</div>
+<div class="line">    <span class="keywordtype">int</span> flags_opt;</div>
+<div class="line">} child_struct;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_option.html">AVOption</a> child_opts[] = {</div>
+<div class="line">    { <span class="stringliteral">&quot;test_flags&quot;</span>, <span class="stringliteral">&quot;This is a test option of flags type.&quot;</span>,</div>
+<div class="line">      offsetof(child_struct, flags_opt), <a class="code hl_enumvalue" href="#ggabd75aa30eb8ad6387672df9a1fa79444a7aaeee142b88a3078ddc57c644b49a7e">AV_OPT_TYPE_FLAGS</a>, { .i64 = 0 }, INT_MIN, INT_MAX },</div>
+<div class="line">    { <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> },</div>
+<div class="line">};</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> child_class = {</div>
+<div class="line">    .class_name = <span class="stringliteral">&quot;child class&quot;</span>,</div>
+<div class="line">    .item_name  = <a class="code hl_function" href="group__lavu__log.html#ga1e2d13acd5bf1c5790faa60edae84cf0">av_default_item_name</a>,</div>
+<div class="line">    .option     = child_opts,</div>
+<div class="line">    .version    = <a class="code hl_define" href="group__lavu__ver.html#ga36e17e3fc9bcbe5c55820a8ac8b47e3c">LIBAVUTIL_VERSION_INT</a>,</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> *child_next(<span class="keywordtype">void</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <span class="keywordtype">void</span> *prev)</div>
+<div class="line">{</div>
+<div class="line">    test_struct *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a> = <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>;</div>
+<div class="line">    <span class="keywordflow">if</span> (!prev &amp;&amp; <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a>-&gt;child_struct)</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a>-&gt;child_struct;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div>
+<div class="line">}</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> child_class_next(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> *prev)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">return</span> prev ? <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> : &amp;child_class;</div>
+<div class="line">}</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_ade5636ea600ca40c1f2c8cd08c1dcd3e"><div class="ttname"><a href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a></div><div class="ttdeci">GLdouble GLdouble t</div><div class="ttdef"><b>定义</b> SDL_opengl.h:2071</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a0c0d4701a6c89f4f7f0640715d27ab26"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a></div><div class="ttdeci">GLhandleARB obj</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:4417</div></div>
+<div class="ttc" id="agroup__avoptions_html_ggabd75aa30eb8ad6387672df9a1fa79444a7aaeee142b88a3078ddc57c644b49a7e"><div class="ttname"><a href="#ggabd75aa30eb8ad6387672df9a1fa79444a7aaeee142b88a3078ddc57c644b49a7e">AV_OPT_TYPE_FLAGS</a></div><div class="ttdeci">@ AV_OPT_TYPE_FLAGS</div><div class="ttdef"><b>定义</b> opt.h:222</div></div>
+</div><!-- fragment --><p> Putting child_next() and child_class_next() as defined above into test_class will now make child_struct's options accessible through test_struct (again, proper setup as described above needs to be done on child_struct right after it is created).</p>
+<p>From the above example it might not be clear why both child_next() and child_class_next() are needed. The distinction is that child_next() iterates over actually existing objects, while child_class_next() iterates over all possible child classes. E.g. if an <a class="el" href="struct_a_v_codec_context.html" title="main external API structure.">AVCodecContext</a> was initialized to use a codec which has private options, then its child_next() will return <a class="el" href="struct_a_v_codec_context.html#a33e7865dc6cf5cbd56a8f1a654e306a5">AVCodecContext.priv_data</a> and finish iterating. OTOH child_class_next() on <a class="el" href="struct_a_v_codec_context.html#a3c52bb71d909eb63b854c56cc44927b7" title="information on struct for av_log">AVCodecContext.av_class</a> will iterate over all available codecs with private options.</p>
+<h2><a class="anchor" id="avoptions_implement_named_constants"></a>
+Named constants</h2>
+<p>It is possible to create named constants for options. Simply set the unit field of the option the constants should apply to a string and create the constants themselves as options of type AV_OPT_TYPE_CONST with their unit field set to the same string. Their default_val field should contain the value of the named constant. For example, to add some named constants for the test_flags option above, put the following into the child_opts array: </p><div class="fragment"><div class="line">{ <span class="stringliteral">&quot;test_flags&quot;</span>, <span class="stringliteral">&quot;This is a test option of flags type.&quot;</span>,</div>
+<div class="line">  offsetof(child_struct, flags_opt), <a class="code hl_enumvalue" href="#ggabd75aa30eb8ad6387672df9a1fa79444a7aaeee142b88a3078ddc57c644b49a7e">AV_OPT_TYPE_FLAGS</a>, { .i64 = 0 }, INT_MIN, INT_MAX, <span class="stringliteral">&quot;test_unit&quot;</span> },</div>
+<div class="line">{ <span class="stringliteral">&quot;flag1&quot;</span>, <span class="stringliteral">&quot;This is a flag with value 16&quot;</span>, 0, <a class="code hl_enumvalue" href="#ggabd75aa30eb8ad6387672df9a1fa79444a0fa9f07d428bdc32495fe55c365c5329">AV_OPT_TYPE_CONST</a>, { .i64 = 16 }, 0, 0, <span class="stringliteral">&quot;test_unit&quot;</span> },</div>
+<div class="ttc" id="agroup__avoptions_html_ggabd75aa30eb8ad6387672df9a1fa79444a0fa9f07d428bdc32495fe55c365c5329"><div class="ttname"><a href="#ggabd75aa30eb8ad6387672df9a1fa79444a0fa9f07d428bdc32495fe55c365c5329">AV_OPT_TYPE_CONST</a></div><div class="ttdeci">@ AV_OPT_TYPE_CONST</div><div class="ttdef"><b>定义</b> opt.h:232</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="avoptions_use"></a>
+Using AVOptions</h1>
+<p>This section deals with accessing options in an AVOptions-enabled struct. Such structs in FFmpeg are e.g. <a class="el" href="struct_a_v_codec_context.html" title="main external API structure.">AVCodecContext</a> in libavcodec or <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> in libavformat.</p>
+<h2><a class="anchor" id="avoptions_use_examine"></a>
+Examining AVOptions</h2>
+<p>The basic functions for examining options are <a class="el" href="#gafbe418a443aa11838ac10318df5d96f7" title="Iterate over all AVOptions belonging to obj.">av_opt_next()</a>, which iterates over all options defined for one object, and <a class="el" href="#ga9ad3a0b722a9815f15e3df512290d618" title="Look for an option in an object.">av_opt_find()</a>, which searches for an option with the given name.</p>
+<p>The situation is more complicated with nesting. An AVOptions-enabled struct may have AVOptions-enabled children. Passing the AV_OPT_SEARCH_CHILDREN flag to <a class="el" href="#ga9ad3a0b722a9815f15e3df512290d618" title="Look for an option in an object.">av_opt_find()</a> will make the function search children recursively.</p>
+<p>For enumerating there are basically two cases. The first is when you want to get all options that may potentially exist on the struct and its children (e.g. when constructing documentation). In that case you should call <a class="el" href="#ga4f40ebbb91a4d4b702fe3ca9ade9f3a9" title="Iterate over potential AVOptions-enabled children of parent.">av_opt_child_class_next()</a> recursively on the parent struct's <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>. The second case is when you have an already initialized struct with all its children and you want to get all options that can be actually written or read from it. In that case you should call <a class="el" href="#gac93347d7be97385868d17e7284356df4" title="Iterate over AVOptions-enabled children of obj.">av_opt_child_next()</a> recursively (and <a class="el" href="#gafbe418a443aa11838ac10318df5d96f7" title="Iterate over all AVOptions belonging to obj.">av_opt_next()</a> on each result).</p>
+<h2><a class="anchor" id="avoptions_use_get_set"></a>
+Reading and writing AVOptions</h2>
+<p>When setting options, you often have a string read directly from the user. In such a case, simply passing it to <a class="el" href="group__opt__set__funcs.html#ga5fd4b92bdf4f392a2847f711676a7537">av_opt_set()</a> is enough. For non-string type options, <a class="el" href="group__opt__set__funcs.html#ga5fd4b92bdf4f392a2847f711676a7537">av_opt_set()</a> will parse the string according to the option type.</p>
+<p>Similarly <a class="el" href="group__opt__get__funcs.html#gaf31144e60f9ce89dbe8cbea57a0b232c">av_opt_get()</a> will read any option type and convert it to a string which will be returned. Do not forget that the string is allocated, so you have to free it with <a class="el" href="group__lavu__mem__funcs.html#ga0c9096f498624c525aa2315b8a20c411" title="Free a memory block which has been allocated with a function of av_malloc() or av_realloc() family.">av_free()</a>.</p>
+<p>In some cases it may be more convenient to put all options into an <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> and call <a class="el" href="#gaf1a88e8f152d7835f111b1ef8813fb2e" title="Set all the options from a given dictionary on an object.">av_opt_set_dict()</a> on it. A specific case of this are the format/codec open functions in lavf/lavc which take a dictionary filled with option as a parameter. This makes it possible to set some options that cannot be set otherwise, since e.g. the input file format is not known before the file is actually opened. </p>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ga821eea4d28ffec3b26a9eef413ff9ed4" name="ga821eea4d28ffec3b26a9eef413ff9ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga821eea4d28ffec3b26a9eef413ff9ed4">&#9670;&#160;</a></span>AV_OPT_ALLOW_NULL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_OPT_ALLOW_NULL&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>In av_opt_get, return NULL if the option has a pointer type and is set to NULL, rather than returning an empty string. </p>
+
+</div>
+</div>
+<a id="ga1f10d07c79eec8bd1a8e1b91817e1b1a" name="ga1f10d07c79eec8bd1a8e1b91817e1b1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1f10d07c79eec8bd1a8e1b91817e1b1a">&#9670;&#160;</a></span>AV_OPT_MULTI_COMPONENT_RANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_OPT_MULTI_COMPONENT_RANGE&#160;&#160;&#160;(1 &lt;&lt; 12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allows av_opt_query_ranges and av_opt_query_ranges_default to return more than one component for certain option types. </p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="struct_a_v_option_ranges.html" title="List of AVOptionRange structs.">AVOptionRanges</a> for details. </dd></dl>
+
+</div>
+</div>
+<a id="ga25801ba4fc9b5313eb33ec84e082dd72" name="ga25801ba4fc9b5313eb33ec84e082dd72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25801ba4fc9b5313eb33ec84e082dd72">&#9670;&#160;</a></span>AV_OPT_SEARCH_CHILDREN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_OPT_SEARCH_CHILDREN&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_search.html" title="搜索界面类，管理推荐、排行、专题和频道页面">Search</a> in possible children of the given object first. </p>
+
+</div>
+</div>
+<a id="gaa764998552a6f6f66a47ecd52b345caa" name="gaa764998552a6f6f66a47ecd52b345caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa764998552a6f6f66a47ecd52b345caa">&#9670;&#160;</a></span>AV_OPT_SEARCH_FAKE_OBJ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_OPT_SEARCH_FAKE_OBJ&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The obj passed to <a class="el" href="#ga9ad3a0b722a9815f15e3df512290d618" title="Look for an option in an object.">av_opt_find()</a> is fake &ndash; only a double pointer to <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> instead of a required pointer to a struct containing <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>. </p>
+<p>This is useful for searching for options without needing to allocate the corresponding object. </p>
+
+</div>
+</div>
+<a id="ga49bfd169f5bcde70fb38fc036a524d3a" name="ga49bfd169f5bcde70fb38fc036a524d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49bfd169f5bcde70fb38fc036a524d3a">&#9670;&#160;</a></span>AV_OPT_SERIALIZE_OPT_FLAGS_EXACT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_OPT_SERIALIZE_OPT_FLAGS_EXACT&#160;&#160;&#160;0x00000002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialize options that exactly match opt_flags only. </p>
+
+</div>
+</div>
+<a id="ga844ea4db9927936ea0cfc98e0113750f" name="ga844ea4db9927936ea0cfc98e0113750f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga844ea4db9927936ea0cfc98e0113750f">&#9670;&#160;</a></span>AV_OPT_SERIALIZE_SKIP_DEFAULTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_OPT_SERIALIZE_SKIP_DEFAULTS&#160;&#160;&#160;0x00000001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialize options that are not set to default values only. </p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="gac7d2b6f338b15cba99b36a76f3b99d81" name="gac7d2b6f338b15cba99b36a76f3b99d81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7d2b6f338b15cba99b36a76f3b99d81">&#9670;&#160;</a></span>AVOption</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVOption AVOption</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> </p>
+
+</div>
+</div>
+<a id="ga9bef99908016b6b875441bda2deaae31" name="ga9bef99908016b6b875441bda2deaae31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9bef99908016b6b875441bda2deaae31">&#9670;&#160;</a></span>AVOptionRange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVOptionRange AVOptionRange</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A single allowed range of values, or a single allowed value. </p>
+
+</div>
+</div>
+<a id="gaf7ad285d705354db2f1f4a721aadd516" name="gaf7ad285d705354db2f1f4a721aadd516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7ad285d705354db2f1f4a721aadd516">&#9670;&#160;</a></span>AVOptionRanges</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVOptionRanges AVOptionRanges</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of <a class="el" href="struct_a_v_option_range.html" title="A single allowed range of values, or a single allowed value.">AVOptionRange</a> structs. </p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="ga26ee57183cb7fc006204b68d7fc65e4e" name="ga26ee57183cb7fc006204b68d7fc65e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26ee57183cb7fc006204b68d7fc65e4e">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="gga26ee57183cb7fc006204b68d7fc65e4eaa836a939d74606db85ce1f09470d1605" name="gga26ee57183cb7fc006204b68d7fc65e4eaa836a939d74606db85ce1f09470d1605"></a>AV_OPT_FLAG_IMPLICIT_KEY&#160;</td><td class="fielddoc"><p>Accept to parse a value without a key; the key will then be returned as NULL. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="gabd75aa30eb8ad6387672df9a1fa79444" name="gabd75aa30eb8ad6387672df9a1fa79444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd75aa30eb8ad6387672df9a1fa79444">&#9670;&#160;</a></span>AVOptionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gabd75aa30eb8ad6387672df9a1fa79444">AVOptionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a7aaeee142b88a3078ddc57c644b49a7e" name="ggabd75aa30eb8ad6387672df9a1fa79444a7aaeee142b88a3078ddc57c644b49a7e"></a>AV_OPT_TYPE_FLAGS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444ac068b8f6afeeb293a13aeabb5d702411" name="ggabd75aa30eb8ad6387672df9a1fa79444ac068b8f6afeeb293a13aeabb5d702411"></a>AV_OPT_TYPE_INT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a94d540a5b928da813ff94d9367a1078a" name="ggabd75aa30eb8ad6387672df9a1fa79444a94d540a5b928da813ff94d9367a1078a"></a>AV_OPT_TYPE_INT64&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444ae0b49ec51847a758ceb46976083da2e5" name="ggabd75aa30eb8ad6387672df9a1fa79444ae0b49ec51847a758ceb46976083da2e5"></a>AV_OPT_TYPE_DOUBLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444ae91d3f6cbac4a4de2a6e880ac2a52d1a" name="ggabd75aa30eb8ad6387672df9a1fa79444ae91d3f6cbac4a4de2a6e880ac2a52d1a"></a>AV_OPT_TYPE_FLOAT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444afadddce95ad3b690dd38644b458b96c4" name="ggabd75aa30eb8ad6387672df9a1fa79444afadddce95ad3b690dd38644b458b96c4"></a>AV_OPT_TYPE_STRING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a74ba464440564230a72b95b39593cbfc" name="ggabd75aa30eb8ad6387672df9a1fa79444a74ba464440564230a72b95b39593cbfc"></a>AV_OPT_TYPE_RATIONAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a2689966edbe494482dfdfaa4efdf95d3" name="ggabd75aa30eb8ad6387672df9a1fa79444a2689966edbe494482dfdfaa4efdf95d3"></a>AV_OPT_TYPE_BINARY&#160;</td><td class="fielddoc"><p>offset must point to a pointer immediately followed by an int for the length </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444aed6f0d8e5b8f3edcaea01c15ab43aefd" name="ggabd75aa30eb8ad6387672df9a1fa79444aed6f0d8e5b8f3edcaea01c15ab43aefd"></a>AV_OPT_TYPE_DICT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444aa6d3f68edfa4b60e970e7422b7193dd0" name="ggabd75aa30eb8ad6387672df9a1fa79444aa6d3f68edfa4b60e970e7422b7193dd0"></a>AV_OPT_TYPE_UINT64&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a0fa9f07d428bdc32495fe55c365c5329" name="ggabd75aa30eb8ad6387672df9a1fa79444a0fa9f07d428bdc32495fe55c365c5329"></a>AV_OPT_TYPE_CONST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a078f280b98b49a9f585c5d479b711d9a" name="ggabd75aa30eb8ad6387672df9a1fa79444a078f280b98b49a9f585c5d479b711d9a"></a>AV_OPT_TYPE_IMAGE_SIZE&#160;</td><td class="fielddoc"><p>offset must point to two consecutive integers </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a114085ba9877df34de060124877d8274" name="ggabd75aa30eb8ad6387672df9a1fa79444a114085ba9877df34de060124877d8274"></a>AV_OPT_TYPE_PIXEL_FMT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a711661923db91bbbd4abdec0efa5ff0a" name="ggabd75aa30eb8ad6387672df9a1fa79444a711661923db91bbbd4abdec0efa5ff0a"></a>AV_OPT_TYPE_SAMPLE_FMT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a9429811abc62d4a564ec56938df0a572" name="ggabd75aa30eb8ad6387672df9a1fa79444a9429811abc62d4a564ec56938df0a572"></a>AV_OPT_TYPE_VIDEO_RATE&#160;</td><td class="fielddoc"><p>offset must point to <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a2e3a2fc47ae688f28cc4abe59452a032" name="ggabd75aa30eb8ad6387672df9a1fa79444a2e3a2fc47ae688f28cc4abe59452a032"></a>AV_OPT_TYPE_DURATION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444afdcd13cbd184901b05e27595e647fadc" name="ggabd75aa30eb8ad6387672df9a1fa79444afdcd13cbd184901b05e27595e647fadc"></a>AV_OPT_TYPE_COLOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444a5628c270688d2ec28643dfff825dbe26" name="ggabd75aa30eb8ad6387672df9a1fa79444a5628c270688d2ec28643dfff825dbe26"></a>AV_OPT_TYPE_CHANNEL_LAYOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggabd75aa30eb8ad6387672df9a1fa79444af3898696f46dc79b74b708d8fa4b52a7" name="ggabd75aa30eb8ad6387672df9a1fa79444af3898696f46dc79b74b708d8fa4b52a7"></a>AV_OPT_TYPE_BOOL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga4f40ebbb91a4d4b702fe3ca9ade9f3a9" name="ga4f40ebbb91a4d4b702fe3ca9ade9f3a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f40ebbb91a4d4b702fe3ca9ade9f3a9">&#9670;&#160;</a></span>av_opt_child_class_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> * av_opt_child_class_next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterate over potential AVOptions-enabled children of parent. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prev</td><td>result of a previous call to this function or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> corresponding to next potential child or NULL </dd></dl>
+
+</div>
+</div>
+<a id="gac93347d7be97385868d17e7284356df4" name="gac93347d7be97385868d17e7284356df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac93347d7be97385868d17e7284356df4">&#9670;&#160;</a></span>av_opt_child_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> * av_opt_child_next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterate over AVOptions-enabled children of obj. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prev</td><td>result of a previous call to this function or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>next AVOptions-enabled child or NULL </dd></dl>
+
+</div>
+</div>
+<a id="ga0bcbbef33c677ddbf37d423dcb9c7833" name="ga0bcbbef33c677ddbf37d423dcb9c7833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0bcbbef33c677ddbf37d423dcb9c7833">&#9670;&#160;</a></span>av_opt_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy options from src object into dest object. </p>
+<p>Options that require memory allocation (e.g. string or binary) are malloc'ed in dest object. Original memory allocated for such options is freed unless both src and dest options points to the same memory.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>Object to copy from </td></tr>
+    <tr><td class="paramname">src</td><td>Object to copy into </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, negative on error </dd></dl>
+
+</div>
+</div>
+<a id="ga9ad3a0b722a9815f15e3df512290d618" name="ga9ad3a0b722a9815f15e3df512290d618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9ad3a0b722a9815f15e3df512290d618">&#9670;&#160;</a></span>av_opt_find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> * av_opt_find </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>unit</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>opt_flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>search_flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Look for an option in an object. </p>
+<p>Consider only options which have all the specified flags set.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>A pointer to a struct whose first element is a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>. Alternatively a double pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>, if AV_OPT_SEARCH_FAKE_OBJ search flag is set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the option to look for. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">unit</td><td>When searching for named constants, name of the unit it belongs to. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">opt_flags</td><td>Find only options with all the specified flags set (AV_OPT_FLAG). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">search_flags</td><td>A combination of AV_OPT_SEARCH_*.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>A pointer to the option found, or NULL if no option was found.</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>Options found with AV_OPT_SEARCH_CHILDREN flag may not be settable directly with <a class="el" href="group__opt__set__funcs.html#ga5fd4b92bdf4f392a2847f711676a7537">av_opt_set()</a>. Use special calls which take an options <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> (e.g. <a class="el" href="group__lavf__decoding.html#ga31d601155e9035d5b0e7efedc894ee49" title="Open an input stream and read the header.">avformat_open_input()</a>) to set options found with this flag. </dd></dl>
+
+</div>
+</div>
+<a id="ga25d2940b96b13eaec40fd2234ca9dca0" name="ga25d2940b96b13eaec40fd2234ca9dca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25d2940b96b13eaec40fd2234ca9dca0">&#9670;&#160;</a></span>av_opt_find2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> * av_opt_find2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>unit</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>opt_flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>search_flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **</td>          <td class="paramname"><span class="paramname"><em>target_obj</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Look for an option in an object. </p>
+<p>Consider only options which have all the specified flags set.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>A pointer to a struct whose first element is a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>. Alternatively a double pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>, if AV_OPT_SEARCH_FAKE_OBJ search flag is set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the option to look for. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">unit</td><td>When searching for named constants, name of the unit it belongs to. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">opt_flags</td><td>Find only options with all the specified flags set (AV_OPT_FLAG). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">search_flags</td><td>A combination of AV_OPT_SEARCH_*. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">target_obj</td><td>if non-NULL, an object to which the option belongs will be written here. It may be different from obj if AV_OPT_SEARCH_CHILDREN is present in search_flags. This parameter is ignored if search_flags contain AV_OPT_SEARCH_FAKE_OBJ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>A pointer to the option found, or NULL if no option was found. </dd></dl>
+
+</div>
+</div>
+<a id="ga1436a3afc8dbc70ed9e70c8287dcc766" name="ga1436a3afc8dbc70ed9e70c8287dcc766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1436a3afc8dbc70ed9e70c8287dcc766">&#9670;&#160;</a></span>av_opt_flag_is_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_flag_is_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>field_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>flag_name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether a particular flag is set in a flags field. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field_name</td><td>the name of the flag field option </td></tr>
+    <tr><td class="paramname">flag_name</td><td>the name of the flag to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>non-zero if the flag is set, zero if the flag isn't set, isn't of the right type, or the flags field doesn't exist. </dd></dl>
+
+</div>
+</div>
+<a id="gac14db824af52baf8181406e98d116097" name="gac14db824af52baf8181406e98d116097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac14db824af52baf8181406e98d116097">&#9670;&#160;</a></span>av_opt_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_opt_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free all allocated objects in obj. </p>
+
+</div>
+</div>
+<a id="ga880756f24644ff66c806ed2d9ab3d790" name="ga880756f24644ff66c806ed2d9ab3d790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga880756f24644ff66c806ed2d9ab3d790">&#9670;&#160;</a></span>av_opt_freep_ranges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_opt_freep_ranges </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_option_ranges.html">AVOptionRanges</a> **</td>          <td class="paramname"><span class="paramname"><em>ranges</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free an <a class="el" href="struct_a_v_option_ranges.html" title="List of AVOptionRange structs.">AVOptionRanges</a> struct and set it to NULL. </p>
+
+</div>
+</div>
+<a id="ga1e459af4e23415b8eb9b05aee81c933c" name="ga1e459af4e23415b8eb9b05aee81c933c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e459af4e23415b8eb9b05aee81c933c">&#9670;&#160;</a></span>av_opt_get_key_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_get_key_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **</td>          <td class="paramname"><span class="paramname"><em>ropts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>key_val_sep</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>pairs_sep</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>rkey</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>rval</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extract a key-value pair from the beginning of a string. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ropts</td><td>pointer to the options string, will be updated to point to the rest of the string (one of the pairs_sep or the final NUL) </td></tr>
+    <tr><td class="paramname">key_val_sep</td><td>a 0-terminated list of characters used to separate key from value, for example '=' </td></tr>
+    <tr><td class="paramname">pairs_sep</td><td>a 0-terminated list of characters used to separate two pairs from each other, for example ':' or ',' </td></tr>
+    <tr><td class="paramname">flags</td><td>flags; see the AV_OPT_FLAG_* values below </td></tr>
+    <tr><td class="paramname">rkey</td><td>parsed key; must be freed using <a class="el" href="group__lavu__mem__funcs.html#ga0c9096f498624c525aa2315b8a20c411" title="Free a memory block which has been allocated with a function of av_malloc() or av_realloc() family.">av_free()</a> </td></tr>
+    <tr><td class="paramname">rval</td><td>parsed value; must be freed using <a class="el" href="group__lavu__mem__funcs.html#ga0c9096f498624c525aa2315b8a20c411" title="Free a memory block which has been allocated with a function of av_malloc() or av_realloc() family.">av_free()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;=0 for success, or a negative value corresponding to an AVERROR code in case of error; in particular: <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EINVAL)</a> if no key is present </dd></dl>
+
+</div>
+</div>
+<a id="ga3ca54258a4c5ac18999dd19b4444c15a" name="ga3ca54258a4c5ac18999dd19b4444c15a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ca54258a4c5ac18999dd19b4444c15a">&#9670;&#160;</a></span>av_opt_is_set_to_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_is_set_to_default </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if given option is set to its default value. </p>
+<p>Options o must belong to the obj. This function must not be called to check child's options state. </p><dl class="section see"><dt>参见</dt><dd><a class="el" href="#gaa37a02c9d3e6d9f049f2e7174811f5fb" title="Check if given option is set to its default value.">av_opt_is_set_to_default_by_name()</a>.</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td><a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> object to check option on </td></tr>
+    <tr><td class="paramname">o</td><td>option to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;0 when option is set to its default, 0 when option is not set its default, &lt;0 on error </dd></dl>
+
+</div>
+</div>
+<a id="gaa37a02c9d3e6d9f049f2e7174811f5fb" name="gaa37a02c9d3e6d9f049f2e7174811f5fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa37a02c9d3e6d9f049f2e7174811f5fb">&#9670;&#160;</a></span>av_opt_is_set_to_default_by_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_is_set_to_default_by_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>search_flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if given option is set to its default value. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td><a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> object to check option on </td></tr>
+    <tr><td class="paramname">name</td><td>option name </td></tr>
+    <tr><td class="paramname">search_flags</td><td>combination of AV_OPT_SEARCH_* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;0 when option is set to its default, 0 when option is not set its default, &lt;0 on error </dd></dl>
+
+</div>
+</div>
+<a id="gafbe418a443aa11838ac10318df5d96f7" name="gafbe418a443aa11838ac10318df5d96f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafbe418a443aa11838ac10318df5d96f7">&#9670;&#160;</a></span>av_opt_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> * av_opt_next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterate over all AVOptions belonging to obj. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>an AVOptions-enabled struct or a double pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> describing it. </td></tr>
+    <tr><td class="paramname">prev</td><td>result of the previous call to <a class="el" href="#gafbe418a443aa11838ac10318df5d96f7" title="Iterate over all AVOptions belonging to obj.">av_opt_next()</a> on this object or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>next <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> or NULL </dd></dl>
+
+</div>
+</div>
+<a id="ga4196faffe5fe1eee21e08395957693c1" name="ga4196faffe5fe1eee21e08395957693c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4196faffe5fe1eee21e08395957693c1">&#9670;&#160;</a></span>av_opt_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> * av_opt_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *</td>          <td class="paramname"><span class="paramname"><em>avclass</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a pointer to the requested field in a struct. </p>
+<p>This function allows accessing a struct even when its fields are moved or renamed since the application making the access has been compiled,</p>
+<dl class="section return"><dt>返回</dt><dd>a pointer to the field, it can be cast to the correct type and read or written to. </dd></dl>
+
+</div>
+</div>
+<a id="ga9751db4da3e0facd522f5b345f4001ef" name="ga9751db4da3e0facd522f5b345f4001ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9751db4da3e0facd522f5b345f4001ef">&#9670;&#160;</a></span>av_opt_query_ranges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_query_ranges </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_option_ranges.html">AVOptionRanges</a> **</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a list of allowed ranges for the given option. </p>
+<p>The returned list may depend on other fields in obj like for example profile.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flags</td><td>is a bitmask of flags, undefined flags should not be set and should be ignored AV_OPT_SEARCH_FAKE_OBJ indicates that the obj is a double pointer to a <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> instead of a full instance AV_OPT_MULTI_COMPONENT_RANGE indicates that function may return more than one component, </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="struct_a_v_option_ranges.html" title="List of AVOptionRange structs.">AVOptionRanges</a></dd></dl>
+<p>The result must be freed with av_opt_freep_ranges.</p>
+<dl class="section return"><dt>返回</dt><dd>number of compontents returned on success, a negative errro code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ga4e50bee09b6a374cc54237314892c001" name="ga4e50bee09b6a374cc54237314892c001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e50bee09b6a374cc54237314892c001">&#9670;&#160;</a></span>av_opt_query_ranges_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_query_ranges_default </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_option_ranges.html">AVOptionRanges</a> **</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a default list of allowed ranges for the given option. </p>
+<p>This list is constructed without using the <a class="el" href="struct_a_v_class.html#ad6567841a393cbab1c556df8f93084b0" title="Callback to return the supported/allowed ranges.">AVClass.query_ranges()</a> callback and can be used as fallback from within the callback.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flags</td><td>is a bitmask of flags, undefined flags should not be set and should be ignored AV_OPT_SEARCH_FAKE_OBJ indicates that the obj is a double pointer to a <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> instead of a full instance AV_OPT_MULTI_COMPONENT_RANGE indicates that function may return more than one component, </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="struct_a_v_option_ranges.html" title="List of AVOptionRange structs.">AVOptionRanges</a></dd></dl>
+<p>The result must be freed with av_opt_free_ranges.</p>
+<dl class="section return"><dt>返回</dt><dd>number of compontents returned on success, a negative errro code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ga523122ff19a79f2867a9da29bbafa33b" name="ga523122ff19a79f2867a9da29bbafa33b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga523122ff19a79f2867a9da29bbafa33b">&#9670;&#160;</a></span>av_opt_serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>opt_flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char</td>          <td class="paramname"><span class="paramname"><em>key_val_sep</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char</td>          <td class="paramname"><span class="paramname"><em>pairs_sep</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialize object's options. </p>
+<p>Create a string containing object's serialized options. Such string may be passed back to <a class="el" href="#gaa936b1aa7caca67b21cd50819c2b9fb1" title="Parse the key-value pairs list in opts.">av_opt_set_from_string()</a> in order to restore option values. A key/value or pairs separator occurring in the serialized value or name string are escaped through the <a class="el" href="group__lavu__string.html#ga3c5e00d3f0575f2a3858f837656c08e9" title="Escape string in src, and put the escaped string in an allocated string in *dst, which must be freed ...">av_escape()</a> function.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td><a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> object to serialize </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">opt_flags</td><td>serialize options with all the specified flags set (AV_OPT_FLAG) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>combination of AV_OPT_SERIALIZE_* flags </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Pointer to buffer that will be allocated with string containg serialized options. Buffer must be freed by the caller when is no longer needed. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_val_sep</td><td>character used to separate key from value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pairs_sep</td><td>character used to separate two pairs from each other </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 on success, negative on error </dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>Separators cannot be neither '\' nor '\0'. They also cannot be the same. </dd></dl>
+
+</div>
+</div>
+<a id="gad4ca968e9058b39b2da630ad0a091bdb" name="gad4ca968e9058b39b2da630ad0a091bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4ca968e9058b39b2da630ad0a091bdb">&#9670;&#160;</a></span>av_opt_set_defaults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_opt_set_defaults </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the values of all <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> fields to their default values. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>an AVOption-enabled struct (its first member must be a pointer to <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaeef5479b31ac29a6a55eb9d108d6225f" name="gaeef5479b31ac29a6a55eb9d108d6225f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeef5479b31ac29a6a55eb9d108d6225f">&#9670;&#160;</a></span>av_opt_set_defaults2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_opt_set_defaults2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the values of all <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> fields to their default values. </p>
+<p>Only these <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> fields for which (opt-&gt;flags &amp; mask) == flags will have their default applied to s.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>an AVOption-enabled struct (its first member must be a pointer to <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>) </td></tr>
+    <tr><td class="paramname">mask</td><td>combination of AV_OPT_FLAG_* </td></tr>
+    <tr><td class="paramname">flags</td><td>combination of AV_OPT_FLAG_* </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf1a88e8f152d7835f111b1ef8813fb2e" name="gaf1a88e8f152d7835f111b1ef8813fb2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf1a88e8f152d7835f111b1ef8813fb2e">&#9670;&#160;</a></span>av_opt_set_dict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_set_dict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **</td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set all the options from a given dictionary on an object. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>a struct whose first element is a pointer to <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> </td></tr>
+    <tr><td class="paramname">options</td><td>options to process. This dictionary will be freed and replaced by a new one containing all options not found in obj. Of course this new dictionary needs to be freed by caller with <a class="el" href="group__lavu__dict.html#ga1bafd682b1fbb90e48a4cc3814b820f7" title="Free all the memory allocated for an AVDictionary struct and all keys and values.">av_dict_free()</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR if some option was found in obj, but could not be set.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="group__lavu__dict.html#ga59a6372b124b306e3a2233723c5cdc78" title="Copy entries from one AVDictionary struct into another.">av_dict_copy()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga1824a600b215f1807e77b5f6cfa58586" name="ga1824a600b215f1807e77b5f6cfa58586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1824a600b215f1807e77b5f6cfa58586">&#9670;&#160;</a></span>av_opt_set_dict2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_set_dict2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **</td>          <td class="paramname"><span class="paramname"><em>options</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>search_flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set all the options from a given dictionary on an object. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>a struct whose first element is a pointer to <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> </td></tr>
+    <tr><td class="paramname">options</td><td>options to process. This dictionary will be freed and replaced by a new one containing all options not found in obj. Of course this new dictionary needs to be freed by caller with <a class="el" href="group__lavu__dict.html#ga1bafd682b1fbb90e48a4cc3814b820f7" title="Free all the memory allocated for an AVDictionary struct and all keys and values.">av_dict_free()</a>. </td></tr>
+    <tr><td class="paramname">search_flags</td><td>A combination of AV_OPT_SEARCH_*.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR if some option was found in obj, but could not be set.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="group__lavu__dict.html#ga59a6372b124b306e3a2233723c5cdc78" title="Copy entries from one AVDictionary struct into another.">av_dict_copy()</a> </dd></dl>
+
+</div>
+</div>
+<a id="gaa936b1aa7caca67b21cd50819c2b9fb1" name="gaa936b1aa7caca67b21cd50819c2b9fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa936b1aa7caca67b21cd50819c2b9fb1">&#9670;&#160;</a></span>av_opt_set_from_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_set_from_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>opts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> *</td>          <td class="paramname"><span class="paramname"><em>shorthand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>key_val_sep</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>pairs_sep</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse the key-value pairs list in opts. </p>
+<p>For each key=value pair found, set the value of the corresponding option in ctx.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>the <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> object to set options on </td></tr>
+    <tr><td class="paramname">opts</td><td>the options string, key-value pairs separated by a delimiter </td></tr>
+    <tr><td class="paramname">shorthand</td><td>a NULL-terminated array of options names for shorthand notation: if the first field in opts has no key part, the key is taken from the first element of shorthand; then again for the second, etc., until either opts is finished, shorthand is finished or a named option is found; after that, all options must be named </td></tr>
+    <tr><td class="paramname">key_val_sep</td><td>a 0-terminated list of characters used to separate key from value, for example '=' </td></tr>
+    <tr><td class="paramname">pairs_sep</td><td>a 0-terminated list of characters used to separate two pairs from each other, for example ':' or ',' </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the number of successfully set key=value pairs, or a negative value corresponding to an AVERROR code in case of error: <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EINVAL)</a> if opts cannot be parsed, the error code issued by av_set_string3() if a key/value pair cannot be set</dd></dl>
+<p>Options names must use only the following characters: a-z A-Z 0-9 - . / _ Separators must use characters distinct from option names and from each other. </p>
+
+</div>
+</div>
+<a id="gaf7394e27d34208b24af8bb4b4a11741b" name="gaf7394e27d34208b24af8bb4b4a11741b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7394e27d34208b24af8bb4b4a11741b">&#9670;&#160;</a></span>av_opt_show2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_show2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>av_log_obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>req_flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>rej_flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show the obj options. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req_flags</td><td>requested flags for the options to show. Show only the options for which it is opt-&gt;flags &amp; req_flags. </td></tr>
+    <tr><td class="paramname">rej_flags</td><td>rejected flags for the options to show. Show only the options for which it is !(opt-&gt;flags &amp; req_flags). </td></tr>
+    <tr><td class="paramname">av_log_obj</td><td>log context to use for showing the options </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab48669d1326f7d47ef39e5702e34abd2" name="gab48669d1326f7d47ef39e5702e34abd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab48669d1326f7d47ef39e5702e34abd2">&#9670;&#160;</a></span>av_set_options_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_set_options_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>opts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>key_val_sep</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>pairs_sep</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse the key/value pairs list in opts. </p>
+<p>For each key/value pair found, stores the value in the field in ctx that is named like the key. ctx must be an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> context, storing is done using AVOptions.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opts</td><td>options string to parse, may be NULL </td></tr>
+    <tr><td class="paramname">key_val_sep</td><td>a 0-terminated list of characters used to separate key from value </td></tr>
+    <tr><td class="paramname">pairs_sep</td><td>a 0-terminated list of characters used to separate two pairs from each other </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the number of successfully set key/value pairs, or a negative value corresponding to an AVERROR code in case of error: <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EINVAL)</a> if opts cannot be parsed, the error code issued by <a class="el" href="group__opt__set__funcs.html#ga5fd4b92bdf4f392a2847f711676a7537">av_opt_set()</a> if a key/value pair cannot be set </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

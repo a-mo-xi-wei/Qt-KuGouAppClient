@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: parse_context&lt; Char &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classparse__context.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classparse__context-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">parse_context&lt; Char &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Parsing context consisting of a format string range being parsed and an argument counter for automatic indexing.  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="base_8h_source.html">base.h</a>&gt;</code></p>
+<div class="dynheader">
+parse_context&lt; Char &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classparse__context__coll__graph.png" border="0" usemap="#aparse__context_3_01_char_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aparse__context_3_01_char_01_4_coll__map" id="aparse__context_3_01_char_01_4_coll__map">
+<area shape="rect" title="Parsing context consisting of a format string range being parsed and an argument counter for automati..." alt="" coords="5,112,161,139"/>
+<area shape="rect" href="classbasic__string__view.html" title=" " alt="" coords="16,5,150,48"/>
+<area shape="poly" title=" " alt="" coords="86,64,86,112,80,112,80,64"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ad837845a7c88d8424a0e620f3e58743d" id="r_ad837845a7c88d8424a0e620f3e58743d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad837845a7c88d8424a0e620f3e58743d">char_type</a> = Char</td></tr>
+<tr class="separator:ad837845a7c88d8424a0e620f3e58743d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ae16f571ae85022a2fc4ac0b89a254" id="r_a61ae16f571ae85022a2fc4ac0b89a254"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61ae16f571ae85022a2fc4ac0b89a254">iterator</a> = const Char*</td></tr>
+<tr class="separator:a61ae16f571ae85022a2fc4ac0b89a254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:abbe537fe632c5b27ee64d26d3040d196" id="r_abbe537fe632c5b27ee64d26d3040d196"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbe537fe632c5b27ee64d26d3040d196">parse_context</a> (<a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt; fmt, int <a class="el" href="#a95b467611f893213a4e25b82654d53e5">next_arg_id</a>=0)</td></tr>
+<tr class="separator:abbe537fe632c5b27ee64d26d3040d196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9164df3225e65afc486c637377db0dd1" id="r_a9164df3225e65afc486c637377db0dd1"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9164df3225e65afc486c637377db0dd1">begin</a> () const noexcept -&gt; <a class="el" href="#a61ae16f571ae85022a2fc4ac0b89a254">iterator</a></td></tr>
+<tr class="memdesc:a9164df3225e65afc486c637377db0dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the beginning of the format string range being parsed.  <br /></td></tr>
+<tr class="separator:a9164df3225e65afc486c637377db0dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a855c85daf2926c97d5b813221fc2a7cd" id="r_a855c85daf2926c97d5b813221fc2a7cd"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a855c85daf2926c97d5b813221fc2a7cd">end</a> () const noexcept -&gt; <a class="el" href="#a61ae16f571ae85022a2fc4ac0b89a254">iterator</a></td></tr>
+<tr class="memdesc:a855c85daf2926c97d5b813221fc2a7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator past the end of the format string range being parsed.  <br /></td></tr>
+<tr class="separator:a855c85daf2926c97d5b813221fc2a7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a383333ff2230a785faca84c5c3372828" id="r_a383333ff2230a785faca84c5c3372828"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a383333ff2230a785faca84c5c3372828">advance_to</a> (<a class="el" href="#a61ae16f571ae85022a2fc4ac0b89a254">iterator</a> it)</td></tr>
+<tr class="memdesc:a383333ff2230a785faca84c5c3372828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the begin iterator to <code>it</code>.  <br /></td></tr>
+<tr class="separator:a383333ff2230a785faca84c5c3372828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b467611f893213a4e25b82654d53e5" id="r_a95b467611f893213a4e25b82654d53e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95b467611f893213a4e25b82654d53e5">next_arg_id</a> () -&gt; int</td></tr>
+<tr class="memdesc:a95b467611f893213a4e25b82654d53e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports an error if using the manual argument indexing; otherwise returns the next argument index and switches to the automatic indexing.  <br /></td></tr>
+<tr class="separator:a95b467611f893213a4e25b82654d53e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7414ffb23aff079b171e4981b2adf675" id="r_a7414ffb23aff079b171e4981b2adf675"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7414ffb23aff079b171e4981b2adf675">check_arg_id</a> (int <a class="el" href="format-inl_8h.html#abe6272f4163dcc8a1267174ed709f885">id</a>)</td></tr>
+<tr class="memdesc:a7414ffb23aff079b171e4981b2adf675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports an error if using the automatic argument indexing; otherwise switches to the manual indexing.  <br /></td></tr>
+<tr class="separator:a7414ffb23aff079b171e4981b2adf675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a685d6b07dfb6c12fcd694894d57bf42b" id="r_a685d6b07dfb6c12fcd694894d57bf42b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a685d6b07dfb6c12fcd694894d57bf42b">check_arg_id</a> (<a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;)</td></tr>
+<tr class="separator:a685d6b07dfb6c12fcd694894d57bf42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab75db4217e59147b8daa6e39102a3241" id="r_ab75db4217e59147b8daa6e39102a3241"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab75db4217e59147b8daa6e39102a3241">check_dynamic_spec</a> (int arg_id)</td></tr>
+<tr class="separator:ab75db4217e59147b8daa6e39102a3241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:a04c60109d70b831f29173869a9dc8a8d" id="r_a04c60109d70b831f29173869a9dc8a8d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#a04c60109d70b831f29173869a9dc8a8da3b06aa57489794a7223cd5ec7f361f34">use_constexpr_cast</a> = !FMT_GCC_VERSION || FMT_GCC_VERSION &gt;= 1200
+ }</td></tr>
+<tr class="separator:a04c60109d70b831f29173869a9dc8a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ab297d72d5eaa80978c47c110e45d781d" id="r_ab297d72d5eaa80978c47c110e45d781d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab297d72d5eaa80978c47c110e45d781d">do_check_arg_id</a> (int arg_id)</td></tr>
+<tr class="separator:ab297d72d5eaa80978c47c110e45d781d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a3dcbf0fba765e45cb176c4aa7459a920" id="r_a3dcbf0fba765e45cb176c4aa7459a920"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dcbf0fba765e45cb176c4aa7459a920">fmt_</a></td></tr>
+<tr class="separator:a3dcbf0fba765e45cb176c4aa7459a920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f16a2b492167c946d6bc5ad2e3c93e5" id="r_a2f16a2b492167c946d6bc5ad2e3c93e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f16a2b492167c946d6bc5ad2e3c93e5">next_arg_id_</a></td></tr>
+<tr class="separator:a2f16a2b492167c946d6bc5ad2e3c93e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Char = char&gt;<br />
+class parse_context&lt; Char &gt;</div><p>Parsing context consisting of a format string range being parsed and an argument counter for automatic indexing. </p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="ad837845a7c88d8424a0e620f3e58743d" name="ad837845a7c88d8424a0e620f3e58743d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad837845a7c88d8424a0e620f3e58743d">&#9670;&#160;</a></span>char_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ad837845a7c88d8424a0e620f3e58743d">char_type</a> = Char</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61ae16f571ae85022a2fc4ac0b89a254" name="a61ae16f571ae85022a2fc4ac0b89a254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ae16f571ae85022a2fc4ac0b89a254">&#9670;&#160;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a61ae16f571ae85022a2fc4ac0b89a254">iterator</a> = const Char*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a04c60109d70b831f29173869a9dc8a8d" name="a04c60109d70b831f29173869a9dc8a8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c60109d70b831f29173869a9dc8a8d">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a04c60109d70b831f29173869a9dc8a8da3b06aa57489794a7223cd5ec7f361f34" name="a04c60109d70b831f29173869a9dc8a8da3b06aa57489794a7223cd5ec7f361f34"></a>use_constexpr_cast&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="abbe537fe632c5b27ee64d26d3040d196" name="abbe537fe632c5b27ee64d26d3040d196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe537fe632c5b27ee64d26d3040d196">&#9670;&#160;</a></span>parse_context()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classparse__context.html">parse_context</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>next_arg_id</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a383333ff2230a785faca84c5c3372828" name="a383333ff2230a785faca84c5c3372828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a383333ff2230a785faca84c5c3372828">&#9670;&#160;</a></span>advance_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void advance_to </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a61ae16f571ae85022a2fc4ac0b89a254">iterator</a></td>          <td class="paramname"><span class="paramname"><em>it</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Advances the begin iterator to <code>it</code>. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classparse__context_a383333ff2230a785faca84c5c3372828_icgraph.png" border="0" usemap="#aclassparse__context_a383333ff2230a785faca84c5c3372828_icgraph" alt=""/></div>
+<map name="aclassparse__context_a383333ff2230a785faca84c5c3372828_icgraph" id="aclassparse__context_a383333ff2230a785faca84c5c3372828_icgraph">
+<area shape="rect" title="Advances the begin iterator to it." alt="" coords="368,13,456,40"/>
+<area shape="rect" href="classdetail_1_1value.html#a1131f027dd72741d9753a44b242d629a" title=" " alt="" coords="184,5,320,48"/>
+<area shape="poly" title=" " alt="" coords="352,29,320,29,320,24,352,24"/>
+<area shape="rect" href="classdetail_1_1value.html#adc6bb2d01aab8bae44ec65c17035a8cb" title=" " alt="" coords="5,13,136,40"/>
+<area shape="poly" title=" " alt="" coords="168,29,136,29,136,24,168,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9164df3225e65afc486c637377db0dd1" name="a9164df3225e65afc486c637377db0dd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9164df3225e65afc486c637377db0dd1">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto begin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="#a61ae16f571ae85022a2fc4ac0b89a254">iterator</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the beginning of the format string range being parsed. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classparse__context_a9164df3225e65afc486c637377db0dd1_icgraph.png" border="0" usemap="#aclassparse__context_a9164df3225e65afc486c637377db0dd1_icgraph" alt=""/></div>
+<map name="aclassparse__context_a9164df3225e65afc486c637377db0dd1_icgraph" id="aclassparse__context_a9164df3225e65afc486c637377db0dd1_icgraph">
+<area shape="rect" title="Returns an iterator to the beginning of the format string range being parsed." alt="" coords="227,113,279,140"/>
+<area shape="rect" href="classparse__context.html#a383333ff2230a785faca84c5c3372828" title=" " alt="" coords="20,5,164,48"/>
+<area shape="poly" title=" " alt="" coords="227,104,204,82,177,62,156,51,158,46,180,58,208,78,231,100"/>
+<area shape="rect" href="structformatter_3_01std_1_1complex_3_01_t_01_4_00_01_char_01_4.html#a8ab971982084b0d00677071064adc679" title=" " alt="" coords="12,72,172,115"/>
+<area shape="poly" title=" " alt="" coords="211,121,172,113,173,107,212,116"/>
+<area shape="rect" href="structformatter_3_01std_1_1error__code_01_4.html#adea8f8d583f8596da890c2908cce214c" title=" " alt="" coords="23,139,161,181"/>
+<area shape="poly" title=" " alt="" coords="212,138,162,148,160,143,211,133"/>
+<area shape="rect" href="structformatter_3_01_t_00_01_char_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01b47eaaf99fbf33a17b7cbf4743bf7b8e.html#a8ab971982084b0d00677071064adc679" title=" " alt="" coords="5,205,179,296"/>
+<area shape="poly" title=" " alt="" coords="228,153,180,195,165,207,162,203,177,191,225,149"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a685d6b07dfb6c12fcd694894d57bf42b" name="a685d6b07dfb6c12fcd694894d57bf42b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a685d6b07dfb6c12fcd694894d57bf42b">&#9670;&#160;</a></span>check_arg_id() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void check_arg_id </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7414ffb23aff079b171e4981b2adf675" name="a7414ffb23aff079b171e4981b2adf675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7414ffb23aff079b171e4981b2adf675">&#9670;&#160;</a></span>check_arg_id() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void check_arg_id </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reports an error if using the automatic argument indexing; otherwise switches to the manual indexing. </p>
+
+</div>
+</div>
+<a id="ab75db4217e59147b8daa6e39102a3241" name="ab75db4217e59147b8daa6e39102a3241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab75db4217e59147b8daa6e39102a3241">&#9670;&#160;</a></span>check_dynamic_spec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void check_dynamic_spec </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>arg_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classparse__context_ab75db4217e59147b8daa6e39102a3241_cgraph.png" border="0" usemap="#aclassparse__context_ab75db4217e59147b8daa6e39102a3241_cgraph" alt=""/></div>
+<map name="aclassparse__context_ab75db4217e59147b8daa6e39102a3241_cgraph" id="aclassparse__context_ab75db4217e59147b8daa6e39102a3241_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,153,56"/>
+<area shape="poly" title=" " alt="" coords="47,30,42,21,46,11,58,5,79,3,101,5,113,12,110,16,100,10,79,8,60,10,49,15,47,20,52,27"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="201,21,328,64"/>
+<area shape="poly" title=" " alt="" coords="153,40,186,40,186,45,153,45"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="376,29,520,56"/>
+<area shape="poly" title=" " alt="" coords="329,40,360,40,360,45,329,45"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classparse__context_ab75db4217e59147b8daa6e39102a3241_icgraph.png" border="0" usemap="#aclassparse__context_ab75db4217e59147b8daa6e39102a3241_icgraph" alt=""/></div>
+<map name="aclassparse__context_ab75db4217e59147b8daa6e39102a3241_icgraph" id="aclassparse__context_ab75db4217e59147b8daa6e39102a3241_icgraph">
+<area shape="rect" title=" " alt="" coords="5,29,153,56"/>
+<area shape="poly" title=" " alt="" coords="104,16,95,10,79,8,64,10,56,14,54,20,58,28,53,30,49,21,52,11,62,5,79,3,97,5,107,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab297d72d5eaa80978c47c110e45d781d" name="ab297d72d5eaa80978c47c110e45d781d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab297d72d5eaa80978c47c110e45d781d">&#9670;&#160;</a></span>do_check_arg_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void do_check_arg_id </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>arg_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classparse__context_ab297d72d5eaa80978c47c110e45d781d_cgraph.png" border="0" usemap="#aclassparse__context_ab297d72d5eaa80978c47c110e45d781d_cgraph" alt=""/></div>
+<map name="aclassparse__context_ab297d72d5eaa80978c47c110e45d781d_cgraph" id="aclassparse__context_ab297d72d5eaa80978c47c110e45d781d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,43,125,69"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="173,5,300,48"/>
+<area shape="poly" title=" " alt="" coords="125,43,157,38,158,43,126,48"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="193,72,280,99"/>
+<area shape="poly" title=" " alt="" coords="126,64,178,73,177,78,125,69"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="348,13,492,40"/>
+<area shape="poly" title=" " alt="" coords="301,24,332,24,332,29,301,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classparse__context_ab297d72d5eaa80978c47c110e45d781d_icgraph.png" border="0" usemap="#aclassparse__context_ab297d72d5eaa80978c47c110e45d781d_icgraph" alt=""/></div>
+<map name="aclassparse__context_ab297d72d5eaa80978c47c110e45d781d_icgraph" id="aclassparse__context_ab297d72d5eaa80978c47c110e45d781d_icgraph">
+<area shape="rect" title=" " alt="" coords="612,47,732,73"/>
+<area shape="rect" href="classparse__context.html#a7414ffb23aff079b171e4981b2adf675" title=" " alt="" coords="421,5,564,48"/>
+<area shape="poly" title=" " alt="" coords="597,49,564,43,565,37,598,43"/>
+<area shape="rect" href="classparse__context.html#a95b467611f893213a4e25b82654d53e5" title=" " alt="" coords="421,72,564,115"/>
+<area shape="poly" title=" " alt="" coords="598,77,565,83,564,77,597,71"/>
+<area shape="rect" href="classdetail_1_1compile__parse__context.html#a7414ffb23aff079b171e4981b2adf675" title=" " alt="" coords="217,5,373,48"/>
+<area shape="poly" title=" " alt="" coords="406,29,373,29,373,24,406,24"/>
+<area shape="rect" href="classdetail_1_1compile__parse__context.html#a95b467611f893213a4e25b82654d53e5" title=" " alt="" coords="222,72,368,115"/>
+<area shape="poly" title=" " alt="" coords="406,96,368,96,368,91,406,91"/>
+<area shape="rect" href="classparse__context.html#abbe537fe632c5b27ee64d26d3040d196" title=" " alt="" coords="223,139,366,181"/>
+<area shape="poly" title=" " alt="" coords="414,123,361,141,359,136,412,118"/>
+<area shape="rect" href="classdetail_1_1compile__parse__context.html#a62eb1e2a5af7903f16afafc85e89ae1c" title=" " alt="" coords="5,64,169,123"/>
+<area shape="poly" title=" " alt="" coords="206,96,169,96,169,91,206,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a855c85daf2926c97d5b813221fc2a7cd" name="a855c85daf2926c97d5b813221fc2a7cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a855c85daf2926c97d5b813221fc2a7cd">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto end </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="#a61ae16f571ae85022a2fc4ac0b89a254">iterator</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator past the end of the format string range being parsed. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classparse__context_a855c85daf2926c97d5b813221fc2a7cd_icgraph.png" border="0" usemap="#aclassparse__context_a855c85daf2926c97d5b813221fc2a7cd_icgraph" alt=""/></div>
+<map name="aclassparse__context_a855c85daf2926c97d5b813221fc2a7cd_icgraph" id="aclassparse__context_a855c85daf2926c97d5b813221fc2a7cd_icgraph">
+<area shape="rect" title="Returns an iterator past the end of the format string range being parsed." alt="" coords="227,80,269,107"/>
+<area shape="rect" href="structformatter_3_01std_1_1complex_3_01_t_01_4_00_01_char_01_4.html#a8ab971982084b0d00677071064adc679" title=" " alt="" coords="12,5,172,48"/>
+<area shape="poly" title=" " alt="" coords="212,79,178,62,150,51,152,46,180,58,214,74"/>
+<area shape="rect" href="structformatter_3_01std_1_1error__code_01_4.html#adea8f8d583f8596da890c2908cce214c" title=" " alt="" coords="23,72,161,115"/>
+<area shape="poly" title=" " alt="" coords="211,96,161,96,161,91,211,91"/>
+<area shape="rect" href="structformatter_3_01_t_00_01_char_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01b47eaaf99fbf33a17b7cbf4743bf7b8e.html#a8ab971982084b0d00677071064adc679" title=" " alt="" coords="5,139,179,229"/>
+<area shape="poly" title=" " alt="" coords="215,115,172,140,170,136,212,111"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a95b467611f893213a4e25b82654d53e5" name="a95b467611f893213a4e25b82654d53e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b467611f893213a4e25b82654d53e5">&#9670;&#160;</a></span>next_arg_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto next_arg_id </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reports an error if using the manual argument indexing; otherwise returns the next argument index and switches to the automatic indexing. </p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a3dcbf0fba765e45cb176c4aa7459a920" name="a3dcbf0fba765e45cb176c4aa7459a920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcbf0fba765e45cb176c4aa7459a920">&#9670;&#160;</a></span>fmt_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt;Char&gt; fmt_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f16a2b492167c946d6bc5ad2e3c93e5" name="a2f16a2b492167c946d6bc5ad2e3c93e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f16a2b492167c946d6bc5ad2e3c93e5">&#9670;&#160;</a></span>next_arg_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int next_arg_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="base_8h_source.html">base.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classparse__context.html">parse_context</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

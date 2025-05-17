@@ -1,0 +1,555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Audio FIFO Buffer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavu__audiofifo.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Audio FIFO Buffer<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__audio.html">Audio related</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Audio FIFO Buffer 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__audiofifo.png" border="0" usemap="#agroup____lavu____audiofifo" alt=""/></div>
+<map name="agroup____lavu____audiofifo" id="agroup____lavu____audiofifo">
+<area shape="rect" href="group__lavu__audio.html" title=" " alt="" coords="5,5,103,32"/>
+<area shape="rect" title=" " alt="" coords="151,5,277,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga328abb21e9abb2c455d2d9c212d5230f" id="r_ga328abb21e9abb2c455d2d9c212d5230f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a></td></tr>
+<tr class="memdesc:ga328abb21e9abb2c455d2d9c212d5230f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Context for an Audio FIFO Buffer.  <br /></td></tr>
+<tr class="separator:ga328abb21e9abb2c455d2d9c212d5230f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga74e029e47f7aa99217ad1f315c434875" id="r_ga74e029e47f7aa99217ad1f315c434875"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga74e029e47f7aa99217ad1f315c434875">av_audio_fifo_free</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af)</td></tr>
+<tr class="memdesc:ga74e029e47f7aa99217ad1f315c434875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>.  <br /></td></tr>
+<tr class="separator:ga74e029e47f7aa99217ad1f315c434875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26cec528c9abdf59adb70b305304346e" id="r_ga26cec528c9abdf59adb70b305304346e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga26cec528c9abdf59adb70b305304346e">av_audio_fifo_alloc</a> (enum <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5">AVSampleFormat</a> sample_fmt, int channels, int nb_samples)</td></tr>
+<tr class="memdesc:ga26cec528c9abdf59adb70b305304346e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>.  <br /></td></tr>
+<tr class="separator:ga26cec528c9abdf59adb70b305304346e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27c1e16e5f09940d6016b1971c0b5742" id="r_ga27c1e16e5f09940d6016b1971c0b5742"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#a93f17e0f0b53a66e7b5eceb3dff2918f">av_warn_unused_result</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga27c1e16e5f09940d6016b1971c0b5742">av_audio_fifo_realloc</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af, int nb_samples)</td></tr>
+<tr class="memdesc:ga27c1e16e5f09940d6016b1971c0b5742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reallocate an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>.  <br /></td></tr>
+<tr class="separator:ga27c1e16e5f09940d6016b1971c0b5742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e7fadeea09c52a96eb4082a9e169bb4" id="r_ga0e7fadeea09c52a96eb4082a9e169bb4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0e7fadeea09c52a96eb4082a9e169bb4">av_audio_fifo_write</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, int nb_samples)</td></tr>
+<tr class="memdesc:ga0e7fadeea09c52a96eb4082a9e169bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>.  <br /></td></tr>
+<tr class="separator:ga0e7fadeea09c52a96eb4082a9e169bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a5cdd4193a4bce3c9b3df7a8fd12ed6" id="r_ga0a5cdd4193a4bce3c9b3df7a8fd12ed6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a5cdd4193a4bce3c9b3df7a8fd12ed6">av_audio_fifo_peek</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, int nb_samples)</td></tr>
+<tr class="memdesc:ga0a5cdd4193a4bce3c9b3df7a8fd12ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peek data from an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>.  <br /></td></tr>
+<tr class="separator:ga0a5cdd4193a4bce3c9b3df7a8fd12ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ada8857bd36876cd543f1dbd435f295" id="r_ga4ada8857bd36876cd543f1dbd435f295"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4ada8857bd36876cd543f1dbd435f295">av_audio_fifo_peek_at</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, int nb_samples, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a2003032e3d6cfe0acd020119b0204242">offset</a>)</td></tr>
+<tr class="memdesc:ga4ada8857bd36876cd543f1dbd435f295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peek data from an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>.  <br /></td></tr>
+<tr class="separator:ga4ada8857bd36876cd543f1dbd435f295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab256fc29188d91311bd2fbd78eb356af" id="r_gab256fc29188d91311bd2fbd78eb356af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab256fc29188d91311bd2fbd78eb356af">av_audio_fifo_read</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, int nb_samples)</td></tr>
+<tr class="memdesc:gab256fc29188d91311bd2fbd78eb356af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>.  <br /></td></tr>
+<tr class="separator:gab256fc29188d91311bd2fbd78eb356af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacac9b187b9c27c5a0374f6f83224a77b" id="r_gacac9b187b9c27c5a0374f6f83224a77b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacac9b187b9c27c5a0374f6f83224a77b">av_audio_fifo_drain</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af, int nb_samples)</td></tr>
+<tr class="memdesc:gacac9b187b9c27c5a0374f6f83224a77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drain data from an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>.  <br /></td></tr>
+<tr class="separator:gacac9b187b9c27c5a0374f6f83224a77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f070386d11d425302437a3b60fc5dd0" id="r_ga3f070386d11d425302437a3b60fc5dd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f070386d11d425302437a3b60fc5dd0">av_audio_fifo_reset</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af)</td></tr>
+<tr class="memdesc:ga3f070386d11d425302437a3b60fc5dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> buffer.  <br /></td></tr>
+<tr class="separator:ga3f070386d11d425302437a3b60fc5dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0a4742ecac52a999e8b4478d27f3b9b" id="r_gaa0a4742ecac52a999e8b4478d27f3b9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa0a4742ecac52a999e8b4478d27f3b9b">av_audio_fifo_size</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af)</td></tr>
+<tr class="memdesc:gaa0a4742ecac52a999e8b4478d27f3b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current number of samples in the <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> available for reading.  <br /></td></tr>
+<tr class="separator:gaa0a4742ecac52a999e8b4478d27f3b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2bed2f01fe34228ee8a73617b3177d00" id="r_ga2bed2f01fe34228ee8a73617b3177d00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2bed2f01fe34228ee8a73617b3177d00">av_audio_fifo_space</a> (<a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *af)</td></tr>
+<tr class="memdesc:ga2bed2f01fe34228ee8a73617b3177d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current number of samples in the <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> available for writing.  <br /></td></tr>
+<tr class="separator:ga2bed2f01fe34228ee8a73617b3177d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ga328abb21e9abb2c455d2d9c212d5230f" name="ga328abb21e9abb2c455d2d9c212d5230f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga328abb21e9abb2c455d2d9c212d5230f">&#9670;&#160;</a></span>AVAudioFifo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Context for an Audio FIFO Buffer. </p>
+<ul>
+<li>Operates at the sample level rather than the byte level.</li>
+<li>Supports multiple channels with either planar or packed sample format.</li>
+<li>Automatic reallocation when writing to a full buffer. </li>
+</ul>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga26cec528c9abdf59adb70b305304346e" name="ga26cec528c9abdf59adb70b305304346e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26cec528c9abdf59adb70b305304346e">&#9670;&#160;</a></span>av_audio_fifo_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> * av_audio_fifo_alloc </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5">AVSampleFormat</a></td>          <td class="paramname"><span class="paramname"><em>sample_fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>channels</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_samples</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sample_fmt</td><td>sample format </td></tr>
+    <tr><td class="paramname">channels</td><td>number of channels </td></tr>
+    <tr><td class="paramname">nb_samples</td><td>initial allocation size, in samples </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>newly allocated <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>, or NULL on error </dd></dl>
+
+</div>
+</div>
+<a id="gacac9b187b9c27c5a0374f6f83224a77b" name="gacac9b187b9c27c5a0374f6f83224a77b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacac9b187b9c27c5a0374f6f83224a77b">&#9670;&#160;</a></span>av_audio_fifo_drain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_audio_fifo_drain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_samples</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Drain data from an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>. </p>
+<p>Removes the data without reading it.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to drain </td></tr>
+    <tr><td class="paramname">nb_samples</td><td>number of samples to drain </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 if OK, or negative AVERROR code on failure </dd></dl>
+
+</div>
+</div>
+<a id="ga74e029e47f7aa99217ad1f315c434875" name="ga74e029e47f7aa99217ad1f315c434875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74e029e47f7aa99217ad1f315c434875">&#9670;&#160;</a></span>av_audio_fifo_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_audio_fifo_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to free </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0a5cdd4193a4bce3c9b3df7a8fd12ed6" name="ga0a5cdd4193a4bce3c9b3df7a8fd12ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a5cdd4193a4bce3c9b3df7a8fd12ed6">&#9670;&#160;</a></span>av_audio_fifo_peek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_audio_fifo_peek </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_samples</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Peek data from an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>. </p>
+<dl class="section see"><dt>参见</dt><dd>enum <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5" title="Audio sample formats">AVSampleFormat</a> The documentation for <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5" title="Audio sample formats">AVSampleFormat</a> describes the <a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a> layout.</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to read from </td></tr>
+    <tr><td class="paramname">data</td><td>audio data plane pointers </td></tr>
+    <tr><td class="paramname">nb_samples</td><td>number of samples to peek </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>number of samples actually peek, or negative AVERROR code on failure. The number of samples actually peek will not be greater than nb_samples, and will only be less than nb_samples if av_audio_fifo_size is less than nb_samples. </dd></dl>
+
+</div>
+</div>
+<a id="ga4ada8857bd36876cd543f1dbd435f295" name="ga4ada8857bd36876cd543f1dbd435f295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4ada8857bd36876cd543f1dbd435f295">&#9670;&#160;</a></span>av_audio_fifo_peek_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_audio_fifo_peek_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_samples</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Peek data from an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>. </p>
+<dl class="section see"><dt>参见</dt><dd>enum <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5" title="Audio sample formats">AVSampleFormat</a> The documentation for <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5" title="Audio sample formats">AVSampleFormat</a> describes the <a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a> layout.</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to read from </td></tr>
+    <tr><td class="paramname">data</td><td>audio data plane pointers </td></tr>
+    <tr><td class="paramname">nb_samples</td><td>number of samples to peek </td></tr>
+    <tr><td class="paramname">offset</td><td>offset from current read position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>number of samples actually peek, or negative AVERROR code on failure. The number of samples actually peek will not be greater than nb_samples, and will only be less than nb_samples if av_audio_fifo_size is less than nb_samples. </dd></dl>
+
+</div>
+</div>
+<a id="gab256fc29188d91311bd2fbd78eb356af" name="gab256fc29188d91311bd2fbd78eb356af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab256fc29188d91311bd2fbd78eb356af">&#9670;&#160;</a></span>av_audio_fifo_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_audio_fifo_read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_samples</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read data from an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>. </p>
+<dl class="section see"><dt>参见</dt><dd>enum <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5" title="Audio sample formats">AVSampleFormat</a> The documentation for <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5" title="Audio sample formats">AVSampleFormat</a> describes the <a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a> layout.</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to read from </td></tr>
+    <tr><td class="paramname">data</td><td>audio data plane pointers </td></tr>
+    <tr><td class="paramname">nb_samples</td><td>number of samples to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>number of samples actually read, or negative AVERROR code on failure. The number of samples actually read will not be greater than nb_samples, and will only be less than nb_samples if av_audio_fifo_size is less than nb_samples. </dd></dl>
+
+</div>
+</div>
+<a id="ga27c1e16e5f09940d6016b1971c0b5742" name="ga27c1e16e5f09940d6016b1971c0b5742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27c1e16e5f09940d6016b1971c0b5742">&#9670;&#160;</a></span>av_audio_fifo_realloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#a93f17e0f0b53a66e7b5eceb3dff2918f">av_warn_unused_result</a> int av_audio_fifo_realloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_samples</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reallocate an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to reallocate </td></tr>
+    <tr><td class="paramname">nb_samples</td><td>new allocation size, in samples </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 if OK, or negative AVERROR code on failure </dd></dl>
+
+</div>
+</div>
+<a id="ga3f070386d11d425302437a3b60fc5dd0" name="ga3f070386d11d425302437a3b60fc5dd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f070386d11d425302437a3b60fc5dd0">&#9670;&#160;</a></span>av_audio_fifo_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_audio_fifo_reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> buffer. </p>
+<p>This empties all data in the buffer.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to reset </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa0a4742ecac52a999e8b4478d27f3b9b" name="gaa0a4742ecac52a999e8b4478d27f3b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0a4742ecac52a999e8b4478d27f3b9b">&#9670;&#160;</a></span>av_audio_fifo_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_audio_fifo_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current number of samples in the <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> available for reading. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td>the <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to query </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>number of samples available for reading </dd></dl>
+
+</div>
+</div>
+<a id="ga2bed2f01fe34228ee8a73617b3177d00" name="ga2bed2f01fe34228ee8a73617b3177d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2bed2f01fe34228ee8a73617b3177d00">&#9670;&#160;</a></span>av_audio_fifo_space()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_audio_fifo_space </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current number of samples in the <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> available for writing. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td>the <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to query </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>number of samples available for writing </dd></dl>
+
+</div>
+</div>
+<a id="ga0e7fadeea09c52a96eb4082a9e169bb4" name="ga0e7fadeea09c52a96eb4082a9e169bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e7fadeea09c52a96eb4082a9e169bb4">&#9670;&#160;</a></span>av_audio_fifo_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_audio_fifo_write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f">AVAudioFifo</a> *</td>          <td class="paramname"><span class="paramname"><em>af</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_samples</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write data to an <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a>. </p>
+<p>The <a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> will be reallocated automatically if the available space is less than nb_samples.</p>
+<dl class="section see"><dt>参见</dt><dd>enum <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5" title="Audio sample formats">AVSampleFormat</a> The documentation for <a class="el" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5" title="Audio sample formats">AVSampleFormat</a> describes the <a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a> layout.</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td><a class="el" href="#ga328abb21e9abb2c455d2d9c212d5230f" title="Context for an Audio FIFO Buffer.">AVAudioFifo</a> to write to </td></tr>
+    <tr><td class="paramname">data</td><td>audio data plane pointers </td></tr>
+    <tr><td class="paramname">nb_samples</td><td>number of samples to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>number of samples actually written, or negative AVERROR code on failure. If successful, the number of samples actually written will always be nb_samples. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

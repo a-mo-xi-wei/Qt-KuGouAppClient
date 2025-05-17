@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: util.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('util_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">util.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+util.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="util_8h__incl.png" border="0" usemap="#autil_8h" alt=""/></div>
+<map name="autil_8h" id="autil_8h">
+<area shape="rect" title=" " alt="" coords="185,5,234,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,59,107"/>
+<area shape="poly" title=" " alt="" coords="185,33,74,78,72,73,183,28"/>
+<area shape="rect" title=" " alt="" coords="83,80,144,107"/>
+<area shape="poly" title=" " alt="" coords="194,35,144,73,141,68,191,30"/>
+<area shape="rect" title=" " alt="" coords="168,80,250,107"/>
+<area shape="poly" title=" " alt="" coords="212,33,212,64,207,64,207,33"/>
+<area shape="rect" title=" " alt="" coords="275,80,336,107"/>
+<area shape="poly" title=" " alt="" coords="228,30,278,68,275,73,224,35"/>
+<area shape="rect" title=" " alt="" coords="360,80,427,107"/>
+<area shape="poly" title=" " alt="" coords="236,27,348,71,346,76,234,32"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="util_8h__dep__incl.png" border="0" usemap="#autil_8hdep" alt=""/></div>
+<map name="autil_8hdep" id="autil_8hdep">
+<area shape="rect" title=" " alt="" coords="415,5,464,32"/>
+<area shape="rect" href="_a_a_c_frame_8cpp.html" title=" " alt="" coords="5,80,117,107"/>
+<area shape="poly" title=" " alt="" coords="400,30,118,84,117,79,399,25"/>
+<area shape="rect" href="_p_c_m_frame_8cpp.html" title=" " alt="" coords="140,80,254,107"/>
+<area shape="poly" title=" " alt="" coords="401,34,240,82,239,77,399,29"/>
+<area shape="rect" href="_video_encoded_frame_8cpp.html" title=" " alt="" coords="277,80,445,107"/>
+<area shape="poly" title=" " alt="" coords="416,45,376,82,373,78,413,41"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="468,80,571,107"/>
+<area shape="poly" title=" " alt="" coords="466,41,508,78,504,82,463,44"/>
+<area shape="rect" href="_video_raw_frame_8cpp.html" title=" " alt="" coords="595,80,738,107"/>
+<area shape="poly" title=" " alt="" coords="480,30,627,77,626,82,478,35"/>
+<area shape="rect" href="util_8cpp.html" title=" " alt="" coords="763,80,826,107"/>
+<area shape="poly" title=" " alt="" coords="480,24,602,46,751,77,763,80,762,86,750,83,601,51,479,29"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="252,155,347,181"/>
+<area shape="poly" title=" " alt="" coords="468,114,339,157,337,151,466,109"/>
+<area shape="rect" href="_video_player_8cpp.html" title=" " alt="" coords="371,155,487,181"/>
+<area shape="poly" title=" " alt="" coords="494,119,446,156,443,152,491,114"/>
+<area shape="rect" href="_video_player___audio_thread_8cpp.html" title=" " alt="" coords="511,155,707,181"/>
+<area shape="poly" title=" " alt="" coords="549,115,595,152,592,156,545,119"/>
+<area shape="rect" href="_video_player___video_thread_8cpp.html" title=" " alt="" coords="731,155,927,181"/>
+<area shape="poly" title=" " alt="" coords="587,108,776,151,774,157,586,113"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="188,229,297,256"/>
+<area shape="poly" title=" " alt="" coords="282,195,254,231,250,227,278,192"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="321,229,396,256"/>
+<area shape="poly" title=" " alt="" coords="322,192,350,227,346,231,317,195"/>
+</map>
+</div>
+</div>
+<p><a href="util_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_util.html">Util</a></td></tr>
+<tr class="memdesc:namespace_util"><td class="mdescLeft">&#160;</td><td class="mdescRight">通用工具命名空间 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:adb8bf6f8fadfa5e88a7da603d0cc1b28" id="r_adb8bf6f8fadfa5e88a7da603d0cc1b28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb8bf6f8fadfa5e88a7da603d0cc1b28">Sleep</a> (long mSeconds)</td></tr>
+<tr class="memdesc:adb8bf6f8fadfa5e88a7da603d0cc1b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">跨平台睡眠函数（非 Windows 平台）  <br /></td></tr>
+<tr class="separator:adb8bf6f8fadfa5e88a7da603d0cc1b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af63aadf5a7dfc51dcb87717112e1e04b" id="r_af63aadf5a7dfc51dcb87717112e1e04b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af63aadf5a7dfc51dcb87717112e1e04b">mSleep</a> (int mSecond)</td></tr>
+<tr class="memdesc:af63aadf5a7dfc51dcb87717112e1e04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">跨平台毫秒级睡眠函数  <br /></td></tr>
+<tr class="separator:af63aadf5a7dfc51dcb87717112e1e04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af63aadf5a7dfc51dcb87717112e1e04b" id="r_af63aadf5a7dfc51dcb87717112e1e04b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_util.html#af63aadf5a7dfc51dcb87717112e1e04b">mSleep</a> (int mSecond)</td></tr>
+<tr class="memdesc:af63aadf5a7dfc51dcb87717112e1e04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">毫秒级睡眠  <br /></td></tr>
+<tr class="separator:af63aadf5a7dfc51dcb87717112e1e04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6183bf52e2e27e236f98cb450b485ddc" id="r_a6183bf52e2e27e236f98cb450b485ddc"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_util.html#a6183bf52e2e27e236f98cb450b485ddc">GetUtcTime</a> ()</td></tr>
+<tr class="memdesc:a6183bf52e2e27e236f98cb450b485ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 UTC 时间戳  <br /></td></tr>
+<tr class="separator:a6183bf52e2e27e236f98cb450b485ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb67f2e4545728ae55cc05991c48839" id="r_a2bb67f2e4545728ae55cc05991c48839"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_util.html#a2bb67f2e4545728ae55cc05991c48839">GetLocalTime</a> ()</td></tr>
+<tr class="memdesc:a2bb67f2e4545728ae55cc05991c48839"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取本地时间戳  <br /></td></tr>
+<tr class="separator:a2bb67f2e4545728ae55cc05991c48839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af862f069ca9a83b7ab35983862c9572f" id="r_af862f069ca9a83b7ab35983862c9572f"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_util.html#af862f069ca9a83b7ab35983862c9572f">GetTodayUtcTime</a> ()</td></tr>
+<tr class="memdesc:af862f069ca9a83b7ab35983862c9572f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取今天 0 点的 UTC 时间戳  <br /></td></tr>
+<tr class="separator:af862f069ca9a83b7ab35983862c9572f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f68957de3208d5d2979f80eb91bb7f" id="r_a28f68957de3208d5d2979f80eb91bb7f"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_util.html#a28f68957de3208d5d2979f80eb91bb7f">GetUtcTimeInCurWeek</a> ()</td></tr>
+<tr class="memdesc:a28f68957de3208d5d2979f80eb91bb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前时间相对于本周的 UTC 时间戳  <br /></td></tr>
+<tr class="separator:a28f68957de3208d5d2979f80eb91bb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765b4696e8705c75bf1bd8076d7382d3" id="r_a765b4696e8705c75bf1bd8076d7382d3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_util.html#a765b4696e8705c75bf1bd8076d7382d3">getLocalTimeInStringFormat</a> ()</td></tr>
+<tr class="memdesc:a765b4696e8705c75bf1bd8076d7382d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取本地时间字符串  <br /></td></tr>
+<tr class="separator:a765b4696e8705c75bf1bd8076d7382d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="af63aadf5a7dfc51dcb87717112e1e04b" name="af63aadf5a7dfc51dcb87717112e1e04b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af63aadf5a7dfc51dcb87717112e1e04b">&#9670;&#160;</a></span>mSleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mSleep </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mSecond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>跨平台毫秒级睡眠函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mSecond</td><td>睡眠时间（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="util_8h_af63aadf5a7dfc51dcb87717112e1e04b_cgraph.png" border="0" usemap="#autil_8h_af63aadf5a7dfc51dcb87717112e1e04b_cgraph" alt=""/></div>
+<map name="autil_8h_af63aadf5a7dfc51dcb87717112e1e04b_cgraph" id="autil_8h_af63aadf5a7dfc51dcb87717112e1e04b_cgraph">
+<area shape="rect" title="跨平台毫秒级睡眠函数" alt="" coords="5,5,71,32"/>
+<area shape="rect" href="util_8cpp.html#adb8bf6f8fadfa5e88a7da603d0cc1b28" title="跨平台睡眠函数（非 Windows 平台）" alt="" coords="119,5,173,32"/>
+<area shape="poly" title=" " alt="" coords="71,16,103,16,103,21,71,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="util_8h_af63aadf5a7dfc51dcb87717112e1e04b_icgraph.png" border="0" usemap="#autil_8h_af63aadf5a7dfc51dcb87717112e1e04b_icgraph" alt=""/></div>
+<map name="autil_8h_af63aadf5a7dfc51dcb87717112e1e04b_icgraph" id="autil_8h_af63aadf5a7dfc51dcb87717112e1e04b_icgraph">
+<area shape="rect" title="跨平台毫秒级睡眠函数" alt="" coords="1322,261,1388,288"/>
+<area shape="rect" href="class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="1100,312,1274,355"/>
+<area shape="poly" title=" " alt="" coords="1309,294,1251,314,1249,309,1307,288"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="223,64,397,107"/>
+<area shape="poly" title=" " alt="" coords="1333,250,1279,184,1241,144,1197,104,1147,67,1092,36,1034,16,973,8,743,8,659,9,593,14,528,24,446,41,366,66,364,61,444,36,527,18,593,8,659,4,743,3,973,3,1035,10,1094,31,1150,62,1200,100,1245,140,1283,180,1337,247"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="462,160,580,187"/>
+<area shape="poly" title=" " alt="" coords="1307,280,1161,287,968,289,870,286,779,280,701,269,644,252,628,240,618,227,610,214,596,201,573,190,576,185,599,196,614,210,623,224,631,236,646,247,703,264,779,275,870,281,968,284,1161,281,1306,275"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="892,152,1052,179"/>
+<area shape="poly" title=" " alt="" coords="1145,304,989,181,992,177,1148,300"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,211,175,237"/>
+<area shape="poly" title=" " alt="" coords="1084,335,746,332,520,332,462,329,404,322,291,297,194,267,124,240,125,235,196,262,293,292,405,316,463,324,520,327,746,327,1084,329"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="645,93,844,120"/>
+<area shape="poly" title=" " alt="" coords="902,150,843,135,799,123,800,118,844,129,904,145"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="656,144,833,187"/>
+<area shape="poly" title=" " alt="" coords="876,168,834,168,834,163,876,163"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="656,211,833,237"/>
+<area shape="poly" title=" " alt="" coords="904,186,844,201,800,213,799,208,843,196,902,181"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="445,93,597,136"/>
+<area shape="poly" title=" " alt="" coords="630,113,598,115,598,109,630,108"/>
+<area shape="poly" title=" " alt="" coords="429,105,397,100,398,95,430,99"/>
+<area shape="poly" title=" " alt="" coords="412,65,505,54,614,49,731,56,788,65,844,79,879,93,910,112,958,149,954,154,907,116,876,98,843,84,787,70,730,61,614,55,505,59,413,70"/>
+<area shape="poly" title=" " alt="" coords="263,118,114,212,112,208,260,113"/>
+<area shape="poly" title=" " alt="" coords="640,144,597,135,599,129,641,139"/>
+<area shape="poly" title=" " alt="" coords="640,172,580,174,580,169,640,166"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="460,211,582,237"/>
+<area shape="poly" title=" " alt="" coords="641,227,583,227,583,221,641,221"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="232,211,388,237"/>
+<area shape="poly" title=" " alt="" coords="444,227,388,227,388,221,444,221"/>
+<area shape="poly" title=" " alt="" coords="346,198,334,192,310,189,288,191,276,196,273,201,278,209,274,212,268,202,272,192,286,186,310,184,335,187,348,193"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adb8bf6f8fadfa5e88a7da603d0cc1b28" name="adb8bf6f8fadfa5e88a7da603d0cc1b28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb8bf6f8fadfa5e88a7da603d0cc1b28">&#9670;&#160;</a></span>Sleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sleep </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>mSeconds</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>跨平台睡眠函数（非 Windows 平台） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mSeconds</td><td>睡眠时间（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="util_8h_adb8bf6f8fadfa5e88a7da603d0cc1b28_icgraph.png" border="0" usemap="#autil_8h_adb8bf6f8fadfa5e88a7da603d0cc1b28_icgraph" alt=""/></div>
+<map name="autil_8h_adb8bf6f8fadfa5e88a7da603d0cc1b28_icgraph" id="autil_8h_adb8bf6f8fadfa5e88a7da603d0cc1b28_icgraph">
+<area shape="rect" title="跨平台睡眠函数（非 Windows 平台）" alt="" coords="1498,357,1552,383"/>
+<area shape="rect" href="util_8cpp.html#af63aadf5a7dfc51dcb87717112e1e04b" title="跨平台毫秒级睡眠函数" alt="" coords="1353,298,1419,325"/>
+<area shape="poly" title=" " alt="" coords="1482,355,1418,328,1420,323,1484,350"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#aef0334685ffaec5e38c6a8738e16c6fd" title=" " alt="" coords="1322,378,1450,421"/>
+<area shape="poly" title=" " alt="" coords="1483,382,1451,389,1450,383,1482,376"/>
+<area shape="rect" href="class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="1100,111,1274,154"/>
+<area shape="poly" title=" " alt="" coords="1357,290,1211,157,1214,153,1361,286"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="223,131,397,174"/>
+<area shape="poly" title=" " alt="" coords="1338,317,1177,324,973,329,743,329,657,329,589,326,523,311,444,278,408,256,375,228,326,176,330,173,378,225,411,251,446,273,524,306,589,320,657,324,743,323,973,323,1177,319,1338,312"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="462,237,580,263"/>
+<area shape="poly" title=" " alt="" coords="1338,311,580,257,581,252,1338,305"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="892,119,1052,146"/>
+<area shape="poly" title=" " alt="" coords="1084,135,1052,135,1052,130,1084,130"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,66,175,93"/>
+<area shape="poly" title=" " alt="" coords="1127,107,1052,76,958,44,853,19,799,12,746,9,520,9,370,11,305,18,223,34,170,50,123,68,121,63,168,45,222,29,305,13,370,5,520,3,746,3,800,6,854,14,960,39,1054,71,1129,102"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="645,145,844,171"/>
+<area shape="poly" title=" " alt="" coords="877,146,844,150,844,144,876,141"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="656,195,833,238"/>
+<area shape="poly" title=" " alt="" coords="924,155,845,186,813,197,811,192,843,181,922,150"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="656,43,833,70"/>
+<area shape="poly" title=" " alt="" coords="916,117,843,91,788,73,790,68,845,86,918,111"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="445,145,597,187"/>
+<area shape="poly" title=" " alt="" coords="630,165,598,166,598,161,630,160"/>
+<area shape="poly" title=" " alt="" coords="429,163,397,161,398,156,429,158"/>
+<area shape="poly" title=" " alt="" coords="412,133,445,130,567,124,689,122,891,127,891,132,689,128,567,129,445,135,413,139"/>
+<area shape="poly" title=" " alt="" coords="229,129,132,96,134,91,231,124"/>
+<area shape="poly" title=" " alt="" coords="640,196,597,186,599,181,641,191"/>
+<area shape="poly" title=" " alt="" coords="641,235,581,244,580,239,640,230"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="460,43,582,70"/>
+<area shape="poly" title=" " alt="" coords="641,59,583,59,583,54,641,54"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="232,67,388,94"/>
+<area shape="poly" title=" " alt="" coords="445,68,388,75,388,69,444,63"/>
+<area shape="poly" title=" " alt="" coords="346,55,334,48,310,46,288,48,276,53,273,58,278,66,274,69,268,59,272,49,286,43,310,41,335,43,348,50"/>
+<area shape="rect" href="classspdlog_1_1details_1_1file__helper.html#afd9f306eced611107b761533f63a3181" title=" " alt="" coords="1122,489,1252,531"/>
+<area shape="poly" title=" " alt="" coords="1334,431,1228,491,1226,486,1331,426"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5d1a8f6cf62a536e12eefd2721be4d3c" title=" " alt="" coords="1112,378,1262,421"/>
+<area shape="poly" title=" " alt="" coords="1307,402,1262,402,1262,397,1307,397"/>
+<area shape="rect" href="classspdlog_1_1details_1_1file__helper.html#ab8fc86263450fcaa9ab2f63326dc7ae1" title=" " alt="" coords="679,518,810,561"/>
+<area shape="poly" title=" " alt="" coords="1106,518,810,538,810,533,1106,513"/>
+<area shape="rect" href="classspdlog_1_1details_1_1file__helper.html#a09300fd83d100a35d1c997cd72b74b38" title=" " alt="" coords="907,547,1037,590"/>
+<area shape="poly" title=" " alt="" coords="1107,535,1038,554,1037,549,1106,529"/>
+<area shape="poly" title=" " alt="" coords="891,561,810,551,811,545,891,556"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#ada62630736b50e328238dac62f04a18c" title=" " alt="" coords="897,363,1046,406"/>
+<area shape="poly" title=" " alt="" coords="1097,396,1047,393,1047,387,1097,391"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5c89008ad5dc78b230a223af56d1d0e5" title=" " alt="" coords="897,430,1046,473"/>
+<area shape="poly" title=" " alt="" coords="1098,424,1047,436,1046,431,1097,419"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_b12c950205874eb7cac8367399a55421.html">MyPlayer</a></li><li class="navelem"><a class="el" href="dir_e149973d854717dc6b8288c5da85f4f9.html">util</a></li><li class="navelem"><a class="el" href="util_8h.html">util.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

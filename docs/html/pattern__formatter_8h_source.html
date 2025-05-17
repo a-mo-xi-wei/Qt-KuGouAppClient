@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: pattern_formatter.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('pattern__formatter_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pattern_formatter.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="pattern__formatter_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright(c) 2015-present, Gabi Melman &amp; spdlog contributors.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Distributed under the MIT License (http://opensource.org/licenses/MIT)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="_my_spdlog_2spdlog_2common_8h.html">spdlog/common.h</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="log__msg_8h.html">spdlog/details/log_msg.h</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="details_2os_8h.html">spdlog/details/os.h</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="formatter_8h.html">spdlog/formatter.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog.html">spdlog</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog_1_1details.html">details</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// padding information.</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html">   23</a></span><span class="keyword">struct </span><a class="code hl_function" href="structspdlog_1_1details_1_1padding__info.html#a22c87469b68372110047533fb1a4a917">padding_info</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614aadb115059e28d960fa8badfac5516667">   24</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614">pad_side</a> { <a class="code hl_enumvalue" href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614a811882fecd5c7618d7099ebbd39ea254">left</a>, <a class="code hl_enumvalue" href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614a7c4f29407893c334a6cb7a87bf045c0d">right</a>, <a class="code hl_enumvalue" href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614aadb115059e28d960fa8badfac5516667">center</a> };</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html#a22c87469b68372110047533fb1a4a917">   26</a></span>    <a class="code hl_function" href="structspdlog_1_1details_1_1padding__info.html#a22c87469b68372110047533fb1a4a917">padding_info</a>() = <span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html#ae89d125a9736cb8cf7ca065cac216c71">   27</a></span>    <a class="code hl_function" href="structspdlog_1_1details_1_1padding__info.html#ae89d125a9736cb8cf7ca065cac216c71">padding_info</a>(<span class="keywordtype">size_t</span> width, <a class="code hl_enumeration" href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614">padding_info::pad_side</a> side, <span class="keywordtype">bool</span> truncate)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        : <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#a5cb2c4867ddfc8196e3cebdad02f2691">width_</a>(width),</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>          <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#a3109ea0bae65a4c11a89539738e1fa96">side_</a>(side),</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>          <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#a31bb3d6c68ba40ad62f2b54503fc227a">truncate_</a>(truncate),</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>          <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#ab6dfcb3e6c79f4def1295fea7f0de8c0">enabled_</a>(true) {}</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html#af5a8385102f8f8dd6c5957eac08b04c2">   33</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structspdlog_1_1details_1_1padding__info.html#af5a8385102f8f8dd6c5957eac08b04c2">enabled</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#ab6dfcb3e6c79f4def1295fea7f0de8c0">enabled_</a>; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html#a5cb2c4867ddfc8196e3cebdad02f2691">   34</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#a5cb2c4867ddfc8196e3cebdad02f2691">width_</a> = 0;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html#a3109ea0bae65a4c11a89539738e1fa96">   35</a></span>    <a class="code hl_enumeration" href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614">pad_side</a> <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#a3109ea0bae65a4c11a89539738e1fa96">side_</a> = <a class="code hl_enumvalue" href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614a811882fecd5c7618d7099ebbd39ea254">pad_side::left</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html#a31bb3d6c68ba40ad62f2b54503fc227a">   36</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#a31bb3d6c68ba40ad62f2b54503fc227a">truncate_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structspdlog_1_1details_1_1padding__info.html#ab6dfcb3e6c79f4def1295fea7f0de8c0">   37</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structspdlog_1_1details_1_1padding__info.html#ab6dfcb3e6c79f4def1295fea7f0de8c0">enabled_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classspdlog_1_1details_1_1flag__formatter.html">   40</a></span><span class="keyword">class </span><a class="code hl_define" href="_my_spdlog_2spdlog_2common_8h.html#a52ddbd25f1bb074a1b09e10a3e5b177d">SPDLOG_API</a> <a class="code hl_function" href="classspdlog_1_1details_1_1flag__formatter.html#a3d505996aeb84932630de8de9608ce83">flag_formatter</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classspdlog_1_1details_1_1flag__formatter.html#a3d505996aeb84932630de8de9608ce83">   42</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classspdlog_1_1details_1_1flag__formatter.html#a3d505996aeb84932630de8de9608ce83">flag_formatter</a>(<a class="code hl_struct" href="structspdlog_1_1details_1_1padding__info.html">padding_info</a> padinfo)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        : <a class="code hl_variable" href="classspdlog_1_1details_1_1flag__formatter.html#afd89f1d2e4979f2efe59e4f6511965d5">padinfo_</a>(padinfo) {}</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classspdlog_1_1details_1_1flag__formatter.html#a4dcea03688b458a7798143483cb6f289">   44</a></span>    <a class="code hl_function" href="classspdlog_1_1details_1_1flag__formatter.html#a4dcea03688b458a7798143483cb6f289">flag_formatter</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classspdlog_1_1details_1_1flag__formatter.html#a54a193babae9cc027f9a750c7cb1fede">   45</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classspdlog_1_1details_1_1flag__formatter.html#a54a193babae9cc027f9a750c7cb1fede">~flag_formatter</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classspdlog_1_1details_1_1flag__formatter.html#ad84a876e07c986ab6d12ae4db14e4dfe">   46</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1details_1_1flag__formatter.html#ad84a876e07c986ab6d12ae4db14e4dfe">format</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                        <span class="keyword">const</span> std::tm &amp;tm_time,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                        <a class="code hl_typedef" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> &amp;dest) = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classspdlog_1_1details_1_1flag__formatter.html#afd89f1d2e4979f2efe59e4f6511965d5">   51</a></span>    <a class="code hl_struct" href="structspdlog_1_1details_1_1padding__info.html">padding_info</a> <a class="code hl_variable" href="classspdlog_1_1details_1_1flag__formatter.html#afd89f1d2e4979f2efe59e4f6511965d5">padinfo_</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}  <span class="comment">// namespace details</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classspdlog_1_1custom__flag__formatter.html">   56</a></span><span class="keyword">class </span><a class="code hl_define" href="_my_spdlog_2spdlog_2common_8h.html#a52ddbd25f1bb074a1b09e10a3e5b177d">SPDLOG_API</a> <a class="code hl_class" href="classspdlog_1_1custom__flag__formatter.html">custom_flag_formatter</a> : <span class="keyword">public</span> <a class="code hl_class" href="classspdlog_1_1details_1_1flag__formatter.html">details::flag_formatter</a> {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classspdlog_1_1custom__flag__formatter.html#a6eb943d5187f1e10fefb093598523435">   58</a></span>    <span class="keyword">virtual</span> std::unique_ptr&lt;custom_flag_formatter&gt; <a class="code hl_function" href="classspdlog_1_1custom__flag__formatter.html#a6eb943d5187f1e10fefb093598523435">clone</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classspdlog_1_1custom__flag__formatter.html#acd7721bb24452e3113791df4b8c418e7">   60</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1custom__flag__formatter.html#acd7721bb24452e3113791df4b8c418e7">set_padding_info</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a> &amp;padding) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        flag_formatter::padinfo_ = padding;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html">   65</a></span><span class="keyword">class </span><a class="code hl_define" href="_my_spdlog_2spdlog_2common_8h.html#a52ddbd25f1bb074a1b09e10a3e5b177d">SPDLOG_API</a> <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d">pattern_formatter</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classspdlog_1_1formatter.html">formatter</a> {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#a9f95a768324c6141e7aa733db9ed20ad">   67</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classspdlog_1_1pattern__formatter.html#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a> = std::unordered_map&lt;char, std::unique_ptr&lt;custom_flag_formatter&gt;&gt;;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d">pattern_formatter</a>(std::string pattern,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                               <a class="code hl_enumeration" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a> time_type = <a class="code hl_enumvalue" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19af5ddaf0ca7929578b408c909429f68f2">pattern_time_type::local</a>,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                               std::string eol = <a class="code hl_variable" href="namespacespdlog_1_1details_1_1os.html#a60b692e75f5803901c4418be4e4f0bb2">spdlog::details::os::default_eol</a>,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                               <a class="code hl_typedef" href="classspdlog_1_1pattern__formatter.html#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a> custom_user_flags = <a class="code hl_typedef" href="classspdlog_1_1pattern__formatter.html#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a>());</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// use default pattern is not given</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d">pattern_formatter</a>(<a class="code hl_enumeration" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a> time_type = <a class="code hl_enumvalue" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19af5ddaf0ca7929578b408c909429f68f2">pattern_time_type::local</a>,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                               std::string eol = <a class="code hl_variable" href="namespacespdlog_1_1details_1_1os.html#a60b692e75f5803901c4418be4e4f0bb2">spdlog::details::os::default_eol</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#a64f7f9506e33545c9e8e708f0d2892d3">   78</a></span>    <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a64f7f9506e33545c9e8e708f0d2892d3">pattern_formatter</a>(<span class="keyword">const</span> <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d">pattern_formatter</a> &amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#a48ad2daba958591389f4ac306f6cafbb">   79</a></span>    <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d">pattern_formatter</a> &amp;<a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a48ad2daba958591389f4ac306f6cafbb">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d">pattern_formatter</a> &amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    std::unique_ptr&lt;formatter&gt; <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#acb96787ee06ffac94f71f61245934fe7">clone</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c">format</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg, <a class="code hl_typedef" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> &amp;dest) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#ab64d9b36490b7357fcc7d008aaf141d9">   85</a></span>    <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d">pattern_formatter</a> &amp;<a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#ab64d9b36490b7357fcc7d008aaf141d9">add_flag</a>(<span class="keywordtype">char</span> <a class="code hl_variable" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>, Args &amp;&amp;...args) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#abd9469f9c39e3ae74e5b8c6500bfa7b3">custom_handlers_</a>[<a class="code hl_variable" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>] = <a class="code hl_function" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef">details::make_unique&lt;T&gt;</a>(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacespdlog.html#a1a847acd21b9eb74785303fd0a0414da">set_pattern</a>(std::string pattern);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> need_localtime(<span class="keywordtype">bool</span> need = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#aefc6d649e2e6e2a0c5a0824479a0fdfb">   93</a></span>    std::string <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#aefc6d649e2e6e2a0c5a0824479a0fdfb">pattern_</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#ade62022bda8b1be2ac9a5f80672bcc32">   94</a></span>    std::string <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#ade62022bda8b1be2ac9a5f80672bcc32">eol_</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#a08c45d3c18571b1e0eb801f03b587b8d">   95</a></span>    <a class="code hl_enumeration" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a> <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#a08c45d3c18571b1e0eb801f03b587b8d">pattern_time_type_</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#a426fa205fb1e4127ab2ec54891f0430e">   96</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#a426fa205fb1e4127ab2ec54891f0430e">need_localtime_</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#ae84e05de65ddd06394c7348bb6eecda1">   97</a></span>    std::tm <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#ae84e05de65ddd06394c7348bb6eecda1">cached_tm_</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#a94aee3e2a7b16b25ae40f2a341f168fc">   98</a></span>    std::chrono::seconds <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#a94aee3e2a7b16b25ae40f2a341f168fc">last_log_secs_</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#ae2071d2a2bfe9ff2f9bda41c00452e0a">   99</a></span>    std::vector&lt;std::unique_ptr&lt;details::flag_formatter&gt;&gt; <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#ae2071d2a2bfe9ff2f9bda41c00452e0a">formatters_</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#abd9469f9c39e3ae74e5b8c6500bfa7b3">  100</a></span>    <a class="code hl_typedef" href="classspdlog_1_1pattern__formatter.html#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a> <a class="code hl_variable" href="classspdlog_1_1pattern__formatter.html#abd9469f9c39e3ae74e5b8c6500bfa7b3">custom_handlers_</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    std::tm <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#a1e6f9117c476958ad9ffa2ad816db6fa">get_time_</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Padder&gt;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f">  104</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f">handle_flag_</a>(<span class="keywordtype">char</span> <a class="code hl_variable" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>, <a class="code hl_struct" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a> padding);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// Extract given pad spec (e.g. %8X)</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// Advance the given it pass the end of the padding spec found (if any)</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// Return padding.</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a> <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0">handle_padspec_</a>(std::string::const_iterator &amp;it,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                                 std::string::const_iterator end);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d">compile_pattern_</a>(<span class="keyword">const</span> std::string &amp;pattern);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}  <span class="comment">// namespace spdlog</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#ifdef SPDLOG_HEADER_ONLY</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">    #include &quot;<a class="code" href="pattern__formatter-inl_8h.html">pattern_formatter-inl.h</a>&quot;</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></div><div class="ttdeci">@ T</div><div class="ttdoc">字母T</div><div class="ttdef"><b>定义</b> Def.h:3259</div></div>
+<div class="ttc" id="a_my_search_line_edit_8cpp_html_aa12d082c0f752ab7313a2cf16522a3df"><div class="ttname"><a href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a></div><div class="ttdeci">std::once_flag flag</div><div class="ttdoc">单次初始化标志，确保原始宽度只设置一次</div><div class="ttdef"><b>定义</b> MySearchLineEdit.cpp:21</div></div>
+<div class="ttc" id="a_my_spdlog_2spdlog_2common_8h_html"><div class="ttname"><a href="_my_spdlog_2spdlog_2common_8h.html">common.h</a></div></div>
+<div class="ttc" id="a_my_spdlog_2spdlog_2common_8h_html_a52ddbd25f1bb074a1b09e10a3e5b177d"><div class="ttname"><a href="_my_spdlog_2spdlog_2common_8h.html#a52ddbd25f1bb074a1b09e10a3e5b177d">SPDLOG_API</a></div><div class="ttdeci">#define SPDLOG_API</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:45</div></div>
+<div class="ttc" id="aclassspdlog_1_1custom__flag__formatter_html"><div class="ttname"><a href="classspdlog_1_1custom__flag__formatter.html">spdlog::custom_flag_formatter</a></div><div class="ttdef"><b>定义</b> pattern_formatter.h:56</div></div>
+<div class="ttc" id="aclassspdlog_1_1custom__flag__formatter_html_a6eb943d5187f1e10fefb093598523435"><div class="ttname"><a href="classspdlog_1_1custom__flag__formatter.html#a6eb943d5187f1e10fefb093598523435">spdlog::custom_flag_formatter::clone</a></div><div class="ttdeci">virtual std::unique_ptr&lt; custom_flag_formatter &gt; clone() const =0</div></div>
+<div class="ttc" id="aclassspdlog_1_1custom__flag__formatter_html_acd7721bb24452e3113791df4b8c418e7"><div class="ttname"><a href="classspdlog_1_1custom__flag__formatter.html#acd7721bb24452e3113791df4b8c418e7">spdlog::custom_flag_formatter::set_padding_info</a></div><div class="ttdeci">void set_padding_info(const details::padding_info &amp;padding)</div><div class="ttdef"><b>定义</b> pattern_formatter.h:60</div></div>
+<div class="ttc" id="aclassspdlog_1_1details_1_1flag__formatter_html"><div class="ttname"><a href="classspdlog_1_1details_1_1flag__formatter.html">spdlog::details::flag_formatter</a></div><div class="ttdef"><b>定义</b> pattern_formatter.h:40</div></div>
+<div class="ttc" id="aclassspdlog_1_1details_1_1flag__formatter_html_a3d505996aeb84932630de8de9608ce83"><div class="ttname"><a href="classspdlog_1_1details_1_1flag__formatter.html#a3d505996aeb84932630de8de9608ce83">spdlog::details::flag_formatter::flag_formatter</a></div><div class="ttdeci">flag_formatter(padding_info padinfo)</div><div class="ttdef"><b>定义</b> pattern_formatter.h:42</div></div>
+<div class="ttc" id="aclassspdlog_1_1details_1_1flag__formatter_html_a4dcea03688b458a7798143483cb6f289"><div class="ttname"><a href="classspdlog_1_1details_1_1flag__formatter.html#a4dcea03688b458a7798143483cb6f289">spdlog::details::flag_formatter::flag_formatter</a></div><div class="ttdeci">flag_formatter()=default</div></div>
+<div class="ttc" id="aclassspdlog_1_1details_1_1flag__formatter_html_a54a193babae9cc027f9a750c7cb1fede"><div class="ttname"><a href="classspdlog_1_1details_1_1flag__formatter.html#a54a193babae9cc027f9a750c7cb1fede">spdlog::details::flag_formatter::~flag_formatter</a></div><div class="ttdeci">virtual ~flag_formatter()=default</div></div>
+<div class="ttc" id="aclassspdlog_1_1details_1_1flag__formatter_html_ad84a876e07c986ab6d12ae4db14e4dfe"><div class="ttname"><a href="classspdlog_1_1details_1_1flag__formatter.html#ad84a876e07c986ab6d12ae4db14e4dfe">spdlog::details::flag_formatter::format</a></div><div class="ttdeci">virtual void format(const details::log_msg &amp;msg, const std::tm &amp;tm_time, memory_buf_t &amp;dest)=0</div></div>
+<div class="ttc" id="aclassspdlog_1_1details_1_1flag__formatter_html_afd89f1d2e4979f2efe59e4f6511965d5"><div class="ttname"><a href="classspdlog_1_1details_1_1flag__formatter.html#afd89f1d2e4979f2efe59e4f6511965d5">spdlog::details::flag_formatter::padinfo_</a></div><div class="ttdeci">padding_info padinfo_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:51</div></div>
+<div class="ttc" id="aclassspdlog_1_1formatter_html"><div class="ttname"><a href="classspdlog_1_1formatter.html">spdlog::formatter</a></div><div class="ttdef"><b>定义</b> formatter.h:11</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_a08c45d3c18571b1e0eb801f03b587b8d"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#a08c45d3c18571b1e0eb801f03b587b8d">spdlog::pattern_formatter::pattern_time_type_</a></div><div class="ttdeci">pattern_time_type pattern_time_type_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:95</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_a1e6f9117c476958ad9ffa2ad816db6fa"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#a1e6f9117c476958ad9ffa2ad816db6fa">spdlog::pattern_formatter::get_time_</a></div><div class="ttdeci">std::tm get_time_(const details::log_msg &amp;msg)</div><div class="ttdef"><b>定义</b> pattern_formatter-inl.h:1001</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_a426fa205fb1e4127ab2ec54891f0430e"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#a426fa205fb1e4127ab2ec54891f0430e">spdlog::pattern_formatter::need_localtime_</a></div><div class="ttdeci">bool need_localtime_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:96</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_a48ad2daba958591389f4ac306f6cafbb"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#a48ad2daba958591389f4ac306f6cafbb">spdlog::pattern_formatter::operator=</a></div><div class="ttdeci">pattern_formatter &amp; operator=(const pattern_formatter &amp;other)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_a64f7f9506e33545c9e8e708f0d2892d3"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#a64f7f9506e33545c9e8e708f0d2892d3">spdlog::pattern_formatter::pattern_formatter</a></div><div class="ttdeci">pattern_formatter(const pattern_formatter &amp;other)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_a6ef3713322fbd977b57c1bb06936599d"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d">spdlog::pattern_formatter::pattern_formatter</a></div><div class="ttdeci">pattern_formatter(std::string pattern, pattern_time_type time_type=pattern_time_type::local, std::string eol=spdlog::details::os::default_eol, custom_flags custom_user_flags=custom_flags())</div><div class="ttdef"><b>定义</b> pattern_formatter-inl.h:936</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_a94aee3e2a7b16b25ae40f2a341f168fc"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#a94aee3e2a7b16b25ae40f2a341f168fc">spdlog::pattern_formatter::last_log_secs_</a></div><div class="ttdeci">std::chrono::seconds last_log_secs_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:98</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_a9f95a768324c6141e7aa733db9ed20ad"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#a9f95a768324c6141e7aa733db9ed20ad">spdlog::pattern_formatter::custom_flags</a></div><div class="ttdeci">std::unordered_map&lt; char, std::unique_ptr&lt; custom_flag_formatter &gt; &gt; custom_flags</div><div class="ttdef"><b>定义</b> pattern_formatter.h:67</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_aaae28f7a22786c99b3cac2e9f12cc17f"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f">spdlog::pattern_formatter::handle_flag_</a></div><div class="ttdeci">void handle_flag_(char flag, details::padding_info padding)</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_ab64d9b36490b7357fcc7d008aaf141d9"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#ab64d9b36490b7357fcc7d008aaf141d9">spdlog::pattern_formatter::add_flag</a></div><div class="ttdeci">pattern_formatter &amp; add_flag(char flag, Args &amp;&amp;...args)</div><div class="ttdef"><b>定义</b> pattern_formatter.h:85</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_abd9469f9c39e3ae74e5b8c6500bfa7b3"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#abd9469f9c39e3ae74e5b8c6500bfa7b3">spdlog::pattern_formatter::custom_handlers_</a></div><div class="ttdeci">custom_flags custom_handlers_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:100</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_acb96787ee06ffac94f71f61245934fe7"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#acb96787ee06ffac94f71f61245934fe7">spdlog::pattern_formatter::clone</a></div><div class="ttdeci">std::unique_ptr&lt; formatter &gt; clone() const override</div><div class="ttdef"><b>定义</b> pattern_formatter-inl.h:961</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_ace1f279be0a13d47470db704c1a786a0"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0">spdlog::pattern_formatter::handle_padspec_</a></div><div class="ttdeci">static details::padding_info handle_padspec_(std::string::const_iterator &amp;it, std::string::const_iterator end)</div><div class="ttdef"><b>定义</b> pattern_formatter-inl.h:1258</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_ade62022bda8b1be2ac9a5f80672bcc32"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#ade62022bda8b1be2ac9a5f80672bcc32">spdlog::pattern_formatter::eol_</a></div><div class="ttdeci">std::string eol_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:94</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_ae2071d2a2bfe9ff2f9bda41c00452e0a"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#ae2071d2a2bfe9ff2f9bda41c00452e0a">spdlog::pattern_formatter::formatters_</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; details::flag_formatter &gt; &gt; formatters_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:99</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_ae84e05de65ddd06394c7348bb6eecda1"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#ae84e05de65ddd06394c7348bb6eecda1">spdlog::pattern_formatter::cached_tm_</a></div><div class="ttdeci">std::tm cached_tm_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:97</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_aefc6d649e2e6e2a0c5a0824479a0fdfb"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#aefc6d649e2e6e2a0c5a0824479a0fdfb">spdlog::pattern_formatter::pattern_</a></div><div class="ttdeci">std::string pattern_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:93</div></div>
+<div class="ttc" id="aclassspdlog_1_1pattern__formatter_html_af0f127613916b4738f5b31f89ef71a2d"><div class="ttname"><a href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d">spdlog::pattern_formatter::compile_pattern_</a></div><div class="ttdeci">void compile_pattern_(const std::string &amp;pattern)</div><div class="ttdef"><b>定义</b> pattern_formatter-inl.h:1303</div></div>
+<div class="ttc" id="acolor_8h_html_a12b134d4f21276bc7e0473bd2cdb1c9c"><div class="ttname"><a href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c">format</a></div><div class="ttdeci">auto format(const text_style &amp;ts, format_string&lt; T... &gt; fmt, T &amp;&amp;... args) -&gt; std::string</div><div class="ttdoc">Formats arguments and returns the result as a string using ANSI escape sequences to specify text form...</div><div class="ttdef"><b>定义</b> color.h:524</div></div>
+<div class="ttc" id="adetails_2os_8h_html"><div class="ttname"><a href="details_2os_8h.html">os.h</a></div></div>
+<div class="ttc" id="aformatter_8h_html"><div class="ttname"><a href="formatter_8h.html">formatter.h</a></div></div>
+<div class="ttc" id="alog__msg_8h_html"><div class="ttname"><a href="log__msg_8h.html">log_msg.h</a></div></div>
+<div class="ttc" id="anamespacespdlog_1_1details_1_1os_html_a60b692e75f5803901c4418be4e4f0bb2"><div class="ttname"><a href="namespacespdlog_1_1details_1_1os.html#a60b692e75f5803901c4418be4e4f0bb2">spdlog::details::os::default_eol</a></div><div class="ttdeci">static SPDLOG_CONSTEXPR const char * default_eol</div><div class="ttdef"><b>定义</b> details/os.h:32</div></div>
+<div class="ttc" id="anamespacespdlog_1_1details_html"><div class="ttname"><a href="namespacespdlog_1_1details.html">spdlog::details</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:27</div></div>
+<div class="ttc" id="anamespacespdlog_1_1details_html_a2d5a8a422b22079ac963f0bbfdddbcef"><div class="ttname"><a href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef">spdlog::details::make_unique</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; make_unique(Args &amp;&amp;...args)</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:384</div></div>
+<div class="ttc" id="anamespacespdlog_html"><div class="ttname"><a href="namespacespdlog.html">spdlog</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:25</div></div>
+<div class="ttc" id="anamespacespdlog_html_a1a847acd21b9eb74785303fd0a0414da"><div class="ttname"><a href="namespacespdlog.html#a1a847acd21b9eb74785303fd0a0414da">spdlog::set_pattern</a></div><div class="ttdeci">SPDLOG_INLINE void set_pattern(std::string pattern, pattern_time_type time_type)</div><div class="ttdef"><b>定义</b> spdlog-inl.h:27</div></div>
+<div class="ttc" id="anamespacespdlog_html_a9d0b77a62b7a20fc1ca92b779eb5ed19"><div class="ttname"><a href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">spdlog::pattern_time_type</a></div><div class="ttdeci">pattern_time_type</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:294</div></div>
+<div class="ttc" id="anamespacespdlog_html_a9d0b77a62b7a20fc1ca92b779eb5ed19af5ddaf0ca7929578b408c909429f68f2"><div class="ttname"><a href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19af5ddaf0ca7929578b408c909429f68f2">spdlog::pattern_time_type::local</a></div><div class="ttdeci">@ local</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:295</div></div>
+<div class="ttc" id="anamespacespdlog_html_a9ea34fdbca111662f61e7b152fd1f252"><div class="ttname"><a href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">spdlog::memory_buf_t</a></div><div class="ttdeci">fmt::basic_memory_buffer&lt; char, 250 &gt; memory_buf_t</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:178</div></div>
+<div class="ttc" id="apattern__formatter-inl_8h_html"><div class="ttname"><a href="pattern__formatter-inl_8h.html">pattern_formatter-inl.h</a></div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html">spdlog::details::log_msg</a></div><div class="ttdef"><b>定义</b> log_msg.h:11</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html">spdlog::details::padding_info</a></div><div class="ttdef"><b>定义</b> pattern_formatter.h:23</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_a22c87469b68372110047533fb1a4a917"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#a22c87469b68372110047533fb1a4a917">spdlog::details::padding_info::padding_info</a></div><div class="ttdeci">padding_info()=default</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_a3109ea0bae65a4c11a89539738e1fa96"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#a3109ea0bae65a4c11a89539738e1fa96">spdlog::details::padding_info::side_</a></div><div class="ttdeci">pad_side side_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:35</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_a31bb3d6c68ba40ad62f2b54503fc227a"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#a31bb3d6c68ba40ad62f2b54503fc227a">spdlog::details::padding_info::truncate_</a></div><div class="ttdeci">bool truncate_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:36</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_a5cb2c4867ddfc8196e3cebdad02f2691"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#a5cb2c4867ddfc8196e3cebdad02f2691">spdlog::details::padding_info::width_</a></div><div class="ttdeci">size_t width_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:34</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_ab6dfcb3e6c79f4def1295fea7f0de8c0"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#ab6dfcb3e6c79f4def1295fea7f0de8c0">spdlog::details::padding_info::enabled_</a></div><div class="ttdeci">bool enabled_</div><div class="ttdef"><b>定义</b> pattern_formatter.h:37</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_ae02071a6be8361fec6ce03db2fbd7614"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614">spdlog::details::padding_info::pad_side</a></div><div class="ttdeci">pad_side</div><div class="ttdef"><b>定义</b> pattern_formatter.h:24</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_ae02071a6be8361fec6ce03db2fbd7614a7c4f29407893c334a6cb7a87bf045c0d"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614a7c4f29407893c334a6cb7a87bf045c0d">spdlog::details::padding_info::pad_side::right</a></div><div class="ttdeci">@ right</div><div class="ttdef"><b>定义</b> pattern_formatter.h:24</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_ae02071a6be8361fec6ce03db2fbd7614a811882fecd5c7618d7099ebbd39ea254"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614a811882fecd5c7618d7099ebbd39ea254">spdlog::details::padding_info::pad_side::left</a></div><div class="ttdeci">@ left</div><div class="ttdef"><b>定义</b> pattern_formatter.h:24</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_ae02071a6be8361fec6ce03db2fbd7614aadb115059e28d960fa8badfac5516667"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#ae02071a6be8361fec6ce03db2fbd7614aadb115059e28d960fa8badfac5516667">spdlog::details::padding_info::pad_side::center</a></div><div class="ttdeci">@ center</div><div class="ttdef"><b>定义</b> pattern_formatter.h:24</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_ae89d125a9736cb8cf7ca065cac216c71"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#ae89d125a9736cb8cf7ca065cac216c71">spdlog::details::padding_info::padding_info</a></div><div class="ttdeci">padding_info(size_t width, padding_info::pad_side side, bool truncate)</div><div class="ttdef"><b>定义</b> pattern_formatter.h:27</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1padding__info_html_af5a8385102f8f8dd6c5957eac08b04c2"><div class="ttname"><a href="structspdlog_1_1details_1_1padding__info.html#af5a8385102f8f8dd6c5957eac08b04c2">spdlog::details::padding_info::enabled</a></div><div class="ttdeci">bool enabled() const</div><div class="ttdef"><b>定义</b> pattern_formatter.h:33</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="pattern__formatter_8h.html">pattern_formatter.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

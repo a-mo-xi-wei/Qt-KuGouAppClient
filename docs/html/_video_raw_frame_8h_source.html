@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: VideoRawFrame.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_video_raw_frame_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VideoRawFrame.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_video_raw_frame_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  VideoRawFrame - 原始视频帧管理类</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="_video_raw_frame_8h.html#a08da9a7e91ea8592a519581ee228c24d">    9</a></span><span class="preprocessor">#define VideoRawFramePtr std::shared_ptr&lt;VideoRawFrame&gt; </span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html">   16</a></span><span class="keyword">class </span><a class="code hl_function" href="class_video_raw_frame.html#ac0b16c4e282cf3433a5a64f56202daa9">VideoRawFrame</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854">   21</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854">FrameType</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854a54c4b682d718fd6c8e5f224ee2fad841">   22</a></span>        <a class="code hl_enumvalue" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854a54c4b682d718fd6c8e5f224ee2fad841">FRAME_TYPE_NONE</a> = -1,     </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854adb137d1e17004a5c4a4236504d34f32b">   23</a></span>        <a class="code hl_enumvalue" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854adb137d1e17004a5c4a4236504d34f32b">FRAME_TYPE_YUV420P</a>,       </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854a047042066d12f4d3c600e0e69a1a70ed">   24</a></span>        <a class="code hl_enumvalue" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854a047042066d12f4d3c600e0e69a1a70ed">FRAME_TYPE_RGB8</a>,          </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854adb1ea11b5f88156cff91be131250702c">   25</a></span>        <a class="code hl_enumvalue" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854adb1ea11b5f88156cff91be131250702c">FRAME_TYPE_RGB24</a>          </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    };</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_video_raw_frame.html#ac0b16c4e282cf3433a5a64f56202daa9">VideoRawFrame</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="class_video_raw_frame.html#a69525d3588c419c7b9b496e1fe5e1014">~VideoRawFrame</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_raw_frame.html#a9360675ff9cdf783c8e1527b3eb009d4">initBuffer</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code hl_function" href="class_video_raw_frame.html#a3eeed61a3424d2f907c8a1e420fddf6d">width</a>, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code hl_function" href="class_video_raw_frame.html#a822ae85493a742654ba563619492b26a">height</a>, <span class="keyword">const</span> <a class="code hl_enumeration" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854">FrameType</a> &amp;<a class="code hl_function" href="class_video_raw_frame.html#adfa746870a1972173197173b6c97492c">type</a>, int64_t time = 0);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_raw_frame.html#a32af978a5a2abdb0db26a84155eb7cf5">setFramebuf</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *buf);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_raw_frame.html#a6c0530b014c0460e78112e88a5241f37">setYbuf</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *buf);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_raw_frame.html#a99e44d8932a66dc3a1dd059f51e8d135">setUbuf</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *buf);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_raw_frame.html#a89b540ff20394f6c556e75ecf19836cd">setVbuf</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *buf);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#ab766533ac99363cb6d92a52357cfb7a1">   87</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_function" href="class_video_raw_frame.html#ab766533ac99363cb6d92a52357cfb7a1">buffer</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_video_raw_frame.html#a96609d194adde59bc1e0facbe06a7063">mFrameBuffer</a>; }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a3eeed61a3424d2f907c8a1e420fddf6d">   93</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_video_raw_frame.html#a3eeed61a3424d2f907c8a1e420fddf6d">width</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_video_raw_frame.html#aa39f004a83a206ca8644d441c792e45b">mWidth</a>; }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a822ae85493a742654ba563619492b26a">   99</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_video_raw_frame.html#a822ae85493a742654ba563619492b26a">height</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_video_raw_frame.html#a91c43e38a0a56bd19e5bba2e03e8d378">mHegiht</a>; }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#af4b57d21919c42d55af03391f91a1c08">  105</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_video_raw_frame.html#af4b57d21919c42d55af03391f91a1c08">size</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_video_raw_frame.html#a263a914b4c67785cdc9d7adec7d0f4d3">mFrameBufferSize</a>; }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a5f9492046853fa761e646e6568c7995e">  111</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_raw_frame.html#a5f9492046853fa761e646e6568c7995e">setPts</a>(<span class="keyword">const</span> int64_t &amp;<a class="code hl_function" href="class_video_raw_frame.html#ae2194e66f6f3d862b3174f7f09fcaea8">pts</a>) { <a class="code hl_variable" href="class_video_raw_frame.html#a717d7028e8f50d3cdf7e3eb753f3cbce">mPts</a> = <a class="code hl_function" href="class_video_raw_frame.html#ae2194e66f6f3d862b3174f7f09fcaea8">pts</a>; }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#ae2194e66f6f3d862b3174f7f09fcaea8">  117</a></span>    int64_t <a class="code hl_function" href="class_video_raw_frame.html#ae2194e66f6f3d862b3174f7f09fcaea8">pts</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_video_raw_frame.html#a717d7028e8f50d3cdf7e3eb753f3cbce">mPts</a>; }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a808117e517ca1a298728d3d674d91e0c">  123</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_raw_frame.html#a808117e517ca1a298728d3d674d91e0c">setTimeStamp</a>(uint64_t t) { <a class="code hl_variable" href="class_video_raw_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a> = t; }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">  129</a></span>    uint64_t <a class="code hl_function" href="class_video_raw_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">timeStamp</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_video_raw_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a>; }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#adfa746870a1972173197173b6c97492c">  135</a></span>    <a class="code hl_enumeration" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854">FrameType</a> <a class="code hl_function" href="class_video_raw_frame.html#adfa746870a1972173197173b6c97492c">type</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_video_raw_frame.html#ad7593d6bf8bd19566275476024d812ae">mType</a>; }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#ad7593d6bf8bd19566275476024d812ae">  140</a></span>    <a class="code hl_enumeration" href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854">FrameType</a> <a class="code hl_variable" href="class_video_raw_frame.html#ad7593d6bf8bd19566275476024d812ae">mType</a>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a96609d194adde59bc1e0facbe06a7063">  144</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_variable" href="class_video_raw_frame.html#a96609d194adde59bc1e0facbe06a7063">mFrameBuffer</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a263a914b4c67785cdc9d7adec7d0f4d3">  148</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_video_raw_frame.html#a263a914b4c67785cdc9d7adec7d0f4d3">mFrameBufferSize</a> = 0;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#aa39f004a83a206ca8644d441c792e45b">  152</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_video_raw_frame.html#aa39f004a83a206ca8644d441c792e45b">mWidth</a>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a91c43e38a0a56bd19e5bba2e03e8d378">  156</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_video_raw_frame.html#a91c43e38a0a56bd19e5bba2e03e8d378">mHegiht</a>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a717d7028e8f50d3cdf7e3eb753f3cbce">  160</a></span>    int64_t <a class="code hl_variable" href="class_video_raw_frame.html#a717d7028e8f50d3cdf7e3eb753f3cbce">mPts</a>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="class_video_raw_frame.html#a21986d419e0d7cf1249013a118da4282">  164</a></span>    uint64_t <a class="code hl_variable" href="class_video_raw_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a> = 0;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>};</div>
+</div>
+<div class="ttc" id="a_pcm_volume_control_8cpp_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> PcmVolumeControl.cpp:11</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a21986d419e0d7cf1249013a118da4282"><div class="ttname"><a href="class_video_raw_frame.html#a21986d419e0d7cf1249013a118da4282">VideoRawFrame::m_timestamp_ms</a></div><div class="ttdeci">uint64_t m_timestamp_ms</div><div class="ttdoc">UTC 时间戳（毫秒）</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:164</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a263a914b4c67785cdc9d7adec7d0f4d3"><div class="ttname"><a href="class_video_raw_frame.html#a263a914b4c67785cdc9d7adec7d0f4d3">VideoRawFrame::mFrameBufferSize</a></div><div class="ttdeci">int mFrameBufferSize</div><div class="ttdoc">帧缓冲区大小</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:148</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a32af978a5a2abdb0db26a84155eb7cf5"><div class="ttname"><a href="class_video_raw_frame.html#a32af978a5a2abdb0db26a84155eb7cf5">VideoRawFrame::setFramebuf</a></div><div class="ttdeci">void setFramebuf(const uint8_t *buf)</div><div class="ttdoc">设置帧缓冲区</div><div class="ttdef"><b>定义</b> VideoRawFrame.cpp:85</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a3eeed61a3424d2f907c8a1e420fddf6d"><div class="ttname"><a href="class_video_raw_frame.html#a3eeed61a3424d2f907c8a1e420fddf6d">VideoRawFrame::width</a></div><div class="ttdeci">int width()</div><div class="ttdoc">获取帧宽度</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:93</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a5f9492046853fa761e646e6568c7995e"><div class="ttname"><a href="class_video_raw_frame.html#a5f9492046853fa761e646e6568c7995e">VideoRawFrame::setPts</a></div><div class="ttdeci">void setPts(const int64_t &amp;pts)</div><div class="ttdoc">设置时间戳</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:111</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a69525d3588c419c7b9b496e1fe5e1014"><div class="ttname"><a href="class_video_raw_frame.html#a69525d3588c419c7b9b496e1fe5e1014">VideoRawFrame::~VideoRawFrame</a></div><div class="ttdeci">~VideoRawFrame()</div><div class="ttdoc">析构函数</div><div class="ttdef"><b>定义</b> VideoRawFrame.cpp:32</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a6c0530b014c0460e78112e88a5241f37"><div class="ttname"><a href="class_video_raw_frame.html#a6c0530b014c0460e78112e88a5241f37">VideoRawFrame::setYbuf</a></div><div class="ttdeci">void setYbuf(const uint8_t *buf)</div><div class="ttdoc">设置 Y 分量缓冲区</div><div class="ttdef"><b>定义</b> VideoRawFrame.cpp:99</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a717d7028e8f50d3cdf7e3eb753f3cbce"><div class="ttname"><a href="class_video_raw_frame.html#a717d7028e8f50d3cdf7e3eb753f3cbce">VideoRawFrame::mPts</a></div><div class="ttdeci">int64_t mPts</div><div class="ttdoc">时间戳</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:160</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a7606723ef1db72ef21f3eb67833eb9fa"><div class="ttname"><a href="class_video_raw_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">VideoRawFrame::timeStamp</a></div><div class="ttdeci">uint64_t timeStamp()</div><div class="ttdoc">获取 UTC 时间戳</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:129</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a808117e517ca1a298728d3d674d91e0c"><div class="ttname"><a href="class_video_raw_frame.html#a808117e517ca1a298728d3d674d91e0c">VideoRawFrame::setTimeStamp</a></div><div class="ttdeci">void setTimeStamp(uint64_t t)</div><div class="ttdoc">设置 UTC 时间戳</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:123</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a822ae85493a742654ba563619492b26a"><div class="ttname"><a href="class_video_raw_frame.html#a822ae85493a742654ba563619492b26a">VideoRawFrame::height</a></div><div class="ttdeci">int height()</div><div class="ttdoc">获取帧高度</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:99</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a89b540ff20394f6c556e75ecf19836cd"><div class="ttname"><a href="class_video_raw_frame.html#a89b540ff20394f6c556e75ecf19836cd">VideoRawFrame::setVbuf</a></div><div class="ttdeci">void setVbuf(const uint8_t *buf)</div><div class="ttdoc">设置 V 分量缓冲区</div><div class="ttdef"><b>定义</b> VideoRawFrame.cpp:121</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a91c43e38a0a56bd19e5bba2e03e8d378"><div class="ttname"><a href="class_video_raw_frame.html#a91c43e38a0a56bd19e5bba2e03e8d378">VideoRawFrame::mHegiht</a></div><div class="ttdeci">int mHegiht</div><div class="ttdoc">帧高度</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:156</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a9360675ff9cdf783c8e1527b3eb009d4"><div class="ttname"><a href="class_video_raw_frame.html#a9360675ff9cdf783c8e1527b3eb009d4">VideoRawFrame::initBuffer</a></div><div class="ttdeci">void initBuffer(const int &amp;width, const int &amp;height, const FrameType &amp;type, int64_t time=0)</div><div class="ttdoc">初始化缓冲区</div><div class="ttdef"><b>定义</b> VideoRawFrame.cpp:49</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a96609d194adde59bc1e0facbe06a7063"><div class="ttname"><a href="class_video_raw_frame.html#a96609d194adde59bc1e0facbe06a7063">VideoRawFrame::mFrameBuffer</a></div><div class="ttdeci">uint8_t * mFrameBuffer</div><div class="ttdoc">帧缓冲区</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:144</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_a99e44d8932a66dc3a1dd059f51e8d135"><div class="ttname"><a href="class_video_raw_frame.html#a99e44d8932a66dc3a1dd059f51e8d135">VideoRawFrame::setUbuf</a></div><div class="ttdeci">void setUbuf(const uint8_t *buf)</div><div class="ttdoc">设置 U 分量缓冲区</div><div class="ttdef"><b>定义</b> VideoRawFrame.cpp:110</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_aa39f004a83a206ca8644d441c792e45b"><div class="ttname"><a href="class_video_raw_frame.html#aa39f004a83a206ca8644d441c792e45b">VideoRawFrame::mWidth</a></div><div class="ttdeci">int mWidth</div><div class="ttdoc">帧宽度</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:152</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ab766533ac99363cb6d92a52357cfb7a1"><div class="ttname"><a href="class_video_raw_frame.html#ab766533ac99363cb6d92a52357cfb7a1">VideoRawFrame::buffer</a></div><div class="ttdeci">uint8_t * buffer()</div><div class="ttdoc">获取帧缓冲区</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:87</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ac0b16c4e282cf3433a5a64f56202daa9"><div class="ttname"><a href="class_video_raw_frame.html#ac0b16c4e282cf3433a5a64f56202daa9">VideoRawFrame::VideoRawFrame</a></div><div class="ttdeci">VideoRawFrame()</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> VideoRawFrame.cpp:21</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ad495a9f61af7fff07d7e97979d1ab854"><div class="ttname"><a href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854">VideoRawFrame::FrameType</a></div><div class="ttdeci">FrameType</div><div class="ttdoc">原始视频帧类型</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:21</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ad495a9f61af7fff07d7e97979d1ab854a047042066d12f4d3c600e0e69a1a70ed"><div class="ttname"><a href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854a047042066d12f4d3c600e0e69a1a70ed">VideoRawFrame::FRAME_TYPE_RGB8</a></div><div class="ttdeci">@ FRAME_TYPE_RGB8</div><div class="ttdoc">8 位 RGB</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:24</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ad495a9f61af7fff07d7e97979d1ab854a54c4b682d718fd6c8e5f224ee2fad841"><div class="ttname"><a href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854a54c4b682d718fd6c8e5f224ee2fad841">VideoRawFrame::FRAME_TYPE_NONE</a></div><div class="ttdeci">@ FRAME_TYPE_NONE</div><div class="ttdoc">无类型</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:22</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ad495a9f61af7fff07d7e97979d1ab854adb137d1e17004a5c4a4236504d34f32b"><div class="ttname"><a href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854adb137d1e17004a5c4a4236504d34f32b">VideoRawFrame::FRAME_TYPE_YUV420P</a></div><div class="ttdeci">@ FRAME_TYPE_YUV420P</div><div class="ttdoc">平面 YUV 4:2:0，12bpp（每 2x2 Y 样本有 1 个 Cr 和 Cb 样本）</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:23</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ad495a9f61af7fff07d7e97979d1ab854adb1ea11b5f88156cff91be131250702c"><div class="ttname"><a href="class_video_raw_frame.html#ad495a9f61af7fff07d7e97979d1ab854adb1ea11b5f88156cff91be131250702c">VideoRawFrame::FRAME_TYPE_RGB24</a></div><div class="ttdeci">@ FRAME_TYPE_RGB24</div><div class="ttdoc">打包 RGB 8:8:8，24bpp，RGBRGB...</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:25</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ad7593d6bf8bd19566275476024d812ae"><div class="ttname"><a href="class_video_raw_frame.html#ad7593d6bf8bd19566275476024d812ae">VideoRawFrame::mType</a></div><div class="ttdeci">FrameType mType</div><div class="ttdoc">帧类型</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:140</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_adfa746870a1972173197173b6c97492c"><div class="ttname"><a href="class_video_raw_frame.html#adfa746870a1972173197173b6c97492c">VideoRawFrame::type</a></div><div class="ttdeci">FrameType type()</div><div class="ttdoc">获取帧类型</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:135</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_ae2194e66f6f3d862b3174f7f09fcaea8"><div class="ttname"><a href="class_video_raw_frame.html#ae2194e66f6f3d862b3174f7f09fcaea8">VideoRawFrame::pts</a></div><div class="ttdeci">int64_t pts()</div><div class="ttdoc">获取时间戳</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:117</div></div>
+<div class="ttc" id="aclass_video_raw_frame_html_af4b57d21919c42d55af03391f91a1c08"><div class="ttname"><a href="class_video_raw_frame.html#af4b57d21919c42d55af03391f91a1c08">VideoRawFrame::size</a></div><div class="ttdeci">int size()</div><div class="ttdoc">获取帧缓冲区大小</div><div class="ttdef"><b>定义</b> VideoRawFrame.h:105</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_b12c950205874eb7cac8367399a55421.html">MyPlayer</a></li><li class="navelem"><a class="el" href="dir_5b4f0ac3f39cfcb6c3b247caa2266733.html">frame</a></li><li class="navelem"><a class="el" href="dir_1b5f91fcfce047e4582e45b1aff5ca51.html">VideoFrame</a></li><li class="navelem"><a class="el" href="_video_raw_frame_8h.html">VideoRawFrame.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

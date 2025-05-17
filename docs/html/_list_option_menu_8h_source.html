@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ListOptionMenu.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_list_option_menu_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ListOptionMenu.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_list_option_menu_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef LISTOPTIONMENU_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define LISTOPTIONMENU_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_base_menu_8h.html">../BaseMenu.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#if defined(MYMENU_LIBRARY)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define MYMENU_EXPORT Q_DECL_EXPORT</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_list_option_menu_8h.html#af32175e4d1f647bf2efdf82c43a17c9e">   18</a></span><span class="preprocessor">#define MYMENU_EXPORT Q_DECL_IMPORT</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_list_option_menu.html">   25</a></span><span class="keyword">class </span><a class="code hl_define" href="_list_option_menu_8h.html#af32175e4d1f647bf2efdf82c43a17c9e">MYMENU_EXPORT</a> <a class="code hl_function" href="class_list_option_menu.html#ae852471e62d7c814575e1a2abd07c86c">ListOptionMenu</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_base_menu.html#a3a0d91e21b7d2540477767ff01fbb6d2">BaseMenu</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    Q_OBJECT</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_list_option_menu.html#ae852471e62d7c814575e1a2abd07c86c">ListOptionMenu</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_base_menu.html#a5ba413bcad36094287234c91df7d2cc1">initMenu</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list_option_menu.html#af16e97c2b4d2d140c55a1774c7bd241d">initSceneWidget</a>(QWidget* widget);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list_option_menu.html#a4852631a2ef9763a6d6896416dc58558">initThemeWidget</a>(QWidget* widget);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list_option_menu.html#ac1882101479a756337d152ee0996f374">initLanguageWidget</a>(QWidget* widget);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list_option_menu.html#a0596293db8c735c1e5a3613649b74efc">initStyleWidget</a>(QWidget* widget);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list_option_menu.html#ab718a2975306677f6fe2bd7b239f948c">initMoodWidget</a>(QWidget* widget);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_list_option_menu.html#ad576fb742da3230b7b57569207c39ea5">initPeriodWidget</a>(QWidget* widget);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">const</span> <a class="code hl_function" href="class_list_option_menu.html#ae852471e62d7c814575e1a2abd07c86c">ListOptionMenu</a>* <a class="code hl_function" href="class_base_menu.html#ac4873c622744b263677fb4c8da101046">getMenu</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_list_option_menu.html#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a>(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    signals:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_list_option_menu.html#a28588b3aa1fe32e9a2416e6d055a3800">   97</a></span>        <span class="keywordtype">void</span> <a class="code hl_signal" href="class_list_option_menu.html#a28588b3aa1fe32e9a2416e6d055a3800">clickedFuncName</a>(<span class="keyword">const</span> QString&amp; funcName);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif </span><span class="comment">// LISTOPTIONMENU_H</span></div>
+<div class="ttc" id="a_base_menu_8h_html"><div class="ttname"><a href="_base_menu_8h.html">BaseMenu.h</a></div><div class="ttdoc">定义 BaseMenu 类，提供菜单基类功能</div></div>
+<div class="ttc" id="a_list_option_menu_8h_html_af32175e4d1f647bf2efdf82c43a17c9e"><div class="ttname"><a href="_list_option_menu_8h.html#af32175e4d1f647bf2efdf82c43a17c9e">MYMENU_EXPORT</a></div><div class="ttdeci">#define MYMENU_EXPORT</div><div class="ttdoc">动态库导出宏，定义库的导出/导入行为</div><div class="ttdef"><b>定义</b> ListOptionMenu.h:18</div></div>
+<div class="ttc" id="aclass_base_menu_html_a3a0d91e21b7d2540477767ff01fbb6d2"><div class="ttname"><a href="class_base_menu.html#a3a0d91e21b7d2540477767ff01fbb6d2">BaseMenu::BaseMenu</a></div><div class="ttdeci">BaseMenu(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化菜单基类</div><div class="ttdef"><b>定义</b> BaseMenu.cpp:29</div></div>
+<div class="ttc" id="aclass_base_menu_html_a5ba413bcad36094287234c91df7d2cc1"><div class="ttname"><a href="class_base_menu.html#a5ba413bcad36094287234c91df7d2cc1">BaseMenu::initMenu</a></div><div class="ttdeci">virtual void initMenu()</div><div class="ttdoc">虚函数，初始化菜单布局和内容，由子类实现</div><div class="ttdef"><b>定义</b> BaseMenu.h:51</div></div>
+<div class="ttc" id="aclass_base_menu_html_ac4873c622744b263677fb4c8da101046"><div class="ttname"><a href="class_base_menu.html#ac4873c622744b263677fb4c8da101046">BaseMenu::getMenu</a></div><div class="ttdeci">virtual const BaseMenu * getMenu() const</div><div class="ttdoc">获取当前菜单对象</div><div class="ttdef"><b>定义</b> BaseMenu.cpp:74</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_a0596293db8c735c1e5a3613649b74efc"><div class="ttname"><a href="class_list_option_menu.html#a0596293db8c735c1e5a3613649b74efc">ListOptionMenu::initStyleWidget</a></div><div class="ttdeci">void initStyleWidget(QWidget *widget)</div><div class="ttdoc">初始化风格分类窗口</div><div class="ttdef"><b>定义</b> ListOptionMenu.cpp:310</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_a28588b3aa1fe32e9a2416e6d055a3800"><div class="ttname"><a href="class_list_option_menu.html#a28588b3aa1fe32e9a2416e6d055a3800">ListOptionMenu::clickedFuncName</a></div><div class="ttdeci">void clickedFuncName(const QString &amp;funcName)</div><div class="ttdoc">菜单项点击信号</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_a4852631a2ef9763a6d6896416dc58558"><div class="ttname"><a href="class_list_option_menu.html#a4852631a2ef9763a6d6896416dc58558">ListOptionMenu::initThemeWidget</a></div><div class="ttdeci">void initThemeWidget(QWidget *widget)</div><div class="ttdoc">初始化主题分类窗口</div><div class="ttdef"><b>定义</b> ListOptionMenu.cpp:185</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_a7eb87a6d4464680c455d278d1d32eba6"><div class="ttname"><a href="class_list_option_menu.html#a7eb87a6d4464680c455d278d1d32eba6">ListOptionMenu::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) override</div><div class="ttdoc">事件过滤器，处理鼠标点击事件</div><div class="ttdef"><b>定义</b> ListOptionMenu.cpp:507</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_ab718a2975306677f6fe2bd7b239f948c"><div class="ttname"><a href="class_list_option_menu.html#ab718a2975306677f6fe2bd7b239f948c">ListOptionMenu::initMoodWidget</a></div><div class="ttdeci">void initMoodWidget(QWidget *widget)</div><div class="ttdoc">初始化心情分类窗口</div><div class="ttdef"><b>定义</b> ListOptionMenu.cpp:380</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_ac1882101479a756337d152ee0996f374"><div class="ttname"><a href="class_list_option_menu.html#ac1882101479a756337d152ee0996f374">ListOptionMenu::initLanguageWidget</a></div><div class="ttdeci">void initLanguageWidget(QWidget *widget)</div><div class="ttdoc">初始化语种分类窗口</div><div class="ttdef"><b>定义</b> ListOptionMenu.cpp:244</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_ad576fb742da3230b7b57569207c39ea5"><div class="ttname"><a href="class_list_option_menu.html#ad576fb742da3230b7b57569207c39ea5">ListOptionMenu::initPeriodWidget</a></div><div class="ttdeci">void initPeriodWidget(QWidget *widget)</div><div class="ttdoc">初始化年代分类窗口</div><div class="ttdef"><b>定义</b> ListOptionMenu.cpp:439</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_ae852471e62d7c814575e1a2abd07c86c"><div class="ttname"><a href="class_list_option_menu.html#ae852471e62d7c814575e1a2abd07c86c">ListOptionMenu::ListOptionMenu</a></div><div class="ttdeci">ListOptionMenu(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化歌曲分类选项菜单</div><div class="ttdef"><b>定义</b> ListOptionMenu.cpp:25</div></div>
+<div class="ttc" id="aclass_list_option_menu_html_af16e97c2b4d2d140c55a1774c7bd241d"><div class="ttname"><a href="class_list_option_menu.html#af16e97c2b4d2d140c55a1774c7bd241d">ListOptionMenu::initSceneWidget</a></div><div class="ttdeci">void initSceneWidget(QWidget *widget)</div><div class="ttdoc">初始化场景分类窗口</div><div class="ttdef"><b>定义</b> ListOptionMenu.cpp:123</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_5978cb0ca166c1e5e46ab0fd30008e2c.html">MyMenu</a></li><li class="navelem"><a class="el" href="dir_2cd064ae7af75cdc58b64c72019e5ecb.html">ListOptionMenu</a></li><li class="navelem"><a class="el" href="_list_option_menu_8h.html">ListOptionMenu.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

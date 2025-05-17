@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: MVBlockWidget.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_m_v_block_widget_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MVBlockWidget.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_m_v_block_widget_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef MVBLOCKWIDGET_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define MVBLOCKWIDGET_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a> { <span class="keyword">class </span>MVBlockWidget; }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_m_v_block_widget.html">   22</a></span><span class="keyword">class </span><a class="code hl_function" href="class_m_v_block_widget.html#ab0deb91d15dc1e5fdffba2448a09d2d9">MVBlockWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Q_OBJECT</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_m_v_block_widget.html#ab0deb91d15dc1e5fdffba2448a09d2d9">MVBlockWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="class_m_v_block_widget.html#aff97fab437ac52a17b93b68aac4aebea">~MVBlockWidget</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#a577e699921fb58de1d51f2352a6088e1">setCoverPix</a>(<span class="keyword">const</span> QString &amp;pixmapPath) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#ae41bb48686acca304d34786b0425b1fc">setTitle</a>(<span class="keyword">const</span> QString &amp;title);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#a7bdaf90c6d6901c720641f3445248cd4">setDescription</a>(<span class="keyword">const</span> QString &amp;description);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#a9c340b0c6e7027bb1e48d4607461b8aa">hideDesc</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#a9f6412e4f086819d14727a1646b34f97">updateTitleText</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#a312928c8261abd121c7b43b2dcd64a80">updateDescText</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#a2de3e1806dc8e5d659fc1f35545a5b87">mouseReleaseEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#aa7cbd844218ae8d806339f58a33a3699">mouseDoubleClickEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_v_block_widget.html#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a>(QResizeEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_m_v_block_widget.html#ae1d5913e5a78f518b9e67ec68c9b9005">  107</a></span>    Ui::MVBlockWidget *<a class="code hl_variable" href="class_m_v_block_widget.html#ae1d5913e5a78f518b9e67ec68c9b9005">ui</a>;           </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_m_v_block_widget.html#a03d74204925a181f4aa8e83359ca613e">  108</a></span>    QString            <a class="code hl_variable" href="class_m_v_block_widget.html#a03d74204925a181f4aa8e83359ca613e">m_title</a>;       </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_m_v_block_widget.html#af9a62bc07eb9a236aeb132dfbce2dd1f">  109</a></span>    QString            <a class="code hl_variable" href="class_m_v_block_widget.html#af9a62bc07eb9a236aeb132dfbce2dd1f">m_description</a>; </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>};</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif </span><span class="comment">// MVBLOCKWIDGET_H</span></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a03d74204925a181f4aa8e83359ca613e"><div class="ttname"><a href="class_m_v_block_widget.html#a03d74204925a181f4aa8e83359ca613e">MVBlockWidget::m_title</a></div><div class="ttdeci">QString m_title</div><div class="ttdoc">标题文本</div><div class="ttdef"><b>定义</b> MVBlockWidget.h:108</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a2de3e1806dc8e5d659fc1f35545a5b87"><div class="ttname"><a href="class_m_v_block_widget.html#a2de3e1806dc8e5d659fc1f35545a5b87">MVBlockWidget::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标释放事件</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:142</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a312928c8261abd121c7b43b2dcd64a80"><div class="ttname"><a href="class_m_v_block_widget.html#a312928c8261abd121c7b43b2dcd64a80">MVBlockWidget::updateDescText</a></div><div class="ttdeci">void updateDescText() const</div><div class="ttdoc">更新描述文本（省略显示）</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:119</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a577e699921fb58de1d51f2352a6088e1"><div class="ttname"><a href="class_m_v_block_widget.html#a577e699921fb58de1d51f2352a6088e1">MVBlockWidget::setCoverPix</a></div><div class="ttdeci">void setCoverPix(const QString &amp;pixmapPath) const</div><div class="ttdoc">设置封面图片</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:53</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a7523c71b2bf60975302287ec8923f80e"><div class="ttname"><a href="class_m_v_block_widget.html#a7523c71b2bf60975302287ec8923f80e">MVBlockWidget::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标按下事件</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:132</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a7bdaf90c6d6901c720641f3445248cd4"><div class="ttname"><a href="class_m_v_block_widget.html#a7bdaf90c6d6901c720641f3445248cd4">MVBlockWidget::setDescription</a></div><div class="ttdeci">void setDescription(const QString &amp;description)</div><div class="ttdoc">设置描述</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:74</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a9a27ed4ceb22d2a19bdb88ed785085a1"><div class="ttname"><a href="class_m_v_block_widget.html#a9a27ed4ceb22d2a19bdb88ed785085a1">MVBlockWidget::resizeEvent</a></div><div class="ttdeci">void resizeEvent(QResizeEvent *event) override</div><div class="ttdoc">调整大小事件</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:162</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a9c340b0c6e7027bb1e48d4607461b8aa"><div class="ttname"><a href="class_m_v_block_widget.html#a9c340b0c6e7027bb1e48d4607461b8aa">MVBlockWidget::hideDesc</a></div><div class="ttdeci">void hideDesc()</div><div class="ttdoc">隐藏描述标签</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:85</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_a9f6412e4f086819d14727a1646b34f97"><div class="ttname"><a href="class_m_v_block_widget.html#a9f6412e4f086819d14727a1646b34f97">MVBlockWidget::updateTitleText</a></div><div class="ttdeci">void updateTitleText() const</div><div class="ttdoc">更新标题文本（省略显示）</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:108</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_aa7cbd844218ae8d806339f58a33a3699"><div class="ttname"><a href="class_m_v_block_widget.html#aa7cbd844218ae8d806339f58a33a3699">MVBlockWidget::mouseDoubleClickEvent</a></div><div class="ttdeci">void mouseDoubleClickEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标双击事件</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:152</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_ab0deb91d15dc1e5fdffba2448a09d2d9"><div class="ttname"><a href="class_m_v_block_widget.html#ab0deb91d15dc1e5fdffba2448a09d2d9">MVBlockWidget::MVBlockWidget</a></div><div class="ttdeci">MVBlockWidget(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化音乐视频块控件</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:23</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_ae1d5913e5a78f518b9e67ec68c9b9005"><div class="ttname"><a href="class_m_v_block_widget.html#ae1d5913e5a78f518b9e67ec68c9b9005">MVBlockWidget::ui</a></div><div class="ttdeci">Ui::MVBlockWidget * ui</div><div class="ttdoc">UI 指针</div><div class="ttdef"><b>定义</b> MVBlockWidget.h:107</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_ae41bb48686acca304d34786b0425b1fc"><div class="ttname"><a href="class_m_v_block_widget.html#ae41bb48686acca304d34786b0425b1fc">MVBlockWidget::setTitle</a></div><div class="ttdeci">void setTitle(const QString &amp;title)</div><div class="ttdoc">设置标题</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:62</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_af9a62bc07eb9a236aeb132dfbce2dd1f"><div class="ttname"><a href="class_m_v_block_widget.html#af9a62bc07eb9a236aeb132dfbce2dd1f">MVBlockWidget::m_description</a></div><div class="ttdeci">QString m_description</div><div class="ttdoc">描述文本</div><div class="ttdef"><b>定义</b> MVBlockWidget.h:109</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_afba6e95967cc3eb25fd518f7bde6ec04"><div class="ttname"><a href="class_m_v_block_widget.html#afba6e95967cc3eb25fd518f7bde6ec04">MVBlockWidget::initUi</a></div><div class="ttdeci">void initUi()</div><div class="ttdoc">初始化界面</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:93</div></div>
+<div class="ttc" id="aclass_m_v_block_widget_html_aff97fab437ac52a17b93b68aac4aebea"><div class="ttname"><a href="class_m_v_block_widget.html#aff97fab437ac52a17b93b68aac4aebea">MVBlockWidget::~MVBlockWidget</a></div><div class="ttdeci">~MVBlockWidget() override</div><div class="ttdoc">析构函数，清理资源</div><div class="ttdef"><b>定义</b> MVBlockWidget.cpp:44</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_90e279afbf7087a5af4c74d8ed8b8ff6.html">Video</a></li><li class="navelem"><a class="el" href="dir_a0d415d51b44062733c95fcb57206cfa.html">MVWidget</a></li><li class="navelem"><a class="el" href="_m_v_block_widget_8h.html">MVBlockWidget.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

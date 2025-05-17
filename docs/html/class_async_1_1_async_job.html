@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AsyncJob&lt; ResultType, Function, Args &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_async_1_1_async_job.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_async_1_1_async_job-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">AsyncJob&lt; ResultType, Function, Args &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>异步任务类。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_my_async_thread_2_async_8h_source.html">Async.h</a>&gt;</code></p>
+<div class="dynheader">
+类 AsyncJob&lt; ResultType, Function, Args &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_async_1_1_async_job__inherit__graph.png" border="0" usemap="#a_async_job_3_01_result_type_00_01_function_00_01_args_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_async_job_3_01_result_type_00_01_function_00_01_args_01_4_inherit__map" id="a_async_job_3_01_result_type_00_01_function_00_01_args_01_4_inherit__map">
+<area shape="rect" title="异步任务类。" alt="" coords="5,80,167,123"/>
+<area shape="rect" title=" " alt="" coords="43,5,129,32"/>
+<area shape="poly" title=" " alt="" coords="89,48,89,80,83,80,83,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+AsyncJob&lt; ResultType, Function, Args &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_async_1_1_async_job__coll__graph.png" border="0" usemap="#a_async_job_3_01_result_type_00_01_function_00_01_args_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="a_async_job_3_01_result_type_00_01_function_00_01_args_01_4_coll__map" id="a_async_job_3_01_result_type_00_01_function_00_01_args_01_4_coll__map">
+<area shape="rect" title="异步任务类。" alt="" coords="5,80,167,123"/>
+<area shape="rect" title=" " alt="" coords="43,5,129,32"/>
+<area shape="poly" title=" " alt="" coords="89,48,89,80,83,80,83,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0feb732f9d7be3eb32e974c64bd4e41e" id="r_a0feb732f9d7be3eb32e974c64bd4e41e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0feb732f9d7be3eb32e974c64bd4e41e">AsyncJob</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a0feb732f9d7be3eb32e974c64bd4e41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数。  <br /></td></tr>
+<tr class="separator:a0feb732f9d7be3eb32e974c64bd4e41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd356a8e477547fbde1226af3f5b0d20" id="r_abd356a8e477547fbde1226af3f5b0d20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd356a8e477547fbde1226af3f5b0d20">~AsyncJob</a> ()</td></tr>
+<tr class="memdesc:abd356a8e477547fbde1226af3f5b0d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数。  <br /></td></tr>
+<tr class="separator:abd356a8e477547fbde1226af3f5b0d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481e8f9ccbad8700a0f1501495f50452" id="r_a481e8f9ccbad8700a0f1501495f50452"><td class="memItemLeft" align="right" valign="top">QFuture&lt; ResultType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a481e8f9ccbad8700a0f1501495f50452">future</a> ()</td></tr>
+<tr class="memdesc:a481e8f9ccbad8700a0f1501495f50452"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取异步任务的 QFuture 对象。  <br /></td></tr>
+<tr class="separator:a481e8f9ccbad8700a0f1501495f50452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1717410afd0be936c6213a63c8005fb" id="r_ad1717410afd0be936c6213a63c8005fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1717410afd0be936c6213a63c8005fb">run</a> () override</td></tr>
+<tr class="memdesc:ad1717410afd0be936c6213a63c8005fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写 QRunnable 的 run 方法。  <br /></td></tr>
+<tr class="separator:ad1717410afd0be936c6213a63c8005fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a575b39bef3d0494a62e78ebeda1576c0" id="r_a575b39bef3d0494a62e78ebeda1576c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a575b39bef3d0494a62e78ebeda1576c0">setThreadPool</a> (QThreadPool *pool)</td></tr>
+<tr class="memdesc:a575b39bef3d0494a62e78ebeda1576c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置线程池。  <br /></td></tr>
+<tr class="separator:a575b39bef3d0494a62e78ebeda1576c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb1ccdfe6f1c51283f4f96d93f07a6e" id="r_a4bb1ccdfe6f1c51283f4f96d93f07a6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bb1ccdfe6f1c51283f4f96d93f07a6e">setThreadPriority</a> (QThread::Priority p)</td></tr>
+<tr class="memdesc:a4bb1ccdfe6f1c51283f4f96d93f07a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置线程优先级。  <br /></td></tr>
+<tr class="separator:a4bb1ccdfe6f1c51283f4f96d93f07a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:a83a0648b5824fe83c917fac609b6a3ef" id="r_a83a0648b5824fe83c917fac609b6a3ef"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83a0648b5824fe83c917fac609b6a3ef">Data</a> = std::tuple&lt;std::decay_t&lt;<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>&gt;, std::decay_t&lt;Args&gt;...&gt;</td></tr>
+<tr class="memdesc:a83a0648b5824fe83c917fac609b6a3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据元组类型，存储函数和参数。  <br /></td></tr>
+<tr class="separator:a83a0648b5824fe83c917fac609b6a3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a8d6ba1d847504642c3e7cc051872d924" id="r_a8d6ba1d847504642c3e7cc051872d924"><td class="memTemplParams" colspan="2">template&lt;std::size_t... index&gt; </td></tr>
+<tr class="memitem:a8d6ba1d847504642c3e7cc051872d924"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8d6ba1d847504642c3e7cc051872d924">runHelper</a> (std::index_sequence&lt; index... &gt;)</td></tr>
+<tr class="memdesc:a8d6ba1d847504642c3e7cc051872d924"><td class="mdescLeft">&#160;</td><td class="mdescRight">运行辅助函数。  <br /></td></tr>
+<tr class="separator:a8d6ba1d847504642c3e7cc051872d924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a6cd5475316bf41a2c56ffcc5de826b99" id="r_a6cd5475316bf41a2c56ffcc5de826b99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a83a0648b5824fe83c917fac609b6a3ef">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cd5475316bf41a2c56ffcc5de826b99">data</a></td></tr>
+<tr class="memdesc:a6cd5475316bf41a2c56ffcc5de826b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">存储函数和参数的元组。  <br /></td></tr>
+<tr class="separator:a6cd5475316bf41a2c56ffcc5de826b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8bc48ec450d70fc63793533b9f15d0e" id="r_ab8bc48ec450d70fc63793533b9f15d0e"><td class="memItemLeft" align="right" valign="top">QFutureInterface&lt; ResultType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a></td></tr>
+<tr class="memdesc:ab8bc48ec450d70fc63793533b9f15d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">异步任务的未来接口。  <br /></td></tr>
+<tr class="separator:ab8bc48ec450d70fc63793533b9f15d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a36427f613a5cdd3c3a5253cc78925c" id="r_a3a36427f613a5cdd3c3a5253cc78925c"><td class="memItemLeft" align="right" valign="top">QThread::Priority&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a36427f613a5cdd3c3a5253cc78925c">priority</a> = QThread::InheritPriority</td></tr>
+<tr class="memdesc:a3a36427f613a5cdd3c3a5253cc78925c"><td class="mdescLeft">&#160;</td><td class="mdescRight">线程优先级，默认值为 QThread::InheritPriority。  <br /></td></tr>
+<tr class="separator:a3a36427f613a5cdd3c3a5253cc78925c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt;<br />
+class Async::AsyncJob&lt; ResultType, Function, Args &gt;</div><p>异步任务类。 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ResultType</td><td>返回类型。 </td></tr>
+    <tr><td class="paramname">Function</td><td>函数类型。 </td></tr>
+    <tr><td class="paramname">Args</td><td>参数类型列表。 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a83a0648b5824fe83c917fac609b6a3ef" name="a83a0648b5824fe83c917fac609b6a3ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a0648b5824fe83c917fac609b6a3ef">&#9670;&#160;</a></span>Data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a83a0648b5824fe83c917fac609b6a3ef">Data</a> = std::tuple&lt;std::decay_t&lt;<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>&gt;, std::decay_t&lt;Args&gt;...&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>数据元组类型，存储函数和参数。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0feb732f9d7be3eb32e974c64bd4e41e" name="a0feb732f9d7be3eb32e974c64bd4e41e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0feb732f9d7be3eb32e974c64bd4e41e">&#9670;&#160;</a></span>AsyncJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_async_1_1_async_job.html">AsyncJob</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>function</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数。 </p>
+<p>初始化异步任务并报告开始状态。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>要执行的函数。 </td></tr>
+    <tr><td class="paramname">args</td><td>参数列表。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_async_1_1_async_job_a0feb732f9d7be3eb32e974c64bd4e41e_cgraph.png" border="0" usemap="#aclass_async_1_1_async_job_a0feb732f9d7be3eb32e974c64bd4e41e_cgraph" alt=""/></div>
+<map name="aclass_async_1_1_async_job_a0feb732f9d7be3eb32e974c64bd4e41e_cgraph" id="aclass_async_1_1_async_job_a0feb732f9d7be3eb32e974c64bd4e41e_cgraph">
+<area shape="rect" title="构造函数。" alt="" coords="5,29,85,56"/>
+<area shape="rect" href="namespace_async.html#a7ed935020c844a47954bf21e2c933845" title=" " alt="" coords="133,29,265,56"/>
+<area shape="poly" title=" " alt="" coords="85,40,117,40,117,45,85,45"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="313,29,352,56"/>
+<area shape="poly" title=" " alt="" coords="265,40,297,40,297,45,265,45"/>
+<area shape="poly" title=" " alt="" coords="310,31,305,22,307,12,317,5,333,3,350,6,359,14,355,17,348,11,333,8,319,10,312,15,310,21,315,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd356a8e477547fbde1226af3f5b0d20" name="abd356a8e477547fbde1226af3f5b0d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd356a8e477547fbde1226af3f5b0d20">&#9670;&#160;</a></span>~AsyncJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_async_1_1_async_job.html">AsyncJob</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数。 </p>
+<p>确保任务完成时报告结束状态。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a481e8f9ccbad8700a0f1501495f50452" name="a481e8f9ccbad8700a0f1501495f50452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a481e8f9ccbad8700a0f1501495f50452">&#9670;&#160;</a></span>future()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFuture&lt; ResultType &gt; future </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取异步任务的 QFuture 对象。 </p>
+<dl class="section return"><dt>返回</dt><dd>QFuture&lt;ResultType&gt; 异步任务的未来对象。 </dd></dl>
+
+</div>
+</div>
+<a id="ad1717410afd0be936c6213a63c8005fb" name="ad1717410afd0be936c6213a63c8005fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1717410afd0be936c6213a63c8005fb">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void run </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重写 QRunnable 的 run 方法。 </p>
+<p>执行异步任务并处理线程优先级和取消状态。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_async_1_1_async_job_ad1717410afd0be936c6213a63c8005fb_cgraph.png" border="0" usemap="#aclass_async_1_1_async_job_ad1717410afd0be936c6213a63c8005fb_cgraph" alt=""/></div>
+<map name="aclass_async_1_1_async_job_ad1717410afd0be936c6213a63c8005fb_cgraph" id="aclass_async_1_1_async_job_ad1717410afd0be936c6213a63c8005fb_cgraph">
+<area shape="rect" title="重写 QRunnable 的 run 方法。" alt="" coords="5,13,45,40"/>
+<area shape="rect" href="class_async_1_1_async_job.html#a8d6ba1d847504642c3e7cc051872d924" title="运行辅助函数。" alt="" coords="93,13,170,40"/>
+<area shape="poly" title=" " alt="" coords="45,24,77,24,77,29,45,29"/>
+<area shape="rect" href="namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb" title=" " alt="" coords="218,13,364,40"/>
+<area shape="poly" title=" " alt="" coords="170,24,202,24,202,29,170,29"/>
+<area shape="rect" href="namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d" title=" " alt="" coords="412,13,633,40"/>
+<area shape="poly" title=" " alt="" coords="365,24,396,24,396,29,365,29"/>
+<area shape="rect" href="namespace_async.html#ac0afcd98f4a652219c15628c5853a881" title=" " alt="" coords="681,5,900,48"/>
+<area shape="poly" title=" " alt="" coords="633,24,665,24,665,29,633,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8d6ba1d847504642c3e7cc051872d924" name="a8d6ba1d847504642c3e7cc051872d924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d6ba1d847504642c3e7cc051872d924">&#9670;&#160;</a></span>runHelper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<div class="memtemplate">
+template&lt;std::size_t... index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void runHelper </td>
+          <td>(</td>
+          <td class="paramtype">std::index_sequence&lt; index... &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>运行辅助函数。 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">index</td><td>索引序列。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_async_1_1_async_job_a8d6ba1d847504642c3e7cc051872d924_cgraph.png" border="0" usemap="#aclass_async_1_1_async_job_a8d6ba1d847504642c3e7cc051872d924_cgraph" alt=""/></div>
+<map name="aclass_async_1_1_async_job_a8d6ba1d847504642c3e7cc051872d924_cgraph" id="aclass_async_1_1_async_job_a8d6ba1d847504642c3e7cc051872d924_cgraph">
+<area shape="rect" title="运行辅助函数。" alt="" coords="5,13,83,40"/>
+<area shape="rect" href="namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb" title=" " alt="" coords="131,13,277,40"/>
+<area shape="poly" title=" " alt="" coords="83,24,115,24,115,29,83,29"/>
+<area shape="rect" href="namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d" title=" " alt="" coords="325,13,545,40"/>
+<area shape="poly" title=" " alt="" coords="278,24,309,24,309,29,278,29"/>
+<area shape="rect" href="namespace_async.html#ac0afcd98f4a652219c15628c5853a881" title=" " alt="" coords="593,5,813,48"/>
+<area shape="poly" title=" " alt="" coords="546,24,578,24,578,29,546,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_async_1_1_async_job_a8d6ba1d847504642c3e7cc051872d924_icgraph.png" border="0" usemap="#aclass_async_1_1_async_job_a8d6ba1d847504642c3e7cc051872d924_icgraph" alt=""/></div>
+<map name="aclass_async_1_1_async_job_a8d6ba1d847504642c3e7cc051872d924_icgraph" id="aclass_async_1_1_async_job_a8d6ba1d847504642c3e7cc051872d924_icgraph">
+<area shape="rect" title="运行辅助函数。" alt="" coords="93,5,170,32"/>
+<area shape="rect" href="class_async_1_1_async_job.html#ad1717410afd0be936c6213a63c8005fb" title="重写 QRunnable 的 run 方法。" alt="" coords="5,5,45,32"/>
+<area shape="poly" title=" " alt="" coords="77,21,45,21,45,16,77,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a575b39bef3d0494a62e78ebeda1576c0" name="a575b39bef3d0494a62e78ebeda1576c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575b39bef3d0494a62e78ebeda1576c0">&#9670;&#160;</a></span>setThreadPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setThreadPool </td>
+          <td>(</td>
+          <td class="paramtype">QThreadPool *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置线程池。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pool</td><td>线程池指针。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4bb1ccdfe6f1c51283f4f96d93f07a6e" name="a4bb1ccdfe6f1c51283f4f96d93f07a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb1ccdfe6f1c51283f4f96d93f07a6e">&#9670;&#160;</a></span>setThreadPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setThreadPriority </td>
+          <td>(</td>
+          <td class="paramtype">QThread::Priority</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置线程优先级。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>线程优先级。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a6cd5475316bf41a2c56ffcc5de826b99" name="a6cd5475316bf41a2c56ffcc5de826b99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd5475316bf41a2c56ffcc5de826b99">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a83a0648b5824fe83c917fac609b6a3ef">Data</a> data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>存储函数和参数的元组。 </p>
+
+</div>
+</div>
+<a id="ab8bc48ec450d70fc63793533b9f15d0e" name="ab8bc48ec450d70fc63793533b9f15d0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8bc48ec450d70fc63793533b9f15d0e">&#9670;&#160;</a></span>futureInterface</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFutureInterface&lt;ResultType&gt; futureInterface</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>异步任务的未来接口。 </p>
+
+</div>
+</div>
+<a id="a3a36427f613a5cdd3c3a5253cc78925c" name="a3a36427f613a5cdd3c3a5253cc78925c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a36427f613a5cdd3c3a5253cc78925c">&#9670;&#160;</a></span>priority</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QThread::Priority priority = QThread::InheritPriority</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>线程优先级，默认值为 QThread::InheritPriority。 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_my_async_thread_2_async_8h_source.html">MyAsyncThread/Async.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_async.html">Async</a></li><li class="navelem"><a class="el" href="class_async_1_1_async_job.html">AsyncJob</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

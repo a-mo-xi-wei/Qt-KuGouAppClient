@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SMaskWidget.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_mask_widget_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SMaskWidget.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_s_mask_widget_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef SMASKWIDGET_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define SMASKWIDGET_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#if defined(MYMASKWIDGET_LIBRARY)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define MYMASKWIDGET_EXPORT Q_DECL_EXPORT</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_s_mask_widget_8h.html#aee96c117f07e275fbdf37eb7b6b2a840">   18</a></span><span class="preprocessor">#define MYMASKWIDGET_EXPORT Q_DECL_IMPORT</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span><a class="code hl_class" href="class_q_parallel_animation_group.html">QParallelAnimationGroup</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span><a class="code hl_class" href="class_q_property_animation.html">QPropertyAnimation</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html">   28</a></span><span class="keyword">class </span><a class="code hl_define" href="_s_mask_widget_8h.html#aee96c117f07e275fbdf37eb7b6b2a840">MYMASKWIDGET_EXPORT</a> <a class="code hl_function" href="class_s_mask_widget.html#a0531932f40b08e9d53094fe4f6ef7221">SMaskWidget</a> : <span class="keyword">public</span> QWidget {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    Q_OBJECT</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a35c905b0316779a82f167eb2bb85672e">   30</a></span>    Q_PROPERTY(<span class="keywordtype">int</span> <a class="code hl_property" href="class_s_mask_widget.html#a35c905b0316779a82f167eb2bb85672e">animatedY</a> READ <a class="code hl_property" href="class_s_mask_widget.html#a35c905b0316779a82f167eb2bb85672e">animatedY</a> WRITE <a class="code hl_slot" href="class_s_mask_widget.html#aedba87a9559c66260829852b86df18d6">setAnimatedY</a>)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a98114e5c7c81b3f2003b0a4024bd41f7">   31</a></span>    Q_PROPERTY(<span class="keywordtype">int</span> <a class="code hl_property" href="class_s_mask_widget.html#a98114e5c7c81b3f2003b0a4024bd41f7">alpha</a> READ <a class="code hl_property" href="class_s_mask_widget.html#a98114e5c7c81b3f2003b0a4024bd41f7">alpha</a> WRITE <a class="code hl_slot" href="class_s_mask_widget.html#a8bd29819819ef7f76692e19e17eb3c2e">setAlpha</a>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>public:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    explicit <a class="code hl_function" href="class_s_mask_widget.html#a0531932f40b08e9d53094fe4f6ef7221">SMaskWidget</a>(QWidget *parent = <span class="keywordtype">nullptr</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#a7d71392408ef258ee6da3d907c26f28b">setDefaultFillCircleColor</a>(const QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#a6cb50737aa7496fee540969f76682ff3">setDefaultFillTriangleColor</a>(const QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#ae7640297a3ff2f84f9eb0f0ee3a5d806">setHoverFillCircleColor</a>(const QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#a112e526453798c7d5cc30a36d2b7b7b3">setHoverFillTriangleColor</a>(const QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#a711514c7102d695bb58ace45df3140b2">setEnterWidgetChangeCursor</a>(const <span class="keywordtype">bool</span> &amp;change);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#a27ebd6e1796f627213d77108851f03e1">setBorderRadius</a>(const <span class="keywordtype">int</span> &amp;radius);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#a4e3dcc1dd6fe9f5d42b2e6f860742cb8">setMaskColor</a>(const QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#af14a8927570ed16cf632cc7378e39276">setStander</a>(const <span class="keywordtype">int</span> &amp;stander);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_mask_widget.html#a659d7307d56a34db86cedf2f1a17821a">setMove</a>(const <span class="keywordtype">bool</span>&amp; move);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_s_mask_widget.html#a8b4152c41efa6baefbe4ccbb725cb405">getMove</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a21edac335beb91ad3c6338895aa1b7d5">  104</a></span>    <span class="keywordtype">int</span> <a class="code hl_property" href="class_s_mask_widget.html#a35c905b0316779a82f167eb2bb85672e">animatedY</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_s_mask_widget.html#aebe44227804de109a3f2deeca537d941">m_animatedY</a>; }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a9f0c1bf6527b89bc1625049e08867a1d">  110</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_s_mask_widget.html#a9f0c1bf6527b89bc1625049e08867a1d">alpha</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_s_mask_widget.html#a45130bbb19b1345403595078f2810a22">m_alpha</a>; }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> animationUp();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">void</span> animationDown();</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> setAnimatedY(<span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">void</span> setAlpha(<span class="keywordtype">int</span> alpha);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> calOnce();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">bool</span> isMouseInCircle(<span class="keyword">const</span> <span class="keywordtype">float</span> &amp;mouseX, <span class="keyword">const</span> <span class="keywordtype">float</span> &amp;mouseY) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordtype">void</span> paintEvent(<a class="code hl_class" href="class_q_paint_event.html">QPaintEvent</a> *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> mousePressEvent(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">void</span> mouseDoubleClickEvent(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">void</span> mouseReleaseEvent(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> mouseMoveEvent(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordtype">void</span> resizeEvent(QResizeEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#ac6c017bf08a5378ac2af3f8425843d0c">  187</a></span>    <span class="keywordtype">float</span>                   <a class="code hl_variable" href="class_s_mask_widget.html#ac6c017bf08a5378ac2af3f8425843d0c">m_w</a>;                            </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a9776bb353556afe7ccfd35af393414b5">  188</a></span>    <span class="keywordtype">float</span>                   <a class="code hl_variable" href="class_s_mask_widget.html#a9776bb353556afe7ccfd35af393414b5">m_h</a>;                            </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a625f89b8157483f43c7a3c6570287263">  189</a></span>    <span class="keywordtype">float</span>                   <a class="code hl_variable" href="class_s_mask_widget.html#a625f89b8157483f43c7a3c6570287263">m_radius</a>;                       </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#adbd10c111f32fb0f324bdb7a46a3f70e">  190</a></span>    <span class="keywordtype">float</span>                   <a class="code hl_variable" href="class_s_mask_widget.html#adbd10c111f32fb0f324bdb7a46a3f70e">m_centerX</a>;                      </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#acc56130357f52f4218c8b8fd047845b1">  191</a></span>    <span class="keywordtype">float</span>                   <a class="code hl_variable" href="class_s_mask_widget.html#acc56130357f52f4218c8b8fd047845b1">m_centerY</a>;                      </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#ae07af0eeefc9715d0d9c5c2bcb1a9f18">  192</a></span>    QPointF                 <a class="code hl_variable" href="class_s_mask_widget.html#ae07af0eeefc9715d0d9c5c2bcb1a9f18">m_ap</a>;                           </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a47c7076c4d7da5ebc360efc5210baea8">  193</a></span>    QPointF                 <a class="code hl_variable" href="class_s_mask_widget.html#a47c7076c4d7da5ebc360efc5210baea8">m_bp</a>;                           </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#added6d7c7fdb0f366c14bee3d3ff9568">  194</a></span>    QPointF                 <a class="code hl_variable" href="class_s_mask_widget.html#added6d7c7fdb0f366c14bee3d3ff9568">m_cp</a>;                           </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#ab0c5fcdee6b0d0901f4650b23c26b02b">  195</a></span>    QColor                  <a class="code hl_variable" href="class_s_mask_widget.html#ab0c5fcdee6b0d0901f4650b23c26b02b">m_defaultFillCircleColor</a> = QColor();              </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a967b3b06d2913792ea1895e7d1ee2179">  196</a></span>    QColor                  <a class="code hl_variable" href="class_s_mask_widget.html#a967b3b06d2913792ea1895e7d1ee2179">m_hoverFillCircleColor</a> = Qt::white;               </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#afcd7d042bf3112e14d8e6d5900ebc47d">  197</a></span>    QColor                  <a class="code hl_variable" href="class_s_mask_widget.html#afcd7d042bf3112e14d8e6d5900ebc47d">m_defaultFillTriangleColor</a> = Qt::white;           </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a64c2c3cac7e5b014e8e0b6198fdc4aae">  198</a></span>    QColor                  <a class="code hl_variable" href="class_s_mask_widget.html#a64c2c3cac7e5b014e8e0b6198fdc4aae">m_hoverFillTriangleColor</a> = QColor();              </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#ada0576bbbfc0b07b244836e0dfadc07e">  199</a></span>    QColor                  <a class="code hl_variable" href="class_s_mask_widget.html#ada0576bbbfc0b07b244836e0dfadc07e">m_maskColor</a> = QColor(0, 0, 0, 160);   </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a6726d140e180c267c847456aa082bdae">  200</a></span>    <span class="keywordtype">bool</span>                    <a class="code hl_variable" href="class_s_mask_widget.html#a6726d140e180c267c847456aa082bdae">m_isEnterWidgetChangeCursor</a> = <span class="keyword">true</span>;     </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a9169a7ec459492fdf952d8fd64690375">  201</a></span>    <span class="keywordtype">bool</span>                    <a class="code hl_variable" href="class_s_mask_widget.html#a9169a7ec459492fdf952d8fd64690375">m_isEnterCircle</a> = <span class="keyword">false</span>;                </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a98394e5247f91391e5ae55434d613ed3">  202</a></span>    <span class="keywordtype">int</span>                     <a class="code hl_variable" href="class_s_mask_widget.html#a98394e5247f91391e5ae55434d613ed3">m_borderRadius</a> = 8;                     </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#ad5c292eaea2f20f2c8a60e5d610e7dc0">  203</a></span>    <span class="keywordtype">int</span>                     <a class="code hl_variable" href="class_s_mask_widget.html#ad5c292eaea2f20f2c8a60e5d610e7dc0">m_stander</a> = 0;                          </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#aebe44227804de109a3f2deeca537d941">  204</a></span>    <span class="keywordtype">int</span>                     <a class="code hl_variable" href="class_s_mask_widget.html#aebe44227804de109a3f2deeca537d941">m_animatedY</a>;                            </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#a45130bbb19b1345403595078f2810a22">  205</a></span>    <span class="keywordtype">int</span>                     <a class="code hl_variable" href="class_s_mask_widget.html#a45130bbb19b1345403595078f2810a22">m_alpha</a> = 0;                            </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#afac37d43075364047c09565f31dacdd5">  206</a></span>    <a class="code hl_class" href="class_q_property_animation.html">QPropertyAnimation</a>*     <a class="code hl_variable" href="class_s_mask_widget.html#afac37d43075364047c09565f31dacdd5">m_posAnimation</a>{};                       </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#ab749bfdb3bf7767ece94dd5de74d3226">  207</a></span>    <a class="code hl_class" href="class_q_property_animation.html">QPropertyAnimation</a>*     <a class="code hl_variable" href="class_s_mask_widget.html#ab749bfdb3bf7767ece94dd5de74d3226">m_alphaAnimation</a>{};                     </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#aeed079311b9cd8fb84b9dcc3e3359bf7">  208</a></span>    <a class="code hl_class" href="class_q_parallel_animation_group.html">QParallelAnimationGroup</a>* <a class="code hl_variable" href="class_s_mask_widget.html#aeed079311b9cd8fb84b9dcc3e3359bf7">m_aniGroup</a>{};                          </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="class_s_mask_widget.html#ab7160bb5da20e2be9eba9ceeee060259">  209</a></span>    <span class="keywordtype">bool</span>                    <a class="code hl_variable" href="class_s_mask_widget.html#ab7160bb5da20e2be9eba9ceeee060259">m_isMove</a> = <span class="keyword">false</span>;                       </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>};</div>
+</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#endif </span><span class="comment">// SMASKWIDGET_H</span></div>
+<div class="ttc" id="a_s_mask_widget_8h_html_aee96c117f07e275fbdf37eb7b6b2a840"><div class="ttname"><a href="_s_mask_widget_8h.html#aee96c117f07e275fbdf37eb7b6b2a840">MYMASKWIDGET_EXPORT</a></div><div class="ttdeci">#define MYMASKWIDGET_EXPORT</div><div class="ttdoc">动态库导出宏，定义库的导出/导入行为</div><div class="ttdef"><b>定义</b> SMaskWidget.h:18</div></div>
+<div class="ttc" id="aclass_q_paint_event_html"><div class="ttname"><a href="class_q_paint_event.html">QPaintEvent</a></div><div class="ttdoc">绘制事件类</div></div>
+<div class="ttc" id="aclass_q_parallel_animation_group_html"><div class="ttname"><a href="class_q_parallel_animation_group.html">QParallelAnimationGroup</a></div><div class="ttdoc">并行动画组类</div></div>
+<div class="ttc" id="aclass_q_property_animation_html"><div class="ttname"><a href="class_q_property_animation.html">QPropertyAnimation</a></div><div class="ttdoc">Qt 属性动画类，用于窗口缩放动画</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a0531932f40b08e9d53094fe4f6ef7221"><div class="ttname"><a href="class_s_mask_widget.html#a0531932f40b08e9d53094fe4f6ef7221">SMaskWidget::SMaskWidget</a></div><div class="ttdeci">SMaskWidget(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化遮罩控件</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:21</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a112e526453798c7d5cc30a36d2b7b7b3"><div class="ttname"><a href="class_s_mask_widget.html#a112e526453798c7d5cc30a36d2b7b7b3">SMaskWidget::setHoverFillTriangleColor</a></div><div class="ttdeci">void setHoverFillTriangleColor(const QColor &amp;color)</div><div class="ttdoc">设置悬浮三角形填充颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:78</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a27ebd6e1796f627213d77108851f03e1"><div class="ttname"><a href="class_s_mask_widget.html#a27ebd6e1796f627213d77108851f03e1">SMaskWidget::setBorderRadius</a></div><div class="ttdeci">void setBorderRadius(const int &amp;radius)</div><div class="ttdoc">设置边框圆角半径</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:96</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a35c905b0316779a82f167eb2bb85672e"><div class="ttname"><a href="class_s_mask_widget.html#a35c905b0316779a82f167eb2bb85672e">SMaskWidget::animatedY</a></div><div class="ttdeci">int animatedY</div><div class="ttdef"><b>定义</b> SMaskWidget.h:30</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a45130bbb19b1345403595078f2810a22"><div class="ttname"><a href="class_s_mask_widget.html#a45130bbb19b1345403595078f2810a22">SMaskWidget::m_alpha</a></div><div class="ttdeci">int m_alpha</div><div class="ttdoc">透明度</div><div class="ttdef"><b>定义</b> SMaskWidget.h:205</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a47c7076c4d7da5ebc360efc5210baea8"><div class="ttname"><a href="class_s_mask_widget.html#a47c7076c4d7da5ebc360efc5210baea8">SMaskWidget::m_bp</a></div><div class="ttdeci">QPointF m_bp</div><div class="ttdoc">三角形顶点 B</div><div class="ttdef"><b>定义</b> SMaskWidget.h:193</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a4e3dcc1dd6fe9f5d42b2e6f860742cb8"><div class="ttname"><a href="class_s_mask_widget.html#a4e3dcc1dd6fe9f5d42b2e6f860742cb8">SMaskWidget::setMaskColor</a></div><div class="ttdeci">void setMaskColor(const QColor &amp;color)</div><div class="ttdoc">设置遮罩颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:105</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a625f89b8157483f43c7a3c6570287263"><div class="ttname"><a href="class_s_mask_widget.html#a625f89b8157483f43c7a3c6570287263">SMaskWidget::m_radius</a></div><div class="ttdeci">float m_radius</div><div class="ttdoc">圆形半径</div><div class="ttdef"><b>定义</b> SMaskWidget.h:189</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a64c2c3cac7e5b014e8e0b6198fdc4aae"><div class="ttname"><a href="class_s_mask_widget.html#a64c2c3cac7e5b014e8e0b6198fdc4aae">SMaskWidget::m_hoverFillTriangleColor</a></div><div class="ttdeci">QColor m_hoverFillTriangleColor</div><div class="ttdoc">悬浮三角形填充颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.h:198</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a659d7307d56a34db86cedf2f1a17821a"><div class="ttname"><a href="class_s_mask_widget.html#a659d7307d56a34db86cedf2f1a17821a">SMaskWidget::setMove</a></div><div class="ttdeci">void setMove(const bool &amp;move)</div><div class="ttdoc">设置是否启用动画</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:124</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a6726d140e180c267c847456aa082bdae"><div class="ttname"><a href="class_s_mask_widget.html#a6726d140e180c267c847456aa082bdae">SMaskWidget::m_isEnterWidgetChangeCursor</a></div><div class="ttdeci">bool m_isEnterWidgetChangeCursor</div><div class="ttdoc">是否进入控件改变光标</div><div class="ttdef"><b>定义</b> SMaskWidget.h:200</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a6cb50737aa7496fee540969f76682ff3"><div class="ttname"><a href="class_s_mask_widget.html#a6cb50737aa7496fee540969f76682ff3">SMaskWidget::setDefaultFillTriangleColor</a></div><div class="ttdeci">void setDefaultFillTriangleColor(const QColor &amp;color)</div><div class="ttdoc">设置默认三角形填充颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:60</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a711514c7102d695bb58ace45df3140b2"><div class="ttname"><a href="class_s_mask_widget.html#a711514c7102d695bb58ace45df3140b2">SMaskWidget::setEnterWidgetChangeCursor</a></div><div class="ttdeci">void setEnterWidgetChangeCursor(const bool &amp;change)</div><div class="ttdoc">设置进入控件时是否改变光标</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:87</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a7d71392408ef258ee6da3d907c26f28b"><div class="ttname"><a href="class_s_mask_widget.html#a7d71392408ef258ee6da3d907c26f28b">SMaskWidget::setDefaultFillCircleColor</a></div><div class="ttdeci">void setDefaultFillCircleColor(const QColor &amp;color)</div><div class="ttdoc">设置默认圆形填充颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:51</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a8b4152c41efa6baefbe4ccbb725cb405"><div class="ttname"><a href="class_s_mask_widget.html#a8b4152c41efa6baefbe4ccbb725cb405">SMaskWidget::getMove</a></div><div class="ttdeci">bool getMove()</div><div class="ttdoc">获取是否启用动画</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:133</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a8bd29819819ef7f76692e19e17eb3c2e"><div class="ttname"><a href="class_s_mask_widget.html#a8bd29819819ef7f76692e19e17eb3c2e">SMaskWidget::setAlpha</a></div><div class="ttdeci">void setAlpha(int alpha)</div><div class="ttdoc">设置透明度</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:179</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a9169a7ec459492fdf952d8fd64690375"><div class="ttname"><a href="class_s_mask_widget.html#a9169a7ec459492fdf952d8fd64690375">SMaskWidget::m_isEnterCircle</a></div><div class="ttdeci">bool m_isEnterCircle</div><div class="ttdoc">鼠标是否在圆形内</div><div class="ttdef"><b>定义</b> SMaskWidget.h:201</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a967b3b06d2913792ea1895e7d1ee2179"><div class="ttname"><a href="class_s_mask_widget.html#a967b3b06d2913792ea1895e7d1ee2179">SMaskWidget::m_hoverFillCircleColor</a></div><div class="ttdeci">QColor m_hoverFillCircleColor</div><div class="ttdoc">悬浮圆形填充颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.h:196</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a9776bb353556afe7ccfd35af393414b5"><div class="ttname"><a href="class_s_mask_widget.html#a9776bb353556afe7ccfd35af393414b5">SMaskWidget::m_h</a></div><div class="ttdeci">float m_h</div><div class="ttdoc">控件高度</div><div class="ttdef"><b>定义</b> SMaskWidget.h:188</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a98114e5c7c81b3f2003b0a4024bd41f7"><div class="ttname"><a href="class_s_mask_widget.html#a98114e5c7c81b3f2003b0a4024bd41f7">SMaskWidget::alpha</a></div><div class="ttdeci">int alpha</div><div class="ttdef"><b>定义</b> SMaskWidget.h:31</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a98394e5247f91391e5ae55434d613ed3"><div class="ttname"><a href="class_s_mask_widget.html#a98394e5247f91391e5ae55434d613ed3">SMaskWidget::m_borderRadius</a></div><div class="ttdeci">int m_borderRadius</div><div class="ttdoc">边框圆角半径</div><div class="ttdef"><b>定义</b> SMaskWidget.h:202</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_a9f0c1bf6527b89bc1625049e08867a1d"><div class="ttname"><a href="class_s_mask_widget.html#a9f0c1bf6527b89bc1625049e08867a1d">SMaskWidget::alpha</a></div><div class="ttdeci">int alpha() const</div><div class="ttdoc">获取透明度</div><div class="ttdef"><b>定义</b> SMaskWidget.h:110</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_ab0c5fcdee6b0d0901f4650b23c26b02b"><div class="ttname"><a href="class_s_mask_widget.html#ab0c5fcdee6b0d0901f4650b23c26b02b">SMaskWidget::m_defaultFillCircleColor</a></div><div class="ttdeci">QColor m_defaultFillCircleColor</div><div class="ttdoc">默认圆形填充颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.h:195</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_ab7160bb5da20e2be9eba9ceeee060259"><div class="ttname"><a href="class_s_mask_widget.html#ab7160bb5da20e2be9eba9ceeee060259">SMaskWidget::m_isMove</a></div><div class="ttdeci">bool m_isMove</div><div class="ttdoc">是否启用动画</div><div class="ttdef"><b>定义</b> SMaskWidget.h:209</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_ab749bfdb3bf7767ece94dd5de74d3226"><div class="ttname"><a href="class_s_mask_widget.html#ab749bfdb3bf7767ece94dd5de74d3226">SMaskWidget::m_alphaAnimation</a></div><div class="ttdeci">QPropertyAnimation * m_alphaAnimation</div><div class="ttdoc">透明度动画</div><div class="ttdef"><b>定义</b> SMaskWidget.h:207</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_ac6c017bf08a5378ac2af3f8425843d0c"><div class="ttname"><a href="class_s_mask_widget.html#ac6c017bf08a5378ac2af3f8425843d0c">SMaskWidget::m_w</a></div><div class="ttdeci">float m_w</div><div class="ttdoc">控件宽度</div><div class="ttdef"><b>定义</b> SMaskWidget.h:187</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_acc56130357f52f4218c8b8fd047845b1"><div class="ttname"><a href="class_s_mask_widget.html#acc56130357f52f4218c8b8fd047845b1">SMaskWidget::m_centerY</a></div><div class="ttdeci">float m_centerY</div><div class="ttdoc">圆形中心 Y 坐标</div><div class="ttdef"><b>定义</b> SMaskWidget.h:191</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_ad5c292eaea2f20f2c8a60e5d610e7dc0"><div class="ttname"><a href="class_s_mask_widget.html#ad5c292eaea2f20f2c8a60e5d610e7dc0">SMaskWidget::m_stander</a></div><div class="ttdeci">int m_stander</div><div class="ttdoc">基准尺寸</div><div class="ttdef"><b>定义</b> SMaskWidget.h:203</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_ada0576bbbfc0b07b244836e0dfadc07e"><div class="ttname"><a href="class_s_mask_widget.html#ada0576bbbfc0b07b244836e0dfadc07e">SMaskWidget::m_maskColor</a></div><div class="ttdeci">QColor m_maskColor</div><div class="ttdoc">遮罩颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.h:199</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_adbd10c111f32fb0f324bdb7a46a3f70e"><div class="ttname"><a href="class_s_mask_widget.html#adbd10c111f32fb0f324bdb7a46a3f70e">SMaskWidget::m_centerX</a></div><div class="ttdeci">float m_centerX</div><div class="ttdoc">圆形中心 X 坐标</div><div class="ttdef"><b>定义</b> SMaskWidget.h:190</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_added6d7c7fdb0f366c14bee3d3ff9568"><div class="ttname"><a href="class_s_mask_widget.html#added6d7c7fdb0f366c14bee3d3ff9568">SMaskWidget::m_cp</a></div><div class="ttdeci">QPointF m_cp</div><div class="ttdoc">三角形顶点 C</div><div class="ttdef"><b>定义</b> SMaskWidget.h:194</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_ae07af0eeefc9715d0d9c5c2bcb1a9f18"><div class="ttname"><a href="class_s_mask_widget.html#ae07af0eeefc9715d0d9c5c2bcb1a9f18">SMaskWidget::m_ap</a></div><div class="ttdeci">QPointF m_ap</div><div class="ttdoc">三角形顶点 A</div><div class="ttdef"><b>定义</b> SMaskWidget.h:192</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_ae7640297a3ff2f84f9eb0f0ee3a5d806"><div class="ttname"><a href="class_s_mask_widget.html#ae7640297a3ff2f84f9eb0f0ee3a5d806">SMaskWidget::setHoverFillCircleColor</a></div><div class="ttdeci">void setHoverFillCircleColor(const QColor &amp;color)</div><div class="ttdoc">设置悬浮圆形填充颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:69</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_aebe44227804de109a3f2deeca537d941"><div class="ttname"><a href="class_s_mask_widget.html#aebe44227804de109a3f2deeca537d941">SMaskWidget::m_animatedY</a></div><div class="ttdeci">int m_animatedY</div><div class="ttdoc">动画 Y 坐标</div><div class="ttdef"><b>定义</b> SMaskWidget.h:204</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_aedba87a9559c66260829852b86df18d6"><div class="ttname"><a href="class_s_mask_widget.html#aedba87a9559c66260829852b86df18d6">SMaskWidget::setAnimatedY</a></div><div class="ttdeci">void setAnimatedY(int y)</div><div class="ttdoc">设置动画 Y 坐标</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:169</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_aeed079311b9cd8fb84b9dcc3e3359bf7"><div class="ttname"><a href="class_s_mask_widget.html#aeed079311b9cd8fb84b9dcc3e3359bf7">SMaskWidget::m_aniGroup</a></div><div class="ttdeci">QParallelAnimationGroup * m_aniGroup</div><div class="ttdoc">动画组</div><div class="ttdef"><b>定义</b> SMaskWidget.h:208</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_af14a8927570ed16cf632cc7378e39276"><div class="ttname"><a href="class_s_mask_widget.html#af14a8927570ed16cf632cc7378e39276">SMaskWidget::setStander</a></div><div class="ttdeci">void setStander(const int &amp;stander)</div><div class="ttdoc">设置基准尺寸</div><div class="ttdef"><b>定义</b> SMaskWidget.cpp:114</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_afac37d43075364047c09565f31dacdd5"><div class="ttname"><a href="class_s_mask_widget.html#afac37d43075364047c09565f31dacdd5">SMaskWidget::m_posAnimation</a></div><div class="ttdeci">QPropertyAnimation * m_posAnimation</div><div class="ttdoc">位置动画</div><div class="ttdef"><b>定义</b> SMaskWidget.h:206</div></div>
+<div class="ttc" id="aclass_s_mask_widget_html_afcd7d042bf3112e14d8e6d5900ebc47d"><div class="ttname"><a href="class_s_mask_widget.html#afcd7d042bf3112e14d8e6d5900ebc47d">SMaskWidget::m_defaultFillTriangleColor</a></div><div class="ttdeci">QColor m_defaultFillTriangleColor</div><div class="ttdoc">默认三角形填充颜色</div><div class="ttdef"><b>定义</b> SMaskWidget.h:197</div></div>
+<div class="ttc" id="acolor_8h_html_a80d1dc5f416b97f92939a4166d41203c"><div class="ttname"><a href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a></div><div class="ttdeci">color</div><div class="ttdef"><b>定义</b> color.h:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_a485fcea25ce6d4b9e619309c3baaea8.html">MyMaskWidget</a></li><li class="navelem"><a class="el" href="dir_ab37c39f5eb48e099841f3c79a641a51.html">SMaskWidget</a></li><li class="navelem"><a class="el" href="_s_mask_widget_8h.html">SMaskWidget.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

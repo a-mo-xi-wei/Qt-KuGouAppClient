@@ -1,0 +1,27 @@
+var class_single_song =
+[
+    [ "SingleSong", "class_single_song.html#ad7977a8c90045e89a96dc208453a2dc0", null ],
+    [ "~SingleSong", "class_single_song.html#aad1fe6183f2afde9813987d8f919bc48", null ],
+    [ "eventFilter", "class_single_song.html#a7eb87a6d4464680c455d278d1d32eba6", null ],
+    [ "find_more_music", "class_single_song.html#aa23356daca3ed71116d6ae55df2991f4", null ],
+    [ "getMenuPosition", "class_single_song.html#aeab41b278e449a68fbd1c98c9e1516a8", null ],
+    [ "initUi", "class_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04", null ],
+    [ "on_collect_album_toolButton_clicked", "class_single_song.html#ac7ba208f35150db122ca98246c827606", null ],
+    [ "on_collect_batch_toolButton_clicked", "class_single_song.html#a1f25a4e1bbbf331fb682b582c832ad74", null ],
+    [ "on_collect_download_toolButton_clicked", "class_single_song.html#ad9f731f9c8785157c3d9bf6df168b6ad", null ],
+    [ "on_collect_play_toolButton_clicked", "class_single_song.html#ab853e0fbe45be65621a6b84d9e6fe82b", null ],
+    [ "on_collect_share_toolButton_clicked", "class_single_song.html#afb2333ac8f71caedc741b1707974dfc1", null ],
+    [ "on_collect_sort_toolButton_clicked", "class_single_song.html#afc04c67ae37a31762bc565bae4140f81", null ],
+    [ "on_search_pushButton_clicked", "class_single_song.html#a1d814602ac0752be104e51235985a6c5", null ],
+    [ "onAddTimeSort", "class_single_song.html#a58cc37eb1a69f43d22e93dbd0a8e32ba", null ],
+    [ "onDefaultSort", "class_single_song.html#a77868991ec35ce1ee03a62521bbf03c5", null ],
+    [ "onDurationSort", "class_single_song.html#a1bf3aea4b068e67501d5614655eff022", null ],
+    [ "onPlayCountSort", "class_single_song.html#a2deab31ea0dab5b0953202e8135f6236", null ],
+    [ "onRandomSort", "class_single_song.html#a2ff39f94b18025fc9f33a0e9a9d75734", null ],
+    [ "onSingerSort", "class_single_song.html#a88cff94b79f2aab5610fd6df85c77d39", null ],
+    [ "onSongNameSort", "class_single_song.html#a8b57469ce5cde9101bd38466a5138bd9", null ],
+    [ "m_menuPosition", "class_single_song.html#a75b61709efacdeb4b9b337132b7fbb7f", null ],
+    [ "m_searchAction", "class_single_song.html#ab6c42d383d83d4acdfb5081e799c29da", null ],
+    [ "m_sortOptMenu", "class_single_song.html#ad67a8f8c13a90fda48f45117bdcdb4fd", null ],
+    [ "ui", "class_single_song.html#a521c6025a61719e9caa77a0a418d79bc", null ]
+];

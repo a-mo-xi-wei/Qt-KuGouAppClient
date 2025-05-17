@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: cwebsocketserver.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('cwebsocketserver_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">cwebsocketserver.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;QObject&gt;</code><br />
+<code>#include &lt;QTimer&gt;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &quot;singleton.h&quot;</code><br />
+<code>#include &quot;common.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="networkframemanager_8h_source.html">networkframemanager.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+cwebsocketserver.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="cwebsocketserver_8h__incl.png" border="0" usemap="#acwebsocketserver_8h" alt=""/></div>
+<map name="acwebsocketserver_8h" id="acwebsocketserver_8h">
+<area shape="rect" title=" " alt="" coords="190,5,328,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,75,107"/>
+<area shape="poly" title=" " alt="" coords="221,35,90,78,89,73,220,30"/>
+<area shape="rect" title=" " alt="" coords="98,80,163,107"/>
+<area shape="poly" title=" " alt="" coords="238,35,168,74,165,70,235,30"/>
+<area shape="rect" title=" " alt="" coords="187,80,240,107"/>
+<area shape="poly" title=" " alt="" coords="253,34,232,68,227,65,249,31"/>
+<area shape="rect" title=" " alt="" coords="263,80,348,107"/>
+<area shape="poly" title=" " alt="" coords="269,31,291,66,287,68,265,34"/>
+<area shape="rect" title=" " alt="" coords="346,155,428,181"/>
+<area shape="poly" title=" " alt="" coords="294,30,330,50,362,78,378,108,386,139,381,140,373,110,358,82,327,54,291,35"/>
+<area shape="rect" href="networkframemanager_8h.html" title=" " alt="" coords="423,80,585,107"/>
+<area shape="poly" title=" " alt="" coords="302,30,447,73,446,78,301,35"/>
+<area shape="poly" title=" " alt="" coords="485,109,421,149,418,144,482,105"/>
+<area shape="rect" href="jqhttpserver_8h.html" title="JQHttpServer 头文件，包含 HTTP 服务器的类和枚举定义。" alt="" coords="454,155,554,181"/>
+<area shape="poly" title=" " alt="" coords="507,107,507,139,501,139,501,107"/>
+<area shape="rect" title=" " alt="" coords="144,229,221,256"/>
+<area shape="poly" title=" " alt="" coords="454,183,237,231,236,226,453,178"/>
+<area shape="rect" title=" " alt="" coords="246,229,314,256"/>
+<area shape="poly" title=" " alt="" coords="466,184,330,228,328,223,464,179"/>
+<area shape="rect" title=" " alt="" coords="338,229,406,256"/>
+<area shape="poly" title=" " alt="" coords="482,184,409,224,407,219,480,180"/>
+<area shape="rect" title=" " alt="" coords="430,229,498,256"/>
+<area shape="poly" title=" " alt="" coords="499,183,481,217,476,214,495,181"/>
+<area shape="rect" title=" " alt="" coords="521,229,570,256"/>
+<area shape="poly" title=" " alt="" coords="514,181,533,215,528,217,509,183"/>
+<area shape="rect" title=" " alt="" coords="594,229,704,256"/>
+<area shape="poly" title=" " alt="" coords="530,179,612,220,609,224,528,184"/>
+<area shape="rect" title=" " alt="" coords="729,229,820,256"/>
+<area shape="poly" title=" " alt="" coords="552,179,715,223,713,228,550,184"/>
+<area shape="rect" href="jqdeclare_8hpp.html" title="JQLibrary 的声明文件，包含宏定义和导出声明。" alt="" coords="844,229,942,256"/>
+<area shape="poly" title=" " alt="" coords="555,176,829,226,828,231,554,181"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="cwebsocketserver_8h__dep__incl.png" border="0" usemap="#acwebsocketserver_8hdep" alt=""/></div>
+<map name="acwebsocketserver_8hdep" id="acwebsocketserver_8hdep">
+<area shape="rect" title=" " alt="" coords="68,5,206,32"/>
+<area shape="rect" href="cchatserver_8h.html" title=" " alt="" coords="12,80,113,107"/>
+<area shape="poly" title=" " alt="" coords="115,45,77,82,74,78,112,41"/>
+<area shape="rect" href="cwebsocketserver_8cpp.html" title=" " alt="" coords="137,80,289,107"/>
+<area shape="poly" title=" " alt="" coords="163,41,202,78,198,82,159,45"/>
+<area shape="rect" href="cchatserver_8cpp.html" title=" " alt="" coords="5,155,120,181"/>
+<area shape="poly" title=" " alt="" coords="65,122,65,154,60,154,60,122"/>
+</map>
+</div>
+</div>
+<p><a href="cwebsocketserver_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtag_web_client.html">tagWebClient</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_web_socket_server.html">CWebSocketServer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a4b1623196b4892a777cebc624b708777" id="r_a4b1623196b4892a777cebc624b708777"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b1623196b4892a777cebc624b708777">sCWebSocketServer</a>&#160;&#160;&#160;CWebSocketServer::getSingleton()</td></tr>
+<tr class="separator:a4b1623196b4892a777cebc624b708777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a4b1623196b4892a777cebc624b708777" name="a4b1623196b4892a777cebc624b708777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1623196b4892a777cebc624b708777">&#9670;&#160;</a></span>sCWebSocketServer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define sCWebSocketServer&#160;&#160;&#160;CWebSocketServer::getSingleton()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e72918b9f0e93adee7ec62635d44a38d.html">KuGouServer</a></li><li class="navelem"><a class="el" href="dir_1f4d31eb974542b2ab12d0259d14eb74.html">NetWork</a></li><li class="navelem"><a class="el" href="cwebsocketserver_8h.html">cwebsocketserver.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

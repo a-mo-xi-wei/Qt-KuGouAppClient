@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: QsLog.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_qs_log_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">QsLog.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_qs_log_8h_source.html">QsLog.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_qs_log_dest_8h_source.html">QsLogDest.h</a>&quot;</code><br />
+<code>#include &lt;QMutex&gt;</code><br />
+<code>#include &lt;QVector&gt;</code><br />
+<code>#include &lt;QDateTime&gt;</code><br />
+<code>#include &lt;QtGlobal&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+QsLog.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_qs_log_8cpp__incl.png" border="0" usemap="#a_qs_log_8cpp" alt=""/></div>
+<map name="a_qs_log_8cpp" id="a_qs_log_8cpp">
+<area shape="rect" title=" " alt="" coords="387,5,472,32"/>
+<area shape="rect" href="_qs_log_8h.html" title=" " alt="" coords="129,80,199,107"/>
+<area shape="poly" title=" " alt="" coords="387,34,215,81,214,76,386,29"/>
+<area shape="rect" href="_qs_log_dest_8h.html" title=" " alt="" coords="223,155,321,181"/>
+<area shape="poly" title=" " alt="" coords="408,35,375,55,342,82,313,113,290,144,286,140,309,109,338,78,372,51,405,30"/>
+<area shape="rect" title=" " alt="" coords="322,229,395,256"/>
+<area shape="poly" title=" " alt="" coords="419,34,402,55,386,81,375,116,367,152,362,214,356,214,362,151,370,114,382,79,397,52,415,31"/>
+<area shape="rect" title=" " alt="" coords="396,80,463,107"/>
+<area shape="poly" title=" " alt="" coords="432,33,432,64,427,64,427,33"/>
+<area shape="rect" title=" " alt="" coords="487,80,556,107"/>
+<area shape="poly" title=" " alt="" coords="447,30,495,68,492,73,444,35"/>
+<area shape="rect" title=" " alt="" coords="580,80,668,107"/>
+<area shape="poly" title=" " alt="" coords="464,30,577,72,575,77,462,35"/>
+<area shape="rect" title=" " alt="" coords="692,80,751,107"/>
+<area shape="poly" title=" " alt="" coords="473,27,677,77,676,82,471,32"/>
+<area shape="rect" href="_qs_log_level_8h.html" title=" " alt="" coords="5,229,107,256"/>
+<area shape="poly" title=" " alt="" coords="129,102,103,108,75,119,49,135,29,156,24,170,25,185,39,215,34,217,20,186,19,169,24,153,46,130,72,114,101,103,128,97"/>
+<area shape="poly" title=" " alt="" coords="184,105,242,143,239,148,181,109"/>
+<area shape="rect" title=" " alt="" coords="129,155,199,181"/>
+<area shape="poly" title=" " alt="" coords="167,107,167,139,161,139,161,107"/>
+<area shape="rect" title=" " alt="" coords="39,155,105,181"/>
+<area shape="poly" title=" " alt="" coords="150,109,101,147,98,143,146,105"/>
+<area shape="poly" title=" " alt="" coords="235,184,109,226,107,221,234,179"/>
+<area shape="rect" title=" " alt="" coords="185,229,298,256"/>
+<area shape="poly" title=" " alt="" coords="269,183,255,216,250,214,264,181"/>
+<area shape="poly" title=" " alt="" coords="289,180,334,217,331,221,285,184"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qs_logging_1_1_logger_impl.html">LoggerImpl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html">QsLogging</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ac3b8421b1c1ba7a61341030f0a1cc3e2" id="r_ac3b8421b1c1ba7a61341030f0a1cc3e2"><td class="memItemLeft" align="right" valign="top">typedef QVector&lt; <a class="el" href="namespace_qs_logging.html#ad858433e3d4deea1227f3368acd6091f">DestinationPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#ac3b8421b1c1ba7a61341030f0a1cc3e2">DestinationList</a></td></tr>
+<tr class="separator:ac3b8421b1c1ba7a61341030f0a1cc3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:af7cedab36ef768b4e00a7bdbbe1a693a" id="r_af7cedab36ef768b4e00a7bdbbe1a693a"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#af7cedab36ef768b4e00a7bdbbe1a693a">fmtDateTime</a> (&quot;yyyy-MM-dd hh:mm:ss.zzz&quot;)</td></tr>
+<tr class="separator:af7cedab36ef768b4e00a7bdbbe1a693a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9976739112ffb9c25dae38fdd865ad12" id="r_a9976739112ffb9c25dae38fdd865ad12"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#a9976739112ffb9c25dae38fdd865ad12">LevelToText</a> (<a class="el" href="namespace_qs_logging.html#a221b779e6bb7b8d40677d7642bfefac5">Level</a> theLevel)</td></tr>
+<tr class="separator:a9976739112ffb9c25dae38fdd865ad12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ab49a218328ef28346d943ec4916ef002" id="r_ab49a218328ef28346d943ec4916ef002"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#ab49a218328ef28346d943ec4916ef002">TraceString</a> [] = &quot;TRACE&quot;</td></tr>
+<tr class="separator:ab49a218328ef28346d943ec4916ef002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110439a9773b99e89d8e085f00bdb3e6" id="r_a110439a9773b99e89d8e085f00bdb3e6"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#a110439a9773b99e89d8e085f00bdb3e6">DebugString</a> [] = &quot;DEBUG&quot;</td></tr>
+<tr class="separator:a110439a9773b99e89d8e085f00bdb3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaaa43fc232f8486e39c096b8f94ec7e" id="r_adaaa43fc232f8486e39c096b8f94ec7e"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#adaaa43fc232f8486e39c096b8f94ec7e">InfoString</a> [] = &quot;INFO &quot;</td></tr>
+<tr class="separator:adaaa43fc232f8486e39c096b8f94ec7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae23fe5477d73df5f2a9807720966d8f9" id="r_ae23fe5477d73df5f2a9807720966d8f9"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#ae23fe5477d73df5f2a9807720966d8f9">WarnString</a> [] = &quot;WARN &quot;</td></tr>
+<tr class="separator:ae23fe5477d73df5f2a9807720966d8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0080be028449450f3564d017ce2515ae" id="r_a0080be028449450f3564d017ce2515ae"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#a0080be028449450f3564d017ce2515ae">ErrorString</a> [] = &quot;ERROR&quot;</td></tr>
+<tr class="separator:a0080be028449450f3564d017ce2515ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e4d91b2d2e7a126a86eb0589427fa0" id="r_a42e4d91b2d2e7a126a86eb0589427fa0"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#a42e4d91b2d2e7a126a86eb0589427fa0">FatalString</a> [] = &quot;FATAL&quot;</td></tr>
+<tr class="separator:a42e4d91b2d2e7a126a86eb0589427fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c073c7a8236b9e8c58f282daa11e0a" id="r_ac4c073c7a8236b9e8c58f282daa11e0a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_qs_logging_1_1_logger.html">Logger</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_qs_logging.html#ac4c073c7a8236b9e8c58f282daa11e0a">sInstance</a> = nullptr</td></tr>
+<tr class="separator:ac4c073c7a8236b9e8c58f282daa11e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_3a9b0baa2eedc724de425a486f413643.html">MyQsLog</a></li><li class="navelem"><a class="el" href="_qs_log_8cpp.html">QsLog.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

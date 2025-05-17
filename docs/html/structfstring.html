@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: fstring&lt; T &gt; 模板结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structfstring.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="structfstring-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">fstring&lt; T &gt; 模板结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A compile-time format string.  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="base_8h_source.html">base.h</a>&gt;</code></p>
+<div class="dynheader">
+fstring&lt; T &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structfstring__coll__graph.png" border="0" usemap="#afstring_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="afstring_3_01_t_01_4_coll__map" id="afstring_3_01_t_01_4_coll__map">
+<area shape="rect" title="A compile&#45;time format string." alt="" coords="28,112,116,139"/>
+<area shape="rect" href="classbasic__string__view.html" title=" " alt="" coords="5,5,139,48"/>
+<area shape="poly" title=" " alt="" coords="75,64,75,112,69,112,69,64"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a309fb05c92b5577b4f59dce09f73f04c" id="r_a309fb05c92b5577b4f59dce09f73f04c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a309fb05c92b5577b4f59dce09f73f04c">t</a> = <a class="el" href="structfstring.html">fstring</a></td></tr>
+<tr class="separator:a309fb05c92b5577b4f59dce09f73f04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aba82141566a13150c1f2f69b026278c5" id="r_aba82141566a13150c1f2f69b026278c5"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:aba82141566a13150c1f2f69b026278c5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a1adadf095006629612166782177c39f2">FMT_CONSTEVAL</a> <a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aba82141566a13150c1f2f69b026278c5">fstring</a> (const char(&amp;s)[<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca2c63acbe79d9f41ba6bb7766e9c37702">N</a>])</td></tr>
+<tr class="separator:aba82141566a13150c1f2f69b026278c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ff2671a12eb50166b26da15763c10f" id="r_ac5ff2671a12eb50166b26da15763c10f"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_convertible&lt; const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a> &amp;, <a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> &gt;::value)&gt; </td></tr>
+<tr class="memitem:ac5ff2671a12eb50166b26da15763c10f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a1adadf095006629612166782177c39f2">FMT_CONSTEVAL</a> <a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac5ff2671a12eb50166b26da15763c10f">fstring</a> (const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a> &amp;s)</td></tr>
+<tr class="separator:ac5ff2671a12eb50166b26da15763c10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035cd97b58de31e59b5458a3c837cbff" id="r_a035cd97b58de31e59b5458a3c837cbff"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_base_of&lt; <a class="el" href="structdetail_1_1compile__string.html">detail::compile_string</a>, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a> &gt;::value &amp;&amp; std::is_same&lt; typename S::char_type, char &gt;::value)&gt; </td></tr>
+<tr class="memitem:a035cd97b58de31e59b5458a3c837cbff"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a035cd97b58de31e59b5458a3c837cbff">fstring</a> (const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a> &amp;)</td></tr>
+<tr class="separator:a035cd97b58de31e59b5458a3c837cbff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96f6b1b2d8ab43ebb2721ac2a43eb879" id="r_a96f6b1b2d8ab43ebb2721ac2a43eb879"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96f6b1b2d8ab43ebb2721ac2a43eb879">fstring</a> (<a class="el" href="structruntime__format__string.html">runtime_format_string</a>&lt;&gt; fmt)</td></tr>
+<tr class="separator:a96f6b1b2d8ab43ebb2721ac2a43eb879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde86caa16a55a18a5e822ab78233279" id="r_abde86caa16a55a18a5e822ab78233279"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abde86caa16a55a18a5e822ab78233279">operator const string_view &amp;</a> () const</td></tr>
+<tr class="separator:abde86caa16a55a18a5e822ab78233279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98497f87e9bba8e74f79dd2ab6b44fbf" id="r_a98497f87e9bba8e74f79dd2ab6b44fbf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98497f87e9bba8e74f79dd2ab6b44fbf">get</a> () const -&gt; <a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a></td></tr>
+<tr class="separator:a98497f87e9bba8e74f79dd2ab6b44fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a0ea7af315591031baa21c3a8761cface" id="r_a0ea7af315591031baa21c3a8761cface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ea7af315591031baa21c3a8761cface">str</a></td></tr>
+<tr class="separator:a0ea7af315591031baa21c3a8761cface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:a4c61871695a1bbd3f77e89a8fcd5e80b" id="r_a4c61871695a1bbd3f77e89a8fcd5e80b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c61871695a1bbd3f77e89a8fcd5e80b">checker</a></td></tr>
+<tr class="separator:a4c61871695a1bbd3f77e89a8fcd5e80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5426359f6ec93af7b8fc9cac0b37a17f" id="r_a5426359f6ec93af7b8fc9cac0b37a17f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5426359f6ec93af7b8fc9cac0b37a17f">arg_pack</a> = <a class="el" href="structdetail_1_1arg__pack.html">detail::arg_pack</a>&lt;T...&gt;</td></tr>
+<tr class="separator:a5426359f6ec93af7b8fc9cac0b37a17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a7a20783ad70e6ada9e47633ac3126886" id="r_a7a20783ad70e6ada9e47633ac3126886"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a20783ad70e6ada9e47633ac3126886">num_static_named_args</a></td></tr>
+<tr class="separator:a7a20783ad70e6ada9e47633ac3126886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename... T&gt;<br />
+struct fstring&lt; T &gt;</div><p>A compile-time format string. </p>
+<p>Use <code><a class="el" href="base_8h.html#a49f7ca2836740c64e60d413274377621">format_string</a></code> in the public API to prevent type deduction. </p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a5426359f6ec93af7b8fc9cac0b37a17f" name="a5426359f6ec93af7b8fc9cac0b37a17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5426359f6ec93af7b8fc9cac0b37a17f">&#9670;&#160;</a></span>arg_pack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a5426359f6ec93af7b8fc9cac0b37a17f">arg_pack</a> = <a class="el" href="structdetail_1_1arg__pack.html">detail::arg_pack</a>&lt;T...&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c61871695a1bbd3f77e89a8fcd5e80b" name="a4c61871695a1bbd3f77e89a8fcd5e80b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c61871695a1bbd3f77e89a8fcd5e80b">&#9670;&#160;</a></span>checker</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a4c61871695a1bbd3f77e89a8fcd5e80b">checker</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line"> <a class="code hl_class" href="classdetail_1_1format__string__checker.html">detail::format_string_checker</a>&lt;</div>
+<div class="line">      char, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>...(T)), <a class="code hl_variable" href="structbasic__fstring.html#a7a20783ad70e6ada9e47633ac3126886">num_static_named_args</a>,</div>
+<div class="line">      <a class="code hl_variable" href="structbasic__fstring.html#a7a20783ad70e6ada9e47633ac3126886">num_static_named_args</a> != <a class="code hl_function" href="namespacedetail.html#a9d12ba0988ea82b50d5a3ae849db9518">detail::count_named_args&lt;T...&gt;</a>()&gt;</div>
+<div class="ttc" id="aclassdetail_1_1format__string__checker_html"><div class="ttname"><a href="classdetail_1_1format__string__checker.html">detail::format_string_checker</a></div><div class="ttdef"><b>定义</b> base.h:1663</div></div>
+<div class="ttc" id="anamespacedetail_html_a9d12ba0988ea82b50d5a3ae849db9518"><div class="ttname"><a href="namespacedetail.html#a9d12ba0988ea82b50d5a3ae849db9518">detail::count_named_args</a></div><div class="ttdeci">constexpr auto count_named_args() -&gt; int</div><div class="ttdef"><b>定义</b> base.h:1055</div></div>
+<div class="ttc" id="astructbasic__fstring_html_a7a20783ad70e6ada9e47633ac3126886"><div class="ttname"><a href="structbasic__fstring.html#a7a20783ad70e6ada9e47633ac3126886">basic_fstring::num_static_named_args</a></div><div class="ttdeci">static constexpr int num_static_named_args</div><div class="ttdef"><b>定义</b> bundled/xchar.h:72</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a309fb05c92b5577b4f59dce09f73f04c" name="a309fb05c92b5577b4f59dce09f73f04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a309fb05c92b5577b4f59dce09f73f04c">&#9670;&#160;</a></span>t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a309fb05c92b5577b4f59dce09f73f04c">t</a> = <a class="el" href="structfstring.html">fstring</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aba82141566a13150c1f2f69b026278c5" name="aba82141566a13150c1f2f69b026278c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba82141566a13150c1f2f69b026278c5">&#9670;&#160;</a></span>fstring() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a1adadf095006629612166782177c39f2">FMT_CONSTEVAL</a> <a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a> <a class="el" href="structfstring.html">fstring</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char(&amp;)</td>          <td class="paramname"><span class="paramname"><em>s</em></span>[N]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structfstring_aba82141566a13150c1f2f69b026278c5_cgraph.png" border="0" usemap="#astructfstring_aba82141566a13150c1f2f69b026278c5_cgraph" alt=""/></div>
+<map name="astructfstring_aba82141566a13150c1f2f69b026278c5_cgraph" id="astructfstring_aba82141566a13150c1f2f69b026278c5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,52,63,79"/>
+<area shape="rect" href="namespacedetail.html#a25e934f3e2c5280160c34cb21a8db91c" title=" " alt="" coords="133,23,225,49"/>
+<area shape="poly" title=" " alt="" coords="63,57,117,46,118,51,64,62"/>
+<area shape="rect" href="namespacedetail.html#aec6678375e08ceb73f10dd66f5140474" title=" " alt="" coords="111,73,247,116"/>
+<area shape="poly" title=" " alt="" coords="64,68,96,75,95,80,63,74"/>
+<area shape="rect" href="namespacedetail.html#abab999a4b94ccc77ddde514a5b67b1bd" title=" " alt="" coords="295,73,465,116"/>
+<area shape="poly" title=" " alt="" coords="247,92,279,92,279,97,247,97"/>
+<area shape="rect" href="namespacedetail.html#a0838b92a10158e3dd213cdf7d2f87bad" title=" " alt="" coords="513,81,648,108"/>
+<area shape="poly" title=" " alt="" coords="466,92,498,92,498,97,466,97"/>
+<area shape="rect" href="namespacedetail.html#a389a0af8b84ad06cfe3251ff0903103f" title=" " alt="" coords="720,5,862,32"/>
+<area shape="poly" title=" " alt="" coords="609,78,695,42,717,34,719,39,697,46,611,83"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="696,56,886,83"/>
+<area shape="poly" title=" " alt="" coords="648,84,680,80,680,85,648,89"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="747,107,834,133"/>
+<area shape="poly" title=" " alt="" coords="648,100,732,110,731,116,648,105"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="726,157,856,184"/>
+<area shape="poly" title=" " alt="" coords="611,106,697,143,719,150,717,155,695,148,609,111"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="934,56,1039,83"/>
+<area shape="poly" title=" " alt="" coords="886,67,918,67,918,72,886,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac5ff2671a12eb50166b26da15763c10f" name="ac5ff2671a12eb50166b26da15763c10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ff2671a12eb50166b26da15763c10f">&#9670;&#160;</a></span>fstring() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_convertible&lt; const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a> &amp;, <a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> &gt;::value)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a1adadf095006629612166782177c39f2">FMT_CONSTEVAL</a> <a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a> <a class="el" href="structfstring.html">fstring</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structfstring_ac5ff2671a12eb50166b26da15763c10f_cgraph.png" border="0" usemap="#astructfstring_ac5ff2671a12eb50166b26da15763c10f_cgraph" alt=""/></div>
+<map name="astructfstring_ac5ff2671a12eb50166b26da15763c10f_cgraph" id="astructfstring_ac5ff2671a12eb50166b26da15763c10f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,63,108"/>
+<area shape="rect" href="namespacedetail.html#aec6678375e08ceb73f10dd66f5140474" title=" " alt="" coords="111,73,247,116"/>
+<area shape="poly" title=" " alt="" coords="63,92,95,92,95,97,63,97"/>
+<area shape="rect" href="namespacedetail.html#abab999a4b94ccc77ddde514a5b67b1bd" title=" " alt="" coords="295,73,465,116"/>
+<area shape="poly" title=" " alt="" coords="247,92,279,92,279,97,247,97"/>
+<area shape="rect" href="namespacedetail.html#a0838b92a10158e3dd213cdf7d2f87bad" title=" " alt="" coords="513,81,648,108"/>
+<area shape="poly" title=" " alt="" coords="466,92,498,92,498,97,466,97"/>
+<area shape="rect" href="namespacedetail.html#a389a0af8b84ad06cfe3251ff0903103f" title=" " alt="" coords="720,5,862,32"/>
+<area shape="poly" title=" " alt="" coords="609,78,695,42,717,34,719,39,697,46,611,83"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="696,56,886,83"/>
+<area shape="poly" title=" " alt="" coords="648,84,680,80,680,85,648,89"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="747,107,834,133"/>
+<area shape="poly" title=" " alt="" coords="648,100,732,110,731,116,648,105"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="726,157,856,184"/>
+<area shape="poly" title=" " alt="" coords="611,106,697,143,719,150,717,155,695,148,609,111"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="934,56,1039,83"/>
+<area shape="poly" title=" " alt="" coords="886,67,918,67,918,72,886,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a035cd97b58de31e59b5458a3c837cbff" name="a035cd97b58de31e59b5458a3c837cbff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035cd97b58de31e59b5458a3c837cbff">&#9670;&#160;</a></span>fstring() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_base_of&lt; <a class="el" href="structdetail_1_1compile__string.html">detail::compile_string</a>, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a> &gt;::value &amp;&amp; std::is_same&lt; typename S::char_type, char &gt;::value)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a> <a class="el" href="structfstring.html">fstring</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structfstring_a035cd97b58de31e59b5458a3c837cbff_cgraph.png" border="0" usemap="#astructfstring_a035cd97b58de31e59b5458a3c837cbff_cgraph" alt=""/></div>
+<map name="astructfstring_a035cd97b58de31e59b5458a3c837cbff_cgraph" id="astructfstring_a035cd97b58de31e59b5458a3c837cbff_cgraph">
+<area shape="rect" title=" " alt="" coords="5,52,63,79"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="111,23,255,49"/>
+<area shape="poly" title=" " alt="" coords="63,57,96,50,97,56,64,62"/>
+<area shape="rect" href="namespacedetail.html#aec6678375e08ceb73f10dd66f5140474" title=" " alt="" coords="115,73,251,116"/>
+<area shape="poly" title=" " alt="" coords="64,68,100,76,99,81,63,74"/>
+<area shape="rect" href="namespacedetail.html#abab999a4b94ccc77ddde514a5b67b1bd" title=" " alt="" coords="303,73,473,116"/>
+<area shape="poly" title=" " alt="" coords="252,92,287,92,287,97,252,97"/>
+<area shape="rect" href="namespacedetail.html#a0838b92a10158e3dd213cdf7d2f87bad" title=" " alt="" coords="521,81,656,108"/>
+<area shape="poly" title=" " alt="" coords="474,92,506,92,506,97,474,97"/>
+<area shape="rect" href="namespacedetail.html#a389a0af8b84ad06cfe3251ff0903103f" title=" " alt="" coords="728,5,870,32"/>
+<area shape="poly" title=" " alt="" coords="617,78,703,42,725,34,727,39,705,46,619,83"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="704,56,894,83"/>
+<area shape="poly" title=" " alt="" coords="656,84,688,80,688,85,656,89"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="755,107,842,133"/>
+<area shape="poly" title=" " alt="" coords="656,100,740,110,739,116,656,105"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="734,157,864,184"/>
+<area shape="poly" title=" " alt="" coords="619,106,705,143,727,150,725,155,703,148,617,111"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="942,56,1047,83"/>
+<area shape="poly" title=" " alt="" coords="894,67,926,67,926,72,894,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a96f6b1b2d8ab43ebb2721ac2a43eb879" name="a96f6b1b2d8ab43ebb2721ac2a43eb879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f6b1b2d8ab43ebb2721ac2a43eb879">&#9670;&#160;</a></span>fstring() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfstring.html">fstring</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structruntime__format__string.html">runtime_format_string</a>&lt;&gt;</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a98497f87e9bba8e74f79dd2ab6b44fbf" name="a98497f87e9bba8e74f79dd2ab6b44fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98497f87e9bba8e74f79dd2ab6b44fbf">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto get </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abde86caa16a55a18a5e822ab78233279" name="abde86caa16a55a18a5e822ab78233279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abde86caa16a55a18a5e822ab78233279">&#9670;&#160;</a></span>operator const string_view &amp;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a> operator const <a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> &amp; </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a7a20783ad70e6ada9e47633ac3126886" name="a7a20783ad70e6ada9e47633ac3126886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a20783ad70e6ada9e47633ac3126886">&#9670;&#160;</a></span>num_static_named_args</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int num_static_named_args</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <a class="code hl_function" href="namespacedetail.html#a3b2cc68ed7c76d56372cda6fd184de4b">detail::count_static_named_args</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>...&gt;()</div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></div><div class="ttdeci">@ T</div><div class="ttdoc">字母T</div><div class="ttdef"><b>定义</b> Def.h:3259</div></div>
+<div class="ttc" id="anamespacedetail_html_a3b2cc68ed7c76d56372cda6fd184de4b"><div class="ttname"><a href="namespacedetail.html#a3b2cc68ed7c76d56372cda6fd184de4b">detail::count_static_named_args</a></div><div class="ttdeci">constexpr auto count_static_named_args() -&gt; int</div><div class="ttdef"><b>定义</b> base.h:1058</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0ea7af315591031baa21c3a8761cface" name="a0ea7af315591031baa21c3a8761cface"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea7af315591031baa21c3a8761cface">&#9670;&#160;</a></span>str</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> str</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="base_8h_source.html">base.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structfstring.html">fstring</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

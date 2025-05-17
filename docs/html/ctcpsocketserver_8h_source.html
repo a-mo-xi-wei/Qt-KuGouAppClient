@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ctcpsocketserver.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('ctcpsocketserver_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ctcpsocketserver.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ctcpsocketserver_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CTCP_SOCKETSERVER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CTCP_SOCKETSERVER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;singleton.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;common.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="networkframemanager_8h.html">networkframemanager.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="ctcpsocketclient_8h.html">ctcpsocketclient.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QHash&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QFutureWatcher&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QTcpServer&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//开源项目地址:https://github.com/quan12jiale/QTcpSocket</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//线程管理类，类似于一个线程池，单例类</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//两种初始化方式，一种是每个线程处理的连接数，一个是一共多少个线程</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//********************当前多线程使用还存在问题，暂时不支持多线程**************************</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_thread_handle.html">   18</a></span><span class="keyword">class </span><a class="code hl_function" href="class_thread_handle.html#aebf2d610a3a92180a8d1da5c8ebb4011">ThreadHandle</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_thread_handle.html#ae771ba1ceb0b28eb98db21189c5af25b">~ThreadHandle</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8">   23</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8a76b8cf5083f8e3b913b47b8899e68d16">   25</a></span>        <a class="code hl_enumvalue" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8a76b8cf5083f8e3b913b47b8899e68d16">THREADSIZE</a>, <span class="comment">//固定线程数</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11">   26</a></span>        <a class="code hl_enumvalue" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11">HANDLESIZE</a> <span class="comment">//固定每个线程处理多少连接</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    };</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_thread_handle.html">ThreadHandle</a> &amp; <a class="code hl_function" href="class_thread_handle.html#ad28ce2d8b771f377f46741b64eee292d">getClass</a>(); <span class="comment">//返回对象引用，是单例类</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    QThread * <a class="code hl_function" href="class_thread_handle.html#a30a57a06887949e611bbeec4cb1e2fb7">getThread</a>(); <span class="comment">//取出应该移入的线程</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_thread_handle.html#a049cf031b1bde5fb39f80f526c1349ce">initThreadType</a>(<a class="code hl_enumeration" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a> <a class="code hl_variable" href="class_thread_handle.html#a65f534f131299d733e3d0ea32ef3f5c8">type</a> = <a class="code hl_enumvalue" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11">HANDLESIZE</a>,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max = 1000);<span class="comment">//初始化线程管理的方式</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_thread_handle.html#a7021b8fcc7893486feeffc4bc645b4ff">removeThread</a>(QThread *);<span class="comment">//连接断开，线程计数减一</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_thread_handle.html#ac8bb3912a3ce86b15842e79d0b421204">clear</a>();<span class="comment">//清空计数</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_thread_handle.html#a90f095240a2a6b96bf2e5cf32033d1e2">initThreadSize</a>();<span class="comment">//新建固定线程和启动</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    QThread * <a class="code hl_function" href="class_thread_handle.html#a061005ad9e72849713d54099ba8229ad">findThreadSize</a>();<span class="comment">//固定线程数的查找</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QThread *<a class="code hl_function" href="class_thread_handle.html#ac8d6dd2a0ed1097bfc29d86db6786692">findHandleSize</a>();<span class="comment">//固定连接数查找</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="class_thread_handle.html#aebf2d610a3a92180a8d1da5c8ebb4011">ThreadHandle</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_thread_handle.html#a65f534f131299d733e3d0ea32ef3f5c8">   43</a></span>    <a class="code hl_enumeration" href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a> <a class="code hl_variable" href="class_thread_handle.html#a65f534f131299d733e3d0ea32ef3f5c8">type</a>;<span class="comment">//线程类型</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_thread_handle.html#aac913b3a1f6ef005d66bf7a84428773e">   44</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_thread_handle.html#aac913b3a1f6ef005d66bf7a84428773e">size</a>;<span class="comment">//最大值</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_thread_handle.html#a10a9c2ecf217a8e3757e5ddb497d49bd">   45</a></span>    QHash&lt;QThread *, unsigned int&gt; <a class="code hl_variable" href="class_thread_handle.html#a10a9c2ecf217a8e3757e5ddb497d49bd">threadSize</a>;<span class="comment">//保存每个线程的数目</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_thread_handle.html#a41cca5e95a7c587d961d36d1f7353e62">   46</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_thread_handle.html#a41cca5e95a7c587d961d36d1f7353e62">initfist</a>;<span class="comment">//是否是第一次初始化，只允许初始化一次。</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">//继承QTCPSERVER以实现多线程TCPscoket的服务器。</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//如果socket的信息处理直接处理的话，很多新建的信号和槽是用不到的</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">//暂不支持多线程</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html">   52</a></span><span class="keyword">class </span><a class="code hl_function" href="class_c_tcp_server.html#a1468ae1a1b8399c1a3013bf226a86291">CTcpServer</a> : <span class="keyword">public</span> QTcpServer</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    Q_OBJECT</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_c_tcp_server.html#a1468ae1a1b8399c1a3013bf226a86291">CTcpServer</a>(<a class="code hl_class" href="class_network_frame_manager.html">NetworkFrameManager</a> *pNetworkFrameManager=<span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                        <span class="keywordtype">int</span> numConnections = 10000,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        <span class="keywordtype">bool</span> isencoded=<span class="keyword">true</span>,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                        QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="class_c_tcp_server.html#a42c516f8283772da4f16ebc60d18c495">~CTcpServer</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#a3af2b2347a1e39f64d4e836d89a7b336">   64</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_tcp_server.html#a3af2b2347a1e39f64d4e836d89a7b336">SetNetworkFrameManager</a>(<a class="code hl_class" href="class_network_frame_manager.html">NetworkFrameManager</a> *pNetworkFrameManager) { <a class="code hl_variable" href="class_c_tcp_server.html#aca7d469173097c057c8393f82dd01bfa">m_NetworkFrameManager</a> = pNetworkFrameManager; }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_tcp_server.html#a8392d4048b8f96f6878a838b99c45190">OpenServer</a>(<span class="keywordtype">int</span> port);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c">CloseServer</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_tcp_server.html#a79a0060f0b5d36f39a112b90b1cd79f3">closeClient</a>(qint64 conn, QThread * th=<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#a0bdae0e46fe17db5a8d1c0bd72ffdef3">   73</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_tcp_server.html#a0bdae0e46fe17db5a8d1c0bd72ffdef3">setUsingThread</a>(<span class="keywordtype">bool</span> isUse) { <a class="code hl_variable" href="class_c_tcp_server.html#abd033f3d107c59bea0d9903a3e260531">m_isUsingThread</a> = isUse; }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#a58785c8285fdcda8d069233add9904ad">   75</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_tcp_server.html#a58785c8285fdcda8d069233add9904ad">isUsingThread</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_c_tcp_server.html#abd033f3d107c59bea0d9903a3e260531">m_isUsingThread</a>; }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_tcp_server.html#aacf4d4d6e313da94568b1f0776590133">setMaxPendingConnections</a>(<span class="keywordtype">int</span> numConnections);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864">incomingConnection</a>(qintptr socketDescriptor) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#a466764c176c3cd45bf7b957bbdf0c801">   81</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_tcp_server.html#a466764c176c3cd45bf7b957bbdf0c801">setEncode</a>(<span class="keywordtype">bool</span> encode) { <a class="code hl_variable" href="class_c_tcp_server.html#a05b6f3021cd1ebd912f7548dbf61b12c">m_isencoded</a> = encode; }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#abde376ebb61a62a1949151279af09a4f">   83</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_tcp_server.html#abde376ebb61a62a1949151279af09a4f">isEncode</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_c_tcp_server.html#a05b6f3021cd1ebd912f7548dbf61b12c">m_isencoded</a>; }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    Q_INVOKABLE qint64 <a class="code hl_function" href="class_c_tcp_server.html#a4672478e5dfc011a51f151c03c413a77">SendByteArray</a>(qintptr socketDescriptor, <span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_tcp_server.html#a12f189199cad22c0153c97200e75fd16">SendAllByteArray</a>(<span class="keyword">const</span> QByteArray&amp; data);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_tcp_server.html#aef0feec6eb8c16625bafaef096de0406">SendAllOtherByteArray</a>(qintptr socketDescriptor,<span class="keyword">const</span> QByteArray&amp; data);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>signals:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#a5f8102e726a69644d1a7a943cf4c3d35">   93</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_tcp_server.html#a5f8102e726a69644d1a7a943cf4c3d35">connectClient</a>(qint64, <span class="keyword">const</span> QString &amp;, quint16);<span class="comment">//发送新用户连接信息</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#ad955201562ecc4f8916b20de749d3bc7">   94</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_tcp_server.html#ad955201562ecc4f8916b20de749d3bc7">sockDisConnect</a>(qint64, <span class="keyword">const</span> QString &amp;, quint16);<span class="comment">//断开连接的用户信息</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#a5a529674e353df317f0e9497d0983ac6">   95</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_tcp_server.html#a5a529674e353df317f0e9497d0983ac6">sentDisConnect</a>(qint64); <span class="comment">//断开特定连接，并释放资源，-1为断开所有。</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#a13574cf35ce070afdcd65537782c2d2d">   96</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_tcp_server.html#a13574cf35ce070afdcd65537782c2d2d">sockNetMessage</a>(qint64 conn,QByteArray data);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_tcp_server.html#ac8bb3912a3ce86b15842e79d0b421204">clear</a>(); <span class="comment">//断开所有连接，线程计数器请0</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_tcp_server.html#a4cc305570c43d0834291ef0b4c745c13">displayError</a>(QAbstractSocket::SocketError socketError);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_tcp_server.html#a912e3c6921d9bb6945c73142926de7d4">sockDisConnectSlot</a>(qint64 socketDescriptor,<span class="keyword">const</span> QString &amp;ip, quint16 port, QThread *th);<span class="comment">//断开连接的用户信息</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_tcp_server.html#a5adea3128cd4fa723acd38bb253cd8da">sockBinMessageSlot</a>(qint64 socketDescriptor, <span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#aa2a5db490934ae9b19e82560dc7a05ae">  106</a></span>    QHash&lt;qint64, CTcpSocket *&gt; <a class="code hl_variable" href="class_c_tcp_server.html#aa2a5db490934ae9b19e82560dc7a05ae">tcpClient</a>;                              </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#aca7d469173097c057c8393f82dd01bfa">  107</a></span>    <a class="code hl_class" href="class_network_frame_manager.html">NetworkFrameManager</a> *<a class="code hl_variable" href="class_c_tcp_server.html#aca7d469173097c057c8393f82dd01bfa">m_NetworkFrameManager</a>;                         </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#aff270a7b2d25ad0d37713c0599bd24e8">  108</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_c_tcp_server.html#aff270a7b2d25ad0d37713c0599bd24e8">maxConnections</a>;                                                 </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#af75a403bb743300762c7ee2d52d345cb">  109</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_c_tcp_server.html#af75a403bb743300762c7ee2d52d345cb">nConnectCount</a>;                                                  </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#abd033f3d107c59bea0d9903a3e260531">  110</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_c_tcp_server.html#abd033f3d107c59bea0d9903a3e260531">m_isUsingThread</a>;                                               </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_c_tcp_server.html#a05b6f3021cd1ebd912f7548dbf61b12c">  111</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_c_tcp_server.html#a05b6f3021cd1ebd912f7548dbf61b12c">m_isencoded</a>;                                                   </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>};</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif </span><span class="comment">// CTCP_SOCKETSERVER_H</span></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a05b6f3021cd1ebd912f7548dbf61b12c"><div class="ttname"><a href="class_c_tcp_server.html#a05b6f3021cd1ebd912f7548dbf61b12c">CTcpServer::m_isencoded</a></div><div class="ttdeci">bool m_isencoded</div><div class="ttdoc">是否自行编码数据</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:111</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a0bdae0e46fe17db5a8d1c0bd72ffdef3"><div class="ttname"><a href="class_c_tcp_server.html#a0bdae0e46fe17db5a8d1c0bd72ffdef3">CTcpServer::setUsingThread</a></div><div class="ttdeci">void setUsingThread(bool isUse)</div><div class="ttdoc">设置是否使用多线程</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:73</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a12f189199cad22c0153c97200e75fd16"><div class="ttname"><a href="class_c_tcp_server.html#a12f189199cad22c0153c97200e75fd16">CTcpServer::SendAllByteArray</a></div><div class="ttdeci">Q_INVOKABLE bool SendAllByteArray(const QByteArray &amp;data)</div><div class="ttdoc">给所有客户端发送二进制数据</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:221</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a13574cf35ce070afdcd65537782c2d2d"><div class="ttname"><a href="class_c_tcp_server.html#a13574cf35ce070afdcd65537782c2d2d">CTcpServer::sockNetMessage</a></div><div class="ttdeci">void sockNetMessage(qint64 conn, QByteArray data)</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a1468ae1a1b8399c1a3013bf226a86291"><div class="ttname"><a href="class_c_tcp_server.html#a1468ae1a1b8399c1a3013bf226a86291">CTcpServer::CTcpServer</a></div><div class="ttdeci">CTcpServer(NetworkFrameManager *pNetworkFrameManager=nullptr, int numConnections=10000, bool isencoded=true, QObject *parent=nullptr)</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:146</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a3af2b2347a1e39f64d4e836d89a7b336"><div class="ttname"><a href="class_c_tcp_server.html#a3af2b2347a1e39f64d4e836d89a7b336">CTcpServer::SetNetworkFrameManager</a></div><div class="ttdeci">void SetNetworkFrameManager(NetworkFrameManager *pNetworkFrameManager)</div><div class="ttdoc">设置网络消息处理框架</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:64</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a42c516f8283772da4f16ebc60d18c495"><div class="ttname"><a href="class_c_tcp_server.html#a42c516f8283772da4f16ebc60d18c495">CTcpServer::~CTcpServer</a></div><div class="ttdeci">~CTcpServer() override</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:161</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a466764c176c3cd45bf7b957bbdf0c801"><div class="ttname"><a href="class_c_tcp_server.html#a466764c176c3cd45bf7b957bbdf0c801">CTcpServer::setEncode</a></div><div class="ttdeci">void setEncode(bool encode)</div><div class="ttdoc">是否自行编码数据</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:81</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a4672478e5dfc011a51f151c03c413a77"><div class="ttname"><a href="class_c_tcp_server.html#a4672478e5dfc011a51f151c03c413a77">CTcpServer::SendByteArray</a></div><div class="ttdeci">Q_INVOKABLE qint64 SendByteArray(qintptr socketDescriptor, const QByteArray &amp;data)</div><div class="ttdoc">给指定客户端发送二进制数据</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:207</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a4cc305570c43d0834291ef0b4c745c13"><div class="ttname"><a href="class_c_tcp_server.html#a4cc305570c43d0834291ef0b4c745c13">CTcpServer::displayError</a></div><div class="ttdeci">void displayError(QAbstractSocket::SocketError socketError)</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:186</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a58785c8285fdcda8d069233add9904ad"><div class="ttname"><a href="class_c_tcp_server.html#a58785c8285fdcda8d069233add9904ad">CTcpServer::isUsingThread</a></div><div class="ttdeci">bool isUsingThread() const</div><div class="ttdoc">得到是否使用多线程</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:75</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a5a529674e353df317f0e9497d0983ac6"><div class="ttname"><a href="class_c_tcp_server.html#a5a529674e353df317f0e9497d0983ac6">CTcpServer::sentDisConnect</a></div><div class="ttdeci">void sentDisConnect(qint64)</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a5adea3128cd4fa723acd38bb253cd8da"><div class="ttname"><a href="class_c_tcp_server.html#a5adea3128cd4fa723acd38bb253cd8da">CTcpServer::sockBinMessageSlot</a></div><div class="ttdeci">void sockBinMessageSlot(qint64 socketDescriptor, const QByteArray &amp;data)</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:311</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a5f8102e726a69644d1a7a943cf4c3d35"><div class="ttname"><a href="class_c_tcp_server.html#a5f8102e726a69644d1a7a943cf4c3d35">CTcpServer::connectClient</a></div><div class="ttdeci">void connectClient(qint64, const QString &amp;, quint16)</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a79a0060f0b5d36f39a112b90b1cd79f3"><div class="ttname"><a href="class_c_tcp_server.html#a79a0060f0b5d36f39a112b90b1cd79f3">CTcpServer::closeClient</a></div><div class="ttdeci">Q_INVOKABLE void closeClient(qint64 conn, QThread *th=nullptr)</div><div class="ttdoc">关闭指定的客户端</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:317</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a8392d4048b8f96f6878a838b99c45190"><div class="ttname"><a href="class_c_tcp_server.html#a8392d4048b8f96f6878a838b99c45190">CTcpServer::OpenServer</a></div><div class="ttdeci">Q_INVOKABLE bool OpenServer(int port)</div><div class="ttdoc">打开一个指定端口的服务器</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:170</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_a912e3c6921d9bb6945c73142926de7d4"><div class="ttname"><a href="class_c_tcp_server.html#a912e3c6921d9bb6945c73142926de7d4">CTcpServer::sockDisConnectSlot</a></div><div class="ttdeci">void sockDisConnectSlot(qint64 socketDescriptor, const QString &amp;ip, quint16 port, QThread *th)</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:344</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_aa2a5db490934ae9b19e82560dc7a05ae"><div class="ttname"><a href="class_c_tcp_server.html#aa2a5db490934ae9b19e82560dc7a05ae">CTcpServer::tcpClient</a></div><div class="ttdeci">QHash&lt; qint64, CTcpSocket * &gt; tcpClient</div><div class="ttdoc">管理连接的map</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:106</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_aacf4d4d6e313da94568b1f0776590133"><div class="ttname"><a href="class_c_tcp_server.html#aacf4d4d6e313da94568b1f0776590133">CTcpServer::setMaxPendingConnections</a></div><div class="ttdeci">void setMaxPendingConnections(int numConnections)</div><div class="ttdoc">重写设置最大连接数函数</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:252</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_ab9ffcc9ec3b3dea9a561f57814f24864"><div class="ttname"><a href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864">CTcpServer::incomingConnection</a></div><div class="ttdeci">void incomingConnection(qintptr socketDescriptor) override</div><div class="ttdoc">覆盖已获取多线程</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:258</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_abd033f3d107c59bea0d9903a3e260531"><div class="ttname"><a href="class_c_tcp_server.html#abd033f3d107c59bea0d9903a3e260531">CTcpServer::m_isUsingThread</a></div><div class="ttdeci">bool m_isUsingThread</div><div class="ttdoc">是否使用多线程处理</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:110</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_abde376ebb61a62a1949151279af09a4f"><div class="ttname"><a href="class_c_tcp_server.html#abde376ebb61a62a1949151279af09a4f">CTcpServer::isEncode</a></div><div class="ttdeci">bool isEncode() const</div><div class="ttdoc">得到是否自行编码数据</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:83</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_ac73e9118acf94317f4cf4e6a8a71a61c"><div class="ttname"><a href="class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c">CTcpServer::CloseServer</a></div><div class="ttdeci">Q_INVOKABLE void CloseServer()</div><div class="ttdoc">关闭服务器</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:194</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_ac8bb3912a3ce86b15842e79d0b421204"><div class="ttname"><a href="class_c_tcp_server.html#ac8bb3912a3ce86b15842e79d0b421204">CTcpServer::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:351</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_aca7d469173097c057c8393f82dd01bfa"><div class="ttname"><a href="class_c_tcp_server.html#aca7d469173097c057c8393f82dd01bfa">CTcpServer::m_NetworkFrameManager</a></div><div class="ttdeci">NetworkFrameManager * m_NetworkFrameManager</div><div class="ttdoc">网络消息处理框架</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:107</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_ad955201562ecc4f8916b20de749d3bc7"><div class="ttname"><a href="class_c_tcp_server.html#ad955201562ecc4f8916b20de749d3bc7">CTcpServer::sockDisConnect</a></div><div class="ttdeci">void sockDisConnect(qint64, const QString &amp;, quint16)</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_aef0feec6eb8c16625bafaef096de0406"><div class="ttname"><a href="class_c_tcp_server.html#aef0feec6eb8c16625bafaef096de0406">CTcpServer::SendAllOtherByteArray</a></div><div class="ttdeci">Q_INVOKABLE bool SendAllOtherByteArray(qintptr socketDescriptor, const QByteArray &amp;data)</div><div class="ttdoc">给除了指定客户端的其它客户端发送二进制数据</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:238</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_af75a403bb743300762c7ee2d52d345cb"><div class="ttname"><a href="class_c_tcp_server.html#af75a403bb743300762c7ee2d52d345cb">CTcpServer::nConnectCount</a></div><div class="ttdeci">int nConnectCount</div><div class="ttdoc">当前连接数</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:109</div></div>
+<div class="ttc" id="aclass_c_tcp_server_html_aff270a7b2d25ad0d37713c0599bd24e8"><div class="ttname"><a href="class_c_tcp_server.html#aff270a7b2d25ad0d37713c0599bd24e8">CTcpServer::maxConnections</a></div><div class="ttdeci">int maxConnections</div><div class="ttdoc">最大连接数</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:108</div></div>
+<div class="ttc" id="aclass_network_frame_manager_html"><div class="ttname"><a href="class_network_frame_manager.html">NetworkFrameManager</a></div><div class="ttdef"><b>定义</b> networkframemanager.h:12</div></div>
+<div class="ttc" id="aclass_thread_handle_html"><div class="ttname"><a href="class_thread_handle.html">ThreadHandle</a></div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:19</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a049cf031b1bde5fb39f80f526c1349ce"><div class="ttname"><a href="class_thread_handle.html#a049cf031b1bde5fb39f80f526c1349ce">ThreadHandle::initThreadType</a></div><div class="ttdeci">void initThreadType(ThreadType type=HANDLESIZE, unsigned int max=1000)</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:61</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a061005ad9e72849713d54099ba8229ad"><div class="ttname"><a href="class_thread_handle.html#a061005ad9e72849713d54099ba8229ad">ThreadHandle::findThreadSize</a></div><div class="ttdeci">QThread * findThreadSize()</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:114</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a10a9c2ecf217a8e3757e5ddb497d49bd"><div class="ttname"><a href="class_thread_handle.html#a10a9c2ecf217a8e3757e5ddb497d49bd">ThreadHandle::threadSize</a></div><div class="ttdeci">QHash&lt; QThread *, unsigned int &gt; threadSize</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:45</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a30a57a06887949e611bbeec4cb1e2fb7"><div class="ttname"><a href="class_thread_handle.html#a30a57a06887949e611bbeec4cb1e2fb7">ThreadHandle::getThread</a></div><div class="ttdeci">QThread * getThread()</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:33</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a41cca5e95a7c587d961d36d1f7353e62"><div class="ttname"><a href="class_thread_handle.html#a41cca5e95a7c587d961d36d1f7353e62">ThreadHandle::initfist</a></div><div class="ttdeci">bool initfist</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:46</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a65f534f131299d733e3d0ea32ef3f5c8"><div class="ttname"><a href="class_thread_handle.html#a65f534f131299d733e3d0ea32ef3f5c8">ThreadHandle::type</a></div><div class="ttdeci">ThreadType type</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:43</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a7021b8fcc7893486feeffc4bc645b4ff"><div class="ttname"><a href="class_thread_handle.html#a7021b8fcc7893486feeffc4bc645b4ff">ThreadHandle::removeThread</a></div><div class="ttdeci">void removeThread(QThread *)</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:45</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a90f095240a2a6b96bf2e5cf32033d1e2"><div class="ttname"><a href="class_thread_handle.html#a90f095240a2a6b96bf2e5cf32033d1e2">ThreadHandle::initThreadSize</a></div><div class="ttdeci">void initThreadSize()</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:87</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a9370bfb7398547a0d06a9da373cefcb8"><div class="ttname"><a href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8">ThreadHandle::ThreadType</a></div><div class="ttdeci">ThreadType</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:24</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a9370bfb7398547a0d06a9da373cefcb8a76b8cf5083f8e3b913b47b8899e68d16"><div class="ttname"><a href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8a76b8cf5083f8e3b913b47b8899e68d16">ThreadHandle::THREADSIZE</a></div><div class="ttdeci">@ THREADSIZE</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:25</div></div>
+<div class="ttc" id="aclass_thread_handle_html_a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11"><div class="ttname"><a href="class_thread_handle.html#a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11">ThreadHandle::HANDLESIZE</a></div><div class="ttdeci">@ HANDLESIZE</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:26</div></div>
+<div class="ttc" id="aclass_thread_handle_html_aac913b3a1f6ef005d66bf7a84428773e"><div class="ttname"><a href="class_thread_handle.html#aac913b3a1f6ef005d66bf7a84428773e">ThreadHandle::size</a></div><div class="ttdeci">unsigned int size</div><div class="ttdef"><b>定义</b> ctcpsocketserver.h:44</div></div>
+<div class="ttc" id="aclass_thread_handle_html_ac8bb3912a3ce86b15842e79d0b421204"><div class="ttname"><a href="class_thread_handle.html#ac8bb3912a3ce86b15842e79d0b421204">ThreadHandle::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">ThreadHandle::clear 清除所有的线程</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:132</div></div>
+<div class="ttc" id="aclass_thread_handle_html_ac8d6dd2a0ed1097bfc29d86db6786692"><div class="ttname"><a href="class_thread_handle.html#ac8d6dd2a0ed1097bfc29d86db6786692">ThreadHandle::findHandleSize</a></div><div class="ttdeci">QThread * findHandleSize()</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:98</div></div>
+<div class="ttc" id="aclass_thread_handle_html_ad28ce2d8b771f377f46741b64eee292d"><div class="ttname"><a href="class_thread_handle.html#ad28ce2d8b771f377f46741b64eee292d">ThreadHandle::getClass</a></div><div class="ttdeci">static ThreadHandle &amp; getClass()</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:27</div></div>
+<div class="ttc" id="aclass_thread_handle_html_ae771ba1ceb0b28eb98db21189c5af25b"><div class="ttname"><a href="class_thread_handle.html#ae771ba1ceb0b28eb98db21189c5af25b">ThreadHandle::~ThreadHandle</a></div><div class="ttdeci">~ThreadHandle()</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:15</div></div>
+<div class="ttc" id="aclass_thread_handle_html_aebf2d610a3a92180a8d1da5c8ebb4011"><div class="ttname"><a href="class_thread_handle.html#aebf2d610a3a92180a8d1da5c8ebb4011">ThreadHandle::ThreadHandle</a></div><div class="ttdeci">ThreadHandle()</div><div class="ttdef"><b>定义</b> ctcpsocketserver.cpp:10</div></div>
+<div class="ttc" id="actcpsocketclient_8h_html"><div class="ttname"><a href="ctcpsocketclient_8h.html">ctcpsocketclient.h</a></div></div>
+<div class="ttc" id="anetworkframemanager_8h_html"><div class="ttname"><a href="networkframemanager_8h.html">networkframemanager.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e72918b9f0e93adee7ec62635d44a38d.html">KuGouServer</a></li><li class="navelem"><a class="el" href="dir_1f4d31eb974542b2ab12d0259d14eb74.html">NetWork</a></li><li class="navelem"><a class="el" href="ctcpsocketserver_8h.html">ctcpsocketserver.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

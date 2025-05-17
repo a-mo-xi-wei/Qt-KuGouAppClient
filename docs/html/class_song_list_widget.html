@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SongListWidget类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_song_list_widget.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_song_list_widget-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">SongListWidget类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>歌单界面类，管理歌单的展示和操作  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_song_list_widget_8h_source.html">SongListWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+类 SongListWidget 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget__inherit__graph.png" border="0" usemap="#a_song_list_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_song_list_widget_inherit__map" id="a_song_list_widget_inherit__map">
+<area shape="rect" title="歌单界面类，管理歌单的展示和操作" alt="" coords="5,80,119,107"/>
+<area shape="rect" title=" " alt="" coords="26,5,98,32"/>
+<area shape="poly" title=" " alt="" coords="65,48,65,80,59,80,59,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+SongListWidget 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget__coll__graph.png" border="0" usemap="#a_song_list_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="a_song_list_widget_coll__map" id="a_song_list_widget_coll__map">
+<area shape="rect" title="歌单界面类，管理歌单的展示和操作" alt="" coords="5,80,119,107"/>
+<area shape="rect" title=" " alt="" coords="26,5,98,32"/>
+<area shape="poly" title=" " alt="" coords="65,48,65,80,59,80,59,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:abd40b6ba99264ffdc042aeaf52a06534" id="r_abd40b6ba99264ffdc042aeaf52a06534"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd40b6ba99264ffdc042aeaf52a06534">SongListWidget</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:abd40b6ba99264ffdc042aeaf52a06534"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化歌单界面  <br /></td></tr>
+<tr class="separator:abd40b6ba99264ffdc042aeaf52a06534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50af3e5b66e1e5adcf1cbf7c144f7259" id="r_a50af3e5b66e1e5adcf1cbf7c144f7259"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50af3e5b66e1e5adcf1cbf7c144f7259">~SongListWidget</a> () override</td></tr>
+<tr class="memdesc:a50af3e5b66e1e5adcf1cbf7c144f7259"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，清理资源  <br /></td></tr>
+<tr class="separator:a50af3e5b66e1e5adcf1cbf7c144f7259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a7eb87a6d4464680c455d278d1d32eba6" id="r_a7eb87a6d4464680c455d278d1d32eba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a> (QObject *watched, QEvent *event) override</td></tr>
+<tr class="memdesc:a7eb87a6d4464680c455d278d1d32eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤器  <br /></td></tr>
+<tr class="separator:a7eb87a6d4464680c455d278d1d32eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:ab4d3c795be146b123cb6496f5da4cbb9" id="r_ab4d3c795be146b123cb6496f5da4cbb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4d3c795be146b123cb6496f5da4cbb9">on_batch_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ab4d3c795be146b123cb6496f5da4cbb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">批量操作按钮点击槽函数  <br /></td></tr>
+<tr class="separator:ab4d3c795be146b123cb6496f5da4cbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ddf64ee2f48649476d7938232ea7f3" id="r_a63ddf64ee2f48649476d7938232ea7f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63ddf64ee2f48649476d7938232ea7f3">on_import_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a63ddf64ee2f48649476d7938232ea7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">导入按钮点击槽函数  <br /></td></tr>
+<tr class="separator:a63ddf64ee2f48649476d7938232ea7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:afba6e95967cc3eb25fd518f7bde6ec04" id="r_afba6e95967cc3eb25fd518f7bde6ec04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a> ()</td></tr>
+<tr class="memdesc:afba6e95967cc3eb25fd518f7bde6ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化界面  <br /></td></tr>
+<tr class="separator:afba6e95967cc3eb25fd518f7bde6ec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fd65dabfe391277e2b6816d69dd4181" id="r_a7fd65dabfe391277e2b6816d69dd4181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fd65dabfe391277e2b6816d69dd4181">initBlock</a> () const</td></tr>
+<tr class="memdesc:a7fd65dabfe391277e2b6816d69dd4181"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化歌单块  <br /></td></tr>
+<tr class="separator:a7fd65dabfe391277e2b6816d69dd4181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a0980a16446f9b268a55500fbe4664762" id="r_a0980a16446f9b268a55500fbe4664762"><td class="memItemLeft" align="right" valign="top">Ui::SongListWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0980a16446f9b268a55500fbe4664762">ui</a></td></tr>
+<tr class="memdesc:a0980a16446f9b268a55500fbe4664762"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 指针  <br /></td></tr>
+<tr class="separator:a0980a16446f9b268a55500fbe4664762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c42d383d83d4acdfb5081e799c29da" id="r_ab6c42d383d83d4acdfb5081e799c29da"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6c42d383d83d4acdfb5081e799c29da">m_searchAction</a></td></tr>
+<tr class="memdesc:ab6c42d383d83d4acdfb5081e799c29da"><td class="mdescLeft">&#160;</td><td class="mdescRight">搜索动作  <br /></td></tr>
+<tr class="separator:ab6c42d383d83d4acdfb5081e799c29da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>歌单界面类，管理歌单的展示和操作 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="abd40b6ba99264ffdc042aeaf52a06534" name="abd40b6ba99264ffdc042aeaf52a06534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd40b6ba99264ffdc042aeaf52a06534">&#9670;&#160;</a></span>SongListWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_song_list_widget.html">SongListWidget</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化歌单界面 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 加载样式表</p>
+<p>&lt; 应用样式表</p>
+<p>&lt; 记录错误日志</p>
+<p>&lt; 初始化界面</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget_abd40b6ba99264ffdc042aeaf52a06534_cgraph.png" border="0" usemap="#aclass_song_list_widget_abd40b6ba99264ffdc042aeaf52a06534_cgraph" alt=""/></div>
+<map name="aclass_song_list_widget_abd40b6ba99264ffdc042aeaf52a06534_cgraph" id="aclass_song_list_widget_abd40b6ba99264ffdc042aeaf52a06534_cgraph">
+<area shape="rect" title="构造函数，初始化歌单界面" alt="" coords="5,29,119,56"/>
+<area shape="poly" title=" " alt="" coords="39,30,35,21,38,11,47,5,62,3,78,5,87,12,83,16,76,10,62,8,49,10,42,14,40,20,44,28"/>
+<area shape="rect" href="class_song_list_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="167,29,218,56"/>
+<area shape="poly" title=" " alt="" coords="119,40,151,40,151,45,119,45"/>
+<area shape="rect" href="class_song_list_widget.html#a7fd65dabfe391277e2b6816d69dd4181" title="初始化歌单块" alt="" coords="266,29,337,56"/>
+<area shape="poly" title=" " alt="" coords="218,40,250,40,250,45,218,45"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget_abd40b6ba99264ffdc042aeaf52a06534_icgraph.png" border="0" usemap="#aclass_song_list_widget_abd40b6ba99264ffdc042aeaf52a06534_icgraph" alt=""/></div>
+<map name="aclass_song_list_widget_abd40b6ba99264ffdc042aeaf52a06534_icgraph" id="aclass_song_list_widget_abd40b6ba99264ffdc042aeaf52a06534_icgraph">
+<area shape="rect" title="构造函数，初始化歌单界面" alt="" coords="5,29,119,56"/>
+<area shape="poly" title=" " alt="" coords="80,16,74,10,62,8,51,10,45,14,43,20,46,28,41,30,38,20,40,11,49,5,62,3,76,5,84,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a50af3e5b66e1e5adcf1cbf7c144f7259" name="a50af3e5b66e1e5adcf1cbf7c144f7259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50af3e5b66e1e5adcf1cbf7c144f7259">&#9670;&#160;</a></span>~SongListWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_song_list_widget.html">SongListWidget</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，清理资源 </p>
+<p>&lt; 删除 UI</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7eb87a6d4464680c455d278d1d32eba6" name="a7eb87a6d4464680c455d278d1d32eba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb87a6d4464680c455d278d1d32eba6">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>事件过滤器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>监听对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>动态切换搜索图标颜色 </dd></dl>
+<p>&lt; 设置蓝色搜索图标</p>
+<p>&lt; 设置黑色搜索图标</p>
+<p>&lt; 调用父类过滤器</p>
+
+</div>
+</div>
+<a id="a7fd65dabfe391277e2b6816d69dd4181" name="a7fd65dabfe391277e2b6816d69dd4181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fd65dabfe391277e2b6816d69dd4181">&#9670;&#160;</a></span>initBlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initBlock </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化歌单块 </p>
+<dl class="section note"><dt>注解</dt><dd>添加歌单块到布局 </dd></dl>
+<p>&lt; 创建水平布局</p>
+<p>&lt; 设置间距</p>
+<p>&lt; 设置布局</p>
+<p>&lt; 定义歌单标题</p>
+<p>&lt; 创建歌单块</p>
+<p>&lt; 设置标题</p>
+<p>&lt; 设置“我喜欢”封面</p>
+<p>&lt; 设置其他封面</p>
+<p>&lt; 添加到布局</p>
+<p>&lt; 添加拉伸项</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget_a7fd65dabfe391277e2b6816d69dd4181_icgraph.png" border="0" usemap="#aclass_song_list_widget_a7fd65dabfe391277e2b6816d69dd4181_icgraph" alt=""/></div>
+<map name="aclass_song_list_widget_a7fd65dabfe391277e2b6816d69dd4181_icgraph" id="aclass_song_list_widget_a7fd65dabfe391277e2b6816d69dd4181_icgraph">
+<area shape="rect" title="初始化歌单块" alt="" coords="266,29,337,56"/>
+<area shape="rect" href="class_song_list_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="167,29,218,56"/>
+<area shape="poly" title=" " alt="" coords="250,45,219,45,219,40,250,40"/>
+<area shape="rect" href="class_song_list_widget.html#abd40b6ba99264ffdc042aeaf52a06534" title="构造函数，初始化歌单界面" alt="" coords="5,29,119,56"/>
+<area shape="poly" title=" " alt="" coords="151,45,119,45,119,40,151,40"/>
+<area shape="poly" title=" " alt="" coords="83,16,76,10,62,8,49,10,42,14,40,20,44,28,39,30,35,21,38,11,47,5,62,3,78,5,87,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afba6e95967cc3eb25fd518f7bde6ec04" name="afba6e95967cc3eb25fd518f7bde6ec04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba6e95967cc3eb25fd518f7bde6ec04">&#9670;&#160;</a></span>initUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initUi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化界面 </p>
+<dl class="section note"><dt>注解</dt><dd>设置批量操作按钮、搜索栏和事件过滤器 </dd></dl>
+<p>&lt; 设置批量操作图标</p>
+<p>&lt; 设置搜索栏占位文本</p>
+<p>&lt; 设置搜索栏最大宽度</p>
+<p>&lt; 设置搜索栏字体</p>
+<p>&lt; 设置字体加粗</p>
+<p>&lt; 应用字体</p>
+<p>&lt; 创建搜索动作</p>
+<p>&lt; 添加搜索动作到右侧</p>
+<p>&lt; 获取搜索按钮</p>
+<p>&lt; 创建搜索按钮工具提示</p>
+<p>&lt; 设置搜索提示</p>
+<p>&lt; 安装搜索按钮事件过滤器</p>
+<p>&lt; 初始化歌单块</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph.png" border="0" usemap="#aclass_song_list_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" alt=""/></div>
+<map name="aclass_song_list_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" id="aclass_song_list_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph">
+<area shape="rect" title="初始化界面" alt="" coords="5,5,57,32"/>
+<area shape="rect" href="class_song_list_widget.html#a7fd65dabfe391277e2b6816d69dd4181" title="初始化歌单块" alt="" coords="105,5,176,32"/>
+<area shape="poly" title=" " alt="" coords="57,16,89,16,89,21,57,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph.png" border="0" usemap="#aclass_song_list_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" alt=""/></div>
+<map name="aclass_song_list_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" id="aclass_song_list_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph">
+<area shape="rect" title="初始化界面" alt="" coords="167,29,218,56"/>
+<area shape="rect" href="class_song_list_widget.html#abd40b6ba99264ffdc042aeaf52a06534" title="构造函数，初始化歌单界面" alt="" coords="5,29,119,56"/>
+<area shape="poly" title=" " alt="" coords="151,45,119,45,119,40,151,40"/>
+<area shape="poly" title=" " alt="" coords="83,16,76,10,62,8,49,10,42,14,40,20,44,28,39,30,35,21,38,11,47,5,62,3,78,5,87,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab4d3c795be146b123cb6496f5da4cbb9" name="ab4d3c795be146b123cb6496f5da4cbb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d3c795be146b123cb6496f5da4cbb9">&#9670;&#160;</a></span>on_batch_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_batch_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>批量操作按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示未实现提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget_ab4d3c795be146b123cb6496f5da4cbb9_cgraph.png" border="0" usemap="#aclass_song_list_widget_ab4d3c795be146b123cb6496f5da4cbb9_cgraph" alt=""/></div>
+<map name="aclass_song_list_widget_ab4d3c795be146b123cb6496f5da4cbb9_cgraph" id="aclass_song_list_widget_ab4d3c795be146b123cb6496f5da4cbb9_cgraph">
+<area shape="rect" title="批量操作按钮点击槽函数" alt="" coords="5,47,146,89"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="267,29,306,56"/>
+<area shape="poly" title=" " alt="" coords="146,57,251,44,252,49,146,62"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="194,80,379,107"/>
+<area shape="poly" title=" " alt="" coords="146,74,178,78,178,83,146,79"/>
+<area shape="poly" title=" " alt="" coords="265,39,248,28,245,15,259,6,286,3,310,5,324,11,328,21,322,31,317,27,323,20,320,15,308,10,286,8,261,11,250,17,252,25,268,34"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="427,80,640,107"/>
+<area shape="poly" title=" " alt="" coords="379,91,411,91,411,96,379,96"/>
+<area shape="poly" title=" " alt="" coords="494,81,487,71,492,61,508,55,534,53,562,56,577,63,574,68,561,61,534,59,509,61,496,65,492,71,499,78"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="688,72,848,115"/>
+<area shape="poly" title=" " alt="" coords="641,91,673,91,673,96,641,96"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63ddf64ee2f48649476d7938232ea7f3" name="a63ddf64ee2f48649476d7938232ea7f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ddf64ee2f48649476d7938232ea7f3">&#9670;&#160;</a></span>on_import_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_import_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>导入按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示未实现提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_song_list_widget_a63ddf64ee2f48649476d7938232ea7f3_cgraph.png" border="0" usemap="#aclass_song_list_widget_a63ddf64ee2f48649476d7938232ea7f3_cgraph" alt=""/></div>
+<map name="aclass_song_list_widget_a63ddf64ee2f48649476d7938232ea7f3_cgraph" id="aclass_song_list_widget_a63ddf64ee2f48649476d7938232ea7f3_cgraph">
+<area shape="rect" title="导入按钮点击槽函数" alt="" coords="5,47,150,89"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="271,29,310,56"/>
+<area shape="poly" title=" " alt="" coords="150,57,255,44,256,49,150,62"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="198,80,383,107"/>
+<area shape="poly" title=" " alt="" coords="150,74,182,78,182,83,150,79"/>
+<area shape="poly" title=" " alt="" coords="269,39,251,28,249,15,263,6,290,3,314,5,328,11,333,21,326,31,322,27,327,20,325,15,313,10,290,8,264,11,254,17,256,25,272,34"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="431,80,644,107"/>
+<area shape="poly" title=" " alt="" coords="383,91,415,91,415,96,383,96"/>
+<area shape="poly" title=" " alt="" coords="498,81,491,71,496,61,512,55,538,53,566,56,581,63,578,68,565,61,538,59,513,61,500,65,496,71,503,78"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="692,72,852,115"/>
+<area shape="poly" title=" " alt="" coords="645,91,677,91,677,96,645,96"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab6c42d383d83d4acdfb5081e799c29da" name="ab6c42d383d83d4acdfb5081e799c29da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c42d383d83d4acdfb5081e799c29da">&#9670;&#160;</a></span>m_searchAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* m_searchAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>搜索动作 </p>
+
+</div>
+</div>
+<a id="a0980a16446f9b268a55500fbe4664762" name="a0980a16446f9b268a55500fbe4664762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0980a16446f9b268a55500fbe4664762">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::SongListWidget* ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI 指针 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_song_list_widget_8h_source.html">SongListWidget.h</a></li>
+<li><a class="el" href="_song_list_widget_8cpp.html">SongListWidget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_song_list_widget.html">SongListWidget</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

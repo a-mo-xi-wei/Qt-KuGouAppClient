@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: aes_ctr.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('aes__ctr_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">aes_ctr.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="attributes_8h_source.html">attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h_source.html">version.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+aes_ctr.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="aes__ctr_8h__incl.png" border="0" usemap="#aaes__ctr_8h" alt=""/></div>
+<map name="aaes__ctr_8h" id="aaes__ctr_8h">
+<area shape="rect" title=" " alt="" coords="100,5,175,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,70,107"/>
+<area shape="poly" title=" " alt="" coords="122,35,69,73,66,68,119,30"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="94,80,181,107"/>
+<area shape="poly" title=" " alt="" coords="140,33,140,64,135,64,135,33"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="204,80,279,107"/>
+<area shape="poly" title=" " alt="" coords="157,30,213,69,210,73,154,35"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="204,155,279,181"/>
+<area shape="poly" title=" " alt="" coords="244,107,244,139,239,139,239,107"/>
+</map>
+</div>
+</div>
+<p><a href="aes__ctr_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a97028740606e579d336c51f7523ce2bf" id="r_a97028740606e579d336c51f7523ce2bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97028740606e579d336c51f7523ce2bf">AES_CTR_KEY_SIZE</a>&#160;&#160;&#160;(16)</td></tr>
+<tr class="separator:a97028740606e579d336c51f7523ce2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb5971619f6b5631a2fe795f046d8d3" id="r_a0eb5971619f6b5631a2fe795f046d8d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0eb5971619f6b5631a2fe795f046d8d3">AES_CTR_IV_SIZE</a>&#160;&#160;&#160;(8)</td></tr>
+<tr class="separator:a0eb5971619f6b5631a2fe795f046d8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a1bb3a25bb42767fce2c4bc9ea94013a5" id="r_a1bb3a25bb42767fce2c4bc9ea94013a5"><td class="memItemLeft" align="right" valign="top">struct AVAESCTR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bb3a25bb42767fce2c4bc9ea94013a5">av_aes_ctr_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a1bb3a25bb42767fce2c4bc9ea94013a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an AVAESCTR context.  <br /></td></tr>
+<tr class="separator:a1bb3a25bb42767fce2c4bc9ea94013a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ef9fcf05bf94767b2bf18edca7ffda" id="r_a37ef9fcf05bf94767b2bf18edca7ffda"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37ef9fcf05bf94767b2bf18edca7ffda">av_aes_ctr_init</a> (struct AVAESCTR *<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a2c826a83964b85167f50f7bf527badf1">key</a>)</td></tr>
+<tr class="memdesc:a37ef9fcf05bf94767b2bf18edca7ffda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an AVAESCTR context.  <br /></td></tr>
+<tr class="separator:a37ef9fcf05bf94767b2bf18edca7ffda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a651580f87845fc3ba201abeecb5442e6" id="r_a651580f87845fc3ba201abeecb5442e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a651580f87845fc3ba201abeecb5442e6">av_aes_ctr_free</a> (struct AVAESCTR *<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>)</td></tr>
+<tr class="memdesc:a651580f87845fc3ba201abeecb5442e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release an AVAESCTR context.  <br /></td></tr>
+<tr class="separator:a651580f87845fc3ba201abeecb5442e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5349eb4f428e432e09617c18195014d8" id="r_a5349eb4f428e432e09617c18195014d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5349eb4f428e432e09617c18195014d8">av_aes_ctr_crypt</a> (struct AVAESCTR *<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>, int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="memdesc:a5349eb4f428e432e09617c18195014d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a buffer using a previously initialized context.  <br /></td></tr>
+<tr class="separator:a5349eb4f428e432e09617c18195014d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4bb4bb038d0afeca34904bf32c47c34" id="r_ae4bb4bb038d0afeca34904bf32c47c34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4bb4bb038d0afeca34904bf32c47c34">av_aes_ctr_get_iv</a> (struct AVAESCTR *<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>)</td></tr>
+<tr class="memdesc:ae4bb4bb038d0afeca34904bf32c47c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current iv  <br /></td></tr>
+<tr class="separator:ae4bb4bb038d0afeca34904bf32c47c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93eb462d10972d618f3c7a3a945240eb" id="r_a93eb462d10972d618f3c7a3a945240eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93eb462d10972d618f3c7a3a945240eb">av_aes_ctr_set_random_iv</a> (struct AVAESCTR *<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>)</td></tr>
+<tr class="memdesc:a93eb462d10972d618f3c7a3a945240eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a random iv  <br /></td></tr>
+<tr class="separator:a93eb462d10972d618f3c7a3a945240eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5f73ba7cd7ea7c09b21218c39951f9" id="r_a1d5f73ba7cd7ea7c09b21218c39951f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d5f73ba7cd7ea7c09b21218c39951f9">av_aes_ctr_set_iv</a> (struct AVAESCTR *<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *iv)</td></tr>
+<tr class="memdesc:a1d5f73ba7cd7ea7c09b21218c39951f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forcefully change the 8-byte iv  <br /></td></tr>
+<tr class="separator:a1d5f73ba7cd7ea7c09b21218c39951f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5048a65b4d63738e454bd02751fe56e9" id="r_a5048a65b4d63738e454bd02751fe56e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5048a65b4d63738e454bd02751fe56e9">av_aes_ctr_set_full_iv</a> (struct AVAESCTR *<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *iv)</td></tr>
+<tr class="memdesc:a5048a65b4d63738e454bd02751fe56e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forcefully change the "full" 16-byte iv, including the counter  <br /></td></tr>
+<tr class="separator:a5048a65b4d63738e454bd02751fe56e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c61a46cb240ef27f4c8f458255f6152" id="r_a6c61a46cb240ef27f4c8f458255f6152"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c61a46cb240ef27f4c8f458255f6152">av_aes_ctr_increment_iv</a> (struct AVAESCTR *<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>)</td></tr>
+<tr class="memdesc:a6c61a46cb240ef27f4c8f458255f6152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the top 64 bit of the iv (performed after each frame)  <br /></td></tr>
+<tr class="separator:a6c61a46cb240ef27f4c8f458255f6152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a0eb5971619f6b5631a2fe795f046d8d3" name="a0eb5971619f6b5631a2fe795f046d8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb5971619f6b5631a2fe795f046d8d3">&#9670;&#160;</a></span>AES_CTR_IV_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AES_CTR_IV_SIZE&#160;&#160;&#160;(8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97028740606e579d336c51f7523ce2bf" name="a97028740606e579d336c51f7523ce2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97028740606e579d336c51f7523ce2bf">&#9670;&#160;</a></span>AES_CTR_KEY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AES_CTR_KEY_SIZE&#160;&#160;&#160;(16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a1bb3a25bb42767fce2c4bc9ea94013a5" name="a1bb3a25bb42767fce2c4bc9ea94013a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bb3a25bb42767fce2c4bc9ea94013a5">&#9670;&#160;</a></span>av_aes_ctr_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct AVAESCTR * av_aes_ctr_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate an AVAESCTR context. </p>
+
+</div>
+</div>
+<a id="a5349eb4f428e432e09617c18195014d8" name="a5349eb4f428e432e09617c18195014d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5349eb4f428e432e09617c18195014d8">&#9670;&#160;</a></span>av_aes_ctr_crypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_aes_ctr_crypt </td>
+          <td>(</td>
+          <td class="paramtype">struct AVAESCTR *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Process a buffer using a previously initialized context. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst</td><td>destination array, can be equal to src </td></tr>
+    <tr><td class="paramname">src</td><td>source array, can be equal to dst </td></tr>
+    <tr><td class="paramname">size</td><td>the size of src and dst </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a651580f87845fc3ba201abeecb5442e6" name="a651580f87845fc3ba201abeecb5442e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a651580f87845fc3ba201abeecb5442e6">&#9670;&#160;</a></span>av_aes_ctr_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_aes_ctr_free </td>
+          <td>(</td>
+          <td class="paramtype">struct AVAESCTR *</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Release an AVAESCTR context. </p>
+
+</div>
+</div>
+<a id="ae4bb4bb038d0afeca34904bf32c47c34" name="ae4bb4bb038d0afeca34904bf32c47c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4bb4bb038d0afeca34904bf32c47c34">&#9670;&#160;</a></span>av_aes_ctr_get_iv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * av_aes_ctr_get_iv </td>
+          <td>(</td>
+          <td class="paramtype">struct AVAESCTR *</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current iv </p>
+
+</div>
+</div>
+<a id="a6c61a46cb240ef27f4c8f458255f6152" name="a6c61a46cb240ef27f4c8f458255f6152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c61a46cb240ef27f4c8f458255f6152">&#9670;&#160;</a></span>av_aes_ctr_increment_iv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_aes_ctr_increment_iv </td>
+          <td>(</td>
+          <td class="paramtype">struct AVAESCTR *</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increment the top 64 bit of the iv (performed after each frame) </p>
+
+</div>
+</div>
+<a id="a37ef9fcf05bf94767b2bf18edca7ffda" name="a37ef9fcf05bf94767b2bf18edca7ffda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37ef9fcf05bf94767b2bf18edca7ffda">&#9670;&#160;</a></span>av_aes_ctr_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_aes_ctr_init </td>
+          <td>(</td>
+          <td class="paramtype">struct AVAESCTR *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize an AVAESCTR context. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>encryption key, must have a length of AES_CTR_KEY_SIZE </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5048a65b4d63738e454bd02751fe56e9" name="a5048a65b4d63738e454bd02751fe56e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5048a65b4d63738e454bd02751fe56e9">&#9670;&#160;</a></span>av_aes_ctr_set_full_iv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_aes_ctr_set_full_iv </td>
+          <td>(</td>
+          <td class="paramtype">struct AVAESCTR *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>iv</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Forcefully change the "full" 16-byte iv, including the counter </p>
+
+</div>
+</div>
+<a id="a1d5f73ba7cd7ea7c09b21218c39951f9" name="a1d5f73ba7cd7ea7c09b21218c39951f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d5f73ba7cd7ea7c09b21218c39951f9">&#9670;&#160;</a></span>av_aes_ctr_set_iv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_aes_ctr_set_iv </td>
+          <td>(</td>
+          <td class="paramtype">struct AVAESCTR *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>iv</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Forcefully change the 8-byte iv </p>
+
+</div>
+</div>
+<a id="a93eb462d10972d618f3c7a3a945240eb" name="a93eb462d10972d618f3c7a3a945240eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93eb462d10972d618f3c7a3a945240eb">&#9670;&#160;</a></span>av_aes_ctr_set_random_iv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_aes_ctr_set_random_iv </td>
+          <td>(</td>
+          <td class="paramtype">struct AVAESCTR *</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate a random iv </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="aes__ctr_8h.html">aes_ctr.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

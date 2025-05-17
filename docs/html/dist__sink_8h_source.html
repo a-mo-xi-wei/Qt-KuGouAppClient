@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: dist_sink.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dist__sink_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">dist_sink.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="dist__sink_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright(c) 2015-present, Gabi Melman &amp; spdlog contributors.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Distributed under the MIT License (http://opensource.org/licenses/MIT)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="base__sink_8h.html">base_sink.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="log__msg_8h.html">spdlog/details/log_msg.h</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="null__mutex_8h.html">spdlog/details/null_mutex.h</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="pattern__formatter_8h.html">spdlog/pattern_formatter.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// Distribution sink (mux). Stores a vector of sinks which get called when log</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// is called</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog.html">spdlog</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog_1_1sinks.html">sinks</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Mutex&gt;</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html">   23</a></span><span class="keyword">class </span><a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#abec331fef1c2c8767579432a00ee8990">dist_sink</a> : <span class="keyword">public</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1base__sink.html#a14d5b40be14161d3353c0f4c0bc1f71f">base_sink</a>&lt;Mutex&gt; {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#abec331fef1c2c8767579432a00ee8990">   25</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#abec331fef1c2c8767579432a00ee8990">dist_sink</a>() = <span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#a1f4bc93c4c533f7025532fcef58ec2f2">   26</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a1f4bc93c4c533f7025532fcef58ec2f2">dist_sink</a>(std::vector&lt;std::shared_ptr&lt;sink&gt;&gt; <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#ae703f51c767a60c274c22b80df75246f">sinks</a>)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        : <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>(<a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#ae703f51c767a60c274c22b80df75246f">sinks</a>) {}</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#adc4723062886938e65a784db2c41c3ed">   29</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#adc4723062886938e65a784db2c41c3ed">dist_sink</a>(<span class="keyword">const</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#abec331fef1c2c8767579432a00ee8990">dist_sink</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#a403312bc4ce0a7a91faf2df0559210a0">   30</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#abec331fef1c2c8767579432a00ee8990">dist_sink</a> &amp;<a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a403312bc4ce0a7a91faf2df0559210a0">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#abec331fef1c2c8767579432a00ee8990">dist_sink</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#afbd13f575bd7230f4f00da5650fb12e8">   32</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#afbd13f575bd7230f4f00da5650fb12e8">add_sink</a>(std::shared_ptr&lt;sink&gt; sub_sink) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        std::lock_guard&lt;Mutex&gt; lock(<a class="code hl_variable" href="classspdlog_1_1sinks_1_1base__sink.html#a01268d7e44c318a733a4c6c4d08deb04">base_sink&lt;Mutex&gt;::mutex_</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>.push_back(sub_sink);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#a94de5b1fd9000c8234d934cd4c758b3b">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a94de5b1fd9000c8234d934cd4c758b3b">remove_sink</a>(std::shared_ptr&lt;sink&gt; sub_sink) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        std::lock_guard&lt;Mutex&gt; lock(<a class="code hl_variable" href="classspdlog_1_1sinks_1_1base__sink.html#a01268d7e44c318a733a4c6c4d08deb04">base_sink&lt;Mutex&gt;::mutex_</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>.erase(std::remove(<a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>.begin(), <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>.end(), sub_sink), <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>.end());</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#a72203c6147112398f052a10384d67df2">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a72203c6147112398f052a10384d67df2">set_sinks</a>(std::vector&lt;std::shared_ptr&lt;sink&gt;&gt; <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#ae703f51c767a60c274c22b80df75246f">sinks</a>) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::lock_guard&lt;Mutex&gt; lock(<a class="code hl_variable" href="classspdlog_1_1sinks_1_1base__sink.html#a01268d7e44c318a733a4c6c4d08deb04">base_sink&lt;Mutex&gt;::mutex_</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a> = std::move(<a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#ae703f51c767a60c274c22b80df75246f">sinks</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#ae703f51c767a60c274c22b80df75246f">   47</a></span>    std::vector&lt;std::shared_ptr&lt;sink&gt;&gt; &amp;<a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#ae703f51c767a60c274c22b80df75246f">sinks</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#a218d132667a573552a90e2bfc260c982">   50</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a218d132667a573552a90e2bfc260c982">sink_it_</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;sub_sink : <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">if</span> (sub_sink-&gt;should_log(msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#a4c76064e80cfd5db64db44349fbc4402">level</a>)) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                sub_sink-&gt;log(msg);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#a6147bda700ff2ba530941e4e33bfbb99">   58</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a6147bda700ff2ba530941e4e33bfbb99">flush_</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;sub_sink : <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            sub_sink-&gt;flush();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#a853a2f149148aecfd20db24486d1afbc">   64</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a853a2f149148aecfd20db24486d1afbc">set_pattern_</a>(<span class="keyword">const</span> std::string &amp;pattern)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a259c031bdcc1f4cd0c5571ef5a93ce3c">set_formatter_</a>(<a class="code hl_function" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef">details::make_unique&lt;spdlog::pattern_formatter&gt;</a>(pattern));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#a259c031bdcc1f4cd0c5571ef5a93ce3c">   68</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1dist__sink.html#a259c031bdcc1f4cd0c5571ef5a93ce3c">set_formatter_</a>(std::unique_ptr&lt;spdlog::formatter&gt; sink_formatter)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_variable" href="classspdlog_1_1sinks_1_1base__sink.html#a5a30b70b2c72cb5bda34170d8151ad0c">base_sink&lt;Mutex&gt;::formatter_</a> = std::move(sink_formatter);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;sub_sink : <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            sub_sink-&gt;set_formatter(<a class="code hl_variable" href="classspdlog_1_1sinks_1_1base__sink.html#a5a30b70b2c72cb5bda34170d8151ad0c">base_sink&lt;Mutex&gt;::formatter_</a>-&gt;clone());</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">   74</a></span>    std::vector&lt;std::shared_ptr&lt;sink&gt;&gt; <a class="code hl_variable" href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">sinks_</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#ad0c7941f0ddc05d3fafa3d7bcda3c5c7">   77</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#ad0c7941f0ddc05d3fafa3d7bcda3c5c7">dist_sink_mt</a> = <a class="code hl_class" href="classspdlog_1_1sinks_1_1dist__sink.html">dist_sink&lt;std::mutex&gt;</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#a24b1b3759623f49844f1400c61138b0a">   78</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a24b1b3759623f49844f1400c61138b0a">dist_sink_st</a> = <a class="code hl_class" href="classspdlog_1_1sinks_1_1dist__sink.html">dist_sink&lt;details::null_mutex&gt;</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}  <span class="comment">// namespace sinks</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}  <span class="comment">// namespace spdlog</span></div>
+<div class="ttc" id="abase__sink_8h_html"><div class="ttname"><a href="base__sink_8h.html">base_sink.h</a></div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1base__sink_html_a01268d7e44c318a733a4c6c4d08deb04"><div class="ttname"><a href="classspdlog_1_1sinks_1_1base__sink.html#a01268d7e44c318a733a4c6c4d08deb04">spdlog::sinks::base_sink::mutex_</a></div><div class="ttdeci">Mutex mutex_</div><div class="ttdef"><b>定义</b> base_sink.h:39</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1base__sink_html_a14d5b40be14161d3353c0f4c0bc1f71f"><div class="ttname"><a href="classspdlog_1_1sinks_1_1base__sink.html#a14d5b40be14161d3353c0f4c0bc1f71f">spdlog::sinks::base_sink::base_sink</a></div><div class="ttdeci">base_sink()</div><div class="ttdef"><b>定义</b> base_sink-inl.h:17</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1base__sink_html_a5a30b70b2c72cb5bda34170d8151ad0c"><div class="ttname"><a href="classspdlog_1_1sinks_1_1base__sink.html#a5a30b70b2c72cb5bda34170d8151ad0c">spdlog::sinks::base_sink::formatter_</a></div><div class="ttdeci">std::unique_ptr&lt; spdlog::formatter &gt; formatter_</div><div class="ttdef"><b>定义</b> base_sink.h:38</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html">spdlog::sinks::dist_sink</a></div><div class="ttdef"><b>定义</b> dist_sink.h:23</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_a1f4bc93c4c533f7025532fcef58ec2f2"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#a1f4bc93c4c533f7025532fcef58ec2f2">spdlog::sinks::dist_sink::dist_sink</a></div><div class="ttdeci">dist_sink(std::vector&lt; std::shared_ptr&lt; sink &gt; &gt; sinks)</div><div class="ttdef"><b>定义</b> dist_sink.h:26</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_a218d132667a573552a90e2bfc260c982"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#a218d132667a573552a90e2bfc260c982">spdlog::sinks::dist_sink::sink_it_</a></div><div class="ttdeci">void sink_it_(const details::log_msg &amp;msg) override</div><div class="ttdef"><b>定义</b> dist_sink.h:50</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_a259c031bdcc1f4cd0c5571ef5a93ce3c"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#a259c031bdcc1f4cd0c5571ef5a93ce3c">spdlog::sinks::dist_sink::set_formatter_</a></div><div class="ttdeci">void set_formatter_(std::unique_ptr&lt; spdlog::formatter &gt; sink_formatter) override</div><div class="ttdef"><b>定义</b> dist_sink.h:68</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_a403312bc4ce0a7a91faf2df0559210a0"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#a403312bc4ce0a7a91faf2df0559210a0">spdlog::sinks::dist_sink::operator=</a></div><div class="ttdeci">dist_sink &amp; operator=(const dist_sink &amp;)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_a6147bda700ff2ba530941e4e33bfbb99"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#a6147bda700ff2ba530941e4e33bfbb99">spdlog::sinks::dist_sink::flush_</a></div><div class="ttdeci">void flush_() override</div><div class="ttdef"><b>定义</b> dist_sink.h:58</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_a72203c6147112398f052a10384d67df2"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#a72203c6147112398f052a10384d67df2">spdlog::sinks::dist_sink::set_sinks</a></div><div class="ttdeci">void set_sinks(std::vector&lt; std::shared_ptr&lt; sink &gt; &gt; sinks)</div><div class="ttdef"><b>定义</b> dist_sink.h:42</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_a853a2f149148aecfd20db24486d1afbc"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#a853a2f149148aecfd20db24486d1afbc">spdlog::sinks::dist_sink::set_pattern_</a></div><div class="ttdeci">void set_pattern_(const std::string &amp;pattern) override</div><div class="ttdef"><b>定义</b> dist_sink.h:64</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_a94de5b1fd9000c8234d934cd4c758b3b"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#a94de5b1fd9000c8234d934cd4c758b3b">spdlog::sinks::dist_sink::remove_sink</a></div><div class="ttdeci">void remove_sink(std::shared_ptr&lt; sink &gt; sub_sink)</div><div class="ttdef"><b>定义</b> dist_sink.h:37</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_abec331fef1c2c8767579432a00ee8990"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#abec331fef1c2c8767579432a00ee8990">spdlog::sinks::dist_sink::dist_sink</a></div><div class="ttdeci">dist_sink()=default</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_abf4c86f59f620283a95cf3a51f6138c0"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#abf4c86f59f620283a95cf3a51f6138c0">spdlog::sinks::dist_sink&lt; std::mutex &gt;::sinks_</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; sink &gt; &gt; sinks_</div><div class="ttdef"><b>定义</b> dist_sink.h:74</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_adc4723062886938e65a784db2c41c3ed"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#adc4723062886938e65a784db2c41c3ed">spdlog::sinks::dist_sink::dist_sink</a></div><div class="ttdeci">dist_sink(const dist_sink &amp;)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_ae703f51c767a60c274c22b80df75246f"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#ae703f51c767a60c274c22b80df75246f">spdlog::sinks::dist_sink&lt; std::mutex &gt;::sinks</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; sink &gt; &gt; &amp; sinks()</div><div class="ttdef"><b>定义</b> dist_sink.h:47</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1dist__sink_html_afbd13f575bd7230f4f00da5650fb12e8"><div class="ttname"><a href="classspdlog_1_1sinks_1_1dist__sink.html#afbd13f575bd7230f4f00da5650fb12e8">spdlog::sinks::dist_sink::add_sink</a></div><div class="ttdeci">void add_sink(std::shared_ptr&lt; sink &gt; sub_sink)</div><div class="ttdef"><b>定义</b> dist_sink.h:32</div></div>
+<div class="ttc" id="alog__msg_8h_html"><div class="ttname"><a href="log__msg_8h.html">log_msg.h</a></div></div>
+<div class="ttc" id="anamespacespdlog_1_1details_html_a2d5a8a422b22079ac963f0bbfdddbcef"><div class="ttname"><a href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef">spdlog::details::make_unique</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; make_unique(Args &amp;&amp;...args)</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:384</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html"><div class="ttname"><a href="namespacespdlog_1_1sinks.html">spdlog::sinks</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:127</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a24b1b3759623f49844f1400c61138b0a"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a24b1b3759623f49844f1400c61138b0a">spdlog::sinks::dist_sink_st</a></div><div class="ttdeci">dist_sink&lt; details::null_mutex &gt; dist_sink_st</div><div class="ttdef"><b>定义</b> dist_sink.h:78</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_ad0c7941f0ddc05d3fafa3d7bcda3c5c7"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#ad0c7941f0ddc05d3fafa3d7bcda3c5c7">spdlog::sinks::dist_sink_mt</a></div><div class="ttdeci">dist_sink&lt; std::mutex &gt; dist_sink_mt</div><div class="ttdef"><b>定义</b> dist_sink.h:77</div></div>
+<div class="ttc" id="anamespacespdlog_html"><div class="ttname"><a href="namespacespdlog.html">spdlog</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:25</div></div>
+<div class="ttc" id="anull__mutex_8h_html"><div class="ttname"><a href="null__mutex_8h.html">null_mutex.h</a></div></div>
+<div class="ttc" id="apattern__formatter_8h_html"><div class="ttname"><a href="pattern__formatter_8h.html">pattern_formatter.h</a></div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html">spdlog::details::log_msg</a></div><div class="ttdef"><b>定义</b> log_msg.h:11</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html_a4c76064e80cfd5db64db44349fbc4402"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html#a4c76064e80cfd5db64db44349fbc4402">spdlog::details::log_msg::level</a></div><div class="ttdeci">level::level_enum level</div><div class="ttdef"><b>定义</b> log_msg.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="dir_fa8338fc4b4a83904b44433ebb24174a.html">sinks</a></li><li class="navelem"><a class="el" href="dist__sink_8h.html">dist_sink.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

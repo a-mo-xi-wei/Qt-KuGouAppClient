@@ -1,0 +1,1567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ansicolor_sink&lt; ConsoleMutex &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classspdlog_1_1sinks_1_1ansicolor__sink.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classspdlog_1_1sinks_1_1ansicolor__sink-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ansicolor_sink&lt; ConsoleMutex &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This sink prefixes the output with an ANSI escape sequence color code depending on the severity of the message.  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ansicolor__sink_8h_source.html">ansicolor_sink.h</a>&gt;</code></p>
+<div class="dynheader">
+类 ansicolor_sink&lt; ConsoleMutex &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink__inherit__graph.png" border="0" usemap="#aansicolor__sink_3_01_console_mutex_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="aansicolor__sink_3_01_console_mutex_01_4_inherit__map" id="aansicolor__sink_3_01_console_mutex_01_4_inherit__map">
+<area shape="rect" title="This sink prefixes the output with an ANSI escape sequence color code depending on the severity of th..." alt="" coords="99,180,311,207"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stderr__sink.html" title=" " alt="" coords="369,5,548,48"/>
+<area shape="poly" title=" " alt="" coords="227,167,283,112,319,83,358,58,381,46,384,51,360,62,322,88,286,116,230,171"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stderr__sink.html" title=" " alt="" coords="359,72,558,115"/>
+<area shape="poly" title=" " alt="" coords="249,171,358,124,389,113,391,118,360,129,251,176"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html" title=" " alt="" coords="369,139,548,181"/>
+<area shape="poly" title=" " alt="" coords="326,175,368,169,369,174,327,180"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html" title=" " alt="" coords="359,205,558,248"/>
+<area shape="poly" title=" " alt="" coords="327,207,359,211,358,216,326,212"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stderr__sink.html" title=" " alt="" coords="386,272,531,315"/>
+<area shape="poly" title=" " alt="" coords="251,211,360,258,391,269,389,274,358,262,249,216"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html" title=" " alt="" coords="385,339,532,381"/>
+<area shape="poly" title=" " alt="" coords="230,216,286,270,322,299,360,324,386,337,383,341,358,329,319,303,283,274,227,220"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1sink.html" title=" " alt="" coords="5,180,51,207"/>
+<area shape="poly" title=" " alt="" coords="66,191,98,191,98,196,66,196"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+ansicolor_sink&lt; ConsoleMutex &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink__coll__graph.png" border="0" usemap="#aansicolor__sink_3_01_console_mutex_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aansicolor__sink_3_01_console_mutex_01_4_coll__map" id="aansicolor__sink_3_01_console_mutex_01_4_coll__map">
+<area shape="rect" title="This sink prefixes the output with an ANSI escape sequence color code depending on the severity of th..." alt="" coords="5,80,218,107"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1sink.html" title=" " alt="" coords="89,5,134,32"/>
+<area shape="poly" title=" " alt="" coords="114,48,114,80,109,80,109,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a252c0b81a272a961f6d8deee79ee2611" id="r_a252c0b81a272a961f6d8deee79ee2611"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a252c0b81a272a961f6d8deee79ee2611">mutex_t</a> = typename ConsoleMutex::mutex_t</td></tr>
+<tr class="separator:a252c0b81a272a961f6d8deee79ee2611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0fa9feccb7636d5e9719cedf1717b782" id="r_a0fa9feccb7636d5e9719cedf1717b782"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fa9feccb7636d5e9719cedf1717b782">ansicolor_sink</a> (FILE *target_file, <a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode)</td></tr>
+<tr class="separator:a0fa9feccb7636d5e9719cedf1717b782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea73f5d3b40341a99141e53ef73c4668" id="r_aea73f5d3b40341a99141e53ef73c4668"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea73f5d3b40341a99141e53ef73c4668">~ansicolor_sink</a> () override=default</td></tr>
+<tr class="separator:aea73f5d3b40341a99141e53ef73c4668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e7309e63cf2c1735e56017c942a201" id="r_ab2e7309e63cf2c1735e56017c942a201"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2e7309e63cf2c1735e56017c942a201">ansicolor_sink</a> (const <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;other)=delete</td></tr>
+<tr class="separator:ab2e7309e63cf2c1735e56017c942a201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af206c246080ea0ac9365c0c56bc83ee2" id="r_af206c246080ea0ac9365c0c56bc83ee2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af206c246080ea0ac9365c0c56bc83ee2">ansicolor_sink</a> (<a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;&amp;other)=delete</td></tr>
+<tr class="separator:af206c246080ea0ac9365c0c56bc83ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad709755c951c8fc49a56d4a29de39b9a" id="r_ad709755c951c8fc49a56d4a29de39b9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad709755c951c8fc49a56d4a29de39b9a">operator=</a> (const <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;other)=delete</td></tr>
+<tr class="separator:ad709755c951c8fc49a56d4a29de39b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40795ac98f509d9e6c3e72b04850c2a4" id="r_a40795ac98f509d9e6c3e72b04850c2a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40795ac98f509d9e6c3e72b04850c2a4">operator=</a> (<a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;&amp;other)=delete</td></tr>
+<tr class="separator:a40795ac98f509d9e6c3e72b04850c2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa310a9f334aa7730d36636b7dd7e3bd" id="r_aaa310a9f334aa7730d36636b7dd7e3bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa310a9f334aa7730d36636b7dd7e3bd">set_color</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> color_level, <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> <a class="el" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>)</td></tr>
+<tr class="separator:aaa310a9f334aa7730d36636b7dd7e3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44fc2263f5a2a2252290fb2baa165bed" id="r_a44fc2263f5a2a2252290fb2baa165bed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44fc2263f5a2a2252290fb2baa165bed">set_color_mode</a> (<a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode)</td></tr>
+<tr class="separator:a44fc2263f5a2a2252290fb2baa165bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae540bb6a150d702279cfefbe0ed0eca8" id="r_ae540bb6a150d702279cfefbe0ed0eca8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae540bb6a150d702279cfefbe0ed0eca8">should_color</a> () const</td></tr>
+<tr class="separator:ae540bb6a150d702279cfefbe0ed0eca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1973c0f40704ebfac3184e7a744eaa34" id="r_a1973c0f40704ebfac3184e7a744eaa34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1973c0f40704ebfac3184e7a744eaa34">log</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg) override</td></tr>
+<tr class="separator:a1973c0f40704ebfac3184e7a744eaa34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27ac71c242af9c62af634beab0798d4" id="r_ac27ac71c242af9c62af634beab0798d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac27ac71c242af9c62af634beab0798d4">flush</a> () override</td></tr>
+<tr class="separator:ac27ac71c242af9c62af634beab0798d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a540c68ae5802ece99525f62725060fcd" id="r_a540c68ae5802ece99525f62725060fcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a540c68ae5802ece99525f62725060fcd">set_pattern</a> (const std::string &amp;pattern) final override</td></tr>
+<tr class="separator:a540c68ae5802ece99525f62725060fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390b6915455eacb92d1a8914713d0b8f" id="r_a390b6915455eacb92d1a8914713d0b8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a390b6915455eacb92d1a8914713d0b8f">set_formatter</a> (std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt; sink_formatter) override</td></tr>
+<tr class="separator:a390b6915455eacb92d1a8914713d0b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classspdlog_1_1sinks_1_1sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classspdlog_1_1sinks_1_1sink')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classspdlog_1_1sinks_1_1sink.html">sink</a></td></tr>
+<tr class="memitem:a4378311607e5dff017f9f574a848d3b4 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a4378311607e5dff017f9f574a848d3b4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a4378311607e5dff017f9f574a848d3b4">~sink</a> ()=default</td></tr>
+<tr class="separator:a4378311607e5dff017f9f574a848d3b4 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b86abe856316546dfa0c1f676ee88be inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a2b86abe856316546dfa0c1f676ee88be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a2b86abe856316546dfa0c1f676ee88be">set_level</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> log_level)</td></tr>
+<tr class="separator:a2b86abe856316546dfa0c1f676ee88be inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe26ed0ab5a746f64453de6477b32479 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_abe26ed0ab5a746f64453de6477b32479"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#abe26ed0ab5a746f64453de6477b32479">level</a> () const</td></tr>
+<tr class="separator:abe26ed0ab5a746f64453de6477b32479 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ca95bf1c42999b200c46021a464410 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a60ca95bf1c42999b200c46021a464410"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a60ca95bf1c42999b200c46021a464410">should_log</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> msg_level) const</td></tr>
+<tr class="separator:a60ca95bf1c42999b200c46021a464410 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ab9bbdfadb4588031f86db4d251643cca" id="r_ab9bbdfadb4588031f86db4d251643cca"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9bbdfadb4588031f86db4d251643cca">reset</a> = &quot;\033[m&quot;</td></tr>
+<tr class="separator:ab9bbdfadb4588031f86db4d251643cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c193ee3c3100e45079164f274cdcea" id="r_af4c193ee3c3100e45079164f274cdcea"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c193ee3c3100e45079164f274cdcea">bold</a> = &quot;\033[1m&quot;</td></tr>
+<tr class="separator:af4c193ee3c3100e45079164f274cdcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f26fbde30c638343da9c970231ee21" id="r_a47f26fbde30c638343da9c970231ee21"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47f26fbde30c638343da9c970231ee21">dark</a> = &quot;\033[2m&quot;</td></tr>
+<tr class="separator:a47f26fbde30c638343da9c970231ee21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fcb19bb1ecf3f9745c92f82f3995fe1" id="r_a0fcb19bb1ecf3f9745c92f82f3995fe1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fcb19bb1ecf3f9745c92f82f3995fe1">underline</a> = &quot;\033[4m&quot;</td></tr>
+<tr class="separator:a0fcb19bb1ecf3f9745c92f82f3995fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a568a3accb355a50ba9749c7767abe6" id="r_a2a568a3accb355a50ba9749c7767abe6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a568a3accb355a50ba9749c7767abe6">blink</a> = &quot;\033[5m&quot;</td></tr>
+<tr class="separator:a2a568a3accb355a50ba9749c7767abe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c4e3da1f058fe5ea24e040be4fd3a2" id="r_a65c4e3da1f058fe5ea24e040be4fd3a2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65c4e3da1f058fe5ea24e040be4fd3a2">reverse</a> = &quot;\033[7m&quot;</td></tr>
+<tr class="separator:a65c4e3da1f058fe5ea24e040be4fd3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c57ab4f4ef13a4fd51361ada8ea160" id="r_af4c57ab4f4ef13a4fd51361ada8ea160"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c57ab4f4ef13a4fd51361ada8ea160">concealed</a> = &quot;\033[8m&quot;</td></tr>
+<tr class="separator:af4c57ab4f4ef13a4fd51361ada8ea160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b6d6354f46a1745546e12538768d52" id="r_ac3b6d6354f46a1745546e12538768d52"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3b6d6354f46a1745546e12538768d52">clear_line</a> = &quot;\033[K&quot;</td></tr>
+<tr class="separator:ac3b6d6354f46a1745546e12538768d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10165b46848726cc14f52b151305d88c" id="r_a10165b46848726cc14f52b151305d88c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10165b46848726cc14f52b151305d88c">black</a> = &quot;\033[30m&quot;</td></tr>
+<tr class="separator:a10165b46848726cc14f52b151305d88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7aa7f02fabdbaf47612576f6a428288" id="r_ac7aa7f02fabdbaf47612576f6a428288"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7aa7f02fabdbaf47612576f6a428288">red</a> = &quot;\033[31m&quot;</td></tr>
+<tr class="separator:ac7aa7f02fabdbaf47612576f6a428288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5835f7214531f5427fa9118cd93403b0" id="r_a5835f7214531f5427fa9118cd93403b0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5835f7214531f5427fa9118cd93403b0">green</a> = &quot;\033[32m&quot;</td></tr>
+<tr class="separator:a5835f7214531f5427fa9118cd93403b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1cb70874a8b41e4450ea859e57379f6" id="r_ad1cb70874a8b41e4450ea859e57379f6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1cb70874a8b41e4450ea859e57379f6">yellow</a> = &quot;\033[33m&quot;</td></tr>
+<tr class="separator:ad1cb70874a8b41e4450ea859e57379f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707f45b2ec6546536ed6f65ec6240a7a" id="r_a707f45b2ec6546536ed6f65ec6240a7a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a707f45b2ec6546536ed6f65ec6240a7a">blue</a> = &quot;\033[34m&quot;</td></tr>
+<tr class="separator:a707f45b2ec6546536ed6f65ec6240a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b8a39efdee258a0e061ef22ab93a40" id="r_ae7b8a39efdee258a0e061ef22ab93a40"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7b8a39efdee258a0e061ef22ab93a40">magenta</a> = &quot;\033[35m&quot;</td></tr>
+<tr class="separator:ae7b8a39efdee258a0e061ef22ab93a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262f74f7d2be8f819ef40a05cf3f7278" id="r_a262f74f7d2be8f819ef40a05cf3f7278"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a262f74f7d2be8f819ef40a05cf3f7278">cyan</a> = &quot;\033[36m&quot;</td></tr>
+<tr class="separator:a262f74f7d2be8f819ef40a05cf3f7278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc60a2b1b48affde505713b5fb3a40c" id="r_a2dc60a2b1b48affde505713b5fb3a40c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dc60a2b1b48affde505713b5fb3a40c">white</a> = &quot;\033[37m&quot;</td></tr>
+<tr class="separator:a2dc60a2b1b48affde505713b5fb3a40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243cb402561d056b1dff739d313b3d99" id="r_a243cb402561d056b1dff739d313b3d99"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a243cb402561d056b1dff739d313b3d99">on_black</a> = &quot;\033[40m&quot;</td></tr>
+<tr class="memdesc:a243cb402561d056b1dff739d313b3d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Background colors  <br /></td></tr>
+<tr class="separator:a243cb402561d056b1dff739d313b3d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83bdc91661e6e1a8ab92f590e2190ad" id="r_ad83bdc91661e6e1a8ab92f590e2190ad"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad83bdc91661e6e1a8ab92f590e2190ad">on_red</a> = &quot;\033[41m&quot;</td></tr>
+<tr class="separator:ad83bdc91661e6e1a8ab92f590e2190ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1928499826d7d013ab6a21c76080a97f" id="r_a1928499826d7d013ab6a21c76080a97f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1928499826d7d013ab6a21c76080a97f">on_green</a> = &quot;\033[42m&quot;</td></tr>
+<tr class="separator:a1928499826d7d013ab6a21c76080a97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a89bbbd55ac4f9b0d1787ddce4cfc04" id="r_a5a89bbbd55ac4f9b0d1787ddce4cfc04"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a89bbbd55ac4f9b0d1787ddce4cfc04">on_yellow</a> = &quot;\033[43m&quot;</td></tr>
+<tr class="separator:a5a89bbbd55ac4f9b0d1787ddce4cfc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ab6d808e2632d8f02db3966e57c518" id="r_a53ab6d808e2632d8f02db3966e57c518"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53ab6d808e2632d8f02db3966e57c518">on_blue</a> = &quot;\033[44m&quot;</td></tr>
+<tr class="separator:a53ab6d808e2632d8f02db3966e57c518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b40e5ec43f3c39fd52ef9661940d014" id="r_a3b40e5ec43f3c39fd52ef9661940d014"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b40e5ec43f3c39fd52ef9661940d014">on_magenta</a> = &quot;\033[45m&quot;</td></tr>
+<tr class="separator:a3b40e5ec43f3c39fd52ef9661940d014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abec7057bc27e1398a040528f9a915af2" id="r_abec7057bc27e1398a040528f9a915af2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abec7057bc27e1398a040528f9a915af2">on_cyan</a> = &quot;\033[46m&quot;</td></tr>
+<tr class="separator:abec7057bc27e1398a040528f9a915af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323b1c8113ccbb47abd2e7982ece2515" id="r_a323b1c8113ccbb47abd2e7982ece2515"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a323b1c8113ccbb47abd2e7982ece2515">on_white</a> = &quot;\033[47m&quot;</td></tr>
+<tr class="separator:a323b1c8113ccbb47abd2e7982ece2515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1912caa8105bdd08ab0f020f6fd49b" id="r_aaa1912caa8105bdd08ab0f020f6fd49b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa1912caa8105bdd08ab0f020f6fd49b">yellow_bold</a> = &quot;\033[33m\033[1m&quot;</td></tr>
+<tr class="memdesc:aaa1912caa8105bdd08ab0f020f6fd49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold colors  <br /></td></tr>
+<tr class="separator:aaa1912caa8105bdd08ab0f020f6fd49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1c1048c90419d50d1f071d7012f731" id="r_a8f1c1048c90419d50d1f071d7012f731"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f1c1048c90419d50d1f071d7012f731">red_bold</a> = &quot;\033[31m\033[1m&quot;</td></tr>
+<tr class="separator:a8f1c1048c90419d50d1f071d7012f731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d6137f44fd2813de6e0a89ce5f28de" id="r_a18d6137f44fd2813de6e0a89ce5f28de"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18d6137f44fd2813de6e0a89ce5f28de">bold_on_red</a> = &quot;\033[1m\033[41m&quot;</td></tr>
+<tr class="separator:a18d6137f44fd2813de6e0a89ce5f28de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a151679f3083dc4e7ec8970674a4b12a8" id="r_a151679f3083dc4e7ec8970674a4b12a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a151679f3083dc4e7ec8970674a4b12a8">set_color_mode_</a> (<a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode)</td></tr>
+<tr class="separator:a151679f3083dc4e7ec8970674a4b12a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a555af8962ff586ab1b6673abe5fee" id="r_a62a555af8962ff586ab1b6673abe5fee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62a555af8962ff586ab1b6673abe5fee">print_ccode_</a> (const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> &amp;color_code) const</td></tr>
+<tr class="separator:a62a555af8962ff586ab1b6673abe5fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c9e828ceb822d6f5cd7161d89a43bd" id="r_ac0c9e828ceb822d6f5cd7161d89a43bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0c9e828ceb822d6f5cd7161d89a43bd">print_range_</a> (const <a class="el" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> &amp;formatted, size_t start, size_t end) const</td></tr>
+<tr class="separator:ac0c9e828ceb822d6f5cd7161d89a43bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:af491629f16ee9fb2c8f02afe2c53db58" id="r_af491629f16ee9fb2c8f02afe2c53db58"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af491629f16ee9fb2c8f02afe2c53db58">to_string_</a> (const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> &amp;sv)</td></tr>
+<tr class="separator:af491629f16ee9fb2c8f02afe2c53db58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a0f18aeac4769b06bad365fa45f69ac74" id="r_a0f18aeac4769b06bad365fa45f69ac74"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f18aeac4769b06bad365fa45f69ac74">target_file_</a></td></tr>
+<tr class="separator:a0f18aeac4769b06bad365fa45f69ac74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0437cfc164f0e20a2b46f59c7a2302" id="r_a8b0437cfc164f0e20a2b46f59c7a2302"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a252c0b81a272a961f6d8deee79ee2611">mutex_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b0437cfc164f0e20a2b46f59c7a2302">mutex_</a></td></tr>
+<tr class="separator:a8b0437cfc164f0e20a2b46f59c7a2302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba55af6d287636cc2b1a6b08411e916" id="r_acba55af6d287636cc2b1a6b08411e916"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acba55af6d287636cc2b1a6b08411e916">should_do_colors_</a></td></tr>
+<tr class="separator:acba55af6d287636cc2b1a6b08411e916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a30b70b2c72cb5bda34170d8151ad0c" id="r_a5a30b70b2c72cb5bda34170d8151ad0c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a30b70b2c72cb5bda34170d8151ad0c">formatter_</a></td></tr>
+<tr class="separator:a5a30b70b2c72cb5bda34170d8151ad0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6cbd0208b60352e59c37d2db3da1c08" id="r_ab6cbd0208b60352e59c37d2db3da1c08"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::string, <a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109a711a92388f54a0110ca70e93e2d39862">level::n_levels</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6cbd0208b60352e59c37d2db3da1c08">colors_</a></td></tr>
+<tr class="separator:ab6cbd0208b60352e59c37d2db3da1c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_classspdlog_1_1sinks_1_1sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classspdlog_1_1sinks_1_1sink')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classspdlog_1_1sinks_1_1sink.html">sink</a></td></tr>
+<tr class="memitem:a0bd568016e714bb3d63c3f44171d7c88 inherit pro_attribs_classspdlog_1_1sinks_1_1sink" id="r_a0bd568016e714bb3d63c3f44171d7c88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog.html#aea7e92c1b5fd7b8c04ceffd31bfa3e7c">level_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a0bd568016e714bb3d63c3f44171d7c88">level_</a> {<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109a36a3b17acbfb35380a47b3d88c9b8942">level::trace</a>}</td></tr>
+<tr class="separator:a0bd568016e714bb3d63c3f44171d7c88 inherit pro_attribs_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename ConsoleMutex&gt;<br />
+class spdlog::sinks::ansicolor_sink&lt; ConsoleMutex &gt;</div><p>This sink prefixes the output with an ANSI escape sequence color code depending on the severity of the message. </p>
+<p>If no color terminal detected, omit the escape codes. </p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a252c0b81a272a961f6d8deee79ee2611" name="a252c0b81a272a961f6d8deee79ee2611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a252c0b81a272a961f6d8deee79ee2611">&#9670;&#160;</a></span>mutex_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a252c0b81a272a961f6d8deee79ee2611">mutex_t</a> = typename ConsoleMutex::mutex_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0fa9feccb7636d5e9719cedf1717b782" name="a0fa9feccb7636d5e9719cedf1717b782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fa9feccb7636d5e9719cedf1717b782">&#9670;&#160;</a></span>ansicolor_sink() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> </td>
+          <td>(</td>
+          <td class="paramtype">FILE *</td>          <td class="paramname"><span class="paramname"><em>target_file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_a0fa9feccb7636d5e9719cedf1717b782_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_a0fa9feccb7636d5e9719cedf1717b782_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_a0fa9feccb7636d5e9719cedf1717b782_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_a0fa9feccb7636d5e9719cedf1717b782_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,110,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a151679f3083dc4e7ec8970674a4b12a8" title=" " alt="" coords="158,5,278,32"/>
+<area shape="poly" title=" " alt="" coords="110,33,142,28,143,33,110,38"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af491629f16ee9fb2c8f02afe2c53db58" title=" " alt="" coords="179,56,257,83"/>
+<area shape="poly" title=" " alt="" coords="110,50,163,58,163,63,110,55"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_a0fa9feccb7636d5e9719cedf1717b782_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_a0fa9feccb7636d5e9719cedf1717b782_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_a0fa9feccb7636d5e9719cedf1717b782_icgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_a0fa9feccb7636d5e9719cedf1717b782_icgraph">
+<area shape="rect" title=" " alt="" coords="212,164,316,191"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af206c246080ea0ac9365c0c56bc83ee2" title=" " alt="" coords="32,5,137,32"/>
+<area shape="poly" title=" " alt="" coords="247,151,213,98,189,70,162,46,136,33,138,28,165,42,193,66,217,95,251,148"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ab2e7309e63cf2c1735e56017c942a201" title=" " alt="" coords="32,56,137,83"/>
+<area shape="poly" title=" " alt="" coords="237,155,203,125,162,97,136,85,138,81,165,92,207,121,241,151"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stderr__sink.html#ad043086e931132d5e3e4ec09ed672914" title=" " alt="" coords="5,107,164,165"/>
+<area shape="poly" title=" " alt="" coords="196,165,163,157,164,152,197,159"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html#aacd2cc45caf1478ef3b21e3a952df0b9" title=" " alt="" coords="5,189,164,248"/>
+<area shape="poly" title=" " alt="" coords="197,195,164,203,163,198,196,190"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a40795ac98f509d9e6c3e72b04850c2a4" title=" " alt="" coords="46,272,123,299"/>
+<area shape="poly" title=" " alt="" coords="241,203,207,234,165,262,124,279,122,274,162,258,203,229,237,199"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ad709755c951c8fc49a56d4a29de39b9a" title=" " alt="" coords="46,323,123,349"/>
+<area shape="poly" title=" " alt="" coords="251,206,217,260,193,288,165,313,145,324,124,331,122,326,143,319,162,308,189,285,213,257,247,203"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aea73f5d3b40341a99141e53ef73c4668" name="aea73f5d3b40341a99141e53ef73c4668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea73f5d3b40341a99141e53ef73c4668">&#9670;&#160;</a></span>~ansicolor_sink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2e7309e63cf2c1735e56017c942a201" name="ab2e7309e63cf2c1735e56017c942a201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2e7309e63cf2c1735e56017c942a201">&#9670;&#160;</a></span>ansicolor_sink() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a>&lt; ConsoleMutex &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_ab2e7309e63cf2c1735e56017c942a201_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_ab2e7309e63cf2c1735e56017c942a201_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_ab2e7309e63cf2c1735e56017c942a201_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_ab2e7309e63cf2c1735e56017c942a201_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,110,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fa9feccb7636d5e9719cedf1717b782" title=" " alt="" coords="158,31,262,57"/>
+<area shape="poly" title=" " alt="" coords="110,41,142,41,142,47,110,47"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a151679f3083dc4e7ec8970674a4b12a8" title=" " alt="" coords="310,5,430,32"/>
+<area shape="poly" title=" " alt="" coords="262,33,294,28,295,33,263,38"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af491629f16ee9fb2c8f02afe2c53db58" title=" " alt="" coords="331,56,409,83"/>
+<area shape="poly" title=" " alt="" coords="263,50,316,58,315,63,262,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af206c246080ea0ac9365c0c56bc83ee2" name="af206c246080ea0ac9365c0c56bc83ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af206c246080ea0ac9365c0c56bc83ee2">&#9670;&#160;</a></span>ansicolor_sink() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a>&lt; ConsoleMutex &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_af206c246080ea0ac9365c0c56bc83ee2_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_af206c246080ea0ac9365c0c56bc83ee2_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_af206c246080ea0ac9365c0c56bc83ee2_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_af206c246080ea0ac9365c0c56bc83ee2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,110,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fa9feccb7636d5e9719cedf1717b782" title=" " alt="" coords="158,31,262,57"/>
+<area shape="poly" title=" " alt="" coords="110,41,142,41,142,47,110,47"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a151679f3083dc4e7ec8970674a4b12a8" title=" " alt="" coords="310,5,430,32"/>
+<area shape="poly" title=" " alt="" coords="262,33,294,28,295,33,263,38"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af491629f16ee9fb2c8f02afe2c53db58" title=" " alt="" coords="331,56,409,83"/>
+<area shape="poly" title=" " alt="" coords="263,50,316,58,315,63,262,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac27ac71c242af9c62af634beab0798d4" name="ac27ac71c242af9c62af634beab0798d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac27ac71c242af9c62af634beab0798d4">&#9670;&#160;</a></span>flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void flush </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classspdlog_1_1sinks_1_1sink.html#a50ab71f4bc571f6e246b20db4b3dd131">sink</a>.</p>
+
+</div>
+</div>
+<a id="a1973c0f40704ebfac3184e7a744eaa34" name="a1973c0f40704ebfac3184e7a744eaa34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1973c0f40704ebfac3184e7a744eaa34">&#9670;&#160;</a></span>log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void log </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classspdlog_1_1sinks_1_1sink.html#a09f11b2db912e00dbf693e3e2ee3621f">sink</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_a1973c0f40704ebfac3184e7a744eaa34_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_a1973c0f40704ebfac3184e7a744eaa34_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_a1973c0f40704ebfac3184e7a744eaa34_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_a1973c0f40704ebfac3184e7a744eaa34_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,44,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a62a555af8962ff586ab1b6673abe5fee" title=" " alt="" coords="92,5,187,32"/>
+<area shape="poly" title=" " alt="" coords="44,37,76,30,77,35,45,42"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ac0c9e828ceb822d6f5cd7161d89a43bd" title=" " alt="" coords="93,56,186,83"/>
+<area shape="poly" title=" " alt="" coords="45,46,79,53,77,58,44,51"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a60b2dbca3ecc5ce48ae7f8b358144420" title=" " alt="" coords="235,23,362,65"/>
+<area shape="poly" title=" " alt="" coords="188,24,220,29,219,34,187,29"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="410,31,449,57"/>
+<area shape="poly" title=" " alt="" coords="363,41,395,41,395,47,363,47"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="497,31,603,57"/>
+<area shape="poly" title=" " alt="" coords="449,41,481,41,481,47,449,47"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="651,23,778,65"/>
+<area shape="poly" title=" " alt="" coords="604,41,635,41,635,47,604,47"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="826,31,971,57"/>
+<area shape="poly" title=" " alt="" coords="779,41,811,41,811,47,779,47"/>
+<area shape="poly" title=" " alt="" coords="186,59,219,54,220,59,186,65"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a40795ac98f509d9e6c3e72b04850c2a4" name="a40795ac98f509d9e6c3e72b04850c2a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40795ac98f509d9e6c3e72b04850c2a4">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp; operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a>&lt; ConsoleMutex &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_a40795ac98f509d9e6c3e72b04850c2a4_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_a40795ac98f509d9e6c3e72b04850c2a4_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_a40795ac98f509d9e6c3e72b04850c2a4_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_a40795ac98f509d9e6c3e72b04850c2a4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,82,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fa9feccb7636d5e9719cedf1717b782" title=" " alt="" coords="130,31,234,57"/>
+<area shape="poly" title=" " alt="" coords="82,41,114,41,114,47,82,47"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a151679f3083dc4e7ec8970674a4b12a8" title=" " alt="" coords="282,5,402,32"/>
+<area shape="poly" title=" " alt="" coords="234,33,266,28,267,33,235,38"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af491629f16ee9fb2c8f02afe2c53db58" title=" " alt="" coords="303,56,381,83"/>
+<area shape="poly" title=" " alt="" coords="235,50,288,58,287,63,234,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad709755c951c8fc49a56d4a29de39b9a" name="ad709755c951c8fc49a56d4a29de39b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad709755c951c8fc49a56d4a29de39b9a">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp; operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a>&lt; ConsoleMutex &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_ad709755c951c8fc49a56d4a29de39b9a_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_ad709755c951c8fc49a56d4a29de39b9a_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_ad709755c951c8fc49a56d4a29de39b9a_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_ad709755c951c8fc49a56d4a29de39b9a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,82,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fa9feccb7636d5e9719cedf1717b782" title=" " alt="" coords="130,31,234,57"/>
+<area shape="poly" title=" " alt="" coords="82,41,114,41,114,47,82,47"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a151679f3083dc4e7ec8970674a4b12a8" title=" " alt="" coords="282,5,402,32"/>
+<area shape="poly" title=" " alt="" coords="234,33,266,28,267,33,235,38"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af491629f16ee9fb2c8f02afe2c53db58" title=" " alt="" coords="303,56,381,83"/>
+<area shape="poly" title=" " alt="" coords="235,50,288,58,287,63,234,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a62a555af8962ff586ab1b6673abe5fee" name="a62a555af8962ff586ab1b6673abe5fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a555af8962ff586ab1b6673abe5fee">&#9670;&#160;</a></span>print_ccode_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void print_ccode_ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color_code</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_a62a555af8962ff586ab1b6673abe5fee_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_a62a555af8962ff586ab1b6673abe5fee_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_a62a555af8962ff586ab1b6673abe5fee_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_a62a555af8962ff586ab1b6673abe5fee_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,101,40"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a60b2dbca3ecc5ce48ae7f8b358144420" title=" " alt="" coords="149,5,276,48"/>
+<area shape="poly" title=" " alt="" coords="101,24,133,24,133,29,101,29"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="324,13,362,40"/>
+<area shape="poly" title=" " alt="" coords="277,24,309,24,309,29,277,29"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="410,13,517,40"/>
+<area shape="poly" title=" " alt="" coords="363,24,395,24,395,29,363,29"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="565,5,692,48"/>
+<area shape="poly" title=" " alt="" coords="517,24,549,24,549,29,517,29"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="740,13,884,40"/>
+<area shape="poly" title=" " alt="" coords="693,24,724,24,724,29,693,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_a62a555af8962ff586ab1b6673abe5fee_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_a62a555af8962ff586ab1b6673abe5fee_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_a62a555af8962ff586ab1b6673abe5fee_icgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_a62a555af8962ff586ab1b6673abe5fee_icgraph">
+<area shape="rect" title=" " alt="" coords="92,5,187,32"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a1973c0f40704ebfac3184e7a744eaa34" title=" " alt="" coords="5,5,44,32"/>
+<area shape="poly" title=" " alt="" coords="76,21,44,21,44,16,76,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac0c9e828ceb822d6f5cd7161d89a43bd" name="ac0c9e828ceb822d6f5cd7161d89a43bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c9e828ceb822d6f5cd7161d89a43bd">&#9670;&#160;</a></span>print_range_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void print_range_ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>formatted</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_ac0c9e828ceb822d6f5cd7161d89a43bd_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_ac0c9e828ceb822d6f5cd7161d89a43bd_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_ac0c9e828ceb822d6f5cd7161d89a43bd_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_ac0c9e828ceb822d6f5cd7161d89a43bd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,98,40"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a60b2dbca3ecc5ce48ae7f8b358144420" title=" " alt="" coords="146,5,273,48"/>
+<area shape="poly" title=" " alt="" coords="98,24,130,24,130,29,98,29"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="321,13,359,40"/>
+<area shape="poly" title=" " alt="" coords="274,24,306,24,306,29,274,29"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="407,13,514,40"/>
+<area shape="poly" title=" " alt="" coords="360,24,392,24,392,29,360,29"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="562,5,689,48"/>
+<area shape="poly" title=" " alt="" coords="514,24,546,24,546,29,514,29"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="737,13,881,40"/>
+<area shape="poly" title=" " alt="" coords="690,24,721,24,721,29,690,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_ac0c9e828ceb822d6f5cd7161d89a43bd_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_ac0c9e828ceb822d6f5cd7161d89a43bd_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_ac0c9e828ceb822d6f5cd7161d89a43bd_icgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_ac0c9e828ceb822d6f5cd7161d89a43bd_icgraph">
+<area shape="rect" title=" " alt="" coords="92,5,184,32"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a1973c0f40704ebfac3184e7a744eaa34" title=" " alt="" coords="5,5,44,32"/>
+<area shape="poly" title=" " alt="" coords="76,21,44,21,44,16,76,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaa310a9f334aa7730d36636b7dd7e3bd" name="aaa310a9f334aa7730d36636b7dd7e3bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa310a9f334aa7730d36636b7dd7e3bd">&#9670;&#160;</a></span>set_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void set_color </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a></td>          <td class="paramname"><span class="paramname"><em>color_level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a></td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_aaa310a9f334aa7730d36636b7dd7e3bd_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_aaa310a9f334aa7730d36636b7dd7e3bd_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_aaa310a9f334aa7730d36636b7dd7e3bd_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_aaa310a9f334aa7730d36636b7dd7e3bd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,80,32"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af491629f16ee9fb2c8f02afe2c53db58" title=" " alt="" coords="128,5,206,32"/>
+<area shape="poly" title=" " alt="" coords="80,16,112,16,112,21,80,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a44fc2263f5a2a2252290fb2baa165bed" name="a44fc2263f5a2a2252290fb2baa165bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44fc2263f5a2a2252290fb2baa165bed">&#9670;&#160;</a></span>set_color_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void set_color_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_a44fc2263f5a2a2252290fb2baa165bed_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_a44fc2263f5a2a2252290fb2baa165bed_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_a44fc2263f5a2a2252290fb2baa165bed_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_a44fc2263f5a2a2252290fb2baa165bed_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,119,32"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a151679f3083dc4e7ec8970674a4b12a8" title=" " alt="" coords="167,5,287,32"/>
+<area shape="poly" title=" " alt="" coords="119,16,151,16,151,21,119,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a151679f3083dc4e7ec8970674a4b12a8" name="a151679f3083dc4e7ec8970674a4b12a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151679f3083dc4e7ec8970674a4b12a8">&#9670;&#160;</a></span>set_color_mode_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void set_color_mode_ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_a151679f3083dc4e7ec8970674a4b12a8_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_a151679f3083dc4e7ec8970674a4b12a8_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_a151679f3083dc4e7ec8970674a4b12a8_icgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_a151679f3083dc4e7ec8970674a4b12a8_icgraph">
+<area shape="rect" title=" " alt="" coords="373,189,493,216"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fa9feccb7636d5e9719cedf1717b782" title=" " alt="" coords="216,164,320,191"/>
+<area shape="poly" title=" " alt="" coords="357,194,321,188,322,183,358,188"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a44fc2263f5a2a2252290fb2baa165bed" title=" " alt="" coords="212,215,325,241"/>
+<area shape="poly" title=" " alt="" coords="358,217,326,222,325,217,357,212"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af206c246080ea0ac9365c0c56bc83ee2" title=" " alt="" coords="32,5,137,32"/>
+<area shape="poly" title=" " alt="" coords="250,152,215,98,190,70,162,46,136,33,139,28,165,42,194,66,219,95,255,149"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ab2e7309e63cf2c1735e56017c942a201" title=" " alt="" coords="32,56,137,83"/>
+<area shape="poly" title=" " alt="" coords="241,155,205,125,162,97,136,86,138,81,165,92,208,121,244,151"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stderr__sink.html#ad043086e931132d5e3e4ec09ed672914" title=" " alt="" coords="5,107,164,165"/>
+<area shape="poly" title=" " alt="" coords="200,165,164,156,165,151,201,160"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html#aacd2cc45caf1478ef3b21e3a952df0b9" title=" " alt="" coords="5,189,164,248"/>
+<area shape="poly" title=" " alt="" coords="201,195,165,203,164,198,200,190"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a40795ac98f509d9e6c3e72b04850c2a4" title=" " alt="" coords="46,272,123,299"/>
+<area shape="poly" title=" " alt="" coords="219,201,213,205,199,219,190,233,181,248,165,262,124,280,122,275,162,258,177,244,186,231,195,216,210,201,216,197"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ad709755c951c8fc49a56d4a29de39b9a" title=" " alt="" coords="46,323,123,349"/>
+<area shape="poly" title=" " alt="" coords="217,202,214,204,203,218,197,231,191,258,185,285,178,299,165,313,146,325,124,333,122,328,143,321,162,309,173,296,180,283,186,257,192,230,198,215,210,201,213,198"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a390b6915455eacb92d1a8914713d0b8f" name="a390b6915455eacb92d1a8914713d0b8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390b6915455eacb92d1a8914713d0b8f">&#9670;&#160;</a></span>set_formatter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void set_formatter </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>sink_formatter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classspdlog_1_1sinks_1_1sink.html#ae9d95f00967d75a84d76570dd6ea5196">sink</a>.</p>
+
+</div>
+</div>
+<a id="a540c68ae5802ece99525f62725060fcd" name="a540c68ae5802ece99525f62725060fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a540c68ae5802ece99525f62725060fcd">&#9670;&#160;</a></span>set_pattern()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void set_pattern </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classspdlog_1_1sinks_1_1sink.html#a8d01ac4ff8614416531848aa0349a454">sink</a>.</p>
+
+</div>
+</div>
+<a id="ae540bb6a150d702279cfefbe0ed0eca8" name="ae540bb6a150d702279cfefbe0ed0eca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae540bb6a150d702279cfefbe0ed0eca8">&#9670;&#160;</a></span>should_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> bool should_color </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af491629f16ee9fb2c8f02afe2c53db58" name="af491629f16ee9fb2c8f02afe2c53db58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af491629f16ee9fb2c8f02afe2c53db58">&#9670;&#160;</a></span>to_string_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> std::string to_string_ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sv</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__sink_af491629f16ee9fb2c8f02afe2c53db58_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__sink_af491629f16ee9fb2c8f02afe2c53db58_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__sink_af491629f16ee9fb2c8f02afe2c53db58_icgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__sink_af491629f16ee9fb2c8f02afe2c53db58_icgraph">
+<area shape="rect" title=" " alt="" coords="364,189,442,216"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fa9feccb7636d5e9719cedf1717b782" title=" " alt="" coords="212,164,316,191"/>
+<area shape="poly" title=" " alt="" coords="348,195,316,189,317,184,349,190"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#aaa310a9f334aa7730d36636b7dd7e3bd" title=" " alt="" coords="227,215,301,241"/>
+<area shape="poly" title=" " alt="" coords="349,215,302,224,301,219,348,210"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af206c246080ea0ac9365c0c56bc83ee2" title=" " alt="" coords="32,5,137,32"/>
+<area shape="poly" title=" " alt="" coords="247,151,213,98,189,70,162,46,136,33,138,28,165,42,193,66,217,95,251,148"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ab2e7309e63cf2c1735e56017c942a201" title=" " alt="" coords="32,56,137,83"/>
+<area shape="poly" title=" " alt="" coords="237,155,203,125,162,97,136,85,138,81,165,92,207,121,241,151"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stderr__sink.html#ad043086e931132d5e3e4ec09ed672914" title=" " alt="" coords="5,107,164,165"/>
+<area shape="poly" title=" " alt="" coords="196,165,163,157,164,152,197,159"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html#aacd2cc45caf1478ef3b21e3a952df0b9" title=" " alt="" coords="5,189,164,248"/>
+<area shape="poly" title=" " alt="" coords="197,195,164,203,163,198,196,190"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a40795ac98f509d9e6c3e72b04850c2a4" title=" " alt="" coords="46,272,123,299"/>
+<area shape="poly" title=" " alt="" coords="219,201,213,205,199,219,190,233,181,248,165,262,124,280,122,275,162,258,177,244,186,231,195,216,210,201,215,197"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ad709755c951c8fc49a56d4a29de39b9a" title=" " alt="" coords="46,323,123,349"/>
+<area shape="poly" title=" " alt="" coords="216,202,214,204,203,218,197,231,191,258,185,285,178,299,165,313,146,325,124,333,122,328,143,321,162,309,173,296,180,283,186,257,192,230,199,215,210,201,212,198"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a10165b46848726cc14f52b151305d88c" name="a10165b46848726cc14f52b151305d88c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10165b46848726cc14f52b151305d88c">&#9670;&#160;</a></span>black</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> black = &quot;\033[30m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a568a3accb355a50ba9749c7767abe6" name="a2a568a3accb355a50ba9749c7767abe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a568a3accb355a50ba9749c7767abe6">&#9670;&#160;</a></span>blink</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> blink = &quot;\033[5m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a707f45b2ec6546536ed6f65ec6240a7a" name="a707f45b2ec6546536ed6f65ec6240a7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a707f45b2ec6546536ed6f65ec6240a7a">&#9670;&#160;</a></span>blue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> blue = &quot;\033[34m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af4c193ee3c3100e45079164f274cdcea" name="af4c193ee3c3100e45079164f274cdcea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c193ee3c3100e45079164f274cdcea">&#9670;&#160;</a></span>bold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> bold = &quot;\033[1m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18d6137f44fd2813de6e0a89ce5f28de" name="a18d6137f44fd2813de6e0a89ce5f28de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18d6137f44fd2813de6e0a89ce5f28de">&#9670;&#160;</a></span>bold_on_red</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> bold_on_red = &quot;\033[1m\033[41m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3b6d6354f46a1745546e12538768d52" name="ac3b6d6354f46a1745546e12538768d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b6d6354f46a1745546e12538768d52">&#9670;&#160;</a></span>clear_line</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> clear_line = &quot;\033[K&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6cbd0208b60352e59c37d2db3da1c08" name="ab6cbd0208b60352e59c37d2db3da1c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6cbd0208b60352e59c37d2db3da1c08">&#9670;&#160;</a></span>colors_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;std::string, <a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109a711a92388f54a0110ca70e93e2d39862">level::n_levels</a>&gt; colors_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af4c57ab4f4ef13a4fd51361ada8ea160" name="af4c57ab4f4ef13a4fd51361ada8ea160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c57ab4f4ef13a4fd51361ada8ea160">&#9670;&#160;</a></span>concealed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> concealed = &quot;\033[8m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a262f74f7d2be8f819ef40a05cf3f7278" name="a262f74f7d2be8f819ef40a05cf3f7278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262f74f7d2be8f819ef40a05cf3f7278">&#9670;&#160;</a></span>cyan</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> cyan = &quot;\033[36m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47f26fbde30c638343da9c970231ee21" name="a47f26fbde30c638343da9c970231ee21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f26fbde30c638343da9c970231ee21">&#9670;&#160;</a></span>dark</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> dark = &quot;\033[2m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a30b70b2c72cb5bda34170d8151ad0c" name="a5a30b70b2c72cb5bda34170d8151ad0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a30b70b2c72cb5bda34170d8151ad0c">&#9670;&#160;</a></span>formatter_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a>&gt; formatter_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5835f7214531f5427fa9118cd93403b0" name="a5835f7214531f5427fa9118cd93403b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5835f7214531f5427fa9118cd93403b0">&#9670;&#160;</a></span>green</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> green = &quot;\033[32m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7b8a39efdee258a0e061ef22ab93a40" name="ae7b8a39efdee258a0e061ef22ab93a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b8a39efdee258a0e061ef22ab93a40">&#9670;&#160;</a></span>magenta</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> magenta = &quot;\033[35m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b0437cfc164f0e20a2b46f59c7a2302" name="a8b0437cfc164f0e20a2b46f59c7a2302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0437cfc164f0e20a2b46f59c7a2302">&#9670;&#160;</a></span>mutex_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a252c0b81a272a961f6d8deee79ee2611">mutex_t</a>&amp; mutex_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a243cb402561d056b1dff739d313b3d99" name="a243cb402561d056b1dff739d313b3d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243cb402561d056b1dff739d313b3d99">&#9670;&#160;</a></span>on_black</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> on_black = &quot;\033[40m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Background colors </p>
+
+</div>
+</div>
+<a id="a53ab6d808e2632d8f02db3966e57c518" name="a53ab6d808e2632d8f02db3966e57c518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ab6d808e2632d8f02db3966e57c518">&#9670;&#160;</a></span>on_blue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> on_blue = &quot;\033[44m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abec7057bc27e1398a040528f9a915af2" name="abec7057bc27e1398a040528f9a915af2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abec7057bc27e1398a040528f9a915af2">&#9670;&#160;</a></span>on_cyan</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> on_cyan = &quot;\033[46m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1928499826d7d013ab6a21c76080a97f" name="a1928499826d7d013ab6a21c76080a97f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1928499826d7d013ab6a21c76080a97f">&#9670;&#160;</a></span>on_green</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> on_green = &quot;\033[42m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b40e5ec43f3c39fd52ef9661940d014" name="a3b40e5ec43f3c39fd52ef9661940d014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b40e5ec43f3c39fd52ef9661940d014">&#9670;&#160;</a></span>on_magenta</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> on_magenta = &quot;\033[45m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad83bdc91661e6e1a8ab92f590e2190ad" name="ad83bdc91661e6e1a8ab92f590e2190ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad83bdc91661e6e1a8ab92f590e2190ad">&#9670;&#160;</a></span>on_red</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> on_red = &quot;\033[41m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a323b1c8113ccbb47abd2e7982ece2515" name="a323b1c8113ccbb47abd2e7982ece2515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a323b1c8113ccbb47abd2e7982ece2515">&#9670;&#160;</a></span>on_white</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> on_white = &quot;\033[47m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a89bbbd55ac4f9b0d1787ddce4cfc04" name="a5a89bbbd55ac4f9b0d1787ddce4cfc04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a89bbbd55ac4f9b0d1787ddce4cfc04">&#9670;&#160;</a></span>on_yellow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> on_yellow = &quot;\033[43m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7aa7f02fabdbaf47612576f6a428288" name="ac7aa7f02fabdbaf47612576f6a428288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7aa7f02fabdbaf47612576f6a428288">&#9670;&#160;</a></span>red</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> red = &quot;\033[31m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f1c1048c90419d50d1f071d7012f731" name="a8f1c1048c90419d50d1f071d7012f731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1c1048c90419d50d1f071d7012f731">&#9670;&#160;</a></span>red_bold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> red_bold = &quot;\033[31m\033[1m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9bbdfadb4588031f86db4d251643cca" name="ab9bbdfadb4588031f86db4d251643cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9bbdfadb4588031f86db4d251643cca">&#9670;&#160;</a></span>reset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> reset = &quot;\033[m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65c4e3da1f058fe5ea24e040be4fd3a2" name="a65c4e3da1f058fe5ea24e040be4fd3a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65c4e3da1f058fe5ea24e040be4fd3a2">&#9670;&#160;</a></span>reverse</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> reverse = &quot;\033[7m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acba55af6d287636cc2b1a6b08411e916" name="acba55af6d287636cc2b1a6b08411e916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba55af6d287636cc2b1a6b08411e916">&#9670;&#160;</a></span>should_do_colors_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool should_do_colors_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f18aeac4769b06bad365fa45f69ac74" name="a0f18aeac4769b06bad365fa45f69ac74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f18aeac4769b06bad365fa45f69ac74">&#9670;&#160;</a></span>target_file_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* target_file_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fcb19bb1ecf3f9745c92f82f3995fe1" name="a0fcb19bb1ecf3f9745c92f82f3995fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fcb19bb1ecf3f9745c92f82f3995fe1">&#9670;&#160;</a></span>underline</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> underline = &quot;\033[4m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2dc60a2b1b48affde505713b5fb3a40c" name="a2dc60a2b1b48affde505713b5fb3a40c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc60a2b1b48affde505713b5fb3a40c">&#9670;&#160;</a></span>white</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> white = &quot;\033[37m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1cb70874a8b41e4450ea859e57379f6" name="ad1cb70874a8b41e4450ea859e57379f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1cb70874a8b41e4450ea859e57379f6">&#9670;&#160;</a></span>yellow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> yellow = &quot;\033[33m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa1912caa8105bdd08ab0f020f6fd49b" name="aaa1912caa8105bdd08ab0f020f6fd49b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa1912caa8105bdd08ab0f020f6fd49b">&#9670;&#160;</a></span>yellow_bold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> yellow_bold = &quot;\033[33m\033[1m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bold colors </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="ansicolor__sink_8h_source.html">ansicolor_sink.h</a></li>
+<li><a class="el" href="ansicolor__sink-inl_8h_source.html">ansicolor_sink-inl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="namespacespdlog_1_1sinks.html">sinks</a></li><li class="navelem"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

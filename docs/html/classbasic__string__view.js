@@ -1,0 +1,28 @@
+var classbasic__string__view =
+[
+    [ "iterator", "classbasic__string__view.html#a61ae16f571ae85022a2fc4ac0b89a254", null ],
+    [ "value_type", "classbasic__string__view.html#ae6fe671832073e666d28aae749ea5b8a", null ],
+    [ "basic_string_view", "classbasic__string__view.html#aa83abcba818978e65b8c3786f209df11", null ],
+    [ "basic_string_view", "classbasic__string__view.html#ab7ec06f9337fa4e261a11c8b8880e326", null ],
+    [ "basic_string_view", "classbasic__string__view.html#a72cda0cc58c03130177a3979922c1b4f", null ],
+    [ "basic_string_view", "classbasic__string__view.html#a0e03d91fb12fa791837a0724db904c6b", null ],
+    [ "basic_string_view", "classbasic__string__view.html#a0d08ab207c97be37d011d018749f491b", null ],
+    [ "begin", "classbasic__string__view.html#a9164df3225e65afc486c637377db0dd1", null ],
+    [ "compare", "classbasic__string__view.html#aa98abb3e3d755507f88df258a381c941", null ],
+    [ "data", "classbasic__string__view.html#a1e8c50588402e2c335473ac6454ce8da", null ],
+    [ "end", "classbasic__string__view.html#a855c85daf2926c97d5b813221fc2a7cd", null ],
+    [ "operator[]", "classbasic__string__view.html#ac5e1c194122b0f7d3c931141947de39c", null ],
+    [ "remove_prefix", "classbasic__string__view.html#afa57aa5330f43668077c10b5909be1b9", null ],
+    [ "size", "classbasic__string__view.html#a68960381f66fdfeb44116fe4337b5824", null ],
+    [ "starts_with", "classbasic__string__view.html#a95fd69236400ca487b558dd7658a52c0", null ],
+    [ "starts_with", "classbasic__string__view.html#a99213eae67afcd870ea9cb7f05b3022c", null ],
+    [ "starts_with", "classbasic__string__view.html#a5c010547bdf0c3d0237c78eeecd90803", null ],
+    [ "operator!=", "classbasic__string__view.html#aa1c98cde00b9ef678bb175b93cda7c7d", null ],
+    [ "operator<", "classbasic__string__view.html#a51adcef1fd00934691bef6390f616033", null ],
+    [ "operator<=", "classbasic__string__view.html#a87886a2f7dc700e1d33dd409970f96bb", null ],
+    [ "operator==", "classbasic__string__view.html#a9365aeedc493269da8f8b9e0561080bf", null ],
+    [ "operator>", "classbasic__string__view.html#a47eae4dfe3f6619699dfa51c24cef7d8", null ],
+    [ "operator>=", "classbasic__string__view.html#adf0af0ec8d20a1a9278802148ae20be8", null ],
+    [ "data_", "classbasic__string__view.html#aff67994a63fef7f0dd43e813f9b69ec5", null ],
+    [ "size_", "classbasic__string__view.html#a5f31775800bbb46b35b5791def1f3acc", null ]
+];

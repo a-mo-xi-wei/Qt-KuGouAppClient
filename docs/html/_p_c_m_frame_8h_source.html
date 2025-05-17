@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: PCMFrame.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_p_c_m_frame_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PCMFrame.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_p_c_m_frame_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  PCMFrame - PCM 音频帧管理类</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef PCMFRAME_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define PCMFRAME_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">    #include &lt;libavformat/avformat.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_p_c_m_frame_8h.html#ab7a8576022ba70101d67ccc3b805df13">   20</a></span><span class="preprocessor">#define PCMFramePtr std::shared_ptr&lt;PCMFrame&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html">   27</a></span><span class="keyword">class </span><a class="code hl_function" href="class_p_c_m_frame.html#ad43e6903192b24361a6656c6dce62ab6">PCMFrame</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854">   32</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854">FrameType</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a2b2631dd0b452ae6fd2861492204bcaa">   33</a></span>        <a class="code hl_enumvalue" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a2b2631dd0b452ae6fd2861492204bcaa">PCMFRAME_TYPE_NONE</a> = -1,  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854ad758cb4269f68676a31e368ebcc33144">   34</a></span>        <a class="code hl_enumvalue" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854ad758cb4269f68676a31e368ebcc33144">PCMFRAME_TYPE_PCM</a>,        </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a56125ba95d2323280d58ff9cc682ccf6">   35</a></span>        <a class="code hl_enumvalue" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a56125ba95d2323280d58ff9cc682ccf6">PCMFRAME_TYPE_PCMU</a>,       </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a6dfdcd204cf5cffd9bc43006e134f3b0">   36</a></span>        <a class="code hl_enumvalue" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a6dfdcd204cf5cffd9bc43006e134f3b0">PCMFRAME_TYPE_PCMA</a>,       </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a1f76a96827dd8eb52da421e3dd22a78b">   37</a></span>        <a class="code hl_enumvalue" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a1f76a96827dd8eb52da421e3dd22a78b">PCMFRAME_TYPE_G711U</a>,      </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a6ca95a1bf4bbd598717fd05b10748a91">   38</a></span>        <a class="code hl_enumvalue" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a6ca95a1bf4bbd598717fd05b10748a91">PCMFRAME_TYPE_G711A</a>       </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    };</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="class_p_c_m_frame.html#ad43e6903192b24361a6656c6dce62ab6">PCMFrame</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="class_p_c_m_frame.html#ae92b61dcb9993d92435dae4366ec0794">~PCMFrame</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_m_frame.html#a5666e2328f866a48d9bb4c158f068e0e">setFrameBuffer</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<span class="keyword">const</span> <a class="code hl_function" href="class_p_c_m_frame.html#ab766533ac99363cb6d92a52357cfb7a1">buffer</a>, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;<a class="code hl_function" href="class_p_c_m_frame.html#a7033bafa80d2349b9b0da59d8c486767">size</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ab766533ac99363cb6d92a52357cfb7a1">   66</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_function" href="class_p_c_m_frame.html#ab766533ac99363cb6d92a52357cfb7a1">buffer</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_p_c_m_frame.html#a96609d194adde59bc1e0facbe06a7063">mFrameBuffer</a>; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a7033bafa80d2349b9b0da59d8c486767">   72</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_m_frame.html#a7033bafa80d2349b9b0da59d8c486767">size</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_p_c_m_frame.html#a1bb53f2de83e4fdf04f01fed4cc73bbf">mFrameBufferSize</a>; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_m_frame.html#a51550fe30f4909764ae363e60cc39316">setFrameInfo</a>(<span class="keywordtype">int</span> sample_rate, <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_m_frame.html#a43a00850aaae6c43c843905de7a7747d">channels</a>, <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_function" href="class_p_c_m_frame.html#a00b3843f70084cb17b810c0c0453c85d">pts</a>, <a class="code hl_enumeration" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854">FrameType</a> <a class="code hl_function" href="class_p_c_m_frame.html#adfa746870a1972173197173b6c97492c">type</a> = <a class="code hl_enumvalue" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854ad758cb4269f68676a31e368ebcc33144">PCMFRAME_TYPE_PCM</a>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a00b3843f70084cb17b810c0c0453c85d">   89</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_function" href="class_p_c_m_frame.html#a00b3843f70084cb17b810c0c0453c85d">pts</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_p_c_m_frame.html#a007b9a456abc96ca59002d0c4d8f2332">m_pts</a>; }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a37ada5f323b0f54d80b8ceebd91621f3">   95</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_m_frame.html#a37ada5f323b0f54d80b8ceebd91621f3">sampleRate</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_p_c_m_frame.html#ae3413bb59f49eba4c7fa7dc71f4ba2c6">m_sample_rate</a>; }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a43a00850aaae6c43c843905de7a7747d">  101</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_m_frame.html#a43a00850aaae6c43c843905de7a7747d">channels</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_p_c_m_frame.html#a7dd2c9cca7ebf4769fb82fce4477fdc2">m_channels</a>; }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#adfa746870a1972173197173b6c97492c">  107</a></span>    <a class="code hl_enumeration" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854">FrameType</a> <a class="code hl_function" href="class_p_c_m_frame.html#adfa746870a1972173197173b6c97492c">type</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_p_c_m_frame.html#a30664612dd87cd56a9391cce54735402">m_type</a>; }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a808117e517ca1a298728d3d674d91e0c">  113</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_m_frame.html#a808117e517ca1a298728d3d674d91e0c">setTimeStamp</a>(uint64_t t) { <a class="code hl_variable" href="class_p_c_m_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a> = t; }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">  119</a></span>    uint64_t <a class="code hl_function" href="class_p_c_m_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">timeStamp</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_p_c_m_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a>; }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a96609d194adde59bc1e0facbe06a7063">  124</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_variable" href="class_p_c_m_frame.html#a96609d194adde59bc1e0facbe06a7063">mFrameBuffer</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a1bb53f2de83e4fdf04f01fed4cc73bbf">  128</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_p_c_m_frame.html#a1bb53f2de83e4fdf04f01fed4cc73bbf">mFrameBufferSize</a> = 0;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a007b9a456abc96ca59002d0c4d8f2332">  132</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="class_p_c_m_frame.html#a007b9a456abc96ca59002d0c4d8f2332">m_pts</a> = 0;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#ae3413bb59f49eba4c7fa7dc71f4ba2c6">  136</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_p_c_m_frame.html#ae3413bb59f49eba4c7fa7dc71f4ba2c6">m_sample_rate</a> = 0;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a7dd2c9cca7ebf4769fb82fce4477fdc2">  140</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_p_c_m_frame.html#a7dd2c9cca7ebf4769fb82fce4477fdc2">m_channels</a> = 0;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a30664612dd87cd56a9391cce54735402">  144</a></span>    <a class="code hl_enumeration" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854">FrameType</a> <a class="code hl_variable" href="class_p_c_m_frame.html#a30664612dd87cd56a9391cce54735402">m_type</a> = <a class="code hl_enumvalue" href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a2b2631dd0b452ae6fd2861492204bcaa">PCMFRAME_TYPE_NONE</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_p_c_m_frame.html#a21986d419e0d7cf1249013a118da4282">  148</a></span>    uint64_t <a class="code hl_variable" href="class_p_c_m_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a> = 0;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>};</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#endif </span><span class="comment">// PCMFRAME_H</span></div>
+<div class="ttc" id="a_pcm_volume_control_8cpp_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdoc">32 位无符号整数</div><div class="ttdef"><b>定义</b> PcmVolumeControl.cpp:13</div></div>
+<div class="ttc" id="a_pcm_volume_control_8cpp_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> PcmVolumeControl.cpp:11</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a007b9a456abc96ca59002d0c4d8f2332"><div class="ttname"><a href="class_p_c_m_frame.html#a007b9a456abc96ca59002d0c4d8f2332">PCMFrame::m_pts</a></div><div class="ttdeci">uint32_t m_pts</div><div class="ttdoc">时间戳</div><div class="ttdef"><b>定义</b> PCMFrame.h:132</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a00b3843f70084cb17b810c0c0453c85d"><div class="ttname"><a href="class_p_c_m_frame.html#a00b3843f70084cb17b810c0c0453c85d">PCMFrame::pts</a></div><div class="ttdeci">uint32_t pts()</div><div class="ttdoc">获取时间戳</div><div class="ttdef"><b>定义</b> PCMFrame.h:89</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a1bb53f2de83e4fdf04f01fed4cc73bbf"><div class="ttname"><a href="class_p_c_m_frame.html#a1bb53f2de83e4fdf04f01fed4cc73bbf">PCMFrame::mFrameBufferSize</a></div><div class="ttdeci">unsigned int mFrameBufferSize</div><div class="ttdoc">PCM 数据缓冲区大小</div><div class="ttdef"><b>定义</b> PCMFrame.h:128</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a21986d419e0d7cf1249013a118da4282"><div class="ttname"><a href="class_p_c_m_frame.html#a21986d419e0d7cf1249013a118da4282">PCMFrame::m_timestamp_ms</a></div><div class="ttdeci">uint64_t m_timestamp_ms</div><div class="ttdoc">UTC 时间戳（毫秒）</div><div class="ttdef"><b>定义</b> PCMFrame.h:148</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a30664612dd87cd56a9391cce54735402"><div class="ttname"><a href="class_p_c_m_frame.html#a30664612dd87cd56a9391cce54735402">PCMFrame::m_type</a></div><div class="ttdeci">FrameType m_type</div><div class="ttdoc">帧类型</div><div class="ttdef"><b>定义</b> PCMFrame.h:144</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a37ada5f323b0f54d80b8ceebd91621f3"><div class="ttname"><a href="class_p_c_m_frame.html#a37ada5f323b0f54d80b8ceebd91621f3">PCMFrame::sampleRate</a></div><div class="ttdeci">int sampleRate()</div><div class="ttdoc">获取采样率</div><div class="ttdef"><b>定义</b> PCMFrame.h:95</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a43a00850aaae6c43c843905de7a7747d"><div class="ttname"><a href="class_p_c_m_frame.html#a43a00850aaae6c43c843905de7a7747d">PCMFrame::channels</a></div><div class="ttdeci">int channels()</div><div class="ttdoc">获取声道数</div><div class="ttdef"><b>定义</b> PCMFrame.h:101</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a51550fe30f4909764ae363e60cc39316"><div class="ttname"><a href="class_p_c_m_frame.html#a51550fe30f4909764ae363e60cc39316">PCMFrame::setFrameInfo</a></div><div class="ttdeci">void setFrameInfo(int sample_rate, int channels, uint32_t pts, FrameType type=PCMFRAME_TYPE_PCM)</div><div class="ttdoc">设置帧信息</div><div class="ttdef"><b>定义</b> PCMFrame.cpp:40</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a5666e2328f866a48d9bb4c158f068e0e"><div class="ttname"><a href="class_p_c_m_frame.html#a5666e2328f866a48d9bb4c158f068e0e">PCMFrame::setFrameBuffer</a></div><div class="ttdeci">void setFrameBuffer(const uint8_t *const buffer, const unsigned int &amp;size)</div><div class="ttdoc">设置帧缓冲区</div><div class="ttdef"><b>定义</b> PCMFrame.cpp:54</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a7033bafa80d2349b9b0da59d8c486767"><div class="ttname"><a href="class_p_c_m_frame.html#a7033bafa80d2349b9b0da59d8c486767">PCMFrame::size</a></div><div class="ttdeci">unsigned int size()</div><div class="ttdoc">获取帧缓冲区大小</div><div class="ttdef"><b>定义</b> PCMFrame.h:72</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a7606723ef1db72ef21f3eb67833eb9fa"><div class="ttname"><a href="class_p_c_m_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">PCMFrame::timeStamp</a></div><div class="ttdeci">uint64_t timeStamp()</div><div class="ttdoc">获取 UTC 时间戳</div><div class="ttdef"><b>定义</b> PCMFrame.h:119</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a7dd2c9cca7ebf4769fb82fce4477fdc2"><div class="ttname"><a href="class_p_c_m_frame.html#a7dd2c9cca7ebf4769fb82fce4477fdc2">PCMFrame::m_channels</a></div><div class="ttdeci">int m_channels</div><div class="ttdoc">声道数</div><div class="ttdef"><b>定义</b> PCMFrame.h:140</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a808117e517ca1a298728d3d674d91e0c"><div class="ttname"><a href="class_p_c_m_frame.html#a808117e517ca1a298728d3d674d91e0c">PCMFrame::setTimeStamp</a></div><div class="ttdeci">void setTimeStamp(uint64_t t)</div><div class="ttdoc">设置 UTC 时间戳</div><div class="ttdef"><b>定义</b> PCMFrame.h:113</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_a96609d194adde59bc1e0facbe06a7063"><div class="ttname"><a href="class_p_c_m_frame.html#a96609d194adde59bc1e0facbe06a7063">PCMFrame::mFrameBuffer</a></div><div class="ttdeci">uint8_t * mFrameBuffer</div><div class="ttdoc">PCM 数据缓冲区</div><div class="ttdef"><b>定义</b> PCMFrame.h:124</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ab766533ac99363cb6d92a52357cfb7a1"><div class="ttname"><a href="class_p_c_m_frame.html#ab766533ac99363cb6d92a52357cfb7a1">PCMFrame::buffer</a></div><div class="ttdeci">uint8_t * buffer()</div><div class="ttdoc">获取帧缓冲区</div><div class="ttdef"><b>定义</b> PCMFrame.h:66</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ad43e6903192b24361a6656c6dce62ab6"><div class="ttname"><a href="class_p_c_m_frame.html#ad43e6903192b24361a6656c6dce62ab6">PCMFrame::PCMFrame</a></div><div class="ttdeci">PCMFrame()</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> PCMFrame.cpp:13</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ad495a9f61af7fff07d7e97979d1ab854"><div class="ttname"><a href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854">PCMFrame::FrameType</a></div><div class="ttdeci">FrameType</div><div class="ttdoc">PCM 帧类型</div><div class="ttdef"><b>定义</b> PCMFrame.h:32</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ad495a9f61af7fff07d7e97979d1ab854a1f76a96827dd8eb52da421e3dd22a78b"><div class="ttname"><a href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a1f76a96827dd8eb52da421e3dd22a78b">PCMFrame::PCMFRAME_TYPE_G711U</a></div><div class="ttdeci">@ PCMFRAME_TYPE_G711U</div><div class="ttdoc">G711U 格式</div><div class="ttdef"><b>定义</b> PCMFrame.h:37</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ad495a9f61af7fff07d7e97979d1ab854a2b2631dd0b452ae6fd2861492204bcaa"><div class="ttname"><a href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a2b2631dd0b452ae6fd2861492204bcaa">PCMFrame::PCMFRAME_TYPE_NONE</a></div><div class="ttdeci">@ PCMFRAME_TYPE_NONE</div><div class="ttdoc">无类型</div><div class="ttdef"><b>定义</b> PCMFrame.h:33</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ad495a9f61af7fff07d7e97979d1ab854a56125ba95d2323280d58ff9cc682ccf6"><div class="ttname"><a href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a56125ba95d2323280d58ff9cc682ccf6">PCMFrame::PCMFRAME_TYPE_PCMU</a></div><div class="ttdeci">@ PCMFRAME_TYPE_PCMU</div><div class="ttdoc">PCMU 格式</div><div class="ttdef"><b>定义</b> PCMFrame.h:35</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ad495a9f61af7fff07d7e97979d1ab854a6ca95a1bf4bbd598717fd05b10748a91"><div class="ttname"><a href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a6ca95a1bf4bbd598717fd05b10748a91">PCMFrame::PCMFRAME_TYPE_G711A</a></div><div class="ttdeci">@ PCMFRAME_TYPE_G711A</div><div class="ttdoc">G711A 格式</div><div class="ttdef"><b>定义</b> PCMFrame.h:38</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ad495a9f61af7fff07d7e97979d1ab854a6dfdcd204cf5cffd9bc43006e134f3b0"><div class="ttname"><a href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854a6dfdcd204cf5cffd9bc43006e134f3b0">PCMFrame::PCMFRAME_TYPE_PCMA</a></div><div class="ttdeci">@ PCMFRAME_TYPE_PCMA</div><div class="ttdoc">PCMA 格式</div><div class="ttdef"><b>定义</b> PCMFrame.h:36</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ad495a9f61af7fff07d7e97979d1ab854ad758cb4269f68676a31e368ebcc33144"><div class="ttname"><a href="class_p_c_m_frame.html#ad495a9f61af7fff07d7e97979d1ab854ad758cb4269f68676a31e368ebcc33144">PCMFrame::PCMFRAME_TYPE_PCM</a></div><div class="ttdeci">@ PCMFRAME_TYPE_PCM</div><div class="ttdoc">PCM 格式</div><div class="ttdef"><b>定义</b> PCMFrame.h:34</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_adfa746870a1972173197173b6c97492c"><div class="ttname"><a href="class_p_c_m_frame.html#adfa746870a1972173197173b6c97492c">PCMFrame::type</a></div><div class="ttdeci">FrameType type()</div><div class="ttdoc">获取帧类型</div><div class="ttdef"><b>定义</b> PCMFrame.h:107</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ae3413bb59f49eba4c7fa7dc71f4ba2c6"><div class="ttname"><a href="class_p_c_m_frame.html#ae3413bb59f49eba4c7fa7dc71f4ba2c6">PCMFrame::m_sample_rate</a></div><div class="ttdeci">int m_sample_rate</div><div class="ttdoc">采样率</div><div class="ttdef"><b>定义</b> PCMFrame.h:136</div></div>
+<div class="ttc" id="aclass_p_c_m_frame_html_ae92b61dcb9993d92435dae4366ec0794"><div class="ttname"><a href="class_p_c_m_frame.html#ae92b61dcb9993d92435dae4366ec0794">PCMFrame::~PCMFrame</a></div><div class="ttdeci">~PCMFrame()</div><div class="ttdoc">析构函数</div><div class="ttdef"><b>定义</b> PCMFrame.cpp:23</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_b12c950205874eb7cac8367399a55421.html">MyPlayer</a></li><li class="navelem"><a class="el" href="dir_5b4f0ac3f39cfcb6c3b247caa2266733.html">frame</a></li><li class="navelem"><a class="el" href="dir_e7aaa7f605378e7dd4245d6207a7e64c.html">AudioFrame</a></li><li class="navelem"><a class="el" href="_p_c_m_frame_8h.html">PCMFrame.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

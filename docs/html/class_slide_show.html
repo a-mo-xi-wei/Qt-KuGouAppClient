@@ -1,0 +1,1840 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SlideShow类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_slide_show.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_slide_show-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">SlideShow类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>轮播图控件类，支持图片滑动、自动轮播和指示器  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_slide_show_8h_source.html">SlideShow.h</a>&gt;</code></p>
+<div class="dynheader">
+类 SlideShow 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show__inherit__graph.png" border="0" usemap="#a_slide_show_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_slide_show_inherit__map" id="a_slide_show_inherit__map">
+<area shape="rect" title="轮播图控件类，支持图片滑动、自动轮播和指示器" alt="" coords="5,80,89,107"/>
+<area shape="rect" title=" " alt="" coords="11,5,83,32"/>
+<area shape="poly" title=" " alt="" coords="50,48,50,80,44,80,44,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+SlideShow 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show__coll__graph.png" border="0" usemap="#a_slide_show_coll__map" alt="Collaboration graph"/></div>
+<map name="a_slide_show_coll__map" id="a_slide_show_coll__map">
+<area shape="rect" title="轮播图控件类，支持图片滑动、自动轮播和指示器" alt="" coords="21,172,104,199"/>
+<area shape="rect" title=" " alt="" coords="5,81,78,108"/>
+<area shape="poly" title=" " alt="" coords="51,123,62,171,57,172,45,124"/>
+<area shape="rect" href="class_side_hide_label.html" title="标签控件类，支持图片偏移和圆角裁剪" alt="" coords="102,81,208,108"/>
+<area shape="poly" title=" " alt="" coords="132,121,78,173,74,169,129,117"/>
+<area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="124,5,186,32"/>
+<area shape="poly" title=" " alt="" coords="158,47,158,81,152,81,152,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a4f192b96ac5c37010bd4fc620221cdfb" id="r_a4f192b96ac5c37010bd4fc620221cdfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f192b96ac5c37010bd4fc620221cdfb">addImage</a> (const QPixmap &amp;pixmap, QString text=&quot;&quot;)</td></tr>
+<tr class="memdesc:a4f192b96ac5c37010bd4fc620221cdfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加图片  <br /></td></tr>
+<tr class="separator:a4f192b96ac5c37010bd4fc620221cdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f477b9e72be27892e5e3bef86d5687e" id="r_a7f477b9e72be27892e5e3bef86d5687e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f477b9e72be27892e5e3bef86d5687e">insertImage</a> (const int &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, const QPixmap &amp;pixmap, QString text=&quot;&quot;)</td></tr>
+<tr class="memdesc:a7f477b9e72be27892e5e3bef86d5687e"><td class="mdescLeft">&#160;</td><td class="mdescRight">插入图片  <br /></td></tr>
+<tr class="separator:a7f477b9e72be27892e5e3bef86d5687e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d6ac6048afaf373116f2aa99326b4e" id="r_a29d6ac6048afaf373116f2aa99326b4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29d6ac6048afaf373116f2aa99326b4e">removeImage</a> (const int &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>)</td></tr>
+<tr class="memdesc:a29d6ac6048afaf373116f2aa99326b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除图片  <br /></td></tr>
+<tr class="separator:a29d6ac6048afaf373116f2aa99326b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0962bc84f032b51b712a16dd0541039b" id="r_a0962bc84f032b51b712a16dd0541039b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0962bc84f032b51b712a16dd0541039b">setCurrentIndex</a> (int <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>)</td></tr>
+<tr class="memdesc:a0962bc84f032b51b712a16dd0541039b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前图片索引  <br /></td></tr>
+<tr class="separator:a0962bc84f032b51b712a16dd0541039b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af921bfc4064f75274b08809ce4f31ad1" id="r_af921bfc4064f75274b08809ce4f31ad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af921bfc4064f75274b08809ce4f31ad1">slideToLeft</a> ()</td></tr>
+<tr class="memdesc:af921bfc4064f75274b08809ce4f31ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">向左滑动  <br /></td></tr>
+<tr class="separator:af921bfc4064f75274b08809ce4f31ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a469ff243de6ef5b640555ea01097e7fe" id="r_a469ff243de6ef5b640555ea01097e7fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a469ff243de6ef5b640555ea01097e7fe">slideToRight</a> ()</td></tr>
+<tr class="memdesc:a469ff243de6ef5b640555ea01097e7fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">向右滑动  <br /></td></tr>
+<tr class="separator:a469ff243de6ef5b640555ea01097e7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a7d3b33a535a29aaa3531ee7234184c9c" id="r_a7d3b33a535a29aaa3531ee7234184c9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d3b33a535a29aaa3531ee7234184c9c">signalImageClicked</a> (int <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>)</td></tr>
+<tr class="memdesc:a7d3b33a535a29aaa3531ee7234184c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片被点击信号  <br /></td></tr>
+<tr class="separator:a7d3b33a535a29aaa3531ee7234184c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a1359375202ace0d839e59d1928712a" id="r_a7a1359375202ace0d839e59d1928712a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a1359375202ace0d839e59d1928712a">signalTextActivated</a> (QString text)</td></tr>
+<tr class="memdesc:a7a1359375202ace0d839e59d1928712a"><td class="mdescLeft">&#160;</td><td class="mdescRight">文本被激活信号  <br /></td></tr>
+<tr class="separator:a7a1359375202ace0d839e59d1928712a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ad6938b5225068a022f2e0fc79553d370" id="r_ad6938b5225068a022f2e0fc79553d370"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6938b5225068a022f2e0fc79553d370">SlideShow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:ad6938b5225068a022f2e0fc79553d370"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化轮播图控件  <br /></td></tr>
+<tr class="separator:ad6938b5225068a022f2e0fc79553d370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8a0615d839f371b9aa5c8c98e90036" id="r_a4d8a0615d839f371b9aa5c8c98e90036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d8a0615d839f371b9aa5c8c98e90036">setPixmapSize</a> (const QSize &amp;size)</td></tr>
+<tr class="memdesc:a4d8a0615d839f371b9aa5c8c98e90036"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置图片大小  <br /></td></tr>
+<tr class="separator:a4d8a0615d839f371b9aa5c8c98e90036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cc744d6951e5450002c36ad92534bf" id="r_a08cc744d6951e5450002c36ad92534bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08cc744d6951e5450002c36ad92534bf">setPixmapScale</a> (const bool &amp;scale)</td></tr>
+<tr class="memdesc:a08cc744d6951e5450002c36ad92534bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置图片缩放模式（已废弃）  <br /></td></tr>
+<tr class="separator:a08cc744d6951e5450002c36ad92534bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20a2f05a6bfb45214a982ff8bbc3169" id="r_ae20a2f05a6bfb45214a982ff8bbc3169"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae20a2f05a6bfb45214a982ff8bbc3169">setAutoSlide</a> (const int &amp;interval=5000) const</td></tr>
+<tr class="memdesc:ae20a2f05a6bfb45214a982ff8bbc3169"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置自动轮播  <br /></td></tr>
+<tr class="separator:ae20a2f05a6bfb45214a982ff8bbc3169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab193f50aa58ab9f883e3e5130c65d3fc" id="r_ab193f50aa58ab9f883e3e5130c65d3fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab193f50aa58ab9f883e3e5130c65d3fc">getCurrentIndex</a> () const</td></tr>
+<tr class="memdesc:ab193f50aa58ab9f883e3e5130c65d3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前图片索引  <br /></td></tr>
+<tr class="separator:ab193f50aa58ab9f883e3e5130c65d3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96cd1558566d8017528e0c0e2f33110f" id="r_a96cd1558566d8017528e0c0e2f33110f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96cd1558566d8017528e0c0e2f33110f">adjustLabels</a> (<a class="el" href="class_side_hide_label.html">SideHideLabel</a> *<a class="el" href="#a659fc0c7a94da3507bbfe0ee27c821e5">hidingLabel</a>=nullptr)</td></tr>
+<tr class="memdesc:a96cd1558566d8017528e0c0e2f33110f"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整标签布局  <br /></td></tr>
+<tr class="separator:a96cd1558566d8017528e0c0e2f33110f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整大小事件  <br /></td></tr>
+<tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f242b451f8b90c2bf758c631f72e21" id="r_aa8f242b451f8b90c2bf758c631f72e21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8f242b451f8b90c2bf758c631f72e21">eventFilter</a> (QObject *obj, QEvent *event) override</td></tr>
+<tr class="memdesc:aa8f242b451f8b90c2bf758c631f72e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤器  <br /></td></tr>
+<tr class="separator:aa8f242b451f8b90c2bf758c631f72e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a90c5ff2d99784bc1f4b031220446cb12" id="r_a90c5ff2d99784bc1f4b031220446cb12"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90c5ff2d99784bc1f4b031220446cb12">getScaledRoundedPixmap</a> (QPixmap pixmap) const</td></tr>
+<tr class="memdesc:a90c5ff2d99784bc1f4b031220446cb12"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取缩放和圆角处理的图片  <br /></td></tr>
+<tr class="separator:a90c5ff2d99784bc1f4b031220446cb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2861b58df00fe1ef9279ac4d3bfb8369" id="r_a2861b58df00fe1ef9279ac4d3bfb8369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2861b58df00fe1ef9279ac4d3bfb8369">moveTo</a> (<a class="el" href="class_side_hide_label.html">SideHideLabel</a> *label, QRect geometry) const</td></tr>
+<tr class="memdesc:a2861b58df00fe1ef9279ac4d3bfb8369"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动标签到指定位置  <br /></td></tr>
+<tr class="separator:a2861b58df00fe1ef9279ac4d3bfb8369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a75af338268564df4c195f5b22f83120d" id="r_a75af338268564df4c195f5b22f83120d"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_side_hide_label.html">SideHideLabel</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75af338268564df4c195f5b22f83120d">labels</a></td></tr>
+<tr class="memdesc:a75af338268564df4c195f5b22f83120d"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片标签列表  <br /></td></tr>
+<tr class="separator:a75af338268564df4c195f5b22f83120d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35aa86e4fdca936dd09fe00eb33186fe" id="r_a35aa86e4fdca936dd09fe00eb33186fe"><td class="memItemLeft" align="right" valign="top">QList&lt; QPixmap &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35aa86e4fdca936dd09fe00eb33186fe">pixmaps</a></td></tr>
+<tr class="memdesc:a35aa86e4fdca936dd09fe00eb33186fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">原始图片列表  <br /></td></tr>
+<tr class="separator:a35aa86e4fdca936dd09fe00eb33186fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7a2d384d2f4d0e5173464dea43dcea" id="r_a3f7a2d384d2f4d0e5173464dea43dcea"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f7a2d384d2f4d0e5173464dea43dcea">texts</a></td></tr>
+<tr class="memdesc:a3f7a2d384d2f4d0e5173464dea43dcea"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片关联文本列表  <br /></td></tr>
+<tr class="separator:a3f7a2d384d2f4d0e5173464dea43dcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6877a6b61f9e0645b284dd8cffc0d329" id="r_a6877a6b61f9e0645b284dd8cffc0d329"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_interactive_button_base.html">InteractiveButtonBase</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6877a6b61f9e0645b284dd8cffc0d329">indications</a></td></tr>
+<tr class="memdesc:a6877a6b61f9e0645b284dd8cffc0d329"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示器按钮列表  <br /></td></tr>
+<tr class="separator:a6877a6b61f9e0645b284dd8cffc0d329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b41910066b877c9effd739880b6b15e" id="r_a8b41910066b877c9effd739880b6b15e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b41910066b877c9effd739880b6b15e">currentIndex</a> = -1</td></tr>
+<tr class="memdesc:a8b41910066b877c9effd739880b6b15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前图片索引  <br /></td></tr>
+<tr class="separator:a8b41910066b877c9effd739880b6b15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc69e35c974dfdcd11e2383b44ca2220" id="r_abc69e35c974dfdcd11e2383b44ca2220"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc69e35c974dfdcd11e2383b44ca2220">autoSlideTimer</a> {}</td></tr>
+<tr class="memdesc:abc69e35c974dfdcd11e2383b44ca2220"><td class="mdescLeft">&#160;</td><td class="mdescRight">自动轮播定时器  <br /></td></tr>
+<tr class="separator:abc69e35c974dfdcd11e2383b44ca2220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659fc0c7a94da3507bbfe0ee27c821e5" id="r_a659fc0c7a94da3507bbfe0ee27c821e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_side_hide_label.html">SideHideLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a659fc0c7a94da3507bbfe0ee27c821e5">hidingLabel</a> {}</td></tr>
+<tr class="memdesc:a659fc0c7a94da3507bbfe0ee27c821e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">正在隐藏的标签  <br /></td></tr>
+<tr class="separator:a659fc0c7a94da3507bbfe0ee27c821e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc8a412c4460164e2848cd0fca1a152f" id="r_abc8a412c4460164e2848cd0fca1a152f"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc8a412c4460164e2848cd0fca1a152f">normalColor</a> = QColor(172, 128, 58)</td></tr>
+<tr class="memdesc:abc8a412c4460164e2848cd0fca1a152f"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示器默认颜色  <br /></td></tr>
+<tr class="separator:abc8a412c4460164e2848cd0fca1a152f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195acdd887206a6116645f579ab5749f" id="r_a195acdd887206a6116645f579ab5749f"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a195acdd887206a6116645f579ab5749f">selectColor</a> = Qt::yellow</td></tr>
+<tr class="memdesc:a195acdd887206a6116645f579ab5749f"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示器选中颜色  <br /></td></tr>
+<tr class="separator:a195acdd887206a6116645f579ab5749f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f643e21e7f0a3f065f7f1dc92fc5785" id="r_a0f643e21e7f0a3f065f7f1dc92fc5785"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f643e21e7f0a3f065f7f1dc92fc5785">oneSize</a></td></tr>
+<tr class="memdesc:a0f643e21e7f0a3f065f7f1dc92fc5785"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认图片大小  <br /></td></tr>
+<tr class="separator:a0f643e21e7f0a3f065f7f1dc92fc5785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc9db87691c80dd429465f89f522db8" id="r_aedc9db87691c80dd429465f89f522db8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedc9db87691c80dd429465f89f522db8">backScale</a> = 0.8</td></tr>
+<tr class="memdesc:aedc9db87691c80dd429465f89f522db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">两侧卡片缩放比例  <br /></td></tr>
+<tr class="separator:aedc9db87691c80dd429465f89f522db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4570c39412e9a825bdc92309e0803c" id="r_afc4570c39412e9a825bdc92309e0803c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc4570c39412e9a825bdc92309e0803c">sideOffside</a> = 0.4</td></tr>
+<tr class="memdesc:afc4570c39412e9a825bdc92309e0803c"><td class="mdescLeft">&#160;</td><td class="mdescRight">两侧卡片位置偏移比例  <br /></td></tr>
+<tr class="separator:afc4570c39412e9a825bdc92309e0803c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ab5a67f034024f5500c36e573c5542" id="r_a64ab5a67f034024f5500c36e573c5542"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64ab5a67f034024f5500c36e573c5542">imgOffside</a> = 0.15</td></tr>
+<tr class="memdesc:a64ab5a67f034024f5500c36e573c5542"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片内偏移比例  <br /></td></tr>
+<tr class="separator:a64ab5a67f034024f5500c36e573c5542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c6d7e99ee13d9c72acc0127af6efa7" id="r_a53c6d7e99ee13d9c72acc0127af6efa7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53c6d7e99ee13d9c72acc0127af6efa7">scalePixmap</a> = false</td></tr>
+<tr class="memdesc:a53c6d7e99ee13d9c72acc0127af6efa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片缩放标志（已废弃）  <br /></td></tr>
+<tr class="separator:a53c6d7e99ee13d9c72acc0127af6efa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76973b5ee7906b48e381391ebc863c4" id="r_af76973b5ee7906b48e381391ebc863c4"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af76973b5ee7906b48e381391ebc863c4">indicationLayout</a> {}</td></tr>
+<tr class="memdesc:af76973b5ee7906b48e381391ebc863c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示器布局  <br /></td></tr>
+<tr class="separator:af76973b5ee7906b48e381391ebc863c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e19e2d85b025398c8addc554f0f1456" id="r_a7e19e2d85b025398c8addc554f0f1456"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e19e2d85b025398c8addc554f0f1456">centerRect</a></td></tr>
+<tr class="memdesc:a7e19e2d85b025398c8addc554f0f1456"><td class="mdescLeft">&#160;</td><td class="mdescRight">中心卡片区域  <br /></td></tr>
+<tr class="separator:a7e19e2d85b025398c8addc554f0f1456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1e26497efd4298f1d8f6a86a9587de9" id="r_af1e26497efd4298f1d8f6a86a9587de9"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1e26497efd4298f1d8f6a86a9587de9">leftRect</a></td></tr>
+<tr class="memdesc:af1e26497efd4298f1d8f6a86a9587de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧卡片区域  <br /></td></tr>
+<tr class="separator:af1e26497efd4298f1d8f6a86a9587de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f126ad5f6f95e819a74e476c7e4f448" id="r_a3f126ad5f6f95e819a74e476c7e4f448"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f126ad5f6f95e819a74e476c7e4f448">rightRect</a></td></tr>
+<tr class="memdesc:a3f126ad5f6f95e819a74e476c7e4f448"><td class="mdescLeft">&#160;</td><td class="mdescRight">右侧卡片区域  <br /></td></tr>
+<tr class="separator:a3f126ad5f6f95e819a74e476c7e4f448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c0c56981a057dc0e6af79f5fc615d9" id="r_a27c0c56981a057dc0e6af79f5fc615d9"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27c0c56981a057dc0e6af79f5fc615d9">backRect</a></td></tr>
+<tr class="memdesc:a27c0c56981a057dc0e6af79f5fc615d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏卡片区域  <br /></td></tr>
+<tr class="separator:a27c0c56981a057dc0e6af79f5fc615d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>轮播图控件类，支持图片滑动、自动轮播和指示器 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ad6938b5225068a022f2e0fc79553d370" name="ad6938b5225068a022f2e0fc79553d370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6938b5225068a022f2e0fc79553d370">&#9670;&#160;</a></span>SlideShow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_slide_show.html">SlideShow</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化轮播图控件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置默认图片大小</p>
+<p>&lt; 创建指示器布局</p>
+<p>&lt; 创建主布局</p>
+<p>&lt; 添加弹性空间</p>
+<p>&lt; 添加指示器布局</p>
+<p>&lt; 居中对齐</p>
+<p>&lt; 创建自动轮播定时器</p>
+<p>&lt; 默认间隔 5 秒</p>
+<p>&lt; 连接定时器到右滑槽</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_ad6938b5225068a022f2e0fc79553d370_cgraph.png" border="0" usemap="#aclass_slide_show_ad6938b5225068a022f2e0fc79553d370_cgraph" alt=""/></div>
+<map name="aclass_slide_show_ad6938b5225068a022f2e0fc79553d370_cgraph" id="aclass_slide_show_ad6938b5225068a022f2e0fc79553d370_cgraph">
+<area shape="rect" title="构造函数，初始化轮播图控件" alt="" coords="5,31,89,57"/>
+<area shape="rect" href="class_slide_show.html#a4d8a0615d839f371b9aa5c8c98e90036" title="设置图片大小" alt="" coords="137,5,246,32"/>
+<area shape="poly" title=" " alt="" coords="89,34,121,28,122,34,90,39"/>
+<area shape="rect" href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe" title="向右滑动" alt="" coords="145,56,238,83"/>
+<area shape="poly" title=" " alt="" coords="90,49,130,56,129,61,89,54"/>
+<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="294,5,469,32"/>
+<area shape="poly" title=" " alt="" coords="246,16,279,16,279,21,246,21"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="324,56,439,83"/>
+<area shape="poly" title=" " alt="" coords="239,67,309,67,309,72,239,72"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="517,56,612,83"/>
+<area shape="poly" title=" " alt="" coords="439,67,502,67,502,72,439,72"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="660,31,801,57"/>
+<area shape="poly" title=" " alt="" coords="612,60,644,55,645,60,613,65"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="697,81,764,108"/>
+<area shape="poly" title=" " alt="" coords="613,74,681,85,681,90,612,79"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="849,31,1046,57"/>
+<area shape="poly" title=" " alt="" coords="801,41,833,41,833,47,801,47"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="852,81,1043,108"/>
+<area shape="poly" title=" " alt="" coords="764,92,836,92,836,97,764,97"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="852,132,1044,159"/>
+<area shape="poly" title=" " alt="" coords="765,100,873,125,872,131,764,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a4f192b96ac5c37010bd4fc620221cdfb" name="a4f192b96ac5c37010bd4fc620221cdfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f192b96ac5c37010bd4fc620221cdfb">&#9670;&#160;</a></span>addImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addImage </td>
+          <td>(</td>
+          <td class="paramtype">const QPixmap &amp;</td>          <td class="paramname"><span class="paramname"><em>pixmap</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>text</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>添加图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixmap</td><td>图片 </td></tr>
+    <tr><td class="paramname">text</td><td>关联文本，默认为空 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 插入到末尾</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a4f192b96ac5c37010bd4fc620221cdfb_cgraph.png" border="0" usemap="#aclass_slide_show_a4f192b96ac5c37010bd4fc620221cdfb_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a4f192b96ac5c37010bd4fc620221cdfb_cgraph" id="aclass_slide_show_a4f192b96ac5c37010bd4fc620221cdfb_cgraph">
+<area shape="rect" title="添加图片" alt="" coords="5,56,84,83"/>
+<area shape="rect" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e" title="插入图片" alt="" coords="132,56,221,83"/>
+<area shape="poly" title=" " alt="" coords="84,67,116,67,116,72,84,72"/>
+<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="269,5,444,32"/>
+<area shape="poly" title=" " alt="" coords="221,54,291,34,293,39,222,59"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="300,56,414,83"/>
+<area shape="poly" title=" " alt="" coords="222,67,284,67,284,72,222,72"/>
+<area shape="rect" href="class_interactive_button_base.html#a6fba9534db8d777139949b6270cf665a" title="鼠标进入" alt="" coords="282,107,432,149"/>
+<area shape="poly" title=" " alt="" coords="221,81,275,99,274,104,219,86"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="492,56,587,83"/>
+<area shape="poly" title=" " alt="" coords="414,67,477,67,477,72,414,72"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="635,31,776,57"/>
+<area shape="poly" title=" " alt="" coords="587,60,619,55,620,60,588,65"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="672,81,739,108"/>
+<area shape="poly" title=" " alt="" coords="588,74,656,85,656,90,587,79"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="824,31,1021,57"/>
+<area shape="poly" title=" " alt="" coords="776,41,808,41,808,47,776,47"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="827,81,1018,108"/>
+<area shape="poly" title=" " alt="" coords="739,92,811,92,811,97,739,97"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="826,132,1019,159"/>
+<area shape="poly" title=" " alt="" coords="740,100,848,125,847,131,739,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a96cd1558566d8017528e0c0e2f33110f" name="a96cd1558566d8017528e0c0e2f33110f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96cd1558566d8017528e0c0e2f33110f">&#9670;&#160;</a></span>adjustLabels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adjustLabels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_side_hide_label.html">SideHideLabel</a> *</td>          <td class="paramname"><span class="paramname"><em>leavingLabel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>调整标签布局 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hidingLabel</td><td>即将隐藏的标签，默认为 nullptr</td></tr>
+    <tr><td class="paramname">leavingLabel</td><td>即将隐藏的标签，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 获取控件尺寸</p>
+<p>&lt; 获取图片尺寸</p>
+<p>&lt; 两侧缩放比例</p>
+<p>&lt; 计算顶部边距</p>
+<p>&lt; 中心区域</p>
+<p>&lt; 左侧区域</p>
+<p>&lt; 右侧区域</p>
+<p>&lt; 隐藏区域</p>
+<p>&lt; 当前图片居中</p>
+<p>&lt; 下一张在右侧</p>
+<p>&lt; 上一张在左侧</p>
+<p>&lt; 移动标签</p>
+<p>&lt; 复制隐藏标签</p>
+<p>&lt; 移动隐藏标签</p>
+<p>&lt; 显示隐藏标签</p>
+<p>&lt; 创建透明度效果</p>
+<p>&lt; 设置初始透明度</p>
+<p>&lt; 创建透明度动画</p>
+<p>&lt; 起始透明度</p>
+<p>&lt; 结束透明度</p>
+<p>&lt; 动画曲线</p>
+<p>&lt; 动画时长</p>
+<p>&lt; 清理隐藏标签</p>
+<p>&lt; 删除动画</p>
+<p>&lt; 删除标签</p>
+<p>&lt; 删除效果</p>
+<p>&lt; 启动动画</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a96cd1558566d8017528e0c0e2f33110f_cgraph.png" border="0" usemap="#aclass_slide_show_a96cd1558566d8017528e0c0e2f33110f_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a96cd1558566d8017528e0c0e2f33110f_cgraph" id="aclass_slide_show_a96cd1558566d8017528e0c0e2f33110f_cgraph">
+<area shape="rect" title="调整标签布局" alt="" coords="5,31,100,57"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="148,5,289,32"/>
+<area shape="poly" title=" " alt="" coords="100,34,132,29,133,34,101,39"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="185,56,252,83"/>
+<area shape="poly" title=" " alt="" coords="101,49,169,59,169,65,100,54"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="337,5,534,32"/>
+<area shape="poly" title=" " alt="" coords="289,16,321,16,321,21,289,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="340,56,531,83"/>
+<area shape="poly" title=" " alt="" coords="252,67,324,67,324,72,252,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="340,107,532,133"/>
+<area shape="poly" title=" " alt="" coords="253,74,361,100,360,105,252,80"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a96cd1558566d8017528e0c0e2f33110f_icgraph.png" border="0" usemap="#aclass_slide_show_a96cd1558566d8017528e0c0e2f33110f_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a96cd1558566d8017528e0c0e2f33110f_icgraph" id="aclass_slide_show_a96cd1558566d8017528e0c0e2f33110f_icgraph">
+<area shape="rect" title="调整标签布局" alt="" coords="447,81,542,108"/>
+<area shape="rect" href="class_slide_show.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title="调整大小事件" alt="" coords="297,56,387,83"/>
+<area shape="poly" title=" " alt="" coords="432,87,387,79,388,74,432,82"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="285,107,399,133"/>
+<area shape="poly" title=" " alt="" coords="433,108,400,113,399,108,432,102"/>
+<area shape="rect" href="class_slide_show.html#aa8f242b451f8b90c2bf758c631f72e21" title="事件过滤器" alt="" coords="146,5,228,32"/>
+<area shape="poly" title=" " alt="" coords="290,101,283,97,268,84,259,71,249,59,235,46,217,35,220,30,239,42,253,55,263,68,272,80,287,93,293,97"/>
+<area shape="rect" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e" title="插入图片" alt="" coords="142,56,232,83"/>
+<area shape="poly" title=" " alt="" coords="283,104,229,86,231,81,285,99"/>
+<area shape="rect" href="class_slide_show.html#a29d6ac6048afaf373116f2aa99326b4e" title="移除图片" alt="" coords="137,107,237,133"/>
+<area shape="poly" title=" " alt="" coords="269,123,237,123,237,117,269,117"/>
+<area shape="rect" href="class_slide_show.html#af921bfc4064f75274b08809ce4f31ad1" title="向左滑动" alt="" coords="145,157,229,184"/>
+<area shape="poly" title=" " alt="" coords="285,141,230,159,229,154,284,136"/>
+<area shape="rect" href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe" title="向右滑动" alt="" coords="140,208,234,235"/>
+<area shape="poly" title=" " alt="" coords="314,145,238,198,218,210,215,205,236,194,311,141"/>
+<area shape="rect" href="class_slide_show.html#a4f192b96ac5c37010bd4fc620221cdfb" title="添加图片" alt="" coords="8,56,86,83"/>
+<area shape="poly" title=" " alt="" coords="127,72,87,72,87,67,127,67"/>
+<area shape="rect" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370" title="构造函数，初始化轮播图控件" alt="" coords="5,208,89,235"/>
+<area shape="poly" title=" " alt="" coords="125,224,89,224,89,219,125,219"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa8f242b451f8b90c2bf758c631f72e21" name="aa8f242b451f8b90c2bf758c631f72e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f242b451f8b90c2bf758c631f72e21">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>事件过滤器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>目标对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>重写基类方法 </dd></dl>
+<p>&lt; 中心图片点击</p>
+<p>&lt; 文本激活</p>
+<p>&lt; 切换到点击的图片</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_aa8f242b451f8b90c2bf758c631f72e21_cgraph.png" border="0" usemap="#aclass_slide_show_aa8f242b451f8b90c2bf758c631f72e21_cgraph" alt=""/></div>
+<map name="aclass_slide_show_aa8f242b451f8b90c2bf758c631f72e21_cgraph" id="aclass_slide_show_aa8f242b451f8b90c2bf758c631f72e21_cgraph">
+<area shape="rect" title="事件过滤器" alt="" coords="5,81,88,108"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="146,31,260,57"/>
+<area shape="poly" title=" " alt="" coords="87,79,145,60,147,65,89,84"/>
+<area shape="rect" href="class_slide_show.html#a7d3b33a535a29aaa3531ee7234184c9c" title="图片被点击信号" alt="" coords="136,81,271,108"/>
+<area shape="poly" title=" " alt="" coords="88,92,120,92,120,97,88,97"/>
+<area shape="rect" href="class_slide_show.html#a7a1359375202ace0d839e59d1928712a" title="文本被激活信号" alt="" coords="136,132,271,159"/>
+<area shape="poly" title=" " alt="" coords="89,105,147,124,145,129,87,110"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="319,31,413,57"/>
+<area shape="poly" title=" " alt="" coords="261,41,303,41,303,47,261,47"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="461,5,603,32"/>
+<area shape="poly" title=" " alt="" coords="413,34,446,29,446,34,414,39"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="498,56,566,83"/>
+<area shape="poly" title=" " alt="" coords="414,49,483,59,482,65,413,54"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="651,5,848,32"/>
+<area shape="poly" title=" " alt="" coords="603,16,635,16,635,21,603,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="654,56,845,83"/>
+<area shape="poly" title=" " alt="" coords="566,67,638,67,638,72,566,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="653,107,846,133"/>
+<area shape="poly" title=" " alt="" coords="567,74,675,100,674,105,565,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab193f50aa58ab9f883e3e5130c65d3fc" name="ab193f50aa58ab9f883e3e5130c65d3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab193f50aa58ab9f883e3e5130c65d3fc">&#9670;&#160;</a></span>getCurrentIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getCurrentIndex </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前图片索引 </p>
+<dl class="section return"><dt>返回</dt><dd>当前索引 </dd></dl>
+
+</div>
+</div>
+<a id="a90c5ff2d99784bc1f4b031220446cb12" name="a90c5ff2d99784bc1f4b031220446cb12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c5ff2d99784bc1f4b031220446cb12">&#9670;&#160;</a></span>getScaledRoundedPixmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap getScaledRoundedPixmap </td>
+          <td>(</td>
+          <td class="paramtype">QPixmap</td>          <td class="paramname"><span class="paramname"><em>pixmap</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取缩放和圆角处理的图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixmap</td><td>原始图片 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的图片 </dd></dl>
+<p>&lt; 计算所需宽度</p>
+<p>&lt; 缩放图片</p>
+<p>&lt; 裁剪宽度</p>
+<p>&lt; 裁剪高度</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a90c5ff2d99784bc1f4b031220446cb12_icgraph.png" border="0" usemap="#aclass_slide_show_a90c5ff2d99784bc1f4b031220446cb12_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a90c5ff2d99784bc1f4b031220446cb12_icgraph" id="aclass_slide_show_a90c5ff2d99784bc1f4b031220446cb12_icgraph">
+<area shape="rect" title="获取缩放和圆角处理的图片" alt="" coords="301,56,476,83"/>
+<area shape="rect" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e" title="插入图片" alt="" coords="150,5,240,32"/>
+<area shape="poly" title=" " alt="" coords="319,54,239,33,240,28,320,49"/>
+<area shape="rect" href="class_slide_show.html#a08cc744d6951e5450002c36ad92534bf" title="设置图片缩放模式（已废弃）" alt="" coords="137,56,253,83"/>
+<area shape="poly" title=" " alt="" coords="286,72,253,72,253,67,286,67"/>
+<area shape="rect" href="class_slide_show.html#a4d8a0615d839f371b9aa5c8c98e90036" title="设置图片大小" alt="" coords="140,107,250,133"/>
+<area shape="poly" title=" " alt="" coords="321,90,249,109,248,103,320,85"/>
+<area shape="rect" href="class_slide_show.html#a4f192b96ac5c37010bd4fc620221cdfb" title="添加图片" alt="" coords="8,5,86,32"/>
+<area shape="poly" title=" " alt="" coords="134,21,87,21,87,16,134,16"/>
+<area shape="rect" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370" title="构造函数，初始化轮播图控件" alt="" coords="5,107,89,133"/>
+<area shape="poly" title=" " alt="" coords="125,123,89,123,89,117,125,117"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7f477b9e72be27892e5e3bef86d5687e" name="a7f477b9e72be27892e5e3bef86d5687e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f477b9e72be27892e5e3bef86d5687e">&#9670;&#160;</a></span>insertImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void insertImage </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPixmap &amp;</td>          <td class="paramname"><span class="paramname"><em>pixmap</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>text</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>插入图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>插入位置 </td></tr>
+    <tr><td class="paramname">pixmap</td><td>图片 </td></tr>
+    <tr><td class="paramname">text</td><td>关联文本，默认为空 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 创建图片标签</p>
+<p>&lt; 启用缩放内容</p>
+<p>&lt; 插入标签</p>
+<p>&lt; 插入文本</p>
+<p>&lt; 插入原始图片</p>
+<p>&lt; 设置图片</p>
+<p>&lt; 设置最小尺寸</p>
+<p>&lt; 调整大小</p>
+<p>&lt; 添加阴影效果</p>
+<p>&lt; 显示标签</p>
+<p>&lt; 安装事件过滤器</p>
+<p>&lt; 创建指示器按钮</p>
+<p>&lt; 设置按钮大小</p>
+<p>&lt; 设置圆角半径</p>
+<p>&lt; 设置默认颜色</p>
+<p>&lt; 设置悬停颜色</p>
+<p>&lt; 插入指示器</p>
+<p>&lt; 添加到布局</p>
+<p>&lt; 鼠标悬停时切换索引</p>
+<p>&lt; 提升指示器层级</p>
+<p>&lt; 更新当前索引</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a7f477b9e72be27892e5e3bef86d5687e_cgraph.png" border="0" usemap="#aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_cgraph" id="aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_cgraph">
+<area shape="rect" title="插入图片" alt="" coords="5,56,95,83"/>
+<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="143,5,318,32"/>
+<area shape="poly" title=" " alt="" coords="95,54,165,34,167,39,96,59"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="173,56,288,83"/>
+<area shape="poly" title=" " alt="" coords="95,67,158,67,158,72,95,72"/>
+<area shape="rect" href="class_interactive_button_base.html#a6fba9534db8d777139949b6270cf665a" title="鼠标进入" alt="" coords="155,107,306,149"/>
+<area shape="poly" title=" " alt="" coords="94,81,149,99,147,104,93,86"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="366,56,460,83"/>
+<area shape="poly" title=" " alt="" coords="288,67,350,67,350,72,288,72"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="508,31,650,57"/>
+<area shape="poly" title=" " alt="" coords="460,60,493,55,493,60,461,65"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="545,81,613,108"/>
+<area shape="poly" title=" " alt="" coords="461,74,530,85,529,90,460,79"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="698,31,895,57"/>
+<area shape="poly" title=" " alt="" coords="650,41,682,41,682,47,650,47"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="701,81,892,108"/>
+<area shape="poly" title=" " alt="" coords="613,92,685,92,685,97,613,97"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="700,132,892,159"/>
+<area shape="poly" title=" " alt="" coords="614,100,722,125,721,131,612,105"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a7f477b9e72be27892e5e3bef86d5687e_icgraph.png" border="0" usemap="#aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_icgraph" id="aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_icgraph">
+<area shape="rect" title="插入图片" alt="" coords="132,5,221,32"/>
+<area shape="rect" href="class_slide_show.html#a4f192b96ac5c37010bd4fc620221cdfb" title="添加图片" alt="" coords="5,5,84,32"/>
+<area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2861b58df00fe1ef9279ac4d3bfb8369" name="a2861b58df00fe1ef9279ac4d3bfb8369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2861b58df00fe1ef9279ac4d3bfb8369">&#9670;&#160;</a></span>moveTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_side_hide_label.html">SideHideLabel</a> *</td>          <td class="paramname"><span class="paramname"><em>label</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRect</td>          <td class="paramname"><span class="paramname"><em>geometry</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移动标签到指定位置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">label</td><td>目标标签 </td></tr>
+    <tr><td class="paramname">geometry</td><td>目标几何 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 创建几何动画</p>
+<p>&lt; 起始几何</p>
+<p>&lt; 结束几何</p>
+<p>&lt; 动画时长</p>
+<p>&lt; 动画曲线</p>
+<p>&lt; 动画结束时删除</p>
+<p>&lt; 创建偏移动画</p>
+<p>&lt; 起始偏移</p>
+<p>&lt; 左侧偏移</p>
+<p>&lt; 右侧偏移</p>
+<p>&lt; 结束偏移</p>
+<p>&lt; 动画时长</p>
+<p>&lt; 动画曲线</p>
+<p>&lt; 动画结束时删除</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a2861b58df00fe1ef9279ac4d3bfb8369_cgraph.png" border="0" usemap="#aclass_slide_show_a2861b58df00fe1ef9279ac4d3bfb8369_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a2861b58df00fe1ef9279ac4d3bfb8369_cgraph" id="aclass_slide_show_a2861b58df00fe1ef9279ac4d3bfb8369_cgraph">
+<area shape="rect" title="移动标签到指定位置" alt="" coords="5,31,73,57"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="121,5,312,32"/>
+<area shape="poly" title=" " alt="" coords="73,37,105,32,106,37,74,42"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="121,56,313,83"/>
+<area shape="poly" title=" " alt="" coords="74,46,106,51,105,56,73,51"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a2861b58df00fe1ef9279ac4d3bfb8369_icgraph.png" border="0" usemap="#aclass_slide_show_a2861b58df00fe1ef9279ac4d3bfb8369_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a2861b58df00fe1ef9279ac4d3bfb8369_icgraph" id="aclass_slide_show_a2861b58df00fe1ef9279ac4d3bfb8369_icgraph">
+<area shape="rect" title="移动标签到指定位置" alt="" coords="590,81,657,108"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="447,81,542,108"/>
+<area shape="poly" title=" " alt="" coords="575,97,542,97,542,92,575,92"/>
+<area shape="rect" href="class_slide_show.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title="调整大小事件" alt="" coords="297,56,387,83"/>
+<area shape="poly" title=" " alt="" coords="432,87,387,79,388,74,432,82"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="285,107,399,133"/>
+<area shape="poly" title=" " alt="" coords="433,108,400,113,399,108,432,102"/>
+<area shape="rect" href="class_slide_show.html#aa8f242b451f8b90c2bf758c631f72e21" title="事件过滤器" alt="" coords="146,5,228,32"/>
+<area shape="poly" title=" " alt="" coords="290,101,283,97,268,84,259,71,249,59,235,46,217,35,220,30,239,42,253,55,263,68,272,80,287,93,293,97"/>
+<area shape="rect" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e" title="插入图片" alt="" coords="142,56,232,83"/>
+<area shape="poly" title=" " alt="" coords="283,104,229,86,231,81,285,99"/>
+<area shape="rect" href="class_slide_show.html#a29d6ac6048afaf373116f2aa99326b4e" title="移除图片" alt="" coords="137,107,237,133"/>
+<area shape="poly" title=" " alt="" coords="269,123,237,123,237,117,269,117"/>
+<area shape="rect" href="class_slide_show.html#af921bfc4064f75274b08809ce4f31ad1" title="向左滑动" alt="" coords="145,157,229,184"/>
+<area shape="poly" title=" " alt="" coords="285,141,230,159,229,154,284,136"/>
+<area shape="rect" href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe" title="向右滑动" alt="" coords="140,208,234,235"/>
+<area shape="poly" title=" " alt="" coords="314,145,238,198,218,210,215,205,236,194,311,141"/>
+<area shape="rect" href="class_slide_show.html#a4f192b96ac5c37010bd4fc620221cdfb" title="添加图片" alt="" coords="8,56,86,83"/>
+<area shape="poly" title=" " alt="" coords="127,72,87,72,87,67,127,67"/>
+<area shape="rect" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370" title="构造函数，初始化轮播图控件" alt="" coords="5,208,89,235"/>
+<area shape="poly" title=" " alt="" coords="125,224,89,224,89,219,125,219"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a29d6ac6048afaf373116f2aa99326b4e" name="a29d6ac6048afaf373116f2aa99326b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29d6ac6048afaf373116f2aa99326b4e">&#9670;&#160;</a></span>removeImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeImage </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移除图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>移除位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 删除标签</p>
+<p>&lt; 删除图片</p>
+<p>&lt; 删除文本</p>
+<p>&lt; 删除指示器</p>
+<p>&lt; 无图片时刷新</p>
+<p>&lt; 调整索引</p>
+<p>&lt; 更新索引</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a29d6ac6048afaf373116f2aa99326b4e_cgraph.png" border="0" usemap="#aclass_slide_show_a29d6ac6048afaf373116f2aa99326b4e_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a29d6ac6048afaf373116f2aa99326b4e_cgraph" id="aclass_slide_show_a29d6ac6048afaf373116f2aa99326b4e_cgraph">
+<area shape="rect" title="移除图片" alt="" coords="5,31,106,57"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="154,31,268,57"/>
+<area shape="poly" title=" " alt="" coords="106,41,138,41,138,47,106,47"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="316,31,410,57"/>
+<area shape="poly" title=" " alt="" coords="268,41,300,41,300,47,268,47"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="458,5,600,32"/>
+<area shape="poly" title=" " alt="" coords="410,34,443,29,443,34,411,39"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="495,56,563,83"/>
+<area shape="poly" title=" " alt="" coords="411,49,480,59,479,65,410,54"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="648,5,845,32"/>
+<area shape="poly" title=" " alt="" coords="600,16,632,16,632,21,600,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="651,56,842,83"/>
+<area shape="poly" title=" " alt="" coords="563,67,635,67,635,72,563,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="650,107,842,133"/>
+<area shape="poly" title=" " alt="" coords="564,74,672,100,671,105,562,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a27ed4ceb22d2a19bdb88ed785085a1" name="a9a27ed4ceb22d2a19bdb88ed785085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a27ed4ceb22d2a19bdb88ed785085a1">&#9670;&#160;</a></span>resizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>调整大小事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>调整大小事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>重写基类方法 </dd></dl>
+<p>&lt; 计算宽度</p>
+<p>&lt; 计算高度</p>
+<p>&lt; 更新图片大小</p>
+<p>&lt; 调整标签布局</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph.png" border="0" usemap="#aclass_slide_show_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph" id="aclass_slide_show_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph">
+<area shape="rect" title="调整大小事件" alt="" coords="5,31,96,57"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="144,31,238,57"/>
+<area shape="poly" title=" " alt="" coords="96,41,128,41,128,47,96,47"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="286,5,427,32"/>
+<area shape="poly" title=" " alt="" coords="238,34,270,29,271,34,239,39"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="323,56,390,83"/>
+<area shape="poly" title=" " alt="" coords="239,49,308,59,307,65,238,54"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="475,5,673,32"/>
+<area shape="poly" title=" " alt="" coords="428,16,460,16,460,21,428,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="478,56,670,83"/>
+<area shape="poly" title=" " alt="" coords="391,67,463,67,463,72,391,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="478,107,670,133"/>
+<area shape="poly" title=" " alt="" coords="391,74,500,100,498,105,390,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae20a2f05a6bfb45214a982ff8bbc3169" name="ae20a2f05a6bfb45214a982ff8bbc3169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20a2f05a6bfb45214a982ff8bbc3169">&#9670;&#160;</a></span>setAutoSlide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setAutoSlide </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>interval</em></span><span class="paramdefsep"> = </span><span class="paramdefval">5000</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置自动轮播 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interval</td><td>轮播间隔（毫秒），0 表示停止 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置间隔</p>
+<p>&lt; 启动定时器</p>
+<p>&lt; 停止定时器</p>
+
+</div>
+</div>
+<a id="a0962bc84f032b51b712a16dd0541039b" name="a0962bc84f032b51b712a16dd0541039b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0962bc84f032b51b712a16dd0541039b">&#9670;&#160;</a></span>setCurrentIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setCurrentIndex </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置当前图片索引 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>目标索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 限制最大索引</p>
+<p>&lt; 限制最小索引</p>
+<p>&lt; 重启定时器</p>
+<p>&lt; 判断滑动方向</p>
+<p>&lt; 恢复指示器颜色</p>
+<p>&lt; 获取即将离开的标签</p>
+<p>&lt; 更新当前索引</p>
+<p>&lt; 调整标签布局</p>
+<p>&lt; 左滑时提升右侧标签</p>
+<p>&lt; 提升左侧标签</p>
+<p>&lt; 右滑时提升右侧标签</p>
+<p>&lt; 提升中心标签</p>
+<p>&lt; 提升隐藏标签</p>
+<p>&lt; 提升指示器</p>
+<p>&lt; 恢复颜色</p>
+<p>&lt; 设置选中颜色</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a0962bc84f032b51b712a16dd0541039b_cgraph.png" border="0" usemap="#aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_cgraph" id="aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_cgraph">
+<area shape="rect" title="设置当前图片索引" alt="" coords="5,31,120,57"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="168,31,262,57"/>
+<area shape="poly" title=" " alt="" coords="120,41,152,41,152,47,120,47"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="310,5,451,32"/>
+<area shape="poly" title=" " alt="" coords="262,34,294,29,295,34,263,39"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="347,56,414,83"/>
+<area shape="poly" title=" " alt="" coords="263,49,332,59,331,65,262,54"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="499,5,697,32"/>
+<area shape="poly" title=" " alt="" coords="452,16,484,16,484,21,452,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="502,56,694,83"/>
+<area shape="poly" title=" " alt="" coords="415,67,487,67,487,72,415,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="502,107,694,133"/>
+<area shape="poly" title=" " alt="" coords="415,74,524,100,522,105,414,80"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a0962bc84f032b51b712a16dd0541039b_icgraph.png" border="0" usemap="#aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_icgraph" id="aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_icgraph">
+<area shape="rect" title="设置当前图片索引" alt="" coords="285,107,399,133"/>
+<area shape="rect" href="class_slide_show.html#aa8f242b451f8b90c2bf758c631f72e21" title="事件过滤器" alt="" coords="146,5,228,32"/>
+<area shape="poly" title=" " alt="" coords="311,99,236,46,215,35,218,30,238,42,314,95"/>
+<area shape="rect" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e" title="插入图片" alt="" coords="142,56,232,83"/>
+<area shape="poly" title=" " alt="" coords="283,104,229,86,231,81,285,99"/>
+<area shape="rect" href="class_slide_show.html#a29d6ac6048afaf373116f2aa99326b4e" title="移除图片" alt="" coords="137,107,237,133"/>
+<area shape="poly" title=" " alt="" coords="269,123,237,123,237,117,269,117"/>
+<area shape="rect" href="class_slide_show.html#af921bfc4064f75274b08809ce4f31ad1" title="向左滑动" alt="" coords="145,157,229,184"/>
+<area shape="poly" title=" " alt="" coords="285,141,230,159,229,154,284,136"/>
+<area shape="rect" href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe" title="向右滑动" alt="" coords="140,208,234,235"/>
+<area shape="poly" title=" " alt="" coords="314,145,238,198,218,210,215,205,236,194,311,141"/>
+<area shape="rect" href="class_slide_show.html#a4f192b96ac5c37010bd4fc620221cdfb" title="添加图片" alt="" coords="8,56,86,83"/>
+<area shape="poly" title=" " alt="" coords="127,72,87,72,87,67,127,67"/>
+<area shape="rect" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370" title="构造函数，初始化轮播图控件" alt="" coords="5,208,89,235"/>
+<area shape="poly" title=" " alt="" coords="125,224,89,224,89,219,125,219"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08cc744d6951e5450002c36ad92534bf" name="a08cc744d6951e5450002c36ad92534bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08cc744d6951e5450002c36ad92534bf">&#9670;&#160;</a></span>setPixmapScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setPixmapScale </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>scale</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置图片缩放模式（已废弃） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>是否缩放 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 更新图片</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a08cc744d6951e5450002c36ad92534bf_cgraph.png" border="0" usemap="#aclass_slide_show_a08cc744d6951e5450002c36ad92534bf_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a08cc744d6951e5450002c36ad92534bf_cgraph" id="aclass_slide_show_a08cc744d6951e5450002c36ad92534bf_cgraph">
+<area shape="rect" title="设置图片缩放模式（已废弃）" alt="" coords="5,5,122,32"/>
+<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="170,5,345,32"/>
+<area shape="poly" title=" " alt="" coords="122,16,154,16,154,21,122,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d8a0615d839f371b9aa5c8c98e90036" name="a4d8a0615d839f371b9aa5c8c98e90036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d8a0615d839f371b9aa5c8c98e90036">&#9670;&#160;</a></span>setPixmapSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setPixmapSize </td>
+          <td>(</td>
+          <td class="paramtype">const QSize &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置图片大小 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>图片尺寸 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置最小尺寸</p>
+<p>&lt; 更新图片</p>
+<p>&lt; 设置最小尺寸</p>
+<p>&lt; 设置最大尺寸</p>
+<p>&lt; 调整大小</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a4d8a0615d839f371b9aa5c8c98e90036_cgraph.png" border="0" usemap="#aclass_slide_show_a4d8a0615d839f371b9aa5c8c98e90036_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a4d8a0615d839f371b9aa5c8c98e90036_cgraph" id="aclass_slide_show_a4d8a0615d839f371b9aa5c8c98e90036_cgraph">
+<area shape="rect" title="设置图片大小" alt="" coords="5,5,115,32"/>
+<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="163,5,338,32"/>
+<area shape="poly" title=" " alt="" coords="115,16,147,16,147,21,115,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a4d8a0615d839f371b9aa5c8c98e90036_icgraph.png" border="0" usemap="#aclass_slide_show_a4d8a0615d839f371b9aa5c8c98e90036_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a4d8a0615d839f371b9aa5c8c98e90036_icgraph" id="aclass_slide_show_a4d8a0615d839f371b9aa5c8c98e90036_icgraph">
+<area shape="rect" title="设置图片大小" alt="" coords="137,5,246,32"/>
+<area shape="rect" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370" title="构造函数，初始化轮播图控件" alt="" coords="5,5,89,32"/>
+<area shape="poly" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7d3b33a535a29aaa3531ee7234184c9c" name="a7d3b33a535a29aaa3531ee7234184c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3b33a535a29aaa3531ee7234184c9c">&#9670;&#160;</a></span>signalImageClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void signalImageClicked </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>图片被点击信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>点击的图片索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a7d3b33a535a29aaa3531ee7234184c9c_icgraph.png" border="0" usemap="#aclass_slide_show_a7d3b33a535a29aaa3531ee7234184c9c_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a7d3b33a535a29aaa3531ee7234184c9c_icgraph" id="aclass_slide_show_a7d3b33a535a29aaa3531ee7234184c9c_icgraph">
+<area shape="rect" title="图片被点击信号" alt="" coords="136,5,271,32"/>
+<area shape="rect" href="class_slide_show.html#aa8f242b451f8b90c2bf758c631f72e21" title="事件过滤器" alt="" coords="5,5,88,32"/>
+<area shape="poly" title=" " alt="" coords="120,21,88,21,88,16,120,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a1359375202ace0d839e59d1928712a" name="a7a1359375202ace0d839e59d1928712a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a1359375202ace0d839e59d1928712a">&#9670;&#160;</a></span>signalTextActivated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void signalTextActivated </td>
+          <td>(</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>文本被激活信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>关联文本 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a7a1359375202ace0d839e59d1928712a_icgraph.png" border="0" usemap="#aclass_slide_show_a7a1359375202ace0d839e59d1928712a_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a7a1359375202ace0d839e59d1928712a_icgraph" id="aclass_slide_show_a7a1359375202ace0d839e59d1928712a_icgraph">
+<area shape="rect" title="文本被激活信号" alt="" coords="136,5,271,32"/>
+<area shape="rect" href="class_slide_show.html#aa8f242b451f8b90c2bf758c631f72e21" title="事件过滤器" alt="" coords="5,5,88,32"/>
+<area shape="poly" title=" " alt="" coords="120,21,88,21,88,16,120,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af921bfc4064f75274b08809ce4f31ad1" name="af921bfc4064f75274b08809ce4f31ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af921bfc4064f75274b08809ce4f31ad1">&#9670;&#160;</a></span>slideToLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void slideToLeft </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向左滑动 </p>
+<p>&lt; 切换到前一张</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_af921bfc4064f75274b08809ce4f31ad1_cgraph.png" border="0" usemap="#aclass_slide_show_af921bfc4064f75274b08809ce4f31ad1_cgraph" alt=""/></div>
+<map name="aclass_slide_show_af921bfc4064f75274b08809ce4f31ad1_cgraph" id="aclass_slide_show_af921bfc4064f75274b08809ce4f31ad1_cgraph">
+<area shape="rect" title="向左滑动" alt="" coords="5,31,90,57"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="138,31,252,57"/>
+<area shape="poly" title=" " alt="" coords="90,41,122,41,122,47,90,47"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="300,31,394,57"/>
+<area shape="poly" title=" " alt="" coords="252,41,284,41,284,47,252,47"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="442,5,584,32"/>
+<area shape="poly" title=" " alt="" coords="394,34,427,29,427,34,395,39"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="479,56,547,83"/>
+<area shape="poly" title=" " alt="" coords="395,49,464,59,463,65,394,54"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="632,5,829,32"/>
+<area shape="poly" title=" " alt="" coords="584,16,616,16,616,21,584,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="635,56,826,83"/>
+<area shape="poly" title=" " alt="" coords="547,67,619,67,619,72,547,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="634,107,826,133"/>
+<area shape="poly" title=" " alt="" coords="548,74,656,100,655,105,546,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a469ff243de6ef5b640555ea01097e7fe" name="a469ff243de6ef5b640555ea01097e7fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a469ff243de6ef5b640555ea01097e7fe">&#9670;&#160;</a></span>slideToRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void slideToRight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向右滑动 </p>
+<p>&lt; 切换到后一张</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a469ff243de6ef5b640555ea01097e7fe_cgraph.png" border="0" usemap="#aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_cgraph" alt=""/></div>
+<map name="aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_cgraph" id="aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_cgraph">
+<area shape="rect" title="向右滑动" alt="" coords="5,31,99,57"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="147,31,261,57"/>
+<area shape="poly" title=" " alt="" coords="99,41,131,41,131,47,99,47"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="309,31,403,57"/>
+<area shape="poly" title=" " alt="" coords="261,41,293,41,293,47,261,47"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="451,5,593,32"/>
+<area shape="poly" title=" " alt="" coords="403,34,436,29,436,34,404,39"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="488,56,556,83"/>
+<area shape="poly" title=" " alt="" coords="404,49,473,59,472,65,403,54"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="641,5,838,32"/>
+<area shape="poly" title=" " alt="" coords="593,16,625,16,625,21,593,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="644,56,835,83"/>
+<area shape="poly" title=" " alt="" coords="556,67,628,67,628,72,556,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="643,107,836,133"/>
+<area shape="poly" title=" " alt="" coords="557,74,665,100,664,105,555,80"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_a469ff243de6ef5b640555ea01097e7fe_icgraph.png" border="0" usemap="#aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_icgraph" alt=""/></div>
+<map name="aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_icgraph" id="aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_icgraph">
+<area shape="rect" title="向右滑动" alt="" coords="137,5,230,32"/>
+<area shape="rect" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370" title="构造函数，初始化轮播图控件" alt="" coords="5,5,89,32"/>
+<area shape="poly" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="abc69e35c974dfdcd11e2383b44ca2220" name="abc69e35c974dfdcd11e2383b44ca2220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc69e35c974dfdcd11e2383b44ca2220">&#9670;&#160;</a></span>autoSlideTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* autoSlideTimer {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>自动轮播定时器 </p>
+
+</div>
+</div>
+<a id="a27c0c56981a057dc0e6af79f5fc615d9" name="a27c0c56981a057dc0e6af79f5fc615d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c0c56981a057dc0e6af79f5fc615d9">&#9670;&#160;</a></span>backRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRect backRect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>隐藏卡片区域 </p>
+
+</div>
+</div>
+<a id="aedc9db87691c80dd429465f89f522db8" name="aedc9db87691c80dd429465f89f522db8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc9db87691c80dd429465f89f522db8">&#9670;&#160;</a></span>backScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double backScale = 0.8</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>两侧卡片缩放比例 </p>
+
+</div>
+</div>
+<a id="a7e19e2d85b025398c8addc554f0f1456" name="a7e19e2d85b025398c8addc554f0f1456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e19e2d85b025398c8addc554f0f1456">&#9670;&#160;</a></span>centerRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRect centerRect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>中心卡片区域 </p>
+
+</div>
+</div>
+<a id="a8b41910066b877c9effd739880b6b15e" name="a8b41910066b877c9effd739880b6b15e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b41910066b877c9effd739880b6b15e">&#9670;&#160;</a></span>currentIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int currentIndex = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前图片索引 </p>
+
+</div>
+</div>
+<a id="a659fc0c7a94da3507bbfe0ee27c821e5" name="a659fc0c7a94da3507bbfe0ee27c821e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659fc0c7a94da3507bbfe0ee27c821e5">&#9670;&#160;</a></span>hidingLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_side_hide_label.html">SideHideLabel</a>* hidingLabel {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>正在隐藏的标签 </p>
+
+</div>
+</div>
+<a id="a64ab5a67f034024f5500c36e573c5542" name="a64ab5a67f034024f5500c36e573c5542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ab5a67f034024f5500c36e573c5542">&#9670;&#160;</a></span>imgOffside</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double imgOffside = 0.15</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>图片内偏移比例 </p>
+
+</div>
+</div>
+<a id="af76973b5ee7906b48e381391ebc863c4" name="af76973b5ee7906b48e381391ebc863c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af76973b5ee7906b48e381391ebc863c4">&#9670;&#160;</a></span>indicationLayout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout* indicationLayout {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指示器布局 </p>
+
+</div>
+</div>
+<a id="a6877a6b61f9e0645b284dd8cffc0d329" name="a6877a6b61f9e0645b284dd8cffc0d329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6877a6b61f9e0645b284dd8cffc0d329">&#9670;&#160;</a></span>indications</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_interactive_button_base.html">InteractiveButtonBase</a> *&gt; indications</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指示器按钮列表 </p>
+
+</div>
+</div>
+<a id="a75af338268564df4c195f5b22f83120d" name="a75af338268564df4c195f5b22f83120d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75af338268564df4c195f5b22f83120d">&#9670;&#160;</a></span>labels</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_side_hide_label.html">SideHideLabel</a> *&gt; labels</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>图片标签列表 </p>
+
+</div>
+</div>
+<a id="af1e26497efd4298f1d8f6a86a9587de9" name="af1e26497efd4298f1d8f6a86a9587de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1e26497efd4298f1d8f6a86a9587de9">&#9670;&#160;</a></span>leftRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRect leftRect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧卡片区域 </p>
+
+</div>
+</div>
+<a id="abc8a412c4460164e2848cd0fca1a152f" name="abc8a412c4460164e2848cd0fca1a152f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc8a412c4460164e2848cd0fca1a152f">&#9670;&#160;</a></span>normalColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor normalColor = QColor(172, 128, 58)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指示器默认颜色 </p>
+
+</div>
+</div>
+<a id="a0f643e21e7f0a3f065f7f1dc92fc5785" name="a0f643e21e7f0a3f065f7f1dc92fc5785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f643e21e7f0a3f065f7f1dc92fc5785">&#9670;&#160;</a></span>oneSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize oneSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认图片大小 </p>
+
+</div>
+</div>
+<a id="a35aa86e4fdca936dd09fe00eb33186fe" name="a35aa86e4fdca936dd09fe00eb33186fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35aa86e4fdca936dd09fe00eb33186fe">&#9670;&#160;</a></span>pixmaps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QPixmap&gt; pixmaps</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>原始图片列表 </p>
+
+</div>
+</div>
+<a id="a3f126ad5f6f95e819a74e476c7e4f448" name="a3f126ad5f6f95e819a74e476c7e4f448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f126ad5f6f95e819a74e476c7e4f448">&#9670;&#160;</a></span>rightRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRect rightRect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>右侧卡片区域 </p>
+
+</div>
+</div>
+<a id="a53c6d7e99ee13d9c72acc0127af6efa7" name="a53c6d7e99ee13d9c72acc0127af6efa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53c6d7e99ee13d9c72acc0127af6efa7">&#9670;&#160;</a></span>scalePixmap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool scalePixmap = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>图片缩放标志（已废弃） </p>
+
+</div>
+</div>
+<a id="a195acdd887206a6116645f579ab5749f" name="a195acdd887206a6116645f579ab5749f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a195acdd887206a6116645f579ab5749f">&#9670;&#160;</a></span>selectColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor selectColor = Qt::yellow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指示器选中颜色 </p>
+
+</div>
+</div>
+<a id="afc4570c39412e9a825bdc92309e0803c" name="afc4570c39412e9a825bdc92309e0803c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4570c39412e9a825bdc92309e0803c">&#9670;&#160;</a></span>sideOffside</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double sideOffside = 0.4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>两侧卡片位置偏移比例 </p>
+
+</div>
+</div>
+<a id="a3f7a2d384d2f4d0e5173464dea43dcea" name="a3f7a2d384d2f4d0e5173464dea43dcea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7a2d384d2f4d0e5173464dea43dcea">&#9670;&#160;</a></span>texts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QString&gt; texts</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>图片关联文本列表 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_slide_show_8h_source.html">SlideShow.h</a></li>
+<li><a class="el" href="_slide_show_8cpp.html">SlideShow.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_slide_show.html">SlideShow</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

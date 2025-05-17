@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: jqhttpserver.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('jqhttpserver_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">jqhttpserver.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="namespace_j_q_http_server.html">JQHttpServer</a> 实现文件，包含 HTTP 服务器的类实现。  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="jqhttpserver_8h_source.html">jqhttpserver.h</a>&quot;</code><br />
+<code>#include &lt;QMetaObject&gt;</code><br />
+<code>#include &lt;QThread&gt;</code><br />
+<code>#include &lt;QThreadPool&gt;</code><br />
+<code>#include &lt;QPointer&gt;</code><br />
+<code>#include &lt;QPainter&gt;</code><br />
+<code>#include &lt;QtConcurrent&gt;</code><br />
+<code>#include &lt;QApplication&gt;</code><br />
+<code>#include &lt;QTcpServer&gt;</code><br />
+<code>#include &lt;QTcpSocket&gt;</code><br />
+<code>#include &lt;QLocalSocket&gt;</code><br />
+<code>#include &lt;QSslKey&gt;</code><br />
+<code>#include &lt;QSslConfiguration&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+jqhttpserver.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="jqhttpserver_8cpp__incl.png" border="0" usemap="#ajqhttpserver_8cpp" alt=""/></div>
+<map name="ajqhttpserver_8cpp" id="ajqhttpserver_8cpp">
+<area shape="rect" title="JQHttpServer 实现文件，包含 HTTP 服务器的类实现。" alt="" coords="964,5,1078,32"/>
+<area shape="rect" href="jqhttpserver_8h.html" title="JQHttpServer 头文件，包含 HTTP 服务器的类和枚举定义。" alt="" coords="315,80,416,107"/>
+<area shape="poly" title=" " alt="" coords="964,27,735,47,431,82,430,77,735,41,964,21"/>
+<area shape="rect" title=" " alt="" coords="440,80,538,107"/>
+<area shape="poly" title=" " alt="" coords="964,29,785,50,554,82,554,77,785,44,963,23"/>
+<area shape="rect" title=" " alt="" coords="563,80,634,107"/>
+<area shape="poly" title=" " alt="" coords="964,30,825,51,650,82,649,77,824,46,964,25"/>
+<area shape="rect" title=" " alt="" coords="658,80,755,107"/>
+<area shape="poly" title=" " alt="" coords="967,35,771,80,770,75,966,30"/>
+<area shape="rect" title=" " alt="" coords="780,80,852,107"/>
+<area shape="poly" title=" " alt="" coords="986,35,867,77,865,72,985,30"/>
+<area shape="rect" title=" " alt="" coords="876,80,948,107"/>
+<area shape="poly" title=" " alt="" coords="1004,35,945,74,942,69,1001,30"/>
+<area shape="rect" title=" " alt="" coords="972,80,1071,107"/>
+<area shape="poly" title=" " alt="" coords="1024,33,1024,64,1019,64,1019,33"/>
+<area shape="rect" title=" " alt="" coords="1095,80,1190,107"/>
+<area shape="poly" title=" " alt="" coords="1044,30,1110,69,1107,74,1041,35"/>
+<area shape="rect" title=" " alt="" coords="1215,80,1305,107"/>
+<area shape="poly" title=" " alt="" coords="1064,30,1204,72,1203,78,1062,35"/>
+<area shape="rect" title=" " alt="" coords="1329,80,1423,107"/>
+<area shape="poly" title=" " alt="" coords="1079,29,1315,77,1314,82,1078,34"/>
+<area shape="rect" title=" " alt="" coords="1447,80,1550,107"/>
+<area shape="poly" title=" " alt="" coords="1079,25,1432,77,1431,82,1079,30"/>
+<area shape="rect" title=" " alt="" coords="1574,80,1647,107"/>
+<area shape="poly" title=" " alt="" coords="1079,21,1287,40,1421,56,1559,77,1558,82,1420,61,1287,45,1079,26"/>
+<area shape="rect" title=" " alt="" coords="1671,80,1798,107"/>
+<area shape="poly" title=" " alt="" coords="1079,21,1326,42,1656,77,1655,82,1326,47,1079,27"/>
+<area shape="rect" title=" " alt="" coords="5,155,83,181"/>
+<area shape="poly" title=" " alt="" coords="315,108,98,157,97,151,314,103"/>
+<area shape="rect" title=" " alt="" coords="107,155,176,181"/>
+<area shape="poly" title=" " alt="" coords="327,110,191,154,189,148,325,105"/>
+<area shape="rect" title=" " alt="" coords="199,155,268,181"/>
+<area shape="poly" title=" " alt="" coords="344,110,271,149,268,145,341,105"/>
+<area shape="rect" title=" " alt="" coords="292,155,359,181"/>
+<area shape="poly" title=" " alt="" coords="361,109,342,142,337,140,356,106"/>
+<area shape="rect" title=" " alt="" coords="382,155,431,181"/>
+<area shape="poly" title=" " alt="" coords="375,106,394,140,390,143,370,109"/>
+<area shape="rect" title=" " alt="" coords="456,155,566,181"/>
+<area shape="poly" title=" " alt="" coords="392,105,473,145,471,150,389,110"/>
+<area shape="rect" title=" " alt="" coords="590,155,682,181"/>
+<area shape="poly" title=" " alt="" coords="413,105,576,148,575,153,412,110"/>
+<area shape="rect" href="jqdeclare_8hpp.html" title="JQLibrary 的声明文件，包含宏定义和导出声明。" alt="" coords="706,155,804,181"/>
+<area shape="poly" title=" " alt="" coords="416,102,428,104,691,152,690,157,428,109,415,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_q_http_server_1_1_ssl_server_helper.html">SslServerHelper</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSL 服务器助手类。  <a href="class_j_q_http_server_1_1_ssl_server_helper.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_j_q_http_server.html">JQHttpServer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a00b1ce84c7a0dc139b72babbc482e7e8" id="r_a00b1ce84c7a0dc139b72babbc482e7e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00b1ce84c7a0dc139b72babbc482e7e8">JQHTTPSERVER_SESSION_PROTECTION</a>(functionName, ...)</td></tr>
+<tr class="separator:a00b1ce84c7a0dc139b72babbc482e7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5529a75a8dcb06c265ff24feb26e8de2" id="r_a5529a75a8dcb06c265ff24feb26e8de2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5529a75a8dcb06c265ff24feb26e8de2">JQHTTPSERVER_SESSION_REPLY_PROTECTION</a>(functionName, ...)</td></tr>
+<tr class="separator:a5529a75a8dcb06c265ff24feb26e8de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada4db0eb73770679e7a833875582295b" id="r_ada4db0eb73770679e7a833875582295b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada4db0eb73770679e7a833875582295b">JQHTTPSERVER_SESSION_REPLY_PROTECTION2</a>(functionName, ...)</td></tr>
+<tr class="separator:ada4db0eb73770679e7a833875582295b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a2bc781fe33db1ba067b08ed7d5a3d6d1" id="r_a2bc781fe33db1ba067b08ed7d5a3d6d1"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bc781fe33db1ba067b08ed7d5a3d6d1">replyTextFormat</a> (&quot;HTTP/1.1 %1 OK\r\n&quot; &quot;Content-Type: %2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-Type,<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot; &quot;%4&quot;)</td></tr>
+<tr class="separator:a2bc781fe33db1ba067b08ed7d5a3d6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8029244d733207e0df79497e7f7c742d" id="r_a8029244d733207e0df79497e7f7c742d"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8029244d733207e0df79497e7f7c742d">replyRedirectsFormat</a> (&quot;HTTP/1.1 %1 OK\r\n&quot; &quot;Content-Type: %2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-Type,<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot; &quot;%4&quot;)</td></tr>
+<tr class="separator:a8029244d733207e0df79497e7f7c742d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01bf1366db4bb5f128f8b64edf809a30" id="r_a01bf1366db4bb5f128f8b64edf809a30"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01bf1366db4bb5f128f8b64edf809a30">replyFileFormat</a> (&quot;HTTP/1.1 %1 OK\r\n&quot; &quot;Content-Disposition: attachment;filename=%2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-Type,<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot;)</td></tr>
+<tr class="separator:a01bf1366db4bb5f128f8b64edf809a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf84153d548e64a5e0a092697a255175" id="r_abf84153d548e64a5e0a092697a255175"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf84153d548e64a5e0a092697a255175">replyImageFormat</a> (&quot;HTTP/1.1 %1\r\n&quot; &quot;Content-Type: image/%2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-Type,<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot;)</td></tr>
+<tr class="separator:abf84153d548e64a5e0a092697a255175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4facfeb02dc481ea95091ba34a435fe3" id="r_a4facfeb02dc481ea95091ba34a435fe3"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4facfeb02dc481ea95091ba34a435fe3">replyBytesFormat</a> (&quot;HTTP/1.1 %1 OK\r\n&quot; &quot;Content-Type: %2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-Type,<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot;)</td></tr>
+<tr class="separator:a4facfeb02dc481ea95091ba34a435fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1a702c3653ed4b612dfde26c8b94e0b" id="r_ac1a702c3653ed4b612dfde26c8b94e0b"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1a702c3653ed4b612dfde26c8b94e0b">replyOptionsFormat</a> (&quot;HTTP/1.1 200 OK\r\n&quot; &quot;Allow: OPTIONS, GET, POST, PUT, HEAD\r\n&quot; &quot;Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, HEAD\r\n&quot; &quot;Content-Length: 0\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-Type,<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot;)</td></tr>
+<tr class="separator:ac1a702c3653ed4b612dfde26c8b94e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="namespace_j_q_http_server.html">JQHttpServer</a> 实现文件，包含 HTTP 服务器的类实现。 </p>
+<p>此文件是 JQLibrary 的一部分，提供了 HTTP 服务器的实现。</p>
+<dl class="section author"><dt>作者</dt><dd>Jason @contact <a href="#" onclick="location.href='mai'+'lto:'+'188'+'08'+'050'+'1@'+'qq.'+'co'+'m'; return false;">18808<span class="obfuscator">.nosp@m.</span>0501<span class="obfuscator">.nosp@m.</span>@qq.c<span class="obfuscator">.nosp@m.</span>om</a> </dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>GNU Lesser General Public License </dd></dl>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a00b1ce84c7a0dc139b72babbc482e7e8" name="a00b1ce84c7a0dc139b72babbc482e7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b1ce84c7a0dc139b72babbc482e7e8">&#9670;&#160;</a></span>JQHTTPSERVER_SESSION_PROTECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define JQHTTPSERVER_SESSION_PROTECTION</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>functionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keyword">auto</span> this_ = <span class="keyword">this</span>;                                                                   \</div>
+<div class="line">    if ( !this_ || ( contentLength_ &lt; -1 ) || ( waitWrittenByteCount_ &lt; -1 ) )           \</div>
+<div class="line">    {                                                                                    \</div>
+<div class="line">        qDebug().noquote() &lt;&lt; QStringLiteral( <span class="stringliteral">&quot;JQHttpServer::Session::&quot;</span> ) + functionName \</div>
+<div class="line">                                  + <span class="stringliteral">&quot;: current session this is null&quot;</span>;                    \</div>
+<div class="line">        <span class="keywordflow">return</span> __VA_ARGS__;                                                              \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5529a75a8dcb06c265ff24feb26e8de2" name="a5529a75a8dcb06c265ff24feb26e8de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5529a75a8dcb06c265ff24feb26e8de2">&#9670;&#160;</a></span>JQHTTPSERVER_SESSION_REPLY_PROTECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define JQHTTPSERVER_SESSION_REPLY_PROTECTION</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>functionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#a00b1ce84c7a0dc139b72babbc482e7e8">JQHTTPSERVER_SESSION_PROTECTION</a>( functionName, __VA_ARGS__ )                                              \</div>
+<div class="line">    if ( ( replyHttpCode_ &gt;= 0 ) &amp;&amp; ( QThread::currentThread() != this-&gt;thread() ) )                          \</div>
+<div class="line">    {                                                                                                         \</div>
+<div class="line">        qDebug().noquote() &lt;&lt; QStringLiteral( <span class="stringliteral">&quot;JQHttpServer::Session::&quot;</span> ) + functionName + <span class="stringliteral">&quot;: already reply&quot;</span>; \</div>
+<div class="line">        <span class="keywordflow">return</span> __VA_ARGS__;                                                                                   \</div>
+<div class="line">    }</div>
+<div class="ttc" id="ajqhttpserver_8cpp_html_a00b1ce84c7a0dc139b72babbc482e7e8"><div class="ttname"><a href="#a00b1ce84c7a0dc139b72babbc482e7e8">JQHTTPSERVER_SESSION_PROTECTION</a></div><div class="ttdeci">#define JQHTTPSERVER_SESSION_PROTECTION(functionName,...)</div><div class="ttdef"><b>定义</b> jqhttpserver.cpp:32</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ada4db0eb73770679e7a833875582295b" name="ada4db0eb73770679e7a833875582295b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada4db0eb73770679e7a833875582295b">&#9670;&#160;</a></span>JQHTTPSERVER_SESSION_REPLY_PROTECTION2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define JQHTTPSERVER_SESSION_REPLY_PROTECTION2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>functionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> ( ioDevice_.isNull() )                                                                          \</div>
+<div class="line">    {                                                                                                  \</div>
+<div class="line">        qDebug().noquote() &lt;&lt; QStringLiteral( <span class="stringliteral">&quot;JQHttpServer::Session::&quot;</span> ) + functionName + <span class="stringliteral">&quot;: error1&quot;</span>; \</div>
+<div class="line">        this-&gt;deleteLater();                                                                           \</div>
+<div class="line">        <span class="keywordflow">return</span> __VA_ARGS__;                                                                            \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a4facfeb02dc481ea95091ba34a435fe3" name="a4facfeb02dc481ea95091ba34a435fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4facfeb02dc481ea95091ba34a435fe3">&#9670;&#160;</a></span>replyBytesFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString replyBytesFormat </td>
+          <td>(</td>
+          <td class="paramtype">&quot;HTTP/1.1 %1 OK\r\n&quot; &quot;Content-Type: %2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-</td>          <td class="paramname"><span class="paramname"><em>Type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="jqhttpserver_8cpp_a4facfeb02dc481ea95091ba34a435fe3_icgraph.png" border="0" usemap="#ajqhttpserver_8cpp_a4facfeb02dc481ea95091ba34a435fe3_icgraph" alt=""/></div>
+<map name="ajqhttpserver_8cpp_a4facfeb02dc481ea95091ba34a435fe3_icgraph" id="ajqhttpserver_8cpp_a4facfeb02dc481ea95091ba34a435fe3_icgraph">
+<area shape="rect" title=" " alt="" coords="210,13,334,40"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#a4377dd88652187afa03956115cf44343" title="回复字节。" alt="" coords="5,5,162,48"/>
+<area shape="poly" title=" " alt="" coords="194,29,162,29,162,24,194,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a01bf1366db4bb5f128f8b64edf809a30" name="a01bf1366db4bb5f128f8b64edf809a30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01bf1366db4bb5f128f8b64edf809a30">&#9670;&#160;</a></span>replyFileFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString replyFileFormat </td>
+          <td>(</td>
+          <td class="paramtype">&quot;HTTP/1.1 %1 OK\r\n&quot; &quot;Content-Disposition: attachment;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span><span class="paramdefsep"> = </span><span class="paramdefval">%2\r\n&quot;&#160;&quot;Content-Length:&#160;%3\r\n&quot;&#160;&quot;Access-Control-Allow-Origin:&#160;*\r\n&quot;&#160;&quot;Access-Control-Allow-Headers:&#160;Content-Type</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="jqhttpserver_8cpp_a01bf1366db4bb5f128f8b64edf809a30_icgraph.png" border="0" usemap="#ajqhttpserver_8cpp_a01bf1366db4bb5f128f8b64edf809a30_icgraph" alt=""/></div>
+<map name="ajqhttpserver_8cpp_a01bf1366db4bb5f128f8b64edf809a30_icgraph" id="ajqhttpserver_8cpp_a01bf1366db4bb5f128f8b64edf809a30_icgraph">
+<area shape="rect" title=" " alt="" coords="210,47,321,73"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#afa5e7f908c32b3da2c023f322d15b42b" title="回复文件。" alt="" coords="5,5,162,48"/>
+<area shape="poly" title=" " alt="" coords="194,50,162,44,163,38,195,44"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#a286faa319963f227c264657e111f60dc" title="回复文件。" alt="" coords="5,72,162,115"/>
+<area shape="poly" title=" " alt="" coords="195,76,163,82,162,76,194,70"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf84153d548e64a5e0a092697a255175" name="abf84153d548e64a5e0a092697a255175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf84153d548e64a5e0a092697a255175">&#9670;&#160;</a></span>replyImageFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString replyImageFormat </td>
+          <td>(</td>
+          <td class="paramtype">&quot;HTTP/1.1 %1\r\n&quot; &quot;Content-Type: image/%2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-</td>          <td class="paramname"><span class="paramname"><em>Type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="jqhttpserver_8cpp_abf84153d548e64a5e0a092697a255175_icgraph.png" border="0" usemap="#ajqhttpserver_8cpp_abf84153d548e64a5e0a092697a255175_icgraph" alt=""/></div>
+<map name="ajqhttpserver_8cpp_abf84153d548e64a5e0a092697a255175_icgraph" id="ajqhttpserver_8cpp_abf84153d548e64a5e0a092697a255175_icgraph">
+<area shape="rect" title=" " alt="" coords="210,47,336,73"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#ae93d9fd5af56459b3d84299d2580b993" title="回复图像。" alt="" coords="5,5,162,48"/>
+<area shape="poly" title=" " alt="" coords="194,49,162,43,163,38,195,44"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#a197ba039010659b88ffce2f61a1d8f1d" title="回复图像。" alt="" coords="5,72,162,115"/>
+<area shape="poly" title=" " alt="" coords="195,76,163,82,162,77,194,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac1a702c3653ed4b612dfde26c8b94e0b" name="ac1a702c3653ed4b612dfde26c8b94e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1a702c3653ed4b612dfde26c8b94e0b">&#9670;&#160;</a></span>replyOptionsFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString replyOptionsFormat </td>
+          <td>(</td>
+          <td class="paramtype">&quot;HTTP/1.1 200 OK\r\n&quot; &quot;Allow:</td>          <td class="paramname"><span class="paramname"><em>OPTIONS</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GET</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">POST</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PUT</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HEAD\r\n&quot; &quot;Access-Control-Allow-Methods:OPTIONS</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GET</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">POST</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PUT</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HEAD\r\n&quot; &quot;Content-Length:0\r\n&quot; &quot;Access-Control-Allow-Origin:*\r\n&quot; &quot;Access-Control-Allow-Headers:Content-</td>          <td class="paramname"><span class="paramname"><em>Type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="jqhttpserver_8cpp_ac1a702c3653ed4b612dfde26c8b94e0b_icgraph.png" border="0" usemap="#ajqhttpserver_8cpp_ac1a702c3653ed4b612dfde26c8b94e0b_icgraph" alt=""/></div>
+<map name="ajqhttpserver_8cpp_ac1a702c3653ed4b612dfde26c8b94e0b_icgraph" id="ajqhttpserver_8cpp_ac1a702c3653ed4b612dfde26c8b94e0b_icgraph">
+<area shape="rect" title=" " alt="" coords="210,13,345,40"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#a79e987dd639ac02cb060e3355434e8f8" title="回复选项。" alt="" coords="5,5,162,48"/>
+<area shape="poly" title=" " alt="" coords="194,29,162,29,162,24,194,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8029244d733207e0df79497e7f7c742d" name="a8029244d733207e0df79497e7f7c742d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8029244d733207e0df79497e7f7c742d">&#9670;&#160;</a></span>replyRedirectsFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString replyRedirectsFormat </td>
+          <td>(</td>
+          <td class="paramtype">&quot;HTTP/1.1 %1 OK\r\n&quot; &quot;Content-Type: %2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-</td>          <td class="paramname"><span class="paramname"><em>Type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot; &quot;%4&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="jqhttpserver_8cpp_a8029244d733207e0df79497e7f7c742d_icgraph.png" border="0" usemap="#ajqhttpserver_8cpp_a8029244d733207e0df79497e7f7c742d_icgraph" alt=""/></div>
+<map name="ajqhttpserver_8cpp_a8029244d733207e0df79497e7f7c742d_icgraph" id="ajqhttpserver_8cpp_a8029244d733207e0df79497e7f7c742d_icgraph">
+<area shape="rect" title=" " alt="" coords="210,13,356,40"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#a01aaa9fbb8b8a7f78b514fb8eaa7eab2" title="回复重定向。" alt="" coords="5,5,162,48"/>
+<area shape="poly" title=" " alt="" coords="194,29,162,29,162,24,194,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2bc781fe33db1ba067b08ed7d5a3d6d1" name="a2bc781fe33db1ba067b08ed7d5a3d6d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc781fe33db1ba067b08ed7d5a3d6d1">&#9670;&#160;</a></span>replyTextFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString replyTextFormat </td>
+          <td>(</td>
+          <td class="paramtype">&quot;HTTP/1.1 %1 OK\r\n&quot; &quot;Content-Type: %2\r\n&quot; &quot;Content-Length: %3\r\n&quot; &quot;Access-Control-Allow-Origin: *\r\n&quot; &quot;Access-Control-Allow-Headers: Content-</td>          <td class="paramname"><span class="paramname"><em>Type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca58833a3110c570fb05130d40c365d1e4">X</a>-Requested-With\r\n&quot; &quot;\r\n&quot; &quot;%4&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="jqhttpserver_8cpp_a2bc781fe33db1ba067b08ed7d5a3d6d1_icgraph.png" border="0" usemap="#ajqhttpserver_8cpp_a2bc781fe33db1ba067b08ed7d5a3d6d1_icgraph" alt=""/></div>
+<map name="ajqhttpserver_8cpp_a2bc781fe33db1ba067b08ed7d5a3d6d1_icgraph" id="ajqhttpserver_8cpp_a2bc781fe33db1ba067b08ed7d5a3d6d1_icgraph">
+<area shape="rect" title=" " alt="" coords="210,80,325,107"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#a62da9c8166f0c8d15c026de626a4ae59" title="回复 JSON 数组。" alt="" coords="5,5,162,48"/>
+<area shape="poly" title=" " alt="" coords="213,77,144,51,145,46,215,72"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#ae4f0165ef14bc80292ff14837e41c651" title="回复 JSON 对象。" alt="" coords="5,72,162,115"/>
+<area shape="poly" title=" " alt="" coords="194,96,162,96,162,91,194,91"/>
+<area shape="rect" href="class_j_q_http_server_1_1_session.html#a1f0c9bd2e758262ee81be0065a4356de" title="回复文本。" alt="" coords="5,139,162,181"/>
+<area shape="poly" title=" " alt="" coords="215,115,145,141,144,136,213,110"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_5dc4a1a28633c9c687989eb0c7bb2bb6.html">JQHttpServer</a></li><li class="navelem"><a class="el" href="jqhttpserver_8cpp.html">jqhttpserver.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

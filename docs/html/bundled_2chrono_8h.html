@@ -1,0 +1,790 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: chrono.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('bundled_2chrono_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">chrono.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;locale&gt;</code><br />
+<code>#include &lt;ostream&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &quot;<a class="el" href="format_8h_source.html">format.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+bundled/chrono.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="bundled_2chrono_8h__incl.png" border="0" usemap="#achrono_8h" alt=""/></div>
+<map name="achrono_8h" id="achrono_8h">
+<area shape="rect" title=" " alt="" coords="1088,5,1160,32"/>
+<area shape="rect" title=" " alt="" coords="473,229,548,256"/>
+<area shape="poly" title=" " alt="" coords="1088,22,916,26,798,32,673,43,550,59,439,83,391,98,350,115,317,135,294,156,285,175,289,190,304,203,329,214,393,229,458,236,458,241,392,234,327,219,301,208,285,193,280,175,290,153,314,130,348,110,389,93,438,78,549,54,672,37,798,27,916,20,1088,17"/>
+<area shape="rect" title=" " alt="" coords="1187,80,1247,107"/>
+<area shape="poly" title=" " alt="" coords="1142,30,1191,68,1188,73,1138,35"/>
+<area shape="rect" title=" " alt="" coords="892,229,950,256"/>
+<area shape="poly" title=" " alt="" coords="1126,33,1123,62,1116,102,1100,145,1075,183,1050,204,1022,219,965,237,964,232,1020,214,1047,199,1071,180,1096,143,1110,101,1118,62,1121,32"/>
+<area shape="rect" title=" " alt="" coords="84,155,145,181"/>
+<area shape="poly" title=" " alt="" coords="1088,23,918,25,674,33,426,51,324,65,249,83,218,95,189,112,141,147,138,142,186,107,216,91,247,77,323,60,426,46,673,28,918,20,1088,17"/>
+<area shape="rect" title=" " alt="" coords="1272,80,1325,107"/>
+<area shape="poly" title=" " alt="" coords="1155,30,1258,73,1256,77,1153,35"/>
+<area shape="rect" title=" " alt="" coords="1349,80,1410,107"/>
+<area shape="poly" title=" " alt="" coords="1161,28,1335,77,1334,82,1159,33"/>
+<area shape="rect" title=" " alt="" coords="1070,229,1125,256"/>
+<area shape="poly" title=" " alt="" coords="1127,32,1128,97,1120,182,1111,215,1105,214,1115,181,1122,96,1122,32"/>
+<area shape="rect" title=" " alt="" coords="1435,80,1503,107"/>
+<area shape="poly" title=" " alt="" coords="1160,24,1421,77,1420,82,1159,29"/>
+<area shape="rect" title=" " alt="" coords="5,229,88,256"/>
+<area shape="poly" title=" " alt="" coords="1088,23,908,24,646,31,509,39,380,49,270,64,189,83,151,95,123,108,99,127,74,156,59,185,52,215,47,213,54,183,70,153,95,123,120,104,149,90,187,77,269,59,379,44,508,33,646,26,908,19,1088,17"/>
+<area shape="rect" href="format_8h.html" title=" " alt="" coords="644,80,713,107"/>
+<area shape="poly" title=" " alt="" coords="1088,28,729,87,728,81,1087,23"/>
+<area shape="poly" title=" " alt="" coords="714,99,780,118,817,133,851,153,883,183,908,215,904,218,879,186,848,157,814,138,779,123,713,104"/>
+<area shape="poly" title=" " alt="" coords="644,99,442,116,304,133,160,157,159,152,303,128,441,111,643,94"/>
+<area shape="rect" href="base_8h.html" title=" " alt="" coords="168,155,229,181"/>
+<area shape="poly" title=" " alt="" coords="644,103,244,163,243,157,643,97"/>
+<area shape="rect" title=" " alt="" coords="912,155,976,181"/>
+<area shape="poly" title=" " alt="" coords="714,102,898,151,896,156,713,107"/>
+<area shape="rect" title=" " alt="" coords="1000,155,1061,181"/>
+<area shape="poly" title=" " alt="" coords="714,98,831,119,986,152,985,157,830,124,713,103"/>
+<area shape="rect" title=" " alt="" coords="304,155,357,181"/>
+<area shape="poly" title=" " alt="" coords="644,103,527,123,372,157,371,152,526,118,643,98"/>
+<area shape="rect" title=" " alt="" coords="381,155,426,181"/>
+<area shape="poly" title=" " alt="" coords="644,105,556,126,442,157,440,152,555,121,643,100"/>
+<area shape="rect" title=" " alt="" coords="450,155,528,181"/>
+<area shape="poly" title=" " alt="" coords="646,110,538,151,536,146,645,105"/>
+<area shape="rect" title=" " alt="" coords="552,155,605,181"/>
+<area shape="poly" title=" " alt="" coords="663,109,610,147,607,143,660,105"/>
+<area shape="rect" title=" " alt="" coords="630,155,727,181"/>
+<area shape="poly" title=" " alt="" coords="681,107,681,139,676,139,676,107"/>
+<area shape="rect" href="format-inl_8h.html" title=" " alt="" coords="751,155,838,181"/>
+<area shape="poly" title=" " alt="" coords="693,105,756,144,753,149,690,109"/>
+<area shape="poly" title=" " alt="" coords="173,184,88,225,86,220,171,179"/>
+<area shape="rect" title=" " alt="" coords="286,229,349,256"/>
+<area shape="poly" title=" " alt="" coords="221,180,285,219,282,223,218,184"/>
+<area shape="rect" title=" " alt="" coords="112,229,173,256"/>
+<area shape="poly" title=" " alt="" coords="191,184,163,219,159,215,187,180"/>
+<area shape="rect" title=" " alt="" coords="197,229,261,256"/>
+<area shape="poly" title=" " alt="" coords="206,181,220,214,215,216,201,183"/>
+<area shape="poly" title=" " alt="" coords="751,183,563,231,562,226,750,178"/>
+<area shape="poly" title=" " alt="" coords="818,180,887,219,885,224,815,184"/>
+<area shape="poly" title=" " alt="" coords="838,177,1055,229,1054,234,837,182"/>
+<area shape="poly" title=" " alt="" coords="780,156,717,117,720,112,783,152"/>
+<area shape="rect" title=" " alt="" coords="811,229,868,256"/>
+<area shape="poly" title=" " alt="" coords="805,180,826,215,822,217,800,183"/>
+<area shape="rect" title=" " alt="" coords="626,229,686,256"/>
+<area shape="poly" title=" " alt="" coords="772,184,695,224,692,219,769,180"/>
+<area shape="rect" title=" " alt="" coords="709,229,786,256"/>
+<area shape="poly" title=" " alt="" coords="789,183,766,218,762,215,784,180"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="bundled_2chrono_8h__dep__incl.png" border="0" usemap="#achrono_8hdep" alt=""/></div>
+<map name="achrono_8hdep" id="achrono_8hdep">
+<area shape="rect" title=" " alt="" coords="2783,5,2854,32"/>
+<area shape="rect" href="chrono_8h.html" title=" " alt="" coords="2734,80,2805,107"/>
+<area shape="poly" title=" " alt="" coords="2804,47,2780,81,2776,78,2799,44"/>
+<area shape="rect" href="ostream_8h.html" title=" " alt="" coords="2834,80,2913,107"/>
+<area shape="poly" title=" " alt="" coords="2840,43,2866,78,2862,81,2835,46"/>
+<area shape="rect" href="daily__file__sink_8h.html" title=" " alt="" coords="2671,155,2785,181"/>
+<area shape="poly" title=" " alt="" coords="2757,122,2737,156,2733,153,2752,119"/>
+<area shape="rect" href="mylog_8h.html" title=" " alt="" coords="2694,229,2762,256"/>
+<area shape="poly" title=" " alt="" coords="2731,197,2731,229,2725,229,2725,197"/>
+<area shape="rect" href="logger_8hpp.html" title=" " alt="" coords="2635,304,2717,331"/>
+<area shape="poly" title=" " alt="" coords="2712,270,2687,305,2683,302,2708,267"/>
+<area shape="rect" href="mylog_8cpp.html" title=" " alt="" coords="2741,304,2822,331"/>
+<area shape="poly" title=" " alt="" coords="2748,267,2774,302,2770,305,2744,270"/>
+<area shape="rect" href="_about_dialog_8cpp.html" title="实现 AboutDialog 类，提供关于对话框功能" alt="" coords="5,379,123,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,2165,325,1445,334,691,352,373,365,135,381,124,383,123,377,134,376,373,360,690,346,1445,328,2165,319,2620,316"/>
+<area shape="rect" href="_all_cloud_disk_8cpp.html" title="实现 AllCloudDisk 类，提供云盘音乐界面功能" alt="" coords="147,379,269,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,2188,326,1510,336,803,353,505,366,282,381,270,383,269,377,281,376,505,361,803,348,1510,330,2188,320,2620,316"/>
+<area shape="rect" href="_all_local_8cpp.html" title="实现 AllLocal 类，提供本地音乐界面功能" alt="" coords="294,379,386,405"/>
+<area shape="poly" title=" " alt="" coords="2619,321,2206,324,1562,332,891,350,610,364,398,381,387,383,386,378,397,376,609,358,891,345,1562,327,2206,318,2619,316"/>
+<area shape="rect" href="_all_love_8cpp.html" title="实现 AllLove 类，提供收藏音乐界面功能" alt="" coords="410,379,499,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,2225,324,1614,333,979,351,713,364,512,381,500,383,499,378,512,376,712,359,979,346,1614,328,2225,319,2619,316"/>
+<area shape="rect" href="_all_music_8cpp.html" title="实现 AllMusic 类，提供音乐管理界面功能" alt="" coords="524,379,620,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,2245,325,1669,335,1072,353,821,366,632,381,621,383,620,378,632,376,821,360,1071,348,1669,330,2245,320,2620,316"/>
+<area shape="rect" href="_all_paid_8cpp.html" title="实现 AllPaid 类，提供付费音乐界面功能" alt="" coords="644,379,732,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,2263,325,1720,335,1157,353,922,366,744,381,732,383,731,378,744,376,921,360,1157,348,1720,330,2263,320,2620,316"/>
+<area shape="rect" href="_all_recent_8cpp.html" title="实现 AllRecent 类，提供最近播放音乐界面功能" alt="" coords="756,379,860,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,1778,339,1256,356,1037,368,872,381,861,383,860,378,872,376,1037,363,1256,351,1778,333,2620,317"/>
+<area shape="rect" href="_all_song_list_8cpp.html" title="实现 AllSongList 类，提供歌单界面功能" alt="" coords="884,379,996,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,1841,341,1362,359,1161,369,1010,381,997,383,996,378,1009,376,1161,364,1361,353,1841,336,2620,317"/>
+<area shape="rect" href="_all_widget_8cpp.html" title="实现 AllWidget 类，提供全部音乐界面功能" alt="" coords="1021,379,1123,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,1899,341,1459,359,1275,369,1136,381,1124,383,1123,378,1136,376,1275,364,1459,353,1898,336,2620,317"/>
+<area shape="rect" href="_ani_check_box_8cpp.html" title="实现 AniCheckBox 类，提供带动画的复选框基类功能" alt="" coords="1148,379,1274,405"/>
+<area shape="poly" title=" " alt="" coords="2620,321,2405,324,2076,332,1686,350,1484,364,1286,381,1274,383,1274,377,1285,376,1483,358,1685,345,2076,327,2405,318,2620,316"/>
+<area shape="rect" href="_base_menu_8cpp.html" title="实现 BaseMenu 类，提供菜单基类功能" alt="" coords="1298,379,1406,405"/>
+<area shape="poly" title=" " alt="" coords="2620,321,2423,323,2126,332,1776,350,1595,363,1418,381,1407,383,1406,377,1417,376,1594,358,1775,344,2126,326,2423,318,2620,316"/>
+<area shape="rect" href="_channel_block_8h.html" title="定义 ChannelBlock 类，提供音乐频道块界面" alt="" coords="1430,379,1543,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,2442,326,2179,335,1871,353,1556,381,1544,383,1543,378,1556,376,1870,348,2179,330,2441,321,2620,317"/>
+<area shape="rect" href="_chat_view_8cpp.html" title="实现 ChatView 类，提供聊天视图功能" alt="" coords="1568,379,1670,405"/>
+<area shape="poly" title=" " alt="" coords="2620,322,2459,327,2227,337,1958,354,1683,381,1671,383,1670,378,1682,376,1957,349,2227,331,2459,321,2620,317"/>
+<area shape="rect" href="_collect_video_8cpp.html" title="实现 CollectVideo 类，管理收藏视频界面" alt="" coords="1694,379,1815,405"/>
+<area shape="poly" title=" " alt="" coords="2620,324,2284,342,2058,358,1828,381,1816,383,1815,378,1828,376,2058,353,2284,336,2620,318"/>
+<area shape="rect" href="_daily_recommend_8cpp.html" title="实现 DailyRecommend 类，提供每日推荐界面功能" alt="" coords="1840,379,1990,405"/>
+<area shape="poly" title=" " alt="" coords="2620,325,2354,347,2003,381,1991,383,1990,377,2002,376,2353,342,2619,320"/>
+<area shape="rect" href="_device_widget_8cpp.html" title="实现 DeviceWidget 类，管理设备界面" alt="" coords="2014,379,2143,405"/>
+<area shape="poly" title=" " alt="" coords="2620,327,2415,349,2155,381,2144,383,2143,378,2154,376,2414,344,2619,322"/>
+<area shape="rect" href="_downloaded_song_8cpp.html" title="实现 DownloadedSong 类，提供已下载歌曲界面功能" alt="" coords="2167,379,2316,405"/>
+<area shape="poly" title=" " alt="" coords="2620,331,2316,381,2315,376,2619,325"/>
+<area shape="rect" href="_downloaded_video_8cpp.html" title="实现 DownloadedVideo 类，提供已下载视频界面功能" alt="" coords="2339,379,2490,405"/>
+<area shape="poly" title=" " alt="" coords="2621,337,2461,381,2460,375,2620,331"/>
+<area shape="rect" href="_downloaded_widget_8cpp.html" title="实现 DownloadedWidget 类，提供已下载界面功能" alt="" coords="2515,379,2674,405"/>
+<area shape="poly" title=" " alt="" coords="2652,343,2610,380,2607,376,2649,339"/>
+<area shape="rect" href="_downloading_8cpp.html" title="实现 Downloading 类，提供下载管理界面功能" alt="" coords="2698,379,2819,405"/>
+<area shape="poly" title=" " alt="" coords="2704,339,2746,376,2743,380,2700,343"/>
+<area shape="rect" href="_downloading_widget_8cpp.html" title="实现 DownloadingWidget 类，提供下载中界面功能" alt="" coords="2843,379,3005,405"/>
+<area shape="poly" title=" " alt="" coords="2732,332,2881,375,2880,381,2731,337"/>
+<area shape="rect" href="_ela_exit_dialog_8cpp.html" title="实现 ElaExitDialog 类，提供退出对话框的功能" alt="" coords="3029,379,3155,405"/>
+<area shape="poly" title=" " alt="" coords="2732,329,3029,378,3028,383,2731,334"/>
+<area shape="rect" href="_ela_message_button_8cpp.html" title="实现 ElaMessageButton 类，提供消息触发按钮功能" alt="" coords="3179,379,3336,405"/>
+<area shape="poly" title=" " alt="" coords="2732,328,2854,346,2950,356,3167,376,3179,378,3178,383,3166,381,2950,361,2854,351,2731,334"/>
+<area shape="rect" href="_g_l_tab_widget_8cpp.html" title="实现 GLTabWidget 类，管理“猜你喜欢”推荐界面" alt="" coords="3359,379,3484,405"/>
+<area shape="poly" title=" " alt="" coords="2732,328,2905,348,3041,355,3176,361,3348,376,3359,377,3358,383,3348,381,3176,366,3041,361,2905,354,2732,334"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="3508,379,3617,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2848,342,2947,350,3115,355,3283,358,3381,364,3496,376,3508,378,3507,383,3496,381,3381,370,3283,364,3115,360,2947,356,2848,348,2732,334"/>
+<area shape="rect" href="_list_option_menu_8cpp.html" title="实现 ListOptionMenu 类，提供歌曲分类选项菜单功能" alt="" coords="3642,379,3779,405"/>
+<area shape="poly" title=" " alt="" coords="2732,328,2868,344,2984,353,3181,358,3379,360,3494,365,3630,376,3642,377,3641,383,3629,381,3494,370,3378,365,3181,363,2984,359,2868,350,2732,334"/>
+<area shape="rect" href="_listen_book_8cpp.html" title="实现 ListenBook 类，提供听书主界面功能" alt="" coords="3803,379,3914,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2893,346,3030,355,3150,357,3263,356,3496,355,3632,362,3792,376,3803,377,3802,383,3792,381,3632,367,3496,361,3263,361,3150,362,3029,360,2893,351,2732,334"/>
+<area shape="rect" href="_listen_my_download_8cpp.html" title="实现 ListenMyDownload 类，提供下载管理界面功能" alt="" coords="3939,379,4096,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2913,348,3067,359,3203,362,3330,361,3592,359,3746,364,3927,376,3939,377,3938,382,3926,381,3746,369,3592,365,3330,367,3203,367,3067,364,2913,354,2732,334"/>
+<area shape="rect" href="_listen_option_menu_8cpp.html" title="实现 ListenOptionMenu 类，提供听单选项菜单功能" alt="" coords="4120,379,4272,405"/>
+<area shape="poly" title=" " alt="" coords="2732,328,2941,351,3118,362,3274,364,3420,362,3722,358,3900,362,4108,376,4120,377,4119,382,4108,381,3900,368,3722,363,3420,367,3274,370,3118,367,2940,356,2732,334"/>
+<area shape="rect" href="_listen_rank_widget_8cpp.html" title="实现 ListenRankWidget 类，提供排行榜界面功能" alt="" coords="4295,379,4449,405"/>
+<area shape="poly" title=" " alt="" coords="2732,328,2967,353,3167,364,3343,367,3508,363,3673,359,3849,357,4049,361,4284,376,4295,377,4295,382,4284,381,4049,366,3849,362,3673,364,3508,369,3343,372,3167,370,2967,358,2732,334"/>
+<area shape="rect" href="_listen_recently_play_8cpp.html" title="实现 ListenRecentlyPlay 类，提供最近播放界面功能" alt="" coords="4473,379,4631,405"/>
+<area shape="poly" title=" " alt="" coords="2732,328,2994,355,3217,368,3413,370,3596,365,3780,359,3976,356,4199,360,4462,376,4473,377,4472,382,4461,381,4199,366,3976,362,3780,365,3597,371,3413,375,3217,373,2994,361,2732,334"/>
+<area shape="rect" href="_listen_recommend_8cpp.html" title="实现 ListenRecommend 类，提供推荐界面功能" alt="" coords="4656,379,4811,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,3022,358,3268,371,3485,372,3687,367,3890,360,4107,355,4353,359,4643,376,4655,377,4655,382,4642,381,4353,365,4107,361,3890,365,3687,372,3485,377,3268,376,3022,363,2732,334"/>
+<area shape="rect" href="_live_8cpp.html" title="实现 Live 类，提供直播主界面功能" alt="" coords="4836,379,4906,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2898,346,3049,358,3189,364,3319,366,3557,361,3779,348,4001,337,4239,332,4368,335,4507,343,4658,356,4823,376,4836,378,4835,383,4822,381,4658,362,4507,348,4368,341,4238,338,4001,342,3779,354,3557,366,3319,372,3189,370,3049,363,2897,351,2732,334"/>
+<area shape="rect" href="_live_big_left_widget_8cpp.html" title="实现 LiveBigLeftWidget 类，提供直播左侧大控件功能" alt="" coords="4930,379,5083,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2951,346,3218,355,3518,359,3833,360,4444,361,4706,366,4918,376,4930,377,4930,382,4917,381,4706,371,4444,366,3833,366,3518,365,3218,361,2951,351,2732,333"/>
+<area shape="rect" href="_live_common_part_widget_8cpp.html" title="实现 LiveCommonPartWidget 类，提供直播通用部分控件功能" alt="" coords="5107,379,5296,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2968,347,3257,358,3581,362,3922,363,4582,363,4866,367,5095,376,5107,377,5106,382,5095,381,4866,372,4582,368,3922,368,3581,368,3257,363,2968,352,2732,333"/>
+<area shape="rect" href="_live_music_part_widget_8cpp.html" title="实现 LiveMusicPartWidget 类，提供直播音乐部分控件功能" alt="" coords="5320,379,5490,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2852,340,2989,348,3304,359,3657,363,4028,363,4749,361,5059,365,5308,376,5320,377,5320,382,5308,381,5059,371,4749,367,4028,368,3657,368,3304,364,2989,354,2852,345,2732,333"/>
+<area shape="rect" href="_local_download_8cpp.html" title="实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="5515,379,5650,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2861,340,3008,349,3347,360,3726,362,4126,361,4902,357,5235,362,5503,376,5515,377,5514,382,5502,381,5234,368,4902,363,4126,366,3726,368,3346,365,3008,355,2861,346,2732,333"/>
+<area shape="rect" href="_local_song_8cpp.html" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="5674,379,5782,405"/>
+<area shape="poly" title=" " alt="" coords="2733,328,2868,341,3024,350,3381,359,3783,360,4206,357,4629,353,5027,352,5379,359,5531,366,5663,376,5674,377,5674,383,5662,381,5531,371,5379,364,5027,358,4629,359,4206,362,3783,366,3381,365,3024,355,2868,346,2732,333"/>
+<area shape="rect" href="ostr_8h.html" title=" " alt="" coords="2809,155,2863,181"/>
+<area shape="poly" title=" " alt="" coords="2862,122,2845,155,2840,153,2858,119"/>
+<area shape="rect" href="bundled_2std_8h.html" title=" " alt="" coords="2887,155,2937,181"/>
+<area shape="poly" title=" " alt="" coords="2890,119,2908,153,2903,156,2885,122"/>
+<area shape="rect" href="bundled_2xchar_8h.html" title=" " alt="" coords="2961,155,3026,181"/>
+<area shape="poly" title=" " alt="" coords="2908,113,2974,152,2971,156,2906,117"/>
+<area shape="rect" href="std_8h.html" title=" " alt="" coords="2887,229,2937,256"/>
+<area shape="poly" title=" " alt="" coords="2915,197,2915,229,2909,229,2909,197"/>
+<area shape="rect" href="xchar_8h.html" title=" " alt="" coords="2961,229,3026,256"/>
+<area shape="poly" title=" " alt="" coords="2996,197,2996,229,2991,229,2991,197"/>
+</map>
+</div>
+</div>
+<p><a href="bundled_2chrono_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfmt__detail_1_1time__zone.html">time_zone</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1utc__clock.html">utc_clock</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1local__t.html">local_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1null.html">null&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1formatbuf.html">formatbuf&lt; StreamBuf &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1codecvt__result.html">codecvt_result&lt; CodeUnit &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1is__same__arithmetic__type.html">is_same_arithmetic_type&lt; Rep1, Rep2 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1null__chrono__spec__handler.html">null_chrono_spec_handler&lt; Derived &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1tm__format__checker.html">tm_format_checker</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1has__member__data__tm__gmtoff.html">has_member_data_tm_gmtoff&lt; T, typename &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1has__member__data__tm__gmtoff_3_01_t_00_01void__t_3_01decltype_07_t_1_1tm__gmtoff_08_4_01_4.html">has_member_data_tm_gmtoff&lt; T, void_t&lt; decltype(T::tm_gmtoff)&gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1has__member__data__tm__zone.html">has_member_data_tm_zone&lt; T, typename &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1has__member__data__tm__zone_3_01_t_00_01void__t_3_01decltype_07_t_1_1tm__zone_08_4_01_4.html">has_member_data_tm_zone&lt; T, void_t&lt; decltype(T::tm_zone)&gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1count__fractional__digits.html">count_fractional_digits&lt; Num, Den, N, Enabled &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1count__fractional__digits_3_01_num_00_01_den_00_01_n_00_01false_01_4.html">count_fractional_digits&lt; Num, Den, N, false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1tm__writer.html">tm_writer&lt; OutputIt, Char, Duration &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1chrono__format__checker.html">chrono_format_checker</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1make__unsigned__or__unchanged.html">make_unsigned_or_unchanged&lt; T, INTEGRAL &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1make__unsigned__or__unchanged_3_01_t_00_01true_01_4.html">make_unsigned_or_unchanged&lt; T, true &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1get__locale.html">get_locale</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1chrono__formatter.html">chrono_formatter&lt; FormatContext, OutputIt, Rep, Period &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classweekday.html">weekday</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classday.html">day</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonth.html">month</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyear.html">year</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyear__month__day.html">year_month_day</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01weekday_00_01_char_01_4.html">formatter&lt; weekday, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01day_00_01_char_01_4.html">formatter&lt; day, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01month_00_01_char_01_4.html">formatter&lt; month, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01year_00_01_char_01_4.html">formatter&lt; year, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01year__month__day_00_01_char_01_4.html">formatter&lt; year_month_day, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01std_1_1chrono_1_1duration_3_01_rep_00_01_period_01_4_00_01_char_01_4.html">formatter&lt; std::chrono::duration&lt; Rep, Period &gt;, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01std_1_1tm_00_01_char_01_4.html">formatter&lt; std::tm, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01sys__time_3_01_duration_01_4_00_01_char_01_4.html">formatter&lt; sys_time&lt; Duration &gt;, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01utc__time_3_01_duration_01_4_00_01_char_01_4.html">formatter&lt; utc_time&lt; Duration &gt;, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter_3_01local__time_3_01_duration_01_4_00_01_char_01_4.html">formatter&lt; local_time&lt; Duration &gt;, Char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmt__detail.html">fmt_detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesafe__duration__cast.html">safe_duration_cast</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html">detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a8e36408d8f476cd09c46417ab03f458e" id="r_a8e36408d8f476cd09c46417ab03f458e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e36408d8f476cd09c46417ab03f458e">FMT_SAFE_DURATION_CAST</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a8e36408d8f476cd09c46417ab03f458e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e0a448789722d8e44240c5ba5cabec" id="r_a45e0a448789722d8e44240c5ba5cabec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45e0a448789722d8e44240c5ba5cabec">FMT_USE_UTC_TIME</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a45e0a448789722d8e44240c5ba5cabec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37235273460d7c9c10d3beb19eef34f8" id="r_a37235273460d7c9c10d3beb19eef34f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37235273460d7c9c10d3beb19eef34f8">FMT_USE_LOCAL_TIME</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a37235273460d7c9c10d3beb19eef34f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2d874e178da493766bca4f1b898780" id="r_a0c2d874e178da493766bca4f1b898780"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c2d874e178da493766bca4f1b898780">FMT_NOMACRO</a></td></tr>
+<tr class="separator:a0c2d874e178da493766bca4f1b898780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a5b17f601f1dd7b4172bf79026388b90b" id="r_a5b17f601f1dd7b4172bf79026388b90b"><td class="memTemplParams" colspan="2">template&lt;typename Duration&gt; </td></tr>
+<tr class="memitem:a5b17f601f1dd7b4172bf79026388b90b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5b17f601f1dd7b4172bf79026388b90b">sys_time</a> = std::chrono::time_point&lt;std::chrono::system_clock, Duration&gt;</td></tr>
+<tr class="separator:a5b17f601f1dd7b4172bf79026388b90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c1a5a827554b0f5bcdeaf3711df89d6" id="r_a3c1a5a827554b0f5bcdeaf3711df89d6"><td class="memTemplParams" colspan="2">template&lt;typename Duration&gt; </td></tr>
+<tr class="memitem:a3c1a5a827554b0f5bcdeaf3711df89d6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3c1a5a827554b0f5bcdeaf3711df89d6">utc_time</a> = std::chrono::time_point&lt;<a class="el" href="structdetail_1_1utc__clock.html">detail::utc_clock</a>, Duration&gt;</td></tr>
+<tr class="separator:a3c1a5a827554b0f5bcdeaf3711df89d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65fe139d7ed0b855a93969c4985b9b16" id="r_a65fe139d7ed0b855a93969c4985b9b16"><td class="memTemplParams" colspan="2">template&lt;class Duration&gt; </td></tr>
+<tr class="memitem:a65fe139d7ed0b855a93969c4985b9b16"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a65fe139d7ed0b855a93969c4985b9b16">local_time</a> = std::chrono::time_point&lt;<a class="el" href="structdetail_1_1local__t.html">detail::local_t</a>, Duration&gt;</td></tr>
+<tr class="separator:a65fe139d7ed0b855a93969c4985b9b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a4ed3bdd2ae5dcb224f0e84141a87179d" id="r_a4ed3bdd2ae5dcb224f0e84141a87179d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> { <a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179dac00f0c4675b91fb8b918e4079a0b1bac">standard</a>
+, <a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179daa04fe4e390a7c7d5d4583f85d24e164d">alternative</a>
+ }</td></tr>
+<tr class="separator:a4ed3bdd2ae5dcb224f0e84141a87179d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b75c966f5e415f5d5de1e747f95153" id="r_af8b75c966f5e415f5d5de1e747f95153"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> { <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153ad02c4c4cde7ae76252540d116a40f23a">zero</a>
+, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153a334c4a4c42fdb79d7ebc3e73b517e6f8">none</a>
+, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153aff2364a0be3d20e46cc69efb36afe9a5">space</a>
+ }</td></tr>
+<tr class="separator:af8b75c966f5e415f5d5de1e747f95153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:abf1deeda64297c84cc121b363f4e0df8" id="r_abf1deeda64297c84cc121b363f4e0df8"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
+<tr class="memitem:abf1deeda64297c84cc121b363f4e0df8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefmt__detail.html#abf1deeda64297c84cc121b363f4e0df8">current_zone</a> (T...) -&gt; <a class="el" href="structfmt__detail_1_1time__zone.html">time_zone</a> *</td></tr>
+<tr class="separator:abf1deeda64297c84cc121b363f4e0df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a0f499ba275a67b4a03f8a2372308e" id="r_ab7a0f499ba275a67b4a03f8a2372308e"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
+<tr class="memitem:ab7a0f499ba275a67b4a03f8a2372308e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefmt__detail.html#ab7a0f499ba275a67b4a03f8a2372308e">_tzset</a> (T...)</td></tr>
+<tr class="separator:ab7a0f499ba275a67b4a03f8a2372308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb329dc4be0bab60f163b3c8625baac0" id="r_aeb329dc4be0bab60f163b3c8625baac0"><td class="memTemplParams" colspan="2">template&lt;typename To, typename From, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; From, To &gt;::value &amp;&amp; std::numeric_limits&lt; From &gt;::is_signed== std::numeric_limits&lt; To &gt;::is_signed)&gt; </td></tr>
+<tr class="memitem:aeb329dc4be0bab60f163b3c8625baac0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesafe__duration__cast.html#aeb329dc4be0bab60f163b3c8625baac0">lossless_integral_conversion</a> (const From from, int &amp;ec) -&gt; To</td></tr>
+<tr class="memdesc:aeb329dc4be0bab60f163b3c8625baac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts From to To, without loss.  <br /></td></tr>
+<tr class="separator:aeb329dc4be0bab60f163b3c8625baac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff7ac2bf64a788e3e576fda2f3758053" id="r_aff7ac2bf64a788e3e576fda2f3758053"><td class="memTemplParams" colspan="2">template&lt;typename To, typename From, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; From, To &gt;::value)&gt; </td></tr>
+<tr class="memitem:aff7ac2bf64a788e3e576fda2f3758053"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesafe__duration__cast.html#aff7ac2bf64a788e3e576fda2f3758053">safe_float_conversion</a> (const From from, int &amp;ec) -&gt; To</td></tr>
+<tr class="memdesc:aff7ac2bf64a788e3e576fda2f3758053"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts From to To if possible, otherwise ec is set.  <br /></td></tr>
+<tr class="separator:aff7ac2bf64a788e3e576fda2f3758053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a653f2a1cc545ab18e52d93e1227caa" id="r_a8a653f2a1cc545ab18e52d93e1227caa"><td class="memTemplParams" colspan="2">template&lt;typename To, typename FromRep, typename FromPeriod, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_floating_point&lt; FromRep &gt;::value), <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_floating_point&lt; typename To::rep &gt;::value)&gt; </td></tr>
+<tr class="memitem:a8a653f2a1cc545ab18e52d93e1227caa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesafe__duration__cast.html#a8a653f2a1cc545ab18e52d93e1227caa">safe_duration_cast</a> (std::chrono::duration&lt; FromRep, FromPeriod &gt; from, int &amp;ec) -&gt; To</td></tr>
+<tr class="memdesc:a8a653f2a1cc545ab18e52d93e1227caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe duration_cast between floating point durations  <br /></td></tr>
+<tr class="separator:a8a653f2a1cc545ab18e52d93e1227caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9bb14e0e7b6a670597d963b99cf7d3" id="r_a7f9bb14e0e7b6a670597d963b99cf7d3"><td class="memItemLeft" align="right" valign="top">auto localtime_r&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a7f9bb14e0e7b6a670597d963b99cf7d3">FMT_NOMACRO</a> (...) -&gt; <a class="el" href="structdetail_1_1null.html">null</a>&lt;&gt;</td></tr>
+<tr class="separator:a7f9bb14e0e7b6a670597d963b99cf7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98867362a03488dc561e7882e17538d" id="r_ad98867362a03488dc561e7882e17538d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ad98867362a03488dc561e7882e17538d">localtime_s</a> (...) -&gt; <a class="el" href="structdetail_1_1null.html">null</a>&lt;&gt;</td></tr>
+<tr class="separator:ad98867362a03488dc561e7882e17538d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976922023bb16a7deed7621d00f0f23d" id="r_a976922023bb16a7deed7621d00f0f23d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a976922023bb16a7deed7621d00f0f23d">gmtime_r</a> (...) -&gt; <a class="el" href="structdetail_1_1null.html">null</a>&lt;&gt;</td></tr>
+<tr class="separator:a976922023bb16a7deed7621d00f0f23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e99bbe73887709fd776078a079859e" id="r_a50e99bbe73887709fd776078a079859e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a50e99bbe73887709fd776078a079859e">gmtime_s</a> (...) -&gt; <a class="el" href="structdetail_1_1null.html">null</a>&lt;&gt;</td></tr>
+<tr class="separator:a50e99bbe73887709fd776078a079859e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada07432e9f9a4b8fa54d70b7d226a376" id="r_ada07432e9f9a4b8fa54d70b7d226a376"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ada07432e9f9a4b8fa54d70b7d226a376">get_classic_locale</a> () -&gt; const std::locale &amp;</td></tr>
+<tr class="separator:ada07432e9f9a4b8fa54d70b7d226a376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21c91c6582996adf3993ac939f87527" id="r_ad21c91c6582996adf3993ac939f87527"><td class="memTemplParams" colspan="2">template&lt;typename CodeUnit&gt; </td></tr>
+<tr class="memitem:ad21c91c6582996adf3993ac939f87527"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ad21c91c6582996adf3993ac939f87527">write_codecvt</a> (<a class="el" href="structdetail_1_1codecvt__result.html">codecvt_result</a>&lt; CodeUnit &gt; &amp;out, <a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> <a class="el" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171">in</a>, const std::locale &amp;loc)</td></tr>
+<tr class="separator:ad21c91c6582996adf3993ac939f87527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0199d4ab13906cdd7763188a2287bb74" id="r_a0199d4ab13906cdd7763188a2287bb74"><td class="memTemplParams" colspan="2">template&lt;typename OutputIt&gt; </td></tr>
+<tr class="memitem:a0199d4ab13906cdd7763188a2287bb74"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a0199d4ab13906cdd7763188a2287bb74">write_encoded_tm_str</a> (OutputIt out, <a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> <a class="el" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171">in</a>, const std::locale &amp;loc) -&gt; OutputIt</td></tr>
+<tr class="separator:a0199d4ab13906cdd7763188a2287bb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab860fa7ee0d92c3f16d66ec9dae8b4e7" id="r_ab860fa7ee0d92c3f16d66ec9dae8b4e7"><td class="memTemplParams" colspan="2">template&lt;typename Char, typename OutputIt, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; Char, char &gt;::value)&gt; </td></tr>
+<tr class="memitem:ab860fa7ee0d92c3f16d66ec9dae8b4e7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ab860fa7ee0d92c3f16d66ec9dae8b4e7">write_tm_str</a> (OutputIt out, <a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> sv, const std::locale &amp;loc) -&gt; OutputIt</td></tr>
+<tr class="separator:ab860fa7ee0d92c3f16d66ec9dae8b4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa599006d5579cc1efe74d57fc8f13486" id="r_aa599006d5579cc1efe74d57fc8f13486"><td class="memTemplParams" colspan="2">template&lt;typename Char&gt; </td></tr>
+<tr class="memitem:aa599006d5579cc1efe74d57fc8f13486"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486">do_write</a> (<a class="el" href="classdetail_1_1buffer.html">buffer</a>&lt; Char &gt; &amp;buf, const std::tm &amp;time, const std::locale &amp;loc, char <a class="el" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c">format</a>, char modifier)</td></tr>
+<tr class="separator:aa599006d5579cc1efe74d57fc8f13486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb5bb7d57c9cc36020fa5c0bc10fa57a" id="r_abb5bb7d57c9cc36020fa5c0bc10fa57a"><td class="memTemplParams" colspan="2">template&lt;typename Char, typename OutputIt, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; Char, char &gt;::value)&gt; </td></tr>
+<tr class="memitem:abb5bb7d57c9cc36020fa5c0bc10fa57a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a">write</a> (OutputIt out, const std::tm &amp;time, const std::locale &amp;loc, char <a class="el" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c">format</a>, char modifier=0) -&gt; OutputIt</td></tr>
+<tr class="separator:abb5bb7d57c9cc36020fa5c0bc10fa57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a215439fa28b18f96d283efba24822f20" id="r_a215439fa28b18f96d283efba24822f20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#ac9411ed6305aee71472718fa55fcc352">FMT_NORETURN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a215439fa28b18f96d283efba24822f20">throw_duration_error</a> ()</td></tr>
+<tr class="separator:a215439fa28b18f96d283efba24822f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e8a7bfd4c67725575c44238eb10970" id="r_aa4e8a7bfd4c67725575c44238eb10970"><td class="memTemplParams" colspan="2">template&lt;typename To, typename FromRep, typename FromPeriod, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_integral&lt; FromRep &gt;::value &amp;&amp; std::is_integral&lt; typename To::rep &gt;::value)&gt; </td></tr>
+<tr class="memitem:aa4e8a7bfd4c67725575c44238eb10970"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#aa4e8a7bfd4c67725575c44238eb10970">duration_cast</a> (std::chrono::duration&lt; FromRep, FromPeriod &gt; from) -&gt; To</td></tr>
+<tr class="separator:aa4e8a7bfd4c67725575c44238eb10970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f86046fc16db3907eb4bd0c9c7833e2" id="r_a4f86046fc16db3907eb4bd0c9c7833e2"><td class="memTemplParams" colspan="2">template&lt;typename Duration&gt; </td></tr>
+<tr class="memitem:a4f86046fc16db3907eb4bd0c9c7833e2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a4f86046fc16db3907eb4bd0c9c7833e2">to_time_t</a> (<a class="el" href="#a5b17f601f1dd7b4172bf79026388b90b">sys_time</a>&lt; Duration &gt; time_point) -&gt; std::time_t</td></tr>
+<tr class="separator:a4f86046fc16db3907eb4bd0c9c7833e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad629f898f7bb2ac569c0aac73c63bbf3" id="r_ad629f898f7bb2ac569c0aac73c63bbf3"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </td></tr>
+<tr class="memitem:ad629f898f7bb2ac569c0aac73c63bbf3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ad629f898f7bb2ac569c0aac73c63bbf3">has_current_zone</a> () -&gt; bool</td></tr>
+<tr class="separator:ad629f898f7bb2ac569c0aac73c63bbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a206f24de3f0fff46c4daeb318c02a45e" id="r_a206f24de3f0fff46c4daeb318c02a45e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#ab09e1860f362e7828106dfa9963d884f">FMT_BEGIN_EXPORT</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a206f24de3f0fff46c4daeb318c02a45e">localtime</a> (std::time_t time) -&gt; std::tm</td></tr>
+<tr class="memdesc:a206f24de3f0fff46c4daeb318c02a45e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts given time since epoch as <code>std::time_t</code> value into calendar time, expressed in local time.  <br /></td></tr>
+<tr class="separator:a206f24de3f0fff46c4daeb318c02a45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a6d3549151f8648676dde975a0e997" id="r_a83a6d3549151f8648676dde975a0e997"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83a6d3549151f8648676dde975a0e997">gmtime</a> (std::time_t time) -&gt; std::tm</td></tr>
+<tr class="memdesc:a83a6d3549151f8648676dde975a0e997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts given time since epoch as <code>std::time_t</code> value into calendar time, expressed in Coordinated Universal Time (UTC).  <br /></td></tr>
+<tr class="separator:a83a6d3549151f8648676dde975a0e997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36146ff53ad660e32b27ddad663628a9" id="r_a36146ff53ad660e32b27ddad663628a9"><td class="memTemplParams" colspan="2">template&lt;typename Duration&gt; </td></tr>
+<tr class="memitem:a36146ff53ad660e32b27ddad663628a9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a36146ff53ad660e32b27ddad663628a9">gmtime</a> (<a class="el" href="#a5b17f601f1dd7b4172bf79026388b90b">sys_time</a>&lt; Duration &gt; time_point) -&gt; std::tm</td></tr>
+<tr class="separator:a36146ff53ad660e32b27ddad663628a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6953a37440bdb195c1235a99fb604db" id="r_ab6953a37440bdb195c1235a99fb604db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ab6953a37440bdb195c1235a99fb604db">write_digit2_separated</a> (char *buf, unsigned a, unsigned b, unsigned c, char sep)</td></tr>
+<tr class="separator:ab6953a37440bdb195c1235a99fb604db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a82ebbc7f802460357160c26e33ff5" id="r_a35a82ebbc7f802460357160c26e33ff5"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca79aa7162ee6359a93162548a3fcf8049">Period</a>&gt; </td></tr>
+<tr class="memitem:a35a82ebbc7f802460357160c26e33ff5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a35a82ebbc7f802460357160c26e33ff5">get_units</a> () -&gt; const char *</td></tr>
+<tr class="separator:a35a82ebbc7f802460357160c26e33ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5667c9c6be9baa40dd9a6fec3f9ce804" id="r_a5667c9c6be9baa40dd9a6fec3f9ce804"><td class="memTemplParams" colspan="2">template&lt;typename OutputIt&gt; </td></tr>
+<tr class="memitem:a5667c9c6be9baa40dd9a6fec3f9ce804"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a5667c9c6be9baa40dd9a6fec3f9ce804">write_padding</a> (OutputIt out, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad, int <a class="el" href="namespacedetail.html#adc6e5733fc3c22f0a7b2914188c49c90aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a>) -&gt; OutputIt</td></tr>
+<tr class="separator:a5667c9c6be9baa40dd9a6fec3f9ce804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1612ca33794f56caa16c2d1bc7e256" id="r_a6c1612ca33794f56caa16c2d1bc7e256"><td class="memTemplParams" colspan="2">template&lt;typename OutputIt&gt; </td></tr>
+<tr class="memitem:a6c1612ca33794f56caa16c2d1bc7e256"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a6c1612ca33794f56caa16c2d1bc7e256">write_padding</a> (OutputIt out, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad) -&gt; OutputIt</td></tr>
+<tr class="separator:a6c1612ca33794f56caa16c2d1bc7e256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a155b536c7479f0db71c80503974827" id="r_a2a155b536c7479f0db71c80503974827"><td class="memTemplParams" colspan="2">template&lt;typename Char, typename Handler&gt; </td></tr>
+<tr class="memitem:a2a155b536c7479f0db71c80503974827"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a2a155b536c7479f0db71c80503974827">parse_chrono_format</a> (const Char *begin, const Char *end, Handler &amp;&amp;handler) -&gt; const Char *</td></tr>
+<tr class="separator:a2a155b536c7479f0db71c80503974827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937246240c227d61f0596d3e8d19e777" id="r_a937246240c227d61f0596d3e8d19e777"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a937246240c227d61f0596d3e8d19e777">tm_wday_full_name</a> (int wday) -&gt; const char *</td></tr>
+<tr class="separator:a937246240c227d61f0596d3e8d19e777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad043acaea0998e2b70382e99626934f7" id="r_ad043acaea0998e2b70382e99626934f7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ad043acaea0998e2b70382e99626934f7">tm_wday_short_name</a> (int wday) -&gt; const char *</td></tr>
+<tr class="separator:ad043acaea0998e2b70382e99626934f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a682238579d35391ac69dbf78a3b86b1f" id="r_a682238579d35391ac69dbf78a3b86b1f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a682238579d35391ac69dbf78a3b86b1f">tm_mon_full_name</a> (int mon) -&gt; const char *</td></tr>
+<tr class="separator:a682238579d35391ac69dbf78a3b86b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bba36fa197c18ddb6f298f6c124c6a1" id="r_a6bba36fa197c18ddb6f298f6c124c6a1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a6bba36fa197c18ddb6f298f6c124c6a1">tm_mon_short_name</a> (int mon) -&gt; const char *</td></tr>
+<tr class="separator:a6bba36fa197c18ddb6f298f6c124c6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a867daf6550fa7b1be57012e5b8a8d" id="r_a05a867daf6550fa7b1be57012e5b8a8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a05a867daf6550fa7b1be57012e5b8a8d">tzset_once</a> ()</td></tr>
+<tr class="separator:a05a867daf6550fa7b1be57012e5b8a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d4fb8f9443693eebb6611614df98df" id="r_ac7d4fb8f9443693eebb6611614df98df"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Int, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_integral&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </td></tr>
+<tr class="memitem:ac7d4fb8f9443693eebb6611614df98df"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ac7d4fb8f9443693eebb6611614df98df">to_nonnegative_int</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> <a class="el" href="classdetail_1_1value.html">value</a>, Int upper) -&gt; Int</td></tr>
+<tr class="separator:ac7d4fb8f9443693eebb6611614df98df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea59e579c968b1e84b7c8574e83381d9" id="r_aea59e579c968b1e84b7c8574e83381d9"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail.html#aea59e579c968b1e84b7c8574e83381d9">pow10</a> (std::uint32_t n) -&gt; long long</td></tr>
+<tr class="separator:aea59e579c968b1e84b7c8574e83381d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bc10bfc5890885892eed90dd1ebbacb" id="r_a3bc10bfc5890885892eed90dd1ebbacb"><td class="memTemplParams" colspan="2">template&lt;typename Char, typename OutputIt, typename Duration&gt; </td></tr>
+<tr class="memitem:a3bc10bfc5890885892eed90dd1ebbacb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a3bc10bfc5890885892eed90dd1ebbacb">write_fractional_seconds</a> (OutputIt &amp;out, Duration d, int <a class="el" href="namespacedetail.html#adc6e5733fc3c22f0a7b2914188c49c90ae2794d8f12719281eff5601251c8a680">precision</a>=-1)</td></tr>
+<tr class="separator:a3bc10bfc5890885892eed90dd1ebbacb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fad4da968c3667669973c060f40446b" id="r_a4fad4da968c3667669973c060f40446b"><td class="memTemplParams" colspan="2">template&lt;typename Duration&gt; </td></tr>
+<tr class="memitem:a4fad4da968c3667669973c060f40446b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a4fad4da968c3667669973c060f40446b">write_floating_seconds</a> (<a class="el" href="format_8h.html#aaba5427d5f788f71959666ba2a3bf167">memory_buffer</a> &amp;buf, Duration duration, int num_fractional_digits=-1)</td></tr>
+<tr class="separator:a4fad4da968c3667669973c060f40446b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e1957a13aae0e76a248f6346d9403a" id="r_a77e1957a13aae0e76a248f6346d9403a"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_integral&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value &amp;&amp;<a class="el" href="structdetail_1_1has__isfinite.html">has_isfinite</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </td></tr>
+<tr class="memitem:a77e1957a13aae0e76a248f6346d9403a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a77e1957a13aae0e76a248f6346d9403a">isfinite</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>) -&gt; bool</td></tr>
+<tr class="separator:a77e1957a13aae0e76a248f6346d9403a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39947f4863b5b9f774c2f64ebf1f314b" id="r_a39947f4863b5b9f774c2f64ebf1f314b"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_integral&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </td></tr>
+<tr class="memitem:a39947f4863b5b9f774c2f64ebf1f314b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a39947f4863b5b9f774c2f64ebf1f314b">mod</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> x, int y) -&gt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></td></tr>
+<tr class="separator:a39947f4863b5b9f774c2f64ebf1f314b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec0b994e150d44d0a32c6cce3e5adfd" id="r_a1ec0b994e150d44d0a32c6cce3e5adfd"><td class="memTemplParams" colspan="2">template&lt;typename Rep, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca79aa7162ee6359a93162548a3fcf8049">Period</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_integral&lt; Rep &gt;::value)&gt; </td></tr>
+<tr class="memitem:a1ec0b994e150d44d0a32c6cce3e5adfd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a1ec0b994e150d44d0a32c6cce3e5adfd">get_milliseconds</a> (std::chrono::duration&lt; Rep, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca79aa7162ee6359a93162548a3fcf8049">Period</a> &gt; d) -&gt; std::chrono::duration&lt; Rep, std::milli &gt;</td></tr>
+<tr class="separator:a1ec0b994e150d44d0a32c6cce3e5adfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b96d687ed36f0fdf9824fcdc899a187" id="r_a1b96d687ed36f0fdf9824fcdc899a187"><td class="memTemplParams" colspan="2">template&lt;typename Char, typename Rep, typename OutputIt, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_integral&lt; Rep &gt;::value)&gt; </td></tr>
+<tr class="memitem:a1b96d687ed36f0fdf9824fcdc899a187"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a1b96d687ed36f0fdf9824fcdc899a187">format_duration_value</a> (OutputIt out, Rep val, int) -&gt; OutputIt</td></tr>
+<tr class="separator:a1b96d687ed36f0fdf9824fcdc899a187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5677da16167e10dbf7f82ea3fab75a58" id="r_a5677da16167e10dbf7f82ea3fab75a58"><td class="memTemplParams" colspan="2">template&lt;typename Char, typename OutputIt&gt; </td></tr>
+<tr class="memitem:a5677da16167e10dbf7f82ea3fab75a58"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a5677da16167e10dbf7f82ea3fab75a58">copy_unit</a> (<a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> unit, OutputIt out, Char) -&gt; OutputIt</td></tr>
+<tr class="separator:a5677da16167e10dbf7f82ea3fab75a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1bf005f41d507a5a9a219ea36bc8849" id="r_ae1bf005f41d507a5a9a219ea36bc8849"><td class="memTemplParams" colspan="2">template&lt;typename OutputIt&gt; </td></tr>
+<tr class="memitem:ae1bf005f41d507a5a9a219ea36bc8849"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#ae1bf005f41d507a5a9a219ea36bc8849">copy_unit</a> (<a class="el" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> unit, OutputIt out, wchar_t) -&gt; OutputIt</td></tr>
+<tr class="separator:ae1bf005f41d507a5a9a219ea36bc8849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2398c04f58e4d99e75a4bd6c2ce3cfba" id="r_a2398c04f58e4d99e75a4bd6c2ce3cfba"><td class="memTemplParams" colspan="2">template&lt;typename Char, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca79aa7162ee6359a93162548a3fcf8049">Period</a>, typename OutputIt&gt; </td></tr>
+<tr class="memitem:a2398c04f58e4d99e75a4bd6c2ce3cfba"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail.html#a2398c04f58e4d99e75a4bd6c2ce3cfba">format_duration_unit</a> (OutputIt out) -&gt; OutputIt</td></tr>
+<tr class="separator:a2398c04f58e4d99e75a4bd6c2ce3cfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a0c2d874e178da493766bca4f1b898780" name="a0c2d874e178da493766bca4f1b898780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2d874e178da493766bca4f1b898780">&#9670;&#160;</a></span>FMT_NOMACRO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FMT_NOMACRO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e36408d8f476cd09c46417ab03f458e" name="a8e36408d8f476cd09c46417ab03f458e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e36408d8f476cd09c46417ab03f458e">&#9670;&#160;</a></span>FMT_SAFE_DURATION_CAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FMT_SAFE_DURATION_CAST&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37235273460d7c9c10d3beb19eef34f8" name="a37235273460d7c9c10d3beb19eef34f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37235273460d7c9c10d3beb19eef34f8">&#9670;&#160;</a></span>FMT_USE_LOCAL_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FMT_USE_LOCAL_TIME&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45e0a448789722d8e44240c5ba5cabec" name="a45e0a448789722d8e44240c5ba5cabec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e0a448789722d8e44240c5ba5cabec">&#9670;&#160;</a></span>FMT_USE_UTC_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FMT_USE_UTC_TIME&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a65fe139d7ed0b855a93969c4985b9b16" name="a65fe139d7ed0b855a93969c4985b9b16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65fe139d7ed0b855a93969c4985b9b16">&#9670;&#160;</a></span>local_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Duration&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a65fe139d7ed0b855a93969c4985b9b16">local_time</a> = std::chrono::time_point&lt;<a class="el" href="structdetail_1_1local__t.html">detail::local_t</a>, Duration&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b17f601f1dd7b4172bf79026388b90b" name="a5b17f601f1dd7b4172bf79026388b90b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b17f601f1dd7b4172bf79026388b90b">&#9670;&#160;</a></span>sys_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Duration&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a5b17f601f1dd7b4172bf79026388b90b">sys_time</a> = std::chrono::time_point&lt;std::chrono::system_clock, Duration&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c1a5a827554b0f5bcdeaf3711df89d6" name="a3c1a5a827554b0f5bcdeaf3711df89d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1a5a827554b0f5bcdeaf3711df89d6">&#9670;&#160;</a></span>utc_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Duration&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a3c1a5a827554b0f5bcdeaf3711df89d6">utc_time</a> = std::chrono::time_point&lt;<a class="el" href="structdetail_1_1utc__clock.html">detail::utc_clock</a>, Duration&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a83a6d3549151f8648676dde975a0e997" name="a83a6d3549151f8648676dde975a0e997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a6d3549151f8648676dde975a0e997">&#9670;&#160;</a></span>gmtime() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto gmtime </td>
+          <td>(</td>
+          <td class="paramtype">std::time_t</td>          <td class="paramname"><span class="paramname"><em>time</em></span></td><td>)</td>
+          <td> -&gt; std::tm </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts given time since epoch as <code>std::time_t</code> value into calendar time, expressed in Coordinated Universal Time (UTC). </p>
+<p>Unlike <code>std::gmtime</code>, this function is thread-safe on most platforms. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="bundled_2chrono_8h_a83a6d3549151f8648676dde975a0e997_icgraph.png" border="0" usemap="#abundled_2chrono_8h_a83a6d3549151f8648676dde975a0e997_icgraph" alt=""/></div>
+<map name="abundled_2chrono_8h_a83a6d3549151f8648676dde975a0e997_icgraph" id="abundled_2chrono_8h_a83a6d3549151f8648676dde975a0e997_icgraph">
+<area shape="rect" title="Converts given time since epoch as std::time_t value into calendar time, expressed in Coordinated Uni..." alt="" coords="239,171,303,197"/>
+<area shape="rect" href="structformatter_3_01sys__time_3_01_duration_01_4_00_01_char_01_4.html#ae4c5680a88f8b97963455a2c6af36203" title=" " alt="" coords="27,5,169,64"/>
+<area shape="poly" title=" " alt="" coords="253,158,226,118,189,78,168,64,171,60,192,74,230,114,257,156"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a0d16042db5dbfa6666911df592543d4a" title=" " alt="" coords="11,88,185,147"/>
+<area shape="poly" title=" " alt="" coords="223,169,175,150,177,145,225,164"/>
+<area shape="rect" href="namespace_util.html#af862f069ca9a83b7ab35983862c9572f" title="获取今天 0 点的 UTC 时间戳" alt="" coords="20,171,176,197"/>
+<area shape="poly" title=" " alt="" coords="223,187,176,187,176,181,223,181"/>
+<area shape="rect" href="namespace_util.html#a28f68957de3208d5d2979f80eb91bb7f" title="获取当前时间相对于本周的 UTC 时间戳" alt="" coords="5,221,191,248"/>
+<area shape="poly" title=" " alt="" coords="224,202,191,212,152,223,150,218,190,207,223,197"/>
+<area shape="rect" href="bundled_2chrono_8h.html#a36146ff53ad660e32b27ddad663628a9" title=" " alt="" coords="66,272,130,299"/>
+<area shape="poly" title=" " alt="" coords="251,211,225,238,192,262,161,275,131,283,130,278,160,270,189,258,221,234,247,208"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36146ff53ad660e32b27ddad663628a9" name="a36146ff53ad660e32b27ddad663628a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36146ff53ad660e32b27ddad663628a9">&#9670;&#160;</a></span>gmtime() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Duration&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto gmtime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5b17f601f1dd7b4172bf79026388b90b">sys_time</a>&lt; Duration &gt;</td>          <td class="paramname"><span class="paramname"><em>time_point</em></span></td><td>)</td>
+          <td> -&gt; std::tm </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="bundled_2chrono_8h_a36146ff53ad660e32b27ddad663628a9_cgraph.png" border="0" usemap="#abundled_2chrono_8h_a36146ff53ad660e32b27ddad663628a9_cgraph" alt=""/></div>
+<map name="abundled_2chrono_8h_a36146ff53ad660e32b27ddad663628a9_cgraph" id="abundled_2chrono_8h_a36146ff53ad660e32b27ddad663628a9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,70,97"/>
+<area shape="rect" href="bundled_2chrono_8h.html#a83a6d3549151f8648676dde975a0e997" title="Converts given time since epoch as std::time_t value into calendar time, expressed in Coordinated Uni..." alt="" coords="143,45,207,72"/>
+<area shape="poly" title=" " alt="" coords="70,75,127,65,128,70,71,81"/>
+<area shape="rect" href="namespacedetail.html#a4f86046fc16db3907eb4bd0c9c7833e2" title=" " alt="" coords="118,96,232,123"/>
+<area shape="poly" title=" " alt="" coords="71,87,103,93,102,98,70,92"/>
+<area shape="rect" href="namespacedetail.html#aa4e8a7bfd4c67725575c44238eb10970" title=" " alt="" coords="280,96,418,123"/>
+<area shape="poly" title=" " alt="" coords="232,107,264,107,264,112,232,112"/>
+<area shape="rect" href="namespacedetail.html#a3279dca70405e483511edbe9c391a376" title=" " alt="" coords="660,37,794,64"/>
+<area shape="poly" title=" " alt="" coords="360,94,403,52,432,31,465,15,493,7,522,4,579,6,633,16,678,29,677,34,631,21,578,11,522,9,494,13,467,20,435,35,406,56,364,97"/>
+<area shape="rect" href="namespacedetail.html#a25e934f3e2c5280160c34cb21a8db91c" title=" " alt="" coords="493,29,585,56"/>
+<area shape="poly" title=" " alt="" coords="389,93,465,65,484,59,485,64,467,70,391,98"/>
+<area shape="rect" href="namespacesafe__duration__cast.html#aeb329dc4be0bab60f163b3c8625baac0" title="Converts From to To, without loss." alt="" coords="473,80,605,139"/>
+<area shape="poly" title=" " alt="" coords="419,107,458,107,458,112,419,112"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="477,163,601,189"/>
+<area shape="poly" title=" " alt="" coords="391,121,467,148,485,154,484,160,465,153,389,126"/>
+<area shape="rect" href="namespacedetail.html#a215439fa28b18f96d283efba24822f20" title=" " alt="" coords="466,213,612,256"/>
+<area shape="poly" title=" " alt="" coords="367,121,411,158,468,199,475,203,473,208,465,203,408,162,364,125"/>
+<area shape="poly" title=" " alt="" coords="604,86,666,67,668,72,606,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a206f24de3f0fff46c4daeb318c02a45e" name="a206f24de3f0fff46c4daeb318c02a45e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a206f24de3f0fff46c4daeb318c02a45e">&#9670;&#160;</a></span>localtime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#ab09e1860f362e7828106dfa9963d884f">FMT_BEGIN_EXPORT</a> auto localtime </td>
+          <td>(</td>
+          <td class="paramtype">std::time_t</td>          <td class="paramname"><span class="paramname"><em>time</em></span></td><td>)</td>
+          <td> -&gt; std::tm </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts given time since epoch as <code>std::time_t</code> value into calendar time, expressed in local time. </p>
+<p>Unlike <code>std::localtime</code>, this function is thread-safe on most platforms. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="bundled_2chrono_8h_a206f24de3f0fff46c4daeb318c02a45e_icgraph.png" border="0" usemap="#abundled_2chrono_8h_a206f24de3f0fff46c4daeb318c02a45e_icgraph" alt=""/></div>
+<map name="abundled_2chrono_8h_a206f24de3f0fff46c4daeb318c02a45e_icgraph" id="abundled_2chrono_8h_a206f24de3f0fff46c4daeb318c02a45e_icgraph">
+<area shape="rect" title="Converts given time since epoch as std::time_t value into calendar time, expressed in local time." alt="" coords="198,21,271,48"/>
+<area shape="rect" href="structformatter_3_01local__time_3_01_duration_01_4_00_01_char_01_4.html#a52e8eb3c7a015c7e59294f5860239717" title=" " alt="" coords="5,5,150,64"/>
+<area shape="poly" title=" " alt="" coords="182,37,150,37,150,32,182,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="dir_85fa2da21708816d1375fd12a7eb6aff.html">fmt</a></li><li class="navelem"><a class="el" href="dir_d1c5b6b473b169175f45e03530f40b4d.html">bundled</a></li><li class="navelem"><a class="el" href="bundled_2chrono_8h.html">chrono.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

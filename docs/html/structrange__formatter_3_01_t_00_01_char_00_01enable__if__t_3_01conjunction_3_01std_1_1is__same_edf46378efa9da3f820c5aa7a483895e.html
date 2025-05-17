@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: range_formatter&lt; T, Char, enable_if_t&lt; conjunction&lt; std::is_same&lt; T, remove_cvref_t&lt; T &gt; &gt;, is_formattable&lt; T, Char &gt; &gt;::value &gt; &gt; 模板结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_f3612d1a6a8cff9a036ce8587c1e00a6.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">range_formatter&lt; T, Char, enable_if_t&lt; conjunction&lt; std::is_same&lt; T, remove_cvref_t&lt; T &gt; &gt;, is_formattable&lt; T, Char &gt; &gt;::value &gt; &gt; 模板结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="bundled_2ranges_8h_source.html">ranges.h</a>&gt;</code></p>
+<div class="dynheader">
+range_formatter&lt; T, Char, enable_if_t&lt; conjunction&lt; std::is_same&lt; T, remove_cvref_t&lt; T &gt; &gt;, is_formattable&lt; T, Char &gt; &gt;::value &gt; &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_2f3af5dbe278d898dd89e5d68dfad067.png" border="0" usemap="#arange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_3_01_t_00_01remove__cvref__t_3_01_t_01_4_01_4_00_01is__formattable_3_01_t_00_01_char_01_4_01_4_1_1value_01_4_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="arange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_3_01_t_00_01remove__cvref__t_3_01_t_01_4_01_4_00_01is__formattable_3_01_t_00_01_char_01_4_01_4_1_1value_01_4_01_4_coll__map" id="arange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_3_01_t_00_01remove__cvref__t_3_01_t_01_4_01_4_00_01is__formattable_3_01_t_00_01_char_01_4_01_4_1_1value_01_4_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="5,128,171,235"/>
+<area shape="rect" href="structformatter.html" title=" " alt="" coords="6,5,170,64"/>
+<area shape="poly" title=" " alt="" coords="91,79,91,128,85,128,85,79"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aab7ecf5a091636a520d9354f76c68749" id="r_aab7ecf5a091636a520d9354f76c68749"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab7ecf5a091636a520d9354f76c68749">range_formatter</a> ()</td></tr>
+<tr class="separator:aab7ecf5a091636a520d9354f76c68749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0abe84b6a22077654ebd22da668ab50" id="r_ae0abe84b6a22077654ebd22da668ab50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0abe84b6a22077654ebd22da668ab50">underlying</a> () -&gt; <a class="el" href="namespacedetail.html#ae8cdd3246d8f0ee5adbe55dd5ea18c2f">detail::range_formatter_type</a>&lt; Char, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt; &amp;</td></tr>
+<tr class="separator:ae0abe84b6a22077654ebd22da668ab50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9abc221bc0725bbd665f4fc69c6e8e1" id="r_af9abc221bc0725bbd665f4fc69c6e8e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9abc221bc0725bbd665f4fc69c6e8e1">set_separator</a> (<a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt; sep)</td></tr>
+<tr class="separator:af9abc221bc0725bbd665f4fc69c6e8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e1960a3b80f89a62595a932406aabd" id="r_a77e1960a3b80f89a62595a932406aabd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77e1960a3b80f89a62595a932406aabd">set_brackets</a> (<a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt; open, <a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt; close)</td></tr>
+<tr class="separator:a77e1960a3b80f89a62595a932406aabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab971982084b0d00677071064adc679" id="r_a8ab971982084b0d00677071064adc679"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ab971982084b0d00677071064adc679">parse</a> (<a class="el" href="classparse__context.html">parse_context</a>&lt; Char &gt; &amp;ctx) -&gt; const Char *</td></tr>
+<tr class="separator:a8ab971982084b0d00677071064adc679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87e39ba518dcf690d9d8d461d8086d3" id="r_af87e39ba518dcf690d9d8d461d8086d3"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca1784b1a3d7cbd43c45ff82c72d05e4ae">R</a>, typename FormatContext&gt; </td></tr>
+<tr class="memitem:af87e39ba518dcf690d9d8d461d8086d3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af87e39ba518dcf690d9d8d461d8086d3">format</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca1784b1a3d7cbd43c45ff82c72d05e4ae">R</a> &amp;&amp;range, FormatContext &amp;ctx) const -&gt; decltype(ctx.out())</td></tr>
+<tr class="separator:af87e39ba518dcf690d9d8d461d8086d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a0036fb25034f72de4a9e3796b3af019d" id="r_a0036fb25034f72de4a9e3796b3af019d"><td class="memTemplParams" colspan="2">template&lt;typename Output, typename It, typename Sentinel, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a> = T, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_same&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a>, Char &gt;::value)&gt; </td></tr>
+<tr class="memitem:a0036fb25034f72de4a9e3796b3af019d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0036fb25034f72de4a9e3796b3af019d">write_debug_string</a> (Output &amp;out, It it, Sentinel end) const -&gt; Output</td></tr>
+<tr class="separator:a0036fb25034f72de4a9e3796b3af019d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac6b8dc42ba9bc0e481235e35566c414" id="r_aac6b8dc42ba9bc0e481235e35566c414"><td class="memTemplParams" colspan="2">template&lt;typename Output, typename It, typename Sentinel, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a> = T, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a>, Char &gt;::value)&gt; </td></tr>
+<tr class="memitem:aac6b8dc42ba9bc0e481235e35566c414"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aac6b8dc42ba9bc0e481235e35566c414">write_debug_string</a> (Output &amp;out, It, Sentinel) const -&gt; Output</td></tr>
+<tr class="separator:aac6b8dc42ba9bc0e481235e35566c414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a46bc1d08fcfda437f88e4a627302c496" id="r_a46bc1d08fcfda437f88e4a627302c496"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacedetail.html#ae8cdd3246d8f0ee5adbe55dd5ea18c2f">detail::range_formatter_type</a>&lt; Char, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46bc1d08fcfda437f88e4a627302c496">underlying_</a></td></tr>
+<tr class="separator:a46bc1d08fcfda437f88e4a627302c496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bcdfaff0210e9628a6d7a4a37ff24f7" id="r_a3bcdfaff0210e9628a6d7a4a37ff24f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bcdfaff0210e9628a6d7a4a37ff24f7">separator_</a> = <a class="el" href="structdetail_1_1string__literal.html">detail::string_literal</a>&lt;Char, ',', ' '&gt;{}</td></tr>
+<tr class="separator:a3bcdfaff0210e9628a6d7a4a37ff24f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda1105ce55203a192bbec20626d40dc" id="r_acda1105ce55203a192bbec20626d40dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acda1105ce55203a192bbec20626d40dc">opening_bracket_</a></td></tr>
+<tr class="separator:acda1105ce55203a192bbec20626d40dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a20fb87f4e6c6f5e8fe335084d4bb5c" id="r_a2a20fb87f4e6c6f5e8fe335084d4bb5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a20fb87f4e6c6f5e8fe335084d4bb5c">closing_bracket_</a></td></tr>
+<tr class="separator:a2a20fb87f4e6c6f5e8fe335084d4bb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9457b4bd16c64f5608e45a1521c4033c" id="r_a9457b4bd16c64f5608e45a1521c4033c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9457b4bd16c64f5608e45a1521c4033c">is_debug</a> = false</td></tr>
+<tr class="separator:a9457b4bd16c64f5608e45a1521c4033c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aab7ecf5a091636a520d9354f76c68749" name="aab7ecf5a091636a520d9354f76c68749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab7ecf5a091636a520d9354f76c68749">&#9670;&#160;</a></span>range_formatter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> <a class="el" href="structrange__formatter.html">range_formatter</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="af87e39ba518dcf690d9d8d461d8086d3" name="af87e39ba518dcf690d9d8d461d8086d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87e39ba518dcf690d9d8d461d8086d3">&#9670;&#160;</a></span>format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca1784b1a3d7cbd43c45ff82c72d05e4ae">R</a>, typename FormatContext&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca1784b1a3d7cbd43c45ff82c72d05e4ae">R</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>range</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FormatContext &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>&#160;) const -&gt; decltype(ctx.out()) </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_af87e39ba518dcf690d9d8d461d8086d3_cgraph.png" border="0" usemap="#astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_af87e39ba518dcf690d9d8d461d8086d3_cgraph" alt=""/></div>
+<map name="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_af87e39ba518dcf690d9d8d461d8086d3_cgraph" id="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_af87e39ba518dcf690d9d8d461d8086d3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,64,108"/>
+<area shape="rect" href="namespacedetail.html#a424ac455d7b099551299db1be2e6e355" title=" " alt="" coords="133,5,221,32"/>
+<area shape="poly" title=" " alt="" coords="52,79,110,42,122,36,124,41,113,46,55,83"/>
+<area shape="rect" href="namespacedetail.html#abfaaae5535d196d742f2937642939edf" title=" " alt="" coords="112,56,242,83"/>
+<area shape="poly" title=" " alt="" coords="64,87,96,81,97,86,65,92"/>
+<area shape="rect" href="namespacedetail.html#a585ca0e735a22012ea4cb33064172748" title=" " alt="" coords="117,107,237,133"/>
+<area shape="poly" title=" " alt="" coords="65,97,102,104,101,109,64,102"/>
+<area shape="rect" href="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e.html#a0036fb25034f72de4a9e3796b3af019d" title=" " alt="" coords="112,157,242,184"/>
+<area shape="poly" title=" " alt="" coords="55,106,113,143,124,148,122,153,110,148,52,111"/>
+<area shape="rect" href="namespacedetail.html#a2fad900275a3d2338d5393a4a5c38d92" title=" " alt="" coords="290,5,428,32"/>
+<area shape="poly" title=" " alt="" coords="222,16,274,16,274,21,222,21"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="315,157,403,184"/>
+<area shape="poly" title=" " alt="" coords="243,168,300,168,300,173,243,173"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="484,81,594,108"/>
+<area shape="poly" title=" " alt="" coords="392,154,490,112,492,117,394,159"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="650,107,708,133"/>
+<area shape="poly" title=" " alt="" coords="403,161,634,124,635,130,404,166"/>
+<area shape="rect" href="namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83" title=" " alt="" coords="480,183,598,209"/>
+<area shape="poly" title=" " alt="" coords="404,174,466,183,465,188,403,180"/>
+<area shape="rect" href="namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="476,233,602,260"/>
+<area shape="poly" title=" " alt="" coords="393,182,477,219,491,225,489,230,475,224,391,187"/>
+<area shape="poly" title=" " alt="" coords="595,102,635,109,634,115,594,107"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8ab971982084b0d00677071064adc679" name="a8ab971982084b0d00677071064adc679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab971982084b0d00677071064adc679">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto parse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classparse__context.html">parse_context</a>&lt; Char &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
+          <td> -&gt; const Char* </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a8ab971982084b0d00677071064adc679_cgraph.png" border="0" usemap="#astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a8ab971982084b0d00677071064adc679_cgraph" alt=""/></div>
+<map name="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a8ab971982084b0d00677071064adc679_cgraph" id="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a8ab971982084b0d00677071064adc679_cgraph">
+<area shape="rect" title=" " alt="" coords="5,123,59,149"/>
+<area shape="rect" href="namespacedetail.html#aa7ba2fc994d8dce753123083fb88ae8d" title=" " alt="" coords="107,5,273,48"/>
+<area shape="poly" title=" " alt="" coords="41,121,68,90,105,58,112,54,115,58,108,62,72,94,45,124"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="146,72,234,99"/>
+<area shape="poly" title=" " alt="" coords="58,124,106,108,130,100,132,105,108,113,60,129"/>
+<area shape="rect" href="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e.html#a77e1960a3b80f89a62595a932406aabd" title=" " alt="" coords="142,123,238,149"/>
+<area shape="poly" title=" " alt="" coords="59,133,126,133,126,139,59,139"/>
+<area shape="rect" href="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e.html#af9abc221bc0725bbd665f4fc69c6e8e1" title=" " alt="" coords="140,173,240,200"/>
+<area shape="poly" title=" " alt="" coords="60,143,108,159,129,166,127,171,106,164,58,148"/>
+<area shape="rect" href="namespacedetail.html#a4ccca465a5dd619d27d52681817c6276" title=" " alt="" coords="137,224,242,251"/>
+<area shape="poly" title=" " alt="" coords="45,148,72,179,108,210,124,218,121,223,105,214,68,183,41,152"/>
+<area shape="rect" href="namespacedetail.html#a94fd8fb87672f6ca33ea17019096e098" title=" " alt="" coords="321,13,399,40"/>
+<area shape="poly" title=" " alt="" coords="274,24,305,24,305,29,274,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a77e1960a3b80f89a62595a932406aabd" name="a77e1960a3b80f89a62595a932406aabd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e1960a3b80f89a62595a932406aabd">&#9670;&#160;</a></span>set_brackets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void set_brackets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;</td>          <td class="paramname"><span class="paramname"><em>open</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;</td>          <td class="paramname"><span class="paramname"><em>close</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a77e1960a3b80f89a62595a932406aabd_icgraph.png" border="0" usemap="#astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a77e1960a3b80f89a62595a932406aabd_icgraph" alt=""/></div>
+<map name="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a77e1960a3b80f89a62595a932406aabd_icgraph" id="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a77e1960a3b80f89a62595a932406aabd_icgraph">
+<area shape="rect" title=" " alt="" coords="107,5,203,32"/>
+<area shape="rect" href="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e.html#a8ab971982084b0d00677071064adc679" title=" " alt="" coords="5,5,59,32"/>
+<area shape="poly" title=" " alt="" coords="91,21,59,21,59,16,91,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af9abc221bc0725bbd665f4fc69c6e8e1" name="af9abc221bc0725bbd665f4fc69c6e8e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9abc221bc0725bbd665f4fc69c6e8e1">&#9670;&#160;</a></span>set_separator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void set_separator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;</td>          <td class="paramname"><span class="paramname"><em>sep</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_af9abc221bc0725bbd665f4fc69c6e8e1_icgraph.png" border="0" usemap="#astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_af9abc221bc0725bbd665f4fc69c6e8e1_icgraph" alt=""/></div>
+<map name="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_af9abc221bc0725bbd665f4fc69c6e8e1_icgraph" id="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_af9abc221bc0725bbd665f4fc69c6e8e1_icgraph">
+<area shape="rect" title=" " alt="" coords="107,5,207,32"/>
+<area shape="rect" href="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e.html#a8ab971982084b0d00677071064adc679" title=" " alt="" coords="5,5,59,32"/>
+<area shape="poly" title=" " alt="" coords="91,21,59,21,59,16,91,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae0abe84b6a22077654ebd22da668ab50" name="ae0abe84b6a22077654ebd22da668ab50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0abe84b6a22077654ebd22da668ab50">&#9670;&#160;</a></span>underlying()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto underlying </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="namespacedetail.html#ae8cdd3246d8f0ee5adbe55dd5ea18c2f">detail::range_formatter_type</a>&lt;Char, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;&amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0036fb25034f72de4a9e3796b3af019d" name="a0036fb25034f72de4a9e3796b3af019d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0036fb25034f72de4a9e3796b3af019d">&#9670;&#160;</a></span>write_debug_string() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<div class="memtemplate">
+template&lt;typename Output, typename It, typename Sentinel, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a> = T, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_same&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a>, Char &gt;::value)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto write_debug_string </td>
+          <td>(</td>
+          <td class="paramtype">Output &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">It</td>          <td class="paramname"><span class="paramname"><em>it</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sentinel</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const -&gt; Output </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a0036fb25034f72de4a9e3796b3af019d_cgraph.png" border="0" usemap="#astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a0036fb25034f72de4a9e3796b3af019d_cgraph" alt=""/></div>
+<map name="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a0036fb25034f72de4a9e3796b3af019d_cgraph" id="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a0036fb25034f72de4a9e3796b3af019d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,136,108"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="184,81,272,108"/>
+<area shape="poly" title=" " alt="" coords="136,92,168,92,168,97,136,97"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="328,5,437,32"/>
+<area shape="poly" title=" " alt="" coords="256,78,339,37,341,42,258,83"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="493,31,552,57"/>
+<area shape="poly" title=" " alt="" coords="272,85,478,49,479,54,273,90"/>
+<area shape="rect" href="namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83" title=" " alt="" coords="324,107,441,133"/>
+<area shape="poly" title=" " alt="" coords="273,99,309,105,308,111,272,104"/>
+<area shape="rect" href="namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="320,157,445,184"/>
+<area shape="poly" title=" " alt="" coords="254,106,321,143,333,148,331,153,319,148,251,111"/>
+<area shape="poly" title=" " alt="" coords="438,26,479,33,478,39,437,31"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a0036fb25034f72de4a9e3796b3af019d_icgraph.png" border="0" usemap="#astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a0036fb25034f72de4a9e3796b3af019d_icgraph" alt=""/></div>
+<map name="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a0036fb25034f72de4a9e3796b3af019d_icgraph" id="astructrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e_a0036fb25034f72de4a9e3796b3af019d_icgraph">
+<area shape="rect" title=" " alt="" coords="112,5,242,32"/>
+<area shape="rect" href="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e.html#af87e39ba518dcf690d9d8d461d8086d3" title=" " alt="" coords="5,5,64,32"/>
+<area shape="poly" title=" " alt="" coords="96,21,64,21,64,16,96,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aac6b8dc42ba9bc0e481235e35566c414" name="aac6b8dc42ba9bc0e481235e35566c414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac6b8dc42ba9bc0e481235e35566c414">&#9670;&#160;</a></span>write_debug_string() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<div class="memtemplate">
+template&lt;typename Output, typename It, typename Sentinel, typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a> = T, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac461e84f27bbb236874e1011cd66031f">U</a>, Char &gt;::value)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto write_debug_string </td>
+          <td>(</td>
+          <td class="paramtype">Output &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">It</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sentinel</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) const -&gt; Output </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a2a20fb87f4e6c6f5e8fe335084d4bb5c" name="a2a20fb87f4e6c6f5e8fe335084d4bb5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a20fb87f4e6c6f5e8fe335084d4bb5c">&#9670;&#160;</a></span>closing_bracket_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt;Char&gt; closing_bracket_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <a class="code hl_struct" href="structdetail_1_1string__literal.html">detail::string_literal</a>&lt;Char, <span class="charliteral">&#39;]&#39;</span>&gt;{}</div>
+<div class="ttc" id="astructdetail_1_1string__literal_html"><div class="ttname"><a href="structdetail_1_1string__literal.html">detail::string_literal</a></div><div class="ttdef"><b>定义</b> format.h:235</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9457b4bd16c64f5608e45a1521c4033c" name="a9457b4bd16c64f5608e45a1521c4033c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9457b4bd16c64f5608e45a1521c4033c">&#9670;&#160;</a></span>is_debug</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_debug = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acda1105ce55203a192bbec20626d40dc" name="acda1105ce55203a192bbec20626d40dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acda1105ce55203a192bbec20626d40dc">&#9670;&#160;</a></span>opening_bracket_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt;Char&gt; opening_bracket_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <a class="code hl_struct" href="structdetail_1_1string__literal.html">detail::string_literal</a>&lt;Char, <span class="charliteral">&#39;[&#39;</span>&gt;{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3bcdfaff0210e9628a6d7a4a37ff24f7" name="a3bcdfaff0210e9628a6d7a4a37ff24f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bcdfaff0210e9628a6d7a4a37ff24f7">&#9670;&#160;</a></span>separator_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt;Char&gt; separator_ = <a class="el" href="structdetail_1_1string__literal.html">detail::string_literal</a>&lt;Char, ',', ' '&gt;{}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46bc1d08fcfda437f88e4a627302c496" name="a46bc1d08fcfda437f88e4a627302c496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46bc1d08fcfda437f88e4a627302c496">&#9670;&#160;</a></span>underlying_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacedetail.html#ae8cdd3246d8f0ee5adbe55dd5ea18c2f">detail::range_formatter_type</a>&lt;Char, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; underlying_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="bundled_2ranges_8h_source.html">bundled/ranges.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structrange__formatter_3_01_t_00_01_char_00_01enable__if__t_3_01conjunction_3_01std_1_1is__same_edf46378efa9da3f820c5aa7a483895e.html">range_formatter&lt; T, Char, enable_if_t&lt; conjunction&lt; std::is_same&lt; T, remove_cvref_t&lt; T &gt; &gt;, is_formattable&lt; T, Char &gt; &gt;::value &gt; &gt;</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

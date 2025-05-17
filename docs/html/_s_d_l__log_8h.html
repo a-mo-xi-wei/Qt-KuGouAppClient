@@ -1,0 +1,1357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_log.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__log_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">SDL_log.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Simple log messages with categories and priorities.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_s_d_l__stdinc_8h_source.html">SDL_stdinc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="begin__code_8h_source.html">begin_code.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="close__code_8h_source.html">close_code.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+SDL_log.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h__incl.png" border="0" usemap="#a_s_d_l__log_8h" alt=""/></div>
+<map name="a_s_d_l__log_8h" id="a_s_d_l__log_8h">
+<area shape="rect" title="Simple log messages with categories and priorities." alt="" coords="256,5,338,32"/>
+<area shape="rect" href="_s_d_l__stdinc_8h.html" title="This is a general header that includes C language support." alt="" coords="247,80,348,107"/>
+<area shape="poly" title=" " alt="" coords="300,33,300,64,295,64,295,33"/>
+<area shape="rect" href="begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions,..." alt="" coords="455,379,553,405"/>
+<area shape="poly" title=" " alt="" coords="339,22,404,35,440,46,475,60,507,79,533,103,551,132,557,166,557,244,554,278,545,311,521,366,516,364,540,309,549,277,552,244,552,167,546,134,529,106,504,83,473,65,438,51,402,40,338,27"/>
+<area shape="rect" href="close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="7,379,105,405"/>
+<area shape="poly" title=" " alt="" coords="256,25,183,35,142,44,102,58,65,76,35,100,15,130,10,147,8,167,8,244,11,277,20,309,44,364,39,366,15,311,6,278,3,244,3,167,5,146,10,128,31,96,62,72,100,53,141,39,182,29,256,19"/>
+<area shape="rect" href="_s_d_l__config_8h.html" title=" " alt="" coords="94,155,194,181"/>
+<area shape="poly" title=" " alt="" coords="272,110,186,150,184,145,269,105"/>
+<area shape="poly" title=" " alt="" coords="348,94,382,100,418,111,452,128,481,153,497,178,508,205,518,264,518,319,512,364,507,363,513,319,513,264,503,207,492,180,477,156,449,132,416,116,381,105,348,100"/>
+<area shape="poly" title=" " alt="" coords="247,105,151,125,109,140,83,157,67,180,56,206,46,263,47,319,53,363,47,364,41,319,41,263,51,205,63,177,79,153,107,135,150,120,246,99"/>
+<area shape="rect" title=" " alt="" coords="218,155,286,181"/>
+<area shape="poly" title=" " alt="" coords="292,109,270,143,266,140,287,106"/>
+<area shape="rect" title=" " alt="" coords="310,155,378,181"/>
+<area shape="poly" title=" " alt="" coords="308,106,330,140,326,143,303,109"/>
+<area shape="rect" title=" " alt="" coords="402,155,467,181"/>
+<area shape="poly" title=" " alt="" coords="322,105,398,145,396,149,320,110"/>
+<area shape="rect" href="_s_d_l__platform_8h.html" title="Try to get a standard set of platform defines." alt="" coords="138,304,251,331"/>
+<area shape="poly" title=" " alt="" coords="146,182,146,216,153,255,174,290,170,293,148,257,140,216,140,182"/>
+<area shape="rect" href="_s_d_l__config__minimal_8h.html" title="This is the minimal configuration that can be used to build SDL." alt="" coords="162,229,315,256"/>
+<area shape="poly" title=" " alt="" coords="162,180,212,218,209,222,159,184"/>
+<area shape="poly" title=" " alt="" coords="250,329,440,373,439,378,248,334"/>
+<area shape="poly" title=" " alt="" coords="172,334,95,373,93,369,169,329"/>
+<area shape="poly" title=" " alt="" coords="233,258,212,292,208,289,229,255"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h__dep__incl.png" border="0" usemap="#a_s_d_l__log_8hdep" alt=""/></div>
+<map name="a_s_d_l__log_8hdep" id="a_s_d_l__log_8hdep">
+<area shape="rect" title="Simple log messages with categories and priorities." alt="" coords="254,5,337,32"/>
+<area shape="rect" href="_s_d_l_8h.html" title="Main include header for the SDL library" alt="" coords="266,80,325,107"/>
+<area shape="poly" title=" " alt="" coords="298,48,298,80,293,80,293,48"/>
+<area shape="rect" href="_pcm_player___s_d_l_8h.html" title=" " alt="" coords="16,155,146,181"/>
+<area shape="poly" title=" " alt="" coords="253,112,120,157,118,151,251,107"/>
+<area shape="rect" href="_s_d_l__test_8h.html" title="Include file for SDL test framework." alt="" coords="336,304,423,331"/>
+<area shape="poly" title=" " alt="" coords="271,119,243,147,217,182,209,201,205,219,206,237,214,254,239,279,270,295,304,306,336,311,335,316,303,311,268,300,236,283,209,258,201,239,199,219,204,199,212,180,238,144,267,115"/>
+<area shape="rect" href="_s_d_l__test__common_8h.html" title="Include file for SDL test framework." alt="" coords="224,229,368,256"/>
+<area shape="poly" title=" " alt="" coords="298,122,298,229,293,229,293,122"/>
+<area shape="rect" href="_s_d_l__test__compare_8h.html" title="Include file for SDL test framework." alt="" coords="392,229,536,256"/>
+<area shape="poly" title=" " alt="" coords="319,116,385,179,448,227,444,231,382,183,315,120"/>
+<area shape="rect" href="_s_d_l__test__images_8h.html" title="Include file for SDL test framework." alt="" coords="396,155,532,181"/>
+<area shape="poly" title=" " alt="" coords="340,111,435,152,433,156,338,116"/>
+<area shape="rect" href="_pcm_player___s_d_l_8cpp.html" title=" " alt="" coords="5,229,149,256"/>
+<area shape="poly" title=" " alt="" coords="82,197,80,229,75,229,77,197"/>
+<area shape="poly" title=" " alt="" coords="324,264,367,302,363,306,320,269"/>
+<area shape="poly" title=" " alt="" coords="439,269,396,306,392,302,436,264"/>
+<area shape="poly" title=" " alt="" coords="507,187,529,201,546,218,555,237,550,257,524,283,491,300,457,311,424,316,423,311,455,306,489,295,521,279,545,255,550,237,542,221,525,205,504,191"/>
+<area shape="poly" title=" " alt="" coords="466,197,466,229,461,229,461,197"/>
+</map>
+</div>
+</div>
+<p><a href="_s_d_l__log_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a06c6de264730f257cdba6188b6aaae12" id="r_a06c6de264730f257cdba6188b6aaae12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06c6de264730f257cdba6188b6aaae12">SDL_MAX_LOG_MESSAGE</a>&#160;&#160;&#160;4096</td></tr>
+<tr class="memdesc:a06c6de264730f257cdba6188b6aaae12"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum size of a log message prior to SDL 2.0.24  <br /></td></tr>
+<tr class="separator:a06c6de264730f257cdba6188b6aaae12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a11c2a5b3bbfd910cf18fbc70cf513e24" id="r_a11c2a5b3bbfd910cf18fbc70cf513e24"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>(<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</a>) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *userdata, int category, <a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> priority, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#ab5d4c2bfcb78f279c688575297d42f74">message</a>)</td></tr>
+<tr class="memdesc:a11c2a5b3bbfd910cf18fbc70cf513e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The prototype for the log output callback function.  <br /></td></tr>
+<tr class="separator:a11c2a5b3bbfd910cf18fbc70cf513e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ad221d23d6438fe99a781fb04b118039d" id="r_ad221d23d6438fe99a781fb04b118039d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad221d23d6438fe99a781fb04b118039d">SDL_LogCategory</a> { <br />
+&#160;&#160;<a class="el" href="#ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f">SDL_LOG_CATEGORY_APPLICATION</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7">SDL_LOG_CATEGORY_ERROR</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262">SDL_LOG_CATEGORY_ASSERT</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137">SDL_LOG_CATEGORY_SYSTEM</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8">SDL_LOG_CATEGORY_AUDIO</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e">SDL_LOG_CATEGORY_VIDEO</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01">SDL_LOG_CATEGORY_RENDER</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023">SDL_LOG_CATEGORY_INPUT</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca">SDL_LOG_CATEGORY_TEST</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865">SDL_LOG_CATEGORY_RESERVED1</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e">SDL_LOG_CATEGORY_RESERVED2</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985">SDL_LOG_CATEGORY_RESERVED3</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf">SDL_LOG_CATEGORY_RESERVED4</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1">SDL_LOG_CATEGORY_RESERVED5</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543">SDL_LOG_CATEGORY_RESERVED6</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623">SDL_LOG_CATEGORY_RESERVED7</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197">SDL_LOG_CATEGORY_RESERVED8</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd">SDL_LOG_CATEGORY_RESERVED9</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce">SDL_LOG_CATEGORY_RESERVED10</a>
+, <a class="el" href="#ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c">SDL_LOG_CATEGORY_CUSTOM</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ad221d23d6438fe99a781fb04b118039d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The predefined log categories  <a href="#ad221d23d6438fe99a781fb04b118039d">更多...</a><br /></td></tr>
+<tr class="separator:ad221d23d6438fe99a781fb04b118039d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e04f1d062a71901f59592c276ad946" id="r_a09e04f1d062a71901f59592c276ad946"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> { <br />
+&#160;&#160;<a class="el" href="#a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197">SDL_LOG_PRIORITY_VERBOSE</a> = 1
+, <a class="el" href="#a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700">SDL_LOG_PRIORITY_DEBUG</a>
+, <a class="el" href="#a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c">SDL_LOG_PRIORITY_INFO</a>
+, <a class="el" href="#a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b">SDL_LOG_PRIORITY_WARN</a>
+, <br />
+&#160;&#160;<a class="el" href="#a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b">SDL_LOG_PRIORITY_ERROR</a>
+, <a class="el" href="#a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471">SDL_LOG_PRIORITY_CRITICAL</a>
+, <a class="el" href="#a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18">SDL_NUM_LOG_PRIORITIES</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a09e04f1d062a71901f59592c276ad946"><td class="mdescLeft">&#160;</td><td class="mdescRight">The predefined log priorities  <a href="#a09e04f1d062a71901f59592c276ad946">更多...</a><br /></td></tr>
+<tr class="separator:a09e04f1d062a71901f59592c276ad946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a8f54656094d10994fdb5399f271906ef" id="r_a8f54656094d10994fdb5399f271906ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f54656094d10994fdb5399f271906ef">SDL_LogSetAllPriority</a> (<a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> priority)</td></tr>
+<tr class="memdesc:a8f54656094d10994fdb5399f271906ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the priority of all log categories.  <br /></td></tr>
+<tr class="separator:a8f54656094d10994fdb5399f271906ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a4809ac7942e029d0bf17f380d23f73" id="r_a9a4809ac7942e029d0bf17f380d23f73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a4809ac7942e029d0bf17f380d23f73">SDL_LogSetPriority</a> (int category, <a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> priority)</td></tr>
+<tr class="memdesc:a9a4809ac7942e029d0bf17f380d23f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the priority of a particular log category.  <br /></td></tr>
+<tr class="separator:a9a4809ac7942e029d0bf17f380d23f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f0cff24dadd97d09808b6aaad3f5f4" id="r_a26f0cff24dadd97d09808b6aaad3f5f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f0cff24dadd97d09808b6aaad3f5f4">SDL_LogGetPriority</a> (int category)</td></tr>
+<tr class="memdesc:a26f0cff24dadd97d09808b6aaad3f5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the priority of a particular log category.  <br /></td></tr>
+<tr class="separator:a26f0cff24dadd97d09808b6aaad3f5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf17b4ea6a83e308c815fd4d50544eba" id="r_acf17b4ea6a83e308c815fd4d50544eba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf17b4ea6a83e308c815fd4d50544eba">SDL_LogResetPriorities</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:acf17b4ea6a83e308c815fd4d50544eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all priorities to default.  <br /></td></tr>
+<tr class="separator:acf17b4ea6a83e308c815fd4d50544eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712dc42164c67b7f9e23dc0e3b15bd92" id="r_a712dc42164c67b7f9e23dc0e3b15bd92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</a> (<a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(1)</td></tr>
+<tr class="memdesc:a712dc42164c67b7f9e23dc0e3b15bd92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.  <br /></td></tr>
+<tr class="separator:a712dc42164c67b7f9e23dc0e3b15bd92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34a7d9211a9ced1c1a6db4be0f3fbb7e" id="r_a34a7d9211a9ced1c1a6db4be0f3fbb7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</a> (int category, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(2)</td></tr>
+<tr class="memdesc:a34a7d9211a9ced1c1a6db4be0f3fbb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with SDL_LOG_PRIORITY_VERBOSE.  <br /></td></tr>
+<tr class="separator:a34a7d9211a9ced1c1a6db4be0f3fbb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0749fe47180b98c04bd82aca7235d703" id="r_a0749fe47180b98c04bd82aca7235d703"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</a> (int category, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(2)</td></tr>
+<tr class="memdesc:a0749fe47180b98c04bd82aca7235d703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with SDL_LOG_PRIORITY_DEBUG.  <br /></td></tr>
+<tr class="separator:a0749fe47180b98c04bd82aca7235d703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c8956ea1a84ad325c3f5ecd2094515" id="r_a81c8956ea1a84ad325c3f5ecd2094515"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</a> (int category, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(2)</td></tr>
+<tr class="memdesc:a81c8956ea1a84ad325c3f5ecd2094515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with SDL_LOG_PRIORITY_INFO.  <br /></td></tr>
+<tr class="separator:a81c8956ea1a84ad325c3f5ecd2094515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a7a09fec470638f028138626b3d126" id="r_a91a7a09fec470638f028138626b3d126"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91a7a09fec470638f028138626b3d126">SDL_LogWarn</a> (int category, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(2)</td></tr>
+<tr class="memdesc:a91a7a09fec470638f028138626b3d126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with SDL_LOG_PRIORITY_WARN.  <br /></td></tr>
+<tr class="separator:a91a7a09fec470638f028138626b3d126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabe956be51b7a4c877dbfcb0489a02f" id="r_acabe956be51b7a4c877dbfcb0489a02f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</a> (int category, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(2)</td></tr>
+<tr class="memdesc:acabe956be51b7a4c877dbfcb0489a02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with SDL_LOG_PRIORITY_ERROR.  <br /></td></tr>
+<tr class="separator:acabe956be51b7a4c877dbfcb0489a02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3600cf500a030f892d41a61d9d30de19" id="r_a3600cf500a030f892d41a61d9d30de19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</a> (int category, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(2)</td></tr>
+<tr class="memdesc:a3600cf500a030f892d41a61d9d30de19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with SDL_LOG_PRIORITY_CRITICAL.  <br /></td></tr>
+<tr class="separator:a3600cf500a030f892d41a61d9d30de19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fcfeca9c95069b6432bf1cdb01d0ba4" id="r_a7fcfeca9c95069b6432bf1cdb01d0ba4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</a> (int category, <a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> priority, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(3)</td></tr>
+<tr class="memdesc:a7fcfeca9c95069b6432bf1cdb01d0ba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with the specified category and priority.  <br /></td></tr>
+<tr class="separator:a7fcfeca9c95069b6432bf1cdb01d0ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b7c796af5ee9a634a0a3c39aac4995" id="r_a95b7c796af5ee9a634a0a3c39aac4995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995">SDL_LogMessageV</a> (int category, <a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> priority, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list ap) <a class="el" href="_s_d_l__stdinc_8h.html#a367bcd45196cabbfb0fb3ca0f009562b">SDL_PRINTF_VARARG_FUNCV</a>(3)</td></tr>
+<tr class="memdesc:a95b7c796af5ee9a634a0a3c39aac4995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with the specified category and priority.  <br /></td></tr>
+<tr class="separator:a95b7c796af5ee9a634a0a3c39aac4995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074ce8cf644b09454ec112084f9f399e" id="r_a074ce8cf644b09454ec112084f9f399e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a074ce8cf644b09454ec112084f9f399e">SDL_LogGetOutputFunction</a> (<a class="el" href="#a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</a> *callback, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **userdata)</td></tr>
+<tr class="memdesc:a074ce8cf644b09454ec112084f9f399e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current log output function.  <br /></td></tr>
+<tr class="separator:a074ce8cf644b09454ec112084f9f399e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a229eb1fdf797f548b20ee98ca8acaac6" id="r_a229eb1fdf797f548b20ee98ca8acaac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a229eb1fdf797f548b20ee98ca8acaac6">SDL_LogSetOutputFunction</a> (<a class="el" href="#a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</a> callback, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *userdata)</td></tr>
+<tr class="memdesc:a229eb1fdf797f548b20ee98ca8acaac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the default log output function with one of your own.  <br /></td></tr>
+<tr class="separator:a229eb1fdf797f548b20ee98ca8acaac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Simple log messages with categories and priorities. </p>
+<p>By default logs are quiet, but if you're debugging SDL you might want: </p><pre class="fragment">SDL_LogSetAllPriority(SDL_LOG_PRIORITY_WARN);
+</pre><p>Here's where the messages go on different platforms: Windows: debug output stream Android: log output Others: standard error output (stderr) </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a06c6de264730f257cdba6188b6aaae12" name="a06c6de264730f257cdba6188b6aaae12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c6de264730f257cdba6188b6aaae12">&#9670;&#160;</a></span>SDL_MAX_LOG_MESSAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_MAX_LOG_MESSAGE&#160;&#160;&#160;4096</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The maximum size of a log message prior to SDL 2.0.24 </p>
+<p>As of 2.0.24 there is no limit to the length of SDL log messages. </p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a11c2a5b3bbfd910cf18fbc70cf513e24" name="a11c2a5b3bbfd910cf18fbc70cf513e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11c2a5b3bbfd910cf18fbc70cf513e24">&#9670;&#160;</a></span>SDL_LogOutputFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>(<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> * SDL_LogOutputFunction) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *userdata, int category, <a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> priority, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#ab5d4c2bfcb78f279c688575297d42f74">message</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The prototype for the log output callback function. </p>
+<p>This function is called by SDL when there is new text to be logged.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userdata</td><td>what was passed as <code>userdata</code> to <a class="el" href="#a229eb1fdf797f548b20ee98ca8acaac6" title="Replace the default log output function with one of your own.">SDL_LogSetOutputFunction()</a> </td></tr>
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">priority</td><td>the priority of the message </td></tr>
+    <tr><td class="paramname">message</td><td>the message being output </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="ad221d23d6438fe99a781fb04b118039d" name="ad221d23d6438fe99a781fb04b118039d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad221d23d6438fe99a781fb04b118039d">&#9670;&#160;</a></span>SDL_LogCategory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ad221d23d6438fe99a781fb04b118039d">SDL_LogCategory</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The predefined log categories </p>
+<p>By default the application category is enabled at the INFO level, the assert category is enabled at the WARN level, test is enabled at the VERBOSE level and all other categories are enabled at the ERROR level. </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f" name="ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f"></a>SDL_LOG_CATEGORY_APPLICATION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7" name="ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7"></a>SDL_LOG_CATEGORY_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262" name="ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262"></a>SDL_LOG_CATEGORY_ASSERT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137" name="ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137"></a>SDL_LOG_CATEGORY_SYSTEM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8" name="ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8"></a>SDL_LOG_CATEGORY_AUDIO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e" name="ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e"></a>SDL_LOG_CATEGORY_VIDEO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01" name="ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01"></a>SDL_LOG_CATEGORY_RENDER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023" name="ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023"></a>SDL_LOG_CATEGORY_INPUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca" name="ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca"></a>SDL_LOG_CATEGORY_TEST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865" name="ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865"></a>SDL_LOG_CATEGORY_RESERVED1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e" name="ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e"></a>SDL_LOG_CATEGORY_RESERVED2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985" name="ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985"></a>SDL_LOG_CATEGORY_RESERVED3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf" name="ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf"></a>SDL_LOG_CATEGORY_RESERVED4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1" name="ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1"></a>SDL_LOG_CATEGORY_RESERVED5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543" name="ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543"></a>SDL_LOG_CATEGORY_RESERVED6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623" name="ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623"></a>SDL_LOG_CATEGORY_RESERVED7&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197" name="ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197"></a>SDL_LOG_CATEGORY_RESERVED8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd" name="ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd"></a>SDL_LOG_CATEGORY_RESERVED9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce" name="ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce"></a>SDL_LOG_CATEGORY_RESERVED10&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c" name="ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c"></a>SDL_LOG_CATEGORY_CUSTOM&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a09e04f1d062a71901f59592c276ad946" name="a09e04f1d062a71901f59592c276ad946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e04f1d062a71901f59592c276ad946">&#9670;&#160;</a></span>SDL_LogPriority</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The predefined log priorities </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197" name="a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197"></a>SDL_LOG_PRIORITY_VERBOSE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700" name="a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700"></a>SDL_LOG_PRIORITY_DEBUG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c" name="a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c"></a>SDL_LOG_PRIORITY_INFO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b" name="a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b"></a>SDL_LOG_PRIORITY_WARN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b" name="a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b"></a>SDL_LOG_PRIORITY_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471" name="a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471"></a>SDL_LOG_PRIORITY_CRITICAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18" name="a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18"></a>SDL_NUM_LOG_PRIORITIES&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a712dc42164c67b7f9e23dc0e3b15bd92" name="a712dc42164c67b7f9e23dc0e3b15bd92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712dc42164c67b7f9e23dc0e3b15bd92">&#9670;&#160;</a></span>SDL_Log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_Log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO. </p>
+<p>= *</p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string</td></tr>
+    <tr><td class="paramname">...</td><td>additional parameters matching % tokens in the <code>fmt</code> string, if any</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a3600cf500a030f892d41a61d9d30de19" title="Log a message with SDL_LOG_PRIORITY_CRITICAL.">SDL_LogCritical</a> </dd>
+<dd>
+<a class="el" href="#a0749fe47180b98c04bd82aca7235d703" title="Log a message with SDL_LOG_PRIORITY_DEBUG.">SDL_LogDebug</a> </dd>
+<dd>
+<a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f" title="Log a message with SDL_LOG_PRIORITY_ERROR.">SDL_LogError</a> </dd>
+<dd>
+<a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515" title="Log a message with SDL_LOG_PRIORITY_INFO.">SDL_LogInfo</a> </dd>
+<dd>
+<a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4" title="Log a message with the specified category and priority.">SDL_LogMessage</a> </dd>
+<dd>
+<a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995" title="Log a message with the specified category and priority.">SDL_LogMessageV</a> </dd>
+<dd>
+<a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e" title="Log a message with SDL_LOG_PRIORITY_VERBOSE.">SDL_LogVerbose</a> </dd>
+<dd>
+<a class="el" href="#a91a7a09fec470638f028138626b3d126" title="Log a message with SDL_LOG_PRIORITY_WARN.">SDL_LogWarn</a> </dd></dl>
+
+</div>
+</div>
+<a id="a3600cf500a030f892d41a61d9d30de19" name="a3600cf500a030f892d41a61d9d30de19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3600cf500a030f892d41a61d9d30de19">&#9670;&#160;</a></span>SDL_LogCritical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogCritical </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with SDL_LOG_PRIORITY_CRITICAL. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string </td></tr>
+    <tr><td class="paramname">...</td><td>additional parameters matching % tokens in the <b>fmt</b> string, if any</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92" title="Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.">SDL_Log</a> </dd>
+<dd>
+<a class="el" href="#a0749fe47180b98c04bd82aca7235d703" title="Log a message with SDL_LOG_PRIORITY_DEBUG.">SDL_LogDebug</a> </dd>
+<dd>
+<a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f" title="Log a message with SDL_LOG_PRIORITY_ERROR.">SDL_LogError</a> </dd>
+<dd>
+<a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515" title="Log a message with SDL_LOG_PRIORITY_INFO.">SDL_LogInfo</a> </dd>
+<dd>
+<a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4" title="Log a message with the specified category and priority.">SDL_LogMessage</a> </dd>
+<dd>
+<a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995" title="Log a message with the specified category and priority.">SDL_LogMessageV</a> </dd>
+<dd>
+<a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e" title="Log a message with SDL_LOG_PRIORITY_VERBOSE.">SDL_LogVerbose</a> </dd>
+<dd>
+<a class="el" href="#a91a7a09fec470638f028138626b3d126" title="Log a message with SDL_LOG_PRIORITY_WARN.">SDL_LogWarn</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a3600cf500a030f892d41a61d9d30de19_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a3600cf500a030f892d41a61d9d30de19_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a3600cf500a030f892d41a61d9d30de19_cgraph" id="a_s_d_l__log_8h_a3600cf500a030f892d41a61d9d30de19_cgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_CRITICAL." alt="" coords="5,29,122,56"/>
+<area shape="poly" title=" " alt="" coords="43,30,39,20,42,11,50,5,64,3,78,5,86,12,82,16,76,10,63,8,52,10,46,14,44,20,48,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a3600cf500a030f892d41a61d9d30de19_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a3600cf500a030f892d41a61d9d30de19_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a3600cf500a030f892d41a61d9d30de19_icgraph" id="a_s_d_l__log_8h_a3600cf500a030f892d41a61d9d30de19_icgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_CRITICAL." alt="" coords="5,29,122,56"/>
+<area shape="poly" title=" " alt="" coords="82,16,76,10,63,8,52,10,46,14,44,20,48,28,43,30,39,20,42,11,50,5,64,3,78,5,86,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0749fe47180b98c04bd82aca7235d703" name="a0749fe47180b98c04bd82aca7235d703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0749fe47180b98c04bd82aca7235d703">&#9670;&#160;</a></span>SDL_LogDebug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogDebug </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with SDL_LOG_PRIORITY_DEBUG. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string </td></tr>
+    <tr><td class="paramname">...</td><td>additional parameters matching % tokens in the <b>fmt</b> string, if any</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92" title="Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.">SDL_Log</a> </dd>
+<dd>
+<a class="el" href="#a3600cf500a030f892d41a61d9d30de19" title="Log a message with SDL_LOG_PRIORITY_CRITICAL.">SDL_LogCritical</a> </dd>
+<dd>
+<a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f" title="Log a message with SDL_LOG_PRIORITY_ERROR.">SDL_LogError</a> </dd>
+<dd>
+<a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515" title="Log a message with SDL_LOG_PRIORITY_INFO.">SDL_LogInfo</a> </dd>
+<dd>
+<a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4" title="Log a message with the specified category and priority.">SDL_LogMessage</a> </dd>
+<dd>
+<a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995" title="Log a message with the specified category and priority.">SDL_LogMessageV</a> </dd>
+<dd>
+<a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e" title="Log a message with SDL_LOG_PRIORITY_VERBOSE.">SDL_LogVerbose</a> </dd>
+<dd>
+<a class="el" href="#a91a7a09fec470638f028138626b3d126" title="Log a message with SDL_LOG_PRIORITY_WARN.">SDL_LogWarn</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a0749fe47180b98c04bd82aca7235d703_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a0749fe47180b98c04bd82aca7235d703_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a0749fe47180b98c04bd82aca7235d703_cgraph" id="a_s_d_l__log_8h_a0749fe47180b98c04bd82aca7235d703_cgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_DEBUG." alt="" coords="5,29,119,56"/>
+<area shape="poly" title=" " alt="" coords="41,30,38,20,40,11,49,5,62,3,76,5,84,12,80,16,74,10,62,8,51,10,45,14,43,20,46,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a0749fe47180b98c04bd82aca7235d703_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a0749fe47180b98c04bd82aca7235d703_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a0749fe47180b98c04bd82aca7235d703_icgraph" id="a_s_d_l__log_8h_a0749fe47180b98c04bd82aca7235d703_icgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_DEBUG." alt="" coords="5,29,119,56"/>
+<area shape="poly" title=" " alt="" coords="80,16,74,10,62,8,51,10,45,14,43,20,46,28,41,30,38,20,40,11,49,5,62,3,76,5,84,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acabe956be51b7a4c877dbfcb0489a02f" name="acabe956be51b7a4c877dbfcb0489a02f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabe956be51b7a4c877dbfcb0489a02f">&#9670;&#160;</a></span>SDL_LogError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogError </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with SDL_LOG_PRIORITY_ERROR. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string </td></tr>
+    <tr><td class="paramname">...</td><td>additional parameters matching % tokens in the <b>fmt</b> string, if any</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92" title="Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.">SDL_Log</a> </dd>
+<dd>
+<a class="el" href="#a3600cf500a030f892d41a61d9d30de19" title="Log a message with SDL_LOG_PRIORITY_CRITICAL.">SDL_LogCritical</a> </dd>
+<dd>
+<a class="el" href="#a0749fe47180b98c04bd82aca7235d703" title="Log a message with SDL_LOG_PRIORITY_DEBUG.">SDL_LogDebug</a> </dd>
+<dd>
+<a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515" title="Log a message with SDL_LOG_PRIORITY_INFO.">SDL_LogInfo</a> </dd>
+<dd>
+<a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4" title="Log a message with the specified category and priority.">SDL_LogMessage</a> </dd>
+<dd>
+<a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995" title="Log a message with the specified category and priority.">SDL_LogMessageV</a> </dd>
+<dd>
+<a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e" title="Log a message with SDL_LOG_PRIORITY_VERBOSE.">SDL_LogVerbose</a> </dd>
+<dd>
+<a class="el" href="#a91a7a09fec470638f028138626b3d126" title="Log a message with SDL_LOG_PRIORITY_WARN.">SDL_LogWarn</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_acabe956be51b7a4c877dbfcb0489a02f_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_acabe956be51b7a4c877dbfcb0489a02f_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_acabe956be51b7a4c877dbfcb0489a02f_cgraph" id="a_s_d_l__log_8h_acabe956be51b7a4c877dbfcb0489a02f_cgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_ERROR." alt="" coords="5,29,109,56"/>
+<area shape="poly" title=" " alt="" coords="38,30,35,20,37,11,45,5,57,3,70,5,77,12,73,16,67,10,57,8,47,10,42,14,40,20,43,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_acabe956be51b7a4c877dbfcb0489a02f_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_acabe956be51b7a4c877dbfcb0489a02f_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_acabe956be51b7a4c877dbfcb0489a02f_icgraph" id="a_s_d_l__log_8h_acabe956be51b7a4c877dbfcb0489a02f_icgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_ERROR." alt="" coords="5,29,109,56"/>
+<area shape="poly" title=" " alt="" coords="73,16,67,10,57,8,47,10,42,14,40,20,43,28,38,30,35,20,37,11,45,5,57,3,70,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a074ce8cf644b09454ec112084f9f399e" name="a074ce8cf644b09454ec112084f9f399e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074ce8cf644b09454ec112084f9f399e">&#9670;&#160;</a></span>SDL_LogGetOutputFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogGetOutputFunction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</a> *</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **</td>          <td class="paramname"><span class="paramname"><em>userdata</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current log output function. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>an <a class="el" href="#a11c2a5b3bbfd910cf18fbc70cf513e24" title="The prototype for the log output callback function.">SDL_LogOutputFunction</a> filled in with the current log callback </td></tr>
+    <tr><td class="paramname">userdata</td><td>a pointer filled in with the pointer that is passed to <code>callback</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a229eb1fdf797f548b20ee98ca8acaac6" title="Replace the default log output function with one of your own.">SDL_LogSetOutputFunction</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a074ce8cf644b09454ec112084f9f399e_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a074ce8cf644b09454ec112084f9f399e_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a074ce8cf644b09454ec112084f9f399e_cgraph" id="a_s_d_l__log_8h_a074ce8cf644b09454ec112084f9f399e_cgraph">
+<area shape="rect" title="Get the current log output function." alt="" coords="5,29,191,56"/>
+<area shape="poly" title=" " alt="" coords="66,30,61,21,65,11,77,5,98,3,120,5,132,12,129,16,119,10,98,8,79,10,68,15,66,20,71,27"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a074ce8cf644b09454ec112084f9f399e_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a074ce8cf644b09454ec112084f9f399e_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a074ce8cf644b09454ec112084f9f399e_icgraph" id="a_s_d_l__log_8h_a074ce8cf644b09454ec112084f9f399e_icgraph">
+<area shape="rect" title="Get the current log output function." alt="" coords="5,29,191,56"/>
+<area shape="poly" title=" " alt="" coords="129,16,119,10,98,8,79,10,68,15,66,20,71,27,66,30,61,21,65,11,77,5,98,3,120,5,132,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a26f0cff24dadd97d09808b6aaad3f5f4" name="a26f0cff24dadd97d09808b6aaad3f5f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26f0cff24dadd97d09808b6aaad3f5f4">&#9670;&#160;</a></span>SDL_LogGetPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogGetPriority </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the priority of a particular log category. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category to query </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the <a class="el" href="#a09e04f1d062a71901f59592c276ad946" title="The predefined log priorities">SDL_LogPriority</a> for the requested category</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a9a4809ac7942e029d0bf17f380d23f73" title="Set the priority of a particular log category.">SDL_LogSetPriority</a> </dd></dl>
+
+</div>
+</div>
+<a id="a81c8956ea1a84ad325c3f5ecd2094515" name="a81c8956ea1a84ad325c3f5ecd2094515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c8956ea1a84ad325c3f5ecd2094515">&#9670;&#160;</a></span>SDL_LogInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogInfo </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with SDL_LOG_PRIORITY_INFO. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string </td></tr>
+    <tr><td class="paramname">...</td><td>additional parameters matching % tokens in the <b>fmt</b> string, if any</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92" title="Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.">SDL_Log</a> </dd>
+<dd>
+<a class="el" href="#a3600cf500a030f892d41a61d9d30de19" title="Log a message with SDL_LOG_PRIORITY_CRITICAL.">SDL_LogCritical</a> </dd>
+<dd>
+<a class="el" href="#a0749fe47180b98c04bd82aca7235d703" title="Log a message with SDL_LOG_PRIORITY_DEBUG.">SDL_LogDebug</a> </dd>
+<dd>
+<a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f" title="Log a message with SDL_LOG_PRIORITY_ERROR.">SDL_LogError</a> </dd>
+<dd>
+<a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4" title="Log a message with the specified category and priority.">SDL_LogMessage</a> </dd>
+<dd>
+<a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995" title="Log a message with the specified category and priority.">SDL_LogMessageV</a> </dd>
+<dd>
+<a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e" title="Log a message with SDL_LOG_PRIORITY_VERBOSE.">SDL_LogVerbose</a> </dd>
+<dd>
+<a class="el" href="#a91a7a09fec470638f028138626b3d126" title="Log a message with SDL_LOG_PRIORITY_WARN.">SDL_LogWarn</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a81c8956ea1a84ad325c3f5ecd2094515_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a81c8956ea1a84ad325c3f5ecd2094515_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a81c8956ea1a84ad325c3f5ecd2094515_cgraph" id="a_s_d_l__log_8h_a81c8956ea1a84ad325c3f5ecd2094515_cgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_INFO." alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="36,30,33,20,35,11,42,5,54,3,66,5,73,12,69,16,64,10,54,8,45,10,40,14,38,20,41,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a81c8956ea1a84ad325c3f5ecd2094515_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a81c8956ea1a84ad325c3f5ecd2094515_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a81c8956ea1a84ad325c3f5ecd2094515_icgraph" id="a_s_d_l__log_8h_a81c8956ea1a84ad325c3f5ecd2094515_icgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_INFO." alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="69,16,64,10,54,8,45,10,40,14,38,20,41,28,36,30,33,20,35,11,42,5,54,3,66,5,73,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7fcfeca9c95069b6432bf1cdb01d0ba4" name="a7fcfeca9c95069b6432bf1cdb01d0ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fcfeca9c95069b6432bf1cdb01d0ba4">&#9670;&#160;</a></span>SDL_LogMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogMessage </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with the specified category and priority. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">priority</td><td>the priority of the message </td></tr>
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string </td></tr>
+    <tr><td class="paramname">...</td><td>additional parameters matching % tokens in the <b>fmt</b> string, if any</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92" title="Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.">SDL_Log</a> </dd>
+<dd>
+<a class="el" href="#a3600cf500a030f892d41a61d9d30de19" title="Log a message with SDL_LOG_PRIORITY_CRITICAL.">SDL_LogCritical</a> </dd>
+<dd>
+<a class="el" href="#a0749fe47180b98c04bd82aca7235d703" title="Log a message with SDL_LOG_PRIORITY_DEBUG.">SDL_LogDebug</a> </dd>
+<dd>
+<a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f" title="Log a message with SDL_LOG_PRIORITY_ERROR.">SDL_LogError</a> </dd>
+<dd>
+<a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515" title="Log a message with SDL_LOG_PRIORITY_INFO.">SDL_LogInfo</a> </dd>
+<dd>
+<a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995" title="Log a message with the specified category and priority.">SDL_LogMessageV</a> </dd>
+<dd>
+<a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e" title="Log a message with SDL_LOG_PRIORITY_VERBOSE.">SDL_LogVerbose</a> </dd>
+<dd>
+<a class="el" href="#a91a7a09fec470638f028138626b3d126" title="Log a message with SDL_LOG_PRIORITY_WARN.">SDL_LogWarn</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a7fcfeca9c95069b6432bf1cdb01d0ba4_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a7fcfeca9c95069b6432bf1cdb01d0ba4_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a7fcfeca9c95069b6432bf1cdb01d0ba4_cgraph" id="a_s_d_l__log_8h_a7fcfeca9c95069b6432bf1cdb01d0ba4_cgraph">
+<area shape="rect" title="Log a message with the specified category and priority." alt="" coords="5,29,134,56"/>
+<area shape="poly" title=" " alt="" coords="47,30,43,21,46,11,55,5,70,3,85,5,94,12,91,16,83,10,69,8,57,10,50,14,48,20,52,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a7fcfeca9c95069b6432bf1cdb01d0ba4_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a7fcfeca9c95069b6432bf1cdb01d0ba4_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a7fcfeca9c95069b6432bf1cdb01d0ba4_icgraph" id="a_s_d_l__log_8h_a7fcfeca9c95069b6432bf1cdb01d0ba4_icgraph">
+<area shape="rect" title="Log a message with the specified category and priority." alt="" coords="5,29,134,56"/>
+<area shape="poly" title=" " alt="" coords="91,16,83,10,69,8,57,10,50,14,48,20,52,28,47,30,43,21,46,11,55,5,70,3,85,5,94,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a95b7c796af5ee9a634a0a3c39aac4995" name="a95b7c796af5ee9a634a0a3c39aac4995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b7c796af5ee9a634a0a3c39aac4995">&#9670;&#160;</a></span>SDL_LogMessageV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogMessageV </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>ap</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with the specified category and priority. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">priority</td><td>the priority of the message </td></tr>
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string </td></tr>
+    <tr><td class="paramname">ap</td><td>a variable argument list</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92" title="Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.">SDL_Log</a> </dd>
+<dd>
+<a class="el" href="#a3600cf500a030f892d41a61d9d30de19" title="Log a message with SDL_LOG_PRIORITY_CRITICAL.">SDL_LogCritical</a> </dd>
+<dd>
+<a class="el" href="#a0749fe47180b98c04bd82aca7235d703" title="Log a message with SDL_LOG_PRIORITY_DEBUG.">SDL_LogDebug</a> </dd>
+<dd>
+<a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f" title="Log a message with SDL_LOG_PRIORITY_ERROR.">SDL_LogError</a> </dd>
+<dd>
+<a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515" title="Log a message with SDL_LOG_PRIORITY_INFO.">SDL_LogInfo</a> </dd>
+<dd>
+<a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4" title="Log a message with the specified category and priority.">SDL_LogMessage</a> </dd>
+<dd>
+<a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e" title="Log a message with SDL_LOG_PRIORITY_VERBOSE.">SDL_LogVerbose</a> </dd>
+<dd>
+<a class="el" href="#a91a7a09fec470638f028138626b3d126" title="Log a message with SDL_LOG_PRIORITY_WARN.">SDL_LogWarn</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a95b7c796af5ee9a634a0a3c39aac4995_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a95b7c796af5ee9a634a0a3c39aac4995_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a95b7c796af5ee9a634a0a3c39aac4995_cgraph" id="a_s_d_l__log_8h_a95b7c796af5ee9a634a0a3c39aac4995_cgraph">
+<area shape="rect" title="Log a message with the specified category and priority." alt="" coords="5,29,143,56"/>
+<area shape="poly" title=" " alt="" coords="50,30,46,21,49,11,58,5,74,3,91,5,100,12,97,16,89,10,74,8,60,10,53,14,51,20,55,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a95b7c796af5ee9a634a0a3c39aac4995_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a95b7c796af5ee9a634a0a3c39aac4995_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a95b7c796af5ee9a634a0a3c39aac4995_icgraph" id="a_s_d_l__log_8h_a95b7c796af5ee9a634a0a3c39aac4995_icgraph">
+<area shape="rect" title="Log a message with the specified category and priority." alt="" coords="5,29,143,56"/>
+<area shape="poly" title=" " alt="" coords="97,16,89,10,74,8,60,10,53,14,51,20,55,28,50,30,46,21,49,11,58,5,74,3,91,5,100,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acf17b4ea6a83e308c815fd4d50544eba" name="acf17b4ea6a83e308c815fd4d50544eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf17b4ea6a83e308c815fd4d50544eba">&#9670;&#160;</a></span>SDL_LogResetPriorities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogResetPriorities </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset all priorities to default. </p>
+<p>This is called by <a class="el" href="_s_d_l_8h.html#afdabaf714781099083592051f2d9ac11" title="Clean up all initialized subsystems.">SDL_Quit()</a>.</p>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a8f54656094d10994fdb5399f271906ef" title="Set the priority of all log categories.">SDL_LogSetAllPriority</a> </dd>
+<dd>
+<a class="el" href="#a9a4809ac7942e029d0bf17f380d23f73" title="Set the priority of a particular log category.">SDL_LogSetPriority</a> </dd></dl>
+
+</div>
+</div>
+<a id="a8f54656094d10994fdb5399f271906ef" name="a8f54656094d10994fdb5399f271906ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f54656094d10994fdb5399f271906ef">&#9670;&#160;</a></span>SDL_LogSetAllPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogSetAllPriority </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the priority of all log categories. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">priority</td><td>the <a class="el" href="#a09e04f1d062a71901f59592c276ad946" title="The predefined log priorities">SDL_LogPriority</a> to assign</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a9a4809ac7942e029d0bf17f380d23f73" title="Set the priority of a particular log category.">SDL_LogSetPriority</a> </dd></dl>
+
+</div>
+</div>
+<a id="a229eb1fdf797f548b20ee98ca8acaac6" name="a229eb1fdf797f548b20ee98ca8acaac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a229eb1fdf797f548b20ee98ca8acaac6">&#9670;&#160;</a></span>SDL_LogSetOutputFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogSetOutputFunction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>userdata</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replace the default log output function with one of your own. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>an <a class="el" href="#a11c2a5b3bbfd910cf18fbc70cf513e24" title="The prototype for the log output callback function.">SDL_LogOutputFunction</a> to call instead of the default </td></tr>
+    <tr><td class="paramname">userdata</td><td>a pointer that is passed to <code>callback</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a074ce8cf644b09454ec112084f9f399e" title="Get the current log output function.">SDL_LogGetOutputFunction</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a229eb1fdf797f548b20ee98ca8acaac6_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a229eb1fdf797f548b20ee98ca8acaac6_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a229eb1fdf797f548b20ee98ca8acaac6_cgraph" id="a_s_d_l__log_8h_a229eb1fdf797f548b20ee98ca8acaac6_cgraph">
+<area shape="rect" title="Replace the default log output function with one of your own." alt="" coords="5,29,190,56"/>
+<area shape="poly" title=" " alt="" coords="66,30,60,21,64,11,77,5,98,3,120,5,131,12,129,16,118,10,97,8,78,10,68,15,66,20,70,27"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a229eb1fdf797f548b20ee98ca8acaac6_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a229eb1fdf797f548b20ee98ca8acaac6_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a229eb1fdf797f548b20ee98ca8acaac6_icgraph" id="a_s_d_l__log_8h_a229eb1fdf797f548b20ee98ca8acaac6_icgraph">
+<area shape="rect" title="Replace the default log output function with one of your own." alt="" coords="5,29,190,56"/>
+<area shape="poly" title=" " alt="" coords="129,16,118,10,97,8,78,10,68,15,66,20,70,27,66,30,60,21,64,11,77,5,98,3,120,5,131,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a4809ac7942e029d0bf17f380d23f73" name="a9a4809ac7942e029d0bf17f380d23f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a4809ac7942e029d0bf17f380d23f73">&#9670;&#160;</a></span>SDL_LogSetPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogSetPriority </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the priority of a particular log category. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category to assign a priority to </td></tr>
+    <tr><td class="paramname">priority</td><td>the <a class="el" href="#a09e04f1d062a71901f59592c276ad946" title="The predefined log priorities">SDL_LogPriority</a> to assign</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a26f0cff24dadd97d09808b6aaad3f5f4" title="Get the priority of a particular log category.">SDL_LogGetPriority</a> </dd>
+<dd>
+<a class="el" href="#a8f54656094d10994fdb5399f271906ef" title="Set the priority of all log categories.">SDL_LogSetAllPriority</a> </dd></dl>
+
+</div>
+</div>
+<a id="a34a7d9211a9ced1c1a6db4be0f3fbb7e" name="a34a7d9211a9ced1c1a6db4be0f3fbb7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e">&#9670;&#160;</a></span>SDL_LogVerbose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogVerbose </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with SDL_LOG_PRIORITY_VERBOSE. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string </td></tr>
+    <tr><td class="paramname">...</td><td>additional parameters matching % tokens in the <b>fmt</b> string, if any</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92" title="Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.">SDL_Log</a> </dd>
+<dd>
+<a class="el" href="#a3600cf500a030f892d41a61d9d30de19" title="Log a message with SDL_LOG_PRIORITY_CRITICAL.">SDL_LogCritical</a> </dd>
+<dd>
+<a class="el" href="#a0749fe47180b98c04bd82aca7235d703" title="Log a message with SDL_LOG_PRIORITY_DEBUG.">SDL_LogDebug</a> </dd>
+<dd>
+<a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f" title="Log a message with SDL_LOG_PRIORITY_ERROR.">SDL_LogError</a> </dd>
+<dd>
+<a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515" title="Log a message with SDL_LOG_PRIORITY_INFO.">SDL_LogInfo</a> </dd>
+<dd>
+<a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4" title="Log a message with the specified category and priority.">SDL_LogMessage</a> </dd>
+<dd>
+<a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995" title="Log a message with the specified category and priority.">SDL_LogMessageV</a> </dd>
+<dd>
+<a class="el" href="#a91a7a09fec470638f028138626b3d126" title="Log a message with SDL_LOG_PRIORITY_WARN.">SDL_LogWarn</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a34a7d9211a9ced1c1a6db4be0f3fbb7e_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a34a7d9211a9ced1c1a6db4be0f3fbb7e_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a34a7d9211a9ced1c1a6db4be0f3fbb7e_cgraph" id="a_s_d_l__log_8h_a34a7d9211a9ced1c1a6db4be0f3fbb7e_cgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_VERBOSE." alt="" coords="5,29,128,56"/>
+<area shape="poly" title=" " alt="" coords="45,30,41,20,44,11,52,5,67,3,82,5,90,12,86,16,80,10,66,8,54,10,48,14,46,20,50,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a34a7d9211a9ced1c1a6db4be0f3fbb7e_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a34a7d9211a9ced1c1a6db4be0f3fbb7e_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a34a7d9211a9ced1c1a6db4be0f3fbb7e_icgraph" id="a_s_d_l__log_8h_a34a7d9211a9ced1c1a6db4be0f3fbb7e_icgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_VERBOSE." alt="" coords="5,29,128,56"/>
+<area shape="poly" title=" " alt="" coords="86,16,80,10,66,8,54,10,48,14,46,20,50,28,45,30,41,20,44,11,52,5,67,3,82,5,90,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a91a7a09fec470638f028138626b3d126" name="a91a7a09fec470638f028138626b3d126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a7a09fec470638f028138626b3d126">&#9670;&#160;</a></span>SDL_LogWarn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LogWarn </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a message with SDL_LOG_PRIORITY_WARN. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>the category of the message </td></tr>
+    <tr><td class="paramname">fmt</td><td>a <a class="el" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout.">printf()</a> style message format string </td></tr>
+    <tr><td class="paramname">...</td><td>additional parameters matching % tokens in the <b>fmt</b> string, if any</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a712dc42164c67b7f9e23dc0e3b15bd92" title="Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.">SDL_Log</a> </dd>
+<dd>
+<a class="el" href="#a3600cf500a030f892d41a61d9d30de19" title="Log a message with SDL_LOG_PRIORITY_CRITICAL.">SDL_LogCritical</a> </dd>
+<dd>
+<a class="el" href="#a0749fe47180b98c04bd82aca7235d703" title="Log a message with SDL_LOG_PRIORITY_DEBUG.">SDL_LogDebug</a> </dd>
+<dd>
+<a class="el" href="#acabe956be51b7a4c877dbfcb0489a02f" title="Log a message with SDL_LOG_PRIORITY_ERROR.">SDL_LogError</a> </dd>
+<dd>
+<a class="el" href="#a81c8956ea1a84ad325c3f5ecd2094515" title="Log a message with SDL_LOG_PRIORITY_INFO.">SDL_LogInfo</a> </dd>
+<dd>
+<a class="el" href="#a7fcfeca9c95069b6432bf1cdb01d0ba4" title="Log a message with the specified category and priority.">SDL_LogMessage</a> </dd>
+<dd>
+<a class="el" href="#a95b7c796af5ee9a634a0a3c39aac4995" title="Log a message with the specified category and priority.">SDL_LogMessageV</a> </dd>
+<dd>
+<a class="el" href="#a34a7d9211a9ced1c1a6db4be0f3fbb7e" title="Log a message with SDL_LOG_PRIORITY_VERBOSE.">SDL_LogVerbose</a> </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a91a7a09fec470638f028138626b3d126_cgraph.png" border="0" usemap="#a_s_d_l__log_8h_a91a7a09fec470638f028138626b3d126_cgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a91a7a09fec470638f028138626b3d126_cgraph" id="a_s_d_l__log_8h_a91a7a09fec470638f028138626b3d126_cgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_WARN." alt="" coords="5,29,111,56"/>
+<area shape="poly" title=" " alt="" coords="39,30,36,20,38,11,46,5,58,3,71,5,78,12,75,16,69,10,58,8,48,10,42,14,41,20,44,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__log_8h_a91a7a09fec470638f028138626b3d126_icgraph.png" border="0" usemap="#a_s_d_l__log_8h_a91a7a09fec470638f028138626b3d126_icgraph" alt=""/></div>
+<map name="a_s_d_l__log_8h_a91a7a09fec470638f028138626b3d126_icgraph" id="a_s_d_l__log_8h_a91a7a09fec470638f028138626b3d126_icgraph">
+<area shape="rect" title="Log a message with SDL_LOG_PRIORITY_WARN." alt="" coords="5,29,111,56"/>
+<area shape="poly" title=" " alt="" coords="75,16,69,10,58,8,48,10,42,14,41,20,44,28,39,30,36,20,38,11,46,5,58,3,71,5,78,12"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__log_8h.html">SDL_log.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

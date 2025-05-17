@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Evaluating option strings</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__opt__eval__funcs.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Evaluating option strings<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__data.html">Data Structures</a> &raquo; <a class="el" href="group__avoptions.html">AVOptions</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This group of functions can be used to evaluate option strings and get numbers out of them.  
+<a href="#details">更多...</a></p>
+<div class="dynheader">
+Evaluating option strings 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__opt__eval__funcs.png" border="0" usemap="#agroup____opt____eval____funcs" alt=""/></div>
+<map name="agroup____opt____eval____funcs" id="agroup____opt____eval____funcs">
+<area shape="rect" href="group__avoptions.html" title="AVOptions provide a generic system to declare options on arbitrary structs (&quot;objects&quot;)." alt="" coords="5,5,89,32"/>
+<area shape="rect" title="This group of functions can be used to evaluate option strings and get numbers out of them." alt="" coords="137,5,301,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gae245940b870e13b759354d570decf3dc" id="r_gae245940b870e13b759354d570decf3dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae245940b870e13b759354d570decf3dc">av_opt_eval_flags</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *o, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>, int *flags_out)</td></tr>
+<tr class="separator:gae245940b870e13b759354d570decf3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8bcee89d4a51400092e2d653c842bfa8" id="r_ga8bcee89d4a51400092e2d653c842bfa8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8bcee89d4a51400092e2d653c842bfa8">av_opt_eval_int</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *o, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>, int *int_out)</td></tr>
+<tr class="separator:ga8bcee89d4a51400092e2d653c842bfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2285d602e2079f0df141826fc00c666" id="r_gae2285d602e2079f0df141826fc00c666"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae2285d602e2079f0df141826fc00c666">av_opt_eval_int64</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *o, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> *int64_out)</td></tr>
+<tr class="separator:gae2285d602e2079f0df141826fc00c666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c06cf2a2e7efc60d97adbeb7bbb6b44" id="r_ga3c06cf2a2e7efc60d97adbeb7bbb6b44"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3c06cf2a2e7efc60d97adbeb7bbb6b44">av_opt_eval_float</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *o, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>, float *float_out)</td></tr>
+<tr class="separator:ga3c06cf2a2e7efc60d97adbeb7bbb6b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac65f3b9753c48616e8dd4dea0c47f9e6" id="r_gac65f3b9753c48616e8dd4dea0c47f9e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac65f3b9753c48616e8dd4dea0c47f9e6">av_opt_eval_double</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *o, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>, double *double_out)</td></tr>
+<tr class="separator:gac65f3b9753c48616e8dd4dea0c47f9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd95639131aac582a2f7c4bfc5adb4b0" id="r_gabd95639131aac582a2f7c4bfc5adb4b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabd95639131aac582a2f7c4bfc5adb4b0">av_opt_eval_q</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c0d4701a6c89f4f7f0640715d27ab26">obj</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *o, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> *q_out)</td></tr>
+<tr class="separator:gabd95639131aac582a2f7c4bfc5adb4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>This group of functions can be used to evaluate option strings and get numbers out of them. </p>
+<p>They do the same thing as <a class="el" href="group__opt__set__funcs.html#ga5fd4b92bdf4f392a2847f711676a7537">av_opt_set()</a>, except the result is written into the caller-supplied pointer.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>a struct whose first element is a pointer to <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a>. </td></tr>
+    <tr><td class="paramname">o</td><td>an option for which the string is to be evaluated. </td></tr>
+    <tr><td class="paramname">val</td><td>string to be evaluated. </td></tr>
+    <tr><td class="paramname">*_out</td><td>value of the string will be written here.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative number on failure. </dd></dl>
+<h2 class="groupheader">函数说明</h2>
+<a id="gac65f3b9753c48616e8dd4dea0c47f9e6" name="gac65f3b9753c48616e8dd4dea0c47f9e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac65f3b9753c48616e8dd4dea0c47f9e6">&#9670;&#160;</a></span>av_opt_eval_double()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_eval_double </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>double_out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae245940b870e13b759354d570decf3dc" name="gae245940b870e13b759354d570decf3dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae245940b870e13b759354d570decf3dc">&#9670;&#160;</a></span>av_opt_eval_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_eval_flags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>flags_out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3c06cf2a2e7efc60d97adbeb7bbb6b44" name="ga3c06cf2a2e7efc60d97adbeb7bbb6b44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c06cf2a2e7efc60d97adbeb7bbb6b44">&#9670;&#160;</a></span>av_opt_eval_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_eval_float </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>float_out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8bcee89d4a51400092e2d653c842bfa8" name="ga8bcee89d4a51400092e2d653c842bfa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8bcee89d4a51400092e2d653c842bfa8">&#9670;&#160;</a></span>av_opt_eval_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_eval_int </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>int_out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae2285d602e2079f0df141826fc00c666" name="gae2285d602e2079f0df141826fc00c666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2285d602e2079f0df141826fc00c666">&#9670;&#160;</a></span>av_opt_eval_int64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_eval_int64 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> *</td>          <td class="paramname"><span class="paramname"><em>int64_out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabd95639131aac582a2f7c4bfc5adb4b0" name="gabd95639131aac582a2f7c4bfc5adb4b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd95639131aac582a2f7c4bfc5adb4b0">&#9670;&#160;</a></span>av_opt_eval_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_opt_eval_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a> *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a> *</td>          <td class="paramname"><span class="paramname"><em>q_out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

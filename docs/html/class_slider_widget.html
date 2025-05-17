@@ -1,0 +1,795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SliderWidget类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_slider_widget.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_slider_widget-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">SliderWidget类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>自定义滑块控件类，继承自 QSlider，支持音量调节  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_slider_widget_8h_source.html">SliderWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+类 SliderWidget 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget__inherit__graph.png" border="0" usemap="#a_slider_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_slider_widget_inherit__map" id="a_slider_widget_inherit__map">
+<area shape="rect" title="自定义滑块控件类，继承自 QSlider，支持音量调节" alt="" coords="5,80,101,107"/>
+<area shape="rect" title=" " alt="" coords="21,5,85,32"/>
+<area shape="poly" title=" " alt="" coords="56,48,56,80,50,80,50,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+SliderWidget 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget__coll__graph.png" border="0" usemap="#a_slider_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="a_slider_widget_coll__map" id="a_slider_widget_coll__map">
+<area shape="rect" title="自定义滑块控件类，继承自 QSlider，支持音量调节" alt="" coords="67,172,162,199"/>
+<area shape="rect" title=" " alt="" coords="5,81,70,108"/>
+<area shape="poly" title=" " alt="" coords="60,118,106,170,102,173,56,121"/>
+<area shape="rect" href="class_ela_tool_tip.html" title="自定义工具提示类，支持文本、自定义控件和动画" alt="" coords="94,81,176,108"/>
+<area shape="poly" title=" " alt="" coords="122,122,118,133,116,172,111,171,113,131,117,120"/>
+<area shape="rect" title=" " alt="" coords="151,5,223,32"/>
+<area shape="poly" title=" " alt="" coords="172,46,146,83,141,79,167,43"/>
+<area shape="rect" href="class_my_widget.html" title="中间控件类，用于传递信号和绘制音量控件背景" alt="" coords="200,81,280,108"/>
+<area shape="poly" title=" " alt="" coords="207,43,233,79,229,83,202,46"/>
+<area shape="poly" title=" " alt="" coords="232,123,213,150,189,165,164,176,162,171,187,161,209,146,228,120"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a4c02ead444dfb22d4922ef5b6ac7f808" id="r_a4c02ead444dfb22d4922ef5b6ac7f808"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c02ead444dfb22d4922ef5b6ac7f808">onNoVolume</a> (bool <a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>)</td></tr>
+<tr class="memdesc:a4c02ead444dfb22d4922ef5b6ac7f808"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理静音状态变化  <br /></td></tr>
+<tr class="separator:a4c02ead444dfb22d4922ef5b6ac7f808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a2ec1f351bed0ee3b5b8a0185a2f3a344" id="r_a2ec1f351bed0ee3b5b8a0185a2f3a344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ec1f351bed0ee3b5b8a0185a2f3a344">noVolume</a> (bool <a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>)</td></tr>
+<tr class="memdesc:a2ec1f351bed0ee3b5b8a0185a2f3a344"><td class="mdescLeft">&#160;</td><td class="mdescRight">静音状态信号  <br /></td></tr>
+<tr class="separator:a2ec1f351bed0ee3b5b8a0185a2f3a344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a58767104bbccdba3afd84eed457efece" id="r_a58767104bbccdba3afd84eed457efece"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58767104bbccdba3afd84eed457efece">SliderWidget</a> (QWidget *parent=nullptr, Qt::Orientation orientation=Qt::Horizontal)</td></tr>
+<tr class="memdesc:a58767104bbccdba3afd84eed457efece"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化滑块控件  <br /></td></tr>
+<tr class="separator:a58767104bbccdba3afd84eed457efece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819a116924ecf1cd1e06012936ab2b08" id="r_a819a116924ecf1cd1e06012936ab2b08"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a819a116924ecf1cd1e06012936ab2b08">getValue</a> () const</td></tr>
+<tr class="memdesc:a819a116924ecf1cd1e06012936ab2b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前滑块值  <br /></td></tr>
+<tr class="separator:a819a116924ecf1cd1e06012936ab2b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a5378cd346f09a7a46f6ccbdee9d5a61e" id="r_a5378cd346f09a7a46f6ccbdee9d5a61e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5378cd346f09a7a46f6ccbdee9d5a61e">m_isPressing</a></td></tr>
+<tr class="memdesc:a5378cd346f09a7a46f6ccbdee9d5a61e"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否正在按下  <br /></td></tr>
+<tr class="separator:a5378cd346f09a7a46f6ccbdee9d5a61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a7523c71b2bf60975302287ec8923f80e" id="r_a7523c71b2bf60975302287ec8923f80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a7523c71b2bf60975302287ec8923f80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标按下事件，计算滑块值  <br /></td></tr>
+<tr class="separator:a7523c71b2bf60975302287ec8923f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d538d95963e25c7a27250e441321d72" id="r_a4d538d95963e25c7a27250e441321d72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d538d95963e25c7a27250e441321d72">mouseMoveEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a4d538d95963e25c7a27250e441321d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标移动事件，更新滑块值  <br /></td></tr>
+<tr class="separator:a4d538d95963e25c7a27250e441321d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2de3e1806dc8e5d659fc1f35545a5b87" id="r_a2de3e1806dc8e5d659fc1f35545a5b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2de3e1806dc8e5d659fc1f35545a5b87">mouseReleaseEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a2de3e1806dc8e5d659fc1f35545a5b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标松开事件，重置按下状态  <br /></td></tr>
+<tr class="separator:a2de3e1806dc8e5d659fc1f35545a5b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab587e4e2fb0fcdf9ef13c64ee030ee7f" id="r_ab587e4e2fb0fcdf9ef13c64ee030ee7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab587e4e2fb0fcdf9ef13c64ee030ee7f">wheelEvent</a> (QWheelEvent *event) override</td></tr>
+<tr class="memdesc:ab587e4e2fb0fcdf9ef13c64ee030ee7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">滚轮事件，调整滑块值  <br /></td></tr>
+<tr class="separator:ab587e4e2fb0fcdf9ef13c64ee030ee7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26eb1890b4d4dfb7bf76fb7c44cbdebf" id="r_a26eb1890b4d4dfb7bf76fb7c44cbdebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26eb1890b4d4dfb7bf76fb7c44cbdebf">showEvent</a> (QShowEvent *event) override</td></tr>
+<tr class="memdesc:a26eb1890b4d4dfb7bf76fb7c44cbdebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">控件显示事件，初始化信号连接  <br /></td></tr>
+<tr class="separator:a26eb1890b4d4dfb7bf76fb7c44cbdebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:ace6a4368b55cb96075530d6e0b28c850" id="r_ace6a4368b55cb96075530d6e0b28c850"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace6a4368b55cb96075530d6e0b28c850">handleDelta</a> (const int &amp;delta)</td></tr>
+<tr class="memdesc:ace6a4368b55cb96075530d6e0b28c850"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理滚轮变化值  <br /></td></tr>
+<tr class="separator:ace6a4368b55cb96075530d6e0b28c850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a0f5c4e193747ce786f8698c73e60f258" id="r_a0f5c4e193747ce786f8698c73e60f258"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f5c4e193747ce786f8698c73e60f258">m_minValue</a></td></tr>
+<tr class="memdesc:a0f5c4e193747ce786f8698c73e60f258"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小值  <br /></td></tr>
+<tr class="separator:a0f5c4e193747ce786f8698c73e60f258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da6636ac908070a0bf8f05ddfef507f" id="r_a0da6636ac908070a0bf8f05ddfef507f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0da6636ac908070a0bf8f05ddfef507f">m_maxValue</a></td></tr>
+<tr class="memdesc:a0da6636ac908070a0bf8f05ddfef507f"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大值  <br /></td></tr>
+<tr class="separator:a0da6636ac908070a0bf8f05ddfef507f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601855a57dd980ed8723241392d4c422" id="r_a601855a57dd980ed8723241392d4c422"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a601855a57dd980ed8723241392d4c422">m_currentValue</a></td></tr>
+<tr class="memdesc:a601855a57dd980ed8723241392d4c422"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前值  <br /></td></tr>
+<tr class="separator:a601855a57dd980ed8723241392d4c422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab78daad7b91554b9ac0dbf1bd108e63d" id="r_ab78daad7b91554b9ac0dbf1bd108e63d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_tool_tip.html">ElaToolTip</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab78daad7b91554b9ac0dbf1bd108e63d">m_sliderToolTip</a></td></tr>
+<tr class="memdesc:ab78daad7b91554b9ac0dbf1bd108e63d"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑块提示  <br /></td></tr>
+<tr class="separator:ab78daad7b91554b9ac0dbf1bd108e63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afec459790d701b4911190502dc964ead" id="r_afec459790d701b4911190502dc964ead"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_my_widget.html">MyWidget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afec459790d701b4911190502dc964ead">m_parent</a></td></tr>
+<tr class="memdesc:afec459790d701b4911190502dc964ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">父控件  <br /></td></tr>
+<tr class="separator:afec459790d701b4911190502dc964ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>自定义滑块控件类，继承自 QSlider，支持音量调节 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a58767104bbccdba3afd84eed457efece" name="a58767104bbccdba3afd84eed457efece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58767104bbccdba3afd84eed457efece">&#9670;&#160;</a></span>SliderWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_slider_widget.html">SliderWidget</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Qt::Orientation</td>          <td class="paramname"><span class="paramname"><em>orientation</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Qt::Horizontal</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化滑块控件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+    <tr><td class="paramname">orientation</td><td>滑块方向，默认为水平 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a819a116924ecf1cd1e06012936ab2b08" name="a819a116924ecf1cd1e06012936ab2b08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819a116924ecf1cd1e06012936ab2b08">&#9670;&#160;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int getValue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前滑块值 </p>
+<dl class="section return"><dt>返回</dt><dd>滑块值 </dd></dl>
+
+</div>
+</div>
+<a id="ace6a4368b55cb96075530d6e0b28c850" name="ace6a4368b55cb96075530d6e0b28c850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6a4368b55cb96075530d6e0b28c850">&#9670;&#160;</a></span>handleDelta</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handleDelta </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>delta</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理滚轮变化值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delta</td><td>滚轮变化值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget_ace6a4368b55cb96075530d6e0b28c850_cgraph.png" border="0" usemap="#aclass_slider_widget_ace6a4368b55cb96075530d6e0b28c850_cgraph" alt=""/></div>
+<map name="aclass_slider_widget_ace6a4368b55cb96075530d6e0b28c850_cgraph" id="aclass_slider_widget_ace6a4368b55cb96075530d6e0b28c850_cgraph">
+<area shape="rect" title="处理滚轮变化值" alt="" coords="5,5,96,32"/>
+<area shape="rect" href="class_slider_widget.html#a2ec1f351bed0ee3b5b8a0185a2f3a344" title="静音状态信号" alt="" coords="144,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="96,16,128,16,128,21,96,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget_ace6a4368b55cb96075530d6e0b28c850_icgraph.png" border="0" usemap="#aclass_slider_widget_ace6a4368b55cb96075530d6e0b28c850_icgraph" alt=""/></div>
+<map name="aclass_slider_widget_ace6a4368b55cb96075530d6e0b28c850_icgraph" id="aclass_slider_widget_ace6a4368b55cb96075530d6e0b28c850_icgraph">
+<area shape="rect" title="处理滚轮变化值" alt="" coords="143,31,233,57"/>
+<area shape="rect" href="class_slider_widget.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf" title="控件显示事件，初始化信号连接" alt="" coords="7,5,93,32"/>
+<area shape="poly" title=" " alt="" coords="127,36,93,29,94,24,128,30"/>
+<area shape="rect" href="class_slider_widget.html#ab587e4e2fb0fcdf9ef13c64ee030ee7f" title="滚轮事件，调整滑块值" alt="" coords="5,56,95,83"/>
+<area shape="poly" title=" " alt="" coords="128,58,96,64,95,58,127,52"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d538d95963e25c7a27250e441321d72" name="a4d538d95963e25c7a27250e441321d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d538d95963e25c7a27250e441321d72">&#9670;&#160;</a></span>mouseMoveEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标移动事件，更新滑块值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget_a4d538d95963e25c7a27250e441321d72_cgraph.png" border="0" usemap="#aclass_slider_widget_a4d538d95963e25c7a27250e441321d72_cgraph" alt=""/></div>
+<map name="aclass_slider_widget_a4d538d95963e25c7a27250e441321d72_cgraph" id="aclass_slider_widget_a4d538d95963e25c7a27250e441321d72_cgraph">
+<area shape="rect" title="鼠标移动事件，更新滑块值" alt="" coords="5,5,132,32"/>
+<area shape="rect" href="class_slider_widget.html#a2ec1f351bed0ee3b5b8a0185a2f3a344" title="静音状态信号" alt="" coords="180,5,258,32"/>
+<area shape="poly" title=" " alt="" coords="132,16,164,16,164,21,132,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7523c71b2bf60975302287ec8923f80e" name="a7523c71b2bf60975302287ec8923f80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7523c71b2bf60975302287ec8923f80e">&#9670;&#160;</a></span>mousePressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标按下事件，计算滑块值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget_a7523c71b2bf60975302287ec8923f80e_cgraph.png" border="0" usemap="#aclass_slider_widget_a7523c71b2bf60975302287ec8923f80e_cgraph" alt=""/></div>
+<map name="aclass_slider_widget_a7523c71b2bf60975302287ec8923f80e_cgraph" id="aclass_slider_widget_a7523c71b2bf60975302287ec8923f80e_cgraph">
+<area shape="rect" title="鼠标按下事件，计算滑块值" alt="" coords="5,5,134,32"/>
+<area shape="rect" href="class_slider_widget.html#a2ec1f351bed0ee3b5b8a0185a2f3a344" title="静音状态信号" alt="" coords="182,5,260,32"/>
+<area shape="poly" title=" " alt="" coords="134,16,166,16,166,21,134,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2de3e1806dc8e5d659fc1f35545a5b87" name="a2de3e1806dc8e5d659fc1f35545a5b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de3e1806dc8e5d659fc1f35545a5b87">&#9670;&#160;</a></span>mouseReleaseEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标松开事件，重置按下状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2ec1f351bed0ee3b5b8a0185a2f3a344" name="a2ec1f351bed0ee3b5b8a0185a2f3a344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ec1f351bed0ee3b5b8a0185a2f3a344">&#9670;&#160;</a></span>noVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void noVolume </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>静音状态信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否静音 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget_a2ec1f351bed0ee3b5b8a0185a2f3a344_icgraph.png" border="0" usemap="#aclass_slider_widget_a2ec1f351bed0ee3b5b8a0185a2f3a344_icgraph" alt=""/></div>
+<map name="aclass_slider_widget_a2ec1f351bed0ee3b5b8a0185a2f3a344_icgraph" id="aclass_slider_widget_a2ec1f351bed0ee3b5b8a0185a2f3a344_icgraph">
+<area shape="rect" title="静音状态信号" alt="" coords="394,107,472,133"/>
+<area shape="rect" href="class_slider_widget.html#ace6a4368b55cb96075530d6e0b28c850" title="处理滚轮变化值" alt="" coords="199,31,290,57"/>
+<area shape="poly" title=" " alt="" coords="398,100,345,72,289,55,291,50,347,67,401,96"/>
+<area shape="rect" href="class_slider_widget.html#a4d538d95963e25c7a27250e441321d72" title="鼠标移动事件，更新滑块值" alt="" coords="181,81,308,108"/>
+<area shape="poly" title=" " alt="" coords="379,115,308,106,308,100,379,110"/>
+<area shape="rect" href="class_slider_widget.html#a7523c71b2bf60975302287ec8923f80e" title="鼠标按下事件，计算滑块值" alt="" coords="180,132,308,159"/>
+<area shape="poly" title=" " alt="" coords="379,130,309,139,309,134,378,125"/>
+<area shape="rect" href="class_volume_tool_btn.html#a0e51705f3f342fc64b25ebc436f940b8" title="构造函数，初始化音量调节按钮" alt="" coords="143,183,346,209"/>
+<area shape="poly" title=" " alt="" coords="401,144,347,173,313,185,312,179,345,168,398,140"/>
+<area shape="rect" href="class_slider_widget.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf" title="控件显示事件，初始化信号连接" alt="" coords="7,5,93,32"/>
+<area shape="poly" title=" " alt="" coords="183,39,93,27,94,22,184,33"/>
+<area shape="rect" href="class_slider_widget.html#ab587e4e2fb0fcdf9ef13c64ee030ee7f" title="滚轮事件，调整滑块值" alt="" coords="5,56,95,83"/>
+<area shape="poly" title=" " alt="" coords="184,54,95,66,95,61,183,49"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4c02ead444dfb22d4922ef5b6ac7f808" name="a4c02ead444dfb22d4922ef5b6ac7f808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c02ead444dfb22d4922ef5b6ac7f808">&#9670;&#160;</a></span>onNoVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onNoVolume </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理静音状态变化 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否静音 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget_a4c02ead444dfb22d4922ef5b6ac7f808_icgraph.png" border="0" usemap="#aclass_slider_widget_a4c02ead444dfb22d4922ef5b6ac7f808_icgraph" alt=""/></div>
+<map name="aclass_slider_widget_a4c02ead444dfb22d4922ef5b6ac7f808_icgraph" id="aclass_slider_widget_a4c02ead444dfb22d4922ef5b6ac7f808_icgraph">
+<area shape="rect" title="处理静音状态变化" alt="" coords="140,5,235,32"/>
+<area shape="rect" href="class_slider_widget.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf" title="控件显示事件，初始化信号连接" alt="" coords="5,5,92,32"/>
+<area shape="poly" title=" " alt="" coords="124,21,92,21,92,16,124,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a26eb1890b4d4dfb7bf76fb7c44cbdebf" name="a26eb1890b4d4dfb7bf76fb7c44cbdebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26eb1890b4d4dfb7bf76fb7c44cbdebf">&#9670;&#160;</a></span>showEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showEvent </td>
+          <td>(</td>
+          <td class="paramtype">QShowEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>控件显示事件，初始化信号连接 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>显示事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget_a26eb1890b4d4dfb7bf76fb7c44cbdebf_cgraph.png" border="0" usemap="#aclass_slider_widget_a26eb1890b4d4dfb7bf76fb7c44cbdebf_cgraph" alt=""/></div>
+<map name="aclass_slider_widget_a26eb1890b4d4dfb7bf76fb7c44cbdebf_cgraph" id="aclass_slider_widget_a26eb1890b4d4dfb7bf76fb7c44cbdebf_cgraph">
+<area shape="rect" title="控件显示事件，初始化信号连接" alt="" coords="5,81,92,108"/>
+<area shape="rect" href="class_slider_widget.html#ace6a4368b55cb96075530d6e0b28c850" title="处理滚轮变化值" alt="" coords="186,5,276,32"/>
+<area shape="poly" title=" " alt="" coords="70,79,139,42,170,31,172,36,141,46,72,83"/>
+<area shape="rect" href="class_my_widget.html#a6e14961f3e60024b82639178d7c95af1" title="静音状态信号" alt="" coords="158,56,304,83"/>
+<area shape="poly" title=" " alt="" coords="92,86,143,79,143,84,92,91"/>
+<area shape="rect" href="class_slider_widget.html#a4c02ead444dfb22d4922ef5b6ac7f808" title="处理静音状态变化" alt="" coords="183,107,278,133"/>
+<area shape="poly" title=" " alt="" coords="92,98,168,109,167,114,92,103"/>
+<area shape="rect" href="class_my_widget.html#a447ecb6e1f10ffb787ac9dad1633e607" title="音量变化信号" alt="" coords="140,157,322,184"/>
+<area shape="poly" title=" " alt="" coords="72,106,141,143,159,150,157,155,139,148,70,111"/>
+<area shape="rect" href="class_slider_widget.html#a2ec1f351bed0ee3b5b8a0185a2f3a344" title="静音状态信号" alt="" coords="370,5,448,32"/>
+<area shape="poly" title=" " alt="" coords="276,16,354,16,354,21,276,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab587e4e2fb0fcdf9ef13c64ee030ee7f" name="ab587e4e2fb0fcdf9ef13c64ee030ee7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab587e4e2fb0fcdf9ef13c64ee030ee7f">&#9670;&#160;</a></span>wheelEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wheelEvent </td>
+          <td>(</td>
+          <td class="paramtype">QWheelEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滚轮事件，调整滑块值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>滚轮事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slider_widget_ab587e4e2fb0fcdf9ef13c64ee030ee7f_cgraph.png" border="0" usemap="#aclass_slider_widget_ab587e4e2fb0fcdf9ef13c64ee030ee7f_cgraph" alt=""/></div>
+<map name="aclass_slider_widget_ab587e4e2fb0fcdf9ef13c64ee030ee7f_cgraph" id="aclass_slider_widget_ab587e4e2fb0fcdf9ef13c64ee030ee7f_cgraph">
+<area shape="rect" title="滚轮事件，调整滑块值" alt="" coords="5,5,95,32"/>
+<area shape="rect" href="class_slider_widget.html#ace6a4368b55cb96075530d6e0b28c850" title="处理滚轮变化值" alt="" coords="143,5,233,32"/>
+<area shape="poly" title=" " alt="" coords="95,16,127,16,127,21,95,21"/>
+<area shape="rect" href="class_slider_widget.html#a2ec1f351bed0ee3b5b8a0185a2f3a344" title="静音状态信号" alt="" coords="281,5,359,32"/>
+<area shape="poly" title=" " alt="" coords="233,16,265,16,265,21,233,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a601855a57dd980ed8723241392d4c422" name="a601855a57dd980ed8723241392d4c422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601855a57dd980ed8723241392d4c422">&#9670;&#160;</a></span>m_currentValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_currentValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前值 </p>
+
+</div>
+</div>
+<a id="a5378cd346f09a7a46f6ccbdee9d5a61e" name="a5378cd346f09a7a46f6ccbdee9d5a61e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5378cd346f09a7a46f6ccbdee9d5a61e">&#9670;&#160;</a></span>m_isPressing</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_isPressing</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否正在按下 </p>
+
+</div>
+</div>
+<a id="a0da6636ac908070a0bf8f05ddfef507f" name="a0da6636ac908070a0bf8f05ddfef507f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0da6636ac908070a0bf8f05ddfef507f">&#9670;&#160;</a></span>m_maxValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_maxValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最大值 </p>
+
+</div>
+</div>
+<a id="a0f5c4e193747ce786f8698c73e60f258" name="a0f5c4e193747ce786f8698c73e60f258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f5c4e193747ce786f8698c73e60f258">&#9670;&#160;</a></span>m_minValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_minValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最小值 </p>
+
+</div>
+</div>
+<a id="afec459790d701b4911190502dc964ead" name="afec459790d701b4911190502dc964ead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afec459790d701b4911190502dc964ead">&#9670;&#160;</a></span>m_parent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_widget.html">MyWidget</a>* m_parent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>父控件 </p>
+
+</div>
+</div>
+<a id="ab78daad7b91554b9ac0dbf1bd108e63d" name="ab78daad7b91554b9ac0dbf1bd108e63d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab78daad7b91554b9ac0dbf1bd108e63d">&#9670;&#160;</a></span>m_sliderToolTip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ela_tool_tip.html">ElaToolTip</a>* m_sliderToolTip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滑块提示 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_slider_widget_8h_source.html">SliderWidget.h</a></li>
+<li><a class="el" href="_slider_widget_8cpp.html">SliderWidget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_slider_widget.html">SliderWidget</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

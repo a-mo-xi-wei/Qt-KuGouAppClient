@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: avassert.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('avassert_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">avassert.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>simple assert() macros that are a bit more flexible than ISO C assert().  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="avutil_8h_source.html">avutil.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+avassert.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="avassert_8h__incl.png" border="0" usemap="#aavassert_8h" alt=""/></div>
+<map name="aavassert_8h" id="aavassert_8h">
+<area shape="rect" title="simple assert() macros that are a bit more flexible than ISO C assert()." alt="" coords="1141,5,1223,32"/>
+<area shape="rect" title=" " alt="" coords="356,229,419,256"/>
+<area shape="poly" title=" " alt="" coords="1142,33,939,85,671,157,435,229,433,224,670,152,938,79,1140,28"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="1151,80,1214,107"/>
+<area shape="poly" title=" " alt="" coords="1185,33,1185,64,1180,64,1180,33"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="1314,155,1363,181"/>
+<area shape="poly" title=" " alt="" coords="1197,31,1316,142,1312,146,1194,34"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="773,155,855,181"/>
+<area shape="poly" title=" " alt="" coords="1151,104,871,158,870,153,1150,98"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="1262,304,1337,331"/>
+<area shape="poly" title=" " alt="" coords="1215,94,1279,103,1359,124,1399,142,1437,164,1470,193,1495,228,1501,249,1496,267,1482,281,1461,292,1408,307,1353,315,1352,310,1407,302,1459,287,1479,277,1491,264,1496,249,1491,231,1466,196,1434,169,1397,146,1357,129,1278,108,1214,99"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="1262,229,1337,256"/>
+<area shape="poly" title=" " alt="" coords="1199,105,1246,153,1288,215,1283,218,1242,156,1195,109"/>
+<area shape="rect" href="error_8h.html" title="error code definitions" alt="" coords="1018,304,1077,331"/>
+<area shape="poly" title=" " alt="" coords="1191,106,1203,135,1214,175,1216,217,1211,238,1202,258,1179,281,1151,297,1121,308,1093,314,1091,309,1120,303,1149,292,1176,277,1197,254,1206,236,1211,217,1209,175,1198,137,1186,108"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="172,229,246,256"/>
+<area shape="poly" title=" " alt="" coords="1151,100,948,122,671,157,467,190,262,231,261,226,466,185,670,152,948,116,1150,95"/>
+<area shape="rect" href="mathematics_8h.html" title=" " alt="" coords="118,155,225,181"/>
+<area shape="poly" title=" " alt="" coords="1151,100,241,164,240,159,1150,94"/>
+<area shape="poly" title=" " alt="" coords="1204,105,1300,150,1298,154,1201,110"/>
+<area shape="rect" href="pixfmt_8h.html" title="pixel format definitions" alt="" coords="1119,155,1187,181"/>
+<area shape="poly" title=" " alt="" coords="1180,108,1166,141,1161,139,1175,106"/>
+<area shape="poly" title=" " alt="" coords="773,178,625,199,439,232,435,233,434,228,438,227,625,194,773,172"/>
+<area shape="poly" title=" " alt="" coords="856,151,874,155,882,168,879,176,872,182,869,177,875,173,877,168,871,160,855,157"/>
+<area shape="rect" title=" " alt="" coords="938,379,1000,405"/>
+<area shape="poly" title=" " alt="" coords="849,180,884,199,916,228,937,261,952,297,968,363,963,364,947,299,933,263,912,231,881,203,846,184"/>
+<area shape="rect" title=" " alt="" coords="630,229,708,256"/>
+<area shape="poly" title=" " alt="" coords="790,184,709,224,707,220,788,179"/>
+<area shape="rect" title=" " alt="" coords="493,304,557,331"/>
+<area shape="poly" title=" " alt="" coords="841,179,866,194,889,213,901,235,901,246,895,258,873,275,839,288,752,306,655,315,572,318,572,313,654,309,751,300,838,283,870,270,891,254,896,245,896,236,885,217,863,199,838,184"/>
+<area shape="rect" title=" " alt="" coords="270,229,332,256"/>
+<area shape="poly" title=" " alt="" coords="773,175,592,194,472,210,347,232,346,226,471,205,592,188,773,170"/>
+<area shape="rect" title=" " alt="" coords="177,304,241,331"/>
+<area shape="poly" title=" " alt="" coords="773,175,642,193,562,209,483,232,458,245,433,258,340,289,257,309,256,304,338,284,431,254,456,240,481,227,561,204,641,188,773,170"/>
+<area shape="rect" title=" " alt="" coords="732,229,792,256"/>
+<area shape="poly" title=" " alt="" coords="807,183,782,218,778,215,803,180"/>
+<area shape="rect" title=" " alt="" coords="817,229,881,256"/>
+<area shape="poly" title=" " alt="" coords="823,181,839,214,834,216,818,183"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="324,304,411,331"/>
+<area shape="poly" title=" " alt="" coords="773,182,701,203,619,232,569,258,495,284,427,304,425,299,494,279,567,254,617,227,699,198,772,177"/>
+<area shape="poly" title=" " alt="" coords="855,179,989,227,1018,241,1047,253,1153,284,1248,304,1247,309,1152,289,1045,259,1016,246,987,232,853,185"/>
+<area shape="poly" title=" " alt="" coords="856,173,1248,231,1247,236,856,178"/>
+<area shape="rect" href="avconfig_8h.html" title=" " alt="" coords="1058,229,1187,256"/>
+<area shape="poly" title=" " alt="" coords="856,176,1054,223,1053,228,855,182"/>
+<area shape="rect" href="mem_8h.html" title="Memory handling functions" alt="" coords="494,229,556,256"/>
+<area shape="poly" title=" " alt="" coords="773,182,571,233,570,227,772,177"/>
+<area shape="poly" title=" " alt="" coords="1302,257,1302,288,1297,288,1297,257"/>
+<area shape="poly" title=" " alt="" coords="552,226,643,189,760,152,864,130,968,114,1135,95,1135,101,969,119,865,135,762,157,645,194,554,231"/>
+<area shape="poly" title=" " alt="" coords="528,257,528,288,522,288,522,257"/>
+<area shape="poly" title=" " alt="" coords="494,254,476,259,257,308,256,303,475,253,493,249"/>
+<area shape="poly" title=" " alt="" coords="499,259,410,299,408,295,496,254"/>
+<area shape="poly" title=" " alt="" coords="556,246,1004,307,1003,313,556,251"/>
+<area shape="poly" title=" " alt="" coords="1036,333,996,370,992,366,1032,329"/>
+<area shape="rect" title=" " alt="" coords="1024,379,1092,405"/>
+<area shape="poly" title=" " alt="" coords="1052,331,1057,363,1052,364,1047,332"/>
+<area shape="poly" title=" " alt="" coords="247,251,259,253,479,303,478,308,258,259,246,256"/>
+<area shape="poly" title=" " alt="" coords="212,257,212,288,206,288,206,257"/>
+<area shape="poly" title=" " alt="" coords="238,254,327,295,325,299,236,259"/>
+<area shape="poly" title=" " alt="" coords="195,180,266,219,264,224,193,184"/>
+<area shape="poly" title=" " alt="" coords="118,180,73,192,33,208,19,218,10,229,9,241,15,255,29,270,45,282,84,300,124,310,162,314,161,319,123,315,82,305,43,287,25,274,11,257,3,241,6,226,15,214,31,203,72,186,117,175"/>
+<area shape="poly" title=" " alt="" coords="167,183,155,218,155,237,162,254,184,270,221,284,310,304,308,310,220,289,182,275,158,258,150,238,150,217,162,181"/>
+<area shape="poly" title=" " alt="" coords="181,181,198,214,193,217,176,183"/>
+<area shape="rect" href="intfloat_8h.html" title=" " alt="" coords="25,229,97,256"/>
+<area shape="poly" title=" " alt="" coords="154,184,94,223,91,218,151,180"/>
+<area shape="poly" title=" " alt="" coords="88,254,170,294,168,299,86,259"/>
+<area shape="poly" title=" " alt="" coords="97,250,310,300,309,305,96,255"/>
+<area shape="poly" title=" " alt="" coords="1317,157,1227,115,1230,110,1319,152"/>
+<area shape="poly" title=" " alt="" coords="1348,181,1360,218,1360,239,1351,258,1330,270,1297,280,1199,295,1071,303,926,306,648,306,481,307,426,312,426,307,481,301,648,300,926,301,1070,297,1199,289,1296,275,1328,266,1347,254,1355,238,1355,219,1343,183"/>
+<area shape="poly" title=" " alt="" coords="1334,183,1316,217,1311,214,1329,181"/>
+<area shape="rect" title=" " alt="" coords="1412,229,1480,256"/>
+<area shape="poly" title=" " alt="" coords="1359,180,1416,218,1413,222,1356,184"/>
+<area shape="poly" title=" " alt="" coords="1180,179,1262,220,1259,224,1177,184"/>
+<area shape="poly" title=" " alt="" coords="1150,183,1136,216,1131,214,1145,181"/>
+</map>
+</div>
+</div>
+<p><a href="avassert_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:aae204192396f78cc8c5cd7ad5c57c23f" id="r_aae204192396f78cc8c5cd7ad5c57c23f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae204192396f78cc8c5cd7ad5c57c23f">av_assert0</a>(cond)</td></tr>
+<tr class="memdesc:aae204192396f78cc8c5cd7ad5c57c23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">assert() equivalent, that is always enabled.  <br /></td></tr>
+<tr class="separator:aae204192396f78cc8c5cd7ad5c57c23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557ed9c8df70c282bf6b7e0e07d7d5b0" id="r_a557ed9c8df70c282bf6b7e0e07d7d5b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a557ed9c8df70c282bf6b7e0e07d7d5b0">av_assert1</a>(cond)</td></tr>
+<tr class="memdesc:a557ed9c8df70c282bf6b7e0e07d7d5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">assert() equivalent, that does not lie in speed critical code.  <br /></td></tr>
+<tr class="separator:a557ed9c8df70c282bf6b7e0e07d7d5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2764bf422e4df5bf3aac652f21fe780a" id="r_a2764bf422e4df5bf3aac652f21fe780a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2764bf422e4df5bf3aac652f21fe780a">av_assert2</a>(cond)</td></tr>
+<tr class="memdesc:a2764bf422e4df5bf3aac652f21fe780a"><td class="mdescLeft">&#160;</td><td class="mdescRight">assert() equivalent, that does lie in speed critical code.  <br /></td></tr>
+<tr class="separator:a2764bf422e4df5bf3aac652f21fe780a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf5c03f735a5b56d66d595c2d0345154" id="r_aaf5c03f735a5b56d66d595c2d0345154"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf5c03f735a5b56d66d595c2d0345154">av_assert2_fpu</a>()</td></tr>
+<tr class="separator:aaf5c03f735a5b56d66d595c2d0345154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aa56b22f21967b9c93c954eddcf36ec13" id="r_aa56b22f21967b9c93c954eddcf36ec13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa56b22f21967b9c93c954eddcf36ec13">av_assert0_fpu</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:aa56b22f21967b9c93c954eddcf36ec13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assert that floating point opperations can be executed.  <br /></td></tr>
+<tr class="separator:aa56b22f21967b9c93c954eddcf36ec13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>simple assert() macros that are a bit more flexible than ISO C assert(). </p>
+<dl class="section author"><dt>作者</dt><dd>Michael Niedermayer <a href="#" onclick="location.href='mai'+'lto:'+'mic'+'ha'+'eln'+'i@'+'gmx'+'.a'+'t'; return false;">micha<span class="obfuscator">.nosp@m.</span>elni<span class="obfuscator">.nosp@m.</span>@gmx.<span class="obfuscator">.nosp@m.</span>at</a> </dd></dl>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="aae204192396f78cc8c5cd7ad5c57c23f" name="aae204192396f78cc8c5cd7ad5c57c23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae204192396f78cc8c5cd7ad5c57c23f">&#9670;&#160;</a></span>av_assert0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define av_assert0</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                           \</div>
+<div class="line">    if (!(cond)) {                                                      \</div>
+<div class="line">        av_log(<a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <a class="code hl_define" href="group__lavu__log__constants.html#ga09623098406ba81d130824ac742d146e">AV_LOG_PANIC</a>, <span class="stringliteral">&quot;Assertion %s failed at %s:%d\n&quot;</span>,    \</div>
+<div class="line">               <a class="code hl_define" href="group__preproc__misc.html#ga700cb39b719fc7069d15c134129b1ca0">AV_STRINGIFY</a>(cond), __FILE__, __LINE__);                 \</div>
+<div class="line">        abort();                                                        \</div>
+<div class="line">    }                                                                   \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="abegin__code_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>定义</b> begin_code.h:165</div></div>
+<div class="ttc" id="agroup__lavu__log__constants_html_ga09623098406ba81d130824ac742d146e"><div class="ttname"><a href="group__lavu__log__constants.html#ga09623098406ba81d130824ac742d146e">AV_LOG_PANIC</a></div><div class="ttdeci">#define AV_LOG_PANIC</div><div class="ttdoc">Something went really wrong and we will crash now.</div><div class="ttdef"><b>定义</b> log.h:163</div></div>
+<div class="ttc" id="agroup__preproc__misc_html_ga700cb39b719fc7069d15c134129b1ca0"><div class="ttname"><a href="group__preproc__misc.html#ga700cb39b719fc7069d15c134129b1ca0">AV_STRINGIFY</a></div><div class="ttdeci">#define AV_STRINGIFY(s)</div><div class="ttdef"><b>定义</b> macros.h:36</div></div>
+</div><!-- fragment -->
+<p>assert() equivalent, that is always enabled. </p>
+
+</div>
+</div>
+<a id="a557ed9c8df70c282bf6b7e0e07d7d5b0" name="a557ed9c8df70c282bf6b7e0e07d7d5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557ed9c8df70c282bf6b7e0e07d7d5b0">&#9670;&#160;</a></span>av_assert1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define av_assert1</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">((<a class="code hl_function" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)0)</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a46df6112013cf583e82b25cebd5cb499"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></div><div class="ttdeci">typedef void(APIENTRYP PFNGLDRAWRANGEELEMENTSPROC)(GLenum mode</div></div>
+</div><!-- fragment -->
+<p>assert() equivalent, that does not lie in speed critical code. </p>
+<p>These asserts() thus can be enabled without fearing speed loss. </p>
+
+</div>
+</div>
+<a id="a2764bf422e4df5bf3aac652f21fe780a" name="a2764bf422e4df5bf3aac652f21fe780a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2764bf422e4df5bf3aac652f21fe780a">&#9670;&#160;</a></span>av_assert2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define av_assert2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">((<a class="code hl_function" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)0)</div>
+</div><!-- fragment -->
+<p>assert() equivalent, that does lie in speed critical code. </p>
+
+</div>
+</div>
+<a id="aaf5c03f735a5b56d66d595c2d0345154" name="aaf5c03f735a5b56d66d595c2d0345154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf5c03f735a5b56d66d595c2d0345154">&#9670;&#160;</a></span>av_assert2_fpu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define av_assert2_fpu</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">((<a class="code hl_function" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aa56b22f21967b9c93c954eddcf36ec13" name="aa56b22f21967b9c93c954eddcf36ec13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa56b22f21967b9c93c954eddcf36ec13">&#9670;&#160;</a></span>av_assert0_fpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_assert0_fpu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assert that floating point opperations can be executed. </p>
+<p>This will <a class="el" href="#aae204192396f78cc8c5cd7ad5c57c23f" title="assert() equivalent, that is always enabled.">av_assert0()</a> that the cpu is not in MMX state on X86 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="avassert_8h.html">avassert.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

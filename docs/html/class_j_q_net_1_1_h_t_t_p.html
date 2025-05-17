@@ -1,0 +1,1841 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: HTTP类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_j_q_net_1_1_h_t_t_p.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_j_q_net_1_1_h_t_t_p-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">HTTP类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> 客户端类，提供了 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> 请求的封装。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="jqnet_8h_source.html">jqnet.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:adf7deb08d46a7751170be7dcc63ba680" id="r_adf7deb08d46a7751170be7dcc63ba680"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf7deb08d46a7751170be7dcc63ba680">HTTP</a> ()=default</td></tr>
+<tr class="memdesc:adf7deb08d46a7751170be7dcc63ba680"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数。  <br /></td></tr>
+<tr class="separator:adf7deb08d46a7751170be7dcc63ba680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a016389dddf3c7fde06a086506db8aafc" id="r_a016389dddf3c7fde06a086506db8aafc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a016389dddf3c7fde06a086506db8aafc">~HTTP</a> ()=default</td></tr>
+<tr class="memdesc:a016389dddf3c7fde06a086506db8aafc"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数。  <br /></td></tr>
+<tr class="separator:a016389dddf3c7fde06a086506db8aafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0a26a4251397c69125a5e773f73bad7" id="r_ad0a26a4251397c69125a5e773f73bad7"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0a26a4251397c69125a5e773f73bad7">manage</a> ()</td></tr>
+<tr class="memdesc:ad0a26a4251397c69125a5e773f73bad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取网络访问管理器。  <br /></td></tr>
+<tr class="separator:ad0a26a4251397c69125a5e773f73bad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a080f2280a8d95920a0236cdb4a90440d" id="r_a080f2280a8d95920a0236cdb4a90440d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a080f2280a8d95920a0236cdb4a90440d">get</a> (const QNetworkRequest &amp;request, QByteArray &amp;receiveBuffer, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a080f2280a8d95920a0236cdb4a90440d"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> GET 请求。  <br /></td></tr>
+<tr class="separator:a080f2280a8d95920a0236cdb4a90440d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9bdb0ca4907625531dae405103829a" id="r_a8f9bdb0ca4907625531dae405103829a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f9bdb0ca4907625531dae405103829a">get</a> (const QNetworkRequest &amp;request, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;onFinished, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;onError, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a8f9bdb0ca4907625531dae405103829a"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> GET 请求（异步）。  <br /></td></tr>
+<tr class="separator:a8f9bdb0ca4907625531dae405103829a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5370c6d56d7b6c8b4fd43cc2e28bf7" id="r_a1b5370c6d56d7b6c8b4fd43cc2e28bf7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b5370c6d56d7b6c8b4fd43cc2e28bf7">deleteResource</a> (const QNetworkRequest &amp;request, QByteArray &amp;receiveBuffer, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a1b5370c6d56d7b6c8b4fd43cc2e28bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> DELETE 请求。  <br /></td></tr>
+<tr class="separator:a1b5370c6d56d7b6c8b4fd43cc2e28bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664991ccb8ca9b79b89a43a8c2170ea5" id="r_a664991ccb8ca9b79b89a43a8c2170ea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a664991ccb8ca9b79b89a43a8c2170ea5">deleteResource</a> (const QNetworkRequest &amp;request, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;onFinished, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;onError, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a664991ccb8ca9b79b89a43a8c2170ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> DELETE 请求（异步）。  <br /></td></tr>
+<tr class="separator:a664991ccb8ca9b79b89a43a8c2170ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4576dedac953f02c987bb6571199a655" id="r_a4576dedac953f02c987bb6571199a655"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4576dedac953f02c987bb6571199a655">post</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;receiveRawHeaderPairs, QByteArray &amp;receiveBuffer, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a4576dedac953f02c987bb6571199a655"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求。  <br /></td></tr>
+<tr class="separator:a4576dedac953f02c987bb6571199a655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202095e068519765430277ba5e0a3e68" id="r_a202095e068519765430277ba5e0a3e68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a202095e068519765430277ba5e0a3e68">post</a> (const QNetworkRequest &amp;request, const QSharedPointer&lt; QHttpMultiPart &gt; &amp;multiPart, QByteArray &amp;receiveBuffer, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a202095e068519765430277ba5e0a3e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（多部分）。  <br /></td></tr>
+<tr class="separator:a202095e068519765430277ba5e0a3e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26bd8616faaff4dd9b935fca420fe04" id="r_ac26bd8616faaff4dd9b935fca420fe04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac26bd8616faaff4dd9b935fca420fe04">post</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;onFinished, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;onError, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:ac26bd8616faaff4dd9b935fca420fe04"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（异步）。  <br /></td></tr>
+<tr class="separator:ac26bd8616faaff4dd9b935fca420fe04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f664c546226be1f822589ca18f4ad1" id="r_a22f664c546226be1f822589ca18f4ad1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22f664c546226be1f822589ca18f4ad1">put</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, QByteArray &amp;receiveBuffer, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a22f664c546226be1f822589ca18f4ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求。  <br /></td></tr>
+<tr class="separator:a22f664c546226be1f822589ca18f4ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b383f0e4b68c2ec16fab30784864b90" id="r_a4b383f0e4b68c2ec16fab30784864b90"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b383f0e4b68c2ec16fab30784864b90">put</a> (const QNetworkRequest &amp;request, const QSharedPointer&lt; QHttpMultiPart &gt; &amp;multiPart, QByteArray &amp;receiveBuffer, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a4b383f0e4b68c2ec16fab30784864b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（多部分）。  <br /></td></tr>
+<tr class="separator:a4b383f0e4b68c2ec16fab30784864b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cde5340c5ef1905607636d42fd1263d" id="r_a8cde5340c5ef1905607636d42fd1263d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cde5340c5ef1905607636d42fd1263d">put</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;onFinished, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;onError, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a8cde5340c5ef1905607636d42fd1263d"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（异步）。  <br /></td></tr>
+<tr class="separator:a8cde5340c5ef1905607636d42fd1263d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d46a1d6e78304d45978ea4616a0d2a" id="r_ad3d46a1d6e78304d45978ea4616a0d2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3d46a1d6e78304d45978ea4616a0d2a">patch</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, QByteArray &amp;receiveBuffer, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:ad3d46a1d6e78304d45978ea4616a0d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PATCH 请求。  <br /></td></tr>
+<tr class="separator:ad3d46a1d6e78304d45978ea4616a0d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31bcc38da195ce2641c5698dbac8cf02" id="r_a31bcc38da195ce2641c5698dbac8cf02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31bcc38da195ce2641c5698dbac8cf02">patch</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;onFinished, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;onError, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a31bcc38da195ce2641c5698dbac8cf02"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PATCH 请求（异步）。  <br /></td></tr>
+<tr class="separator:a31bcc38da195ce2641c5698dbac8cf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:aa61719caf527f684abc00e57a7477198" id="r_aa61719caf527f684abc00e57a7477198"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa61719caf527f684abc00e57a7477198">get</a> (const QString &amp;url, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:aa61719caf527f684abc00e57a7477198"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> GET 请求（静态）。  <br /></td></tr>
+<tr class="separator:aa61719caf527f684abc00e57a7477198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ed2caf29fc65c2f850299d1aa68c89" id="r_ab7ed2caf29fc65c2f850299d1aa68c89"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7ed2caf29fc65c2f850299d1aa68c89">get</a> (const QNetworkRequest &amp;request, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:ab7ed2caf29fc65c2f850299d1aa68c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> GET 请求（静态）。  <br /></td></tr>
+<tr class="separator:ab7ed2caf29fc65c2f850299d1aa68c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7952d5eb136ecba21145397ce3ac0cd" id="r_ac7952d5eb136ecba21145397ce3ac0cd"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7952d5eb136ecba21145397ce3ac0cd">deleteResource</a> (const QString &amp;url, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:ac7952d5eb136ecba21145397ce3ac0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> DELETE 请求（静态）。  <br /></td></tr>
+<tr class="separator:ac7952d5eb136ecba21145397ce3ac0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075a2272b44a9becee9d15d96626a749" id="r_a075a2272b44a9becee9d15d96626a749"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a075a2272b44a9becee9d15d96626a749">deleteResource</a> (const QNetworkRequest &amp;request, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a075a2272b44a9becee9d15d96626a749"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> DELETE 请求（静态）。  <br /></td></tr>
+<tr class="separator:a075a2272b44a9becee9d15d96626a749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c3db7a400a10b542c805c3df49af06" id="r_a52c3db7a400a10b542c805c3df49af06"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52c3db7a400a10b542c805c3df49af06">post</a> (const QString &amp;url, const QByteArray &amp;body, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a52c3db7a400a10b542c805c3df49af06"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（静态）。  <br /></td></tr>
+<tr class="separator:a52c3db7a400a10b542c805c3df49af06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856ae79b5946064573fc4f5d0a3f1104" id="r_a856ae79b5946064573fc4f5d0a3f1104"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a856ae79b5946064573fc4f5d0a3f1104">post</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a856ae79b5946064573fc4f5d0a3f1104"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（静态）。  <br /></td></tr>
+<tr class="separator:a856ae79b5946064573fc4f5d0a3f1104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a488ad5c3c81a357b425aa3b2247b0a00" id="r_a488ad5c3c81a357b425aa3b2247b0a00"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QPair&lt; QList&lt; QNetworkReply::RawHeaderPair &gt;, QByteArray &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a488ad5c3c81a357b425aa3b2247b0a00">post2</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a488ad5c3c81a357b425aa3b2247b0a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（静态，带原始头对）。  <br /></td></tr>
+<tr class="separator:a488ad5c3c81a357b425aa3b2247b0a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f2f15bde09e68a883c173fe28de623" id="r_a83f2f15bde09e68a883c173fe28de623"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83f2f15bde09e68a883c173fe28de623">post</a> (const QNetworkRequest &amp;request, const QSharedPointer&lt; QHttpMultiPart &gt; &amp;multiPart, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a83f2f15bde09e68a883c173fe28de623"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（静态，多部分）。  <br /></td></tr>
+<tr class="separator:a83f2f15bde09e68a883c173fe28de623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31bd76bfc7f51c3e57b5af552515bc12" id="r_a31bd76bfc7f51c3e57b5af552515bc12"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31bd76bfc7f51c3e57b5af552515bc12">put</a> (const QString &amp;url, const QByteArray &amp;body, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a31bd76bfc7f51c3e57b5af552515bc12"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（静态）。  <br /></td></tr>
+<tr class="separator:a31bd76bfc7f51c3e57b5af552515bc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f7352d4dc1e084b5abb6c67fde2d330" id="r_a0f7352d4dc1e084b5abb6c67fde2d330"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f7352d4dc1e084b5abb6c67fde2d330">put</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a0f7352d4dc1e084b5abb6c67fde2d330"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（静态）。  <br /></td></tr>
+<tr class="separator:a0f7352d4dc1e084b5abb6c67fde2d330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85eba004f2c06160a70970eb29067f41" id="r_a85eba004f2c06160a70970eb29067f41"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85eba004f2c06160a70970eb29067f41">put</a> (const QNetworkRequest &amp;request, const QSharedPointer&lt; QHttpMultiPart &gt; &amp;multiPart, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a85eba004f2c06160a70970eb29067f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（静态，多部分）。  <br /></td></tr>
+<tr class="separator:a85eba004f2c06160a70970eb29067f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659637c612cb5c10d60b15d9c31957bd" id="r_a659637c612cb5c10d60b15d9c31957bd"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a659637c612cb5c10d60b15d9c31957bd">patch</a> (const QString &amp;url, const QByteArray &amp;body, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a659637c612cb5c10d60b15d9c31957bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PATCH 请求（静态）。  <br /></td></tr>
+<tr class="separator:a659637c612cb5c10d60b15d9c31957bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a077e1467cdd833178a602ed53b7a6710" id="r_a077e1467cdd833178a602ed53b7a6710"><td class="memItemLeft" align="right" valign="top">static QPair&lt; bool, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a077e1467cdd833178a602ed53b7a6710">patch</a> (const QNetworkRequest &amp;request, const QByteArray &amp;body, const int &amp;timeout=30 *1000)</td></tr>
+<tr class="memdesc:a077e1467cdd833178a602ed53b7a6710"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PATCH 请求（静态）。  <br /></td></tr>
+<tr class="separator:a077e1467cdd833178a602ed53b7a6710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a64d3dbab48252c734d0e35e5885a1a79" id="r_a64d3dbab48252c734d0e35e5885a1a79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64d3dbab48252c734d0e35e5885a1a79">handle</a> (QNetworkReply *reply, const int &amp;timeout, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;onFinished, const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;onError, const std::function&lt; void() &gt; &amp;onTimeout)</td></tr>
+<tr class="memdesc:a64d3dbab48252c734d0e35e5885a1a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> 回复。  <br /></td></tr>
+<tr class="separator:a64d3dbab48252c734d0e35e5885a1a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aaa81d3ccfcaa0da38e05fe12c0463516" id="r_aaa81d3ccfcaa0da38e05fe12c0463516"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa81d3ccfcaa0da38e05fe12c0463516">manage_</a></td></tr>
+<tr class="separator:aaa81d3ccfcaa0da38e05fe12c0463516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> 客户端类，提供了 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> 请求的封装。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="adf7deb08d46a7751170be7dcc63ba680" name="adf7deb08d46a7751170be7dcc63ba680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf7deb08d46a7751170be7dcc63ba680">&#9670;&#160;</a></span>HTTP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_j_q_net_1_1_h_t_t_p.html">HTTP</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数。 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_adf7deb08d46a7751170be7dcc63ba680_icgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_adf7deb08d46a7751170be7dcc63ba680_icgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_adf7deb08d46a7751170be7dcc63ba680_icgraph" id="aclass_j_q_net_1_1_h_t_t_p_adf7deb08d46a7751170be7dcc63ba680_icgraph">
+<area shape="rect" title="构造函数。" alt="" coords="166,309,222,336"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a075a2272b44a9becee9d15d96626a749" title="执行 HTTP DELETE 请求（静态）。" alt="" coords="5,5,118,32"/>
+<area shape="poly" title=" " alt="" coords="190,294,186,243,175,177,153,108,136,75,116,46,102,34,105,30,120,42,141,72,158,106,181,176,192,242,195,294"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#ac7952d5eb136ecba21145397ce3ac0cd" title="执行 HTTP DELETE 请求（静态）。" alt="" coords="5,56,118,83"/>
+<area shape="poly" title=" " alt="" coords="188,294,182,252,169,199,148,145,133,119,116,97,102,85,105,81,120,93,138,116,152,142,174,198,187,251,193,294"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#ab7ed2caf29fc65c2f850299d1aa68c89" title="执行 HTTP GET 请求（静态）。" alt="" coords="42,107,81,133"/>
+<area shape="poly" title=" " alt="" coords="185,295,162,222,142,182,116,147,99,135,81,127,83,122,102,130,120,143,147,180,167,220,190,293"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#aa61719caf527f684abc00e57a7477198" title="执行 HTTP GET 请求（静态）。" alt="" coords="42,157,81,184"/>
+<area shape="poly" title=" " alt="" coords="180,296,154,247,137,221,116,198,99,186,81,179,83,174,101,182,119,194,141,217,159,244,184,294"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a077e1467cdd833178a602ed53b7a6710" title="执行 HTTP PATCH 请求（静态）。" alt="" coords="35,208,88,235"/>
+<area shape="poly" title=" " alt="" coords="170,299,145,273,116,249,87,233,90,229,119,244,149,270,174,296"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a659637c612cb5c10d60b15d9c31957bd" title="执行 HTTP PATCH 请求（静态）。" alt="" coords="35,259,88,285"/>
+<area shape="poly" title=" " alt="" coords="150,309,88,285,89,280,152,304"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a856ae79b5946064573fc4f5d0a3f1104" title="执行 HTTP POST 请求（静态）。" alt="" coords="38,309,85,336"/>
+<area shape="poly" title=" " alt="" coords="150,325,85,325,85,320,150,320"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a83f2f15bde09e68a883c173fe28de623" title="执行 HTTP POST 请求（静态，多部分）。" alt="" coords="38,360,85,387"/>
+<area shape="poly" title=" " alt="" coords="152,341,86,367,84,362,150,336"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a52c3db7a400a10b542c805c3df49af06" title="执行 HTTP POST 请求（静态）。" alt="" coords="38,411,85,437"/>
+<area shape="poly" title=" " alt="" coords="174,350,149,376,119,401,86,418,84,413,116,396,145,372,170,346"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a488ad5c3c81a357b425aa3b2247b0a00" title="执行 HTTP POST 请求（静态，带原始头对）。" alt="" coords="35,461,88,488"/>
+<area shape="poly" title=" " alt="" coords="184,352,159,401,141,428,119,451,90,469,87,464,116,447,137,425,154,399,180,349"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a0f7352d4dc1e084b5abb6c67fde2d330" title="执行 HTTP PUT 请求（静态）。" alt="" coords="42,512,81,539"/>
+<area shape="poly" title=" " alt="" coords="190,352,167,425,147,466,120,502,102,515,83,523,81,518,99,510,116,498,142,463,162,423,185,351"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a85eba004f2c06160a70970eb29067f41" title="执行 HTTP PUT 请求（静态，多部分）。" alt="" coords="42,563,81,589"/>
+<area shape="poly" title=" " alt="" coords="193,352,187,395,174,448,152,503,138,529,120,553,102,566,82,574,80,569,99,561,116,549,133,526,148,501,169,446,182,394,188,351"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a31bd76bfc7f51c3e57b5af552515bc12" title="执行 HTTP PUT 请求（静态）。" alt="" coords="42,613,81,640"/>
+<area shape="poly" title=" " alt="" coords="195,351,192,403,181,470,158,540,141,573,120,603,102,617,83,625,81,620,99,612,116,599,136,570,153,538,175,468,186,403,190,351"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a016389dddf3c7fde06a086506db8aafc" name="a016389dddf3c7fde06a086506db8aafc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016389dddf3c7fde06a086506db8aafc">&#9670;&#160;</a></span>~HTTP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_j_q_net_1_1_h_t_t_p.html">HTTP</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a075a2272b44a9becee9d15d96626a749" name="a075a2272b44a9becee9d15d96626a749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075a2272b44a9becee9d15d96626a749">&#9670;&#160;</a></span>deleteResource() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; deleteResource </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> DELETE 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a075a2272b44a9becee9d15d96626a749_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a075a2272b44a9becee9d15d96626a749_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a075a2272b44a9becee9d15d96626a749_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a075a2272b44a9becee9d15d96626a749_cgraph">
+<area shape="rect" title="执行 HTTP DELETE 请求（静态）。" alt="" coords="5,31,118,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a1b5370c6d56d7b6c8b4fd43cc2e28bf7" title="执行 HTTP DELETE 请求。" alt="" coords="166,5,278,32"/>
+<area shape="poly" title=" " alt="" coords="118,33,150,27,151,33,118,38"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="194,56,250,83"/>
+<area shape="poly" title=" " alt="" coords="118,50,179,60,178,65,118,55"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="326,5,385,32"/>
+<area shape="poly" title=" " alt="" coords="278,16,310,16,310,21,278,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a664991ccb8ca9b79b89a43a8c2170ea5" name="a664991ccb8ca9b79b89a43a8c2170ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664991ccb8ca9b79b89a43a8c2170ea5">&#9670;&#160;</a></span>deleteResource() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deleteResource </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onFinished</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> DELETE 请求（异步）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">onFinished</td><td>完成回调。 </td></tr>
+    <tr><td class="paramname">onError</td><td>错误回调。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1b5370c6d56d7b6c8b4fd43cc2e28bf7" name="a1b5370c6d56d7b6c8b4fd43cc2e28bf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b5370c6d56d7b6c8b4fd43cc2e28bf7">&#9670;&#160;</a></span>deleteResource() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool deleteResource </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>receiveBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> DELETE 请求。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">receiveBuffer</td><td>接收缓冲区。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a1b5370c6d56d7b6c8b4fd43cc2e28bf7_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a1b5370c6d56d7b6c8b4fd43cc2e28bf7_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a1b5370c6d56d7b6c8b4fd43cc2e28bf7_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a1b5370c6d56d7b6c8b4fd43cc2e28bf7_cgraph">
+<area shape="rect" title="执行 HTTP DELETE 请求。" alt="" coords="5,5,118,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="166,5,225,32"/>
+<area shape="poly" title=" " alt="" coords="118,16,150,16,150,21,118,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a1b5370c6d56d7b6c8b4fd43cc2e28bf7_icgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a1b5370c6d56d7b6c8b4fd43cc2e28bf7_icgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a1b5370c6d56d7b6c8b4fd43cc2e28bf7_icgraph" id="aclass_j_q_net_1_1_h_t_t_p_a1b5370c6d56d7b6c8b4fd43cc2e28bf7_icgraph">
+<area shape="rect" title="执行 HTTP DELETE 请求。" alt="" coords="166,5,278,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a075a2272b44a9becee9d15d96626a749" title="执行 HTTP DELETE 请求（静态）。" alt="" coords="5,5,118,32"/>
+<area shape="poly" title=" " alt="" coords="150,21,118,21,118,16,150,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac7952d5eb136ecba21145397ce3ac0cd" name="ac7952d5eb136ecba21145397ce3ac0cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7952d5eb136ecba21145397ce3ac0cd">&#9670;&#160;</a></span>deleteResource() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; deleteResource </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> DELETE 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>URL。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_ac7952d5eb136ecba21145397ce3ac0cd_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_ac7952d5eb136ecba21145397ce3ac0cd_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_ac7952d5eb136ecba21145397ce3ac0cd_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_ac7952d5eb136ecba21145397ce3ac0cd_cgraph">
+<area shape="rect" title="执行 HTTP DELETE 请求（静态）。" alt="" coords="5,5,118,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="166,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="118,16,150,16,150,21,118,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab7ed2caf29fc65c2f850299d1aa68c89" name="ab7ed2caf29fc65c2f850299d1aa68c89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ed2caf29fc65c2f850299d1aa68c89">&#9670;&#160;</a></span>get() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; get </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> GET 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_ab7ed2caf29fc65c2f850299d1aa68c89_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_ab7ed2caf29fc65c2f850299d1aa68c89_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_ab7ed2caf29fc65c2f850299d1aa68c89_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_ab7ed2caf29fc65c2f850299d1aa68c89_cgraph">
+<area shape="rect" title="执行 HTTP GET 请求（静态）。" alt="" coords="5,31,45,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a080f2280a8d95920a0236cdb4a90440d" title="执行 HTTP GET 请求。" alt="" coords="101,5,140,32"/>
+<area shape="poly" title=" " alt="" coords="44,36,85,25,87,30,46,41"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="93,56,149,83"/>
+<area shape="poly" title=" " alt="" coords="46,47,78,55,77,61,44,52"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="197,5,256,32"/>
+<area shape="poly" title=" " alt="" coords="141,16,181,16,181,21,141,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8f9bdb0ca4907625531dae405103829a" name="a8f9bdb0ca4907625531dae405103829a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f9bdb0ca4907625531dae405103829a">&#9670;&#160;</a></span>get() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void get </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onFinished</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> GET 请求（异步）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">onFinished</td><td>完成回调。 </td></tr>
+    <tr><td class="paramname">onError</td><td>错误回调。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a080f2280a8d95920a0236cdb4a90440d" name="a080f2280a8d95920a0236cdb4a90440d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080f2280a8d95920a0236cdb4a90440d">&#9670;&#160;</a></span>get() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool get </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>receiveBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> GET 请求。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">receiveBuffer</td><td>接收缓冲区。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a080f2280a8d95920a0236cdb4a90440d_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a080f2280a8d95920a0236cdb4a90440d_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a080f2280a8d95920a0236cdb4a90440d_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a080f2280a8d95920a0236cdb4a90440d_cgraph">
+<area shape="rect" title="执行 HTTP GET 请求。" alt="" coords="5,5,45,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="93,5,152,32"/>
+<area shape="poly" title=" " alt="" coords="45,16,77,16,77,21,45,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a080f2280a8d95920a0236cdb4a90440d_icgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a080f2280a8d95920a0236cdb4a90440d_icgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a080f2280a8d95920a0236cdb4a90440d_icgraph" id="aclass_j_q_net_1_1_h_t_t_p_a080f2280a8d95920a0236cdb4a90440d_icgraph">
+<area shape="rect" title="执行 HTTP GET 请求。" alt="" coords="93,5,132,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#ab7ed2caf29fc65c2f850299d1aa68c89" title="执行 HTTP GET 请求（静态）。" alt="" coords="5,5,45,32"/>
+<area shape="poly" title=" " alt="" coords="77,21,45,21,45,16,77,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa61719caf527f684abc00e57a7477198" name="aa61719caf527f684abc00e57a7477198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa61719caf527f684abc00e57a7477198">&#9670;&#160;</a></span>get() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; get </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> GET 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>URL。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_aa61719caf527f684abc00e57a7477198_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_aa61719caf527f684abc00e57a7477198_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_aa61719caf527f684abc00e57a7477198_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_aa61719caf527f684abc00e57a7477198_cgraph">
+<area shape="rect" title="执行 HTTP GET 请求（静态）。" alt="" coords="5,5,45,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="93,5,149,32"/>
+<area shape="poly" title=" " alt="" coords="45,16,77,16,77,21,45,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a64d3dbab48252c734d0e35e5885a1a79" name="a64d3dbab48252c734d0e35e5885a1a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d3dbab48252c734d0e35e5885a1a79">&#9670;&#160;</a></span>handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handle </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply *</td>          <td class="paramname"><span class="paramname"><em>reply</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onFinished</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void() &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onTimeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> 回复。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reply</td><td>网络回复。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+    <tr><td class="paramname">onFinished</td><td>完成回调。 </td></tr>
+    <tr><td class="paramname">onError</td><td>错误回调。 </td></tr>
+    <tr><td class="paramname">onTimeout</td><td>超时回调。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a64d3dbab48252c734d0e35e5885a1a79_icgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a64d3dbab48252c734d0e35e5885a1a79_icgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a64d3dbab48252c734d0e35e5885a1a79_icgraph" id="aclass_j_q_net_1_1_h_t_t_p_a64d3dbab48252c734d0e35e5885a1a79_icgraph">
+<area shape="rect" title="处理 HTTP 回复。" alt="" coords="326,171,385,197"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a1b5370c6d56d7b6c8b4fd43cc2e28bf7" title="执行 HTTP DELETE 请求。" alt="" coords="166,8,278,35"/>
+<area shape="poly" title=" " alt="" coords="342,157,317,103,298,75,276,50,258,37,261,33,280,46,303,72,321,101,347,155"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a080f2280a8d95920a0236cdb4a90440d" title="执行 HTTP GET 请求。" alt="" coords="202,60,242,87"/>
+<area shape="poly" title=" " alt="" coords="333,160,307,131,276,103,241,83,243,79,280,99,311,128,337,157"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#ad3d46a1d6e78304d45978ea4616a0d2a" title="执行 HTTP PATCH 请求。" alt="" coords="195,113,248,140"/>
+<area shape="poly" title=" " alt="" coords="311,168,248,140,250,135,313,163"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a4576dedac953f02c987bb6571199a655" title="执行 HTTP POST 请求。" alt="" coords="199,171,245,197"/>
+<area shape="poly" title=" " alt="" coords="311,187,245,187,245,181,311,181"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a202095e068519765430277ba5e0a3e68" title="执行 HTTP POST 请求（多部分）。" alt="" coords="199,221,245,248"/>
+<area shape="poly" title=" " alt="" coords="313,203,246,229,245,224,311,198"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a22f664c546226be1f822589ca18f4ad1" title="执行 HTTP PUT 请求。" alt="" coords="202,284,242,311"/>
+<area shape="poly" title=" " alt="" coords="334,210,280,262,244,288,241,284,276,258,330,207"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a4b383f0e4b68c2ec16fab30784864b90" title="执行 HTTP PUT 请求（多部分）。" alt="" coords="202,335,242,361"/>
+<area shape="poly" title=" " alt="" coords="347,213,322,268,303,298,280,325,262,337,243,345,241,340,259,332,276,321,299,295,317,266,343,211"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a075a2272b44a9becee9d15d96626a749" title="执行 HTTP DELETE 请求（静态）。" alt="" coords="5,5,118,32"/>
+<area shape="poly" title=" " alt="" coords="150,23,118,22,118,17,150,17"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#ab7ed2caf29fc65c2f850299d1aa68c89" title="执行 HTTP GET 请求（静态）。" alt="" coords="42,56,81,83"/>
+<area shape="poly" title=" " alt="" coords="186,75,81,72,82,67,187,70"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a077e1467cdd833178a602ed53b7a6710" title="执行 HTTP PATCH 请求（静态）。" alt="" coords="35,107,88,133"/>
+<area shape="poly" title=" " alt="" coords="180,128,88,124,89,118,180,122"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a856ae79b5946064573fc4f5d0a3f1104" title="执行 HTTP POST 请求（静态）。" alt="" coords="38,157,85,184"/>
+<area shape="poly" title=" " alt="" coords="183,183,85,175,85,170,183,178"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a83f2f15bde09e68a883c173fe28de623" title="执行 HTTP POST 请求（静态，多部分）。" alt="" coords="38,208,85,235"/>
+<area shape="poly" title=" " alt="" coords="184,195,86,219,84,213,183,190"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a488ad5c3c81a357b425aa3b2247b0a00" title="执行 HTTP POST 请求（静态，带原始头对）。" alt="" coords="35,259,88,285"/>
+<area shape="poly" title=" " alt="" coords="186,202,167,212,143,230,119,249,90,264,87,259,116,244,140,226,164,207,183,197"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a0f7352d4dc1e084b5abb6c67fde2d330" title="执行 HTTP PUT 请求（静态）。" alt="" coords="42,309,81,336"/>
+<area shape="poly" title=" " alt="" coords="187,305,82,322,81,317,187,300"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a85eba004f2c06160a70970eb29067f41" title="执行 HTTP PUT 请求（静态，多部分）。" alt="" coords="42,360,81,387"/>
+<area shape="poly" title=" " alt="" coords="189,314,167,325,119,350,83,367,81,362,116,346,164,320,187,310"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0a26a4251397c69125a5e773f73bad7" name="ad0a26a4251397c69125a5e773f73bad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a26a4251397c69125a5e773f73bad7">&#9670;&#160;</a></span>manage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkAccessManager &amp; manage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取网络访问管理器。 </p>
+<dl class="section return"><dt>返回</dt><dd>网络访问管理器。 </dd></dl>
+
+</div>
+</div>
+<a id="a077e1467cdd833178a602ed53b7a6710" name="a077e1467cdd833178a602ed53b7a6710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077e1467cdd833178a602ed53b7a6710">&#9670;&#160;</a></span>patch() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; patch </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PATCH 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a077e1467cdd833178a602ed53b7a6710_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a077e1467cdd833178a602ed53b7a6710_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a077e1467cdd833178a602ed53b7a6710_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a077e1467cdd833178a602ed53b7a6710_cgraph">
+<area shape="rect" title="执行 HTTP PATCH 请求（静态）。" alt="" coords="5,31,59,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="107,5,163,32"/>
+<area shape="poly" title=" " alt="" coords="58,35,91,27,92,32,60,40"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#ad3d46a1d6e78304d45978ea4616a0d2a" title="执行 HTTP PATCH 请求。" alt="" coords="108,56,162,83"/>
+<area shape="poly" title=" " alt="" coords="60,48,94,57,93,62,58,53"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="211,56,270,83"/>
+<area shape="poly" title=" " alt="" coords="162,67,195,67,195,72,162,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a31bcc38da195ce2641c5698dbac8cf02" name="a31bcc38da195ce2641c5698dbac8cf02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31bcc38da195ce2641c5698dbac8cf02">&#9670;&#160;</a></span>patch() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void patch </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onFinished</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PATCH 请求（异步）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">onFinished</td><td>完成回调。 </td></tr>
+    <tr><td class="paramname">onError</td><td>错误回调。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad3d46a1d6e78304d45978ea4616a0d2a" name="ad3d46a1d6e78304d45978ea4616a0d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d46a1d6e78304d45978ea4616a0d2a">&#9670;&#160;</a></span>patch() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool patch </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>receiveBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PATCH 请求。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">receiveBuffer</td><td>接收缓冲区。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_ad3d46a1d6e78304d45978ea4616a0d2a_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_ad3d46a1d6e78304d45978ea4616a0d2a_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_ad3d46a1d6e78304d45978ea4616a0d2a_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_ad3d46a1d6e78304d45978ea4616a0d2a_cgraph">
+<area shape="rect" title="执行 HTTP PATCH 请求。" alt="" coords="5,5,59,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="107,5,166,32"/>
+<area shape="poly" title=" " alt="" coords="59,16,91,16,91,21,59,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_ad3d46a1d6e78304d45978ea4616a0d2a_icgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_ad3d46a1d6e78304d45978ea4616a0d2a_icgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_ad3d46a1d6e78304d45978ea4616a0d2a_icgraph" id="aclass_j_q_net_1_1_h_t_t_p_ad3d46a1d6e78304d45978ea4616a0d2a_icgraph">
+<area shape="rect" title="执行 HTTP PATCH 请求。" alt="" coords="107,5,160,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a077e1467cdd833178a602ed53b7a6710" title="执行 HTTP PATCH 请求（静态）。" alt="" coords="5,5,59,32"/>
+<area shape="poly" title=" " alt="" coords="91,21,59,21,59,16,91,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a659637c612cb5c10d60b15d9c31957bd" name="a659637c612cb5c10d60b15d9c31957bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659637c612cb5c10d60b15d9c31957bd">&#9670;&#160;</a></span>patch() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; patch </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PATCH 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>URL。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a659637c612cb5c10d60b15d9c31957bd_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a659637c612cb5c10d60b15d9c31957bd_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a659637c612cb5c10d60b15d9c31957bd_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a659637c612cb5c10d60b15d9c31957bd_cgraph">
+<area shape="rect" title="执行 HTTP PATCH 请求（静态）。" alt="" coords="5,5,59,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="107,5,163,32"/>
+<area shape="poly" title=" " alt="" coords="59,16,91,16,91,21,59,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a856ae79b5946064573fc4f5d0a3f1104" name="a856ae79b5946064573fc4f5d0a3f1104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856ae79b5946064573fc4f5d0a3f1104">&#9670;&#160;</a></span>post() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; post </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a856ae79b5946064573fc4f5d0a3f1104_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a856ae79b5946064573fc4f5d0a3f1104_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a856ae79b5946064573fc4f5d0a3f1104_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a856ae79b5946064573fc4f5d0a3f1104_cgraph">
+<area shape="rect" title="执行 HTTP POST 请求（静态）。" alt="" coords="5,31,52,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="100,5,156,32"/>
+<area shape="poly" title=" " alt="" coords="52,36,84,27,85,32,53,41"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a4576dedac953f02c987bb6571199a655" title="执行 HTTP POST 请求。" alt="" coords="105,56,151,83"/>
+<area shape="poly" title=" " alt="" coords="53,47,90,57,89,62,52,52"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="204,56,263,83"/>
+<area shape="poly" title=" " alt="" coords="152,67,189,67,189,72,152,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac26bd8616faaff4dd9b935fca420fe04" name="ac26bd8616faaff4dd9b935fca420fe04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26bd8616faaff4dd9b935fca420fe04">&#9670;&#160;</a></span>post() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void post </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onFinished</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（异步）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">onFinished</td><td>完成回调。 </td></tr>
+    <tr><td class="paramname">onError</td><td>错误回调。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4576dedac953f02c987bb6571199a655" name="a4576dedac953f02c987bb6571199a655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4576dedac953f02c987bb6571199a655">&#9670;&#160;</a></span>post() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool post </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>receiveRawHeaderPairs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>receiveBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">receiveRawHeaderPairs</td><td>接收的原始头对。 </td></tr>
+    <tr><td class="paramname">receiveBuffer</td><td>接收缓冲区。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a4576dedac953f02c987bb6571199a655_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a4576dedac953f02c987bb6571199a655_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a4576dedac953f02c987bb6571199a655_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a4576dedac953f02c987bb6571199a655_cgraph">
+<area shape="rect" title="执行 HTTP POST 请求。" alt="" coords="5,5,52,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="100,5,159,32"/>
+<area shape="poly" title=" " alt="" coords="52,16,84,16,84,21,52,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a4576dedac953f02c987bb6571199a655_icgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a4576dedac953f02c987bb6571199a655_icgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a4576dedac953f02c987bb6571199a655_icgraph" id="aclass_j_q_net_1_1_h_t_t_p_a4576dedac953f02c987bb6571199a655_icgraph">
+<area shape="rect" title="执行 HTTP POST 请求。" alt="" coords="107,56,153,83"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a856ae79b5946064573fc4f5d0a3f1104" title="执行 HTTP POST 请求（静态）。" alt="" coords="9,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="92,53,54,33,57,28,94,48"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a83f2f15bde09e68a883c173fe28de623" title="执行 HTTP POST 请求（静态，多部分）。" alt="" coords="9,56,55,83"/>
+<area shape="poly" title=" " alt="" coords="91,72,55,72,55,67,91,67"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a488ad5c3c81a357b425aa3b2247b0a00" title="执行 HTTP POST 请求（静态，带原始头对）。" alt="" coords="5,107,59,133"/>
+<area shape="poly" title=" " alt="" coords="94,91,60,109,58,104,92,86"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a83f2f15bde09e68a883c173fe28de623" name="a83f2f15bde09e68a883c173fe28de623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83f2f15bde09e68a883c173fe28de623">&#9670;&#160;</a></span>post() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; post </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSharedPointer&lt; QHttpMultiPart &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>multiPart</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（静态，多部分）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">multiPart</td><td>多部分指针。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a83f2f15bde09e68a883c173fe28de623_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a83f2f15bde09e68a883c173fe28de623_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a83f2f15bde09e68a883c173fe28de623_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a83f2f15bde09e68a883c173fe28de623_cgraph">
+<area shape="rect" title="执行 HTTP POST 请求（静态，多部分）。" alt="" coords="5,31,52,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="100,5,156,32"/>
+<area shape="poly" title=" " alt="" coords="52,36,84,27,85,32,53,41"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a4576dedac953f02c987bb6571199a655" title="执行 HTTP POST 请求。" alt="" coords="105,56,151,83"/>
+<area shape="poly" title=" " alt="" coords="53,47,90,57,89,62,52,52"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="204,56,263,83"/>
+<area shape="poly" title=" " alt="" coords="152,67,189,67,189,72,152,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a202095e068519765430277ba5e0a3e68" name="a202095e068519765430277ba5e0a3e68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202095e068519765430277ba5e0a3e68">&#9670;&#160;</a></span>post() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool post </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSharedPointer&lt; QHttpMultiPart &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>multiPart</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>receiveBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（多部分）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">multiPart</td><td>多部分指针。 </td></tr>
+    <tr><td class="paramname">receiveBuffer</td><td>接收缓冲区。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a202095e068519765430277ba5e0a3e68_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a202095e068519765430277ba5e0a3e68_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a202095e068519765430277ba5e0a3e68_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a202095e068519765430277ba5e0a3e68_cgraph">
+<area shape="rect" title="执行 HTTP POST 请求（多部分）。" alt="" coords="5,5,52,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="100,5,159,32"/>
+<area shape="poly" title=" " alt="" coords="52,16,84,16,84,21,52,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a52c3db7a400a10b542c805c3df49af06" name="a52c3db7a400a10b542c805c3df49af06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c3db7a400a10b542c805c3df49af06">&#9670;&#160;</a></span>post() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; post </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>URL。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a52c3db7a400a10b542c805c3df49af06_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a52c3db7a400a10b542c805c3df49af06_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a52c3db7a400a10b542c805c3df49af06_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a52c3db7a400a10b542c805c3df49af06_cgraph">
+<area shape="rect" title="执行 HTTP POST 请求（静态）。" alt="" coords="5,5,52,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="100,5,156,32"/>
+<area shape="poly" title=" " alt="" coords="52,16,84,16,84,21,52,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a488ad5c3c81a357b425aa3b2247b0a00" name="a488ad5c3c81a357b425aa3b2247b0a00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a488ad5c3c81a357b425aa3b2247b0a00">&#9670;&#160;</a></span>post2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QPair&lt; QList&lt; QNetworkReply::RawHeaderPair &gt;, QByteArray &gt; &gt; post2 </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> POST 请求（静态，带原始头对）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a488ad5c3c81a357b425aa3b2247b0a00_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a488ad5c3c81a357b425aa3b2247b0a00_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a488ad5c3c81a357b425aa3b2247b0a00_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a488ad5c3c81a357b425aa3b2247b0a00_cgraph">
+<area shape="rect" title="执行 HTTP POST 请求（静态，带原始头对）。" alt="" coords="5,31,59,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="107,5,163,32"/>
+<area shape="poly" title=" " alt="" coords="58,35,91,27,92,32,60,40"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a4576dedac953f02c987bb6571199a655" title="执行 HTTP POST 请求。" alt="" coords="112,56,158,83"/>
+<area shape="poly" title=" " alt="" coords="60,48,98,58,96,63,58,53"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="211,56,270,83"/>
+<area shape="poly" title=" " alt="" coords="159,67,196,67,196,72,159,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0f7352d4dc1e084b5abb6c67fde2d330" name="a0f7352d4dc1e084b5abb6c67fde2d330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f7352d4dc1e084b5abb6c67fde2d330">&#9670;&#160;</a></span>put() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; put </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a0f7352d4dc1e084b5abb6c67fde2d330_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a0f7352d4dc1e084b5abb6c67fde2d330_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a0f7352d4dc1e084b5abb6c67fde2d330_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a0f7352d4dc1e084b5abb6c67fde2d330_cgraph">
+<area shape="rect" title="执行 HTTP PUT 请求（静态）。" alt="" coords="5,31,45,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="93,5,149,32"/>
+<area shape="poly" title=" " alt="" coords="44,36,77,27,78,33,46,41"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a22f664c546226be1f822589ca18f4ad1" title="执行 HTTP PUT 请求。" alt="" coords="101,56,140,83"/>
+<area shape="poly" title=" " alt="" coords="46,47,87,58,85,63,44,52"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="197,56,256,83"/>
+<area shape="poly" title=" " alt="" coords="141,67,181,67,181,72,141,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8cde5340c5ef1905607636d42fd1263d" name="a8cde5340c5ef1905607636d42fd1263d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cde5340c5ef1905607636d42fd1263d">&#9670;&#160;</a></span>put() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void put </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onFinished</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(const QList&lt; QNetworkReply::RawHeaderPair &gt; &amp;, const QNetworkReply::NetworkError &amp;code, const QByteArray &amp;data) &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>onError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（异步）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">onFinished</td><td>完成回调。 </td></tr>
+    <tr><td class="paramname">onError</td><td>错误回调。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22f664c546226be1f822589ca18f4ad1" name="a22f664c546226be1f822589ca18f4ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f664c546226be1f822589ca18f4ad1">&#9670;&#160;</a></span>put() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool put </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>receiveBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">receiveBuffer</td><td>接收缓冲区。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a22f664c546226be1f822589ca18f4ad1_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a22f664c546226be1f822589ca18f4ad1_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a22f664c546226be1f822589ca18f4ad1_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a22f664c546226be1f822589ca18f4ad1_cgraph">
+<area shape="rect" title="执行 HTTP PUT 请求。" alt="" coords="5,5,45,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="93,5,152,32"/>
+<area shape="poly" title=" " alt="" coords="45,16,77,16,77,21,45,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a22f664c546226be1f822589ca18f4ad1_icgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a22f664c546226be1f822589ca18f4ad1_icgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a22f664c546226be1f822589ca18f4ad1_icgraph" id="aclass_j_q_net_1_1_h_t_t_p_a22f664c546226be1f822589ca18f4ad1_icgraph">
+<area shape="rect" title="执行 HTTP PUT 请求。" alt="" coords="93,31,132,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a0f7352d4dc1e084b5abb6c67fde2d330" title="执行 HTTP PUT 请求（静态）。" alt="" coords="5,5,45,32"/>
+<area shape="poly" title=" " alt="" coords="77,37,44,27,46,22,78,31"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a85eba004f2c06160a70970eb29067f41" title="执行 HTTP PUT 请求（静态，多部分）。" alt="" coords="5,56,45,83"/>
+<area shape="poly" title=" " alt="" coords="78,57,46,66,44,61,77,51"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a85eba004f2c06160a70970eb29067f41" name="a85eba004f2c06160a70970eb29067f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85eba004f2c06160a70970eb29067f41">&#9670;&#160;</a></span>put() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; put </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSharedPointer&lt; QHttpMultiPart &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>multiPart</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（静态，多部分）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">multiPart</td><td>多部分指针。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a85eba004f2c06160a70970eb29067f41_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a85eba004f2c06160a70970eb29067f41_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a85eba004f2c06160a70970eb29067f41_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a85eba004f2c06160a70970eb29067f41_cgraph">
+<area shape="rect" title="执行 HTTP PUT 请求（静态，多部分）。" alt="" coords="5,31,45,57"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="93,5,149,32"/>
+<area shape="poly" title=" " alt="" coords="44,36,77,27,78,33,46,41"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a22f664c546226be1f822589ca18f4ad1" title="执行 HTTP PUT 请求。" alt="" coords="101,56,140,83"/>
+<area shape="poly" title=" " alt="" coords="46,47,87,58,85,63,44,52"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="197,56,256,83"/>
+<area shape="poly" title=" " alt="" coords="141,67,181,67,181,72,141,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b383f0e4b68c2ec16fab30784864b90" name="a4b383f0e4b68c2ec16fab30784864b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b383f0e4b68c2ec16fab30784864b90">&#9670;&#160;</a></span>put() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool put </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkRequest &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QSharedPointer&lt; QHttpMultiPart &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>multiPart</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>receiveBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（多部分）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>网络请求。 </td></tr>
+    <tr><td class="paramname">multiPart</td><td>多部分指针。 </td></tr>
+    <tr><td class="paramname">receiveBuffer</td><td>接收缓冲区。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a4b383f0e4b68c2ec16fab30784864b90_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a4b383f0e4b68c2ec16fab30784864b90_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a4b383f0e4b68c2ec16fab30784864b90_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a4b383f0e4b68c2ec16fab30784864b90_cgraph">
+<area shape="rect" title="执行 HTTP PUT 请求（多部分）。" alt="" coords="5,5,45,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#a64d3dbab48252c734d0e35e5885a1a79" title="处理 HTTP 回复。" alt="" coords="93,5,152,32"/>
+<area shape="poly" title=" " alt="" coords="45,16,77,16,77,21,45,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a31bd76bfc7f51c3e57b5af552515bc12" name="a31bd76bfc7f51c3e57b5af552515bc12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31bd76bfc7f51c3e57b5af552515bc12">&#9670;&#160;</a></span>put() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; bool, QByteArray &gt; put </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30&#160;*&#160;1000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行 <a class="el" href="class_j_q_net_1_1_h_t_t_p.html" title="HTTP 客户端类，提供了 HTTP 请求的封装。">HTTP</a> PUT 请求（静态）。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>URL。 </td></tr>
+    <tr><td class="paramname">body</td><td>请求体。 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果和数据。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_net_1_1_h_t_t_p_a31bd76bfc7f51c3e57b5af552515bc12_cgraph.png" border="0" usemap="#aclass_j_q_net_1_1_h_t_t_p_a31bd76bfc7f51c3e57b5af552515bc12_cgraph" alt=""/></div>
+<map name="aclass_j_q_net_1_1_h_t_t_p_a31bd76bfc7f51c3e57b5af552515bc12_cgraph" id="aclass_j_q_net_1_1_h_t_t_p_a31bd76bfc7f51c3e57b5af552515bc12_cgraph">
+<area shape="rect" title="执行 HTTP PUT 请求（静态）。" alt="" coords="5,5,45,32"/>
+<area shape="rect" href="class_j_q_net_1_1_h_t_t_p.html#adf7deb08d46a7751170be7dcc63ba680" title="构造函数。" alt="" coords="93,5,149,32"/>
+<area shape="poly" title=" " alt="" coords="45,16,77,16,77,21,45,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aaa81d3ccfcaa0da38e05fe12c0463516" name="aaa81d3ccfcaa0da38e05fe12c0463516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa81d3ccfcaa0da38e05fe12c0463516">&#9670;&#160;</a></span>manage_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkAccessManager manage_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="jqnet_8h_source.html">jqnet.h</a></li>
+<li><a class="el" href="jqnet_8cpp.html">jqnet.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_j_q_net.html">JQNet</a></li><li class="navelem"><a class="el" href="class_j_q_net_1_1_h_t_t_p.html">HTTP</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

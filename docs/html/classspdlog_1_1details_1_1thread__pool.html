@@ -1,0 +1,898 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: thread_pool类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classspdlog_1_1details_1_1thread__pool.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classspdlog_1_1details_1_1thread__pool-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">thread_pool类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="thread__pool_8h_source.html">thread_pool.h</a>&gt;</code></p>
+<div class="dynheader">
+thread_pool 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool__coll__graph.png" border="0" usemap="#athread__pool_coll__map" alt="Collaboration graph"/></div>
+<map name="athread__pool_coll__map" id="athread__pool_coll__map">
+<area shape="rect" title=" " alt="" coords="38,112,127,139"/>
+<area shape="rect" href="classspdlog_1_1details_1_1mpmc__blocking__queue.html" title=" " alt="" coords="5,5,160,48"/>
+<area shape="poly" title=" " alt="" coords="85,64,85,112,80,112,80,64"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a7dc90eaba07c776ea46045f3fd6301d7" id="r_a7dc90eaba07c776ea46045f3fd6301d7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dc90eaba07c776ea46045f3fd6301d7">item_type</a> = <a class="el" href="structspdlog_1_1details_1_1async__msg.html">async_msg</a></td></tr>
+<tr class="separator:a7dc90eaba07c776ea46045f3fd6301d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1143a01e21545cc99e19cef4efd99653" id="r_a1143a01e21545cc99e19cef4efd99653"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1143a01e21545cc99e19cef4efd99653">q_type</a> = <a class="el" href="classspdlog_1_1details_1_1mpmc__blocking__queue.html">details::mpmc_blocking_queue</a>&lt;<a class="el" href="#a7dc90eaba07c776ea46045f3fd6301d7">item_type</a>&gt;</td></tr>
+<tr class="separator:a1143a01e21545cc99e19cef4efd99653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4d514949ad8cbcbc12b41fb2681ccfab" id="r_a4d514949ad8cbcbc12b41fb2681ccfab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d514949ad8cbcbc12b41fb2681ccfab">thread_pool</a> (size_t q_max_items, size_t threads_n, std::function&lt; void()&gt; on_thread_start, std::function&lt; void()&gt; on_thread_stop)</td></tr>
+<tr class="separator:a4d514949ad8cbcbc12b41fb2681ccfab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafbcb5ec9410bbe660bea9e94e8bc2b5" id="r_aafbcb5ec9410bbe660bea9e94e8bc2b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafbcb5ec9410bbe660bea9e94e8bc2b5">thread_pool</a> (size_t q_max_items, size_t threads_n, std::function&lt; void()&gt; on_thread_start)</td></tr>
+<tr class="separator:aafbcb5ec9410bbe660bea9e94e8bc2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13bc7c9076ca97f7a360cfb993c532ed" id="r_a13bc7c9076ca97f7a360cfb993c532ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13bc7c9076ca97f7a360cfb993c532ed">thread_pool</a> (size_t q_max_items, size_t threads_n)</td></tr>
+<tr class="separator:a13bc7c9076ca97f7a360cfb993c532ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5bca1a6ea7e08aa32bdb37ba7f28e7b" id="r_ae5bca1a6ea7e08aa32bdb37ba7f28e7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5bca1a6ea7e08aa32bdb37ba7f28e7b">~thread_pool</a> ()</td></tr>
+<tr class="separator:ae5bca1a6ea7e08aa32bdb37ba7f28e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacc0d51b858b7827a2b32785766a9de" id="r_aaacc0d51b858b7827a2b32785766a9de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaacc0d51b858b7827a2b32785766a9de">thread_pool</a> (const <a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> &amp;)=delete</td></tr>
+<tr class="separator:aaacc0d51b858b7827a2b32785766a9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7d3e1727aac8ca0f0c14c17da33efe" id="r_a1f7d3e1727aac8ca0f0c14c17da33efe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f7d3e1727aac8ca0f0c14c17da33efe">operator=</a> (<a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a1f7d3e1727aac8ca0f0c14c17da33efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15b8d620d3786c237137ff32c7e532b1" id="r_a15b8d620d3786c237137ff32c7e532b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15b8d620d3786c237137ff32c7e532b1">post_log</a> (<a class="el" href="namespacespdlog_1_1details.html#a0fe3349afec83b3ce3a0f175d97a39e0">async_logger_ptr</a> &amp;&amp;worker_ptr, const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg, <a class="el" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a> overflow_policy)</td></tr>
+<tr class="separator:a15b8d620d3786c237137ff32c7e532b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac734c9845fec3ae7973f5d4185a3b385" id="r_ac734c9845fec3ae7973f5d4185a3b385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac734c9845fec3ae7973f5d4185a3b385">post_flush</a> (<a class="el" href="namespacespdlog_1_1details.html#a0fe3349afec83b3ce3a0f175d97a39e0">async_logger_ptr</a> &amp;&amp;worker_ptr, <a class="el" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a> overflow_policy)</td></tr>
+<tr class="separator:ac734c9845fec3ae7973f5d4185a3b385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f2478c9271a8f675535fc836b12d640" id="r_a9f2478c9271a8f675535fc836b12d640"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f2478c9271a8f675535fc836b12d640">overrun_counter</a> ()</td></tr>
+<tr class="separator:a9f2478c9271a8f675535fc836b12d640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b5219c0051530b2730f4f736400fa80" id="r_a3b5219c0051530b2730f4f736400fa80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b5219c0051530b2730f4f736400fa80">reset_overrun_counter</a> ()</td></tr>
+<tr class="separator:a3b5219c0051530b2730f4f736400fa80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3409ed01cbf1462cc3476ef57f0fe1cb" id="r_a3409ed01cbf1462cc3476ef57f0fe1cb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3409ed01cbf1462cc3476ef57f0fe1cb">discard_counter</a> ()</td></tr>
+<tr class="separator:a3409ed01cbf1462cc3476ef57f0fe1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f334b010b7a536713006296850d9717" id="r_a7f334b010b7a536713006296850d9717"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f334b010b7a536713006296850d9717">reset_discard_counter</a> ()</td></tr>
+<tr class="separator:a7f334b010b7a536713006296850d9717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c54b1d43c8da7cceb2b42522f68081" id="r_a65c54b1d43c8da7cceb2b42522f68081"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65c54b1d43c8da7cceb2b42522f68081">queue_size</a> ()</td></tr>
+<tr class="separator:a65c54b1d43c8da7cceb2b42522f68081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a213fe20406170d611db2abd00d35503d" id="r_a213fe20406170d611db2abd00d35503d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a213fe20406170d611db2abd00d35503d">post_async_msg_</a> (<a class="el" href="structspdlog_1_1details_1_1async__msg.html">async_msg</a> &amp;&amp;new_msg, <a class="el" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a> overflow_policy)</td></tr>
+<tr class="separator:a213fe20406170d611db2abd00d35503d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619667d8eb7a6352edbe3adf1f78934b" id="r_a619667d8eb7a6352edbe3adf1f78934b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a619667d8eb7a6352edbe3adf1f78934b">worker_loop_</a> ()</td></tr>
+<tr class="separator:a619667d8eb7a6352edbe3adf1f78934b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b7afee7c1db5d9b751c98f8fde521ce" id="r_a9b7afee7c1db5d9b751c98f8fde521ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b7afee7c1db5d9b751c98f8fde521ce">process_next_msg_</a> ()</td></tr>
+<tr class="separator:a9b7afee7c1db5d9b751c98f8fde521ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a1df4576c04f31eb5dc43dbb7a293d046" id="r_a1df4576c04f31eb5dc43dbb7a293d046"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1143a01e21545cc99e19cef4efd99653">q_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1df4576c04f31eb5dc43dbb7a293d046">q_</a></td></tr>
+<tr class="separator:a1df4576c04f31eb5dc43dbb7a293d046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c5f66f3533d617fae96757507830a4" id="r_ac3c5f66f3533d617fae96757507830a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::thread &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3c5f66f3533d617fae96757507830a4">threads_</a></td></tr>
+<tr class="separator:ac3c5f66f3533d617fae96757507830a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员类型定义说明</h2>
+<a id="a7dc90eaba07c776ea46045f3fd6301d7" name="a7dc90eaba07c776ea46045f3fd6301d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dc90eaba07c776ea46045f3fd6301d7">&#9670;&#160;</a></span>item_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a7dc90eaba07c776ea46045f3fd6301d7">item_type</a> = <a class="el" href="structspdlog_1_1details_1_1async__msg.html">async_msg</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1143a01e21545cc99e19cef4efd99653" name="a1143a01e21545cc99e19cef4efd99653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1143a01e21545cc99e19cef4efd99653">&#9670;&#160;</a></span>q_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a1143a01e21545cc99e19cef4efd99653">q_type</a> = <a class="el" href="classspdlog_1_1details_1_1mpmc__blocking__queue.html">details::mpmc_blocking_queue</a>&lt;<a class="el" href="#a7dc90eaba07c776ea46045f3fd6301d7">item_type</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a4d514949ad8cbcbc12b41fb2681ccfab" name="a4d514949ad8cbcbc12b41fb2681ccfab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d514949ad8cbcbc12b41fb2681ccfab">&#9670;&#160;</a></span>thread_pool() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>q_max_items</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>threads_n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>on_thread_start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>on_thread_stop</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a4d514949ad8cbcbc12b41fb2681ccfab_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a4d514949ad8cbcbc12b41fb2681ccfab_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a4d514949ad8cbcbc12b41fb2681ccfab_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_a4d514949ad8cbcbc12b41fb2681ccfab_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,94,57"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="142,5,307,32"/>
+<area shape="poly" title=" " alt="" coords="94,35,126,30,127,36,95,40"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a619667d8eb7a6352edbe3adf1f78934b" title=" " alt="" coords="175,56,274,83"/>
+<area shape="poly" title=" " alt="" coords="95,48,160,57,160,63,94,53"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a9b7afee7c1db5d9b751c98f8fde521ce" title=" " alt="" coords="355,56,493,83"/>
+<area shape="poly" title=" " alt="" coords="274,67,339,67,339,72,274,72"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a4d514949ad8cbcbc12b41fb2681ccfab_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a4d514949ad8cbcbc12b41fb2681ccfab_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a4d514949ad8cbcbc12b41fb2681ccfab_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a4d514949ad8cbcbc12b41fb2681ccfab_icgraph">
+<area shape="rect" title=" " alt="" coords="142,81,230,108"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="11,5,88,32"/>
+<area shape="poly" title=" " alt="" coords="146,76,74,35,77,30,149,71"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#aaacc0d51b858b7827a2b32785766a9de" title=" " alt="" coords="5,56,94,83"/>
+<area shape="poly" title=" " alt="" coords="126,86,94,80,95,75,127,81"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a13bc7c9076ca97f7a360cfb993c532ed" title=" " alt="" coords="5,107,94,133"/>
+<area shape="poly" title=" " alt="" coords="127,108,95,114,94,109,126,103"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#aafbcb5ec9410bbe660bea9e94e8bc2b5" title=" " alt="" coords="5,157,94,184"/>
+<area shape="poly" title=" " alt="" coords="149,118,77,159,74,154,146,114"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aafbcb5ec9410bbe660bea9e94e8bc2b5" name="aafbcb5ec9410bbe660bea9e94e8bc2b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafbcb5ec9410bbe660bea9e94e8bc2b5">&#9670;&#160;</a></span>thread_pool() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>q_max_items</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>threads_n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>on_thread_start</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_aafbcb5ec9410bbe660bea9e94e8bc2b5_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_aafbcb5ec9410bbe660bea9e94e8bc2b5_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_aafbcb5ec9410bbe660bea9e94e8bc2b5_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_aafbcb5ec9410bbe660bea9e94e8bc2b5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,94,57"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a4d514949ad8cbcbc12b41fb2681ccfab" title=" " alt="" coords="142,31,230,57"/>
+<area shape="poly" title=" " alt="" coords="94,41,126,41,126,47,94,47"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="278,5,443,32"/>
+<area shape="poly" title=" " alt="" coords="230,35,262,30,263,36,231,40"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a619667d8eb7a6352edbe3adf1f78934b" title=" " alt="" coords="312,56,410,83"/>
+<area shape="poly" title=" " alt="" coords="231,48,297,57,296,63,230,53"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a9b7afee7c1db5d9b751c98f8fde521ce" title=" " alt="" coords="491,56,630,83"/>
+<area shape="poly" title=" " alt="" coords="410,67,476,67,476,72,410,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a13bc7c9076ca97f7a360cfb993c532ed" name="a13bc7c9076ca97f7a360cfb993c532ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13bc7c9076ca97f7a360cfb993c532ed">&#9670;&#160;</a></span>thread_pool() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>q_max_items</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>threads_n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a13bc7c9076ca97f7a360cfb993c532ed_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a13bc7c9076ca97f7a360cfb993c532ed_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a13bc7c9076ca97f7a360cfb993c532ed_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_a13bc7c9076ca97f7a360cfb993c532ed_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,94,57"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a4d514949ad8cbcbc12b41fb2681ccfab" title=" " alt="" coords="142,31,230,57"/>
+<area shape="poly" title=" " alt="" coords="94,41,126,41,126,47,94,47"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="278,5,443,32"/>
+<area shape="poly" title=" " alt="" coords="230,35,262,30,263,36,231,40"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a619667d8eb7a6352edbe3adf1f78934b" title=" " alt="" coords="312,56,410,83"/>
+<area shape="poly" title=" " alt="" coords="231,48,297,57,296,63,230,53"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a9b7afee7c1db5d9b751c98f8fde521ce" title=" " alt="" coords="491,56,630,83"/>
+<area shape="poly" title=" " alt="" coords="410,67,476,67,476,72,410,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae5bca1a6ea7e08aa32bdb37ba7f28e7b" name="ae5bca1a6ea7e08aa32bdb37ba7f28e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5bca1a6ea7e08aa32bdb37ba7f28e7b">&#9670;&#160;</a></span>~thread_pool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> ~<a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_ae5bca1a6ea7e08aa32bdb37ba7f28e7b_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_ae5bca1a6ea7e08aa32bdb37ba7f28e7b_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_ae5bca1a6ea7e08aa32bdb37ba7f28e7b_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_ae5bca1a6ea7e08aa32bdb37ba7f28e7b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,102,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a213fe20406170d611db2abd00d35503d" title=" " alt="" coords="150,5,277,32"/>
+<area shape="poly" title=" " alt="" coords="102,16,134,16,134,21,102,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaacc0d51b858b7827a2b32785766a9de" name="aaacc0d51b858b7827a2b32785766a9de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacc0d51b858b7827a2b32785766a9de">&#9670;&#160;</a></span>thread_pool() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_aaacc0d51b858b7827a2b32785766a9de_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_aaacc0d51b858b7827a2b32785766a9de_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_aaacc0d51b858b7827a2b32785766a9de_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_aaacc0d51b858b7827a2b32785766a9de_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,94,57"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a4d514949ad8cbcbc12b41fb2681ccfab" title=" " alt="" coords="142,31,230,57"/>
+<area shape="poly" title=" " alt="" coords="94,41,126,41,126,47,94,47"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="278,5,443,32"/>
+<area shape="poly" title=" " alt="" coords="230,35,262,30,263,36,231,40"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a619667d8eb7a6352edbe3adf1f78934b" title=" " alt="" coords="312,56,410,83"/>
+<area shape="poly" title=" " alt="" coords="231,48,297,57,296,63,230,53"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a9b7afee7c1db5d9b751c98f8fde521ce" title=" " alt="" coords="491,56,630,83"/>
+<area shape="poly" title=" " alt="" coords="410,67,476,67,476,72,410,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a3409ed01cbf1462cc3476ef57f0fe1cb" name="a3409ed01cbf1462cc3476ef57f0fe1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3409ed01cbf1462cc3476ef57f0fe1cb">&#9670;&#160;</a></span>discard_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> discard_counter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a3409ed01cbf1462cc3476ef57f0fe1cb_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a3409ed01cbf1462cc3476ef57f0fe1cb_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a3409ed01cbf1462cc3476ef57f0fe1cb_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a3409ed01cbf1462cc3476ef57f0fe1cb_icgraph">
+<area shape="rect" title=" " alt="" coords="130,5,243,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1f7d3e1727aac8ca0f0c14c17da33efe" name="a1f7d3e1727aac8ca0f0c14c17da33efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f7d3e1727aac8ca0f0c14c17da33efe">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> &amp; operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a1f7d3e1727aac8ca0f0c14c17da33efe_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a1f7d3e1727aac8ca0f0c14c17da33efe_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a1f7d3e1727aac8ca0f0c14c17da33efe_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_a1f7d3e1727aac8ca0f0c14c17da33efe_cgraph">
+<area shape="rect" title=" " alt="" coords="5,183,82,209"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a3409ed01cbf1462cc3476ef57f0fe1cb" title=" " alt="" coords="148,5,262,32"/>
+<area shape="poly" title=" " alt="" coords="46,181,73,115,97,76,128,42,133,38,137,42,131,46,101,79,78,117,51,183"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a9f2478c9271a8f675535fc836b12d640" title=" " alt="" coords="148,56,262,83"/>
+<area shape="poly" title=" " alt="" coords="51,181,81,138,103,113,128,93,136,87,139,92,131,97,107,117,85,141,55,184"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#ac734c9845fec3ae7973f5d4185a3b385" title=" " alt="" coords="164,107,246,133"/>
+<area shape="poly" title=" " alt="" coords="64,180,128,143,149,134,151,139,131,148,67,184"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a15b8d620d3786c237137ff32c7e532b1" title=" " alt="" coords="170,157,240,184"/>
+<area shape="poly" title=" " alt="" coords="82,187,154,176,155,181,82,193"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a65c54b1d43c8da7cceb2b42522f68081" title=" " alt="" coords="161,208,248,235"/>
+<area shape="poly" title=" " alt="" coords="82,199,146,210,145,215,82,205"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a7f334b010b7a536713006296850d9717" title=" " alt="" coords="130,259,280,285"/>
+<area shape="poly" title=" " alt="" coords="67,208,131,244,145,250,143,255,128,249,64,212"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a3b5219c0051530b2730f4f736400fa80" title=" " alt="" coords="130,309,280,336"/>
+<area shape="poly" title=" " alt="" coords="55,208,85,251,107,275,131,295,139,300,136,305,128,299,103,279,81,254,51,211"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a4d514949ad8cbcbc12b41fb2681ccfab" title=" " alt="" coords="161,360,249,387"/>
+<area shape="poly" title=" " alt="" coords="51,209,78,275,101,313,131,346,148,356,145,361,128,350,97,316,73,277,46,211"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a213fe20406170d611db2abd00d35503d" title=" " alt="" coords="347,132,474,159"/>
+<area shape="poly" title=" " alt="" coords="246,122,332,133,331,138,245,128"/>
+<area shape="poly" title=" " alt="" coords="240,164,331,152,332,158,241,169"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="328,335,493,361"/>
+<area shape="poly" title=" " alt="" coords="249,365,312,357,312,363,250,371"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a619667d8eb7a6352edbe3adf1f78934b" title=" " alt="" coords="362,385,460,412"/>
+<area shape="poly" title=" " alt="" coords="250,376,346,388,346,393,249,381"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a9b7afee7c1db5d9b751c98f8fde521ce" title=" " alt="" coords="541,385,680,412"/>
+<area shape="poly" title=" " alt="" coords="460,396,526,396,526,401,460,401"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f2478c9271a8f675535fc836b12d640" name="a9f2478c9271a8f675535fc836b12d640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f2478c9271a8f675535fc836b12d640">&#9670;&#160;</a></span>overrun_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> overrun_counter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a9f2478c9271a8f675535fc836b12d640_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a9f2478c9271a8f675535fc836b12d640_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a9f2478c9271a8f675535fc836b12d640_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a9f2478c9271a8f675535fc836b12d640_icgraph">
+<area shape="rect" title=" " alt="" coords="130,5,244,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a213fe20406170d611db2abd00d35503d" name="a213fe20406170d611db2abd00d35503d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213fe20406170d611db2abd00d35503d">&#9670;&#160;</a></span>post_async_msg_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> post_async_msg_ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structspdlog_1_1details_1_1async__msg.html">async_msg</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>new_msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a></td>          <td class="paramname"><span class="paramname"><em>overflow_policy</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a213fe20406170d611db2abd00d35503d_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a213fe20406170d611db2abd00d35503d_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a213fe20406170d611db2abd00d35503d_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a213fe20406170d611db2abd00d35503d_icgraph">
+<area shape="rect" title=" " alt="" coords="274,56,401,83"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#ac734c9845fec3ae7973f5d4185a3b385" title=" " alt="" coords="137,5,218,32"/>
+<area shape="poly" title=" " alt="" coords="278,53,218,34,220,29,279,48"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a15b8d620d3786c237137ff32c7e532b1" title=" " alt="" coords="143,56,213,83"/>
+<area shape="poly" title=" " alt="" coords="259,72,213,72,213,67,259,67"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#ae5bca1a6ea7e08aa32bdb37ba7f28e7b" title=" " alt="" coords="130,107,226,133"/>
+<area shape="poly" title=" " alt="" coords="279,91,223,109,222,104,278,85"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="5,31,82,57"/>
+<area shape="poly" title=" " alt="" coords="122,32,83,39,82,34,121,27"/>
+<area shape="poly" title=" " alt="" coords="127,62,82,54,83,49,128,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac734c9845fec3ae7973f5d4185a3b385" name="ac734c9845fec3ae7973f5d4185a3b385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac734c9845fec3ae7973f5d4185a3b385">&#9670;&#160;</a></span>post_flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> post_flush </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog_1_1details.html#a0fe3349afec83b3ce3a0f175d97a39e0">async_logger_ptr</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>worker_ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a></td>          <td class="paramname"><span class="paramname"><em>overflow_policy</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_ac734c9845fec3ae7973f5d4185a3b385_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_ac734c9845fec3ae7973f5d4185a3b385_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_ac734c9845fec3ae7973f5d4185a3b385_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_ac734c9845fec3ae7973f5d4185a3b385_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,87,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a213fe20406170d611db2abd00d35503d" title=" " alt="" coords="135,5,262,32"/>
+<area shape="poly" title=" " alt="" coords="87,16,119,16,119,21,87,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_ac734c9845fec3ae7973f5d4185a3b385_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_ac734c9845fec3ae7973f5d4185a3b385_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_ac734c9845fec3ae7973f5d4185a3b385_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_ac734c9845fec3ae7973f5d4185a3b385_icgraph">
+<area shape="rect" title=" " alt="" coords="130,5,211,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a15b8d620d3786c237137ff32c7e532b1" name="a15b8d620d3786c237137ff32c7e532b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15b8d620d3786c237137ff32c7e532b1">&#9670;&#160;</a></span>post_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> post_log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog_1_1details.html#a0fe3349afec83b3ce3a0f175d97a39e0">async_logger_ptr</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>worker_ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a></td>          <td class="paramname"><span class="paramname"><em>overflow_policy</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a15b8d620d3786c237137ff32c7e532b1_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a15b8d620d3786c237137ff32c7e532b1_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a15b8d620d3786c237137ff32c7e532b1_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_a15b8d620d3786c237137ff32c7e532b1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a213fe20406170d611db2abd00d35503d" title=" " alt="" coords="124,5,251,32"/>
+<area shape="poly" title=" " alt="" coords="76,16,108,16,108,21,76,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a15b8d620d3786c237137ff32c7e532b1_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a15b8d620d3786c237137ff32c7e532b1_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a15b8d620d3786c237137ff32c7e532b1_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a15b8d620d3786c237137ff32c7e532b1_icgraph">
+<area shape="rect" title=" " alt="" coords="130,5,200,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b7afee7c1db5d9b751c98f8fde521ce" name="a9b7afee7c1db5d9b751c98f8fde521ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b7afee7c1db5d9b751c98f8fde521ce">&#9670;&#160;</a></span>process_next_msg_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> process_next_msg_ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a9b7afee7c1db5d9b751c98f8fde521ce_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a9b7afee7c1db5d9b751c98f8fde521ce_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a9b7afee7c1db5d9b751c98f8fde521ce_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a9b7afee7c1db5d9b751c98f8fde521ce_icgraph">
+<area shape="rect" title=" " alt="" coords="424,81,563,108"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a619667d8eb7a6352edbe3adf1f78934b" title=" " alt="" coords="278,81,376,108"/>
+<area shape="poly" title=" " alt="" coords="408,97,377,97,377,92,408,92"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a4d514949ad8cbcbc12b41fb2681ccfab" title=" " alt="" coords="142,81,230,108"/>
+<area shape="poly" title=" " alt="" coords="262,97,230,97,230,92,262,92"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="11,5,88,32"/>
+<area shape="poly" title=" " alt="" coords="146,76,74,35,77,30,149,71"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#aaacc0d51b858b7827a2b32785766a9de" title=" " alt="" coords="5,56,94,83"/>
+<area shape="poly" title=" " alt="" coords="126,86,94,80,95,75,127,81"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a13bc7c9076ca97f7a360cfb993c532ed" title=" " alt="" coords="5,107,94,133"/>
+<area shape="poly" title=" " alt="" coords="127,108,95,114,94,109,126,103"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#aafbcb5ec9410bbe660bea9e94e8bc2b5" title=" " alt="" coords="5,157,94,184"/>
+<area shape="poly" title=" " alt="" coords="149,118,77,159,74,154,146,114"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a65c54b1d43c8da7cceb2b42522f68081" name="a65c54b1d43c8da7cceb2b42522f68081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65c54b1d43c8da7cceb2b42522f68081">&#9670;&#160;</a></span>queue_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> queue_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a65c54b1d43c8da7cceb2b42522f68081_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a65c54b1d43c8da7cceb2b42522f68081_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a65c54b1d43c8da7cceb2b42522f68081_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a65c54b1d43c8da7cceb2b42522f68081_icgraph">
+<area shape="rect" title=" " alt="" coords="130,5,217,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7f334b010b7a536713006296850d9717" name="a7f334b010b7a536713006296850d9717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f334b010b7a536713006296850d9717">&#9670;&#160;</a></span>reset_discard_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> reset_discard_counter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a7f334b010b7a536713006296850d9717_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a7f334b010b7a536713006296850d9717_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a7f334b010b7a536713006296850d9717_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a7f334b010b7a536713006296850d9717_icgraph">
+<area shape="rect" title=" " alt="" coords="130,5,279,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3b5219c0051530b2730f4f736400fa80" name="a3b5219c0051530b2730f4f736400fa80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b5219c0051530b2730f4f736400fa80">&#9670;&#160;</a></span>reset_overrun_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> reset_overrun_counter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a3b5219c0051530b2730f4f736400fa80_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a3b5219c0051530b2730f4f736400fa80_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a3b5219c0051530b2730f4f736400fa80_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a3b5219c0051530b2730f4f736400fa80_icgraph">
+<area shape="rect" title=" " alt="" coords="130,5,280,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a619667d8eb7a6352edbe3adf1f78934b" name="a619667d8eb7a6352edbe3adf1f78934b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a619667d8eb7a6352edbe3adf1f78934b">&#9670;&#160;</a></span>worker_loop_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> worker_loop_ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a619667d8eb7a6352edbe3adf1f78934b_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a619667d8eb7a6352edbe3adf1f78934b_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a619667d8eb7a6352edbe3adf1f78934b_cgraph" id="aclassspdlog_1_1details_1_1thread__pool_a619667d8eb7a6352edbe3adf1f78934b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,104,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a9b7afee7c1db5d9b751c98f8fde521ce" title=" " alt="" coords="152,5,290,32"/>
+<area shape="poly" title=" " alt="" coords="104,16,136,16,136,21,104,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1thread__pool_a619667d8eb7a6352edbe3adf1f78934b_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1thread__pool_a619667d8eb7a6352edbe3adf1f78934b_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1thread__pool_a619667d8eb7a6352edbe3adf1f78934b_icgraph" id="aclassspdlog_1_1details_1_1thread__pool_a619667d8eb7a6352edbe3adf1f78934b_icgraph">
+<area shape="rect" title=" " alt="" coords="278,81,376,108"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a4d514949ad8cbcbc12b41fb2681ccfab" title=" " alt="" coords="142,81,230,108"/>
+<area shape="poly" title=" " alt="" coords="262,97,230,97,230,92,262,92"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a1f7d3e1727aac8ca0f0c14c17da33efe" title=" " alt="" coords="11,5,88,32"/>
+<area shape="poly" title=" " alt="" coords="146,76,74,35,77,30,149,71"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#aaacc0d51b858b7827a2b32785766a9de" title=" " alt="" coords="5,56,94,83"/>
+<area shape="poly" title=" " alt="" coords="126,86,94,80,95,75,127,81"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#a13bc7c9076ca97f7a360cfb993c532ed" title=" " alt="" coords="5,107,94,133"/>
+<area shape="poly" title=" " alt="" coords="127,108,95,114,94,109,126,103"/>
+<area shape="rect" href="classspdlog_1_1details_1_1thread__pool.html#aafbcb5ec9410bbe660bea9e94e8bc2b5" title=" " alt="" coords="5,157,94,184"/>
+<area shape="poly" title=" " alt="" coords="149,118,77,159,74,154,146,114"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a1df4576c04f31eb5dc43dbb7a293d046" name="a1df4576c04f31eb5dc43dbb7a293d046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df4576c04f31eb5dc43dbb7a293d046">&#9670;&#160;</a></span>q_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a1143a01e21545cc99e19cef4efd99653">q_type</a> q_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3c5f66f3533d617fae96757507830a4" name="ac3c5f66f3533d617fae96757507830a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c5f66f3533d617fae96757507830a4">&#9670;&#160;</a></span>threads_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::thread&gt; threads_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="thread__pool_8h_source.html">thread_pool.h</a></li>
+<li><a class="el" href="thread__pool-inl_8h_source.html">thread_pool-inl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="namespacespdlog_1_1details.html">details</a></li><li class="navelem"><a class="el" href="classspdlog_1_1details_1_1thread__pool.html">thread_pool</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

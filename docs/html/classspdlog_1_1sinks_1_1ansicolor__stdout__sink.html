@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ansicolor_stdout_sink&lt; ConsoleMutex &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ansicolor_stdout_sink&lt; ConsoleMutex &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ansicolor__sink_8h_source.html">ansicolor_sink.h</a>&gt;</code></p>
+<div class="dynheader">
+类 ansicolor_stdout_sink&lt; ConsoleMutex &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__stdout__sink__inherit__graph.png" border="0" usemap="#aansicolor__stdout__sink_3_01_console_mutex_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="aansicolor__stdout__sink_3_01_console_mutex_01_4_inherit__map" id="aansicolor__stdout__sink_3_01_console_mutex_01_4_inherit__map">
+<area shape="rect" title=" " alt="" coords="38,155,185,197"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html" title="This sink prefixes the output with an ANSI escape sequence color code depending on the severity of th..." alt="" coords="5,80,218,107"/>
+<area shape="poly" title=" " alt="" coords="114,122,114,154,109,154,109,122"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1sink.html" title=" " alt="" coords="89,5,134,32"/>
+<area shape="poly" title=" " alt="" coords="114,48,114,80,109,80,109,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+ansicolor_stdout_sink&lt; ConsoleMutex &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__stdout__sink__coll__graph.png" border="0" usemap="#aansicolor__stdout__sink_3_01_console_mutex_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aansicolor__stdout__sink_3_01_console_mutex_01_4_coll__map" id="aansicolor__stdout__sink_3_01_console_mutex_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="38,155,185,197"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html" title="This sink prefixes the output with an ANSI escape sequence color code depending on the severity of th..." alt="" coords="5,80,218,107"/>
+<area shape="poly" title=" " alt="" coords="114,122,114,154,109,154,109,122"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1sink.html" title=" " alt="" coords="89,5,134,32"/>
+<area shape="poly" title=" " alt="" coords="114,48,114,80,109,80,109,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aacd2cc45caf1478ef3b21e3a952df0b9" id="r_aacd2cc45caf1478ef3b21e3a952df0b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacd2cc45caf1478ef3b21e3a952df0b9">ansicolor_stdout_sink</a> (<a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode=<a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4ba2bd9c0ed00116be1258e0cc66617d7c8">color_mode::automatic</a>)</td></tr>
+<tr class="separator:aacd2cc45caf1478ef3b21e3a952df0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink&lt; ConsoleMutex &gt;</a></td></tr>
+<tr class="memitem:a0fa9feccb7636d5e9719cedf1717b782 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a0fa9feccb7636d5e9719cedf1717b782"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fa9feccb7636d5e9719cedf1717b782">ansicolor_sink</a> (FILE *target_file, <a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode)</td></tr>
+<tr class="separator:a0fa9feccb7636d5e9719cedf1717b782 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea73f5d3b40341a99141e53ef73c4668 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_aea73f5d3b40341a99141e53ef73c4668"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#aea73f5d3b40341a99141e53ef73c4668">~ansicolor_sink</a> () override=default</td></tr>
+<tr class="separator:aea73f5d3b40341a99141e53ef73c4668 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e7309e63cf2c1735e56017c942a201 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ab2e7309e63cf2c1735e56017c942a201"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ab2e7309e63cf2c1735e56017c942a201">ansicolor_sink</a> (const <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;other)=delete</td></tr>
+<tr class="separator:ab2e7309e63cf2c1735e56017c942a201 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af206c246080ea0ac9365c0c56bc83ee2 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_af206c246080ea0ac9365c0c56bc83ee2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af206c246080ea0ac9365c0c56bc83ee2">ansicolor_sink</a> (<a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;&amp;other)=delete</td></tr>
+<tr class="separator:af206c246080ea0ac9365c0c56bc83ee2 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad709755c951c8fc49a56d4a29de39b9a inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ad709755c951c8fc49a56d4a29de39b9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ad709755c951c8fc49a56d4a29de39b9a">operator=</a> (const <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;other)=delete</td></tr>
+<tr class="separator:ad709755c951c8fc49a56d4a29de39b9a inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40795ac98f509d9e6c3e72b04850c2a4 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a40795ac98f509d9e6c3e72b04850c2a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a40795ac98f509d9e6c3e72b04850c2a4">operator=</a> (<a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink</a> &amp;&amp;other)=delete</td></tr>
+<tr class="separator:a40795ac98f509d9e6c3e72b04850c2a4 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa310a9f334aa7730d36636b7dd7e3bd inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_aaa310a9f334aa7730d36636b7dd7e3bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#aaa310a9f334aa7730d36636b7dd7e3bd">set_color</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> color_level, <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> <a class="el" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>)</td></tr>
+<tr class="separator:aaa310a9f334aa7730d36636b7dd7e3bd inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44fc2263f5a2a2252290fb2baa165bed inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a44fc2263f5a2a2252290fb2baa165bed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a44fc2263f5a2a2252290fb2baa165bed">set_color_mode</a> (<a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode)</td></tr>
+<tr class="separator:a44fc2263f5a2a2252290fb2baa165bed inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae540bb6a150d702279cfefbe0ed0eca8 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ae540bb6a150d702279cfefbe0ed0eca8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ae540bb6a150d702279cfefbe0ed0eca8">should_color</a> () const</td></tr>
+<tr class="separator:ae540bb6a150d702279cfefbe0ed0eca8 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1973c0f40704ebfac3184e7a744eaa34 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a1973c0f40704ebfac3184e7a744eaa34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a1973c0f40704ebfac3184e7a744eaa34">log</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg) override</td></tr>
+<tr class="separator:a1973c0f40704ebfac3184e7a744eaa34 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27ac71c242af9c62af634beab0798d4 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ac27ac71c242af9c62af634beab0798d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ac27ac71c242af9c62af634beab0798d4">flush</a> () override</td></tr>
+<tr class="separator:ac27ac71c242af9c62af634beab0798d4 inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a540c68ae5802ece99525f62725060fcd inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a540c68ae5802ece99525f62725060fcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a540c68ae5802ece99525f62725060fcd">set_pattern</a> (const std::string &amp;pattern) final override</td></tr>
+<tr class="separator:a540c68ae5802ece99525f62725060fcd inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390b6915455eacb92d1a8914713d0b8f inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a390b6915455eacb92d1a8914713d0b8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a390b6915455eacb92d1a8914713d0b8f">set_formatter</a> (std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt; sink_formatter) override</td></tr>
+<tr class="separator:a390b6915455eacb92d1a8914713d0b8f inherit pub_methods_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classspdlog_1_1sinks_1_1sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classspdlog_1_1sinks_1_1sink')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classspdlog_1_1sinks_1_1sink.html">sink</a></td></tr>
+<tr class="memitem:a4378311607e5dff017f9f574a848d3b4 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a4378311607e5dff017f9f574a848d3b4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a4378311607e5dff017f9f574a848d3b4">~sink</a> ()=default</td></tr>
+<tr class="separator:a4378311607e5dff017f9f574a848d3b4 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b86abe856316546dfa0c1f676ee88be inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a2b86abe856316546dfa0c1f676ee88be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a2b86abe856316546dfa0c1f676ee88be">set_level</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> log_level)</td></tr>
+<tr class="separator:a2b86abe856316546dfa0c1f676ee88be inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe26ed0ab5a746f64453de6477b32479 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_abe26ed0ab5a746f64453de6477b32479"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#abe26ed0ab5a746f64453de6477b32479">level</a> () const</td></tr>
+<tr class="separator:abe26ed0ab5a746f64453de6477b32479 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ca95bf1c42999b200c46021a464410 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a60ca95bf1c42999b200c46021a464410"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a60ca95bf1c42999b200c46021a464410">should_log</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> msg_level) const</td></tr>
+<tr class="separator:a60ca95bf1c42999b200c46021a464410 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_types_classspdlog_1_1sinks_1_1ansicolor__sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classspdlog_1_1sinks_1_1ansicolor__sink')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink&lt; ConsoleMutex &gt;</a></td></tr>
+<tr class="memitem:a252c0b81a272a961f6d8deee79ee2611 inherit pub_types_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a252c0b81a272a961f6d8deee79ee2611"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a252c0b81a272a961f6d8deee79ee2611">mutex_t</a> = typename ConsoleMutex::mutex_t</td></tr>
+<tr class="separator:a252c0b81a272a961f6d8deee79ee2611 inherit pub_types_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink')"><img src="closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html">ansicolor_sink&lt; ConsoleMutex &gt;</a></td></tr>
+<tr class="memitem:ab9bbdfadb4588031f86db4d251643cca inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ab9bbdfadb4588031f86db4d251643cca"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ab9bbdfadb4588031f86db4d251643cca">reset</a> = &quot;\033[m&quot;</td></tr>
+<tr class="separator:ab9bbdfadb4588031f86db4d251643cca inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c193ee3c3100e45079164f274cdcea inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_af4c193ee3c3100e45079164f274cdcea"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af4c193ee3c3100e45079164f274cdcea">bold</a> = &quot;\033[1m&quot;</td></tr>
+<tr class="separator:af4c193ee3c3100e45079164f274cdcea inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f26fbde30c638343da9c970231ee21 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a47f26fbde30c638343da9c970231ee21"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a47f26fbde30c638343da9c970231ee21">dark</a> = &quot;\033[2m&quot;</td></tr>
+<tr class="separator:a47f26fbde30c638343da9c970231ee21 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fcb19bb1ecf3f9745c92f82f3995fe1 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a0fcb19bb1ecf3f9745c92f82f3995fe1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fcb19bb1ecf3f9745c92f82f3995fe1">underline</a> = &quot;\033[4m&quot;</td></tr>
+<tr class="separator:a0fcb19bb1ecf3f9745c92f82f3995fe1 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a568a3accb355a50ba9749c7767abe6 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a2a568a3accb355a50ba9749c7767abe6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a2a568a3accb355a50ba9749c7767abe6">blink</a> = &quot;\033[5m&quot;</td></tr>
+<tr class="separator:a2a568a3accb355a50ba9749c7767abe6 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c4e3da1f058fe5ea24e040be4fd3a2 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a65c4e3da1f058fe5ea24e040be4fd3a2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a65c4e3da1f058fe5ea24e040be4fd3a2">reverse</a> = &quot;\033[7m&quot;</td></tr>
+<tr class="separator:a65c4e3da1f058fe5ea24e040be4fd3a2 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c57ab4f4ef13a4fd51361ada8ea160 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_af4c57ab4f4ef13a4fd51361ada8ea160"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af4c57ab4f4ef13a4fd51361ada8ea160">concealed</a> = &quot;\033[8m&quot;</td></tr>
+<tr class="separator:af4c57ab4f4ef13a4fd51361ada8ea160 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b6d6354f46a1745546e12538768d52 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ac3b6d6354f46a1745546e12538768d52"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ac3b6d6354f46a1745546e12538768d52">clear_line</a> = &quot;\033[K&quot;</td></tr>
+<tr class="separator:ac3b6d6354f46a1745546e12538768d52 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10165b46848726cc14f52b151305d88c inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a10165b46848726cc14f52b151305d88c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a10165b46848726cc14f52b151305d88c">black</a> = &quot;\033[30m&quot;</td></tr>
+<tr class="separator:a10165b46848726cc14f52b151305d88c inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7aa7f02fabdbaf47612576f6a428288 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ac7aa7f02fabdbaf47612576f6a428288"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ac7aa7f02fabdbaf47612576f6a428288">red</a> = &quot;\033[31m&quot;</td></tr>
+<tr class="separator:ac7aa7f02fabdbaf47612576f6a428288 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5835f7214531f5427fa9118cd93403b0 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a5835f7214531f5427fa9118cd93403b0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a5835f7214531f5427fa9118cd93403b0">green</a> = &quot;\033[32m&quot;</td></tr>
+<tr class="separator:a5835f7214531f5427fa9118cd93403b0 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1cb70874a8b41e4450ea859e57379f6 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ad1cb70874a8b41e4450ea859e57379f6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ad1cb70874a8b41e4450ea859e57379f6">yellow</a> = &quot;\033[33m&quot;</td></tr>
+<tr class="separator:ad1cb70874a8b41e4450ea859e57379f6 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707f45b2ec6546536ed6f65ec6240a7a inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a707f45b2ec6546536ed6f65ec6240a7a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a707f45b2ec6546536ed6f65ec6240a7a">blue</a> = &quot;\033[34m&quot;</td></tr>
+<tr class="separator:a707f45b2ec6546536ed6f65ec6240a7a inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b8a39efdee258a0e061ef22ab93a40 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ae7b8a39efdee258a0e061ef22ab93a40"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ae7b8a39efdee258a0e061ef22ab93a40">magenta</a> = &quot;\033[35m&quot;</td></tr>
+<tr class="separator:ae7b8a39efdee258a0e061ef22ab93a40 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262f74f7d2be8f819ef40a05cf3f7278 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a262f74f7d2be8f819ef40a05cf3f7278"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a262f74f7d2be8f819ef40a05cf3f7278">cyan</a> = &quot;\033[36m&quot;</td></tr>
+<tr class="separator:a262f74f7d2be8f819ef40a05cf3f7278 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc60a2b1b48affde505713b5fb3a40c inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a2dc60a2b1b48affde505713b5fb3a40c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a2dc60a2b1b48affde505713b5fb3a40c">white</a> = &quot;\033[37m&quot;</td></tr>
+<tr class="separator:a2dc60a2b1b48affde505713b5fb3a40c inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243cb402561d056b1dff739d313b3d99 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a243cb402561d056b1dff739d313b3d99"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a243cb402561d056b1dff739d313b3d99">on_black</a> = &quot;\033[40m&quot;</td></tr>
+<tr class="memdesc:a243cb402561d056b1dff739d313b3d99 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="mdescLeft">&#160;</td><td class="mdescRight">Background colors  <br /></td></tr>
+<tr class="separator:a243cb402561d056b1dff739d313b3d99 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83bdc91661e6e1a8ab92f590e2190ad inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_ad83bdc91661e6e1a8ab92f590e2190ad"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#ad83bdc91661e6e1a8ab92f590e2190ad">on_red</a> = &quot;\033[41m&quot;</td></tr>
+<tr class="separator:ad83bdc91661e6e1a8ab92f590e2190ad inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1928499826d7d013ab6a21c76080a97f inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a1928499826d7d013ab6a21c76080a97f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a1928499826d7d013ab6a21c76080a97f">on_green</a> = &quot;\033[42m&quot;</td></tr>
+<tr class="separator:a1928499826d7d013ab6a21c76080a97f inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a89bbbd55ac4f9b0d1787ddce4cfc04 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a5a89bbbd55ac4f9b0d1787ddce4cfc04"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a5a89bbbd55ac4f9b0d1787ddce4cfc04">on_yellow</a> = &quot;\033[43m&quot;</td></tr>
+<tr class="separator:a5a89bbbd55ac4f9b0d1787ddce4cfc04 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ab6d808e2632d8f02db3966e57c518 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a53ab6d808e2632d8f02db3966e57c518"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a53ab6d808e2632d8f02db3966e57c518">on_blue</a> = &quot;\033[44m&quot;</td></tr>
+<tr class="separator:a53ab6d808e2632d8f02db3966e57c518 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b40e5ec43f3c39fd52ef9661940d014 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a3b40e5ec43f3c39fd52ef9661940d014"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a3b40e5ec43f3c39fd52ef9661940d014">on_magenta</a> = &quot;\033[45m&quot;</td></tr>
+<tr class="separator:a3b40e5ec43f3c39fd52ef9661940d014 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abec7057bc27e1398a040528f9a915af2 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_abec7057bc27e1398a040528f9a915af2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#abec7057bc27e1398a040528f9a915af2">on_cyan</a> = &quot;\033[46m&quot;</td></tr>
+<tr class="separator:abec7057bc27e1398a040528f9a915af2 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323b1c8113ccbb47abd2e7982ece2515 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a323b1c8113ccbb47abd2e7982ece2515"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a323b1c8113ccbb47abd2e7982ece2515">on_white</a> = &quot;\033[47m&quot;</td></tr>
+<tr class="separator:a323b1c8113ccbb47abd2e7982ece2515 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1912caa8105bdd08ab0f020f6fd49b inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_aaa1912caa8105bdd08ab0f020f6fd49b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#aaa1912caa8105bdd08ab0f020f6fd49b">yellow_bold</a> = &quot;\033[33m\033[1m&quot;</td></tr>
+<tr class="memdesc:aaa1912caa8105bdd08ab0f020f6fd49b inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold colors  <br /></td></tr>
+<tr class="separator:aaa1912caa8105bdd08ab0f020f6fd49b inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1c1048c90419d50d1f071d7012f731 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a8f1c1048c90419d50d1f071d7012f731"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a8f1c1048c90419d50d1f071d7012f731">red_bold</a> = &quot;\033[31m\033[1m&quot;</td></tr>
+<tr class="separator:a8f1c1048c90419d50d1f071d7012f731 inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d6137f44fd2813de6e0a89ce5f28de inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink" id="r_a18d6137f44fd2813de6e0a89ce5f28de"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a18d6137f44fd2813de6e0a89ce5f28de">bold_on_red</a> = &quot;\033[1m\033[41m&quot;</td></tr>
+<tr class="separator:a18d6137f44fd2813de6e0a89ce5f28de inherit pub_attribs_classspdlog_1_1sinks_1_1ansicolor__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classspdlog_1_1sinks_1_1sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classspdlog_1_1sinks_1_1sink')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classspdlog_1_1sinks_1_1sink.html">sink</a></td></tr>
+<tr class="memitem:a0bd568016e714bb3d63c3f44171d7c88 inherit pro_attribs_classspdlog_1_1sinks_1_1sink" id="r_a0bd568016e714bb3d63c3f44171d7c88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog.html#aea7e92c1b5fd7b8c04ceffd31bfa3e7c">level_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a0bd568016e714bb3d63c3f44171d7c88">level_</a> {<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109a36a3b17acbfb35380a47b3d88c9b8942">level::trace</a>}</td></tr>
+<tr class="separator:a0bd568016e714bb3d63c3f44171d7c88 inherit pro_attribs_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aacd2cc45caf1478ef3b21e3a952df0b9" name="aacd2cc45caf1478ef3b21e3a952df0b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd2cc45caf1478ef3b21e3a952df0b9">&#9670;&#160;</a></span>ansicolor_stdout_sink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConsoleMutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html">ansicolor_stdout_sink</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4ba2bd9c0ed00116be1258e0cc66617d7c8">color_mode::automatic</a></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1ansicolor__stdout__sink_aacd2cc45caf1478ef3b21e3a952df0b9_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1ansicolor__stdout__sink_aacd2cc45caf1478ef3b21e3a952df0b9_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1ansicolor__stdout__sink_aacd2cc45caf1478ef3b21e3a952df0b9_cgraph" id="aclassspdlog_1_1sinks_1_1ansicolor__stdout__sink_aacd2cc45caf1478ef3b21e3a952df0b9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,47,153,73"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a0fa9feccb7636d5e9719cedf1717b782" title=" " alt="" coords="201,39,359,81"/>
+<area shape="poly" title=" " alt="" coords="153,57,185,57,185,63,153,63"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#a151679f3083dc4e7ec8970674a4b12a8" title=" " alt="" coords="407,5,566,48"/>
+<area shape="poly" title=" " alt="" coords="359,45,391,39,392,45,360,50"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1ansicolor__sink.html#af491629f16ee9fb2c8f02afe2c53db58" title=" " alt="" coords="408,72,566,115"/>
+<area shape="poly" title=" " alt="" coords="360,70,392,75,391,81,359,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="ansicolor__sink_8h_source.html">ansicolor_sink.h</a></li>
+<li><a class="el" href="ansicolor__sink-inl_8h_source.html">ansicolor_sink-inl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="namespacespdlog_1_1sinks.html">sinks</a></li><li class="navelem"><a class="el" href="classspdlog_1_1sinks_1_1ansicolor__stdout__sink.html">ansicolor_stdout_sink</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

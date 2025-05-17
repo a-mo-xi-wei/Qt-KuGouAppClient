@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: basic_format_args&lt; Context &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classbasic__format__args.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classbasic__format__args-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">basic_format_args&lt; Context &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A view of a collection of formatting arguments.  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="base_8h_source.html">base.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a0850e5787ab02c09e9d218042a3dc56d" id="r_a0850e5787ab02c09e9d218042a3dc56d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0850e5787ab02c09e9d218042a3dc56d">format_arg</a> = <a class="el" href="classbasic__format__arg.html">basic_format_arg</a>&lt;Context&gt;</td></tr>
+<tr class="separator:a0850e5787ab02c09e9d218042a3dc56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:af3805e709918a53ff5cb8fd75c533e80" id="r_af3805e709918a53ff5cb8fd75c533e80"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3805e709918a53ff5cb8fd75c533e80">basic_format_args</a> ()</td></tr>
+<tr class="separator:af3805e709918a53ff5cb8fd75c533e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b4662b27f03585af7d4b517ded4e84" id="r_ac5b4662b27f03585af7d4b517ded4e84"><td class="memTemplParams" colspan="2">template&lt;int NUM_ARGS, int NUM_NAMED_ARGS, unsigned long long DESC, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(NUM_ARGS&lt;=<a class="el" href="namespacedetail.html#ad4748542ef745f6fae7f7c218f5a9af5aa2aec61a0142d05c79e16212132aa26b">detail::max_packed_args</a>)&gt; </td></tr>
+<tr class="memitem:ac5b4662b27f03585af7d4b517ded4e84"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac5b4662b27f03585af7d4b517ded4e84">basic_format_args</a> (const <a class="el" href="#aaa235832d9205198b1c566c5d816f487">store</a>&lt; NUM_ARGS, NUM_NAMED_ARGS, DESC &gt; &amp;s)</td></tr>
+<tr class="memdesc:ac5b4662b27f03585af7d4b517ded4e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code><a class="el" href="classbasic__format__args.html" title="A view of a collection of formatting arguments.">basic_format_args</a></code> object from <code>format_arg_store</code>.  <br /></td></tr>
+<tr class="separator:ac5b4662b27f03585af7d4b517ded4e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a148d4e55e791fff9884a5045886978df" id="r_a148d4e55e791fff9884a5045886978df"><td class="memTemplParams" colspan="2">template&lt;int NUM_ARGS, int NUM_NAMED_ARGS, unsigned long long DESC, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(NUM_ARGS &gt; <a class="el" href="namespacedetail.html#ad4748542ef745f6fae7f7c218f5a9af5aa2aec61a0142d05c79e16212132aa26b">detail::max_packed_args</a>)&gt; </td></tr>
+<tr class="memitem:a148d4e55e791fff9884a5045886978df"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a148d4e55e791fff9884a5045886978df">basic_format_args</a> (const <a class="el" href="#aaa235832d9205198b1c566c5d816f487">store</a>&lt; NUM_ARGS, NUM_NAMED_ARGS, DESC &gt; &amp;s)</td></tr>
+<tr class="separator:a148d4e55e791fff9884a5045886978df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68a82fc15fa007dcc7f26187dc82d929" id="r_a68a82fc15fa007dcc7f26187dc82d929"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68a82fc15fa007dcc7f26187dc82d929">basic_format_args</a> (const <a class="el" href="#a0850e5787ab02c09e9d218042a3dc56d">format_arg</a> *args, int count, bool has_named=false)</td></tr>
+<tr class="memdesc:a68a82fc15fa007dcc7f26187dc82d929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code><a class="el" href="classbasic__format__args.html" title="A view of a collection of formatting arguments.">basic_format_args</a></code> object from a dynamic list of arguments.  <br /></td></tr>
+<tr class="separator:a68a82fc15fa007dcc7f26187dc82d929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60ac3947105eb7c1d832d4f6baea1f9" id="r_ac60ac3947105eb7c1d832d4f6baea1f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac60ac3947105eb7c1d832d4f6baea1f9">get</a> (int <a class="el" href="format-inl_8h.html#abe6272f4163dcc8a1267174ed709f885">id</a>) const -&gt; <a class="el" href="#a0850e5787ab02c09e9d218042a3dc56d">format_arg</a></td></tr>
+<tr class="memdesc:ac60ac3947105eb7c1d832d4f6baea1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the argument with the specified id.  <br /></td></tr>
+<tr class="separator:ac60ac3947105eb7c1d832d4f6baea1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad403c41c68b46a369c03fa0c995f5464" id="r_ad403c41c68b46a369c03fa0c995f5464"><td class="memTemplParams" colspan="2">template&lt;typename Char&gt; </td></tr>
+<tr class="memitem:ad403c41c68b46a369c03fa0c995f5464"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad403c41c68b46a369c03fa0c995f5464">get</a> (<a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt; <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>) const -&gt; <a class="el" href="#a0850e5787ab02c09e9d218042a3dc56d">format_arg</a></td></tr>
+<tr class="separator:ad403c41c68b46a369c03fa0c995f5464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc90b32108d2b6c5a9d5105179baa1a0" id="r_afc90b32108d2b6c5a9d5105179baa1a0"><td class="memTemplParams" colspan="2">template&lt;typename Char&gt; </td></tr>
+<tr class="memitem:afc90b32108d2b6c5a9d5105179baa1a0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afc90b32108d2b6c5a9d5105179baa1a0">get_id</a> (<a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt; <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>) const -&gt; int</td></tr>
+<tr class="separator:afc90b32108d2b6c5a9d5105179baa1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a8abc3dd0ab66bc27de3ae40937ebe" id="r_ad7a8abc3dd0ab66bc27de3ae40937ebe"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7a8abc3dd0ab66bc27de3ae40937ebe">max_size</a> () const -&gt; int</td></tr>
+<tr class="separator:ad7a8abc3dd0ab66bc27de3ae40937ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:aaa235832d9205198b1c566c5d816f487" id="r_aaa235832d9205198b1c566c5d816f487"><td class="memTemplParams" colspan="2">template&lt;int NUM_ARGS, int NUM_NAMED_ARGS, unsigned long long DESC&gt; </td></tr>
+<tr class="memitem:aaa235832d9205198b1c566c5d816f487"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aaa235832d9205198b1c566c5d816f487">store</a></td></tr>
+<tr class="separator:aaa235832d9205198b1c566c5d816f487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a63c1bc6ce89bfc9b4c5827b42b15b347" id="r_a63c1bc6ce89bfc9b4c5827b42b15b347"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63c1bc6ce89bfc9b4c5827b42b15b347">is_packed</a> () const -&gt; bool</td></tr>
+<tr class="separator:a63c1bc6ce89bfc9b4c5827b42b15b347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c481158b1fd41005ba63a009bd6930" id="r_a23c481158b1fd41005ba63a009bd6930"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23c481158b1fd41005ba63a009bd6930">has_named_args</a> () const -&gt; bool</td></tr>
+<tr class="separator:a23c481158b1fd41005ba63a009bd6930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9069c9e0f26a29e10bfa33d5fc04a09b" id="r_a9069c9e0f26a29e10bfa33d5fc04a09b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9069c9e0f26a29e10bfa33d5fc04a09b">type</a> (int <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) const -&gt; <a class="el" href="namespacedetail.html#a7aead736a07eaf25623ad7bfa1f0ee2d">detail::type</a></td></tr>
+<tr class="separator:a9069c9e0f26a29e10bfa33d5fc04a09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aa22dae61e209be73b2b6ece2484d2489" id="r_aa22dae61e209be73b2b6ece2484d2489"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa22dae61e209be73b2b6ece2484d2489">desc_</a></td></tr>
+<tr class="separator:aa22dae61e209be73b2b6ece2484d2489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2140fb99e443423341bee46f13e6ec16" id="r_a2140fb99e443423341bee46f13e6ec16"><td class="memItemLeft" >union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc21ff137648431d481330235d305e22" id="r_abc21ff137648431d481330235d305e22"><td class="memItemLeft" >&#160;&#160;&#160;const <a class="el" href="classdetail_1_1value.html">detail::value</a>&lt; Context &gt; *&#160;&#160;&#160;<a class="el" href="#abc21ff137648431d481330235d305e22">values_</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:abc21ff137648431d481330235d305e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e71f1c08eaeb32585046700a4829c5" id="r_ad1e71f1c08eaeb32585046700a4829c5"><td class="memItemLeft" >&#160;&#160;&#160;const <a class="el" href="classbasic__format__arg.html">basic_format_arg</a>&lt; Context &gt; *&#160;&#160;&#160;<a class="el" href="#ad1e71f1c08eaeb32585046700a4829c5">args_</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ad1e71f1c08eaeb32585046700a4829c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2140fb99e443423341bee46f13e6ec16" id="r_a2140fb99e443423341bee46f13e6ec16"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom">&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a2140fb99e443423341bee46f13e6ec16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Context&gt;<br />
+class basic_format_args&lt; Context &gt;</div><p>A view of a collection of formatting arguments. </p>
+<p>To avoid lifetime issues it should only be used as a parameter type in type-erased functions such as <code>vformat</code>: </p><pre class="fragment">void vlog(fmt::string_view fmt, fmt::format_args args);  // OK
+fmt::format_args args = fmt::make_format_args();  // Dangling reference
+</pre> </div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a0850e5787ab02c09e9d218042a3dc56d" name="a0850e5787ab02c09e9d218042a3dc56d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0850e5787ab02c09e9d218042a3dc56d">&#9670;&#160;</a></span>format_arg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a0850e5787ab02c09e9d218042a3dc56d">format_arg</a> = <a class="el" href="classbasic__format__arg.html">basic_format_arg</a>&lt;Context&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa235832d9205198b1c566c5d816f487" name="aaa235832d9205198b1c566c5d816f487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa235832d9205198b1c566c5d816f487">&#9670;&#160;</a></span>store</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<div class="memtemplate">
+template&lt;int NUM_ARGS, int NUM_NAMED_ARGS, unsigned long long DESC&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#aaa235832d9205198b1c566c5d816f487">store</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line"> </div>
+<div class="line">      <a class="code hl_struct" href="structdetail_1_1format__arg__store.html">detail::format_arg_store&lt;Context, NUM_ARGS, NUM_NAMED_ARGS, DESC&gt;</a></div>
+<div class="ttc" id="astructdetail_1_1format__arg__store_html"><div class="ttname"><a href="structdetail_1_1format__arg__store.html">detail::format_arg_store</a></div><div class="ttdef"><b>定义</b> base.h:2343</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="af3805e709918a53ff5cb8fd75c533e80" name="af3805e709918a53ff5cb8fd75c533e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3805e709918a53ff5cb8fd75c533e80">&#9670;&#160;</a></span>basic_format_args() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbasic__format__args.html">basic_format_args</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5b4662b27f03585af7d4b517ded4e84" name="ac5b4662b27f03585af7d4b517ded4e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5b4662b27f03585af7d4b517ded4e84">&#9670;&#160;</a></span>basic_format_args() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<div class="memtemplate">
+template&lt;int NUM_ARGS, int NUM_NAMED_ARGS, unsigned long long DESC, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(NUM_ARGS&lt;=<a class="el" href="namespacedetail.html#ad4748542ef745f6fae7f7c218f5a9af5aa2aec61a0142d05c79e16212132aa26b">detail::max_packed_args</a>)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a701339e31b08c541a11ed944cc20b856">FMT_ALWAYS_INLINE</a> <a class="el" href="classbasic__format__args.html">basic_format_args</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#aaa235832d9205198b1c566c5d816f487">store</a>&lt; NUM_ARGS, NUM_NAMED_ARGS, DESC &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <code><a class="el" href="classbasic__format__args.html" title="A view of a collection of formatting arguments.">basic_format_args</a></code> object from <code>format_arg_store</code>. </p>
+
+</div>
+</div>
+<a id="a148d4e55e791fff9884a5045886978df" name="a148d4e55e791fff9884a5045886978df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148d4e55e791fff9884a5045886978df">&#9670;&#160;</a></span>basic_format_args() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<div class="memtemplate">
+template&lt;int NUM_ARGS, int NUM_NAMED_ARGS, unsigned long long DESC, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(NUM_ARGS &gt; <a class="el" href="namespacedetail.html#ad4748542ef745f6fae7f7c218f5a9af5aa2aec61a0142d05c79e16212132aa26b">detail::max_packed_args</a>)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbasic__format__args.html">basic_format_args</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#aaa235832d9205198b1c566c5d816f487">store</a>&lt; NUM_ARGS, NUM_NAMED_ARGS, DESC &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68a82fc15fa007dcc7f26187dc82d929" name="a68a82fc15fa007dcc7f26187dc82d929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68a82fc15fa007dcc7f26187dc82d929">&#9670;&#160;</a></span>basic_format_args() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbasic__format__args.html">basic_format_args</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a0850e5787ab02c09e9d218042a3dc56d">format_arg</a> *</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>has_named</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <code><a class="el" href="classbasic__format__args.html" title="A view of a collection of formatting arguments.">basic_format_args</a></code> object from a dynamic list of arguments. </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad403c41c68b46a369c03fa0c995f5464" name="ad403c41c68b46a369c03fa0c995f5464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad403c41c68b46a369c03fa0c995f5464">&#9670;&#160;</a></span>get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<div class="memtemplate">
+template&lt;typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="#a0850e5787ab02c09e9d218042a3dc56d">format_arg</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac60ac3947105eb7c1d832d4f6baea1f9" name="ac60ac3947105eb7c1d832d4f6baea1f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac60ac3947105eb7c1d832d4f6baea1f9">&#9670;&#160;</a></span>get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto get </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="#a0850e5787ab02c09e9d218042a3dc56d">format_arg</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the argument with the specified id. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbasic__format__args_ac60ac3947105eb7c1d832d4f6baea1f9_icgraph.png" border="0" usemap="#aclassbasic__format__args_ac60ac3947105eb7c1d832d4f6baea1f9_icgraph" alt=""/></div>
+<map name="aclassbasic__format__args_ac60ac3947105eb7c1d832d4f6baea1f9_icgraph" id="aclassbasic__format__args_ac60ac3947105eb7c1d832d4f6baea1f9_icgraph">
+<area shape="rect" title="Returns the argument with the specified id." alt="" coords="190,43,229,69"/>
+<area shape="rect" href="classbasic__format__args.html#ad403c41c68b46a369c03fa0c995f5464" title=" " alt="" coords="5,5,142,48"/>
+<area shape="poly" title=" " alt="" coords="174,51,141,44,142,39,175,46"/>
+<area shape="rect" href="namespacedetail.html#a1e1116701f06dd9ac311c2d843d465af" title=" " alt="" coords="12,72,135,99"/>
+<area shape="poly" title=" " alt="" coords="175,66,135,75,134,70,174,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc90b32108d2b6c5a9d5105179baa1a0" name="afc90b32108d2b6c5a9d5105179baa1a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc90b32108d2b6c5a9d5105179baa1a0">&#9670;&#160;</a></span>get_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<div class="memtemplate">
+template&lt;typename Char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto get_id </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbasic__string__view.html">basic_string_view</a>&lt; Char &gt;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbasic__format__args_afc90b32108d2b6c5a9d5105179baa1a0_icgraph.png" border="0" usemap="#aclassbasic__format__args_afc90b32108d2b6c5a9d5105179baa1a0_icgraph" alt=""/></div>
+<map name="aclassbasic__format__args_afc90b32108d2b6c5a9d5105179baa1a0_icgraph" id="aclassbasic__format__args_afc90b32108d2b6c5a9d5105179baa1a0_icgraph">
+<area shape="rect" title=" " alt="" coords="190,13,246,40"/>
+<area shape="rect" href="classbasic__format__args.html#ad403c41c68b46a369c03fa0c995f5464" title=" " alt="" coords="5,5,142,48"/>
+<area shape="poly" title=" " alt="" coords="174,29,142,29,142,24,174,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23c481158b1fd41005ba63a009bd6930" name="a23c481158b1fd41005ba63a009bd6930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c481158b1fd41005ba63a009bd6930">&#9670;&#160;</a></span>has_named_args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto has_named_args </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbasic__format__args_a23c481158b1fd41005ba63a009bd6930_icgraph.png" border="0" usemap="#aclassbasic__format__args_a23c481158b1fd41005ba63a009bd6930_icgraph" alt=""/></div>
+<map name="aclassbasic__format__args_a23c481158b1fd41005ba63a009bd6930_icgraph" id="aclassbasic__format__args_a23c481158b1fd41005ba63a009bd6930_icgraph">
+<area shape="rect" title=" " alt="" coords="190,13,310,40"/>
+<area shape="rect" href="classbasic__format__args.html#afc90b32108d2b6c5a9d5105179baa1a0" title=" " alt="" coords="5,5,142,48"/>
+<area shape="poly" title=" " alt="" coords="174,29,142,29,142,24,174,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63c1bc6ce89bfc9b4c5827b42b15b347" name="a63c1bc6ce89bfc9b4c5827b42b15b347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63c1bc6ce89bfc9b4c5827b42b15b347">&#9670;&#160;</a></span>is_packed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto is_packed </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbasic__format__args_a63c1bc6ce89bfc9b4c5827b42b15b347_icgraph.png" border="0" usemap="#aclassbasic__format__args_a63c1bc6ce89bfc9b4c5827b42b15b347_icgraph" alt=""/></div>
+<map name="aclassbasic__format__args_a63c1bc6ce89bfc9b4c5827b42b15b347_icgraph" id="aclassbasic__format__args_a63c1bc6ce89bfc9b4c5827b42b15b347_icgraph">
+<area shape="rect" title=" " alt="" coords="198,80,278,107"/>
+<area shape="rect" href="classbasic__format__args.html#ac60ac3947105eb7c1d832d4f6baea1f9" title=" " alt="" coords="9,5,146,48"/>
+<area shape="poly" title=" " alt="" coords="189,76,129,51,132,46,191,71"/>
+<area shape="rect" href="classbasic__format__args.html#afc90b32108d2b6c5a9d5105179baa1a0" title=" " alt="" coords="9,72,146,115"/>
+<area shape="poly" title=" " alt="" coords="182,96,146,96,146,91,182,91"/>
+<area shape="rect" href="classbasic__format__args.html#ad7a8abc3dd0ab66bc27de3ae40937ebe" title=" " alt="" coords="5,139,150,181"/>
+<area shape="poly" title=" " alt="" coords="191,116,132,141,129,136,189,111"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad7a8abc3dd0ab66bc27de3ae40937ebe" name="ad7a8abc3dd0ab66bc27de3ae40937ebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a8abc3dd0ab66bc27de3ae40937ebe">&#9670;&#160;</a></span>max_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto max_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbasic__format__args_ad7a8abc3dd0ab66bc27de3ae40937ebe_icgraph.png" border="0" usemap="#aclassbasic__format__args_ad7a8abc3dd0ab66bc27de3ae40937ebe_icgraph" alt=""/></div>
+<map name="aclassbasic__format__args_ad7a8abc3dd0ab66bc27de3ae40937ebe_icgraph" id="aclassbasic__format__args_ad7a8abc3dd0ab66bc27de3ae40937ebe_icgraph">
+<area shape="rect" title=" " alt="" coords="190,13,267,40"/>
+<area shape="rect" href="classbasic__format__args.html#ac60ac3947105eb7c1d832d4f6baea1f9" title=" " alt="" coords="5,5,142,48"/>
+<area shape="poly" title=" " alt="" coords="174,29,142,29,142,24,174,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9069c9e0f26a29e10bfa33d5fc04a09b" name="a9069c9e0f26a29e10bfa33d5fc04a09b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9069c9e0f26a29e10bfa33d5fc04a09b">&#9670;&#160;</a></span>type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto type </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespacedetail.html#a7aead736a07eaf25623ad7bfa1f0ee2d">detail::type</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbasic__format__args_a9069c9e0f26a29e10bfa33d5fc04a09b_icgraph.png" border="0" usemap="#aclassbasic__format__args_a9069c9e0f26a29e10bfa33d5fc04a09b_icgraph" alt=""/></div>
+<map name="aclassbasic__format__args_a9069c9e0f26a29e10bfa33d5fc04a09b_icgraph" id="aclassbasic__format__args_a9069c9e0f26a29e10bfa33d5fc04a09b_icgraph">
+<area shape="rect" title=" " alt="" coords="190,13,236,40"/>
+<area shape="rect" href="classbasic__format__args.html#ac60ac3947105eb7c1d832d4f6baea1f9" title=" " alt="" coords="5,5,142,48"/>
+<area shape="poly" title=" " alt="" coords="174,29,142,29,142,24,174,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a2140fb99e443423341bee46f13e6ec16" name="a2140fb99e443423341bee46f13e6ec16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2140fb99e443423341bee46f13e6ec16">&#9670;&#160;</a></span>[union]</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union  { ... } </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1e71f1c08eaeb32585046700a4829c5" name="ad1e71f1c08eaeb32585046700a4829c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e71f1c08eaeb32585046700a4829c5">&#9670;&#160;</a></span>args_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classbasic__format__arg.html">basic_format_arg</a>&lt;Context&gt;* args_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa22dae61e209be73b2b6ece2484d2489" name="aa22dae61e209be73b2b6ece2484d2489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22dae61e209be73b2b6ece2484d2489">&#9670;&#160;</a></span>desc_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long desc_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc21ff137648431d481330235d305e22" name="abc21ff137648431d481330235d305e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc21ff137648431d481330235d305e22">&#9670;&#160;</a></span>values_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Context&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdetail_1_1value.html">detail::value</a>&lt;Context&gt;* values_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="base_8h_source.html">base.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classbasic__format__args.html">basic_format_args</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SlideShow.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_slide_show_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SlideShow.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_slide_show_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef SLIDESHOW_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define SLIDESHOW_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_interactive_button_base_8h.html">InteractiveButtonBase.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_side_hide_label_8h.html">SideHideLabel.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_slide_show.html">   21</a></span><span class="keyword">class </span><a class="code hl_function" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370">SlideShow</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Q_OBJECT</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370">SlideShow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_slide_show.html#a4d8a0615d839f371b9aa5c8c98e90036">setPixmapSize</a>(<span class="keyword">const</span> QSize &amp;size);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_slide_show.html#a08cc744d6951e5450002c36ad92534bf">setPixmapScale</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;scale);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_slide_show.html#ae20a2f05a6bfb45214a982ff8bbc3169">setAutoSlide</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;interval = 5000) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_slide_show.html#ab193f50aa58ab9f883e3e5130c65d3fc">getCurrentIndex</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f">adjustLabels</a>(<a class="code hl_class" href="class_side_hide_label.html">SideHideLabel</a> *<a class="code hl_variable" href="class_slide_show.html#a659fc0c7a94da3507bbfe0ee27c821e5">hidingLabel</a> = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_slide_show.html#a4f192b96ac5c37010bd4fc620221cdfb">addImage</a>(<span class="keyword">const</span> QPixmap &amp;pixmap, QString text = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e">insertImage</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, <span class="keyword">const</span> QPixmap &amp;pixmap, QString text = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_slide_show.html#a29d6ac6048afaf373116f2aa99326b4e">removeImage</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b">setCurrentIndex</a>(<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_slide_show.html#af921bfc4064f75274b08809ce4f31ad1">slideToLeft</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe">slideToRight</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    QPixmap <a class="code hl_function" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12">getScaledRoundedPixmap</a>(QPixmap pixmap) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369">moveTo</a>(<a class="code hl_class" href="class_side_hide_label.html">SideHideLabel</a> *label, QRect geometry) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_slide_show.html#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a>(QResizeEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_slide_show.html#aa8f242b451f8b90c2bf758c631f72e21">eventFilter</a>(QObject *obj, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>signals:</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_slide_show.html#a7d3b33a535a29aaa3531ee7234184c9c">  137</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_slide_show.html#a7d3b33a535a29aaa3531ee7234184c9c">signalImageClicked</a>(<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="class_slide_show.html#a7a1359375202ace0d839e59d1928712a">  143</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_slide_show.html#a7a1359375202ace0d839e59d1928712a">signalTextActivated</a>(QString text);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_slide_show.html#a75af338268564df4c195f5b22f83120d">  146</a></span>    QList&lt;SideHideLabel *&gt;           <a class="code hl_variable" href="class_slide_show.html#a75af338268564df4c195f5b22f83120d">labels</a>;             </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_slide_show.html#a35aa86e4fdca936dd09fe00eb33186fe">  147</a></span>    QList&lt;QPixmap&gt;                   <a class="code hl_variable" href="class_slide_show.html#a35aa86e4fdca936dd09fe00eb33186fe">pixmaps</a>;            </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_slide_show.html#a3f7a2d384d2f4d0e5173464dea43dcea">  148</a></span>    QList&lt;QString&gt;                   <a class="code hl_variable" href="class_slide_show.html#a3f7a2d384d2f4d0e5173464dea43dcea">texts</a>;              </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="class_slide_show.html#a6877a6b61f9e0645b284dd8cffc0d329">  149</a></span>    QList&lt;InteractiveButtonBase *&gt;   <a class="code hl_variable" href="class_slide_show.html#a6877a6b61f9e0645b284dd8cffc0d329">indications</a>;        </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="class_slide_show.html#a8b41910066b877c9effd739880b6b15e">  150</a></span>    <span class="keywordtype">int</span>                              <a class="code hl_variable" href="class_slide_show.html#a8b41910066b877c9effd739880b6b15e">currentIndex</a> = -1;  </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_slide_show.html#abc69e35c974dfdcd11e2383b44ca2220">  151</a></span>    QTimer                          *<a class="code hl_variable" href="class_slide_show.html#abc69e35c974dfdcd11e2383b44ca2220">autoSlideTimer</a>{};   </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_slide_show.html#a659fc0c7a94da3507bbfe0ee27c821e5">  152</a></span>    <a class="code hl_class" href="class_side_hide_label.html">SideHideLabel</a>                   *<a class="code hl_variable" href="class_slide_show.html#a659fc0c7a94da3507bbfe0ee27c821e5">hidingLabel</a>{};      </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="class_slide_show.html#abc8a412c4460164e2848cd0fca1a152f">  153</a></span>    QColor                           <a class="code hl_variable" href="class_slide_show.html#abc8a412c4460164e2848cd0fca1a152f">normalColor</a> = QColor(172, 128, 58);       </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_slide_show.html#a195acdd887206a6116645f579ab5749f">  154</a></span>    QColor                           <a class="code hl_variable" href="class_slide_show.html#a195acdd887206a6116645f579ab5749f">selectColor</a> = Qt::yellow;                          </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_slide_show.html#a0f643e21e7f0a3f065f7f1dc92fc5785">  155</a></span>    QSize                            <a class="code hl_variable" href="class_slide_show.html#a0f643e21e7f0a3f065f7f1dc92fc5785">oneSize</a>;                                           </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_slide_show.html#aedc9db87691c80dd429465f89f522db8">  156</a></span>    <span class="keywordtype">double</span>                           <a class="code hl_variable" href="class_slide_show.html#aedc9db87691c80dd429465f89f522db8">backScale</a> = 0.8;                                   </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="class_slide_show.html#afc4570c39412e9a825bdc92309e0803c">  157</a></span>    <span class="keywordtype">double</span>                           <a class="code hl_variable" href="class_slide_show.html#afc4570c39412e9a825bdc92309e0803c">sideOffside</a> = 0.4;                                 </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="class_slide_show.html#a64ab5a67f034024f5500c36e573c5542">  158</a></span>    <span class="keywordtype">double</span>                           <a class="code hl_variable" href="class_slide_show.html#a64ab5a67f034024f5500c36e573c5542">imgOffside</a> = 0.15;                                 </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="class_slide_show.html#a53c6d7e99ee13d9c72acc0127af6efa7">  159</a></span>    <span class="keywordtype">bool</span>                             <a class="code hl_variable" href="class_slide_show.html#a53c6d7e99ee13d9c72acc0127af6efa7">scalePixmap</a> = <span class="keyword">false</span>;                               </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="class_slide_show.html#af76973b5ee7906b48e381391ebc863c4">  160</a></span>    QHBoxLayout                     *<a class="code hl_variable" href="class_slide_show.html#af76973b5ee7906b48e381391ebc863c4">indicationLayout</a>{}; </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="class_slide_show.html#a7e19e2d85b025398c8addc554f0f1456">  161</a></span>    QRect                            <a class="code hl_variable" href="class_slide_show.html#a7e19e2d85b025398c8addc554f0f1456">centerRect</a>;         </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="class_slide_show.html#af1e26497efd4298f1d8f6a86a9587de9">  162</a></span>    QRect                            <a class="code hl_variable" href="class_slide_show.html#af1e26497efd4298f1d8f6a86a9587de9">leftRect</a>;           </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_slide_show.html#a3f126ad5f6f95e819a74e476c7e4f448">  163</a></span>    QRect                            <a class="code hl_variable" href="class_slide_show.html#a3f126ad5f6f95e819a74e476c7e4f448">rightRect</a>;          </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="class_slide_show.html#a27c0c56981a057dc0e6af79f5fc615d9">  164</a></span>    QRect                            <a class="code hl_variable" href="class_slide_show.html#a27c0c56981a057dc0e6af79f5fc615d9">backRect</a>;           </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>};</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#endif </span><span class="comment">// SLIDESHOW_H</span></div>
+<div class="ttc" id="a_interactive_button_base_8h_html"><div class="ttname"><a href="_interactive_button_base_8h.html">InteractiveButtonBase.h</a></div><div class="ttdoc">定义 InteractiveButtonBase 类，提供交互式按钮基类</div></div>
+<div class="ttc" id="a_side_hide_label_8h_html"><div class="ttname"><a href="_side_hide_label_8h.html">SideHideLabel.h</a></div><div class="ttdoc">定义 SideHideLabel 类，提供支持偏移和圆角裁剪的标签控件</div></div>
+<div class="ttc" id="abase_8h_html_a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86"><div class="ttname"><a href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">arg_id_kind::index</a></div><div class="ttdeci">@ index</div><div class="ttdef"><b>定义</b> base.h:700</div></div>
+<div class="ttc" id="aclass_side_hide_label_html"><div class="ttname"><a href="class_side_hide_label.html">SideHideLabel</a></div><div class="ttdoc">标签控件类，支持图片偏移和圆角裁剪</div><div class="ttdef"><b>定义</b> SideHideLabel.h:20</div></div>
+<div class="ttc" id="aclass_slide_show_html_a08cc744d6951e5450002c36ad92534bf"><div class="ttname"><a href="class_slide_show.html#a08cc744d6951e5450002c36ad92534bf">SlideShow::setPixmapScale</a></div><div class="ttdeci">void setPixmapScale(const bool &amp;scale)</div><div class="ttdoc">设置图片缩放模式（已废弃）</div><div class="ttdef"><b>定义</b> SlideShow.cpp:70</div></div>
+<div class="ttc" id="aclass_slide_show_html_a0962bc84f032b51b712a16dd0541039b"><div class="ttname"><a href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b">SlideShow::setCurrentIndex</a></div><div class="ttdeci">void setCurrentIndex(int index)</div><div class="ttdoc">设置当前图片索引</div><div class="ttdef"><b>定义</b> SlideShow.cpp:173</div></div>
+<div class="ttc" id="aclass_slide_show_html_a0f643e21e7f0a3f065f7f1dc92fc5785"><div class="ttname"><a href="class_slide_show.html#a0f643e21e7f0a3f065f7f1dc92fc5785">SlideShow::oneSize</a></div><div class="ttdeci">QSize oneSize</div><div class="ttdoc">默认图片大小</div><div class="ttdef"><b>定义</b> SlideShow.h:155</div></div>
+<div class="ttc" id="aclass_slide_show_html_a195acdd887206a6116645f579ab5749f"><div class="ttname"><a href="class_slide_show.html#a195acdd887206a6116645f579ab5749f">SlideShow::selectColor</a></div><div class="ttdeci">QColor selectColor</div><div class="ttdoc">指示器选中颜色</div><div class="ttdef"><b>定义</b> SlideShow.h:154</div></div>
+<div class="ttc" id="aclass_slide_show_html_a27c0c56981a057dc0e6af79f5fc615d9"><div class="ttname"><a href="class_slide_show.html#a27c0c56981a057dc0e6af79f5fc615d9">SlideShow::backRect</a></div><div class="ttdeci">QRect backRect</div><div class="ttdoc">隐藏卡片区域</div><div class="ttdef"><b>定义</b> SlideShow.h:164</div></div>
+<div class="ttc" id="aclass_slide_show_html_a2861b58df00fe1ef9279ac4d3bfb8369"><div class="ttname"><a href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369">SlideShow::moveTo</a></div><div class="ttdeci">void moveTo(SideHideLabel *label, QRect geometry) const</div><div class="ttdoc">移动标签到指定位置</div><div class="ttdef"><b>定义</b> SlideShow.cpp:356</div></div>
+<div class="ttc" id="aclass_slide_show_html_a29d6ac6048afaf373116f2aa99326b4e"><div class="ttname"><a href="class_slide_show.html#a29d6ac6048afaf373116f2aa99326b4e">SlideShow::removeImage</a></div><div class="ttdeci">void removeImage(const int &amp;index)</div><div class="ttdoc">移除图片</div><div class="ttdef"><b>定义</b> SlideShow.cpp:152</div></div>
+<div class="ttc" id="aclass_slide_show_html_a35aa86e4fdca936dd09fe00eb33186fe"><div class="ttname"><a href="class_slide_show.html#a35aa86e4fdca936dd09fe00eb33186fe">SlideShow::pixmaps</a></div><div class="ttdeci">QList&lt; QPixmap &gt; pixmaps</div><div class="ttdoc">原始图片列表</div><div class="ttdef"><b>定义</b> SlideShow.h:147</div></div>
+<div class="ttc" id="aclass_slide_show_html_a3f126ad5f6f95e819a74e476c7e4f448"><div class="ttname"><a href="class_slide_show.html#a3f126ad5f6f95e819a74e476c7e4f448">SlideShow::rightRect</a></div><div class="ttdeci">QRect rightRect</div><div class="ttdoc">右侧卡片区域</div><div class="ttdef"><b>定义</b> SlideShow.h:163</div></div>
+<div class="ttc" id="aclass_slide_show_html_a3f7a2d384d2f4d0e5173464dea43dcea"><div class="ttname"><a href="class_slide_show.html#a3f7a2d384d2f4d0e5173464dea43dcea">SlideShow::texts</a></div><div class="ttdeci">QList&lt; QString &gt; texts</div><div class="ttdoc">图片关联文本列表</div><div class="ttdef"><b>定义</b> SlideShow.h:148</div></div>
+<div class="ttc" id="aclass_slide_show_html_a469ff243de6ef5b640555ea01097e7fe"><div class="ttname"><a href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe">SlideShow::slideToRight</a></div><div class="ttdeci">void slideToRight()</div><div class="ttdoc">向右滑动</div><div class="ttdef"><b>定义</b> SlideShow.cpp:237</div></div>
+<div class="ttc" id="aclass_slide_show_html_a4d8a0615d839f371b9aa5c8c98e90036"><div class="ttname"><a href="class_slide_show.html#a4d8a0615d839f371b9aa5c8c98e90036">SlideShow::setPixmapSize</a></div><div class="ttdeci">void setPixmapSize(const QSize &amp;size)</div><div class="ttdoc">设置图片大小</div><div class="ttdef"><b>定义</b> SlideShow.cpp:52</div></div>
+<div class="ttc" id="aclass_slide_show_html_a4f192b96ac5c37010bd4fc620221cdfb"><div class="ttname"><a href="class_slide_show.html#a4f192b96ac5c37010bd4fc620221cdfb">SlideShow::addImage</a></div><div class="ttdeci">void addImage(const QPixmap &amp;pixmap, QString text=&quot;&quot;)</div><div class="ttdoc">添加图片</div><div class="ttdef"><b>定义</b> SlideShow.cpp:99</div></div>
+<div class="ttc" id="aclass_slide_show_html_a53c6d7e99ee13d9c72acc0127af6efa7"><div class="ttname"><a href="class_slide_show.html#a53c6d7e99ee13d9c72acc0127af6efa7">SlideShow::scalePixmap</a></div><div class="ttdeci">bool scalePixmap</div><div class="ttdoc">图片缩放标志（已废弃）</div><div class="ttdef"><b>定义</b> SlideShow.h:159</div></div>
+<div class="ttc" id="aclass_slide_show_html_a64ab5a67f034024f5500c36e573c5542"><div class="ttname"><a href="class_slide_show.html#a64ab5a67f034024f5500c36e573c5542">SlideShow::imgOffside</a></div><div class="ttdeci">double imgOffside</div><div class="ttdoc">图片内偏移比例</div><div class="ttdef"><b>定义</b> SlideShow.h:158</div></div>
+<div class="ttc" id="aclass_slide_show_html_a659fc0c7a94da3507bbfe0ee27c821e5"><div class="ttname"><a href="class_slide_show.html#a659fc0c7a94da3507bbfe0ee27c821e5">SlideShow::hidingLabel</a></div><div class="ttdeci">SideHideLabel * hidingLabel</div><div class="ttdoc">正在隐藏的标签</div><div class="ttdef"><b>定义</b> SlideShow.h:152</div></div>
+<div class="ttc" id="aclass_slide_show_html_a6877a6b61f9e0645b284dd8cffc0d329"><div class="ttname"><a href="class_slide_show.html#a6877a6b61f9e0645b284dd8cffc0d329">SlideShow::indications</a></div><div class="ttdeci">QList&lt; InteractiveButtonBase * &gt; indications</div><div class="ttdoc">指示器按钮列表</div><div class="ttdef"><b>定义</b> SlideShow.h:149</div></div>
+<div class="ttc" id="aclass_slide_show_html_a75af338268564df4c195f5b22f83120d"><div class="ttname"><a href="class_slide_show.html#a75af338268564df4c195f5b22f83120d">SlideShow::labels</a></div><div class="ttdeci">QList&lt; SideHideLabel * &gt; labels</div><div class="ttdoc">图片标签列表</div><div class="ttdef"><b>定义</b> SlideShow.h:146</div></div>
+<div class="ttc" id="aclass_slide_show_html_a7a1359375202ace0d839e59d1928712a"><div class="ttname"><a href="class_slide_show.html#a7a1359375202ace0d839e59d1928712a">SlideShow::signalTextActivated</a></div><div class="ttdeci">void signalTextActivated(QString text)</div><div class="ttdoc">文本被激活信号</div></div>
+<div class="ttc" id="aclass_slide_show_html_a7d3b33a535a29aaa3531ee7234184c9c"><div class="ttname"><a href="class_slide_show.html#a7d3b33a535a29aaa3531ee7234184c9c">SlideShow::signalImageClicked</a></div><div class="ttdeci">void signalImageClicked(int index)</div><div class="ttdoc">图片被点击信号</div></div>
+<div class="ttc" id="aclass_slide_show_html_a7e19e2d85b025398c8addc554f0f1456"><div class="ttname"><a href="class_slide_show.html#a7e19e2d85b025398c8addc554f0f1456">SlideShow::centerRect</a></div><div class="ttdeci">QRect centerRect</div><div class="ttdoc">中心卡片区域</div><div class="ttdef"><b>定义</b> SlideShow.h:161</div></div>
+<div class="ttc" id="aclass_slide_show_html_a7f477b9e72be27892e5e3bef86d5687e"><div class="ttname"><a href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e">SlideShow::insertImage</a></div><div class="ttdeci">void insertImage(const int &amp;index, const QPixmap &amp;pixmap, QString text=&quot;&quot;)</div><div class="ttdoc">插入图片</div><div class="ttdef"><b>定义</b> SlideShow.cpp:110</div></div>
+<div class="ttc" id="aclass_slide_show_html_a8b41910066b877c9effd739880b6b15e"><div class="ttname"><a href="class_slide_show.html#a8b41910066b877c9effd739880b6b15e">SlideShow::currentIndex</a></div><div class="ttdeci">int currentIndex</div><div class="ttdoc">当前图片索引</div><div class="ttdef"><b>定义</b> SlideShow.h:150</div></div>
+<div class="ttc" id="aclass_slide_show_html_a90c5ff2d99784bc1f4b031220446cb12"><div class="ttname"><a href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12">SlideShow::getScaledRoundedPixmap</a></div><div class="ttdeci">QPixmap getScaledRoundedPixmap(QPixmap pixmap) const</div><div class="ttdoc">获取缩放和圆角处理的图片</div><div class="ttdef"><b>定义</b> SlideShow.cpp:249</div></div>
+<div class="ttc" id="aclass_slide_show_html_a96cd1558566d8017528e0c0e2f33110f"><div class="ttname"><a href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f">SlideShow::adjustLabels</a></div><div class="ttdeci">void adjustLabels(SideHideLabel *hidingLabel=nullptr)</div><div class="ttdoc">调整标签布局</div><div class="ttdef"><b>定义</b> SlideShow.cpp:286</div></div>
+<div class="ttc" id="aclass_slide_show_html_a9a27ed4ceb22d2a19bdb88ed785085a1"><div class="ttname"><a href="class_slide_show.html#a9a27ed4ceb22d2a19bdb88ed785085a1">SlideShow::resizeEvent</a></div><div class="ttdeci">void resizeEvent(QResizeEvent *event) override</div><div class="ttdoc">调整大小事件</div><div class="ttdef"><b>定义</b> SlideShow.cpp:388</div></div>
+<div class="ttc" id="aclass_slide_show_html_aa8f242b451f8b90c2bf758c631f72e21"><div class="ttname"><a href="class_slide_show.html#aa8f242b451f8b90c2bf758c631f72e21">SlideShow::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *obj, QEvent *event) override</div><div class="ttdoc">事件过滤器</div><div class="ttdef"><b>定义</b> SlideShow.cpp:404</div></div>
+<div class="ttc" id="aclass_slide_show_html_ab193f50aa58ab9f883e3e5130c65d3fc"><div class="ttname"><a href="class_slide_show.html#ab193f50aa58ab9f883e3e5130c65d3fc">SlideShow::getCurrentIndex</a></div><div class="ttdeci">int getCurrentIndex() const</div><div class="ttdoc">获取当前图片索引</div><div class="ttdef"><b>定义</b> SlideShow.cpp:219</div></div>
+<div class="ttc" id="aclass_slide_show_html_abc69e35c974dfdcd11e2383b44ca2220"><div class="ttname"><a href="class_slide_show.html#abc69e35c974dfdcd11e2383b44ca2220">SlideShow::autoSlideTimer</a></div><div class="ttdeci">QTimer * autoSlideTimer</div><div class="ttdoc">自动轮播定时器</div><div class="ttdef"><b>定义</b> SlideShow.h:151</div></div>
+<div class="ttc" id="aclass_slide_show_html_abc8a412c4460164e2848cd0fca1a152f"><div class="ttname"><a href="class_slide_show.html#abc8a412c4460164e2848cd0fca1a152f">SlideShow::normalColor</a></div><div class="ttdeci">QColor normalColor</div><div class="ttdoc">指示器默认颜色</div><div class="ttdef"><b>定义</b> SlideShow.h:153</div></div>
+<div class="ttc" id="aclass_slide_show_html_ad6938b5225068a022f2e0fc79553d370"><div class="ttname"><a href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370">SlideShow::SlideShow</a></div><div class="ttdeci">SlideShow(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化轮播图控件</div><div class="ttdef"><b>定义</b> SlideShow.cpp:33</div></div>
+<div class="ttc" id="aclass_slide_show_html_ae20a2f05a6bfb45214a982ff8bbc3169"><div class="ttname"><a href="class_slide_show.html#ae20a2f05a6bfb45214a982ff8bbc3169">SlideShow::setAutoSlide</a></div><div class="ttdeci">void setAutoSlide(const int &amp;interval=5000) const</div><div class="ttdoc">设置自动轮播</div><div class="ttdef"><b>定义</b> SlideShow.cpp:81</div></div>
+<div class="ttc" id="aclass_slide_show_html_aedc9db87691c80dd429465f89f522db8"><div class="ttname"><a href="class_slide_show.html#aedc9db87691c80dd429465f89f522db8">SlideShow::backScale</a></div><div class="ttdeci">double backScale</div><div class="ttdoc">两侧卡片缩放比例</div><div class="ttdef"><b>定义</b> SlideShow.h:156</div></div>
+<div class="ttc" id="aclass_slide_show_html_af1e26497efd4298f1d8f6a86a9587de9"><div class="ttname"><a href="class_slide_show.html#af1e26497efd4298f1d8f6a86a9587de9">SlideShow::leftRect</a></div><div class="ttdeci">QRect leftRect</div><div class="ttdoc">左侧卡片区域</div><div class="ttdef"><b>定义</b> SlideShow.h:162</div></div>
+<div class="ttc" id="aclass_slide_show_html_af76973b5ee7906b48e381391ebc863c4"><div class="ttname"><a href="class_slide_show.html#af76973b5ee7906b48e381391ebc863c4">SlideShow::indicationLayout</a></div><div class="ttdeci">QHBoxLayout * indicationLayout</div><div class="ttdoc">指示器布局</div><div class="ttdef"><b>定义</b> SlideShow.h:160</div></div>
+<div class="ttc" id="aclass_slide_show_html_af921bfc4064f75274b08809ce4f31ad1"><div class="ttname"><a href="class_slide_show.html#af921bfc4064f75274b08809ce4f31ad1">SlideShow::slideToLeft</a></div><div class="ttdeci">void slideToLeft()</div><div class="ttdoc">向左滑动</div><div class="ttdef"><b>定义</b> SlideShow.cpp:227</div></div>
+<div class="ttc" id="aclass_slide_show_html_afc4570c39412e9a825bdc92309e0803c"><div class="ttname"><a href="class_slide_show.html#afc4570c39412e9a825bdc92309e0803c">SlideShow::sideOffside</a></div><div class="ttdeci">double sideOffside</div><div class="ttdoc">两侧卡片位置偏移比例</div><div class="ttdef"><b>定义</b> SlideShow.h:157</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_90e279afbf7087a5af4c74d8ed8b8ff6.html">Video</a></li><li class="navelem"><a class="el" href="dir_a0d415d51b44062733c95fcb57206cfa.html">MVWidget</a></li><li class="navelem"><a class="el" href="dir_f315d88240fa2fff2600495c85b367c8.html">SlideBoard</a></li><li class="navelem"><a class="el" href="_slide_show_8h.html">SlideShow.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

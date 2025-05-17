@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: avdevice.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('avdevice_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">avdevice.h 文件参考<div class="ingroups"><a class="el" href="group__lavd.html">libavdevice</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Main libavdevice API header  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="tools_2ffmpeg_2win64_2include_2libavdevice_2version_8h_source.html">version.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_8h_source.html">libavutil/log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="opt_8h_source.html">libavutil/opt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dict_8h_source.html">libavutil/dict.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="avformat_8h_source.html">libavformat/avformat.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+avdevice.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="avdevice_8h__incl.png" border="0" usemap="#aavdevice_8h" alt=""/></div>
+<map name="aavdevice_8h" id="aavdevice_8h">
+<area shape="rect" title="Main libavdevice API header" alt="" coords="495,5,579,32"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavdevice_2version_8h.html" title="Libavdevice version macros" alt="" coords="148,80,222,107"/>
+<area shape="poly" title=" " alt="" coords="494,31,238,84,237,79,493,26"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="553,379,651,405"/>
+<area shape="poly" title=" " alt="" coords="495,32,444,50,391,77,368,95,349,116,337,139,333,167,333,244,338,276,353,302,376,324,405,342,438,357,472,368,538,382,537,387,471,373,436,362,403,347,373,329,349,305,333,277,327,244,327,166,332,138,345,113,364,91,388,72,442,45,493,27"/>
+<area shape="rect" href="opt_8h.html" title="AVOptions" alt="" coords="756,304,854,331"/>
+<area shape="poly" title=" " alt="" coords="538,33,537,75,542,135,549,168,559,199,575,229,596,254,628,278,665,294,704,305,741,310,740,316,703,310,664,299,626,282,592,258,570,232,555,202,544,169,537,136,532,75,533,32"/>
+<area shape="rect" href="dict_8h.html" title="Public dictionary API." alt="" coords="929,379,982,405"/>
+<area shape="poly" title=" " alt="" coords="550,30,645,127,714,192,789,254,828,278,868,302,905,334,936,366,933,370,901,338,864,306,825,282,786,258,711,196,641,131,546,34"/>
+<area shape="rect" href="avformat_8h.html" title="Main libavformat public API header" alt="" coords="644,80,795,107"/>
+<area shape="poly" title=" " alt="" coords="569,30,674,71,672,76,568,35"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="42,603,165,629"/>
+<area shape="poly" title=" " alt="" coords="174,109,154,132,132,164,115,201,107,242,107,468,106,587,101,587,102,468,102,241,110,199,128,161,150,129,170,105"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="318,677,393,704"/>
+<area shape="poly" title=" " alt="" coords="148,627,304,672,302,677,147,632"/>
+<area shape="poly" title=" " alt="" coords="578,408,445,474,263,557,154,600,152,595,261,552,443,469,576,404"/>
+<area shape="rect" title=" " alt="" coords="553,453,622,480"/>
+<area shape="poly" title=" " alt="" coords="602,406,596,439,590,438,597,405"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="1024,453,1087,480"/>
+<area shape="poly" title=" " alt="" coords="651,399,1009,456,1008,461,651,405"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="1351,677,1437,704"/>
+<area shape="poly" title=" " alt="" coords="631,403,898,526,955,555,998,580,1041,603,1100,627,1162,645,1225,660,1336,679,1335,685,1224,665,1161,651,1098,632,1039,608,995,585,952,560,895,530,629,408"/>
+<area shape="poly" title=" " alt="" coords="1024,479,1005,483,925,496,862,502,800,511,723,531,695,544,666,557,594,574,533,585,426,592,318,594,180,605,180,600,318,589,426,587,532,579,593,569,664,552,692,539,721,525,799,505,862,497,925,490,1004,477,1023,473"/>
+<area shape="poly" title=" " alt="" coords="1024,478,1000,483,882,502,831,512,767,530,741,544,714,557,666,568,623,571,547,566,512,565,477,569,440,581,400,605,387,617,377,632,364,663,359,661,372,629,383,613,396,601,438,576,476,563,512,559,548,561,623,566,665,563,712,552,738,539,765,526,829,506,881,497,999,477,1023,472"/>
+<area shape="poly" title=" " alt="" coords="1023,462,666,405,666,400,1023,457"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="778,528,861,555"/>
+<area shape="poly" title=" " alt="" coords="1024,480,876,526,874,520,1022,475"/>
+<area shape="rect" href="error_8h.html" title="error code definitions" alt="" coords="808,677,866,704"/>
+<area shape="poly" title=" " alt="" coords="1027,483,989,502,945,528,901,563,864,604,850,633,843,663,837,662,845,631,860,601,897,559,942,524,986,497,1024,478"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="1282,603,1357,629"/>
+<area shape="poly" title=" " alt="" coords="1062,479,1078,516,1091,536,1107,552,1167,571,1268,598,1266,604,1165,576,1105,557,1087,539,1073,518,1057,481"/>
+<area shape="rect" href="mathematics_8h.html" title=" " alt="" coords="1396,528,1504,555"/>
+<area shape="poly" title=" " alt="" coords="1088,471,1382,525,1381,530,1087,477"/>
+<area shape="rect" href="pixfmt_8h.html" title="pixel format definitions" alt="" coords="584,528,652,555"/>
+<area shape="poly" title=" " alt="" coords="1024,479,1005,483,912,498,838,507,765,516,672,531,668,531,667,526,671,525,764,510,838,502,911,493,1004,477,1023,473"/>
+<area shape="poly" title=" " alt="" coords="778,550,709,557,446,579,329,588,180,605,180,600,329,583,445,573,708,552,778,545"/>
+<area shape="poly" title=" " alt="" coords="779,554,760,557,710,564,667,566,593,566,559,567,523,573,484,585,439,605,402,633,374,666,370,663,398,629,437,600,482,580,522,568,558,562,593,560,667,561,710,558,759,552,778,549"/>
+<area shape="poly" title=" " alt="" coords="861,525,879,529,887,541,884,550,877,555,874,551,880,547,882,542,876,533,860,530"/>
+<area shape="rect" title=" " alt="" coords="426,752,487,779"/>
+<area shape="poly" title=" " alt="" coords="779,554,523,605,498,634,480,670,469,706,462,737,457,736,464,704,475,668,494,631,521,600,778,548"/>
+<area shape="rect" title=" " alt="" coords="634,603,712,629"/>
+<area shape="poly" title=" " alt="" coords="795,558,713,598,711,593,793,553"/>
+<area shape="rect" title=" " alt="" coords="890,677,954,704"/>
+<area shape="poly" title=" " alt="" coords="779,554,534,605,530,616,535,628,558,644,594,656,637,663,686,667,788,670,875,675,875,680,788,675,686,672,637,668,592,661,556,649,531,631,524,616,531,601,777,548"/>
+<area shape="rect" title=" " alt="" coords="1111,603,1173,629"/>
+<area shape="poly" title=" " alt="" coords="862,549,1093,600,1097,601,1095,606,1092,605,861,554"/>
+<area shape="rect" title=" " alt="" coords="1686,677,1750,704"/>
+<area shape="poly" title=" " alt="" coords="857,553,985,594,1100,627,1263,653,1425,671,1567,681,1671,685,1671,691,1567,686,1425,676,1262,658,1099,632,984,599,856,558"/>
+<area shape="rect" title=" " alt="" coords="1197,603,1258,629"/>
+<area shape="poly" title=" " alt="" coords="861,545,1000,566,1182,600,1181,605,999,571,860,551"/>
+<area shape="rect" title=" " alt="" coords="736,603,799,629"/>
+<area shape="poly" title=" " alt="" coords="812,557,787,592,783,589,808,554"/>
+<area shape="rect" title=" " alt="" coords="545,603,609,629"/>
+<area shape="poly" title=" " alt="" coords="778,558,624,603,623,598,777,552"/>
+<area shape="poly" title=" " alt="" coords="847,553,1006,627,1094,649,1184,665,1336,683,1335,688,1184,671,1093,654,1004,632,845,558"/>
+<area shape="rect" href="avconfig_8h.html" title=" " alt="" coords="188,603,317,629"/>
+<area shape="poly" title=" " alt="" coords="778,551,333,607,332,602,777,545"/>
+<area shape="rect" href="mem_8h.html" title="Memory handling functions" alt="" coords="874,603,935,629"/>
+<area shape="poly" title=" " alt="" coords="836,553,880,591,877,595,832,557"/>
+<area shape="poly" title=" " alt="" coords="916,600,1030,489,1034,493,919,604"/>
+<area shape="poly" title=" " alt="" coords="910,629,918,661,913,663,905,630"/>
+<area shape="poly" title=" " alt="" coords="936,617,1670,682,1670,688,935,623"/>
+<area shape="poly" title=" " alt="" coords="936,623,954,627,1165,660,1336,681,1335,686,1164,665,954,632,935,628"/>
+<area shape="poly" title=" " alt="" coords="895,632,861,668,857,664,891,628"/>
+<area shape="poly" title=" " alt="" coords="807,700,503,758,502,753,806,695"/>
+<area shape="rect" title=" " alt="" coords="2000,752,2068,779"/>
+<area shape="poly" title=" " alt="" coords="867,699,878,701,980,714,1116,725,1441,743,1984,760,1984,766,1441,748,1116,731,980,720,878,707,866,704"/>
+<area shape="poly" title=" " alt="" coords="1282,629,1271,632,1105,663,970,685,969,680,1104,658,1269,627,1281,624"/>
+<area shape="poly" title=" " alt="" coords="1357,621,1671,678,1670,683,1356,627"/>
+<area shape="poly" title=" " alt="" coords="1334,628,1372,665,1369,669,1330,632"/>
+<area shape="poly" title=" " alt="" coords="1397,557,1189,605,1187,599,1395,551"/>
+<area shape="poly" title=" " alt="" coords="1474,553,1683,667,1680,672,1472,558"/>
+<area shape="poly" title=" " alt="" coords="1445,556,1422,604,1403,663,1398,661,1417,602,1440,554"/>
+<area shape="poly" title=" " alt="" coords="1429,558,1357,597,1354,592,1426,553"/>
+<area shape="rect" href="intfloat_8h.html" title=" " alt="" coords="1432,603,1503,629"/>
+<area shape="poly" title=" " alt="" coords="1456,555,1463,587,1458,588,1450,556"/>
+<area shape="poly" title=" " alt="" coords="1504,625,1672,673,1670,678,1503,630"/>
+<area shape="poly" title=" " alt="" coords="1456,632,1419,668,1416,664,1453,628"/>
+<area shape="poly" title=" " alt="" coords="584,554,565,557,459,574,374,583,180,605,179,600,374,578,458,568,564,552,583,548"/>
+<area shape="poly" title=" " alt="" coords="584,553,565,557,333,603,332,597,564,552,583,548"/>
+<area shape="poly" title=" " alt="" coords="797,333,735,404,688,446,635,482,573,501,447,534,172,601,170,596,446,528,572,496,633,478,685,442,731,400,793,329"/>
+<area shape="poly" title=" " alt="" coords="770,334,653,375,651,370,768,329"/>
+<area shape="poly" title=" " alt="" coords="814,330,837,366,854,386,874,403,907,422,942,437,1009,455,1008,460,940,442,905,427,871,408,851,390,833,369,809,333"/>
+<area shape="poly" title=" " alt="" coords="819,329,861,366,888,386,918,403,967,421,1008,427,1050,433,1100,451,1159,484,1214,521,1297,590,1293,594,1211,526,1156,488,1098,456,1049,438,1007,432,966,426,916,408,886,390,858,370,816,333"/>
+<area shape="poly" title=" " alt="" coords="804,332,781,401,759,443,731,482,700,506,667,524,665,520,697,502,727,478,755,440,776,398,799,330"/>
+<area shape="poly" title=" " alt="" coords="832,329,916,369,914,374,830,334"/>
+<area shape="rect" href="samplefmt_8h.html" title=" " alt="" coords="1310,379,1403,405"/>
+<area shape="poly" title=" " alt="" coords="854,322,1295,380,1294,385,854,328"/>
+<area shape="poly" title=" " alt="" coords="929,408,841,443,729,483,673,498,628,506,584,515,528,531,496,544,464,557,180,605,179,600,463,552,494,539,526,525,583,510,627,501,672,492,728,477,839,438,927,403"/>
+<area shape="poly" title=" " alt="" coords="982,392,1087,401,1245,423,1336,440,1429,462,1522,491,1611,526,1667,558,1695,580,1714,601,1723,632,1724,662,1719,662,1718,633,1709,604,1692,584,1664,563,1609,530,1520,496,1428,468,1335,445,1244,428,1087,406,982,397"/>
+<area shape="poly" title=" " alt="" coords="1310,407,1103,457,1102,452,1309,402"/>
+<area shape="poly" title=" " alt="" coords="1387,403,1662,526,1721,555,1744,572,1764,602,1768,619,1765,637,1745,668,1740,665,1760,635,1763,619,1760,604,1740,576,1719,559,1660,530,1384,408"/>
+<area shape="poly" title=" " alt="" coords="1384,404,1417,423,1454,450,1490,485,1518,527,1529,555,1534,580,1531,604,1518,631,1505,647,1489,660,1453,678,1450,673,1486,655,1501,643,1513,628,1525,602,1529,580,1524,556,1513,529,1486,488,1451,454,1414,427,1381,408"/>
+<area shape="poly" title=" " alt="" coords="707,109,675,140,634,186,594,242,577,273,565,305,563,320,566,336,582,365,578,368,561,338,557,321,559,303,572,271,589,239,630,182,671,136,703,105"/>
+<area shape="poly" title=" " alt="" coords="795,94,1079,106,1455,131,1639,148,1798,170,1917,196,1957,211,1981,227,2007,261,2020,293,2022,321,2013,347,1995,371,1970,392,1937,411,1899,429,1810,462,1711,493,1610,524,1516,557,1452,578,1398,587,1343,593,1273,605,1272,600,1342,588,1397,582,1450,573,1514,552,1608,519,1709,488,1808,457,1897,425,1935,407,1967,388,1991,367,2008,345,2016,321,2015,294,2002,264,1977,231,1955,216,1916,201,1797,175,1638,154,1455,136,1079,112,795,100"/>
+<area shape="poly" title=" " alt="" coords="726,106,758,174,785,216,817,254,841,270,864,277,887,285,912,302,934,332,949,363,944,366,930,335,908,306,885,289,862,282,839,275,814,258,780,220,754,177,722,108"/>
+<area shape="rect" href="time_8h.html" title=" " alt="" coords="2093,155,2151,181"/>
+<area shape="poly" title=" " alt="" coords="795,93,1434,111,1804,128,1958,139,2074,152,2078,153,2078,158,2074,157,1957,145,1804,133,1434,116,795,99"/>
+<area shape="rect" href="avcodec_8h.html" title="Libavcodec external API header" alt="" coords="1047,155,1194,181"/>
+<area shape="poly" title=" " alt="" coords="790,105,1036,149,1035,154,789,110"/>
+<area shape="rect" href="avio_8h.html" title="Buffered I/O operations" alt="" coords="574,304,630,331"/>
+<area shape="poly" title=" " alt="" coords="715,108,618,291,613,289,710,106"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavformat_2version_8h.html" title="Libavformat version macros" alt="" coords="202,379,344,405"/>
+<area shape="poly" title=" " alt="" coords="644,110,579,126,505,151,431,185,396,207,364,231,335,263,312,298,283,365,278,363,308,296,331,259,360,227,393,202,428,181,503,146,577,121,643,105"/>
+<area shape="poly" title=" " alt="" coords="2125,182,2125,316,2125,543,2123,592,2116,612,2098,631,2073,646,2038,659,1947,676,1849,686,1766,691,1765,685,1848,681,1946,671,2037,653,2071,642,2095,627,2111,609,2118,591,2119,543,2119,316,2119,182"/>
+<area shape="poly" title=" " alt="" coords="1047,179,936,198,875,213,816,232,751,263,692,306,655,338,624,369,621,366,651,334,688,302,748,258,814,227,874,207,935,192,1046,174"/>
+<area shape="poly" title=" " alt="" coords="1121,182,1064,439,1059,438,1115,181"/>
+<area shape="poly" title=" " alt="" coords="1047,181,851,210,599,254,472,282,357,312,260,346,222,363,191,381,110,437,73,465,42,494,20,524,9,556,13,590,32,628,57,650,96,671,145,690,201,707,316,735,411,754,410,759,315,741,199,712,143,695,94,676,54,654,28,631,7,592,4,555,15,522,38,490,69,461,107,432,189,376,219,358,258,341,355,307,471,277,598,249,850,205,1046,176"/>
+<area shape="poly" title=" " alt="" coords="1195,168,1269,173,1357,183,1451,200,1543,227,1608,251,1657,278,1678,296,1695,317,1711,344,1725,378,1738,417,1744,447,1741,471,1728,492,1703,515,1665,543,1542,632,1498,657,1453,676,1451,671,1496,653,1539,627,1662,539,1700,511,1724,489,1736,469,1738,447,1732,418,1720,380,1706,347,1691,320,1674,300,1654,283,1605,256,1541,232,1450,205,1357,188,1269,178,1195,173"/>
+<area shape="poly" title=" " alt="" coords="1195,168,1312,180,1382,193,1454,212,1525,239,1593,275,1653,320,1679,347,1703,377,1708,392,1703,407,1669,445,1633,467,1595,477,1556,482,1515,485,1473,491,1430,504,1386,530,1357,559,1335,591,1331,588,1353,556,1383,526,1428,499,1472,485,1515,479,1556,477,1594,472,1631,462,1666,441,1698,404,1703,392,1698,380,1675,351,1649,324,1590,279,1523,244,1452,217,1381,198,1312,185,1195,173"/>
+<area shape="poly" title=" " alt="" coords="1118,183,1064,299,1029,364,996,407,947,432,858,464,668,527,666,522,856,459,944,427,992,403,1024,361,1060,296,1113,181"/>
+<area shape="poly" title=" " alt="" coords="1099,184,1069,204,1040,231,1016,265,995,301,967,365,962,363,990,298,1011,262,1036,228,1066,200,1096,180"/>
+<area shape="poly" title=" " alt="" coords="1141,180,1211,230,1253,264,1293,302,1320,334,1343,364,1338,367,1316,337,1289,306,1249,269,1207,234,1138,184"/>
+<area shape="rect" href="buffer_8h.html" title="refcounted data buffer API" alt="" coords="1577,379,1689,405"/>
+<area shape="poly" title=" " alt="" coords="1151,179,1591,370,1589,375,1149,184"/>
+<area shape="rect" href="cpu_8h.html" title=" " alt="" coords="1983,603,2085,629"/>
+<area shape="poly" title=" " alt="" coords="1195,167,1392,170,1639,179,1757,187,1859,197,1937,210,1964,218,1981,227,1999,246,2006,267,2007,316,2007,468,2014,532,2028,587,2023,588,2009,533,2002,468,2002,316,2001,268,1994,249,1978,231,1962,223,1936,215,1859,202,1756,192,1638,185,1392,176,1195,172"/>
+<area shape="rect" href="channel__layout_8h.html" title="audio channel layout utility functions" alt="" coords="1800,229,1967,256"/>
+<area shape="poly" title=" " alt="" coords="1195,173,1781,227,1784,227,1784,232,1780,232,1195,178"/>
+<area shape="rect" href="frame_8h.html" title="reference&#45;counted frame API" alt="" coords="1165,304,1279,331"/>
+<area shape="poly" title=" " alt="" coords="1132,180,1207,290,1203,293,1127,183"/>
+<area shape="rect" href="hwcontext_8h.html" title=" " alt="" coords="828,229,968,256"/>
+<area shape="poly" title=" " alt="" coords="1083,184,952,227,950,222,1081,179"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavcodec_2version_8h.html" title="Libavcodec version macros." alt="" coords="268,453,342,480"/>
+<area shape="poly" title=" " alt="" coords="1047,177,941,189,809,213,738,230,667,251,597,276,530,306,472,340,417,378,332,445,329,441,414,373,469,335,527,302,595,271,665,245,737,224,808,207,940,184,1046,172"/>
+<area shape="poly" title=" " alt="" coords="1682,403,1728,420,1780,446,1828,481,1849,502,1866,527,1879,554,1884,579,1880,604,1866,631,1845,653,1820,668,1792,679,1766,686,1765,681,1791,674,1818,664,1842,648,1861,628,1875,602,1878,579,1874,556,1861,529,1845,506,1824,485,1777,450,1726,425,1680,408"/>
+<area shape="poly" title=" " alt="" coords="1983,626,1453,685,1453,680,1982,620"/>
+<area shape="poly" title=" " alt="" coords="2037,630,2037,736,2031,736,2031,630"/>
+<area shape="poly" title=" " alt="" coords="1895,255,1928,312,1943,350,1949,390,1949,543,1944,573,1929,600,1908,622,1882,640,1823,667,1766,683,1765,678,1821,662,1879,636,1905,618,1925,597,1938,572,1943,542,1943,391,1938,351,1924,314,1891,258"/>
+<area shape="poly" title=" " alt="" coords="1191,334,995,408,892,448,787,483,726,497,679,505,631,514,572,530,544,544,515,557,424,579,350,589,275,594,180,605,179,600,275,589,350,583,423,574,513,552,542,539,570,526,630,508,678,500,725,492,785,477,890,443,993,403,1189,329"/>
+<area shape="poly" title=" " alt="" coords="1223,331,1214,368,1205,389,1192,407,1172,424,1149,438,1103,457,1101,452,1147,434,1169,420,1188,404,1200,386,1209,366,1218,330"/>
+<area shape="poly" title=" " alt="" coords="1272,329,1341,349,1416,376,1472,402,1513,425,1607,478,1658,499,1681,509,1707,526,1753,557,1770,575,1785,602,1787,621,1780,640,1768,656,1752,670,1749,666,1764,652,1776,637,1782,621,1779,603,1766,578,1750,561,1705,530,1678,514,1656,504,1605,482,1510,429,1469,406,1414,381,1339,354,1271,334"/>
+<area shape="poly" title=" " alt="" coords="1280,329,1464,376,1587,412,1791,473,1991,542,2061,574,2085,588,2099,601,2108,619,2110,638,2108,657,2101,677,2081,713,2059,742,2054,739,2077,710,2096,675,2102,656,2105,638,2102,621,2095,604,2082,592,2059,579,1989,547,1790,478,1586,417,1463,381,1278,334"/>
+<area shape="poly" title=" " alt="" coords="1229,330,1313,587,1308,589,1224,332"/>
+<area shape="poly" title=" " alt="" coords="1205,333,1090,408,1024,447,955,482,876,504,812,512,748,517,668,529,667,524,747,511,812,507,875,499,953,478,1021,443,1087,403,1202,329"/>
+<area shape="poly" title=" " alt="" coords="1176,334,998,382,996,377,1175,329"/>
+<area shape="poly" title=" " alt="" coords="1247,329,1321,368,1318,373,1244,334"/>
+<area shape="poly" title=" " alt="" coords="1280,326,1562,376,1561,381,1279,331"/>
+<area shape="poly" title=" " alt="" coords="861,259,805,280,745,306,685,339,634,372,631,367,682,335,742,302,803,275,859,254"/>
+<area shape="poly" title=" " alt="" coords="828,252,678,270,609,286,583,295,564,306,525,344,513,364,505,385,502,406,504,429,511,453,523,479,544,503,571,520,569,525,541,507,518,481,506,455,499,430,497,406,500,383,508,361,521,340,560,302,580,291,608,281,677,265,827,246"/>
+<area shape="poly" title=" " alt="" coords="969,250,1118,271,1292,301,1446,337,1575,371,1574,377,1444,342,1291,307,1117,276,968,255"/>
+<area shape="poly" title=" " alt="" coords="955,254,1151,297,1150,303,954,259"/>
+<area shape="poly" title=" " alt="" coords="298,482,271,518,232,557,194,581,155,599,153,594,191,576,228,553,267,515,294,479"/>
+<area shape="poly" title=" " alt="" coords="605,331,605,363,599,363,599,331"/>
+<area shape="poly" title=" " alt="" coords="585,333,563,353,544,380,533,408,527,432,529,454,543,478,556,490,578,500,635,516,701,527,763,533,762,539,701,532,634,521,576,505,554,494,539,482,524,456,521,432,528,406,540,377,559,350,582,329"/>
+<area shape="poly" title=" " alt="" coords="631,325,755,360,917,403,1049,427,1220,454,1389,486,1461,505,1516,526,1572,557,1623,595,1698,664,1695,668,1619,599,1569,562,1514,530,1459,510,1388,492,1219,460,1048,432,916,408,754,365,630,330"/>
+<area shape="poly" title=" " alt="" coords="631,322,914,380,913,385,630,327"/>
+<area shape="poly" title=" " alt="" coords="574,328,346,377,345,372,573,322"/>
+<area shape="poly" title=" " alt="" coords="269,407,233,474,207,516,176,556,135,595,131,591,172,553,202,513,229,471,264,405"/>
+</map>
+</div>
+</div>
+<p><a href="avdevice_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_device_rect.html">AVDeviceRect</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_device_capabilities_query.html">AVDeviceCapabilitiesQuery</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Following API allows user to probe device capabilities (supported codecs, pixel formats, sample formats, resolutions, channel counts, etc).  <a href="struct_a_v_device_capabilities_query.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_device_info.html">AVDeviceInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure describes basic parameters of the device.  <a href="struct_a_v_device_info.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_device_info_list.html">AVDeviceInfoList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of devices.  <a href="struct_a_v_device_info_list.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:gac5dcbcb2a8238700bfe55d6c915521db" id="r_gac5dcbcb2a8238700bfe55d6c915521db"><td class="memItemLeft" align="right" valign="top">typedef struct AVDeviceRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#gac5dcbcb2a8238700bfe55d6c915521db">AVDeviceRect</a></td></tr>
+<tr class="separator:gac5dcbcb2a8238700bfe55d6c915521db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0642a5383e58e57404551b79b2e624e3" id="r_ga0642a5383e58e57404551b79b2e624e3"><td class="memItemLeft" align="right" valign="top">typedef struct AVDeviceCapabilitiesQuery&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga0642a5383e58e57404551b79b2e624e3">AVDeviceCapabilitiesQuery</a></td></tr>
+<tr class="memdesc:ga0642a5383e58e57404551b79b2e624e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Following API allows user to probe device capabilities (supported codecs, pixel formats, sample formats, resolutions, channel counts, etc).  <br /></td></tr>
+<tr class="separator:ga0642a5383e58e57404551b79b2e624e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ad5d0ce867c3e09e365ca7c68bdaf75" id="r_ga6ad5d0ce867c3e09e365ca7c68bdaf75"><td class="memItemLeft" align="right" valign="top">typedef struct AVDeviceInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga6ad5d0ce867c3e09e365ca7c68bdaf75">AVDeviceInfo</a></td></tr>
+<tr class="memdesc:ga6ad5d0ce867c3e09e365ca7c68bdaf75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure describes basic parameters of the device.  <br /></td></tr>
+<tr class="separator:ga6ad5d0ce867c3e09e365ca7c68bdaf75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e3d0b839593decff198f8b4e1140325" id="r_ga8e3d0b839593decff198f8b4e1140325"><td class="memItemLeft" align="right" valign="top">typedef struct AVDeviceInfoList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga8e3d0b839593decff198f8b4e1140325">AVDeviceInfoList</a></td></tr>
+<tr class="memdesc:ga8e3d0b839593decff198f8b4e1140325"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of devices.  <br /></td></tr>
+<tr class="separator:ga8e3d0b839593decff198f8b4e1140325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ga16d549a25f11693a06a211f00864fed8" id="r_ga16d549a25f11693a06a211f00864fed8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga16d549a25f11693a06a211f00864fed8">AVAppToDevMessageType</a> { <br />
+&#160;&#160;<a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8a635d820c2098c4f58feff50b7d6c2811">AV_APP_TO_DEV_NONE</a> = MKBETAG('N','O','N','E')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8ace5fb49b2638f933e758fed3dcb07249">AV_APP_TO_DEV_WINDOW_SIZE</a> = MKBETAG('G','E','O','M')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8a9f4006d75c6e368d9d0224d973d57710">AV_APP_TO_DEV_WINDOW_REPAINT</a> = MKBETAG('R','E','P','A')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8a89a46eae01f8ff45ec1f200e6738d804">AV_APP_TO_DEV_PAUSE</a> = MKBETAG('P', 'A', 'U', ' ')
+, <br />
+&#160;&#160;<a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8a344983cb9068e56d3f847162081a9747">AV_APP_TO_DEV_PLAY</a> = MKBETAG('P', 'L', 'A', 'Y')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8a754ae9e6688b1de6f92140415e56b40c">AV_APP_TO_DEV_TOGGLE_PAUSE</a> = MKBETAG('P', 'A', 'U', 'T')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8abac3d409c36e4774717f9a8ecf24ada9">AV_APP_TO_DEV_SET_VOLUME</a> = MKBETAG('S', 'V', 'O', 'L')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8a93114a33bcd20f06d39fb9a64febf751">AV_APP_TO_DEV_MUTE</a> = MKBETAG(' ', 'M', 'U', 'T')
+, <br />
+&#160;&#160;<a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8ad8c2e96b8cf1ebd5e85c5fd171eecc3f">AV_APP_TO_DEV_UNMUTE</a> = MKBETAG('U', 'M', 'U', 'T')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8ad83bcf41ae7e0d09e46bdc2b240afb4b">AV_APP_TO_DEV_TOGGLE_MUTE</a> = MKBETAG('T', 'M', 'U', 'T')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8a5caaa1fda2910d345270d8ac1710c138">AV_APP_TO_DEV_GET_VOLUME</a> = MKBETAG('G', 'V', 'O', 'L')
+, <a class="el" href="group__lavd.html#gga16d549a25f11693a06a211f00864fed8a8219697bb3af980fa778ffb1e11606b3">AV_APP_TO_DEV_GET_MUTE</a> = MKBETAG('G', 'M', 'U', 'T')
+<br />
+ }</td></tr>
+<tr class="memdesc:ga16d549a25f11693a06a211f00864fed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message types used by <a class="el" href="group__lavd.html#ga62f5a22de09f0bc7fd2380d39ee1bc45" title="Send control message from application to device.">avdevice_app_to_dev_control_message()</a>.  <a href="group__lavd.html#ga16d549a25f11693a06a211f00864fed8">更多...</a><br /></td></tr>
+<tr class="separator:ga16d549a25f11693a06a211f00864fed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac379d3691ce091da6387a461a158a690" id="r_gac379d3691ce091da6387a461a158a690"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#gac379d3691ce091da6387a461a158a690">AVDevToAppMessageType</a> { <br />
+&#160;&#160;<a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a64ccc494050138379bd52b62159ea4ce">AV_DEV_TO_APP_NONE</a> = MKBETAG('N','O','N','E')
+, <a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a0c4bc0ff29547bc0dc4bd5d0aba95020">AV_DEV_TO_APP_CREATE_WINDOW_BUFFER</a> = MKBETAG('B','C','R','E')
+, <a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a7d665015d93c6f6f0bf6bdb3d86c619e">AV_DEV_TO_APP_PREPARE_WINDOW_BUFFER</a> = MKBETAG('B','P','R','E')
+, <a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a1108397b3605ed9aff591de55a3c27bd">AV_DEV_TO_APP_DISPLAY_WINDOW_BUFFER</a> = MKBETAG('B','D','I','S')
+, <br />
+&#160;&#160;<a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690abd200e116b23c39311db9661d9221b04">AV_DEV_TO_APP_DESTROY_WINDOW_BUFFER</a> = MKBETAG('B','D','E','S')
+, <a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a037a21369f35dd608f54fb34022de229">AV_DEV_TO_APP_BUFFER_OVERFLOW</a> = MKBETAG('B','O','F','L')
+, <a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690ac3652337ce29a2bb83a57ae9b76196c1">AV_DEV_TO_APP_BUFFER_UNDERFLOW</a> = MKBETAG('B','U','F','L')
+, <a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a1fe6ba0b4093fb06244e342105d9c1a2">AV_DEV_TO_APP_BUFFER_READABLE</a> = MKBETAG('B','R','D',' ')
+, <br />
+&#160;&#160;<a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a0cf06e453ce4b8618573bf9fbeca07f4">AV_DEV_TO_APP_BUFFER_WRITABLE</a> = MKBETAG('B','W','R',' ')
+, <a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a3e4c4485f83fa9818ce1e9a559a7dc02">AV_DEV_TO_APP_MUTE_STATE_CHANGED</a> = MKBETAG('C','M','U','T')
+, <a class="el" href="group__lavd.html#ggac379d3691ce091da6387a461a158a690a19abbd0fc9488541fd4df18660120e0c">AV_DEV_TO_APP_VOLUME_LEVEL_CHANGED</a> = MKBETAG('C','V','O','L')
+<br />
+ }</td></tr>
+<tr class="memdesc:gac379d3691ce091da6387a461a158a690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message types used by <a class="el" href="group__lavd.html#gaf426838f78fb5bcdc2095c4d3162cf6e" title="Send control message from device to application.">avdevice_dev_to_app_control_message()</a>.  <a href="group__lavd.html#gac379d3691ce091da6387a461a158a690">更多...</a><br /></td></tr>
+<tr class="separator:gac379d3691ce091da6387a461a158a690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga6a111710c7b02c2a11d8b6c43e0dd63d" id="r_ga6a111710c7b02c2a11d8b6c43e0dd63d"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga6a111710c7b02c2a11d8b6c43e0dd63d">avdevice_version</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ga6a111710c7b02c2a11d8b6c43e0dd63d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the LIBAVDEVICE_VERSION_INT constant.  <br /></td></tr>
+<tr class="separator:ga6a111710c7b02c2a11d8b6c43e0dd63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga788d54225eca6950259630999a92dfd0" id="r_ga788d54225eca6950259630999a92dfd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga788d54225eca6950259630999a92dfd0">avdevice_configuration</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ga788d54225eca6950259630999a92dfd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the libavdevice build-time configuration.  <br /></td></tr>
+<tr class="separator:ga788d54225eca6950259630999a92dfd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee7745bf393a9e5dbf0959457f9a3427" id="r_gaee7745bf393a9e5dbf0959457f9a3427"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#gaee7745bf393a9e5dbf0959457f9a3427">avdevice_license</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gaee7745bf393a9e5dbf0959457f9a3427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the libavdevice license.  <br /></td></tr>
+<tr class="separator:gaee7745bf393a9e5dbf0959457f9a3427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c90a3585267b55941ae2f7388c006b6" id="r_ga7c90a3585267b55941ae2f7388c006b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga7c90a3585267b55941ae2f7388c006b6">avdevice_register_all</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ga7c90a3585267b55941ae2f7388c006b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize libavdevice and register all the input and output devices.  <br /></td></tr>
+<tr class="separator:ga7c90a3585267b55941ae2f7388c006b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7135ba73a2fde278cf90a910142f745c" id="r_ga7135ba73a2fde278cf90a910142f745c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga7135ba73a2fde278cf90a910142f745c">av_input_audio_device_next</a> (<a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *d)</td></tr>
+<tr class="memdesc:ga7135ba73a2fde278cf90a910142f745c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Audio input devices iterator.  <br /></td></tr>
+<tr class="separator:ga7135ba73a2fde278cf90a910142f745c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1157940ffd65e575c305ca99b9ae6620" id="r_ga1157940ffd65e575c305ca99b9ae6620"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga1157940ffd65e575c305ca99b9ae6620">av_input_video_device_next</a> (<a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *d)</td></tr>
+<tr class="memdesc:ga1157940ffd65e575c305ca99b9ae6620"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_video.html" title="视频界面类，支持视频频道、MV 和视频子界面切换">Video</a> input devices iterator.  <br /></td></tr>
+<tr class="separator:ga1157940ffd65e575c305ca99b9ae6620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0fdceada00f9976ac6587c0e915909c" id="r_gaf0fdceada00f9976ac6587c0e915909c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_output_format.html">AVOutputFormat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#gaf0fdceada00f9976ac6587c0e915909c">av_output_audio_device_next</a> (<a class="el" href="struct_a_v_output_format.html">AVOutputFormat</a> *d)</td></tr>
+<tr class="memdesc:gaf0fdceada00f9976ac6587c0e915909c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Audio output devices iterator.  <br /></td></tr>
+<tr class="separator:gaf0fdceada00f9976ac6587c0e915909c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7923fb1f1fc273f44fe0ee8fcf5c22df" id="r_ga7923fb1f1fc273f44fe0ee8fcf5c22df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_output_format.html">AVOutputFormat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga7923fb1f1fc273f44fe0ee8fcf5c22df">av_output_video_device_next</a> (<a class="el" href="struct_a_v_output_format.html">AVOutputFormat</a> *d)</td></tr>
+<tr class="memdesc:ga7923fb1f1fc273f44fe0ee8fcf5c22df"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_video.html" title="视频界面类，支持视频频道、MV 和视频子界面切换">Video</a> output devices iterator.  <br /></td></tr>
+<tr class="separator:ga7923fb1f1fc273f44fe0ee8fcf5c22df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62f5a22de09f0bc7fd2380d39ee1bc45" id="r_ga62f5a22de09f0bc7fd2380d39ee1bc45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga62f5a22de09f0bc7fd2380d39ee1bc45">avdevice_app_to_dev_control_message</a> (struct <a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, enum <a class="el" href="group__lavd.html#ga16d549a25f11693a06a211f00864fed8">AVAppToDevMessageType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, size_t data_size)</td></tr>
+<tr class="memdesc:ga62f5a22de09f0bc7fd2380d39ee1bc45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send control message from application to device.  <br /></td></tr>
+<tr class="separator:ga62f5a22de09f0bc7fd2380d39ee1bc45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf426838f78fb5bcdc2095c4d3162cf6e" id="r_gaf426838f78fb5bcdc2095c4d3162cf6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#gaf426838f78fb5bcdc2095c4d3162cf6e">avdevice_dev_to_app_control_message</a> (struct <a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, enum <a class="el" href="group__lavd.html#gac379d3691ce091da6387a461a158a690">AVDevToAppMessageType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, size_t data_size)</td></tr>
+<tr class="memdesc:gaf426838f78fb5bcdc2095c4d3162cf6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send control message from device to application.  <br /></td></tr>
+<tr class="separator:gaf426838f78fb5bcdc2095c4d3162cf6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf802f1388f3f209cbbc93d9ba983a341" id="r_gaf802f1388f3f209cbbc93d9ba983a341"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#gaf802f1388f3f209cbbc93d9ba983a341">avdevice_capabilities_create</a> (<a class="el" href="struct_a_v_device_capabilities_query.html">AVDeviceCapabilitiesQuery</a> **caps, <a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **device_options)</td></tr>
+<tr class="memdesc:gaf802f1388f3f209cbbc93d9ba983a341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize capabilities probing API based on <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> API.  <br /></td></tr>
+<tr class="separator:gaf802f1388f3f209cbbc93d9ba983a341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89c36d6e5698ad7dc2637226e1655dff" id="r_ga89c36d6e5698ad7dc2637226e1655dff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga89c36d6e5698ad7dc2637226e1655dff">avdevice_capabilities_free</a> (<a class="el" href="struct_a_v_device_capabilities_query.html">AVDeviceCapabilitiesQuery</a> **caps, <a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:ga89c36d6e5698ad7dc2637226e1655dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free resources created by <a class="el" href="group__lavd.html#gaf802f1388f3f209cbbc93d9ba983a341" title="Initialize capabilities probing API based on AVOption API.">avdevice_capabilities_create()</a>  <br /></td></tr>
+<tr class="separator:ga89c36d6e5698ad7dc2637226e1655dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4bf9cc38ae904b9104fda1e4def71474" id="r_ga4bf9cc38ae904b9104fda1e4def71474"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga4bf9cc38ae904b9104fda1e4def71474">avdevice_list_devices</a> (struct <a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, <a class="el" href="struct_a_v_device_info_list.html">AVDeviceInfoList</a> **device_list)</td></tr>
+<tr class="memdesc:ga4bf9cc38ae904b9104fda1e4def71474"><td class="mdescLeft">&#160;</td><td class="mdescRight">List devices.  <br /></td></tr>
+<tr class="separator:ga4bf9cc38ae904b9104fda1e4def71474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52dcbb2d9ae0f33b7a89548b5a0c87bd" id="r_ga52dcbb2d9ae0f33b7a89548b5a0c87bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga52dcbb2d9ae0f33b7a89548b5a0c87bd">avdevice_free_list_devices</a> (<a class="el" href="struct_a_v_device_info_list.html">AVDeviceInfoList</a> **device_list)</td></tr>
+<tr class="memdesc:ga52dcbb2d9ae0f33b7a89548b5a0c87bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient function to free result of <a class="el" href="group__lavd.html#ga4bf9cc38ae904b9104fda1e4def71474" title="List devices.">avdevice_list_devices()</a>.  <br /></td></tr>
+<tr class="separator:ga52dcbb2d9ae0f33b7a89548b5a0c87bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga202488c6f1ed7e87b659c7b8df079e50" id="r_ga202488c6f1ed7e87b659c7b8df079e50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga202488c6f1ed7e87b659c7b8df079e50">avdevice_list_input_sources</a> (struct <a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *device, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *device_name, <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> *device_options, <a class="el" href="struct_a_v_device_info_list.html">AVDeviceInfoList</a> **device_list)</td></tr>
+<tr class="memdesc:ga202488c6f1ed7e87b659c7b8df079e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">List devices.  <br /></td></tr>
+<tr class="separator:ga202488c6f1ed7e87b659c7b8df079e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2227616998276fefe5e4221e478d667f" id="r_ga2227616998276fefe5e4221e478d667f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga2227616998276fefe5e4221e478d667f">avdevice_list_output_sinks</a> (struct <a class="el" href="struct_a_v_output_format.html">AVOutputFormat</a> *device, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *device_name, <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> *device_options, <a class="el" href="struct_a_v_device_info_list.html">AVDeviceInfoList</a> **device_list)</td></tr>
+<tr class="separator:ga2227616998276fefe5e4221e478d667f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ga1362af8ea203781c69bc644179388259" id="r_ga1362af8ea203781c69bc644179388259"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_option.html">AVOption</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavd.html#ga1362af8ea203781c69bc644179388259">av_device_capabilities</a> []</td></tr>
+<tr class="memdesc:ga1362af8ea203781c69bc644179388259"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> table used by devices to implement device capabilities API.  <br /></td></tr>
+<tr class="separator:ga1362af8ea203781c69bc644179388259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Main libavdevice API header </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_e1488fe640df8fa4592ac64968fe0727.html">libavdevice</a></li><li class="navelem"><a class="el" href="avdevice_8h.html">avdevice.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: NDBPool类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_n_d_b_pool.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="class_n_d_b_pool-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">NDBPool类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="class_n_d_b_pool.html" title="The NDBPool class 数据库连接池库的接口文档">NDBPool</a> class 数据库连接池库的接口文档  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ndbpool_8h_source.html">ndbpool.h</a>&gt;</code></p>
+<div class="dynheader">
+类 NDBPool 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool__inherit__graph.png" border="0" usemap="#a_n_d_b_pool_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_n_d_b_pool_inherit__map" id="a_n_d_b_pool_inherit__map">
+<area shape="rect" title="The NDBPool class 数据库连接池库的接口文档" alt="" coords="70,80,146,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="64,42,98,78,94,81,60,45"/>
+<area shape="rect" href="class_singleton.html" title=" " alt="" coords="99,5,253,32"/>
+<area shape="poly" title=" " alt="" coords="156,45,122,81,118,78,152,42"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+NDBPool 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool__coll__graph.png" border="0" usemap="#a_n_d_b_pool_coll__map" alt="Collaboration graph"/></div>
+<map name="a_n_d_b_pool_coll__map" id="a_n_d_b_pool_coll__map">
+<area shape="rect" title="The NDBPool class 数据库连接池库的接口文档" alt="" coords="70,80,146,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="64,42,98,78,94,81,60,45"/>
+<area shape="rect" href="class_singleton.html" title=" " alt="" coords="99,5,253,32"/>
+<area shape="poly" title=" " alt="" coords="156,45,122,81,118,78,152,42"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:acdc98546e5f15502f11e609efb63d9fa" id="r_acdc98546e5f15502f11e609efb63d9fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdc98546e5f15502f11e609efb63d9fa">NDBPool</a> (bool paramIsDebug=false, QObject *parent=0)</td></tr>
+<tr class="memdesc:acdc98546e5f15502f11e609efb63d9fa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_n_d_b_pool.html" title="The NDBPool class 数据库连接池库的接口文档">NDBPool</a> 构造函数  <br /></td></tr>
+<tr class="separator:acdc98546e5f15502f11e609efb63d9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d77c130a6bb161c76ee06914d3dd293" id="r_a5d77c130a6bb161c76ee06914d3dd293"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d77c130a6bb161c76ee06914d3dd293">~NDBPool</a> ()</td></tr>
+<tr class="memdesc:a5d77c130a6bb161c76ee06914d3dd293"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a5d77c130a6bb161c76ee06914d3dd293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_singleton"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_singleton')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_singleton.html">Singleton&lt; NDBPool &gt;</a></td></tr>
+<tr class="memitem:a04783ca27b0280a844368faf849c8ddb inherit pub_methods_class_singleton" id="r_a04783ca27b0280a844368faf849c8ddb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html#a04783ca27b0280a844368faf849c8ddb">Singleton</a> ()</td></tr>
+<tr class="memdesc:a04783ca27b0280a844368faf849c8ddb inherit pub_methods_class_singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a04783ca27b0280a844368faf849c8ddb inherit pub_methods_class_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d833a82cba7b9c4083d4c071a771cfc inherit pub_methods_class_singleton" id="r_a7d833a82cba7b9c4083d4c071a771cfc"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html#a7d833a82cba7b9c4083d4c071a771cfc">~Singleton</a> ()</td></tr>
+<tr class="memdesc:a7d833a82cba7b9c4083d4c071a771cfc inherit pub_methods_class_singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚析构函数  <br /></td></tr>
+<tr class="separator:a7d833a82cba7b9c4083d4c071a771cfc inherit pub_methods_class_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a23b477d0e2d399f75d585d154c346591" id="r_a23b477d0e2d399f75d585d154c346591"><td class="memItemLeft" align="right" valign="top">static Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23b477d0e2d399f75d585d154c346591">release</a> ()</td></tr>
+<tr class="memdesc:a23b477d0e2d399f75d585d154c346591"><td class="mdescLeft">&#160;</td><td class="mdescRight">release 释放所有链接  <br /></td></tr>
+<tr class="separator:a23b477d0e2d399f75d585d154c346591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319089d0c9d3f95cfd551d12382876b0" id="r_a319089d0c9d3f95cfd551d12382876b0"><td class="memItemLeft" align="right" valign="top">static Q_INVOKABLE QSqlDatabase&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a319089d0c9d3f95cfd551d12382876b0">getNewConnection</a> (<a class="el" href="_my_common_2common_8h.html#a8075a00813e1304309060cf3198cb5f1">DB_Type</a> paramDB_Type=<a class="el" href="_my_common_2common_8h.html#a8075a00813e1304309060cf3198cb5f1a055f2a59617b2ddca4ee2a1c64da00ec">QODBC</a>, QString paramHostName=&quot;&quot;, QString paramDatabaseName=&quot;&quot;, QString paramUserName=&quot;&quot;, QString paramPassword=&quot;&quot;, int paramPort=1433, bool longConnect=false, QString longConnnectName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a319089d0c9d3f95cfd551d12382876b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">getNewConnection getNewConnection 获取一个可用的连接链接  <br /></td></tr>
+<tr class="separator:a319089d0c9d3f95cfd551d12382876b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f44e37b09b7c44b71fe15914da4b0c0" id="r_a9f44e37b09b7c44b71fe15914da4b0c0"><td class="memItemLeft" align="right" valign="top">static Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f44e37b09b7c44b71fe15914da4b0c0">closeConnection</a> (const QSqlDatabase &amp;connection)</td></tr>
+<tr class="memdesc:a9f44e37b09b7c44b71fe15914da4b0c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">closeConnection 释放本地连接  <br /></td></tr>
+<tr class="separator:a9f44e37b09b7c44b71fe15914da4b0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa75466198001c21b1a46b5b944e636d3" id="r_aa75466198001c21b1a46b5b944e636d3"><td class="memItemLeft" align="right" valign="top">static Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa75466198001c21b1a46b5b944e636d3">IsConnectioned</a> (<a class="el" href="_my_common_2common_8h.html#a8075a00813e1304309060cf3198cb5f1">DB_Type</a> paramDB_Type=<a class="el" href="_my_common_2common_8h.html#a8075a00813e1304309060cf3198cb5f1a055f2a59617b2ddca4ee2a1c64da00ec">QODBC</a>, QString paramHostName=&quot;&quot;, QString paramDatabaseName=&quot;&quot;, QString paramUserName=&quot;&quot;, QString paramPassword=&quot;&quot;, int paramPort=1433)</td></tr>
+<tr class="memdesc:aa75466198001c21b1a46b5b944e636d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">IsConnectioned 检测指定数据库是否连接  <br /></td></tr>
+<tr class="separator:aa75466198001c21b1a46b5b944e636d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_class_singleton"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_class_singleton')"><img src="closed.png" alt="-"/>&#160;静态 Public 成员函数 继承自 <a class="el" href="class_singleton.html">Singleton&lt; NDBPool &gt;</a></td></tr>
+<tr class="memitem:afe3abed0c54b651cf63c7ff3aca3b7e4 inherit pub_static_methods_class_singleton" id="r_afe3abed0c54b651cf63c7ff3aca3b7e4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_d_b_pool.html">NDBPool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html#afe3abed0c54b651cf63c7ff3aca3b7e4">getInstance</a> ()</td></tr>
+<tr class="memdesc:afe3abed0c54b651cf63c7ff3aca3b7e4 inherit pub_static_methods_class_singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取单例实例  <br /></td></tr>
+<tr class="separator:afe3abed0c54b651cf63c7ff3aca3b7e4 inherit pub_static_methods_class_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2fd3773c42fdb63e61fd50be4b59bf3 inherit pub_static_methods_class_singleton" id="r_ab2fd3773c42fdb63e61fd50be4b59bf3"><td class="memItemLeft" align="right" valign="top">static type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html#ab2fd3773c42fdb63e61fd50be4b59bf3">getSingleton</a> ()</td></tr>
+<tr class="memdesc:ab2fd3773c42fdb63e61fd50be4b59bf3 inherit pub_static_methods_class_singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取单例实例  <br /></td></tr>
+<tr class="separator:ab2fd3773c42fdb63e61fd50be4b59bf3 inherit pub_static_methods_class_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18fcfd768c7a2ad77ad7d45fe39bf94 inherit pub_static_methods_class_singleton" id="r_ab18fcfd768c7a2ad77ad7d45fe39bf94"><td class="memItemLeft" align="right" valign="top">static type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html#ab18fcfd768c7a2ad77ad7d45fe39bf94">getSingletonPtr</a> ()</td></tr>
+<tr class="memdesc:ab18fcfd768c7a2ad77ad7d45fe39bf94 inherit pub_static_methods_class_singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取单例指针  <br /></td></tr>
+<tr class="separator:ab18fcfd768c7a2ad77ad7d45fe39bf94 inherit pub_static_methods_class_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a749d91ee797916a9fb8399b8c28aedb6" id="r_a749d91ee797916a9fb8399b8c28aedb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a749d91ee797916a9fb8399b8c28aedb6">slots_forceBreak</a> ()</td></tr>
+<tr class="memdesc:a749d91ee797916a9fb8399b8c28aedb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">slots_forceBreak 强制断开连接  <br /></td></tr>
+<tr class="separator:a749d91ee797916a9fb8399b8c28aedb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:af07150d6f34c35e07e7072149fe34464" id="r_af07150d6f34c35e07e7072149fe34464"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af07150d6f34c35e07e7072149fe34464">checkForceBreakInterval</a></td></tr>
+<tr class="memdesc:af07150d6f34c35e07e7072149fe34464"><td class="mdescLeft">&#160;</td><td class="mdescRight">checkForceBreakInterval 强制断开连接的检查频率  <br /></td></tr>
+<tr class="separator:af07150d6f34c35e07e7072149fe34464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0b49bdf823a1688d2f10d592fbddb6" id="r_a6c0b49bdf823a1688d2f10d592fbddb6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c0b49bdf823a1688d2f10d592fbddb6">forceBreakTime</a></td></tr>
+<tr class="memdesc:a6c0b49bdf823a1688d2f10d592fbddb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">forceBreakTime 强制断开连接的判定时间差  <br /></td></tr>
+<tr class="separator:a6c0b49bdf823a1688d2f10d592fbddb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9412e5ea0131c445453714d1bb9c5f0" id="r_ac9412e5ea0131c445453714d1bb9c5f0"><td class="memItemLeft" align="right" valign="top">QTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9412e5ea0131c445453714d1bb9c5f0">activeTimer</a></td></tr>
+<tr class="memdesc:ac9412e5ea0131c445453714d1bb9c5f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">activeTimer 维持活跃连接  <br /></td></tr>
+<tr class="separator:ac9412e5ea0131c445453714d1bb9c5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb11c2b0ba83d14a5ead5ca1507a8ec0" id="r_afb11c2b0ba83d14a5ead5ca1507a8ec0"><td class="memItemLeft" align="right" valign="top">QTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb11c2b0ba83d14a5ead5ca1507a8ec0">checkDeadTimer</a></td></tr>
+<tr class="memdesc:afb11c2b0ba83d14a5ead5ca1507a8ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">checkDeadTimer 检测死链接  <br /></td></tr>
+<tr class="separator:afb11c2b0ba83d14a5ead5ca1507a8ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20fe3aba4bafc33865176866ce13832b" id="r_a20fe3aba4bafc33865176866ce13832b"><td class="memItemLeft" align="right" valign="top">QTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20fe3aba4bafc33865176866ce13832b">forceBreakTimer</a></td></tr>
+<tr class="memdesc:a20fe3aba4bafc33865176866ce13832b"><td class="mdescLeft">&#160;</td><td class="mdescRight">forceBreakTimer 检查超时链接  <br /></td></tr>
+<tr class="separator:a20fe3aba4bafc33865176866ce13832b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a8e1c26a746a2c670afc100365778c6c0" id="r_a8e1c26a746a2c670afc100365778c6c0"><td class="memItemLeft" align="right" valign="top">static QMap&lt; QString, <a class="el" href="structconnect_active.html">connectActive</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e1c26a746a2c670afc100365778c6c0">connectionLastActiveTimeMap</a></td></tr>
+<tr class="memdesc:a8e1c26a746a2c670afc100365778c6c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">connectionLastActiveTimeMap 连接的最近状态映射  <br /></td></tr>
+<tr class="separator:a8e1c26a746a2c670afc100365778c6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d4d807f1eb4a1fc10e69deaf551f0a" id="r_a46d4d807f1eb4a1fc10e69deaf551f0a"><td class="memItemLeft" align="right" valign="top">static QMap&lt; QString, <a class="el" href="class_n_d_b_pool__p.html">NDBPool_p</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d4d807f1eb4a1fc10e69deaf551f0a">poolMap</a></td></tr>
+<tr class="memdesc:a46d4d807f1eb4a1fc10e69deaf551f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">poolMap 数据库连接池名字和连接池的映射  <br /></td></tr>
+<tr class="separator:a46d4d807f1eb4a1fc10e69deaf551f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807144cd9ad1e8ed1d3ad3042c75080b" id="r_a807144cd9ad1e8ed1d3ad3042c75080b"><td class="memItemLeft" align="right" valign="top">static QMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a807144cd9ad1e8ed1d3ad3042c75080b">mLock</a></td></tr>
+<tr class="memdesc:a807144cd9ad1e8ed1d3ad3042c75080b"><td class="mdescLeft">&#160;</td><td class="mdescRight">mLock  <br /></td></tr>
+<tr class="separator:a807144cd9ad1e8ed1d3ad3042c75080b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac403edaf1ed3cae4cd041837579fa0e9" id="r_ac403edaf1ed3cae4cd041837579fa0e9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac403edaf1ed3cae4cd041837579fa0e9">isDebug</a> = false</td></tr>
+<tr class="memdesc:ac403edaf1ed3cae4cd041837579fa0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">isDebug 是否为调试模式  <br /></td></tr>
+<tr class="separator:ac403edaf1ed3cae4cd041837579fa0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_static_attribs_class_singleton"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_attribs_class_singleton')"><img src="closed.png" alt="-"/>&#160;静态 Protected 属性 继承自 <a class="el" href="class_singleton.html">Singleton&lt; NDBPool &gt;</a></td></tr>
+<tr class="memitem:a6946e932d07744f5d08f02f20120eb19 inherit pro_static_attribs_class_singleton" id="r_a6946e932d07744f5d08f02f20120eb19"><td class="memItemLeft" align="right" valign="top">static type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html#a6946e932d07744f5d08f02f20120eb19">mSingleton</a></td></tr>
+<tr class="memdesc:a6946e932d07744f5d08f02f20120eb19 inherit pro_static_attribs_class_singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">单例静态指针  <br /></td></tr>
+<tr class="separator:a6946e932d07744f5d08f02f20120eb19 inherit pro_static_attribs_class_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="class_n_d_b_pool.html" title="The NDBPool class 数据库连接池库的接口文档">NDBPool</a> class 数据库连接池库的接口文档 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="acdc98546e5f15502f11e609efb63d9fa" name="acdc98546e5f15502f11e609efb63d9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdc98546e5f15502f11e609efb63d9fa">&#9670;&#160;</a></span>NDBPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_d_b_pool.html">NDBPool</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>paramIsDebug</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_n_d_b_pool.html" title="The NDBPool class 数据库连接池库的接口文档">NDBPool</a> 构造函数 </p>
+<p>构造函数</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramIsDebug</td><td>是否是调试模式</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>初始化数据库连接池管理对象，设置调试模式和定时器以强制断开超时连接。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramIsDebug</td><td>是否启用调试模式 </td></tr>
+    <tr><td class="paramname">parent</td><td>父对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool_acdc98546e5f15502f11e609efb63d9fa_cgraph.png" border="0" usemap="#aclass_n_d_b_pool_acdc98546e5f15502f11e609efb63d9fa_cgraph" alt=""/></div>
+<map name="aclass_n_d_b_pool_acdc98546e5f15502f11e609efb63d9fa_cgraph" id="aclass_n_d_b_pool_acdc98546e5f15502f11e609efb63d9fa_cgraph">
+<area shape="rect" title="NDBPool 构造函数" alt="" coords="5,5,82,32"/>
+<area shape="rect" href="class_n_d_b_pool.html#a749d91ee797916a9fb8399b8c28aedb6" title="slots_forceBreak 强制断开连接" alt="" coords="130,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="82,16,114,16,114,21,82,21"/>
+<area shape="rect" href="class_n_d_b_pool__p.html#a042ef63e25f34b27254cec1bf42923a2" title="closeConnection 关闭数据库连接" alt="" coords="297,5,492,32"/>
+<area shape="poly" title=" " alt="" coords="249,16,281,16,281,21,249,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5d77c130a6bb161c76ee06914d3dd293" name="a5d77c130a6bb161c76ee06914d3dd293"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d77c130a6bb161c76ee06914d3dd293">&#9670;&#160;</a></span>~NDBPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_n_d_b_pool.html">NDBPool</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+<p>销毁数据库连接池管理对象，释放所有连接池资源。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a9f44e37b09b7c44b71fe15914da4b0c0" name="a9f44e37b09b7c44b71fe15914da4b0c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f44e37b09b7c44b71fe15914da4b0c0">&#9670;&#160;</a></span>closeConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void closeConnection </td>
+          <td>(</td>
+          <td class="paramtype">const QSqlDatabase &amp;</td>          <td class="paramname"><span class="paramname"><em>connection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>closeConnection 释放本地连接 </p>
+<p>关闭数据库连接</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>关闭指定的数据库连接，并将其标记为未使用或从连接池移除。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td>要关闭的数据库连接 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool_a9f44e37b09b7c44b71fe15914da4b0c0_cgraph.png" border="0" usemap="#aclass_n_d_b_pool_a9f44e37b09b7c44b71fe15914da4b0c0_cgraph" alt=""/></div>
+<map name="aclass_n_d_b_pool_a9f44e37b09b7c44b71fe15914da4b0c0_cgraph" id="aclass_n_d_b_pool_a9f44e37b09b7c44b71fe15914da4b0c0_cgraph">
+<area shape="rect" title="closeConnection 释放本地连接" alt="" coords="5,5,124,32"/>
+<area shape="rect" href="class_n_d_b_pool__p.html#a042ef63e25f34b27254cec1bf42923a2" title="closeConnection 关闭数据库连接" alt="" coords="172,5,367,32"/>
+<area shape="poly" title=" " alt="" coords="124,16,156,16,156,21,124,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a319089d0c9d3f95cfd551d12382876b0" name="a319089d0c9d3f95cfd551d12382876b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319089d0c9d3f95cfd551d12382876b0">&#9670;&#160;</a></span>getNewConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSqlDatabase getNewConnection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_my_common_2common_8h.html#a8075a00813e1304309060cf3198cb5f1">DB_Type</a></td>          <td class="paramname"><span class="paramname"><em>paramDB_Type</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_my_common_2common_8h.html#a8075a00813e1304309060cf3198cb5f1a055f2a59617b2ddca4ee2a1c64da00ec">QODBC</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>paramHostName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>paramDatabaseName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>paramUserName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>paramPassword</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>paramPort</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1433</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>longConnect</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>longConnnectName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getNewConnection getNewConnection 获取一个可用的连接链接 </p>
+<p>获取新的数据库连接</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramDB_Type</td><td>数据库类型 </td></tr>
+    <tr><td class="paramname">paramHostName</td><td>主机名 </td></tr>
+    <tr><td class="paramname">paramDatabaseName</td><td>数据库名字 </td></tr>
+    <tr><td class="paramname">paramUserName</td><td>数据库名字 </td></tr>
+    <tr><td class="paramname">paramPassword</td><td>数据库密码 </td></tr>
+    <tr><td class="paramname">paramPort</td><td>数据库端口 </td></tr>
+    <tr><td class="paramname">longConnect</td><td>是否为长连接 </td></tr>
+    <tr><td class="paramname">longConnnectName</td><td>长连接名字 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<p>根据参数从连接池获取或创建新的数据库连接，支持长连接和短连接。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramDB_Type</td><td>数据库类型 </td></tr>
+    <tr><td class="paramname">paramHostName</td><td>主机名 </td></tr>
+    <tr><td class="paramname">paramDatabaseName</td><td>数据库名 </td></tr>
+    <tr><td class="paramname">paramUserName</td><td>用户名 </td></tr>
+    <tr><td class="paramname">paramPassword</td><td>密码 </td></tr>
+    <tr><td class="paramname">paramPort</td><td>端口号 </td></tr>
+    <tr><td class="paramname">longConnect</td><td>是否为长连接 </td></tr>
+    <tr><td class="paramname">longConnnectName</td><td>长连接名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>有效的数据库连接对象，若失败则返回空对象 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool_a319089d0c9d3f95cfd551d12382876b0_cgraph.png" border="0" usemap="#aclass_n_d_b_pool_a319089d0c9d3f95cfd551d12382876b0_cgraph" alt=""/></div>
+<map name="aclass_n_d_b_pool_a319089d0c9d3f95cfd551d12382876b0_cgraph" id="aclass_n_d_b_pool_a319089d0c9d3f95cfd551d12382876b0_cgraph">
+<area shape="rect" title="getNewConnection getNewConnection 获取一个可用的连接链接" alt="" coords="5,56,138,83"/>
+<area shape="poly" title=" " alt="" coords="35,57,28,47,32,37,47,31,72,29,97,32,111,38,109,43,96,37,71,35,49,37,36,41,33,47,39,54"/>
+<area shape="rect" href="class_n_d_b_pool__p.html#a52a5c2a95f7d669f699c776a53ef1d60" title="getMaxWaitTime 最大连接等待时间的属性的获取" alt="" coords="192,5,388,32"/>
+<area shape="poly" title=" " alt="" coords="132,53,214,33,216,39,133,58"/>
+<area shape="rect" href="class_n_d_b_pool__p.html#a59f218b6563af337f691d0ebaac3b380" title="getNewConnection 获取一个数据库连接(名字存在则复用，不存在则创建)" alt="" coords="186,56,395,83"/>
+<area shape="poly" title=" " alt="" coords="138,67,170,67,170,72,138,72"/>
+<area shape="rect" href="class_singleton.html#ab2fd3773c42fdb63e61fd50be4b59bf3" title=" " alt="" coords="219,107,362,149"/>
+<area shape="poly" title=" " alt="" coords="125,81,204,102,203,107,123,86"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="443,56,482,83"/>
+<area shape="poly" title=" " alt="" coords="395,67,427,67,427,72,395,72"/>
+<area shape="poly" title=" " alt="" coords="441,63,429,52,429,40,441,32,463,29,491,35,497,43,497,51,491,50,492,44,488,40,463,35,443,37,434,43,434,50,444,59"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool_a319089d0c9d3f95cfd551d12382876b0_icgraph.png" border="0" usemap="#aclass_n_d_b_pool_a319089d0c9d3f95cfd551d12382876b0_icgraph" alt=""/></div>
+<map name="aclass_n_d_b_pool_a319089d0c9d3f95cfd551d12382876b0_icgraph" id="aclass_n_d_b_pool_a319089d0c9d3f95cfd551d12382876b0_icgraph">
+<area shape="rect" title="getNewConnection getNewConnection 获取一个可用的连接链接" alt="" coords="184,113,316,140"/>
+<area shape="poly" title=" " alt="" coords="280,100,270,94,250,92,231,94,221,99,219,104,224,112,219,114,214,105,217,95,230,89,250,87,271,89,283,96"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a102af10cf2fd7c80c746e0375908cfeb" title="SqliteDataProvider::execInsertSql 执行sql的insert语句" alt="" coords="5,5,136,48"/>
+<area shape="poly" title=" " alt="" coords="212,107,134,62,113,51,116,46,137,58,214,103"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a323ab4214f61bc5495305c1dba9b4206" title="执行SQL语句" alt="" coords="5,72,136,115"/>
+<area shape="poly" title=" " alt="" coords="168,114,136,108,137,103,169,109"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a516e61593f0a15f321f498a6cc7a507a" title="SqliteDataProvider::execSqls 执行多条语句" alt="" coords="5,139,136,181"/>
+<area shape="poly" title=" " alt="" coords="169,144,137,150,136,145,168,139"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a2742764c099329da23a3d8c8d2794cc0" title="execTransaction 执行事务" alt="" coords="5,205,136,248"/>
+<area shape="poly" title=" " alt="" coords="214,151,137,196,116,207,113,202,134,191,212,146"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa75466198001c21b1a46b5b944e636d3" name="aa75466198001c21b1a46b5b944e636d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa75466198001c21b1a46b5b944e636d3">&#9670;&#160;</a></span>IsConnectioned()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IsConnectioned </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_my_common_2common_8h.html#a8075a00813e1304309060cf3198cb5f1">DB_Type</a></td>          <td class="paramname"><span class="paramname"><em>paramDB_Type</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_my_common_2common_8h.html#a8075a00813e1304309060cf3198cb5f1a055f2a59617b2ddca4ee2a1c64da00ec">QODBC</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>paramHostName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>paramDatabaseName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>paramUserName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>paramPassword</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>paramPort</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1433</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>IsConnectioned 检测指定数据库是否连接 </p>
+<p>测试数据库连接</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramHostName</td><td>主机名 </td></tr>
+    <tr><td class="paramname">paramDatabaseName</td><td>数据库名字 </td></tr>
+    <tr><td class="paramname">paramUserName</td><td>数据库名字 </td></tr>
+    <tr><td class="paramname">paramPassword</td><td>数据库密码 </td></tr>
+    <tr><td class="paramname">paramPort</td><td>数据库端口 </td></tr>
+    <tr><td class="paramname">paramDB_Type</td><td>数据库类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<p>测试指定参数是否能够成功连接数据库。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramDB_Type</td><td>数据库类型 </td></tr>
+    <tr><td class="paramname">paramHostName</td><td>主机名 </td></tr>
+    <tr><td class="paramname">paramDatabaseName</td><td>数据库名 </td></tr>
+    <tr><td class="paramname">paramUserName</td><td>用户名 </td></tr>
+    <tr><td class="paramname">paramPassword</td><td>密码 </td></tr>
+    <tr><td class="paramname">paramPort</td><td>端口号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>连接成功返回 true，否则返回 false </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool_aa75466198001c21b1a46b5b944e636d3_cgraph.png" border="0" usemap="#aclass_n_d_b_pool_aa75466198001c21b1a46b5b944e636d3_cgraph" alt=""/></div>
+<map name="aclass_n_d_b_pool_aa75466198001c21b1a46b5b944e636d3_cgraph" id="aclass_n_d_b_pool_aa75466198001c21b1a46b5b944e636d3_cgraph">
+<area shape="rect" title="IsConnectioned 检测指定数据库是否连接" alt="" coords="5,29,118,56"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="166,29,205,56"/>
+<area shape="poly" title=" " alt="" coords="118,40,150,40,150,45,118,45"/>
+<area shape="poly" title=" " alt="" coords="163,30,159,20,162,11,171,5,185,3,201,5,209,12,206,16,199,10,185,8,173,10,166,14,165,20,168,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23b477d0e2d399f75d585d154c346591" name="a23b477d0e2d399f75d585d154c346591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b477d0e2d399f75d585d154c346591">&#9670;&#160;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void release </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>release 释放所有链接 </p>
+<p>释放所有连接池资源</p>
+<dl class="section return"><dt>返回</dt><dd>void</dd></dl>
+<p>释放所有数据库连接池对象。 </p>
+
+</div>
+</div>
+<a id="a749d91ee797916a9fb8399b8c28aedb6" name="a749d91ee797916a9fb8399b8c28aedb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a749d91ee797916a9fb8399b8c28aedb6">&#9670;&#160;</a></span>slots_forceBreak</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void slots_forceBreak </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>slots_forceBreak 强制断开连接 </p>
+<p>强制断开超时连接</p>
+<p>检查并关闭超时的数据库连接，将其标记为未使用或从连接池移除。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool_a749d91ee797916a9fb8399b8c28aedb6_cgraph.png" border="0" usemap="#aclass_n_d_b_pool_a749d91ee797916a9fb8399b8c28aedb6_cgraph" alt=""/></div>
+<map name="aclass_n_d_b_pool_a749d91ee797916a9fb8399b8c28aedb6_cgraph" id="aclass_n_d_b_pool_a749d91ee797916a9fb8399b8c28aedb6_cgraph">
+<area shape="rect" title="slots_forceBreak 强制断开连接" alt="" coords="5,5,125,32"/>
+<area shape="rect" href="class_n_d_b_pool__p.html#a042ef63e25f34b27254cec1bf42923a2" title="closeConnection 关闭数据库连接" alt="" coords="173,5,368,32"/>
+<area shape="poly" title=" " alt="" coords="125,16,157,16,157,21,125,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_n_d_b_pool_a749d91ee797916a9fb8399b8c28aedb6_icgraph.png" border="0" usemap="#aclass_n_d_b_pool_a749d91ee797916a9fb8399b8c28aedb6_icgraph" alt=""/></div>
+<map name="aclass_n_d_b_pool_a749d91ee797916a9fb8399b8c28aedb6_icgraph" id="aclass_n_d_b_pool_a749d91ee797916a9fb8399b8c28aedb6_icgraph">
+<area shape="rect" title="slots_forceBreak 强制断开连接" alt="" coords="130,5,249,32"/>
+<area shape="rect" href="class_n_d_b_pool.html#acdc98546e5f15502f11e609efb63d9fa" title="NDBPool 构造函数" alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac9412e5ea0131c445453714d1bb9c5f0" name="ac9412e5ea0131c445453714d1bb9c5f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9412e5ea0131c445453714d1bb9c5f0">&#9670;&#160;</a></span>activeTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer activeTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>activeTimer 维持活跃连接 </p>
+
+</div>
+</div>
+<a id="afb11c2b0ba83d14a5ead5ca1507a8ec0" name="afb11c2b0ba83d14a5ead5ca1507a8ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb11c2b0ba83d14a5ead5ca1507a8ec0">&#9670;&#160;</a></span>checkDeadTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer checkDeadTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checkDeadTimer 检测死链接 </p>
+
+</div>
+</div>
+<a id="af07150d6f34c35e07e7072149fe34464" name="af07150d6f34c35e07e7072149fe34464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07150d6f34c35e07e7072149fe34464">&#9670;&#160;</a></span>checkForceBreakInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">short checkForceBreakInterval</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checkForceBreakInterval 强制断开连接的检查频率 </p>
+
+</div>
+</div>
+<a id="a8e1c26a746a2c670afc100365778c6c0" name="a8e1c26a746a2c670afc100365778c6c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e1c26a746a2c670afc100365778c6c0">&#9670;&#160;</a></span>connectionLastActiveTimeMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt; QString, <a class="el" href="structconnect_active.html">connectActive</a> &gt; connectionLastActiveTimeMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>connectionLastActiveTimeMap 连接的最近状态映射 </p>
+<p>连接活跃时间记录 </p>
+
+</div>
+</div>
+<a id="a6c0b49bdf823a1688d2f10d592fbddb6" name="a6c0b49bdf823a1688d2f10d592fbddb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0b49bdf823a1688d2f10d592fbddb6">&#9670;&#160;</a></span>forceBreakTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int forceBreakTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>forceBreakTime 强制断开连接的判定时间差 </p>
+
+</div>
+</div>
+<a id="a20fe3aba4bafc33865176866ce13832b" name="a20fe3aba4bafc33865176866ce13832b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20fe3aba4bafc33865176866ce13832b">&#9670;&#160;</a></span>forceBreakTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer forceBreakTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>forceBreakTimer 检查超时链接 </p>
+
+</div>
+</div>
+<a id="ac403edaf1ed3cae4cd041837579fa0e9" name="ac403edaf1ed3cae4cd041837579fa0e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac403edaf1ed3cae4cd041837579fa0e9">&#9670;&#160;</a></span>isDebug</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isDebug = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>isDebug 是否为调试模式 </p>
+<p>调试模式标志 </p>
+
+</div>
+</div>
+<a id="a807144cd9ad1e8ed1d3ad3042c75080b" name="a807144cd9ad1e8ed1d3ad3042c75080b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a807144cd9ad1e8ed1d3ad3042c75080b">&#9670;&#160;</a></span>mLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMutex mLock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>mLock </p>
+<p>连接池互斥锁 </p>
+
+</div>
+</div>
+<a id="a46d4d807f1eb4a1fc10e69deaf551f0a" name="a46d4d807f1eb4a1fc10e69deaf551f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d4d807f1eb4a1fc10e69deaf551f0a">&#9670;&#160;</a></span>poolMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt; QString, <a class="el" href="class_n_d_b_pool__p.html">NDBPool_p</a> * &gt; poolMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>poolMap 数据库连接池名字和连接池的映射 </p>
+<p>连接池映射表 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="ndbpool_8h_source.html">ndbpool.h</a></li>
+<li><a class="el" href="ndbpool_8cpp.html">ndbpool.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_n_d_b_pool.html">NDBPool</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

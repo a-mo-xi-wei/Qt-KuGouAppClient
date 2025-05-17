@@ -1,0 +1,28 @@
+var class_ui___listen_my_download =
+[
+    [ "retranslateUi", "class_ui___listen_my_download.html#affff776afe93ab4aba3ada85281f966c", null ],
+    [ "retranslateUi", "class_ui___listen_my_download.html#affff776afe93ab4aba3ada85281f966c", null ],
+    [ "retranslateUi", "class_ui___listen_my_download.html#affff776afe93ab4aba3ada85281f966c", null ],
+    [ "setupUi", "class_ui___listen_my_download.html#a221f1e812d3ef9d011a91d0473923e44", null ],
+    [ "setupUi", "class_ui___listen_my_download.html#a221f1e812d3ef9d011a91d0473923e44", null ],
+    [ "setupUi", "class_ui___listen_my_download.html#a221f1e812d3ef9d011a91d0473923e44", null ],
+    [ "downloaded_number_label", "class_ui___listen_my_download.html#aa88913552a271a2b57b7a007929f56fc", null ],
+    [ "downloaded_pushButton", "class_ui___listen_my_download.html#a1c34aa429372d3276aad40a51a617a7a", null ],
+    [ "downloading_number_label", "class_ui___listen_my_download.html#a781698b24055067f4011cd62ae99d4c0", null ],
+    [ "downloading_pushButton", "class_ui___listen_my_download.html#a54204641f989eb6aed427cdb34b744a5", null ],
+    [ "guide_widget", "class_ui___listen_my_download.html#ae181944de97064febb497417e9824e84", null ],
+    [ "guide_widget1", "class_ui___listen_my_download.html#acb1069a7dc25a656077b4a6275ccd255", null ],
+    [ "guide_widget2", "class_ui___listen_my_download.html#aa119149affe0374644ea434306cbe7f1", null ],
+    [ "horizontalLayout", "class_ui___listen_my_download.html#a7c14973bdfbbeb38bda94999653647c8", null ],
+    [ "horizontalLayout_2", "class_ui___listen_my_download.html#a7e5d02c58468fbd767b6aac210a07e8b", null ],
+    [ "horizontalLayout_8", "class_ui___listen_my_download.html#ab72f0540a5cae5d3750dd3bd9ee01df8", null ],
+    [ "horizontalSpacer", "class_ui___listen_my_download.html#a9d676d27dda009afd9790e4c39f1af6a", null ],
+    [ "horizontalSpacer_2", "class_ui___listen_my_download.html#a94797dfc83dbc67970c7ab1aa009d03c", null ],
+    [ "idx1_lab", "class_ui___listen_my_download.html#a98506cbfd827d8e8fa356e68dced56a3", null ],
+    [ "idx2_lab", "class_ui___listen_my_download.html#abaf6d8d17add3b4c484a12955bf94084", null ],
+    [ "stackedWidget", "class_ui___listen_my_download.html#a9660434508fe7b862be8f99a443686c5", null ],
+    [ "title_label", "class_ui___listen_my_download.html#a745d38a0aa6aa533345c40d321988446", null ],
+    [ "verticalLayout", "class_ui___listen_my_download.html#a0abb4548dbd3db49a137e05541123090", null ],
+    [ "verticalLayout_2", "class_ui___listen_my_download.html#af336a6593002d0419ec0e4fb23129da9", null ],
+    [ "verticalLayout_3", "class_ui___listen_my_download.html#aa0940ececa1b5aafb74531656dfb434c", null ]
+];

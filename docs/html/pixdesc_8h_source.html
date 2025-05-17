@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: pixdesc.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('pixdesc_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pixdesc.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="pixdesc_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * pixel format descriptor</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (c) 2009 Michael Niedermayer &lt;michaelni@gmx.at&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifndef AVUTIL_PIXDESC_H</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define AVUTIL_PIXDESC_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;inttypes.h&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="attributes_8h.html">attributes.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="pixfmt_8h.html">pixfmt.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html">version.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html">   31</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_a_v_component_descriptor.html">AVComponentDescriptor</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html#a331df3ad3da3df2efdb58c21eedfe6a0">   35</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_component_descriptor.html#a331df3ad3da3df2efdb58c21eedfe6a0">plane</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html#abc16e65f240ed0c8f3e876e8732c0a33">   41</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_component_descriptor.html#abc16e65f240ed0c8f3e876e8732c0a33">step</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html#aed7ea92f45bd273dde380a45ddced592">   47</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_component_descriptor.html#aed7ea92f45bd273dde380a45ddced592">offset</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html#afd8d704fff636cf0234e92c1eade927c">   53</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_component_descriptor.html#afd8d704fff636cf0234e92c1eade927c">shift</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html#acb5ba97551079e0b072c62c21d784ac5">   58</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_component_descriptor.html#acb5ba97551079e0b072c62c21d784ac5">depth</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#if FF_API_PLUS1_MINUS1</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html#a17c34ae413e9000a29dd18422b7624f4">   62</a></span>    <a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_component_descriptor.html#a17c34ae413e9000a29dd18422b7624f4">step_minus1</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html#ae62851efc70be96adff39833a72222df">   65</a></span>    <a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_component_descriptor.html#ae62851efc70be96adff39833a72222df">depth_minus1</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_a_v_component_descriptor.html#abfd3975cd9cebf3522ede454b875ac31">   68</a></span>    <a class="code hl_define" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_component_descriptor.html#abfd3975cd9cebf3522ede454b875ac31">offset_plus1</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a2ec49a9d220e93b7f0fd8c9fd03d0a80">   70</a></span>} <a class="code hl_struct" href="struct_a_v_component_descriptor.html">AVComponentDescriptor</a>;</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="struct_a_v_pix_fmt_descriptor.html">   81</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_a_v_pix_fmt_descriptor.html#a8f8f80d37794cde9472343e4487ba3eb">   82</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_a_v_pix_fmt_descriptor.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_a_v_pix_fmt_descriptor.html#a5ae29c6aaae24a490df8db048153c27d">   83</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code hl_variable" href="struct_a_v_pix_fmt_descriptor.html#a5ae29c6aaae24a490df8db048153c27d">nb_components</a>;  </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="struct_a_v_pix_fmt_descriptor.html#a83f13590e097c016c6c218a5727e40bf">   92</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code hl_variable" href="struct_a_v_pix_fmt_descriptor.html#a83f13590e097c016c6c218a5727e40bf">log2_chroma_w</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="struct_a_v_pix_fmt_descriptor.html#abaa075a5472a346a1c3383b6f1087b76">  101</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code hl_variable" href="struct_a_v_pix_fmt_descriptor.html#abaa075a5472a346a1c3383b6f1087b76">log2_chroma_h</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="struct_a_v_pix_fmt_descriptor.html#a899a76dc5f03f0d4ea3793c339e07ee9">  106</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> <a class="code hl_variable" href="struct_a_v_pix_fmt_descriptor.html#a899a76dc5f03f0d4ea3793c339e07ee9">flags</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="struct_a_v_pix_fmt_descriptor.html#aaeb8cbde0385b2c5edb2e3111c237c63">  117</a></span>    <a class="code hl_struct" href="struct_a_v_component_descriptor.html">AVComponentDescriptor</a> <a class="code hl_variable" href="struct_a_v_pix_fmt_descriptor.html#aaeb8cbde0385b2c5edb2e3111c237c63">comp</a>[4];</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="struct_a_v_pix_fmt_descriptor.html#aae877041546563a319dff9e25bc3aaf7">  122</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_a_v_pix_fmt_descriptor.html#aae877041546563a319dff9e25bc3aaf7">alias</a>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a69cd4b11e42ddfc38a047c91a208bdea">  123</a></span>} <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a>;</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ac7c7d0be16fb9b6f05b3e0d463cd037b">  128</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_BE           (1 &lt;&lt; 0)</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#af30af160970132a3a31c4738629e4495">  132</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_PAL          (1 &lt;&lt; 1)</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a0c6b423a11928d3ec5d2cd3f3b64ee81">  136</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_BITSTREAM    (1 &lt;&lt; 2)</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a76f6211b2404231bd7d206ebf4ae46f6">  140</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_HWACCEL      (1 &lt;&lt; 3)</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ab2dcf0e479980cad6c8477d5a53a3638">  144</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_PLANAR       (1 &lt;&lt; 4)</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a4c4e95f659b1e131480c1e98d70c57de">  148</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_RGB          (1 &lt;&lt; 5)</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ac6da04f0acd85424801bedcdd949c97d">  166</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_PSEUDOPAL    (1 &lt;&lt; 6)</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a06924ef0ebf07d8742ff8994e3a948bf">  181</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_ALPHA        (1 &lt;&lt; 7)</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#af285711ffd4882b91ba991fb306b1d16">  186</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_BAYER        (1 &lt;&lt; 8)</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a69737f410137149657fcb56667071146">  192</a></span><span class="preprocessor">#define AV_PIX_FMT_FLAG_FLOAT        (1 &lt;&lt; 9)</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a7b24a65f6bf07585396da3bd301799b2">  203</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#a7b24a65f6bf07585396da3bd301799b2">av_get_bits_per_pixel</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> *pixdesc);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a89cf35c5ef18c9e996c7784e1a893b9e">  209</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#a89cf35c5ef18c9e996c7784e1a893b9e">av_get_padded_bits_per_pixel</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> *pixdesc);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ac95c2231a5facc3c6e9d5e9358f62d51">  215</a></span><span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> *<a class="code hl_function" href="pixdesc_8h.html#ac95c2231a5facc3c6e9d5e9358f62d51">av_pix_fmt_desc_get</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a306ca99958727a7c45fab6131261f0b1">  224</a></span><span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> *<a class="code hl_function" href="pixdesc_8h.html#a306ca99958727a7c45fab6131261f0b1">av_pix_fmt_desc_next</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> *prev);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a01dfb93fb0e28e789922e9199a4fdb14">  230</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> <a class="code hl_function" href="pixdesc_8h.html#a01dfb93fb0e28e789922e9199a4fdb14">av_pix_fmt_desc_get_id</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> *desc);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a76e011cf53b51ea14a002a206f6ca05d">  242</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#a76e011cf53b51ea14a002a206f6ca05d">av_pix_fmt_get_chroma_sub_sample</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt,</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                                     <span class="keywordtype">int</span> *h_shift, <span class="keywordtype">int</span> *v_shift);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a118df1d607abd7484f874b3d7ea8823a">  249</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#a118df1d607abd7484f874b3d7ea8823a">av_pix_fmt_count_planes</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a5061f4d8e192876cbb6f67cb40563f0f">  254</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="pixdesc_8h.html#a5061f4d8e192876cbb6f67cb40563f0f">av_color_range_name</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a3da0bf691418bc22c4bcbe6583ad589a">AVColorRange</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a73b00379db2c7ac5e30a3aa2954a50ee">range</a>);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#aad2f67625f55b7b4cb69ddf36f491892">  259</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#aad2f67625f55b7b4cb69ddf36f491892">av_color_range_from_name</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#abe891f0e7303e21b29a45b459c666588">  264</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="pixdesc_8h.html#abe891f0e7303e21b29a45b459c666588">av_color_primaries_name</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#ad384ee5a840bafd73daef08e6d9cafe7">AVColorPrimaries</a> primaries);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ac0b9aef4e5964c08aff0158a011d3ac0">  269</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#ac0b9aef4e5964c08aff0158a011d3ac0">av_color_primaries_from_name</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ab49ea9645d7f49ec12c1a37ab6419cbc">  274</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="pixdesc_8h.html#ab49ea9645d7f49ec12c1a37ab6419cbc">av_color_transfer_name</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#ad4791ea14975f098b649db7fcd731ce6">AVColorTransferCharacteristic</a> transfer);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a2edac6eeb4fd282c26f79d78f242ef3c">  279</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#a2edac6eeb4fd282c26f79d78f242ef3c">av_color_transfer_from_name</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a45f45b7c4285c7202173aafbc2273371">  284</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="pixdesc_8h.html#a45f45b7c4285c7202173aafbc2273371">av_color_space_name</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a> <a class="code hl_enumvalue" href="base_8h.html#a8c33592060c5e5568b3fa116c71610baaff2364a0be3d20e46cc69efb36afe9a5">space</a>);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a0c7d0a9d7470c49397a72e1169d2a8e3">  289</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#a0c7d0a9d7470c49397a72e1169d2a8e3">av_color_space_from_name</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a94a7fd3dfa60ba3460377803ef94dcc1">  294</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="pixdesc_8h.html#a94a7fd3dfa60ba3460377803ef94dcc1">av_chroma_location_name</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a1f86ed1b6a420faccacf77c98db6c1ff">AVChromaLocation</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ac73774e7dfa6a854b58308052365f240">location</a>);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a1c3d987e885a212e0d122de27af43d67">  299</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#a1c3d987e885a212e0d122de27af43d67">av_chroma_location_from_name</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a925ef18d69c24c3be8c53d5a7dc0660e">  312</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> <a class="code hl_function" href="pixdesc_8h.html#a925ef18d69c24c3be8c53d5a7dc0660e">av_get_pix_fmt</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a8526f80ba2f0bb50e3606e5866df522c">  320</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="pixdesc_8h.html#a8526f80ba2f0bb50e3606e5866df522c">av_get_pix_fmt_name</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ac348f19512365a8bc7234c1b5e4f1e7a">  332</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="pixdesc_8h.html#ac348f19512365a8bc7234c1b5e4f1e7a">av_get_pix_fmt_string</a>(<span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <span class="keywordtype">int</span> buf_size,</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                            <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a8f9e6735f65eec892931823f55280bd3">  351</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="pixdesc_8h.html#a8f9e6735f65eec892931823f55280bd3">av_read_image_line</a>(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>[4],</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                        <span class="keyword">const</span> <span class="keywordtype">int</span> linesize[4], <span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> *desc,</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                        <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ac8ad1ddd88b3014a44151599fcd9fad3">w</a>, <span class="keywordtype">int</span> read_pal_component);</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a899e2c005100bb2169096bb672e46310">  369</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="pixdesc_8h.html#a899e2c005100bb2169096bb672e46310">av_write_image_line</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>, <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>[4],</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                         <span class="keyword">const</span> <span class="keywordtype">int</span> linesize[4], <span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a> *desc,</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                         <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ac8ad1ddd88b3014a44151599fcd9fad3">w</a>);</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span></div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ac2e098ff3b5373af99be8ea954c4f72e">  381</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> <a class="code hl_function" href="pixdesc_8h.html#ac2e098ff3b5373af99be8ea954c4f72e">av_pix_fmt_swap_endianness</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> pix_fmt);</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a445e6541dde2408332c216b8d0accb2d">  383</a></span><span class="preprocessor">#define FF_LOSS_RESOLUTION  0x0001 </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a979c0713dde53e85a56a83c8094f30a9">  384</a></span><span class="preprocessor">#define FF_LOSS_DEPTH       0x0002 </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a4701dd352b2a194eaed493399ccdca47">  385</a></span><span class="preprocessor">#define FF_LOSS_COLORSPACE  0x0004 </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a5e5683a0c698af4701cc768f2944b6f4">  386</a></span><span class="preprocessor">#define FF_LOSS_ALPHA       0x0008 </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#ae4dedba75cbb41704ce6794f966f10a6">  387</a></span><span class="preprocessor">#define FF_LOSS_COLORQUANT  0x0010 </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a769162ddb5b87080ab7a39291837f832">  388</a></span><span class="preprocessor">#define FF_LOSS_CHROMA      0x0020 </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span></div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a69ba6ef97543b19a15236a513e56dffe">  408</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="pixdesc_8h.html#a69ba6ef97543b19a15236a513e56dffe">av_get_pix_fmt_loss</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> dst_pix_fmt,</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>                        <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> src_pix_fmt,</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>                        <span class="keywordtype">int</span> has_alpha);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span></div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno"><a class="line" href="pixdesc_8h.html#a875f1e7a15d882d4cd9d38dde093939b">  430</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> <a class="code hl_function" href="pixdesc_8h.html#a875f1e7a15d882d4cd9d38dde093939b">av_find_best_pix_fmt_of_2</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> dst_pix_fmt1, <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> dst_pix_fmt2,</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>                                             <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> src_pix_fmt, <span class="keywordtype">int</span> has_alpha, <span class="keywordtype">int</span> *loss_ptr);</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_PIXDESC_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a273cf69d639a59973b6019625df33e30"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a></div><div class="ttdeci">unsigned short uint16_t</div><div class="ttdoc">16 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:31</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aaa5d1cd013383c889537491c3cfd9aad"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></div><div class="ttdeci">unsigned long long uint64_t</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:35</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:29</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a1675d9d7bb68e1657ff028643b4037e3"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a></div><div class="ttdeci">GLint GLint GLint GLint GLint GLint y</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a740d7f00b044f54a556c7208e01f9f02"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a></div><div class="ttdeci">GLint GLenum GLsizei GLsizei GLsizei GLint GLsizei const GLvoid * data</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1974</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_acbccb77724c9f4a12f2a844974ab0fea"><div class="ttname"><a href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></div><div class="ttdeci">GLint GLint GLint GLint GLint x</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a1f2d7f8147412c43ba2303a56f97ee73"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a></div><div class="ttdeci">const GLubyte * c</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:13129</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a72e0fdf0f845ded60b1fada9e9195cd7"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a></div><div class="ttdeci">GLenum src</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2011</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a73b00379db2c7ac5e30a3aa2954a50ee"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a73b00379db2c7ac5e30a3aa2954a50ee">range</a></div><div class="ttdeci">GLenum GLint * range</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2143</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a8e1a4ccadfc12dbf9a8e411d68adfe8e"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a></div><div class="ttdeci">GLuint const GLchar * name</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:952</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a92034251bfd455d524a9b5610cddba00"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a></div><div class="ttdeci">GLenum GLenum dst</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2011</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa3b73d9ca9f2e2396cbeae1ce6ce14be"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a></div><div class="ttdeci">GLenum GLuint GLenum GLsizei const GLchar * buf</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2759</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ac73774e7dfa6a854b58308052365f240"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ac73774e7dfa6a854b58308052365f240">location</a></div><div class="ttdeci">GLint location</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:971</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ac8ad1ddd88b3014a44151599fcd9fad3"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ac8ad1ddd88b3014a44151599fcd9fad3">w</a></div><div class="ttdeci">GLubyte GLubyte GLubyte GLubyte w</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1023</div></div>
+<div class="ttc" id="aattributes_8h_html"><div class="ttname"><a href="attributes_8h.html">attributes.h</a></div><div class="ttdoc">Macro definitions for various function/variable attributes</div></div>
+<div class="ttc" id="aattributes_8h_html_aa6d076561d3a9eea4729ee632652de02"><div class="ttname"><a href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a></div><div class="ttdeci">#define attribute_deprecated</div><div class="ttdef"><b>定义</b> attributes.h:98</div></div>
+<div class="ttc" id="abase_8h_html_a8c33592060c5e5568b3fa116c71610baaff2364a0be3d20e46cc69efb36afe9a5"><div class="ttname"><a href="base_8h.html#a8c33592060c5e5568b3fa116c71610baaff2364a0be3d20e46cc69efb36afe9a5">sign::space</a></div><div class="ttdeci">@ space</div><div class="ttdef"><b>定义</b> base.h:699</div></div>
+<div class="ttc" id="apixdesc_8h_html_a01dfb93fb0e28e789922e9199a4fdb14"><div class="ttname"><a href="pixdesc_8h.html#a01dfb93fb0e28e789922e9199a4fdb14">av_pix_fmt_desc_get_id</a></div><div class="ttdeci">enum AVPixelFormat av_pix_fmt_desc_get_id(const AVPixFmtDescriptor *desc)</div></div>
+<div class="ttc" id="apixdesc_8h_html_a0c7d0a9d7470c49397a72e1169d2a8e3"><div class="ttname"><a href="pixdesc_8h.html#a0c7d0a9d7470c49397a72e1169d2a8e3">av_color_space_from_name</a></div><div class="ttdeci">int av_color_space_from_name(const char *name)</div></div>
+<div class="ttc" id="apixdesc_8h_html_a118df1d607abd7484f874b3d7ea8823a"><div class="ttname"><a href="pixdesc_8h.html#a118df1d607abd7484f874b3d7ea8823a">av_pix_fmt_count_planes</a></div><div class="ttdeci">int av_pix_fmt_count_planes(enum AVPixelFormat pix_fmt)</div></div>
+<div class="ttc" id="apixdesc_8h_html_a1c3d987e885a212e0d122de27af43d67"><div class="ttname"><a href="pixdesc_8h.html#a1c3d987e885a212e0d122de27af43d67">av_chroma_location_from_name</a></div><div class="ttdeci">int av_chroma_location_from_name(const char *name)</div></div>
+<div class="ttc" id="apixdesc_8h_html_a2edac6eeb4fd282c26f79d78f242ef3c"><div class="ttname"><a href="pixdesc_8h.html#a2edac6eeb4fd282c26f79d78f242ef3c">av_color_transfer_from_name</a></div><div class="ttdeci">int av_color_transfer_from_name(const char *name)</div></div>
+<div class="ttc" id="apixdesc_8h_html_a306ca99958727a7c45fab6131261f0b1"><div class="ttname"><a href="pixdesc_8h.html#a306ca99958727a7c45fab6131261f0b1">av_pix_fmt_desc_next</a></div><div class="ttdeci">const AVPixFmtDescriptor * av_pix_fmt_desc_next(const AVPixFmtDescriptor *prev)</div><div class="ttdoc">Iterate over all pixel format descriptors known to libavutil.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a45f45b7c4285c7202173aafbc2273371"><div class="ttname"><a href="pixdesc_8h.html#a45f45b7c4285c7202173aafbc2273371">av_color_space_name</a></div><div class="ttdeci">const char * av_color_space_name(enum AVColorSpace space)</div></div>
+<div class="ttc" id="apixdesc_8h_html_a5061f4d8e192876cbb6f67cb40563f0f"><div class="ttname"><a href="pixdesc_8h.html#a5061f4d8e192876cbb6f67cb40563f0f">av_color_range_name</a></div><div class="ttdeci">const char * av_color_range_name(enum AVColorRange range)</div></div>
+<div class="ttc" id="apixdesc_8h_html_a69ba6ef97543b19a15236a513e56dffe"><div class="ttname"><a href="pixdesc_8h.html#a69ba6ef97543b19a15236a513e56dffe">av_get_pix_fmt_loss</a></div><div class="ttdeci">int av_get_pix_fmt_loss(enum AVPixelFormat dst_pix_fmt, enum AVPixelFormat src_pix_fmt, int has_alpha)</div><div class="ttdoc">Compute what kind of losses will occur when converting from one specific pixel format to another.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a76e011cf53b51ea14a002a206f6ca05d"><div class="ttname"><a href="pixdesc_8h.html#a76e011cf53b51ea14a002a206f6ca05d">av_pix_fmt_get_chroma_sub_sample</a></div><div class="ttdeci">int av_pix_fmt_get_chroma_sub_sample(enum AVPixelFormat pix_fmt, int *h_shift, int *v_shift)</div><div class="ttdoc">Utility function to access log2_chroma_w log2_chroma_h from the pixel format AVPixFmtDescriptor.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a7b24a65f6bf07585396da3bd301799b2"><div class="ttname"><a href="pixdesc_8h.html#a7b24a65f6bf07585396da3bd301799b2">av_get_bits_per_pixel</a></div><div class="ttdeci">int av_get_bits_per_pixel(const AVPixFmtDescriptor *pixdesc)</div><div class="ttdoc">Return the number of bits per pixel used by the pixel format described by pixdesc.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a8526f80ba2f0bb50e3606e5866df522c"><div class="ttname"><a href="pixdesc_8h.html#a8526f80ba2f0bb50e3606e5866df522c">av_get_pix_fmt_name</a></div><div class="ttdeci">const char * av_get_pix_fmt_name(enum AVPixelFormat pix_fmt)</div><div class="ttdoc">Return the short name for a pixel format, NULL in case pix_fmt is unknown.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a875f1e7a15d882d4cd9d38dde093939b"><div class="ttname"><a href="pixdesc_8h.html#a875f1e7a15d882d4cd9d38dde093939b">av_find_best_pix_fmt_of_2</a></div><div class="ttdeci">enum AVPixelFormat av_find_best_pix_fmt_of_2(enum AVPixelFormat dst_pix_fmt1, enum AVPixelFormat dst_pix_fmt2, enum AVPixelFormat src_pix_fmt, int has_alpha, int *loss_ptr)</div><div class="ttdoc">Compute what kind of losses will occur when converting from one specific pixel format to another.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a899e2c005100bb2169096bb672e46310"><div class="ttname"><a href="pixdesc_8h.html#a899e2c005100bb2169096bb672e46310">av_write_image_line</a></div><div class="ttdeci">void av_write_image_line(const uint16_t *src, uint8_t *data[4], const int linesize[4], const AVPixFmtDescriptor *desc, int x, int y, int c, int w)</div><div class="ttdoc">Write the values from src to the pixel format component c of an image line.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a89cf35c5ef18c9e996c7784e1a893b9e"><div class="ttname"><a href="pixdesc_8h.html#a89cf35c5ef18c9e996c7784e1a893b9e">av_get_padded_bits_per_pixel</a></div><div class="ttdeci">int av_get_padded_bits_per_pixel(const AVPixFmtDescriptor *pixdesc)</div><div class="ttdoc">Return the number of bits per pixel for the pixel format described by pixdesc, including any padding ...</div></div>
+<div class="ttc" id="apixdesc_8h_html_a8f9e6735f65eec892931823f55280bd3"><div class="ttname"><a href="pixdesc_8h.html#a8f9e6735f65eec892931823f55280bd3">av_read_image_line</a></div><div class="ttdeci">void av_read_image_line(uint16_t *dst, const uint8_t *data[4], const int linesize[4], const AVPixFmtDescriptor *desc, int x, int y, int c, int w, int read_pal_component)</div><div class="ttdoc">Read a line from an image, and write the values of the pixel format component c to dst.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a925ef18d69c24c3be8c53d5a7dc0660e"><div class="ttname"><a href="pixdesc_8h.html#a925ef18d69c24c3be8c53d5a7dc0660e">av_get_pix_fmt</a></div><div class="ttdeci">enum AVPixelFormat av_get_pix_fmt(const char *name)</div><div class="ttdoc">Return the pixel format corresponding to name.</div></div>
+<div class="ttc" id="apixdesc_8h_html_a94a7fd3dfa60ba3460377803ef94dcc1"><div class="ttname"><a href="pixdesc_8h.html#a94a7fd3dfa60ba3460377803ef94dcc1">av_chroma_location_name</a></div><div class="ttdeci">const char * av_chroma_location_name(enum AVChromaLocation location)</div></div>
+<div class="ttc" id="apixdesc_8h_html_aad2f67625f55b7b4cb69ddf36f491892"><div class="ttname"><a href="pixdesc_8h.html#aad2f67625f55b7b4cb69ddf36f491892">av_color_range_from_name</a></div><div class="ttdeci">int av_color_range_from_name(const char *name)</div></div>
+<div class="ttc" id="apixdesc_8h_html_ab49ea9645d7f49ec12c1a37ab6419cbc"><div class="ttname"><a href="pixdesc_8h.html#ab49ea9645d7f49ec12c1a37ab6419cbc">av_color_transfer_name</a></div><div class="ttdeci">const char * av_color_transfer_name(enum AVColorTransferCharacteristic transfer)</div></div>
+<div class="ttc" id="apixdesc_8h_html_abe891f0e7303e21b29a45b459c666588"><div class="ttname"><a href="pixdesc_8h.html#abe891f0e7303e21b29a45b459c666588">av_color_primaries_name</a></div><div class="ttdeci">const char * av_color_primaries_name(enum AVColorPrimaries primaries)</div></div>
+<div class="ttc" id="apixdesc_8h_html_ac0b9aef4e5964c08aff0158a011d3ac0"><div class="ttname"><a href="pixdesc_8h.html#ac0b9aef4e5964c08aff0158a011d3ac0">av_color_primaries_from_name</a></div><div class="ttdeci">int av_color_primaries_from_name(const char *name)</div></div>
+<div class="ttc" id="apixdesc_8h_html_ac2e098ff3b5373af99be8ea954c4f72e"><div class="ttname"><a href="pixdesc_8h.html#ac2e098ff3b5373af99be8ea954c4f72e">av_pix_fmt_swap_endianness</a></div><div class="ttdeci">enum AVPixelFormat av_pix_fmt_swap_endianness(enum AVPixelFormat pix_fmt)</div><div class="ttdoc">Utility function to swap the endianness of a pixel format.</div></div>
+<div class="ttc" id="apixdesc_8h_html_ac348f19512365a8bc7234c1b5e4f1e7a"><div class="ttname"><a href="pixdesc_8h.html#ac348f19512365a8bc7234c1b5e4f1e7a">av_get_pix_fmt_string</a></div><div class="ttdeci">char * av_get_pix_fmt_string(char *buf, int buf_size, enum AVPixelFormat pix_fmt)</div><div class="ttdoc">Print in buf the string corresponding to the pixel format with number pix_fmt, or a header if pix_fmt...</div></div>
+<div class="ttc" id="apixdesc_8h_html_ac95c2231a5facc3c6e9d5e9358f62d51"><div class="ttname"><a href="pixdesc_8h.html#ac95c2231a5facc3c6e9d5e9358f62d51">av_pix_fmt_desc_get</a></div><div class="ttdeci">const AVPixFmtDescriptor * av_pix_fmt_desc_get(enum AVPixelFormat pix_fmt)</div></div>
+<div class="ttc" id="apixfmt_8h_html"><div class="ttname"><a href="pixfmt_8h.html">pixfmt.h</a></div><div class="ttdoc">pixel format definitions</div></div>
+<div class="ttc" id="apixfmt_8h_html_a1f86ed1b6a420faccacf77c98db6c1ff"><div class="ttname"><a href="pixfmt_8h.html#a1f86ed1b6a420faccacf77c98db6c1ff">AVChromaLocation</a></div><div class="ttdeci">AVChromaLocation</div><div class="ttdoc">Location of chroma samples.</div><div class="ttdef"><b>定义</b> pixfmt.h:518</div></div>
+<div class="ttc" id="apixfmt_8h_html_a3da0bf691418bc22c4bcbe6583ad589a"><div class="ttname"><a href="pixfmt_8h.html#a3da0bf691418bc22c4bcbe6583ad589a">AVColorRange</a></div><div class="ttdeci">AVColorRange</div><div class="ttdoc">MPEG vs JPEG YUV range.</div><div class="ttdef"><b>定义</b> pixfmt.h:496</div></div>
+<div class="ttc" id="apixfmt_8h_html_a9a8e335cf3be472042bc9f0cf80cd4c5"><div class="ttname"><a href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a></div><div class="ttdeci">AVPixelFormat</div><div class="ttdoc">Pixel format.</div><div class="ttdef"><b>定义</b> pixfmt.h:60</div></div>
+<div class="ttc" id="apixfmt_8h_html_ad384ee5a840bafd73daef08e6d9cafe7"><div class="ttname"><a href="pixfmt_8h.html#ad384ee5a840bafd73daef08e6d9cafe7">AVColorPrimaries</a></div><div class="ttdeci">AVColorPrimaries</div><div class="ttdoc">Chromaticity coordinates of the source primaries.</div><div class="ttdef"><b>定义</b> pixfmt.h:420</div></div>
+<div class="ttc" id="apixfmt_8h_html_ad4791ea14975f098b649db7fcd731ce6"><div class="ttname"><a href="pixfmt_8h.html#ad4791ea14975f098b649db7fcd731ce6">AVColorTransferCharacteristic</a></div><div class="ttdeci">AVColorTransferCharacteristic</div><div class="ttdoc">Color Transfer Characteristic.</div><div class="ttdef"><b>定义</b> pixfmt.h:444</div></div>
+<div class="ttc" id="apixfmt_8h_html_aff71a069509a1ad3ff54d53a1c894c85"><div class="ttname"><a href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a></div><div class="ttdeci">AVColorSpace</div><div class="ttdoc">YUV colorspace type.</div><div class="ttdef"><b>定义</b> pixfmt.h:473</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html"><div class="ttname"><a href="struct_a_v_component_descriptor.html">AVComponentDescriptor</a></div><div class="ttdef"><b>定义</b> pixdesc.h:31</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html_a17c34ae413e9000a29dd18422b7624f4"><div class="ttname"><a href="struct_a_v_component_descriptor.html#a17c34ae413e9000a29dd18422b7624f4">AVComponentDescriptor::step_minus1</a></div><div class="ttdeci">attribute_deprecated int step_minus1</div><div class="ttdoc">deprecated, use step instead</div><div class="ttdef"><b>定义</b> pixdesc.h:62</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html_a331df3ad3da3df2efdb58c21eedfe6a0"><div class="ttname"><a href="struct_a_v_component_descriptor.html#a331df3ad3da3df2efdb58c21eedfe6a0">AVComponentDescriptor::plane</a></div><div class="ttdeci">int plane</div><div class="ttdoc">Which of the 4 planes contains the component.</div><div class="ttdef"><b>定义</b> pixdesc.h:35</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html_abc16e65f240ed0c8f3e876e8732c0a33"><div class="ttname"><a href="struct_a_v_component_descriptor.html#abc16e65f240ed0c8f3e876e8732c0a33">AVComponentDescriptor::step</a></div><div class="ttdeci">int step</div><div class="ttdoc">Number of elements between 2 horizontally consecutive pixels.</div><div class="ttdef"><b>定义</b> pixdesc.h:41</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html_abfd3975cd9cebf3522ede454b875ac31"><div class="ttname"><a href="struct_a_v_component_descriptor.html#abfd3975cd9cebf3522ede454b875ac31">AVComponentDescriptor::offset_plus1</a></div><div class="ttdeci">attribute_deprecated int offset_plus1</div><div class="ttdoc">deprecated, use offset instead</div><div class="ttdef"><b>定义</b> pixdesc.h:68</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html_acb5ba97551079e0b072c62c21d784ac5"><div class="ttname"><a href="struct_a_v_component_descriptor.html#acb5ba97551079e0b072c62c21d784ac5">AVComponentDescriptor::depth</a></div><div class="ttdeci">int depth</div><div class="ttdoc">Number of bits in the component.</div><div class="ttdef"><b>定义</b> pixdesc.h:58</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html_ae62851efc70be96adff39833a72222df"><div class="ttname"><a href="struct_a_v_component_descriptor.html#ae62851efc70be96adff39833a72222df">AVComponentDescriptor::depth_minus1</a></div><div class="ttdeci">attribute_deprecated int depth_minus1</div><div class="ttdoc">deprecated, use depth instead</div><div class="ttdef"><b>定义</b> pixdesc.h:65</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html_aed7ea92f45bd273dde380a45ddced592"><div class="ttname"><a href="struct_a_v_component_descriptor.html#aed7ea92f45bd273dde380a45ddced592">AVComponentDescriptor::offset</a></div><div class="ttdeci">int offset</div><div class="ttdoc">Number of elements before the component of the first pixel.</div><div class="ttdef"><b>定义</b> pixdesc.h:47</div></div>
+<div class="ttc" id="astruct_a_v_component_descriptor_html_afd8d704fff636cf0234e92c1eade927c"><div class="ttname"><a href="struct_a_v_component_descriptor.html#afd8d704fff636cf0234e92c1eade927c">AVComponentDescriptor::shift</a></div><div class="ttdeci">int shift</div><div class="ttdoc">Number of least significant bits that must be shifted away to get the value.</div><div class="ttdef"><b>定义</b> pixdesc.h:53</div></div>
+<div class="ttc" id="astruct_a_v_pix_fmt_descriptor_html"><div class="ttname"><a href="struct_a_v_pix_fmt_descriptor.html">AVPixFmtDescriptor</a></div><div class="ttdoc">Descriptor that unambiguously describes how the bits of a pixel are stored in the up to 4 data planes...</div><div class="ttdef"><b>定义</b> pixdesc.h:81</div></div>
+<div class="ttc" id="astruct_a_v_pix_fmt_descriptor_html_a5ae29c6aaae24a490df8db048153c27d"><div class="ttname"><a href="struct_a_v_pix_fmt_descriptor.html#a5ae29c6aaae24a490df8db048153c27d">AVPixFmtDescriptor::nb_components</a></div><div class="ttdeci">uint8_t nb_components</div><div class="ttdoc">The number of components each pixel has, (1-4)</div><div class="ttdef"><b>定义</b> pixdesc.h:83</div></div>
+<div class="ttc" id="astruct_a_v_pix_fmt_descriptor_html_a83f13590e097c016c6c218a5727e40bf"><div class="ttname"><a href="struct_a_v_pix_fmt_descriptor.html#a83f13590e097c016c6c218a5727e40bf">AVPixFmtDescriptor::log2_chroma_w</a></div><div class="ttdeci">uint8_t log2_chroma_w</div><div class="ttdoc">Amount to shift the luma width right to find the chroma width.</div><div class="ttdef"><b>定义</b> pixdesc.h:92</div></div>
+<div class="ttc" id="astruct_a_v_pix_fmt_descriptor_html_a899a76dc5f03f0d4ea3793c339e07ee9"><div class="ttname"><a href="struct_a_v_pix_fmt_descriptor.html#a899a76dc5f03f0d4ea3793c339e07ee9">AVPixFmtDescriptor::flags</a></div><div class="ttdeci">uint64_t flags</div><div class="ttdoc">Combination of AV_PIX_FMT_FLAG_... flags.</div><div class="ttdef"><b>定义</b> pixdesc.h:106</div></div>
+<div class="ttc" id="astruct_a_v_pix_fmt_descriptor_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="struct_a_v_pix_fmt_descriptor.html#a8f8f80d37794cde9472343e4487ba3eb">AVPixFmtDescriptor::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>定义</b> pixdesc.h:82</div></div>
+<div class="ttc" id="astruct_a_v_pix_fmt_descriptor_html_aae877041546563a319dff9e25bc3aaf7"><div class="ttname"><a href="struct_a_v_pix_fmt_descriptor.html#aae877041546563a319dff9e25bc3aaf7">AVPixFmtDescriptor::alias</a></div><div class="ttdeci">const char * alias</div><div class="ttdoc">Alternative comma-separated names.</div><div class="ttdef"><b>定义</b> pixdesc.h:122</div></div>
+<div class="ttc" id="astruct_a_v_pix_fmt_descriptor_html_aaeb8cbde0385b2c5edb2e3111c237c63"><div class="ttname"><a href="struct_a_v_pix_fmt_descriptor.html#aaeb8cbde0385b2c5edb2e3111c237c63">AVPixFmtDescriptor::comp</a></div><div class="ttdeci">AVComponentDescriptor comp[4]</div><div class="ttdoc">Parameters that describe how pixels are packed.</div><div class="ttdef"><b>定义</b> pixdesc.h:117</div></div>
+<div class="ttc" id="astruct_a_v_pix_fmt_descriptor_html_abaa075a5472a346a1c3383b6f1087b76"><div class="ttname"><a href="struct_a_v_pix_fmt_descriptor.html#abaa075a5472a346a1c3383b6f1087b76">AVPixFmtDescriptor::log2_chroma_h</a></div><div class="ttdeci">uint8_t log2_chroma_h</div><div class="ttdoc">Amount to shift the luma height right to find the chroma height.</div><div class="ttdef"><b>定义</b> pixdesc.h:101</div></div>
+<div class="ttc" id="atools_2ffmpeg_2win64_2include_2libavutil_2version_8h_html"><div class="ttname"><a href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html">version.h</a></div><div class="ttdoc">Libavutil version macros</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="pixdesc_8h.html">pixdesc.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

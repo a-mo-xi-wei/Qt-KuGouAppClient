@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_messagebox.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__messagebox_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SDL_messagebox.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_s_d_l__messagebox_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Simple DirectMedia Layer</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  Copyright (C) 1997-2025 Sam Lantinga &lt;slouken@libsdl.org&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  This software is provided &#39;as-is&#39;, without any express or implied</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  warranty.  In no event will the authors be held liable for any damages</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  arising from the use of this software.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  Permission is granted to anyone to use this software for any purpose,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  including commercial applications, and to alter it and redistribute it</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  freely, subject to the following restrictions:</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  1. The origin of this software must not be misrepresented; you must not</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">     claim that you wrote the original software. If you use this software</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">     in a product, an acknowledgment in the product documentation would be</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">     appreciated but is not required.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  2. Altered source versions must be plainly marked as such, and must not be</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">     misrepresented as being the original software.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  3. This notice may not be removed or altered from any source distribution.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifndef SDL_messagebox_h_</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define SDL_messagebox_h_</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="_s_d_l__stdinc_8h.html">SDL_stdinc.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="_s_d_l__video_8h.html">SDL_video.h</a>&quot;</span>      <span class="comment">/* For SDL_Window */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="begin__code_8h.html">begin_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/* Set up for C function definitions, even when using C++ */</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37">   37</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6">   39</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6">SDL_MESSAGEBOX_ERROR</a>                 = 0x00000010,   </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce">   40</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce">SDL_MESSAGEBOX_WARNING</a>               = 0x00000020,   </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814">   41</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814">SDL_MESSAGEBOX_INFORMATION</a>           = 0x00000040,   </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08">   42</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08">SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT</a> = 0x00000080,   </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d">   43</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d">SDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT</a> = 0x00000100    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>} <a class="code hl_enumeration" href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37">SDL_MessageBoxFlags</a>;</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0">   49</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842">   51</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842">SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT</a> = 0x00000001,  </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b">   52</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b">SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT</a> = 0x00000002   </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>} <a class="code hl_enumeration" href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0">SDL_MessageBoxButtonFlags</a>;</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_button_data.html">   58</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_button_data.html#a048097c5cc2146ce1ff2450684f1b51c">   60</a></span>    <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="code hl_variable" href="struct_s_d_l___message_box_button_data.html#a048097c5cc2146ce1ff2450684f1b51c">flags</a>;       </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_button_data.html#a0a58b3764551f49ae76eb734277e547d">   61</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_s_d_l___message_box_button_data.html#a0a58b3764551f49ae76eb734277e547d">buttonid</a>;       </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_button_data.html#a16343090e80c4472521560f30113d96c">   62</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code hl_variable" href="struct_s_d_l___message_box_button_data.html#a16343090e80c4472521560f30113d96c">text</a>;  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>} <a class="code hl_struct" href="struct_s_d_l___message_box_button_data.html">SDL_MessageBoxButtonData</a>;</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_color.html">   68</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_color.html#a3d03a0372246e40434fc7a8a928c1e92">   70</a></span>    <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a> <a class="code hl_variable" href="struct_s_d_l___message_box_color.html#a91b464c8eae5ece8465e150e16086acd">r</a>, <a class="code hl_variable" href="struct_s_d_l___message_box_color.html#ab4c6f97b95a6d0a8058a62eab9c78c43">g</a>, <a class="code hl_variable" href="struct_s_d_l___message_box_color.html#a3d03a0372246e40434fc7a8a928c1e92">b</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>} <a class="code hl_struct" href="struct_s_d_l___message_box_color.html">SDL_MessageBoxColor</a>;</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567">   73</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f">   75</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f">SDL_MESSAGEBOX_COLOR_BACKGROUND</a>,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37">   76</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37">SDL_MESSAGEBOX_COLOR_TEXT</a>,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce">   77</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce">SDL_MESSAGEBOX_COLOR_BUTTON_BORDER</a>,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2">   78</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2">SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND</a>,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678">   79</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678">SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED</a>,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89">   80</a></span>    <a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89">SDL_MESSAGEBOX_COLOR_MAX</a></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>} <a class="code hl_enumeration" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567">SDL_MessageBoxColorType</a>;</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="};">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_color_scheme.html">   86</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_color_scheme.html#aac26fca7ad16ef80af11b8afa9f02943">   88</a></span>    <a class="code hl_struct" href="struct_s_d_l___message_box_color.html">SDL_MessageBoxColor</a> <a class="code hl_variable" href="struct_s_d_l___message_box_color_scheme.html#aac26fca7ad16ef80af11b8afa9f02943">colors</a>[<a class="code hl_enumvalue" href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89">SDL_MESSAGEBOX_COLOR_MAX</a>];</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>} <a class="code hl_struct" href="struct_s_d_l___message_box_color_scheme.html">SDL_MessageBoxColorScheme</a>;</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="};">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_data.html">   94</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_data.html#a048097c5cc2146ce1ff2450684f1b51c">   96</a></span>    <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="code hl_variable" href="struct_s_d_l___message_box_data.html#a048097c5cc2146ce1ff2450684f1b51c">flags</a>;                       </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_data.html#aaa8e409e04dcf575ef63fd5fb3db06f9">   97</a></span>    <a class="code hl_typedef" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *<a class="code hl_variable" href="struct_s_d_l___message_box_data.html#aaa8e409e04dcf575ef63fd5fb3db06f9">window</a>;                 </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_data.html#a8214780964530800368b406c681fd1d9">   98</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_s_d_l___message_box_data.html#a8214780964530800368b406c681fd1d9">title</a>;                  </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_data.html#a254bf0858da09c96a48daf64404eb4f8">   99</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_s_d_l___message_box_data.html#a254bf0858da09c96a48daf64404eb4f8">message</a>;                </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_data.html#adff7d306bb56e132b0060191672c9525">  101</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_s_d_l___message_box_data.html#adff7d306bb56e132b0060191672c9525">numbuttons</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_data.html#a5d024a90e0db32dee923d8c873118225">  102</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_s_d_l___message_box_button_data.html">SDL_MessageBoxButtonData</a> *<a class="code hl_variable" href="struct_s_d_l___message_box_data.html#a5d024a90e0db32dee923d8c873118225">buttons</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="struct_s_d_l___message_box_data.html#afcad43ea8520ac57b30b35bee0077618">  104</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_s_d_l___message_box_color_scheme.html">SDL_MessageBoxColorScheme</a> *<a class="code hl_variable" href="struct_s_d_l___message_box_data.html#afcad43ea8520ac57b30b35bee0077618">colorScheme</a>;   </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>} <a class="code hl_struct" href="struct_s_d_l___message_box_data.html">SDL_MessageBoxData</a>;</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a5100de0969e90cc8f82c256287136e05">  140</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__messagebox_8h.html#a5100de0969e90cc8f82c256287136e05">SDL_ShowMessageBox</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_s_d_l___message_box_data.html">SDL_MessageBoxData</a> *messageboxdata, <span class="keywordtype">int</span> *buttonid);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="_s_d_l__messagebox_8h.html#a34d06cce5c7b8d25812da0306696de32">  182</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__messagebox_8h.html#a34d06cce5c7b8d25812da0306696de32">SDL_ShowSimpleMessageBox</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *title, <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab5d4c2bfcb78f279c688575297d42f74">message</a>, <a class="code hl_typedef" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *window);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">/* Ends C function definitions when using C++ */</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#include &quot;<a class="code" href="close__code_8h.html">close_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#endif </span><span class="comment">/* SDL_messagebox_h_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">/* vi: set ts=4 sw=4 expandtab: */</span></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a34d06cce5c7b8d25812da0306696de32"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a34d06cce5c7b8d25812da0306696de32">SDL_ShowSimpleMessageBox</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_ShowSimpleMessageBox(Uint32 flags, const char *title, const char *message, SDL_Window *window)</div><div class="ttdoc">Display a simple modal message box.</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a5100de0969e90cc8f82c256287136e05"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a5100de0969e90cc8f82c256287136e05">SDL_ShowMessageBox</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_ShowMessageBox(const SDL_MessageBoxData *messageboxdata, int *buttonid)</div><div class="ttdoc">Create a modal message box.</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a75e562d38bc214725e01f4f829bc1567"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567">SDL_MessageBoxColorType</a></div><div class="ttdeci">SDL_MessageBoxColorType</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:74</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89">SDL_MESSAGEBOX_COLOR_MAX</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_COLOR_MAX</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:80</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2">SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:78</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678">SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:79</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f">SDL_MESSAGEBOX_COLOR_BACKGROUND</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_COLOR_BACKGROUND</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:75</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37">SDL_MESSAGEBOX_COLOR_TEXT</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_COLOR_TEXT</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:76</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce">SDL_MESSAGEBOX_COLOR_BUTTON_BORDER</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_COLOR_BUTTON_BORDER</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:77</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a97f06819ac610581044fdb93d81eed37"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37">SDL_MessageBoxFlags</a></div><div class="ttdeci">SDL_MessageBoxFlags</div><div class="ttdoc">SDL_MessageBox flags.</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:38</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6">SDL_MESSAGEBOX_ERROR</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_ERROR</div><div class="ttdoc">error dialog</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:39</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce">SDL_MESSAGEBOX_WARNING</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_WARNING</div><div class="ttdoc">warning dialog</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:40</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d">SDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT</div><div class="ttdoc">buttons placed right to left</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:43</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814">SDL_MESSAGEBOX_INFORMATION</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_INFORMATION</div><div class="ttdoc">informational dialog</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:41</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08">SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT</div><div class="ttdoc">buttons placed left to right</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:42</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_ad21beffe204426be6efbf4990c916ad0"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0">SDL_MessageBoxButtonFlags</a></div><div class="ttdeci">SDL_MessageBoxButtonFlags</div><div class="ttdoc">Flags for SDL_MessageBoxButtonData.</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:50</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842">SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT</div><div class="ttdoc">Marks the default button when return is hit</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:51</div></div>
+<div class="ttc" id="a_s_d_l__messagebox_8h_html_ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b"><div class="ttname"><a href="_s_d_l__messagebox_8h.html#ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b">SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT</a></div><div class="ttdeci">@ SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT</div><div class="ttdoc">Marks the default button when escape is hit</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:52</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa9459b47e7388437191d2d9a69c10d98"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a></div><div class="ttdeci">GLbitfield flags</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1754</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab5d4c2bfcb78f279c688575297d42f74"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab5d4c2bfcb78f279c688575297d42f74">message</a></div><div class="ttdeci">GLuint GLsizei const GLchar * message</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2762</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html"><div class="ttname"><a href="_s_d_l__stdinc_8h.html">SDL_stdinc.h</a></div><div class="ttdoc">This is a general header that includes C language support.</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a2944638813a090aa23e62f4da842c3e2"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a></div><div class="ttdeci">uint8_t Uint8</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:198</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_add440eff171ea5f55cb00c4a9ab8672d"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a></div><div class="ttdeci">uint32_t Uint32</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:222</div></div>
+<div class="ttc" id="a_s_d_l__video_8h_html"><div class="ttname"><a href="_s_d_l__video_8h.html">SDL_video.h</a></div><div class="ttdoc">Header file for SDL video functions.</div></div>
+<div class="ttc" id="a_s_d_l__video_8h_html_a55a196c7d3b8497538632c79ae1e6392"><div class="ttname"><a href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a></div><div class="ttdeci">struct SDL_Window SDL_Window</div><div class="ttdoc">The type used to identify a window</div><div class="ttdef"><b>定义</b> SDL_video.h:95</div></div>
+<div class="ttc" id="abegin__code_8h_html"><div class="ttname"><a href="begin__code_8h.html">begin_code.h</a></div><div class="ttdoc">This file sets things up for C dynamic library function definitions, static inlined functions,...</div></div>
+<div class="ttc" id="abegin__code_8h_html_a81faf4ba0455dc75f2e0507eddb79401"><div class="ttname"><a href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a></div><div class="ttdeci">#define SDLCALL</div><div class="ttdef"><b>定义</b> begin_code.h:87</div></div>
+<div class="ttc" id="abegin__code_8h_html_aa4c7a931f4a968f818b2a1b10a432185"><div class="ttname"><a href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a></div><div class="ttdeci">#define DECLSPEC</div><div class="ttdef"><b>定义</b> begin_code.h:72</div></div>
+<div class="ttc" id="aclose__code_8h_html"><div class="ttname"><a href="close__code_8h.html">close_code.h</a></div><div class="ttdoc">This file reverses the effects of begin_code.h and should be included after you finish any function a...</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_button_data_html"><div class="ttname"><a href="struct_s_d_l___message_box_button_data.html">SDL_MessageBoxButtonData</a></div><div class="ttdoc">Individual button data.</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:59</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_button_data_html_a048097c5cc2146ce1ff2450684f1b51c"><div class="ttname"><a href="struct_s_d_l___message_box_button_data.html#a048097c5cc2146ce1ff2450684f1b51c">SDL_MessageBoxButtonData::flags</a></div><div class="ttdeci">Uint32 flags</div><div class="ttdoc">SDL_MessageBoxButtonFlags</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:60</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_button_data_html_a0a58b3764551f49ae76eb734277e547d"><div class="ttname"><a href="struct_s_d_l___message_box_button_data.html#a0a58b3764551f49ae76eb734277e547d">SDL_MessageBoxButtonData::buttonid</a></div><div class="ttdeci">int buttonid</div><div class="ttdoc">User defined button id (value returned via SDL_ShowMessageBox)</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:61</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_button_data_html_a16343090e80c4472521560f30113d96c"><div class="ttname"><a href="struct_s_d_l___message_box_button_data.html#a16343090e80c4472521560f30113d96c">SDL_MessageBoxButtonData::text</a></div><div class="ttdeci">const char * text</div><div class="ttdoc">The UTF-8 button text</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:62</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_color_html"><div class="ttname"><a href="struct_s_d_l___message_box_color.html">SDL_MessageBoxColor</a></div><div class="ttdoc">RGB value used in a message box color scheme</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:69</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_color_html_a3d03a0372246e40434fc7a8a928c1e92"><div class="ttname"><a href="struct_s_d_l___message_box_color.html#a3d03a0372246e40434fc7a8a928c1e92">SDL_MessageBoxColor::b</a></div><div class="ttdeci">Uint8 b</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:70</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_color_html_a91b464c8eae5ece8465e150e16086acd"><div class="ttname"><a href="struct_s_d_l___message_box_color.html#a91b464c8eae5ece8465e150e16086acd">SDL_MessageBoxColor::r</a></div><div class="ttdeci">Uint8 r</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:70</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_color_html_ab4c6f97b95a6d0a8058a62eab9c78c43"><div class="ttname"><a href="struct_s_d_l___message_box_color.html#ab4c6f97b95a6d0a8058a62eab9c78c43">SDL_MessageBoxColor::g</a></div><div class="ttdeci">Uint8 g</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:70</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_color_scheme_html"><div class="ttname"><a href="struct_s_d_l___message_box_color_scheme.html">SDL_MessageBoxColorScheme</a></div><div class="ttdoc">A set of colors to use for message box dialogs</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:87</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_color_scheme_html_aac26fca7ad16ef80af11b8afa9f02943"><div class="ttname"><a href="struct_s_d_l___message_box_color_scheme.html#aac26fca7ad16ef80af11b8afa9f02943">SDL_MessageBoxColorScheme::colors</a></div><div class="ttdeci">SDL_MessageBoxColor colors[SDL_MESSAGEBOX_COLOR_MAX]</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:88</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_data_html"><div class="ttname"><a href="struct_s_d_l___message_box_data.html">SDL_MessageBoxData</a></div><div class="ttdoc">MessageBox structure containing title, text, window, etc.</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:95</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_data_html_a048097c5cc2146ce1ff2450684f1b51c"><div class="ttname"><a href="struct_s_d_l___message_box_data.html#a048097c5cc2146ce1ff2450684f1b51c">SDL_MessageBoxData::flags</a></div><div class="ttdeci">Uint32 flags</div><div class="ttdoc">SDL_MessageBoxFlags</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:96</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_data_html_a254bf0858da09c96a48daf64404eb4f8"><div class="ttname"><a href="struct_s_d_l___message_box_data.html#a254bf0858da09c96a48daf64404eb4f8">SDL_MessageBoxData::message</a></div><div class="ttdeci">const char * message</div><div class="ttdoc">UTF-8 message text</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:99</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_data_html_a5d024a90e0db32dee923d8c873118225"><div class="ttname"><a href="struct_s_d_l___message_box_data.html#a5d024a90e0db32dee923d8c873118225">SDL_MessageBoxData::buttons</a></div><div class="ttdeci">const SDL_MessageBoxButtonData * buttons</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:102</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_data_html_a8214780964530800368b406c681fd1d9"><div class="ttname"><a href="struct_s_d_l___message_box_data.html#a8214780964530800368b406c681fd1d9">SDL_MessageBoxData::title</a></div><div class="ttdeci">const char * title</div><div class="ttdoc">UTF-8 title</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:98</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_data_html_aaa8e409e04dcf575ef63fd5fb3db06f9"><div class="ttname"><a href="struct_s_d_l___message_box_data.html#aaa8e409e04dcf575ef63fd5fb3db06f9">SDL_MessageBoxData::window</a></div><div class="ttdeci">SDL_Window * window</div><div class="ttdoc">Parent window, can be NULL</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:97</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_data_html_adff7d306bb56e132b0060191672c9525"><div class="ttname"><a href="struct_s_d_l___message_box_data.html#adff7d306bb56e132b0060191672c9525">SDL_MessageBoxData::numbuttons</a></div><div class="ttdeci">int numbuttons</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:101</div></div>
+<div class="ttc" id="astruct_s_d_l___message_box_data_html_afcad43ea8520ac57b30b35bee0077618"><div class="ttname"><a href="struct_s_d_l___message_box_data.html#afcad43ea8520ac57b30b35bee0077618">SDL_MessageBoxData::colorScheme</a></div><div class="ttdeci">const SDL_MessageBoxColorScheme * colorScheme</div><div class="ttdoc">SDL_MessageBoxColorScheme, can be NULL to use system settings</div><div class="ttdef"><b>定义</b> SDL_messagebox.h:104</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__messagebox_8h.html">SDL_messagebox.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

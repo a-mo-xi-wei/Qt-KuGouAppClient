@@ -1,0 +1,834 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AVIOContext结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_a_v_i_o_context.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="struct_a_v_i_o_context-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">AVIOContext结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bytestream IO Context.  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="avio_8h_source.html">avio.h</a>&gt;</code></p>
+<div class="dynheader">
+AVIOContext 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_a_v_i_o_context__coll__graph.png" border="0" usemap="#a_a_v_i_o_context_coll__map" alt="Collaboration graph"/></div>
+<map name="a_a_v_i_o_context_coll__map" id="a_a_v_i_o_context_coll__map">
+<area shape="rect" title="Bytestream IO Context." alt="" coords="5,277,104,304"/>
+<area shape="rect" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure." alt="" coords="18,187,91,213"/>
+<area shape="poly" title=" " alt="" coords="57,229,57,277,52,277,52,229"/>
+<area shape="poly" title=" " alt="" coords="108,191,117,200,109,209,91,211,91,206,107,204,112,200,104,195"/>
+<area shape="rect" href="struct_a_v_option.html" title="AVOption" alt="" coords="16,96,93,123"/>
+<area shape="poly" title=" " alt="" coords="57,138,57,186,52,186,52,138"/>
+<area shape="rect" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator)." alt="" coords="11,5,98,32"/>
+<area shape="poly" title=" " alt="" coords="57,48,57,95,52,95,52,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a3c52bb71d909eb63b854c56cc44927b7" id="r_a3c52bb71d909eb63b854c56cc44927b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c52bb71d909eb63b854c56cc44927b7">av_class</a></td></tr>
+<tr class="memdesc:a3c52bb71d909eb63b854c56cc44927b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class for private options.  <br /></td></tr>
+<tr class="separator:a3c52bb71d909eb63b854c56cc44927b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e7ad2e1a45c8db5fba9ad4778bd400" id="r_a70e7ad2e1a45c8db5fba9ad4778bd400"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70e7ad2e1a45c8db5fba9ad4778bd400">buffer</a></td></tr>
+<tr class="memdesc:a70e7ad2e1a45c8db5fba9ad4778bd400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of the buffer.  <br /></td></tr>
+<tr class="separator:a70e7ad2e1a45c8db5fba9ad4778bd400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af22ff4ab7a026e6c3b4b08eafb2df027" id="r_af22ff4ab7a026e6c3b4b08eafb2df027"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af22ff4ab7a026e6c3b4b08eafb2df027">buffer_size</a></td></tr>
+<tr class="memdesc:af22ff4ab7a026e6c3b4b08eafb2df027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum buffer size  <br /></td></tr>
+<tr class="separator:af22ff4ab7a026e6c3b4b08eafb2df027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599bff222bd491cbda1cb612c7bdd245" id="r_a599bff222bd491cbda1cb612c7bdd245"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599bff222bd491cbda1cb612c7bdd245">buf_ptr</a></td></tr>
+<tr class="memdesc:a599bff222bd491cbda1cb612c7bdd245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current position in the buffer  <br /></td></tr>
+<tr class="separator:a599bff222bd491cbda1cb612c7bdd245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a348057ddf8c18c17b34afe7f7ff2d3fe" id="r_a348057ddf8c18c17b34afe7f7ff2d3fe"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a348057ddf8c18c17b34afe7f7ff2d3fe">buf_end</a></td></tr>
+<tr class="memdesc:a348057ddf8c18c17b34afe7f7ff2d3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">End of the data, may be less than buffer+buffer_size if the read function returned less data than requested, e.g.  <br /></td></tr>
+<tr class="separator:a348057ddf8c18c17b34afe7f7ff2d3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf7bf835136d6d7b362ec6c3d642777c" id="r_aaf7bf835136d6d7b362ec6c3d642777c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a></td></tr>
+<tr class="memdesc:aaf7bf835136d6d7b362ec6c3d642777c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A private pointer, passed to the read/write/seek/... functions.  <br /></td></tr>
+<tr class="separator:aaf7bf835136d6d7b362ec6c3d642777c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28674382b36b0d051967c53f235380e3" id="r_a28674382b36b0d051967c53f235380e3"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28674382b36b0d051967c53f235380e3">read_packet</a> )(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size)</td></tr>
+<tr class="separator:a28674382b36b0d051967c53f235380e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab595950999ff7fdf5adb5a67c29242" id="r_a3ab595950999ff7fdf5adb5a67c29242"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ab595950999ff7fdf5adb5a67c29242">write_packet</a> )(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size)</td></tr>
+<tr class="separator:a3ab595950999ff7fdf5adb5a67c29242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6f056371ac49f70b3bd49b22c37b7e3" id="r_ad6f056371ac49f70b3bd49b22c37b7e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6f056371ac49f70b3bd49b22c37b7e3">seek</a> )(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a2003032e3d6cfe0acd020119b0204242">offset</a>, int whence)</td></tr>
+<tr class="separator:ad6f056371ac49f70b3bd49b22c37b7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a1bbcb80d6aba4220ac521bd4929f83" id="r_a3a1bbcb80d6aba4220ac521bd4929f83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a1bbcb80d6aba4220ac521bd4929f83">pos</a></td></tr>
+<tr class="memdesc:a3a1bbcb80d6aba4220ac521bd4929f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">position in the file of the current buffer  <br /></td></tr>
+<tr class="separator:a3a1bbcb80d6aba4220ac521bd4929f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d20156c4029b3451c259836983dbc7" id="r_a82d20156c4029b3451c259836983dbc7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82d20156c4029b3451c259836983dbc7">eof_reached</a></td></tr>
+<tr class="memdesc:a82d20156c4029b3451c259836983dbc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if eof reached  <br /></td></tr>
+<tr class="separator:a82d20156c4029b3451c259836983dbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74afd7581bc056f582ec0f3aa353abe4" id="r_a74afd7581bc056f582ec0f3aa353abe4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74afd7581bc056f582ec0f3aa353abe4">write_flag</a></td></tr>
+<tr class="memdesc:a74afd7581bc056f582ec0f3aa353abe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if open for writing  <br /></td></tr>
+<tr class="separator:a74afd7581bc056f582ec0f3aa353abe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a004f4a2c752c74ce9e96e733ca06d1d1" id="r_a004f4a2c752c74ce9e96e733ca06d1d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a004f4a2c752c74ce9e96e733ca06d1d1">max_packet_size</a></td></tr>
+<tr class="separator:a004f4a2c752c74ce9e96e733ca06d1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aa4aa47788dbaf26b32a42a2f5eb294" id="r_a4aa4aa47788dbaf26b32a42a2f5eb294"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aa4aa47788dbaf26b32a42a2f5eb294">checksum</a></td></tr>
+<tr class="separator:a4aa4aa47788dbaf26b32a42a2f5eb294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bcf804eb41335c50a2e95312c8bda8d" id="r_a4bcf804eb41335c50a2e95312c8bda8d"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bcf804eb41335c50a2e95312c8bda8d">checksum_ptr</a></td></tr>
+<tr class="separator:a4bcf804eb41335c50a2e95312c8bda8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564bf6c6b4c61b38514062d5c0b4f984" id="r_a564bf6c6b4c61b38514062d5c0b4f984"><td class="memItemLeft" align="right" valign="top">unsigned long(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a564bf6c6b4c61b38514062d5c0b4f984">update_checksum</a> )(unsigned long <a class="el" href="#a4aa4aa47788dbaf26b32a42a2f5eb294">checksum</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, unsigned int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="separator:a564bf6c6b4c61b38514062d5c0b4f984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11614f44ef4d939bdd984953346a7572" id="r_a11614f44ef4d939bdd984953346a7572"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11614f44ef4d939bdd984953346a7572">error</a></td></tr>
+<tr class="memdesc:a11614f44ef4d939bdd984953346a7572"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains the error code or 0 if no error happened  <br /></td></tr>
+<tr class="separator:a11614f44ef4d939bdd984953346a7572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04b73811d76b922c862583e3b829ddda" id="r_a04b73811d76b922c862583e3b829ddda"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04b73811d76b922c862583e3b829ddda">read_pause</a> )(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, int pause)</td></tr>
+<tr class="memdesc:a04b73811d76b922c862583e3b829ddda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause or resume playback for network streaming protocols - e.g.  <br /></td></tr>
+<tr class="separator:a04b73811d76b922c862583e3b829ddda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a969d03cf1d4e0214ca97340ba25d5b4c" id="r_a969d03cf1d4e0214ca97340ba25d5b4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a969d03cf1d4e0214ca97340ba25d5b4c">read_seek</a> )(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, int stream_index, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> timestamp, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:a969d03cf1d4e0214ca97340ba25d5b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seek to a given timestamp in stream with the specified stream_index.  <br /></td></tr>
+<tr class="separator:a969d03cf1d4e0214ca97340ba25d5b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc978926283246071a01ae14f0d94a79" id="r_afc978926283246071a01ae14f0d94a79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc978926283246071a01ae14f0d94a79">seekable</a></td></tr>
+<tr class="memdesc:afc978926283246071a01ae14f0d94a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">A combination of AVIO_SEEKABLE_ flags or 0 when the stream is not seekable.  <br /></td></tr>
+<tr class="separator:afc978926283246071a01ae14f0d94a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa8046b27fd40626eaa233f73a125df" id="r_a1fa8046b27fd40626eaa233f73a125df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fa8046b27fd40626eaa233f73a125df">maxsize</a></td></tr>
+<tr class="memdesc:a1fa8046b27fd40626eaa233f73a125df"><td class="mdescLeft">&#160;</td><td class="mdescRight">max filesize, used to limit allocations This field is internal to libavformat and access from outside is not allowed.  <br /></td></tr>
+<tr class="separator:a1fa8046b27fd40626eaa233f73a125df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e695d5f0461e165ba68c1c011a0a5e8" id="r_a4e695d5f0461e165ba68c1c011a0a5e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e695d5f0461e165ba68c1c011a0a5e8">direct</a></td></tr>
+<tr class="memdesc:a4e695d5f0461e165ba68c1c011a0a5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">avio_read and avio_write should if possible be satisfied directly instead of going through a buffer, and avio_seek will always call the underlying seek function directly.  <br /></td></tr>
+<tr class="separator:a4e695d5f0461e165ba68c1c011a0a5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b26f29fc340c70413d096e2a3434ea" id="r_ab1b26f29fc340c70413d096e2a3434ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1b26f29fc340c70413d096e2a3434ea">bytes_read</a></td></tr>
+<tr class="memdesc:ab1b26f29fc340c70413d096e2a3434ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes read statistic This field is internal to libavformat and access from outside is not allowed.  <br /></td></tr>
+<tr class="separator:ab1b26f29fc340c70413d096e2a3434ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa7bde798ff6af5178fd85e54b7a22e3" id="r_aaa7bde798ff6af5178fd85e54b7a22e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa7bde798ff6af5178fd85e54b7a22e3">seek_count</a></td></tr>
+<tr class="memdesc:aaa7bde798ff6af5178fd85e54b7a22e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">seek statistic This field is internal to libavformat and access from outside is not allowed.  <br /></td></tr>
+<tr class="separator:aaa7bde798ff6af5178fd85e54b7a22e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a8becf65cc0eb4b3c3d5e3c0f41adfd" id="r_a8a8becf65cc0eb4b3c3d5e3c0f41adfd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a8becf65cc0eb4b3c3d5e3c0f41adfd">writeout_count</a></td></tr>
+<tr class="memdesc:a8a8becf65cc0eb4b3c3d5e3c0f41adfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">writeout statistic This field is internal to libavformat and access from outside is not allowed.  <br /></td></tr>
+<tr class="separator:a8a8becf65cc0eb4b3c3d5e3c0f41adfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90770f2cb3e696c689c2ab22a5a28c8" id="r_aa90770f2cb3e696c689c2ab22a5a28c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa90770f2cb3e696c689c2ab22a5a28c8">orig_buffer_size</a></td></tr>
+<tr class="memdesc:aa90770f2cb3e696c689c2ab22a5a28c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Original buffer size used internally after probing and ensure seekback to reset the buffer size This field is internal to libavformat and access from outside is not allowed.  <br /></td></tr>
+<tr class="separator:aa90770f2cb3e696c689c2ab22a5a28c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d5428e01dfc30dc660f1d8f59b4823" id="r_a25d5428e01dfc30dc660f1d8f59b4823"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25d5428e01dfc30dc660f1d8f59b4823">short_seek_threshold</a></td></tr>
+<tr class="memdesc:a25d5428e01dfc30dc660f1d8f59b4823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold to favor readahead over seek.  <br /></td></tr>
+<tr class="separator:a25d5428e01dfc30dc660f1d8f59b4823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48d15d7dbfa2c8a04b82e9782198215" id="r_ad48d15d7dbfa2c8a04b82e9782198215"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad48d15d7dbfa2c8a04b82e9782198215">protocol_whitelist</a></td></tr>
+<tr class="memdesc:ad48d15d7dbfa2c8a04b82e9782198215"><td class="mdescLeft">&#160;</td><td class="mdescRight">',' separated list of allowed protocols.  <br /></td></tr>
+<tr class="separator:ad48d15d7dbfa2c8a04b82e9782198215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1266015cb7efef0ee73de9b9bac46217" id="r_a1266015cb7efef0ee73de9b9bac46217"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1266015cb7efef0ee73de9b9bac46217">protocol_blacklist</a></td></tr>
+<tr class="memdesc:a1266015cb7efef0ee73de9b9bac46217"><td class="mdescLeft">&#160;</td><td class="mdescRight">',' separated list of disallowed protocols.  <br /></td></tr>
+<tr class="separator:a1266015cb7efef0ee73de9b9bac46217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e8bb0983ced168b13c482c7df979eb5" id="r_a8e8bb0983ced168b13c482c7df979eb5"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8bb0983ced168b13c482c7df979eb5">write_data_type</a> )(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size, enum <a class="el" href="avio_8h.html#a4dbe7c0b3d5c86e46b9991ee805c5e21">AVIODataMarkerType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> time)</td></tr>
+<tr class="memdesc:a8e8bb0983ced168b13c482c7df979eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A callback that is used instead of write_packet.  <br /></td></tr>
+<tr class="separator:a8e8bb0983ced168b13c482c7df979eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0063d2c1666d72815cb2cde762854799" id="r_a0063d2c1666d72815cb2cde762854799"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0063d2c1666d72815cb2cde762854799">ignore_boundary_point</a></td></tr>
+<tr class="memdesc:a0063d2c1666d72815cb2cde762854799"><td class="mdescLeft">&#160;</td><td class="mdescRight">If set, don't call write_data_type separately for AVIO_DATA_MARKER_BOUNDARY_POINT, but ignore them and treat them as AVIO_DATA_MARKER_UNKNOWN (to avoid needlessly small chunks of data returned from the callback).  <br /></td></tr>
+<tr class="separator:a0063d2c1666d72815cb2cde762854799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967ee65827afc4540b867c2afa114898" id="r_a967ee65827afc4540b867c2afa114898"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="avio_8h.html#a4dbe7c0b3d5c86e46b9991ee805c5e21">AVIODataMarkerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a967ee65827afc4540b867c2afa114898">current_type</a></td></tr>
+<tr class="memdesc:a967ee65827afc4540b867c2afa114898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal, not meant to be used from outside of <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a>.  <br /></td></tr>
+<tr class="separator:a967ee65827afc4540b867c2afa114898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8b7ecbc8b10b3300173b85a475556a" id="r_adf8b7ecbc8b10b3300173b85a475556a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf8b7ecbc8b10b3300173b85a475556a">last_time</a></td></tr>
+<tr class="separator:adf8b7ecbc8b10b3300173b85a475556a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d9463cf6fcf705f32afe0f28935698e" id="r_a9d9463cf6fcf705f32afe0f28935698e"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d9463cf6fcf705f32afe0f28935698e">short_seek_get</a> )(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>)</td></tr>
+<tr class="memdesc:a9d9463cf6fcf705f32afe0f28935698e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A callback that is used instead of short_seek_threshold.  <br /></td></tr>
+<tr class="separator:a9d9463cf6fcf705f32afe0f28935698e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01435578df7557c90a81b27035da9bb3" id="r_a01435578df7557c90a81b27035da9bb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01435578df7557c90a81b27035da9bb3">written</a></td></tr>
+<tr class="separator:a01435578df7557c90a81b27035da9bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5dc9e8524eb5506356d11deb8a8b4c2" id="r_aa5dc9e8524eb5506356d11deb8a8b4c2"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5dc9e8524eb5506356d11deb8a8b4c2">buf_ptr_max</a></td></tr>
+<tr class="memdesc:aa5dc9e8524eb5506356d11deb8a8b4c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum reached position before a backward seek in the write buffer, used keeping track of already written data for a later flush.  <br /></td></tr>
+<tr class="separator:aa5dc9e8524eb5506356d11deb8a8b4c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e463182420b58b972cb37a227ae5a88" id="r_a6e463182420b58b972cb37a227ae5a88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e463182420b58b972cb37a227ae5a88">min_packet_size</a></td></tr>
+<tr class="memdesc:a6e463182420b58b972cb37a227ae5a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to buffer at least this amount of data before flushing it  <br /></td></tr>
+<tr class="separator:a6e463182420b58b972cb37a227ae5a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Bytestream IO Context. </p>
+<p>New fields can be added to the end with minor version bumps. Removal, reordering and changes to existing fields require a major version bump. sizeof(AVIOContext) must not be used outside libav*.</p>
+<dl class="section note"><dt>注解</dt><dd>None of the function pointers in <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a> should be called directly, they should only be set by the client application when implementing custom I/O. Normally these are set to the function pointers specified in <a class="el" href="avio_8h.html#a2e973f64b35366432c6c6b50be744cb2" title="Allocate and initialize an AVIOContext for buffered I/O.">avio_alloc_context()</a> </dd></dl>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="a3c52bb71d909eb63b854c56cc44927b7" name="a3c52bb71d909eb63b854c56cc44927b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c52bb71d909eb63b854c56cc44927b7">&#9670;&#160;</a></span>av_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a>* av_class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A class for private options. </p>
+<p>If this <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a> is created by <a class="el" href="avio_8h.html#ade8a63980569494c99593ebf0d1e891b" title="Create and initialize a AVIOContext for accessing the resource indicated by url.">avio_open2()</a>, av_class is set and passes the options down to protocols.</p>
+<p>If this <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a> is manually allocated, then av_class may be set by the caller.</p>
+<p>warning &ndash; this field can be NULL, be sure to not pass this <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a> to any av_opt_* functions in that case. </p>
+
+</div>
+</div>
+<a id="a348057ddf8c18c17b34afe7f7ff2d3fe" name="a348057ddf8c18c17b34afe7f7ff2d3fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a348057ddf8c18c17b34afe7f7ff2d3fe">&#9670;&#160;</a></span>buf_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* buf_end</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>End of the data, may be less than buffer+buffer_size if the read function returned less data than requested, e.g. </p>
+<p>for streams where no more data has been received yet. </p>
+
+</div>
+</div>
+<a id="a599bff222bd491cbda1cb612c7bdd245" name="a599bff222bd491cbda1cb612c7bdd245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599bff222bd491cbda1cb612c7bdd245">&#9670;&#160;</a></span>buf_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* buf_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Current position in the buffer </p>
+
+</div>
+</div>
+<a id="aa5dc9e8524eb5506356d11deb8a8b4c2" name="aa5dc9e8524eb5506356d11deb8a8b4c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5dc9e8524eb5506356d11deb8a8b4c2">&#9670;&#160;</a></span>buf_ptr_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* buf_ptr_max</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum reached position before a backward seek in the write buffer, used keeping track of already written data for a later flush. </p>
+
+</div>
+</div>
+<a id="a70e7ad2e1a45c8db5fba9ad4778bd400" name="a70e7ad2e1a45c8db5fba9ad4778bd400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70e7ad2e1a45c8db5fba9ad4778bd400">&#9670;&#160;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="_s_d_l__opengl__glext_8h.html#a76461e97a098d2c9ae20ac193d3825ae">buffer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start of the buffer. </p>
+
+</div>
+</div>
+<a id="af22ff4ab7a026e6c3b4b08eafb2df027" name="af22ff4ab7a026e6c3b4b08eafb2df027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af22ff4ab7a026e6c3b4b08eafb2df027">&#9670;&#160;</a></span>buffer_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int buffer_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum buffer size </p>
+
+</div>
+</div>
+<a id="ab1b26f29fc340c70413d096e2a3434ea" name="ab1b26f29fc340c70413d096e2a3434ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b26f29fc340c70413d096e2a3434ea">&#9670;&#160;</a></span>bytes_read</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> bytes_read</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bytes read statistic This field is internal to libavformat and access from outside is not allowed. </p>
+
+</div>
+</div>
+<a id="a4aa4aa47788dbaf26b32a42a2f5eb294" name="a4aa4aa47788dbaf26b32a42a2f5eb294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa4aa47788dbaf26b32a42a2f5eb294">&#9670;&#160;</a></span>checksum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long checksum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4bcf804eb41335c50a2e95312c8bda8d" name="a4bcf804eb41335c50a2e95312c8bda8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bcf804eb41335c50a2e95312c8bda8d">&#9670;&#160;</a></span>checksum_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* checksum_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a967ee65827afc4540b867c2afa114898" name="a967ee65827afc4540b867c2afa114898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967ee65827afc4540b867c2afa114898">&#9670;&#160;</a></span>current_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="avio_8h.html#a4dbe7c0b3d5c86e46b9991ee805c5e21">AVIODataMarkerType</a> current_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Internal, not meant to be used from outside of <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a>. </p>
+
+</div>
+</div>
+<a id="a4e695d5f0461e165ba68c1c011a0a5e8" name="a4e695d5f0461e165ba68c1c011a0a5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e695d5f0461e165ba68c1c011a0a5e8">&#9670;&#160;</a></span>direct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int direct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>avio_read and avio_write should if possible be satisfied directly instead of going through a buffer, and avio_seek will always call the underlying seek function directly. </p>
+
+</div>
+</div>
+<a id="a82d20156c4029b3451c259836983dbc7" name="a82d20156c4029b3451c259836983dbc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82d20156c4029b3451c259836983dbc7">&#9670;&#160;</a></span>eof_reached</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int eof_reached</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>true if eof reached </p>
+
+</div>
+</div>
+<a id="a11614f44ef4d939bdd984953346a7572" name="a11614f44ef4d939bdd984953346a7572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11614f44ef4d939bdd984953346a7572">&#9670;&#160;</a></span>error</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int error</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>contains the error code or 0 if no error happened </p>
+
+</div>
+</div>
+<a id="a0063d2c1666d72815cb2cde762854799" name="a0063d2c1666d72815cb2cde762854799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0063d2c1666d72815cb2cde762854799">&#9670;&#160;</a></span>ignore_boundary_point</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ignore_boundary_point</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If set, don't call write_data_type separately for AVIO_DATA_MARKER_BOUNDARY_POINT, but ignore them and treat them as AVIO_DATA_MARKER_UNKNOWN (to avoid needlessly small chunks of data returned from the callback). </p>
+
+</div>
+</div>
+<a id="adf8b7ecbc8b10b3300173b85a475556a" name="adf8b7ecbc8b10b3300173b85a475556a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8b7ecbc8b10b3300173b85a475556a">&#9670;&#160;</a></span>last_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> last_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a004f4a2c752c74ce9e96e733ca06d1d1" name="a004f4a2c752c74ce9e96e733ca06d1d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a004f4a2c752c74ce9e96e733ca06d1d1">&#9670;&#160;</a></span>max_packet_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int max_packet_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fa8046b27fd40626eaa233f73a125df" name="a1fa8046b27fd40626eaa233f73a125df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa8046b27fd40626eaa233f73a125df">&#9670;&#160;</a></span>maxsize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> maxsize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>max filesize, used to limit allocations This field is internal to libavformat and access from outside is not allowed. </p>
+
+</div>
+</div>
+<a id="a6e463182420b58b972cb37a227ae5a88" name="a6e463182420b58b972cb37a227ae5a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e463182420b58b972cb37a227ae5a88">&#9670;&#160;</a></span>min_packet_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int min_packet_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Try to buffer at least this amount of data before flushing it </p>
+
+</div>
+</div>
+<a id="aaf7bf835136d6d7b362ec6c3d642777c" name="aaf7bf835136d6d7b362ec6c3d642777c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf7bf835136d6d7b362ec6c3d642777c">&#9670;&#160;</a></span>opaque</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>* opaque</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A private pointer, passed to the read/write/seek/... functions. </p>
+
+</div>
+</div>
+<a id="aa90770f2cb3e696c689c2ab22a5a28c8" name="aa90770f2cb3e696c689c2ab22a5a28c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90770f2cb3e696c689c2ab22a5a28c8">&#9670;&#160;</a></span>orig_buffer_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int orig_buffer_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Original buffer size used internally after probing and ensure seekback to reset the buffer size This field is internal to libavformat and access from outside is not allowed. </p>
+
+</div>
+</div>
+<a id="a3a1bbcb80d6aba4220ac521bd4929f83" name="a3a1bbcb80d6aba4220ac521bd4929f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a1bbcb80d6aba4220ac521bd4929f83">&#9670;&#160;</a></span>pos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> pos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>position in the file of the current buffer </p>
+
+</div>
+</div>
+<a id="a1266015cb7efef0ee73de9b9bac46217" name="a1266015cb7efef0ee73de9b9bac46217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1266015cb7efef0ee73de9b9bac46217">&#9670;&#160;</a></span>protocol_blacklist</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char* protocol_blacklist</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>',' separated list of disallowed protocols. </p>
+
+</div>
+</div>
+<a id="ad48d15d7dbfa2c8a04b82e9782198215" name="ad48d15d7dbfa2c8a04b82e9782198215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48d15d7dbfa2c8a04b82e9782198215">&#9670;&#160;</a></span>protocol_whitelist</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char* protocol_whitelist</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>',' separated list of allowed protocols. </p>
+
+</div>
+</div>
+<a id="a28674382b36b0d051967c53f235380e3" name="a28674382b36b0d051967c53f235380e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28674382b36b0d051967c53f235380e3">&#9670;&#160;</a></span>read_packet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* read_packet) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04b73811d76b922c862583e3b829ddda" name="a04b73811d76b922c862583e3b829ddda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b73811d76b922c862583e3b829ddda">&#9670;&#160;</a></span>read_pause</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* read_pause) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, int pause)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pause or resume playback for network streaming protocols - e.g. </p>
+<p>MMS. </p>
+
+</div>
+</div>
+<a id="a969d03cf1d4e0214ca97340ba25d5b4c" name="a969d03cf1d4e0214ca97340ba25d5b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a969d03cf1d4e0214ca97340ba25d5b4c">&#9670;&#160;</a></span>read_seek</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>(* read_seek) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, int stream_index, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> timestamp, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Seek to a given timestamp in stream with the specified stream_index. </p>
+<p>Needed for some network streaming protocols which don't support seeking to byte position. </p>
+
+</div>
+</div>
+<a id="ad6f056371ac49f70b3bd49b22c37b7e3" name="ad6f056371ac49f70b3bd49b22c37b7e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6f056371ac49f70b3bd49b22c37b7e3">&#9670;&#160;</a></span>seek</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>(* seek) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a2003032e3d6cfe0acd020119b0204242">offset</a>, int whence)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa7bde798ff6af5178fd85e54b7a22e3" name="aaa7bde798ff6af5178fd85e54b7a22e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa7bde798ff6af5178fd85e54b7a22e3">&#9670;&#160;</a></span>seek_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int seek_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>seek statistic This field is internal to libavformat and access from outside is not allowed. </p>
+
+</div>
+</div>
+<a id="afc978926283246071a01ae14f0d94a79" name="afc978926283246071a01ae14f0d94a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc978926283246071a01ae14f0d94a79">&#9670;&#160;</a></span>seekable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int seekable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A combination of AVIO_SEEKABLE_ flags or 0 when the stream is not seekable. </p>
+
+</div>
+</div>
+<a id="a9d9463cf6fcf705f32afe0f28935698e" name="a9d9463cf6fcf705f32afe0f28935698e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9463cf6fcf705f32afe0f28935698e">&#9670;&#160;</a></span>short_seek_get</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* short_seek_get) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A callback that is used instead of short_seek_threshold. </p>
+<p>This is current internal only, do not use from outside. </p>
+
+</div>
+</div>
+<a id="a25d5428e01dfc30dc660f1d8f59b4823" name="a25d5428e01dfc30dc660f1d8f59b4823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d5428e01dfc30dc660f1d8f59b4823">&#9670;&#160;</a></span>short_seek_threshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int short_seek_threshold</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Threshold to favor readahead over seek. </p>
+<p>This is current internal only, do not use from outside. </p>
+
+</div>
+</div>
+<a id="a564bf6c6b4c61b38514062d5c0b4f984" name="a564bf6c6b4c61b38514062d5c0b4f984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a564bf6c6b4c61b38514062d5c0b4f984">&#9670;&#160;</a></span>update_checksum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long(* update_checksum) (unsigned long <a class="el" href="#a4aa4aa47788dbaf26b32a42a2f5eb294">checksum</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, unsigned int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e8bb0983ced168b13c482c7df979eb5" name="a8e8bb0983ced168b13c482c7df979eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e8bb0983ced168b13c482c7df979eb5">&#9670;&#160;</a></span>write_data_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* write_data_type) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size, enum <a class="el" href="avio_8h.html#a4dbe7c0b3d5c86e46b9991ee805c5e21">AVIODataMarkerType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> time)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A callback that is used instead of write_packet. </p>
+
+</div>
+</div>
+<a id="a74afd7581bc056f582ec0f3aa353abe4" name="a74afd7581bc056f582ec0f3aa353abe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74afd7581bc056f582ec0f3aa353abe4">&#9670;&#160;</a></span>write_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int write_flag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>true if open for writing </p>
+
+</div>
+</div>
+<a id="a3ab595950999ff7fdf5adb5a67c29242" name="a3ab595950999ff7fdf5adb5a67c29242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ab595950999ff7fdf5adb5a67c29242">&#9670;&#160;</a></span>write_packet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* write_packet) (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="#aaf7bf835136d6d7b362ec6c3d642777c">opaque</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a8becf65cc0eb4b3c3d5e3c0f41adfd" name="a8a8becf65cc0eb4b3c3d5e3c0f41adfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8becf65cc0eb4b3c3d5e3c0f41adfd">&#9670;&#160;</a></span>writeout_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int writeout_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>writeout statistic This field is internal to libavformat and access from outside is not allowed. </p>
+
+</div>
+</div>
+<a id="a01435578df7557c90a81b27035da9bb3" name="a01435578df7557c90a81b27035da9bb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01435578df7557c90a81b27035da9bb3">&#9670;&#160;</a></span>written</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> written</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="avio_8h_source.html">avio.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_a_v_i_o_context.html">AVIOContext</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

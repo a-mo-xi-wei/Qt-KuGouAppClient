@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: RecentlyPlayed.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_recently_played_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RecentlyPlayed.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_recently_played_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef RECENTLYPLAYED_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define RECENTLYPLAYED_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_recently_single_song_8h.html">RecentlySingleSong/RecentlySingleSong.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_recently_song_list_8h.html">RecentlySongList/RecentlySongList.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_recently_video_widget_8h.html">RecentlyVideoWidget/RecentlyVideoWidget.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_recently_song_channel_8h.html">RecentlySongChannel/RecentlySongChannel.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_recently_m_v_channel_8h.html">RecentlyMVChannel/RecentlyMVChannel.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">class </span><a class="code hl_class" href="class_q_button_group.html">QButtonGroup</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">class </span>RecentlyPlayed;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_recently_played.html">   42</a></span><span class="keyword">class </span><a class="code hl_function" href="class_recently_played.html#ad3e1fddc8d112a919ec2ff75f1d681e0">RecentlyPlayed</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    Q_OBJECT</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_recently_played.html#ad3e1fddc8d112a919ec2ff75f1d681e0">RecentlyPlayed</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="class_recently_played.html#ae7251b163998842dd027217862aea388">~RecentlyPlayed</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#aebc31945fa34b123ada488d5710cce62">initIndexLab</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#a0880fc715278119401b0b218adc8ade6">initStackedWidget</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#a67a51b4fffd47353441cbc3b66534c08">initSingleSong</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#ae05868a688d1a36771864c8ddd30adcb">initSongList</a>();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#a5eb0c8874306ab3b2729f656ac8f8296">initVideoWidget</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#ae6b987e4a7f5ebb1f7b58456e32f140a">initSongChannel</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#ac8c6d39c9bb9e13221d602076fc29018">initMVChannel</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#ab868524a9562cda1f7b60b4220e2248e">enableButton</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;<a class="code hl_variable" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_recently_played.html#a34bf2aeb4dfe3d86beeb16f8663c8bb9">on_single_song_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_recently_played.html#a5376070f2e4d281780eeb0acdfa09f74">on_song_list_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_recently_played.html#aefd2692091cb656b018d02fd286e0c25">on_video_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_recently_played.html#ac6b34390e85b380d2621a4b6c1aca882">on_song_channel_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_recently_played.html#a2bc3211ff610b697d1b06f6b8e2f99b9">on_MV_channel_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>signals:</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_recently_played.html#aa23356daca3ed71116d6ae55df2991f4">  148</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_recently_played.html#aa23356daca3ed71116d6ae55df2991f4">find_more_music</a>();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="class_recently_played.html#aa8baaa8edba9b9f49e961a3342ee40c7">  153</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_recently_played.html#aa8baaa8edba9b9f49e961a3342ee40c7">find_more_channel</a>();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_recently_played.html#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a>(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_recently_played.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">showEvent</a>(QShowEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="class_recently_played.html#ac0f5661c7189ee45329dc1745eeefdc5">  180</a></span>    Ui::RecentlyPlayed                *<a class="code hl_variable" href="class_recently_played.html#ac0f5661c7189ee45329dc1745eeefdc5">ui</a>;                 </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="class_recently_played.html#ad47442fcf7db8bd0dab09d79ad4c1d47">  181</a></span>    std::unique_ptr&lt;QButtonGroup&gt;      <a class="code hl_variable" href="class_recently_played.html#ad47442fcf7db8bd0dab09d79ad4c1d47">m_buttonGroup</a>;      </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="class_recently_played.html#a713d1a5afed419b795597be5a421e403">  182</a></span>    std::unique_ptr&lt;RecentlySingleSong&gt; <a class="code hl_variable" href="class_recently_played.html#a713d1a5afed419b795597be5a421e403">m_singleSong</a>;      </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="class_recently_played.html#a52321c9335720e1b8ea63b04f71defd1">  183</a></span>    std::unique_ptr&lt;RecentlySongList&gt;  <a class="code hl_variable" href="class_recently_played.html#a52321c9335720e1b8ea63b04f71defd1">m_songList</a>;         </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="class_recently_played.html#a2236334cb4518edffb8a0d7a8a199a6f">  184</a></span>    std::unique_ptr&lt;RecentlyVideoWidget&gt; <a class="code hl_variable" href="class_recently_played.html#a2236334cb4518edffb8a0d7a8a199a6f">m_videoWidget</a>;    </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="class_recently_played.html#aaf979ef5c240c0f5c2447ad3d6a5899e">  185</a></span>    std::unique_ptr&lt;RecentlySongChannel&gt; <a class="code hl_variable" href="class_recently_played.html#aaf979ef5c240c0f5c2447ad3d6a5899e">m_songChannel</a>;    </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="class_recently_played.html#a3cb4590229b0fee5618249aad25994e6">  186</a></span>    std::unique_ptr&lt;RecentlyMVChannel&gt; <a class="code hl_variable" href="class_recently_played.html#a3cb4590229b0fee5618249aad25994e6">m_mvChannel</a>;        </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>};</div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#endif </span><span class="comment">// RECENTLYPLAYED_H</span></div>
+<div class="ttc" id="a_my_search_line_edit_8cpp_html_aa12d082c0f752ab7313a2cf16522a3df"><div class="ttname"><a href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a></div><div class="ttdeci">std::once_flag flag</div><div class="ttdoc">单次初始化标志，确保原始宽度只设置一次</div><div class="ttdef"><b>定义</b> MySearchLineEdit.cpp:21</div></div>
+<div class="ttc" id="a_recently_m_v_channel_8h_html"><div class="ttname"><a href="_recently_m_v_channel_8h.html">RecentlyMVChannel.h</a></div><div class="ttdoc">定义 RecentlyMVChannel 类，管理最近MV频道界面</div></div>
+<div class="ttc" id="a_recently_single_song_8h_html"><div class="ttname"><a href="_recently_single_song_8h.html">RecentlySingleSong.h</a></div><div class="ttdoc">定义 RecentlySingleSong 类，管理最近单曲界面</div></div>
+<div class="ttc" id="a_recently_song_channel_8h_html"><div class="ttname"><a href="_recently_song_channel_8h.html">RecentlySongChannel.h</a></div><div class="ttdoc">定义 RecentlySongChannel 类，管理最近歌曲频道界面</div></div>
+<div class="ttc" id="a_recently_song_list_8h_html"><div class="ttname"><a href="_recently_song_list_8h.html">RecentlySongList.h</a></div><div class="ttdoc">定义 RecentlySongList 类，管理最近歌单界面</div></div>
+<div class="ttc" id="a_recently_video_widget_8h_html"><div class="ttname"><a href="_recently_video_widget_8h.html">RecentlyVideoWidget.h</a></div><div class="ttdoc">定义 RecentlyVideoWidget 类，管理最近视频界面</div></div>
+<div class="ttc" id="aclass_q_button_group_html"><div class="ttname"><a href="class_q_button_group.html">QButtonGroup</a></div><div class="ttdoc">Qt 按钮组类，用于管理互斥按钮</div></div>
+<div class="ttc" id="aclass_recently_played_html_a0880fc715278119401b0b218adc8ade6"><div class="ttname"><a href="class_recently_played.html#a0880fc715278119401b0b218adc8ade6">RecentlyPlayed::initStackedWidget</a></div><div class="ttdeci">void initStackedWidget()</div><div class="ttdoc">初始化堆栈窗口</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:94</div></div>
+<div class="ttc" id="aclass_recently_played_html_a2236334cb4518edffb8a0d7a8a199a6f"><div class="ttname"><a href="class_recently_played.html#a2236334cb4518edffb8a0d7a8a199a6f">RecentlyPlayed::m_videoWidget</a></div><div class="ttdeci">std::unique_ptr&lt; RecentlyVideoWidget &gt; m_videoWidget</div><div class="ttdoc">视频界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.h:184</div></div>
+<div class="ttc" id="aclass_recently_played_html_a26eb1890b4d4dfb7bf76fb7c44cbdebf"><div class="ttname"><a href="class_recently_played.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">RecentlyPlayed::showEvent</a></div><div class="ttdeci">void showEvent(QShowEvent *event) override</div><div class="ttdoc">窗口显示事件</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:542</div></div>
+<div class="ttc" id="aclass_recently_played_html_a2bc3211ff610b697d1b06f6b8e2f99b9"><div class="ttname"><a href="class_recently_played.html#a2bc3211ff610b697d1b06f6b8e2f99b9">RecentlyPlayed::on_MV_channel_pushButton_clicked</a></div><div class="ttdeci">void on_MV_channel_pushButton_clicked()</div><div class="ttdoc">MV 频道按钮点击槽函数</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:278</div></div>
+<div class="ttc" id="aclass_recently_played_html_a34bf2aeb4dfe3d86beeb16f8663c8bb9"><div class="ttname"><a href="class_recently_played.html#a34bf2aeb4dfe3d86beeb16f8663c8bb9">RecentlyPlayed::on_single_song_pushButton_clicked</a></div><div class="ttdeci">void on_single_song_pushButton_clicked()</div><div class="ttdoc">单曲按钮点击槽函数</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:182</div></div>
+<div class="ttc" id="aclass_recently_played_html_a3cb4590229b0fee5618249aad25994e6"><div class="ttname"><a href="class_recently_played.html#a3cb4590229b0fee5618249aad25994e6">RecentlyPlayed::m_mvChannel</a></div><div class="ttdeci">std::unique_ptr&lt; RecentlyMVChannel &gt; m_mvChannel</div><div class="ttdoc">MV 频道界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.h:186</div></div>
+<div class="ttc" id="aclass_recently_played_html_a52321c9335720e1b8ea63b04f71defd1"><div class="ttname"><a href="class_recently_played.html#a52321c9335720e1b8ea63b04f71defd1">RecentlyPlayed::m_songList</a></div><div class="ttdeci">std::unique_ptr&lt; RecentlySongList &gt; m_songList</div><div class="ttdoc">歌单界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.h:183</div></div>
+<div class="ttc" id="aclass_recently_played_html_a5376070f2e4d281780eeb0acdfa09f74"><div class="ttname"><a href="class_recently_played.html#a5376070f2e4d281780eeb0acdfa09f74">RecentlyPlayed::on_song_list_pushButton_clicked</a></div><div class="ttdeci">void on_song_list_pushButton_clicked()</div><div class="ttdoc">歌单按钮点击槽函数</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:206</div></div>
+<div class="ttc" id="aclass_recently_played_html_a5eb0c8874306ab3b2729f656ac8f8296"><div class="ttname"><a href="class_recently_played.html#a5eb0c8874306ab3b2729f656ac8f8296">RecentlyPlayed::initVideoWidget</a></div><div class="ttdeci">void initVideoWidget()</div><div class="ttdoc">初始化视频界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:136</div></div>
+<div class="ttc" id="aclass_recently_played_html_a67a51b4fffd47353441cbc3b66534c08"><div class="ttname"><a href="class_recently_played.html#a67a51b4fffd47353441cbc3b66534c08">RecentlyPlayed::initSingleSong</a></div><div class="ttdeci">void initSingleSong()</div><div class="ttdoc">初始化单曲界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:113</div></div>
+<div class="ttc" id="aclass_recently_played_html_a713d1a5afed419b795597be5a421e403"><div class="ttname"><a href="class_recently_played.html#a713d1a5afed419b795597be5a421e403">RecentlyPlayed::m_singleSong</a></div><div class="ttdeci">std::unique_ptr&lt; RecentlySingleSong &gt; m_singleSong</div><div class="ttdoc">单曲界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.h:182</div></div>
+<div class="ttc" id="aclass_recently_played_html_a7523c71b2bf60975302287ec8923f80e"><div class="ttname"><a href="class_recently_played.html#a7523c71b2bf60975302287ec8923f80e">RecentlyPlayed::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标按下事件</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:505</div></div>
+<div class="ttc" id="aclass_recently_played_html_a7eb87a6d4464680c455d278d1d32eba6"><div class="ttname"><a href="class_recently_played.html#a7eb87a6d4464680c455d278d1d32eba6">RecentlyPlayed::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) override</div><div class="ttdoc">事件过滤器</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:305</div></div>
+<div class="ttc" id="aclass_recently_played_html_aa23356daca3ed71116d6ae55df2991f4"><div class="ttname"><a href="class_recently_played.html#aa23356daca3ed71116d6ae55df2991f4">RecentlyPlayed::find_more_music</a></div><div class="ttdeci">void find_more_music()</div><div class="ttdoc">搜索更多音乐的信号</div></div>
+<div class="ttc" id="aclass_recently_played_html_aa8baaa8edba9b9f49e961a3342ee40c7"><div class="ttname"><a href="class_recently_played.html#aa8baaa8edba9b9f49e961a3342ee40c7">RecentlyPlayed::find_more_channel</a></div><div class="ttdeci">void find_more_channel()</div><div class="ttdoc">搜索更多频道的信号</div></div>
+<div class="ttc" id="aclass_recently_played_html_aaf979ef5c240c0f5c2447ad3d6a5899e"><div class="ttname"><a href="class_recently_played.html#aaf979ef5c240c0f5c2447ad3d6a5899e">RecentlyPlayed::m_songChannel</a></div><div class="ttdeci">std::unique_ptr&lt; RecentlySongChannel &gt; m_songChannel</div><div class="ttdoc">歌曲频道界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.h:185</div></div>
+<div class="ttc" id="aclass_recently_played_html_ab868524a9562cda1f7b60b4220e2248e"><div class="ttname"><a href="class_recently_played.html#ab868524a9562cda1f7b60b4220e2248e">RecentlyPlayed::enableButton</a></div><div class="ttdeci">void enableButton(const bool &amp;flag) const</div><div class="ttdoc">启用或禁用按钮</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:169</div></div>
+<div class="ttc" id="aclass_recently_played_html_ac0f5661c7189ee45329dc1745eeefdc5"><div class="ttname"><a href="class_recently_played.html#ac0f5661c7189ee45329dc1745eeefdc5">RecentlyPlayed::ui</a></div><div class="ttdeci">Ui::RecentlyPlayed * ui</div><div class="ttdoc">UI 指针</div><div class="ttdef"><b>定义</b> RecentlyPlayed.h:180</div></div>
+<div class="ttc" id="aclass_recently_played_html_ac6b34390e85b380d2621a4b6c1aca882"><div class="ttname"><a href="class_recently_played.html#ac6b34390e85b380d2621a4b6c1aca882">RecentlyPlayed::on_song_channel_pushButton_clicked</a></div><div class="ttdeci">void on_song_channel_pushButton_clicked()</div><div class="ttdoc">歌曲频道按钮点击槽函数</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:254</div></div>
+<div class="ttc" id="aclass_recently_played_html_ac8c6d39c9bb9e13221d602076fc29018"><div class="ttname"><a href="class_recently_played.html#ac8c6d39c9bb9e13221d602076fc29018">RecentlyPlayed::initMVChannel</a></div><div class="ttdeci">void initMVChannel()</div><div class="ttdoc">初始化 MV 频道界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:158</div></div>
+<div class="ttc" id="aclass_recently_played_html_ad3e1fddc8d112a919ec2ff75f1d681e0"><div class="ttname"><a href="class_recently_played.html#ad3e1fddc8d112a919ec2ff75f1d681e0">RecentlyPlayed::RecentlyPlayed</a></div><div class="ttdeci">RecentlyPlayed(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化最近播放界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:24</div></div>
+<div class="ttc" id="aclass_recently_played_html_ad47442fcf7db8bd0dab09d79ad4c1d47"><div class="ttname"><a href="class_recently_played.html#ad47442fcf7db8bd0dab09d79ad4c1d47">RecentlyPlayed::m_buttonGroup</a></div><div class="ttdeci">std::unique_ptr&lt; QButtonGroup &gt; m_buttonGroup</div><div class="ttdoc">按钮组</div><div class="ttdef"><b>定义</b> RecentlyPlayed.h:181</div></div>
+<div class="ttc" id="aclass_recently_played_html_ae05868a688d1a36771864c8ddd30adcb"><div class="ttname"><a href="class_recently_played.html#ae05868a688d1a36771864c8ddd30adcb">RecentlyPlayed::initSongList</a></div><div class="ttdeci">void initSongList()</div><div class="ttdoc">初始化歌单界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:125</div></div>
+<div class="ttc" id="aclass_recently_played_html_ae6b987e4a7f5ebb1f7b58456e32f140a"><div class="ttname"><a href="class_recently_played.html#ae6b987e4a7f5ebb1f7b58456e32f140a">RecentlyPlayed::initSongChannel</a></div><div class="ttdeci">void initSongChannel()</div><div class="ttdoc">初始化歌曲频道界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:147</div></div>
+<div class="ttc" id="aclass_recently_played_html_ae7251b163998842dd027217862aea388"><div class="ttname"><a href="class_recently_played.html#ae7251b163998842dd027217862aea388">RecentlyPlayed::~RecentlyPlayed</a></div><div class="ttdeci">~RecentlyPlayed() override</div><div class="ttdoc">析构函数，清理资源</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:49</div></div>
+<div class="ttc" id="aclass_recently_played_html_aebc31945fa34b123ada488d5710cce62"><div class="ttname"><a href="class_recently_played.html#aebc31945fa34b123ada488d5710cce62">RecentlyPlayed::initIndexLab</a></div><div class="ttdeci">void initIndexLab()</div><div class="ttdoc">初始化索引标签</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:71</div></div>
+<div class="ttc" id="aclass_recently_played_html_aefd2692091cb656b018d02fd286e0c25"><div class="ttname"><a href="class_recently_played.html#aefd2692091cb656b018d02fd286e0c25">RecentlyPlayed::on_video_pushButton_clicked</a></div><div class="ttdeci">void on_video_pushButton_clicked()</div><div class="ttdoc">视频按钮点击槽函数</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:230</div></div>
+<div class="ttc" id="aclass_recently_played_html_afba6e95967cc3eb25fd518f7bde6ec04"><div class="ttname"><a href="class_recently_played.html#afba6e95967cc3eb25fd518f7bde6ec04">RecentlyPlayed::initUi</a></div><div class="ttdeci">void initUi()</div><div class="ttdoc">初始化界面</div><div class="ttdef"><b>定义</b> RecentlyPlayed.cpp:58</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_a29342a547cf0e6ba750c0544229179e.html">RecentlyPlayed</a></li><li class="navelem"><a class="el" href="_recently_played_8h.html">RecentlyPlayed.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

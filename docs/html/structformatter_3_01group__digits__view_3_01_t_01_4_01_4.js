@@ -1,0 +1,7 @@
+var structformatter_3_01group__digits__view_3_01_t_01_4_01_4 =
+[
+    [ "formatter", "structformatter.html#a81c2fae306c5df1771102de3eb74aff9", null ],
+    [ "format", "structformatter_3_01group__digits__view_3_01_t_01_4_01_4.html#a12f88da6a64b78a7132de00518d5e674", null ],
+    [ "parse", "structformatter_3_01group__digits__view_3_01_t_01_4_01_4.html#adea8f8d583f8596da890c2908cce214c", null ],
+    [ "specs_", "structformatter_3_01group__digits__view_3_01_t_01_4_01_4.html#aff9c6c7fdd5aba4a64cf2b923f1acc28", null ]
+];

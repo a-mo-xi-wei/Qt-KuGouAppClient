@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: singleton.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('ui_2_ela_widget_tools_2_ela_common_2singleton_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">singleton.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;QMutex&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ui/ElaWidgetTools/ElaCommon/singleton.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ui_2_ela_widget_tools_2_ela_common_2singleton_8h__incl.png" border="0" usemap="#asingleton_8h" alt=""/></div>
+<map name="asingleton_8h" id="asingleton_8h">
+<area shape="rect" title=" " alt="" coords="5,5,90,32"/>
+<area shape="rect" title=" " alt="" coords="14,80,81,107"/>
+<area shape="poly" title=" " alt="" coords="50,33,50,64,45,64,45,33"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="ui_2_ela_widget_tools_2_ela_common_2singleton_8h__dep__incl.png" border="0" usemap="#asingleton_8hdep" alt=""/></div>
+<map name="asingleton_8hdep" id="asingleton_8hdep">
+<area shape="rect" title=" " alt="" coords="610,5,694,32"/>
+<area shape="rect" href="_ela_icon_8h.html" title=" " alt="" coords="140,80,217,107"/>
+<area shape="poly" title=" " alt="" coords="595,31,217,89,217,84,594,26"/>
+<area shape="rect" href="_ela_theme_8h.html" title="定义 ElaTheme 类，提供主题管理和颜色配置功能" alt="" coords="1168,80,1259,107"/>
+<area shape="poly" title=" " alt="" coords="710,25,1167,83,1167,89,709,30"/>
+<area shape="rect" href="_ela_icon_8cpp.html" title=" " alt="" coords="5,155,96,181"/>
+<area shape="poly" title=" " alt="" coords="144,117,74,156,72,152,142,112"/>
+<area shape="rect" href="_ela_menu_bar_8cpp.html" title="实现 ElaMenuBar 类，提供自定义菜单栏功能" alt="" coords="120,155,237,181"/>
+<area shape="poly" title=" " alt="" coords="181,122,181,154,176,154,176,122"/>
+<area shape="rect" href="_ela_exit_dialog_8cpp.html" title="实现 ElaExitDialog 类，提供退出对话框的功能" alt="" coords="261,155,386,181"/>
+<area shape="poly" title=" " alt="" coords="1152,100,830,119,616,135,399,157,387,159,387,153,398,152,615,130,829,113,1152,95"/>
+<area shape="rect" href="_ela_icon_button_8cpp.html" title="实现 ElaIconButton 类，提供自定义图标按钮功能" alt="" coords="410,155,539,181"/>
+<area shape="poly" title=" " alt="" coords="1152,102,890,122,551,157,539,159,539,154,550,152,890,117,1151,96"/>
+<area shape="rect" href="_ela_menu_bar_style_8cpp.html" title="实现 ElaMenuBarStyle 类，提供自定义菜单栏样式" alt="" coords="562,155,710,181"/>
+<area shape="poly" title=" " alt="" coords="1152,104,722,157,710,159,709,154,721,152,1151,99"/>
+<area shape="rect" href="_ela_menu_style_8cpp.html" title="实现 ElaMenuStyle 类，提供自定义菜单样式" alt="" coords="734,155,861,181"/>
+<area shape="poly" title=" " alt="" coords="1153,108,862,158,861,153,1152,103"/>
+<area shape="rect" href="_ela_message_bar_8cpp.html" title="实现 ElaMessageBar 类，提供消息通知栏功能" alt="" coords="885,155,1024,181"/>
+<area shape="poly" title=" " alt="" coords="1154,114,1001,157,999,151,1153,109"/>
+<area shape="rect" href="_ela_message_button_8cpp.html" title="实现 ElaMessageButton 类，提供消息触发按钮功能" alt="" coords="1048,155,1205,181"/>
+<area shape="poly" title=" " alt="" coords="1188,119,1143,156,1140,152,1185,115"/>
+<area shape="rect" href="_ela_plain_text_edit_8cpp.html" title="实现 ElaPlainTextEdit 类，提供自定义纯文本编辑框功能" alt="" coords="1229,155,1371,181"/>
+<area shape="poly" title=" " alt="" coords="1242,115,1287,152,1283,156,1238,119"/>
+<area shape="rect" href="_ela_plain_text_edit_style_8cpp.html" title="实现 ElaPlainTextEditStyle 类，提供纯文本编辑框的自定义样式" alt="" coords="1395,155,1567,181"/>
+<area shape="poly" title=" " alt="" coords="1274,108,1435,152,1434,157,1273,114"/>
+<area shape="rect" href="_ela_push_button_8cpp.html" title="实现 ElaPushButton 类，提供自定义按钮功能" alt="" coords="1592,155,1725,181"/>
+<area shape="poly" title=" " alt="" coords="1274,102,1592,153,1591,158,1273,107"/>
+<area shape="rect" href="_ela_scroll_bar_style_8cpp.html" title="实现 ElaScrollBarStyle 类，提供自定义滚动条样式" alt="" coords="1750,155,1898,181"/>
+<area shape="poly" title=" " alt="" coords="1275,99,1737,152,1749,154,1749,159,1737,157,1274,104"/>
+<area shape="rect" href="_ela_text_8cpp.html" title="实现 ElaText 类，提供自定义文本标签功能" alt="" coords="1923,155,2013,181"/>
+<area shape="poly" title=" " alt="" coords="1275,95,1551,113,1730,129,1911,152,1923,154,1922,159,1910,157,1729,135,1550,118,1274,100"/>
+<area shape="rect" href="_ela_theme_8cpp.html" title="实现 ElaTheme 类，管理主题模式、颜色和阴影效果" alt="" coords="2036,155,2142,181"/>
+<area shape="poly" title=" " alt="" coords="1274,94,1596,111,1809,128,2026,152,2037,154,2036,159,2025,157,1809,134,1596,117,1274,100"/>
+<area shape="rect" href="_ela_tool_tip_8cpp.html" title="实现 ElaToolTip 类，提供自定义工具提示功能" alt="" coords="2166,155,2274,181"/>
+<area shape="poly" title=" " alt="" coords="1275,93,1647,109,1899,126,2155,152,2166,154,2165,159,2154,157,1899,132,1647,114,1274,99"/>
+</map>
+</div>
+</div>
+<p><a href="ui_2_ela_widget_tools_2_ela_common_2singleton_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html">Singleton&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">模板单例类  <a href="class_singleton.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a49ee37668292b3d142ddd95378f8086b" id="r_a49ee37668292b3d142ddd95378f8086b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49ee37668292b3d142ddd95378f8086b">Q_SINGLETON_CREATE</a>(Class)</td></tr>
+<tr class="memdesc:a49ee37668292b3d142ddd95378f8086b"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建单例类的宏  <br /></td></tr>
+<tr class="separator:a49ee37668292b3d142ddd95378f8086b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee28d2032b34b0b90c245841a7e0c7a" id="r_afee28d2032b34b0b90c245841a7e0c7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afee28d2032b34b0b90c245841a7e0c7a">Q_SINGLETON_CREATE_H</a>(Class)</td></tr>
+<tr class="memdesc:afee28d2032b34b0b90c245841a7e0c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建单例类头文件声明  <br /></td></tr>
+<tr class="separator:afee28d2032b34b0b90c245841a7e0c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a305f81e11e58bf794d130c93b0a76f88" id="r_a305f81e11e58bf794d130c93b0a76f88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a305f81e11e58bf794d130c93b0a76f88">Q_SINGLETON_CREATE_CPP</a>(Class)</td></tr>
+<tr class="memdesc:a305f81e11e58bf794d130c93b0a76f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建单例类实现  <br /></td></tr>
+<tr class="separator:a305f81e11e58bf794d130c93b0a76f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a49ee37668292b3d142ddd95378f8086b" name="a49ee37668292b3d142ddd95378f8086b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ee37668292b3d142ddd95378f8086b">&#9670;&#160;</a></span>Q_SINGLETON_CREATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Q_SINGLETON_CREATE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>Class</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keyword">private</span>:                                        \</div>
+<div class="line">    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_singleton.html">Singleton</a>&lt;Class&gt;;              \</div>
+<div class="line">                                                \</div>
+<div class="line"><span class="keyword">public</span>:                                         \</div>
+<div class="line">    <span class="keyword">static</span> Class* getInstance()                 \</div>
+<div class="line">    {                                           \</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="class_singleton.html#afe3abed0c54b651cf63c7ff3aca3b7e4">Singleton&lt;Class&gt;::getInstance</a>(); \</div>
+<div class="line">    }</div>
+<div class="ttc" id="aclass_singleton_html"><div class="ttname"><a href="class_singleton.html">Singleton</a></div><div class="ttdoc">模板单例类</div><div class="ttdef"><b>定义</b> ui/ElaWidgetTools/ElaCommon/singleton.h:15</div></div>
+<div class="ttc" id="aclass_singleton_html_afe3abed0c54b651cf63c7ff3aca3b7e4"><div class="ttname"><a href="class_singleton.html#afe3abed0c54b651cf63c7ff3aca3b7e4">Singleton::getInstance</a></div><div class="ttdeci">static T * getInstance()</div><div class="ttdoc">获取单例实例</div><div class="ttdef"><b>定义</b> ui/ElaWidgetTools/ElaCommon/singleton.h:42</div></div>
+</div><!-- fragment -->
+<p>创建单例类的宏 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Class</td><td>单例类名</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>为指定类生成单例模式的实现，包括友元类和 getInstance 方法。 </p>
+
+</div>
+</div>
+<a id="a305f81e11e58bf794d130c93b0a76f88" name="a305f81e11e58bf794d130c93b0a76f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a305f81e11e58bf794d130c93b0a76f88">&#9670;&#160;</a></span>Q_SINGLETON_CREATE_CPP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Q_SINGLETON_CREATE_CPP</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>Class</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Class* Class::_instance = <span class="keyword">nullptr</span>; \</div>
+<div class="line">Class* Class::getInstance()        \</div>
+<div class="line">{                                  \</div>
+<div class="line">    <span class="keyword">static</span> QMutex mutex;           \</div>
+<div class="line">    QMutexLocker locker(&amp;mutex);   \</div>
+<div class="line">    if (_instance == <span class="keyword">nullptr</span>)      \</div>
+<div class="line">    {                              \</div>
+<div class="line">        _instance = <span class="keyword">new</span> Class();   \</div>
+<div class="line">    }                              \</div>
+<div class="line">    <span class="keywordflow">return</span> _instance;              \</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>创建单例类实现 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Class</td><td>单例类名</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>为单例类实现线程安全的 getInstance 方法。 </p>
+
+</div>
+</div>
+<a id="afee28d2032b34b0b90c245841a7e0c7a" name="afee28d2032b34b0b90c245841a7e0c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee28d2032b34b0b90c245841a7e0c7a">&#9670;&#160;</a></span>Q_SINGLETON_CREATE_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Q_SINGLETON_CREATE_H</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>Class</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keyword">private</span>:                            \</div>
+<div class="line">    <span class="keyword">static</span> Class* _instance;        \</div>
+<div class="line">                                    \</div>
+<div class="line"><span class="keyword">public</span>:                             \</div>
+<div class="line">    <span class="keyword">static</span> Class* getInstance();</div>
+</div><!-- fragment -->
+<p>创建单例类头文件声明 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Class</td><td>单例类名</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>为单例类生成静态实例指针和 getInstance 方法的声明。 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_c41e0d0e814e23de337c335e201650d3.html">ElaWidgetTools</a></li><li class="navelem"><a class="el" href="dir_a7cb3baefd8faa092f0ee9caf615fc08.html">ElaCommon</a></li><li class="navelem"><a class="el" href="ui_2_ela_widget_tools_2_ela_common_2singleton_8h.html">singleton.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

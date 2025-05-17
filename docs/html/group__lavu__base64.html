@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Base64</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavu__base64.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Base64<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__crypto.html">Crypto and Hashing</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Base64 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__base64.png" border="0" usemap="#agroup____lavu____base64" alt=""/></div>
+<map name="agroup____lavu____base64" id="agroup____lavu____base64">
+<area shape="rect" title=" " alt="" coords="191,5,256,32"/>
+<area shape="rect" href="group__lavu__crypto.html" title=" " alt="" coords="5,5,143,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga91e6771f201fdb7bfaeb4ccb95f1b252" id="r_ga91e6771f201fdb7bfaeb4ccb95f1b252"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga91e6771f201fdb7bfaeb4ccb95f1b252">AV_BASE64_DECODE_SIZE</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="memdesc:ga91e6771f201fdb7bfaeb4ccb95f1b252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the output size in bytes needed to decode a base64 string with length x to a data buffer.  <br /></td></tr>
+<tr class="separator:ga91e6771f201fdb7bfaeb4ccb95f1b252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa79f39ca3f737b662ae6711d2cbecd20" id="r_gaa79f39ca3f737b662ae6711d2cbecd20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa79f39ca3f737b662ae6711d2cbecd20">AV_BASE64_SIZE</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="memdesc:gaa79f39ca3f737b662ae6711d2cbecd20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the output size needed to base64-encode x bytes to a null-terminated string.  <br /></td></tr>
+<tr class="separator:gaa79f39ca3f737b662ae6711d2cbecd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gac8837266968329642080627f3aec9ab8" id="r_gac8837266968329642080627f3aec9ab8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8837266968329642080627f3aec9ab8">av_base64_decode</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *out, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a83ad0ee7f1e06b59c90271716e689080">in</a>, int out_size)</td></tr>
+<tr class="memdesc:gac8837266968329642080627f3aec9ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a base64-encoded string.  <br /></td></tr>
+<tr class="separator:gac8837266968329642080627f3aec9ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1be788d32678cb896ca7ec86fea324b2" id="r_ga1be788d32678cb896ca7ec86fea324b2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1be788d32678cb896ca7ec86fea324b2">av_base64_encode</a> (char *out, int out_size, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a83ad0ee7f1e06b59c90271716e689080">in</a>, int in_size)</td></tr>
+<tr class="memdesc:ga1be788d32678cb896ca7ec86fea324b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode data to base64 and null-terminate.  <br /></td></tr>
+<tr class="separator:ga1be788d32678cb896ca7ec86fea324b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ga91e6771f201fdb7bfaeb4ccb95f1b252" name="ga91e6771f201fdb7bfaeb4ccb95f1b252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91e6771f201fdb7bfaeb4ccb95f1b252">&#9670;&#160;</a></span>AV_BASE64_DECODE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_BASE64_DECODE_SIZE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">((<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>) * 3LL / 4)</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_acbccb77724c9f4a12f2a844974ab0fea"><div class="ttname"><a href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></div><div class="ttdeci">GLint GLint GLint GLint GLint x</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+</div><!-- fragment -->
+<p>Calculate the output size in bytes needed to decode a base64 string with length x to a data buffer. </p>
+
+</div>
+</div>
+<a id="gaa79f39ca3f737b662ae6711d2cbecd20" name="gaa79f39ca3f737b662ae6711d2cbecd20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa79f39ca3f737b662ae6711d2cbecd20">&#9670;&#160;</a></span>AV_BASE64_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_BASE64_SIZE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">(((<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)+2) / 3 * 4 + 1)</div>
+</div><!-- fragment -->
+<p>Calculate the output size needed to base64-encode x bytes to a null-terminated string. </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="gac8837266968329642080627f3aec9ab8" name="gac8837266968329642080627f3aec9ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8837266968329642080627f3aec9ab8">&#9670;&#160;</a></span>av_base64_decode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_base64_decode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>in</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>out_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode a base64-encoded string. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>buffer for decoded data </td></tr>
+    <tr><td class="paramname">in</td><td>null-terminated input string </td></tr>
+    <tr><td class="paramname">out_size</td><td>size in bytes of the out buffer, must be at least 3/4 of the length of in, that is <a class="el" href="#ga91e6771f201fdb7bfaeb4ccb95f1b252" title="Calculate the output size in bytes needed to decode a base64 string with length x to a data buffer.">AV_BASE64_DECODE_SIZE(strlen(in))</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>number of bytes written, or a negative value in case of invalid input </dd></dl>
+
+</div>
+</div>
+<a id="ga1be788d32678cb896ca7ec86fea324b2" name="ga1be788d32678cb896ca7ec86fea324b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1be788d32678cb896ca7ec86fea324b2">&#9670;&#160;</a></span>av_base64_encode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * av_base64_encode </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>out_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>in</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>in_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode data to base64 and null-terminate. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>buffer for encoded data </td></tr>
+    <tr><td class="paramname">out_size</td><td>size in bytes of the out buffer (including the null terminator), must be at least <a class="el" href="#gaa79f39ca3f737b662ae6711d2cbecd20" title="Calculate the output size needed to base64-encode x bytes to a null-terminated string.">AV_BASE64_SIZE(in_size)</a> </td></tr>
+    <tr><td class="paramname">in</td><td>input buffer containing the data to encode </td></tr>
+    <tr><td class="paramname">in_size</td><td>size in bytes of the in buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>out or NULL in case of error </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

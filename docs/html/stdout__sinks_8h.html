@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: stdout_sinks.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('stdout__sinks_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">stdout_sinks.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;<a class="el" href="console__globals_8h_source.html">spdlog/details/console_globals.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="synchronous__factory_8h_source.html">spdlog/details/synchronous_factory.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sink_8h_source.html">spdlog/sinks/sink.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+stdout_sinks.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="stdout__sinks_8h__incl.png" border="0" usemap="#astdout__sinks_8h" alt=""/></div>
+<map name="astdout__sinks_8h" id="astdout__sinks_8h">
+<area shape="rect" title=" " alt="" coords="660,5,766,32"/>
+<area shape="rect" title=" " alt="" coords="654,435,710,461"/>
+<area shape="poly" title=" " alt="" coords="706,34,678,81,658,131,653,183,653,268,655,309,661,351,677,419,671,420,656,352,650,310,647,268,647,183,653,129,673,79,701,31"/>
+<area shape="rect" href="console__globals_8h.html" title=" " alt="" coords="138,336,288,379"/>
+<area shape="poly" title=" " alt="" coords="696,35,257,329,254,325,693,30"/>
+<area shape="rect" href="synchronous__factory_8h.html" title=" " alt="" coords="687,80,866,123"/>
+<area shape="poly" title=" " alt="" coords="725,31,753,66,749,70,721,34"/>
+<area shape="rect" href="sink_8h.html" title=" " alt="" coords="1006,88,1139,115"/>
+<area shape="poly" title=" " alt="" coords="767,29,1002,82,1001,87,766,34"/>
+<area shape="rect" title=" " alt="" coords="5,435,63,461"/>
+<area shape="poly" title=" " alt="" coords="172,382,75,429,74,430,71,425,73,424,170,377"/>
+<area shape="rect" href="null__mutex_8h.html" title=" " alt="" coords="318,427,443,469"/>
+<area shape="poly" title=" " alt="" coords="253,377,329,417,327,421,251,382"/>
+<area shape="rect" title=" " alt="" coords="612,525,672,552"/>
+<area shape="poly" title=" " alt="" coords="443,467,598,520,597,525,441,472"/>
+<area shape="rect" title=" " alt="" coords="354,525,407,552"/>
+<area shape="poly" title=" " alt="" coords="383,470,383,510,378,510,378,470"/>
+<area shape="rect" href="registry_8h.html" title=" " alt="" coords="705,253,779,280"/>
+<area shape="poly" title=" " alt="" coords="775,124,750,239,745,237,770,123"/>
+<area shape="poly" title=" " alt="" coords="705,271,636,274,546,284,447,304,398,320,351,338,336,348,327,359,316,370,301,381,268,395,239,403,189,410,137,414,75,429,72,430,70,425,73,424,137,409,188,404,238,398,266,390,298,376,313,366,323,355,333,344,349,334,396,314,446,299,545,279,635,269,704,265"/>
+<area shape="rect" href="_my_spdlog_2spdlog_2common_8h.html" title=" " alt="" coords="894,344,1019,371"/>
+<area shape="poly" title=" " alt="" coords="774,278,913,335,911,340,772,283"/>
+<area shape="rect" title=" " alt="" coords="569,435,630,461"/>
+<area shape="poly" title=" " alt="" coords="730,282,677,338,617,423,613,420,673,334,727,279"/>
+<area shape="rect" title=" " alt="" coords="467,435,545,461"/>
+<area shape="poly" title=" " alt="" coords="723,283,641,338,533,426,529,422,638,334,720,278"/>
+<area shape="rect" title=" " alt="" coords="734,435,803,461"/>
+<area shape="poly" title=" " alt="" coords="763,279,789,302,811,335,815,359,811,383,790,424,786,421,806,381,810,359,806,337,785,306,759,283"/>
+<area shape="rect" title=" " alt="" coords="1222,683,1275,709"/>
+<area shape="poly" title=" " alt="" coords="780,269,911,288,995,303,1080,322,1159,346,1225,374,1251,390,1271,407,1284,426,1289,446,1289,540,1286,575,1279,610,1262,669,1257,667,1274,609,1281,575,1283,540,1283,447,1279,428,1267,411,1248,394,1223,379,1157,351,1078,327,994,308,911,293,779,275"/>
+<area shape="rect" href="periodic__worker_8h.html" title=" " alt="" coords="362,336,512,379"/>
+<area shape="poly" title=" " alt="" coords="705,281,523,334,522,329,704,276"/>
+<area shape="rect" title=" " alt="" coords="687,344,797,371"/>
+<area shape="poly" title=" " alt="" coords="745,281,745,328,739,328,739,281"/>
+<area shape="poly" title=" " alt="" coords="904,374,818,397,723,429,720,430,718,425,721,424,816,392,902,369"/>
+<area shape="poly" title=" " alt="" coords="894,370,459,429,458,424,894,364"/>
+<area shape="poly" title=" " alt="" coords="943,373,817,472,750,503,688,526,686,521,748,498,814,467,940,369"/>
+<area shape="rect" href="tweakme_8h.html" title=" " alt="" coords="1374,525,1502,552"/>
+<area shape="poly" title=" " alt="" coords="1020,364,1131,386,1194,403,1255,424,1299,445,1342,469,1411,514,1408,518,1339,473,1297,449,1253,429,1192,408,1130,391,1019,370"/>
+<area shape="poly" title=" " alt="" coords="895,371,776,393,709,409,643,429,638,431,637,426,641,424,708,404,775,388,894,365"/>
+<area shape="rect" title=" " alt="" coords="927,757,1005,784"/>
+<area shape="poly" title=" " alt="" coords="950,373,934,397,919,428,900,481,894,537,894,622,899,657,912,690,929,720,947,744,943,747,925,722,907,692,894,659,889,623,889,537,894,480,914,426,930,395,946,370"/>
+<area shape="poly" title=" " alt="" coords="894,370,713,399,557,429,549,432,548,427,556,424,712,393,894,365"/>
+<area shape="rect" title=" " alt="" coords="1051,435,1148,461"/>
+<area shape="poly" title=" " alt="" coords="979,369,1067,424,1065,428,976,374"/>
+<area shape="poly" title=" " alt="" coords="931,374,810,430,808,425,929,369"/>
+<area shape="poly" title=" " alt="" coords="1020,356,1066,360,1116,372,1164,392,1186,407,1205,425,1226,453,1240,484,1250,518,1256,552,1259,616,1255,667,1250,667,1254,616,1251,553,1245,519,1235,486,1221,456,1201,428,1183,411,1162,397,1114,377,1065,366,1019,361"/>
+<area shape="rect" title=" " alt="" coords="1573,757,1655,784"/>
+<area shape="poly" title=" " alt="" coords="1020,361,1056,368,1094,381,1130,399,1161,425,1180,451,1187,477,1187,537,1187,623,1189,671,1195,689,1212,707,1238,722,1275,733,1369,744,1471,749,1558,755,1557,760,1470,754,1369,750,1274,738,1236,727,1208,711,1191,692,1183,672,1182,623,1182,537,1182,477,1175,454,1157,428,1127,403,1092,386,1055,374,1019,366"/>
+<area shape="rect" href="fmt_8h.html" title=" " alt="" coords="1425,435,1542,461"/>
+<area shape="poly" title=" " alt="" coords="1020,363,1194,387,1407,424,1423,428,1422,433,1405,429,1193,393,1019,369"/>
+<area shape="rect" href="common-inl_8h.html" title=" " alt="" coords="928,435,1028,461"/>
+<area shape="poly" title=" " alt="" coords="956,371,966,420,961,421,951,372"/>
+<area shape="poly" title=" " alt="" coords="1479,463,1454,512,1449,510,1474,461"/>
+<area shape="rect" href="core_8h.html" title=" " alt="" coords="1576,517,1708,560"/>
+<area shape="poly" title=" " alt="" coords="1507,460,1593,507,1591,512,1505,464"/>
+<area shape="rect" href="format_8h.html" title=" " alt="" coords="1603,608,1673,635"/>
+<area shape="poly" title=" " alt="" coords="1493,460,1523,505,1567,558,1610,597,1607,601,1563,562,1519,508,1489,463"/>
+<area shape="poly" title=" " alt="" coords="1644,561,1642,592,1637,592,1638,560"/>
+<area shape="poly" title=" " alt="" coords="1603,630,1470,650,1291,685,1290,680,1469,644,1602,624"/>
+<area shape="rect" href="base_8h.html" title=" " alt="" coords="1753,683,1814,709"/>
+<area shape="poly" title=" " alt="" coords="1664,633,1746,673,1743,678,1662,638"/>
+<area shape="rect" title=" " alt="" coords="1679,757,1736,784"/>
+<area shape="poly" title=" " alt="" coords="1654,633,1674,654,1692,681,1703,712,1708,742,1703,742,1698,713,1688,684,1670,658,1650,637"/>
+<area shape="rect" title=" " alt="" coords="1838,683,1902,709"/>
+<area shape="poly" title=" " alt="" coords="1674,631,1824,678,1822,683,1672,636"/>
+<area shape="rect" title=" " alt="" coords="1926,683,1987,709"/>
+<area shape="poly" title=" " alt="" coords="1674,627,1912,680,1911,685,1672,632"/>
+<area shape="rect" title=" " alt="" coords="2010,683,2071,709"/>
+<area shape="poly" title=" " alt="" coords="1674,624,1811,645,1996,679,1995,685,1810,650,1673,630"/>
+<area shape="rect" title=" " alt="" coords="2094,683,2147,709"/>
+<area shape="poly" title=" " alt="" coords="1673,623,1845,640,1960,657,2080,680,2079,685,1959,662,1844,646,1673,628"/>
+<area shape="rect" title=" " alt="" coords="1299,683,1345,709"/>
+<area shape="poly" title=" " alt="" coords="1604,631,1498,652,1360,685,1359,680,1497,647,1603,626"/>
+<area shape="rect" title=" " alt="" coords="1368,683,1446,709"/>
+<area shape="poly" title=" " alt="" coords="1604,636,1462,680,1460,675,1602,631"/>
+<area shape="rect" title=" " alt="" coords="1471,683,1568,709"/>
+<area shape="poly" title=" " alt="" coords="1619,637,1554,677,1552,672,1616,633"/>
+<area shape="rect" href="format-inl_8h.html" title=" " alt="" coords="1592,683,1678,709"/>
+<area shape="poly" title=" " alt="" coords="1633,635,1630,667,1625,667,1628,635"/>
+<area shape="poly" title=" " alt="" coords="1755,712,1659,753,1657,748,1753,707"/>
+<area shape="rect" title=" " alt="" coords="1933,757,1996,784"/>
+<area shape="poly" title=" " alt="" coords="1815,707,1920,749,1918,754,1813,712"/>
+<area shape="rect" title=" " alt="" coords="1760,757,1820,784"/>
+<area shape="poly" title=" " alt="" coords="1787,710,1790,741,1785,742,1782,710"/>
+<area shape="rect" title=" " alt="" coords="1844,757,1909,784"/>
+<area shape="poly" title=" " alt="" coords="1801,708,1850,746,1847,750,1798,712"/>
+<area shape="poly" title=" " alt="" coords="1592,710,1581,712,1422,734,1263,750,1020,769,1020,764,1263,745,1421,728,1580,707,1591,705"/>
+<area shape="poly" title=" " alt="" coords="1640,682,1643,650,1648,651,1645,683"/>
+<area shape="poly" title=" " alt="" coords="1650,708,1686,744,1682,748,1646,712"/>
+<area shape="rect" title=" " alt="" coords="1164,757,1238,784"/>
+<area shape="poly" title=" " alt="" coords="1592,710,1581,712,1401,743,1254,765,1253,759,1400,737,1580,707,1591,705"/>
+<area shape="rect" title=" " alt="" coords="1408,757,1465,784"/>
+<area shape="poly" title=" " alt="" coords="1602,712,1481,756,1479,751,1600,707"/>
+<area shape="rect" title=" " alt="" coords="1490,757,1549,784"/>
+<area shape="poly" title=" " alt="" coords="1617,712,1554,751,1551,746,1614,708"/>
+<area shape="rect" title=" " alt="" coords="1329,757,1384,784"/>
+<area shape="poly" title=" " alt="" coords="1592,710,1400,759,1398,754,1591,705"/>
+<area shape="poly" title=" " alt="" coords="979,435,969,386,974,385,984,434"/>
+<area shape="poly" title=" " alt="" coords="981,461,988,506,995,533,1006,559,1044,617,1090,669,1135,713,1174,746,1170,750,1132,717,1086,673,1040,620,1001,561,990,535,982,507,976,462"/>
+<area shape="rect" title=" " alt="" coords="1015,525,1077,552"/>
+<area shape="poly" title=" " alt="" coords="990,460,1029,511,1025,514,986,464"/>
+<area shape="poly" title=" " alt="" coords="362,378,344,381,267,393,208,400,149,409,75,429,71,431,69,426,73,424,147,404,207,394,267,388,343,376,361,372"/>
+<area shape="poly" title=" " alt="" coords="476,377,564,425,562,429,474,382"/>
+<area shape="poly" title=" " alt="" coords="455,377,489,421,485,424,451,381"/>
+<area shape="rect" title=" " alt="" coords="169,435,294,461"/>
+<area shape="poly" title=" " alt="" coords="390,382,276,431,274,426,387,377"/>
+<area shape="rect" title=" " alt="" coords="87,435,144,461"/>
+<area shape="poly" title=" " alt="" coords="362,378,248,404,157,429,154,431,152,426,156,424,246,399,361,372"/>
+<area shape="rect" href="log__msg_8h.html" title=" " alt="" coords="1062,245,1184,288"/>
+<area shape="poly" title=" " alt="" coords="1078,114,1101,197,1112,230,1107,232,1095,198,1073,116"/>
+<area shape="rect" href="formatter_8h.html" title=" " alt="" coords="1110,171,1236,197"/>
+<area shape="poly" title=" " alt="" coords="1090,113,1147,159,1144,163,1087,117"/>
+<area shape="poly" title=" " alt="" coords="1086,291,995,339,993,334,1083,286"/>
+<area shape="poly" title=" " alt="" coords="1186,274,1249,295,1280,312,1307,334,1327,361,1336,386,1339,413,1339,447,1339,540,1338,569,1332,591,1307,636,1276,674,1272,670,1302,633,1327,589,1332,568,1334,540,1334,447,1334,413,1331,387,1322,363,1303,338,1277,316,1247,299,1184,279"/>
+<area shape="poly" title=" " alt="" coords="1190,196,1357,334,1460,422,1456,426,1354,338,1186,200"/>
+<area shape="poly" title=" " alt="" coords="1167,199,1146,233,1142,231,1163,196"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="stdout__sinks_8h__dep__incl.png" border="0" usemap="#astdout__sinks_8hdep" alt=""/></div>
+<map name="astdout__sinks_8hdep" id="astdout__sinks_8hdep">
+<area shape="rect" title=" " alt="" coords="3287,5,3393,32"/>
+<area shape="rect" href="mylog_8h.html" title=" " alt="" coords="3246,80,3314,107"/>
+<area shape="poly" title=" " alt="" coords="3322,46,3292,81,3288,78,3318,42"/>
+<area shape="rect" href="stdout__sinks-inl_8h.html" title=" " alt="" coords="3341,80,3464,107"/>
+<area shape="poly" title=" " alt="" coords="3363,42,3394,78,3390,81,3359,46"/>
+<area shape="rect" href="logger_8hpp.html" title=" " alt="" coords="3134,155,3215,181"/>
+<area shape="poly" title=" " alt="" coords="3251,118,3195,156,3192,152,3248,113"/>
+<area shape="rect" href="mylog_8cpp.html" title=" " alt="" coords="3239,155,3321,181"/>
+<area shape="poly" title=" " alt="" coords="3283,122,3283,154,3277,154,3277,122"/>
+<area shape="rect" href="_about_dialog_8cpp.html" title="实现 AboutDialog 类，提供关于对话框功能" alt="" coords="5,229,123,256"/>
+<area shape="poly" title=" " alt="" coords="3119,172,2586,173,1720,180,1252,188,808,198,424,213,135,232,124,233,123,228,134,227,423,208,808,193,1252,182,1720,175,2586,168,3119,167"/>
+<area shape="rect" href="_all_cloud_disk_8cpp.html" title="实现 AllCloudDisk 类，提供云盘音乐界面功能" alt="" coords="147,229,269,256"/>
+<area shape="poly" title=" " alt="" coords="3119,172,2609,174,1786,182,920,200,556,214,282,232,270,233,269,228,281,227,555,209,920,195,1786,177,2609,169,3119,167"/>
+<area shape="rect" href="_all_local_8cpp.html" title="实现 AllLocal 类，提供本地音乐界面功能" alt="" coords="294,229,386,256"/>
+<area shape="poly" title=" " alt="" coords="3118,172,2626,172,1837,178,1411,185,1008,196,659,211,398,232,387,233,386,228,397,227,659,206,1008,190,1411,179,1837,172,2626,167,3118,166"/>
+<area shape="rect" href="_all_love_8cpp.html" title="实现 AllLove 类，提供收藏音乐界面功能" alt="" coords="410,229,499,256"/>
+<area shape="poly" title=" " alt="" coords="3118,172,2644,172,1888,179,1481,186,1096,197,763,212,512,232,500,234,499,228,512,227,762,207,1096,191,1481,181,1888,174,2644,167,3118,167"/>
+<area shape="rect" href="_all_music_8cpp.html" title="实现 AllMusic 类，提供音乐管理界面功能" alt="" coords="524,229,620,256"/>
+<area shape="poly" title=" " alt="" coords="3118,172,2663,174,1942,181,1555,188,1188,199,871,213,632,232,621,234,620,228,632,227,870,208,1188,194,1555,183,1942,176,2663,168,3118,167"/>
+<area shape="rect" href="_all_paid_8cpp.html" title="实现 AllPaid 类，提供付费音乐界面功能" alt="" coords="644,229,732,256"/>
+<area shape="poly" title=" " alt="" coords="3118,172,2681,173,1993,181,1623,188,1274,199,971,213,744,232,732,234,732,228,744,227,971,208,1273,193,1623,183,1993,175,2681,168,3118,167"/>
+<area shape="rect" href="_all_recent_8cpp.html" title="实现 AllRecent 类，提供最近播放音乐界面功能" alt="" coords="756,229,860,256"/>
+<area shape="poly" title=" " alt="" coords="3119,172,2702,175,2051,185,1372,202,1087,216,872,232,861,233,860,228,872,227,1086,210,1372,197,2051,179,2702,170,3118,167"/>
+<area shape="rect" href="_all_song_list_8cpp.html" title="实现 AllSongList 类，提供歌单界面功能" alt="" coords="884,229,996,256"/>
+<area shape="poly" title=" " alt="" coords="3118,172,2723,177,2112,187,1477,205,1210,217,1010,232,997,233,996,228,1009,227,1210,212,1477,200,2112,182,2723,172,3118,167"/>
+<area shape="rect" href="_all_widget_8cpp.html" title="实现 AllWidget 类，提供全部音乐界面功能" alt="" coords="1021,229,1123,256"/>
+<area shape="poly" title=" " alt="" coords="3118,172,2744,177,2170,187,1574,205,1324,217,1136,232,1124,234,1123,228,1136,227,1324,212,1574,200,2170,182,2744,171,3118,167"/>
+<area shape="rect" href="_ani_check_box_8cpp.html" title="实现 AniCheckBox 类，提供带动画的复选框基类功能" alt="" coords="1148,229,1274,256"/>
+<area shape="poly" title=" " alt="" coords="3118,173,2238,191,1689,208,1459,219,1286,232,1274,233,1274,228,1285,227,1459,214,1689,203,2237,185,3118,167"/>
+<area shape="rect" href="_base_menu_8cpp.html" title="实现 BaseMenu 类，提供菜单基类功能" alt="" coords="1298,229,1406,256"/>
+<area shape="poly" title=" " alt="" coords="3118,173,2298,190,1790,208,1578,219,1418,232,1407,233,1406,228,1417,227,1578,214,1790,202,2298,185,3118,167"/>
+<area shape="rect" href="_channel_block_8h.html" title="定义 ChannelBlock 类，提供音乐频道块界面" alt="" coords="1430,229,1543,256"/>
+<area shape="poly" title=" " alt="" coords="3119,171,2873,171,2488,177,2028,195,1790,211,1556,232,1544,233,1543,228,1556,227,1790,206,2028,190,2488,172,2873,166,3119,166"/>
+<area shape="rect" href="_chat_view_8cpp.html" title="实现 ChatView 类，提供聊天视图功能" alt="" coords="1568,229,1670,256"/>
+<area shape="poly" title=" " alt="" coords="3119,171,2889,171,2536,177,2115,196,1897,211,1683,232,1671,234,1670,228,1682,227,1896,206,2114,190,2536,172,2889,166,3119,166"/>
+<area shape="rect" href="_collect_video_8cpp.html" title="实现 CollectVideo 类，管理收藏视频界面" alt="" coords="1694,229,1815,256"/>
+<area shape="poly" title=" " alt="" coords="3119,172,2909,175,2591,183,2214,201,2019,215,1828,232,1816,233,1815,228,1828,227,2019,209,2214,196,2591,178,2909,169,3119,167"/>
+<area shape="rect" href="_daily_recommend_8cpp.html" title="实现 DailyRecommend 类，提供每日推荐界面功能" alt="" coords="1840,229,1990,256"/>
+<area shape="poly" title=" " alt="" coords="3118,173,2658,189,2334,206,2003,232,1991,233,1990,228,2002,227,2334,201,2657,184,3118,168"/>
+<area shape="rect" href="_device_widget_8cpp.html" title="实现 DeviceWidget 类，管理设备界面" alt="" coords="2014,229,2143,256"/>
+<area shape="poly" title=" " alt="" coords="3119,173,2716,189,2438,207,2155,232,2144,233,2143,228,2154,227,2438,201,2716,184,3118,168"/>
+<area shape="rect" href="_downloaded_song_8cpp.html" title="实现 DownloadedSong 类，提供已下载歌曲界面功能" alt="" coords="2167,229,2316,256"/>
+<area shape="poly" title=" " alt="" coords="3119,175,2783,194,2557,211,2327,232,2316,233,2315,228,2326,227,2557,205,2783,189,3118,169"/>
+<area shape="rect" href="_downloaded_video_8cpp.html" title="实现 DownloadedVideo 类，提供已下载视频界面功能" alt="" coords="2339,229,2490,256"/>
+<area shape="poly" title=" " alt="" coords="3119,176,2853,198,2503,232,2491,233,2491,228,2502,227,2852,192,3118,171"/>
+<area shape="rect" href="_downloaded_widget_8cpp.html" title="实现 DownloadedWidget 类，提供已下载界面功能" alt="" coords="2515,229,2674,256"/>
+<area shape="poly" title=" " alt="" coords="3119,179,2686,232,2675,233,2674,228,2685,227,3118,173"/>
+<area shape="rect" href="_downloading_8cpp.html" title="实现 Downloading 类，提供下载管理界面功能" alt="" coords="2698,229,2819,256"/>
+<area shape="poly" title=" " alt="" coords="3119,182,2820,233,2819,228,3118,176"/>
+<area shape="rect" href="_downloading_widget_8cpp.html" title="实现 DownloadingWidget 类，提供下载中界面功能" alt="" coords="2843,229,3005,256"/>
+<area shape="poly" title=" " alt="" coords="3120,188,2969,231,2967,226,3118,183"/>
+<area shape="rect" href="_ela_exit_dialog_8cpp.html" title="实现 ElaExitDialog 类，提供退出对话框的功能" alt="" coords="3029,229,3155,256"/>
+<area shape="poly" title=" " alt="" coords="3151,194,3108,231,3104,227,3147,190"/>
+<area shape="rect" href="_ela_message_button_8cpp.html" title="实现 ElaMessageButton 类，提供消息触发按钮功能" alt="" coords="3179,229,3336,256"/>
+<area shape="poly" title=" " alt="" coords="3202,190,3245,227,3241,231,3199,194"/>
+<area shape="rect" href="_g_l_tab_widget_8cpp.html" title="实现 GLTabWidget 类，管理“猜你喜欢”推荐界面" alt="" coords="3359,229,3484,256"/>
+<area shape="poly" title=" " alt="" coords="3231,183,3379,226,3378,231,3230,188"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="3508,229,3617,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3365,204,3496,227,3508,229,3507,234,3496,232,3364,210,3230,185"/>
+<area shape="rect" href="_list_option_menu_8cpp.html" title="实现 ListOptionMenu 类，提供歌曲分类选项菜单功能" alt="" coords="3642,229,3779,256"/>
+<area shape="poly" title=" " alt="" coords="3230,179,3343,196,3431,206,3630,227,3642,228,3641,234,3629,232,3430,211,3342,201,3230,184"/>
+<area shape="rect" href="_listen_book_8cpp.html" title="实现 ListenBook 类，提供听书主界面功能" alt="" coords="3803,229,3914,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3389,198,3512,205,3636,211,3792,227,3803,228,3802,233,3792,232,3636,216,3512,210,3388,203,3230,184"/>
+<area shape="rect" href="_listen_my_download_8cpp.html" title="实现 ListenMyDownload 类，提供下载管理界面功能" alt="" coords="3939,229,4096,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3426,201,3579,208,3732,213,3927,227,3939,228,3938,233,3926,232,3732,218,3579,213,3426,206,3230,184"/>
+<area shape="rect" href="_listen_option_menu_8cpp.html" title="实现 ListenOptionMenu 类，提供听单选项菜单功能" alt="" coords="4120,229,4272,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3364,195,3477,204,3670,209,3863,211,3976,216,4108,227,4120,228,4119,233,4108,232,3975,222,3863,217,3670,214,3477,209,3364,200,3231,184"/>
+<area shape="rect" href="_listen_rank_widget_8cpp.html" title="实现 ListenRankWidget 类，提供排行榜界面功能" alt="" coords="4295,229,4449,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3391,197,3526,207,3646,210,3758,210,3989,210,4125,215,4284,227,4295,228,4295,233,4284,232,4125,220,3989,216,3758,216,3646,216,3526,212,3390,202,3231,184"/>
+<area shape="rect" href="_listen_recently_play_8cpp.html" title="实现 ListenRecentlyPlay 类，提供最近播放界面功能" alt="" coords="4473,229,4631,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3418,200,3576,210,3716,213,3846,212,4117,210,4275,214,4462,227,4473,228,4472,233,4461,232,4275,220,4117,215,3846,217,3716,218,3576,215,3417,205,3231,184"/>
+<area shape="rect" href="_listen_recommend_8cpp.html" title="实现 ListenRecommend 类，提供推荐界面功能" alt="" coords="4656,229,4811,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3445,202,3627,213,3787,216,3937,214,4247,209,4429,213,4643,227,4655,228,4655,233,4642,232,4429,218,4247,214,3937,219,3787,221,3626,218,3445,207,3230,184"/>
+<area shape="rect" href="_live_8cpp.html" title="实现 Live 类，提供直播主界面功能" alt="" coords="4836,229,4906,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3473,202,3678,210,3859,208,4028,200,4197,192,4378,191,4583,201,4823,227,4836,229,4835,234,4822,232,4582,206,4378,196,4198,198,4029,205,3859,213,3678,216,3472,208,3231,184"/>
+<area shape="rect" href="_live_big_left_widget_8cpp.html" title="实现 LiveBigLeftWidget 类，提供直播左侧大控件功能" alt="" coords="4930,229,5083,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3487,205,3704,218,3895,219,4074,215,4253,210,4444,207,4662,211,4918,227,4930,228,4930,233,4917,232,4662,216,4444,212,4253,215,4074,221,3895,225,3703,223,3486,211,3231,184"/>
+<area shape="rect" href="_live_common_part_widget_8cpp.html" title="实现 LiveCommonPartWidget 类，提供直播通用部分控件功能" alt="" coords="5107,229,5296,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3514,208,3753,222,3965,224,4162,220,4360,214,4572,210,4812,213,5095,227,5107,228,5106,233,5094,232,4812,218,4572,215,4360,219,4162,225,3965,230,3753,227,3513,214,3231,184"/>
+<area shape="rect" href="_live_music_part_widget_8cpp.html" title="实现 LiveMusicPartWidget 类，提供直播音乐部分控件功能" alt="" coords="5320,229,5490,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3439,196,3693,205,3978,210,4278,211,4858,213,5107,217,5308,227,5320,228,5320,233,5308,232,5107,223,4858,218,4278,217,3978,215,3693,211,3439,201,3231,184"/>
+<area shape="rect" href="_local_download_8cpp.html" title="实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="5515,229,5650,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3458,197,3736,206,4048,210,4376,210,5011,210,5283,215,5503,227,5515,228,5514,233,5502,232,5283,220,5011,215,4376,215,4048,215,3736,212,3458,202,3231,184"/>
+<area shape="rect" href="_local_song_8cpp.html" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="5674,229,5782,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3345,190,3474,197,3771,206,4105,208,4456,207,5136,206,5428,212,5663,227,5674,228,5674,233,5662,232,5428,217,5136,211,4456,212,4105,214,3771,212,3474,203,3344,195,3231,184"/>
+<area shape="rect" href="_m_v_block_widget_8cpp.html" title="实现 MVBlockWidget 类，提供音乐视频块控件" alt="" coords="5806,229,5946,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3350,190,3486,199,3799,209,4151,212,4521,211,5238,209,5546,214,5794,227,5806,228,5805,233,5793,232,5545,220,5238,215,4521,217,4151,217,3799,214,3486,204,3350,195,3231,184"/>
+<area shape="rect" href="_m_v_widget_8cpp.html" title="实现 MVWidget 类，提供音乐视频分类界面功能" alt="" coords="5970,229,6078,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3358,191,3503,199,3836,208,4210,210,4604,207,5367,204,5695,210,5836,217,5959,227,5970,228,5970,233,5958,232,5836,222,5695,216,5367,209,4604,213,4210,215,3836,214,3502,205,3357,196,3231,184"/>
+<area shape="rect" href="_main_window_8cpp.html" title="实现 MainWindow 类，提供主窗口功能和交互" alt="" coords="6101,229,6222,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3364,191,3516,200,3864,210,4256,212,4669,210,5469,206,5813,211,5961,218,6090,227,6101,228,6100,233,6089,232,5961,223,5813,217,5469,211,4669,215,4256,217,3864,216,3515,206,3364,197,3231,184"/>
+<area shape="rect" href="_music_cloud_disk_8cpp.html" title="实现 MusicCloudDisk 类，管理云端歌曲（已上传和正在上传）界面" alt="" coords="6246,229,6388,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3370,192,3529,202,3895,212,4307,215,4740,213,5581,208,5943,213,6234,227,6246,228,6246,233,6233,232,5942,218,5581,214,4741,218,4307,220,3895,218,3529,207,3370,197,3231,184"/>
+<area shape="rect" href="_music_item_widget_8cpp.html" title="实现 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="6412,229,6561,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3378,193,3545,203,3932,214,4366,217,4824,214,5711,208,6093,213,6257,218,6400,227,6412,228,6412,233,6400,232,6257,224,6093,218,5711,214,4824,219,4366,222,3931,219,3545,208,3377,198,3230,184"/>
+<area shape="rect" href="_music_repo_block_8cpp.html" title="实现 MusicRepoBlock 类，显示音乐仓库块状项" alt="" coords="6585,229,6730,256"/>
+<area shape="poly" title=" " alt="" coords="3231,179,3386,193,3562,204,3970,215,4428,217,4910,214,5847,207,6249,212,6423,218,6574,227,6584,228,6584,233,6573,232,6423,223,6249,217,5847,213,4910,219,4428,223,3970,221,3562,209,3385,199,3231,184"/>
+<area shape="rect" href="stdout__sinks_8cpp.html" title=" " alt="" coords="3345,155,3466,181"/>
+<area shape="poly" title=" " alt="" coords="3406,122,3408,154,3402,154,3401,123"/>
+</map>
+</div>
+</div>
+<p><a href="stdout__sinks_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1stdout__sink__base.html">stdout_sink_base&lt; ConsoleMutex &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1stdout__sink.html">stdout_sink&lt; ConsoleMutex &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1stderr__sink.html">stderr_sink&lt; ConsoleMutex &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html">spdlog</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1sinks.html">spdlog::sinks</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ae73e419ab8cfa08e83c1afaf8944f826" id="r_ae73e419ab8cfa08e83c1afaf8944f826"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1sinks.html#ae73e419ab8cfa08e83c1afaf8944f826">stdout_sink_mt</a> = <a class="el" href="classspdlog_1_1sinks_1_1stdout__sink.html">stdout_sink</a>&lt;<a class="el" href="structspdlog_1_1details_1_1console__mutex.html">details::console_mutex</a>&gt;</td></tr>
+<tr class="separator:ae73e419ab8cfa08e83c1afaf8944f826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea074861585e5dcba68c6b74cff80026" id="r_aea074861585e5dcba68c6b74cff80026"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1sinks.html#aea074861585e5dcba68c6b74cff80026">stdout_sink_st</a> = <a class="el" href="classspdlog_1_1sinks_1_1stdout__sink.html">stdout_sink</a>&lt;<a class="el" href="structspdlog_1_1details_1_1console__nullmutex.html">details::console_nullmutex</a>&gt;</td></tr>
+<tr class="separator:aea074861585e5dcba68c6b74cff80026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84f35881ffc36bb7e8c7a7e4cbdc0e52" id="r_a84f35881ffc36bb7e8c7a7e4cbdc0e52"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1sinks.html#a84f35881ffc36bb7e8c7a7e4cbdc0e52">stderr_sink_mt</a> = <a class="el" href="classspdlog_1_1sinks_1_1stderr__sink.html">stderr_sink</a>&lt;<a class="el" href="structspdlog_1_1details_1_1console__mutex.html">details::console_mutex</a>&gt;</td></tr>
+<tr class="separator:a84f35881ffc36bb7e8c7a7e4cbdc0e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82afd8f94010e26d0d796639d85dab9c" id="r_a82afd8f94010e26d0d796639d85dab9c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1sinks.html#a82afd8f94010e26d0d796639d85dab9c">stderr_sink_st</a> = <a class="el" href="classspdlog_1_1sinks_1_1stderr__sink.html">stderr_sink</a>&lt;<a class="el" href="structspdlog_1_1details_1_1console__nullmutex.html">details::console_nullmutex</a>&gt;</td></tr>
+<tr class="separator:a82afd8f94010e26d0d796639d85dab9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a2b5a75c8b7a039ebba639429d8cb5e5e" id="r_a2b5a75c8b7a039ebba639429d8cb5e5e"><td class="memTemplParams" colspan="2">template&lt;typename Factory = spdlog::synchronous_factory&gt; </td></tr>
+<tr class="memitem:a2b5a75c8b7a039ebba639429d8cb5e5e"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a2b5a75c8b7a039ebba639429d8cb5e5e">stdout_logger_mt</a> (const std::string &amp;logger_name)</td></tr>
+<tr class="separator:a2b5a75c8b7a039ebba639429d8cb5e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624f5f9e7549bf50162faa7722aab5f8" id="r_a624f5f9e7549bf50162faa7722aab5f8"><td class="memTemplParams" colspan="2">template&lt;typename Factory = spdlog::synchronous_factory&gt; </td></tr>
+<tr class="memitem:a624f5f9e7549bf50162faa7722aab5f8"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a624f5f9e7549bf50162faa7722aab5f8">stdout_logger_st</a> (const std::string &amp;logger_name)</td></tr>
+<tr class="separator:a624f5f9e7549bf50162faa7722aab5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27e7790117957aabd04100df7535f3e" id="r_ab27e7790117957aabd04100df7535f3e"><td class="memTemplParams" colspan="2">template&lt;typename Factory = spdlog::synchronous_factory&gt; </td></tr>
+<tr class="memitem:ab27e7790117957aabd04100df7535f3e"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#ab27e7790117957aabd04100df7535f3e">stderr_logger_mt</a> (const std::string &amp;logger_name)</td></tr>
+<tr class="separator:ab27e7790117957aabd04100df7535f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49daf43b2aa09c2352979b102cc8cb77" id="r_a49daf43b2aa09c2352979b102cc8cb77"><td class="memTemplParams" colspan="2">template&lt;typename Factory = spdlog::synchronous_factory&gt; </td></tr>
+<tr class="memitem:a49daf43b2aa09c2352979b102cc8cb77"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a49daf43b2aa09c2352979b102cc8cb77">stderr_logger_st</a> (const std::string &amp;logger_name)</td></tr>
+<tr class="separator:a49daf43b2aa09c2352979b102cc8cb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="dir_fa8338fc4b4a83904b44433ebb24174a.html">sinks</a></li><li class="navelem"><a class="el" href="stdout__sinks_8h.html">stdout_sinks.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

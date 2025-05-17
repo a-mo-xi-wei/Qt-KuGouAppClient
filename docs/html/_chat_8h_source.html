@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Chat.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_chat_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Chat.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_chat_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef CHAT_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define CHAT_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QNetworkAccessManager&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//API手册地址 https://docs.siliconflow.cn/cn/api-reference/chat-completions/chat-completions</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">curl --request POST \</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  --url https://api.siliconflow.cn/v1/chat/completions \</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  --header &#39;Authorization: Bearer &lt;token&gt;&#39; \</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">  --header &#39;Content-Type: application/json&#39; \</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">  --data &#39;{</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">  &quot;model&quot;: &quot;Qwen/QwQ-32B&quot;,</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">  &quot;messages&quot;: [</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">    {</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">      &quot;role&quot;: &quot;user&quot;,</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">      &quot;content&quot;: &quot;What opportunities and challenges will the Chinese large model industry face in 2025?&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">    }</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">  ],</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">  &quot;stream&quot;: false,</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">  &quot;max_tokens&quot;: 512,</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">  &quot;stop&quot;: null,</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">  &quot;temperature&quot;: 0.7,</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">  &quot;top_p&quot;: 0.7,</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">  &quot;top_k&quot;: 50,</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">  &quot;frequency_penalty&quot;: 0.5,</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">  &quot;n&quot;: 1,</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">  &quot;response_format&quot;: {</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    &quot;type&quot;: &quot;text&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">  },</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">  &quot;tools&quot;: [</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">    {</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">      &quot;type&quot;: &quot;function&quot;,</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">      &quot;function&quot;: {</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">        &quot;description&quot;: &quot;&lt;string&gt;&quot;,</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">        &quot;name&quot;: &quot;&lt;string&gt;&quot;,</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">        &quot;parameters&quot;: {},</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">        &quot;strict&quot;: false</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">      }</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">    }</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">  ]</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">}&#39;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_chat.html">   61</a></span><span class="keyword">class </span><a class="code hl_function" href="class_chat.html#a5ab8a085d97c09addcbf5f8909db84df">Chat</a> final : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Q_OBJECT</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_function" href="class_chat.html#a5ab8a085d97c09addcbf5f8909db84df">Chat</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_chat.html#a6422ae636e1482b803cd7056d30b2803">send</a>(<span class="keyword">const</span> QString &amp;word);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_chat.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_chat.html#a304012c13cd76db2e9c2e5e8f26e3514">processStream</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_chat.html#ac8f60511b54d241ee625edf4975f0ec6">finalizeStream</a>();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_chat.html#ab5d3add00780b28577750014a6607faf">   94</a></span>    QNetworkRequest      <a class="code hl_variable" href="class_chat.html#ab5d3add00780b28577750014a6607faf">_request</a>;         </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_chat.html#a02963baed97781da6084ae0150a7fed3">   95</a></span>    QNetworkAccessManager *<a class="code hl_variable" href="class_chat.html#a02963baed97781da6084ae0150a7fed3">_manager</a>{};     </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_chat.html#aafb73fa3cf852d8d913aa79b8fb575dd">   96</a></span>    QNetworkReply        *<a class="code hl_variable" href="class_chat.html#aafb73fa3cf852d8d913aa79b8fb575dd">_reply</a>{};        </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_chat.html#a95ce7d51da1c95a5be468bb1f28eb623">   97</a></span>    QString              <a class="code hl_variable" href="class_chat.html#a95ce7d51da1c95a5be468bb1f28eb623">_curl_https</a>    = <span class="stringliteral">&quot;https://api.siliconflow.cn/v1/chat/completions&quot;</span>;    </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_chat.html#a5be7086eec9b43654f14c001dbf5d530">   98</a></span>    QString              <a class="code hl_variable" href="class_chat.html#a5be7086eec9b43654f14c001dbf5d530">_model</a>         = <span class="stringliteral">&quot;deepseek-ai/DeepSeek-V3&quot;</span>;                           </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_chat.html#ac378701bb4e7d4c918aeceedc32dec26">   99</a></span>    QString              <a class="code hl_variable" href="class_chat.html#ac378701bb4e7d4c918aeceedc32dec26">_api_key</a>       = <span class="stringliteral">&quot;Your API Key&quot;</span>; </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_chat.html#abda60a5d18e2600dc1c7d1a08c2404de">  100</a></span>    QString              <a class="code hl_variable" href="class_chat.html#abda60a5d18e2600dc1c7d1a08c2404de">_read_text</a>;     </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_chat.html#a245f4d189e76161c92da521c29a09642">  101</a></span>    QByteArray           <a class="code hl_variable" href="class_chat.html#a245f4d189e76161c92da521c29a09642">m_buffer</a>;       </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>signals:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_chat.html#ab8dc8c354792856d8dcf5ce6f91c3afb">  108</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_chat.html#ab8dc8c354792856d8dcf5ce6f91c3afb">answered</a>(<span class="keyword">const</span> QString &amp;word);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_chat.html#a2a16072a024e4c655024ad9a2a07030c">  113</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_chat.html#a2a16072a024e4c655024ad9a2a07030c">streamFinished</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_chat.html#a3d66d3942655f6a4ae32d89e303673c4">  119</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_chat.html#a3d66d3942655f6a4ae32d89e303673c4">errorOccurred</a>(<span class="keyword">const</span> QString &amp;error);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif </span><span class="comment">// CHAT_H</span></div>
+<div class="ttc" id="aclass_chat_html_a02963baed97781da6084ae0150a7fed3"><div class="ttname"><a href="class_chat.html#a02963baed97781da6084ae0150a7fed3">Chat::_manager</a></div><div class="ttdeci">QNetworkAccessManager * _manager</div><div class="ttdoc">网络管理器</div><div class="ttdef"><b>定义</b> Chat.h:95</div></div>
+<div class="ttc" id="aclass_chat_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="class_chat.html#a02fd73d861ef2e4aabb38c0c9ff82947">Chat::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">初始化网络请求</div><div class="ttdef"><b>定义</b> Chat.cpp:27</div></div>
+<div class="ttc" id="aclass_chat_html_a245f4d189e76161c92da521c29a09642"><div class="ttname"><a href="class_chat.html#a245f4d189e76161c92da521c29a09642">Chat::m_buffer</a></div><div class="ttdeci">QByteArray m_buffer</div><div class="ttdoc">数据缓冲区</div><div class="ttdef"><b>定义</b> Chat.h:101</div></div>
+<div class="ttc" id="aclass_chat_html_a2a16072a024e4c655024ad9a2a07030c"><div class="ttname"><a href="class_chat.html#a2a16072a024e4c655024ad9a2a07030c">Chat::streamFinished</a></div><div class="ttdeci">void streamFinished()</div><div class="ttdoc">流式响应结束信号</div></div>
+<div class="ttc" id="aclass_chat_html_a304012c13cd76db2e9c2e5e8f26e3514"><div class="ttname"><a href="class_chat.html#a304012c13cd76db2e9c2e5e8f26e3514">Chat::processStream</a></div><div class="ttdeci">void processStream()</div><div class="ttdoc">处理流式响应数据</div><div class="ttdef"><b>定义</b> Chat.cpp:89</div></div>
+<div class="ttc" id="aclass_chat_html_a3d66d3942655f6a4ae32d89e303673c4"><div class="ttname"><a href="class_chat.html#a3d66d3942655f6a4ae32d89e303673c4">Chat::errorOccurred</a></div><div class="ttdeci">void errorOccurred(const QString &amp;error)</div><div class="ttdoc">错误发生信号</div></div>
+<div class="ttc" id="aclass_chat_html_a5ab8a085d97c09addcbf5f8909db84df"><div class="ttname"><a href="class_chat.html#a5ab8a085d97c09addcbf5f8909db84df">Chat::Chat</a></div><div class="ttdeci">Chat()</div><div class="ttdoc">构造函数，初始化聊天对象</div><div class="ttdef"><b>定义</b> Chat.cpp:19</div></div>
+<div class="ttc" id="aclass_chat_html_a5be7086eec9b43654f14c001dbf5d530"><div class="ttname"><a href="class_chat.html#a5be7086eec9b43654f14c001dbf5d530">Chat::_model</a></div><div class="ttdeci">QString _model</div><div class="ttdoc">模型名称</div><div class="ttdef"><b>定义</b> Chat.h:98</div></div>
+<div class="ttc" id="aclass_chat_html_a6422ae636e1482b803cd7056d30b2803"><div class="ttname"><a href="class_chat.html#a6422ae636e1482b803cd7056d30b2803">Chat::send</a></div><div class="ttdeci">void send(const QString &amp;word)</div><div class="ttdoc">发送聊天请求</div><div class="ttdef"><b>定义</b> Chat.cpp:41</div></div>
+<div class="ttc" id="aclass_chat_html_a95ce7d51da1c95a5be468bb1f28eb623"><div class="ttname"><a href="class_chat.html#a95ce7d51da1c95a5be468bb1f28eb623">Chat::_curl_https</a></div><div class="ttdeci">QString _curl_https</div><div class="ttdoc">API 地址</div><div class="ttdef"><b>定义</b> Chat.h:97</div></div>
+<div class="ttc" id="aclass_chat_html_aafb73fa3cf852d8d913aa79b8fb575dd"><div class="ttname"><a href="class_chat.html#aafb73fa3cf852d8d913aa79b8fb575dd">Chat::_reply</a></div><div class="ttdeci">QNetworkReply * _reply</div><div class="ttdoc">网络响应</div><div class="ttdef"><b>定义</b> Chat.h:96</div></div>
+<div class="ttc" id="aclass_chat_html_ab5d3add00780b28577750014a6607faf"><div class="ttname"><a href="class_chat.html#ab5d3add00780b28577750014a6607faf">Chat::_request</a></div><div class="ttdeci">QNetworkRequest _request</div><div class="ttdoc">网络请求对象</div><div class="ttdef"><b>定义</b> Chat.h:94</div></div>
+<div class="ttc" id="aclass_chat_html_ab8dc8c354792856d8dcf5ce6f91c3afb"><div class="ttname"><a href="class_chat.html#ab8dc8c354792856d8dcf5ce6f91c3afb">Chat::answered</a></div><div class="ttdeci">void answered(const QString &amp;word)</div><div class="ttdoc">接收到回答信号</div></div>
+<div class="ttc" id="aclass_chat_html_abda60a5d18e2600dc1c7d1a08c2404de"><div class="ttname"><a href="class_chat.html#abda60a5d18e2600dc1c7d1a08c2404de">Chat::_read_text</a></div><div class="ttdeci">QString _read_text</div><div class="ttdoc">读取文本</div><div class="ttdef"><b>定义</b> Chat.h:100</div></div>
+<div class="ttc" id="aclass_chat_html_ac378701bb4e7d4c918aeceedc32dec26"><div class="ttname"><a href="class_chat.html#ac378701bb4e7d4c918aeceedc32dec26">Chat::_api_key</a></div><div class="ttdeci">QString _api_key</div><div class="ttdoc">API 密钥,可参考 https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D</div><div class="ttdef"><b>定义</b> Chat.h:99</div></div>
+<div class="ttc" id="aclass_chat_html_ac8f60511b54d241ee625edf4975f0ec6"><div class="ttname"><a href="class_chat.html#ac8f60511b54d241ee625edf4975f0ec6">Chat::finalizeStream</a></div><div class="ttdeci">void finalizeStream()</div><div class="ttdoc">结束流式响应</div><div class="ttdef"><b>定义</b> Chat.cpp:130</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_c466f3ce3dd5ad83607d88098a709fef.html">AiChat</a></li><li class="navelem"><a class="el" href="_chat_8h.html">Chat.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

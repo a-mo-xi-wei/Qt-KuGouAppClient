@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: formatter&lt; tuple_join_view&lt; Char, Tuple &gt;, Char, enable_if_t&lt; is_tuple_like&lt; Tuple &gt;::value &gt; &gt; 模板结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_33b8b18b85c1c069f55deb3b6b887b751.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">formatter&lt; tuple_join_view&lt; Char, Tuple &gt;, Char, enable_if_t&lt; is_tuple_like&lt; Tuple &gt;::value &gt; &gt; 模板结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="bundled_2ranges_8h_source.html">ranges.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8ab971982084b0d00677071064adc679" id="r_a8ab971982084b0d00677071064adc679"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ab971982084b0d00677071064adc679">parse</a> (<a class="el" href="classparse__context.html">parse_context</a>&lt; Char &gt; &amp;ctx) -&gt; const Char *</td></tr>
+<tr class="separator:a8ab971982084b0d00677071064adc679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd874c3bd6d3db0f72347edf072759e6" id="r_acd874c3bd6d3db0f72347edf072759e6"><td class="memTemplParams" colspan="2">template&lt;typename FormatContext&gt; </td></tr>
+<tr class="memitem:acd874c3bd6d3db0f72347edf072759e6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acd874c3bd6d3db0f72347edf072759e6">format</a> (const <a class="el" href="structtuple__join__view.html">tuple_join_view</a>&lt; Char, Tuple &gt; &amp;value, FormatContext &amp;ctx) const -&gt; typename FormatContext::iterator</td></tr>
+<tr class="separator:acd874c3bd6d3db0f72347edf072759e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c2fae306c5df1771102de3eb74aff9" id="r_a81c2fae306c5df1771102de3eb74aff9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structformatter.html#a81c2fae306c5df1771102de3eb74aff9">formatter</a> ()=delete</td></tr>
+<tr class="separator:a81c2fae306c5df1771102de3eb74aff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:afd05ed353e8565b76423e53804fa83a5" id="r_afd05ed353e8565b76423e53804fa83a5"><td class="memItemLeft" align="right" valign="top">typedef decltype(<a class="el" href="namespacedetail_1_1tuple.html#a0cff598041630e2b40451de3661b91ae">detail::tuple::get_formatters</a>&lt; Tuple, Char &gt;(<a class="el" href="namespacedetail.html#a133175f201ae9d9553055cf5b89579de">detail::tuple_index_sequence</a>&lt; Tuple &gt;()))&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd05ed353e8565b76423e53804fa83a5">formatters_</a></td></tr>
+<tr class="separator:afd05ed353e8565b76423e53804fa83a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a31df1363aa15d0ed602cd3e7e3ab90df" id="r_a31df1363aa15d0ed602cd3e7e3ab90df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31df1363aa15d0ed602cd3e7e3ab90df">do_parse</a> (<a class="el" href="classparse__context.html">parse_context</a>&lt; Char &gt; &amp;ctx, std::integral_constant&lt; size_t, 0 &gt;) -&gt; const Char *</td></tr>
+<tr class="separator:a31df1363aa15d0ed602cd3e7e3ab90df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09d2e818cbc784542cb4d2982bbae118" id="r_a09d2e818cbc784542cb4d2982bbae118"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a09d2e818cbc784542cb4d2982bbae118"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a09d2e818cbc784542cb4d2982bbae118">do_parse</a> (<a class="el" href="classparse__context.html">parse_context</a>&lt; Char &gt; &amp;ctx, std::integral_constant&lt; size_t, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca2c63acbe79d9f41ba6bb7766e9c37702">N</a> &gt;) -&gt; const Char *</td></tr>
+<tr class="separator:a09d2e818cbc784542cb4d2982bbae118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afca379cb81daaee1437fb0d5801c3542" id="r_afca379cb81daaee1437fb0d5801c3542"><td class="memTemplParams" colspan="2">template&lt;typename FormatContext&gt; </td></tr>
+<tr class="memitem:afca379cb81daaee1437fb0d5801c3542"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afca379cb81daaee1437fb0d5801c3542">do_format</a> (const <a class="el" href="structtuple__join__view.html">tuple_join_view</a>&lt; Char, Tuple &gt; &amp;, FormatContext &amp;ctx, std::integral_constant&lt; size_t, 0 &gt;) const -&gt; typename FormatContext::iterator</td></tr>
+<tr class="separator:afca379cb81daaee1437fb0d5801c3542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b1b5a65ce3b69df2fee186f0806c69" id="r_aa1b1b5a65ce3b69df2fee186f0806c69"><td class="memTemplParams" colspan="2">template&lt;typename FormatContext, size_t N&gt; </td></tr>
+<tr class="memitem:aa1b1b5a65ce3b69df2fee186f0806c69"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa1b1b5a65ce3b69df2fee186f0806c69">do_format</a> (const <a class="el" href="structtuple__join__view.html">tuple_join_view</a>&lt; Char, Tuple &gt; &amp;value, FormatContext &amp;ctx, std::integral_constant&lt; size_t, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca2c63acbe79d9f41ba6bb7766e9c37702">N</a> &gt;) const -&gt; typename FormatContext::iterator</td></tr>
+<tr class="separator:aa1b1b5a65ce3b69df2fee186f0806c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员类型定义说明</h2>
+<a id="afd05ed353e8565b76423e53804fa83a5" name="afd05ed353e8565b76423e53804fa83a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd05ed353e8565b76423e53804fa83a5">&#9670;&#160;</a></span>formatters_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char, typename Tuple&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(<a class="el" href="namespacedetail_1_1tuple.html#a0cff598041630e2b40451de3661b91ae">detail::tuple::get_formatters</a>&lt;Tuple, Char&gt;( <a class="el" href="namespacedetail.html#a133175f201ae9d9553055cf5b89579de">detail::tuple_index_sequence</a>&lt;Tuple&gt;())) <a class="el" href="#afd05ed353e8565b76423e53804fa83a5">formatters_</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a81c2fae306c5df1771102de3eb74aff9" name="a81c2fae306c5df1771102de3eb74aff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c2fae306c5df1771102de3eb74aff9">&#9670;&#160;</a></span>formatter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structformatter.html">formatter</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="afca379cb81daaee1437fb0d5801c3542" name="afca379cb81daaee1437fb0d5801c3542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afca379cb81daaee1437fb0d5801c3542">&#9670;&#160;</a></span>do_format() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char, typename Tuple&gt; </div>
+<div class="memtemplate">
+template&lt;typename FormatContext&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto do_format </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtuple__join__view.html">tuple_join_view</a>&lt; Char, Tuple &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FormatContext &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::integral_constant&lt; size_t, 0 &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) const -&gt; typename FormatContext::iterator </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_afca379cb81daaee1437fb0d5801c3542_icgraph.png" border="0" usemap="#astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_afca379cb81daaee1437fb0d5801c3542_icgraph" alt=""/></div>
+<map name="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_afca379cb81daaee1437fb0d5801c3542_icgraph" id="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_afca379cb81daaee1437fb0d5801c3542_icgraph">
+<area shape="rect" title=" " alt="" coords="133,31,212,57"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#aa1b1b5a65ce3b69df2fee186f0806c69" title=" " alt="" coords="5,5,85,32"/>
+<area shape="poly" title=" " alt="" coords="117,36,85,29,86,24,118,30"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#acd874c3bd6d3db0f72347edf072759e6" title=" " alt="" coords="16,56,74,83"/>
+<area shape="poly" title=" " alt="" coords="118,58,75,66,74,61,117,52"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa1b1b5a65ce3b69df2fee186f0806c69" name="aa1b1b5a65ce3b69df2fee186f0806c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b1b5a65ce3b69df2fee186f0806c69">&#9670;&#160;</a></span>do_format() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char, typename Tuple&gt; </div>
+<div class="memtemplate">
+template&lt;typename FormatContext, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto do_format </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtuple__join__view.html">tuple_join_view</a>&lt; Char, Tuple &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FormatContext &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::integral_constant&lt; size_t, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca2c63acbe79d9f41ba6bb7766e9c37702">N</a> &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) const -&gt; typename FormatContext::iterator </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_aa1b1b5a65ce3b69df2fee186f0806c69_cgraph.png" border="0" usemap="#astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_aa1b1b5a65ce3b69df2fee186f0806c69_cgraph" alt=""/></div>
+<map name="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_aa1b1b5a65ce3b69df2fee186f0806c69_cgraph" id="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_aa1b1b5a65ce3b69df2fee186f0806c69_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,85,83"/>
+<area shape="rect" href="namespacedetail.html#a424ac455d7b099551299db1be2e6e355" title=" " alt="" coords="133,5,221,32"/>
+<area shape="poly" title=" " alt="" coords="81,53,125,36,127,41,83,58"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#afca379cb81daaee1437fb0d5801c3542" title=" " alt="" coords="137,56,216,83"/>
+<area shape="poly" title=" " alt="" coords="85,67,122,67,122,72,85,72"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="148,107,206,133"/>
+<area shape="poly" title=" " alt="" coords="83,81,134,101,132,106,81,86"/>
+<area shape="rect" href="namespacedetail.html#a2fad900275a3d2338d5393a4a5c38d92" title=" " alt="" coords="269,5,407,32"/>
+<area shape="poly" title=" " alt="" coords="222,16,253,16,253,21,222,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a31df1363aa15d0ed602cd3e7e3ab90df" name="a31df1363aa15d0ed602cd3e7e3ab90df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31df1363aa15d0ed602cd3e7e3ab90df">&#9670;&#160;</a></span>do_parse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char, typename Tuple&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto do_parse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classparse__context.html">parse_context</a>&lt; Char &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::integral_constant&lt; size_t, 0 &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) -&gt; const Char* </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a31df1363aa15d0ed602cd3e7e3ab90df_icgraph.png" border="0" usemap="#astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a31df1363aa15d0ed602cd3e7e3ab90df_icgraph" alt=""/></div>
+<map name="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a31df1363aa15d0ed602cd3e7e3ab90df_icgraph" id="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a31df1363aa15d0ed602cd3e7e3ab90df_icgraph">
+<area shape="rect" title=" " alt="" coords="229,5,303,32"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#a09d2e818cbc784542cb4d2982bbae118" title=" " alt="" coords="5,5,80,32"/>
+<area shape="poly" title=" " alt="" coords="213,21,80,21,80,16,213,16"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#a8ab971982084b0d00677071064adc679" title=" " alt="" coords="128,31,181,57"/>
+<area shape="poly" title=" " alt="" coords="214,33,182,41,181,35,213,28"/>
+<area shape="poly" title=" " alt="" coords="112,37,80,30,81,25,113,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a09d2e818cbc784542cb4d2982bbae118" name="a09d2e818cbc784542cb4d2982bbae118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09d2e818cbc784542cb4d2982bbae118">&#9670;&#160;</a></span>do_parse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char, typename Tuple&gt; </div>
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto do_parse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classparse__context.html">parse_context</a>&lt; Char &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::integral_constant&lt; size_t, <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca2c63acbe79d9f41ba6bb7766e9c37702">N</a> &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) -&gt; const Char* </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a09d2e818cbc784542cb4d2982bbae118_cgraph.png" border="0" usemap="#astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a09d2e818cbc784542cb4d2982bbae118_cgraph" alt=""/></div>
+<map name="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a09d2e818cbc784542cb4d2982bbae118_cgraph" id="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a09d2e818cbc784542cb4d2982bbae118_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,80,57"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#a31df1363aa15d0ed602cd3e7e3ab90df" title=" " alt="" coords="263,5,337,32"/>
+<area shape="poly" title=" " alt="" coords="79,28,127,16,190,11,247,12,247,17,190,17,128,21,81,33"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#a8ab971982084b0d00677071064adc679" title=" " alt="" coords="145,31,198,57"/>
+<area shape="poly" title=" " alt="" coords="80,41,129,41,129,47,80,47"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="128,81,215,108"/>
+<area shape="poly" title=" " alt="" coords="80,56,122,73,120,78,78,60"/>
+<area shape="poly" title=" " alt="" coords="198,36,247,26,248,32,199,41"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acd874c3bd6d3db0f72347edf072759e6" name="acd874c3bd6d3db0f72347edf072759e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd874c3bd6d3db0f72347edf072759e6">&#9670;&#160;</a></span>format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char, typename Tuple&gt; </div>
+<div class="memtemplate">
+template&lt;typename FormatContext&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto format </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtuple__join__view.html">tuple_join_view</a>&lt; Char, Tuple &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FormatContext &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>&#160;) const -&gt; typename FormatContext::iterator </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_acd874c3bd6d3db0f72347edf072759e6_cgraph.png" border="0" usemap="#astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_acd874c3bd6d3db0f72347edf072759e6_cgraph" alt=""/></div>
+<map name="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_acd874c3bd6d3db0f72347edf072759e6_cgraph" id="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_acd874c3bd6d3db0f72347edf072759e6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,64,32"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#afca379cb81daaee1437fb0d5801c3542" title=" " alt="" coords="112,5,191,32"/>
+<area shape="poly" title=" " alt="" coords="64,16,96,16,96,21,64,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8ab971982084b0d00677071064adc679" name="a8ab971982084b0d00677071064adc679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab971982084b0d00677071064adc679">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Char, typename Tuple&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto parse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classparse__context.html">parse_context</a>&lt; Char &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
+          <td> -&gt; const Char* </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a8ab971982084b0d00677071064adc679_cgraph.png" border="0" usemap="#astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a8ab971982084b0d00677071064adc679_cgraph" alt=""/></div>
+<map name="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a8ab971982084b0d00677071064adc679_cgraph" id="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a8ab971982084b0d00677071064adc679_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,59,32"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#a31df1363aa15d0ed602cd3e7e3ab90df" title=" " alt="" coords="107,5,181,32"/>
+<area shape="poly" title=" " alt="" coords="59,16,91,16,91,21,59,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a8ab971982084b0d00677071064adc679_icgraph.png" border="0" usemap="#astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a8ab971982084b0d00677071064adc679_icgraph" alt=""/></div>
+<map name="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a8ab971982084b0d00677071064adc679_icgraph" id="astructformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d_a8ab971982084b0d00677071064adc679_icgraph">
+<area shape="rect" title=" " alt="" coords="128,5,181,32"/>
+<area shape="rect" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html#a09d2e818cbc784542cb4d2982bbae118" title=" " alt="" coords="5,5,80,32"/>
+<area shape="poly" title=" " alt="" coords="112,21,80,21,80,16,112,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="bundled_2ranges_8h_source.html">bundled/ranges.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structformatter_3_01tuple__join__view_3_01_char_00_01_tuple_01_4_00_01_char_00_01enable__if__t_3702116b4993467dc43ca9e2e0cc9ab0d.html">formatter&lt; tuple_join_view&lt; Char, Tuple &gt;, Char, enable_if_t&lt; is_tuple_like&lt; Tuple &gt;::value &gt; &gt;</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

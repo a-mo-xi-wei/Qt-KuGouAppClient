@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: kcpobj.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('kcpobj_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">kcpobj.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="kcpobj_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @Name       kcp_tool</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @Author    Robert Zhang</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @E-mail    zhangzhiguo1207@163.com</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @Date       2019-08-02</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef KCP_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define KCP_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//https://github.com/skywind3000/kcp</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//https://wetest.qq.com/lab/view/391.html</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//https://github.com/skywind3000/kcp/wiki</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//#include &quot;clock.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="ikcp_8h.html">ikcp.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_h_y_k_t.html">HYKT</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html">   25</a></span><span class="keyword">class </span><a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#afaf269c96e588ac9030a121dc9adcf43">KcpObj</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Q_OBJECT</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#afaf269c96e588ac9030a121dc9adcf43">KcpObj</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#aa5586d9380950beac4116be2baf094d1">~KcpObj</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911">   33</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911">Mode</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a79935518a3889663d8688b6b01fff051">   34</a></span>        <a class="code hl_enumvalue" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a79935518a3889663d8688b6b01fff051">Default</a>,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a5ecbcf0afce98b042f35ec71ba03fa4b">   35</a></span>        <a class="code hl_enumvalue" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a5ecbcf0afce98b042f35ec71ba03fa4b">Normal</a>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a44e0add47cd0ec96505d444d425b70af">   36</a></span>        <a class="code hl_enumvalue" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a44e0add47cd0ec96505d444d425b70af">Fast</a></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    };</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">//static KcpObj* GetInstance();</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#a5ee9a887f8dc5b4441a637d2614f795a">SetKcpConv</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> conv);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#aeb4cd27bb2074b171e3e7ead9c7ccdda">SetMode</a>(<a class="code hl_enumeration" href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911">Mode</a> mode);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#aeb4cd27bb2074b171e3e7ead9c7ccdda">SetMode</a>(<span class="keywordtype">int</span> mode);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc">Open</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#a7f7a3199c392465d0767c6506c1af5b4">Close</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#a1822528b9d87e3897acff000f0ef4629">IsOpen</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#a4ac504bffb3f38656d14792df1744fee">KcpInput</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len); <span class="comment">//kcp input</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#ad830c125a4d4d679ec379ad2a75e2924">KcpSend</a>(<span class="keyword">const</span>  <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len); <span class="comment">//kcp send</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>signals:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#ae6945bcd24f14c7c0e9667d8a7d5a396">   53</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_h_y_k_t_1_1_kcp_obj.html#ae6945bcd24f14c7c0e9667d8a7d5a396">onKcpRecv</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len);  <span class="comment">//kcp recv</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#a4afabda74d00710ab2dbd9e141d36a7a">   54</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_h_y_k_t_1_1_kcp_obj.html#a4afabda74d00710ab2dbd9e141d36a7a">onKcpOutput</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len); <span class="comment">//kcp output</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#a7ad86857b5e6c434aec73ac5aceb6dca">DoOutput</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len, <a class="code hl_typedef" href="ikcp_8h.html#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, <span class="keywordtype">void</span> *user);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#a0b1ccfbdeaedd7027c77e8ffaed16340">WriteKcpLog</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *log, <span class="keyword">struct</span> <a class="code hl_struct" href="struct_i_k_c_p_c_b.html">IKCPCB</a> *kcp, <span class="keywordtype">void</span> *user);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#ab8d1652707d834852a6a13a4589a4404">DoOutput2</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len, <a class="code hl_typedef" href="ikcp_8h.html#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, <span class="keywordtype">void</span> *user);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_h_y_k_t_1_1_kcp_obj.html#a403a9c094edc9382ecb25fe38ce050ca">CallUpdateClock</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#ac48966f6a195174614de729876c6d1fa">   65</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_h_y_k_t_1_1_kcp_obj.html#ac48966f6a195174614de729876c6d1fa">is_open_</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#aceeda8849abfc2c70b2826cc23f5441e">   66</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_h_y_k_t_1_1_kcp_obj.html#aceeda8849abfc2c70b2826cc23f5441e">conv_</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#accb821e0d9a39a87dc9757268afc1258">   67</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_h_y_k_t_1_1_kcp_obj.html#accb821e0d9a39a87dc9757268afc1258">mode_</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#a488d6c69b0af3575492718e7b4f972e5">   68</a></span>    <a class="code hl_typedef" href="ikcp_8h.html#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *<a class="code hl_variable" href="class_h_y_k_t_1_1_kcp_obj.html#a488d6c69b0af3575492718e7b4f972e5">kcp_p</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">//static KcpObj *instance_;</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#a8dbb28c42b9539f250972a1573962f92">   70</a></span>    QTimer *<a class="code hl_variable" href="class_h_y_k_t_1_1_kcp_obj.html#a8dbb28c42b9539f250972a1573962f92">timer_p</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_h_y_k_t_1_1_kcp_obj.html#a85fee44abcf210c6db9f7cb05a1cc923">   72</a></span>    QByteArray <a class="code hl_variable" href="class_h_y_k_t_1_1_kcp_obj.html#a85fee44abcf210c6db9f7cb05a1cc923">buffer_</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>} <span class="comment">//namespace HYKT</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// KCP_H</span></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a0b1ccfbdeaedd7027c77e8ffaed16340"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a0b1ccfbdeaedd7027c77e8ffaed16340">HYKT::KcpObj::WriteKcpLog</a></div><div class="ttdeci">static void WriteKcpLog(const char *log, struct IKCPCB *kcp, void *user)</div><div class="ttdef"><b>定义</b> kcpobj.cpp:53</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a1822528b9d87e3897acff000f0ef4629"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a1822528b9d87e3897acff000f0ef4629">HYKT::KcpObj::IsOpen</a></div><div class="ttdeci">bool IsOpen()</div><div class="ttdef"><b>定义</b> kcpobj.cpp:108</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a403a9c094edc9382ecb25fe38ce050ca"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a403a9c094edc9382ecb25fe38ce050ca">HYKT::KcpObj::CallUpdateClock</a></div><div class="ttdeci">void CallUpdateClock()</div><div class="ttdef"><b>定义</b> kcpobj.cpp:133</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a46c8a310cf4c094f8c80e1cb8dc1f911"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911">HYKT::KcpObj::Mode</a></div><div class="ttdeci">Mode</div><div class="ttdef"><b>定义</b> kcpobj.h:33</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a46c8a310cf4c094f8c80e1cb8dc1f911a44e0add47cd0ec96505d444d425b70af"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a44e0add47cd0ec96505d444d425b70af">HYKT::KcpObj::Fast</a></div><div class="ttdeci">@ Fast</div><div class="ttdef"><b>定义</b> kcpobj.h:36</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a46c8a310cf4c094f8c80e1cb8dc1f911a5ecbcf0afce98b042f35ec71ba03fa4b"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a5ecbcf0afce98b042f35ec71ba03fa4b">HYKT::KcpObj::Normal</a></div><div class="ttdeci">@ Normal</div><div class="ttdef"><b>定义</b> kcpobj.h:35</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a46c8a310cf4c094f8c80e1cb8dc1f911a79935518a3889663d8688b6b01fff051"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a46c8a310cf4c094f8c80e1cb8dc1f911a79935518a3889663d8688b6b01fff051">HYKT::KcpObj::Default</a></div><div class="ttdeci">@ Default</div><div class="ttdef"><b>定义</b> kcpobj.h:34</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a488d6c69b0af3575492718e7b4f972e5"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a488d6c69b0af3575492718e7b4f972e5">HYKT::KcpObj::kcp_p</a></div><div class="ttdeci">ikcpcb * kcp_p</div><div class="ttdef"><b>定义</b> kcpobj.h:68</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a4ac504bffb3f38656d14792df1744fee"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a4ac504bffb3f38656d14792df1744fee">HYKT::KcpObj::KcpInput</a></div><div class="ttdeci">void KcpInput(const char *buf, int len)</div><div class="ttdef"><b>定义</b> kcpobj.cpp:112</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a4afabda74d00710ab2dbd9e141d36a7a"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a4afabda74d00710ab2dbd9e141d36a7a">HYKT::KcpObj::onKcpOutput</a></div><div class="ttdeci">void onKcpOutput(const char *buf, int len)</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a5e53001785ff30ae485a113b9b8a0ddc"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc">HYKT::KcpObj::Open</a></div><div class="ttdeci">void Open()</div><div class="ttdef"><b>定义</b> kcpobj.cpp:57</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a5ee9a887f8dc5b4441a637d2614f795a"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a5ee9a887f8dc5b4441a637d2614f795a">HYKT::KcpObj::SetKcpConv</a></div><div class="ttdeci">void SetKcpConv(unsigned int conv)</div><div class="ttdef"><b>定义</b> kcpobj.cpp:41</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a7ad86857b5e6c434aec73ac5aceb6dca"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a7ad86857b5e6c434aec73ac5aceb6dca">HYKT::KcpObj::DoOutput</a></div><div class="ttdeci">static int DoOutput(const char *buf, int len, ikcpcb *kcp, void *user)</div><div class="ttdef"><b>定义</b> kcpobj.cpp:124</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a7f7a3199c392465d0767c6506c1af5b4"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a7f7a3199c392465d0767c6506c1af5b4">HYKT::KcpObj::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdef"><b>定义</b> kcpobj.cpp:100</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a85fee44abcf210c6db9f7cb05a1cc923"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a85fee44abcf210c6db9f7cb05a1cc923">HYKT::KcpObj::buffer_</a></div><div class="ttdeci">QByteArray buffer_</div><div class="ttdef"><b>定义</b> kcpobj.h:72</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_a8dbb28c42b9539f250972a1573962f92"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#a8dbb28c42b9539f250972a1573962f92">HYKT::KcpObj::timer_p</a></div><div class="ttdeci">QTimer * timer_p</div><div class="ttdef"><b>定义</b> kcpobj.h:70</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_aa5586d9380950beac4116be2baf094d1"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#aa5586d9380950beac4116be2baf094d1">HYKT::KcpObj::~KcpObj</a></div><div class="ttdeci">~KcpObj() override</div><div class="ttdef"><b>定义</b> kcpobj.cpp:29</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_ab8d1652707d834852a6a13a4589a4404"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#ab8d1652707d834852a6a13a4589a4404">HYKT::KcpObj::DoOutput2</a></div><div class="ttdeci">int DoOutput2(const char *buf, int len, ikcpcb *kcp, void *user)</div><div class="ttdef"><b>定义</b> kcpobj.cpp:128</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_ac48966f6a195174614de729876c6d1fa"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#ac48966f6a195174614de729876c6d1fa">HYKT::KcpObj::is_open_</a></div><div class="ttdeci">bool is_open_</div><div class="ttdef"><b>定义</b> kcpobj.h:65</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_accb821e0d9a39a87dc9757268afc1258"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#accb821e0d9a39a87dc9757268afc1258">HYKT::KcpObj::mode_</a></div><div class="ttdeci">int mode_</div><div class="ttdef"><b>定义</b> kcpobj.h:67</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_aceeda8849abfc2c70b2826cc23f5441e"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#aceeda8849abfc2c70b2826cc23f5441e">HYKT::KcpObj::conv_</a></div><div class="ttdeci">unsigned int conv_</div><div class="ttdef"><b>定义</b> kcpobj.h:66</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_ad830c125a4d4d679ec379ad2a75e2924"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#ad830c125a4d4d679ec379ad2a75e2924">HYKT::KcpObj::KcpSend</a></div><div class="ttdeci">void KcpSend(const char *buf, int len)</div><div class="ttdef"><b>定义</b> kcpobj.cpp:118</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_ae6945bcd24f14c7c0e9667d8a7d5a396"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#ae6945bcd24f14c7c0e9667d8a7d5a396">HYKT::KcpObj::onKcpRecv</a></div><div class="ttdeci">void onKcpRecv(const char *buf, int len)</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_aeb4cd27bb2074b171e3e7ead9c7ccdda"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#aeb4cd27bb2074b171e3e7ead9c7ccdda">HYKT::KcpObj::SetMode</a></div><div class="ttdeci">void SetMode(Mode mode)</div><div class="ttdef"><b>定义</b> kcpobj.cpp:45</div></div>
+<div class="ttc" id="aclass_h_y_k_t_1_1_kcp_obj_html_afaf269c96e588ac9030a121dc9adcf43"><div class="ttname"><a href="class_h_y_k_t_1_1_kcp_obj.html#afaf269c96e588ac9030a121dc9adcf43">HYKT::KcpObj::KcpObj</a></div><div class="ttdeci">KcpObj(QObject *parent=nullptr)</div><div class="ttdef"><b>定义</b> kcpobj.cpp:18</div></div>
+<div class="ttc" id="aikcp_8h_html"><div class="ttname"><a href="ikcp_8h.html">ikcp.h</a></div></div>
+<div class="ttc" id="aikcp_8h_html_a54616165d5f80d826a68d13f9161758d"><div class="ttname"><a href="ikcp_8h.html#a54616165d5f80d826a68d13f9161758d">ikcpcb</a></div><div class="ttdeci">struct IKCPCB ikcpcb</div><div class="ttdef"><b>定义</b> ikcp.h:320</div></div>
+<div class="ttc" id="anamespace_h_y_k_t_html"><div class="ttname"><a href="namespace_h_y_k_t.html">HYKT</a></div><div class="ttdef"><b>定义</b> kcpobj.cpp:13</div></div>
+<div class="ttc" id="astruct_i_k_c_p_c_b_html"><div class="ttname"><a href="struct_i_k_c_p_c_b.html">IKCPCB</a></div><div class="ttdef"><b>定义</b> ikcp.h:290</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e72918b9f0e93adee7ec62635d44a38d.html">KuGouServer</a></li><li class="navelem"><a class="el" href="dir_1f4d31eb974542b2ab12d0259d14eb74.html">NetWork</a></li><li class="navelem"><a class="el" href="dir_bd24ebb063cf6e142f139fb910e49670.html">kcp</a></li><li class="navelem"><a class="el" href="kcpobj_8h.html">kcpobj.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

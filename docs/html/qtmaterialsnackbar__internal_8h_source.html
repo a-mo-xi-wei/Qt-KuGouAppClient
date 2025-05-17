@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: qtmaterialsnackbar_internal.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('qtmaterialsnackbar__internal_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">qtmaterialsnackbar_internal.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="qtmaterialsnackbar__internal_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef QTMATERIALSNACKBAR_INTERNAL_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define QTMATERIALSNACKBAR_INTERNAL_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QStateMachine&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// 前向声明</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_qt_material_snackbar.html">QtMaterialSnackbar</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_qt_material_snackbar_state_machine.html">   23</a></span><span class="keyword">class </span><a class="code hl_function" href="class_qt_material_snackbar_state_machine.html#a9d2d3de04f667f296caffcdb14f06afc">QtMaterialSnackbarStateMachine</a> : <span class="keyword">public</span> QStateMachine</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    Q_OBJECT</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_qt_material_snackbar_state_machine.html#a6a89189875694eda6253ab6175c54c4c">   27</a></span>    Q_PROPERTY(qreal <a class="code hl_property" href="class_qt_material_snackbar_state_machine.html#a6a89189875694eda6253ab6175c54c4c">offset</a> WRITE <a class="code hl_function" href="class_qt_material_snackbar_state_machine.html#a24ade6e1631f4da66d5d5d0545ccf63b">setOffset</a> READ <a class="code hl_property" href="class_qt_material_snackbar_state_machine.html#a6a89189875694eda6253ab6175c54c4c">offset</a>) </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="class_qt_material_snackbar_state_machine.html#a9d2d3de04f667f296caffcdb14f06afc">QtMaterialSnackbarStateMachine</a>(<a class="code hl_class" href="class_qt_material_snackbar.html">QtMaterialSnackbar</a> *parent);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="class_qt_material_snackbar_state_machine.html#ad01a3d5dd95a2bd2ce930449568df8de">~QtMaterialSnackbarStateMachine</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar_state_machine.html#a24ade6e1631f4da66d5d5d0545ccf63b">setOffset</a>(qreal <a class="code hl_property" href="class_qt_material_snackbar_state_machine.html#a6a89189875694eda6253ab6175c54c4c">offset</a>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">inline</span> qreal <a class="code hl_property" href="class_qt_material_snackbar_state_machine.html#a6a89189875694eda6253ab6175c54c4c">offset</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_material_snackbar_state_machine.html#a1be98ae64bededebc29a04f257024ebe">progress</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">protected</span> slots:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_material_snackbar_state_machine.html#a1d925da1c5a2857f6400fca74c1a84e2">snackbarShown</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_qt_material_snackbar_state_machine.html#ac9dfea1290cfa7f279086f55011a40d6">eventFilter</a>(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    Q_DISABLE_COPY(<a class="code hl_function" href="class_qt_material_snackbar_state_machine.html#a9d2d3de04f667f296caffcdb14f06afc">QtMaterialSnackbarStateMachine</a>) </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_qt_material_snackbar_state_machine.html#a70ee3c61f863cd963a2d84f86d7ef324">   78</a></span>    <a class="code hl_class" href="class_qt_material_snackbar.html">QtMaterialSnackbar</a> *const <a class="code hl_variable" href="class_qt_material_snackbar_state_machine.html#a70ee3c61f863cd963a2d84f86d7ef324">m_snackbar</a>;         </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_qt_material_snackbar_state_machine.html#a35d5e61f4986106a994025d3e7c4b9ef">   79</a></span>    QTimer                    <a class="code hl_variable" href="class_qt_material_snackbar_state_machine.html#a35d5e61f4986106a994025d3e7c4b9ef">m_timer</a>;            </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_qt_material_snackbar_state_machine.html#a9d6d3052f5e7476ada1f5c4eb1b3369d">   80</a></span>    qreal                     <a class="code hl_variable" href="class_qt_material_snackbar_state_machine.html#a9d6d3052f5e7476ada1f5c4eb1b3369d">m_offset</a>;           </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_qt_material_snackbar_state_machine.html#ab3d656c0ee9e52f9dee0aa24c6f3abe3">   83</a></span><a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> qreal <a class="code hl_function" href="class_qt_material_snackbar_state_machine.html#a9d2d3de04f667f296caffcdb14f06afc">QtMaterialSnackbarStateMachine</a>::<a class="code hl_property" href="class_qt_material_snackbar_state_machine.html#a6a89189875694eda6253ab6175c54c4c">offset</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_qt_material_snackbar_state_machine.html#a9d6d3052f5e7476ada1f5c4eb1b3369d">m_offset</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif </span><span class="comment">// QTMATERIALSNACKBAR_INTERNAL_H</span></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html"><div class="ttname"><a href="class_qt_material_snackbar.html">QtMaterialSnackbar</a></div><div class="ttdoc">材质设计风格的消息提示条类</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.h:29</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_a1be98ae64bededebc29a04f257024ebe"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#a1be98ae64bededebc29a04f257024ebe">QtMaterialSnackbarStateMachine::progress</a></div><div class="ttdeci">void progress()</div><div class="ttdoc">推进状态</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.cpp:120</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_a1d925da1c5a2857f6400fca74c1a84e2"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#a1d925da1c5a2857f6400fca74c1a84e2">QtMaterialSnackbarStateMachine::snackbarShown</a></div><div class="ttdeci">void snackbarShown()</div><div class="ttdoc">提示条显示完成</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.cpp:132</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_a24ade6e1631f4da66d5d5d0545ccf63b"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#a24ade6e1631f4da66d5d5d0545ccf63b">QtMaterialSnackbarStateMachine::setOffset</a></div><div class="ttdeci">void setOffset(qreal offset)</div><div class="ttdoc">设置垂直偏移</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.cpp:111</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_a35d5e61f4986106a994025d3e7c4b9ef"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#a35d5e61f4986106a994025d3e7c4b9ef">QtMaterialSnackbarStateMachine::m_timer</a></div><div class="ttdeci">QTimer m_timer</div><div class="ttdoc">定时器</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.h:79</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_a6a89189875694eda6253ab6175c54c4c"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#a6a89189875694eda6253ab6175c54c4c">QtMaterialSnackbarStateMachine::offset</a></div><div class="ttdeci">qreal offset</div><div class="ttdoc">偏移属性</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.h:27</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_a70ee3c61f863cd963a2d84f86d7ef324"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#a70ee3c61f863cd963a2d84f86d7ef324">QtMaterialSnackbarStateMachine::m_snackbar</a></div><div class="ttdeci">QtMaterialSnackbar *const m_snackbar</div><div class="ttdoc">&lt; 禁用拷贝</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.h:78</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_a9d2d3de04f667f296caffcdb14f06afc"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#a9d2d3de04f667f296caffcdb14f06afc">QtMaterialSnackbarStateMachine::QtMaterialSnackbarStateMachine</a></div><div class="ttdeci">QtMaterialSnackbarStateMachine(QtMaterialSnackbar *parent)</div><div class="ttdoc">构造函数，初始化状态机</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.cpp:19</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_a9d6d3052f5e7476ada1f5c4eb1b3369d"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#a9d6d3052f5e7476ada1f5c4eb1b3369d">QtMaterialSnackbarStateMachine::m_offset</a></div><div class="ttdeci">qreal m_offset</div><div class="ttdoc">垂直偏移</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.h:80</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_ac9dfea1290cfa7f279086f55011a40d6"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#ac9dfea1290cfa7f279086f55011a40d6">QtMaterialSnackbarStateMachine::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">事件过滤</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.cpp:99</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_state_machine_html_ad01a3d5dd95a2bd2ce930449568df8de"><div class="ttname"><a href="class_qt_material_snackbar_state_machine.html#ad01a3d5dd95a2bd2ce930449568df8de">QtMaterialSnackbarStateMachine::~QtMaterialSnackbarStateMachine</a></div><div class="ttdeci">~QtMaterialSnackbarStateMachine()</div><div class="ttdoc">析构函数，清理资源</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_internal.cpp:88</div></div>
+<div class="ttc" id="aikcp_8h_html_a00d24c7231be28dbaf71f5408f30e44c"><div class="ttname"><a href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a></div><div class="ttdeci">#define inline</div><div class="ttdef"><b>定义</b> ikcp.h:127</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_b95b73a9da1c57040a996fcdd774df29.html">QtMaterialWidget</a></li><li class="navelem"><a class="el" href="dir_c40e5d532415c5ac5ae84bf254f566c5.html">QtMaterialSnackbar</a></li><li class="navelem"><a class="el" href="qtmaterialsnackbar__internal_8h.html">qtmaterialsnackbar_internal.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

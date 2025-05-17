@@ -1,0 +1,1133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SlidingStackedWidget类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_sliding_stacked_widget.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-slots">Protected 槽</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_sliding_stacked_widget-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">SlidingStackedWidget类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="slidingstackedwidget_8h_source.html">slidingstackedwidget.h</a>&gt;</code></p>
+<div class="dynheader">
+类 SlidingStackedWidget 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget__inherit__graph.png" border="0" usemap="#a_sliding_stacked_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_sliding_stacked_widget_inherit__map" id="a_sliding_stacked_widget_inherit__map">
+<area shape="rect" title="自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画" alt="" coords="5,80,155,107"/>
+<area shape="rect" title=" " alt="" coords="20,5,140,32"/>
+<area shape="poly" title=" " alt="" coords="83,48,83,80,77,80,77,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+SlidingStackedWidget 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget__coll__graph.png" border="0" usemap="#a_sliding_stacked_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="a_sliding_stacked_widget_coll__map" id="a_sliding_stacked_widget_coll__map">
+<area shape="rect" title="自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画" alt="" coords="75,96,224,123"/>
+<area shape="rect" title=" " alt="" coords="5,5,126,32"/>
+<area shape="poly" title=" " alt="" coords="90,42,139,94,136,97,86,46"/>
+<area shape="rect" href="class_q_parallel_animation_group.html" title="并行动画组类" alt="" coords="150,5,317,32"/>
+<area shape="poly" title=" " alt="" coords="213,46,163,97,160,94,209,42"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:aec4e3894aa763e81148b2241ff730790" id="r_aec4e3894aa763e81148b2241ff730790"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec4e3894aa763e81148b2241ff730790">t_direction</a> { <br />
+&#160;&#160;<a class="el" href="#aec4e3894aa763e81148b2241ff730790ae780c1e33c435aea11fcfa457331ae49">LEFT2RIGHT</a>
+, <a class="el" href="#aec4e3894aa763e81148b2241ff730790a28d5aa95a5558f85fea581ecd68d7d35">RIGHT2LEFT</a>
+, <a class="el" href="#aec4e3894aa763e81148b2241ff730790a1830a1cf6962613fab4403b3d48fdd43">TOP2BOTTOM</a>
+, <a class="el" href="#aec4e3894aa763e81148b2241ff730790a6e76c964f88807ac5a5fe43b30f2e80c">BOTTOM2TOP</a>
+, <br />
+&#160;&#160;<a class="el" href="#aec4e3894aa763e81148b2241ff730790a0a831c2bc18e8354fe3e30ec0f3cdcda">AUTOMATIC</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:aec4e3894aa763e81148b2241ff730790"><td class="mdescLeft">&#160;</td><td class="mdescRight">动画方向枚举  <a href="#aec4e3894aa763e81148b2241ff730790">更多...</a><br /></td></tr>
+<tr class="separator:aec4e3894aa763e81148b2241ff730790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a3b320d14ab676975894c44bd3ed68fbe" id="r_a3b320d14ab676975894c44bd3ed68fbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b320d14ab676975894c44bd3ed68fbe">setSpeed</a> (int speed)</td></tr>
+<tr class="memdesc:a3b320d14ab676975894c44bd3ed68fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置动画速度  <br /></td></tr>
+<tr class="separator:a3b320d14ab676975894c44bd3ed68fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9afb4dddf82b0c13f29bec9582e347" id="r_aad9afb4dddf82b0c13f29bec9582e347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad9afb4dddf82b0c13f29bec9582e347">setAnimation</a> (enum QEasingCurve::Type animationtype)</td></tr>
+<tr class="memdesc:aad9afb4dddf82b0c13f29bec9582e347"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置缓动曲线  <br /></td></tr>
+<tr class="separator:aad9afb4dddf82b0c13f29bec9582e347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8e1cb193e6ff881fa2b0cc8d37a8dfe" id="r_aa8e1cb193e6ff881fa2b0cc8d37a8dfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8e1cb193e6ff881fa2b0cc8d37a8dfe">setVerticalMode</a> (bool vertical=true)</td></tr>
+<tr class="memdesc:aa8e1cb193e6ff881fa2b0cc8d37a8dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否使用垂直模式  <br /></td></tr>
+<tr class="separator:aa8e1cb193e6ff881fa2b0cc8d37a8dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae058f800917ba8e120a3c3ae405035be" id="r_ae058f800917ba8e120a3c3ae405035be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae058f800917ba8e120a3c3ae405035be">setWrap</a> (bool wrap)</td></tr>
+<tr class="memdesc:ae058f800917ba8e120a3c3ae405035be"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否启用页面循环  <br /></td></tr>
+<tr class="separator:ae058f800917ba8e120a3c3ae405035be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae642f667696bbe63a40b1aa8b0bc3bf1" id="r_ae642f667696bbe63a40b1aa8b0bc3bf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae642f667696bbe63a40b1aa8b0bc3bf1">slideInNext</a> ()</td></tr>
+<tr class="memdesc:ae642f667696bbe63a40b1aa8b0bc3bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑动到下一页  <br /></td></tr>
+<tr class="separator:ae642f667696bbe63a40b1aa8b0bc3bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c1474752209751a834548b423f4284a" id="r_a9c1474752209751a834548b423f4284a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c1474752209751a834548b423f4284a">slideInPrev</a> ()</td></tr>
+<tr class="memdesc:a9c1474752209751a834548b423f4284a"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑动到上一页  <br /></td></tr>
+<tr class="separator:a9c1474752209751a834548b423f4284a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa9b516b8589ea014b4f589b80cc23c" id="r_a1fa9b516b8589ea014b4f589b80cc23c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fa9b516b8589ea014b4f589b80cc23c">slideInIdx</a> (int <a class="el" href="_listen_recommend_8cpp.html#ac224fdf2f3f2f3554c76c23f3e6e7002">idx</a>, enum <a class="el" href="#aec4e3894aa763e81148b2241ff730790">t_direction</a> direction=<a class="el" href="#aec4e3894aa763e81148b2241ff730790a0a831c2bc18e8354fe3e30ec0f3cdcda">AUTOMATIC</a>)</td></tr>
+<tr class="memdesc:a1fa9b516b8589ea014b4f589b80cc23c"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑动到指定索引的页面  <br /></td></tr>
+<tr class="separator:a1fa9b516b8589ea014b4f589b80cc23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d94b241005e412c477aa1b1a0da1b77" id="r_a6d94b241005e412c477aa1b1a0da1b77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d94b241005e412c477aa1b1a0da1b77">slideInWidget</a> (const QWidget *newWidget, enum <a class="el" href="#aec4e3894aa763e81148b2241ff730790">t_direction</a> direction=<a class="el" href="#aec4e3894aa763e81148b2241ff730790a0a831c2bc18e8354fe3e30ec0f3cdcda">AUTOMATIC</a>)</td></tr>
+<tr class="memdesc:a6d94b241005e412c477aa1b1a0da1b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑动到指定控件页面  <br /></td></tr>
+<tr class="separator:a6d94b241005e412c477aa1b1a0da1b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a82607af1dd17a4c691295ae63aaf7a2d" id="r_a82607af1dd17a4c691295ae63aaf7a2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82607af1dd17a4c691295ae63aaf7a2d">animationFinished</a> ()</td></tr>
+<tr class="memdesc:a82607af1dd17a4c691295ae63aaf7a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">动画完成信号  <br /></td></tr>
+<tr class="separator:a82607af1dd17a4c691295ae63aaf7a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aee73b69768ccb35fa942ae64a0b3235e" id="r_aee73b69768ccb35fa942ae64a0b3235e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee73b69768ccb35fa942ae64a0b3235e">SlidingStackedWidget</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aee73b69768ccb35fa942ae64a0b3235e"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化堆栈窗口  <br /></td></tr>
+<tr class="separator:aee73b69768ccb35fa942ae64a0b3235e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-slots" name="pro-slots"></a>
+Protected 槽</h2></td></tr>
+<tr class="memitem:ad26ebe0ef714ed60832c9d3e9d85082c" id="r_ad26ebe0ef714ed60832c9d3e9d85082c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad26ebe0ef714ed60832c9d3e9d85082c">animationDoneSlot</a> ()</td></tr>
+<tr class="memdesc:ad26ebe0ef714ed60832c9d3e9d85082c"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理动画完成事件  <br /></td></tr>
+<tr class="separator:ad26ebe0ef714ed60832c9d3e9d85082c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:acba974d19952406fcedf0ecb861bb8c7" id="r_acba974d19952406fcedf0ecb861bb8c7"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acba974d19952406fcedf0ecb861bb8c7">m_mainwindow</a> {}</td></tr>
+<tr class="memdesc:acba974d19952406fcedf0ecb861bb8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">主窗口指针  <br /></td></tr>
+<tr class="separator:acba974d19952406fcedf0ecb861bb8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6d3d0d9fa58e09056e64556ad77815" id="r_a8b6d3d0d9fa58e09056e64556ad77815"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b6d3d0d9fa58e09056e64556ad77815">m_speed</a> = 300</td></tr>
+<tr class="memdesc:a8b6d3d0d9fa58e09056e64556ad77815"><td class="mdescLeft">&#160;</td><td class="mdescRight">动画速度（毫秒）  <br /></td></tr>
+<tr class="separator:a8b6d3d0d9fa58e09056e64556ad77815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add51ad9f5a28df2428ea09364109f268" id="r_add51ad9f5a28df2428ea09364109f268"><td class="memItemLeft" align="right" valign="top">enum QEasingCurve::Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add51ad9f5a28df2428ea09364109f268">m_animationtype</a> = QEasingCurve::OutQuart</td></tr>
+<tr class="memdesc:add51ad9f5a28df2428ea09364109f268"><td class="mdescLeft">&#160;</td><td class="mdescRight">缓动曲线类型  <br /></td></tr>
+<tr class="separator:add51ad9f5a28df2428ea09364109f268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa29d374913d400e043bea01d3c2aff02" id="r_aa29d374913d400e043bea01d3c2aff02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa29d374913d400e043bea01d3c2aff02">m_vertical</a> = false</td></tr>
+<tr class="memdesc:aa29d374913d400e043bea01d3c2aff02"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否垂直模式  <br /></td></tr>
+<tr class="separator:aa29d374913d400e043bea01d3c2aff02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5884fb7e3be0998a9cca04f804f3a65e" id="r_a5884fb7e3be0998a9cca04f804f3a65e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5884fb7e3be0998a9cca04f804f3a65e">m_now</a> = 0</td></tr>
+<tr class="memdesc:a5884fb7e3be0998a9cca04f804f3a65e"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前页面索引  <br /></td></tr>
+<tr class="separator:a5884fb7e3be0998a9cca04f804f3a65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab727760767261b1ff0a7478bf4d1b5fd" id="r_ab727760767261b1ff0a7478bf4d1b5fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab727760767261b1ff0a7478bf4d1b5fd">m_next</a> = 0</td></tr>
+<tr class="memdesc:ab727760767261b1ff0a7478bf4d1b5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">下一页面索引  <br /></td></tr>
+<tr class="separator:ab727760767261b1ff0a7478bf4d1b5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5b76a5d21563c638ff3a601c6ae1a02" id="r_af5b76a5d21563c638ff3a601c6ae1a02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5b76a5d21563c638ff3a601c6ae1a02">m_wrap</a> = false</td></tr>
+<tr class="memdesc:af5b76a5d21563c638ff3a601c6ae1a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否启用页面循环  <br /></td></tr>
+<tr class="separator:af5b76a5d21563c638ff3a601c6ae1a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c610c57cce63ebf1f21188409d9dee8" id="r_a8c610c57cce63ebf1f21188409d9dee8"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c610c57cce63ebf1f21188409d9dee8">m_pnow</a> = QPoint(0, 0)</td></tr>
+<tr class="memdesc:a8c610c57cce63ebf1f21188409d9dee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前页面位置  <br /></td></tr>
+<tr class="separator:a8c610c57cce63ebf1f21188409d9dee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818d3d256cbba4f85b3a463e740f104d" id="r_a818d3d256cbba4f85b3a463e740f104d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a818d3d256cbba4f85b3a463e740f104d">m_active</a> = false</td></tr>
+<tr class="memdesc:a818d3d256cbba4f85b3a463e740f104d"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否正在进行动画  <br /></td></tr>
+<tr class="separator:a818d3d256cbba4f85b3a463e740f104d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d492b782ab926cba78000a91f234405" id="r_a0d492b782ab926cba78000a91f234405"><td class="memItemLeft" align="right" valign="top">QList&lt; QWidget * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d492b782ab926cba78000a91f234405">blockedPageList</a> {}</td></tr>
+<tr class="memdesc:a0d492b782ab926cba78000a91f234405"><td class="mdescLeft">&#160;</td><td class="mdescRight">阻止切换的页面列表  <br /></td></tr>
+<tr class="separator:a0d492b782ab926cba78000a91f234405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee34ae9de978be92dddc85ec4ac5de70" id="r_aee34ae9de978be92dddc85ec4ac5de70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_parallel_animation_group.html">QParallelAnimationGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee34ae9de978be92dddc85ec4ac5de70">animgroup</a> {}</td></tr>
+<tr class="memdesc:aee34ae9de978be92dddc85ec4ac5de70"><td class="mdescLeft">&#160;</td><td class="mdescRight">并行动画组  <br /></td></tr>
+<tr class="separator:aee34ae9de978be92dddc85ec4ac5de70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="aec4e3894aa763e81148b2241ff730790" name="aec4e3894aa763e81148b2241ff730790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec4e3894aa763e81148b2241ff730790">&#9670;&#160;</a></span>t_direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#aec4e3894aa763e81148b2241ff730790">t_direction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>动画方向枚举 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aec4e3894aa763e81148b2241ff730790ae780c1e33c435aea11fcfa457331ae49" name="aec4e3894aa763e81148b2241ff730790ae780c1e33c435aea11fcfa457331ae49"></a>LEFT2RIGHT&#160;</td><td class="fielddoc"><p>从左到右 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec4e3894aa763e81148b2241ff730790a28d5aa95a5558f85fea581ecd68d7d35" name="aec4e3894aa763e81148b2241ff730790a28d5aa95a5558f85fea581ecd68d7d35"></a>RIGHT2LEFT&#160;</td><td class="fielddoc"><p>从右到左 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec4e3894aa763e81148b2241ff730790a1830a1cf6962613fab4403b3d48fdd43" name="aec4e3894aa763e81148b2241ff730790a1830a1cf6962613fab4403b3d48fdd43"></a>TOP2BOTTOM&#160;</td><td class="fielddoc"><p>从上到下 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec4e3894aa763e81148b2241ff730790a6e76c964f88807ac5a5fe43b30f2e80c" name="aec4e3894aa763e81148b2241ff730790a6e76c964f88807ac5a5fe43b30f2e80c"></a>BOTTOM2TOP&#160;</td><td class="fielddoc"><p>从下到上 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec4e3894aa763e81148b2241ff730790a0a831c2bc18e8354fe3e30ec0f3cdcda" name="aec4e3894aa763e81148b2241ff730790a0a831c2bc18e8354fe3e30ec0f3cdcda"></a>AUTOMATIC&#160;</td><td class="fielddoc"><p>自动选择方向 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aee73b69768ccb35fa942ae64a0b3235e" name="aee73b69768ccb35fa942ae64a0b3235e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee73b69768ccb35fa942ae64a0b3235e">&#9670;&#160;</a></span>SlidingStackedWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sliding_stacked_widget.html">SlidingStackedWidget</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化堆栈窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置主窗口</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad26ebe0ef714ed60832c9d3e9d85082c" name="ad26ebe0ef714ed60832c9d3e9d85082c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26ebe0ef714ed60832c9d3e9d85082c">&#9670;&#160;</a></span>animationDoneSlot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void animationDoneSlot </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理动画完成事件 </p>
+<p>&lt; 设置当前页面</p>
+<p>&lt; 隐藏上一页面</p>
+<p>&lt; 恢复上一页面位置</p>
+<p>&lt; 发出动画完成信号</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_cgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_cgraph" id="aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_cgraph">
+<area shape="rect" title="处理动画完成事件" alt="" coords="5,5,137,32"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="185,5,311,32"/>
+<area shape="poly" title=" " alt="" coords="137,25,169,25,169,30,137,30"/>
+<area shape="poly" title=" " alt="" coords="184,13,152,12,152,7,185,7"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_icgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_icgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_icgraph" id="aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_icgraph">
+<area shape="rect" title="处理动画完成事件" alt="" coords="584,456,716,483"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="410,456,536,483"/>
+<area shape="poly" title=" " alt="" coords="569,481,536,481,537,475,569,476"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="423,672,523,699"/>
+<area shape="poly" title=" " alt="" coords="631,496,487,674,483,670,626,493"/>
+<area shape="poly" title=" " alt="" coords="552,458,584,458,584,463,552,463"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="187,29,316,56"/>
+<area shape="poly" title=" " alt="" coords="465,441,451,356,428,244,397,138,379,97,360,70,340,56,315,48,317,43,342,51,364,66,384,94,402,136,434,242,457,355,470,440"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="174,104,329,131"/>
+<area shape="poly" title=" " alt="" coords="468,441,462,379,446,298,432,256,414,215,390,178,360,145,345,134,328,127,330,122,348,130,364,141,394,174,418,213,437,254,451,297,468,378,474,440"/>
+<area shape="rect" href="class_listen_book.html#a54945cd55a7bf9a0461163744f0875ed" title="构造函数，初始化听书主界面" alt="" coords="172,179,331,205"/>
+<area shape="poly" title=" " alt="" coords="465,441,455,393,436,332,405,271,384,243,360,219,330,203,333,199,364,215,388,240,409,268,440,330,460,391,470,440"/>
+<area shape="rect" href="class_listen_my_download.html#aa431dd59faceea3de531be41aff7caee" title="构造函数，初始化下载管理界面" alt="" coords="164,253,339,296"/>
+<area shape="poly" title=" " alt="" coords="458,443,421,376,393,341,360,310,338,297,341,293,364,306,397,337,425,373,463,441"/>
+<area shape="rect" href="class_local_download.html#aab413ca86e136b2f69074a5fbb2aa4c1" title="构造函数，初始化本地下载界面" alt="" coords="148,344,355,371"/>
+<area shape="poly" title=" " alt="" coords="446,447,408,415,361,385,331,374,333,369,363,380,411,410,450,443"/>
+<area shape="rect" href="class_music_cloud_disk.html#afa69b1618886c136af9ebb6e47d95468" title="构造函数，初始化云端歌曲界面" alt="" coords="141,419,362,445"/>
+<area shape="poly" title=" " alt="" coords="395,459,334,449,335,443,395,454"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="161,493,342,520"/>
+<area shape="poly" title=" " alt="" coords="395,485,335,495,334,490,395,480"/>
+<area shape="rect" href="class_purchased_music.html#aa7a6832fd17cd0e41d11c4501c0659cf" title="构造函数，初始化付费音乐界面" alt="" coords="157,568,346,611"/>
+<area shape="poly" title=" " alt="" coords="436,493,363,534,297,570,294,565,361,530,434,488"/>
+<area shape="rect" href="class_recently_played.html#ad3e1fddc8d112a919ec2ff75f1d681e0" title="构造函数，初始化最近播放界面" alt="" coords="165,659,338,701"/>
+<area shape="poly" title=" " alt="" coords="460,498,421,560,394,594,364,625,337,644,308,660,305,656,334,640,360,621,390,590,416,557,455,495"/>
+<area shape="rect" href="class_search.html#ac51573714b74893be7f0d569b3b87790" title="构造函数" alt="" coords="196,749,307,776"/>
+<area shape="poly" title=" " alt="" coords="469,498,456,544,435,602,405,662,386,690,364,715,335,737,304,751,301,746,332,732,360,711,382,687,401,659,431,600,451,543,463,497"/>
+<area shape="rect" href="class_video.html#a5d96128f407e3b6b3725d20c097f8a97" title="构造函数，初始化视频界面" alt="" coords="204,824,299,851"/>
+<area shape="poly" title=" " alt="" coords="465,499,410,668,381,750,364,790,334,813,300,828,298,823,331,808,360,786,376,748,404,666,460,497"/>
+<area shape="poly" title=" " alt="" coords="286,16,274,10,251,8,230,10,219,15,216,20,221,27,217,30,211,21,215,11,229,5,251,3,275,5,288,12"/>
+<area shape="poly" title=" " alt="" coords="286,91,274,85,251,83,230,85,219,89,216,95,221,102,217,105,211,95,215,86,229,79,251,77,275,80,288,86"/>
+<area shape="poly" title=" " alt="" coords="286,166,274,160,251,157,230,159,219,164,216,169,221,177,217,180,211,170,215,160,229,154,251,152,275,155,288,161"/>
+<area shape="poly" title=" " alt="" coords="284,240,272,234,251,232,232,234,221,239,216,245,218,252,213,253,211,243,218,234,231,229,251,227,273,229,286,235"/>
+<area shape="poly" title=" " alt="" coords="286,331,274,325,251,323,230,325,219,329,216,335,221,342,217,345,211,335,215,326,229,319,251,317,275,320,288,326"/>
+<area shape="poly" title=" " alt="" coords="286,406,274,400,251,397,230,399,219,404,216,409,221,417,217,420,211,410,215,400,229,394,251,392,275,395,288,401"/>
+<area shape="poly" title=" " alt="" coords="286,480,274,474,251,472,230,474,219,479,216,484,221,491,217,494,211,485,215,475,229,469,251,467,275,469,288,476"/>
+<area shape="poly" title=" " alt="" coords="284,555,272,549,251,547,232,549,221,553,216,559,218,567,213,568,211,558,218,549,231,543,251,541,273,544,286,550"/>
+<area shape="poly" title=" " alt="" coords="284,645,272,640,251,637,232,639,221,644,216,650,218,658,213,659,211,649,218,640,231,634,251,632,273,634,286,641"/>
+<area shape="poly" title=" " alt="" coords="286,736,274,730,251,728,230,730,219,735,216,740,221,747,217,750,211,741,215,731,229,725,251,723,275,725,288,732"/>
+<area shape="poly" title=" " alt="" coords="286,811,274,805,251,803,230,805,219,809,216,815,221,822,217,825,211,815,215,806,229,799,251,797,275,800,288,806"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="213,875,290,901"/>
+<area shape="poly" title=" " alt="" coords="465,714,450,749,429,790,400,831,363,865,328,882,291,889,290,884,326,877,361,860,396,827,424,787,445,747,460,712"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ae642f667696bbe63a40b1aa8b0bc3bf1" title="滑动到下一页" alt="" coords="5,849,93,876"/>
+<area shape="poly" title=" " alt="" coords="197,884,93,871,94,865,198,879"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a9c1474752209751a834548b423f4284a" title="滑动到上一页" alt="" coords="6,900,92,927"/>
+<area shape="poly" title=" " alt="" coords="198,897,93,911,92,905,197,892"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a82607af1dd17a4c691295ae63aaf7a2d" name="a82607af1dd17a4c691295ae63aaf7a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82607af1dd17a4c691295ae63aaf7a2d">&#9670;&#160;</a></span>animationFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void animationFinished </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>动画完成信号 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_cgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_cgraph" id="aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_cgraph">
+<area shape="rect" title="动画完成信号" alt="" coords="5,5,132,32"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="180,5,311,32"/>
+<area shape="poly" title=" " alt="" coords="132,25,164,25,164,30,132,30"/>
+<area shape="poly" title=" " alt="" coords="179,13,147,12,148,7,179,7"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_icgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_icgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_icgraph" id="aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_icgraph">
+<area shape="rect" title="动画完成信号" alt="" coords="684,395,810,421"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="460,29,590,56"/>
+<area shape="poly" title=" " alt="" coords="743,379,737,315,721,231,707,187,689,144,664,104,634,70,613,57,589,49,591,44,616,52,637,66,669,101,693,142,712,185,726,230,743,314,748,379"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="459,80,591,107"/>
+<area shape="poly" title=" " alt="" coords="740,380,731,326,713,260,699,225,681,191,660,160,634,133,610,118,582,110,584,105,612,113,637,129,664,156,686,188,704,223,718,258,736,325,745,379"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="447,155,603,181"/>
+<area shape="poly" title=" " alt="" coords="737,380,724,338,704,288,674,238,655,215,634,196,602,179,604,174,637,191,659,211,678,235,708,286,729,337,742,379"/>
+<area shape="rect" href="class_listen_book.html#a54945cd55a7bf9a0461163744f0875ed" title="构造函数，初始化听书主界面" alt="" coords="445,229,605,256"/>
+<area shape="poly" title=" " alt="" coords="729,382,692,325,665,295,634,270,604,256,606,252,637,266,669,291,696,321,734,379"/>
+<area shape="rect" href="class_listen_my_download.html#aa431dd59faceea3de531be41aff7caee" title="构造函数，初始化下载管理界面" alt="" coords="437,304,613,347"/>
+<area shape="poly" title=" " alt="" coords="702,390,635,361,602,350,603,345,637,356,704,385"/>
+<area shape="rect" href="class_local_download.html#aab413ca86e136b2f69074a5fbb2aa4c1" title="构造函数，初始化本地下载界面" alt="" coords="421,395,629,421"/>
+<area shape="poly" title=" " alt="" coords="668,411,629,411,629,405,668,405"/>
+<area shape="rect" href="class_music_cloud_disk.html#afa69b1618886c136af9ebb6e47d95468" title="构造函数，初始化云端歌曲界面" alt="" coords="414,469,636,496"/>
+<area shape="poly" title=" " alt="" coords="692,429,568,471,566,466,690,424"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="434,544,616,571"/>
+<area shape="poly" title=" " alt="" coords="725,435,685,472,637,510,601,530,566,546,564,541,599,526,634,506,682,468,721,431"/>
+<area shape="rect" href="class_purchased_music.html#aa7a6832fd17cd0e41d11c4501c0659cf" title="构造函数，初始化付费音乐界面" alt="" coords="431,619,619,661"/>
+<area shape="poly" title=" " alt="" coords="736,437,698,508,670,548,637,585,611,605,583,620,580,616,608,600,634,581,666,545,693,506,731,434"/>
+<area shape="rect" href="class_recently_played.html#ad3e1fddc8d112a919ec2ff75f1d681e0" title="构造函数，初始化最近播放界面" alt="" coords="438,709,612,752"/>
+<area shape="poly" title=" " alt="" coords="743,437,731,487,711,549,680,615,660,647,638,675,614,695,587,711,585,706,611,691,634,671,656,644,675,613,706,547,726,485,738,436"/>
+<area shape="rect" href="class_search.html#ac51573714b74893be7f0d569b3b87790" title="构造函数" alt="" coords="469,800,581,827"/>
+<area shape="poly" title=" " alt="" coords="747,437,740,503,723,590,709,636,691,682,667,726,638,766,611,787,581,802,579,797,608,783,634,762,663,723,686,680,704,634,718,588,735,502,742,437"/>
+<area shape="rect" href="class_video.html#a5d96128f407e3b6b3725d20c097f8a97" title="构造函数，初始化视频界面" alt="" coords="477,875,573,901"/>
+<area shape="poly" title=" " alt="" coords="749,437,746,515,732,621,718,679,699,736,672,791,638,840,608,864,574,879,572,875,605,860,634,837,667,788,694,734,713,677,727,620,741,514,744,437"/>
+<area shape="poly" title=" " alt="" coords="561,16,548,10,525,8,503,10,491,15,489,20,494,27,490,30,483,21,488,11,502,5,525,3,550,5,563,12"/>
+<area shape="poly" title=" " alt="" coords="607,88,637,105,668,138,693,177,711,218,726,261,742,339,748,394,742,394,737,340,720,262,706,220,688,179,664,141,634,109,604,92"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="266,80,366,107"/>
+<area shape="poly" title=" " alt="" coords="444,96,367,96,367,91,444,91"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="141,80,218,107"/>
+<area shape="poly" title=" " alt="" coords="250,96,219,96,219,91,250,91"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ae642f667696bbe63a40b1aa8b0bc3bf1" title="滑动到下一页" alt="" coords="5,55,93,81"/>
+<area shape="poly" title=" " alt="" coords="124,85,93,79,94,74,126,80"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a9c1474752209751a834548b423f4284a" title="滑动到上一页" alt="" coords="6,105,92,132"/>
+<area shape="poly" title=" " alt="" coords="126,106,93,113,92,108,125,101"/>
+<area shape="poly" title=" " alt="" coords="561,142,548,136,525,133,503,135,491,140,489,145,494,153,490,156,483,146,488,136,502,130,525,128,550,131,563,137"/>
+<area shape="poly" title=" " alt="" coords="561,216,548,210,525,208,503,210,491,215,489,220,494,227,490,230,483,221,488,211,502,205,525,203,550,205,563,212"/>
+<area shape="poly" title=" " alt="" coords="559,291,546,285,525,283,505,285,493,289,489,295,490,303,485,304,484,294,490,285,504,279,525,277,547,280,561,286"/>
+<area shape="poly" title=" " alt="" coords="561,382,548,376,525,373,503,375,491,380,489,385,494,393,490,396,483,386,488,376,502,370,525,368,550,371,563,377"/>
+<area shape="poly" title=" " alt="" coords="561,456,548,450,525,448,503,450,491,455,489,460,494,467,490,470,483,461,488,451,502,445,525,443,550,445,563,452"/>
+<area shape="poly" title=" " alt="" coords="561,531,548,525,525,523,503,525,491,529,489,535,494,542,490,545,483,535,488,526,502,519,525,517,550,520,563,526"/>
+<area shape="poly" title=" " alt="" coords="559,605,546,600,525,597,505,599,493,604,489,610,490,618,485,619,484,609,490,600,504,594,525,592,547,594,561,601"/>
+<area shape="poly" title=" " alt="" coords="559,696,546,690,525,688,505,690,493,695,489,701,490,708,485,709,484,699,490,690,504,685,525,683,547,685,561,691"/>
+<area shape="poly" title=" " alt="" coords="561,787,548,781,525,779,503,781,491,785,489,791,494,798,490,801,483,791,488,782,502,775,525,773,550,776,563,782"/>
+<area shape="poly" title=" " alt="" coords="561,862,548,856,525,853,503,855,491,860,489,865,494,873,490,876,483,866,488,856,502,850,525,848,550,851,563,857"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aad9afb4dddf82b0c13f29bec9582e347" name="aad9afb4dddf82b0c13f29bec9582e347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9afb4dddf82b0c13f29bec9582e347">&#9670;&#160;</a></span>setAnimation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setAnimation </td>
+          <td>(</td>
+          <td class="paramtype">enum QEasingCurve::Type</td>          <td class="paramname"><span class="paramname"><em>animationtype</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置缓动曲线 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">animationtype</td><td>缓动曲线类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3b320d14ab676975894c44bd3ed68fbe" name="a3b320d14ab676975894c44bd3ed68fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b320d14ab676975894c44bd3ed68fbe">&#9670;&#160;</a></span>setSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置动画速度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>动画持续时间（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa8e1cb193e6ff881fa2b0cc8d37a8dfe" name="aa8e1cb193e6ff881fa2b0cc8d37a8dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8e1cb193e6ff881fa2b0cc8d37a8dfe">&#9670;&#160;</a></span>setVerticalMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setVerticalMode </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>vertical</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置是否使用垂直模式 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertical</td><td>是否为垂直模式，默认为 true </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae058f800917ba8e120a3c3ae405035be" name="ae058f800917ba8e120a3c3ae405035be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae058f800917ba8e120a3c3ae405035be">&#9670;&#160;</a></span>setWrap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setWrap </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>wrap</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置是否启用页面循环 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wrap</td><td>是否循环，默认为 true </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1fa9b516b8589ea014b4f589b80cc23c" name="a1fa9b516b8589ea014b4f589b80cc23c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa9b516b8589ea014b4f589b80cc23c">&#9670;&#160;</a></span>slideInIdx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void slideInIdx </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#aec4e3894aa763e81148b2241ff730790">t_direction</a></td>          <td class="paramname"><span class="paramname"><em>direction</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#aec4e3894aa763e81148b2241ff730790a0a831c2bc18e8354fe3e30ec0f3cdcda">AUTOMATIC</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滑动到指定索引的页面 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>页面索引 </td></tr>
+    <tr><td class="paramname">direction</td><td>滑动方向，默认为 AUTOMATIC </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 超出范围时选择默认方向</p>
+<p>&lt; 循环索引</p>
+<p>&lt; 滑动到目标页面</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_cgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_cgraph" id="aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_cgraph">
+<area shape="rect" title="滑动到指定索引的页面" alt="" coords="5,5,83,32"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="131,5,231,32"/>
+<area shape="poly" title=" " alt="" coords="83,16,115,16,115,21,83,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="279,5,410,32"/>
+<area shape="poly" title=" " alt="" coords="231,16,263,16,263,21,231,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="458,5,585,32"/>
+<area shape="poly" title=" " alt="" coords="411,25,443,25,443,30,411,30"/>
+<area shape="poly" title=" " alt="" coords="458,13,426,12,426,7,458,7"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_icgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_icgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_icgraph" id="aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_icgraph">
+<area shape="rect" title="滑动到指定索引的页面" alt="" coords="141,31,218,57"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ae642f667696bbe63a40b1aa8b0bc3bf1" title="滑动到下一页" alt="" coords="5,5,93,32"/>
+<area shape="poly" title=" " alt="" coords="124,36,93,30,94,25,126,31"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a9c1474752209751a834548b423f4284a" title="滑动到上一页" alt="" coords="6,56,92,83"/>
+<area shape="poly" title=" " alt="" coords="126,57,93,64,92,58,125,52"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae642f667696bbe63a40b1aa8b0bc3bf1" name="ae642f667696bbe63a40b1aa8b0bc3bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae642f667696bbe63a40b1aa8b0bc3bf1">&#9670;&#160;</a></span>slideInNext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool slideInNext </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滑动到下一页 </p>
+<dl class="section return"><dt>返回</dt><dd>是否成功滑动 </dd></dl>
+<p>&lt; 滑动到下一页</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_ae642f667696bbe63a40b1aa8b0bc3bf1_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_ae642f667696bbe63a40b1aa8b0bc3bf1_cgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_ae642f667696bbe63a40b1aa8b0bc3bf1_cgraph" id="aclass_sliding_stacked_widget_ae642f667696bbe63a40b1aa8b0bc3bf1_cgraph">
+<area shape="rect" title="滑动到下一页" alt="" coords="5,5,93,32"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="141,5,218,32"/>
+<area shape="poly" title=" " alt="" coords="93,16,125,16,125,21,93,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="266,5,366,32"/>
+<area shape="poly" title=" " alt="" coords="218,16,250,16,250,21,218,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="414,5,546,32"/>
+<area shape="poly" title=" " alt="" coords="367,16,398,16,398,21,367,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="594,5,720,32"/>
+<area shape="poly" title=" " alt="" coords="546,25,578,25,578,30,546,30"/>
+<area shape="poly" title=" " alt="" coords="593,13,561,12,561,7,594,7"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c1474752209751a834548b423f4284a" name="a9c1474752209751a834548b423f4284a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c1474752209751a834548b423f4284a">&#9670;&#160;</a></span>slideInPrev</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool slideInPrev </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滑动到上一页 </p>
+<dl class="section return"><dt>返回</dt><dd>是否成功滑动 </dd></dl>
+<p>&lt; 滑动到上一页</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_a9c1474752209751a834548b423f4284a_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a9c1474752209751a834548b423f4284a_cgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_a9c1474752209751a834548b423f4284a_cgraph" id="aclass_sliding_stacked_widget_a9c1474752209751a834548b423f4284a_cgraph">
+<area shape="rect" title="滑动到上一页" alt="" coords="5,5,92,32"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="140,5,217,32"/>
+<area shape="poly" title=" " alt="" coords="92,16,124,16,124,21,92,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="265,5,365,32"/>
+<area shape="poly" title=" " alt="" coords="217,16,249,16,249,21,217,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="413,5,545,32"/>
+<area shape="poly" title=" " alt="" coords="366,16,397,16,397,21,366,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="593,5,719,32"/>
+<area shape="poly" title=" " alt="" coords="545,25,577,25,577,30,545,30"/>
+<area shape="poly" title=" " alt="" coords="592,13,560,12,560,7,593,7"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6d94b241005e412c477aa1b1a0da1b77" name="a6d94b241005e412c477aa1b1a0da1b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d94b241005e412c477aa1b1a0da1b77">&#9670;&#160;</a></span>slideInWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void slideInWidget </td>
+          <td>(</td>
+          <td class="paramtype">const QWidget *</td>          <td class="paramname"><span class="paramname"><em>newWidget</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#aec4e3894aa763e81148b2241ff730790">t_direction</a></td>          <td class="paramname"><span class="paramname"><em>direction</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#aec4e3894aa763e81148b2241ff730790a0a831c2bc18e8354fe3e30ec0f3cdcda">AUTOMATIC</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滑动到指定控件页面 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newWidget</td><td>目标页面控件 </td></tr>
+    <tr><td class="paramname">direction</td><td>滑动方向，默认为 AUTOMATIC </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 动画进行中，直接返回</p>
+<p>&lt; 当前页面无需切换</p>
+<p>&lt; 自动方向提示</p>
+<p>&lt; 使用提示方向</p>
+<p>&lt; 设置下一页面几何尺寸</p>
+<p>&lt; 调整下一页面起始位置</p>
+<p>&lt; 显示并提升下一页面</p>
+<p>&lt; 动画结束时清理效果</p>
+<p>&lt; 动画结束时清理效果</p>
+<p>&lt; 动画结束后自动删除</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_cgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_cgraph" id="aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_cgraph">
+<area shape="rect" title="滑动到指定控件页面" alt="" coords="5,5,106,32"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="154,5,285,32"/>
+<area shape="poly" title=" " alt="" coords="106,16,138,16,138,21,106,21"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="333,5,459,32"/>
+<area shape="poly" title=" " alt="" coords="286,25,318,25,318,30,286,30"/>
+<area shape="poly" title=" " alt="" coords="333,13,301,12,301,7,333,7"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_icgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_icgraph" alt=""/></div>
+<map name="aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_icgraph" id="aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_icgraph">
+<area shape="rect" title="滑动到指定控件页面" alt="" coords="266,31,366,57"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="141,31,218,57"/>
+<area shape="poly" title=" " alt="" coords="250,47,219,47,219,41,250,41"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ae642f667696bbe63a40b1aa8b0bc3bf1" title="滑动到下一页" alt="" coords="5,5,93,32"/>
+<area shape="poly" title=" " alt="" coords="124,36,93,30,94,25,126,31"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a9c1474752209751a834548b423f4284a" title="滑动到上一页" alt="" coords="6,56,92,83"/>
+<area shape="poly" title=" " alt="" coords="126,57,93,64,92,58,125,52"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aee34ae9de978be92dddc85ec4ac5de70" name="aee34ae9de978be92dddc85ec4ac5de70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee34ae9de978be92dddc85ec4ac5de70">&#9670;&#160;</a></span>animgroup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_parallel_animation_group.html">QParallelAnimationGroup</a>* animgroup {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>并行动画组 </p>
+
+</div>
+</div>
+<a id="a0d492b782ab926cba78000a91f234405" name="a0d492b782ab926cba78000a91f234405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d492b782ab926cba78000a91f234405">&#9670;&#160;</a></span>blockedPageList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QWidget *&gt; blockedPageList {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>阻止切换的页面列表 </p>
+
+</div>
+</div>
+<a id="a818d3d256cbba4f85b3a463e740f104d" name="a818d3d256cbba4f85b3a463e740f104d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a818d3d256cbba4f85b3a463e740f104d">&#9670;&#160;</a></span>m_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_active = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否正在进行动画 </p>
+
+</div>
+</div>
+<a id="add51ad9f5a28df2428ea09364109f268" name="add51ad9f5a28df2428ea09364109f268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add51ad9f5a28df2428ea09364109f268">&#9670;&#160;</a></span>m_animationtype</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum QEasingCurve::Type m_animationtype = QEasingCurve::OutQuart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>缓动曲线类型 </p>
+
+</div>
+</div>
+<a id="acba974d19952406fcedf0ecb861bb8c7" name="acba974d19952406fcedf0ecb861bb8c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba974d19952406fcedf0ecb861bb8c7">&#9670;&#160;</a></span>m_mainwindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* m_mainwindow {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>主窗口指针 </p>
+
+</div>
+</div>
+<a id="ab727760767261b1ff0a7478bf4d1b5fd" name="ab727760767261b1ff0a7478bf4d1b5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab727760767261b1ff0a7478bf4d1b5fd">&#9670;&#160;</a></span>m_next</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_next = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>下一页面索引 </p>
+
+</div>
+</div>
+<a id="a5884fb7e3be0998a9cca04f804f3a65e" name="a5884fb7e3be0998a9cca04f804f3a65e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5884fb7e3be0998a9cca04f804f3a65e">&#9670;&#160;</a></span>m_now</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_now = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前页面索引 </p>
+
+</div>
+</div>
+<a id="a8c610c57cce63ebf1f21188409d9dee8" name="a8c610c57cce63ebf1f21188409d9dee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c610c57cce63ebf1f21188409d9dee8">&#9670;&#160;</a></span>m_pnow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint m_pnow = QPoint(0, 0)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前页面位置 </p>
+
+</div>
+</div>
+<a id="a8b6d3d0d9fa58e09056e64556ad77815" name="a8b6d3d0d9fa58e09056e64556ad77815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6d3d0d9fa58e09056e64556ad77815">&#9670;&#160;</a></span>m_speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_speed = 300</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>动画速度（毫秒） </p>
+
+</div>
+</div>
+<a id="aa29d374913d400e043bea01d3c2aff02" name="aa29d374913d400e043bea01d3c2aff02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa29d374913d400e043bea01d3c2aff02">&#9670;&#160;</a></span>m_vertical</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_vertical = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否垂直模式 </p>
+
+</div>
+</div>
+<a id="af5b76a5d21563c638ff3a601c6ae1a02" name="af5b76a5d21563c638ff3a601c6ae1a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b76a5d21563c638ff3a601c6ae1a02">&#9670;&#160;</a></span>m_wrap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_wrap = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否启用页面循环 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="slidingstackedwidget_8h_source.html">slidingstackedwidget.h</a></li>
+<li><a class="el" href="slidingstackedwidget_8cpp.html">slidingstackedwidget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_sliding_stacked_widget.html">SlidingStackedWidget</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

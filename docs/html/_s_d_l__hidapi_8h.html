@@ -1,0 +1,1104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_hidapi.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__hidapi_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">SDL_hidapi.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Header file for SDL HIDAPI functions.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_s_d_l__stdinc_8h_source.html">SDL_stdinc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="begin__code_8h_source.html">begin_code.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="close__code_8h_source.html">close_code.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+SDL_hidapi.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__hidapi_8h__incl.png" border="0" usemap="#a_s_d_l__hidapi_8h" alt=""/></div>
+<map name="a_s_d_l__hidapi_8h" id="a_s_d_l__hidapi_8h">
+<area shape="rect" title="Header file for SDL HIDAPI functions." alt="" coords="248,5,347,32"/>
+<area shape="rect" href="_s_d_l__stdinc_8h.html" title="This is a general header that includes C language support." alt="" coords="247,80,348,107"/>
+<area shape="poly" title=" " alt="" coords="300,33,300,64,295,64,295,33"/>
+<area shape="rect" href="begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions,..." alt="" coords="455,379,553,405"/>
+<area shape="poly" title=" " alt="" coords="348,23,412,37,447,48,480,63,511,82,535,105,551,133,557,166,557,244,554,278,545,311,521,366,516,364,540,309,549,277,552,244,552,167,546,135,531,108,507,86,478,68,445,53,411,42,347,29"/>
+<area shape="rect" href="close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="7,379,105,405"/>
+<area shape="poly" title=" " alt="" coords="248,26,175,36,135,46,96,60,61,78,33,102,15,131,8,167,8,244,11,277,20,309,44,364,39,366,15,311,6,278,3,244,3,166,10,129,29,98,58,74,94,55,133,41,174,31,247,20"/>
+<area shape="rect" href="_s_d_l__config_8h.html" title=" " alt="" coords="94,155,194,181"/>
+<area shape="poly" title=" " alt="" coords="272,110,186,150,184,145,269,105"/>
+<area shape="poly" title=" " alt="" coords="348,94,382,100,418,111,452,128,481,153,497,178,508,205,518,264,518,319,512,364,507,363,513,319,513,264,503,207,492,180,477,156,449,132,416,116,381,105,348,100"/>
+<area shape="poly" title=" " alt="" coords="247,105,151,125,109,140,83,157,67,180,56,206,46,263,47,319,53,363,47,364,41,319,41,263,51,205,63,177,79,153,107,135,150,120,246,99"/>
+<area shape="rect" title=" " alt="" coords="218,155,286,181"/>
+<area shape="poly" title=" " alt="" coords="292,109,270,143,266,140,287,106"/>
+<area shape="rect" title=" " alt="" coords="310,155,378,181"/>
+<area shape="poly" title=" " alt="" coords="308,106,330,140,326,143,303,109"/>
+<area shape="rect" title=" " alt="" coords="402,155,467,181"/>
+<area shape="poly" title=" " alt="" coords="322,105,398,145,396,149,320,110"/>
+<area shape="rect" href="_s_d_l__platform_8h.html" title="Try to get a standard set of platform defines." alt="" coords="138,304,251,331"/>
+<area shape="poly" title=" " alt="" coords="146,182,146,216,153,255,174,290,170,293,148,257,140,216,140,182"/>
+<area shape="rect" href="_s_d_l__config__minimal_8h.html" title="This is the minimal configuration that can be used to build SDL." alt="" coords="162,229,315,256"/>
+<area shape="poly" title=" " alt="" coords="162,180,212,218,209,222,159,184"/>
+<area shape="poly" title=" " alt="" coords="250,329,440,373,439,378,248,334"/>
+<area shape="poly" title=" " alt="" coords="172,334,95,373,93,369,169,329"/>
+<area shape="poly" title=" " alt="" coords="233,258,212,292,208,289,229,255"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__hidapi_8h__dep__incl.png" border="0" usemap="#a_s_d_l__hidapi_8hdep" alt=""/></div>
+<map name="a_s_d_l__hidapi_8hdep" id="a_s_d_l__hidapi_8hdep">
+<area shape="rect" title="Header file for SDL HIDAPI functions." alt="" coords="246,5,345,32"/>
+<area shape="rect" href="_s_d_l_8h.html" title="Main include header for the SDL library" alt="" coords="266,80,325,107"/>
+<area shape="poly" title=" " alt="" coords="298,48,298,80,293,80,293,48"/>
+<area shape="rect" href="_pcm_player___s_d_l_8h.html" title=" " alt="" coords="16,155,146,181"/>
+<area shape="poly" title=" " alt="" coords="253,112,120,157,118,151,251,107"/>
+<area shape="rect" href="_s_d_l__test_8h.html" title="Include file for SDL test framework." alt="" coords="336,304,423,331"/>
+<area shape="poly" title=" " alt="" coords="271,119,243,147,217,182,209,201,205,219,206,237,214,254,239,279,270,295,304,306,336,311,335,316,303,311,268,300,236,283,209,258,201,239,199,219,204,199,212,180,238,144,267,115"/>
+<area shape="rect" href="_s_d_l__test__common_8h.html" title="Include file for SDL test framework." alt="" coords="224,229,368,256"/>
+<area shape="poly" title=" " alt="" coords="298,122,298,229,293,229,293,122"/>
+<area shape="rect" href="_s_d_l__test__compare_8h.html" title="Include file for SDL test framework." alt="" coords="392,229,536,256"/>
+<area shape="poly" title=" " alt="" coords="319,116,385,179,448,227,444,231,382,183,315,120"/>
+<area shape="rect" href="_s_d_l__test__images_8h.html" title="Include file for SDL test framework." alt="" coords="396,155,532,181"/>
+<area shape="poly" title=" " alt="" coords="340,111,435,152,433,156,338,116"/>
+<area shape="rect" href="_pcm_player___s_d_l_8cpp.html" title=" " alt="" coords="5,229,149,256"/>
+<area shape="poly" title=" " alt="" coords="82,197,80,229,75,229,77,197"/>
+<area shape="poly" title=" " alt="" coords="324,264,367,302,363,306,320,269"/>
+<area shape="poly" title=" " alt="" coords="439,269,396,306,392,302,436,264"/>
+<area shape="poly" title=" " alt="" coords="507,187,529,201,546,218,555,237,550,257,524,283,491,300,457,311,424,316,423,311,455,306,489,295,521,279,545,255,550,237,542,221,525,205,504,191"/>
+<area shape="poly" title=" " alt="" coords="466,197,466,229,461,229,461,197"/>
+</map>
+</div>
+</div>
+<p><a href="_s_d_l__hidapi_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">hidapi info structure  <a href="struct_s_d_l__hid__device__info.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a01e37a76f52ebe32810eae8de7ffad85" id="r_a01e37a76f52ebe32810eae8de7ffad85"><td class="memItemLeft" align="right" valign="top">typedef struct SDL_hid_device_&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a></td></tr>
+<tr class="memdesc:a01e37a76f52ebe32810eae8de7ffad85"><td class="mdescLeft">&#160;</td><td class="mdescRight">opaque hidapi structure  <br /></td></tr>
+<tr class="separator:a01e37a76f52ebe32810eae8de7ffad85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb328d87ec06aec76ebbca2eab491a70" id="r_afb328d87ec06aec76ebbca2eab491a70"><td class="memItemLeft" align="right" valign="top">typedef struct SDL_hid_device_info&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb328d87ec06aec76ebbca2eab491a70">SDL_hid_device_info</a></td></tr>
+<tr class="memdesc:afb328d87ec06aec76ebbca2eab491a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">hidapi info structure  <br /></td></tr>
+<tr class="separator:afb328d87ec06aec76ebbca2eab491a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:afab0dc5913a3e90ed4434bd2778fe1bf" id="r_afab0dc5913a3e90ed4434bd2778fe1bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afab0dc5913a3e90ed4434bd2778fe1bf">SDL_hid_init</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:afab0dc5913a3e90ed4434bd2778fe1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the HIDAPI library.  <br /></td></tr>
+<tr class="separator:afab0dc5913a3e90ed4434bd2778fe1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795ed5c8ed4410b5962742d1c92774c9" id="r_a795ed5c8ed4410b5962742d1c92774c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795ed5c8ed4410b5962742d1c92774c9">SDL_hid_exit</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a795ed5c8ed4410b5962742d1c92774c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalize the HIDAPI library.  <br /></td></tr>
+<tr class="separator:a795ed5c8ed4410b5962742d1c92774c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7587010cbd25a9fcf77e26682de356" id="r_a1d7587010cbd25a9fcf77e26682de356"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d7587010cbd25a9fcf77e26682de356">SDL_hid_device_change_count</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a1d7587010cbd25a9fcf77e26682de356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if devices may have been added or removed.  <br /></td></tr>
+<tr class="separator:a1d7587010cbd25a9fcf77e26682de356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a0a8a98f734167ad2272c0152f51c92" id="r_a5a0a8a98f734167ad2272c0152f51c92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a0a8a98f734167ad2272c0152f51c92">SDL_hid_enumerate</a> (unsigned short vendor_id, unsigned short product_id)</td></tr>
+<tr class="memdesc:a5a0a8a98f734167ad2272c0152f51c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerate the HID Devices.  <br /></td></tr>
+<tr class="separator:a5a0a8a98f734167ad2272c0152f51c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2f46b6c5b92e35724b2bd3116e2eb1e" id="r_af2f46b6c5b92e35724b2bd3116e2eb1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2f46b6c5b92e35724b2bd3116e2eb1e">SDL_hid_free_enumeration</a> (<a class="el" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a> *devs)</td></tr>
+<tr class="memdesc:af2f46b6c5b92e35724b2bd3116e2eb1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free an enumeration Linked List  <br /></td></tr>
+<tr class="separator:af2f46b6c5b92e35724b2bd3116e2eb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae44777e4b49c6f9887a3d892102bd491" id="r_ae44777e4b49c6f9887a3d892102bd491"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae44777e4b49c6f9887a3d892102bd491">SDL_hid_open</a> (unsigned short vendor_id, unsigned short product_id, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> wchar_t *serial_number)</td></tr>
+<tr class="memdesc:ae44777e4b49c6f9887a3d892102bd491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.  <br /></td></tr>
+<tr class="separator:ae44777e4b49c6f9887a3d892102bd491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c16ac973dc4dee19687484f97e5bc79" id="r_a8c16ac973dc4dee19687484f97e5bc79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c16ac973dc4dee19687484f97e5bc79">SDL_hid_open_path</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#ab25d8cd967ccbd19b630d7100ff8f67e">path</a>, int bExclusive)</td></tr>
+<tr class="memdesc:a8c16ac973dc4dee19687484f97e5bc79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a HID device by its path name.  <br /></td></tr>
+<tr class="separator:a8c16ac973dc4dee19687484f97e5bc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f20cc83879d21bad4306f540475dd8f" id="r_a6f20cc83879d21bad4306f540475dd8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f20cc83879d21bad4306f540475dd8f">SDL_hid_write</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned char *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, size_t <a class="el" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>)</td></tr>
+<tr class="memdesc:a6f20cc83879d21bad4306f540475dd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an Output report to a HID device.  <br /></td></tr>
+<tr class="separator:a6f20cc83879d21bad4306f540475dd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aa5d9a34cd1200e566d4ec47fc5dc5f" id="r_a2aa5d9a34cd1200e566d4ec47fc5dc5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2aa5d9a34cd1200e566d4ec47fc5dc5f">SDL_hid_read_timeout</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, unsigned char *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, size_t <a class="el" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>, int milliseconds)</td></tr>
+<tr class="memdesc:a2aa5d9a34cd1200e566d4ec47fc5dc5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an Input report from a HID device with timeout.  <br /></td></tr>
+<tr class="separator:a2aa5d9a34cd1200e566d4ec47fc5dc5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f41a95bea290df5a73b97e4bf5212a0" id="r_a6f41a95bea290df5a73b97e4bf5212a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f41a95bea290df5a73b97e4bf5212a0">SDL_hid_read</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, unsigned char *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, size_t <a class="el" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>)</td></tr>
+<tr class="memdesc:a6f41a95bea290df5a73b97e4bf5212a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an Input report from a HID device.  <br /></td></tr>
+<tr class="separator:a6f41a95bea290df5a73b97e4bf5212a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f66ac734a1786884cb4f2b6309a60e7" id="r_a1f66ac734a1786884cb4f2b6309a60e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f66ac734a1786884cb4f2b6309a60e7">SDL_hid_set_nonblocking</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, int nonblock)</td></tr>
+<tr class="memdesc:a1f66ac734a1786884cb4f2b6309a60e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the device handle to be non-blocking.  <br /></td></tr>
+<tr class="separator:a1f66ac734a1786884cb4f2b6309a60e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5349c62d24338025552c6f244956699f" id="r_a5349c62d24338025552c6f244956699f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5349c62d24338025552c6f244956699f">SDL_hid_send_feature_report</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned char *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, size_t <a class="el" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>)</td></tr>
+<tr class="memdesc:a5349c62d24338025552c6f244956699f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a Feature report to the device.  <br /></td></tr>
+<tr class="separator:a5349c62d24338025552c6f244956699f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab955370e07dc09c62367ab70d1784793" id="r_ab955370e07dc09c62367ab70d1784793"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab955370e07dc09c62367ab70d1784793">SDL_hid_get_feature_report</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, unsigned char *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, size_t <a class="el" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>)</td></tr>
+<tr class="memdesc:ab955370e07dc09c62367ab70d1784793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a feature report from a HID device.  <br /></td></tr>
+<tr class="separator:ab955370e07dc09c62367ab70d1784793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e402a95d523c439b3a55be0c05dd6ba" id="r_a0e402a95d523c439b3a55be0c05dd6ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e402a95d523c439b3a55be0c05dd6ba">SDL_hid_close</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev)</td></tr>
+<tr class="memdesc:a0e402a95d523c439b3a55be0c05dd6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a HID device.  <br /></td></tr>
+<tr class="separator:a0e402a95d523c439b3a55be0c05dd6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc79c19d7d67a361bb39b5ae4704c950" id="r_abc79c19d7d67a361bb39b5ae4704c950"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc79c19d7d67a361bb39b5ae4704c950">SDL_hid_get_manufacturer_string</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, wchar_t *<a class="el" href="_s_d_l__opengl__glext_8h.html#ae84541b4f3d8e1ea24ec0f466a8c568b">string</a>, size_t maxlen)</td></tr>
+<tr class="memdesc:abc79c19d7d67a361bb39b5ae4704c950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get The Manufacturer String from a HID device.  <br /></td></tr>
+<tr class="separator:abc79c19d7d67a361bb39b5ae4704c950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc7382b9200805fea25b4483a3cb224" id="r_abfc7382b9200805fea25b4483a3cb224"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfc7382b9200805fea25b4483a3cb224">SDL_hid_get_product_string</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, wchar_t *<a class="el" href="_s_d_l__opengl__glext_8h.html#ae84541b4f3d8e1ea24ec0f466a8c568b">string</a>, size_t maxlen)</td></tr>
+<tr class="memdesc:abfc7382b9200805fea25b4483a3cb224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get The Product String from a HID device.  <br /></td></tr>
+<tr class="separator:abfc7382b9200805fea25b4483a3cb224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06110655bc7e7c8a3a8e1d43a5af998b" id="r_a06110655bc7e7c8a3a8e1d43a5af998b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06110655bc7e7c8a3a8e1d43a5af998b">SDL_hid_get_serial_number_string</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, wchar_t *<a class="el" href="_s_d_l__opengl__glext_8h.html#ae84541b4f3d8e1ea24ec0f466a8c568b">string</a>, size_t maxlen)</td></tr>
+<tr class="memdesc:a06110655bc7e7c8a3a8e1d43a5af998b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get The Serial Number String from a HID device.  <br /></td></tr>
+<tr class="separator:a06110655bc7e7c8a3a8e1d43a5af998b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c58e5c7c4ce4920507e316da2ca07ea" id="r_a8c58e5c7c4ce4920507e316da2ca07ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c58e5c7c4ce4920507e316da2ca07ea">SDL_hid_get_indexed_string</a> (<a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, int string_index, wchar_t *<a class="el" href="_s_d_l__opengl__glext_8h.html#ae84541b4f3d8e1ea24ec0f466a8c568b">string</a>, size_t maxlen)</td></tr>
+<tr class="memdesc:a8c58e5c7c4ce4920507e316da2ca07ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string from a HID device, based on its string index.  <br /></td></tr>
+<tr class="separator:a8c58e5c7c4ce4920507e316da2ca07ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a472eb84a7526e0c9fb6b696b2fa7a039" id="r_a472eb84a7526e0c9fb6b696b2fa7a039"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a472eb84a7526e0c9fb6b696b2fa7a039">SDL_hid_ble_scan</a> (<a class="el" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> active)</td></tr>
+<tr class="memdesc:a472eb84a7526e0c9fb6b696b2fa7a039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start or stop a BLE scan on iOS and tvOS to pair Steam Controllers  <br /></td></tr>
+<tr class="separator:a472eb84a7526e0c9fb6b696b2fa7a039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Header file for SDL HIDAPI functions. </p>
+<p>This is an adaptation of the original HIDAPI interface by Alan Ott, and includes source code licensed under the following BSD license:</p>
+<p>Copyright (c) 2010, Alan Ott, Signal 11 Software All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. Neither the name of Signal 11 Software nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p>If you would like a version of SDL without this code, you can build SDL with SDL_HIDAPI_DISABLED defined to 1. You might want to do this for example on iOS or tvOS to avoid a dependency on the CoreBluetooth framework. </p>
+</div><h2 class="groupheader">类型定义说明</h2>
+<a id="a01e37a76f52ebe32810eae8de7ffad85" name="a01e37a76f52ebe32810eae8de7ffad85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01e37a76f52ebe32810eae8de7ffad85">&#9670;&#160;</a></span>SDL_hid_device</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct SDL_hid_device_ <a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>opaque hidapi structure </p>
+
+</div>
+</div>
+<a id="afb328d87ec06aec76ebbca2eab491a70" name="afb328d87ec06aec76ebbca2eab491a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb328d87ec06aec76ebbca2eab491a70">&#9670;&#160;</a></span>SDL_hid_device_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct SDL_hid_device_info SDL_hid_device_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>hidapi info structure </p>
+<p>Information about a connected HID device </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a472eb84a7526e0c9fb6b696b2fa7a039" name="a472eb84a7526e0c9fb6b696b2fa7a039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a472eb84a7526e0c9fb6b696b2fa7a039">&#9670;&#160;</a></span>SDL_hid_ble_scan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_ble_scan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a></td>          <td class="paramname"><span class="paramname"><em>active</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start or stop a BLE scan on iOS and tvOS to pair Steam Controllers </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">active</td><td>SDL_TRUE to start the scan, SDL_FALSE to stop the scan</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a0e402a95d523c439b3a55be0c05dd6ba" name="a0e402a95d523c439b3a55be0c05dd6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e402a95d523c439b3a55be0c05dd6ba">&#9670;&#160;</a></span>SDL_hid_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Close a HID device. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a1d7587010cbd25a9fcf77e26682de356" name="a1d7587010cbd25a9fcf77e26682de356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d7587010cbd25a9fcf77e26682de356">&#9670;&#160;</a></span>SDL_hid_device_change_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_device_change_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check to see if devices may have been added or removed. </p>
+<p>Enumerating the HID devices is an expensive operation, so you can call this to see if there have been any system device changes since the last call to this function. A change in the counter returned doesn't necessarily mean that anything has changed, but you can call <a class="el" href="#a5a0a8a98f734167ad2272c0152f51c92" title="Enumerate the HID Devices.">SDL_hid_enumerate()</a> to get an updated device list.</p>
+<p>Calling this function for the first time may cause a thread or other system resource to be allocated to track device change notifications.</p>
+<dl class="section return"><dt>返回</dt><dd>a change counter that is incremented with each potential device change, or 0 if device change detection isn't available.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a5a0a8a98f734167ad2272c0152f51c92" title="Enumerate the HID Devices.">SDL_hid_enumerate</a> </dd></dl>
+
+</div>
+</div>
+<a id="a5a0a8a98f734167ad2272c0152f51c92" name="a5a0a8a98f734167ad2272c0152f51c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a0a8a98f734167ad2272c0152f51c92">&#9670;&#160;</a></span>SDL_hid_enumerate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_enumerate </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short</td>          <td class="paramname"><span class="paramname"><em>vendor_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short</td>          <td class="paramname"><span class="paramname"><em>product_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumerate the HID Devices. </p>
+<p>This function returns a linked list of all the HID devices attached to the system which match vendor_id and product_id. If <code>vendor_id</code> is set to 0 then any vendor matches. If <code>product_id</code> is set to 0 then any product matches. If <code>vendor_id</code> and <code>product_id</code> are both set to 0, then all HID devices will be returned.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vendor_id</td><td>The Vendor ID (VID) of the types of device to open. </td></tr>
+    <tr><td class="paramname">product_id</td><td>The Product ID (PID) of the types of device to open. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>a pointer to a linked list of type <a class="el" href="struct_s_d_l__hid__device__info.html" title="hidapi info structure">SDL_hid_device_info</a>, containing information about the HID devices attached to the system, or NULL in the case of failure. Free this linked list by calling <a class="el" href="#af2f46b6c5b92e35724b2bd3116e2eb1e" title="Free an enumeration Linked List">SDL_hid_free_enumeration()</a>.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a1d7587010cbd25a9fcf77e26682de356" title="Check to see if devices may have been added or removed.">SDL_hid_device_change_count</a> </dd></dl>
+
+</div>
+</div>
+<a id="a795ed5c8ed4410b5962742d1c92774c9" name="a795ed5c8ed4410b5962742d1c92774c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795ed5c8ed4410b5962742d1c92774c9">&#9670;&#160;</a></span>SDL_hid_exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_exit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finalize the HIDAPI library. </p>
+<p>This function frees all of the static data associated with HIDAPI. It should be called at the end of execution to avoid memory leaks.</p>
+<dl class="section return"><dt>返回</dt><dd>0 on success and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#afab0dc5913a3e90ed4434bd2778fe1bf" title="Initialize the HIDAPI library.">SDL_hid_init</a> </dd></dl>
+
+</div>
+</div>
+<a id="af2f46b6c5b92e35724b2bd3116e2eb1e" name="af2f46b6c5b92e35724b2bd3116e2eb1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2f46b6c5b92e35724b2bd3116e2eb1e">&#9670;&#160;</a></span>SDL_hid_free_enumeration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_free_enumeration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a> *</td>          <td class="paramname"><span class="paramname"><em>devs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Free an enumeration Linked List </p>
+<p>This function frees a linked list created by <a class="el" href="#a5a0a8a98f734167ad2272c0152f51c92" title="Enumerate the HID Devices.">SDL_hid_enumerate()</a>.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devs</td><td>Pointer to a list of struct_device returned from <a class="el" href="#a5a0a8a98f734167ad2272c0152f51c92" title="Enumerate the HID Devices.">SDL_hid_enumerate()</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="ab955370e07dc09c62367ab70d1784793" name="ab955370e07dc09c62367ab70d1784793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab955370e07dc09c62367ab70d1784793">&#9670;&#160;</a></span>SDL_hid_get_feature_report()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_get_feature_report </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a feature report from a HID device. </p>
+<p>Set the first byte of <code>data</code> to the Report ID of the report to be read. Make sure to allow space for this extra byte in <code>data</code>. Upon return, the first byte will still contain the Report ID, and the report data will start in data[1].</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">data</td><td>A buffer to put the read data into, including the Report ID. Set the first byte of <code>data</code> to the Report ID of the report to be read, or set it to zero if your device does not use numbered reports. </td></tr>
+    <tr><td class="paramname">length</td><td>The number of bytes to read, including an extra byte for the report ID. The buffer can be longer than the actual report. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the number of bytes read plus one for the report ID (which is still in the first byte), or -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a8c58e5c7c4ce4920507e316da2ca07ea" name="a8c58e5c7c4ce4920507e316da2ca07ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c58e5c7c4ce4920507e316da2ca07ea">&#9670;&#160;</a></span>SDL_hid_get_indexed_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_get_indexed_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>string_index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">wchar_t *</td>          <td class="paramname"><span class="paramname"><em>string</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxlen</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a string from a HID device, based on its string index. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">string_index</td><td>The index of the string to get. </td></tr>
+    <tr><td class="paramname">string</td><td>A wide string buffer to put the data into. </td></tr>
+    <tr><td class="paramname">maxlen</td><td>The length of the buffer in multiples of wchar_t. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="abc79c19d7d67a361bb39b5ae4704c950" name="abc79c19d7d67a361bb39b5ae4704c950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc79c19d7d67a361bb39b5ae4704c950">&#9670;&#160;</a></span>SDL_hid_get_manufacturer_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_get_manufacturer_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">wchar_t *</td>          <td class="paramname"><span class="paramname"><em>string</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxlen</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get The Manufacturer String from a HID device. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">string</td><td>A wide string buffer to put the data into. </td></tr>
+    <tr><td class="paramname">maxlen</td><td>The length of the buffer in multiples of wchar_t. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="abfc7382b9200805fea25b4483a3cb224" name="abfc7382b9200805fea25b4483a3cb224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc7382b9200805fea25b4483a3cb224">&#9670;&#160;</a></span>SDL_hid_get_product_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_get_product_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">wchar_t *</td>          <td class="paramname"><span class="paramname"><em>string</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxlen</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get The Product String from a HID device. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">string</td><td>A wide string buffer to put the data into. </td></tr>
+    <tr><td class="paramname">maxlen</td><td>The length of the buffer in multiples of wchar_t. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a06110655bc7e7c8a3a8e1d43a5af998b" name="a06110655bc7e7c8a3a8e1d43a5af998b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06110655bc7e7c8a3a8e1d43a5af998b">&#9670;&#160;</a></span>SDL_hid_get_serial_number_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_get_serial_number_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">wchar_t *</td>          <td class="paramname"><span class="paramname"><em>string</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxlen</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get The Serial Number String from a HID device. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">string</td><td>A wide string buffer to put the data into. </td></tr>
+    <tr><td class="paramname">maxlen</td><td>The length of the buffer in multiples of wchar_t. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="afab0dc5913a3e90ed4434bd2778fe1bf" name="afab0dc5913a3e90ed4434bd2778fe1bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afab0dc5913a3e90ed4434bd2778fe1bf">&#9670;&#160;</a></span>SDL_hid_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize the HIDAPI library. </p>
+<p>This function initializes the HIDAPI library. Calling it is not strictly necessary, as it will be called automatically by <a class="el" href="#a5a0a8a98f734167ad2272c0152f51c92" title="Enumerate the HID Devices.">SDL_hid_enumerate()</a> and any of the SDL_hid_open_*() functions if it is needed. This function should be called at the beginning of execution however, if there is a chance of HIDAPI handles being opened by different threads simultaneously.</p>
+<p>Each call to this function should have a matching call to <a class="el" href="#a795ed5c8ed4410b5962742d1c92774c9" title="Finalize the HIDAPI library.">SDL_hid_exit()</a></p>
+<dl class="section return"><dt>返回</dt><dd>0 on success and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a795ed5c8ed4410b5962742d1c92774c9" title="Finalize the HIDAPI library.">SDL_hid_exit</a> </dd></dl>
+
+</div>
+</div>
+<a id="ae44777e4b49c6f9887a3d892102bd491" name="ae44777e4b49c6f9887a3d892102bd491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae44777e4b49c6f9887a3d892102bd491">&#9670;&#160;</a></span>SDL_hid_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_open </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short</td>          <td class="paramname"><span class="paramname"><em>vendor_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short</td>          <td class="paramname"><span class="paramname"><em>product_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> wchar_t *</td>          <td class="paramname"><span class="paramname"><em>serial_number</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number. </p>
+<p>If <code>serial_number</code> is NULL, the first device with the specified VID and PID is opened.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vendor_id</td><td>The Vendor ID (VID) of the device to open. </td></tr>
+    <tr><td class="paramname">product_id</td><td>The Product ID (PID) of the device to open. </td></tr>
+    <tr><td class="paramname">serial_number</td><td>The Serial Number of the device to open (Optionally NULL). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>a pointer to a <a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85" title="opaque hidapi structure">SDL_hid_device</a> object on success or NULL on failure.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a8c16ac973dc4dee19687484f97e5bc79" name="a8c16ac973dc4dee19687484f97e5bc79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c16ac973dc4dee19687484f97e5bc79">&#9670;&#160;</a></span>SDL_hid_open_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_open_path </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bExclusive</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open a HID device by its path name. </p>
+<p>The path name be determined by calling <a class="el" href="#a5a0a8a98f734167ad2272c0152f51c92" title="Enumerate the HID Devices.">SDL_hid_enumerate()</a>, or a platform-specific path name can be used (eg: /dev/hidraw0 on Linux).</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path name of the device to open </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>a pointer to a <a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85" title="opaque hidapi structure">SDL_hid_device</a> object on success or NULL on failure.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a6f41a95bea290df5a73b97e4bf5212a0" name="a6f41a95bea290df5a73b97e4bf5212a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f41a95bea290df5a73b97e4bf5212a0">&#9670;&#160;</a></span>SDL_hid_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read an Input report from a HID device. </p>
+<p>Input reports are returned to the host through the INTERRUPT IN endpoint. The first byte will contain the Report number if the device uses numbered reports.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">data</td><td>A buffer to put the read data into. </td></tr>
+    <tr><td class="paramname">length</td><td>The number of bytes to read. For devices with multiple reports, make sure to read an extra byte for the report number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the actual number of bytes read and -1 on error. If no packet was available to be read and the handle is in non-blocking mode, this function returns 0.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a2aa5d9a34cd1200e566d4ec47fc5dc5f" name="a2aa5d9a34cd1200e566d4ec47fc5dc5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aa5d9a34cd1200e566d4ec47fc5dc5f">&#9670;&#160;</a></span>SDL_hid_read_timeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_read_timeout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>milliseconds</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read an Input report from a HID device with timeout. </p>
+<p>Input reports are returned to the host through the INTERRUPT IN endpoint. The first byte will contain the Report number if the device uses numbered reports.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">data</td><td>A buffer to put the read data into. </td></tr>
+    <tr><td class="paramname">length</td><td>The number of bytes to read. For devices with multiple reports, make sure to read an extra byte for the report number. </td></tr>
+    <tr><td class="paramname">milliseconds</td><td>timeout in milliseconds or -1 for blocking wait. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the actual number of bytes read and -1 on error. If no packet was available to be read within the timeout period, this function returns 0.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a5349c62d24338025552c6f244956699f" name="a5349c62d24338025552c6f244956699f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5349c62d24338025552c6f244956699f">&#9670;&#160;</a></span>SDL_hid_send_feature_report()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_send_feature_report </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Send a Feature report to the device. </p>
+<p>Feature reports are sent over the Control endpoint as a Set_Report transfer. The first byte of <code>data</code> must contain the Report ID. For devices which only support a single report, this must be set to 0<a class="el" href="_s_d_l__opengl__glext_8h.html#a98ac434677655cc8438bb72de2719f39">x0</a>. The remaining bytes contain the report data. Since the Report ID is mandatory, calls to <a class="el" href="#a5349c62d24338025552c6f244956699f" title="Send a Feature report to the device.">SDL_hid_send_feature_report()</a> will always contain one more byte than the report contains. For example, if a hid report is 16 bytes long, 17 bytes must be passed to <a class="el" href="#a5349c62d24338025552c6f244956699f" title="Send a Feature report to the device.">SDL_hid_send_feature_report()</a>: the Report ID (or 0<a class="el" href="_s_d_l__opengl__glext_8h.html#a98ac434677655cc8438bb72de2719f39">x0</a>, for devices which do not use numbered reports), followed by the report data (16 bytes). In this example, the length passed in would be 17.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">data</td><td>The data to send, including the report number as the first byte. </td></tr>
+    <tr><td class="paramname">length</td><td>The length in bytes of the data to send, including the report number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the actual number of bytes written and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a1f66ac734a1786884cb4f2b6309a60e7" name="a1f66ac734a1786884cb4f2b6309a60e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f66ac734a1786884cb4f2b6309a60e7">&#9670;&#160;</a></span>SDL_hid_set_nonblocking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_set_nonblocking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nonblock</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the device handle to be non-blocking. </p>
+<p>In non-blocking mode calls to <a class="el" href="#a6f41a95bea290df5a73b97e4bf5212a0" title="Read an Input report from a HID device.">SDL_hid_read()</a> will return immediately with a value of 0 if there is no data to be read. In blocking mode, <a class="el" href="#a6f41a95bea290df5a73b97e4bf5212a0" title="Read an Input report from a HID device.">SDL_hid_read()</a> will wait (block) until there is data to read before returning.</p>
+<p>Nonblocking can be turned on and off at any time.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">nonblock</td><td>enable or not the nonblocking reads - 1 to enable nonblocking - 0 to disable nonblocking. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+<a id="a6f20cc83879d21bad4306f540475dd8f" name="a6f20cc83879d21bad4306f540475dd8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f20cc83879d21bad4306f540475dd8f">&#9670;&#160;</a></span>SDL_hid_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_hid_write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write an Output report to a HID device. </p>
+<p>The first byte of <code>data</code> must contain the Report ID. For devices which only support a single report, this must be set to 0<a class="el" href="_s_d_l__opengl__glext_8h.html#a98ac434677655cc8438bb72de2719f39">x0</a>. The remaining bytes contain the report data. Since the Report ID is mandatory, calls to <a class="el" href="#a6f20cc83879d21bad4306f540475dd8f" title="Write an Output report to a HID device.">SDL_hid_write()</a> will always contain one more byte than the report contains. For example, if a hid report is 16 bytes long, 17 bytes must be passed to <a class="el" href="#a6f20cc83879d21bad4306f540475dd8f" title="Write an Output report to a HID device.">SDL_hid_write()</a>, the Report ID (or 0<a class="el" href="_s_d_l__opengl__glext_8h.html#a98ac434677655cc8438bb72de2719f39">x0</a>, for devices with a single report), followed by the report data (16 bytes). In this example, the length passed in would be 17.</p>
+<p><a class="el" href="#a6f20cc83879d21bad4306f540475dd8f" title="Write an Output report to a HID device.">SDL_hid_write()</a> will send the data on the first OUT endpoint, if one exists. If it does not, it will send the data through the Control Endpoint (Endpoint 0).</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dev</td><td>A device handle returned from <a class="el" href="#ae44777e4b49c6f9887a3d892102bd491" title="Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.">SDL_hid_open()</a>. </td></tr>
+    <tr><td class="paramname">data</td><td>The data to send, including the report number as the first byte. </td></tr>
+    <tr><td class="paramname">length</td><td>The length in bytes of the data to send. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the actual number of bytes written and -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.18. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__hidapi_8h.html">SDL_hidapi.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

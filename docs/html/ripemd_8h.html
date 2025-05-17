@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ripemd.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('ripemd_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">ripemd.h 文件参考<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__crypto.html">Crypto and Hashing</a> &raquo; <a class="el" href="group__lavu__hash.html">Hash Functions</a> &raquo; <a class="el" href="group__lavu__ripemd.html">RIPEMD</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Public header for RIPEMD hash function implementation.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="attributes_8h_source.html">attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h_source.html">version.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ripemd.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ripemd_8h__incl.png" border="0" usemap="#aripemd_8h" alt=""/></div>
+<map name="aripemd_8h" id="aripemd_8h">
+<area shape="rect" title="Public header for RIPEMD hash function implementation." alt="" coords="102,5,173,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,70,107"/>
+<area shape="poly" title=" " alt="" coords="122,35,69,73,66,68,119,30"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="94,80,181,107"/>
+<area shape="poly" title=" " alt="" coords="140,33,140,64,135,64,135,33"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="204,80,279,107"/>
+<area shape="poly" title=" " alt="" coords="157,30,213,69,210,73,154,35"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="204,155,279,181"/>
+<area shape="poly" title=" " alt="" coords="244,107,244,139,239,139,239,107"/>
+</map>
+</div>
+</div>
+<p><a href="ripemd_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gace81c9f726f8dc8fed0cae3588b3ff24" id="r_gace81c9f726f8dc8fed0cae3588b3ff24"><td class="memItemLeft" align="right" valign="top">struct AVRIPEMD *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__ripemd.html#gace81c9f726f8dc8fed0cae3588b3ff24">av_ripemd_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gace81c9f726f8dc8fed0cae3588b3ff24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an AVRIPEMD context.  <br /></td></tr>
+<tr class="separator:gace81c9f726f8dc8fed0cae3588b3ff24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4629925d978ee6975daecfad6921b799" id="r_ga4629925d978ee6975daecfad6921b799"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__ripemd.html#ga4629925d978ee6975daecfad6921b799">av_ripemd_init</a> (struct AVRIPEMD *<a class="el" href="classcontext.html">context</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a8dc2cc80c52413d48ac45732e90d3a66">bits</a>)</td></tr>
+<tr class="memdesc:ga4629925d978ee6975daecfad6921b799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize RIPEMD hashing.  <br /></td></tr>
+<tr class="separator:ga4629925d978ee6975daecfad6921b799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a87a9fe45d426f9ecfcfeb2eedf93ec" id="r_ga7a87a9fe45d426f9ecfcfeb2eedf93ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__ripemd.html#ga7a87a9fe45d426f9ecfcfeb2eedf93ec">av_ripemd_update</a> (struct AVRIPEMD *<a class="el" href="classcontext.html">context</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, unsigned int <a class="el" href="_s_d_l__opengl__glext_8h.html#a652168017ea9a8bbcead03d5c16269fb">len</a>)</td></tr>
+<tr class="memdesc:ga7a87a9fe45d426f9ecfcfeb2eedf93ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update hash value.  <br /></td></tr>
+<tr class="separator:ga7a87a9fe45d426f9ecfcfeb2eedf93ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10a142f6a13c54e0b12e29eb6bcd75be" id="r_ga10a142f6a13c54e0b12e29eb6bcd75be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__ripemd.html#ga10a142f6a13c54e0b12e29eb6bcd75be">av_ripemd_final</a> (struct AVRIPEMD *<a class="el" href="classcontext.html">context</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *digest)</td></tr>
+<tr class="memdesc:ga10a142f6a13c54e0b12e29eb6bcd75be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish hashing and output digest value.  <br /></td></tr>
+<tr class="separator:ga10a142f6a13c54e0b12e29eb6bcd75be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:gad5e60759f7ece82caf50ea4e8623649c" id="r_gad5e60759f7ece82caf50ea4e8623649c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__ripemd.html#gad5e60759f7ece82caf50ea4e8623649c">av_ripemd_size</a></td></tr>
+<tr class="separator:gad5e60759f7ece82caf50ea4e8623649c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Public header for RIPEMD hash function implementation. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="ripemd_8h.html">ripemd.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

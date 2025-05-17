@@ -1,0 +1,963 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Demuxing</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavf__decoding.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Demuxing<div class="ingroups"><a class="el" href="group__libavf.html">libavformat</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Demuxers read a media file and split it into chunks of data (<em>packets</em>).  
+<a href="#details">更多...</a></p>
+<div class="dynheader">
+Demuxing 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavf__decoding.png" border="0" usemap="#agroup____lavf____decoding" alt=""/></div>
+<map name="agroup____lavf____decoding" id="agroup____lavf____decoding">
+<area shape="rect" title="Demuxers read a media file and split it into chunks of data (packets)." alt="" coords="139,5,219,32"/>
+<area shape="rect" href="group__libavf.html" title="I/O and Muxing/Demuxing Library" alt="" coords="5,5,91,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:gaac37282bf7806f242e2d593c3dea3c9f" id="r_gaac37282bf7806f242e2d593c3dea3c9f"><td class="memItemLeft" align="right" valign="top">typedef struct AVInputFormat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaac37282bf7806f242e2d593c3dea3c9f">AVInputFormat</a></td></tr>
+<tr class="separator:gaac37282bf7806f242e2d593c3dea3c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gabd585fcba8577daccaa5129b6a4ead1a" id="r_gabd585fcba8577daccaa5129b6a4ead1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabd585fcba8577daccaa5129b6a4ead1a">av_find_input_format</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *short_name)</td></tr>
+<tr class="memdesc:gabd585fcba8577daccaa5129b6a4ead1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find <a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> based on the short name of the input format.  <br /></td></tr>
+<tr class="separator:gabd585fcba8577daccaa5129b6a4ead1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf84ca3bbf3a4a7d1b04945edf0ff624a" id="r_gaf84ca3bbf3a4a7d1b04945edf0ff624a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf84ca3bbf3a4a7d1b04945edf0ff624a">av_probe_input_format</a> (<a class="el" href="struct_a_v_probe_data.html">AVProbeData</a> *pd, int is_opened)</td></tr>
+<tr class="memdesc:gaf84ca3bbf3a4a7d1b04945edf0ff624a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guess the file format.  <br /></td></tr>
+<tr class="separator:gaf84ca3bbf3a4a7d1b04945edf0ff624a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f37ef10c0bc8e17f973bc71515be707" id="r_ga4f37ef10c0bc8e17f973bc71515be707"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4f37ef10c0bc8e17f973bc71515be707">av_probe_input_format2</a> (<a class="el" href="struct_a_v_probe_data.html">AVProbeData</a> *pd, int is_opened, int *score_max)</td></tr>
+<tr class="memdesc:ga4f37ef10c0bc8e17f973bc71515be707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guess the file format.  <br /></td></tr>
+<tr class="separator:ga4f37ef10c0bc8e17f973bc71515be707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga339ebf8ce09fe69bf171030861b19dfe" id="r_ga339ebf8ce09fe69bf171030861b19dfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga339ebf8ce09fe69bf171030861b19dfe">av_probe_input_format3</a> (<a class="el" href="struct_a_v_probe_data.html">AVProbeData</a> *pd, int is_opened, int *score_ret)</td></tr>
+<tr class="memdesc:ga339ebf8ce09fe69bf171030861b19dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guess the file format.  <br /></td></tr>
+<tr class="separator:ga339ebf8ce09fe69bf171030861b19dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafba896fafa5947fefeb47360f0bb0237" id="r_gafba896fafa5947fefeb47360f0bb0237"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafba896fafa5947fefeb47360f0bb0237">av_probe_input_buffer2</a> (<a class="el" href="struct_a_v_i_o_context.html">AVIOContext</a> *pb, <a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> **fmt, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *url, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *logctx, unsigned int <a class="el" href="_s_d_l__opengl__glext_8h.html#a2003032e3d6cfe0acd020119b0204242">offset</a>, unsigned int max_probe_size)</td></tr>
+<tr class="memdesc:gafba896fafa5947fefeb47360f0bb0237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probe a bytestream to determine the input format.  <br /></td></tr>
+<tr class="separator:gafba896fafa5947fefeb47360f0bb0237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85cab6fb4038a82d90b4adea8c253943" id="r_ga85cab6fb4038a82d90b4adea8c253943"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga85cab6fb4038a82d90b4adea8c253943">av_probe_input_buffer</a> (<a class="el" href="struct_a_v_i_o_context.html">AVIOContext</a> *pb, <a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> **fmt, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *url, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *logctx, unsigned int <a class="el" href="_s_d_l__opengl__glext_8h.html#a2003032e3d6cfe0acd020119b0204242">offset</a>, unsigned int max_probe_size)</td></tr>
+<tr class="memdesc:ga85cab6fb4038a82d90b4adea8c253943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="#gafba896fafa5947fefeb47360f0bb0237" title="Probe a bytestream to determine the input format.">av_probe_input_buffer2()</a> but returns 0 on success  <br /></td></tr>
+<tr class="separator:ga85cab6fb4038a82d90b4adea8c253943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31d601155e9035d5b0e7efedc894ee49" id="r_ga31d601155e9035d5b0e7efedc894ee49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga31d601155e9035d5b0e7efedc894ee49">avformat_open_input</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> **ps, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *url, <a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *fmt, <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **options)</td></tr>
+<tr class="memdesc:ga31d601155e9035d5b0e7efedc894ee49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an input stream and read the header.  <br /></td></tr>
+<tr class="separator:ga31d601155e9035d5b0e7efedc894ee49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga71091e146791c4d181635485447c2830" id="r_ga71091e146791c4d181635485447c2830"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga71091e146791c4d181635485447c2830">av_demuxer_open</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *ic)</td></tr>
+<tr class="separator:ga71091e146791c4d181635485447c2830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad42172e27cddafb81096939783b157bb" id="r_gad42172e27cddafb81096939783b157bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad42172e27cddafb81096939783b157bb">avformat_find_stream_info</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *ic, <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **options)</td></tr>
+<tr class="memdesc:gad42172e27cddafb81096939783b157bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read packets of a media file to get stream information.  <br /></td></tr>
+<tr class="separator:gad42172e27cddafb81096939783b157bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12a852a3717288d9eb41612315be9e6a" id="r_ga12a852a3717288d9eb41612315be9e6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_program.html">AVProgram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12a852a3717288d9eb41612315be9e6a">av_find_program_from_stream</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *ic, <a class="el" href="struct_a_v_program.html">AVProgram</a> *last, int <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:ga12a852a3717288d9eb41612315be9e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the programs which belong to a given stream.  <br /></td></tr>
+<tr class="separator:ga12a852a3717288d9eb41612315be9e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa59b7800da8ec11457c1e5b3fc295a20" id="r_gaa59b7800da8ec11457c1e5b3fc295a20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa59b7800da8ec11457c1e5b3fc295a20">av_program_add_stream_index</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *ac, int progid, unsigned int <a class="el" href="_listen_recommend_8cpp.html#ac224fdf2f3f2f3554c76c23f3e6e7002">idx</a>)</td></tr>
+<tr class="separator:gaa59b7800da8ec11457c1e5b3fc295a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6fa468c922ff5c60a6021dcac09aff9" id="r_gaa6fa468c922ff5c60a6021dcac09aff9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa6fa468c922ff5c60a6021dcac09aff9">av_find_best_stream</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *ic, enum <a class="el" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, int wanted_stream_nb, int related_stream, <a class="el" href="struct_a_v_codec.html">AVCodec</a> **decoder_ret, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:gaa6fa468c922ff5c60a6021dcac09aff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the "best" stream in the file.  <br /></td></tr>
+<tr class="separator:gaa6fa468c922ff5c60a6021dcac09aff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fdb3084415a82e3810de6ee60e46a61" id="r_ga4fdb3084415a82e3810de6ee60e46a61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4fdb3084415a82e3810de6ee60e46a61">av_read_frame</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, <a class="el" href="struct_a_v_packet.html">AVPacket</a> *pkt)</td></tr>
+<tr class="memdesc:ga4fdb3084415a82e3810de6ee60e46a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the next frame of a stream.  <br /></td></tr>
+<tr class="separator:ga4fdb3084415a82e3810de6ee60e46a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa23f7619d8d4ea0857065d9979c75ac8" id="r_gaa23f7619d8d4ea0857065d9979c75ac8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa23f7619d8d4ea0857065d9979c75ac8">av_seek_frame</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, int stream_index, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> timestamp, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:gaa23f7619d8d4ea0857065d9979c75ac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seek to the keyframe at timestamp.  <br /></td></tr>
+<tr class="separator:gaa23f7619d8d4ea0857065d9979c75ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b40fc8d2fda6992ae6ea2567d71ba30" id="r_ga3b40fc8d2fda6992ae6ea2567d71ba30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3b40fc8d2fda6992ae6ea2567d71ba30">avformat_seek_file</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, int stream_index, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> min_ts, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> ts, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> max_ts, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:ga3b40fc8d2fda6992ae6ea2567d71ba30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seek to timestamp ts.  <br /></td></tr>
+<tr class="separator:ga3b40fc8d2fda6992ae6ea2567d71ba30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa03a82c5fd4fe3af312d229ca94cd6f3" id="r_gaa03a82c5fd4fe3af312d229ca94cd6f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa03a82c5fd4fe3af312d229ca94cd6f3">avformat_flush</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:gaa03a82c5fd4fe3af312d229ca94cd6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discard all internally buffered data.  <br /></td></tr>
+<tr class="separator:gaa03a82c5fd4fe3af312d229ca94cd6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7494bb63a59e79e9fe88eb1682d4d7b3" id="r_ga7494bb63a59e79e9fe88eb1682d4d7b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7494bb63a59e79e9fe88eb1682d4d7b3">av_read_play</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:ga7494bb63a59e79e9fe88eb1682d4d7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start playing a network-based stream (e.g.  <br /></td></tr>
+<tr class="separator:ga7494bb63a59e79e9fe88eb1682d4d7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27db687592d99f25ccf81a3b3ee8da9c" id="r_ga27db687592d99f25ccf81a3b3ee8da9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga27db687592d99f25ccf81a3b3ee8da9c">av_read_pause</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:ga27db687592d99f25ccf81a3b3ee8da9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause a network-based stream (e.g.  <br /></td></tr>
+<tr class="separator:ga27db687592d99f25ccf81a3b3ee8da9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae804b99aec044690162b8b9b110236a4" id="r_gae804b99aec044690162b8b9b110236a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae804b99aec044690162b8b9b110236a4">avformat_close_input</a> (<a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> **<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:gae804b99aec044690162b8b9b110236a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close an opened input <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a>.  <br /></td></tr>
+<tr class="separator:gae804b99aec044690162b8b9b110236a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>Demuxers read a media file and split it into chunks of data (<em>packets</em>). </p>
+<p>A <a class="el" href="struct_a_v_packet.html">packet</a> contains one or more encoded frames which belongs to a single elementary stream. In the lavf API this process is represented by the <a class="el" href="#ga31d601155e9035d5b0e7efedc894ee49" title="Open an input stream and read the header.">avformat_open_input()</a> function for opening a file, <a class="el" href="#ga4fdb3084415a82e3810de6ee60e46a61" title="Return the next frame of a stream.">av_read_frame()</a> for reading a single packet and finally <a class="el" href="#gae804b99aec044690162b8b9b110236a4" title="Close an opened input AVFormatContext.">avformat_close_input()</a>, which does the cleanup.</p>
+<h1><a class="anchor" id="lavf_decoding_open"></a>
+Opening a media file</h1>
+<p>The minimum information required to open a file is its URL, which is passed to <a class="el" href="#ga31d601155e9035d5b0e7efedc894ee49" title="Open an input stream and read the header.">avformat_open_input()</a>, as in the following code: </p><div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>    *url = <span class="stringliteral">&quot;file:in.mp3&quot;</span>;</div>
+<div class="line"><a class="code hl_struct" href="struct_a_v_format_context.html">AVFormatContext</a> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a> = <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><span class="keywordtype">int</span> ret = <a class="code hl_function" href="#ga31d601155e9035d5b0e7efedc894ee49">avformat_open_input</a>(&amp;<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, url, <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><span class="keywordflow">if</span> (ret &lt; 0)</div>
+<div class="line">    abort();</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_ad585a1393cfa368fa9dc3d8ebff640d5"><div class="ttname"><a href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></div><div class="ttdeci">GLdouble s</div><div class="ttdef"><b>定义</b> SDL_opengl.h:2063</div></div>
+<div class="ttc" id="abegin__code_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>定义</b> begin_code.h:165</div></div>
+<div class="ttc" id="agroup__lavf__decoding_html_ga31d601155e9035d5b0e7efedc894ee49"><div class="ttname"><a href="#ga31d601155e9035d5b0e7efedc894ee49">avformat_open_input</a></div><div class="ttdeci">int avformat_open_input(AVFormatContext **ps, const char *url, AVInputFormat *fmt, AVDictionary **options)</div><div class="ttdoc">Open an input stream and read the header.</div></div>
+<div class="ttc" id="astruct_a_v_format_context_html"><div class="ttname"><a href="struct_a_v_format_context.html">AVFormatContext</a></div><div class="ttdoc">Format I/O context.</div><div class="ttdef"><b>定义</b> avformat.h:1326</div></div>
+</div><!-- fragment --><p> The above code attempts to allocate an <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a>, open the specified file (autodetecting the format) and read the header, exporting the information stored there into s. Some formats do not have a header or do not store enough information there, so it is recommended that you call the <a class="el" href="#gad42172e27cddafb81096939783b157bb" title="Read packets of a media file to get stream information.">avformat_find_stream_info()</a> function which tries to read and decode a few frames to find missing information.</p>
+<p>In some cases you might want to preallocate an <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> yourself with <a class="el" href="group__lavf__core.html#gab000638c284e97ad0be2bdb11ce33c36" title="Allocate an AVFormatContext.">avformat_alloc_context()</a> and do some tweaking on it before passing it to <a class="el" href="#ga31d601155e9035d5b0e7efedc894ee49" title="Open an input stream and read the header.">avformat_open_input()</a>. One such case is when you want to use custom functions for reading input data instead of lavf internal I/O layer. To do that, create your own <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a> with <a class="el" href="avio_8h.html#a2e973f64b35366432c6c6b50be744cb2" title="Allocate and initialize an AVIOContext for buffered I/O.">avio_alloc_context()</a>, passing your reading callbacks to it. Then set the <em>pb</em> field of your <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> to newly created <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a>.</p>
+<p>Since the format of the opened file is in general not known until after <a class="el" href="#ga31d601155e9035d5b0e7efedc894ee49" title="Open an input stream and read the header.">avformat_open_input()</a> has returned, it is not possible to set demuxer private options on a preallocated context. Instead, the options should be passed to <a class="el" href="#ga31d601155e9035d5b0e7efedc894ee49" title="Open an input stream and read the header.">avformat_open_input()</a> wrapped in an <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a>: </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> *options = <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a class="code hl_function" href="group__lavu__dict.html#ga8d9c2de72b310cef8e6a28c9cd3acbbe">av_dict_set</a>(&amp;options, <span class="stringliteral">&quot;video_size&quot;</span>, <span class="stringliteral">&quot;640x480&quot;</span>, 0);</div>
+<div class="line"><a class="code hl_function" href="group__lavu__dict.html#ga8d9c2de72b310cef8e6a28c9cd3acbbe">av_dict_set</a>(&amp;options, <span class="stringliteral">&quot;pixel_format&quot;</span>, <span class="stringliteral">&quot;rgb24&quot;</span>, 0);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="#ga31d601155e9035d5b0e7efedc894ee49">avformat_open_input</a>(&amp;<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, url, <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, &amp;options) &lt; 0)</div>
+<div class="line">    abort();</div>
+<div class="line"><a class="code hl_function" href="group__lavu__dict.html#ga1bafd682b1fbb90e48a4cc3814b820f7">av_dict_free</a>(&amp;options);</div>
+<div class="ttc" id="agroup__lavu__dict_html_ga1bafd682b1fbb90e48a4cc3814b820f7"><div class="ttname"><a href="group__lavu__dict.html#ga1bafd682b1fbb90e48a4cc3814b820f7">av_dict_free</a></div><div class="ttdeci">void av_dict_free(AVDictionary **m)</div><div class="ttdoc">Free all the memory allocated for an AVDictionary struct and all keys and values.</div></div>
+<div class="ttc" id="agroup__lavu__dict_html_ga1d7cc0833bee918994a600556410315f"><div class="ttname"><a href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a></div><div class="ttdeci">struct AVDictionary AVDictionary</div><div class="ttdef"><b>定义</b> dict.h:86</div></div>
+<div class="ttc" id="agroup__lavu__dict_html_ga8d9c2de72b310cef8e6a28c9cd3acbbe"><div class="ttname"><a href="group__lavu__dict.html#ga8d9c2de72b310cef8e6a28c9cd3acbbe">av_dict_set</a></div><div class="ttdeci">int av_dict_set(AVDictionary **pm, const char *key, const char *value, int flags)</div><div class="ttdoc">Set the given entry in *pm, overwriting an existing entry.</div></div>
+</div><!-- fragment --><p> This code passes the private options 'video_size' and 'pixel_format' to the demuxer. They would be necessary for e.g. the rawvideo demuxer, since it cannot know how to interpret raw video data otherwise. If the format turns out to be something different than raw video, those options will not be recognized by the demuxer and therefore will not be applied. Such unrecognized options are then returned in the options dictionary (recognized options are consumed). The calling program can handle such unrecognized options as it wishes, e.g. </p><div class="fragment"><div class="line"><a class="code hl_struct" href="struct_a_v_dictionary_entry.html">AVDictionaryEntry</a> *e;</div>
+<div class="line"><span class="keywordflow">if</span> (e = <a class="code hl_function" href="group__lavu__dict.html#ga246f5c0ff557f9585bbc8c36efb57537">av_dict_get</a>(options, <span class="stringliteral">&quot;&quot;</span>, <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <a class="code hl_define" href="group__lavu__dict.html#ga341bbd1ea599dfb0510f419e5272fecc">AV_DICT_IGNORE_SUFFIX</a>)) {</div>
+<div class="line">    <a class="code hl_function" href="printf_8h.html#a9f315126362cae9675de1642105e631e">fprintf</a>(stderr, <span class="stringliteral">&quot;Option %s not recognized by the demuxer.\n&quot;</span>, e-&gt;<a class="code hl_variable" href="struct_a_v_dictionary_entry.html#a5892a9181e6a332f84d27aecd41dcd12">key</a>);</div>
+<div class="line">    abort();</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__lavu__dict_html_ga246f5c0ff557f9585bbc8c36efb57537"><div class="ttname"><a href="group__lavu__dict.html#ga246f5c0ff557f9585bbc8c36efb57537">av_dict_get</a></div><div class="ttdeci">AVDictionaryEntry * av_dict_get(const AVDictionary *m, const char *key, const AVDictionaryEntry *prev, int flags)</div><div class="ttdoc">Get a dictionary entry with matching key.</div></div>
+<div class="ttc" id="agroup__lavu__dict_html_ga341bbd1ea599dfb0510f419e5272fecc"><div class="ttname"><a href="group__lavu__dict.html#ga341bbd1ea599dfb0510f419e5272fecc">AV_DICT_IGNORE_SUFFIX</a></div><div class="ttdeci">#define AV_DICT_IGNORE_SUFFIX</div><div class="ttdoc">Return first entry in a dictionary whose first part corresponds to the search key,...</div><div class="ttdef"><b>定义</b> dict.h:70</div></div>
+<div class="ttc" id="aprintf_8h_html_a9f315126362cae9675de1642105e631e"><div class="ttname"><a href="printf_8h.html#a9f315126362cae9675de1642105e631e">fprintf</a></div><div class="ttdeci">auto fprintf(std::FILE *f, const S &amp;fmt, const T &amp;... args) -&gt; int</div><div class="ttdoc">Formats args according to specifications in fmt and writes the output to f.</div><div class="ttdef"><b>定义</b> printf.h:600</div></div>
+<div class="ttc" id="astruct_a_v_dictionary_entry_html"><div class="ttname"><a href="struct_a_v_dictionary_entry.html">AVDictionaryEntry</a></div><div class="ttdef"><b>定义</b> dict.h:81</div></div>
+<div class="ttc" id="astruct_a_v_dictionary_entry_html_a5892a9181e6a332f84d27aecd41dcd12"><div class="ttname"><a href="struct_a_v_dictionary_entry.html#a5892a9181e6a332f84d27aecd41dcd12">AVDictionaryEntry::key</a></div><div class="ttdeci">char * key</div><div class="ttdef"><b>定义</b> dict.h:82</div></div>
+</div><!-- fragment --><p>After you have finished reading the file, you must close it with <a class="el" href="#gae804b99aec044690162b8b9b110236a4" title="Close an opened input AVFormatContext.">avformat_close_input()</a>. It will free everything associated with the file.</p>
+<h1><a class="anchor" id="lavf_decoding_read"></a>
+Reading from an opened file</h1>
+<p>Reading data from an opened <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> is done by repeatedly calling <a class="el" href="#ga4fdb3084415a82e3810de6ee60e46a61" title="Return the next frame of a stream.">av_read_frame()</a> on it. Each call, if successful, will return an <a class="el" href="struct_a_v_packet.html" title="This structure stores compressed data.">AVPacket</a> containing encoded data for one <a class="el" href="struct_a_v_stream.html" title="Stream structure.">AVStream</a>, identified by <a class="el" href="struct_a_v_packet.html#a6953d2efcf7904694f0509cf81474a79">AVPacket.stream_index</a>. This packet may be passed straight into the libavcodec decoding functions <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a> or <a class="el" href="group__lavc__decoding.html#ga47db1b7f294b9f92684401b9c66a7c4b" title="Decode a subtitle message.">avcodec_decode_subtitle2()</a> if the caller wishes to decode the data.</p>
+<p><a class="el" href="struct_a_v_packet.html#a4fbb704fb96c36a78a36eee010306ce7" title="Presentation timestamp in AVStream-&gt;time_base units; the time at which the decompressed packet will b...">AVPacket.pts</a>, <a class="el" href="struct_a_v_packet.html#ad7dbf019e355cde33530d8d9ecc62994" title="Decompression timestamp in AVStream-&gt;time_base units; the time at which the packet is decompressed.">AVPacket.dts</a> and <a class="el" href="struct_a_v_packet.html#a1f342e4e3615abc9314684ce6b4819c0" title="Duration of this packet in AVStream-&gt;time_base units, 0 if unknown.">AVPacket.duration</a> timing information will be set if known. They may also be unset (i.e. AV_NOPTS_VALUE for pts/dts, 0 for duration) if the stream does not provide them. The timing information will be in <a class="el" href="struct_a_v_stream.html#aebb7c637a743f4065777b04865423e91" title="This is the fundamental unit of time (in seconds) in terms of which frame timestamps are represented.">AVStream.time_base</a> units, i.e. it has to be multiplied by the timebase to convert them to seconds.</p>
+<p>If <a class="el" href="struct_a_v_packet.html#a39b7ce6b6e08dac1637a31a8e0ee92d5" title="A reference to the reference-counted buffer where the packet data is stored.">AVPacket.buf</a> is set on the returned packet, then the packet is allocated dynamically and the user may keep it indefinitely. Otherwise, if <a class="el" href="struct_a_v_packet.html#a39b7ce6b6e08dac1637a31a8e0ee92d5" title="A reference to the reference-counted buffer where the packet data is stored.">AVPacket.buf</a> is NULL, the packet data is backed by a static storage somewhere inside the demuxer and the packet is only valid until the next <a class="el" href="#ga4fdb3084415a82e3810de6ee60e46a61" title="Return the next frame of a stream.">av_read_frame()</a> call or closing the file. If the caller requires a longer lifetime, <a class="el" href="group__lavc__packet.html#ga1db4ba29aedddb5da7eebf20a7c3e44b">av_dup_packet()</a> will make an <a class="el" href="group__lavu__mem__funcs.html#gaba88a97429de6874c1a0b64381034b98" title="Allocate a memory block with alignment suitable for all memory accesses (including vectors if availab...">av_malloc()</a>ed copy of it. In both cases, the packet must be freed with <a class="el" href="group__lavc__packet.html#ga63d5a489b419bd5d45cfd09091cbcbc2" title="Wipe the packet.">av_packet_unref()</a> when it is no longer needed.</p>
+<h1><a class="anchor" id="lavf_decoding_seek"></a>
+Seeking</h1>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="gaac37282bf7806f242e2d593c3dea3c9f" name="gaac37282bf7806f242e2d593c3dea3c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaac37282bf7806f242e2d593c3dea3c9f">&#9670;&#160;</a></span>AVInputFormat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVInputFormat AVInputFormat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga71091e146791c4d181635485447c2830" name="ga71091e146791c4d181635485447c2830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga71091e146791c4d181635485447c2830">&#9670;&#160;</a></span>av_demuxer_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int av_demuxer_open </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ic</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa6fa468c922ff5c60a6021dcac09aff9" name="gaa6fa468c922ff5c60a6021dcac09aff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6fa468c922ff5c60a6021dcac09aff9">&#9670;&#160;</a></span>av_find_best_stream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_find_best_stream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ic</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>wanted_stream_nb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>related_stream</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_codec.html">AVCodec</a> **</td>          <td class="paramname"><span class="paramname"><em>decoder_ret</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the "best" stream in the file. </p>
+<p>The best stream is determined according to various heuristics as the most likely to be what the user expects. If the decoder parameter is non-NULL, av_find_best_stream will find the default decoder for the stream's codec; streams for which no decoder can be found are ignored.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ic</td><td>media file handle </td></tr>
+    <tr><td class="paramname">type</td><td>stream type: video, audio, subtitles, etc. </td></tr>
+    <tr><td class="paramname">wanted_stream_nb</td><td>user-requested stream number, or -1 for automatic selection </td></tr>
+    <tr><td class="paramname">related_stream</td><td>try to find a stream related (eg. in the same program) to this one, or -1 if none </td></tr>
+    <tr><td class="paramname">decoder_ret</td><td>if non-NULL, returns the decoder for the selected stream </td></tr>
+    <tr><td class="paramname">flags</td><td>flags; none are currently defined </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the non-negative stream number in case of success, AVERROR_STREAM_NOT_FOUND if no stream with the requested type could be found, AVERROR_DECODER_NOT_FOUND if streams were found but no decoder </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>If av_find_best_stream returns successfully and decoder_ret is not NULL, then *decoder_ret is guaranteed to be set to a valid <a class="el" href="struct_a_v_codec.html" title="AVCodec.">AVCodec</a>. </dd></dl>
+
+</div>
+</div>
+<a id="gabd585fcba8577daccaa5129b6a4ead1a" name="gabd585fcba8577daccaa5129b6a4ead1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd585fcba8577daccaa5129b6a4ead1a">&#9670;&#160;</a></span>av_find_input_format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> * av_find_input_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>short_name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find <a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> based on the short name of the input format. </p>
+
+</div>
+</div>
+<a id="ga12a852a3717288d9eb41612315be9e6a" name="ga12a852a3717288d9eb41612315be9e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga12a852a3717288d9eb41612315be9e6a">&#9670;&#160;</a></span>av_find_program_from_stream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_program.html">AVProgram</a> * av_find_program_from_stream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ic</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_program.html">AVProgram</a> *</td>          <td class="paramname"><span class="paramname"><em>last</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the programs which belong to a given stream. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ic</td><td>media file handle </td></tr>
+    <tr><td class="paramname">last</td><td>the last found program, the search will start after this program, or from the beginning if it is NULL </td></tr>
+    <tr><td class="paramname">s</td><td>stream index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the next program which belongs to s, NULL if no program is found or the last program is not among the programs of ic. </dd></dl>
+
+</div>
+</div>
+<a id="ga85cab6fb4038a82d90b4adea8c253943" name="ga85cab6fb4038a82d90b4adea8c253943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85cab6fb4038a82d90b4adea8c253943">&#9670;&#160;</a></span>av_probe_input_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_probe_input_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_i_o_context.html">AVIOContext</a> *</td>          <td class="paramname"><span class="paramname"><em>pb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> **</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>logctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>max_probe_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Like <a class="el" href="#gafba896fafa5947fefeb47360f0bb0237" title="Probe a bytestream to determine the input format.">av_probe_input_buffer2()</a> but returns 0 on success </p>
+
+</div>
+</div>
+<a id="gafba896fafa5947fefeb47360f0bb0237" name="gafba896fafa5947fefeb47360f0bb0237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafba896fafa5947fefeb47360f0bb0237">&#9670;&#160;</a></span>av_probe_input_buffer2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_probe_input_buffer2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_i_o_context.html">AVIOContext</a> *</td>          <td class="paramname"><span class="paramname"><em>pb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> **</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>logctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>max_probe_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Probe a bytestream to determine the input format. </p>
+<p>Each time a probe returns with a score that is too low, the probe buffer size is increased and another attempt is made. When the maximum probe size is reached, the input format with the highest score is returned.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pb</td><td>the bytestream to probe </td></tr>
+    <tr><td class="paramname">fmt</td><td>the input format is put here </td></tr>
+    <tr><td class="paramname">url</td><td>the url of the stream </td></tr>
+    <tr><td class="paramname">logctx</td><td>the log context </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset within the bytestream to probe from </td></tr>
+    <tr><td class="paramname">max_probe_size</td><td>the maximum probe buffer size (zero for default) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the score in case of success, a negative value corresponding to an the maximal score is AVPROBE_SCORE_MAX AVERROR code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="gaf84ca3bbf3a4a7d1b04945edf0ff624a" name="gaf84ca3bbf3a4a7d1b04945edf0ff624a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf84ca3bbf3a4a7d1b04945edf0ff624a">&#9670;&#160;</a></span>av_probe_input_format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> * av_probe_input_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_probe_data.html">AVProbeData</a> *</td>          <td class="paramname"><span class="paramname"><em>pd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>is_opened</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guess the file format. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pd</td><td>data to be probed </td></tr>
+    <tr><td class="paramname">is_opened</td><td>Whether the file is already opened; determines whether demuxers with or without AVFMT_NOFILE are probed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4f37ef10c0bc8e17f973bc71515be707" name="ga4f37ef10c0bc8e17f973bc71515be707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f37ef10c0bc8e17f973bc71515be707">&#9670;&#160;</a></span>av_probe_input_format2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> * av_probe_input_format2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_probe_data.html">AVProbeData</a> *</td>          <td class="paramname"><span class="paramname"><em>pd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>is_opened</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>score_max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guess the file format. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pd</td><td>data to be probed </td></tr>
+    <tr><td class="paramname">is_opened</td><td>Whether the file is already opened; determines whether demuxers with or without AVFMT_NOFILE are probed. </td></tr>
+    <tr><td class="paramname">score_max</td><td>A probe score larger that this is required to accept a detection, the variable is set to the actual detection score afterwards. If the score is &lt;= AVPROBE_SCORE_MAX / 4 it is recommended to retry with a larger probe buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga339ebf8ce09fe69bf171030861b19dfe" name="ga339ebf8ce09fe69bf171030861b19dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga339ebf8ce09fe69bf171030861b19dfe">&#9670;&#160;</a></span>av_probe_input_format3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> * av_probe_input_format3 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_probe_data.html">AVProbeData</a> *</td>          <td class="paramname"><span class="paramname"><em>pd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>is_opened</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>score_ret</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guess the file format. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is_opened</td><td>Whether the file is already opened; determines whether demuxers with or without AVFMT_NOFILE are probed. </td></tr>
+    <tr><td class="paramname">score_ret</td><td>The score of the best detection. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa59b7800da8ec11457c1e5b3fc295a20" name="gaa59b7800da8ec11457c1e5b3fc295a20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa59b7800da8ec11457c1e5b3fc295a20">&#9670;&#160;</a></span>av_program_add_stream_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_program_add_stream_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>progid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>idx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4fdb3084415a82e3810de6ee60e46a61" name="ga4fdb3084415a82e3810de6ee60e46a61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4fdb3084415a82e3810de6ee60e46a61">&#9670;&#160;</a></span>av_read_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_read_frame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_packet.html">AVPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>pkt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the next frame of a stream. </p>
+<p>This function returns what is stored in the file, and does not validate that what is there are valid frames for the decoder. It will split what is stored in the file into frames and return one for each call. It will not omit invalid data between valid frames so as to give the decoder the maximum information possible for decoding.</p>
+<p>If pkt-&gt;buf is NULL, then the packet is valid until the next <a class="el" href="#ga4fdb3084415a82e3810de6ee60e46a61" title="Return the next frame of a stream.">av_read_frame()</a> or until <a class="el" href="#gae804b99aec044690162b8b9b110236a4" title="Close an opened input AVFormatContext.">avformat_close_input()</a>. Otherwise the packet is valid indefinitely. In both cases the packet must be freed with av_packet_unref when it is no longer needed. For video, the packet contains exactly one frame. For audio, it contains an integer number of frames if each frame has a known fixed size (e.g. PCM or ADPCM data). If the audio frames have a variable size (e.g. MPEG audio), then it contains one frame.</p>
+<p>pkt-&gt;pts, pkt-&gt;dts and pkt-&gt;duration are always set to correct values in <a class="el" href="struct_a_v_stream.html#aebb7c637a743f4065777b04865423e91" title="This is the fundamental unit of time (in seconds) in terms of which frame timestamps are represented.">AVStream.time_base</a> units (and guessed if the format cannot provide them). pkt-&gt;pts can be AV_NOPTS_VALUE if the video format has B-frames, so it is better to rely on pkt-&gt;dts if you do not decompress the payload.</p>
+<dl class="section return"><dt>返回</dt><dd>0 if OK, &lt; 0 on error or end of file </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavf__decoding_ga4fdb3084415a82e3810de6ee60e46a61_icgraph.png" border="0" usemap="#agroup__lavf__decoding_ga4fdb3084415a82e3810de6ee60e46a61_icgraph" alt=""/></div>
+<map name="agroup__lavf__decoding_ga4fdb3084415a82e3810de6ee60e46a61_icgraph" id="agroup__lavf__decoding_ga4fdb3084415a82e3810de6ee60e46a61_icgraph">
+<area shape="rect" title="Return the next frame of a stream." alt="" coords="171,5,278,32"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="5,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="155,21,123,21,123,16,155,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga27db687592d99f25ccf81a3b3ee8da9c" name="ga27db687592d99f25ccf81a3b3ee8da9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27db687592d99f25ccf81a3b3ee8da9c">&#9670;&#160;</a></span>av_read_pause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_read_pause </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pause a network-based stream (e.g. </p>
+<p>RTSP stream).</p>
+<p>Use <a class="el" href="#ga7494bb63a59e79e9fe88eb1682d4d7b3" title="Start playing a network-based stream (e.g.">av_read_play()</a> to resume it. </p>
+
+</div>
+</div>
+<a id="ga7494bb63a59e79e9fe88eb1682d4d7b3" name="ga7494bb63a59e79e9fe88eb1682d4d7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7494bb63a59e79e9fe88eb1682d4d7b3">&#9670;&#160;</a></span>av_read_play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_read_play </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start playing a network-based stream (e.g. </p>
+<p>RTSP stream) at the current position. </p>
+
+</div>
+</div>
+<a id="gaa23f7619d8d4ea0857065d9979c75ac8" name="gaa23f7619d8d4ea0857065d9979c75ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa23f7619d8d4ea0857065d9979c75ac8">&#9670;&#160;</a></span>av_seek_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_seek_frame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>stream_index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>timestamp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Seek to the keyframe at timestamp. </p>
+<p>'timestamp' in 'stream_index'.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>media file handle </td></tr>
+    <tr><td class="paramname">stream_index</td><td>If stream_index is (-1), a default stream is selected, and timestamp is automatically converted from AV_TIME_BASE units to the stream specific time_base. </td></tr>
+    <tr><td class="paramname">timestamp</td><td>Timestamp in <a class="el" href="struct_a_v_stream.html#aebb7c637a743f4065777b04865423e91" title="This is the fundamental unit of time (in seconds) in terms of which frame timestamps are represented.">AVStream.time_base</a> units or, if no stream is specified, in AV_TIME_BASE units. </td></tr>
+    <tr><td class="paramname">flags</td><td>flags which select direction and seeking mode </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 on success </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavf__decoding_gaa23f7619d8d4ea0857065d9979c75ac8_icgraph.png" border="0" usemap="#agroup__lavf__decoding_gaa23f7619d8d4ea0857065d9979c75ac8_icgraph" alt=""/></div>
+<map name="agroup__lavf__decoding_gaa23f7619d8d4ea0857065d9979c75ac8_icgraph" id="agroup__lavf__decoding_gaa23f7619d8d4ea0857065d9979c75ac8_icgraph">
+<area shape="rect" title="Seek to the keyframe at timestamp." alt="" coords="171,5,281,32"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="5,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="155,21,123,21,123,16,155,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gae804b99aec044690162b8b9b110236a4" name="gae804b99aec044690162b8b9b110236a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae804b99aec044690162b8b9b110236a4">&#9670;&#160;</a></span>avformat_close_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> avformat_close_input </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> **</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close an opened input <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a>. </p>
+<p>Free it and all its contents and set *s to NULL. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavf__decoding_gae804b99aec044690162b8b9b110236a4_icgraph.png" border="0" usemap="#agroup__lavf__decoding_gae804b99aec044690162b8b9b110236a4_icgraph" alt=""/></div>
+<map name="agroup__lavf__decoding_gae804b99aec044690162b8b9b110236a4_icgraph" id="agroup__lavf__decoding_gae804b99aec044690162b8b9b110236a4_icgraph">
+<area shape="rect" title="Close an opened input AVFormatContext." alt="" coords="171,5,316,32"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="5,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="155,21,123,21,123,16,155,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gad42172e27cddafb81096939783b157bb" name="gad42172e27cddafb81096939783b157bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad42172e27cddafb81096939783b157bb">&#9670;&#160;</a></span>avformat_find_stream_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avformat_find_stream_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ic</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **</td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read packets of a media file to get stream information. </p>
+<p>This is useful for file formats with no headers such as MPEG. This function also computes the real framerate in case of MPEG-2 repeat frame mode. The logical file position is not changed by this function; examined packets may be buffered for later processing.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ic</td><td>media file handle </td></tr>
+    <tr><td class="paramname">options</td><td>If non-NULL, an ic.nb_streams long array of pointers to dictionaries, where i-th member contains options for codec corresponding to i-th stream. On return each dictionary will be filled with options that were not found. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;=0 if OK, AVERROR_xxx on error</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>this function isn't guaranteed to open all the codecs, so options being non-empty at return is a perfectly normal behavior.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">待办事项</a></b></dt><dd>Let the user decide somehow what information is needed so that we do not waste time getting stuff the user does not need. </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavf__decoding_gad42172e27cddafb81096939783b157bb_icgraph.png" border="0" usemap="#agroup__lavf__decoding_gad42172e27cddafb81096939783b157bb_icgraph" alt=""/></div>
+<map name="agroup__lavf__decoding_gad42172e27cddafb81096939783b157bb_icgraph" id="agroup__lavf__decoding_gad42172e27cddafb81096939783b157bb_icgraph">
+<area shape="rect" title="Read packets of a media file to get stream information." alt="" coords="171,5,346,32"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="5,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="155,21,123,21,123,16,155,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gaa03a82c5fd4fe3af312d229ca94cd6f3" name="gaa03a82c5fd4fe3af312d229ca94cd6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa03a82c5fd4fe3af312d229ca94cd6f3">&#9670;&#160;</a></span>avformat_flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avformat_flush </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Discard all internally buffered data. </p>
+<p>This can be useful when dealing with discontinuities in the byte stream. Generally works only with formats that can resync. This includes headerless formats like MPEG-TS/TS but should also work with NUT, Ogg and in a limited way AVI for example.</p>
+<p>The set of streams, the detected duration, stream parameters and codecs do not change when calling this function. If you want a complete reset, it's better to open a new <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a>.</p>
+<p>This does not flush the <a class="el" href="struct_a_v_i_o_context.html" title="Bytestream IO Context.">AVIOContext</a> (s-&gt;pb). If necessary, call avio_flush(s-&gt;pb) before calling this function.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>media file handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;=0 on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ga31d601155e9035d5b0e7efedc894ee49" name="ga31d601155e9035d5b0e7efedc894ee49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga31d601155e9035d5b0e7efedc894ee49">&#9670;&#160;</a></span>avformat_open_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avformat_open_input </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> **</td>          <td class="paramname"><span class="paramname"><em>ps</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_input_format.html">AVInputFormat</a> *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **</td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open an input stream and read the header. </p>
+<p>The codecs are not opened. The stream must be closed with <a class="el" href="#gae804b99aec044690162b8b9b110236a4" title="Close an opened input AVFormatContext.">avformat_close_input()</a>.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ps</td><td>Pointer to user-supplied <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> (allocated by avformat_alloc_context). May be a pointer to NULL, in which case an <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> is allocated by this function and written into ps. Note that a user-supplied <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> will be freed on failure. </td></tr>
+    <tr><td class="paramname">url</td><td>URL of the stream to open. </td></tr>
+    <tr><td class="paramname">fmt</td><td>If non-NULL, this parameter forces a specific input format. Otherwise the format is autodetected. </td></tr>
+    <tr><td class="paramname">options</td><td>A dictionary filled with <a class="el" href="struct_a_v_format_context.html" title="Format I/O context.">AVFormatContext</a> and demuxer-private options. On return this parameter will be destroyed and replaced with a dict containing options that were not found. May be NULL.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on failure.</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>If you want to use custom IO, preallocate the format context and set its pb field. </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavf__decoding_ga31d601155e9035d5b0e7efedc894ee49_icgraph.png" border="0" usemap="#agroup__lavf__decoding_ga31d601155e9035d5b0e7efedc894ee49_icgraph" alt=""/></div>
+<map name="agroup__lavf__decoding_ga31d601155e9035d5b0e7efedc894ee49_icgraph" id="agroup__lavf__decoding_ga31d601155e9035d5b0e7efedc894ee49_icgraph">
+<area shape="rect" title="Open an input stream and read the header." alt="" coords="171,5,313,32"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="5,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="155,21,123,21,123,16,155,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga3b40fc8d2fda6992ae6ea2567d71ba30" name="ga3b40fc8d2fda6992ae6ea2567d71ba30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3b40fc8d2fda6992ae6ea2567d71ba30">&#9670;&#160;</a></span>avformat_seek_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avformat_seek_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_format_context.html">AVFormatContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>stream_index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>min_ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>max_ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Seek to timestamp ts. </p>
+<p>Seeking will be done so that the point from which all active streams can be presented successfully will be closest to ts and within min/max_ts. Active streams are all streams that have <a class="el" href="struct_a_v_stream.html#af37e03731578b8fca342a8cff44ee9f4" title="Selects which packets can be discarded at will and do not need to be demuxed.">AVStream.discard</a> &lt; AVDISCARD_ALL.</p>
+<p>If flags contain AVSEEK_FLAG_BYTE, then all timestamps are in bytes and are the file position (this may not be supported by all demuxers). If flags contain AVSEEK_FLAG_FRAME, then all timestamps are in frames in the stream with stream_index (this may not be supported by all demuxers). Otherwise all timestamps are in units of the stream selected by stream_index or if stream_index is -1, in AV_TIME_BASE units. If flags contain AVSEEK_FLAG_ANY, then non-keyframes are treated as keyframes (this may not be supported by all demuxers). If flags contain AVSEEK_FLAG_BACKWARD, it is ignored.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>media file handle </td></tr>
+    <tr><td class="paramname">stream_index</td><td>index of the stream which is used as time base reference </td></tr>
+    <tr><td class="paramname">min_ts</td><td>smallest acceptable timestamp </td></tr>
+    <tr><td class="paramname">ts</td><td>target timestamp </td></tr>
+    <tr><td class="paramname">max_ts</td><td>largest acceptable timestamp </td></tr>
+    <tr><td class="paramname">flags</td><td>flags </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;=0 on success, error code otherwise</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>This is part of the new seek API which is still under construction. Thus do not use this yet. It may change at any time, do not expect ABI compatibility yet! </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: timecode.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('timecode_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">timecode.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Timecode helpers header  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="rational_8h_source.html">rational.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+timecode.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="timecode_8h__incl.png" border="0" usemap="#atimecode_8h" alt=""/></div>
+<map name="atimecode_8h" id="atimecode_8h">
+<area shape="rect" title="Timecode helpers header" alt="" coords="39,5,124,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,70,181"/>
+<area shape="poly" title=" " alt="" coords="80,33,48,140,43,139,75,32"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="84,80,159,107"/>
+<area shape="poly" title=" " alt="" coords="91,31,110,65,105,68,86,34"/>
+<area shape="poly" title=" " alt="" coords="109,109,65,146,62,142,105,105"/>
+<area shape="rect" title=" " alt="" coords="94,155,157,181"/>
+<area shape="poly" title=" " alt="" coords="125,107,127,139,121,139,120,107"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="181,155,267,181"/>
+<area shape="poly" title=" " alt="" coords="141,105,195,143,192,147,138,109"/>
+</map>
+</div>
+</div>
+<p><a href="timecode_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_timecode.html">AVTimecode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a60186b13997e64a4aca71ff641634f9d" id="r_a60186b13997e64a4aca71ff641634f9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60186b13997e64a4aca71ff641634f9d">AV_TIMECODE_STR_SIZE</a>&#160;&#160;&#160;23</td></tr>
+<tr class="separator:a60186b13997e64a4aca71ff641634f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ad0e6464512b7849a2d14593708079219" id="r_ad0e6464512b7849a2d14593708079219"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0e6464512b7849a2d14593708079219">AVTimecodeFlag</a> { <a class="el" href="#ad0e6464512b7849a2d14593708079219a4cacf5e87e2f19987c5e931be20a5c33">AV_TIMECODE_FLAG_DROPFRAME</a> = 1&lt;&lt;0
+, <a class="el" href="#ad0e6464512b7849a2d14593708079219abf78793ae8e9e28a4f85bb1a76992f1b">AV_TIMECODE_FLAG_24HOURSMAX</a> = 1&lt;&lt;1
+, <a class="el" href="#ad0e6464512b7849a2d14593708079219a373f53f5f7544e479b6c6b36b254fc8d">AV_TIMECODE_FLAG_ALLOWNEGATIVE</a> = 1&lt;&lt;2
+ }</td></tr>
+<tr class="separator:ad0e6464512b7849a2d14593708079219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aef6b950d708ea805b970c16e71a97869" id="r_aef6b950d708ea805b970c16e71a97869"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef6b950d708ea805b970c16e71a97869">av_timecode_adjust_ntsc_framenum2</a> (int framenum, int fps)</td></tr>
+<tr class="memdesc:aef6b950d708ea805b970c16e71a97869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust frame number for NTSC drop frame time code.  <br /></td></tr>
+<tr class="separator:aef6b950d708ea805b970c16e71a97869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3045b65cc54f72e9d53d3c97a5f4da5" id="r_ae3045b65cc54f72e9d53d3c97a5f4da5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3045b65cc54f72e9d53d3c97a5f4da5">av_timecode_get_smpte_from_framenum</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_timecode.html">AVTimecode</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a>, int framenum)</td></tr>
+<tr class="memdesc:ae3045b65cc54f72e9d53d3c97a5f4da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert frame number to SMPTE 12M binary representation.  <br /></td></tr>
+<tr class="separator:ae3045b65cc54f72e9d53d3c97a5f4da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf17766b8b4a214cb8ce6b951b4e57f" id="r_a3cf17766b8b4a214cb8ce6b951b4e57f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cf17766b8b4a214cb8ce6b951b4e57f">av_timecode_make_string</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_timecode.html">AVTimecode</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a>, char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int framenum)</td></tr>
+<tr class="memdesc:a3cf17766b8b4a214cb8ce6b951b4e57f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load timecode string in buf.  <br /></td></tr>
+<tr class="separator:a3cf17766b8b4a214cb8ce6b951b4e57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae149f0f90d8b6a99101faa7287039a57" id="r_ae149f0f90d8b6a99101faa7287039a57"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae149f0f90d8b6a99101faa7287039a57">av_timecode_make_smpte_tc_string</a> (char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> tcsmpte, int prevent_df)</td></tr>
+<tr class="memdesc:ae149f0f90d8b6a99101faa7287039a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timecode string from the SMPTE timecode format.  <br /></td></tr>
+<tr class="separator:ae149f0f90d8b6a99101faa7287039a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a52c9716f1a772c99bff0b9673b808" id="r_a57a52c9716f1a772c99bff0b9673b808"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57a52c9716f1a772c99bff0b9673b808">av_timecode_make_mpeg_tc_string</a> (char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> tc25bit)</td></tr>
+<tr class="memdesc:a57a52c9716f1a772c99bff0b9673b808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timecode string from the 25-bit timecode format (MPEG GOP format).  <br /></td></tr>
+<tr class="separator:a57a52c9716f1a772c99bff0b9673b808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad279cd982964a2f8cc7adfa01533b412" id="r_ad279cd982964a2f8cc7adfa01533b412"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad279cd982964a2f8cc7adfa01533b412">av_timecode_init</a> (<a class="el" href="struct_a_v_timecode.html">AVTimecode</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, int frame_start, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *log_ctx)</td></tr>
+<tr class="memdesc:ad279cd982964a2f8cc7adfa01533b412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init a timecode struct with the passed parameters.  <br /></td></tr>
+<tr class="separator:ad279cd982964a2f8cc7adfa01533b412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02596c9d431329a3acc646c943b1c800" id="r_a02596c9d431329a3acc646c943b1c800"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02596c9d431329a3acc646c943b1c800">av_timecode_init_from_string</a> (<a class="el" href="struct_a_v_timecode.html">AVTimecode</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *str, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *log_ctx)</td></tr>
+<tr class="memdesc:a02596c9d431329a3acc646c943b1c800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse timecode representation (hh:mm:ss[:;.  <br /></td></tr>
+<tr class="separator:a02596c9d431329a3acc646c943b1c800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae181c7f842ad64c2e75c320e46f4edfc" id="r_ae181c7f842ad64c2e75c320e46f4edfc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae181c7f842ad64c2e75c320e46f4edfc">av_timecode_check_frame_rate</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>)</td></tr>
+<tr class="memdesc:ae181c7f842ad64c2e75c320e46f4edfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the timecode feature is available for the given frame rate  <br /></td></tr>
+<tr class="separator:ae181c7f842ad64c2e75c320e46f4edfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Timecode helpers header </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a60186b13997e64a4aca71ff641634f9d" name="a60186b13997e64a4aca71ff641634f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60186b13997e64a4aca71ff641634f9d">&#9670;&#160;</a></span>AV_TIMECODE_STR_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_TIMECODE_STR_SIZE&#160;&#160;&#160;23</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="ad0e6464512b7849a2d14593708079219" name="ad0e6464512b7849a2d14593708079219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e6464512b7849a2d14593708079219">&#9670;&#160;</a></span>AVTimecodeFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ad0e6464512b7849a2d14593708079219">AVTimecodeFlag</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ad0e6464512b7849a2d14593708079219a4cacf5e87e2f19987c5e931be20a5c33" name="ad0e6464512b7849a2d14593708079219a4cacf5e87e2f19987c5e931be20a5c33"></a>AV_TIMECODE_FLAG_DROPFRAME&#160;</td><td class="fielddoc"><p>timecode is drop frame </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad0e6464512b7849a2d14593708079219abf78793ae8e9e28a4f85bb1a76992f1b" name="ad0e6464512b7849a2d14593708079219abf78793ae8e9e28a4f85bb1a76992f1b"></a>AV_TIMECODE_FLAG_24HOURSMAX&#160;</td><td class="fielddoc"><p>timecode wraps after 24 hours </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad0e6464512b7849a2d14593708079219a373f53f5f7544e479b6c6b36b254fc8d" name="ad0e6464512b7849a2d14593708079219a373f53f5f7544e479b6c6b36b254fc8d"></a>AV_TIMECODE_FLAG_ALLOWNEGATIVE&#160;</td><td class="fielddoc"><p>negative time values are allowed </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aef6b950d708ea805b970c16e71a97869" name="aef6b950d708ea805b970c16e71a97869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6b950d708ea805b970c16e71a97869">&#9670;&#160;</a></span>av_timecode_adjust_ntsc_framenum2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_timecode_adjust_ntsc_framenum2 </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>framenum</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fps</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adjust frame number for NTSC drop frame time code. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">framenum</td><td>frame number to adjust </td></tr>
+    <tr><td class="paramname">fps</td><td>frame per second, 30 or 60 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>adjusted frame number </dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>adjustment is only valid in NTSC 29.97 and 59.94 </dd></dl>
+
+</div>
+</div>
+<a id="ae181c7f842ad64c2e75c320e46f4edfc" name="ae181c7f842ad64c2e75c320e46f4edfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae181c7f842ad64c2e75c320e46f4edfc">&#9670;&#160;</a></span>av_timecode_check_frame_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_timecode_check_frame_rate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>rate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the timecode feature is available for the given frame rate </p>
+<dl class="section return"><dt>返回</dt><dd>0 if supported, &lt;0 otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ae3045b65cc54f72e9d53d3c97a5f4da5" name="ae3045b65cc54f72e9d53d3c97a5f4da5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3045b65cc54f72e9d53d3c97a5f4da5">&#9670;&#160;</a></span>av_timecode_get_smpte_from_framenum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> av_timecode_get_smpte_from_framenum </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_timecode.html">AVTimecode</a> *</td>          <td class="paramname"><span class="paramname"><em>tc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>framenum</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert frame number to SMPTE 12M binary representation. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tc</td><td>timecode data correctly initialized </td></tr>
+    <tr><td class="paramname">framenum</td><td>frame number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the SMPTE binary representation</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>Frame number adjustment is automatically done in case of drop timecode, you do NOT have to call <a class="el" href="#aef6b950d708ea805b970c16e71a97869" title="Adjust frame number for NTSC drop frame time code.">av_timecode_adjust_ntsc_framenum2()</a>. </dd>
+<dd>
+The frame number is relative to tc-&gt;start. </dd>
+<dd>
+Color frame (CF), binary group flags (BGF) and biphase mark polarity correction (PC) bits are set to zero. </dd></dl>
+
+</div>
+</div>
+<a id="ad279cd982964a2f8cc7adfa01533b412" name="ad279cd982964a2f8cc7adfa01533b412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad279cd982964a2f8cc7adfa01533b412">&#9670;&#160;</a></span>av_timecode_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_timecode_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_timecode.html">AVTimecode</a> *</td>          <td class="paramname"><span class="paramname"><em>tc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>rate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>frame_start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>log_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Init a timecode struct with the passed parameters. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log_ctx</td><td>a pointer to an arbitrary struct of which the first field is a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> struct (used for av_log) </td></tr>
+    <tr><td class="paramname">tc</td><td>pointer to an allocated <a class="el" href="struct_a_v_timecode.html">AVTimecode</a> </td></tr>
+    <tr><td class="paramname">rate</td><td>frame rate in rational form </td></tr>
+    <tr><td class="paramname">flags</td><td>miscellaneous flags such as drop frame, +24 hours, ... (see <a class="el" href="#ad0e6464512b7849a2d14593708079219">AVTimecodeFlag</a>) </td></tr>
+    <tr><td class="paramname">frame_start</td><td>the first frame number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, AVERROR otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a02596c9d431329a3acc646c943b1c800" name="a02596c9d431329a3acc646c943b1c800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02596c9d431329a3acc646c943b1c800">&#9670;&#160;</a></span>av_timecode_init_from_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_timecode_init_from_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_timecode.html">AVTimecode</a> *</td>          <td class="paramname"><span class="paramname"><em>tc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>rate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>log_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse timecode representation (hh:mm:ss[:;. </p>
+<p>]ff).</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log_ctx</td><td>a pointer to an arbitrary struct of which the first field is a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> struct (used for av_log). </td></tr>
+    <tr><td class="paramname">tc</td><td>pointer to an allocated <a class="el" href="struct_a_v_timecode.html">AVTimecode</a> </td></tr>
+    <tr><td class="paramname">rate</td><td>frame rate in rational form </td></tr>
+    <tr><td class="paramname">str</td><td>timecode string which will determine the frame start </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, AVERROR otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a57a52c9716f1a772c99bff0b9673b808" name="a57a52c9716f1a772c99bff0b9673b808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a52c9716f1a772c99bff0b9673b808">&#9670;&#160;</a></span>av_timecode_make_mpeg_tc_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * av_timecode_make_mpeg_tc_string </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></td>          <td class="paramname"><span class="paramname"><em>tc25bit</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the timecode string from the 25-bit timecode format (MPEG GOP format). </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>destination buffer, must be at least AV_TIMECODE_STR_SIZE long </td></tr>
+    <tr><td class="paramname">tc25bit</td><td>the 25-bits timecode </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the buf parameter </dd></dl>
+
+</div>
+</div>
+<a id="ae149f0f90d8b6a99101faa7287039a57" name="ae149f0f90d8b6a99101faa7287039a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae149f0f90d8b6a99101faa7287039a57">&#9670;&#160;</a></span>av_timecode_make_smpte_tc_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * av_timecode_make_smpte_tc_string </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></td>          <td class="paramname"><span class="paramname"><em>tcsmpte</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>prevent_df</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the timecode string from the SMPTE timecode format. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>destination buffer, must be at least AV_TIMECODE_STR_SIZE long </td></tr>
+    <tr><td class="paramname">tcsmpte</td><td>the 32-bit SMPTE timecode </td></tr>
+    <tr><td class="paramname">prevent_df</td><td>prevent the use of a drop flag when it is known the DF bit is arbitrary </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the buf parameter </dd></dl>
+
+</div>
+</div>
+<a id="a3cf17766b8b4a214cb8ce6b951b4e57f" name="a3cf17766b8b4a214cb8ce6b951b4e57f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf17766b8b4a214cb8ce6b951b4e57f">&#9670;&#160;</a></span>av_timecode_make_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * av_timecode_make_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_timecode.html">AVTimecode</a> *</td>          <td class="paramname"><span class="paramname"><em>tc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>framenum</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load timecode string in buf. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>destination buffer, must be at least AV_TIMECODE_STR_SIZE long </td></tr>
+    <tr><td class="paramname">tc</td><td>timecode data correctly initialized </td></tr>
+    <tr><td class="paramname">framenum</td><td>frame number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the buf parameter</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>Timecode representation can be a negative timecode and have more than 24 hours, but will only be honored if the flags are correctly set. </dd>
+<dd>
+The frame number is relative to tc-&gt;start. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="timecode_8h.html">timecode.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

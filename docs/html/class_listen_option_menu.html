@@ -1,0 +1,1307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ListenOptionMenu类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_listen_option_menu.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="class_listen_option_menu-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ListenOptionMenu类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>听单选项菜单类，继承自 BaseMenu，提供分类音频内容选择  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_listen_option_menu_8h_source.html">ListenOptionMenu.h</a>&gt;</code></p>
+<div class="dynheader">
+类 ListenOptionMenu 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu__inherit__graph.png" border="0" usemap="#a_listen_option_menu_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_listen_option_menu_inherit__map" id="a_listen_option_menu_inherit__map">
+<area shape="rect" title="听单选项菜单类，继承自 BaseMenu，提供分类音频内容选择" alt="" coords="5,155,132,181"/>
+<area shape="rect" href="class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="27,80,110,107"/>
+<area shape="poly" title=" " alt="" coords="71,122,71,154,66,154,66,122"/>
+<area shape="rect" title=" " alt="" coords="37,5,100,32"/>
+<area shape="poly" title=" " alt="" coords="71,48,71,80,66,80,66,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+ListenOptionMenu 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu__coll__graph.png" border="0" usemap="#a_listen_option_menu_coll__map" alt="Collaboration graph"/></div>
+<map name="a_listen_option_menu_coll__map" id="a_listen_option_menu_coll__map">
+<area shape="rect" title="听单选项菜单类，继承自 BaseMenu，提供分类音频内容选择" alt="" coords="66,264,192,291"/>
+<area shape="rect" href="class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="87,188,171,215"/>
+<area shape="poly" title=" " alt="" coords="132,230,132,264,126,264,126,230"/>
+<area shape="rect" title=" " alt="" coords="5,81,69,108"/>
+<area shape="poly" title=" " alt="" coords="60,118,120,186,116,189,56,121"/>
+<area shape="rect" href="class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="92,81,166,108"/>
+<area shape="poly" title=" " alt="" coords="132,123,132,188,126,188,126,123"/>
+<area shape="rect" href="class_q_tool_button.html" title="工具按钮类" alt="" coords="82,5,176,32"/>
+<area shape="poly" title=" " alt="" coords="132,47,132,81,126,81,126,47"/>
+<area shape="rect" href="class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="189,81,352,108"/>
+<area shape="poly" title=" " alt="" coords="255,123,236,145,213,166,169,190,166,185,210,162,233,141,251,119"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a28588b3aa1fe32e9a2416e6d055a3800" id="r_a28588b3aa1fe32e9a2416e6d055a3800"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28588b3aa1fe32e9a2416e6d055a3800">clickedFuncName</a> (const QString &amp;funcName)</td></tr>
+<tr class="memdesc:a28588b3aa1fe32e9a2416e6d055a3800"><td class="mdescLeft">&#160;</td><td class="mdescRight">菜单项点击信号  <br /></td></tr>
+<tr class="separator:a28588b3aa1fe32e9a2416e6d055a3800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4aabe7c84963fac81372e2756ad4d9d0" id="r_a4aabe7c84963fac81372e2756ad4d9d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aabe7c84963fac81372e2756ad4d9d0">ListenOptionMenu</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a4aabe7c84963fac81372e2756ad4d9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化听单选项菜单  <br /></td></tr>
+<tr class="separator:a4aabe7c84963fac81372e2756ad4d9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_base_menu"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_base_menu')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_base_menu.html">BaseMenu</a></td></tr>
+<tr class="memitem:a3a0d91e21b7d2540477767ff01fbb6d2 inherit pub_methods_class_base_menu" id="r_a3a0d91e21b7d2540477767ff01fbb6d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a3a0d91e21b7d2540477767ff01fbb6d2">BaseMenu</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a3a0d91e21b7d2540477767ff01fbb6d2 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化菜单基类  <br /></td></tr>
+<tr class="separator:a3a0d91e21b7d2540477767ff01fbb6d2 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f572210c0537c199da461e9f8a2b26 inherit pub_methods_class_base_menu" id="r_a06f572210c0537c199da461e9f8a2b26"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a06f572210c0537c199da461e9f8a2b26">~BaseMenu</a> ()=default</td></tr>
+<tr class="memdesc:a06f572210c0537c199da461e9f8a2b26 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚析构函数，确保子类正确释放资源  <br /></td></tr>
+<tr class="separator:a06f572210c0537c199da461e9f8a2b26 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9903a190a739c31d2ef1015ce6449d4 inherit pub_methods_class_base_menu" id="r_af9903a190a739c31d2ef1015ce6449d4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#af9903a190a739c31d2ef1015ce6449d4">setShadow</a> (const int &amp;width, const int &amp;radius, const QColor &amp;<a class="el" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>)</td></tr>
+<tr class="memdesc:af9903a190a739c31d2ef1015ce6449d4 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚函数，设置菜单阴影效果，由子类实现  <br /></td></tr>
+<tr class="separator:af9903a190a739c31d2ef1015ce6449d4 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f28fa1b55bfe338cbef533b0c6cb05e inherit pub_methods_class_base_menu" id="r_a8f28fa1b55bfe338cbef533b0c6cb05e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a8f28fa1b55bfe338cbef533b0c6cb05e">setCurIndex</a> (const int &amp;<a class="el" href="_listen_recommend_8cpp.html#ac224fdf2f3f2f3554c76c23f3e6e7002">idx</a>)</td></tr>
+<tr class="memdesc:a8f28fa1b55bfe338cbef533b0c6cb05e inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前响应项的索引  <br /></td></tr>
+<tr class="separator:a8f28fa1b55bfe338cbef533b0c6cb05e inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1983a13e703a9f25be56824d2cb75e65 inherit pub_methods_class_base_menu" id="r_a1983a13e703a9f25be56824d2cb75e65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a1983a13e703a9f25be56824d2cb75e65">setAniDuration</a> (const int &amp;duration)</td></tr>
+<tr class="memdesc:a1983a13e703a9f25be56824d2cb75e65 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置动画持续时间  <br /></td></tr>
+<tr class="separator:a1983a13e703a9f25be56824d2cb75e65 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d74c0c0f9c690c86f420dd260998f4 inherit pub_methods_class_base_menu" id="r_ac4d74c0c0f9c690c86f420dd260998f4"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#ac4d74c0c0f9c690c86f420dd260998f4">getStyleSheet</a> () const</td></tr>
+<tr class="memdesc:ac4d74c0c0f9c690c86f420dd260998f4 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前样式表内容  <br /></td></tr>
+<tr class="separator:ac4d74c0c0f9c690c86f420dd260998f4 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a7eb87a6d4464680c455d278d1d32eba6" id="r_a7eb87a6d4464680c455d278d1d32eba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a> (QObject *watched, QEvent *event) override</td></tr>
+<tr class="memdesc:a7eb87a6d4464680c455d278d1d32eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤器，处理鼠标点击事件  <br /></td></tr>
+<tr class="separator:a7eb87a6d4464680c455d278d1d32eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_base_menu"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_base_menu')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="class_base_menu.html">BaseMenu</a></td></tr>
+<tr class="memitem:acfc6fff50c1204fe16b92864e747d8d4 inherit pro_methods_class_base_menu" id="r_acfc6fff50c1204fe16b92864e747d8d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#acfc6fff50c1204fe16b92864e747d8d4">checkHover</a> ()</td></tr>
+<tr class="memdesc:acfc6fff50c1204fe16b92864e747d8d4 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查并更新悬停状态  <br /></td></tr>
+<tr class="separator:acfc6fff50c1204fe16b92864e747d8d4 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8580224ed89d3bcfc43f78229ab7c238 inherit pro_methods_class_base_menu" id="r_a8580224ed89d3bcfc43f78229ab7c238"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a8580224ed89d3bcfc43f78229ab7c238">checkSelection</a> () const</td></tr>
+<tr class="memdesc:a8580224ed89d3bcfc43f78229ab7c238 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查并更新选中状态  <br /></td></tr>
+<tr class="separator:a8580224ed89d3bcfc43f78229ab7c238 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71936647c7e332ab07cbec003a8c9a2 inherit pro_methods_class_base_menu" id="r_aa71936647c7e332ab07cbec003a8c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#aa71936647c7e332ab07cbec003a8c9a2">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *event) override</td></tr>
+<tr class="memdesc:aa71936647c7e332ab07cbec003a8c9a2 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写绘制事件，绘制自定义阴影效果  <br /></td></tr>
+<tr class="separator:aa71936647c7e332ab07cbec003a8c9a2 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26eb1890b4d4dfb7bf76fb7c44cbdebf inherit pro_methods_class_base_menu" id="r_a26eb1890b4d4dfb7bf76fb7c44cbdebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">showEvent</a> (QShowEvent *event) override</td></tr>
+<tr class="memdesc:a26eb1890b4d4dfb7bf76fb7c44cbdebf inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写显示事件，触发显示动画  <br /></td></tr>
+<tr class="separator:a26eb1890b4d4dfb7bf76fb7c44cbdebf inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5389554336d47de8a8249cf2aaf682a2 inherit pro_methods_class_base_menu" id="r_a5389554336d47de8a8249cf2aaf682a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a5389554336d47de8a8249cf2aaf682a2">leaveEvent</a> (QEvent *event) override</td></tr>
+<tr class="memdesc:a5389554336d47de8a8249cf2aaf682a2 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写离开事件，清理悬停状态  <br /></td></tr>
+<tr class="separator:a5389554336d47de8a8249cf2aaf682a2 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0055987cd1c7f3d399f90c0e126e38d8 inherit pro_methods_class_base_menu" id="r_a0055987cd1c7f3d399f90c0e126e38d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a0055987cd1c7f3d399f90c0e126e38d8">connectAction</a> (const QWidgetAction *widgetAction, <a class="el" href="class_menu_btn.html">MenuBtn</a> *btn)</td></tr>
+<tr class="memdesc:a0055987cd1c7f3d399f90c0e126e38d8 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">连接 QWidgetAction 的悬停事件到按钮  <br /></td></tr>
+<tr class="separator:a0055987cd1c7f3d399f90c0e126e38d8 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a9b45abf428270b1d7e17309e9fc6fe1f" id="r_a9b45abf428270b1d7e17309e9fc6fe1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b45abf428270b1d7e17309e9fc6fe1f">initMenu</a> () override</td></tr>
+<tr class="memdesc:a9b45abf428270b1d7e17309e9fc6fe1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化菜单布局和内容  <br /></td></tr>
+<tr class="separator:a9b45abf428270b1d7e17309e9fc6fe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52185c83ca79a21e027db37bff4aeb83" id="r_a52185c83ca79a21e027db37bff4aeb83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52185c83ca79a21e027db37bff4aeb83">initAudioNovelWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a52185c83ca79a21e027db37bff4aeb83"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化有声小说分类窗口  <br /></td></tr>
+<tr class="separator:a52185c83ca79a21e027db37bff4aeb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71c586cdeb09240f713cf3470a3d6db2" id="r_a71c586cdeb09240f713cf3470a3d6db2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71c586cdeb09240f713cf3470a3d6db2">initChildrenWorldWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a71c586cdeb09240f713cf3470a3d6db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化儿童天地分类窗口  <br /></td></tr>
+<tr class="separator:a71c586cdeb09240f713cf3470a3d6db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6930375bedebff6dcde0cce83dd8542" id="r_ac6930375bedebff6dcde0cce83dd8542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6930375bedebff6dcde0cce83dd8542">initCommentBookWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:ac6930375bedebff6dcde0cce83dd8542"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化评书分类窗口  <br /></td></tr>
+<tr class="separator:ac6930375bedebff6dcde0cce83dd8542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e389368b983cb422bbfc4c521dd11f" id="r_aa3e389368b983cb422bbfc4c521dd11f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3e389368b983cb422bbfc4c521dd11f">initSleepHelpingWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:aa3e389368b983cb422bbfc4c521dd11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化助眠解压分类窗口  <br /></td></tr>
+<tr class="separator:aa3e389368b983cb422bbfc4c521dd11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45acba65098ab272284b343832381d43" id="r_a45acba65098ab272284b343832381d43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45acba65098ab272284b343832381d43">initHumanityWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a45acba65098ab272284b343832381d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化人文分类窗口  <br /></td></tr>
+<tr class="separator:a45acba65098ab272284b343832381d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612f9f26ca7009459ffd629db38d55c0" id="r_a612f9f26ca7009459ffd629db38d55c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a612f9f26ca7009459ffd629db38d55c0">initSelfChargingWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a612f9f26ca7009459ffd629db38d55c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化自我充电分类窗口  <br /></td></tr>
+<tr class="separator:a612f9f26ca7009459ffd629db38d55c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae659446b2dd4f21c4854df9a41050d89" id="r_ae659446b2dd4f21c4854df9a41050d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae659446b2dd4f21c4854df9a41050d89">initCrosstalkWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:ae659446b2dd4f21c4854df9a41050d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化相声曲艺分类窗口  <br /></td></tr>
+<tr class="separator:ae659446b2dd4f21c4854df9a41050d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a242871acbd46d50280fd401a44f1aae5" id="r_a242871acbd46d50280fd401a44f1aae5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a242871acbd46d50280fd401a44f1aae5">initSentimentalityWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a242871acbd46d50280fd401a44f1aae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化情感生活分类窗口  <br /></td></tr>
+<tr class="separator:a242871acbd46d50280fd401a44f1aae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff8eb4e2beacf3a8596e201489790bd" id="r_aaff8eb4e2beacf3a8596e201489790bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff8eb4e2beacf3a8596e201489790bd">initRadioDramaWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:aaff8eb4e2beacf3a8596e201489790bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化广播剧分类窗口  <br /></td></tr>
+<tr class="separator:aaff8eb4e2beacf3a8596e201489790bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ccb8dabec2f7850eb8341ac7d793477" id="r_a5ccb8dabec2f7850eb8341ac7d793477"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ccb8dabec2f7850eb8341ac7d793477">initEntertainmentJokesWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a5ccb8dabec2f7850eb8341ac7d793477"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化娱乐段子分类窗口  <br /></td></tr>
+<tr class="separator:a5ccb8dabec2f7850eb8341ac7d793477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c14d2fd2f95fe31da5dc685656112bf" id="r_a9c14d2fd2f95fe31da5dc685656112bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c14d2fd2f95fe31da5dc685656112bf">initACGNWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a9c14d2fd2f95fe31da5dc685656112bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化二次元分类窗口  <br /></td></tr>
+<tr class="separator:a9c14d2fd2f95fe31da5dc685656112bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85db91bf0ff46bf02f568474521943ce" id="r_a85db91bf0ff46bf02f568474521943ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85db91bf0ff46bf02f568474521943ce">initPodcastWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a85db91bf0ff46bf02f568474521943ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化播客分类窗口  <br /></td></tr>
+<tr class="separator:a85db91bf0ff46bf02f568474521943ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a544774784d959b9f633e63f3b0c91b99" id="r_a544774784d959b9f633e63f3b0c91b99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a544774784d959b9f633e63f3b0c91b99">initCantoneseWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a544774784d959b9f633e63f3b0c91b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化粤语分类窗口  <br /></td></tr>
+<tr class="separator:a544774784d959b9f633e63f3b0c91b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1dd8bda7d8e6ec922fe95677b2d29ed" id="r_ac1dd8bda7d8e6ec922fe95677b2d29ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1dd8bda7d8e6ec922fe95677b2d29ed">initForeignLanguageWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:ac1dd8bda7d8e6ec922fe95677b2d29ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化外语分类窗口  <br /></td></tr>
+<tr class="separator:ac1dd8bda7d8e6ec922fe95677b2d29ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15da0180112d1879f2e8750e7d3ecaf7" id="r_a15da0180112d1879f2e8750e7d3ecaf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15da0180112d1879f2e8750e7d3ecaf7">initCreateCoverWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:a15da0180112d1879f2e8750e7d3ecaf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化创作翻唱分类窗口  <br /></td></tr>
+<tr class="separator:a15da0180112d1879f2e8750e7d3ecaf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6cc0c3a30833c0c9a2a370ed600b53" id="r_abe6cc0c3a30833c0c9a2a370ed600b53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe6cc0c3a30833c0c9a2a370ed600b53">initElectronicSoundWidget</a> (QWidget *widget)</td></tr>
+<tr class="memdesc:abe6cc0c3a30833c0c9a2a370ed600b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化DJ电音分类窗口  <br /></td></tr>
+<tr class="separator:abe6cc0c3a30833c0c9a2a370ed600b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189ba16310a629df5a97b9024b0b7a54" id="r_a189ba16310a629df5a97b9024b0b7a54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a189ba16310a629df5a97b9024b0b7a54">initSeparator</a> (QFrame *frame)</td></tr>
+<tr class="memdesc:a189ba16310a629df5a97b9024b0b7a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化水平分隔线  <br /></td></tr>
+<tr class="separator:a189ba16310a629df5a97b9024b0b7a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00371539b9a799148d5a63e599b0a9d0" id="r_a00371539b9a799148d5a63e599b0a9d0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_listen_option_menu.html">ListenOptionMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00371539b9a799148d5a63e599b0a9d0">getMenu</a> () const override</td></tr>
+<tr class="memdesc:a00371539b9a799148d5a63e599b0a9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前菜单对象  <br /></td></tr>
+<tr class="separator:a00371539b9a799148d5a63e599b0a9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_base_menu"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_base_menu')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="class_base_menu.html">BaseMenu</a></td></tr>
+<tr class="memitem:a75e8dd7c4a918cabf601c29bb6ee980a inherit pro_attribs_class_base_menu" id="r_a75e8dd7c4a918cabf601c29bb6ee980a"><td class="memItemLeft" align="right" valign="top">QVector&lt; QWidget * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a75e8dd7c4a918cabf601c29bb6ee980a">m_lastHover</a> {}</td></tr>
+<tr class="memdesc:a75e8dd7c4a918cabf601c29bb6ee980a inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次悬停的控件列表  <br /></td></tr>
+<tr class="separator:a75e8dd7c4a918cabf601c29bb6ee980a inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc62377ce940a77d583e4fb4d2bd228 inherit pro_attribs_class_base_menu" id="r_a0fc62377ce940a77d583e4fb4d2bd228"><td class="memItemLeft" align="right" valign="top">QVector&lt; QWidget * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a0fc62377ce940a77d583e4fb4d2bd228">m_currentHover</a> {}</td></tr>
+<tr class="memdesc:a0fc62377ce940a77d583e4fb4d2bd228 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前悬停的控件列表  <br /></td></tr>
+<tr class="separator:a0fc62377ce940a77d583e4fb4d2bd228 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce1d8a2939b608c07d6e186f57cad32 inherit pro_attribs_class_base_menu" id="r_a9ce1d8a2939b608c07d6e186f57cad32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_menu_btn.html">MenuBtn</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a9ce1d8a2939b608c07d6e186f57cad32">m_lastSelect</a> {}</td></tr>
+<tr class="memdesc:a9ce1d8a2939b608c07d6e186f57cad32 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次选中的按钮  <br /></td></tr>
+<tr class="separator:a9ce1d8a2939b608c07d6e186f57cad32 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead7b72cd42d004f3952b9eb59efcbb1 inherit pro_attribs_class_base_menu" id="r_aead7b72cd42d004f3952b9eb59efcbb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_menu_btn.html">MenuBtn</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#aead7b72cd42d004f3952b9eb59efcbb1">m_curSelect</a> {}</td></tr>
+<tr class="memdesc:aead7b72cd42d004f3952b9eb59efcbb1 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前选中的按钮  <br /></td></tr>
+<tr class="separator:aead7b72cd42d004f3952b9eb59efcbb1 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e21618e9a7c59b2c14007262fe90026 inherit pro_attribs_class_base_menu" id="r_a3e21618e9a7c59b2c14007262fe90026"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a3e21618e9a7c59b2c14007262fe90026">m_curIndex</a> = -1</td></tr>
+<tr class="memdesc:a3e21618e9a7c59b2c14007262fe90026 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前响应项的索引  <br /></td></tr>
+<tr class="separator:a3e21618e9a7c59b2c14007262fe90026 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd567e2f1623bc0dd6ce97c5111da33 inherit pro_attribs_class_base_menu" id="r_a7cd567e2f1623bc0dd6ce97c5111da33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a7cd567e2f1623bc0dd6ce97c5111da33">m_shadowWidth</a> = 4</td></tr>
+<tr class="memdesc:a7cd567e2f1623bc0dd6ce97c5111da33 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影宽度  <br /></td></tr>
+<tr class="separator:a7cd567e2f1623bc0dd6ce97c5111da33 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a734487db30a91b190c3e011c4b543070 inherit pro_attribs_class_base_menu" id="r_a734487db30a91b190c3e011c4b543070"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a734487db30a91b190c3e011c4b543070">m_shadowRadius</a> = 12</td></tr>
+<tr class="memdesc:a734487db30a91b190c3e011c4b543070 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影圆角半径  <br /></td></tr>
+<tr class="separator:a734487db30a91b190c3e011c4b543070 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253cccdefffeefb38759ae552cb8f2d7 inherit pro_attribs_class_base_menu" id="r_a253cccdefffeefb38759ae552cb8f2d7"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a253cccdefffeefb38759ae552cb8f2d7">m_shadowColor</a> = QColor(150, 150, 150, 55)</td></tr>
+<tr class="memdesc:a253cccdefffeefb38759ae552cb8f2d7 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影颜色  <br /></td></tr>
+<tr class="separator:a253cccdefffeefb38759ae552cb8f2d7 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5bf530776bae5de3b08a49860bb6ab1 inherit pro_attribs_class_base_menu" id="r_ad5bf530776bae5de3b08a49860bb6ab1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_graphics_opacity_effect.html">QGraphicsOpacityEffect</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#ad5bf530776bae5de3b08a49860bb6ab1">m_opacityEffect</a> {}</td></tr>
+<tr class="memdesc:ad5bf530776bae5de3b08a49860bb6ab1 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">透明度效果  <br /></td></tr>
+<tr class="separator:ad5bf530776bae5de3b08a49860bb6ab1 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fa0993734f584ba9584b75917aa4258 inherit pro_attribs_class_base_menu" id="r_a0fa0993734f584ba9584b75917aa4258"><td class="memItemLeft" align="right" valign="top">QTimeLine *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a0fa0993734f584ba9584b75917aa4258">m_timeLine</a> {}</td></tr>
+<tr class="memdesc:a0fa0993734f584ba9584b75917aa4258 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">动画时间线  <br /></td></tr>
+<tr class="separator:a0fa0993734f584ba9584b75917aa4258 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>听单选项菜单类，继承自 BaseMenu，提供分类音频内容选择 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a4aabe7c84963fac81372e2756ad4d9d0" name="a4aabe7c84963fac81372e2756ad4d9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aabe7c84963fac81372e2756ad4d9d0">&#9670;&#160;</a></span>ListenOptionMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_listen_option_menu.html">ListenOptionMenu</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化听单选项菜单 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a4aabe7c84963fac81372e2756ad4d9d0_cgraph.png" border="0" usemap="#aclass_listen_option_menu_a4aabe7c84963fac81372e2756ad4d9d0_cgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a4aabe7c84963fac81372e2756ad4d9d0_cgraph" id="aclass_listen_option_menu_a4aabe7c84963fac81372e2756ad4d9d0_cgraph">
+<area shape="rect" title="构造函数，初始化听单选项菜单" alt="" coords="5,5,132,32"/>
+<area shape="rect" href="class_base_menu.html#a3a0d91e21b7d2540477767ff01fbb6d2" title="构造函数，初始化菜单基类" alt="" coords="180,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="132,16,164,16,164,21,132,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a4aabe7c84963fac81372e2756ad4d9d0_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a4aabe7c84963fac81372e2756ad4d9d0_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a4aabe7c84963fac81372e2756ad4d9d0_icgraph" id="aclass_listen_option_menu_a4aabe7c84963fac81372e2756ad4d9d0_icgraph">
+<area shape="rect" title="构造函数，初始化听单选项菜单" alt="" coords="125,5,251,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a00371539b9a799148d5a63e599b0a9d0" title="获取当前菜单对象" alt="" coords="5,5,77,32"/>
+<area shape="poly" title=" " alt="" coords="109,21,77,21,77,16,109,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a28588b3aa1fe32e9a2416e6d055a3800" name="a28588b3aa1fe32e9a2416e6d055a3800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28588b3aa1fe32e9a2416e6d055a3800">&#9670;&#160;</a></span>clickedFuncName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clickedFuncName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>funcName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>菜单项点击信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">funcName</td><td>点击的功能名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a28588b3aa1fe32e9a2416e6d055a3800_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a28588b3aa1fe32e9a2416e6d055a3800_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a28588b3aa1fe32e9a2416e6d055a3800_icgraph" id="aclass_listen_option_menu_a28588b3aa1fe32e9a2416e6d055a3800_icgraph">
+<area shape="rect" title="菜单项点击信号" alt="" coords="301,43,427,69"/>
+<area shape="rect" href="class_listen_option_menu.html#a7eb87a6d4464680c455d278d1d32eba6" title="事件过滤器，处理鼠标点击事件" alt="" coords="88,5,170,32"/>
+<area shape="poly" title=" " alt="" coords="285,46,170,28,171,23,286,41"/>
+<area shape="rect" href="class_listen_recommend.html#a921db3540ce943917c8fffc98a9df10f" title="构造函数，初始化推荐界面" alt="" coords="5,80,253,107"/>
+<area shape="poly" title=" " alt="" coords="286,71,218,82,217,77,285,66"/>
+<area shape="poly" title=" " alt="" coords="170,68,156,61,129,59,104,61,91,65,88,71,94,78,90,81,82,71,87,61,103,55,129,53,157,56,172,63"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7eb87a6d4464680c455d278d1d32eba6" name="a7eb87a6d4464680c455d278d1d32eba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb87a6d4464680c455d278d1d32eba6">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>事件过滤器，处理鼠标点击事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>事件目标对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a7eb87a6d4464680c455d278d1d32eba6_cgraph.png" border="0" usemap="#aclass_listen_option_menu_a7eb87a6d4464680c455d278d1d32eba6_cgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a7eb87a6d4464680c455d278d1d32eba6_cgraph" id="aclass_listen_option_menu_a7eb87a6d4464680c455d278d1d32eba6_cgraph">
+<area shape="rect" title="事件过滤器，处理鼠标点击事件" alt="" coords="5,5,88,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a28588b3aa1fe32e9a2416e6d055a3800" title="菜单项点击信号" alt="" coords="136,5,262,32"/>
+<area shape="poly" title=" " alt="" coords="88,16,120,16,120,21,88,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a00371539b9a799148d5a63e599b0a9d0" name="a00371539b9a799148d5a63e599b0a9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00371539b9a799148d5a63e599b0a9d0">&#9670;&#160;</a></span>getMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_listen_option_menu.html">ListenOptionMenu</a> * getMenu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel private">private</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前菜单对象 </p>
+<dl class="section return"><dt>返回</dt><dd>当前菜单对象指针 </dd></dl>
+
+<p>重载 <a class="el" href="class_base_menu.html#ac4873c622744b263677fb4c8da101046">BaseMenu</a> .</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a00371539b9a799148d5a63e599b0a9d0_cgraph.png" border="0" usemap="#aclass_listen_option_menu_a00371539b9a799148d5a63e599b0a9d0_cgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a00371539b9a799148d5a63e599b0a9d0_cgraph" id="aclass_listen_option_menu_a00371539b9a799148d5a63e599b0a9d0_cgraph">
+<area shape="rect" title="获取当前菜单对象" alt="" coords="5,5,77,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a4aabe7c84963fac81372e2756ad4d9d0" title="构造函数，初始化听单选项菜单" alt="" coords="125,5,251,32"/>
+<area shape="poly" title=" " alt="" coords="77,16,109,16,109,21,77,21"/>
+<area shape="rect" href="class_base_menu.html#a3a0d91e21b7d2540477767ff01fbb6d2" title="构造函数，初始化菜单基类" alt="" coords="299,5,452,32"/>
+<area shape="poly" title=" " alt="" coords="251,16,283,16,283,21,251,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c14d2fd2f95fe31da5dc685656112bf" name="a9c14d2fd2f95fe31da5dc685656112bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c14d2fd2f95fe31da5dc685656112bf">&#9670;&#160;</a></span>initACGNWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initACGNWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化二次元分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a9c14d2fd2f95fe31da5dc685656112bf_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a9c14d2fd2f95fe31da5dc685656112bf_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a9c14d2fd2f95fe31da5dc685656112bf_icgraph" id="aclass_listen_option_menu_a9c14d2fd2f95fe31da5dc685656112bf_icgraph">
+<area shape="rect" title="初始化二次元分类窗口" alt="" coords="124,5,242,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a52185c83ca79a21e027db37bff4aeb83" name="a52185c83ca79a21e027db37bff4aeb83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52185c83ca79a21e027db37bff4aeb83">&#9670;&#160;</a></span>initAudioNovelWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initAudioNovelWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化有声小说分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a52185c83ca79a21e027db37bff4aeb83_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a52185c83ca79a21e027db37bff4aeb83_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a52185c83ca79a21e027db37bff4aeb83_icgraph" id="aclass_listen_option_menu_a52185c83ca79a21e027db37bff4aeb83_icgraph">
+<area shape="rect" title="初始化有声小说分类窗口" alt="" coords="124,5,270,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a544774784d959b9f633e63f3b0c91b99" name="a544774784d959b9f633e63f3b0c91b99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a544774784d959b9f633e63f3b0c91b99">&#9670;&#160;</a></span>initCantoneseWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initCantoneseWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化粤语分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a544774784d959b9f633e63f3b0c91b99_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a544774784d959b9f633e63f3b0c91b99_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a544774784d959b9f633e63f3b0c91b99_icgraph" id="aclass_listen_option_menu_a544774784d959b9f633e63f3b0c91b99_icgraph">
+<area shape="rect" title="初始化粤语分类窗口" alt="" coords="124,5,266,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a71c586cdeb09240f713cf3470a3d6db2" name="a71c586cdeb09240f713cf3470a3d6db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c586cdeb09240f713cf3470a3d6db2">&#9670;&#160;</a></span>initChildrenWorldWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initChildrenWorldWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化儿童天地分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a71c586cdeb09240f713cf3470a3d6db2_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a71c586cdeb09240f713cf3470a3d6db2_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a71c586cdeb09240f713cf3470a3d6db2_icgraph" id="aclass_listen_option_menu_a71c586cdeb09240f713cf3470a3d6db2_icgraph">
+<area shape="rect" title="初始化儿童天地分类窗口" alt="" coords="124,5,284,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac6930375bedebff6dcde0cce83dd8542" name="ac6930375bedebff6dcde0cce83dd8542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6930375bedebff6dcde0cce83dd8542">&#9670;&#160;</a></span>initCommentBookWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initCommentBookWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化评书分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_ac6930375bedebff6dcde0cce83dd8542_icgraph.png" border="0" usemap="#aclass_listen_option_menu_ac6930375bedebff6dcde0cce83dd8542_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_ac6930375bedebff6dcde0cce83dd8542_icgraph" id="aclass_listen_option_menu_ac6930375bedebff6dcde0cce83dd8542_icgraph">
+<area shape="rect" title="初始化评书分类窗口" alt="" coords="124,5,290,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a15da0180112d1879f2e8750e7d3ecaf7" name="a15da0180112d1879f2e8750e7d3ecaf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15da0180112d1879f2e8750e7d3ecaf7">&#9670;&#160;</a></span>initCreateCoverWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initCreateCoverWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化创作翻唱分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a15da0180112d1879f2e8750e7d3ecaf7_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a15da0180112d1879f2e8750e7d3ecaf7_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a15da0180112d1879f2e8750e7d3ecaf7_icgraph" id="aclass_listen_option_menu_a15da0180112d1879f2e8750e7d3ecaf7_icgraph">
+<area shape="rect" title="初始化创作翻唱分类窗口" alt="" coords="124,5,277,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae659446b2dd4f21c4854df9a41050d89" name="ae659446b2dd4f21c4854df9a41050d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae659446b2dd4f21c4854df9a41050d89">&#9670;&#160;</a></span>initCrosstalkWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initCrosstalkWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化相声曲艺分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_ae659446b2dd4f21c4854df9a41050d89_icgraph.png" border="0" usemap="#aclass_listen_option_menu_ae659446b2dd4f21c4854df9a41050d89_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_ae659446b2dd4f21c4854df9a41050d89_icgraph" id="aclass_listen_option_menu_ae659446b2dd4f21c4854df9a41050d89_icgraph">
+<area shape="rect" title="初始化相声曲艺分类窗口" alt="" coords="124,5,259,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abe6cc0c3a30833c0c9a2a370ed600b53" name="abe6cc0c3a30833c0c9a2a370ed600b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe6cc0c3a30833c0c9a2a370ed600b53">&#9670;&#160;</a></span>initElectronicSoundWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initElectronicSoundWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化DJ电音分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_abe6cc0c3a30833c0c9a2a370ed600b53_icgraph.png" border="0" usemap="#aclass_listen_option_menu_abe6cc0c3a30833c0c9a2a370ed600b53_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_abe6cc0c3a30833c0c9a2a370ed600b53_icgraph" id="aclass_listen_option_menu_abe6cc0c3a30833c0c9a2a370ed600b53_icgraph">
+<area shape="rect" title="初始化DJ电音分类窗口" alt="" coords="124,5,298,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ccb8dabec2f7850eb8341ac7d793477" name="a5ccb8dabec2f7850eb8341ac7d793477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ccb8dabec2f7850eb8341ac7d793477">&#9670;&#160;</a></span>initEntertainmentJokesWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initEntertainmentJokesWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化娱乐段子分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a5ccb8dabec2f7850eb8341ac7d793477_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a5ccb8dabec2f7850eb8341ac7d793477_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a5ccb8dabec2f7850eb8341ac7d793477_icgraph" id="aclass_listen_option_menu_a5ccb8dabec2f7850eb8341ac7d793477_icgraph">
+<area shape="rect" title="初始化娱乐段子分类窗口" alt="" coords="124,5,319,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac1dd8bda7d8e6ec922fe95677b2d29ed" name="ac1dd8bda7d8e6ec922fe95677b2d29ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1dd8bda7d8e6ec922fe95677b2d29ed">&#9670;&#160;</a></span>initForeignLanguageWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initForeignLanguageWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化外语分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_ac1dd8bda7d8e6ec922fe95677b2d29ed_icgraph.png" border="0" usemap="#aclass_listen_option_menu_ac1dd8bda7d8e6ec922fe95677b2d29ed_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_ac1dd8bda7d8e6ec922fe95677b2d29ed_icgraph" id="aclass_listen_option_menu_ac1dd8bda7d8e6ec922fe95677b2d29ed_icgraph">
+<area shape="rect" title="初始化外语分类窗口" alt="" coords="124,5,302,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45acba65098ab272284b343832381d43" name="a45acba65098ab272284b343832381d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45acba65098ab272284b343832381d43">&#9670;&#160;</a></span>initHumanityWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initHumanityWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化人文分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a45acba65098ab272284b343832381d43_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a45acba65098ab272284b343832381d43_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a45acba65098ab272284b343832381d43_icgraph" id="aclass_listen_option_menu_a45acba65098ab272284b343832381d43_icgraph">
+<area shape="rect" title="初始化人文分类窗口" alt="" coords="124,5,259,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b45abf428270b1d7e17309e9fc6fe1f" name="a9b45abf428270b1d7e17309e9fc6fe1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b45abf428270b1d7e17309e9fc6fe1f">&#9670;&#160;</a></span>initMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initMenu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel private">private</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化菜单布局和内容 </p>
+
+<p>重载 <a class="el" href="class_base_menu.html#a5ba413bcad36094287234c91df7d2cc1">BaseMenu</a> .</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a9b45abf428270b1d7e17309e9fc6fe1f_cgraph.png" border="0" usemap="#aclass_listen_option_menu_a9b45abf428270b1d7e17309e9fc6fe1f_cgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a9b45abf428270b1d7e17309e9fc6fe1f_cgraph" id="aclass_listen_option_menu_a9b45abf428270b1d7e17309e9fc6fe1f_cgraph">
+<area shape="rect" title="初始化菜单布局和内容" alt="" coords="5,411,76,437"/>
+<area shape="rect" href="class_listen_option_menu.html#a9c14d2fd2f95fe31da5dc685656112bf" title="初始化二次元分类窗口" alt="" coords="162,5,280,32"/>
+<area shape="poly" title=" " alt="" coords="40,410,48,334,63,224,87,115,103,72,122,42,146,26,149,30,126,46,108,74,92,116,68,225,53,335,46,410"/>
+<area shape="rect" href="class_listen_option_menu.html#a52185c83ca79a21e027db37bff4aeb83" title="初始化有声小说分类窗口" alt="" coords="148,56,294,83"/>
+<area shape="poly" title=" " alt="" coords="41,410,50,343,66,248,90,155,105,118,122,93,133,84,136,88,126,96,110,120,95,156,71,249,55,344,46,411"/>
+<area shape="rect" href="class_listen_option_menu.html#a544774784d959b9f633e63f3b0c91b99" title="初始化粤语分类窗口" alt="" coords="150,107,292,133"/>
+<area shape="poly" title=" " alt="" coords="39,410,41,360,51,288,61,249,76,211,96,175,122,143,135,134,138,138,126,147,100,178,81,213,66,251,56,289,46,360,44,410"/>
+<area shape="rect" href="class_listen_option_menu.html#a71c586cdeb09240f713cf3470a3d6db2" title="初始化儿童天地分类窗口" alt="" coords="141,157,302,184"/>
+<area shape="poly" title=" " alt="" coords="40,410,45,368,57,310,82,248,99,219,122,194,126,190,130,194,126,198,104,222,86,250,62,312,50,369,45,411"/>
+<area shape="rect" href="class_listen_option_menu.html#ac6930375bedebff6dcde0cce83dd8542" title="初始化评书分类窗口" alt="" coords="138,208,304,235"/>
+<area shape="poly" title=" " alt="" coords="42,409,49,376,64,331,88,285,103,263,122,245,127,241,131,245,125,249,107,267,92,288,69,333,54,377,47,411"/>
+<area shape="rect" href="class_listen_option_menu.html#a15da0180112d1879f2e8750e7d3ecaf7" title="初始化创作翻唱分类窗口" alt="" coords="145,259,298,285"/>
+<area shape="poly" title=" " alt="" coords="44,409,71,354,94,322,122,295,130,290,133,295,125,299,98,326,76,356,49,411"/>
+<area shape="rect" href="class_listen_option_menu.html#ae659446b2dd4f21c4854df9a41050d89" title="初始化相声曲艺分类窗口" alt="" coords="154,309,289,336"/>
+<area shape="poly" title=" " alt="" coords="51,408,81,377,122,346,138,338,140,343,125,350,85,381,55,412"/>
+<area shape="rect" href="class_listen_option_menu.html#abe6cc0c3a30833c0c9a2a370ed600b53" title="初始化DJ电音分类窗口" alt="" coords="134,360,308,387"/>
+<area shape="poly" title=" " alt="" coords="75,411,123,396,150,389,152,394,124,401,77,416"/>
+<area shape="rect" href="class_listen_option_menu.html#a5ccb8dabec2f7850eb8341ac7d793477" title="初始化娱乐段子分类窗口" alt="" coords="124,411,319,437"/>
+<area shape="poly" title=" " alt="" coords="76,421,108,421,108,427,76,427"/>
+<area shape="rect" href="class_listen_option_menu.html#ac1dd8bda7d8e6ec922fe95677b2d29ed" title="初始化外语分类窗口" alt="" coords="132,461,310,488"/>
+<area shape="poly" title=" " alt="" coords="77,432,124,447,152,454,150,459,123,452,75,437"/>
+<area shape="rect" href="class_listen_option_menu.html#a45acba65098ab272284b343832381d43" title="初始化人文分类窗口" alt="" coords="154,512,289,539"/>
+<area shape="poly" title=" " alt="" coords="55,436,85,467,125,498,140,505,138,510,122,502,81,471,51,440"/>
+<area shape="rect" href="class_listen_option_menu.html#a85db91bf0ff46bf02f568474521943ce" title="初始化播客分类窗口" alt="" coords="158,563,285,589"/>
+<area shape="poly" title=" " alt="" coords="49,437,76,492,98,522,125,549,144,559,142,564,122,553,94,526,71,494,44,439"/>
+<area shape="rect" href="class_listen_option_menu.html#aaff8eb4e2beacf3a8596e201489790bd" title="初始化广播剧分类窗口" alt="" coords="145,613,298,640"/>
+<area shape="poly" title=" " alt="" coords="47,437,54,471,69,515,92,560,107,581,125,599,133,605,130,609,122,603,103,585,88,563,64,517,49,472,42,439"/>
+<area shape="rect" href="class_listen_option_menu.html#a612f9f26ca7009459ffd629db38d55c0" title="初始化自我充电分类窗口" alt="" coords="144,664,298,691"/>
+<area shape="poly" title=" " alt="" coords="45,437,50,479,62,536,86,598,104,626,126,650,132,656,129,660,122,654,99,629,82,600,57,538,45,480,40,438"/>
+<area shape="rect" href="class_listen_option_menu.html#a242871acbd46d50280fd401a44f1aae5" title="初始化情感生活分类窗口" alt="" coords="140,715,302,741"/>
+<area shape="poly" title=" " alt="" coords="44,438,46,488,56,559,66,597,81,635,100,670,126,701,129,704,126,708,122,705,96,673,76,637,61,599,51,560,41,488,39,438"/>
+<area shape="rect" href="class_listen_option_menu.html#a189ba16310a629df5a97b9024b0b7a54" title="初始化水平分隔线" alt="" coords="174,765,268,792"/>
+<area shape="poly" title=" " alt="" coords="46,437,55,504,71,599,95,692,110,728,126,751,141,763,160,770,158,775,139,768,122,755,105,730,90,693,66,600,50,505,41,438"/>
+<area shape="rect" href="class_listen_option_menu.html#aa3e389368b983cb422bbfc4c521dd11f" title="初始化助眠解压分类窗口" alt="" coords="143,816,300,843"/>
+<area shape="poly" title=" " alt="" coords="46,438,53,513,68,623,92,732,108,774,126,802,131,807,128,811,122,806,103,776,87,733,63,624,48,514,40,438"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a85db91bf0ff46bf02f568474521943ce" name="a85db91bf0ff46bf02f568474521943ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85db91bf0ff46bf02f568474521943ce">&#9670;&#160;</a></span>initPodcastWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initPodcastWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化播客分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a85db91bf0ff46bf02f568474521943ce_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a85db91bf0ff46bf02f568474521943ce_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a85db91bf0ff46bf02f568474521943ce_icgraph" id="aclass_listen_option_menu_a85db91bf0ff46bf02f568474521943ce_icgraph">
+<area shape="rect" title="初始化播客分类窗口" alt="" coords="124,5,251,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaff8eb4e2beacf3a8596e201489790bd" name="aaff8eb4e2beacf3a8596e201489790bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff8eb4e2beacf3a8596e201489790bd">&#9670;&#160;</a></span>initRadioDramaWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initRadioDramaWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化广播剧分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_aaff8eb4e2beacf3a8596e201489790bd_icgraph.png" border="0" usemap="#aclass_listen_option_menu_aaff8eb4e2beacf3a8596e201489790bd_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_aaff8eb4e2beacf3a8596e201489790bd_icgraph" id="aclass_listen_option_menu_aaff8eb4e2beacf3a8596e201489790bd_icgraph">
+<area shape="rect" title="初始化广播剧分类窗口" alt="" coords="124,5,276,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a612f9f26ca7009459ffd629db38d55c0" name="a612f9f26ca7009459ffd629db38d55c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612f9f26ca7009459ffd629db38d55c0">&#9670;&#160;</a></span>initSelfChargingWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSelfChargingWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化自我充电分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a612f9f26ca7009459ffd629db38d55c0_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a612f9f26ca7009459ffd629db38d55c0_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a612f9f26ca7009459ffd629db38d55c0_icgraph" id="aclass_listen_option_menu_a612f9f26ca7009459ffd629db38d55c0_icgraph">
+<area shape="rect" title="初始化自我充电分类窗口" alt="" coords="124,5,278,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a242871acbd46d50280fd401a44f1aae5" name="a242871acbd46d50280fd401a44f1aae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a242871acbd46d50280fd401a44f1aae5">&#9670;&#160;</a></span>initSentimentalityWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSentimentalityWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化情感生活分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a242871acbd46d50280fd401a44f1aae5_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a242871acbd46d50280fd401a44f1aae5_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a242871acbd46d50280fd401a44f1aae5_icgraph" id="aclass_listen_option_menu_a242871acbd46d50280fd401a44f1aae5_icgraph">
+<area shape="rect" title="初始化情感生活分类窗口" alt="" coords="124,5,286,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a189ba16310a629df5a97b9024b0b7a54" name="a189ba16310a629df5a97b9024b0b7a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189ba16310a629df5a97b9024b0b7a54">&#9670;&#160;</a></span>initSeparator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSeparator </td>
+          <td>(</td>
+          <td class="paramtype">QFrame *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化水平分隔线 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>分隔线控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_a189ba16310a629df5a97b9024b0b7a54_icgraph.png" border="0" usemap="#aclass_listen_option_menu_a189ba16310a629df5a97b9024b0b7a54_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_a189ba16310a629df5a97b9024b0b7a54_icgraph" id="aclass_listen_option_menu_a189ba16310a629df5a97b9024b0b7a54_icgraph">
+<area shape="rect" title="初始化水平分隔线" alt="" coords="124,5,218,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa3e389368b983cb422bbfc4c521dd11f" name="aa3e389368b983cb422bbfc4c521dd11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e389368b983cb422bbfc4c521dd11f">&#9670;&#160;</a></span>initSleepHelpingWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSleepHelpingWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化助眠解压分类窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_listen_option_menu_aa3e389368b983cb422bbfc4c521dd11f_icgraph.png" border="0" usemap="#aclass_listen_option_menu_aa3e389368b983cb422bbfc4c521dd11f_icgraph" alt=""/></div>
+<map name="aclass_listen_option_menu_aa3e389368b983cb422bbfc4c521dd11f_icgraph" id="aclass_listen_option_menu_aa3e389368b983cb422bbfc4c521dd11f_icgraph">
+<area shape="rect" title="初始化助眠解压分类窗口" alt="" coords="124,5,280,32"/>
+<area shape="rect" href="class_listen_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="5,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_listen_option_menu_8h_source.html">ListenOptionMenu.h</a></li>
+<li><a class="el" href="_listen_option_menu_8cpp.html">ListenOptionMenu.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_listen_option_menu.html">ListenOptionMenu</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: dxva_context结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structdxva__context.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structdxva__context-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">dxva_context结构体 参考<div class="ingroups"><a class="el" href="group__libavc.html">libavcodec</a> &raquo; <a class="el" href="group__lavc__codec.html">Codecs</a> &raquo; <a class="el" href="group__lavc__codec__hwaccel.html">Hardware Accelerators bridge</a> &raquo; <a class="el" href="group__lavc__codec__hwaccel__dxva2.html">DXVA2</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This structure is used to provides the necessary configurations and data to the DXVA2 FFmpeg HWAccel implementation.  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="dxva2_8h_source.html">dxva2.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a4289f99682e3f8bcd3caf1fc6427e089" id="r_a4289f99682e3f8bcd3caf1fc6427e089"><td class="memItemLeft" align="right" valign="top">IDirectXVideoDecoder *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4289f99682e3f8bcd3caf1fc6427e089">decoder</a></td></tr>
+<tr class="memdesc:a4289f99682e3f8bcd3caf1fc6427e089"><td class="mdescLeft">&#160;</td><td class="mdescRight">DXVA2 decoder object  <br /></td></tr>
+<tr class="separator:a4289f99682e3f8bcd3caf1fc6427e089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71fd9da3b99e45d03081e96cf736dfa7" id="r_a71fd9da3b99e45d03081e96cf736dfa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> DXVA2_ConfigPictureDecode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71fd9da3b99e45d03081e96cf736dfa7">cfg</a></td></tr>
+<tr class="memdesc:a71fd9da3b99e45d03081e96cf736dfa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">DXVA2 configuration used to create the decoder  <br /></td></tr>
+<tr class="separator:a71fd9da3b99e45d03081e96cf736dfa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e1f6dddca1132f64304fa224d89008" id="r_ab0e1f6dddca1132f64304fa224d89008"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0e1f6dddca1132f64304fa224d89008">surface_count</a></td></tr>
+<tr class="memdesc:ab0e1f6dddca1132f64304fa224d89008"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of surface in the surface array  <br /></td></tr>
+<tr class="separator:ab0e1f6dddca1132f64304fa224d89008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b45f15ddb6f710874b003ac6a13343" id="r_ac7b45f15ddb6f710874b003ac6a13343"><td class="memItemLeft" align="right" valign="top">LPDIRECT3DSURFACE9 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7b45f15ddb6f710874b003ac6a13343">surface</a></td></tr>
+<tr class="memdesc:ac7b45f15ddb6f710874b003ac6a13343"><td class="mdescLeft">&#160;</td><td class="mdescRight">The array of Direct3D surfaces used to create the decoder  <br /></td></tr>
+<tr class="separator:ac7b45f15ddb6f710874b003ac6a13343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b722f27b90de7b7774eeb77027770ff" id="r_a7b722f27b90de7b7774eeb77027770ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b722f27b90de7b7774eeb77027770ff">workaround</a></td></tr>
+<tr class="memdesc:a7b722f27b90de7b7774eeb77027770ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bit field configuring the workarounds needed for using the decoder  <br /></td></tr>
+<tr class="separator:a7b722f27b90de7b7774eeb77027770ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a880baf98e4812d69ca22a21dbf914b50" id="r_a880baf98e4812d69ca22a21dbf914b50"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a880baf98e4812d69ca22a21dbf914b50">report_id</a></td></tr>
+<tr class="memdesc:a880baf98e4812d69ca22a21dbf914b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private to the FFmpeg <a class="el" href="struct_a_v_h_w_accel.html">AVHWAccel</a> implementation  <br /></td></tr>
+<tr class="separator:a880baf98e4812d69ca22a21dbf914b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>This structure is used to provides the necessary configurations and data to the DXVA2 FFmpeg HWAccel implementation. </p>
+<p>The application must make it available as <a class="el" href="struct_a_v_codec_context.html#a5cab7778e6422f21dd59cb75fe041a02" title="Hardware accelerator context.">AVCodecContext.hwaccel_context</a>. </p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="a71fd9da3b99e45d03081e96cf736dfa7" name="a71fd9da3b99e45d03081e96cf736dfa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71fd9da3b99e45d03081e96cf736dfa7">&#9670;&#160;</a></span>cfg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> DXVA2_ConfigPictureDecode* cfg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DXVA2 configuration used to create the decoder </p>
+
+</div>
+</div>
+<a id="a4289f99682e3f8bcd3caf1fc6427e089" name="a4289f99682e3f8bcd3caf1fc6427e089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4289f99682e3f8bcd3caf1fc6427e089">&#9670;&#160;</a></span>decoder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IDirectXVideoDecoder* decoder</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DXVA2 decoder object </p>
+
+</div>
+</div>
+<a id="a880baf98e4812d69ca22a21dbf914b50" name="a880baf98e4812d69ca22a21dbf914b50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a880baf98e4812d69ca22a21dbf914b50">&#9670;&#160;</a></span>report_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned report_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Private to the FFmpeg <a class="el" href="struct_a_v_h_w_accel.html">AVHWAccel</a> implementation </p>
+
+</div>
+</div>
+<a id="ac7b45f15ddb6f710874b003ac6a13343" name="ac7b45f15ddb6f710874b003ac6a13343"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b45f15ddb6f710874b003ac6a13343">&#9670;&#160;</a></span>surface</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LPDIRECT3DSURFACE9* surface</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The array of Direct3D surfaces used to create the decoder </p>
+
+</div>
+</div>
+<a id="ab0e1f6dddca1132f64304fa224d89008" name="ab0e1f6dddca1132f64304fa224d89008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e1f6dddca1132f64304fa224d89008">&#9670;&#160;</a></span>surface_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned surface_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of surface in the surface array </p>
+
+</div>
+</div>
+<a id="a7b722f27b90de7b7774eeb77027770ff" name="a7b722f27b90de7b7774eeb77027770ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b722f27b90de7b7774eeb77027770ff">&#9670;&#160;</a></span>workaround</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> workaround</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A bit field configuring the workarounds needed for using the decoder </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="dxva2_8h_source.html">dxva2.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structdxva__context.html">dxva_context</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Frame parsing</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavc__parsing.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Frame parsing<div class="ingroups"><a class="el" href="group__libavc.html">libavcodec</a> &raquo; <a class="el" href="group__lavc__decoding.html">Decoding</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Frame parsing 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavc__parsing.png" border="0" usemap="#agroup____lavc____parsing" alt=""/></div>
+<map name="agroup____lavc____parsing" id="agroup____lavc____parsing">
+<area shape="rect" href="group__lavc__decoding.html" title=" " alt="" coords="5,5,82,32"/>
+<area shape="rect" title=" " alt="" coords="130,5,234,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga57652881997ee5d2046caac9824d8fc8" id="r_ga57652881997ee5d2046caac9824d8fc8"><td class="memItemLeft" align="right" valign="top">typedef struct AVCodecParserContext&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga57652881997ee5d2046caac9824d8fc8">AVCodecParserContext</a></td></tr>
+<tr class="separator:ga57652881997ee5d2046caac9824d8fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4a6d60e14ff0b808353ae5befe0f341" id="r_gad4a6d60e14ff0b808353ae5befe0f341"><td class="memItemLeft" align="right" valign="top">typedef struct AVCodecParser&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad4a6d60e14ff0b808353ae5befe0f341">AVCodecParser</a></td></tr>
+<tr class="separator:gad4a6d60e14ff0b808353ae5befe0f341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:gaad2e1cb6faa858b3558c5182d3ec56aa" id="r_gaad2e1cb6faa858b3558c5182d3ec56aa"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaad2e1cb6faa858b3558c5182d3ec56aa">AVPictureStructure</a> { <a class="el" href="#ggaad2e1cb6faa858b3558c5182d3ec56aaa88e5d6e12b558d4d015fa2b3b043cb91">AV_PICTURE_STRUCTURE_UNKNOWN</a>
+, <a class="el" href="#ggaad2e1cb6faa858b3558c5182d3ec56aaa86a376b542e532a5f2be40b56a79f161">AV_PICTURE_STRUCTURE_TOP_FIELD</a>
+, <a class="el" href="#ggaad2e1cb6faa858b3558c5182d3ec56aaa6d82ada133fd9cff3e9577a2134dba5b">AV_PICTURE_STRUCTURE_BOTTOM_FIELD</a>
+, <a class="el" href="#ggaad2e1cb6faa858b3558c5182d3ec56aaa1b90bcaf885c0721b70702a14fec481c">AV_PICTURE_STRUCTURE_FRAME</a>
+ }</td></tr>
+<tr class="separator:gaad2e1cb6faa858b3558c5182d3ec56aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga9c6109817de4bd69807cad12a029db21" id="r_ga9c6109817de4bd69807cad12a029db21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c6109817de4bd69807cad12a029db21">av_parser_iterate</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **opaque)</td></tr>
+<tr class="memdesc:ga9c6109817de4bd69807cad12a029db21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all registered codec parsers.  <br /></td></tr>
+<tr class="separator:ga9c6109817de4bd69807cad12a029db21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga445b366517ab7a9c8177a5c2933a5f16" id="r_ga445b366517ab7a9c8177a5c2933a5f16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga445b366517ab7a9c8177a5c2933a5f16">av_parser_next</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>)</td></tr>
+<tr class="separator:ga445b366517ab7a9c8177a5c2933a5f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0902d9337ad32aed0d23d7829e1f410f" id="r_ga0902d9337ad32aed0d23d7829e1f410f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0902d9337ad32aed0d23d7829e1f410f">av_register_codec_parser</a> (<a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a> *parser)</td></tr>
+<tr class="separator:ga0902d9337ad32aed0d23d7829e1f410f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga716362c2dbeed1d660f9cfe0e597ef1b" id="r_ga716362c2dbeed1d660f9cfe0e597ef1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga716362c2dbeed1d660f9cfe0e597ef1b">av_parser_init</a> (int codec_id)</td></tr>
+<tr class="separator:ga716362c2dbeed1d660f9cfe0e597ef1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga691ca0258e91f99297e7726f56d8c247" id="r_ga691ca0258e91f99297e7726f56d8c247"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga691ca0258e91f99297e7726f56d8c247">av_parser_parse2</a> (<a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, <a class="el" href="struct_a_v_codec_context.html">AVCodecContext</a> *avctx, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> **poutbuf, int *poutbuf_size, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> pts, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> dts, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> pos)</td></tr>
+<tr class="memdesc:ga691ca0258e91f99297e7726f56d8c247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a packet.  <br /></td></tr>
+<tr class="separator:ga691ca0258e91f99297e7726f56d8c247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga388e291a22ce1908b932a39c87123756" id="r_ga388e291a22ce1908b932a39c87123756"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga388e291a22ce1908b932a39c87123756">av_parser_change</a> (<a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, <a class="el" href="struct_a_v_codec_context.html">AVCodecContext</a> *avctx, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> **poutbuf, int *poutbuf_size, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size, int keyframe)</td></tr>
+<tr class="separator:ga388e291a22ce1908b932a39c87123756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga325e84c53b8c0dfcb2d933d126f76dd7" id="r_ga325e84c53b8c0dfcb2d933d126f76dd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga325e84c53b8c0dfcb2d933d126f76dd7">av_parser_close</a> (<a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a> *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:ga325e84c53b8c0dfcb2d933d126f76dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="gad4a6d60e14ff0b808353ae5befe0f341" name="gad4a6d60e14ff0b808353ae5befe0f341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4a6d60e14ff0b808353ae5befe0f341">&#9670;&#160;</a></span>AVCodecParser</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVCodecParser AVCodecParser</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga57652881997ee5d2046caac9824d8fc8" name="ga57652881997ee5d2046caac9824d8fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga57652881997ee5d2046caac9824d8fc8">&#9670;&#160;</a></span>AVCodecParserContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVCodecParserContext AVCodecParserContext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="gaad2e1cb6faa858b3558c5182d3ec56aa" name="gaad2e1cb6faa858b3558c5182d3ec56aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad2e1cb6faa858b3558c5182d3ec56aa">&#9670;&#160;</a></span>AVPictureStructure</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gaad2e1cb6faa858b3558c5182d3ec56aa">AVPictureStructure</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ggaad2e1cb6faa858b3558c5182d3ec56aaa88e5d6e12b558d4d015fa2b3b043cb91" name="ggaad2e1cb6faa858b3558c5182d3ec56aaa88e5d6e12b558d4d015fa2b3b043cb91"></a>AV_PICTURE_STRUCTURE_UNKNOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggaad2e1cb6faa858b3558c5182d3ec56aaa86a376b542e532a5f2be40b56a79f161" name="ggaad2e1cb6faa858b3558c5182d3ec56aaa86a376b542e532a5f2be40b56a79f161"></a>AV_PICTURE_STRUCTURE_TOP_FIELD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggaad2e1cb6faa858b3558c5182d3ec56aaa6d82ada133fd9cff3e9577a2134dba5b" name="ggaad2e1cb6faa858b3558c5182d3ec56aaa6d82ada133fd9cff3e9577a2134dba5b"></a>AV_PICTURE_STRUCTURE_BOTTOM_FIELD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggaad2e1cb6faa858b3558c5182d3ec56aaa1b90bcaf885c0721b70702a14fec481c" name="ggaad2e1cb6faa858b3558c5182d3ec56aaa1b90bcaf885c0721b70702a14fec481c"></a>AV_PICTURE_STRUCTURE_FRAME&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga388e291a22ce1908b932a39c87123756" name="ga388e291a22ce1908b932a39c87123756"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga388e291a22ce1908b932a39c87123756">&#9670;&#160;</a></span>av_parser_change()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_parser_change </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_codec_context.html">AVCodecContext</a> *</td>          <td class="paramname"><span class="paramname"><em>avctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> **</td>          <td class="paramname"><span class="paramname"><em>poutbuf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>poutbuf_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>buf_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>keyframe</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>0 if the output buffer is a subset of the input, 1 if it is allocated and must be freed </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">弃用</a></b></dt><dd>use <a class="el" href="struct_a_v_bit_stream_filter.html">AVBitStreamFilter</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga325e84c53b8c0dfcb2d933d126f76dd7" name="ga325e84c53b8c0dfcb2d933d126f76dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga325e84c53b8c0dfcb2d933d126f76dd7">&#9670;&#160;</a></span>av_parser_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_parser_close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga716362c2dbeed1d660f9cfe0e597ef1b" name="ga716362c2dbeed1d660f9cfe0e597ef1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga716362c2dbeed1d660f9cfe0e597ef1b">&#9670;&#160;</a></span>av_parser_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a> * av_parser_init </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>codec_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9c6109817de4bd69807cad12a029db21" name="ga9c6109817de4bd69807cad12a029db21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c6109817de4bd69807cad12a029db21">&#9670;&#160;</a></span>av_parser_iterate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a> * av_parser_iterate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterate over all registered codec parsers. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opaque</td><td>a pointer where libavcodec will store the iteration state. Must point to NULL to start the iteration.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the next registered codec parser or NULL when the iteration is finished </dd></dl>
+
+</div>
+</div>
+<a id="ga445b366517ab7a9c8177a5c2933a5f16" name="ga445b366517ab7a9c8177a5c2933a5f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga445b366517ab7a9c8177a5c2933a5f16">&#9670;&#160;</a></span>av_parser_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a> * av_parser_next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga691ca0258e91f99297e7726f56d8c247" name="ga691ca0258e91f99297e7726f56d8c247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga691ca0258e91f99297e7726f56d8c247">&#9670;&#160;</a></span>av_parser_parse2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_parser_parse2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_codec_parser_context.html">AVCodecParserContext</a> *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_codec_context.html">AVCodecContext</a> *</td>          <td class="paramname"><span class="paramname"><em>avctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> **</td>          <td class="paramname"><span class="paramname"><em>poutbuf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>poutbuf_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>buf_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>pts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>dts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse a packet. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>parser context. </td></tr>
+    <tr><td class="paramname">avctx</td><td>codec context. </td></tr>
+    <tr><td class="paramname">poutbuf</td><td>set to pointer to parsed buffer or NULL if not yet finished. </td></tr>
+    <tr><td class="paramname">poutbuf_size</td><td>set to size of parsed buffer or zero if not yet finished. </td></tr>
+    <tr><td class="paramname">buf</td><td>input buffer. </td></tr>
+    <tr><td class="paramname">buf_size</td><td>buffer size in bytes without the padding. I.e. the full buffer size is assumed to be buf_size + AV_INPUT_BUFFER_PADDING_SIZE. To signal EOF, this should be 0 (so that the last frame can be output). </td></tr>
+    <tr><td class="paramname">pts</td><td>input presentation timestamp. </td></tr>
+    <tr><td class="paramname">dts</td><td>input decoding timestamp. </td></tr>
+    <tr><td class="paramname">pos</td><td>input byte position in stream. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the number of bytes of the input bitstream used.</dd></dl>
+<p>Example: </p><div class="fragment"><div class="line"><span class="keywordflow">while</span>(in_len){</div>
+<div class="line">    <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a652168017ea9a8bbcead03d5c16269fb">len</a> = <a class="code hl_function" href="#ga691ca0258e91f99297e7726f56d8c247">av_parser_parse2</a>(myparser, <a class="code hl_struct" href="struct_a_v_codec_context.html">AVCodecContext</a>, &amp;<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, &amp;<a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>,</div>
+<div class="line">                                     in_data, in_len,</div>
+<div class="line">                                     pts, dts, pos);</div>
+<div class="line">    in_data += <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a652168017ea9a8bbcead03d5c16269fb">len</a>;</div>
+<div class="line">    in_len  -= <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a652168017ea9a8bbcead03d5c16269fb">len</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</div>
+<div class="line">       decode_frame(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, <a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>);</div>
+<div class="line">}</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a740d7f00b044f54a556c7208e01f9f02"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a></div><div class="ttdeci">GLint GLenum GLsizei GLsizei GLsizei GLint GLsizei const GLvoid * data</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1974</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a652168017ea9a8bbcead03d5c16269fb"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a652168017ea9a8bbcead03d5c16269fb">len</a></div><div class="ttdeci">GLenum GLsizei len</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:3557</div></div>
+<div class="ttc" id="agroup__lavc__parsing_html_ga691ca0258e91f99297e7726f56d8c247"><div class="ttname"><a href="#ga691ca0258e91f99297e7726f56d8c247">av_parser_parse2</a></div><div class="ttdeci">int av_parser_parse2(AVCodecParserContext *s, AVCodecContext *avctx, uint8_t **poutbuf, int *poutbuf_size, const uint8_t *buf, int buf_size, int64_t pts, int64_t dts, int64_t pos)</div><div class="ttdoc">Parse a packet.</div></div>
+<div class="ttc" id="agroup__lavu__mem__funcs_html_ga9f139c614d49f2a707b6037305b0fec0"><div class="ttname"><a href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a></div><div class="ttdeci">GLsizeiptr size</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:829</div></div>
+<div class="ttc" id="astruct_a_v_codec_context_html"><div class="ttname"><a href="struct_a_v_codec_context.html">AVCodecContext</a></div><div class="ttdoc">main external API structure.</div><div class="ttdef"><b>定义</b> avcodec.h:1518</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga0902d9337ad32aed0d23d7829e1f410f" name="ga0902d9337ad32aed0d23d7829e1f410f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0902d9337ad32aed0d23d7829e1f410f">&#9670;&#160;</a></span>av_register_codec_parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_register_codec_parser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_codec_parser.html">AVCodecParser</a> *</td>          <td class="paramname"><span class="paramname"><em>parser</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

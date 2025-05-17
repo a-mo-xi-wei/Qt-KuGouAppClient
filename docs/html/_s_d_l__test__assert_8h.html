@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_test_assert.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__test__assert_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">SDL_test_assert.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Include file for SDL test framework.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="begin__code_8h_source.html">begin_code.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="close__code_8h_source.html">close_code.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+SDL_test_assert.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h__incl.png" border="0" usemap="#a_s_d_l__test__assert_8h" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h" id="a_s_d_l__test__assert_8h">
+<area shape="rect" title="Include file for SDL test framework." alt="" coords="51,5,181,32"/>
+<area shape="rect" href="begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions,..." alt="" coords="5,80,104,107"/>
+<area shape="poly" title=" " alt="" coords="107,34,77,70,73,66,103,31"/>
+<area shape="rect" href="close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="128,80,226,107"/>
+<area shape="poly" title=" " alt="" coords="129,31,159,66,155,70,124,34"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h__dep__incl.png" border="0" usemap="#a_s_d_l__test__assert_8hdep" alt=""/></div>
+<map name="a_s_d_l__test__assert_8hdep" id="a_s_d_l__test__assert_8hdep">
+<area shape="rect" title="Include file for SDL test framework." alt="" coords="5,5,136,32"/>
+<area shape="rect" href="_s_d_l__test_8h.html" title="Include file for SDL test framework." alt="" coords="27,80,114,107"/>
+<area shape="poly" title=" " alt="" coords="73,48,73,80,68,80,68,48"/>
+</map>
+</div>
+</div>
+<p><a href="_s_d_l__test__assert_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:adc9dbc949d8699a6f6515211a2efa0cf" id="r_adc9dbc949d8699a6f6515211a2efa0cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc9dbc949d8699a6f6515211a2efa0cf">ASSERT_FAIL</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:adc9dbc949d8699a6f6515211a2efa0cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fails the assert.  <br /></td></tr>
+<tr class="separator:adc9dbc949d8699a6f6515211a2efa0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67a2f28e6df1e351df870754835a09a" id="r_ae67a2f28e6df1e351df870754835a09a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae67a2f28e6df1e351df870754835a09a">ASSERT_PASS</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ae67a2f28e6df1e351df870754835a09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the assert.  <br /></td></tr>
+<tr class="separator:ae67a2f28e6df1e351df870754835a09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a633252c9cb122f42c502ca43d6f842ad" id="r_a633252c9cb122f42c502ca43d6f842ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a633252c9cb122f42c502ca43d6f842ad">SDLTest_Assert</a> (int assertCondition, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *assertDescription,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(2)</td></tr>
+<tr class="memdesc:a633252c9cb122f42c502ca43d6f842ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assert that logs and break execution flow on failures.  <br /></td></tr>
+<tr class="separator:a633252c9cb122f42c502ca43d6f842ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab" id="r_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab">SDLTest_AssertCheck</a> (int assertCondition, <a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *assertDescription,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(2)</td></tr>
+<tr class="memdesc:a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assert for test cases that logs but does not break execution flow on failures.  <br /></td></tr>
+<tr class="separator:a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2156b479e33af1aa7e2c7d03c5cbb4c9" id="r_a2156b479e33af1aa7e2c7d03c5cbb4c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2156b479e33af1aa7e2c7d03c5cbb4c9">SDLTest_AssertPass</a> (<a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *assertDescription,...) <a class="el" href="_s_d_l__stdinc_8h.html#ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</a>(1)</td></tr>
+<tr class="memdesc:a2156b479e33af1aa7e2c7d03c5cbb4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly pass without checking an assertion condition.  <br /></td></tr>
+<tr class="separator:a2156b479e33af1aa7e2c7d03c5cbb4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f78edbf1f7a38ebfeb2a2c76e3a5e60" id="r_a1f78edbf1f7a38ebfeb2a2c76e3a5e60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f78edbf1f7a38ebfeb2a2c76e3a5e60">SDLTest_ResetAssertSummary</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a1f78edbf1f7a38ebfeb2a2c76e3a5e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the assert summary counters to zero.  <br /></td></tr>
+<tr class="separator:a1f78edbf1f7a38ebfeb2a2c76e3a5e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e34c7c9d66a164ed785de905c75ab54" id="r_a7e34c7c9d66a164ed785de905c75ab54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e34c7c9d66a164ed785de905c75ab54">SDLTest_LogAssertSummary</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a7e34c7c9d66a164ed785de905c75ab54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR.  <br /></td></tr>
+<tr class="separator:a7e34c7c9d66a164ed785de905c75ab54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8cea91b1ce4db4fdea8ebab455c2190" id="r_ad8cea91b1ce4db4fdea8ebab455c2190"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8cea91b1ce4db4fdea8ebab455c2190">SDLTest_AssertSummaryToTestResult</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ad8cea91b1ce4db4fdea8ebab455c2190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the current assert summary state to a test result.  <br /></td></tr>
+<tr class="separator:ad8cea91b1ce4db4fdea8ebab455c2190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Include file for SDL test framework. </p>
+<p>This code is a part of the SDL2_test library, not the main SDL library. </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="adc9dbc949d8699a6f6515211a2efa0cf" name="adc9dbc949d8699a6f6515211a2efa0cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc9dbc949d8699a6f6515211a2efa0cf">&#9670;&#160;</a></span>ASSERT_FAIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASSERT_FAIL&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fails the assert. </p>
+
+</div>
+</div>
+<a id="ae67a2f28e6df1e351df870754835a09a" name="ae67a2f28e6df1e351df870754835a09a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67a2f28e6df1e351df870754835a09a">&#9670;&#160;</a></span>ASSERT_PASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASSERT_PASS&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Passes the assert. </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a633252c9cb122f42c502ca43d6f842ad" name="a633252c9cb122f42c502ca43d6f842ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633252c9cb122f42c502ca43d6f842ad">&#9670;&#160;</a></span>SDLTest_Assert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> SDLTest_Assert </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>assertCondition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>assertDescription</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assert that logs and break execution flow on failures. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assertCondition</td><td>Evaluated condition or variable to assert; fail (==0) or pass (!=0). </td></tr>
+    <tr><td class="paramname">assertDescription</td><td>Message to log with the assert describing it. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab" name="a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab">&#9670;&#160;</a></span>SDLTest_AssertCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SDLTest_AssertCheck </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>assertCondition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>assertDescription</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assert for test cases that logs but does not break execution flow on failures. </p>
+<p>Updates assertion counters.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assertCondition</td><td>Evaluated condition or variable to assert; fail (==0) or pass (!=0). </td></tr>
+    <tr><td class="paramname">assertDescription</td><td>Message to log with the assert describing it.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the assertCondition so it can be used to externally to break execution flow if desired. </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab_cgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab_cgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab_cgraph" id="a_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab_cgraph">
+<area shape="rect" title="Assert for test cases that logs but does not break execution flow on failures." alt="" coords="5,29,160,56"/>
+<area shape="poly" title=" " alt="" coords="56,30,51,21,54,11,65,5,83,3,101,5,111,12,108,16,99,10,82,8,67,10,58,15,56,20,60,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab_icgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab_icgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab_icgraph" id="a_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab_icgraph">
+<area shape="rect" title="Assert for test cases that logs but does not break execution flow on failures." alt="" coords="5,29,160,56"/>
+<area shape="poly" title=" " alt="" coords="108,16,99,10,82,8,67,10,58,15,56,20,60,28,56,30,51,21,54,11,65,5,83,3,101,5,111,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2156b479e33af1aa7e2c7d03c5cbb4c9" name="a2156b479e33af1aa7e2c7d03c5cbb4c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2156b479e33af1aa7e2c7d03c5cbb4c9">&#9670;&#160;</a></span>SDLTest_AssertPass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> SDLTest_AssertPass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</a> <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>assertDescription</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Explicitly pass without checking an assertion condition. </p>
+<p>Updates assertion counter.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assertDescription</td><td>Message to log with the assert describing it. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9_cgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9_cgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9_cgraph" id="a_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9_cgraph">
+<area shape="rect" title="Explicitly pass without checking an assertion condition." alt="" coords="5,29,152,56"/>
+<area shape="poly" title=" " alt="" coords="53,30,48,21,52,11,62,5,79,3,96,5,106,12,103,16,94,10,78,8,64,10,56,14,54,20,58,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9_icgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9_icgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9_icgraph" id="a_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9_icgraph">
+<area shape="rect" title="Explicitly pass without checking an assertion condition." alt="" coords="5,29,152,56"/>
+<area shape="poly" title=" " alt="" coords="103,16,94,10,78,8,64,10,56,14,54,20,58,28,53,30,48,21,52,11,62,5,79,3,96,5,106,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad8cea91b1ce4db4fdea8ebab455c2190" name="ad8cea91b1ce4db4fdea8ebab455c2190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8cea91b1ce4db4fdea8ebab455c2190">&#9670;&#160;</a></span>SDLTest_AssertSummaryToTestResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SDLTest_AssertSummaryToTestResult </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts the current assert summary state to a test result. </p>
+<dl class="section return"><dt>返回</dt><dd>TEST_RESULT_PASSED, TEST_RESULT_FAILED, or TEST_RESULT_NO_ASSERT </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190_cgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190_cgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190_cgraph" id="a_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190_cgraph">
+<area shape="rect" title="Converts the current assert summary state to a test result." alt="" coords="5,29,217,72"/>
+<area shape="poly" title=" " alt="" coords="71,29,69,19,76,10,90,5,111,3,134,5,147,11,145,16,132,10,111,8,91,10,79,15,74,21,76,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190_icgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190_icgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190_icgraph" id="a_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190_icgraph">
+<area shape="rect" title="Converts the current assert summary state to a test result." alt="" coords="5,29,217,72"/>
+<area shape="poly" title=" " alt="" coords="145,16,132,10,111,8,91,10,79,15,74,21,76,28,71,29,69,19,76,10,90,5,111,3,134,5,147,11"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7e34c7c9d66a164ed785de905c75ab54" name="a7e34c7c9d66a164ed785de905c75ab54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e34c7c9d66a164ed785de905c75ab54">&#9670;&#160;</a></span>SDLTest_LogAssertSummary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> SDLTest_LogAssertSummary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR. </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54_cgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54_cgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54_cgraph" id="a_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54_cgraph">
+<area shape="rect" title="Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR." alt="" coords="5,29,199,56"/>
+<area shape="poly" title=" " alt="" coords="69,30,63,21,67,11,80,5,102,3,125,5,137,12,135,16,124,10,102,8,82,10,71,15,68,20,74,27"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54_icgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54_icgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54_icgraph" id="a_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54_icgraph">
+<area shape="rect" title="Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR." alt="" coords="5,29,199,56"/>
+<area shape="poly" title=" " alt="" coords="135,16,124,10,102,8,82,10,71,15,68,20,74,27,69,30,63,21,67,11,80,5,102,3,125,5,137,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1f78edbf1f7a38ebfeb2a2c76e3a5e60" name="a1f78edbf1f7a38ebfeb2a2c76e3a5e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f78edbf1f7a38ebfeb2a2c76e3a5e60">&#9670;&#160;</a></span>SDLTest_ResetAssertSummary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> SDLTest_ResetAssertSummary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the assert summary counters to zero. </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60_cgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60_cgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60_cgraph" id="a_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60_cgraph">
+<area shape="rect" title="Resets the assert summary counters to zero." alt="" coords="5,29,213,56"/>
+<area shape="poly" title=" " alt="" coords="74,30,68,21,72,11,86,5,109,3,134,5,147,12,144,16,132,10,109,8,87,10,76,15,73,20,78,27"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60_icgraph.png" border="0" usemap="#a_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60_icgraph" alt=""/></div>
+<map name="a_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60_icgraph" id="a_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60_icgraph">
+<area shape="rect" title="Resets the assert summary counters to zero." alt="" coords="5,29,213,56"/>
+<area shape="poly" title=" " alt="" coords="144,16,132,10,109,8,87,10,76,15,73,20,78,27,74,30,68,21,72,11,86,5,109,3,134,5,147,12"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__test__assert_8h.html">SDL_test_assert.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

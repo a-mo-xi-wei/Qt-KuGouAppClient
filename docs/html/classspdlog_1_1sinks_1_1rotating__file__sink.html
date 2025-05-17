@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: rotating_file_sink&lt; Mutex &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classspdlog_1_1sinks_1_1rotating__file__sink.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classspdlog_1_1sinks_1_1rotating__file__sink-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rotating_file_sink&lt; Mutex &gt; 模板类 参考<span class="mlabels"><span class="mlabel final">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rotating__file__sink_8h_source.html">rotating_file_sink.h</a>&gt;</code></p>
+<div class="dynheader">
+类 rotating_file_sink&lt; Mutex &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink__inherit__graph.png" border="0" usemap="#arotating__file__sink_3_01_mutex_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="arotating__file__sink_3_01_mutex_01_4_inherit__map" id="arotating__file__sink_3_01_mutex_01_4_inherit__map">
+<area shape="rect" title=" " alt="" coords="16,155,135,197"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1base__sink.html" title=" " alt="" coords="5,80,146,107"/>
+<area shape="poly" title=" " alt="" coords="78,122,78,154,73,154,73,122"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1sink.html" title=" " alt="" coords="53,5,98,32"/>
+<area shape="poly" title=" " alt="" coords="78,48,78,80,73,80,73,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+rotating_file_sink&lt; Mutex &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink__coll__graph.png" border="0" usemap="#arotating__file__sink_3_01_mutex_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="arotating__file__sink_3_01_mutex_01_4_coll__map" id="arotating__file__sink_3_01_mutex_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="82,187,202,229"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1base__sink.html" title=" " alt="" coords="5,96,146,123"/>
+<area shape="poly" title=" " alt="" coords="95,134,130,185,126,188,91,137"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1sink.html" title=" " alt="" coords="53,5,98,32"/>
+<area shape="poly" title=" " alt="" coords="78,48,78,95,73,95,73,48"/>
+<area shape="rect" href="classspdlog_1_1details_1_1file__helper.html" title=" " alt="" coords="170,96,250,123"/>
+<area shape="poly" title=" " alt="" coords="195,137,159,188,155,184,190,134"/>
+<area shape="rect" href="structspdlog_1_1file__event__handlers.html" title=" " alt="" coords="144,5,277,32"/>
+<area shape="poly" title=" " alt="" coords="213,48,213,95,208,95,208,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a9bd0774fb4ed096b8bbe526cafdaccf7" id="r_a9bd0774fb4ed096b8bbe526cafdaccf7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bd0774fb4ed096b8bbe526cafdaccf7">rotating_file_sink</a> (<a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> base_filename, std::size_t max_size, std::size_t max_files, bool rotate_on_open=false, const <a class="el" href="structspdlog_1_1file__event__handlers.html">file_event_handlers</a> &amp;event_handlers={})</td></tr>
+<tr class="separator:a9bd0774fb4ed096b8bbe526cafdaccf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9808b0b5409ef429e15bb9a290c715" id="r_a8b9808b0b5409ef429e15bb9a290c715"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b9808b0b5409ef429e15bb9a290c715">filename</a> ()</td></tr>
+<tr class="separator:a8b9808b0b5409ef429e15bb9a290c715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada62630736b50e328238dac62f04a18c" id="r_ada62630736b50e328238dac62f04a18c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada62630736b50e328238dac62f04a18c">rotate_now</a> ()</td></tr>
+<tr class="separator:ada62630736b50e328238dac62f04a18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classspdlog_1_1sinks_1_1base__sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classspdlog_1_1sinks_1_1base__sink')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink&lt; Mutex &gt;</a></td></tr>
+<tr class="memitem:a14d5b40be14161d3353c0f4c0bc1f71f inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_a14d5b40be14161d3353c0f4c0bc1f71f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a14d5b40be14161d3353c0f4c0bc1f71f">base_sink</a> ()</td></tr>
+<tr class="separator:a14d5b40be14161d3353c0f4c0bc1f71f inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1457fe41e2fd0dc0b2ae0cf423d5ea92 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_a1457fe41e2fd0dc0b2ae0cf423d5ea92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a1457fe41e2fd0dc0b2ae0cf423d5ea92">base_sink</a> (std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt; <a class="el" href="classspdlog_1_1formatter.html">formatter</a>)</td></tr>
+<tr class="separator:a1457fe41e2fd0dc0b2ae0cf423d5ea92 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7459bb32b41a571c3d7f5f357d1ade7 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_ab7459bb32b41a571c3d7f5f357d1ade7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#ab7459bb32b41a571c3d7f5f357d1ade7">~base_sink</a> () override=default</td></tr>
+<tr class="separator:ab7459bb32b41a571c3d7f5f357d1ade7 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15b97ad9254420132272704b7430ac6b inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_a15b97ad9254420132272704b7430ac6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a15b97ad9254420132272704b7430ac6b">base_sink</a> (const <a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink</a> &amp;)=delete</td></tr>
+<tr class="separator:a15b97ad9254420132272704b7430ac6b inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7777cd355896947ba0133c56316664a inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_aa7777cd355896947ba0133c56316664a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#aa7777cd355896947ba0133c56316664a">base_sink</a> (<a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:aa7777cd355896947ba0133c56316664a inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d0d444bffab8500c521e4ce2b2e24a inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_a29d0d444bffab8500c521e4ce2b2e24a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a29d0d444bffab8500c521e4ce2b2e24a">operator=</a> (const <a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink</a> &amp;)=delete</td></tr>
+<tr class="separator:a29d0d444bffab8500c521e4ce2b2e24a inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c96c591c7d1984ff0086229accbefe9 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_a8c96c591c7d1984ff0086229accbefe9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a8c96c591c7d1984ff0086229accbefe9">operator=</a> (<a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a8c96c591c7d1984ff0086229accbefe9 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd252d752f933da7bf9371424912296b inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_abd252d752f933da7bf9371424912296b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#abd252d752f933da7bf9371424912296b">log</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg) final override</td></tr>
+<tr class="separator:abd252d752f933da7bf9371424912296b inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87dd1d46e6d5bf172f31d3792000549 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_aa87dd1d46e6d5bf172f31d3792000549"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#aa87dd1d46e6d5bf172f31d3792000549">flush</a> () final override</td></tr>
+<tr class="separator:aa87dd1d46e6d5bf172f31d3792000549 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa27d3dbf1bcf4547bdc2d0ce5f61040d inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_aa27d3dbf1bcf4547bdc2d0ce5f61040d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#aa27d3dbf1bcf4547bdc2d0ce5f61040d">set_pattern</a> (const std::string &amp;pattern) final override</td></tr>
+<tr class="separator:aa27d3dbf1bcf4547bdc2d0ce5f61040d inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a977f53d5b69c9ce294228d36438643b8 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink" id="r_a977f53d5b69c9ce294228d36438643b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a977f53d5b69c9ce294228d36438643b8">set_formatter</a> (std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt; sink_formatter) final override</td></tr>
+<tr class="separator:a977f53d5b69c9ce294228d36438643b8 inherit pub_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classspdlog_1_1sinks_1_1sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classspdlog_1_1sinks_1_1sink')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classspdlog_1_1sinks_1_1sink.html">sink</a></td></tr>
+<tr class="memitem:a4378311607e5dff017f9f574a848d3b4 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a4378311607e5dff017f9f574a848d3b4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a4378311607e5dff017f9f574a848d3b4">~sink</a> ()=default</td></tr>
+<tr class="separator:a4378311607e5dff017f9f574a848d3b4 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b86abe856316546dfa0c1f676ee88be inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a2b86abe856316546dfa0c1f676ee88be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a2b86abe856316546dfa0c1f676ee88be">set_level</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> log_level)</td></tr>
+<tr class="separator:a2b86abe856316546dfa0c1f676ee88be inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe26ed0ab5a746f64453de6477b32479 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_abe26ed0ab5a746f64453de6477b32479"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#abe26ed0ab5a746f64453de6477b32479">level</a> () const</td></tr>
+<tr class="separator:abe26ed0ab5a746f64453de6477b32479 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ca95bf1c42999b200c46021a464410 inherit pub_methods_classspdlog_1_1sinks_1_1sink" id="r_a60ca95bf1c42999b200c46021a464410"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a60ca95bf1c42999b200c46021a464410">should_log</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> msg_level) const</td></tr>
+<tr class="separator:a60ca95bf1c42999b200c46021a464410 inherit pub_methods_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:aea3d5297dc8130b04ce4a1d758d0d9b0" id="r_aea3d5297dc8130b04ce4a1d758d0d9b0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea3d5297dc8130b04ce4a1d758d0d9b0">calc_filename</a> (const <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> &amp;<a class="el" href="#a8b9808b0b5409ef429e15bb9a290c715">filename</a>, std::size_t <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>)</td></tr>
+<tr class="separator:aea3d5297dc8130b04ce4a1d758d0d9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a5c89008ad5dc78b230a223af56d1d0e5" id="r_a5c89008ad5dc78b230a223af56d1d0e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c89008ad5dc78b230a223af56d1d0e5">sink_it_</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg) override</td></tr>
+<tr class="separator:a5c89008ad5dc78b230a223af56d1d0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6000654fa63051d28e75353226ee9c51" id="r_a6000654fa63051d28e75353226ee9c51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6000654fa63051d28e75353226ee9c51">flush_</a> () override</td></tr>
+<tr class="separator:a6000654fa63051d28e75353226ee9c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classspdlog_1_1sinks_1_1base__sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classspdlog_1_1sinks_1_1base__sink')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink&lt; Mutex &gt;</a></td></tr>
+<tr class="memitem:a67b2cf9bb6a43aed796716de286c46d2 inherit pro_methods_classspdlog_1_1sinks_1_1base__sink" id="r_a67b2cf9bb6a43aed796716de286c46d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a67b2cf9bb6a43aed796716de286c46d2">set_pattern_</a> (const std::string &amp;pattern)</td></tr>
+<tr class="separator:a67b2cf9bb6a43aed796716de286c46d2 inherit pro_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3131c4df0819f34704ad88b15be327 inherit pro_methods_classspdlog_1_1sinks_1_1base__sink" id="r_aba3131c4df0819f34704ad88b15be327"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#aba3131c4df0819f34704ad88b15be327">set_formatter_</a> (std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt; sink_formatter)</td></tr>
+<tr class="separator:aba3131c4df0819f34704ad88b15be327 inherit pro_methods_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a5d1a8f6cf62a536e12eefd2721be4d3c" id="r_a5d1a8f6cf62a536e12eefd2721be4d3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d1a8f6cf62a536e12eefd2721be4d3c">rotate_</a> ()</td></tr>
+<tr class="separator:a5d1a8f6cf62a536e12eefd2721be4d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf950c0ff9971d40abc15b11b6f4249a" id="r_aaf950c0ff9971d40abc15b11b6f4249a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf950c0ff9971d40abc15b11b6f4249a">rename_file_</a> (const <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> &amp;src_filename, const <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> &amp;target_filename)</td></tr>
+<tr class="separator:aaf950c0ff9971d40abc15b11b6f4249a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a1f4a7f787845486575a352d8e416f6b5" id="r_a1f4a7f787845486575a352d8e416f6b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f4a7f787845486575a352d8e416f6b5">base_filename_</a></td></tr>
+<tr class="separator:a1f4a7f787845486575a352d8e416f6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9598c4302f5238bf62c1fce2ba4218e5" id="r_a9598c4302f5238bf62c1fce2ba4218e5"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9598c4302f5238bf62c1fce2ba4218e5">max_size_</a></td></tr>
+<tr class="separator:a9598c4302f5238bf62c1fce2ba4218e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0586acf06b871e4a30258bcdd9bb09ab" id="r_a0586acf06b871e4a30258bcdd9bb09ab"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0586acf06b871e4a30258bcdd9bb09ab">max_files_</a></td></tr>
+<tr class="separator:a0586acf06b871e4a30258bcdd9bb09ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb5d03ef3a062032d85166809396adb" id="r_a0bb5d03ef3a062032d85166809396adb"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bb5d03ef3a062032d85166809396adb">current_size_</a></td></tr>
+<tr class="separator:a0bb5d03ef3a062032d85166809396adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e04caf9739bc7d63e2f00ed46f757e2" id="r_a4e04caf9739bc7d63e2f00ed46f757e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1details_1_1file__helper.html">details::file_helper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e04caf9739bc7d63e2f00ed46f757e2">file_helper_</a></td></tr>
+<tr class="separator:a4e04caf9739bc7d63e2f00ed46f757e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_classspdlog_1_1sinks_1_1base__sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classspdlog_1_1sinks_1_1base__sink')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classspdlog_1_1sinks_1_1base__sink.html">base_sink&lt; Mutex &gt;</a></td></tr>
+<tr class="memitem:a5a30b70b2c72cb5bda34170d8151ad0c inherit pro_attribs_classspdlog_1_1sinks_1_1base__sink" id="r_a5a30b70b2c72cb5bda34170d8151ad0c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a5a30b70b2c72cb5bda34170d8151ad0c">formatter_</a></td></tr>
+<tr class="separator:a5a30b70b2c72cb5bda34170d8151ad0c inherit pro_attribs_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01268d7e44c318a733a4c6c4d08deb04 inherit pro_attribs_classspdlog_1_1sinks_1_1base__sink" id="r_a01268d7e44c318a733a4c6c4d08deb04"><td class="memItemLeft" align="right" valign="top">Mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a01268d7e44c318a733a4c6c4d08deb04">mutex_</a></td></tr>
+<tr class="separator:a01268d7e44c318a733a4c6c4d08deb04 inherit pro_attribs_classspdlog_1_1sinks_1_1base__sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classspdlog_1_1sinks_1_1sink"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classspdlog_1_1sinks_1_1sink')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classspdlog_1_1sinks_1_1sink.html">sink</a></td></tr>
+<tr class="memitem:a0bd568016e714bb3d63c3f44171d7c88 inherit pro_attribs_classspdlog_1_1sinks_1_1sink" id="r_a0bd568016e714bb3d63c3f44171d7c88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog.html#aea7e92c1b5fd7b8c04ceffd31bfa3e7c">level_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1sinks_1_1sink.html#a0bd568016e714bb3d63c3f44171d7c88">level_</a> {<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109a36a3b17acbfb35380a47b3d88c9b8942">level::trace</a>}</td></tr>
+<tr class="separator:a0bd568016e714bb3d63c3f44171d7c88 inherit pro_attribs_classspdlog_1_1sinks_1_1sink"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a9bd0774fb4ed096b8bbe526cafdaccf7" name="a9bd0774fb4ed096b8bbe526cafdaccf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd0774fb4ed096b8bbe526cafdaccf7">&#9670;&#160;</a></span>rotating_file_sink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1sinks_1_1rotating__file__sink.html">rotating_file_sink</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a></td>          <td class="paramname"><span class="paramname"><em>base_filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>max_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>max_files</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>rotate_on_open</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1file__event__handlers.html">file_event_handlers</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event_handlers</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aea3d5297dc8130b04ce4a1d758d0d9b0" name="aea3d5297dc8130b04ce4a1d758d0d9b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3d5297dc8130b04ce4a1d758d0d9b0">&#9670;&#160;</a></span>calc_filename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> calc_filename </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_aea3d5297dc8130b04ce4a1d758d0d9b0_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_aea3d5297dc8130b04ce4a1d758d0d9b0_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_aea3d5297dc8130b04ce4a1d758d0d9b0_cgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_aea3d5297dc8130b04ce4a1d758d0d9b0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,107,61"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a8b9808b0b5409ef429e15bb9a290c715" title=" " alt="" coords="209,5,280,32"/>
+<area shape="poly" title=" " alt="" coords="107,38,194,24,194,29,108,43"/>
+<area shape="rect" href="classspdlog_1_1details_1_1file__helper.html#af9bf69fdfb6881902eaf325e117c418c" title=" " alt="" coords="155,56,334,99"/>
+<area shape="poly" title=" " alt="" coords="108,53,139,58,138,64,107,58"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_aea3d5297dc8130b04ce4a1d758d0d9b0_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_aea3d5297dc8130b04ce4a1d758d0d9b0_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_aea3d5297dc8130b04ce4a1d758d0d9b0_icgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_aea3d5297dc8130b04ce4a1d758d0d9b0_icgraph">
+<area shape="rect" title=" " alt="" coords="248,31,349,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5d1a8f6cf62a536e12eefd2721be4d3c" title=" " alt="" coords="139,31,200,57"/>
+<area shape="poly" title=" " alt="" coords="232,47,200,47,200,41,232,41"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#ada62630736b50e328238dac62f04a18c" title=" " alt="" coords="5,5,91,32"/>
+<area shape="poly" title=" " alt="" coords="123,37,90,30,91,25,124,32"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5c89008ad5dc78b230a223af56d1d0e5" title=" " alt="" coords="15,56,81,83"/>
+<area shape="poly" title=" " alt="" coords="124,56,82,65,81,60,123,51"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8b9808b0b5409ef429e15bb9a290c715" name="a8b9808b0b5409ef429e15bb9a290c715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9808b0b5409ef429e15bb9a290c715">&#9670;&#160;</a></span>filename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> filename </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_a8b9808b0b5409ef429e15bb9a290c715_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_a8b9808b0b5409ef429e15bb9a290c715_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_a8b9808b0b5409ef429e15bb9a290c715_icgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_a8b9808b0b5409ef429e15bb9a290c715_icgraph">
+<area shape="rect" title=" " alt="" coords="397,31,468,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#aea3d5297dc8130b04ce4a1d758d0d9b0" title=" " alt="" coords="248,31,349,57"/>
+<area shape="poly" title=" " alt="" coords="381,47,350,47,350,41,381,41"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5d1a8f6cf62a536e12eefd2721be4d3c" title=" " alt="" coords="139,31,200,57"/>
+<area shape="poly" title=" " alt="" coords="232,47,200,47,200,41,232,41"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#ada62630736b50e328238dac62f04a18c" title=" " alt="" coords="5,5,91,32"/>
+<area shape="poly" title=" " alt="" coords="123,37,90,30,91,25,124,32"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5c89008ad5dc78b230a223af56d1d0e5" title=" " alt="" coords="15,56,81,83"/>
+<area shape="poly" title=" " alt="" coords="124,56,82,65,81,60,123,51"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6000654fa63051d28e75353226ee9c51" name="a6000654fa63051d28e75353226ee9c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6000654fa63051d28e75353226ee9c51">&#9670;&#160;</a></span>flush_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void flush_ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#aec165d18188682a3d2a6b51391ef8108">base_sink&lt; Mutex &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aaf950c0ff9971d40abc15b11b6f4249a" name="aaf950c0ff9971d40abc15b11b6f4249a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf950c0ff9971d40abc15b11b6f4249a">&#9670;&#160;</a></span>rename_file_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> bool rename_file_ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>src_filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target_filename</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_aaf950c0ff9971d40abc15b11b6f4249a_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_aaf950c0ff9971d40abc15b11b6f4249a_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_aaf950c0ff9971d40abc15b11b6f4249a_cgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_aaf950c0ff9971d40abc15b11b6f4249a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,47,101,73"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a1eac0f8e2a6686080277a315167e8421" title=" " alt="" coords="149,5,276,48"/>
+<area shape="poly" title=" " alt="" coords="100,47,133,41,134,46,101,53"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a85de358f9750f728280105b0792d8241" title=" " alt="" coords="149,72,276,115"/>
+<area shape="poly" title=" " alt="" coords="101,67,134,74,133,79,100,73"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_aaf950c0ff9971d40abc15b11b6f4249a_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_aaf950c0ff9971d40abc15b11b6f4249a_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_aaf950c0ff9971d40abc15b11b6f4249a_icgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_aaf950c0ff9971d40abc15b11b6f4249a_icgraph">
+<area shape="rect" title=" " alt="" coords="248,31,343,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5d1a8f6cf62a536e12eefd2721be4d3c" title=" " alt="" coords="139,31,200,57"/>
+<area shape="poly" title=" " alt="" coords="233,47,201,47,201,41,233,41"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#ada62630736b50e328238dac62f04a18c" title=" " alt="" coords="5,5,91,32"/>
+<area shape="poly" title=" " alt="" coords="123,37,90,30,91,25,124,32"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5c89008ad5dc78b230a223af56d1d0e5" title=" " alt="" coords="15,56,81,83"/>
+<area shape="poly" title=" " alt="" coords="124,56,82,65,81,60,123,51"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5d1a8f6cf62a536e12eefd2721be4d3c" name="a5d1a8f6cf62a536e12eefd2721be4d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d1a8f6cf62a536e12eefd2721be4d3c">&#9670;&#160;</a></span>rotate_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void rotate_ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_a5d1a8f6cf62a536e12eefd2721be4d3c_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_a5d1a8f6cf62a536e12eefd2721be4d3c_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_a5d1a8f6cf62a536e12eefd2721be4d3c_cgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_a5d1a8f6cf62a536e12eefd2721be4d3c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,193,67,220"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#aea3d5297dc8130b04ce4a1d758d0d9b0" title=" " alt="" coords="147,39,248,65"/>
+<area shape="poly" title=" " alt="" coords="39,192,65,136,86,103,113,75,131,64,134,69,116,79,90,106,69,138,44,194"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a2fbe1afb07285e255dcec53f12a4e91d" title=" " alt="" coords="134,89,261,132"/>
+<area shape="poly" title=" " alt="" coords="50,191,78,166,113,142,122,137,124,142,116,146,82,171,54,195"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a6c7331cd55d496ca6e0c69a1d340f497" title=" " alt="" coords="134,156,261,199"/>
+<area shape="poly" title=" " alt="" coords="67,199,118,189,119,194,68,204"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#aaf950c0ff9971d40abc15b11b6f4249a" title=" " alt="" coords="150,223,245,249"/>
+<area shape="poly" title=" " alt="" coords="68,210,135,222,134,227,67,215"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#aef0334685ffaec5e38c6a8738e16c6fd" title=" " alt="" coords="134,273,261,316"/>
+<area shape="poly" title=" " alt="" coords="56,218,116,259,125,264,123,269,113,264,53,223"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="115,340,280,367"/>
+<area shape="poly" title=" " alt="" coords="45,219,70,272,91,301,116,326,123,330,120,335,113,330,87,304,66,274,40,222"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a8b9808b0b5409ef429e15bb9a290c715" title=" " alt="" coords="382,5,453,32"/>
+<area shape="poly" title=" " alt="" coords="248,42,367,24,368,29,249,47"/>
+<area shape="rect" href="classspdlog_1_1details_1_1file__helper.html#af9bf69fdfb6881902eaf325e117c418c" title=" " alt="" coords="328,56,507,99"/>
+<area shape="poly" title=" " alt="" coords="249,55,313,63,313,68,248,60"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a1eac0f8e2a6686080277a315167e8421" title=" " alt="" coords="354,148,481,191"/>
+<area shape="poly" title=" " alt="" coords="244,219,338,190,340,196,245,225"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a85de358f9750f728280105b0792d8241" title=" " alt="" coords="354,215,481,257"/>
+<area shape="poly" title=" " alt="" coords="245,233,339,233,339,239,245,239"/>
+<area shape="rect" href="util_8cpp.html#adb8bf6f8fadfa5e88a7da603d0cc1b28" title="跨平台睡眠函数（非 Windows 平台）" alt="" coords="390,281,445,308"/>
+<area shape="poly" title=" " alt="" coords="262,292,375,292,375,297,262,297"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_a5d1a8f6cf62a536e12eefd2721be4d3c_icgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_a5d1a8f6cf62a536e12eefd2721be4d3c_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_a5d1a8f6cf62a536e12eefd2721be4d3c_icgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_a5d1a8f6cf62a536e12eefd2721be4d3c_icgraph">
+<area shape="rect" title=" " alt="" coords="139,31,200,57"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#ada62630736b50e328238dac62f04a18c" title=" " alt="" coords="5,5,91,32"/>
+<area shape="poly" title=" " alt="" coords="123,37,90,30,91,25,124,32"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5c89008ad5dc78b230a223af56d1d0e5" title=" " alt="" coords="15,56,81,83"/>
+<area shape="poly" title=" " alt="" coords="124,56,82,65,81,60,123,51"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ada62630736b50e328238dac62f04a18c" name="ada62630736b50e328238dac62f04a18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada62630736b50e328238dac62f04a18c">&#9670;&#160;</a></span>rotate_now()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void rotate_now </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_ada62630736b50e328238dac62f04a18c_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_ada62630736b50e328238dac62f04a18c_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_ada62630736b50e328238dac62f04a18c_cgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_ada62630736b50e328238dac62f04a18c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,193,91,220"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5d1a8f6cf62a536e12eefd2721be4d3c" title=" " alt="" coords="139,193,200,220"/>
+<area shape="poly" title=" " alt="" coords="91,204,123,204,123,209,91,209"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#aea3d5297dc8130b04ce4a1d758d0d9b0" title=" " alt="" coords="280,39,381,65"/>
+<area shape="poly" title=" " alt="" coords="173,192,198,136,219,103,246,75,264,64,267,69,250,79,223,106,203,138,178,194"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a2fbe1afb07285e255dcec53f12a4e91d" title=" " alt="" coords="267,89,394,132"/>
+<area shape="poly" title=" " alt="" coords="183,191,212,166,247,142,255,137,258,142,249,146,215,171,187,195"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a6c7331cd55d496ca6e0c69a1d340f497" title=" " alt="" coords="267,156,394,199"/>
+<area shape="poly" title=" " alt="" coords="200,199,252,189,253,194,201,204"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#aaf950c0ff9971d40abc15b11b6f4249a" title=" " alt="" coords="283,223,378,249"/>
+<area shape="poly" title=" " alt="" coords="201,210,268,222,267,227,200,215"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#aef0334685ffaec5e38c6a8738e16c6fd" title=" " alt="" coords="267,273,394,316"/>
+<area shape="poly" title=" " alt="" coords="189,218,249,259,259,264,256,269,247,264,186,223"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="248,340,413,367"/>
+<area shape="poly" title=" " alt="" coords="178,219,204,272,224,301,250,326,256,330,253,335,246,330,220,304,199,274,173,222"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a8b9808b0b5409ef429e15bb9a290c715" title=" " alt="" coords="516,5,586,32"/>
+<area shape="poly" title=" " alt="" coords="382,42,500,24,501,29,382,47"/>
+<area shape="rect" href="classspdlog_1_1details_1_1file__helper.html#af9bf69fdfb6881902eaf325e117c418c" title=" " alt="" coords="461,56,641,99"/>
+<area shape="poly" title=" " alt="" coords="382,55,447,63,446,68,382,60"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a1eac0f8e2a6686080277a315167e8421" title=" " alt="" coords="487,148,615,191"/>
+<area shape="poly" title=" " alt="" coords="377,219,472,190,473,196,378,225"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a85de358f9750f728280105b0792d8241" title=" " alt="" coords="487,215,615,257"/>
+<area shape="poly" title=" " alt="" coords="379,233,472,233,472,239,379,239"/>
+<area shape="rect" href="util_8cpp.html#adb8bf6f8fadfa5e88a7da603d0cc1b28" title="跨平台睡眠函数（非 Windows 平台）" alt="" coords="524,281,578,308"/>
+<area shape="poly" title=" " alt="" coords="395,292,508,292,508,297,395,297"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5c89008ad5dc78b230a223af56d1d0e5" name="a5c89008ad5dc78b230a223af56d1d0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c89008ad5dc78b230a223af56d1d0e5">&#9670;&#160;</a></span>sink_it_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void sink_it_ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classspdlog_1_1sinks_1_1base__sink.html#a4207f8b4ea047f46eafda1cc6e9de7d0">base_sink&lt; Mutex &gt;</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1sinks_1_1rotating__file__sink_a5c89008ad5dc78b230a223af56d1d0e5_cgraph.png" border="0" usemap="#aclassspdlog_1_1sinks_1_1rotating__file__sink_a5c89008ad5dc78b230a223af56d1d0e5_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1sinks_1_1rotating__file__sink_a5c89008ad5dc78b230a223af56d1d0e5_cgraph" id="aclassspdlog_1_1sinks_1_1rotating__file__sink_a5c89008ad5dc78b230a223af56d1d0e5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,193,72,220"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a5d1a8f6cf62a536e12eefd2721be4d3c" title=" " alt="" coords="120,193,181,220"/>
+<area shape="poly" title=" " alt="" coords="72,204,104,204,104,209,72,209"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#aea3d5297dc8130b04ce4a1d758d0d9b0" title=" " alt="" coords="261,39,362,65"/>
+<area shape="poly" title=" " alt="" coords="154,192,179,136,200,103,227,75,245,64,248,69,231,79,204,106,184,138,159,194"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a2fbe1afb07285e255dcec53f12a4e91d" title=" " alt="" coords="248,89,375,132"/>
+<area shape="poly" title=" " alt="" coords="164,191,193,166,228,142,236,137,239,142,230,146,196,171,168,195"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a6c7331cd55d496ca6e0c69a1d340f497" title=" " alt="" coords="248,156,375,199"/>
+<area shape="poly" title=" " alt="" coords="181,199,233,189,234,194,182,204"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#aaf950c0ff9971d40abc15b11b6f4249a" title=" " alt="" coords="264,223,359,249"/>
+<area shape="poly" title=" " alt="" coords="182,210,249,222,248,227,181,215"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#aef0334685ffaec5e38c6a8738e16c6fd" title=" " alt="" coords="248,273,375,316"/>
+<area shape="poly" title=" " alt="" coords="170,218,230,259,240,264,237,269,228,264,167,223"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="229,340,394,367"/>
+<area shape="poly" title=" " alt="" coords="159,219,185,272,205,301,231,326,237,330,234,335,227,330,201,304,180,274,154,222"/>
+<area shape="rect" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a8b9808b0b5409ef429e15bb9a290c715" title=" " alt="" coords="497,5,567,32"/>
+<area shape="poly" title=" " alt="" coords="363,42,481,24,482,29,363,47"/>
+<area shape="rect" href="classspdlog_1_1details_1_1file__helper.html#af9bf69fdfb6881902eaf325e117c418c" title=" " alt="" coords="442,56,622,99"/>
+<area shape="poly" title=" " alt="" coords="363,55,428,63,427,68,363,60"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a1eac0f8e2a6686080277a315167e8421" title=" " alt="" coords="468,148,596,191"/>
+<area shape="poly" title=" " alt="" coords="358,219,453,190,454,196,359,225"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a85de358f9750f728280105b0792d8241" title=" " alt="" coords="468,215,596,257"/>
+<area shape="poly" title=" " alt="" coords="360,233,453,233,453,239,360,239"/>
+<area shape="rect" href="util_8cpp.html#adb8bf6f8fadfa5e88a7da603d0cc1b28" title="跨平台睡眠函数（非 Windows 平台）" alt="" coords="505,281,559,308"/>
+<area shape="poly" title=" " alt="" coords="376,292,489,292,489,297,376,297"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a1f4a7f787845486575a352d8e416f6b5" name="a1f4a7f787845486575a352d8e416f6b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4a7f787845486575a352d8e416f6b5">&#9670;&#160;</a></span>base_filename_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacespdlog.html#a99db2782e5753834e4ee1c1f26f20088">filename_t</a> base_filename_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0bb5d03ef3a062032d85166809396adb" name="a0bb5d03ef3a062032d85166809396adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bb5d03ef3a062032d85166809396adb">&#9670;&#160;</a></span>current_size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t current_size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e04caf9739bc7d63e2f00ed46f757e2" name="a4e04caf9739bc7d63e2f00ed46f757e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e04caf9739bc7d63e2f00ed46f757e2">&#9670;&#160;</a></span>file_helper_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1details_1_1file__helper.html">details::file_helper</a> file_helper_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0586acf06b871e4a30258bcdd9bb09ab" name="a0586acf06b871e4a30258bcdd9bb09ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0586acf06b871e4a30258bcdd9bb09ab">&#9670;&#160;</a></span>max_files_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t max_files_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9598c4302f5238bf62c1fce2ba4218e5" name="a9598c4302f5238bf62c1fce2ba4218e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9598c4302f5238bf62c1fce2ba4218e5">&#9670;&#160;</a></span>max_size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Mutex&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t max_size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="rotating__file__sink_8h_source.html">rotating_file_sink.h</a></li>
+<li><a class="el" href="rotating__file__sink-inl_8h_source.html">rotating_file_sink-inl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="namespacespdlog_1_1sinks.html">sinks</a></li><li class="navelem"><a class="el" href="classspdlog_1_1sinks_1_1rotating__file__sink.html">rotating_file_sink</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

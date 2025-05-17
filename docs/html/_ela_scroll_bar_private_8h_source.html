@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ElaScrollBarPrivate.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_ela_scroll_bar_private_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ElaScrollBarPrivate.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_ela_scroll_bar_private_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef ELASCROLLBARPRIVATE_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define ELASCROLLBARPRIVATE_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QAbstractScrollArea&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QScrollBar&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span>QTimer;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="class_q_property_animation.html">QPropertyAnimation</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span><a class="code hl_class" href="class_ela_scroll_bar.html">ElaScrollBar</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_ela_scroll_bar_private.html">   26</a></span><span class="keyword">class </span><a class="code hl_function" href="class_ela_scroll_bar_private.html#ac75e5d40f9dedc7dc3cab9013b55cb2b">ElaScrollBarPrivate</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    Q_OBJECT</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_define" href="stdafx_8h.html#a7dfd44162fad9c0d8377cea8b93c6b5f">Q_D_CREATE</a>(<a class="code hl_class" href="class_ela_scroll_bar.html">ElaScrollBar</a>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_define" href="stdafx_8h.html#a57bb06270a144d2fda2ff92dfe999ef5">Q_PROPERTY_CREATE_D</a>(<span class="keywordtype">bool</span>,   IsAnimation)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_define" href="stdafx_8h.html#a57bb06270a144d2fda2ff92dfe999ef5">Q_PROPERTY_CREATE_D</a>(qreal,  SpeedLimit)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_define" href="stdafx_8h.html#aa4e369dd4ddb60619226f24c14ad1d14">Q_PROPERTY_CREATE</a>(<span class="keywordtype">int</span>,      TargetMaximum)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_ela_scroll_bar_private.html#ac75e5d40f9dedc7dc3cab9013b55cb2b">ElaScrollBarPrivate</a>(QObject* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="class_ela_scroll_bar_private.html#aea6155e8c2d38326b1dba3d10c04bf56">~ElaScrollBarPrivate</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Q_SLOT <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_scroll_bar_private.html#a9119add9b17bb1bec21ed5869b2be6d6">onRangeChanged</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_ela_scroll_bar_private.html#a31793b19ef607e896f67b5951b7a34a0">   57</a></span>    <a class="code hl_class" href="class_q_scroll_bar.html">QScrollBar</a>*              <a class="code hl_variable" href="class_ela_scroll_bar_private.html#a31793b19ef607e896f67b5951b7a34a0">_originScrollBar</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_ela_scroll_bar_private.html#ae676fb34befe5b31d7b0016dbd136c7d">   62</a></span>    QAbstractScrollArea*     <a class="code hl_variable" href="class_ela_scroll_bar_private.html#ae676fb34befe5b31d7b0016dbd136c7d">_originScrollArea</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_ela_scroll_bar_private.html#a9ec807e845f585e802163633c4cc4925">   67</a></span>    QTimer*                  <a class="code hl_variable" href="class_ela_scroll_bar_private.html#a9ec807e845f585e802163633c4cc4925">_expandTimer</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_ela_scroll_bar_private.html#af18da984ce63b927388c06eede5fbe18">   72</a></span>    <span class="keywordtype">bool</span>                     <a class="code hl_variable" href="class_ela_scroll_bar_private.html#af18da984ce63b927388c06eede5fbe18">_isExpand</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_ela_scroll_bar_private.html#aae7dd0b5ac85cbc78b1d6990b0b910c5">   77</a></span>    <a class="code hl_class" href="class_q_property_animation.html">QPropertyAnimation</a>*      <a class="code hl_variable" href="class_ela_scroll_bar_private.html#aae7dd0b5ac85cbc78b1d6990b0b910c5">_slideSmoothAnimation</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_ela_scroll_bar_private.html#adea106467b2503ad3f52ac226b60c9c7">   82</a></span>    <span class="keywordtype">int</span>                      <a class="code hl_variable" href="class_ela_scroll_bar_private.html#adea106467b2503ad3f52ac226b60c9c7">_scrollValue</a>{-1};</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_scroll_bar_private.html#aabe5f70b51fe433579cc5f1161c25366">_scroll</a>(Qt::KeyboardModifiers modifiers, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ela_scroll_bar_private.html#a4c6d3885c3e5d8d1c207478cf58c7531">_pixelPosToRangeValue</a>(<span class="keywordtype">int</span> pos) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_scroll_bar_private.html#a5bab083470d52e3e218a6569d4b43320">_initAllConfig</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_scroll_bar_private.html#a4f1a7752bfaff05d090e4a7df38e531f">_handleScrollBarValueChanged</a>(<a class="code hl_class" href="class_q_scroll_bar.html">QScrollBar</a>* scrollBar, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_scroll_bar_private.html#a6654f97ba5160f18eb0d8216d5a8c168">_handleScrollBarRangeChanged</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_scroll_bar_private.html#a5fdf1740c0f55a2f4fabbdd1469c2163">_handleScrollBarGeometry</a>();</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>};</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif </span><span class="comment">// ELASCROLLBARPRIVATE_H</span></div>
+<div class="ttc" id="aclass_ela_scroll_bar_html"><div class="ttname"><a href="class_ela_scroll_bar.html">ElaScrollBar</a></div><div class="ttdoc">自定义滚动条类，支持动画和上下文菜单</div><div class="ttdef"><b>定义</b> ElaScrollBar.h:24</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_a31793b19ef607e896f67b5951b7a34a0"><div class="ttname"><a href="class_ela_scroll_bar_private.html#a31793b19ef607e896f67b5951b7a34a0">ElaScrollBarPrivate::_originScrollBar</a></div><div class="ttdeci">QScrollBar * _originScrollBar</div><div class="ttdoc">原始滚动条</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.h:57</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_a4c6d3885c3e5d8d1c207478cf58c7531"><div class="ttname"><a href="class_ela_scroll_bar_private.html#a4c6d3885c3e5d8d1c207478cf58c7531">ElaScrollBarPrivate::_pixelPosToRangeValue</a></div><div class="ttdeci">int _pixelPosToRangeValue(int pos) const</div><div class="ttdoc">将像素位置转换为范围值</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:104</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_a4f1a7752bfaff05d090e4a7df38e531f"><div class="ttname"><a href="class_ela_scroll_bar_private.html#a4f1a7752bfaff05d090e4a7df38e531f">ElaScrollBarPrivate::_handleScrollBarValueChanged</a></div><div class="ttdeci">void _handleScrollBarValueChanged(QScrollBar *scrollBar, int value)</div><div class="ttdoc">处理滚动条值变化</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:147</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_a5bab083470d52e3e218a6569d4b43320"><div class="ttname"><a href="class_ela_scroll_bar_private.html#a5bab083470d52e3e218a6569d4b43320">ElaScrollBarPrivate::_initAllConfig</a></div><div class="ttdeci">void _initAllConfig()</div><div class="ttdoc">初始化所有配置</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:134</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_a5fdf1740c0f55a2f4fabbdd1469c2163"><div class="ttname"><a href="class_ela_scroll_bar_private.html#a5fdf1740c0f55a2f4fabbdd1469c2163">ElaScrollBarPrivate::_handleScrollBarGeometry</a></div><div class="ttdeci">void _handleScrollBarGeometry()</div><div class="ttdoc">处理滚动条几何形状</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:174</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_a6654f97ba5160f18eb0d8216d5a8c168"><div class="ttname"><a href="class_ela_scroll_bar_private.html#a6654f97ba5160f18eb0d8216d5a8c168">ElaScrollBarPrivate::_handleScrollBarRangeChanged</a></div><div class="ttdeci">void _handleScrollBarRangeChanged(int min, int max)</div><div class="ttdoc">处理滚动条范围变化</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:157</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_a9119add9b17bb1bec21ed5869b2be6d6"><div class="ttname"><a href="class_ela_scroll_bar_private.html#a9119add9b17bb1bec21ed5869b2be6d6">ElaScrollBarPrivate::onRangeChanged</a></div><div class="ttdeci">Q_SLOT void onRangeChanged(int min, int max)</div><div class="ttdoc">范围变化事件处理</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:37</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_a9ec807e845f585e802163633c4cc4925"><div class="ttname"><a href="class_ela_scroll_bar_private.html#a9ec807e845f585e802163633c4cc4925">ElaScrollBarPrivate::_expandTimer</a></div><div class="ttdeci">QTimer * _expandTimer</div><div class="ttdoc">展开定时器</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.h:67</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_aabe5f70b51fe433579cc5f1161c25366"><div class="ttname"><a href="class_ela_scroll_bar_private.html#aabe5f70b51fe433579cc5f1161c25366">ElaScrollBarPrivate::_scroll</a></div><div class="ttdeci">void _scroll(Qt::KeyboardModifiers modifiers, int value)</div><div class="ttdoc">执行滚动</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:73</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_aae7dd0b5ac85cbc78b1d6990b0b910c5"><div class="ttname"><a href="class_ela_scroll_bar_private.html#aae7dd0b5ac85cbc78b1d6990b0b910c5">ElaScrollBarPrivate::_slideSmoothAnimation</a></div><div class="ttdeci">QPropertyAnimation * _slideSmoothAnimation</div><div class="ttdoc">平滑滑动动画</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.h:77</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_ac75e5d40f9dedc7dc3cab9013b55cb2b"><div class="ttname"><a href="class_ela_scroll_bar_private.html#ac75e5d40f9dedc7dc3cab9013b55cb2b">ElaScrollBarPrivate::ElaScrollBarPrivate</a></div><div class="ttdeci">ElaScrollBarPrivate(QObject *parent=nullptr)</div><div class="ttdoc">构造函数，初始化滚动条私有对象</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:20</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_adea106467b2503ad3f52ac226b60c9c7"><div class="ttname"><a href="class_ela_scroll_bar_private.html#adea106467b2503ad3f52ac226b60c9c7">ElaScrollBarPrivate::_scrollValue</a></div><div class="ttdeci">int _scrollValue</div><div class="ttdoc">当前滚动值</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.h:82</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_ae676fb34befe5b31d7b0016dbd136c7d"><div class="ttname"><a href="class_ela_scroll_bar_private.html#ae676fb34befe5b31d7b0016dbd136c7d">ElaScrollBarPrivate::_originScrollArea</a></div><div class="ttdeci">QAbstractScrollArea * _originScrollArea</div><div class="ttdoc">原始滚动区域</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.h:62</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_aea6155e8c2d38326b1dba3d10c04bf56"><div class="ttname"><a href="class_ela_scroll_bar_private.html#aea6155e8c2d38326b1dba3d10c04bf56">ElaScrollBarPrivate::~ElaScrollBarPrivate</a></div><div class="ttdeci">~ElaScrollBarPrivate()</div><div class="ttdoc">析构函数，释放滚动条私有资源</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.cpp:28</div></div>
+<div class="ttc" id="aclass_ela_scroll_bar_private_html_af18da984ce63b927388c06eede5fbe18"><div class="ttname"><a href="class_ela_scroll_bar_private.html#af18da984ce63b927388c06eede5fbe18">ElaScrollBarPrivate::_isExpand</a></div><div class="ttdeci">bool _isExpand</div><div class="ttdoc">是否展开</div><div class="ttdef"><b>定义</b> ElaScrollBarPrivate.h:72</div></div>
+<div class="ttc" id="aclass_q_property_animation_html"><div class="ttname"><a href="class_q_property_animation.html">QPropertyAnimation</a></div><div class="ttdoc">Qt 属性动画类，用于窗口缩放动画</div></div>
+<div class="ttc" id="aclass_q_scroll_bar_html"><div class="ttname"><a href="class_q_scroll_bar.html">QScrollBar</a></div><div class="ttdoc">滚动条控件类</div></div>
+<div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
+<div class="ttc" id="astdafx_8h_html_a57bb06270a144d2fda2ff92dfe999ef5"><div class="ttname"><a href="stdafx_8h.html#a57bb06270a144d2fda2ff92dfe999ef5">Q_PROPERTY_CREATE_D</a></div><div class="ttdeci">#define Q_PROPERTY_CREATE_D(TYPE, M)</div><div class="ttdoc">创建私有成员变量</div><div class="ttdef"><b>定义</b> stdafx.h:120</div></div>
+<div class="ttc" id="astdafx_8h_html_a7dfd44162fad9c0d8377cea8b93c6b5f"><div class="ttname"><a href="stdafx_8h.html#a7dfd44162fad9c0d8377cea8b93c6b5f">Q_D_CREATE</a></div><div class="ttdeci">#define Q_D_CREATE(CLASS)</div><div class="ttdoc">创建 Q_D 模式的私有类声明</div><div class="ttdef"><b>定义</b> stdafx.h:181</div></div>
+<div class="ttc" id="astdafx_8h_html_aa4e369dd4ddb60619226f24c14ad1d14"><div class="ttname"><a href="stdafx_8h.html#aa4e369dd4ddb60619226f24c14ad1d14">Q_PROPERTY_CREATE</a></div><div class="ttdeci">#define Q_PROPERTY_CREATE(TYPE, M)</div><div class="ttdoc">创建普通属性的宏</div><div class="ttdef"><b>定义</b> stdafx.h:26</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_c41e0d0e814e23de337c335e201650d3.html">ElaWidgetTools</a></li><li class="navelem"><a class="el" href="dir_ec6e2ea1cd2bd8b04e56dcddaa716808.html">ElaScrollBar</a></li><li class="navelem"><a class="el" href="_ela_scroll_bar_private_8h.html">ElaScrollBarPrivate.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

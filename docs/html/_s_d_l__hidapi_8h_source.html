@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_hidapi.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__hidapi_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SDL_hidapi.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_s_d_l__hidapi_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Simple DirectMedia Layer</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  Copyright (C) 1997-2025 Sam Lantinga &lt;slouken@libsdl.org&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  This software is provided &#39;as-is&#39;, without any express or implied</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  warranty.  In no event will the authors be held liable for any damages</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  arising from the use of this software.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  Permission is granted to anyone to use this software for any purpose,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  including commercial applications, and to alter it and redistribute it</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  freely, subject to the following restrictions:</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  1. The origin of this software must not be misrepresented; you must not</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">     claim that you wrote the original software. If you use this software</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">     in a product, an acknowledgment in the product documentation would be</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">     appreciated but is not required.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  2. Altered source versions must be plainly marked as such, and must not be</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">     misrepresented as being the original software.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  3. This notice may not be removed or altered from any source distribution.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#ifndef SDL_hidapi_h_</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#define SDL_hidapi_h_</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#include &quot;<a class="code" href="_s_d_l__stdinc_8h.html">SDL_stdinc.h</a>&quot;</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#include &quot;<a class="code" href="begin__code_8h.html">begin_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">/* Set up for C function definitions, even when using C++ */</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">struct </span>SDL_hid_device_;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">   77</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>SDL_hid_device_ <a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a>; </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="};">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html">   83</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a44196e6a5696d10442c29e639437196e">   86</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a44196e6a5696d10442c29e639437196e">path</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a8dd854779c738741e0c68caad12fc8a6">   88</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a8dd854779c738741e0c68caad12fc8a6">vendor_id</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a7cc759e6106a68b56401f2323a5c5c2a">   90</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a7cc759e6106a68b56401f2323a5c5c2a">product_id</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#ac825bb09859effc914fd5b4706d9319b">   92</a></span>    <span class="keywordtype">wchar_t</span> *<a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#ac825bb09859effc914fd5b4706d9319b">serial_number</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#ad36ab7c44ed3ee603ffab9510ab3a969">   95</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#ad36ab7c44ed3ee603ffab9510ab3a969">release_number</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#af67900318163cffdc46b9c9bb40b4774">   97</a></span>    <span class="keywordtype">wchar_t</span> *<a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#af67900318163cffdc46b9c9bb40b4774">manufacturer_string</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a84e0609ad2163cf5be0bad1b950bd628">   99</a></span>    <span class="keywordtype">wchar_t</span> *<a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a84e0609ad2163cf5be0bad1b950bd628">product_string</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a0c5f1243402d4cd4e7649b2d0f64d39b">  102</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a0c5f1243402d4cd4e7649b2d0f64d39b">usage_page</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a7a2a07edbca64ab55c6b4b8c1e24d3ee">  105</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a7a2a07edbca64ab55c6b4b8c1e24d3ee">usage</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a449a181621bad7e4c47c036800ec237a">  112</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a449a181621bad7e4c47c036800ec237a">interface_number</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#afaf8f4b7be484e31bb8fe6ee1f4e64d5">  116</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#afaf8f4b7be484e31bb8fe6ee1f4e64d5">interface_class</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#ab93d97982395f970f207b6e8cd9ed1a8">  117</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#ab93d97982395f970f207b6e8cd9ed1a8">interface_subclass</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a7d2131953903c7b7df5d527afb76931a">  118</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a7d2131953903c7b7df5d527afb76931a">interface_protocol</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="struct_s_d_l__hid__device__info.html#a22142418936d8b9bd83aa0dbfcdbbfad">  121</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a> *<a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a22142418936d8b9bd83aa0dbfcdbbfad">next</a>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#afb328d87ec06aec76ebbca2eab491a70">  122</a></span>} <a class="code hl_struct" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a>;</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#afab0dc5913a3e90ed4434bd2778fe1bf">  142</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#afab0dc5913a3e90ed4434bd2778fe1bf">SDL_hid_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a795ed5c8ed4410b5962742d1c92774c9">  156</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a795ed5c8ed4410b5962742d1c92774c9">SDL_hid_exit</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a1d7587010cbd25a9fcf77e26682de356">  177</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a1d7587010cbd25a9fcf77e26682de356">SDL_hid_device_change_count</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a5a0a8a98f734167ad2272c0152f51c92">  199</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_struct" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a> * <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a5a0a8a98f734167ad2272c0152f51c92">SDL_hid_enumerate</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a8dd854779c738741e0c68caad12fc8a6">vendor_id</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a7cc759e6106a68b56401f2323a5c5c2a">product_id</a>);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#af2f46b6c5b92e35724b2bd3116e2eb1e">  211</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#af2f46b6c5b92e35724b2bd3116e2eb1e">SDL_hid_free_enumeration</a>(<a class="code hl_struct" href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a> *devs);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#ae44777e4b49c6f9887a3d892102bd491">  229</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> * <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#ae44777e4b49c6f9887a3d892102bd491">SDL_hid_open</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a8dd854779c738741e0c68caad12fc8a6">vendor_id</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#a7cc759e6106a68b56401f2323a5c5c2a">product_id</a>, <span class="keyword">const</span> <span class="keywordtype">wchar_t</span> *<a class="code hl_variable" href="struct_s_d_l__hid__device__info.html#ac825bb09859effc914fd5b4706d9319b">serial_number</a>);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a8c16ac973dc4dee19687484f97e5bc79">  243</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> * <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a8c16ac973dc4dee19687484f97e5bc79">SDL_hid_open_path</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab25d8cd967ccbd19b630d7100ff8f67e">path</a>, <span class="keywordtype">int</span> bExclusive <span class="comment">/* = false */</span>);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a6f20cc83879d21bad4306f540475dd8f">  269</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a6f20cc83879d21bad4306f540475dd8f">SDL_hid_write</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a2aa5d9a34cd1200e566d4ec47fc5dc5f">  290</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a2aa5d9a34cd1200e566d4ec47fc5dc5f">SDL_hid_read_timeout</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>, <span class="keywordtype">int</span> milliseconds);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a6f41a95bea290df5a73b97e4bf5212a0">  310</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a6f41a95bea290df5a73b97e4bf5212a0">SDL_hid_read</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a1f66ac734a1786884cb4f2b6309a60e7">  328</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a1f66ac734a1786884cb4f2b6309a60e7">SDL_hid_set_nonblocking</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keywordtype">int</span> nonblock);</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a5349c62d24338025552c6f244956699f">  352</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a5349c62d24338025552c6f244956699f">SDL_hid_send_feature_report</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>);</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span></div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#ab955370e07dc09c62367ab70d1784793">  374</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#ab955370e07dc09c62367ab70d1784793">SDL_hid_get_feature_report</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>);</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span></div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a0e402a95d523c439b3a55be0c05dd6ba">  383</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a0e402a95d523c439b3a55be0c05dd6ba">SDL_hid_close</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev);</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span></div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#abc79c19d7d67a361bb39b5ae4704c950">  395</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#abc79c19d7d67a361bb39b5ae4704c950">SDL_hid_get_manufacturer_string</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keywordtype">wchar_t</span> *<span class="keywordtype">string</span>, <span class="keywordtype">size_t</span> maxlen);</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span></div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#abfc7382b9200805fea25b4483a3cb224">  407</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#abfc7382b9200805fea25b4483a3cb224">SDL_hid_get_product_string</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keywordtype">wchar_t</span> *<span class="keywordtype">string</span>, <span class="keywordtype">size_t</span> maxlen);</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span></div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a06110655bc7e7c8a3a8e1d43a5af998b">  419</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a06110655bc7e7c8a3a8e1d43a5af998b">SDL_hid_get_serial_number_string</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keywordtype">wchar_t</span> *<span class="keywordtype">string</span>, <span class="keywordtype">size_t</span> maxlen);</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span></div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a8c58e5c7c4ce4920507e316da2ca07ea">  432</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">int</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a8c58e5c7c4ce4920507e316da2ca07ea">SDL_hid_get_indexed_string</a>(<a class="code hl_typedef" href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a> *dev, <span class="keywordtype">int</span> string_index, <span class="keywordtype">wchar_t</span> *<span class="keywordtype">string</span>, <span class="keywordtype">size_t</span> maxlen);</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span></div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno"><a class="line" href="_s_d_l__hidapi_8h.html#a472eb84a7526e0c9fb6b696b2fa7a039">  441</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__hidapi_8h.html#a472eb84a7526e0c9fb6b696b2fa7a039">SDL_hid_ble_scan</a>(<a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> active);</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span><span class="comment">/* Ends C function definitions when using C++ */</span></div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>}</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span><span class="preprocessor">#include &quot;<a class="code" href="close__code_8h.html">close_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span> </div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span><span class="preprocessor">#endif </span><span class="comment">/* SDL_hidapi_h_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span> </div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span><span class="comment">/* vi: set sts=4 ts=4 sw=4 expandtab: */</span></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a01e37a76f52ebe32810eae8de7ffad85"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</a></div><div class="ttdeci">struct SDL_hid_device_ SDL_hid_device</div><div class="ttdoc">opaque hidapi structure</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:77</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a06110655bc7e7c8a3a8e1d43a5af998b"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a06110655bc7e7c8a3a8e1d43a5af998b">SDL_hid_get_serial_number_string</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_get_serial_number_string(SDL_hid_device *dev, wchar_t *string, size_t maxlen)</div><div class="ttdoc">Get The Serial Number String from a HID device.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a0e402a95d523c439b3a55be0c05dd6ba"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a0e402a95d523c439b3a55be0c05dd6ba">SDL_hid_close</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_hid_close(SDL_hid_device *dev)</div><div class="ttdoc">Close a HID device.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a1d7587010cbd25a9fcf77e26682de356"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a1d7587010cbd25a9fcf77e26682de356">SDL_hid_device_change_count</a></div><div class="ttdeci">DECLSPEC Uint32 SDLCALL SDL_hid_device_change_count(void)</div><div class="ttdoc">Check to see if devices may have been added or removed.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a1f66ac734a1786884cb4f2b6309a60e7"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a1f66ac734a1786884cb4f2b6309a60e7">SDL_hid_set_nonblocking</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_set_nonblocking(SDL_hid_device *dev, int nonblock)</div><div class="ttdoc">Set the device handle to be non-blocking.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a2aa5d9a34cd1200e566d4ec47fc5dc5f"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a2aa5d9a34cd1200e566d4ec47fc5dc5f">SDL_hid_read_timeout</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_read_timeout(SDL_hid_device *dev, unsigned char *data, size_t length, int milliseconds)</div><div class="ttdoc">Read an Input report from a HID device with timeout.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a472eb84a7526e0c9fb6b696b2fa7a039"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a472eb84a7526e0c9fb6b696b2fa7a039">SDL_hid_ble_scan</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_hid_ble_scan(SDL_bool active)</div><div class="ttdoc">Start or stop a BLE scan on iOS and tvOS to pair Steam Controllers</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a5349c62d24338025552c6f244956699f"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a5349c62d24338025552c6f244956699f">SDL_hid_send_feature_report</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_send_feature_report(SDL_hid_device *dev, const unsigned char *data, size_t length)</div><div class="ttdoc">Send a Feature report to the device.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a5a0a8a98f734167ad2272c0152f51c92"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a5a0a8a98f734167ad2272c0152f51c92">SDL_hid_enumerate</a></div><div class="ttdeci">DECLSPEC SDL_hid_device_info *SDLCALL SDL_hid_enumerate(unsigned short vendor_id, unsigned short product_id)</div><div class="ttdoc">Enumerate the HID Devices.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a6f20cc83879d21bad4306f540475dd8f"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a6f20cc83879d21bad4306f540475dd8f">SDL_hid_write</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_write(SDL_hid_device *dev, const unsigned char *data, size_t length)</div><div class="ttdoc">Write an Output report to a HID device.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a6f41a95bea290df5a73b97e4bf5212a0"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a6f41a95bea290df5a73b97e4bf5212a0">SDL_hid_read</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_read(SDL_hid_device *dev, unsigned char *data, size_t length)</div><div class="ttdoc">Read an Input report from a HID device.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a795ed5c8ed4410b5962742d1c92774c9"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a795ed5c8ed4410b5962742d1c92774c9">SDL_hid_exit</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_exit(void)</div><div class="ttdoc">Finalize the HIDAPI library.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a8c16ac973dc4dee19687484f97e5bc79"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a8c16ac973dc4dee19687484f97e5bc79">SDL_hid_open_path</a></div><div class="ttdeci">DECLSPEC SDL_hid_device *SDLCALL SDL_hid_open_path(const char *path, int bExclusive)</div><div class="ttdoc">Open a HID device by its path name.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_a8c58e5c7c4ce4920507e316da2ca07ea"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#a8c58e5c7c4ce4920507e316da2ca07ea">SDL_hid_get_indexed_string</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_get_indexed_string(SDL_hid_device *dev, int string_index, wchar_t *string, size_t maxlen)</div><div class="ttdoc">Get a string from a HID device, based on its string index.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_ab955370e07dc09c62367ab70d1784793"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#ab955370e07dc09c62367ab70d1784793">SDL_hid_get_feature_report</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_get_feature_report(SDL_hid_device *dev, unsigned char *data, size_t length)</div><div class="ttdoc">Get a feature report from a HID device.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_abc79c19d7d67a361bb39b5ae4704c950"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#abc79c19d7d67a361bb39b5ae4704c950">SDL_hid_get_manufacturer_string</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_get_manufacturer_string(SDL_hid_device *dev, wchar_t *string, size_t maxlen)</div><div class="ttdoc">Get The Manufacturer String from a HID device.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_abfc7382b9200805fea25b4483a3cb224"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#abfc7382b9200805fea25b4483a3cb224">SDL_hid_get_product_string</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_get_product_string(SDL_hid_device *dev, wchar_t *string, size_t maxlen)</div><div class="ttdoc">Get The Product String from a HID device.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_ae44777e4b49c6f9887a3d892102bd491"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#ae44777e4b49c6f9887a3d892102bd491">SDL_hid_open</a></div><div class="ttdeci">DECLSPEC SDL_hid_device *SDLCALL SDL_hid_open(unsigned short vendor_id, unsigned short product_id, const wchar_t *serial_number)</div><div class="ttdoc">Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally a serial number.</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_af2f46b6c5b92e35724b2bd3116e2eb1e"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#af2f46b6c5b92e35724b2bd3116e2eb1e">SDL_hid_free_enumeration</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_hid_free_enumeration(SDL_hid_device_info *devs)</div><div class="ttdoc">Free an enumeration Linked List</div></div>
+<div class="ttc" id="a_s_d_l__hidapi_8h_html_afab0dc5913a3e90ed4434bd2778fe1bf"><div class="ttname"><a href="_s_d_l__hidapi_8h.html#afab0dc5913a3e90ed4434bd2778fe1bf">SDL_hid_init</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_hid_init(void)</div><div class="ttdoc">Initialize the HIDAPI library.</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a740d7f00b044f54a556c7208e01f9f02"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a></div><div class="ttdeci">GLint GLenum GLsizei GLsizei GLsizei GLint GLsizei const GLvoid * data</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1974</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab25d8cd967ccbd19b630d7100ff8f67e"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab25d8cd967ccbd19b630d7100ff8f67e">path</a></div><div class="ttdeci">GLsizei const GLchar *const  * path</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:4536</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab9c919755bde3b34349e23a32b4e0fa7"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a></div><div class="ttdeci">GLuint GLsizei GLsizei * length</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:961</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html"><div class="ttname"><a href="_s_d_l__stdinc_8h.html">SDL_stdinc.h</a></div><div class="ttdoc">This is a general header that includes C language support.</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a8fca68df0f976765230fe589a7c7733b"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a></div><div class="ttdeci">SDL_bool</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:181</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_add440eff171ea5f55cb00c4a9ab8672d"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a></div><div class="ttdeci">uint32_t Uint32</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:222</div></div>
+<div class="ttc" id="abegin__code_8h_html"><div class="ttname"><a href="begin__code_8h.html">begin_code.h</a></div><div class="ttdoc">This file sets things up for C dynamic library function definitions, static inlined functions,...</div></div>
+<div class="ttc" id="abegin__code_8h_html_a81faf4ba0455dc75f2e0507eddb79401"><div class="ttname"><a href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a></div><div class="ttdeci">#define SDLCALL</div><div class="ttdef"><b>定义</b> begin_code.h:87</div></div>
+<div class="ttc" id="abegin__code_8h_html_aa4c7a931f4a968f818b2a1b10a432185"><div class="ttname"><a href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a></div><div class="ttdeci">#define DECLSPEC</div><div class="ttdef"><b>定义</b> begin_code.h:72</div></div>
+<div class="ttc" id="aclose__code_8h_html"><div class="ttname"><a href="close__code_8h.html">close_code.h</a></div><div class="ttdoc">This file reverses the effects of begin_code.h and should be included after you finish any function a...</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html">SDL_hid_device_info</a></div><div class="ttdoc">hidapi info structure</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:84</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a0c5f1243402d4cd4e7649b2d0f64d39b"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a0c5f1243402d4cd4e7649b2d0f64d39b">SDL_hid_device_info::usage_page</a></div><div class="ttdeci">unsigned short usage_page</div><div class="ttdoc">Usage Page for this Device/Interface (Windows/Mac only).</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:102</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a22142418936d8b9bd83aa0dbfcdbbfad"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a22142418936d8b9bd83aa0dbfcdbbfad">SDL_hid_device_info::next</a></div><div class="ttdeci">struct SDL_hid_device_info * next</div><div class="ttdoc">Pointer to the next device</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:121</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a44196e6a5696d10442c29e639437196e"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a44196e6a5696d10442c29e639437196e">SDL_hid_device_info::path</a></div><div class="ttdeci">char * path</div><div class="ttdoc">Platform-specific device path</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:86</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a449a181621bad7e4c47c036800ec237a"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a449a181621bad7e4c47c036800ec237a">SDL_hid_device_info::interface_number</a></div><div class="ttdeci">int interface_number</div><div class="ttdoc">The USB interface which this logical device represents.</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:112</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a7a2a07edbca64ab55c6b4b8c1e24d3ee"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a7a2a07edbca64ab55c6b4b8c1e24d3ee">SDL_hid_device_info::usage</a></div><div class="ttdeci">unsigned short usage</div><div class="ttdoc">Usage for this Device/Interface (Windows/Mac only).</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:105</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a7cc759e6106a68b56401f2323a5c5c2a"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a7cc759e6106a68b56401f2323a5c5c2a">SDL_hid_device_info::product_id</a></div><div class="ttdeci">unsigned short product_id</div><div class="ttdoc">Device Product ID</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:90</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a7d2131953903c7b7df5d527afb76931a"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a7d2131953903c7b7df5d527afb76931a">SDL_hid_device_info::interface_protocol</a></div><div class="ttdeci">int interface_protocol</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:118</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a84e0609ad2163cf5be0bad1b950bd628"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a84e0609ad2163cf5be0bad1b950bd628">SDL_hid_device_info::product_string</a></div><div class="ttdeci">wchar_t * product_string</div><div class="ttdoc">Product string</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:99</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_a8dd854779c738741e0c68caad12fc8a6"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#a8dd854779c738741e0c68caad12fc8a6">SDL_hid_device_info::vendor_id</a></div><div class="ttdeci">unsigned short vendor_id</div><div class="ttdoc">Device Vendor ID</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:88</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_ab93d97982395f970f207b6e8cd9ed1a8"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#ab93d97982395f970f207b6e8cd9ed1a8">SDL_hid_device_info::interface_subclass</a></div><div class="ttdeci">int interface_subclass</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:117</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_ac825bb09859effc914fd5b4706d9319b"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#ac825bb09859effc914fd5b4706d9319b">SDL_hid_device_info::serial_number</a></div><div class="ttdeci">wchar_t * serial_number</div><div class="ttdoc">Serial Number</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:92</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_ad36ab7c44ed3ee603ffab9510ab3a969"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#ad36ab7c44ed3ee603ffab9510ab3a969">SDL_hid_device_info::release_number</a></div><div class="ttdeci">unsigned short release_number</div><div class="ttdoc">Device Release Number in binary-coded decimal, also known as Device Version Number</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:95</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_af67900318163cffdc46b9c9bb40b4774"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#af67900318163cffdc46b9c9bb40b4774">SDL_hid_device_info::manufacturer_string</a></div><div class="ttdeci">wchar_t * manufacturer_string</div><div class="ttdoc">Manufacturer String</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:97</div></div>
+<div class="ttc" id="astruct_s_d_l__hid__device__info_html_afaf8f4b7be484e31bb8fe6ee1f4e64d5"><div class="ttname"><a href="struct_s_d_l__hid__device__info.html#afaf8f4b7be484e31bb8fe6ee1f4e64d5">SDL_hid_device_info::interface_class</a></div><div class="ttdeci">int interface_class</div><div class="ttdoc">Additional information about the USB interface.</div><div class="ttdef"><b>定义</b> SDL_hidapi.h:116</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__hidapi_8h.html">SDL_hidapi.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

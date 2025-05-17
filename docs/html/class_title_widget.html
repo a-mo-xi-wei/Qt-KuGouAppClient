@@ -1,0 +1,2938 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: TitleWidget类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_title_widget.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_title_widget-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">TitleWidget类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>自定义标题栏控件类，继承自 QWidget，支持界面导航、菜单显示和窗口控制  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_title_widget_8h_source.html">TitleWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+类 TitleWidget 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget__inherit__graph.png" border="0" usemap="#a_title_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_title_widget_inherit__map" id="a_title_widget_inherit__map">
+<area shape="rect" title="自定义标题栏控件类，继承自 QWidget，支持界面导航、菜单显示和窗口控制" alt="" coords="5,80,93,107"/>
+<area shape="rect" title=" " alt="" coords="13,5,85,32"/>
+<area shape="poly" title=" " alt="" coords="52,48,52,80,46,80,46,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+TitleWidget 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget__coll__graph.png" border="0" usemap="#a_title_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="a_title_widget_coll__map" id="a_title_widget_coll__map">
+<area shape="rect" title="自定义标题栏控件类，继承自 QWidget，支持界面导航、菜单显示和窗口控制" alt="" coords="19,355,106,381"/>
+<area shape="rect" title=" " alt="" coords="5,264,78,291"/>
+<area shape="poly" title=" " alt="" coords="51,305,62,353,57,355,45,306"/>
+<area shape="rect" href="class_title_option_menu.html" title="标题栏选项菜单类，继承自 BaseMenu，提供壁纸、设置、退出等功能" alt="" coords="102,264,218,291"/>
+<area shape="poly" title=" " alt="" coords="137,303,79,356,75,352,133,299"/>
+<area shape="rect" href="class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="118,188,202,215"/>
+<area shape="poly" title=" " alt="" coords="163,230,163,264,158,264,158,230"/>
+<area shape="rect" title=" " alt="" coords="36,81,100,108"/>
+<area shape="poly" title=" " alt="" coords="91,118,151,186,147,189,87,121"/>
+<area shape="rect" href="class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="124,81,197,108"/>
+<area shape="poly" title=" " alt="" coords="163,123,163,188,158,188,158,123"/>
+<area shape="rect" href="class_q_tool_button.html" title="工具按钮类" alt="" coords="114,5,207,32"/>
+<area shape="poly" title=" " alt="" coords="163,47,163,81,158,81,158,47"/>
+<area shape="rect" href="class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="220,81,383,108"/>
+<area shape="poly" title=" " alt="" coords="286,123,268,145,244,166,200,190,197,185,241,162,264,141,282,119"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a09061c58c857313317835bcdbd3bc0e4" id="r_a09061c58c857313317835bcdbd3bc0e4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a> { <br />
+&#160;&#160;<a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a655cf9e33afdb9bc37f84de3d1b832df">TitleLive</a> = 0
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a7426a5f2c3c9cb0d6da53c0b5e07cb14">ListenBook</a> = 1
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4af42dd3bc2be56354d2fbf529a3141416">Search</a> = 2
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a6c058febb7cab0d26de46931dbd5aa9f">RecommendForYou</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a707163a037108f74af3e2d00fc730e4a">MusicRepository</a> = 4
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a5c35636d858bac8fe9e3937561d3243a">Channel</a> = 5
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4aff13e87d7cbbe18fface435a5b84aaec">Video</a> = 6
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4abaaa63df740b4a19f9ff680c85e861fd">AiChat</a> = 7
+, <br />
+&#160;&#160;<a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a0a4fe12c235e35778503341ffcf0fb5c">SongList</a> = 8
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a60cc0072b7759f6c45ac348da93c379b">DailyRecommend</a> = 9
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4acf434416c2792a0f42bbf6ecabb0a145">Collection</a> = 10
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4af4cb697e99657b668fc54cbb9730b400">LocalDownload</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a521a73130a589be0cc55bbfdc22b56ff">MusicCloudDisk</a> = 12
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a8dba913eadc46dce09b53359c299a520">PurchasedMusic</a> = 13
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4acf7ecc8c51ebabd5b5edca2ea5837d76">RecentlyPlayed</a> = 14
+, <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878">AllMusic</a> = 15
+<br />
+ }</td></tr>
+<tr class="memdesc:a09061c58c857313317835bcdbd3bc0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">界面类型枚举  <a href="#a09061c58c857313317835bcdbd3bc0e4">更多...</a><br /></td></tr>
+<tr class="separator:a09061c58c857313317835bcdbd3bc0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a7f6d4e7893db244f9cf153e2428ef144" id="r_a7f6d4e7893db244f9cf153e2428ef144"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f6d4e7893db244f9cf153e2428ef144">on_close_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a7f6d4e7893db244f9cf153e2428ef144"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭按钮点击事件，显示退出对话框  <br /></td></tr>
+<tr class="separator:a7f6d4e7893db244f9cf153e2428ef144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7701384483224e7e3fbddc4a8f8196" id="r_a2a7701384483224e7e3fbddc4a8f8196"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a7701384483224e7e3fbddc4a8f8196">onLeftMenu_recommend_clicked</a> ()</td></tr>
+<tr class="memdesc:a2a7701384483224e7e3fbddc4a8f8196"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单推荐项点击事件，切换到推荐界面  <br /></td></tr>
+<tr class="separator:a2a7701384483224e7e3fbddc4a8f8196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a09994453989a46bf1b6b9d2f3120d" id="r_a26a09994453989a46bf1b6b9d2f3120d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26a09994453989a46bf1b6b9d2f3120d">onLeftMenu_musicRepository_clicked</a> ()</td></tr>
+<tr class="memdesc:a26a09994453989a46bf1b6b9d2f3120d"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单乐库项点击事件，切换到乐库界面  <br /></td></tr>
+<tr class="separator:a26a09994453989a46bf1b6b9d2f3120d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ab82289dcc73438c78a88ee801f0b9" id="r_a82ab82289dcc73438c78a88ee801f0b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82ab82289dcc73438c78a88ee801f0b9">onLeftMenu_channel_clicked</a> ()</td></tr>
+<tr class="memdesc:a82ab82289dcc73438c78a88ee801f0b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单频道项点击事件，切换到频道界面  <br /></td></tr>
+<tr class="separator:a82ab82289dcc73438c78a88ee801f0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3591d50396b3c07cdcdf9ac1f4e968" id="r_a9d3591d50396b3c07cdcdf9ac1f4e968"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d3591d50396b3c07cdcdf9ac1f4e968">onLeftMenu_video_clicked</a> ()</td></tr>
+<tr class="memdesc:a9d3591d50396b3c07cdcdf9ac1f4e968"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单视频项点击事件，切换到视频界面  <br /></td></tr>
+<tr class="separator:a9d3591d50396b3c07cdcdf9ac1f4e968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5369939ba1be1ea35809e44395cd7c" id="r_a5a5369939ba1be1ea35809e44395cd7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a5369939ba1be1ea35809e44395cd7c">onLeftMenu_live_clicked</a> ()</td></tr>
+<tr class="memdesc:a5a5369939ba1be1ea35809e44395cd7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单直播项点击事件，切换到直播界面  <br /></td></tr>
+<tr class="separator:a5a5369939ba1be1ea35809e44395cd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cf2d0526103b5c8396ac1819fff9d06" id="r_a4cf2d0526103b5c8396ac1819fff9d06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cf2d0526103b5c8396ac1819fff9d06">onLeftMenu_ai_chat_clicked</a> ()</td></tr>
+<tr class="memdesc:a4cf2d0526103b5c8396ac1819fff9d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单AI对话项点击事件，切换到AI对话界面  <br /></td></tr>
+<tr class="separator:a4cf2d0526103b5c8396ac1819fff9d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421c6a29fbdba52a69aee599d5245b4d" id="r_a421c6a29fbdba52a69aee599d5245b4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a421c6a29fbdba52a69aee599d5245b4d">onLeftMenu_songList_clicked</a> ()</td></tr>
+<tr class="memdesc:a421c6a29fbdba52a69aee599d5245b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单歌单项点击事件，切换到歌单界面  <br /></td></tr>
+<tr class="separator:a421c6a29fbdba52a69aee599d5245b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048bab5d61b1fb9719087d0496ac092a" id="r_a048bab5d61b1fb9719087d0496ac092a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a048bab5d61b1fb9719087d0496ac092a">onLeftMenu_dailyRecommend_clicked</a> ()</td></tr>
+<tr class="memdesc:a048bab5d61b1fb9719087d0496ac092a"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单每日推荐项点击事件，切换到每日推荐界面  <br /></td></tr>
+<tr class="separator:a048bab5d61b1fb9719087d0496ac092a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35950dc676ca6c6f7d3bd3572f7aef84" id="r_a35950dc676ca6c6f7d3bd3572f7aef84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35950dc676ca6c6f7d3bd3572f7aef84">onLeftMenu_collection_clicked</a> ()</td></tr>
+<tr class="memdesc:a35950dc676ca6c6f7d3bd3572f7aef84"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单收藏项点击事件，切换到收藏界面  <br /></td></tr>
+<tr class="separator:a35950dc676ca6c6f7d3bd3572f7aef84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0a87bffc2c718f35736d5a29b020b8" id="r_acf0a87bffc2c718f35736d5a29b020b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf0a87bffc2c718f35736d5a29b020b8">onLeftMenu_localDownload_clicked</a> ()</td></tr>
+<tr class="memdesc:acf0a87bffc2c718f35736d5a29b020b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单本地下载项点击事件，切换到本地下载界面  <br /></td></tr>
+<tr class="separator:acf0a87bffc2c718f35736d5a29b020b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa7b83c8d6efceeefe56f44725484441" id="r_aaa7b83c8d6efceeefe56f44725484441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa7b83c8d6efceeefe56f44725484441">onLeftMenu_musicCloudDisk_clicked</a> ()</td></tr>
+<tr class="memdesc:aaa7b83c8d6efceeefe56f44725484441"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单音乐云盘项点击事件，切换到音乐云盘界面  <br /></td></tr>
+<tr class="separator:aaa7b83c8d6efceeefe56f44725484441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224e60f476ec12e06be7623b9ef1ebe5" id="r_a224e60f476ec12e06be7623b9ef1ebe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a224e60f476ec12e06be7623b9ef1ebe5">onLeftMenu_purchasedMusic_clicked</a> ()</td></tr>
+<tr class="memdesc:a224e60f476ec12e06be7623b9ef1ebe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单已购音乐项点击事件，切换到已购音乐界面  <br /></td></tr>
+<tr class="separator:a224e60f476ec12e06be7623b9ef1ebe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a188939135c7906a17d7c2e794569e" id="r_aa2a188939135c7906a17d7c2e794569e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2a188939135c7906a17d7c2e794569e">onLeftMenu_recentlyPlayed_clicked</a> ()</td></tr>
+<tr class="memdesc:aa2a188939135c7906a17d7c2e794569e"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单最近播放项点击事件，切换到最近播放界面  <br /></td></tr>
+<tr class="separator:aa2a188939135c7906a17d7c2e794569e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0231dc383b17063010a8c7634e658b71" id="r_a0231dc383b17063010a8c7634e658b71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0231dc383b17063010a8c7634e658b71">onLeftMenu_allMusic_clicked</a> ()</td></tr>
+<tr class="memdesc:a0231dc383b17063010a8c7634e658b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单全部音乐项点击事件，切换到全部音乐界面  <br /></td></tr>
+<tr class="separator:a0231dc383b17063010a8c7634e658b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a607c0c78292a519369fac4a60638f9ee" id="r_a607c0c78292a519369fac4a60638f9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a607c0c78292a519369fac4a60638f9ee">currentStackChange</a> (const int &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, const bool &amp;slide=false)</td></tr>
+<tr class="memdesc:a607c0c78292a519369fac4a60638f9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">界面切换信号，通知界面索引和是否滑动  <br /></td></tr>
+<tr class="separator:a607c0c78292a519369fac4a60638f9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5586d80493f09e7305a487525f0ac838" id="r_a5586d80493f09e7305a487525f0ac838"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5586d80493f09e7305a487525f0ac838">leftMenuShow</a> (const bool &amp;<a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>)</td></tr>
+<tr class="memdesc:a5586d80493f09e7305a487525f0ac838"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧菜单显示信号，控制菜单显示状态  <br /></td></tr>
+<tr class="separator:a5586d80493f09e7305a487525f0ac838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac788a1e254cb7f54fb21e3648d929f39" id="r_ac788a1e254cb7f54fb21e3648d929f39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac788a1e254cb7f54fb21e3648d929f39">doubleClicked</a> ()</td></tr>
+<tr class="memdesc:ac788a1e254cb7f54fb21e3648d929f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">双击信号，当标题栏被双击时触发  <br /></td></tr>
+<tr class="separator:ac788a1e254cb7f54fb21e3648d929f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac63a90a3b880d5e9cfd47b54b336be8b" id="r_ac63a90a3b880d5e9cfd47b54b336be8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac63a90a3b880d5e9cfd47b54b336be8b">showAboutDialog</a> ()</td></tr>
+<tr class="memdesc:ac63a90a3b880d5e9cfd47b54b336be8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示关于对话框信号  <br /></td></tr>
+<tr class="separator:ac63a90a3b880d5e9cfd47b54b336be8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358d2e2397ca11ccd17553e3c40e7901" id="r_a358d2e2397ca11ccd17553e3c40e7901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a358d2e2397ca11ccd17553e3c40e7901">exit</a> ()</td></tr>
+<tr class="memdesc:a358d2e2397ca11ccd17553e3c40e7901"><td class="mdescLeft">&#160;</td><td class="mdescRight">退出信号，通知程序退出  <br /></td></tr>
+<tr class="separator:a358d2e2397ca11ccd17553e3c40e7901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a992988d596e79194a707af831db3f4ea" id="r_a992988d596e79194a707af831db3f4ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a992988d596e79194a707af831db3f4ea">maxScreen</a> ()</td></tr>
+<tr class="memdesc:a992988d596e79194a707af831db3f4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大化信号，通知窗口最大化  <br /></td></tr>
+<tr class="separator:a992988d596e79194a707af831db3f4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f2e190b8261a98c97c2ea4e86670d54" id="r_a5f2e190b8261a98c97c2ea4e86670d54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f2e190b8261a98c97c2ea4e86670d54">refresh</a> ()</td></tr>
+<tr class="memdesc:a5f2e190b8261a98c97c2ea4e86670d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">刷新信号，通知界面刷新  <br /></td></tr>
+<tr class="separator:a5f2e190b8261a98c97c2ea4e86670d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a60213ec72a7b8093c5acf83bf7e359c0" id="r_a60213ec72a7b8093c5acf83bf7e359c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60213ec72a7b8093c5acf83bf7e359c0">TitleWidget</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a60213ec72a7b8093c5acf83bf7e359c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化标题栏控件  <br /></td></tr>
+<tr class="separator:a60213ec72a7b8093c5acf83bf7e359c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c3be25c1049817131c786f668772ce" id="r_a00c3be25c1049817131c786f668772ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00c3be25c1049817131c786f668772ce">showMenu</a> (const QPoint &amp;pos)</td></tr>
+<tr class="memdesc:a00c3be25c1049817131c786f668772ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示标题选项菜单  <br /></td></tr>
+<tr class="separator:a00c3be25c1049817131c786f668772ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b164141c98874356a16b0993f78e0c4" id="r_a4b164141c98874356a16b0993f78e0c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ripple_button.html">RippleButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b164141c98874356a16b0993f78e0c4">max_toolButton</a> () const</td></tr>
+<tr class="memdesc:a4b164141c98874356a16b0993f78e0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最大化按钮  <br /></td></tr>
+<tr class="separator:a4b164141c98874356a16b0993f78e0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac51c4c7d1987d94b3d3f28af94ee3b65" id="r_ac51c4c7d1987d94b3d3f28af94ee3b65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac51c4c7d1987d94b3d3f28af94ee3b65">~TitleWidget</a> () override</td></tr>
+<tr class="memdesc:ac51c4c7d1987d94b3d3f28af94ee3b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，释放资源  <br /></td></tr>
+<tr class="separator:ac51c4c7d1987d94b3d3f28af94ee3b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93f9d0763b80a0b3aa3476e3770de66c" id="r_a93f9d0763b80a0b3aa3476e3770de66c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f9d0763b80a0b3aa3476e3770de66c">setEnableChange</a> (const bool &amp;<a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>)</td></tr>
+<tr class="memdesc:a93f9d0763b80a0b3aa3476e3770de66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否允许界面切换  <br /></td></tr>
+<tr class="separator:a93f9d0763b80a0b3aa3476e3770de66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:aa7cbd844218ae8d806339f58a33a3699" id="r_aa7cbd844218ae8d806339f58a33a3699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7cbd844218ae8d806339f58a33a3699">mouseDoubleClickEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:aa7cbd844218ae8d806339f58a33a3699"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写鼠标双击事件，触发最大化  <br /></td></tr>
+<tr class="separator:aa7cbd844218ae8d806339f58a33a3699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7523c71b2bf60975302287ec8923f80e" id="r_a7523c71b2bf60975302287ec8923f80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a7523c71b2bf60975302287ec8923f80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写鼠标按下事件，处理右键菜单  <br /></td></tr>
+<tr class="separator:a7523c71b2bf60975302287ec8923f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c46958bfd7ba4df70598d4ef29ce8d" id="r_ad0c46958bfd7ba4df70598d4ef29ce8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0c46958bfd7ba4df70598d4ef29ce8d">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *ev) override</td></tr>
+<tr class="memdesc:ad0c46958bfd7ba4df70598d4ef29ce8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写绘制事件，绘制带圆角的线性渐变阴影  <br /></td></tr>
+<tr class="separator:ad0c46958bfd7ba4df70598d4ef29ce8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb87a6d4464680c455d278d1d32eba6" id="r_a7eb87a6d4464680c455d278d1d32eba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a> (QObject *watched, QEvent *event) override</td></tr>
+<tr class="memdesc:a7eb87a6d4464680c455d278d1d32eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写事件过滤器，处理鼠标返回/前进键和头像动画  <br /></td></tr>
+<tr class="separator:a7eb87a6d4464680c455d278d1d32eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:abd715b0b94e1584991a0a26b3b23af4d" id="r_abd715b0b94e1584991a0a26b3b23af4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd715b0b94e1584991a0a26b3b23af4d">on_title_return_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:abd715b0b94e1584991a0a26b3b23af4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回按钮点击事件，触发界面回退  <br /></td></tr>
+<tr class="separator:abd715b0b94e1584991a0a26b3b23af4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9417593fb6a7680fbcf30073d4253f" id="r_afc9417593fb6a7680fbcf30073d4253f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc9417593fb6a7680fbcf30073d4253f">on_title_refresh_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:afc9417593fb6a7680fbcf30073d4253f"><td class="mdescLeft">&#160;</td><td class="mdescRight">刷新按钮点击事件，触发界面刷新  <br /></td></tr>
+<tr class="separator:afc9417593fb6a7680fbcf30073d4253f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a400e46b6dcc19fd36e9928193f317775" id="r_a400e46b6dcc19fd36e9928193f317775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a400e46b6dcc19fd36e9928193f317775">on_title_music_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a400e46b6dcc19fd36e9928193f317775"><td class="mdescLeft">&#160;</td><td class="mdescRight">音乐按钮点击事件，切换到音乐界面  <br /></td></tr>
+<tr class="separator:a400e46b6dcc19fd36e9928193f317775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c590849259eb9f1e11537e2f4ee0af5" id="r_a8c590849259eb9f1e11537e2f4ee0af5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c590849259eb9f1e11537e2f4ee0af5">on_title_live_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a8c590849259eb9f1e11537e2f4ee0af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">直播按钮点击事件，切换到直播界面  <br /></td></tr>
+<tr class="separator:a8c590849259eb9f1e11537e2f4ee0af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f0127127cf011df293e37027a65f59" id="r_a40f0127127cf011df293e37027a65f59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40f0127127cf011df293e37027a65f59">on_title_listen_book_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a40f0127127cf011df293e37027a65f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">听书按钮点击事件，切换到听书界面  <br /></td></tr>
+<tr class="separator:a40f0127127cf011df293e37027a65f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e3a173b5c24a58503c77884ef48830" id="r_a28e3a173b5c24a58503c77884ef48830"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28e3a173b5c24a58503c77884ef48830">on_title_search_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a28e3a173b5c24a58503c77884ef48830"><td class="mdescLeft">&#160;</td><td class="mdescRight">探索按钮点击事件，切换到探索界面  <br /></td></tr>
+<tr class="separator:a28e3a173b5c24a58503c77884ef48830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9964105982edb38f6951c4e3ac2bb24d" id="r_a9964105982edb38f6951c4e3ac2bb24d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9964105982edb38f6951c4e3ac2bb24d">on_listen_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a9964105982edb38f6951c4e3ac2bb24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">听歌识曲按钮点击事件，显示未实现提示  <br /></td></tr>
+<tr class="separator:a9964105982edb38f6951c4e3ac2bb24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be5b019cf71c156470eb02c0fcfcf78" id="r_a9be5b019cf71c156470eb02c0fcfcf78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be5b019cf71c156470eb02c0fcfcf78">on_theme_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a9be5b019cf71c156470eb02c0fcfcf78"><td class="mdescLeft">&#160;</td><td class="mdescRight">主题按钮点击事件，显示未实现提示  <br /></td></tr>
+<tr class="separator:a9be5b019cf71c156470eb02c0fcfcf78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a772da40ed6adf3f250fa2b6549513f" id="r_a7a772da40ed6adf3f250fa2b6549513f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a772da40ed6adf3f250fa2b6549513f">on_message_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a7a772da40ed6adf3f250fa2b6549513f"><td class="mdescLeft">&#160;</td><td class="mdescRight">消息按钮点击事件，显示未实现提示  <br /></td></tr>
+<tr class="separator:a7a772da40ed6adf3f250fa2b6549513f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af27e6a37dba0244988c37ed054acd1" id="r_a4af27e6a37dba0244988c37ed054acd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4af27e6a37dba0244988c37ed054acd1">on_menu_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a4af27e6a37dba0244988c37ed054acd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">菜单按钮点击事件，显示标题选项菜单  <br /></td></tr>
+<tr class="separator:a4af27e6a37dba0244988c37ed054acd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90c2d189b207184d252ec50fbb1bc0f7" id="r_a90c2d189b207184d252ec50fbb1bc0f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90c2d189b207184d252ec50fbb1bc0f7">on_min_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a90c2d189b207184d252ec50fbb1bc0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小化按钮点击事件，最小化窗口  <br /></td></tr>
+<tr class="separator:a90c2d189b207184d252ec50fbb1bc0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af635eff2a80ee9f1672e53aa3864b3e7" id="r_af635eff2a80ee9f1672e53aa3864b3e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af635eff2a80ee9f1672e53aa3864b3e7">on_max_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:af635eff2a80ee9f1672e53aa3864b3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大化按钮点击事件，触发最大化信号  <br /></td></tr>
+<tr class="separator:af635eff2a80ee9f1672e53aa3864b3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:afba6e95967cc3eb25fd518f7bde6ec04" id="r_afba6e95967cc3eb25fd518f7bde6ec04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a> ()</td></tr>
+<tr class="memdesc:afba6e95967cc3eb25fd518f7bde6ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化界面元素  <br /></td></tr>
+<tr class="separator:afba6e95967cc3eb25fd518f7bde6ec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af7e99bd8f28620179c2875b5700c08" id="r_a0af7e99bd8f28620179c2875b5700c08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0af7e99bd8f28620179c2875b5700c08">setMenuPosition</a> (const QPoint &amp;pos)</td></tr>
+<tr class="memdesc:a0af7e99bd8f28620179c2875b5700c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置菜单显示位置，确保在屏幕范围内  <br /></td></tr>
+<tr class="separator:a0af7e99bd8f28620179c2875b5700c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e9263c9459d5439b1d35d96ee79d6b" id="r_ae4e9263c9459d5439b1d35d96ee79d6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4e9263c9459d5439b1d35d96ee79d6b">setTitleIndex</a> (const int &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) const</td></tr>
+<tr class="memdesc:ae4e9263c9459d5439b1d35d96ee79d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置标题索引，控制界面指示器显示  <br /></td></tr>
+<tr class="separator:ae4e9263c9459d5439b1d35d96ee79d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:ab91e89e5b61655d63c87c34acfe92e6d" id="r_ab91e89e5b61655d63c87c34acfe92e6d"><td class="memItemLeft" align="right" valign="top">static QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab91e89e5b61655d63c87c34acfe92e6d">getRoundedPixmap</a> (const QPixmap &amp;src, QSize size, int radius)</td></tr>
+<tr class="memdesc:ab91e89e5b61655d63c87c34acfe92e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成圆角图片  <br /></td></tr>
+<tr class="separator:ab91e89e5b61655d63c87c34acfe92e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a84377a5b91861b1b32842b501f1bfe01" id="r_a84377a5b91861b1b32842b501f1bfe01"><td class="memItemLeft" align="right" valign="top">Ui::TitleWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84377a5b91861b1b32842b501f1bfe01">ui</a></td></tr>
+<tr class="memdesc:a84377a5b91861b1b32842b501f1bfe01"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 界面对象  <br /></td></tr>
+<tr class="separator:a84377a5b91861b1b32842b501f1bfe01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d31911407d117e9d536ea145e8f11b" id="r_ad7d31911407d117e9d536ea145e8f11b"><td class="memItemLeft" align="right" valign="top">QStack&lt; <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7d31911407d117e9d536ea145e8f11b">m_backTypeStack</a></td></tr>
+<tr class="memdesc:ad7d31911407d117e9d536ea145e8f11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">后退导航栈  <br /></td></tr>
+<tr class="separator:ad7d31911407d117e9d536ea145e8f11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6948bf62b5c296ac6ef9fc3733f4f4aa" id="r_a6948bf62b5c296ac6ef9fc3733f4f4aa"><td class="memItemLeft" align="right" valign="top">QStack&lt; <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6948bf62b5c296ac6ef9fc3733f4f4aa">m_frontTypeStack</a></td></tr>
+<tr class="memdesc:a6948bf62b5c296ac6ef9fc3733f4f4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">前进导航栈  <br /></td></tr>
+<tr class="separator:a6948bf62b5c296ac6ef9fc3733f4f4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d1a5420e6d1ea504a19c1c7a990e85" id="r_ac7d1a5420e6d1ea504a19c1c7a990e85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7d1a5420e6d1ea504a19c1c7a990e85">m_lastType</a></td></tr>
+<tr class="memdesc:ac7d1a5420e6d1ea504a19c1c7a990e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次界面类型  <br /></td></tr>
+<tr class="separator:ac7d1a5420e6d1ea504a19c1c7a990e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5ccb80bdf4e4913576c18899f23178" id="r_a7f5ccb80bdf4e4913576c18899f23178"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f5ccb80bdf4e4913576c18899f23178">m_curType</a></td></tr>
+<tr class="memdesc:a7f5ccb80bdf4e4913576c18899f23178"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前界面类型  <br /></td></tr>
+<tr class="separator:a7f5ccb80bdf4e4913576c18899f23178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1172ed5c1d1373a716484e23308a3edf" id="r_a1172ed5c1d1373a716484e23308a3edf"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_ela_exit_dialog.html">ElaExitDialog</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1172ed5c1d1373a716484e23308a3edf">m_closeDialog</a></td></tr>
+<tr class="memdesc:a1172ed5c1d1373a716484e23308a3edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">退出对话框  <br /></td></tr>
+<tr class="separator:a1172ed5c1d1373a716484e23308a3edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad01133cc2454a1422b78115d8078bc" id="r_a0ad01133cc2454a1422b78115d8078bc"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ad01133cc2454a1422b78115d8078bc">m_originalCover</a></td></tr>
+<tr class="memdesc:a0ad01133cc2454a1422b78115d8078bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">原始头像图片  <br /></td></tr>
+<tr class="separator:a0ad01133cc2454a1422b78115d8078bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a374426b71206da6b372805d68674d" id="r_ad7a374426b71206da6b372805d68674d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_title_option_menu.html">TitleOptionMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7a374426b71206da6b372805d68674d">m_titleOptMenu</a> {}</td></tr>
+<tr class="memdesc:ad7a374426b71206da6b372805d68674d"><td class="mdescLeft">&#160;</td><td class="mdescRight">标题选项菜单  <br /></td></tr>
+<tr class="separator:ad7a374426b71206da6b372805d68674d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b61709efacdeb4b9b337132b7fbb7f" id="r_a75b61709efacdeb4b9b337132b7fbb7f"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75b61709efacdeb4b9b337132b7fbb7f">m_menuPosition</a></td></tr>
+<tr class="memdesc:a75b61709efacdeb4b9b337132b7fbb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">菜单显示位置  <br /></td></tr>
+<tr class="separator:a75b61709efacdeb4b9b337132b7fbb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c86b1a014b0170f56fe1d5a380bcde3" id="r_a5c86b1a014b0170f56fe1d5a380bcde3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c86b1a014b0170f56fe1d5a380bcde3">m_enableChange</a> = true</td></tr>
+<tr class="memdesc:a5c86b1a014b0170f56fe1d5a380bcde3"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否允许界面切换  <br /></td></tr>
+<tr class="separator:a5c86b1a014b0170f56fe1d5a380bcde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>自定义标题栏控件类，继承自 QWidget，支持界面导航、菜单显示和窗口控制 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a09061c58c857313317835bcdbd3bc0e4" name="a09061c58c857313317835bcdbd3bc0e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09061c58c857313317835bcdbd3bc0e4">&#9670;&#160;</a></span>StackType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>界面类型枚举 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a655cf9e33afdb9bc37f84de3d1b832df" name="a09061c58c857313317835bcdbd3bc0e4a655cf9e33afdb9bc37f84de3d1b832df"></a>TitleLive&#160;</td><td class="fielddoc"><p>直播界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a7426a5f2c3c9cb0d6da53c0b5e07cb14" name="a09061c58c857313317835bcdbd3bc0e4a7426a5f2c3c9cb0d6da53c0b5e07cb14"></a>ListenBook&#160;</td><td class="fielddoc"><p>听书界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4af42dd3bc2be56354d2fbf529a3141416" name="a09061c58c857313317835bcdbd3bc0e4af42dd3bc2be56354d2fbf529a3141416"></a>Search&#160;</td><td class="fielddoc"><p>探索界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a6c058febb7cab0d26de46931dbd5aa9f" name="a09061c58c857313317835bcdbd3bc0e4a6c058febb7cab0d26de46931dbd5aa9f"></a>RecommendForYou&#160;</td><td class="fielddoc"><p>为你推荐界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a707163a037108f74af3e2d00fc730e4a" name="a09061c58c857313317835bcdbd3bc0e4a707163a037108f74af3e2d00fc730e4a"></a>MusicRepository&#160;</td><td class="fielddoc"><p>乐库界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a5c35636d858bac8fe9e3937561d3243a" name="a09061c58c857313317835bcdbd3bc0e4a5c35636d858bac8fe9e3937561d3243a"></a>Channel&#160;</td><td class="fielddoc"><p>频道界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4aff13e87d7cbbe18fface435a5b84aaec" name="a09061c58c857313317835bcdbd3bc0e4aff13e87d7cbbe18fface435a5b84aaec"></a>Video&#160;</td><td class="fielddoc"><p>视频界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4abaaa63df740b4a19f9ff680c85e861fd" name="a09061c58c857313317835bcdbd3bc0e4abaaa63df740b4a19f9ff680c85e861fd"></a>AiChat&#160;</td><td class="fielddoc"><p>AI对话界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a0a4fe12c235e35778503341ffcf0fb5c" name="a09061c58c857313317835bcdbd3bc0e4a0a4fe12c235e35778503341ffcf0fb5c"></a>SongList&#160;</td><td class="fielddoc"><p>歌单界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a60cc0072b7759f6c45ac348da93c379b" name="a09061c58c857313317835bcdbd3bc0e4a60cc0072b7759f6c45ac348da93c379b"></a>DailyRecommend&#160;</td><td class="fielddoc"><p>每日推荐界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4acf434416c2792a0f42bbf6ecabb0a145" name="a09061c58c857313317835bcdbd3bc0e4acf434416c2792a0f42bbf6ecabb0a145"></a>Collection&#160;</td><td class="fielddoc"><p>我的收藏界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4af4cb697e99657b668fc54cbb9730b400" name="a09061c58c857313317835bcdbd3bc0e4af4cb697e99657b668fc54cbb9730b400"></a>LocalDownload&#160;</td><td class="fielddoc"><p>本地下载界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a521a73130a589be0cc55bbfdc22b56ff" name="a09061c58c857313317835bcdbd3bc0e4a521a73130a589be0cc55bbfdc22b56ff"></a>MusicCloudDisk&#160;</td><td class="fielddoc"><p>音乐云盘界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a8dba913eadc46dce09b53359c299a520" name="a09061c58c857313317835bcdbd3bc0e4a8dba913eadc46dce09b53359c299a520"></a>PurchasedMusic&#160;</td><td class="fielddoc"><p>已购音乐界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4acf7ecc8c51ebabd5b5edca2ea5837d76" name="a09061c58c857313317835bcdbd3bc0e4acf7ecc8c51ebabd5b5edca2ea5837d76"></a>RecentlyPlayed&#160;</td><td class="fielddoc"><p>最近播放界面 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878" name="a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878"></a>AllMusic&#160;</td><td class="fielddoc"><p>全部音乐界面 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a60213ec72a7b8093c5acf83bf7e359c0" name="a60213ec72a7b8093c5acf83bf7e359c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60213ec72a7b8093c5acf83bf7e359c0">&#9670;&#160;</a></span>TitleWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_title_widget.html">TitleWidget</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化标题栏控件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 启用样式背景</p>
+<p>&lt; 安装应用程序级事件过滤器</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a60213ec72a7b8093c5acf83bf7e359c0_cgraph.png" border="0" usemap="#aclass_title_widget_a60213ec72a7b8093c5acf83bf7e359c0_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a60213ec72a7b8093c5acf83bf7e359c0_cgraph" id="aclass_title_widget_a60213ec72a7b8093c5acf83bf7e359c0_cgraph">
+<area shape="rect" title="构造函数，初始化标题栏控件" alt="" coords="5,265,93,292"/>
+<area shape="poly" title=" " alt="" coords="28,266,24,256,27,247,35,241,49,239,64,241,71,248,68,252,61,246,49,244,37,246,31,250,30,256,33,264"/>
+<area shape="rect" href="class_title_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面元素" alt="" coords="141,265,192,292"/>
+<area shape="poly" title=" " alt="" coords="93,276,126,276,126,281,93,281"/>
+<area shape="rect" href="class_title_option_menu.html#a789158f29284880f41199bede88272e3" title="关于应用信号" alt="" coords="254,5,410,32"/>
+<area shape="poly" title=" " alt="" coords="165,265,168,222,177,162,199,98,216,68,238,42,242,39,245,43,242,46,221,71,204,100,183,163,173,222,170,265"/>
+<area shape="rect" href="class_title_option_menu.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出应用信号" alt="" coords="260,56,405,83"/>
+<area shape="poly" title=" " alt="" coords="166,264,172,230,184,184,205,135,220,112,238,93,244,88,248,92,242,97,224,116,210,137,189,185,177,231,172,265"/>
+<area shape="rect" href="class_title_widget.html#ab91e89e5b61655d63c87c34acfe92e6d" title="生成圆角图片" alt="" coords="264,107,400,133"/>
+<area shape="poly" title=" " alt="" coords="169,264,191,206,211,172,238,143,249,136,252,141,242,147,216,175,196,208,174,266"/>
+<area shape="rect" href="class_ela_exit_dialog.html#ae38ecc3c4ec24d245bc51436fe90900c" title="中间按钮点击信号" alt="" coords="240,157,424,200"/>
+<area shape="poly" title=" " alt="" coords="178,263,204,236,239,210,247,205,250,210,241,214,208,240,182,267"/>
+<area shape="rect" href="class_title_widget.html#a7f6d4e7893db244f9cf153e2428ef144" title="关闭按钮点击事件，显示退出对话框" alt="" coords="262,224,402,267"/>
+<area shape="poly" title=" " alt="" coords="192,271,247,260,248,265,193,276"/>
+<area shape="rect" href="class_title_widget.html#a4af27e6a37dba0244988c37ed054acd1" title="菜单按钮点击事件，显示标题选项菜单" alt="" coords="262,291,402,333"/>
+<area shape="poly" title=" " alt="" coords="193,281,248,292,247,298,192,286"/>
+<area shape="rect" href="class_ela_exit_dialog.html#a612eaf68cd2c71c38b88722dacae6105" title="右侧按钮点击信号" alt="" coords="246,357,418,400"/>
+<area shape="poly" title=" " alt="" coords="182,291,208,317,241,343,250,348,247,352,239,348,204,321,178,295"/>
+<area shape="rect" href="_music_item_widget_8cpp.html#a576ca65ebb105355024779fb458fe476" title="创建圆角图片" alt="" coords="289,424,375,451"/>
+<area shape="poly" title=" " alt="" coords="174,291,196,349,216,382,242,410,275,427,273,431,238,414,211,385,191,351,169,293"/>
+<area shape="rect" href="class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b" title="设置标题索引，控制界面指示器显示" alt="" coords="284,475,380,501"/>
+<area shape="poly" title=" " alt="" coords="172,292,177,326,189,372,210,420,224,442,242,461,270,477,268,481,238,465,220,445,205,422,184,374,172,328,166,293"/>
+<area shape="rect" href="class_title_widget.html#ac63a90a3b880d5e9cfd47b54b336be8b" title="显示关于对话框信号" alt="" coords="270,525,394,552"/>
+<area shape="poly" title=" " alt="" coords="170,292,173,335,183,394,204,457,221,486,242,511,258,523,255,527,238,515,216,489,199,459,177,395,168,336,165,293"/>
+<area shape="rect" href="class_title_widget.html#a00c3be25c1049817131c786f668772ce" title="显示标题选项菜单" alt="" coords="529,281,613,308"/>
+<area shape="poly" title=" " alt="" coords="402,304,513,296,514,301,403,310"/>
+<area shape="rect" href="class_title_widget.html#a0af7e99bd8f28620179c2875b5700c08" title="设置菜单显示位置，确保在屏幕范围内" alt="" coords="752,281,870,308"/>
+<area shape="poly" title=" " alt="" coords="614,292,737,292,737,297,614,297"/>
+<area shape="rect" href="class_ela_exit_dialog.html#a5e746c6f6066156d91dbe54b89acebf0" title="键盘按下事件处理" alt="" coords="472,332,670,359"/>
+<area shape="poly" title=" " alt="" coords="418,364,457,359,458,364,418,369"/>
+<area shape="rect" href="class_ela_exit_dialog.html#aa71936647c7e332ab07cbec003a8c9a2" title="重绘事件，绘制对话框背景和按钮区域" alt="" coords="486,383,656,409"/>
+<area shape="poly" title=" " alt="" coords="418,382,470,386,470,391,418,388"/>
+<area shape="rect" href="class_ela_exit_dialog.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf" title="显示事件处理" alt="" coords="484,433,658,460"/>
+<area shape="poly" title=" " alt="" coords="404,398,473,419,501,426,499,431,472,424,402,403"/>
+<area shape="rect" href="class_ela_exit_dialog.html#a7e42279a906937fc42f9e9b4a15a6897" title="构造函数，初始化退出对话框" alt="" coords="718,408,905,435"/>
+<area shape="poly" title=" " alt="" coords="657,402,703,407,702,412,657,408"/>
+<area shape="poly" title=" " alt="" coords="771,409,764,399,769,389,785,383,811,381,840,384,855,391,853,396,839,389,811,387,786,389,772,393,769,399,775,406"/>
+<area shape="rect" href="class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba" title="主题模式更改信号" alt="" coords="953,408,1161,435"/>
+<area shape="poly" title=" " alt="" coords="906,419,937,419,937,424,906,424"/>
+<area shape="poly" title=" " alt="" coords="658,435,702,430,702,436,658,440"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a60213ec72a7b8093c5acf83bf7e359c0_icgraph.png" border="0" usemap="#aclass_title_widget_a60213ec72a7b8093c5acf83bf7e359c0_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a60213ec72a7b8093c5acf83bf7e359c0_icgraph" id="aclass_title_widget_a60213ec72a7b8093c5acf83bf7e359c0_icgraph">
+<area shape="rect" title="构造函数，初始化标题栏控件" alt="" coords="5,29,93,56"/>
+<area shape="poly" title=" " alt="" coords="62,15,58,10,49,8,41,10,37,14,38,29,32,29,32,12,38,5,49,3,60,5,66,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac51c4c7d1987d94b3d3f28af94ee3b65" name="ac51c4c7d1987d94b3d3f28af94ee3b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac51c4c7d1987d94b3d3f28af94ee3b65">&#9670;&#160;</a></span>~TitleWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_title_widget.html">TitleWidget</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，释放资源 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a607c0c78292a519369fac4a60638f9ee" name="a607c0c78292a519369fac4a60638f9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a607c0c78292a519369fac4a60638f9ee">&#9670;&#160;</a></span>currentStackChange</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void currentStackChange </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>slide</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>界面切换信号，通知界面索引和是否滑动 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>目标界面索引 </td></tr>
+    <tr><td class="paramname">slide</td><td>是否使用滑动动画 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a607c0c78292a519369fac4a60638f9ee_icgraph.png" border="0" usemap="#aclass_title_widget_a607c0c78292a519369fac4a60638f9ee_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a607c0c78292a519369fac4a60638f9ee_icgraph" id="aclass_title_widget_a607c0c78292a519369fac4a60638f9ee_icgraph">
+<area shape="rect" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="680,605,821,632"/>
+<area shape="rect" href="class_title_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="重写事件过滤器，处理鼠标返回/前进键和头像动画" alt="" coords="257,176,339,203"/>
+<area shape="poly" title=" " alt="" coords="744,590,734,484,712,340,697,269,678,205,656,153,644,134,631,121,612,109,592,100,550,92,505,96,461,107,418,123,379,142,320,178,317,173,376,138,416,118,459,102,505,90,550,87,594,95,615,104,634,117,648,131,661,151,683,203,702,268,717,339,739,483,750,589"/>
+<area shape="rect" href="class_ku_gou_app.html#a94fc5073f204939937996ae86cd18b18" title="初始化标题栏" alt="" coords="446,29,621,56"/>
+<area shape="poly" title=" " alt="" coords="744,590,732,478,710,324,694,246,676,175,655,116,630,76,605,59,608,54,634,73,659,114,681,173,700,245,715,323,738,478,749,590"/>
+<area shape="rect" href="class_title_widget.html#a40f0127127cf011df293e37027a65f59" title="听书按钮点击事件，切换到听书界面" alt="" coords="462,131,605,173"/>
+<area shape="poly" title=" " alt="" coords="747,590,745,511,730,404,716,346,695,289,667,235,630,187,604,169,607,165,634,183,671,232,700,286,721,344,735,403,750,511,753,590"/>
+<area shape="rect" href="class_title_widget.html#a8c590849259eb9f1e11537e2f4ee0af5" title="直播按钮点击事件，切换到直播界面" alt="" coords="452,197,615,240"/>
+<area shape="poly" title=" " alt="" coords="746,590,739,522,722,432,707,384,687,337,662,293,630,254,614,241,617,237,634,250,667,290,692,335,712,382,727,431,745,521,751,590"/>
+<area shape="rect" href="class_title_widget.html#abd715b0b94e1584991a0a26b3b23af4d" title="返回按钮点击事件，触发界面回退" alt="" coords="449,264,618,307"/>
+<area shape="poly" title=" " alt="" coords="743,590,733,533,713,461,698,423,680,386,657,351,631,321,616,309,619,305,634,317,662,348,685,383,703,421,718,460,739,532,749,589"/>
+<area shape="rect" href="class_title_widget.html#a28e3a173b5c24a58503c77884ef48830" title="探索按钮点击事件，切换到探索界面" alt="" coords="442,331,625,373"/>
+<area shape="poly" title=" " alt="" coords="740,591,726,547,704,492,673,436,653,410,631,387,614,376,617,372,634,383,657,407,677,433,709,490,731,545,745,590"/>
+<area shape="rect" href="class_title_widget.html#a4cf2d0526103b5c8396ac1819fff9d06" title="左侧菜单AI对话项点击事件，切换到AI对话界面" alt="" coords="464,397,603,440"/>
+<area shape="poly" title=" " alt="" coords="735,593,694,523,665,486,631,454,602,438,605,433,634,450,669,483,699,520,739,590"/>
+<area shape="rect" href="class_title_widget.html#a0231dc383b17063010a8c7634e658b71" title="左侧菜单全部音乐项点击事件，切换到全部音乐界面" alt="" coords="462,464,606,507"/>
+<area shape="poly" title=" " alt="" coords="724,596,683,558,631,521,605,509,607,504,634,516,686,554,728,592"/>
+<area shape="rect" href="class_title_widget.html#a82ab82289dcc73438c78a88ee801f0b9" title="左侧菜单频道项点击事件，切换到频道界面" alt="" coords="463,531,604,573"/>
+<area shape="poly" title=" " alt="" coords="689,603,604,576,606,571,691,598"/>
+<area shape="rect" href="class_title_widget.html#a35950dc676ca6c6f7d3bd3572f7aef84" title="左侧菜单收藏项点击事件，切换到收藏界面" alt="" coords="458,597,609,640"/>
+<area shape="poly" title=" " alt="" coords="665,621,610,621,610,616,665,616"/>
+<area shape="rect" href="class_title_widget.html#a048bab5d61b1fb9719087d0496ac092a" title="左侧菜单每日推荐项点击事件，切换到每日推荐界面" alt="" coords="435,664,632,707"/>
+<area shape="poly" title=" " alt="" coords="691,640,606,666,605,661,689,635"/>
+<area shape="rect" href="class_title_widget.html#acf0a87bffc2c718f35736d5a29b020b8" title="左侧菜单本地下载项点击事件，切换到本地下载界面" alt="" coords="443,731,624,773"/>
+<area shape="poly" title=" " alt="" coords="728,645,686,684,634,721,610,733,607,728,631,716,683,679,724,641"/>
+<area shape="rect" href="class_title_widget.html#aaa7b83c8d6efceeefe56f44725484441" title="左侧菜单音乐云盘项点击事件，切换到音乐云盘界面" alt="" coords="438,797,630,840"/>
+<area shape="poly" title=" " alt="" coords="739,647,699,717,669,755,634,787,615,799,612,794,631,783,665,751,694,714,735,645"/>
+<area shape="rect" href="class_title_widget.html#a26a09994453989a46bf1b6b9d2f3120d" title="左侧菜单乐库项点击事件，切换到乐库界面" alt="" coords="436,864,631,907"/>
+<area shape="poly" title=" " alt="" coords="745,648,731,693,709,748,677,805,657,831,634,854,617,866,614,861,631,850,653,827,673,802,704,745,726,691,740,646"/>
+<area shape="rect" href="class_title_widget.html#a224e60f476ec12e06be7623b9ef1ebe5" title="左侧菜单已购音乐项点击事件，切换到已购音乐界面" alt="" coords="438,931,629,973"/>
+<area shape="poly" title=" " alt="" coords="749,648,739,705,718,778,703,816,685,854,662,889,634,921,619,932,616,928,631,917,657,886,680,851,698,814,713,776,733,704,743,647"/>
+<area shape="rect" href="class_title_widget.html#aa2a188939135c7906a17d7c2e794569e" title="左侧菜单最近播放项点击事件，切换到最近播放界面" alt="" coords="442,997,625,1040"/>
+<area shape="poly" title=" " alt="" coords="751,648,745,716,727,806,712,855,692,903,667,947,634,987,620,999,616,995,630,983,662,944,687,900,707,853,722,805,739,715,746,647"/>
+<area shape="rect" href="class_title_widget.html#a2a7701384483224e7e3fbddc4a8f8196" title="左侧菜单推荐项点击事件，切换到推荐界面" alt="" coords="452,1064,616,1107"/>
+<area shape="poly" title=" " alt="" coords="753,648,750,727,735,835,721,893,700,951,671,1005,634,1054,618,1067,615,1063,630,1050,667,1003,695,949,716,892,730,834,745,726,747,647"/>
+<area shape="rect" href="class_title_widget.html#a421c6a29fbdba52a69aee599d5245b4d" title="左侧菜单歌单项点击事件，切换到歌单界面" alt="" coords="461,1131,606,1173"/>
+<area shape="poly" title=" " alt="" coords="749,648,735,752,712,893,696,964,678,1029,658,1083,634,1120,608,1139,605,1135,630,1117,653,1081,673,1028,691,963,707,892,730,751,743,647"/>
+<area shape="rect" href="class_title_widget.html#a9d3591d50396b3c07cdcdf9ac1f4e968" title="左侧菜单视频项点击事件，切换到视频界面" alt="" coords="446,1197,621,1224"/>
+<area shape="poly" title=" " alt="" coords="750,648,739,764,718,926,702,1008,684,1083,661,1145,648,1169,634,1187,619,1199,616,1195,630,1183,644,1166,656,1143,678,1082,697,1007,712,925,734,764,745,647"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="237,29,359,56"/>
+<area shape="poly" title=" " alt="" coords="430,45,360,45,360,40,430,40"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="221,45,161,45,161,40,221,40"/>
+<area shape="poly" title=" " alt="" coords="120,16,107,10,83,8,60,10,48,15,45,20,51,27,47,30,40,21,45,11,59,5,83,3,109,5,122,12"/>
+<area shape="poly" title=" " alt="" coords="451,261,434,254,326,206,328,201,436,250,452,256"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="209,797,387,840"/>
+<area shape="poly" title=" " alt="" coords="452,442,437,454,402,494,374,540,352,589,334,639,313,731,304,797,298,797,307,730,329,638,347,587,369,538,398,491,433,450,449,438"/>
+<area shape="poly" title=" " alt="" coords="449,511,437,521,407,553,382,589,360,628,343,668,318,742,306,797,300,796,313,740,338,666,356,626,377,586,403,549,433,517,446,507"/>
+<area shape="poly" title=" " alt="" coords="451,578,437,587,411,611,389,638,352,697,325,754,308,798,303,796,320,752,347,695,385,635,408,608,433,583,448,574"/>
+<area shape="poly" title=" " alt="" coords="446,649,437,654,396,688,362,728,314,799,309,795,357,725,393,685,433,650,443,644"/>
+<area shape="poly" title=" " alt="" coords="447,716,436,721,375,760,325,799,322,795,372,756,434,716,445,711"/>
+<area shape="poly" title=" " alt="" coords="442,781,377,799,375,794,441,775"/>
+<area shape="poly" title=" " alt="" coords="422,821,388,821,388,816,422,816"/>
+<area shape="poly" title=" " alt="" coords="441,862,375,843,377,838,442,857"/>
+<area shape="poly" title=" " alt="" coords="445,926,434,921,372,882,322,842,325,838,375,877,436,916,447,922"/>
+<area shape="poly" title=" " alt="" coords="440,992,433,987,393,953,357,913,309,842,314,839,362,910,396,949,437,983,443,987"/>
+<area shape="poly" title=" " alt="" coords="438,1058,433,1054,408,1030,385,1002,347,943,320,886,303,841,308,840,325,884,352,940,389,999,411,1026,437,1050,441,1053"/>
+<area shape="poly" title=" " alt="" coords="445,1130,433,1121,403,1088,377,1051,356,1012,338,972,313,897,300,841,306,840,318,895,343,970,360,1009,382,1048,407,1085,437,1117,449,1126"/>
+<area shape="poly" title=" " alt="" coords="438,1191,433,1187,397,1147,368,1101,345,1052,327,1002,306,908,298,841,303,840,311,907,333,1000,350,1050,372,1099,401,1144,437,1183,441,1187"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac788a1e254cb7f54fb21e3648d929f39" name="ac788a1e254cb7f54fb21e3648d929f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac788a1e254cb7f54fb21e3648d929f39">&#9670;&#160;</a></span>doubleClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void doubleClicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>双击信号，当标题栏被双击时触发 </p>
+
+</div>
+</div>
+<a id="a7eb87a6d4464680c455d278d1d32eba6" name="a7eb87a6d4464680c455d278d1d32eba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb87a6d4464680c455d278d1d32eba6">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重写事件过滤器，处理鼠标返回/前进键和头像动画 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>监视的对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<p>&lt; 当前状态存入返回栈</p>
+<p>&lt; 更新当前类型</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a7eb87a6d4464680c455d278d1d32eba6_cgraph.png" border="0" usemap="#aclass_title_widget_a7eb87a6d4464680c455d278d1d32eba6_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a7eb87a6d4464680c455d278d1d32eba6_cgraph" id="aclass_title_widget_a7eb87a6d4464680c455d278d1d32eba6_cgraph">
+<area shape="rect" title="重写事件过滤器，处理鼠标返回/前进键和头像动画" alt="" coords="5,99,88,125"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="353,5,493,32"/>
+<area shape="poly" title=" " alt="" coords="63,96,95,74,135,54,186,38,239,28,337,17,338,23,240,33,187,43,137,58,97,78,66,101"/>
+<area shape="rect" href="class_title_widget.html#ab91e89e5b61655d63c87c34acfe92e6d" title="生成圆角图片" alt="" coords="153,208,288,235"/>
+<area shape="poly" title=" " alt="" coords="62,124,95,155,137,187,161,199,159,204,134,192,91,159,58,128"/>
+<area shape="rect" href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838" title="左侧菜单显示信号，控制菜单显示状态" alt="" coords="371,72,475,99"/>
+<area shape="poly" title=" " alt="" coords="75,96,104,85,135,76,193,69,252,67,356,74,356,79,252,73,193,74,136,81,105,90,77,101"/>
+<area shape="rect" href="class_title_widget.html#abd715b0b94e1584991a0a26b3b23af4d" title="返回按钮点击事件，触发界面回退" alt="" coords="136,91,305,133"/>
+<area shape="poly" title=" " alt="" coords="88,109,120,109,120,115,88,115"/>
+<area shape="rect" href="class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b" title="设置标题索引，控制界面指示器显示" alt="" coords="375,127,471,153"/>
+<area shape="poly" title=" " alt="" coords="77,123,105,134,136,143,195,150,254,152,359,146,360,151,254,157,194,155,135,148,104,139,75,128"/>
+<area shape="poly" title=" " alt="" coords="267,88,377,36,380,41,270,93"/>
+<area shape="poly" title=" " alt="" coords="305,98,355,92,356,97,306,103"/>
+<area shape="poly" title=" " alt="" coords="306,121,360,129,359,134,305,126"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a358d2e2397ca11ccd17553e3c40e7901" name="a358d2e2397ca11ccd17553e3c40e7901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358d2e2397ca11ccd17553e3c40e7901">&#9670;&#160;</a></span>exit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void exit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>退出信号，通知程序退出 </p>
+
+</div>
+</div>
+<a id="ab91e89e5b61655d63c87c34acfe92e6d" name="ab91e89e5b61655d63c87c34acfe92e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91e89e5b61655d63c87c34acfe92e6d">&#9670;&#160;</a></span>getRoundedPixmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap getRoundedPixmap </td>
+          <td>(</td>
+          <td class="paramtype">const QPixmap &amp;</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QSize</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>radius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成圆角图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>原始图片 </td></tr>
+    <tr><td class="paramname">size</td><td>目标尺寸 </td></tr>
+    <tr><td class="paramname">radius</td><td>圆角半径 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>圆角图片 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_ab91e89e5b61655d63c87c34acfe92e6d_icgraph.png" border="0" usemap="#aclass_title_widget_ab91e89e5b61655d63c87c34acfe92e6d_icgraph" alt=""/></div>
+<map name="aclass_title_widget_ab91e89e5b61655d63c87c34acfe92e6d_icgraph" id="aclass_title_widget_ab91e89e5b61655d63c87c34acfe92e6d_icgraph">
+<area shape="rect" title="生成圆角图片" alt="" coords="271,31,406,57"/>
+<area shape="rect" href="class_title_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="重写事件过滤器，处理鼠标返回/前进键和头像动画" alt="" coords="141,5,223,32"/>
+<area shape="poly" title=" " alt="" coords="255,33,223,28,224,23,256,28"/>
+<area shape="rect" href="class_title_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面元素" alt="" coords="156,56,208,83"/>
+<area shape="poly" title=" " alt="" coords="256,60,208,68,207,63,255,55"/>
+<area shape="rect" href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0" title="构造函数，初始化标题栏控件" alt="" coords="5,56,93,83"/>
+<area shape="poly" title=" " alt="" coords="141,72,93,72,93,67,141,67"/>
+<area shape="poly" title=" " alt="" coords="71,43,63,37,49,35,36,37,29,41,27,47,30,54,25,57,21,47,24,38,34,32,49,29,65,32,74,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afba6e95967cc3eb25fd518f7bde6ec04" name="afba6e95967cc3eb25fd518f7bde6ec04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba6e95967cc3eb25fd518f7bde6ec04">&#9670;&#160;</a></span>initUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initUi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化界面元素 </p>
+<p>&lt; 设置外边距</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph.png" border="0" usemap="#aclass_title_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" alt=""/></div>
+<map name="aclass_title_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" id="aclass_title_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph">
+<area shape="rect" title="初始化界面元素" alt="" coords="5,265,57,292"/>
+<area shape="rect" href="class_title_option_menu.html#a789158f29284880f41199bede88272e3" title="关于应用信号" alt="" coords="119,5,275,32"/>
+<area shape="poly" title=" " alt="" coords="30,265,32,222,42,162,64,98,81,68,103,42,107,39,110,43,107,46,85,71,69,100,47,163,37,222,35,265"/>
+<area shape="rect" href="class_title_option_menu.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出应用信号" alt="" coords="124,56,270,83"/>
+<area shape="poly" title=" " alt="" coords="31,264,36,230,49,184,70,135,85,112,103,93,109,88,112,92,106,97,89,116,75,137,54,185,42,231,36,265"/>
+<area shape="rect" href="class_title_widget.html#ab91e89e5b61655d63c87c34acfe92e6d" title="生成圆角图片" alt="" coords="129,107,264,133"/>
+<area shape="poly" title=" " alt="" coords="33,264,56,206,76,172,103,143,114,136,117,141,106,147,80,175,60,208,38,266"/>
+<area shape="rect" href="class_ela_exit_dialog.html#ae38ecc3c4ec24d245bc51436fe90900c" title="中间按钮点击信号" alt="" coords="105,157,289,200"/>
+<area shape="poly" title=" " alt="" coords="42,263,69,236,103,210,112,205,114,210,106,214,72,240,46,267"/>
+<area shape="rect" href="class_title_widget.html#a7f6d4e7893db244f9cf153e2428ef144" title="关闭按钮点击事件，显示退出对话框" alt="" coords="127,224,266,267"/>
+<area shape="poly" title=" " alt="" coords="57,271,112,260,113,265,58,276"/>
+<area shape="rect" href="class_title_widget.html#a4af27e6a37dba0244988c37ed054acd1" title="菜单按钮点击事件，显示标题选项菜单" alt="" coords="127,291,267,333"/>
+<area shape="poly" title=" " alt="" coords="58,281,112,292,111,298,57,286"/>
+<area shape="rect" href="class_ela_exit_dialog.html#a612eaf68cd2c71c38b88722dacae6105" title="右侧按钮点击信号" alt="" coords="111,357,282,400"/>
+<area shape="poly" title=" " alt="" coords="46,291,72,317,106,343,114,348,112,352,103,348,69,321,42,295"/>
+<area shape="rect" href="_music_item_widget_8cpp.html#a576ca65ebb105355024779fb458fe476" title="创建圆角图片" alt="" coords="154,424,240,451"/>
+<area shape="poly" title=" " alt="" coords="38,291,60,349,80,382,106,410,140,427,138,431,103,414,76,385,56,351,33,293"/>
+<area shape="rect" href="class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b" title="设置标题索引，控制界面指示器显示" alt="" coords="149,475,245,501"/>
+<area shape="poly" title=" " alt="" coords="36,292,42,326,54,372,75,420,89,442,106,461,135,477,132,481,103,465,85,445,70,422,49,374,36,328,31,293"/>
+<area shape="rect" href="class_title_widget.html#ac63a90a3b880d5e9cfd47b54b336be8b" title="显示关于对话框信号" alt="" coords="135,525,258,552"/>
+<area shape="poly" title=" " alt="" coords="35,292,37,335,47,394,69,457,85,486,106,511,123,523,120,527,103,515,81,489,64,459,42,395,32,336,30,293"/>
+<area shape="rect" href="class_title_widget.html#a00c3be25c1049817131c786f668772ce" title="显示标题选项菜单" alt="" coords="394,281,478,308"/>
+<area shape="poly" title=" " alt="" coords="267,304,378,296,378,301,267,310"/>
+<area shape="rect" href="class_title_widget.html#a0af7e99bd8f28620179c2875b5700c08" title="设置菜单显示位置，确保在屏幕范围内" alt="" coords="617,281,735,308"/>
+<area shape="poly" title=" " alt="" coords="478,292,601,292,601,297,478,297"/>
+<area shape="rect" href="class_ela_exit_dialog.html#a5e746c6f6066156d91dbe54b89acebf0" title="键盘按下事件处理" alt="" coords="337,332,534,359"/>
+<area shape="poly" title=" " alt="" coords="282,364,322,359,322,364,283,369"/>
+<area shape="rect" href="class_ela_exit_dialog.html#aa71936647c7e332ab07cbec003a8c9a2" title="重绘事件，绘制对话框背景和按钮区域" alt="" coords="350,383,521,409"/>
+<area shape="poly" title=" " alt="" coords="283,382,335,386,335,391,283,388"/>
+<area shape="rect" href="class_ela_exit_dialog.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf" title="显示事件处理" alt="" coords="349,433,522,460"/>
+<area shape="poly" title=" " alt="" coords="268,398,338,419,365,426,364,431,336,424,267,403"/>
+<area shape="rect" href="class_ela_exit_dialog.html#a7e42279a906937fc42f9e9b4a15a6897" title="构造函数，初始化退出对话框" alt="" coords="582,408,770,435"/>
+<area shape="poly" title=" " alt="" coords="522,402,567,407,567,412,521,408"/>
+<area shape="poly" title=" " alt="" coords="636,409,628,399,633,389,650,383,676,381,705,384,720,391,718,396,704,389,676,387,651,389,637,393,634,399,640,406"/>
+<area shape="rect" href="class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba" title="主题模式更改信号" alt="" coords="818,408,1026,435"/>
+<area shape="poly" title=" " alt="" coords="770,419,802,419,802,424,770,424"/>
+<area shape="poly" title=" " alt="" coords="523,435,566,430,567,436,523,440"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph.png" border="0" usemap="#aclass_title_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" alt=""/></div>
+<map name="aclass_title_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" id="aclass_title_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph">
+<area shape="rect" title="初始化界面元素" alt="" coords="141,29,192,56"/>
+<area shape="rect" href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0" title="构造函数，初始化标题栏控件" alt="" coords="5,29,93,56"/>
+<area shape="poly" title=" " alt="" coords="125,45,93,45,93,40,125,40"/>
+<area shape="poly" title=" " alt="" coords="68,16,61,10,49,8,37,10,31,14,30,20,33,28,28,30,24,20,27,11,35,5,49,3,64,5,71,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5586d80493f09e7305a487525f0ac838" name="a5586d80493f09e7305a487525f0ac838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5586d80493f09e7305a487525f0ac838">&#9670;&#160;</a></span>leftMenuShow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void leftMenuShow </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单显示信号，控制菜单显示状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否显示菜单 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a5586d80493f09e7305a487525f0ac838_icgraph.png" border="0" usemap="#aclass_title_widget_a5586d80493f09e7305a487525f0ac838_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a5586d80493f09e7305a487525f0ac838_icgraph" id="aclass_title_widget_a5586d80493f09e7305a487525f0ac838_icgraph">
+<area shape="rect" title="左侧菜单显示信号，控制菜单显示状态" alt="" coords="609,205,714,232"/>
+<area shape="rect" href="class_title_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="重写事件过滤器，处理鼠标返回/前进键和头像动画" alt="" coords="229,209,311,236"/>
+<area shape="poly" title=" " alt="" coords="641,194,607,154,585,135,560,121,511,104,470,98,429,104,380,121,348,139,320,164,282,210,278,207,317,160,345,135,378,116,428,99,470,93,512,99,562,116,588,131,611,150,645,191"/>
+<area shape="rect" href="class_ku_gou_app.html#a94fc5073f204939937996ae86cd18b18" title="初始化标题栏" alt="" coords="382,29,558,56"/>
+<area shape="poly" title=" " alt="" coords="646,193,612,134,588,103,560,77,526,59,529,54,563,73,592,100,616,131,650,190"/>
+<area shape="rect" href="class_title_widget.html#a40f0127127cf011df293e37027a65f59" title="听书按钮点击事件，切换到听书界面" alt="" coords="399,131,541,173"/>
+<area shape="poly" title=" " alt="" coords="605,202,533,176,535,171,607,197"/>
+<area shape="rect" href="class_title_widget.html#a8c590849259eb9f1e11537e2f4ee0af5" title="直播按钮点击事件，切换到直播界面" alt="" coords="388,197,552,240"/>
+<area shape="poly" title=" " alt="" coords="594,221,552,221,552,216,594,216"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="381,264,559,307"/>
+<area shape="poly" title=" " alt="" coords="607,240,535,266,533,261,605,235"/>
+<area shape="rect" href="class_title_widget.html#abd715b0b94e1584991a0a26b3b23af4d" title="返回按钮点击事件，触发界面回退" alt="" coords="386,331,555,373"/>
+<area shape="poly" title=" " alt="" coords="642,246,608,284,563,321,541,332,539,328,560,316,604,280,638,243"/>
+<area shape="rect" href="class_title_widget.html#a28e3a173b5c24a58503c77884ef48830" title="探索按钮点击事件，切换到探索界面" alt="" coords="379,397,561,440"/>
+<area shape="poly" title=" " alt="" coords="653,248,620,317,594,355,563,387,546,399,543,395,560,383,590,351,615,314,648,246"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="209,29,331,56"/>
+<area shape="poly" title=" " alt="" coords="367,45,331,45,331,40,367,40"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="115,16,104,10,83,8,64,10,53,15,51,20,56,27,51,30,45,21,49,11,62,5,83,3,105,5,117,12"/>
+<area shape="poly" title=" " alt="" coords="386,326,378,321,322,279,282,238,285,235,325,274,380,316,389,321"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b164141c98874356a16b0993f78e0c4" name="a4b164141c98874356a16b0993f78e0c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b164141c98874356a16b0993f78e0c4">&#9670;&#160;</a></span>max_toolButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ripple_button.html">RippleButton</a> * max_toolButton </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取最大化按钮 </p>
+<dl class="section return"><dt>返回</dt><dd>最大化按钮指针 </dd></dl>
+
+</div>
+</div>
+<a id="a992988d596e79194a707af831db3f4ea" name="a992988d596e79194a707af831db3f4ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a992988d596e79194a707af831db3f4ea">&#9670;&#160;</a></span>maxScreen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void maxScreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最大化信号，通知窗口最大化 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a992988d596e79194a707af831db3f4ea_icgraph.png" border="0" usemap="#aclass_title_widget_a992988d596e79194a707af831db3f4ea_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a992988d596e79194a707af831db3f4ea_icgraph" id="aclass_title_widget_a992988d596e79194a707af831db3f4ea_icgraph">
+<area shape="rect" title="最大化信号，通知窗口最大化" alt="" coords="651,55,739,81"/>
+<area shape="rect" href="class_ku_gou_app.html#a94fc5073f204939937996ae86cd18b18" title="初始化标题栏" alt="" coords="425,29,600,56"/>
+<area shape="poly" title=" " alt="" coords="636,63,600,58,601,52,637,57"/>
+<area shape="rect" href="class_title_widget.html#af635eff2a80ee9f1672e53aa3864b3e7" title="最大化按钮点击事件，触发最大化信号" alt="" coords="422,80,603,107"/>
+<area shape="poly" title=" " alt="" coords="636,79,604,83,603,78,636,73"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="230,29,352,56"/>
+<area shape="poly" title=" " alt="" coords="410,45,353,45,353,40,410,40"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="215,45,161,45,161,40,215,40"/>
+<area shape="poly" title=" " alt="" coords="119,16,106,10,83,8,61,10,49,15,47,20,52,27,48,30,41,21,46,11,60,5,83,3,108,5,121,12"/>
+<area shape="rect" href="class_title_widget.html#aa7cbd844218ae8d806339f58a33a3699" title="重写鼠标双击事件，触发最大化" alt="" coords="209,80,374,107"/>
+<area shape="poly" title=" " alt="" coords="407,96,374,96,374,91,407,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa7cbd844218ae8d806339f58a33a3699" name="aa7cbd844218ae8d806339f58a33a3699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cbd844218ae8d806339f58a33a3699">&#9670;&#160;</a></span>mouseDoubleClickEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mouseDoubleClickEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重写鼠标双击事件，触发最大化 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 左键双击触发最大化</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_aa7cbd844218ae8d806339f58a33a3699_cgraph.png" border="0" usemap="#aclass_title_widget_aa7cbd844218ae8d806339f58a33a3699_cgraph" alt=""/></div>
+<map name="aclass_title_widget_aa7cbd844218ae8d806339f58a33a3699_cgraph" id="aclass_title_widget_aa7cbd844218ae8d806339f58a33a3699_cgraph">
+<area shape="rect" title="重写鼠标双击事件，触发最大化" alt="" coords="5,5,171,32"/>
+<area shape="rect" href="class_title_widget.html#af635eff2a80ee9f1672e53aa3864b3e7" title="最大化按钮点击事件，触发最大化信号" alt="" coords="219,5,400,32"/>
+<area shape="poly" title=" " alt="" coords="171,16,203,16,203,21,171,21"/>
+<area shape="rect" href="class_title_widget.html#a992988d596e79194a707af831db3f4ea" title="最大化信号，通知窗口最大化" alt="" coords="448,5,535,32"/>
+<area shape="poly" title=" " alt="" coords="400,16,433,16,433,21,400,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7523c71b2bf60975302287ec8923f80e" name="a7523c71b2bf60975302287ec8923f80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7523c71b2bf60975302287ec8923f80e">&#9670;&#160;</a></span>mousePressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重写鼠标按下事件，处理右键菜单 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 右键显示菜单</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a7523c71b2bf60975302287ec8923f80e_cgraph.png" border="0" usemap="#aclass_title_widget_a7523c71b2bf60975302287ec8923f80e_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a7523c71b2bf60975302287ec8923f80e_cgraph" id="aclass_title_widget_a7523c71b2bf60975302287ec8923f80e_cgraph">
+<area shape="rect" title="重写鼠标按下事件，处理右键菜单" alt="" coords="5,5,134,32"/>
+<area shape="rect" href="class_title_widget.html#a00c3be25c1049817131c786f668772ce" title="显示标题选项菜单" alt="" coords="182,5,266,32"/>
+<area shape="poly" title=" " alt="" coords="134,16,166,16,166,21,134,21"/>
+<area shape="rect" href="class_title_widget.html#a0af7e99bd8f28620179c2875b5700c08" title="设置菜单显示位置，确保在屏幕范围内" alt="" coords="314,5,432,32"/>
+<area shape="poly" title=" " alt="" coords="266,16,298,16,298,21,266,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7f6d4e7893db244f9cf153e2428ef144" name="a7f6d4e7893db244f9cf153e2428ef144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f6d4e7893db244f9cf153e2428ef144">&#9670;&#160;</a></span>on_close_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_close_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关闭按钮点击事件，显示退出对话框 </p>
+<p>&lt; 显示退出对话框</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a7f6d4e7893db244f9cf153e2428ef144_icgraph.png" border="0" usemap="#aclass_title_widget_a7f6d4e7893db244f9cf153e2428ef144_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a7f6d4e7893db244f9cf153e2428ef144_icgraph" id="aclass_title_widget_a7f6d4e7893db244f9cf153e2428ef144_icgraph">
+<area shape="rect" title="关闭按钮点击事件，显示退出对话框" alt="" coords="602,59,742,101"/>
+<area shape="rect" href="class_ku_gou_app.html#a94fc5073f204939937996ae86cd18b18" title="初始化标题栏" alt="" coords="379,36,554,63"/>
+<area shape="poly" title=" " alt="" coords="587,70,554,65,555,60,588,65"/>
+<area shape="rect" href="class_title_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面元素" alt="" coords="441,92,492,119"/>
+<area shape="poly" title=" " alt="" coords="588,93,493,105,493,100,587,88"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="209,29,331,56"/>
+<area shape="poly" title=" " alt="" coords="363,49,331,47,331,42,364,43"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="115,16,104,10,83,8,64,10,53,15,51,20,56,27,51,30,45,21,49,11,62,5,83,3,105,5,117,12"/>
+<area shape="rect" href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0" title="构造函数，初始化标题栏控件" alt="" coords="226,104,314,131"/>
+<area shape="poly" title=" " alt="" coords="425,110,314,117,314,112,425,105"/>
+<area shape="poly" title=" " alt="" coords="302,91,291,85,270,83,250,85,240,89,238,95,242,102,238,105,232,95,236,86,249,79,270,77,292,80,304,86"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9964105982edb38f6951c4e3ac2bb24d" name="a9964105982edb38f6951c4e3ac2bb24d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9964105982edb38f6951c4e3ac2bb24d">&#9670;&#160;</a></span>on_listen_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_listen_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>听歌识曲按钮点击事件，显示未实现提示 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a9964105982edb38f6951c4e3ac2bb24d_cgraph.png" border="0" usemap="#aclass_title_widget_a9964105982edb38f6951c4e3ac2bb24d_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a9964105982edb38f6951c4e3ac2bb24d_cgraph" id="aclass_title_widget_a9964105982edb38f6951c4e3ac2bb24d_cgraph">
+<area shape="rect" title="听歌识曲按钮点击事件，显示未实现提示" alt="" coords="5,21,145,64"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="193,29,378,56"/>
+<area shape="poly" title=" " alt="" coords="145,40,177,40,177,45,145,45"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="426,29,639,56"/>
+<area shape="poly" title=" " alt="" coords="378,40,410,40,410,45,378,45"/>
+<area shape="poly" title=" " alt="" coords="493,31,486,21,491,11,507,5,533,3,561,5,576,12,573,17,560,10,533,8,508,10,495,15,491,20,498,27"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="687,21,847,64"/>
+<area shape="poly" title=" " alt="" coords="640,40,672,40,672,45,640,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af635eff2a80ee9f1672e53aa3864b3e7" name="af635eff2a80ee9f1672e53aa3864b3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af635eff2a80ee9f1672e53aa3864b3e7">&#9670;&#160;</a></span>on_max_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_max_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最大化按钮点击事件，触发最大化信号 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_af635eff2a80ee9f1672e53aa3864b3e7_cgraph.png" border="0" usemap="#aclass_title_widget_af635eff2a80ee9f1672e53aa3864b3e7_cgraph" alt=""/></div>
+<map name="aclass_title_widget_af635eff2a80ee9f1672e53aa3864b3e7_cgraph" id="aclass_title_widget_af635eff2a80ee9f1672e53aa3864b3e7_cgraph">
+<area shape="rect" title="最大化按钮点击事件，触发最大化信号" alt="" coords="5,5,187,32"/>
+<area shape="rect" href="class_title_widget.html#a992988d596e79194a707af831db3f4ea" title="最大化信号，通知窗口最大化" alt="" coords="235,5,322,32"/>
+<area shape="poly" title=" " alt="" coords="187,16,219,16,219,21,187,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_af635eff2a80ee9f1672e53aa3864b3e7_icgraph.png" border="0" usemap="#aclass_title_widget_af635eff2a80ee9f1672e53aa3864b3e7_icgraph" alt=""/></div>
+<map name="aclass_title_widget_af635eff2a80ee9f1672e53aa3864b3e7_icgraph" id="aclass_title_widget_af635eff2a80ee9f1672e53aa3864b3e7_icgraph">
+<area shape="rect" title="最大化按钮点击事件，触发最大化信号" alt="" coords="219,5,400,32"/>
+<area shape="rect" href="class_title_widget.html#aa7cbd844218ae8d806339f58a33a3699" title="重写鼠标双击事件，触发最大化" alt="" coords="5,5,171,32"/>
+<area shape="poly" title=" " alt="" coords="203,21,171,21,171,16,203,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4af27e6a37dba0244988c37ed054acd1" name="a4af27e6a37dba0244988c37ed054acd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af27e6a37dba0244988c37ed054acd1">&#9670;&#160;</a></span>on_menu_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_menu_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>菜单按钮点击事件，显示标题选项菜单 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a4af27e6a37dba0244988c37ed054acd1_cgraph.png" border="0" usemap="#aclass_title_widget_a4af27e6a37dba0244988c37ed054acd1_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a4af27e6a37dba0244988c37ed054acd1_cgraph" id="aclass_title_widget_a4af27e6a37dba0244988c37ed054acd1_cgraph">
+<area shape="rect" title="菜单按钮点击事件，显示标题选项菜单" alt="" coords="5,5,146,48"/>
+<area shape="rect" href="class_title_widget.html#a00c3be25c1049817131c786f668772ce" title="显示标题选项菜单" alt="" coords="194,13,278,40"/>
+<area shape="poly" title=" " alt="" coords="146,24,178,24,178,29,146,29"/>
+<area shape="rect" href="class_title_widget.html#a0af7e99bd8f28620179c2875b5700c08" title="设置菜单显示位置，确保在屏幕范围内" alt="" coords="326,13,444,40"/>
+<area shape="poly" title=" " alt="" coords="278,24,310,24,310,29,278,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a4af27e6a37dba0244988c37ed054acd1_icgraph.png" border="0" usemap="#aclass_title_widget_a4af27e6a37dba0244988c37ed054acd1_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a4af27e6a37dba0244988c37ed054acd1_icgraph" id="aclass_title_widget_a4af27e6a37dba0244988c37ed054acd1_icgraph">
+<area shape="rect" title="菜单按钮点击事件，显示标题选项菜单" alt="" coords="240,21,380,64"/>
+<area shape="rect" href="class_title_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面元素" alt="" coords="141,29,192,56"/>
+<area shape="poly" title=" " alt="" coords="224,45,192,45,192,40,224,40"/>
+<area shape="rect" href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0" title="构造函数，初始化标题栏控件" alt="" coords="5,29,93,56"/>
+<area shape="poly" title=" " alt="" coords="125,45,93,45,93,40,125,40"/>
+<area shape="poly" title=" " alt="" coords="68,16,61,10,49,8,37,10,31,14,30,20,33,28,28,30,24,20,27,11,35,5,49,3,64,5,71,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a772da40ed6adf3f250fa2b6549513f" name="a7a772da40ed6adf3f250fa2b6549513f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a772da40ed6adf3f250fa2b6549513f">&#9670;&#160;</a></span>on_message_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_message_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消息按钮点击事件，显示未实现提示 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a7a772da40ed6adf3f250fa2b6549513f_cgraph.png" border="0" usemap="#aclass_title_widget_a7a772da40ed6adf3f250fa2b6549513f_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a7a772da40ed6adf3f250fa2b6549513f_cgraph" id="aclass_title_widget_a7a772da40ed6adf3f250fa2b6549513f_cgraph">
+<area shape="rect" title="消息按钮点击事件，显示未实现提示" alt="" coords="5,21,167,64"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="215,29,400,56"/>
+<area shape="poly" title=" " alt="" coords="167,40,199,40,199,45,167,45"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="448,29,661,56"/>
+<area shape="poly" title=" " alt="" coords="400,40,432,40,432,45,400,45"/>
+<area shape="poly" title=" " alt="" coords="515,31,508,21,513,11,529,5,555,3,583,5,598,12,595,17,582,10,555,8,530,10,517,15,513,20,520,27"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="709,21,869,64"/>
+<area shape="poly" title=" " alt="" coords="662,40,694,40,694,45,662,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a90c2d189b207184d252ec50fbb1bc0f7" name="a90c2d189b207184d252ec50fbb1bc0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c2d189b207184d252ec50fbb1bc0f7">&#9670;&#160;</a></span>on_min_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_min_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最小化按钮点击事件，最小化窗口 </p>
+<p>&lt; 最小化父窗口</p>
+
+</div>
+</div>
+<a id="a9be5b019cf71c156470eb02c0fcfcf78" name="a9be5b019cf71c156470eb02c0fcfcf78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be5b019cf71c156470eb02c0fcfcf78">&#9670;&#160;</a></span>on_theme_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_theme_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>主题按钮点击事件，显示未实现提示 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a9be5b019cf71c156470eb02c0fcfcf78_cgraph.png" border="0" usemap="#aclass_title_widget_a9be5b019cf71c156470eb02c0fcfcf78_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a9be5b019cf71c156470eb02c0fcfcf78_cgraph" id="aclass_title_widget_a9be5b019cf71c156470eb02c0fcfcf78_cgraph">
+<area shape="rect" title="主题按钮点击事件，显示未实现提示" alt="" coords="5,21,150,64"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="198,29,383,56"/>
+<area shape="poly" title=" " alt="" coords="150,40,182,40,182,45,150,45"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="431,29,644,56"/>
+<area shape="poly" title=" " alt="" coords="383,40,415,40,415,45,383,45"/>
+<area shape="poly" title=" " alt="" coords="498,31,491,21,496,11,512,5,538,3,566,5,581,12,578,17,565,10,538,8,513,10,500,15,496,20,503,27"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="692,21,852,64"/>
+<area shape="poly" title=" " alt="" coords="645,40,677,40,677,45,645,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a40f0127127cf011df293e37027a65f59" name="a40f0127127cf011df293e37027a65f59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f0127127cf011df293e37027a65f59">&#9670;&#160;</a></span>on_title_listen_book_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_title_listen_book_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>听书按钮点击事件，切换到听书界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a40f0127127cf011df293e37027a65f59_cgraph.png" border="0" usemap="#aclass_title_widget_a40f0127127cf011df293e37027a65f59_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a40f0127127cf011df293e37027a65f59_cgraph" id="aclass_title_widget_a40f0127127cf011df293e37027a65f59_cgraph">
+<area shape="rect" title="听书按钮点击事件，切换到听书界面" alt="" coords="5,48,148,91"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="196,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="147,48,198,34,199,39,149,53"/>
+<area shape="rect" href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838" title="左侧菜单显示信号，控制菜单显示状态" alt="" coords="214,56,318,83"/>
+<area shape="poly" title=" " alt="" coords="148,67,198,67,198,72,148,72"/>
+<area shape="rect" href="class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b" title="设置标题索引，控制界面指示器显示" alt="" coords="218,107,314,133"/>
+<area shape="poly" title=" " alt="" coords="149,86,204,101,202,106,147,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8c590849259eb9f1e11537e2f4ee0af5" name="a8c590849259eb9f1e11537e2f4ee0af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c590849259eb9f1e11537e2f4ee0af5">&#9670;&#160;</a></span>on_title_live_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_title_live_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>直播按钮点击事件，切换到直播界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a8c590849259eb9f1e11537e2f4ee0af5_cgraph.png" border="0" usemap="#aclass_title_widget_a8c590849259eb9f1e11537e2f4ee0af5_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a8c590849259eb9f1e11537e2f4ee0af5_cgraph" id="aclass_title_widget_a8c590849259eb9f1e11537e2f4ee0af5_cgraph">
+<area shape="rect" title="直播按钮点击事件，切换到直播界面" alt="" coords="5,48,169,91"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="217,5,357,32"/>
+<area shape="poly" title=" " alt="" coords="168,46,216,34,217,39,170,51"/>
+<area shape="rect" href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838" title="左侧菜单显示信号，控制菜单显示状态" alt="" coords="235,56,339,83"/>
+<area shape="poly" title=" " alt="" coords="169,67,219,67,219,72,169,72"/>
+<area shape="rect" href="class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b" title="设置标题索引，控制界面指示器显示" alt="" coords="239,107,335,133"/>
+<area shape="poly" title=" " alt="" coords="170,88,224,102,223,107,168,93"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a400e46b6dcc19fd36e9928193f317775" name="a400e46b6dcc19fd36e9928193f317775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a400e46b6dcc19fd36e9928193f317775">&#9670;&#160;</a></span>on_title_music_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_title_music_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>音乐按钮点击事件，切换到音乐界面 </p>
+<p>&lt; 显示左侧菜单</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a400e46b6dcc19fd36e9928193f317775_cgraph.png" border="0" usemap="#aclass_title_widget_a400e46b6dcc19fd36e9928193f317775_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a400e46b6dcc19fd36e9928193f317775_cgraph" id="aclass_title_widget_a400e46b6dcc19fd36e9928193f317775_cgraph">
+<area shape="rect" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,456,184,499"/>
+<area shape="rect" href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838" title="左侧菜单显示信号，控制菜单显示状态" alt="" coords="278,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="93,455,98,378,104,325,116,266,133,206,157,146,189,91,230,42,245,31,262,24,264,29,248,36,233,46,193,94,161,149,138,208,121,268,110,325,103,378,98,456"/>
+<area shape="rect" href="class_title_widget.html#a4cf2d0526103b5c8396ac1819fff9d06" title="左侧菜单AI对话项点击事件，切换到AI对话界面" alt="" coords="261,56,400,99"/>
+<area shape="poly" title=" " alt="" coords="95,455,104,389,126,296,144,246,166,197,195,150,230,109,245,97,249,101,233,113,199,153,171,199,148,248,131,298,109,390,100,456"/>
+<area shape="rect" href="class_title_widget.html#a0231dc383b17063010a8c7634e658b71" title="左侧菜单全部音乐项点击事件，切换到全部音乐界面" alt="" coords="258,123,402,165"/>
+<area shape="poly" title=" " alt="" coords="97,455,110,399,135,324,152,284,174,245,200,208,230,175,243,166,246,170,233,179,204,211,178,248,157,287,140,326,115,401,102,456"/>
+<area shape="rect" href="class_title_widget.html#a82ab82289dcc73438c78a88ee801f0b9" title="左侧菜单频道项点击事件，切换到频道界面" alt="" coords="260,189,401,232"/>
+<area shape="poly" title=" " alt="" coords="100,455,117,410,144,353,181,294,204,266,230,242,244,232,247,237,233,246,208,270,186,297,148,356,122,412,105,456"/>
+<area shape="rect" href="class_title_widget.html#a35950dc676ca6c6f7d3bd3572f7aef84" title="左侧菜单收藏项点击事件，切换到收藏界面" alt="" coords="255,256,406,299"/>
+<area shape="poly" title=" " alt="" coords="106,454,154,383,189,343,230,309,239,303,242,307,233,313,193,347,158,386,110,457"/>
+<area shape="rect" href="class_title_widget.html#a048bab5d61b1fb9719087d0496ac092a" title="左侧菜单每日推荐项点击事件，切换到每日推荐界面" alt="" coords="232,323,429,365"/>
+<area shape="poly" title=" " alt="" coords="119,454,168,414,230,375,242,370,244,374,233,380,172,419,122,458"/>
+<area shape="rect" href="class_title_widget.html#acf0a87bffc2c718f35736d5a29b020b8" title="左侧菜单本地下载项点击事件，切换到本地下载界面" alt="" coords="240,389,421,432"/>
+<area shape="poly" title=" " alt="" coords="171,453,237,434,238,439,173,458"/>
+<area shape="rect" href="class_title_widget.html#aaa7b83c8d6efceeefe56f44725484441" title="左侧菜单音乐云盘项点击事件，切换到音乐云盘界面" alt="" coords="234,456,426,499"/>
+<area shape="poly" title=" " alt="" coords="184,475,219,475,219,480,184,480"/>
+<area shape="rect" href="class_title_widget.html#a26a09994453989a46bf1b6b9d2f3120d" title="左侧菜单乐库项点击事件，切换到乐库界面" alt="" coords="233,523,428,565"/>
+<area shape="poly" title=" " alt="" coords="173,497,238,515,237,520,171,502"/>
+<area shape="rect" href="class_title_widget.html#a224e60f476ec12e06be7623b9ef1ebe5" title="左侧菜单已购音乐项点击事件，切换到已购音乐界面" alt="" coords="235,589,426,632"/>
+<area shape="poly" title=" " alt="" coords="122,497,172,536,233,575,244,580,242,585,230,580,168,540,119,501"/>
+<area shape="rect" href="class_title_widget.html#aa2a188939135c7906a17d7c2e794569e" title="左侧菜单最近播放项点击事件，切换到最近播放界面" alt="" coords="239,656,422,699"/>
+<area shape="poly" title=" " alt="" coords="110,497,158,568,193,608,233,642,240,646,237,650,230,646,189,611,154,571,106,501"/>
+<area shape="rect" href="class_title_widget.html#a2a7701384483224e7e3fbddc4a8f8196" title="左侧菜单推荐项点击事件，切换到推荐界面" alt="" coords="248,723,412,765"/>
+<area shape="poly" title=" " alt="" coords="105,498,122,542,148,599,186,658,208,685,233,709,238,712,235,716,230,713,204,688,181,661,144,601,117,544,100,500"/>
+<area shape="rect" href="class_title_widget.html#a421c6a29fbdba52a69aee599d5245b4d" title="左侧菜单歌单项点击事件，切换到歌单界面" alt="" coords="258,789,403,832"/>
+<area shape="poly" title=" " alt="" coords="102,499,115,554,140,628,157,668,178,707,204,743,233,775,245,784,242,789,230,779,200,747,174,710,152,670,135,630,110,556,97,500"/>
+<area shape="rect" href="class_title_widget.html#a9d3591d50396b3c07cdcdf9ac1f4e968" title="左侧菜单视频项点击事件，切换到视频界面" alt="" coords="243,856,418,883"/>
+<area shape="poly" title=" " alt="" coords="100,499,108,566,129,659,146,709,169,757,198,803,234,842,238,846,234,850,230,846,194,806,164,760,142,711,124,660,103,567,95,500"/>
+<area shape="rect" href="class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b" title="设置标题索引，控制界面指示器显示" alt="" coords="282,907,378,933"/>
+<area shape="poly" title=" " alt="" coords="99,499,104,574,123,681,140,738,163,794,194,847,233,893,249,904,268,911,266,916,247,909,230,897,190,850,159,797,135,740,118,682,99,575,93,499"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="477,464,617,491"/>
+<area shape="poly" title=" " alt="" coords="401,89,431,109,463,149,489,193,509,241,524,290,541,380,548,448,542,449,536,381,519,291,504,243,484,196,459,152,427,113,398,94"/>
+<area shape="poly" title=" " alt="" coords="404,158,431,175,458,207,481,242,500,280,515,318,535,391,545,448,540,449,530,392,510,320,495,282,477,245,454,210,427,179,401,162"/>
+<area shape="poly" title=" " alt="" coords="403,225,431,242,454,265,474,291,506,348,528,403,542,448,537,450,523,405,501,351,469,294,450,269,427,246,400,229"/>
+<area shape="poly" title=" " alt="" coords="408,295,431,309,466,341,495,379,536,449,531,451,491,382,462,345,427,313,405,300"/>
+<area shape="poly" title=" " alt="" coords="406,363,430,375,483,412,525,451,521,455,479,417,428,380,404,368"/>
+<area shape="poly" title=" " alt="" coords="403,430,487,456,486,461,401,435"/>
+<area shape="poly" title=" " alt="" coords="427,475,461,475,461,480,427,480"/>
+<area shape="poly" title=" " alt="" coords="401,520,486,493,487,498,403,525"/>
+<area shape="poly" title=" " alt="" coords="404,586,428,575,479,538,521,500,525,504,483,542,430,580,406,591"/>
+<area shape="poly" title=" " alt="" coords="409,653,427,642,462,610,491,573,531,503,536,506,495,576,466,613,431,646,412,658"/>
+<area shape="poly" title=" " alt="" coords="411,720,427,709,450,686,469,660,501,604,523,549,537,505,542,506,528,551,506,606,474,663,454,689,431,713,414,724"/>
+<area shape="poly" title=" " alt="" coords="402,792,427,775,454,745,477,710,495,673,510,635,530,563,540,506,545,507,535,564,515,636,500,675,481,713,458,748,431,779,405,797"/>
+<area shape="poly" title=" " alt="" coords="411,853,427,842,460,804,486,760,506,713,521,665,538,575,543,506,548,506,543,575,526,667,511,715,491,763,464,807,431,846,414,858"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc9417593fb6a7680fbcf30073d4253f" name="afc9417593fb6a7680fbcf30073d4253f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc9417593fb6a7680fbcf30073d4253f">&#9670;&#160;</a></span>on_title_refresh_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_title_refresh_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>刷新按钮点击事件，触发界面刷新 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_afc9417593fb6a7680fbcf30073d4253f_cgraph.png" border="0" usemap="#aclass_title_widget_afc9417593fb6a7680fbcf30073d4253f_cgraph" alt=""/></div>
+<map name="aclass_title_widget_afc9417593fb6a7680fbcf30073d4253f_cgraph" id="aclass_title_widget_afc9417593fb6a7680fbcf30073d4253f_cgraph">
+<area shape="rect" title="刷新按钮点击事件，触发界面刷新" alt="" coords="5,5,182,48"/>
+<area shape="rect" href="class_title_widget.html#a5f2e190b8261a98c97c2ea4e86670d54" title="刷新信号，通知界面刷新" alt="" coords="230,13,291,40"/>
+<area shape="poly" title=" " alt="" coords="182,24,214,24,214,29,182,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd715b0b94e1584991a0a26b3b23af4d" name="abd715b0b94e1584991a0a26b3b23af4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd715b0b94e1584991a0a26b3b23af4d">&#9670;&#160;</a></span>on_title_return_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_title_return_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回按钮点击事件，触发界面回退 </p>
+<p>&lt; 更新当前类型</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_abd715b0b94e1584991a0a26b3b23af4d_cgraph.png" border="0" usemap="#aclass_title_widget_abd715b0b94e1584991a0a26b3b23af4d_cgraph" alt=""/></div>
+<map name="aclass_title_widget_abd715b0b94e1584991a0a26b3b23af4d_cgraph" id="aclass_title_widget_abd715b0b94e1584991a0a26b3b23af4d_cgraph">
+<area shape="rect" title="返回按钮点击事件，触发界面回退" alt="" coords="5,48,175,91"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="223,5,363,32"/>
+<area shape="poly" title=" " alt="" coords="174,46,221,34,223,39,176,51"/>
+<area shape="rect" href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838" title="左侧菜单显示信号，控制菜单显示状态" alt="" coords="241,56,345,83"/>
+<area shape="poly" title=" " alt="" coords="175,67,225,67,225,72,175,72"/>
+<area shape="rect" href="class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b" title="设置标题索引，控制界面指示器显示" alt="" coords="245,107,341,133"/>
+<area shape="poly" title=" " alt="" coords="176,88,230,102,229,107,174,93"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_abd715b0b94e1584991a0a26b3b23af4d_icgraph.png" border="0" usemap="#aclass_title_widget_abd715b0b94e1584991a0a26b3b23af4d_icgraph" alt=""/></div>
+<map name="aclass_title_widget_abd715b0b94e1584991a0a26b3b23af4d_icgraph" id="aclass_title_widget_abd715b0b94e1584991a0a26b3b23af4d_icgraph">
+<area shape="rect" title="返回按钮点击事件，触发界面回退" alt="" coords="136,5,305,48"/>
+<area shape="rect" href="class_title_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="重写事件过滤器，处理鼠标返回/前进键和头像动画" alt="" coords="5,13,88,40"/>
+<area shape="poly" title=" " alt="" coords="120,29,88,29,88,24,120,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a28e3a173b5c24a58503c77884ef48830" name="a28e3a173b5c24a58503c77884ef48830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28e3a173b5c24a58503c77884ef48830">&#9670;&#160;</a></span>on_title_search_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_title_search_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>探索按钮点击事件，切换到探索界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a28e3a173b5c24a58503c77884ef48830_cgraph.png" border="0" usemap="#aclass_title_widget_a28e3a173b5c24a58503c77884ef48830_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a28e3a173b5c24a58503c77884ef48830_cgraph" id="aclass_title_widget_a28e3a173b5c24a58503c77884ef48830_cgraph">
+<area shape="rect" title="探索按钮点击事件，切换到探索界面" alt="" coords="5,48,188,91"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="236,5,376,32"/>
+<area shape="poly" title=" " alt="" coords="187,45,232,34,233,39,188,50"/>
+<area shape="rect" href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838" title="左侧菜单显示信号，控制菜单显示状态" alt="" coords="254,56,358,83"/>
+<area shape="poly" title=" " alt="" coords="188,67,238,67,238,72,188,72"/>
+<area shape="rect" href="class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b" title="设置标题索引，控制界面指示器显示" alt="" coords="258,107,354,133"/>
+<area shape="poly" title=" " alt="" coords="188,89,243,102,242,107,187,94"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4cf2d0526103b5c8396ac1819fff9d06" name="a4cf2d0526103b5c8396ac1819fff9d06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cf2d0526103b5c8396ac1819fff9d06">&#9670;&#160;</a></span>onLeftMenu_ai_chat_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_ai_chat_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单AI对话项点击事件，切换到AI对话界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a4cf2d0526103b5c8396ac1819fff9d06_cgraph.png" border="0" usemap="#aclass_title_widget_a4cf2d0526103b5c8396ac1819fff9d06_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a4cf2d0526103b5c8396ac1819fff9d06_cgraph" id="aclass_title_widget_a4cf2d0526103b5c8396ac1819fff9d06_cgraph">
+<area shape="rect" title="左侧菜单AI对话项点击事件，切换到AI对话界面" alt="" coords="5,5,144,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="192,13,332,40"/>
+<area shape="poly" title=" " alt="" coords="144,24,176,24,176,29,144,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a4cf2d0526103b5c8396ac1819fff9d06_icgraph.png" border="0" usemap="#aclass_title_widget_a4cf2d0526103b5c8396ac1819fff9d06_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a4cf2d0526103b5c8396ac1819fff9d06_icgraph" id="aclass_title_widget_a4cf2d0526103b5c8396ac1819fff9d06_icgraph">
+<area shape="rect" title="左侧菜单AI对话项点击事件，切换到AI对话界面" alt="" coords="232,5,370,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0231dc383b17063010a8c7634e658b71" name="a0231dc383b17063010a8c7634e658b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0231dc383b17063010a8c7634e658b71">&#9670;&#160;</a></span>onLeftMenu_allMusic_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_allMusic_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单全部音乐项点击事件，切换到全部音乐界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a0231dc383b17063010a8c7634e658b71_cgraph.png" border="0" usemap="#aclass_title_widget_a0231dc383b17063010a8c7634e658b71_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a0231dc383b17063010a8c7634e658b71_cgraph" id="aclass_title_widget_a0231dc383b17063010a8c7634e658b71_cgraph">
+<area shape="rect" title="左侧菜单全部音乐项点击事件，切换到全部音乐界面" alt="" coords="5,5,150,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="198,13,338,40"/>
+<area shape="poly" title=" " alt="" coords="150,24,182,24,182,29,150,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a0231dc383b17063010a8c7634e658b71_icgraph.png" border="0" usemap="#aclass_title_widget_a0231dc383b17063010a8c7634e658b71_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a0231dc383b17063010a8c7634e658b71_icgraph" id="aclass_title_widget_a0231dc383b17063010a8c7634e658b71_icgraph">
+<area shape="rect" title="左侧菜单全部音乐项点击事件，切换到全部音乐界面" alt="" coords="232,5,376,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a82ab82289dcc73438c78a88ee801f0b9" name="a82ab82289dcc73438c78a88ee801f0b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82ab82289dcc73438c78a88ee801f0b9">&#9670;&#160;</a></span>onLeftMenu_channel_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_channel_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单频道项点击事件，切换到频道界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a82ab82289dcc73438c78a88ee801f0b9_cgraph.png" border="0" usemap="#aclass_title_widget_a82ab82289dcc73438c78a88ee801f0b9_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a82ab82289dcc73438c78a88ee801f0b9_cgraph" id="aclass_title_widget_a82ab82289dcc73438c78a88ee801f0b9_cgraph">
+<area shape="rect" title="左侧菜单频道项点击事件，切换到频道界面" alt="" coords="5,5,147,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="195,13,335,40"/>
+<area shape="poly" title=" " alt="" coords="147,24,179,24,179,29,147,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a82ab82289dcc73438c78a88ee801f0b9_icgraph.png" border="0" usemap="#aclass_title_widget_a82ab82289dcc73438c78a88ee801f0b9_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a82ab82289dcc73438c78a88ee801f0b9_icgraph" id="aclass_title_widget_a82ab82289dcc73438c78a88ee801f0b9_icgraph">
+<area shape="rect" title="左侧菜单频道项点击事件，切换到频道界面" alt="" coords="232,5,373,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35950dc676ca6c6f7d3bd3572f7aef84" name="a35950dc676ca6c6f7d3bd3572f7aef84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35950dc676ca6c6f7d3bd3572f7aef84">&#9670;&#160;</a></span>onLeftMenu_collection_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_collection_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单收藏项点击事件，切换到收藏界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a35950dc676ca6c6f7d3bd3572f7aef84_cgraph.png" border="0" usemap="#aclass_title_widget_a35950dc676ca6c6f7d3bd3572f7aef84_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a35950dc676ca6c6f7d3bd3572f7aef84_cgraph" id="aclass_title_widget_a35950dc676ca6c6f7d3bd3572f7aef84_cgraph">
+<area shape="rect" title="左侧菜单收藏项点击事件，切换到收藏界面" alt="" coords="5,5,157,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="205,13,345,40"/>
+<area shape="poly" title=" " alt="" coords="157,24,189,24,189,29,157,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a35950dc676ca6c6f7d3bd3572f7aef84_icgraph.png" border="0" usemap="#aclass_title_widget_a35950dc676ca6c6f7d3bd3572f7aef84_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a35950dc676ca6c6f7d3bd3572f7aef84_icgraph" id="aclass_title_widget_a35950dc676ca6c6f7d3bd3572f7aef84_icgraph">
+<area shape="rect" title="左侧菜单收藏项点击事件，切换到收藏界面" alt="" coords="232,5,383,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a048bab5d61b1fb9719087d0496ac092a" name="a048bab5d61b1fb9719087d0496ac092a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a048bab5d61b1fb9719087d0496ac092a">&#9670;&#160;</a></span>onLeftMenu_dailyRecommend_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_dailyRecommend_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单每日推荐项点击事件，切换到每日推荐界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a048bab5d61b1fb9719087d0496ac092a_cgraph.png" border="0" usemap="#aclass_title_widget_a048bab5d61b1fb9719087d0496ac092a_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a048bab5d61b1fb9719087d0496ac092a_cgraph" id="aclass_title_widget_a048bab5d61b1fb9719087d0496ac092a_cgraph">
+<area shape="rect" title="左侧菜单每日推荐项点击事件，切换到每日推荐界面" alt="" coords="5,5,203,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="251,13,391,40"/>
+<area shape="poly" title=" " alt="" coords="203,24,235,24,235,29,203,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a048bab5d61b1fb9719087d0496ac092a_icgraph.png" border="0" usemap="#aclass_title_widget_a048bab5d61b1fb9719087d0496ac092a_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a048bab5d61b1fb9719087d0496ac092a_icgraph" id="aclass_title_widget_a048bab5d61b1fb9719087d0496ac092a_icgraph">
+<area shape="rect" title="左侧菜单每日推荐项点击事件，切换到每日推荐界面" alt="" coords="232,5,429,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5a5369939ba1be1ea35809e44395cd7c" name="a5a5369939ba1be1ea35809e44395cd7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a5369939ba1be1ea35809e44395cd7c">&#9670;&#160;</a></span>onLeftMenu_live_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_live_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单直播项点击事件，切换到直播界面 </p>
+
+</div>
+</div>
+<a id="acf0a87bffc2c718f35736d5a29b020b8" name="acf0a87bffc2c718f35736d5a29b020b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0a87bffc2c718f35736d5a29b020b8">&#9670;&#160;</a></span>onLeftMenu_localDownload_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_localDownload_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单本地下载项点击事件，切换到本地下载界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_acf0a87bffc2c718f35736d5a29b020b8_cgraph.png" border="0" usemap="#aclass_title_widget_acf0a87bffc2c718f35736d5a29b020b8_cgraph" alt=""/></div>
+<map name="aclass_title_widget_acf0a87bffc2c718f35736d5a29b020b8_cgraph" id="aclass_title_widget_acf0a87bffc2c718f35736d5a29b020b8_cgraph">
+<area shape="rect" title="左侧菜单本地下载项点击事件，切换到本地下载界面" alt="" coords="5,5,187,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="235,13,375,40"/>
+<area shape="poly" title=" " alt="" coords="187,24,219,24,219,29,187,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_acf0a87bffc2c718f35736d5a29b020b8_icgraph.png" border="0" usemap="#aclass_title_widget_acf0a87bffc2c718f35736d5a29b020b8_icgraph" alt=""/></div>
+<map name="aclass_title_widget_acf0a87bffc2c718f35736d5a29b020b8_icgraph" id="aclass_title_widget_acf0a87bffc2c718f35736d5a29b020b8_icgraph">
+<area shape="rect" title="左侧菜单本地下载项点击事件，切换到本地下载界面" alt="" coords="232,5,413,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaa7b83c8d6efceeefe56f44725484441" name="aaa7b83c8d6efceeefe56f44725484441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa7b83c8d6efceeefe56f44725484441">&#9670;&#160;</a></span>onLeftMenu_musicCloudDisk_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_musicCloudDisk_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单音乐云盘项点击事件，切换到音乐云盘界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_aaa7b83c8d6efceeefe56f44725484441_cgraph.png" border="0" usemap="#aclass_title_widget_aaa7b83c8d6efceeefe56f44725484441_cgraph" alt=""/></div>
+<map name="aclass_title_widget_aaa7b83c8d6efceeefe56f44725484441_cgraph" id="aclass_title_widget_aaa7b83c8d6efceeefe56f44725484441_cgraph">
+<area shape="rect" title="左侧菜单音乐云盘项点击事件，切换到音乐云盘界面" alt="" coords="5,5,198,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="246,13,386,40"/>
+<area shape="poly" title=" " alt="" coords="198,24,230,24,230,29,198,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_aaa7b83c8d6efceeefe56f44725484441_icgraph.png" border="0" usemap="#aclass_title_widget_aaa7b83c8d6efceeefe56f44725484441_icgraph" alt=""/></div>
+<map name="aclass_title_widget_aaa7b83c8d6efceeefe56f44725484441_icgraph" id="aclass_title_widget_aaa7b83c8d6efceeefe56f44725484441_icgraph">
+<area shape="rect" title="左侧菜单音乐云盘项点击事件，切换到音乐云盘界面" alt="" coords="232,5,424,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a26a09994453989a46bf1b6b9d2f3120d" name="a26a09994453989a46bf1b6b9d2f3120d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a09994453989a46bf1b6b9d2f3120d">&#9670;&#160;</a></span>onLeftMenu_musicRepository_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_musicRepository_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单乐库项点击事件，切换到乐库界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a26a09994453989a46bf1b6b9d2f3120d_cgraph.png" border="0" usemap="#aclass_title_widget_a26a09994453989a46bf1b6b9d2f3120d_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a26a09994453989a46bf1b6b9d2f3120d_cgraph" id="aclass_title_widget_a26a09994453989a46bf1b6b9d2f3120d_cgraph">
+<area shape="rect" title="左侧菜单乐库项点击事件，切换到乐库界面" alt="" coords="5,5,200,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="248,13,388,40"/>
+<area shape="poly" title=" " alt="" coords="200,24,232,24,232,29,200,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a26a09994453989a46bf1b6b9d2f3120d_icgraph.png" border="0" usemap="#aclass_title_widget_a26a09994453989a46bf1b6b9d2f3120d_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a26a09994453989a46bf1b6b9d2f3120d_icgraph" id="aclass_title_widget_a26a09994453989a46bf1b6b9d2f3120d_icgraph">
+<area shape="rect" title="左侧菜单乐库项点击事件，切换到乐库界面" alt="" coords="232,5,426,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a224e60f476ec12e06be7623b9ef1ebe5" name="a224e60f476ec12e06be7623b9ef1ebe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224e60f476ec12e06be7623b9ef1ebe5">&#9670;&#160;</a></span>onLeftMenu_purchasedMusic_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_purchasedMusic_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单已购音乐项点击事件，切换到已购音乐界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a224e60f476ec12e06be7623b9ef1ebe5_cgraph.png" border="0" usemap="#aclass_title_widget_a224e60f476ec12e06be7623b9ef1ebe5_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a224e60f476ec12e06be7623b9ef1ebe5_cgraph" id="aclass_title_widget_a224e60f476ec12e06be7623b9ef1ebe5_cgraph">
+<area shape="rect" title="左侧菜单已购音乐项点击事件，切换到已购音乐界面" alt="" coords="5,5,197,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="245,13,385,40"/>
+<area shape="poly" title=" " alt="" coords="197,24,229,24,229,29,197,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a224e60f476ec12e06be7623b9ef1ebe5_icgraph.png" border="0" usemap="#aclass_title_widget_a224e60f476ec12e06be7623b9ef1ebe5_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a224e60f476ec12e06be7623b9ef1ebe5_icgraph" id="aclass_title_widget_a224e60f476ec12e06be7623b9ef1ebe5_icgraph">
+<area shape="rect" title="左侧菜单已购音乐项点击事件，切换到已购音乐界面" alt="" coords="232,5,423,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa2a188939135c7906a17d7c2e794569e" name="aa2a188939135c7906a17d7c2e794569e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2a188939135c7906a17d7c2e794569e">&#9670;&#160;</a></span>onLeftMenu_recentlyPlayed_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_recentlyPlayed_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单最近播放项点击事件，切换到最近播放界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_aa2a188939135c7906a17d7c2e794569e_cgraph.png" border="0" usemap="#aclass_title_widget_aa2a188939135c7906a17d7c2e794569e_cgraph" alt=""/></div>
+<map name="aclass_title_widget_aa2a188939135c7906a17d7c2e794569e_cgraph" id="aclass_title_widget_aa2a188939135c7906a17d7c2e794569e_cgraph">
+<area shape="rect" title="左侧菜单最近播放项点击事件，切换到最近播放界面" alt="" coords="5,5,188,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="236,13,376,40"/>
+<area shape="poly" title=" " alt="" coords="188,24,220,24,220,29,188,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_aa2a188939135c7906a17d7c2e794569e_icgraph.png" border="0" usemap="#aclass_title_widget_aa2a188939135c7906a17d7c2e794569e_icgraph" alt=""/></div>
+<map name="aclass_title_widget_aa2a188939135c7906a17d7c2e794569e_icgraph" id="aclass_title_widget_aa2a188939135c7906a17d7c2e794569e_icgraph">
+<area shape="rect" title="左侧菜单最近播放项点击事件，切换到最近播放界面" alt="" coords="232,5,414,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a7701384483224e7e3fbddc4a8f8196" name="a2a7701384483224e7e3fbddc4a8f8196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7701384483224e7e3fbddc4a8f8196">&#9670;&#160;</a></span>onLeftMenu_recommend_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_recommend_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单推荐项点击事件，切换到推荐界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a2a7701384483224e7e3fbddc4a8f8196_cgraph.png" border="0" usemap="#aclass_title_widget_a2a7701384483224e7e3fbddc4a8f8196_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a2a7701384483224e7e3fbddc4a8f8196_cgraph" id="aclass_title_widget_a2a7701384483224e7e3fbddc4a8f8196_cgraph">
+<area shape="rect" title="左侧菜单推荐项点击事件，切换到推荐界面" alt="" coords="5,5,170,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="218,13,358,40"/>
+<area shape="poly" title=" " alt="" coords="170,24,202,24,202,29,170,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a2a7701384483224e7e3fbddc4a8f8196_icgraph.png" border="0" usemap="#aclass_title_widget_a2a7701384483224e7e3fbddc4a8f8196_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a2a7701384483224e7e3fbddc4a8f8196_icgraph" id="aclass_title_widget_a2a7701384483224e7e3fbddc4a8f8196_icgraph">
+<area shape="rect" title="左侧菜单推荐项点击事件，切换到推荐界面" alt="" coords="232,5,396,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a421c6a29fbdba52a69aee599d5245b4d" name="a421c6a29fbdba52a69aee599d5245b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a421c6a29fbdba52a69aee599d5245b4d">&#9670;&#160;</a></span>onLeftMenu_songList_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_songList_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单歌单项点击事件，切换到歌单界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a421c6a29fbdba52a69aee599d5245b4d_cgraph.png" border="0" usemap="#aclass_title_widget_a421c6a29fbdba52a69aee599d5245b4d_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a421c6a29fbdba52a69aee599d5245b4d_cgraph" id="aclass_title_widget_a421c6a29fbdba52a69aee599d5245b4d_cgraph">
+<area shape="rect" title="左侧菜单歌单项点击事件，切换到歌单界面" alt="" coords="5,5,151,48"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="199,13,339,40"/>
+<area shape="poly" title=" " alt="" coords="151,24,183,24,183,29,151,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a421c6a29fbdba52a69aee599d5245b4d_icgraph.png" border="0" usemap="#aclass_title_widget_a421c6a29fbdba52a69aee599d5245b4d_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a421c6a29fbdba52a69aee599d5245b4d_icgraph" id="aclass_title_widget_a421c6a29fbdba52a69aee599d5245b4d_icgraph">
+<area shape="rect" title="左侧菜单歌单项点击事件，切换到歌单界面" alt="" coords="232,5,377,48"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9d3591d50396b3c07cdcdf9ac1f4e968" name="a9d3591d50396b3c07cdcdf9ac1f4e968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3591d50396b3c07cdcdf9ac1f4e968">&#9670;&#160;</a></span>onLeftMenu_video_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onLeftMenu_video_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左侧菜单视频项点击事件，切换到视频界面 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a9d3591d50396b3c07cdcdf9ac1f4e968_cgraph.png" border="0" usemap="#aclass_title_widget_a9d3591d50396b3c07cdcdf9ac1f4e968_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a9d3591d50396b3c07cdcdf9ac1f4e968_cgraph" id="aclass_title_widget_a9d3591d50396b3c07cdcdf9ac1f4e968_cgraph">
+<area shape="rect" title="左侧菜单视频项点击事件，切换到视频界面" alt="" coords="5,5,181,32"/>
+<area shape="rect" href="class_title_widget.html#a607c0c78292a519369fac4a60638f9ee" title="界面切换信号，通知界面索引和是否滑动" alt="" coords="229,5,369,32"/>
+<area shape="poly" title=" " alt="" coords="181,16,213,16,213,21,181,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a9d3591d50396b3c07cdcdf9ac1f4e968_icgraph.png" border="0" usemap="#aclass_title_widget_a9d3591d50396b3c07cdcdf9ac1f4e968_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a9d3591d50396b3c07cdcdf9ac1f4e968_icgraph" id="aclass_title_widget_a9d3591d50396b3c07cdcdf9ac1f4e968_icgraph">
+<area shape="rect" title="左侧菜单视频项点击事件，切换到视频界面" alt="" coords="232,13,407,40"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="5,5,184,48"/>
+<area shape="poly" title=" " alt="" coords="216,29,184,29,184,24,216,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0c46958bfd7ba4df70598d4ef29ce8d" name="ad0c46958bfd7ba4df70598d4ef29ce8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c46958bfd7ba4df70598d4ef29ce8d">&#9670;&#160;</a></span>paintEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void paintEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_paint_event.html">QPaintEvent</a> *</td>          <td class="paramname"><span class="paramname"><em>ev</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重写绘制事件，绘制带圆角的线性渐变阴影 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td>绘制事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 启用抗锯齿</p>
+<p>&lt; 无边框</p>
+<p>&lt; 调整阴影区域</p>
+<p>&lt; 起始颜色</p>
+<p>&lt; 结束颜色</p>
+<p>&lt; 圆角半径</p>
+<p>&lt; 绘制路径</p>
+
+</div>
+</div>
+<a id="a5f2e190b8261a98c97c2ea4e86670d54" name="a5f2e190b8261a98c97c2ea4e86670d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2e190b8261a98c97c2ea4e86670d54">&#9670;&#160;</a></span>refresh</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void refresh </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>刷新信号，通知界面刷新 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a5f2e190b8261a98c97c2ea4e86670d54_icgraph.png" border="0" usemap="#aclass_title_widget_a5f2e190b8261a98c97c2ea4e86670d54_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a5f2e190b8261a98c97c2ea4e86670d54_icgraph" id="aclass_title_widget_a5f2e190b8261a98c97c2ea4e86670d54_icgraph">
+<area shape="rect" title="刷新信号，通知界面刷新" alt="" coords="603,59,665,85"/>
+<area shape="rect" href="class_ku_gou_app.html#a94fc5073f204939937996ae86cd18b18" title="初始化标题栏" alt="" coords="380,29,555,56"/>
+<area shape="poly" title=" " alt="" coords="588,67,546,59,547,54,589,61"/>
+<area shape="rect" href="class_title_widget.html#afc9417593fb6a7680fbcf30073d4253f" title="刷新按钮点击事件，触发界面刷新" alt="" coords="379,80,555,123"/>
+<area shape="poly" title=" " alt="" coords="588,83,556,88,555,83,588,77"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="209,29,331,56"/>
+<area shape="poly" title=" " alt="" coords="364,45,331,45,331,40,364,40"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="115,16,104,10,83,8,64,10,53,15,51,20,56,27,51,30,45,21,49,11,62,5,83,3,105,5,117,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93f9d0763b80a0b3aa3476e3770de66c" name="a93f9d0763b80a0b3aa3476e3770de66c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f9d0763b80a0b3aa3476e3770de66c">&#9670;&#160;</a></span>setEnableChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setEnableChange </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置是否允许界面切换 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否允许切换 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0af7e99bd8f28620179c2875b5700c08" name="a0af7e99bd8f28620179c2875b5700c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af7e99bd8f28620179c2875b5700c08">&#9670;&#160;</a></span>setMenuPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setMenuPosition </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置菜单显示位置，确保在屏幕范围内 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>菜单的全局位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a0af7e99bd8f28620179c2875b5700c08_icgraph.png" border="0" usemap="#aclass_title_widget_a0af7e99bd8f28620179c2875b5700c08_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a0af7e99bd8f28620179c2875b5700c08_icgraph" id="aclass_title_widget_a0af7e99bd8f28620179c2875b5700c08_icgraph">
+<area shape="rect" title="设置菜单显示位置，确保在屏幕范围内" alt="" coords="561,35,679,61"/>
+<area shape="rect" href="class_title_widget.html#a00c3be25c1049817131c786f668772ce" title="显示标题选项菜单" alt="" coords="428,35,513,61"/>
+<area shape="poly" title=" " alt="" coords="545,51,513,51,513,45,545,45"/>
+<area shape="rect" href="class_title_widget.html#a7523c71b2bf60975302287ec8923f80e" title="重写鼠标按下事件，处理右键菜单" alt="" coords="246,5,374,32"/>
+<area shape="poly" title=" " alt="" coords="412,40,374,33,375,28,413,35"/>
+<area shape="rect" href="class_title_widget.html#a4af27e6a37dba0244988c37ed054acd1" title="菜单按钮点击事件，显示标题选项菜单" alt="" coords="240,56,380,99"/>
+<area shape="poly" title=" " alt="" coords="413,61,381,67,380,62,412,56"/>
+<area shape="rect" href="class_title_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面元素" alt="" coords="141,64,192,91"/>
+<area shape="poly" title=" " alt="" coords="224,80,192,80,192,75,224,75"/>
+<area shape="rect" href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0" title="构造函数，初始化标题栏控件" alt="" coords="5,64,93,91"/>
+<area shape="poly" title=" " alt="" coords="125,80,93,80,93,75,125,75"/>
+<area shape="poly" title=" " alt="" coords="68,51,61,45,49,43,37,45,31,49,30,55,33,63,28,65,24,55,27,46,35,40,49,37,64,40,71,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae4e9263c9459d5439b1d35d96ee79d6b" name="ae4e9263c9459d5439b1d35d96ee79d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e9263c9459d5439b1d35d96ee79d6b">&#9670;&#160;</a></span>setTitleIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTitleIndex </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置标题索引，控制界面指示器显示 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>标题索引（1-4） </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 预防非法索引</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_ae4e9263c9459d5439b1d35d96ee79d6b_icgraph.png" border="0" usemap="#aclass_title_widget_ae4e9263c9459d5439b1d35d96ee79d6b_icgraph" alt=""/></div>
+<map name="aclass_title_widget_ae4e9263c9459d5439b1d35d96ee79d6b_icgraph" id="aclass_title_widget_ae4e9263c9459d5439b1d35d96ee79d6b_icgraph">
+<area shape="rect" title="设置标题索引，控制界面指示器显示" alt="" coords="371,205,467,232"/>
+<area shape="rect" href="class_title_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="重写事件过滤器，处理鼠标返回/前进键和头像动画" alt="" coords="8,209,90,236"/>
+<area shape="poly" title=" " alt="" coords="400,194,367,154,346,135,322,121,273,103,232,97,190,103,142,121,114,139,90,164,59,210,55,207,86,160,110,135,139,116,189,97,232,91,274,98,324,116,349,131,371,150,404,190"/>
+<area shape="rect" href="class_title_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面元素" alt="" coords="206,29,258,56"/>
+<area shape="poly" title=" " alt="" coords="404,192,372,134,349,103,321,77,290,59,257,50,259,44,292,54,325,73,353,100,376,131,409,190"/>
+<area shape="rect" href="class_title_widget.html#a40f0127127cf011df293e37027a65f59" title="听书按钮点击事件，切换到听书界面" alt="" coords="161,131,303,173"/>
+<area shape="poly" title=" " alt="" coords="364,202,293,176,295,171,366,197"/>
+<area shape="rect" href="class_title_widget.html#a8c590849259eb9f1e11537e2f4ee0af5" title="直播按钮点击事件，切换到直播界面" alt="" coords="150,197,314,240"/>
+<area shape="poly" title=" " alt="" coords="356,221,314,221,314,216,356,216"/>
+<area shape="rect" href="class_title_widget.html#a400e46b6dcc19fd36e9928193f317775" title="音乐按钮点击事件，切换到音乐界面" alt="" coords="143,264,321,307"/>
+<area shape="poly" title=" " alt="" coords="366,240,295,266,293,261,364,235"/>
+<area shape="rect" href="class_title_widget.html#abd715b0b94e1584991a0a26b3b23af4d" title="返回按钮点击事件，触发界面回退" alt="" coords="147,331,316,373"/>
+<area shape="poly" title=" " alt="" coords="401,246,368,284,325,321,304,332,301,328,321,316,364,280,397,243"/>
+<area shape="rect" href="class_title_widget.html#a28e3a173b5c24a58503c77884ef48830" title="探索按钮点击事件，切换到探索界面" alt="" coords="141,397,323,440"/>
+<area shape="poly" title=" " alt="" coords="411,248,380,317,355,355,325,387,308,399,305,395,321,383,351,351,375,314,406,246"/>
+<area shape="rect" href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0" title="构造函数，初始化标题栏控件" alt="" coords="5,29,93,56"/>
+<area shape="poly" title=" " alt="" coords="191,45,93,45,93,40,191,40"/>
+<area shape="poly" title=" " alt="" coords="80,16,69,10,49,8,30,10,20,15,17,20,22,28,18,30,12,21,16,11,29,5,49,3,71,5,83,12"/>
+<area shape="poly" title=" " alt="" coords="147,326,139,321,114,301,91,279,58,238,62,235,95,275,117,297,142,316,149,321"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac63a90a3b880d5e9cfd47b54b336be8b" name="ac63a90a3b880d5e9cfd47b54b336be8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac63a90a3b880d5e9cfd47b54b336be8b">&#9670;&#160;</a></span>showAboutDialog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showAboutDialog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示关于对话框信号 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_ac63a90a3b880d5e9cfd47b54b336be8b_icgraph.png" border="0" usemap="#aclass_title_widget_ac63a90a3b880d5e9cfd47b54b336be8b_icgraph" alt=""/></div>
+<map name="aclass_title_widget_ac63a90a3b880d5e9cfd47b54b336be8b_icgraph" id="aclass_title_widget_ac63a90a3b880d5e9cfd47b54b336be8b_icgraph">
+<area shape="rect" title="显示关于对话框信号" alt="" coords="602,67,726,93"/>
+<area shape="rect" href="class_ku_gou_app.html#a94fc5073f204939937996ae86cd18b18" title="初始化标题栏" alt="" coords="379,36,554,63"/>
+<area shape="poly" title=" " alt="" coords="587,71,555,66,555,60,587,65"/>
+<area shape="rect" href="class_title_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面元素" alt="" coords="441,92,492,119"/>
+<area shape="poly" title=" " alt="" coords="587,92,493,105,492,99,587,87"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="209,29,331,56"/>
+<area shape="poly" title=" " alt="" coords="363,49,331,47,331,42,364,43"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="115,16,104,10,83,8,64,10,53,15,51,20,56,27,51,30,45,21,49,11,62,5,83,3,105,5,117,12"/>
+<area shape="rect" href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0" title="构造函数，初始化标题栏控件" alt="" coords="226,104,314,131"/>
+<area shape="poly" title=" " alt="" coords="425,110,314,117,314,112,425,105"/>
+<area shape="poly" title=" " alt="" coords="302,91,291,85,270,83,250,85,240,89,238,95,242,102,238,105,232,95,236,86,249,79,270,77,292,80,304,86"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a00c3be25c1049817131c786f668772ce" name="a00c3be25c1049817131c786f668772ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c3be25c1049817131c786f668772ce">&#9670;&#160;</a></span>showMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showMenu </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>显示标题选项菜单 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>菜单显示的全局位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 显示菜单</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a00c3be25c1049817131c786f668772ce_cgraph.png" border="0" usemap="#aclass_title_widget_a00c3be25c1049817131c786f668772ce_cgraph" alt=""/></div>
+<map name="aclass_title_widget_a00c3be25c1049817131c786f668772ce_cgraph" id="aclass_title_widget_a00c3be25c1049817131c786f668772ce_cgraph">
+<area shape="rect" title="显示标题选项菜单" alt="" coords="5,5,90,32"/>
+<area shape="rect" href="class_title_widget.html#a0af7e99bd8f28620179c2875b5700c08" title="设置菜单显示位置，确保在屏幕范围内" alt="" coords="138,5,256,32"/>
+<area shape="poly" title=" " alt="" coords="90,16,122,16,122,21,90,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_title_widget_a00c3be25c1049817131c786f668772ce_icgraph.png" border="0" usemap="#aclass_title_widget_a00c3be25c1049817131c786f668772ce_icgraph" alt=""/></div>
+<map name="aclass_title_widget_a00c3be25c1049817131c786f668772ce_icgraph" id="aclass_title_widget_a00c3be25c1049817131c786f668772ce_icgraph">
+<area shape="rect" title="显示标题选项菜单" alt="" coords="428,35,513,61"/>
+<area shape="rect" href="class_title_widget.html#a7523c71b2bf60975302287ec8923f80e" title="重写鼠标按下事件，处理右键菜单" alt="" coords="246,5,374,32"/>
+<area shape="poly" title=" " alt="" coords="412,40,374,33,375,28,413,35"/>
+<area shape="rect" href="class_title_widget.html#a4af27e6a37dba0244988c37ed054acd1" title="菜单按钮点击事件，显示标题选项菜单" alt="" coords="240,56,380,99"/>
+<area shape="poly" title=" " alt="" coords="413,61,381,67,380,62,412,56"/>
+<area shape="rect" href="class_title_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面元素" alt="" coords="141,64,192,91"/>
+<area shape="poly" title=" " alt="" coords="224,80,192,80,192,75,224,75"/>
+<area shape="rect" href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0" title="构造函数，初始化标题栏控件" alt="" coords="5,64,93,91"/>
+<area shape="poly" title=" " alt="" coords="125,80,93,80,93,75,125,75"/>
+<area shape="poly" title=" " alt="" coords="68,51,61,45,49,43,37,45,31,49,30,55,33,63,28,65,24,55,27,46,35,40,49,37,64,40,71,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad7d31911407d117e9d536ea145e8f11b" name="ad7d31911407d117e9d536ea145e8f11b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d31911407d117e9d536ea145e8f11b">&#9670;&#160;</a></span>m_backTypeStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStack&lt;<a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a>&gt; m_backTypeStack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>后退导航栈 </p>
+
+</div>
+</div>
+<a id="a1172ed5c1d1373a716484e23308a3edf" name="a1172ed5c1d1373a716484e23308a3edf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1172ed5c1d1373a716484e23308a3edf">&#9670;&#160;</a></span>m_closeDialog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_ela_exit_dialog.html">ElaExitDialog</a>&gt; m_closeDialog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>退出对话框 </p>
+
+</div>
+</div>
+<a id="a7f5ccb80bdf4e4913576c18899f23178" name="a7f5ccb80bdf4e4913576c18899f23178"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5ccb80bdf4e4913576c18899f23178">&#9670;&#160;</a></span>m_curType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a> m_curType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前界面类型 </p>
+
+</div>
+</div>
+<a id="a5c86b1a014b0170f56fe1d5a380bcde3" name="a5c86b1a014b0170f56fe1d5a380bcde3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c86b1a014b0170f56fe1d5a380bcde3">&#9670;&#160;</a></span>m_enableChange</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_enableChange = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否允许界面切换 </p>
+
+</div>
+</div>
+<a id="a6948bf62b5c296ac6ef9fc3733f4f4aa" name="a6948bf62b5c296ac6ef9fc3733f4f4aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6948bf62b5c296ac6ef9fc3733f4f4aa">&#9670;&#160;</a></span>m_frontTypeStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStack&lt;<a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a>&gt; m_frontTypeStack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>前进导航栈 </p>
+
+</div>
+</div>
+<a id="ac7d1a5420e6d1ea504a19c1c7a990e85" name="ac7d1a5420e6d1ea504a19c1c7a990e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d1a5420e6d1ea504a19c1c7a990e85">&#9670;&#160;</a></span>m_lastType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a09061c58c857313317835bcdbd3bc0e4">StackType</a> m_lastType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>上一次界面类型 </p>
+
+</div>
+</div>
+<a id="a75b61709efacdeb4b9b337132b7fbb7f" name="a75b61709efacdeb4b9b337132b7fbb7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b61709efacdeb4b9b337132b7fbb7f">&#9670;&#160;</a></span>m_menuPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint m_menuPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>菜单显示位置 </p>
+
+</div>
+</div>
+<a id="a0ad01133cc2454a1422b78115d8078bc" name="a0ad01133cc2454a1422b78115d8078bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ad01133cc2454a1422b78115d8078bc">&#9670;&#160;</a></span>m_originalCover</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap m_originalCover</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>原始头像图片 </p>
+
+</div>
+</div>
+<a id="ad7a374426b71206da6b372805d68674d" name="ad7a374426b71206da6b372805d68674d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a374426b71206da6b372805d68674d">&#9670;&#160;</a></span>m_titleOptMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_title_option_menu.html">TitleOptionMenu</a>* m_titleOptMenu {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>标题选项菜单 </p>
+
+</div>
+</div>
+<a id="a84377a5b91861b1b32842b501f1bfe01" name="a84377a5b91861b1b32842b501f1bfe01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84377a5b91861b1b32842b501f1bfe01">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::TitleWidget* ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI 界面对象 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_title_widget_8h_source.html">TitleWidget.h</a></li>
+<li><a class="el" href="_title_widget_8cpp.html">TitleWidget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_title_widget.html">TitleWidget</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

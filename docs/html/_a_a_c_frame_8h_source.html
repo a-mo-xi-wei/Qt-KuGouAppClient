@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AACFrame.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_a_a_c_frame_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">AACFrame.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_a_a_c_frame_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  AACFrame - AAC 音频帧管理类</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef AACFRAME_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define AACFRAME_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_a_a_c_frame_8h.html#a96f30e8fa6fd80c70c09a1a6c893fe58">   15</a></span><span class="preprocessor">#define ADTS_HEADER_LENTH 7</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">sampling_frequency_index sampling frequeny [Hz]</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">0x0                           96000</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">0x1                           88200</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">0x2                           64000</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">0x3                           48000</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">0x4                           44100</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">0x5                           32000</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">0x6                           24000</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">0x7                           22050</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">0x8                           16000</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">0x9                           2000</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">0xa                           11025</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">0xb                           8000</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">0xc                           reserved</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">0xd                           reserved</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">0xe                           reserved</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">0xf                           reserved</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">*/</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html">   36</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a455feb9682771b326321288ed6cb35dd">   38</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a455feb9682771b326321288ed6cb35dd">syncword</a>;  <span class="comment">//12 bslbf 同步字The bit string ‘1111 1111 1111’，说明一个ADTS帧的开始</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#ab7ce6f462afaf105224b0ca772a33c43">   39</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#ab7ce6f462afaf105224b0ca772a33c43">id</a>;        <span class="comment">//1 bslbf   MPEG 标示符, 设置为1</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a24923132fd6ac64ad36872628a277e13">   40</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a24923132fd6ac64ad36872628a277e13">layer</a>;     <span class="comment">//2 uimsbf Indicates which layer is used. Set to ‘00’</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a8a496c4712408df6db8919888c4a0e2e">   41</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a8a496c4712408df6db8919888c4a0e2e">protection_absent</a>;  <span class="comment">//1 bslbf  表示是否误码校验</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#ad437e13b2d188868856462eda578152e">   42</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#ad437e13b2d188868856462eda578152e">profile</a>;            <span class="comment">//2 uimsbf  表示使用哪个级别的AAC，如01 Low Complexity(LC)--- AACLC</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a5d131729045d088c6f3f41e372e86911">   43</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a5d131729045d088c6f3f41e372e86911">sf_index</a>;           <span class="comment">//4 uimsbf  表示使用的采样率下标</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a13c9e398498c024c16361beea45e5e06">   44</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a13c9e398498c024c16361beea45e5e06">private_bit</a>;        <span class="comment">//1 bslbf</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a9f54ef2abf500841e8199b98ba60ee20">   45</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a9f54ef2abf500841e8199b98ba60ee20">channel_configuration</a>;  <span class="comment">//3 uimsbf  表示声道数</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a35befa265d5edf982420399da7b2a187">   46</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a35befa265d5edf982420399da7b2a187">original</a>;               <span class="comment">//1 bslbf</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#af909ad7681be746ca7a68f46ff832fe4">   47</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#af909ad7681be746ca7a68f46ff832fe4">home</a>;                   <span class="comment">//1 bslbf</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">/*下面的为改变的参数即每一帧都不同*/</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a5fa356ad91c0458025aa7e5dd6d39af9">   49</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a5fa356ad91c0458025aa7e5dd6d39af9">copyright_identification_bit</a>;   <span class="comment">//1 bslbf</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a5680f19f1e7bdbcbb036c0d013bd97b1">   50</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a5680f19f1e7bdbcbb036c0d013bd97b1">copyright_identification_start</a>; <span class="comment">//1 bslbf</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a9f3eb37162908bf2957ba35795a828e6">   51</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a9f3eb37162908bf2957ba35795a828e6">aac_frame_length</a>;               <span class="comment">// 13 bslbf  一个ADTS帧的长度包括ADTS头和raw data block</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a7074ce15fe47eb0e125c60fb27d65db8">   52</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a7074ce15fe47eb0e125c60fb27d65db8">adts_buffer_fullness</a>;           <span class="comment">//11 bslbf     0x7FF 说明是码率可变的码流</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">/*no_raw_data_blocks_in_frame 表示ADTS帧中有number_of_raw_data_blocks_in_frame + 1个AAC原始帧.</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    所以说number_of_raw_data_blocks_in_frame == 0</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">    表示说ADTS帧中有一个AAC数据块并不是说没有。(一个AAC原始帧包含一段时间内1024个采样及相关数据)</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_a_d_t_s___h_e_a_d_e_r.html#a22ca5dab70869050c4e5bae9dc26d630">   58</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_d_t_s___h_e_a_d_e_r.html#a22ca5dab70869050c4e5bae9dc26d630">no_raw_data_blocks_in_frame</a>;    <span class="comment">//2 uimsfb</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>} <a class="code hl_struct" href="struct_a_d_t_s___h_e_a_d_e_r.html">ADTS_HEADER</a>;</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="_a_a_c_frame_8h.html#a52d8e15c175e91e2daa8d8a5387c5e8c">   67</a></span><span class="preprocessor">#define AACFramePtr std::shared_ptr&lt;AACFrame&gt;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="};">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html">   74</a></span><span class="keyword">class </span><a class="code hl_function" href="class_a_a_c_frame.html#aebee6828238b729e319a65b72be86e42">AACFrame</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="class_a_a_c_frame.html#aebee6828238b729e319a65b72be86e42">AACFrame</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="class_a_a_c_frame.html#ab3e031f6e967420e05d8fc022635b62d">~AACFrame</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_a_c_frame.html#abe99f227b4f1ce29b4546a4c117cfca2">setAdtsHeader</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_d_t_s___h_e_a_d_e_r.html">ADTS_HEADER</a> &amp;adts);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_a_c_frame.html#a5666e2328f866a48d9bb4c158f068e0e">setFrameBuffer</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<span class="keyword">const</span> <a class="code hl_function" href="class_a_a_c_frame.html#ab766533ac99363cb6d92a52357cfb7a1">buffer</a>, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;<a class="code hl_function" href="class_a_a_c_frame.html#a7033bafa80d2349b9b0da59d8c486767">size</a>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_a_c_frame.html#a5666e2328f866a48d9bb4c158f068e0e">setFrameBuffer</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<span class="keyword">const</span> adtsBuffer, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;adtsSize, <span class="keyword">const</span> <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<span class="keyword">const</span> <a class="code hl_function" href="class_a_a_c_frame.html#ab766533ac99363cb6d92a52357cfb7a1">buffer</a>, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;<a class="code hl_function" href="class_a_a_c_frame.html#a7033bafa80d2349b9b0da59d8c486767">size</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#ab766533ac99363cb6d92a52357cfb7a1">  120</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_function" href="class_a_a_c_frame.html#ab766533ac99363cb6d92a52357cfb7a1">buffer</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_a_a_c_frame.html#a96609d194adde59bc1e0facbe06a7063">mFrameBuffer</a>; }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a7033bafa80d2349b9b0da59d8c486767">  126</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_a_a_c_frame.html#a7033bafa80d2349b9b0da59d8c486767">size</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_a_a_c_frame.html#a1bb53f2de83e4fdf04f01fed4cc73bbf">mFrameBufferSize</a>; }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a828a53550053aed3fc5bbe83a5e91085">  132</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_a_c_frame.html#a828a53550053aed3fc5bbe83a5e91085">setPts</a>(<a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_function" href="class_a_a_c_frame.html#a00b3843f70084cb17b810c0c0453c85d">pts</a>) { <a class="code hl_variable" href="class_a_a_c_frame.html#a007b9a456abc96ca59002d0c4d8f2332">m_pts</a> = <a class="code hl_function" href="class_a_a_c_frame.html#a00b3843f70084cb17b810c0c0453c85d">pts</a>; }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a00b3843f70084cb17b810c0c0453c85d">  138</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_function" href="class_a_a_c_frame.html#a00b3843f70084cb17b810c0c0453c85d">pts</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_a_a_c_frame.html#a007b9a456abc96ca59002d0c4d8f2332">m_pts</a>; }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a808117e517ca1a298728d3d674d91e0c">  144</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_a_c_frame.html#a808117e517ca1a298728d3d674d91e0c">setTimeStamp</a>(uint64_t t) { <a class="code hl_variable" href="class_a_a_c_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a> = t; }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">  150</a></span>    uint64_t <a class="code hl_function" href="class_a_a_c_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">timeStamp</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_a_a_c_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a>; }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#adfd60c0a4508bc2403574bed40f7ec77">  155</a></span>    <a class="code hl_struct" href="struct_a_d_t_s___h_e_a_d_e_r.html">ADTS_HEADER</a> <a class="code hl_variable" href="class_a_a_c_frame.html#adfd60c0a4508bc2403574bed40f7ec77">mAdtsHeader</a>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a96609d194adde59bc1e0facbe06a7063">  159</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_variable" href="class_a_a_c_frame.html#a96609d194adde59bc1e0facbe06a7063">mFrameBuffer</a>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a1bb53f2de83e4fdf04f01fed4cc73bbf">  163</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_a_a_c_frame.html#a1bb53f2de83e4fdf04f01fed4cc73bbf">mFrameBufferSize</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a007b9a456abc96ca59002d0c4d8f2332">  167</a></span>    <a class="code hl_typedef" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="class_a_a_c_frame.html#a007b9a456abc96ca59002d0c4d8f2332">m_pts</a> = 0;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_a_a_c_frame.html#a21986d419e0d7cf1249013a118da4282">  171</a></span>    uint64_t <a class="code hl_variable" href="class_a_a_c_frame.html#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a> = 0;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>};</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#endif </span><span class="comment">// AACFRAME_H</span></div>
+<div class="ttc" id="a_pcm_volume_control_8cpp_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdoc">32 位无符号整数</div><div class="ttdef"><b>定义</b> PcmVolumeControl.cpp:13</div></div>
+<div class="ttc" id="a_pcm_volume_control_8cpp_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> PcmVolumeControl.cpp:11</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a007b9a456abc96ca59002d0c4d8f2332"><div class="ttname"><a href="class_a_a_c_frame.html#a007b9a456abc96ca59002d0c4d8f2332">AACFrame::m_pts</a></div><div class="ttdeci">uint32_t m_pts</div><div class="ttdoc">时间戳</div><div class="ttdef"><b>定义</b> AACFrame.h:167</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a00b3843f70084cb17b810c0c0453c85d"><div class="ttname"><a href="class_a_a_c_frame.html#a00b3843f70084cb17b810c0c0453c85d">AACFrame::pts</a></div><div class="ttdeci">uint32_t pts()</div><div class="ttdoc">获取时间戳</div><div class="ttdef"><b>定义</b> AACFrame.h:138</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a1bb53f2de83e4fdf04f01fed4cc73bbf"><div class="ttname"><a href="class_a_a_c_frame.html#a1bb53f2de83e4fdf04f01fed4cc73bbf">AACFrame::mFrameBufferSize</a></div><div class="ttdeci">unsigned int mFrameBufferSize</div><div class="ttdoc">AAC 数据缓冲区大小（包含 ADTS 头部）</div><div class="ttdef"><b>定义</b> AACFrame.h:163</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a21986d419e0d7cf1249013a118da4282"><div class="ttname"><a href="class_a_a_c_frame.html#a21986d419e0d7cf1249013a118da4282">AACFrame::m_timestamp_ms</a></div><div class="ttdeci">uint64_t m_timestamp_ms</div><div class="ttdoc">UTC 时间戳（毫秒）</div><div class="ttdef"><b>定义</b> AACFrame.h:171</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a5666e2328f866a48d9bb4c158f068e0e"><div class="ttname"><a href="class_a_a_c_frame.html#a5666e2328f866a48d9bb4c158f068e0e">AACFrame::setFrameBuffer</a></div><div class="ttdeci">void setFrameBuffer(const uint8_t *const buffer, const unsigned int &amp;size)</div><div class="ttdoc">设置帧缓冲区</div><div class="ttdef"><b>定义</b> AACFrame.cpp:48</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a7033bafa80d2349b9b0da59d8c486767"><div class="ttname"><a href="class_a_a_c_frame.html#a7033bafa80d2349b9b0da59d8c486767">AACFrame::size</a></div><div class="ttdeci">unsigned int size()</div><div class="ttdoc">获取帧缓冲区大小</div><div class="ttdef"><b>定义</b> AACFrame.h:126</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a7606723ef1db72ef21f3eb67833eb9fa"><div class="ttname"><a href="class_a_a_c_frame.html#a7606723ef1db72ef21f3eb67833eb9fa">AACFrame::timeStamp</a></div><div class="ttdeci">uint64_t timeStamp()</div><div class="ttdoc">获取 UTC 时间戳</div><div class="ttdef"><b>定义</b> AACFrame.h:150</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a808117e517ca1a298728d3d674d91e0c"><div class="ttname"><a href="class_a_a_c_frame.html#a808117e517ca1a298728d3d674d91e0c">AACFrame::setTimeStamp</a></div><div class="ttdeci">void setTimeStamp(uint64_t t)</div><div class="ttdoc">设置 UTC 时间戳</div><div class="ttdef"><b>定义</b> AACFrame.h:144</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a828a53550053aed3fc5bbe83a5e91085"><div class="ttname"><a href="class_a_a_c_frame.html#a828a53550053aed3fc5bbe83a5e91085">AACFrame::setPts</a></div><div class="ttdeci">void setPts(uint32_t pts)</div><div class="ttdoc">设置时间戳</div><div class="ttdef"><b>定义</b> AACFrame.h:132</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_a96609d194adde59bc1e0facbe06a7063"><div class="ttname"><a href="class_a_a_c_frame.html#a96609d194adde59bc1e0facbe06a7063">AACFrame::mFrameBuffer</a></div><div class="ttdeci">uint8_t * mFrameBuffer</div><div class="ttdoc">AAC 数据缓冲区（包含 ADTS 头部）</div><div class="ttdef"><b>定义</b> AACFrame.h:159</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_ab3e031f6e967420e05d8fc022635b62d"><div class="ttname"><a href="class_a_a_c_frame.html#ab3e031f6e967420e05d8fc022635b62d">AACFrame::~AACFrame</a></div><div class="ttdeci">~AACFrame()</div><div class="ttdoc">析构函数</div><div class="ttdef"><b>定义</b> AACFrame.cpp:23</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_ab766533ac99363cb6d92a52357cfb7a1"><div class="ttname"><a href="class_a_a_c_frame.html#ab766533ac99363cb6d92a52357cfb7a1">AACFrame::buffer</a></div><div class="ttdeci">uint8_t * buffer()</div><div class="ttdoc">获取帧缓冲区</div><div class="ttdef"><b>定义</b> AACFrame.h:120</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_abe99f227b4f1ce29b4546a4c117cfca2"><div class="ttname"><a href="class_a_a_c_frame.html#abe99f227b4f1ce29b4546a4c117cfca2">AACFrame::setAdtsHeader</a></div><div class="ttdeci">void setAdtsHeader(const ADTS_HEADER &amp;adts)</div><div class="ttdoc">设置 ADTS 头部</div><div class="ttdef"><b>定义</b> AACFrame.cpp:37</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_adfd60c0a4508bc2403574bed40f7ec77"><div class="ttname"><a href="class_a_a_c_frame.html#adfd60c0a4508bc2403574bed40f7ec77">AACFrame::mAdtsHeader</a></div><div class="ttdeci">ADTS_HEADER mAdtsHeader</div><div class="ttdoc">ADTS 头部信息</div><div class="ttdef"><b>定义</b> AACFrame.h:155</div></div>
+<div class="ttc" id="aclass_a_a_c_frame_html_aebee6828238b729e319a65b72be86e42"><div class="ttname"><a href="class_a_a_c_frame.html#aebee6828238b729e319a65b72be86e42">AACFrame::AACFrame</a></div><div class="ttdeci">AACFrame()</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> AACFrame.cpp:13</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html">ADTS_HEADER</a></div><div class="ttdef"><b>定义</b> AACFrame.h:37</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a13c9e398498c024c16361beea45e5e06"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a13c9e398498c024c16361beea45e5e06">ADTS_HEADER::private_bit</a></div><div class="ttdeci">unsigned int private_bit</div><div class="ttdef"><b>定义</b> AACFrame.h:44</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a22ca5dab70869050c4e5bae9dc26d630"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a22ca5dab70869050c4e5bae9dc26d630">ADTS_HEADER::no_raw_data_blocks_in_frame</a></div><div class="ttdeci">unsigned int no_raw_data_blocks_in_frame</div><div class="ttdef"><b>定义</b> AACFrame.h:58</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a24923132fd6ac64ad36872628a277e13"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a24923132fd6ac64ad36872628a277e13">ADTS_HEADER::layer</a></div><div class="ttdeci">unsigned int layer</div><div class="ttdef"><b>定义</b> AACFrame.h:40</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a35befa265d5edf982420399da7b2a187"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a35befa265d5edf982420399da7b2a187">ADTS_HEADER::original</a></div><div class="ttdeci">unsigned int original</div><div class="ttdef"><b>定义</b> AACFrame.h:46</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a455feb9682771b326321288ed6cb35dd"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a455feb9682771b326321288ed6cb35dd">ADTS_HEADER::syncword</a></div><div class="ttdeci">unsigned int syncword</div><div class="ttdef"><b>定义</b> AACFrame.h:38</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a5680f19f1e7bdbcbb036c0d013bd97b1"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a5680f19f1e7bdbcbb036c0d013bd97b1">ADTS_HEADER::copyright_identification_start</a></div><div class="ttdeci">unsigned int copyright_identification_start</div><div class="ttdef"><b>定义</b> AACFrame.h:50</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a5d131729045d088c6f3f41e372e86911"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a5d131729045d088c6f3f41e372e86911">ADTS_HEADER::sf_index</a></div><div class="ttdeci">unsigned int sf_index</div><div class="ttdef"><b>定义</b> AACFrame.h:43</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a5fa356ad91c0458025aa7e5dd6d39af9"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a5fa356ad91c0458025aa7e5dd6d39af9">ADTS_HEADER::copyright_identification_bit</a></div><div class="ttdeci">unsigned int copyright_identification_bit</div><div class="ttdef"><b>定义</b> AACFrame.h:49</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a7074ce15fe47eb0e125c60fb27d65db8"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a7074ce15fe47eb0e125c60fb27d65db8">ADTS_HEADER::adts_buffer_fullness</a></div><div class="ttdeci">unsigned int adts_buffer_fullness</div><div class="ttdef"><b>定义</b> AACFrame.h:52</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a8a496c4712408df6db8919888c4a0e2e"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a8a496c4712408df6db8919888c4a0e2e">ADTS_HEADER::protection_absent</a></div><div class="ttdeci">unsigned int protection_absent</div><div class="ttdef"><b>定义</b> AACFrame.h:41</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a9f3eb37162908bf2957ba35795a828e6"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a9f3eb37162908bf2957ba35795a828e6">ADTS_HEADER::aac_frame_length</a></div><div class="ttdeci">unsigned int aac_frame_length</div><div class="ttdef"><b>定义</b> AACFrame.h:51</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_a9f54ef2abf500841e8199b98ba60ee20"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#a9f54ef2abf500841e8199b98ba60ee20">ADTS_HEADER::channel_configuration</a></div><div class="ttdeci">unsigned int channel_configuration</div><div class="ttdef"><b>定义</b> AACFrame.h:45</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_ab7ce6f462afaf105224b0ca772a33c43"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#ab7ce6f462afaf105224b0ca772a33c43">ADTS_HEADER::id</a></div><div class="ttdeci">unsigned int id</div><div class="ttdef"><b>定义</b> AACFrame.h:39</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_ad437e13b2d188868856462eda578152e"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#ad437e13b2d188868856462eda578152e">ADTS_HEADER::profile</a></div><div class="ttdeci">unsigned int profile</div><div class="ttdef"><b>定义</b> AACFrame.h:42</div></div>
+<div class="ttc" id="astruct_a_d_t_s___h_e_a_d_e_r_html_af909ad7681be746ca7a68f46ff832fe4"><div class="ttname"><a href="struct_a_d_t_s___h_e_a_d_e_r.html#af909ad7681be746ca7a68f46ff832fe4">ADTS_HEADER::home</a></div><div class="ttdeci">unsigned int home</div><div class="ttdef"><b>定义</b> AACFrame.h:47</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_b12c950205874eb7cac8367399a55421.html">MyPlayer</a></li><li class="navelem"><a class="el" href="dir_5b4f0ac3f39cfcb6c3b247caa2266733.html">frame</a></li><li class="navelem"><a class="el" href="dir_e7aaa7f605378e7dd4245d6207a7e64c.html">AudioFrame</a></li><li class="navelem"><a class="el" href="_a_a_c_frame_8h.html">AACFrame.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

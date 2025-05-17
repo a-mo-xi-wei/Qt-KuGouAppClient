@@ -1,0 +1,35 @@
+var group__lavf__misc =
+[
+    [ "RIFF FourCCs", "group__riff__fourcc.html", "group__riff__fourcc" ],
+    [ "AV_FRAME_FILENAME_FLAGS_MULTIPLE", "group__lavf__misc.html#gaa0fc59624ec1fe0dc583743678b96fb6", null ],
+    [ "AVTimebaseSource", "group__lavf__misc.html#ga67f84bb8799c8da41194f046f4b970c4", [
+      [ "AVFMT_TBCF_AUTO", "group__lavf__misc.html#gga67f84bb8799c8da41194f046f4b970c4a925300170a86b606dbe4b2b2a18ad12a", null ],
+      [ "AVFMT_TBCF_DECODER", "group__lavf__misc.html#gga67f84bb8799c8da41194f046f4b970c4ae6bd8e936313feda91adedd2501ca90b", null ],
+      [ "AVFMT_TBCF_DEMUXER", "group__lavf__misc.html#gga67f84bb8799c8da41194f046f4b970c4a4b894ad271e07df75e1b8121455ea4ee", null ],
+      [ "AVFMT_TBCF_R_FRAMERATE", "group__lavf__misc.html#gga67f84bb8799c8da41194f046f4b970c4a6b54fbd5193e969530dd00f49a903cef", null ]
+    ] ],
+    [ "av_add_index_entry", "group__lavf__misc.html#ga3ed7441cb4af0bdd65a4cf51bf35088e", null ],
+    [ "av_codec_get_id", "group__lavf__misc.html#ga27b89fa8286af6efb5a69e8db4033b09", null ],
+    [ "av_codec_get_tag", "group__lavf__misc.html#ga126917b7ce8b4f05505098b72f4997de", null ],
+    [ "av_codec_get_tag2", "group__lavf__misc.html#gabe1a7b6824078229c69b75c71053c035", null ],
+    [ "av_dump_format", "group__lavf__misc.html#gae2645941f2dc779c307eb6314fd39f10", null ],
+    [ "av_filename_number_test", "group__lavf__misc.html#gac20eb319c6c46f581b5d08f5c25e763e", null ],
+    [ "av_find_default_stream_index", "group__lavf__misc.html#gaad9737492bb66aeeec37b7c7d8d90f2a", null ],
+    [ "av_get_frame_filename", "group__lavf__misc.html#ga90e027a5d9006148413a1387c506cd40", null ],
+    [ "av_get_frame_filename2", "group__lavf__misc.html#ga05f17637161cd79506f67b20ea8149c9", null ],
+    [ "av_guess_frame_rate", "group__lavf__misc.html#ga12c049178414cc221dfafd4e7f836dea", null ],
+    [ "av_guess_sample_aspect_ratio", "group__lavf__misc.html#ga0f62da0e809045bb21166013c404ce43", null ],
+    [ "av_hex_dump", "group__lavf__misc.html#gab533a6d5d830ab90573dd035002c5bca", null ],
+    [ "av_hex_dump_log", "group__lavf__misc.html#ga56f93dbd118ff5fe833a2e39b685974c", null ],
+    [ "av_index_search_timestamp", "group__lavf__misc.html#gac4cabc0d681c34b2e2c6a87a55877f0d", null ],
+    [ "av_match_ext", "group__lavf__misc.html#ga8247f49e5642dd3bd20ce6ba5a7f6466", null ],
+    [ "av_pkt_dump2", "group__lavf__misc.html#ga46720b0bb28ca455246805be8969ff9e", null ],
+    [ "av_pkt_dump_log2", "group__lavf__misc.html#gaab9fad988c28cc1c4dcbba24a36b6113", null ],
+    [ "av_sdp_create", "group__lavf__misc.html#gaa2a7353a6bb0c8726797abd56b176af0", null ],
+    [ "av_stream_get_codec_timebase", "group__lavf__misc.html#ga64b609bbdda09ec7b29534a30656eb1a", null ],
+    [ "av_url_split", "group__lavf__misc.html#ga63a0579d6c2aa72470ac742bbbc1205d", null ],
+    [ "avformat_match_stream_specifier", "group__lavf__misc.html#ga7e45597834e9ef3098ddb74bc5e1550c", null ],
+    [ "avformat_query_codec", "group__lavf__misc.html#gaa90b4c72d1bbb298e11096d3a09ec7db", null ],
+    [ "avformat_queue_attached_pictures", "group__lavf__misc.html#ga501ff1b3aa357c09da90c0effb356e45", null ],
+    [ "avformat_transfer_internal_stream_timing_info", "group__lavf__misc.html#gae35832b110d26ffa3e8805b3d55e8f36", null ]
+];

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: LocalDownload.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_local_download_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">LocalDownload.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>实现 <a class="el" href="class_local_download.html" title="本地下载管理界面类，整合本地歌曲、已下载歌曲、已下载视频和正在下载功能">LocalDownload</a> 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_local_download_8h_source.html">LocalDownload.h</a>&quot;</code><br />
+<code>#include &quot;ui_LocalDownload.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8hpp_source.html">logger.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ela_message_bar_8h_source.html">ElaMessageBar.h</a>&quot;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;QButtonGroup&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+LocalDownload.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_local_download_8cpp__incl.png" border="0" usemap="#a_local_download_8cpp" alt=""/></div>
+<map name="a_local_download_8cpp" id="a_local_download_8cpp">
+<area shape="rect" title="实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="1856,5,1992,32"/>
+<area shape="rect" href="_local_download_8h.html" title="定义 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="1146,80,1267,107"/>
+<area shape="poly" title=" " alt="" coords="1856,29,1283,87,1282,82,1855,24"/>
+<area shape="rect" title=" " alt="" coords="1921,80,2060,107"/>
+<area shape="poly" title=" " alt="" coords="1937,31,1971,67,1967,70,1933,34"/>
+<area shape="rect" href="logger_8hpp.html" title=" " alt="" coords="1816,80,1898,107"/>
+<area shape="poly" title=" " alt="" coords="1914,34,1881,70,1877,67,1910,31"/>
+<area shape="rect" href="_ela_message_bar_8h.html" title="定义 ElaMessageBar 类，提供消息通知栏功能" alt="" coords="1668,80,1793,107"/>
+<area shape="poly" title=" " alt="" coords="1891,35,1779,77,1778,72,1889,30"/>
+<area shape="rect" title=" " alt="" coords="2084,80,2137,107"/>
+<area shape="poly" title=" " alt="" coords="1957,30,2071,74,2069,79,1955,35"/>
+<area shape="rect" title=" " alt="" coords="2161,80,2265,107"/>
+<area shape="poly" title=" " alt="" coords="1975,30,2148,73,2147,78,1974,35"/>
+<area shape="rect" href="_local_song_8h.html" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="833,163,991,189"/>
+<area shape="poly" title=" " alt="" coords="1161,110,973,161,972,156,1160,105"/>
+<area shape="rect" title=" " alt="" coords="1258,427,1331,453"/>
+<area shape="poly" title=" " alt="" coords="1211,107,1218,148,1234,196,1243,210,1253,219,1263,229,1272,244,1286,289,1294,334,1298,411,1293,411,1288,335,1280,290,1267,246,1258,232,1249,223,1239,213,1229,199,1213,149,1205,108"/>
+<area shape="rect" href="_downloaded_song_8h.html" title="定义 DownloadedSong 类，提供已下载歌曲界面" alt="" coords="1058,245,1257,288"/>
+<area shape="poly" title=" " alt="" coords="1205,108,1190,155,1169,231,1164,230,1185,154,1200,106"/>
+<area shape="rect" href="_downloaded_video_8h.html" title="定义 DownloadedVideo 类，提供已下载视频界面" alt="" coords="1244,155,1446,197"/>
+<area shape="poly" title=" " alt="" coords="1229,105,1298,144,1295,149,1227,109"/>
+<area shape="rect" href="_downloading_8h.html" title="定义 Downloading 类，提供下载管理界面" alt="" coords="1471,163,1657,189"/>
+<area shape="poly" title=" " alt="" coords="1263,105,1493,156,1492,161,1262,110"/>
+<area shape="rect" href="slidingstackedwidget_8h.html" title="定义 SlidingStackedWidget 类，提供带滑动动画的堆栈窗口" alt="" coords="224,163,384,189"/>
+<area shape="poly" title=" " alt="" coords="1146,103,400,169,400,164,1145,97"/>
+<area shape="rect" href="_music_item_widget_8h.html" title="定义 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="705,253,839,280"/>
+<area shape="poly" title=" " alt="" coords="893,192,806,247,803,243,890,188"/>
+<area shape="poly" title=" " alt="" coords="929,188,996,243,1021,266,1047,286,1093,310,1141,334,1266,416,1263,420,1139,338,1091,315,1044,290,1017,270,993,247,925,192"/>
+<area shape="rect" href="_sort_option_menu_8h.html" title="定义 SortOptionMenu 类，提供歌曲排序选项菜单功能" alt="" coords="946,336,1128,379"/>
+<area shape="poly" title=" " alt="" coords="909,190,896,236,895,262,903,287,923,309,949,327,946,331,920,313,899,289,890,263,890,235,904,189"/>
+<area shape="rect" href="libhttp_8h.html" title=" " alt="" coords="472,253,539,280"/>
+<area shape="poly" title=" " alt="" coords="854,193,555,257,554,252,853,187"/>
+<area shape="rect" title=" " alt="" coords="913,253,982,280"/>
+<area shape="poly" title=" " alt="" coords="919,189,939,238,934,240,915,191"/>
+<area shape="rect" href="_my_menu_8h.html" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="840,344,922,371"/>
+<area shape="poly" title=" " alt="" coords="789,279,855,332,852,336,786,283"/>
+<area shape="rect" href="_song_option_menu_8h.html" title="定义 SongOptionMenu 类，提供歌曲操作选项菜单功能" alt="" coords="416,336,610,379"/>
+<area shape="poly" title=" " alt="" coords="736,283,589,333,587,328,734,278"/>
+<area shape="rect" title=" " alt="" coords="634,344,723,371"/>
+<area shape="poly" title=" " alt="" coords="760,283,704,335,701,331,757,279"/>
+<area shape="rect" title=" " alt="" coords="747,344,815,371"/>
+<area shape="poly" title=" " alt="" coords="776,280,781,328,776,329,771,281"/>
+<area shape="rect" href="_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="853,427,947,453"/>
+<area shape="poly" title=" " alt="" coords="887,371,896,411,891,413,881,372"/>
+<area shape="poly" title=" " alt="" coords="913,369,935,376,1019,396,1103,411,1243,431,1242,436,1102,416,1018,401,934,381,911,374"/>
+<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="901,501,1000,528"/>
+<area shape="poly" title=" " alt="" coords="911,452,935,487,931,490,906,455"/>
+<area shape="poly" title=" " alt="" coords="611,376,838,423,837,428,610,381"/>
+<area shape="poly" title=" " alt="" coords="1003,382,936,421,933,416,1000,377"/>
+<area shape="poly" title=" " alt="" coords="1028,380,967,489,963,486,1024,378"/>
+<area shape="rect" title=" " alt="" coords="279,344,393,371"/>
+<area shape="poly" title=" " alt="" coords="482,283,375,339,372,334,480,278"/>
+<area shape="rect" title=" " alt="" coords="174,344,255,371"/>
+<area shape="poly" title=" " alt="" coords="480,283,461,291,407,306,364,315,321,324,267,339,260,341,259,336,266,333,320,319,363,310,406,301,459,285,478,278"/>
+<area shape="poly" title=" " alt="" coords="1176,287,1277,413,1273,416,1172,290"/>
+<area shape="poly" title=" " alt="" coords="1131,291,1079,329,1076,324,1128,286"/>
+<area shape="poly" title=" " alt="" coords="1346,198,1335,278,1316,379,1306,413,1301,411,1311,378,1330,277,1340,197"/>
+<area shape="poly" title=" " alt="" coords="1553,192,1320,418,1316,414,1549,188"/>
+<area shape="rect" title=" " alt="" coords="328,253,448,280"/>
+<area shape="poly" title=" " alt="" coords="318,188,367,240,363,244,314,192"/>
+<area shape="rect" title=" " alt="" coords="5,253,112,280"/>
+<area shape="poly" title=" " alt="" coords="270,192,108,250,107,245,268,187"/>
+<area shape="rect" title=" " alt="" coords="136,253,304,280"/>
+<area shape="poly" title=" " alt="" coords="294,192,244,244,240,240,290,188"/>
+<area shape="rect" href="mylog_8h.html" title=" " alt="" coords="2664,163,2731,189"/>
+<area shape="poly" title=" " alt="" coords="1898,102,1910,104,2124,132,2336,152,2648,170,2648,175,2336,157,2124,137,1909,109,1897,107"/>
+<area shape="rect" title=" " alt="" coords="1919,253,2000,280"/>
+<area shape="poly" title=" " alt="" coords="2663,181,2554,185,2395,196,2209,216,2020,248,2008,251,2007,246,2019,243,2208,211,2395,191,2554,180,2663,175"/>
+<area shape="rect" title=" " alt="" coords="2826,344,2894,371"/>
+<area shape="poly" title=" " alt="" coords="2710,188,2840,331,2837,334,2706,191"/>
+<area shape="rect" title=" " alt="" coords="2519,576,2587,603"/>
+<area shape="poly" title=" " alt="" coords="2697,190,2674,289,2635,411,2586,529,2570,563,2565,561,2581,527,2630,409,2669,287,2692,189"/>
+<area shape="rect" href="spdlog_8h.html" title=" " alt="" coords="2548,253,2660,280"/>
+<area shape="poly" title=" " alt="" coords="2686,192,2630,245,2626,241,2682,188"/>
+<area shape="rect" href="fmt_8h.html" title=" " alt="" coords="2924,576,3041,603"/>
+<area shape="poly" title=" " alt="" coords="2732,178,2793,186,2866,199,2933,218,2958,230,2975,244,2999,282,3014,324,3021,369,3022,414,3011,498,2994,562,2989,560,3005,497,3016,414,3016,369,3009,325,2995,284,2971,247,2955,235,2931,223,2865,205,2793,192,2731,183"/>
+<area shape="rect" href="logger_8h.html" title=" " alt="" coords="2692,344,2801,371"/>
+<area shape="poly" title=" " alt="" coords="2703,189,2742,328,2736,330,2698,190"/>
+<area shape="rect" href="_my_spdlog_2spdlog_2_async_8h.html" title=" " alt="" coords="2153,344,2262,371"/>
+<area shape="poly" title=" " alt="" coords="2663,181,2522,187,2332,199,2158,219,2098,232,2078,240,2067,247,2059,260,2059,273,2066,285,2078,297,2113,318,2154,336,2152,341,2111,323,2074,301,2062,288,2054,274,2054,259,2063,244,2076,235,2097,227,2157,214,2332,194,2522,182,2663,176"/>
+<area shape="rect" href="printf_8h.html" title=" " alt="" coords="3036,245,3167,288"/>
+<area shape="poly" title=" " alt="" coords="2732,182,3018,243,3021,243,3020,249,3017,248,2731,187"/>
+<area shape="rect" href="basic__file__sink_8h.html" title=" " alt="" coords="2076,245,2206,288"/>
+<area shape="poly" title=" " alt="" coords="2664,183,2479,206,2353,224,2222,248,2221,242,2352,219,2478,201,2663,178"/>
+<area shape="rect" href="daily__file__sink_8h.html" title=" " alt="" coords="2836,245,2961,288"/>
+<area shape="poly" title=" " alt="" coords="2727,187,2839,236,2837,241,2725,192"/>
+<area shape="rect" href="msvc__sink_8h.html" title=" " alt="" coords="3191,253,3363,280"/>
+<area shape="poly" title=" " alt="" coords="2731,179,2922,204,3179,243,3204,247,3203,252,3178,248,2921,209,2731,184"/>
+<area shape="rect" href="stdout__sinks_8h.html" title=" " alt="" coords="2230,245,2364,288"/>
+<area shape="poly" title=" " alt="" coords="2664,187,2380,247,2379,242,2662,182"/>
+<area shape="rect" href="stdout__color__sinks_8h.html" title=" " alt="" coords="2389,245,2523,288"/>
+<area shape="poly" title=" " alt="" coords="2664,192,2528,242,2526,237,2662,187"/>
+<area shape="rect" title=" " alt="" coords="1825,253,1894,280"/>
+<area shape="poly" title=" " alt="" coords="2663,179,2539,179,2351,187,2243,195,2131,207,2018,225,1908,248,1901,250,1899,245,1907,243,2017,220,2130,202,2243,190,2351,181,2538,174,2663,174"/>
+<area shape="rect" title=" " alt="" coords="3388,253,3457,280"/>
+<area shape="poly" title=" " alt="" coords="2731,174,2841,176,3001,185,3188,206,3284,222,3377,243,3384,245,3382,250,3375,248,3283,227,3187,211,3001,191,2840,182,2731,180"/>
+<area shape="rect" title=" " alt="" coords="3482,253,3534,280"/>
+<area shape="poly" title=" " alt="" coords="2731,176,2882,183,3096,196,3313,216,3403,228,3470,243,3474,244,3472,249,3468,248,3402,233,3312,221,3096,201,2881,188,2731,181"/>
+<area shape="poly" title=" " alt="" coords="2604,281,2560,561,2555,560,2599,280"/>
+<area shape="rect" href="_my_spdlog_2spdlog_2common_8h.html" title=" " alt="" coords="2692,501,2817,528"/>
+<area shape="poly" title=" " alt="" coords="2614,279,2741,487,2737,489,2609,282"/>
+<area shape="rect" href="registry_8h.html" title=" " alt="" coords="2358,427,2516,453"/>
+<area shape="poly" title=" " alt="" coords="2593,282,2536,338,2461,417,2457,414,2533,334,2589,278"/>
+<area shape="rect" href="synchronous__factory_8h.html" title=" " alt="" coords="2286,336,2466,379"/>
+<area shape="poly" title=" " alt="" coords="2572,283,2444,333,2442,328,2570,278"/>
+<area shape="poly" title=" " alt="" coords="2626,278,2715,333,2712,338,2623,283"/>
+<area shape="poly" title=" " alt="" coords="2720,531,2603,573,2601,568,2719,526"/>
+<area shape="poly" title=" " alt="" coords="2795,526,2929,568,2927,573,2793,531"/>
+<area shape="poly" title=" " alt="" coords="2449,452,2536,562,2532,565,2445,455"/>
+<area shape="poly" title=" " alt="" coords="2493,451,2685,495,2683,500,2492,457"/>
+<area shape="poly" title=" " alt="" coords="2394,378,2420,413,2416,416,2390,381"/>
+<area shape="poly" title=" " alt="" coords="2750,371,2756,486,2750,486,2744,371"/>
+<area shape="poly" title=" " alt="" coords="2227,369,2348,451,2523,565,2520,570,2345,456,2224,373"/>
+<area shape="poly" title=" " alt="" coords="2245,369,2388,419,2386,424,2243,374"/>
+<area shape="poly" title=" " alt="" coords="2197,286,2308,328,2306,333,2195,291"/>
+<area shape="poly" title=" " alt="" coords="2892,289,2874,331,2869,329,2887,287"/>
+<area shape="poly" title=" " alt="" coords="2908,288,2916,331,2915,356,2909,380,2886,417,2856,449,2824,475,2793,495,2790,491,2821,471,2852,445,2882,414,2904,378,2910,355,2911,332,2903,289"/>
+<area shape="poly" title=" " alt="" coords="2912,287,2932,335,2950,398,2964,460,2981,560,2976,561,2959,461,2944,399,2927,337,2907,289"/>
+<area shape="poly" title=" " alt="" coords="2836,281,2481,341,2480,336,2835,276"/>
+<area shape="poly" title=" " alt="" coords="2317,287,2350,323,2346,326,2313,290"/>
+<area shape="poly" title=" " alt="" coords="2439,290,2406,326,2402,323,2435,287"/>
+<area shape="poly" title=" " alt="" coords="1728,108,1706,151,1671,199,1631,238,1587,274,1494,337,1407,387,1338,422,1336,417,1405,383,1492,333,1583,270,1627,234,1667,196,1702,148,1723,106"/>
+<area shape="rect" href="_def_8h.html" title=" " alt="" coords="1740,163,1793,189"/>
+<area shape="poly" title=" " alt="" coords="1739,106,1757,148,1752,150,1734,108"/>
+<area shape="poly" title=" " alt="" coords="1782,188,1838,241,1834,245,1778,192"/>
+<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="1732,253,1801,280"/>
+<area shape="poly" title=" " alt="" coords="1769,190,1769,238,1764,238,1764,190"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a7da49cee97dfd7405e8595862fd266de" id="r_a7da49cee97dfd7405e8595862fd266de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7da49cee97dfd7405e8595862fd266de">GET_CURRENT_DIR</a>&#160;&#160;&#160;(QString(__FILE__).<a class="el" href="base_8h.html#a6c52c4bac77f6744fdc338766e9e8a6fa811882fecd5c7618d7099ebbd39ea254">left</a>(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))</td></tr>
+<tr class="memdesc:a7da49cee97dfd7405e8595862fd266de"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前文件所在目录宏  <br /></td></tr>
+<tr class="separator:a7da49cee97dfd7405e8595862fd266de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>实现 <a class="el" href="class_local_download.html" title="本地下载管理界面类，整合本地歌曲、已下载歌曲、已下载视频和正在下载功能">LocalDownload</a> 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面 </p>
+<dl class="section author"><dt>作者</dt><dd>WeiWang </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2024-10-10 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a7da49cee97dfd7405e8595862fd266de" name="a7da49cee97dfd7405e8595862fd266de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da49cee97dfd7405e8595862fd266de">&#9670;&#160;</a></span>GET_CURRENT_DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_CURRENT_DIR&#160;&#160;&#160;(QString(__FILE__).<a class="el" href="base_8h.html#a6c52c4bac77f6744fdc338766e9e8a6fa811882fecd5c7618d7099ebbd39ea254">left</a>(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前文件所在目录宏 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_4903e9fdd90aaa64abf2216a2ba9b10e.html">LocalDownload</a></li><li class="navelem"><a class="el" href="_local_download_8cpp.html">LocalDownload.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

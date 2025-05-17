@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: qtmaterialtheme_p.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('qtmaterialtheme__p_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">qtmaterialtheme_p.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="qtmaterialtheme__p_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef QTMATERIALTHEME_P_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define QTMATERIALTHEME_P_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QHash&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// 前向声明</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span><a class="code hl_class" href="class_qt_material_theme.html">QtMaterialTheme</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#if defined(QTMATERIALWIDGET_LIBRARY)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="qtmaterialtheme__p_8h.html#a8763e143fe5ea4f504ee20145af89474">   21</a></span><span class="preprocessor">#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_qt_material_theme_private.html">   29</a></span><span class="keyword">class </span><a class="code hl_define" href="qtmaterialtheme__p_8h.html#a8763e143fe5ea4f504ee20145af89474">QTMATERIALWIDGET_EXPORT</a> <a class="code hl_function" href="class_qt_material_theme_private.html#a63f28c47ca713561f89d58a3e858031c">QtMaterialThemePrivate</a></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Q_DISABLE_COPY(<a class="code hl_function" href="class_qt_material_theme_private.html#a63f28c47ca713561f89d58a3e858031c">QtMaterialThemePrivate</a>) </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Q_DECLARE_PUBLIC(<a class="code hl_class" href="class_qt_material_theme.html">QtMaterialTheme</a>)     </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="class_qt_material_theme_private.html#a63f28c47ca713561f89d58a3e858031c">QtMaterialThemePrivate</a>(<a class="code hl_class" href="class_qt_material_theme.html">QtMaterialTheme</a> *q);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="class_qt_material_theme_private.html#a63f28c47ca713561f89d58a3e858031c">~QtMaterialThemePrivate</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    QColor <a class="code hl_function" href="class_qt_material_theme_private.html#ae4e6c168c2b69da4df8231bf15c7dd09">rgba</a>(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> g, <span class="keywordtype">int</span> b, qreal a) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_qt_material_theme_private.html#af64176013db5014d7978680453dc91bd">   56</a></span>    <a class="code hl_class" href="class_qt_material_theme.html">QtMaterialTheme</a> *<span class="keyword">const</span> <a class="code hl_variable" href="class_qt_material_theme_private.html#af64176013db5014d7978680453dc91bd">q_ptr</a>;       </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_qt_material_theme_private.html#a0454d68329d71cb28ad7adeb94f5aa39">   57</a></span>    QHash&lt;QString, QColor&gt; <a class="code hl_variable" href="class_qt_material_theme_private.html#a0454d68329d71cb28ad7adeb94f5aa39">colors</a>;      </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif </span><span class="comment">// QTMATERIALTHEME_P_H</span></div>
+<div class="ttc" id="aclass_qt_material_theme_html"><div class="ttname"><a href="class_qt_material_theme.html">QtMaterialTheme</a></div><div class="ttdoc">Material Design 主题类，继承自 QObject，管理颜色和图标</div><div class="ttdef"><b>定义</b> qtmaterialtheme.h:145</div></div>
+<div class="ttc" id="aclass_qt_material_theme_private_html_a0454d68329d71cb28ad7adeb94f5aa39"><div class="ttname"><a href="class_qt_material_theme_private.html#a0454d68329d71cb28ad7adeb94f5aa39">QtMaterialThemePrivate::colors</a></div><div class="ttdeci">QHash&lt; QString, QColor &gt; colors</div><div class="ttdoc">颜色键值映射</div><div class="ttdef"><b>定义</b> qtmaterialtheme_p.h:57</div></div>
+<div class="ttc" id="aclass_qt_material_theme_private_html_a63f28c47ca713561f89d58a3e858031c"><div class="ttname"><a href="class_qt_material_theme_private.html#a63f28c47ca713561f89d58a3e858031c">QtMaterialThemePrivate::QtMaterialThemePrivate</a></div><div class="ttdeci">QtMaterialThemePrivate(QtMaterialTheme *q)</div><div class="ttdoc">&lt; 禁用拷贝</div><div class="ttdef"><b>定义</b> qtmaterialtheme.cpp:20</div></div>
+<div class="ttc" id="aclass_qt_material_theme_private_html_ae4e6c168c2b69da4df8231bf15c7dd09"><div class="ttname"><a href="class_qt_material_theme_private.html#ae4e6c168c2b69da4df8231bf15c7dd09">QtMaterialThemePrivate::rgba</a></div><div class="ttdeci">QColor rgba(int r, int g, int b, qreal a) const</div><div class="ttdoc">构造 RGBA 颜色</div><div class="ttdef"><b>定义</b> qtmaterialtheme.cpp:40</div></div>
+<div class="ttc" id="aclass_qt_material_theme_private_html_af64176013db5014d7978680453dc91bd"><div class="ttname"><a href="class_qt_material_theme_private.html#af64176013db5014d7978680453dc91bd">QtMaterialThemePrivate::q_ptr</a></div><div class="ttdeci">QtMaterialTheme *const q_ptr</div><div class="ttdoc">指向公共类的指针</div><div class="ttdef"><b>定义</b> qtmaterialtheme_p.h:56</div></div>
+<div class="ttc" id="aqtmaterialtheme__p_8h_html_a8763e143fe5ea4f504ee20145af89474"><div class="ttname"><a href="qtmaterialtheme__p_8h.html#a8763e143fe5ea4f504ee20145af89474">QTMATERIALWIDGET_EXPORT</a></div><div class="ttdeci">#define QTMATERIALWIDGET_EXPORT</div><div class="ttdoc">动态库导出宏，定义库的导出/导入行为</div><div class="ttdef"><b>定义</b> qtmaterialtheme_p.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_b95b73a9da1c57040a996fcdd774df29.html">QtMaterialWidget</a></li><li class="navelem"><a class="el" href="dir_71049d8f42613f939131e1ce53e0d1fd.html">MaterialCommon</a></li><li class="navelem"><a class="el" href="qtmaterialtheme__p_8h.html">qtmaterialtheme_p.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: pattern_formatter-inl.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('pattern__formatter-inl_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">pattern_formatter-inl.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="pattern__formatter_8h_source.html">spdlog/pattern_formatter.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fmt__helper_8h_source.html">spdlog/details/fmt_helper.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="log__msg_8h_source.html">spdlog/details/log_msg.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="details_2os_8h_source.html">spdlog/details/os.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mdc_8h_source.html">spdlog/mdc.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fmt_8h_source.html">spdlog/fmt/fmt.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="formatter_8h_source.html">spdlog/formatter.h</a>&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;cctype&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+pattern_formatter-inl.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pattern__formatter-inl_8h__incl.png" border="0" usemap="#apattern__formatter-inl_8h" alt=""/></div>
+<map name="apattern__formatter-inl_8h" id="apattern__formatter-inl_8h">
+<area shape="rect" title=" " alt="" coords="1183,5,1332,32"/>
+<area shape="rect" href="pattern__formatter_8h.html" title=" " alt="" coords="709,80,883,107"/>
+<area shape="poly" title=" " alt="" coords="1183,34,893,80,892,74,1182,29"/>
+<area shape="rect" title=" " alt="" coords="422,493,474,520"/>
+<area shape="poly" title=" " alt="" coords="1183,24,1046,29,880,39,722,57,658,68,610,83,489,137,442,165,401,197,366,233,335,277,307,331,280,396,273,417,274,426,280,436,306,462,339,481,374,493,407,499,406,504,373,498,336,486,302,467,275,439,269,427,268,417,275,394,302,329,331,275,362,230,398,193,439,161,487,132,608,77,657,63,721,51,879,34,1045,24,1183,19"/>
+<area shape="rect" title=" " alt="" coords="1260,403,1321,429"/>
+<area shape="poly" title=" " alt="" coords="1269,31,1283,53,1295,79,1304,122,1309,166,1311,253,1306,331,1298,388,1293,387,1300,330,1306,253,1304,167,1298,123,1289,81,1279,55,1265,34"/>
+<area shape="rect" title=" " alt="" coords="290,403,358,429"/>
+<area shape="poly" title=" " alt="" coords="1183,25,680,44,435,61,355,71,330,77,319,82,295,116,282,156,277,199,278,242,285,285,294,325,315,387,310,389,289,326,279,286,273,243,271,198,277,155,291,114,316,78,329,72,354,66,434,56,680,39,1183,19"/>
+<area shape="rect" title=" " alt="" coords="265,651,319,677"/>
+<area shape="poly" title=" " alt="" coords="1183,23,972,26,695,35,424,53,312,66,227,83,166,94,111,102,90,110,73,122,62,140,59,167,59,508,64,539,79,566,101,589,129,608,192,636,251,653,250,658,190,641,126,613,98,593,75,569,59,541,53,508,53,166,57,139,69,119,87,105,110,97,165,88,226,77,311,61,423,48,695,30,972,21,1183,18"/>
+<area shape="rect" href="fmt_8h.html" title=" " alt="" coords="1344,403,1461,429"/>
+<area shape="poly" title=" " alt="" coords="1331,30,1388,47,1443,74,1466,92,1485,113,1497,138,1501,166,1501,252,1494,294,1476,333,1452,367,1429,393,1425,390,1448,364,1471,330,1489,293,1496,252,1496,167,1492,140,1480,116,1462,96,1440,78,1386,52,1330,35"/>
+<area shape="rect" title=" " alt="" coords="1644,651,1705,677"/>
+<area shape="poly" title=" " alt="" coords="1332,25,1475,45,1541,60,1587,78,1614,95,1635,113,1649,135,1653,166,1653,508,1659,577,1670,635,1665,636,1654,578,1648,508,1648,167,1644,137,1631,116,1611,100,1584,82,1539,65,1474,50,1332,30"/>
+<area shape="rect" title=" " alt="" coords="510,725,584,752"/>
+<area shape="poly" title=" " alt="" coords="1183,23,923,27,581,37,266,54,153,67,113,74,88,82,55,98,30,114,14,135,8,167,8,590,12,608,23,624,40,638,64,652,125,675,199,694,280,709,360,719,494,732,494,737,360,725,279,714,198,699,123,680,61,657,37,643,19,627,7,610,3,591,3,166,9,133,26,110,52,93,86,78,112,69,152,62,265,49,581,31,923,22,1183,18"/>
+<area shape="rect" title=" " alt="" coords="1536,493,1597,520"/>
+<area shape="poly" title=" " alt="" coords="1332,18,1417,26,1462,36,1505,50,1543,69,1574,94,1595,126,1601,146,1603,167,1603,335,1600,375,1594,414,1578,479,1573,478,1589,413,1595,374,1597,335,1597,167,1595,147,1590,128,1570,97,1540,73,1503,54,1461,41,1416,32,1332,23"/>
+<area shape="rect" href="log__msg_8h.html" title=" " alt="" coords="500,229,622,272"/>
+<area shape="poly" title=" " alt="" coords="1183,27,925,47,793,63,698,83,622,106,594,124,568,156,558,184,558,214,552,214,553,183,563,153,590,120,619,101,697,77,792,58,924,42,1183,22"/>
+<area shape="rect" href="details_2os_8h.html" title=" " alt="" coords="1034,155,1164,181"/>
+<area shape="poly" title=" " alt="" coords="1246,34,1125,146,1122,142,1242,31"/>
+<area shape="rect" title=" " alt="" coords="1072,237,1125,264"/>
+<area shape="poly" title=" " alt="" coords="1264,32,1272,61,1277,100,1275,143,1269,164,1260,183,1235,209,1205,227,1172,239,1141,247,1140,242,1171,234,1202,222,1232,205,1255,180,1264,162,1270,142,1272,100,1267,62,1259,33"/>
+<area shape="rect" href="formatter_8h.html" title=" " alt="" coords="833,155,959,181"/>
+<area shape="poly" title=" " alt="" coords="1228,35,942,151,940,146,1226,30"/>
+<area shape="rect" title=" " alt="" coords="1187,155,1245,181"/>
+<area shape="poly" title=" " alt="" coords="1256,33,1226,140,1221,139,1251,32"/>
+<area shape="rect" href="fmt__helper_8h.html" title=" " alt="" coords="1335,229,1460,272"/>
+<area shape="poly" title=" " alt="" coords="1290,30,1324,50,1354,78,1373,111,1386,147,1398,213,1393,214,1381,149,1368,114,1350,82,1321,54,1287,35"/>
+<area shape="rect" href="mdc_8h.html" title=" " alt="" coords="98,237,198,264"/>
+<area shape="poly" title=" " alt="" coords="1183,23,959,28,673,38,413,55,320,67,268,82,230,112,199,150,176,190,160,224,155,222,171,187,195,147,226,108,265,78,319,62,412,50,673,32,959,22,1183,18"/>
+<area shape="rect" title=" " alt="" coords="1688,80,1738,107"/>
+<area shape="poly" title=" " alt="" coords="1332,25,1488,46,1670,77,1674,78,1673,83,1669,83,1487,51,1332,31"/>
+<area shape="rect" title=" " alt="" coords="1763,80,1824,107"/>
+<area shape="poly" title=" " alt="" coords="1332,23,1517,42,1631,57,1748,77,1747,82,1630,62,1517,47,1332,28"/>
+<area shape="rect" title=" " alt="" coords="1847,80,1905,107"/>
+<area shape="poly" title=" " alt="" coords="1332,21,1553,37,1691,54,1832,77,1831,82,1690,59,1552,43,1332,26"/>
+<area shape="rect" title=" " alt="" coords="1929,80,1986,107"/>
+<area shape="poly" title=" " alt="" coords="1332,19,1443,24,1586,34,1748,51,1914,77,1913,82,1747,57,1586,40,1443,30,1332,25"/>
+<area shape="rect" href="_my_spdlog_2spdlog_2common_8h.html" title=" " alt="" coords="698,320,822,347"/>
+<area shape="poly" title=" " alt="" coords="794,108,780,155,768,236,764,304,758,304,763,235,775,154,789,106"/>
+<area shape="poly" title=" " alt="" coords="799,107,806,142,813,162,823,180,852,203,903,232,1042,301,1249,392,1252,393,1249,398,1247,397,1039,305,900,237,849,207,819,183,808,164,800,143,794,108"/>
+<area shape="poly" title=" " alt="" coords="709,109,637,127,601,140,567,157,528,182,492,211,427,276,376,340,342,391,337,388,372,337,423,273,488,207,525,178,564,152,599,135,636,122,708,104"/>
+<area shape="poly" title=" " alt="" coords="709,106,617,124,568,139,521,157,430,202,394,223,363,247,336,274,312,307,289,347,268,396,258,428,254,461,257,528,269,589,284,636,279,637,264,590,252,529,249,461,253,426,263,394,285,344,307,304,332,271,360,243,391,219,428,197,519,152,566,134,615,119,708,101"/>
+<area shape="poly" title=" " alt="" coords="710,103,677,109,645,120,615,136,589,156,572,184,565,215,560,213,567,182,585,153,612,131,643,115,676,104,708,97"/>
+<area shape="poly" title=" " alt="" coords="850,105,1031,148,1030,153,848,110"/>
+<area shape="poly" title=" " alt="" coords="846,105,907,124,972,152,1029,188,1075,225,1071,229,1025,193,969,157,906,129,845,110"/>
+<area shape="poly" title=" " alt="" coords="815,105,868,143,865,147,812,109"/>
+<area shape="rect" title=" " alt="" coords="598,155,708,181"/>
+<area shape="poly" title=" " alt="" coords="772,110,693,150,691,145,770,105"/>
+<area shape="poly" title=" " alt="" coords="883,102,1016,122,1172,151,1171,157,1015,127,883,108"/>
+<area shape="rect" href="null__mutex_8h.html" title=" " alt="" coords="433,395,559,437"/>
+<area shape="poly" title=" " alt="" coords="720,350,574,394,573,389,718,345"/>
+<area shape="rect" title=" " alt="" coords="498,493,558,520"/>
+<area shape="poly" title=" " alt="" coords="758,348,739,392,723,417,703,439,673,461,639,478,574,499,573,494,637,473,670,456,700,435,719,414,734,390,754,346"/>
+<area shape="rect" href="tweakme_8h.html" title=" " alt="" coords="967,493,1094,520"/>
+<area shape="poly" title=" " alt="" coords="824,342,887,360,919,375,950,393,972,412,991,434,1020,478,1015,481,987,437,968,416,946,397,917,379,885,365,822,347"/>
+<area shape="poly" title=" " alt="" coords="823,341,842,344,957,355,1047,358,1136,367,1249,392,1254,394,1253,399,1247,397,1136,372,1047,364,956,360,841,349,822,347"/>
+<area shape="rect" title=" " alt="" coords="633,403,690,429"/>
+<area shape="poly" title=" " alt="" coords="746,349,690,395,686,391,743,345"/>
+<area shape="rect" title=" " alt="" coords="608,725,685,752"/>
+<area shape="poly" title=" " alt="" coords="760,347,739,438,694,593,658,711,653,709,689,591,733,437,755,346"/>
+<area shape="rect" title=" " alt="" coords="815,403,892,429"/>
+<area shape="poly" title=" " alt="" coords="776,345,829,391,826,395,773,349"/>
+<area shape="rect" title=" " alt="" coords="1017,403,1114,429"/>
+<area shape="poly" title=" " alt="" coords="814,345,999,392,1011,395,1009,400,998,397,813,350"/>
+<area shape="poly" title=" " alt="" coords="698,348,422,397,374,407,373,402,421,392,697,343"/>
+<area shape="poly" title=" " alt="" coords="706,350,662,368,642,381,623,396,611,413,604,429,598,461,593,495,586,512,573,530,546,555,516,578,451,614,388,639,334,656,333,650,386,634,449,609,513,573,542,551,569,526,581,509,588,493,593,461,598,428,606,410,619,393,638,376,660,363,704,345"/>
+<area shape="rect" title=" " alt="" coords="1410,725,1492,752"/>
+<area shape="poly" title=" " alt="" coords="824,345,868,363,888,376,906,393,924,420,932,445,932,505,932,591,933,639,940,657,956,675,989,693,1035,708,1092,718,1156,726,1286,734,1394,735,1394,741,1286,739,1155,731,1091,724,1034,713,986,698,953,679,936,660,928,640,927,591,927,505,926,446,919,422,902,396,885,380,865,367,822,349"/>
+<area shape="poly" title=" " alt="" coords="823,337,1090,362,1231,377,1334,392,1349,396,1348,401,1333,397,1230,382,1089,367,822,342"/>
+<area shape="rect" href="common-inl_8h.html" title=" " alt="" coords="1137,403,1236,429"/>
+<area shape="poly" title=" " alt="" coords="823,343,1114,392,1125,395,1124,400,1113,397,822,348"/>
+<area shape="poly" title=" " alt="" coords="506,437,521,478,516,479,501,439"/>
+<area shape="poly" title=" " alt="" coords="487,439,464,481,460,479,483,436"/>
+<area shape="poly" title=" " alt="" coords="1361,432,1334,440,1107,492,1106,487,1333,435,1360,427"/>
+<area shape="rect" href="core_8h.html" title=" " alt="" coords="1186,485,1318,528"/>
+<area shape="poly" title=" " alt="" coords="1382,432,1302,479,1299,475,1380,428"/>
+<area shape="rect" href="format_8h.html" title=" " alt="" coords="1167,576,1236,603"/>
+<area shape="poly" title=" " alt="" coords="1400,431,1374,478,1355,505,1331,530,1292,556,1252,575,1250,570,1290,551,1328,526,1350,502,1370,475,1395,429"/>
+<area shape="poly" title=" " alt="" coords="1241,530,1220,564,1215,561,1237,527"/>
+<area shape="poly" title=" " alt="" coords="1166,596,334,662,334,657,1166,591"/>
+<area shape="rect" href="base_8h.html" title=" " alt="" coords="1560,651,1621,677"/>
+<area shape="poly" title=" " alt="" coords="1237,595,1546,652,1545,657,1236,600"/>
+<area shape="rect" title=" " alt="" coords="954,725,1011,752"/>
+<area shape="poly" title=" " alt="" coords="1167,597,1111,604,1048,615,991,631,970,641,957,652,951,666,952,681,966,712,961,714,947,682,946,665,953,649,967,637,989,626,1046,610,1110,598,1166,591"/>
+<area shape="rect" title=" " alt="" coords="966,651,1031,677"/>
+<area shape="poly" title=" " alt="" coords="1167,606,1046,649,1044,644,1165,601"/>
+<area shape="rect" title=" " alt="" coords="1055,651,1116,677"/>
+<area shape="poly" title=" " alt="" coords="1183,605,1120,644,1117,640,1180,601"/>
+<area shape="poly" title=" " alt="" coords="1237,591,1403,610,1514,626,1630,648,1629,653,1513,632,1402,615,1236,596"/>
+<area shape="rect" title=" " alt="" coords="1139,651,1192,677"/>
+<area shape="poly" title=" " alt="" coords="1197,604,1181,638,1176,635,1193,602"/>
+<area shape="rect" title=" " alt="" coords="1216,651,1261,677"/>
+<area shape="poly" title=" " alt="" coords="1210,602,1228,636,1223,638,1205,604"/>
+<area shape="rect" title=" " alt="" coords="1285,651,1363,677"/>
+<area shape="poly" title=" " alt="" coords="1224,601,1291,640,1288,645,1221,606"/>
+<area shape="rect" title=" " alt="" coords="1387,651,1485,677"/>
+<area shape="poly" title=" " alt="" coords="1237,599,1381,643,1380,648,1236,604"/>
+<area shape="rect" href="format-inl_8h.html" title=" " alt="" coords="756,651,842,677"/>
+<area shape="poly" title=" " alt="" coords="1167,598,858,652,857,646,1166,593"/>
+<area shape="poly" title=" " alt="" coords="1568,680,1490,720,1488,715,1565,676"/>
+<area shape="rect" title=" " alt="" coords="1516,725,1580,752"/>
+<area shape="poly" title=" " alt="" coords="1586,679,1565,713,1561,711,1581,677"/>
+<area shape="rect" title=" " alt="" coords="1603,725,1664,752"/>
+<area shape="poly" title=" " alt="" coords="1600,677,1621,711,1616,713,1596,679"/>
+<area shape="rect" title=" " alt="" coords="1688,725,1752,752"/>
+<area shape="poly" title=" " alt="" coords="1614,676,1685,715,1683,720,1612,680"/>
+<area shape="poly" title=" " alt="" coords="773,680,688,721,686,716,771,675"/>
+<area shape="poly" title=" " alt="" coords="842,654,872,648,1151,598,1152,603,872,653,843,659"/>
+<area shape="poly" title=" " alt="" coords="832,675,940,718,939,723,830,680"/>
+<area shape="poly" title=" " alt="" coords="756,680,599,725,598,720,755,675"/>
+<area shape="rect" title=" " alt="" coords="710,725,767,752"/>
+<area shape="poly" title=" " alt="" coords="790,680,761,715,756,712,786,676"/>
+<area shape="rect" title=" " alt="" coords="792,725,851,752"/>
+<area shape="poly" title=" " alt="" coords="805,677,815,710,810,711,800,679"/>
+<area shape="rect" title=" " alt="" coords="875,725,930,752"/>
+<area shape="poly" title=" " alt="" coords="818,676,874,714,871,718,815,680"/>
+<area shape="poly" title=" " alt="" coords="1162,405,1137,397,837,348,838,343,1138,392,1164,400"/>
+<area shape="poly" title=" " alt="" coords="1183,431,1155,479,1134,506,1108,530,1060,562,1016,584,974,598,934,607,849,622,800,634,745,653,588,721,586,716,743,648,799,629,848,617,933,602,973,592,1014,579,1057,557,1105,526,1130,503,1151,476,1179,429"/>
+<area shape="poly" title=" " alt="" coords="1224,427,1249,435,1398,470,1521,494,1520,500,1396,475,1247,440,1222,432"/>
+<area shape="poly" title=" " alt="" coords="613,270,716,311,714,316,611,275"/>
+<area shape="poly" title=" " alt="" coords="539,274,483,327,452,360,424,396,383,461,349,528,304,637,299,635,344,526,379,458,419,393,448,357,479,323,535,270"/>
+<area shape="poly" title=" " alt="" coords="1074,184,801,315,799,310,1071,179"/>
+<area shape="poly" title=" " alt="" coords="1101,182,1101,222,1096,222,1096,182"/>
+<area shape="poly" title=" " alt="" coords="915,180,978,221,1061,270,1140,308,1220,342,1354,394,1352,399,1218,347,1138,312,1059,274,976,226,912,184"/>
+<area shape="poly" title=" " alt="" coords="844,185,638,234,637,229,843,179"/>
+<area shape="poly" title=" " alt="" coords="1335,262,838,325,837,320,1335,257"/>
+<area shape="poly" title=" " alt="" coords="1386,274,1309,391,1305,388,1382,271"/>
+<area shape="poly" title=" " alt="" coords="1414,271,1446,325,1463,359,1476,394,1501,472,1517,536,1520,567,1519,600,1512,637,1500,678,1490,698,1477,716,1473,712,1485,695,1495,676,1507,635,1513,600,1515,567,1512,537,1496,474,1471,396,1458,361,1442,328,1409,274"/>
+<area shape="poly" title=" " alt="" coords="1401,273,1404,387,1399,387,1395,273"/>
+<area shape="poly" title=" " alt="" coords="1422,271,1469,318,1497,354,1520,393,1559,477,1554,480,1515,396,1492,357,1465,322,1418,274"/>
+<area shape="poly" title=" " alt="" coords="198,256,683,319,682,325,198,261"/>
+<area shape="poly" title=" " alt="" coords="145,265,123,329,113,371,109,415,109,508,113,534,124,557,140,578,160,597,206,626,252,647,250,651,204,631,157,601,136,582,119,560,108,535,104,508,104,415,108,370,118,327,140,264"/>
+<area shape="rect" title=" " alt="" coords="144,320,190,347"/>
+<area shape="poly" title=" " alt="" coords="154,264,163,305,158,306,148,265"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="pattern__formatter-inl_8h__dep__incl.png" border="0" usemap="#apattern__formatter-inl_8hdep" alt=""/></div>
+<map name="apattern__formatter-inl_8hdep" id="apattern__formatter-inl_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,154,32"/>
+<area shape="rect" href="spdlog_8cpp.html" title=" " alt="" coords="37,80,122,107"/>
+<area shape="poly" title=" " alt="" coords="82,48,82,80,77,80,77,48"/>
+</map>
+</div>
+</div>
+<p><a href="pattern__formatter-inl_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1scoped__padder.html">scoped_padder</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspdlog_1_1details_1_1null__scoped__padder.html">null_scoped_padder</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1name__formatter.html">name_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1level__formatter.html">level_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1short__level__formatter.html">short_level_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1a__formatter.html">a_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_a__formatter.html">A_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1b__formatter.html">b_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_b__formatter.html">B_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1c__formatter.html">c_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_c__formatter.html">C_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_d__formatter.html">D_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_y__formatter.html">Y_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1m__formatter.html">m_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1d__formatter.html">d_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_h__formatter.html">H_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_i__formatter.html">I_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_m__formatter.html">M_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_s__formatter.html">S_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1e__formatter.html">e_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1f__formatter.html">f_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_f__formatter.html">F_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_e__formatter.html">E_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1p__formatter.html">p_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1r__formatter.html">r_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_r__formatter.html">R_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1_t__formatter.html">T_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1z__formatter.html">z_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1t__formatter.html">t_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1pid__formatter.html">pid_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1v__formatter.html">v_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1ch__formatter.html">ch_formatter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1aggregate__formatter.html">aggregate_formatter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1color__start__formatter.html">color_start_formatter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1color__stop__formatter.html">color_stop_formatter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1source__location__formatter.html">source_location_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1source__filename__formatter.html">source_filename_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1short__filename__formatter.html">short_filename_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1source__linenum__formatter.html">source_linenum_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1source__funcname__formatter.html">source_funcname_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1elapsed__formatter.html">elapsed_formatter&lt; ScopedPadder, Units &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1mdc__formatter.html">mdc_formatter&lt; ScopedPadder &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1details_1_1full__formatter.html">full_formatter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html">spdlog</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1details.html">spdlog::details</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ae47656db89df626e180efa55580a8087" id="r_ae47656db89df626e180efa55580a8087"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1details.html#ae47656db89df626e180efa55580a8087">ampm</a> (const tm &amp;t)</td></tr>
+<tr class="separator:ae47656db89df626e180efa55580a8087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6e70d2785114a892d8178aac58f778b" id="r_ae6e70d2785114a892d8178aac58f778b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1details.html#ae6e70d2785114a892d8178aac58f778b">to12h</a> (const tm &amp;t)</td></tr>
+<tr class="separator:ae6e70d2785114a892d8178aac58f778b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:abe292da0b2f161164ec751075c743880" id="r_abe292da0b2f161164ec751075c743880"><td class="memItemLeft" align="right" valign="top">static std::array&lt; const char *, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1details.html#abe292da0b2f161164ec751075c743880">days</a> {{&quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, &quot;Sat&quot;}}</td></tr>
+<tr class="separator:abe292da0b2f161164ec751075c743880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03c13b2d366e569ef483d01eeb7b364" id="r_af03c13b2d366e569ef483d01eeb7b364"><td class="memItemLeft" align="right" valign="top">static std::array&lt; const char *, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1details.html#af03c13b2d366e569ef483d01eeb7b364">full_days</a></td></tr>
+<tr class="separator:af03c13b2d366e569ef483d01eeb7b364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1878261868a088956d6fa8687fa240cf" id="r_a1878261868a088956d6fa8687fa240cf"><td class="memItemLeft" align="right" valign="top">static const std::array&lt; const char *, 12 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1details.html#a1878261868a088956d6fa8687fa240cf">months</a></td></tr>
+<tr class="separator:a1878261868a088956d6fa8687fa240cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a6bddf2da6e0d387e6519992e8f372" id="r_a25a6bddf2da6e0d387e6519992e8f372"><td class="memItemLeft" align="right" valign="top">static const std::array&lt; const char *, 12 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog_1_1details.html#a25a6bddf2da6e0d387e6519992e8f372">full_months</a></td></tr>
+<tr class="separator:a25a6bddf2da6e0d387e6519992e8f372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="pattern__formatter-inl_8h.html">pattern_formatter-inl.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

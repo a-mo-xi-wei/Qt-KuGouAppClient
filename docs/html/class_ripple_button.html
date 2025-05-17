@@ -1,0 +1,813 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: RippleButton类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_ripple_button.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_ripple_button-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">RippleButton类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>带涟漪效果的按钮类，支持阴影和自定义图标  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ripple_button_8h_source.html">RippleButton.h</a>&gt;</code></p>
+<div class="dynheader">
+类 RippleButton 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ripple_button__inherit__graph.png" border="0" usemap="#a_ripple_button_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_ripple_button_inherit__map" id="a_ripple_button_inherit__map">
+<area shape="rect" title="带涟漪效果的按钮类，支持阴影和自定义图标" alt="" coords="5,80,102,107"/>
+<area shape="rect" href="class_q_tool_button.html" title="工具按钮类" alt="" coords="7,5,100,32"/>
+<area shape="poly" title=" " alt="" coords="56,48,56,80,51,80,51,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+RippleButton 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ripple_button__coll__graph.png" border="0" usemap="#a_ripple_button_coll__map" alt="Collaboration graph"/></div>
+<map name="a_ripple_button_coll__map" id="a_ripple_button_coll__map">
+<area shape="rect" title="带涟漪效果的按钮类，支持阴影和自定义图标" alt="" coords="5,80,102,107"/>
+<area shape="rect" href="class_q_tool_button.html" title="工具按钮类" alt="" coords="7,5,100,32"/>
+<area shape="poly" title=" " alt="" coords="56,48,56,80,51,80,51,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a423ac4514b7792c6c143684fe97bc08f" id="r_a423ac4514b7792c6c143684fe97bc08f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a423ac4514b7792c6c143684fe97bc08f">RippleButton</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a423ac4514b7792c6c143684fe97bc08f"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化涟漪按钮  <br /></td></tr>
+<tr class="separator:a423ac4514b7792c6c143684fe97bc08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af23601d05449f933c059946b8d78a521" id="r_af23601d05449f933c059946b8d78a521"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af23601d05449f933c059946b8d78a521">setSpeed</a> (const int &amp;<a class="el" href="#a890e5ca254d538ad609cff0eaccd09f4">timeInterval</a>) const</td></tr>
+<tr class="memdesc:af23601d05449f933c059946b8d78a521"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置涟漪动画速度  <br /></td></tr>
+<tr class="separator:af23601d05449f933c059946b8d78a521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e18b34ea211235a80eeadb450ede32" id="r_a63e18b34ea211235a80eeadb450ede32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63e18b34ea211235a80eeadb450ede32">setFillColor</a> (const QColor &amp;fillcolor)</td></tr>
+<tr class="memdesc:a63e18b34ea211235a80eeadb450ede32"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置涟漪填充颜色  <br /></td></tr>
+<tr class="separator:a63e18b34ea211235a80eeadb450ede32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb9d9932a82956c04a8bc89ec373f8fb" id="r_acb9d9932a82956c04a8bc89ec373f8fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb9d9932a82956c04a8bc89ec373f8fb">setRadius</a> (int radius_)</td></tr>
+<tr class="memdesc:acb9d9932a82956c04a8bc89ec373f8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置圆角半径  <br /></td></tr>
+<tr class="separator:acb9d9932a82956c04a8bc89ec373f8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45458263e79e29c90d37631562838c4" id="r_ac45458263e79e29c90d37631562838c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac45458263e79e29c90d37631562838c4">setMyIcon</a> (const QIcon &amp;ico)</td></tr>
+<tr class="memdesc:ac45458263e79e29c90d37631562838c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置按钮图标  <br /></td></tr>
+<tr class="separator:ac45458263e79e29c90d37631562838c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233480f996ab1f186accecc9a0d76f61" id="r_a233480f996ab1f186accecc9a0d76f61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a233480f996ab1f186accecc9a0d76f61">setEnabled</a> (const bool &amp;<a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>)</td></tr>
+<tr class="memdesc:a233480f996ab1f186accecc9a0d76f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置按钮启用状态  <br /></td></tr>
+<tr class="separator:a233480f996ab1f186accecc9a0d76f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:ae30868492e047dc485c73e92d33a0b1d" id="r_ae30868492e047dc485c73e92d33a0b1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae30868492e047dc485c73e92d33a0b1d">enterEvent</a> (QEnterEvent *event) override</td></tr>
+<tr class="memdesc:ae30868492e047dc485c73e92d33a0b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标进入事件  <br /></td></tr>
+<tr class="separator:ae30868492e047dc485c73e92d33a0b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5389554336d47de8a8249cf2aaf682a2" id="r_a5389554336d47de8a8249cf2aaf682a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5389554336d47de8a8249cf2aaf682a2">leaveEvent</a> (QEvent *event) override</td></tr>
+<tr class="memdesc:a5389554336d47de8a8249cf2aaf682a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标离开事件  <br /></td></tr>
+<tr class="separator:a5389554336d47de8a8249cf2aaf682a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71936647c7e332ab07cbec003a8c9a2" id="r_aa71936647c7e332ab07cbec003a8c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71936647c7e332ab07cbec003a8c9a2">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *event) override</td></tr>
+<tr class="memdesc:aa71936647c7e332ab07cbec003a8c9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制事件  <br /></td></tr>
+<tr class="separator:aa71936647c7e332ab07cbec003a8c9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">大小调整事件  <br /></td></tr>
+<tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a8b39eef2ef506d1398de9a8bf30fa767" id="r_a8b39eef2ef506d1398de9a8bf30fa767"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; QGraphicsDropShadowEffect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b39eef2ef506d1398de9a8bf30fa767">m_effect</a> {}</td></tr>
+<tr class="memdesc:a8b39eef2ef506d1398de9a8bf30fa767"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影效果  <br /></td></tr>
+<tr class="separator:a8b39eef2ef506d1398de9a8bf30fa767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890e5ca254d538ad609cff0eaccd09f4" id="r_a890e5ca254d538ad609cff0eaccd09f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a890e5ca254d538ad609cff0eaccd09f4">timeInterval</a> = 10</td></tr>
+<tr class="memdesc:a890e5ca254d538ad609cff0eaccd09f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">定时器时间间隔（毫秒）  <br /></td></tr>
+<tr class="separator:a890e5ca254d538ad609cff0eaccd09f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8618737610f53b07d3195b29ca62bb51" id="r_a8618737610f53b07d3195b29ca62bb51"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8618737610f53b07d3195b29ca62bb51">mouse_point</a></td></tr>
+<tr class="memdesc:a8618737610f53b07d3195b29ca62bb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标位置  <br /></td></tr>
+<tr class="separator:a8618737610f53b07d3195b29ca62bb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f3267ca73ca79b3a97682c8e0e7d2c" id="r_ae0f3267ca73ca79b3a97682c8e0e7d2c"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0f3267ca73ca79b3a97682c8e0e7d2c">timer</a> = nullptr</td></tr>
+<tr class="memdesc:ae0f3267ca73ca79b3a97682c8e0e7d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">涟漪定时器  <br /></td></tr>
+<tr class="separator:ae0f3267ca73ca79b3a97682c8e0e7d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a75471baeff1d88f32c36796bf16954" id="r_a6a75471baeff1d88f32c36796bf16954"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a75471baeff1d88f32c36796bf16954">checkTimer</a> = nullptr</td></tr>
+<tr class="memdesc:a6a75471baeff1d88f32c36796bf16954"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标检测定时器  <br /></td></tr>
+<tr class="separator:a6a75471baeff1d88f32c36796bf16954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228e8d6b3e797a1b944798c84c0a954b" id="r_a228e8d6b3e797a1b944798c84c0a954b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a228e8d6b3e797a1b944798c84c0a954b">max_radius</a></td></tr>
+<tr class="memdesc:a228e8d6b3e797a1b944798c84c0a954b"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大涟漪半径  <br /></td></tr>
+<tr class="separator:a228e8d6b3e797a1b944798c84c0a954b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395279899207ce7f17adf9fdb8ee97ee" id="r_a395279899207ce7f17adf9fdb8ee97ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a395279899207ce7f17adf9fdb8ee97ee">radius</a> = 0</td></tr>
+<tr class="memdesc:a395279899207ce7f17adf9fdb8ee97ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前涟漪半径  <br /></td></tr>
+<tr class="separator:a395279899207ce7f17adf9fdb8ee97ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324997bf04d5bb59891c038acdcfe6ec" id="r_a324997bf04d5bb59891c038acdcfe6ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a324997bf04d5bb59891c038acdcfe6ec">radius_var</a> = 2</td></tr>
+<tr class="memdesc:a324997bf04d5bb59891c038acdcfe6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">半径变化量  <br /></td></tr>
+<tr class="separator:a324997bf04d5bb59891c038acdcfe6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6afcc447a9bd6e3d3b0597b15f2774de" id="r_a6afcc447a9bd6e3d3b0597b15f2774de"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6afcc447a9bd6e3d3b0597b15f2774de">fill_color</a></td></tr>
+<tr class="memdesc:a6afcc447a9bd6e3d3b0597b15f2774de"><td class="mdescLeft">&#160;</td><td class="mdescRight">填充颜色  <br /></td></tr>
+<tr class="separator:a6afcc447a9bd6e3d3b0597b15f2774de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa504929d29ef8bf8fa6f670388cccfb" id="r_afa504929d29ef8bf8fa6f670388cccfb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa504929d29ef8bf8fa6f670388cccfb">frame_radius</a> = 0</td></tr>
+<tr class="memdesc:afa504929d29ef8bf8fa6f670388cccfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">圆角半径  <br /></td></tr>
+<tr class="separator:afa504929d29ef8bf8fa6f670388cccfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8319a8fef71e73735e472e690eb83ab8" id="r_a8319a8fef71e73735e472e690eb83ab8"><td class="memItemLeft" align="right" valign="top">QIcon&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8319a8fef71e73735e472e690eb83ab8">m_ico</a></td></tr>
+<tr class="memdesc:a8319a8fef71e73735e472e690eb83ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">按钮图标  <br /></td></tr>
+<tr class="separator:a8319a8fef71e73735e472e690eb83ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>带涟漪效果的按钮类，支持阴影和自定义图标 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a423ac4514b7792c6c143684fe97bc08f" name="a423ac4514b7792c6c143684fe97bc08f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423ac4514b7792c6c143684fe97bc08f">&#9670;&#160;</a></span>RippleButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ripple_button.html">RippleButton</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化涟漪按钮 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ae30868492e047dc485c73e92d33a0b1d" name="ae30868492e047dc485c73e92d33a0b1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30868492e047dc485c73e92d33a0b1d">&#9670;&#160;</a></span>enterEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enterEvent </td>
+          <td>(</td>
+          <td class="paramtype">QEnterEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标进入事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>进入事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ripple_button_ae30868492e047dc485c73e92d33a0b1d_cgraph.png" border="0" usemap="#aclass_ripple_button_ae30868492e047dc485c73e92d33a0b1d_cgraph" alt=""/></div>
+<map name="aclass_ripple_button_ae30868492e047dc485c73e92d33a0b1d_cgraph" id="aclass_ripple_button_ae30868492e047dc485c73e92d33a0b1d_cgraph">
+<area shape="rect" title="鼠标进入事件" alt="" coords="5,5,90,32"/>
+<area shape="rect" href="class_ripple_button.html#a5389554336d47de8a8249cf2aaf682a2" title="鼠标离开事件" alt="" coords="138,5,224,32"/>
+<area shape="poly" title=" " alt="" coords="90,16,122,16,122,21,90,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5389554336d47de8a8249cf2aaf682a2" name="a5389554336d47de8a8249cf2aaf682a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5389554336d47de8a8249cf2aaf682a2">&#9670;&#160;</a></span>leaveEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void leaveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>ev</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标离开事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ripple_button_a5389554336d47de8a8249cf2aaf682a2_icgraph.png" border="0" usemap="#aclass_ripple_button_a5389554336d47de8a8249cf2aaf682a2_icgraph" alt=""/></div>
+<map name="aclass_ripple_button_a5389554336d47de8a8249cf2aaf682a2_icgraph" id="aclass_ripple_button_a5389554336d47de8a8249cf2aaf682a2_icgraph">
+<area shape="rect" title="鼠标离开事件" alt="" coords="138,5,224,32"/>
+<area shape="rect" href="class_ripple_button.html#ae30868492e047dc485c73e92d33a0b1d" title="鼠标进入事件" alt="" coords="5,5,90,32"/>
+<area shape="poly" title=" " alt="" coords="122,21,90,21,90,16,122,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa71936647c7e332ab07cbec003a8c9a2" name="aa71936647c7e332ab07cbec003a8c9a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa71936647c7e332ab07cbec003a8c9a2">&#9670;&#160;</a></span>paintEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void paintEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_paint_event.html">QPaintEvent</a> *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绘制事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>绘图事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9a27ed4ceb22d2a19bdb88ed785085a1" name="a9a27ed4ceb22d2a19bdb88ed785085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a27ed4ceb22d2a19bdb88ed785085a1">&#9670;&#160;</a></span>resizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>大小调整事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>大小调整事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a233480f996ab1f186accecc9a0d76f61" name="a233480f996ab1f186accecc9a0d76f61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a233480f996ab1f186accecc9a0d76f61">&#9670;&#160;</a></span>setEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setEnabled </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置按钮启用状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否启用 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a63e18b34ea211235a80eeadb450ede32" name="a63e18b34ea211235a80eeadb450ede32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e18b34ea211235a80eeadb450ede32">&#9670;&#160;</a></span>setFillColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setFillColor </td>
+          <td>(</td>
+          <td class="paramtype">const QColor &amp;</td>          <td class="paramname"><span class="paramname"><em>fillcolor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置涟漪填充颜色 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fillcolor</td><td>填充颜色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ripple_button_a63e18b34ea211235a80eeadb450ede32_icgraph.png" border="0" usemap="#aclass_ripple_button_a63e18b34ea211235a80eeadb450ede32_icgraph" alt=""/></div>
+<map name="aclass_ripple_button_a63e18b34ea211235a80eeadb450ede32_icgraph" id="aclass_ripple_button_a63e18b34ea211235a80eeadb450ede32_icgraph">
+<area shape="rect" title="设置涟漪填充颜色" alt="" coords="427,5,514,32"/>
+<area shape="rect" href="class_about_dialog.html#a589417f264bff3ae9919ac50f8f360a3" title="初始化对话框布局" alt="" coords="225,5,379,32"/>
+<area shape="poly" title=" " alt="" coords="411,21,379,21,379,16,411,16"/>
+<area shape="rect" href="class_about_dialog.html#a1a9553ce8ca226111b5822aa27d3a772" title="构造函数，初始化关于对话框" alt="" coords="5,5,177,32"/>
+<area shape="poly" title=" " alt="" coords="209,21,177,21,177,16,209,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac45458263e79e29c90d37631562838c4" name="ac45458263e79e29c90d37631562838c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45458263e79e29c90d37631562838c4">&#9670;&#160;</a></span>setMyIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setMyIcon </td>
+          <td>(</td>
+          <td class="paramtype">const QIcon &amp;</td>          <td class="paramname"><span class="paramname"><em>ico</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置按钮图标 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ico</td><td>图标 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acb9d9932a82956c04a8bc89ec373f8fb" name="acb9d9932a82956c04a8bc89ec373f8fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9d9932a82956c04a8bc89ec373f8fb">&#9670;&#160;</a></span>setRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setRadius </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>radius_</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置圆角半径 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radius_</td><td>圆角半径 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af23601d05449f933c059946b8d78a521" name="af23601d05449f933c059946b8d78a521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23601d05449f933c059946b8d78a521">&#9670;&#160;</a></span>setSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>timeInterval</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置涟漪动画速度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeInterval</td><td>时间间隔（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a6a75471baeff1d88f32c36796bf16954" name="a6a75471baeff1d88f32c36796bf16954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a75471baeff1d88f32c36796bf16954">&#9670;&#160;</a></span>checkTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* checkTimer = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标检测定时器 </p>
+
+</div>
+</div>
+<a id="a6afcc447a9bd6e3d3b0597b15f2774de" name="a6afcc447a9bd6e3d3b0597b15f2774de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6afcc447a9bd6e3d3b0597b15f2774de">&#9670;&#160;</a></span>fill_color</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor fill_color</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>填充颜色 </p>
+
+</div>
+</div>
+<a id="afa504929d29ef8bf8fa6f670388cccfb" name="afa504929d29ef8bf8fa6f670388cccfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa504929d29ef8bf8fa6f670388cccfb">&#9670;&#160;</a></span>frame_radius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int frame_radius = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>圆角半径 </p>
+
+</div>
+</div>
+<a id="a8b39eef2ef506d1398de9a8bf30fa767" name="a8b39eef2ef506d1398de9a8bf30fa767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b39eef2ef506d1398de9a8bf30fa767">&#9670;&#160;</a></span>m_effect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;QGraphicsDropShadowEffect&gt; m_effect {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>阴影效果 </p>
+
+</div>
+</div>
+<a id="a8319a8fef71e73735e472e690eb83ab8" name="a8319a8fef71e73735e472e690eb83ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8319a8fef71e73735e472e690eb83ab8">&#9670;&#160;</a></span>m_ico</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QIcon m_ico</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>按钮图标 </p>
+
+</div>
+</div>
+<a id="a228e8d6b3e797a1b944798c84c0a954b" name="a228e8d6b3e797a1b944798c84c0a954b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228e8d6b3e797a1b944798c84c0a954b">&#9670;&#160;</a></span>max_radius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int max_radius</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最大涟漪半径 </p>
+
+</div>
+</div>
+<a id="a8618737610f53b07d3195b29ca62bb51" name="a8618737610f53b07d3195b29ca62bb51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8618737610f53b07d3195b29ca62bb51">&#9670;&#160;</a></span>mouse_point</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF mouse_point</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标位置 </p>
+
+</div>
+</div>
+<a id="a395279899207ce7f17adf9fdb8ee97ee" name="a395279899207ce7f17adf9fdb8ee97ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395279899207ce7f17adf9fdb8ee97ee">&#9670;&#160;</a></span>radius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int radius = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前涟漪半径 </p>
+
+</div>
+</div>
+<a id="a324997bf04d5bb59891c038acdcfe6ec" name="a324997bf04d5bb59891c038acdcfe6ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324997bf04d5bb59891c038acdcfe6ec">&#9670;&#160;</a></span>radius_var</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int radius_var = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>半径变化量 </p>
+
+</div>
+</div>
+<a id="a890e5ca254d538ad609cff0eaccd09f4" name="a890e5ca254d538ad609cff0eaccd09f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a890e5ca254d538ad609cff0eaccd09f4">&#9670;&#160;</a></span>timeInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int timeInterval = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>定时器时间间隔（毫秒） </p>
+
+</div>
+</div>
+<a id="ae0f3267ca73ca79b3a97682c8e0e7d2c" name="ae0f3267ca73ca79b3a97682c8e0e7d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f3267ca73ca79b3a97682c8e0e7d2c">&#9670;&#160;</a></span>timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* timer = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>涟漪定时器 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_ripple_button_8h_source.html">RippleButton.h</a></li>
+<li><a class="el" href="_ripple_button_8cpp.html">RippleButton.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_ripple_button.html">RippleButton</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

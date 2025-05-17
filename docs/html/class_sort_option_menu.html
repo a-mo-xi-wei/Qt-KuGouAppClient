@@ -1,0 +1,1129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SortOptionMenu类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_sort_option_menu.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_sort_option_menu-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">SortOptionMenu类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_sort_option_menu_8h_source.html">SortOptionMenu.h</a>&gt;</code></p>
+<div class="dynheader">
+类 SortOptionMenu 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu__inherit__graph.png" border="0" usemap="#a_sort_option_menu_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_sort_option_menu_inherit__map" id="a_sort_option_menu_inherit__map">
+<area shape="rect" title="歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式" alt="" coords="5,155,121,181"/>
+<area shape="rect" href="class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="21,80,105,107"/>
+<area shape="poly" title=" " alt="" coords="66,122,66,154,60,154,60,122"/>
+<area shape="rect" title=" " alt="" coords="31,5,95,32"/>
+<area shape="poly" title=" " alt="" coords="66,48,66,80,60,80,60,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+SortOptionMenu 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu__coll__graph.png" border="0" usemap="#a_sort_option_menu_coll__map" alt="Collaboration graph"/></div>
+<map name="a_sort_option_menu_coll__map" id="a_sort_option_menu_coll__map">
+<area shape="rect" title="歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式" alt="" coords="262,264,377,291"/>
+<area shape="rect" href="class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="198,188,281,215"/>
+<area shape="poly" title=" " alt="" coords="266,223,308,262,304,266,263,227"/>
+<area shape="rect" title=" " alt="" coords="5,81,69,108"/>
+<area shape="poly" title=" " alt="" coords="74,114,165,162,213,185,211,190,162,166,72,118"/>
+<area shape="rect" href="class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="322,81,395,108"/>
+<area shape="poly" title=" " alt="" coords="380,120,385,131,388,148,385,165,374,195,360,223,332,265,327,262,355,220,369,193,380,163,383,148,380,133,375,122"/>
+<area shape="poly" title=" " alt="" coords="327,119,307,134,253,190,250,186,304,130,324,115"/>
+<area shape="rect" href="class_q_tool_button.html" title="工具按钮类" alt="" coords="312,5,405,32"/>
+<area shape="poly" title=" " alt="" coords="361,47,361,81,356,81,356,47"/>
+<area shape="rect" href="class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="93,81,256,108"/>
+<area shape="poly" title=" " alt="" coords="172,123,172,144,179,163,190,176,205,185,202,190,187,180,174,165,167,145,167,124"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:aa84baa4d0eb43cb69e26d5f6ec6f309e" id="r_aa84baa4d0eb43cb69e26d5f6ec6f309e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa84baa4d0eb43cb69e26d5f6ec6f309e">selected</a> ()</td></tr>
+<tr class="memdesc:aa84baa4d0eb43cb69e26d5f6ec6f309e"><td class="mdescLeft">&#160;</td><td class="mdescRight">排序选项被选中信号  <br /></td></tr>
+<tr class="separator:aa84baa4d0eb43cb69e26d5f6ec6f309e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c913426d14d66f6b05ac86d5cf6c33" id="r_af7c913426d14d66f6b05ac86d5cf6c33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7c913426d14d66f6b05ac86d5cf6c33">deselected</a> ()</td></tr>
+<tr class="memdesc:af7c913426d14d66f6b05ac86d5cf6c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">取消选中排序选项信号  <br /></td></tr>
+<tr class="separator:af7c913426d14d66f6b05ac86d5cf6c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b2ddb2183eedf2bb2cc554dbe628fe" id="r_a50b2ddb2183eedf2bb2cc554dbe628fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50b2ddb2183eedf2bb2cc554dbe628fe">defaultSort</a> (const bool &amp;down=true)</td></tr>
+<tr class="memdesc:a50b2ddb2183eedf2bb2cc554dbe628fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认排序信号  <br /></td></tr>
+<tr class="separator:a50b2ddb2183eedf2bb2cc554dbe628fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a93505e41ee4916658fff3343f5f8b" id="r_a62a93505e41ee4916658fff3343f5f8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62a93505e41ee4916658fff3343f5f8b">addTimeSort</a> (const bool &amp;down=true)</td></tr>
+<tr class="memdesc:a62a93505e41ee4916658fff3343f5f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加时间排序信号  <br /></td></tr>
+<tr class="separator:a62a93505e41ee4916658fff3343f5f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab3a5460c247a8f4ae3fa7e964c620e" id="r_aaab3a5460c247a8f4ae3fa7e964c620e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaab3a5460c247a8f4ae3fa7e964c620e">songNameSort</a> (const bool &amp;down=true)</td></tr>
+<tr class="memdesc:aaab3a5460c247a8f4ae3fa7e964c620e"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌曲名排序信号  <br /></td></tr>
+<tr class="separator:aaab3a5460c247a8f4ae3fa7e964c620e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dfbd3ceedab5c9e1c73fcdd16f3681f" id="r_a8dfbd3ceedab5c9e1c73fcdd16f3681f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dfbd3ceedab5c9e1c73fcdd16f3681f">singerSort</a> (const bool &amp;down=true)</td></tr>
+<tr class="memdesc:a8dfbd3ceedab5c9e1c73fcdd16f3681f"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌手排序信号  <br /></td></tr>
+<tr class="separator:a8dfbd3ceedab5c9e1c73fcdd16f3681f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee8df6b69f3b5a4a9426ce1e767c730" id="r_aeee8df6b69f3b5a4a9426ce1e767c730"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeee8df6b69f3b5a4a9426ce1e767c730">durationSort</a> (const bool &amp;down=true)</td></tr>
+<tr class="memdesc:aeee8df6b69f3b5a4a9426ce1e767c730"><td class="mdescLeft">&#160;</td><td class="mdescRight">时长排序信号  <br /></td></tr>
+<tr class="separator:aeee8df6b69f3b5a4a9426ce1e767c730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4005719fb6fb6bc4f13d0ae2cb46c120" id="r_a4005719fb6fb6bc4f13d0ae2cb46c120"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4005719fb6fb6bc4f13d0ae2cb46c120">playCountSort</a> (const bool &amp;down=true)</td></tr>
+<tr class="memdesc:a4005719fb6fb6bc4f13d0ae2cb46c120"><td class="mdescLeft">&#160;</td><td class="mdescRight">播放次数排序信号  <br /></td></tr>
+<tr class="separator:a4005719fb6fb6bc4f13d0ae2cb46c120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625ed9da15048536d4e71ca307a90a13" id="r_a625ed9da15048536d4e71ca307a90a13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a625ed9da15048536d4e71ca307a90a13">randomSort</a> ()</td></tr>
+<tr class="memdesc:a625ed9da15048536d4e71ca307a90a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">随机排序信号  <br /></td></tr>
+<tr class="separator:a625ed9da15048536d4e71ca307a90a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aef8d5f2cd6f15b98a52995507af6a09d" id="r_aef8d5f2cd6f15b98a52995507af6a09d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef8d5f2cd6f15b98a52995507af6a09d">SortOptionMenu</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aef8d5f2cd6f15b98a52995507af6a09d"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化歌曲排序选项菜单  <br /></td></tr>
+<tr class="separator:aef8d5f2cd6f15b98a52995507af6a09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdbab2b6bba567c8af2f4d009dee68f2" id="r_abdbab2b6bba567c8af2f4d009dee68f2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sort_option_menu.html">SortOptionMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdbab2b6bba567c8af2f4d009dee68f2">getMenu</a> () const override</td></tr>
+<tr class="memdesc:abdbab2b6bba567c8af2f4d009dee68f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前菜单对象  <br /></td></tr>
+<tr class="separator:abdbab2b6bba567c8af2f4d009dee68f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b45abf428270b1d7e17309e9fc6fe1f" id="r_a9b45abf428270b1d7e17309e9fc6fe1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b45abf428270b1d7e17309e9fc6fe1f">initMenu</a> () override</td></tr>
+<tr class="memdesc:a9b45abf428270b1d7e17309e9fc6fe1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化菜单布局和内容  <br /></td></tr>
+<tr class="separator:a9b45abf428270b1d7e17309e9fc6fe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1507cb9c4a111517eece7870c5b0a93c" id="r_a1507cb9c4a111517eece7870c5b0a93c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1507cb9c4a111517eece7870c5b0a93c">btnClickAgain</a> () const</td></tr>
+<tr class="memdesc:a1507cb9c4a111517eece7870c5b0a93c"><td class="mdescLeft">&#160;</td><td class="mdescRight">再次触发当前排序按钮的点击事件  <br /></td></tr>
+<tr class="separator:a1507cb9c4a111517eece7870c5b0a93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_base_menu"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_base_menu')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_base_menu.html">BaseMenu</a></td></tr>
+<tr class="memitem:a3a0d91e21b7d2540477767ff01fbb6d2 inherit pub_methods_class_base_menu" id="r_a3a0d91e21b7d2540477767ff01fbb6d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a3a0d91e21b7d2540477767ff01fbb6d2">BaseMenu</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a3a0d91e21b7d2540477767ff01fbb6d2 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化菜单基类  <br /></td></tr>
+<tr class="separator:a3a0d91e21b7d2540477767ff01fbb6d2 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f572210c0537c199da461e9f8a2b26 inherit pub_methods_class_base_menu" id="r_a06f572210c0537c199da461e9f8a2b26"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a06f572210c0537c199da461e9f8a2b26">~BaseMenu</a> ()=default</td></tr>
+<tr class="memdesc:a06f572210c0537c199da461e9f8a2b26 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚析构函数，确保子类正确释放资源  <br /></td></tr>
+<tr class="separator:a06f572210c0537c199da461e9f8a2b26 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9903a190a739c31d2ef1015ce6449d4 inherit pub_methods_class_base_menu" id="r_af9903a190a739c31d2ef1015ce6449d4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#af9903a190a739c31d2ef1015ce6449d4">setShadow</a> (const int &amp;width, const int &amp;radius, const QColor &amp;<a class="el" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>)</td></tr>
+<tr class="memdesc:af9903a190a739c31d2ef1015ce6449d4 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚函数，设置菜单阴影效果，由子类实现  <br /></td></tr>
+<tr class="separator:af9903a190a739c31d2ef1015ce6449d4 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f28fa1b55bfe338cbef533b0c6cb05e inherit pub_methods_class_base_menu" id="r_a8f28fa1b55bfe338cbef533b0c6cb05e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a8f28fa1b55bfe338cbef533b0c6cb05e">setCurIndex</a> (const int &amp;<a class="el" href="_listen_recommend_8cpp.html#ac224fdf2f3f2f3554c76c23f3e6e7002">idx</a>)</td></tr>
+<tr class="memdesc:a8f28fa1b55bfe338cbef533b0c6cb05e inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前响应项的索引  <br /></td></tr>
+<tr class="separator:a8f28fa1b55bfe338cbef533b0c6cb05e inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1983a13e703a9f25be56824d2cb75e65 inherit pub_methods_class_base_menu" id="r_a1983a13e703a9f25be56824d2cb75e65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a1983a13e703a9f25be56824d2cb75e65">setAniDuration</a> (const int &amp;duration)</td></tr>
+<tr class="memdesc:a1983a13e703a9f25be56824d2cb75e65 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置动画持续时间  <br /></td></tr>
+<tr class="separator:a1983a13e703a9f25be56824d2cb75e65 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d74c0c0f9c690c86f420dd260998f4 inherit pub_methods_class_base_menu" id="r_ac4d74c0c0f9c690c86f420dd260998f4"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#ac4d74c0c0f9c690c86f420dd260998f4">getStyleSheet</a> () const</td></tr>
+<tr class="memdesc:ac4d74c0c0f9c690c86f420dd260998f4 inherit pub_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前样式表内容  <br /></td></tr>
+<tr class="separator:ac4d74c0c0f9c690c86f420dd260998f4 inherit pub_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aae699596e90c09db04bfb0d1bf3d1c68" id="r_aae699596e90c09db04bfb0d1bf3d1c68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_menu_btn.html">MenuBtn</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae699596e90c09db04bfb0d1bf3d1c68">m_sortBtn</a> {}</td></tr>
+<tr class="memdesc:aae699596e90c09db04bfb0d1bf3d1c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">记录当前选中的排序按钮  <br /></td></tr>
+<tr class="separator:aae699596e90c09db04bfb0d1bf3d1c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_methods_class_base_menu"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_base_menu')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="class_base_menu.html">BaseMenu</a></td></tr>
+<tr class="memitem:acfc6fff50c1204fe16b92864e747d8d4 inherit pro_methods_class_base_menu" id="r_acfc6fff50c1204fe16b92864e747d8d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#acfc6fff50c1204fe16b92864e747d8d4">checkHover</a> ()</td></tr>
+<tr class="memdesc:acfc6fff50c1204fe16b92864e747d8d4 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查并更新悬停状态  <br /></td></tr>
+<tr class="separator:acfc6fff50c1204fe16b92864e747d8d4 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8580224ed89d3bcfc43f78229ab7c238 inherit pro_methods_class_base_menu" id="r_a8580224ed89d3bcfc43f78229ab7c238"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a8580224ed89d3bcfc43f78229ab7c238">checkSelection</a> () const</td></tr>
+<tr class="memdesc:a8580224ed89d3bcfc43f78229ab7c238 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查并更新选中状态  <br /></td></tr>
+<tr class="separator:a8580224ed89d3bcfc43f78229ab7c238 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71936647c7e332ab07cbec003a8c9a2 inherit pro_methods_class_base_menu" id="r_aa71936647c7e332ab07cbec003a8c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#aa71936647c7e332ab07cbec003a8c9a2">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *event) override</td></tr>
+<tr class="memdesc:aa71936647c7e332ab07cbec003a8c9a2 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写绘制事件，绘制自定义阴影效果  <br /></td></tr>
+<tr class="separator:aa71936647c7e332ab07cbec003a8c9a2 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26eb1890b4d4dfb7bf76fb7c44cbdebf inherit pro_methods_class_base_menu" id="r_a26eb1890b4d4dfb7bf76fb7c44cbdebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">showEvent</a> (QShowEvent *event) override</td></tr>
+<tr class="memdesc:a26eb1890b4d4dfb7bf76fb7c44cbdebf inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写显示事件，触发显示动画  <br /></td></tr>
+<tr class="separator:a26eb1890b4d4dfb7bf76fb7c44cbdebf inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5389554336d47de8a8249cf2aaf682a2 inherit pro_methods_class_base_menu" id="r_a5389554336d47de8a8249cf2aaf682a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a5389554336d47de8a8249cf2aaf682a2">leaveEvent</a> (QEvent *event) override</td></tr>
+<tr class="memdesc:a5389554336d47de8a8249cf2aaf682a2 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写离开事件，清理悬停状态  <br /></td></tr>
+<tr class="separator:a5389554336d47de8a8249cf2aaf682a2 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0055987cd1c7f3d399f90c0e126e38d8 inherit pro_methods_class_base_menu" id="r_a0055987cd1c7f3d399f90c0e126e38d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a0055987cd1c7f3d399f90c0e126e38d8">connectAction</a> (const QWidgetAction *widgetAction, <a class="el" href="class_menu_btn.html">MenuBtn</a> *btn)</td></tr>
+<tr class="memdesc:a0055987cd1c7f3d399f90c0e126e38d8 inherit pro_methods_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">连接 QWidgetAction 的悬停事件到按钮  <br /></td></tr>
+<tr class="separator:a0055987cd1c7f3d399f90c0e126e38d8 inherit pro_methods_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_base_menu"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_base_menu')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="class_base_menu.html">BaseMenu</a></td></tr>
+<tr class="memitem:a75e8dd7c4a918cabf601c29bb6ee980a inherit pro_attribs_class_base_menu" id="r_a75e8dd7c4a918cabf601c29bb6ee980a"><td class="memItemLeft" align="right" valign="top">QVector&lt; QWidget * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a75e8dd7c4a918cabf601c29bb6ee980a">m_lastHover</a> {}</td></tr>
+<tr class="memdesc:a75e8dd7c4a918cabf601c29bb6ee980a inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次悬停的控件列表  <br /></td></tr>
+<tr class="separator:a75e8dd7c4a918cabf601c29bb6ee980a inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc62377ce940a77d583e4fb4d2bd228 inherit pro_attribs_class_base_menu" id="r_a0fc62377ce940a77d583e4fb4d2bd228"><td class="memItemLeft" align="right" valign="top">QVector&lt; QWidget * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a0fc62377ce940a77d583e4fb4d2bd228">m_currentHover</a> {}</td></tr>
+<tr class="memdesc:a0fc62377ce940a77d583e4fb4d2bd228 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前悬停的控件列表  <br /></td></tr>
+<tr class="separator:a0fc62377ce940a77d583e4fb4d2bd228 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce1d8a2939b608c07d6e186f57cad32 inherit pro_attribs_class_base_menu" id="r_a9ce1d8a2939b608c07d6e186f57cad32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_menu_btn.html">MenuBtn</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a9ce1d8a2939b608c07d6e186f57cad32">m_lastSelect</a> {}</td></tr>
+<tr class="memdesc:a9ce1d8a2939b608c07d6e186f57cad32 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次选中的按钮  <br /></td></tr>
+<tr class="separator:a9ce1d8a2939b608c07d6e186f57cad32 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead7b72cd42d004f3952b9eb59efcbb1 inherit pro_attribs_class_base_menu" id="r_aead7b72cd42d004f3952b9eb59efcbb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_menu_btn.html">MenuBtn</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#aead7b72cd42d004f3952b9eb59efcbb1">m_curSelect</a> {}</td></tr>
+<tr class="memdesc:aead7b72cd42d004f3952b9eb59efcbb1 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前选中的按钮  <br /></td></tr>
+<tr class="separator:aead7b72cd42d004f3952b9eb59efcbb1 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e21618e9a7c59b2c14007262fe90026 inherit pro_attribs_class_base_menu" id="r_a3e21618e9a7c59b2c14007262fe90026"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a3e21618e9a7c59b2c14007262fe90026">m_curIndex</a> = -1</td></tr>
+<tr class="memdesc:a3e21618e9a7c59b2c14007262fe90026 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前响应项的索引  <br /></td></tr>
+<tr class="separator:a3e21618e9a7c59b2c14007262fe90026 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd567e2f1623bc0dd6ce97c5111da33 inherit pro_attribs_class_base_menu" id="r_a7cd567e2f1623bc0dd6ce97c5111da33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a7cd567e2f1623bc0dd6ce97c5111da33">m_shadowWidth</a> = 4</td></tr>
+<tr class="memdesc:a7cd567e2f1623bc0dd6ce97c5111da33 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影宽度  <br /></td></tr>
+<tr class="separator:a7cd567e2f1623bc0dd6ce97c5111da33 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a734487db30a91b190c3e011c4b543070 inherit pro_attribs_class_base_menu" id="r_a734487db30a91b190c3e011c4b543070"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a734487db30a91b190c3e011c4b543070">m_shadowRadius</a> = 12</td></tr>
+<tr class="memdesc:a734487db30a91b190c3e011c4b543070 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影圆角半径  <br /></td></tr>
+<tr class="separator:a734487db30a91b190c3e011c4b543070 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253cccdefffeefb38759ae552cb8f2d7 inherit pro_attribs_class_base_menu" id="r_a253cccdefffeefb38759ae552cb8f2d7"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a253cccdefffeefb38759ae552cb8f2d7">m_shadowColor</a> = QColor(150, 150, 150, 55)</td></tr>
+<tr class="memdesc:a253cccdefffeefb38759ae552cb8f2d7 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影颜色  <br /></td></tr>
+<tr class="separator:a253cccdefffeefb38759ae552cb8f2d7 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5bf530776bae5de3b08a49860bb6ab1 inherit pro_attribs_class_base_menu" id="r_ad5bf530776bae5de3b08a49860bb6ab1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_graphics_opacity_effect.html">QGraphicsOpacityEffect</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#ad5bf530776bae5de3b08a49860bb6ab1">m_opacityEffect</a> {}</td></tr>
+<tr class="memdesc:ad5bf530776bae5de3b08a49860bb6ab1 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">透明度效果  <br /></td></tr>
+<tr class="separator:ad5bf530776bae5de3b08a49860bb6ab1 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fa0993734f584ba9584b75917aa4258 inherit pro_attribs_class_base_menu" id="r_a0fa0993734f584ba9584b75917aa4258"><td class="memItemLeft" align="right" valign="top">QTimeLine *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_menu.html#a0fa0993734f584ba9584b75917aa4258">m_timeLine</a> {}</td></tr>
+<tr class="memdesc:a0fa0993734f584ba9584b75917aa4258 inherit pro_attribs_class_base_menu"><td class="mdescLeft">&#160;</td><td class="mdescRight">动画时间线  <br /></td></tr>
+<tr class="separator:a0fa0993734f584ba9584b75917aa4258 inherit pro_attribs_class_base_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aef8d5f2cd6f15b98a52995507af6a09d" name="aef8d5f2cd6f15b98a52995507af6a09d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8d5f2cd6f15b98a52995507af6a09d">&#9670;&#160;</a></span>SortOptionMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sort_option_menu.html">SortOptionMenu</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化歌曲排序选项菜单 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置动画持续时间为 100 毫秒</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_aef8d5f2cd6f15b98a52995507af6a09d_cgraph.png" border="0" usemap="#aclass_sort_option_menu_aef8d5f2cd6f15b98a52995507af6a09d_cgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_aef8d5f2cd6f15b98a52995507af6a09d_cgraph" id="aclass_sort_option_menu_aef8d5f2cd6f15b98a52995507af6a09d_cgraph">
+<area shape="rect" title="构造函数，初始化歌曲排序选项菜单" alt="" coords="5,31,121,57"/>
+<area shape="rect" href="class_base_menu.html#a3a0d91e21b7d2540477767ff01fbb6d2" title="构造函数，初始化菜单基类" alt="" coords="181,5,334,32"/>
+<area shape="poly" title=" " alt="" coords="121,34,165,28,166,33,122,39"/>
+<area shape="rect" href="class_base_menu.html#a1983a13e703a9f25be56824d2cb75e65" title="设置动画持续时间" alt="" coords="169,56,346,83"/>
+<area shape="poly" title=" " alt="" coords="122,49,154,53,153,58,121,54"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_aef8d5f2cd6f15b98a52995507af6a09d_icgraph.png" border="0" usemap="#aclass_sort_option_menu_aef8d5f2cd6f15b98a52995507af6a09d_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_aef8d5f2cd6f15b98a52995507af6a09d_icgraph" id="aclass_sort_option_menu_aef8d5f2cd6f15b98a52995507af6a09d_icgraph">
+<area shape="rect" title="构造函数，初始化歌曲排序选项菜单" alt="" coords="125,5,240,32"/>
+<area shape="rect" href="class_sort_option_menu.html#abdbab2b6bba567c8af2f4d009dee68f2" title="获取当前菜单对象" alt="" coords="5,5,77,32"/>
+<area shape="poly" title=" " alt="" coords="109,21,77,21,77,16,109,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a62a93505e41ee4916658fff3343f5f8b" name="a62a93505e41ee4916658fff3343f5f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a93505e41ee4916658fff3343f5f8b">&#9670;&#160;</a></span>addTimeSort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addTimeSort </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>down</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>添加时间排序信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">down</td><td>是否降序，默认为 true </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_a62a93505e41ee4916658fff3343f5f8b_icgraph.png" border="0" usemap="#aclass_sort_option_menu_a62a93505e41ee4916658fff3343f5f8b_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_a62a93505e41ee4916658fff3343f5f8b_icgraph" id="aclass_sort_option_menu_a62a93505e41ee4916658fff3343f5f8b_icgraph">
+<area shape="rect" title="添加时间排序信号" alt="" coords="496,228,591,255"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="332,51,402,77"/>
+<area shape="poly" title=" " alt="" coords="530,215,498,152,475,120,446,91,425,79,402,72,404,67,427,74,450,87,479,116,503,150,534,212"/>
+<area shape="rect" href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="313,101,422,128"/>
+<area shape="poly" title=" " alt="" coords="522,217,489,178,447,142,421,130,424,125,449,138,493,175,526,214"/>
+<area shape="rect" href="class_downloaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="287,152,448,179"/>
+<area shape="poly" title=" " alt="" coords="505,222,447,193,416,182,418,177,449,188,508,218"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,203,428,229"/>
+<area shape="poly" title=" " alt="" coords="480,235,428,227,429,222,481,230"/>
+<area shape="rect" href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,253,428,280"/>
+<area shape="poly" title=" " alt="" coords="481,253,429,261,428,255,480,248"/>
+<area shape="rect" href="class_recently_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="298,313,437,356"/>
+<area shape="poly" title=" " alt="" coords="504,265,410,315,408,311,502,260"/>
+<area shape="rect" href="class_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="305,397,430,424"/>
+<area shape="poly" title=" " alt="" coords="530,269,496,319,450,370,427,386,403,399,401,394,424,382,446,366,492,316,525,266"/>
+<area shape="rect" href="class_uploaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="295,484,440,511"/>
+<area shape="poly" title=" " alt="" coords="536,271,504,350,479,395,450,438,422,465,393,486,390,481,419,461,446,434,475,392,499,347,531,269"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="57,29,187,56"/>
+<area shape="poly" title=" " alt="" coords="304,98,286,92,238,71,186,57,187,52,240,65,288,87,306,93"/>
+<area shape="poly" title=" " alt="" coords="165,17,150,10,122,8,96,10,82,15,79,20,85,27,81,31,73,21,79,11,95,5,122,3,152,5,167,12"/>
+<area shape="rect" href="class_downloaded_song.html#a0d6c6f718b19ebb36aa3fb057fa5484a" title="构造函数，初始化已下载歌曲界面" alt="" coords="5,104,239,131"/>
+<area shape="poly" title=" " alt="" coords="280,151,193,134,194,129,281,146"/>
+<area shape="poly" title=" " alt="" coords="165,92,150,85,122,83,96,85,82,89,79,95,85,102,81,105,73,95,79,85,95,79,122,77,152,80,167,87"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="46,179,198,205"/>
+<area shape="poly" title=" " alt="" coords="291,211,198,202,198,197,292,206"/>
+<area shape="poly" title=" " alt="" coords="165,166,150,160,122,157,96,159,82,164,79,169,85,177,81,180,73,170,79,160,95,154,122,152,152,155,167,161"/>
+<area shape="rect" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7" title="构造函数，初始化付费单曲界面" alt="" coords="45,253,199,280"/>
+<area shape="poly" title=" " alt="" coords="291,269,199,269,199,264,291,264"/>
+<area shape="poly" title=" " alt="" coords="165,241,150,234,122,232,96,234,82,239,79,244,85,251,81,255,73,245,79,235,95,229,122,227,152,229,167,236"/>
+<area shape="rect" href="class_recently_single_song.html#a20d33c201251386bf7c763539b1a7b77" title="构造函数，初始化最近单曲界面" alt="" coords="48,328,196,371"/>
+<area shape="poly" title=" " alt="" coords="282,342,196,348,196,342,282,337"/>
+<area shape="poly" title=" " alt="" coords="162,315,147,309,122,307,99,309,84,313,79,319,81,327,76,328,74,318,82,309,98,303,122,301,148,304,164,310"/>
+<area shape="rect" href="class_single_song.html#ad7977a8c90045e89a96dc208453a2dc0" title="构造函数，初始化单曲界面" alt="" coords="41,419,203,445"/>
+<area shape="poly" title=" " alt="" coords="289,420,203,428,203,422,289,415"/>
+<area shape="poly" title=" " alt="" coords="165,406,150,400,122,397,96,399,82,404,79,409,85,417,81,420,73,410,79,400,95,394,122,392,152,395,167,401"/>
+<area shape="rect" href="class_uploaded_song.html#a68c3e94d45bdc264ffa53ca8aae8b431" title="构造函数，初始化已上传歌曲界面" alt="" coords="22,493,222,520"/>
+<area shape="poly" title=" " alt="" coords="279,503,222,506,222,500,279,498"/>
+<area shape="poly" title=" " alt="" coords="165,481,150,474,122,472,96,474,82,479,79,484,85,491,81,495,73,485,79,475,95,469,122,467,152,469,167,476"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1507cb9c4a111517eece7870c5b0a93c" name="a1507cb9c4a111517eece7870c5b0a93c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1507cb9c4a111517eece7870c5b0a93c">&#9670;&#160;</a></span>btnClickAgain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void btnClickAgain </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>再次触发当前排序按钮的点击事件 </p>
+<p>&lt; 触发当前排序按钮的点击信号</p>
+
+</div>
+</div>
+<a id="a50b2ddb2183eedf2bb2cc554dbe628fe" name="a50b2ddb2183eedf2bb2cc554dbe628fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b2ddb2183eedf2bb2cc554dbe628fe">&#9670;&#160;</a></span>defaultSort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void defaultSort </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>down</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认排序信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">down</td><td>是否降序，默认为 true </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_a50b2ddb2183eedf2bb2cc554dbe628fe_icgraph.png" border="0" usemap="#aclass_sort_option_menu_a50b2ddb2183eedf2bb2cc554dbe628fe_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_a50b2ddb2183eedf2bb2cc554dbe628fe_icgraph" id="aclass_sort_option_menu_a50b2ddb2183eedf2bb2cc554dbe628fe_icgraph">
+<area shape="rect" title="默认排序信号" alt="" coords="496,228,580,255"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="332,51,402,77"/>
+<area shape="poly" title=" " alt="" coords="525,215,496,152,474,119,446,91,425,79,402,72,404,67,427,74,450,87,478,116,501,150,530,212"/>
+<area shape="rect" href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="313,101,422,128"/>
+<area shape="poly" title=" " alt="" coords="518,217,487,178,447,142,421,130,424,125,449,138,491,175,522,214"/>
+<area shape="rect" href="class_downloaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="287,152,448,179"/>
+<area shape="poly" title=" " alt="" coords="502,222,447,193,417,182,419,177,449,188,504,217"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,203,428,229"/>
+<area shape="poly" title=" " alt="" coords="480,236,427,228,428,222,481,230"/>
+<area shape="rect" href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,253,428,280"/>
+<area shape="poly" title=" " alt="" coords="481,252,429,260,428,255,480,247"/>
+<area shape="rect" href="class_recently_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="298,313,437,356"/>
+<area shape="poly" title=" " alt="" coords="501,265,449,294,411,315,409,310,447,290,498,260"/>
+<area shape="rect" href="class_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="305,397,430,424"/>
+<area shape="poly" title=" " alt="" coords="525,270,494,319,473,346,450,370,427,386,404,399,401,394,424,382,446,366,469,342,490,316,521,267"/>
+<area shape="rect" href="class_uploaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="295,484,440,511"/>
+<area shape="poly" title=" " alt="" coords="531,271,502,350,479,395,450,438,423,465,394,486,391,481,419,461,446,434,474,392,497,347,526,269"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="57,29,187,56"/>
+<area shape="poly" title=" " alt="" coords="304,98,286,92,238,71,186,57,187,52,240,65,288,87,306,93"/>
+<area shape="poly" title=" " alt="" coords="165,17,150,10,122,8,96,10,82,15,79,20,85,27,81,31,73,21,79,11,95,5,122,3,152,5,167,12"/>
+<area shape="rect" href="class_downloaded_song.html#a0d6c6f718b19ebb36aa3fb057fa5484a" title="构造函数，初始化已下载歌曲界面" alt="" coords="5,104,239,131"/>
+<area shape="poly" title=" " alt="" coords="280,151,193,134,194,129,281,146"/>
+<area shape="poly" title=" " alt="" coords="165,92,150,85,122,83,96,85,82,89,79,95,85,102,81,105,73,95,79,85,95,79,122,77,152,80,167,87"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="46,179,198,205"/>
+<area shape="poly" title=" " alt="" coords="291,211,198,202,198,197,292,206"/>
+<area shape="poly" title=" " alt="" coords="165,166,150,160,122,157,96,159,82,164,79,169,85,177,81,180,73,170,79,160,95,154,122,152,152,155,167,161"/>
+<area shape="rect" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7" title="构造函数，初始化付费单曲界面" alt="" coords="45,253,199,280"/>
+<area shape="poly" title=" " alt="" coords="291,269,199,269,199,264,291,264"/>
+<area shape="poly" title=" " alt="" coords="165,241,150,234,122,232,96,234,82,239,79,244,85,251,81,255,73,245,79,235,95,229,122,227,152,229,167,236"/>
+<area shape="rect" href="class_recently_single_song.html#a20d33c201251386bf7c763539b1a7b77" title="构造函数，初始化最近单曲界面" alt="" coords="48,328,196,371"/>
+<area shape="poly" title=" " alt="" coords="282,342,196,348,196,342,282,337"/>
+<area shape="poly" title=" " alt="" coords="162,315,147,309,122,307,99,309,84,313,79,319,81,327,76,328,74,318,82,309,98,303,122,301,148,304,164,310"/>
+<area shape="rect" href="class_single_song.html#ad7977a8c90045e89a96dc208453a2dc0" title="构造函数，初始化单曲界面" alt="" coords="41,419,203,445"/>
+<area shape="poly" title=" " alt="" coords="289,420,203,428,203,422,289,415"/>
+<area shape="poly" title=" " alt="" coords="165,406,150,400,122,397,96,399,82,404,79,409,85,417,81,420,73,410,79,400,95,394,122,392,152,395,167,401"/>
+<area shape="rect" href="class_uploaded_song.html#a68c3e94d45bdc264ffa53ca8aae8b431" title="构造函数，初始化已上传歌曲界面" alt="" coords="22,493,222,520"/>
+<area shape="poly" title=" " alt="" coords="279,503,222,506,222,500,279,498"/>
+<area shape="poly" title=" " alt="" coords="165,481,150,474,122,472,96,474,82,479,79,484,85,491,81,495,73,485,79,475,95,469,122,467,152,469,167,476"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af7c913426d14d66f6b05ac86d5cf6c33" name="af7c913426d14d66f6b05ac86d5cf6c33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c913426d14d66f6b05ac86d5cf6c33">&#9670;&#160;</a></span>deselected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deselected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>取消选中排序选项信号 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_af7c913426d14d66f6b05ac86d5cf6c33_icgraph.png" border="0" usemap="#aclass_sort_option_menu_af7c913426d14d66f6b05ac86d5cf6c33_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_af7c913426d14d66f6b05ac86d5cf6c33_icgraph" id="aclass_sort_option_menu_af7c913426d14d66f6b05ac86d5cf6c33_icgraph">
+<area shape="rect" title="取消选中排序选项信号" alt="" coords="205,43,289,69"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="46,5,116,32"/>
+<area shape="poly" title=" " alt="" coords="189,46,116,29,117,24,190,41"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="5,80,157,107"/>
+<area shape="poly" title=" " alt="" coords="190,71,144,82,143,77,189,66"/>
+<area shape="poly" title=" " alt="" coords="109,67,99,61,81,59,64,61,55,65,53,71,57,78,52,81,47,71,51,62,62,56,81,53,101,56,112,62"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aeee8df6b69f3b5a4a9426ce1e767c730" name="aeee8df6b69f3b5a4a9426ce1e767c730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee8df6b69f3b5a4a9426ce1e767c730">&#9670;&#160;</a></span>durationSort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void durationSort </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>down</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>时长排序信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">down</td><td>是否降序，默认为 true </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_aeee8df6b69f3b5a4a9426ce1e767c730_icgraph.png" border="0" usemap="#aclass_sort_option_menu_aeee8df6b69f3b5a4a9426ce1e767c730_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_aeee8df6b69f3b5a4a9426ce1e767c730_icgraph" id="aclass_sort_option_menu_aeee8df6b69f3b5a4a9426ce1e767c730_icgraph">
+<area shape="rect" title="时长排序信号" alt="" coords="496,228,587,255"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="332,51,402,77"/>
+<area shape="poly" title=" " alt="" coords="528,215,498,152,475,119,446,91,425,79,402,72,404,67,427,74,450,87,479,116,502,150,533,212"/>
+<area shape="rect" href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="313,101,422,128"/>
+<area shape="poly" title=" " alt="" coords="521,217,489,178,447,142,421,130,424,125,449,138,493,175,525,214"/>
+<area shape="rect" href="class_downloaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="287,152,448,179"/>
+<area shape="poly" title=" " alt="" coords="503,222,447,193,417,182,418,177,449,188,506,217"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,203,428,229"/>
+<area shape="poly" title=" " alt="" coords="480,235,428,227,428,222,481,230"/>
+<area shape="rect" href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,253,428,280"/>
+<area shape="poly" title=" " alt="" coords="481,253,429,260,428,255,480,247"/>
+<area shape="rect" href="class_recently_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="298,313,437,356"/>
+<area shape="poly" title=" " alt="" coords="503,265,449,294,411,315,408,310,447,290,501,260"/>
+<area shape="rect" href="class_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="305,397,430,424"/>
+<area shape="poly" title=" " alt="" coords="528,270,495,319,474,346,450,370,427,386,403,399,401,395,424,382,446,366,470,342,491,316,523,267"/>
+<area shape="rect" href="class_uploaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="295,484,440,511"/>
+<area shape="poly" title=" " alt="" coords="534,271,503,350,479,395,450,438,422,465,394,486,391,481,419,461,446,434,475,392,498,347,529,269"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="57,29,187,56"/>
+<area shape="poly" title=" " alt="" coords="304,98,286,92,238,71,186,57,187,52,240,65,288,87,306,93"/>
+<area shape="poly" title=" " alt="" coords="165,17,150,10,122,8,96,10,82,15,79,20,85,27,81,31,73,21,79,11,95,5,122,3,152,5,167,12"/>
+<area shape="rect" href="class_downloaded_song.html#a0d6c6f718b19ebb36aa3fb057fa5484a" title="构造函数，初始化已下载歌曲界面" alt="" coords="5,104,239,131"/>
+<area shape="poly" title=" " alt="" coords="280,151,193,134,194,129,281,146"/>
+<area shape="poly" title=" " alt="" coords="165,92,150,85,122,83,96,85,82,89,79,95,85,102,81,105,73,95,79,85,95,79,122,77,152,80,167,87"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="46,179,198,205"/>
+<area shape="poly" title=" " alt="" coords="291,211,198,202,198,197,292,206"/>
+<area shape="poly" title=" " alt="" coords="165,166,150,160,122,157,96,159,82,164,79,169,85,177,81,180,73,170,79,160,95,154,122,152,152,155,167,161"/>
+<area shape="rect" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7" title="构造函数，初始化付费单曲界面" alt="" coords="45,253,199,280"/>
+<area shape="poly" title=" " alt="" coords="291,269,199,269,199,264,291,264"/>
+<area shape="poly" title=" " alt="" coords="165,241,150,234,122,232,96,234,82,239,79,244,85,251,81,255,73,245,79,235,95,229,122,227,152,229,167,236"/>
+<area shape="rect" href="class_recently_single_song.html#a20d33c201251386bf7c763539b1a7b77" title="构造函数，初始化最近单曲界面" alt="" coords="48,328,196,371"/>
+<area shape="poly" title=" " alt="" coords="282,342,196,348,196,342,282,337"/>
+<area shape="poly" title=" " alt="" coords="162,315,147,309,122,307,99,309,84,313,79,319,81,327,76,328,74,318,82,309,98,303,122,301,148,304,164,310"/>
+<area shape="rect" href="class_single_song.html#ad7977a8c90045e89a96dc208453a2dc0" title="构造函数，初始化单曲界面" alt="" coords="41,419,203,445"/>
+<area shape="poly" title=" " alt="" coords="289,420,203,428,203,422,289,415"/>
+<area shape="poly" title=" " alt="" coords="165,406,150,400,122,397,96,399,82,404,79,409,85,417,81,420,73,410,79,400,95,394,122,392,152,395,167,401"/>
+<area shape="rect" href="class_uploaded_song.html#a68c3e94d45bdc264ffa53ca8aae8b431" title="构造函数，初始化已上传歌曲界面" alt="" coords="22,493,222,520"/>
+<area shape="poly" title=" " alt="" coords="279,503,222,506,222,500,279,498"/>
+<area shape="poly" title=" " alt="" coords="165,481,150,474,122,472,96,474,82,479,79,484,85,491,81,495,73,485,79,475,95,469,122,467,152,469,167,476"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abdbab2b6bba567c8af2f4d009dee68f2" name="abdbab2b6bba567c8af2f4d009dee68f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdbab2b6bba567c8af2f4d009dee68f2">&#9670;&#160;</a></span>getMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_sort_option_menu.html">SortOptionMenu</a> * getMenu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前菜单对象 </p>
+<dl class="section return"><dt>返回</dt><dd>当前菜单对象指针 </dd></dl>
+
+<p>重载 <a class="el" href="class_base_menu.html#ac4873c622744b263677fb4c8da101046">BaseMenu</a> .</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_abdbab2b6bba567c8af2f4d009dee68f2_cgraph.png" border="0" usemap="#aclass_sort_option_menu_abdbab2b6bba567c8af2f4d009dee68f2_cgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_abdbab2b6bba567c8af2f4d009dee68f2_cgraph" id="aclass_sort_option_menu_abdbab2b6bba567c8af2f4d009dee68f2_cgraph">
+<area shape="rect" title="获取当前菜单对象" alt="" coords="5,31,77,57"/>
+<area shape="rect" href="class_sort_option_menu.html#aef8d5f2cd6f15b98a52995507af6a09d" title="构造函数，初始化歌曲排序选项菜单" alt="" coords="125,31,240,57"/>
+<area shape="poly" title=" " alt="" coords="77,41,109,41,109,47,77,47"/>
+<area shape="rect" href="class_base_menu.html#a3a0d91e21b7d2540477767ff01fbb6d2" title="构造函数，初始化菜单基类" alt="" coords="300,5,453,32"/>
+<area shape="poly" title=" " alt="" coords="240,34,284,28,285,33,241,39"/>
+<area shape="rect" href="class_base_menu.html#a1983a13e703a9f25be56824d2cb75e65" title="设置动画持续时间" alt="" coords="288,56,465,83"/>
+<area shape="poly" title=" " alt="" coords="241,49,273,53,272,58,240,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b45abf428270b1d7e17309e9fc6fe1f" name="a9b45abf428270b1d7e17309e9fc6fe1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b45abf428270b1d7e17309e9fc6fe1f">&#9670;&#160;</a></span>initMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initMenu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化菜单布局和内容 </p>
+<p>&lt; 模拟按钮进入悬停状态</p>
+<p>&lt; 移除默认事件过滤器</p>
+<p>&lt; 默认无图标</p>
+<p>&lt; 发出取消选中信号</p>
+<p>&lt; 发出默认排序信号</p>
+<p>&lt; 检查并更新选中状态</p>
+<p>&lt; 记录当前排序按钮</p>
+<p>&lt; 发出选中信号</p>
+<p>&lt; 发出降序排序信号</p>
+<p>&lt; 发出升序排序信号</p>
+<p>&lt; 发出随机排序信号</p>
+
+<p>重载 <a class="el" href="class_base_menu.html#a5ba413bcad36094287234c91df7d2cc1">BaseMenu</a> .</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_a9b45abf428270b1d7e17309e9fc6fe1f_cgraph.png" border="0" usemap="#aclass_sort_option_menu_a9b45abf428270b1d7e17309e9fc6fe1f_cgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_a9b45abf428270b1d7e17309e9fc6fe1f_cgraph" id="aclass_sort_option_menu_a9b45abf428270b1d7e17309e9fc6fe1f_cgraph">
+<area shape="rect" title="初始化菜单布局和内容" alt="" coords="5,284,76,311"/>
+<area shape="rect" href="class_sort_option_menu.html#a62a93505e41ee4916658fff3343f5f8b" title="添加时间排序信号" alt="" coords="166,5,262,32"/>
+<area shape="poly" title=" " alt="" coords="40,283,44,239,56,176,81,109,99,77,122,49,150,30,153,35,125,53,103,80,86,111,62,178,49,240,45,284"/>
+<area shape="rect" href="class_base_menu.html#acfc6fff50c1204fe16b92864e747d8d4" title="检查并更新悬停状态" alt="" coords="352,107,513,133"/>
+<area shape="poly" title=" " alt="" coords="40,284,44,244,57,191,67,163,81,136,99,112,122,92,154,76,189,67,225,63,262,65,331,79,388,98,386,103,330,84,261,70,225,69,190,72,156,81,125,97,103,116,86,139,72,165,62,192,50,245,45,284"/>
+<area shape="rect" href="class_base_menu.html#a8580224ed89d3bcfc43f78229ab7c238" title="检查并更新选中状态" alt="" coords="124,107,304,133"/>
+<area shape="poly" title=" " alt="" coords="43,283,52,254,68,216,91,177,122,143,128,139,131,143,125,147,95,180,73,219,57,256,48,284"/>
+<area shape="rect" href="class_base_menu.html#a0055987cd1c7f3d399f90c0e126e38d8" title="连接 QWidgetAction 的悬停事件到按钮" alt="" coords="127,157,301,184"/>
+<area shape="poly" title=" " alt="" coords="47,282,76,239,97,214,122,194,131,188,134,193,125,198,101,218,80,242,51,285"/>
+<area shape="rect" href="class_sort_option_menu.html#a50b2ddb2183eedf2bb2cc554dbe628fe" title="默认排序信号" alt="" coords="172,208,256,235"/>
+<area shape="poly" title=" " alt="" coords="59,281,88,262,123,244,156,232,158,237,125,249,91,267,62,286"/>
+<area shape="rect" href="class_sort_option_menu.html#af7c913426d14d66f6b05ac86d5cf6c33" title="取消选中排序选项信号" alt="" coords="172,259,256,285"/>
+<area shape="poly" title=" " alt="" coords="76,290,156,278,157,283,76,295"/>
+<area shape="rect" href="class_sort_option_menu.html#aeee8df6b69f3b5a4a9426ce1e767c730" title="时长排序信号" alt="" coords="168,309,260,336"/>
+<area shape="poly" title=" " alt="" coords="76,300,153,311,153,316,76,305"/>
+<area shape="rect" href="class_sort_option_menu.html#a4005719fb6fb6bc4f13d0ae2cb46c120" title="播放次数排序信号" alt="" coords="162,360,266,387"/>
+<area shape="poly" title=" " alt="" coords="62,309,91,328,125,346,148,354,146,359,123,350,88,332,59,313"/>
+<area shape="rect" href="class_sort_option_menu.html#a625ed9da15048536d4e71ca307a90a13" title="随机排序信号" alt="" coords="170,411,258,437"/>
+<area shape="poly" title=" " alt="" coords="51,310,80,353,101,376,125,396,156,411,153,415,122,401,97,380,76,356,47,313"/>
+<area shape="rect" href="class_sort_option_menu.html#aa84baa4d0eb43cb69e26d5f6ec6f309e" title="排序选项被选中信号" alt="" coords="179,461,249,488"/>
+<area shape="poly" title=" " alt="" coords="48,310,57,339,73,376,95,415,125,447,144,458,164,466,163,471,142,463,122,451,91,418,68,379,52,341,43,312"/>
+<area shape="rect" href="class_sort_option_menu.html#a8dfbd3ceedab5c9e1c73fcdd16f3681f" title="歌手排序信号" alt="" coords="174,512,254,539"/>
+<area shape="poly" title=" " alt="" coords="46,311,52,348,66,399,89,452,106,477,125,498,141,509,160,516,158,521,139,513,122,502,102,480,85,455,61,400,47,349,41,311"/>
+<area shape="rect" href="class_sort_option_menu.html#aaab3a5460c247a8f4ae3fa7e964c620e" title="歌曲名排序信号" alt="" coords="160,563,268,589"/>
+<area shape="poly" title=" " alt="" coords="45,311,48,357,59,421,70,455,84,489,102,521,125,549,146,562,143,567,122,553,98,524,79,492,65,457,54,422,43,357,39,311"/>
+<area shape="rect" href="class_base_menu.html#a5389554336d47de8a8249cf2aaf682a2" title="重写离开事件，清理悬停状态" alt="" coords="561,107,718,133"/>
+<area shape="poly" title=" " alt="" coords="514,126,546,126,546,132,514,131"/>
+<area shape="poly" title=" " alt="" coords="561,114,529,114,529,108,561,109"/>
+<area shape="poly" title=" " alt="" coords="274,154,357,135,358,140,275,159"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4005719fb6fb6bc4f13d0ae2cb46c120" name="a4005719fb6fb6bc4f13d0ae2cb46c120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4005719fb6fb6bc4f13d0ae2cb46c120">&#9670;&#160;</a></span>playCountSort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void playCountSort </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>down</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>播放次数排序信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">down</td><td>是否降序，默认为 true </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_a4005719fb6fb6bc4f13d0ae2cb46c120_icgraph.png" border="0" usemap="#aclass_sort_option_menu_a4005719fb6fb6bc4f13d0ae2cb46c120_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_a4005719fb6fb6bc4f13d0ae2cb46c120_icgraph" id="aclass_sort_option_menu_a4005719fb6fb6bc4f13d0ae2cb46c120_icgraph">
+<area shape="rect" title="播放次数排序信号" alt="" coords="496,228,600,255"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="332,51,402,77"/>
+<area shape="poly" title=" " alt="" coords="534,215,500,153,476,120,446,91,425,80,402,72,404,67,427,75,450,87,480,116,505,150,538,213"/>
+<area shape="rect" href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="313,101,422,128"/>
+<area shape="poly" title=" " alt="" coords="526,217,491,178,447,142,421,130,423,125,449,138,495,175,530,214"/>
+<area shape="rect" href="class_downloaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="287,152,448,179"/>
+<area shape="poly" title=" " alt="" coords="508,223,447,193,416,182,417,177,449,188,511,218"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,203,428,229"/>
+<area shape="poly" title=" " alt="" coords="481,235,428,227,428,222,481,229"/>
+<area shape="rect" href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,253,428,280"/>
+<area shape="poly" title=" " alt="" coords="481,253,429,261,428,256,481,248"/>
+<area shape="rect" href="class_recently_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="298,313,437,356"/>
+<area shape="poly" title=" " alt="" coords="508,265,412,315,409,310,506,260"/>
+<area shape="rect" href="class_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="305,397,430,424"/>
+<area shape="poly" title=" " alt="" coords="533,269,498,319,450,370,403,399,400,395,446,366,494,316,529,266"/>
+<area shape="rect" href="class_uploaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="295,484,440,511"/>
+<area shape="poly" title=" " alt="" coords="540,270,506,349,480,395,450,438,422,465,393,486,390,481,419,461,446,434,476,392,501,347,535,268"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="57,29,187,56"/>
+<area shape="poly" title=" " alt="" coords="304,98,286,92,238,71,186,57,187,52,240,65,288,87,306,93"/>
+<area shape="poly" title=" " alt="" coords="165,17,150,10,122,8,96,10,82,15,79,20,85,27,81,31,73,21,79,11,95,5,122,3,152,5,167,12"/>
+<area shape="rect" href="class_downloaded_song.html#a0d6c6f718b19ebb36aa3fb057fa5484a" title="构造函数，初始化已下载歌曲界面" alt="" coords="5,104,239,131"/>
+<area shape="poly" title=" " alt="" coords="280,151,193,134,194,129,281,146"/>
+<area shape="poly" title=" " alt="" coords="165,92,150,85,122,83,96,85,82,89,79,95,85,102,81,105,73,95,79,85,95,79,122,77,152,80,167,87"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="46,179,198,205"/>
+<area shape="poly" title=" " alt="" coords="291,211,198,202,198,197,292,206"/>
+<area shape="poly" title=" " alt="" coords="165,166,150,160,122,157,96,159,82,164,79,169,85,177,81,180,73,170,79,160,95,154,122,152,152,155,167,161"/>
+<area shape="rect" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7" title="构造函数，初始化付费单曲界面" alt="" coords="45,253,199,280"/>
+<area shape="poly" title=" " alt="" coords="291,269,199,269,199,264,291,264"/>
+<area shape="poly" title=" " alt="" coords="165,241,150,234,122,232,96,234,82,239,79,244,85,251,81,255,73,245,79,235,95,229,122,227,152,229,167,236"/>
+<area shape="rect" href="class_recently_single_song.html#a20d33c201251386bf7c763539b1a7b77" title="构造函数，初始化最近单曲界面" alt="" coords="48,328,196,371"/>
+<area shape="poly" title=" " alt="" coords="282,342,196,348,196,342,282,337"/>
+<area shape="poly" title=" " alt="" coords="162,315,147,309,122,307,99,309,84,313,79,319,81,327,76,328,74,318,82,309,98,303,122,301,148,304,164,310"/>
+<area shape="rect" href="class_single_song.html#ad7977a8c90045e89a96dc208453a2dc0" title="构造函数，初始化单曲界面" alt="" coords="41,419,203,445"/>
+<area shape="poly" title=" " alt="" coords="289,420,203,428,203,422,289,415"/>
+<area shape="poly" title=" " alt="" coords="165,406,150,400,122,397,96,399,82,404,79,409,85,417,81,420,73,410,79,400,95,394,122,392,152,395,167,401"/>
+<area shape="rect" href="class_uploaded_song.html#a68c3e94d45bdc264ffa53ca8aae8b431" title="构造函数，初始化已上传歌曲界面" alt="" coords="22,493,222,520"/>
+<area shape="poly" title=" " alt="" coords="279,503,222,506,222,500,279,498"/>
+<area shape="poly" title=" " alt="" coords="165,481,150,474,122,472,96,474,82,479,79,484,85,491,81,495,73,485,79,475,95,469,122,467,152,469,167,476"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a625ed9da15048536d4e71ca307a90a13" name="a625ed9da15048536d4e71ca307a90a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625ed9da15048536d4e71ca307a90a13">&#9670;&#160;</a></span>randomSort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void randomSort </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>随机排序信号 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_a625ed9da15048536d4e71ca307a90a13_icgraph.png" border="0" usemap="#aclass_sort_option_menu_a625ed9da15048536d4e71ca307a90a13_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_a625ed9da15048536d4e71ca307a90a13_icgraph" id="aclass_sort_option_menu_a625ed9da15048536d4e71ca307a90a13_icgraph">
+<area shape="rect" title="随机排序信号" alt="" coords="496,228,584,255"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="332,51,402,77"/>
+<area shape="poly" title=" " alt="" coords="527,215,497,152,474,119,446,91,425,79,402,72,404,67,427,74,450,87,478,116,502,150,532,212"/>
+<area shape="rect" href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="313,101,422,128"/>
+<area shape="poly" title=" " alt="" coords="519,217,488,178,447,142,421,130,424,125,449,138,492,175,524,214"/>
+<area shape="rect" href="class_downloaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="287,152,448,179"/>
+<area shape="poly" title=" " alt="" coords="503,222,447,193,417,182,418,177,449,188,505,217"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,203,428,229"/>
+<area shape="poly" title=" " alt="" coords="480,235,428,227,428,222,481,230"/>
+<area shape="rect" href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,253,428,280"/>
+<area shape="poly" title=" " alt="" coords="481,253,429,260,428,255,480,247"/>
+<area shape="rect" href="class_recently_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="298,313,437,356"/>
+<area shape="poly" title=" " alt="" coords="503,265,449,294,411,315,408,311,447,290,500,260"/>
+<area shape="rect" href="class_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="305,397,430,424"/>
+<area shape="poly" title=" " alt="" coords="527,270,495,319,474,346,450,370,427,386,404,399,401,394,424,382,446,366,470,342,490,316,522,267"/>
+<area shape="rect" href="class_uploaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="295,484,440,511"/>
+<area shape="poly" title=" " alt="" coords="533,271,502,350,479,395,450,438,422,465,394,486,391,481,419,461,446,434,474,392,497,347,528,269"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="57,29,187,56"/>
+<area shape="poly" title=" " alt="" coords="304,98,286,92,238,71,186,57,187,52,240,65,288,87,306,93"/>
+<area shape="poly" title=" " alt="" coords="165,17,150,10,122,8,96,10,82,15,79,20,85,27,81,31,73,21,79,11,95,5,122,3,152,5,167,12"/>
+<area shape="rect" href="class_downloaded_song.html#a0d6c6f718b19ebb36aa3fb057fa5484a" title="构造函数，初始化已下载歌曲界面" alt="" coords="5,104,239,131"/>
+<area shape="poly" title=" " alt="" coords="280,151,193,134,194,129,281,146"/>
+<area shape="poly" title=" " alt="" coords="165,92,150,85,122,83,96,85,82,89,79,95,85,102,81,105,73,95,79,85,95,79,122,77,152,80,167,87"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="46,179,198,205"/>
+<area shape="poly" title=" " alt="" coords="291,211,198,202,198,197,292,206"/>
+<area shape="poly" title=" " alt="" coords="165,166,150,160,122,157,96,159,82,164,79,169,85,177,81,180,73,170,79,160,95,154,122,152,152,155,167,161"/>
+<area shape="rect" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7" title="构造函数，初始化付费单曲界面" alt="" coords="45,253,199,280"/>
+<area shape="poly" title=" " alt="" coords="291,269,199,269,199,264,291,264"/>
+<area shape="poly" title=" " alt="" coords="165,241,150,234,122,232,96,234,82,239,79,244,85,251,81,255,73,245,79,235,95,229,122,227,152,229,167,236"/>
+<area shape="rect" href="class_recently_single_song.html#a20d33c201251386bf7c763539b1a7b77" title="构造函数，初始化最近单曲界面" alt="" coords="48,328,196,371"/>
+<area shape="poly" title=" " alt="" coords="282,342,196,348,196,342,282,337"/>
+<area shape="poly" title=" " alt="" coords="162,315,147,309,122,307,99,309,84,313,79,319,81,327,76,328,74,318,82,309,98,303,122,301,148,304,164,310"/>
+<area shape="rect" href="class_single_song.html#ad7977a8c90045e89a96dc208453a2dc0" title="构造函数，初始化单曲界面" alt="" coords="41,419,203,445"/>
+<area shape="poly" title=" " alt="" coords="289,420,203,428,203,422,289,415"/>
+<area shape="poly" title=" " alt="" coords="165,406,150,400,122,397,96,399,82,404,79,409,85,417,81,420,73,410,79,400,95,394,122,392,152,395,167,401"/>
+<area shape="rect" href="class_uploaded_song.html#a68c3e94d45bdc264ffa53ca8aae8b431" title="构造函数，初始化已上传歌曲界面" alt="" coords="22,493,222,520"/>
+<area shape="poly" title=" " alt="" coords="279,503,222,506,222,500,279,498"/>
+<area shape="poly" title=" " alt="" coords="165,481,150,474,122,472,96,474,82,479,79,484,85,491,81,495,73,485,79,475,95,469,122,467,152,469,167,476"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa84baa4d0eb43cb69e26d5f6ec6f309e" name="aa84baa4d0eb43cb69e26d5f6ec6f309e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa84baa4d0eb43cb69e26d5f6ec6f309e">&#9670;&#160;</a></span>selected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void selected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>排序选项被选中信号 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_aa84baa4d0eb43cb69e26d5f6ec6f309e_icgraph.png" border="0" usemap="#aclass_sort_option_menu_aa84baa4d0eb43cb69e26d5f6ec6f309e_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_aa84baa4d0eb43cb69e26d5f6ec6f309e_icgraph" id="aclass_sort_option_menu_aa84baa4d0eb43cb69e26d5f6ec6f309e_icgraph">
+<area shape="rect" title="排序选项被选中信号" alt="" coords="205,43,275,69"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="46,5,116,32"/>
+<area shape="poly" title=" " alt="" coords="189,47,116,29,117,24,190,42"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="5,80,157,107"/>
+<area shape="poly" title=" " alt="" coords="190,70,141,82,140,77,189,65"/>
+<area shape="poly" title=" " alt="" coords="108,67,98,61,81,59,65,61,56,65,54,71,58,78,53,81,49,71,52,62,63,56,81,53,100,56,111,63"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8dfbd3ceedab5c9e1c73fcdd16f3681f" name="a8dfbd3ceedab5c9e1c73fcdd16f3681f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dfbd3ceedab5c9e1c73fcdd16f3681f">&#9670;&#160;</a></span>singerSort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void singerSort </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>down</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>歌手排序信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">down</td><td>是否降序，默认为 true </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_a8dfbd3ceedab5c9e1c73fcdd16f3681f_icgraph.png" border="0" usemap="#aclass_sort_option_menu_a8dfbd3ceedab5c9e1c73fcdd16f3681f_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_a8dfbd3ceedab5c9e1c73fcdd16f3681f_icgraph" id="aclass_sort_option_menu_a8dfbd3ceedab5c9e1c73fcdd16f3681f_icgraph">
+<area shape="rect" title="歌手排序信号" alt="" coords="496,228,576,255"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="332,51,402,77"/>
+<area shape="poly" title=" " alt="" coords="524,215,495,152,474,119,446,91,425,79,402,72,404,67,427,74,450,87,478,116,500,150,528,212"/>
+<area shape="rect" href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="313,101,422,128"/>
+<area shape="poly" title=" " alt="" coords="516,216,486,178,447,142,421,130,424,125,449,138,490,174,520,213"/>
+<area shape="rect" href="class_downloaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="287,152,448,179"/>
+<area shape="poly" title=" " alt="" coords="500,222,447,193,417,182,419,177,449,188,503,217"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,203,428,229"/>
+<area shape="poly" title=" " alt="" coords="480,236,428,228,428,222,481,230"/>
+<area shape="rect" href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,253,428,280"/>
+<area shape="poly" title=" " alt="" coords="481,252,429,260,428,255,480,247"/>
+<area shape="rect" href="class_recently_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="298,313,437,356"/>
+<area shape="poly" title=" " alt="" coords="500,265,449,294,411,315,409,310,447,290,497,261"/>
+<area shape="rect" href="class_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="305,397,430,424"/>
+<area shape="poly" title=" " alt="" coords="524,270,493,319,473,346,450,370,427,386,404,399,401,394,425,382,446,366,469,342,489,316,519,267"/>
+<area shape="rect" href="class_uploaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="295,484,440,511"/>
+<area shape="poly" title=" " alt="" coords="529,271,501,350,478,395,450,438,423,465,394,486,391,481,419,461,446,434,474,392,496,347,524,269"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="57,29,187,56"/>
+<area shape="poly" title=" " alt="" coords="304,98,286,92,238,71,186,57,187,52,240,65,288,87,306,93"/>
+<area shape="poly" title=" " alt="" coords="165,17,150,10,122,8,96,10,82,15,79,20,85,27,81,31,73,21,79,11,95,5,122,3,152,5,167,12"/>
+<area shape="rect" href="class_downloaded_song.html#a0d6c6f718b19ebb36aa3fb057fa5484a" title="构造函数，初始化已下载歌曲界面" alt="" coords="5,104,239,131"/>
+<area shape="poly" title=" " alt="" coords="280,151,193,134,194,129,281,146"/>
+<area shape="poly" title=" " alt="" coords="165,92,150,85,122,83,96,85,82,89,79,95,85,102,81,105,73,95,79,85,95,79,122,77,152,80,167,87"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="46,179,198,205"/>
+<area shape="poly" title=" " alt="" coords="291,211,198,202,198,197,292,206"/>
+<area shape="poly" title=" " alt="" coords="165,166,150,160,122,157,96,159,82,164,79,169,85,177,81,180,73,170,79,160,95,154,122,152,152,155,167,161"/>
+<area shape="rect" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7" title="构造函数，初始化付费单曲界面" alt="" coords="45,253,199,280"/>
+<area shape="poly" title=" " alt="" coords="291,269,199,269,199,264,291,264"/>
+<area shape="poly" title=" " alt="" coords="165,241,150,234,122,232,96,234,82,239,79,244,85,251,81,255,73,245,79,235,95,229,122,227,152,229,167,236"/>
+<area shape="rect" href="class_recently_single_song.html#a20d33c201251386bf7c763539b1a7b77" title="构造函数，初始化最近单曲界面" alt="" coords="48,328,196,371"/>
+<area shape="poly" title=" " alt="" coords="282,342,196,348,196,342,282,337"/>
+<area shape="poly" title=" " alt="" coords="162,315,147,309,122,307,99,309,84,313,79,319,81,327,76,328,74,318,82,309,98,303,122,301,148,304,164,310"/>
+<area shape="rect" href="class_single_song.html#ad7977a8c90045e89a96dc208453a2dc0" title="构造函数，初始化单曲界面" alt="" coords="41,419,203,445"/>
+<area shape="poly" title=" " alt="" coords="289,420,203,428,203,422,289,415"/>
+<area shape="poly" title=" " alt="" coords="165,406,150,400,122,397,96,399,82,404,79,409,85,417,81,420,73,410,79,400,95,394,122,392,152,395,167,401"/>
+<area shape="rect" href="class_uploaded_song.html#a68c3e94d45bdc264ffa53ca8aae8b431" title="构造函数，初始化已上传歌曲界面" alt="" coords="22,493,222,520"/>
+<area shape="poly" title=" " alt="" coords="279,503,222,506,222,500,279,498"/>
+<area shape="poly" title=" " alt="" coords="165,481,150,474,122,472,96,474,82,479,79,484,85,491,81,495,73,485,79,475,95,469,122,467,152,469,167,476"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaab3a5460c247a8f4ae3fa7e964c620e" name="aaab3a5460c247a8f4ae3fa7e964c620e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab3a5460c247a8f4ae3fa7e964c620e">&#9670;&#160;</a></span>songNameSort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void songNameSort </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>down</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>歌曲名排序信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">down</td><td>是否降序，默认为 true </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_sort_option_menu_aaab3a5460c247a8f4ae3fa7e964c620e_icgraph.png" border="0" usemap="#aclass_sort_option_menu_aaab3a5460c247a8f4ae3fa7e964c620e_icgraph" alt=""/></div>
+<map name="aclass_sort_option_menu_aaab3a5460c247a8f4ae3fa7e964c620e_icgraph" id="aclass_sort_option_menu_aaab3a5460c247a8f4ae3fa7e964c620e_icgraph">
+<area shape="rect" title="歌曲名排序信号" alt="" coords="496,228,604,255"/>
+<area shape="rect" href="class_sort_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f" title="初始化菜单布局和内容" alt="" coords="332,51,402,77"/>
+<area shape="poly" title=" " alt="" coords="535,215,501,153,476,120,446,91,425,80,402,72,404,67,427,75,450,87,480,116,506,150,540,213"/>
+<area shape="rect" href="class_all_music.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="313,101,422,128"/>
+<area shape="poly" title=" " alt="" coords="528,218,492,179,447,142,421,130,423,125,449,138,496,175,532,214"/>
+<area shape="rect" href="class_downloaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="287,152,448,179"/>
+<area shape="poly" title=" " alt="" coords="510,223,447,193,416,182,417,177,449,188,512,218"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,203,428,229"/>
+<area shape="poly" title=" " alt="" coords="480,234,427,227,428,222,481,229"/>
+<area shape="rect" href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="307,253,428,280"/>
+<area shape="poly" title=" " alt="" coords="481,254,429,261,428,256,481,248"/>
+<area shape="rect" href="class_recently_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="298,313,437,356"/>
+<area shape="poly" title=" " alt="" coords="510,265,412,315,410,310,507,260"/>
+<area shape="rect" href="class_single_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="305,397,430,424"/>
+<area shape="poly" title=" " alt="" coords="535,269,499,319,450,370,403,399,400,395,446,366,495,316,530,266"/>
+<area shape="rect" href="class_uploaded_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="295,484,440,511"/>
+<area shape="poly" title=" " alt="" coords="541,270,506,349,481,395,450,438,422,465,393,486,390,481,419,461,446,434,476,392,502,347,536,268"/>
+<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="57,29,187,56"/>
+<area shape="poly" title=" " alt="" coords="304,98,286,92,238,71,186,57,187,52,240,65,288,87,306,93"/>
+<area shape="poly" title=" " alt="" coords="165,17,150,10,122,8,96,10,82,15,79,20,85,27,81,31,73,21,79,11,95,5,122,3,152,5,167,12"/>
+<area shape="rect" href="class_downloaded_song.html#a0d6c6f718b19ebb36aa3fb057fa5484a" title="构造函数，初始化已下载歌曲界面" alt="" coords="5,104,239,131"/>
+<area shape="poly" title=" " alt="" coords="280,151,193,134,194,129,281,146"/>
+<area shape="poly" title=" " alt="" coords="165,92,150,85,122,83,96,85,82,89,79,95,85,102,81,105,73,95,79,85,95,79,122,77,152,80,167,87"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="46,179,198,205"/>
+<area shape="poly" title=" " alt="" coords="291,211,198,202,198,197,292,206"/>
+<area shape="poly" title=" " alt="" coords="165,166,150,160,122,157,96,159,82,164,79,169,85,177,81,180,73,170,79,160,95,154,122,152,152,155,167,161"/>
+<area shape="rect" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7" title="构造函数，初始化付费单曲界面" alt="" coords="45,253,199,280"/>
+<area shape="poly" title=" " alt="" coords="291,269,199,269,199,264,291,264"/>
+<area shape="poly" title=" " alt="" coords="165,241,150,234,122,232,96,234,82,239,79,244,85,251,81,255,73,245,79,235,95,229,122,227,152,229,167,236"/>
+<area shape="rect" href="class_recently_single_song.html#a20d33c201251386bf7c763539b1a7b77" title="构造函数，初始化最近单曲界面" alt="" coords="48,328,196,371"/>
+<area shape="poly" title=" " alt="" coords="282,342,196,348,196,342,282,337"/>
+<area shape="poly" title=" " alt="" coords="162,315,147,309,122,307,99,309,84,313,79,319,81,327,76,328,74,318,82,309,98,303,122,301,148,304,164,310"/>
+<area shape="rect" href="class_single_song.html#ad7977a8c90045e89a96dc208453a2dc0" title="构造函数，初始化单曲界面" alt="" coords="41,419,203,445"/>
+<area shape="poly" title=" " alt="" coords="289,420,203,428,203,422,289,415"/>
+<area shape="poly" title=" " alt="" coords="165,406,150,400,122,397,96,399,82,404,79,409,85,417,81,420,73,410,79,400,95,394,122,392,152,395,167,401"/>
+<area shape="rect" href="class_uploaded_song.html#a68c3e94d45bdc264ffa53ca8aae8b431" title="构造函数，初始化已上传歌曲界面" alt="" coords="22,493,222,520"/>
+<area shape="poly" title=" " alt="" coords="279,503,222,506,222,500,279,498"/>
+<area shape="poly" title=" " alt="" coords="165,481,150,474,122,472,96,474,82,479,79,484,85,491,81,495,73,485,79,475,95,469,122,467,152,469,167,476"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aae699596e90c09db04bfb0d1bf3d1c68" name="aae699596e90c09db04bfb0d1bf3d1c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae699596e90c09db04bfb0d1bf3d1c68">&#9670;&#160;</a></span>m_sortBtn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_menu_btn.html">MenuBtn</a>* m_sortBtn {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>记录当前选中的排序按钮 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_sort_option_menu_8h_source.html">SortOptionMenu.h</a></li>
+<li><a class="el" href="_sort_option_menu_8cpp.html">SortOptionMenu.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_sort_option_menu.html">SortOptionMenu</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: qzipreader_p.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('qzipreader__p_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">qzipreader_p.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="qzipreader__p_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright (C) 2016 The Qt Company Ltd.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef QZIPREADER_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define QZIPREADER_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//#include &lt;QtCore/private/qglobal_p.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  W A R N I N G</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  -------------</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// This file is not part of the Qt API.  It exists for the convenience</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// of the QZipReader class.  This header file may change from</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// version to version without notice, or even be removed.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// We mean it.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;QDateTime&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">class </span><a class="code hl_class" href="class_q_zip_reader_private.html">QZipReaderPrivate</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_q_zip_reader.html">   28</a></span><span class="keyword">class </span><a class="code hl_function" href="class_q_zip_reader.html#a749143fca058a0affcb2431be0b2dc5b">QZipReader</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_q_zip_reader.html#a749143fca058a0affcb2431be0b2dc5b">QZipReader</a>(<span class="keyword">const</span> QString &amp;fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly );</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_q_zip_reader.html#a749143fca058a0affcb2431be0b2dc5b">QZipReader</a>(QIODevice *<a class="code hl_function" href="class_q_zip_reader.html#a6c00fbe46edac8c18edee1018a37fb04">device</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="class_q_zip_reader.html#a61cf46d904d61cce69008736d90a49c0">~QZipReader</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    QIODevice* <a class="code hl_function" href="class_q_zip_reader.html#a6c00fbe46edac8c18edee1018a37fb04">device</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_q_zip_reader.html#ad8d5f051609fd46406407e5fc33eb3ce">isReadable</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_q_zip_reader.html#aa7d8623150e6d43ab4bf7493aa8cbc1a">exists</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html">   41</a></span>    <span class="keyword">struct </span><a class="code hl_function" href="struct_q_zip_reader_1_1_file_info.html#a7ca7be3048dd9b1b9850979d2b4569cf">FileInfo</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#a7ca7be3048dd9b1b9850979d2b4569cf">   43</a></span>        <a class="code hl_function" href="struct_q_zip_reader_1_1_file_info.html#a7ca7be3048dd9b1b9850979d2b4569cf">FileInfo</a>() noexcept</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            : <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#adf28dd66732cfd6ffa7408c0ebd53603">isDir</a>(false), <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#a6646f0a38df83a7a04276668f9818bab">isFile</a>(false), <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#a415aecf3e4b7aa2052574d18880dd98f">isSymLink</a>(false), <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#ab8fb39686bd4da953d6a2b06090d9430">crc</a>(0), <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#a88cfa0e2471d927eaa05f13d029f0179">size</a>(0)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {}</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#a0a886a9edf5bf682f5245159661bfc94">   47</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_q_zip_reader_1_1_file_info.html#a0a886a9edf5bf682f5245159661bfc94">isValid</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#adf28dd66732cfd6ffa7408c0ebd53603">isDir</a> || <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#a6646f0a38df83a7a04276668f9818bab">isFile</a> || <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#a415aecf3e4b7aa2052574d18880dd98f">isSymLink</a>; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#af17c7d27d6c71efe00a671ad8a67f941">   49</a></span>        QString <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#af17c7d27d6c71efe00a671ad8a67f941">filePath</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#adf28dd66732cfd6ffa7408c0ebd53603">   50</a></span>        uint <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#adf28dd66732cfd6ffa7408c0ebd53603">isDir</a> : 1;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#a6646f0a38df83a7a04276668f9818bab">   51</a></span>        uint <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#a6646f0a38df83a7a04276668f9818bab">isFile</a> : 1;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#a415aecf3e4b7aa2052574d18880dd98f">   52</a></span>        uint <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#a415aecf3e4b7aa2052574d18880dd98f">isSymLink</a> : 1;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#aff8a3cb580b57b7c6de085cf752586e7">   53</a></span>        QFile::Permissions <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#aff8a3cb580b57b7c6de085cf752586e7">permissions</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#ab8fb39686bd4da953d6a2b06090d9430">   54</a></span>        uint <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#ab8fb39686bd4da953d6a2b06090d9430">crc</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#a88cfa0e2471d927eaa05f13d029f0179">   55</a></span>        qint64 <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#a88cfa0e2471d927eaa05f13d029f0179">size</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_q_zip_reader_1_1_file_info.html#ab0a302ec8f9c2895e5e98fecf2fcaba8">   56</a></span>        QDateTime <a class="code hl_variable" href="struct_q_zip_reader_1_1_file_info.html#ab0a302ec8f9c2895e5e98fecf2fcaba8">lastModified</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    };</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    QList&lt;FileInfo&gt; <a class="code hl_function" href="class_q_zip_reader.html#a7dec3ba8663180feee8a71df9ca9d68c">fileInfoList</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_q_zip_reader.html#a0e2c15c517007b91c37b2aa68bf2484a">count</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_struct" href="struct_q_zip_reader_1_1_file_info.html">FileInfo</a> <a class="code hl_function" href="class_q_zip_reader.html#a31a029c8d87f1403e8e30b853adec98d">entryInfoAt</a>(<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    QByteArray <a class="code hl_function" href="class_q_zip_reader.html#aac174d3404eb2fbba391ac60403409b9">fileData</a>(<span class="keyword">const</span> QString &amp;fileName) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_q_zip_reader.html#a2fcbedd0d2285a53980b4d1eb701c941">extractAll</a>(<span class="keyword">const</span> QString &amp;destinationDir) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">   66</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70baef9104c292609ba6db320509be8fe27f">   67</a></span>        <a class="code hl_enumvalue" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70baef9104c292609ba6db320509be8fe27f">NoError</a>,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70badcd3522d756376531fe1cdbe85921be3">   68</a></span>        <a class="code hl_enumvalue" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70badcd3522d756376531fe1cdbe85921be3">FileReadError</a>,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba46a03d351ccdccb3dbe712e3c34a0db8">   69</a></span>        <a class="code hl_enumvalue" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba46a03d351ccdccb3dbe712e3c34a0db8">FileOpenError</a>,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba660083b0fc40bc88a4f08fe128566ee1">   70</a></span>        <a class="code hl_enumvalue" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba660083b0fc40bc88a4f08fe128566ee1">FilePermissionsError</a>,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba16710632ec8111b8b1b7e79d3538700d">   71</a></span>        <a class="code hl_enumvalue" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba16710632ec8111b8b1b7e79d3538700d">FileError</a></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    };</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_enumeration" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> <a class="code hl_function" href="class_q_zip_reader.html#a19148f1f2426078b672ac95d2b0c65ec">status</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_q_zip_reader.html#a5ae591df94fc66ccb85cbb6565368bca">close</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_q_zip_reader.html#a4c181673bba5a91719a67f1340fa5742">   79</a></span>    <a class="code hl_class" href="class_q_zip_reader_private.html">QZipReaderPrivate</a> *<a class="code hl_variable" href="class_q_zip_reader.html#a4c181673bba5a91719a67f1340fa5742">d</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    Q_DISABLE_COPY_MOVE(<a class="code hl_function" href="class_q_zip_reader.html#a749143fca058a0affcb2431be0b2dc5b">QZipReader</a>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="qzipreader__p_8h.html#aee61c6e224524207f8ea9c191a29b7fa">   82</a></span><a class="code hl_function" href="qzipreader__p_8h.html#aee61c6e224524207f8ea9c191a29b7fa">Q_DECLARE_TYPEINFO</a>(<a class="code hl_struct" href="struct_q_zip_reader_1_1_file_info.html">QZipReader::FileInfo</a>, Q_RELOCATABLE_TYPE);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="qzipreader__p_8h.html#a7a2b27997cf51bd3de691100e9ddcbc4">   83</a></span><a class="code hl_function" href="qzipreader__p_8h.html#aee61c6e224524207f8ea9c191a29b7fa">Q_DECLARE_TYPEINFO</a>(<a class="code hl_enumeration" href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">QZipReader::Status</a>, Q_PRIMITIVE_TYPE);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif </span><span class="comment">// QZIPREADER_H</span></div>
+<div class="ttc" id="abase_8h_html_a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86"><div class="ttname"><a href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">arg_id_kind::index</a></div><div class="ttdeci">@ index</div><div class="ttdef"><b>定义</b> base.h:700</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a0e2c15c517007b91c37b2aa68bf2484a"><div class="ttname"><a href="class_q_zip_reader.html#a0e2c15c517007b91c37b2aa68bf2484a">QZipReader::count</a></div><div class="ttdeci">int count() const</div><div class="ttdoc">Return the number of items in the zip archive.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:676</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a19148f1f2426078b672ac95d2b0c65ec"><div class="ttname"><a href="class_q_zip_reader.html#a19148f1f2426078b672ac95d2b0c65ec">QZipReader::status</a></div><div class="ttdeci">Status status() const</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:854</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a2fcbedd0d2285a53980b4d1eb701c941"><div class="ttname"><a href="class_q_zip_reader.html#a2fcbedd0d2285a53980b4d1eb701c941">QZipReader::extractAll</a></div><div class="ttdeci">bool extractAll(const QString &amp;destinationDir) const</div><div class="ttdoc">Extracts the full contents of the zip file into destinationDir on the local filesystem.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:785</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a31a029c8d87f1403e8e30b853adec98d"><div class="ttname"><a href="class_q_zip_reader.html#a31a029c8d87f1403e8e30b853adec98d">QZipReader::entryInfoAt</a></div><div class="ttdeci">FileInfo entryInfoAt(int index) const</div><div class="ttdoc">Returns a FileInfo of an entry in the zipfile.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:689</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a4c181673bba5a91719a67f1340fa5742"><div class="ttname"><a href="class_q_zip_reader.html#a4c181673bba5a91719a67f1340fa5742">QZipReader::d</a></div><div class="ttdeci">QZipReaderPrivate * d</div><div class="ttdef"><b>定义</b> qzipreader_p.h:79</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a5ae591df94fc66ccb85cbb6565368bca"><div class="ttname"><a href="class_q_zip_reader.html#a5ae591df94fc66ccb85cbb6565368bca">QZipReader::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Close the zip file.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:862</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a61cf46d904d61cce69008736d90a49c0"><div class="ttname"><a href="class_q_zip_reader.html#a61cf46d904d61cce69008736d90a49c0">QZipReader::~QZipReader</a></div><div class="ttdeci">~QZipReader()</div><div class="ttdoc">Destructor</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:625</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a67a0db04d321a74b7e7fcfd3f1a3f70b"><div class="ttname"><a href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">QZipReader::Status</a></div><div class="ttdeci">Status</div><div class="ttdef"><b>定义</b> qzipreader_p.h:66</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a67a0db04d321a74b7e7fcfd3f1a3f70ba16710632ec8111b8b1b7e79d3538700d"><div class="ttname"><a href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba16710632ec8111b8b1b7e79d3538700d">QZipReader::FileError</a></div><div class="ttdeci">@ FileError</div><div class="ttdef"><b>定义</b> qzipreader_p.h:71</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a67a0db04d321a74b7e7fcfd3f1a3f70ba46a03d351ccdccb3dbe712e3c34a0db8"><div class="ttname"><a href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba46a03d351ccdccb3dbe712e3c34a0db8">QZipReader::FileOpenError</a></div><div class="ttdeci">@ FileOpenError</div><div class="ttdef"><b>定义</b> qzipreader_p.h:69</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a67a0db04d321a74b7e7fcfd3f1a3f70ba660083b0fc40bc88a4f08fe128566ee1"><div class="ttname"><a href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba660083b0fc40bc88a4f08fe128566ee1">QZipReader::FilePermissionsError</a></div><div class="ttdeci">@ FilePermissionsError</div><div class="ttdef"><b>定义</b> qzipreader_p.h:70</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a67a0db04d321a74b7e7fcfd3f1a3f70badcd3522d756376531fe1cdbe85921be3"><div class="ttname"><a href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70badcd3522d756376531fe1cdbe85921be3">QZipReader::FileReadError</a></div><div class="ttdeci">@ FileReadError</div><div class="ttdef"><b>定义</b> qzipreader_p.h:68</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a67a0db04d321a74b7e7fcfd3f1a3f70baef9104c292609ba6db320509be8fe27f"><div class="ttname"><a href="class_q_zip_reader.html#a67a0db04d321a74b7e7fcfd3f1a3f70baef9104c292609ba6db320509be8fe27f">QZipReader::NoError</a></div><div class="ttdeci">@ NoError</div><div class="ttdef"><b>定义</b> qzipreader_p.h:67</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a6c00fbe46edac8c18edee1018a37fb04"><div class="ttname"><a href="class_q_zip_reader.html#a6c00fbe46edac8c18edee1018a37fb04">QZipReader::device</a></div><div class="ttdeci">QIODevice * device() const</div><div class="ttdoc">Returns device used for reading zip archive.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:634</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a749143fca058a0affcb2431be0b2dc5b"><div class="ttname"><a href="class_q_zip_reader.html#a749143fca058a0affcb2431be0b2dc5b">QZipReader::QZipReader</a></div><div class="ttdeci">QZipReader(const QString &amp;fileName, QIODevice::OpenMode mode=QIODevice::ReadOnly)</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:587</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_a7dec3ba8663180feee8a71df9ca9d68c"><div class="ttname"><a href="class_q_zip_reader.html#a7dec3ba8663180feee8a71df9ca9d68c">QZipReader::fileInfoList</a></div><div class="ttdeci">QList&lt; FileInfo &gt; fileInfoList() const</div><div class="ttdoc">Returns the list of files the archive contains.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:661</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_aa7d8623150e6d43ab4bf7493aa8cbc1a"><div class="ttname"><a href="class_q_zip_reader.html#aa7d8623150e6d43ab4bf7493aa8cbc1a">QZipReader::exists</a></div><div class="ttdeci">bool exists() const</div><div class="ttdoc">Returns true if the file exists; otherwise returns false.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:650</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_aac174d3404eb2fbba391ac60403409b9"><div class="ttname"><a href="class_q_zip_reader.html#aac174d3404eb2fbba391ac60403409b9">QZipReader::fileData</a></div><div class="ttdeci">QByteArray fileData(const QString &amp;fileName) const</div><div class="ttdoc">Fetch the file contents from the zip archive and return the uncompressed bytes.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:700</div></div>
+<div class="ttc" id="aclass_q_zip_reader_html_ad8d5f051609fd46406407e5fc33eb3ce"><div class="ttname"><a href="class_q_zip_reader.html#ad8d5f051609fd46406407e5fc33eb3ce">QZipReader::isReadable</a></div><div class="ttdeci">bool isReadable() const</div><div class="ttdoc">Returns true if the user can read the file; otherwise returns false.</div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:642</div></div>
+<div class="ttc" id="aclass_q_zip_reader_private_html"><div class="ttname"><a href="class_q_zip_reader_private.html">QZipReaderPrivate</a></div><div class="ttdef"><b>定义</b> qzipreader_p.cpp:471</div></div>
+<div class="ttc" id="aqzipreader__p_8h_html_aee61c6e224524207f8ea9c191a29b7fa"><div class="ttname"><a href="qzipreader__p_8h.html#aee61c6e224524207f8ea9c191a29b7fa">Q_DECLARE_TYPEINFO</a></div><div class="ttdeci">Q_DECLARE_TYPEINFO(QZipReader::FileInfo, Q_RELOCATABLE_TYPE)</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html">QZipReader::FileInfo</a></div><div class="ttdef"><b>定义</b> qzipreader_p.h:42</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_a0a886a9edf5bf682f5245159661bfc94"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#a0a886a9edf5bf682f5245159661bfc94">QZipReader::FileInfo::isValid</a></div><div class="ttdeci">bool isValid() const noexcept</div><div class="ttdef"><b>定义</b> qzipreader_p.h:47</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_a415aecf3e4b7aa2052574d18880dd98f"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#a415aecf3e4b7aa2052574d18880dd98f">QZipReader::FileInfo::isSymLink</a></div><div class="ttdeci">uint isSymLink</div><div class="ttdef"><b>定义</b> qzipreader_p.h:52</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_a6646f0a38df83a7a04276668f9818bab"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#a6646f0a38df83a7a04276668f9818bab">QZipReader::FileInfo::isFile</a></div><div class="ttdeci">uint isFile</div><div class="ttdef"><b>定义</b> qzipreader_p.h:51</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_a7ca7be3048dd9b1b9850979d2b4569cf"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#a7ca7be3048dd9b1b9850979d2b4569cf">QZipReader::FileInfo::FileInfo</a></div><div class="ttdeci">FileInfo() noexcept</div><div class="ttdef"><b>定义</b> qzipreader_p.h:43</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_a88cfa0e2471d927eaa05f13d029f0179"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#a88cfa0e2471d927eaa05f13d029f0179">QZipReader::FileInfo::size</a></div><div class="ttdeci">qint64 size</div><div class="ttdef"><b>定义</b> qzipreader_p.h:55</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_ab0a302ec8f9c2895e5e98fecf2fcaba8"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#ab0a302ec8f9c2895e5e98fecf2fcaba8">QZipReader::FileInfo::lastModified</a></div><div class="ttdeci">QDateTime lastModified</div><div class="ttdef"><b>定义</b> qzipreader_p.h:56</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_ab8fb39686bd4da953d6a2b06090d9430"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#ab8fb39686bd4da953d6a2b06090d9430">QZipReader::FileInfo::crc</a></div><div class="ttdeci">uint crc</div><div class="ttdef"><b>定义</b> qzipreader_p.h:54</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_adf28dd66732cfd6ffa7408c0ebd53603"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#adf28dd66732cfd6ffa7408c0ebd53603">QZipReader::FileInfo::isDir</a></div><div class="ttdeci">uint isDir</div><div class="ttdef"><b>定义</b> qzipreader_p.h:50</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_af17c7d27d6c71efe00a671ad8a67f941"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#af17c7d27d6c71efe00a671ad8a67f941">QZipReader::FileInfo::filePath</a></div><div class="ttdeci">QString filePath</div><div class="ttdef"><b>定义</b> qzipreader_p.h:49</div></div>
+<div class="ttc" id="astruct_q_zip_reader_1_1_file_info_html_aff8a3cb580b57b7c6de085cf752586e7"><div class="ttname"><a href="struct_q_zip_reader_1_1_file_info.html#aff8a3cb580b57b7c6de085cf752586e7">QZipReader::FileInfo::permissions</a></div><div class="ttdeci">QFile::Permissions permissions</div><div class="ttdef"><b>定义</b> qzipreader_p.h:53</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_282630339bcb1248ff36df9287a75eaa.html">MyCommon</a></li><li class="navelem"><a class="el" href="qzipreader__p_8h.html">qzipreader_p.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

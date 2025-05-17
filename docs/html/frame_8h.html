@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: frame.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('frame_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">frame.h 文件参考<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__data.html">Data Structures</a> &raquo; <a class="el" href="group__lavu__frame.html">AVFrame</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>reference-counted frame API  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="avutil_8h_source.html">avutil.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="buffer_8h_source.html">buffer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dict_8h_source.html">dict.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rational_8h_source.html">rational.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="samplefmt_8h_source.html">samplefmt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pixfmt_8h_source.html">pixfmt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h_source.html">version.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+frame.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="frame_8h__incl.png" border="0" usemap="#aframe_8h" alt=""/></div>
+<map name="aframe_8h" id="aframe_8h">
+<area shape="rect" title="reference&#45;counted frame API" alt="" coords="541,5,606,32"/>
+<area shape="rect" title=" " alt="" coords="530,453,598,480"/>
+<area shape="poly" title=" " alt="" coords="540,24,442,30,313,41,186,58,135,69,97,82,62,98,33,114,15,134,10,148,8,167,8,318,12,336,24,353,42,368,67,382,131,406,209,424,294,439,377,449,515,460,514,466,377,454,293,444,208,430,130,411,65,387,39,372,20,356,7,339,3,319,3,167,5,147,10,132,30,109,59,93,95,78,133,64,185,53,312,36,442,25,540,19"/>
+<area shape="rect" title=" " alt="" coords="286,379,351,405"/>
+<area shape="poly" title=" " alt="" coords="540,27,436,43,305,72,244,91,193,113,159,139,150,152,147,167,147,244,150,267,159,288,173,308,190,325,232,353,274,372,271,377,229,357,187,329,169,311,154,291,145,269,141,244,141,166,145,150,155,135,190,109,242,86,303,66,435,38,540,21"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="1268,155,1332,181"/>
+<area shape="poly" title=" " alt="" coords="607,24,1254,155,1252,160,606,29"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="1766,304,1840,331"/>
+<area shape="poly" title=" " alt="" coords="606,20,800,41,1063,77,1240,112,1415,152,1509,166,1584,171,1619,176,1656,186,1695,202,1739,227,1770,256,1792,289,1788,292,1766,260,1736,231,1693,207,1654,191,1618,181,1583,177,1508,171,1414,157,1239,117,1062,83,800,46,606,26"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="480,304,554,331"/>
+<area shape="poly" title=" " alt="" coords="576,33,573,127,565,192,551,257,535,292,530,290,545,255,560,191,567,127,571,33"/>
+<area shape="rect" href="pixfmt_8h.html" title="pixel format definitions" alt="" coords="1618,229,1686,256"/>
+<area shape="poly" title=" " alt="" coords="607,22,910,67,1125,106,1345,152,1486,189,1604,224,1603,229,1485,194,1343,157,1124,111,909,72,606,27"/>
+<area shape="rect" href="buffer_8h.html" title="refcounted data buffer API" alt="" coords="42,155,107,181"/>
+<area shape="poly" title=" " alt="" coords="541,23,447,27,324,37,207,55,160,67,127,82,113,94,101,109,85,141,81,139,97,106,109,91,124,78,158,62,206,49,324,32,446,22,540,18"/>
+<area shape="rect" href="dict_8h.html" title="Public dictionary API." alt="" coords="1812,229,1865,256"/>
+<area shape="poly" title=" " alt="" coords="606,18,866,23,1253,35,1615,52,1737,64,1775,71,1795,78,1820,108,1834,144,1841,182,1843,214,1837,214,1836,182,1829,146,1815,111,1792,82,1774,76,1736,69,1614,58,1253,40,865,29,606,23"/>
+<area shape="rect" href="samplefmt_8h.html" title=" " alt="" coords="395,80,488,107"/>
+<area shape="poly" title=" " alt="" coords="552,35,479,75,476,70,549,30"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="1068,229,1150,256"/>
+<area shape="poly" title=" " alt="" coords="1269,184,1158,226,1156,221,1267,179"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="1690,379,1766,405"/>
+<area shape="poly" title=" " alt="" coords="1332,176,1542,238,1647,274,1684,289,1705,302,1722,332,1729,363,1724,364,1717,334,1701,306,1682,294,1645,279,1540,243,1331,181"/>
+<area shape="poly" title=" " alt="" coords="1332,166,1401,167,1494,175,1598,193,1650,208,1700,227,1747,257,1784,291,1780,295,1744,261,1697,232,1649,213,1597,198,1494,180,1401,172,1332,171"/>
+<area shape="rect" href="error_8h.html" title="error code definitions" alt="" coords="1183,379,1241,405"/>
+<area shape="poly" title=" " alt="" coords="1300,183,1286,248,1273,290,1256,332,1234,368,1229,365,1251,329,1268,288,1280,246,1295,181"/>
+<area shape="poly" title=" " alt="" coords="1268,177,986,226,570,306,569,301,985,221,1267,172"/>
+<area shape="rect" href="mathematics_8h.html" title=" " alt="" coords="429,229,536,256"/>
+<area shape="poly" title=" " alt="" coords="1268,175,552,238,551,233,1268,169"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="1418,229,1467,256"/>
+<area shape="poly" title=" " alt="" coords="1319,179,1405,223,1403,228,1317,184"/>
+<area shape="poly" title=" " alt="" coords="1333,173,1599,227,1603,228,1602,233,1598,232,1332,178"/>
+<area shape="poly" title=" " alt="" coords="1068,247,996,251,902,260,799,278,697,306,675,319,653,333,576,357,498,373,367,390,366,385,497,368,575,352,651,328,673,315,695,302,798,273,902,255,995,246,1067,242"/>
+<area shape="poly" title=" " alt="" coords="1151,226,1169,230,1177,242,1174,251,1167,256,1164,252,1170,248,1172,243,1166,234,1150,231"/>
+<area shape="rect" title=" " alt="" coords="1215,453,1276,480"/>
+<area shape="poly" title=" " alt="" coords="1152,246,1179,253,1208,264,1234,280,1256,303,1269,337,1272,374,1267,409,1258,439,1253,438,1261,408,1266,373,1264,338,1251,305,1231,284,1205,269,1177,258,1150,251"/>
+<area shape="rect" title=" " alt="" coords="942,304,1020,331"/>
+<area shape="poly" title=" " alt="" coords="1088,259,1018,298,1016,294,1086,254"/>
+<area shape="rect" title=" " alt="" coords="1095,379,1158,405"/>
+<area shape="poly" title=" " alt="" coords="1114,256,1120,304,1127,363,1121,364,1115,304,1108,257"/>
+<area shape="rect" title=" " alt="" coords="579,304,640,331"/>
+<area shape="poly" title=" " alt="" coords="1068,251,890,271,659,307,656,307,655,302,658,301,889,266,1068,245"/>
+<area shape="rect" title=" " alt="" coords="1044,304,1105,331"/>
+<area shape="poly" title=" " alt="" coords="1106,258,1090,291,1085,289,1101,255"/>
+<area shape="rect" title=" " alt="" coords="766,304,829,331"/>
+<area shape="poly" title=" " alt="" coords="1068,255,845,306,843,301,1067,250"/>
+<area shape="rect" title=" " alt="" coords="853,304,918,331"/>
+<area shape="poly" title=" " alt="" coords="1071,259,933,303,931,298,1069,254"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="474,379,560,405"/>
+<area shape="poly" title=" " alt="" coords="1068,250,927,268,840,284,754,307,726,319,697,333,575,376,573,371,695,328,723,314,752,301,839,279,927,262,1068,245"/>
+<area shape="poly" title=" " alt="" coords="1152,252,1457,328,1676,377,1675,382,1455,333,1150,257"/>
+<area shape="poly" title=" " alt="" coords="1151,245,1703,301,1751,307,1750,312,1702,307,1151,251"/>
+<area shape="rect" href="avconfig_8h.html" title=" " alt="" coords="1561,304,1690,331"/>
+<area shape="poly" title=" " alt="" coords="1151,247,1546,301,1545,306,1150,252"/>
+<area shape="rect" href="mem_8h.html" title="Memory handling functions" alt="" coords="1180,304,1241,331"/>
+<area shape="poly" title=" " alt="" coords="1129,254,1182,292,1179,297,1125,259"/>
+<area shape="poly" title=" " alt="" coords="1792,333,1753,370,1750,366,1788,329"/>
+<area shape="poly" title=" " alt="" coords="1180,326,1118,333,934,350,790,360,463,381,367,389,366,384,462,376,790,354,933,345,1117,328,1179,320"/>
+<area shape="poly" title=" " alt="" coords="1216,302,1282,193,1287,196,1221,305"/>
+<area shape="poly" title=" " alt="" coords="1198,333,1154,370,1151,366,1194,329"/>
+<area shape="poly" title=" " alt="" coords="1180,326,1118,333,576,388,576,383,1117,328,1179,320"/>
+<area shape="poly" title=" " alt="" coords="1214,331,1214,363,1209,363,1208,331"/>
+<area shape="poly" title=" " alt="" coords="1183,405,1171,408,1012,433,854,450,614,466,613,461,854,445,1012,428,1170,403,1182,400"/>
+<area shape="poly" title=" " alt="" coords="1220,405,1236,438,1231,440,1215,407"/>
+<area shape="poly" title=" " alt="" coords="484,334,366,376,364,371,482,329"/>
+<area shape="poly" title=" " alt="" coords="555,326,567,328,713,350,858,366,1080,385,1080,390,858,372,713,355,566,333,554,331"/>
+<area shape="poly" title=" " alt="" coords="520,331,520,363,515,363,515,331"/>
+<area shape="poly" title=" " alt="" coords="429,254,336,275,297,289,273,306,268,320,271,336,281,352,294,366,290,370,277,355,266,338,262,320,269,302,294,284,335,269,428,249"/>
+<area shape="poly" title=" " alt="" coords="506,254,575,294,573,298,503,259"/>
+<area shape="poly" title=" " alt="" coords="479,257,469,291,467,311,471,330,480,349,494,366,490,369,476,352,465,332,462,311,464,290,474,255"/>
+<area shape="poly" title=" " alt="" coords="491,255,507,289,502,291,486,258"/>
+<area shape="rect" href="intfloat_8h.html" title=" " alt="" coords="283,304,354,331"/>
+<area shape="poly" title=" " alt="" coords="455,259,362,300,360,295,453,254"/>
+<area shape="poly" title=" " alt="" coords="321,331,321,363,316,363,316,331"/>
+<area shape="poly" title=" " alt="" coords="354,329,469,370,468,375,352,334"/>
+<area shape="poly" title=" " alt="" coords="1423,231,1344,191,1347,186,1426,226"/>
+<area shape="poly" title=" " alt="" coords="1423,259,1350,297,1303,317,1254,333,1194,345,1115,356,924,373,576,391,576,386,923,367,1115,350,1193,340,1253,328,1301,312,1348,292,1421,254"/>
+<area shape="poly" title=" " alt="" coords="1469,246,1751,303,1750,308,1467,252"/>
+<area shape="rect" title=" " alt="" coords="1468,304,1537,331"/>
+<area shape="poly" title=" " alt="" coords="1455,255,1485,290,1481,294,1451,258"/>
+<area shape="poly" title=" " alt="" coords="1679,254,1764,294,1762,299,1677,259"/>
+<area shape="poly" title=" " alt="" coords="1650,257,1638,290,1633,289,1645,256"/>
+<area shape="poly" title=" " alt="" coords="78,182,80,211,87,251,102,293,113,312,127,329,160,353,197,370,236,380,271,385,270,391,235,385,195,375,157,358,123,333,109,315,97,295,82,252,75,212,72,182"/>
+<area shape="poly" title=" " alt="" coords="1849,256,1863,293,1863,314,1854,333,1829,343,1780,351,1623,364,1409,372,1166,376,463,381,367,389,366,383,463,376,1166,371,1409,366,1623,358,1780,346,1828,338,1850,329,1858,313,1858,294,1844,257"/>
+<area shape="poly" title=" " alt="" coords="1835,258,1818,291,1813,289,1830,255"/>
+<area shape="poly" title=" " alt="" coords="426,109,389,139,343,184,297,241,278,272,263,305,259,317,262,330,275,350,291,367,287,371,270,353,258,332,254,317,257,303,273,269,292,238,339,181,386,135,423,105"/>
+<area shape="poly" title=" " alt="" coords="488,96,1253,160,1252,165,488,101"/>
+<area shape="poly" title=" " alt="" coords="439,108,420,172,416,214,420,255,433,288,451,318,493,366,489,370,447,321,428,290,415,257,410,214,415,171,434,106"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="frame_8h__dep__incl.png" border="0" usemap="#aframe_8hdep" alt=""/></div>
+<map name="aframe_8hdep" id="aframe_8hdep">
+<area shape="rect" title="reference&#45;counted frame API" alt="" coords="462,5,527,32"/>
+<area shape="rect" href="avcodec_8h.html" title="Libavcodec external API header" alt="" coords="534,155,615,181"/>
+<area shape="poly" title=" " alt="" coords="465,44,450,58,439,74,434,90,438,105,457,126,482,141,508,152,534,159,533,164,507,157,479,146,454,130,434,108,428,90,434,71,446,54,462,40"/>
+<area shape="rect" href="avfilter_8h.html" title="Main libavfilter public API header" alt="" coords="87,304,158,331"/>
+<area shape="poly" title=" " alt="" coords="448,36,396,53,335,79,273,113,218,157,186,194,160,236,129,305,125,302,155,234,181,191,214,153,270,109,333,74,394,48,446,31"/>
+<area shape="rect" href="downmix__info_8h.html" title="audio downmix medatata" alt="" coords="565,80,677,107"/>
+<area shape="poly" title=" " alt="" coords="531,38,600,77,598,82,528,42"/>
+<area shape="rect" href="hwcontext_8h.html" title=" " alt="" coords="448,80,541,107"/>
+<area shape="poly" title=" " alt="" coords="497,48,497,80,492,80,492,48"/>
+<area shape="rect" href="mastering__display__metadata_8h.html" title=" " alt="" coords="702,80,900,107"/>
+<area shape="poly" title=" " alt="" coords="543,29,748,77,747,82,541,34"/>
+<area shape="rect" href="stereo3d_8h.html" title="Stereoscopic video" alt="" coords="924,80,1006,107"/>
+<area shape="poly" title=" " alt="" coords="543,23,707,45,912,77,924,80,923,85,911,83,706,50,542,28"/>
+<area shape="rect" href="swresample_8h.html" title="libswresample public header" alt="" coords="227,155,330,181"/>
+<area shape="poly" title=" " alt="" coords="465,43,298,156,295,152,462,39"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="205,453,307,480"/>
+<area shape="poly" title=" " alt="" coords="631,169,702,174,781,185,851,202,877,213,895,228,901,242,895,257,878,276,855,294,792,327,714,358,627,386,448,431,308,459,307,454,447,425,625,381,713,353,790,323,852,289,875,272,891,255,896,243,891,231,875,218,849,207,780,190,701,180,630,174"/>
+<area shape="rect" href="avformat_8h.html" title="Main libavformat public API header" alt="" coords="966,229,1050,256"/>
+<area shape="poly" title=" " alt="" coords="631,176,938,227,966,232,965,237,937,232,630,181"/>
+<area shape="rect" href="dirac_8h.html" title="Interface to Dirac Decoder/Encoder" alt="" coords="271,229,331,256"/>
+<area shape="poly" title=" " alt="" coords="520,186,345,232,333,235,331,230,343,227,518,181"/>
+<area shape="rect" href="dv__profile_8h.html" title=" " alt="" coords="356,229,444,256"/>
+<area shape="poly" title=" " alt="" coords="531,190,432,231,430,226,529,185"/>
+<area shape="rect" href="mediacodec_8h.html" title=" " alt="" coords="469,229,571,256"/>
+<area shape="poly" title=" " alt="" coords="558,196,531,231,527,227,554,192"/>
+<area shape="rect" href="vdpau_8h.html" title="Public libavcodec VDPAU header." alt="" coords="596,229,663,256"/>
+<area shape="poly" title=" " alt="" coords="595,192,622,227,618,231,591,196"/>
+<area shape="rect" href="videotoolbox_8h.html" title="Public libavcodec Videotoolbox header." alt="" coords="687,229,793,256"/>
+<area shape="poly" title=" " alt="" coords="618,186,712,226,710,231,616,190"/>
+<area shape="rect" href="xvmc_8h.html" title="Public libavcodec XvMC header." alt="" coords="817,229,881,256"/>
+<area shape="poly" title=" " alt="" coords="631,181,806,227,817,230,816,235,805,232,630,186"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="595,528,690,555"/>
+<area shape="poly" title=" " alt="" coords="323,477,584,525,595,527,594,533,583,531,322,482"/>
+<area shape="rect" href="_video_player_8cpp.html" title=" " alt="" coords="15,528,131,555"/>
+<area shape="poly" title=" " alt="" coords="211,489,106,530,104,525,209,484"/>
+<area shape="rect" href="_video_player___audio_thread_8cpp.html" title=" " alt="" coords="155,528,351,555"/>
+<area shape="poly" title=" " alt="" coords="258,496,256,528,251,528,252,496"/>
+<area shape="rect" href="_video_player___video_thread_8cpp.html" title=" " alt="" coords="375,528,571,555"/>
+<area shape="poly" title=" " alt="" coords="309,483,436,525,434,530,307,488"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="529,603,639,629"/>
+<area shape="poly" title=" " alt="" coords="625,569,596,604,592,601,621,565"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="663,603,737,629"/>
+<area shape="poly" title=" " alt="" coords="664,565,692,601,688,604,660,569"/>
+<area shape="poly" title=" " alt="" coords="986,269,954,306,939,335,931,361,920,385,896,408,862,419,803,429,637,446,308,466,307,461,636,441,802,424,861,414,893,403,915,382,926,359,934,332,950,302,982,265"/>
+<area shape="rect" href="_p_c_m_frame_8h.html" title=" " alt="" coords="964,304,1063,331"/>
+<area shape="poly" title=" " alt="" coords="1013,272,1015,303,1010,304,1007,272"/>
+<area shape="rect" href="avdevice_8h.html" title="Main libavdevice API header" alt="" coords="1087,304,1171,331"/>
+<area shape="poly" title=" " alt="" coords="1043,262,1109,301,1107,306,1041,267"/>
+<area shape="rect" href="_p_c_m_frame_8cpp.html" title=" " alt="" coords="1085,379,1198,405"/>
+<area shape="poly" title=" " alt="" coords="1050,336,1120,376,1117,380,1047,341"/>
+<area shape="rect" href="_pcm_player_8h.html" title=" " alt="" coords="964,379,1060,405"/>
+<area shape="poly" title=" " alt="" coords="1015,347,1015,378,1009,378,1010,346"/>
+<area shape="poly" title=" " alt="" coords="949,408,946,408,762,429,581,446,308,465,307,460,580,441,761,424,945,403,948,402"/>
+<area shape="rect" href="_pcm_player_8cpp.html" title=" " alt="" coords="959,453,1070,480"/>
+<area shape="poly" title=" " alt="" coords="1016,421,1017,453,1011,453,1010,421"/>
+<area shape="rect" href="_pcm_player___s_d_l_8h.html" title=" " alt="" coords="806,453,935,480"/>
+<area shape="poly" title=" " alt="" coords="975,415,897,455,894,450,973,410"/>
+<area shape="rect" href="_pcm_player___s_d_l_8cpp.html" title=" " alt="" coords="799,528,942,555"/>
+<area shape="poly" title=" " alt="" coords="873,496,873,528,868,528,868,496"/>
+<area shape="poly" title=" " alt="" coords="73,338,44,351,21,367,9,385,9,394,14,404,26,414,44,423,94,438,205,457,204,463,92,444,42,428,23,418,10,407,4,395,4,383,17,363,42,346,71,333"/>
+<area shape="rect" href="buffersink_8h.html" title="memory buffer sink API for audio and video" alt="" coords="24,379,112,405"/>
+<area shape="poly" title=" " alt="" coords="106,345,79,380,75,377,102,342"/>
+<area shape="rect" href="buffersrc_8h.html" title="Memory buffer source API." alt="" coords="136,379,218,405"/>
+<area shape="poly" title=" " alt="" coords="143,342,170,377,166,380,139,345"/>
+<area shape="poly" title=" " alt="" coords="116,409,224,450,222,455,114,414"/>
+<area shape="poly" title=" " alt="" coords="204,414,244,451,241,455,200,418"/>
+<area shape="poly" title=" " alt="" coords="521,115,563,152,559,156,518,119"/>
+<area shape="poly" title=" " alt="" coords="270,197,261,230,254,295,253,360,257,453,252,453,247,360,249,295,256,229,265,196"/>
+</map>
+</div>
+</div>
+<p><a href="frame_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to hold side data for an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a>.  <a href="struct_a_v_frame_side_data.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_frame.html">AVFrame</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure describes decoded (raw) audio or video data.  <a href="struct_a_v_frame.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:add80189702cf0f5ea82718576fb43201" id="r_add80189702cf0f5ea82718576fb43201"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add80189702cf0f5ea82718576fb43201">AV_NUM_DATA_POINTERS</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:add80189702cf0f5ea82718576fb43201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadddbce4ec0cc2ad4298cf6f266f97f6a" id="r_gadddbce4ec0cc2ad4298cf6f266f97f6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame__flags.html#gadddbce4ec0cc2ad4298cf6f266f97f6a">AV_FRAME_FLAG_CORRUPT</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memdesc:gadddbce4ec0cc2ad4298cf6f266f97f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frame data may be corrupted, e.g.  <br /></td></tr>
+<tr class="separator:gadddbce4ec0cc2ad4298cf6f266f97f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0c693c70705b18c1c1346f520b6f9cc" id="r_gaa0c693c70705b18c1c1346f520b6f9cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame__flags.html#gaa0c693c70705b18c1c1346f520b6f9cc">AV_FRAME_FLAG_DISCARD</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="memdesc:gaa0c693c70705b18c1c1346f520b6f9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A flag to mark the frames which need to be decoded, but shouldn't be output.  <br /></td></tr>
+<tr class="separator:gaa0c693c70705b18c1c1346f520b6f9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe215657b893e361ba4c42c8896c0ac" id="r_a0fe215657b893e361ba4c42c8896c0ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fe215657b893e361ba4c42c8896c0ac">FF_DECODE_ERROR_INVALID_BITSTREAM</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a0fe215657b893e361ba4c42c8896c0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a995eb38eb9ab4e9897422d06aeea4cfd" id="r_a995eb38eb9ab4e9897422d06aeea4cfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a995eb38eb9ab4e9897422d06aeea4cfd">FF_DECODE_ERROR_MISSING_REFERENCE</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a995eb38eb9ab4e9897422d06aeea4cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga1b8cd016bc806e5420ffe97edc140d12" id="r_ga1b8cd016bc806e5420ffe97edc140d12"><td class="memItemLeft" align="right" valign="top">typedef struct AVFrameSideData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga1b8cd016bc806e5420ffe97edc140d12">AVFrameSideData</a></td></tr>
+<tr class="memdesc:ga1b8cd016bc806e5420ffe97edc140d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to hold side data for an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a>.  <br /></td></tr>
+<tr class="separator:ga1b8cd016bc806e5420ffe97edc140d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb9d87a8956751b4fd71791105d65c52" id="r_gadb9d87a8956751b4fd71791105d65c52"><td class="memItemLeft" align="right" valign="top">typedef struct AVFrame&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gadb9d87a8956751b4fd71791105d65c52">AVFrame</a></td></tr>
+<tr class="memdesc:gadb9d87a8956751b4fd71791105d65c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure describes decoded (raw) audio or video data.  <br /></td></tr>
+<tr class="separator:gadb9d87a8956751b4fd71791105d65c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:gae01fa7e427274293aacdf2adc17076bc" id="r_gae01fa7e427274293aacdf2adc17076bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> { <br />
+&#160;&#160;<a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca3de91a03b453c956b7274a2392d9a437">AV_FRAME_DATA_PANSCAN</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca4848fd3952b4c2e1c1b85acb628c78a6">AV_FRAME_DATA_A53_CC</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bcacec681d6146e8bd4c61b2e1cc88354a8">AV_FRAME_DATA_STEREO3D</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bcaa69ea5c11a5431bfff9e565714dafe41">AV_FRAME_DATA_MATRIXENCODING</a>
+, <br />
+&#160;&#160;<a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca71819257ea0bedb7e0740a0ce60e404a">AV_FRAME_DATA_DOWNMIX_INFO</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca66f46a9df9fcb8cf212e0693465794e1">AV_FRAME_DATA_REPLAYGAIN</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca3e01b882b6fa04724076067d6d9f8b69">AV_FRAME_DATA_DISPLAYMATRIX</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca9aabf5c0b8abc7064bfcc59485e54aea">AV_FRAME_DATA_AFD</a>
+, <br />
+&#160;&#160;<a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bcaf50d0ed0a9a4517341c221be03a06c42">AV_FRAME_DATA_MOTION_VECTORS</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca6b0b1ee4315f322922710f65d02a146b">AV_FRAME_DATA_SKIP_SAMPLES</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca51023c847159dcc08776f9dcee5e0c90">AV_FRAME_DATA_AUDIO_SERVICE_TYPE</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca6e305f92e325fbd219527452048f16cb">AV_FRAME_DATA_MASTERING_DISPLAY_METADATA</a>
+, <br />
+&#160;&#160;<a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca03982b828a1069c895d16cda4b3e9fd4">AV_FRAME_DATA_GOP_TIMECODE</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca12806c5fd4b37dca88312c61965f33e8">AV_FRAME_DATA_SPHERICAL</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca311f0afd2dded92ef68ae00f7711aa2d">AV_FRAME_DATA_CONTENT_LIGHT_LEVEL</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca8ef8866b8c04c54c630479bc163196ae">AV_FRAME_DATA_ICC_PROFILE</a>
+, <br />
+&#160;&#160;<a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca716dc238a2bea3693a52ab658c4e8ff7">AV_FRAME_DATA_QP_TABLE_PROPERTIES</a>
+, <a class="el" href="group__lavu__frame.html#ggae01fa7e427274293aacdf2adc17076bca880fdfc059a05584749d695cc54e4717">AV_FRAME_DATA_QP_TABLE_DATA</a>
+<br />
+ }</td></tr>
+<tr class="separator:gae01fa7e427274293aacdf2adc17076bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga612627d8f03d52317992979dfa151d76" id="r_ga612627d8f03d52317992979dfa151d76"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga612627d8f03d52317992979dfa151d76">AVActiveFormatDescription</a> { <br />
+&#160;&#160;<a class="el" href="group__lavu__frame.html#gga612627d8f03d52317992979dfa151d76a0e9a49946d70eb6ca77cf937ed1a342c">AV_AFD_SAME</a> = 8
+, <a class="el" href="group__lavu__frame.html#gga612627d8f03d52317992979dfa151d76ab118e63239595dceb50deea7351dc1cb">AV_AFD_4_3</a> = 9
+, <a class="el" href="group__lavu__frame.html#gga612627d8f03d52317992979dfa151d76ad8f8850e69a05765363a4a833adc97d8">AV_AFD_16_9</a> = 10
+, <a class="el" href="group__lavu__frame.html#gga612627d8f03d52317992979dfa151d76a0da920de1ba63c73fabe1b9878477a13">AV_AFD_14_9</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="group__lavu__frame.html#gga612627d8f03d52317992979dfa151d76a65edb00603a0d7fdb37cecac94b62cc5">AV_AFD_4_3_SP_14_9</a> = 13
+, <a class="el" href="group__lavu__frame.html#gga612627d8f03d52317992979dfa151d76a488ce7ad4833c96497000dd03b8f0b55">AV_AFD_16_9_SP_14_9</a> = 14
+, <a class="el" href="group__lavu__frame.html#gga612627d8f03d52317992979dfa151d76aac53fd979d24b22c0673d1a0bc59e304">AV_AFD_SP_4_3</a> = 15
+<br />
+ }</td></tr>
+<tr class="separator:ga612627d8f03d52317992979dfa151d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a6b9c9e220a15c957ef715ec7a65532" id="r_ga5a6b9c9e220a15c957ef715ec7a65532"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="group__lavu__frame.html#gga5a6b9c9e220a15c957ef715ec7a65532a8df6ec39909b8d97c0a6d2d8465d2e0f">AV_FRAME_CROP_UNALIGNED</a> = 1 &lt;&lt; 0
+ }</td></tr>
+<tr class="memdesc:ga5a6b9c9e220a15c957ef715ec7a65532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for frame cropping.  <a href="group__lavu__frame.html#ga5a6b9c9e220a15c957ef715ec7a65532">更多...</a><br /></td></tr>
+<tr class="separator:ga5a6b9c9e220a15c957ef715ec7a65532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga925e7d083e99a910b9c21268636cb712" id="r_ga925e7d083e99a910b9c21268636cb712"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga925e7d083e99a910b9c21268636cb712">av_frame_get_best_effort_timestamp</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:ga925e7d083e99a910b9c21268636cb712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessors for some <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> fields.  <br /></td></tr>
+<tr class="separator:ga925e7d083e99a910b9c21268636cb712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7708227eba08ff739576c251b174934" id="r_gad7708227eba08ff739576c251b174934"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gad7708227eba08ff739576c251b174934">av_frame_set_best_effort_timestamp</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:gad7708227eba08ff739576c251b174934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50494987e9226a176284ae7f6134efc0" id="r_ga50494987e9226a176284ae7f6134efc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga50494987e9226a176284ae7f6134efc0">av_frame_get_pkt_duration</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga50494987e9226a176284ae7f6134efc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58b0960f75af92d98a41b5d640d31af5" id="r_ga58b0960f75af92d98a41b5d640d31af5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga58b0960f75af92d98a41b5d640d31af5">av_frame_set_pkt_duration</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga58b0960f75af92d98a41b5d640d31af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65d2eb53158d00661efbdacdb1eef103" id="r_ga65d2eb53158d00661efbdacdb1eef103"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga65d2eb53158d00661efbdacdb1eef103">av_frame_get_pkt_pos</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga65d2eb53158d00661efbdacdb1eef103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2ebf63faa7bd8855738f8c6825d6da6" id="r_gae2ebf63faa7bd8855738f8c6825d6da6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gae2ebf63faa7bd8855738f8c6825d6da6">av_frame_set_pkt_pos</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:gae2ebf63faa7bd8855738f8c6825d6da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b71b6339d48f71999688af70190beee" id="r_ga8b71b6339d48f71999688af70190beee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga8b71b6339d48f71999688af70190beee">av_frame_get_channel_layout</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga8b71b6339d48f71999688af70190beee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87a6e7cdf7fe675be91b655dc4ae794e" id="r_ga87a6e7cdf7fe675be91b655dc4ae794e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga87a6e7cdf7fe675be91b655dc4ae794e">av_frame_set_channel_layout</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga87a6e7cdf7fe675be91b655dc4ae794e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga590db2f240eaa6ce998bfe3df5b9cb22" id="r_ga590db2f240eaa6ce998bfe3df5b9cb22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga590db2f240eaa6ce998bfe3df5b9cb22">av_frame_get_channels</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga590db2f240eaa6ce998bfe3df5b9cb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53f781c6fc731399b2cdf63a97978d35" id="r_ga53f781c6fc731399b2cdf63a97978d35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga53f781c6fc731399b2cdf63a97978d35">av_frame_set_channels</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga53f781c6fc731399b2cdf63a97978d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaadbff484111a2603b15cf982a4e710c8" id="r_gaadbff484111a2603b15cf982a4e710c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gaadbff484111a2603b15cf982a4e710c8">av_frame_get_sample_rate</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:gaadbff484111a2603b15cf982a4e710c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b97de1236751c84523961595233837b" id="r_ga7b97de1236751c84523961595233837b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga7b97de1236751c84523961595233837b">av_frame_set_sample_rate</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga7b97de1236751c84523961595233837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac58f97d515b15381aeff47cb4fb9dbbc" id="r_gac58f97d515b15381aeff47cb4fb9dbbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gac58f97d515b15381aeff47cb4fb9dbbc">av_frame_get_metadata</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:gac58f97d515b15381aeff47cb4fb9dbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga627f9f91f1cab9898a5d8c8a6cb259eb" id="r_ga627f9f91f1cab9898a5d8c8a6cb259eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga627f9f91f1cab9898a5d8c8a6cb259eb">av_frame_set_metadata</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga627f9f91f1cab9898a5d8c8a6cb259eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab67e6f896a782de75cc8fc11ce512412" id="r_gab67e6f896a782de75cc8fc11ce512412"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gab67e6f896a782de75cc8fc11ce512412">av_frame_get_decode_error_flags</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:gab67e6f896a782de75cc8fc11ce512412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa50e609bbed3256839b77a5b8bf8d3fe" id="r_gaa50e609bbed3256839b77a5b8bf8d3fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gaa50e609bbed3256839b77a5b8bf8d3fe">av_frame_set_decode_error_flags</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:gaa50e609bbed3256839b77a5b8bf8d3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga758b1631801dd0abe073aa94e69703d4" id="r_ga758b1631801dd0abe073aa94e69703d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga758b1631801dd0abe073aa94e69703d4">av_frame_get_pkt_size</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga758b1631801dd0abe073aa94e69703d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga456f04c3e9c0246e1632f1323f6f2f92" id="r_ga456f04c3e9c0246e1632f1323f6f2f92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga456f04c3e9c0246e1632f1323f6f2f92">av_frame_set_pkt_size</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga456f04c3e9c0246e1632f1323f6f2f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5845ea05a21462e4ec1944e976839735" id="r_ga5845ea05a21462e4ec1944e976839735"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aef44329758059c91c76d334e8fc09700">int8_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga5845ea05a21462e4ec1944e976839735">av_frame_get_qp_table</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, int *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c101456f4ab21f66c7a4553751b9e9b">stride</a>, int *<a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="separator:ga5845ea05a21462e4ec1944e976839735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad08c37260c53f8587fe747dba285dd70" id="r_gad08c37260c53f8587fe747dba285dd70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gad08c37260c53f8587fe747dba285dd70">av_frame_set_qp_table</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a0c101456f4ab21f66c7a4553751b9e9b">stride</a>, int <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="separator:gad08c37260c53f8587fe747dba285dd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03cc0788d601ca46675256d56f6c018e" id="r_ga03cc0788d601ca46675256d56f6c018e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga03cc0788d601ca46675256d56f6c018e">av_frame_get_colorspace</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga03cc0788d601ca46675256d56f6c018e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13d84467430d2ad75ce9e0091ca8f4c4" id="r_ga13d84467430d2ad75ce9e0091ca8f4c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga13d84467430d2ad75ce9e0091ca8f4c4">av_frame_set_colorspace</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga13d84467430d2ad75ce9e0091ca8f4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fe34af632554dce15be46f3a89b574d" id="r_ga7fe34af632554dce15be46f3a89b574d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> enum <a class="el" href="pixfmt_8h.html#a3da0bf691418bc22c4bcbe6583ad589a">AVColorRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga7fe34af632554dce15be46f3a89b574d">av_frame_get_color_range</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga7fe34af632554dce15be46f3a89b574d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24180c5de867fbdc50746cbe7023d624" id="r_ga24180c5de867fbdc50746cbe7023d624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga24180c5de867fbdc50746cbe7023d624">av_frame_set_color_range</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="pixfmt_8h.html#a3da0bf691418bc22c4bcbe6583ad589a">AVColorRange</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga24180c5de867fbdc50746cbe7023d624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43da209738677658a2a5a7a80e1ed35a" id="r_ga43da209738677658a2a5a7a80e1ed35a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga43da209738677658a2a5a7a80e1ed35a">av_get_colorspace_name</a> (enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="memdesc:ga43da209738677658a2a5a7a80e1ed35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of a colorspace.  <br /></td></tr>
+<tr class="separator:ga43da209738677658a2a5a7a80e1ed35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac778d9609ac0c42d0a9445e549de172e" id="r_gac778d9609ac0c42d0a9445e549de172e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gac778d9609ac0c42d0a9445e549de172e">av_frame_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gac778d9609ac0c42d0a9445e549de172e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> and set its fields to default values.  <br /></td></tr>
+<tr class="separator:gac778d9609ac0c42d0a9445e549de172e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga979d73f3228814aee56aeca0636e37cc" id="r_ga979d73f3228814aee56aeca0636e37cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga979d73f3228814aee56aeca0636e37cc">av_frame_free</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> **frame)</td></tr>
+<tr class="memdesc:ga979d73f3228814aee56aeca0636e37cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the frame and any dynamically allocated objects in it, e.g.  <br /></td></tr>
+<tr class="separator:ga979d73f3228814aee56aeca0636e37cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88b0ecbc4eb3453eef3fbefa3bddeb7c" id="r_ga88b0ecbc4eb3453eef3fbefa3bddeb7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga88b0ecbc4eb3453eef3fbefa3bddeb7c">av_frame_ref</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:ga88b0ecbc4eb3453eef3fbefa3bddeb7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up a new reference to the data described by the source frame.  <br /></td></tr>
+<tr class="separator:ga88b0ecbc4eb3453eef3fbefa3bddeb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb917e6f2b61717390baf2009fe66c06" id="r_gadb917e6f2b61717390baf2009fe66c06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gadb917e6f2b61717390baf2009fe66c06">av_frame_clone</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:gadb917e6f2b61717390baf2009fe66c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new frame that references the same data as src.  <br /></td></tr>
+<tr class="separator:gadb917e6f2b61717390baf2009fe66c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a2b687f9c1c5ed0089b01fd61227108" id="r_ga0a2b687f9c1c5ed0089b01fd61227108"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga0a2b687f9c1c5ed0089b01fd61227108">av_frame_unref</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:ga0a2b687f9c1c5ed0089b01fd61227108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unreference all the buffers referenced by frame and reset the frame fields.  <br /></td></tr>
+<tr class="separator:ga0a2b687f9c1c5ed0089b01fd61227108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga709e62bc2917ffd84c5c0f4e1dfc48f7" id="r_ga709e62bc2917ffd84c5c0f4e1dfc48f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga709e62bc2917ffd84c5c0f4e1dfc48f7">av_frame_move_ref</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:ga709e62bc2917ffd84c5c0f4e1dfc48f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move everything contained in src to dst and reset src.  <br /></td></tr>
+<tr class="separator:ga709e62bc2917ffd84c5c0f4e1dfc48f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b1acbfa82c79bf7fd78d868572f0ceb" id="r_ga6b1acbfa82c79bf7fd78d868572f0ceb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga6b1acbfa82c79bf7fd78d868572f0ceb">av_frame_get_buffer</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="base_8h.html#a6c52c4bac77f6744fdc338766e9e8a6f">align</a>)</td></tr>
+<tr class="memdesc:ga6b1acbfa82c79bf7fd78d868572f0ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate new <a class="el" href="_s_d_l__opengl__glext_8h.html#a76461e97a098d2c9ae20ac193d3825ae">buffer(s)</a> for audio or video data.  <br /></td></tr>
+<tr class="separator:ga6b1acbfa82c79bf7fd78d868572f0ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ba755bada5c3c8883361ef43fb5fb7a" id="r_ga3ba755bada5c3c8883361ef43fb5fb7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga3ba755bada5c3c8883361ef43fb5fb7a">av_frame_is_writable</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:ga3ba755bada5c3c8883361ef43fb5fb7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the frame data is writable.  <br /></td></tr>
+<tr class="separator:ga3ba755bada5c3c8883361ef43fb5fb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd5417c06f5a6b419b0dbd8f0ff363fd" id="r_gadd5417c06f5a6b419b0dbd8f0ff363fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gadd5417c06f5a6b419b0dbd8f0ff363fd">av_frame_make_writable</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:gadd5417c06f5a6b419b0dbd8f0ff363fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure that the frame data is writable, avoiding data copy if possible.  <br /></td></tr>
+<tr class="separator:gadd5417c06f5a6b419b0dbd8f0ff363fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec4e92f6e1e75ffaf76e07586fb0c9ed" id="r_gaec4e92f6e1e75ffaf76e07586fb0c9ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gaec4e92f6e1e75ffaf76e07586fb0c9ed">av_frame_copy</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:gaec4e92f6e1e75ffaf76e07586fb0c9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the frame data from src to dst.  <br /></td></tr>
+<tr class="separator:gaec4e92f6e1e75ffaf76e07586fb0c9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9b275b114ace0db95c5796bc71f3012" id="r_gab9b275b114ace0db95c5796bc71f3012"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gab9b275b114ace0db95c5796bc71f3012">av_frame_copy_props</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:gab9b275b114ace0db95c5796bc71f3012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy only "metadata" fields from src to dst.  <br /></td></tr>
+<tr class="separator:gab9b275b114ace0db95c5796bc71f3012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91db441648ef2c71dc431a417605a0d6" id="r_ga91db441648ef2c71dc431a417605a0d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga91db441648ef2c71dc431a417605a0d6">av_frame_get_plane_buffer</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int plane)</td></tr>
+<tr class="memdesc:ga91db441648ef2c71dc431a417605a0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the buffer reference a given data plane is stored in.  <br /></td></tr>
+<tr class="separator:ga91db441648ef2c71dc431a417605a0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac169cffd766958d24ea08ca1878f20eb" id="r_gac169cffd766958d24ea08ca1878f20eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gac169cffd766958d24ea08ca1878f20eb">av_frame_new_side_data</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="group__lavu__frame.html#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="memdesc:gac169cffd766958d24ea08ca1878f20eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new side data to a frame.  <br /></td></tr>
+<tr class="separator:gac169cffd766958d24ea08ca1878f20eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2aafcdaafcb1d3e7ce2d0d6f733546a" id="r_gab2aafcdaafcb1d3e7ce2d0d6f733546a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gab2aafcdaafcb1d3e7ce2d0d6f733546a">av_frame_new_side_data_from_buf</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="group__lavu__frame.html#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>)</td></tr>
+<tr class="memdesc:gab2aafcdaafcb1d3e7ce2d0d6f733546a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new side data to a frame from an existing <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a>  <br /></td></tr>
+<tr class="separator:gab2aafcdaafcb1d3e7ce2d0d6f733546a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e3085c5a7aa8e8867ec6322983d3bc7" id="r_ga0e3085c5a7aa8e8867ec6322983d3bc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga0e3085c5a7aa8e8867ec6322983d3bc7">av_frame_get_side_data</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="group__lavu__frame.html#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="separator:ga0e3085c5a7aa8e8867ec6322983d3bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga132d6c01d0a21e5b48b96cd7c988de91" id="r_ga132d6c01d0a21e5b48b96cd7c988de91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#ga132d6c01d0a21e5b48b96cd7c988de91">av_frame_remove_side_data</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="group__lavu__frame.html#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="memdesc:ga132d6c01d0a21e5b48b96cd7c988de91"><td class="mdescLeft">&#160;</td><td class="mdescRight">If side data of the supplied type exists in the frame, free it and remove it from the frame.  <br /></td></tr>
+<tr class="separator:ga132d6c01d0a21e5b48b96cd7c988de91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea6d378ff15d984d4eb67b462b7d70b5" id="r_gaea6d378ff15d984d4eb67b462b7d70b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gaea6d378ff15d984d4eb67b462b7d70b5">av_frame_apply_cropping</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:gaea6d378ff15d984d4eb67b462b7d70b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crop the given video <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> according to its crop_left/crop_top/crop_right/ crop_bottom fields.  <br /></td></tr>
+<tr class="separator:gaea6d378ff15d984d4eb67b462b7d70b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff674f7f4b25bdacf32fc8f3174138ab" id="r_gaff674f7f4b25bdacf32fc8f3174138ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame.html#gaff674f7f4b25bdacf32fc8f3174138ab">av_frame_side_data_name</a> (enum <a class="el" href="group__lavu__frame.html#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="separator:gaff674f7f4b25bdacf32fc8f3174138ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>reference-counted frame API </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="add80189702cf0f5ea82718576fb43201" name="add80189702cf0f5ea82718576fb43201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add80189702cf0f5ea82718576fb43201">&#9670;&#160;</a></span>AV_NUM_DATA_POINTERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_NUM_DATA_POINTERS&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fe215657b893e361ba4c42c8896c0ac" name="a0fe215657b893e361ba4c42c8896c0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fe215657b893e361ba4c42c8896c0ac">&#9670;&#160;</a></span>FF_DECODE_ERROR_INVALID_BITSTREAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FF_DECODE_ERROR_INVALID_BITSTREAM&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a995eb38eb9ab4e9897422d06aeea4cfd" name="a995eb38eb9ab4e9897422d06aeea4cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a995eb38eb9ab4e9897422d06aeea4cfd">&#9670;&#160;</a></span>FF_DECODE_ERROR_MISSING_REFERENCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FF_DECODE_ERROR_MISSING_REFERENCE&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="frame_8h.html">frame.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

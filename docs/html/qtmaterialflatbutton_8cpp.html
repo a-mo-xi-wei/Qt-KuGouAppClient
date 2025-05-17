@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: qtmaterialflatbutton.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('qtmaterialflatbutton_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">qtmaterialflatbutton.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>实现 <a class="el" href="class_qt_material_flat_button.html" title="扁平按钮类，继承自 QPushButton，支持 Material Design 风格">QtMaterialFlatButton</a> 类，提供 <a class="el" href="namespace_material.html" title="Material Design 相关枚举和类型的命名空间">Material</a> Design 扁平按钮  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="qtmaterialflatbutton_8h_source.html">qtmaterialflatbutton.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialflatbutton__p_8h_source.html">qtmaterialflatbutton_p.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialrippleoverlay_8h_source.html">qtmaterialrippleoverlay.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialripple_8h_source.html">qtmaterialripple.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialstyle_8h_source.html">qtmaterialstyle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialflatbutton__internal_8h_source.html">qtmaterialflatbutton_internal.h</a>&quot;</code><br />
+<code>#include &lt;QPainter&gt;</code><br />
+<code>#include &lt;QResizeEvent&gt;</code><br />
+<code>#include &lt;QIcon&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+qtmaterialflatbutton.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="qtmaterialflatbutton_8cpp__incl.png" border="0" usemap="#aqtmaterialflatbutton_8cpp" alt=""/></div>
+<map name="aqtmaterialflatbutton_8cpp" id="aqtmaterialflatbutton_8cpp">
+<area shape="rect" title="实现 QtMaterialFlatButton 类，提供 Material Design 扁平按钮" alt="" coords="1168,5,1325,32"/>
+<area shape="rect" href="qtmaterialflatbutton_8h.html" title="定义 QtMaterialFlatButton 类，提供 Material Design 扁平按钮" alt="" coords="182,88,326,115"/>
+<area shape="poly" title=" " alt="" coords="1167,26,825,44,603,61,380,83,342,88,341,82,379,77,603,55,824,39,1167,20"/>
+<area shape="rect" href="qtmaterialflatbutton__p_8h.html" title="定义 QtMaterialFlatButtonPrivate 类，提供 QtMaterialFlatButton 的私有实现" alt="" coords="392,88,549,115"/>
+<area shape="poly" title=" " alt="" coords="1167,27,905,47,742,63,579,83,548,87,547,82,578,77,742,58,905,42,1167,22"/>
+<area shape="rect" href="qtmaterialrippleoverlay_8h.html" title="定义 QtMaterialRippleOverlay 类，提供水波纹覆盖层功能" alt="" coords="864,88,1026,115"/>
+<area shape="poly" title=" " alt="" coords="1199,35,1008,86,1006,81,1198,30"/>
+<area shape="rect" href="qtmaterialripple_8h.html" title="定义 QtMaterialRipple 类，提供水波纹动画效果" alt="" coords="1186,88,1306,115"/>
+<area shape="poly" title=" " alt="" coords="1249,32,1249,73,1244,73,1244,32"/>
+<area shape="rect" href="qtmaterialstyle_8h.html" title="定义 QtMaterialStyle 类，提供 Material Design 风格支持" alt="" coords="1330,88,1448,115"/>
+<area shape="poly" title=" " alt="" coords="1270,30,1355,78,1352,82,1267,35"/>
+<area shape="rect" href="qtmaterialflatbutton__internal_8h.html" title="定义 QtMaterialFlatButtonStateMachine 类，提供扁平按钮状态管理" alt="" coords="591,80,723,123"/>
+<area shape="poly" title=" " alt="" coords="1168,33,739,92,738,86,1167,28"/>
+<area shape="rect" title=" " alt="" coords="1471,88,1544,115"/>
+<area shape="poly" title=" " alt="" coords="1298,30,1375,51,1460,77,1466,79,1464,84,1459,83,1374,56,1297,35"/>
+<area shape="rect" title=" " alt="" coords="1568,88,1674,115"/>
+<area shape="poly" title=" " alt="" coords="1323,30,1434,50,1556,77,1568,81,1567,86,1555,83,1433,56,1322,35"/>
+<area shape="rect" title=" " alt="" coords="1698,88,1754,115"/>
+<area shape="poly" title=" " alt="" coords="1326,20,1402,26,1494,37,1591,53,1687,77,1692,79,1690,84,1685,83,1590,58,1493,42,1402,31,1325,26"/>
+<area shape="rect" title=" " alt="" coords="146,171,245,197"/>
+<area shape="poly" title=" " alt="" coords="247,117,215,160,211,157,243,114"/>
+<area shape="rect" title=" " alt="" coords="5,171,122,197"/>
+<area shape="poly" title=" " alt="" coords="225,118,108,167,106,162,223,113"/>
+<area shape="rect" href="qtmaterialtheme_8h.html" title="定义 QtMaterialTheme 类和 Material 命名空间，提供 Material Design 主题支持" alt="" coords="269,171,394,197"/>
+<area shape="poly" title=" " alt="" coords="268,113,311,158,308,162,264,117"/>
+<area shape="rect" title=" " alt="" coords="297,245,366,272"/>
+<area shape="poly" title=" " alt="" coords="334,198,334,230,329,230,329,198"/>
+<area shape="poly" title=" " alt="" coords="450,117,367,165,365,160,447,113"/>
+<area shape="rect" title=" " alt="" coords="418,171,490,197"/>
+<area shape="poly" title=" " alt="" coords="470,116,462,156,457,155,465,115"/>
+<area shape="rect" title=" " alt="" coords="515,171,577,197"/>
+<area shape="poly" title=" " alt="" coords="484,113,526,158,522,161,480,117"/>
+<area shape="rect" title=" " alt="" coords="736,171,836,197"/>
+<area shape="poly" title=" " alt="" coords="921,118,826,166,823,161,919,113"/>
+<area shape="rect" href="qtmaterialoverlaywidget_8h.html" title="定义 QtMaterialOverlayWidget 类，提供覆盖层控件功能" alt="" coords="860,171,1030,197"/>
+<area shape="poly" title=" " alt="" coords="948,115,948,155,942,155,942,115"/>
+<area shape="rect" title=" " alt="" coords="909,245,981,272"/>
+<area shape="poly" title=" " alt="" coords="948,198,948,230,942,230,942,198"/>
+<area shape="rect" title=" " alt="" coords="1390,171,1558,197"/>
+<area shape="poly" title=" " alt="" coords="1283,113,1425,163,1423,168,1281,118"/>
+<area shape="rect" title=" " alt="" coords="1582,171,1689,197"/>
+<area shape="poly" title=" " alt="" coords="1290,113,1319,120,1568,167,1567,173,1318,125,1289,118"/>
+<area shape="rect" title=" " alt="" coords="1053,171,1191,197"/>
+<area shape="poly" title=" " alt="" coords="1228,117,1155,164,1153,160,1225,113"/>
+<area shape="rect" title=" " alt="" coords="1216,171,1277,197"/>
+<area shape="poly" title=" " alt="" coords="1249,115,1249,155,1244,155,1244,115"/>
+<area shape="rect" title=" " alt="" coords="1302,171,1367,197"/>
+<area shape="poly" title=" " alt="" coords="1262,113,1311,158,1308,162,1258,117"/>
+<area shape="rect" title=" " alt="" coords="1868,171,1982,197"/>
+<area shape="poly" title=" " alt="" coords="1430,113,1460,120,1568,138,1654,147,1741,155,1853,168,1852,173,1741,160,1653,153,1567,144,1459,125,1429,118"/>
+<area shape="rect" href="qtmaterialstyle__p_8h.html" title="定义 QtMaterialStylePrivate 类，提供 QtMaterialStyle 的私有实现" alt="" coords="1712,171,1844,197"/>
+<area shape="poly" title=" " alt="" coords="1432,113,1460,120,1585,146,1697,167,1696,172,1584,152,1459,125,1430,118"/>
+<area shape="poly" title=" " alt="" coords="630,125,577,164,574,159,627,121"/>
+<area shape="rect" title=" " alt="" coords="601,171,712,197"/>
+<area shape="poly" title=" " alt="" coords="660,123,660,155,654,155,654,123"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a221240b9012d2e25b12146d31a87aea2" id="r_a221240b9012d2e25b12146d31a87aea2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a221240b9012d2e25b12146d31a87aea2">COLOR_INTERPOLATE</a>(CH)</td></tr>
+<tr class="memdesc:a221240b9012d2e25b12146d31a87aea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">颜色插值宏，计算源颜色和目标颜色之间的插值  <br /></td></tr>
+<tr class="separator:a221240b9012d2e25b12146d31a87aea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>实现 <a class="el" href="class_qt_material_flat_button.html" title="扁平按钮类，继承自 QPushButton，支持 Material Design 风格">QtMaterialFlatButton</a> 类，提供 <a class="el" href="namespace_material.html" title="Material Design 相关枚举和类型的命名空间">Material</a> Design 扁平按钮 </p>
+<dl class="section author"><dt>作者</dt><dd>laserpants </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-05CU-16 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a221240b9012d2e25b12146d31a87aea2" name="a221240b9012d2e25b12146d31a87aea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221240b9012d2e25b12146d31a87aea2">&#9670;&#160;</a></span>COLOR_INTERPOLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COLOR_INTERPOLATE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CH</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">(1-progress)*source.CH() + progress*dest.CH()</div>
+</div><!-- fragment -->
+<p>颜色插值宏，计算源颜色和目标颜色之间的插值 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_b95b73a9da1c57040a996fcdd774df29.html">QtMaterialWidget</a></li><li class="navelem"><a class="el" href="dir_26a8091ed03709f8d58432c3319a3695.html">QtMaterialButton</a></li><li class="navelem"><a class="el" href="qtmaterialflatbutton_8cpp.html">qtmaterialflatbutton.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

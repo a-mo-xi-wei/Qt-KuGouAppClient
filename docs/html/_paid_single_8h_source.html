@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: PaidSingle.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_paid_single_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PaidSingle.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_paid_single_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef PAIDSINGLE_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define PAIDSINGLE_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_sort_option_menu_8h.html">SortOptionMenu.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QPoint&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">class </span>PaidSingle;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_paid_single.html">   32</a></span><span class="keyword">class </span><a class="code hl_function" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7">PaidSingle</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    Q_OBJECT</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7">PaidSingle</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="class_paid_single.html#a36e43b35c621f87634a14d2a90a64bd7">~PaidSingle</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_paid_single.html#aeab41b278e449a68fbd1c98c9e1516a8">getMenuPosition</a>(<span class="keyword">const</span> QPoint &amp;pos);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#ae9a5c44fb22b42e385bce68a2016de22">on_single_play_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#af64e24019ba743a04bd9aa3b35e18d88">on_single_download_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#af67ce4de902eab2da91b8dfd679480d1">on_single_share_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#ae0ba99a9a207fcbfedc13fffac756f1d">on_single_sort_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#aa83c2b223d4ce1220e1fad08b26ed838">on_single_batch_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#a77868991ec35ce1ee03a62521bbf03c5">onDefaultSort</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#a58cc37eb1a69f43d22e93dbd0a8e32ba">onAddTimeSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#a8b57469ce5cde9101bd38466a5138bd9">onSongNameSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#a88cff94b79f2aab5610fd6df85c77d39">onSingerSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#a1bf3aea4b068e67501d5614655eff022">onDurationSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#a2deab31ea0dab5b0953202e8135f6236">onPlayCountSort</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;down);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#a2ff39f94b18025fc9f33a0e9a9d75734">onRandomSort</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_paid_single.html#a1d814602ac0752be104e51235985a6c5">on_search_pushButton_clicked</a>();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>signals:</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_paid_single.html#aa23356daca3ed71116d6ae55df2991f4">  152</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_paid_single.html#aa23356daca3ed71116d6ae55df2991f4">find_more_music</a>();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_paid_single.html#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a>(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="class_paid_single.html#a72deb5e0eac4679fea0ead3074b4b67e">  165</a></span>    Ui::PaidSingle                     *<a class="code hl_variable" href="class_paid_single.html#a72deb5e0eac4679fea0ead3074b4b67e">ui</a>;                 </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="class_paid_single.html#ab6c42d383d83d4acdfb5081e799c29da">  166</a></span>    QAction                            *<a class="code hl_variable" href="class_paid_single.html#ab6c42d383d83d4acdfb5081e799c29da">m_searchAction</a>{};     </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="class_paid_single.html#ad67a8f8c13a90fda48f45117bdcdb4fd">  167</a></span>    <a class="code hl_class" href="class_sort_option_menu.html">SortOptionMenu</a>                     *<a class="code hl_variable" href="class_paid_single.html#ad67a8f8c13a90fda48f45117bdcdb4fd">m_sortOptMenu</a>{};      </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="class_paid_single.html#a75b61709efacdeb4b9b337132b7fbb7f">  168</a></span>    QPoint                              <a class="code hl_variable" href="class_paid_single.html#a75b61709efacdeb4b9b337132b7fbb7f">m_menuPosition</a>;     </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>};</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#endif </span><span class="comment">// PAIDSINGLE_H</span></div>
+<div class="ttc" id="a_sort_option_menu_8h_html"><div class="ttname"><a href="_sort_option_menu_8h.html">SortOptionMenu.h</a></div><div class="ttdoc">定义 SortOptionMenu 类，提供歌曲排序选项菜单功能</div></div>
+<div class="ttc" id="aclass_paid_single_html_a1bf3aea4b068e67501d5614655eff022"><div class="ttname"><a href="class_paid_single.html#a1bf3aea4b068e67501d5614655eff022">PaidSingle::onDurationSort</a></div><div class="ttdeci">void onDurationSort(const bool &amp;down)</div><div class="ttdoc">时长排序槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:236</div></div>
+<div class="ttc" id="aclass_paid_single_html_a1d814602ac0752be104e51235985a6c5"><div class="ttname"><a href="class_paid_single.html#a1d814602ac0752be104e51235985a6c5">PaidSingle::on_search_pushButton_clicked</a></div><div class="ttdeci">void on_search_pushButton_clicked()</div><div class="ttdoc">搜索按钮点击槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:264</div></div>
+<div class="ttc" id="aclass_paid_single_html_a2deab31ea0dab5b0953202e8135f6236"><div class="ttname"><a href="class_paid_single.html#a2deab31ea0dab5b0953202e8135f6236">PaidSingle::onPlayCountSort</a></div><div class="ttdeci">void onPlayCountSort(const bool &amp;down)</div><div class="ttdoc">播放次数排序槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:246</div></div>
+<div class="ttc" id="aclass_paid_single_html_a2e11d4737485ac350fb6084ba9fc2ea7"><div class="ttname"><a href="class_paid_single.html#a2e11d4737485ac350fb6084ba9fc2ea7">PaidSingle::PaidSingle</a></div><div class="ttdeci">PaidSingle(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化付费单曲界面</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:26</div></div>
+<div class="ttc" id="aclass_paid_single_html_a2ff39f94b18025fc9f33a0e9a9d75734"><div class="ttname"><a href="class_paid_single.html#a2ff39f94b18025fc9f33a0e9a9d75734">PaidSingle::onRandomSort</a></div><div class="ttdeci">void onRandomSort()</div><div class="ttdoc">随机排序槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:255</div></div>
+<div class="ttc" id="aclass_paid_single_html_a36e43b35c621f87634a14d2a90a64bd7"><div class="ttname"><a href="class_paid_single.html#a36e43b35c621f87634a14d2a90a64bd7">PaidSingle::~PaidSingle</a></div><div class="ttdeci">~PaidSingle() override</div><div class="ttdoc">析构函数，清理资源</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:51</div></div>
+<div class="ttc" id="aclass_paid_single_html_a58cc37eb1a69f43d22e93dbd0a8e32ba"><div class="ttname"><a href="class_paid_single.html#a58cc37eb1a69f43d22e93dbd0a8e32ba">PaidSingle::onAddTimeSort</a></div><div class="ttdeci">void onAddTimeSort(const bool &amp;down)</div><div class="ttdoc">添加时间排序槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:206</div></div>
+<div class="ttc" id="aclass_paid_single_html_a72deb5e0eac4679fea0ead3074b4b67e"><div class="ttname"><a href="class_paid_single.html#a72deb5e0eac4679fea0ead3074b4b67e">PaidSingle::ui</a></div><div class="ttdeci">Ui::PaidSingle * ui</div><div class="ttdoc">UI 指针</div><div class="ttdef"><b>定义</b> PaidSingle.h:165</div></div>
+<div class="ttc" id="aclass_paid_single_html_a75b61709efacdeb4b9b337132b7fbb7f"><div class="ttname"><a href="class_paid_single.html#a75b61709efacdeb4b9b337132b7fbb7f">PaidSingle::m_menuPosition</a></div><div class="ttdeci">QPoint m_menuPosition</div><div class="ttdoc">菜单位置</div><div class="ttdef"><b>定义</b> PaidSingle.h:168</div></div>
+<div class="ttc" id="aclass_paid_single_html_a77868991ec35ce1ee03a62521bbf03c5"><div class="ttname"><a href="class_paid_single.html#a77868991ec35ce1ee03a62521bbf03c5">PaidSingle::onDefaultSort</a></div><div class="ttdeci">void onDefaultSort()</div><div class="ttdoc">默认排序槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:196</div></div>
+<div class="ttc" id="aclass_paid_single_html_a7eb87a6d4464680c455d278d1d32eba6"><div class="ttname"><a href="class_paid_single.html#a7eb87a6d4464680c455d278d1d32eba6">PaidSingle::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) override</div><div class="ttdoc">事件过滤器</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:276</div></div>
+<div class="ttc" id="aclass_paid_single_html_a88cff94b79f2aab5610fd6df85c77d39"><div class="ttname"><a href="class_paid_single.html#a88cff94b79f2aab5610fd6df85c77d39">PaidSingle::onSingerSort</a></div><div class="ttdeci">void onSingerSort(const bool &amp;down)</div><div class="ttdoc">歌手排序槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:226</div></div>
+<div class="ttc" id="aclass_paid_single_html_a8b57469ce5cde9101bd38466a5138bd9"><div class="ttname"><a href="class_paid_single.html#a8b57469ce5cde9101bd38466a5138bd9">PaidSingle::onSongNameSort</a></div><div class="ttdeci">void onSongNameSort(const bool &amp;down)</div><div class="ttdoc">歌曲名称排序槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:216</div></div>
+<div class="ttc" id="aclass_paid_single_html_aa23356daca3ed71116d6ae55df2991f4"><div class="ttname"><a href="class_paid_single.html#aa23356daca3ed71116d6ae55df2991f4">PaidSingle::find_more_music</a></div><div class="ttdeci">void find_more_music()</div><div class="ttdoc">搜索更多音乐的信号</div></div>
+<div class="ttc" id="aclass_paid_single_html_aa83c2b223d4ce1220e1fad08b26ed838"><div class="ttname"><a href="class_paid_single.html#aa83c2b223d4ce1220e1fad08b26ed838">PaidSingle::on_single_batch_toolButton_clicked</a></div><div class="ttdeci">void on_single_batch_toolButton_clicked()</div><div class="ttdoc">批量操作按钮点击槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:187</div></div>
+<div class="ttc" id="aclass_paid_single_html_ab6c42d383d83d4acdfb5081e799c29da"><div class="ttname"><a href="class_paid_single.html#ab6c42d383d83d4acdfb5081e799c29da">PaidSingle::m_searchAction</a></div><div class="ttdeci">QAction * m_searchAction</div><div class="ttdoc">搜索动作</div><div class="ttdef"><b>定义</b> PaidSingle.h:166</div></div>
+<div class="ttc" id="aclass_paid_single_html_ad67a8f8c13a90fda48f45117bdcdb4fd"><div class="ttname"><a href="class_paid_single.html#ad67a8f8c13a90fda48f45117bdcdb4fd">PaidSingle::m_sortOptMenu</a></div><div class="ttdeci">SortOptionMenu * m_sortOptMenu</div><div class="ttdoc">排序菜单</div><div class="ttdef"><b>定义</b> PaidSingle.h:167</div></div>
+<div class="ttc" id="aclass_paid_single_html_ae0ba99a9a207fcbfedc13fffac756f1d"><div class="ttname"><a href="class_paid_single.html#ae0ba99a9a207fcbfedc13fffac756f1d">PaidSingle::on_single_sort_toolButton_clicked</a></div><div class="ttdeci">void on_single_sort_toolButton_clicked()</div><div class="ttdoc">排序按钮点击槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:159</div></div>
+<div class="ttc" id="aclass_paid_single_html_ae9a5c44fb22b42e385bce68a2016de22"><div class="ttname"><a href="class_paid_single.html#ae9a5c44fb22b42e385bce68a2016de22">PaidSingle::on_single_play_toolButton_clicked</a></div><div class="ttdeci">void on_single_play_toolButton_clicked()</div><div class="ttdoc">播放按钮点击槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:150</div></div>
+<div class="ttc" id="aclass_paid_single_html_aeab41b278e449a68fbd1c98c9e1516a8"><div class="ttname"><a href="class_paid_single.html#aeab41b278e449a68fbd1c98c9e1516a8">PaidSingle::getMenuPosition</a></div><div class="ttdeci">void getMenuPosition(const QPoint &amp;pos)</div><div class="ttdoc">获取排序菜单位置</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:129</div></div>
+<div class="ttc" id="aclass_paid_single_html_af64e24019ba743a04bd9aa3b35e18d88"><div class="ttname"><a href="class_paid_single.html#af64e24019ba743a04bd9aa3b35e18d88">PaidSingle::on_single_download_toolButton_clicked</a></div><div class="ttdeci">void on_single_download_toolButton_clicked()</div><div class="ttdoc">下载按钮点击槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:169</div></div>
+<div class="ttc" id="aclass_paid_single_html_af67ce4de902eab2da91b8dfd679480d1"><div class="ttname"><a href="class_paid_single.html#af67ce4de902eab2da91b8dfd679480d1">PaidSingle::on_single_share_toolButton_clicked</a></div><div class="ttdeci">void on_single_share_toolButton_clicked()</div><div class="ttdoc">分享按钮点击槽函数</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:178</div></div>
+<div class="ttc" id="aclass_paid_single_html_afba6e95967cc3eb25fd518f7bde6ec04"><div class="ttname"><a href="class_paid_single.html#afba6e95967cc3eb25fd518f7bde6ec04">PaidSingle::initUi</a></div><div class="ttdeci">void initUi()</div><div class="ttdoc">初始化界面</div><div class="ttdef"><b>定义</b> PaidSingle.cpp:60</div></div>
+<div class="ttc" id="aclass_sort_option_menu_html"><div class="ttname"><a href="class_sort_option_menu.html">SortOptionMenu</a></div><div class="ttdoc">歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式</div><div class="ttdef"><b>定义</b> SortOptionMenu.h:26</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_cf310151f74ca42561e1788d19ba2be2.html">PurchasedMusic</a></li><li class="navelem"><a class="el" href="dir_ce129a4e33918a13db057bbc84b1bea7.html">PaidSingle</a></li><li class="navelem"><a class="el" href="_paid_single_8h.html">PaidSingle.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

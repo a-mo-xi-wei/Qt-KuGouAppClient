@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: mpmc_blocking_queue&lt; T &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classspdlog_1_1details_1_1mpmc__blocking__queue.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classspdlog_1_1details_1_1mpmc__blocking__queue-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">mpmc_blocking_queue&lt; T &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="mpmc__blocking__q_8h_source.html">mpmc_blocking_q.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a420f8d3bd815e8c217296a04b778e0eb" id="r_a420f8d3bd815e8c217296a04b778e0eb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a420f8d3bd815e8c217296a04b778e0eb">item_type</a> = <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></td></tr>
+<tr class="separator:a420f8d3bd815e8c217296a04b778e0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a965eda9be795f766a3c4f9aa9a5b52f4" id="r_a965eda9be795f766a3c4f9aa9a5b52f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a965eda9be795f766a3c4f9aa9a5b52f4">mpmc_blocking_queue</a> (size_t max_items)</td></tr>
+<tr class="separator:a965eda9be795f766a3c4f9aa9a5b52f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ce3218938361274541f89e54f92b207" id="r_a2ce3218938361274541f89e54f92b207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ce3218938361274541f89e54f92b207">enqueue</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;&amp;item)</td></tr>
+<tr class="separator:a2ce3218938361274541f89e54f92b207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f47dd32339b6e195556b3a793e0656a" id="r_a9f47dd32339b6e195556b3a793e0656a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f47dd32339b6e195556b3a793e0656a">enqueue_nowait</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;&amp;item)</td></tr>
+<tr class="separator:a9f47dd32339b6e195556b3a793e0656a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892525e0e5d48fd80d38fc695d78e301" id="r_a892525e0e5d48fd80d38fc695d78e301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a892525e0e5d48fd80d38fc695d78e301">enqueue_if_have_room</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;&amp;item)</td></tr>
+<tr class="separator:a892525e0e5d48fd80d38fc695d78e301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0c46bb25b5997a52b5b4a2e2531f47" id="r_a6b0c46bb25b5997a52b5b4a2e2531f47"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b0c46bb25b5997a52b5b4a2e2531f47">dequeue_for</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;popped_item, std::chrono::milliseconds wait_duration)</td></tr>
+<tr class="separator:a6b0c46bb25b5997a52b5b4a2e2531f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1c88461c3aee47ade982bb9e4f5911" id="r_abd1c88461c3aee47ade982bb9e4f5911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd1c88461c3aee47ade982bb9e4f5911">dequeue</a> (<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;popped_item)</td></tr>
+<tr class="separator:abd1c88461c3aee47ade982bb9e4f5911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b711c8cf5044ee6bc207b7ac5625d2" id="r_a98b711c8cf5044ee6bc207b7ac5625d2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98b711c8cf5044ee6bc207b7ac5625d2">overrun_counter</a> ()</td></tr>
+<tr class="separator:a98b711c8cf5044ee6bc207b7ac5625d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac594b2357c3cce89c365438802b32fb2" id="r_ac594b2357c3cce89c365438802b32fb2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac594b2357c3cce89c365438802b32fb2">discard_counter</a> ()</td></tr>
+<tr class="separator:ac594b2357c3cce89c365438802b32fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b6b70701c46e22849f0f363861351cd" id="r_a0b6b70701c46e22849f0f363861351cd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b6b70701c46e22849f0f363861351cd">size</a> ()</td></tr>
+<tr class="separator:a0b6b70701c46e22849f0f363861351cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e9de08aeacd9bfbaeeb47881822da88" id="r_a2e9de08aeacd9bfbaeeb47881822da88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e9de08aeacd9bfbaeeb47881822da88">reset_overrun_counter</a> ()</td></tr>
+<tr class="separator:a2e9de08aeacd9bfbaeeb47881822da88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7dfc4406498ecb518b334ff7348735" id="r_a5c7dfc4406498ecb518b334ff7348735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c7dfc4406498ecb518b334ff7348735">reset_discard_counter</a> ()</td></tr>
+<tr class="separator:a5c7dfc4406498ecb518b334ff7348735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a4840058caa71993c06ac701f06e49baf" id="r_a4840058caa71993c06ac701f06e49baf"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4840058caa71993c06ac701f06e49baf">queue_mutex_</a></td></tr>
+<tr class="separator:a4840058caa71993c06ac701f06e49baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96bc820264dba78641c9b4cefdfc1446" id="r_a96bc820264dba78641c9b4cefdfc1446"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96bc820264dba78641c9b4cefdfc1446">push_cv_</a></td></tr>
+<tr class="separator:a96bc820264dba78641c9b4cefdfc1446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a808f158d689478c4db8472f35647809c" id="r_a808f158d689478c4db8472f35647809c"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a808f158d689478c4db8472f35647809c">pop_cv_</a></td></tr>
+<tr class="separator:a808f158d689478c4db8472f35647809c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90dd6c04a0b1775217702bc2bdd73163" id="r_a90dd6c04a0b1775217702bc2bdd73163"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1details_1_1circular__q.html">spdlog::details::circular_q</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90dd6c04a0b1775217702bc2bdd73163">q_</a></td></tr>
+<tr class="separator:a90dd6c04a0b1775217702bc2bdd73163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a53a6ed54ebcafe120050c0b20d48d" id="r_af6a53a6ed54ebcafe120050c0b20d48d"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6a53a6ed54ebcafe120050c0b20d48d">discard_counter_</a> {0}</td></tr>
+<tr class="separator:af6a53a6ed54ebcafe120050c0b20d48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员类型定义说明</h2>
+<a id="a420f8d3bd815e8c217296a04b778e0eb" name="a420f8d3bd815e8c217296a04b778e0eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a420f8d3bd815e8c217296a04b778e0eb">&#9670;&#160;</a></span>item_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a420f8d3bd815e8c217296a04b778e0eb">item_type</a> = <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a965eda9be795f766a3c4f9aa9a5b52f4" name="a965eda9be795f766a3c4f9aa9a5b52f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a965eda9be795f766a3c4f9aa9a5b52f4">&#9670;&#160;</a></span>mpmc_blocking_queue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1details_1_1mpmc__blocking__queue.html">mpmc_blocking_queue</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_items</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="abd1c88461c3aee47ade982bb9e4f5911" name="abd1c88461c3aee47ade982bb9e4f5911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd1c88461c3aee47ade982bb9e4f5911">&#9670;&#160;</a></span>dequeue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dequeue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>popped_item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b0c46bb25b5997a52b5b4a2e2531f47" name="a6b0c46bb25b5997a52b5b4a2e2531f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b0c46bb25b5997a52b5b4a2e2531f47">&#9670;&#160;</a></span>dequeue_for()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dequeue_for </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>popped_item</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::milliseconds</td>          <td class="paramname"><span class="paramname"><em>wait_duration</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac594b2357c3cce89c365438802b32fb2" name="ac594b2357c3cce89c365438802b32fb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac594b2357c3cce89c365438802b32fb2">&#9670;&#160;</a></span>discard_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t discard_counter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ce3218938361274541f89e54f92b207" name="a2ce3218938361274541f89e54f92b207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce3218938361274541f89e54f92b207">&#9670;&#160;</a></span>enqueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enqueue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a892525e0e5d48fd80d38fc695d78e301" name="a892525e0e5d48fd80d38fc695d78e301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a892525e0e5d48fd80d38fc695d78e301">&#9670;&#160;</a></span>enqueue_if_have_room()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enqueue_if_have_room </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f47dd32339b6e195556b3a793e0656a" name="a9f47dd32339b6e195556b3a793e0656a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f47dd32339b6e195556b3a793e0656a">&#9670;&#160;</a></span>enqueue_nowait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enqueue_nowait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98b711c8cf5044ee6bc207b7ac5625d2" name="a98b711c8cf5044ee6bc207b7ac5625d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98b711c8cf5044ee6bc207b7ac5625d2">&#9670;&#160;</a></span>overrun_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t overrun_counter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c7dfc4406498ecb518b334ff7348735" name="a5c7dfc4406498ecb518b334ff7348735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7dfc4406498ecb518b334ff7348735">&#9670;&#160;</a></span>reset_discard_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reset_discard_counter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e9de08aeacd9bfbaeeb47881822da88" name="a2e9de08aeacd9bfbaeeb47881822da88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e9de08aeacd9bfbaeeb47881822da88">&#9670;&#160;</a></span>reset_overrun_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reset_overrun_counter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b6b70701c46e22849f0f363861351cd" name="a0b6b70701c46e22849f0f363861351cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6b70701c46e22849f0f363861351cd">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="af6a53a6ed54ebcafe120050c0b20d48d" name="af6a53a6ed54ebcafe120050c0b20d48d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a53a6ed54ebcafe120050c0b20d48d">&#9670;&#160;</a></span>discard_counter_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;size_t&gt; discard_counter_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a808f158d689478c4db8472f35647809c" name="a808f158d689478c4db8472f35647809c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a808f158d689478c4db8472f35647809c">&#9670;&#160;</a></span>pop_cv_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::condition_variable pop_cv_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96bc820264dba78641c9b4cefdfc1446" name="a96bc820264dba78641c9b4cefdfc1446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96bc820264dba78641c9b4cefdfc1446">&#9670;&#160;</a></span>push_cv_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::condition_variable push_cv_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90dd6c04a0b1775217702bc2bdd73163" name="a90dd6c04a0b1775217702bc2bdd73163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90dd6c04a0b1775217702bc2bdd73163">&#9670;&#160;</a></span>q_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1details_1_1circular__q.html">spdlog::details::circular_q</a>&lt;<a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; q_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4840058caa71993c06ac701f06e49baf" name="a4840058caa71993c06ac701f06e49baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4840058caa71993c06ac701f06e49baf">&#9670;&#160;</a></span>queue_mutex_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex queue_mutex_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="mpmc__blocking__q_8h_source.html">mpmc_blocking_q.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="namespacespdlog_1_1details.html">details</a></li><li class="navelem"><a class="el" href="classspdlog_1_1details_1_1mpmc__blocking__queue.html">mpmc_blocking_queue</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

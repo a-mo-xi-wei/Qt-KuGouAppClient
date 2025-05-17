@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Mathematics</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavu__math.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">专题</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Mathematics<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Mathematical utilities for working with timestamp and time base.  
+<a href="#details">更多...</a></p>
+<div class="dynheader">
+Mathematics 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__math.png" border="0" usemap="#agroup____lavu____math" alt=""/></div>
+<map name="agroup____lavu____math" id="agroup____lavu____math">
+<area shape="rect" href="group__lavu.html" title="Common code shared across all FFmpeg libraries." alt="" coords="5,5,71,32"/>
+<area shape="rect" title="Mathematical utilities for working with timestamp and time base." alt="" coords="119,5,215,32"/>
+<area shape="rect" href="group__lavu__math__rational.html" title="Rational number calculation." alt="" coords="263,5,349,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+专题</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html">AVRational</a></td></tr>
+<tr class="memdesc:group__lavu__math__rational"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rational number calculation. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ga921d656eaf2c4d6800a734a13af021d0" id="r_ga921d656eaf2c4d6800a734a13af021d0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga921d656eaf2c4d6800a734a13af021d0">AVRounding</a> { <br />
+&#160;&#160;<a class="el" href="#gga921d656eaf2c4d6800a734a13af021d0a35e291756025351803b97f7522b56eab">AV_ROUND_ZERO</a> = 0
+, <a class="el" href="#gga921d656eaf2c4d6800a734a13af021d0a0ac08aede35de739ec5d0c1ba6217126">AV_ROUND_INF</a> = 1
+, <a class="el" href="#gga921d656eaf2c4d6800a734a13af021d0a4a4b2c2c77b7e20884440f7e57cfdb98">AV_ROUND_DOWN</a> = 2
+, <a class="el" href="#gga921d656eaf2c4d6800a734a13af021d0aa1d28e08e2f8b49b256e056f93038c1a">AV_ROUND_UP</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#gga921d656eaf2c4d6800a734a13af021d0aea95b00154ff83c740b46376dfa06e11">AV_ROUND_NEAR_INF</a> = 5
+, <a class="el" href="#gga921d656eaf2c4d6800a734a13af021d0a7fcb56631d6898b282d6c78ce6c14a43">AV_ROUND_PASS_MINMAX</a> = 8192
+<br />
+ }</td></tr>
+<tr class="memdesc:ga921d656eaf2c4d6800a734a13af021d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounding methods.  <a href="#ga921d656eaf2c4d6800a734a13af021d0">更多...</a><br /></td></tr>
+<tr class="separator:ga921d656eaf2c4d6800a734a13af021d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga952147c7a40c48a05c39e918b153ba99" id="r_ga952147c7a40c48a05c39e918b153ba99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga952147c7a40c48a05c39e918b153ba99">av_gcd</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>)</td></tr>
+<tr class="memdesc:ga952147c7a40c48a05c39e918b153ba99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the greatest common divisor of two integer operands.  <br /></td></tr>
+<tr class="separator:ga952147c7a40c48a05c39e918b153ba99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3daf97178dd1b08b5e916be381cd33e4" id="r_ga3daf97178dd1b08b5e916be381cd33e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3daf97178dd1b08b5e916be381cd33e4">av_rescale</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:ga3daf97178dd1b08b5e916be381cd33e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescale a 64-bit integer with rounding to nearest.  <br /></td></tr>
+<tr class="separator:ga3daf97178dd1b08b5e916be381cd33e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82d40664213508918093822461cc597e" id="r_ga82d40664213508918093822461cc597e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga82d40664213508918093822461cc597e">av_rescale_rnd</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>, enum <a class="el" href="#ga921d656eaf2c4d6800a734a13af021d0">AVRounding</a> rnd) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:ga82d40664213508918093822461cc597e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescale a 64-bit integer with specified rounding.  <br /></td></tr>
+<tr class="separator:ga82d40664213508918093822461cc597e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf02994a8bbeaa91d4757df179cbe567f" id="r_gaf02994a8bbeaa91d4757df179cbe567f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf02994a8bbeaa91d4757df179cbe567f">av_rescale_q</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> bq, <a class="el" href="struct_a_v_rational.html">AVRational</a> cq) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:gaf02994a8bbeaa91d4757df179cbe567f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescale a 64-bit integer by 2 rational numbers.  <br /></td></tr>
+<tr class="separator:gaf02994a8bbeaa91d4757df179cbe567f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab706bfec9bf56534e02ca9564cb968f6" id="r_gab706bfec9bf56534e02ca9564cb968f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab706bfec9bf56534e02ca9564cb968f6">av_rescale_q_rnd</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> bq, <a class="el" href="struct_a_v_rational.html">AVRational</a> cq, enum <a class="el" href="#ga921d656eaf2c4d6800a734a13af021d0">AVRounding</a> rnd) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:gab706bfec9bf56534e02ca9564cb968f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescale a 64-bit integer by 2 rational numbers with specified rounding.  <br /></td></tr>
+<tr class="separator:gab706bfec9bf56534e02ca9564cb968f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga151744358fff630942b926e67e67c415" id="r_ga151744358fff630942b926e67e67c415"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga151744358fff630942b926e67e67c415">av_compare_ts</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> ts_a, <a class="el" href="struct_a_v_rational.html">AVRational</a> tb_a, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> ts_b, <a class="el" href="struct_a_v_rational.html">AVRational</a> tb_b)</td></tr>
+<tr class="memdesc:ga151744358fff630942b926e67e67c415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two timestamps each in its own time base.  <br /></td></tr>
+<tr class="separator:ga151744358fff630942b926e67e67c415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf268a1dde957d04da846e026e2ebe6e8" id="r_gaf268a1dde957d04da846e026e2ebe6e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf268a1dde957d04da846e026e2ebe6e8">av_compare_mod</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> mod)</td></tr>
+<tr class="memdesc:gaf268a1dde957d04da846e026e2ebe6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare the remainders of two integer operands divided by a common divisor.  <br /></td></tr>
+<tr class="separator:gaf268a1dde957d04da846e026e2ebe6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29b7c3d60d68ef678ee1f4adc61a25dc" id="r_ga29b7c3d60d68ef678ee1f4adc61a25dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga29b7c3d60d68ef678ee1f4adc61a25dc">av_rescale_delta</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> in_tb, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> in_ts, <a class="el" href="struct_a_v_rational.html">AVRational</a> fs_tb, int duration, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> *last, <a class="el" href="struct_a_v_rational.html">AVRational</a> out_tb)</td></tr>
+<tr class="memdesc:ga29b7c3d60d68ef678ee1f4adc61a25dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescale a timestamp while preserving known durations.  <br /></td></tr>
+<tr class="separator:ga29b7c3d60d68ef678ee1f4adc61a25dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c4f9ed3f4102125be7451ad4d848a2f" id="r_ga0c4f9ed3f4102125be7451ad4d848a2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0c4f9ed3f4102125be7451ad4d848a2f">av_add_stable</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> ts_tb, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> ts, <a class="el" href="struct_a_v_rational.html">AVRational</a> inc_tb, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> inc)</td></tr>
+<tr class="memdesc:ga0c4f9ed3f4102125be7451ad4d848a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a value to a timestamp.  <br /></td></tr>
+<tr class="separator:ga0c4f9ed3f4102125be7451ad4d848a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>Mathematical utilities for working with timestamp and time base. </p>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="ga921d656eaf2c4d6800a734a13af021d0" name="ga921d656eaf2c4d6800a734a13af021d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga921d656eaf2c4d6800a734a13af021d0">&#9670;&#160;</a></span>AVRounding</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ga921d656eaf2c4d6800a734a13af021d0">AVRounding</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rounding methods. </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="gga921d656eaf2c4d6800a734a13af021d0a35e291756025351803b97f7522b56eab" name="gga921d656eaf2c4d6800a734a13af021d0a35e291756025351803b97f7522b56eab"></a>AV_ROUND_ZERO&#160;</td><td class="fielddoc"><p>Round toward zero. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga921d656eaf2c4d6800a734a13af021d0a0ac08aede35de739ec5d0c1ba6217126" name="gga921d656eaf2c4d6800a734a13af021d0a0ac08aede35de739ec5d0c1ba6217126"></a>AV_ROUND_INF&#160;</td><td class="fielddoc"><p>Round away from zero. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga921d656eaf2c4d6800a734a13af021d0a4a4b2c2c77b7e20884440f7e57cfdb98" name="gga921d656eaf2c4d6800a734a13af021d0a4a4b2c2c77b7e20884440f7e57cfdb98"></a>AV_ROUND_DOWN&#160;</td><td class="fielddoc"><p>Round toward -infinity. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga921d656eaf2c4d6800a734a13af021d0aa1d28e08e2f8b49b256e056f93038c1a" name="gga921d656eaf2c4d6800a734a13af021d0aa1d28e08e2f8b49b256e056f93038c1a"></a>AV_ROUND_UP&#160;</td><td class="fielddoc"><p>Round toward +infinity. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga921d656eaf2c4d6800a734a13af021d0aea95b00154ff83c740b46376dfa06e11" name="gga921d656eaf2c4d6800a734a13af021d0aea95b00154ff83c740b46376dfa06e11"></a>AV_ROUND_NEAR_INF&#160;</td><td class="fielddoc"><p>Round to nearest and halfway cases away from zero. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga921d656eaf2c4d6800a734a13af021d0a7fcb56631d6898b282d6c78ce6c14a43" name="gga921d656eaf2c4d6800a734a13af021d0a7fcb56631d6898b282d6c78ce6c14a43"></a>AV_ROUND_PASS_MINMAX&#160;</td><td class="fielddoc"><p>Flag telling rescaling functions to pass <code>INT64_MIN</code>/<code>MAX</code> through unchanged, avoiding special cases for <a class="el" href="group__lavu__time.html#ga2eaefe702f95f619ea6f2d08afa01be1" title="Undefined timestamp value">AV_NOPTS_VALUE</a>. </p>
+<p>Unlike other values of the enumeration <a class="el" href="#ga921d656eaf2c4d6800a734a13af021d0" title="Rounding methods.">AVRounding</a>, this value is a bitmask that must be used in conjunction with another value of the enumeration through a bitwise OR, in order to set behavior for normal cases.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="#ga82d40664213508918093822461cc597e">av_rescale_rnd</a>(3, 1, 2, <a class="code hl_enumvalue" href="#gga921d656eaf2c4d6800a734a13af021d0aa1d28e08e2f8b49b256e056f93038c1a">AV_ROUND_UP</a> | <a class="code hl_enumvalue" href="#gga921d656eaf2c4d6800a734a13af021d0a7fcb56631d6898b282d6c78ce6c14a43">AV_ROUND_PASS_MINMAX</a>);</div>
+<div class="line"><span class="comment">// Rescaling 3:</span></div>
+<div class="line"><span class="comment">//     Calculating 3 * 1 / 2</span></div>
+<div class="line"><span class="comment">//     3 / 2 is rounded up to 2</span></div>
+<div class="line"><span class="comment">//     =&gt; 2</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="#ga82d40664213508918093822461cc597e">av_rescale_rnd</a>(<a class="code hl_define" href="group__lavu__time.html#ga2eaefe702f95f619ea6f2d08afa01be1">AV_NOPTS_VALUE</a>, 1, 2, <a class="code hl_enumvalue" href="#gga921d656eaf2c4d6800a734a13af021d0aa1d28e08e2f8b49b256e056f93038c1a">AV_ROUND_UP</a> | <a class="code hl_enumvalue" href="#gga921d656eaf2c4d6800a734a13af021d0a7fcb56631d6898b282d6c78ce6c14a43">AV_ROUND_PASS_MINMAX</a>);</div>
+<div class="line"><span class="comment">// Rescaling AV_NOPTS_VALUE:</span></div>
+<div class="line"><span class="comment">//     AV_NOPTS_VALUE == INT64_MIN</span></div>
+<div class="line"><span class="comment">//     AV_NOPTS_VALUE is passed through</span></div>
+<div class="line"><span class="comment">//     =&gt; AV_NOPTS_VALUE</span></div>
+<div class="ttc" id="agroup__lavu__math_html_ga82d40664213508918093822461cc597e"><div class="ttname"><a href="#ga82d40664213508918093822461cc597e">av_rescale_rnd</a></div><div class="ttdeci">int64_t av_rescale_rnd(int64_t a, int64_t b, int64_t c, enum AVRounding rnd) av_const</div><div class="ttdoc">Rescale a 64-bit integer with specified rounding.</div></div>
+<div class="ttc" id="agroup__lavu__math_html_gga921d656eaf2c4d6800a734a13af021d0a7fcb56631d6898b282d6c78ce6c14a43"><div class="ttname"><a href="#gga921d656eaf2c4d6800a734a13af021d0a7fcb56631d6898b282d6c78ce6c14a43">AV_ROUND_PASS_MINMAX</a></div><div class="ttdeci">@ AV_ROUND_PASS_MINMAX</div><div class="ttdoc">Flag telling rescaling functions to pass INT64_MIN/MAX through unchanged, avoiding special cases for ...</div><div class="ttdef"><b>定义</b> mathematics.h:108</div></div>
+<div class="ttc" id="agroup__lavu__math_html_gga921d656eaf2c4d6800a734a13af021d0aa1d28e08e2f8b49b256e056f93038c1a"><div class="ttname"><a href="#gga921d656eaf2c4d6800a734a13af021d0aa1d28e08e2f8b49b256e056f93038c1a">AV_ROUND_UP</a></div><div class="ttdeci">@ AV_ROUND_UP</div><div class="ttdoc">Round toward +infinity.</div><div class="ttdef"><b>定义</b> mathematics.h:83</div></div>
+<div class="ttc" id="agroup__lavu__time_html_ga2eaefe702f95f619ea6f2d08afa01be1"><div class="ttname"><a href="group__lavu__time.html#ga2eaefe702f95f619ea6f2d08afa01be1">AV_NOPTS_VALUE</a></div><div class="ttdeci">#define AV_NOPTS_VALUE</div><div class="ttdoc">Undefined timestamp value</div><div class="ttdef"><b>定义</b> avutil.h:248</div></div>
+</div><!-- fragment --> </td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga0c4f9ed3f4102125be7451ad4d848a2f" name="ga0c4f9ed3f4102125be7451ad4d848a2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0c4f9ed3f4102125be7451ad4d848a2f">&#9670;&#160;</a></span>av_add_stable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_add_stable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>ts_tb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>inc_tb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>inc</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a value to a timestamp. </p>
+<p>This function guarantees that when the same value is repeatly added that no accumulation of rounding errors occurs.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ts</td><td>Input timestamp </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ts_tb</td><td>Input timestamp time base </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inc</td><td>Value to be added </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inc_tb</td><td>Time base of <code>inc</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf268a1dde957d04da846e026e2ebe6e8" name="gaf268a1dde957d04da846e026e2ebe6e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf268a1dde957d04da846e026e2ebe6e8">&#9670;&#160;</a></span>av_compare_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_compare_mod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></td>          <td class="paramname"><span class="paramname"><em>mod</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare the remainders of two integer operands divided by a common divisor. </p>
+<p>In other words, compare the least significant <code>log2(mod)</code> bits of integers <code>a</code> and <code>b</code>.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="#gaf268a1dde957d04da846e026e2ebe6e8">av_compare_mod</a>(0x11, 0x02, 0x10) &lt; 0 <span class="comment">// since 0x11 % 0x10  (0x1) &lt; 0x02 % 0x10  (0x2)</span></div>
+<div class="line"><a class="code hl_function" href="#gaf268a1dde957d04da846e026e2ebe6e8">av_compare_mod</a>(0x11, 0x02, 0x20) &gt; 0 <span class="comment">// since 0x11 % 0x20 (0x11) &gt; 0x02 % 0x20 (0x02)</span></div>
+<div class="ttc" id="agroup__lavu__math_html_gaf268a1dde957d04da846e026e2ebe6e8"><div class="ttname"><a href="#gaf268a1dde957d04da846e026e2ebe6e8">av_compare_mod</a></div><div class="ttdeci">int64_t av_compare_mod(uint64_t a, uint64_t b, uint64_t mod)</div><div class="ttdoc">Compare the remainders of two integer operands divided by a common divisor.</div></div>
+</div><!-- fragment --><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a,b</td><td>Operands </td></tr>
+    <tr><td class="paramname">mod</td><td>Divisor; must be a power of 2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>a negative value if <code>a % mod &lt; b % mod</code></li>
+<li>a positive value if <code>a % mod &gt; b % mod</code></li>
+<li>zero if <code>a % mod == b % mod</code> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ga151744358fff630942b926e67e67c415" name="ga151744358fff630942b926e67e67c415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga151744358fff630942b926e67e67c415">&#9670;&#160;</a></span>av_compare_ts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_compare_ts </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>tb_a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>tb_b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two timestamps each in its own time base. </p>
+<dl class="section return"><dt>返回</dt><dd>One of the following values:<ul>
+<li>-1 if <code>ts_a</code> is before <code>ts_b</code></li>
+<li>1 if <code>ts_a</code> is after <code>ts_b</code></li>
+<li>0 if they represent the same position</li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>The result of the function is undefined if one of the timestamps is outside the <code><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></code> range when represented in the other's timebase. </dd></dl>
+
+</div>
+</div>
+<a id="ga952147c7a40c48a05c39e918b153ba99" name="ga952147c7a40c48a05c39e918b153ba99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga952147c7a40c48a05c39e918b153ba99">&#9670;&#160;</a></span>av_gcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a> av_gcd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the greatest common divisor of two integer operands. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a,b</td><td>Operands </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>GCD of a and b up to sign; if a &gt;= 0 and b &gt;= 0, return value is &gt;= 0; if a == 0 and b == 0, returns 0. </dd></dl>
+
+</div>
+</div>
+<a id="ga3daf97178dd1b08b5e916be381cd33e4" name="ga3daf97178dd1b08b5e916be381cd33e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3daf97178dd1b08b5e916be381cd33e4">&#9670;&#160;</a></span>av_rescale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_rescale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rescale a 64-bit integer with rounding to nearest. </p>
+<p>The operation is mathematically equivalent to <code>a * b / c</code>, but writing that directly can overflow.</p>
+<p>This function is equivalent to <a class="el" href="#ga82d40664213508918093822461cc597e" title="Rescale a 64-bit integer with specified rounding.">av_rescale_rnd()</a> with <a class="el" href="#gga921d656eaf2c4d6800a734a13af021d0aea95b00154ff83c740b46376dfa06e11" title="Round to nearest and halfway cases away from zero.">AV_ROUND_NEAR_INF</a>.</p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga82d40664213508918093822461cc597e" title="Rescale a 64-bit integer with specified rounding.">av_rescale_rnd()</a>, <a class="el" href="#gaf02994a8bbeaa91d4757df179cbe567f" title="Rescale a 64-bit integer by 2 rational numbers.">av_rescale_q()</a>, <a class="el" href="#gab706bfec9bf56534e02ca9564cb968f6" title="Rescale a 64-bit integer by 2 rational numbers with specified rounding.">av_rescale_q_rnd()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga29b7c3d60d68ef678ee1f4adc61a25dc" name="ga29b7c3d60d68ef678ee1f4adc61a25dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga29b7c3d60d68ef678ee1f4adc61a25dc">&#9670;&#160;</a></span>av_rescale_delta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_rescale_delta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>in_tb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>in_ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>fs_tb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duration</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> *</td>          <td class="paramname"><span class="paramname"><em>last</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>out_tb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rescale a timestamp while preserving known durations. </p>
+<p>This function is designed to be called per audio packet to scale the input timestamp to a different time base. Compared to a simple <a class="el" href="#gaf02994a8bbeaa91d4757df179cbe567f" title="Rescale a 64-bit integer by 2 rational numbers.">av_rescale_q()</a> call, this function is robust against possible inconsistent frame durations.</p>
+<p>The <code>last</code> parameter is a state variable that must be preserved for all subsequent calls for the same stream. For the first call, <code>*last</code> should be initialized to <a class="el" href="group__lavu__time.html#ga2eaefe702f95f619ea6f2d08afa01be1" title="Undefined timestamp value">AV_NOPTS_VALUE</a>.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_tb</td><td>Input time base </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_ts</td><td>Input timestamp </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fs_tb</td><td>Duration time base; typically this is finer-grained (greater) than <code>in_tb</code> and <code>out_tb</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>Duration till the next call to this function (i.e. duration of the current packet/frame) </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">last</td><td>Pointer to a timestamp expressed in terms of <code>fs_tb</code>, acting as a state variable </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out_tb</td><td>Output timebase </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Timestamp expressed in terms of <code>out_tb</code></dd></dl>
+<dl class="section note"><dt>注解</dt><dd>In the context of this function, "duration" is in term of samples, not seconds. </dd></dl>
+
+</div>
+</div>
+<a id="gaf02994a8bbeaa91d4757df179cbe567f" name="gaf02994a8bbeaa91d4757df179cbe567f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf02994a8bbeaa91d4757df179cbe567f">&#9670;&#160;</a></span>av_rescale_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_rescale_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>bq</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>cq</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rescale a 64-bit integer by 2 rational numbers. </p>
+<p>The operation is mathematically equivalent to <code>a * bq / cq</code>.</p>
+<p>This function is equivalent to <a class="el" href="#gab706bfec9bf56534e02ca9564cb968f6" title="Rescale a 64-bit integer by 2 rational numbers with specified rounding.">av_rescale_q_rnd()</a> with <a class="el" href="#gga921d656eaf2c4d6800a734a13af021d0aea95b00154ff83c740b46376dfa06e11" title="Round to nearest and halfway cases away from zero.">AV_ROUND_NEAR_INF</a>.</p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga3daf97178dd1b08b5e916be381cd33e4" title="Rescale a 64-bit integer with rounding to nearest.">av_rescale()</a>, <a class="el" href="#ga82d40664213508918093822461cc597e" title="Rescale a 64-bit integer with specified rounding.">av_rescale_rnd()</a>, <a class="el" href="#gab706bfec9bf56534e02ca9564cb968f6" title="Rescale a 64-bit integer by 2 rational numbers with specified rounding.">av_rescale_q_rnd()</a> </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__math_gaf02994a8bbeaa91d4757df179cbe567f_icgraph.png" border="0" usemap="#agroup__lavu__math_gaf02994a8bbeaa91d4757df179cbe567f_icgraph" alt=""/></div>
+<map name="agroup__lavu__math_gaf02994a8bbeaa91d4757df179cbe567f_icgraph" id="agroup__lavu__math_gaf02994a8bbeaa91d4757df179cbe567f_icgraph">
+<area shape="rect" title="Rescale a 64&#45;bit integer by 2 rational numbers." alt="" coords="171,5,269,32"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="5,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="155,21,123,21,123,16,155,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gab706bfec9bf56534e02ca9564cb968f6" name="gab706bfec9bf56534e02ca9564cb968f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab706bfec9bf56534e02ca9564cb968f6">&#9670;&#160;</a></span>av_rescale_q_rnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_rescale_q_rnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>bq</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>cq</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#ga921d656eaf2c4d6800a734a13af021d0">AVRounding</a></td>          <td class="paramname"><span class="paramname"><em>rnd</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rescale a 64-bit integer by 2 rational numbers with specified rounding. </p>
+<p>The operation is mathematically equivalent to <code>a * bq / cq</code>.</p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga3daf97178dd1b08b5e916be381cd33e4" title="Rescale a 64-bit integer with rounding to nearest.">av_rescale()</a>, <a class="el" href="#ga82d40664213508918093822461cc597e" title="Rescale a 64-bit integer with specified rounding.">av_rescale_rnd()</a>, <a class="el" href="#gaf02994a8bbeaa91d4757df179cbe567f" title="Rescale a 64-bit integer by 2 rational numbers.">av_rescale_q()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga82d40664213508918093822461cc597e" name="ga82d40664213508918093822461cc597e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga82d40664213508918093822461cc597e">&#9670;&#160;</a></span>av_rescale_rnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_rescale_rnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#ga921d656eaf2c4d6800a734a13af021d0">AVRounding</a></td>          <td class="paramname"><span class="paramname"><em>rnd</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rescale a 64-bit integer with specified rounding. </p>
+<p>The operation is mathematically equivalent to <code>a * b / c</code>, but writing that directly can overflow, and does not support different rounding methods.</p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga3daf97178dd1b08b5e916be381cd33e4" title="Rescale a 64-bit integer with rounding to nearest.">av_rescale()</a>, <a class="el" href="#gaf02994a8bbeaa91d4757df179cbe567f" title="Rescale a 64-bit integer by 2 rational numbers.">av_rescale_q()</a>, <a class="el" href="#gab706bfec9bf56534e02ca9564cb968f6" title="Rescale a 64-bit integer by 2 rational numbers with specified rounding.">av_rescale_q_rnd()</a> </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__math_ga82d40664213508918093822461cc597e_icgraph.png" border="0" usemap="#agroup__lavu__math_ga82d40664213508918093822461cc597e_icgraph" alt=""/></div>
+<map name="agroup__lavu__math_ga82d40664213508918093822461cc597e_icgraph" id="agroup__lavu__math_ga82d40664213508918093822461cc597e_icgraph">
+<area shape="rect" title="Rescale a 64&#45;bit integer with specified rounding." alt="" coords="1322,154,1432,181"/>
+<area shape="rect" href="class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="1100,146,1274,189"/>
+<area shape="poly" title=" " alt="" coords="1307,170,1275,170,1275,165,1307,165"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="892,100,1052,126"/>
+<area shape="poly" title=" " alt="" coords="1085,145,1027,130,1028,124,1087,139"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,129,175,156"/>
+<area shape="poly" title=" " alt="" coords="1085,190,926,213,836,222,746,225,520,225,370,224,304,217,222,200,165,181,117,159,119,154,167,176,223,194,305,212,370,219,520,220,746,220,835,216,925,208,1084,185"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="645,41,844,68"/>
+<area shape="poly" title=" " alt="" coords="902,98,843,82,799,71,800,66,844,77,904,93"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="656,92,833,134"/>
+<area shape="poly" title=" " alt="" coords="876,116,834,116,834,110,876,110"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="656,158,833,185"/>
+<area shape="poly" title=" " alt="" coords="904,133,844,149,800,160,799,155,843,144,902,128"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="445,41,597,84"/>
+<area shape="poly" title=" " alt="" coords="630,61,598,62,598,57,630,56"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="223,41,397,84"/>
+<area shape="poly" title=" " alt="" coords="429,65,397,65,397,60,429,60"/>
+<area shape="poly" title=" " alt="" coords="405,34,498,16,609,4,668,3,728,5,787,13,844,27,879,41,910,60,958,97,954,101,907,64,876,45,843,32,786,18,728,11,668,8,610,10,499,22,406,40"/>
+<area shape="poly" title=" " alt="" coords="236,92,130,131,128,126,234,87"/>
+<area shape="poly" title=" " alt="" coords="640,92,597,82,599,77,641,87"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="462,108,580,134"/>
+<area shape="poly" title=" " alt="" coords="640,119,580,122,580,116,640,114"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="460,158,582,185"/>
+<area shape="poly" title=" " alt="" coords="641,174,583,174,583,169,641,169"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="232,158,388,185"/>
+<area shape="poly" title=" " alt="" coords="444,174,388,174,388,169,444,169"/>
+<area shape="poly" title=" " alt="" coords="346,146,334,139,310,137,288,139,276,144,273,149,278,156,274,159,268,150,272,140,286,134,310,132,335,134,348,141"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

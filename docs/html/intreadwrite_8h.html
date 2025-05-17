@@ -1,0 +1,1699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: intreadwrite.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('intreadwrite_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">intreadwrite.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="avconfig_8h_source.html">libavutil/avconfig.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="attributes_8h_source.html">attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bswap_8h_source.html">bswap.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+intreadwrite.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="intreadwrite_8h__incl.png" border="0" usemap="#aintreadwrite_8h" alt=""/></div>
+<map name="aintreadwrite_8h" id="aintreadwrite_8h">
+<area shape="rect" title=" " alt="" coords="132,5,231,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,70,181"/>
+<area shape="poly" title=" " alt="" coords="162,35,132,55,101,82,75,112,54,143,50,140,71,109,97,78,128,51,159,30"/>
+<area shape="rect" href="avconfig_8h.html" title=" " alt="" coords="94,155,224,181"/>
+<area shape="poly" title=" " alt="" coords="189,32,196,66,197,87,195,107,179,143,174,140,190,106,192,86,191,67,183,33"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="248,155,334,181"/>
+<area shape="poly" title=" " alt="" coords="193,31,275,141,270,144,189,34"/>
+<area shape="rect" href="bswap_8h.html" title="byte swapping routines" alt="" coords="110,80,181,107"/>
+<area shape="poly" title=" " alt="" coords="178,34,161,67,156,65,173,31"/>
+<area shape="poly" title=" " alt="" coords="128,109,71,148,68,143,125,105"/>
+<area shape="poly" title=" " alt="" coords="150,107,156,139,151,140,145,108"/>
+<area shape="poly" title=" " alt="" coords="172,105,253,145,251,150,170,110"/>
+</map>
+</div>
+</div>
+<p><a href="intreadwrite_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionav__alias.html">av_alias</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a484718d5b19c38d95b7e3add5ddfdf02" id="r_a484718d5b19c38d95b7e3add5ddfdf02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a484718d5b19c38d95b7e3add5ddfdf02">AV_RB16</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a484718d5b19c38d95b7e3add5ddfdf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d1eaaee02fc6c4672f59dcf7255286" id="r_ae4d1eaaee02fc6c4672f59dcf7255286"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4d1eaaee02fc6c4672f59dcf7255286">AV_WB16</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ae4d1eaaee02fc6c4672f59dcf7255286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897ae50bedbedfe9681dd68c8d1e0e63" id="r_a897ae50bedbedfe9681dd68c8d1e0e63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a897ae50bedbedfe9681dd68c8d1e0e63">AV_RL16</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a897ae50bedbedfe9681dd68c8d1e0e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a472b33c46f8c8d08f484be15431a1598" id="r_a472b33c46f8c8d08f484be15431a1598"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a472b33c46f8c8d08f484be15431a1598">AV_WL16</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:a472b33c46f8c8d08f484be15431a1598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d4eb40daca316db60861fe690cefbaf" id="r_a6d4eb40daca316db60861fe690cefbaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d4eb40daca316db60861fe690cefbaf">AV_RB32</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a6d4eb40daca316db60861fe690cefbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36097280ddfe8ebfc825d0f98fd00621" id="r_a36097280ddfe8ebfc825d0f98fd00621"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36097280ddfe8ebfc825d0f98fd00621">AV_WB32</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:a36097280ddfe8ebfc825d0f98fd00621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1339071ea82f19a11cb476b673ab79e" id="r_aa1339071ea82f19a11cb476b673ab79e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1339071ea82f19a11cb476b673ab79e">AV_RL32</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:aa1339071ea82f19a11cb476b673ab79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aad44bed0c244bb2f4d3e7296b2946a" id="r_a9aad44bed0c244bb2f4d3e7296b2946a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9aad44bed0c244bb2f4d3e7296b2946a">AV_WL32</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:a9aad44bed0c244bb2f4d3e7296b2946a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbb202eb2cee10a8cde77281104a681b" id="r_acbb202eb2cee10a8cde77281104a681b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbb202eb2cee10a8cde77281104a681b">AV_RB64</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:acbb202eb2cee10a8cde77281104a681b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2d38dbc4338142d73bbd42c59ac186" id="r_afd2d38dbc4338142d73bbd42c59ac186"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2d38dbc4338142d73bbd42c59ac186">AV_WB64</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:afd2d38dbc4338142d73bbd42c59ac186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e17f415ecf690588955aa29e91ad7b8" id="r_a6e17f415ecf690588955aa29e91ad7b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e17f415ecf690588955aa29e91ad7b8">AV_RL64</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a6e17f415ecf690588955aa29e91ad7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe2b605008927769720b2289ed4dad63" id="r_afe2b605008927769720b2289ed4dad63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe2b605008927769720b2289ed4dad63">AV_WL64</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:afe2b605008927769720b2289ed4dad63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a020512f12aa1fc9cc2ec5d19fa4d3963" id="r_a020512f12aa1fc9cc2ec5d19fa4d3963"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a020512f12aa1fc9cc2ec5d19fa4d3963">AV_RN</a>(<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:a020512f12aa1fc9cc2ec5d19fa4d3963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeaa15759b6e96fc26e72d0961272920" id="r_aaeaa15759b6e96fc26e72d0961272920"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaeaa15759b6e96fc26e72d0961272920">AV_WN</a>(<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:aaeaa15759b6e96fc26e72d0961272920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abba39129956db1c2c54c984819b9356e" id="r_abba39129956db1c2c54c984819b9356e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abba39129956db1c2c54c984819b9356e">AV_RN16</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:abba39129956db1c2c54c984819b9356e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f4fb158dba8bef8558a9092047e108" id="r_a44f4fb158dba8bef8558a9092047e108"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44f4fb158dba8bef8558a9092047e108">AV_RN32</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:a44f4fb158dba8bef8558a9092047e108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec1c5d795847263b619e774460a5805" id="r_a1ec1c5d795847263b619e774460a5805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ec1c5d795847263b619e774460a5805">AV_RN64</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:a1ec1c5d795847263b619e774460a5805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57091b00cb68a113d18ab0d79f62823" id="r_ab57091b00cb68a113d18ab0d79f62823"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab57091b00cb68a113d18ab0d79f62823">AV_WN16</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:ab57091b00cb68a113d18ab0d79f62823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5acc160c4752ec37479a1d36989717" id="r_a1b5acc160c4752ec37479a1d36989717"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b5acc160c4752ec37479a1d36989717">AV_WN32</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:a1b5acc160c4752ec37479a1d36989717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cb04659ca903c9933cc41e7d9e62f0" id="r_aa8cb04659ca903c9933cc41e7d9e62f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8cb04659ca903c9933cc41e7d9e62f0">AV_WN64</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:aa8cb04659ca903c9933cc41e7d9e62f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc6827e2294c9685cb7b4ba80b8fcc83" id="r_adc6827e2294c9685cb7b4ba80b8fcc83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc6827e2294c9685cb7b4ba80b8fcc83">AV_RB</a>(<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:adc6827e2294c9685cb7b4ba80b8fcc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea627f318bc3eff226c3997c59777afc" id="r_aea627f318bc3eff226c3997c59777afc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea627f318bc3eff226c3997c59777afc">AV_WB</a>(<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:aea627f318bc3eff226c3997c59777afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb752488fce835f0296a2c5966ef6f2" id="r_a9cb752488fce835f0296a2c5966ef6f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cb752488fce835f0296a2c5966ef6f2">AV_RL</a>(<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:a9cb752488fce835f0296a2c5966ef6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe3fc7b5338ad527f0639149ba4140d" id="r_adbe3fc7b5338ad527f0639149ba4140d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbe3fc7b5338ad527f0639149ba4140d">AV_WL</a>(<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:adbe3fc7b5338ad527f0639149ba4140d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1d8297f364bdabb641134d89452be8" id="r_a2c1d8297f364bdabb641134d89452be8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c1d8297f364bdabb641134d89452be8">AV_RB8</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a2c1d8297f364bdabb641134d89452be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac2c1eb4e110798d965d0aead639ff9" id="r_a9ac2c1eb4e110798d965d0aead639ff9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac2c1eb4e110798d965d0aead639ff9">AV_WB8</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  d)</td></tr>
+<tr class="separator:a9ac2c1eb4e110798d965d0aead639ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55078053865057f170763da4992b4f9f" id="r_a55078053865057f170763da4992b4f9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55078053865057f170763da4992b4f9f">AV_RL8</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a55078053865057f170763da4992b4f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c05294c31b4a16d37d5620a84d55c15" id="r_a1c05294c31b4a16d37d5620a84d55c15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c05294c31b4a16d37d5620a84d55c15">AV_WL8</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  d)</td></tr>
+<tr class="separator:a1c05294c31b4a16d37d5620a84d55c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebf18e1441526de3d384deb33efde013" id="r_aebf18e1441526de3d384deb33efde013"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebf18e1441526de3d384deb33efde013">AV_RB24</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:aebf18e1441526de3d384deb33efde013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2470fe15d4c1895742db2c9993f56a" id="r_a0c2470fe15d4c1895742db2c9993f56a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c2470fe15d4c1895742db2c9993f56a">AV_WB24</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  d)</td></tr>
+<tr class="separator:a0c2470fe15d4c1895742db2c9993f56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bf88f49de5f9bf22ad5c100de42e987" id="r_a0bf88f49de5f9bf22ad5c100de42e987"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bf88f49de5f9bf22ad5c100de42e987">AV_RL24</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a0bf88f49de5f9bf22ad5c100de42e987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a961208430c9efe30e15c9e8eacf258da" id="r_a961208430c9efe30e15c9e8eacf258da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a961208430c9efe30e15c9e8eacf258da">AV_WL24</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  d)</td></tr>
+<tr class="separator:a961208430c9efe30e15c9e8eacf258da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8d2530c9f9f048dbae9b64563fefd5" id="r_afa8d2530c9f9f048dbae9b64563fefd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa8d2530c9f9f048dbae9b64563fefd5">AV_RB48</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:afa8d2530c9f9f048dbae9b64563fefd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83955b40b0b6ec1c4c9cee1e3b1e7b8a" id="r_a83955b40b0b6ec1c4c9cee1e3b1e7b8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83955b40b0b6ec1c4c9cee1e3b1e7b8a">AV_WB48</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  darg)</td></tr>
+<tr class="separator:a83955b40b0b6ec1c4c9cee1e3b1e7b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0666ed9466705bc54a145304ed758f47" id="r_a0666ed9466705bc54a145304ed758f47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0666ed9466705bc54a145304ed758f47">AV_RL48</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a0666ed9466705bc54a145304ed758f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3089b283fbd11dc195db2f86efcb523" id="r_aa3089b283fbd11dc195db2f86efcb523"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3089b283fbd11dc195db2f86efcb523">AV_WL48</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  darg)</td></tr>
+<tr class="separator:aa3089b283fbd11dc195db2f86efcb523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7167ebc6f6d8674c0bd6e66fe0bb5b61" id="r_a7167ebc6f6d8674c0bd6e66fe0bb5b61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7167ebc6f6d8674c0bd6e66fe0bb5b61">AV_RNA</a>(<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:a7167ebc6f6d8674c0bd6e66fe0bb5b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e3138adb0e668d956ef6aeaea53a26" id="r_ab3e3138adb0e668d956ef6aeaea53a26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3e3138adb0e668d956ef6aeaea53a26">AV_WNA</a>(<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:ab3e3138adb0e668d956ef6aeaea53a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57f0352b91eafb6ee4fa7b4bee5422de" id="r_a57f0352b91eafb6ee4fa7b4bee5422de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57f0352b91eafb6ee4fa7b4bee5422de">AV_RN16A</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:a57f0352b91eafb6ee4fa7b4bee5422de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac5f469c36afd41f4635ae16ef99aaeb" id="r_aac5f469c36afd41f4635ae16ef99aaeb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac5f469c36afd41f4635ae16ef99aaeb">AV_RN32A</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:aac5f469c36afd41f4635ae16ef99aaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10237da6e090a1de594ecbbcde6a513" id="r_af10237da6e090a1de594ecbbcde6a513"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af10237da6e090a1de594ecbbcde6a513">AV_RN64A</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</td></tr>
+<tr class="separator:af10237da6e090a1de594ecbbcde6a513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6718acf393a2a29d411b11b6ade16dfd" id="r_a6718acf393a2a29d411b11b6ade16dfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6718acf393a2a29d411b11b6ade16dfd">AV_WN16A</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:a6718acf393a2a29d411b11b6ade16dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83fe05faaabe74423b69af94ef8bfd59" id="r_a83fe05faaabe74423b69af94ef8bfd59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83fe05faaabe74423b69af94ef8bfd59">AV_WN32A</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:a83fe05faaabe74423b69af94ef8bfd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40239d6ddadb554576137ffcb15f50a" id="r_ae40239d6ddadb554576137ffcb15f50a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae40239d6ddadb554576137ffcb15f50a">AV_WN64A</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="separator:ae40239d6ddadb554576137ffcb15f50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1b12e5454e64f02cdca3af8d13513f" id="r_abd1b12e5454e64f02cdca3af8d13513f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd1b12e5454e64f02cdca3af8d13513f">AV_COPYU</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>,  d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:abd1b12e5454e64f02cdca3af8d13513f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04339041397af6858276e38f4cf86a03" id="r_a04339041397af6858276e38f4cf86a03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04339041397af6858276e38f4cf86a03">AV_COPY16U</a>(d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:a04339041397af6858276e38f4cf86a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac44986def7e9a6c3896aeef25be1d9" id="r_a8ac44986def7e9a6c3896aeef25be1d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ac44986def7e9a6c3896aeef25be1d9">AV_COPY32U</a>(d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:a8ac44986def7e9a6c3896aeef25be1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a429a0363fb2a37cb6efb623224bcb7a5" id="r_a429a0363fb2a37cb6efb623224bcb7a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a429a0363fb2a37cb6efb623224bcb7a5">AV_COPY64U</a>(d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:a429a0363fb2a37cb6efb623224bcb7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2daa324032e9276220d464c8aafb4427" id="r_a2daa324032e9276220d464c8aafb4427"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2daa324032e9276220d464c8aafb4427">AV_COPY128U</a>(d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:a2daa324032e9276220d464c8aafb4427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6c367b55e6bb38e533c6624dce2d60" id="r_a8b6c367b55e6bb38e533c6624dce2d60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b6c367b55e6bb38e533c6624dce2d60">AV_COPY</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>,  d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:a8b6c367b55e6bb38e533c6624dce2d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1f92c58eae20370a29c9cbea0d2e67" id="r_abf1f92c58eae20370a29c9cbea0d2e67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf1f92c58eae20370a29c9cbea0d2e67">AV_COPY16</a>(d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:abf1f92c58eae20370a29c9cbea0d2e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4d73eb3f0a39c7cb3a97ce7296b80bf" id="r_af4d73eb3f0a39c7cb3a97ce7296b80bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4d73eb3f0a39c7cb3a97ce7296b80bf">AV_COPY32</a>(d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:af4d73eb3f0a39c7cb3a97ce7296b80bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50654c20c1149e9f6f8bb80a335231e7" id="r_a50654c20c1149e9f6f8bb80a335231e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50654c20c1149e9f6f8bb80a335231e7">AV_COPY64</a>(d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:a50654c20c1149e9f6f8bb80a335231e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bff2b6e75bc7a0df5c6edb8bfb814c3" id="r_a2bff2b6e75bc7a0df5c6edb8bfb814c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bff2b6e75bc7a0df5c6edb8bfb814c3">AV_COPY128</a>(d,  <a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="separator:a2bff2b6e75bc7a0df5c6edb8bfb814c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d746019a9e7d4c9dcbfc6e238bf7fc4" id="r_a0d746019a9e7d4c9dcbfc6e238bf7fc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d746019a9e7d4c9dcbfc6e238bf7fc4">AV_SWAP</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>)</td></tr>
+<tr class="separator:a0d746019a9e7d4c9dcbfc6e238bf7fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e12b7da6936ff11fdb19343e4d39889" id="r_a1e12b7da6936ff11fdb19343e4d39889"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e12b7da6936ff11fdb19343e4d39889">AV_SWAP64</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>,  <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>)</td></tr>
+<tr class="separator:a1e12b7da6936ff11fdb19343e4d39889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ed03faa07a86bc644a746caaaadf46" id="r_ae5ed03faa07a86bc644a746caaaadf46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5ed03faa07a86bc644a746caaaadf46">AV_ZERO</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>,  d)</td></tr>
+<tr class="separator:ae5ed03faa07a86bc644a746caaaadf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb8102d6243616145305d089bfe05db" id="r_aabb8102d6243616145305d089bfe05db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabb8102d6243616145305d089bfe05db">AV_ZERO16</a>(d)</td></tr>
+<tr class="separator:aabb8102d6243616145305d089bfe05db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bba4ee59e0894465c7aaa11c73bcbd5" id="r_a0bba4ee59e0894465c7aaa11c73bcbd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bba4ee59e0894465c7aaa11c73bcbd5">AV_ZERO32</a>(d)</td></tr>
+<tr class="separator:a0bba4ee59e0894465c7aaa11c73bcbd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485836c035a7aab045094ca27381964b" id="r_a485836c035a7aab045094ca27381964b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a485836c035a7aab045094ca27381964b">AV_ZERO64</a>(d)</td></tr>
+<tr class="separator:a485836c035a7aab045094ca27381964b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3f497db4f11e02df33b15dddbe5fed" id="r_a7c3f497db4f11e02df33b15dddbe5fed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c3f497db4f11e02df33b15dddbe5fed">AV_ZERO128</a>(d)</td></tr>
+<tr class="separator:a7c3f497db4f11e02df33b15dddbe5fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a8b6c367b55e6bb38e533c6624dce2d60" name="a8b6c367b55e6bb38e533c6624dce2d60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6c367b55e6bb38e533c6624dce2d60">&#9670;&#160;</a></span>AV_COPY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((<a class="code hl_define" href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a>##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>*)(d))-&gt;u##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a> = ((<span class="keyword">const</span> <a class="code hl_define" href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a>##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>))-&gt;u##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>)</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_ad585a1393cfa368fa9dc3d8ebff640d5"><div class="ttname"><a href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></div><div class="ttdeci">GLdouble s</div><div class="ttdef"><b>定义</b> SDL_opengl.h:2063</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a0788d3762d0c3c76e4c094d8078b4c27"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a></div><div class="ttdeci">GLdouble n</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2226</div></div>
+<div class="ttc" id="aattributes_8h_html_aa1213031b28c42a912da36b66e4e2032"><div class="ttname"><a href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a></div><div class="ttdeci">#define av_alias</div><div class="ttdef"><b>定义</b> attributes.h:144</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2bff2b6e75bc7a0df5c6edb8bfb814c3" name="a2bff2b6e75bc7a0df5c6edb8bfb814c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bff2b6e75bc7a0df5c6edb8bfb814c3">&#9670;&#160;</a></span>AV_COPY128</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY128</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                       \</div>
+<div class="line">        AV_COPY64(d, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>);                       \</div>
+<div class="line">        AV_COPY64((<span class="keywordtype">char</span>*)(d)+8, (<span class="keywordtype">char</span>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)+8); \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2daa324032e9276220d464c8aafb4427" name="a2daa324032e9276220d464c8aafb4427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2daa324032e9276220d464c8aafb4427">&#9670;&#160;</a></span>AV_COPY128U</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY128U</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                        \</div>
+<div class="line">        AV_COPY64U(d, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>);                                       \</div>
+<div class="line">        AV_COPY64U((<span class="keywordtype">char</span> *)(d) + 8, (<span class="keyword">const</span> <span class="keywordtype">char</span> *)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>) + 8);     \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abf1f92c58eae20370a29c9cbea0d2e67" name="abf1f92c58eae20370a29c9cbea0d2e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf1f92c58eae20370a29c9cbea0d2e67">&#9670;&#160;</a></span>AV_COPY16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a8b6c367b55e6bb38e533c6624dce2d60">AV_COPY</a>(16, d, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</div>
+<div class="ttc" id="aintreadwrite_8h_html_a8b6c367b55e6bb38e533c6624dce2d60"><div class="ttname"><a href="#a8b6c367b55e6bb38e533c6624dce2d60">AV_COPY</a></div><div class="ttdeci">#define AV_COPY(n, d, s)</div><div class="ttdef"><b>定义</b> intreadwrite.h:578</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a04339041397af6858276e38f4cf86a03" name="a04339041397af6858276e38f4cf86a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04339041397af6858276e38f4cf86a03">&#9670;&#160;</a></span>AV_COPY16U</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY16U</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#abd1b12e5454e64f02cdca3af8d13513f">AV_COPYU</a>(16, d, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</div>
+<div class="ttc" id="aintreadwrite_8h_html_abd1b12e5454e64f02cdca3af8d13513f"><div class="ttname"><a href="#abd1b12e5454e64f02cdca3af8d13513f">AV_COPYU</a></div><div class="ttdeci">#define AV_COPYU(n, d, s)</div><div class="ttdef"><b>定义</b> intreadwrite.h:550</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af4d73eb3f0a39c7cb3a97ce7296b80bf" name="af4d73eb3f0a39c7cb3a97ce7296b80bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d73eb3f0a39c7cb3a97ce7296b80bf">&#9670;&#160;</a></span>AV_COPY32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a8b6c367b55e6bb38e533c6624dce2d60">AV_COPY</a>(32, d, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8ac44986def7e9a6c3896aeef25be1d9" name="a8ac44986def7e9a6c3896aeef25be1d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac44986def7e9a6c3896aeef25be1d9">&#9670;&#160;</a></span>AV_COPY32U</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY32U</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#abd1b12e5454e64f02cdca3af8d13513f">AV_COPYU</a>(32, d, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a50654c20c1149e9f6f8bb80a335231e7" name="a50654c20c1149e9f6f8bb80a335231e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50654c20c1149e9f6f8bb80a335231e7">&#9670;&#160;</a></span>AV_COPY64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a8b6c367b55e6bb38e533c6624dce2d60">AV_COPY</a>(64, d, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a429a0363fb2a37cb6efb623224bcb7a5" name="a429a0363fb2a37cb6efb623224bcb7a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a429a0363fb2a37cb6efb623224bcb7a5">&#9670;&#160;</a></span>AV_COPY64U</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPY64U</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#abd1b12e5454e64f02cdca3af8d13513f">AV_COPYU</a>(64, d, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abd1b12e5454e64f02cdca3af8d13513f" name="abd1b12e5454e64f02cdca3af8d13513f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd1b12e5454e64f02cdca3af8d13513f">&#9670;&#160;</a></span>AV_COPYU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_COPYU</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aaeaa15759b6e96fc26e72d0961272920">AV_WN</a>##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>(d, <a class="code hl_define" href="#a020512f12aa1fc9cc2ec5d19fa4d3963">AV_RN</a>##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>));</div>
+<div class="ttc" id="aintreadwrite_8h_html_a020512f12aa1fc9cc2ec5d19fa4d3963"><div class="ttname"><a href="#a020512f12aa1fc9cc2ec5d19fa4d3963">AV_RN</a></div><div class="ttdeci">#define AV_RN(s, p)</div><div class="ttdef"><b>定义</b> intreadwrite.h:353</div></div>
+<div class="ttc" id="aintreadwrite_8h_html_aaeaa15759b6e96fc26e72d0961272920"><div class="ttname"><a href="#aaeaa15759b6e96fc26e72d0961272920">AV_WN</a></div><div class="ttdeci">#define AV_WN(s, p, v)</div><div class="ttdef"><b>定义</b> intreadwrite.h:354</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adc6827e2294c9685cb7b4ba80b8fcc83" name="adc6827e2294c9685cb7b4ba80b8fcc83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc6827e2294c9685cb7b4ba80b8fcc83">&#9670;&#160;</a></span>AV_RB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RB</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">av_bswap##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>(<a class="code hl_define" href="#a020512f12aa1fc9cc2ec5d19fa4d3963">AV_RN</a>##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))</div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa5367c14d90f462230c2611b81b41d23"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></div><div class="ttdeci">GLfloat GLfloat p</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:13126</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a484718d5b19c38d95b7e3add5ddfdf02" name="a484718d5b19c38d95b7e3add5ddfdf02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a484718d5b19c38d95b7e3add5ddfdf02">&#9670;&#160;</a></span>AV_RB16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RB16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ((((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0] &lt;&lt; 8) |          \</div>
+<div class="line">      ((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1])</div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:29</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_acbccb77724c9f4a12f2a844974ab0fea"><div class="ttname"><a href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></div><div class="ttdeci">GLint GLint GLint GLint GLint x</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aebf18e1441526de3d384deb33efde013" name="aebf18e1441526de3d384deb33efde013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebf18e1441526de3d384deb33efde013">&#9670;&#160;</a></span>AV_RB24</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RB24</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ((((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0] &lt;&lt; 16) |         \</div>
+<div class="line">     (((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt;  8) |         \</div>
+<div class="line">      ((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[2])</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6d4eb40daca316db60861fe690cefbaf" name="a6d4eb40daca316db60861fe690cefbaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d4eb40daca316db60861fe690cefbaf">&#9670;&#160;</a></span>AV_RB32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RB32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0] &lt;&lt; 24) |    \</div>
+<div class="line">               (((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt; 16) |    \</div>
+<div class="line">               (((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[2] &lt;&lt;  8) |    \</div>
+<div class="line">                ((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[3])</div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdoc">32 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:33</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afa8d2530c9f9f048dbae9b64563fefd5" name="afa8d2530c9f9f048dbae9b64563fefd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8d2530c9f9f048dbae9b64563fefd5">&#9670;&#160;</a></span>AV_RB48</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RB48</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0] &lt;&lt; 40) |         \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt; 32) |         \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[2] &lt;&lt; 24) |         \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[3] &lt;&lt; 16) |         \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[4] &lt;&lt;  8) |         \</div>
+<div class="line">      (<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[5])</div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aaa5d1cd013383c889537491c3cfd9aad"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></div><div class="ttdeci">unsigned long long uint64_t</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:35</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acbb202eb2cee10a8cde77281104a681b" name="acbb202eb2cee10a8cde77281104a681b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb202eb2cee10a8cde77281104a681b">&#9670;&#160;</a></span>AV_RB64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RB64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0] &lt;&lt; 56) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt; 48) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[2] &lt;&lt; 40) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[3] &lt;&lt; 32) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[4] &lt;&lt; 24) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[5] &lt;&lt; 16) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[6] &lt;&lt;  8) |       \</div>
+<div class="line">      (<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[7])</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2c1d8297f364bdabb641134d89452be8" name="a2c1d8297f364bdabb641134d89452be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1d8297f364bdabb641134d89452be8">&#9670;&#160;</a></span>AV_RB8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RB8</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">(((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0])</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9cb752488fce835f0296a2c5966ef6f2" name="a9cb752488fce835f0296a2c5966ef6f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cb752488fce835f0296a2c5966ef6f2">&#9670;&#160;</a></span>AV_RL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a020512f12aa1fc9cc2ec5d19fa4d3963">AV_RN</a>##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a897ae50bedbedfe9681dd68c8d1e0e63" name="a897ae50bedbedfe9681dd68c8d1e0e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a897ae50bedbedfe9681dd68c8d1e0e63">&#9670;&#160;</a></span>AV_RL16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RL16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ((((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt; 8) |          \</div>
+<div class="line">      ((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0])</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0bf88f49de5f9bf22ad5c100de42e987" name="a0bf88f49de5f9bf22ad5c100de42e987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bf88f49de5f9bf22ad5c100de42e987">&#9670;&#160;</a></span>AV_RL24</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RL24</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ((((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[2] &lt;&lt; 16) |         \</div>
+<div class="line">     (((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt;  8) |         \</div>
+<div class="line">      ((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0])</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa1339071ea82f19a11cb476b673ab79e" name="aa1339071ea82f19a11cb476b673ab79e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1339071ea82f19a11cb476b673ab79e">&#9670;&#160;</a></span>AV_RL32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RL32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[3] &lt;&lt; 24) |    \</div>
+<div class="line">               (((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[2] &lt;&lt; 16) |    \</div>
+<div class="line">               (((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt;  8) |    \</div>
+<div class="line">                ((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0])</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0666ed9466705bc54a145304ed758f47" name="a0666ed9466705bc54a145304ed758f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0666ed9466705bc54a145304ed758f47">&#9670;&#160;</a></span>AV_RL48</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RL48</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[5] &lt;&lt; 40) |         \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[4] &lt;&lt; 32) |         \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[3] &lt;&lt; 24) |         \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[2] &lt;&lt; 16) |         \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt;  8) |         \</div>
+<div class="line">      (<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0])</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6e17f415ecf690588955aa29e91ad7b8" name="a6e17f415ecf690588955aa29e91ad7b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e17f415ecf690588955aa29e91ad7b8">&#9670;&#160;</a></span>AV_RL64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RL64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[7] &lt;&lt; 56) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[6] &lt;&lt; 48) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[5] &lt;&lt; 40) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[4] &lt;&lt; 32) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[3] &lt;&lt; 24) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[2] &lt;&lt; 16) |       \</div>
+<div class="line">     ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[1] &lt;&lt;  8) |       \</div>
+<div class="line">      (<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)((<span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))[0])</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a55078053865057f170763da4992b4f9f" name="a55078053865057f170763da4992b4f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55078053865057f170763da4992b4f9f">&#9670;&#160;</a></span>AV_RL8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RL8</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a2c1d8297f364bdabb641134d89452be8">AV_RB8</a>(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</div>
+<div class="ttc" id="aintreadwrite_8h_html_a2c1d8297f364bdabb641134d89452be8"><div class="ttname"><a href="#a2c1d8297f364bdabb641134d89452be8">AV_RB8</a></div><div class="ttdeci">#define AV_RB8(x)</div><div class="ttdef"><b>定义</b> intreadwrite.h:395</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a020512f12aa1fc9cc2ec5d19fa4d3963" name="a020512f12aa1fc9cc2ec5d19fa4d3963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a020512f12aa1fc9cc2ec5d19fa4d3963">&#9670;&#160;</a></span>AV_RN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a9cb752488fce835f0296a2c5966ef6f2">AV_RL</a>##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</div>
+<div class="ttc" id="aintreadwrite_8h_html_a9cb752488fce835f0296a2c5966ef6f2"><div class="ttname"><a href="#a9cb752488fce835f0296a2c5966ef6f2">AV_RL</a></div><div class="ttdeci">#define AV_RL(s, p)</div><div class="ttdef"><b>定义</b> intreadwrite.h:391</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abba39129956db1c2c54c984819b9356e" name="abba39129956db1c2c54c984819b9356e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abba39129956db1c2c54c984819b9356e">&#9670;&#160;</a></span>AV_RN16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RN16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a020512f12aa1fc9cc2ec5d19fa4d3963">AV_RN</a>(16, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a57f0352b91eafb6ee4fa7b4bee5422de" name="a57f0352b91eafb6ee4fa7b4bee5422de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f0352b91eafb6ee4fa7b4bee5422de">&#9670;&#160;</a></span>AV_RN16A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RN16A</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a7167ebc6f6d8674c0bd6e66fe0bb5b61">AV_RNA</a>(16, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</div>
+<div class="ttc" id="aintreadwrite_8h_html_a7167ebc6f6d8674c0bd6e66fe0bb5b61"><div class="ttname"><a href="#a7167ebc6f6d8674c0bd6e66fe0bb5b61">AV_RNA</a></div><div class="ttdeci">#define AV_RNA(s, p)</div><div class="ttdef"><b>定义</b> intreadwrite.h:518</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a44f4fb158dba8bef8558a9092047e108" name="a44f4fb158dba8bef8558a9092047e108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f4fb158dba8bef8558a9092047e108">&#9670;&#160;</a></span>AV_RN32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RN32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a020512f12aa1fc9cc2ec5d19fa4d3963">AV_RN</a>(32, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aac5f469c36afd41f4635ae16ef99aaeb" name="aac5f469c36afd41f4635ae16ef99aaeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac5f469c36afd41f4635ae16ef99aaeb">&#9670;&#160;</a></span>AV_RN32A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RN32A</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a7167ebc6f6d8674c0bd6e66fe0bb5b61">AV_RNA</a>(32, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1ec1c5d795847263b619e774460a5805" name="a1ec1c5d795847263b619e774460a5805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ec1c5d795847263b619e774460a5805">&#9670;&#160;</a></span>AV_RN64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RN64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a020512f12aa1fc9cc2ec5d19fa4d3963">AV_RN</a>(64, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af10237da6e090a1de594ecbbcde6a513" name="af10237da6e090a1de594ecbbcde6a513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af10237da6e090a1de594ecbbcde6a513">&#9670;&#160;</a></span>AV_RN64A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RN64A</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a7167ebc6f6d8674c0bd6e66fe0bb5b61">AV_RNA</a>(64, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7167ebc6f6d8674c0bd6e66fe0bb5b61" name="a7167ebc6f6d8674c0bd6e66fe0bb5b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7167ebc6f6d8674c0bd6e66fe0bb5b61">&#9670;&#160;</a></span>AV_RNA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_RNA</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">(((<span class="keyword">const</span> <a class="code hl_define" href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a>##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))-&gt;u##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0d746019a9e7d4c9dcbfc6e238bf7fc4" name="a0d746019a9e7d4c9dcbfc6e238bf7fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d746019a9e7d4c9dcbfc6e238bf7fc4">&#9670;&#160;</a></span>AV_SWAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_SWAP</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html#a09a0bb7d8fcfac416de7a5fe7fd8b0f1">FFSWAP</a>(<a class="code hl_define" href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a>##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>, *(<a class="code hl_define" href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a>##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>), *(<a class="code hl_define" href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a>##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>))</div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a0f71581a41fd2264c8944126dabbd010"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a></div><div class="ttdeci">GLboolean GLboolean GLboolean b</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1417</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a3309789fc188587d666cda5ece79cf82"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a></div><div class="ttdeci">GLboolean GLboolean GLboolean GLboolean a</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1417</div></div>
+<div class="ttc" id="atools_2ffmpeg_2win64_2include_2libavutil_2common_8h_html_a09a0bb7d8fcfac416de7a5fe7fd8b0f1"><div class="ttname"><a href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html#a09a0bb7d8fcfac416de7a5fe7fd8b0f1">FFSWAP</a></div><div class="ttdeci">#define FFSWAP(type, a, b)</div><div class="ttdef"><b>定义</b> tools/ffmpeg/win64/include/libavutil/common.h:99</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1e12b7da6936ff11fdb19343e4d39889" name="a1e12b7da6936ff11fdb19343e4d39889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e12b7da6936ff11fdb19343e4d39889">&#9670;&#160;</a></span>AV_SWAP64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_SWAP64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a0d746019a9e7d4c9dcbfc6e238bf7fc4">AV_SWAP</a>(64, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>)</div>
+<div class="ttc" id="aintreadwrite_8h_html_a0d746019a9e7d4c9dcbfc6e238bf7fc4"><div class="ttname"><a href="#a0d746019a9e7d4c9dcbfc6e238bf7fc4">AV_SWAP</a></div><div class="ttdeci">#define AV_SWAP(n, a, b)</div><div class="ttdef"><b>定义</b> intreadwrite.h:601</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aea627f318bc3eff226c3997c59777afc" name="aea627f318bc3eff226c3997c59777afc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea627f318bc3eff226c3997c59777afc">&#9670;&#160;</a></span>AV_WB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WB</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aaeaa15759b6e96fc26e72d0961272920">AV_WN</a>##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, av_bswap##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>))</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a55f85da29bf761fde63cc95d26300230"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></div><div class="ttdeci">const GLdouble * v</div><div class="ttdef"><b>定义</b> SDL_opengl.h:2064</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae4d1eaaee02fc6c4672f59dcf7255286" name="ae4d1eaaee02fc6c4672f59dcf7255286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d1eaaee02fc6c4672f59dcf7255286">&#9670;&#160;</a></span>AV_WB16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WB16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                 \</div>
+<div class="line">        <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> d = (<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>);                     \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d)&gt;&gt;8;            \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a273cf69d639a59973b6019625df33e30"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a></div><div class="ttdeci">unsigned short uint16_t</div><div class="ttdoc">16 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:31</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a26942fd2ed566ef553eae82d2c109c8f"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a></div><div class="ttdeci">GLuint GLfloat * val</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1766</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0c2470fe15d4c1895742db2c9993f56a" name="a0c2470fe15d4c1895742db2c9993f56a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2470fe15d4c1895742db2c9993f56a">&#9670;&#160;</a></span>AV_WB24</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WB24</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                   \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[2] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;8;            \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d)&gt;&gt;16;           \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a36097280ddfe8ebfc825d0f98fd00621" name="a36097280ddfe8ebfc825d0f98fd00621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36097280ddfe8ebfc825d0f98fd00621">&#9670;&#160;</a></span>AV_WB32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WB32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                 \</div>
+<div class="line">        <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> d = (<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>);                     \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[3] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[2] = (d)&gt;&gt;8;            \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;16;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d)&gt;&gt;24;           \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a83955b40b0b6ec1c4c9cee1e3b1e7b8a" name="a83955b40b0b6ec1c4c9cee1e3b1e7b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83955b40b0b6ec1c4c9cee1e3b1e7b8a">&#9670;&#160;</a></span>AV_WB48</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WB48</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>darg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                \</div>
+<div class="line">        <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> d = (darg);                    \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[5] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[4] = (d)&gt;&gt;8;            \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[3] = (d)&gt;&gt;16;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[2] = (d)&gt;&gt;24;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;32;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d)&gt;&gt;40;           \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd2d38dbc4338142d73bbd42c59ac186" name="afd2d38dbc4338142d73bbd42c59ac186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2d38dbc4338142d73bbd42c59ac186">&#9670;&#160;</a></span>AV_WB64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WB64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                 \</div>
+<div class="line">        <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> d = (<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>);                     \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[7] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[6] = (d)&gt;&gt;8;            \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[5] = (d)&gt;&gt;16;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[4] = (d)&gt;&gt;24;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[3] = (d)&gt;&gt;32;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[2] = (d)&gt;&gt;40;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;48;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d)&gt;&gt;56;           \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9ac2c1eb4e110798d965d0aead639ff9" name="a9ac2c1eb4e110798d965d0aead639ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac2c1eb4e110798d965d0aead639ff9">&#9670;&#160;</a></span>AV_WB8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WB8</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d); } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adbe3fc7b5338ad527f0639149ba4140d" name="adbe3fc7b5338ad527f0639149ba4140d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe3fc7b5338ad527f0639149ba4140d">&#9670;&#160;</a></span>AV_WL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aaeaa15759b6e96fc26e72d0961272920">AV_WN</a>##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a472b33c46f8c8d08f484be15431a1598" name="a472b33c46f8c8d08f484be15431a1598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a472b33c46f8c8d08f484be15431a1598">&#9670;&#160;</a></span>AV_WL16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WL16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                 \</div>
+<div class="line">        <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> d = (<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>);                     \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;8;            \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a961208430c9efe30e15c9e8eacf258da" name="a961208430c9efe30e15c9e8eacf258da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a961208430c9efe30e15c9e8eacf258da">&#9670;&#160;</a></span>AV_WL24</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WL24</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                   \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;8;            \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[2] = (d)&gt;&gt;16;           \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9aad44bed0c244bb2f4d3e7296b2946a" name="a9aad44bed0c244bb2f4d3e7296b2946a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aad44bed0c244bb2f4d3e7296b2946a">&#9670;&#160;</a></span>AV_WL32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WL32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                 \</div>
+<div class="line">        <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> d = (<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>);                     \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;8;            \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[2] = (d)&gt;&gt;16;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[3] = (d)&gt;&gt;24;           \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa3089b283fbd11dc195db2f86efcb523" name="aa3089b283fbd11dc195db2f86efcb523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3089b283fbd11dc195db2f86efcb523">&#9670;&#160;</a></span>AV_WL48</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WL48</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>darg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                \</div>
+<div class="line">        <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> d = (darg);                    \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;8;            \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[2] = (d)&gt;&gt;16;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[3] = (d)&gt;&gt;24;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[4] = (d)&gt;&gt;32;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[5] = (d)&gt;&gt;40;           \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afe2b605008927769720b2289ed4dad63" name="afe2b605008927769720b2289ed4dad63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe2b605008927769720b2289ed4dad63">&#9670;&#160;</a></span>AV_WL64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WL64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {                 \</div>
+<div class="line">        <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> d = (<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>);                     \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[0] = (d);               \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[1] = (d)&gt;&gt;8;            \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[2] = (d)&gt;&gt;16;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[3] = (d)&gt;&gt;24;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[4] = (d)&gt;&gt;32;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[5] = (d)&gt;&gt;40;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[6] = (d)&gt;&gt;48;           \</div>
+<div class="line">        ((<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))[7] = (d)&gt;&gt;56;           \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1c05294c31b4a16d37d5620a84d55c15" name="a1c05294c31b4a16d37d5620a84d55c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c05294c31b4a16d37d5620a84d55c15">&#9670;&#160;</a></span>AV_WL8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WL8</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a9ac2c1eb4e110798d965d0aead639ff9">AV_WB8</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, d)</div>
+<div class="ttc" id="aintreadwrite_8h_html_a9ac2c1eb4e110798d965d0aead639ff9"><div class="ttname"><a href="#a9ac2c1eb4e110798d965d0aead639ff9">AV_WB8</a></div><div class="ttdeci">#define AV_WB8(p, d)</div><div class="ttdef"><b>定义</b> intreadwrite.h:396</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaeaa15759b6e96fc26e72d0961272920" name="aaeaa15759b6e96fc26e72d0961272920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeaa15759b6e96fc26e72d0961272920">&#9670;&#160;</a></span>AV_WN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#adbe3fc7b5338ad527f0639149ba4140d">AV_WL</a>##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</div>
+<div class="ttc" id="aintreadwrite_8h_html_adbe3fc7b5338ad527f0639149ba4140d"><div class="ttname"><a href="#adbe3fc7b5338ad527f0639149ba4140d">AV_WL</a></div><div class="ttdeci">#define AV_WL(s, p, v)</div><div class="ttdef"><b>定义</b> intreadwrite.h:392</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab57091b00cb68a113d18ab0d79f62823" name="ab57091b00cb68a113d18ab0d79f62823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab57091b00cb68a113d18ab0d79f62823">&#9670;&#160;</a></span>AV_WN16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WN16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aaeaa15759b6e96fc26e72d0961272920">AV_WN</a>(16, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6718acf393a2a29d411b11b6ade16dfd" name="a6718acf393a2a29d411b11b6ade16dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6718acf393a2a29d411b11b6ade16dfd">&#9670;&#160;</a></span>AV_WN16A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WN16A</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ab3e3138adb0e668d956ef6aeaea53a26">AV_WNA</a>(16, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</div>
+<div class="ttc" id="aintreadwrite_8h_html_ab3e3138adb0e668d956ef6aeaea53a26"><div class="ttname"><a href="#ab3e3138adb0e668d956ef6aeaea53a26">AV_WNA</a></div><div class="ttdeci">#define AV_WNA(s, p, v)</div><div class="ttdef"><b>定义</b> intreadwrite.h:519</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1b5acc160c4752ec37479a1d36989717" name="a1b5acc160c4752ec37479a1d36989717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b5acc160c4752ec37479a1d36989717">&#9670;&#160;</a></span>AV_WN32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WN32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aaeaa15759b6e96fc26e72d0961272920">AV_WN</a>(32, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a83fe05faaabe74423b69af94ef8bfd59" name="a83fe05faaabe74423b69af94ef8bfd59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83fe05faaabe74423b69af94ef8bfd59">&#9670;&#160;</a></span>AV_WN32A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WN32A</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ab3e3138adb0e668d956ef6aeaea53a26">AV_WNA</a>(32, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa8cb04659ca903c9933cc41e7d9e62f0" name="aa8cb04659ca903c9933cc41e7d9e62f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cb04659ca903c9933cc41e7d9e62f0">&#9670;&#160;</a></span>AV_WN64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WN64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aaeaa15759b6e96fc26e72d0961272920">AV_WN</a>(64, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae40239d6ddadb554576137ffcb15f50a" name="ae40239d6ddadb554576137ffcb15f50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40239d6ddadb554576137ffcb15f50a">&#9670;&#160;</a></span>AV_WN64A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WN64A</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ab3e3138adb0e668d956ef6aeaea53a26">AV_WNA</a>(64, <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab3e3138adb0e668d956ef6aeaea53a26" name="ab3e3138adb0e668d956ef6aeaea53a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e3138adb0e668d956ef6aeaea53a26">&#9670;&#160;</a></span>AV_WNA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_WNA</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">(((<a class="code hl_define" href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a>##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>*)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>))-&gt;u##<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a> = (<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae5ed03faa07a86bc644a746caaaadf46" name="ae5ed03faa07a86bc644a746caaaadf46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5ed03faa07a86bc644a746caaaadf46">&#9670;&#160;</a></span>AV_ZERO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_ZERO</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">(((<a class="code hl_define" href="attributes_8h.html#aa1213031b28c42a912da36b66e4e2032">av_alias</a>##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>*)(d))-&gt;u##<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a> = 0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7c3f497db4f11e02df33b15dddbe5fed" name="a7c3f497db4f11e02df33b15dddbe5fed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3f497db4f11e02df33b15dddbe5fed">&#9670;&#160;</a></span>AV_ZERO128</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_ZERO128</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                         \</div>
+<div class="line">        AV_ZERO64(d);            \</div>
+<div class="line">        AV_ZERO64((<span class="keywordtype">char</span>*)(d)+8); \</div>
+<div class="line">    } <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aabb8102d6243616145305d089bfe05db" name="aabb8102d6243616145305d089bfe05db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb8102d6243616145305d089bfe05db">&#9670;&#160;</a></span>AV_ZERO16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_ZERO16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ae5ed03faa07a86bc644a746caaaadf46">AV_ZERO</a>(16, d)</div>
+<div class="ttc" id="aintreadwrite_8h_html_ae5ed03faa07a86bc644a746caaaadf46"><div class="ttname"><a href="#ae5ed03faa07a86bc644a746caaaadf46">AV_ZERO</a></div><div class="ttdeci">#define AV_ZERO(n, d)</div><div class="ttdef"><b>定义</b> intreadwrite.h:607</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0bba4ee59e0894465c7aaa11c73bcbd5" name="a0bba4ee59e0894465c7aaa11c73bcbd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bba4ee59e0894465c7aaa11c73bcbd5">&#9670;&#160;</a></span>AV_ZERO32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_ZERO32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ae5ed03faa07a86bc644a746caaaadf46">AV_ZERO</a>(32, d)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a485836c035a7aab045094ca27381964b" name="a485836c035a7aab045094ca27381964b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a485836c035a7aab045094ca27381964b">&#9670;&#160;</a></span>AV_ZERO64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_ZERO64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>d</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ae5ed03faa07a86bc644a746caaaadf46">AV_ZERO</a>(64, d)</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="intreadwrite_8h.html">intreadwrite.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

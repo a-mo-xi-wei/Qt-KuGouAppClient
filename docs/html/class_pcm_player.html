@@ -1,0 +1,1424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: PcmPlayer类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_pcm_player.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_pcm_player-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">PcmPlayer类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>PCM 音频播放器基类  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_pcm_player_8h_source.html">PcmPlayer.h</a>&gt;</code></p>
+<div class="dynheader">
+类 PcmPlayer 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player__inherit__graph.png" border="0" usemap="#a_pcm_player_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_pcm_player_inherit__map" id="a_pcm_player_inherit__map">
+<area shape="rect" title="PCM 音频播放器基类" alt="" coords="22,80,107,107"/>
+<area shape="rect" href="class_pcm_player___s_d_l.html" title="SDL 音频播放器类，继承自 PcmPlayer" alt="" coords="5,155,124,181"/>
+<area shape="poly" title=" " alt="" coords="67,122,67,154,62,154,62,122"/>
+<area shape="rect" title=" " alt="" coords="30,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="67,48,67,80,62,80,62,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+PcmPlayer 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player__coll__graph.png" border="0" usemap="#a_pcm_player_coll__map" alt="Collaboration graph"/></div>
+<map name="a_pcm_player_coll__map" id="a_pcm_player_coll__map">
+<area shape="rect" title="PCM 音频播放器基类" alt="" coords="5,80,91,107"/>
+<area shape="rect" title=" " alt="" coords="13,5,83,32"/>
+<area shape="poly" title=" " alt="" coords="51,48,51,80,45,80,45,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ab01a0624b6c9b1938e5091e72d0b5a4a" id="r_ab01a0624b6c9b1938e5091e72d0b5a4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab01a0624b6c9b1938e5091e72d0b5a4a">PcmPlayer</a> ()</td></tr>
+<tr class="memdesc:ab01a0624b6c9b1938e5091e72d0b5a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:ab01a0624b6c9b1938e5091e72d0b5a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84ad554df223fbb8f262d165efc2aa8f" id="r_a84ad554df223fbb8f262d165efc2aa8f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84ad554df223fbb8f262d165efc2aa8f">~PcmPlayer</a> ()</td></tr>
+<tr class="memdesc:a84ad554df223fbb8f262d165efc2aa8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a84ad554df223fbb8f262d165efc2aa8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39d769ad545e5397b326e41e1985b61" id="r_aa39d769ad545e5397b326e41e1985b61"><td class="memItemLeft" align="right" valign="top">virtual std::list&lt; <a class="el" href="struct_audio_device.html">AudioDevice</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa39d769ad545e5397b326e41e1985b61">getAudiDeviceList</a> ()=0</td></tr>
+<tr class="memdesc:aa39d769ad545e5397b326e41e1985b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取音频设备列表  <br /></td></tr>
+<tr class="separator:aa39d769ad545e5397b326e41e1985b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f7135e19ed0a785ec497591ad256ee9" id="r_a2f7135e19ed0a785ec497591ad256ee9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f7135e19ed0a785ec497591ad256ee9">startPlay</a> ()</td></tr>
+<tr class="memdesc:a2f7135e19ed0a785ec497591ad256ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始播放  <br /></td></tr>
+<tr class="separator:a2f7135e19ed0a785ec497591ad256ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cbe4ac77834c38ccc31649de0258308" id="r_a8cbe4ac77834c38ccc31649de0258308"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cbe4ac77834c38ccc31649de0258308">stopPlay</a> ()</td></tr>
+<tr class="memdesc:a8cbe4ac77834c38ccc31649de0258308"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止播放  <br /></td></tr>
+<tr class="separator:a8cbe4ac77834c38ccc31649de0258308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b8dd06370f1663e4546ac1b56f51c3" id="r_ae4b8dd06370f1663e4546ac1b56f51c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4b8dd06370f1663e4546ac1b56f51c3">inputPCMFrame</a> (<a class="el" href="_p_c_m_frame_8h.html#ab7a8576022ba70101d67ccc3b805df13">PCMFramePtr</a> frame)</td></tr>
+<tr class="memdesc:ae4b8dd06370f1663e4546ac1b56f51c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入 PCM 帧  <br /></td></tr>
+<tr class="separator:ae4b8dd06370f1663e4546ac1b56f51c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7f42323199ccce19cd8a0374b84b5d" id="r_a7a7f42323199ccce19cd8a0374b84b5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a7f42323199ccce19cd8a0374b84b5d">getPcmFrameSize</a> ()</td></tr>
+<tr class="memdesc:a7a7f42323199ccce19cd8a0374b84b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 PCM 帧队列大小  <br /></td></tr>
+<tr class="separator:a7a7f42323199ccce19cd8a0374b84b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae23f9591e3ecb3e52ecf2e25cdd63e" id="r_acae23f9591e3ecb3e52ecf2e25cdd63e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acae23f9591e3ecb3e52ecf2e25cdd63e">isFrameFull</a> ()</td></tr>
+<tr class="memdesc:acae23f9591e3ecb3e52ecf2e25cdd63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查帧队列是否已满  <br /></td></tr>
+<tr class="separator:acae23f9591e3ecb3e52ecf2e25cdd63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a231981b158e24b0781d7767f7aa3449c" id="r_a231981b158e24b0781d7767f7aa3449c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a231981b158e24b0781d7767f7aa3449c">clearFrame</a> ()</td></tr>
+<tr class="memdesc:a231981b158e24b0781d7767f7aa3449c"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空帧队列  <br /></td></tr>
+<tr class="separator:a231981b158e24b0781d7767f7aa3449c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a589c39451125546e3aa8f4267332d8c4" id="r_a589c39451125546e3aa8f4267332d8c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a589c39451125546e3aa8f4267332d8c4">getCurrentPts</a> () const</td></tr>
+<tr class="memdesc:a589c39451125546e3aa8f4267332d8c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前播放帧时间戳  <br /></td></tr>
+<tr class="separator:a589c39451125546e3aa8f4267332d8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accf6a3148ef52d25bf4f7ab4a492603f" id="r_accf6a3148ef52d25bf4f7ab4a492603f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accf6a3148ef52d25bf4f7ab4a492603f">setPause</a> (bool pause)</td></tr>
+<tr class="memdesc:accf6a3148ef52d25bf4f7ab4a492603f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置暂停状态  <br /></td></tr>
+<tr class="separator:accf6a3148ef52d25bf4f7ab4a492603f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5466c67c5ec22359c0702dc4ac8ffb19" id="r_a5466c67c5ec22359c0702dc4ac8ffb19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5466c67c5ec22359c0702dc4ac8ffb19">setSpeed</a> (float speed)</td></tr>
+<tr class="memdesc:a5466c67c5ec22359c0702dc4ac8ffb19"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置播放速度  <br /></td></tr>
+<tr class="separator:a5466c67c5ec22359c0702dc4ac8ffb19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a115ce4b3dd4b64d6cbd26cbfc6cb4" id="r_a85a115ce4b3dd4b64d6cbd26cbfc6cb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85a115ce4b3dd4b64d6cbd26cbfc6cb4">setMute</a> (const bool is_mute)</td></tr>
+<tr class="memdesc:a85a115ce4b3dd4b64d6cbd26cbfc6cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置静音状态  <br /></td></tr>
+<tr class="separator:a85a115ce4b3dd4b64d6cbd26cbfc6cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a563bfb6542b4e23eae4552939185720f" id="r_a563bfb6542b4e23eae4552939185720f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a563bfb6542b4e23eae4552939185720f">setVolume</a> (float value)</td></tr>
+<tr class="memdesc:a563bfb6542b4e23eae4552939185720f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置音量  <br /></td></tr>
+<tr class="separator:a563bfb6542b4e23eae4552939185720f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adde132ea7b25cca5886eb5f9bcc20f58" id="r_adde132ea7b25cca5886eb5f9bcc20f58"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adde132ea7b25cca5886eb5f9bcc20f58">getVolume</a> () const</td></tr>
+<tr class="memdesc:adde132ea7b25cca5886eb5f9bcc20f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取音量  <br /></td></tr>
+<tr class="separator:adde132ea7b25cca5886eb5f9bcc20f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc22eecfab3185ca693376764f18303" id="r_a5cc22eecfab3185ca693376764f18303"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cc22eecfab3185ca693376764f18303">deviceOpened</a> () const</td></tr>
+<tr class="memdesc:a5cc22eecfab3185ca693376764f18303"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查设备是否已打开  <br /></td></tr>
+<tr class="separator:a5cc22eecfab3185ca693376764f18303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb48e85ced4dc34e9d9fa7673af08f2" id="r_addb48e85ced4dc34e9d9fa7673af08f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addb48e85ced4dc34e9d9fa7673af08f2">deviceOpenFailed</a> () const</td></tr>
+<tr class="memdesc:addb48e85ced4dc34e9d9fa7673af08f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查设备是否打开失败  <br /></td></tr>
+<tr class="separator:addb48e85ced4dc34e9d9fa7673af08f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a51f73d561fdeb70eeb9df680d6444272" id="r_a51f73d561fdeb70eeb9df680d6444272"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51f73d561fdeb70eeb9df680d6444272">openDevice</a> ()=0</td></tr>
+<tr class="memdesc:a51f73d561fdeb70eeb9df680d6444272"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开音频设备  <br /></td></tr>
+<tr class="separator:a51f73d561fdeb70eeb9df680d6444272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d37276da651c5d476ca66d6d6031d92" id="r_a3d37276da651c5d476ca66d6d6031d92"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d37276da651c5d476ca66d6d6031d92">closeDevice</a> ()=0</td></tr>
+<tr class="memdesc:a3d37276da651c5d476ca66d6d6031d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭音频设备  <br /></td></tr>
+<tr class="separator:a3d37276da651c5d476ca66d6d6031d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c97dd747079cf25a7420c7ef3eb721" id="r_ac0c97dd747079cf25a7420c7ef3eb721"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0c97dd747079cf25a7420c7ef3eb721">playAudioBuffer</a> (void *stream, int len)</td></tr>
+<tr class="memdesc:ac0c97dd747079cf25a7420c7ef3eb721"><td class="mdescLeft">&#160;</td><td class="mdescRight">播放音频缓冲区  <br /></td></tr>
+<tr class="separator:ac0c97dd747079cf25a7420c7ef3eb721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ae1ac1ff4781e2071abdd0a54e5551777" id="r_ae1ac1ff4781e2071abdd0a54e5551777"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1ac1ff4781e2071abdd0a54e5551777">m_mutex_audio</a></td></tr>
+<tr class="memdesc:ae1ac1ff4781e2071abdd0a54e5551777"><td class="mdescLeft">&#160;</td><td class="mdescRight">音频队列互斥锁  <br /></td></tr>
+<tr class="separator:ae1ac1ff4781e2071abdd0a54e5551777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e967463c344e057a8b65ffd8e9ed0b" id="r_a74e967463c344e057a8b65ffd8e9ed0b"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74e967463c344e057a8b65ffd8e9ed0b">m_cond_audio</a></td></tr>
+<tr class="memdesc:a74e967463c344e057a8b65ffd8e9ed0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">音频队列条件变量  <br /></td></tr>
+<tr class="separator:a74e967463c344e057a8b65ffd8e9ed0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20a08961a182789e3613519f9934019" id="r_ae20a08961a182789e3613519f9934019"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="_p_c_m_frame_8h.html#ab7a8576022ba70101d67ccc3b805df13">PCMFramePtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae20a08961a182789e3613519f9934019">m_pcm_frame_list</a></td></tr>
+<tr class="memdesc:ae20a08961a182789e3613519f9934019"><td class="mdescLeft">&#160;</td><td class="mdescRight">PCM 帧队列  <br /></td></tr>
+<tr class="separator:ae20a08961a182789e3613519f9934019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c43c6b61b0ff6ecb2f624aa77f91b4" id="r_aa4c43c6b61b0ff6ecb2f624aa77f91b4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c43c6b61b0ff6ecb2f624aa77f91b4">m_play_speed</a> = 1.0f</td></tr>
+<tr class="memdesc:aa4c43c6b61b0ff6ecb2f624aa77f91b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">播放速度  <br /></td></tr>
+<tr class="separator:aa4c43c6b61b0ff6ecb2f624aa77f91b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89e66dd9be5e369c11148c058bd1edd6" id="r_a89e66dd9be5e369c11148c058bd1edd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89e66dd9be5e369c11148c058bd1edd6">m_last_frame_buffer</a> [10240]</td></tr>
+<tr class="memdesc:a89e66dd9be5e369c11148c058bd1edd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次未处理完的数据缓冲区  <br /></td></tr>
+<tr class="separator:a89e66dd9be5e369c11148c058bd1edd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc114ce4e76ff77f10d052e15498e58" id="r_a1dc114ce4e76ff77f10d052e15498e58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dc114ce4e76ff77f10d052e15498e58">m_last_frame_buffer_size</a> = 0</td></tr>
+<tr class="memdesc:a1dc114ce4e76ff77f10d052e15498e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次未处理完的数据大小  <br /></td></tr>
+<tr class="separator:a1dc114ce4e76ff77f10d052e15498e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a188c4d042f10c630070d52dce658d" id="r_ad6a188c4d042f10c630070d52dce658d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6a188c4d042f10c630070d52dce658d">m_current_pts</a> = 0</td></tr>
+<tr class="memdesc:ad6a188c4d042f10c630070d52dce658d"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前播放帧时间戳  <br /></td></tr>
+<tr class="separator:ad6a188c4d042f10c630070d52dce658d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d7a75a14665cfe25b4c659207cf01e" id="r_a32d7a75a14665cfe25b4c659207cf01e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32d7a75a14665cfe25b4c659207cf01e">m_device_opened</a> = false</td></tr>
+<tr class="memdesc:a32d7a75a14665cfe25b4c659207cf01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备是否已打开  <br /></td></tr>
+<tr class="separator:a32d7a75a14665cfe25b4c659207cf01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a199f9fc20851a50b3d902c10ce4cd" id="r_a20a199f9fc20851a50b3d902c10ce4cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20a199f9fc20851a50b3d902c10ce4cd">m_device_open_failed</a> = false</td></tr>
+<tr class="memdesc:a20a199f9fc20851a50b3d902c10ce4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备是否打开失败  <br /></td></tr>
+<tr class="separator:a20a199f9fc20851a50b3d902c10ce4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eadc3c7e8ef7bec6a8ae768b930bd59" id="r_a8eadc3c7e8ef7bec6a8ae768b930bd59"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eadc3c7e8ef7bec6a8ae768b930bd59">m_last_try_open_device_time</a> = 0</td></tr>
+<tr class="memdesc:a8eadc3c7e8ef7bec6a8ae768b930bd59"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次尝试打开设备的时间  <br /></td></tr>
+<tr class="separator:a8eadc3c7e8ef7bec6a8ae768b930bd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3413bb59f49eba4c7fa7dc71f4ba2c6" id="r_ae3413bb59f49eba4c7fa7dc71f4ba2c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3413bb59f49eba4c7fa7dc71f4ba2c6">m_sample_rate</a> = 0</td></tr>
+<tr class="memdesc:ae3413bb59f49eba4c7fa7dc71f4ba2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">采样率  <br /></td></tr>
+<tr class="separator:ae3413bb59f49eba4c7fa7dc71f4ba2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad056a855e7e1f896f6676dbc6305f86a" id="r_ad056a855e7e1f896f6676dbc6305f86a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad056a855e7e1f896f6676dbc6305f86a">m_channel</a> = 0</td></tr>
+<tr class="memdesc:ad056a855e7e1f896f6676dbc6305f86a"><td class="mdescLeft">&#160;</td><td class="mdescRight">声道数  <br /></td></tr>
+<tr class="separator:ad056a855e7e1f896f6676dbc6305f86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378c30d8d9ca0215ac61ea0974082ca0" id="r_a378c30d8d9ca0215ac61ea0974082ca0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a378c30d8d9ca0215ac61ea0974082ca0">m_cache_size</a> = 81920</td></tr>
+<tr class="memdesc:a378c30d8d9ca0215ac61ea0974082ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">缓存大小  <br /></td></tr>
+<tr class="separator:a378c30d8d9ca0215ac61ea0974082ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7aa856b13850b466e1f547cda1a6b3f" id="r_ad7aa856b13850b466e1f547cda1a6b3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7aa856b13850b466e1f547cda1a6b3f">m_is_stop</a> = false</td></tr>
+<tr class="memdesc:ad7aa856b13850b466e1f547cda1a6b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否停止播放  <br /></td></tr>
+<tr class="separator:ad7aa856b13850b466e1f547cda1a6b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c23e80623b2841cf7394c73a1129faa" id="r_a0c23e80623b2841cf7394c73a1129faa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c23e80623b2841cf7394c73a1129faa">m_is_pause</a> = false</td></tr>
+<tr class="memdesc:a0c23e80623b2841cf7394c73a1129faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否暂停播放  <br /></td></tr>
+<tr class="separator:a0c23e80623b2841cf7394c73a1129faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8215d314fa883bfc6ef9b8919713a2" id="r_a2a8215d314fa883bfc6ef9b8919713a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a8215d314fa883bfc6ef9b8919713a2">m_is_mute</a> = false</td></tr>
+<tr class="memdesc:a2a8215d314fa883bfc6ef9b8919713a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否静音  <br /></td></tr>
+<tr class="separator:a2a8215d314fa883bfc6ef9b8919713a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644151282d2c854df1d00cf4aaa47cde" id="r_a644151282d2c854df1d00cf4aaa47cde"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a644151282d2c854df1d00cf4aaa47cde">m_volume</a> = 1.0f</td></tr>
+<tr class="memdesc:a644151282d2c854df1d00cf4aaa47cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">音量值  <br /></td></tr>
+<tr class="separator:a644151282d2c854df1d00cf4aaa47cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>PCM 音频播放器基类 </p>
+<p>该类提供 PCM 音频播放的基本功能，包括设备管理、帧输入、音量控制等。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ab01a0624b6c9b1938e5091e72d0b5a4a" name="ab01a0624b6c9b1938e5091e72d0b5a4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab01a0624b6c9b1938e5091e72d0b5a4a">&#9670;&#160;</a></span>PcmPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_pcm_player.html">PcmPlayer</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<p>初始化 <a class="el" href="class_pcm_player.html" title="PCM 音频播放器基类">PcmPlayer</a> 对象。 </p>
+
+</div>
+</div>
+<a id="a84ad554df223fbb8f262d165efc2aa8f" name="a84ad554df223fbb8f262d165efc2aa8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84ad554df223fbb8f262d165efc2aa8f">&#9670;&#160;</a></span>~PcmPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_pcm_player.html">PcmPlayer</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+<p>销毁 <a class="el" href="class_pcm_player.html" title="PCM 音频播放器基类">PcmPlayer</a> 对象。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a231981b158e24b0781d7767f7aa3449c" name="a231981b158e24b0781d7767f7aa3449c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a231981b158e24b0781d7767f7aa3449c">&#9670;&#160;</a></span>clearFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clearFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清空帧队列 </p>
+<p>检查帧队列是否已满</p>
+<dl class="section return"><dt>返回</dt><dd>true 表示队列已满</dd></dl>
+<p>清空帧队列 </p>
+
+</div>
+</div>
+<a id="a3d37276da651c5d476ca66d6d6031d92" name="a3d37276da651c5d476ca66d6d6031d92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d37276da651c5d476ca66d6d6031d92">&#9670;&#160;</a></span>closeDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool closeDevice </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关闭音频设备 </p>
+<p>纯虚函数，需由子类实现。</p>
+<dl class="section return"><dt>返回</dt><dd>true 表示成功 </dd></dl>
+
+<p>在 <a class="el" href="class_pcm_player___s_d_l.html#ac82f11da965333b34c8a795ef0307e95">PcmPlayer_SDL</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_a3d37276da651c5d476ca66d6d6031d92_icgraph.png" border="0" usemap="#aclass_pcm_player_a3d37276da651c5d476ca66d6d6031d92_icgraph" alt=""/></div>
+<map name="aclass_pcm_player_a3d37276da651c5d476ca66d6d6031d92_icgraph" id="aclass_pcm_player_a3d37276da651c5d476ca66d6d6031d92_icgraph">
+<area shape="rect" title="关闭音频设备" alt="" coords="290,5,383,32"/>
+<area shape="rect" href="class_pcm_player.html#a8cbe4ac77834c38ccc31649de0258308" title="停止播放" alt="" coords="170,5,242,32"/>
+<area shape="poly" title=" " alt="" coords="274,21,242,21,242,16,274,16"/>
+<area shape="rect" href="class_pcm_player.html#ae4b8dd06370f1663e4546ac1b56f51c3" title="输入 PCM 帧" alt="" coords="5,5,122,32"/>
+<area shape="poly" title=" " alt="" coords="154,21,122,21,122,16,154,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5cc22eecfab3185ca693376764f18303" name="a5cc22eecfab3185ca693376764f18303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cc22eecfab3185ca693376764f18303">&#9670;&#160;</a></span>deviceOpened()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool deviceOpened </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查设备是否已打开 </p>
+<dl class="section return"><dt>返回</dt><dd>true 表示设备已打开 </dd></dl>
+
+</div>
+</div>
+<a id="addb48e85ced4dc34e9d9fa7673af08f2" name="addb48e85ced4dc34e9d9fa7673af08f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb48e85ced4dc34e9d9fa7673af08f2">&#9670;&#160;</a></span>deviceOpenFailed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool deviceOpenFailed </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查设备是否打开失败 </p>
+<dl class="section return"><dt>返回</dt><dd>true 表示设备打开失败 </dd></dl>
+
+</div>
+</div>
+<a id="aa39d769ad545e5397b326e41e1985b61" name="aa39d769ad545e5397b326e41e1985b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39d769ad545e5397b326e41e1985b61">&#9670;&#160;</a></span>getAudiDeviceList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::list&lt; <a class="el" href="struct_audio_device.html">AudioDevice</a> &gt; getAudiDeviceList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取音频设备列表 </p>
+<p>纯虚函数，需由子类实现。</p>
+<dl class="section return"><dt>返回</dt><dd>音频设备列表 </dd></dl>
+
+<p>在 <a class="el" href="class_pcm_player___s_d_l.html#a8480617b3fd60fa1578fb9a51bb7eb7a">PcmPlayer_SDL</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a589c39451125546e3aa8f4267332d8c4" name="a589c39451125546e3aa8f4267332d8c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a589c39451125546e3aa8f4267332d8c4">&#9670;&#160;</a></span>getCurrentPts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> getCurrentPts </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前播放帧时间戳 </p>
+<dl class="section return"><dt>返回</dt><dd>当前播放帧的时间戳 </dd></dl>
+
+</div>
+</div>
+<a id="a7a7f42323199ccce19cd8a0374b84b5d" name="a7a7f42323199ccce19cd8a0374b84b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a7f42323199ccce19cd8a0374b84b5d">&#9670;&#160;</a></span>getPcmFrameSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getPcmFrameSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 PCM 帧队列大小 </p>
+<dl class="section return"><dt>返回</dt><dd>当前队列中的帧数 </dd></dl>
+
+</div>
+</div>
+<a id="adde132ea7b25cca5886eb5f9bcc20f58" name="adde132ea7b25cca5886eb5f9bcc20f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adde132ea7b25cca5886eb5f9bcc20f58">&#9670;&#160;</a></span>getVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float getVolume </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取音量 </p>
+<dl class="section return"><dt>返回</dt><dd>当前音量值 </dd></dl>
+
+</div>
+</div>
+<a id="ae4b8dd06370f1663e4546ac1b56f51c3" name="ae4b8dd06370f1663e4546ac1b56f51c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4b8dd06370f1663e4546ac1b56f51c3">&#9670;&#160;</a></span>inputPCMFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int inputPCMFrame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_p_c_m_frame_8h.html#ab7a8576022ba70101d67ccc3b805df13">PCMFramePtr</a></td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输入 PCM 帧 </p>
+<p>将 PCM 帧添加到播放队列。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>PCM 帧智能指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>当前队列中的帧数 </dd></dl>
+<p>&lt; 音频设备打开的情况下才处理播放</p>
+<p>&lt; 用于实现 播放队列太大的时候，提高播放采样率，用于直播消延时</p>
+<p>&lt; 音频设备未打开，则每隔50ms尝试打开一次</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_ae4b8dd06370f1663e4546ac1b56f51c3_cgraph.png" border="0" usemap="#aclass_pcm_player_ae4b8dd06370f1663e4546ac1b56f51c3_cgraph" alt=""/></div>
+<map name="aclass_pcm_player_ae4b8dd06370f1663e4546ac1b56f51c3_cgraph" id="aclass_pcm_player_ae4b8dd06370f1663e4546ac1b56f51c3_cgraph">
+<area shape="rect" title="输入 PCM 帧" alt="" coords="5,485,122,512"/>
+<area shape="rect" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout." alt="" coords="181,435,232,461"/>
+<area shape="poly" title=" " alt="" coords="103,482,166,459,167,464,104,487"/>
+<area shape="rect" href="class_pcm_player.html#a2f7135e19ed0a785ec497591ad256ee9" title="开始播放" alt="" coords="170,485,243,512"/>
+<area shape="poly" title=" " alt="" coords="122,496,154,496,154,501,122,501"/>
+<area shape="rect" href="class_pcm_player.html#a8cbe4ac77834c38ccc31649de0258308" title="停止播放" alt="" coords="170,536,242,563"/>
+<area shape="poly" title=" " alt="" coords="104,510,156,529,154,534,103,515"/>
+<area shape="rect" href="printf_8h.html#a27dcc0efcda04388971dbea3c875f122" title="Constructs an format_arg_store object that contains references to arguments and can be implicitly con..." alt="" coords="291,384,412,411"/>
+<area shape="poly" title=" " alt="" coords="231,437,296,414,298,419,233,442"/>
+<area shape="rect" href="printf_8h.html#abb30aad964fc771fb52cf3ad88649df2" title=" " alt="" coords="321,435,382,461"/>
+<area shape="poly" title=" " alt="" coords="232,445,305,445,305,451,232,451"/>
+<area shape="rect" href="namespacedetail.html#a755ec613824f57d29068751f166ad91b" title=" " alt="" coords="460,435,557,461"/>
+<area shape="poly" title=" " alt="" coords="383,445,445,445,445,451,383,451"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="1115,56,1154,83"/>
+<area shape="poly" title=" " alt="" coords="507,434,508,378,519,296,531,251,548,207,572,166,603,131,642,109,698,93,766,81,840,73,989,66,1100,66,1100,71,989,71,841,78,766,86,699,98,644,114,606,135,576,169,553,209,536,252,525,297,513,378,512,434"/>
+<area shape="rect" href="namespacedetail.html#a1092422aa9ff50b4eaa2068e31ccff0f" title=" " alt="" coords="624,5,752,32"/>
+<area shape="poly" title=" " alt="" coords="509,434,519,356,539,241,567,126,584,81,603,49,615,38,618,42,607,52,588,83,572,128,544,242,524,356,514,435"/>
+<area shape="rect" href="namespacedetail.html#a02307ec0131a3aa9df2db7c2f10b69f2" title=" " alt="" coords="647,435,728,461"/>
+<area shape="poly" title=" " alt="" coords="557,445,632,445,632,451,557,451"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="1105,587,1164,613"/>
+<area shape="poly" title=" " alt="" coords="557,459,605,471,666,480,719,485,810,487,899,493,951,503,1010,522,1052,544,1102,576,1099,580,1049,548,1008,526,949,509,899,498,809,492,719,490,666,486,604,476,556,465"/>
+<area shape="rect" href="namespacedetail.html#a727b5e700f6f0e3aca7e0181e45240f3" title=" " alt="" coords="862,131,966,157"/>
+<area shape="poly" title=" " alt="" coords="507,434,511,384,523,313,535,274,552,237,574,203,603,174,631,156,661,143,726,128,790,125,847,129,847,135,790,130,726,133,663,148,633,161,606,178,578,206,557,239,540,276,529,314,516,385,513,435"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="1091,181,1178,208"/>
+<area shape="poly" title=" " alt="" coords="512,433,543,367,569,328,603,294,660,257,722,230,787,210,853,197,917,189,977,186,1075,187,1075,192,977,191,917,195,854,202,788,215,724,235,662,262,606,298,574,331,548,370,517,436"/>
+<area shape="rect" href="namespacedetail.html#a21ef35f3306ada700061355953e35f4d" title=" " alt="" coords="605,587,771,613"/>
+<area shape="poly" title=" " alt="" coords="519,460,551,515,576,546,606,573,614,577,611,582,603,577,572,550,547,518,514,463"/>
+<area shape="rect" href="namespacedetail.html#a4bed1b172ef600201e6d59ec7f532d0f" title=" " alt="" coords="612,637,764,664"/>
+<area shape="poly" title=" " alt="" coords="516,461,526,494,544,538,571,584,606,623,612,627,608,631,603,627,566,587,540,540,521,496,511,463"/>
+<area shape="rect" href="namespacedetail.html#af191853bad5ee9cfad04aad57ce3f761" title=" " alt="" coords="619,308,757,335"/>
+<area shape="poly" title=" " alt="" coords="527,432,603,376,653,342,656,346,606,381,530,436"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="819,384,1009,411"/>
+<area shape="poly" title=" " alt="" coords="555,431,604,420,706,407,803,399,804,404,707,412,605,425,556,437"/>
+<area shape="rect" href="namespacedetail.html#ab32eb7489f534b4b7afa8efd2f3c770e" title=" " alt="" coords="622,688,754,731"/>
+<area shape="poly" title=" " alt="" coords="514,461,523,502,539,559,567,620,585,649,607,674,611,678,608,682,603,678,581,652,562,623,534,561,517,504,509,462"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="623,755,753,781"/>
+<area shape="poly" title=" " alt="" coords="513,461,516,513,529,588,541,629,558,670,579,708,607,741,611,745,608,749,603,745,575,711,553,672,536,631,524,589,511,514,507,462"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="644,536,732,563"/>
+<area shape="poly" title=" " alt="" coords="527,460,562,487,606,515,632,527,630,532,603,520,559,491,524,464"/>
+<area shape="poly" title=" " alt="" coords="1113,65,1096,54,1093,42,1107,33,1134,29,1158,31,1172,38,1177,47,1170,57,1166,54,1171,47,1169,41,1157,37,1135,35,1109,38,1098,44,1100,51,1116,61"/>
+<area shape="poly" title=" " alt="" coords="753,21,1010,48,1100,61,1099,66,1009,53,752,27"/>
+<area shape="rect" href="namespacedetail.html#a1fad02034db0164c9a959f0ffe148dbc" title=" " alt="" coords="873,435,955,461"/>
+<area shape="poly" title=" " alt="" coords="729,445,857,445,857,451,729,451"/>
+<area shape="poly" title=" " alt="" coords="955,128,1099,78,1101,83,957,133"/>
+<area shape="poly" title=" " alt="" coords="877,132,870,122,875,112,890,106,914,104,940,107,954,113,952,118,939,112,914,109,891,111,878,116,876,121,881,129"/>
+<area shape="poly" title=" " alt="" coords="967,153,1076,179,1075,184,965,158"/>
+<area shape="poly" title=" " alt="" coords="705,305,882,165,886,169,708,310"/>
+<area shape="poly" title=" " alt="" coords="720,305,818,268,956,230,1075,204,1076,209,957,236,820,273,722,310"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="852,283,976,309"/>
+<area shape="poly" title=" " alt="" coords="757,311,837,302,837,307,758,316"/>
+<area shape="rect" href="namespacedetail.html#a90149e7cc7db72a2c4b8186f52e77d6c" title=" " alt="" coords="850,333,978,360"/>
+<area shape="poly" title=" " alt="" coords="758,326,835,335,835,340,757,332"/>
+<area shape="poly" title=" " alt="" coords="723,333,820,369,844,377,842,382,818,375,721,338"/>
+<area shape="rect" href="classbasic__specs.html#af764698dbe47aaeef3cb198972593f78" title=" " alt="" coords="1057,232,1212,259"/>
+<area shape="poly" title=" " alt="" coords="977,333,1008,319,1022,307,1031,295,1041,282,1056,268,1065,263,1068,268,1059,273,1045,285,1036,298,1026,311,1011,324,979,337"/>
+<area shape="rect" href="classbasic__specs.html#a192d822d1b986f70a10bfd2c438abce1" title=" " alt="" coords="1064,283,1205,309"/>
+<area shape="poly" title=" " alt="" coords="975,330,1058,311,1059,316,976,335"/>
+<area shape="rect" href="classbasic__specs.html#a3c56b1a9d662b03cd2b4b1b774781462" title=" " alt="" coords="1064,333,1205,360"/>
+<area shape="poly" title=" " alt="" coords="978,344,1049,344,1049,349,978,349"/>
+<area shape="rect" href="classbasic__specs.html#ad7b2fcf7e62cb3cc6b9d8ec72484338d" title=" " alt="" coords="1059,384,1210,411"/>
+<area shape="poly" title=" " alt="" coords="976,358,1059,377,1058,383,975,363"/>
+<area shape="rect" href="classbasic__specs.html#a1147588dbb7187d9e8d5022e6da843af" title=" " alt="" coords="1071,459,1198,485"/>
+<area shape="poly" title=" " alt="" coords="979,356,1011,370,1027,382,1036,394,1059,421,1097,448,1094,452,1056,425,1032,398,1023,386,1008,374,977,361"/>
+<area shape="rect" href="classbasic__specs.html#a625b0fd2cf9eda4a3e3e94af7f49ef6a" title=" " alt="" coords="1260,333,1431,360"/>
+<area shape="poly" title=" " alt="" coords="1205,344,1244,344,1244,349,1205,349"/>
+<area shape="poly" title=" " alt="" coords="1099,460,1092,450,1097,440,1111,434,1135,432,1160,435,1173,441,1171,446,1158,440,1134,437,1112,439,1100,444,1098,449,1103,457"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="1082,509,1187,536"/>
+<area shape="poly" title=" " alt="" coords="990,409,1011,421,1028,439,1036,459,1043,477,1059,495,1069,502,1066,506,1056,499,1039,480,1031,461,1024,442,1008,425,987,414"/>
+<area shape="rect" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171" title=" " alt="" coords="879,739,949,765"/>
+<area shape="poly" title=" " alt="" coords="754,719,864,740,863,745,753,724"/>
+<area shape="rect" href="namespacedetail.html#a94fd8fb87672f6ca33ea17019096e098" title=" " alt="" coords="1095,739,1174,765"/>
+<area shape="poly" title=" " alt="" coords="950,749,1080,749,1080,755,950,755"/>
+<area shape="poly" title=" " alt="" coords="733,556,819,572,968,588,1090,595,1090,601,968,593,819,577,732,562"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="860,637,969,664"/>
+<area shape="poly" title=" " alt="" coords="733,556,772,572,787,584,797,595,806,606,820,616,846,629,844,634,818,621,803,610,793,598,784,587,770,577,731,561"/>
+<area shape="rect" href="namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83" title=" " alt="" coords="856,688,973,715"/>
+<area shape="poly" title=" " alt="" coords="733,553,754,561,773,573,784,586,792,599,797,625,803,650,810,662,821,674,842,687,839,691,817,678,805,665,798,652,792,626,787,601,780,589,769,577,752,565,732,558"/>
+<area shape="rect" href="namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="852,536,977,563"/>
+<area shape="poly" title=" " alt="" coords="732,547,836,547,836,552,732,552"/>
+<area shape="poly" title=" " alt="" coords="969,636,1090,607,1091,613,970,641"/>
+<area shape="rect" href="class_pcm_player.html#a51f73d561fdeb70eeb9df680d6444272" title="打开音频设备" alt="" coords="306,485,397,512"/>
+<area shape="poly" title=" " alt="" coords="243,496,291,496,291,501,243,501"/>
+<area shape="rect" href="class_pcm_player.html#a3d37276da651c5d476ca66d6d6031d92" title="关闭音频设备" alt="" coords="305,536,398,563"/>
+<area shape="poly" title=" " alt="" coords="243,547,290,547,290,552,243,552"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acae23f9591e3ecb3e52ecf2e25cdd63e" name="acae23f9591e3ecb3e52ecf2e25cdd63e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae23f9591e3ecb3e52ecf2e25cdd63e">&#9670;&#160;</a></span>isFrameFull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isFrameFull </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查帧队列是否已满 </p>
+<dl class="section return"><dt>返回</dt><dd>true 表示队列已满 </dd></dl>
+
+</div>
+</div>
+<a id="a51f73d561fdeb70eeb9df680d6444272" name="a51f73d561fdeb70eeb9df680d6444272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f73d561fdeb70eeb9df680d6444272">&#9670;&#160;</a></span>openDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool openDevice </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>打开音频设备 </p>
+<p>纯虚函数，需由子类实现。</p>
+<dl class="section return"><dt>返回</dt><dd>true 表示成功 </dd></dl>
+
+<p>在 <a class="el" href="class_pcm_player___s_d_l.html#a48c0c97b8de3bf8202cda6e525e2bdc6">PcmPlayer_SDL</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_a51f73d561fdeb70eeb9df680d6444272_icgraph.png" border="0" usemap="#aclass_pcm_player_a51f73d561fdeb70eeb9df680d6444272_icgraph" alt=""/></div>
+<map name="aclass_pcm_player_a51f73d561fdeb70eeb9df680d6444272_icgraph" id="aclass_pcm_player_a51f73d561fdeb70eeb9df680d6444272_icgraph">
+<area shape="rect" title="打开音频设备" alt="" coords="291,5,381,32"/>
+<area shape="rect" href="class_pcm_player.html#a2f7135e19ed0a785ec497591ad256ee9" title="开始播放" alt="" coords="170,5,243,32"/>
+<area shape="poly" title=" " alt="" coords="275,21,244,21,244,16,275,16"/>
+<area shape="rect" href="class_pcm_player.html#ae4b8dd06370f1663e4546ac1b56f51c3" title="输入 PCM 帧" alt="" coords="5,5,122,32"/>
+<area shape="poly" title=" " alt="" coords="154,21,122,21,122,16,154,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac0c97dd747079cf25a7420c7ef3eb721" name="ac0c97dd747079cf25a7420c7ef3eb721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c97dd747079cf25a7420c7ef3eb721">&#9670;&#160;</a></span>playAudioBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void playAudioBuffer </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>stream</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>播放音频缓冲区 </p>
+<p>处理音频数据并输出到音频设备。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>输出音频流 </td></tr>
+    <tr><td class="paramname">len</td><td>输出流长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 检查暂停或停止状态</p>
+<p>&lt; 输出静音</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_cgraph.png" border="0" usemap="#aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_cgraph" alt=""/></div>
+<map name="aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_cgraph" id="aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_cgraph">
+<area shape="rect" title="播放音频缓冲区" alt="" coords="5,5,118,32"/>
+<area shape="rect" href="class_pcm_volume_control.html#adf71b3485196765131b2bea822e6f252" title="调节音量" alt="" coords="166,5,384,32"/>
+<area shape="poly" title=" " alt="" coords="118,16,150,16,150,21,118,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_icgraph.png" border="0" usemap="#aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_icgraph" alt=""/></div>
+<map name="aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_icgraph" id="aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_icgraph">
+<area shape="rect" title="播放音频缓冲区" alt="" coords="496,13,608,40"/>
+<area shape="rect" href="class_pcm_player___s_d_l.html#ab08b7af07f9fd42329c6780b2a85cb7a" title="SDL 音频回调函数" alt="" coords="249,5,448,48"/>
+<area shape="poly" title=" " alt="" coords="481,29,449,29,449,24,481,24"/>
+<area shape="rect" href="class_pcm_player___s_d_l.html#a48c0c97b8de3bf8202cda6e525e2bdc6" title="打开音频设备" alt="" coords="5,13,201,40"/>
+<area shape="poly" title=" " alt="" coords="233,29,201,29,201,24,233,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a85a115ce4b3dd4b64d6cbd26cbfc6cb4" name="a85a115ce4b3dd4b64d6cbd26cbfc6cb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a115ce4b3dd4b64d6cbd26cbfc6cb4">&#9670;&#160;</a></span>setMute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setMute </td>
+          <td>(</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>is_mute</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置静音状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is_mute</td><td>是否静音 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="accf6a3148ef52d25bf4f7ab4a492603f" name="accf6a3148ef52d25bf4f7ab4a492603f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf6a3148ef52d25bf4f7ab4a492603f">&#9670;&#160;</a></span>setPause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setPause </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>pause</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置暂停状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pause</td><td>是否暂停 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5466c67c5ec22359c0702dc4ac8ffb19" name="a5466c67c5ec22359c0702dc4ac8ffb19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5466c67c5ec22359c0702dc4ac8ffb19">&#9670;&#160;</a></span>setSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置播放速度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>播放速度倍数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a563bfb6542b4e23eae4552939185720f" name="a563bfb6542b4e23eae4552939185720f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563bfb6542b4e23eae4552939185720f">&#9670;&#160;</a></span>setVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setVolume </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置音量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>音量值（0~1，超过 1 表示放大） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2f7135e19ed0a785ec497591ad256ee9" name="a2f7135e19ed0a785ec497591ad256ee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f7135e19ed0a785ec497591ad256ee9">&#9670;&#160;</a></span>startPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool startPlay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>开始播放 </p>
+<p>初始化音频设备并开始播放。</p>
+<dl class="section return"><dt>返回</dt><dd>true 表示成功 </dd></dl>
+<p>&lt; 计算150ms的缓存大小</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_a2f7135e19ed0a785ec497591ad256ee9_cgraph.png" border="0" usemap="#aclass_pcm_player_a2f7135e19ed0a785ec497591ad256ee9_cgraph" alt=""/></div>
+<map name="aclass_pcm_player_a2f7135e19ed0a785ec497591ad256ee9_cgraph" id="aclass_pcm_player_a2f7135e19ed0a785ec497591ad256ee9_cgraph">
+<area shape="rect" title="开始播放" alt="" coords="5,5,79,32"/>
+<area shape="rect" href="class_pcm_player.html#a51f73d561fdeb70eeb9df680d6444272" title="打开音频设备" alt="" coords="127,5,217,32"/>
+<area shape="poly" title=" " alt="" coords="79,16,111,16,111,21,79,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_a2f7135e19ed0a785ec497591ad256ee9_icgraph.png" border="0" usemap="#aclass_pcm_player_a2f7135e19ed0a785ec497591ad256ee9_icgraph" alt=""/></div>
+<map name="aclass_pcm_player_a2f7135e19ed0a785ec497591ad256ee9_icgraph" id="aclass_pcm_player_a2f7135e19ed0a785ec497591ad256ee9_icgraph">
+<area shape="rect" title="开始播放" alt="" coords="170,5,243,32"/>
+<area shape="rect" href="class_pcm_player.html#ae4b8dd06370f1663e4546ac1b56f51c3" title="输入 PCM 帧" alt="" coords="5,5,122,32"/>
+<area shape="poly" title=" " alt="" coords="154,21,122,21,122,16,154,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8cbe4ac77834c38ccc31649de0258308" name="a8cbe4ac77834c38ccc31649de0258308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cbe4ac77834c38ccc31649de0258308">&#9670;&#160;</a></span>stopPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stopPlay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>停止播放 </p>
+<p>关闭音频设备并停止播放。</p>
+<dl class="section return"><dt>返回</dt><dd>true 表示成功 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_a8cbe4ac77834c38ccc31649de0258308_cgraph.png" border="0" usemap="#aclass_pcm_player_a8cbe4ac77834c38ccc31649de0258308_cgraph" alt=""/></div>
+<map name="aclass_pcm_player_a8cbe4ac77834c38ccc31649de0258308_cgraph" id="aclass_pcm_player_a8cbe4ac77834c38ccc31649de0258308_cgraph">
+<area shape="rect" title="停止播放" alt="" coords="5,5,78,32"/>
+<area shape="rect" href="class_pcm_player.html#a3d37276da651c5d476ca66d6d6031d92" title="关闭音频设备" alt="" coords="126,5,219,32"/>
+<area shape="poly" title=" " alt="" coords="78,16,110,16,110,21,78,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pcm_player_a8cbe4ac77834c38ccc31649de0258308_icgraph.png" border="0" usemap="#aclass_pcm_player_a8cbe4ac77834c38ccc31649de0258308_icgraph" alt=""/></div>
+<map name="aclass_pcm_player_a8cbe4ac77834c38ccc31649de0258308_icgraph" id="aclass_pcm_player_a8cbe4ac77834c38ccc31649de0258308_icgraph">
+<area shape="rect" title="停止播放" alt="" coords="170,5,242,32"/>
+<area shape="rect" href="class_pcm_player.html#ae4b8dd06370f1663e4546ac1b56f51c3" title="输入 PCM 帧" alt="" coords="5,5,122,32"/>
+<area shape="poly" title=" " alt="" coords="154,21,122,21,122,16,154,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a378c30d8d9ca0215ac61ea0974082ca0" name="a378c30d8d9ca0215ac61ea0974082ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378c30d8d9ca0215ac61ea0974082ca0">&#9670;&#160;</a></span>m_cache_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_cache_size = 81920</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>缓存大小 </p>
+
+</div>
+</div>
+<a id="ad056a855e7e1f896f6676dbc6305f86a" name="ad056a855e7e1f896f6676dbc6305f86a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad056a855e7e1f896f6676dbc6305f86a">&#9670;&#160;</a></span>m_channel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_channel = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>声道数 </p>
+
+</div>
+</div>
+<a id="a74e967463c344e057a8b65ffd8e9ed0b" name="a74e967463c344e057a8b65ffd8e9ed0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74e967463c344e057a8b65ffd8e9ed0b">&#9670;&#160;</a></span>m_cond_audio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::condition_variable m_cond_audio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>音频队列条件变量 </p>
+
+</div>
+</div>
+<a id="ad6a188c4d042f10c630070d52dce658d" name="ad6a188c4d042f10c630070d52dce658d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a188c4d042f10c630070d52dce658d">&#9670;&#160;</a></span>m_current_pts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_pcm_volume_control_8cpp.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> m_current_pts = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前播放帧时间戳 </p>
+
+</div>
+</div>
+<a id="a20a199f9fc20851a50b3d902c10ce4cd" name="a20a199f9fc20851a50b3d902c10ce4cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a199f9fc20851a50b3d902c10ce4cd">&#9670;&#160;</a></span>m_device_open_failed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_device_open_failed = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设备是否打开失败 </p>
+
+</div>
+</div>
+<a id="a32d7a75a14665cfe25b4c659207cf01e" name="a32d7a75a14665cfe25b4c659207cf01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d7a75a14665cfe25b4c659207cf01e">&#9670;&#160;</a></span>m_device_opened</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_device_opened = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设备是否已打开 </p>
+
+</div>
+</div>
+<a id="a2a8215d314fa883bfc6ef9b8919713a2" name="a2a8215d314fa883bfc6ef9b8919713a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8215d314fa883bfc6ef9b8919713a2">&#9670;&#160;</a></span>m_is_mute</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_is_mute = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否静音 </p>
+
+</div>
+</div>
+<a id="a0c23e80623b2841cf7394c73a1129faa" name="a0c23e80623b2841cf7394c73a1129faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c23e80623b2841cf7394c73a1129faa">&#9670;&#160;</a></span>m_is_pause</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_is_pause = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否暂停播放 </p>
+
+</div>
+</div>
+<a id="ad7aa856b13850b466e1f547cda1a6b3f" name="ad7aa856b13850b466e1f547cda1a6b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7aa856b13850b466e1f547cda1a6b3f">&#9670;&#160;</a></span>m_is_stop</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_is_stop = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否停止播放 </p>
+
+</div>
+</div>
+<a id="a89e66dd9be5e369c11148c058bd1edd6" name="a89e66dd9be5e369c11148c058bd1edd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89e66dd9be5e369c11148c058bd1edd6">&#9670;&#160;</a></span>m_last_frame_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> m_last_frame_buffer[10240]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>上一次未处理完的数据缓冲区 </p>
+
+</div>
+</div>
+<a id="a1dc114ce4e76ff77f10d052e15498e58" name="a1dc114ce4e76ff77f10d052e15498e58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc114ce4e76ff77f10d052e15498e58">&#9670;&#160;</a></span>m_last_frame_buffer_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_last_frame_buffer_size = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>上一次未处理完的数据大小 </p>
+
+</div>
+</div>
+<a id="a8eadc3c7e8ef7bec6a8ae768b930bd59" name="a8eadc3c7e8ef7bec6a8ae768b930bd59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eadc3c7e8ef7bec6a8ae768b930bd59">&#9670;&#160;</a></span>m_last_try_open_device_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t m_last_try_open_device_time = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>上一次尝试打开设备的时间 </p>
+
+</div>
+</div>
+<a id="ae1ac1ff4781e2071abdd0a54e5551777" name="ae1ac1ff4781e2071abdd0a54e5551777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1ac1ff4781e2071abdd0a54e5551777">&#9670;&#160;</a></span>m_mutex_audio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex m_mutex_audio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>音频队列互斥锁 </p>
+
+</div>
+</div>
+<a id="ae20a08961a182789e3613519f9934019" name="ae20a08961a182789e3613519f9934019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20a08961a182789e3613519f9934019">&#9670;&#160;</a></span>m_pcm_frame_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;<a class="el" href="_p_c_m_frame_8h.html#ab7a8576022ba70101d67ccc3b805df13">PCMFramePtr</a>&gt; m_pcm_frame_list</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PCM 帧队列 </p>
+
+</div>
+</div>
+<a id="aa4c43c6b61b0ff6ecb2f624aa77f91b4" name="aa4c43c6b61b0ff6ecb2f624aa77f91b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c43c6b61b0ff6ecb2f624aa77f91b4">&#9670;&#160;</a></span>m_play_speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float m_play_speed = 1.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>播放速度 </p>
+
+</div>
+</div>
+<a id="ae3413bb59f49eba4c7fa7dc71f4ba2c6" name="ae3413bb59f49eba4c7fa7dc71f4ba2c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3413bb59f49eba4c7fa7dc71f4ba2c6">&#9670;&#160;</a></span>m_sample_rate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_sample_rate = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>采样率 </p>
+
+</div>
+</div>
+<a id="a644151282d2c854df1d00cf4aaa47cde" name="a644151282d2c854df1d00cf4aaa47cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a644151282d2c854df1d00cf4aaa47cde">&#9670;&#160;</a></span>m_volume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float m_volume = 1.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>音量值 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_pcm_player_8h_source.html">PcmPlayer.h</a></li>
+<li><a class="el" href="_pcm_player_8cpp.html">PcmPlayer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_pcm_player.html">PcmPlayer</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

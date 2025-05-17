@@ -1,0 +1,2159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: CTcpSocket类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_c_tcp_socket.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_c_tcp_socket-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">CTcpSocket类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="class_c_tcp_socket.html" title="The CTcpSocket class tcpsocket客户端类">CTcpSocket</a> class tcpsocket客户端类  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ctcpsocketclient_8h_source.html">ctcpsocketclient.h</a>&gt;</code></p>
+<div class="dynheader">
+类 CTcpSocket 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket__inherit__graph.png" border="0" usemap="#a_c_tcp_socket_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_c_tcp_socket_inherit__map" id="a_c_tcp_socket_inherit__map">
+<area shape="rect" title="The CTcpSocket class tcpsocket客户端类" alt="" coords="75,80,168,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="76,41,111,78,107,81,72,45"/>
+<area shape="rect" href="class_ned_allocated_object.html" title="提供自定义内存分配和释放功能的基类" alt="" coords="123,5,261,32"/>
+<area shape="poly" title=" " alt="" coords="171,45,135,81,132,78,167,41"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+CTcpSocket 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket__coll__graph.png" border="0" usemap="#a_c_tcp_socket_coll__map" alt="Collaboration graph"/></div>
+<map name="a_c_tcp_socket_coll__map" id="a_c_tcp_socket_coll__map">
+<area shape="rect" title="The CTcpSocket class tcpsocket客户端类" alt="" coords="227,96,320,123"/>
+<area shape="rect" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="98,36,243,93,241,98,96,41"/>
+<area shape="rect" href="class_ned_allocated_object.html" title="提供自定义内存分配和释放功能的基类" alt="" coords="123,5,261,32"/>
+<area shape="poly" title=" " alt="" coords="216,42,264,94,260,97,212,45"/>
+<area shape="rect" href="structtag_datagram_hearder.html" title="要发送串口报文头。" alt="" coords="285,5,427,32"/>
+<area shape="poly" title=" " alt="" coords="336,45,287,97,283,94,332,42"/>
+<area shape="rect" href="class_network_frame_manager.html" title=" " alt="" coords="451,5,608,32"/>
+<area shape="poly" title=" " alt="" coords="506,44,484,60,458,74,387,96,321,107,320,102,386,91,456,70,481,56,503,40"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:afb4fe951d4366e86d50539952d8bda64" id="r_afb4fe951d4366e86d50539952d8bda64"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb4fe951d4366e86d50539952d8bda64">send</a> (QByteArray data)</td></tr>
+<tr class="memdesc:afb4fe951d4366e86d50539952d8bda64"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送数据  <br /></td></tr>
+<tr class="separator:afb4fe951d4366e86d50539952d8bda64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f2547df548318c3aa558f274b68298" id="r_ad5f2547df548318c3aa558f274b68298"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5f2547df548318c3aa558f274b68298">error</a> (QAbstractSocket::SocketError socketError)</td></tr>
+<tr class="memdesc:ad5f2547df548318c3aa558f274b68298"><td class="mdescLeft">&#160;</td><td class="mdescRight">错误处理  <br /></td></tr>
+<tr class="separator:ad5f2547df548318c3aa558f274b68298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a0f4b8698ff513f6f2a36f8fe2367b6" id="r_a5a0f4b8698ff513f6f2a36f8fe2367b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a0f4b8698ff513f6f2a36f8fe2367b6">disConTcp</a> (qint64 socketDescriptor)</td></tr>
+<tr class="memdesc:a5a0f4b8698ff513f6f2a36f8fe2367b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">断开socket的连接  <br /></td></tr>
+<tr class="separator:a5a0f4b8698ff513f6f2a36f8fe2367b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ca2e4183a7d45904115cadddec132b" id="r_ac9ca2e4183a7d45904115cadddec132b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9ca2e4183a7d45904115cadddec132b">newconnectClient</a> (qint64 socketDescriptor, const QString &amp;ip, quint16 port)</td></tr>
+<tr class="memdesc:ac9ca2e4183a7d45904115cadddec132b"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送新用户连接信息  <br /></td></tr>
+<tr class="separator:ac9ca2e4183a7d45904115cadddec132b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a592c9a1dd49fcbd63353914e229ac645" id="r_a592c9a1dd49fcbd63353914e229ac645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a592c9a1dd49fcbd63353914e229ac645">dataPacketReady</a> (QByteArray socketData)</td></tr>
+<tr class="separator:a592c9a1dd49fcbd63353914e229ac645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed5a5dccfa6f662ce0edb5aa4961d67" id="r_a1ed5a5dccfa6f662ce0edb5aa4961d67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ed5a5dccfa6f662ce0edb5aa4961d67">sockDisConnect</a> (qint64, const QString &amp;, quint16, QThread *)</td></tr>
+<tr class="separator:a1ed5a5dccfa6f662ce0edb5aa4961d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe5866cc6bdbd2261aab3baa87f4309a" id="r_afe5866cc6bdbd2261aab3baa87f4309a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe5866cc6bdbd2261aab3baa87f4309a">signalsNetBinary</a> (qint64 conn, QByteArray &amp;data)</td></tr>
+<tr class="memdesc:afe5866cc6bdbd2261aab3baa87f4309a"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理网络二进制消息  <br /></td></tr>
+<tr class="separator:afe5866cc6bdbd2261aab3baa87f4309a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8b430ff04f84435384348676718d1b9d" id="r_a8b430ff04f84435384348676718d1b9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b430ff04f84435384348676718d1b9d">CTcpSocket</a> (<a class="el" href="class_network_frame_manager.html">NetworkFrameManager</a> *pNetworkFrameManager=nullptr, QObject *parent=nullptr, bool isReConnecting=false, qintptr socketDescriptor=-1, bool enableencryption=true, bool isencoded=true)</td></tr>
+<tr class="separator:a8b430ff04f84435384348676718d1b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc6f4e7f80133fd8c5b00242f59f0a33" id="r_acc6f4e7f80133fd8c5b00242f59f0a33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc6f4e7f80133fd8c5b00242f59f0a33">~CTcpSocket</a> () override</td></tr>
+<tr class="separator:acc6f4e7f80133fd8c5b00242f59f0a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af2b2347a1e39f64d4e836d89a7b336" id="r_a3af2b2347a1e39f64d4e836d89a7b336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3af2b2347a1e39f64d4e836d89a7b336">SetNetworkFrameManager</a> (<a class="el" href="class_network_frame_manager.html">NetworkFrameManager</a> *pNetworkFrameManager)</td></tr>
+<tr class="memdesc:a3af2b2347a1e39f64d4e836d89a7b336"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置网络消息处理框架  <br /></td></tr>
+<tr class="separator:a3af2b2347a1e39f64d4e836d89a7b336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75873168c9ffd1ca2f537095292dd7e" id="r_ad75873168c9ffd1ca2f537095292dd7e"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad75873168c9ffd1ca2f537095292dd7e">connectTcpServer</a> (const QString &amp;ip, quint16 port)</td></tr>
+<tr class="memdesc:ad75873168c9ffd1ca2f537095292dd7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">连接tcp服务器  <br /></td></tr>
+<tr class="separator:ad75873168c9ffd1ca2f537095292dd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7008bca493d69ea65f12e0940f3a6886" id="r_a7008bca493d69ea65f12e0940f3a6886"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7008bca493d69ea65f12e0940f3a6886">close</a> () override</td></tr>
+<tr class="memdesc:a7008bca493d69ea65f12e0940f3a6886"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭与tcp服务器的连接  <br /></td></tr>
+<tr class="separator:a7008bca493d69ea65f12e0940f3a6886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc8dc81067dbab026601c14a3cc6b75" id="r_acbc8dc81067dbab026601c14a3cc6b75"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbc8dc81067dbab026601c14a3cc6b75">sendJson</a> (QJsonObject mes)</td></tr>
+<tr class="memdesc:acbc8dc81067dbab026601c14a3cc6b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送json数据  <br /></td></tr>
+<tr class="separator:acbc8dc81067dbab026601c14a3cc6b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9054b4ea7262131f3de25a6cb165ffd5" id="r_a9054b4ea7262131f3de25a6cb165ffd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9054b4ea7262131f3de25a6cb165ffd5">reconnectTcpServer</a> ()</td></tr>
+<tr class="memdesc:a9054b4ea7262131f3de25a6cb165ffd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">重新连接服务器  <br /></td></tr>
+<tr class="separator:a9054b4ea7262131f3de25a6cb165ffd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a772f8f0487e0d3804e9da7585e23a29a" id="r_a772f8f0487e0d3804e9da7585e23a29a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a772f8f0487e0d3804e9da7585e23a29a">isConnected</a> ()</td></tr>
+<tr class="memdesc:a772f8f0487e0d3804e9da7585e23a29a"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测是否连接成功  <br /></td></tr>
+<tr class="separator:a772f8f0487e0d3804e9da7585e23a29a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f3939ea2cc457973335e651d571148" id="r_a33f3939ea2cc457973335e651d571148"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33f3939ea2cc457973335e651d571148">getHeartCount</a> () const</td></tr>
+<tr class="memdesc:a33f3939ea2cc457973335e651d571148"><td class="mdescLeft">&#160;</td><td class="mdescRight">得到连接的心跳计数  <br /></td></tr>
+<tr class="separator:a33f3939ea2cc457973335e651d571148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ccb5a0dc92a9646a3e0fb1601c08adb" id="r_a3ccb5a0dc92a9646a3e0fb1601c08adb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ccb5a0dc92a9646a3e0fb1601c08adb">setUsingThread</a> (QThread *thread)</td></tr>
+<tr class="memdesc:a3ccb5a0dc92a9646a3e0fb1601c08adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前使用线程  <br /></td></tr>
+<tr class="separator:a3ccb5a0dc92a9646a3e0fb1601c08adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308c3d7e259f9a3fb815465857425f34" id="r_a308c3d7e259f9a3fb815465857425f34"><td class="memItemLeft" align="right" valign="top">QThread *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a308c3d7e259f9a3fb815465857425f34">getUsingThread</a> () const</td></tr>
+<tr class="memdesc:a308c3d7e259f9a3fb815465857425f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">得到当前使用线程  <br /></td></tr>
+<tr class="separator:a308c3d7e259f9a3fb815465857425f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a466764c176c3cd45bf7b957bbdf0c801" id="r_a466764c176c3cd45bf7b957bbdf0c801"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a466764c176c3cd45bf7b957bbdf0c801">setEncode</a> (bool encode)</td></tr>
+<tr class="memdesc:a466764c176c3cd45bf7b957bbdf0c801"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否自行编码数据  <br /></td></tr>
+<tr class="separator:a466764c176c3cd45bf7b957bbdf0c801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde376ebb61a62a1949151279af09a4f" id="r_abde376ebb61a62a1949151279af09a4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abde376ebb61a62a1949151279af09a4f">isEncode</a> () const</td></tr>
+<tr class="memdesc:abde376ebb61a62a1949151279af09a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">得到是否自行编码数据  <br /></td></tr>
+<tr class="separator:abde376ebb61a62a1949151279af09a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_ned_allocated_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_ned_allocated_object')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_ned_allocated_object.html">NedAllocatedObject</a></td></tr>
+<tr class="memitem:a330f5b2d44e186a58450aeba6ae7c44c inherit pub_methods_class_ned_allocated_object" id="r_a330f5b2d44e186a58450aeba6ae7c44c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ned_allocated_object.html#a330f5b2d44e186a58450aeba6ae7c44c">NedAllocatedObject</a> ()</td></tr>
+<tr class="memdesc:a330f5b2d44e186a58450aeba6ae7c44c inherit pub_methods_class_ned_allocated_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a330f5b2d44e186a58450aeba6ae7c44c inherit pub_methods_class_ned_allocated_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4cfff5fa4576dbd276596ba1c561ba inherit pub_methods_class_ned_allocated_object" id="r_a9d4cfff5fa4576dbd276596ba1c561ba"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ned_allocated_object.html#a9d4cfff5fa4576dbd276596ba1c561ba">~NedAllocatedObject</a> ()</td></tr>
+<tr class="memdesc:a9d4cfff5fa4576dbd276596ba1c561ba inherit pub_methods_class_ned_allocated_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚析构函数  <br /></td></tr>
+<tr class="separator:a9d4cfff5fa4576dbd276596ba1c561ba inherit pub_methods_class_ned_allocated_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ecdbbd7b03ce152aff07a873204b0a4 inherit pub_methods_class_ned_allocated_object" id="r_a2ecdbbd7b03ce152aff07a873204b0a4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ned_allocated_object.html#a2ecdbbd7b03ce152aff07a873204b0a4">operator new</a> (size_t sz)</td></tr>
+<tr class="memdesc:a2ecdbbd7b03ce152aff07a873204b0a4 inherit pub_methods_class_ned_allocated_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载 new 运算符  <br /></td></tr>
+<tr class="separator:a2ecdbbd7b03ce152aff07a873204b0a4 inherit pub_methods_class_ned_allocated_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad938b17cfbe5883d65d9decda4e6def9 inherit pub_methods_class_ned_allocated_object" id="r_ad938b17cfbe5883d65d9decda4e6def9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ned_allocated_object.html#ad938b17cfbe5883d65d9decda4e6def9">operator new</a> (size_t sz, void *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="memdesc:ad938b17cfbe5883d65d9decda4e6def9 inherit pub_methods_class_ned_allocated_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载 placement new 运算符  <br /></td></tr>
+<tr class="separator:ad938b17cfbe5883d65d9decda4e6def9 inherit pub_methods_class_ned_allocated_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6668c14f4f23fb9eaf6b94ee949d0e70 inherit pub_methods_class_ned_allocated_object" id="r_a6668c14f4f23fb9eaf6b94ee949d0e70"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ned_allocated_object.html#a6668c14f4f23fb9eaf6b94ee949d0e70">operator new[]</a> (size_t sz)</td></tr>
+<tr class="memdesc:a6668c14f4f23fb9eaf6b94ee949d0e70 inherit pub_methods_class_ned_allocated_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载 new[] 运算符  <br /></td></tr>
+<tr class="separator:a6668c14f4f23fb9eaf6b94ee949d0e70 inherit pub_methods_class_ned_allocated_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d97a7e2a0208075b4b37328c96ed390 inherit pub_methods_class_ned_allocated_object" id="r_a3d97a7e2a0208075b4b37328c96ed390"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ned_allocated_object.html#a3d97a7e2a0208075b4b37328c96ed390">operator delete</a> (void *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="memdesc:a3d97a7e2a0208075b4b37328c96ed390 inherit pub_methods_class_ned_allocated_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载 delete 运算符  <br /></td></tr>
+<tr class="separator:a3d97a7e2a0208075b4b37328c96ed390 inherit pub_methods_class_ned_allocated_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d20f55f553fd4a0a730ebb55b345d79 inherit pub_methods_class_ned_allocated_object" id="r_a1d20f55f553fd4a0a730ebb55b345d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ned_allocated_object.html#a1d20f55f553fd4a0a730ebb55b345d79">operator delete</a> (void *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, void *)</td></tr>
+<tr class="memdesc:a1d20f55f553fd4a0a730ebb55b345d79 inherit pub_methods_class_ned_allocated_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载 placement delete 运算符  <br /></td></tr>
+<tr class="separator:a1d20f55f553fd4a0a730ebb55b345d79 inherit pub_methods_class_ned_allocated_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8b2d6f17242ae0d182b0f7a98ba54f inherit pub_methods_class_ned_allocated_object" id="r_a1d8b2d6f17242ae0d182b0f7a98ba54f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ned_allocated_object.html#a1d8b2d6f17242ae0d182b0f7a98ba54f">operator delete[]</a> (void *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="memdesc:a1d8b2d6f17242ae0d182b0f7a98ba54f inherit pub_methods_class_ned_allocated_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载 delete[] 运算符  <br /></td></tr>
+<tr class="separator:a1d8b2d6f17242ae0d182b0f7a98ba54f inherit pub_methods_class_ned_allocated_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:accc2526f54192a5b1f22d382b674879b" id="r_accc2526f54192a5b1f22d382b674879b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accc2526f54192a5b1f22d382b674879b">OnReadyRead</a> ()</td></tr>
+<tr class="memdesc:accc2526f54192a5b1f22d382b674879b"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理接收数据  <br /></td></tr>
+<tr class="separator:accc2526f54192a5b1f22d382b674879b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29aeafb7a1d3ec392788d1ccf4c12794" id="r_a29aeafb7a1d3ec392788d1ccf4c12794"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29aeafb7a1d3ec392788d1ccf4c12794">onDisconnected</a> ()</td></tr>
+<tr class="memdesc:a29aeafb7a1d3ec392788d1ccf4c12794"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理连接关闭  <br /></td></tr>
+<tr class="separator:a29aeafb7a1d3ec392788d1ccf4c12794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683f5665bf529328a56ade89e73c40b7" id="r_a683f5665bf529328a56ade89e73c40b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a683f5665bf529328a56ade89e73c40b7">onConnected</a> ()</td></tr>
+<tr class="memdesc:a683f5665bf529328a56ade89e73c40b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理连接成功  <br /></td></tr>
+<tr class="separator:a683f5665bf529328a56ade89e73c40b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e90a25b36445082c31a82160af2e931" id="r_a1e90a25b36445082c31a82160af2e931"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e90a25b36445082c31a82160af2e931">handleTcpSocketHeartTimeOut</a> ()</td></tr>
+<tr class="memdesc:a1e90a25b36445082c31a82160af2e931"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理心跳  <br /></td></tr>
+<tr class="separator:a1e90a25b36445082c31a82160af2e931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819fa8d7db930fd6643e954f152861bb" id="r_a819fa8d7db930fd6643e954f152861bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a819fa8d7db930fd6643e954f152861bb">handleTcpSocketReconnect</a> ()</td></tr>
+<tr class="memdesc:a819fa8d7db930fd6643e954f152861bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理断开重连  <br /></td></tr>
+<tr class="separator:a819fa8d7db930fd6643e954f152861bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ae08a82ce02b357eb5eadb973936a750f" id="r_ae08a82ce02b357eb5eadb973936a750f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae08a82ce02b357eb5eadb973936a750f">parsePacket</a> ()</td></tr>
+<tr class="memdesc:ae08a82ce02b357eb5eadb973936a750f"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析信息包  <br /></td></tr>
+<tr class="separator:ae08a82ce02b357eb5eadb973936a750f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ab2cd52a12bf1c843ae83983c13e49565" id="r_ab2cd52a12bf1c843ae83983c13e49565"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2cd52a12bf1c843ae83983c13e49565">m_dataPacket</a></td></tr>
+<tr class="memdesc:ab2cd52a12bf1c843ae83983c13e49565"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于存放接收的数据  <br /></td></tr>
+<tr class="separator:ab2cd52a12bf1c843ae83983c13e49565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbced4e43c2483f90dd93f5f590e00f0" id="r_acbced4e43c2483f90dd93f5f590e00f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbced4e43c2483f90dd93f5f590e00f0">m_recvDataState</a></td></tr>
+<tr class="memdesc:acbced4e43c2483f90dd93f5f590e00f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于接收数据处理  <br /></td></tr>
+<tr class="separator:acbced4e43c2483f90dd93f5f590e00f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad37ef4b4aa08b708d968216c82c823e" id="r_aad37ef4b4aa08b708d968216c82c823e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtag_datagram_hearder.html">tagDatagramHearder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad37ef4b4aa08b708d968216c82c823e">m_TcpPacketHearder</a></td></tr>
+<tr class="memdesc:aad37ef4b4aa08b708d968216c82c823e"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于存放每次接收的包头数据  <br /></td></tr>
+<tr class="separator:aad37ef4b4aa08b708d968216c82c823e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca7d469173097c057c8393f82dd01bfa" id="r_aca7d469173097c057c8393f82dd01bfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_network_frame_manager.html">NetworkFrameManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca7d469173097c057c8393f82dd01bfa">m_NetworkFrameManager</a></td></tr>
+<tr class="memdesc:aca7d469173097c057c8393f82dd01bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">网络消息处理框架  <br /></td></tr>
+<tr class="separator:aca7d469173097c057c8393f82dd01bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af6becff542d2f551ea524a71ee6725" id="r_a7af6becff542d2f551ea524a71ee6725"><td class="memItemLeft" align="right" valign="top">QTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7af6becff542d2f551ea524a71ee6725">m_TcpSocketHeartTimeOutTimer</a></td></tr>
+<tr class="separator:a7af6becff542d2f551ea524a71ee6725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bacaac3fbb089446b8251996fc34149" id="r_a1bacaac3fbb089446b8251996fc34149"><td class="memItemLeft" align="right" valign="top">QTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bacaac3fbb089446b8251996fc34149">m_TcpSocketReconnectTimer</a></td></tr>
+<tr class="memdesc:a1bacaac3fbb089446b8251996fc34149"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于处理心跳和断开重连的定时器  <br /></td></tr>
+<tr class="separator:a1bacaac3fbb089446b8251996fc34149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c134921550af912f3baaa3d06e6009" id="r_aa3c134921550af912f3baaa3d06e6009"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3c134921550af912f3baaa3d06e6009">m_ServerIP</a></td></tr>
+<tr class="memdesc:aa3c134921550af912f3baaa3d06e6009"><td class="mdescLeft">&#160;</td><td class="mdescRight">要连接的服务器的ip  <br /></td></tr>
+<tr class="separator:aa3c134921550af912f3baaa3d06e6009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47a7f7c1685113b626975b067a7e95de" id="r_a47a7f7c1685113b626975b067a7e95de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47a7f7c1685113b626975b067a7e95de">m_ServerPort</a></td></tr>
+<tr class="memdesc:a47a7f7c1685113b626975b067a7e95de"><td class="mdescLeft">&#160;</td><td class="mdescRight">要连接的服务器的端口  <br /></td></tr>
+<tr class="separator:a47a7f7c1685113b626975b067a7e95de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea51d2773bc4ff292814f297767191c" id="r_a6ea51d2773bc4ff292814f297767191c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ea51d2773bc4ff292814f297767191c">m_HeartCount</a></td></tr>
+<tr class="memdesc:a6ea51d2773bc4ff292814f297767191c"><td class="mdescLeft">&#160;</td><td class="mdescRight">心跳计数  <br /></td></tr>
+<tr class="separator:a6ea51d2773bc4ff292814f297767191c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b6f3021cd1ebd912f7548dbf61b12c" id="r_a05b6f3021cd1ebd912f7548dbf61b12c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05b6f3021cd1ebd912f7548dbf61b12c">m_isencoded</a></td></tr>
+<tr class="memdesc:a05b6f3021cd1ebd912f7548dbf61b12c"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否自行编码数据  <br /></td></tr>
+<tr class="separator:a05b6f3021cd1ebd912f7548dbf61b12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0795457bf0656e66ddb0a592899f29e9" id="r_a0795457bf0656e66ddb0a592899f29e9"><td class="memItemLeft" align="right" valign="top">qintptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0795457bf0656e66ddb0a592899f29e9">socketID</a></td></tr>
+<tr class="separator:a0795457bf0656e66ddb0a592899f29e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c707210921e6306ba84e0926360328" id="r_a27c707210921e6306ba84e0926360328"><td class="memItemLeft" align="right" valign="top">QMetaObject::Connection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27c707210921e6306ba84e0926360328">dis</a></td></tr>
+<tr class="separator:a27c707210921e6306ba84e0926360328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892d050abcffe7eefbb034ffac8def5d" id="r_a892d050abcffe7eefbb034ffac8def5d"><td class="memItemLeft" align="right" valign="top">QThread *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a892d050abcffe7eefbb034ffac8def5d">m_curThread</a></td></tr>
+<tr class="memdesc:a892d050abcffe7eefbb034ffac8def5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前使用线程  <br /></td></tr>
+<tr class="separator:a892d050abcffe7eefbb034ffac8def5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22b876b2a11738a73c7d2c74a5b38dc" id="r_ae22b876b2a11738a73c7d2c74a5b38dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae22b876b2a11738a73c7d2c74a5b38dc">m_isReConnecting</a></td></tr>
+<tr class="memdesc:ae22b876b2a11738a73c7d2c74a5b38dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否自动重连  <br /></td></tr>
+<tr class="separator:ae22b876b2a11738a73c7d2c74a5b38dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2564643a22f1bd2dfb97cb4c14197d6f" id="r_a2564643a22f1bd2dfb97cb4c14197d6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2564643a22f1bd2dfb97cb4c14197d6f">m_enableencryption</a></td></tr>
+<tr class="memdesc:a2564643a22f1bd2dfb97cb4c14197d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否加密信息  <br /></td></tr>
+<tr class="separator:a2564643a22f1bd2dfb97cb4c14197d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa999134886742ef695c3640e2e5c9e33" id="r_aa999134886742ef695c3640e2e5c9e33"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa999134886742ef695c3640e2e5c9e33">uncompressed_buffer</a> [<a class="el" href="ctcpsocketclient_8h.html#acd29f6fb80bb72a749e232d19bd86608">IDD_COMPRESS_BUFFER_SIZE</a>]</td></tr>
+<tr class="separator:aa999134886742ef695c3640e2e5c9e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a076e7df8c1dfd9c3d3cf440531e4fcdd" id="r_a076e7df8c1dfd9c3d3cf440531e4fcdd"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a076e7df8c1dfd9c3d3cf440531e4fcdd">compressed_buffer</a> [<a class="el" href="ctcpsocketclient_8h.html#acd29f6fb80bb72a749e232d19bd86608">IDD_COMPRESS_BUFFER_SIZE</a>]</td></tr>
+<tr class="memdesc:a076e7df8c1dfd9c3d3cf440531e4fcdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于存放解压后的数据  <br /></td></tr>
+<tr class="separator:a076e7df8c1dfd9c3d3cf440531e4fcdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="class_c_tcp_socket.html" title="The CTcpSocket class tcpsocket客户端类">CTcpSocket</a> class tcpsocket客户端类 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a8b430ff04f84435384348676718d1b9d" name="a8b430ff04f84435384348676718d1b9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b430ff04f84435384348676718d1b9d">&#9670;&#160;</a></span>CTcpSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_tcp_socket.html">CTcpSocket</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_network_frame_manager.html">NetworkFrameManager</a> *</td>          <td class="paramname"><span class="paramname"><em>pNetworkFrameManager</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isReConnecting</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qintptr</td>          <td class="paramname"><span class="paramname"><em>socketDescriptor</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enableencryption</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isencoded</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a8b430ff04f84435384348676718d1b9d_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_a8b430ff04f84435384348676718d1b9d_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a8b430ff04f84435384348676718d1b9d_cgraph" id="aclass_c_tcp_socket_a8b430ff04f84435384348676718d1b9d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,183,99,209"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad5f2547df548318c3aa558f274b68298" title="错误处理" alt="" coords="225,81,272,108"/>
+<area shape="poly" title=" " alt="" coords="77,180,145,143,209,110,212,115,148,148,80,184"/>
+<area shape="rect" href="class_c_tcp_socket.html#a29aeafb7a1d3ec392788d1ccf4c12794" title="处理连接关闭" alt="" coords="586,17,701,44"/>
+<area shape="poly" title=" " alt="" coords="56,181,88,124,113,92,145,67,198,42,254,25,312,13,370,7,480,7,571,16,570,21,480,12,371,13,313,19,256,30,200,47,148,72,117,96,92,127,61,184"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1e90a25b36445082c31a82160af2e931" title="处理心跳" alt="" coords="147,157,350,184"/>
+<area shape="poly" title=" " alt="" coords="99,187,131,183,132,188,100,193"/>
+<area shape="rect" href="class_c_tcp_socket.html#a819fa8d7db930fd6643e954f152861bb" title="处理断开重连" alt="" coords="156,208,340,235"/>
+<area shape="poly" title=" " alt="" coords="100,199,141,205,140,210,99,205"/>
+<area shape="rect" href="class_c_tcp_socket.html#a683f5665bf529328a56ade89e73c40b7" title="处理连接成功" alt="" coords="199,259,298,285"/>
+<area shape="poly" title=" " alt="" coords="77,208,109,226,148,244,185,256,183,261,146,249,107,231,74,212"/>
+<area shape="rect" href="class_c_tcp_socket.html#accc2526f54192a5b1f22d382b674879b" title="处理接收数据" alt="" coords="195,309,302,336"/>
+<area shape="poly" title=" " alt="" coords="64,208,98,252,121,275,148,295,181,309,179,314,145,300,118,279,94,255,60,211"/>
+<area shape="rect" href="class_c_tcp_socket.html#a9054b4ea7262131f3de25a6cb165ffd5" title="重新连接服务器" alt="" coords="398,56,535,83"/>
+<area shape="poly" title=" " alt="" coords="272,89,382,76,383,82,273,95"/>
+<area shape="rect" href="class_c_tcp_socket.html#a7008bca493d69ea65f12e0940f3a6886" title="关闭与tcp服务器的连接" alt="" coords="617,93,670,120"/>
+<area shape="poly" title=" " alt="" coords="533,81,603,95,602,101,532,86"/>
+<area shape="poly" title=" " alt="" coords="530,53,570,44,571,49,531,58"/>
+<area shape="rect" href="class_c_tcp_socket.html#a5a0f4b8698ff513f6f2a36f8fe2367b6" title="断开socket的连接" alt="" coords="772,93,856,120"/>
+<area shape="poly" title=" " alt="" coords="670,104,757,104,757,109,670,109"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1ed5a5dccfa6f662ce0edb5aa4961d67" title=" " alt="" coords="755,17,873,44"/>
+<area shape="poly" title=" " alt="" coords="702,28,739,28,739,33,702,33"/>
+<area shape="poly" title=" " alt="" coords="335,154,602,111,603,116,336,159"/>
+<area shape="rect" href="class_c_tcp_socket.html#a772f8f0487e0d3804e9da7585e23a29a" title="检测是否连接成功" alt="" coords="596,157,691,184"/>
+<area shape="poly" title=" " alt="" coords="350,168,581,168,581,173,350,173"/>
+<area shape="rect" href="class_c_tcp_socket.html#afb4fe951d4366e86d50539952d8bda64" title="发送数据" alt="" coords="442,259,491,285"/>
+<area shape="poly" title=" " alt="" coords="326,182,351,194,367,206,377,219,385,232,399,244,428,259,426,263,397,249,381,235,372,222,363,210,349,198,324,187"/>
+<area shape="rect" href="rc4_8c.html#ae978f8ebbe17c03d4768507eeb907b81" title="计算校验和" alt="" coords="603,259,684,285"/>
+<area shape="poly" title=" " alt="" coords="492,269,587,269,587,275,492,275"/>
+<area shape="rect" href="fastlz_8c.html#aa8b12c16f2514c6cd2a6748a9d6bce4d" title="通用压缩函数" alt="" coords="585,208,702,235"/>
+<area shape="poly" title=" " alt="" coords="491,263,579,237,581,242,493,268"/>
+<area shape="rect" href="fastlz_8c.html#a1f149a66a870832b28adbd7a3e0464e3" title="级别 1 压缩实现" alt="" coords="752,208,876,235"/>
+<area shape="poly" title=" " alt="" coords="703,219,736,219,736,224,703,224"/>
+<area shape="rect" href="fastlz_8c.html#a06ae67595a80640a59169dfa4a5c8b44" title="级别 2 压缩实现" alt="" coords="752,157,876,184"/>
+<area shape="poly" title=" " alt="" coords="690,205,751,186,753,191,692,210"/>
+<area shape="rect" href="fastlz_8c.html#ae3fa1b75c06606b5876ae53a208b0869" title="级别 1 压缩的匹配编码" alt="" coords="947,309,1032,336"/>
+<area shape="poly" title=" " alt="" coords="834,233,875,263,925,295,936,300,933,305,923,300,872,268,831,237"/>
+<area shape="rect" href="fastlz_8c.html#a4734cddbda700701b928ea1c9462a280" title="比较两个数据块" alt="" coords="956,157,1023,184"/>
+<area shape="poly" title=" " alt="" coords="862,205,940,182,942,187,864,210"/>
+<area shape="rect" href="fastlz_8c.html#aad3ee3ccbad499327027d24ea6140169" title="最终字面量处理" alt="" coords="948,107,1031,133"/>
+<area shape="poly" title=" " alt="" coords="854,205,874,194,889,181,898,169,907,156,922,143,933,137,935,142,926,147,911,160,902,172,893,185,878,198,856,210"/>
+<area shape="rect" href="fastlz_8c.html#a68cbcb6b0d615ae53e2303a4a9b5ab70" title="计算哈希值" alt="" coords="954,259,1025,285"/>
+<area shape="poly" title=" " alt="" coords="864,233,940,255,939,260,862,238"/>
+<area shape="rect" href="fastlz_8c.html#a154d7b313ffcf534c30642f0af6d4641" title="处理字面量数据" alt="" coords="950,208,1030,235"/>
+<area shape="poly" title=" " alt="" coords="876,219,934,219,934,224,876,224"/>
+<area shape="rect" href="fastlz_8c.html#a840ac800deb7c00f2994ef2663819817" title="读取 32 位无符号整数" alt="" coords="946,56,1034,83"/>
+<area shape="poly" title=" " alt="" coords="858,205,874,194,891,169,897,145,904,119,922,93,930,86,934,91,926,96,909,121,902,146,896,172,878,198,861,210"/>
+<area shape="rect" href="fastlz_8c.html#a741b9a31afd0f8c4a7d1409952d7497a" title="小块数据复制" alt="" coords="1122,119,1223,145"/>
+<area shape="poly" title=" " alt="" coords="1032,120,1107,125,1106,130,1032,125"/>
+<area shape="rect" href="fastlz_8c.html#a95d18238c9acb9ac4e0748cb7a14527f" title="内存复制函数" alt="" coords="1295,309,1406,336"/>
+<area shape="poly" title=" " alt="" coords="1197,144,1244,181,1295,240,1334,295,1330,298,1291,244,1240,185,1194,148"/>
+<area shape="rect" href="fastlz_8c.html#a9f138722d5b4cca13b3dace840c7c458" title="复制 256 位数据块" alt="" coords="1127,195,1218,221"/>
+<area shape="poly" title=" " alt="" coords="1030,216,1111,210,1111,215,1030,221"/>
+<area shape="rect" href="fastlz_8c.html#a468c19b0a79f2f5c072cf17c5cc969a3" title="复制 64 位数据块" alt="" coords="1130,245,1215,272"/>
+<area shape="poly" title=" " alt="" coords="1031,227,1116,245,1115,250,1030,232"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="1153,56,1192,83"/>
+<area shape="poly" title=" " alt="" coords="1034,67,1138,67,1138,72,1034,72"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="1297,56,1404,83"/>
+<area shape="poly" title=" " alt="" coords="1192,67,1282,67,1282,72,1192,72"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="1459,48,1586,91"/>
+<area shape="poly" title=" " alt="" coords="1404,67,1444,67,1444,72,1404,72"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="1634,56,1779,83"/>
+<area shape="poly" title=" " alt="" coords="1587,67,1619,67,1619,72,1587,72"/>
+<area shape="poly" title=" " alt="" coords="876,168,940,168,940,173,876,173"/>
+<area shape="poly" title=" " alt="" coords="862,154,933,134,934,139,864,159"/>
+<area shape="poly" title=" " alt="" coords="856,182,878,194,893,207,902,220,911,232,926,244,941,253,939,258,922,249,907,236,898,223,889,211,874,198,854,187"/>
+<area shape="poly" title=" " alt="" coords="864,182,935,203,934,208,862,187"/>
+<area shape="poly" title=" " alt="" coords="837,155,874,130,898,110,923,92,933,87,935,92,925,97,901,115,878,134,839,159"/>
+<area shape="rect" href="fastlz_8c.html#a08ac84ecce13045966548dcfd8af87a9" title="级别 2 压缩的匹配编码" alt="" coords="947,5,1032,32"/>
+<area shape="poly" title=" " alt="" coords="842,155,874,130,889,107,896,86,904,64,922,42,931,35,934,40,926,46,909,67,901,88,894,110,878,134,845,159"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad75873168c9ffd1ca2f537095292dd7e" title="连接tcp服务器" alt="" coords="404,208,530,235"/>
+<area shape="poly" title=" " alt="" coords="341,219,388,219,388,224,341,224"/>
+<area shape="poly" title=" " alt="" coords="515,205,581,186,582,191,517,210"/>
+<area shape="rect" href="class_c_tcp_socket.html#ae08a82ce02b357eb5eadb973936a750f" title="解析信息包" alt="" coords="420,309,514,336"/>
+<area shape="poly" title=" " alt="" coords="302,320,404,320,404,325,302,325"/>
+<area shape="poly" title=" " alt="" coords="513,307,587,285,588,290,515,312"/>
+<area shape="rect" href="fastlz_8c.html#a6cce72f3099f53d0cc244162180166b3" title="通用解压缩函数" alt="" coords="924,360,1055,387"/>
+<area shape="poly" title=" " alt="" coords="515,332,584,345,757,362,908,369,908,375,757,368,583,351,514,337"/>
+<area shape="rect" href="class_c_tcp_socket.html#afe5866cc6bdbd2261aab3baa87f4309a" title="处理网络二进制消息" alt="" coords="583,309,704,336"/>
+<area shape="poly" title=" " alt="" coords="514,320,568,320,568,325,514,325"/>
+<area shape="rect" href="fastlz_8c.html#a5ae23e2c48377d079b775e6987518099" title="级别 1 解压缩实现" alt="" coords="1103,309,1242,336"/>
+<area shape="poly" title=" " alt="" coords="1040,357,1106,338,1108,343,1041,362"/>
+<area shape="rect" href="fastlz_8c.html#a966be4548712ef5cac9708929f199976" title="级别 2 解压缩实现" alt="" coords="1103,360,1242,387"/>
+<area shape="poly" title=" " alt="" coords="1056,371,1088,371,1088,376,1056,376"/>
+<area shape="poly" title=" " alt="" coords="1242,320,1280,320,1280,325,1242,325"/>
+<area shape="rect" href="fastlz_8c.html#a5e118747cf5e94edea9db2538d4d2fb6" title="自定义内存移动函数" alt="" coords="1290,360,1411,387"/>
+<area shape="poly" title=" " alt="" coords="1223,334,1287,353,1286,358,1221,339"/>
+<area shape="poly" title=" " alt="" coords="1221,357,1286,338,1287,343,1223,362"/>
+<area shape="poly" title=" " alt="" coords="1242,371,1274,371,1274,376,1242,376"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acc6f4e7f80133fd8c5b00242f59f0a33" name="acc6f4e7f80133fd8c5b00242f59f0a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc6f4e7f80133fd8c5b00242f59f0a33">&#9670;&#160;</a></span>~CTcpSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_c_tcp_socket.html">CTcpSocket</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7008bca493d69ea65f12e0940f3a6886" name="a7008bca493d69ea65f12e0940f3a6886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7008bca493d69ea65f12e0940f3a6886">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关闭与tcp服务器的连接 </p>
+<p><a class="el" href="#a7008bca493d69ea65f12e0940f3a6886" title="关闭与tcp服务器的连接">CTcpSocket::close</a> 关闭与tcp服务器的连接 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a7008bca493d69ea65f12e0940f3a6886_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_a7008bca493d69ea65f12e0940f3a6886_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a7008bca493d69ea65f12e0940f3a6886_cgraph" id="aclass_c_tcp_socket_a7008bca493d69ea65f12e0940f3a6886_cgraph">
+<area shape="rect" title="关闭与tcp服务器的连接" alt="" coords="5,5,58,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a5a0f4b8698ff513f6f2a36f8fe2367b6" title="断开socket的连接" alt="" coords="106,5,189,32"/>
+<area shape="poly" title=" " alt="" coords="58,16,90,16,90,21,58,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a7008bca493d69ea65f12e0940f3a6886_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a7008bca493d69ea65f12e0940f3a6886_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a7008bca493d69ea65f12e0940f3a6886_icgraph" id="aclass_c_tcp_socket_a7008bca493d69ea65f12e0940f3a6886_icgraph">
+<area shape="rect" title="关闭与tcp服务器的连接" alt="" coords="583,31,636,57"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1e90a25b36445082c31a82160af2e931" title="处理心跳" alt="" coords="147,5,350,32"/>
+<area shape="poly" title=" " alt="" coords="568,44,350,28,351,23,568,38"/>
+<area shape="rect" href="class_c_tcp_socket.html#a9054b4ea7262131f3de25a6cb165ffd5" title="重新连接服务器" alt="" coords="398,56,535,83"/>
+<area shape="poly" title=" " alt="" coords="569,54,536,60,535,55,568,49"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,31,99,57"/>
+<area shape="poly" title=" " alt="" coords="132,36,99,41,99,35,131,31"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad5f2547df548318c3aa558f274b68298" title="错误处理" alt="" coords="225,56,272,83"/>
+<area shape="poly" title=" " alt="" coords="383,72,272,72,272,67,383,67"/>
+<area shape="poly" title=" " alt="" coords="209,67,99,53,99,47,209,62"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad75873168c9ffd1ca2f537095292dd7e" name="ad75873168c9ffd1ca2f537095292dd7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75873168c9ffd1ca2f537095292dd7e">&#9670;&#160;</a></span>connectTcpServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void connectTcpServer </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>ip</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quint16</td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>连接tcp服务器 </p>
+<p><a class="el" href="#ad75873168c9ffd1ca2f537095292dd7e" title="连接tcp服务器">CTcpSocket::connectTcpServer</a> 连接tcp服务器</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip</td><td>服务器ip </td></tr>
+    <tr><td class="paramname">port</td><td>服务器断开 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_ad75873168c9ffd1ca2f537095292dd7e_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_ad75873168c9ffd1ca2f537095292dd7e_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_ad75873168c9ffd1ca2f537095292dd7e_cgraph" id="aclass_c_tcp_socket_ad75873168c9ffd1ca2f537095292dd7e_cgraph">
+<area shape="rect" title="连接tcp服务器" alt="" coords="5,5,132,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a772f8f0487e0d3804e9da7585e23a29a" title="检测是否连接成功" alt="" coords="180,5,274,32"/>
+<area shape="poly" title=" " alt="" coords="132,16,164,16,164,21,132,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_ad75873168c9ffd1ca2f537095292dd7e_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_ad75873168c9ffd1ca2f537095292dd7e_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_ad75873168c9ffd1ca2f537095292dd7e_icgraph" id="aclass_c_tcp_socket_ad75873168c9ffd1ca2f537095292dd7e_icgraph">
+<area shape="rect" title="连接tcp服务器" alt="" coords="379,5,505,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a819fa8d7db930fd6643e954f152861bb" title="处理断开重连" alt="" coords="147,5,331,32"/>
+<area shape="poly" title=" " alt="" coords="363,21,332,21,332,16,363,16"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="131,21,99,21,99,16,131,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a592c9a1dd49fcbd63353914e229ac645" name="a592c9a1dd49fcbd63353914e229ac645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a592c9a1dd49fcbd63353914e229ac645">&#9670;&#160;</a></span>dataPacketReady</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dataPacketReady </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray</td>          <td class="paramname"><span class="paramname"><em>socketData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a0f4b8698ff513f6f2a36f8fe2367b6" name="a5a0f4b8698ff513f6f2a36f8fe2367b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a0f4b8698ff513f6f2a36f8fe2367b6">&#9670;&#160;</a></span>disConTcp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disConTcp </td>
+          <td>(</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>socketDescriptor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>断开socket的连接 </p>
+<p><a class="el" href="#a5a0f4b8698ff513f6f2a36f8fe2367b6" title="断开socket的连接">CTcpSocket::disConTcp</a> 断开socket的连接</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socketDescriptor</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a5a0f4b8698ff513f6f2a36f8fe2367b6_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a5a0f4b8698ff513f6f2a36f8fe2367b6_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a5a0f4b8698ff513f6f2a36f8fe2367b6_icgraph" id="aclass_c_tcp_socket_a5a0f4b8698ff513f6f2a36f8fe2367b6_icgraph">
+<area shape="rect" title="断开socket的连接" alt="" coords="848,56,931,83"/>
+<area shape="rect" href="class_c_tcp_socket.html#a7008bca493d69ea65f12e0940f3a6886" title="关闭与tcp服务器的连接" alt="" coords="665,31,718,57"/>
+<area shape="poly" title=" " alt="" coords="832,65,718,50,719,45,833,59"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="583,81,800,108"/>
+<area shape="poly" title=" " alt="" coords="832,79,800,83,800,78,832,74"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1e90a25b36445082c31a82160af2e931" title="处理心跳" alt="" coords="147,5,350,32"/>
+<area shape="poly" title=" " alt="" coords="650,44,350,27,351,22,650,39"/>
+<area shape="rect" href="class_c_tcp_socket.html#a9054b4ea7262131f3de25a6cb165ffd5" title="重新连接服务器" alt="" coords="398,56,535,83"/>
+<area shape="poly" title=" " alt="" coords="650,51,536,64,535,59,650,46"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,31,99,57"/>
+<area shape="poly" title=" " alt="" coords="132,36,99,41,99,35,131,31"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad5f2547df548318c3aa558f274b68298" title="错误处理" alt="" coords="225,56,272,83"/>
+<area shape="poly" title=" " alt="" coords="383,72,272,72,272,67,383,67"/>
+<area shape="poly" title=" " alt="" coords="209,67,99,53,99,47,209,62"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad5f2547df548318c3aa558f274b68298" name="ad5f2547df548318c3aa558f274b68298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f2547df548318c3aa558f274b68298">&#9670;&#160;</a></span>error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void error </td>
+          <td>(</td>
+          <td class="paramtype">QAbstractSocket::SocketError</td>          <td class="paramname"><span class="paramname"><em>socketError</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>错误处理 </p>
+<p><a class="el" href="#ad5f2547df548318c3aa558f274b68298" title="错误处理">CTcpSocket::error</a> 错误处理</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socketError</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_ad5f2547df548318c3aa558f274b68298_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_ad5f2547df548318c3aa558f274b68298_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_ad5f2547df548318c3aa558f274b68298_cgraph" id="aclass_c_tcp_socket_ad5f2547df548318c3aa558f274b68298_cgraph">
+<area shape="rect" title="错误处理" alt="" coords="5,31,53,57"/>
+<area shape="rect" href="class_c_tcp_socket.html#a9054b4ea7262131f3de25a6cb165ffd5" title="重新连接服务器" alt="" coords="101,31,238,57"/>
+<area shape="poly" title=" " alt="" coords="53,41,85,41,85,47,53,47"/>
+<area shape="rect" href="class_c_tcp_socket.html#a7008bca493d69ea65f12e0940f3a6886" title="关闭与tcp服务器的连接" alt="" coords="318,5,370,32"/>
+<area shape="poly" title=" " alt="" coords="238,31,302,22,302,27,239,37"/>
+<area shape="rect" href="class_c_tcp_socket.html#a29aeafb7a1d3ec392788d1ccf4c12794" title="处理连接关闭" alt="" coords="286,56,401,83"/>
+<area shape="poly" title=" " alt="" coords="239,51,271,56,270,61,238,57"/>
+<area shape="rect" href="class_c_tcp_socket.html#a5a0f4b8698ff513f6f2a36f8fe2367b6" title="断开socket的连接" alt="" coords="467,5,550,32"/>
+<area shape="poly" title=" " alt="" coords="370,16,451,16,451,21,370,21"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1ed5a5dccfa6f662ce0edb5aa4961d67" title=" " alt="" coords="449,56,568,83"/>
+<area shape="poly" title=" " alt="" coords="402,67,434,67,434,72,402,72"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_ad5f2547df548318c3aa558f274b68298_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_ad5f2547df548318c3aa558f274b68298_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_ad5f2547df548318c3aa558f274b68298_icgraph" id="aclass_c_tcp_socket_ad5f2547df548318c3aa558f274b68298_icgraph">
+<area shape="rect" title="错误处理" alt="" coords="147,5,194,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="131,21,99,21,99,16,131,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a33f3939ea2cc457973335e651d571148" name="a33f3939ea2cc457973335e651d571148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f3939ea2cc457973335e651d571148">&#9670;&#160;</a></span>getHeartCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getHeartCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>得到连接的心跳计数 </p>
+
+</div>
+</div>
+<a id="a308c3d7e259f9a3fb815465857425f34" name="a308c3d7e259f9a3fb815465857425f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a308c3d7e259f9a3fb815465857425f34">&#9670;&#160;</a></span>getUsingThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QThread * getUsingThread </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>得到当前使用线程 </p>
+
+</div>
+</div>
+<a id="a1e90a25b36445082c31a82160af2e931" name="a1e90a25b36445082c31a82160af2e931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e90a25b36445082c31a82160af2e931">&#9670;&#160;</a></span>handleTcpSocketHeartTimeOut</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handleTcpSocketHeartTimeOut </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理心跳 </p>
+<p>CWebSocketClient::handleTcpSocketHeartTimeOut 处理心跳消息 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a1e90a25b36445082c31a82160af2e931_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_a1e90a25b36445082c31a82160af2e931_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a1e90a25b36445082c31a82160af2e931_cgraph" id="aclass_c_tcp_socket_a1e90a25b36445082c31a82160af2e931_cgraph">
+<area shape="rect" title="处理心跳" alt="" coords="5,132,209,159"/>
+<area shape="rect" href="class_c_tcp_socket.html#a7008bca493d69ea65f12e0940f3a6886" title="关闭与tcp服务器的连接" alt="" coords="278,81,330,108"/>
+<area shape="poly" title=" " alt="" coords="161,129,262,102,264,108,163,134"/>
+<area shape="rect" href="class_c_tcp_socket.html#a772f8f0487e0d3804e9da7585e23a29a" title="检测是否连接成功" alt="" coords="257,132,351,159"/>
+<area shape="poly" title=" " alt="" coords="209,143,241,143,241,148,209,148"/>
+<area shape="rect" href="class_c_tcp_socket.html#afb4fe951d4366e86d50539952d8bda64" title="发送数据" alt="" coords="279,183,328,209"/>
+<area shape="poly" title=" " alt="" coords="163,157,265,183,264,189,161,162"/>
+<area shape="rect" href="class_c_tcp_socket.html#a5a0f4b8698ff513f6f2a36f8fe2367b6" title="断开socket的连接" alt="" coords="416,81,499,108"/>
+<area shape="poly" title=" " alt="" coords="330,92,400,92,400,97,330,97"/>
+<area shape="rect" href="rc4_8c.html#ae978f8ebbe17c03d4768507eeb907b81" title="计算校验和" alt="" coords="417,208,498,235"/>
+<area shape="poly" title=" " alt="" coords="330,197,402,210,401,215,329,203"/>
+<area shape="rect" href="fastlz_8c.html#aa8b12c16f2514c6cd2a6748a9d6bce4d" title="通用压缩函数" alt="" coords="399,157,516,184"/>
+<area shape="poly" title=" " alt="" coords="329,189,383,180,384,185,330,195"/>
+<area shape="rect" href="fastlz_8c.html#a1f149a66a870832b28adbd7a3e0464e3" title="级别 1 压缩实现" alt="" coords="564,132,689,159"/>
+<area shape="poly" title=" " alt="" coords="516,159,549,154,550,160,517,165"/>
+<area shape="rect" href="fastlz_8c.html#a06ae67595a80640a59169dfa4a5c8b44" title="级别 2 压缩实现" alt="" coords="564,183,689,209"/>
+<area shape="poly" title=" " alt="" coords="517,177,550,182,549,187,516,182"/>
+<area shape="rect" href="fastlz_8c.html#ae3fa1b75c06606b5876ae53a208b0869" title="级别 1 压缩的匹配编码" alt="" coords="738,5,824,32"/>
+<area shape="poly" title=" " alt="" coords="639,130,680,89,735,42,740,38,743,43,738,46,684,93,643,133"/>
+<area shape="rect" href="fastlz_8c.html#a4734cddbda700701b928ea1c9462a280" title="比较两个数据块" alt="" coords="747,157,814,184"/>
+<area shape="poly" title=" " alt="" coords="690,153,732,160,731,165,689,158"/>
+<area shape="rect" href="fastlz_8c.html#aad3ee3ccbad499327027d24ea6140169" title="最终字面量处理" alt="" coords="739,107,822,133"/>
+<area shape="poly" title=" " alt="" coords="689,132,724,127,724,132,690,138"/>
+<area shape="rect" href="fastlz_8c.html#a68cbcb6b0d615ae53e2303a4a9b5ab70" title="计算哈希值" alt="" coords="746,259,816,285"/>
+<area shape="poly" title=" " alt="" coords="672,157,690,169,707,188,716,207,724,225,739,245,742,247,738,251,735,248,719,228,711,209,703,191,687,173,669,161"/>
+<area shape="rect" href="fastlz_8c.html#a154d7b313ffcf534c30642f0af6d4641" title="处理字面量数据" alt="" coords="741,208,821,235"/>
+<area shape="poly" title=" " alt="" coords="664,157,690,168,745,198,742,202,687,173,662,162"/>
+<area shape="rect" href="fastlz_8c.html#a840ac800deb7c00f2994ef2663819817" title="读取 32 位无符号整数" alt="" coords="737,56,825,83"/>
+<area shape="poly" title=" " alt="" coords="654,129,737,87,740,92,657,134"/>
+<area shape="rect" href="fastlz_8c.html#a741b9a31afd0f8c4a7d1409952d7497a" title="小块数据复制" alt="" coords="873,107,974,133"/>
+<area shape="poly" title=" " alt="" coords="823,117,857,117,857,123,823,123"/>
+<area shape="rect" href="fastlz_8c.html#a95d18238c9acb9ac4e0748cb7a14527f" title="内存复制函数" alt="" coords="1022,107,1133,133"/>
+<area shape="poly" title=" " alt="" coords="975,117,1007,117,1007,123,975,123"/>
+<area shape="rect" href="fastlz_8c.html#a9f138722d5b4cca13b3dace840c7c458" title="复制 256 位数据块" alt="" coords="878,183,969,209"/>
+<area shape="poly" title=" " alt="" coords="821,212,862,204,863,209,822,217"/>
+<area shape="rect" href="fastlz_8c.html#a468c19b0a79f2f5c072cf17c5cc969a3" title="复制 64 位数据块" alt="" coords="882,233,966,260"/>
+<area shape="poly" title=" " alt="" coords="822,226,867,234,866,239,821,231"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="904,56,943,83"/>
+<area shape="poly" title=" " alt="" coords="825,67,889,67,889,72,825,72"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="1024,56,1131,83"/>
+<area shape="poly" title=" " alt="" coords="943,67,1009,67,1009,72,943,72"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="1181,48,1308,91"/>
+<area shape="poly" title=" " alt="" coords="1131,67,1165,67,1165,72,1131,72"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="1356,56,1500,83"/>
+<area shape="poly" title=" " alt="" coords="1309,67,1340,67,1340,72,1309,72"/>
+<area shape="poly" title=" " alt="" coords="689,183,731,176,732,181,690,188"/>
+<area shape="poly" title=" " alt="" coords="662,180,687,168,742,139,745,144,690,173,664,185"/>
+<area shape="poly" title=" " alt="" coords="657,208,740,249,737,254,654,212"/>
+<area shape="poly" title=" " alt="" coords="690,204,726,210,725,215,689,209"/>
+<area shape="poly" title=" " alt="" coords="669,180,687,169,703,150,711,132,719,113,735,93,738,90,742,94,739,96,724,116,716,135,707,153,690,173,672,185"/>
+<area shape="rect" href="fastlz_8c.html#a08ac84ecce13045966548dcfd8af87a9" title="级别 2 压缩的匹配编码" alt="" coords="738,309,824,336"/>
+<area shape="poly" title=" " alt="" coords="643,208,684,249,738,295,743,299,740,303,735,299,680,253,639,212"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a1e90a25b36445082c31a82160af2e931_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a1e90a25b36445082c31a82160af2e931_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a1e90a25b36445082c31a82160af2e931_icgraph" id="aclass_c_tcp_socket_a1e90a25b36445082c31a82160af2e931_icgraph">
+<area shape="rect" title="处理心跳" alt="" coords="147,5,350,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="131,21,99,21,99,16,131,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a819fa8d7db930fd6643e954f152861bb" name="a819fa8d7db930fd6643e954f152861bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819fa8d7db930fd6643e954f152861bb">&#9670;&#160;</a></span>handleTcpSocketReconnect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handleTcpSocketReconnect </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理断开重连 </p>
+<p>CWebSocketClient::handleTcpSocketReconnect 处理客户端断开后重连 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a819fa8d7db930fd6643e954f152861bb_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_a819fa8d7db930fd6643e954f152861bb_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a819fa8d7db930fd6643e954f152861bb_cgraph" id="aclass_c_tcp_socket_a819fa8d7db930fd6643e954f152861bb_cgraph">
+<area shape="rect" title="处理断开重连" alt="" coords="5,5,190,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad75873168c9ffd1ca2f537095292dd7e" title="连接tcp服务器" alt="" coords="238,5,364,32"/>
+<area shape="poly" title=" " alt="" coords="190,16,222,16,222,21,190,21"/>
+<area shape="rect" href="class_c_tcp_socket.html#a772f8f0487e0d3804e9da7585e23a29a" title="检测是否连接成功" alt="" coords="412,5,506,32"/>
+<area shape="poly" title=" " alt="" coords="365,16,397,16,397,21,365,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a819fa8d7db930fd6643e954f152861bb_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a819fa8d7db930fd6643e954f152861bb_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a819fa8d7db930fd6643e954f152861bb_icgraph" id="aclass_c_tcp_socket_a819fa8d7db930fd6643e954f152861bb_icgraph">
+<area shape="rect" title="处理断开重连" alt="" coords="147,5,331,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="131,21,99,21,99,16,131,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a772f8f0487e0d3804e9da7585e23a29a" name="a772f8f0487e0d3804e9da7585e23a29a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a772f8f0487e0d3804e9da7585e23a29a">&#9670;&#160;</a></span>isConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检测是否连接成功 </p>
+<p><a class="el" href="#a772f8f0487e0d3804e9da7585e23a29a" title="检测是否连接成功">CTcpSocket::isConnected</a> 检测是否连接成功</p>
+<dl class="section return"><dt>返回</dt><dd>如果连接成功返回真，否则返回假 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a772f8f0487e0d3804e9da7585e23a29a_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a772f8f0487e0d3804e9da7585e23a29a_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a772f8f0487e0d3804e9da7585e23a29a_icgraph" id="aclass_c_tcp_socket_a772f8f0487e0d3804e9da7585e23a29a_icgraph">
+<area shape="rect" title="检测是否连接成功" alt="" coords="572,56,667,83"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad75873168c9ffd1ca2f537095292dd7e" title="连接tcp服务器" alt="" coords="398,5,524,32"/>
+<area shape="poly" title=" " alt="" coords="560,53,504,35,506,30,562,48"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1e90a25b36445082c31a82160af2e931" title="处理心跳" alt="" coords="147,56,350,83"/>
+<area shape="poly" title=" " alt="" coords="557,72,351,72,351,67,557,67"/>
+<area shape="rect" href="class_c_tcp_socket.html#acbc8dc81067dbab026601c14a3cc6b75" title="发送json数据" alt="" coords="422,107,500,133"/>
+<area shape="poly" title=" " alt="" coords="562,91,501,110,499,105,560,85"/>
+<area shape="rect" href="class_c_tcp_socket.html#a819fa8d7db930fd6643e954f152861bb" title="处理断开重连" alt="" coords="156,5,340,32"/>
+<area shape="poly" title=" " alt="" coords="382,21,341,21,341,16,382,16"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,31,99,57"/>
+<area shape="poly" title=" " alt="" coords="141,35,100,41,99,35,140,30"/>
+<area shape="poly" title=" " alt="" coords="131,57,99,53,99,47,132,52"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abde376ebb61a62a1949151279af09a4f" name="abde376ebb61a62a1949151279af09a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abde376ebb61a62a1949151279af09a4f">&#9670;&#160;</a></span>isEncode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isEncode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>得到是否自行编码数据 </p>
+
+</div>
+</div>
+<a id="ac9ca2e4183a7d45904115cadddec132b" name="ac9ca2e4183a7d45904115cadddec132b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9ca2e4183a7d45904115cadddec132b">&#9670;&#160;</a></span>newconnectClient</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void newconnectClient </td>
+          <td>(</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>socketDescriptor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>ip</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quint16</td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>发送新用户连接信息 </p>
+<p>CTcpSocket::connectClient 发送新用户连接信息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socketDescriptor</td><td></td></tr>
+    <tr><td class="paramname">ip</td><td></td></tr>
+    <tr><td class="paramname">port</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_ac9ca2e4183a7d45904115cadddec132b_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_ac9ca2e4183a7d45904115cadddec132b_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_ac9ca2e4183a7d45904115cadddec132b_cgraph" id="aclass_c_tcp_socket_ac9ca2e4183a7d45904115cadddec132b_cgraph">
+<area shape="rect" title="发送新用户连接信息" alt="" coords="5,5,131,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a683f5665bf529328a56ade89e73c40b7" title="处理连接成功" alt="" coords="179,5,277,32"/>
+<area shape="poly" title=" " alt="" coords="131,16,163,16,163,21,131,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_ac9ca2e4183a7d45904115cadddec132b_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_ac9ca2e4183a7d45904115cadddec132b_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_ac9ca2e4183a7d45904115cadddec132b_icgraph" id="aclass_c_tcp_socket_ac9ca2e4183a7d45904115cadddec132b_icgraph">
+<area shape="rect" title="发送新用户连接信息" alt="" coords="270,5,395,32"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="254,21,222,21,222,16,254,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a683f5665bf529328a56ade89e73c40b7" name="a683f5665bf529328a56ade89e73c40b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683f5665bf529328a56ade89e73c40b7">&#9670;&#160;</a></span>onConnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理连接成功 </p>
+<p><a class="el" href="class_c_web_socket_client.html#a683f5665bf529328a56ade89e73c40b7" title="处理连接成功">CWebSocketClient::onConnected</a> 连接成功后的处理 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a683f5665bf529328a56ade89e73c40b7_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a683f5665bf529328a56ade89e73c40b7_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a683f5665bf529328a56ade89e73c40b7_icgraph" id="aclass_c_tcp_socket_a683f5665bf529328a56ade89e73c40b7_icgraph">
+<area shape="rect" title="处理连接成功" alt="" coords="443,31,541,57"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="286,5,379,32"/>
+<area shape="poly" title=" " alt="" coords="427,36,379,29,380,23,428,31"/>
+<area shape="rect" href="class_c_tcp_socket.html#ac9ca2e4183a7d45904115cadddec132b" title="发送新用户连接信息" alt="" coords="270,56,395,83"/>
+<area shape="poly" title=" " alt="" coords="428,57,396,62,395,57,427,52"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,56,222,83"/>
+<area shape="poly" title=" " alt="" coords="254,72,222,72,222,67,254,67"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a29aeafb7a1d3ec392788d1ccf4c12794" name="a29aeafb7a1d3ec392788d1ccf4c12794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29aeafb7a1d3ec392788d1ccf4c12794">&#9670;&#160;</a></span>onDisconnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onDisconnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理连接关闭 </p>
+<p><a class="el" href="#a29aeafb7a1d3ec392788d1ccf4c12794" title="处理连接关闭">CTcpSocket::onDisconnected</a> 连接断开后的处理 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a29aeafb7a1d3ec392788d1ccf4c12794_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_a29aeafb7a1d3ec392788d1ccf4c12794_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a29aeafb7a1d3ec392788d1ccf4c12794_cgraph" id="aclass_c_tcp_socket_a29aeafb7a1d3ec392788d1ccf4c12794_cgraph">
+<area shape="rect" title="处理连接关闭" alt="" coords="5,5,121,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1ed5a5dccfa6f662ce0edb5aa4961d67" title=" " alt="" coords="169,5,287,32"/>
+<area shape="poly" title=" " alt="" coords="121,16,153,16,153,21,121,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a29aeafb7a1d3ec392788d1ccf4c12794_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a29aeafb7a1d3ec392788d1ccf4c12794_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a29aeafb7a1d3ec392788d1ccf4c12794_icgraph" id="aclass_c_tcp_socket_a29aeafb7a1d3ec392788d1ccf4c12794_icgraph">
+<area shape="rect" title="处理连接关闭" alt="" coords="427,5,543,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="412,21,99,21,99,16,412,16"/>
+<area shape="rect" href="class_c_tcp_socket.html#a9054b4ea7262131f3de25a6cb165ffd5" title="重新连接服务器" alt="" coords="242,31,379,57"/>
+<area shape="poly" title=" " alt="" coords="412,32,380,37,380,31,411,27"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad5f2547df548318c3aa558f274b68298" title="错误处理" alt="" coords="147,31,194,57"/>
+<area shape="poly" title=" " alt="" coords="227,47,194,47,194,41,227,41"/>
+<area shape="poly" title=" " alt="" coords="131,38,99,31,100,26,132,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="accc2526f54192a5b1f22d382b674879b" name="accc2526f54192a5b1f22d382b674879b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc2526f54192a5b1f22d382b674879b">&#9670;&#160;</a></span>OnReadyRead</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OnReadyRead </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理接收数据 </p>
+<p><a class="el" href="#accc2526f54192a5b1f22d382b674879b" title="处理接收数据">CTcpSocket::OnReadyRead</a> 处理接收数据 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_accc2526f54192a5b1f22d382b674879b_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_accc2526f54192a5b1f22d382b674879b_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_accc2526f54192a5b1f22d382b674879b_cgraph" id="aclass_c_tcp_socket_accc2526f54192a5b1f22d382b674879b_cgraph">
+<area shape="rect" title="处理接收数据" alt="" coords="5,56,113,83"/>
+<area shape="rect" href="class_c_tcp_socket.html#ae08a82ce02b357eb5eadb973936a750f" title="解析信息包" alt="" coords="161,56,255,83"/>
+<area shape="poly" title=" " alt="" coords="113,67,145,67,145,72,113,72"/>
+<area shape="rect" href="rc4_8c.html#ae978f8ebbe17c03d4768507eeb907b81" title="计算校验和" alt="" coords="328,5,409,32"/>
+<area shape="poly" title=" " alt="" coords="252,53,312,33,314,39,254,58"/>
+<area shape="rect" href="fastlz_8c.html#a6cce72f3099f53d0cc244162180166b3" title="通用解压缩函数" alt="" coords="303,56,434,83"/>
+<area shape="poly" title=" " alt="" coords="255,67,288,67,288,72,255,72"/>
+<area shape="rect" href="class_c_tcp_socket.html#afe5866cc6bdbd2261aab3baa87f4309a" title="处理网络二进制消息" alt="" coords="308,107,429,133"/>
+<area shape="poly" title=" " alt="" coords="254,81,310,99,308,104,252,86"/>
+<area shape="rect" href="fastlz_8c.html#a5ae23e2c48377d079b775e6987518099" title="级别 1 解压缩实现" alt="" coords="482,31,621,57"/>
+<area shape="poly" title=" " alt="" coords="434,58,466,53,467,58,435,63"/>
+<area shape="rect" href="fastlz_8c.html#a966be4548712ef5cac9708929f199976" title="级别 2 解压缩实现" alt="" coords="482,81,621,108"/>
+<area shape="poly" title=" " alt="" coords="435,76,467,80,466,86,434,81"/>
+<area shape="rect" href="fastlz_8c.html#a95d18238c9acb9ac4e0748cb7a14527f" title="内存复制函数" alt="" coords="674,31,784,57"/>
+<area shape="poly" title=" " alt="" coords="621,41,659,41,659,47,621,47"/>
+<area shape="rect" href="fastlz_8c.html#a5e118747cf5e94edea9db2538d4d2fb6" title="自定义内存移动函数" alt="" coords="669,81,790,108"/>
+<area shape="poly" title=" " alt="" coords="602,55,666,74,665,79,600,61"/>
+<area shape="poly" title=" " alt="" coords="600,78,665,59,666,65,602,83"/>
+<area shape="poly" title=" " alt="" coords="621,92,653,92,653,97,621,97"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_accc2526f54192a5b1f22d382b674879b_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_accc2526f54192a5b1f22d382b674879b_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_accc2526f54192a5b1f22d382b674879b_icgraph" id="aclass_c_tcp_socket_accc2526f54192a5b1f22d382b674879b_icgraph">
+<area shape="rect" title="处理接收数据" alt="" coords="147,5,254,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="131,21,99,21,99,16,131,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae08a82ce02b357eb5eadb973936a750f" name="ae08a82ce02b357eb5eadb973936a750f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08a82ce02b357eb5eadb973936a750f">&#9670;&#160;</a></span>parsePacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool parsePacket </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析信息包 </p>
+<p><a class="el" href="#ae08a82ce02b357eb5eadb973936a750f" title="解析信息包">CTcpSocket::parsePacket</a> 解包</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>要解包的数据</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果数据解包成功返回真，否则返回假 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_ae08a82ce02b357eb5eadb973936a750f_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_ae08a82ce02b357eb5eadb973936a750f_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_ae08a82ce02b357eb5eadb973936a750f_cgraph" id="aclass_c_tcp_socket_ae08a82ce02b357eb5eadb973936a750f_cgraph">
+<area shape="rect" title="解析信息包" alt="" coords="5,56,100,83"/>
+<area shape="rect" href="rc4_8c.html#ae978f8ebbe17c03d4768507eeb907b81" title="计算校验和" alt="" coords="173,5,254,32"/>
+<area shape="poly" title=" " alt="" coords="97,53,157,33,159,39,98,58"/>
+<area shape="rect" href="fastlz_8c.html#a6cce72f3099f53d0cc244162180166b3" title="通用解压缩函数" alt="" coords="148,56,279,83"/>
+<area shape="poly" title=" " alt="" coords="100,67,132,67,132,72,100,72"/>
+<area shape="rect" href="class_c_tcp_socket.html#afe5866cc6bdbd2261aab3baa87f4309a" title="处理网络二进制消息" alt="" coords="153,107,274,133"/>
+<area shape="poly" title=" " alt="" coords="98,81,155,99,153,104,97,86"/>
+<area shape="rect" href="fastlz_8c.html#a5ae23e2c48377d079b775e6987518099" title="级别 1 解压缩实现" alt="" coords="327,31,465,57"/>
+<area shape="poly" title=" " alt="" coords="279,58,311,53,312,58,280,63"/>
+<area shape="rect" href="fastlz_8c.html#a966be4548712ef5cac9708929f199976" title="级别 2 解压缩实现" alt="" coords="327,81,465,108"/>
+<area shape="poly" title=" " alt="" coords="280,76,312,80,311,86,279,81"/>
+<area shape="rect" href="fastlz_8c.html#a95d18238c9acb9ac4e0748cb7a14527f" title="内存复制函数" alt="" coords="519,31,629,57"/>
+<area shape="poly" title=" " alt="" coords="466,41,503,41,503,47,466,47"/>
+<area shape="rect" href="fastlz_8c.html#a5e118747cf5e94edea9db2538d4d2fb6" title="自定义内存移动函数" alt="" coords="513,81,635,108"/>
+<area shape="poly" title=" " alt="" coords="447,55,511,74,510,79,445,61"/>
+<area shape="poly" title=" " alt="" coords="445,78,510,59,511,65,447,83"/>
+<area shape="poly" title=" " alt="" coords="466,92,498,92,498,97,466,97"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_ae08a82ce02b357eb5eadb973936a750f_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_ae08a82ce02b357eb5eadb973936a750f_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_ae08a82ce02b357eb5eadb973936a750f_icgraph" id="aclass_c_tcp_socket_ae08a82ce02b357eb5eadb973936a750f_icgraph">
+<area shape="rect" title="解析信息包" alt="" coords="302,5,396,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#accc2526f54192a5b1f22d382b674879b" title="处理接收数据" alt="" coords="147,5,254,32"/>
+<area shape="poly" title=" " alt="" coords="286,21,254,21,254,16,286,16"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="131,21,99,21,99,16,131,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9054b4ea7262131f3de25a6cb165ffd5" name="a9054b4ea7262131f3de25a6cb165ffd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9054b4ea7262131f3de25a6cb165ffd5">&#9670;&#160;</a></span>reconnectTcpServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reconnectTcpServer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重新连接服务器 </p>
+<p><a class="el" href="#a9054b4ea7262131f3de25a6cb165ffd5" title="重新连接服务器">CTcpSocket::reconnectTcpServer</a> 重新连接服务器 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a9054b4ea7262131f3de25a6cb165ffd5_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_a9054b4ea7262131f3de25a6cb165ffd5_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a9054b4ea7262131f3de25a6cb165ffd5_cgraph" id="aclass_c_tcp_socket_a9054b4ea7262131f3de25a6cb165ffd5_cgraph">
+<area shape="rect" title="重新连接服务器" alt="" coords="5,31,143,57"/>
+<area shape="rect" href="class_c_tcp_socket.html#a7008bca493d69ea65f12e0940f3a6886" title="关闭与tcp服务器的连接" alt="" coords="222,5,274,32"/>
+<area shape="poly" title=" " alt="" coords="143,31,206,22,207,27,144,37"/>
+<area shape="rect" href="class_c_tcp_socket.html#a29aeafb7a1d3ec392788d1ccf4c12794" title="处理连接关闭" alt="" coords="191,56,306,83"/>
+<area shape="poly" title=" " alt="" coords="144,51,175,56,175,61,143,57"/>
+<area shape="rect" href="class_c_tcp_socket.html#a5a0f4b8698ff513f6f2a36f8fe2367b6" title="断开socket的连接" alt="" coords="372,5,455,32"/>
+<area shape="poly" title=" " alt="" coords="275,16,356,16,356,21,275,21"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1ed5a5dccfa6f662ce0edb5aa4961d67" title=" " alt="" coords="354,56,472,83"/>
+<area shape="poly" title=" " alt="" coords="306,67,339,67,339,72,306,72"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a9054b4ea7262131f3de25a6cb165ffd5_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a9054b4ea7262131f3de25a6cb165ffd5_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a9054b4ea7262131f3de25a6cb165ffd5_icgraph" id="aclass_c_tcp_socket_a9054b4ea7262131f3de25a6cb165ffd5_icgraph">
+<area shape="rect" title="重新连接服务器" alt="" coords="242,5,379,32"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad5f2547df548318c3aa558f274b68298" title="错误处理" alt="" coords="147,5,194,32"/>
+<area shape="poly" title=" " alt="" coords="227,21,194,21,194,16,227,16"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="131,21,99,21,99,16,131,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afb4fe951d4366e86d50539952d8bda64" name="afb4fe951d4366e86d50539952d8bda64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb4fe951d4366e86d50539952d8bda64">&#9670;&#160;</a></span>send</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 send </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>发送数据 </p>
+<p><a class="el" href="#afb4fe951d4366e86d50539952d8bda64" title="发送数据">CTcpSocket::send</a> 封包并发送</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>要发送的数据</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回发送成功的数据 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_afb4fe951d4366e86d50539952d8bda64_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_afb4fe951d4366e86d50539952d8bda64_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_afb4fe951d4366e86d50539952d8bda64_cgraph" id="aclass_c_tcp_socket_afb4fe951d4366e86d50539952d8bda64_cgraph">
+<area shape="rect" title="发送数据" alt="" coords="5,132,55,159"/>
+<area shape="rect" href="rc4_8c.html#ae978f8ebbe17c03d4768507eeb907b81" title="计算校验和" alt="" coords="121,107,202,133"/>
+<area shape="poly" title=" " alt="" coords="54,138,105,128,106,133,55,143"/>
+<area shape="rect" href="fastlz_8c.html#aa8b12c16f2514c6cd2a6748a9d6bce4d" title="通用压缩函数" alt="" coords="103,157,220,184"/>
+<area shape="poly" title=" " alt="" coords="55,147,88,154,87,159,54,153"/>
+<area shape="rect" href="fastlz_8c.html#a1f149a66a870832b28adbd7a3e0464e3" title="级别 1 压缩实现" alt="" coords="268,132,392,159"/>
+<area shape="poly" title=" " alt="" coords="220,159,253,154,253,160,221,165"/>
+<area shape="rect" href="fastlz_8c.html#a06ae67595a80640a59169dfa4a5c8b44" title="级别 2 压缩实现" alt="" coords="268,183,392,209"/>
+<area shape="poly" title=" " alt="" coords="221,177,253,182,253,187,220,182"/>
+<area shape="rect" href="fastlz_8c.html#ae3fa1b75c06606b5876ae53a208b0869" title="级别 1 压缩的匹配编码" alt="" coords="442,5,527,32"/>
+<area shape="poly" title=" " alt="" coords="343,130,384,89,439,42,443,38,447,43,442,46,387,93,346,133"/>
+<area shape="rect" href="fastlz_8c.html#a4734cddbda700701b928ea1c9462a280" title="比较两个数据块" alt="" coords="451,157,518,184"/>
+<area shape="poly" title=" " alt="" coords="393,153,436,160,435,165,392,158"/>
+<area shape="rect" href="fastlz_8c.html#aad3ee3ccbad499327027d24ea6140169" title="最终字面量处理" alt="" coords="443,107,526,133"/>
+<area shape="poly" title=" " alt="" coords="392,132,427,127,428,132,393,138"/>
+<area shape="rect" href="fastlz_8c.html#a68cbcb6b0d615ae53e2303a4a9b5ab70" title="计算哈希值" alt="" coords="449,259,520,285"/>
+<area shape="poly" title=" " alt="" coords="375,157,394,169,411,188,419,207,427,225,442,245,445,247,442,251,438,248,423,228,415,209,406,191,391,173,373,161"/>
+<area shape="rect" href="fastlz_8c.html#a154d7b313ffcf534c30642f0af6d4641" title="处理字面量数据" alt="" coords="444,208,525,235"/>
+<area shape="poly" title=" " alt="" coords="368,157,394,168,448,198,446,202,391,173,365,162"/>
+<area shape="rect" href="fastlz_8c.html#a840ac800deb7c00f2994ef2663819817" title="读取 32 位无符号整数" alt="" coords="440,56,529,83"/>
+<area shape="poly" title=" " alt="" coords="358,129,441,87,443,92,361,134"/>
+<area shape="rect" href="fastlz_8c.html#a741b9a31afd0f8c4a7d1409952d7497a" title="小块数据复制" alt="" coords="577,107,678,133"/>
+<area shape="poly" title=" " alt="" coords="527,117,561,117,561,123,527,123"/>
+<area shape="rect" href="fastlz_8c.html#a95d18238c9acb9ac4e0748cb7a14527f" title="内存复制函数" alt="" coords="726,107,836,133"/>
+<area shape="poly" title=" " alt="" coords="679,117,711,117,711,123,679,123"/>
+<area shape="rect" href="fastlz_8c.html#a9f138722d5b4cca13b3dace840c7c458" title="复制 256 位数据块" alt="" coords="582,183,673,209"/>
+<area shape="poly" title=" " alt="" coords="525,212,566,204,567,209,526,217"/>
+<area shape="rect" href="fastlz_8c.html#a468c19b0a79f2f5c072cf17c5cc969a3" title="复制 64 位数据块" alt="" coords="585,233,670,260"/>
+<area shape="poly" title=" " alt="" coords="526,226,571,234,570,239,525,231"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="608,56,647,83"/>
+<area shape="poly" title=" " alt="" coords="529,67,592,67,592,72,529,72"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="728,56,834,83"/>
+<area shape="poly" title=" " alt="" coords="647,67,712,67,712,72,647,72"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="884,48,1012,91"/>
+<area shape="poly" title=" " alt="" coords="835,67,869,67,869,72,835,72"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="1060,56,1204,83"/>
+<area shape="poly" title=" " alt="" coords="1012,67,1044,67,1044,72,1012,72"/>
+<area shape="poly" title=" " alt="" coords="392,183,435,176,436,181,393,188"/>
+<area shape="poly" title=" " alt="" coords="365,180,391,168,446,139,448,144,394,173,368,185"/>
+<area shape="poly" title=" " alt="" coords="361,208,443,249,441,254,358,212"/>
+<area shape="poly" title=" " alt="" coords="393,204,429,210,429,215,392,209"/>
+<area shape="poly" title=" " alt="" coords="373,180,391,169,406,150,415,132,423,113,438,93,442,90,445,94,442,96,427,116,419,135,411,153,394,173,375,185"/>
+<area shape="rect" href="fastlz_8c.html#a08ac84ecce13045966548dcfd8af87a9" title="级别 2 压缩的匹配编码" alt="" coords="442,309,527,336"/>
+<area shape="poly" title=" " alt="" coords="346,208,387,249,442,295,447,299,443,303,439,299,384,253,343,212"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_afb4fe951d4366e86d50539952d8bda64_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_afb4fe951d4366e86d50539952d8bda64_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_afb4fe951d4366e86d50539952d8bda64_icgraph" id="aclass_c_tcp_socket_afb4fe951d4366e86d50539952d8bda64_icgraph">
+<area shape="rect" title="发送数据" alt="" coords="398,31,447,57"/>
+<area shape="rect" href="class_c_tcp_socket.html#a1e90a25b36445082c31a82160af2e931" title="处理心跳" alt="" coords="147,5,350,32"/>
+<area shape="poly" title=" " alt="" coords="382,41,344,35,345,30,383,36"/>
+<area shape="rect" href="class_c_tcp_socket.html#acbc8dc81067dbab026601c14a3cc6b75" title="发送json数据" alt="" coords="210,56,287,83"/>
+<area shape="poly" title=" " alt="" coords="383,52,288,66,287,61,382,47"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,5,99,32"/>
+<area shape="poly" title=" " alt="" coords="131,21,99,21,99,16,131,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acbc8dc81067dbab026601c14a3cc6b75" name="acbc8dc81067dbab026601c14a3cc6b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbc8dc81067dbab026601c14a3cc6b75">&#9670;&#160;</a></span>sendJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendJson </td>
+          <td>(</td>
+          <td class="paramtype">QJsonObject</td>          <td class="paramname"><span class="paramname"><em>mes</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>发送json数据 </p>
+<p><a class="el" href="#acbc8dc81067dbab026601c14a3cc6b75" title="发送json数据">CTcpSocket::sendJson</a> 发送json数据</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mes</td><td>要发送的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_acbc8dc81067dbab026601c14a3cc6b75_cgraph.png" border="0" usemap="#aclass_c_tcp_socket_acbc8dc81067dbab026601c14a3cc6b75_cgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_acbc8dc81067dbab026601c14a3cc6b75_cgraph" id="aclass_c_tcp_socket_acbc8dc81067dbab026601c14a3cc6b75_cgraph">
+<area shape="rect" title="发送json数据" alt="" coords="5,81,83,108"/>
+<area shape="rect" href="class_c_tcp_socket.html#a772f8f0487e0d3804e9da7585e23a29a" title="检测是否连接成功" alt="" coords="131,31,225,57"/>
+<area shape="poly" title=" " alt="" coords="81,78,126,61,127,66,82,83"/>
+<area shape="rect" href="rc4_8c.html#a58d5132953c5c591c30e530bce22a9fa" title="RC4 加密" alt="" coords="133,81,223,108"/>
+<area shape="poly" title=" " alt="" coords="83,92,117,92,117,97,83,97"/>
+<area shape="rect" href="class_c_tcp_socket.html#afb4fe951d4366e86d50539952d8bda64" title="发送数据" alt="" coords="153,157,202,184"/>
+<area shape="poly" title=" " alt="" coords="71,106,141,147,138,152,68,111"/>
+<area shape="rect" href="rc4_8c.html#adf70156276596c6a3c50bcdfea4fa9c9" title="执行 RC4 加密/解密" alt="" coords="308,56,356,83"/>
+<area shape="poly" title=" " alt="" coords="223,85,292,73,293,78,224,90"/>
+<area shape="rect" href="rc4_8c.html#ada1a8eb0a1f2f4724d974bfc6d6b1920" title="生成 RC4 密钥状态数组" alt="" coords="468,56,533,83"/>
+<area shape="poly" title=" " alt="" coords="356,67,452,67,452,72,356,72"/>
+<area shape="rect" href="rc4_8c.html#a84af851bdc7d54287ef4634e9bc8b384" title="交换两个字节" alt="" coords="613,5,697,32"/>
+<area shape="poly" title=" " alt="" coords="356,60,438,41,597,21,597,26,439,47,357,65"/>
+<area shape="poly" title=" " alt="" coords="533,56,597,35,599,40,534,61"/>
+<area shape="rect" href="rc4_8c.html#ae978f8ebbe17c03d4768507eeb907b81" title="计算校验和" alt="" coords="291,208,372,235"/>
+<area shape="poly" title=" " alt="" coords="204,176,277,201,275,206,202,181"/>
+<area shape="rect" href="fastlz_8c.html#aa8b12c16f2514c6cd2a6748a9d6bce4d" title="通用压缩函数" alt="" coords="273,157,390,184"/>
+<area shape="poly" title=" " alt="" coords="203,168,258,168,258,173,203,173"/>
+<area shape="rect" href="fastlz_8c.html#a1f149a66a870832b28adbd7a3e0464e3" title="级别 1 压缩实现" alt="" coords="438,157,563,184"/>
+<area shape="poly" title=" " alt="" coords="391,168,423,168,423,173,391,173"/>
+<area shape="rect" href="fastlz_8c.html#a06ae67595a80640a59169dfa4a5c8b44" title="级别 2 压缩实现" alt="" coords="438,208,563,235"/>
+<area shape="poly" title=" " alt="" coords="380,182,440,200,438,205,378,187"/>
+<area shape="rect" href="fastlz_8c.html#ae3fa1b75c06606b5876ae53a208b0869" title="级别 1 压缩的匹配编码" alt="" coords="612,56,698,83"/>
+<area shape="poly" title=" " alt="" coords="519,155,609,92,615,89,618,93,612,97,522,159"/>
+<area shape="rect" href="fastlz_8c.html#a4734cddbda700701b928ea1c9462a280" title="比较两个数据块" alt="" coords="621,107,688,133"/>
+<area shape="poly" title=" " alt="" coords="543,154,606,133,608,138,545,159"/>
+<area shape="rect" href="fastlz_8c.html#aad3ee3ccbad499327027d24ea6140169" title="最终字面量处理" alt="" coords="613,157,696,184"/>
+<area shape="poly" title=" " alt="" coords="563,168,598,168,598,173,563,173"/>
+<area shape="rect" href="fastlz_8c.html#a68cbcb6b0d615ae53e2303a4a9b5ab70" title="计算哈希值" alt="" coords="620,208,690,235"/>
+<area shape="poly" title=" " alt="" coords="545,182,606,203,604,208,543,187"/>
+<area shape="rect" href="fastlz_8c.html#a154d7b313ffcf534c30642f0af6d4641" title="处理字面量数据" alt="" coords="615,259,695,285"/>
+<area shape="poly" title=" " alt="" coords="543,182,564,194,579,207,589,219,612,245,616,248,613,252,609,249,585,222,576,210,561,198,540,187"/>
+<area shape="rect" href="fastlz_8c.html#a840ac800deb7c00f2994ef2663819817" title="读取 32 位无符号整数" alt="" coords="611,309,699,336"/>
+<area shape="poly" title=" " alt="" coords="548,182,565,194,583,220,590,245,597,270,613,296,615,297,611,301,609,299,592,272,585,246,578,222,561,198,545,187"/>
+<area shape="rect" href="fastlz_8c.html#a741b9a31afd0f8c4a7d1409952d7497a" title="小块数据复制" alt="" coords="747,157,848,184"/>
+<area shape="poly" title=" " alt="" coords="697,168,731,168,731,173,697,173"/>
+<area shape="rect" href="fastlz_8c.html#a95d18238c9acb9ac4e0748cb7a14527f" title="内存复制函数" alt="" coords="896,157,1007,184"/>
+<area shape="poly" title=" " alt="" coords="849,168,881,168,881,173,849,173"/>
+<area shape="rect" href="fastlz_8c.html#a9f138722d5b4cca13b3dace840c7c458" title="复制 256 位数据块" alt="" coords="752,208,843,235"/>
+<area shape="poly" title=" " alt="" coords="694,256,743,238,744,243,696,261"/>
+<area shape="rect" href="fastlz_8c.html#a468c19b0a79f2f5c072cf17c5cc969a3" title="复制 64 位数据块" alt="" coords="756,259,840,285"/>
+<area shape="poly" title=" " alt="" coords="696,269,740,269,740,275,696,275"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="778,309,817,336"/>
+<area shape="poly" title=" " alt="" coords="699,320,763,320,763,325,699,325"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="898,309,1005,336"/>
+<area shape="poly" title=" " alt="" coords="817,320,883,320,883,325,817,325"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="1055,301,1182,344"/>
+<area shape="poly" title=" " alt="" coords="1005,320,1039,320,1039,325,1005,325"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="1230,309,1374,336"/>
+<area shape="poly" title=" " alt="" coords="1183,320,1214,320,1214,325,1183,325"/>
+<area shape="poly" title=" " alt="" coords="540,205,561,194,576,182,585,170,609,143,613,140,616,144,612,147,589,173,579,185,564,198,543,210"/>
+<area shape="poly" title=" " alt="" coords="543,205,598,186,600,191,545,210"/>
+<area shape="poly" title=" " alt="" coords="563,219,604,219,604,224,563,224"/>
+<area shape="poly" title=" " alt="" coords="545,233,601,252,599,257,543,238"/>
+<area shape="poly" title=" " alt="" coords="522,233,612,295,618,299,615,303,609,300,519,237"/>
+<area shape="rect" href="fastlz_8c.html#a08ac84ecce13045966548dcfd8af87a9" title="级别 2 压缩的匹配编码" alt="" coords="612,360,698,387"/>
+<area shape="poly" title=" " alt="" coords="513,234,554,286,582,317,612,346,616,349,613,353,609,350,578,321,550,289,509,237"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a466764c176c3cd45bf7b957bbdf0c801" name="a466764c176c3cd45bf7b957bbdf0c801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a466764c176c3cd45bf7b957bbdf0c801">&#9670;&#160;</a></span>setEncode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setEncode </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>encode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否自行编码数据 </p>
+
+</div>
+</div>
+<a id="a3af2b2347a1e39f64d4e836d89a7b336" name="a3af2b2347a1e39f64d4e836d89a7b336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af2b2347a1e39f64d4e836d89a7b336">&#9670;&#160;</a></span>SetNetworkFrameManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetNetworkFrameManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_network_frame_manager.html">NetworkFrameManager</a> *</td>          <td class="paramname"><span class="paramname"><em>pNetworkFrameManager</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置网络消息处理框架 </p>
+
+</div>
+</div>
+<a id="a3ccb5a0dc92a9646a3e0fb1601c08adb" name="a3ccb5a0dc92a9646a3e0fb1601c08adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ccb5a0dc92a9646a3e0fb1601c08adb">&#9670;&#160;</a></span>setUsingThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setUsingThread </td>
+          <td>(</td>
+          <td class="paramtype">QThread *</td>          <td class="paramname"><span class="paramname"><em>thread</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置当前使用线程 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a3ccb5a0dc92a9646a3e0fb1601c08adb_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a3ccb5a0dc92a9646a3e0fb1601c08adb_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a3ccb5a0dc92a9646a3e0fb1601c08adb_icgraph" id="aclass_c_tcp_socket_a3ccb5a0dc92a9646a3e0fb1601c08adb_icgraph">
+<area shape="rect" title="设置当前使用线程" alt="" coords="270,5,383,32"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="254,21,222,21,222,16,254,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe5866cc6bdbd2261aab3baa87f4309a" name="afe5866cc6bdbd2261aab3baa87f4309a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe5866cc6bdbd2261aab3baa87f4309a">&#9670;&#160;</a></span>signalsNetBinary</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void signalsNetBinary </td>
+          <td>(</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理网络二进制消息 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_afe5866cc6bdbd2261aab3baa87f4309a_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_afe5866cc6bdbd2261aab3baa87f4309a_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_afe5866cc6bdbd2261aab3baa87f4309a_icgraph" id="aclass_c_tcp_socket_afe5866cc6bdbd2261aab3baa87f4309a_icgraph">
+<area shape="rect" title="处理网络二进制消息" alt="" coords="747,56,868,83"/>
+<area shape="rect" href="class_c_tcp_server.html#a79a0060f0b5d36f39a112b90b1cd79f3" title="关闭指定的客户端" alt="" coords="536,5,699,32"/>
+<area shape="poly" title=" " alt="" coords="739,54,670,35,671,30,741,49"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,31,222,57"/>
+<area shape="poly" title=" " alt="" coords="732,69,222,51,222,45,732,64"/>
+<area shape="rect" href="class_c_tcp_socket.html#ae08a82ce02b357eb5eadb973936a750f" title="解析信息包" alt="" coords="570,107,665,133"/>
+<area shape="poly" title=" " alt="" coords="741,90,666,110,665,105,739,85"/>
+<area shape="rect" href="class_c_tcp_server.html#a912e3c6921d9bb6945c73142926de7d4" title=" " alt="" coords="270,5,488,32"/>
+<area shape="poly" title=" " alt="" coords="520,30,488,30,488,25,520,25"/>
+<area shape="poly" title=" " alt="" coords="504,7,536,7,536,13,504,12"/>
+<area shape="poly" title=" " alt="" coords="254,33,222,36,222,31,254,28"/>
+<area shape="rect" href="class_c_tcp_socket.html#accc2526f54192a5b1f22d382b674879b" title="处理接收数据" alt="" coords="325,107,432,133"/>
+<area shape="poly" title=" " alt="" coords="555,123,433,123,433,117,555,117"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="67,107,160,133"/>
+<area shape="poly" title=" " alt="" coords="310,123,161,123,161,117,310,117"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1ed5a5dccfa6f662ce0edb5aa4961d67" name="a1ed5a5dccfa6f662ce0edb5aa4961d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed5a5dccfa6f662ce0edb5aa4961d67">&#9670;&#160;</a></span>sockDisConnect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sockDisConnect </td>
+          <td>(</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quint16</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QThread *</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_tcp_socket_a1ed5a5dccfa6f662ce0edb5aa4961d67_icgraph.png" border="0" usemap="#aclass_c_tcp_socket_a1ed5a5dccfa6f662ce0edb5aa4961d67_icgraph" alt=""/></div>
+<map name="aclass_c_tcp_socket_a1ed5a5dccfa6f662ce0edb5aa4961d67_icgraph" id="aclass_c_tcp_socket_a1ed5a5dccfa6f662ce0edb5aa4961d67_icgraph">
+<area shape="rect" title=" " alt="" coords="889,56,1007,83"/>
+<area shape="rect" href="class_c_tcp_server.html#a79a0060f0b5d36f39a112b90b1cd79f3" title="关闭指定的客户端" alt="" coords="677,5,841,32"/>
+<area shape="poly" title=" " alt="" coords="880,54,811,35,812,30,881,49"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="147,31,363,57"/>
+<area shape="poly" title=" " alt="" coords="873,69,363,51,364,45,873,64"/>
+<area shape="rect" href="class_c_tcp_socket.html#a29aeafb7a1d3ec392788d1ccf4c12794" title="处理连接关闭" alt="" coords="701,107,817,133"/>
+<area shape="poly" title=" " alt="" coords="881,90,812,109,811,103,880,85"/>
+<area shape="rect" href="class_c_tcp_server.html#a912e3c6921d9bb6945c73142926de7d4" title=" " alt="" coords="411,5,629,32"/>
+<area shape="poly" title=" " alt="" coords="662,30,630,30,630,25,662,25"/>
+<area shape="poly" title=" " alt="" coords="645,7,677,7,677,13,645,12"/>
+<area shape="poly" title=" " alt="" coords="396,33,364,36,363,31,395,28"/>
+<area shape="rect" href="class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="5,132,99,159"/>
+<area shape="poly" title=" " alt="" coords="686,125,99,146,99,141,686,120"/>
+<area shape="rect" href="class_c_tcp_socket.html#a9054b4ea7262131f3de25a6cb165ffd5" title="重新连接服务器" alt="" coords="452,157,589,184"/>
+<area shape="poly" title=" " alt="" coords="687,138,587,159,586,154,686,133"/>
+<area shape="rect" href="class_c_tcp_socket.html#ad5f2547df548318c3aa558f274b68298" title="错误处理" alt="" coords="231,157,278,184"/>
+<area shape="poly" title=" " alt="" coords="436,173,279,173,279,168,436,168"/>
+<area shape="poly" title=" " alt="" coords="215,169,99,154,99,148,216,163"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a076e7df8c1dfd9c3d3cf440531e4fcdd" name="a076e7df8c1dfd9c3d3cf440531e4fcdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a076e7df8c1dfd9c3d3cf440531e4fcdd">&#9670;&#160;</a></span>compressed_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char compressed_buffer[<a class="el" href="ctcpsocketclient_8h.html#acd29f6fb80bb72a749e232d19bd86608">IDD_COMPRESS_BUFFER_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于存放解压后的数据 </p>
+
+</div>
+</div>
+<a id="a27c707210921e6306ba84e0926360328" name="a27c707210921e6306ba84e0926360328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c707210921e6306ba84e0926360328">&#9670;&#160;</a></span>dis</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMetaObject::Connection dis</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a892d050abcffe7eefbb034ffac8def5d" name="a892d050abcffe7eefbb034ffac8def5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a892d050abcffe7eefbb034ffac8def5d">&#9670;&#160;</a></span>m_curThread</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QThread* m_curThread</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前使用线程 </p>
+
+</div>
+</div>
+<a id="ab2cd52a12bf1c843ae83983c13e49565" name="ab2cd52a12bf1c843ae83983c13e49565"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2cd52a12bf1c843ae83983c13e49565">&#9670;&#160;</a></span>m_dataPacket</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray m_dataPacket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于存放接收的数据 </p>
+
+</div>
+</div>
+<a id="a2564643a22f1bd2dfb97cb4c14197d6f" name="a2564643a22f1bd2dfb97cb4c14197d6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2564643a22f1bd2dfb97cb4c14197d6f">&#9670;&#160;</a></span>m_enableencryption</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_enableencryption</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否加密信息 </p>
+
+</div>
+</div>
+<a id="a6ea51d2773bc4ff292814f297767191c" name="a6ea51d2773bc4ff292814f297767191c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea51d2773bc4ff292814f297767191c">&#9670;&#160;</a></span>m_HeartCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_HeartCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>心跳计数 </p>
+
+</div>
+</div>
+<a id="a05b6f3021cd1ebd912f7548dbf61b12c" name="a05b6f3021cd1ebd912f7548dbf61b12c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b6f3021cd1ebd912f7548dbf61b12c">&#9670;&#160;</a></span>m_isencoded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_isencoded</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否自行编码数据 </p>
+
+</div>
+</div>
+<a id="ae22b876b2a11738a73c7d2c74a5b38dc" name="ae22b876b2a11738a73c7d2c74a5b38dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae22b876b2a11738a73c7d2c74a5b38dc">&#9670;&#160;</a></span>m_isReConnecting</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_isReConnecting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否自动重连 </p>
+
+</div>
+</div>
+<a id="aca7d469173097c057c8393f82dd01bfa" name="aca7d469173097c057c8393f82dd01bfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca7d469173097c057c8393f82dd01bfa">&#9670;&#160;</a></span>m_NetworkFrameManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_network_frame_manager.html">NetworkFrameManager</a>* m_NetworkFrameManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>网络消息处理框架 </p>
+
+</div>
+</div>
+<a id="acbced4e43c2483f90dd93f5f590e00f0" name="acbced4e43c2483f90dd93f5f590e00f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbced4e43c2483f90dd93f5f590e00f0">&#9670;&#160;</a></span>m_recvDataState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_recvDataState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于接收数据处理 </p>
+
+</div>
+</div>
+<a id="aa3c134921550af912f3baaa3d06e6009" name="aa3c134921550af912f3baaa3d06e6009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c134921550af912f3baaa3d06e6009">&#9670;&#160;</a></span>m_ServerIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString m_ServerIP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>要连接的服务器的ip </p>
+
+</div>
+</div>
+<a id="a47a7f7c1685113b626975b067a7e95de" name="a47a7f7c1685113b626975b067a7e95de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47a7f7c1685113b626975b067a7e95de">&#9670;&#160;</a></span>m_ServerPort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_ServerPort</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>要连接的服务器的端口 </p>
+
+</div>
+</div>
+<a id="aad37ef4b4aa08b708d968216c82c823e" name="aad37ef4b4aa08b708d968216c82c823e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad37ef4b4aa08b708d968216c82c823e">&#9670;&#160;</a></span>m_TcpPacketHearder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtag_datagram_hearder.html">tagDatagramHearder</a> m_TcpPacketHearder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于存放每次接收的包头数据 </p>
+
+</div>
+</div>
+<a id="a7af6becff542d2f551ea524a71ee6725" name="a7af6becff542d2f551ea524a71ee6725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7af6becff542d2f551ea524a71ee6725">&#9670;&#160;</a></span>m_TcpSocketHeartTimeOutTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer m_TcpSocketHeartTimeOutTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1bacaac3fbb089446b8251996fc34149" name="a1bacaac3fbb089446b8251996fc34149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bacaac3fbb089446b8251996fc34149">&#9670;&#160;</a></span>m_TcpSocketReconnectTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer m_TcpSocketReconnectTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于处理心跳和断开重连的定时器 </p>
+
+</div>
+</div>
+<a id="a0795457bf0656e66ddb0a592899f29e9" name="a0795457bf0656e66ddb0a592899f29e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0795457bf0656e66ddb0a592899f29e9">&#9670;&#160;</a></span>socketID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qintptr socketID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa999134886742ef695c3640e2e5c9e33" name="aa999134886742ef695c3640e2e5c9e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa999134886742ef695c3640e2e5c9e33">&#9670;&#160;</a></span>uncompressed_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char uncompressed_buffer[<a class="el" href="ctcpsocketclient_8h.html#acd29f6fb80bb72a749e232d19bd86608">IDD_COMPRESS_BUFFER_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="ctcpsocketclient_8h_source.html">ctcpsocketclient.h</a></li>
+<li><a class="el" href="ctcpsocketclient_8cpp.html">ctcpsocketclient.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_c_tcp_socket.html">CTcpSocket</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: tcp_client类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classspdlog_1_1details_1_1tcp__client.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classspdlog_1_1details_1_1tcp__client-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">tcp_client类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="tcp__client-windows_8h_source.html">tcp_client-windows.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:af32d11dc12724260d9f4b7428f31f433" id="r_af32d11dc12724260d9f4b7428f31f433"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af32d11dc12724260d9f4b7428f31f433">tcp_client</a> ()</td></tr>
+<tr class="separator:af32d11dc12724260d9f4b7428f31f433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd5c17c5e94be8756b3b51a1954801d" id="r_a1dd5c17c5e94be8756b3b51a1954801d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dd5c17c5e94be8756b3b51a1954801d">~tcp_client</a> ()</td></tr>
+<tr class="separator:a1dd5c17c5e94be8756b3b51a1954801d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accf4ef6f99c7c6194b487ce7b9f45273" id="r_accf4ef6f99c7c6194b487ce7b9f45273"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accf4ef6f99c7c6194b487ce7b9f45273">is_connected</a> () const</td></tr>
+<tr class="separator:accf4ef6f99c7c6194b487ce7b9f45273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae591df94fc66ccb85cbb6565368bca" id="r_a5ae591df94fc66ccb85cbb6565368bca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ae591df94fc66ccb85cbb6565368bca">close</a> ()</td></tr>
+<tr class="separator:a5ae591df94fc66ccb85cbb6565368bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fcf612a1cac9004490cfcc2b8351ba" id="r_a49fcf612a1cac9004490cfcc2b8351ba"><td class="memItemLeft" align="right" valign="top">SOCKET&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49fcf612a1cac9004490cfcc2b8351ba">fd</a> () const</td></tr>
+<tr class="separator:a49fcf612a1cac9004490cfcc2b8351ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f945b45ee974d6f8587f051b2e220b" id="r_a37f945b45ee974d6f8587f051b2e220b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37f945b45ee974d6f8587f051b2e220b">connect</a> (const std::string &amp;host, int port)</td></tr>
+<tr class="separator:a37f945b45ee974d6f8587f051b2e220b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3965ce3fae9245e23f0fdd51bc0d0fa2" id="r_a3965ce3fae9245e23f0fdd51bc0d0fa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3965ce3fae9245e23f0fdd51bc0d0fa2">send</a> (const char *data, size_t n_bytes)</td></tr>
+<tr class="separator:a3965ce3fae9245e23f0fdd51bc0d0fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accf4ef6f99c7c6194b487ce7b9f45273" id="r_accf4ef6f99c7c6194b487ce7b9f45273"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accf4ef6f99c7c6194b487ce7b9f45273">is_connected</a> () const</td></tr>
+<tr class="separator:accf4ef6f99c7c6194b487ce7b9f45273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae591df94fc66ccb85cbb6565368bca" id="r_a5ae591df94fc66ccb85cbb6565368bca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ae591df94fc66ccb85cbb6565368bca">close</a> ()</td></tr>
+<tr class="separator:a5ae591df94fc66ccb85cbb6565368bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace5c4071ee8893901bb818bbcab739b2" id="r_ace5c4071ee8893901bb818bbcab739b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace5c4071ee8893901bb818bbcab739b2">fd</a> () const</td></tr>
+<tr class="separator:ace5c4071ee8893901bb818bbcab739b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd5c17c5e94be8756b3b51a1954801d" id="r_a1dd5c17c5e94be8756b3b51a1954801d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dd5c17c5e94be8756b3b51a1954801d">~tcp_client</a> ()</td></tr>
+<tr class="separator:a1dd5c17c5e94be8756b3b51a1954801d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f945b45ee974d6f8587f051b2e220b" id="r_a37f945b45ee974d6f8587f051b2e220b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37f945b45ee974d6f8587f051b2e220b">connect</a> (const std::string &amp;host, int port)</td></tr>
+<tr class="separator:a37f945b45ee974d6f8587f051b2e220b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3965ce3fae9245e23f0fdd51bc0d0fa2" id="r_a3965ce3fae9245e23f0fdd51bc0d0fa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3965ce3fae9245e23f0fdd51bc0d0fa2">send</a> (const char *data, size_t n_bytes)</td></tr>
+<tr class="separator:a3965ce3fae9245e23f0fdd51bc0d0fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:a15c74d4ca82365be46d6368d8bba2d57" id="r_a15c74d4ca82365be46d6368d8bba2d57"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15c74d4ca82365be46d6368d8bba2d57">init_winsock_</a> ()</td></tr>
+<tr class="separator:a15c74d4ca82365be46d6368d8bba2d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a01f9350d8ef807cc7b5cdf6f1e7984" id="r_a2a01f9350d8ef807cc7b5cdf6f1e7984"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a01f9350d8ef807cc7b5cdf6f1e7984">throw_winsock_error_</a> (const std::string &amp;msg, int last_error)</td></tr>
+<tr class="separator:a2a01f9350d8ef807cc7b5cdf6f1e7984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a321a3036a06a36407e9948f8ea403284" id="r_a321a3036a06a36407e9948f8ea403284"><td class="memItemLeft" align="right" valign="top">SOCKET&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a321a3036a06a36407e9948f8ea403284">socket_</a> = INVALID_SOCKET</td></tr>
+<tr class="separator:a321a3036a06a36407e9948f8ea403284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7273be71eeb9dfa29322e316f60ed4" id="r_a1d7273be71eeb9dfa29322e316f60ed4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d7273be71eeb9dfa29322e316f60ed4">socket_</a> = -1</td></tr>
+<tr class="separator:a1d7273be71eeb9dfa29322e316f60ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="af32d11dc12724260d9f4b7428f31f433" name="af32d11dc12724260d9f4b7428f31f433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af32d11dc12724260d9f4b7428f31f433">&#9670;&#160;</a></span>tcp_client()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1details_1_1tcp__client.html">tcp_client</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_af32d11dc12724260d9f4b7428f31f433_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_af32d11dc12724260d9f4b7428f31f433_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_af32d11dc12724260d9f4b7428f31f433_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_af32d11dc12724260d9f4b7428f31f433_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,83,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a15c74d4ca82365be46d6368d8bba2d57" title=" " alt="" coords="131,5,231,32"/>
+<area shape="poly" title=" " alt="" coords="83,16,115,16,115,21,83,21"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a2a01f9350d8ef807cc7b5cdf6f1e7984" title=" " alt="" coords="279,5,427,32"/>
+<area shape="poly" title=" " alt="" coords="231,16,264,16,264,21,231,21"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="475,5,641,32"/>
+<area shape="poly" title=" " alt="" coords="427,16,460,16,460,21,427,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1dd5c17c5e94be8756b3b51a1954801d" name="a1dd5c17c5e94be8756b3b51a1954801d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd5c17c5e94be8756b3b51a1954801d">&#9670;&#160;</a></span>~tcp_client() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="classspdlog_1_1details_1_1tcp__client.html">tcp_client</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a1dd5c17c5e94be8756b3b51a1954801d_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a1dd5c17c5e94be8756b3b51a1954801d_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a1dd5c17c5e94be8756b3b51a1954801d_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a1dd5c17c5e94be8756b3b51a1954801d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,91,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a5ae591df94fc66ccb85cbb6565368bca" title=" " alt="" coords="139,5,191,32"/>
+<area shape="poly" title=" " alt="" coords="91,16,123,16,123,21,91,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1dd5c17c5e94be8756b3b51a1954801d" name="a1dd5c17c5e94be8756b3b51a1954801d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd5c17c5e94be8756b3b51a1954801d">&#9670;&#160;</a></span>~tcp_client() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="classspdlog_1_1details_1_1tcp__client.html">tcp_client</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a1dd5c17c5e94be8756b3b51a1954801d_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a1dd5c17c5e94be8756b3b51a1954801d_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a1dd5c17c5e94be8756b3b51a1954801d_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a1dd5c17c5e94be8756b3b51a1954801d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,91,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a5ae591df94fc66ccb85cbb6565368bca" title=" " alt="" coords="139,5,191,32"/>
+<area shape="poly" title=" " alt="" coords="91,16,123,16,123,21,91,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a5ae591df94fc66ccb85cbb6565368bca" name="a5ae591df94fc66ccb85cbb6565368bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ae591df94fc66ccb85cbb6565368bca">&#9670;&#160;</a></span>close() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a5ae591df94fc66ccb85cbb6565368bca_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a5ae591df94fc66ccb85cbb6565368bca_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a5ae591df94fc66ccb85cbb6565368bca_icgraph" id="aclassspdlog_1_1details_1_1tcp__client_a5ae591df94fc66ccb85cbb6565368bca_icgraph">
+<area shape="rect" title=" " alt="" coords="139,104,191,131"/>
+<area shape="poly" title=" " alt="" coords="184,91,177,85,165,83,153,85,147,89,146,95,149,103,144,105,140,95,143,86,151,80,165,77,179,80,187,87"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a37f945b45ee974d6f8587f051b2e220b" title=" " alt="" coords="14,29,82,56"/>
+<area shape="poly" title=" " alt="" coords="130,97,89,70,71,59,74,54,92,66,133,93"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a3965ce3fae9245e23f0fdd51bc0d0fa2" title=" " alt="" coords="23,104,73,131"/>
+<area shape="poly" title=" " alt="" coords="123,120,73,120,73,115,123,115"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a1dd5c17c5e94be8756b3b51a1954801d" title=" " alt="" coords="5,155,91,181"/>
+<area shape="poly" title=" " alt="" coords="126,137,82,157,80,152,123,132"/>
+<area shape="poly" title=" " alt="" coords="67,16,60,10,48,8,36,10,30,14,29,20,32,28,27,30,23,20,26,11,34,5,48,3,63,5,70,12"/>
+<area shape="poly" title=" " alt="" coords="67,91,60,85,48,83,36,85,30,89,29,95,32,103,27,105,23,95,26,86,34,80,48,77,63,80,70,87"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ae591df94fc66ccb85cbb6565368bca" name="a5ae591df94fc66ccb85cbb6565368bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ae591df94fc66ccb85cbb6565368bca">&#9670;&#160;</a></span>close() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a5ae591df94fc66ccb85cbb6565368bca_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a5ae591df94fc66ccb85cbb6565368bca_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a5ae591df94fc66ccb85cbb6565368bca_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a5ae591df94fc66ccb85cbb6565368bca_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,58,56"/>
+<area shape="poly" title=" " alt="" coords="9,30,6,20,8,11,17,5,32,3,47,5,55,12,52,16,45,10,31,8,19,10,13,14,11,20,14,28"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#accf4ef6f99c7c6194b487ce7b9f45273" title=" " alt="" coords="106,29,204,56"/>
+<area shape="poly" title=" " alt="" coords="58,40,90,40,90,45,58,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a37f945b45ee974d6f8587f051b2e220b" name="a37f945b45ee974d6f8587f051b2e220b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f945b45ee974d6f8587f051b2e220b">&#9670;&#160;</a></span>connect() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void connect </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>host</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,73,83"/>
+<area shape="poly" title=" " alt="" coords="12,57,7,47,10,38,21,32,39,29,58,32,68,39,65,43,56,37,39,35,23,37,15,41,12,47,17,54"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a5ae591df94fc66ccb85cbb6565368bca" title=" " alt="" coords="169,5,221,32"/>
+<area shape="poly" title=" " alt="" coords="72,56,153,29,155,34,74,61"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#accf4ef6f99c7c6194b487ce7b9f45273" title=" " alt="" coords="146,56,244,83"/>
+<area shape="poly" title=" " alt="" coords="73,67,131,67,131,72,73,72"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a2a01f9350d8ef807cc7b5cdf6f1e7984" title=" " alt="" coords="121,107,269,133"/>
+<area shape="poly" title=" " alt="" coords="74,78,138,99,136,104,72,83"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="317,107,482,133"/>
+<area shape="poly" title=" " alt="" coords="269,117,301,117,301,123,269,123"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_icgraph" id="aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_icgraph">
+<area shape="rect" title=" " alt="" coords="5,29,73,56"/>
+<area shape="poly" title=" " alt="" coords="49,15,45,10,39,8,33,10,30,14,31,29,26,29,25,12,30,5,39,3,48,5,53,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a37f945b45ee974d6f8587f051b2e220b" name="a37f945b45ee974d6f8587f051b2e220b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f945b45ee974d6f8587f051b2e220b">&#9670;&#160;</a></span>connect() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void connect </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>host</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a37f945b45ee974d6f8587f051b2e220b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,73,57"/>
+<area shape="poly" title=" " alt="" coords="11,31,6,22,9,12,21,6,39,4,59,7,69,13,67,18,57,12,39,9,22,11,13,16,11,21,15,29"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a5ae591df94fc66ccb85cbb6565368bca" title=" " alt="" coords="177,5,230,32"/>
+<area shape="poly" title=" " alt="" coords="73,36,161,22,162,28,73,42"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="121,56,286,83"/>
+<area shape="poly" title=" " alt="" coords="73,46,106,52,105,57,73,52"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a49fcf612a1cac9004490cfcc2b8351ba" name="a49fcf612a1cac9004490cfcc2b8351ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49fcf612a1cac9004490cfcc2b8351ba">&#9670;&#160;</a></span>fd() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SOCKET fd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace5c4071ee8893901bb818bbcab739b2" name="ace5c4071ee8893901bb818bbcab739b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace5c4071ee8893901bb818bbcab739b2">&#9670;&#160;</a></span>fd() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15c74d4ca82365be46d6368d8bba2d57" name="a15c74d4ca82365be46d6368d8bba2d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c74d4ca82365be46d6368d8bba2d57">&#9670;&#160;</a></span>init_winsock_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void init_winsock_ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a15c74d4ca82365be46d6368d8bba2d57_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a15c74d4ca82365be46d6368d8bba2d57_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a15c74d4ca82365be46d6368d8bba2d57_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a15c74d4ca82365be46d6368d8bba2d57_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,106,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a2a01f9350d8ef807cc7b5cdf6f1e7984" title=" " alt="" coords="154,5,302,32"/>
+<area shape="poly" title=" " alt="" coords="106,16,138,16,138,21,106,21"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="350,5,515,32"/>
+<area shape="poly" title=" " alt="" coords="302,16,334,16,334,21,302,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a15c74d4ca82365be46d6368d8bba2d57_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a15c74d4ca82365be46d6368d8bba2d57_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a15c74d4ca82365be46d6368d8bba2d57_icgraph" id="aclassspdlog_1_1details_1_1tcp__client_a15c74d4ca82365be46d6368d8bba2d57_icgraph">
+<area shape="rect" title=" " alt="" coords="131,5,231,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#af32d11dc12724260d9f4b7428f31f433" title=" " alt="" coords="5,5,83,32"/>
+<area shape="poly" title=" " alt="" coords="115,21,83,21,83,16,115,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="accf4ef6f99c7c6194b487ce7b9f45273" name="accf4ef6f99c7c6194b487ce7b9f45273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf4ef6f99c7c6194b487ce7b9f45273">&#9670;&#160;</a></span>is_connected() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_connected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_accf4ef6f99c7c6194b487ce7b9f45273_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_accf4ef6f99c7c6194b487ce7b9f45273_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_accf4ef6f99c7c6194b487ce7b9f45273_icgraph" id="aclassspdlog_1_1details_1_1tcp__client_accf4ef6f99c7c6194b487ce7b9f45273_icgraph">
+<area shape="rect" title=" " alt="" coords="121,43,219,69"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a5ae591df94fc66ccb85cbb6565368bca" title=" " alt="" coords="13,5,65,32"/>
+<area shape="poly" title=" " alt="" coords="105,40,65,29,67,24,107,35"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a37f945b45ee974d6f8587f051b2e220b" title=" " alt="" coords="5,80,73,107"/>
+<area shape="poly" title=" " alt="" coords="107,77,74,86,73,81,105,72"/>
+<area shape="poly" title=" " alt="" coords="60,67,53,61,39,59,26,61,19,65,17,71,21,78,16,81,12,71,15,62,24,56,39,53,55,56,64,63"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="accf4ef6f99c7c6194b487ce7b9f45273" name="accf4ef6f99c7c6194b487ce7b9f45273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf4ef6f99c7c6194b487ce7b9f45273">&#9670;&#160;</a></span>is_connected() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_connected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3965ce3fae9245e23f0fdd51bc0d0fa2" name="a3965ce3fae9245e23f0fdd51bc0d0fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3965ce3fae9245e23f0fdd51bc0d0fa2">&#9670;&#160;</a></span>send() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void send </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n_bytes</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_cgraph">
+<area shape="rect" title=" " alt="" coords="8,31,58,57"/>
+<area shape="poly" title=" " alt="" coords="7,31,3,22,6,12,16,6,33,4,51,7,61,13,58,18,49,12,33,9,18,11,10,16,8,22,12,29"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a5ae591df94fc66ccb85cbb6565368bca" title=" " alt="" coords="154,5,206,32"/>
+<area shape="poly" title=" " alt="" coords="58,37,138,23,139,28,59,42"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a2a01f9350d8ef807cc7b5cdf6f1e7984" title=" " alt="" coords="106,56,254,83"/>
+<area shape="poly" title=" " alt="" coords="59,46,91,51,90,57,58,51"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="302,56,467,83"/>
+<area shape="poly" title=" " alt="" coords="254,67,286,67,286,72,254,72"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_icgraph" id="aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_icgraph">
+<area shape="rect" title=" " alt="" coords="5,29,55,56"/>
+<area shape="poly" title=" " alt="" coords="36,15,34,10,30,8,26,9,24,13,25,29,19,29,19,12,23,5,30,3,37,6,41,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3965ce3fae9245e23f0fdd51bc0d0fa2" name="a3965ce3fae9245e23f0fdd51bc0d0fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3965ce3fae9245e23f0fdd51bc0d0fa2">&#9670;&#160;</a></span>send() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void send </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n_bytes</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a3965ce3fae9245e23f0fdd51bc0d0fa2_cgraph">
+<area shape="rect" title=" " alt="" coords="10,31,59,57"/>
+<area shape="poly" title=" " alt="" coords="8,31,3,22,6,12,17,6,35,4,54,7,64,13,61,18,52,12,35,9,19,11,10,16,8,21,12,29"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a5ae591df94fc66ccb85cbb6565368bca" title=" " alt="" coords="164,5,216,32"/>
+<area shape="poly" title=" " alt="" coords="59,37,148,23,149,28,60,43"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="107,56,273,83"/>
+<area shape="poly" title=" " alt="" coords="60,45,92,51,91,56,59,51"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a01f9350d8ef807cc7b5cdf6f1e7984" name="a2a01f9350d8ef807cc7b5cdf6f1e7984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a01f9350d8ef807cc7b5cdf6f1e7984">&#9670;&#160;</a></span>throw_winsock_error_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void throw_winsock_error_ </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>last_error</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a2a01f9350d8ef807cc7b5cdf6f1e7984_cgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a2a01f9350d8ef807cc7b5cdf6f1e7984_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a2a01f9350d8ef807cc7b5cdf6f1e7984_cgraph" id="aclassspdlog_1_1details_1_1tcp__client_a2a01f9350d8ef807cc7b5cdf6f1e7984_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,154,32"/>
+<area shape="rect" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4" title=" " alt="" coords="202,5,367,32"/>
+<area shape="poly" title=" " alt="" coords="154,16,186,16,186,21,154,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1tcp__client_a2a01f9350d8ef807cc7b5cdf6f1e7984_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1tcp__client_a2a01f9350d8ef807cc7b5cdf6f1e7984_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1tcp__client_a2a01f9350d8ef807cc7b5cdf6f1e7984_icgraph" id="aclassspdlog_1_1details_1_1tcp__client_a2a01f9350d8ef807cc7b5cdf6f1e7984_icgraph">
+<area shape="rect" title=" " alt="" coords="279,80,427,107"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a37f945b45ee974d6f8587f051b2e220b" title=" " alt="" coords="147,29,214,56"/>
+<area shape="poly" title=" " alt="" coords="290,78,214,55,216,50,291,72"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a15c74d4ca82365be46d6368d8bba2d57" title=" " alt="" coords="131,80,231,107"/>
+<area shape="poly" title=" " alt="" coords="263,96,231,96,231,91,263,91"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#a3965ce3fae9245e23f0fdd51bc0d0fa2" title=" " alt="" coords="156,155,206,181"/>
+<area shape="poly" title=" " alt="" coords="308,116,207,160,205,155,306,111"/>
+<area shape="poly" title=" " alt="" coords="203,16,196,10,181,8,167,10,160,14,158,20,162,28,157,30,153,21,155,11,165,5,181,3,198,5,207,12"/>
+<area shape="rect" href="classspdlog_1_1details_1_1tcp__client.html#af32d11dc12724260d9f4b7428f31f433" title=" " alt="" coords="5,80,83,107"/>
+<area shape="poly" title=" " alt="" coords="115,96,83,96,83,91,115,91"/>
+<area shape="poly" title=" " alt="" coords="203,142,196,136,181,133,167,135,160,140,158,146,162,153,157,155,153,146,155,137,165,130,181,128,198,131,207,137"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a321a3036a06a36407e9948f8ea403284" name="a321a3036a06a36407e9948f8ea403284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a321a3036a06a36407e9948f8ea403284">&#9670;&#160;</a></span>socket_ <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SOCKET socket_ = INVALID_SOCKET</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d7273be71eeb9dfa29322e316f60ed4" name="a1d7273be71eeb9dfa29322e316f60ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d7273be71eeb9dfa29322e316f60ed4">&#9670;&#160;</a></span>socket_ <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int socket_ = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="tcp__client-windows_8h_source.html">tcp_client-windows.h</a></li>
+<li><a class="el" href="tcp__client_8h_source.html">tcp_client.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="namespacespdlog_1_1details.html">details</a></li><li class="navelem"><a class="el" href="classspdlog_1_1details_1_1tcp__client.html">tcp_client</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

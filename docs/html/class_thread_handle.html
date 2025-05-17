@@ -1,0 +1,696 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ThreadHandle类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_thread_handle.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_thread_handle-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ThreadHandle类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ctcpsocketserver_8h_source.html">ctcpsocketserver.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a9370bfb7398547a0d06a9da373cefcb8" id="r_a9370bfb7398547a0d06a9da373cefcb8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a> { <a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8a76b8cf5083f8e3b913b47b8899e68d16">THREADSIZE</a>
+, <a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11">HANDLESIZE</a>
+ }</td></tr>
+<tr class="separator:a9370bfb7398547a0d06a9da373cefcb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae771ba1ceb0b28eb98db21189c5af25b" id="r_ae771ba1ceb0b28eb98db21189c5af25b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae771ba1ceb0b28eb98db21189c5af25b">~ThreadHandle</a> ()</td></tr>
+<tr class="separator:ae771ba1ceb0b28eb98db21189c5af25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a57a06887949e611bbeec4cb1e2fb7" id="r_a30a57a06887949e611bbeec4cb1e2fb7"><td class="memItemLeft" align="right" valign="top">QThread *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30a57a06887949e611bbeec4cb1e2fb7">getThread</a> ()</td></tr>
+<tr class="separator:a30a57a06887949e611bbeec4cb1e2fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a049cf031b1bde5fb39f80f526c1349ce" id="r_a049cf031b1bde5fb39f80f526c1349ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a049cf031b1bde5fb39f80f526c1349ce">initThreadType</a> (<a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a> <a class="el" href="#a65f534f131299d733e3d0ea32ef3f5c8">type</a>=<a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11">HANDLESIZE</a>, unsigned int max=1000)</td></tr>
+<tr class="separator:a049cf031b1bde5fb39f80f526c1349ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7021b8fcc7893486feeffc4bc645b4ff" id="r_a7021b8fcc7893486feeffc4bc645b4ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7021b8fcc7893486feeffc4bc645b4ff">removeThread</a> (QThread *)</td></tr>
+<tr class="separator:a7021b8fcc7893486feeffc4bc645b4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8bb3912a3ce86b15842e79d0b421204" id="r_ac8bb3912a3ce86b15842e79d0b421204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8bb3912a3ce86b15842e79d0b421204">clear</a> ()</td></tr>
+<tr class="memdesc:ac8bb3912a3ce86b15842e79d0b421204"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ac8bb3912a3ce86b15842e79d0b421204" title="ThreadHandle::clear 清除所有的线程">ThreadHandle::clear</a> 清除所有的线程  <br /></td></tr>
+<tr class="separator:ac8bb3912a3ce86b15842e79d0b421204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:ad28ce2d8b771f377f46741b64eee292d" id="r_ad28ce2d8b771f377f46741b64eee292d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_thread_handle.html">ThreadHandle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad28ce2d8b771f377f46741b64eee292d">getClass</a> ()</td></tr>
+<tr class="separator:ad28ce2d8b771f377f46741b64eee292d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a90f095240a2a6b96bf2e5cf32033d1e2" id="r_a90f095240a2a6b96bf2e5cf32033d1e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90f095240a2a6b96bf2e5cf32033d1e2">initThreadSize</a> ()</td></tr>
+<tr class="separator:a90f095240a2a6b96bf2e5cf32033d1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a061005ad9e72849713d54099ba8229ad" id="r_a061005ad9e72849713d54099ba8229ad"><td class="memItemLeft" align="right" valign="top">QThread *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a061005ad9e72849713d54099ba8229ad">findThreadSize</a> ()</td></tr>
+<tr class="separator:a061005ad9e72849713d54099ba8229ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d6dd2a0ed1097bfc29d86db6786692" id="r_ac8d6dd2a0ed1097bfc29d86db6786692"><td class="memItemLeft" align="right" valign="top">QThread *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8d6dd2a0ed1097bfc29d86db6786692">findHandleSize</a> ()</td></tr>
+<tr class="separator:ac8d6dd2a0ed1097bfc29d86db6786692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:aebf2d610a3a92180a8d1da5c8ebb4011" id="r_aebf2d610a3a92180a8d1da5c8ebb4011"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebf2d610a3a92180a8d1da5c8ebb4011">ThreadHandle</a> ()</td></tr>
+<tr class="separator:aebf2d610a3a92180a8d1da5c8ebb4011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a65f534f131299d733e3d0ea32ef3f5c8" id="r_a65f534f131299d733e3d0ea32ef3f5c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65f534f131299d733e3d0ea32ef3f5c8">type</a></td></tr>
+<tr class="separator:a65f534f131299d733e3d0ea32ef3f5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac913b3a1f6ef005d66bf7a84428773e" id="r_aac913b3a1f6ef005d66bf7a84428773e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac913b3a1f6ef005d66bf7a84428773e">size</a></td></tr>
+<tr class="separator:aac913b3a1f6ef005d66bf7a84428773e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a9c2ecf217a8e3757e5ddb497d49bd" id="r_a10a9c2ecf217a8e3757e5ddb497d49bd"><td class="memItemLeft" align="right" valign="top">QHash&lt; QThread *, unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10a9c2ecf217a8e3757e5ddb497d49bd">threadSize</a></td></tr>
+<tr class="separator:a10a9c2ecf217a8e3757e5ddb497d49bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41cca5e95a7c587d961d36d1f7353e62" id="r_a41cca5e95a7c587d961d36d1f7353e62"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41cca5e95a7c587d961d36d1f7353e62">initfist</a></td></tr>
+<tr class="separator:a41cca5e95a7c587d961d36d1f7353e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a9370bfb7398547a0d06a9da373cefcb8" name="a9370bfb7398547a0d06a9da373cefcb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9370bfb7398547a0d06a9da373cefcb8">&#9670;&#160;</a></span>ThreadType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a9370bfb7398547a0d06a9da373cefcb8a76b8cf5083f8e3b913b47b8899e68d16" name="a9370bfb7398547a0d06a9da373cefcb8a76b8cf5083f8e3b913b47b8899e68d16"></a>THREADSIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11" name="a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11"></a>HANDLESIZE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae771ba1ceb0b28eb98db21189c5af25b" name="ae771ba1ceb0b28eb98db21189c5af25b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae771ba1ceb0b28eb98db21189c5af25b">&#9670;&#160;</a></span>~ThreadHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_thread_handle.html">ThreadHandle</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aebf2d610a3a92180a8d1da5c8ebb4011" name="aebf2d610a3a92180a8d1da5c8ebb4011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebf2d610a3a92180a8d1da5c8ebb4011">&#9670;&#160;</a></span>ThreadHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_thread_handle.html">ThreadHandle</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_aebf2d610a3a92180a8d1da5c8ebb4011_icgraph.png" border="0" usemap="#aclass_thread_handle_aebf2d610a3a92180a8d1da5c8ebb4011_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_aebf2d610a3a92180a8d1da5c8ebb4011_icgraph" id="aclass_thread_handle_aebf2d610a3a92180a8d1da5c8ebb4011_icgraph">
+<area shape="rect" title=" " alt="" coords="869,56,971,83"/>
+<area shape="rect" href="class_thread_handle.html#ad28ce2d8b771f377f46741b64eee292d" title=" " alt="" coords="747,56,821,83"/>
+<area shape="poly" title=" " alt="" coords="853,72,821,72,821,67,853,67"/>
+<area shape="rect" href="class_c_tcp_server.html#ac8bb3912a3ce86b15842e79d0b421204" title=" " alt="" coords="554,5,681,32"/>
+<area shape="poly" title=" " alt="" coords="732,56,663,35,665,30,733,51"/>
+<area shape="rect" href="class_c_tcp_server.html#a79a0060f0b5d36f39a112b90b1cd79f3" title="关闭指定的客户端" alt="" coords="536,56,699,83"/>
+<area shape="poly" title=" " alt="" coords="732,72,700,72,700,67,732,67"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,81,222,108"/>
+<area shape="poly" title=" " alt="" coords="733,90,700,97,572,110,443,114,323,112,222,107,222,101,323,107,443,109,572,105,699,92,732,85"/>
+<area shape="rect" href="class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c" title="关闭服务器" alt="" coords="294,5,464,32"/>
+<area shape="poly" title=" " alt="" coords="539,21,464,21,464,16,539,16"/>
+<area shape="rect" href="class_c_tcp_server.html#a42c516f8283772da4f16ebc60d18c495" title=" " alt="" coords="26,5,201,32"/>
+<area shape="poly" title=" " alt="" coords="278,21,202,21,202,16,278,16"/>
+<area shape="rect" href="class_c_tcp_server.html#a912e3c6921d9bb6945c73142926de7d4" title=" " alt="" coords="270,56,488,83"/>
+<area shape="poly" title=" " alt="" coords="520,81,488,81,488,76,520,76"/>
+<area shape="poly" title=" " alt="" coords="504,58,536,58,536,63,504,63"/>
+<area shape="poly" title=" " alt="" coords="254,84,222,87,222,82,254,79"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac8bb3912a3ce86b15842e79d0b421204" name="ac8bb3912a3ce86b15842e79d0b421204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8bb3912a3ce86b15842e79d0b421204">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#ac8bb3912a3ce86b15842e79d0b421204" title="ThreadHandle::clear 清除所有的线程">ThreadHandle::clear</a> 清除所有的线程 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_ac8bb3912a3ce86b15842e79d0b421204_cgraph.png" border="0" usemap="#aclass_thread_handle_ac8bb3912a3ce86b15842e79d0b421204_cgraph" alt=""/></div>
+<map name="aclass_thread_handle_ac8bb3912a3ce86b15842e79d0b421204_cgraph" id="aclass_thread_handle_ac8bb3912a3ce86b15842e79d0b421204_cgraph">
+<area shape="rect" title="ThreadHandle::clear 清除所有的线程" alt="" coords="5,5,55,32"/>
+<area shape="rect" href="class_thread_handle.html#a7021b8fcc7893486feeffc4bc645b4ff" title=" " alt="" coords="103,5,207,32"/>
+<area shape="poly" title=" " alt="" coords="55,16,87,16,87,21,55,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_ac8bb3912a3ce86b15842e79d0b421204_icgraph.png" border="0" usemap="#aclass_thread_handle_ac8bb3912a3ce86b15842e79d0b421204_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_ac8bb3912a3ce86b15842e79d0b421204_icgraph" id="aclass_thread_handle_ac8bb3912a3ce86b15842e79d0b421204_icgraph">
+<area shape="rect" title="ThreadHandle::clear 清除所有的线程" alt="" coords="621,5,671,32"/>
+<area shape="rect" href="class_c_tcp_server.html#ac8bb3912a3ce86b15842e79d0b421204" title=" " alt="" coords="447,5,573,32"/>
+<area shape="poly" title=" " alt="" coords="606,21,574,21,574,16,606,16"/>
+<area shape="rect" href="class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c" title="关闭服务器" alt="" coords="229,5,399,32"/>
+<area shape="poly" title=" " alt="" coords="431,21,400,21,400,16,431,16"/>
+<area shape="rect" href="class_c_tcp_server.html#a42c516f8283772da4f16ebc60d18c495" title=" " alt="" coords="5,5,181,32"/>
+<area shape="poly" title=" " alt="" coords="213,21,181,21,181,16,213,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8d6dd2a0ed1097bfc29d86db6786692" name="ac8d6dd2a0ed1097bfc29d86db6786692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d6dd2a0ed1097bfc29d86db6786692">&#9670;&#160;</a></span>findHandleSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QThread * findHandleSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_ac8d6dd2a0ed1097bfc29d86db6786692_icgraph.png" border="0" usemap="#aclass_thread_handle_ac8d6dd2a0ed1097bfc29d86db6786692_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_ac8d6dd2a0ed1097bfc29d86db6786692_icgraph" id="aclass_thread_handle_ac8d6dd2a0ed1097bfc29d86db6786692_icgraph">
+<area shape="rect" title=" " alt="" coords="397,5,506,32"/>
+<area shape="rect" href="class_thread_handle.html#a30a57a06887949e611bbeec4cb1e2fb7" title=" " alt="" coords="270,5,349,32"/>
+<area shape="poly" title=" " alt="" coords="381,21,349,21,349,16,381,16"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="254,21,222,21,222,16,254,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a061005ad9e72849713d54099ba8229ad" name="a061005ad9e72849713d54099ba8229ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a061005ad9e72849713d54099ba8229ad">&#9670;&#160;</a></span>findThreadSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QThread * findThreadSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_a061005ad9e72849713d54099ba8229ad_icgraph.png" border="0" usemap="#aclass_thread_handle_a061005ad9e72849713d54099ba8229ad_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_a061005ad9e72849713d54099ba8229ad_icgraph" id="aclass_thread_handle_a061005ad9e72849713d54099ba8229ad_icgraph">
+<area shape="rect" title=" " alt="" coords="397,5,505,32"/>
+<area shape="rect" href="class_thread_handle.html#a30a57a06887949e611bbeec4cb1e2fb7" title=" " alt="" coords="270,5,349,32"/>
+<area shape="poly" title=" " alt="" coords="381,21,349,21,349,16,381,16"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="254,21,222,21,222,16,254,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad28ce2d8b771f377f46741b64eee292d" name="ad28ce2d8b771f377f46741b64eee292d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad28ce2d8b771f377f46741b64eee292d">&#9670;&#160;</a></span>getClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_thread_handle.html">ThreadHandle</a> &amp; getClass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_ad28ce2d8b771f377f46741b64eee292d_cgraph.png" border="0" usemap="#aclass_thread_handle_ad28ce2d8b771f377f46741b64eee292d_cgraph" alt=""/></div>
+<map name="aclass_thread_handle_ad28ce2d8b771f377f46741b64eee292d_cgraph" id="aclass_thread_handle_ad28ce2d8b771f377f46741b64eee292d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,79,32"/>
+<area shape="rect" href="class_thread_handle.html#aebf2d610a3a92180a8d1da5c8ebb4011" title=" " alt="" coords="127,5,229,32"/>
+<area shape="poly" title=" " alt="" coords="79,16,111,16,111,21,79,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_ad28ce2d8b771f377f46741b64eee292d_icgraph.png" border="0" usemap="#aclass_thread_handle_ad28ce2d8b771f377f46741b64eee292d_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_ad28ce2d8b771f377f46741b64eee292d_icgraph" id="aclass_thread_handle_ad28ce2d8b771f377f46741b64eee292d_icgraph">
+<area shape="rect" title=" " alt="" coords="747,56,821,83"/>
+<area shape="rect" href="class_c_tcp_server.html#ac8bb3912a3ce86b15842e79d0b421204" title=" " alt="" coords="554,5,681,32"/>
+<area shape="poly" title=" " alt="" coords="732,56,663,35,665,30,733,51"/>
+<area shape="rect" href="class_c_tcp_server.html#a79a0060f0b5d36f39a112b90b1cd79f3" title="关闭指定的客户端" alt="" coords="536,56,699,83"/>
+<area shape="poly" title=" " alt="" coords="732,72,700,72,700,67,732,67"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,81,222,108"/>
+<area shape="poly" title=" " alt="" coords="733,90,700,97,572,110,443,114,323,112,222,107,222,101,323,107,443,109,572,105,699,92,732,85"/>
+<area shape="rect" href="class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c" title="关闭服务器" alt="" coords="294,5,464,32"/>
+<area shape="poly" title=" " alt="" coords="539,21,464,21,464,16,539,16"/>
+<area shape="rect" href="class_c_tcp_server.html#a42c516f8283772da4f16ebc60d18c495" title=" " alt="" coords="26,5,201,32"/>
+<area shape="poly" title=" " alt="" coords="278,21,202,21,202,16,278,16"/>
+<area shape="rect" href="class_c_tcp_server.html#a912e3c6921d9bb6945c73142926de7d4" title=" " alt="" coords="270,56,488,83"/>
+<area shape="poly" title=" " alt="" coords="520,81,488,81,488,76,520,76"/>
+<area shape="poly" title=" " alt="" coords="504,58,536,58,536,63,504,63"/>
+<area shape="poly" title=" " alt="" coords="254,84,222,87,222,82,254,79"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a30a57a06887949e611bbeec4cb1e2fb7" name="a30a57a06887949e611bbeec4cb1e2fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a57a06887949e611bbeec4cb1e2fb7">&#9670;&#160;</a></span>getThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QThread * getThread </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_a30a57a06887949e611bbeec4cb1e2fb7_cgraph.png" border="0" usemap="#aclass_thread_handle_a30a57a06887949e611bbeec4cb1e2fb7_cgraph" alt=""/></div>
+<map name="aclass_thread_handle_a30a57a06887949e611bbeec4cb1e2fb7_cgraph" id="aclass_thread_handle_a30a57a06887949e611bbeec4cb1e2fb7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,85,83"/>
+<area shape="rect" href="class_thread_handle.html#ac8d6dd2a0ed1097bfc29d86db6786692" title=" " alt="" coords="133,5,242,32"/>
+<area shape="poly" title=" " alt="" coords="84,53,132,35,134,40,86,58"/>
+<area shape="rect" href="class_thread_handle.html#a061005ad9e72849713d54099ba8229ad" title=" " alt="" coords="133,56,242,83"/>
+<area shape="poly" title=" " alt="" coords="85,67,118,67,118,72,85,72"/>
+<area shape="rect" href="class_thread_handle.html#a049cf031b1bde5fb39f80f526c1349ce" title=" " alt="" coords="134,107,240,133"/>
+<area shape="poly" title=" " alt="" coords="86,81,134,98,132,103,84,86"/>
+<area shape="rect" href="class_thread_handle.html#a90f095240a2a6b96bf2e5cf32033d1e2" title=" " alt="" coords="290,107,394,133"/>
+<area shape="poly" title=" " alt="" coords="241,117,274,117,274,123,241,123"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_a30a57a06887949e611bbeec4cb1e2fb7_icgraph.png" border="0" usemap="#aclass_thread_handle_a30a57a06887949e611bbeec4cb1e2fb7_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_a30a57a06887949e611bbeec4cb1e2fb7_icgraph" id="aclass_thread_handle_a30a57a06887949e611bbeec4cb1e2fb7_icgraph">
+<area shape="rect" title=" " alt="" coords="270,5,349,32"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="254,21,222,21,222,16,254,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a90f095240a2a6b96bf2e5cf32033d1e2" name="a90f095240a2a6b96bf2e5cf32033d1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f095240a2a6b96bf2e5cf32033d1e2">&#9670;&#160;</a></span>initThreadSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initThreadSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_a90f095240a2a6b96bf2e5cf32033d1e2_icgraph.png" border="0" usemap="#aclass_thread_handle_a90f095240a2a6b96bf2e5cf32033d1e2_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_a90f095240a2a6b96bf2e5cf32033d1e2_icgraph" id="aclass_thread_handle_a90f095240a2a6b96bf2e5cf32033d1e2_icgraph">
+<area shape="rect" title=" " alt="" coords="551,5,656,32"/>
+<area shape="rect" href="class_thread_handle.html#a049cf031b1bde5fb39f80f526c1349ce" title=" " alt="" coords="397,5,503,32"/>
+<area shape="poly" title=" " alt="" coords="535,21,504,21,504,16,535,16"/>
+<area shape="rect" href="class_thread_handle.html#a30a57a06887949e611bbeec4cb1e2fb7" title=" " alt="" coords="270,5,349,32"/>
+<area shape="poly" title=" " alt="" coords="381,21,350,21,350,16,381,16"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="254,21,222,21,222,16,254,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a049cf031b1bde5fb39f80f526c1349ce" name="a049cf031b1bde5fb39f80f526c1349ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a049cf031b1bde5fb39f80f526c1349ce">&#9670;&#160;</a></span>initThreadType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initThreadType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8a87b7e7b5ce14e9ed58db24b618c74c11">HANDLESIZE</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>max</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_a049cf031b1bde5fb39f80f526c1349ce_cgraph.png" border="0" usemap="#aclass_thread_handle_a049cf031b1bde5fb39f80f526c1349ce_cgraph" alt=""/></div>
+<map name="aclass_thread_handle_a049cf031b1bde5fb39f80f526c1349ce_cgraph" id="aclass_thread_handle_a049cf031b1bde5fb39f80f526c1349ce_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,112,32"/>
+<area shape="rect" href="class_thread_handle.html#a90f095240a2a6b96bf2e5cf32033d1e2" title=" " alt="" coords="160,5,264,32"/>
+<area shape="poly" title=" " alt="" coords="112,16,144,16,144,21,112,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_a049cf031b1bde5fb39f80f526c1349ce_icgraph.png" border="0" usemap="#aclass_thread_handle_a049cf031b1bde5fb39f80f526c1349ce_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_a049cf031b1bde5fb39f80f526c1349ce_icgraph" id="aclass_thread_handle_a049cf031b1bde5fb39f80f526c1349ce_icgraph">
+<area shape="rect" title=" " alt="" coords="397,5,503,32"/>
+<area shape="rect" href="class_thread_handle.html#a30a57a06887949e611bbeec4cb1e2fb7" title=" " alt="" coords="270,5,349,32"/>
+<area shape="poly" title=" " alt="" coords="381,21,350,21,350,16,381,16"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="5,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="254,21,222,21,222,16,254,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7021b8fcc7893486feeffc4bc645b4ff" name="a7021b8fcc7893486feeffc4bc645b4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7021b8fcc7893486feeffc4bc645b4ff">&#9670;&#160;</a></span>removeThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeThread </td>
+          <td>(</td>
+          <td class="paramtype">QThread *</td>          <td class="paramname"><span class="paramname"><em>thread</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_thread_handle_a7021b8fcc7893486feeffc4bc645b4ff_icgraph.png" border="0" usemap="#aclass_thread_handle_a7021b8fcc7893486feeffc4bc645b4ff_icgraph" alt=""/></div>
+<map name="aclass_thread_handle_a7021b8fcc7893486feeffc4bc645b4ff_icgraph" id="aclass_thread_handle_a7021b8fcc7893486feeffc4bc645b4ff_icgraph">
+<area shape="rect" title=" " alt="" coords="971,31,1075,57"/>
+<area shape="rect" href="class_thread_handle.html#ac8bb3912a3ce86b15842e79d0b421204" title="ThreadHandle::clear 清除所有的线程" alt="" coords="816,5,866,32"/>
+<area shape="poly" title=" " alt="" coords="955,37,866,25,866,19,956,32"/>
+<area shape="rect" href="class_c_tcp_server.html#a79a0060f0b5d36f39a112b90b1cd79f3" title="关闭指定的客户端" alt="" coords="759,56,923,83"/>
+<area shape="poly" title=" " alt="" coords="956,56,923,61,923,55,955,51"/>
+<area shape="rect" href="class_c_tcp_server.html#ac8bb3912a3ce86b15842e79d0b421204" title=" " alt="" coords="539,5,665,32"/>
+<area shape="poly" title=" " alt="" coords="801,21,666,21,666,16,801,16"/>
+<area shape="rect" href="class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c" title="关闭服务器" alt="" coords="252,5,422,32"/>
+<area shape="poly" title=" " alt="" coords="523,21,422,21,422,16,523,16"/>
+<area shape="rect" href="class_c_tcp_server.html#a42c516f8283772da4f16ebc60d18c495" title=" " alt="" coords="5,5,181,32"/>
+<area shape="poly" title=" " alt="" coords="236,21,181,21,181,16,236,16"/>
+<area shape="rect" href="class_c_tcp_server.html#a912e3c6921d9bb6945c73142926de7d4" title=" " alt="" coords="493,56,711,83"/>
+<area shape="poly" title=" " alt="" coords="744,81,712,81,712,76,744,76"/>
+<area shape="poly" title=" " alt="" coords="727,58,759,58,759,63,727,63"/>
+<area shape="rect" href="class_c_tcp_server.html#ab9ffcc9ec3b3dea9a561f57814f24864" title="覆盖已获取多线程" alt="" coords="229,56,445,83"/>
+<area shape="poly" title=" " alt="" coords="477,72,445,72,445,67,477,67"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a41cca5e95a7c587d961d36d1f7353e62" name="a41cca5e95a7c587d961d36d1f7353e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41cca5e95a7c587d961d36d1f7353e62">&#9670;&#160;</a></span>initfist</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool initfist</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac913b3a1f6ef005d66bf7a84428773e" name="aac913b3a1f6ef005d66bf7a84428773e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac913b3a1f6ef005d66bf7a84428773e">&#9670;&#160;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10a9c2ecf217a8e3757e5ddb497d49bd" name="a10a9c2ecf217a8e3757e5ddb497d49bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a9c2ecf217a8e3757e5ddb497d49bd">&#9670;&#160;</a></span>threadSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QThread *, unsigned int&gt; threadSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65f534f131299d733e3d0ea32ef3f5c8" name="a65f534f131299d733e3d0ea32ef3f5c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f534f131299d733e3d0ea32ef3f5c8">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a9370bfb7398547a0d06a9da373cefcb8">ThreadType</a> type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="ctcpsocketserver_8h_source.html">ctcpsocketserver.h</a></li>
+<li><a class="el" href="ctcpsocketserver_8cpp.html">ctcpsocketserver.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_thread_handle.html">ThreadHandle</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

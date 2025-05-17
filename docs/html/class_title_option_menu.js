@@ -1,0 +1,26 @@
+var class_title_option_menu =
+[
+    [ "TitleOptionMenu", "class_title_option_menu.html#a57d0e56ccbf3704664639e9673b6fa2a", null ],
+    [ "about", "class_title_option_menu.html#a789158f29284880f41199bede88272e3", null ],
+    [ "aiHelpYou", "class_title_option_menu.html#a49d5ef1c44feffa90fe40f0c28a3067f", null ],
+    [ "appTool", "class_title_option_menu.html#a1e169b906c4d5fa45528b4ecfe8f02ac", null ],
+    [ "balance", "class_title_option_menu.html#aeceb989c9c8ba1acf0e2864e67351dc6", null ],
+    [ "checkUpdate", "class_title_option_menu.html#ae8f82605aa11f1862ba88ead2b93bce6", null ],
+    [ "community", "class_title_option_menu.html#af7028fb811766f46aa3d968cceaddcd0", null ],
+    [ "controller", "class_title_option_menu.html#a54b55b119fdadc6ceabfead41ef23be7", null ],
+    [ "earnCoin", "class_title_option_menu.html#a4426275b7391b9b0f2306b2bcf02ac1d", null ],
+    [ "exit", "class_title_option_menu.html#a358d2e2397ca11ccd17553e3c40e7901", null ],
+    [ "feedback", "class_title_option_menu.html#a2a5a97f9d0da647e025042874032b4c8", null ],
+    [ "getMenu", "class_title_option_menu.html#a5a008bc0047b462a7c217eeec32b49d5", null ],
+    [ "initMenu", "class_title_option_menu.html#a9b45abf428270b1d7e17309e9fc6fe1f", null ],
+    [ "logOut", "class_title_option_menu.html#abb302b08e02418eae7711116c2b2d627", null ],
+    [ "phonePlay", "class_title_option_menu.html#a416e0cfcf0b7e38394f608d4d424957d", null ],
+    [ "restoreWindow", "class_title_option_menu.html#ae152d0f1e1c2357171eec4c89387dc3a", null ],
+    [ "settings", "class_title_option_menu.html#a6071c2f6a6eab58f29a7a5baf3696e6b", null ],
+    [ "soundPlugin", "class_title_option_menu.html#a877d845029117a437a7fe07a3eab0249", null ],
+    [ "timeSetting", "class_title_option_menu.html#aa7305d48b840eb4cffb865d4f4d685e4", null ],
+    [ "updateInfo", "class_title_option_menu.html#af050eab7948f2ccf07027987c17e8b06", null ],
+    [ "uploadToDevice", "class_title_option_menu.html#ac4259789716967cf82c6a38134baf878", null ],
+    [ "useHelp", "class_title_option_menu.html#afa5dfee2da8dfe47e2f4b52553eeeb32", null ],
+    [ "wallpaper", "class_title_option_menu.html#a00602ee4d7a3ebcb4ade72a6f8a9bb7d", null ]
+];

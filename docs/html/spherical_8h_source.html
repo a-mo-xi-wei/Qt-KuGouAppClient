@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: spherical.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('spherical_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">spherical.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="spherical_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2016 Vittorio Giovara &lt;vittorio.giovara@gmail.com&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifndef AVUTIL_SPHERICAL_H</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define AVUTIL_SPHERICAL_H</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#ga689eeb8cf9b453f3619f3cf626e03a08">   51</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__video__spherical.html#ga689eeb8cf9b453f3619f3cf626e03a08">AVSphericalProjection</a> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08a55efbae149ee7a6e327a66be7061d146">   56</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08a55efbae149ee7a6e327a66be7061d146">AV_SPHERICAL_EQUIRECTANGULAR</a>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08aa0a8bc866354ecb619493db502c4d103">   65</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08aa0a8bc866354ecb619493db502c4d103">AV_SPHERICAL_CUBEMAP</a>,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08a768257247d4090b959ee1678f67bc9d3">   72</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08a768257247d4090b959ee1678f67bc9d3">AV_SPHERICAL_EQUIRECTANGULAR_TILE</a>,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html">   82</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_a_v_spherical_mapping.html">AVSphericalMapping</a> {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#af42e3d9596138282218a581959bd3ff1">   86</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__video__spherical.html#ga689eeb8cf9b453f3619f3cf626e03a08">AVSphericalProjection</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#af42e3d9596138282218a581959bd3ff1">projection</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#aef18a9ba5272cb8c60e7783d873cee59">  126</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#aef18a9ba5272cb8c60e7783d873cee59">yaw</a>;   </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#a7ffee739cc92424b3ea742b048838896">  127</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#a7ffee739cc92424b3ea742b048838896">pitch</a>; </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#a11ffccf5ecb7e7dd1ce763dfecf39179">  128</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#a11ffccf5ecb7e7dd1ce763dfecf39179">roll</a>;  </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#a05e256c99f22b28f99572f6e284434e4">  167</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#a05e256c99f22b28f99572f6e284434e4">bound_left</a>;   </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#a5d424bbd34fc7fa5ee5be60e33c7d357">  168</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#a5d424bbd34fc7fa5ee5be60e33c7d357">bound_top</a>;    </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#abbb8c87be5fa47fbd918244ca4c65881">  169</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#abbb8c87be5fa47fbd918244ca4c65881">bound_right</a>;  </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#a294c2a0f5893e1b154694a4d2fc7a750">  170</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#a294c2a0f5893e1b154694a4d2fc7a750">bound_bottom</a>; </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="struct_a_v_spherical_mapping.html#ab6fb7d5a3ecf4d82432f5b89881cfe21">  182</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="struct_a_v_spherical_mapping.html#ab6fb7d5a3ecf4d82432f5b89881cfe21">padding</a>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#gafa6b8950d48d0b56ae869e5cf0bcc94e">  183</a></span>} <a class="code hl_struct" href="struct_a_v_spherical_mapping.html">AVSphericalMapping</a>;</div>
+</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#ga2c987049465600d3a50e760fdaee9c60">  191</a></span><a class="code hl_struct" href="struct_a_v_spherical_mapping.html">AVSphericalMapping</a> *<a class="code hl_function" href="group__lavu__video__spherical.html#ga2c987049465600d3a50e760fdaee9c60">av_spherical_alloc</a>(<span class="keywordtype">size_t</span> *<a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#ga9c9a5f996f41bd0fe6f4c9908a70f98e">  205</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__lavu__video__spherical.html#ga9c9a5f996f41bd0fe6f4c9908a70f98e">av_spherical_tile_bounds</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_spherical_mapping.html">AVSphericalMapping</a> *<a class="code hl_enumvalue" href="bundled_2ranges_8h.html#a080be1238e6ee3bd4b9f193b4181cf4da1d78dc8ed51214e518b5114fe24490ae">map</a>,</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                              <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a9a82cf3caff84cabc4598e2619faac17">width</a>, <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#aa352f2804b9902ac30769c00dde75d5f">height</a>,</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                              <span class="keywordtype">size_t</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a85b8f6c07fbc1fb5d77c2ae090f21995">left</a>, <span class="keywordtype">size_t</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a5ab323daeacf8dfdb8f91132fecdca23">top</a>,</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                              <span class="keywordtype">size_t</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a5ffadbbacc6b89cf6218bc43b384d3fe">right</a>, <span class="keywordtype">size_t</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a95fc257e5ddf46f7db9d5e898cdf1991">bottom</a>);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#ga9b1f15e9eed3750144ec8322b9777c6b">  217</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="group__lavu__video__spherical.html#ga9b1f15e9eed3750144ec8322b9777c6b">av_spherical_projection_name</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__video__spherical.html#ga689eeb8cf9b453f3619f3cf626e03a08">AVSphericalProjection</a> projection);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="group__lavu__video__spherical.html#ga539173e8b22176710e1e0b728e4bd22f">  226</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__lavu__video__spherical.html#ga539173e8b22176710e1e0b728e4bd22f">av_spherical_from_name</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_SPHERICAL_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdoc">32 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:33</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_ab1967d8591af1a4e48c37fd2b0f184d0"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</a></div><div class="ttdeci">signed int int32_t</div><div class="ttdoc">32 位有符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:32</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a9a82cf3caff84cabc4598e2619faac17"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a9a82cf3caff84cabc4598e2619faac17">width</a></div><div class="ttdeci">GLint GLint GLsizei width</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1572</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_aa352f2804b9902ac30769c00dde75d5f"><div class="ttname"><a href="_s_d_l__opengl_8h.html#aa352f2804b9902ac30769c00dde75d5f">height</a></div><div class="ttdeci">GLint GLint GLsizei GLsizei height</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1572</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a5ab323daeacf8dfdb8f91132fecdca23"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a5ab323daeacf8dfdb8f91132fecdca23">top</a></div><div class="ttdeci">GLdouble GLdouble GLdouble GLdouble top</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:7110</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a5ffadbbacc6b89cf6218bc43b384d3fe"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a5ffadbbacc6b89cf6218bc43b384d3fe">right</a></div><div class="ttdeci">GLdouble GLdouble right</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:7110</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a85b8f6c07fbc1fb5d77c2ae090f21995"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a85b8f6c07fbc1fb5d77c2ae090f21995">left</a></div><div class="ttdeci">GLint left</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2223</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a8e1a4ccadfc12dbf9a8e411d68adfe8e"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a></div><div class="ttdeci">GLuint const GLchar * name</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:952</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a95fc257e5ddf46f7db9d5e898cdf1991"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a95fc257e5ddf46f7db9d5e898cdf1991">bottom</a></div><div class="ttdeci">GLint GLint bottom</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2223</div></div>
+<div class="ttc" id="abundled_2ranges_8h_html_a080be1238e6ee3bd4b9f193b4181cf4da1d78dc8ed51214e518b5114fe24490ae"><div class="ttname"><a href="bundled_2ranges_8h.html#a080be1238e6ee3bd4b9f193b4181cf4da1d78dc8ed51214e518b5114fe24490ae">range_format::map</a></div><div class="ttdeci">@ map</div><div class="ttdef"><b>定义</b> bundled/ranges.h:25</div></div>
+<div class="ttc" id="agroup__lavu__mem__funcs_html_ga9f139c614d49f2a707b6037305b0fec0"><div class="ttname"><a href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a></div><div class="ttdeci">GLsizeiptr size</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:829</div></div>
+<div class="ttc" id="agroup__lavu__video__spherical_html_ga2c987049465600d3a50e760fdaee9c60"><div class="ttname"><a href="group__lavu__video__spherical.html#ga2c987049465600d3a50e760fdaee9c60">av_spherical_alloc</a></div><div class="ttdeci">AVSphericalMapping * av_spherical_alloc(size_t *size)</div><div class="ttdoc">Allocate a AVSphericalVideo structure and initialize its fields to default values.</div></div>
+<div class="ttc" id="agroup__lavu__video__spherical_html_ga539173e8b22176710e1e0b728e4bd22f"><div class="ttname"><a href="group__lavu__video__spherical.html#ga539173e8b22176710e1e0b728e4bd22f">av_spherical_from_name</a></div><div class="ttdeci">int av_spherical_from_name(const char *name)</div><div class="ttdoc">Get the AVSphericalProjection form a human-readable name.</div></div>
+<div class="ttc" id="agroup__lavu__video__spherical_html_ga689eeb8cf9b453f3619f3cf626e03a08"><div class="ttname"><a href="group__lavu__video__spherical.html#ga689eeb8cf9b453f3619f3cf626e03a08">AVSphericalProjection</a></div><div class="ttdeci">AVSphericalProjection</div><div class="ttdoc">Projection of the video surface(s) on a sphere.</div><div class="ttdef"><b>定义</b> spherical.h:51</div></div>
+<div class="ttc" id="agroup__lavu__video__spherical_html_ga9b1f15e9eed3750144ec8322b9777c6b"><div class="ttname"><a href="group__lavu__video__spherical.html#ga9b1f15e9eed3750144ec8322b9777c6b">av_spherical_projection_name</a></div><div class="ttdeci">const char * av_spherical_projection_name(enum AVSphericalProjection projection)</div><div class="ttdoc">Provide a human-readable name of a given AVSphericalProjection.</div></div>
+<div class="ttc" id="agroup__lavu__video__spherical_html_ga9c9a5f996f41bd0fe6f4c9908a70f98e"><div class="ttname"><a href="group__lavu__video__spherical.html#ga9c9a5f996f41bd0fe6f4c9908a70f98e">av_spherical_tile_bounds</a></div><div class="ttdeci">void av_spherical_tile_bounds(const AVSphericalMapping *map, size_t width, size_t height, size_t *left, size_t *top, size_t *right, size_t *bottom)</div><div class="ttdoc">Convert the bounding fields from an AVSphericalVideo from 0.32 fixed point to pixels.</div></div>
+<div class="ttc" id="agroup__lavu__video__spherical_html_gga689eeb8cf9b453f3619f3cf626e03a08a55efbae149ee7a6e327a66be7061d146"><div class="ttname"><a href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08a55efbae149ee7a6e327a66be7061d146">AV_SPHERICAL_EQUIRECTANGULAR</a></div><div class="ttdeci">@ AV_SPHERICAL_EQUIRECTANGULAR</div><div class="ttdoc">Video represents a sphere mapped on a flat surface using equirectangular projection.</div><div class="ttdef"><b>定义</b> spherical.h:56</div></div>
+<div class="ttc" id="agroup__lavu__video__spherical_html_gga689eeb8cf9b453f3619f3cf626e03a08a768257247d4090b959ee1678f67bc9d3"><div class="ttname"><a href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08a768257247d4090b959ee1678f67bc9d3">AV_SPHERICAL_EQUIRECTANGULAR_TILE</a></div><div class="ttdeci">@ AV_SPHERICAL_EQUIRECTANGULAR_TILE</div><div class="ttdoc">Video represents a portion of a sphere mapped on a flat surface using equirectangular projection.</div><div class="ttdef"><b>定义</b> spherical.h:72</div></div>
+<div class="ttc" id="agroup__lavu__video__spherical_html_gga689eeb8cf9b453f3619f3cf626e03a08aa0a8bc866354ecb619493db502c4d103"><div class="ttname"><a href="group__lavu__video__spherical.html#gga689eeb8cf9b453f3619f3cf626e03a08aa0a8bc866354ecb619493db502c4d103">AV_SPHERICAL_CUBEMAP</a></div><div class="ttdeci">@ AV_SPHERICAL_CUBEMAP</div><div class="ttdoc">Video frame is split into 6 faces of a cube, and arranged on a 3x2 layout.</div><div class="ttdef"><b>定义</b> spherical.h:65</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html"><div class="ttname"><a href="struct_a_v_spherical_mapping.html">AVSphericalMapping</a></div><div class="ttdoc">This structure describes how to handle spherical videos, outlining information about projection,...</div><div class="ttdef"><b>定义</b> spherical.h:82</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_a05e256c99f22b28f99572f6e284434e4"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#a05e256c99f22b28f99572f6e284434e4">AVSphericalMapping::bound_left</a></div><div class="ttdeci">uint32_t bound_left</div><div class="ttdoc">Distance from the left edge</div><div class="ttdef"><b>定义</b> spherical.h:167</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_a11ffccf5ecb7e7dd1ce763dfecf39179"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#a11ffccf5ecb7e7dd1ce763dfecf39179">AVSphericalMapping::roll</a></div><div class="ttdeci">int32_t roll</div><div class="ttdoc">Rotation around the forward vector [-180, 180].</div><div class="ttdef"><b>定义</b> spherical.h:128</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_a294c2a0f5893e1b154694a4d2fc7a750"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#a294c2a0f5893e1b154694a4d2fc7a750">AVSphericalMapping::bound_bottom</a></div><div class="ttdeci">uint32_t bound_bottom</div><div class="ttdoc">Distance from the bottom edge</div><div class="ttdef"><b>定义</b> spherical.h:170</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_a5d424bbd34fc7fa5ee5be60e33c7d357"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#a5d424bbd34fc7fa5ee5be60e33c7d357">AVSphericalMapping::bound_top</a></div><div class="ttdeci">uint32_t bound_top</div><div class="ttdoc">Distance from the top edge</div><div class="ttdef"><b>定义</b> spherical.h:168</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_a7ffee739cc92424b3ea742b048838896"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#a7ffee739cc92424b3ea742b048838896">AVSphericalMapping::pitch</a></div><div class="ttdeci">int32_t pitch</div><div class="ttdoc">Rotation around the right vector [-90, 90].</div><div class="ttdef"><b>定义</b> spherical.h:127</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_ab6fb7d5a3ecf4d82432f5b89881cfe21"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#ab6fb7d5a3ecf4d82432f5b89881cfe21">AVSphericalMapping::padding</a></div><div class="ttdeci">uint32_t padding</div><div class="ttdoc">Number of pixels to pad from the edge of each cube face.</div><div class="ttdef"><b>定义</b> spherical.h:182</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_abbb8c87be5fa47fbd918244ca4c65881"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#abbb8c87be5fa47fbd918244ca4c65881">AVSphericalMapping::bound_right</a></div><div class="ttdeci">uint32_t bound_right</div><div class="ttdoc">Distance from the right edge</div><div class="ttdef"><b>定义</b> spherical.h:169</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_aef18a9ba5272cb8c60e7783d873cee59"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#aef18a9ba5272cb8c60e7783d873cee59">AVSphericalMapping::yaw</a></div><div class="ttdeci">int32_t yaw</div><div class="ttdoc">Rotation around the up vector [-180, 180].</div><div class="ttdef"><b>定义</b> spherical.h:126</div></div>
+<div class="ttc" id="astruct_a_v_spherical_mapping_html_af42e3d9596138282218a581959bd3ff1"><div class="ttname"><a href="struct_a_v_spherical_mapping.html#af42e3d9596138282218a581959bd3ff1">AVSphericalMapping::projection</a></div><div class="ttdeci">enum AVSphericalProjection projection</div><div class="ttdoc">Projection type.</div><div class="ttdef"><b>定义</b> spherical.h:86</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="spherical_8h.html">spherical.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

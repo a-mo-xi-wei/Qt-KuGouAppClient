@@ -1,0 +1,59 @@
+<map id="sendJson" name="sendJson">
+<area shape="rect" id="Node000001" title="发送json数据" alt="" coords="5,81,83,108"/>
+<area shape="rect" id="Node000002" href="$class_c_tcp_socket.html#a772f8f0487e0d3804e9da7585e23a29a" title="检测是否连接成功" alt="" coords="131,31,225,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,78,126,61,127,66,82,83"/>
+<area shape="rect" id="Node000003" href="$rc4_8c.html#a58d5132953c5c591c30e530bce22a9fa" title="RC4 加密" alt="" coords="133,81,223,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,92,117,92,117,97,83,97"/>
+<area shape="rect" id="Node000007" href="$class_c_tcp_socket.html#afb4fe951d4366e86d50539952d8bda64" title="发送数据" alt="" coords="153,157,202,184"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="71,106,141,147,138,152,68,111"/>
+<area shape="rect" id="Node000004" href="$rc4_8c.html#adf70156276596c6a3c50bcdfea4fa9c9" title="执行 RC4 加密/解密" alt="" coords="308,56,356,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="223,85,292,73,293,78,224,90"/>
+<area shape="rect" id="Node000005" href="$rc4_8c.html#ada1a8eb0a1f2f4724d974bfc6d6b1920" title="生成 RC4 密钥状态数组" alt="" coords="468,56,533,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="356,67,452,67,452,72,356,72"/>
+<area shape="rect" id="Node000006" href="$rc4_8c.html#a84af851bdc7d54287ef4634e9bc8b384" title="交换两个字节" alt="" coords="613,5,697,32"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="356,60,438,41,597,21,597,26,439,47,357,65"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="533,56,597,35,599,40,534,61"/>
+<area shape="rect" id="Node000008" href="$rc4_8c.html#ae978f8ebbe17c03d4768507eeb907b81" title="计算校验和" alt="" coords="291,208,372,235"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="204,176,277,201,275,206,202,181"/>
+<area shape="rect" id="Node000009" href="$fastlz_8c.html#aa8b12c16f2514c6cd2a6748a9d6bce4d" title="通用压缩函数" alt="" coords="273,157,390,184"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="203,168,258,168,258,173,203,173"/>
+<area shape="rect" id="Node000010" href="$fastlz_8c.html#a1f149a66a870832b28adbd7a3e0464e3" title="级别 1 压缩实现" alt="" coords="438,157,563,184"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="391,168,423,168,423,173,391,173"/>
+<area shape="rect" id="Node000025" href="$fastlz_8c.html#a06ae67595a80640a59169dfa4a5c8b44" title="级别 2 压缩实现" alt="" coords="438,208,563,235"/>
+<area shape="poly" id="edge25_Node000009_Node000025" title=" " alt="" coords="380,182,440,200,438,205,378,187"/>
+<area shape="rect" id="Node000011" href="$fastlz_8c.html#ae3fa1b75c06606b5876ae53a208b0869" title="级别 1 压缩的匹配编码" alt="" coords="612,56,698,83"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="519,155,609,92,615,89,618,93,612,97,522,159"/>
+<area shape="rect" id="Node000012" href="$fastlz_8c.html#a4734cddbda700701b928ea1c9462a280" title="比较两个数据块" alt="" coords="621,107,688,133"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="543,154,606,133,608,138,545,159"/>
+<area shape="rect" id="Node000013" href="$fastlz_8c.html#aad3ee3ccbad499327027d24ea6140169" title="最终字面量处理" alt="" coords="613,157,696,184"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="563,168,598,168,598,173,563,173"/>
+<area shape="rect" id="Node000016" href="$fastlz_8c.html#a68cbcb6b0d615ae53e2303a4a9b5ab70" title="计算哈希值" alt="" coords="620,208,690,235"/>
+<area shape="poly" id="edge16_Node000010_Node000016" title=" " alt="" coords="545,182,606,203,604,208,543,187"/>
+<area shape="rect" id="Node000017" href="$fastlz_8c.html#a154d7b313ffcf534c30642f0af6d4641" title="处理字面量数据" alt="" coords="615,259,695,285"/>
+<area shape="poly" id="edge17_Node000010_Node000017" title=" " alt="" coords="543,182,564,194,579,207,589,219,612,245,616,248,613,252,609,249,585,222,576,210,561,198,540,187"/>
+<area shape="rect" id="Node000020" href="$fastlz_8c.html#a840ac800deb7c00f2994ef2663819817" title="读取 32 位无符号整数" alt="" coords="611,309,699,336"/>
+<area shape="poly" id="edge20_Node000010_Node000020" title=" " alt="" coords="548,182,565,194,583,220,590,245,597,270,613,296,615,297,611,301,609,299,592,272,585,246,578,222,561,198,545,187"/>
+<area shape="rect" id="Node000014" href="$fastlz_8c.html#a741b9a31afd0f8c4a7d1409952d7497a" title="小块数据复制" alt="" coords="747,157,848,184"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="697,168,731,168,731,173,697,173"/>
+<area shape="rect" id="Node000015" href="$fastlz_8c.html#a95d18238c9acb9ac4e0748cb7a14527f" title="内存复制函数" alt="" coords="896,157,1007,184"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="849,168,881,168,881,173,849,173"/>
+<area shape="rect" id="Node000018" href="$fastlz_8c.html#a9f138722d5b4cca13b3dace840c7c458" title="复制 256 位数据块" alt="" coords="752,208,843,235"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="694,256,743,238,744,243,696,261"/>
+<area shape="rect" id="Node000019" href="$fastlz_8c.html#a468c19b0a79f2f5c072cf17c5cc969a3" title="复制 64 位数据块" alt="" coords="756,259,840,285"/>
+<area shape="poly" id="edge19_Node000017_Node000019" title=" " alt="" coords="696,269,740,269,740,275,696,275"/>
+<area shape="rect" id="Node000021" href="$format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="778,309,817,336"/>
+<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="699,320,763,320,763,325,699,325"/>
+<area shape="rect" id="Node000022" href="$namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="898,309,1005,336"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="817,320,883,320,883,325,817,325"/>
+<area shape="rect" id="Node000023" href="$namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="1055,301,1182,344"/>
+<area shape="poly" id="edge23_Node000022_Node000023" title=" " alt="" coords="1005,320,1039,320,1039,325,1005,325"/>
+<area shape="rect" id="Node000024" href="$namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="1230,309,1374,336"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="1183,320,1214,320,1214,325,1183,325"/>
+<area shape="poly" id="edge27_Node000025_Node000012" title=" " alt="" coords="540,205,561,194,576,182,585,170,609,143,613,140,616,144,612,147,589,173,579,185,564,198,543,210"/>
+<area shape="poly" id="edge28_Node000025_Node000013" title=" " alt="" coords="543,205,598,186,600,191,545,210"/>
+<area shape="poly" id="edge29_Node000025_Node000016" title=" " alt="" coords="563,219,604,219,604,224,563,224"/>
+<area shape="poly" id="edge30_Node000025_Node000017" title=" " alt="" coords="545,233,601,252,599,257,543,238"/>
+<area shape="poly" id="edge31_Node000025_Node000020" title=" " alt="" coords="522,233,612,295,618,299,615,303,609,300,519,237"/>
+<area shape="rect" id="Node000026" href="$fastlz_8c.html#a08ac84ecce13045966548dcfd8af87a9" title="级别 2 压缩的匹配编码" alt="" coords="612,360,698,387"/>
+<area shape="poly" id="edge26_Node000025_Node000026" title=" " alt="" coords="513,234,554,286,582,317,612,346,616,349,613,353,609,350,578,321,550,289,509,237"/>
+</map>

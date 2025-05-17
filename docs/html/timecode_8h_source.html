@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: timecode.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('timecode_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">timecode.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="timecode_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2006 Smartjog S.A.S, Baptiste Coudurier &lt;baptiste.coudurier@gmail.com&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (c) 2011-2012 Smartjog S.A.S, Clément Bœsch &lt;clement.boesch@smartjog.com&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifndef AVUTIL_TIMECODE_H</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define AVUTIL_TIMECODE_H</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="rational_8h.html">rational.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="timecode_8h.html#a60186b13997e64a4aca71ff641634f9d">   33</a></span><span class="preprocessor">#define AV_TIMECODE_STR_SIZE 23</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="timecode_8h.html#ad0e6464512b7849a2d14593708079219">   35</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="timecode_8h.html#ad0e6464512b7849a2d14593708079219">AVTimecodeFlag</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="timecode_8h.html#ad0e6464512b7849a2d14593708079219a4cacf5e87e2f19987c5e931be20a5c33">   36</a></span>    <a class="code hl_enumvalue" href="timecode_8h.html#ad0e6464512b7849a2d14593708079219a4cacf5e87e2f19987c5e931be20a5c33">AV_TIMECODE_FLAG_DROPFRAME</a>      = 1&lt;&lt;0, </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="timecode_8h.html#ad0e6464512b7849a2d14593708079219abf78793ae8e9e28a4f85bb1a76992f1b">   37</a></span>    <a class="code hl_enumvalue" href="timecode_8h.html#ad0e6464512b7849a2d14593708079219abf78793ae8e9e28a4f85bb1a76992f1b">AV_TIMECODE_FLAG_24HOURSMAX</a>     = 1&lt;&lt;1, </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="timecode_8h.html#ad0e6464512b7849a2d14593708079219a373f53f5f7544e479b6c6b36b254fc8d">   38</a></span>    <a class="code hl_enumvalue" href="timecode_8h.html#ad0e6464512b7849a2d14593708079219a373f53f5f7544e479b6c6b36b254fc8d">AV_TIMECODE_FLAG_ALLOWNEGATIVE</a>  = 1&lt;&lt;2, </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_a_v_timecode.html">   41</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_a_v_timecode.html#a37722a150250e2a5a98e5e0d11e53449">   42</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_timecode.html#a37722a150250e2a5a98e5e0d11e53449">start</a>;          </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_a_v_timecode.html#a773b39d480759f67926cb18ae2219281">   43</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="struct_a_v_timecode.html#a773b39d480759f67926cb18ae2219281">flags</a>;     </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_a_v_timecode.html#a41849dbb26a62d36bdde4688af988e2c">   44</a></span>    <a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a> <a class="code hl_variable" href="struct_a_v_timecode.html#a41849dbb26a62d36bdde4688af988e2c">rate</a>;    </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_a_v_timecode.html#ab46947bd68db9c8738e2c4db58945b34">   45</a></span>    <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="struct_a_v_timecode.html#ab46947bd68db9c8738e2c4db58945b34">fps</a>;       </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>} <a class="code hl_struct" href="struct_a_v_timecode.html">AVTimecode</a>;</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="timecode_8h.html#aef6b950d708ea805b970c16e71a97869">   56</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="timecode_8h.html#aef6b950d708ea805b970c16e71a97869">av_timecode_adjust_ntsc_framenum2</a>(<span class="keywordtype">int</span> framenum, <span class="keywordtype">int</span> fps);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="timecode_8h.html#ae3045b65cc54f72e9d53d3c97a5f4da5">   71</a></span><a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_function" href="timecode_8h.html#ae3045b65cc54f72e9d53d3c97a5f4da5">av_timecode_get_smpte_from_framenum</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_timecode.html">AVTimecode</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a>, <span class="keywordtype">int</span> framenum);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="timecode_8h.html#a3cf17766b8b4a214cb8ce6b951b4e57f">   85</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="timecode_8h.html#a3cf17766b8b4a214cb8ce6b951b4e57f">av_timecode_make_string</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_timecode.html">AVTimecode</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a>, <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <span class="keywordtype">int</span> framenum);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="timecode_8h.html#ae149f0f90d8b6a99101faa7287039a57">   96</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="timecode_8h.html#ae149f0f90d8b6a99101faa7287039a57">av_timecode_make_smpte_tc_string</a>(<span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> tcsmpte, <span class="keywordtype">int</span> prevent_df);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="timecode_8h.html#a57a52c9716f1a772c99bff0b9673b808">  105</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="timecode_8h.html#a57a52c9716f1a772c99bff0b9673b808">av_timecode_make_mpeg_tc_string</a>(<span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> tc25bit);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="timecode_8h.html#ad279cd982964a2f8cc7adfa01533b412">  119</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="timecode_8h.html#ad279cd982964a2f8cc7adfa01533b412">av_timecode_init</a>(<a class="code hl_struct" href="struct_a_v_timecode.html">AVTimecode</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a>, <a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, <span class="keywordtype">int</span> frame_start, <span class="keywordtype">void</span> *log_ctx);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="timecode_8h.html#a02596c9d431329a3acc646c943b1c800">  131</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="timecode_8h.html#a02596c9d431329a3acc646c943b1c800">av_timecode_init_from_string</a>(<a class="code hl_struct" href="struct_a_v_timecode.html">AVTimecode</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a>, <a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *str, <span class="keywordtype">void</span> *log_ctx);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="timecode_8h.html#ae181c7f842ad64c2e75c320e46f4edfc">  138</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="timecode_8h.html#ae181c7f842ad64c2e75c320e46f4edfc">av_timecode_check_frame_rate</a>(<a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_TIMECODE_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdoc">32 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:33</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a43852a2c335d759d3298864e65def49f"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a></div><div class="ttdeci">GLuint GLenum * rate</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:11461</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a45e774067520be559b8e78373132a9ec"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a45e774067520be559b8e78373132a9ec">tc</a></div><div class="ttdeci">const GLfloat * tc</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:13149</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa3b73d9ca9f2e2396cbeae1ce6ce14be"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a></div><div class="ttdeci">GLenum GLuint GLenum GLsizei const GLchar * buf</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2759</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa9459b47e7388437191d2d9a69c10d98"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a></div><div class="ttdeci">GLbitfield flags</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1754</div></div>
+<div class="ttc" id="arational_8h_html"><div class="ttname"><a href="rational_8h.html">rational.h</a></div><div class="ttdoc">Utilties for rational number calculation.</div></div>
+<div class="ttc" id="astruct_a_v_rational_html"><div class="ttname"><a href="struct_a_v_rational.html">AVRational</a></div><div class="ttdoc">Rational number (pair of numerator and denominator).</div><div class="ttdef"><b>定义</b> rational.h:58</div></div>
+<div class="ttc" id="astruct_a_v_timecode_html"><div class="ttname"><a href="struct_a_v_timecode.html">AVTimecode</a></div><div class="ttdef"><b>定义</b> timecode.h:41</div></div>
+<div class="ttc" id="astruct_a_v_timecode_html_a37722a150250e2a5a98e5e0d11e53449"><div class="ttname"><a href="struct_a_v_timecode.html#a37722a150250e2a5a98e5e0d11e53449">AVTimecode::start</a></div><div class="ttdeci">int start</div><div class="ttdoc">timecode frame start (first base frame number)</div><div class="ttdef"><b>定义</b> timecode.h:42</div></div>
+<div class="ttc" id="astruct_a_v_timecode_html_a41849dbb26a62d36bdde4688af988e2c"><div class="ttname"><a href="struct_a_v_timecode.html#a41849dbb26a62d36bdde4688af988e2c">AVTimecode::rate</a></div><div class="ttdeci">AVRational rate</div><div class="ttdoc">frame rate in rational form</div><div class="ttdef"><b>定义</b> timecode.h:44</div></div>
+<div class="ttc" id="astruct_a_v_timecode_html_a773b39d480759f67926cb18ae2219281"><div class="ttname"><a href="struct_a_v_timecode.html#a773b39d480759f67926cb18ae2219281">AVTimecode::flags</a></div><div class="ttdeci">uint32_t flags</div><div class="ttdoc">flags such as drop frame, +24 hours support, ...</div><div class="ttdef"><b>定义</b> timecode.h:43</div></div>
+<div class="ttc" id="astruct_a_v_timecode_html_ab46947bd68db9c8738e2c4db58945b34"><div class="ttname"><a href="struct_a_v_timecode.html#ab46947bd68db9c8738e2c4db58945b34">AVTimecode::fps</a></div><div class="ttdeci">unsigned fps</div><div class="ttdoc">frame per second; must be consistent with the rate field</div><div class="ttdef"><b>定义</b> timecode.h:45</div></div>
+<div class="ttc" id="atimecode_8h_html_a02596c9d431329a3acc646c943b1c800"><div class="ttname"><a href="timecode_8h.html#a02596c9d431329a3acc646c943b1c800">av_timecode_init_from_string</a></div><div class="ttdeci">int av_timecode_init_from_string(AVTimecode *tc, AVRational rate, const char *str, void *log_ctx)</div><div class="ttdoc">Parse timecode representation (hh:mm:ss[:;.</div></div>
+<div class="ttc" id="atimecode_8h_html_a3cf17766b8b4a214cb8ce6b951b4e57f"><div class="ttname"><a href="timecode_8h.html#a3cf17766b8b4a214cb8ce6b951b4e57f">av_timecode_make_string</a></div><div class="ttdeci">char * av_timecode_make_string(const AVTimecode *tc, char *buf, int framenum)</div><div class="ttdoc">Load timecode string in buf.</div></div>
+<div class="ttc" id="atimecode_8h_html_a57a52c9716f1a772c99bff0b9673b808"><div class="ttname"><a href="timecode_8h.html#a57a52c9716f1a772c99bff0b9673b808">av_timecode_make_mpeg_tc_string</a></div><div class="ttdeci">char * av_timecode_make_mpeg_tc_string(char *buf, uint32_t tc25bit)</div><div class="ttdoc">Get the timecode string from the 25-bit timecode format (MPEG GOP format).</div></div>
+<div class="ttc" id="atimecode_8h_html_ad0e6464512b7849a2d14593708079219"><div class="ttname"><a href="timecode_8h.html#ad0e6464512b7849a2d14593708079219">AVTimecodeFlag</a></div><div class="ttdeci">AVTimecodeFlag</div><div class="ttdef"><b>定义</b> timecode.h:35</div></div>
+<div class="ttc" id="atimecode_8h_html_ad0e6464512b7849a2d14593708079219a373f53f5f7544e479b6c6b36b254fc8d"><div class="ttname"><a href="timecode_8h.html#ad0e6464512b7849a2d14593708079219a373f53f5f7544e479b6c6b36b254fc8d">AV_TIMECODE_FLAG_ALLOWNEGATIVE</a></div><div class="ttdeci">@ AV_TIMECODE_FLAG_ALLOWNEGATIVE</div><div class="ttdoc">negative time values are allowed</div><div class="ttdef"><b>定义</b> timecode.h:38</div></div>
+<div class="ttc" id="atimecode_8h_html_ad0e6464512b7849a2d14593708079219a4cacf5e87e2f19987c5e931be20a5c33"><div class="ttname"><a href="timecode_8h.html#ad0e6464512b7849a2d14593708079219a4cacf5e87e2f19987c5e931be20a5c33">AV_TIMECODE_FLAG_DROPFRAME</a></div><div class="ttdeci">@ AV_TIMECODE_FLAG_DROPFRAME</div><div class="ttdoc">timecode is drop frame</div><div class="ttdef"><b>定义</b> timecode.h:36</div></div>
+<div class="ttc" id="atimecode_8h_html_ad0e6464512b7849a2d14593708079219abf78793ae8e9e28a4f85bb1a76992f1b"><div class="ttname"><a href="timecode_8h.html#ad0e6464512b7849a2d14593708079219abf78793ae8e9e28a4f85bb1a76992f1b">AV_TIMECODE_FLAG_24HOURSMAX</a></div><div class="ttdeci">@ AV_TIMECODE_FLAG_24HOURSMAX</div><div class="ttdoc">timecode wraps after 24 hours</div><div class="ttdef"><b>定义</b> timecode.h:37</div></div>
+<div class="ttc" id="atimecode_8h_html_ad279cd982964a2f8cc7adfa01533b412"><div class="ttname"><a href="timecode_8h.html#ad279cd982964a2f8cc7adfa01533b412">av_timecode_init</a></div><div class="ttdeci">int av_timecode_init(AVTimecode *tc, AVRational rate, int flags, int frame_start, void *log_ctx)</div><div class="ttdoc">Init a timecode struct with the passed parameters.</div></div>
+<div class="ttc" id="atimecode_8h_html_ae149f0f90d8b6a99101faa7287039a57"><div class="ttname"><a href="timecode_8h.html#ae149f0f90d8b6a99101faa7287039a57">av_timecode_make_smpte_tc_string</a></div><div class="ttdeci">char * av_timecode_make_smpte_tc_string(char *buf, uint32_t tcsmpte, int prevent_df)</div><div class="ttdoc">Get the timecode string from the SMPTE timecode format.</div></div>
+<div class="ttc" id="atimecode_8h_html_ae181c7f842ad64c2e75c320e46f4edfc"><div class="ttname"><a href="timecode_8h.html#ae181c7f842ad64c2e75c320e46f4edfc">av_timecode_check_frame_rate</a></div><div class="ttdeci">int av_timecode_check_frame_rate(AVRational rate)</div><div class="ttdoc">Check if the timecode feature is available for the given frame rate</div></div>
+<div class="ttc" id="atimecode_8h_html_ae3045b65cc54f72e9d53d3c97a5f4da5"><div class="ttname"><a href="timecode_8h.html#ae3045b65cc54f72e9d53d3c97a5f4da5">av_timecode_get_smpte_from_framenum</a></div><div class="ttdeci">uint32_t av_timecode_get_smpte_from_framenum(const AVTimecode *tc, int framenum)</div><div class="ttdoc">Convert frame number to SMPTE 12M binary representation.</div></div>
+<div class="ttc" id="atimecode_8h_html_aef6b950d708ea805b970c16e71a97869"><div class="ttname"><a href="timecode_8h.html#aef6b950d708ea805b970c16e71a97869">av_timecode_adjust_ntsc_framenum2</a></div><div class="ttdeci">int av_timecode_adjust_ntsc_framenum2(int framenum, int fps)</div><div class="ttdoc">Adjust frame number for NTSC drop frame time code.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="timecode_8h.html">timecode.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

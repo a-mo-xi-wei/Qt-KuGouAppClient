@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AVDownmixInfo结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_a_v_downmix_info.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="struct_a_v_downmix_info-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">AVDownmixInfo结构体 参考<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__audio.html">Audio related</a> &raquo; <a class="el" href="group__downmix__info.html">Audio downmix metadata</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This structure describes optional metadata relevant to a downmix procedure.  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="downmix__info_8h_source.html">downmix_info.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:afb2cb438c632861a84163d647e064621" id="r_afb2cb438c632861a84163d647e064621"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__downmix__info.html#ga3e3654fedbe3e5485f00ea09396c3521">AVDownmixType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb2cb438c632861a84163d647e064621">preferred_downmix_type</a></td></tr>
+<tr class="memdesc:afb2cb438c632861a84163d647e064621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of downmix preferred by the mastering engineer.  <br /></td></tr>
+<tr class="separator:afb2cb438c632861a84163d647e064621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ee74b91b49010600903d04a274cb26" id="r_a62ee74b91b49010600903d04a274cb26"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62ee74b91b49010600903d04a274cb26">center_mix_level</a></td></tr>
+<tr class="memdesc:a62ee74b91b49010600903d04a274cb26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute scale factor representing the nominal level of the center channel during a regular downmix.  <br /></td></tr>
+<tr class="separator:a62ee74b91b49010600903d04a274cb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3242fab5c828d684f3a994cd949aeca1" id="r_a3242fab5c828d684f3a994cd949aeca1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3242fab5c828d684f3a994cd949aeca1">center_mix_level_ltrt</a></td></tr>
+<tr class="memdesc:a3242fab5c828d684f3a994cd949aeca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute scale factor representing the nominal level of the center channel during an Lt/Rt compatible downmix.  <br /></td></tr>
+<tr class="separator:a3242fab5c828d684f3a994cd949aeca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8c42747721489414b8700faff81cad7" id="r_ae8c42747721489414b8700faff81cad7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8c42747721489414b8700faff81cad7">surround_mix_level</a></td></tr>
+<tr class="memdesc:ae8c42747721489414b8700faff81cad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute scale factor representing the nominal level of the surround channels during a regular downmix.  <br /></td></tr>
+<tr class="separator:ae8c42747721489414b8700faff81cad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1107e5f8ca83150b11d55e5ada515baf" id="r_a1107e5f8ca83150b11d55e5ada515baf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1107e5f8ca83150b11d55e5ada515baf">surround_mix_level_ltrt</a></td></tr>
+<tr class="memdesc:a1107e5f8ca83150b11d55e5ada515baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute scale factor representing the nominal level of the surround channels during an Lt/Rt compatible downmix.  <br /></td></tr>
+<tr class="separator:a1107e5f8ca83150b11d55e5ada515baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb58b99b14a358597300a9889af21be" id="r_a5fb58b99b14a358597300a9889af21be"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fb58b99b14a358597300a9889af21be">lfe_mix_level</a></td></tr>
+<tr class="memdesc:a5fb58b99b14a358597300a9889af21be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute scale factor representing the level at which the LFE data is mixed into L/R channels during downmixing.  <br /></td></tr>
+<tr class="separator:a5fb58b99b14a358597300a9889af21be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>This structure describes optional metadata relevant to a downmix procedure. </p>
+<p>All fields are set by the decoder to the value indicated in the audio bitstream (if present), or to a "sane" default otherwise. </p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="a62ee74b91b49010600903d04a274cb26" name="a62ee74b91b49010600903d04a274cb26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ee74b91b49010600903d04a274cb26">&#9670;&#160;</a></span>center_mix_level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double center_mix_level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Absolute scale factor representing the nominal level of the center channel during a regular downmix. </p>
+
+</div>
+</div>
+<a id="a3242fab5c828d684f3a994cd949aeca1" name="a3242fab5c828d684f3a994cd949aeca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3242fab5c828d684f3a994cd949aeca1">&#9670;&#160;</a></span>center_mix_level_ltrt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double center_mix_level_ltrt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Absolute scale factor representing the nominal level of the center channel during an Lt/Rt compatible downmix. </p>
+
+</div>
+</div>
+<a id="a5fb58b99b14a358597300a9889af21be" name="a5fb58b99b14a358597300a9889af21be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb58b99b14a358597300a9889af21be">&#9670;&#160;</a></span>lfe_mix_level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lfe_mix_level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Absolute scale factor representing the level at which the LFE data is mixed into L/R channels during downmixing. </p>
+
+</div>
+</div>
+<a id="afb2cb438c632861a84163d647e064621" name="afb2cb438c632861a84163d647e064621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2cb438c632861a84163d647e064621">&#9670;&#160;</a></span>preferred_downmix_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__downmix__info.html#ga3e3654fedbe3e5485f00ea09396c3521">AVDownmixType</a> preferred_downmix_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type of downmix preferred by the mastering engineer. </p>
+
+</div>
+</div>
+<a id="ae8c42747721489414b8700faff81cad7" name="ae8c42747721489414b8700faff81cad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8c42747721489414b8700faff81cad7">&#9670;&#160;</a></span>surround_mix_level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double surround_mix_level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Absolute scale factor representing the nominal level of the surround channels during a regular downmix. </p>
+
+</div>
+</div>
+<a id="a1107e5f8ca83150b11d55e5ada515baf" name="a1107e5f8ca83150b11d55e5ada515baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1107e5f8ca83150b11d55e5ada515baf">&#9670;&#160;</a></span>surround_mix_level_ltrt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double surround_mix_level_ltrt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Absolute scale factor representing the nominal level of the surround channels during an Lt/Rt compatible downmix. </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="downmix__info_8h_source.html">downmix_info.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_a_v_downmix_info.html">AVDownmixInfo</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

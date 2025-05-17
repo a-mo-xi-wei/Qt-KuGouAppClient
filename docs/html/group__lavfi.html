@@ -1,0 +1,1866 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: libavfilter</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavfi.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">专题</a> &#124;
+<a href="#files">文件</a> &#124;
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">libavfilter</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Graph-based frame editing library.  
+<a href="#details">更多...</a></p>
+<div class="dynheader">
+libavfilter 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavfi.png" border="0" usemap="#agroup____lavfi" alt=""/></div>
+<map name="agroup____lavfi" id="agroup____lavfi">
+<area shape="rect" title="Graph&#45;based frame editing library." alt="" coords="5,31,79,57"/>
+<area shape="rect" href="group__lavfi__buffersink.html" title=" " alt="" coords="134,5,242,32"/>
+<area shape="rect" href="group__lavfi__buffersrc.html" title=" " alt="" coords="127,56,250,83"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+专题</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html">Buffer sink API</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersrc.html">Buffer source API</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+文件</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">文件 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avfilter_8h.html">avfilter.h</a></td></tr>
+<tr class="memdesc:avfilter_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main libavfilter public API header <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">文件 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tools_2ffmpeg_2win64_2include_2libavfilter_2version_8h.html">version.h</a></td></tr>
+<tr class="memdesc:tools_2ffmpeg_2win64_2include_2libavfilter_2version_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libavfilter version macros <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_filter.html">AVFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter definition.  <a href="struct_a_v_filter.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An instance of a filter  <a href="struct_a_v_filter_context.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_filter_link.html">AVFilterLink</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A link between two filters.  <a href="struct_a_v_filter_link.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A linked-list of the inputs/outputs of the filter chain.  <a href="struct_a_v_filter_in_out.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:gae6ed6c10a03508829bdf17560e3e10e5" id="r_gae6ed6c10a03508829bdf17560e3e10e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae6ed6c10a03508829bdf17560e3e10e5">AVFILTER_FLAG_DYNAMIC_INPUTS</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memdesc:gae6ed6c10a03508829bdf17560e3e10e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the filter inputs is not determined just by <a class="el" href="struct_a_v_filter.html#a4f849ace8696f7847b8bdba67bcd288f" title="List of inputs, terminated by a zeroed element.">AVFilter.inputs</a>.  <br /></td></tr>
+<tr class="separator:gae6ed6c10a03508829bdf17560e3e10e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c5c173875bdbbbbaad943a5d951846d" id="r_ga1c5c173875bdbbbbaad943a5d951846d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1c5c173875bdbbbbaad943a5d951846d">AVFILTER_FLAG_DYNAMIC_OUTPUTS</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="memdesc:ga1c5c173875bdbbbbaad943a5d951846d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the filter outputs is not determined just by <a class="el" href="struct_a_v_filter.html#a16ee3c2b6a84b3f65786c94fe824e9f7" title="List of outputs, terminated by a zeroed element.">AVFilter.outputs</a>.  <br /></td></tr>
+<tr class="separator:ga1c5c173875bdbbbbaad943a5d951846d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacad757479a5b22c367dd37408a9844fd" id="r_gacad757479a5b22c367dd37408a9844fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacad757479a5b22c367dd37408a9844fd">AVFILTER_FLAG_SLICE_THREADS</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="memdesc:gacad757479a5b22c367dd37408a9844fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The filter supports multithreading by splitting frames into multiple parts and processing them concurrently.  <br /></td></tr>
+<tr class="separator:gacad757479a5b22c367dd37408a9844fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00c4b8da7d5d89fa4ddc5dcdf72bffca" id="r_ga00c4b8da7d5d89fa4ddc5dcdf72bffca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga00c4b8da7d5d89fa4ddc5dcdf72bffca">AVFILTER_FLAG_SUPPORT_TIMELINE_GENERIC</a>&#160;&#160;&#160;(1 &lt;&lt; 16)</td></tr>
+<tr class="memdesc:ga00c4b8da7d5d89fa4ddc5dcdf72bffca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some filters support a generic "enable" expression option that can be used to enable or disable a filter in the timeline.  <br /></td></tr>
+<tr class="separator:ga00c4b8da7d5d89fa4ddc5dcdf72bffca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae225339ad292450a5832296f58f0d424" id="r_gae225339ad292450a5832296f58f0d424"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae225339ad292450a5832296f58f0d424">AVFILTER_FLAG_SUPPORT_TIMELINE_INTERNAL</a>&#160;&#160;&#160;(1 &lt;&lt; 17)</td></tr>
+<tr class="memdesc:gae225339ad292450a5832296f58f0d424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as AVFILTER_FLAG_SUPPORT_TIMELINE_GENERIC, except that the filter will have its filter_frame() callback(s) called as usual even when the enable expression is false.  <br /></td></tr>
+<tr class="separator:gae225339ad292450a5832296f58f0d424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa7c47b597777253aaa41dd6c7b41a8a2" id="r_gaa7c47b597777253aaa41dd6c7b41a8a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa7c47b597777253aaa41dd6c7b41a8a2">AVFILTER_FLAG_SUPPORT_TIMELINE</a>&#160;&#160;&#160;(<a class="el" href="#ga00c4b8da7d5d89fa4ddc5dcdf72bffca">AVFILTER_FLAG_SUPPORT_TIMELINE_GENERIC</a> | <a class="el" href="#gae225339ad292450a5832296f58f0d424">AVFILTER_FLAG_SUPPORT_TIMELINE_INTERNAL</a>)</td></tr>
+<tr class="memdesc:gaa7c47b597777253aaa41dd6c7b41a8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handy mask to test whether the filter supports or no the timeline feature (internally or generically).  <br /></td></tr>
+<tr class="separator:gaa7c47b597777253aaa41dd6c7b41a8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga872969bce62dd528ffb91a1096d9f99a" id="r_ga872969bce62dd528ffb91a1096d9f99a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga872969bce62dd528ffb91a1096d9f99a">AVFILTER_THREAD_SLICE</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memdesc:ga872969bce62dd528ffb91a1096d9f99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process multiple parts of the frame concurrently.  <br /></td></tr>
+<tr class="separator:ga872969bce62dd528ffb91a1096d9f99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace41bae000b621fc8804a93ce9f2d6e9" id="r_gace41bae000b621fc8804a93ce9f2d6e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gace41bae000b621fc8804a93ce9f2d6e9">AVFILTER_CMD_FLAG_ONE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gace41bae000b621fc8804a93ce9f2d6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop once a filter understood the command (for target=all for example), fast filters are favored automatically  <br /></td></tr>
+<tr class="separator:gace41bae000b621fc8804a93ce9f2d6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7b6836b786ef62d5a5d58941e948d74" id="r_gae7b6836b786ef62d5a5d58941e948d74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae7b6836b786ef62d5a5d58941e948d74">AVFILTER_CMD_FLAG_FAST</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:gae7b6836b786ef62d5a5d58941e948d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only execute command when its fast (like a video out that supports contrast adjustment in hw)  <br /></td></tr>
+<tr class="separator:gae7b6836b786ef62d5a5d58941e948d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga7df813052b320829fb91b6e84acf5c84" id="r_ga7df813052b320829fb91b6e84acf5c84"><td class="memItemLeft" align="right" valign="top">typedef struct AVFilterContext&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7df813052b320829fb91b6e84acf5c84">AVFilterContext</a></td></tr>
+<tr class="separator:ga7df813052b320829fb91b6e84acf5c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3eb02002abaa0341437d3127658fe04e" id="r_ga3eb02002abaa0341437d3127658fe04e"><td class="memItemLeft" align="right" valign="top">typedef struct AVFilterLink&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3eb02002abaa0341437d3127658fe04e">AVFilterLink</a></td></tr>
+<tr class="separator:ga3eb02002abaa0341437d3127658fe04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga067d805667c8575b55712d728a16ce7f" id="r_ga067d805667c8575b55712d728a16ce7f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a></td></tr>
+<tr class="separator:ga067d805667c8575b55712d728a16ce7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac71769d0eb79494d0cc095ac2ad0914b" id="r_gac71769d0eb79494d0cc095ac2ad0914b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#gac71769d0eb79494d0cc095ac2ad0914b">AVFilterFormats</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac71769d0eb79494d0cc095ac2ad0914b">AVFilterFormats</a></td></tr>
+<tr class="separator:gac71769d0eb79494d0cc095ac2ad0914b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5fc066e5b4c8900f7b8560295026127c" id="r_ga5fc066e5b4c8900f7b8560295026127c"><td class="memItemLeft" align="right" valign="top">typedef struct AVFilter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5fc066e5b4c8900f7b8560295026127c">AVFilter</a></td></tr>
+<tr class="memdesc:ga5fc066e5b4c8900f7b8560295026127c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter definition.  <br /></td></tr>
+<tr class="separator:ga5fc066e5b4c8900f7b8560295026127c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga740cb7cf0f6f69e142b89163b0691708" id="r_ga740cb7cf0f6f69e142b89163b0691708"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#ga740cb7cf0f6f69e142b89163b0691708">AVFilterInternal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga740cb7cf0f6f69e142b89163b0691708">AVFilterInternal</a></td></tr>
+<tr class="separator:ga740cb7cf0f6f69e142b89163b0691708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa34cc0f3d5e4d49806c6c40aac97a963" id="r_gaa34cc0f3d5e4d49806c6c40aac97a963"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#gaa34cc0f3d5e4d49806c6c40aac97a963">AVFilterGraphInternal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa34cc0f3d5e4d49806c6c40aac97a963">AVFilterGraphInternal</a></td></tr>
+<tr class="separator:gaa34cc0f3d5e4d49806c6c40aac97a963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e6f7959a95bc9d98a691295a212ae22" id="r_ga5e6f7959a95bc9d98a691295a212ae22"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5e6f7959a95bc9d98a691295a212ae22">avfilter_action_func</a>(<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, int jobnr, int nb_jobs)</td></tr>
+<tr class="memdesc:ga5e6f7959a95bc9d98a691295a212ae22"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function pointer passed to the <a class="el" href="struct_a_v_filter_graph.html#ac83fc0b71d36ddbedbaa060925d0e8e0">execute</a> callback to be executed multiple times, possibly in parallel.  <br /></td></tr>
+<tr class="separator:ga5e6f7959a95bc9d98a691295a212ae22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade98daa6925168ffad07e1c819ce7639" id="r_gade98daa6925168ffad07e1c819ce7639"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gade98daa6925168ffad07e1c819ce7639">avfilter_execute_func</a>(<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="#ga5e6f7959a95bc9d98a691295a212ae22">avfilter_action_func</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a18ae3ab36a07e388833b568cfdfa90c8">func</a>, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, int *ret, int nb_jobs)</td></tr>
+<tr class="memdesc:gade98daa6925168ffad07e1c819ce7639"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function executing multiple jobs, possibly in parallel.  <br /></td></tr>
+<tr class="separator:gade98daa6925168ffad07e1c819ce7639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a0140a4e3ca1302b2f840fb7b211da7" id="r_ga5a0140a4e3ca1302b2f840fb7b211da7"><td class="memItemLeft" align="right" valign="top">typedef struct AVFilterGraph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5a0140a4e3ca1302b2f840fb7b211da7">AVFilterGraph</a></td></tr>
+<tr class="separator:ga5a0140a4e3ca1302b2f840fb7b211da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf57904eefa8300377f2199acbfdd920" id="r_gacf57904eefa8300377f2199acbfdd920"><td class="memItemLeft" align="right" valign="top">typedef struct AVFilterInOut&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacf57904eefa8300377f2199acbfdd920">AVFilterInOut</a></td></tr>
+<tr class="memdesc:gacf57904eefa8300377f2199acbfdd920"><td class="mdescLeft">&#160;</td><td class="mdescRight">A linked-list of the inputs/outputs of the filter chain.  <br /></td></tr>
+<tr class="separator:gacf57904eefa8300377f2199acbfdd920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ga693167f629e33edf66a597803d3f5d2d" id="r_ga693167f629e33edf66a597803d3f5d2d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#gga693167f629e33edf66a597803d3f5d2da385b5a02cfa6899d888c996309cb82ed">AVFILTER_AUTO_CONVERT_ALL</a> = 0
+, <a class="el" href="#gga693167f629e33edf66a597803d3f5d2da065142be87c3afee01ef498654fde0b4">AVFILTER_AUTO_CONVERT_NONE</a> = -1
+ }</td></tr>
+<tr class="separator:ga693167f629e33edf66a597803d3f5d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gab2e80a6bf5de47a81f64471e73524a6a" id="r_gab2e80a6bf5de47a81f64471e73524a6a"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab2e80a6bf5de47a81f64471e73524a6a">avfilter_version</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gab2e80a6bf5de47a81f64471e73524a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the LIBAVFILTER_VERSION_INT constant.  <br /></td></tr>
+<tr class="separator:gab2e80a6bf5de47a81f64471e73524a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31eacee1ca745f3f850664fd852c076a" id="r_ga31eacee1ca745f3f850664fd852c076a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga31eacee1ca745f3f850664fd852c076a">avfilter_configuration</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ga31eacee1ca745f3f850664fd852c076a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the libavfilter build-time configuration.  <br /></td></tr>
+<tr class="separator:ga31eacee1ca745f3f850664fd852c076a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90c557ccefd4cddaccab1958db28a0f3" id="r_ga90c557ccefd4cddaccab1958db28a0f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga90c557ccefd4cddaccab1958db28a0f3">avfilter_license</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ga90c557ccefd4cddaccab1958db28a0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the libavfilter license.  <br /></td></tr>
+<tr class="separator:ga90c557ccefd4cddaccab1958db28a0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae13acb5396b0204c3641502677db2f49" id="r_gae13acb5396b0204c3641502677db2f49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae13acb5396b0204c3641502677db2f49">avfilter_pad_count</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a> *pads)</td></tr>
+<tr class="memdesc:gae13acb5396b0204c3641502677db2f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of elements in a NULL-terminated array of AVFilterPads (e.g.  <br /></td></tr>
+<tr class="separator:gae13acb5396b0204c3641502677db2f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61def10b756a26a8eee41f9f5c0cc1f2" id="r_ga61def10b756a26a8eee41f9f5c0cc1f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga61def10b756a26a8eee41f9f5c0cc1f2">avfilter_pad_get_name</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a> *pads, int pad_idx)</td></tr>
+<tr class="memdesc:ga61def10b756a26a8eee41f9f5c0cc1f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of an <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a>.  <br /></td></tr>
+<tr class="separator:ga61def10b756a26a8eee41f9f5c0cc1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d241a0066fc3724ec3335e25bc3912e" id="r_ga2d241a0066fc3724ec3335e25bc3912e"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2d241a0066fc3724ec3335e25bc3912e">avfilter_pad_get_type</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a> *pads, int pad_idx)</td></tr>
+<tr class="memdesc:ga2d241a0066fc3724ec3335e25bc3912e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of an <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a>.  <br /></td></tr>
+<tr class="separator:ga2d241a0066fc3724ec3335e25bc3912e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc6247ebae2c591e768c8555174402f1" id="r_gabc6247ebae2c591e768c8555174402f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabc6247ebae2c591e768c8555174402f1">avfilter_link</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>, unsigned srcpad, <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, unsigned dstpad)</td></tr>
+<tr class="memdesc:gabc6247ebae2c591e768c8555174402f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link two filters together.  <br /></td></tr>
+<tr class="separator:gabc6247ebae2c591e768c8555174402f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb88c44589fa57729637817f26826193" id="r_gacb88c44589fa57729637817f26826193"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacb88c44589fa57729637817f26826193">avfilter_link_free</a> (<a class="el" href="struct_a_v_filter_link.html">AVFilterLink</a> **link)</td></tr>
+<tr class="memdesc:gacb88c44589fa57729637817f26826193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the link in *link, and set its pointer to NULL.  <br /></td></tr>
+<tr class="separator:gacb88c44589fa57729637817f26826193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f20a579fb5853f55fe17443a2dfea41" id="r_ga0f20a579fb5853f55fe17443a2dfea41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0f20a579fb5853f55fe17443a2dfea41">avfilter_link_set_closed</a> (<a class="el" href="struct_a_v_filter_link.html">AVFilterLink</a> *link, int closed)</td></tr>
+<tr class="memdesc:ga0f20a579fb5853f55fe17443a2dfea41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the closed field of a link.  <br /></td></tr>
+<tr class="separator:ga0f20a579fb5853f55fe17443a2dfea41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab06aaeb012cc4fed64620c0e8064e002" id="r_gab06aaeb012cc4fed64620c0e8064e002"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab06aaeb012cc4fed64620c0e8064e002">avfilter_config_links</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter</a>)</td></tr>
+<tr class="memdesc:gab06aaeb012cc4fed64620c0e8064e002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negotiate the media format, dimensions, etc of all inputs to a filter.  <br /></td></tr>
+<tr class="separator:gab06aaeb012cc4fed64620c0e8064e002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7265908e69b4eaa69a4947a093743f26" id="r_ga7265908e69b4eaa69a4947a093743f26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7265908e69b4eaa69a4947a093743f26">avfilter_process_command</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *cmd, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a1dbb21208b9047cc8031ca9c840d3c2f">res</a>, int res_len, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:ga7265908e69b4eaa69a4947a093743f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make the filter instance process a command.  <br /></td></tr>
+<tr class="separator:ga7265908e69b4eaa69a4947a093743f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga670c742e72d6a155c0513f5c57fd0e56" id="r_ga670c742e72d6a155c0513f5c57fd0e56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter.html">AVFilter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga670c742e72d6a155c0513f5c57fd0e56">av_filter_iterate</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **opaque)</td></tr>
+<tr class="memdesc:ga670c742e72d6a155c0513f5c57fd0e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all registered filters.  <br /></td></tr>
+<tr class="separator:ga670c742e72d6a155c0513f5c57fd0e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga198251521e31686e14d9f2adb30b8c35" id="r_ga198251521e31686e14d9f2adb30b8c35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter.html">AVFilter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga198251521e31686e14d9f2adb30b8c35">avfilter_get_by_name</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>)</td></tr>
+<tr class="memdesc:ga198251521e31686e14d9f2adb30b8c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a filter definition matching the given name.  <br /></td></tr>
+<tr class="separator:ga198251521e31686e14d9f2adb30b8c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d21eb00b9f24213bd7c5775393a09fd" id="r_ga0d21eb00b9f24213bd7c5775393a09fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0d21eb00b9f24213bd7c5775393a09fd">avfilter_init_str</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *args)</td></tr>
+<tr class="memdesc:ga0d21eb00b9f24213bd7c5775393a09fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a filter with the supplied parameters.  <br /></td></tr>
+<tr class="separator:ga0d21eb00b9f24213bd7c5775393a09fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c15af28902395399fe455f6f8236848" id="r_ga8c15af28902395399fe455f6f8236848"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8c15af28902395399fe455f6f8236848">avfilter_init_dict</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **options)</td></tr>
+<tr class="memdesc:ga8c15af28902395399fe455f6f8236848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a filter with the supplied dictionary of options.  <br /></td></tr>
+<tr class="separator:ga8c15af28902395399fe455f6f8236848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ea7664a3ce6bb677a830698d358a179" id="r_ga0ea7664a3ce6bb677a830698d358a179"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0ea7664a3ce6bb677a830698d358a179">avfilter_free</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter</a>)</td></tr>
+<tr class="memdesc:ga0ea7664a3ce6bb677a830698d358a179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a filter context.  <br /></td></tr>
+<tr class="separator:ga0ea7664a3ce6bb677a830698d358a179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d2740a8679ff5086f680547eb0a08e0" id="r_ga0d2740a8679ff5086f680547eb0a08e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0d2740a8679ff5086f680547eb0a08e0">avfilter_insert_filter</a> (<a class="el" href="struct_a_v_filter_link.html">AVFilterLink</a> *link, <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *filt, unsigned filt_srcpad_idx, unsigned filt_dstpad_idx)</td></tr>
+<tr class="memdesc:ga0d2740a8679ff5086f680547eb0a08e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a filter in the middle of an existing link.  <br /></td></tr>
+<tr class="separator:ga0d2740a8679ff5086f680547eb0a08e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac31877287e8b0bef4f2a78f246784645" id="r_gac31877287e8b0bef4f2a78f246784645"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac31877287e8b0bef4f2a78f246784645">avfilter_get_class</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="separator:gac31877287e8b0bef4f2a78f246784645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf973363641e8f5c7db932590cc731cb1" id="r_gaf973363641e8f5c7db932590cc731cb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf973363641e8f5c7db932590cc731cb1">avfilter_graph_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gaf973363641e8f5c7db932590cc731cb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a filter graph.  <br /></td></tr>
+<tr class="separator:gaf973363641e8f5c7db932590cc731cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c22522f0149ba1a6e1342084c6cef7c" id="r_ga5c22522f0149ba1a6e1342084c6cef7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5c22522f0149ba1a6e1342084c6cef7c">avfilter_graph_alloc_filter</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter.html">AVFilter</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>)</td></tr>
+<tr class="memdesc:ga5c22522f0149ba1a6e1342084c6cef7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new filter instance in a filter graph.  <br /></td></tr>
+<tr class="separator:ga5c22522f0149ba1a6e1342084c6cef7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38f9270ac7cf593d21a857bddaaa5ac6" id="r_ga38f9270ac7cf593d21a857bddaaa5ac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga38f9270ac7cf593d21a857bddaaa5ac6">avfilter_graph_get_filter</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>)</td></tr>
+<tr class="memdesc:ga38f9270ac7cf593d21a857bddaaa5ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a filter instance identified by instance name from graph.  <br /></td></tr>
+<tr class="separator:ga38f9270ac7cf593d21a857bddaaa5ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0788a9ab6966dba9318b5d5c7524fea" id="r_gac0788a9ab6966dba9318b5d5c7524fea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac0788a9ab6966dba9318b5d5c7524fea">avfilter_graph_create_filter</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> **filt_ctx, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter.html">AVFilter</a> *filt, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *args, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *opaque, <a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph_ctx)</td></tr>
+<tr class="memdesc:gac0788a9ab6966dba9318b5d5c7524fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and add a filter instance into an existing graph.  <br /></td></tr>
+<tr class="separator:gac0788a9ab6966dba9318b5d5c7524fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7e75e3df70de53fae2cf7950c1247a8" id="r_gae7e75e3df70de53fae2cf7950c1247a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae7e75e3df70de53fae2cf7950c1247a8">avfilter_graph_set_auto_convert</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, unsigned <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:gae7e75e3df70de53fae2cf7950c1247a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable automatic format conversion inside the graph.  <br /></td></tr>
+<tr class="separator:gae7e75e3df70de53fae2cf7950c1247a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1896c46b7bc6ff1bdb1a4815faa9ad07" id="r_ga1896c46b7bc6ff1bdb1a4815faa9ad07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1896c46b7bc6ff1bdb1a4815faa9ad07">avfilter_graph_config</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graphctx, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *log_ctx)</td></tr>
+<tr class="memdesc:ga1896c46b7bc6ff1bdb1a4815faa9ad07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check validity and configure all the links and formats in the graph.  <br /></td></tr>
+<tr class="separator:ga1896c46b7bc6ff1bdb1a4815faa9ad07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga871684449dac05050df238a18d0d493b" id="r_ga871684449dac05050df238a18d0d493b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga871684449dac05050df238a18d0d493b">avfilter_graph_free</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> **graph)</td></tr>
+<tr class="memdesc:ga871684449dac05050df238a18d0d493b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a graph, destroy its links, and set *graph to NULL.  <br /></td></tr>
+<tr class="separator:ga871684449dac05050df238a18d0d493b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed598b086db45e36ea5d2e884ba09789" id="r_gaed598b086db45e36ea5d2e884ba09789"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaed598b086db45e36ea5d2e884ba09789">avfilter_inout_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gaed598b086db45e36ea5d2e884ba09789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a single <a class="el" href="struct_a_v_filter_in_out.html" title="A linked-list of the inputs/outputs of the filter chain.">AVFilterInOut</a> entry.  <br /></td></tr>
+<tr class="separator:gaed598b086db45e36ea5d2e884ba09789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga294500a9856260eb1552354fd9d9a6c4" id="r_ga294500a9856260eb1552354fd9d9a6c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga294500a9856260eb1552354fd9d9a6c4">avfilter_inout_free</a> (<a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **inout)</td></tr>
+<tr class="memdesc:ga294500a9856260eb1552354fd9d9a6c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the supplied list of <a class="el" href="struct_a_v_filter_in_out.html" title="A linked-list of the inputs/outputs of the filter chain.">AVFilterInOut</a> and set *inout to NULL.  <br /></td></tr>
+<tr class="separator:ga294500a9856260eb1552354fd9d9a6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4718e1716c0a0d9343d49ff10d542cb" id="r_gab4718e1716c0a0d9343d49ff10d542cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab4718e1716c0a0d9343d49ff10d542cb">avfilter_graph_parse</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *filters, <a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> *inputs, <a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> *outputs, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *log_ctx)</td></tr>
+<tr class="memdesc:gab4718e1716c0a0d9343d49ff10d542cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a graph described by a string to a graph.  <br /></td></tr>
+<tr class="separator:gab4718e1716c0a0d9343d49ff10d542cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34f4ff420bd58da6747a3ff1fbedd001" id="r_ga34f4ff420bd58da6747a3ff1fbedd001"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga34f4ff420bd58da6747a3ff1fbedd001">avfilter_graph_parse_ptr</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *filters, <a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **inputs, <a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **outputs, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *log_ctx)</td></tr>
+<tr class="memdesc:ga34f4ff420bd58da6747a3ff1fbedd001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a graph described by a string to a graph.  <br /></td></tr>
+<tr class="separator:ga34f4ff420bd58da6747a3ff1fbedd001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c3c39e0861653c71a23f90d1397239d" id="r_ga6c3c39e0861653c71a23f90d1397239d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c3c39e0861653c71a23f90d1397239d">avfilter_graph_parse2</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *filters, <a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **inputs, <a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **outputs)</td></tr>
+<tr class="memdesc:ga6c3c39e0861653c71a23f90d1397239d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a graph described by a string to a graph.  <br /></td></tr>
+<tr class="separator:ga6c3c39e0861653c71a23f90d1397239d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaad7850fb5fe26d35e5d371ca75b79e1" id="r_gaaad7850fb5fe26d35e5d371ca75b79e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaad7850fb5fe26d35e5d371ca75b79e1">avfilter_graph_send_command</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa43eab0fe80422366a4602998d53b133">target</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *cmd, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a1dbb21208b9047cc8031ca9c840d3c2f">res</a>, int res_len, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:gaaad7850fb5fe26d35e5d371ca75b79e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a command to one or more filter instances.  <br /></td></tr>
+<tr class="separator:gaaad7850fb5fe26d35e5d371ca75b79e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3140b3cd7bf9a80c2dfa868dcf7ac541" id="r_ga3140b3cd7bf9a80c2dfa868dcf7ac541"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3140b3cd7bf9a80c2dfa868dcf7ac541">avfilter_graph_queue_command</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa43eab0fe80422366a4602998d53b133">target</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *cmd, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, double ts)</td></tr>
+<tr class="memdesc:ga3140b3cd7bf9a80c2dfa868dcf7ac541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a command for one or more filter instances.  <br /></td></tr>
+<tr class="separator:ga3140b3cd7bf9a80c2dfa868dcf7ac541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1df24c543f8441afad8599d20a912221" id="r_ga1df24c543f8441afad8599d20a912221"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1df24c543f8441afad8599d20a912221">avfilter_graph_dump</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *options)</td></tr>
+<tr class="memdesc:ga1df24c543f8441afad8599d20a912221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump a graph into a human-readable string representation.  <br /></td></tr>
+<tr class="separator:ga1df24c543f8441afad8599d20a912221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab20535e0685fb5f9b4f02e436412c3f0" id="r_gab20535e0685fb5f9b4f02e436412c3f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab20535e0685fb5f9b4f02e436412c3f0">avfilter_graph_request_oldest</a> (<a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *graph)</td></tr>
+<tr class="memdesc:gab20535e0685fb5f9b4f02e436412c3f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a frame on the oldest sink link.  <br /></td></tr>
+<tr class="separator:gab20535e0685fb5f9b4f02e436412c3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>Graph-based frame editing library. </p>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="gae7b6836b786ef62d5a5d58941e948d74" name="gae7b6836b786ef62d5a5d58941e948d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae7b6836b786ef62d5a5d58941e948d74">&#9670;&#160;</a></span>AVFILTER_CMD_FLAG_FAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_CMD_FLAG_FAST&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Only execute command when its fast (like a video out that supports contrast adjustment in hw) </p>
+
+</div>
+</div>
+<a id="gace41bae000b621fc8804a93ce9f2d6e9" name="gace41bae000b621fc8804a93ce9f2d6e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace41bae000b621fc8804a93ce9f2d6e9">&#9670;&#160;</a></span>AVFILTER_CMD_FLAG_ONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_CMD_FLAG_ONE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop once a filter understood the command (for target=all for example), fast filters are favored automatically </p>
+
+</div>
+</div>
+<a id="gae6ed6c10a03508829bdf17560e3e10e5" name="gae6ed6c10a03508829bdf17560e3e10e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae6ed6c10a03508829bdf17560e3e10e5">&#9670;&#160;</a></span>AVFILTER_FLAG_DYNAMIC_INPUTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_FLAG_DYNAMIC_INPUTS&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of the filter inputs is not determined just by <a class="el" href="struct_a_v_filter.html#a4f849ace8696f7847b8bdba67bcd288f" title="List of inputs, terminated by a zeroed element.">AVFilter.inputs</a>. </p>
+<p>The filter might add additional inputs during initialization depending on the options supplied to it. </p>
+
+</div>
+</div>
+<a id="ga1c5c173875bdbbbbaad943a5d951846d" name="ga1c5c173875bdbbbbaad943a5d951846d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c5c173875bdbbbbaad943a5d951846d">&#9670;&#160;</a></span>AVFILTER_FLAG_DYNAMIC_OUTPUTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_FLAG_DYNAMIC_OUTPUTS&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of the filter outputs is not determined just by <a class="el" href="struct_a_v_filter.html#a16ee3c2b6a84b3f65786c94fe824e9f7" title="List of outputs, terminated by a zeroed element.">AVFilter.outputs</a>. </p>
+<p>The filter might add additional outputs during initialization depending on the options supplied to it. </p>
+
+</div>
+</div>
+<a id="gacad757479a5b22c367dd37408a9844fd" name="gacad757479a5b22c367dd37408a9844fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacad757479a5b22c367dd37408a9844fd">&#9670;&#160;</a></span>AVFILTER_FLAG_SLICE_THREADS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_FLAG_SLICE_THREADS&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The filter supports multithreading by splitting frames into multiple parts and processing them concurrently. </p>
+
+</div>
+</div>
+<a id="gaa7c47b597777253aaa41dd6c7b41a8a2" name="gaa7c47b597777253aaa41dd6c7b41a8a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa7c47b597777253aaa41dd6c7b41a8a2">&#9670;&#160;</a></span>AVFILTER_FLAG_SUPPORT_TIMELINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_FLAG_SUPPORT_TIMELINE&#160;&#160;&#160;(<a class="el" href="#ga00c4b8da7d5d89fa4ddc5dcdf72bffca">AVFILTER_FLAG_SUPPORT_TIMELINE_GENERIC</a> | <a class="el" href="#gae225339ad292450a5832296f58f0d424">AVFILTER_FLAG_SUPPORT_TIMELINE_INTERNAL</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handy mask to test whether the filter supports or no the timeline feature (internally or generically). </p>
+
+</div>
+</div>
+<a id="ga00c4b8da7d5d89fa4ddc5dcdf72bffca" name="ga00c4b8da7d5d89fa4ddc5dcdf72bffca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00c4b8da7d5d89fa4ddc5dcdf72bffca">&#9670;&#160;</a></span>AVFILTER_FLAG_SUPPORT_TIMELINE_GENERIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_FLAG_SUPPORT_TIMELINE_GENERIC&#160;&#160;&#160;(1 &lt;&lt; 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Some filters support a generic "enable" expression option that can be used to enable or disable a filter in the timeline. </p>
+<p>Filters supporting this option have this flag set. When the enable expression is false, the default no-op filter_frame() function is called in place of the filter_frame() callback defined on each input pad, thus the frame is passed unchanged to the next filters. </p>
+
+</div>
+</div>
+<a id="gae225339ad292450a5832296f58f0d424" name="gae225339ad292450a5832296f58f0d424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae225339ad292450a5832296f58f0d424">&#9670;&#160;</a></span>AVFILTER_FLAG_SUPPORT_TIMELINE_INTERNAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_FLAG_SUPPORT_TIMELINE_INTERNAL&#160;&#160;&#160;(1 &lt;&lt; 17)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as AVFILTER_FLAG_SUPPORT_TIMELINE_GENERIC, except that the filter will have its filter_frame() callback(s) called as usual even when the enable expression is false. </p>
+<p>The filter will disable filtering within the filter_frame() callback(s) itself, for example executing code depending on the AVFilterContext-&gt;is_disabled value. </p>
+
+</div>
+</div>
+<a id="ga872969bce62dd528ffb91a1096d9f99a" name="ga872969bce62dd528ffb91a1096d9f99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga872969bce62dd528ffb91a1096d9f99a">&#9670;&#160;</a></span>AVFILTER_THREAD_SLICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVFILTER_THREAD_SLICE&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Process multiple parts of the frame concurrently. </p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ga5fc066e5b4c8900f7b8560295026127c" name="ga5fc066e5b4c8900f7b8560295026127c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5fc066e5b4c8900f7b8560295026127c">&#9670;&#160;</a></span>AVFilter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVFilter AVFilter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filter definition. </p>
+<p>This defines the pads a filter contains, and all the callback functions used to interact with the filter. </p>
+
+</div>
+</div>
+<a id="ga5e6f7959a95bc9d98a691295a212ae22" name="ga5e6f7959a95bc9d98a691295a212ae22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e6f7959a95bc9d98a691295a212ae22">&#9670;&#160;</a></span>avfilter_action_func</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int avfilter_action_func(<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, int jobnr, int nb_jobs)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function pointer passed to the <a class="el" href="struct_a_v_filter_graph.html#ac83fc0b71d36ddbedbaa060925d0e8e0">execute</a> callback to be executed multiple times, possibly in parallel. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>the filter context the job belongs to </td></tr>
+    <tr><td class="paramname">arg</td><td>an opaque parameter passed through from <a class="el" href="struct_a_v_filter_graph.html#ac83fc0b71d36ddbedbaa060925d0e8e0">execute</a> </td></tr>
+    <tr><td class="paramname">jobnr</td><td>the index of the job being executed </td></tr>
+    <tr><td class="paramname">nb_jobs</td><td>the total number of jobs</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on error </dd></dl>
+
+</div>
+</div>
+<a id="gade98daa6925168ffad07e1c819ce7639" name="gade98daa6925168ffad07e1c819ce7639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade98daa6925168ffad07e1c819ce7639">&#9670;&#160;</a></span>avfilter_execute_func</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int avfilter_execute_func(<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="#ga5e6f7959a95bc9d98a691295a212ae22">avfilter_action_func</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a18ae3ab36a07e388833b568cfdfa90c8">func</a>, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, int *ret, int nb_jobs)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function executing multiple jobs, possibly in parallel. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>the filter context to which the jobs belong </td></tr>
+    <tr><td class="paramname">func</td><td>the function to be called multiple times </td></tr>
+    <tr><td class="paramname">arg</td><td>the argument to be passed to func </td></tr>
+    <tr><td class="paramname">ret</td><td>a nb_jobs-sized array to be filled with return values from each invocation of func </td></tr>
+    <tr><td class="paramname">nb_jobs</td><td>the number of jobs to execute</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on error </dd></dl>
+
+</div>
+</div>
+<a id="ga7df813052b320829fb91b6e84acf5c84" name="ga7df813052b320829fb91b6e84acf5c84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7df813052b320829fb91b6e84acf5c84">&#9670;&#160;</a></span>AVFilterContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVFilterContext AVFilterContext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac71769d0eb79494d0cc095ac2ad0914b" name="gac71769d0eb79494d0cc095ac2ad0914b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac71769d0eb79494d0cc095ac2ad0914b">&#9670;&#160;</a></span>AVFilterFormats</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#gac71769d0eb79494d0cc095ac2ad0914b">AVFilterFormats</a> <a class="el" href="#gac71769d0eb79494d0cc095ac2ad0914b">AVFilterFormats</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5a0140a4e3ca1302b2f840fb7b211da7" name="ga5a0140a4e3ca1302b2f840fb7b211da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a0140a4e3ca1302b2f840fb7b211da7">&#9670;&#160;</a></span>AVFilterGraph</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVFilterGraph AVFilterGraph</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa34cc0f3d5e4d49806c6c40aac97a963" name="gaa34cc0f3d5e4d49806c6c40aac97a963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa34cc0f3d5e4d49806c6c40aac97a963">&#9670;&#160;</a></span>AVFilterGraphInternal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#gaa34cc0f3d5e4d49806c6c40aac97a963">AVFilterGraphInternal</a> <a class="el" href="#gaa34cc0f3d5e4d49806c6c40aac97a963">AVFilterGraphInternal</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gacf57904eefa8300377f2199acbfdd920" name="gacf57904eefa8300377f2199acbfdd920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf57904eefa8300377f2199acbfdd920">&#9670;&#160;</a></span>AVFilterInOut</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVFilterInOut AVFilterInOut</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A linked-list of the inputs/outputs of the filter chain. </p>
+<p>This is mainly useful for <a class="el" href="#gab4718e1716c0a0d9343d49ff10d542cb" title="Add a graph described by a string to a graph.">avfilter_graph_parse()</a> / <a class="el" href="#ga6c3c39e0861653c71a23f90d1397239d" title="Add a graph described by a string to a graph.">avfilter_graph_parse2()</a>, where it is used to communicate open (unlinked) inputs and outputs from and to the caller. This struct specifies, per each not connected pad contained in the graph, the filter context and the pad index required for establishing a link. </p>
+
+</div>
+</div>
+<a id="ga740cb7cf0f6f69e142b89163b0691708" name="ga740cb7cf0f6f69e142b89163b0691708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga740cb7cf0f6f69e142b89163b0691708">&#9670;&#160;</a></span>AVFilterInternal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#ga740cb7cf0f6f69e142b89163b0691708">AVFilterInternal</a> <a class="el" href="#ga740cb7cf0f6f69e142b89163b0691708">AVFilterInternal</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3eb02002abaa0341437d3127658fe04e" name="ga3eb02002abaa0341437d3127658fe04e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3eb02002abaa0341437d3127658fe04e">&#9670;&#160;</a></span>AVFilterLink</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVFilterLink AVFilterLink</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga067d805667c8575b55712d728a16ce7f" name="ga067d805667c8575b55712d728a16ce7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga067d805667c8575b55712d728a16ce7f">&#9670;&#160;</a></span>AVFilterPad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a> <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="ga693167f629e33edf66a597803d3f5d2d" name="ga693167f629e33edf66a597803d3f5d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga693167f629e33edf66a597803d3f5d2d">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="gga693167f629e33edf66a597803d3f5d2da385b5a02cfa6899d888c996309cb82ed" name="gga693167f629e33edf66a597803d3f5d2da385b5a02cfa6899d888c996309cb82ed"></a>AVFILTER_AUTO_CONVERT_ALL&#160;</td><td class="fielddoc"><p>all automatic conversions enabled </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga693167f629e33edf66a597803d3f5d2da065142be87c3afee01ef498654fde0b4" name="gga693167f629e33edf66a597803d3f5d2da065142be87c3afee01ef498654fde0b4"></a>AVFILTER_AUTO_CONVERT_NONE&#160;</td><td class="fielddoc"><p>all automatic conversions disabled </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga670c742e72d6a155c0513f5c57fd0e56" name="ga670c742e72d6a155c0513f5c57fd0e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga670c742e72d6a155c0513f5c57fd0e56">&#9670;&#160;</a></span>av_filter_iterate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter.html">AVFilter</a> * av_filter_iterate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterate over all registered filters. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opaque</td><td>a pointer where libavfilter will store the iteration state. Must point to NULL to start the iteration.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the next registered filter or NULL when the iteration is finished </dd></dl>
+
+</div>
+</div>
+<a id="gab06aaeb012cc4fed64620c0e8064e002" name="gab06aaeb012cc4fed64620c0e8064e002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab06aaeb012cc4fed64620c0e8064e002">&#9670;&#160;</a></span>avfilter_config_links()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_config_links </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>filter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Negotiate the media format, dimensions, etc of all inputs to a filter. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filter</td><td>the filter to negotiate the properties for its inputs </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>zero on successful negotiation </dd></dl>
+
+</div>
+</div>
+<a id="ga31eacee1ca745f3f850664fd852c076a" name="ga31eacee1ca745f3f850664fd852c076a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga31eacee1ca745f3f850664fd852c076a">&#9670;&#160;</a></span>avfilter_configuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * avfilter_configuration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the libavfilter build-time configuration. </p>
+
+</div>
+</div>
+<a id="ga0ea7664a3ce6bb677a830698d358a179" name="ga0ea7664a3ce6bb677a830698d358a179"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0ea7664a3ce6bb677a830698d358a179">&#9670;&#160;</a></span>avfilter_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> avfilter_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>filter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free a filter context. </p>
+<p>This will also remove the filter from its filtergraph's list of filters.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filter</td><td>the filter to free </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga198251521e31686e14d9f2adb30b8c35" name="ga198251521e31686e14d9f2adb30b8c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga198251521e31686e14d9f2adb30b8c35">&#9670;&#160;</a></span>avfilter_get_by_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter.html">AVFilter</a> * avfilter_get_by_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a filter definition matching the given name. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the filter name to find </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the filter definition, if any matching one is registered. NULL if none found. </dd></dl>
+
+</div>
+</div>
+<a id="gac31877287e8b0bef4f2a78f246784645" name="gac31877287e8b0bef4f2a78f246784645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac31877287e8b0bef4f2a78f246784645">&#9670;&#160;</a></span>avfilter_get_class()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_class.html">AVClass</a> * avfilter_get_class </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> for <a class="el" href="struct_a_v_filter_context.html" title="An instance of a filter">AVFilterContext</a>.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="group__avoptions.html#ga9ad3a0b722a9815f15e3df512290d618" title="Look for an option in an object.">av_opt_find()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="gaf973363641e8f5c7db932590cc731cb1" name="gaf973363641e8f5c7db932590cc731cb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf973363641e8f5c7db932590cc731cb1">&#9670;&#160;</a></span>avfilter_graph_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> * avfilter_graph_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate a filter graph. </p>
+<dl class="section return"><dt>返回</dt><dd>the allocated filter graph on success or NULL. </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavfi_gaf973363641e8f5c7db932590cc731cb1_icgraph.png" border="0" usemap="#agroup__lavfi_gaf973363641e8f5c7db932590cc731cb1_icgraph" alt=""/></div>
+<map name="agroup__lavfi_gaf973363641e8f5c7db932590cc731cb1_icgraph" id="agroup__lavfi_gaf973363641e8f5c7db932590cc731cb1_icgraph">
+<area shape="rect" title="Allocate a filter graph." alt="" coords="1095,52,1228,78"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="873,44,1047,86"/>
+<area shape="poly" title=" " alt="" coords="1079,68,1047,68,1047,62,1079,62"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="660,52,820,78"/>
+<area shape="poly" title=" " alt="" coords="857,68,821,68,821,62,857,62"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="655,102,825,129"/>
+<area shape="poly" title=" " alt="" coords="858,91,801,104,800,99,857,86"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="409,22,607,49"/>
+<area shape="poly" title=" " alt="" coords="644,56,608,51,608,46,645,50"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="420,73,597,116"/>
+<area shape="poly" title=" " alt="" coords="645,80,597,86,597,80,645,74"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="420,140,596,166"/>
+<area shape="poly" title=" " alt="" coords="670,87,657,93,633,111,609,130,579,142,577,137,606,125,630,107,654,88,668,82"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="209,14,361,57"/>
+<area shape="poly" title=" " alt="" coords="393,38,361,38,361,33,393,33"/>
+<area shape="poly" title=" " alt="" coords="376,12,409,8,471,3,535,3,662,11,778,26,873,43,872,48,777,31,661,16,535,8,472,9,409,13,376,18"/>
+<area shape="poly" title=" " alt="" coords="409,71,361,58,362,53,411,66"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="226,81,344,108"/>
+<area shape="poly" title=" " alt="" coords="404,97,344,97,344,92,404,92"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="224,140,346,166"/>
+<area shape="poly" title=" " alt="" coords="404,156,346,156,346,150,404,150"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,140,161,166"/>
+<area shape="poly" title=" " alt="" coords="208,156,161,156,161,150,208,150"/>
+<area shape="poly" title=" " alt="" coords="117,127,106,121,83,118,62,120,51,125,48,130,53,138,49,141,43,131,47,121,61,115,83,113,107,116,120,122"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga5c22522f0149ba1a6e1342084c6cef7c" name="ga5c22522f0149ba1a6e1342084c6cef7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5c22522f0149ba1a6e1342084c6cef7c">&#9670;&#160;</a></span>avfilter_graph_alloc_filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> * avfilter_graph_alloc_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter.html">AVFilter</a> *</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a new filter instance in a filter graph. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>graph in which the new filter will be used </td></tr>
+    <tr><td class="paramname">filter</td><td>the filter to create an instance of </td></tr>
+    <tr><td class="paramname">name</td><td>Name to give to the new instance (will be copied to <a class="el" href="struct_a_v_filter_context.html#a5ac083a645d964373f022d03df4849c8" title="name of this filter instance">AVFilterContext.name</a>). This may be used by the caller to identify different filters, libavfilter itself assigns no semantics to this parameter. May be NULL.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the context of the newly created filter instance (note that it is also retrievable directly through <a class="el" href="struct_a_v_filter_graph.html#acce8397eb8dd578032fa1663b24042ea">AVFilterGraph.filters</a> or with <a class="el" href="#ga38f9270ac7cf593d21a857bddaaa5ac6" title="Get a filter instance identified by instance name from graph.">avfilter_graph_get_filter()</a>) on success or NULL on failure. </dd></dl>
+
+</div>
+</div>
+<a id="ga1896c46b7bc6ff1bdb1a4815faa9ad07" name="ga1896c46b7bc6ff1bdb1a4815faa9ad07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1896c46b7bc6ff1bdb1a4815faa9ad07">&#9670;&#160;</a></span>avfilter_graph_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_graph_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graphctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>log_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check validity and configure all the links and formats in the graph. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graphctx</td><td>the filter graph </td></tr>
+    <tr><td class="paramname">log_ctx</td><td>context used for logging </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 in case of success, a negative AVERROR code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="gac0788a9ab6966dba9318b5d5c7524fea" name="gac0788a9ab6966dba9318b5d5c7524fea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0788a9ab6966dba9318b5d5c7524fea">&#9670;&#160;</a></span>avfilter_graph_create_filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_graph_create_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> **</td>          <td class="paramname"><span class="paramname"><em>filt_ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter.html">AVFilter</a> *</td>          <td class="paramname"><span class="paramname"><em>filt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create and add a filter instance into an existing graph. </p>
+<p>The filter instance is created from the filter filt and inited with the parameters args and opaque.</p>
+<p>In case of success put in *filt_ctx the pointer to the created filter instance, otherwise set *filt_ctx to NULL.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the instance name to give to the created filter instance </td></tr>
+    <tr><td class="paramname">graph_ctx</td><td>the filter graph </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>a negative AVERROR error code in case of failure, a non negative value otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ga1df24c543f8441afad8599d20a912221" name="ga1df24c543f8441afad8599d20a912221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1df24c543f8441afad8599d20a912221">&#9670;&#160;</a></span>avfilter_graph_dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * avfilter_graph_dump </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dump a graph into a human-readable string representation. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>the graph to dump </td></tr>
+    <tr><td class="paramname">options</td><td>formatting options; currently ignored </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>a string, or NULL in case of memory allocation failure; the string must be freed using av_free </dd></dl>
+
+</div>
+</div>
+<a id="ga871684449dac05050df238a18d0d493b" name="ga871684449dac05050df238a18d0d493b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga871684449dac05050df238a18d0d493b">&#9670;&#160;</a></span>avfilter_graph_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> avfilter_graph_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> **</td>          <td class="paramname"><span class="paramname"><em>graph</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free a graph, destroy its links, and set *graph to NULL. </p>
+<p>If *graph is NULL, do nothing. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavfi_ga871684449dac05050df238a18d0d493b_icgraph.png" border="0" usemap="#agroup__lavfi_ga871684449dac05050df238a18d0d493b_icgraph" alt=""/></div>
+<map name="agroup__lavfi_ga871684449dac05050df238a18d0d493b_icgraph" id="agroup__lavfi_ga871684449dac05050df238a18d0d493b_icgraph">
+<area shape="rect" title="Free a graph, destroy its links, and set *graph to NULL." alt="" coords="1095,52,1223,78"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="873,44,1047,86"/>
+<area shape="poly" title=" " alt="" coords="1079,68,1048,68,1048,62,1079,62"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="660,52,820,78"/>
+<area shape="poly" title=" " alt="" coords="857,68,821,68,821,62,857,62"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="655,102,825,129"/>
+<area shape="poly" title=" " alt="" coords="858,91,801,104,800,99,857,86"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="409,22,607,49"/>
+<area shape="poly" title=" " alt="" coords="644,56,608,51,608,46,645,50"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="420,73,597,116"/>
+<area shape="poly" title=" " alt="" coords="645,80,597,86,597,80,645,74"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="420,140,596,166"/>
+<area shape="poly" title=" " alt="" coords="670,87,657,93,633,111,609,130,579,142,577,137,606,125,630,107,654,88,668,82"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="209,14,361,57"/>
+<area shape="poly" title=" " alt="" coords="393,38,361,38,361,33,393,33"/>
+<area shape="poly" title=" " alt="" coords="376,12,409,8,471,3,535,3,662,11,778,26,873,43,872,48,777,31,661,16,535,8,472,9,409,13,376,18"/>
+<area shape="poly" title=" " alt="" coords="409,71,361,58,362,53,411,66"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="226,81,344,108"/>
+<area shape="poly" title=" " alt="" coords="404,97,344,97,344,92,404,92"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="224,140,346,166"/>
+<area shape="poly" title=" " alt="" coords="404,156,346,156,346,150,404,150"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,140,161,166"/>
+<area shape="poly" title=" " alt="" coords="208,156,161,156,161,150,208,150"/>
+<area shape="poly" title=" " alt="" coords="117,127,106,121,83,118,62,120,51,125,48,130,53,138,49,141,43,131,47,121,61,115,83,113,107,116,120,122"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga38f9270ac7cf593d21a857bddaaa5ac6" name="ga38f9270ac7cf593d21a857bddaaa5ac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga38f9270ac7cf593d21a857bddaaa5ac6">&#9670;&#160;</a></span>avfilter_graph_get_filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> * avfilter_graph_get_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a filter instance identified by instance name from graph. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>filter graph to search through. </td></tr>
+    <tr><td class="paramname">name</td><td>filter instance name (should be unique in the graph). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the pointer to the found filter instance or NULL if it cannot be found. </dd></dl>
+
+</div>
+</div>
+<a id="gab4718e1716c0a0d9343d49ff10d542cb" name="gab4718e1716c0a0d9343d49ff10d542cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4718e1716c0a0d9343d49ff10d542cb">&#9670;&#160;</a></span>avfilter_graph_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_graph_parse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>filters</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> *</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> *</td>          <td class="paramname"><span class="paramname"><em>outputs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>log_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a graph described by a string to a graph. </p>
+<dl class="section note"><dt>注解</dt><dd>The caller must provide the lists of inputs and outputs, which therefore must be known before calling the function.</dd>
+<dd>
+The inputs parameter describes inputs of the already existing part of the graph; i.e. from the point of view of the newly created part, they are outputs. Similarly the outputs parameter describes outputs of the already existing filters, which are provided as inputs to the parsed filters.</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>the filter graph where to link the parsed graph context </td></tr>
+    <tr><td class="paramname">filters</td><td>string to be parsed </td></tr>
+    <tr><td class="paramname">inputs</td><td>linked list to the inputs of the graph </td></tr>
+    <tr><td class="paramname">outputs</td><td>linked list to the outputs of the graph </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>zero on success, a negative AVERROR code on error </dd></dl>
+
+</div>
+</div>
+<a id="ga6c3c39e0861653c71a23f90d1397239d" name="ga6c3c39e0861653c71a23f90d1397239d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c3c39e0861653c71a23f90d1397239d">&#9670;&#160;</a></span>avfilter_graph_parse2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_graph_parse2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>filters</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **</td>          <td class="paramname"><span class="paramname"><em>outputs</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a graph described by a string to a graph. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">graph</td><td>the filter graph where to link the parsed graph context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filters</td><td>string to be parsed </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">inputs</td><td>a linked list of all free (unlinked) inputs of the parsed graph will be returned here. It is to be freed by the caller using <a class="el" href="#ga294500a9856260eb1552354fd9d9a6c4" title="Free the supplied list of AVFilterInOut and set *inout to NULL.">avfilter_inout_free()</a>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">outputs</td><td>a linked list of all free (unlinked) outputs of the parsed graph will be returned here. It is to be freed by the caller using <a class="el" href="#ga294500a9856260eb1552354fd9d9a6c4" title="Free the supplied list of AVFilterInOut and set *inout to NULL.">avfilter_inout_free()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>zero on success, a negative AVERROR code on error</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>This function returns the inputs and outputs that are left unlinked after parsing the graph and the caller then deals with them. </dd>
+<dd>
+This function makes no reference whatsoever to already existing parts of the graph and the inputs parameter will on return contain inputs of the newly parsed part of the graph. Analogously the outputs parameter will contain outputs of the newly created filters. </dd></dl>
+
+</div>
+</div>
+<a id="ga34f4ff420bd58da6747a3ff1fbedd001" name="ga34f4ff420bd58da6747a3ff1fbedd001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34f4ff420bd58da6747a3ff1fbedd001">&#9670;&#160;</a></span>avfilter_graph_parse_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_graph_parse_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>filters</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **</td>          <td class="paramname"><span class="paramname"><em>outputs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>log_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a graph described by a string to a graph. </p>
+<p>In the graph filters description, if the input label of the first filter is not specified, "in" is assumed; if the output label of the last filter is not specified, "out" is assumed.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>the filter graph where to link the parsed graph context </td></tr>
+    <tr><td class="paramname">filters</td><td>string to be parsed </td></tr>
+    <tr><td class="paramname">inputs</td><td>pointer to a linked list to the inputs of the graph, may be NULL. If non-NULL, *inputs is updated to contain the list of open inputs after the parsing, should be freed with <a class="el" href="#ga294500a9856260eb1552354fd9d9a6c4" title="Free the supplied list of AVFilterInOut and set *inout to NULL.">avfilter_inout_free()</a>. </td></tr>
+    <tr><td class="paramname">outputs</td><td>pointer to a linked list to the outputs of the graph, may be NULL. If non-NULL, *outputs is updated to contain the list of open outputs after the parsing, should be freed with <a class="el" href="#ga294500a9856260eb1552354fd9d9a6c4" title="Free the supplied list of AVFilterInOut and set *inout to NULL.">avfilter_inout_free()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>non negative on success, a negative AVERROR code on error </dd></dl>
+
+</div>
+</div>
+<a id="ga3140b3cd7bf9a80c2dfa868dcf7ac541" name="ga3140b3cd7bf9a80c2dfa868dcf7ac541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3140b3cd7bf9a80c2dfa868dcf7ac541">&#9670;&#160;</a></span>avfilter_graph_queue_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_graph_queue_command </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ts</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queue a command for one or more filter instances. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>the filter graph </td></tr>
+    <tr><td class="paramname">target</td><td>the <a class="el" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter(s)</a> to which the command should be sent "all" sends to all filters otherwise it can be a filter or filter instance name which will send the command to all matching filters. </td></tr>
+    <tr><td class="paramname">cmd</td><td>the command to sent, for handling simplicity all commands must be alphanumeric only </td></tr>
+    <tr><td class="paramname">arg</td><td>the argument for the command </td></tr>
+    <tr><td class="paramname">ts</td><td>time at which the command should be sent to the filter</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>As this executes commands after this function returns, no return code from the filter is provided, also AVFILTER_CMD_FLAG_ONE is not supported. </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavfi_ga3140b3cd7bf9a80c2dfa868dcf7ac541_cgraph.png" border="0" usemap="#agroup__lavfi_ga3140b3cd7bf9a80c2dfa868dcf7ac541_cgraph" alt=""/></div>
+<map name="agroup__lavfi_ga3140b3cd7bf9a80c2dfa868dcf7ac541_cgraph" id="agroup__lavfi_ga3140b3cd7bf9a80c2dfa868dcf7ac541_cgraph">
+<area shape="rect" title="Queue a command for one or more filter instances." alt="" coords="5,21,147,64"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="195,29,234,56"/>
+<area shape="poly" title=" " alt="" coords="147,40,179,40,179,45,147,45"/>
+<area shape="poly" title=" " alt="" coords="192,32,186,22,188,12,198,5,214,3,233,6,242,15,238,18,231,11,214,8,200,10,192,15,191,21,196,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gab20535e0685fb5f9b4f02e436412c3f0" name="gab20535e0685fb5f9b4f02e436412c3f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab20535e0685fb5f9b4f02e436412c3f0">&#9670;&#160;</a></span>avfilter_graph_request_oldest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_graph_request_oldest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Request a frame on the oldest sink link. </p>
+<p>If the request returns AVERROR_EOF, try the next.</p>
+<p>Note that this function is not meant to be the sole scheduling mechanism of a filtergraph, only a convenience function to help drain a filtergraph in a balanced way under normal circumstances.</p>
+<p>Also note that AVERROR_EOF does not mean that frames did not arrive on some of the sinks during the process. When there are multiple sink links, in case the requested link returns an EOF, this may cause a filter to flush pending frames which are sent to another sink link, although unrequested.</p>
+<dl class="section return"><dt>返回</dt><dd>the return value of ff_request_frame(), or AVERROR_EOF if all links returned AVERROR_EOF </dd></dl>
+
+</div>
+</div>
+<a id="gaaad7850fb5fe26d35e5d371ca75b79e1" name="gaaad7850fb5fe26d35e5d371ca75b79e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaad7850fb5fe26d35e5d371ca75b79e1">&#9670;&#160;</a></span>avfilter_graph_send_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_graph_send_command </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>res</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>res_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send a command to one or more filter instances. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>the filter graph </td></tr>
+    <tr><td class="paramname">target</td><td>the <a class="el" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter(s)</a> to which the command should be sent "all" sends to all filters otherwise it can be a filter or filter instance name which will send the command to all matching filters. </td></tr>
+    <tr><td class="paramname">cmd</td><td>the command to send, for handling simplicity all commands must be alphanumeric only </td></tr>
+    <tr><td class="paramname">arg</td><td>the argument for the command </td></tr>
+    <tr><td class="paramname">res</td><td>a buffer with size res_size where the <a class="el" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter(s)</a> can return a response.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;=0 on success otherwise an error code. <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(ENOSYS)</a> on unsupported commands </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavfi_gaaad7850fb5fe26d35e5d371ca75b79e1_cgraph.png" border="0" usemap="#agroup__lavfi_gaaad7850fb5fe26d35e5d371ca75b79e1_cgraph" alt=""/></div>
+<map name="agroup__lavfi_gaaad7850fb5fe26d35e5d371ca75b79e1_cgraph" id="agroup__lavfi_gaaad7850fb5fe26d35e5d371ca75b79e1_cgraph">
+<area shape="rect" title="Send a command to one or more filter instances." alt="" coords="5,21,140,64"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="188,29,227,56"/>
+<area shape="poly" title=" " alt="" coords="140,40,172,40,172,45,140,45"/>
+<area shape="poly" title=" " alt="" coords="185,32,180,22,182,12,191,5,207,3,226,6,234,14,230,18,223,11,207,8,193,10,186,15,185,21,190,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gae7e75e3df70de53fae2cf7950c1247a8" name="gae7e75e3df70de53fae2cf7950c1247a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae7e75e3df70de53fae2cf7950c1247a8">&#9670;&#160;</a></span>avfilter_graph_set_auto_convert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> avfilter_graph_set_auto_convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_graph.html">AVFilterGraph</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable automatic format conversion inside the graph. </p>
+<p>Note that format conversion can still happen inside explicitly inserted scale and aresample filters.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flags</td><td>any of the AVFILTER_AUTO_CONVERT_* constants </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga8c15af28902395399fe455f6f8236848" name="ga8c15af28902395399fe455f6f8236848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c15af28902395399fe455f6f8236848">&#9670;&#160;</a></span>avfilter_init_dict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_init_dict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> **</td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize a filter with the supplied dictionary of options. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>uninitialized filter context to initialize </td></tr>
+    <tr><td class="paramname">options</td><td>An <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> filled with options for this filter. On return this parameter will be destroyed and replaced with a dict containing options that were not found. This dictionary must be freed by the caller. May be NULL, then this function is equivalent to <a class="el" href="#ga0d21eb00b9f24213bd7c5775393a09fd" title="Initialize a filter with the supplied parameters.">avfilter_init_str()</a> with the second parameter set to NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on failure</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>This function and <a class="el" href="#ga0d21eb00b9f24213bd7c5775393a09fd" title="Initialize a filter with the supplied parameters.">avfilter_init_str()</a> do essentially the same thing, the difference is in manner in which the options are passed. It is up to the calling code to choose whichever is more preferable. The two functions also behave differently when some of the provided options are not declared as supported by the filter. In such a case, <a class="el" href="#ga0d21eb00b9f24213bd7c5775393a09fd" title="Initialize a filter with the supplied parameters.">avfilter_init_str()</a> will fail, but this function will leave those extra options in the options <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> and continue as usual. </dd></dl>
+
+</div>
+</div>
+<a id="ga0d21eb00b9f24213bd7c5775393a09fd" name="ga0d21eb00b9f24213bd7c5775393a09fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d21eb00b9f24213bd7c5775393a09fd">&#9670;&#160;</a></span>avfilter_init_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_init_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize a filter with the supplied parameters. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>uninitialized filter context to initialize </td></tr>
+    <tr><td class="paramname">args</td><td>Options to initialize the filter with. This must be a ':'-separated list of options in the 'key=value' form. May be NULL if the options have been set directly using the AVOptions API or there are no options that need to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on failure </dd></dl>
+
+</div>
+</div>
+<a id="gaed598b086db45e36ea5d2e884ba09789" name="gaed598b086db45e36ea5d2e884ba09789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed598b086db45e36ea5d2e884ba09789">&#9670;&#160;</a></span>avfilter_inout_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> * avfilter_inout_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate a single <a class="el" href="struct_a_v_filter_in_out.html" title="A linked-list of the inputs/outputs of the filter chain.">AVFilterInOut</a> entry. </p>
+<p>Must be freed with <a class="el" href="#ga294500a9856260eb1552354fd9d9a6c4" title="Free the supplied list of AVFilterInOut and set *inout to NULL.">avfilter_inout_free()</a>. </p><dl class="section return"><dt>返回</dt><dd>allocated <a class="el" href="struct_a_v_filter_in_out.html" title="A linked-list of the inputs/outputs of the filter chain.">AVFilterInOut</a> on success, NULL on failure. </dd></dl>
+
+</div>
+</div>
+<a id="ga294500a9856260eb1552354fd9d9a6c4" name="ga294500a9856260eb1552354fd9d9a6c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga294500a9856260eb1552354fd9d9a6c4">&#9670;&#160;</a></span>avfilter_inout_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> avfilter_inout_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_in_out.html">AVFilterInOut</a> **</td>          <td class="paramname"><span class="paramname"><em>inout</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free the supplied list of <a class="el" href="struct_a_v_filter_in_out.html" title="A linked-list of the inputs/outputs of the filter chain.">AVFilterInOut</a> and set *inout to NULL. </p>
+<p>If *inout is NULL, do nothing. </p>
+
+</div>
+</div>
+<a id="ga0d2740a8679ff5086f680547eb0a08e0" name="ga0d2740a8679ff5086f680547eb0a08e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d2740a8679ff5086f680547eb0a08e0">&#9670;&#160;</a></span>avfilter_insert_filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_insert_filter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_link.html">AVFilterLink</a> *</td>          <td class="paramname"><span class="paramname"><em>link</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>filt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>filt_srcpad_idx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>filt_dstpad_idx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert a filter in the middle of an existing link. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">link</td><td>the link into which the filter should be inserted </td></tr>
+    <tr><td class="paramname">filt</td><td>the filter to be inserted </td></tr>
+    <tr><td class="paramname">filt_srcpad_idx</td><td>the input pad on the filter to connect </td></tr>
+    <tr><td class="paramname">filt_dstpad_idx</td><td>the output pad on the filter to connect </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>zero on success </dd></dl>
+
+</div>
+</div>
+<a id="ga90c557ccefd4cddaccab1958db28a0f3" name="ga90c557ccefd4cddaccab1958db28a0f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90c557ccefd4cddaccab1958db28a0f3">&#9670;&#160;</a></span>avfilter_license()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * avfilter_license </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the libavfilter license. </p>
+
+</div>
+</div>
+<a id="gabc6247ebae2c591e768c8555174402f1" name="gabc6247ebae2c591e768c8555174402f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabc6247ebae2c591e768c8555174402f1">&#9670;&#160;</a></span>avfilter_link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_link </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>srcpad</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>dstpad</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Link two filters together. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>the source filter </td></tr>
+    <tr><td class="paramname">srcpad</td><td>index of the output pad on the source filter </td></tr>
+    <tr><td class="paramname">dst</td><td>the destination filter </td></tr>
+    <tr><td class="paramname">dstpad</td><td>index of the input pad on the destination filter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>zero on success </dd></dl>
+
+</div>
+</div>
+<a id="gacb88c44589fa57729637817f26826193" name="gacb88c44589fa57729637817f26826193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb88c44589fa57729637817f26826193">&#9670;&#160;</a></span>avfilter_link_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> avfilter_link_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_link.html">AVFilterLink</a> **</td>          <td class="paramname"><span class="paramname"><em>link</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free the link in *link, and set its pointer to NULL. </p>
+
+</div>
+</div>
+<a id="ga0f20a579fb5853f55fe17443a2dfea41" name="ga0f20a579fb5853f55fe17443a2dfea41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f20a579fb5853f55fe17443a2dfea41">&#9670;&#160;</a></span>avfilter_link_set_closed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> avfilter_link_set_closed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_link.html">AVFilterLink</a> *</td>          <td class="paramname"><span class="paramname"><em>link</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>closed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the closed field of a link. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000063">弃用</a></b></dt><dd>applications are not supposed to mess with links, they should close the sinks. </dd></dl>
+
+</div>
+</div>
+<a id="gae13acb5396b0204c3641502677db2f49" name="gae13acb5396b0204c3641502677db2f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae13acb5396b0204c3641502677db2f49">&#9670;&#160;</a></span>avfilter_pad_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_pad_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a> *</td>          <td class="paramname"><span class="paramname"><em>pads</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of elements in a NULL-terminated array of AVFilterPads (e.g. </p>
+<p><a class="el" href="struct_a_v_filter.html#a4f849ace8696f7847b8bdba67bcd288f" title="List of inputs, terminated by a zeroed element.">AVFilter.inputs</a>/outputs). </p>
+
+</div>
+</div>
+<a id="ga61def10b756a26a8eee41f9f5c0cc1f2" name="ga61def10b756a26a8eee41f9f5c0cc1f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61def10b756a26a8eee41f9f5c0cc1f2">&#9670;&#160;</a></span>avfilter_pad_get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * avfilter_pad_get_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a> *</td>          <td class="paramname"><span class="paramname"><em>pads</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pad_idx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the name of an <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a>. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pads</td><td>an array of AVFilterPads </td></tr>
+    <tr><td class="paramname">pad_idx</td><td>index of the pad in the array it; is the caller's responsibility to ensure the index is valid</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>name of the pad_idx'th pad in pads </dd></dl>
+
+</div>
+</div>
+<a id="ga2d241a0066fc3724ec3335e25bc3912e" name="ga2d241a0066fc3724ec3335e25bc3912e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2d241a0066fc3724ec3335e25bc3912e">&#9670;&#160;</a></span>avfilter_pad_get_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a> avfilter_pad_get_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a> *</td>          <td class="paramname"><span class="paramname"><em>pads</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pad_idx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the type of an <a class="el" href="#ga067d805667c8575b55712d728a16ce7f">AVFilterPad</a>. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pads</td><td>an array of AVFilterPads </td></tr>
+    <tr><td class="paramname">pad_idx</td><td>index of the pad in the array; it is the caller's responsibility to ensure the index is valid</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>type of the pad_idx'th pad in pads </dd></dl>
+
+</div>
+</div>
+<a id="ga7265908e69b4eaa69a4947a093743f26" name="ga7265908e69b4eaa69a4947a093743f26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7265908e69b4eaa69a4947a093743f26">&#9670;&#160;</a></span>avfilter_process_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avfilter_process_command </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>res</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>res_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Make the filter instance process a command. </p>
+<p>It is recommended to use <a class="el" href="#gaaad7850fb5fe26d35e5d371ca75b79e1" title="Send a command to one or more filter instances.">avfilter_graph_send_command()</a>. </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavfi_ga7265908e69b4eaa69a4947a093743f26_cgraph.png" border="0" usemap="#agroup__lavfi_ga7265908e69b4eaa69a4947a093743f26_cgraph" alt=""/></div>
+<map name="agroup__lavfi_ga7265908e69b4eaa69a4947a093743f26_cgraph" id="agroup__lavfi_ga7265908e69b4eaa69a4947a093743f26_cgraph">
+<area shape="rect" title="Make the filter instance process a command." alt="" coords="5,29,183,56"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="231,29,270,56"/>
+<area shape="poly" title=" " alt="" coords="183,40,215,40,215,45,183,45"/>
+<area shape="poly" title=" " alt="" coords="228,35,219,24,220,13,231,5,250,3,275,8,281,14,282,21,277,21,276,16,272,12,250,8,233,10,225,16,224,23,232,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gab2e80a6bf5de47a81f64471e73524a6a" name="gab2e80a6bf5de47a81f64471e73524a6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2e80a6bf5de47a81f64471e73524a6a">&#9670;&#160;</a></span>avfilter_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned avfilter_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the LIBAVFILTER_VERSION_INT constant. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

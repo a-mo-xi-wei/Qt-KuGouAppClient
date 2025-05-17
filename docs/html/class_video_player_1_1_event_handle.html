@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: VideoPlayer::EventHandle类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_video_player_1_1_event_handle.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_video_player_1_1_event_handle-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">VideoPlayer::EventHandle类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>事件处理接口  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_video_player_8h_source.html">VideoPlayer.h</a>&gt;</code></p>
+<div class="dynheader">
+类 VideoPlayer::EventHandle 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_player_1_1_event_handle__inherit__graph.png" border="0" usemap="#a_video_player_1_1_event_handle_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_video_player_1_1_event_handle_inherit__map" id="a_video_player_1_1_event_handle_inherit__map">
+<area shape="rect" title="事件处理接口" alt="" coords="5,5,180,32"/>
+<area shape="rect" href="class_ku_gou_app.html" title="酷狗音乐应用主窗口类，管理音乐播放和界面切换" alt="" coords="50,80,135,107"/>
+<area shape="poly" title=" " alt="" coords="95,48,95,80,90,80,90,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a6df9d8089198e51095bf7da82d74fc1a" id="r_a6df9d8089198e51095bf7da82d74fc1a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6df9d8089198e51095bf7da82d74fc1a">onOpenVideoFileFailed</a> (const int &amp;code)=0</td></tr>
+<tr class="memdesc:a6df9d8089198e51095bf7da82d74fc1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开视频文件失败回调  <br /></td></tr>
+<tr class="separator:a6df9d8089198e51095bf7da82d74fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454ad88fc5cc3e1686ce81dec8b3f5cc" id="r_a454ad88fc5cc3e1686ce81dec8b3f5cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a454ad88fc5cc3e1686ce81dec8b3f5cc">onOpenSdlFailed</a> (const int &amp;code)=0</td></tr>
+<tr class="memdesc:a454ad88fc5cc3e1686ce81dec8b3f5cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开 SDL 失败回调  <br /></td></tr>
+<tr class="separator:a454ad88fc5cc3e1686ce81dec8b3f5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df1f30b2a429ff6f06fcbf1ca802cee" id="r_a4df1f30b2a429ff6f06fcbf1ca802cee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df1f30b2a429ff6f06fcbf1ca802cee">onTotalTimeChanged</a> (const int64_t &amp;uSec)=0</td></tr>
+<tr class="memdesc:a4df1f30b2a429ff6f06fcbf1ca802cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">视频时长变更回调  <br /></td></tr>
+<tr class="separator:a4df1f30b2a429ff6f06fcbf1ca802cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f34ddbe364ee8d039dca94b8e31564b" id="r_a8f34ddbe364ee8d039dca94b8e31564b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f34ddbe364ee8d039dca94b8e31564b">onPlayerStateChanged</a> (const <a class="el" href="class_video_player.html#a5d74787dedbc4e11c1ab15bf487e61f8">VideoPlayer::State</a> &amp;<a class="el" href="class_video_player.html#acf42de6572f1e3e6aca988477c3662cf">state</a>, const bool &amp;hasVideo, const bool &amp;hasAudio)=0</td></tr>
+<tr class="memdesc:a8f34ddbe364ee8d039dca94b8e31564b"><td class="mdescLeft">&#160;</td><td class="mdescRight">播放器状态变更回调  <br /></td></tr>
+<tr class="separator:a8f34ddbe364ee8d039dca94b8e31564b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68e2590f2468ebd049d0f1d8534f8e1" id="r_aa68e2590f2468ebd049d0f1d8534f8e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa68e2590f2468ebd049d0f1d8534f8e1">onDisplayVideo</a> (<a class="el" href="_video_raw_frame_8h.html#a08da9a7e91ea8592a519581ee228c24d">VideoRawFramePtr</a> videoFrame)=0</td></tr>
+<tr class="memdesc:aa68e2590f2468ebd049d0f1d8534f8e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示视频帧回调  <br /></td></tr>
+<tr class="separator:aa68e2590f2468ebd049d0f1d8534f8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1bc6c7cfe62ad578005d68c6bd78157" id="r_aa1bc6c7cfe62ad578005d68c6bd78157"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1bc6c7cfe62ad578005d68c6bd78157">onVideoBuffer</a> (<a class="el" href="_video_encoded_frame_8h.html#abef69b2356d6e817327a28b2aa30e85e">VideoEncodedFramePtr</a> video_frame)</td></tr>
+<tr class="memdesc:aa1bc6c7cfe62ad578005d68c6bd78157"><td class="mdescLeft">&#160;</td><td class="mdescRight">视频编码帧回调  <br /></td></tr>
+<tr class="separator:aa1bc6c7cfe62ad578005d68c6bd78157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71398221ece05cba682fa47bf2a3af69" id="r_a71398221ece05cba682fa47bf2a3af69"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71398221ece05cba682fa47bf2a3af69">onAudioBuffer</a> (<a class="el" href="_a_a_c_frame_8h.html#a52d8e15c175e91e2daa8d8a5387c5e8c">AACFramePtr</a> audio_frame)</td></tr>
+<tr class="memdesc:a71398221ece05cba682fa47bf2a3af69"><td class="mdescLeft">&#160;</td><td class="mdescRight">音频编码帧回调  <br /></td></tr>
+<tr class="separator:a71398221ece05cba682fa47bf2a3af69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace022d1ff1c65b17620fa579472815ba" id="r_ace022d1ff1c65b17620fa579472815ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace022d1ff1c65b17620fa579472815ba">onAudioBuffer</a> (<a class="el" href="_p_c_m_frame_8h.html#ab7a8576022ba70101d67ccc3b805df13">PCMFramePtr</a> audio_frame)</td></tr>
+<tr class="memdesc:ace022d1ff1c65b17620fa579472815ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">PCM 音频帧回调  <br /></td></tr>
+<tr class="separator:ace022d1ff1c65b17620fa579472815ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>事件处理接口 </p>
+<p>定义播放器与界面交互的回调函数。 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a71398221ece05cba682fa47bf2a3af69" name="a71398221ece05cba682fa47bf2a3af69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71398221ece05cba682fa47bf2a3af69">&#9670;&#160;</a></span>onAudioBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onAudioBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_a_a_c_frame_8h.html#a52d8e15c175e91e2daa8d8a5387c5e8c">AACFramePtr</a></td>          <td class="paramname"><span class="paramname"><em>audio_frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>音频编码帧回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audio_frame</td><td>AAC 音频帧 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ace022d1ff1c65b17620fa579472815ba" name="ace022d1ff1c65b17620fa579472815ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace022d1ff1c65b17620fa579472815ba">&#9670;&#160;</a></span>onAudioBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onAudioBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_p_c_m_frame_8h.html#ab7a8576022ba70101d67ccc3b805df13">PCMFramePtr</a></td>          <td class="paramname"><span class="paramname"><em>audio_frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PCM 音频帧回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">audio_frame</td><td>PCM 音频帧 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa68e2590f2468ebd049d0f1d8534f8e1" name="aa68e2590f2468ebd049d0f1d8534f8e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa68e2590f2468ebd049d0f1d8534f8e1">&#9670;&#160;</a></span>onDisplayVideo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onDisplayVideo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_video_raw_frame_8h.html#a08da9a7e91ea8592a519581ee228c24d">VideoRawFramePtr</a></td>          <td class="paramname"><span class="paramname"><em>videoFrame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示视频帧回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">videoFrame</td><td>视频帧数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_ku_gou_app.html#ae05d32b64c3ab629877740989a4c34f4">KuGouApp</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a454ad88fc5cc3e1686ce81dec8b3f5cc" name="a454ad88fc5cc3e1686ce81dec8b3f5cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454ad88fc5cc3e1686ce81dec8b3f5cc">&#9670;&#160;</a></span>onOpenSdlFailed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onOpenSdlFailed </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>打开 SDL 失败回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>错误码 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_ku_gou_app.html#a2569e1da274d486b8adee39977f6ebba">KuGouApp</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a6df9d8089198e51095bf7da82d74fc1a" name="a6df9d8089198e51095bf7da82d74fc1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6df9d8089198e51095bf7da82d74fc1a">&#9670;&#160;</a></span>onOpenVideoFileFailed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onOpenVideoFileFailed </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>打开视频文件失败回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>错误码 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_ku_gou_app.html#acb47ad8e8e7abfc57f18ce1f019b5762">KuGouApp</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a8f34ddbe364ee8d039dca94b8e31564b" name="a8f34ddbe364ee8d039dca94b8e31564b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f34ddbe364ee8d039dca94b8e31564b">&#9670;&#160;</a></span>onPlayerStateChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onPlayerStateChanged </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_video_player.html#a5d74787dedbc4e11c1ab15bf487e61f8">VideoPlayer::State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>hasVideo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>hasAudio</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>播放器状态变更回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>播放器状态 </td></tr>
+    <tr><td class="paramname">hasVideo</td><td>是否包含视频流 </td></tr>
+    <tr><td class="paramname">hasAudio</td><td>是否包含音频流 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_ku_gou_app.html#a7e88a1637eddf17cbc8d956cda39cd3c">KuGouApp</a> 内被实现.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_player_1_1_event_handle_a8f34ddbe364ee8d039dca94b8e31564b_cgraph.png" border="0" usemap="#aclass_video_player_1_1_event_handle_a8f34ddbe364ee8d039dca94b8e31564b_cgraph" alt=""/></div>
+<map name="aclass_video_player_1_1_event_handle_a8f34ddbe364ee8d039dca94b8e31564b_cgraph" id="aclass_video_player_1_1_event_handle_a8f34ddbe364ee8d039dca94b8e31564b_cgraph">
+<area shape="rect" title="播放器状态变更回调" alt="" coords="5,5,161,32"/>
+<area shape="rect" href="class_video_player.html#acf42de6572f1e3e6aca988477c3662cf" title="获取播放器状态" alt="" coords="209,5,337,32"/>
+<area shape="poly" title=" " alt="" coords="161,16,193,16,193,21,161,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4df1f30b2a429ff6f06fcbf1ca802cee" name="a4df1f30b2a429ff6f06fcbf1ca802cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df1f30b2a429ff6f06fcbf1ca802cee">&#9670;&#160;</a></span>onTotalTimeChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onTotalTimeChanged </td>
+          <td>(</td>
+          <td class="paramtype">const int64_t &amp;</td>          <td class="paramname"><span class="paramname"><em>uSec</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视频时长变更回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uSec</td><td>总时长（微秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_ku_gou_app.html#a74719a4b0733acadc0f3911ec3030e43">KuGouApp</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aa1bc6c7cfe62ad578005d68c6bd78157" name="aa1bc6c7cfe62ad578005d68c6bd78157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1bc6c7cfe62ad578005d68c6bd78157">&#9670;&#160;</a></span>onVideoBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onVideoBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_video_encoded_frame_8h.html#abef69b2356d6e817327a28b2aa30e85e">VideoEncodedFramePtr</a></td>          <td class="paramname"><span class="paramname"><em>video_frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视频编码帧回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">video_frame</td><td>编码视频帧 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_video_player_8h_source.html">VideoPlayer.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_video_player.html">VideoPlayer</a></li><li class="navelem"><a class="el" href="class_video_player_1_1_event_handle.html">EventHandle</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

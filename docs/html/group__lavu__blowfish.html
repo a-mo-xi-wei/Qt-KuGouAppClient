@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Blowfish</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavu__blowfish.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Blowfish<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__crypto.html">Crypto and Hashing</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Blowfish 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__blowfish.png" border="0" usemap="#agroup____lavu____blowfish" alt=""/></div>
+<map name="agroup____lavu____blowfish" id="agroup____lavu____blowfish">
+<area shape="rect" title=" " alt="" coords="191,5,262,32"/>
+<area shape="rect" href="group__lavu__crypto.html" title=" " alt="" coords="5,5,143,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga9ed9747b44cc2737a74a37f80e5cc269" id="r_ga9ed9747b44cc2737a74a37f80e5cc269"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9ed9747b44cc2737a74a37f80e5cc269">AV_BF_ROUNDS</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:ga9ed9747b44cc2737a74a37f80e5cc269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga6bd1329d9c3dade0a570059fa4a86a24" id="r_ga6bd1329d9c3dade0a570059fa4a86a24"><td class="memItemLeft" align="right" valign="top">typedef struct AVBlowfish&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6bd1329d9c3dade0a570059fa4a86a24">AVBlowfish</a></td></tr>
+<tr class="separator:ga6bd1329d9c3dade0a570059fa4a86a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gace33b53217edd238435f0d9a7b2647b0" id="r_gace33b53217edd238435f0d9a7b2647b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gace33b53217edd238435f0d9a7b2647b0">av_blowfish_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gace33b53217edd238435f0d9a7b2647b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> context.  <br /></td></tr>
+<tr class="separator:gace33b53217edd238435f0d9a7b2647b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdeab79ba02586b6c06240eeb3472837" id="r_gabdeab79ba02586b6c06240eeb3472837"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabdeab79ba02586b6c06240eeb3472837">av_blowfish_init</a> (struct <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> *ctx, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a2c826a83964b85167f50f7bf527badf1">key</a>, int key_len)</td></tr>
+<tr class="memdesc:gabdeab79ba02586b6c06240eeb3472837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> context.  <br /></td></tr>
+<tr class="separator:gabdeab79ba02586b6c06240eeb3472837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b57de27a9aa26b67ac1f0d67fea781b" id="r_ga7b57de27a9aa26b67ac1f0d67fea781b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7b57de27a9aa26b67ac1f0d67fea781b">av_blowfish_crypt_ecb</a> (struct <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> *ctx, <a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *xl, <a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *xr, int decrypt)</td></tr>
+<tr class="memdesc:ga7b57de27a9aa26b67ac1f0d67fea781b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt or decrypt a buffer using a previously initialized context.  <br /></td></tr>
+<tr class="separator:ga7b57de27a9aa26b67ac1f0d67fea781b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad9e1113615df7f3e883ad48e7ee764b" id="r_gaad9e1113615df7f3e883ad48e7ee764b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaad9e1113615df7f3e883ad48e7ee764b">av_blowfish_crypt</a> (struct <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> *ctx, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>, int <a class="el" href="_s_d_l__opengl_8h.html#a619bc20e8198de3bd3f3d7fc34de66b2">count</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *iv, int decrypt)</td></tr>
+<tr class="memdesc:gaad9e1113615df7f3e883ad48e7ee764b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt or decrypt a buffer using a previously initialized context.  <br /></td></tr>
+<tr class="separator:gaad9e1113615df7f3e883ad48e7ee764b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ga9ed9747b44cc2737a74a37f80e5cc269" name="ga9ed9747b44cc2737a74a37f80e5cc269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9ed9747b44cc2737a74a37f80e5cc269">&#9670;&#160;</a></span>AV_BF_ROUNDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_BF_ROUNDS&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ga6bd1329d9c3dade0a570059fa4a86a24" name="ga6bd1329d9c3dade0a570059fa4a86a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6bd1329d9c3dade0a570059fa4a86a24">&#9670;&#160;</a></span>AVBlowfish</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVBlowfish AVBlowfish</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="gace33b53217edd238435f0d9a7b2647b0" name="gace33b53217edd238435f0d9a7b2647b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace33b53217edd238435f0d9a7b2647b0">&#9670;&#160;</a></span>av_blowfish_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> * av_blowfish_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate an <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> context. </p>
+
+</div>
+</div>
+<a id="gaad9e1113615df7f3e883ad48e7ee764b" name="gaad9e1113615df7f3e883ad48e7ee764b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad9e1113615df7f3e883ad48e7ee764b">&#9670;&#160;</a></span>av_blowfish_crypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_blowfish_crypt </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>iv</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>decrypt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encrypt or decrypt a buffer using a previously initialized context. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>an <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> context </td></tr>
+    <tr><td class="paramname">dst</td><td>destination array, can be equal to src </td></tr>
+    <tr><td class="paramname">src</td><td>source array, can be equal to dst </td></tr>
+    <tr><td class="paramname">count</td><td>number of 8 byte blocks </td></tr>
+    <tr><td class="paramname">iv</td><td>initialization vector for CBC mode, if NULL ECB will be used </td></tr>
+    <tr><td class="paramname">decrypt</td><td>0 for encryption, 1 for decryption </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7b57de27a9aa26b67ac1f0d67fea781b" name="ga7b57de27a9aa26b67ac1f0d67fea781b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b57de27a9aa26b67ac1f0d67fea781b">&#9670;&#160;</a></span>av_blowfish_crypt_ecb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_blowfish_crypt_ecb </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *</td>          <td class="paramname"><span class="paramname"><em>xl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *</td>          <td class="paramname"><span class="paramname"><em>xr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>decrypt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encrypt or decrypt a buffer using a previously initialized context. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>an <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> context </td></tr>
+    <tr><td class="paramname">xl</td><td>left four bytes halves of input to be encrypted </td></tr>
+    <tr><td class="paramname">xr</td><td>right four bytes halves of input to be encrypted </td></tr>
+    <tr><td class="paramname">decrypt</td><td>0 for encryption, 1 for decryption </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gabdeab79ba02586b6c06240eeb3472837" name="gabdeab79ba02586b6c06240eeb3472837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabdeab79ba02586b6c06240eeb3472837">&#9670;&#160;</a></span>av_blowfish_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_blowfish_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>key_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize an <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> context. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>an <a class="el" href="struct_a_v_blowfish.html">AVBlowfish</a> context </td></tr>
+    <tr><td class="paramname">key</td><td>a key </td></tr>
+    <tr><td class="paramname">key_len</td><td>length of the key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

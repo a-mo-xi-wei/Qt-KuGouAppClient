@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: sqlitedataprovider.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('sqlitedataprovider_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">sqlitedataprovider.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="sqlitedataprovider_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SQLITEDATAPROVIDER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SQLITEDATAPROVIDER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="recordset_8h.html">recordset.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_sqlite_data_provider.html">    9</a></span><span class="keyword">class </span><a class="code hl_function" href="class_sqlite_data_provider.html#a6bf0c812e1a413a0417ef8fc0c4b89b5">SqliteDataProvider</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    Q_OBJECT</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// 构造函数</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Q_INVOKABLE <a class="code hl_function" href="class_sqlite_data_provider.html#a6bf0c812e1a413a0417ef8fc0c4b89b5">SqliteDataProvider</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// 析构函数</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="class_sqlite_data_provider.html#a69d1ca6ae3db952cfdb5a9068ce2cfde">~SqliteDataProvider</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// 建立与数据库的连接</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_sqlite_data_provider.html#ac9980b034930cec43ef5e08534f85d94">connect</a>(<span class="keyword">const</span> QString &amp;dbPath);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// 得到数据库文件路径</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_sqlite_data_provider.html#ab81ec7857ff74deac86ecb083150044c">   22</a></span>    Q_INVOKABLE QString <a class="code hl_function" href="class_sqlite_data_provider.html#ab81ec7857ff74deac86ecb083150044c">getdbPath</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_sqlite_data_provider.html#a9aaf97b7d7007aab980e08a6088f5452">m_dbPath</a>; }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// 执行SQL语句</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Q_INVOKABLE <a class="code hl_class" href="class_record_set_list.html">RecordSetList</a> <a class="code hl_function" href="class_sqlite_data_provider.html#a323ab4214f61bc5495305c1dba9b4206">execSql</a>(<span class="keyword">const</span> QString&amp; sql, <span class="keyword">const</span> QString &amp;connectionName=<span class="stringliteral">&quot;qt_sql_default_connection&quot;</span>,<span class="keywordtype">bool</span> longConnect=<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// 执行sql的insert语句</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    Q_INVOKABLE <a class="code hl_class" href="class_record_set_list.html">RecordSetList</a> <a class="code hl_function" href="class_sqlite_data_provider.html#a102af10cf2fd7c80c746e0375908cfeb">execInsertSql</a>(<span class="keyword">const</span> QString&amp; sql, <span class="keyword">const</span> QString &amp;connectionName=<span class="stringliteral">&quot;qt_sql_default_connection&quot;</span>,<span class="keywordtype">bool</span> longConnect=<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// 执行多条语句</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    Q_INVOKABLE <a class="code hl_class" href="class_record_set_list.html">RecordSetList</a> <a class="code hl_function" href="class_sqlite_data_provider.html#a516e61593f0a15f321f498a6cc7a507a">execSqls</a>(<span class="keyword">const</span> QStringList&amp; sqls,QString connectionName=<span class="stringliteral">&quot;qt_sql_default_connection&quot;</span>,<span class="keywordtype">bool</span> longConnect=<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// 执行事务</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Q_INVOKABLE <a class="code hl_class" href="class_record_set_list.html">RecordSetList</a> <a class="code hl_function" href="class_sqlite_data_provider.html#a2742764c099329da23a3d8c8d2794cc0">execTransaction</a>(<span class="keyword">const</span> QStringList&amp; sqls,QString connectionName=<span class="stringliteral">&quot;qt_sql_default_connection&quot;</span>,<span class="keywordtype">bool</span> longConnect=<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// 关闭与数据库的连接</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_sqlite_data_provider.html#a960705de531a20389fb29928d43258c3">disconnect</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_sqlite_data_provider.html#a9aaf97b7d7007aab980e08a6088f5452">   35</a></span>    QString <a class="code hl_variable" href="class_sqlite_data_provider.html#a9aaf97b7d7007aab980e08a6088f5452">m_dbPath</a>;              </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">// SQLITEDATAPROVIDER_H</span></div>
+<div class="ttc" id="aclass_record_set_list_html"><div class="ttname"><a href="class_record_set_list.html">RecordSetList</a></div><div class="ttdoc">用于存储一组 RecordSet 的类</div><div class="ttdef"><b>定义</b> recordset.h:130</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_a102af10cf2fd7c80c746e0375908cfeb"><div class="ttname"><a href="class_sqlite_data_provider.html#a102af10cf2fd7c80c746e0375908cfeb">SqliteDataProvider::execInsertSql</a></div><div class="ttdeci">Q_INVOKABLE RecordSetList execInsertSql(const QString &amp;sql, const QString &amp;connectionName=&quot;qt_sql_default_connection&quot;, bool longConnect=true)</div><div class="ttdoc">SqliteDataProvider::execInsertSql 执行sql的insert语句</div><div class="ttdef"><b>定义</b> sqlitedataprovider.cpp:268</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_a2742764c099329da23a3d8c8d2794cc0"><div class="ttname"><a href="class_sqlite_data_provider.html#a2742764c099329da23a3d8c8d2794cc0">SqliteDataProvider::execTransaction</a></div><div class="ttdeci">Q_INVOKABLE RecordSetList execTransaction(const QStringList &amp;sqls, QString connectionName=&quot;qt_sql_default_connection&quot;, bool longConnect=true)</div><div class="ttdoc">execTransaction 执行事务</div><div class="ttdef"><b>定义</b> sqlitedataprovider.cpp:44</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_a323ab4214f61bc5495305c1dba9b4206"><div class="ttname"><a href="class_sqlite_data_provider.html#a323ab4214f61bc5495305c1dba9b4206">SqliteDataProvider::execSql</a></div><div class="ttdeci">Q_INVOKABLE RecordSetList execSql(const QString &amp;sql, const QString &amp;connectionName=&quot;qt_sql_default_connection&quot;, bool longConnect=true)</div><div class="ttdoc">执行SQL语句</div><div class="ttdef"><b>定义</b> sqlitedataprovider.cpp:127</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_a516e61593f0a15f321f498a6cc7a507a"><div class="ttname"><a href="class_sqlite_data_provider.html#a516e61593f0a15f321f498a6cc7a507a">SqliteDataProvider::execSqls</a></div><div class="ttdeci">Q_INVOKABLE RecordSetList execSqls(const QStringList &amp;sqls, QString connectionName=&quot;qt_sql_default_connection&quot;, bool longConnect=true)</div><div class="ttdoc">SqliteDataProvider::execSqls 执行多条语句</div><div class="ttdef"><b>定义</b> sqlitedataprovider.cpp:192</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_a69d1ca6ae3db952cfdb5a9068ce2cfde"><div class="ttname"><a href="class_sqlite_data_provider.html#a69d1ca6ae3db952cfdb5a9068ce2cfde">SqliteDataProvider::~SqliteDataProvider</a></div><div class="ttdeci">~SqliteDataProvider()</div><div class="ttdoc">SqliteDataProvider::~SqliteDataProvider 析构函数</div><div class="ttdef"><b>定义</b> sqlitedataprovider.cpp:21</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_a6bf0c812e1a413a0417ef8fc0c4b89b5"><div class="ttname"><a href="class_sqlite_data_provider.html#a6bf0c812e1a413a0417ef8fc0c4b89b5">SqliteDataProvider::SqliteDataProvider</a></div><div class="ttdeci">Q_INVOKABLE SqliteDataProvider(QObject *parent=nullptr)</div><div class="ttdoc">SqliteDataProvider::SqliteDataProvider 构造函数</div><div class="ttdef"><b>定义</b> sqlitedataprovider.cpp:13</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_a960705de531a20389fb29928d43258c3"><div class="ttname"><a href="class_sqlite_data_provider.html#a960705de531a20389fb29928d43258c3">SqliteDataProvider::disconnect</a></div><div class="ttdeci">Q_INVOKABLE void disconnect()</div><div class="ttdoc">关闭与数据库的连接</div><div class="ttdef"><b>定义</b> sqlitedataprovider.cpp:332</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_a9aaf97b7d7007aab980e08a6088f5452"><div class="ttname"><a href="class_sqlite_data_provider.html#a9aaf97b7d7007aab980e08a6088f5452">SqliteDataProvider::m_dbPath</a></div><div class="ttdeci">QString m_dbPath</div><div class="ttdoc">数据库路径</div><div class="ttdef"><b>定义</b> sqlitedataprovider.h:35</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_ab81ec7857ff74deac86ecb083150044c"><div class="ttname"><a href="class_sqlite_data_provider.html#ab81ec7857ff74deac86ecb083150044c">SqliteDataProvider::getdbPath</a></div><div class="ttdeci">Q_INVOKABLE QString getdbPath()</div><div class="ttdef"><b>定义</b> sqlitedataprovider.h:22</div></div>
+<div class="ttc" id="aclass_sqlite_data_provider_html_ac9980b034930cec43ef5e08534f85d94"><div class="ttname"><a href="class_sqlite_data_provider.html#ac9980b034930cec43ef5e08534f85d94">SqliteDataProvider::connect</a></div><div class="ttdeci">Q_INVOKABLE bool connect(const QString &amp;dbPath)</div><div class="ttdoc">建立与数据库的连接</div><div class="ttdef"><b>定义</b> sqlitedataprovider.cpp:31</div></div>
+<div class="ttc" id="arecordset_8h_html"><div class="ttname"><a href="recordset_8h.html">recordset.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_2b85cb5a0e1f886cd4e2d8a137494454.html">MyDBPool</a></li><li class="navelem"><a class="el" href="sqlitedataprovider_8h.html">sqlitedataprovider.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

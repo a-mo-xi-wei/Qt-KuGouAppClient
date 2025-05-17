@@ -1,0 +1,834 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Logging Facility</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavu__log.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">专题</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Logging Facility<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Logging Facility 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log.png" border="0" usemap="#agroup____lavu____log" alt=""/></div>
+<map name="agroup____lavu____log" id="agroup____lavu____log">
+<area shape="rect" href="group__lavu.html" title="Common code shared across all FFmpeg libraries." alt="" coords="5,5,71,32"/>
+<area shape="rect" title=" " alt="" coords="119,5,231,32"/>
+<area shape="rect" href="group__lavu__log__constants.html" title=" " alt="" coords="279,5,409,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+专题</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__log__constants.html">Logging Constants</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga7ff5a41a9e5e2969f1b125d4bb6ce536" id="r_ga7ff5a41a9e5e2969f1b125d4bb6ce536"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7ff5a41a9e5e2969f1b125d4bb6ce536">AV_LOG_C</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="memdesc:ga7ff5a41a9e5e2969f1b125d4bb6ce536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets additional colors for extended debugging sessions.  <br /></td></tr>
+<tr class="separator:ga7ff5a41a9e5e2969f1b125d4bb6ce536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cdf5cd331b17e80e8308124f05a6db8" id="r_ga6cdf5cd331b17e80e8308124f05a6db8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6cdf5cd331b17e80e8308124f05a6db8">AV_LOG_SKIP_REPEATED</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga6cdf5cd331b17e80e8308124f05a6db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip repeated messages, this requires the user app to use <a class="el" href="#gabd386ffd4b27637cf34e98d5d1a6e8ae" title="Send the specified message to the log if the level is less than or equal to the current av_log_level.">av_log()</a> instead of (f)printf as the 2 would otherwise interfere and lead to "Last message repeated x times" messages below (f)printf messages with some bad luck.  <br /></td></tr>
+<tr class="separator:ga6cdf5cd331b17e80e8308124f05a6db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b447fa5f9d7e243be4634878ed1a0ca" id="r_ga8b447fa5f9d7e243be4634878ed1a0ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8b447fa5f9d7e243be4634878ed1a0ca">AV_LOG_PRINT_LEVEL</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ga8b447fa5f9d7e243be4634878ed1a0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include the log severity in messages originating from codecs.  <br /></td></tr>
+<tr class="separator:ga8b447fa5f9d7e243be4634878ed1a0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gabd386ffd4b27637cf34e98d5d1a6e8ae" id="r_gabd386ffd4b27637cf34e98d5d1a6e8ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabd386ffd4b27637cf34e98d5d1a6e8ae">av_log</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *avcl, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt,...) <a class="el" href="attributes_8h.html#a4b078d4b8e02c0f452ee1dcaa7d983d3">av_printf_format</a>(3</td></tr>
+<tr class="memdesc:gabd386ffd4b27637cf34e98d5d1a6e8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the specified message to the log if the level is less than or equal to the current av_log_level.  <br /></td></tr>
+<tr class="separator:gabd386ffd4b27637cf34e98d5d1a6e8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d72fb598cff2c8385069a1fc2ee5812" id="r_ga6d72fb598cff2c8385069a1fc2ee5812"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6d72fb598cff2c8385069a1fc2ee5812">av_vlog</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *avcl, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list vl)</td></tr>
+<tr class="memdesc:ga6d72fb598cff2c8385069a1fc2ee5812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the specified message to the log if the level is less than or equal to the current av_log_level.  <br /></td></tr>
+<tr class="separator:ga6d72fb598cff2c8385069a1fc2ee5812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8ada5cc5722548d8698650b05207904" id="r_gae8ada5cc5722548d8698650b05207904"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae8ada5cc5722548d8698650b05207904">av_log_get_level</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gae8ada5cc5722548d8698650b05207904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current log level  <br /></td></tr>
+<tr class="separator:gae8ada5cc5722548d8698650b05207904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fd32c74db581e3e2e7f35d277bb1e24" id="r_ga1fd32c74db581e3e2e7f35d277bb1e24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1fd32c74db581e3e2e7f35d277bb1e24">av_log_set_level</a> (int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>)</td></tr>
+<tr class="memdesc:ga1fd32c74db581e3e2e7f35d277bb1e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the log level  <br /></td></tr>
+<tr class="separator:ga1fd32c74db581e3e2e7f35d277bb1e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14034761faf581a8b9ed6ef19b313708" id="r_ga14034761faf581a8b9ed6ef19b313708"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga14034761faf581a8b9ed6ef19b313708">av_log_set_callback</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>(*callback)(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *, int, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *, va_list))</td></tr>
+<tr class="memdesc:ga14034761faf581a8b9ed6ef19b313708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the logging callback  <br /></td></tr>
+<tr class="separator:ga14034761faf581a8b9ed6ef19b313708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5bd132d2e4ac6f9843ef6d8e3c05050a" id="r_ga5bd132d2e4ac6f9843ef6d8e3c05050a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5bd132d2e4ac6f9843ef6d8e3c05050a">av_log_default_callback</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *avcl, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list vl)</td></tr>
+<tr class="memdesc:ga5bd132d2e4ac6f9843ef6d8e3c05050a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default logging callback  <br /></td></tr>
+<tr class="separator:ga5bd132d2e4ac6f9843ef6d8e3c05050a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e2d13acd5bf1c5790faa60edae84cf0" id="r_ga1e2d13acd5bf1c5790faa60edae84cf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e2d13acd5bf1c5790faa60edae84cf0">av_default_item_name</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *ctx)</td></tr>
+<tr class="memdesc:ga1e2d13acd5bf1c5790faa60edae84cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the context name  <br /></td></tr>
+<tr class="separator:ga1e2d13acd5bf1c5790faa60edae84cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga796896ca6a991fda200e8363777aeea3" id="r_ga796896ca6a991fda200e8363777aeea3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="log_8h.html#aeb1c06cc3e47a029ca6afeac782ac8f9">AVClassCategory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga796896ca6a991fda200e8363777aeea3">av_default_get_category</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="separator:ga796896ca6a991fda200e8363777aeea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed9e57ccba2adc41864f54f47dfcccec" id="r_gaed9e57ccba2adc41864f54f47dfcccec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaed9e57ccba2adc41864f54f47dfcccec">av_log_format_line</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list vl, char *line, int line_size, int *print_prefix)</td></tr>
+<tr class="memdesc:gaed9e57ccba2adc41864f54f47dfcccec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format a line of log the same way as the default callback.  <br /></td></tr>
+<tr class="separator:gaed9e57ccba2adc41864f54f47dfcccec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c595c96d63711069accb9c60549e84f" id="r_ga0c595c96d63711069accb9c60549e84f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0c595c96d63711069accb9c60549e84f">av_log_format_line2</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, int <a class="el" href="_s_d_l__opengl_8h.html#a19ed64e01906bf3855552aa03a1739a8">level</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, va_list vl, char *line, int line_size, int *print_prefix)</td></tr>
+<tr class="memdesc:ga0c595c96d63711069accb9c60549e84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format a line of log the same way as the default callback.  <br /></td></tr>
+<tr class="separator:ga0c595c96d63711069accb9c60549e84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8143cc9a7cd364af1ff525c6181c0ce" id="r_gaf8143cc9a7cd364af1ff525c6181c0ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8143cc9a7cd364af1ff525c6181c0ce">av_log_set_flags</a> (int <a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>)</td></tr>
+<tr class="separator:gaf8143cc9a7cd364af1ff525c6181c0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86a29f38fba2fdb9579d5fa3bbf6f8bf" id="r_ga86a29f38fba2fdb9579d5fa3bbf6f8bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga86a29f38fba2fdb9579d5fa3bbf6f8bf">av_log_get_flags</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="separator:ga86a29f38fba2fdb9579d5fa3bbf6f8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ga7ff5a41a9e5e2969f1b125d4bb6ce536" name="ga7ff5a41a9e5e2969f1b125d4bb6ce536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7ff5a41a9e5e2969f1b125d4bb6ce536">&#9670;&#160;</a></span>AV_LOG_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_LOG_C</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">((<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>) &lt;&lt; 8)</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_acbccb77724c9f4a12f2a844974ab0fea"><div class="ttname"><a href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></div><div class="ttdeci">GLint GLint GLint GLint GLint x</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+</div><!-- fragment -->
+<p>Sets additional colors for extended debugging sessions. </p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="#gabd386ffd4b27637cf34e98d5d1a6e8ae">av_log</a>(ctx, <a class="code hl_define" href="group__lavu__log__constants.html#ga5b7221c3afd06848486776bd834a58a5">AV_LOG_DEBUG</a>|<a class="code hl_define" href="#ga7ff5a41a9e5e2969f1b125d4bb6ce536">AV_LOG_C</a>(134), <span class="stringliteral">&quot;Message in purple\n&quot;</span>);</div>
+<div class="ttc" id="agroup__lavu__log__constants_html_ga5b7221c3afd06848486776bd834a58a5"><div class="ttname"><a href="group__lavu__log__constants.html#ga5b7221c3afd06848486776bd834a58a5">AV_LOG_DEBUG</a></div><div class="ttdeci">#define AV_LOG_DEBUG</div><div class="ttdoc">Stuff which is only useful for libav* developers.</div><div class="ttdef"><b>定义</b> log.h:197</div></div>
+<div class="ttc" id="agroup__lavu__log_html_ga7ff5a41a9e5e2969f1b125d4bb6ce536"><div class="ttname"><a href="#ga7ff5a41a9e5e2969f1b125d4bb6ce536">AV_LOG_C</a></div><div class="ttdeci">#define AV_LOG_C(x)</div><div class="ttdoc">Sets additional colors for extended debugging sessions.</div><div class="ttdef"><b>定义</b> log.h:218</div></div>
+<div class="ttc" id="agroup__lavu__log_html_gabd386ffd4b27637cf34e98d5d1a6e8ae"><div class="ttname"><a href="#gabd386ffd4b27637cf34e98d5d1a6e8ae">av_log</a></div><div class="ttdeci">void av_log(void *avcl, int level, const char *fmt,...) av_printf_format(3</div><div class="ttdoc">Send the specified message to the log if the level is less than or equal to the current av_log_level.</div></div>
+</div><!-- fragment --><p> Requires 256color terminal support. Uses outside debugging is not recommended. </p>
+
+</div>
+</div>
+<a id="ga8b447fa5f9d7e243be4634878ed1a0ca" name="ga8b447fa5f9d7e243be4634878ed1a0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8b447fa5f9d7e243be4634878ed1a0ca">&#9670;&#160;</a></span>AV_LOG_PRINT_LEVEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_LOG_PRINT_LEVEL&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Include the log severity in messages originating from codecs. </p>
+<p>Results in messages such as: [rawvideo @ 0xDEADBEEF] [error] encode did not produce valid pts </p>
+
+</div>
+</div>
+<a id="ga6cdf5cd331b17e80e8308124f05a6db8" name="ga6cdf5cd331b17e80e8308124f05a6db8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6cdf5cd331b17e80e8308124f05a6db8">&#9670;&#160;</a></span>AV_LOG_SKIP_REPEATED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_LOG_SKIP_REPEATED&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Skip repeated messages, this requires the user app to use <a class="el" href="#gabd386ffd4b27637cf34e98d5d1a6e8ae" title="Send the specified message to the log if the level is less than or equal to the current av_log_level.">av_log()</a> instead of (f)printf as the 2 would otherwise interfere and lead to "Last message repeated x times" messages below (f)printf messages with some bad luck. </p>
+<p>Also to receive the last, "last repeated" line if any, the user app must call av_log(NULL, AV_LOG_QUIET, "%s", ""); at the end </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga796896ca6a991fda200e8363777aeea3" name="ga796896ca6a991fda200e8363777aeea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga796896ca6a991fda200e8363777aeea3">&#9670;&#160;</a></span>av_default_get_category()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="log_8h.html#aeb1c06cc3e47a029ca6afeac782ac8f9">AVClassCategory</a> av_default_get_category </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga796896ca6a991fda200e8363777aeea3_cgraph.png" border="0" usemap="#agroup__lavu__log_ga796896ca6a991fda200e8363777aeea3_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga796896ca6a991fda200e8363777aeea3_cgraph" id="agroup__lavu__log_ga796896ca6a991fda200e8363777aeea3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,169,56"/>
+<area shape="poly" title=" " alt="" coords="61,30,56,21,60,11,70,5,87,3,105,5,115,12,112,16,103,10,87,8,72,10,64,14,62,20,66,28"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="217,29,255,56"/>
+<area shape="poly" title=" " alt="" coords="169,40,201,40,201,45,169,45"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="303,29,409,56"/>
+<area shape="poly" title=" " alt="" coords="256,40,288,40,288,45,256,45"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="457,21,585,64"/>
+<area shape="poly" title=" " alt="" coords="410,40,442,40,442,45,410,45"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="633,29,777,56"/>
+<area shape="poly" title=" " alt="" coords="585,40,617,40,617,45,585,45"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga796896ca6a991fda200e8363777aeea3_icgraph.png" border="0" usemap="#agroup__lavu__log_ga796896ca6a991fda200e8363777aeea3_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga796896ca6a991fda200e8363777aeea3_icgraph" id="agroup__lavu__log_ga796896ca6a991fda200e8363777aeea3_icgraph">
+<area shape="rect" title=" " alt="" coords="5,29,169,56"/>
+<area shape="poly" title=" " alt="" coords="114,16,105,10,87,8,70,10,61,15,59,20,63,28,59,30,54,21,57,11,69,5,87,3,107,5,117,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga1e2d13acd5bf1c5790faa60edae84cf0" name="ga1e2d13acd5bf1c5790faa60edae84cf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e2d13acd5bf1c5790faa60edae84cf0">&#9670;&#160;</a></span>av_default_item_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * av_default_item_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the context name </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>The <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> class_name </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga1e2d13acd5bf1c5790faa60edae84cf0_cgraph.png" border="0" usemap="#agroup__lavu__log_ga1e2d13acd5bf1c5790faa60edae84cf0_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga1e2d13acd5bf1c5790faa60edae84cf0_cgraph" id="agroup__lavu__log_ga1e2d13acd5bf1c5790faa60edae84cf0_cgraph">
+<area shape="rect" title="Return the context name" alt="" coords="5,29,158,56"/>
+<area shape="poly" title=" " alt="" coords="55,30,50,21,54,11,64,5,82,3,100,5,110,12,107,16,98,10,81,8,66,10,58,14,56,20,60,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga1e2d13acd5bf1c5790faa60edae84cf0_icgraph.png" border="0" usemap="#agroup__lavu__log_ga1e2d13acd5bf1c5790faa60edae84cf0_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga1e2d13acd5bf1c5790faa60edae84cf0_icgraph" id="agroup__lavu__log_ga1e2d13acd5bf1c5790faa60edae84cf0_icgraph">
+<area shape="rect" title="Return the context name" alt="" coords="5,29,158,56"/>
+<area shape="poly" title=" " alt="" coords="107,16,98,10,81,8,66,10,58,14,56,20,60,28,55,30,50,21,54,11,64,5,82,3,100,5,110,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gabd386ffd4b27637cf34e98d5d1a6e8ae" name="gabd386ffd4b27637cf34e98d5d1a6e8ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd386ffd4b27637cf34e98d5d1a6e8ae">&#9670;&#160;</a></span>av_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>avcl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send the specified message to the log if the level is less than or equal to the current av_log_level. </p>
+<p>By default, all logging messages are sent to stderr. This behavior can be altered by setting a different logging callback function. </p><dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga14034761faf581a8b9ed6ef19b313708" title="Set the logging callback">av_log_set_callback</a></dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">avcl</td><td>A pointer to an arbitrary struct of which the first field is a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> struct or NULL if general log. </td></tr>
+    <tr><td class="paramname">level</td><td>The importance level of the message expressed using a <a class="el" href="group__lavu__log__constants.html">Logging Constant</a>. </td></tr>
+    <tr><td class="paramname">fmt</td><td>The format string (printf-compatible) that specifies how subsequent arguments are converted to output. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5bd132d2e4ac6f9843ef6d8e3c05050a" name="ga5bd132d2e4ac6f9843ef6d8e3c05050a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5bd132d2e4ac6f9843ef6d8e3c05050a">&#9670;&#160;</a></span>av_log_default_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_log_default_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>avcl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>vl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default logging callback </p>
+<p>It prints the message to stderr, optionally colorizing it.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">avcl</td><td>A pointer to an arbitrary struct of which the first field is a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> struct. </td></tr>
+    <tr><td class="paramname">level</td><td>The importance level of the message expressed using a <a class="el" href="group__lavu__log__constants.html">Logging Constant</a>. </td></tr>
+    <tr><td class="paramname">fmt</td><td>The format string (printf-compatible) that specifies how subsequent arguments are converted to output. </td></tr>
+    <tr><td class="paramname">vl</td><td>The arguments referenced by the format string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga5bd132d2e4ac6f9843ef6d8e3c05050a_cgraph.png" border="0" usemap="#agroup__lavu__log_ga5bd132d2e4ac6f9843ef6d8e3c05050a_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga5bd132d2e4ac6f9843ef6d8e3c05050a_cgraph" id="agroup__lavu__log_ga5bd132d2e4ac6f9843ef6d8e3c05050a_cgraph">
+<area shape="rect" title="Default logging callback" alt="" coords="5,29,166,56"/>
+<area shape="poly" title=" " alt="" coords="58,30,53,21,56,11,67,5,86,3,105,5,115,12,112,16,103,10,85,8,69,10,60,15,58,20,62,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga5bd132d2e4ac6f9843ef6d8e3c05050a_icgraph.png" border="0" usemap="#agroup__lavu__log_ga5bd132d2e4ac6f9843ef6d8e3c05050a_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga5bd132d2e4ac6f9843ef6d8e3c05050a_icgraph" id="agroup__lavu__log_ga5bd132d2e4ac6f9843ef6d8e3c05050a_icgraph">
+<area shape="rect" title="Default logging callback" alt="" coords="5,29,166,56"/>
+<area shape="poly" title=" " alt="" coords="112,16,103,10,85,8,69,10,60,15,58,20,62,28,58,30,53,21,56,11,67,5,86,3,105,5,115,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gaed9e57ccba2adc41864f54f47dfcccec" name="gaed9e57ccba2adc41864f54f47dfcccec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed9e57ccba2adc41864f54f47dfcccec">&#9670;&#160;</a></span>av_log_format_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_log_format_line </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>vl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>line_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>print_prefix</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Format a line of log the same way as the default callback. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>buffer to receive the formatted line </td></tr>
+    <tr><td class="paramname">line_size</td><td>size of the buffer </td></tr>
+    <tr><td class="paramname">print_prefix</td><td>used to store whether the prefix must be printed; must point to a persistent integer initially set to 1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_gaed9e57ccba2adc41864f54f47dfcccec_cgraph.png" border="0" usemap="#agroup__lavu__log_gaed9e57ccba2adc41864f54f47dfcccec_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_gaed9e57ccba2adc41864f54f47dfcccec_cgraph" id="agroup__lavu__log_gaed9e57ccba2adc41864f54f47dfcccec_cgraph">
+<area shape="rect" title="Format a line of log the same way as the default callback." alt="" coords="5,29,136,56"/>
+<area shape="poly" title=" " alt="" coords="47,30,43,21,46,11,55,5,71,3,87,5,96,12,92,16,85,10,70,8,57,10,50,14,48,20,52,28"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="184,29,222,56"/>
+<area shape="poly" title=" " alt="" coords="136,40,168,40,168,45,136,45"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="270,29,376,56"/>
+<area shape="poly" title=" " alt="" coords="223,40,255,40,255,45,223,45"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="424,21,552,64"/>
+<area shape="poly" title=" " alt="" coords="377,40,409,40,409,45,377,45"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="600,29,744,56"/>
+<area shape="poly" title=" " alt="" coords="552,40,584,40,584,45,552,45"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_gaed9e57ccba2adc41864f54f47dfcccec_icgraph.png" border="0" usemap="#agroup__lavu__log_gaed9e57ccba2adc41864f54f47dfcccec_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_gaed9e57ccba2adc41864f54f47dfcccec_icgraph" id="agroup__lavu__log_gaed9e57ccba2adc41864f54f47dfcccec_icgraph">
+<area shape="rect" title="Format a line of log the same way as the default callback." alt="" coords="5,29,136,56"/>
+<area shape="poly" title=" " alt="" coords="92,16,84,10,70,8,57,10,50,14,49,20,52,28,47,30,43,21,46,11,56,5,71,3,87,5,95,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga0c595c96d63711069accb9c60549e84f" name="ga0c595c96d63711069accb9c60549e84f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0c595c96d63711069accb9c60549e84f">&#9670;&#160;</a></span>av_log_format_line2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_log_format_line2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>vl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>line_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>print_prefix</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Format a line of log the same way as the default callback. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>buffer to receive the formatted line; may be NULL if line_size is 0 </td></tr>
+    <tr><td class="paramname">line_size</td><td>size of the buffer; at most line_size-1 characters will be written to the buffer, plus one null terminator </td></tr>
+    <tr><td class="paramname">print_prefix</td><td>used to store whether the prefix must be printed; must point to a persistent integer initially set to 1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Returns a negative value if an error occurred, otherwise returns the number of characters that would have been written for a sufficiently large buffer, not including the terminating null character. If the return value is not less than line_size, it means that the log message was truncated to fit the buffer. </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga0c595c96d63711069accb9c60549e84f_cgraph.png" border="0" usemap="#agroup__lavu__log_ga0c595c96d63711069accb9c60549e84f_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga0c595c96d63711069accb9c60549e84f_cgraph" id="agroup__lavu__log_ga0c595c96d63711069accb9c60549e84f_cgraph">
+<area shape="rect" title="Format a line of log the same way as the default callback." alt="" coords="5,29,143,56"/>
+<area shape="poly" title=" " alt="" coords="50,30,46,21,49,11,58,5,74,3,91,5,100,12,96,16,89,10,74,8,60,10,53,14,51,20,55,28"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="191,29,229,56"/>
+<area shape="poly" title=" " alt="" coords="143,40,175,40,175,45,143,45"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="277,29,383,56"/>
+<area shape="poly" title=" " alt="" coords="230,40,262,40,262,45,230,45"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="431,21,559,64"/>
+<area shape="poly" title=" " alt="" coords="384,40,416,40,416,45,384,45"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="607,29,751,56"/>
+<area shape="poly" title=" " alt="" coords="559,40,591,40,591,45,559,45"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga0c595c96d63711069accb9c60549e84f_icgraph.png" border="0" usemap="#agroup__lavu__log_ga0c595c96d63711069accb9c60549e84f_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga0c595c96d63711069accb9c60549e84f_icgraph" id="agroup__lavu__log_ga0c595c96d63711069accb9c60549e84f_icgraph">
+<area shape="rect" title="Format a line of log the same way as the default callback." alt="" coords="5,29,143,56"/>
+<area shape="poly" title=" " alt="" coords="97,16,89,10,74,8,60,10,53,14,51,20,55,28,50,30,46,21,49,11,58,5,74,3,91,5,100,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga86a29f38fba2fdb9579d5fa3bbf6f8bf" name="ga86a29f38fba2fdb9579d5fa3bbf6f8bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga86a29f38fba2fdb9579d5fa3bbf6f8bf">&#9670;&#160;</a></span>av_log_get_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_log_get_flags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae8ada5cc5722548d8698650b05207904" name="gae8ada5cc5722548d8698650b05207904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8ada5cc5722548d8698650b05207904">&#9670;&#160;</a></span>av_log_get_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_log_get_level </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current log level </p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="group__lavu__log__constants.html">Logging Constants</a></dd></dl>
+<dl class="section return"><dt>返回</dt><dd>Current log level </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_gae8ada5cc5722548d8698650b05207904_cgraph.png" border="0" usemap="#agroup__lavu__log_gae8ada5cc5722548d8698650b05207904_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_gae8ada5cc5722548d8698650b05207904_cgraph" id="agroup__lavu__log_gae8ada5cc5722548d8698650b05207904_cgraph">
+<area shape="rect" title="Get the current log level" alt="" coords="5,29,124,56"/>
+<area shape="poly" title=" " alt="" coords="43,30,40,20,42,11,51,5,65,3,79,5,87,12,84,16,77,10,64,8,53,10,47,14,45,20,48,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_gae8ada5cc5722548d8698650b05207904_icgraph.png" border="0" usemap="#agroup__lavu__log_gae8ada5cc5722548d8698650b05207904_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_gae8ada5cc5722548d8698650b05207904_icgraph" id="agroup__lavu__log_gae8ada5cc5722548d8698650b05207904_icgraph">
+<area shape="rect" title="Get the current log level" alt="" coords="5,29,124,56"/>
+<area shape="poly" title=" " alt="" coords="84,16,77,10,64,8,53,10,47,14,45,20,48,28,43,30,40,20,42,11,51,5,65,3,79,5,87,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga14034761faf581a8b9ed6ef19b313708" name="ga14034761faf581a8b9ed6ef19b313708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14034761faf581a8b9ed6ef19b313708">&#9670;&#160;</a></span>av_log_set_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_log_set_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>(*</td>          <td class="paramname"><span class="paramname"><em>callback&#160;</em></span>)(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *, int, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *, va_list)</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the logging callback </p>
+<dl class="section note"><dt>注解</dt><dd>The callback must be thread safe, even if the application does not use threads itself as some codecs are multithreaded.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga5bd132d2e4ac6f9843ef6d8e3c05050a" title="Default logging callback">av_log_default_callback</a></dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>A logging function with a compatible signature. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga14034761faf581a8b9ed6ef19b313708_cgraph.png" border="0" usemap="#agroup__lavu__log_ga14034761faf581a8b9ed6ef19b313708_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga14034761faf581a8b9ed6ef19b313708_cgraph" id="agroup__lavu__log_ga14034761faf581a8b9ed6ef19b313708_cgraph">
+<area shape="rect" title="Set the logging callback" alt="" coords="5,29,145,56"/>
+<area shape="poly" title=" " alt="" coords="50,30,46,21,49,11,59,5,75,3,92,5,101,12,98,16,90,10,75,8,61,10,53,14,52,20,55,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga14034761faf581a8b9ed6ef19b313708_icgraph.png" border="0" usemap="#agroup__lavu__log_ga14034761faf581a8b9ed6ef19b313708_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga14034761faf581a8b9ed6ef19b313708_icgraph" id="agroup__lavu__log_ga14034761faf581a8b9ed6ef19b313708_icgraph">
+<area shape="rect" title="Set the logging callback" alt="" coords="5,29,145,56"/>
+<area shape="poly" title=" " alt="" coords="98,16,90,10,75,8,61,10,53,14,52,20,55,28,50,30,46,21,49,11,59,5,75,3,92,5,101,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gaf8143cc9a7cd364af1ff525c6181c0ce" name="gaf8143cc9a7cd364af1ff525c6181c0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8143cc9a7cd364af1ff525c6181c0ce">&#9670;&#160;</a></span>av_log_set_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_log_set_flags </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>arg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_gaf8143cc9a7cd364af1ff525c6181c0ce_cgraph.png" border="0" usemap="#agroup__lavu__log_gaf8143cc9a7cd364af1ff525c6181c0ce_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_gaf8143cc9a7cd364af1ff525c6181c0ce_cgraph" id="agroup__lavu__log_gaf8143cc9a7cd364af1ff525c6181c0ce_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,125,56"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="173,29,212,56"/>
+<area shape="poly" title=" " alt="" coords="125,40,157,40,157,45,125,45"/>
+<area shape="poly" title=" " alt="" coords="170,30,166,21,169,11,178,5,192,3,208,5,217,12,213,16,206,10,192,8,180,10,173,14,171,20,175,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga1fd32c74db581e3e2e7f35d277bb1e24" name="ga1fd32c74db581e3e2e7f35d277bb1e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1fd32c74db581e3e2e7f35d277bb1e24">&#9670;&#160;</a></span>av_log_set_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_log_set_level </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the log level </p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="group__lavu__log__constants.html">Logging Constants</a></dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Logging level </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga1fd32c74db581e3e2e7f35d277bb1e24_cgraph.png" border="0" usemap="#agroup__lavu__log_ga1fd32c74db581e3e2e7f35d277bb1e24_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga1fd32c74db581e3e2e7f35d277bb1e24_cgraph" id="agroup__lavu__log_ga1fd32c74db581e3e2e7f35d277bb1e24_cgraph">
+<area shape="rect" title="Set the log level" alt="" coords="5,29,124,56"/>
+<area shape="poly" title=" " alt="" coords="43,30,40,20,42,11,51,5,65,3,79,5,87,12,84,16,77,10,64,8,53,10,47,14,45,20,48,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga1fd32c74db581e3e2e7f35d277bb1e24_icgraph.png" border="0" usemap="#agroup__lavu__log_ga1fd32c74db581e3e2e7f35d277bb1e24_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga1fd32c74db581e3e2e7f35d277bb1e24_icgraph" id="agroup__lavu__log_ga1fd32c74db581e3e2e7f35d277bb1e24_icgraph">
+<area shape="rect" title="Set the log level" alt="" coords="5,29,124,56"/>
+<area shape="poly" title=" " alt="" coords="84,16,77,10,64,8,53,10,47,14,45,20,48,28,43,30,40,20,42,11,51,5,65,3,79,5,87,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga6d72fb598cff2c8385069a1fc2ee5812" name="ga6d72fb598cff2c8385069a1fc2ee5812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d72fb598cff2c8385069a1fc2ee5812">&#9670;&#160;</a></span>av_vlog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_vlog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>avcl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>vl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send the specified message to the log if the level is less than or equal to the current av_log_level. </p>
+<p>By default, all logging messages are sent to stderr. This behavior can be altered by setting a different logging callback function. </p><dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga14034761faf581a8b9ed6ef19b313708" title="Set the logging callback">av_log_set_callback</a></dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">avcl</td><td>A pointer to an arbitrary struct of which the first field is a pointer to an <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> struct. </td></tr>
+    <tr><td class="paramname">level</td><td>The importance level of the message expressed using a <a class="el" href="group__lavu__log__constants.html">Logging Constant</a>. </td></tr>
+    <tr><td class="paramname">fmt</td><td>The format string (printf-compatible) that specifies how subsequent arguments are converted to output. </td></tr>
+    <tr><td class="paramname">vl</td><td>The arguments referenced by the format string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga6d72fb598cff2c8385069a1fc2ee5812_cgraph.png" border="0" usemap="#agroup__lavu__log_ga6d72fb598cff2c8385069a1fc2ee5812_cgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga6d72fb598cff2c8385069a1fc2ee5812_cgraph" id="agroup__lavu__log_ga6d72fb598cff2c8385069a1fc2ee5812_cgraph">
+<area shape="rect" title="Send the specified message to the log if the level is less than or equal to the current av_log_level." alt="" coords="5,29,72,56"/>
+<area shape="poly" title=" " alt="" coords="25,29,25,12,30,5,39,3,48,5,52,12,48,15,44,10,38,8,33,10,30,14,31,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__log_ga6d72fb598cff2c8385069a1fc2ee5812_icgraph.png" border="0" usemap="#agroup__lavu__log_ga6d72fb598cff2c8385069a1fc2ee5812_icgraph" alt=""/></div>
+<map name="agroup__lavu__log_ga6d72fb598cff2c8385069a1fc2ee5812_icgraph" id="agroup__lavu__log_ga6d72fb598cff2c8385069a1fc2ee5812_icgraph">
+<area shape="rect" title="Send the specified message to the log if the level is less than or equal to the current av_log_level." alt="" coords="5,29,72,56"/>
+<area shape="poly" title=" " alt="" coords="48,15,44,10,38,8,33,10,30,14,31,29,25,29,25,12,30,5,39,3,48,5,52,12"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

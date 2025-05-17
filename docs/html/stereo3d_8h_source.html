@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: stereo3d.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('stereo3d_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">stereo3d.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="stereo3d_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2013 Vittorio Giovara &lt;vittorio.giovara@gmail.com&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifndef AVUTIL_STEREO3D_H</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define AVUTIL_STEREO3D_H</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="frame_8h.html">frame.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ga12fe9672eeaeb8980960faa96d2fcee6">   51</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__video__stereo3d.html#ga12fe9672eeaeb8980960faa96d2fcee6">AVStereo3DType</a> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a276701c16077443c9526dd28da8001a7">   55</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a276701c16077443c9526dd28da8001a7">AV_STEREO3D_2D</a>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6aaa1ee993fc27f99269c536c51b0b5f3c">   67</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6aaa1ee993fc27f99269c536c51b0b5f3c">AV_STEREO3D_SIDEBYSIDE</a>,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a4cf21029b6e5aa28bf53fbd9740443c9">   79</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a4cf21029b6e5aa28bf53fbd9740443c9">AV_STEREO3D_TOPBOTTOM</a>,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6aa23e3e6b40107100e62fa16ea536aa07">   92</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6aa23e3e6b40107100e62fa16ea536aa07">AV_STEREO3D_FRAMESEQUENCE</a>,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a29a4a89f56c46999741e394e2019b221">  104</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a29a4a89f56c46999741e394e2019b221">AV_STEREO3D_CHECKERBOARD</a>,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a6176782f4b7b21776faf6738baa520e2">  117</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a6176782f4b7b21776faf6738baa520e2">AV_STEREO3D_SIDEBYSIDE_QUINCUNX</a>,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a23d62b9a67d4a99d745eb9bebcfd2b3e">  129</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a23d62b9a67d4a99d745eb9bebcfd2b3e">AV_STEREO3D_LINES</a>,</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a1ea7966fe2696b13348a3cf0544e3caa">  141</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a1ea7966fe2696b13348a3cf0544e3caa">AV_STEREO3D_COLUMNS</a>,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>};</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span></div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="};">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gab99ec95d9ee1a8e7c676a98fe6df6085">  147</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__video__stereo3d.html#gab99ec95d9ee1a8e7c676a98fe6df6085">AVStereo3DView</a> {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a49499de043f603aee862d004c16f6936">  151</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a49499de043f603aee862d004c16f6936">AV_STEREO3D_VIEW_PACKED</a>,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a779648f9fa3044c29210a5960027ca0b">  156</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a779648f9fa3044c29210a5960027ca0b">AV_STEREO3D_VIEW_LEFT</a>,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a140ccbd9236e523795db746095c41943">  161</a></span>    <a class="code hl_enumvalue" href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a140ccbd9236e523795db746095c41943">AV_STEREO3D_VIEW_RIGHT</a>,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>};</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ga5cca86880e9be72c89bca1c7a41eec99">  167</a></span><span class="preprocessor">#define AV_STEREO3D_FLAG_INVERT     (1 &lt;&lt; 0)</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span></div>
+<div class="foldopen" id="foldopen00176" data-start="{" data-end="};">
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="struct_a_v_stereo3_d.html">  176</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_a_v_stereo3_d.html">AVStereo3D</a> {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="struct_a_v_stereo3_d.html#aa2682663ea773498efd575193a2bfa74">  180</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__video__stereo3d.html#ga12fe9672eeaeb8980960faa96d2fcee6">AVStereo3DType</a> <a class="code hl_variable" href="struct_a_v_stereo3_d.html#aa2682663ea773498efd575193a2bfa74">type</a>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="struct_a_v_stereo3_d.html#ac8bf36fe0577cba66bccda3a6f7e80a4">  185</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_stereo3_d.html#ac8bf36fe0577cba66bccda3a6f7e80a4">flags</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="struct_a_v_stereo3_d.html#a1609f804fe08c4a1dd93480924133a46">  190</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__video__stereo3d.html#gab99ec95d9ee1a8e7c676a98fe6df6085">AVStereo3DView</a> <a class="code hl_variable" href="struct_a_v_stereo3_d.html#a1609f804fe08c4a1dd93480924133a46">view</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#gacee86b988fcf35e3dfc2eaaa09d433c0">  191</a></span>} <a class="code hl_struct" href="struct_a_v_stereo3_d.html">AVStereo3D</a>;</div>
+</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ga15529aca5812275dfc7db4fa38900a04">  199</a></span><a class="code hl_struct" href="struct_a_v_stereo3_d.html">AVStereo3D</a> *<a class="code hl_function" href="group__lavu__video__stereo3d.html#ga15529aca5812275dfc7db4fa38900a04">av_stereo3d_alloc</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ga8c67e19b28bfbc2f74416c70637fbb3b">  208</a></span><a class="code hl_struct" href="struct_a_v_stereo3_d.html">AVStereo3D</a> *<a class="code hl_function" href="group__lavu__video__stereo3d.html#ga8c67e19b28bfbc2f74416c70637fbb3b">av_stereo3d_create_side_data</a>(<a class="code hl_struct" href="struct_a_v_frame.html">AVFrame</a> *frame);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ga426618ed05efd22af0a963f2d4754246">  217</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="group__lavu__video__stereo3d.html#ga426618ed05efd22af0a963f2d4754246">av_stereo3d_type_name</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="group__lavu__video__stereo3d.html#ga6a48f4c80b275d74d1e4ba760802a070">  226</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__lavu__video__stereo3d.html#ga6a48f4c80b275d74d1e4ba760802a070">av_stereo3d_from_name</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_STEREO3D_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_ad5ddf6fca7b585646515660e810e0188"><div class="ttname"><a href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a></div><div class="ttdeci">GLuint GLuint GLsizei GLenum type</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1571</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a8e1a4ccadfc12dbf9a8e411d68adfe8e"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a></div><div class="ttdeci">GLuint const GLchar * name</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:952</div></div>
+<div class="ttc" id="aframe_8h_html"><div class="ttname"><a href="frame_8h.html">frame.h</a></div><div class="ttdoc">reference-counted frame API</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_ga12fe9672eeaeb8980960faa96d2fcee6"><div class="ttname"><a href="group__lavu__video__stereo3d.html#ga12fe9672eeaeb8980960faa96d2fcee6">AVStereo3DType</a></div><div class="ttdeci">AVStereo3DType</div><div class="ttdoc">List of possible 3D Types</div><div class="ttdef"><b>定义</b> stereo3d.h:51</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_ga15529aca5812275dfc7db4fa38900a04"><div class="ttname"><a href="group__lavu__video__stereo3d.html#ga15529aca5812275dfc7db4fa38900a04">av_stereo3d_alloc</a></div><div class="ttdeci">AVStereo3D * av_stereo3d_alloc(void)</div><div class="ttdoc">Allocate an AVStereo3D structure and set its fields to default values.</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_ga426618ed05efd22af0a963f2d4754246"><div class="ttname"><a href="group__lavu__video__stereo3d.html#ga426618ed05efd22af0a963f2d4754246">av_stereo3d_type_name</a></div><div class="ttdeci">const char * av_stereo3d_type_name(unsigned int type)</div><div class="ttdoc">Provide a human-readable name of a given stereo3d type.</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_ga6a48f4c80b275d74d1e4ba760802a070"><div class="ttname"><a href="group__lavu__video__stereo3d.html#ga6a48f4c80b275d74d1e4ba760802a070">av_stereo3d_from_name</a></div><div class="ttdeci">int av_stereo3d_from_name(const char *name)</div><div class="ttdoc">Get the AVStereo3DType form a human-readable name.</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_ga8c67e19b28bfbc2f74416c70637fbb3b"><div class="ttname"><a href="group__lavu__video__stereo3d.html#ga8c67e19b28bfbc2f74416c70637fbb3b">av_stereo3d_create_side_data</a></div><div class="ttdeci">AVStereo3D * av_stereo3d_create_side_data(AVFrame *frame)</div><div class="ttdoc">Allocate a complete AVFrameSideData and add it to the frame.</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gab99ec95d9ee1a8e7c676a98fe6df6085"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gab99ec95d9ee1a8e7c676a98fe6df6085">AVStereo3DView</a></div><div class="ttdeci">AVStereo3DView</div><div class="ttdoc">List of possible view types.</div><div class="ttdef"><b>定义</b> stereo3d.h:147</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gga12fe9672eeaeb8980960faa96d2fcee6a1ea7966fe2696b13348a3cf0544e3caa"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a1ea7966fe2696b13348a3cf0544e3caa">AV_STEREO3D_COLUMNS</a></div><div class="ttdeci">@ AV_STEREO3D_COLUMNS</div><div class="ttdoc">Views are packed per column.</div><div class="ttdef"><b>定义</b> stereo3d.h:141</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gga12fe9672eeaeb8980960faa96d2fcee6a23d62b9a67d4a99d745eb9bebcfd2b3e"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a23d62b9a67d4a99d745eb9bebcfd2b3e">AV_STEREO3D_LINES</a></div><div class="ttdeci">@ AV_STEREO3D_LINES</div><div class="ttdoc">Views are packed per line, as if interlaced.</div><div class="ttdef"><b>定义</b> stereo3d.h:129</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gga12fe9672eeaeb8980960faa96d2fcee6a276701c16077443c9526dd28da8001a7"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a276701c16077443c9526dd28da8001a7">AV_STEREO3D_2D</a></div><div class="ttdeci">@ AV_STEREO3D_2D</div><div class="ttdoc">Video is not stereoscopic (and metadata has to be there).</div><div class="ttdef"><b>定义</b> stereo3d.h:55</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gga12fe9672eeaeb8980960faa96d2fcee6a29a4a89f56c46999741e394e2019b221"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a29a4a89f56c46999741e394e2019b221">AV_STEREO3D_CHECKERBOARD</a></div><div class="ttdeci">@ AV_STEREO3D_CHECKERBOARD</div><div class="ttdoc">Views are packed in a checkerboard-like structure per pixel.</div><div class="ttdef"><b>定义</b> stereo3d.h:104</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gga12fe9672eeaeb8980960faa96d2fcee6a4cf21029b6e5aa28bf53fbd9740443c9"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a4cf21029b6e5aa28bf53fbd9740443c9">AV_STEREO3D_TOPBOTTOM</a></div><div class="ttdeci">@ AV_STEREO3D_TOPBOTTOM</div><div class="ttdoc">Views are on top of each other.</div><div class="ttdef"><b>定义</b> stereo3d.h:79</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gga12fe9672eeaeb8980960faa96d2fcee6a6176782f4b7b21776faf6738baa520e2"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6a6176782f4b7b21776faf6738baa520e2">AV_STEREO3D_SIDEBYSIDE_QUINCUNX</a></div><div class="ttdeci">@ AV_STEREO3D_SIDEBYSIDE_QUINCUNX</div><div class="ttdoc">Views are next to each other, but when upscaling apply a checkerboard pattern.</div><div class="ttdef"><b>定义</b> stereo3d.h:117</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gga12fe9672eeaeb8980960faa96d2fcee6aa23e3e6b40107100e62fa16ea536aa07"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6aa23e3e6b40107100e62fa16ea536aa07">AV_STEREO3D_FRAMESEQUENCE</a></div><div class="ttdeci">@ AV_STEREO3D_FRAMESEQUENCE</div><div class="ttdoc">Views are alternated temporally.</div><div class="ttdef"><b>定义</b> stereo3d.h:92</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_gga12fe9672eeaeb8980960faa96d2fcee6aaa1ee993fc27f99269c536c51b0b5f3c"><div class="ttname"><a href="group__lavu__video__stereo3d.html#gga12fe9672eeaeb8980960faa96d2fcee6aaa1ee993fc27f99269c536c51b0b5f3c">AV_STEREO3D_SIDEBYSIDE</a></div><div class="ttdeci">@ AV_STEREO3D_SIDEBYSIDE</div><div class="ttdoc">Views are next to each other.</div><div class="ttdef"><b>定义</b> stereo3d.h:67</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_ggab99ec95d9ee1a8e7c676a98fe6df6085a140ccbd9236e523795db746095c41943"><div class="ttname"><a href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a140ccbd9236e523795db746095c41943">AV_STEREO3D_VIEW_RIGHT</a></div><div class="ttdeci">@ AV_STEREO3D_VIEW_RIGHT</div><div class="ttdoc">Frame contains only the right view.</div><div class="ttdef"><b>定义</b> stereo3d.h:161</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_ggab99ec95d9ee1a8e7c676a98fe6df6085a49499de043f603aee862d004c16f6936"><div class="ttname"><a href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a49499de043f603aee862d004c16f6936">AV_STEREO3D_VIEW_PACKED</a></div><div class="ttdeci">@ AV_STEREO3D_VIEW_PACKED</div><div class="ttdoc">Frame contains two packed views.</div><div class="ttdef"><b>定义</b> stereo3d.h:151</div></div>
+<div class="ttc" id="agroup__lavu__video__stereo3d_html_ggab99ec95d9ee1a8e7c676a98fe6df6085a779648f9fa3044c29210a5960027ca0b"><div class="ttname"><a href="group__lavu__video__stereo3d.html#ggab99ec95d9ee1a8e7c676a98fe6df6085a779648f9fa3044c29210a5960027ca0b">AV_STEREO3D_VIEW_LEFT</a></div><div class="ttdeci">@ AV_STEREO3D_VIEW_LEFT</div><div class="ttdoc">Frame contains only the left view.</div><div class="ttdef"><b>定义</b> stereo3d.h:156</div></div>
+<div class="ttc" id="astruct_a_v_frame_html"><div class="ttname"><a href="struct_a_v_frame.html">AVFrame</a></div><div class="ttdoc">This structure describes decoded (raw) audio or video data.</div><div class="ttdef"><b>定义</b> frame.h:218</div></div>
+<div class="ttc" id="astruct_a_v_stereo3_d_html"><div class="ttname"><a href="struct_a_v_stereo3_d.html">AVStereo3D</a></div><div class="ttdoc">Stereo 3D type: this structure describes how two videos are packed within a single video surface,...</div><div class="ttdef"><b>定义</b> stereo3d.h:176</div></div>
+<div class="ttc" id="astruct_a_v_stereo3_d_html_a1609f804fe08c4a1dd93480924133a46"><div class="ttname"><a href="struct_a_v_stereo3_d.html#a1609f804fe08c4a1dd93480924133a46">AVStereo3D::view</a></div><div class="ttdeci">enum AVStereo3DView view</div><div class="ttdoc">Determines which views are packed.</div><div class="ttdef"><b>定义</b> stereo3d.h:190</div></div>
+<div class="ttc" id="astruct_a_v_stereo3_d_html_aa2682663ea773498efd575193a2bfa74"><div class="ttname"><a href="struct_a_v_stereo3_d.html#aa2682663ea773498efd575193a2bfa74">AVStereo3D::type</a></div><div class="ttdeci">enum AVStereo3DType type</div><div class="ttdoc">How views are packed within the video.</div><div class="ttdef"><b>定义</b> stereo3d.h:180</div></div>
+<div class="ttc" id="astruct_a_v_stereo3_d_html_ac8bf36fe0577cba66bccda3a6f7e80a4"><div class="ttname"><a href="struct_a_v_stereo3_d.html#ac8bf36fe0577cba66bccda3a6f7e80a4">AVStereo3D::flags</a></div><div class="ttdeci">int flags</div><div class="ttdoc">Additional information about the frame packing.</div><div class="ttdef"><b>定义</b> stereo3d.h:185</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="stereo3d_8h.html">stereo3d.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

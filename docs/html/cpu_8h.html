@@ -1,0 +1,1076 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: cpu.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('cpu_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">cpu.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="attributes_8h_source.html">attributes.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+cpu.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="cpu_8h__incl.png" border="0" usemap="#acpu_8h" alt=""/></div>
+<map name="acpu_8h" id="acpu_8h">
+<area shape="rect" title=" " alt="" coords="64,5,117,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,74,107"/>
+<area shape="poly" title=" " alt="" coords="84,34,59,69,55,66,79,31"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="98,80,184,107"/>
+<area shape="poly" title=" " alt="" coords="101,31,126,66,121,69,97,34"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="cpu_8h__dep__incl.png" border="0" usemap="#acpu_8hdep" alt=""/></div>
+<map name="acpu_8hdep" id="acpu_8hdep">
+<area shape="rect" title=" " alt="" coords="735,5,788,32"/>
+<area shape="rect" href="avcodec_8h.html" title="Libavcodec external API header" alt="" coords="721,80,802,107"/>
+<area shape="poly" title=" " alt="" coords="764,48,764,80,759,80,759,48"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="376,379,478,405"/>
+<area shape="poly" title=" " alt="" coords="706,100,638,107,563,117,496,134,472,144,455,157,437,183,425,212,418,244,416,276,419,336,426,378,421,379,414,337,410,276,413,243,420,211,432,180,451,153,469,140,495,129,562,112,637,101,705,95"/>
+<area shape="rect" href="avformat_8h.html" title="Main libavformat public API header" alt="" coords="465,155,548,181"/>
+<area shape="poly" title=" " alt="" coords="707,113,549,157,548,152,705,108"/>
+<area shape="rect" href="dirac_8h.html" title="Interface to Dirac Decoder/Encoder" alt="" coords="572,155,633,181"/>
+<area shape="poly" title=" " alt="" coords="721,116,632,156,629,152,719,111"/>
+<area shape="rect" href="dv__profile_8h.html" title=" " alt="" coords="657,155,746,181"/>
+<area shape="poly" title=" " alt="" coords="743,120,714,156,710,153,739,117"/>
+<area shape="rect" href="mediacodec_8h.html" title=" " alt="" coords="770,155,872,181"/>
+<area shape="poly" title=" " alt="" coords="783,117,813,153,809,156,779,120"/>
+<area shape="rect" href="vdpau_8h.html" title="Public libavcodec VDPAU header." alt="" coords="897,155,964,181"/>
+<area shape="poly" title=" " alt="" coords="806,111,902,152,900,156,804,116"/>
+<area shape="rect" href="videotoolbox_8h.html" title="Public libavcodec Videotoolbox header." alt="" coords="989,155,1094,181"/>
+<area shape="poly" title=" " alt="" coords="818,106,993,151,992,157,816,112"/>
+<area shape="rect" href="xvmc_8h.html" title="Public libavcodec XvMC header." alt="" coords="1118,155,1183,181"/>
+<area shape="poly" title=" " alt="" coords="818,100,950,122,1107,152,1119,155,1117,160,1106,157,949,127,817,105"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="70,453,165,480"/>
+<area shape="poly" title=" " alt="" coords="361,411,166,457,165,452,360,406"/>
+<area shape="rect" href="_video_player_8cpp.html" title=" " alt="" coords="188,453,305,480"/>
+<area shape="poly" title=" " alt="" coords="382,414,279,455,277,450,380,409"/>
+<area shape="rect" href="_video_player___audio_thread_8cpp.html" title=" " alt="" coords="328,453,525,480"/>
+<area shape="poly" title=" " alt="" coords="429,421,429,453,424,453,424,421"/>
+<area shape="rect" href="_video_player___video_thread_8cpp.html" title=" " alt="" coords="548,453,745,480"/>
+<area shape="poly" title=" " alt="" coords="480,408,609,450,607,455,479,413"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="5,528,115,555"/>
+<area shape="poly" title=" " alt="" coords="100,494,72,529,68,526,96,491"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="139,528,213,555"/>
+<area shape="poly" title=" " alt="" coords="139,491,168,526,164,529,135,494"/>
+<area shape="poly" title=" " alt="" coords="496,196,481,230,452,315,433,379,428,378,447,313,476,228,491,194"/>
+<area shape="rect" href="_p_c_m_frame_8h.html" title=" " alt="" coords="490,229,590,256"/>
+<area shape="poly" title=" " alt="" coords="521,194,537,228,532,230,516,197"/>
+<area shape="rect" href="avdevice_8h.html" title="Main libavdevice API header" alt="" coords="614,229,698,256"/>
+<area shape="poly" title=" " alt="" coords="548,186,631,226,629,231,545,191"/>
+<area shape="rect" href="_p_c_m_frame_8cpp.html" title=" " alt="" coords="487,304,601,331"/>
+<area shape="poly" title=" " alt="" coords="544,272,546,303,541,304,539,272"/>
+<area shape="rect" href="_pcm_player_8h.html" title=" " alt="" coords="625,304,722,331"/>
+<area shape="poly" title=" " alt="" coords="577,261,651,301,649,306,575,266"/>
+<area shape="poly" title=" " alt="" coords="617,338,471,381,469,375,615,333"/>
+<area shape="rect" href="_pcm_player_8cpp.html" title=" " alt="" coords="618,379,728,405"/>
+<area shape="poly" title=" " alt="" coords="676,346,676,378,671,378,671,346"/>
+<area shape="rect" href="_pcm_player___s_d_l_8h.html" title=" " alt="" coords="763,379,893,405"/>
+<area shape="poly" title=" " alt="" coords="715,335,802,376,800,380,713,340"/>
+<area shape="rect" href="_pcm_player___s_d_l_8cpp.html" title=" " alt="" coords="768,453,912,480"/>
+<area shape="poly" title=" " alt="" coords="835,420,841,452,835,453,830,421"/>
+</map>
+</div>
+</div>
+<p><a href="cpu_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:af73205a325a7353debd757a40d379064" id="r_af73205a325a7353debd757a40d379064"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af73205a325a7353debd757a40d379064">AV_CPU_FLAG_FORCE</a>&#160;&#160;&#160;0x80000000 /* force <a class="el" href="_s_d_l__opengl__glext_8h.html#aaaaec24daa23563cf68022ae1bb200c7">usage</a> of selected <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a> (OR) */</td></tr>
+<tr class="separator:af73205a325a7353debd757a40d379064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab63e0c708c2c8cf519adb924306273" id="r_aeab63e0c708c2c8cf519adb924306273"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeab63e0c708c2c8cf519adb924306273">AV_CPU_FLAG_MMX</a>&#160;&#160;&#160;0x0001</td></tr>
+<tr class="memdesc:aeab63e0c708c2c8cf519adb924306273"><td class="mdescLeft">&#160;</td><td class="mdescRight">standard MMX  <br /></td></tr>
+<tr class="separator:aeab63e0c708c2c8cf519adb924306273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a821273926dc2c8282d9b0990582e3e3f" id="r_a821273926dc2c8282d9b0990582e3e3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a821273926dc2c8282d9b0990582e3e3f">AV_CPU_FLAG_MMXEXT</a>&#160;&#160;&#160;0x0002</td></tr>
+<tr class="memdesc:a821273926dc2c8282d9b0990582e3e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSE integer functions or AMD MMX ext  <br /></td></tr>
+<tr class="separator:a821273926dc2c8282d9b0990582e3e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53053dcf8c045b05ca3b5326db518b49" id="r_a53053dcf8c045b05ca3b5326db518b49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53053dcf8c045b05ca3b5326db518b49">AV_CPU_FLAG_MMX2</a>&#160;&#160;&#160;0x0002</td></tr>
+<tr class="memdesc:a53053dcf8c045b05ca3b5326db518b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSE integer functions or AMD MMX ext  <br /></td></tr>
+<tr class="separator:a53053dcf8c045b05ca3b5326db518b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9fdb485b595b4d3b2358ae46e7cc90" id="r_afa9fdb485b595b4d3b2358ae46e7cc90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa9fdb485b595b4d3b2358ae46e7cc90">AV_CPU_FLAG_3DNOW</a>&#160;&#160;&#160;0x0004</td></tr>
+<tr class="memdesc:afa9fdb485b595b4d3b2358ae46e7cc90"><td class="mdescLeft">&#160;</td><td class="mdescRight">AMD 3DNOW  <br /></td></tr>
+<tr class="separator:afa9fdb485b595b4d3b2358ae46e7cc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cbf9faebf34070327d31989da5f14be" id="r_a4cbf9faebf34070327d31989da5f14be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cbf9faebf34070327d31989da5f14be">AV_CPU_FLAG_SSE</a>&#160;&#160;&#160;0x0008</td></tr>
+<tr class="memdesc:a4cbf9faebf34070327d31989da5f14be"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSE functions  <br /></td></tr>
+<tr class="separator:a4cbf9faebf34070327d31989da5f14be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f19ba5104672eb4065f56f9a3877dc6" id="r_a0f19ba5104672eb4065f56f9a3877dc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f19ba5104672eb4065f56f9a3877dc6">AV_CPU_FLAG_SSE2</a>&#160;&#160;&#160;0x0010</td></tr>
+<tr class="memdesc:a0f19ba5104672eb4065f56f9a3877dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIV SSE2 functions  <br /></td></tr>
+<tr class="separator:a0f19ba5104672eb4065f56f9a3877dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e90443f6a8a3f65c01d2a034c4a2cfd" id="r_a7e90443f6a8a3f65c01d2a034c4a2cfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e90443f6a8a3f65c01d2a034c4a2cfd">AV_CPU_FLAG_SSE2SLOW</a>&#160;&#160;&#160;0x40000000</td></tr>
+<tr class="memdesc:a7e90443f6a8a3f65c01d2a034c4a2cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSE2 supported, but usually not faster than regular MMX/SSE (e.g.  <br /></td></tr>
+<tr class="separator:a7e90443f6a8a3f65c01d2a034c4a2cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb0453b7c1a5e10e049c435240edb25" id="r_a9bb0453b7c1a5e10e049c435240edb25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bb0453b7c1a5e10e049c435240edb25">AV_CPU_FLAG_3DNOWEXT</a>&#160;&#160;&#160;0x0020</td></tr>
+<tr class="memdesc:a9bb0453b7c1a5e10e049c435240edb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">AMD 3DNowExt  <br /></td></tr>
+<tr class="separator:a9bb0453b7c1a5e10e049c435240edb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b1633fbec64188f3eadb1bffd7703d" id="r_a87b1633fbec64188f3eadb1bffd7703d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87b1633fbec64188f3eadb1bffd7703d">AV_CPU_FLAG_SSE3</a>&#160;&#160;&#160;0x0040</td></tr>
+<tr class="memdesc:a87b1633fbec64188f3eadb1bffd7703d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prescott SSE3 functions  <br /></td></tr>
+<tr class="separator:a87b1633fbec64188f3eadb1bffd7703d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20f4702905f3ca20721afa834a4ab81d" id="r_a20f4702905f3ca20721afa834a4ab81d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20f4702905f3ca20721afa834a4ab81d">AV_CPU_FLAG_SSE3SLOW</a>&#160;&#160;&#160;0x20000000</td></tr>
+<tr class="memdesc:a20f4702905f3ca20721afa834a4ab81d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSE3 supported, but usually not faster than regular MMX/SSE (e.g.  <br /></td></tr>
+<tr class="separator:a20f4702905f3ca20721afa834a4ab81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba281a8be7e4c8f87624c30ab227d1b6" id="r_aba281a8be7e4c8f87624c30ab227d1b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba281a8be7e4c8f87624c30ab227d1b6">AV_CPU_FLAG_SSSE3</a>&#160;&#160;&#160;0x0080</td></tr>
+<tr class="memdesc:aba281a8be7e4c8f87624c30ab227d1b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conroe SSSE3 functions  <br /></td></tr>
+<tr class="separator:aba281a8be7e4c8f87624c30ab227d1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58ec14888ae9ebe1fc599e587ef3ea5" id="r_ad58ec14888ae9ebe1fc599e587ef3ea5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad58ec14888ae9ebe1fc599e587ef3ea5">AV_CPU_FLAG_SSSE3SLOW</a>&#160;&#160;&#160;0x4000000</td></tr>
+<tr class="memdesc:ad58ec14888ae9ebe1fc599e587ef3ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSSE3 supported, but usually not faster  <br /></td></tr>
+<tr class="separator:ad58ec14888ae9ebe1fc599e587ef3ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11e6283f7f8b3f5bbc34fcb0eb20fc5" id="r_ab11e6283f7f8b3f5bbc34fcb0eb20fc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab11e6283f7f8b3f5bbc34fcb0eb20fc5">AV_CPU_FLAG_ATOM</a>&#160;&#160;&#160;0x10000000</td></tr>
+<tr class="memdesc:ab11e6283f7f8b3f5bbc34fcb0eb20fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atom processor, some SSSE3 instructions are slower  <br /></td></tr>
+<tr class="separator:ab11e6283f7f8b3f5bbc34fcb0eb20fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dbc718bec5f578602a7854d05db76de" id="r_a5dbc718bec5f578602a7854d05db76de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dbc718bec5f578602a7854d05db76de">AV_CPU_FLAG_SSE4</a>&#160;&#160;&#160;0x0100</td></tr>
+<tr class="memdesc:a5dbc718bec5f578602a7854d05db76de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Penryn SSE4.1 functions  <br /></td></tr>
+<tr class="separator:a5dbc718bec5f578602a7854d05db76de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3bc1f71c16c5fe8975c10f30d69be7" id="r_a2e3bc1f71c16c5fe8975c10f30d69be7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e3bc1f71c16c5fe8975c10f30d69be7">AV_CPU_FLAG_SSE42</a>&#160;&#160;&#160;0x0200</td></tr>
+<tr class="memdesc:a2e3bc1f71c16c5fe8975c10f30d69be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nehalem SSE4.2 functions  <br /></td></tr>
+<tr class="separator:a2e3bc1f71c16c5fe8975c10f30d69be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf5352ec0d64bbb19fc0fa1bdeb9201" id="r_a8bf5352ec0d64bbb19fc0fa1bdeb9201"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bf5352ec0d64bbb19fc0fa1bdeb9201">AV_CPU_FLAG_AESNI</a>&#160;&#160;&#160;0x80000</td></tr>
+<tr class="memdesc:a8bf5352ec0d64bbb19fc0fa1bdeb9201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advanced Encryption Standard functions  <br /></td></tr>
+<tr class="separator:a8bf5352ec0d64bbb19fc0fa1bdeb9201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5537bbc8fc14343de2b2ec15eeba17" id="r_afb5537bbc8fc14343de2b2ec15eeba17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb5537bbc8fc14343de2b2ec15eeba17">AV_CPU_FLAG_AVX</a>&#160;&#160;&#160;0x4000</td></tr>
+<tr class="memdesc:afb5537bbc8fc14343de2b2ec15eeba17"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVX functions: requires OS support even if YMM registers aren't used  <br /></td></tr>
+<tr class="separator:afb5537bbc8fc14343de2b2ec15eeba17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe16e24b7016bbb64fa1937e04389f2" id="r_adfe16e24b7016bbb64fa1937e04389f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfe16e24b7016bbb64fa1937e04389f2">AV_CPU_FLAG_AVXSLOW</a>&#160;&#160;&#160;0x8000000</td></tr>
+<tr class="memdesc:adfe16e24b7016bbb64fa1937e04389f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVX supported, but slow when using YMM registers (e.g. Bulldozer)  <br /></td></tr>
+<tr class="separator:adfe16e24b7016bbb64fa1937e04389f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db899a1c86c9ff8d05bbb667d2ffb21" id="r_a9db899a1c86c9ff8d05bbb667d2ffb21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9db899a1c86c9ff8d05bbb667d2ffb21">AV_CPU_FLAG_XOP</a>&#160;&#160;&#160;0x0400</td></tr>
+<tr class="memdesc:a9db899a1c86c9ff8d05bbb667d2ffb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bulldozer XOP functions  <br /></td></tr>
+<tr class="separator:a9db899a1c86c9ff8d05bbb667d2ffb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc98ebd0ad5759f823070c0604a6778" id="r_a5fc98ebd0ad5759f823070c0604a6778"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fc98ebd0ad5759f823070c0604a6778">AV_CPU_FLAG_FMA4</a>&#160;&#160;&#160;0x0800</td></tr>
+<tr class="memdesc:a5fc98ebd0ad5759f823070c0604a6778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bulldozer FMA4 functions  <br /></td></tr>
+<tr class="separator:a5fc98ebd0ad5759f823070c0604a6778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a422f69279d4c977d660b72a47fa3478b" id="r_a422f69279d4c977d660b72a47fa3478b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a422f69279d4c977d660b72a47fa3478b">AV_CPU_FLAG_CMOV</a>&#160;&#160;&#160;0x1000</td></tr>
+<tr class="memdesc:a422f69279d4c977d660b72a47fa3478b"><td class="mdescLeft">&#160;</td><td class="mdescRight">supports cmov instruction  <br /></td></tr>
+<tr class="separator:a422f69279d4c977d660b72a47fa3478b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5be3b16a597bf9cbd489968ce36e082" id="r_ab5be3b16a597bf9cbd489968ce36e082"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5be3b16a597bf9cbd489968ce36e082">AV_CPU_FLAG_AVX2</a>&#160;&#160;&#160;0x8000</td></tr>
+<tr class="memdesc:ab5be3b16a597bf9cbd489968ce36e082"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVX2 functions: requires OS support even if YMM registers aren't used  <br /></td></tr>
+<tr class="separator:ab5be3b16a597bf9cbd489968ce36e082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd7cc622a20c9007b534f6f3d6813d0" id="r_a0bd7cc622a20c9007b534f6f3d6813d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bd7cc622a20c9007b534f6f3d6813d0">AV_CPU_FLAG_FMA3</a>&#160;&#160;&#160;0x10000</td></tr>
+<tr class="memdesc:a0bd7cc622a20c9007b534f6f3d6813d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Haswell FMA3 functions  <br /></td></tr>
+<tr class="separator:a0bd7cc622a20c9007b534f6f3d6813d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff82a9bfc71daaeb7cc820eb3de4ddc" id="r_a0ff82a9bfc71daaeb7cc820eb3de4ddc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ff82a9bfc71daaeb7cc820eb3de4ddc">AV_CPU_FLAG_BMI1</a>&#160;&#160;&#160;0x20000</td></tr>
+<tr class="memdesc:a0ff82a9bfc71daaeb7cc820eb3de4ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit Manipulation Instruction Set 1  <br /></td></tr>
+<tr class="separator:a0ff82a9bfc71daaeb7cc820eb3de4ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da0856fda17125587965fe12f64c4f4" id="r_a6da0856fda17125587965fe12f64c4f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6da0856fda17125587965fe12f64c4f4">AV_CPU_FLAG_BMI2</a>&#160;&#160;&#160;0x40000</td></tr>
+<tr class="memdesc:a6da0856fda17125587965fe12f64c4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit Manipulation Instruction Set 2  <br /></td></tr>
+<tr class="separator:a6da0856fda17125587965fe12f64c4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e3fdeb1ce8fccd6944502003570f8a" id="r_a24e3fdeb1ce8fccd6944502003570f8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24e3fdeb1ce8fccd6944502003570f8a">AV_CPU_FLAG_AVX512</a>&#160;&#160;&#160;0x100000</td></tr>
+<tr class="memdesc:a24e3fdeb1ce8fccd6944502003570f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVX-512 functions: requires OS support even if YMM/ZMM registers aren't used  <br /></td></tr>
+<tr class="separator:a24e3fdeb1ce8fccd6944502003570f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6791350072da71e22a7dc3b3ddc6a0e" id="r_aa6791350072da71e22a7dc3b3ddc6a0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6791350072da71e22a7dc3b3ddc6a0e">AV_CPU_FLAG_ALTIVEC</a>&#160;&#160;&#160;0x0001</td></tr>
+<tr class="memdesc:aa6791350072da71e22a7dc3b3ddc6a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">standard  <br /></td></tr>
+<tr class="separator:aa6791350072da71e22a7dc3b3ddc6a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65baf7beab71a0678e6374ea3d110f12" id="r_a65baf7beab71a0678e6374ea3d110f12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65baf7beab71a0678e6374ea3d110f12">AV_CPU_FLAG_VSX</a>&#160;&#160;&#160;0x0002</td></tr>
+<tr class="memdesc:a65baf7beab71a0678e6374ea3d110f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISA 2.06  <br /></td></tr>
+<tr class="separator:a65baf7beab71a0678e6374ea3d110f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d7913cdb148cd898ae1bd602de4551" id="r_a65d7913cdb148cd898ae1bd602de4551"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65d7913cdb148cd898ae1bd602de4551">AV_CPU_FLAG_POWER8</a>&#160;&#160;&#160;0x0004</td></tr>
+<tr class="memdesc:a65d7913cdb148cd898ae1bd602de4551"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISA 2.07  <br /></td></tr>
+<tr class="separator:a65d7913cdb148cd898ae1bd602de4551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ba37cad66b79c3ddf88693c2784359d" id="r_a0ba37cad66b79c3ddf88693c2784359d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ba37cad66b79c3ddf88693c2784359d">AV_CPU_FLAG_ARMV5TE</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="separator:a0ba37cad66b79c3ddf88693c2784359d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d6618c7fff92e08b04d6106328ae2a" id="r_ae5d6618c7fff92e08b04d6106328ae2a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5d6618c7fff92e08b04d6106328ae2a">AV_CPU_FLAG_ARMV6</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="separator:ae5d6618c7fff92e08b04d6106328ae2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7b76aa259dc33fa13f76340e071a35" id="r_a9a7b76aa259dc33fa13f76340e071a35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a7b76aa259dc33fa13f76340e071a35">AV_CPU_FLAG_ARMV6T2</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="separator:a9a7b76aa259dc33fa13f76340e071a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a283a152bbb636275c23d01a18b9bdc7b" id="r_a283a152bbb636275c23d01a18b9bdc7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a283a152bbb636275c23d01a18b9bdc7b">AV_CPU_FLAG_VFP</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="separator:a283a152bbb636275c23d01a18b9bdc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc3bbebdc0195433b08cba3453c512f" id="r_a1bc3bbebdc0195433b08cba3453c512f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bc3bbebdc0195433b08cba3453c512f">AV_CPU_FLAG_VFPV3</a>&#160;&#160;&#160;(1 &lt;&lt; 4)</td></tr>
+<tr class="separator:a1bc3bbebdc0195433b08cba3453c512f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc7de5c42009f68624e5dd1c77d7390" id="r_a2fc7de5c42009f68624e5dd1c77d7390"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fc7de5c42009f68624e5dd1c77d7390">AV_CPU_FLAG_NEON</a>&#160;&#160;&#160;(1 &lt;&lt; 5)</td></tr>
+<tr class="separator:a2fc7de5c42009f68624e5dd1c77d7390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf2841ca197280ccbaa56405f768025" id="r_acbf2841ca197280ccbaa56405f768025"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbf2841ca197280ccbaa56405f768025">AV_CPU_FLAG_ARMV8</a>&#160;&#160;&#160;(1 &lt;&lt; 6)</td></tr>
+<tr class="separator:acbf2841ca197280ccbaa56405f768025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab308fffe2a6135b661900584d48c539d" id="r_ab308fffe2a6135b661900584d48c539d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab308fffe2a6135b661900584d48c539d">AV_CPU_FLAG_VFP_VM</a>&#160;&#160;&#160;(1 &lt;&lt; 7)</td></tr>
+<tr class="memdesc:ab308fffe2a6135b661900584d48c539d"><td class="mdescLeft">&#160;</td><td class="mdescRight">VFPv2 vector mode, deprecated in ARMv7-A and unavailable in various CPUs implementations  <br /></td></tr>
+<tr class="separator:ab308fffe2a6135b661900584d48c539d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66d259974ecca8f1f846a40bb79f8520" id="r_a66d259974ecca8f1f846a40bb79f8520"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66d259974ecca8f1f846a40bb79f8520">AV_CPU_FLAG_SETEND</a>&#160;&#160;&#160;(1 &lt;&lt;16)</td></tr>
+<tr class="separator:a66d259974ecca8f1f846a40bb79f8520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:af731555385cb4808386a716504d5fcc1" id="r_af731555385cb4808386a716504d5fcc1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af731555385cb4808386a716504d5fcc1">av_get_cpu_flags</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:af731555385cb4808386a716504d5fcc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the flags which specify extensions supported by the CPU.  <br /></td></tr>
+<tr class="separator:af731555385cb4808386a716504d5fcc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07015a8f8d5e73558e5deb683ad55823" id="r_a07015a8f8d5e73558e5deb683ad55823"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07015a8f8d5e73558e5deb683ad55823">av_force_cpu_flags</a> (int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:a07015a8f8d5e73558e5deb683ad55823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables cpu detection and forces the specified flags.  <br /></td></tr>
+<tr class="separator:a07015a8f8d5e73558e5deb683ad55823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d8326d4536304e315b9a79c9aa750f" id="r_a31d8326d4536304e315b9a79c9aa750f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31d8326d4536304e315b9a79c9aa750f">av_set_cpu_flags_mask</a> (int <a class="el" href="_s_d_l__opengl__glext_8h.html#afeef49fced1d77edc7cd83985beed6a5">mask</a>)</td></tr>
+<tr class="memdesc:a31d8326d4536304e315b9a79c9aa750f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a mask on flags returned by <a class="el" href="#af731555385cb4808386a716504d5fcc1" title="Return the flags which specify extensions supported by the CPU.">av_get_cpu_flags()</a>.  <br /></td></tr>
+<tr class="separator:a31d8326d4536304e315b9a79c9aa750f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577da6114dc4448f5defdac188a01644" id="r_a577da6114dc4448f5defdac188a01644"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a577da6114dc4448f5defdac188a01644">av_parse_cpu_flags</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:a577da6114dc4448f5defdac188a01644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse CPU flags from a string.  <br /></td></tr>
+<tr class="separator:a577da6114dc4448f5defdac188a01644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a851439bc19de673484e788402734b1a5" id="r_a851439bc19de673484e788402734b1a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a851439bc19de673484e788402734b1a5">av_parse_cpu_caps</a> (unsigned *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>)</td></tr>
+<tr class="memdesc:a851439bc19de673484e788402734b1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse CPU caps from a string and update the given AV_CPU_* flags based on that.  <br /></td></tr>
+<tr class="separator:a851439bc19de673484e788402734b1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8bdb502bd3964052fc8595b0fe721a8" id="r_af8bdb502bd3964052fc8595b0fe721a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8bdb502bd3964052fc8595b0fe721a8">av_cpu_count</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="separator:af8bdb502bd3964052fc8595b0fe721a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3734434485a24830c49ffb56b06d30b8" id="r_a3734434485a24830c49ffb56b06d30b8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3734434485a24830c49ffb56b06d30b8">av_cpu_max_align</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a3734434485a24830c49ffb56b06d30b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum data alignment that may be required by FFmpeg.  <br /></td></tr>
+<tr class="separator:a3734434485a24830c49ffb56b06d30b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="afa9fdb485b595b4d3b2358ae46e7cc90" name="afa9fdb485b595b4d3b2358ae46e7cc90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa9fdb485b595b4d3b2358ae46e7cc90">&#9670;&#160;</a></span>AV_CPU_FLAG_3DNOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_3DNOW&#160;&#160;&#160;0x0004</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AMD 3DNOW </p>
+
+</div>
+</div>
+<a id="a9bb0453b7c1a5e10e049c435240edb25" name="a9bb0453b7c1a5e10e049c435240edb25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb0453b7c1a5e10e049c435240edb25">&#9670;&#160;</a></span>AV_CPU_FLAG_3DNOWEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_3DNOWEXT&#160;&#160;&#160;0x0020</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AMD 3DNowExt </p>
+
+</div>
+</div>
+<a id="a8bf5352ec0d64bbb19fc0fa1bdeb9201" name="a8bf5352ec0d64bbb19fc0fa1bdeb9201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bf5352ec0d64bbb19fc0fa1bdeb9201">&#9670;&#160;</a></span>AV_CPU_FLAG_AESNI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_AESNI&#160;&#160;&#160;0x80000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Advanced Encryption Standard functions </p>
+
+</div>
+</div>
+<a id="aa6791350072da71e22a7dc3b3ddc6a0e" name="aa6791350072da71e22a7dc3b3ddc6a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6791350072da71e22a7dc3b3ddc6a0e">&#9670;&#160;</a></span>AV_CPU_FLAG_ALTIVEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_ALTIVEC&#160;&#160;&#160;0x0001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>standard </p>
+
+</div>
+</div>
+<a id="a0ba37cad66b79c3ddf88693c2784359d" name="a0ba37cad66b79c3ddf88693c2784359d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba37cad66b79c3ddf88693c2784359d">&#9670;&#160;</a></span>AV_CPU_FLAG_ARMV5TE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_ARMV5TE&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5d6618c7fff92e08b04d6106328ae2a" name="ae5d6618c7fff92e08b04d6106328ae2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d6618c7fff92e08b04d6106328ae2a">&#9670;&#160;</a></span>AV_CPU_FLAG_ARMV6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_ARMV6&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a7b76aa259dc33fa13f76340e071a35" name="a9a7b76aa259dc33fa13f76340e071a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7b76aa259dc33fa13f76340e071a35">&#9670;&#160;</a></span>AV_CPU_FLAG_ARMV6T2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_ARMV6T2&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acbf2841ca197280ccbaa56405f768025" name="acbf2841ca197280ccbaa56405f768025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf2841ca197280ccbaa56405f768025">&#9670;&#160;</a></span>AV_CPU_FLAG_ARMV8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_ARMV8&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab11e6283f7f8b3f5bbc34fcb0eb20fc5" name="ab11e6283f7f8b3f5bbc34fcb0eb20fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11e6283f7f8b3f5bbc34fcb0eb20fc5">&#9670;&#160;</a></span>AV_CPU_FLAG_ATOM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_ATOM&#160;&#160;&#160;0x10000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Atom processor, some SSSE3 instructions are slower </p>
+
+</div>
+</div>
+<a id="afb5537bbc8fc14343de2b2ec15eeba17" name="afb5537bbc8fc14343de2b2ec15eeba17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb5537bbc8fc14343de2b2ec15eeba17">&#9670;&#160;</a></span>AV_CPU_FLAG_AVX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_AVX&#160;&#160;&#160;0x4000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AVX functions: requires OS support even if YMM registers aren't used </p>
+
+</div>
+</div>
+<a id="ab5be3b16a597bf9cbd489968ce36e082" name="ab5be3b16a597bf9cbd489968ce36e082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5be3b16a597bf9cbd489968ce36e082">&#9670;&#160;</a></span>AV_CPU_FLAG_AVX2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_AVX2&#160;&#160;&#160;0x8000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AVX2 functions: requires OS support even if YMM registers aren't used </p>
+
+</div>
+</div>
+<a id="a24e3fdeb1ce8fccd6944502003570f8a" name="a24e3fdeb1ce8fccd6944502003570f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e3fdeb1ce8fccd6944502003570f8a">&#9670;&#160;</a></span>AV_CPU_FLAG_AVX512</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_AVX512&#160;&#160;&#160;0x100000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AVX-512 functions: requires OS support even if YMM/ZMM registers aren't used </p>
+
+</div>
+</div>
+<a id="adfe16e24b7016bbb64fa1937e04389f2" name="adfe16e24b7016bbb64fa1937e04389f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe16e24b7016bbb64fa1937e04389f2">&#9670;&#160;</a></span>AV_CPU_FLAG_AVXSLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_AVXSLOW&#160;&#160;&#160;0x8000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AVX supported, but slow when using YMM registers (e.g. Bulldozer) </p>
+
+</div>
+</div>
+<a id="a0ff82a9bfc71daaeb7cc820eb3de4ddc" name="a0ff82a9bfc71daaeb7cc820eb3de4ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff82a9bfc71daaeb7cc820eb3de4ddc">&#9670;&#160;</a></span>AV_CPU_FLAG_BMI1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_BMI1&#160;&#160;&#160;0x20000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit Manipulation Instruction Set 1 </p>
+
+</div>
+</div>
+<a id="a6da0856fda17125587965fe12f64c4f4" name="a6da0856fda17125587965fe12f64c4f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6da0856fda17125587965fe12f64c4f4">&#9670;&#160;</a></span>AV_CPU_FLAG_BMI2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_BMI2&#160;&#160;&#160;0x40000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bit Manipulation Instruction Set 2 </p>
+
+</div>
+</div>
+<a id="a422f69279d4c977d660b72a47fa3478b" name="a422f69279d4c977d660b72a47fa3478b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a422f69279d4c977d660b72a47fa3478b">&#9670;&#160;</a></span>AV_CPU_FLAG_CMOV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_CMOV&#160;&#160;&#160;0x1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>supports cmov instruction </p>
+
+</div>
+</div>
+<a id="a0bd7cc622a20c9007b534f6f3d6813d0" name="a0bd7cc622a20c9007b534f6f3d6813d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bd7cc622a20c9007b534f6f3d6813d0">&#9670;&#160;</a></span>AV_CPU_FLAG_FMA3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_FMA3&#160;&#160;&#160;0x10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Haswell FMA3 functions </p>
+
+</div>
+</div>
+<a id="a5fc98ebd0ad5759f823070c0604a6778" name="a5fc98ebd0ad5759f823070c0604a6778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc98ebd0ad5759f823070c0604a6778">&#9670;&#160;</a></span>AV_CPU_FLAG_FMA4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_FMA4&#160;&#160;&#160;0x0800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bulldozer FMA4 functions </p>
+
+</div>
+</div>
+<a id="af73205a325a7353debd757a40d379064" name="af73205a325a7353debd757a40d379064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73205a325a7353debd757a40d379064">&#9670;&#160;</a></span>AV_CPU_FLAG_FORCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_FORCE&#160;&#160;&#160;0x80000000 /* force <a class="el" href="_s_d_l__opengl__glext_8h.html#aaaaec24daa23563cf68022ae1bb200c7">usage</a> of selected <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a> (OR) */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeab63e0c708c2c8cf519adb924306273" name="aeab63e0c708c2c8cf519adb924306273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeab63e0c708c2c8cf519adb924306273">&#9670;&#160;</a></span>AV_CPU_FLAG_MMX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_MMX&#160;&#160;&#160;0x0001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>standard MMX </p>
+
+</div>
+</div>
+<a id="a53053dcf8c045b05ca3b5326db518b49" name="a53053dcf8c045b05ca3b5326db518b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53053dcf8c045b05ca3b5326db518b49">&#9670;&#160;</a></span>AV_CPU_FLAG_MMX2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_MMX2&#160;&#160;&#160;0x0002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSE integer functions or AMD MMX ext </p>
+
+</div>
+</div>
+<a id="a821273926dc2c8282d9b0990582e3e3f" name="a821273926dc2c8282d9b0990582e3e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a821273926dc2c8282d9b0990582e3e3f">&#9670;&#160;</a></span>AV_CPU_FLAG_MMXEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_MMXEXT&#160;&#160;&#160;0x0002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSE integer functions or AMD MMX ext </p>
+
+</div>
+</div>
+<a id="a2fc7de5c42009f68624e5dd1c77d7390" name="a2fc7de5c42009f68624e5dd1c77d7390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc7de5c42009f68624e5dd1c77d7390">&#9670;&#160;</a></span>AV_CPU_FLAG_NEON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_NEON&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65d7913cdb148cd898ae1bd602de4551" name="a65d7913cdb148cd898ae1bd602de4551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d7913cdb148cd898ae1bd602de4551">&#9670;&#160;</a></span>AV_CPU_FLAG_POWER8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_POWER8&#160;&#160;&#160;0x0004</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ISA 2.07 </p>
+
+</div>
+</div>
+<a id="a66d259974ecca8f1f846a40bb79f8520" name="a66d259974ecca8f1f846a40bb79f8520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d259974ecca8f1f846a40bb79f8520">&#9670;&#160;</a></span>AV_CPU_FLAG_SETEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SETEND&#160;&#160;&#160;(1 &lt;&lt;16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cbf9faebf34070327d31989da5f14be" name="a4cbf9faebf34070327d31989da5f14be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cbf9faebf34070327d31989da5f14be">&#9670;&#160;</a></span>AV_CPU_FLAG_SSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSE&#160;&#160;&#160;0x0008</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSE functions </p>
+
+</div>
+</div>
+<a id="a0f19ba5104672eb4065f56f9a3877dc6" name="a0f19ba5104672eb4065f56f9a3877dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f19ba5104672eb4065f56f9a3877dc6">&#9670;&#160;</a></span>AV_CPU_FLAG_SSE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSE2&#160;&#160;&#160;0x0010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PIV SSE2 functions </p>
+
+</div>
+</div>
+<a id="a7e90443f6a8a3f65c01d2a034c4a2cfd" name="a7e90443f6a8a3f65c01d2a034c4a2cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e90443f6a8a3f65c01d2a034c4a2cfd">&#9670;&#160;</a></span>AV_CPU_FLAG_SSE2SLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSE2SLOW&#160;&#160;&#160;0x40000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSE2 supported, but usually not faster than regular MMX/SSE (e.g. </p>
+<p>Core1) </p>
+
+</div>
+</div>
+<a id="a87b1633fbec64188f3eadb1bffd7703d" name="a87b1633fbec64188f3eadb1bffd7703d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b1633fbec64188f3eadb1bffd7703d">&#9670;&#160;</a></span>AV_CPU_FLAG_SSE3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSE3&#160;&#160;&#160;0x0040</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prescott SSE3 functions </p>
+
+</div>
+</div>
+<a id="a20f4702905f3ca20721afa834a4ab81d" name="a20f4702905f3ca20721afa834a4ab81d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f4702905f3ca20721afa834a4ab81d">&#9670;&#160;</a></span>AV_CPU_FLAG_SSE3SLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSE3SLOW&#160;&#160;&#160;0x20000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSE3 supported, but usually not faster than regular MMX/SSE (e.g. </p>
+<p>Core1) </p>
+
+</div>
+</div>
+<a id="a5dbc718bec5f578602a7854d05db76de" name="a5dbc718bec5f578602a7854d05db76de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dbc718bec5f578602a7854d05db76de">&#9670;&#160;</a></span>AV_CPU_FLAG_SSE4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSE4&#160;&#160;&#160;0x0100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Penryn SSE4.1 functions </p>
+
+</div>
+</div>
+<a id="a2e3bc1f71c16c5fe8975c10f30d69be7" name="a2e3bc1f71c16c5fe8975c10f30d69be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e3bc1f71c16c5fe8975c10f30d69be7">&#9670;&#160;</a></span>AV_CPU_FLAG_SSE42</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSE42&#160;&#160;&#160;0x0200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nehalem SSE4.2 functions </p>
+
+</div>
+</div>
+<a id="aba281a8be7e4c8f87624c30ab227d1b6" name="aba281a8be7e4c8f87624c30ab227d1b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba281a8be7e4c8f87624c30ab227d1b6">&#9670;&#160;</a></span>AV_CPU_FLAG_SSSE3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSSE3&#160;&#160;&#160;0x0080</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conroe SSSE3 functions </p>
+
+</div>
+</div>
+<a id="ad58ec14888ae9ebe1fc599e587ef3ea5" name="ad58ec14888ae9ebe1fc599e587ef3ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58ec14888ae9ebe1fc599e587ef3ea5">&#9670;&#160;</a></span>AV_CPU_FLAG_SSSE3SLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_SSSE3SLOW&#160;&#160;&#160;0x4000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSSE3 supported, but usually not faster </p>
+
+</div>
+</div>
+<a id="a283a152bbb636275c23d01a18b9bdc7b" name="a283a152bbb636275c23d01a18b9bdc7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a283a152bbb636275c23d01a18b9bdc7b">&#9670;&#160;</a></span>AV_CPU_FLAG_VFP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_VFP&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab308fffe2a6135b661900584d48c539d" name="ab308fffe2a6135b661900584d48c539d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab308fffe2a6135b661900584d48c539d">&#9670;&#160;</a></span>AV_CPU_FLAG_VFP_VM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_VFP_VM&#160;&#160;&#160;(1 &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VFPv2 vector mode, deprecated in ARMv7-A and unavailable in various CPUs implementations </p>
+
+</div>
+</div>
+<a id="a1bc3bbebdc0195433b08cba3453c512f" name="a1bc3bbebdc0195433b08cba3453c512f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc3bbebdc0195433b08cba3453c512f">&#9670;&#160;</a></span>AV_CPU_FLAG_VFPV3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_VFPV3&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65baf7beab71a0678e6374ea3d110f12" name="a65baf7beab71a0678e6374ea3d110f12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65baf7beab71a0678e6374ea3d110f12">&#9670;&#160;</a></span>AV_CPU_FLAG_VSX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_VSX&#160;&#160;&#160;0x0002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ISA 2.06 </p>
+
+</div>
+</div>
+<a id="a9db899a1c86c9ff8d05bbb667d2ffb21" name="a9db899a1c86c9ff8d05bbb667d2ffb21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db899a1c86c9ff8d05bbb667d2ffb21">&#9670;&#160;</a></span>AV_CPU_FLAG_XOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_CPU_FLAG_XOP&#160;&#160;&#160;0x0400</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bulldozer XOP functions </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="af8bdb502bd3964052fc8595b0fe721a8" name="af8bdb502bd3964052fc8595b0fe721a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8bdb502bd3964052fc8595b0fe721a8">&#9670;&#160;</a></span>av_cpu_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_cpu_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the number of logical CPU cores present. </dd></dl>
+
+</div>
+</div>
+<a id="a3734434485a24830c49ffb56b06d30b8" name="a3734434485a24830c49ffb56b06d30b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3734434485a24830c49ffb56b06d30b8">&#9670;&#160;</a></span>av_cpu_max_align()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t av_cpu_max_align </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the maximum data alignment that may be required by FFmpeg. </p>
+<p>Note that this is affected by the build configuration and the CPU flags mask, so e.g. if the CPU supports AVX, but libavutil has been built with &ndash;disable-avx or the AV_CPU_FLAG_AVX flag has been disabled through <a class="el" href="#a31d8326d4536304e315b9a79c9aa750f" title="Set a mask on flags returned by av_get_cpu_flags().">av_set_cpu_flags_mask()</a>, then this function will behave as if AVX is not present. </p>
+
+</div>
+</div>
+<a id="a07015a8f8d5e73558e5deb683ad55823" name="a07015a8f8d5e73558e5deb683ad55823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07015a8f8d5e73558e5deb683ad55823">&#9670;&#160;</a></span>av_force_cpu_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_force_cpu_flags </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disables cpu detection and forces the specified flags. </p>
+<p>-1 is a special case that disables forcing of specific flags. </p>
+
+</div>
+</div>
+<a id="af731555385cb4808386a716504d5fcc1" name="af731555385cb4808386a716504d5fcc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af731555385cb4808386a716504d5fcc1">&#9670;&#160;</a></span>av_get_cpu_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_get_cpu_flags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the flags which specify extensions supported by the CPU. </p>
+<p>The returned value is affected by <a class="el" href="#a07015a8f8d5e73558e5deb683ad55823" title="Disables cpu detection and forces the specified flags.">av_force_cpu_flags()</a> if that was used before. So <a class="el" href="#af731555385cb4808386a716504d5fcc1" title="Return the flags which specify extensions supported by the CPU.">av_get_cpu_flags()</a> can easily be used in an application to detect the enabled cpu flags. </p>
+
+</div>
+</div>
+<a id="a851439bc19de673484e788402734b1a5" name="a851439bc19de673484e788402734b1a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851439bc19de673484e788402734b1a5">&#9670;&#160;</a></span>av_parse_cpu_caps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_parse_cpu_caps </td>
+          <td>(</td>
+          <td class="paramtype">unsigned *</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse CPU caps from a string and update the given AV_CPU_* flags based on that. </p>
+<dl class="section return"><dt>返回</dt><dd>negative on error. </dd></dl>
+
+</div>
+</div>
+<a id="a577da6114dc4448f5defdac188a01644" name="a577da6114dc4448f5defdac188a01644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a577da6114dc4448f5defdac188a01644">&#9670;&#160;</a></span>av_parse_cpu_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int av_parse_cpu_flags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse CPU flags from a string. </p>
+<p>The returned flags contain the specified flags as well as related unspecified flags.</p>
+<p>This function exists only for compatibility with libav. Please use <a class="el" href="#a851439bc19de673484e788402734b1a5" title="Parse CPU caps from a string and update the given AV_CPU_* flags based on that.">av_parse_cpu_caps()</a> when possible. </p><dl class="section return"><dt>返回</dt><dd>a combination of AV_CPU_* flags, negative on error. </dd></dl>
+
+</div>
+</div>
+<a id="a31d8326d4536304e315b9a79c9aa750f" name="a31d8326d4536304e315b9a79c9aa750f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31d8326d4536304e315b9a79c9aa750f">&#9670;&#160;</a></span>av_set_cpu_flags_mask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_set_cpu_flags_mask </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mask</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a mask on flags returned by <a class="el" href="#af731555385cb4808386a716504d5fcc1" title="Return the flags which specify extensions supported by the CPU.">av_get_cpu_flags()</a>. </p>
+<p>This function is mainly useful for testing. Please use <a class="el" href="#a07015a8f8d5e73558e5deb683ad55823" title="Disables cpu detection and forces the specified flags.">av_force_cpu_flags()</a> and <a class="el" href="#af731555385cb4808386a716504d5fcc1" title="Return the flags which specify extensions supported by the CPU.">av_get_cpu_flags()</a> instead which are more flexible </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="cpu_8h.html">cpu.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: systemd_sink.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('systemd__sink_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">systemd_sink.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="systemd__sink_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright(c) 2019 ZVYAGIN.Alexander@gmail.com</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Distributed under the MIT License (http://opensource.org/licenses/MIT)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="null__mutex_8h.html">spdlog/details/null_mutex.h</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="details_2os_8h.html">spdlog/details/os.h</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="synchronous__factory_8h.html">spdlog/details/synchronous_factory.h</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="base__sink_8h.html">spdlog/sinks/base_sink.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef SD_JOURNAL_SUPPRESS_LOCATION</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="systemd__sink_8h.html#ae2434162e872ec8189ca11e53257fad6">   13</a></span><span class="preprocessor">    #define SD_JOURNAL_SUPPRESS_LOCATION</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;systemd/sd-journal.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog.html">spdlog</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>sinks {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Mutex&gt;</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a0e4cc69e0e71e6ca4ae99d4323202a21">systemd_sink</a> : <span class="keyword">public</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1base__sink.html#a14d5b40be14161d3353c0f4c0bc1f71f">base_sink</a>&lt;Mutex&gt; {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#a0e4cc69e0e71e6ca4ae99d4323202a21">   26</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a0e4cc69e0e71e6ca4ae99d4323202a21">systemd_sink</a>(std::string ident = <span class="stringliteral">&quot;&quot;</span>, <span class="keywordtype">bool</span> enable_formatting = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        : <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#a8b084ea13637af645a2ed06199331513">ident_</a>{<a class="code hl_namespace" href="namespacestd.html">std</a>::move(ident)},</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>          <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#a143d52571c9c863a1b9d27ae6db08b85">enable_formatting_</a>{enable_formatting},</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>          <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#ad4bc92bac087e030068ab4c6069902a7">syslog_levels_</a>{{<span class="comment">/* spdlog::level::trace      */</span> <a class="code hl_define" href="logger_8hpp.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                          <span class="comment">/* spdlog::level::debug      */</span> <a class="code hl_define" href="logger_8hpp.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                          <span class="comment">/* spdlog::level::info       */</span> <a class="code hl_define" href="logger_8hpp.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                          <span class="comment">/* spdlog::level::warn       */</span> LOG_WARNING,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                          <span class="comment">/* spdlog::level::err        */</span> LOG_ERR,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                          <span class="comment">/* spdlog::level::critical   */</span> LOG_CRIT,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                          <span class="comment">/* spdlog::level::off        */</span> <a class="code hl_define" href="logger_8hpp.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a>}} {}</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#a9f09422fb7e64e3825339ecce79f2dc6">   37</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a9f09422fb7e64e3825339ecce79f2dc6">~systemd_sink</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#aedfa498dca9d2a4ab6e5272633696255">   39</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#aedfa498dca9d2a4ab6e5272633696255">systemd_sink</a>(<span class="keyword">const</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a0e4cc69e0e71e6ca4ae99d4323202a21">systemd_sink</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#a0ab0e53c47a0e4a5ef37b4f56be4a288">   40</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a0e4cc69e0e71e6ca4ae99d4323202a21">systemd_sink</a> &amp;<a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a0ab0e53c47a0e4a5ef37b4f56be4a288">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a0e4cc69e0e71e6ca4ae99d4323202a21">systemd_sink</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#a8b084ea13637af645a2ed06199331513">   43</a></span>    <span class="keyword">const</span> std::string <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#a8b084ea13637af645a2ed06199331513">ident_</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#a143d52571c9c863a1b9d27ae6db08b85">   44</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#a143d52571c9c863a1b9d27ae6db08b85">enable_formatting_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#a17e9b91b6f8cdce3dc70f07ea2bdb30d">   45</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classspdlog_1_1sinks_1_1systemd__sink.html#a17e9b91b6f8cdce3dc70f07ea2bdb30d">levels_array</a> = std::array&lt;int, 7&gt;;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#ad4bc92bac087e030068ab4c6069902a7">   46</a></span>    <a class="code hl_typedef" href="classspdlog_1_1sinks_1_1systemd__sink.html#a17e9b91b6f8cdce3dc70f07ea2bdb30d">levels_array</a> <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#ad4bc92bac087e030068ab4c6069902a7">syslog_levels_</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#a218d132667a573552a90e2bfc260c982">   48</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a218d132667a573552a90e2bfc260c982">sink_it_</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">int</span> err;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_typedef" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> payload;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_typedef" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> formatted;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#a143d52571c9c863a1b9d27ae6db08b85">enable_formatting_</a>) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <a class="code hl_variable" href="classspdlog_1_1sinks_1_1base__sink.html#a5a30b70b2c72cb5bda34170d8151ad0c">base_sink&lt;Mutex&gt;::formatter_</a>-&gt;format(msg, formatted);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            payload = <a class="code hl_typedef" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>(formatted.data(), formatted.size());</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            payload = msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#ac733b1eeb98cf999a51eeeb8dfe153b8">payload</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">size_t</span> length = payload.size();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="comment">// limit to max int</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (length &gt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(std::numeric_limits&lt;int&gt;::max())) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            length = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(std::numeric_limits&lt;int&gt;::max());</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> syslog_identifier = <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#a8b084ea13637af645a2ed06199331513">ident_</a>.empty() ? msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#a8e601abde94665d6ae1ce66190b6c0ee">logger_name</a> : <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#a8b084ea13637af645a2ed06199331513">ident_</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="comment">// Do not send source location if not available</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> (msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#a4c3c13ca0d18cd56fd8ede48d9c01eab">source</a>.<a class="code hl_function" href="structspdlog_1_1source__loc.html#a9fd57d49fbf8820ec85b92ed4da47654">empty</a>()) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="comment">// Note: function call inside &#39;()&#39; to avoid macro expansion</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            err = (sd_journal_send)(<span class="stringliteral">&quot;MESSAGE=%.*s&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(length), payload.data(),</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                    <span class="stringliteral">&quot;PRIORITY=%d&quot;</span>, <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#af674f425553636428dcdccc8ef5d6c47">syslog_level</a>(msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#a4c76064e80cfd5db64db44349fbc4402">level</a>),</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>#ifndef SPDLOG_NO_THREAD_ID</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                    <span class="stringliteral">&quot;TID=%zu&quot;</span>, msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#ac87cd51d837c3b81891b98ec42541a24">thread_id</a>,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>#endif</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                    <span class="stringliteral">&quot;SYSLOG_IDENTIFIER=%.*s&quot;</span>,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(syslog_identifier.size()),</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                                    syslog_identifier.data(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            err = (sd_journal_send)(<span class="stringliteral">&quot;MESSAGE=%.*s&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(length), payload.data(),</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                                    <span class="stringliteral">&quot;PRIORITY=%d&quot;</span>, <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#af674f425553636428dcdccc8ef5d6c47">syslog_level</a>(msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#a4c76064e80cfd5db64db44349fbc4402">level</a>),</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>#ifndef SPDLOG_NO_THREAD_ID</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                                    <span class="stringliteral">&quot;TID=%zu&quot;</span>, msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#ac87cd51d837c3b81891b98ec42541a24">thread_id</a>,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>#endif</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                                    <span class="stringliteral">&quot;SYSLOG_IDENTIFIER=%.*s&quot;</span>,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(syslog_identifier.size()),</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                                    syslog_identifier.data(), <span class="stringliteral">&quot;CODE_FILE=%s&quot;</span>, msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#a4c3c13ca0d18cd56fd8ede48d9c01eab">source</a>.<a class="code hl_variable" href="structspdlog_1_1source__loc.html#a7efa5e9c7494c7d4586359300221aa5d">filename</a>,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                                    <span class="stringliteral">&quot;CODE_LINE=%d&quot;</span>, msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#a4c3c13ca0d18cd56fd8ede48d9c01eab">source</a>.<a class="code hl_variable" href="structspdlog_1_1source__loc.html#a41ebd28ef1d7c6ade45642cb6acc1039">line</a>, <span class="stringliteral">&quot;CODE_FUNC=%s&quot;</span>,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                                    msg.<a class="code hl_variable" href="structspdlog_1_1details_1_1log__msg.html#a4c3c13ca0d18cd56fd8ede48d9c01eab">source</a>.<a class="code hl_variable" href="structspdlog_1_1source__loc.html#acfe7fa99b3c04a17dcf3856bb2394a6b">funcname</a>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span> (err) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <a class="code hl_function" href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4">throw_spdlog_ex</a>(<span class="stringliteral">&quot;Failed writing to systemd&quot;</span>, errno);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#af674f425553636428dcdccc8ef5d6c47">   96</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#af674f425553636428dcdccc8ef5d6c47">syslog_level</a>(<a class="code hl_enumeration" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> l) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classspdlog_1_1sinks_1_1systemd__sink.html#ad4bc92bac087e030068ab4c6069902a7">syslog_levels_</a>.at(<span class="keyword">static_cast&lt;</span>levels_array::size_type<span class="keyword">&gt;</span>(l));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1systemd__sink.html#a6147bda700ff2ba530941e4e33bfbb99">  100</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1systemd__sink.html#a6147bda700ff2ba530941e4e33bfbb99">flush_</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#a3fad2f86835709517fb684336c047620">  103</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a3fad2f86835709517fb684336c047620">systemd_sink_mt</a> = <a class="code hl_class" href="classspdlog_1_1sinks_1_1systemd__sink.html">systemd_sink&lt;std::mutex&gt;</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#a2ba159856e79bb335b9b43e256a65fbb">  104</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a2ba159856e79bb335b9b43e256a65fbb">systemd_sink_st</a> = <a class="code hl_class" href="classspdlog_1_1sinks_1_1systemd__sink.html">systemd_sink&lt;details::null_mutex&gt;</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}  <span class="comment">// namespace sinks</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">// Create and register a syslog logger</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespacespdlog.html#ab8781c5b0ee69abdbc28a811cb5982f5">  109</a></span><span class="keyword">inline</span> std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#ab8781c5b0ee69abdbc28a811cb5982f5">systemd_logger_mt</a>(<span class="keyword">const</span> std::string &amp;logger_name,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                                 <span class="keyword">const</span> std::string &amp;ident = <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                                 <span class="keywordtype">bool</span> enable_formatting = <span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> Factory::template <a class="code hl_function" href="namespacespdlog.html#a642ab88060b3fe4316fb7aaef68cc82e">create&lt;sinks::systemd_sink_mt&gt;</a>(logger_name, ident, enable_formatting);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="namespacespdlog.html#a497a964c614357ecf4851a66cf47d30b">  116</a></span><span class="keyword">inline</span> std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#a497a964c614357ecf4851a66cf47d30b">systemd_logger_st</a>(<span class="keyword">const</span> std::string &amp;logger_name,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                                 <span class="keyword">const</span> std::string &amp;ident = <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                                 <span class="keywordtype">bool</span> enable_formatting = <span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> Factory::template <a class="code hl_function" href="namespacespdlog.html#a642ab88060b3fe4316fb7aaef68cc82e">create&lt;sinks::systemd_sink_st&gt;</a>(logger_name, ident, enable_formatting);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}  <span class="comment">// namespace spdlog</span></div>
+<div class="ttc" id="abase__sink_8h_html"><div class="ttname"><a href="base__sink_8h.html">base_sink.h</a></div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1base__sink_html_a14d5b40be14161d3353c0f4c0bc1f71f"><div class="ttname"><a href="classspdlog_1_1sinks_1_1base__sink.html#a14d5b40be14161d3353c0f4c0bc1f71f">spdlog::sinks::base_sink::base_sink</a></div><div class="ttdeci">base_sink()</div><div class="ttdef"><b>定义</b> base_sink-inl.h:17</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1base__sink_html_a5a30b70b2c72cb5bda34170d8151ad0c"><div class="ttname"><a href="classspdlog_1_1sinks_1_1base__sink.html#a5a30b70b2c72cb5bda34170d8151ad0c">spdlog::sinks::base_sink::formatter_</a></div><div class="ttdeci">std::unique_ptr&lt; spdlog::formatter &gt; formatter_</div><div class="ttdef"><b>定义</b> base_sink.h:38</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html">spdlog::sinks::systemd_sink</a></div><div class="ttdoc">Sink that write to systemd journal using the sd_journal_send() library call.</div><div class="ttdef"><b>定义</b> systemd_sink.h:24</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_a0ab0e53c47a0e4a5ef37b4f56be4a288"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#a0ab0e53c47a0e4a5ef37b4f56be4a288">spdlog::sinks::systemd_sink::operator=</a></div><div class="ttdeci">systemd_sink &amp; operator=(const systemd_sink &amp;)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_a0e4cc69e0e71e6ca4ae99d4323202a21"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#a0e4cc69e0e71e6ca4ae99d4323202a21">spdlog::sinks::systemd_sink::systemd_sink</a></div><div class="ttdeci">systemd_sink(std::string ident=&quot;&quot;, bool enable_formatting=false)</div><div class="ttdef"><b>定义</b> systemd_sink.h:26</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_a143d52571c9c863a1b9d27ae6db08b85"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#a143d52571c9c863a1b9d27ae6db08b85">spdlog::sinks::systemd_sink&lt; std::mutex &gt;::enable_formatting_</a></div><div class="ttdeci">bool enable_formatting_</div><div class="ttdef"><b>定义</b> systemd_sink.h:44</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_a17e9b91b6f8cdce3dc70f07ea2bdb30d"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#a17e9b91b6f8cdce3dc70f07ea2bdb30d">spdlog::sinks::systemd_sink::levels_array</a></div><div class="ttdeci">std::array&lt; int, 7 &gt; levels_array</div><div class="ttdef"><b>定义</b> systemd_sink.h:45</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_a218d132667a573552a90e2bfc260c982"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#a218d132667a573552a90e2bfc260c982">spdlog::sinks::systemd_sink::sink_it_</a></div><div class="ttdeci">void sink_it_(const details::log_msg &amp;msg) override</div><div class="ttdef"><b>定义</b> systemd_sink.h:48</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_a6147bda700ff2ba530941e4e33bfbb99"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#a6147bda700ff2ba530941e4e33bfbb99">spdlog::sinks::systemd_sink::flush_</a></div><div class="ttdeci">void flush_() override</div><div class="ttdef"><b>定义</b> systemd_sink.h:100</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_a8b084ea13637af645a2ed06199331513"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#a8b084ea13637af645a2ed06199331513">spdlog::sinks::systemd_sink&lt; std::mutex &gt;::ident_</a></div><div class="ttdeci">const std::string ident_</div><div class="ttdef"><b>定义</b> systemd_sink.h:43</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_a9f09422fb7e64e3825339ecce79f2dc6"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#a9f09422fb7e64e3825339ecce79f2dc6">spdlog::sinks::systemd_sink::~systemd_sink</a></div><div class="ttdeci">~systemd_sink() override</div><div class="ttdef"><b>定义</b> systemd_sink.h:37</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_ad4bc92bac087e030068ab4c6069902a7"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#ad4bc92bac087e030068ab4c6069902a7">spdlog::sinks::systemd_sink&lt; std::mutex &gt;::syslog_levels_</a></div><div class="ttdeci">levels_array syslog_levels_</div><div class="ttdef"><b>定义</b> systemd_sink.h:46</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_aedfa498dca9d2a4ab6e5272633696255"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#aedfa498dca9d2a4ab6e5272633696255">spdlog::sinks::systemd_sink::systemd_sink</a></div><div class="ttdeci">systemd_sink(const systemd_sink &amp;)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1systemd__sink_html_af674f425553636428dcdccc8ef5d6c47"><div class="ttname"><a href="classspdlog_1_1sinks_1_1systemd__sink.html#af674f425553636428dcdccc8ef5d6c47">spdlog::sinks::systemd_sink&lt; std::mutex &gt;::syslog_level</a></div><div class="ttdeci">int syslog_level(level::level_enum l)</div><div class="ttdef"><b>定义</b> systemd_sink.h:96</div></div>
+<div class="ttc" id="adetails_2os_8h_html"><div class="ttname"><a href="details_2os_8h.html">os.h</a></div></div>
+<div class="ttc" id="alogger_8hpp_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="logger_8hpp.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>定义</b> logger.hpp:29</div></div>
+<div class="ttc" id="alogger_8hpp_html_ae69d735f8291bd2aff230fe6ffb4d4b3"><div class="ttname"><a href="logger_8hpp.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a></div><div class="ttdeci">#define LOG_INFO(fmt,...)</div><div class="ttdef"><b>定义</b> logger.hpp:39</div></div>
+<div class="ttc" id="anamespacespdlog_1_1level_html_a2d7067eeba79a9aae6ce1f5ec7d2e109"><div class="ttname"><a href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a></div><div class="ttdeci">level_enum</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:245</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a2ba159856e79bb335b9b43e256a65fbb"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a2ba159856e79bb335b9b43e256a65fbb">spdlog::sinks::systemd_sink_st</a></div><div class="ttdeci">systemd_sink&lt; details::null_mutex &gt; systemd_sink_st</div><div class="ttdef"><b>定义</b> systemd_sink.h:104</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a3fad2f86835709517fb684336c047620"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a3fad2f86835709517fb684336c047620">spdlog::sinks::systemd_sink_mt</a></div><div class="ttdeci">systemd_sink&lt; std::mutex &gt; systemd_sink_mt</div><div class="ttdef"><b>定义</b> systemd_sink.h:103</div></div>
+<div class="ttc" id="anamespacespdlog_html"><div class="ttname"><a href="namespacespdlog.html">spdlog</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:25</div></div>
+<div class="ttc" id="anamespacespdlog_html_a497a964c614357ecf4851a66cf47d30b"><div class="ttname"><a href="namespacespdlog.html#a497a964c614357ecf4851a66cf47d30b">spdlog::systemd_logger_st</a></div><div class="ttdeci">std::shared_ptr&lt; logger &gt; systemd_logger_st(const std::string &amp;logger_name, const std::string &amp;ident=&quot;&quot;, bool enable_formatting=false)</div><div class="ttdef"><b>定义</b> systemd_sink.h:116</div></div>
+<div class="ttc" id="anamespacespdlog_html_a601563456cc60312e9c8cc18ba168be4"><div class="ttname"><a href="namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4">spdlog::throw_spdlog_ex</a></div><div class="ttdeci">SPDLOG_INLINE void throw_spdlog_ex(const std::string &amp;msg, int last_errno)</div><div class="ttdef"><b>定义</b> common-inl.h:62</div></div>
+<div class="ttc" id="anamespacespdlog_html_a642ab88060b3fe4316fb7aaef68cc82e"><div class="ttname"><a href="namespacespdlog.html#a642ab88060b3fe4316fb7aaef68cc82e">spdlog::create</a></div><div class="ttdeci">std::shared_ptr&lt; spdlog::logger &gt; create(std::string logger_name, SinkArgs &amp;&amp;...sink_args)</div><div class="ttdef"><b>定义</b> spdlog.h:34</div></div>
+<div class="ttc" id="anamespacespdlog_html_a9ea34fdbca111662f61e7b152fd1f252"><div class="ttname"><a href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">spdlog::memory_buf_t</a></div><div class="ttdeci">fmt::basic_memory_buffer&lt; char, 250 &gt; memory_buf_t</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:178</div></div>
+<div class="ttc" id="anamespacespdlog_html_ab8781c5b0ee69abdbc28a811cb5982f5"><div class="ttname"><a href="namespacespdlog.html#ab8781c5b0ee69abdbc28a811cb5982f5">spdlog::systemd_logger_mt</a></div><div class="ttdeci">std::shared_ptr&lt; logger &gt; systemd_logger_mt(const std::string &amp;logger_name, const std::string &amp;ident=&quot;&quot;, bool enable_formatting=false)</div><div class="ttdef"><b>定义</b> systemd_sink.h:109</div></div>
+<div class="ttc" id="anamespacespdlog_html_abb9a0806eb1d2148f9d7457e31fef180"><div class="ttname"><a href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">spdlog::string_view_t</a></div><div class="ttdeci">fmt::basic_string_view&lt; char &gt; string_view_t</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:177</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>定义</b> format.h:120</div></div>
+<div class="ttc" id="anull__mutex_8h_html"><div class="ttname"><a href="null__mutex_8h.html">null_mutex.h</a></div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html">spdlog::details::log_msg</a></div><div class="ttdef"><b>定义</b> log_msg.h:11</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html_a4c3c13ca0d18cd56fd8ede48d9c01eab"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html#a4c3c13ca0d18cd56fd8ede48d9c01eab">spdlog::details::log_msg::source</a></div><div class="ttdeci">source_loc source</div><div class="ttdef"><b>定义</b> log_msg.h:32</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html_a4c76064e80cfd5db64db44349fbc4402"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html#a4c76064e80cfd5db64db44349fbc4402">spdlog::details::log_msg::level</a></div><div class="ttdeci">level::level_enum level</div><div class="ttdef"><b>定义</b> log_msg.h:24</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html_a8e601abde94665d6ae1ce66190b6c0ee"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html#a8e601abde94665d6ae1ce66190b6c0ee">spdlog::details::log_msg::logger_name</a></div><div class="ttdeci">string_view_t logger_name</div><div class="ttdef"><b>定义</b> log_msg.h:23</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html_ac733b1eeb98cf999a51eeeb8dfe153b8"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html#ac733b1eeb98cf999a51eeeb8dfe153b8">spdlog::details::log_msg::payload</a></div><div class="ttdeci">string_view_t payload</div><div class="ttdef"><b>定义</b> log_msg.h:33</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html_ac87cd51d837c3b81891b98ec42541a24"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html#ac87cd51d837c3b81891b98ec42541a24">spdlog::details::log_msg::thread_id</a></div><div class="ttdeci">size_t thread_id</div><div class="ttdef"><b>定义</b> log_msg.h:26</div></div>
+<div class="ttc" id="astructspdlog_1_1source__loc_html_a41ebd28ef1d7c6ade45642cb6acc1039"><div class="ttname"><a href="structspdlog_1_1source__loc.html#a41ebd28ef1d7c6ade45642cb6acc1039">spdlog::source_loc::line</a></div><div class="ttdeci">int line</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:324</div></div>
+<div class="ttc" id="astructspdlog_1_1source__loc_html_a7efa5e9c7494c7d4586359300221aa5d"><div class="ttname"><a href="structspdlog_1_1source__loc.html#a7efa5e9c7494c7d4586359300221aa5d">spdlog::source_loc::filename</a></div><div class="ttdeci">const char * filename</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:323</div></div>
+<div class="ttc" id="astructspdlog_1_1source__loc_html_a9fd57d49fbf8820ec85b92ed4da47654"><div class="ttname"><a href="structspdlog_1_1source__loc.html#a9fd57d49fbf8820ec85b92ed4da47654">spdlog::source_loc::empty</a></div><div class="ttdeci">SPDLOG_CONSTEXPR bool empty() const SPDLOG_NOEXCEPT</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:322</div></div>
+<div class="ttc" id="astructspdlog_1_1source__loc_html_acfe7fa99b3c04a17dcf3856bb2394a6b"><div class="ttname"><a href="structspdlog_1_1source__loc.html#acfe7fa99b3c04a17dcf3856bb2394a6b">spdlog::source_loc::funcname</a></div><div class="ttdeci">const char * funcname</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:325</div></div>
+<div class="ttc" id="asynchronous__factory_8h_html"><div class="ttname"><a href="synchronous__factory_8h.html">synchronous_factory.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="dir_fa8338fc4b4a83904b44433ebb24174a.html">sinks</a></li><li class="navelem"><a class="el" href="systemd__sink_8h.html">systemd_sink.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

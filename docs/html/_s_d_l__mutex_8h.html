@@ -1,0 +1,1649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_mutex.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__mutex_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">SDL_mutex.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Functions to provide thread synchronization primitives.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_s_d_l__stdinc_8h_source.html">SDL_stdinc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_s_d_l__error_8h_source.html">SDL_error.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="begin__code_8h_source.html">begin_code.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="close__code_8h_source.html">close_code.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+SDL_mutex.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__mutex_8h__incl.png" border="0" usemap="#a_s_d_l__mutex_8h" alt=""/></div>
+<map name="a_s_d_l__mutex_8h" id="a_s_d_l__mutex_8h">
+<area shape="rect" title="Functions to provide thread synchronization primitives." alt="" coords="267,5,368,32"/>
+<area shape="rect" href="_s_d_l__stdinc_8h.html" title="This is a general header that includes C language support." alt="" coords="267,155,368,181"/>
+<area shape="poly" title=" " alt="" coords="324,32,336,80,335,111,329,141,324,139,330,111,331,80,319,33"/>
+<area shape="rect" href="begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions,..." alt="" coords="79,453,177,480"/>
+<area shape="poly" title=" " alt="" coords="266,24,189,33,145,42,104,56,66,74,36,99,15,129,10,147,8,167,8,319,10,338,17,357,38,392,67,420,96,443,92,447,63,424,34,395,12,359,5,340,3,319,3,167,5,146,10,127,32,95,63,70,102,51,144,37,188,28,266,19"/>
+<area shape="rect" href="close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="534,453,632,480"/>
+<area shape="poly" title=" " alt="" coords="369,17,454,23,503,32,550,45,593,64,629,89,642,105,653,124,659,144,661,167,661,319,656,355,642,389,625,419,606,443,602,440,620,416,638,386,651,353,656,318,656,167,654,145,648,126,638,108,625,93,591,68,548,50,502,37,454,29,368,22"/>
+<area shape="rect" href="_s_d_l__error_8h.html" title="Simple error message routines for SDL." alt="" coords="230,80,322,107"/>
+<area shape="poly" title=" " alt="" coords="312,34,293,68,288,65,308,31"/>
+<area shape="rect" href="_s_d_l__config_8h.html" title=" " alt="" coords="419,229,520,256"/>
+<area shape="poly" title=" " alt="" coords="345,179,430,220,428,225,343,184"/>
+<area shape="poly" title=" " alt="" coords="291,184,258,204,227,231,192,284,166,341,148,395,136,438,131,437,143,394,161,339,188,281,223,228,255,199,288,180"/>
+<area shape="poly" title=" " alt="" coords="368,167,409,171,453,181,497,199,534,227,552,252,566,279,583,337,588,393,588,438,582,438,583,394,578,338,561,281,548,254,530,231,494,204,452,186,408,176,368,172"/>
+<area shape="rect" title=" " alt="" coords="94,229,162,256"/>
+<area shape="poly" title=" " alt="" coords="285,184,176,226,175,221,283,179"/>
+<area shape="rect" title=" " alt="" coords="238,229,306,256"/>
+<area shape="poly" title=" " alt="" coords="312,183,290,217,286,215,307,180"/>
+<area shape="rect" title=" " alt="" coords="330,229,395,256"/>
+<area shape="poly" title=" " alt="" coords="327,180,349,215,344,217,323,183"/>
+<area shape="rect" href="_s_d_l__platform_8h.html" title="Try to get a standard set of platform defines." alt="" coords="354,379,467,405"/>
+<area shape="poly" title=" " alt="" coords="473,256,474,291,465,332,453,352,438,370,434,366,449,349,460,330,468,290,468,256"/>
+<area shape="rect" href="_s_d_l__config__minimal_8h.html" title="This is the minimal configuration that can be used to build SDL." alt="" coords="298,304,451,331"/>
+<area shape="poly" title=" " alt="" coords="454,259,405,297,401,292,451,254"/>
+<area shape="poly" title=" " alt="" coords="362,408,193,452,192,446,361,403"/>
+<area shape="poly" title=" " alt="" coords="442,403,540,444,538,449,440,408"/>
+<area shape="poly" title=" " alt="" coords="383,330,400,363,395,366,379,332"/>
+<area shape="poly" title=" " alt="" coords="286,106,305,140,300,143,281,109"/>
+<area shape="poly" title=" " alt="" coords="231,106,176,123,120,150,96,168,76,189,63,213,59,242,59,318,64,353,76,386,110,440,105,442,71,388,58,354,53,319,53,241,58,211,72,186,92,164,117,145,175,118,229,101"/>
+<area shape="poly" title=" " alt="" coords="322,92,406,99,453,107,500,120,543,139,578,165,602,198,608,219,611,241,611,319,605,384,593,439,588,438,599,383,605,319,605,241,603,220,597,201,574,169,540,144,498,125,452,112,405,104,322,97"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__mutex_8h__dep__incl.png" border="0" usemap="#a_s_d_l__mutex_8hdep" alt=""/></div>
+<map name="a_s_d_l__mutex_8hdep" id="a_s_d_l__mutex_8hdep">
+<area shape="rect" title="Functions to provide thread synchronization primitives." alt="" coords="412,5,513,32"/>
+<area shape="rect" href="_s_d_l_8h.html" title="Main include header for the SDL library" alt="" coords="314,304,373,331"/>
+<area shape="poly" title=" " alt="" coords="454,47,351,305,346,303,449,45"/>
+<area shape="rect" href="_s_d_l__audio_8h.html" title="Access to the raw audio mixing buffer for the SDL library." alt="" coords="506,229,602,256"/>
+<area shape="poly" title=" " alt="" coords="490,41,534,89,556,120,571,154,575,175,573,196,562,230,557,228,568,195,570,175,566,155,551,123,530,92,486,44"/>
+<area shape="rect" href="_s_d_l__joystick_8h.html" title="Include file for SDL joystick event handling" alt="" coords="139,80,249,107"/>
+<area shape="poly" title=" " alt="" coords="402,39,242,82,241,77,400,34"/>
+<area shape="rect" href="_s_d_l__thread_8h.html" title="Header for the SDL thread management routines." alt="" coords="456,155,557,181"/>
+<area shape="poly" title=" " alt="" coords="473,46,505,153,500,155,468,48"/>
+<area shape="rect" href="_pcm_player___s_d_l_8h.html" title=" " alt="" coords="490,379,619,405"/>
+<area shape="poly" title=" " alt="" coords="388,331,518,375,516,381,387,336"/>
+<area shape="rect" href="_s_d_l__test_8h.html" title="Include file for SDL test framework." alt="" coords="300,528,387,555"/>
+<area shape="poly" title=" " alt="" coords="386,337,408,354,426,378,429,392,426,406,415,445,395,481,358,529,354,526,391,479,410,443,421,405,424,392,421,380,405,358,383,341"/>
+<area shape="rect" href="_s_d_l__test__common_8h.html" title="Include file for SDL test framework." alt="" coords="49,453,193,480"/>
+<area shape="poly" title=" " alt="" coords="313,342,141,455,138,451,310,337"/>
+<area shape="rect" href="_s_d_l__test__compare_8h.html" title="Include file for SDL test framework." alt="" coords="217,453,361,480"/>
+<area shape="poly" title=" " alt="" coords="304,341,282,358,266,380,262,398,265,418,282,452,277,454,260,420,256,398,261,378,279,354,301,337"/>
+<area shape="rect" href="_s_d_l__test__images_8h.html" title="Include file for SDL test framework." alt="" coords="275,379,412,405"/>
+<area shape="poly" title=" " alt="" coords="346,346,346,378,341,378,341,346"/>
+<area shape="rect" href="_pcm_player___s_d_l_8cpp.html" title=" " alt="" coords="486,453,630,480"/>
+<area shape="poly" title=" " alt="" coords="558,421,560,453,555,453,553,421"/>
+<area shape="poly" title=" " alt="" coords="175,483,305,525,304,530,173,488"/>
+<area shape="poly" title=" " alt="" coords="310,491,336,526,332,529,306,494"/>
+<area shape="poly" title=" " alt="" coords="362,418,375,453,376,474,371,496,355,529,350,527,366,494,371,474,370,454,357,420"/>
+<area shape="poly" title=" " alt="" coords="327,420,300,455,296,451,323,416"/>
+<area shape="poly" title=" " alt="" coords="504,264,374,308,372,303,502,259"/>
+<area shape="poly" title=" " alt="" coords="557,272,557,378,552,378,552,272"/>
+<area shape="poly" title=" " alt="" coords="187,122,180,151,176,186,179,222,192,255,218,279,250,296,284,306,314,311,313,317,282,311,248,301,215,284,188,257,174,223,171,186,175,151,182,120"/>
+<area shape="rect" href="_s_d_l__events_8h.html" title="Include file for SDL event handling." alt="" coords="202,229,306,256"/>
+<area shape="poly" title=" " alt="" coords="203,121,222,180,248,228,243,230,217,182,198,122"/>
+<area shape="rect" href="_s_d_l__gamecontroller_8h.html" title="Include file for SDL game controller event handling" alt="" coords="231,155,381,181"/>
+<area shape="poly" title=" " alt="" coords="228,113,288,152,285,156,225,118"/>
+<area shape="rect" href="_s_d_l__haptic_8h.html" title="The SDL haptic subsystem allows you to control haptic (force feedback) devices." alt="" coords="5,229,106,256"/>
+<area shape="poly" title=" " alt="" coords="168,119,127,157,92,196,66,231,62,227,88,193,123,153,165,115"/>
+<area shape="poly" title=" " alt="" coords="283,264,330,302,326,306,280,268"/>
+<area shape="poly" title=" " alt="" coords="316,196,343,303,338,304,310,197"/>
+<area shape="poly" title=" " alt="" coords="290,196,265,230,261,227,286,193"/>
+<area shape="poly" title=" " alt="" coords="121,258,314,306,313,311,120,263"/>
+<area shape="poly" title=" " alt="" coords="492,196,468,227,439,258,403,285,369,306,366,301,400,281,435,254,464,223,488,193"/>
+<area shape="poly" title=" " alt="" coords="525,193,548,227,544,230,521,196"/>
+</map>
+</div>
+</div>
+<p><a href="_s_d_l__mutex_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ab3c03b432fec86063d584f31fc810efb" id="r_ab3c03b432fec86063d584f31fc810efb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:ab3c03b432fec86063d584f31fc810efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b6303c151a95bdd033d9685fc12493" id="r_a70b6303c151a95bdd033d9685fc12493"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70b6303c151a95bdd033d9685fc12493">SDL_CAPABILITY</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a70b6303c151a95bdd033d9685fc12493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45cd15a2195c2dcdc589deff2e9926a2" id="r_a45cd15a2195c2dcdc589deff2e9926a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45cd15a2195c2dcdc589deff2e9926a2">SDL_SCOPED_CAPABILITY</a>&#160;&#160;&#160;  <a class="el" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(scoped_lockable)</td></tr>
+<tr class="separator:a45cd15a2195c2dcdc589deff2e9926a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a90a520403e736f84b7837427aa6263" id="r_a9a90a520403e736f84b7837427aa6263"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a90a520403e736f84b7837427aa6263">SDL_GUARDED_BY</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a9a90a520403e736f84b7837427aa6263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f31eaa0f73959b93f9599117f54ebc" id="r_a13f31eaa0f73959b93f9599117f54ebc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13f31eaa0f73959b93f9599117f54ebc">SDL_PT_GUARDED_BY</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a13f31eaa0f73959b93f9599117f54ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee469af24694b03e445fc603bde7d1ab" id="r_aee469af24694b03e445fc603bde7d1ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee469af24694b03e445fc603bde7d1ab">SDL_ACQUIRED_BEFORE</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:aee469af24694b03e445fc603bde7d1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af536ab2d5bc366dba742a4241969d5f0" id="r_af536ab2d5bc366dba742a4241969d5f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af536ab2d5bc366dba742a4241969d5f0">SDL_ACQUIRED_AFTER</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:af536ab2d5bc366dba742a4241969d5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349efc002b392e757e2b2a56f4687f73" id="r_a349efc002b392e757e2b2a56f4687f73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a349efc002b392e757e2b2a56f4687f73">SDL_REQUIRES</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a349efc002b392e757e2b2a56f4687f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cb6dc23d858bfaadf906462a6b5bc79" id="r_a4cb6dc23d858bfaadf906462a6b5bc79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cb6dc23d858bfaadf906462a6b5bc79">SDL_REQUIRES_SHARED</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a4cb6dc23d858bfaadf906462a6b5bc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a068ace07dbfb746436d3c03673b4f8fb" id="r_a068ace07dbfb746436d3c03673b4f8fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a068ace07dbfb746436d3c03673b4f8fb">SDL_ACQUIRE</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a068ace07dbfb746436d3c03673b4f8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ca6632bae6422f25e24db9ef66b6cd" id="r_a31ca6632bae6422f25e24db9ef66b6cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31ca6632bae6422f25e24db9ef66b6cd">SDL_ACQUIRE_SHARED</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a31ca6632bae6422f25e24db9ef66b6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acca008c2a7bed5dea3a950f80134a781" id="r_acca008c2a7bed5dea3a950f80134a781"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acca008c2a7bed5dea3a950f80134a781">SDL_RELEASE</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:acca008c2a7bed5dea3a950f80134a781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bae6bd098b1476356faf4b511c4b849" id="r_a9bae6bd098b1476356faf4b511c4b849"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bae6bd098b1476356faf4b511c4b849">SDL_RELEASE_SHARED</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a9bae6bd098b1476356faf4b511c4b849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca43c17a557cf8c9033b9922e68537b" id="r_a5ca43c17a557cf8c9033b9922e68537b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ca43c17a557cf8c9033b9922e68537b">SDL_RELEASE_GENERIC</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a5ca43c17a557cf8c9033b9922e68537b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0df0a8038b0220f070fa4a81aa340859" id="r_a0df0a8038b0220f070fa4a81aa340859"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0df0a8038b0220f070fa4a81aa340859">SDL_TRY_ACQUIRE</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a>)</td></tr>
+<tr class="separator:a0df0a8038b0220f070fa4a81aa340859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d43e26bb3944260e27cfd5a481637e" id="r_a22d43e26bb3944260e27cfd5a481637e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22d43e26bb3944260e27cfd5a481637e">SDL_TRY_ACQUIRE_SHARED</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a>)</td></tr>
+<tr class="separator:a22d43e26bb3944260e27cfd5a481637e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace21f1d0bdbf05436aa089bcc3a46c14" id="r_ace21f1d0bdbf05436aa089bcc3a46c14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace21f1d0bdbf05436aa089bcc3a46c14">SDL_EXCLUDES</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:ace21f1d0bdbf05436aa089bcc3a46c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556bcb3575a6f8cb32a271c82dc63722" id="r_a556bcb3575a6f8cb32a271c82dc63722"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a556bcb3575a6f8cb32a271c82dc63722">SDL_ASSERT_CAPABILITY</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a556bcb3575a6f8cb32a271c82dc63722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eda33c61bdb66f2132e708b678ceb9b" id="r_a3eda33c61bdb66f2132e708b678ceb9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3eda33c61bdb66f2132e708b678ceb9b">SDL_ASSERT_SHARED_CAPABILITY</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a3eda33c61bdb66f2132e708b678ceb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65848612a6172351aca1d7ac6a285649" id="r_a65848612a6172351aca1d7ac6a285649"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65848612a6172351aca1d7ac6a285649">SDL_RETURN_CAPABILITY</a>(<a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</td></tr>
+<tr class="separator:a65848612a6172351aca1d7ac6a285649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617b4906fd737636813dd68d54f72952" id="r_a617b4906fd737636813dd68d54f72952"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a617b4906fd737636813dd68d54f72952">SDL_NO_THREAD_SAFETY_ANALYSIS</a>&#160;&#160;&#160;  <a class="el" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(no_thread_safety_analysis)</td></tr>
+<tr class="separator:a617b4906fd737636813dd68d54f72952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1214610634c24465d7c50149752791a9" id="r_a1214610634c24465d7c50149752791a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1214610634c24465d7c50149752791a9">SDL_MUTEX_TIMEDOUT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a1214610634c24465d7c50149752791a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronization functions which can time out return this value if they time out.  <br /></td></tr>
+<tr class="separator:a1214610634c24465d7c50149752791a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd2bc8605242c50341362ada961dc914" id="r_abd2bc8605242c50341362ada961dc914"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd2bc8605242c50341362ada961dc914">SDL_MUTEX_MAXWAIT</a>&#160;&#160;&#160;(~(<a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a>)0)</td></tr>
+<tr class="memdesc:abd2bc8605242c50341362ada961dc914"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the timeout value which corresponds to never time out.  <br /></td></tr>
+<tr class="separator:abd2bc8605242c50341362ada961dc914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Mutex functions</h2></td></tr>
+<tr class="memitem:a3ce486805b5c21574466d3d93c908597" id="r_a3ce486805b5c21574466d3d93c908597"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ce486805b5c21574466d3d93c908597">SDL_mutexP</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#af593500c283bf1a787a6f947f503a5c2">m</a>)</td></tr>
+<tr class="separator:a3ce486805b5c21574466d3d93c908597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa25335079da2e776536c63e84288d684" id="r_aa25335079da2e776536c63e84288d684"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa25335079da2e776536c63e84288d684">SDL_mutexV</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#af593500c283bf1a787a6f947f503a5c2">m</a>)</td></tr>
+<tr class="separator:aa25335079da2e776536c63e84288d684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac085162a7cfb9ebd63e2d05d33c03c17" id="r_ac085162a7cfb9ebd63e2d05d33c03c17"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a></td></tr>
+<tr class="separator:ac085162a7cfb9ebd63e2d05d33c03c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2ae8dca74d9f6c2bbe87030b9e7a0c" id="r_a0e2ae8dca74d9f6c2bbe87030b9e7a0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a></td></tr>
+<tr class="separator:a0e2ae8dca74d9f6c2bbe87030b9e7a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a47396fe7d67160eb74ef071e1ef668" id="r_a9a47396fe7d67160eb74ef071e1ef668"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a47396fe7d67160eb74ef071e1ef668">SDL_CreateMutex</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a9a47396fe7d67160eb74ef071e1ef668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new mutex.  <br /></td></tr>
+<tr class="separator:a9a47396fe7d67160eb74ef071e1ef668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7575e7c87dcd570b4f1664bba24a24b" id="r_ab7575e7c87dcd570b4f1664bba24a24b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7575e7c87dcd570b4f1664bba24a24b">SDL_LockMutex</a> (<a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *<a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a>) <a class="el" href="#a068ace07dbfb746436d3c03673b4f8fb">SDL_ACQUIRE</a>(<a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a>)</td></tr>
+<tr class="memdesc:ab7575e7c87dcd570b4f1664bba24a24b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the mutex.  <br /></td></tr>
+<tr class="separator:ab7575e7c87dcd570b4f1664bba24a24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b9690ecda945f6db7d69dba15f5540" id="r_a86b9690ecda945f6db7d69dba15f5540"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86b9690ecda945f6db7d69dba15f5540">SDL_TryLockMutex</a> (<a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *<a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a>) <a class="el" href="#a0df0a8038b0220f070fa4a81aa340859">SDL_TRY_ACQUIRE</a>(0</td></tr>
+<tr class="memdesc:a86b9690ecda945f6db7d69dba15f5540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to lock a mutex without blocking.  <br /></td></tr>
+<tr class="separator:a86b9690ecda945f6db7d69dba15f5540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397d5e9da45af5cb6682a429915c307b" id="r_a397d5e9da45af5cb6682a429915c307b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a397d5e9da45af5cb6682a429915c307b">SDL_UnlockMutex</a> (<a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *<a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a>) <a class="el" href="#acca008c2a7bed5dea3a950f80134a781">SDL_RELEASE</a>(<a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a>)</td></tr>
+<tr class="memdesc:a397d5e9da45af5cb6682a429915c307b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock the mutex.  <br /></td></tr>
+<tr class="separator:a397d5e9da45af5cb6682a429915c307b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2bbcc4e32ac927af62f0cba671f63fe" id="r_ad2bbcc4e32ac927af62f0cba671f63fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2bbcc4e32ac927af62f0cba671f63fe">SDL_DestroyMutex</a> (<a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *<a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a>)</td></tr>
+<tr class="memdesc:ad2bbcc4e32ac927af62f0cba671f63fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a mutex created with <a class="el" href="#a9a47396fe7d67160eb74ef071e1ef668" title="Create a new mutex.">SDL_CreateMutex()</a>.  <br /></td></tr>
+<tr class="separator:ad2bbcc4e32ac927af62f0cba671f63fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Semaphore functions</h2></td></tr>
+<tr class="memitem:aa7d56df841e98eed229d1d4b17327d29" id="r_aa7d56df841e98eed229d1d4b17327d29"><td class="memItemLeft" align="right" valign="top">typedef struct SDL_semaphore&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a></td></tr>
+<tr class="separator:aa7d56df841e98eed229d1d4b17327d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf777c6c386966b58a00185726572d17" id="r_adf777c6c386966b58a00185726572d17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf777c6c386966b58a00185726572d17">SDL_CreateSemaphore</a> (<a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> initial_value)</td></tr>
+<tr class="memdesc:adf777c6c386966b58a00185726572d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a semaphore.  <br /></td></tr>
+<tr class="separator:adf777c6c386966b58a00185726572d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23deb3b7e29a5137d804e4be3453a768" id="r_a23deb3b7e29a5137d804e4be3453a768"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23deb3b7e29a5137d804e4be3453a768">SDL_DestroySemaphore</a> (<a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *sem)</td></tr>
+<tr class="memdesc:a23deb3b7e29a5137d804e4be3453a768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a semaphore.  <br /></td></tr>
+<tr class="separator:a23deb3b7e29a5137d804e4be3453a768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51d75d18cb90f28b35c31e853b04792" id="r_af51d75d18cb90f28b35c31e853b04792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af51d75d18cb90f28b35c31e853b04792">SDL_SemWait</a> (<a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *sem)</td></tr>
+<tr class="memdesc:af51d75d18cb90f28b35c31e853b04792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a semaphore has a positive value and then decrements it.  <br /></td></tr>
+<tr class="separator:af51d75d18cb90f28b35c31e853b04792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517288aaa856ce2264e8420636e85c4a" id="r_a517288aaa856ce2264e8420636e85c4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a517288aaa856ce2264e8420636e85c4a">SDL_SemTryWait</a> (<a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *sem)</td></tr>
+<tr class="memdesc:a517288aaa856ce2264e8420636e85c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">See if a semaphore has a positive value and decrement it if it does.  <br /></td></tr>
+<tr class="separator:a517288aaa856ce2264e8420636e85c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e685246411e466691ecf343fff1a108" id="r_a3e685246411e466691ecf343fff1a108"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e685246411e466691ecf343fff1a108">SDL_SemWaitTimeout</a> (<a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *sem, <a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a5fb8809e616532013f09411074beba04">timeout</a>)</td></tr>
+<tr class="memdesc:a3e685246411e466691ecf343fff1a108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a semaphore has a positive value and then decrements it.  <br /></td></tr>
+<tr class="separator:a3e685246411e466691ecf343fff1a108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c50f774babf7a44c381238a1f780595" id="r_a0c50f774babf7a44c381238a1f780595"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c50f774babf7a44c381238a1f780595">SDL_SemPost</a> (<a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *sem)</td></tr>
+<tr class="memdesc:a0c50f774babf7a44c381238a1f780595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomically increment a semaphore's value and wake waiting threads.  <br /></td></tr>
+<tr class="separator:a0c50f774babf7a44c381238a1f780595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66390dca585fdab8de871fe32935768" id="r_ae66390dca585fdab8de871fe32935768"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66390dca585fdab8de871fe32935768">SDL_SemValue</a> (<a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *sem)</td></tr>
+<tr class="memdesc:ae66390dca585fdab8de871fe32935768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current value of a semaphore.  <br /></td></tr>
+<tr class="separator:ae66390dca585fdab8de871fe32935768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Condition variable functions</h2></td></tr>
+<tr class="memitem:ac50401d1b84d806a0c927c8cf454f96a" id="r_ac50401d1b84d806a0c927c8cf454f96a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a></td></tr>
+<tr class="separator:ac50401d1b84d806a0c927c8cf454f96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05cd070a02f5ce6eb0abbec4379468a8" id="r_a05cd070a02f5ce6eb0abbec4379468a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05cd070a02f5ce6eb0abbec4379468a8">SDL_CreateCond</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a05cd070a02f5ce6eb0abbec4379468a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a condition variable.  <br /></td></tr>
+<tr class="separator:a05cd070a02f5ce6eb0abbec4379468a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8843feeb270845e07fc23f692707540f" id="r_a8843feeb270845e07fc23f692707540f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8843feeb270845e07fc23f692707540f">SDL_DestroyCond</a> (<a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *cond)</td></tr>
+<tr class="memdesc:a8843feeb270845e07fc23f692707540f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a condition variable.  <br /></td></tr>
+<tr class="separator:a8843feeb270845e07fc23f692707540f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1037a8274b0b13118fc78eeb417a1397" id="r_a1037a8274b0b13118fc78eeb417a1397"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1037a8274b0b13118fc78eeb417a1397">SDL_CondSignal</a> (<a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *cond)</td></tr>
+<tr class="memdesc:a1037a8274b0b13118fc78eeb417a1397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart one of the threads that are waiting on the condition variable.  <br /></td></tr>
+<tr class="separator:a1037a8274b0b13118fc78eeb417a1397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ffd0b45ebdc44057007a59857ba46b3" id="r_a2ffd0b45ebdc44057007a59857ba46b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ffd0b45ebdc44057007a59857ba46b3">SDL_CondBroadcast</a> (<a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *cond)</td></tr>
+<tr class="memdesc:a2ffd0b45ebdc44057007a59857ba46b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart all threads that are waiting on the condition variable.  <br /></td></tr>
+<tr class="separator:a2ffd0b45ebdc44057007a59857ba46b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af759b2fe1c5507f47854c1edf1ecbabd" id="r_af759b2fe1c5507f47854c1edf1ecbabd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af759b2fe1c5507f47854c1edf1ecbabd">SDL_CondWait</a> (<a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *cond, <a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *<a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a>)</td></tr>
+<tr class="memdesc:af759b2fe1c5507f47854c1edf1ecbabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a condition variable is signaled.  <br /></td></tr>
+<tr class="separator:af759b2fe1c5507f47854c1edf1ecbabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57013f95a9c608cf24a5100b841e863" id="r_aa57013f95a9c608cf24a5100b841e863"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa57013f95a9c608cf24a5100b841e863">SDL_CondWaitTimeout</a> (<a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *cond, <a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *<a class="el" href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">mutex</a>, <a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> ms)</td></tr>
+<tr class="memdesc:aa57013f95a9c608cf24a5100b841e863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a condition variable is signaled or a certain time has passed.  <br /></td></tr>
+<tr class="separator:aa57013f95a9c608cf24a5100b841e863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Functions to provide thread synchronization primitives. </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a068ace07dbfb746436d3c03673b4f8fb" name="a068ace07dbfb746436d3c03673b4f8fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a068ace07dbfb746436d3c03673b4f8fb">&#9670;&#160;</a></span>SDL_ACQUIRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_ACQUIRE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(acquire_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+<div class="ttc" id="a_s_d_l__mutex_8h_html_ab3c03b432fec86063d584f31fc810efb"><div class="ttname"><a href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a></div><div class="ttdeci">#define SDL_THREAD_ANNOTATION_ATTRIBUTE__(x)</div><div class="ttdef"><b>定义</b> SDL_mutex.h:42</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_acbccb77724c9f4a12f2a844974ab0fea"><div class="ttname"><a href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></div><div class="ttdeci">GLint GLint GLint GLint GLint x</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a31ca6632bae6422f25e24db9ef66b6cd" name="a31ca6632bae6422f25e24db9ef66b6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ca6632bae6422f25e24db9ef66b6cd">&#9670;&#160;</a></span>SDL_ACQUIRE_SHARED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_ACQUIRE_SHARED</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(acquire_shared_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af536ab2d5bc366dba742a4241969d5f0" name="af536ab2d5bc366dba742a4241969d5f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af536ab2d5bc366dba742a4241969d5f0">&#9670;&#160;</a></span>SDL_ACQUIRED_AFTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_ACQUIRED_AFTER</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(acquired_after(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aee469af24694b03e445fc603bde7d1ab" name="aee469af24694b03e445fc603bde7d1ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee469af24694b03e445fc603bde7d1ab">&#9670;&#160;</a></span>SDL_ACQUIRED_BEFORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_ACQUIRED_BEFORE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(acquired_before(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a556bcb3575a6f8cb32a271c82dc63722" name="a556bcb3575a6f8cb32a271c82dc63722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556bcb3575a6f8cb32a271c82dc63722">&#9670;&#160;</a></span>SDL_ASSERT_CAPABILITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_ASSERT_CAPABILITY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(assert_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3eda33c61bdb66f2132e708b678ceb9b" name="a3eda33c61bdb66f2132e708b678ceb9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eda33c61bdb66f2132e708b678ceb9b">&#9670;&#160;</a></span>SDL_ASSERT_SHARED_CAPABILITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_ASSERT_SHARED_CAPABILITY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(assert_shared_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a70b6303c151a95bdd033d9685fc12493" name="a70b6303c151a95bdd033d9685fc12493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b6303c151a95bdd033d9685fc12493">&#9670;&#160;</a></span>SDL_CAPABILITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_CAPABILITY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ace21f1d0bdbf05436aa089bcc3a46c14" name="ace21f1d0bdbf05436aa089bcc3a46c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace21f1d0bdbf05436aa089bcc3a46c14">&#9670;&#160;</a></span>SDL_EXCLUDES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_EXCLUDES</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(locks_excluded(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9a90a520403e736f84b7837427aa6263" name="a9a90a520403e736f84b7837427aa6263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a90a520403e736f84b7837427aa6263">&#9670;&#160;</a></span>SDL_GUARDED_BY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_GUARDED_BY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(guarded_by(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abd2bc8605242c50341362ada961dc914" name="abd2bc8605242c50341362ada961dc914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2bc8605242c50341362ada961dc914">&#9670;&#160;</a></span>SDL_MUTEX_MAXWAIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_MUTEX_MAXWAIT&#160;&#160;&#160;(~(<a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a>)0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the timeout value which corresponds to never time out. </p>
+
+</div>
+</div>
+<a id="a1214610634c24465d7c50149752791a9" name="a1214610634c24465d7c50149752791a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1214610634c24465d7c50149752791a9">&#9670;&#160;</a></span>SDL_MUTEX_TIMEDOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_MUTEX_TIMEDOUT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Synchronization functions which can time out return this value if they time out. </p>
+
+</div>
+</div>
+<a id="a3ce486805b5c21574466d3d93c908597" name="a3ce486805b5c21574466d3d93c908597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce486805b5c21574466d3d93c908597">&#9670;&#160;</a></span>SDL_mutexP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_mutexP</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#af593500c283bf1a787a6f947f503a5c2">m</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#ab7575e7c87dcd570b4f1664bba24a24b">SDL_LockMutex</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#af593500c283bf1a787a6f947f503a5c2">m</a>)</div>
+<div class="ttc" id="a_s_d_l__mutex_8h_html_ab7575e7c87dcd570b4f1664bba24a24b"><div class="ttname"><a href="#ab7575e7c87dcd570b4f1664bba24a24b">SDL_LockMutex</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_LockMutex(SDL_mutex *mutex) SDL_ACQUIRE(mutex)</div><div class="ttdoc">Lock the mutex.</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_af593500c283bf1a787a6f947f503a5c2"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#af593500c283bf1a787a6f947f503a5c2">m</a></div><div class="ttdeci">const GLfloat * m</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:7099</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa25335079da2e776536c63e84288d684" name="aa25335079da2e776536c63e84288d684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25335079da2e776536c63e84288d684">&#9670;&#160;</a></span>SDL_mutexV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_mutexV</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#af593500c283bf1a787a6f947f503a5c2">m</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a397d5e9da45af5cb6682a429915c307b">SDL_UnlockMutex</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#af593500c283bf1a787a6f947f503a5c2">m</a>)</div>
+<div class="ttc" id="a_s_d_l__mutex_8h_html_a397d5e9da45af5cb6682a429915c307b"><div class="ttname"><a href="#a397d5e9da45af5cb6682a429915c307b">SDL_UnlockMutex</a></div><div class="ttdeci">DECLSPEC int SDLCALL SDL_UnlockMutex(SDL_mutex *mutex) SDL_RELEASE(mutex)</div><div class="ttdoc">Unlock the mutex.</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a617b4906fd737636813dd68d54f72952" name="a617b4906fd737636813dd68d54f72952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a617b4906fd737636813dd68d54f72952">&#9670;&#160;</a></span>SDL_NO_THREAD_SAFETY_ANALYSIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_NO_THREAD_SAFETY_ANALYSIS&#160;&#160;&#160;  <a class="el" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(no_thread_safety_analysis)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13f31eaa0f73959b93f9599117f54ebc" name="a13f31eaa0f73959b93f9599117f54ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f31eaa0f73959b93f9599117f54ebc">&#9670;&#160;</a></span>SDL_PT_GUARDED_BY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_PT_GUARDED_BY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(pt_guarded_by(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acca008c2a7bed5dea3a950f80134a781" name="acca008c2a7bed5dea3a950f80134a781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acca008c2a7bed5dea3a950f80134a781">&#9670;&#160;</a></span>SDL_RELEASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_RELEASE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(release_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5ca43c17a557cf8c9033b9922e68537b" name="a5ca43c17a557cf8c9033b9922e68537b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca43c17a557cf8c9033b9922e68537b">&#9670;&#160;</a></span>SDL_RELEASE_GENERIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_RELEASE_GENERIC</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(release_generic_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9bae6bd098b1476356faf4b511c4b849" name="a9bae6bd098b1476356faf4b511c4b849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bae6bd098b1476356faf4b511c4b849">&#9670;&#160;</a></span>SDL_RELEASE_SHARED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_RELEASE_SHARED</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(release_shared_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a349efc002b392e757e2b2a56f4687f73" name="a349efc002b392e757e2b2a56f4687f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349efc002b392e757e2b2a56f4687f73">&#9670;&#160;</a></span>SDL_REQUIRES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_REQUIRES</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(requires_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4cb6dc23d858bfaadf906462a6b5bc79" name="a4cb6dc23d858bfaadf906462a6b5bc79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cb6dc23d858bfaadf906462a6b5bc79">&#9670;&#160;</a></span>SDL_REQUIRES_SHARED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_REQUIRES_SHARED</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(requires_shared_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a65848612a6172351aca1d7ac6a285649" name="a65848612a6172351aca1d7ac6a285649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65848612a6172351aca1d7ac6a285649">&#9670;&#160;</a></span>SDL_RETURN_CAPABILITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_RETURN_CAPABILITY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(lock_returned(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a45cd15a2195c2dcdc589deff2e9926a2" name="a45cd15a2195c2dcdc589deff2e9926a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45cd15a2195c2dcdc589deff2e9926a2">&#9670;&#160;</a></span>SDL_SCOPED_CAPABILITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_SCOPED_CAPABILITY&#160;&#160;&#160;  <a class="el" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(scoped_lockable)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3c03b432fec86063d584f31fc810efb" name="ab3c03b432fec86063d584f31fc810efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c03b432fec86063d584f31fc810efb">&#9670;&#160;</a></span>SDL_THREAD_ANNOTATION_ATTRIBUTE__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_THREAD_ANNOTATION_ATTRIBUTE__</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="comment">/* no-op */</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0df0a8038b0220f070fa4a81aa340859" name="a0df0a8038b0220f070fa4a81aa340859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0df0a8038b0220f070fa4a81aa340859">&#9670;&#160;</a></span>SDL_TRY_ACQUIRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_TRY_ACQUIRE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(try_acquire_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a>))</div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a1675d9d7bb68e1657ff028643b4037e3"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a></div><div class="ttdeci">GLint GLint GLint GLint GLint GLint y</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a22d43e26bb3944260e27cfd5a481637e" name="a22d43e26bb3944260e27cfd5a481637e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d43e26bb3944260e27cfd5a481637e">&#9670;&#160;</a></span>SDL_TRY_ACQUIRE_SHARED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDL_TRY_ACQUIRE_SHARED</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ab3c03b432fec86063d584f31fc810efb">SDL_THREAD_ANNOTATION_ATTRIBUTE__</a>(try_acquire_shared_capability(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>, <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ac50401d1b84d806a0c927c8cf454f96a" name="ac50401d1b84d806a0c927c8cf454f96a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50401d1b84d806a0c927c8cf454f96a">&#9670;&#160;</a></span>SDL_cond</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> <a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac085162a7cfb9ebd63e2d05d33c03c17" name="ac085162a7cfb9ebd63e2d05d33c03c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac085162a7cfb9ebd63e2d05d33c03c17">&#9670;&#160;</a></span>SDL_mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> <a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7d56df841e98eed229d1d4b17327d29" name="aa7d56df841e98eed229d1d4b17327d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d56df841e98eed229d1d4b17327d29">&#9670;&#160;</a></span>SDL_sem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct SDL_semaphore <a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a2ffd0b45ebdc44057007a59857ba46b3" name="a2ffd0b45ebdc44057007a59857ba46b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ffd0b45ebdc44057007a59857ba46b3">&#9670;&#160;</a></span>SDL_CondBroadcast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_CondBroadcast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *</td>          <td class="paramname"><span class="paramname"><em>cond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restart all threads that are waiting on the condition variable. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cond</td><td>the condition variable to signal </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success or a negative error code on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a1037a8274b0b13118fc78eeb417a1397" title="Restart one of the threads that are waiting on the condition variable.">SDL_CondSignal</a> </dd>
+<dd>
+<a class="el" href="#af759b2fe1c5507f47854c1edf1ecbabd" title="Wait until a condition variable is signaled.">SDL_CondWait</a> </dd>
+<dd>
+<a class="el" href="#aa57013f95a9c608cf24a5100b841e863" title="Wait until a condition variable is signaled or a certain time has passed.">SDL_CondWaitTimeout</a> </dd>
+<dd>
+<a class="el" href="#a05cd070a02f5ce6eb0abbec4379468a8" title="Create a condition variable.">SDL_CreateCond</a> </dd>
+<dd>
+<a class="el" href="#a8843feeb270845e07fc23f692707540f" title="Destroy a condition variable.">SDL_DestroyCond</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1037a8274b0b13118fc78eeb417a1397" name="a1037a8274b0b13118fc78eeb417a1397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1037a8274b0b13118fc78eeb417a1397">&#9670;&#160;</a></span>SDL_CondSignal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_CondSignal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *</td>          <td class="paramname"><span class="paramname"><em>cond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restart one of the threads that are waiting on the condition variable. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cond</td><td>the condition variable to signal </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success or a negative error code on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a2ffd0b45ebdc44057007a59857ba46b3" title="Restart all threads that are waiting on the condition variable.">SDL_CondBroadcast</a> </dd>
+<dd>
+<a class="el" href="#af759b2fe1c5507f47854c1edf1ecbabd" title="Wait until a condition variable is signaled.">SDL_CondWait</a> </dd>
+<dd>
+<a class="el" href="#aa57013f95a9c608cf24a5100b841e863" title="Wait until a condition variable is signaled or a certain time has passed.">SDL_CondWaitTimeout</a> </dd>
+<dd>
+<a class="el" href="#a05cd070a02f5ce6eb0abbec4379468a8" title="Create a condition variable.">SDL_CreateCond</a> </dd>
+<dd>
+<a class="el" href="#a8843feeb270845e07fc23f692707540f" title="Destroy a condition variable.">SDL_DestroyCond</a> </dd></dl>
+
+</div>
+</div>
+<a id="af759b2fe1c5507f47854c1edf1ecbabd" name="af759b2fe1c5507f47854c1edf1ecbabd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af759b2fe1c5507f47854c1edf1ecbabd">&#9670;&#160;</a></span>SDL_CondWait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_CondWait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *</td>          <td class="paramname"><span class="paramname"><em>cond</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *</td>          <td class="paramname"><span class="paramname"><em>mutex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait until a condition variable is signaled. </p>
+<p>This function unlocks the specified <code>mutex</code> and waits for another thread to call <a class="el" href="#a1037a8274b0b13118fc78eeb417a1397" title="Restart one of the threads that are waiting on the condition variable.">SDL_CondSignal()</a> or <a class="el" href="#a2ffd0b45ebdc44057007a59857ba46b3" title="Restart all threads that are waiting on the condition variable.">SDL_CondBroadcast()</a> on the condition variable <code>cond</code>. Once the condition variable is signaled, the mutex is re-locked and the function returns.</p>
+<p>The mutex must be locked before calling this function.</p>
+<p>This function is the equivalent of calling <a class="el" href="#aa57013f95a9c608cf24a5100b841e863" title="Wait until a condition variable is signaled or a certain time has passed.">SDL_CondWaitTimeout()</a> with a time length of <code>SDL_MUTEX_MAXWAIT</code>.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cond</td><td>the condition variable to wait on </td></tr>
+    <tr><td class="paramname">mutex</td><td>the mutex used to coordinate thread access </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 when it is signaled or a negative error code on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a2ffd0b45ebdc44057007a59857ba46b3" title="Restart all threads that are waiting on the condition variable.">SDL_CondBroadcast</a> </dd>
+<dd>
+<a class="el" href="#a1037a8274b0b13118fc78eeb417a1397" title="Restart one of the threads that are waiting on the condition variable.">SDL_CondSignal</a> </dd>
+<dd>
+<a class="el" href="#aa57013f95a9c608cf24a5100b841e863" title="Wait until a condition variable is signaled or a certain time has passed.">SDL_CondWaitTimeout</a> </dd>
+<dd>
+<a class="el" href="#a05cd070a02f5ce6eb0abbec4379468a8" title="Create a condition variable.">SDL_CreateCond</a> </dd>
+<dd>
+<a class="el" href="#a8843feeb270845e07fc23f692707540f" title="Destroy a condition variable.">SDL_DestroyCond</a> </dd></dl>
+
+</div>
+</div>
+<a id="aa57013f95a9c608cf24a5100b841e863" name="aa57013f95a9c608cf24a5100b841e863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57013f95a9c608cf24a5100b841e863">&#9670;&#160;</a></span>SDL_CondWaitTimeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_CondWaitTimeout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *</td>          <td class="paramname"><span class="paramname"><em>cond</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *</td>          <td class="paramname"><span class="paramname"><em>mutex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a></td>          <td class="paramname"><span class="paramname"><em>ms</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait until a condition variable is signaled or a certain time has passed. </p>
+<p>This function unlocks the specified <code>mutex</code> and waits for another thread to call <a class="el" href="#a1037a8274b0b13118fc78eeb417a1397" title="Restart one of the threads that are waiting on the condition variable.">SDL_CondSignal()</a> or <a class="el" href="#a2ffd0b45ebdc44057007a59857ba46b3" title="Restart all threads that are waiting on the condition variable.">SDL_CondBroadcast()</a> on the condition variable <code>cond</code>, or for the specified time to elapse. Once the condition variable is signaled or the time elapsed, the mutex is re-locked and the function returns.</p>
+<p>The mutex must be locked before calling this function.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cond</td><td>the condition variable to wait on </td></tr>
+    <tr><td class="paramname">mutex</td><td>the mutex used to coordinate thread access </td></tr>
+    <tr><td class="paramname">ms</td><td>the maximum time to wait, in milliseconds, or <code>SDL_MUTEX_MAXWAIT</code> to wait indefinitely </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 if the condition variable is signaled, <code>SDL_MUTEX_TIMEDOUT</code> if the condition is not signaled in the allotted time, or a negative error code on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a2ffd0b45ebdc44057007a59857ba46b3" title="Restart all threads that are waiting on the condition variable.">SDL_CondBroadcast</a> </dd>
+<dd>
+<a class="el" href="#a1037a8274b0b13118fc78eeb417a1397" title="Restart one of the threads that are waiting on the condition variable.">SDL_CondSignal</a> </dd>
+<dd>
+<a class="el" href="#af759b2fe1c5507f47854c1edf1ecbabd" title="Wait until a condition variable is signaled.">SDL_CondWait</a> </dd>
+<dd>
+<a class="el" href="#a05cd070a02f5ce6eb0abbec4379468a8" title="Create a condition variable.">SDL_CreateCond</a> </dd>
+<dd>
+<a class="el" href="#a8843feeb270845e07fc23f692707540f" title="Destroy a condition variable.">SDL_DestroyCond</a> </dd></dl>
+
+</div>
+</div>
+<a id="a05cd070a02f5ce6eb0abbec4379468a8" name="a05cd070a02f5ce6eb0abbec4379468a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05cd070a02f5ce6eb0abbec4379468a8">&#9670;&#160;</a></span>SDL_CreateCond()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_CreateCond </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a condition variable. </p>
+<dl class="section return"><dt>返回</dt><dd>a new condition variable or NULL on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a2ffd0b45ebdc44057007a59857ba46b3" title="Restart all threads that are waiting on the condition variable.">SDL_CondBroadcast</a> </dd>
+<dd>
+<a class="el" href="#a1037a8274b0b13118fc78eeb417a1397" title="Restart one of the threads that are waiting on the condition variable.">SDL_CondSignal</a> </dd>
+<dd>
+<a class="el" href="#af759b2fe1c5507f47854c1edf1ecbabd" title="Wait until a condition variable is signaled.">SDL_CondWait</a> </dd>
+<dd>
+<a class="el" href="#aa57013f95a9c608cf24a5100b841e863" title="Wait until a condition variable is signaled or a certain time has passed.">SDL_CondWaitTimeout</a> </dd>
+<dd>
+<a class="el" href="#a8843feeb270845e07fc23f692707540f" title="Destroy a condition variable.">SDL_DestroyCond</a> </dd></dl>
+
+</div>
+</div>
+<a id="a9a47396fe7d67160eb74ef071e1ef668" name="a9a47396fe7d67160eb74ef071e1ef668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a47396fe7d67160eb74ef071e1ef668">&#9670;&#160;</a></span>SDL_CreateMutex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_CreateMutex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new mutex. </p>
+<p>All newly-created mutexes begin in the <em>unlocked</em> state.</p>
+<p>Calls to <a class="el" href="#ab7575e7c87dcd570b4f1664bba24a24b" title="Lock the mutex.">SDL_LockMutex()</a> will not return while the mutex is locked by another thread. See <a class="el" href="#a86b9690ecda945f6db7d69dba15f5540" title="Try to lock a mutex without blocking.">SDL_TryLockMutex()</a> to attempt to lock without blocking.</p>
+<p>SDL mutexes are reentrant.</p>
+<dl class="section return"><dt>返回</dt><dd>the initialized and unlocked mutex or NULL on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ad2bbcc4e32ac927af62f0cba671f63fe" title="Destroy a mutex created with SDL_CreateMutex().">SDL_DestroyMutex</a> </dd>
+<dd>
+<a class="el" href="#ab7575e7c87dcd570b4f1664bba24a24b" title="Lock the mutex.">SDL_LockMutex</a> </dd>
+<dd>
+<a class="el" href="#a86b9690ecda945f6db7d69dba15f5540" title="Try to lock a mutex without blocking.">SDL_TryLockMutex</a> </dd>
+<dd>
+<a class="el" href="#a397d5e9da45af5cb6682a429915c307b" title="Unlock the mutex.">SDL_UnlockMutex</a> </dd></dl>
+
+</div>
+</div>
+<a id="adf777c6c386966b58a00185726572d17" name="adf777c6c386966b58a00185726572d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf777c6c386966b58a00185726572d17">&#9670;&#160;</a></span>SDL_CreateSemaphore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_CreateSemaphore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a></td>          <td class="paramname"><span class="paramname"><em>initial_value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a semaphore. </p>
+<p>This function creates a new semaphore and initializes it with the value <code>initial_value</code>. Each wait operation on the semaphore will atomically decrement the semaphore value and potentially block if the semaphore value is 0. Each post operation will atomically increment the semaphore value and wake waiting threads and allow them to retry the wait operation.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initial_value</td><td>the starting value of the semaphore </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>a new semaphore or NULL on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a23deb3b7e29a5137d804e4be3453a768" title="Destroy a semaphore.">SDL_DestroySemaphore</a> </dd>
+<dd>
+<a class="el" href="#a0c50f774babf7a44c381238a1f780595" title="Atomically increment a semaphore&#39;s value and wake waiting threads.">SDL_SemPost</a> </dd>
+<dd>
+<a class="el" href="#a517288aaa856ce2264e8420636e85c4a" title="See if a semaphore has a positive value and decrement it if it does.">SDL_SemTryWait</a> </dd>
+<dd>
+<a class="el" href="#ae66390dca585fdab8de871fe32935768" title="Get the current value of a semaphore.">SDL_SemValue</a> </dd>
+<dd>
+<a class="el" href="#af51d75d18cb90f28b35c31e853b04792" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWait</a> </dd>
+<dd>
+<a class="el" href="#a3e685246411e466691ecf343fff1a108" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWaitTimeout</a> </dd></dl>
+
+</div>
+</div>
+<a id="a8843feeb270845e07fc23f692707540f" name="a8843feeb270845e07fc23f692707540f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8843feeb270845e07fc23f692707540f">&#9670;&#160;</a></span>SDL_DestroyCond()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_DestroyCond </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</a> *</td>          <td class="paramname"><span class="paramname"><em>cond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy a condition variable. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cond</td><td>the condition variable to destroy</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a2ffd0b45ebdc44057007a59857ba46b3" title="Restart all threads that are waiting on the condition variable.">SDL_CondBroadcast</a> </dd>
+<dd>
+<a class="el" href="#a1037a8274b0b13118fc78eeb417a1397" title="Restart one of the threads that are waiting on the condition variable.">SDL_CondSignal</a> </dd>
+<dd>
+<a class="el" href="#af759b2fe1c5507f47854c1edf1ecbabd" title="Wait until a condition variable is signaled.">SDL_CondWait</a> </dd>
+<dd>
+<a class="el" href="#aa57013f95a9c608cf24a5100b841e863" title="Wait until a condition variable is signaled or a certain time has passed.">SDL_CondWaitTimeout</a> </dd>
+<dd>
+<a class="el" href="#a05cd070a02f5ce6eb0abbec4379468a8" title="Create a condition variable.">SDL_CreateCond</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad2bbcc4e32ac927af62f0cba671f63fe" name="ad2bbcc4e32ac927af62f0cba671f63fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2bbcc4e32ac927af62f0cba671f63fe">&#9670;&#160;</a></span>SDL_DestroyMutex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_DestroyMutex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *</td>          <td class="paramname"><span class="paramname"><em>mutex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy a mutex created with <a class="el" href="#a9a47396fe7d67160eb74ef071e1ef668" title="Create a new mutex.">SDL_CreateMutex()</a>. </p>
+<p>This function must be called on any mutex that is no longer needed. Failure to destroy a mutex will result in a system memory or resource leak. While it is safe to destroy a mutex that is <em>unlocked</em>, it is not safe to attempt to destroy a locked mutex, and may result in undefined behavior depending on the platform.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutex</td><td>the mutex to destroy</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a9a47396fe7d67160eb74ef071e1ef668" title="Create a new mutex.">SDL_CreateMutex</a> </dd>
+<dd>
+<a class="el" href="#ab7575e7c87dcd570b4f1664bba24a24b" title="Lock the mutex.">SDL_LockMutex</a> </dd>
+<dd>
+<a class="el" href="#a86b9690ecda945f6db7d69dba15f5540" title="Try to lock a mutex without blocking.">SDL_TryLockMutex</a> </dd>
+<dd>
+<a class="el" href="#a397d5e9da45af5cb6682a429915c307b" title="Unlock the mutex.">SDL_UnlockMutex</a> </dd></dl>
+
+</div>
+</div>
+<a id="a23deb3b7e29a5137d804e4be3453a768" name="a23deb3b7e29a5137d804e4be3453a768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23deb3b7e29a5137d804e4be3453a768">&#9670;&#160;</a></span>SDL_DestroySemaphore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_DestroySemaphore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *</td>          <td class="paramname"><span class="paramname"><em>sem</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy a semaphore. </p>
+<p>It is not safe to destroy a semaphore if there are threads currently waiting on it.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sem</td><td>the semaphore to destroy</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#adf777c6c386966b58a00185726572d17" title="Create a semaphore.">SDL_CreateSemaphore</a> </dd>
+<dd>
+<a class="el" href="#a0c50f774babf7a44c381238a1f780595" title="Atomically increment a semaphore&#39;s value and wake waiting threads.">SDL_SemPost</a> </dd>
+<dd>
+<a class="el" href="#a517288aaa856ce2264e8420636e85c4a" title="See if a semaphore has a positive value and decrement it if it does.">SDL_SemTryWait</a> </dd>
+<dd>
+<a class="el" href="#ae66390dca585fdab8de871fe32935768" title="Get the current value of a semaphore.">SDL_SemValue</a> </dd>
+<dd>
+<a class="el" href="#af51d75d18cb90f28b35c31e853b04792" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWait</a> </dd>
+<dd>
+<a class="el" href="#a3e685246411e466691ecf343fff1a108" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWaitTimeout</a> </dd></dl>
+
+</div>
+</div>
+<a id="ab7575e7c87dcd570b4f1664bba24a24b" name="ab7575e7c87dcd570b4f1664bba24a24b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7575e7c87dcd570b4f1664bba24a24b">&#9670;&#160;</a></span>SDL_LockMutex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_LockMutex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *</td>          <td class="paramname"><span class="paramname"><em>mutex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lock the mutex. </p>
+<p>This will block until the mutex is available, which is to say it is in the unlocked state and the OS has chosen the caller as the next thread to lock it. Of all threads waiting to lock the mutex, only one may do so at a time.</p>
+<p>It is legal for the owning thread to lock an already-locked mutex. It must unlock it the same number of times before it is actually made available for other threads in the system (this is known as a "recursive mutex").</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutex</td><td>the mutex to lock </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0, or -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0. </dd></dl>
+
+</div>
+</div>
+<a id="a0c50f774babf7a44c381238a1f780595" name="a0c50f774babf7a44c381238a1f780595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c50f774babf7a44c381238a1f780595">&#9670;&#160;</a></span>SDL_SemPost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_SemPost </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *</td>          <td class="paramname"><span class="paramname"><em>sem</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atomically increment a semaphore's value and wake waiting threads. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sem</td><td>the semaphore to increment </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success or a negative error code on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#adf777c6c386966b58a00185726572d17" title="Create a semaphore.">SDL_CreateSemaphore</a> </dd>
+<dd>
+<a class="el" href="#a23deb3b7e29a5137d804e4be3453a768" title="Destroy a semaphore.">SDL_DestroySemaphore</a> </dd>
+<dd>
+<a class="el" href="#a517288aaa856ce2264e8420636e85c4a" title="See if a semaphore has a positive value and decrement it if it does.">SDL_SemTryWait</a> </dd>
+<dd>
+<a class="el" href="#ae66390dca585fdab8de871fe32935768" title="Get the current value of a semaphore.">SDL_SemValue</a> </dd>
+<dd>
+<a class="el" href="#af51d75d18cb90f28b35c31e853b04792" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWait</a> </dd>
+<dd>
+<a class="el" href="#a3e685246411e466691ecf343fff1a108" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWaitTimeout</a> </dd></dl>
+
+</div>
+</div>
+<a id="a517288aaa856ce2264e8420636e85c4a" name="a517288aaa856ce2264e8420636e85c4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517288aaa856ce2264e8420636e85c4a">&#9670;&#160;</a></span>SDL_SemTryWait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_SemTryWait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *</td>          <td class="paramname"><span class="paramname"><em>sem</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>See if a semaphore has a positive value and decrement it if it does. </p>
+<p>This function checks to see if the semaphore pointed to by <code>sem</code> has a positive value and atomically decrements the semaphore value if it does. If the semaphore doesn't have a positive value, the function immediately returns SDL_MUTEX_TIMEDOUT.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sem</td><td>the semaphore to wait on </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 if the wait succeeds, <code>SDL_MUTEX_TIMEDOUT</code> if the wait would block, or a negative error code on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#adf777c6c386966b58a00185726572d17" title="Create a semaphore.">SDL_CreateSemaphore</a> </dd>
+<dd>
+<a class="el" href="#a23deb3b7e29a5137d804e4be3453a768" title="Destroy a semaphore.">SDL_DestroySemaphore</a> </dd>
+<dd>
+<a class="el" href="#a0c50f774babf7a44c381238a1f780595" title="Atomically increment a semaphore&#39;s value and wake waiting threads.">SDL_SemPost</a> </dd>
+<dd>
+<a class="el" href="#ae66390dca585fdab8de871fe32935768" title="Get the current value of a semaphore.">SDL_SemValue</a> </dd>
+<dd>
+<a class="el" href="#af51d75d18cb90f28b35c31e853b04792" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWait</a> </dd>
+<dd>
+<a class="el" href="#a3e685246411e466691ecf343fff1a108" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWaitTimeout</a> </dd></dl>
+
+</div>
+</div>
+<a id="ae66390dca585fdab8de871fe32935768" name="ae66390dca585fdab8de871fe32935768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66390dca585fdab8de871fe32935768">&#9670;&#160;</a></span>SDL_SemValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_SemValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *</td>          <td class="paramname"><span class="paramname"><em>sem</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current value of a semaphore. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sem</td><td>the semaphore to query </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the current value of the semaphore.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#adf777c6c386966b58a00185726572d17" title="Create a semaphore.">SDL_CreateSemaphore</a> </dd></dl>
+
+</div>
+</div>
+<a id="af51d75d18cb90f28b35c31e853b04792" name="af51d75d18cb90f28b35c31e853b04792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af51d75d18cb90f28b35c31e853b04792">&#9670;&#160;</a></span>SDL_SemWait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_SemWait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *</td>          <td class="paramname"><span class="paramname"><em>sem</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait until a semaphore has a positive value and then decrements it. </p>
+<p>This function suspends the calling thread until either the semaphore pointed to by <code>sem</code> has a positive value or the call is interrupted by a signal or error. If the call is successful it will atomically decrement the semaphore value.</p>
+<p>This function is the equivalent of calling <a class="el" href="#a3e685246411e466691ecf343fff1a108" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWaitTimeout()</a> with a time length of <code>SDL_MUTEX_MAXWAIT</code>.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sem</td><td>the semaphore wait on </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success or a negative error code on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#adf777c6c386966b58a00185726572d17" title="Create a semaphore.">SDL_CreateSemaphore</a> </dd>
+<dd>
+<a class="el" href="#a23deb3b7e29a5137d804e4be3453a768" title="Destroy a semaphore.">SDL_DestroySemaphore</a> </dd>
+<dd>
+<a class="el" href="#a0c50f774babf7a44c381238a1f780595" title="Atomically increment a semaphore&#39;s value and wake waiting threads.">SDL_SemPost</a> </dd>
+<dd>
+<a class="el" href="#a517288aaa856ce2264e8420636e85c4a" title="See if a semaphore has a positive value and decrement it if it does.">SDL_SemTryWait</a> </dd>
+<dd>
+<a class="el" href="#ae66390dca585fdab8de871fe32935768" title="Get the current value of a semaphore.">SDL_SemValue</a> </dd>
+<dd>
+<a class="el" href="#af51d75d18cb90f28b35c31e853b04792" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWait</a> </dd>
+<dd>
+<a class="el" href="#a3e685246411e466691ecf343fff1a108" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWaitTimeout</a> </dd></dl>
+
+</div>
+</div>
+<a id="a3e685246411e466691ecf343fff1a108" name="a3e685246411e466691ecf343fff1a108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e685246411e466691ecf343fff1a108">&#9670;&#160;</a></span>SDL_SemWaitTimeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_SemWaitTimeout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa7d56df841e98eed229d1d4b17327d29">SDL_sem</a> *</td>          <td class="paramname"><span class="paramname"><em>sem</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a></td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait until a semaphore has a positive value and then decrements it. </p>
+<p>This function suspends the calling thread until either the semaphore pointed to by <code>sem</code> has a positive value, the call is interrupted by a signal or error, or the specified time has elapsed. If the call is successful it will atomically decrement the semaphore value.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sem</td><td>the semaphore to wait on </td></tr>
+    <tr><td class="paramname">timeout</td><td>the length of the timeout, in milliseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 if the wait succeeds, <code>SDL_MUTEX_TIMEDOUT</code> if the wait does not succeed in the allotted time, or a negative error code on failure; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#adf777c6c386966b58a00185726572d17" title="Create a semaphore.">SDL_CreateSemaphore</a> </dd>
+<dd>
+<a class="el" href="#a23deb3b7e29a5137d804e4be3453a768" title="Destroy a semaphore.">SDL_DestroySemaphore</a> </dd>
+<dd>
+<a class="el" href="#a0c50f774babf7a44c381238a1f780595" title="Atomically increment a semaphore&#39;s value and wake waiting threads.">SDL_SemPost</a> </dd>
+<dd>
+<a class="el" href="#a517288aaa856ce2264e8420636e85c4a" title="See if a semaphore has a positive value and decrement it if it does.">SDL_SemTryWait</a> </dd>
+<dd>
+<a class="el" href="#ae66390dca585fdab8de871fe32935768" title="Get the current value of a semaphore.">SDL_SemValue</a> </dd>
+<dd>
+<a class="el" href="#af51d75d18cb90f28b35c31e853b04792" title="Wait until a semaphore has a positive value and then decrements it.">SDL_SemWait</a> </dd></dl>
+
+</div>
+</div>
+<a id="a86b9690ecda945f6db7d69dba15f5540" name="a86b9690ecda945f6db7d69dba15f5540"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b9690ecda945f6db7d69dba15f5540">&#9670;&#160;</a></span>SDL_TryLockMutex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_TryLockMutex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *</td>          <td class="paramname"><span class="paramname"><em>mutex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to lock a mutex without blocking. </p>
+<p>This works just like <a class="el" href="#ab7575e7c87dcd570b4f1664bba24a24b" title="Lock the mutex.">SDL_LockMutex()</a>, but if the mutex is not available, this function returns <code>SDL_MUTEX_TIMEOUT</code> immediately.</p>
+<p>This technique is useful if you need exclusive access to a resource but don't want to wait for it, and will return to it to try again later.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutex</td><td>the mutex to try to lock </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0, <code>SDL_MUTEX_TIMEDOUT</code>, or -1 on error; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a9a47396fe7d67160eb74ef071e1ef668" title="Create a new mutex.">SDL_CreateMutex</a> </dd>
+<dd>
+<a class="el" href="#ad2bbcc4e32ac927af62f0cba671f63fe" title="Destroy a mutex created with SDL_CreateMutex().">SDL_DestroyMutex</a> </dd>
+<dd>
+<a class="el" href="#ab7575e7c87dcd570b4f1664bba24a24b" title="Lock the mutex.">SDL_LockMutex</a> </dd>
+<dd>
+<a class="el" href="#a397d5e9da45af5cb6682a429915c307b" title="Unlock the mutex.">SDL_UnlockMutex</a> </dd></dl>
+
+</div>
+</div>
+<a id="a397d5e9da45af5cb6682a429915c307b" name="a397d5e9da45af5cb6682a429915c307b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397d5e9da45af5cb6682a429915c307b">&#9670;&#160;</a></span>SDL_UnlockMutex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_UnlockMutex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</a> *</td>          <td class="paramname"><span class="paramname"><em>mutex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unlock the mutex. </p>
+<p>It is legal for the owning thread to lock an already-locked mutex. It must unlock it the same number of times before it is actually made available for other threads in the system (this is known as a "recursive mutex").</p>
+<p>It is an error to unlock a mutex that has not been locked by the current thread, and doing so results in undefined behavior.</p>
+<p>It is also an error to unlock a mutex that isn't locked at all.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutex</td><td>the mutex to unlock. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0, or -1 on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.0. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a0e2ae8dca74d9f6c2bbe87030b9e7a0c" name="a0e2ae8dca74d9f6c2bbe87030b9e7a0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e2ae8dca74d9f6c2bbe87030b9e7a0c">&#9670;&#160;</a></span>mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> mutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__mutex_8h.html">SDL_mutex.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

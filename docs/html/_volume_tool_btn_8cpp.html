@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: VolumeToolBtn.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_volume_tool_btn_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VolumeToolBtn.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>实现 <a class="el" href="class_volume_tool_btn.html" title="音量调节按钮类，继承自 QToolButton，支持音量滑块和静音功能">VolumeToolBtn</a> 类，提供音量调节按钮功能  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_volume_tool_btn_8h_source.html">VolumeToolBtn.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ela_tool_tip_8h_source.html">ElaToolTip.h</a>&quot;</code><br />
+<code>#include &lt;QCoreApplication&gt;</code><br />
+<code>#include &lt;QTimer&gt;</code><br />
+<code>#include &lt;QHBoxLayout&gt;</code><br />
+<code>#include &lt;QLabel&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+VolumeToolBtn.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_volume_tool_btn_8cpp__incl.png" border="0" usemap="#a_volume_tool_btn_8cpp" alt=""/></div>
+<map name="a_volume_tool_btn_8cpp" id="a_volume_tool_btn_8cpp">
+<area shape="rect" title="实现 VolumeToolBtn 类，提供音量调节按钮功能" alt="" coords="870,5,1004,32"/>
+<area shape="rect" href="_volume_tool_btn_8h.html" title="定义 VolumeToolBtn 类，提供音量调节按钮功能" alt="" coords="562,80,682,107"/>
+<area shape="poly" title=" " alt="" coords="882,35,693,79,691,73,881,30"/>
+<area shape="rect" title=" " alt="" coords="690,155,752,181"/>
+<area shape="poly" title=" " alt="" coords="870,28,839,35,806,45,775,61,748,82,732,109,725,140,720,139,727,107,744,78,772,56,804,40,837,29,869,23"/>
+<area shape="rect" href="_ela_tool_tip_8h.html" title="定义 ElaToolTip 类，提供自定义工具提示功能" alt="" coords="758,80,852,107"/>
+<area shape="poly" title=" " alt="" coords="915,35,842,75,840,70,913,30"/>
+<area shape="rect" title=" " alt="" coords="875,80,998,107"/>
+<area shape="poly" title=" " alt="" coords="940,33,940,64,934,64,934,33"/>
+<area shape="rect" title=" " alt="" coords="1022,80,1086,107"/>
+<area shape="poly" title=" " alt="" coords="959,30,1022,69,1020,74,956,35"/>
+<area shape="rect" title=" " alt="" coords="1110,80,1214,107"/>
+<area shape="poly" title=" " alt="" coords="977,30,1109,72,1108,77,975,35"/>
+<area shape="rect" title=" " alt="" coords="1238,80,1308,107"/>
+<area shape="poly" title=" " alt="" coords="1003,30,1224,77,1223,82,1001,35"/>
+<area shape="rect" href="_slider_widget_8h.html" title="定义 SliderWidget 类，提供自定义滑块控件" alt="" coords="353,155,545,181"/>
+<area shape="poly" title=" " alt="" coords="593,110,494,151,492,146,591,105"/>
+<area shape="rect" title=" " alt="" coords="573,155,666,181"/>
+<area shape="poly" title=" " alt="" coords="624,107,623,139,618,139,619,107"/>
+<area shape="poly" title=" " alt="" coords="641,105,693,143,690,148,638,109"/>
+<area shape="rect" title=" " alt="" coords="769,229,841,256"/>
+<area shape="poly" title=" " alt="" coords="518,179,754,226,753,232,517,185"/>
+<area shape="rect" title=" " alt="" coords="5,229,58,256"/>
+<area shape="poly" title=" " alt="" coords="353,183,224,202,73,232,72,227,223,197,352,178"/>
+<area shape="rect" title=" " alt="" coords="82,229,274,256"/>
+<area shape="poly" title=" " alt="" coords="402,184,241,227,240,222,401,179"/>
+<area shape="rect" title=" " alt="" coords="298,229,370,256"/>
+<area shape="poly" title=" " alt="" coords="430,184,369,223,366,218,427,180"/>
+<area shape="rect" title=" " alt="" coords="394,229,493,256"/>
+<area shape="poly" title=" " alt="" coords="451,182,448,214,443,213,445,182"/>
+<area shape="rect" title=" " alt="" coords="518,229,617,256"/>
+<area shape="poly" title=" " alt="" coords="471,180,535,219,533,223,468,184"/>
+<area shape="rect" title=" " alt="" coords="642,229,744,256"/>
+<area shape="poly" title=" " alt="" coords="492,179,636,222,635,227,491,184"/>
+<area shape="poly" title=" " alt="" coords="808,107,808,214,802,214,802,107"/>
+<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="867,155,935,181"/>
+<area shape="poly" title=" " alt="" coords="823,105,874,143,870,147,820,109"/>
+<area shape="rect" title=" " alt="" coords="865,229,984,256"/>
+<area shape="poly" title=" " alt="" coords="908,181,918,214,913,215,902,183"/>
+</map>
+</div>
+</div><a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>实现 <a class="el" href="class_volume_tool_btn.html" title="音量调节按钮类，继承自 QToolButton，支持音量滑块和静音功能">VolumeToolBtn</a> 类，提供音量调节按钮功能 </p>
+<dl class="section author"><dt>作者</dt><dd>[WeiWang] </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-05-15 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_64e62a3da93a71e7cadfe52a7a3289db.html">MyButton</a></li><li class="navelem"><a class="el" href="dir_164d9cce51f2eb898ff501da92005754.html">VolumeToolBtn</a></li><li class="navelem"><a class="el" href="_volume_tool_btn_8cpp.html">VolumeToolBtn.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

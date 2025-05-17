@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: RecordSet类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_record_set.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_record_set-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">RecordSet类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>用于存储和操作 SQL 查询结果的类  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="recordset_8h_source.html">recordset.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5b97e20f2452d375ccbd6144a734a9b7" id="r_a5b97e20f2452d375ccbd6144a734a9b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b97e20f2452d375ccbd6144a734a9b7">RecordSet</a> ()  throw ()</td></tr>
+<tr class="memdesc:a5b97e20f2452d375ccbd6144a734a9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a5b97e20f2452d375ccbd6144a734a9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6f1f0f295dd823ad6fb86736308fcb" id="r_a5f6f1f0f295dd823ad6fb86736308fcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f6f1f0f295dd823ad6fb86736308fcb">~RecordSet</a> ()  throw ()</td></tr>
+<tr class="memdesc:a5f6f1f0f295dd823ad6fb86736308fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a5f6f1f0f295dd823ad6fb86736308fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8bb3912a3ce86b15842e79d0b421204" id="r_ac8bb3912a3ce86b15842e79d0b421204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8bb3912a3ce86b15842e79d0b421204">clear</a> ()</td></tr>
+<tr class="memdesc:ac8bb3912a3ce86b15842e79d0b421204"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除所有记录  <br /></td></tr>
+<tr class="separator:ac8bb3912a3ce86b15842e79d0b421204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf82f9b2937375c7b1cf3dccb3df3312" id="r_acf82f9b2937375c7b1cf3dccb3df3312"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf82f9b2937375c7b1cf3dccb3df3312">isEmpty</a> () const</td></tr>
+<tr class="memdesc:acf82f9b2937375c7b1cf3dccb3df3312"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查记录是否为空  <br /></td></tr>
+<tr class="separator:acf82f9b2937375c7b1cf3dccb3df3312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a59a0aff0d436916b4d984c2a8b17e" id="r_a08a59a0aff0d436916b4d984c2a8b17e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08a59a0aff0d436916b4d984c2a8b17e">rows</a> () const</td></tr>
+<tr class="memdesc:a08a59a0aff0d436916b4d984c2a8b17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取行数  <br /></td></tr>
+<tr class="separator:a08a59a0aff0d436916b4d984c2a8b17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff58f0259d8e1cfd2e4d2b39b61e355" id="r_a0ff58f0259d8e1cfd2e4d2b39b61e355"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ff58f0259d8e1cfd2e4d2b39b61e355">cols</a> () const</td></tr>
+<tr class="memdesc:a0ff58f0259d8e1cfd2e4d2b39b61e355"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取列数  <br /></td></tr>
+<tr class="separator:a0ff58f0259d8e1cfd2e4d2b39b61e355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e86b1a6d7f43602196e022fce26b50a" id="r_a7e86b1a6d7f43602196e022fce26b50a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e86b1a6d7f43602196e022fce26b50a">getField</a> (const int &amp;col)</td></tr>
+<tr class="memdesc:a7e86b1a6d7f43602196e022fce26b50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定列的字段名称  <br /></td></tr>
+<tr class="separator:a7e86b1a6d7f43602196e022fce26b50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa19f0ee0ede5de93001c8992c0dbb3a6" id="r_aa19f0ee0ede5de93001c8992c0dbb3a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa19f0ee0ede5de93001c8992c0dbb3a6">setColumnHeaders</a> (const <a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962">Row</a> &amp;headers)</td></tr>
+<tr class="memdesc:aa19f0ee0ede5de93001c8992c0dbb3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置列头  <br /></td></tr>
+<tr class="separator:aa19f0ee0ede5de93001c8992c0dbb3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565710ee4dd9dfdc764a798bdc2bc529" id="r_a565710ee4dd9dfdc764a798bdc2bc529"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a565710ee4dd9dfdc764a798bdc2bc529">add</a> (const <a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962">Row</a> &amp;row)</td></tr>
+<tr class="memdesc:a565710ee4dd9dfdc764a798bdc2bc529"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加一行数据  <br /></td></tr>
+<tr class="separator:a565710ee4dd9dfdc764a798bdc2bc529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c6ca1768bb3765932e9ecc38c0b695" id="r_a70c6ca1768bb3765932e9ecc38c0b695"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70c6ca1768bb3765932e9ecc38c0b695">operator()</a> (const unsigned int row, const unsigned int col) const</td></tr>
+<tr class="memdesc:a70c6ca1768bb3765932e9ecc38c0b695"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定行列的数据  <br /></td></tr>
+<tr class="separator:a70c6ca1768bb3765932e9ecc38c0b695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9533dfa1ba3adf6df2578b77c64e657" id="r_ac9533dfa1ba3adf6df2578b77c64e657"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9533dfa1ba3adf6df2578b77c64e657">operator()</a> (const unsigned int row, const QString &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>) const</td></tr>
+<tr class="memdesc:ac9533dfa1ba3adf6df2578b77c64e657"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定行和字段名称的数据  <br /></td></tr>
+<tr class="separator:ac9533dfa1ba3adf6df2578b77c64e657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:a2e355c6aa109c32eb0e28882aa177d2d" id="r_a2e355c6aa109c32eb0e28882aa177d2d"><td class="memItemLeft" align="right" valign="top">typedef QVector&lt; <a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962">Row</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e355c6aa109c32eb0e28882aa177d2d">Rows</a></td></tr>
+<tr class="memdesc:a2e355c6aa109c32eb0e28882aa177d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于存储多行数据的类型  <br /></td></tr>
+<tr class="separator:a2e355c6aa109c32eb0e28882aa177d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aeaa3ace0e70346d2c3bc421ac930493a" id="r_aeaa3ace0e70346d2c3bc421ac930493a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962">Row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaa3ace0e70346d2c3bc421ac930493a">mHeaders</a></td></tr>
+<tr class="memdesc:aeaa3ace0e70346d2c3bc421ac930493a"><td class="mdescLeft">&#160;</td><td class="mdescRight">存储列头数据  <br /></td></tr>
+<tr class="separator:aeaa3ace0e70346d2c3bc421ac930493a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20878e1580841394fc6c612f4bc036e4" id="r_a20878e1580841394fc6c612f4bc036e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2e355c6aa109c32eb0e28882aa177d2d">Rows</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20878e1580841394fc6c612f4bc036e4">mRows</a></td></tr>
+<tr class="memdesc:a20878e1580841394fc6c612f4bc036e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">存储行数据  <br /></td></tr>
+<tr class="separator:a20878e1580841394fc6c612f4bc036e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>用于存储和操作 SQL 查询结果的类 </p>
+<p>该类提供存储和管理 SQL 查询结果的功能，支持添加行、设置列头、查询数据等操作。 </p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a2e355c6aa109c32eb0e28882aa177d2d" name="a2e355c6aa109c32eb0e28882aa177d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e355c6aa109c32eb0e28882aa177d2d">&#9670;&#160;</a></span>Rows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QVector&lt;<a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962">Row</a>&gt; <a class="el" href="#a2e355c6aa109c32eb0e28882aa177d2d">Rows</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于存储多行数据的类型 </p>
+<p>定义为 <a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962" title="用于存储 RecordSet 中单行数据的类型">Row</a> 类型的 QVector，用于表示多行数据。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5b97e20f2452d375ccbd6144a734a9b7" name="a5b97e20f2452d375ccbd6144a734a9b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b97e20f2452d375ccbd6144a734a9b7">&#9670;&#160;</a></span>RecordSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_record_set.html">RecordSet</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2">&#160;)</td><td></td><td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<p>初始化 <a class="el" href="class_record_set.html" title="用于存储和操作 SQL 查询结果的类">RecordSet</a> 对象。</p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">无异常抛出</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f6f1f0f295dd823ad6fb86736308fcb" name="a5f6f1f0f295dd823ad6fb86736308fcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f6f1f0f295dd823ad6fb86736308fcb">&#9670;&#160;</a></span>~RecordSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_record_set.html">RecordSet</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2">&#160;)</td><td></td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+<p>销毁 <a class="el" href="class_record_set.html" title="用于存储和操作 SQL 查询结果的类">RecordSet</a> 对象，释放资源。</p>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">无异常抛出</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a565710ee4dd9dfdc764a798bdc2bc529" name="a565710ee4dd9dfdc764a798bdc2bc529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565710ee4dd9dfdc764a798bdc2bc529">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void add </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962">Row</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>row</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加一行数据 </p>
+<p>将一行数据添加到记录中。要求行数据的列数与列头一致。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>要添加的行数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_record_set_a565710ee4dd9dfdc764a798bdc2bc529_icgraph.png" border="0" usemap="#aclass_record_set_a565710ee4dd9dfdc764a798bdc2bc529_icgraph" alt=""/></div>
+<map name="aclass_record_set_a565710ee4dd9dfdc764a798bdc2bc529_icgraph" id="aclass_record_set_a565710ee4dd9dfdc764a798bdc2bc529_icgraph">
+<area shape="rect" title="添加一行数据" alt="" coords="184,113,226,140"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a102af10cf2fd7c80c746e0375908cfeb" title="SqliteDataProvider::execInsertSql 执行sql的insert语句" alt="" coords="5,5,136,48"/>
+<area shape="poly" title=" " alt="" coords="179,103,134,62,116,51,119,46,137,58,183,99"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a323ab4214f61bc5495305c1dba9b4206" title="执行SQL语句" alt="" coords="5,72,136,115"/>
+<area shape="poly" title=" " alt="" coords="168,120,135,112,137,107,170,115"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a516e61593f0a15f321f498a6cc7a507a" title="SqliteDataProvider::execSqls 执行多条语句" alt="" coords="5,139,136,181"/>
+<area shape="poly" title=" " alt="" coords="170,138,137,146,135,141,168,133"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a2742764c099329da23a3d8c8d2794cc0" title="execTransaction 执行事务" alt="" coords="5,205,136,248"/>
+<area shape="poly" title=" " alt="" coords="183,154,137,195,119,207,116,203,134,191,179,150"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8bb3912a3ce86b15842e79d0b421204" name="ac8bb3912a3ce86b15842e79d0b421204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8bb3912a3ce86b15842e79d0b421204">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清除所有记录 </p>
+<p>清空当前存储的列头和行数据。 </p>
+
+</div>
+</div>
+<a id="a0ff58f0259d8e1cfd2e4d2b39b61e355" name="a0ff58f0259d8e1cfd2e4d2b39b61e355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff58f0259d8e1cfd2e4d2b39b61e355">&#9670;&#160;</a></span>cols()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int cols </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取列数 </p>
+<dl class="section return"><dt>返回</dt><dd>当前记录的列数 </dd></dl>
+
+</div>
+</div>
+<a id="a7e86b1a6d7f43602196e022fce26b50a" name="a7e86b1a6d7f43602196e022fce26b50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e86b1a6d7f43602196e022fce26b50a">&#9670;&#160;</a></span>getField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString getField </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>col</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定列的字段名称 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">col</td><td>列索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>指定列的字段名称 </dd></dl>
+
+</div>
+</div>
+<a id="acf82f9b2937375c7b1cf3dccb3df3312" name="acf82f9b2937375c7b1cf3dccb3df3312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf82f9b2937375c7b1cf3dccb3df3312">&#9670;&#160;</a></span>isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查记录是否为空 </p>
+<dl class="section return"><dt>返回</dt><dd>如果当前记录为空则返回 true，否则返回 false </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_record_set_acf82f9b2937375c7b1cf3dccb3df3312_icgraph.png" border="0" usemap="#aclass_record_set_acf82f9b2937375c7b1cf3dccb3df3312_icgraph" alt=""/></div>
+<map name="aclass_record_set_acf82f9b2937375c7b1cf3dccb3df3312_icgraph" id="aclass_record_set_acf82f9b2937375c7b1cf3dccb3df3312_icgraph">
+<area shape="rect" title="检查记录是否为空" alt="" coords="184,113,253,140"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a102af10cf2fd7c80c746e0375908cfeb" title="SqliteDataProvider::execInsertSql 执行sql的insert语句" alt="" coords="5,5,136,48"/>
+<area shape="poly" title=" " alt="" coords="189,105,134,62,115,51,118,46,137,58,193,101"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a323ab4214f61bc5495305c1dba9b4206" title="执行SQL语句" alt="" coords="5,72,136,115"/>
+<area shape="poly" title=" " alt="" coords="168,118,136,111,137,106,169,113"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a516e61593f0a15f321f498a6cc7a507a" title="SqliteDataProvider::execSqls 执行多条语句" alt="" coords="5,139,136,181"/>
+<area shape="poly" title=" " alt="" coords="169,140,137,148,136,143,168,135"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a2742764c099329da23a3d8c8d2794cc0" title="execTransaction 执行事务" alt="" coords="5,205,136,248"/>
+<area shape="poly" title=" " alt="" coords="193,152,137,196,118,207,115,202,134,191,189,148"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac9533dfa1ba3adf6df2578b77c64e657" name="ac9533dfa1ba3adf6df2578b77c64e657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9533dfa1ba3adf6df2578b77c64e657">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString &amp; operator() </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定行和字段名称的数据 </p>
+<p>获取指定行和字段名称的数据。如果行索引越界或字段名称不存在，则记录警告并抛出异常。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>行索引 </td></tr>
+    <tr><td class="paramname">name</td><td>字段名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>指定位置的数据 </dd></dl>
+
+</div>
+</div>
+<a id="a70c6ca1768bb3765932e9ecc38c0b695" name="a70c6ca1768bb3765932e9ecc38c0b695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c6ca1768bb3765932e9ecc38c0b695">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString &amp; operator() </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int</td>          <td class="paramname"><span class="paramname"><em>col</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定行列的数据 </p>
+<p>获取指定行和列的数据。如果索引越界，则记录警告并抛出异常。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>行索引 </td></tr>
+    <tr><td class="paramname">col</td><td>列索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>指定位置的数据 </dd></dl>
+
+</div>
+</div>
+<a id="a08a59a0aff0d436916b4d984c2a8b17e" name="a08a59a0aff0d436916b4d984c2a8b17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a59a0aff0d436916b4d984c2a8b17e">&#9670;&#160;</a></span>rows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int rows </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取行数 </p>
+<dl class="section return"><dt>返回</dt><dd>当前记录的行数 </dd></dl>
+
+</div>
+</div>
+<a id="aa19f0ee0ede5de93001c8992c0dbb3a6" name="aa19f0ee0ede5de93001c8992c0dbb3a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa19f0ee0ede5de93001c8992c0dbb3a6">&#9670;&#160;</a></span>setColumnHeaders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setColumnHeaders </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962">Row</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>headers</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置列头 </p>
+<p>设置记录的列头数据。如果已存在列头，则记录警告并返回。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">headers</td><td>列头数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_record_set_aa19f0ee0ede5de93001c8992c0dbb3a6_icgraph.png" border="0" usemap="#aclass_record_set_aa19f0ee0ede5de93001c8992c0dbb3a6_icgraph" alt=""/></div>
+<map name="aclass_record_set_aa19f0ee0ede5de93001c8992c0dbb3a6_icgraph" id="aclass_record_set_aa19f0ee0ede5de93001c8992c0dbb3a6_icgraph">
+<area shape="rect" title="设置列头" alt="" coords="184,113,317,140"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a102af10cf2fd7c80c746e0375908cfeb" title="SqliteDataProvider::execInsertSql 执行sql的insert语句" alt="" coords="5,5,136,48"/>
+<area shape="poly" title=" " alt="" coords="212,107,134,62,113,51,116,46,137,58,215,103"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a323ab4214f61bc5495305c1dba9b4206" title="执行SQL语句" alt="" coords="5,72,136,115"/>
+<area shape="poly" title=" " alt="" coords="168,114,136,108,137,103,169,109"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a516e61593f0a15f321f498a6cc7a507a" title="SqliteDataProvider::execSqls 执行多条语句" alt="" coords="5,139,136,181"/>
+<area shape="poly" title=" " alt="" coords="169,145,137,151,136,145,168,139"/>
+<area shape="rect" href="class_sqlite_data_provider.html#a2742764c099329da23a3d8c8d2794cc0" title="execTransaction 执行事务" alt="" coords="5,205,136,248"/>
+<area shape="poly" title=" " alt="" coords="215,151,137,196,116,207,113,202,134,191,212,146"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aeaa3ace0e70346d2c3bc421ac930493a" name="aeaa3ace0e70346d2c3bc421ac930493a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa3ace0e70346d2c3bc421ac930493a">&#9670;&#160;</a></span>mHeaders</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="recordset_8h.html#a82bae21a4c0ab25d96a05d2f2d191962">Row</a> mHeaders</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>存储列头数据 </p>
+
+</div>
+</div>
+<a id="a20878e1580841394fc6c612f4bc036e4" name="a20878e1580841394fc6c612f4bc036e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20878e1580841394fc6c612f4bc036e4">&#9670;&#160;</a></span>mRows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a2e355c6aa109c32eb0e28882aa177d2d">Rows</a> mRows</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>存储行数据 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="recordset_8h_source.html">recordset.h</a></li>
+<li><a class="el" href="recordset_8cpp.html">recordset.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_record_set.html">RecordSet</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: avdct.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('avdct_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">avdct.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="avdct_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef AVCODEC_AVDCT_H</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define AVCODEC_AVDCT_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="opt_8h.html">libavutil/opt.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html">   29</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_a_v_d_c_t.html">AVDCT</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html#a3c52bb71d909eb63b854c56cc44927b7">   30</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> *<a class="code hl_variable" href="struct_a_v_d_c_t.html#a3c52bb71d909eb63b854c56cc44927b7">av_class</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html#af377c24bdd48f47685a3cb3439cfa2b5">   32</a></span>    <a class="code hl_function" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> (*<a class="code hl_variable" href="struct_a_v_d_c_t.html#af377c24bdd48f47685a3cb3439cfa2b5">idct</a>)(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> *block <span class="comment">/* align 16 */</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html#af52a8e9f378e75b3c4e329946d00bd48">   48</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code hl_variable" href="struct_a_v_d_c_t.html#af52a8e9f378e75b3c4e329946d00bd48">idct_permutation</a>[64];</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html#afc461f27145a040a3409f624d9972313">   50</a></span>    <a class="code hl_function" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> (*<a class="code hl_variable" href="struct_a_v_d_c_t.html#afc461f27145a040a3409f624d9972313">fdct</a>)(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> *block <span class="comment">/* align 16 */</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html#adf3f706a254e5a7ecca4fdef507a404f">   57</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_d_c_t.html#adf3f706a254e5a7ecca4fdef507a404f">dct_algo</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html#ad7b8d7fc090548cfe4453702ad2ead88">   63</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_d_c_t.html#ad7b8d7fc090548cfe4453702ad2ead88">idct_algo</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html#ab415c53da37e503531cd37c1a18bb8fd">   65</a></span>    <a class="code hl_function" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> (*<a class="code hl_variable" href="struct_a_v_d_c_t.html#ab415c53da37e503531cd37c1a18bb8fd">get_pixels</a>)(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> *block <span class="comment">/* align 16 */</span>,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                       <span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a620525fb1b4102cd9522c24b0e7d3e40">pixels</a> <span class="comment">/* align 8 */</span>,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                       ptrdiff_t line_size);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="struct_a_v_d_c_t.html#a2ae049b225e845689c9bfab94ebbc697">   69</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_d_c_t.html#a2ae049b225e845689c9bfab94ebbc697">bits_per_sample</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="avdct_8h.html#a990d92f589dfe24ebe1c7309f0e69d3d">   70</a></span>} <a class="code hl_struct" href="struct_a_v_d_c_t.html">AVDCT</a>;</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="avdct_8h.html#a213c013795f1c58f0fe16e2e968f03ba">   79</a></span><a class="code hl_struct" href="struct_a_v_d_c_t.html">AVDCT</a> *<a class="code hl_function" href="avdct_8h.html#a213c013795f1c58f0fe16e2e968f03ba">avcodec_dct_alloc</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="avdct_8h.html#a4d987ad7fd4893904dfec30087b1a972">   80</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="avdct_8h.html#a4d987ad7fd4893904dfec30087b1a972">avcodec_dct_init</a>(<a class="code hl_struct" href="struct_a_v_d_c_t.html">AVDCT</a> *);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="avdct_8h.html#a8320e5dd2dd018d3a4bb9365ff3c01a1">   82</a></span><span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_class.html">AVClass</a> *<a class="code hl_function" href="avdct_8h.html#a8320e5dd2dd018d3a4bb9365ff3c01a1">avcodec_dct_get_class</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif </span><span class="comment">/* AVCODEC_AVDCT_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a269259c924dce846340ddbb810db2e3c"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a></div><div class="ttdeci">signed short int16_t</div><div class="ttdoc">16 位有符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:30</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:29</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a46df6112013cf583e82b25cebd5cb499"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></div><div class="ttdeci">typedef void(APIENTRYP PFNGLDRAWRANGEELEMENTSPROC)(GLenum mode</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a620525fb1b4102cd9522c24b0e7d3e40"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a620525fb1b4102cd9522c24b0e7d3e40">pixels</a></div><div class="ttdeci">GLint GLint GLsizei GLsizei GLsizei GLint GLenum GLenum const GLvoid * pixels</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1572</div></div>
+<div class="ttc" id="aavdct_8h_html_a213c013795f1c58f0fe16e2e968f03ba"><div class="ttname"><a href="avdct_8h.html#a213c013795f1c58f0fe16e2e968f03ba">avcodec_dct_alloc</a></div><div class="ttdeci">AVDCT * avcodec_dct_alloc(void)</div><div class="ttdoc">Allocates a AVDCT context.</div></div>
+<div class="ttc" id="aavdct_8h_html_a4d987ad7fd4893904dfec30087b1a972"><div class="ttname"><a href="avdct_8h.html#a4d987ad7fd4893904dfec30087b1a972">avcodec_dct_init</a></div><div class="ttdeci">int avcodec_dct_init(AVDCT *)</div></div>
+<div class="ttc" id="aavdct_8h_html_a8320e5dd2dd018d3a4bb9365ff3c01a1"><div class="ttname"><a href="avdct_8h.html#a8320e5dd2dd018d3a4bb9365ff3c01a1">avcodec_dct_get_class</a></div><div class="ttdeci">const AVClass * avcodec_dct_get_class(void)</div></div>
+<div class="ttc" id="aopt_8h_html"><div class="ttname"><a href="opt_8h.html">opt.h</a></div><div class="ttdoc">AVOptions</div></div>
+<div class="ttc" id="astruct_a_v_class_html"><div class="ttname"><a href="struct_a_v_class.html">AVClass</a></div><div class="ttdoc">Describe the class of an AVClass context structure.</div><div class="ttdef"><b>定义</b> log.h:67</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html"><div class="ttname"><a href="struct_a_v_d_c_t.html">AVDCT</a></div><div class="ttdoc">AVDCT context.</div><div class="ttdef"><b>定义</b> avdct.h:29</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html_a2ae049b225e845689c9bfab94ebbc697"><div class="ttname"><a href="struct_a_v_d_c_t.html#a2ae049b225e845689c9bfab94ebbc697">AVDCT::bits_per_sample</a></div><div class="ttdeci">int bits_per_sample</div><div class="ttdef"><b>定义</b> avdct.h:69</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html_a3c52bb71d909eb63b854c56cc44927b7"><div class="ttname"><a href="struct_a_v_d_c_t.html#a3c52bb71d909eb63b854c56cc44927b7">AVDCT::av_class</a></div><div class="ttdeci">const AVClass * av_class</div><div class="ttdef"><b>定义</b> avdct.h:30</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html_ab415c53da37e503531cd37c1a18bb8fd"><div class="ttname"><a href="struct_a_v_d_c_t.html#ab415c53da37e503531cd37c1a18bb8fd">AVDCT::get_pixels</a></div><div class="ttdeci">void(* get_pixels)(int16_t *block, const uint8_t *pixels, ptrdiff_t line_size)</div><div class="ttdef"><b>定义</b> avdct.h:65</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html_ad7b8d7fc090548cfe4453702ad2ead88"><div class="ttname"><a href="struct_a_v_d_c_t.html#ad7b8d7fc090548cfe4453702ad2ead88">AVDCT::idct_algo</a></div><div class="ttdeci">int idct_algo</div><div class="ttdoc">IDCT algorithm.</div><div class="ttdef"><b>定义</b> avdct.h:63</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html_adf3f706a254e5a7ecca4fdef507a404f"><div class="ttname"><a href="struct_a_v_d_c_t.html#adf3f706a254e5a7ecca4fdef507a404f">AVDCT::dct_algo</a></div><div class="ttdeci">int dct_algo</div><div class="ttdoc">DCT algorithm.</div><div class="ttdef"><b>定义</b> avdct.h:57</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html_af377c24bdd48f47685a3cb3439cfa2b5"><div class="ttname"><a href="struct_a_v_d_c_t.html#af377c24bdd48f47685a3cb3439cfa2b5">AVDCT::idct</a></div><div class="ttdeci">void(* idct)(int16_t *block)</div><div class="ttdef"><b>定义</b> avdct.h:32</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html_af52a8e9f378e75b3c4e329946d00bd48"><div class="ttname"><a href="struct_a_v_d_c_t.html#af52a8e9f378e75b3c4e329946d00bd48">AVDCT::idct_permutation</a></div><div class="ttdeci">uint8_t idct_permutation[64]</div><div class="ttdoc">IDCT input permutation.</div><div class="ttdef"><b>定义</b> avdct.h:48</div></div>
+<div class="ttc" id="astruct_a_v_d_c_t_html_afc461f27145a040a3409f624d9972313"><div class="ttname"><a href="struct_a_v_d_c_t.html#afc461f27145a040a3409f624d9972313">AVDCT::fdct</a></div><div class="ttdeci">void(* fdct)(int16_t *block)</div><div class="ttdef"><b>定义</b> avdct.h:50</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_226cbe5fe58d430016e9eedad369881e.html">libavcodec</a></li><li class="navelem"><a class="el" href="avdct_8h.html">avdct.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

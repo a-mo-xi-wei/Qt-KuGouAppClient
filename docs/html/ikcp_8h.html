@@ -1,0 +1,2609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ikcp.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('ikcp_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">ikcp.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ikcp.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h__incl.png" border="0" usemap="#aikcp_8h" alt=""/></div>
+<map name="aikcp_8h" id="aikcp_8h">
+<area shape="rect" title=" " alt="" coords="101,5,157,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,74,107"/>
+<area shape="poly" title=" " alt="" coords="115,35,68,72,65,68,112,30"/>
+<area shape="rect" title=" " alt="" coords="97,80,160,107"/>
+<area shape="poly" title=" " alt="" coords="132,33,132,64,126,64,126,33"/>
+<area shape="rect" title=" " alt="" coords="184,80,252,107"/>
+<area shape="poly" title=" " alt="" coords="146,30,193,68,189,72,143,35"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h__dep__incl.png" border="0" usemap="#aikcp_8hdep" alt=""/></div>
+<map name="aikcp_8hdep" id="aikcp_8hdep">
+<area shape="rect" title=" " alt="" coords="84,5,141,32"/>
+<area shape="rect" href="ikcp_8cpp.html" title=" " alt="" coords="5,80,76,107"/>
+<area shape="poly" title=" " alt="" coords="91,45,55,81,51,78,87,41"/>
+<area shape="rect" href="kcpobj_8cpp.html" title=" " alt="" coords="70,155,155,181"/>
+<area shape="poly" title=" " alt="" coords="115,48,115,154,110,154,110,48"/>
+<area shape="rect" href="kcpobj_8h.html" title=" " alt="" coords="149,80,220,107"/>
+<area shape="poly" title=" " alt="" coords="138,41,174,78,170,81,134,45"/>
+<area shape="poly" title=" " alt="" coords="163,120,127,156,123,152,159,116"/>
+<area shape="rect" href="cudpsocket_8h.html" title=" " alt="" coords="179,155,278,181"/>
+<area shape="poly" title=" " alt="" coords="202,119,223,153,219,156,198,122"/>
+<area shape="rect" href="cudpsocket_8cpp.html" title=" " alt="" coords="172,229,285,256"/>
+<area shape="poly" title=" " alt="" coords="231,197,231,229,226,229,226,197"/>
+</map>
+</div>
+</div>
+<p><a href="ikcp_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_q_u_e_u_e_h_e_a_d.html">IQUEUEHEAD</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_k_c_p_s_e_g.html">IKCPSEG</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_k_c_p_c_b.html">IKCPCB</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a780c35508c0e0487d316a77907e5db0a" id="r_a780c35508c0e0487d316a77907e5db0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a780c35508c0e0487d316a77907e5db0a">__INTEGER_32_BITS__</a></td></tr>
+<tr class="separator:a780c35508c0e0487d316a77907e5db0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0884601935e85e327bccbf31fc1f8904" id="r_a0884601935e85e327bccbf31fc1f8904"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0884601935e85e327bccbf31fc1f8904">__IINT8_DEFINED</a></td></tr>
+<tr class="separator:a0884601935e85e327bccbf31fc1f8904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03552fed5e9b5bcb91b5e37dea79be08" id="r_a03552fed5e9b5bcb91b5e37dea79be08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03552fed5e9b5bcb91b5e37dea79be08">__IUINT8_DEFINED</a></td></tr>
+<tr class="separator:a03552fed5e9b5bcb91b5e37dea79be08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53727e7b4e4f2237c1087eb713bfe630" id="r_a53727e7b4e4f2237c1087eb713bfe630"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53727e7b4e4f2237c1087eb713bfe630">__IUINT16_DEFINED</a></td></tr>
+<tr class="separator:a53727e7b4e4f2237c1087eb713bfe630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd7bc266f35aa346a3b0cb8cf036a3d" id="r_a3bd7bc266f35aa346a3b0cb8cf036a3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bd7bc266f35aa346a3b0cb8cf036a3d">__IINT16_DEFINED</a></td></tr>
+<tr class="separator:a3bd7bc266f35aa346a3b0cb8cf036a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5539562214df648c5ad2709a28180a1" id="r_af5539562214df648c5ad2709a28180a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5539562214df648c5ad2709a28180a1">__IINT32_DEFINED</a></td></tr>
+<tr class="separator:af5539562214df648c5ad2709a28180a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabc768f821c2efda06e32df1a97d63de" id="r_aabc768f821c2efda06e32df1a97d63de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabc768f821c2efda06e32df1a97d63de">__IUINT32_DEFINED</a></td></tr>
+<tr class="separator:aabc768f821c2efda06e32df1a97d63de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7573e81315ff9b4d35690a2ac83ff1" id="r_acf7573e81315ff9b4d35690a2ac83ff1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf7573e81315ff9b4d35690a2ac83ff1">__IINT64_DEFINED</a></td></tr>
+<tr class="separator:acf7573e81315ff9b4d35690a2ac83ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fbec0c16cf2bce6e71fcae71ad1e661" id="r_a1fbec0c16cf2bce6e71fcae71ad1e661"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fbec0c16cf2bce6e71fcae71ad1e661">__IUINT64_DEFINED</a></td></tr>
+<tr class="separator:a1fbec0c16cf2bce6e71fcae71ad1e661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb6f9e0395b47b8d5e3eeae4fe0c116" id="r_a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a></td></tr>
+<tr class="separator:a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00d24c7231be28dbaf71f5408f30e44c" id="r_a00d24c7231be28dbaf71f5408f30e44c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00d24c7231be28dbaf71f5408f30e44c">inline</a>&#160;&#160;&#160;<a class="el" href="#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a></td></tr>
+<tr class="separator:a00d24c7231be28dbaf71f5408f30e44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64b504fa6ef407d10db9c0f545a48c2b" id="r_a64b504fa6ef407d10db9c0f545a48c2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64b504fa6ef407d10db9c0f545a48c2b">__IQUEUE_DEF__</a></td></tr>
+<tr class="separator:a64b504fa6ef407d10db9c0f545a48c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db401d285af8d3e09af1e710d591a5f" id="r_a9db401d285af8d3e09af1e710d591a5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9db401d285af8d3e09af1e710d591a5f">IQUEUE_HEAD_INIT</a>(<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>)</td></tr>
+<tr class="separator:a9db401d285af8d3e09af1e710d591a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44063711cb27f8b50518926df09041c0" id="r_a44063711cb27f8b50518926df09041c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44063711cb27f8b50518926df09041c0">IQUEUE_HEAD</a>(<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>)</td></tr>
+<tr class="separator:a44063711cb27f8b50518926df09041c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c2df37d8456c863bccfa415c42174c" id="r_ac7c2df37d8456c863bccfa415c42174c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7c2df37d8456c863bccfa415c42174c">IQUEUE_INIT</a>(<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="separator:ac7c2df37d8456c863bccfa415c42174c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad309f38aad75121ee542c919bbd89f91" id="r_ad309f38aad75121ee542c919bbd89f91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad309f38aad75121ee542c919bbd89f91">IOFFSETOF</a>(TYPE,  MEMBER)</td></tr>
+<tr class="separator:ad309f38aad75121ee542c919bbd89f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54532ca308b58c6687c4e5e19abd76d2" id="r_a54532ca308b58c6687c4e5e19abd76d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54532ca308b58c6687c4e5e19abd76d2">ICONTAINEROF</a>(<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>,  type,  member)</td></tr>
+<tr class="separator:a54532ca308b58c6687c4e5e19abd76d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbce259283b38deef4333ef3a00f7463" id="r_adbce259283b38deef4333ef3a00f7463"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbce259283b38deef4333ef3a00f7463">IQUEUE_ENTRY</a>(<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>,  type,  member)</td></tr>
+<tr class="separator:adbce259283b38deef4333ef3a00f7463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0141db248079560312d2fce8a3c4a86" id="r_ab0141db248079560312d2fce8a3c4a86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0141db248079560312d2fce8a3c4a86">IQUEUE_ADD</a>(node,  head)</td></tr>
+<tr class="separator:ab0141db248079560312d2fce8a3c4a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03faf22eb58a637e37a07bcbf19c4921" id="r_a03faf22eb58a637e37a07bcbf19c4921"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03faf22eb58a637e37a07bcbf19c4921">IQUEUE_ADD_TAIL</a>(node,  head)</td></tr>
+<tr class="separator:a03faf22eb58a637e37a07bcbf19c4921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59fabc088418d1870a7a5688fce2bdd4" id="r_a59fabc088418d1870a7a5688fce2bdd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59fabc088418d1870a7a5688fce2bdd4">IQUEUE_DEL_BETWEEN</a>(p,  n)</td></tr>
+<tr class="separator:a59fabc088418d1870a7a5688fce2bdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf705d84daca3cc1e0c5fef5729e2037" id="r_acf705d84daca3cc1e0c5fef5729e2037"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf705d84daca3cc1e0c5fef5729e2037">IQUEUE_DEL</a>(entry)</td></tr>
+<tr class="separator:acf705d84daca3cc1e0c5fef5729e2037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679cb8ff245283a4e5bd52dfce6dbfa7" id="r_a679cb8ff245283a4e5bd52dfce6dbfa7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a679cb8ff245283a4e5bd52dfce6dbfa7">IQUEUE_DEL_INIT</a>(entry)</td></tr>
+<tr class="separator:a679cb8ff245283a4e5bd52dfce6dbfa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c67260949d35b84a7b454b709645f2f" id="r_a9c67260949d35b84a7b454b709645f2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c67260949d35b84a7b454b709645f2f">IQUEUE_IS_EMPTY</a>(entry)</td></tr>
+<tr class="separator:a9c67260949d35b84a7b454b709645f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb98b37670514b0982de972f7ce05b03" id="r_acb98b37670514b0982de972f7ce05b03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb98b37670514b0982de972f7ce05b03">iqueue_init</a>&#160;&#160;&#160;<a class="el" href="#ac7c2df37d8456c863bccfa415c42174c">IQUEUE_INIT</a></td></tr>
+<tr class="separator:acb98b37670514b0982de972f7ce05b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5414d7861936bcf8a2ce6a4cc0994a" id="r_a9f5414d7861936bcf8a2ce6a4cc0994a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f5414d7861936bcf8a2ce6a4cc0994a">iqueue_entry</a>&#160;&#160;&#160;<a class="el" href="#adbce259283b38deef4333ef3a00f7463">IQUEUE_ENTRY</a></td></tr>
+<tr class="separator:a9f5414d7861936bcf8a2ce6a4cc0994a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa43fcc68f81013b1b95eef34a9051958" id="r_aa43fcc68f81013b1b95eef34a9051958"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa43fcc68f81013b1b95eef34a9051958">iqueue_add</a>&#160;&#160;&#160;<a class="el" href="#ab0141db248079560312d2fce8a3c4a86">IQUEUE_ADD</a></td></tr>
+<tr class="separator:aa43fcc68f81013b1b95eef34a9051958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a445cdefe05f902650cf571426a560797" id="r_a445cdefe05f902650cf571426a560797"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a445cdefe05f902650cf571426a560797">iqueue_add_tail</a>&#160;&#160;&#160;<a class="el" href="#a03faf22eb58a637e37a07bcbf19c4921">IQUEUE_ADD_TAIL</a></td></tr>
+<tr class="separator:a445cdefe05f902650cf571426a560797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb4fa6859b55aa0ff1e4cab29ed7162" id="r_aebb4fa6859b55aa0ff1e4cab29ed7162"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebb4fa6859b55aa0ff1e4cab29ed7162">iqueue_del</a>&#160;&#160;&#160;<a class="el" href="#acf705d84daca3cc1e0c5fef5729e2037">IQUEUE_DEL</a></td></tr>
+<tr class="separator:aebb4fa6859b55aa0ff1e4cab29ed7162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f527c39fff108d9bcb6615a0b4c0138" id="r_a1f527c39fff108d9bcb6615a0b4c0138"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f527c39fff108d9bcb6615a0b4c0138">iqueue_del_init</a>&#160;&#160;&#160;<a class="el" href="#a679cb8ff245283a4e5bd52dfce6dbfa7">IQUEUE_DEL_INIT</a></td></tr>
+<tr class="separator:a1f527c39fff108d9bcb6615a0b4c0138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60805c8c47e1aaa5dab231270d55ac2f" id="r_a60805c8c47e1aaa5dab231270d55ac2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60805c8c47e1aaa5dab231270d55ac2f">iqueue_is_empty</a>&#160;&#160;&#160;<a class="el" href="#a9c67260949d35b84a7b454b709645f2f">IQUEUE_IS_EMPTY</a></td></tr>
+<tr class="separator:a60805c8c47e1aaa5dab231270d55ac2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc33f6f047582aaf95859f06d838ec0" id="r_a4dc33f6f047582aaf95859f06d838ec0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dc33f6f047582aaf95859f06d838ec0">IQUEUE_FOREACH</a>(iterator,  head,  TYPE,  MEMBER)</td></tr>
+<tr class="separator:a4dc33f6f047582aaf95859f06d838ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d76703760f9ef9fd4d69fe865bd5ff9" id="r_a6d76703760f9ef9fd4d69fe865bd5ff9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d76703760f9ef9fd4d69fe865bd5ff9">iqueue_foreach</a>(iterator,  head,  TYPE,  MEMBER)</td></tr>
+<tr class="separator:a6d76703760f9ef9fd4d69fe865bd5ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f4e42f9d6b3ecd3a56045b6e6957f1" id="r_a97f4e42f9d6b3ecd3a56045b6e6957f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97f4e42f9d6b3ecd3a56045b6e6957f1">iqueue_foreach_entry</a>(pos,  head)</td></tr>
+<tr class="separator:a97f4e42f9d6b3ecd3a56045b6e6957f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583c76bb66f8fc3612e32050112d4e5b" id="r_a583c76bb66f8fc3612e32050112d4e5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a583c76bb66f8fc3612e32050112d4e5b">__iqueue_splice</a>(list,  head)</td></tr>
+<tr class="separator:a583c76bb66f8fc3612e32050112d4e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9903881ef47039634d5b3a5b02b3583d" id="r_a9903881ef47039634d5b3a5b02b3583d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9903881ef47039634d5b3a5b02b3583d">iqueue_splice</a>(list,  head)</td></tr>
+<tr class="separator:a9903881ef47039634d5b3a5b02b3583d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af58f4dd8bf70b34ed35facba93683bff" id="r_af58f4dd8bf70b34ed35facba93683bff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af58f4dd8bf70b34ed35facba93683bff">iqueue_splice_init</a>(list,  head)</td></tr>
+<tr class="separator:af58f4dd8bf70b34ed35facba93683bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d601e7058ae427882162e1a1c13dc0f" id="r_a6d601e7058ae427882162e1a1c13dc0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d601e7058ae427882162e1a1c13dc0f">IWORDS_BIG_ENDIAN</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a6d601e7058ae427882162e1a1c13dc0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b9095e3c35aa652a6e4e368cdedb90" id="r_a90b9095e3c35aa652a6e4e368cdedb90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90b9095e3c35aa652a6e4e368cdedb90">IWORDS_MUST_ALIGN</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a90b9095e3c35aa652a6e4e368cdedb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11b22ba649272ca6dcf3a414a60005c2" id="r_a11b22ba649272ca6dcf3a414a60005c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11b22ba649272ca6dcf3a414a60005c2">IKCP_LOG_OUTPUT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a11b22ba649272ca6dcf3a414a60005c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec651f60b018330a1b31b447e0c0a336" id="r_aec651f60b018330a1b31b447e0c0a336"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec651f60b018330a1b31b447e0c0a336">IKCP_LOG_INPUT</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:aec651f60b018330a1b31b447e0c0a336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc396bd31280ad778d6b1268579f91e" id="r_afbc396bd31280ad778d6b1268579f91e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbc396bd31280ad778d6b1268579f91e">IKCP_LOG_SEND</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:afbc396bd31280ad778d6b1268579f91e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b8a718f6e54595d8d54d6ea9d4ebb3b" id="r_a8b8a718f6e54595d8d54d6ea9d4ebb3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b8a718f6e54595d8d54d6ea9d4ebb3b">IKCP_LOG_RECV</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a8b8a718f6e54595d8d54d6ea9d4ebb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab361851b89157bbc2ed056c3cc4abac" id="r_aab361851b89157bbc2ed056c3cc4abac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab361851b89157bbc2ed056c3cc4abac">IKCP_LOG_IN_DATA</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:aab361851b89157bbc2ed056c3cc4abac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a961a795d494cd9a93046bb12f600456d" id="r_a961a795d494cd9a93046bb12f600456d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a961a795d494cd9a93046bb12f600456d">IKCP_LOG_IN_ACK</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a961a795d494cd9a93046bb12f600456d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d0ac66a268c02a64f4510c5e77c65b4" id="r_a2d0ac66a268c02a64f4510c5e77c65b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d0ac66a268c02a64f4510c5e77c65b4">IKCP_LOG_IN_PROBE</a>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:a2d0ac66a268c02a64f4510c5e77c65b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43eb281c809a8826dc1eb1cd6d5e42bb" id="r_a43eb281c809a8826dc1eb1cd6d5e42bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43eb281c809a8826dc1eb1cd6d5e42bb">IKCP_LOG_IN_WINS</a>&#160;&#160;&#160;128</td></tr>
+<tr class="separator:a43eb281c809a8826dc1eb1cd6d5e42bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8a130d4053b5ab9ca067b09e7ddecf4" id="r_ae8a130d4053b5ab9ca067b09e7ddecf4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8a130d4053b5ab9ca067b09e7ddecf4">IKCP_LOG_OUT_DATA</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:ae8a130d4053b5ab9ca067b09e7ddecf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116ccc71313d674409fdf83c5d6d38f1" id="r_a116ccc71313d674409fdf83c5d6d38f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a116ccc71313d674409fdf83c5d6d38f1">IKCP_LOG_OUT_ACK</a>&#160;&#160;&#160;512</td></tr>
+<tr class="separator:a116ccc71313d674409fdf83c5d6d38f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34d6409cb6f4916edf2ac7391731fba1" id="r_a34d6409cb6f4916edf2ac7391731fba1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34d6409cb6f4916edf2ac7391731fba1">IKCP_LOG_OUT_PROBE</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:a34d6409cb6f4916edf2ac7391731fba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfb351280b9812aa38d7f0eb381d7d0" id="r_aedfb351280b9812aa38d7f0eb381d7d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedfb351280b9812aa38d7f0eb381d7d0">IKCP_LOG_OUT_WINS</a>&#160;&#160;&#160;2048</td></tr>
+<tr class="separator:aedfb351280b9812aa38d7f0eb381d7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a5eb5af8cf6ae9f9a24cbc3d264284f4e" id="r_a5eb5af8cf6ae9f9a24cbc3d264284f4e"><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5eb5af8cf6ae9f9a24cbc3d264284f4e">ISTDUINT32</a></td></tr>
+<tr class="separator:a5eb5af8cf6ae9f9a24cbc3d264284f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ff1e3f4dded36110f242a169cad369" id="r_ac8ff1e3f4dded36110f242a169cad369"><td class="memItemLeft" align="right" valign="top">typedef long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8ff1e3f4dded36110f242a169cad369">ISTDINT32</a></td></tr>
+<tr class="separator:ac8ff1e3f4dded36110f242a169cad369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada503622d6f30db31d1968e58e8e321b" id="r_ada503622d6f30db31d1968e58e8e321b"><td class="memItemLeft" align="right" valign="top">typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada503622d6f30db31d1968e58e8e321b">IINT8</a></td></tr>
+<tr class="separator:ada503622d6f30db31d1968e58e8e321b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288b4926560b94e3092663b787f5b2a0" id="r_a288b4926560b94e3092663b787f5b2a0"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a288b4926560b94e3092663b787f5b2a0">IUINT8</a></td></tr>
+<tr class="separator:a288b4926560b94e3092663b787f5b2a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30211579b6fea3e9c9d2c61a1b2b737d" id="r_a30211579b6fea3e9c9d2c61a1b2b737d"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30211579b6fea3e9c9d2c61a1b2b737d">IUINT16</a></td></tr>
+<tr class="separator:a30211579b6fea3e9c9d2c61a1b2b737d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49db573c6014a2a9cc08d9a3f9746fa5" id="r_a49db573c6014a2a9cc08d9a3f9746fa5"><td class="memItemLeft" align="right" valign="top">typedef short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49db573c6014a2a9cc08d9a3f9746fa5">IINT16</a></td></tr>
+<tr class="separator:a49db573c6014a2a9cc08d9a3f9746fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2a738191fc50b8416eddfdd61538ec4" id="r_af2a738191fc50b8416eddfdd61538ec4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="#ac8ff1e3f4dded36110f242a169cad369">ISTDINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2a738191fc50b8416eddfdd61538ec4">IINT32</a></td></tr>
+<tr class="separator:af2a738191fc50b8416eddfdd61538ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9be6f0797849c3e756fdacfe0a76f29" id="r_ae9be6f0797849c3e756fdacfe0a76f29"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="#a5eb5af8cf6ae9f9a24cbc3d264284f4e">ISTDUINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a></td></tr>
+<tr class="separator:ae9be6f0797849c3e756fdacfe0a76f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1fae8eaa93d33c7636e4a85284442a9" id="r_ad1fae8eaa93d33c7636e4a85284442a9"><td class="memItemLeft" align="right" valign="top">typedef long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1fae8eaa93d33c7636e4a85284442a9">IINT64</a></td></tr>
+<tr class="separator:ad1fae8eaa93d33c7636e4a85284442a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba171664b88c9f1af2325e7a58a42c5b" id="r_aba171664b88c9f1af2325e7a58a42c5b"><td class="memItemLeft" align="right" valign="top">typedef unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba171664b88c9f1af2325e7a58a42c5b">IUINT64</a></td></tr>
+<tr class="separator:aba171664b88c9f1af2325e7a58a42c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a053fcd90de90a70d4abcc1e943fec2c3" id="r_a053fcd90de90a70d4abcc1e943fec2c3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_i_q_u_e_u_e_h_e_a_d.html">IQUEUEHEAD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a053fcd90de90a70d4abcc1e943fec2c3">iqueue_head</a></td></tr>
+<tr class="separator:a053fcd90de90a70d4abcc1e943fec2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54616165d5f80d826a68d13f9161758d" id="r_a54616165d5f80d826a68d13f9161758d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_i_k_c_p_c_b.html">IKCPCB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a></td></tr>
+<tr class="separator:a54616165d5f80d826a68d13f9161758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a2ba13891e334dedaced92cb46f67d11c" id="r_a2ba13891e334dedaced92cb46f67d11c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ba13891e334dedaced92cb46f67d11c">ikcp_create</a> (<a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a> conv, void *user)</td></tr>
+<tr class="separator:a2ba13891e334dedaced92cb46f67d11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d196c057722eacc389000a953b9a834" id="r_a0d196c057722eacc389000a953b9a834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d196c057722eacc389000a953b9a834">ikcp_release</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp)</td></tr>
+<tr class="separator:a0d196c057722eacc389000a953b9a834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae235a6d7cd9a9429e41730309883ad62" id="r_ae235a6d7cd9a9429e41730309883ad62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae235a6d7cd9a9429e41730309883ad62">ikcp_setoutput</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, int(*output)(const char *buf, int len, <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, void *user))</td></tr>
+<tr class="separator:ae235a6d7cd9a9429e41730309883ad62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a058874ef91865ef2bab4d35cc4231673" id="r_a058874ef91865ef2bab4d35cc4231673"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a058874ef91865ef2bab4d35cc4231673">ikcp_recv</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, char *buffer, int len)</td></tr>
+<tr class="separator:a058874ef91865ef2bab4d35cc4231673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12626908b5c436bb1172f320cbd2d1cf" id="r_a12626908b5c436bb1172f320cbd2d1cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12626908b5c436bb1172f320cbd2d1cf">ikcp_send</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, const char *buffer, int len)</td></tr>
+<tr class="separator:a12626908b5c436bb1172f320cbd2d1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a780ff8e4dd414f83db886cfd96172975" id="r_a780ff8e4dd414f83db886cfd96172975"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a780ff8e4dd414f83db886cfd96172975">ikcp_update</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, <a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a> current)</td></tr>
+<tr class="separator:a780ff8e4dd414f83db886cfd96172975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d91ba34a39f933292418fa7656762c" id="r_a02d91ba34a39f933292418fa7656762c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02d91ba34a39f933292418fa7656762c">ikcp_check</a> (const <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, <a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a> current)</td></tr>
+<tr class="separator:a02d91ba34a39f933292418fa7656762c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4ce33146ddd2b9c55b2f3ba2472f888" id="r_af4ce33146ddd2b9c55b2f3ba2472f888"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4ce33146ddd2b9c55b2f3ba2472f888">ikcp_input</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, const char *data, long size)</td></tr>
+<tr class="separator:af4ce33146ddd2b9c55b2f3ba2472f888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a3d9426417d04f8f1bbfbded14b4eb1" id="r_a2a3d9426417d04f8f1bbfbded14b4eb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a3d9426417d04f8f1bbfbded14b4eb1">ikcp_flush</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp)</td></tr>
+<tr class="separator:a2a3d9426417d04f8f1bbfbded14b4eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de027bb56f48487d381708f10ea1876" id="r_a8de027bb56f48487d381708f10ea1876"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8de027bb56f48487d381708f10ea1876">ikcp_peeksize</a> (const <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp)</td></tr>
+<tr class="separator:a8de027bb56f48487d381708f10ea1876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a0ae338fffdc679dceb34633161b44" id="r_a83a0ae338fffdc679dceb34633161b44"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83a0ae338fffdc679dceb34633161b44">ikcp_setmtu</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, int mtu)</td></tr>
+<tr class="separator:a83a0ae338fffdc679dceb34633161b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6071a18d7a25011d25db6f42079d8b8d" id="r_a6071a18d7a25011d25db6f42079d8b8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6071a18d7a25011d25db6f42079d8b8d">ikcp_wndsize</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, int sndwnd, int rcvwnd)</td></tr>
+<tr class="separator:a6071a18d7a25011d25db6f42079d8b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07104748365a93087ef50cdb50545847" id="r_a07104748365a93087ef50cdb50545847"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07104748365a93087ef50cdb50545847">ikcp_waitsnd</a> (const <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp)</td></tr>
+<tr class="separator:a07104748365a93087ef50cdb50545847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac119d1fc1cf5e979803d8419fced6b22" id="r_ac119d1fc1cf5e979803d8419fced6b22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac119d1fc1cf5e979803d8419fced6b22">ikcp_nodelay</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, int nodelay, int interval, int resend, int nc)</td></tr>
+<tr class="separator:ac119d1fc1cf5e979803d8419fced6b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aade14c947464846c7523f78efa6534ba" id="r_aade14c947464846c7523f78efa6534ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aade14c947464846c7523f78efa6534ba">ikcp_log</a> (<a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, int mask, const char *fmt,...)</td></tr>
+<tr class="separator:aade14c947464846c7523f78efa6534ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad1837b09c86ce3e965bc2e0a21599a4" id="r_aad1837b09c86ce3e965bc2e0a21599a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad1837b09c86ce3e965bc2e0a21599a4">ikcp_allocator</a> (void *(*new_malloc)(size_t), void(*new_free)(void *))</td></tr>
+<tr class="separator:aad1837b09c86ce3e965bc2e0a21599a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c812352b08070a1c1bd9f0f57c14379" id="r_a0c812352b08070a1c1bd9f0f57c14379"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c812352b08070a1c1bd9f0f57c14379">ikcp_getconv</a> (const void *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="separator:a0c812352b08070a1c1bd9f0f57c14379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a3bd7bc266f35aa346a3b0cb8cf036a3d" name="a3bd7bc266f35aa346a3b0cb8cf036a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd7bc266f35aa346a3b0cb8cf036a3d">&#9670;&#160;</a></span>__IINT16_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IINT16_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af5539562214df648c5ad2709a28180a1" name="af5539562214df648c5ad2709a28180a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5539562214df648c5ad2709a28180a1">&#9670;&#160;</a></span>__IINT32_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IINT32_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf7573e81315ff9b4d35690a2ac83ff1" name="acf7573e81315ff9b4d35690a2ac83ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7573e81315ff9b4d35690a2ac83ff1">&#9670;&#160;</a></span>__IINT64_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IINT64_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0884601935e85e327bccbf31fc1f8904" name="a0884601935e85e327bccbf31fc1f8904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0884601935e85e327bccbf31fc1f8904">&#9670;&#160;</a></span>__IINT8_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IINT8_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a780c35508c0e0487d316a77907e5db0a" name="a780c35508c0e0487d316a77907e5db0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780c35508c0e0487d316a77907e5db0a">&#9670;&#160;</a></span>__INTEGER_32_BITS__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __INTEGER_32_BITS__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64b504fa6ef407d10db9c0f545a48c2b" name="a64b504fa6ef407d10db9c0f545a48c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b504fa6ef407d10db9c0f545a48c2b">&#9670;&#160;</a></span>__IQUEUE_DEF__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IQUEUE_DEF__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a583c76bb66f8fc3612e32050112d4e5b" name="a583c76bb66f8fc3612e32050112d4e5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583c76bb66f8fc3612e32050112d4e5b">&#9670;&#160;</a></span>__iqueue_splice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __iqueue_splice</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">do</span> {    \</div>
+<div class="line">        <a class="code hl_typedef" href="#a053fcd90de90a70d4abcc1e943fec2c3">iqueue_head</a> *first = (list)-&gt;next, *last = (list)-&gt;prev; \</div>
+<div class="line">        <a class="code hl_typedef" href="#a053fcd90de90a70d4abcc1e943fec2c3">iqueue_head</a> *at = (head)-&gt;next; \</div>
+<div class="line">        (first)-&gt;prev = (head), (head)-&gt;next = (first);     \</div>
+<div class="line">        (last)-&gt;next = (at), (at)-&gt;prev = (last); } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aikcp_8h_html_a053fcd90de90a70d4abcc1e943fec2c3"><div class="ttname"><a href="#a053fcd90de90a70d4abcc1e943fec2c3">iqueue_head</a></div><div class="ttdeci">struct IQUEUEHEAD iqueue_head</div><div class="ttdef"><b>定义</b> ikcp.h:141</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a53727e7b4e4f2237c1087eb713bfe630" name="a53727e7b4e4f2237c1087eb713bfe630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53727e7b4e4f2237c1087eb713bfe630">&#9670;&#160;</a></span>__IUINT16_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IUINT16_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aabc768f821c2efda06e32df1a97d63de" name="aabc768f821c2efda06e32df1a97d63de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabc768f821c2efda06e32df1a97d63de">&#9670;&#160;</a></span>__IUINT32_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IUINT32_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fbec0c16cf2bce6e71fcae71ad1e661" name="a1fbec0c16cf2bce6e71fcae71ad1e661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fbec0c16cf2bce6e71fcae71ad1e661">&#9670;&#160;</a></span>__IUINT64_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IUINT64_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03552fed5e9b5bcb91b5e37dea79be08" name="a03552fed5e9b5bcb91b5e37dea79be08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03552fed5e9b5bcb91b5e37dea79be08">&#9670;&#160;</a></span>__IUINT8_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IUINT8_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54532ca308b58c6687c4e5e19abd76d2" name="a54532ca308b58c6687c4e5e19abd76d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54532ca308b58c6687c4e5e19abd76d2">&#9670;&#160;</a></span>ICONTAINEROF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICONTAINEROF</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>member</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        ( \</div>
+<div class="line">        (type*)( ((<span class="keywordtype">char</span>*)((type*)<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)) - <a class="code hl_define" href="#ad309f38aad75121ee542c919bbd89f91">IOFFSETOF</a>(type, member)) )</div>
+<div class="ttc" id="aformat_8h_html_adb6e274f8eb0b74b2865215e1b49c535"><div class="ttname"><a href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a></div><div class="ttdeci">auto ptr(T p) -&gt; const void *</div><div class="ttdoc">Converts p to const void* for pointer formatting.</div><div class="ttdef"><b>定义</b> format.h:3817</div></div>
+<div class="ttc" id="aikcp_8h_html_ad309f38aad75121ee542c919bbd89f91"><div class="ttname"><a href="#ad309f38aad75121ee542c919bbd89f91">IOFFSETOF</a></div><div class="ttdeci">#define IOFFSETOF(TYPE, MEMBER)</div><div class="ttdef"><b>定义</b> ikcp.h:154</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a961a795d494cd9a93046bb12f600456d" name="a961a795d494cd9a93046bb12f600456d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a961a795d494cd9a93046bb12f600456d">&#9670;&#160;</a></span>IKCP_LOG_IN_ACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_IN_ACK&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab361851b89157bbc2ed056c3cc4abac" name="aab361851b89157bbc2ed056c3cc4abac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab361851b89157bbc2ed056c3cc4abac">&#9670;&#160;</a></span>IKCP_LOG_IN_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_IN_DATA&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d0ac66a268c02a64f4510c5e77c65b4" name="a2d0ac66a268c02a64f4510c5e77c65b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d0ac66a268c02a64f4510c5e77c65b4">&#9670;&#160;</a></span>IKCP_LOG_IN_PROBE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_IN_PROBE&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43eb281c809a8826dc1eb1cd6d5e42bb" name="a43eb281c809a8826dc1eb1cd6d5e42bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43eb281c809a8826dc1eb1cd6d5e42bb">&#9670;&#160;</a></span>IKCP_LOG_IN_WINS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_IN_WINS&#160;&#160;&#160;128</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec651f60b018330a1b31b447e0c0a336" name="aec651f60b018330a1b31b447e0c0a336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec651f60b018330a1b31b447e0c0a336">&#9670;&#160;</a></span>IKCP_LOG_INPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_INPUT&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a116ccc71313d674409fdf83c5d6d38f1" name="a116ccc71313d674409fdf83c5d6d38f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a116ccc71313d674409fdf83c5d6d38f1">&#9670;&#160;</a></span>IKCP_LOG_OUT_ACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_OUT_ACK&#160;&#160;&#160;512</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8a130d4053b5ab9ca067b09e7ddecf4" name="ae8a130d4053b5ab9ca067b09e7ddecf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a130d4053b5ab9ca067b09e7ddecf4">&#9670;&#160;</a></span>IKCP_LOG_OUT_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_OUT_DATA&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34d6409cb6f4916edf2ac7391731fba1" name="a34d6409cb6f4916edf2ac7391731fba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34d6409cb6f4916edf2ac7391731fba1">&#9670;&#160;</a></span>IKCP_LOG_OUT_PROBE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_OUT_PROBE&#160;&#160;&#160;1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedfb351280b9812aa38d7f0eb381d7d0" name="aedfb351280b9812aa38d7f0eb381d7d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedfb351280b9812aa38d7f0eb381d7d0">&#9670;&#160;</a></span>IKCP_LOG_OUT_WINS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_OUT_WINS&#160;&#160;&#160;2048</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11b22ba649272ca6dcf3a414a60005c2" name="a11b22ba649272ca6dcf3a414a60005c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b22ba649272ca6dcf3a414a60005c2">&#9670;&#160;</a></span>IKCP_LOG_OUTPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_OUTPUT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b8a718f6e54595d8d54d6ea9d4ebb3b" name="a8b8a718f6e54595d8d54d6ea9d4ebb3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b8a718f6e54595d8d54d6ea9d4ebb3b">&#9670;&#160;</a></span>IKCP_LOG_RECV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_RECV&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbc396bd31280ad778d6b1268579f91e" name="afbc396bd31280ad778d6b1268579f91e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc396bd31280ad778d6b1268579f91e">&#9670;&#160;</a></span>IKCP_LOG_SEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IKCP_LOG_SEND&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2eb6f9e0395b47b8d5e3eeae4fe0c116" name="a2eb6f9e0395b47b8d5e3eeae4fe0c116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb6f9e0395b47b8d5e3eeae4fe0c116">&#9670;&#160;</a></span>INLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INLINE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00d24c7231be28dbaf71f5408f30e44c" name="a00d24c7231be28dbaf71f5408f30e44c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00d24c7231be28dbaf71f5408f30e44c">&#9670;&#160;</a></span>inline</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define inline&#160;&#160;&#160;<a class="el" href="#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad309f38aad75121ee542c919bbd89f91" name="ad309f38aad75121ee542c919bbd89f91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad309f38aad75121ee542c919bbd89f91">&#9670;&#160;</a></span>IOFFSETOF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IOFFSETOF</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>MEMBER</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">((size_t) &amp;((TYPE *)0)-&gt;MEMBER)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab0141db248079560312d2fce8a3c4a86" name="ab0141db248079560312d2fce8a3c4a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0141db248079560312d2fce8a3c4a86">&#9670;&#160;</a></span>IQUEUE_ADD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_ADD</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>node</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ( \</div>
+<div class="line">    (node)-&gt;prev = (head), (node)-&gt;next = (head)-&gt;next, \</div>
+<div class="line">    (head)-&gt;next-&gt;prev = (node), (head)-&gt;next = (node))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa43fcc68f81013b1b95eef34a9051958" name="aa43fcc68f81013b1b95eef34a9051958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa43fcc68f81013b1b95eef34a9051958">&#9670;&#160;</a></span>iqueue_add</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_add&#160;&#160;&#160;<a class="el" href="#ab0141db248079560312d2fce8a3c4a86">IQUEUE_ADD</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03faf22eb58a637e37a07bcbf19c4921" name="a03faf22eb58a637e37a07bcbf19c4921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03faf22eb58a637e37a07bcbf19c4921">&#9670;&#160;</a></span>IQUEUE_ADD_TAIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_ADD_TAIL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>node</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ( \</div>
+<div class="line">    (node)-&gt;prev = (head)-&gt;prev, (node)-&gt;next = (head), \</div>
+<div class="line">    (head)-&gt;prev-&gt;next = (node), (head)-&gt;prev = (node))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a445cdefe05f902650cf571426a560797" name="a445cdefe05f902650cf571426a560797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a445cdefe05f902650cf571426a560797">&#9670;&#160;</a></span>iqueue_add_tail</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_add_tail&#160;&#160;&#160;<a class="el" href="#a03faf22eb58a637e37a07bcbf19c4921">IQUEUE_ADD_TAIL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf705d84daca3cc1e0c5fef5729e2037" name="acf705d84daca3cc1e0c5fef5729e2037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf705d84daca3cc1e0c5fef5729e2037">&#9670;&#160;</a></span>IQUEUE_DEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_DEL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>entry</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    (\</div>
+<div class="line">    (entry)-&gt;next-&gt;prev = (entry)-&gt;prev, \</div>
+<div class="line">    (entry)-&gt;prev-&gt;next = (entry)-&gt;next, \</div>
+<div class="line">    (entry)-&gt;next = 0, (entry)-&gt;prev = 0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aebb4fa6859b55aa0ff1e4cab29ed7162" name="aebb4fa6859b55aa0ff1e4cab29ed7162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb4fa6859b55aa0ff1e4cab29ed7162">&#9670;&#160;</a></span>iqueue_del</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_del&#160;&#160;&#160;<a class="el" href="#acf705d84daca3cc1e0c5fef5729e2037">IQUEUE_DEL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a59fabc088418d1870a7a5688fce2bdd4" name="a59fabc088418d1870a7a5688fce2bdd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59fabc088418d1870a7a5688fce2bdd4">&#9670;&#160;</a></span>IQUEUE_DEL_BETWEEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_DEL_BETWEEN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">((n)-&gt;prev = (p), (p)-&gt;next = (n))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a679cb8ff245283a4e5bd52dfce6dbfa7" name="a679cb8ff245283a4e5bd52dfce6dbfa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679cb8ff245283a4e5bd52dfce6dbfa7">&#9670;&#160;</a></span>IQUEUE_DEL_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_DEL_INIT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>entry</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
+<div class="line">    IQUEUE_DEL(entry); <a class="code hl_define" href="#ac7c2df37d8456c863bccfa415c42174c">IQUEUE_INIT</a>(entry); } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aikcp_8h_html_ac7c2df37d8456c863bccfa415c42174c"><div class="ttname"><a href="#ac7c2df37d8456c863bccfa415c42174c">IQUEUE_INIT</a></div><div class="ttdeci">#define IQUEUE_INIT(ptr)</div><div class="ttdef"><b>定义</b> ikcp.h:151</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1f527c39fff108d9bcb6615a0b4c0138" name="a1f527c39fff108d9bcb6615a0b4c0138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f527c39fff108d9bcb6615a0b4c0138">&#9670;&#160;</a></span>iqueue_del_init</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_del_init&#160;&#160;&#160;<a class="el" href="#a679cb8ff245283a4e5bd52dfce6dbfa7">IQUEUE_DEL_INIT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adbce259283b38deef4333ef3a00f7463" name="adbce259283b38deef4333ef3a00f7463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbce259283b38deef4333ef3a00f7463">&#9670;&#160;</a></span>IQUEUE_ENTRY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_ENTRY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>member</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a54532ca308b58c6687c4e5e19abd76d2">ICONTAINEROF</a>(<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, type, member)</div>
+<div class="ttc" id="aikcp_8h_html_a54532ca308b58c6687c4e5e19abd76d2"><div class="ttname"><a href="#a54532ca308b58c6687c4e5e19abd76d2">ICONTAINEROF</a></div><div class="ttdeci">#define ICONTAINEROF(ptr, type, member)</div><div class="ttdef"><b>定义</b> ikcp.h:156</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9f5414d7861936bcf8a2ce6a4cc0994a" name="a9f5414d7861936bcf8a2ce6a4cc0994a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5414d7861936bcf8a2ce6a4cc0994a">&#9670;&#160;</a></span>iqueue_entry</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_entry&#160;&#160;&#160;<a class="el" href="#adbce259283b38deef4333ef3a00f7463">IQUEUE_ENTRY</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4dc33f6f047582aaf95859f06d838ec0" name="a4dc33f6f047582aaf95859f06d838ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc33f6f047582aaf95859f06d838ec0">&#9670;&#160;</a></span>IQUEUE_FOREACH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_FOREACH</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>iterator</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>MEMBER</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span> ((iterator) = <a class="code hl_define" href="#a9f5414d7861936bcf8a2ce6a4cc0994a">iqueue_entry</a>((head)-&gt;next, TYPE, MEMBER); \</div>
+<div class="line">        &amp;((iterator)-&gt;MEMBER) != (head); \</div>
+<div class="line">        (iterator) = <a class="code hl_define" href="#a9f5414d7861936bcf8a2ce6a4cc0994a">iqueue_entry</a>((iterator)-&gt;MEMBER.next, TYPE, MEMBER))</div>
+<div class="ttc" id="aikcp_8h_html_a9f5414d7861936bcf8a2ce6a4cc0994a"><div class="ttname"><a href="#a9f5414d7861936bcf8a2ce6a4cc0994a">iqueue_entry</a></div><div class="ttdeci">#define iqueue_entry</div><div class="ttdef"><b>定义</b> ikcp.h:186</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6d76703760f9ef9fd4d69fe865bd5ff9" name="a6d76703760f9ef9fd4d69fe865bd5ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d76703760f9ef9fd4d69fe865bd5ff9">&#9670;&#160;</a></span>iqueue_foreach</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_foreach</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>iterator</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>MEMBER</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#a4dc33f6f047582aaf95859f06d838ec0">IQUEUE_FOREACH</a>(iterator, head, TYPE, MEMBER)</div>
+<div class="ttc" id="aikcp_8h_html_a4dc33f6f047582aaf95859f06d838ec0"><div class="ttname"><a href="#a4dc33f6f047582aaf95859f06d838ec0">IQUEUE_FOREACH</a></div><div class="ttdeci">#define IQUEUE_FOREACH(iterator, head, TYPE, MEMBER)</div><div class="ttdef"><b>定义</b> ikcp.h:193</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a97f4e42f9d6b3ecd3a56045b6e6957f1" name="a97f4e42f9d6b3ecd3a56045b6e6957f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f4e42f9d6b3ecd3a56045b6e6957f1">&#9670;&#160;</a></span>iqueue_foreach_entry</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_foreach_entry</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span>( (pos) = (head)-&gt;next; (pos) != (head) ; (pos) = (pos)-&gt;next )</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a44063711cb27f8b50518926df09041c0" name="a44063711cb27f8b50518926df09041c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44063711cb27f8b50518926df09041c0">&#9670;&#160;</a></span>IQUEUE_HEAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_HEAD</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="struct_i_q_u_e_u_e_h_e_a_d.html">IQUEUEHEAD</a> <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a> = <a class="code hl_define" href="#a9db401d285af8d3e09af1e710d591a5f">IQUEUE_HEAD_INIT</a>(<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>)</div>
+<div class="ttc" id="abase_8h_html_a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297"><div class="ttname"><a href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">arg_id_kind::name</a></div><div class="ttdeci">@ name</div><div class="ttdef"><b>定义</b> base.h:700</div></div>
+<div class="ttc" id="aikcp_8h_html_a9db401d285af8d3e09af1e710d591a5f"><div class="ttname"><a href="#a9db401d285af8d3e09af1e710d591a5f">IQUEUE_HEAD_INIT</a></div><div class="ttdeci">#define IQUEUE_HEAD_INIT(name)</div><div class="ttdef"><b>定义</b> ikcp.h:147</div></div>
+<div class="ttc" id="astruct_i_q_u_e_u_e_h_e_a_d_html"><div class="ttname"><a href="struct_i_q_u_e_u_e_h_e_a_d.html">IQUEUEHEAD</a></div><div class="ttdef"><b>定义</b> ikcp.h:137</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9db401d285af8d3e09af1e710d591a5f" name="a9db401d285af8d3e09af1e710d591a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db401d285af8d3e09af1e710d591a5f">&#9670;&#160;</a></span>IQUEUE_HEAD_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_HEAD_INIT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">{ &amp;(<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>), &amp;(<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>) }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac7c2df37d8456c863bccfa415c42174c" name="ac7c2df37d8456c863bccfa415c42174c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7c2df37d8456c863bccfa415c42174c">&#9670;&#160;</a></span>IQUEUE_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_INIT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ( \</div>
+<div class="line">    (<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)-&gt;next = (<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>), (<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)-&gt;prev = (<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acb98b37670514b0982de972f7ce05b03" name="acb98b37670514b0982de972f7ce05b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb98b37670514b0982de972f7ce05b03">&#9670;&#160;</a></span>iqueue_init</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_init&#160;&#160;&#160;<a class="el" href="#ac7c2df37d8456c863bccfa415c42174c">IQUEUE_INIT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c67260949d35b84a7b454b709645f2f" name="a9c67260949d35b84a7b454b709645f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c67260949d35b84a7b454b709645f2f">&#9670;&#160;</a></span>IQUEUE_IS_EMPTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IQUEUE_IS_EMPTY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>entry</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">((entry) == (entry)-&gt;next)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a60805c8c47e1aaa5dab231270d55ac2f" name="a60805c8c47e1aaa5dab231270d55ac2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60805c8c47e1aaa5dab231270d55ac2f">&#9670;&#160;</a></span>iqueue_is_empty</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_is_empty&#160;&#160;&#160;<a class="el" href="#a9c67260949d35b84a7b454b709645f2f">IQUEUE_IS_EMPTY</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9903881ef47039634d5b3a5b02b3583d" name="a9903881ef47039634d5b3a5b02b3583d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9903881ef47039634d5b3a5b02b3583d">&#9670;&#160;</a></span>iqueue_splice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_splice</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
+<div class="line">    if (!<a class="code hl_define" href="#a60805c8c47e1aaa5dab231270d55ac2f">iqueue_is_empty</a>(list)) <a class="code hl_define" href="#a583c76bb66f8fc3612e32050112d4e5b">__iqueue_splice</a>(list, head); } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aikcp_8h_html_a583c76bb66f8fc3612e32050112d4e5b"><div class="ttname"><a href="#a583c76bb66f8fc3612e32050112d4e5b">__iqueue_splice</a></div><div class="ttdeci">#define __iqueue_splice(list, head)</div><div class="ttdef"><b>定义</b> ikcp.h:205</div></div>
+<div class="ttc" id="aikcp_8h_html_a60805c8c47e1aaa5dab231270d55ac2f"><div class="ttname"><a href="#a60805c8c47e1aaa5dab231270d55ac2f">iqueue_is_empty</a></div><div class="ttdeci">#define iqueue_is_empty</div><div class="ttdef"><b>定义</b> ikcp.h:191</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af58f4dd8bf70b34ed35facba93683bff" name="af58f4dd8bf70b34ed35facba93683bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af58f4dd8bf70b34ed35facba93683bff">&#9670;&#160;</a></span>iqueue_splice_init</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define iqueue_splice_init</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {    \</div>
+<div class="line">    iqueue_splice(list, head);  <a class="code hl_define" href="#acb98b37670514b0982de972f7ce05b03">iqueue_init</a>(list); } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aikcp_8h_html_acb98b37670514b0982de972f7ce05b03"><div class="ttname"><a href="#acb98b37670514b0982de972f7ce05b03">iqueue_init</a></div><div class="ttdeci">#define iqueue_init</div><div class="ttdef"><b>定义</b> ikcp.h:185</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6d601e7058ae427882162e1a1c13dc0f" name="a6d601e7058ae427882162e1a1c13dc0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d601e7058ae427882162e1a1c13dc0f">&#9670;&#160;</a></span>IWORDS_BIG_ENDIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IWORDS_BIG_ENDIAN&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90b9095e3c35aa652a6e4e368cdedb90" name="a90b9095e3c35aa652a6e4e368cdedb90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b9095e3c35aa652a6e4e368cdedb90">&#9670;&#160;</a></span>IWORDS_MUST_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IWORDS_MUST_ALIGN&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a49db573c6014a2a9cc08d9a3f9746fa5" name="a49db573c6014a2a9cc08d9a3f9746fa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49db573c6014a2a9cc08d9a3f9746fa5">&#9670;&#160;</a></span>IINT16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef short <a class="el" href="#a49db573c6014a2a9cc08d9a3f9746fa5">IINT16</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2a738191fc50b8416eddfdd61538ec4" name="af2a738191fc50b8416eddfdd61538ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2a738191fc50b8416eddfdd61538ec4">&#9670;&#160;</a></span>IINT32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="#ac8ff1e3f4dded36110f242a169cad369">ISTDINT32</a> <a class="el" href="#af2a738191fc50b8416eddfdd61538ec4">IINT32</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1fae8eaa93d33c7636e4a85284442a9" name="ad1fae8eaa93d33c7636e4a85284442a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1fae8eaa93d33c7636e4a85284442a9">&#9670;&#160;</a></span>IINT64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef long long <a class="el" href="#ad1fae8eaa93d33c7636e4a85284442a9">IINT64</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada503622d6f30db31d1968e58e8e321b" name="ada503622d6f30db31d1968e58e8e321b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada503622d6f30db31d1968e58e8e321b">&#9670;&#160;</a></span>IINT8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef char <a class="el" href="#ada503622d6f30db31d1968e58e8e321b">IINT8</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54616165d5f80d826a68d13f9161758d" name="a54616165d5f80d826a68d13f9161758d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54616165d5f80d826a68d13f9161758d">&#9670;&#160;</a></span>ikcpcb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_i_k_c_p_c_b.html">IKCPCB</a> <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a053fcd90de90a70d4abcc1e943fec2c3" name="a053fcd90de90a70d4abcc1e943fec2c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a053fcd90de90a70d4abcc1e943fec2c3">&#9670;&#160;</a></span>iqueue_head</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_i_q_u_e_u_e_h_e_a_d.html">IQUEUEHEAD</a> <a class="el" href="#a053fcd90de90a70d4abcc1e943fec2c3">iqueue_head</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8ff1e3f4dded36110f242a169cad369" name="ac8ff1e3f4dded36110f242a169cad369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ff1e3f4dded36110f242a169cad369">&#9670;&#160;</a></span>ISTDINT32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef long <a class="el" href="#ac8ff1e3f4dded36110f242a169cad369">ISTDINT32</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5eb5af8cf6ae9f9a24cbc3d264284f4e" name="a5eb5af8cf6ae9f9a24cbc3d264284f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb5af8cf6ae9f9a24cbc3d264284f4e">&#9670;&#160;</a></span>ISTDUINT32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long <a class="el" href="#a5eb5af8cf6ae9f9a24cbc3d264284f4e">ISTDUINT32</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30211579b6fea3e9c9d2c61a1b2b737d" name="a30211579b6fea3e9c9d2c61a1b2b737d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30211579b6fea3e9c9d2c61a1b2b737d">&#9670;&#160;</a></span>IUINT16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned short <a class="el" href="#a30211579b6fea3e9c9d2c61a1b2b737d">IUINT16</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9be6f0797849c3e756fdacfe0a76f29" name="ae9be6f0797849c3e756fdacfe0a76f29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9be6f0797849c3e756fdacfe0a76f29">&#9670;&#160;</a></span>IUINT32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="#a5eb5af8cf6ae9f9a24cbc3d264284f4e">ISTDUINT32</a> <a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba171664b88c9f1af2325e7a58a42c5b" name="aba171664b88c9f1af2325e7a58a42c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba171664b88c9f1af2325e7a58a42c5b">&#9670;&#160;</a></span>IUINT64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long long <a class="el" href="#aba171664b88c9f1af2325e7a58a42c5b">IUINT64</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a288b4926560b94e3092663b787f5b2a0" name="a288b4926560b94e3092663b787f5b2a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a288b4926560b94e3092663b787f5b2a0">&#9670;&#160;</a></span>IUINT8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned char <a class="el" href="#a288b4926560b94e3092663b787f5b2a0">IUINT8</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aad1837b09c86ce3e965bc2e0a21599a4" name="aad1837b09c86ce3e965bc2e0a21599a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad1837b09c86ce3e965bc2e0a21599a4">&#9670;&#160;</a></span>ikcp_allocator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ikcp_allocator </td>
+          <td>(</td>
+          <td class="paramtype">void *(*</td>          <td class="paramname"><span class="paramname"><em>new_malloc&#160;</em></span>)(size_t), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>new_free&#160;</em></span>)(void *)&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02d91ba34a39f933292418fa7656762c" name="a02d91ba34a39f933292418fa7656762c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d91ba34a39f933292418fa7656762c">&#9670;&#160;</a></span>ikcp_check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a> ikcp_check </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a></td>          <td class="paramname"><span class="paramname"><em>current</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a02d91ba34a39f933292418fa7656762c_cgraph.png" border="0" usemap="#aikcp_8h_a02d91ba34a39f933292418fa7656762c_cgraph" alt=""/></div>
+<map name="aikcp_8h_a02d91ba34a39f933292418fa7656762c_cgraph" id="aikcp_8h_a02d91ba34a39f933292418fa7656762c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" href="ikcp_8cpp.html#a21784669952a4e3e2f2fcf3363520dc2" title=" " alt="" coords="141,5,214,32"/>
+<area shape="poly" title=" " alt="" coords="93,16,125,16,125,21,93,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2ba13891e334dedaced92cb46f67d11c" name="a2ba13891e334dedaced92cb46f67d11c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba13891e334dedaced92cb46f67d11c">&#9670;&#160;</a></span>ikcp_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> * ikcp_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a></td>          <td class="paramname"><span class="paramname"><em>conv</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>user</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a2ba13891e334dedaced92cb46f67d11c_cgraph.png" border="0" usemap="#aikcp_8h_a2ba13891e334dedaced92cb46f67d11c_cgraph" alt=""/></div>
+<map name="aikcp_8h_a2ba13891e334dedaced92cb46f67d11c_cgraph" id="aikcp_8h_a2ba13891e334dedaced92cb46f67d11c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,94,65"/>
+<area shape="rect" href="ikcp_8cpp.html#abf2a2ab7bd7f5c19cbe61165e4edd9d1" title=" " alt="" coords="150,13,224,40"/>
+<area shape="poly" title=" " alt="" coords="94,41,134,34,135,39,95,46"/>
+<area shape="rect" href="ikcp_8cpp.html#ac9f567bdf7ededd670dd27f0cf8c0122" title=" " alt="" coords="142,64,232,91"/>
+<area shape="poly" title=" " alt="" coords="95,58,127,64,126,69,94,63"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="280,13,318,40"/>
+<area shape="poly" title=" " alt="" coords="224,24,264,24,264,29,224,29"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="366,13,473,40"/>
+<area shape="poly" title=" " alt="" coords="319,24,351,24,351,29,319,29"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="521,5,648,48"/>
+<area shape="poly" title=" " alt="" coords="473,24,505,24,505,29,473,29"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="696,13,840,40"/>
+<area shape="poly" title=" " alt="" coords="649,24,680,24,680,29,649,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a2ba13891e334dedaced92cb46f67d11c_icgraph.png" border="0" usemap="#aikcp_8h_a2ba13891e334dedaced92cb46f67d11c_icgraph" alt=""/></div>
+<map name="aikcp_8h_a2ba13891e334dedaced92cb46f67d11c_icgraph" id="aikcp_8h_a2ba13891e334dedaced92cb46f67d11c_icgraph">
+<area shape="rect" title=" " alt="" coords="200,5,288,32"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,5,152,32"/>
+<area shape="poly" title=" " alt="" coords="184,21,152,21,152,16,184,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a3d9426417d04f8f1bbfbded14b4eb1" name="a2a3d9426417d04f8f1bbfbded14b4eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a3d9426417d04f8f1bbfbded14b4eb1">&#9670;&#160;</a></span>ikcp_flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ikcp_flush </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a2a3d9426417d04f8f1bbfbded14b4eb1_cgraph.png" border="0" usemap="#aikcp_8h_a2a3d9426417d04f8f1bbfbded14b4eb1_cgraph" alt=""/></div>
+<map name="aikcp_8h_a2a3d9426417d04f8f1bbfbded14b4eb1_cgraph" id="aikcp_8h_a2a3d9426417d04f8f1bbfbded14b4eb1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,183,86,209"/>
+<area shape="rect" href="ikcp_8cpp.html#abb18e77915a9a7b9a6badb3496d461b7" title=" " alt="" coords="165,5,228,32"/>
+<area shape="poly" title=" " alt="" coords="49,181,77,116,101,77,132,42,149,31,152,35,135,46,105,80,82,118,54,183"/>
+<area shape="rect" href="ikcp_8cpp.html#a7d86f4db517abbff0030abdc8de1228b" title=" " alt="" coords="167,56,226,83"/>
+<area shape="poly" title=" " alt="" coords="53,180,85,138,107,114,132,92,151,82,153,86,135,97,111,118,89,141,58,184"/>
+<area shape="rect" href="ikcp_8cpp.html#a21784669952a4e3e2f2fcf3363520dc2" title=" " alt="" coords="160,107,233,133"/>
+<area shape="poly" title=" " alt="" coords="68,180,132,143,145,137,147,142,135,148,70,184"/>
+<area shape="rect" href="ikcp_8cpp.html#a967ee187df31d7d3a5b65d64eeada7ae" title=" " alt="" coords="147,157,246,184"/>
+<area shape="poly" title=" " alt="" coords="86,187,132,179,133,184,87,192"/>
+<area shape="rect" href="ikcp_8cpp.html#aa57723466b099571367b9f4de3ece54c" title=" " alt="" coords="135,208,258,235"/>
+<area shape="poly" title=" " alt="" coords="87,200,121,206,120,211,86,205"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="345,259,384,285"/>
+<area shape="poly" title=" " alt="" coords="66,207,97,227,135,244,187,257,240,265,330,270,330,275,240,271,186,263,133,249,95,232,64,212"/>
+<area shape="rect" href="ikcp_8cpp.html#a1fc51d7f0d279e3503f24e7e20dbce2c" title=" " alt="" coords="152,309,240,336"/>
+<area shape="poly" title=" " alt="" coords="59,208,91,247,135,289,151,299,148,304,132,293,87,250,55,211"/>
+<area shape="rect" href="ikcp_8cpp.html#ac8c5078a0da23e528c760f68fc1f60eb" title=" " alt="" coords="134,360,259,387"/>
+<area shape="poly" title=" " alt="" coords="54,209,82,274,105,312,136,346,140,350,137,354,132,350,101,315,77,276,49,211"/>
+<area shape="rect" href="ikcp_8cpp.html#ab539e90e3d27fd2604b389c5a65d0050" title=" " alt="" coords="307,107,422,133"/>
+<area shape="poly" title=" " alt="" coords="237,205,257,194,272,181,281,169,290,157,305,143,312,139,315,143,309,147,294,160,285,172,276,185,261,198,239,210"/>
+<area shape="rect" href="ikcp_8cpp.html#a01ad503dfe436193f0c9f7213177e78b" title=" " alt="" coords="307,157,422,184"/>
+<area shape="poly" title=" " alt="" coords="243,205,302,187,304,192,244,210"/>
+<area shape="rect" href="ikcp_8cpp.html#a2dbd195fa12f11fdda66fb8fb108e185" title=" " alt="" coords="310,208,419,235"/>
+<area shape="poly" title=" " alt="" coords="258,219,295,219,295,224,258,224"/>
+<area shape="poly" title=" " alt="" coords="244,233,331,259,330,265,243,238"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="470,251,577,277"/>
+<area shape="poly" title=" " alt="" coords="384,268,455,265,455,270,385,274"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="625,225,752,268"/>
+<area shape="poly" title=" " alt="" coords="577,256,609,252,609,258,577,261"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="811,228,955,255"/>
+<area shape="poly" title=" " alt="" coords="753,242,795,241,796,246,753,248"/>
+<area shape="rect" href="ikcp_8cpp.html#a162b546697122a728f3257a0ec3a3e0a" title=" " alt="" coords="320,309,410,336"/>
+<area shape="poly" title=" " alt="" coords="241,320,304,320,304,325,241,325"/>
+<area shape="rect" href="ikcp_8cpp.html#aade14c947464846c7523f78efa6534ba" title=" " alt="" coords="330,393,399,420"/>
+<area shape="poly" title=" " alt="" coords="234,334,260,346,329,383,326,388,258,350,232,339"/>
+<area shape="rect" href="printf_8h.html#a5e1075a6c1fce5050424f97a2fac648f" title=" " alt="" coords="491,460,556,487"/>
+<area shape="poly" title=" " alt="" coords="400,418,478,452,476,457,398,423"/>
+<area shape="rect" href="namespacedetail.html#a755ec613824f57d29068751f166ad91b" title=" " alt="" coords="640,595,736,621"/>
+<area shape="poly" title=" " alt="" coords="543,485,660,583,657,587,540,489"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="1310,473,1350,500"/>
+<area shape="poly" title=" " alt="" coords="722,592,799,563,905,531,1014,509,1170,492,1294,485,1295,490,1171,497,1015,515,907,536,801,568,724,597"/>
+<area shape="rect" href="namespacedetail.html#a1092422aa9ff50b4eaa2068e31ccff0f" title=" " alt="" coords="819,447,947,473"/>
+<area shape="poly" title=" " alt="" coords="697,593,738,543,767,515,799,490,821,477,823,482,801,494,770,519,742,547,701,596"/>
+<area shape="rect" href="namespacedetail.html#a02307ec0131a3aa9df2db7c2f10b69f2" title=" " alt="" coords="842,832,924,859"/>
+<area shape="poly" title=" " alt="" coords="697,621,735,699,765,748,802,793,841,822,837,826,798,797,761,751,730,701,693,623"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="1301,965,1359,992"/>
+<area shape="poly" title=" " alt="" coords="694,621,701,669,719,736,733,773,751,808,774,841,802,868,828,881,876,894,1013,924,1286,970,1285,975,1012,929,874,900,826,886,798,873,770,844,747,811,728,775,714,738,696,670,688,622"/>
+<area shape="rect" href="namespacedetail.html#a727b5e700f6f0e3aca7e0181e45240f3" title=" " alt="" coords="1058,548,1161,575"/>
+<area shape="poly" title=" " alt="" coords="737,599,800,591,1042,565,1043,570,800,596,737,604"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="1286,587,1374,613"/>
+<area shape="poly" title=" " alt="" coords="737,605,1271,598,1271,603,737,610"/>
+<area shape="rect" href="namespacedetail.html#a21ef35f3306ada700061355953e35f4d" title=" " alt="" coords="800,1029,966,1056"/>
+<area shape="poly" title=" " alt="" coords="692,622,692,691,704,797,717,855,737,913,765,968,802,1016,805,1018,801,1022,798,1019,760,970,732,915,712,856,699,798,687,692,686,622"/>
+<area shape="rect" href="namespacedetail.html#a4bed1b172ef600201e6d59ec7f532d0f" title=" " alt="" coords="808,279,959,305"/>
+<area shape="poly" title=" " alt="" coords="688,594,695,542,713,467,727,427,746,386,769,349,798,315,802,312,806,316,802,319,773,352,750,389,732,429,718,469,700,543,693,594"/>
+<area shape="rect" href="namespacedetail.html#af191853bad5ee9cfad04aad57ce3f761" title=" " alt="" coords="814,675,952,701"/>
+<area shape="poly" title=" " alt="" coords="724,619,836,666,834,671,722,624"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="1014,801,1205,828"/>
+<area shape="poly" title=" " alt="" coords="703,620,744,664,771,689,801,711,855,740,913,763,1021,795,1020,800,911,768,853,744,799,716,768,693,740,668,699,624"/>
+<area shape="rect" href="namespacedetail.html#ab32eb7489f534b4b7afa8efd2f3c770e" title=" " alt="" coords="818,329,949,372"/>
+<area shape="poly" title=" " alt="" coords="690,594,702,553,723,497,754,436,775,408,798,382,803,378,806,382,802,386,779,411,759,439,727,499,707,555,695,595"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="818,396,948,423"/>
+<area shape="poly" title=" " alt="" coords="692,593,706,561,728,517,759,472,798,433,805,428,808,432,802,437,763,475,733,520,710,563,697,595"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="839,979,927,1005"/>
+<area shape="poly" title=" " alt="" coords="694,621,702,676,721,757,754,848,776,892,802,933,821,952,842,968,839,972,817,956,798,936,771,895,749,850,716,758,697,677,689,622"/>
+<area shape="poly" title=" " alt="" coords="1308,483,1291,472,1289,459,1302,450,1330,447,1353,449,1368,455,1372,465,1365,475,1361,471,1367,464,1364,459,1352,454,1330,452,1304,455,1294,461,1296,469,1311,478"/>
+<area shape="poly" title=" " alt="" coords="948,457,1067,458,1205,465,1295,478,1294,483,1204,471,1067,463,948,462"/>
+<area shape="rect" href="namespacedetail.html#a1fad02034db0164c9a959f0ffe148dbc" title=" " alt="" coords="1068,852,1151,879"/>
+<area shape="poly" title=" " alt="" coords="925,846,1053,858,1052,863,924,852"/>
+<area shape="poly" title=" " alt="" coords="1150,545,1294,496,1296,501,1152,550"/>
+<area shape="poly" title=" " alt="" coords="1072,549,1066,539,1070,529,1085,523,1110,521,1136,524,1150,530,1147,535,1134,529,1109,527,1086,529,1074,533,1071,539,1077,546"/>
+<area shape="poly" title=" " alt="" coords="1162,568,1271,587,1270,592,1161,573"/>
+<area shape="poly" title=" " alt="" coords="908,672,1069,580,1072,585,910,677"/>
+<area shape="poly" title=" " alt="" coords="939,699,997,709,1065,713,1136,707,1171,699,1203,686,1219,673,1227,657,1235,640,1251,623,1271,612,1273,617,1254,627,1240,643,1232,660,1223,676,1206,690,1172,704,1137,713,1065,719,996,714,938,705"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="1048,649,1171,676"/>
+<area shape="poly" title=" " alt="" coords="953,678,1032,669,1033,674,953,683"/>
+<area shape="rect" href="namespacedetail.html#a90149e7cc7db72a2c4b8186f52e77d6c" title=" " alt="" coords="1046,751,1173,777"/>
+<area shape="poly" title=" " alt="" coords="926,699,1053,743,1052,748,925,704"/>
+<area shape="poly" title=" " alt="" coords="902,700,961,748,1016,787,1030,793,1028,798,1013,792,958,752,899,704"/>
+<area shape="rect" href="classbasic__specs.html#af764698dbe47aaeef3cb198972593f78" title=" " alt="" coords="1253,864,1407,891"/>
+<area shape="poly" title=" " alt="" coords="1175,772,1206,787,1223,803,1231,819,1239,835,1254,850,1262,855,1259,859,1251,854,1235,838,1227,822,1218,806,1203,792,1172,777"/>
+<area shape="rect" href="classbasic__specs.html#a192d822d1b986f70a10bfd2c438abce1" title=" " alt="" coords="1259,637,1400,664"/>
+<area shape="poly" title=" " alt="" coords="1167,748,1203,730,1218,716,1226,703,1235,688,1251,674,1259,669,1262,673,1254,678,1240,692,1231,705,1222,720,1206,734,1169,752"/>
+<area shape="rect" href="classbasic__specs.html#a3c56b1a9d662b03cd2b4b1b774781462" title=" " alt="" coords="1260,688,1400,715"/>
+<area shape="poly" title=" " alt="" coords="1158,748,1265,717,1266,722,1160,753"/>
+<area shape="rect" href="classbasic__specs.html#ad7b2fcf7e62cb3cc6b9d8ec72484338d" title=" " alt="" coords="1254,739,1406,765"/>
+<area shape="poly" title=" " alt="" coords="1174,758,1239,754,1239,760,1174,763"/>
+<area shape="rect" href="classbasic__specs.html#a1147588dbb7187d9e8d5022e6da843af" title=" " alt="" coords="1267,813,1393,840"/>
+<area shape="poly" title=" " alt="" coords="1164,775,1205,787,1270,806,1268,811,1204,792,1163,781"/>
+<area shape="rect" href="classbasic__specs.html#a625b0fd2cf9eda4a3e3e94af7f49ef6a" title=" " alt="" coords="1455,688,1626,715"/>
+<area shape="poly" title=" " alt="" coords="1400,699,1439,699,1439,704,1400,704"/>
+<area shape="poly" title=" " alt="" coords="1294,814,1288,805,1292,795,1306,789,1330,787,1355,789,1368,796,1366,800,1353,794,1330,792,1308,794,1296,799,1293,804,1299,811"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="1277,915,1382,941"/>
+<area shape="poly" title=" " alt="" coords="1183,826,1206,838,1223,854,1231,870,1239,885,1254,901,1264,907,1262,911,1251,905,1235,889,1227,872,1218,857,1203,842,1181,831"/>
+<area shape="rect" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171" title=" " alt="" coords="1074,337,1145,364"/>
+<area shape="poly" title=" " alt="" coords="949,348,1059,348,1059,353,949,353"/>
+<area shape="rect" href="namespacedetail.html#a94fd8fb87672f6ca33ea17019096e098" title=" " alt="" coords="1291,337,1369,364"/>
+<area shape="poly" title=" " alt="" coords="1145,348,1275,348,1275,353,1145,353"/>
+<area shape="poly" title=" " alt="" coords="928,988,1285,977,1285,983,928,993"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="1055,1004,1164,1031"/>
+<area shape="poly" title=" " alt="" coords="928,994,1040,1007,1039,1012,927,1000"/>
+<area shape="rect" href="namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83" title=" " alt="" coords="1051,1055,1168,1081"/>
+<area shape="poly" title=" " alt="" coords="929,1001,967,1015,992,1028,1015,1040,1037,1048,1035,1053,1013,1045,989,1033,965,1020,927,1006"/>
+<area shape="rect" href="namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="1047,1105,1172,1132"/>
+<area shape="poly" title=" " alt="" coords="928,997,949,1004,968,1015,985,1035,993,1055,1000,1073,1016,1091,1034,1101,1031,1106,1013,1095,995,1076,988,1057,980,1037,965,1019,947,1009,927,1002"/>
+<area shape="poly" title=" " alt="" coords="1164,1005,1285,984,1286,989,1165,1010"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a2a3d9426417d04f8f1bbfbded14b4eb1_icgraph.png" border="0" usemap="#aikcp_8h_a2a3d9426417d04f8f1bbfbded14b4eb1_icgraph" alt=""/></div>
+<map name="aikcp_8h_a2a3d9426417d04f8f1bbfbded14b4eb1_icgraph" id="aikcp_8h_a2a3d9426417d04f8f1bbfbded14b4eb1_icgraph">
+<area shape="rect" title=" " alt="" coords="993,13,1073,40"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a403a9c094edc9382ecb25fe38ce050ca" title=" " alt="" coords="625,5,806,48"/>
+<area shape="poly" title=" " alt="" coords="978,29,806,29,806,24,978,24"/>
+<area shape="rect" href="ikcp_8cpp.html#a780ff8e4dd414f83db886cfd96172975" title=" " alt="" coords="854,39,945,65"/>
+<area shape="poly" title=" " alt="" coords="978,40,946,46,945,41,977,34"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#afaf269c96e588ac9030a121dc9adcf43" title=" " alt="" coords="419,13,577,40"/>
+<area shape="poly" title=" " alt="" coords="610,29,578,29,578,24,610,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a7ad86857b5e6c434aec73ac5aceb6dca" title=" " alt="" coords="200,13,371,40"/>
+<area shape="poly" title=" " alt="" coords="404,29,371,29,371,24,404,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,13,152,40"/>
+<area shape="poly" title=" " alt="" coords="184,29,152,29,152,24,184,24"/>
+<area shape="poly" title=" " alt="" coords="838,46,806,42,806,37,838,41"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c812352b08070a1c1bd9f0f57c14379" name="a0c812352b08070a1c1bd9f0f57c14379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c812352b08070a1c1bd9f0f57c14379">&#9670;&#160;</a></span>ikcp_getconv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a> ikcp_getconv </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a0c812352b08070a1c1bd9f0f57c14379_cgraph.png" border="0" usemap="#aikcp_8h_a0c812352b08070a1c1bd9f0f57c14379_cgraph" alt=""/></div>
+<map name="aikcp_8h_a0c812352b08070a1c1bd9f0f57c14379_cgraph" id="aikcp_8h_a0c812352b08070a1c1bd9f0f57c14379_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,104,57"/>
+<area shape="rect" href="ikcp_8cpp.html#a520949ae6b877f17ae0a31456cd6b497" title=" " alt="" coords="152,5,267,32"/>
+<area shape="poly" title=" " alt="" coords="104,33,136,28,137,33,104,39"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="190,56,229,83"/>
+<area shape="poly" title=" " alt="" coords="104,49,175,61,174,66,104,55"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="315,56,421,83"/>
+<area shape="poly" title=" " alt="" coords="229,67,299,67,299,72,229,72"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="469,48,597,91"/>
+<area shape="poly" title=" " alt="" coords="422,67,454,67,454,72,422,72"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="645,56,789,83"/>
+<area shape="poly" title=" " alt="" coords="597,67,629,67,629,72,597,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af4ce33146ddd2b9c55b2f3ba2472f888" name="af4ce33146ddd2b9c55b2f3ba2472f888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4ce33146ddd2b9c55b2f3ba2472f888">&#9670;&#160;</a></span>ikcp_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ikcp_input </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_af4ce33146ddd2b9c55b2f3ba2472f888_cgraph.png" border="0" usemap="#aikcp_8h_af4ce33146ddd2b9c55b2f3ba2472f888_cgraph" alt=""/></div>
+<map name="aikcp_8h_af4ce33146ddd2b9c55b2f3ba2472f888_cgraph" id="aikcp_8h_af4ce33146ddd2b9c55b2f3ba2472f888_cgraph">
+<area shape="rect" title=" " alt="" coords="5,368,86,395"/>
+<area shape="rect" href="ikcp_8cpp.html#a21784669952a4e3e2f2fcf3363520dc2" title=" " alt="" coords="352,444,425,471"/>
+<area shape="poly" title=" " alt="" coords="56,394,85,439,108,463,135,480,170,491,199,492,268,480,336,468,337,473,268,485,199,497,169,497,133,485,104,467,81,442,51,397"/>
+<area shape="rect" href="ikcp_8cpp.html#ab94e2deb99103c804fb49ac6a5447a42" title=" " alt="" coords="147,39,255,65"/>
+<area shape="poly" title=" " alt="" coords="44,367,46,314,58,237,69,194,84,152,105,112,132,76,135,72,139,76,136,79,109,114,89,154,74,196,63,238,52,315,49,368"/>
+<area shape="rect" href="ikcp_8cpp.html#a162b546697122a728f3257a0ec3a3e0a" title=" " alt="" coords="156,140,246,167"/>
+<area shape="poly" title=" " alt="" coords="46,367,54,330,70,279,95,225,112,199,132,177,140,170,143,174,136,181,116,203,100,227,75,281,59,331,52,368"/>
+<area shape="rect" href="ikcp_8cpp.html#a5145d001697781b3db3097a93cf456d0" title=" " alt="" coords="143,191,258,217"/>
+<area shape="poly" title=" " alt="" coords="49,366,77,301,101,262,132,227,137,223,141,227,135,231,105,265,81,303,54,369"/>
+<area shape="rect" href="ikcp_8cpp.html#a520949ae6b877f17ae0a31456cd6b497" title=" " alt="" coords="143,241,258,268"/>
+<area shape="poly" title=" " alt="" coords="53,366,85,323,107,299,132,278,140,273,143,278,135,282,111,303,89,327,57,369"/>
+<area shape="rect" href="ikcp_8cpp.html#af3b478ef61d33740671d3600aa741cc6" title=" " alt="" coords="147,292,255,319"/>
+<area shape="poly" title=" " alt="" coords="67,365,132,328,145,323,147,328,135,333,70,370"/>
+<area shape="rect" href="ikcp_8cpp.html#aade14c947464846c7523f78efa6534ba" title=" " alt="" coords="166,596,236,623"/>
+<area shape="poly" title=" " alt="" coords="52,395,59,432,75,482,100,535,116,560,135,582,153,594,150,599,132,586,112,563,95,538,70,484,54,433,46,396"/>
+<area shape="rect" href="ikcp_8cpp.html#a388e87324a82d6e6d1c4647d93b52c40" title=" " alt="" coords="145,393,257,420"/>
+<area shape="poly" title=" " alt="" coords="87,385,130,392,129,398,86,390"/>
+<area shape="rect" href="ikcp_8cpp.html#a2a561d3f82169973fcdf2c2211925190" title=" " alt="" coords="143,545,259,572"/>
+<area shape="poly" title=" " alt="" coords="54,394,83,456,107,492,135,525,150,535,147,540,132,529,102,495,79,458,49,396"/>
+<area shape="rect" href="ikcp_8cpp.html#a872d6129514487b67c26c833e5995a25" title=" " alt="" coords="134,444,268,471"/>
+<area shape="poly" title=" " alt="" coords="70,393,135,430,147,435,145,440,132,434,67,398"/>
+<area shape="rect" href="ikcp_8cpp.html#a95b7a1d6d9afd0f0e54897d61f3a6c05" title=" " alt="" coords="145,343,257,369"/>
+<area shape="poly" title=" " alt="" coords="86,372,129,365,130,370,87,377"/>
+<area shape="rect" href="ikcp_8cpp.html#a84a7d7c5851de2ef46793696eca899fd" title=" " alt="" coords="134,89,268,116"/>
+<area shape="poly" title=" " alt="" coords="45,367,50,322,64,258,89,188,108,155,132,126,135,123,139,127,136,130,113,158,94,191,69,260,55,323,50,368"/>
+<area shape="rect" href="ikcp_8cpp.html#a9d0be6f5277c1cbabc23da5841927383" title=" " alt="" coords="145,647,257,673"/>
+<area shape="poly" title=" " alt="" coords="50,395,55,440,69,503,94,572,113,604,136,633,139,636,135,639,132,636,108,607,89,574,64,505,50,440,45,395"/>
+<area shape="rect" href="ikcp_8cpp.html#a1f21ff955c76ed9f70dabf905a03bf4b" title=" " alt="" coords="141,697,260,724"/>
+<area shape="poly" title=" " alt="" coords="49,395,52,448,63,525,74,567,89,609,109,648,136,684,139,686,135,690,132,687,105,651,84,611,69,568,58,526,46,448,44,395"/>
+<area shape="rect" href="ikcp_8cpp.html#abf2a2ab7bd7f5c19cbe61165e4edd9d1" title=" " alt="" coords="508,39,583,65"/>
+<area shape="poly" title=" " alt="" coords="256,49,493,49,493,55,256,55"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="672,13,711,40"/>
+<area shape="poly" title=" " alt="" coords="255,39,316,31,413,24,509,21,657,23,656,28,509,27,413,29,316,36,256,44"/>
+<area shape="rect" href="ikcp_8cpp.html#ac9f567bdf7ededd670dd27f0cf8c0122" title=" " alt="" coords="343,89,433,116"/>
+<area shape="poly" title=" " alt="" coords="254,63,329,84,328,89,252,69"/>
+<area shape="poly" title=" " alt="" coords="583,43,656,30,657,35,584,48"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="800,13,906,40"/>
+<area shape="poly" title=" " alt="" coords="711,24,784,24,784,29,711,29"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="974,5,1101,48"/>
+<area shape="poly" title=" " alt="" coords="907,24,959,24,959,29,907,29"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="1192,13,1336,40"/>
+<area shape="poly" title=" " alt="" coords="1102,24,1176,24,1176,29,1102,29"/>
+<area shape="rect" href="printf_8h.html#a5e1075a6c1fce5050424f97a2fac648f" title=" " alt="" coords="659,596,724,623"/>
+<area shape="poly" title=" " alt="" coords="236,607,644,607,644,612,236,612"/>
+<area shape="rect" href="namespacedetail.html#a755ec613824f57d29068751f166ad91b" title=" " alt="" coords="805,571,901,597"/>
+<area shape="poly" title=" " alt="" coords="724,602,789,591,790,597,725,607"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="1440,571,1479,597"/>
+<area shape="poly" title=" " alt="" coords="902,581,1425,581,1425,587,902,587"/>
+<area shape="rect" href="namespacedetail.html#a1092422aa9ff50b4eaa2068e31ccff0f" title=" " alt="" coords="1200,469,1328,496"/>
+<area shape="poly" title=" " alt="" coords="865,568,902,536,927,519,953,506,1012,488,1073,479,1132,475,1184,475,1184,480,1132,480,1073,484,1013,494,955,510,929,523,906,540,869,572"/>
+<area shape="rect" href="namespacedetail.html#a02307ec0131a3aa9df2db7c2f10b69f2" title=" " alt="" coords="997,520,1078,547"/>
+<area shape="poly" title=" " alt="" coords="901,568,981,546,982,551,902,573"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="1430,368,1489,395"/>
+<area shape="poly" title=" " alt="" coords="861,569,896,520,922,494,953,472,1009,446,1059,430,1105,422,1150,419,1243,418,1297,414,1358,404,1415,390,1416,396,1360,409,1297,419,1243,424,1150,425,1106,427,1061,435,1011,451,956,477,926,498,900,524,865,572"/>
+<area shape="rect" href="namespacedetail.html#a727b5e700f6f0e3aca7e0181e45240f3" title=" " alt="" coords="1212,645,1316,672"/>
+<area shape="poly" title=" " alt="" coords="902,590,955,600,1197,644,1196,649,954,605,901,596"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="1416,747,1503,773"/>
+<area shape="poly" title=" " alt="" coords="858,597,862,645,877,711,889,746,906,780,928,809,956,834,990,849,1037,859,1093,863,1152,863,1270,853,1358,833,1401,811,1435,782,1438,786,1404,815,1360,839,1271,858,1153,868,1092,868,1037,864,989,854,953,838,924,813,902,782,884,748,872,713,857,646,852,598"/>
+<area shape="rect" href="namespacedetail.html#a21ef35f3306ada700061355953e35f4d" title=" " alt="" coords="954,747,1121,773"/>
+<area shape="poly" title=" " alt="" coords="862,597,895,662,922,700,956,733,962,737,959,741,953,737,918,704,891,665,858,599"/>
+<area shape="rect" href="namespacedetail.html#a4bed1b172ef600201e6d59ec7f532d0f" title=" " alt="" coords="962,797,1113,824"/>
+<area shape="poly" title=" " alt="" coords="860,597,870,634,888,684,917,738,935,762,956,783,961,787,958,792,953,787,931,765,912,740,883,686,865,636,855,598"/>
+<area shape="rect" href="namespacedetail.html#af191853bad5ee9cfad04aad57ce3f761" title=" " alt="" coords="968,696,1107,723"/>
+<area shape="poly" title=" " alt="" coords="871,596,909,628,956,663,995,686,992,691,953,668,905,632,868,600"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="1169,899,1359,925"/>
+<area shape="poly" title=" " alt="" coords="857,597,860,651,873,728,885,770,902,810,926,847,956,878,979,893,1004,905,1057,920,1113,926,1165,925,1165,930,1113,931,1056,926,1002,910,976,898,953,882,922,850,898,813,880,772,867,730,854,652,852,598"/>
+<area shape="rect" href="namespacedetail.html#ab32eb7489f534b4b7afa8efd2f3c770e" title=" " alt="" coords="972,251,1103,293"/>
+<area shape="poly" title=" " alt="" coords="853,570,859,521,875,450,888,411,905,373,926,336,952,304,957,299,961,303,956,307,931,339,910,375,893,413,880,452,865,522,858,571"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="972,317,1103,344"/>
+<area shape="poly" title=" " alt="" coords="854,570,862,528,880,470,909,408,929,379,953,354,957,350,961,354,956,358,933,383,914,411,885,472,868,530,859,571"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="993,368,1082,395"/>
+<area shape="poly" title=" " alt="" coords="856,569,869,538,889,496,917,451,953,411,978,396,980,400,956,415,921,454,893,498,874,540,861,571"/>
+<area shape="poly" title=" " alt="" coords="1438,579,1423,568,1422,556,1434,547,1460,544,1481,546,1494,552,1499,561,1495,570,1490,568,1494,561,1491,556,1479,551,1460,549,1436,552,1426,558,1428,565,1441,575"/>
+<area shape="poly" title=" " alt="" coords="1329,494,1360,506,1401,531,1435,558,1431,562,1398,535,1358,510,1328,499"/>
+<area shape="rect" href="namespacedetail.html#a1fad02034db0164c9a959f0ffe148dbc" title=" " alt="" coords="1223,520,1305,547"/>
+<area shape="poly" title=" " alt="" coords="1079,531,1207,531,1207,536,1079,536"/>
+<area shape="poly" title=" " alt="" coords="1300,642,1425,594,1427,599,1302,647"/>
+<area shape="poly" title=" " alt="" coords="1230,646,1225,637,1229,627,1242,621,1264,619,1287,621,1300,628,1297,632,1286,626,1264,624,1243,626,1232,631,1230,636,1235,643"/>
+<area shape="poly" title=" " alt="" coords="1317,666,1360,682,1401,707,1435,734,1431,738,1398,711,1358,686,1315,671"/>
+<area shape="poly" title=" " alt="" coords="1100,693,1196,671,1197,676,1101,698"/>
+<area shape="poly" title=" " alt="" coords="1104,721,1169,732,1293,746,1400,754,1400,759,1292,751,1168,737,1103,726"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="1202,797,1326,824"/>
+<area shape="poly" title=" " alt="" coords="1097,721,1122,732,1137,744,1147,755,1156,766,1170,776,1196,789,1194,794,1167,781,1152,770,1143,758,1133,747,1119,737,1095,726"/>
+<area shape="rect" href="namespacedetail.html#a90149e7cc7db72a2c4b8186f52e77d6c" title=" " alt="" coords="1200,696,1328,723"/>
+<area shape="poly" title=" " alt="" coords="1107,707,1184,707,1184,712,1107,712"/>
+<area shape="poly" title=" " alt="" coords="1104,721,1122,733,1142,758,1150,782,1156,807,1171,834,1199,863,1229,887,1226,892,1195,867,1167,838,1151,809,1145,784,1137,760,1119,737,1101,726"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="1407,899,1512,925"/>
+<area shape="poly" title=" " alt="" coords="1359,909,1391,909,1391,915,1359,915"/>
+<area shape="rect" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171" title=" " alt="" coords="1229,259,1299,285"/>
+<area shape="poly" title=" " alt="" coords="1104,269,1213,269,1213,275,1104,275"/>
+<area shape="poly" title=" " alt="" coords="1081,368,1168,353,1264,346,1359,353,1416,365,1415,371,1359,359,1264,352,1169,359,1082,373"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="1209,368,1318,395"/>
+<area shape="poly" title=" " alt="" coords="1082,379,1194,379,1194,384,1082,384"/>
+<area shape="poly" title=" " alt="" coords="1319,379,1415,379,1415,384,1319,384"/>
+<area shape="poly" title=" " alt="" coords="254,418,337,441,336,446,252,423"/>
+<area shape="rect" href="ikcp_8cpp.html#ab7a3147959b843b2094ed4b4437aa456" title=" " alt="" coords="316,368,460,395"/>
+<area shape="poly" title=" " alt="" coords="257,396,300,391,301,396,258,402"/>
+<area shape="poly" title=" " alt="" coords="394,366,529,78,534,81,398,369"/>
+<area shape="poly" title=" " alt="" coords="234,542,266,525,290,502,315,480,336,470,338,475,317,485,293,506,270,529,237,547"/>
+<area shape="poly" title=" " alt="" coords="212,543,264,483,314,430,351,402,354,406,318,434,268,487,216,546"/>
+<area shape="rect" href="ikcp_8cpp.html#a4666efe40d211a24c49078218784e1ba" title=" " alt="" coords="346,495,430,521"/>
+<area shape="poly" title=" " alt="" coords="252,542,330,521,331,526,254,547"/>
+<area shape="rect" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout." alt="" coords="520,520,571,547"/>
+<area shape="poly" title=" " alt="" coords="259,552,504,534,505,539,260,557"/>
+<area shape="poly" title=" " alt="" coords="431,512,506,524,505,530,431,517"/>
+<area shape="rect" href="printf_8h.html#a27dcc0efcda04388971dbea3c875f122" title="Constructs an format_arg_store object that contains references to arguments and can be implicitly con..." alt="" coords="631,495,752,521"/>
+<area shape="poly" title=" " alt="" coords="571,526,615,519,616,524,572,532"/>
+<area shape="rect" href="printf_8h.html#abb30aad964fc771fb52cf3ad88649df2" title=" " alt="" coords="661,545,722,572"/>
+<area shape="poly" title=" " alt="" coords="572,535,646,548,645,553,571,540"/>
+<area shape="poly" title=" " alt="" coords="723,561,790,571,789,577,722,566"/>
+<area shape="poly" title=" " alt="" coords="268,455,336,455,336,460,268,460"/>
+<area shape="poly" title=" " alt="" coords="243,367,269,379,316,406,357,432,354,437,313,410,267,384,241,372"/>
+<area shape="poly" title=" " alt="" coords="258,361,301,367,300,372,257,366"/>
+<area shape="poly" title=" " alt="" coords="268,100,328,100,328,105,268,105"/>
+<area shape="rect" href="ikcp_8cpp.html#a9160e770203d603ca60bd58ae69670b9" title=" " alt="" coords="352,723,425,749"/>
+<area shape="poly" title=" " alt="" coords="261,716,337,726,336,732,261,721"/>
+<area shape="rect" href="ikcp_8cpp.html#abb18e77915a9a7b9a6badb3496d461b7" title=" " alt="" coords="514,672,577,699"/>
+<area shape="poly" title=" " alt="" coords="261,704,498,686,498,691,261,709"/>
+<area shape="poly" title=" " alt="" coords="425,722,498,698,499,703,426,727"/>
+<area shape="rect" href="ikcp_8cpp.html#a7d86f4db517abbff0030abdc8de1228b" title=" " alt="" coords="516,723,575,749"/>
+<area shape="poly" title=" " alt="" coords="425,733,500,733,500,739,425,739"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_af4ce33146ddd2b9c55b2f3ba2472f888_icgraph.png" border="0" usemap="#aikcp_8h_af4ce33146ddd2b9c55b2f3ba2472f888_icgraph" alt=""/></div>
+<map name="aikcp_8h_af4ce33146ddd2b9c55b2f3ba2472f888_icgraph" id="aikcp_8h_af4ce33146ddd2b9c55b2f3ba2472f888_icgraph">
+<area shape="rect" title=" " alt="" coords="221,5,301,32"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a4ac504bffb3f38656d14792df1744fee" title=" " alt="" coords="5,5,173,32"/>
+<area shape="poly" title=" " alt="" coords="205,21,173,21,173,16,205,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aade14c947464846c7523f78efa6534ba" name="aade14c947464846c7523f78efa6534ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aade14c947464846c7523f78efa6534ba">&#9670;&#160;</a></span>ikcp_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ikcp_log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_aade14c947464846c7523f78efa6534ba_cgraph.png" border="0" usemap="#aikcp_8h_aade14c947464846c7523f78efa6534ba_cgraph" alt=""/></div>
+<map name="aikcp_8h_aade14c947464846c7523f78efa6534ba_cgraph" id="aikcp_8h_aade14c947464846c7523f78efa6534ba_cgraph">
+<area shape="rect" title=" " alt="" coords="5,435,75,461"/>
+<area shape="rect" href="printf_8h.html#a5e1075a6c1fce5050424f97a2fac648f" title=" " alt="" coords="123,435,187,461"/>
+<area shape="poly" title=" " alt="" coords="75,445,107,445,107,451,75,451"/>
+<area shape="rect" href="namespacedetail.html#a755ec613824f57d29068751f166ad91b" title=" " alt="" coords="235,435,331,461"/>
+<area shape="poly" title=" " alt="" coords="187,445,219,445,219,451,187,451"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="890,56,929,83"/>
+<area shape="poly" title=" " alt="" coords="281,434,283,378,294,296,306,251,323,207,347,166,378,131,416,109,472,93,540,81,615,73,763,66,874,66,874,71,764,71,616,78,541,86,474,98,418,114,381,135,351,169,328,209,311,252,299,297,288,378,287,434"/>
+<area shape="rect" href="namespacedetail.html#a1092422aa9ff50b4eaa2068e31ccff0f" title=" " alt="" coords="398,5,527,32"/>
+<area shape="poly" title=" " alt="" coords="283,434,294,356,313,241,341,126,358,81,377,49,389,38,393,42,381,52,363,83,346,128,319,242,299,356,289,435"/>
+<area shape="rect" href="namespacedetail.html#a02307ec0131a3aa9df2db7c2f10b69f2" title=" " alt="" coords="422,435,503,461"/>
+<area shape="poly" title=" " alt="" coords="332,445,406,445,406,451,332,451"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="880,587,938,613"/>
+<area shape="poly" title=" " alt="" coords="332,459,380,471,441,480,494,485,584,487,674,493,725,503,785,522,827,544,877,576,874,580,824,548,783,526,724,509,673,498,584,492,493,490,440,486,379,476,331,465"/>
+<area shape="rect" href="namespacedetail.html#a727b5e700f6f0e3aca7e0181e45240f3" title=" " alt="" coords="637,131,740,157"/>
+<area shape="poly" title=" " alt="" coords="282,434,285,384,298,313,310,274,327,237,349,203,378,174,405,156,436,143,500,128,565,125,622,129,621,135,564,130,501,133,437,148,408,161,381,178,353,206,331,239,315,276,303,314,291,385,287,435"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="866,181,953,208"/>
+<area shape="poly" title=" " alt="" coords="287,433,318,367,344,328,378,294,434,257,496,230,562,210,627,197,691,189,752,186,850,187,850,192,752,191,692,195,628,202,563,215,498,235,437,262,381,298,348,331,322,370,292,436"/>
+<area shape="rect" href="namespacedetail.html#a21ef35f3306ada700061355953e35f4d" title=" " alt="" coords="379,587,546,613"/>
+<area shape="poly" title=" " alt="" coords="293,460,326,515,351,546,381,573,388,577,385,582,378,577,347,550,322,518,289,463"/>
+<area shape="rect" href="namespacedetail.html#a4bed1b172ef600201e6d59ec7f532d0f" title=" " alt="" coords="387,637,538,664"/>
+<area shape="poly" title=" " alt="" coords="291,461,301,494,319,538,345,584,381,623,386,627,383,631,378,627,341,587,314,540,296,496,285,463"/>
+<area shape="rect" href="namespacedetail.html#af191853bad5ee9cfad04aad57ce3f761" title=" " alt="" coords="393,308,532,335"/>
+<area shape="poly" title=" " alt="" coords="302,432,378,376,427,342,430,346,381,381,305,436"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="594,384,784,411"/>
+<area shape="poly" title=" " alt="" coords="329,431,379,420,481,407,578,399,578,404,481,412,380,425,331,437"/>
+<area shape="rect" href="namespacedetail.html#ab32eb7489f534b4b7afa8efd2f3c770e" title=" " alt="" coords="397,688,528,731"/>
+<area shape="poly" title=" " alt="" coords="289,461,297,502,314,559,341,620,359,649,381,674,386,678,382,682,377,678,355,652,337,623,309,561,292,504,284,462"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="397,755,528,781"/>
+<area shape="poly" title=" " alt="" coords="287,461,291,513,304,588,316,629,332,670,354,708,381,741,386,745,383,749,377,745,349,711,328,672,311,631,299,589,286,514,282,462"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="418,536,507,563"/>
+<area shape="poly" title=" " alt="" coords="302,460,337,487,381,515,407,527,404,532,378,520,334,491,299,464"/>
+<area shape="poly" title=" " alt="" coords="888,65,870,54,868,42,882,33,909,29,933,31,947,38,951,47,945,57,940,54,946,47,943,41,931,37,909,35,884,38,873,44,875,51,891,61"/>
+<area shape="poly" title=" " alt="" coords="527,21,784,48,874,61,873,66,784,53,527,27"/>
+<area shape="rect" href="namespacedetail.html#a1fad02034db0164c9a959f0ffe148dbc" title=" " alt="" coords="648,435,730,461"/>
+<area shape="poly" title=" " alt="" coords="504,445,632,445,632,451,504,451"/>
+<area shape="poly" title=" " alt="" coords="730,128,874,78,875,83,731,133"/>
+<area shape="poly" title=" " alt="" coords="652,132,645,122,650,112,664,106,689,104,715,107,729,113,727,118,714,112,689,109,666,111,653,116,650,121,656,129"/>
+<area shape="poly" title=" " alt="" coords="741,153,851,179,850,184,740,158"/>
+<area shape="poly" title=" " alt="" coords="480,305,657,165,660,169,483,310"/>
+<area shape="poly" title=" " alt="" coords="495,305,593,268,731,230,850,204,851,209,732,236,594,273,497,310"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="627,283,750,309"/>
+<area shape="poly" title=" " alt="" coords="532,311,611,302,612,307,532,316"/>
+<area shape="rect" href="namespacedetail.html#a90149e7cc7db72a2c4b8186f52e77d6c" title=" " alt="" coords="625,333,752,360"/>
+<area shape="poly" title=" " alt="" coords="532,326,610,335,609,340,532,332"/>
+<area shape="poly" title=" " alt="" coords="498,333,595,369,618,377,617,382,593,375,496,338"/>
+<area shape="rect" href="classbasic__specs.html#af764698dbe47aaeef3cb198972593f78" title=" " alt="" coords="832,232,986,259"/>
+<area shape="poly" title=" " alt="" coords="752,333,783,319,797,307,806,295,815,282,830,268,840,263,842,268,834,273,819,285,810,298,801,311,785,324,754,337"/>
+<area shape="rect" href="classbasic__specs.html#a192d822d1b986f70a10bfd2c438abce1" title=" " alt="" coords="838,283,980,309"/>
+<area shape="poly" title=" " alt="" coords="750,330,833,311,834,316,751,335"/>
+<area shape="rect" href="classbasic__specs.html#a3c56b1a9d662b03cd2b4b1b774781462" title=" " alt="" coords="839,333,979,360"/>
+<area shape="poly" title=" " alt="" coords="753,344,823,344,823,349,753,349"/>
+<area shape="rect" href="classbasic__specs.html#ad7b2fcf7e62cb3cc6b9d8ec72484338d" title=" " alt="" coords="834,384,985,411"/>
+<area shape="poly" title=" " alt="" coords="751,358,834,377,833,383,750,363"/>
+<area shape="rect" href="classbasic__specs.html#a1147588dbb7187d9e8d5022e6da843af" title=" " alt="" coords="846,459,972,485"/>
+<area shape="poly" title=" " alt="" coords="754,356,785,370,801,382,811,394,834,421,872,448,869,452,830,425,807,398,798,386,783,374,752,361"/>
+<area shape="rect" href="classbasic__specs.html#a625b0fd2cf9eda4a3e3e94af7f49ef6a" title=" " alt="" coords="1034,333,1206,360"/>
+<area shape="poly" title=" " alt="" coords="980,344,1018,344,1018,349,980,349"/>
+<area shape="poly" title=" " alt="" coords="873,460,867,450,871,440,886,434,909,432,934,435,948,441,945,446,933,440,909,437,887,439,875,444,872,449,878,457"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="856,509,962,536"/>
+<area shape="poly" title=" " alt="" coords="765,409,786,421,803,439,811,459,818,477,834,495,844,502,841,506,830,499,814,480,806,461,798,442,782,425,762,414"/>
+<area shape="rect" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171" title=" " alt="" coords="654,739,724,765"/>
+<area shape="poly" title=" " alt="" coords="529,719,639,740,638,745,528,724"/>
+<area shape="rect" href="namespacedetail.html#a94fd8fb87672f6ca33ea17019096e098" title=" " alt="" coords="870,739,948,765"/>
+<area shape="poly" title=" " alt="" coords="725,749,854,749,854,755,725,755"/>
+<area shape="poly" title=" " alt="" coords="507,556,594,572,743,588,865,595,864,601,742,593,593,577,506,562"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="634,637,744,664"/>
+<area shape="poly" title=" " alt="" coords="508,556,547,572,562,584,572,595,581,606,595,616,621,629,619,634,592,621,577,610,568,598,558,587,544,577,506,561"/>
+<area shape="rect" href="namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83" title=" " alt="" coords="630,688,748,715"/>
+<area shape="poly" title=" " alt="" coords="508,553,529,561,547,573,559,586,566,599,572,625,578,650,584,662,595,674,617,687,614,691,592,678,580,665,573,652,567,626,561,601,555,589,544,577,526,565,506,558"/>
+<area shape="rect" href="namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="626,536,752,563"/>
+<area shape="poly" title=" " alt="" coords="507,547,611,547,611,552,507,552"/>
+<area shape="poly" title=" " alt="" coords="743,636,864,607,866,613,745,641"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_aade14c947464846c7523f78efa6534ba_icgraph.png" border="0" usemap="#aikcp_8h_aade14c947464846c7523f78efa6534ba_icgraph" alt=""/></div>
+<map name="aikcp_8h_aade14c947464846c7523f78efa6534ba_icgraph" id="aikcp_8h_aade14c947464846c7523f78efa6534ba_icgraph">
+<area shape="rect" title=" " alt="" coords="1345,56,1414,83"/>
+<area shape="rect" href="ikcp_8cpp.html#af4ce33146ddd2b9c55b2f3ba2472f888" title=" " alt="" coords="1212,5,1293,32"/>
+<area shape="poly" title=" " alt="" coords="1329,52,1287,35,1289,30,1331,47"/>
+<area shape="rect" href="ikcp_8cpp.html#a1fc51d7f0d279e3503f24e7e20dbce2c" title=" " alt="" coords="1208,56,1297,83"/>
+<area shape="poly" title=" " alt="" coords="1329,72,1297,72,1297,67,1329,67"/>
+<area shape="rect" href="ikcp_8cpp.html#a058874ef91865ef2bab4d35cc4231673" title=" " alt="" coords="861,107,938,133"/>
+<area shape="poly" title=" " alt="" coords="1330,89,1297,97,1196,112,1095,119,938,123,938,118,1095,114,1195,106,1296,92,1329,84"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a4ac504bffb3f38656d14792df1744fee" title=" " alt="" coords="993,5,1160,32"/>
+<area shape="poly" title=" " alt="" coords="1197,21,1161,21,1161,16,1197,16"/>
+<area shape="rect" href="ikcp_8cpp.html#a2a3d9426417d04f8f1bbfbded14b4eb1" title=" " alt="" coords="1036,56,1117,83"/>
+<area shape="poly" title=" " alt="" coords="1193,72,1117,72,1117,67,1193,67"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a403a9c094edc9382ecb25fe38ce050ca" title=" " alt="" coords="625,48,806,91"/>
+<area shape="poly" title=" " alt="" coords="1021,59,945,47,899,44,854,47,807,53,806,48,853,41,899,38,945,41,1022,54"/>
+<area shape="rect" href="ikcp_8cpp.html#a780ff8e4dd414f83db886cfd96172975" title=" " alt="" coords="854,56,945,83"/>
+<area shape="poly" title=" " alt="" coords="1021,72,945,72,945,67,1021,67"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#afaf269c96e588ac9030a121dc9adcf43" title=" " alt="" coords="419,56,577,83"/>
+<area shape="poly" title=" " alt="" coords="610,72,578,72,578,67,610,67"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a7ad86857b5e6c434aec73ac5aceb6dca" title=" " alt="" coords="200,56,371,83"/>
+<area shape="poly" title=" " alt="" coords="404,72,371,72,371,67,404,67"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,56,152,83"/>
+<area shape="poly" title=" " alt="" coords="184,72,152,72,152,67,184,67"/>
+<area shape="poly" title=" " alt="" coords="838,72,806,72,806,67,838,67"/>
+<area shape="poly" title=" " alt="" coords="845,108,795,94,796,89,846,103"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac119d1fc1cf5e979803d8419fced6b22" name="ac119d1fc1cf5e979803d8419fced6b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac119d1fc1cf5e979803d8419fced6b22">&#9670;&#160;</a></span>ikcp_nodelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ikcp_nodelay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nodelay</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>interval</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>resend</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nc</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_ac119d1fc1cf5e979803d8419fced6b22_icgraph.png" border="0" usemap="#aikcp_8h_ac119d1fc1cf5e979803d8419fced6b22_icgraph" alt=""/></div>
+<map name="aikcp_8h_ac119d1fc1cf5e979803d8419fced6b22_icgraph" id="aikcp_8h_ac119d1fc1cf5e979803d8419fced6b22_icgraph">
+<area shape="rect" title=" " alt="" coords="200,5,297,32"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,5,152,32"/>
+<area shape="poly" title=" " alt="" coords="184,21,152,21,152,16,184,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8de027bb56f48487d381708f10ea1876" name="a8de027bb56f48487d381708f10ea1876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de027bb56f48487d381708f10ea1876">&#9670;&#160;</a></span>ikcp_peeksize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ikcp_peeksize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a8de027bb56f48487d381708f10ea1876_icgraph.png" border="0" usemap="#aikcp_8h_a8de027bb56f48487d381708f10ea1876_icgraph" alt=""/></div>
+<map name="aikcp_8h_a8de027bb56f48487d381708f10ea1876_icgraph" id="aikcp_8h_a8de027bb56f48487d381708f10ea1876_icgraph">
+<area shape="rect" title=" " alt="" coords="979,13,1083,40"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a403a9c094edc9382ecb25fe38ce050ca" title=" " alt="" coords="625,5,806,48"/>
+<area shape="poly" title=" " alt="" coords="964,29,806,29,806,24,964,24"/>
+<area shape="rect" href="ikcp_8cpp.html#a058874ef91865ef2bab4d35cc4231673" title=" " alt="" coords="854,39,931,65"/>
+<area shape="poly" title=" " alt="" coords="964,42,932,48,931,42,963,36"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#afaf269c96e588ac9030a121dc9adcf43" title=" " alt="" coords="419,13,577,40"/>
+<area shape="poly" title=" " alt="" coords="610,29,578,29,578,24,610,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a7ad86857b5e6c434aec73ac5aceb6dca" title=" " alt="" coords="200,13,371,40"/>
+<area shape="poly" title=" " alt="" coords="404,29,371,29,371,24,404,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,13,152,40"/>
+<area shape="poly" title=" " alt="" coords="184,29,152,29,152,24,184,24"/>
+<area shape="poly" title=" " alt="" coords="838,47,806,42,806,37,839,42"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a058874ef91865ef2bab4d35cc4231673" name="a058874ef91865ef2bab4d35cc4231673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a058874ef91865ef2bab4d35cc4231673">&#9670;&#160;</a></span>ikcp_recv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ikcp_recv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a058874ef91865ef2bab4d35cc4231673_cgraph.png" border="0" usemap="#aikcp_8h_a058874ef91865ef2bab4d35cc4231673_cgraph" alt=""/></div>
+<map name="aikcp_8h_a058874ef91865ef2bab4d35cc4231673_cgraph" id="aikcp_8h_a058874ef91865ef2bab4d35cc4231673_cgraph">
+<area shape="rect" title=" " alt="" coords="5,428,83,455"/>
+<area shape="rect" href="ikcp_8cpp.html#a162b546697122a728f3257a0ec3a3e0a" title=" " alt="" coords="158,352,248,379"/>
+<area shape="poly" title=" " alt="" coords="65,425,129,388,143,382,145,387,132,393,67,430"/>
+<area shape="rect" href="ikcp_8cpp.html#aade14c947464846c7523f78efa6534ba" title=" " alt="" coords="168,403,238,429"/>
+<area shape="poly" title=" " alt="" coords="83,433,152,421,153,427,84,438"/>
+<area shape="rect" href="ikcp_8cpp.html#a8de027bb56f48487d381708f10ea1876" title=" " alt="" coords="151,453,255,480"/>
+<area shape="poly" title=" " alt="" coords="84,445,136,453,135,459,83,450"/>
+<area shape="rect" href="ikcp_8cpp.html#ab7a3147959b843b2094ed4b4437aa456" title=" " alt="" coords="131,541,275,568"/>
+<area shape="poly" title=" " alt="" coords="66,453,172,530,169,534,63,457"/>
+<area shape="rect" href="printf_8h.html#a5e1075a6c1fce5050424f97a2fac648f" title=" " alt="" coords="328,384,392,411"/>
+<area shape="poly" title=" " alt="" coords="238,409,312,400,313,406,238,415"/>
+<area shape="rect" href="namespacedetail.html#a755ec613824f57d29068751f166ad91b" title=" " alt="" coords="445,375,542,401"/>
+<area shape="poly" title=" " alt="" coords="392,392,430,390,430,395,393,398"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="1100,217,1139,244"/>
+<area shape="poly" title=" " alt="" coords="495,373,504,339,522,295,549,250,567,231,588,215,620,199,654,186,724,170,795,165,866,168,934,177,995,190,1086,216,1085,221,994,195,933,183,866,173,796,170,724,175,655,191,622,204,591,220,571,235,553,253,527,297,509,341,500,375"/>
+<area shape="rect" href="namespacedetail.html#a1092422aa9ff50b4eaa2068e31ccff0f" title=" " alt="" coords="609,229,737,256"/>
+<area shape="poly" title=" " alt="" coords="503,372,539,331,588,285,625,261,628,266,591,289,543,334,507,376"/>
+<area shape="rect" href="namespacedetail.html#a02307ec0131a3aa9df2db7c2f10b69f2" title=" " alt="" coords="632,583,714,609"/>
+<area shape="poly" title=" " alt="" coords="506,400,543,450,592,512,648,570,644,574,588,515,538,453,502,403"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="1090,697,1149,724"/>
+<area shape="poly" title=" " alt="" coords="499,401,505,445,520,504,532,536,548,567,567,595,591,619,628,640,682,657,747,671,818,683,962,698,1075,706,1075,711,962,704,818,688,746,676,681,662,626,645,588,623,563,599,543,570,527,538,515,506,500,446,493,402"/>
+<area shape="rect" href="namespacedetail.html#a727b5e700f6f0e3aca7e0181e45240f3" title=" " alt="" coords="848,292,951,319"/>
+<area shape="poly" title=" " alt="" coords="514,372,548,352,589,335,652,319,717,310,832,302,832,308,718,315,653,325,591,340,550,357,517,376"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="1076,319,1163,345"/>
+<area shape="poly" title=" " alt="" coords="542,381,1060,335,1061,340,542,386"/>
+<area shape="rect" href="namespacedetail.html#a21ef35f3306ada700061355953e35f4d" title=" " alt="" coords="590,773,756,800"/>
+<area shape="poly" title=" " alt="" coords="499,402,510,476,529,584,557,690,574,732,592,760,595,762,591,766,588,763,569,734,552,692,524,585,505,477,494,402"/>
+<area shape="rect" href="namespacedetail.html#a4bed1b172ef600201e6d59ec7f532d0f" title=" " alt="" coords="597,5,748,32"/>
+<area shape="poly" title=" " alt="" coords="492,374,493,315,504,226,515,177,532,128,556,83,588,42,591,39,595,43,592,46,561,85,537,130,520,178,509,227,498,315,497,374"/>
+<area shape="rect" href="namespacedetail.html#af191853bad5ee9cfad04aad57ce3f761" title=" " alt="" coords="604,405,742,432"/>
+<area shape="poly" title=" " alt="" coords="543,394,589,402,588,407,542,399"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="804,545,994,572"/>
+<area shape="poly" title=" " alt="" coords="518,399,591,442,696,491,805,531,827,538,826,543,803,536,694,496,588,446,515,404"/>
+<area shape="rect" href="namespacedetail.html#ab32eb7489f534b4b7afa8efd2f3c770e" title=" " alt="" coords="607,56,738,99"/>
+<area shape="poly" title=" " alt="" coords="493,374,499,325,513,255,525,216,541,178,562,141,588,109,593,104,596,108,592,112,567,144,546,180,530,218,518,256,504,326,498,375"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="608,123,738,149"/>
+<area shape="poly" title=" " alt="" coords="494,373,503,333,520,278,548,219,566,191,588,166,603,154,606,159,591,170,570,194,552,221,525,280,508,335,500,375"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="629,723,717,749"/>
+<area shape="poly" title=" " alt="" coords="499,401,506,450,522,522,550,602,569,641,592,677,610,696,632,712,628,716,607,700,588,680,564,644,545,604,517,523,501,451,494,402"/>
+<area shape="poly" title=" " alt="" coords="1098,227,1081,216,1078,203,1092,194,1119,191,1143,193,1157,199,1162,209,1155,219,1151,215,1156,208,1154,203,1142,198,1120,196,1094,199,1083,205,1085,213,1101,222"/>
+<area shape="poly" title=" " alt="" coords="737,238,1084,229,1085,234,737,244"/>
+<area shape="rect" href="namespacedetail.html#a1fad02034db0164c9a959f0ffe148dbc" title=" " alt="" coords="858,596,940,623"/>
+<area shape="poly" title=" " alt="" coords="714,596,843,603,842,609,714,601"/>
+<area shape="poly" title=" " alt="" coords="940,289,1084,240,1086,245,942,294"/>
+<area shape="poly" title=" " alt="" coords="862,293,855,283,860,273,875,267,899,265,925,268,939,274,937,279,924,273,899,271,876,273,863,277,861,283,866,290"/>
+<area shape="poly" title=" " alt="" coords="951,309,1061,322,1060,328,951,314"/>
+<area shape="poly" title=" " alt="" coords="700,402,856,324,858,328,703,407"/>
+<area shape="poly" title=" " alt="" coords="714,430,772,445,844,456,882,456,921,453,958,444,993,430,1010,414,1017,396,1024,375,1041,355,1060,344,1063,348,1044,359,1029,378,1022,398,1014,417,996,434,960,450,922,458,883,462,844,461,771,450,713,435"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="838,393,961,420"/>
+<area shape="poly" title=" " alt="" coords="742,412,822,408,822,413,743,418"/>
+<area shape="rect" href="namespacedetail.html#a90149e7cc7db72a2c4b8186f52e77d6c" title=" " alt="" coords="836,495,963,521"/>
+<area shape="poly" title=" " alt="" coords="705,430,805,474,841,487,839,492,803,478,703,435"/>
+<area shape="poly" title=" " alt="" coords="699,430,758,474,772,490,781,505,790,518,806,531,815,536,812,541,802,536,786,522,776,508,768,493,754,478,696,435"/>
+<area shape="rect" href="classbasic__specs.html#af764698dbe47aaeef3cb198972593f78" title=" " alt="" coords="1042,495,1197,521"/>
+<area shape="poly" title=" " alt="" coords="963,505,1027,505,1027,511,963,511"/>
+<area shape="rect" href="classbasic__specs.html#a192d822d1b986f70a10bfd2c438abce1" title=" " alt="" coords="1049,545,1190,572"/>
+<area shape="poly" title=" " alt="" coords="961,519,1044,539,1043,544,960,525"/>
+<area shape="rect" href="classbasic__specs.html#a3c56b1a9d662b03cd2b4b1b774781462" title=" " alt="" coords="1049,596,1190,623"/>
+<area shape="poly" title=" " alt="" coords="964,517,996,531,1011,544,1021,557,1030,569,1044,582,1053,587,1050,591,1041,586,1026,573,1016,560,1007,547,993,536,962,522"/>
+<area shape="rect" href="classbasic__specs.html#ad7b2fcf7e62cb3cc6b9d8ec72484338d" title=" " alt="" coords="1044,369,1195,396"/>
+<area shape="poly" title=" " alt="" coords="959,492,993,474,1008,458,1016,441,1024,423,1041,406,1048,401,1051,405,1044,410,1029,426,1021,443,1012,461,996,478,961,496"/>
+<area shape="rect" href="classbasic__specs.html#a1147588dbb7187d9e8d5022e6da843af" title=" " alt="" coords="1056,444,1183,471"/>
+<area shape="poly" title=" " alt="" coords="960,491,1043,472,1044,477,961,497"/>
+<area shape="rect" href="classbasic__specs.html#a625b0fd2cf9eda4a3e3e94af7f49ef6a" title=" " alt="" coords="1245,596,1416,623"/>
+<area shape="poly" title=" " alt="" coords="1190,607,1229,607,1229,612,1190,612"/>
+<area shape="poly" title=" " alt="" coords="1084,445,1077,435,1082,426,1096,419,1120,417,1145,420,1158,426,1156,431,1143,425,1119,423,1097,425,1085,429,1083,435,1088,442"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="1067,647,1172,673"/>
+<area shape="poly" title=" " alt="" coords="971,570,996,582,1011,594,1021,608,1030,620,1044,632,1054,638,1051,643,1041,637,1026,624,1016,611,1007,598,993,586,968,575"/>
+<area shape="rect" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171" title=" " alt="" coords="864,64,934,91"/>
+<area shape="poly" title=" " alt="" coords="739,75,849,75,849,80,739,80"/>
+<area shape="rect" href="namespacedetail.html#a94fd8fb87672f6ca33ea17019096e098" title=" " alt="" coords="1080,64,1159,91"/>
+<area shape="poly" title=" " alt="" coords="935,75,1065,75,1065,80,935,80"/>
+<area shape="poly" title=" " alt="" coords="717,731,1074,710,1075,716,718,736"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="844,849,954,876"/>
+<area shape="poly" title=" " alt="" coords="718,741,739,748,758,759,775,779,782,799,790,817,806,835,831,848,828,853,802,839,785,820,777,801,770,781,754,763,736,753,716,746"/>
+<area shape="rect" href="namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83" title=" " alt="" coords="840,748,958,775"/>
+<area shape="poly" title=" " alt="" coords="718,738,825,750,825,756,717,744"/>
+<area shape="rect" href="namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="836,799,962,825"/>
+<area shape="poly" title=" " alt="" coords="718,745,757,759,781,772,805,784,824,791,823,796,803,789,779,777,755,764,717,750"/>
+<area shape="poly" title=" " alt="" coords="953,851,993,835,1025,813,1053,786,1098,735,1102,738,1057,790,1028,817,996,840,955,856"/>
+<area shape="rect" href="ikcp_8cpp.html#abf2a2ab7bd7f5c19cbe61165e4edd9d1" title=" " alt="" coords="323,617,397,644"/>
+<area shape="poly" title=" " alt="" coords="234,566,318,608,316,613,231,571"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="474,769,513,796"/>
+<area shape="poly" title=" " alt="" coords="375,642,472,756,468,759,371,646"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="620,879,726,905"/>
+<area shape="poly" title=" " alt="" coords="514,792,638,868,635,873,512,796"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="836,900,963,943"/>
+<area shape="poly" title=" " alt="" coords="727,896,821,909,820,914,726,902"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="1047,908,1192,935"/>
+<area shape="poly" title=" " alt="" coords="963,919,1032,919,1032,924,963,924"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a058874ef91865ef2bab4d35cc4231673_icgraph.png" border="0" usemap="#aikcp_8h_a058874ef91865ef2bab4d35cc4231673_icgraph" alt=""/></div>
+<map name="aikcp_8h_a058874ef91865ef2bab4d35cc4231673_icgraph" id="aikcp_8h_a058874ef91865ef2bab4d35cc4231673_icgraph">
+<area shape="rect" title=" " alt="" coords="854,13,931,40"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a403a9c094edc9382ecb25fe38ce050ca" title=" " alt="" coords="625,5,806,48"/>
+<area shape="poly" title=" " alt="" coords="838,29,806,29,806,24,838,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#afaf269c96e588ac9030a121dc9adcf43" title=" " alt="" coords="419,13,577,40"/>
+<area shape="poly" title=" " alt="" coords="610,29,578,29,578,24,610,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a7ad86857b5e6c434aec73ac5aceb6dca" title=" " alt="" coords="200,13,371,40"/>
+<area shape="poly" title=" " alt="" coords="404,29,371,29,371,24,404,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,13,152,40"/>
+<area shape="poly" title=" " alt="" coords="184,29,152,29,152,24,184,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0d196c057722eacc389000a953b9a834" name="a0d196c057722eacc389000a953b9a834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d196c057722eacc389000a953b9a834">&#9670;&#160;</a></span>ikcp_release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ikcp_release </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a0d196c057722eacc389000a953b9a834_cgraph.png" border="0" usemap="#aikcp_8h_a0d196c057722eacc389000a953b9a834_cgraph" alt=""/></div>
+<map name="aikcp_8h_a0d196c057722eacc389000a953b9a834_cgraph" id="aikcp_8h_a0d196c057722eacc389000a953b9a834_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,100,40"/>
+<area shape="rect" href="ikcp_8cpp.html#abf2a2ab7bd7f5c19cbe61165e4edd9d1" title=" " alt="" coords="340,13,414,40"/>
+<area shape="poly" title=" " alt="" coords="100,24,324,24,324,29,100,29"/>
+<area shape="rect" href="ikcp_8cpp.html#ab7a3147959b843b2094ed4b4437aa456" title=" " alt="" coords="148,39,292,65"/>
+<area shape="poly" title=" " alt="" coords="101,31,133,36,132,41,100,36"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="462,13,501,40"/>
+<area shape="poly" title=" " alt="" coords="415,24,447,24,447,29,415,29"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="549,13,655,40"/>
+<area shape="poly" title=" " alt="" coords="501,24,533,24,533,29,501,29"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="703,5,830,48"/>
+<area shape="poly" title=" " alt="" coords="655,24,687,24,687,29,655,29"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="878,13,1023,40"/>
+<area shape="poly" title=" " alt="" coords="831,24,863,24,863,29,831,29"/>
+<area shape="poly" title=" " alt="" coords="292,38,324,32,325,38,293,43"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a0d196c057722eacc389000a953b9a834_icgraph.png" border="0" usemap="#aikcp_8h_a0d196c057722eacc389000a953b9a834_icgraph" alt=""/></div>
+<map name="aikcp_8h_a0d196c057722eacc389000a953b9a834_icgraph" id="aikcp_8h_a0d196c057722eacc389000a953b9a834_icgraph">
+<area shape="rect" title=" " alt="" coords="203,5,297,32"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a7f7a3199c392465d0767c6506c1af5b4" title=" " alt="" coords="5,5,155,32"/>
+<area shape="poly" title=" " alt="" coords="187,21,155,21,155,16,187,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a12626908b5c436bb1172f320cbd2d1cf" name="a12626908b5c436bb1172f320cbd2d1cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12626908b5c436bb1172f320cbd2d1cf">&#9670;&#160;</a></span>ikcp_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ikcp_send </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a12626908b5c436bb1172f320cbd2d1cf_cgraph.png" border="0" usemap="#aikcp_8h_a12626908b5c436bb1172f320cbd2d1cf_cgraph" alt=""/></div>
+<map name="aikcp_8h_a12626908b5c436bb1172f320cbd2d1cf_cgraph" id="aikcp_8h_a12626908b5c436bb1172f320cbd2d1cf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,86,65"/>
+<area shape="rect" href="ikcp_8cpp.html#ab7a3147959b843b2094ed4b4437aa456" title=" " alt="" coords="134,13,278,40"/>
+<area shape="poly" title=" " alt="" coords="86,43,118,38,118,43,87,48"/>
+<area shape="rect" href="ikcp_8cpp.html#a84a7d7c5851de2ef46793696eca899fd" title=" " alt="" coords="139,64,272,91"/>
+<area shape="poly" title=" " alt="" coords="87,56,124,62,123,67,86,61"/>
+<area shape="rect" href="ikcp_8cpp.html#abf2a2ab7bd7f5c19cbe61165e4edd9d1" title=" " alt="" coords="334,13,408,40"/>
+<area shape="poly" title=" " alt="" coords="279,24,318,24,318,29,279,29"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="464,13,503,40"/>
+<area shape="poly" title=" " alt="" coords="408,24,449,24,449,29,408,29"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="551,13,657,40"/>
+<area shape="poly" title=" " alt="" coords="503,24,535,24,535,29,503,29"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="705,5,832,48"/>
+<area shape="poly" title=" " alt="" coords="657,24,689,24,689,29,657,29"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="880,13,1025,40"/>
+<area shape="poly" title=" " alt="" coords="833,24,865,24,865,29,833,29"/>
+<area shape="rect" href="ikcp_8cpp.html#ac9f567bdf7ededd670dd27f0cf8c0122" title=" " alt="" coords="326,64,416,91"/>
+<area shape="poly" title=" " alt="" coords="273,75,310,75,310,80,273,80"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a12626908b5c436bb1172f320cbd2d1cf_icgraph.png" border="0" usemap="#aikcp_8h_a12626908b5c436bb1172f320cbd2d1cf_icgraph" alt=""/></div>
+<map name="aikcp_8h_a12626908b5c436bb1172f320cbd2d1cf_icgraph" id="aikcp_8h_a12626908b5c436bb1172f320cbd2d1cf_icgraph">
+<area shape="rect" title=" " alt="" coords="222,5,302,32"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#ad830c125a4d4d679ec379ad2a75e2924" title=" " alt="" coords="5,5,174,32"/>
+<area shape="poly" title=" " alt="" coords="206,21,174,21,174,16,206,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a83a0ae338fffdc679dceb34633161b44" name="a83a0ae338fffdc679dceb34633161b44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a0ae338fffdc679dceb34633161b44">&#9670;&#160;</a></span>ikcp_setmtu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ikcp_setmtu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mtu</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a83a0ae338fffdc679dceb34633161b44_cgraph.png" border="0" usemap="#aikcp_8h_a83a0ae338fffdc679dceb34633161b44_cgraph" alt=""/></div>
+<map name="aikcp_8h_a83a0ae338fffdc679dceb34633161b44_cgraph" id="aikcp_8h_a83a0ae338fffdc679dceb34633161b44_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,98,65"/>
+<area shape="rect" href="ikcp_8cpp.html#abf2a2ab7bd7f5c19cbe61165e4edd9d1" title=" " alt="" coords="154,13,228,40"/>
+<area shape="poly" title=" " alt="" coords="97,41,138,34,139,39,98,46"/>
+<area shape="rect" href="ikcp_8cpp.html#ac9f567bdf7ededd670dd27f0cf8c0122" title=" " alt="" coords="146,64,236,91"/>
+<area shape="poly" title=" " alt="" coords="98,58,131,64,130,69,97,63"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="284,13,322,40"/>
+<area shape="poly" title=" " alt="" coords="228,24,268,24,268,29,228,29"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="370,13,477,40"/>
+<area shape="poly" title=" " alt="" coords="323,24,355,24,355,29,323,29"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="525,5,652,48"/>
+<area shape="poly" title=" " alt="" coords="477,24,509,24,509,29,477,29"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="700,13,844,40"/>
+<area shape="poly" title=" " alt="" coords="653,24,684,24,684,29,653,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a83a0ae338fffdc679dceb34633161b44_icgraph.png" border="0" usemap="#aikcp_8h_a83a0ae338fffdc679dceb34633161b44_icgraph" alt=""/></div>
+<map name="aikcp_8h_a83a0ae338fffdc679dceb34633161b44_icgraph" id="aikcp_8h_a83a0ae338fffdc679dceb34633161b44_icgraph">
+<area shape="rect" title=" " alt="" coords="200,5,292,32"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,5,152,32"/>
+<area shape="poly" title=" " alt="" coords="184,21,152,21,152,16,184,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae235a6d7cd9a9429e41730309883ad62" name="ae235a6d7cd9a9429e41730309883ad62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae235a6d7cd9a9429e41730309883ad62">&#9670;&#160;</a></span>ikcp_setoutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ikcp_setoutput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*</td>          <td class="paramname"><span class="paramname"><em>output&#160;</em></span>)(const char *buf, int len, <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *kcp, void *user)&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a780ff8e4dd414f83db886cfd96172975" name="a780ff8e4dd414f83db886cfd96172975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780ff8e4dd414f83db886cfd96172975">&#9670;&#160;</a></span>ikcp_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ikcp_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ae9be6f0797849c3e756fdacfe0a76f29">IUINT32</a></td>          <td class="paramname"><span class="paramname"><em>current</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a780ff8e4dd414f83db886cfd96172975_cgraph.png" border="0" usemap="#aikcp_8h_a780ff8e4dd414f83db886cfd96172975_cgraph" alt=""/></div>
+<map name="aikcp_8h_a780ff8e4dd414f83db886cfd96172975_cgraph" id="aikcp_8h_a780ff8e4dd414f83db886cfd96172975_cgraph">
+<area shape="rect" title=" " alt="" coords="5,533,97,560"/>
+<area shape="rect" href="ikcp_8cpp.html#a21784669952a4e3e2f2fcf3363520dc2" title=" " alt="" coords="299,407,372,433"/>
+<area shape="poly" title=" " alt="" coords="81,530,272,443,285,437,287,442,274,448,83,535"/>
+<area shape="rect" href="ikcp_8cpp.html#a2a3d9426417d04f8f1bbfbded14b4eb1" title=" " alt="" coords="145,559,225,585"/>
+<area shape="poly" title=" " alt="" coords="98,553,130,559,129,564,97,558"/>
+<area shape="poly" title=" " alt="" coords="190,557,220,503,243,471,271,443,283,435,286,440,275,447,247,475,224,506,195,560"/>
+<area shape="rect" href="ikcp_8cpp.html#abb18e77915a9a7b9a6badb3496d461b7" title=" " alt="" coords="304,609,367,636"/>
+<area shape="poly" title=" " alt="" coords="226,583,290,605,289,610,225,588"/>
+<area shape="rect" href="ikcp_8cpp.html#a7d86f4db517abbff0030abdc8de1228b" title=" " alt="" coords="306,660,365,687"/>
+<area shape="poly" title=" " alt="" coords="201,584,233,614,274,646,293,656,291,660,272,650,230,618,197,588"/>
+<area shape="rect" href="ikcp_8cpp.html#a967ee187df31d7d3a5b65d64eeada7ae" title=" " alt="" coords="286,711,385,737"/>
+<area shape="poly" title=" " alt="" coords="195,584,224,638,247,669,275,697,280,701,277,705,271,701,243,673,220,641,190,587"/>
+<area shape="rect" href="ikcp_8cpp.html#aa57723466b099571367b9f4de3ece54c" title=" " alt="" coords="274,761,397,788"/>
+<area shape="poly" title=" " alt="" coords="192,585,201,617,218,661,242,707,275,747,279,751,275,755,271,751,237,710,213,663,196,619,187,586"/>
+<area shape="rect" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="485,685,523,712"/>
+<area shape="poly" title=" " alt="" coords="215,556,254,542,301,532,351,530,376,535,400,544,434,570,461,603,481,638,495,669,490,672,477,641,457,606,430,574,397,549,375,540,351,536,302,537,255,547,217,561"/>
+<area shape="rect" href="ikcp_8cpp.html#a1fc51d7f0d279e3503f24e7e20dbce2c" title=" " alt="" coords="292,457,380,484"/>
+<area shape="poly" title=" " alt="" coords="200,556,271,500,290,489,293,494,275,505,203,560"/>
+<area shape="rect" href="ikcp_8cpp.html#ac8c5078a0da23e528c760f68fc1f60eb" title=" " alt="" coords="273,559,398,585"/>
+<area shape="poly" title=" " alt="" coords="225,569,257,569,257,575,225,575"/>
+<area shape="rect" href="ikcp_8cpp.html#ab539e90e3d27fd2604b389c5a65d0050" title=" " alt="" coords="446,736,562,763"/>
+<area shape="poly" title=" " alt="" coords="397,763,431,758,431,763,398,768"/>
+<area shape="rect" href="ikcp_8cpp.html#a01ad503dfe436193f0c9f7213177e78b" title=" " alt="" coords="446,787,562,813"/>
+<area shape="poly" title=" " alt="" coords="398,781,431,786,431,792,397,787"/>
+<area shape="rect" href="ikcp_8cpp.html#a2dbd195fa12f11fdda66fb8fb108e185" title=" " alt="" coords="450,837,558,864"/>
+<area shape="poly" title=" " alt="" coords="368,786,447,823,459,828,457,833,445,828,366,791"/>
+<area shape="poly" title=" " alt="" coords="371,758,397,747,445,722,470,710,472,715,448,726,399,752,373,763"/>
+<area shape="rect" href="namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="610,701,716,728"/>
+<area shape="poly" title=" " alt="" coords="524,698,594,705,594,710,524,703"/>
+<area shape="rect" href="namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="764,769,891,812"/>
+<area shape="poly" title=" " alt="" coords="695,726,767,760,765,765,693,731"/>
+<area shape="rect" href="namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="950,793,1095,820"/>
+<area shape="poly" title=" " alt="" coords="892,793,935,797,935,802,892,799"/>
+<area shape="rect" href="ikcp_8cpp.html#a162b546697122a728f3257a0ec3a3e0a" title=" " alt="" coords="459,407,549,433"/>
+<area shape="poly" title=" " alt="" coords="379,455,444,435,445,440,381,460"/>
+<area shape="rect" href="ikcp_8cpp.html#aade14c947464846c7523f78efa6534ba" title=" " alt="" coords="469,457,539,484"/>
+<area shape="poly" title=" " alt="" coords="380,468,454,468,454,473,380,473"/>
+<area shape="rect" href="printf_8h.html#a5e1075a6c1fce5050424f97a2fac648f" title=" " alt="" coords="631,420,695,447"/>
+<area shape="poly" title=" " alt="" coords="539,460,615,442,616,447,540,465"/>
+<area shape="rect" href="namespacedetail.html#a755ec613824f57d29068751f166ad91b" title=" " alt="" coords="780,363,876,389"/>
+<area shape="poly" title=" " alt="" coords="695,420,772,392,774,397,696,425"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="1450,212,1489,239"/>
+<area shape="poly" title=" " alt="" coords="843,360,885,328,938,298,1006,272,1077,253,1149,239,1219,230,1344,221,1434,221,1434,227,1344,227,1219,235,1150,244,1078,258,1008,277,940,302,888,333,847,364"/>
+<area shape="rect" href="namespacedetail.html#a1092422aa9ff50b4eaa2068e31ccff0f" title=" " alt="" coords="958,173,1087,200"/>
+<area shape="poly" title=" " alt="" coords="833,361,871,293,901,252,938,217,957,205,959,209,941,221,905,256,875,296,838,363"/>
+<area shape="rect" href="namespacedetail.html#a02307ec0131a3aa9df2db7c2f10b69f2" title=" " alt="" coords="982,552,1063,579"/>
+<area shape="poly" title=" " alt="" coords="839,389,879,450,908,486,941,519,976,542,973,547,938,523,904,490,874,453,835,391"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="1440,704,1498,731"/>
+<area shape="poly" title=" " alt="" coords="834,389,845,429,865,483,897,540,917,566,941,588,967,601,1015,616,1152,650,1425,707,1424,712,1151,655,1014,621,965,606,938,593,913,570,892,543,861,485,840,430,829,390"/>
+<area shape="rect" href="namespacedetail.html#a727b5e700f6f0e3aca7e0181e45240f3" title=" " alt="" coords="1197,287,1300,313"/>
+<area shape="poly" title=" " alt="" coords="856,360,895,343,939,329,1002,317,1067,308,1181,299,1182,304,1068,313,1003,322,940,335,897,348,858,365"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="1426,325,1513,352"/>
+<area shape="poly" title=" " alt="" coords="876,371,1410,339,1410,345,877,376"/>
+<area shape="rect" href="namespacedetail.html#a21ef35f3306ada700061355953e35f4d" title=" " alt="" coords="939,743,1106,769"/>
+<area shape="poly" title=" " alt="" coords="832,390,835,451,850,542,863,592,882,642,908,688,941,729,945,732,941,736,937,732,904,691,878,644,858,594,844,543,830,451,826,390"/>
+<area shape="rect" href="namespacedetail.html#a4bed1b172ef600201e6d59ec7f532d0f" title=" " alt="" coords="947,5,1098,32"/>
+<area shape="poly" title=" " alt="" coords="827,362,831,304,847,218,861,171,880,124,905,81,937,42,941,39,945,43,941,46,910,84,885,127,866,173,852,219,837,304,832,362"/>
+<area shape="rect" href="namespacedetail.html#af191853bad5ee9cfad04aad57ce3f761" title=" " alt="" coords="953,413,1092,440"/>
+<area shape="poly" title=" " alt="" coords="877,386,954,406,953,411,875,391"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="1154,540,1344,567"/>
+<area shape="poly" title=" " alt="" coords="848,388,889,418,941,450,1000,477,1061,500,1173,533,1172,538,1059,505,998,481,938,454,886,423,844,392"/>
+<area shape="rect" href="namespacedetail.html#ab32eb7489f534b4b7afa8efd2f3c770e" title=" " alt="" coords="957,56,1088,99"/>
+<area shape="poly" title=" " alt="" coords="828,362,837,315,857,248,889,174,911,140,937,109,942,104,946,108,941,113,915,143,894,177,862,249,843,316,834,363"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="957,123,1088,149"/>
+<area shape="poly" title=" " alt="" coords="830,361,841,322,862,267,893,210,914,183,938,159,943,155,946,159,941,163,918,186,898,212,867,270,846,323,835,363"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="978,692,1067,719"/>
+<area shape="poly" title=" " alt="" coords="833,390,840,442,858,517,872,558,890,599,913,637,941,671,965,688,962,692,938,675,909,640,886,601,867,560,853,518,835,443,828,390"/>
+<area shape="poly" title=" " alt="" coords="1448,221,1430,210,1428,198,1442,189,1469,185,1493,187,1507,194,1511,203,1505,213,1500,210,1506,203,1503,197,1491,193,1469,191,1444,194,1433,200,1435,207,1451,217"/>
+<area shape="poly" title=" " alt="" coords="1087,186,1207,193,1344,204,1434,217,1434,222,1344,209,1206,198,1087,192"/>
+<area shape="rect" href="namespacedetail.html#a1fad02034db0164c9a959f0ffe148dbc" title=" " alt="" coords="1208,591,1290,617"/>
+<area shape="poly" title=" " alt="" coords="1064,570,1192,592,1192,597,1063,575"/>
+<area shape="poly" title=" " alt="" coords="1290,284,1434,234,1435,239,1291,289"/>
+<area shape="poly" title=" " alt="" coords="1212,288,1205,278,1210,268,1224,262,1249,260,1275,263,1289,269,1287,274,1274,268,1249,265,1226,267,1213,272,1210,277,1216,285"/>
+<area shape="poly" title=" " alt="" coords="1301,306,1410,326,1410,331,1300,312"/>
+<area shape="poly" title=" " alt="" coords="1047,411,1208,319,1211,324,1050,415"/>
+<area shape="poly" title=" " alt="" coords="1079,438,1136,448,1204,452,1275,446,1310,437,1343,424,1359,411,1367,396,1375,379,1390,362,1410,351,1412,356,1394,366,1379,382,1371,398,1363,415,1345,429,1312,442,1276,451,1204,457,1135,453,1078,443"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="1187,388,1310,415"/>
+<area shape="poly" title=" " alt="" coords="1092,416,1171,407,1172,413,1092,422"/>
+<area shape="rect" href="namespacedetail.html#a90149e7cc7db72a2c4b8186f52e77d6c" title=" " alt="" coords="1185,489,1312,516"/>
+<area shape="poly" title=" " alt="" coords="1066,438,1193,481,1191,486,1064,443"/>
+<area shape="poly" title=" " alt="" coords="1047,438,1107,482,1130,506,1155,526,1167,532,1165,536,1152,530,1127,510,1104,486,1044,443"/>
+<area shape="rect" href="classbasic__specs.html#af764698dbe47aaeef3cb198972593f78" title=" " alt="" coords="1392,603,1546,629"/>
+<area shape="poly" title=" " alt="" coords="1314,511,1346,526,1362,542,1371,558,1379,573,1394,589,1401,593,1398,598,1390,593,1374,577,1366,560,1358,545,1342,530,1312,516"/>
+<area shape="rect" href="classbasic__specs.html#a192d822d1b986f70a10bfd2c438abce1" title=" " alt="" coords="1398,376,1540,403"/>
+<area shape="poly" title=" " alt="" coords="1306,486,1342,468,1357,455,1366,441,1375,427,1390,413,1399,407,1402,412,1394,417,1379,430,1370,444,1361,458,1346,473,1308,491"/>
+<area shape="rect" href="classbasic__specs.html#a3c56b1a9d662b03cd2b4b1b774781462" title=" " alt="" coords="1399,427,1539,453"/>
+<area shape="poly" title=" " alt="" coords="1298,486,1404,456,1406,461,1299,491"/>
+<area shape="rect" href="classbasic__specs.html#ad7b2fcf7e62cb3cc6b9d8ec72484338d" title=" " alt="" coords="1394,477,1545,504"/>
+<area shape="poly" title=" " alt="" coords="1313,497,1378,493,1378,498,1313,502"/>
+<area shape="rect" href="classbasic__specs.html#a1147588dbb7187d9e8d5022e6da843af" title=" " alt="" coords="1406,552,1532,579"/>
+<area shape="poly" title=" " alt="" coords="1304,514,1345,525,1409,544,1408,550,1343,531,1302,519"/>
+<area shape="rect" href="classbasic__specs.html#a625b0fd2cf9eda4a3e3e94af7f49ef6a" title=" " alt="" coords="1594,427,1766,453"/>
+<area shape="poly" title=" " alt="" coords="1540,437,1578,437,1578,443,1540,443"/>
+<area shape="poly" title=" " alt="" coords="1433,553,1427,543,1431,534,1446,527,1469,525,1494,528,1508,534,1505,539,1493,533,1469,531,1447,533,1435,537,1432,543,1438,550"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="1416,653,1522,680"/>
+<area shape="poly" title=" " alt="" coords="1323,565,1346,576,1362,592,1371,608,1379,624,1394,639,1404,645,1401,650,1390,643,1374,627,1366,611,1358,595,1342,581,1320,570"/>
+<area shape="rect" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171" title=" " alt="" coords="1214,64,1284,91"/>
+<area shape="poly" title=" " alt="" coords="1089,75,1198,75,1198,80,1089,80"/>
+<area shape="rect" href="namespacedetail.html#a94fd8fb87672f6ca33ea17019096e098" title=" " alt="" coords="1430,64,1508,91"/>
+<area shape="poly" title=" " alt="" coords="1285,75,1414,75,1414,80,1285,80"/>
+<area shape="poly" title=" " alt="" coords="1067,704,1424,713,1424,719,1067,709"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="1194,743,1304,769"/>
+<area shape="poly" title=" " alt="" coords="1068,713,1180,738,1179,743,1066,718"/>
+<area shape="rect" href="namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83" title=" " alt="" coords="1190,793,1308,820"/>
+<area shape="poly" title=" " alt="" coords="1068,712,1107,728,1123,741,1132,755,1141,767,1155,779,1177,789,1175,794,1152,784,1137,771,1127,758,1119,745,1104,733,1066,717"/>
+<area shape="rect" href="namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="1186,844,1312,871"/>
+<area shape="poly" title=" " alt="" coords="1068,709,1089,717,1107,729,1119,742,1126,755,1132,781,1138,806,1144,818,1155,830,1173,841,1170,846,1152,834,1140,821,1133,808,1127,782,1121,757,1115,745,1104,733,1086,721,1066,714"/>
+<area shape="poly" title=" " alt="" coords="1304,744,1425,722,1426,728,1304,749"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a780ff8e4dd414f83db886cfd96172975_icgraph.png" border="0" usemap="#aikcp_8h_a780ff8e4dd414f83db886cfd96172975_icgraph" alt=""/></div>
+<map name="aikcp_8h_a780ff8e4dd414f83db886cfd96172975_icgraph" id="aikcp_8h_a780ff8e4dd414f83db886cfd96172975_icgraph">
+<area shape="rect" title=" " alt="" coords="854,13,945,40"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a403a9c094edc9382ecb25fe38ce050ca" title=" " alt="" coords="625,5,806,48"/>
+<area shape="poly" title=" " alt="" coords="838,29,806,29,806,24,838,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#afaf269c96e588ac9030a121dc9adcf43" title=" " alt="" coords="419,13,577,40"/>
+<area shape="poly" title=" " alt="" coords="610,29,578,29,578,24,610,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a7ad86857b5e6c434aec73ac5aceb6dca" title=" " alt="" coords="200,13,371,40"/>
+<area shape="poly" title=" " alt="" coords="404,29,371,29,371,24,404,24"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,13,152,40"/>
+<area shape="poly" title=" " alt="" coords="184,29,152,29,152,24,184,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a07104748365a93087ef50cdb50545847" name="a07104748365a93087ef50cdb50545847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07104748365a93087ef50cdb50545847">&#9670;&#160;</a></span>ikcp_waitsnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ikcp_waitsnd </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6071a18d7a25011d25db6f42079d8b8d" name="a6071a18d7a25011d25db6f42079d8b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6071a18d7a25011d25db6f42079d8b8d">&#9670;&#160;</a></span>ikcp_wndsize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ikcp_wndsize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54616165d5f80d826a68d13f9161758d">ikcpcb</a> *</td>          <td class="paramname"><span class="paramname"><em>kcp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sndwnd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>rcvwnd</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a6071a18d7a25011d25db6f42079d8b8d_cgraph.png" border="0" usemap="#aikcp_8h_a6071a18d7a25011d25db6f42079d8b8d_cgraph" alt=""/></div>
+<map name="aikcp_8h_a6071a18d7a25011d25db6f42079d8b8d_cgraph" id="aikcp_8h_a6071a18d7a25011d25db6f42079d8b8d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,106,32"/>
+<area shape="rect" href="ikcp_8cpp.html#abb18e77915a9a7b9a6badb3496d461b7" title=" " alt="" coords="154,5,217,32"/>
+<area shape="poly" title=" " alt="" coords="106,16,138,16,138,21,106,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ikcp_8h_a6071a18d7a25011d25db6f42079d8b8d_icgraph.png" border="0" usemap="#aikcp_8h_a6071a18d7a25011d25db6f42079d8b8d_icgraph" alt=""/></div>
+<map name="aikcp_8h_a6071a18d7a25011d25db6f42079d8b8d_icgraph" id="aikcp_8h_a6071a18d7a25011d25db6f42079d8b8d_icgraph">
+<area shape="rect" title=" " alt="" coords="200,5,300,32"/>
+<area shape="rect" href="class_h_y_k_t_1_1_kcp_obj.html#a5e53001785ff30ae485a113b9b8a0ddc" title=" " alt="" coords="5,5,152,32"/>
+<area shape="poly" title=" " alt="" coords="184,21,152,21,152,16,184,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e72918b9f0e93adee7ec62635d44a38d.html">KuGouServer</a></li><li class="navelem"><a class="el" href="dir_1f4d31eb974542b2ab12d0259d14eb74.html">NetWork</a></li><li class="navelem"><a class="el" href="dir_bd24ebb063cf6e142f139fb910e49670.html">kcp</a></li><li class="navelem"><a class="el" href="ikcp_8h.html">ikcp.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

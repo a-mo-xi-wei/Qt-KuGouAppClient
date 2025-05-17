@@ -1,0 +1,710 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: CLibhttp类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_c_libhttp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_c_libhttp-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">CLibhttp类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="libhttp_8h_source.html">libhttp.h</a>&gt;</code></p>
+<div class="dynheader">
+类 CLibhttp 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp__inherit__graph.png" border="0" usemap="#a_c_libhttp_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_c_libhttp_inherit__map" id="a_c_libhttp_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,80,76,107"/>
+<area shape="rect" title=" " alt="" coords="6,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="43,48,43,80,38,80,38,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+CLibhttp 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp__coll__graph.png" border="0" usemap="#a_c_libhttp_coll__map" alt="Collaboration graph"/></div>
+<map name="a_c_libhttp_coll__map" id="a_c_libhttp_coll__map">
+<area shape="rect" title=" " alt="" coords="5,80,76,107"/>
+<area shape="rect" title=" " alt="" coords="6,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="43,48,43,80,38,80,38,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a9c7ce3aa95fd87935e4e45fe3a3cfb27" id="r_a9c7ce3aa95fd87935e4e45fe3a3cfb27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c7ce3aa95fd87935e4e45fe3a3cfb27">Progress</a> (qint64 bytesSent, qint64 bytesTotal)</td></tr>
+<tr class="separator:a9c7ce3aa95fd87935e4e45fe3a3cfb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe3d0d9845620807037c8a0f5ec63ac6" id="r_abe3d0d9845620807037c8a0f5ec63ac6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe3d0d9845620807037c8a0f5ec63ac6">Error</a> (QNetworkReply::NetworkError reply)</td></tr>
+<tr class="separator:abe3d0d9845620807037c8a0f5ec63ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:afb2a0a23c4cb2ceddd230442e7f9e8f4" id="r_afb2a0a23c4cb2ceddd230442e7f9e8f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb2a0a23c4cb2ceddd230442e7f9e8f4">httpProgress</a> (qint64 bytesSent, qint64 bytesTotal)</td></tr>
+<tr class="separator:afb2a0a23c4cb2ceddd230442e7f9e8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab530c9bfbf50bde9c0b72203027b1b21" id="r_ab530c9bfbf50bde9c0b72203027b1b21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab530c9bfbf50bde9c0b72203027b1b21">httpTimeout</a> ()</td></tr>
+<tr class="separator:ab530c9bfbf50bde9c0b72203027b1b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a94d813c2800ecf6fbfa56f5eced15701" id="r_a94d813c2800ecf6fbfa56f5eced15701"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94d813c2800ecf6fbfa56f5eced15701">CLibhttp</a> (QObject *parent=nullptr)</td></tr>
+<tr class="separator:a94d813c2800ecf6fbfa56f5eced15701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72034a41ce9f3400cff1d1a26c8f6e1b" id="r_a72034a41ce9f3400cff1d1a26c8f6e1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72034a41ce9f3400cff1d1a26c8f6e1b">~CLibhttp</a> () override</td></tr>
+<tr class="separator:a72034a41ce9f3400cff1d1a26c8f6e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362fb258b5a1ab3db48230467ca3be5a" id="r_a362fb258b5a1ab3db48230467ca3be5a"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a362fb258b5a1ab3db48230467ca3be5a">UrlRequestPost</a> (const QString &amp;url, const QString &amp;data, int timeout=500000)</td></tr>
+<tr class="memdesc:a362fb258b5a1ab3db48230467ca3be5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">向一个http发送一个post请求  <br /></td></tr>
+<tr class="separator:a362fb258b5a1ab3db48230467ca3be5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52d72d391d2b33228bf6eae5dc30fef7" id="r_a52d72d391d2b33228bf6eae5dc30fef7"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52d72d391d2b33228bf6eae5dc30fef7">UrlRequestGet</a> (const QString &amp;url, const QString &amp;data, int timeout=500000)</td></tr>
+<tr class="memdesc:a52d72d391d2b33228bf6eae5dc30fef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">向一个http发送一个get请求  <br /></td></tr>
+<tr class="separator:a52d72d391d2b33228bf6eae5dc30fef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be1b3498eebb405f0396353bdf837b5" id="r_a1be1b3498eebb405f0396353bdf837b5"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1be1b3498eebb405f0396353bdf837b5">UploadFile</a> (const QString &amp;strServerUrl, const QString &amp;srcFilePath, int timeout=500000)</td></tr>
+<tr class="memdesc:a1be1b3498eebb405f0396353bdf837b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">http上传一个文件  <br /></td></tr>
+<tr class="separator:a1be1b3498eebb405f0396353bdf837b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7517480067f7723b125dc8cf7d97a88a" id="r_a7517480067f7723b125dc8cf7d97a88a"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7517480067f7723b125dc8cf7d97a88a">DownloadFile</a> (const QString &amp;strServerUrl, const QString &amp;decFilePath, int timeout=500000)</td></tr>
+<tr class="memdesc:a7517480067f7723b125dc8cf7d97a88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">从http上下载一个文件  <br /></td></tr>
+<tr class="separator:a7517480067f7723b125dc8cf7d97a88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a94d813c2800ecf6fbfa56f5eced15701" name="a94d813c2800ecf6fbfa56f5eced15701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d813c2800ecf6fbfa56f5eced15701">&#9670;&#160;</a></span>CLibhttp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_libhttp.html">CLibhttp</a> </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72034a41ce9f3400cff1d1a26c8f6e1b" name="a72034a41ce9f3400cff1d1a26c8f6e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72034a41ce9f3400cff1d1a26c8f6e1b">&#9670;&#160;</a></span>~CLibhttp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_c_libhttp.html">CLibhttp</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a72034a41ce9f3400cff1d1a26c8f6e1b_cgraph.png" border="0" usemap="#aclass_c_libhttp_a72034a41ce9f3400cff1d1a26c8f6e1b_cgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a72034a41ce9f3400cff1d1a26c8f6e1b_cgraph" id="aclass_c_libhttp_a72034a41ce9f3400cff1d1a26c8f6e1b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,84,108"/>
+<area shape="rect" href="class_c_libhttp.html#a7517480067f7723b125dc8cf7d97a88a" title="从http上下载一个文件" alt="" coords="294,5,394,32"/>
+<area shape="poly" title=" " alt="" coords="81,78,131,61,278,28,279,33,132,67,82,83"/>
+<area shape="rect" href="class_c_libhttp.html#a1be1b3498eebb405f0396353bdf837b5" title="http上传一个文件" alt="" coords="302,56,386,83"/>
+<area shape="poly" title=" " alt="" coords="84,89,287,71,287,77,84,94"/>
+<area shape="rect" href="class_c_libhttp.html#a52d72d391d2b33228bf6eae5dc30fef7" title="向一个http发送一个get请求" alt="" coords="135,107,243,133"/>
+<area shape="poly" title=" " alt="" coords="85,99,120,105,119,110,84,104"/>
+<area shape="rect" href="class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a" title="向一个http发送一个post请求" alt="" coords="132,157,246,184"/>
+<area shape="poly" title=" " alt="" coords="69,106,133,143,143,148,140,153,130,148,66,111"/>
+<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="442,56,516,83"/>
+<area shape="poly" title=" " alt="" coords="383,30,429,48,427,53,381,35"/>
+<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="564,56,659,83"/>
+<area shape="poly" title=" " alt="" coords="516,67,548,67,548,72,516,72"/>
+<area shape="poly" title=" " alt="" coords="386,67,427,67,427,72,386,72"/>
+<area shape="rect" href="class_c_libhttp.html#ab530c9bfbf50bde9c0b72203027b1b21" title=" " alt="" coords="299,107,389,133"/>
+<area shape="poly" title=" " alt="" coords="244,117,284,117,284,123,244,123"/>
+<area shape="poly" title=" " alt="" coords="381,104,427,86,429,91,383,109"/>
+<area shape="poly" title=" " alt="" coords="231,154,285,136,287,141,233,159"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7517480067f7723b125dc8cf7d97a88a" name="a7517480067f7723b125dc8cf7d97a88a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7517480067f7723b125dc8cf7d97a88a">&#9670;&#160;</a></span>DownloadFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DownloadFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>strServerUrl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>decFilePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">500000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从http上下载一个文件 </p>
+<p><a class="el" href="#a7517480067f7723b125dc8cf7d97a88a" title="从http上下载一个文件">CLibhttp::DownloadFile</a> 从http上下载一个文件</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strServerUrl</td><td>要下载的服务器地址 </td></tr>
+    <tr><td class="paramname">decFilePath</td><td>保存文件地址 </td></tr>
+    <tr><td class="paramname">timeout</td><td>超时时间</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果文件下载成功返回真，否则返回假 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a7517480067f7723b125dc8cf7d97a88a_cgraph.png" border="0" usemap="#aclass_c_libhttp_a7517480067f7723b125dc8cf7d97a88a_cgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a7517480067f7723b125dc8cf7d97a88a_cgraph" id="aclass_c_libhttp_a7517480067f7723b125dc8cf7d97a88a_cgraph">
+<area shape="rect" title="从http上下载一个文件" alt="" coords="5,5,106,32"/>
+<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="154,5,227,32"/>
+<area shape="poly" title=" " alt="" coords="106,16,138,16,138,21,106,21"/>
+<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="275,5,370,32"/>
+<area shape="poly" title=" " alt="" coords="227,16,259,16,259,21,227,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a7517480067f7723b125dc8cf7d97a88a_icgraph.png" border="0" usemap="#aclass_c_libhttp_a7517480067f7723b125dc8cf7d97a88a_icgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a7517480067f7723b125dc8cf7d97a88a_icgraph" id="aclass_c_libhttp_a7517480067f7723b125dc8cf7d97a88a_icgraph">
+<area shape="rect" title="从http上下载一个文件" alt="" coords="132,5,232,32"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="5,5,84,32"/>
+<area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abe3d0d9845620807037c8a0f5ec63ac6" name="abe3d0d9845620807037c8a0f5ec63ac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3d0d9845620807037c8a0f5ec63ac6">&#9670;&#160;</a></span>Error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Error </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply::NetworkError</td>          <td class="paramname"><span class="paramname"><em>reply</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afb2a0a23c4cb2ceddd230442e7f9e8f4" name="afb2a0a23c4cb2ceddd230442e7f9e8f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2a0a23c4cb2ceddd230442e7f9e8f4">&#9670;&#160;</a></span>httpProgress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void httpProgress </td>
+          <td>(</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>bytesSent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>bytesTotal</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_afb2a0a23c4cb2ceddd230442e7f9e8f4_icgraph.png" border="0" usemap="#aclass_c_libhttp_afb2a0a23c4cb2ceddd230442e7f9e8f4_icgraph" alt=""/></div>
+<map name="aclass_c_libhttp_afb2a0a23c4cb2ceddd230442e7f9e8f4_icgraph" id="aclass_c_libhttp_afb2a0a23c4cb2ceddd230442e7f9e8f4_icgraph">
+<area shape="rect" title=" " alt="" coords="959,56,1054,83"/>
+<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="838,56,911,83"/>
+<area shape="poly" title=" " alt="" coords="943,72,911,72,911,67,943,67"/>
+<area shape="rect" href="class_c_libhttp.html#a7517480067f7723b125dc8cf7d97a88a" title="从http上下载一个文件" alt="" coords="689,56,790,83"/>
+<area shape="poly" title=" " alt="" coords="822,72,790,72,790,67,822,67"/>
+<area shape="rect" href="class_c_libhttp.html#ab530c9bfbf50bde9c0b72203027b1b21" title=" " alt="" coords="694,132,785,159"/>
+<area shape="poly" title=" " alt="" coords="837,93,766,134,764,129,834,89"/>
+<area shape="rect" href="class_c_libhttp.html#a1be1b3498eebb405f0396353bdf837b5" title="http上传一个文件" alt="" coords="698,5,781,32"/>
+<area shape="poly" title=" " alt="" coords="822,53,776,35,778,30,824,48"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="263,81,341,108"/>
+<area shape="poly" title=" " alt="" coords="674,76,341,95,341,90,673,70"/>
+<area shape="rect" href="class_about_dialog.html#a95170a0a271a7e8133ff94cad8a73e45" title="获取 Gitee 项目的 Star 数量" alt="" coords="427,208,641,235"/>
+<area shape="poly" title=" " alt="" coords="703,169,642,198,605,210,604,205,640,194,701,164"/>
+<area shape="rect" href="class_c_libhttp.html#a52d72d391d2b33228bf6eae5dc30fef7" title="向一个http发送一个get请求" alt="" coords="480,157,588,184"/>
+<area shape="poly" title=" " alt="" coords="679,155,589,167,589,161,678,150"/>
+<area shape="rect" href="class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a" title="向一个http发送一个post请求" alt="" coords="477,107,591,133"/>
+<area shape="poly" title=" " alt="" coords="678,141,592,130,592,124,679,135"/>
+<area shape="rect" href="class_about_dialog.html#a589417f264bff3ae9919ac50f8f360a3" title="初始化对话框布局" alt="" coords="225,208,379,235"/>
+<area shape="poly" title=" " alt="" coords="411,224,379,224,379,219,411,219"/>
+<area shape="rect" href="class_about_dialog.html#a1a9553ce8ca226111b5822aa27d3a772" title="构造函数，初始化关于对话框" alt="" coords="5,208,177,235"/>
+<area shape="poly" title=" " alt="" coords="209,224,177,224,177,219,209,219"/>
+<area shape="poly" title=" " alt="" coords="464,159,426,148,332,111,334,106,428,143,466,153"/>
+<area shape="poly" title=" " alt="" coords="462,115,341,102,342,96,462,110"/>
+<area shape="poly" title=" " alt="" coords="683,27,565,42,428,65,342,86,341,81,426,60,564,37,682,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab530c9bfbf50bde9c0b72203027b1b21" name="ab530c9bfbf50bde9c0b72203027b1b21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab530c9bfbf50bde9c0b72203027b1b21">&#9670;&#160;</a></span>httpTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void httpTimeout </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_cgraph.png" border="0" usemap="#aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_cgraph" alt=""/></div>
+<map name="aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_cgraph" id="aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,96,32"/>
+<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="144,5,217,32"/>
+<area shape="poly" title=" " alt="" coords="96,16,128,16,128,21,96,21"/>
+<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="265,5,360,32"/>
+<area shape="poly" title=" " alt="" coords="217,16,249,16,249,21,217,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_icgraph.png" border="0" usemap="#aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_icgraph" alt=""/></div>
+<map name="aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_icgraph" id="aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_icgraph">
+<area shape="rect" title=" " alt="" coords="689,56,780,83"/>
+<area shape="rect" href="class_about_dialog.html#a95170a0a271a7e8133ff94cad8a73e45" title="获取 Gitee 项目的 Star 数量" alt="" coords="427,5,641,32"/>
+<area shape="poly" title=" " alt="" coords="674,55,641,47,595,35,596,30,642,41,675,50"/>
+<area shape="rect" href="class_c_libhttp.html#a52d72d391d2b33228bf6eae5dc30fef7" title="向一个http发送一个get请求" alt="" coords="480,56,588,83"/>
+<area shape="poly" title=" " alt="" coords="674,72,589,72,589,67,674,67"/>
+<area shape="rect" href="class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a" title="向一个http发送一个post请求" alt="" coords="477,107,591,133"/>
+<area shape="poly" title=" " alt="" coords="675,88,642,97,592,110,591,104,641,92,674,83"/>
+<area shape="rect" href="class_about_dialog.html#a589417f264bff3ae9919ac50f8f360a3" title="初始化对话框布局" alt="" coords="225,5,379,32"/>
+<area shape="poly" title=" " alt="" coords="411,21,379,21,379,16,411,16"/>
+<area shape="rect" href="class_about_dialog.html#a1a9553ce8ca226111b5822aa27d3a772" title="构造函数，初始化关于对话框" alt="" coords="5,5,177,32"/>
+<area shape="poly" title=" " alt="" coords="209,21,177,21,177,16,209,16"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="263,81,341,108"/>
+<area shape="poly" title=" " alt="" coords="465,80,342,93,341,88,464,74"/>
+<area shape="poly" title=" " alt="" coords="462,115,341,102,342,96,462,110"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c7ce3aa95fd87935e4e45fe3a3cfb27" name="a9c7ce3aa95fd87935e4e45fe3a3cfb27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c7ce3aa95fd87935e4e45fe3a3cfb27">&#9670;&#160;</a></span>Progress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Progress </td>
+          <td>(</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>bytesSent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>bytesTotal</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a9c7ce3aa95fd87935e4e45fe3a3cfb27_cgraph.png" border="0" usemap="#aclass_c_libhttp_a9c7ce3aa95fd87935e4e45fe3a3cfb27_cgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a9c7ce3aa95fd87935e4e45fe3a3cfb27_cgraph" id="aclass_c_libhttp_a9c7ce3aa95fd87935e4e45fe3a3cfb27_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,79,32"/>
+<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="127,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="79,16,111,16,111,21,79,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a9c7ce3aa95fd87935e4e45fe3a3cfb27_icgraph.png" border="0" usemap="#aclass_c_libhttp_a9c7ce3aa95fd87935e4e45fe3a3cfb27_icgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a9c7ce3aa95fd87935e4e45fe3a3cfb27_icgraph" id="aclass_c_libhttp_a9c7ce3aa95fd87935e4e45fe3a3cfb27_icgraph">
+<area shape="rect" title=" " alt="" coords="838,56,911,83"/>
+<area shape="rect" href="class_c_libhttp.html#a7517480067f7723b125dc8cf7d97a88a" title="从http上下载一个文件" alt="" coords="689,56,790,83"/>
+<area shape="poly" title=" " alt="" coords="822,72,790,72,790,67,822,67"/>
+<area shape="rect" href="class_c_libhttp.html#ab530c9bfbf50bde9c0b72203027b1b21" title=" " alt="" coords="694,132,785,159"/>
+<area shape="poly" title=" " alt="" coords="837,93,766,134,764,129,834,89"/>
+<area shape="rect" href="class_c_libhttp.html#a1be1b3498eebb405f0396353bdf837b5" title="http上传一个文件" alt="" coords="698,5,781,32"/>
+<area shape="poly" title=" " alt="" coords="822,53,776,35,778,30,824,48"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="263,81,341,108"/>
+<area shape="poly" title=" " alt="" coords="674,76,341,95,341,90,673,70"/>
+<area shape="rect" href="class_about_dialog.html#a95170a0a271a7e8133ff94cad8a73e45" title="获取 Gitee 项目的 Star 数量" alt="" coords="427,208,641,235"/>
+<area shape="poly" title=" " alt="" coords="703,169,642,198,605,210,604,205,640,194,701,164"/>
+<area shape="rect" href="class_c_libhttp.html#a52d72d391d2b33228bf6eae5dc30fef7" title="向一个http发送一个get请求" alt="" coords="480,157,588,184"/>
+<area shape="poly" title=" " alt="" coords="679,155,589,167,589,161,678,150"/>
+<area shape="rect" href="class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a" title="向一个http发送一个post请求" alt="" coords="477,107,591,133"/>
+<area shape="poly" title=" " alt="" coords="678,141,592,130,592,124,679,135"/>
+<area shape="rect" href="class_about_dialog.html#a589417f264bff3ae9919ac50f8f360a3" title="初始化对话框布局" alt="" coords="225,208,379,235"/>
+<area shape="poly" title=" " alt="" coords="411,224,379,224,379,219,411,219"/>
+<area shape="rect" href="class_about_dialog.html#a1a9553ce8ca226111b5822aa27d3a772" title="构造函数，初始化关于对话框" alt="" coords="5,208,177,235"/>
+<area shape="poly" title=" " alt="" coords="209,224,177,224,177,219,209,219"/>
+<area shape="poly" title=" " alt="" coords="464,159,426,148,332,111,334,106,428,143,466,153"/>
+<area shape="poly" title=" " alt="" coords="462,115,341,102,342,96,462,110"/>
+<area shape="poly" title=" " alt="" coords="683,27,565,42,428,65,342,86,341,81,426,60,564,37,682,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1be1b3498eebb405f0396353bdf837b5" name="a1be1b3498eebb405f0396353bdf837b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be1b3498eebb405f0396353bdf837b5">&#9670;&#160;</a></span>UploadFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UploadFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>strServerUrl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>srcFilePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">500000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>http上传一个文件 </p>
+<p><a class="el" href="#a1be1b3498eebb405f0396353bdf837b5" title="http上传一个文件">CLibhttp::UploadFile</a> http上传一个文件</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strServerUrl</td><td>要上传的http服务器路径 </td></tr>
+    <tr><td class="paramname">srcFilePath</td><td>要上传的文件路径 </td></tr>
+    <tr><td class="paramname">timeout</td><td>上传文件超时时间</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果文件上传成功返回真，否则返回假 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a1be1b3498eebb405f0396353bdf837b5_cgraph.png" border="0" usemap="#aclass_c_libhttp_a1be1b3498eebb405f0396353bdf837b5_cgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a1be1b3498eebb405f0396353bdf837b5_cgraph" id="aclass_c_libhttp_a1be1b3498eebb405f0396353bdf837b5_cgraph">
+<area shape="rect" title="http上传一个文件" alt="" coords="5,5,89,32"/>
+<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="137,5,210,32"/>
+<area shape="poly" title=" " alt="" coords="89,16,121,16,121,21,89,21"/>
+<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="258,5,353,32"/>
+<area shape="poly" title=" " alt="" coords="210,16,242,16,242,21,210,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a1be1b3498eebb405f0396353bdf837b5_icgraph.png" border="0" usemap="#aclass_c_libhttp_a1be1b3498eebb405f0396353bdf837b5_icgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a1be1b3498eebb405f0396353bdf837b5_icgraph" id="aclass_c_libhttp_a1be1b3498eebb405f0396353bdf837b5_icgraph">
+<area shape="rect" title="http上传一个文件" alt="" coords="132,5,215,32"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="5,5,84,32"/>
+<area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a52d72d391d2b33228bf6eae5dc30fef7" name="a52d72d391d2b33228bf6eae5dc30fef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52d72d391d2b33228bf6eae5dc30fef7">&#9670;&#160;</a></span>UrlRequestGet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UrlRequestGet </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">500000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向一个http发送一个get请求 </p>
+<p>UrlRequestGet 向一个http发送一个get请求</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>要请求的url </td></tr>
+    <tr><td class="paramname">timeout</td><td>连接超时时间 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_cgraph.png" border="0" usemap="#aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_cgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_cgraph" id="aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_cgraph">
+<area shape="rect" title="向一个http发送一个get请求" alt="" coords="5,5,114,32"/>
+<area shape="rect" href="class_c_libhttp.html#ab530c9bfbf50bde9c0b72203027b1b21" title=" " alt="" coords="162,5,252,32"/>
+<area shape="poly" title=" " alt="" coords="114,16,146,16,146,21,114,21"/>
+<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="300,5,373,32"/>
+<area shape="poly" title=" " alt="" coords="253,16,284,16,284,21,253,21"/>
+<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="421,5,517,32"/>
+<area shape="poly" title=" " alt="" coords="374,16,406,16,406,21,374,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_icgraph.png" border="0" usemap="#aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_icgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_icgraph" id="aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_icgraph">
+<area shape="rect" title="向一个http发送一个get请求" alt="" coords="132,5,240,32"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="5,5,84,32"/>
+<area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a362fb258b5a1ab3db48230467ca3be5a" name="a362fb258b5a1ab3db48230467ca3be5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362fb258b5a1ab3db48230467ca3be5a">&#9670;&#160;</a></span>UrlRequestPost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UrlRequestPost </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">500000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向一个http发送一个post请求 </p>
+<p>UrlRequestPost 向一个http发送一个post请求</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>要请求的url </td></tr>
+    <tr><td class="paramname">data</td><td>要发送的http数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果请求成功返回请求成功的数据，否则返回空 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a362fb258b5a1ab3db48230467ca3be5a_cgraph.png" border="0" usemap="#aclass_c_libhttp_a362fb258b5a1ab3db48230467ca3be5a_cgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a362fb258b5a1ab3db48230467ca3be5a_cgraph" id="aclass_c_libhttp_a362fb258b5a1ab3db48230467ca3be5a_cgraph">
+<area shape="rect" title="向一个http发送一个post请求" alt="" coords="5,5,120,32"/>
+<area shape="rect" href="class_c_libhttp.html#ab530c9bfbf50bde9c0b72203027b1b21" title=" " alt="" coords="168,5,258,32"/>
+<area shape="poly" title=" " alt="" coords="120,16,152,16,152,21,120,21"/>
+<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="306,5,379,32"/>
+<area shape="poly" title=" " alt="" coords="259,16,290,16,290,21,259,21"/>
+<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="427,5,523,32"/>
+<area shape="poly" title=" " alt="" coords="380,16,412,16,412,21,380,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a362fb258b5a1ab3db48230467ca3be5a_icgraph.png" border="0" usemap="#aclass_c_libhttp_a362fb258b5a1ab3db48230467ca3be5a_icgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a362fb258b5a1ab3db48230467ca3be5a_icgraph" id="aclass_c_libhttp_a362fb258b5a1ab3db48230467ca3be5a_icgraph">
+<area shape="rect" title="向一个http发送一个post请求" alt="" coords="132,5,246,32"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="5,5,84,32"/>
+<area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="libhttp_8h_source.html">libhttp.h</a></li>
+<li><a class="el" href="libhttp_8cpp.html">libhttp.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_c_libhttp.html">CLibhttp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

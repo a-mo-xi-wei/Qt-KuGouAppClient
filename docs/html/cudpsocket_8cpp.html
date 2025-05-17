@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: cudpsocket.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('cudpsocket_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">cudpsocket.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="cudpsocket_8h_source.html">cudpsocket.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_qs_log_8h_source.html">QsLog.h</a>&quot;</code><br />
+<code>#include &quot;common.h&quot;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;QCryptographicHash&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+cudpsocket.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="cudpsocket_8cpp__incl.png" border="0" usemap="#acudpsocket_8cpp" alt=""/></div>
+<map name="acudpsocket_8cpp" id="acudpsocket_8cpp">
+<area shape="rect" title=" " alt="" coords="1746,5,1859,32"/>
+<area shape="rect" href="cudpsocket_8h.html" title=" " alt="" coords="1201,80,1300,107"/>
+<area shape="poly" title=" " alt="" coords="1746,30,1316,86,1315,81,1745,25"/>
+<area shape="rect" title=" " alt="" coords="768,155,850,181"/>
+<area shape="poly" title=" " alt="" coords="1746,26,1503,44,1347,61,1189,83,1012,118,866,154,865,149,1011,113,1189,77,1346,55,1502,39,1745,20"/>
+<area shape="rect" href="_qs_log_8h.html" title=" " alt="" coords="1584,80,1655,107"/>
+<area shape="poly" title=" " alt="" coords="1771,35,1667,76,1665,71,1770,30"/>
+<area shape="rect" title=" " alt="" coords="1780,155,1849,181"/>
+<area shape="poly" title=" " alt="" coords="1775,35,1751,48,1729,65,1717,85,1716,95,1719,105,1740,129,1767,147,1765,151,1737,133,1715,108,1711,95,1712,83,1725,62,1748,44,1772,30"/>
+<area shape="rect" title=" " alt="" coords="1729,80,1793,107"/>
+<area shape="poly" title=" " alt="" coords="1797,34,1778,68,1773,65,1793,31"/>
+<area shape="rect" title=" " alt="" coords="1817,80,1873,107"/>
+<area shape="poly" title=" " alt="" coords="1812,31,1832,65,1828,68,1807,34"/>
+<area shape="rect" title=" " alt="" coords="1897,80,1950,107"/>
+<area shape="poly" title=" " alt="" coords="1825,30,1891,69,1888,74,1822,35"/>
+<area shape="rect" title=" " alt="" coords="1975,80,2035,107"/>
+<area shape="poly" title=" " alt="" coords="1839,30,1961,74,1960,79,1837,35"/>
+<area shape="rect" title=" " alt="" coords="2059,80,2202,107"/>
+<area shape="poly" title=" " alt="" coords="1860,30,2059,74,2058,79,1859,35"/>
+<area shape="rect" title=" " alt="" coords="2226,80,2278,107"/>
+<area shape="poly" title=" " alt="" coords="1860,23,2015,42,2111,57,2211,77,2210,82,2110,62,2014,47,1859,28"/>
+<area shape="poly" title=" " alt="" coords="1201,104,1055,125,866,157,865,152,1054,120,1200,99"/>
+<area shape="rect" href="_ned_allocated_object_8h.html" title=" " alt="" coords="875,155,1023,181"/>
+<area shape="poly" title=" " alt="" coords="1201,109,1017,153,1016,148,1200,104"/>
+<area shape="rect" title=" " alt="" coords="1166,229,1236,256"/>
+<area shape="poly" title=" " alt="" coords="1201,101,1171,107,1140,117,1111,133,1089,156,1084,167,1084,176,1097,195,1122,211,1153,224,1150,229,1120,216,1094,199,1079,178,1078,166,1084,153,1108,129,1138,112,1169,102,1200,96"/>
+<area shape="rect" title=" " alt="" coords="1098,155,1194,181"/>
+<area shape="poly" title=" " alt="" coords="1234,109,1178,148,1175,143,1231,105"/>
+<area shape="rect" title=" " alt="" coords="1219,155,1282,181"/>
+<area shape="poly" title=" " alt="" coords="1253,107,1253,139,1248,139,1248,107"/>
+<area shape="rect" title=" " alt="" coords="1516,155,1582,181"/>
+<area shape="poly" title=" " alt="" coords="1301,103,1502,151,1500,156,1300,108"/>
+<area shape="rect" title=" " alt="" coords="1306,155,1373,181"/>
+<area shape="poly" title=" " alt="" coords="1268,105,1314,143,1311,147,1264,109"/>
+<area shape="rect" href="kcpobj_8h.html" title=" " alt="" coords="1397,155,1493,181"/>
+<area shape="poly" title=" " alt="" coords="1285,105,1398,146,1396,151,1283,110"/>
+<area shape="rect" href="_my_common_2common_8h.html" title=" " alt="" coords="721,229,804,256"/>
+<area shape="poly" title=" " alt="" coords="917,184,810,226,808,221,916,179"/>
+<area shape="rect" title=" " alt="" coords="5,304,101,331"/>
+<area shape="poly" title=" " alt="" coords="721,249,469,267,296,284,116,306,116,301,295,278,469,262,720,244"/>
+<area shape="rect" title=" " alt="" coords="124,304,192,331"/>
+<area shape="poly" title=" " alt="" coords="721,249,505,266,359,283,208,306,207,301,358,278,504,261,720,244"/>
+<area shape="rect" title=" " alt="" coords="216,304,306,331"/>
+<area shape="poly" title=" " alt="" coords="721,251,551,272,322,306,321,301,550,267,721,246"/>
+<area shape="rect" title=" " alt="" coords="330,304,427,331"/>
+<area shape="poly" title=" " alt="" coords="721,254,442,306,441,301,720,249"/>
+<area shape="rect" title=" " alt="" coords="450,304,541,331"/>
+<area shape="poly" title=" " alt="" coords="721,258,556,302,555,297,720,253"/>
+<area shape="rect" title=" " alt="" coords="565,304,685,331"/>
+<area shape="poly" title=" " alt="" coords="740,259,664,299,661,294,737,254"/>
+<area shape="rect" title=" " alt="" coords="709,304,816,331"/>
+<area shape="poly" title=" " alt="" coords="765,257,765,288,760,288,760,257"/>
+<area shape="rect" title=" " alt="" coords="840,304,911,331"/>
+<area shape="poly" title=" " alt="" coords="784,254,844,293,842,298,781,259"/>
+<area shape="rect" title=" " alt="" coords="935,304,1003,331"/>
+<area shape="poly" title=" " alt="" coords="799,254,922,297,920,302,797,259"/>
+<area shape="rect" title=" " alt="" coords="1026,304,1109,331"/>
+<area shape="poly" title=" " alt="" coords="805,251,1012,300,1010,305,804,256"/>
+<area shape="rect" title=" " alt="" coords="1132,304,1214,331"/>
+<area shape="poly" title=" " alt="" coords="804,247,940,269,1118,301,1117,306,939,274,803,253"/>
+<area shape="rect" title=" " alt="" coords="1238,304,1327,331"/>
+<area shape="poly" title=" " alt="" coords="804,246,982,266,1223,301,1222,306,981,272,804,251"/>
+<area shape="poly" title=" " alt="" coords="1403,184,1251,229,1250,224,1402,179"/>
+<area shape="rect" href="ikcp_8h.html" title=" " alt="" coords="1401,229,1457,256"/>
+<area shape="poly" title=" " alt="" coords="1445,182,1438,215,1432,214,1440,181"/>
+<area shape="rect" title=" " alt="" coords="1481,229,1545,256"/>
+<area shape="poly" title=" " alt="" coords="1459,180,1493,216,1489,220,1455,184"/>
+<area shape="rect" title=" " alt="" coords="1351,304,1419,331"/>
+<area shape="poly" title=" " alt="" coords="1424,258,1403,292,1398,289,1419,255"/>
+<area shape="rect" title=" " alt="" coords="1443,304,1506,331"/>
+<area shape="poly" title=" " alt="" coords="1439,255,1461,289,1456,292,1435,258"/>
+<area shape="rect" title=" " alt="" coords="1530,304,1598,331"/>
+<area shape="poly" title=" " alt="" coords="1454,254,1528,294,1525,299,1451,259"/>
+<area shape="poly" title=" " alt="" coords="1609,109,1574,145,1570,142,1605,105"/>
+<area shape="rect" href="_qs_log_level_8h.html" title=" " alt="" coords="1569,229,1670,256"/>
+<area shape="poly" title=" " alt="" coords="1622,107,1622,214,1617,214,1617,107"/>
+<area shape="rect" href="_qs_log_dest_8h.html" title=" " alt="" coords="1657,155,1756,181"/>
+<area shape="poly" title=" " alt="" coords="1636,105,1682,143,1678,147,1633,109"/>
+<area shape="poly" title=" " alt="" coords="1655,105,1767,146,1765,151,1653,110"/>
+<area shape="poly" title=" " alt="" coords="1693,184,1648,221,1644,217,1690,180"/>
+<area shape="rect" title=" " alt="" coords="1695,229,1808,256"/>
+<area shape="poly" title=" " alt="" coords="1716,180,1738,215,1733,217,1712,183"/>
+<area shape="rect" title=" " alt="" coords="1833,229,1905,256"/>
+<area shape="poly" title=" " alt="" coords="1736,179,1828,220,1826,225,1734,184"/>
+</map>
+</div>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e72918b9f0e93adee7ec62635d44a38d.html">KuGouServer</a></li><li class="navelem"><a class="el" href="dir_1f4d31eb974542b2ab12d0259d14eb74.html">NetWork</a></li><li class="navelem"><a class="el" href="cudpsocket_8cpp.html">cudpsocket.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

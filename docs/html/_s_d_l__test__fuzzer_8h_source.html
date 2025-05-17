@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_test_fuzzer.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__test__fuzzer_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SDL_test_fuzzer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_s_d_l__test__fuzzer_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Simple DirectMedia Layer</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  Copyright (C) 1997-2025 Sam Lantinga &lt;slouken@libsdl.org&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  This software is provided &#39;as-is&#39;, without any express or implied</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  warranty.  In no event will the authors be held liable for any damages</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  arising from the use of this software.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  Permission is granted to anyone to use this software for any purpose,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  including commercial applications, and to alter it and redistribute it</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  freely, subject to the following restrictions:</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  1. The origin of this software must not be misrepresented; you must not</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">     claim that you wrote the original software. If you use this software</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">     in a product, an acknowledgment in the product documentation would be</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">     appreciated but is not required.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  2. Altered source versions must be plainly marked as such, and must not be</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">     misrepresented as being the original software.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  3. This notice may not be removed or altered from any source distribution.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"></span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">  Data generators for fuzzing test data in a reproducible way.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"></span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#ifndef SDL_test_fuzzer_h_</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define SDL_test_fuzzer_h_</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="begin__code_8h.html">begin_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/* Set up for C function definitions, even when using C++ */</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">  Based on GSOC code by Markus Kauppila &lt;markus.kauppila@gmail.com&gt;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a623db129ea615326bed457ebb9703c1e">   63</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a623db129ea615326bed457ebb9703c1e">SDLTest_FuzzerInit</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</a> execKey);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#ac8dedcebddb993c4a5c86fb914133289">   71</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#ac8dedcebddb993c4a5c86fb914133289">SDLTest_RandomUint8</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#ac4988f65c0b1e921ac6a498ba9b9150a">   78</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a5fc98623306a32e69eaab63e89e1d138">Sint8</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#ac4988f65c0b1e921ac6a498ba9b9150a">SDLTest_RandomSint8</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a3eceb16e97b4c4c5143904c36ba3a3d5">   86</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a31fcc0a076c9068668173ee26d33e42b">Uint16</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a3eceb16e97b4c4c5143904c36ba3a3d5">SDLTest_RandomUint16</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#aaf6c560d87e5c01b638b9072a85369aa">   93</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a9d0257032c0e146ab6121bf0122712f5">Sint16</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#aaf6c560d87e5c01b638b9072a85369aa">SDLTest_RandomSint16</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a26976cb8f4e44aec5e83c90b900e7ae0">  101</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a26976cb8f4e44aec5e83c90b900e7ae0">SDLTest_RandomSint32</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a853884a6887973eb5072f7a6be20f51e">  109</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a853884a6887973eb5072f7a6be20f51e">SDLTest_RandomUint32</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a3c9b42462ea1d24552306004338f7d32">  116</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a3c9b42462ea1d24552306004338f7d32">SDLTest_RandomUint64</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#ab503ec55dfd34e9c491f83bfff374bdb">  124</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#ab503ec55dfd34e9c491f83bfff374bdb">SDLTest_RandomSint64</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a2f9e47894c17386a36793504fc11de85">  129</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a2f9e47894c17386a36793504fc11de85">SDLTest_RandomUnitFloat</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a9f3159422e964a51f17243ce86b6eef6">  134</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a9f3159422e964a51f17243ce86b6eef6">SDLTest_RandomUnitDouble</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a65a242a0a22e7cbea6e9081567fdd056">  140</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a65a242a0a22e7cbea6e9081567fdd056">SDLTest_RandomFloat</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a31167fd1a3b922f62896210dbe30c32c">  146</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a31167fd1a3b922f62896210dbe30c32c">SDLTest_RandomDouble</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a129a58a37dc23847b8257569bf56d16f">  167</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a129a58a37dc23847b8257569bf56d16f">SDLTest_RandomUint8BoundaryValue</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a> boundary1, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a> boundary2, <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> validDomain);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a3710dba14db764872949252f558429ba">  188</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a31fcc0a076c9068668173ee26d33e42b">Uint16</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a3710dba14db764872949252f558429ba">SDLTest_RandomUint16BoundaryValue</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a31fcc0a076c9068668173ee26d33e42b">Uint16</a> boundary1, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a31fcc0a076c9068668173ee26d33e42b">Uint16</a> boundary2, <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> validDomain);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a9e718145eaf96f611cd67fc530473e3a">  209</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a9e718145eaf96f611cd67fc530473e3a">SDLTest_RandomUint32BoundaryValue</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> boundary1, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> boundary2, <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> validDomain);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#abc660d9b04554c8c2717325224b88b6a">  230</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#abc660d9b04554c8c2717325224b88b6a">SDLTest_RandomUint64BoundaryValue</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</a> boundary1, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</a> boundary2, <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> validDomain);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a09ec06adf1ca58afa5283be6b4f5fdfc">  251</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a5fc98623306a32e69eaab63e89e1d138">Sint8</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a09ec06adf1ca58afa5283be6b4f5fdfc">SDLTest_RandomSint8BoundaryValue</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a5fc98623306a32e69eaab63e89e1d138">Sint8</a> boundary1, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a5fc98623306a32e69eaab63e89e1d138">Sint8</a> boundary2, <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> validDomain);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#ae11fb12560b1a9180b1645d6ca1c6af6">  273</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a9d0257032c0e146ab6121bf0122712f5">Sint16</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#ae11fb12560b1a9180b1645d6ca1c6af6">SDLTest_RandomSint16BoundaryValue</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a9d0257032c0e146ab6121bf0122712f5">Sint16</a> boundary1, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a9d0257032c0e146ab6121bf0122712f5">Sint16</a> boundary2, <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> validDomain);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#ab17fbfddfa253bb3d64412000488fc07">  294</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#ab17fbfddfa253bb3d64412000488fc07">SDLTest_RandomSint32BoundaryValue</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</a> boundary1, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</a> boundary2, <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> validDomain);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a0b6a8004aba7d72595f80540fa0b6727">  315</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a0b6a8004aba7d72595f80540fa0b6727">SDLTest_RandomSint64BoundaryValue</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</a> boundary1, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</a> boundary2, <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> validDomain);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a5c81f42e213ad1608cf5f29669eb8521">  329</a></span><a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</a> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a5c81f42e213ad1608cf5f29669eb8521">SDLTest_RandomIntegerInRange</a>(<a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</a> min, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</a> max);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span></div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#af897306a58db0f68e053fc28cc28e078">  341</a></span><span class="keywordtype">char</span> * <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#af897306a58db0f68e053fc28cc28e078">SDLTest_RandomAsciiString</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#ab945d938652f887b7389afabc5442588">  355</a></span><span class="keywordtype">char</span> * <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#ab945d938652f887b7389afabc5442588">SDLTest_RandomAsciiStringWithMaximumLength</a>(<span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a5c0738fe9fcce8c6b2d54e2a3b951a97">maxLength</a>);</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#aa0c9c462a0cb9bbfe49e38b53821e341">  369</a></span><span class="keywordtype">char</span> * <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#aa0c9c462a0cb9bbfe49e38b53821e341">SDLTest_RandomAsciiStringOfSize</a>(<span class="keywordtype">int</span> <a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>);</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span></div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno"><a class="line" href="_s_d_l__test__fuzzer_8h.html#a2a0e63a6e02a55141edbdfa53b201c9b">  376</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_s_d_l__test__fuzzer_8h.html#a2a0e63a6e02a55141edbdfa53b201c9b">SDLTest_GetFuzzerInvocationCount</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="comment">/* Ends C function definitions when using C++ */</span></div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>}</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><span class="preprocessor">#include &quot;<a class="code" href="close__code_8h.html">close_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span><span class="preprocessor">#endif </span><span class="comment">/* SDL_test_fuzzer_h_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span><span class="comment">/* vi: set ts=4 sw=4 expandtab: */</span></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a5c0738fe9fcce8c6b2d54e2a3b951a97"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a5c0738fe9fcce8c6b2d54e2a3b951a97">maxLength</a></div><div class="ttdeci">GLsizei maxLength</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:4442</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a2944638813a090aa23e62f4da842c3e2"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a></div><div class="ttdeci">uint8_t Uint8</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:198</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a2c1a61d5c466bb74680be0a8cc1b455d"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</a></div><div class="ttdeci">int64_t Sint64</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:229</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a31fcc0a076c9068668173ee26d33e42b"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a31fcc0a076c9068668173ee26d33e42b">Uint16</a></div><div class="ttdeci">uint16_t Uint16</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:210</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a5fc98623306a32e69eaab63e89e1d138"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a5fc98623306a32e69eaab63e89e1d138">Sint8</a></div><div class="ttdeci">int8_t Sint8</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:192</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a7a90b941db9d4582e9ad7abb9940ff7e"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</a></div><div class="ttdeci">int32_t Sint32</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:216</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a8fca68df0f976765230fe589a7c7733b"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a></div><div class="ttdeci">SDL_bool</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:181</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a9d0257032c0e146ab6121bf0122712f5"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a9d0257032c0e146ab6121bf0122712f5">Sint16</a></div><div class="ttdeci">int16_t Sint16</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:204</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_ac006cf2bd55a42a9cc8ae9f123aa7e13"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</a></div><div class="ttdeci">uint64_t Uint64</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:235</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_add440eff171ea5f55cb00c4a9ab8672d"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a></div><div class="ttdeci">uint32_t Uint32</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:222</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a09ec06adf1ca58afa5283be6b4f5fdfc"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a09ec06adf1ca58afa5283be6b4f5fdfc">SDLTest_RandomSint8BoundaryValue</a></div><div class="ttdeci">Sint8 SDLTest_RandomSint8BoundaryValue(Sint8 boundary1, Sint8 boundary2, SDL_bool validDomain)</div><div class="ttdoc">Returns a random boundary value for Sint8 within the given boundaries.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a0b6a8004aba7d72595f80540fa0b6727"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a0b6a8004aba7d72595f80540fa0b6727">SDLTest_RandomSint64BoundaryValue</a></div><div class="ttdeci">Sint64 SDLTest_RandomSint64BoundaryValue(Sint64 boundary1, Sint64 boundary2, SDL_bool validDomain)</div><div class="ttdoc">Returns a random boundary value for Sint64 within the given boundaries.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a129a58a37dc23847b8257569bf56d16f"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a129a58a37dc23847b8257569bf56d16f">SDLTest_RandomUint8BoundaryValue</a></div><div class="ttdeci">Uint8 SDLTest_RandomUint8BoundaryValue(Uint8 boundary1, Uint8 boundary2, SDL_bool validDomain)</div><div class="ttdoc">Returns a random boundary value for Uint8 within the given boundaries.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a26976cb8f4e44aec5e83c90b900e7ae0"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a26976cb8f4e44aec5e83c90b900e7ae0">SDLTest_RandomSint32</a></div><div class="ttdeci">Sint32 SDLTest_RandomSint32(void)</div><div class="ttdoc">Returns a random integer</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a2a0e63a6e02a55141edbdfa53b201c9b"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a2a0e63a6e02a55141edbdfa53b201c9b">SDLTest_GetFuzzerInvocationCount</a></div><div class="ttdeci">int SDLTest_GetFuzzerInvocationCount(void)</div><div class="ttdoc">Get the invocation count for the fuzzer since last ...FuzzerInit.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a2f9e47894c17386a36793504fc11de85"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a2f9e47894c17386a36793504fc11de85">SDLTest_RandomUnitFloat</a></div><div class="ttdeci">float SDLTest_RandomUnitFloat(void)</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a31167fd1a3b922f62896210dbe30c32c"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a31167fd1a3b922f62896210dbe30c32c">SDLTest_RandomDouble</a></div><div class="ttdeci">double SDLTest_RandomDouble(void)</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a3710dba14db764872949252f558429ba"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a3710dba14db764872949252f558429ba">SDLTest_RandomUint16BoundaryValue</a></div><div class="ttdeci">Uint16 SDLTest_RandomUint16BoundaryValue(Uint16 boundary1, Uint16 boundary2, SDL_bool validDomain)</div><div class="ttdoc">Returns a random boundary value for Uint16 within the given boundaries.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a3c9b42462ea1d24552306004338f7d32"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a3c9b42462ea1d24552306004338f7d32">SDLTest_RandomUint64</a></div><div class="ttdeci">Uint64 SDLTest_RandomUint64(void)</div><div class="ttdoc">Returns random Uint64.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a3eceb16e97b4c4c5143904c36ba3a3d5"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a3eceb16e97b4c4c5143904c36ba3a3d5">SDLTest_RandomUint16</a></div><div class="ttdeci">Uint16 SDLTest_RandomUint16(void)</div><div class="ttdoc">Returns a random Uint16</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a5c81f42e213ad1608cf5f29669eb8521"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a5c81f42e213ad1608cf5f29669eb8521">SDLTest_RandomIntegerInRange</a></div><div class="ttdeci">Sint32 SDLTest_RandomIntegerInRange(Sint32 min, Sint32 max)</div><div class="ttdoc">Returns integer in range [min, max] (inclusive).</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a623db129ea615326bed457ebb9703c1e"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a623db129ea615326bed457ebb9703c1e">SDLTest_FuzzerInit</a></div><div class="ttdeci">void SDLTest_FuzzerInit(Uint64 execKey)</div><div class="ttdoc">Initializes the fuzzer for a test</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a65a242a0a22e7cbea6e9081567fdd056"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a65a242a0a22e7cbea6e9081567fdd056">SDLTest_RandomFloat</a></div><div class="ttdeci">float SDLTest_RandomFloat(void)</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a853884a6887973eb5072f7a6be20f51e"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a853884a6887973eb5072f7a6be20f51e">SDLTest_RandomUint32</a></div><div class="ttdeci">Uint32 SDLTest_RandomUint32(void)</div><div class="ttdoc">Returns a random positive integer</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a9e718145eaf96f611cd67fc530473e3a"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a9e718145eaf96f611cd67fc530473e3a">SDLTest_RandomUint32BoundaryValue</a></div><div class="ttdeci">Uint32 SDLTest_RandomUint32BoundaryValue(Uint32 boundary1, Uint32 boundary2, SDL_bool validDomain)</div><div class="ttdoc">Returns a random boundary value for Uint32 within the given boundaries.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_a9f3159422e964a51f17243ce86b6eef6"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#a9f3159422e964a51f17243ce86b6eef6">SDLTest_RandomUnitDouble</a></div><div class="ttdeci">double SDLTest_RandomUnitDouble(void)</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_aa0c9c462a0cb9bbfe49e38b53821e341"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#aa0c9c462a0cb9bbfe49e38b53821e341">SDLTest_RandomAsciiStringOfSize</a></div><div class="ttdeci">char * SDLTest_RandomAsciiStringOfSize(int size)</div><div class="ttdoc">Generates random null-terminated string.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_aaf6c560d87e5c01b638b9072a85369aa"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#aaf6c560d87e5c01b638b9072a85369aa">SDLTest_RandomSint16</a></div><div class="ttdeci">Sint16 SDLTest_RandomSint16(void)</div><div class="ttdoc">Returns a random Sint16</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_ab17fbfddfa253bb3d64412000488fc07"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#ab17fbfddfa253bb3d64412000488fc07">SDLTest_RandomSint32BoundaryValue</a></div><div class="ttdeci">Sint32 SDLTest_RandomSint32BoundaryValue(Sint32 boundary1, Sint32 boundary2, SDL_bool validDomain)</div><div class="ttdoc">Returns a random boundary value for Sint32 within the given boundaries.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_ab503ec55dfd34e9c491f83bfff374bdb"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#ab503ec55dfd34e9c491f83bfff374bdb">SDLTest_RandomSint64</a></div><div class="ttdeci">Sint64 SDLTest_RandomSint64(void)</div><div class="ttdoc">Returns random Sint64.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_ab945d938652f887b7389afabc5442588"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#ab945d938652f887b7389afabc5442588">SDLTest_RandomAsciiStringWithMaximumLength</a></div><div class="ttdeci">char * SDLTest_RandomAsciiStringWithMaximumLength(int maxLength)</div><div class="ttdoc">Generates random null-terminated string.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_abc660d9b04554c8c2717325224b88b6a"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#abc660d9b04554c8c2717325224b88b6a">SDLTest_RandomUint64BoundaryValue</a></div><div class="ttdeci">Uint64 SDLTest_RandomUint64BoundaryValue(Uint64 boundary1, Uint64 boundary2, SDL_bool validDomain)</div><div class="ttdoc">Returns a random boundary value for Uint64 within the given boundaries.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_ac4988f65c0b1e921ac6a498ba9b9150a"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#ac4988f65c0b1e921ac6a498ba9b9150a">SDLTest_RandomSint8</a></div><div class="ttdeci">Sint8 SDLTest_RandomSint8(void)</div><div class="ttdoc">Returns a random Sint8</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_ac8dedcebddb993c4a5c86fb914133289"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#ac8dedcebddb993c4a5c86fb914133289">SDLTest_RandomUint8</a></div><div class="ttdeci">Uint8 SDLTest_RandomUint8(void)</div><div class="ttdoc">Returns a random Uint8</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_ae11fb12560b1a9180b1645d6ca1c6af6"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#ae11fb12560b1a9180b1645d6ca1c6af6">SDLTest_RandomSint16BoundaryValue</a></div><div class="ttdeci">Sint16 SDLTest_RandomSint16BoundaryValue(Sint16 boundary1, Sint16 boundary2, SDL_bool validDomain)</div><div class="ttdoc">Returns a random boundary value for Sint16 within the given boundaries.</div></div>
+<div class="ttc" id="a_s_d_l__test__fuzzer_8h_html_af897306a58db0f68e053fc28cc28e078"><div class="ttname"><a href="_s_d_l__test__fuzzer_8h.html#af897306a58db0f68e053fc28cc28e078">SDLTest_RandomAsciiString</a></div><div class="ttdeci">char * SDLTest_RandomAsciiString(void)</div><div class="ttdoc">Generates random null-terminated string.</div></div>
+<div class="ttc" id="abegin__code_8h_html"><div class="ttname"><a href="begin__code_8h.html">begin_code.h</a></div><div class="ttdoc">This file sets things up for C dynamic library function definitions, static inlined functions,...</div></div>
+<div class="ttc" id="aclose__code_8h_html"><div class="ttname"><a href="close__code_8h.html">close_code.h</a></div><div class="ttdoc">This file reverses the effects of begin_code.h and should be included after you finish any function a...</div></div>
+<div class="ttc" id="agroup__lavu__mem__funcs_html_ga9f139c614d49f2a707b6037305b0fec0"><div class="ttname"><a href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a></div><div class="ttdeci">GLsizeiptr size</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:829</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__test__fuzzer_8h.html">SDL_test_fuzzer.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

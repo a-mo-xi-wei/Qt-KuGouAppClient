@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: log_msg结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structspdlog_1_1details_1_1log__msg.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structspdlog_1_1details_1_1log__msg-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">log_msg结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="log__msg_8h_source.html">log_msg.h</a>&gt;</code></p>
+<div class="dynheader">
+类 log_msg 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg__inherit__graph.png" border="0" usemap="#alog__msg_inherit__map" alt="Inheritance graph"/></div>
+<map name="alog__msg_inherit__map" id="alog__msg_inherit__map">
+<area shape="rect" title=" " alt="" coords="25,5,95,32"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html" title=" " alt="" coords="5,80,115,107"/>
+<area shape="poly" title=" " alt="" coords="63,48,63,80,57,80,57,48"/>
+<area shape="rect" href="structspdlog_1_1details_1_1async__msg.html" title=" " alt="" coords="16,155,104,181"/>
+<area shape="poly" title=" " alt="" coords="63,122,63,154,57,154,57,122"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+log_msg 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg__coll__graph.png" border="0" usemap="#alog__msg_coll__map" alt="Collaboration graph"/></div>
+<map name="alog__msg_coll__map" id="alog__msg_coll__map">
+<area shape="rect" title=" " alt="" coords="12,96,83,123"/>
+<area shape="rect" href="structspdlog_1_1source__loc.html" title=" " alt="" coords="5,5,90,32"/>
+<area shape="poly" title=" " alt="" coords="50,48,50,95,45,95,45,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5d2033d768e870294ac454d0fc85cf77" id="r_a5d2033d768e870294ac454d0fc85cf77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d2033d768e870294ac454d0fc85cf77">log_msg</a> ()=default</td></tr>
+<tr class="separator:a5d2033d768e870294ac454d0fc85cf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40bcdd320d54abaf1a96f05d8921a6ab" id="r_a40bcdd320d54abaf1a96f05d8921a6ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40bcdd320d54abaf1a96f05d8921a6ab">log_msg</a> (log_clock::time_point log_time, <a class="el" href="structspdlog_1_1source__loc.html">source_loc</a> loc, <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> <a class="el" href="#a8e601abde94665d6ae1ce66190b6c0ee">logger_name</a>, <a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> lvl, <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> msg)</td></tr>
+<tr class="separator:a40bcdd320d54abaf1a96f05d8921a6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a0f92e724c01874d3c37751ccce084" id="r_a07a0f92e724c01874d3c37751ccce084"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07a0f92e724c01874d3c37751ccce084">log_msg</a> (<a class="el" href="structspdlog_1_1source__loc.html">source_loc</a> loc, <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> <a class="el" href="#a8e601abde94665d6ae1ce66190b6c0ee">logger_name</a>, <a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> lvl, <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> msg)</td></tr>
+<tr class="separator:a07a0f92e724c01874d3c37751ccce084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db55fdb5096fb4517fea4451682b54b" id="r_a8db55fdb5096fb4517fea4451682b54b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8db55fdb5096fb4517fea4451682b54b">log_msg</a> (<a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> <a class="el" href="#a8e601abde94665d6ae1ce66190b6c0ee">logger_name</a>, <a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> lvl, <a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> msg)</td></tr>
+<tr class="separator:a8db55fdb5096fb4517fea4451682b54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c51898d6024626195ef3eedc2a5dd2" id="r_a17c51898d6024626195ef3eedc2a5dd2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17c51898d6024626195ef3eedc2a5dd2">log_msg</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> &amp;other)=default</td></tr>
+<tr class="separator:a17c51898d6024626195ef3eedc2a5dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc68d79881c3a50786c87d383c88def" id="r_a6bc68d79881c3a50786c87d383c88def"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bc68d79881c3a50786c87d383c88def">operator=</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> &amp;other)=default</td></tr>
+<tr class="separator:a6bc68d79881c3a50786c87d383c88def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a8e601abde94665d6ae1ce66190b6c0ee" id="r_a8e601abde94665d6ae1ce66190b6c0ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e601abde94665d6ae1ce66190b6c0ee">logger_name</a></td></tr>
+<tr class="separator:a8e601abde94665d6ae1ce66190b6c0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c76064e80cfd5db64db44349fbc4402" id="r_a4c76064e80cfd5db64db44349fbc4402"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c76064e80cfd5db64db44349fbc4402">level</a> {<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109a53ace14c115e45153a1c9105accceb4c">level::off</a>}</td></tr>
+<tr class="separator:a4c76064e80cfd5db64db44349fbc4402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ab1b74a5063d4265aa5a188341fe72" id="r_a43ab1b74a5063d4265aa5a188341fe72"><td class="memItemLeft" align="right" valign="top">log_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43ab1b74a5063d4265aa5a188341fe72">time</a></td></tr>
+<tr class="separator:a43ab1b74a5063d4265aa5a188341fe72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac87cd51d837c3b81891b98ec42541a24" id="r_ac87cd51d837c3b81891b98ec42541a24"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac87cd51d837c3b81891b98ec42541a24">thread_id</a> {0}</td></tr>
+<tr class="separator:ac87cd51d837c3b81891b98ec42541a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e145682a62cf5d39d66d731fde858f" id="r_a33e145682a62cf5d39d66d731fde858f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33e145682a62cf5d39d66d731fde858f">color_range_start</a> {0}</td></tr>
+<tr class="separator:a33e145682a62cf5d39d66d731fde858f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae89420566b05a70234c9476c09991a" id="r_a5ae89420566b05a70234c9476c09991a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ae89420566b05a70234c9476c09991a">color_range_end</a> {0}</td></tr>
+<tr class="separator:a5ae89420566b05a70234c9476c09991a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c3c13ca0d18cd56fd8ede48d9c01eab" id="r_a4c3c13ca0d18cd56fd8ede48d9c01eab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structspdlog_1_1source__loc.html">source_loc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c3c13ca0d18cd56fd8ede48d9c01eab">source</a></td></tr>
+<tr class="separator:a4c3c13ca0d18cd56fd8ede48d9c01eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac733b1eeb98cf999a51eeeb8dfe153b8" id="r_ac733b1eeb98cf999a51eeeb8dfe153b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac733b1eeb98cf999a51eeeb8dfe153b8">payload</a></td></tr>
+<tr class="separator:ac733b1eeb98cf999a51eeeb8dfe153b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5d2033d768e870294ac454d0fc85cf77" name="a5d2033d768e870294ac454d0fc85cf77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d2033d768e870294ac454d0fc85cf77">&#9670;&#160;</a></span>log_msg() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg_a5d2033d768e870294ac454d0fc85cf77_icgraph.png" border="0" usemap="#astructspdlog_1_1details_1_1log__msg_a5d2033d768e870294ac454d0fc85cf77_icgraph" alt=""/></div>
+<map name="astructspdlog_1_1details_1_1log__msg_a5d2033d768e870294ac454d0fc85cf77_icgraph" id="astructspdlog_1_1details_1_1log__msg_a5d2033d768e870294ac454d0fc85cf77_icgraph">
+<area shape="rect" title=" " alt="" coords="406,208,476,235"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a17c51898d6024626195ef3eedc2a5dd2" title=" " alt="" coords="248,5,318,32"/>
+<area shape="poly" title=" " alt="" coords="432,194,422,160,407,120,385,80,356,46,338,34,318,27,320,22,341,30,360,42,390,77,412,118,427,158,437,192"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a40bcdd320d54abaf1a96f05d8921a6ab" title=" " alt="" coords="248,56,318,83"/>
+<area shape="poly" title=" " alt="" coords="426,195,399,145,379,119,356,97,338,86,318,79,320,74,340,81,360,93,383,115,403,142,431,192"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a07a0f92e724c01874d3c37751ccce084" title=" " alt="" coords="248,107,318,133"/>
+<area shape="poly" title=" " alt="" coords="417,199,389,172,357,148,318,131,320,126,359,143,393,168,420,195"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a8db55fdb5096fb4517fea4451682b54b" title=" " alt="" coords="248,157,318,184"/>
+<area shape="poly" title=" " alt="" coords="391,208,318,184,320,179,392,203"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#ad281b5b493401203811b76b56e825200" title=" " alt="" coords="209,283,358,341"/>
+<area shape="poly" title=" " alt="" coords="404,245,337,284,335,280,402,241"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#ada84839a0835a605650bfea3df9fde3e" title=" " alt="" coords="8,41,158,100"/>
+<area shape="poly" title=" " alt="" coords="391,231,349,233,301,230,252,219,207,198,188,179,180,157,174,136,159,114,145,103,149,99,163,110,178,133,185,156,193,176,210,194,254,214,302,224,349,227,390,226"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#ac79e012099544350dd377ea8c67e8600" title=" " alt="" coords="8,457,158,516"/>
+<area shape="poly" title=" " alt="" coords="437,250,428,286,413,328,391,370,360,406,332,419,281,436,159,470,157,465,280,431,330,414,356,402,386,367,408,325,423,284,432,249"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#a147fd5bfc3fae67a5b643e141c93ecf5" title=" " alt="" coords="209,467,358,525"/>
+<area shape="poly" title=" " alt="" coords="438,250,429,292,414,344,392,399,360,450,341,468,337,464,356,446,387,397,409,342,424,291,433,249"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a6bc68d79881c3a50786c87d383c88def" title=" " alt="" coords="245,365,322,392"/>
+<area shape="poly" title=" " alt="" coords="432,251,404,303,384,331,360,355,342,366,323,374,321,369,339,362,356,351,380,328,400,301,427,248"/>
+<area shape="poly" title=" " alt="" coords="308,270,298,264,283,261,270,263,261,268,257,274,257,283,251,282,252,272,258,264,268,258,283,256,300,259,311,266"/>
+<area shape="rect" href="structspdlog_1_1details_1_1async__msg.html#a4b1a93efb82980340043e3330f9f0b99" title=" " alt="" coords="9,124,157,167"/>
+<area shape="poly" title=" " alt="" coords="237,273,207,242,184,209,174,195,159,181,141,169,144,165,162,177,178,192,188,206,211,238,241,270"/>
+<area shape="rect" href="structspdlog_1_1details_1_1async__msg.html#a3c6447d92b1d67c19636323777edf69d" title=" " alt="" coords="9,191,157,233"/>
+<area shape="poly" title=" " alt="" coords="215,277,159,248,135,236,137,232,162,243,218,272"/>
+<area shape="rect" href="structspdlog_1_1details_1_1async__msg.html#a2df186f799ffc029dd7da3ad0ddb41a6" title=" " alt="" coords="9,257,157,300"/>
+<area shape="poly" title=" " alt="" coords="193,300,157,294,158,288,194,294"/>
+<area shape="poly" title=" " alt="" coords="233,274,206,241,190,206,185,175,178,145,159,114,146,102,150,98,163,110,183,143,190,174,195,204,211,239,237,270"/>
+<area shape="poly" title=" " alt="" coords="212,354,211,355,195,378,187,400,180,423,163,447,149,459,146,455,159,444,175,421,182,399,190,376,207,352,208,350"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#adf6ce8b4a6d748fa9bebb7d91564e120" title=" " alt="" coords="5,324,161,367"/>
+<area shape="poly" title=" " alt="" coords="194,339,162,344,161,339,193,333"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#aa1e2c27e591e68b958494cda4b373dd9" title=" " alt="" coords="5,391,161,433"/>
+<area shape="poly" title=" " alt="" coords="217,351,162,381,137,392,135,388,159,376,215,347"/>
+<area shape="poly" title=" " alt="" coords="176,318,208,313,209,318,177,323"/>
+<area shape="poly" title=" " alt="" coords="230,373,161,361,161,356,231,367"/>
+<area shape="poly" title=" " alt="" coords="231,390,161,402,161,396,230,385"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a40bcdd320d54abaf1a96f05d8921a6ab" name="a40bcdd320d54abaf1a96f05d8921a6ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40bcdd320d54abaf1a96f05d8921a6ab">&#9670;&#160;</a></span>log_msg() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> </td>
+          <td>(</td>
+          <td class="paramtype">log_clock::time_point</td>          <td class="paramname"><span class="paramname"><em>log_time</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structspdlog_1_1source__loc.html">source_loc</a></td>          <td class="paramname"><span class="paramname"><em>loc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a></td>          <td class="paramname"><span class="paramname"><em>logger_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a></td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a></td>          <td class="paramname"><span class="paramname"><em>msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg_a40bcdd320d54abaf1a96f05d8921a6ab_cgraph.png" border="0" usemap="#astructspdlog_1_1details_1_1log__msg_a40bcdd320d54abaf1a96f05d8921a6ab_cgraph" alt=""/></div>
+<map name="astructspdlog_1_1details_1_1log__msg_a40bcdd320d54abaf1a96f05d8921a6ab_cgraph" id="astructspdlog_1_1details_1_1log__msg_a40bcdd320d54abaf1a96f05d8921a6ab_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a5d2033d768e870294ac454d0fc85cf77" title=" " alt="" coords="124,5,194,32"/>
+<area shape="poly" title=" " alt="" coords="76,16,108,16,108,21,76,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a07a0f92e724c01874d3c37751ccce084" name="a07a0f92e724c01874d3c37751ccce084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a0f92e724c01874d3c37751ccce084">&#9670;&#160;</a></span>log_msg() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structspdlog_1_1source__loc.html">spdlog::source_loc</a></td>          <td class="paramname"><span class="paramname"><em>loc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a></td>          <td class="paramname"><span class="paramname"><em>logger_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a></td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">spdlog::string_view_t</a></td>          <td class="paramname"><span class="paramname"><em>msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg_a07a0f92e724c01874d3c37751ccce084_cgraph.png" border="0" usemap="#astructspdlog_1_1details_1_1log__msg_a07a0f92e724c01874d3c37751ccce084_cgraph" alt=""/></div>
+<map name="astructspdlog_1_1details_1_1log__msg_a07a0f92e724c01874d3c37751ccce084_cgraph" id="astructspdlog_1_1details_1_1log__msg_a07a0f92e724c01874d3c37751ccce084_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a5d2033d768e870294ac454d0fc85cf77" title=" " alt="" coords="124,5,194,32"/>
+<area shape="poly" title=" " alt="" coords="76,16,108,16,108,21,76,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8db55fdb5096fb4517fea4451682b54b" name="a8db55fdb5096fb4517fea4451682b54b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db55fdb5096fb4517fea4451682b54b">&#9670;&#160;</a></span>log_msg() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a></td>          <td class="paramname"><span class="paramname"><em>logger_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a></td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">spdlog::string_view_t</a></td>          <td class="paramname"><span class="paramname"><em>msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg_a8db55fdb5096fb4517fea4451682b54b_cgraph.png" border="0" usemap="#astructspdlog_1_1details_1_1log__msg_a8db55fdb5096fb4517fea4451682b54b_cgraph" alt=""/></div>
+<map name="astructspdlog_1_1details_1_1log__msg_a8db55fdb5096fb4517fea4451682b54b_cgraph" id="astructspdlog_1_1details_1_1log__msg_a8db55fdb5096fb4517fea4451682b54b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a5d2033d768e870294ac454d0fc85cf77" title=" " alt="" coords="124,5,194,32"/>
+<area shape="poly" title=" " alt="" coords="76,16,108,16,108,21,76,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a17c51898d6024626195ef3eedc2a5dd2" name="a17c51898d6024626195ef3eedc2a5dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c51898d6024626195ef3eedc2a5dd2">&#9670;&#160;</a></span>log_msg() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg_a17c51898d6024626195ef3eedc2a5dd2_cgraph.png" border="0" usemap="#astructspdlog_1_1details_1_1log__msg_a17c51898d6024626195ef3eedc2a5dd2_cgraph" alt=""/></div>
+<map name="astructspdlog_1_1details_1_1log__msg_a17c51898d6024626195ef3eedc2a5dd2_cgraph" id="astructspdlog_1_1details_1_1log__msg_a17c51898d6024626195ef3eedc2a5dd2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a5d2033d768e870294ac454d0fc85cf77" title=" " alt="" coords="124,5,194,32"/>
+<area shape="poly" title=" " alt="" coords="76,16,108,16,108,21,76,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6bc68d79881c3a50786c87d383c88def" name="a6bc68d79881c3a50786c87d383c88def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc68d79881c3a50786c87d383c88def">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> &amp; operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg_a6bc68d79881c3a50786c87d383c88def_cgraph.png" border="0" usemap="#astructspdlog_1_1details_1_1log__msg_a6bc68d79881c3a50786c87d383c88def_cgraph" alt=""/></div>
+<map name="astructspdlog_1_1details_1_1log__msg_a6bc68d79881c3a50786c87d383c88def_cgraph" id="astructspdlog_1_1details_1_1log__msg_a6bc68d79881c3a50786c87d383c88def_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,82,32"/>
+<area shape="rect" href="structspdlog_1_1details_1_1log__msg.html#a5d2033d768e870294ac454d0fc85cf77" title=" " alt="" coords="130,5,200,32"/>
+<area shape="poly" title=" " alt="" coords="82,16,114,16,114,21,82,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structspdlog_1_1details_1_1log__msg_a6bc68d79881c3a50786c87d383c88def_icgraph.png" border="0" usemap="#astructspdlog_1_1details_1_1log__msg_a6bc68d79881c3a50786c87d383c88def_icgraph" alt=""/></div>
+<map name="astructspdlog_1_1details_1_1log__msg_a6bc68d79881c3a50786c87d383c88def_icgraph" id="astructspdlog_1_1details_1_1log__msg_a6bc68d79881c3a50786c87d383c88def_icgraph">
+<area shape="rect" title=" " alt="" coords="609,300,686,327"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#adf6ce8b4a6d748fa9bebb7d91564e120" title=" " alt="" coords="406,213,561,256"/>
+<area shape="poly" title=" " alt="" coords="603,295,528,259,531,254,605,290"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#aa1e2c27e591e68b958494cda4b373dd9" title=" " alt="" coords="5,371,161,413"/>
+<area shape="poly" title=" " alt="" coords="594,323,161,384,161,379,594,318"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#ad281b5b493401203811b76b56e825200" title=" " alt="" coords="209,205,358,264"/>
+<area shape="poly" title=" " alt="" coords="390,246,359,246,359,241,390,241"/>
+<area shape="poly" title=" " alt="" coords="374,223,405,223,405,229,374,228"/>
+<area shape="poly" title=" " alt="" coords="315,193,303,186,283,184,266,186,255,191,249,197,249,205,244,205,244,195,252,186,265,181,283,179,304,181,317,188"/>
+<area shape="rect" href="structspdlog_1_1details_1_1async__msg.html#a4b1a93efb82980340043e3330f9f0b99" title=" " alt="" coords="9,5,157,48"/>
+<area shape="poly" title=" " alt="" coords="259,193,217,126,190,92,159,62,142,51,145,46,162,58,194,89,222,123,263,190"/>
+<area shape="rect" href="structspdlog_1_1details_1_1async__msg.html#a3c6447d92b1d67c19636323777edf69d" title=" " alt="" coords="9,72,157,115"/>
+<area shape="poly" title=" " alt="" coords="241,196,203,162,159,129,139,118,141,113,162,124,206,157,245,192"/>
+<area shape="rect" href="structspdlog_1_1details_1_1async__msg.html#a2df186f799ffc029dd7da3ad0ddb41a6" title=" " alt="" coords="9,139,157,181"/>
+<area shape="poly" title=" " alt="" coords="194,204,142,184,144,180,195,199"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#ada84839a0835a605650bfea3df9fde3e" title=" " alt="" coords="8,205,158,264"/>
+<area shape="poly" title=" " alt="" coords="193,237,158,237,158,232,193,232"/>
+<area shape="rect" href="classspdlog_1_1details_1_1log__msg__buffer.html#ac79e012099544350dd377ea8c67e8600" title=" " alt="" coords="8,288,158,347"/>
+<area shape="poly" title=" " alt="" coords="198,273,157,290,155,285,196,268"/>
+<area shape="poly" title=" " alt="" coords="251,278,211,320,162,361,142,372,140,368,159,356,207,317,247,274"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a5ae89420566b05a70234c9476c09991a" name="a5ae89420566b05a70234c9476c09991a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ae89420566b05a70234c9476c09991a">&#9670;&#160;</a></span>color_range_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t color_range_end {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel mutable">mutable</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33e145682a62cf5d39d66d731fde858f" name="a33e145682a62cf5d39d66d731fde858f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33e145682a62cf5d39d66d731fde858f">&#9670;&#160;</a></span>color_range_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t color_range_start {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel mutable">mutable</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c76064e80cfd5db64db44349fbc4402" name="a4c76064e80cfd5db64db44349fbc4402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c76064e80cfd5db64db44349fbc4402">&#9670;&#160;</a></span>level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> level {<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109a53ace14c115e45153a1c9105accceb4c">level::off</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e601abde94665d6ae1ce66190b6c0ee" name="a8e601abde94665d6ae1ce66190b6c0ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e601abde94665d6ae1ce66190b6c0ee">&#9670;&#160;</a></span>logger_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> logger_name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac733b1eeb98cf999a51eeeb8dfe153b8" name="ac733b1eeb98cf999a51eeeb8dfe153b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac733b1eeb98cf999a51eeeb8dfe153b8">&#9670;&#160;</a></span>payload</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacespdlog.html#abb9a0806eb1d2148f9d7457e31fef180">string_view_t</a> payload</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c3c13ca0d18cd56fd8ede48d9c01eab" name="a4c3c13ca0d18cd56fd8ede48d9c01eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3c13ca0d18cd56fd8ede48d9c01eab">&#9670;&#160;</a></span>source</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspdlog_1_1source__loc.html">source_loc</a> source</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac87cd51d837c3b81891b98ec42541a24" name="ac87cd51d837c3b81891b98ec42541a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87cd51d837c3b81891b98ec42541a24">&#9670;&#160;</a></span>thread_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t thread_id {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43ab1b74a5063d4265aa5a188341fe72" name="a43ab1b74a5063d4265aa5a188341fe72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ab1b74a5063d4265aa5a188341fe72">&#9670;&#160;</a></span>time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">log_clock::time_point time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="log__msg_8h_source.html">log_msg.h</a></li>
+<li><a class="el" href="log__msg-inl_8h_source.html">log_msg-inl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="namespacespdlog_1_1details.html">details</a></li><li class="navelem"><a class="el" href="structspdlog_1_1details_1_1log__msg.html">log_msg</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: VideoEncodedFrame类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_video_encoded_frame.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_video_encoded_frame-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">VideoEncodedFrame类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>管理编码视频帧的类  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_video_encoded_frame_8h_source.html">VideoEncodedFrame.h</a>&gt;</code></p>
+<div class="dynheader">
+VideoEncodedFrame 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_encoded_frame__coll__graph.png" border="0" usemap="#a_video_encoded_frame_coll__map" alt="Collaboration graph"/></div>
+<map name="a_video_encoded_frame_coll__map" id="a_video_encoded_frame_coll__map">
+<area shape="rect" title="管理编码视频帧的类" alt="" coords="33,277,176,304"/>
+<area shape="rect" href="struct_t___n_a_l_u.html" title="NAL 单元结构" alt="" coords="68,187,141,213"/>
+<area shape="poly" title=" " alt="" coords="107,229,107,277,102,277,102,229"/>
+<area shape="rect" href="struct_t___h264___n_a_l_u.html" title="H.264 NAL 单元结构" alt="" coords="5,96,116,123"/>
+<area shape="poly" title=" " alt="" coords="71,137,81,161,97,185,92,188,76,164,66,139"/>
+<area shape="rect" href="structt__h265__nalu.html" title=" " alt="" coords="140,96,232,123"/>
+<area shape="poly" title=" " alt="" coords="166,136,140,164,118,188,114,184,136,161,162,132"/>
+<area shape="rect" href="structt__h265__nalu__header.html" title=" " alt="" coords="117,5,254,32"/>
+<area shape="poly" title=" " alt="" coords="188,48,188,95,183,95,183,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:afe6afb47ab726f64efd1149457e8df33" id="r_afe6afb47ab726f64efd1149457e8df33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe6afb47ab726f64efd1149457e8df33">VideoEncodedFrame</a> ()</td></tr>
+<tr class="memdesc:afe6afb47ab726f64efd1149457e8df33"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:afe6afb47ab726f64efd1149457e8df33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63016aed2ab9ed687508f5916176f6d2" id="r_a63016aed2ab9ed687508f5916176f6d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63016aed2ab9ed687508f5916176f6d2">~VideoEncodedFrame</a> ()</td></tr>
+<tr class="memdesc:a63016aed2ab9ed687508f5916176f6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a63016aed2ab9ed687508f5916176f6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403cf6f4a773c023a56b40fd2ee1eaf3" id="r_a403cf6f4a773c023a56b40fd2ee1eaf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a403cf6f4a773c023a56b40fd2ee1eaf3">setNalu</a> (<a class="el" href="struct_t___n_a_l_u.html">T_NALU</a> *<a class="el" href="#a7b99d5319e47c1e5ca33ee76d52215e1">nalu</a>, const int64_t &amp;time=0)</td></tr>
+<tr class="memdesc:a403cf6f4a773c023a56b40fd2ee1eaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 NAL 单元  <br /></td></tr>
+<tr class="separator:a403cf6f4a773c023a56b40fd2ee1eaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f3dc3ef4cf63c671fee594187671ec5" id="r_a5f3dc3ef4cf63c671fee594187671ec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f3dc3ef4cf63c671fee594187671ec5">setNalu</a> (<a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="#ab766533ac99363cb6d92a52357cfb7a1">buffer</a>, const int &amp;len, const bool &amp;isAllocBuffer, const <a class="el" href="nalu_8h.html#a7bbcff6acf90003cd6c5d8d04ccc2ebb">T_NALU_TYPE</a> &amp;type, const uint64_t &amp;time=0)</td></tr>
+<tr class="memdesc:a5f3dc3ef4cf63c671fee594187671ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 NAL 单元（从缓冲区）  <br /></td></tr>
+<tr class="separator:a5f3dc3ef4cf63c671fee594187671ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af653c3fe74d27303ab7733c314c3913d" id="r_af653c3fe74d27303ab7733c314c3913d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af653c3fe74d27303ab7733c314c3913d">setIsKeyFrame</a> (const bool &amp;is_key_frame)</td></tr>
+<tr class="memdesc:af653c3fe74d27303ab7733c314c3913d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置关键帧标志  <br /></td></tr>
+<tr class="separator:af653c3fe74d27303ab7733c314c3913d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b99d5319e47c1e5ca33ee76d52215e1" id="r_a7b99d5319e47c1e5ca33ee76d52215e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_t___n_a_l_u.html">T_NALU</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b99d5319e47c1e5ca33ee76d52215e1">nalu</a> ()</td></tr>
+<tr class="memdesc:a7b99d5319e47c1e5ca33ee76d52215e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 NAL 单元  <br /></td></tr>
+<tr class="separator:a7b99d5319e47c1e5ca33ee76d52215e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308f4842f8c3cf734f69f607ffe1f9bc" id="r_a308f4842f8c3cf734f69f607ffe1f9bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a308f4842f8c3cf734f69f607ffe1f9bc">isKeyFrame</a> ()</td></tr>
+<tr class="memdesc:a308f4842f8c3cf734f69f607ffe1f9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否为关键帧  <br /></td></tr>
+<tr class="separator:a308f4842f8c3cf734f69f607ffe1f9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa946251265aa1dc5eabcb67e64473d56" id="r_aa946251265aa1dc5eabcb67e64473d56"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa946251265aa1dc5eabcb67e64473d56">pts</a> ()</td></tr>
+<tr class="memdesc:aa946251265aa1dc5eabcb67e64473d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取时间戳  <br /></td></tr>
+<tr class="separator:aa946251265aa1dc5eabcb67e64473d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a808117e517ca1a298728d3d674d91e0c" id="r_a808117e517ca1a298728d3d674d91e0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a808117e517ca1a298728d3d674d91e0c">setTimeStamp</a> (uint64_t t)</td></tr>
+<tr class="memdesc:a808117e517ca1a298728d3d674d91e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 UTC 时间戳  <br /></td></tr>
+<tr class="separator:a808117e517ca1a298728d3d674d91e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7606723ef1db72ef21f3eb67833eb9fa" id="r_a7606723ef1db72ef21f3eb67833eb9fa"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7606723ef1db72ef21f3eb67833eb9fa">timeStamp</a> ()</td></tr>
+<tr class="memdesc:a7606723ef1db72ef21f3eb67833eb9fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 UTC 时间戳  <br /></td></tr>
+<tr class="separator:a7606723ef1db72ef21f3eb67833eb9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab766533ac99363cb6d92a52357cfb7a1" id="r_ab766533ac99363cb6d92a52357cfb7a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab766533ac99363cb6d92a52357cfb7a1">buffer</a> ()</td></tr>
+<tr class="memdesc:ab766533ac99363cb6d92a52357cfb7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧缓冲区  <br /></td></tr>
+<tr class="separator:ab766533ac99363cb6d92a52357cfb7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7033bafa80d2349b9b0da59d8c486767" id="r_a7033bafa80d2349b9b0da59d8c486767"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7033bafa80d2349b9b0da59d8c486767">size</a> ()</td></tr>
+<tr class="memdesc:a7033bafa80d2349b9b0da59d8c486767"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取帧缓冲区大小  <br /></td></tr>
+<tr class="separator:a7033bafa80d2349b9b0da59d8c486767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a6e50696a5f7b7f471354e1b359e4b230" id="r_a6e50696a5f7b7f471354e1b359e4b230"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_t___n_a_l_u.html">T_NALU</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e50696a5f7b7f471354e1b359e4b230">m_nalu</a> = nullptr</td></tr>
+<tr class="memdesc:a6e50696a5f7b7f471354e1b359e4b230"><td class="mdescLeft">&#160;</td><td class="mdescRight">NAL 单元  <br /></td></tr>
+<tr class="separator:a6e50696a5f7b7f471354e1b359e4b230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5885b34b7352c43d3501c1f6475e8e3" id="r_ae5885b34b7352c43d3501c1f6475e8e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5885b34b7352c43d3501c1f6475e8e3">m_key_frame</a> = false</td></tr>
+<tr class="memdesc:ae5885b34b7352c43d3501c1f6475e8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">关键帧标志  <br /></td></tr>
+<tr class="separator:ae5885b34b7352c43d3501c1f6475e8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb215afbbbb2169b36f71c898c2fb3b9" id="r_acb215afbbbb2169b36f71c898c2fb3b9"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb215afbbbb2169b36f71c898c2fb3b9">m_pts</a> = 0</td></tr>
+<tr class="memdesc:acb215afbbbb2169b36f71c898c2fb3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">时间戳  <br /></td></tr>
+<tr class="separator:acb215afbbbb2169b36f71c898c2fb3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21986d419e0d7cf1249013a118da4282" id="r_a21986d419e0d7cf1249013a118da4282"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21986d419e0d7cf1249013a118da4282">m_timestamp_ms</a> = 0</td></tr>
+<tr class="memdesc:a21986d419e0d7cf1249013a118da4282"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTC 时间戳（毫秒）  <br /></td></tr>
+<tr class="separator:a21986d419e0d7cf1249013a118da4282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>管理编码视频帧的类 </p>
+<p>该类用于存储和管理 H.264 或 H.265 编码视频帧，包括 NAL 单元、关键帧标志和时间戳。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="afe6afb47ab726f64efd1149457e8df33" name="afe6afb47ab726f64efd1149457e8df33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6afb47ab726f64efd1149457e8df33">&#9670;&#160;</a></span>VideoEncodedFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_video_encoded_frame.html">VideoEncodedFrame</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<p>初始化 <a class="el" href="class_video_encoded_frame.html" title="管理编码视频帧的类">VideoEncodedFrame</a> 对象。</p>
+<p>初始化 <a class="el" href="class_video_encoded_frame.html" title="管理编码视频帧的类">VideoEncodedFrame</a> 对象，设置初始 UTC 时间戳。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_encoded_frame_afe6afb47ab726f64efd1149457e8df33_cgraph.png" border="0" usemap="#aclass_video_encoded_frame_afe6afb47ab726f64efd1149457e8df33_cgraph" alt=""/></div>
+<map name="aclass_video_encoded_frame_afe6afb47ab726f64efd1149457e8df33_cgraph" id="aclass_video_encoded_frame_afe6afb47ab726f64efd1149457e8df33_cgraph">
+<area shape="rect" title="构造函数" alt="" coords="5,5,148,32"/>
+<area shape="rect" href="namespace_util.html#a6183bf52e2e27e236f98cb450b485ddc" title="获取 UTC 时间戳" alt="" coords="196,5,316,32"/>
+<area shape="poly" title=" " alt="" coords="148,16,180,16,180,21,148,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63016aed2ab9ed687508f5916176f6d2" name="a63016aed2ab9ed687508f5916176f6d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63016aed2ab9ed687508f5916176f6d2">&#9670;&#160;</a></span>~VideoEncodedFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_video_encoded_frame.html">VideoEncodedFrame</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+<p>销毁 <a class="el" href="class_video_encoded_frame.html" title="管理编码视频帧的类">VideoEncodedFrame</a> 对象，释放 NAL 单元资源。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_encoded_frame_a63016aed2ab9ed687508f5916176f6d2_cgraph.png" border="0" usemap="#aclass_video_encoded_frame_a63016aed2ab9ed687508f5916176f6d2_cgraph" alt=""/></div>
+<map name="aclass_video_encoded_frame_a63016aed2ab9ed687508f5916176f6d2_cgraph" id="aclass_video_encoded_frame_a63016aed2ab9ed687508f5916176f6d2_cgraph">
+<area shape="rect" title="析构函数" alt="" coords="5,5,156,32"/>
+<area shape="rect" href="class_n_a_l_u_parsing.html#ab876984c6a602c8f67fd938f3b0f626a" title="释放 NAL 单元" alt="" coords="204,5,375,32"/>
+<area shape="poly" title=" " alt="" coords="156,16,188,16,188,21,156,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab766533ac99363cb6d92a52357cfb7a1" name="ab766533ac99363cb6d92a52357cfb7a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab766533ac99363cb6d92a52357cfb7a1">&#9670;&#160;</a></span>buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * buffer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取帧缓冲区 </p>
+<dl class="section return"><dt>返回</dt><dd>帧缓冲区指针 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_encoded_frame_ab766533ac99363cb6d92a52357cfb7a1_cgraph.png" border="0" usemap="#aclass_video_encoded_frame_ab766533ac99363cb6d92a52357cfb7a1_cgraph" alt=""/></div>
+<map name="aclass_video_encoded_frame_ab766533ac99363cb6d92a52357cfb7a1_cgraph" id="aclass_video_encoded_frame_ab766533ac99363cb6d92a52357cfb7a1_cgraph">
+<area shape="rect" title="获取帧缓冲区" alt="" coords="5,29,59,56"/>
+<area shape="poly" title=" " alt="" coords="21,29,20,12,25,5,32,3,40,6,44,12,39,15,36,10,32,8,28,9,26,13,26,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_encoded_frame_ab766533ac99363cb6d92a52357cfb7a1_icgraph.png" border="0" usemap="#aclass_video_encoded_frame_ab766533ac99363cb6d92a52357cfb7a1_icgraph" alt=""/></div>
+<map name="aclass_video_encoded_frame_ab766533ac99363cb6d92a52357cfb7a1_icgraph" id="aclass_video_encoded_frame_ab766533ac99363cb6d92a52357cfb7a1_icgraph">
+<area shape="rect" title="获取帧缓冲区" alt="" coords="120,29,173,56"/>
+<area shape="poly" title=" " alt="" coords="163,16,157,10,146,8,136,10,130,14,129,20,132,28,127,30,123,20,126,11,134,5,146,3,160,5,167,12"/>
+<area shape="rect" href="class_video_encoded_frame.html#a5f3dc3ef4cf63c671fee594187671ec5" title="设置 NAL 单元（从缓冲区）" alt="" coords="5,29,72,56"/>
+<area shape="poly" title=" " alt="" coords="104,45,72,45,72,40,104,40"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a308f4842f8c3cf734f69f607ffe1f9bc" name="a308f4842f8c3cf734f69f607ffe1f9bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a308f4842f8c3cf734f69f607ffe1f9bc">&#9670;&#160;</a></span>isKeyFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isKeyFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查是否为关键帧 </p>
+<dl class="section return"><dt>返回</dt><dd>true 如果是关键帧 </dd></dl>
+
+</div>
+</div>
+<a id="a7b99d5319e47c1e5ca33ee76d52215e1" name="a7b99d5319e47c1e5ca33ee76d52215e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b99d5319e47c1e5ca33ee76d52215e1">&#9670;&#160;</a></span>nalu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_t___n_a_l_u.html">T_NALU</a> * nalu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取 NAL 单元 </p>
+<dl class="section return"><dt>返回</dt><dd>NAL 单元指针 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_encoded_frame_a7b99d5319e47c1e5ca33ee76d52215e1_icgraph.png" border="0" usemap="#aclass_video_encoded_frame_a7b99d5319e47c1e5ca33ee76d52215e1_icgraph" alt=""/></div>
+<map name="aclass_video_encoded_frame_a7b99d5319e47c1e5ca33ee76d52215e1_icgraph" id="aclass_video_encoded_frame_a7b99d5319e47c1e5ca33ee76d52215e1_icgraph">
+<area shape="rect" title="获取 NAL 单元" alt="" coords="120,31,165,57"/>
+<area shape="rect" href="class_video_encoded_frame.html#a403cf6f4a773c023a56b40fd2ee1eaf3" title="设置 NAL 单元" alt="" coords="5,5,72,32"/>
+<area shape="poly" title=" " alt="" coords="104,37,71,29,73,24,105,32"/>
+<area shape="rect" href="class_video_encoded_frame.html#a5f3dc3ef4cf63c671fee594187671ec5" title="设置 NAL 单元（从缓冲区）" alt="" coords="5,56,72,83"/>
+<area shape="poly" title=" " alt="" coords="105,56,73,64,71,59,104,51"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa946251265aa1dc5eabcb67e64473d56" name="aa946251265aa1dc5eabcb67e64473d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa946251265aa1dc5eabcb67e64473d56">&#9670;&#160;</a></span>pts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t pts </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取时间戳 </p>
+<dl class="section return"><dt>返回</dt><dd>帧的时间戳 </dd></dl>
+
+</div>
+</div>
+<a id="af653c3fe74d27303ab7733c314c3913d" name="af653c3fe74d27303ab7733c314c3913d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af653c3fe74d27303ab7733c314c3913d">&#9670;&#160;</a></span>setIsKeyFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setIsKeyFrame </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>is_key_frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置关键帧标志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is_key_frame</td><td>是否为关键帧 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a403cf6f4a773c023a56b40fd2ee1eaf3" name="a403cf6f4a773c023a56b40fd2ee1eaf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403cf6f4a773c023a56b40fd2ee1eaf3">&#9670;&#160;</a></span>setNalu() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setNalu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_t___n_a_l_u.html">T_NALU</a> *</td>          <td class="paramname"><span class="paramname"><em>nalu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int64_t &amp;</td>          <td class="paramname"><span class="paramname"><em>time</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 NAL 单元 </p>
+<p>设置编码帧的 NAL 单元和时间戳。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nalu</td><td>NAL 单元指针 </td></tr>
+    <tr><td class="paramname">time</td><td>时间戳（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_encoded_frame_a403cf6f4a773c023a56b40fd2ee1eaf3_cgraph.png" border="0" usemap="#aclass_video_encoded_frame_a403cf6f4a773c023a56b40fd2ee1eaf3_cgraph" alt=""/></div>
+<map name="aclass_video_encoded_frame_a403cf6f4a773c023a56b40fd2ee1eaf3_cgraph" id="aclass_video_encoded_frame_a403cf6f4a773c023a56b40fd2ee1eaf3_cgraph">
+<area shape="rect" title="设置 NAL 单元" alt="" coords="5,5,72,32"/>
+<area shape="rect" href="class_video_encoded_frame.html#a7b99d5319e47c1e5ca33ee76d52215e1" title="获取 NAL 单元" alt="" coords="120,5,165,32"/>
+<area shape="poly" title=" " alt="" coords="72,16,104,16,104,21,72,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5f3dc3ef4cf63c671fee594187671ec5" name="a5f3dc3ef4cf63c671fee594187671ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f3dc3ef4cf63c671fee594187671ec5">&#9670;&#160;</a></span>setNalu() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setNalu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>isAllocBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="nalu_8h.html#a7bbcff6acf90003cd6c5d8d04ccc2ebb">T_NALU_TYPE</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint64_t &amp;</td>          <td class="paramname"><span class="paramname"><em>time</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 NAL 单元（从缓冲区） </p>
+<p>从缓冲区数据构造 NAL 单元并设置编码帧。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>缓冲区数据 </td></tr>
+    <tr><td class="paramname">len</td><td>缓冲区长度 </td></tr>
+    <tr><td class="paramname">isAllocBuffer</td><td>是否分配新缓冲区 </td></tr>
+    <tr><td class="paramname">type</td><td>NAL 单元类型（H.264 或 H.265） </td></tr>
+    <tr><td class="paramname">time</td><td>时间戳（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>4 for parameter sets and first slice in picture, 3 for everything else (suggested)</p>
+<p>should be always FALSE</p>
+<p>NALU_PRIORITY_xxxx</p>
+<p>NALU_TYPE_xxxx</p>
+<p>true, if packet loss is detected</p>
+<p>contains the first byte followed by the EBSP</p>
+<p>4 for parameter sets and first slice in picture, 3 for everything else (suggested)</p>
+<p>contains the first byte followed by the EBSP</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_encoded_frame_a5f3dc3ef4cf63c671fee594187671ec5_cgraph.png" border="0" usemap="#aclass_video_encoded_frame_a5f3dc3ef4cf63c671fee594187671ec5_cgraph" alt=""/></div>
+<map name="aclass_video_encoded_frame_a5f3dc3ef4cf63c671fee594187671ec5_cgraph" id="aclass_video_encoded_frame_a5f3dc3ef4cf63c671fee594187671ec5_cgraph">
+<area shape="rect" title="设置 NAL 单元（从缓冲区）" alt="" coords="5,105,72,132"/>
+<area shape="rect" href="class_n_a_l_u_parsing.html#a09a0ffd780909ec17fd4ef1cabcc14d5" title="分配 NAL 单元" alt="" coords="120,5,294,32"/>
+<area shape="poly" title=" " alt="" coords="49,103,78,72,118,42,130,36,132,41,121,46,82,76,53,107"/>
+<area shape="rect" href="class_video_encoded_frame.html#ab766533ac99363cb6d92a52357cfb7a1" title="获取帧缓冲区" alt="" coords="180,80,234,107"/>
+<area shape="poly" title=" " alt="" coords="72,111,165,97,165,102,73,116"/>
+<area shape="rect" href="class_n_a_l_u_parsing.html#ab876984c6a602c8f67fd938f3b0f626a" title="释放 NAL 单元" alt="" coords="121,131,292,157"/>
+<area shape="poly" title=" " alt="" coords="73,121,106,126,105,131,72,126"/>
+<area shape="rect" href="class_video_encoded_frame.html#a7b99d5319e47c1e5ca33ee76d52215e1" title="获取 NAL 单元" alt="" coords="184,181,230,208"/>
+<area shape="poly" title=" " alt="" coords="60,130,88,149,121,167,170,184,168,189,119,172,85,153,57,135"/>
+<area shape="poly" title=" " alt="" coords="178,81,173,71,176,62,188,56,207,53,227,56,238,62,235,67,225,61,207,59,189,61,180,65,178,71,182,78"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a808117e517ca1a298728d3d674d91e0c" name="a808117e517ca1a298728d3d674d91e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a808117e517ca1a298728d3d674d91e0c">&#9670;&#160;</a></span>setTimeStamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTimeStamp </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 UTC 时间戳 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>UTC 时间戳（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7033bafa80d2349b9b0da59d8c486767" name="a7033bafa80d2349b9b0da59d8c486767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7033bafa80d2349b9b0da59d8c486767">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取帧缓冲区大小 </p>
+<dl class="section return"><dt>返回</dt><dd>帧缓冲区大小 </dd></dl>
+
+</div>
+</div>
+<a id="a7606723ef1db72ef21f3eb67833eb9fa" name="a7606723ef1db72ef21f3eb67833eb9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7606723ef1db72ef21f3eb67833eb9fa">&#9670;&#160;</a></span>timeStamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t timeStamp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取 UTC 时间戳 </p>
+<dl class="section return"><dt>返回</dt><dd>UTC 时间戳（毫秒） </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ae5885b34b7352c43d3501c1f6475e8e3" name="ae5885b34b7352c43d3501c1f6475e8e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5885b34b7352c43d3501c1f6475e8e3">&#9670;&#160;</a></span>m_key_frame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_key_frame = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关键帧标志 </p>
+
+</div>
+</div>
+<a id="a6e50696a5f7b7f471354e1b359e4b230" name="a6e50696a5f7b7f471354e1b359e4b230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e50696a5f7b7f471354e1b359e4b230">&#9670;&#160;</a></span>m_nalu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_t___n_a_l_u.html">T_NALU</a>* m_nalu = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>NAL 单元 </p>
+
+</div>
+</div>
+<a id="acb215afbbbb2169b36f71c898c2fb3b9" name="acb215afbbbb2169b36f71c898c2fb3b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb215afbbbb2169b36f71c898c2fb3b9">&#9670;&#160;</a></span>m_pts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t m_pts = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>时间戳 </p>
+
+</div>
+</div>
+<a id="a21986d419e0d7cf1249013a118da4282" name="a21986d419e0d7cf1249013a118da4282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21986d419e0d7cf1249013a118da4282">&#9670;&#160;</a></span>m_timestamp_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t m_timestamp_ms = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UTC 时间戳（毫秒） </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_video_encoded_frame_8h_source.html">VideoEncodedFrame.h</a></li>
+<li><a class="el" href="_video_encoded_frame_8cpp.html">VideoEncodedFrame.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_video_encoded_frame.html">VideoEncodedFrame</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

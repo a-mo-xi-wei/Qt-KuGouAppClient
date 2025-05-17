@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: threadmessage.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('threadmessage_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">threadmessage.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="threadmessage_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public License</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * along with FFmpeg; if not, write to the Free Software Foundation, Inc.,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef AVUTIL_THREADMESSAGE_H</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define AVUTIL_THREADMESSAGE_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">   22</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> <a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a7fb8bd4d2b779ab5e2044a1b5a5b22f5">   24</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="threadmessage_8h.html#a7fb8bd4d2b779ab5e2044a1b5a5b22f5">AVThreadMessageFlags</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a7fb8bd4d2b779ab5e2044a1b5a5b22f5adc72c40671a489c761960bafc41b1699">   31</a></span>    <a class="code hl_enumvalue" href="threadmessage_8h.html#a7fb8bd4d2b779ab5e2044a1b5a5b22f5adc72c40671a489c761960bafc41b1699">AV_THREAD_MESSAGE_NONBLOCK</a> = 1,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a88025ba7a0952cf9190f4e1b6e669c32">   33</a></span>} <a class="code hl_enumeration" href="threadmessage_8h.html#a7fb8bd4d2b779ab5e2044a1b5a5b22f5">AVThreadMessageFlags</a>;</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a1734b65da48a88e7c78e8a29b1eee139">   44</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="threadmessage_8h.html#a1734b65da48a88e7c78e8a29b1eee139">av_thread_message_queue_alloc</a>(<a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> **mq,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                                  <span class="keywordtype">unsigned</span> nelem,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                  <span class="keywordtype">unsigned</span> elsize);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a95727669f1ebba16a6a49ea8b9f2276e">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="threadmessage_8h.html#a95727669f1ebba16a6a49ea8b9f2276e">av_thread_message_queue_free</a>(<a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> **mq);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a873d588ed106d8dde339c4a16411e0b8">   58</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="threadmessage_8h.html#a873d588ed106d8dde339c4a16411e0b8">av_thread_message_queue_send</a>(<a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> *mq,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                 <span class="keywordtype">void</span> *msg,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                                 <span class="keywordtype">unsigned</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a0fb9f4909ad77c541f8ba4409b253111">   65</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="threadmessage_8h.html#a0fb9f4909ad77c541f8ba4409b253111">av_thread_message_queue_recv</a>(<a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> *mq,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                 <span class="keywordtype">void</span> *msg,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                                 <span class="keywordtype">unsigned</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a01981ed85e713e682912ee6e063403ad">   77</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="threadmessage_8h.html#a01981ed85e713e682912ee6e063403ad">av_thread_message_queue_set_err_send</a>(<a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> *mq,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                                          <span class="keywordtype">int</span> err);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a6b2b6c47728e7d442b31a49ca8f9f971">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="threadmessage_8h.html#a6b2b6c47728e7d442b31a49ca8f9f971">av_thread_message_queue_set_err_recv</a>(<a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> *mq,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                                          <span class="keywordtype">int</span> err);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a55878238c793830dc7de601042873ee6">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="threadmessage_8h.html#a55878238c793830dc7de601042873ee6">av_thread_message_queue_set_free_func</a>(<a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> *mq,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                                           <span class="keywordtype">void</span> (*<a class="code hl_typedef" href="zlib_8h.html#a002a1cda9686d40117da69d61c2a6dda">free_func</a>)(<span class="keywordtype">void</span> *msg));</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="threadmessage_8h.html#a8dc5df5158d3098303cdd48e7e3d4ea4">  105</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="threadmessage_8h.html#a8dc5df5158d3098303cdd48e7e3d4ea4">av_thread_message_flush</a>(<a class="code hl_typedef" href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a> *mq);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_THREADMESSAGE_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa9459b47e7388437191d2d9a69c10d98"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a></div><div class="ttdeci">GLbitfield flags</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1754</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a01981ed85e713e682912ee6e063403ad"><div class="ttname"><a href="threadmessage_8h.html#a01981ed85e713e682912ee6e063403ad">av_thread_message_queue_set_err_send</a></div><div class="ttdeci">void av_thread_message_queue_set_err_send(AVThreadMessageQueue *mq, int err)</div><div class="ttdoc">Set the sending error code.</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a0fb9f4909ad77c541f8ba4409b253111"><div class="ttname"><a href="threadmessage_8h.html#a0fb9f4909ad77c541f8ba4409b253111">av_thread_message_queue_recv</a></div><div class="ttdeci">int av_thread_message_queue_recv(AVThreadMessageQueue *mq, void *msg, unsigned flags)</div><div class="ttdoc">Receive a message from the queue.</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a1734b65da48a88e7c78e8a29b1eee139"><div class="ttname"><a href="threadmessage_8h.html#a1734b65da48a88e7c78e8a29b1eee139">av_thread_message_queue_alloc</a></div><div class="ttdeci">int av_thread_message_queue_alloc(AVThreadMessageQueue **mq, unsigned nelem, unsigned elsize)</div><div class="ttdoc">Allocate a new message queue.</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a55878238c793830dc7de601042873ee6"><div class="ttname"><a href="threadmessage_8h.html#a55878238c793830dc7de601042873ee6">av_thread_message_queue_set_free_func</a></div><div class="ttdeci">void av_thread_message_queue_set_free_func(AVThreadMessageQueue *mq, void(*free_func)(void *msg))</div><div class="ttdoc">Set the optional free message callback function which will be called if an operation is removing mess...</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a6b2b6c47728e7d442b31a49ca8f9f971"><div class="ttname"><a href="threadmessage_8h.html#a6b2b6c47728e7d442b31a49ca8f9f971">av_thread_message_queue_set_err_recv</a></div><div class="ttdeci">void av_thread_message_queue_set_err_recv(AVThreadMessageQueue *mq, int err)</div><div class="ttdoc">Set the receiving error code.</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a7fb8bd4d2b779ab5e2044a1b5a5b22f5"><div class="ttname"><a href="threadmessage_8h.html#a7fb8bd4d2b779ab5e2044a1b5a5b22f5">AVThreadMessageFlags</a></div><div class="ttdeci">AVThreadMessageFlags</div><div class="ttdef"><b>定义</b> threadmessage.h:24</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a7fb8bd4d2b779ab5e2044a1b5a5b22f5adc72c40671a489c761960bafc41b1699"><div class="ttname"><a href="threadmessage_8h.html#a7fb8bd4d2b779ab5e2044a1b5a5b22f5adc72c40671a489c761960bafc41b1699">AV_THREAD_MESSAGE_NONBLOCK</a></div><div class="ttdeci">@ AV_THREAD_MESSAGE_NONBLOCK</div><div class="ttdoc">Perform non-blocking operation.</div><div class="ttdef"><b>定义</b> threadmessage.h:31</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a873d588ed106d8dde339c4a16411e0b8"><div class="ttname"><a href="threadmessage_8h.html#a873d588ed106d8dde339c4a16411e0b8">av_thread_message_queue_send</a></div><div class="ttdeci">int av_thread_message_queue_send(AVThreadMessageQueue *mq, void *msg, unsigned flags)</div><div class="ttdoc">Send a message on the queue.</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a8dc5df5158d3098303cdd48e7e3d4ea4"><div class="ttname"><a href="threadmessage_8h.html#a8dc5df5158d3098303cdd48e7e3d4ea4">av_thread_message_flush</a></div><div class="ttdeci">void av_thread_message_flush(AVThreadMessageQueue *mq)</div><div class="ttdoc">Flush the message queue</div></div>
+<div class="ttc" id="athreadmessage_8h_html_a95727669f1ebba16a6a49ea8b9f2276e"><div class="ttname"><a href="threadmessage_8h.html#a95727669f1ebba16a6a49ea8b9f2276e">av_thread_message_queue_free</a></div><div class="ttdeci">void av_thread_message_queue_free(AVThreadMessageQueue **mq)</div><div class="ttdoc">Free a message queue.</div></div>
+<div class="ttc" id="athreadmessage_8h_html_afe2b529ed869d4b672f1a4547dd160af"><div class="ttname"><a href="threadmessage_8h.html#afe2b529ed869d4b672f1a4547dd160af">AVThreadMessageQueue</a></div><div class="ttdeci">struct AVThreadMessageQueue AVThreadMessageQueue</div><div class="ttdef"><b>定义</b> threadmessage.h:22</div></div>
+<div class="ttc" id="azlib_8h_html_a002a1cda9686d40117da69d61c2a6dda"><div class="ttname"><a href="zlib_8h.html#a002a1cda9686d40117da69d61c2a6dda">free_func</a></div><div class="ttdeci">void(* free_func)(voidpf opaque, voidpf address)</div><div class="ttdef"><b>定义</b> zlib.h:82</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="threadmessage_8h.html">threadmessage.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: bswap.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('bswap_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">bswap.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="bswap_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * copyright (c) 2006 Michael Niedermayer &lt;michaelni@gmx.at&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifndef AVUTIL_BSWAP_H</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define AVUTIL_BSWAP_H</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;<a class="code" href="avconfig_8h.html">libavutil/avconfig.h</a>&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="attributes_8h.html">attributes.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#ifdef HAVE_AV_CONFIG_H</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;config.h&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#if   ARCH_AARCH64</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#   include &quot;aarch64/bswap.h&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#elif ARCH_ARM</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#   include &quot;arm/bswap.h&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#elif ARCH_AVR32</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#   include &quot;avr32/bswap.h&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#elif ARCH_SH4</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#   include &quot;sh4/bswap.h&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#elif ARCH_X86</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#   include &quot;x86/bswap.h&quot;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif </span><span class="comment">/* HAVE_AV_CONFIG_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="bswap_8h.html#ae814c79414a68cd818fa85b537e512ca">   51</a></span><span class="preprocessor">#define AV_BSWAP16C(x) (((x) &lt;&lt; 8 &amp; 0xff00)  | ((x) &gt;&gt; 8 &amp; 0x00ff))</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="bswap_8h.html#acd0be1ea0d53f0e778ba453d6a8a2ba7">   52</a></span><span class="preprocessor">#define AV_BSWAP32C(x) (AV_BSWAP16C(x) &lt;&lt; 16 | AV_BSWAP16C((x) &gt;&gt; 16))</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="bswap_8h.html#a0231c6b30e9577aa7866e96bd6b14d1d">   53</a></span><span class="preprocessor">#define AV_BSWAP64C(x) (AV_BSWAP32C(x) &lt;&lt; 32 | AV_BSWAP32C((x) &gt;&gt; 32))</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="bswap_8h.html#a4e7a1254648283f96e02ff832c42b0d1">   55</a></span><span class="preprocessor">#define AV_BSWAPC(s, x) AV_BSWAP##s##C(x)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#ifndef av_bswap16</span></div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="bswap_8h.html#acd93aba4dbc490bca8ed9057f6816b5a">   58</a></span><span class="keyword">static</span> <a class="code hl_define" href="attributes_8h.html#a28f50f4c125959216885f01d56dbe866">av_always_inline</a> <a class="code hl_define" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code hl_function" href="bswap_8h.html#acd93aba4dbc490bca8ed9057f6816b5a">av_bswap16</a>(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>= (<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>&gt;&gt;8) | (<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>&lt;&lt;8);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#ifndef av_bswap32</span></div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="bswap_8h.html#af620b9064c4d86e0c80c63de965678ae">   66</a></span><span class="keyword">static</span> <a class="code hl_define" href="attributes_8h.html#a28f50f4c125959216885f01d56dbe866">av_always_inline</a> <a class="code hl_define" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_function" href="bswap_8h.html#af620b9064c4d86e0c80c63de965678ae">av_bswap32</a>(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="bswap_8h.html#acd0be1ea0d53f0e778ba453d6a8a2ba7">AV_BSWAP32C</a>(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#ifndef av_bswap64</span></div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="bswap_8h.html#a2fb2d4d0f205a1897de581749d8774dc">   73</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> <a class="code hl_define" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a> <a class="code hl_function" href="bswap_8h.html#a2fb2d4d0f205a1897de581749d8774dc">av_bswap64</a>(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> (<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>)<a class="code hl_function" href="bswap_8h.html#af620b9064c4d86e0c80c63de965678ae">av_bswap32</a>(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>) &lt;&lt; 32 | <a class="code hl_function" href="bswap_8h.html#af620b9064c4d86e0c80c63de965678ae">av_bswap32</a>(<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a> &gt;&gt; 32);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">// be2ne ... big-endian to native-endian</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">// le2ne ... little-endian to native-endian</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#if AV_HAVE_BIGENDIAN</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#define av_be2ne16(x) (x)</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#define av_be2ne32(x) (x)</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#define av_be2ne64(x) (x)</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#define av_le2ne16(x) av_bswap16(x)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#define av_le2ne32(x) av_bswap32(x)</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#define av_le2ne64(x) av_bswap64(x)</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#define AV_BE2NEC(s, x) (x)</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#define AV_LE2NEC(s, x) AV_BSWAPC(s, x)</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="bswap_8h.html#a02385306e193ec58dc379dfb5d812960">   92</a></span><span class="preprocessor">#define av_be2ne16(x) av_bswap16(x)</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="bswap_8h.html#ac1015f36993fc9b1659fe883d3ff3a17">   93</a></span><span class="preprocessor">#define av_be2ne32(x) av_bswap32(x)</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="bswap_8h.html#a4b21613df6f82952b52f4f0d1fc7b33c">   94</a></span><span class="preprocessor">#define av_be2ne64(x) av_bswap64(x)</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="bswap_8h.html#a7b43061d66dbb292123e683e37cecab8">   95</a></span><span class="preprocessor">#define av_le2ne16(x) (x)</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="bswap_8h.html#a610c453f4731b545a1528ffdddccd349">   96</a></span><span class="preprocessor">#define av_le2ne32(x) (x)</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="bswap_8h.html#a3aa241ad1a5d44df2e550976ffd38dc2">   97</a></span><span class="preprocessor">#define av_le2ne64(x) (x)</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="bswap_8h.html#a462118c252ac8d6acde1676cd711bbda">   98</a></span><span class="preprocessor">#define AV_BE2NEC(s, x) AV_BSWAPC(s, x)</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="bswap_8h.html#a5797b32cfd8cbdadd82c51fdc4c933b8">   99</a></span><span class="preprocessor">#define AV_LE2NEC(s, x) (x)</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="bswap_8h.html#ac35c610c96f7e07cf3d983884559eede">  102</a></span><span class="preprocessor">#define AV_BE2NE16C(x) AV_BE2NEC(16, x)</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="bswap_8h.html#abd6a1094eb78b29cb4aba793ffa7ce00">  103</a></span><span class="preprocessor">#define AV_BE2NE32C(x) AV_BE2NEC(32, x)</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="bswap_8h.html#a33520e694e7cb3d62ac95a7120231d4e">  104</a></span><span class="preprocessor">#define AV_BE2NE64C(x) AV_BE2NEC(64, x)</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="bswap_8h.html#ac59ea1c37c5bc191f526b2afa97e2db2">  105</a></span><span class="preprocessor">#define AV_LE2NE16C(x) AV_LE2NEC(16, x)</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="bswap_8h.html#ab508468ff8b273b8ed5c23ef214ee8dc">  106</a></span><span class="preprocessor">#define AV_LE2NE32C(x) AV_LE2NEC(32, x)</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="bswap_8h.html#aac38fbe0d7a17950224f153df82ccda4">  107</a></span><span class="preprocessor">#define AV_LE2NE64C(x) AV_LE2NEC(64, x)</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_BSWAP_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a273cf69d639a59973b6019625df33e30"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a></div><div class="ttdeci">unsigned short uint16_t</div><div class="ttdoc">16 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:31</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdoc">32 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:33</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aaa5d1cd013383c889537491c3cfd9aad"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></div><div class="ttdeci">unsigned long long uint64_t</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:35</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_acbccb77724c9f4a12f2a844974ab0fea"><div class="ttname"><a href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></div><div class="ttdeci">GLint GLint GLint GLint GLint x</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+<div class="ttc" id="aattributes_8h_html"><div class="ttname"><a href="attributes_8h.html">attributes.h</a></div><div class="ttdoc">Macro definitions for various function/variable attributes</div></div>
+<div class="ttc" id="aattributes_8h_html_a28f50f4c125959216885f01d56dbe866"><div class="ttname"><a href="attributes_8h.html#a28f50f4c125959216885f01d56dbe866">av_always_inline</a></div><div class="ttdeci">#define av_always_inline</div><div class="ttdef"><b>定义</b> attributes.h:43</div></div>
+<div class="ttc" id="aattributes_8h_html_a9eaead3cde73464fd66bab4cef9307ad"><div class="ttname"><a href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></div><div class="ttdeci">#define av_const</div><div class="ttdef"><b>定义</b> attributes.h:78</div></div>
+<div class="ttc" id="aavconfig_8h_html"><div class="ttname"><a href="avconfig_8h.html">avconfig.h</a></div></div>
+<div class="ttc" id="abswap_8h_html_a2fb2d4d0f205a1897de581749d8774dc"><div class="ttname"><a href="bswap_8h.html#a2fb2d4d0f205a1897de581749d8774dc">av_bswap64</a></div><div class="ttdeci">static uint64_t av_const av_bswap64(uint64_t x)</div><div class="ttdef"><b>定义</b> bswap.h:73</div></div>
+<div class="ttc" id="abswap_8h_html_acd0be1ea0d53f0e778ba453d6a8a2ba7"><div class="ttname"><a href="bswap_8h.html#acd0be1ea0d53f0e778ba453d6a8a2ba7">AV_BSWAP32C</a></div><div class="ttdeci">#define AV_BSWAP32C(x)</div><div class="ttdef"><b>定义</b> bswap.h:52</div></div>
+<div class="ttc" id="abswap_8h_html_acd93aba4dbc490bca8ed9057f6816b5a"><div class="ttname"><a href="bswap_8h.html#acd93aba4dbc490bca8ed9057f6816b5a">av_bswap16</a></div><div class="ttdeci">static av_always_inline av_const uint16_t av_bswap16(uint16_t x)</div><div class="ttdef"><b>定义</b> bswap.h:58</div></div>
+<div class="ttc" id="abswap_8h_html_af620b9064c4d86e0c80c63de965678ae"><div class="ttname"><a href="bswap_8h.html#af620b9064c4d86e0c80c63de965678ae">av_bswap32</a></div><div class="ttdeci">static av_always_inline av_const uint32_t av_bswap32(uint32_t x)</div><div class="ttdef"><b>定义</b> bswap.h:66</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="bswap_8h.html">bswap.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

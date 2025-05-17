@@ -1,0 +1,705 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AVRational</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavu__math__rational.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">文件</a> &#124;
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">AVRational<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__math.html">Mathematics</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Rational number calculation.  
+<a href="#details">更多...</a></p>
+<div class="dynheader">
+AVRational 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__math__rational.png" border="0" usemap="#agroup____lavu____math____rational" alt=""/></div>
+<map name="agroup____lavu____math____rational" id="agroup____lavu____math____rational">
+<area shape="rect" href="group__lavu__math.html" title="Mathematical utilities for working with timestamp and time base." alt="" coords="5,5,102,32"/>
+<area shape="rect" title="Rational number calculation." alt="" coords="150,5,236,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+文件</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">文件 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rational_8h.html">rational.h</a></td></tr>
+<tr class="memdesc:rational_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilties for rational number calculation. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_rational.html">AVRational</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rational number (pair of numerator and denominator).  <a href="struct_a_v_rational.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga6eff035c271caa5a533987a1e00ad43e" id="r_ga6eff035c271caa5a533987a1e00ad43e"><td class="memItemLeft" align="right" valign="top">typedef struct AVRational&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6eff035c271caa5a533987a1e00ad43e">AVRational</a></td></tr>
+<tr class="memdesc:ga6eff035c271caa5a533987a1e00ad43e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rational number (pair of numerator and denominator).  <br /></td></tr>
+<tr class="separator:ga6eff035c271caa5a533987a1e00ad43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga7778b1d209ceb3e4bf34e40150d3b882" id="r_ga7778b1d209ceb3e4bf34e40150d3b882"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7778b1d209ceb3e4bf34e40150d3b882">av_make_q</a> (int <a class="el" href="_s_d_l__opengl__glext_8h.html#abb50fc1ead3a02a46fb52daa2045f95c">num</a>, int den)</td></tr>
+<tr class="memdesc:ga7778b1d209ceb3e4bf34e40150d3b882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a>.  <br /></td></tr>
+<tr class="separator:ga7778b1d209ceb3e4bf34e40150d3b882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa440bf42ede128219a571ae4ce0f90b8" id="r_gaa440bf42ede128219a571ae4ce0f90b8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa440bf42ede128219a571ae4ce0f90b8">av_cmp_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>)</td></tr>
+<tr class="memdesc:gaa440bf42ede128219a571ae4ce0f90b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two rationals.  <br /></td></tr>
+<tr class="separator:gaa440bf42ede128219a571ae4ce0f90b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga935dbbf6bde8dfe5fa7ddb1da582eb07" id="r_ga935dbbf6bde8dfe5fa7ddb1da582eb07"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga935dbbf6bde8dfe5fa7ddb1da582eb07">av_q2d</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>)</td></tr>
+<tr class="memdesc:ga935dbbf6bde8dfe5fa7ddb1da582eb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> to a <code>double</code>.  <br /></td></tr>
+<tr class="separator:ga935dbbf6bde8dfe5fa7ddb1da582eb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fd9c0b8e663cf3d55e89fbc6ce71602" id="r_ga4fd9c0b8e663cf3d55e89fbc6ce71602"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4fd9c0b8e663cf3d55e89fbc6ce71602">av_reduce</a> (int *dst_num, int *dst_den, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#abb50fc1ead3a02a46fb52daa2045f95c">num</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> den, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> max)</td></tr>
+<tr class="memdesc:ga4fd9c0b8e663cf3d55e89fbc6ce71602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce a fraction.  <br /></td></tr>
+<tr class="separator:ga4fd9c0b8e663cf3d55e89fbc6ce71602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f9c69432582e2857147bcba3c75dc32" id="r_ga3f9c69432582e2857147bcba3c75dc32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f9c69432582e2857147bcba3c75dc32">av_mul_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:ga3f9c69432582e2857147bcba3c75dc32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply two rationals.  <br /></td></tr>
+<tr class="separator:ga3f9c69432582e2857147bcba3c75dc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffa24e7bd38e12dbac540d8b66461f97" id="r_gaffa24e7bd38e12dbac540d8b66461f97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaffa24e7bd38e12dbac540d8b66461f97">av_div_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:gaffa24e7bd38e12dbac540d8b66461f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide one rational by another.  <br /></td></tr>
+<tr class="separator:gaffa24e7bd38e12dbac540d8b66461f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2eb3a275aabacd8421f140a12bab4a91" id="r_ga2eb3a275aabacd8421f140a12bab4a91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2eb3a275aabacd8421f140a12bab4a91">av_add_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:ga2eb3a275aabacd8421f140a12bab4a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add two rationals.  <br /></td></tr>
+<tr class="separator:ga2eb3a275aabacd8421f140a12bab4a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac66c6198ce5e8a8caf88dfc20782fa59" id="r_gac66c6198ce5e8a8caf88dfc20782fa59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac66c6198ce5e8a8caf88dfc20782fa59">av_sub_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:gac66c6198ce5e8a8caf88dfc20782fa59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract one rational from another.  <br /></td></tr>
+<tr class="separator:gac66c6198ce5e8a8caf88dfc20782fa59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab646f0a7cc30af543ba4a91b37f9de6e" id="r_gab646f0a7cc30af543ba4a91b37f9de6e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="attributes_8h.html#a28f50f4c125959216885f01d56dbe866">av_always_inline</a> <a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab646f0a7cc30af543ba4a91b37f9de6e">av_inv_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>)</td></tr>
+<tr class="memdesc:gab646f0a7cc30af543ba4a91b37f9de6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert a rational.  <br /></td></tr>
+<tr class="separator:gab646f0a7cc30af543ba4a91b37f9de6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dfd5ba1eb1edf5845ac32b338de9e76" id="r_ga7dfd5ba1eb1edf5845ac32b338de9e76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7dfd5ba1eb1edf5845ac32b338de9e76">av_d2q</a> (double d, int max) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:ga7dfd5ba1eb1edf5845ac32b338de9e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a double precision floating point number to a rational.  <br /></td></tr>
+<tr class="separator:ga7dfd5ba1eb1edf5845ac32b338de9e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga111810c563749cd3081aaa19004f44df" id="r_ga111810c563749cd3081aaa19004f44df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga111810c563749cd3081aaa19004f44df">av_nearer_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> q1, <a class="el" href="struct_a_v_rational.html">AVRational</a> q2)</td></tr>
+<tr class="memdesc:ga111810c563749cd3081aaa19004f44df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find which of the two rationals is closer to another rational.  <br /></td></tr>
+<tr class="separator:ga111810c563749cd3081aaa19004f44df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5" id="r_ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5">av_find_nearest_q_idx</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_rational.html">AVRational</a> *q_list)</td></tr>
+<tr class="memdesc:ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the value in a list of rationals nearest a given reference rational.  <br /></td></tr>
+<tr class="separator:ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafbcd96878344ade957d5bccc6bc705b2" id="r_gafbcd96878344ade957d5bccc6bc705b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafbcd96878344ade957d5bccc6bc705b2">av_q2intfloat</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>)</td></tr>
+<tr class="memdesc:gafbcd96878344ade957d5bccc6bc705b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> to a IEEE 32-bit <code>float</code> expressed in fixed-point format.  <br /></td></tr>
+<tr class="separator:gafbcd96878344ade957d5bccc6bc705b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>Rational number calculation. </p>
+<p>While rational numbers can be expressed as floating-point numbers, the conversion process is a lossy one, so are floating-point operations. On the other hand, the nature of FFmpeg demands highly accurate calculation of timestamps. This set of rational number utilities serves as a generic interface for manipulating rational numbers as pairs of numerators and denominators.</p>
+<p>Many of the functions that operate on <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a>'s have the suffix <code>_q</code>, in reference to the mathematical symbol "ℚ" (Q) which denotes the set of all rational numbers. </p>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ga6eff035c271caa5a533987a1e00ad43e" name="ga6eff035c271caa5a533987a1e00ad43e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6eff035c271caa5a533987a1e00ad43e">&#9670;&#160;</a></span>AVRational</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVRational AVRational</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rational number (pair of numerator and denominator). </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga2eb3a275aabacd8421f140a12bab4a91" name="ga2eb3a275aabacd8421f140a12bab4a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2eb3a275aabacd8421f140a12bab4a91">&#9670;&#160;</a></span>av_add_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_rational.html">AVRational</a> av_add_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add two rationals. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>First rational </td></tr>
+    <tr><td class="paramname">c</td><td>Second rational </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>b+c </dd></dl>
+
+</div>
+</div>
+<a id="gaa440bf42ede128219a571ae4ce0f90b8" name="gaa440bf42ede128219a571ae4ce0f90b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa440bf42ede128219a571ae4ce0f90b8">&#9670;&#160;</a></span>av_cmp_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int av_cmp_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compare two rationals. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>First rational </td></tr>
+    <tr><td class="paramname">b</td><td>Second rational</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>One of the following values:<ul>
+<li>0 if <code>a == b</code></li>
+<li>1 if <code>a &gt; b</code></li>
+<li>-1 if <code>a &lt; b</code></li>
+<li><code>INT_MIN</code> if one of the values is of the form <code>0 / 0</code> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ga7dfd5ba1eb1edf5845ac32b338de9e76" name="ga7dfd5ba1eb1edf5845ac32b338de9e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7dfd5ba1eb1edf5845ac32b338de9e76">&#9670;&#160;</a></span>av_d2q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_rational.html">AVRational</a> av_d2q </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a double precision floating point number to a rational. </p>
+<p>In case of infinity, the returned value is expressed as <code>{1, 0}</code> or <code>{-1, 0}</code> depending on the sign.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td><code>double</code> to convert </td></tr>
+    <tr><td class="paramname">max</td><td>Maximum allowed numerator and denominator </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><code>d</code> in <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> form </dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga935dbbf6bde8dfe5fa7ddb1da582eb07" title="Convert an AVRational to a double.">av_q2d()</a> </dd></dl>
+
+</div>
+</div>
+<a id="gaffa24e7bd38e12dbac540d8b66461f97" name="gaffa24e7bd38e12dbac540d8b66461f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaffa24e7bd38e12dbac540d8b66461f97">&#9670;&#160;</a></span>av_div_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_rational.html">AVRational</a> av_div_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Divide one rational by another. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>First rational </td></tr>
+    <tr><td class="paramname">c</td><td>Second rational </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>b/c </dd></dl>
+
+</div>
+</div>
+<a id="ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5" name="ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5">&#9670;&#160;</a></span>av_find_nearest_q_idx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_find_nearest_q_idx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>q</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_rational.html">AVRational</a> *</td>          <td class="paramname"><span class="paramname"><em>q_list</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the value in a list of rationals nearest a given reference rational. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>Reference rational </td></tr>
+    <tr><td class="paramname">q_list</td><td>Array of rationals terminated by <code>{0, 0}</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Index of the nearest value found in the array </dd></dl>
+
+</div>
+</div>
+<a id="gab646f0a7cc30af543ba4a91b37f9de6e" name="gab646f0a7cc30af543ba4a91b37f9de6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab646f0a7cc30af543ba4a91b37f9de6e">&#9670;&#160;</a></span>av_inv_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="attributes_8h.html#a28f50f4c125959216885f01d56dbe866">av_always_inline</a> <a class="el" href="struct_a_v_rational.html">AVRational</a> av_inv_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>q</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invert a rational. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>1 / q </dd></dl>
+
+</div>
+</div>
+<a id="ga7778b1d209ceb3e4bf34e40150d3b882" name="ga7778b1d209ceb3e4bf34e40150d3b882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7778b1d209ceb3e4bf34e40150d3b882">&#9670;&#160;</a></span>av_make_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_a_v_rational.html">AVRational</a> av_make_q </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>den</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a>. </p>
+<p>Useful for compilers that do not support compound literals.</p>
+<dl class="section note"><dt>注解</dt><dd>The return value is not reduced. </dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga4fd9c0b8e663cf3d55e89fbc6ce71602" title="Reduce a fraction.">av_reduce()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga3f9c69432582e2857147bcba3c75dc32" name="ga3f9c69432582e2857147bcba3c75dc32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f9c69432582e2857147bcba3c75dc32">&#9670;&#160;</a></span>av_mul_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_rational.html">AVRational</a> av_mul_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiply two rationals. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>First rational </td></tr>
+    <tr><td class="paramname">c</td><td>Second rational </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>b*c </dd></dl>
+
+</div>
+</div>
+<a id="ga111810c563749cd3081aaa19004f44df" name="ga111810c563749cd3081aaa19004f44df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga111810c563749cd3081aaa19004f44df">&#9670;&#160;</a></span>av_nearer_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_nearer_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>q</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>q1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>q2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find which of the two rationals is closer to another rational. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>Rational to be compared against </td></tr>
+    <tr><td class="paramname">q1,q2</td><td>Rationals to be tested </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>One of the following values:<ul>
+<li>1 if <code>q1</code> is nearer to <code>q</code> than <code>q2</code></li>
+<li>-1 if <code>q2</code> is nearer to <code>q</code> than <code>q1</code></li>
+<li>0 if they have the same distance </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ga935dbbf6bde8dfe5fa7ddb1da582eb07" name="ga935dbbf6bde8dfe5fa7ddb1da582eb07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga935dbbf6bde8dfe5fa7ddb1da582eb07">&#9670;&#160;</a></span>av_q2d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double av_q2d </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> to a <code>double</code>. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td><a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><code>a</code> in floating-point form </dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga7dfd5ba1eb1edf5845ac32b338de9e76" title="Convert a double precision floating point number to a rational.">av_d2q()</a> </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__math__rational_ga935dbbf6bde8dfe5fa7ddb1da582eb07_icgraph.png" border="0" usemap="#agroup__lavu__math__rational_ga935dbbf6bde8dfe5fa7ddb1da582eb07_icgraph" alt=""/></div>
+<map name="agroup__lavu__math__rational_ga935dbbf6bde8dfe5fa7ddb1da582eb07_icgraph" id="agroup__lavu__math__rational_ga935dbbf6bde8dfe5fa7ddb1da582eb07_icgraph">
+<area shape="rect" title="Convert an AVRational to a double." alt="" coords="1322,56,1386,83"/>
+<area shape="rect" href="timestamp_8h.html#a314aa97ebb4a4d2a5ec7d1fb99905979" title="Fill the provided buffer with a string containing a timestamp time representation." alt="" coords="1106,5,1269,32"/>
+<area shape="poly" title=" " alt="" coords="1307,58,1233,35,1234,30,1308,53"/>
+<area shape="rect" href="class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="1100,179,1274,221"/>
+<area shape="poly" title=" " alt="" coords="1325,95,1217,180,1214,176,1321,91"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="223,128,397,171"/>
+<area shape="poly" title=" " alt="" coords="1307,72,973,72,743,72,659,75,593,82,446,113,381,130,379,125,444,108,593,77,658,69,743,67,973,67,1307,67"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="892,187,1052,213"/>
+<area shape="poly" title=" " alt="" coords="1084,203,1052,203,1052,197,1084,197"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,245,175,272"/>
+<area shape="poly" title=" " alt="" coords="1133,231,1059,265,964,301,856,330,801,338,746,341,520,341,370,340,304,333,222,316,165,297,117,275,119,270,167,292,223,311,305,328,370,335,520,336,746,336,800,333,855,325,962,296,1057,261,1131,226"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="645,157,844,184"/>
+<area shape="poly" title=" " alt="" coords="876,190,844,186,844,181,877,185"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="656,208,833,251"/>
+<area shape="poly" title=" " alt="" coords="876,215,834,221,833,215,876,210"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="656,275,833,301"/>
+<area shape="poly" title=" " alt="" coords="934,223,845,265,808,277,807,272,843,260,932,219"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="445,157,597,200"/>
+<area shape="poly" title=" " alt="" coords="630,177,598,179,598,173,630,172"/>
+<area shape="poly" title=" " alt="" coords="429,169,397,164,398,159,430,163"/>
+<area shape="poly" title=" " alt="" coords="412,133,504,126,613,122,729,127,844,143,901,161,948,184,946,189,899,166,843,148,729,132,613,128,505,131,413,139"/>
+<area shape="poly" title=" " alt="" coords="253,180,120,247,118,242,251,176"/>
+<area shape="poly" title=" " alt="" coords="640,208,597,199,599,193,641,203"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="462,224,580,251"/>
+<area shape="poly" title=" " alt="" coords="640,236,580,238,580,233,640,230"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="460,275,582,301"/>
+<area shape="poly" title=" " alt="" coords="641,291,583,291,583,285,641,285"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="232,275,388,301"/>
+<area shape="poly" title=" " alt="" coords="444,291,388,291,388,285,444,285"/>
+<area shape="poly" title=" " alt="" coords="346,262,334,256,310,253,288,255,276,260,273,265,278,273,274,276,268,266,272,256,286,250,310,248,335,251,348,257"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gafbcd96878344ade957d5bccc6bc705b2" name="gafbcd96878344ade957d5bccc6bc705b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafbcd96878344ade957d5bccc6bc705b2">&#9670;&#160;</a></span>av_q2intfloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> av_q2intfloat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>q</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> to a IEEE 32-bit <code>float</code> expressed in fixed-point format. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>Rational to be converted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Equivalent floating-point value, expressed as an unsigned 32-bit integer. </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>The returned value is platform-indepedant. </dd></dl>
+
+</div>
+</div>
+<a id="ga4fd9c0b8e663cf3d55e89fbc6ce71602" name="ga4fd9c0b8e663cf3d55e89fbc6ce71602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4fd9c0b8e663cf3d55e89fbc6ce71602">&#9670;&#160;</a></span>av_reduce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_reduce </td>
+          <td>(</td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dst_num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dst_den</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>den</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reduce a fraction. </p>
+<p>This is useful for framerate calculations.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst_num</td><td>Destination numerator </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst_den</td><td>Destination denominator </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>Source numerator </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">den</td><td>Source denominator </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>Maximum allowed values for <code>dst_num</code> &amp; <code>dst_den</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>1 if the operation is exact, 0 otherwise </dd></dl>
+
+</div>
+</div>
+<a id="gac66c6198ce5e8a8caf88dfc20782fa59" name="gac66c6198ce5e8a8caf88dfc20782fa59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac66c6198ce5e8a8caf88dfc20782fa59">&#9670;&#160;</a></span>av_sub_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_rational.html">AVRational</a> av_sub_q </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtract one rational from another. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>First rational </td></tr>
+    <tr><td class="paramname">c</td><td>Second rational </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>b-c </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

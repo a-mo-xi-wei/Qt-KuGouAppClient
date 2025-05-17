@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: VolumeToolBtn.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_volume_tool_btn_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VolumeToolBtn.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_volume_tool_btn_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef VOLUMETOOLBTN_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define VOLUMETOOLBTN_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_slider_widget_8h.html">./SliderWidget/SliderWidget.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QToolButton&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#if defined(MYBUTTON_LIBRARY)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define MYBUTTON_EXPORT Q_DECL_EXPORT</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_volume_tool_btn_8h.html#a049c815a0e0d11d94810321a663afbc4">   20</a></span><span class="preprocessor">#define MYBUTTON_EXPORT Q_DECL_IMPORT</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span>QTimer;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class </span>QVBoxLayout;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html">   30</a></span><span class="keyword">class </span><a class="code hl_define" href="_volume_tool_btn_8h.html#a049c815a0e0d11d94810321a663afbc4">MYBUTTON_EXPORT</a> <a class="code hl_function" href="class_volume_tool_btn.html#a0e51705f3f342fc64b25ebc436f940b8">VolumeToolBtn</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_q_tool_button.html">QToolButton</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Q_OBJECT</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_volume_tool_btn.html#a0e51705f3f342fc64b25ebc436f940b8">VolumeToolBtn</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#a269e08930364ae8b287df18ccaee311c">initVolumeWidget</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#ad2d33a30cbe263c150c81f32821ebae9">checkMousePosition</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#a5e7dca4af10e25ec299fa7a9d9a48e3c">getVolumeWidgetPosition</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_volume_tool_btn.html#a8901f804a9f5679402ebd952513fa209">getVolumeValue</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#a0739ac55bac5c59fcaa5d3b3efa31abd">updateIcon</a>(<span class="keywordtype">bool</span> isHovered = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#a1b754c67c15b727406bce5e5f4f663d5">setVolume</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; value) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#ae30868492e047dc485c73e92d33a0b1d">enterEvent</a>(QEnterEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#a5389554336d47de8a8249cf2aaf682a2">leaveEvent</a>(QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_volume_tool_btn.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">showEvent</a>(QShowEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_volume_tool_btn.html#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a>(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_volume_tool_btn.html#a4c02ead444dfb22d4922ef5b6ac7f808">onNoVolume</a>(<span class="keywordtype">bool</span> <a class="code hl_variable" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>signals:</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#a7e518333e8d20322aae765b2f37c7fa3">  117</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_volume_tool_btn.html#a7e518333e8d20322aae765b2f37c7fa3">volumeChange</a>(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#a1d6d3efe6b312d82171644c4bffb216b">  120</a></span>    <span class="keywordtype">bool</span>                    <a class="code hl_variable" href="class_volume_tool_btn.html#a1d6d3efe6b312d82171644c4bffb216b">m_isNoVolume</a>;             </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#a7037f7e968b46fddb64871052d0c9cc3">  121</a></span>    std::unique_ptr&lt;MyWidget&gt;       <a class="code hl_variable" href="class_volume_tool_btn.html#a7037f7e968b46fddb64871052d0c9cc3">m_volumeWidget</a>;   </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#a9a366b45562eaa7f4665386d2621cdf2">  122</a></span>    std::unique_ptr&lt;QLabel&gt;         <a class="code hl_variable" href="class_volume_tool_btn.html#a9a366b45562eaa7f4665386d2621cdf2">m_volumeLab</a>;      </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#ac12856ade0b3d7caf84cad8b0ed7c195">  123</a></span>    std::unique_ptr&lt;SliderWidget&gt;   <a class="code hl_variable" href="class_volume_tool_btn.html#ac12856ade0b3d7caf84cad8b0ed7c195">m_volumeSlider</a>;   </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#a5f7c61633ad4f0d9c520d24d91234f49">  124</a></span>    QVBoxLayout*            <a class="code hl_variable" href="class_volume_tool_btn.html#a5f7c61633ad4f0d9c520d24d91234f49">m_vBoxLayout</a>;             </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#a0319dd89ac92dd23f1f38ab7f3d41df5">  125</a></span>    QPoint                  <a class="code hl_variable" href="class_volume_tool_btn.html#a0319dd89ac92dd23f1f38ab7f3d41df5">m_volumePosition</a>;         </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#aaed86d402df041b43297141c2a696b3a">  126</a></span>    QWidget*                <a class="code hl_variable" href="class_volume_tool_btn.html#aaed86d402df041b43297141c2a696b3a">m_volumeParent</a>{};         </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#a22fc18d723f5740b2e9f09985316f2ca">  127</a></span>    QTimer*                 <a class="code hl_variable" href="class_volume_tool_btn.html#a22fc18d723f5740b2e9f09985316f2ca">m_leaveTimer</a>{};           </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_volume_tool_btn.html#a2450af14957e45ecc0d742560e76dd78">  128</a></span>    QTimer*                 <a class="code hl_variable" href="class_volume_tool_btn.html#a2450af14957e45ecc0d742560e76dd78">m_positionCheckTimer</a>{};   </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>};</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#endif </span><span class="comment">// VOLUMETOOLBTN_H</span></div>
+<div class="ttc" id="a_my_search_line_edit_8cpp_html_aa12d082c0f752ab7313a2cf16522a3df"><div class="ttname"><a href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a></div><div class="ttdeci">std::once_flag flag</div><div class="ttdoc">单次初始化标志，确保原始宽度只设置一次</div><div class="ttdef"><b>定义</b> MySearchLineEdit.cpp:21</div></div>
+<div class="ttc" id="a_slider_widget_8h_html"><div class="ttname"><a href="_slider_widget_8h.html">SliderWidget.h</a></div><div class="ttdoc">定义 SliderWidget 类，提供自定义滑块控件</div></div>
+<div class="ttc" id="a_volume_tool_btn_8h_html_a049c815a0e0d11d94810321a663afbc4"><div class="ttname"><a href="_volume_tool_btn_8h.html#a049c815a0e0d11d94810321a663afbc4">MYBUTTON_EXPORT</a></div><div class="ttdeci">#define MYBUTTON_EXPORT</div><div class="ttdoc">动态库导出宏，定义库的导出/导入行为</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:20</div></div>
+<div class="ttc" id="aclass_q_tool_button_html"><div class="ttname"><a href="class_q_tool_button.html">QToolButton</a></div><div class="ttdoc">工具按钮类</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a0319dd89ac92dd23f1f38ab7f3d41df5"><div class="ttname"><a href="class_volume_tool_btn.html#a0319dd89ac92dd23f1f38ab7f3d41df5">VolumeToolBtn::m_volumePosition</a></div><div class="ttdeci">QPoint m_volumePosition</div><div class="ttdoc">音量控件位置</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:125</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a0739ac55bac5c59fcaa5d3b3efa31abd"><div class="ttname"><a href="class_volume_tool_btn.html#a0739ac55bac5c59fcaa5d3b3efa31abd">VolumeToolBtn::updateIcon</a></div><div class="ttdeci">void updateIcon(bool isHovered=false)</div><div class="ttdoc">更新按钮图标</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:161</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a0e51705f3f342fc64b25ebc436f940b8"><div class="ttname"><a href="class_volume_tool_btn.html#a0e51705f3f342fc64b25ebc436f940b8">VolumeToolBtn::VolumeToolBtn</a></div><div class="ttdeci">VolumeToolBtn(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化音量调节按钮</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:21</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a1b754c67c15b727406bce5e5f4f663d5"><div class="ttname"><a href="class_volume_tool_btn.html#a1b754c67c15b727406bce5e5f4f663d5">VolumeToolBtn::setVolume</a></div><div class="ttdeci">void setVolume(const int &amp;value) const</div><div class="ttdoc">设置音量值</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:175</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a1d6d3efe6b312d82171644c4bffb216b"><div class="ttname"><a href="class_volume_tool_btn.html#a1d6d3efe6b312d82171644c4bffb216b">VolumeToolBtn::m_isNoVolume</a></div><div class="ttdeci">bool m_isNoVolume</div><div class="ttdoc">是否静音</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:120</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a22fc18d723f5740b2e9f09985316f2ca"><div class="ttname"><a href="class_volume_tool_btn.html#a22fc18d723f5740b2e9f09985316f2ca">VolumeToolBtn::m_leaveTimer</a></div><div class="ttdeci">QTimer * m_leaveTimer</div><div class="ttdoc">鼠标离开延迟定时器</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:127</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a2450af14957e45ecc0d742560e76dd78"><div class="ttname"><a href="class_volume_tool_btn.html#a2450af14957e45ecc0d742560e76dd78">VolumeToolBtn::m_positionCheckTimer</a></div><div class="ttdeci">QTimer * m_positionCheckTimer</div><div class="ttdoc">鼠标位置检查定时器</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:128</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a269e08930364ae8b287df18ccaee311c"><div class="ttname"><a href="class_volume_tool_btn.html#a269e08930364ae8b287df18ccaee311c">VolumeToolBtn::initVolumeWidget</a></div><div class="ttdeci">void initVolumeWidget()</div><div class="ttdoc">初始化音量调节控件</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:65</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a26eb1890b4d4dfb7bf76fb7c44cbdebf"><div class="ttname"><a href="class_volume_tool_btn.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">VolumeToolBtn::showEvent</a></div><div class="ttdeci">void showEvent(QShowEvent *event) override</div><div class="ttdoc">控件显示事件，更新音量控件位置</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:216</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a4c02ead444dfb22d4922ef5b6ac7f808"><div class="ttname"><a href="class_volume_tool_btn.html#a4c02ead444dfb22d4922ef5b6ac7f808">VolumeToolBtn::onNoVolume</a></div><div class="ttdeci">void onNoVolume(bool flag)</div><div class="ttdoc">处理静音状态变化</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:261</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a5389554336d47de8a8249cf2aaf682a2"><div class="ttname"><a href="class_volume_tool_btn.html#a5389554336d47de8a8249cf2aaf682a2">VolumeToolBtn::leaveEvent</a></div><div class="ttdeci">void leaveEvent(QEvent *event) override</div><div class="ttdoc">鼠标离开事件，延迟隐藏音量控件</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:203</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a5e7dca4af10e25ec299fa7a9d9a48e3c"><div class="ttname"><a href="class_volume_tool_btn.html#a5e7dca4af10e25ec299fa7a9d9a48e3c">VolumeToolBtn::getVolumeWidgetPosition</a></div><div class="ttdeci">void getVolumeWidgetPosition()</div><div class="ttdoc">获取音量控件位置</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:144</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a5f7c61633ad4f0d9c520d24d91234f49"><div class="ttname"><a href="class_volume_tool_btn.html#a5f7c61633ad4f0d9c520d24d91234f49">VolumeToolBtn::m_vBoxLayout</a></div><div class="ttdeci">QVBoxLayout * m_vBoxLayout</div><div class="ttdoc">音量控件布局</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:124</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a7037f7e968b46fddb64871052d0c9cc3"><div class="ttname"><a href="class_volume_tool_btn.html#a7037f7e968b46fddb64871052d0c9cc3">VolumeToolBtn::m_volumeWidget</a></div><div class="ttdeci">std::unique_ptr&lt; MyWidget &gt; m_volumeWidget</div><div class="ttdoc">音量调节控件</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:121</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a7e518333e8d20322aae765b2f37c7fa3"><div class="ttname"><a href="class_volume_tool_btn.html#a7e518333e8d20322aae765b2f37c7fa3">VolumeToolBtn::volumeChange</a></div><div class="ttdeci">void volumeChange(int value)</div><div class="ttdoc">音量值变化信号</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a7eb87a6d4464680c455d278d1d32eba6"><div class="ttname"><a href="class_volume_tool_btn.html#a7eb87a6d4464680c455d278d1d32eba6">VolumeToolBtn::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) override</div><div class="ttdoc">事件过滤器，处理主窗口事件</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:228</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a8901f804a9f5679402ebd952513fa209"><div class="ttname"><a href="class_volume_tool_btn.html#a8901f804a9f5679402ebd952513fa209">VolumeToolBtn::getVolumeValue</a></div><div class="ttdeci">int getVolumeValue() const</div><div class="ttdoc">获取当前音量值</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:153</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_a9a366b45562eaa7f4665386d2621cdf2"><div class="ttname"><a href="class_volume_tool_btn.html#a9a366b45562eaa7f4665386d2621cdf2">VolumeToolBtn::m_volumeLab</a></div><div class="ttdeci">std::unique_ptr&lt; QLabel &gt; m_volumeLab</div><div class="ttdoc">音量值标签</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:122</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_aaed86d402df041b43297141c2a696b3a"><div class="ttname"><a href="class_volume_tool_btn.html#aaed86d402df041b43297141c2a696b3a">VolumeToolBtn::m_volumeParent</a></div><div class="ttdeci">QWidget * m_volumeParent</div><div class="ttdoc">音量控件父窗口</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:126</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_ac12856ade0b3d7caf84cad8b0ed7c195"><div class="ttname"><a href="class_volume_tool_btn.html#ac12856ade0b3d7caf84cad8b0ed7c195">VolumeToolBtn::m_volumeSlider</a></div><div class="ttdeci">std::unique_ptr&lt; SliderWidget &gt; m_volumeSlider</div><div class="ttdoc">音量滑块</div><div class="ttdef"><b>定义</b> VolumeToolBtn.h:123</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_ad2d33a30cbe263c150c81f32821ebae9"><div class="ttname"><a href="class_volume_tool_btn.html#ad2d33a30cbe263c150c81f32821ebae9">VolumeToolBtn::checkMousePosition</a></div><div class="ttdeci">void checkMousePosition() const</div><div class="ttdoc">检查鼠标位置，控制音量控件显示</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:121</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_ae30868492e047dc485c73e92d33a0b1d"><div class="ttname"><a href="class_volume_tool_btn.html#ae30868492e047dc485c73e92d33a0b1d">VolumeToolBtn::enterEvent</a></div><div class="ttdeci">void enterEvent(QEnterEvent *event) override</div><div class="ttdoc">鼠标进入事件，显示音量控件</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:183</div></div>
+<div class="ttc" id="aclass_volume_tool_btn_html_afba6e95967cc3eb25fd518f7bde6ec04"><div class="ttname"><a href="class_volume_tool_btn.html#afba6e95967cc3eb25fd518f7bde6ec04">VolumeToolBtn::initUi</a></div><div class="ttdeci">void initUi()</div><div class="ttdoc">初始化按钮界面</div><div class="ttdef"><b>定义</b> VolumeToolBtn.cpp:112</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_64e62a3da93a71e7cadfe52a7a3289db.html">MyButton</a></li><li class="navelem"><a class="el" href="dir_164d9cce51f2eb898ff501da92005754.html">VolumeToolBtn</a></li><li class="navelem"><a class="el" href="_volume_tool_btn_8h.html">VolumeToolBtn.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

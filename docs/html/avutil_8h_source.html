@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: avutil.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('avutil_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">avutil.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="avutil_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * copyright (c) 2006 Michael Niedermayer &lt;michaelni@gmx.at&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifndef AVUTIL_AVUTIL_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define AVUTIL_AVUTIL_H</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="group__lavu__ver.html#ga9a979c78d33d8767b51952f7f5c61541">  171</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="group__lavu__ver.html#ga9a979c78d33d8767b51952f7f5c61541">avutil_version</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="group__lavu__ver.html#ga1124bfdd0e7fd6ee1aeeef4ebffebca8">  178</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="group__lavu__ver.html#ga1124bfdd0e7fd6ee1aeeef4ebffebca8">av_version_info</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="group__lavu__ver.html#ga5f1205d8bf110f597580b49ae43420c6">  183</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="group__lavu__ver.html#ga5f1205d8bf110f597580b49ae43420c6">avutil_configuration</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="group__lavu__ver.html#ga1a05049e8d684432f3c399657d66f002">  188</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="group__lavu__ver.html#ga1a05049e8d684432f3c399657d66f002">avutil_license</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="foldopen" id="foldopen00199" data-start="{" data-end="};">
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">  199</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a> {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48afdadbd6c4f612c59f6b6c7c6f84fd347">  200</a></span>    <a class="code hl_enumvalue" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48afdadbd6c4f612c59f6b6c7c6f84fd347">AVMEDIA_TYPE_UNKNOWN</a> = -1,  </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48ac1a46f59be5c6c2d3412ab172d6b8cf5">  201</a></span>    <a class="code hl_enumvalue" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48ac1a46f59be5c6c2d3412ab172d6b8cf5">AVMEDIA_TYPE_VIDEO</a>,</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a7b4e33b8f30ac94d34ce8d9f7c33927a">  202</a></span>    <a class="code hl_enumvalue" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a7b4e33b8f30ac94d34ce8d9f7c33927a">AVMEDIA_TYPE_AUDIO</a>,</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48ae3df4d77c6908fb626293c2fed215d52">  203</a></span>    <a class="code hl_enumvalue" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48ae3df4d77c6908fb626293c2fed215d52">AVMEDIA_TYPE_DATA</a>,          </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48aa64a67386a9c53360744b86e4707b831">  204</a></span>    <a class="code hl_enumvalue" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48aa64a67386a9c53360744b86e4707b831">AVMEDIA_TYPE_SUBTITLE</a>,</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a2d09f16df8631e64e8fa566142cdc99d">  205</a></span>    <a class="code hl_enumvalue" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a2d09f16df8631e64e8fa566142cdc99d">AVMEDIA_TYPE_ATTACHMENT</a>,    </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a8e220e09ef38f26963e8e2ec731fb7d9">  206</a></span>    <a class="code hl_enumvalue" href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a8e220e09ef38f26963e8e2ec731fb7d9">AVMEDIA_TYPE_NB</a></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>};</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#ga1eb76ac28a60793459c55c102dfcf816">  213</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="group__lavu__misc.html#ga1eb76ac28a60793459c55c102dfcf816">av_get_media_type_string</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a> media_type);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="group__lavu__enc.html#ga979d8e4b4947c924436fcc3b62cafea7">  225</a></span><span class="preprocessor">#define FF_LAMBDA_SHIFT 7</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="group__lavu__enc.html#ga44d4d51371d07ef43eb009ef29a0b534">  226</a></span><span class="preprocessor">#define FF_LAMBDA_SCALE (1&lt;&lt;FF_LAMBDA_SHIFT)</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="group__lavu__enc.html#gad6ce86405f7381daad36ccf516b4da98">  227</a></span><span class="preprocessor">#define FF_QP2LAMBDA 118 </span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="group__lavu__enc.html#gabc22a7ffbd4a73e81dd69e8c45e6cf8c">  228</a></span><span class="preprocessor">#define FF_LAMBDA_MAX (256*128-1)</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="group__lavu__enc.html#gab1026a3e2eb8430ec938fffdc1bb2238">  230</a></span><span class="preprocessor">#define FF_QUALITY_SCALE FF_LAMBDA_SCALE </span><span class="comment">//FIXME maybe remove</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="group__lavu__time.html#ga2eaefe702f95f619ea6f2d08afa01be1">  248</a></span><span class="preprocessor">#define AV_NOPTS_VALUE          ((int64_t)UINT64_C(0x8000000000000000))</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="group__lavu__time.html#gaa11ed202b70e1f52bac809811a910e2a">  254</a></span><span class="preprocessor">#define AV_TIME_BASE            1000000</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="group__lavu__time.html#gafd07a13a4ddaa6015275cad6022d9ee3">  260</a></span><span class="preprocessor">#define AV_TIME_BASE_Q          (AVRational){1, AV_TIME_BASE}</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="foldopen" id="foldopen00272" data-start="{" data-end="};">
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#gae6cbcab1f70d8e476757f1c1f5a0a78e">  272</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__picture.html#gae6cbcab1f70d8e476757f1c1f5a0a78e">AVPictureType</a> {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea33183189d771e3325ccdd36fa980b6f6">  273</a></span>    <a class="code hl_enumvalue" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea33183189d771e3325ccdd36fa980b6f6">AV_PICTURE_TYPE_NONE</a> = 0, </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea02be39f151a8ace7a65c86e13053e817">  274</a></span>    <a class="code hl_enumvalue" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea02be39f151a8ace7a65c86e13053e817">AV_PICTURE_TYPE_I</a>,     </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eaa6fc0479507a03f173f07fc75dab2193">  275</a></span>    <a class="code hl_enumvalue" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eaa6fc0479507a03f173f07fc75dab2193">AV_PICTURE_TYPE_P</a>,     </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ead22f8968e99bc48897c3f4ac29e82dae">  276</a></span>    <a class="code hl_enumvalue" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ead22f8968e99bc48897c3f4ac29e82dae">AV_PICTURE_TYPE_B</a>,     </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eac279237c3b09bb9f7ece0675658e65ad">  277</a></span>    <a class="code hl_enumvalue" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eac279237c3b09bb9f7ece0675658e65ad">AV_PICTURE_TYPE_S</a>,     </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eaa7199b8035cf5a076a05a7fcf6dfc7fe">  278</a></span>    <a class="code hl_enumvalue" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eaa7199b8035cf5a076a05a7fcf6dfc7fe">AV_PICTURE_TYPE_SI</a>,    </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea83789bae2515a1ce384a88f074244e4e">  279</a></span>    <a class="code hl_enumvalue" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea83789bae2515a1ce384a88f074244e4e">AV_PICTURE_TYPE_SP</a>,    </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea71f9f194b0cbe86778cb6df41b867cf3">  280</a></span>    <a class="code hl_enumvalue" href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea71f9f194b0cbe86778cb6df41b867cf3">AV_PICTURE_TYPE_BI</a>,    </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>};</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="group__lavu__picture.html#gacbf2ea8b2b89924c890ef8ec10a3d922">  290</a></span><span class="keywordtype">char</span> <a class="code hl_function" href="group__lavu__picture.html#gacbf2ea8b2b89924c890ef8ec10a3d922">av_get_picture_type_char</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__picture.html#gae6cbcab1f70d8e476757f1c1f5a0a78e">AVPictureType</a> pict_type);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">#include &quot;<a class="code" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html">common.h</a>&quot;</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#include &quot;<a class="code" href="error_8h.html">error.h</a>&quot;</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#include &quot;<a class="code" href="rational_8h.html">rational.h</a>&quot;</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#include &quot;<a class="code" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html">version.h</a>&quot;</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#include &quot;<a class="code" href="macros_8h.html">macros.h</a>&quot;</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="preprocessor">#include &quot;<a class="code" href="mathematics_8h.html">mathematics.h</a>&quot;</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">log.h</a>&quot;</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="preprocessor">#include &quot;<a class="code" href="pixfmt_8h.html">pixfmt.h</a>&quot;</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span></div>
+<div class="foldopen" id="foldopen00308" data-start="{" data-end="}">
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gaaf7385f0b6fa2d237998d4a10416d714">  308</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> *<a class="code hl_function" href="group__lavu__misc.html#gaaf7385f0b6fa2d237998d4a10416d714">av_x_if_null</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <span class="keyword">const</span> <span class="keywordtype">void</span> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>)</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>{</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)(intptr_t)(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a> ? <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a> : <a class="code hl_typedef" href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a>);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>}</div>
+</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#ga7894e9b1ec8844685bc9101779c7d533">  321</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="group__lavu__misc.html#ga7894e9b1ec8844685bc9101779c7d533">av_int_list_length_for_size</a>(<span class="keywordtype">unsigned</span> elsize,</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                                     <span class="keyword">const</span> <span class="keywordtype">void</span> *list, <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> term) <a class="code hl_define" href="attributes_8h.html#adc7fd5bb40d84900a3a30ef3318020c2">av_pure</a>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span></div>
+<div class="foldopen" id="foldopen00331" data-start="" data-end="">
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gaddb1ee4dba6de5845eda3e9e1e740366">  331</a></span><span class="preprocessor">#define av_int_list_length(list, term) \</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="preprocessor">    av_int_list_length_for_size(sizeof(*(list)), list, term)</span></div>
+</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#ga44751a89139db0733cad43bf2c8931a2">  339</a></span>FILE *<a class="code hl_function" href="group__lavu__misc.html#ga44751a89139db0733cad43bf2c8931a2">av_fopen_utf8</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab25d8cd967ccbd19b630d7100ff8f67e">path</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a65d0d634b48ab06ff63091faee16325f">mode</a>);</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gab889104afd2e874f9dd2b3b78b04f3f2">  344</a></span><a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a> <a class="code hl_function" href="group__lavu__misc.html#gab889104afd2e874f9dd2b3b78b04f3f2">av_get_time_base_q</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gaed5482506b009b48569356a08b21e403">  346</a></span><span class="preprocessor">#define AV_FOURCC_MAX_STRING_SIZE 32</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#gae07d7cbf511060210152a89ad0d137ad">  348</a></span><span class="preprocessor">#define av_fourcc2str(fourcc) av_fourcc_make_string((char[AV_FOURCC_MAX_STRING_SIZE]){0}, fourcc)</span></div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span></div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno"><a class="line" href="group__lavu__misc.html#ga79cdcd61b8d4c275681360af4430b513">  358</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="group__lavu__misc.html#ga79cdcd61b8d4c275681360af4430b513">av_fourcc_make_string</a>(<span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> fourcc);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span></div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_AVUTIL_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdoc">32 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:33</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aaa5d1cd013383c889537491c3cfd9aad"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></div><div class="ttdeci">unsigned long long uint64_t</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:35</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_acbccb77724c9f4a12f2a844974ab0fea"><div class="ttname"><a href="_s_d_l__opengl_8h.html#acbccb77724c9f4a12f2a844974ab0fea">x</a></div><div class="ttdeci">GLint GLint GLint GLint GLint x</div><div class="ttdef"><b>定义</b> SDL_opengl.h:1574</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a65d0d634b48ab06ff63091faee16325f"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a65d0d634b48ab06ff63091faee16325f">mode</a></div><div class="ttdeci">GLenum mode</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1430</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa3b73d9ca9f2e2396cbeae1ce6ce14be"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a></div><div class="ttdeci">GLenum GLuint GLenum GLsizei const GLchar * buf</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2759</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa5367c14d90f462230c2611b81b41d23"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></div><div class="ttdeci">GLfloat GLfloat p</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:13126</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab25d8cd967ccbd19b630d7100ff8f67e"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab25d8cd967ccbd19b630d7100ff8f67e">path</a></div><div class="ttdeci">GLsizei const GLchar *const  * path</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:4536</div></div>
+<div class="ttc" id="aattributes_8h_html_adc7fd5bb40d84900a3a30ef3318020c2"><div class="ttname"><a href="attributes_8h.html#adc7fd5bb40d84900a3a30ef3318020c2">av_pure</a></div><div class="ttdeci">#define av_pure</div><div class="ttdef"><b>定义</b> attributes.h:72</div></div>
+<div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div><div class="ttdoc">error code definitions</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_ga1eb76ac28a60793459c55c102dfcf816"><div class="ttname"><a href="group__lavu__misc.html#ga1eb76ac28a60793459c55c102dfcf816">av_get_media_type_string</a></div><div class="ttdeci">const char * av_get_media_type_string(enum AVMediaType media_type)</div><div class="ttdoc">Return a string describing the media_type enum, NULL if media_type is unknown.</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_ga44751a89139db0733cad43bf2c8931a2"><div class="ttname"><a href="group__lavu__misc.html#ga44751a89139db0733cad43bf2c8931a2">av_fopen_utf8</a></div><div class="ttdeci">FILE * av_fopen_utf8(const char *path, const char *mode)</div><div class="ttdoc">Open a file using a UTF-8 filename.</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_ga7894e9b1ec8844685bc9101779c7d533"><div class="ttname"><a href="group__lavu__misc.html#ga7894e9b1ec8844685bc9101779c7d533">av_int_list_length_for_size</a></div><div class="ttdeci">unsigned av_int_list_length_for_size(unsigned elsize, const void *list, uint64_t term) av_pure</div><div class="ttdoc">Compute the length of an integer list.</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_ga79cdcd61b8d4c275681360af4430b513"><div class="ttname"><a href="group__lavu__misc.html#ga79cdcd61b8d4c275681360af4430b513">av_fourcc_make_string</a></div><div class="ttdeci">char * av_fourcc_make_string(char *buf, uint32_t fourcc)</div><div class="ttdoc">Fill the provided buffer with a string containing a FourCC (four-character code) representation.</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_ga9a84bba4713dfced21a1a56163be1f48"><div class="ttname"><a href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a></div><div class="ttdeci">AVMediaType</div><div class="ttdef"><b>定义</b> avutil.h:199</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gaaf7385f0b6fa2d237998d4a10416d714"><div class="ttname"><a href="group__lavu__misc.html#gaaf7385f0b6fa2d237998d4a10416d714">av_x_if_null</a></div><div class="ttdeci">static void * av_x_if_null(const void *p, const void *x)</div><div class="ttdoc">Return x default pointer in case p is NULL.</div><div class="ttdef"><b>定义</b> avutil.h:308</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gab889104afd2e874f9dd2b3b78b04f3f2"><div class="ttname"><a href="group__lavu__misc.html#gab889104afd2e874f9dd2b3b78b04f3f2">av_get_time_base_q</a></div><div class="ttdeci">AVRational av_get_time_base_q(void)</div><div class="ttdoc">Return the fractional representation of the internal time base.</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gga9a84bba4713dfced21a1a56163be1f48a2d09f16df8631e64e8fa566142cdc99d"><div class="ttname"><a href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a2d09f16df8631e64e8fa566142cdc99d">AVMEDIA_TYPE_ATTACHMENT</a></div><div class="ttdeci">@ AVMEDIA_TYPE_ATTACHMENT</div><div class="ttdoc">Opaque data information usually sparse</div><div class="ttdef"><b>定义</b> avutil.h:205</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gga9a84bba4713dfced21a1a56163be1f48a7b4e33b8f30ac94d34ce8d9f7c33927a"><div class="ttname"><a href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a7b4e33b8f30ac94d34ce8d9f7c33927a">AVMEDIA_TYPE_AUDIO</a></div><div class="ttdeci">@ AVMEDIA_TYPE_AUDIO</div><div class="ttdef"><b>定义</b> avutil.h:202</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gga9a84bba4713dfced21a1a56163be1f48a8e220e09ef38f26963e8e2ec731fb7d9"><div class="ttname"><a href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48a8e220e09ef38f26963e8e2ec731fb7d9">AVMEDIA_TYPE_NB</a></div><div class="ttdeci">@ AVMEDIA_TYPE_NB</div><div class="ttdef"><b>定义</b> avutil.h:206</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gga9a84bba4713dfced21a1a56163be1f48aa64a67386a9c53360744b86e4707b831"><div class="ttname"><a href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48aa64a67386a9c53360744b86e4707b831">AVMEDIA_TYPE_SUBTITLE</a></div><div class="ttdeci">@ AVMEDIA_TYPE_SUBTITLE</div><div class="ttdef"><b>定义</b> avutil.h:204</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gga9a84bba4713dfced21a1a56163be1f48ac1a46f59be5c6c2d3412ab172d6b8cf5"><div class="ttname"><a href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48ac1a46f59be5c6c2d3412ab172d6b8cf5">AVMEDIA_TYPE_VIDEO</a></div><div class="ttdeci">@ AVMEDIA_TYPE_VIDEO</div><div class="ttdef"><b>定义</b> avutil.h:201</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gga9a84bba4713dfced21a1a56163be1f48ae3df4d77c6908fb626293c2fed215d52"><div class="ttname"><a href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48ae3df4d77c6908fb626293c2fed215d52">AVMEDIA_TYPE_DATA</a></div><div class="ttdeci">@ AVMEDIA_TYPE_DATA</div><div class="ttdoc">Opaque data information usually continuous</div><div class="ttdef"><b>定义</b> avutil.h:203</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_gga9a84bba4713dfced21a1a56163be1f48afdadbd6c4f612c59f6b6c7c6f84fd347"><div class="ttname"><a href="group__lavu__misc.html#gga9a84bba4713dfced21a1a56163be1f48afdadbd6c4f612c59f6b6c7c6f84fd347">AVMEDIA_TYPE_UNKNOWN</a></div><div class="ttdeci">@ AVMEDIA_TYPE_UNKNOWN</div><div class="ttdoc">Usually treated as AVMEDIA_TYPE_DATA</div><div class="ttdef"><b>定义</b> avutil.h:200</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_gacbf2ea8b2b89924c890ef8ec10a3d922"><div class="ttname"><a href="group__lavu__picture.html#gacbf2ea8b2b89924c890ef8ec10a3d922">av_get_picture_type_char</a></div><div class="ttdeci">char av_get_picture_type_char(enum AVPictureType pict_type)</div><div class="ttdoc">Return a single letter to describe the given picture type pict_type.</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_gae6cbcab1f70d8e476757f1c1f5a0a78e"><div class="ttname"><a href="group__lavu__picture.html#gae6cbcab1f70d8e476757f1c1f5a0a78e">AVPictureType</a></div><div class="ttdeci">AVPictureType</div><div class="ttdef"><b>定义</b> avutil.h:272</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_ggae6cbcab1f70d8e476757f1c1f5a0a78ea02be39f151a8ace7a65c86e13053e817"><div class="ttname"><a href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea02be39f151a8ace7a65c86e13053e817">AV_PICTURE_TYPE_I</a></div><div class="ttdeci">@ AV_PICTURE_TYPE_I</div><div class="ttdoc">Intra</div><div class="ttdef"><b>定义</b> avutil.h:274</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_ggae6cbcab1f70d8e476757f1c1f5a0a78ea33183189d771e3325ccdd36fa980b6f6"><div class="ttname"><a href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea33183189d771e3325ccdd36fa980b6f6">AV_PICTURE_TYPE_NONE</a></div><div class="ttdeci">@ AV_PICTURE_TYPE_NONE</div><div class="ttdoc">Undefined</div><div class="ttdef"><b>定义</b> avutil.h:273</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_ggae6cbcab1f70d8e476757f1c1f5a0a78ea71f9f194b0cbe86778cb6df41b867cf3"><div class="ttname"><a href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea71f9f194b0cbe86778cb6df41b867cf3">AV_PICTURE_TYPE_BI</a></div><div class="ttdeci">@ AV_PICTURE_TYPE_BI</div><div class="ttdoc">BI type</div><div class="ttdef"><b>定义</b> avutil.h:280</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_ggae6cbcab1f70d8e476757f1c1f5a0a78ea83789bae2515a1ce384a88f074244e4e"><div class="ttname"><a href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ea83789bae2515a1ce384a88f074244e4e">AV_PICTURE_TYPE_SP</a></div><div class="ttdeci">@ AV_PICTURE_TYPE_SP</div><div class="ttdoc">Switching Predicted</div><div class="ttdef"><b>定义</b> avutil.h:279</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_ggae6cbcab1f70d8e476757f1c1f5a0a78eaa6fc0479507a03f173f07fc75dab2193"><div class="ttname"><a href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eaa6fc0479507a03f173f07fc75dab2193">AV_PICTURE_TYPE_P</a></div><div class="ttdeci">@ AV_PICTURE_TYPE_P</div><div class="ttdoc">Predicted</div><div class="ttdef"><b>定义</b> avutil.h:275</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_ggae6cbcab1f70d8e476757f1c1f5a0a78eaa7199b8035cf5a076a05a7fcf6dfc7fe"><div class="ttname"><a href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eaa7199b8035cf5a076a05a7fcf6dfc7fe">AV_PICTURE_TYPE_SI</a></div><div class="ttdeci">@ AV_PICTURE_TYPE_SI</div><div class="ttdoc">Switching Intra</div><div class="ttdef"><b>定义</b> avutil.h:278</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_ggae6cbcab1f70d8e476757f1c1f5a0a78eac279237c3b09bb9f7ece0675658e65ad"><div class="ttname"><a href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78eac279237c3b09bb9f7ece0675658e65ad">AV_PICTURE_TYPE_S</a></div><div class="ttdeci">@ AV_PICTURE_TYPE_S</div><div class="ttdoc">S(GMC)-VOP MPEG-4</div><div class="ttdef"><b>定义</b> avutil.h:277</div></div>
+<div class="ttc" id="agroup__lavu__picture_html_ggae6cbcab1f70d8e476757f1c1f5a0a78ead22f8968e99bc48897c3f4ac29e82dae"><div class="ttname"><a href="group__lavu__picture.html#ggae6cbcab1f70d8e476757f1c1f5a0a78ead22f8968e99bc48897c3f4ac29e82dae">AV_PICTURE_TYPE_B</a></div><div class="ttdeci">@ AV_PICTURE_TYPE_B</div><div class="ttdoc">Bi-dir predicted</div><div class="ttdef"><b>定义</b> avutil.h:276</div></div>
+<div class="ttc" id="agroup__lavu__ver_html_ga1124bfdd0e7fd6ee1aeeef4ebffebca8"><div class="ttname"><a href="group__lavu__ver.html#ga1124bfdd0e7fd6ee1aeeef4ebffebca8">av_version_info</a></div><div class="ttdeci">const char * av_version_info(void)</div><div class="ttdoc">Return an informative version string.</div></div>
+<div class="ttc" id="agroup__lavu__ver_html_ga1a05049e8d684432f3c399657d66f002"><div class="ttname"><a href="group__lavu__ver.html#ga1a05049e8d684432f3c399657d66f002">avutil_license</a></div><div class="ttdeci">const char * avutil_license(void)</div><div class="ttdoc">Return the libavutil license.</div></div>
+<div class="ttc" id="agroup__lavu__ver_html_ga5f1205d8bf110f597580b49ae43420c6"><div class="ttname"><a href="group__lavu__ver.html#ga5f1205d8bf110f597580b49ae43420c6">avutil_configuration</a></div><div class="ttdeci">const char * avutil_configuration(void)</div><div class="ttdoc">Return the libavutil build-time configuration.</div></div>
+<div class="ttc" id="agroup__lavu__ver_html_ga9a979c78d33d8767b51952f7f5c61541"><div class="ttname"><a href="group__lavu__ver.html#ga9a979c78d33d8767b51952f7f5c61541">avutil_version</a></div><div class="ttdeci">unsigned avutil_version(void)</div><div class="ttdoc">Return the LIBAVUTIL_VERSION_INT constant.</div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="amacros_8h_html"><div class="ttname"><a href="macros_8h.html">macros.h</a></div><div class="ttdoc">Utility Preprocessor macros</div></div>
+<div class="ttc" id="amathematics_8h_html"><div class="ttname"><a href="mathematics_8h.html">mathematics.h</a></div></div>
+<div class="ttc" id="apixfmt_8h_html"><div class="ttname"><a href="pixfmt_8h.html">pixfmt.h</a></div><div class="ttdoc">pixel format definitions</div></div>
+<div class="ttc" id="arational_8h_html"><div class="ttname"><a href="rational_8h.html">rational.h</a></div><div class="ttdoc">Utilties for rational number calculation.</div></div>
+<div class="ttc" id="astruct_a_v_rational_html"><div class="ttname"><a href="struct_a_v_rational.html">AVRational</a></div><div class="ttdoc">Rational number (pair of numerator and denominator).</div><div class="ttdef"><b>定义</b> rational.h:58</div></div>
+<div class="ttc" id="atools_2ffmpeg_2win64_2include_2libavutil_2common_8h_html"><div class="ttname"><a href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html">common.h</a></div><div class="ttdoc">common internal and external API header</div></div>
+<div class="ttc" id="atools_2ffmpeg_2win64_2include_2libavutil_2version_8h_html"><div class="ttname"><a href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html">version.h</a></div><div class="ttdoc">Libavutil version macros</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="avutil_8h.html">avutil.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

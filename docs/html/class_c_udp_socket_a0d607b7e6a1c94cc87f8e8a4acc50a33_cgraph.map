@@ -1,0 +1,113 @@
+<map id="onProcessReciverDatagramdata" name="onProcessReciverDatagramdata">
+<area shape="rect" id="Node000001" title="处理接收到的报文" alt="" coords="5,411,216,437"/>
+<area shape="rect" id="Node000002" href="$common_8cpp.html#a4a392b934d85ed54106c471cad69665d" title="fastlz 解压数据。" alt="" coords="1155,56,1314,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,409,166,328,206,272,255,213,313,158,379,111,414,93,451,79,490,70,530,67,720,67,1139,67,1139,72,720,72,530,72,491,75,453,84,416,98,381,116,317,162,259,217,210,275,170,331,121,411"/>
+<area shape="rect" id="Node000014" href="$class_c_udp_socket.html#a643a52e771c46331915a2a817f8daefe" title="处理接收到的消息" alt="" coords="264,385,435,412"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="216,410,248,407,248,412,216,415"/>
+<area shape="rect" id="Node000003" href="$_ned_allocator_impl_8cpp.html#af15278d7a4bba22072363abe7b04fb1e" title="分配指定大小的内存" alt="" coords="1396,107,1478,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1292,81,1381,103,1380,109,1290,86"/>
+<area shape="rect" id="Node000008" href="$_ned_allocator_impl_8cpp.html#a394ed5305e19853a8aa9203cdea51dd7" title="释放内存" alt="" coords="1389,56,1485,83"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1315,67,1373,67,1373,72,1315,72"/>
+<area shape="rect" id="Node000009" href="$fastlz_8c.html#a6cce72f3099f53d0cc244162180166b3" title="通用解压缩函数" alt="" coords="1716,5,1847,32"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="1305,53,1378,41,1550,26,1700,18,1700,24,1551,31,1379,47,1306,58"/>
+<area shape="rect" id="Node000004" href="$format_8h.html#adb6e274f8eb0b74b2865215e1b49c535" title="Converts p to const void* for pointer formatting." alt="" coords="1945,107,1984,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1479,117,1930,117,1930,123,1479,123"/>
+<area shape="rect" id="Node000005" href="$namespacedetail.html#a68cc0da968a823f01db50bc3958c996a" title=" " alt="" coords="2089,107,2196,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1984,117,2074,117,2074,123,1984,123"/>
+<area shape="rect" id="Node000006" href="$namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335" title=" " alt="" coords="2251,99,2378,141"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="2196,117,2236,117,2236,123,2196,123"/>
+<area shape="rect" id="Node000007" href="$namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce" title=" " alt="" coords="2426,107,2571,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="2379,117,2411,117,2411,123,2379,123"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="1486,69,1646,80,1848,99,1930,111,1930,117,1847,104,1646,85,1486,74"/>
+<area shape="rect" id="Node000010" href="$fastlz_8c.html#a5ae23e2c48377d079b775e6987518099" title="级别 1 解压缩实现" alt="" coords="1895,5,2034,32"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1848,16,1880,16,1880,21,1848,21"/>
+<area shape="rect" id="Node000013" href="$fastlz_8c.html#a966be4548712ef5cac9708929f199976" title="级别 2 解压缩实现" alt="" coords="1895,56,2034,83"/>
+<area shape="poly" id="edge13_Node000009_Node000013" title=" " alt="" coords="1833,30,1900,49,1898,54,1832,35"/>
+<area shape="rect" id="Node000011" href="$fastlz_8c.html#a95d18238c9acb9ac4e0748cb7a14527f" title="内存复制函数" alt="" coords="2087,56,2198,83"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="2015,30,2079,49,2078,54,2013,35"/>
+<area shape="rect" id="Node000012" href="$fastlz_8c.html#a5e118747cf5e94edea9db2538d4d2fb6" title="自定义内存移动函数" alt="" coords="2082,5,2203,32"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="2034,16,2066,16,2066,21,2034,21"/>
+<area shape="poly" id="edge14_Node000013_Node000011" title=" " alt="" coords="2034,67,2072,67,2072,72,2034,72"/>
+<area shape="poly" id="edge15_Node000013_Node000012" title=" " alt="" coords="2013,53,2078,34,2079,39,2015,58"/>
+<area shape="rect" id="Node000015" href="$class_c_udp_socket.html#a10b374e4c9a9fc55d3193dec04ecb77a" title="CUdpSocket::CUdpSocket" alt="" coords="483,385,579,412"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="436,396,467,396,467,401,436,401"/>
+<area shape="rect" id="Node000016" href="$class_c_udp_socket.html#a893c83c649c1595b0027d14a705ef992" title="初始Kcp" alt="" coords="943,360,1006,387"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="574,382,627,371,710,364,793,362,928,367,928,372,793,367,710,369,628,376,576,387"/>
+<area shape="rect" id="Node000021" href="$class_c_udp_socket.html#ac52372bf42443a554ca3ef371f817743" title="得到一个信息是否处理完成" alt="" coords="627,385,810,412"/>
+<area shape="poly" id="edge24_Node000015_Node000021" title=" " alt="" coords="580,396,611,396,611,401,580,401"/>
+<area shape="rect" id="Node000022" href="$class_c_udp_socket.html#a13640ae10c35f12a456274c76e452fe9" title=" " alt="" coords="673,233,764,260"/>
+<area shape="poly" id="edge25_Node000015_Node000022" title=" " alt="" coords="547,383,687,268,691,272,551,387"/>
+<area shape="rect" id="Node000042" href="$class_c_udp_socket.html#aec7b1554ec634e5cd21efe2ad61c1e47" title=" " alt="" coords="636,436,801,463"/>
+<area shape="poly" id="edge58_Node000015_Node000042" title=" " alt="" coords="580,409,652,429,651,434,579,414"/>
+<area shape="rect" id="Node000017" href="$class_c_udp_socket.html#a235c0d71fb7596cf053147501ee3b865" title="kcp转换后消息处理" alt="" coords="1188,360,1281,387"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="1006,371,1173,371,1173,376,1006,376"/>
+<area shape="rect" id="Node000018" href="$class_h_y_k_t_1_1_kcp_obj.html#a4afabda74d00710ab2dbd9e141d36a7a" title=" " alt="" coords="1139,303,1330,329"/>
+<area shape="poly" id="edge21_Node000016_Node000018" title=" " alt="" coords="1005,364,1090,345,1157,331,1158,336,1092,351,1007,369"/>
+<area shape="rect" id="Node000019" href="$class_h_y_k_t_1_1_kcp_obj.html#ae6945bcd24f14c7c0e9667d8a7d5a396" title=" " alt="" coords="1143,164,1326,191"/>
+<area shape="poly" id="edge22_Node000016_Node000019" title=" " alt="" coords="1005,372,1049,366,1070,358,1089,346,1103,331,1110,315,1114,282,1117,248,1124,230,1137,213,1161,196,1164,200,1141,217,1129,233,1122,249,1119,283,1115,317,1107,334,1093,350,1073,363,1050,371,1006,377"/>
+<area shape="rect" id="Node000020" href="$class_c_udp_socket.html#a09daa5dc8dd0e303411d308a2d676281" title="处理发送报文" alt="" coords="1164,227,1305,253"/>
+<area shape="poly" id="edge23_Node000016_Node000020" title=" " alt="" coords="1006,369,1047,362,1090,346,1105,333,1114,319,1122,304,1137,289,1185,258,1188,263,1141,293,1127,308,1118,322,1109,336,1092,350,1049,368,1007,375"/>
+<area shape="poly" id="edge20_Node000017_Node000001" title=" " alt="" coords="1232,388,1217,432,1190,492,1171,524,1149,554,1122,581,1092,604,1042,629,997,644,955,649,914,649,827,637,777,632,720,629,530,629,469,624,408,609,350,587,296,560,202,501,137,450,140,446,205,496,299,555,353,582,410,604,470,619,530,624,720,624,778,626,828,632,914,643,955,644,996,639,1040,624,1090,599,1119,577,1145,551,1167,521,1185,490,1212,430,1227,386"/>
+<area shape="rect" id="Node000023" href="$class_c_udp_socket.html#a2c4327ba0c99cf506f89461cdf06737f" title="得到当前心跳计数" alt="" coords="920,309,1029,336"/>
+<area shape="poly" id="edge26_Node000022_Node000023" title=" " alt="" coords="754,258,858,295,905,307,904,312,857,300,753,263"/>
+<area shape="rect" id="Node000024" href="$class_c_udp_socket.html#a6145ba82911306580ae61d2b8044c512" title="心跳计数" alt="" coords="949,208,1000,235"/>
+<area shape="poly" id="edge27_Node000022_Node000024" title=" " alt="" coords="764,240,934,223,934,228,765,245"/>
+<area shape="rect" id="Node000025" href="$class_c_udp_socket.html#aca586d38fa713cb0e8ac286b0b772e27" title="释放Kcp" alt="" coords="928,157,1020,184"/>
+<area shape="poly" id="edge28_Node000022_Node000025" title=" " alt="" coords="753,230,857,193,912,180,914,185,858,199,754,235"/>
+<area shape="rect" id="Node000026" href="$class_c_udp_socket.html#a3e1a099823c321147e806486b8b5ace0" title="发送报文(正常)" alt="" coords="935,107,1014,133"/>
+<area shape="poly" id="edge33_Node000022_Node000026" title=" " alt="" coords="732,231,784,187,819,163,857,143,888,132,919,124,921,129,889,137,859,148,822,168,788,191,736,235"/>
+<area shape="rect" id="Node000041" href="$class_c_udp_socket.html#adec7532862d9d9fde62c8f2e19595a15" title="处理连接断掉" alt="" coords="903,259,1046,285"/>
+<area shape="poly" id="edge57_Node000022_Node000041" title=" " alt="" coords="765,248,888,261,888,266,764,254"/>
+<area shape="poly" id="edge29_Node000025_Node000017" title=" " alt="" coords="1021,168,1059,175,1077,183,1093,194,1108,212,1116,231,1119,267,1121,304,1128,322,1141,339,1156,351,1175,360,1172,365,1154,356,1137,343,1123,324,1116,305,1113,268,1110,232,1103,215,1089,198,1074,187,1057,180,1020,173"/>
+<area shape="poly" id="edge30_Node000025_Node000018" title=" " alt="" coords="1021,170,1058,178,1093,194,1110,211,1119,228,1126,246,1141,263,1163,280,1186,293,1184,298,1160,284,1137,267,1122,248,1114,230,1106,214,1089,198,1056,183,1020,175"/>
+<area shape="poly" id="edge31_Node000025_Node000019" title=" " alt="" coords="1021,169,1127,172,1127,177,1021,175"/>
+<area shape="poly" id="edge32_Node000025_Node000020" title=" " alt="" coords="1021,177,1092,193,1178,219,1177,224,1090,199,1020,182"/>
+<area shape="rect" id="Node000027" href="$common_8cpp.html#a18f079fdf22e51b397aecbc9b760de21" title="fastlz 压缩数据。" alt="" coords="1162,107,1307,133"/>
+<area shape="poly" id="edge34_Node000026_Node000027" title=" " alt="" coords="1014,117,1147,117,1147,123,1014,123"/>
+<area shape="poly" id="edge35_Node000027_Node000003" title=" " alt="" coords="1308,117,1380,117,1380,123,1308,123"/>
+<area shape="poly" id="edge36_Node000027_Node000008" title=" " alt="" coords="1290,103,1373,82,1374,88,1292,109"/>
+<area shape="rect" id="Node000028" href="$fastlz_8c.html#aa8b12c16f2514c6cd2a6748a9d6bce4d" title="通用压缩函数" alt="" coords="1378,259,1496,285"/>
+<area shape="poly" id="edge37_Node000027_Node000028" title=" " alt="" coords="1294,131,1332,150,1359,171,1383,196,1421,244,1416,247,1379,200,1355,175,1329,154,1291,136"/>
+<area shape="rect" id="Node000029" href="$fastlz_8c.html#a1f149a66a870832b28adbd7a3e0464e3" title="级别 1 压缩实现" alt="" coords="1544,309,1668,336"/>
+<area shape="poly" id="edge38_Node000028_Node000029" title=" " alt="" coords="1485,283,1545,302,1543,307,1483,289"/>
+<area shape="rect" id="Node000039" href="$fastlz_8c.html#a06ae67595a80640a59169dfa4a5c8b44" title="级别 2 压缩实现" alt="" coords="1544,259,1668,285"/>
+<area shape="poly" id="edge50_Node000028_Node000039" title=" " alt="" coords="1496,269,1528,269,1528,275,1496,275"/>
+<area shape="rect" id="Node000030" href="$fastlz_8c.html#ae3fa1b75c06606b5876ae53a208b0869" title="级别 1 压缩的匹配编码" alt="" coords="1739,461,1824,488"/>
+<area shape="poly" id="edge39_Node000029_Node000030" title=" " alt="" coords="1618,335,1657,389,1685,420,1718,447,1727,453,1724,457,1714,451,1682,424,1653,392,1614,338"/>
+<area shape="rect" id="Node000031" href="$fastlz_8c.html#a4734cddbda700701b928ea1c9462a280" title="比较两个数据块" alt="" coords="1748,411,1815,437"/>
+<area shape="poly" id="edge40_Node000029_Node000031" title=" " alt="" coords="1626,335,1667,365,1717,396,1735,405,1733,410,1715,401,1664,369,1623,339"/>
+<area shape="rect" id="Node000032" href="$fastlz_8c.html#aad3ee3ccbad499327027d24ea6140169" title="最终字面量处理" alt="" coords="1740,259,1823,285"/>
+<area shape="poly" id="edge41_Node000029_Node000032" title=" " alt="" coords="1654,306,1725,286,1726,291,1656,311"/>
+<area shape="rect" id="Node000034" href="$fastlz_8c.html#a68cbcb6b0d615ae53e2303a4a9b5ab70" title="计算哈希值" alt="" coords="1746,360,1817,387"/>
+<area shape="poly" id="edge44_Node000029_Node000034" title=" " alt="" coords="1656,334,1732,356,1731,362,1654,339"/>
+<area shape="rect" id="Node000035" href="$fastlz_8c.html#a154d7b313ffcf534c30642f0af6d4641" title="处理字面量数据" alt="" coords="1742,309,1822,336"/>
+<area shape="poly" id="edge45_Node000029_Node000035" title=" " alt="" coords="1668,320,1726,320,1726,325,1668,325"/>
+<area shape="rect" id="Node000038" href="$fastlz_8c.html#a840ac800deb7c00f2994ef2663819817" title="读取 32 位无符号整数" alt="" coords="1738,208,1826,235"/>
+<area shape="poly" id="edge48_Node000029_Node000038" title=" " alt="" coords="1646,307,1666,295,1681,283,1690,270,1699,258,1714,245,1722,240,1725,244,1718,249,1703,261,1694,273,1685,286,1670,300,1648,311"/>
+<area shape="rect" id="Node000033" href="$fastlz_8c.html#a741b9a31afd0f8c4a7d1409952d7497a" title="小块数据复制" alt="" coords="1914,208,2015,235"/>
+<area shape="poly" id="edge42_Node000032_Node000033" title=" " alt="" coords="1823,258,1898,237,1899,242,1825,263"/>
+<area shape="poly" id="edge43_Node000033_Node000011" title=" " alt="" coords="1976,206,2080,93,2088,88,2090,92,2083,97,1980,209"/>
+<area shape="rect" id="Node000036" href="$fastlz_8c.html#a9f138722d5b4cca13b3dace840c7c458" title="复制 256 位数据块" alt="" coords="1919,309,2010,336"/>
+<area shape="poly" id="edge46_Node000035_Node000036" title=" " alt="" coords="1822,320,1903,320,1903,325,1822,325"/>
+<area shape="rect" id="Node000037" href="$fastlz_8c.html#a468c19b0a79f2f5c072cf17c5cc969a3" title="复制 64 位数据块" alt="" coords="1922,360,2007,387"/>
+<area shape="poly" id="edge47_Node000035_Node000037" title=" " alt="" coords="1823,331,1908,355,1907,360,1821,336"/>
+<area shape="poly" id="edge49_Node000038_Node000004" title=" " alt="" coords="1821,205,1846,194,1891,167,1931,140,1934,145,1894,172,1849,198,1823,210"/>
+<area shape="poly" id="edge52_Node000039_Node000031" title=" " alt="" coords="1653,284,1670,295,1688,322,1694,347,1701,372,1718,397,1735,408,1732,413,1714,401,1696,374,1689,349,1683,324,1666,299,1650,288"/>
+<area shape="poly" id="edge53_Node000039_Node000032" title=" " alt="" coords="1668,269,1724,269,1724,275,1668,275"/>
+<area shape="poly" id="edge54_Node000039_Node000034" title=" " alt="" coords="1648,283,1670,295,1685,308,1694,321,1703,333,1718,346,1733,355,1731,359,1714,350,1699,337,1690,324,1681,312,1666,300,1646,288"/>
+<area shape="poly" id="edge55_Node000039_Node000035" title=" " alt="" coords="1656,283,1727,304,1726,309,1654,289"/>
+<area shape="poly" id="edge56_Node000039_Node000038" title=" " alt="" coords="1654,255,1721,236,1723,241,1656,261"/>
+<area shape="rect" id="Node000040" href="$fastlz_8c.html#a08ac84ecce13045966548dcfd8af87a9" title="级别 2 压缩的匹配编码" alt="" coords="1739,157,1824,184"/>
+<area shape="poly" id="edge51_Node000039_Node000040" title=" " alt="" coords="1623,256,1664,226,1715,194,1725,188,1728,193,1717,198,1667,230,1626,260"/>
+<area shape="poly" id="edge62_Node000042_Node000001" title=" " alt="" coords="636,449,231,432,231,426,636,443"/>
+<area shape="poly" id="edge60_Node000042_Node000016" title=" " alt="" coords="775,433,809,422,832,409,857,396,927,378,929,383,859,401,835,413,811,426,777,438"/>
+<area shape="poly" id="edge59_Node000042_Node000023" title=" " alt="" coords="788,433,808,422,824,404,831,385,839,365,856,346,879,334,904,326,905,331,881,339,859,350,843,368,836,387,828,407,811,426,791,438"/>
+<area shape="rect" id="Node000043" href="$class_c_udp_socket.html#adc39678794f4673e111a2dc8c23b885b" title="得到当前是否使用kcp" alt="" coords="909,411,1040,437"/>
+<area shape="poly" id="edge61_Node000042_Node000043" title=" " alt="" coords="801,439,893,429,893,435,802,444"/>
+<area shape="rect" id="Node000044" href="$class_c_udp_socket.html#aa2631ed02805f624d45dd1eb4cbf9545" title="kcp处理接收到的报文" alt="" coords="858,461,1091,488"/>
+<area shape="poly" id="edge63_Node000042_Node000044" title=" " alt="" coords="802,455,842,459,842,464,801,460"/>
+<area shape="rect" id="Node000045" href="$class_c_udp_socket.html#a57390bbbe6e3e9445a2f2c8d753c8643" title="设置当前是否使用KCP" alt="" coords="905,512,1044,539"/>
+<area shape="poly" id="edge64_Node000042_Node000045" title=" " alt="" coords="754,461,858,497,890,506,889,511,857,503,753,466"/>
+<area shape="rect" id="Node000046" href="$class_c_udp_socket.html#a0e525392b5eaf4b32414abf70c4d655a" title="处理连接成功" alt="" coords="912,563,1037,589"/>
+<area shape="poly" id="edge65_Node000042_Node000046" title=" " alt="" coords="736,461,788,505,822,528,859,548,897,561,895,566,857,553,819,533,784,509,732,465"/>
+</map>

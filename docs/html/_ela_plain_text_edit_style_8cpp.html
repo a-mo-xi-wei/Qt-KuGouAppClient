@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ElaPlainTextEditStyle.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_ela_plain_text_edit_style_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ElaPlainTextEditStyle.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>实现 <a class="el" href="class_ela_plain_text_edit_style.html" title="纯文本编辑框自定义样式类，管理边框和焦点指示器绘制">ElaPlainTextEditStyle</a> 类，提供纯文本编辑框的自定义样式  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_ela_plain_text_edit_style_8h_source.html">ElaPlainTextEditStyle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ela_theme_8h_source.html">ElaTheme.h</a>&quot;</code><br />
+<code>#include &lt;QPainter&gt;</code><br />
+<code>#include &lt;QPainterPath&gt;</code><br />
+<code>#include &lt;QStyleOption&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ElaPlainTextEditStyle.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_ela_plain_text_edit_style_8cpp__incl.png" border="0" usemap="#a_ela_plain_text_edit_style_8cpp" alt=""/></div>
+<map name="a_ela_plain_text_edit_style_8cpp" id="a_ela_plain_text_edit_style_8cpp">
+<area shape="rect" title="实现 ElaPlainTextEditStyle 类，提供纯文本编辑框的自定义样式" alt="" coords="260,5,432,32"/>
+<area shape="rect" href="_ela_plain_text_edit_style_8h.html" title="定义 ElaPlainTextEditStyle 类，提供纯文本编辑框的自定义样式" alt="" coords="12,80,171,107"/>
+<area shape="poly" title=" " alt="" coords="303,35,151,78,150,73,301,30"/>
+<area shape="rect" href="_ela_theme_8h.html" title="定义 ElaTheme 类，提供主题管理和颜色配置功能" alt="" coords="195,80,287,107"/>
+<area shape="poly" title=" " alt="" coords="329,35,273,73,270,69,326,30"/>
+<area shape="rect" title=" " alt="" coords="310,80,382,107"/>
+<area shape="poly" title=" " alt="" coords="349,33,349,64,344,64,344,33"/>
+<area shape="rect" title=" " alt="" coords="406,80,505,107"/>
+<area shape="poly" title=" " alt="" coords="367,30,426,69,423,74,364,35"/>
+<area shape="rect" title=" " alt="" coords="530,80,629,107"/>
+<area shape="poly" title=" " alt="" coords="388,30,525,72,524,78,386,35"/>
+<area shape="rect" title=" " alt="" coords="5,155,101,181"/>
+<area shape="poly" title=" " alt="" coords="87,108,69,142,64,140,83,106"/>
+<area shape="rect" href="_def_8h.html" title=" " alt="" coords="125,155,178,181"/>
+<area shape="poly" title=" " alt="" coords="104,106,134,141,130,145,100,109"/>
+<area shape="rect" title=" " alt="" coords="120,229,189,256"/>
+<area shape="poly" title=" " alt="" coords="155,182,156,214,151,214,149,182"/>
+<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="218,229,286,256"/>
+<area shape="poly" title=" " alt="" coords="171,180,223,218,220,222,168,184"/>
+<area shape="rect" title=" " alt="" coords="192,304,311,331"/>
+<area shape="poly" title=" " alt="" coords="254,257,254,288,249,288,249,257"/>
+<area shape="poly" title=" " alt="" coords="227,109,181,147,177,143,224,105"/>
+<area shape="poly" title=" " alt="" coords="236,108,193,183,172,217,167,214,188,180,232,106"/>
+<area shape="poly" title=" " alt="" coords="245,107,252,214,247,214,239,107"/>
+<area shape="rect" href="ui_2_ela_widget_tools_2_ela_common_2singleton_8h.html" title=" " alt="" coords="304,155,388,181"/>
+<area shape="poly" title=" " alt="" coords="261,105,317,143,314,148,258,109"/>
+<area shape="rect" title=" " alt="" coords="313,229,380,256"/>
+<area shape="poly" title=" " alt="" coords="349,182,349,214,344,214,344,182"/>
+</map>
+</div>
+</div><a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>实现 <a class="el" href="class_ela_plain_text_edit_style.html" title="纯文本编辑框自定义样式类，管理边框和焦点指示器绘制">ElaPlainTextEditStyle</a> 类，提供纯文本编辑框的自定义样式 </p>
+<dl class="section author"><dt>作者</dt><dd>[Liniyous] </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-05-13 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_c41e0d0e814e23de337c335e201650d3.html">ElaWidgetTools</a></li><li class="navelem"><a class="el" href="dir_633a0d5c380afe30bc1d0ab32a7e62c4.html">ElaPlainTextEdit</a></li><li class="navelem"><a class="el" href="_ela_plain_text_edit_style_8cpp.html">ElaPlainTextEditStyle.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<map id="fastlz_memcpy" name="fastlz_memcpy">
+<area shape="rect" id="Node000001" title="内存复制函数" alt="" coords="2048,413,2159,440"/>
+<area shape="rect" id="Node000002" href="$fastlz_8c.html#a5ae23e2c48377d079b775e6987518099" title="级别 1 解压缩实现" alt="" coords="1862,413,2000,440"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2033,429,2000,429,2000,424,2033,424"/>
+<area shape="rect" id="Node000019" href="$fastlz_8c.html#a966be4548712ef5cac9708929f199976" title="级别 2 解压缩实现" alt="" coords="1862,363,2000,389"/>
+<area shape="poly" id="edge22_Node000001_Node000019" title=" " alt="" coords="2040,411,1978,392,1980,387,2042,406"/>
+<area shape="rect" id="Node000020" href="$fastlz_8c.html#a741b9a31afd0f8c4a7d1409952d7497a" title="小块数据复制" alt="" coords="1880,464,1982,491"/>
+<area shape="poly" id="edge24_Node000001_Node000020" title=" " alt="" coords="2042,448,1980,466,1978,461,2040,442"/>
+<area shape="rect" id="Node000003" href="$fastlz_8c.html#a6cce72f3099f53d0cc244162180166b3" title="通用解压缩函数" alt="" coords="1683,365,1814,392"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1863,412,1801,395,1802,390,1864,406"/>
+<area shape="rect" id="Node000004" href="$common_8cpp.html#a4a392b934d85ed54106c471cad69665d" title="fastlz 解压数据。" alt="" coords="1468,271,1627,297"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1703,361,1576,300,1579,295,1705,356"/>
+<area shape="rect" id="Node000016" href="$class_c_tcp_socket.html#ae08a82ce02b357eb5eadb973936a750f" title="解析信息包" alt="" coords="1460,367,1635,393"/>
+<area shape="poly" id="edge19_Node000003_Node000016" title=" " alt="" coords="1667,382,1635,382,1635,377,1667,377"/>
+<area shape="rect" id="Node000005" href="$class_c_udp_socket.html#a0d607b7e6a1c94cc87f8e8a4acc50a33" title="处理接收到的报文" alt="" coords="1201,216,1412,259"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1460,270,1412,261,1413,255,1461,265"/>
+<area shape="rect" id="Node000006" href="$class_c_udp_socket.html#a235c0d71fb7596cf053147501ee3b865" title="kcp转换后消息处理" alt="" coords="972,148,1147,175"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1219,213,1105,178,1106,173,1221,208"/>
+<area shape="rect" id="Node000010" href="$class_c_udp_socket.html#aec7b1554ec634e5cd21efe2ad61c1e47" title=" " alt="" coords="478,5,668,48"/>
+<area shape="poly" id="edge18_Node000005_Node000010" title=" " alt="" coords="1264,209,1212,173,1152,138,1089,110,1038,91,917,63,788,43,669,33,669,28,788,38,918,57,1039,86,1091,105,1154,134,1215,168,1267,204"/>
+<area shape="rect" id="Node000014" href="$class_c_udp_server.html#aec7b1554ec634e5cd21efe2ad61c1e47" title=" " alt="" coords="480,296,667,339"/>
+<area shape="poly" id="edge16_Node000005_Node000014" title=" " alt="" coords="1203,265,1068,294,918,316,787,324,667,323,667,318,787,318,917,311,1067,288,1202,260"/>
+<area shape="rect" id="Node000007" href="$class_c_udp_socket.html#a893c83c649c1595b0027d14a705ef992" title="初始Kcp" alt="" coords="744,72,890,99"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="999,145,862,102,863,97,1001,140"/>
+<area shape="rect" id="Node000011" href="$class_c_udp_socket.html#aca586d38fa713cb0e8ac286b0b772e27" title="释放Kcp" alt="" coords="729,148,905,175"/>
+<area shape="poly" id="edge12_Node000006_Node000011" title=" " alt="" coords="956,164,905,164,905,159,956,159"/>
+<area shape="rect" id="Node000008" href="$class_c_udp_socket.html#a10b374e4c9a9fc55d3193dec04ecb77a" title="CUdpSocket::CUdpSocket" alt="" coords="251,123,430,149"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="729,92,610,100,478,113,409,125,408,119,478,108,610,95,729,87"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="743,70,664,51,665,46,745,65"/>
+<area shape="rect" id="Node000009" href="$class_c_udp_socket.html#a643a52e771c46331915a2a817f8daefe" title="处理接收到的消息" alt="" coords="5,165,203,208"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="260,156,204,168,203,163,259,151"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="218,203,385,224,479,232,572,235,818,235,1200,235,1200,240,818,240,572,240,478,237,384,230,218,208"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="507,57,479,69,369,125,366,120,477,64,504,52"/>
+<area shape="rect" id="Node000012" href="$class_c_udp_socket.html#a13640ae10c35f12a456274c76e452fe9" title=" " alt="" coords="486,173,660,200"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="714,175,661,180,661,175,714,169"/>
+<area shape="rect" id="Node000013" href="$class_c_udp_socket.html#ac995c2e607c30036d217719800789667" title=" " alt="" coords="480,123,667,149"/>
+<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="713,153,667,148,668,143,714,148"/>
+<area shape="poly" id="edge14_Node000012_Node000008" title=" " alt="" coords="493,172,404,153,406,147,494,167"/>
+<area shape="rect" id="Node000015" href="$class_c_udp_server.html#a2fe69e76d8f3a04f48fb6d829552d5c9" title=" " alt="" coords="254,304,427,331"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="464,320,428,320,428,315,464,315"/>
+<area shape="rect" id="Node000017" href="$class_c_tcp_socket.html#accc2526f54192a5b1f22d382b674879b" title="处理接收数据" alt="" coords="966,376,1153,403"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="1445,385,1154,390,1153,385,1445,379"/>
+<area shape="rect" id="Node000018" href="$class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d" title=" " alt="" coords="486,431,660,457"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="950,396,837,404,717,417,634,433,633,427,716,412,837,399,950,391"/>
+<area shape="poly" id="edge23_Node000019_Node000003" title=" " alt="" coords="1847,380,1814,380,1814,375,1847,375"/>
+<area shape="rect" id="Node000021" href="$fastlz_8c.html#aad3ee3ccbad499327027d24ea6140169" title="最终字面量处理" alt="" coords="1707,464,1790,491"/>
+<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="1865,480,1790,480,1790,475,1865,475"/>
+<area shape="rect" id="Node000022" href="$fastlz_8c.html#a1f149a66a870832b28adbd7a3e0464e3" title="级别 1 压缩实现" alt="" coords="1485,439,1610,465"/>
+<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="1691,473,1610,462,1610,457,1692,468"/>
+<area shape="rect" id="Node000031" href="$fastlz_8c.html#a06ae67595a80640a59169dfa4a5c8b44" title="级别 2 压缩实现" alt="" coords="1485,489,1610,516"/>
+<area shape="poly" id="edge38_Node000021_Node000031" title=" " alt="" coords="1692,487,1610,497,1610,492,1691,482"/>
+<area shape="rect" id="Node000023" href="$fastlz_8c.html#aa8b12c16f2514c6cd2a6748a9d6bce4d" title="通用压缩函数" alt="" coords="1248,439,1365,465"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="1470,455,1366,455,1366,449,1470,449"/>
+<area shape="rect" id="Node000030" href="$fastlz_8c.html#af4628c39d30c8deab1ad9b4aedb31e75" title="指定压缩级别的压缩函数" alt="" coords="1231,489,1382,516"/>
+<area shape="poly" id="edge37_Node000022_Node000030" title=" " alt="" coords="1471,471,1374,491,1373,486,1469,466"/>
+<area shape="rect" id="Node000024" href="$common_8cpp.html#a18f079fdf22e51b397aecbc9b760de21" title="fastlz 压缩数据。" alt="" coords="987,427,1132,453"/>
+<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="1232,451,1132,446,1132,441,1232,446"/>
+<area shape="rect" id="Node000027" href="$class_c_tcp_socket.html#afb4fe951d4366e86d50539952d8bda64" title="发送数据" alt="" coords="995,485,1124,512"/>
+<area shape="poly" id="edge33_Node000023_Node000027" title=" " alt="" coords="1233,469,1125,489,1124,484,1232,463"/>
+<area shape="rect" id="Node000025" href="$class_c_udp_socket.html#a3e1a099823c321147e806486b8b5ace0" title="发送报文(正常)" alt="" coords="736,275,898,301"/>
+<area shape="poly" id="edge29_Node000024_Node000025" title=" " alt="" coords="978,423,964,417,922,390,883,358,828,304,832,300,887,354,925,386,967,412,980,418"/>
+<area shape="rect" id="Node000026" href="$class_c_udp_socket.html#ab62e2b396f3c0f6af79ba642ed9ed797" title="发送报文(KCP使用)" alt="" coords="724,427,910,453"/>
+<area shape="poly" id="edge32_Node000024_Node000026" title=" " alt="" coords="971,443,910,443,910,437,971,437"/>
+<area shape="poly" id="edge30_Node000025_Node000012" title=" " alt="" coords="768,271,606,203,609,198,770,266"/>
+<area shape="poly" id="edge31_Node000025_Node000014" title=" " alt="" coords="721,302,668,309,667,303,720,297"/>
+<area shape="rect" id="Node000028" href="$class_c_tcp_socket.html#a1e90a25b36445082c31a82160af2e931" title="处理心跳" alt="" coords="716,477,918,520"/>
+<area shape="poly" id="edge34_Node000027_Node000028" title=" " alt="" coords="979,501,918,501,918,496,979,496"/>
+<area shape="rect" id="Node000029" href="$class_c_tcp_socket.html#acbc8dc81067dbab026601c14a3cc6b75" title="发送json数据" alt="" coords="738,544,896,571"/>
+<area shape="poly" id="edge36_Node000027_Node000029" title=" " alt="" coords="987,519,876,546,875,541,986,514"/>
+<area shape="poly" id="edge35_Node000028_Node000018" title=" " alt="" coords="704,476,635,461,637,455,705,471"/>
+<area shape="poly" id="edge39_Node000031_Node000023" title=" " alt="" coords="1470,489,1365,467,1366,462,1471,484"/>
+<area shape="poly" id="edge40_Node000031_Node000030" title=" " alt="" coords="1470,505,1383,505,1383,500,1470,500"/>
+</map>

@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: stdout_sinks.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('stdout__sinks_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">stdout_sinks.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="stdout__sinks_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright(c) 2015-present, Gabi Melman &amp; spdlog contributors.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Distributed under the MIT License (http://opensource.org/licenses/MIT)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="console__globals_8h.html">spdlog/details/console_globals.h</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="synchronous__factory_8h.html">spdlog/details/synchronous_factory.h</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="sink_8h.html">spdlog/sinks/sink.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">    #include &lt;<a class="code" href="windows__include_8h.html">spdlog/details/windows_include.h</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog.html">spdlog</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog_1_1sinks.html">sinks</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ConsoleMutex&gt;</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a> : <span class="keyword">public</span> <a class="code hl_class" href="classspdlog_1_1sinks_1_1sink.html">sink</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a252c0b81a272a961f6d8deee79ee2611">   22</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a252c0b81a272a961f6d8deee79ee2611">mutex_t</a> = <span class="keyword">typename</span> ConsoleMutex::mutex_t;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a>(FILE *file);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a4a41f48e4ba5577f4d8cdc326583f44d">   24</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a4a41f48e4ba5577f4d8cdc326583f44d">~stdout_sink_base</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#ab466517e75048c54539c40743559e9a9">   26</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#ab466517e75048c54539c40743559e9a9">stdout_sink_base</a>(<span class="keyword">const</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a> &amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a229d6a98e03d7da1d8ff5ecdb75a39f6">   27</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a229d6a98e03d7da1d8ff5ecdb75a39f6">stdout_sink_base</a>(<a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a> &amp;&amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#aee2d3e931af6c908abd530d16dec8dc4">   29</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a> &amp;<a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#aee2d3e931af6c908abd530d16dec8dc4">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a> &amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a757802fe27dfa66c4b5d21808db1400a">   30</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a> &amp;<a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a757802fe27dfa66c4b5d21808db1400a">operator=</a>(<a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a> &amp;&amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a1973c0f40704ebfac3184e7a744eaa34">log</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#ac27ac71c242af9c62af634beab0798d4">flush</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a8b7e2aa2e64d3ada39904a85c7cba0c7">set_pattern</a>(<span class="keyword">const</span> std::string &amp;pattern) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a390b6915455eacb92d1a8914713d0b8f">set_formatter</a>(std::unique_ptr&lt;spdlog::formatter&gt; sink_formatter) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a8b0437cfc164f0e20a2b46f59c7a2302">   39</a></span>    <a class="code hl_typedef" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a252c0b81a272a961f6d8deee79ee2611">mutex_t</a> &amp;<a class="code hl_variable" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a8b0437cfc164f0e20a2b46f59c7a2302">mutex_</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a715b2a1d4ad04ec0c950d1467f91964e">   40</a></span>    FILE *<a class="code hl_variable" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a5a30b70b2c72cb5bda34170d8151ad0c">   41</a></span>    std::unique_ptr&lt;spdlog::formatter&gt; <a class="code hl_variable" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a5a30b70b2c72cb5bda34170d8151ad0c">formatter_</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    HANDLE handle_;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif  </span><span class="comment">// WIN32</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ConsoleMutex&gt;</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink.html">   48</a></span><span class="keyword">class </span><a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink.html#afd6fd7e86d042e41c00391e1471e4c75">stdout_sink</a> : <span class="keyword">public</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a>&lt;ConsoleMutex&gt; {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stdout__sink.html#afd6fd7e86d042e41c00391e1471e4c75">   50</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink.html#afd6fd7e86d042e41c00391e1471e4c75">stdout_sink</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ConsoleMutex&gt;</div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stderr__sink.html">   54</a></span><span class="keyword">class </span><a class="code hl_function" href="classspdlog_1_1sinks_1_1stderr__sink.html#afab750057fd203762288dc1cdb912b8a">stderr_sink</a> : <span class="keyword">public</span> <a class="code hl_function" href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">stdout_sink_base</a>&lt;ConsoleMutex&gt; {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classspdlog_1_1sinks_1_1stderr__sink.html#afab750057fd203762288dc1cdb912b8a">   56</a></span>    <a class="code hl_function" href="classspdlog_1_1sinks_1_1stderr__sink.html#afab750057fd203762288dc1cdb912b8a">stderr_sink</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#ae73e419ab8cfa08e83c1afaf8944f826">   59</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#ae73e419ab8cfa08e83c1afaf8944f826">stdout_sink_mt</a> = <a class="code hl_class" href="classspdlog_1_1sinks_1_1stdout__sink.html">stdout_sink&lt;details::console_mutex&gt;</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#aea074861585e5dcba68c6b74cff80026">   60</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#aea074861585e5dcba68c6b74cff80026">stdout_sink_st</a> = <a class="code hl_class" href="classspdlog_1_1sinks_1_1stdout__sink.html">stdout_sink&lt;details::console_nullmutex&gt;</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#a84f35881ffc36bb7e8c7a7e4cbdc0e52">   62</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a84f35881ffc36bb7e8c7a7e4cbdc0e52">stderr_sink_mt</a> = <a class="code hl_class" href="classspdlog_1_1sinks_1_1stderr__sink.html">stderr_sink&lt;details::console_mutex&gt;</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#a82afd8f94010e26d0d796639d85dab9c">   63</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a82afd8f94010e26d0d796639d85dab9c">stderr_sink_st</a> = <a class="code hl_class" href="classspdlog_1_1sinks_1_1stderr__sink.html">stderr_sink&lt;details::console_nullmutex&gt;</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}  <span class="comment">// namespace sinks</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">// factory methods</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#a4f51afbe2d988c852012b6142dfad531">stdout_logger_mt</a>(<span class="keyword">const</span> std::string &amp;logger_name);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#a85ffa931fff18fec8cb93c027bd58c66">stdout_logger_st</a>(<span class="keyword">const</span> std::string &amp;logger_name);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#a80cd9eb875ffaf9ebe73468b2f63e0b1">stderr_logger_mt</a>(<span class="keyword">const</span> std::string &amp;logger_name);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#ad00ea35e6a2a717c967427f3db3383d6">stderr_logger_st</a>(<span class="keyword">const</span> std::string &amp;logger_name);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}  <span class="comment">// namespace spdlog</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#ifdef SPDLOG_HEADER_ONLY</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">    #include &quot;<a class="code" href="stdout__sinks-inl_8h.html">stdout_sinks-inl.h</a>&quot;</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1sink_html"><div class="ttname"><a href="classspdlog_1_1sinks_1_1sink.html">spdlog::sinks::sink</a></div><div class="ttdef"><b>定义</b> sink.h:12</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stderr__sink_html"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stderr__sink.html">spdlog::sinks::stderr_sink</a></div><div class="ttdef"><b>定义</b> stdout_sinks.h:54</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stderr__sink_html_afab750057fd203762288dc1cdb912b8a"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stderr__sink.html#afab750057fd203762288dc1cdb912b8a">spdlog::sinks::stderr_sink::stderr_sink</a></div><div class="ttdeci">stderr_sink()</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:102</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a1973c0f40704ebfac3184e7a744eaa34"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a1973c0f40704ebfac3184e7a744eaa34">spdlog::sinks::stdout_sink_base::log</a></div><div class="ttdeci">void log(const details::log_msg &amp;msg) override</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:52</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a229d6a98e03d7da1d8ff5ecdb75a39f6"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a229d6a98e03d7da1d8ff5ecdb75a39f6">spdlog::sinks::stdout_sink_base::stdout_sink_base</a></div><div class="ttdeci">stdout_sink_base(stdout_sink_base &amp;&amp;other)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a252c0b81a272a961f6d8deee79ee2611"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a252c0b81a272a961f6d8deee79ee2611">spdlog::sinks::stdout_sink_base::mutex_t</a></div><div class="ttdeci">typename ConsoleMutex::mutex_t mutex_t</div><div class="ttdef"><b>定义</b> stdout_sinks.h:22</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a293dc47f9b91a5757ff88d1975c4d0d8"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a293dc47f9b91a5757ff88d1975c4d0d8">spdlog::sinks::stdout_sink_base::stdout_sink_base</a></div><div class="ttdeci">stdout_sink_base(FILE *file)</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:33</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a390b6915455eacb92d1a8914713d0b8f"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a390b6915455eacb92d1a8914713d0b8f">spdlog::sinks::stdout_sink_base::set_formatter</a></div><div class="ttdeci">void set_formatter(std::unique_ptr&lt; spdlog::formatter &gt; sink_formatter) override</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:89</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a4a41f48e4ba5577f4d8cdc326583f44d"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a4a41f48e4ba5577f4d8cdc326583f44d">spdlog::sinks::stdout_sink_base::~stdout_sink_base</a></div><div class="ttdeci">~stdout_sink_base() override=default</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a5a30b70b2c72cb5bda34170d8151ad0c"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a5a30b70b2c72cb5bda34170d8151ad0c">spdlog::sinks::stdout_sink_base::formatter_</a></div><div class="ttdeci">std::unique_ptr&lt; spdlog::formatter &gt; formatter_</div><div class="ttdef"><b>定义</b> stdout_sinks.h:41</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a715b2a1d4ad04ec0c950d1467f91964e"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a715b2a1d4ad04ec0c950d1467f91964e">spdlog::sinks::stdout_sink_base::file_</a></div><div class="ttdeci">FILE * file_</div><div class="ttdef"><b>定义</b> stdout_sinks.h:40</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a757802fe27dfa66c4b5d21808db1400a"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a757802fe27dfa66c4b5d21808db1400a">spdlog::sinks::stdout_sink_base::operator=</a></div><div class="ttdeci">stdout_sink_base &amp; operator=(stdout_sink_base &amp;&amp;other)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a8b0437cfc164f0e20a2b46f59c7a2302"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a8b0437cfc164f0e20a2b46f59c7a2302">spdlog::sinks::stdout_sink_base::mutex_</a></div><div class="ttdeci">mutex_t &amp; mutex_</div><div class="ttdef"><b>定义</b> stdout_sinks.h:39</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_a8b7e2aa2e64d3ada39904a85c7cba0c7"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#a8b7e2aa2e64d3ada39904a85c7cba0c7">spdlog::sinks::stdout_sink_base::set_pattern</a></div><div class="ttdeci">void set_pattern(const std::string &amp;pattern) override</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:83</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_ab466517e75048c54539c40743559e9a9"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#ab466517e75048c54539c40743559e9a9">spdlog::sinks::stdout_sink_base::stdout_sink_base</a></div><div class="ttdeci">stdout_sink_base(const stdout_sink_base &amp;other)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_ac27ac71c242af9c62af634beab0798d4"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#ac27ac71c242af9c62af634beab0798d4">spdlog::sinks::stdout_sink_base::flush</a></div><div class="ttdeci">void flush() override</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:77</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink__base_html_aee2d3e931af6c908abd530d16dec8dc4"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink__base.html#aee2d3e931af6c908abd530d16dec8dc4">spdlog::sinks::stdout_sink_base::operator=</a></div><div class="ttdeci">stdout_sink_base &amp; operator=(const stdout_sink_base &amp;other)=delete</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink_html"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink.html">spdlog::sinks::stdout_sink</a></div><div class="ttdef"><b>定义</b> stdout_sinks.h:48</div></div>
+<div class="ttc" id="aclassspdlog_1_1sinks_1_1stdout__sink_html_afd6fd7e86d042e41c00391e1471e4c75"><div class="ttname"><a href="classspdlog_1_1sinks_1_1stdout__sink.html#afd6fd7e86d042e41c00391e1471e4c75">spdlog::sinks::stdout_sink::stdout_sink</a></div><div class="ttdeci">stdout_sink()</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:97</div></div>
+<div class="ttc" id="aconsole__globals_8h_html"><div class="ttname"><a href="console__globals_8h.html">console_globals.h</a></div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html"><div class="ttname"><a href="namespacespdlog_1_1sinks.html">spdlog::sinks</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:127</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a82afd8f94010e26d0d796639d85dab9c"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a82afd8f94010e26d0d796639d85dab9c">spdlog::sinks::stderr_sink_st</a></div><div class="ttdeci">stderr_sink&lt; details::console_nullmutex &gt; stderr_sink_st</div><div class="ttdef"><b>定义</b> stdout_sinks.h:63</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a84f35881ffc36bb7e8c7a7e4cbdc0e52"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a84f35881ffc36bb7e8c7a7e4cbdc0e52">spdlog::sinks::stderr_sink_mt</a></div><div class="ttdeci">stderr_sink&lt; details::console_mutex &gt; stderr_sink_mt</div><div class="ttdef"><b>定义</b> stdout_sinks.h:62</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_ae73e419ab8cfa08e83c1afaf8944f826"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#ae73e419ab8cfa08e83c1afaf8944f826">spdlog::sinks::stdout_sink_mt</a></div><div class="ttdeci">stdout_sink&lt; details::console_mutex &gt; stdout_sink_mt</div><div class="ttdef"><b>定义</b> stdout_sinks.h:59</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_aea074861585e5dcba68c6b74cff80026"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#aea074861585e5dcba68c6b74cff80026">spdlog::sinks::stdout_sink_st</a></div><div class="ttdeci">stdout_sink&lt; details::console_nullmutex &gt; stdout_sink_st</div><div class="ttdef"><b>定义</b> stdout_sinks.h:60</div></div>
+<div class="ttc" id="anamespacespdlog_html"><div class="ttname"><a href="namespacespdlog.html">spdlog</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:25</div></div>
+<div class="ttc" id="anamespacespdlog_html_a4f51afbe2d988c852012b6142dfad531"><div class="ttname"><a href="namespacespdlog.html#a4f51afbe2d988c852012b6142dfad531">spdlog::stdout_logger_mt</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; stdout_logger_mt(const std::string &amp;logger_name)</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:109</div></div>
+<div class="ttc" id="anamespacespdlog_html_a80cd9eb875ffaf9ebe73468b2f63e0b1"><div class="ttname"><a href="namespacespdlog.html#a80cd9eb875ffaf9ebe73468b2f63e0b1">spdlog::stderr_logger_mt</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; stderr_logger_mt(const std::string &amp;logger_name)</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:119</div></div>
+<div class="ttc" id="anamespacespdlog_html_a85ffa931fff18fec8cb93c027bd58c66"><div class="ttname"><a href="namespacespdlog.html#a85ffa931fff18fec8cb93c027bd58c66">spdlog::stdout_logger_st</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; stdout_logger_st(const std::string &amp;logger_name)</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:114</div></div>
+<div class="ttc" id="anamespacespdlog_html_ad00ea35e6a2a717c967427f3db3383d6"><div class="ttname"><a href="namespacespdlog.html#ad00ea35e6a2a717c967427f3db3383d6">spdlog::stderr_logger_st</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; stderr_logger_st(const std::string &amp;logger_name)</div><div class="ttdef"><b>定义</b> stdout_sinks-inl.h:124</div></div>
+<div class="ttc" id="asink_8h_html"><div class="ttname"><a href="sink_8h.html">sink.h</a></div></div>
+<div class="ttc" id="astdout__sinks-inl_8h_html"><div class="ttname"><a href="stdout__sinks-inl_8h.html">stdout_sinks-inl.h</a></div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html">spdlog::details::log_msg</a></div><div class="ttdef"><b>定义</b> log_msg.h:11</div></div>
+<div class="ttc" id="asynchronous__factory_8h_html"><div class="ttname"><a href="synchronous__factory_8h.html">synchronous_factory.h</a></div></div>
+<div class="ttc" id="awindows__include_8h_html"><div class="ttname"><a href="windows__include_8h.html">windows_include.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="dir_fa8338fc4b4a83904b44433ebb24174a.html">sinks</a></li><li class="navelem"><a class="el" href="stdout__sinks_8h.html">stdout_sinks.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

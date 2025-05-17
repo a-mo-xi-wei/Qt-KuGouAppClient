@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: spdlog_wrapper</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md_util_2_my_spdlog_2doc.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">spdlog_wrapper</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md28"></a></p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">date   </th><th class="markdownTableHeadCenter">title   </th><th class="markdownTableHeadCenter">description   </th><th class="markdownTableHeadRight">author    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">2020-10-28   </td><td class="markdownTableBodyCenter"><code>spdlog</code>简单封装   </td><td class="markdownTableBodyCenter"><code>spdlog</code>使用技巧   </td><td class="markdownTableBodyRight">(<a href="https://gqw.github.io">@gqw</a>)   </td></tr>
+</table>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md30"></a>
+## 工程介绍</h1>
+<p><code>spdlog</code>是一个简单高效的modern c++日志库，它使用c++ 20中全新的format格式，如果全新的工程使用它简单方便。但是实际工作中我们经常会要整合老旧的代码，这些代码中可能会包含各种各样的日志系统，如果想统一这些日志输出全部改一遍费时费力。下面介绍个小技巧让spdlog兼容这些老旧的日志系统格式。</p>
+<p>以前的日志通常是通过sprintf函数族和stream字节流两种方式格式化字符串。所以我们需要让<code>spdlog</code>能够模仿这两种方法。</p>
+<p>一般日志系统都会提供宏来定义日志输出指令，因为这样会方便使用编译器提供<code>__FILE__</code>、<code>__LINE__</code>这样的内置宏输出文件路径、行号、函数名等信息。所以我们可以通过宏定义替换以前的宏。</p>
+<div class="fragment"><div class="line"><span class="comment">// got short filename(exlude file directory)</span></div>
+<div class="line"><span class="preprocessor">#define __FILENAME__ (__FILE__ + logger::get_filename_pos(__FILE__))</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// use fmt lib, e.g. LOG_WARN(&quot;warn log, {1}, {1}, {2}&quot;, 1, 2);</span></div>
+<div class="line"><span class="preprocessor">#define LOG_TRACE(msg,...) { if (logger::get().getLogLevel() == spdlog::level::trace) spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::trace, msg, ##__VA_ARGS__); };</span></div>
+<div class="line"><span class="preprocessor">#define LOG_DEBUG(msg,...) spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::debug, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define LOG_INFO(msg,...) spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::info, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define LOG_WARN(msg,...) spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::warn, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define LOG_ERROR(msg,...) spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::err, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define LOG_FATAL(msg,...) spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::critical, msg, ##__VA_ARGS__);</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// use like sprintf, e.g. PRINT_WARN(&quot;warn log, %d-%d&quot;, 1, 2);</span></div>
+<div class="line"><span class="preprocessor">#define PRINT_TRACE(msg,...) logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::trace, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define PRINT_DEBUG(msg,...) logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::debug, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define PRINT_INFO(msg,...) logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::info, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define PRINT_WARN(msg,...) logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::warn, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define PRINT_ERROR(msg,...) logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::err, msg, ##__VA_ARGS__);</span></div>
+<div class="line"><span class="preprocessor">#define PRINT_FATAL(msg,...) logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::critical, msg, ##__VA_ARGS__);</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// use like stream , e.g. STM_WARN() &lt;&lt; &quot;warn log: &quot; &lt;&lt; 1;</span></div>
+<div class="line"><span class="preprocessor">#define STM_TRACE() logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::trace, &quot;&quot;)</span></div>
+<div class="line"><span class="preprocessor">#define STM_DEBUG() logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::debug, &quot;&quot;)</span></div>
+<div class="line"><span class="preprocessor">#define STM_INFO()  logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::info, &quot;&quot;)</span></div>
+<div class="line"><span class="preprocessor">#define STM_WARN()  logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::warn, &quot;&quot;)</span></div>
+<div class="line"><span class="preprocessor">#define STM_ERROR() logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::err, &quot;&quot;)</span></div>
+<div class="line"><span class="preprocessor">#define STM_FATAL() logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::critical, &quot;&quot;)</span></div>
+</div><!-- fragment --><p>上面的定义中LOG_XXXX宏直接使用spdlog输出， PRINT_XXXX宏使用printf格式， STM_XXXX是使用字节流的方式。 <b>FILENAME</b> 是从完整路径中提取文件名的宏（因为很多时候完整路径会很冗余特别是使用cmake编译后的代码），下面看下logger类的封装：</p>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>fs = std::filesystem;</div>
+<div class="line"><span class="keyword">class </span>logger final {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">struct </span>log_stream : <span class="keyword">public</span> std::ostringstream</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">        log_stream(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1source__loc.html">spdlog::source_loc</a>&amp; _loc, <a class="code hl_enumeration" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a> _lvl, std::string_view _prefix)</div>
+<div class="line">            : loc(_loc)</div>
+<div class="line">            , lvl(_lvl)</div>
+<div class="line">            , prefix(_prefix)</div>
+<div class="line">        {</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        ~log_stream()</div>
+<div class="line">        {</div>
+<div class="line">            flush();</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="namespacespdlog_1_1details.html#ae08c1e88063d86888cfeae2df6acf6daa86f354b8575a1a736775ae003fa344e5">flush</a>()</div>
+<div class="line">        {</div>
+<div class="line">            logger::get().log(loc, lvl, (prefix + str()).c_str());</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">private</span>:</div>
+<div class="line">        spdlog::source_loc loc;</div>
+<div class="line">        <a class="code hl_enumeration" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a> lvl = <a class="code hl_enumvalue" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109aa4abb266e72efba828327b605b2ab0f4">spdlog::level::info</a>;</div>
+<div class="line">        std::string prefix;</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> logger&amp; <a class="code hl_function" href="namespacespdlog.html#a8cbceba6fe6f0a9fd99f72b36c1d354c">get</a>() {</div>
+<div class="line">        <span class="keyword">static</span> logger logger;</div>
+<div class="line">        <span class="keywordflow">return</span> logger;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> init(std::string_view log_file_path) {</div>
+<div class="line">        <span class="keywordflow">if</span> (_is_inited) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">        <span class="keywordflow">try</span></div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// check log path and try to create log directory</span></div>
+<div class="line">            fs::path log_path(log_file_path);</div>
+<div class="line">            fs::path log_dir = log_path.parent_path();</div>
+<div class="line">            <span class="keywordflow">if</span> (!fs::exists(log_path)) {</div>
+<div class="line">                fs::create_directories(log_dir);</div>
+<div class="line">            }</div>
+<div class="line">            <span class="comment">// initialize spdlog</span></div>
+<div class="line">            <span class="keyword">constexpr</span> std::size_t log_buffer_size = 32 * 1024; <span class="comment">// 32kb</span></div>
+<div class="line">            <span class="comment">// constexpr std::size_t max_file_size = 50 * 1024 * 1024; // 50mb</span></div>
+<div class="line">            <a class="code hl_function" href="namespacespdlog.html#a71e7d0a26bc526b8c09dafe922f985dd">spdlog::init_thread_pool</a>(log_buffer_size, std::thread::hardware_concurrency());</div>
+<div class="line">            <a class="code hl_function" href="namespacespdlog.html#af921e11c9f5b4a0c1f8c3aabd27b7325">spdlog::set_level</a>(_log_level);</div>
+<div class="line">            <a class="code hl_function" href="namespacespdlog.html#a08274a24d08e4881a651d693d6c370d9">spdlog::flush_on</a>(_log_level);</div>
+<div class="line">            <a class="code hl_function" href="namespacespdlog.html#a1a847acd21b9eb74785303fd0a0414da">spdlog::set_pattern</a>(<span class="stringliteral">&quot;%s(%#): [%L %D %T.%e %P %t %!] %v&quot;</span>);</div>
+<div class="line">            <a class="code hl_function" href="namespacespdlog.html#aaf7abb61f4604a4d4af6017b4ecce0d7">spdlog::set_default_logger</a>(<a class="code hl_function" href="namespacespdlog.html#a06ca4ffcd3a73700f8bca271e9666025">spdlog::daily_logger_mt</a>(<span class="stringliteral">&quot;daily_logger&quot;</span>, log_path.string(), <span class="keyword">false</span>, 2));</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">catch</span> (std::exception_ptr e)</div>
+<div class="line">        {</div>
+<div class="line">            assert(<span class="keyword">false</span>);</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line">        _is_inited = <span class="keyword">true</span>;</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacespdlog.html#a8bcc5aa16e076bf772f662ad1f3fb8b0">shutdown</a>() { <a class="code hl_function" href="namespacespdlog.html#a8bcc5aa16e076bf772f662ad1f3fb8b0">spdlog::shutdown</a>(); }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacespdlog.html#ab9b3b6b35cdd9d51b6c45ac2b0707631">log</a>(<span class="keyword">const</span> spdlog::source_loc&amp; loc, <a class="code hl_enumeration" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a> lvl, <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, <span class="keyword">const</span> Args &amp;... args)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_function" href="namespacespdlog.html#ab9b3b6b35cdd9d51b6c45ac2b0707631">spdlog::log</a>(loc, lvl, fmt, args...);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a">printf</a>(<span class="keyword">const</span> spdlog::source_loc&amp; loc, <a class="code hl_enumeration" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a> lvl, <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, <span class="keyword">const</span> Args &amp;... args)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_function" href="namespacespdlog.html#ab9b3b6b35cdd9d51b6c45ac2b0707631">spdlog::log</a>(loc, lvl, fmt::sprintf(fmt, args...).c_str());</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_enumeration" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a> level() {</div>
+<div class="line">        <span class="keywordflow">return</span> _log_level;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacespdlog.html#af921e11c9f5b4a0c1f8c3aabd27b7325">set_level</a>(<a class="code hl_enumeration" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a> lvl) {</div>
+<div class="line">        _log_level = lvl;</div>
+<div class="line">        <a class="code hl_function" href="namespacespdlog.html#af921e11c9f5b4a0c1f8c3aabd27b7325">spdlog::set_level</a>(lvl);</div>
+<div class="line">        <a class="code hl_function" href="namespacespdlog.html#a08274a24d08e4881a651d693d6c370d9">spdlog::flush_on</a>(lvl);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static</span> std::size_t get_filename_pos(std::string_view path) {</div>
+<div class="line">        <span class="keywordflow">if</span> (path.empty())</div>
+<div class="line">            <span class="keywordflow">return</span> 0;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordtype">size_t</span> pos = path.find_last_of(<span class="stringliteral">&quot;/\\&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span> (pos == path.npos) ? 0 : pos + 1;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    logger() = <span class="keywordflow">default</span>;</div>
+<div class="line">    ~logger() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">    logger(<span class="keyword">const</span> logger&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">    <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> logger&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    std::atomic_bool _is_inited = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code hl_enumeration" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a> _log_level = <a class="code hl_enumvalue" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109aa4abb266e72efba828327b605b2ab0f4">spdlog::level::info</a>;</div>
+<div class="line">};</div>
+<div class="ttc" id="anamespacespdlog_1_1details_html_ae08c1e88063d86888cfeae2df6acf6daa86f354b8575a1a736775ae003fa344e5"><div class="ttname"><a href="namespacespdlog_1_1details.html#ae08c1e88063d86888cfeae2df6acf6daa86f354b8575a1a736775ae003fa344e5">spdlog::details::async_msg_type::flush</a></div><div class="ttdeci">@ flush</div><div class="ttdef"><b>定义</b> thread_pool.h:23</div></div>
+<div class="ttc" id="anamespacespdlog_1_1level_html_a2d7067eeba79a9aae6ce1f5ec7d2e109"><div class="ttname"><a href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">spdlog::level::level_enum</a></div><div class="ttdeci">level_enum</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:245</div></div>
+<div class="ttc" id="anamespacespdlog_1_1level_html_a2d7067eeba79a9aae6ce1f5ec7d2e109aa4abb266e72efba828327b605b2ab0f4"><div class="ttname"><a href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109aa4abb266e72efba828327b605b2ab0f4">spdlog::level::info</a></div><div class="ttdeci">@ info</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:248</div></div>
+<div class="ttc" id="anamespacespdlog_html_a06ca4ffcd3a73700f8bca271e9666025"><div class="ttname"><a href="namespacespdlog.html#a06ca4ffcd3a73700f8bca271e9666025">spdlog::daily_logger_mt</a></div><div class="ttdeci">std::shared_ptr&lt; logger &gt; daily_logger_mt(const std::string &amp;logger_name, const filename_t &amp;filename, int hour=0, int minute=0, bool truncate=false, uint16_t max_files=0, const file_event_handlers &amp;event_handlers={})</div><div class="ttdef"><b>定义</b> daily_file_sink.h:206</div></div>
+<div class="ttc" id="anamespacespdlog_html_a08274a24d08e4881a651d693d6c370d9"><div class="ttname"><a href="namespacespdlog.html#a08274a24d08e4881a651d693d6c370d9">spdlog::flush_on</a></div><div class="ttdeci">SPDLOG_INLINE void flush_on(level::level_enum log_level)</div><div class="ttdef"><b>定义</b> spdlog-inl.h:50</div></div>
+<div class="ttc" id="anamespacespdlog_html_a1a847acd21b9eb74785303fd0a0414da"><div class="ttname"><a href="namespacespdlog.html#a1a847acd21b9eb74785303fd0a0414da">spdlog::set_pattern</a></div><div class="ttdeci">SPDLOG_INLINE void set_pattern(std::string pattern, pattern_time_type time_type)</div><div class="ttdef"><b>定义</b> spdlog-inl.h:27</div></div>
+<div class="ttc" id="anamespacespdlog_html_a71e7d0a26bc526b8c09dafe922f985dd"><div class="ttname"><a href="namespacespdlog.html#a71e7d0a26bc526b8c09dafe922f985dd">spdlog::init_thread_pool</a></div><div class="ttdeci">void init_thread_pool(size_t q_size, size_t thread_count, std::function&lt; void()&gt; on_thread_start, std::function&lt; void()&gt; on_thread_stop)</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:76</div></div>
+<div class="ttc" id="anamespacespdlog_html_a8bcc5aa16e076bf772f662ad1f3fb8b0"><div class="ttname"><a href="namespacespdlog.html#a8bcc5aa16e076bf772f662ad1f3fb8b0">spdlog::shutdown</a></div><div class="ttdeci">SPDLOG_INLINE void shutdown()</div><div class="ttdef"><b>定义</b> spdlog-inl.h:70</div></div>
+<div class="ttc" id="anamespacespdlog_html_a8cbceba6fe6f0a9fd99f72b36c1d354c"><div class="ttname"><a href="namespacespdlog.html#a8cbceba6fe6f0a9fd99f72b36c1d354c">spdlog::get</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; get(const std::string &amp;name)</div><div class="ttdef"><b>定义</b> spdlog-inl.h:19</div></div>
+<div class="ttc" id="anamespacespdlog_html_aaf7abb61f4604a4d4af6017b4ecce0d7"><div class="ttname"><a href="namespacespdlog.html#aaf7abb61f4604a4d4af6017b4ecce0d7">spdlog::set_default_logger</a></div><div class="ttdeci">SPDLOG_INLINE void set_default_logger(std::shared_ptr&lt; spdlog::logger &gt; default_logger)</div><div class="ttdef"><b>定义</b> spdlog-inl.h:84</div></div>
+<div class="ttc" id="anamespacespdlog_html_ab9b3b6b35cdd9d51b6c45ac2b0707631"><div class="ttname"><a href="namespacespdlog.html#ab9b3b6b35cdd9d51b6c45ac2b0707631">spdlog::log</a></div><div class="ttdeci">void log(source_loc source, level::level_enum lvl, format_string_t&lt; Args... &gt; fmt, Args &amp;&amp;...args)</div><div class="ttdef"><b>定义</b> spdlog.h:144</div></div>
+<div class="ttc" id="anamespacespdlog_html_af921e11c9f5b4a0c1f8c3aabd27b7325"><div class="ttname"><a href="namespacespdlog.html#af921e11c9f5b4a0c1f8c3aabd27b7325">spdlog::set_level</a></div><div class="ttdeci">SPDLOG_INLINE void set_level(level::level_enum log_level)</div><div class="ttdef"><b>定义</b> spdlog-inl.h:46</div></div>
+<div class="ttc" id="aprintf_8h_html_aee3ed3a831f25f07e7be3919fff2203a"><div class="ttname"><a href="printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a">printf</a></div><div class="ttdeci">auto printf(string_view fmt, const T &amp;... args) -&gt; int</div><div class="ttdoc">Formats args according to specifications in fmt and writes the output to stdout.</div><div class="ttdef"><b>定义</b> printf.h:621</div></div>
+<div class="ttc" id="astructspdlog_1_1source__loc_html"><div class="ttname"><a href="structspdlog_1_1source__loc.html">spdlog::source_loc</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:315</div></div>
+</div><!-- fragment --><p>其中<code>printf</code>直接封装<code>fmt::sprintf</code>没什么好说的， STM_XXXX字节流方式使用封装类log_stream，它继承ostringstream，充分利用标准库中现有的东西，结合构造和析构函数实现日志的写入操作。</p>
+<p>测试代码：</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="logger_8h.html">logger.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="_ku_gou_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>() {</div>
+<div class="line">    <span class="keywordflow">if</span> (!logger::get().init(<span class="stringliteral">&quot;logs/test.log&quot;</span>)) {</div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    STM_DEBUG() &lt;&lt; <span class="stringliteral">&quot;STM_DEBUG&quot;</span> &lt;&lt; 1;</div>
+<div class="line">    <a class="code hl_define" href="logger_8hpp.html#a118157dd6b8bfb2325271f4678f821fe">PRINT_WARN</a>(<span class="stringliteral">&quot;PRINT_WARN, %d&quot;</span>, 1);</div>
+<div class="line">    <a class="code hl_define" href="logger_8hpp.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a>(<span class="stringliteral">&quot;LOG_INFO {}&quot;</span>, 1);</div>
+<div class="line"> </div>
+<div class="line">    logger::get().set_level(<a class="code hl_enumvalue" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109aa4abb266e72efba828327b605b2ab0f4">spdlog::level::info</a>);</div>
+<div class="line">    STM_DEBUG() &lt;&lt; <span class="stringliteral">&quot;STM_DEBUG &quot;</span> &lt;&lt; 2;</div>
+<div class="line">    <a class="code hl_define" href="logger_8hpp.html#a118157dd6b8bfb2325271f4678f821fe">PRINT_WARN</a>(<span class="stringliteral">&quot;PRINT_WARN, %d&quot;</span>, 2);</div>
+<div class="line">    <a class="code hl_define" href="logger_8hpp.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a>(<span class="stringliteral">&quot;LOG_INFO {}&quot;</span>, 2);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// call before spdlog static variables destroy</span></div>
+<div class="line">    logger::get().shutdown();</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="a_ku_gou_server_2main_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="_ku_gou_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdoc">主函数，程序的入口点。</div><div class="ttdef"><b>定义</b> KuGouServer/main.cpp:22</div></div>
+<div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="logger_8h.html">logger.h</a></div></div>
+<div class="ttc" id="alogger_8hpp_html_a118157dd6b8bfb2325271f4678f821fe"><div class="ttname"><a href="logger_8hpp.html#a118157dd6b8bfb2325271f4678f821fe">PRINT_WARN</a></div><div class="ttdeci">#define PRINT_WARN(fmt,...)</div><div class="ttdef"><b>定义</b> logger.hpp:50</div></div>
+<div class="ttc" id="alogger_8hpp_html_ae69d735f8291bd2aff230fe6ffb4d4b3"><div class="ttname"><a href="logger_8hpp.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a></div><div class="ttdeci">#define LOG_INFO(fmt,...)</div><div class="ttdef"><b>定义</b> logger.hpp:39</div></div>
+</div><!-- fragment --><p>项目地址：https://github.com/gqw/spdlog_wrapper </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

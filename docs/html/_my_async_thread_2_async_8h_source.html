@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Async.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_my_async_thread_2_async_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MyAsyncThread/Async.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_my_async_thread_2_async_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ASYNC_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ASYNC_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QFuture&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QFutureInterface&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QFutureWatcher&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QRunnable&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QThreadPool&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// 异步加载</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_async.html">Async</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable.html">   27</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_async_1_1_member_callable.html">MemberCallable</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span> Obj, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html">   37</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a304421f24a8583867a7cbdc0907b1bb2">MemberCallable</a>&lt;Result(Obj::*)(Args...) const&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a304421f24a8583867a7cbdc0907b1bb2">   46</a></span>        <a class="code hl_function" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a304421f24a8583867a7cbdc0907b1bb2">MemberCallable</a>(Result(Obj::* function)(Args...) <span class="keyword">const</span>, <span class="keyword">const</span> Obj *obj)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            : <a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a82105dc128de396ec243bc0c5aa3af87">m_function</a>(function),</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>              <a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a2e1ce3822bf5227c03bd795f6057a940">m_obj</a>(obj)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a4398860f67a73258be6024e3675baaae">   58</a></span>        Result <a class="code hl_function" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a4398860f67a73258be6024e3675baaae">operator()</a>(Args&amp;&amp;... args)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">return</span> ((*m_obj).*<a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a82105dc128de396ec243bc0c5aa3af87">m_function</a>)(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a82105dc128de396ec243bc0c5aa3af87">   67</a></span>        Result(Obj::* <a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a82105dc128de396ec243bc0c5aa3af87">m_function</a>)(Args...) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a2e1ce3822bf5227c03bd795f6057a940">   72</a></span>        <span class="keyword">const</span> Obj *<a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a2e1ce3822bf5227c03bd795f6057a940">m_obj</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    };</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span> Obj, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="};">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html">   83</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a6b6efb6a37c01d23895554d7a883456a">MemberCallable</a>&lt;Result(Obj::*)(Args...)&gt;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a6b6efb6a37c01d23895554d7a883456a">   92</a></span>        <a class="code hl_function" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a6b6efb6a37c01d23895554d7a883456a">MemberCallable</a>(Result(Obj::* function)(Args...), Obj *obj)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            : <a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a47d763d69dd471f88fe643fe10a63503">m_function</a>(function),</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>              <a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#affe1b12e8609225f6c2c87120ce72a3f">m_obj</a>(obj)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a4398860f67a73258be6024e3675baaae">  104</a></span>        Result <a class="code hl_function" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a4398860f67a73258be6024e3675baaae">operator()</a>(Args&amp;&amp;... args)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">return</span> ((*m_obj).*<a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a47d763d69dd471f88fe643fe10a63503">m_function</a>)(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a47d763d69dd471f88fe643fe10a63503">  113</a></span>        Result(Obj::* <a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a47d763d69dd471f88fe643fe10a63503">m_function</a>)(Args...);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#affe1b12e8609225f6c2c87120ce72a3f">  118</a></span>        Obj *<a class="code hl_variable" href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#affe1b12e8609225f6c2c87120ce72a3f">m_obj</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    };</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> HasArity<span class="comment">/*true_type or false_type*/</span>,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>          <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keywordtype">unsigned</span> <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="struct_async_1_1function_takes_argument_arity_dispatch.html">  123</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_takes_argument_arity_dispatch.html">functionTakesArgumentArityDispatch</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">unsigned</span> index, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="};">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="struct_async_1_1function_takes_argument_arity_dispatch_3_01std_1_1false__type_00_01_function_00_01index_00_01_t_01_4.html">  126</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_takes_argument_arity_dispatch.html">functionTakesArgumentArityDispatch</a>&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::false_type, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        : <span class="keyword">public</span> std::false_type</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>{</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>};</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Callable&gt;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="};">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4.html">  148</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Args...)&gt;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4.html#a5dfda66ed0960a42d5f69945b042f3a2">  153</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4.html#a5dfda66ed0960a42d5f69945b042f3a2">ResultType</a> = Result;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4.html#ae7173072e5bd323969561a398ecb34b9">  158</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4.html#ae7173072e5bd323969561a398ecb34b9">arity</a> = <span class="keyword">sizeof</span>...(Args);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">template</span> &lt;<span class="keywordtype">unsigned</span> i&gt;</div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="};">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument.html">  167</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument.html">argument</a></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument.html#a30f418b8afe0754d59798198d9b38056">  172</a></span>            <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument.html#a30f418b8afe0754d59798198d9b38056">type</a> = <span class="keyword">typename</span> std::tuple_element&lt;i, std::tuple&lt;Args...&gt;&gt;<a class="code hl_typedef" href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument.html#a30f418b8afe0754d59798198d9b38056">::type</a>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        };</div>
+</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    };</div>
+</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="};">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_5_08_07_args_8_8_8_08_4.html">  183</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(*)(Args...)&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Args...)&gt;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    };</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00194" data-start="{" data-end="};">
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_5const_08_07_args_8_8_8_08_4.html">  194</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(* <span class="keyword">const</span>)(Args...)&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Args...)&gt;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    };</div>
+</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type, <span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="};">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_type_1_1_5_08_07_args_8_8_8_08_4.html">  206</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Type::*)(Args...)&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Type&amp;, Args...)&gt;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    };</div>
+</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type, <span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00218" data-start="{" data-end="};">
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_type_1_1_5_08_07_args_8_8_8_08_01const_01_4.html">  218</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Type::*)(Args...) const&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Type&amp;, Args...)&gt;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    };</div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">// const pointer to member function</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type, <span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00231" data-start="{" data-end="};">
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_type_1_1_5const_08_07_args_8_8_8_08_4.html">  231</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Type::* const)(Args...)&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Type&amp;,Args...)&gt;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>{</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>};</div>
+</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">// const pointer to const member function</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type, <span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00237" data-start="{" data-end="};">
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_result_07_type_1_1_5const_08_07_args_8_8_8_08_01const_01_4.html">  237</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Type::* const)(Args...) const&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Result(Type&amp;,Args...)&gt;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>{</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>};</div>
+</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">// callables. only works if operator() is not overloaded.</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Callable&gt;</div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="};">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits.html">  244</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>{</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits.html#a11dc80b6e75b69f5de6050bbe667f540">  246</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1function_traits.html#a11dc80b6e75b69f5de6050bbe667f540">callableTraits</a> = <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;<span class="keyword">decltype</span>(&amp;Callable::operator())&gt;;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits.html#ac258d52d82b71b697d1add7ed35be074">  247</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1function_traits.html#ac258d52d82b71b697d1add7ed35be074">ResultType</a> = <span class="keyword">typename</span> <a class="code hl_typedef" href="struct_async_1_1function_traits.html#ac258d52d82b71b697d1add7ed35be074">callableTraits::ResultType</a>;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits.html#ae7173072e5bd323969561a398ecb34b9">  248</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="struct_async_1_1function_traits.html#ae7173072e5bd323969561a398ecb34b9">arity</a> = <a class="code hl_variable" href="struct_async_1_1function_traits.html#ae7173072e5bd323969561a398ecb34b9">callableTraits::arity</a> - 1; <span class="comment">// ignore object pointer arg</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keyword">template</span> &lt;<span class="keywordtype">unsigned</span> i&gt;</div>
+<div class="foldopen" id="foldopen00251" data-start="{" data-end="};">
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_1_1argument.html">  251</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits_1_1argument.html">argument</a></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8">  253</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8">type</a> = <span class="keyword">typename</span> callableTraits::template <a class="code hl_typedef" href="struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8">argument&lt;i+1&gt;::type</a>; <span class="comment">// ignore object pointer arg</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    };</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>};</div>
+</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="comment">// lvalue ref callables</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Callable&gt;</div>
+<div class="foldopen" id="foldopen00259" data-start="{" data-end="};">
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_callable_01_6_01_4.html">  259</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Callable&amp;&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits&lt;Callable&gt;</a></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>{</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>};</div>
+</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="comment">// const lvalue ref callables</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Callable&gt;</div>
+<div class="foldopen" id="foldopen00265" data-start="{" data-end="};">
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01const_01_callable_01_6_01_4.html">  265</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;const Callable&amp;&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits&lt;Callable&gt;</a></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>{</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>};</div>
+</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment">// rvalue ref callables</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Callable&gt;</div>
+<div class="foldopen" id="foldopen00271" data-start="{" data-end="};">
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="struct_async_1_1function_traits_3_01_callable_01_6_6_01_4.html">  271</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits</a>&lt;Callable&amp;&amp;&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_traits.html">functionTraits&lt;Callable&gt;</a></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>{</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>};</div>
+</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">unsigned</span> index, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00278" data-start="{" data-end="};">
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="struct_async_1_1function_takes_argument_arity_dispatch_3_01std_1_1true__type_00_01_function_00_01index_00_01_t_01_4.html">  278</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_takes_argument_arity_dispatch.html">functionTakesArgumentArityDispatch</a>&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::true_type, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        : <span class="keyword">public</span> std::is_same&lt;T, typename functionTraits&lt;Function&gt;::template argument&lt;index&gt;::type&gt;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>{</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>};</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">unsigned</span> index, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00286" data-start="{" data-end="};">
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="struct_async_1_1function_takes_argument.html">  286</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1function_takes_argument.html">functionTakesArgument</a> : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1function_takes_argument_arity_dispatch.html">functionTakesArgumentArityDispatch</a>&lt;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        std::integral_constant&lt;bool, (functionTraits&lt;Function&gt;::arity &gt; index)&gt;,</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>{</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>};</div>
+</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00293" data-start="{" data-end="}">
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="namespace_async.html#a2b92c9217bd3ece62a43b416c8a00fe0">  293</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespace_async.html#a2b92c9217bd3ece62a43b416c8a00fe0">runAsyncReturnVoidDispatch</a>(std::true_type, QFutureInterface&lt;ResultType&gt;, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>{</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    function(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
+</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">// non-void function that does not take QFutureInterface</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00300" data-start="{" data-end="}">
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno"><a class="line" href="namespace_async.html#a80a0c41bd5ce7e1845b9e30f1c0032e0">  300</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespace_async.html#a2b92c9217bd3ece62a43b416c8a00fe0">runAsyncReturnVoidDispatch</a>(std::false_type, QFutureInterface&lt;ResultType&gt; futureInterface, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>{</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    futureInterface.reportResult(function(std::forward&lt;Args&gt;(args)...));</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>}</div>
+</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment">// function that takes QFutureInterface</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00307" data-start="{" data-end="}">
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno"><a class="line" href="namespace_async.html#ac0afcd98f4a652219c15628c5853a881">  307</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespace_async.html#ac0afcd98f4a652219c15628c5853a881">runAsyncQFutureInterfaceDispatch</a>(std::true_type, QFutureInterface&lt;ResultType&gt; futureInterface, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>{</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    function(futureInterface, std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>}</div>
+</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="comment">// function that does not take QFutureInterface</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00314" data-start="{" data-end="}">
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno"><a class="line" href="namespace_async.html#a3fd73860605f09ab8450edd257bb46f2">  314</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespace_async.html#ac0afcd98f4a652219c15628c5853a881">runAsyncQFutureInterfaceDispatch</a>(std::false_type, QFutureInterface&lt;ResultType&gt; futureInterface, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>{</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    <a class="code hl_function" href="namespace_async.html#a2b92c9217bd3ece62a43b416c8a00fe0">runAsyncReturnVoidDispatch</a>(std::is_void&lt;std::result_of_t&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>(Args...)&gt;&gt;(),</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                               futureInterface, std::forward&lt;Function&gt;(function), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>}</div>
+</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="comment">// function, function pointer, or other callable object that is no member pointer</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args,</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>          <span class="keyword">typename</span> = std::enable_if_t&lt;!std::is_member_pointer&lt;std::decay_t&lt;Function&gt;&gt;::value&gt;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>         &gt;</div>
+<div class="foldopen" id="foldopen00324" data-start="{" data-end="}">
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d">  324</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d">runAsyncMemberDispatch</a>(QFutureInterface&lt;ResultType&gt; futureInterface, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>{</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <a class="code hl_function" href="namespace_async.html#ac0afcd98f4a652219c15628c5853a881">runAsyncQFutureInterfaceDispatch</a>(<a class="code hl_struct" href="struct_async_1_1function_takes_argument.html">functionTakesArgument</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, 0, QFutureInterface&lt;ResultType&gt;&amp;&gt;(),</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                                     futureInterface, std::forward&lt;Function&gt;(function), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>}</div>
+</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="comment">// Function = member function</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span> Obj, <span class="keyword">typename</span>... Args,</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>          <span class="keyword">typename</span> = std::enable_if_t&lt;std::is_member_pointer&lt;std::decay_t&lt;Function&gt;&gt;::value&gt;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>         &gt;</div>
+<div class="foldopen" id="foldopen00334" data-start="{" data-end="}">
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="namespace_async.html#a2db3a7bd981158ae8c35dd00898043c0">  334</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d">runAsyncMemberDispatch</a>(QFutureInterface&lt;ResultType&gt; futureInterface, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Obj &amp;&amp;obj, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>{</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="comment">// Wrap member function with object into callable</span></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <a class="code hl_function" href="namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb">runAsyncImpl</a>(futureInterface,</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>                 <a class="code hl_class" href="class_async_1_1_member_callable.html">MemberCallable</a>&lt;std::decay_t&lt;Function&gt;&gt;(std::forward&lt;Function&gt;(function), std::forward&lt;Obj&gt;(obj)),</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                 std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>}</div>
+</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="comment">// cref to function/callable</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00344" data-start="{" data-end="}">
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb">  344</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb">runAsyncImpl</a>(QFutureInterface&lt;ResultType&gt; futureInterface,</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                  std::reference_wrapper&lt;Function&gt; functionWrapper, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>{</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    <a class="code hl_function" href="namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d">runAsyncMemberDispatch</a>(futureInterface, functionWrapper.get(), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>}</div>
+</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="comment">// function/callable, no cref</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00352" data-start="{" data-end="}">
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno"><a class="line" href="namespace_async.html#ab21131cbc3edec4692f791676531e4e9">  352</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb">runAsyncImpl</a>(QFutureInterface&lt;ResultType&gt; futureInterface,</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                  <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>{</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    <a class="code hl_function" href="namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d">runAsyncMemberDispatch</a>(futureInterface, std::forward&lt;Function&gt;(function),</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                           std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>}</div>
+</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="comment">template &lt;class T&gt;</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span><span class="comment">std::decay_t&lt;T&gt;</span></div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span><span class="comment">decayCopy(T&amp;&amp; v)</span></div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span><span class="comment">{</span></div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="comment">    return std::forward&lt;T&gt;(v);</span></div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="comment">}</span></div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00367" data-start="{" data-end="}">
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno"><a class="line" href="namespace_async.html#a7ed935020c844a47954bf21e2c933845">  367</a></span><span class="keyword">auto</span> <a class="code hl_function" href="namespace_async.html#a7ed935020c844a47954bf21e2c933845">decayCopy</a>(<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&amp;&amp; <a class="code hl_function" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>) -&gt; std::decay_t&lt;T&gt; {</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="keywordflow">return</span> std::forward&lt;T&gt;(<a class="code hl_function" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>); <span class="comment">// 避免不必要的拷贝</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>}</div>
+</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ResultType, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00372" data-start="{" data-end="};">
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html">  372</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_async_1_1_async_job.html#a0feb732f9d7be3eb32e974c64bd4e41e">AsyncJob</a> : <span class="keyword">public</span> QRunnable</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    {</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00383" data-start="{" data-end="}">
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#a0feb732f9d7be3eb32e974c64bd4e41e">  383</a></span>        <a class="code hl_function" href="class_async_1_1_async_job.html#a0feb732f9d7be3eb32e974c64bd4e41e">AsyncJob</a>(<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>          <span class="comment">// decay copy like std::thread</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>            : <a class="code hl_variable" href="class_async_1_1_async_job.html#a6cd5475316bf41a2c56ffcc5de826b99">data</a>(<a class="code hl_function" href="namespace_async.html#a7ed935020c844a47954bf21e2c933845">decayCopy</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::forward&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>&gt;(function)), <a class="code hl_function" href="namespace_async.html#a7ed935020c844a47954bf21e2c933845">decayCopy</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::forward&lt;Args&gt;(args))...)</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        {</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <span class="comment">// we need to report it as started even though it isn&#39;t yet, because someone might</span></div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        <span class="comment">// call waitForFinished on the future, which does _not_ block if the future is not started</span></div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>            <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.setRunnable(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>            <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.reportStarted();</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>        }</div>
+</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span></div>
+<div class="foldopen" id="foldopen00398" data-start="{" data-end="}">
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#abd356a8e477547fbde1226af3f5b0d20">  398</a></span>        <a class="code hl_function" href="class_async_1_1_async_job.html#abd356a8e477547fbde1226af3f5b0d20">~AsyncJob</a>()</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        {</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>            <span class="comment">// QThreadPool can delete runnables even if they were never run (e.g. QThreadPool::clear).</span></div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            <span class="comment">// Since we reported them as started, we make sure that we always report them as finished.</span></div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>            <span class="comment">// reportFinished only actually sends the signal if it wasn&#39;t already finished.</span></div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>            <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.reportFinished();</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>        }</div>
+</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span></div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#a481e8f9ccbad8700a0f1501495f50452">  411</a></span>        QFuture&lt;ResultType&gt; <a class="code hl_function" href="class_async_1_1_async_job.html#a481e8f9ccbad8700a0f1501495f50452">future</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.future(); }</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span></div>
+<div class="foldopen" id="foldopen00418" data-start="{" data-end="}">
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#ad1717410afd0be936c6213a63c8005fb">  418</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_async_1_1_async_job.html#ad1717410afd0be936c6213a63c8005fb">run</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_async_1_1_async_job.html#a3a36427f613a5cdd3c3a5253cc78925c">priority</a> != QThread::InheritPriority)</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>                <span class="keywordflow">if</span> (QThread *thread = QThread::currentThread())</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>                    <span class="keywordflow">if</span> (thread != qApp-&gt;thread())</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>                        thread-&gt;setPriority(<a class="code hl_variable" href="class_async_1_1_async_job.html#a3a36427f613a5cdd3c3a5253cc78925c">priority</a>);</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.isCanceled()) {</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>                <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.reportFinished();</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>            }</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>            <a class="code hl_function" href="class_async_1_1_async_job.html#a8d6ba1d847504642c3e7cc051872d924">runHelper</a>(std::make_index_sequence&lt;std::tuple_size&lt;Data&gt;::value&gt;());</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        }</div>
+</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span></div>
+<div class="foldopen" id="foldopen00436" data-start="{" data-end="}">
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#a575b39bef3d0494a62e78ebeda1576c0">  436</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_async_1_1_async_job.html#a575b39bef3d0494a62e78ebeda1576c0">setThreadPool</a>(QThreadPool *pool)</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        {</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>            <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.setThreadPool(pool);</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>        }</div>
+</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span></div>
+<div class="foldopen" id="foldopen00446" data-start="{" data-end="}">
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#a4bb1ccdfe6f1c51283f4f96d93f07a6e">  446</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_async_1_1_async_job.html#a4bb1ccdfe6f1c51283f4f96d93f07a6e">setThreadPriority</a>(QThread::Priority p)</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        {</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>            <a class="code hl_variable" href="class_async_1_1_async_job.html#a3a36427f613a5cdd3c3a5253cc78925c">priority</a> = p;</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        }</div>
+</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span> </div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#a83a0648b5824fe83c917fac609b6a3ef">  455</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="class_async_1_1_async_job.html#a83a0648b5824fe83c917fac609b6a3ef">Data</a> = std::tuple&lt;std::decay_t&lt;Function&gt;, std::decay_t&lt;Args&gt;...&gt;;</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span></div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>        <span class="keyword">template</span> &lt;std::size_t... <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>&gt;</div>
+<div class="foldopen" id="foldopen00463" data-start="{" data-end="}">
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#a8d6ba1d847504642c3e7cc051872d924">  463</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_async_1_1_async_job.html#a8d6ba1d847504642c3e7cc051872d924">runHelper</a>(std::index_sequence&lt;index...&gt;)</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>        {</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        <span class="comment">// invalidates data, which is moved into the call</span></div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>            <a class="code hl_function" href="namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb">runAsyncImpl</a>(<a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>, std::move(std::get&lt;index&gt;(<a class="code hl_variable" href="class_async_1_1_async_job.html#a6cd5475316bf41a2c56ffcc5de826b99">data</a>))...);</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.isSuspended())</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>                <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.waitForResume();</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>            <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>.reportFinished();</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>        }</div>
+</div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span></div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#a6cd5475316bf41a2c56ffcc5de826b99">  475</a></span>        <a class="code hl_typedef" href="class_async_1_1_async_job.html#a83a0648b5824fe83c917fac609b6a3ef">Data</a> <a class="code hl_variable" href="class_async_1_1_async_job.html#a6cd5475316bf41a2c56ffcc5de826b99">data</a>;</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span></div>
+<div class="line"><a id="l00480" name="l00480"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">  480</a></span>        QFutureInterface&lt;ResultType&gt; <a class="code hl_variable" href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">futureInterface</a>;</div>
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span></div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno"><a class="line" href="class_async_1_1_async_job.html#a3a36427f613a5cdd3c3a5253cc78925c">  485</a></span>        QThread::Priority <a class="code hl_variable" href="class_async_1_1_async_job.html#a3a36427f613a5cdd3c3a5253cc78925c">priority</a> = QThread::InheritPriority;</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>    };</div>
+</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span></div>
+<div class="foldopen" id="foldopen00492" data-start="{" data-end="};">
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno"><a class="line" href="class_async_1_1_runnable_thread.html">  492</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_async_1_1_runnable_thread.html#ad7fc276d8fae870342df4d7e285b2baf">RunnableThread</a> : <span class="keyword">public</span> QThread</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>    {</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_async_1_1_runnable_thread.html#ad7fc276d8fae870342df4d7e285b2baf">RunnableThread</a>(QRunnable *runnable, QObject *parent = 0);</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span> </div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_async_1_1_runnable_thread.html#a13a43e6d814de94978c515cb084873b1">run</a>();</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span> </div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno"><a class="line" href="class_async_1_1_runnable_thread.html#abeb249537d5e46d0a68eb289d2af1c8f">  515</a></span>        QRunnable *<a class="code hl_variable" href="class_async_1_1_runnable_thread.html#abeb249537d5e46d0a68eb289d2af1c8f">m_runnable</a>;</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>    };</div>
+</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span></div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span> </div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span><span class="comment">    struct functionTraits&lt;Function&gt;</span></div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span><span class="comment">    {</span></div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span><span class="comment">        using ResultType; // Return type of Function</span></div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span><span class="comment">        struct argument&lt;unsigned index&gt;</span></div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span><span class="comment">        {</span></div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span><span class="comment">            using type; // type of Function argument at index (starting with 0)</span></div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span><span class="comment">        }</span></div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span><span class="comment">    }</span></div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span><span class="comment"></span> </div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span><span class="comment">    struct functionTakesArgument&lt;Function, unsigned index, ArgumentType&gt;;</span></div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span><span class="comment"></span> </div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span><span class="comment">    Is derived from std::true_type if Function takes an argument of type ArgumentType at index.</span></div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span><span class="comment">    Otherwise derived from std::false_type.</span></div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span> </div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno"><a class="line" href="namespace_async.html#a93471964a555b4aac5b2e811ade1172c">  550</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespace_async.html#a93471964a555b4aac5b2e811ade1172c">functionResult_t</a> = <span class="keyword">typename</span> <a class="code hl_typedef" href="struct_async_1_1function_traits.html#ac258d52d82b71b697d1add7ed35be074">functionTraits&lt;F&gt;::ResultType</a>;</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span> </div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span> </div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span> </div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span> </div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno"><a class="line" href="namespace_async.html#a4d545c448cfbd25c77be347f5b6010d3">  555</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespace_async.html#a4d545c448cfbd25c77be347f5b6010d3">CallOperatorYes</a> = char;</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno"><a class="line" href="namespace_async.html#ad2c2a30294e953e12d15cb50f96eb44d">  556</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespace_async.html#ad2c2a30294e953e12d15cb50f96eb44d">CallOperatorNo</a> = <span class="keyword">struct </span>{ <span class="keywordtype">char</span> foo[2]; };</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt;</div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno"><a class="line" href="namespace_async.html#a7a7225dce6d04addf2225bd19194ad88">  559</a></span><span class="keyword">static</span> <a class="code hl_typedef" href="namespace_async.html#a4d545c448cfbd25c77be347f5b6010d3">CallOperatorYes</a> <a class="code hl_function" href="namespace_async.html#a7a7225dce6d04addf2225bd19194ad88">CallOperator</a>(<span class="keyword">decltype</span>(&amp;C::operator()));</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span> </div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt;</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="namespace_async.html#ac4dd0bcd1734920e495e6ebd70376251">  562</a></span><span class="keyword">static</span> <a class="code hl_typedef" href="namespace_async.html#ad2c2a30294e953e12d15cb50f96eb44d">CallOperatorNo</a> <a class="code hl_function" href="namespace_async.html#a7a7225dce6d04addf2225bd19194ad88">CallOperator</a>(...);</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span> </div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00565" data-start="{" data-end="};">
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno"><a class="line" href="struct_async_1_1has_call_operator.html">  565</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1has_call_operator.html">hasCallOperator</a></div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>{</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno"><a class="line" href="struct_async_1_1has_call_operator.html#a11ddd051208250c32dc4985abcafa86d">  567</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_async_1_1has_call_operator.html#a11ddd051208250c32dc4985abcafa86d">value</a> = (<span class="keyword">sizeof</span>(<a class="code hl_function" href="namespace_async.html#a7a7225dce6d04addf2225bd19194ad88">CallOperator&lt;T&gt;</a>(0)) == <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="namespace_async.html#a4d545c448cfbd25c77be347f5b6010d3">CallOperatorYes</a>));</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>};</div>
+</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span> </div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a>;</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keyword">typename</span> Arg&gt;</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_with_argument.html">resultTypeWithArgument</a>;</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span> </div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">int</span> index, <span class="keywordtype">bool</span>&gt;</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_takes_arguments.html">  577</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_takes_arguments.html">resultTypeTakesArguments</a>;</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span> </div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">bool</span>&gt;</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_is_member_function.html">  580</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_is_member_function.html">resultTypeIsMemberFunction</a>;</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span> </div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">bool</span>&gt;</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_is_function_like.html">  583</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_is_function_like.html">resultTypeIsFunctionLike</a>;</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">bool</span>&gt;</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_has_call_operator.html">  586</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_has_call_operator.html">resultTypeHasCallOperator</a>;</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keyword">typename</span> ResultType&gt;</div>
+<div class="foldopen" id="foldopen00589" data-start="{" data-end="};">
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_with_argument_3_01_function_00_01_q_future_interface_3_01_result_type_01_4_01_6_01_4.html">  589</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_with_argument.html">resultTypeWithArgument</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, QFutureInterface&lt;ResultType&gt;&amp;&gt;</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>{</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_with_argument_3_01_function_00_01_q_future_interface_3_01_result_type_01_4_01_6_01_4.html#a654463d43ff85da3f7ec90f47e3f5313">  591</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1result_type_with_argument_3_01_function_00_01_q_future_interface_3_01_result_type_01_4_01_6_01_4.html#a654463d43ff85da3f7ec90f47e3f5313">type</a> = ResultType;</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>};</div>
+</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keyword">typename</span> Arg&gt;</div>
+<div class="foldopen" id="foldopen00595" data-start="{" data-end="};">
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_with_argument.html">  595</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_with_argument.html">resultTypeWithArgument</a></div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>{</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_with_argument.html#a4426ebe1074850f14127a50dc6e7e9a6">  597</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1result_type_with_argument.html#a4426ebe1074850f14127a50dc6e7e9a6">type</a> = <a class="code hl_typedef" href="namespace_async.html#a93471964a555b4aac5b2e811ade1172c">functionResult_t&lt;Function&gt;</a>;</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>};</div>
+</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">int</span> index&gt;</div>
+<div class="foldopen" id="foldopen00601" data-start="{" data-end="};">
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_takes_arguments_3_01_function_00_01index_00_01true_01_4.html">  601</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_takes_arguments.html">resultTypeTakesArguments</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, true&gt;</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>        : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type_with_argument.html">resultTypeWithArgument</a>&lt;Function, typename functionTraits&lt;Function&gt;::template argument&lt;index&gt;::type&gt;</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>{</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>};</div>
+</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span> </div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function, <span class="keywordtype">int</span> index&gt;</div>
+<div class="foldopen" id="foldopen00607" data-start="{" data-end="};">
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_takes_arguments_3_01_function_00_01index_00_01false_01_4.html">  607</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_takes_arguments.html">resultTypeTakesArguments</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, false&gt;</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>{</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_takes_arguments_3_01_function_00_01index_00_01false_01_4.html#a4426ebe1074850f14127a50dc6e7e9a6">  609</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1result_type_takes_arguments_3_01_function_00_01index_00_01false_01_4.html#a4426ebe1074850f14127a50dc6e7e9a6">type</a> = <a class="code hl_typedef" href="namespace_async.html#a93471964a555b4aac5b2e811ade1172c">functionResult_t&lt;Function&gt;</a>;</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>};</div>
+</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span> </div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00613" data-start="{" data-end="};">
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_is_function_like_3_01_function_00_01true_01_4.html">  613</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_is_function_like.html">resultTypeIsFunctionLike</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, true&gt;</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>        : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type_takes_arguments.html">resultTypeTakesArguments</a>&lt;Function, 0, (functionTraits&lt;Function&gt;::arity &gt; 0)&gt;</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>{</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>};</div>
+</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span> </div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00619" data-start="{" data-end="};">
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_is_member_function_3_01_function_00_01true_01_4.html">  619</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_is_member_function.html">resultTypeIsMemberFunction</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, true&gt;</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type_takes_arguments.html">resultTypeTakesArguments</a>&lt;Function, 1, (functionTraits&lt;Function&gt;::arity &gt; 1)&gt;</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>{</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>};</div>
+</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00625" data-start="{" data-end="};">
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_is_member_function_3_01_function_00_01false_01_4.html">  625</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_is_member_function.html">resultTypeIsMemberFunction</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, false&gt;</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>{</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_is_member_function_3_01_function_00_01false_01_4.html#a9572b98335b1c3aa5b9183ba6cdd6421">  627</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_async_1_1result_type_is_member_function_3_01_function_00_01false_01_4.html#a9572b98335b1c3aa5b9183ba6cdd6421">type</a> = void;</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>};</div>
+</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span> </div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00631" data-start="{" data-end="};">
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_is_function_like_3_01_function_00_01false_01_4.html">  631</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_is_function_like.html">resultTypeIsFunctionLike</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, false&gt;</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>        : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type_is_member_function.html">resultTypeIsMemberFunction</a>&lt;Function, std::is_member_function_pointer&lt;Function&gt;::value&gt;</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>{</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>};</div>
+</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00637" data-start="{" data-end="};">
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_has_call_operator_3_01_function_00_01false_01_4.html">  637</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_has_call_operator.html">resultTypeHasCallOperator</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, false&gt;</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>        : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type_is_function_like.html">resultTypeIsFunctionLike</a>&lt;Function, std::is_function&lt;std::remove_pointer_t&lt;std::decay_t&lt;Function&gt;&gt;&gt;::value&gt;</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>{</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>};</div>
+</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span> </div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Callable&gt;</div>
+<div class="foldopen" id="foldopen00643" data-start="{" data-end="};">
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_has_call_operator_3_01_callable_00_01true_01_4.html">  643</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type_has_call_operator.html">resultTypeHasCallOperator</a>&lt;Callable, true&gt;</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>        : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type_takes_arguments.html">resultTypeTakesArguments</a>&lt;Callable, 0, (functionTraits&lt;Callable&gt;::arity &gt; 0)&gt;</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>{</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>};</div>
+</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span> </div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00649" data-start="{" data-end="};">
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type.html">  649</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a></div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>        : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type_has_call_operator.html">resultTypeHasCallOperator</a>&lt;Function, hasCallOperator&lt;Function&gt;::value&gt;</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>{</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>};</div>
+</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span> </div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00655" data-start="{" data-end="};">
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_3_01_function_01_6_01_4.html">  655</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>&amp;&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type.html">resultType&lt;Function&gt;</a></div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>{</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>};</div>
+</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span> </div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00660" data-start="{" data-end="};">
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_3_01const_01_function_01_6_01_4.html">  660</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a>&lt;const <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>&amp;&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type.html">resultType&lt;Function&gt;</a></div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>{</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>};</div>
+</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00665" data-start="{" data-end="};">
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_3_01_function_01_6_6_01_4.html">  665</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type.html">resultType&lt;Function&gt;</a></div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>{</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>};</div>
+</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span> </div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00670" data-start="{" data-end="};">
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_3_01std_1_1reference__wrapper_3_01_function_01_4_01_4.html">  670</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a>&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::reference_wrapper&lt;Function&gt;&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a>&lt;Function&gt;</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>{</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>};</div>
+</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00674" data-start="{" data-end="};">
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno"><a class="line" href="struct_async_1_1result_type_3_01std_1_1reference__wrapper_3_01const_01_function_01_4_01_4.html">  674</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a>&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::reference_wrapper&lt;const Function&gt;&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="struct_async_1_1result_type.html">resultType</a>&lt;Function&gt;</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>{</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>};</div>
+</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span> </div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span> </div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span></div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args,</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>              <span class="keyword">typename</span> ResultType = <span class="keyword">typename</span> <a class="code hl_struct" href="struct_async_1_1result_type.html">resultType&lt;Function&gt;::type</a>&gt;</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    QFuture&lt;ResultType&gt;</div>
+<div class="foldopen" id="foldopen00690" data-start="{" data-end="}">
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno"><a class="line" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">  690</a></span>    <a class="code hl_function" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">runAsync</a>(QThreadPool *pool, QThread::Priority priority, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>    {</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>        <span class="keyword">auto</span> job = <span class="keyword">new</span> <a class="code hl_class" href="class_async_1_1_async_job.html">AsyncJob</a>&lt;ResultType, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, Args...&gt;</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>                (std::forward&lt;Function&gt;(function), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>        job-&gt;setThreadPriority(priority);</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        QFuture&lt;ResultType&gt; future = job-&gt;future();</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>        <span class="keywordflow">if</span> (pool) {</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>            job-&gt;setThreadPool(pool);</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>            pool-&gt;start(job);</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>            <span class="keyword">auto</span> thread = <span class="keyword">new</span> <a class="code hl_class" href="class_async_1_1_runnable_thread.html">RunnableThread</a>(job);</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        thread-&gt;moveToThread(qApp-&gt;thread()); <span class="comment">// make sure thread gets deleteLater on main thread</span></div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>            QObject::connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>            thread-&gt;start(priority);</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        }</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        <span class="keywordflow">return</span> future;</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>    }</div>
+</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span></div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span></div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args,</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>          <span class="keyword">typename</span> ResultType = <span class="keyword">typename</span> resultType&lt;Function&gt;::type&gt;</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>QFuture&lt;ResultType&gt;</div>
+<div class="foldopen" id="foldopen00725" data-start="{" data-end="}">
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno"><a class="line" href="namespace_async.html#a21f4d943ed1f10133ba729ea91b8adf6">  725</a></span><a class="code hl_function" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">runAsync</a>(QThread::Priority priority, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>{</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">runAsync</a>(<span class="keyword">static_cast&lt;</span>QThreadPool *<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>), priority,</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>                    std::forward&lt;Function&gt;(function), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>}</div>
+</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span></div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args,</div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>          <span class="keyword">typename</span> = std::enable_if_t&lt;</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>                !std::is_same&lt;std::decay_t&lt;Function&gt;, QThreadPool&gt;::value</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>                &amp;&amp; !std::is_same&lt;std::decay_t&lt;Function&gt;, QThread::Priority&gt;::value</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>              &gt;,</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>          <span class="keyword">typename</span> ResultType = <span class="keyword">typename</span> resultType&lt;Function&gt;::type&gt;</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>QFuture&lt;ResultType&gt;</div>
+<div class="foldopen" id="foldopen00741" data-start="{" data-end="}">
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno"><a class="line" href="namespace_async.html#a8df4bf5e5ce227ba59fe605783c31608">  741</a></span><a class="code hl_function" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">runAsync</a>(<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>{</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">runAsync</a>(<span class="keyword">static_cast&lt;</span>QThreadPool *<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>),</div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>                    QThread::InheritPriority, std::forward&lt;Function&gt;(function),</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>                    std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>}</div>
+</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span></div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a>, <span class="keyword">typename</span>... Args,</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>          <span class="keyword">typename</span> = std::enable_if_t&lt;!std::is_same&lt;std::decay_t&lt;Function&gt;, QThread::Priority&gt;::value&gt;,</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>          <span class="keyword">typename</span> ResultType = <span class="keyword">typename</span> resultType&lt;Function&gt;::type&gt;</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>QFuture&lt;ResultType&gt;</div>
+<div class="foldopen" id="foldopen00755" data-start="{" data-end="}">
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno"><a class="line" href="namespace_async.html#ad5436d2eb1fc3fa3c6710b6aebb95f31">  755</a></span><a class="code hl_function" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">runAsync</a>(QThreadPool *pool, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> &amp;&amp;function, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>{</div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">runAsync</a>(pool, QThread::InheritPriority, std::forward&lt;Function&gt;(function),</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>                    std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>}</div>
+</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span></div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> R, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00766" data-start="{" data-end="}">
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno"><a class="line" href="namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81">  766</a></span>    <span class="keyword">const</span> QFuture&lt;T&gt; &amp;<a class="code hl_function" href="namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81">onResultReady</a>(<span class="keyword">const</span> QFuture&lt;T&gt; &amp;future, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca1784b1a3d7cbd43c45ff82c72d05e4ae">R</a> *receiver, <span class="keywordtype">void</span>(<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca1784b1a3d7cbd43c45ff82c72d05e4ae">R</a>::*member)(<span class="keyword">const</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;))</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    {</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>        <span class="keyword">auto</span> watcher = <span class="keyword">new</span> QFutureWatcher&lt;T&gt;();</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>        QObject::connect(watcher, &amp;QFutureWatcherBase::finished, watcher, &amp;QObject::deleteLater);</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>        QObject::connect(watcher, &amp;QFutureWatcherBase::resultReadyAt, receiver,</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>                         [receiver, member, watcher](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) {</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>                             (receiver-&gt;*member)(watcher-&gt;future().resultAt(<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>));</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>                         });</div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>        watcher-&gt;setFuture(future);</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>        <span class="keywordflow">return</span> future;</div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>    }</div>
+</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span></div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00782" data-start="{" data-end="}">
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno"><a class="line" href="namespace_async.html#ab800dfcf7ba6b3b7647459fab05cfee2">  782</a></span><span class="keyword">const</span> QFuture&lt;T&gt; &amp;<a class="code hl_function" href="namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81">onResultReady</a>(<span class="keyword">const</span> QFuture&lt;T&gt; &amp;future, QObject *guard, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> f)</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>{</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>    <span class="keyword">auto</span> watcher = <span class="keyword">new</span> QFutureWatcher&lt;T&gt;();</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>    QObject::connect(watcher, &amp;QFutureWatcherBase::finished, watcher, &amp;QObject::deleteLater);</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>    QObject::connect(watcher, &amp;QFutureWatcherBase::resultReadyAt, guard, [f, watcher](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) {</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>        f(watcher-&gt;future().resultAt(<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>));</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    });</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>    watcher-&gt;setFuture(future);</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>    <span class="keywordflow">return</span> future;</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>}</div>
+</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span></div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Function&gt;</div>
+<div class="foldopen" id="foldopen00797" data-start="{" data-end="}">
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno"><a class="line" href="namespace_async.html#af0fcce17f59b4195e22ee1fe8742a27a">  797</a></span><span class="keyword">const</span> QFuture&lt;T&gt; &amp;<a class="code hl_function" href="namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81">onResultReady</a>(<span class="keyword">const</span> QFuture&lt;T&gt; &amp;future, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a> f)</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>{</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>    <span class="keyword">auto</span> watcher = <span class="keyword">new</span> QFutureWatcher&lt;T&gt;();</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>    QObject::connect(watcher, &amp;QFutureWatcherBase::finished, watcher, &amp;QObject::deleteLater);</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>    QObject::connect(watcher, &amp;QFutureWatcherBase::resultReadyAt, [f, watcher](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) {</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>        f(watcher-&gt;future().resultAt(<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>));</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>    });</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>    watcher-&gt;setFuture(future);</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>    <span class="keywordflow">return</span> future;</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>}</div>
+</div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span> </div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>}</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span> </div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span><span class="preprocessor">#endif </span><span class="comment">// ASYNC_H</span></div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9ca1784b1a3d7cbd43c45ff82c72d05e4ae"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca1784b1a3d7cbd43c45ff82c72d05e4ae">R</a></div><div class="ttdeci">@ R</div><div class="ttdoc">字母R</div><div class="ttdef"><b>定义</b> Def.h:2789</div></div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></div><div class="ttdeci">@ T</div><div class="ttdoc">字母T</div><div class="ttdef"><b>定义</b> Def.h:3259</div></div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf594f020b9d5eff2ec0eb42356898123">Function</a></div><div class="ttdeci">@ Function</div><div class="ttdoc">函数</div><div class="ttdef"><b>定义</b> Def.h:1840</div></div>
+<div class="ttc" id="abase_8h_html_a2c8e80c1b1c8b7747e99b8e9a24a0429"><div class="ttname"><a href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a></div><div class="ttdeci">auto arg(const Char *name, const T &amp;arg) -&gt; detail::named_arg&lt; Char, T &gt;</div><div class="ttdoc">Returns a named argument to be used in a formatting function.</div><div class="ttdef"><b>定义</b> base.h:2798</div></div>
+<div class="ttc" id="abase_8h_html_a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86"><div class="ttname"><a href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">arg_id_kind::index</a></div><div class="ttdeci">@ index</div><div class="ttdef"><b>定义</b> base.h:700</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html"><div class="ttname"><a href="class_async_1_1_async_job.html">Async::AsyncJob</a></div><div class="ttdoc">异步任务类。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:373</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_a0feb732f9d7be3eb32e974c64bd4e41e"><div class="ttname"><a href="class_async_1_1_async_job.html#a0feb732f9d7be3eb32e974c64bd4e41e">Async::AsyncJob::AsyncJob</a></div><div class="ttdeci">AsyncJob(Function &amp;&amp;function, Args &amp;&amp;... args)</div><div class="ttdoc">构造函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:383</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_a3a36427f613a5cdd3c3a5253cc78925c"><div class="ttname"><a href="class_async_1_1_async_job.html#a3a36427f613a5cdd3c3a5253cc78925c">Async::AsyncJob::priority</a></div><div class="ttdeci">QThread::Priority priority</div><div class="ttdoc">线程优先级，默认值为 QThread::InheritPriority。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:485</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_a481e8f9ccbad8700a0f1501495f50452"><div class="ttname"><a href="class_async_1_1_async_job.html#a481e8f9ccbad8700a0f1501495f50452">Async::AsyncJob::future</a></div><div class="ttdeci">QFuture&lt; ResultType &gt; future()</div><div class="ttdoc">获取异步任务的 QFuture 对象。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:411</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_a4bb1ccdfe6f1c51283f4f96d93f07a6e"><div class="ttname"><a href="class_async_1_1_async_job.html#a4bb1ccdfe6f1c51283f4f96d93f07a6e">Async::AsyncJob::setThreadPriority</a></div><div class="ttdeci">void setThreadPriority(QThread::Priority p)</div><div class="ttdoc">设置线程优先级。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:446</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_a575b39bef3d0494a62e78ebeda1576c0"><div class="ttname"><a href="class_async_1_1_async_job.html#a575b39bef3d0494a62e78ebeda1576c0">Async::AsyncJob::setThreadPool</a></div><div class="ttdeci">void setThreadPool(QThreadPool *pool)</div><div class="ttdoc">设置线程池。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:436</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_a6cd5475316bf41a2c56ffcc5de826b99"><div class="ttname"><a href="class_async_1_1_async_job.html#a6cd5475316bf41a2c56ffcc5de826b99">Async::AsyncJob::data</a></div><div class="ttdeci">Data data</div><div class="ttdoc">存储函数和参数的元组。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:475</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_a83a0648b5824fe83c917fac609b6a3ef"><div class="ttname"><a href="class_async_1_1_async_job.html#a83a0648b5824fe83c917fac609b6a3ef">Async::AsyncJob::Data</a></div><div class="ttdeci">std::tuple&lt; std::decay_t&lt; Function &gt;, std::decay_t&lt; Args &gt;... &gt; Data</div><div class="ttdoc">数据元组类型，存储函数和参数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:455</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_a8d6ba1d847504642c3e7cc051872d924"><div class="ttname"><a href="class_async_1_1_async_job.html#a8d6ba1d847504642c3e7cc051872d924">Async::AsyncJob::runHelper</a></div><div class="ttdeci">void runHelper(std::index_sequence&lt; index... &gt;)</div><div class="ttdoc">运行辅助函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:463</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_ab8bc48ec450d70fc63793533b9f15d0e"><div class="ttname"><a href="class_async_1_1_async_job.html#ab8bc48ec450d70fc63793533b9f15d0e">Async::AsyncJob::futureInterface</a></div><div class="ttdeci">QFutureInterface&lt; ResultType &gt; futureInterface</div><div class="ttdoc">异步任务的未来接口。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:480</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_abd356a8e477547fbde1226af3f5b0d20"><div class="ttname"><a href="class_async_1_1_async_job.html#abd356a8e477547fbde1226af3f5b0d20">Async::AsyncJob::~AsyncJob</a></div><div class="ttdeci">~AsyncJob()</div><div class="ttdoc">析构函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:398</div></div>
+<div class="ttc" id="aclass_async_1_1_async_job_html_ad1717410afd0be936c6213a63c8005fb"><div class="ttname"><a href="class_async_1_1_async_job.html#ad1717410afd0be936c6213a63c8005fb">Async::AsyncJob::run</a></div><div class="ttdeci">void run() override</div><div class="ttdoc">重写 QRunnable 的 run 方法。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:418</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4_html_a2e1ce3822bf5227c03bd795f6057a940"><div class="ttname"><a href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a2e1ce3822bf5227c03bd795f6057a940">Async::MemberCallable&lt; Result(Obj::*)(Args...) const &gt;::m_obj</a></div><div class="ttdeci">const Obj * m_obj</div><div class="ttdoc">对象指针。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:72</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4_html_a304421f24a8583867a7cbdc0907b1bb2"><div class="ttname"><a href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a304421f24a8583867a7cbdc0907b1bb2">Async::MemberCallable&lt; Result(Obj::*)(Args...) const &gt;::MemberCallable</a></div><div class="ttdeci">MemberCallable(Result(Obj::*function)(Args...) const, const Obj *obj)</div><div class="ttdoc">构造函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:46</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4_html_a4398860f67a73258be6024e3675baaae"><div class="ttname"><a href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a4398860f67a73258be6024e3675baaae">Async::MemberCallable&lt; Result(Obj::*)(Args...) const &gt;::operator()</a></div><div class="ttdeci">Result operator()(Args &amp;&amp;... args) const</div><div class="ttdoc">重载 operator()，调用成员函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:58</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4_html_a82105dc128de396ec243bc0c5aa3af87"><div class="ttname"><a href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_01const_01_4.html#a82105dc128de396ec243bc0c5aa3af87">Async::MemberCallable&lt; Result(Obj::*)(Args...) const &gt;::m_function</a></div><div class="ttdeci">Result(Obj::* m_function)(Args...) const</div><div class="ttdoc">const 成员函数指针。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:67</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4_html_a4398860f67a73258be6024e3675baaae"><div class="ttname"><a href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a4398860f67a73258be6024e3675baaae">Async::MemberCallable&lt; Result(Obj::*)(Args...)&gt;::operator()</a></div><div class="ttdeci">Result operator()(Args &amp;&amp;... args) const</div><div class="ttdoc">重载 operator()，调用成员函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:104</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4_html_a47d763d69dd471f88fe643fe10a63503"><div class="ttname"><a href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a47d763d69dd471f88fe643fe10a63503">Async::MemberCallable&lt; Result(Obj::*)(Args...)&gt;::m_function</a></div><div class="ttdeci">Result(Obj::* m_function)(Args...)</div><div class="ttdoc">非 const 成员函数指针。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:113</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4_html_a6b6efb6a37c01d23895554d7a883456a"><div class="ttname"><a href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#a6b6efb6a37c01d23895554d7a883456a">Async::MemberCallable&lt; Result(Obj::*)(Args...)&gt;::MemberCallable</a></div><div class="ttdeci">MemberCallable(Result(Obj::*function)(Args...), Obj *obj)</div><div class="ttdoc">构造函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:92</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4_html_affe1b12e8609225f6c2c87120ce72a3f"><div class="ttname"><a href="class_async_1_1_member_callable_3_01_result_07_obj_1_1_5_08_07_args_8_8_8_08_4.html#affe1b12e8609225f6c2c87120ce72a3f">Async::MemberCallable&lt; Result(Obj::*)(Args...)&gt;::m_obj</a></div><div class="ttdeci">Obj * m_obj</div><div class="ttdoc">对象指针。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:118</div></div>
+<div class="ttc" id="aclass_async_1_1_member_callable_html"><div class="ttname"><a href="class_async_1_1_member_callable.html">Async::MemberCallable</a></div><div class="ttdoc">成员函数调用器模板类。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:27</div></div>
+<div class="ttc" id="aclass_async_1_1_runnable_thread_html"><div class="ttname"><a href="class_async_1_1_runnable_thread.html">Async::RunnableThread</a></div><div class="ttdoc">运行 QRunnable 的线程类。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:493</div></div>
+<div class="ttc" id="aclass_async_1_1_runnable_thread_html_a13a43e6d814de94978c515cb084873b1"><div class="ttname"><a href="class_async_1_1_runnable_thread.html#a13a43e6d814de94978c515cb084873b1">Async::RunnableThread::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">重写 QThread 的 run 方法。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.cpp:24</div></div>
+<div class="ttc" id="aclass_async_1_1_runnable_thread_html_abeb249537d5e46d0a68eb289d2af1c8f"><div class="ttname"><a href="class_async_1_1_runnable_thread.html#abeb249537d5e46d0a68eb289d2af1c8f">Async::RunnableThread::m_runnable</a></div><div class="ttdeci">QRunnable * m_runnable</div><div class="ttdoc">存储要执行的 QRunnable 对象指针。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:515</div></div>
+<div class="ttc" id="aclass_async_1_1_runnable_thread_html_ad7fc276d8fae870342df4d7e285b2baf"><div class="ttname"><a href="class_async_1_1_runnable_thread.html#ad7fc276d8fae870342df4d7e285b2baf">Async::RunnableThread::RunnableThread</a></div><div class="ttdeci">RunnableThread(QRunnable *runnable, QObject *parent=0)</div><div class="ttdoc">构造函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.cpp:13</div></div>
+<div class="ttc" id="anamespace_async_html"><div class="ttname"><a href="namespace_async.html">Async</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.cpp:4</div></div>
+<div class="ttc" id="anamespace_async_html_a06a076edc2f7af2cc0ecdc6545d55e79"><div class="ttname"><a href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79">Async::runAsync</a></div><div class="ttdeci">QFuture&lt; ResultType &gt; runAsync(QThreadPool *pool, QThread::Priority priority, Function &amp;&amp;function, Args &amp;&amp;... args)</div><div class="ttdoc">runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface&lt;ResultType&gt;&amp;作为第一个参...</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:690</div></div>
+<div class="ttc" id="anamespace_async_html_a0b7a98a9ec58bdd53d5570be1d2b486d"><div class="ttname"><a href="namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d">Async::runAsyncMemberDispatch</a></div><div class="ttdeci">void runAsyncMemberDispatch(QFutureInterface&lt; ResultType &gt; futureInterface, Function &amp;&amp;function, Args &amp;&amp;... args)</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:324</div></div>
+<div class="ttc" id="anamespace_async_html_a19847196fcbc60399aa41e4f7a0c6edb"><div class="ttname"><a href="namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb">Async::runAsyncImpl</a></div><div class="ttdeci">void runAsyncImpl(QFutureInterface&lt; ResultType &gt; futureInterface, std::reference_wrapper&lt; Function &gt; functionWrapper, Args &amp;&amp;... args)</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:344</div></div>
+<div class="ttc" id="anamespace_async_html_a2b92c9217bd3ece62a43b416c8a00fe0"><div class="ttname"><a href="namespace_async.html#a2b92c9217bd3ece62a43b416c8a00fe0">Async::runAsyncReturnVoidDispatch</a></div><div class="ttdeci">void runAsyncReturnVoidDispatch(std::true_type, QFutureInterface&lt; ResultType &gt;, Function &amp;&amp;function, Args &amp;&amp;... args)</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:293</div></div>
+<div class="ttc" id="anamespace_async_html_a4d545c448cfbd25c77be347f5b6010d3"><div class="ttname"><a href="namespace_async.html#a4d545c448cfbd25c77be347f5b6010d3">Async::CallOperatorYes</a></div><div class="ttdeci">char CallOperatorYes</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:555</div></div>
+<div class="ttc" id="anamespace_async_html_a7a7225dce6d04addf2225bd19194ad88"><div class="ttname"><a href="namespace_async.html#a7a7225dce6d04addf2225bd19194ad88">Async::CallOperator</a></div><div class="ttdeci">static CallOperatorYes CallOperator(decltype(&amp;C::operator()))</div></div>
+<div class="ttc" id="anamespace_async_html_a7ed935020c844a47954bf21e2c933845"><div class="ttname"><a href="namespace_async.html#a7ed935020c844a47954bf21e2c933845">Async::decayCopy</a></div><div class="ttdeci">auto decayCopy(T &amp;&amp;arg) -&gt; std::decay_t&lt; T &gt;</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:367</div></div>
+<div class="ttc" id="anamespace_async_html_a93471964a555b4aac5b2e811ade1172c"><div class="ttname"><a href="namespace_async.html#a93471964a555b4aac5b2e811ade1172c">Async::functionResult_t</a></div><div class="ttdeci">typename functionTraits&lt; F &gt;::ResultType functionResult_t</div><div class="ttdoc">异步运行函数。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:550</div></div>
+<div class="ttc" id="anamespace_async_html_aa546dd398e11dcb564e4abdd6fd0ec81"><div class="ttname"><a href="namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81">Async::onResultReady</a></div><div class="ttdeci">const QFuture&lt; T &gt; &amp; onResultReady(const QFuture&lt; T &gt; &amp;future, R *receiver, void(R::*member)(const T &amp;))</div><div class="ttdoc">执行结果读取函数 创建一个QFutureWatcher读取相应结果传递相应函数中， 如果有更复杂操作就不要使用</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:766</div></div>
+<div class="ttc" id="anamespace_async_html_ac0afcd98f4a652219c15628c5853a881"><div class="ttname"><a href="namespace_async.html#ac0afcd98f4a652219c15628c5853a881">Async::runAsyncQFutureInterfaceDispatch</a></div><div class="ttdeci">void runAsyncQFutureInterfaceDispatch(std::true_type, QFutureInterface&lt; ResultType &gt; futureInterface, Function &amp;&amp;function, Args &amp;&amp;... args)</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:307</div></div>
+<div class="ttc" id="anamespace_async_html_ad2c2a30294e953e12d15cb50f96eb44d"><div class="ttname"><a href="namespace_async.html#ad2c2a30294e953e12d15cb50f96eb44d">Async::CallOperatorNo</a></div><div class="ttdeci">struct { char foo[2];} CallOperatorNo</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:556</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>定义</b> format.h:120</div></div>
+<div class="ttc" id="astruct_async_1_1function_takes_argument_arity_dispatch_html"><div class="ttname"><a href="struct_async_1_1function_takes_argument_arity_dispatch.html">Async::functionTakesArgumentArityDispatch</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:123</div></div>
+<div class="ttc" id="astruct_async_1_1function_takes_argument_html"><div class="ttname"><a href="struct_async_1_1function_takes_argument.html">Async::functionTakesArgument</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:289</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_1_1argument_html"><div class="ttname"><a href="struct_async_1_1function_traits_1_1argument.html">Async::functionTraits::argument</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:252</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_1_1argument_html_a60dd543e55aeaa7f416dda65d59d7ad8"><div class="ttname"><a href="struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8">Async::functionTraits::argument::type</a></div><div class="ttdeci">typename callableTraits::template argument&lt; i+1 &gt;::type type</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:253</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument_html"><div class="ttname"><a href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument.html">Async::functionTraits&lt; Result(Args...)&gt;::argument</a></div><div class="ttdoc">获取指定索引的参数类型。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:168</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument_html_a30f418b8afe0754d59798198d9b38056"><div class="ttname"><a href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_1_1argument.html#a30f418b8afe0754d59798198d9b38056">Async::functionTraits&lt; Result(Args...)&gt;::argument::type</a></div><div class="ttdeci">typename std::tuple_element&lt; i, std::tuple&lt; Args... &gt; &gt;::type type</div><div class="ttdoc">第 i 个参数的类型。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:172</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_html_a5dfda66ed0960a42d5f69945b042f3a2"><div class="ttname"><a href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4.html#a5dfda66ed0960a42d5f69945b042f3a2">Async::functionTraits&lt; Result(Args...)&gt;::ResultType</a></div><div class="ttdeci">Result ResultType</div><div class="ttdoc">函数返回类型。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:153</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4_html_ae7173072e5bd323969561a398ecb34b9"><div class="ttname"><a href="struct_async_1_1function_traits_3_01_result_07_args_8_8_8_08_4.html#ae7173072e5bd323969561a398ecb34b9">Async::functionTraits&lt; Result(Args...)&gt;::arity</a></div><div class="ttdeci">static const unsigned arity</div><div class="ttdoc">函数参数数量。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:158</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_html"><div class="ttname"><a href="struct_async_1_1function_traits.html">Async::functionTraits</a></div><div class="ttdoc">函数特征模板类。</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:245</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_html_a11dc80b6e75b69f5de6050bbe667f540"><div class="ttname"><a href="struct_async_1_1function_traits.html#a11dc80b6e75b69f5de6050bbe667f540">Async::functionTraits::callableTraits</a></div><div class="ttdeci">functionTraits&lt; decltype(&amp;Callable::operator())&gt; callableTraits</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:246</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_html_ac258d52d82b71b697d1add7ed35be074"><div class="ttname"><a href="struct_async_1_1function_traits.html#ac258d52d82b71b697d1add7ed35be074">Async::functionTraits&lt; decltype(&amp;Callable::operator())&gt;::ResultType</a></div><div class="ttdeci">typename callableTraits::ResultType ResultType</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:247</div></div>
+<div class="ttc" id="astruct_async_1_1function_traits_html_ae7173072e5bd323969561a398ecb34b9"><div class="ttname"><a href="struct_async_1_1function_traits.html#ae7173072e5bd323969561a398ecb34b9">Async::functionTraits&lt; decltype(&amp;Callable::operator())&gt;::arity</a></div><div class="ttdeci">static const unsigned arity</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:248</div></div>
+<div class="ttc" id="astruct_async_1_1has_call_operator_html"><div class="ttname"><a href="struct_async_1_1has_call_operator.html">Async::hasCallOperator</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:566</div></div>
+<div class="ttc" id="astruct_async_1_1has_call_operator_html_a11ddd051208250c32dc4985abcafa86d"><div class="ttname"><a href="struct_async_1_1has_call_operator.html#a11ddd051208250c32dc4985abcafa86d">Async::hasCallOperator::value</a></div><div class="ttdeci">static const bool value</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:567</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_has_call_operator_html"><div class="ttname"><a href="struct_async_1_1result_type_has_call_operator.html">Async::resultTypeHasCallOperator</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:586</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_html"><div class="ttname"><a href="struct_async_1_1result_type.html">Async::resultType</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:651</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_is_function_like_html"><div class="ttname"><a href="struct_async_1_1result_type_is_function_like.html">Async::resultTypeIsFunctionLike</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:583</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_is_member_function_3_01_function_00_01false_01_4_html_a9572b98335b1c3aa5b9183ba6cdd6421"><div class="ttname"><a href="struct_async_1_1result_type_is_member_function_3_01_function_00_01false_01_4.html#a9572b98335b1c3aa5b9183ba6cdd6421">Async::resultTypeIsMemberFunction&lt; Function, false &gt;::type</a></div><div class="ttdeci">void type</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:627</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_is_member_function_html"><div class="ttname"><a href="struct_async_1_1result_type_is_member_function.html">Async::resultTypeIsMemberFunction</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:580</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_takes_arguments_3_01_function_00_01index_00_01false_01_4_html_a4426ebe1074850f14127a50dc6e7e9a6"><div class="ttname"><a href="struct_async_1_1result_type_takes_arguments_3_01_function_00_01index_00_01false_01_4.html#a4426ebe1074850f14127a50dc6e7e9a6">Async::resultTypeTakesArguments&lt; Function, index, false &gt;::type</a></div><div class="ttdeci">functionResult_t&lt; Function &gt; type</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:609</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_takes_arguments_html"><div class="ttname"><a href="struct_async_1_1result_type_takes_arguments.html">Async::resultTypeTakesArguments</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:577</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_with_argument_3_01_function_00_01_q_future_interface_3_01_result_type_01_4_01_6_01_4_html_a654463d43ff85da3f7ec90f47e3f5313"><div class="ttname"><a href="struct_async_1_1result_type_with_argument_3_01_function_00_01_q_future_interface_3_01_result_type_01_4_01_6_01_4.html#a654463d43ff85da3f7ec90f47e3f5313">Async::resultTypeWithArgument&lt; Function, QFutureInterface&lt; ResultType &gt; &amp; &gt;::type</a></div><div class="ttdeci">ResultType type</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:591</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_with_argument_html"><div class="ttname"><a href="struct_async_1_1result_type_with_argument.html">Async::resultTypeWithArgument</a></div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:596</div></div>
+<div class="ttc" id="astruct_async_1_1result_type_with_argument_html_a4426ebe1074850f14127a50dc6e7e9a6"><div class="ttname"><a href="struct_async_1_1result_type_with_argument.html#a4426ebe1074850f14127a50dc6e7e9a6">Async::resultTypeWithArgument::type</a></div><div class="ttdeci">functionResult_t&lt; Function &gt; type</div><div class="ttdef"><b>定义</b> MyAsyncThread/Async.h:597</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_660dec7f700f4675c2add0424bc46f1c.html">MyAsyncThread</a></li><li class="navelem"><a class="el" href="_my_async_thread_2_async_8h.html">Async.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

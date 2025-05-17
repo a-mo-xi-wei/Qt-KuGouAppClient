@@ -1,0 +1,8 @@
+var out_2build_2debug_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_f_m_a_z_m_k_x_d5_a_2moc___singer_widget_8cpp =
+[
+    [ "qt_meta_stringdata_CLASSSingerWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7f77ce726f148369654bf35d4136ddd1.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7f77ce726f148369654bf35d4136ddd1" ],
+    [ "Q_CONSTINIT", "out_2build_2debug_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_f_m_a_z_m_k_x_d5_a_2moc___singer_widget_8cpp.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
+    [ "QT_MOC_LITERAL", "out_2build_2debug_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_f_m_a_z_m_k_x_d5_a_2moc___singer_widget_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
+    [ "qt_meta_data_CLASSSingerWidgetENDCLASS", "out_2build_2debug_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_f_m_a_z_m_k_x_d5_a_2moc___singer_widget_8cpp.html#ab0a62c3e263c79d010206a5ba6d8ac6a", null ],
+    [ "qt_meta_stringdata_CLASSSingerWidgetENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#a744125070893e9c1f6f1cc3b23512f4e", null ]
+];

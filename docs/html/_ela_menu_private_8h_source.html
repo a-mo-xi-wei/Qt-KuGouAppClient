@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ElaMenuPrivate.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_ela_menu_private_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ElaMenuPrivate.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_ela_menu_private_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef ELAMENUPRIVATE_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define ELAMENUPRIVATE_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QPoint&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="class_ela_menu.html">ElaMenu</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="class_ela_menu_style.html">ElaMenuStyle</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_ela_menu_private.html">   25</a></span><span class="keyword">class </span><a class="code hl_function" href="class_ela_menu_private.html#acfbaa5ded171a4565449e735567e3994">ElaMenuPrivate</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Q_OBJECT</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_define" href="stdafx_8h.html#a7dfd44162fad9c0d8377cea8b93c6b5f">Q_D_CREATE</a>(<a class="code hl_class" href="class_ela_menu.html">ElaMenu</a>)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_define" href="stdafx_8h.html#aa4e369dd4ddb60619226f24c14ad1d14">Q_PROPERTY_CREATE</a>(<span class="keywordtype">int</span>, AnimationImagePosY)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_ela_menu_private.html#acfbaa5ded171a4565449e735567e3994">ElaMenuPrivate</a>(QObject* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="class_ela_menu_private.html#ac57ad10a3dc8cf5dbf3523898166f1a9">~ElaMenuPrivate</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_ela_menu_private.html#a454a2ca43fb9b790cea4a97d830119ad">   47</a></span>    QPixmap              <a class="code hl_variable" href="class_ela_menu_private.html#a454a2ca43fb9b790cea4a97d830119ad">_animationPix</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_ela_menu_private.html#a48c26f89b2811d4fbc0180fd52c83225">   52</a></span>    <span class="keywordtype">bool</span>                <a class="code hl_variable" href="class_ela_menu_private.html#a48c26f89b2811d4fbc0180fd52c83225">_isCloseAnimation</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_ela_menu_private.html#abf8fc2fe20f2aaf48897646a7426b4bf">   57</a></span>    QPoint              <a class="code hl_variable" href="class_ela_menu_private.html#abf8fc2fe20f2aaf48897646a7426b4bf">_mousePressPoint</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_ela_menu_private.html#a1c0fa7822cf9d2efcd8c2aa7acfa598d">   62</a></span>    <a class="code hl_class" href="class_ela_menu_style.html">ElaMenuStyle</a>*       <a class="code hl_variable" href="class_ela_menu_private.html#a1c0fa7822cf9d2efcd8c2aa7acfa598d">_menuStyle</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_ela_menu_private.html#a5fd60555af7df373e7510088020e2d84">   67</a></span>    <span class="keywordtype">bool</span>                <a class="code hl_variable" href="class_ela_menu_private.html#a5fd60555af7df373e7510088020e2d84">m_preventHide</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">// ELAMENUPRIVATE_H</span></div>
+<div class="ttc" id="aclass_ela_menu_html"><div class="ttname"><a href="class_ela_menu.html">ElaMenu</a></div><div class="ttdoc">自定义菜单类，支持动画、图标和子菜单</div><div class="ttdef"><b>定义</b> ElaMenu.h:25</div></div>
+<div class="ttc" id="aclass_ela_menu_private_html_a1c0fa7822cf9d2efcd8c2aa7acfa598d"><div class="ttname"><a href="class_ela_menu_private.html#a1c0fa7822cf9d2efcd8c2aa7acfa598d">ElaMenuPrivate::_menuStyle</a></div><div class="ttdeci">ElaMenuStyle * _menuStyle</div><div class="ttdoc">菜单样式指针</div><div class="ttdef"><b>定义</b> ElaMenuPrivate.h:62</div></div>
+<div class="ttc" id="aclass_ela_menu_private_html_a454a2ca43fb9b790cea4a97d830119ad"><div class="ttname"><a href="class_ela_menu_private.html#a454a2ca43fb9b790cea4a97d830119ad">ElaMenuPrivate::_animationPix</a></div><div class="ttdeci">QPixmap _animationPix</div><div class="ttdoc">动画图像</div><div class="ttdef"><b>定义</b> ElaMenuPrivate.h:47</div></div>
+<div class="ttc" id="aclass_ela_menu_private_html_a48c26f89b2811d4fbc0180fd52c83225"><div class="ttname"><a href="class_ela_menu_private.html#a48c26f89b2811d4fbc0180fd52c83225">ElaMenuPrivate::_isCloseAnimation</a></div><div class="ttdeci">bool _isCloseAnimation</div><div class="ttdoc">是否处于关闭动画状态</div><div class="ttdef"><b>定义</b> ElaMenuPrivate.h:52</div></div>
+<div class="ttc" id="aclass_ela_menu_private_html_a5fd60555af7df373e7510088020e2d84"><div class="ttname"><a href="class_ela_menu_private.html#a5fd60555af7df373e7510088020e2d84">ElaMenuPrivate::m_preventHide</a></div><div class="ttdeci">bool m_preventHide</div><div class="ttdoc">是否阻止菜单隐藏</div><div class="ttdef"><b>定义</b> ElaMenuPrivate.h:67</div></div>
+<div class="ttc" id="aclass_ela_menu_private_html_abf8fc2fe20f2aaf48897646a7426b4bf"><div class="ttname"><a href="class_ela_menu_private.html#abf8fc2fe20f2aaf48897646a7426b4bf">ElaMenuPrivate::_mousePressPoint</a></div><div class="ttdeci">QPoint _mousePressPoint</div><div class="ttdoc">鼠标按下位置</div><div class="ttdef"><b>定义</b> ElaMenuPrivate.h:57</div></div>
+<div class="ttc" id="aclass_ela_menu_private_html_ac57ad10a3dc8cf5dbf3523898166f1a9"><div class="ttname"><a href="class_ela_menu_private.html#ac57ad10a3dc8cf5dbf3523898166f1a9">ElaMenuPrivate::~ElaMenuPrivate</a></div><div class="ttdeci">~ElaMenuPrivate() override</div><div class="ttdoc">析构函数，释放菜单私有资源</div><div class="ttdef"><b>定义</b> ElaMenuPrivate.cpp:24</div></div>
+<div class="ttc" id="aclass_ela_menu_private_html_acfbaa5ded171a4565449e735567e3994"><div class="ttname"><a href="class_ela_menu_private.html#acfbaa5ded171a4565449e735567e3994">ElaMenuPrivate::ElaMenuPrivate</a></div><div class="ttdeci">ElaMenuPrivate(QObject *parent=nullptr)</div><div class="ttdoc">构造函数，初始化菜单私有对象</div><div class="ttdef"><b>定义</b> ElaMenuPrivate.cpp:16</div></div>
+<div class="ttc" id="aclass_ela_menu_style_html"><div class="ttname"><a href="class_ela_menu_style.html">ElaMenuStyle</a></div><div class="ttdoc">自定义菜单样式类，管理菜单的绘制和布局</div><div class="ttdef"><b>定义</b> ElaMenuStyle.h:21</div></div>
+<div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
+<div class="ttc" id="astdafx_8h_html_a7dfd44162fad9c0d8377cea8b93c6b5f"><div class="ttname"><a href="stdafx_8h.html#a7dfd44162fad9c0d8377cea8b93c6b5f">Q_D_CREATE</a></div><div class="ttdeci">#define Q_D_CREATE(CLASS)</div><div class="ttdoc">创建 Q_D 模式的私有类声明</div><div class="ttdef"><b>定义</b> stdafx.h:181</div></div>
+<div class="ttc" id="astdafx_8h_html_aa4e369dd4ddb60619226f24c14ad1d14"><div class="ttname"><a href="stdafx_8h.html#aa4e369dd4ddb60619226f24c14ad1d14">Q_PROPERTY_CREATE</a></div><div class="ttdeci">#define Q_PROPERTY_CREATE(TYPE, M)</div><div class="ttdoc">创建普通属性的宏</div><div class="ttdef"><b>定义</b> stdafx.h:26</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_c41e0d0e814e23de337c335e201650d3.html">ElaWidgetTools</a></li><li class="navelem"><a class="el" href="dir_860a243df7fff12625d007f7e2e47add.html">ElaMenu</a></li><li class="navelem"><a class="el" href="_ela_menu_private_8h.html">ElaMenuPrivate.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

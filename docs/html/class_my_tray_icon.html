@@ -1,0 +1,1181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: MyTrayIcon类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_my_tray_icon.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_my_tray_icon-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">MyTrayIcon类 参考<span class="mlabels"><span class="mlabel final">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>自定义系统托盘图标类，继承自 QSystemTrayIcon，支持闪烁、菜单和消息显示  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_my_tray_icon_8h_source.html">MyTrayIcon.h</a>&gt;</code></p>
+<div class="dynheader">
+类 MyTrayIcon 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon__inherit__graph.png" border="0" usemap="#a_my_tray_icon_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_my_tray_icon_inherit__map" id="a_my_tray_icon_inherit__map">
+<area shape="rect" title="自定义系统托盘图标类，继承自 QSystemTrayIcon，支持闪烁、菜单和消息显示" alt="" coords="24,80,114,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,133,32"/>
+<area shape="poly" title=" " alt="" coords="72,48,72,80,66,80,66,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+MyTrayIcon 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon__coll__graph.png" border="0" usemap="#a_my_tray_icon_coll__map" alt="Collaboration graph"/></div>
+<map name="a_my_tray_icon_coll__map" id="a_my_tray_icon_coll__map">
+<area shape="rect" title="自定义系统托盘图标类，继承自 QSystemTrayIcon，支持闪烁、菜单和消息显示" alt="" coords="45,172,136,199"/>
+<area shape="rect" title=" " alt="" coords="5,81,133,108"/>
+<area shape="poly" title=" " alt="" coords="78,123,90,171,85,172,73,124"/>
+<area shape="rect" href="class_ela_menu.html" title="自定义菜单类，支持动画、图标和子菜单" alt="" coords="157,81,229,108"/>
+<area shape="poly" title=" " alt="" coords="169,120,107,173,103,169,165,116"/>
+<area shape="rect" title=" " alt="" coords="161,5,225,32"/>
+<area shape="poly" title=" " alt="" coords="196,47,196,81,190,81,190,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a32426b3cc0655e2d9cd9b0ffe6c008b9" id="r_a32426b3cc0655e2d9cd9b0ffe6c008b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32426b3cc0655e2d9cd9b0ffe6c008b9">showTrayMessage</a> (QString title=&quot;Notice&quot;, QString content=&quot;How about today ?&quot;)</td></tr>
+<tr class="memdesc:a32426b3cc0655e2d9cd9b0ffe6c008b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示托盘消息信号  <br /></td></tr>
+<tr class="separator:a32426b3cc0655e2d9cd9b0ffe6c008b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e14961f3e60024b82639178d7c95af1" id="r_a6e14961f3e60024b82639178d7c95af1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e14961f3e60024b82639178d7c95af1">noVolume</a> (const bool &amp;<a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>)</td></tr>
+<tr class="memdesc:a6e14961f3e60024b82639178d7c95af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">音量开关信号  <br /></td></tr>
+<tr class="separator:a6e14961f3e60024b82639178d7c95af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab65bff687e0edbf81a648e97c897a250" id="r_ab65bff687e0edbf81a648e97c897a250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab65bff687e0edbf81a648e97c897a250">showAboutDialog</a> (const bool &amp;<a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>)</td></tr>
+<tr class="memdesc:ab65bff687e0edbf81a648e97c897a250"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示关于对话框信号  <br /></td></tr>
+<tr class="separator:ab65bff687e0edbf81a648e97c897a250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358d2e2397ca11ccd17553e3c40e7901" id="r_a358d2e2397ca11ccd17553e3c40e7901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a358d2e2397ca11ccd17553e3c40e7901">exit</a> ()</td></tr>
+<tr class="memdesc:a358d2e2397ca11ccd17553e3c40e7901"><td class="mdescLeft">&#160;</td><td class="mdescRight">退出信号，通知程序退出  <br /></td></tr>
+<tr class="separator:a358d2e2397ca11ccd17553e3c40e7901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac6f87c55cfd184f2b9ab8905b6fbd710" id="r_ac6f87c55cfd184f2b9ab8905b6fbd710"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6f87c55cfd184f2b9ab8905b6fbd710">MyTrayIcon</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:ac6f87c55cfd184f2b9ab8905b6fbd710"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化系统托盘图标  <br /></td></tr>
+<tr class="separator:ac6f87c55cfd184f2b9ab8905b6fbd710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:ab30bcc2302aa259d4423286f363fe7cb" id="r_ab30bcc2302aa259d4423286f363fe7cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab30bcc2302aa259d4423286f363fe7cb">onIconActivated</a> (QSystemTrayIcon::ActivationReason reason)</td></tr>
+<tr class="memdesc:ab30bcc2302aa259d4423286f363fe7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理托盘图标激活事件  <br /></td></tr>
+<tr class="separator:ab30bcc2302aa259d4423286f363fe7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5126fc9ad7ea27324d6cbd6f514f2708" id="r_a5126fc9ad7ea27324d6cbd6f514f2708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5126fc9ad7ea27324d6cbd6f514f2708">checkTrayIconHover</a> ()</td></tr>
+<tr class="memdesc:a5126fc9ad7ea27324d6cbd6f514f2708"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查鼠标是否悬停在托盘图标上  <br /></td></tr>
+<tr class="separator:a5126fc9ad7ea27324d6cbd6f514f2708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7782db0bb28d0eb69bda3843afbf5592" id="r_a7782db0bb28d0eb69bda3843afbf5592"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7782db0bb28d0eb69bda3843afbf5592">onFlashingTrayIcon</a> ()</td></tr>
+<tr class="memdesc:a7782db0bb28d0eb69bda3843afbf5592"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理托盘图标闪烁逻辑  <br /></td></tr>
+<tr class="separator:a7782db0bb28d0eb69bda3843afbf5592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:aacd54dac72f26338b0a05b8a69d2e24d" id="r_aacd54dac72f26338b0a05b8a69d2e24d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacd54dac72f26338b0a05b8a69d2e24d">initSysTray</a> ()</td></tr>
+<tr class="memdesc:aacd54dac72f26338b0a05b8a69d2e24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化系统托盘图标  <br /></td></tr>
+<tr class="separator:aacd54dac72f26338b0a05b8a69d2e24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6f65def078ac46035228551fe4cc5d0" id="r_aa6f65def078ac46035228551fe4cc5d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6f65def078ac46035228551fe4cc5d0">initSysTrayMenu</a> ()</td></tr>
+<tr class="memdesc:aa6f65def078ac46035228551fe4cc5d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化系统托盘菜单  <br /></td></tr>
+<tr class="separator:aa6f65def078ac46035228551fe4cc5d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4736fcaa49db73e4417865d8bae0e545" id="r_a4736fcaa49db73e4417865d8bae0e545"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4736fcaa49db73e4417865d8bae0e545">showMessage</a> (const QString &amp;title, const QString &amp;content)</td></tr>
+<tr class="memdesc:a4736fcaa49db73e4417865d8bae0e545"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示系统托盘消息框  <br /></td></tr>
+<tr class="separator:a4736fcaa49db73e4417865d8bae0e545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c0bb28df09e788a087d452c90cc7a3" id="r_ac4c0bb28df09e788a087d452c90cc7a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4c0bb28df09e788a087d452c90cc7a3">flashingTrayIcon</a> (const int &amp;msec)</td></tr>
+<tr class="memdesc:ac4c0bb28df09e788a087d452c90cc7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动托盘图标闪烁  <br /></td></tr>
+<tr class="separator:ac4c0bb28df09e788a087d452c90cc7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08fef395b5141b2c62afda74babfc567" id="r_a08fef395b5141b2c62afda74babfc567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08fef395b5141b2c62afda74babfc567">stopFlashingTrayIcon</a> ()</td></tr>
+<tr class="memdesc:a08fef395b5141b2c62afda74babfc567"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止托盘图标闪烁  <br /></td></tr>
+<tr class="separator:a08fef395b5141b2c62afda74babfc567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ac340988e31e168394f5b80b450bc9073" id="r_ac340988e31e168394f5b80b450bc9073"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac340988e31e168394f5b80b450bc9073">m_pParent</a> {}</td></tr>
+<tr class="memdesc:ac340988e31e168394f5b80b450bc9073"><td class="mdescLeft">&#160;</td><td class="mdescRight">父控件，用于显示主窗口  <br /></td></tr>
+<tr class="separator:ac340988e31e168394f5b80b450bc9073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f50f1c974b2a230969afa595599349a" id="r_a0f50f1c974b2a230969afa595599349a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_menu.html">ElaMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f50f1c974b2a230969afa595599349a">m_trayMenu</a> {}</td></tr>
+<tr class="memdesc:a0f50f1c974b2a230969afa595599349a"><td class="mdescLeft">&#160;</td><td class="mdescRight">托盘菜单  <br /></td></tr>
+<tr class="separator:a0f50f1c974b2a230969afa595599349a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b61709efacdeb4b9b337132b7fbb7f" id="r_a75b61709efacdeb4b9b337132b7fbb7f"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75b61709efacdeb4b9b337132b7fbb7f">m_menuPosition</a></td></tr>
+<tr class="memdesc:a75b61709efacdeb4b9b337132b7fbb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">菜单显示位置  <br /></td></tr>
+<tr class="separator:a75b61709efacdeb4b9b337132b7fbb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4f53ed40044d3d28b55f3476715cc4c" id="r_ac4f53ed40044d3d28b55f3476715cc4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4f53ed40044d3d28b55f3476715cc4c">m_showIcon</a></td></tr>
+<tr class="memdesc:ac4f53ed40044d3d28b55f3476715cc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">闪烁状态标志  <br /></td></tr>
+<tr class="separator:ac4f53ed40044d3d28b55f3476715cc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335b8dd712724ea59e1932e85f669ecb" id="r_a335b8dd712724ea59e1932e85f669ecb"><td class="memItemLeft" align="right" valign="top">QIcon&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a335b8dd712724ea59e1932e85f669ecb">m_emptyIcon</a> {}</td></tr>
+<tr class="memdesc:a335b8dd712724ea59e1932e85f669ecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">空图标，用于闪烁  <br /></td></tr>
+<tr class="separator:a335b8dd712724ea59e1932e85f669ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b17f807a5987af79f34fa578719fa28" id="r_a0b17f807a5987af79f34fa578719fa28"><td class="memItemLeft" align="right" valign="top">QIcon&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b17f807a5987af79f34fa578719fa28">m_trayIcon</a> {}</td></tr>
+<tr class="memdesc:a0b17f807a5987af79f34fa578719fa28"><td class="mdescLeft">&#160;</td><td class="mdescRight">托盘图标  <br /></td></tr>
+<tr class="separator:a0b17f807a5987af79f34fa578719fa28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c288fd1b337441eac116e41703fdc8" id="r_a26c288fd1b337441eac116e41703fdc8"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26c288fd1b337441eac116e41703fdc8">m_checkTimer</a></td></tr>
+<tr class="memdesc:a26c288fd1b337441eac116e41703fdc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标位置检测定时器  <br /></td></tr>
+<tr class="separator:a26c288fd1b337441eac116e41703fdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed398c4db64e1a90cc83209ec6c1554" id="r_a4ed398c4db64e1a90cc83209ec6c1554"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ed398c4db64e1a90cc83209ec6c1554">m_flashTimer</a> {}</td></tr>
+<tr class="memdesc:a4ed398c4db64e1a90cc83209ec6c1554"><td class="mdescLeft">&#160;</td><td class="mdescRight">闪烁定时器  <br /></td></tr>
+<tr class="separator:a4ed398c4db64e1a90cc83209ec6c1554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b1f58c8b584697f3fa3123cb96732b" id="r_ab2b1f58c8b584697f3fa3123cb96732b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2b1f58c8b584697f3fa3123cb96732b">m_flagDialogShow</a> = false</td></tr>
+<tr class="memdesc:ab2b1f58c8b584697f3fa3123cb96732b"><td class="mdescLeft">&#160;</td><td class="mdescRight">关于对话框显示标志  <br /></td></tr>
+<tr class="separator:ab2b1f58c8b584697f3fa3123cb96732b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcca52c63b646bdc711c1b19ec88ccf6" id="r_afcca52c63b646bdc711c1b19ec88ccf6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcca52c63b646bdc711c1b19ec88ccf6">m_flagVolume</a> = false</td></tr>
+<tr class="memdesc:afcca52c63b646bdc711c1b19ec88ccf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">音量开关标志  <br /></td></tr>
+<tr class="separator:afcca52c63b646bdc711c1b19ec88ccf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>自定义系统托盘图标类，继承自 QSystemTrayIcon，支持闪烁、菜单和消息显示 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ac6f87c55cfd184f2b9ab8905b6fbd710" name="ac6f87c55cfd184f2b9ab8905b6fbd710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f87c55cfd184f2b9ab8905b6fbd710">&#9670;&#160;</a></span>MyTrayIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_tray_icon.html">MyTrayIcon</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化系统托盘图标 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 初始化托盘</p>
+<p>&lt; 初始化托盘菜单</p>
+<p>&lt; 显示托盘图标</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_ac6f87c55cfd184f2b9ab8905b6fbd710_cgraph.png" border="0" usemap="#aclass_my_tray_icon_ac6f87c55cfd184f2b9ab8905b6fbd710_cgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_ac6f87c55cfd184f2b9ab8905b6fbd710_cgraph" id="aclass_my_tray_icon_ac6f87c55cfd184f2b9ab8905b6fbd710_cgraph">
+<area shape="rect" title="构造函数，初始化系统托盘图标" alt="" coords="5,107,96,133"/>
+<area shape="rect" href="class_my_tray_icon.html#a5126fc9ad7ea27324d6cbd6f514f2708" title="检查鼠标是否悬停在托盘图标上" alt="" coords="490,5,633,32"/>
+<area shape="poly" title=" " alt="" coords="73,104,143,67,225,35,311,17,395,10,475,11,475,16,395,16,311,23,226,40,145,72,75,108"/>
+<area shape="rect" href="class_my_tray_icon.html#aacd54dac72f26338b0a05b8a69d2e24d" title="初始化系统托盘图标" alt="" coords="160,81,247,108"/>
+<area shape="poly" title=" " alt="" coords="96,110,144,102,145,107,97,115"/>
+<area shape="rect" href="class_my_tray_icon.html#aa6f65def078ac46035228551fe4cc5d0" title="初始化系统托盘菜单" alt="" coords="144,183,263,209"/>
+<area shape="poly" title=" " alt="" coords="81,132,162,173,160,178,78,136"/>
+<area shape="rect" href="class_my_tray_icon.html#a7782db0bb28d0eb69bda3843afbf5592" title="处理托盘图标闪烁逻辑" alt="" coords="494,208,629,235"/>
+<area shape="poly" title=" " alt="" coords="63,132,97,174,145,219,188,249,223,268,261,282,312,295,377,305,406,303,441,295,491,272,532,242,536,247,494,276,443,300,407,309,377,311,310,300,260,287,221,273,185,253,142,223,93,178,59,135"/>
+<area shape="rect" href="class_my_tray_icon.html#a08fef395b5141b2c62afda74babfc567" title="停止托盘图标闪烁" alt="" coords="681,5,827,32"/>
+<area shape="poly" title=" " alt="" coords="633,16,665,16,665,21,633,21"/>
+<area shape="rect" href="class_my_tray_icon.html#ab30bcc2302aa259d4423286f363fe7cb" title="处理托盘图标激活事件" alt="" coords="504,107,619,133"/>
+<area shape="poly" title=" " alt="" coords="225,78,264,58,310,41,377,30,407,33,443,41,494,65,536,95,532,99,491,70,441,47,406,38,377,36,312,47,266,63,228,83"/>
+<area shape="rect" href="class_my_tray_icon.html#a4736fcaa49db73e4417865d8bae0e545" title="显示系统托盘消息框" alt="" coords="324,56,429,83"/>
+<area shape="poly" title=" " alt="" coords="247,86,308,77,309,82,248,91"/>
+<area shape="rect" href="class_my_tray_icon.html#a32426b3cc0655e2d9cd9b0ffe6c008b9" title="显示托盘消息信号" alt="" coords="311,107,442,133"/>
+<area shape="poly" title=" " alt="" coords="248,98,296,106,295,111,247,104"/>
+<area shape="rect" href="class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="356,157,398,184"/>
+<area shape="poly" title=" " alt="" coords="263,185,340,173,341,179,264,190"/>
+<area shape="rect" href="class_my_tray_icon.html#a6e14961f3e60024b82639178d7c95af1" title="音量开关信号" alt="" coords="338,208,416,235"/>
+<area shape="poly" title=" " alt="" coords="264,202,322,211,322,216,263,207"/>
+<area shape="rect" href="class_my_tray_icon.html#ab65bff687e0edbf81a648e97c897a250" title="显示关于对话框信号" alt="" coords="315,259,438,285"/>
+<area shape="poly" title=" " alt="" coords="234,207,312,244,326,250,324,255,310,249,231,212"/>
+<area shape="poly" title=" " alt="" coords="397,163,419,155,441,143,535,42,539,45,444,147,421,160,399,168"/>
+<area shape="poly" title=" " alt="" coords="397,162,495,135,496,141,399,168"/>
+<area shape="poly" title=" " alt="" coords="399,174,496,201,495,206,397,179"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a5126fc9ad7ea27324d6cbd6f514f2708" name="a5126fc9ad7ea27324d6cbd6f514f2708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5126fc9ad7ea27324d6cbd6f514f2708">&#9670;&#160;</a></span>checkTrayIconHover</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void checkTrayIconHover </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查鼠标是否悬停在托盘图标上 </p>
+<p>&lt; 获取托盘区域</p>
+<p>&lt; 鼠标悬停时停止闪烁</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a5126fc9ad7ea27324d6cbd6f514f2708_cgraph.png" border="0" usemap="#aclass_my_tray_icon_a5126fc9ad7ea27324d6cbd6f514f2708_cgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a5126fc9ad7ea27324d6cbd6f514f2708_cgraph" id="aclass_my_tray_icon_a5126fc9ad7ea27324d6cbd6f514f2708_cgraph">
+<area shape="rect" title="检查鼠标是否悬停在托盘图标上" alt="" coords="5,5,148,32"/>
+<area shape="rect" href="class_my_tray_icon.html#a08fef395b5141b2c62afda74babfc567" title="停止托盘图标闪烁" alt="" coords="196,5,342,32"/>
+<area shape="poly" title=" " alt="" coords="148,16,180,16,180,21,148,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a5126fc9ad7ea27324d6cbd6f514f2708_icgraph.png" border="0" usemap="#aclass_my_tray_icon_a5126fc9ad7ea27324d6cbd6f514f2708_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a5126fc9ad7ea27324d6cbd6f514f2708_icgraph" id="aclass_my_tray_icon_a5126fc9ad7ea27324d6cbd6f514f2708_icgraph">
+<area shape="rect" title="检查鼠标是否悬停在托盘图标上" alt="" coords="526,105,669,132"/>
+<area shape="rect" href="class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="436,80,478,107"/>
+<area shape="poly" title=" " alt="" coords="510,106,478,100,479,94,511,100"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="38,105,128,132"/>
+<area shape="poly" title=" " alt="" coords="511,121,129,121,129,116,511,116"/>
+<area shape="rect" href="class_my_tray_icon.html#aa6f65def078ac46035228551fe4cc5d0" title="初始化系统托盘菜单" alt="" coords="239,80,358,107"/>
+<area shape="poly" title=" " alt="" coords="420,96,358,96,358,91,420,91"/>
+<area shape="rect" href="class_main_window.html#ac3df08a4bc0438931d73601110c9267e" title="构造函数，初始化主窗口" alt="" coords="209,29,388,56"/>
+<area shape="poly" title=" " alt="" coords="421,82,387,71,350,59,352,54,389,65,423,77"/>
+<area shape="poly" title=" " alt="" coords="224,105,129,116,128,111,223,99"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="120,16,107,10,83,8,60,10,48,15,45,20,51,27,47,30,40,21,45,11,59,5,83,3,109,5,122,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a358d2e2397ca11ccd17553e3c40e7901" name="a358d2e2397ca11ccd17553e3c40e7901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358d2e2397ca11ccd17553e3c40e7901">&#9670;&#160;</a></span>exit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void exit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>退出信号，通知程序退出 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a358d2e2397ca11ccd17553e3c40e7901_cgraph.png" border="0" usemap="#aclass_my_tray_icon_a358d2e2397ca11ccd17553e3c40e7901_cgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a358d2e2397ca11ccd17553e3c40e7901_cgraph" id="aclass_my_tray_icon_a358d2e2397ca11ccd17553e3c40e7901_cgraph">
+<area shape="rect" title="退出信号，通知程序退出" alt="" coords="5,56,48,83"/>
+<area shape="rect" href="class_my_tray_icon.html#a5126fc9ad7ea27324d6cbd6f514f2708" title="检查鼠标是否悬停在托盘图标上" alt="" coords="96,5,238,32"/>
+<area shape="poly" title=" " alt="" coords="47,59,95,41,112,35,114,40,97,47,49,64"/>
+<area shape="rect" href="class_my_tray_icon.html#a7782db0bb28d0eb69bda3843afbf5592" title="处理托盘图标闪烁逻辑" alt="" coords="99,56,234,83"/>
+<area shape="poly" title=" " alt="" coords="48,67,84,67,84,72,48,72"/>
+<area shape="rect" href="class_my_tray_icon.html#ab30bcc2302aa259d4423286f363fe7cb" title="处理托盘图标激活事件" alt="" coords="109,107,224,133"/>
+<area shape="poly" title=" " alt="" coords="49,74,97,92,114,98,112,103,95,97,47,79"/>
+<area shape="rect" href="class_my_tray_icon.html#a08fef395b5141b2c62afda74babfc567" title="停止托盘图标闪烁" alt="" coords="286,5,432,32"/>
+<area shape="poly" title=" " alt="" coords="238,16,270,16,270,21,238,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a358d2e2397ca11ccd17553e3c40e7901_icgraph.png" border="0" usemap="#aclass_my_tray_icon_a358d2e2397ca11ccd17553e3c40e7901_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a358d2e2397ca11ccd17553e3c40e7901_icgraph" id="aclass_my_tray_icon_a358d2e2397ca11ccd17553e3c40e7901_icgraph">
+<area shape="rect" title="退出信号，通知程序退出" alt="" coords="436,43,478,69"/>
+<area shape="rect" href="class_my_tray_icon.html#aa6f65def078ac46035228551fe4cc5d0" title="初始化系统托盘菜单" alt="" coords="239,12,358,39"/>
+<area shape="poly" title=" " alt="" coords="420,52,358,39,359,34,421,46"/>
+<area shape="rect" href="class_main_window.html#ac3df08a4bc0438931d73601110c9267e" title="构造函数，初始化主窗口" alt="" coords="209,68,388,95"/>
+<area shape="poly" title=" " alt="" coords="421,64,386,70,385,65,420,59"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="38,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="223,26,129,23,129,17,223,20"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,80,161,107"/>
+<area shape="poly" title=" " alt="" coords="193,90,161,92,161,86,193,85"/>
+<area shape="poly" title=" " alt="" coords="120,67,107,61,83,59,60,61,48,65,45,71,51,78,47,81,40,71,45,62,59,55,83,53,109,56,122,62"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac4c0bb28df09e788a087d452c90cc7a3" name="ac4c0bb28df09e788a087d452c90cc7a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c0bb28df09e788a087d452c90cc7a3">&#9670;&#160;</a></span>flashingTrayIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void flashingTrayIcon </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>msec</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>启动托盘图标闪烁 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msec</td><td>闪烁间隔（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 启动鼠标位置检测</p>
+
+</div>
+</div>
+<a id="aacd54dac72f26338b0a05b8a69d2e24d" name="aacd54dac72f26338b0a05b8a69d2e24d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd54dac72f26338b0a05b8a69d2e24d">&#9670;&#160;</a></span>initSysTray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSysTray </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化系统托盘图标 </p>
+<p>&lt; 设置工具提示</p>
+<p>&lt; 设置托盘图标</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_aacd54dac72f26338b0a05b8a69d2e24d_cgraph.png" border="0" usemap="#aclass_my_tray_icon_aacd54dac72f26338b0a05b8a69d2e24d_cgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_aacd54dac72f26338b0a05b8a69d2e24d_cgraph" id="aclass_my_tray_icon_aacd54dac72f26338b0a05b8a69d2e24d_cgraph">
+<area shape="rect" title="初始化系统托盘图标" alt="" coords="5,56,93,83"/>
+<area shape="rect" href="class_my_tray_icon.html#ab30bcc2302aa259d4423286f363fe7cb" title="处理托盘图标激活事件" alt="" coords="149,5,264,32"/>
+<area shape="poly" title=" " alt="" coords="92,53,147,35,149,40,94,58"/>
+<area shape="rect" href="class_my_tray_icon.html#a4736fcaa49db73e4417865d8bae0e545" title="显示系统托盘消息框" alt="" coords="154,56,259,83"/>
+<area shape="poly" title=" " alt="" coords="93,67,138,67,138,72,93,72"/>
+<area shape="rect" href="class_my_tray_icon.html#a32426b3cc0655e2d9cd9b0ffe6c008b9" title="显示托盘消息信号" alt="" coords="141,107,272,133"/>
+<area shape="poly" title=" " alt="" coords="94,81,149,99,147,104,92,86"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_aacd54dac72f26338b0a05b8a69d2e24d_icgraph.png" border="0" usemap="#aclass_my_tray_icon_aacd54dac72f26338b0a05b8a69d2e24d_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_aacd54dac72f26338b0a05b8a69d2e24d_icgraph" id="aclass_my_tray_icon_aacd54dac72f26338b0a05b8a69d2e24d_icgraph">
+<area shape="rect" title="初始化系统托盘图标" alt="" coords="144,5,231,32"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="5,5,96,32"/>
+<area shape="poly" title=" " alt="" coords="128,21,96,21,96,16,128,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa6f65def078ac46035228551fe4cc5d0" name="aa6f65def078ac46035228551fe4cc5d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6f65def078ac46035228551fe4cc5d0">&#9670;&#160;</a></span>initSysTrayMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSysTrayMenu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化系统托盘菜单 </p>
+<p>&lt; 创建托盘菜单</p>
+<p>&lt; 设置菜单透明度</p>
+<p>&lt; 设置菜单项高度</p>
+<p>&lt; 阻止菜单关闭</p>
+<p>&lt; 阻止菜单关闭</p>
+<p>&lt; 设置托盘右键菜单</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_aa6f65def078ac46035228551fe4cc5d0_cgraph.png" border="0" usemap="#aclass_my_tray_icon_aa6f65def078ac46035228551fe4cc5d0_cgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_aa6f65def078ac46035228551fe4cc5d0_cgraph" id="aclass_my_tray_icon_aa6f65def078ac46035228551fe4cc5d0_cgraph">
+<area shape="rect" title="初始化系统托盘菜单" alt="" coords="5,107,125,133"/>
+<area shape="rect" href="class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="213,56,256,83"/>
+<area shape="poly" title=" " alt="" coords="112,103,197,77,199,82,113,109"/>
+<area shape="rect" href="class_my_tray_icon.html#a6e14961f3e60024b82639178d7c95af1" title="音量开关信号" alt="" coords="195,107,274,133"/>
+<area shape="poly" title=" " alt="" coords="125,117,179,117,179,123,125,123"/>
+<area shape="rect" href="class_my_tray_icon.html#ab65bff687e0edbf81a648e97c897a250" title="显示关于对话框信号" alt="" coords="173,157,296,184"/>
+<area shape="poly" title=" " alt="" coords="113,131,174,150,172,155,112,137"/>
+<area shape="rect" href="class_my_tray_icon.html#a5126fc9ad7ea27324d6cbd6f514f2708" title="检查鼠标是否悬停在托盘图标上" alt="" coords="344,5,486,32"/>
+<area shape="poly" title=" " alt="" coords="255,61,349,34,351,39,257,66"/>
+<area shape="rect" href="class_my_tray_icon.html#a7782db0bb28d0eb69bda3843afbf5592" title="处理托盘图标闪烁逻辑" alt="" coords="348,56,483,83"/>
+<area shape="poly" title=" " alt="" coords="256,67,332,67,332,72,256,72"/>
+<area shape="rect" href="class_my_tray_icon.html#ab30bcc2302aa259d4423286f363fe7cb" title="处理托盘图标激活事件" alt="" coords="358,107,473,133"/>
+<area shape="poly" title=" " alt="" coords="257,73,351,99,349,104,255,78"/>
+<area shape="rect" href="class_my_tray_icon.html#a08fef395b5141b2c62afda74babfc567" title="停止托盘图标闪烁" alt="" coords="534,5,681,32"/>
+<area shape="poly" title=" " alt="" coords="487,16,519,16,519,21,487,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_aa6f65def078ac46035228551fe4cc5d0_icgraph.png" border="0" usemap="#aclass_my_tray_icon_aa6f65def078ac46035228551fe4cc5d0_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_aa6f65def078ac46035228551fe4cc5d0_icgraph" id="aclass_my_tray_icon_aa6f65def078ac46035228551fe4cc5d0_icgraph">
+<area shape="rect" title="初始化系统托盘菜单" alt="" coords="144,5,263,32"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="5,5,96,32"/>
+<area shape="poly" title=" " alt="" coords="128,21,96,21,96,16,128,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6e14961f3e60024b82639178d7c95af1" name="a6e14961f3e60024b82639178d7c95af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e14961f3e60024b82639178d7c95af1">&#9670;&#160;</a></span>noVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void noVolume </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>音量开关信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否静音 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a6e14961f3e60024b82639178d7c95af1_icgraph.png" border="0" usemap="#aclass_my_tray_icon_a6e14961f3e60024b82639178d7c95af1_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a6e14961f3e60024b82639178d7c95af1_icgraph" id="aclass_my_tray_icon_a6e14961f3e60024b82639178d7c95af1_icgraph">
+<area shape="rect" title="音量开关信号" alt="" coords="436,43,514,69"/>
+<area shape="rect" href="class_my_tray_icon.html#aa6f65def078ac46035228551fe4cc5d0" title="初始化系统托盘菜单" alt="" coords="239,12,358,39"/>
+<area shape="poly" title=" " alt="" coords="420,49,358,38,359,33,421,44"/>
+<area shape="rect" href="class_main_window.html#ac3df08a4bc0438931d73601110c9267e" title="构造函数，初始化主窗口" alt="" coords="209,68,388,95"/>
+<area shape="poly" title=" " alt="" coords="421,66,389,71,388,66,420,61"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="38,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="223,26,129,23,129,17,223,20"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,80,161,107"/>
+<area shape="poly" title=" " alt="" coords="193,90,161,92,161,86,193,85"/>
+<area shape="poly" title=" " alt="" coords="120,67,107,61,83,59,60,61,48,65,45,71,51,78,47,81,40,71,45,62,59,55,83,53,109,56,122,62"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7782db0bb28d0eb69bda3843afbf5592" name="a7782db0bb28d0eb69bda3843afbf5592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7782db0bb28d0eb69bda3843afbf5592">&#9670;&#160;</a></span>onFlashingTrayIcon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onFlashingTrayIcon </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理托盘图标闪烁逻辑 </p>
+<p>&lt; 显示空图标</p>
+<p>&lt; 显示托盘图标</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a7782db0bb28d0eb69bda3843afbf5592_icgraph.png" border="0" usemap="#aclass_my_tray_icon_a7782db0bb28d0eb69bda3843afbf5592_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a7782db0bb28d0eb69bda3843afbf5592_icgraph" id="aclass_my_tray_icon_a7782db0bb28d0eb69bda3843afbf5592_icgraph">
+<area shape="rect" title="处理托盘图标闪烁逻辑" alt="" coords="526,105,662,132"/>
+<area shape="rect" href="class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="436,80,478,107"/>
+<area shape="poly" title=" " alt="" coords="511,106,478,100,479,94,512,101"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="38,105,128,132"/>
+<area shape="poly" title=" " alt="" coords="511,121,129,121,129,116,511,116"/>
+<area shape="rect" href="class_my_tray_icon.html#aa6f65def078ac46035228551fe4cc5d0" title="初始化系统托盘菜单" alt="" coords="239,80,358,107"/>
+<area shape="poly" title=" " alt="" coords="420,96,358,96,358,91,420,91"/>
+<area shape="rect" href="class_main_window.html#ac3df08a4bc0438931d73601110c9267e" title="构造函数，初始化主窗口" alt="" coords="209,29,388,56"/>
+<area shape="poly" title=" " alt="" coords="421,82,387,71,350,59,352,54,389,65,423,77"/>
+<area shape="poly" title=" " alt="" coords="224,105,129,116,128,111,223,99"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="120,16,107,10,83,8,60,10,48,15,45,20,51,27,47,30,40,21,45,11,59,5,83,3,109,5,122,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab30bcc2302aa259d4423286f363fe7cb" name="ab30bcc2302aa259d4423286f363fe7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30bcc2302aa259d4423286f363fe7cb">&#9670;&#160;</a></span>onIconActivated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onIconActivated </td>
+          <td>(</td>
+          <td class="paramtype">QSystemTrayIcon::ActivationReason</td>          <td class="paramname"><span class="paramname"><em>reason</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理托盘图标激活事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reason</td><td>激活原因 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 点击托盘显示主窗口</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_ab30bcc2302aa259d4423286f363fe7cb_icgraph.png" border="0" usemap="#aclass_my_tray_icon_ab30bcc2302aa259d4423286f363fe7cb_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_ab30bcc2302aa259d4423286f363fe7cb_icgraph" id="aclass_my_tray_icon_ab30bcc2302aa259d4423286f363fe7cb_icgraph">
+<area shape="rect" title="处理托盘图标激活事件" alt="" coords="571,105,687,132"/>
+<area shape="rect" href="class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="458,80,501,107"/>
+<area shape="poly" title=" " alt="" coords="556,109,501,99,502,94,557,104"/>
+<area shape="rect" href="class_my_tray_icon.html#aacd54dac72f26338b0a05b8a69d2e24d" title="初始化系统托盘图标" alt="" coords="436,131,523,157"/>
+<area shape="poly" title=" " alt="" coords="557,134,524,139,523,134,556,128"/>
+<area shape="rect" href="class_my_tray_icon.html#aa6f65def078ac46035228551fe4cc5d0" title="初始化系统托盘菜单" alt="" coords="239,80,358,107"/>
+<area shape="poly" title=" " alt="" coords="443,96,358,96,358,91,443,91"/>
+<area shape="rect" href="class_main_window.html#ac3df08a4bc0438931d73601110c9267e" title="构造函数，初始化主窗口" alt="" coords="209,29,388,56"/>
+<area shape="poly" title=" " alt="" coords="443,86,348,59,350,54,444,81"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="38,105,128,132"/>
+<area shape="poly" title=" " alt="" coords="224,105,129,116,128,111,223,99"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="120,16,107,10,83,8,60,10,48,15,45,20,51,27,47,30,40,21,45,11,59,5,83,3,109,5,122,12"/>
+<area shape="poly" title=" " alt="" coords="420,143,128,124,129,119,421,138"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab65bff687e0edbf81a648e97c897a250" name="ab65bff687e0edbf81a648e97c897a250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab65bff687e0edbf81a648e97c897a250">&#9670;&#160;</a></span>showAboutDialog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showAboutDialog </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示关于对话框信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否显示 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_ab65bff687e0edbf81a648e97c897a250_icgraph.png" border="0" usemap="#aclass_my_tray_icon_ab65bff687e0edbf81a648e97c897a250_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_ab65bff687e0edbf81a648e97c897a250_icgraph" id="aclass_my_tray_icon_ab65bff687e0edbf81a648e97c897a250_icgraph">
+<area shape="rect" title="显示关于对话框信号" alt="" coords="436,43,559,69"/>
+<area shape="rect" href="class_my_tray_icon.html#aa6f65def078ac46035228551fe4cc5d0" title="初始化系统托盘菜单" alt="" coords="239,12,358,39"/>
+<area shape="poly" title=" " alt="" coords="421,47,358,37,359,32,421,42"/>
+<area shape="rect" href="class_main_window.html#ac3df08a4bc0438931d73601110c9267e" title="构造函数，初始化主窗口" alt="" coords="209,68,388,95"/>
+<area shape="poly" title=" " alt="" coords="421,68,389,73,388,67,420,63"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="38,5,128,32"/>
+<area shape="poly" title=" " alt="" coords="223,26,129,23,129,17,223,20"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,80,161,107"/>
+<area shape="poly" title=" " alt="" coords="193,90,161,92,161,86,193,85"/>
+<area shape="poly" title=" " alt="" coords="120,67,107,61,83,59,60,61,48,65,45,71,51,78,47,81,40,71,45,62,59,55,83,53,109,56,122,62"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4736fcaa49db73e4417865d8bae0e545" name="a4736fcaa49db73e4417865d8bae0e545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4736fcaa49db73e4417865d8bae0e545">&#9670;&#160;</a></span>showMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>content</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示系统托盘消息框 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>消息标题 </td></tr>
+    <tr><td class="paramname">content</td><td>消息内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 显示消息</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a4736fcaa49db73e4417865d8bae0e545_icgraph.png" border="0" usemap="#aclass_my_tray_icon_a4736fcaa49db73e4417865d8bae0e545_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a4736fcaa49db73e4417865d8bae0e545_icgraph" id="aclass_my_tray_icon_a4736fcaa49db73e4417865d8bae0e545_icgraph">
+<area shape="rect" title="显示系统托盘消息框" alt="" coords="279,5,384,32"/>
+<area shape="rect" href="class_my_tray_icon.html#aacd54dac72f26338b0a05b8a69d2e24d" title="初始化系统托盘图标" alt="" coords="144,5,231,32"/>
+<area shape="poly" title=" " alt="" coords="263,21,231,21,231,16,263,16"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="5,5,96,32"/>
+<area shape="poly" title=" " alt="" coords="128,21,96,21,96,16,128,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a32426b3cc0655e2d9cd9b0ffe6c008b9" name="a32426b3cc0655e2d9cd9b0ffe6c008b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32426b3cc0655e2d9cd9b0ffe6c008b9">&#9670;&#160;</a></span>showTrayMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showTrayMessage </td>
+          <td>(</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>title</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Notice&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>content</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;How&#160;about&#160;today&#160;?&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示托盘消息信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>消息标题，默认为 "Notice" </td></tr>
+    <tr><td class="paramname">content</td><td>消息内容，默认为 "How about today ?" </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a32426b3cc0655e2d9cd9b0ffe6c008b9_icgraph.png" border="0" usemap="#aclass_my_tray_icon_a32426b3cc0655e2d9cd9b0ffe6c008b9_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a32426b3cc0655e2d9cd9b0ffe6c008b9_icgraph" id="aclass_my_tray_icon_a32426b3cc0655e2d9cd9b0ffe6c008b9_icgraph">
+<area shape="rect" title="显示托盘消息信号" alt="" coords="279,5,410,32"/>
+<area shape="rect" href="class_my_tray_icon.html#aacd54dac72f26338b0a05b8a69d2e24d" title="初始化系统托盘图标" alt="" coords="144,5,231,32"/>
+<area shape="poly" title=" " alt="" coords="264,21,232,21,232,16,264,16"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="5,5,96,32"/>
+<area shape="poly" title=" " alt="" coords="128,21,96,21,96,16,128,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08fef395b5141b2c62afda74babfc567" name="a08fef395b5141b2c62afda74babfc567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08fef395b5141b2c62afda74babfc567">&#9670;&#160;</a></span>stopFlashingTrayIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stopFlashingTrayIcon </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>停止托盘图标闪烁 </p>
+<p>&lt; 恢复默认图标</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_tray_icon_a08fef395b5141b2c62afda74babfc567_icgraph.png" border="0" usemap="#aclass_my_tray_icon_a08fef395b5141b2c62afda74babfc567_icgraph" alt=""/></div>
+<map name="aclass_my_tray_icon_a08fef395b5141b2c62afda74babfc567_icgraph" id="aclass_my_tray_icon_a08fef395b5141b2c62afda74babfc567_icgraph">
+<area shape="rect" title="停止托盘图标闪烁" alt="" coords="717,105,863,132"/>
+<area shape="rect" href="class_my_tray_icon.html#a5126fc9ad7ea27324d6cbd6f514f2708" title="检查鼠标是否悬停在托盘图标上" alt="" coords="526,105,669,132"/>
+<area shape="poly" title=" " alt="" coords="701,121,669,121,669,116,701,116"/>
+<area shape="rect" href="class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="436,80,478,107"/>
+<area shape="poly" title=" " alt="" coords="510,106,478,100,479,94,511,100"/>
+<area shape="rect" href="class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710" title="构造函数，初始化系统托盘图标" alt="" coords="38,105,128,132"/>
+<area shape="poly" title=" " alt="" coords="511,121,129,121,129,116,511,116"/>
+<area shape="rect" href="class_my_tray_icon.html#aa6f65def078ac46035228551fe4cc5d0" title="初始化系统托盘菜单" alt="" coords="239,80,358,107"/>
+<area shape="poly" title=" " alt="" coords="420,96,358,96,358,91,420,91"/>
+<area shape="rect" href="class_main_window.html#ac3df08a4bc0438931d73601110c9267e" title="构造函数，初始化主窗口" alt="" coords="209,29,388,56"/>
+<area shape="poly" title=" " alt="" coords="421,82,387,71,350,59,352,54,389,65,423,77"/>
+<area shape="poly" title=" " alt="" coords="224,105,129,116,128,111,223,99"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="120,16,107,10,83,8,60,10,48,15,45,20,51,27,47,30,40,21,45,11,59,5,83,3,109,5,122,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a26c288fd1b337441eac116e41703fdc8" name="a26c288fd1b337441eac116e41703fdc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c288fd1b337441eac116e41703fdc8">&#9670;&#160;</a></span>m_checkTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* m_checkTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标位置检测定时器 </p>
+
+</div>
+</div>
+<a id="a335b8dd712724ea59e1932e85f669ecb" name="a335b8dd712724ea59e1932e85f669ecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335b8dd712724ea59e1932e85f669ecb">&#9670;&#160;</a></span>m_emptyIcon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QIcon m_emptyIcon {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>空图标，用于闪烁 </p>
+
+</div>
+</div>
+<a id="ab2b1f58c8b584697f3fa3123cb96732b" name="ab2b1f58c8b584697f3fa3123cb96732b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b1f58c8b584697f3fa3123cb96732b">&#9670;&#160;</a></span>m_flagDialogShow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_flagDialogShow = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关于对话框显示标志 </p>
+
+</div>
+</div>
+<a id="afcca52c63b646bdc711c1b19ec88ccf6" name="afcca52c63b646bdc711c1b19ec88ccf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcca52c63b646bdc711c1b19ec88ccf6">&#9670;&#160;</a></span>m_flagVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_flagVolume = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>音量开关标志 </p>
+
+</div>
+</div>
+<a id="a4ed398c4db64e1a90cc83209ec6c1554" name="a4ed398c4db64e1a90cc83209ec6c1554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed398c4db64e1a90cc83209ec6c1554">&#9670;&#160;</a></span>m_flashTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* m_flashTimer {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>闪烁定时器 </p>
+
+</div>
+</div>
+<a id="a75b61709efacdeb4b9b337132b7fbb7f" name="a75b61709efacdeb4b9b337132b7fbb7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b61709efacdeb4b9b337132b7fbb7f">&#9670;&#160;</a></span>m_menuPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint m_menuPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>菜单显示位置 </p>
+
+</div>
+</div>
+<a id="ac340988e31e168394f5b80b450bc9073" name="ac340988e31e168394f5b80b450bc9073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac340988e31e168394f5b80b450bc9073">&#9670;&#160;</a></span>m_pParent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* m_pParent {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>父控件，用于显示主窗口 </p>
+
+</div>
+</div>
+<a id="ac4f53ed40044d3d28b55f3476715cc4c" name="ac4f53ed40044d3d28b55f3476715cc4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f53ed40044d3d28b55f3476715cc4c">&#9670;&#160;</a></span>m_showIcon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_showIcon</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>闪烁状态标志 </p>
+
+</div>
+</div>
+<a id="a0b17f807a5987af79f34fa578719fa28" name="a0b17f807a5987af79f34fa578719fa28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b17f807a5987af79f34fa578719fa28">&#9670;&#160;</a></span>m_trayIcon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QIcon m_trayIcon {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>托盘图标 </p>
+
+</div>
+</div>
+<a id="a0f50f1c974b2a230969afa595599349a" name="a0f50f1c974b2a230969afa595599349a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f50f1c974b2a230969afa595599349a">&#9670;&#160;</a></span>m_trayMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ela_menu.html">ElaMenu</a>* m_trayMenu {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>托盘菜单 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_my_tray_icon_8h_source.html">MyTrayIcon.h</a></li>
+<li><a class="el" href="_my_tray_icon_8cpp.html">MyTrayIcon.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_my_tray_icon.html">MyTrayIcon</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: buffersink.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('buffersink_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">buffersink.h 文件参考<div class="ingroups"><a class="el" href="group__lavfi.html">libavfilter</a> &raquo; <a class="el" href="group__lavfi__buffersink.html">Buffer sink API</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>memory buffer sink API for audio and video  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="avfilter_8h_source.html">avfilter.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+buffersink.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="buffersink_8h__incl.png" border="0" usemap="#abuffersink_8h" alt=""/></div>
+<map name="abuffersink_8h" id="abuffersink_8h">
+<area shape="rect" title="memory buffer sink API for audio and video" alt="" coords="1406,5,1495,32"/>
+<area shape="rect" href="avfilter_8h.html" title="Main libavfilter public API header" alt="" coords="1415,80,1486,107"/>
+<area shape="poly" title=" " alt="" coords="1453,33,1453,64,1448,64,1448,33"/>
+<area shape="rect" title=" " alt="" coords="1870,603,1938,629"/>
+<area shape="poly" title=" " alt="" coords="1487,94,1620,104,1705,114,1793,128,1874,147,1943,172,1969,186,1990,203,2003,221,2008,241,2008,468,2001,506,1982,541,1958,571,1934,594,1930,591,1954,568,1978,538,1996,505,2003,468,2003,242,1998,223,1986,206,1967,191,1940,177,1873,153,1792,134,1704,120,1619,109,1486,99"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="245,528,379,555"/>
+<area shape="poly" title=" " alt="" coords="1415,97,1100,99,871,105,626,115,393,133,288,145,195,159,117,176,58,195,20,218,11,229,8,242,8,393,14,427,30,454,54,477,85,495,120,510,157,520,230,533,229,538,156,525,118,515,82,500,51,481,26,458,9,429,3,394,3,241,6,227,17,214,56,191,116,171,194,154,287,140,392,128,626,110,870,99,1100,94,1415,92"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="979,304,1090,331"/>
+<area shape="poly" title=" " alt="" coords="1428,110,1337,157,1072,299,1070,294,1335,152,1425,105"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="238,453,312,480"/>
+<area shape="poly" title=" " alt="" coords="1415,98,1167,108,992,117,807,132,632,151,484,175,426,190,382,206,354,223,348,232,345,242,345,319,340,354,328,388,296,442,292,440,323,386,335,353,340,318,340,241,343,230,351,220,380,201,424,185,483,170,631,145,807,126,991,112,1166,102,1414,93"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="474,379,523,405"/>
+<area shape="poly" title=" " alt="" coords="1415,108,1061,212,804,292,539,379,537,374,803,287,1059,207,1414,102"/>
+<area shape="rect" href="pixfmt_8h.html" title="pixel format definitions" alt="" coords="1488,379,1557,405"/>
+<area shape="poly" title=" " alt="" coords="1475,105,1501,125,1522,153,1533,181,1539,210,1543,268,1539,322,1532,364,1527,363,1534,321,1538,268,1534,211,1527,182,1518,156,1497,129,1472,109"/>
+<area shape="rect" href="buffer_8h.html" title="refcounted data buffer API" alt="" coords="1690,229,1803,256"/>
+<area shape="poly" title=" " alt="" coords="1477,105,1709,220,1707,224,1475,110"/>
+<area shape="rect" href="dict_8h.html" title="Public dictionary API." alt="" coords="1611,304,1712,331"/>
+<area shape="poly" title=" " alt="" coords="1487,93,1560,100,1651,120,1699,137,1744,160,1784,190,1817,228,1822,243,1817,258,1803,270,1781,282,1726,302,1724,297,1779,277,1800,266,1812,254,1817,243,1812,231,1780,194,1741,165,1696,142,1650,125,1559,105,1486,98"/>
+<area shape="rect" href="frame_8h.html" title="reference&#45;counted frame API" alt="" coords="1394,155,1507,181"/>
+<area shape="poly" title=" " alt="" coords="1453,107,1453,139,1448,139,1448,107"/>
+<area shape="rect" href="samplefmt_8h.html" title=" " alt="" coords="1219,229,1312,256"/>
+<area shape="poly" title=" " alt="" coords="1437,109,1294,222,1291,218,1433,105"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavfilter_2version_8h.html" title="Libavfilter version macros" alt="" coords="1736,304,1866,331"/>
+<area shape="poly" title=" " alt="" coords="1487,92,1544,94,1616,103,1694,121,1732,135,1768,152,1793,167,1812,183,1826,202,1839,229,1842,246,1839,263,1824,293,1819,291,1834,261,1836,246,1833,230,1821,204,1808,186,1790,172,1765,157,1730,140,1692,127,1615,109,1543,100,1487,97"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="994,379,1076,405"/>
+<area shape="poly" title=" " alt="" coords="1037,331,1037,363,1032,363,1032,331"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="1602,528,1678,555"/>
+<area shape="poly" title=" " alt="" coords="1070,329,1175,365,1309,403,1356,410,1398,411,1473,404,1508,404,1543,409,1579,424,1616,451,1628,465,1635,480,1642,512,1637,513,1630,482,1623,468,1613,455,1576,429,1541,414,1507,409,1473,410,1398,416,1355,415,1307,408,1174,370,1068,334"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="1678,453,1752,480"/>
+<area shape="poly" title=" " alt="" coords="1091,328,1663,451,1662,457,1090,333"/>
+<area shape="rect" href="error_8h.html" title="error code definitions" alt="" coords="774,528,832,555"/>
+<area shape="poly" title=" " alt="" coords="1023,333,828,519,825,515,1020,329"/>
+<area shape="poly" title=" " alt="" coords="979,323,900,327,802,337,694,354,588,381,562,394,537,408,442,433,328,458,327,452,441,428,535,403,560,389,586,376,693,349,801,332,900,322,978,317"/>
+<area shape="rect" href="mathematics_8h.html" title=" " alt="" coords="598,379,706,405"/>
+<area shape="poly" title=" " alt="" coords="979,332,721,380,720,375,978,327"/>
+<area shape="poly" title=" " alt="" coords="979,325,786,343,664,359,539,380,538,375,663,354,786,338,978,320"/>
+<area shape="poly" title=" " alt="" coords="1091,322,1261,344,1470,376,1474,377,1473,382,1469,381,1260,349,1090,328"/>
+<area shape="poly" title=" " alt="" coords="993,398,826,413,720,431,614,456,586,469,557,482,473,508,393,527,392,522,472,503,555,478,583,464,612,451,718,425,825,408,993,393"/>
+<area shape="poly" title=" " alt="" coords="1077,375,1094,379,1102,392,1099,400,1092,406,1089,401,1095,397,1097,392,1091,384,1075,381"/>
+<area shape="rect" title=" " alt="" coords="687,603,748,629"/>
+<area shape="poly" title=" " alt="" coords="993,396,909,399,808,408,759,415,716,426,682,439,659,455,645,479,643,501,648,525,660,553,672,574,689,591,685,595,668,577,655,556,643,527,637,501,640,477,655,452,679,434,715,420,758,410,807,402,909,394,993,391"/>
+<area shape="rect" title=" " alt="" coords="996,453,1074,480"/>
+<area shape="poly" title=" " alt="" coords="1037,406,1037,438,1032,438,1032,406"/>
+<area shape="rect" title=" " alt="" coords="670,528,733,555"/>
+<area shape="poly" title=" " alt="" coords="1006,408,896,456,744,524,742,519,894,451,1004,403"/>
+<area shape="rect" title=" " alt="" coords="483,453,544,480"/>
+<area shape="poly" title=" " alt="" coords="994,400,807,420,685,436,563,456,560,457,559,451,562,451,685,431,806,414,993,394"/>
+<area shape="rect" title=" " alt="" coords="1250,528,1315,555"/>
+<area shape="poly" title=" " alt="" coords="1076,390,1119,394,1168,403,1217,422,1239,435,1259,451,1270,465,1277,481,1284,512,1279,513,1272,482,1265,468,1255,455,1236,439,1214,426,1166,409,1118,399,1076,396"/>
+<area shape="rect" title=" " alt="" coords="1098,453,1158,480"/>
+<area shape="poly" title=" " alt="" coords="1053,404,1102,442,1098,446,1049,408"/>
+<area shape="rect" title=" " alt="" coords="1182,453,1245,480"/>
+<area shape="poly" title=" " alt="" coords="1067,403,1169,445,1167,450,1065,408"/>
+<area shape="rect" title=" " alt="" coords="906,453,971,480"/>
+<area shape="poly" title=" " alt="" coords="1020,408,969,446,966,442,1016,404"/>
+<area shape="poly" title=" " alt="" coords="1077,401,1285,451,1588,525,1587,530,1283,456,1076,406"/>
+<area shape="poly" title=" " alt="" coords="1076,395,1615,451,1663,456,1662,462,1614,456,1076,400"/>
+<area shape="rect" href="avconfig_8h.html" title=" " alt="" coords="1473,453,1602,480"/>
+<area shape="poly" title=" " alt="" coords="1077,397,1458,451,1457,457,1076,402"/>
+<area shape="rect" href="mem_8h.html" title="Memory handling functions" alt="" coords="669,453,731,480"/>
+<area shape="poly" title=" " alt="" coords="994,404,750,456,747,457,745,451,749,451,992,399"/>
+<area shape="poly" title=" " alt="" coords="1704,482,1665,519,1662,515,1700,479"/>
+<area shape="poly" title=" " alt="" coords="669,476,395,527,394,522,668,471"/>
+<area shape="poly" title=" " alt="" coords="709,451,746,414,771,394,799,376,839,358,882,344,963,325,964,331,884,349,841,363,801,381,774,398,749,418,712,455"/>
+<area shape="poly" title=" " alt="" coords="703,480,703,512,698,512,698,481"/>
+<area shape="poly" title=" " alt="" coords="732,469,1235,531,1235,537,731,475"/>
+<area shape="poly" title=" " alt="" coords="719,478,774,516,771,521,716,483"/>
+<area shape="poly" title=" " alt="" coords="832,542,1855,609,1855,614,832,547"/>
+<area shape="poly" title=" " alt="" coords="790,557,745,595,742,591,786,553"/>
+<area shape="poly" title=" " alt="" coords="284,479,301,513,296,516,279,482"/>
+<area shape="poly" title=" " alt="" coords="313,472,655,529,654,535,312,477"/>
+<area shape="poly" title=" " alt="" coords="312,470,375,477,629,498,877,515,1235,535,1235,540,877,521,628,504,374,483,312,476"/>
+<area shape="poly" title=" " alt="" coords="599,405,466,431,408,445,376,456,347,484,326,516,322,513,343,480,373,451,406,440,465,426,598,400"/>
+<area shape="poly" title=" " alt="" coords="629,408,552,448,550,443,627,404"/>
+<area shape="poly" title=" " alt="" coords="682,403,776,440,895,477,989,498,1083,514,1235,533,1235,538,1082,519,988,503,894,483,774,445,680,408"/>
+<area shape="poly" title=" " alt="" coords="598,406,331,456,327,457,326,452,330,451,597,400"/>
+<area shape="rect" href="intfloat_8h.html" title=" " alt="" coords="387,453,458,480"/>
+<area shape="poly" title=" " alt="" coords="613,408,474,452,473,447,611,403"/>
+<area shape="poly" title=" " alt="" coords="405,483,345,522,342,517,402,478"/>
+<area shape="poly" title=" " alt="" coords="459,475,471,477,694,506,913,523,1103,533,1235,537,1235,542,1102,538,913,529,693,511,470,483,458,480"/>
+<area shape="poly" title=" " alt="" coords="474,398,414,403,339,414,269,431,244,442,227,455,223,463,222,471,230,488,248,504,271,518,268,523,245,508,226,492,217,472,218,462,223,452,241,438,268,426,338,409,413,398,473,392"/>
+<area shape="poly" title=" " alt="" coords="523,384,554,376,666,357,777,342,963,322,964,327,778,347,666,362,555,381,524,389"/>
+<area shape="poly" title=" " alt="" coords="524,395,587,403,875,422,1101,428,1326,433,1615,451,1663,456,1662,461,1614,456,1326,438,1100,433,875,428,586,408,523,400"/>
+<area shape="rect" title=" " alt="" coords="94,453,162,480"/>
+<area shape="poly" title=" " alt="" coords="474,400,182,456,178,457,177,452,181,451,473,395"/>
+<area shape="poly" title=" " alt="" coords="1557,403,1668,445,1666,450,1555,408"/>
+<area shape="poly" title=" " alt="" coords="1528,405,1534,438,1529,439,1523,406"/>
+<area shape="poly" title=" " alt="" coords="1804,252,1846,271,1866,285,1881,302,1906,345,1912,363,1909,381,1897,400,1874,422,1789,482,1752,499,1701,512,1573,530,1438,539,1331,542,1330,537,1438,534,1572,525,1700,507,1750,494,1787,478,1871,418,1893,397,1904,379,1906,363,1902,347,1877,306,1862,289,1844,275,1802,257"/>
+<area shape="poly" title=" " alt="" coords="1682,329,1718,358,1756,396,1770,417,1778,439,1777,461,1766,482,1743,494,1701,504,1580,521,1331,540,1330,535,1580,516,1700,499,1741,489,1762,478,1772,460,1772,440,1765,420,1752,399,1715,362,1679,333"/>
+<area shape="poly" title=" " alt="" coords="1668,330,1707,438,1702,440,1663,332"/>
+<area shape="poly" title=" " alt="" coords="1481,179,1569,215,1679,253,1710,261,1738,263,1787,264,1810,266,1833,271,1856,283,1881,302,1897,322,1905,342,1907,391,1907,468,1907,587,1901,587,1901,468,1901,391,1900,343,1893,325,1877,306,1853,287,1831,276,1809,271,1786,269,1737,269,1709,266,1678,259,1567,220,1479,184"/>
+<area shape="poly" title=" " alt="" coords="1438,184,1390,221,1359,241,1325,258,1269,279,1211,294,1106,312,1105,307,1210,288,1268,273,1323,254,1356,237,1387,217,1435,180"/>
+<area shape="poly" title=" " alt="" coords="1448,183,1297,515,1292,513,1443,181"/>
+<area shape="poly" title=" " alt="" coords="1464,180,1696,440,1692,444,1460,183"/>
+<area shape="poly" title=" " alt="" coords="1394,179,1233,204,1000,245,733,304,596,341,464,381,381,414,312,448,309,443,379,409,462,376,595,335,731,299,999,240,1232,199,1393,174"/>
+<area shape="poly" title=" " alt="" coords="1457,181,1517,363,1512,365,1452,183"/>
+<area shape="poly" title=" " alt="" coords="1503,179,1681,223,1679,228,1502,185"/>
+<area shape="poly" title=" " alt="" coords="1470,180,1632,293,1629,297,1467,184"/>
+<area shape="poly" title=" " alt="" coords="1419,184,1313,226,1311,221,1417,179"/>
+<area shape="poly" title=" " alt="" coords="1218,247,976,256,809,268,630,286,453,312,370,329,294,348,225,370,166,395,118,424,83,455,74,473,76,487,88,499,108,510,165,525,230,533,229,538,164,530,106,515,85,504,71,489,69,472,79,452,115,419,163,391,223,365,292,343,369,324,452,307,629,280,808,262,976,251,1218,242"/>
+<area shape="poly" title=" " alt="" coords="1226,259,1091,301,1089,296,1224,254"/>
+<area shape="poly" title=" " alt="" coords="1269,256,1278,338,1287,453,1287,480,1286,512,1281,512,1281,480,1281,453,1273,339,1264,257"/>
+<area shape="poly" title=" " alt="" coords="1796,333,1732,441,1727,439,1792,330"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="buffersink_8h__dep__incl.png" border="0" usemap="#abuffersink_8hdep" alt=""/></div>
+<map name="abuffersink_8hdep" id="abuffersink_8hdep">
+<area shape="rect" title="memory buffer sink API for audio and video" alt="" coords="292,5,380,32"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="285,80,387,107"/>
+<area shape="poly" title=" " alt="" coords="339,48,339,80,333,80,333,48"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="70,155,165,181"/>
+<area shape="poly" title=" " alt="" coords="284,114,157,157,155,151,283,109"/>
+<area shape="rect" href="_video_player_8cpp.html" title=" " alt="" coords="188,155,305,181"/>
+<area shape="poly" title=" " alt="" coords="310,119,264,156,260,152,307,115"/>
+<area shape="rect" href="_video_player___audio_thread_8cpp.html" title=" " alt="" coords="328,155,525,181"/>
+<area shape="poly" title=" " alt="" coords="365,114,413,152,409,156,362,119"/>
+<area shape="rect" href="_video_player___video_thread_8cpp.html" title=" " alt="" coords="548,155,745,181"/>
+<area shape="poly" title=" " alt="" coords="403,108,593,151,592,157,402,113"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="5,229,115,256"/>
+<area shape="poly" title=" " alt="" coords="100,195,72,231,68,227,96,192"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="139,229,213,256"/>
+<area shape="poly" title=" " alt="" coords="139,192,168,227,164,231,135,195"/>
+</map>
+</div>
+</div>
+<p><a href="buffersink_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to use for initializing a buffersink context.  <a href="struct_a_v_buffer_sink_params.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to use for initializing an abuffersink context.  <a href="struct_a_v_a_buffer_sink_params.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga9453fc0e81d30237080b51575da0f0d8" id="r_ga9453fc0e81d30237080b51575da0f0d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#ga9453fc0e81d30237080b51575da0f0d8">AV_BUFFERSINK_FLAG_PEEK</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga9453fc0e81d30237080b51575da0f0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell av_buffersink_get_buffer_ref() to read video/samples buffer reference, but not remove it from the buffer.  <br /></td></tr>
+<tr class="separator:ga9453fc0e81d30237080b51575da0f0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade670e86ece8d740194c916fa1ea6cc0" id="r_gade670e86ece8d740194c916fa1ea6cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#gade670e86ece8d740194c916fa1ea6cc0">AV_BUFFERSINK_FLAG_NO_REQUEST</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:gade670e86ece8d740194c916fa1ea6cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell av_buffersink_get_buffer_ref() not to request a frame from its input.  <br /></td></tr>
+<tr class="separator:gade670e86ece8d740194c916fa1ea6cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:gaef17fdaa5cb0fb9211aa6687e46a2ebc" id="r_gaef17fdaa5cb0fb9211aa6687e46a2ebc"><td class="memItemLeft" align="right" valign="top">typedef struct AVBufferSinkParams&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#gaef17fdaa5cb0fb9211aa6687e46a2ebc">AVBufferSinkParams</a></td></tr>
+<tr class="memdesc:gaef17fdaa5cb0fb9211aa6687e46a2ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to use for initializing a buffersink context.  <br /></td></tr>
+<tr class="separator:gaef17fdaa5cb0fb9211aa6687e46a2ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35467dbd36daf6334721b8f663ae86e0" id="r_ga35467dbd36daf6334721b8f663ae86e0"><td class="memItemLeft" align="right" valign="top">typedef struct AVABufferSinkParams&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#ga35467dbd36daf6334721b8f663ae86e0">AVABufferSinkParams</a></td></tr>
+<tr class="memdesc:ga35467dbd36daf6334721b8f663ae86e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to use for initializing an abuffersink context.  <br /></td></tr>
+<tr class="separator:ga35467dbd36daf6334721b8f663ae86e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga71ae9c529c8da51681e12faa37d1a395" id="r_ga71ae9c529c8da51681e12faa37d1a395"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#ga71ae9c529c8da51681e12faa37d1a395">av_buffersink_get_frame_flags</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:ga71ae9c529c8da51681e12faa37d1a395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a frame with filtered data from sink and put it in frame.  <br /></td></tr>
+<tr class="separator:ga71ae9c529c8da51681e12faa37d1a395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe42a76b75acd9eac283f084b38486e4" id="r_gabe42a76b75acd9eac283f084b38486e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#gabe42a76b75acd9eac283f084b38486e4">av_buffersink_params_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gabe42a76b75acd9eac283f084b38486e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="struct_a_v_buffer_sink_params.html" title="Struct to use for initializing a buffersink context.">AVBufferSinkParams</a> structure.  <br /></td></tr>
+<tr class="separator:gabe42a76b75acd9eac283f084b38486e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f9dfe2525d8114c4b9574aa1a1b0ca3" id="r_ga4f9dfe2525d8114c4b9574aa1a1b0ca3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#ga4f9dfe2525d8114c4b9574aa1a1b0ca3">av_abuffersink_params_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ga4f9dfe2525d8114c4b9574aa1a1b0ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="struct_a_v_a_buffer_sink_params.html" title="Struct to use for initializing an abuffersink context.">AVABufferSinkParams</a> structure.  <br /></td></tr>
+<tr class="separator:ga4f9dfe2525d8114c4b9574aa1a1b0ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga359d7d1e42c27ca14c07559d4e9adba7" id="r_ga359d7d1e42c27ca14c07559d4e9adba7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#ga359d7d1e42c27ca14c07559d4e9adba7">av_buffersink_set_frame_size</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, unsigned frame_size)</td></tr>
+<tr class="memdesc:ga359d7d1e42c27ca14c07559d4e9adba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frame size for an audio buffer sink.  <br /></td></tr>
+<tr class="separator:ga359d7d1e42c27ca14c07559d4e9adba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1eb8bbf583ffb7cc29aaa1944b1e699c" id="r_ga1eb8bbf583ffb7cc29aaa1944b1e699c"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#ga1eb8bbf583ffb7cc29aaa1944b1e699c">av_buffersink_get_type</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:ga1eb8bbf583ffb7cc29aaa1944b1e699c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc82f65ec7f4fa47c5216260639258a1" id="r_gabc82f65ec7f4fa47c5216260639258a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#gabc82f65ec7f4fa47c5216260639258a1">av_buffersink_get_time_base</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:gabc82f65ec7f4fa47c5216260639258a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga402ddbef6f7347869725696846ac81eb" id="r_ga402ddbef6f7347869725696846ac81eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#ga402ddbef6f7347869725696846ac81eb">av_buffersink_get_format</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:ga402ddbef6f7347869725696846ac81eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55614fd28de2fa05b04f427390061d5b" id="r_ga55614fd28de2fa05b04f427390061d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#ga55614fd28de2fa05b04f427390061d5b">av_buffersink_get_frame_rate</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:ga55614fd28de2fa05b04f427390061d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8c86515d2ef56090395dfd74854c835" id="r_gac8c86515d2ef56090395dfd74854c835"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#gac8c86515d2ef56090395dfd74854c835">av_buffersink_get_w</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:gac8c86515d2ef56090395dfd74854c835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga955ecf3680e71e10429d7500343be25c" id="r_ga955ecf3680e71e10429d7500343be25c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#ga955ecf3680e71e10429d7500343be25c">av_buffersink_get_h</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:ga955ecf3680e71e10429d7500343be25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa38ee33e1c7f6f7cb190bd2330e5f848" id="r_gaa38ee33e1c7f6f7cb190bd2330e5f848"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#gaa38ee33e1c7f6f7cb190bd2330e5f848">av_buffersink_get_sample_aspect_ratio</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:gaa38ee33e1c7f6f7cb190bd2330e5f848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace78881c41bf449527826b95d21279a2" id="r_gace78881c41bf449527826b95d21279a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#gace78881c41bf449527826b95d21279a2">av_buffersink_get_channels</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:gace78881c41bf449527826b95d21279a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87e21bf198fd932c30cc3cdc6b16bff1" id="r_ga87e21bf198fd932c30cc3cdc6b16bff1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#ga87e21bf198fd932c30cc3cdc6b16bff1">av_buffersink_get_channel_layout</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:ga87e21bf198fd932c30cc3cdc6b16bff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2af714e82f48759551acdbc4488ded4a" id="r_ga2af714e82f48759551acdbc4488ded4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#ga2af714e82f48759551acdbc4488ded4a">av_buffersink_get_sample_rate</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:ga2af714e82f48759551acdbc4488ded4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e34e0529da6906449524ca1be706794" id="r_ga0e34e0529da6906449524ca1be706794"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html#ga0e34e0529da6906449524ca1be706794">av_buffersink_get_hw_frames_ctx</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx)</td></tr>
+<tr class="separator:ga0e34e0529da6906449524ca1be706794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga653228f4cbca427c654d844a5fc59cfa" id="r_ga653228f4cbca427c654d844a5fc59cfa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#ga653228f4cbca427c654d844a5fc59cfa">av_buffersink_get_frame</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:ga653228f4cbca427c654d844a5fc59cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a frame with filtered data from sink and put it in frame.  <br /></td></tr>
+<tr class="separator:ga653228f4cbca427c654d844a5fc59cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c06b3744579f165cc032160c154828a" id="r_ga9c06b3744579f165cc032160c154828a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink.html#ga9c06b3744579f165cc032160c154828a">av_buffersink_get_samples</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int nb_samples)</td></tr>
+<tr class="memdesc:ga9c06b3744579f165cc032160c154828a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="group__lavfi__buffersink.html#ga653228f4cbca427c654d844a5fc59cfa" title="Get a frame with filtered data from sink and put it in frame.">av_buffersink_get_frame()</a>, but with the ability to specify the number of samples read.  <br /></td></tr>
+<tr class="separator:ga9c06b3744579f165cc032160c154828a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>memory buffer sink API for audio and video </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_67f9c38f445dd51fe8a940e2fa50e51c.html">libavfilter</a></li><li class="navelem"><a class="el" href="buffersink_8h.html">buffersink.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

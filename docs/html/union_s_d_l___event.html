@@ -1,0 +1,812 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_Event联合体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('union_s_d_l___event.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="union_s_d_l___event-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">SDL_Event联合体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>General event structure  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_s_d_l__events_8h_source.html">SDL_events.h</a>&gt;</code></p>
+<div class="dynheader">
+SDL_Event 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="union_s_d_l___event__coll__graph.png" border="0" usemap="#a_s_d_l___event_coll__map" alt="Collaboration graph"/></div>
+<map name="a_s_d_l___event_coll__map" id="a_s_d_l___event_coll__map">
+<area shape="rect" title="General event structure" alt="" coords="732,746,821,772"/>
+<area shape="rect" href="struct_s_d_l___common_event.html" title="Fields shared by every event" alt="" coords="450,11,591,38"/>
+<area shape="poly" title=" " alt="" coords="607,14,635,16,662,23,688,34,710,52,720,68,728,94,742,170,753,271,762,384,773,605,778,745,772,745,768,605,757,384,748,271,737,171,723,95,715,70,706,55,685,39,661,28,634,21,606,19"/>
+<area shape="rect" href="struct_s_d_l___display_event.html" title="Display state change event data (event.display." alt="" coords="454,62,586,88"/>
+<area shape="poly" title=" " alt="" coords="602,64,631,66,660,73,687,84,710,103,719,117,727,141,740,212,760,409,772,614,777,745,772,745,767,614,755,409,735,213,722,143,714,120,706,106,684,89,658,78,630,72,602,69"/>
+<area shape="rect" href="struct_s_d_l___window_event.html" title="Window state change event data (event.window." alt="" coords="452,112,588,139"/>
+<area shape="poly" title=" " alt="" coords="603,115,632,117,660,124,687,135,710,153,718,167,726,189,739,253,759,434,771,623,777,745,772,745,766,623,753,435,733,254,721,190,714,169,706,157,685,140,659,129,631,123,603,120"/>
+<area shape="rect" href="struct_s_d_l___keyboard_event.html" title="Keyboard button event structure (event.key." alt="" coords="448,163,592,190"/>
+<area shape="poly" title=" " alt="" coords="608,167,635,169,663,176,688,188,710,205,725,237,737,296,757,461,770,632,777,745,772,745,765,633,752,461,732,297,720,239,706,209,685,192,661,181,634,175,607,172"/>
+<area shape="rect" href="struct_s_d_l___keysym.html" title="The SDL keysym structure, used in key events." alt="" coords="208,163,310,190"/>
+<area shape="poly" title=" " alt="" coords="326,174,448,174,448,179,326,179"/>
+<area shape="rect" href="struct_s_d_l___text_editing_event.html" title="Keyboard text editing event structure (event.edit." alt="" coords="444,214,597,240"/>
+<area shape="poly" title=" " alt="" coords="613,217,665,227,689,238,710,254,723,271,734,294,751,352,763,423,771,500,778,648,778,745,773,745,773,648,766,501,758,424,746,353,729,296,718,274,706,258,686,242,663,232,612,222"/>
+<area shape="rect" href="struct_s_d_l___text_editing_ext_event.html" title="Extended keyboard text editing event structure (event.editExt." alt="" coords="434,264,607,291"/>
+<area shape="poly" title=" " alt="" coords="623,269,670,279,691,290,710,305,732,340,748,392,760,455,768,524,776,657,778,745,773,745,771,657,763,525,755,456,743,393,727,342,706,309,688,295,668,284,622,274"/>
+<area shape="rect" href="struct_s_d_l___text_input_event.html" title="Keyboard text input event structure (event.text." alt="" coords="449,315,591,342"/>
+<area shape="poly" title=" " alt="" coords="607,320,662,330,688,341,710,358,730,389,745,434,756,489,765,550,774,666,778,745,772,745,769,666,759,550,751,490,739,436,725,391,706,362,685,346,660,335,606,325"/>
+<area shape="rect" href="struct_s_d_l___mouse_motion_event.html" title="Mouse motion event structure (event.motion." alt="" coords="437,366,603,392"/>
+<area shape="poly" title=" " alt="" coords="620,374,668,386,690,397,710,413,727,439,741,478,761,576,772,676,777,745,772,745,767,676,756,577,736,479,722,442,706,417,688,402,666,391,618,379"/>
+<area shape="rect" href="struct_s_d_l___mouse_button_event.html" title="Mouse button event structure (event.button." alt="" coords="438,416,603,443"/>
+<area shape="poly" title=" " alt="" coords="619,428,668,441,690,452,710,468,725,489,737,521,757,602,770,685,777,745,771,745,765,686,752,603,732,523,720,492,706,471,687,457,666,445,618,433"/>
+<area shape="rect" href="struct_s_d_l___mouse_wheel_event.html" title="Mouse wheel event structure (event.wheel." alt="" coords="438,467,602,494"/>
+<area shape="poly" title=" " alt="" coords="618,482,667,496,690,508,710,524,732,549,748,579,760,610,769,643,777,702,778,745,773,745,772,703,764,644,755,612,743,581,727,552,706,528,687,512,665,501,617,487"/>
+<area shape="rect" href="struct_s_d_l___joy_axis_event.html" title="Joystick axis motion event structure (event.jaxis." alt="" coords="452,518,588,544"/>
+<area shape="poly" title=" " alt="" coords="604,534,660,549,686,562,710,580,727,599,741,620,761,667,772,711,777,745,771,745,767,712,756,669,736,623,723,602,707,584,684,567,658,554,603,539"/>
+<area shape="rect" href="struct_s_d_l___joy_ball_event.html" title="Joystick trackball motion event structure (event.jball." alt="" coords="454,568,586,595"/>
+<area shape="poly" title=" " alt="" coords="602,587,658,603,685,616,710,633,735,660,753,691,774,744,769,746,748,693,730,663,707,637,683,621,656,608,601,592"/>
+<area shape="rect" href="struct_s_d_l___joy_hat_event.html" title="Joystick hat position change event structure (event.jhat." alt="" coords="455,619,585,646"/>
+<area shape="poly" title=" " alt="" coords="601,641,656,657,710,682,745,713,769,744,764,747,741,716,707,686,655,662,600,646"/>
+<area shape="rect" href="struct_s_d_l___joy_button_event.html" title="Joystick button event structure (event.jbutton." alt="" coords="446,670,594,696"/>
+<area shape="poly" title=" " alt="" coords="610,695,659,706,709,722,753,743,751,748,707,727,658,712,608,700"/>
+<area shape="rect" href="struct_s_d_l___joy_device_event.html" title="Joystick device event structure (event.jdevice." alt="" coords="445,720,595,747"/>
+<area shape="poly" title=" " alt="" coords="611,740,732,752,731,757,610,745"/>
+<area shape="rect" href="struct_s_d_l___joy_battery_event.html" title="Joysick battery level change event structure (event.jbattery." alt="" coords="444,771,596,798"/>
+<area shape="poly" title=" " alt="" coords="611,779,708,771,731,767,732,772,709,776,612,785"/>
+<area shape="rect" href="struct_s_d_l___controller_axis_event.html" title="Game controller axis motion event structure (event.caxis." alt="" coords="435,822,605,848"/>
+<area shape="poly" title=" " alt="" coords="620,822,664,813,707,799,734,786,757,770,760,775,737,790,709,804,666,818,621,827"/>
+<area shape="rect" href="struct_s_d_l___controller_button_event.html" title="Game controller button event structure (event.cbutton." alt="" coords="429,872,611,899"/>
+<area shape="poly" title=" " alt="" coords="626,870,668,857,707,838,726,823,742,805,765,771,770,774,746,809,729,827,710,843,670,862,627,875"/>
+<area shape="rect" href="struct_s_d_l___controller_device_event.html" title="Controller device event structure (event.cdevice." alt="" coords="428,923,613,950"/>
+<area shape="poly" title=" " alt="" coords="627,923,669,908,707,886,731,859,750,828,770,772,775,774,754,830,736,863,710,890,671,913,629,928"/>
+<area shape="rect" href="struct_s_d_l___controller_touchpad_event.html" title="Game controller touchpad event structure (event.ctouchpad." alt="" coords="420,974,620,1000"/>
+<area shape="poly" title=" " alt="" coords="634,974,673,960,707,938,724,920,737,898,757,851,767,806,772,772,777,773,773,807,762,853,742,901,728,923,710,942,675,965,636,979"/>
+<area shape="rect" href="struct_s_d_l___controller_sensor_event.html" title="Game controller sensor event structure (event.csensor." alt="" coords="428,1024,613,1051"/>
+<area shape="poly" title=" " alt="" coords="628,1030,670,1017,707,993,728,968,744,939,756,907,764,875,772,815,773,772,778,773,777,816,769,876,761,909,749,941,732,971,710,997,672,1022,629,1035"/>
+<area shape="rect" href="struct_s_d_l___audio_device_event.html" title="Audio device event structure (event.adevice." alt="" coords="439,1075,601,1102"/>
+<area shape="poly" title=" " alt="" coords="616,1086,665,1074,687,1063,706,1048,720,1027,732,996,752,916,765,832,771,773,777,773,770,833,757,917,738,998,725,1030,710,1051,690,1067,667,1079,618,1091"/>
+<area shape="rect" href="struct_s_d_l___sensor_event.html" title="Sensor event structure (event.sensor." alt="" coords="456,1126,585,1152"/>
+<area shape="poly" title=" " alt="" coords="600,1141,629,1138,657,1131,684,1120,706,1102,723,1077,736,1040,756,942,767,842,772,772,777,773,772,843,761,943,741,1041,727,1080,710,1106,686,1124,659,1136,630,1143,601,1146"/>
+<area shape="rect" href="struct_s_d_l___quit_event.html" title="The &quot;quit requested&quot; event" alt="" coords="464,1176,576,1203"/>
+<area shape="poly" title=" " alt="" coords="592,1193,622,1191,653,1185,682,1174,706,1156,725,1126,739,1082,751,1027,759,968,769,852,772,772,778,773,774,852,765,968,756,1028,745,1083,730,1129,710,1159,684,1178,655,1190,623,1197,592,1199"/>
+<area shape="rect" href="struct_s_d_l___user_event.html" title="A user&#45;defined event type (event.user." alt="" coords="462,1227,578,1254"/>
+<area shape="poly" title=" " alt="" coords="594,1245,624,1244,654,1238,682,1227,706,1209,727,1175,743,1124,755,1062,763,993,771,861,773,773,778,773,776,861,768,994,760,1063,748,1126,732,1178,710,1213,685,1232,656,1243,624,1249,594,1251"/>
+<area shape="rect" href="struct_s_d_l___sys_w_m_event.html" title="A video driver dependent system event (event.syswm." alt="" coords="452,1278,588,1304"/>
+<area shape="poly" title=" " alt="" coords="603,1297,631,1295,659,1290,684,1279,706,1262,719,1246,729,1225,746,1167,759,1096,766,1019,773,870,773,773,778,773,778,870,772,1019,764,1097,752,1168,734,1227,723,1249,710,1266,687,1284,660,1295,632,1301,603,1303"/>
+<area shape="rect" href="struct_s_d_l___sys_w_mmsg.html" title="The custom event structure." alt="" coords="196,1278,322,1304"/>
+<area shape="poly" title=" " alt="" coords="337,1288,452,1288,452,1294,337,1294"/>
+<area shape="rect" href="struct_s_d_l__version.html" title="Information about the version of SDL in use." alt="" coords="5,1278,102,1304"/>
+<area shape="poly" title=" " alt="" coords="117,1288,195,1288,195,1294,117,1294"/>
+<area shape="rect" href="struct_s_d_l___touch_finger_event.html" title="Touch finger event structure (event.tfinger." alt="" coords="440,1328,600,1355"/>
+<area shape="poly" title=" " alt="" coords="615,1348,665,1340,687,1329,706,1315,720,1284,732,1226,752,1060,765,886,772,773,777,773,771,887,757,1060,737,1226,725,1286,710,1318,690,1334,666,1345,616,1354"/>
+<area shape="rect" href="struct_s_d_l___multi_gesture_event.html" title="Multiple Finger Gesture Event (event.mgesture." alt="" coords="439,1379,601,1406"/>
+<area shape="poly" title=" " alt="" coords="616,1400,665,1391,687,1381,706,1367,714,1354,721,1333,734,1268,754,1086,766,896,772,773,777,773,772,896,759,1087,739,1269,726,1334,719,1356,710,1370,690,1386,667,1396,617,1405"/>
+<area shape="rect" href="struct_s_d_l___dollar_gesture_event.html" title="Dollar Gesture Event (event.dgesture." alt="" coords="436,1430,604,1456"/>
+<area shape="poly" title=" " alt="" coords="619,1451,667,1443,688,1433,706,1419,714,1405,722,1382,736,1311,756,1112,767,906,772,773,777,773,773,906,761,1113,741,1312,727,1383,719,1407,710,1422,691,1437,668,1448,620,1457"/>
+<area shape="rect" href="struct_s_d_l___drop_event.html" title="An event used to request a file open by the system (event.drop." alt="" coords="462,1480,578,1507"/>
+<area shape="poly" title=" " alt="" coords="594,1503,624,1503,654,1498,682,1488,706,1470,715,1456,723,1431,737,1354,749,1253,757,1138,768,915,772,773,778,773,773,915,763,1139,754,1253,743,1355,728,1432,720,1458,710,1474,685,1493,656,1503,624,1508,594,1508"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:aa40a9b05c3154032b9f2d7220e9f08dc" id="r_aa40a9b05c3154032b9f2d7220e9f08dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa40a9b05c3154032b9f2d7220e9f08dc">type</a></td></tr>
+<tr class="memdesc:aa40a9b05c3154032b9f2d7220e9f08dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event type, shared with all events  <br /></td></tr>
+<tr class="separator:aa40a9b05c3154032b9f2d7220e9f08dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f63dd7ac333bd53cd0b4a7436b8653c" id="r_a4f63dd7ac333bd53cd0b4a7436b8653c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___common_event.html">SDL_CommonEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f63dd7ac333bd53cd0b4a7436b8653c">common</a></td></tr>
+<tr class="memdesc:a4f63dd7ac333bd53cd0b4a7436b8653c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common event data  <br /></td></tr>
+<tr class="separator:a4f63dd7ac333bd53cd0b4a7436b8653c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05ab40464018aa6b40cf2454b4a2d858" id="r_a05ab40464018aa6b40cf2454b4a2d858"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___display_event.html">SDL_DisplayEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05ab40464018aa6b40cf2454b4a2d858">display</a></td></tr>
+<tr class="memdesc:a05ab40464018aa6b40cf2454b4a2d858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display event data  <br /></td></tr>
+<tr class="separator:a05ab40464018aa6b40cf2454b4a2d858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e92ef7347f0ea66977d7edd8129058" id="r_a83e92ef7347f0ea66977d7edd8129058"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___window_event.html">SDL_WindowEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83e92ef7347f0ea66977d7edd8129058">window</a></td></tr>
+<tr class="memdesc:a83e92ef7347f0ea66977d7edd8129058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window event data  <br /></td></tr>
+<tr class="separator:a83e92ef7347f0ea66977d7edd8129058"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2944bdaafa644e5dd1007a8514d73977" id="r_a2944bdaafa644e5dd1007a8514d73977"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___keyboard_event.html">SDL_KeyboardEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2944bdaafa644e5dd1007a8514d73977">key</a></td></tr>
+<tr class="memdesc:a2944bdaafa644e5dd1007a8514d73977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyboard event data  <br /></td></tr>
+<tr class="separator:a2944bdaafa644e5dd1007a8514d73977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ebe320ebd3dade28db667edae0673ec" id="r_a5ebe320ebd3dade28db667edae0673ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___text_editing_event.html">SDL_TextEditingEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ebe320ebd3dade28db667edae0673ec">edit</a></td></tr>
+<tr class="memdesc:a5ebe320ebd3dade28db667edae0673ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text editing event data  <br /></td></tr>
+<tr class="separator:a5ebe320ebd3dade28db667edae0673ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c9b361333add1170f929e0346027092" id="r_a8c9b361333add1170f929e0346027092"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___text_editing_ext_event.html">SDL_TextEditingExtEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c9b361333add1170f929e0346027092">editExt</a></td></tr>
+<tr class="memdesc:a8c9b361333add1170f929e0346027092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended text editing event data  <br /></td></tr>
+<tr class="separator:a8c9b361333add1170f929e0346027092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ef1fa3d7a6b36ccac384be7051491a" id="r_aa5ef1fa3d7a6b36ccac384be7051491a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___text_input_event.html">SDL_TextInputEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ef1fa3d7a6b36ccac384be7051491a">text</a></td></tr>
+<tr class="memdesc:aa5ef1fa3d7a6b36ccac384be7051491a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text input event data  <br /></td></tr>
+<tr class="separator:aa5ef1fa3d7a6b36ccac384be7051491a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b74ec063362bbd2e4ec6d1a878eb0ca" id="r_a8b74ec063362bbd2e4ec6d1a878eb0ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___mouse_motion_event.html">SDL_MouseMotionEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b74ec063362bbd2e4ec6d1a878eb0ca">motion</a></td></tr>
+<tr class="memdesc:a8b74ec063362bbd2e4ec6d1a878eb0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mouse motion event data  <br /></td></tr>
+<tr class="separator:a8b74ec063362bbd2e4ec6d1a878eb0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c8b783a58353ba95917b1756af68d9" id="r_a84c8b783a58353ba95917b1756af68d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___mouse_button_event.html">SDL_MouseButtonEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84c8b783a58353ba95917b1756af68d9">button</a></td></tr>
+<tr class="memdesc:a84c8b783a58353ba95917b1756af68d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mouse button event data  <br /></td></tr>
+<tr class="separator:a84c8b783a58353ba95917b1756af68d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64774818699f12da4c6160fd5ec72200" id="r_a64774818699f12da4c6160fd5ec72200"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___mouse_wheel_event.html">SDL_MouseWheelEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64774818699f12da4c6160fd5ec72200">wheel</a></td></tr>
+<tr class="memdesc:a64774818699f12da4c6160fd5ec72200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mouse wheel event data  <br /></td></tr>
+<tr class="separator:a64774818699f12da4c6160fd5ec72200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6be0bb6f456b320e33d344ae3da7c5" id="r_a4b6be0bb6f456b320e33d344ae3da7c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___joy_axis_event.html">SDL_JoyAxisEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b6be0bb6f456b320e33d344ae3da7c5">jaxis</a></td></tr>
+<tr class="memdesc:a4b6be0bb6f456b320e33d344ae3da7c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joystick axis event data  <br /></td></tr>
+<tr class="separator:a4b6be0bb6f456b320e33d344ae3da7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7002a9bea0e40a43f41df855bc9782" id="r_a3a7002a9bea0e40a43f41df855bc9782"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___joy_ball_event.html">SDL_JoyBallEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a7002a9bea0e40a43f41df855bc9782">jball</a></td></tr>
+<tr class="memdesc:a3a7002a9bea0e40a43f41df855bc9782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joystick ball event data  <br /></td></tr>
+<tr class="separator:a3a7002a9bea0e40a43f41df855bc9782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea419b4a0b6aa542b5e3c8378b488dd7" id="r_aea419b4a0b6aa542b5e3c8378b488dd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___joy_hat_event.html">SDL_JoyHatEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea419b4a0b6aa542b5e3c8378b488dd7">jhat</a></td></tr>
+<tr class="memdesc:aea419b4a0b6aa542b5e3c8378b488dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joystick hat event data  <br /></td></tr>
+<tr class="separator:aea419b4a0b6aa542b5e3c8378b488dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad723f7a3adf34248d74786401a257cd3" id="r_ad723f7a3adf34248d74786401a257cd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___joy_button_event.html">SDL_JoyButtonEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad723f7a3adf34248d74786401a257cd3">jbutton</a></td></tr>
+<tr class="memdesc:ad723f7a3adf34248d74786401a257cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joystick button event data  <br /></td></tr>
+<tr class="separator:ad723f7a3adf34248d74786401a257cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc807a742e4243fe2e46276ebac7290" id="r_a3cc807a742e4243fe2e46276ebac7290"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___joy_device_event.html">SDL_JoyDeviceEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cc807a742e4243fe2e46276ebac7290">jdevice</a></td></tr>
+<tr class="memdesc:a3cc807a742e4243fe2e46276ebac7290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joystick device change event data  <br /></td></tr>
+<tr class="separator:a3cc807a742e4243fe2e46276ebac7290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a587af67a217e21e1e8df795252672838" id="r_a587af67a217e21e1e8df795252672838"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___joy_battery_event.html">SDL_JoyBatteryEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a587af67a217e21e1e8df795252672838">jbattery</a></td></tr>
+<tr class="memdesc:a587af67a217e21e1e8df795252672838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joystick battery event data  <br /></td></tr>
+<tr class="separator:a587af67a217e21e1e8df795252672838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8486acab465238416da493c3cc9fc13" id="r_af8486acab465238416da493c3cc9fc13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___controller_axis_event.html">SDL_ControllerAxisEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8486acab465238416da493c3cc9fc13">caxis</a></td></tr>
+<tr class="memdesc:af8486acab465238416da493c3cc9fc13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game Controller axis event data  <br /></td></tr>
+<tr class="separator:af8486acab465238416da493c3cc9fc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3737e24bb0b43344c5c0c42a3bd164fa" id="r_a3737e24bb0b43344c5c0c42a3bd164fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___controller_button_event.html">SDL_ControllerButtonEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3737e24bb0b43344c5c0c42a3bd164fa">cbutton</a></td></tr>
+<tr class="memdesc:a3737e24bb0b43344c5c0c42a3bd164fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game Controller button event data  <br /></td></tr>
+<tr class="separator:a3737e24bb0b43344c5c0c42a3bd164fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c83f444a0a9d6f2e7d86244f61e663" id="r_a03c83f444a0a9d6f2e7d86244f61e663"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___controller_device_event.html">SDL_ControllerDeviceEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03c83f444a0a9d6f2e7d86244f61e663">cdevice</a></td></tr>
+<tr class="memdesc:a03c83f444a0a9d6f2e7d86244f61e663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game Controller device event data  <br /></td></tr>
+<tr class="separator:a03c83f444a0a9d6f2e7d86244f61e663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b091325592de23edc3ca8188dffd1b" id="r_a67b091325592de23edc3ca8188dffd1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___controller_touchpad_event.html">SDL_ControllerTouchpadEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67b091325592de23edc3ca8188dffd1b">ctouchpad</a></td></tr>
+<tr class="memdesc:a67b091325592de23edc3ca8188dffd1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game Controller touchpad event data  <br /></td></tr>
+<tr class="separator:a67b091325592de23edc3ca8188dffd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c40c0f0211846d841c06dac81baf6b6" id="r_a0c40c0f0211846d841c06dac81baf6b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___controller_sensor_event.html">SDL_ControllerSensorEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c40c0f0211846d841c06dac81baf6b6">csensor</a></td></tr>
+<tr class="memdesc:a0c40c0f0211846d841c06dac81baf6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game Controller sensor event data  <br /></td></tr>
+<tr class="separator:a0c40c0f0211846d841c06dac81baf6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131b624c127c588249ee4dc2ad8f0891" id="r_a131b624c127c588249ee4dc2ad8f0891"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___audio_device_event.html">SDL_AudioDeviceEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a131b624c127c588249ee4dc2ad8f0891">adevice</a></td></tr>
+<tr class="memdesc:a131b624c127c588249ee4dc2ad8f0891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Audio device event data  <br /></td></tr>
+<tr class="separator:a131b624c127c588249ee4dc2ad8f0891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c2b4cb473687c8409f3520b8bebc2fc" id="r_a2c2b4cb473687c8409f3520b8bebc2fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___sensor_event.html">SDL_SensorEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c2b4cb473687c8409f3520b8bebc2fc">sensor</a></td></tr>
+<tr class="memdesc:a2c2b4cb473687c8409f3520b8bebc2fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor event data  <br /></td></tr>
+<tr class="separator:a2c2b4cb473687c8409f3520b8bebc2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f33cf663e5a5227cc5b681017af20c" id="r_a08f33cf663e5a5227cc5b681017af20c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___quit_event.html">SDL_QuitEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08f33cf663e5a5227cc5b681017af20c">quit</a></td></tr>
+<tr class="memdesc:a08f33cf663e5a5227cc5b681017af20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quit request event data  <br /></td></tr>
+<tr class="separator:a08f33cf663e5a5227cc5b681017af20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ed3513e4b2533a94bb7bc123294720" id="r_a32ed3513e4b2533a94bb7bc123294720"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___user_event.html">SDL_UserEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32ed3513e4b2533a94bb7bc123294720">user</a></td></tr>
+<tr class="memdesc:a32ed3513e4b2533a94bb7bc123294720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom event data  <br /></td></tr>
+<tr class="separator:a32ed3513e4b2533a94bb7bc123294720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97fa33bbc633db23ef6e2df72ad7d7d2" id="r_a97fa33bbc633db23ef6e2df72ad7d7d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___sys_w_m_event.html">SDL_SysWMEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97fa33bbc633db23ef6e2df72ad7d7d2">syswm</a></td></tr>
+<tr class="memdesc:a97fa33bbc633db23ef6e2df72ad7d7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">System dependent window event data  <br /></td></tr>
+<tr class="separator:a97fa33bbc633db23ef6e2df72ad7d7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c9be16d80e9c03a6ef9154be5de440e" id="r_a7c9be16d80e9c03a6ef9154be5de440e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___touch_finger_event.html">SDL_TouchFingerEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c9be16d80e9c03a6ef9154be5de440e">tfinger</a></td></tr>
+<tr class="memdesc:a7c9be16d80e9c03a6ef9154be5de440e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch finger event data  <br /></td></tr>
+<tr class="separator:a7c9be16d80e9c03a6ef9154be5de440e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0605c4f966521b135a1a429a2a255f4" id="r_aa0605c4f966521b135a1a429a2a255f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___multi_gesture_event.html">SDL_MultiGestureEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0605c4f966521b135a1a429a2a255f4">mgesture</a></td></tr>
+<tr class="memdesc:aa0605c4f966521b135a1a429a2a255f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gesture event data  <br /></td></tr>
+<tr class="separator:aa0605c4f966521b135a1a429a2a255f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695fce66f9cbe412fbe3fa2bb4b17eb8" id="r_a695fce66f9cbe412fbe3fa2bb4b17eb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___dollar_gesture_event.html">SDL_DollarGestureEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a695fce66f9cbe412fbe3fa2bb4b17eb8">dgesture</a></td></tr>
+<tr class="memdesc:a695fce66f9cbe412fbe3fa2bb4b17eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gesture event data  <br /></td></tr>
+<tr class="separator:a695fce66f9cbe412fbe3fa2bb4b17eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248bdfd9877f986c05513b9362039bf0" id="r_a248bdfd9877f986c05513b9362039bf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s_d_l___drop_event.html">SDL_DropEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a248bdfd9877f986c05513b9362039bf0">drop</a></td></tr>
+<tr class="memdesc:a248bdfd9877f986c05513b9362039bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drag and drop event data  <br /></td></tr>
+<tr class="separator:a248bdfd9877f986c05513b9362039bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af41f9d968df5d78038f11eef92f14bbd" id="r_af41f9d968df5d78038f11eef92f14bbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af41f9d968df5d78038f11eef92f14bbd">padding</a> [sizeof(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *)&lt;=8 ? 56 :sizeof(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *)==16 ? 64 :3 *sizeof(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *)]</td></tr>
+<tr class="separator:af41f9d968df5d78038f11eef92f14bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>General event structure </p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="a131b624c127c588249ee4dc2ad8f0891" name="a131b624c127c588249ee4dc2ad8f0891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a131b624c127c588249ee4dc2ad8f0891">&#9670;&#160;</a></span>adevice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___audio_device_event.html">SDL_AudioDeviceEvent</a> adevice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Audio device event data </p>
+
+</div>
+</div>
+<a id="a84c8b783a58353ba95917b1756af68d9" name="a84c8b783a58353ba95917b1756af68d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84c8b783a58353ba95917b1756af68d9">&#9670;&#160;</a></span>button</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___mouse_button_event.html">SDL_MouseButtonEvent</a> button</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mouse button event data </p>
+
+</div>
+</div>
+<a id="af8486acab465238416da493c3cc9fc13" name="af8486acab465238416da493c3cc9fc13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8486acab465238416da493c3cc9fc13">&#9670;&#160;</a></span>caxis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___controller_axis_event.html">SDL_ControllerAxisEvent</a> caxis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Game Controller axis event data </p>
+
+</div>
+</div>
+<a id="a3737e24bb0b43344c5c0c42a3bd164fa" name="a3737e24bb0b43344c5c0c42a3bd164fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3737e24bb0b43344c5c0c42a3bd164fa">&#9670;&#160;</a></span>cbutton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___controller_button_event.html">SDL_ControllerButtonEvent</a> cbutton</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Game Controller button event data </p>
+
+</div>
+</div>
+<a id="a03c83f444a0a9d6f2e7d86244f61e663" name="a03c83f444a0a9d6f2e7d86244f61e663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c83f444a0a9d6f2e7d86244f61e663">&#9670;&#160;</a></span>cdevice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___controller_device_event.html">SDL_ControllerDeviceEvent</a> cdevice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Game Controller device event data </p>
+
+</div>
+</div>
+<a id="a4f63dd7ac333bd53cd0b4a7436b8653c" name="a4f63dd7ac333bd53cd0b4a7436b8653c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f63dd7ac333bd53cd0b4a7436b8653c">&#9670;&#160;</a></span>common</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___common_event.html">SDL_CommonEvent</a> common</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Common event data </p>
+
+</div>
+</div>
+<a id="a0c40c0f0211846d841c06dac81baf6b6" name="a0c40c0f0211846d841c06dac81baf6b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c40c0f0211846d841c06dac81baf6b6">&#9670;&#160;</a></span>csensor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___controller_sensor_event.html">SDL_ControllerSensorEvent</a> csensor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Game Controller sensor event data </p>
+
+</div>
+</div>
+<a id="a67b091325592de23edc3ca8188dffd1b" name="a67b091325592de23edc3ca8188dffd1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67b091325592de23edc3ca8188dffd1b">&#9670;&#160;</a></span>ctouchpad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___controller_touchpad_event.html">SDL_ControllerTouchpadEvent</a> ctouchpad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Game Controller touchpad event data </p>
+
+</div>
+</div>
+<a id="a695fce66f9cbe412fbe3fa2bb4b17eb8" name="a695fce66f9cbe412fbe3fa2bb4b17eb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695fce66f9cbe412fbe3fa2bb4b17eb8">&#9670;&#160;</a></span>dgesture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___dollar_gesture_event.html">SDL_DollarGestureEvent</a> dgesture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gesture event data </p>
+
+</div>
+</div>
+<a id="a05ab40464018aa6b40cf2454b4a2d858" name="a05ab40464018aa6b40cf2454b4a2d858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05ab40464018aa6b40cf2454b4a2d858">&#9670;&#160;</a></span>display</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___display_event.html">SDL_DisplayEvent</a> display</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display event data </p>
+
+</div>
+</div>
+<a id="a248bdfd9877f986c05513b9362039bf0" name="a248bdfd9877f986c05513b9362039bf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248bdfd9877f986c05513b9362039bf0">&#9670;&#160;</a></span>drop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___drop_event.html">SDL_DropEvent</a> drop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Drag and drop event data </p>
+
+</div>
+</div>
+<a id="a5ebe320ebd3dade28db667edae0673ec" name="a5ebe320ebd3dade28db667edae0673ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ebe320ebd3dade28db667edae0673ec">&#9670;&#160;</a></span>edit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___text_editing_event.html">SDL_TextEditingEvent</a> edit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Text editing event data </p>
+
+</div>
+</div>
+<a id="a8c9b361333add1170f929e0346027092" name="a8c9b361333add1170f929e0346027092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c9b361333add1170f929e0346027092">&#9670;&#160;</a></span>editExt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___text_editing_ext_event.html">SDL_TextEditingExtEvent</a> editExt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extended text editing event data </p>
+
+</div>
+</div>
+<a id="a4b6be0bb6f456b320e33d344ae3da7c5" name="a4b6be0bb6f456b320e33d344ae3da7c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b6be0bb6f456b320e33d344ae3da7c5">&#9670;&#160;</a></span>jaxis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___joy_axis_event.html">SDL_JoyAxisEvent</a> jaxis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joystick axis event data </p>
+
+</div>
+</div>
+<a id="a3a7002a9bea0e40a43f41df855bc9782" name="a3a7002a9bea0e40a43f41df855bc9782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7002a9bea0e40a43f41df855bc9782">&#9670;&#160;</a></span>jball</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___joy_ball_event.html">SDL_JoyBallEvent</a> jball</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joystick ball event data </p>
+
+</div>
+</div>
+<a id="a587af67a217e21e1e8df795252672838" name="a587af67a217e21e1e8df795252672838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a587af67a217e21e1e8df795252672838">&#9670;&#160;</a></span>jbattery</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___joy_battery_event.html">SDL_JoyBatteryEvent</a> jbattery</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joystick battery event data </p>
+
+</div>
+</div>
+<a id="ad723f7a3adf34248d74786401a257cd3" name="ad723f7a3adf34248d74786401a257cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad723f7a3adf34248d74786401a257cd3">&#9670;&#160;</a></span>jbutton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___joy_button_event.html">SDL_JoyButtonEvent</a> jbutton</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joystick button event data </p>
+
+</div>
+</div>
+<a id="a3cc807a742e4243fe2e46276ebac7290" name="a3cc807a742e4243fe2e46276ebac7290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc807a742e4243fe2e46276ebac7290">&#9670;&#160;</a></span>jdevice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___joy_device_event.html">SDL_JoyDeviceEvent</a> jdevice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joystick device change event data </p>
+
+</div>
+</div>
+<a id="aea419b4a0b6aa542b5e3c8378b488dd7" name="aea419b4a0b6aa542b5e3c8378b488dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea419b4a0b6aa542b5e3c8378b488dd7">&#9670;&#160;</a></span>jhat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___joy_hat_event.html">SDL_JoyHatEvent</a> jhat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joystick hat event data </p>
+
+</div>
+</div>
+<a id="a2944bdaafa644e5dd1007a8514d73977" name="a2944bdaafa644e5dd1007a8514d73977"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2944bdaafa644e5dd1007a8514d73977">&#9670;&#160;</a></span>key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___keyboard_event.html">SDL_KeyboardEvent</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a2c826a83964b85167f50f7bf527badf1">key</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Keyboard event data </p>
+
+</div>
+</div>
+<a id="aa0605c4f966521b135a1a429a2a255f4" name="aa0605c4f966521b135a1a429a2a255f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0605c4f966521b135a1a429a2a255f4">&#9670;&#160;</a></span>mgesture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___multi_gesture_event.html">SDL_MultiGestureEvent</a> mgesture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gesture event data </p>
+
+</div>
+</div>
+<a id="a8b74ec063362bbd2e4ec6d1a878eb0ca" name="a8b74ec063362bbd2e4ec6d1a878eb0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b74ec063362bbd2e4ec6d1a878eb0ca">&#9670;&#160;</a></span>motion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___mouse_motion_event.html">SDL_MouseMotionEvent</a> motion</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mouse motion event data </p>
+
+</div>
+</div>
+<a id="af41f9d968df5d78038f11eef92f14bbd" name="af41f9d968df5d78038f11eef92f14bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af41f9d968df5d78038f11eef92f14bbd">&#9670;&#160;</a></span>padding</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a> padding[sizeof(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *)&lt;=8 ? 56 :sizeof(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *)==16 ? 64 :3 *sizeof(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *)]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08f33cf663e5a5227cc5b681017af20c" name="a08f33cf663e5a5227cc5b681017af20c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f33cf663e5a5227cc5b681017af20c">&#9670;&#160;</a></span>quit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___quit_event.html">SDL_QuitEvent</a> quit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Quit request event data </p>
+
+</div>
+</div>
+<a id="a2c2b4cb473687c8409f3520b8bebc2fc" name="a2c2b4cb473687c8409f3520b8bebc2fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2b4cb473687c8409f3520b8bebc2fc">&#9670;&#160;</a></span>sensor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___sensor_event.html">SDL_SensorEvent</a> sensor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sensor event data </p>
+
+</div>
+</div>
+<a id="a97fa33bbc633db23ef6e2df72ad7d7d2" name="a97fa33bbc633db23ef6e2df72ad7d7d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97fa33bbc633db23ef6e2df72ad7d7d2">&#9670;&#160;</a></span>syswm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___sys_w_m_event.html">SDL_SysWMEvent</a> syswm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System dependent window event data </p>
+
+</div>
+</div>
+<a id="aa5ef1fa3d7a6b36ccac384be7051491a" name="aa5ef1fa3d7a6b36ccac384be7051491a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ef1fa3d7a6b36ccac384be7051491a">&#9670;&#160;</a></span>text</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___text_input_event.html">SDL_TextInputEvent</a> text</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Text input event data </p>
+
+</div>
+</div>
+<a id="a7c9be16d80e9c03a6ef9154be5de440e" name="a7c9be16d80e9c03a6ef9154be5de440e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c9be16d80e9c03a6ef9154be5de440e">&#9670;&#160;</a></span>tfinger</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___touch_finger_event.html">SDL_TouchFingerEvent</a> tfinger</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch finger event data </p>
+
+</div>
+</div>
+<a id="aa40a9b05c3154032b9f2d7220e9f08dc" name="aa40a9b05c3154032b9f2d7220e9f08dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40a9b05c3154032b9f2d7220e9f08dc">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Event type, shared with all events </p>
+
+</div>
+</div>
+<a id="a32ed3513e4b2533a94bb7bc123294720" name="a32ed3513e4b2533a94bb7bc123294720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32ed3513e4b2533a94bb7bc123294720">&#9670;&#160;</a></span>user</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___user_event.html">SDL_UserEvent</a> user</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Custom event data </p>
+
+</div>
+</div>
+<a id="a64774818699f12da4c6160fd5ec72200" name="a64774818699f12da4c6160fd5ec72200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64774818699f12da4c6160fd5ec72200">&#9670;&#160;</a></span>wheel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___mouse_wheel_event.html">SDL_MouseWheelEvent</a> wheel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mouse wheel event data </p>
+
+</div>
+</div>
+<a id="a83e92ef7347f0ea66977d7edd8129058" name="a83e92ef7347f0ea66977d7edd8129058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83e92ef7347f0ea66977d7edd8129058">&#9670;&#160;</a></span>window</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s_d_l___window_event.html">SDL_WindowEvent</a> window</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Window event data </p>
+
+</div>
+</div>
+<hr/>该联合体的文档由以下文件生成:<ul>
+<li><a class="el" href="_s_d_l__events_8h_source.html">SDL_events.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="union_s_d_l___event.html">SDL_Event</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

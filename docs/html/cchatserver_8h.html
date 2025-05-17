@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: cchatserver.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('cchatserver_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">cchatserver.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_qs_log_8h_source.html">QsLog.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sqlitedataprovider_8h_source.html">sqlitedataprovider.h</a>&quot;</code><br />
+<code>#include &quot;common.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="networkframemanager_8h_source.html">networkframemanager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cwebsocketserver_8h_source.html">cwebsocketserver.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+cchatserver.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="cchatserver_8h__incl.png" border="0" usemap="#acchatserver_8h" alt=""/></div>
+<map name="acchatserver_8h" id="acchatserver_8h">
+<area shape="rect" title=" " alt="" coords="793,5,894,32"/>
+<area shape="rect" href="_qs_log_8h.html" title=" " alt="" coords="308,80,378,107"/>
+<area shape="poly" title=" " alt="" coords="793,30,394,87,393,82,792,25"/>
+<area shape="rect" href="sqlitedataprovider_8h.html" title=" " alt="" coords="508,80,642,107"/>
+<area shape="poly" title=" " alt="" coords="797,35,638,78,636,73,796,30"/>
+<area shape="rect" title=" " alt="" coords="1058,229,1140,256"/>
+<area shape="poly" title=" " alt="" coords="894,20,963,31,1044,53,1085,70,1123,92,1157,120,1186,153,1191,174,1182,193,1164,210,1143,224,1140,219,1161,206,1177,190,1185,173,1181,156,1153,124,1120,97,1082,75,1042,58,962,36,894,26"/>
+<area shape="rect" href="networkframemanager_8h.html" title=" " alt="" coords="1009,155,1171,181"/>
+<area shape="poly" title=" " alt="" coords="866,30,1058,144,1055,149,863,35"/>
+<area shape="rect" href="cwebsocketserver_8h.html" title=" " alt="" coords="774,80,912,107"/>
+<area shape="poly" title=" " alt="" coords="846,33,846,64,841,64,841,33"/>
+<area shape="rect" href="_qs_log_level_8h.html" title=" " alt="" coords="270,229,371,256"/>
+<area shape="poly" title=" " alt="" coords="344,108,328,214,322,213,339,107"/>
+<area shape="rect" href="_qs_log_dest_8h.html" title=" " alt="" coords="114,155,212,181"/>
+<area shape="poly" title=" " alt="" coords="313,110,210,151,208,146,311,105"/>
+<area shape="rect" title=" " alt="" coords="237,155,306,181"/>
+<area shape="poly" title=" " alt="" coords="333,109,296,145,293,142,329,105"/>
+<area shape="rect" title=" " alt="" coords="412,229,477,256"/>
+<area shape="poly" title=" " alt="" coords="354,106,430,215,425,218,350,109"/>
+<area shape="poly" title=" " alt="" coords="192,179,280,220,278,225,190,184"/>
+<area shape="rect" title=" " alt="" coords="5,229,119,256"/>
+<area shape="poly" title=" " alt="" coords="147,184,94,222,91,218,144,180"/>
+<area shape="rect" title=" " alt="" coords="143,229,216,256"/>
+<area shape="poly" title=" " alt="" coords="169,181,176,214,171,215,164,182"/>
+<area shape="poly" title=" " alt="" coords="540,110,504,128,472,156,457,185,450,214,445,213,452,183,468,153,501,124,538,105"/>
+<area shape="rect" href="recordset_8h.html" title=" " alt="" coords="482,155,568,181"/>
+<area shape="poly" title=" " alt="" coords="569,109,544,144,540,141,564,106"/>
+<area shape="rect" title=" " alt="" coords="591,155,661,181"/>
+<area shape="poly" title=" " alt="" coords="586,106,611,141,607,144,582,109"/>
+<area shape="poly" title=" " alt="" coords="513,184,471,221,468,217,509,180"/>
+<area shape="rect" title=" " alt="" coords="490,304,559,331"/>
+<area shape="poly" title=" " alt="" coords="527,182,527,288,522,288,522,182"/>
+<area shape="poly" title=" " alt="" coords="1094,182,1098,214,1093,214,1089,182"/>
+<area shape="rect" href="jqhttpserver_8h.html" title="JQHttpServer 头文件，包含 HTTP 服务器的类和枚举定义。" alt="" coords="933,229,1034,256"/>
+<area shape="poly" title=" " alt="" coords="1073,184,1016,222,1013,218,1070,180"/>
+<area shape="poly" title=" " alt="" coords="933,252,777,272,575,306,574,301,776,267,933,247"/>
+<area shape="rect" title=" " alt="" coords="955,304,1033,331"/>
+<area shape="poly" title=" " alt="" coords="988,256,993,288,987,289,983,257"/>
+<area shape="rect" title=" " alt="" coords="1057,304,1126,331"/>
+<area shape="poly" title=" " alt="" coords="1004,254,1061,293,1058,297,1001,259"/>
+<area shape="rect" title=" " alt="" coords="1150,304,1217,331"/>
+<area shape="poly" title=" " alt="" coords="1019,254,1136,296,1135,301,1017,259"/>
+<area shape="rect" title=" " alt="" coords="1240,304,1289,331"/>
+<area shape="poly" title=" " alt="" coords="1035,253,1226,301,1225,306,1033,258"/>
+<area shape="rect" title=" " alt="" coords="583,304,693,331"/>
+<area shape="poly" title=" " alt="" coords="933,257,709,304,708,299,932,252"/>
+<area shape="rect" title=" " alt="" coords="718,304,809,331"/>
+<area shape="poly" title=" " alt="" coords="946,259,817,301,816,296,944,254"/>
+<area shape="rect" href="jqdeclare_8hpp.html" title="JQLibrary 的声明文件，包含宏定义和导出声明。" alt="" coords="833,304,931,331"/>
+<area shape="poly" title=" " alt="" coords="967,259,914,297,911,292,964,254"/>
+<area shape="poly" title=" " alt="" coords="806,110,676,153,675,148,805,105"/>
+<area shape="poly" title=" " alt="" coords="852,106,874,142,891,162,910,179,933,191,967,203,1044,225,1043,230,965,208,931,196,907,184,887,166,870,145,847,109"/>
+<area shape="poly" title=" " alt="" coords="887,105,1033,147,1031,152,886,110"/>
+<area shape="rect" title=" " alt="" coords="920,155,985,181"/>
+<area shape="poly" title=" " alt="" coords="864,105,923,144,920,148,861,109"/>
+<area shape="rect" title=" " alt="" coords="685,155,738,181"/>
+<area shape="poly" title=" " alt="" coords="822,110,749,149,746,145,819,105"/>
+<area shape="rect" title=" " alt="" coords="761,155,846,181"/>
+<area shape="poly" title=" " alt="" coords="839,109,820,142,815,140,834,106"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="cchatserver_8h__dep__incl.png" border="0" usemap="#acchatserver_8hdep" alt=""/></div>
+<map name="acchatserver_8hdep" id="acchatserver_8hdep">
+<area shape="rect" title=" " alt="" coords="12,5,113,32"/>
+<area shape="rect" href="cchatserver_8cpp.html" title=" " alt="" coords="5,80,120,107"/>
+<area shape="poly" title=" " alt="" coords="65,48,65,80,60,80,60,48"/>
+</map>
+</div>
+</div>
+<p><a href="cchatserver_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtag_group_info.html">tagGroupInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtag_user_info.html">tagUserInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcchatserver.html">cchatserver</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a513c4bdbb7d765d4ec9e773bd12f8079" id="r_a513c4bdbb7d765d4ec9e773bd12f8079"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a513c4bdbb7d765d4ec9e773bd12f8079">IDD_CHATSERVER_OPER_SUCCESSED</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:a513c4bdbb7d765d4ec9e773bd12f8079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f6ae0469bfce34c08da8ffa70b1e7a8" id="r_a1f6ae0469bfce34c08da8ffa70b1e7a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f6ae0469bfce34c08da8ffa70b1e7a8">IDD_CHATSERVER_OPER_FAILED</a>&#160;&#160;&#160;1001</td></tr>
+<tr class="separator:a1f6ae0469bfce34c08da8ffa70b1e7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a160bcd87cafed7af31566ded51cb6" id="r_a38a160bcd87cafed7af31566ded51cb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38a160bcd87cafed7af31566ded51cb6">IDD_CHATSERVER_OPER_EXIST</a>&#160;&#160;&#160;1002</td></tr>
+<tr class="separator:a38a160bcd87cafed7af31566ded51cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a744dbc0211d4a1cb9dee32f193c458e5" id="r_a744dbc0211d4a1cb9dee32f193c458e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a744dbc0211d4a1cb9dee32f193c458e5">IDD_CHATSERVER_OPER_NOEXIST</a>&#160;&#160;&#160;1003</td></tr>
+<tr class="separator:a744dbc0211d4a1cb9dee32f193c458e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acde2338c865aa12964ecb7608813ede9" id="r_acde2338c865aa12964ecb7608813ede9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acde2338c865aa12964ecb7608813ede9">IDD_CHATSERVER_OPER_FRIEND_NOEXIST</a>&#160;&#160;&#160;1004</td></tr>
+<tr class="separator:acde2338c865aa12964ecb7608813ede9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e52790298fe5af2c2ca7f90efdb946" id="r_a62e52790298fe5af2c2ca7f90efdb946"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62e52790298fe5af2c2ca7f90efdb946">IDD_CHATSERVER_OPER_OFFLINE</a>&#160;&#160;&#160;1005</td></tr>
+<tr class="separator:a62e52790298fe5af2c2ca7f90efdb946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f4bc354224b639efb5900066f6ec92" id="r_a19f4bc354224b639efb5900066f6ec92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19f4bc354224b639efb5900066f6ec92">IDD_CHATSERVER_OPER_GROUP_NOEXIST</a>&#160;&#160;&#160;1006</td></tr>
+<tr class="separator:a19f4bc354224b639efb5900066f6ec92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233e4c58822b0bd0938efadd44d3fc67" id="r_a233e4c58822b0bd0938efadd44d3fc67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a233e4c58822b0bd0938efadd44d3fc67">IDD_CHATSERVER_OPER_GROUP_USEREXIST</a>&#160;&#160;&#160;1007</td></tr>
+<tr class="separator:a233e4c58822b0bd0938efadd44d3fc67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ecaf4b75167409d889105d80b9b9c3" id="r_a60ecaf4b75167409d889105d80b9b9c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60ecaf4b75167409d889105d80b9b9c3">IDD_CHATSERVER_OPER_GROUP_USERNOEXIST</a>&#160;&#160;&#160;1008</td></tr>
+<tr class="separator:a60ecaf4b75167409d889105d80b9b9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51aaf3f7bc7f0eb8a4e043787385c157" id="r_a51aaf3f7bc7f0eb8a4e043787385c157"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51aaf3f7bc7f0eb8a4e043787385c157">IDD_CHATSERVER_USER</a>&#160;&#160;&#160;2000</td></tr>
+<tr class="separator:a51aaf3f7bc7f0eb8a4e043787385c157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47bcf23a2f97930d3e7aafdb39aeab99" id="r_a47bcf23a2f97930d3e7aafdb39aeab99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47bcf23a2f97930d3e7aafdb39aeab99">IDD_CHATSERVER_USER_REGISTER</a>&#160;&#160;&#160;2001</td></tr>
+<tr class="separator:a47bcf23a2f97930d3e7aafdb39aeab99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fcff80dcd538ad86805c6f52c64e1d" id="r_af7fcff80dcd538ad86805c6f52c64e1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7fcff80dcd538ad86805c6f52c64e1d">IDD_CHATSERVER_USER_UPDATEINFO</a>&#160;&#160;&#160;2002</td></tr>
+<tr class="separator:af7fcff80dcd538ad86805c6f52c64e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b7a7299724be8265657e735193b398" id="r_a58b7a7299724be8265657e735193b398"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58b7a7299724be8265657e735193b398">IDD_CHATSERVER_USER_CANCEL</a>&#160;&#160;&#160;2003</td></tr>
+<tr class="separator:a58b7a7299724be8265657e735193b398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b117a2b5d59d852bc4ab3ed5e0d5dd9" id="r_a6b117a2b5d59d852bc4ab3ed5e0d5dd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b117a2b5d59d852bc4ab3ed5e0d5dd9">IDD_CHATSERVER_USER_ADD_FRIEND</a>&#160;&#160;&#160;2004</td></tr>
+<tr class="separator:a6b117a2b5d59d852bc4ab3ed5e0d5dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b86180d8ad953b44aa70147fd6537c3" id="r_a8b86180d8ad953b44aa70147fd6537c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b86180d8ad953b44aa70147fd6537c3">IDD_CHATSERVER_USER_DEL_FRIEND</a>&#160;&#160;&#160;2005</td></tr>
+<tr class="separator:a8b86180d8ad953b44aa70147fd6537c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0491efb32e3f4971627bad5ee9ed7334" id="r_a0491efb32e3f4971627bad5ee9ed7334"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0491efb32e3f4971627bad5ee9ed7334">IDD_CHATSERVER_USER_LOGIN</a>&#160;&#160;&#160;2006</td></tr>
+<tr class="separator:a0491efb32e3f4971627bad5ee9ed7334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc80a584856ace0b20a659732fb4b246" id="r_afc80a584856ace0b20a659732fb4b246"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc80a584856ace0b20a659732fb4b246">IDD_CHATSERVER_USER_GETONLINEUSERS</a>&#160;&#160;&#160;2007</td></tr>
+<tr class="separator:afc80a584856ace0b20a659732fb4b246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e8294c19e5d412d1589f83efa4a41a1" id="r_a8e8294c19e5d412d1589f83efa4a41a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8294c19e5d412d1589f83efa4a41a1">IDD_CHATSERVER_USER_GETFRIENDS</a>&#160;&#160;&#160;2008</td></tr>
+<tr class="separator:a8e8294c19e5d412d1589f83efa4a41a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f53d77dce0395749bec0b14ba67e744" id="r_a1f53d77dce0395749bec0b14ba67e744"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f53d77dce0395749bec0b14ba67e744">IDD_CHATSERVER_USER_CHAT</a>&#160;&#160;&#160;2009</td></tr>
+<tr class="separator:a1f53d77dce0395749bec0b14ba67e744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d2230cd33c1030f15ffb179ed8b5c2" id="r_a05d2230cd33c1030f15ffb179ed8b5c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05d2230cd33c1030f15ffb179ed8b5c2">IDD_CHATSERVER_USER_GETCHATRECORD</a>&#160;&#160;&#160;2010</td></tr>
+<tr class="separator:a05d2230cd33c1030f15ffb179ed8b5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128440002ccb3f1456e9130051b5ccb6" id="r_a128440002ccb3f1456e9130051b5ccb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a128440002ccb3f1456e9130051b5ccb6">IDD_CHATSERVER_GROUP</a>&#160;&#160;&#160;3000</td></tr>
+<tr class="separator:a128440002ccb3f1456e9130051b5ccb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af547ca6799ea0069d1972ae55cd7369b" id="r_af547ca6799ea0069d1972ae55cd7369b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af547ca6799ea0069d1972ae55cd7369b">IDD_CHATSERVER_GROUP_CREATE</a>&#160;&#160;&#160;3001</td></tr>
+<tr class="separator:af547ca6799ea0069d1972ae55cd7369b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ca541b630befc7405fe2186193d6d4" id="r_a93ca541b630befc7405fe2186193d6d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93ca541b630befc7405fe2186193d6d4">IDD_CHATSERVER_GROUP_DELETE</a>&#160;&#160;&#160;3002</td></tr>
+<tr class="separator:a93ca541b630befc7405fe2186193d6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab210acfee8e4dfca034073d0ee85a380" id="r_ab210acfee8e4dfca034073d0ee85a380"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab210acfee8e4dfca034073d0ee85a380">IDD_CHATSERVER_GROUP_JOIN</a>&#160;&#160;&#160;3003</td></tr>
+<tr class="separator:ab210acfee8e4dfca034073d0ee85a380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b60f5ba7f02fa7013ef2fa394d95b3d" id="r_a9b60f5ba7f02fa7013ef2fa394d95b3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b60f5ba7f02fa7013ef2fa394d95b3d">IDD_CHATSERVER_GROUP_LEAVE</a>&#160;&#160;&#160;3004</td></tr>
+<tr class="separator:a9b60f5ba7f02fa7013ef2fa394d95b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165261fda0fdf86fced7cce5a3e5fe67" id="r_a165261fda0fdf86fced7cce5a3e5fe67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a165261fda0fdf86fced7cce5a3e5fe67">IDD_CHATSERVER_GROUP_CHAT</a>&#160;&#160;&#160;3005</td></tr>
+<tr class="separator:a165261fda0fdf86fced7cce5a3e5fe67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2cd0fbbbc686bb4cf8cb00e3995adf1" id="r_ae2cd0fbbbc686bb4cf8cb00e3995adf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2cd0fbbbc686bb4cf8cb00e3995adf1">IDD_CHATSERVER_GROUP_GETCHATRECORD</a>&#160;&#160;&#160;3006</td></tr>
+<tr class="separator:ae2cd0fbbbc686bb4cf8cb00e3995adf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a128440002ccb3f1456e9130051b5ccb6" name="a128440002ccb3f1456e9130051b5ccb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a128440002ccb3f1456e9130051b5ccb6">&#9670;&#160;</a></span>IDD_CHATSERVER_GROUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_GROUP&#160;&#160;&#160;3000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a165261fda0fdf86fced7cce5a3e5fe67" name="a165261fda0fdf86fced7cce5a3e5fe67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165261fda0fdf86fced7cce5a3e5fe67">&#9670;&#160;</a></span>IDD_CHATSERVER_GROUP_CHAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_GROUP_CHAT&#160;&#160;&#160;3005</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af547ca6799ea0069d1972ae55cd7369b" name="af547ca6799ea0069d1972ae55cd7369b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af547ca6799ea0069d1972ae55cd7369b">&#9670;&#160;</a></span>IDD_CHATSERVER_GROUP_CREATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_GROUP_CREATE&#160;&#160;&#160;3001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93ca541b630befc7405fe2186193d6d4" name="a93ca541b630befc7405fe2186193d6d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ca541b630befc7405fe2186193d6d4">&#9670;&#160;</a></span>IDD_CHATSERVER_GROUP_DELETE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_GROUP_DELETE&#160;&#160;&#160;3002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2cd0fbbbc686bb4cf8cb00e3995adf1" name="ae2cd0fbbbc686bb4cf8cb00e3995adf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2cd0fbbbc686bb4cf8cb00e3995adf1">&#9670;&#160;</a></span>IDD_CHATSERVER_GROUP_GETCHATRECORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_GROUP_GETCHATRECORD&#160;&#160;&#160;3006</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab210acfee8e4dfca034073d0ee85a380" name="ab210acfee8e4dfca034073d0ee85a380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab210acfee8e4dfca034073d0ee85a380">&#9670;&#160;</a></span>IDD_CHATSERVER_GROUP_JOIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_GROUP_JOIN&#160;&#160;&#160;3003</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b60f5ba7f02fa7013ef2fa394d95b3d" name="a9b60f5ba7f02fa7013ef2fa394d95b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b60f5ba7f02fa7013ef2fa394d95b3d">&#9670;&#160;</a></span>IDD_CHATSERVER_GROUP_LEAVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_GROUP_LEAVE&#160;&#160;&#160;3004</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38a160bcd87cafed7af31566ded51cb6" name="a38a160bcd87cafed7af31566ded51cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a160bcd87cafed7af31566ded51cb6">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_EXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_EXIST&#160;&#160;&#160;1002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f6ae0469bfce34c08da8ffa70b1e7a8" name="a1f6ae0469bfce34c08da8ffa70b1e7a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f6ae0469bfce34c08da8ffa70b1e7a8">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_FAILED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_FAILED&#160;&#160;&#160;1001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acde2338c865aa12964ecb7608813ede9" name="acde2338c865aa12964ecb7608813ede9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acde2338c865aa12964ecb7608813ede9">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_FRIEND_NOEXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_FRIEND_NOEXIST&#160;&#160;&#160;1004</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19f4bc354224b639efb5900066f6ec92" name="a19f4bc354224b639efb5900066f6ec92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f4bc354224b639efb5900066f6ec92">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_GROUP_NOEXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_GROUP_NOEXIST&#160;&#160;&#160;1006</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a233e4c58822b0bd0938efadd44d3fc67" name="a233e4c58822b0bd0938efadd44d3fc67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a233e4c58822b0bd0938efadd44d3fc67">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_GROUP_USEREXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_GROUP_USEREXIST&#160;&#160;&#160;1007</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60ecaf4b75167409d889105d80b9b9c3" name="a60ecaf4b75167409d889105d80b9b9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ecaf4b75167409d889105d80b9b9c3">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_GROUP_USERNOEXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_GROUP_USERNOEXIST&#160;&#160;&#160;1008</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a744dbc0211d4a1cb9dee32f193c458e5" name="a744dbc0211d4a1cb9dee32f193c458e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a744dbc0211d4a1cb9dee32f193c458e5">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_NOEXIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_NOEXIST&#160;&#160;&#160;1003</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62e52790298fe5af2c2ca7f90efdb946" name="a62e52790298fe5af2c2ca7f90efdb946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e52790298fe5af2c2ca7f90efdb946">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_OFFLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_OFFLINE&#160;&#160;&#160;1005</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a513c4bdbb7d765d4ec9e773bd12f8079" name="a513c4bdbb7d765d4ec9e773bd12f8079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513c4bdbb7d765d4ec9e773bd12f8079">&#9670;&#160;</a></span>IDD_CHATSERVER_OPER_SUCCESSED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_OPER_SUCCESSED&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51aaf3f7bc7f0eb8a4e043787385c157" name="a51aaf3f7bc7f0eb8a4e043787385c157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51aaf3f7bc7f0eb8a4e043787385c157">&#9670;&#160;</a></span>IDD_CHATSERVER_USER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER&#160;&#160;&#160;2000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b117a2b5d59d852bc4ab3ed5e0d5dd9" name="a6b117a2b5d59d852bc4ab3ed5e0d5dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b117a2b5d59d852bc4ab3ed5e0d5dd9">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_ADD_FRIEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_ADD_FRIEND&#160;&#160;&#160;2004</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58b7a7299724be8265657e735193b398" name="a58b7a7299724be8265657e735193b398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b7a7299724be8265657e735193b398">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_CANCEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_CANCEL&#160;&#160;&#160;2003</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f53d77dce0395749bec0b14ba67e744" name="a1f53d77dce0395749bec0b14ba67e744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f53d77dce0395749bec0b14ba67e744">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_CHAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_CHAT&#160;&#160;&#160;2009</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b86180d8ad953b44aa70147fd6537c3" name="a8b86180d8ad953b44aa70147fd6537c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b86180d8ad953b44aa70147fd6537c3">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_DEL_FRIEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_DEL_FRIEND&#160;&#160;&#160;2005</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05d2230cd33c1030f15ffb179ed8b5c2" name="a05d2230cd33c1030f15ffb179ed8b5c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d2230cd33c1030f15ffb179ed8b5c2">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_GETCHATRECORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_GETCHATRECORD&#160;&#160;&#160;2010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e8294c19e5d412d1589f83efa4a41a1" name="a8e8294c19e5d412d1589f83efa4a41a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e8294c19e5d412d1589f83efa4a41a1">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_GETFRIENDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_GETFRIENDS&#160;&#160;&#160;2008</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc80a584856ace0b20a659732fb4b246" name="afc80a584856ace0b20a659732fb4b246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc80a584856ace0b20a659732fb4b246">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_GETONLINEUSERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_GETONLINEUSERS&#160;&#160;&#160;2007</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0491efb32e3f4971627bad5ee9ed7334" name="a0491efb32e3f4971627bad5ee9ed7334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0491efb32e3f4971627bad5ee9ed7334">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_LOGIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_LOGIN&#160;&#160;&#160;2006</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47bcf23a2f97930d3e7aafdb39aeab99" name="a47bcf23a2f97930d3e7aafdb39aeab99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47bcf23a2f97930d3e7aafdb39aeab99">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_REGISTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_REGISTER&#160;&#160;&#160;2001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7fcff80dcd538ad86805c6f52c64e1d" name="af7fcff80dcd538ad86805c6f52c64e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7fcff80dcd538ad86805c6f52c64e1d">&#9670;&#160;</a></span>IDD_CHATSERVER_USER_UPDATEINFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IDD_CHATSERVER_USER_UPDATEINFO&#160;&#160;&#160;2002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e72918b9f0e93adee7ec62635d44a38d.html">KuGouServer</a></li><li class="navelem"><a class="el" href="dir_1f4d31eb974542b2ab12d0259d14eb74.html">NetWork</a></li><li class="navelem"><a class="el" href="cchatserver_8h.html">cchatserver.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

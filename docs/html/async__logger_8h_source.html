@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: async_logger.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('async__logger_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">async_logger.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="async__logger_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright(c) 2015-present, Gabi Melman &amp; spdlog contributors.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Distributed under the MIT License (http://opensource.org/licenses/MIT)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Fast asynchronous logger.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Uses pre allocated queue.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// Creates a single back thread to pop messages from the queue and log them.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// Upon each log write the logger:</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//    1. Checks if its log level is enough to log the message</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//    2. Push a new copy of the message to a queue (or block the caller until</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//    space is available in the queue)</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// Upon destruction, logs all remaining messages in the queue before</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// destructing..</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="logger_8h.html">spdlog/logger.h</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog.html">spdlog</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Async overflow policy - block by default.</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">   22</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a14511f2f5564650d129ca7cabc333278">   23</a></span>    <a class="code hl_enumvalue" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a14511f2f5564650d129ca7cabc333278">block</a>,           <span class="comment">// Block until message can be enqueued</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a6d09cc54ae10145444aa2f43fe46d9f2">   24</a></span>    <a class="code hl_enumvalue" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a6d09cc54ae10145444aa2f43fe46d9f2">overrun_oldest</a>,  <span class="comment">// Discard oldest message in the queue if full when trying to</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                     <span class="comment">// add new item.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a01d8a32c7a8e6fe0dcffb13a73b98392">   26</a></span>    <a class="code hl_enumvalue" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a01d8a32c7a8e6fe0dcffb13a73b98392">discard_new</a>      <span class="comment">// Discard new message if the queue is full when trying to add new item.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span>details {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">class </span><a class="code hl_function" href="namespacespdlog.html#a750bacd8a9e66c5ae91b45673a4902c4">thread_pool</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classspdlog_1_1async__logger.html">   33</a></span><span class="keyword">class </span><a class="code hl_define" href="_my_spdlog_2spdlog_2common_8h.html#a52ddbd25f1bb074a1b09e10a3e5b177d">SPDLOG_API</a> <a class="code hl_function" href="classspdlog_1_1async__logger.html#a78e19f8146d13324b0ef10755aa4a197">async_logger</a> final : <span class="keyword">public</span> std::enable_shared_from_this&lt;async_logger&gt;,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                      <span class="keyword">public</span> <a class="code hl_function" href="classspdlog_1_1logger.html#ade4c83eafc7d6065a07515ce22ca8faf">logger</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classspdlog_1_1async__logger.html#a67ce2a7de422d11203d66f1f6da4be03">   35</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classspdlog_1_1details_1_1thread__pool.html">details::thread_pool</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> It&gt;</div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classspdlog_1_1async__logger.html#a78e19f8146d13324b0ef10755aa4a197">   39</a></span>    <a class="code hl_function" href="classspdlog_1_1async__logger.html#a78e19f8146d13324b0ef10755aa4a197">async_logger</a>(std::string logger_name,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                 It begin,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                 It end,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                 std::weak_ptr&lt;details::thread_pool&gt; tp,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                 <a class="code hl_enumeration" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a> overflow_policy = <a class="code hl_enumvalue" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a14511f2f5564650d129ca7cabc333278">async_overflow_policy::block</a>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        : <a class="code hl_function" href="classspdlog_1_1logger.html#ade4c83eafc7d6065a07515ce22ca8faf">logger</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::move(logger_name), begin, end),</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          <a class="code hl_variable" href="classspdlog_1_1async__logger.html#aafddd6cbd1df8c6a27d29da4184dbfe5">thread_pool_</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::move(tp)),</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          <a class="code hl_variable" href="classspdlog_1_1async__logger.html#a544b0d6ea9d6e29b3f5114423f8b1c0a">overflow_policy_</a>(overflow_policy) {}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_class" href="classspdlog_1_1async__logger.html">async_logger</a>(std::string logger_name,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                 <a class="code hl_typedef" href="namespacespdlog.html#a7e767daf008105f7b6ea1cc4011114ad">sinks_init_list</a> sinks_list,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                 std::weak_ptr&lt;details::thread_pool&gt; tp,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                 <a class="code hl_enumeration" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a> overflow_policy = <a class="code hl_enumvalue" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a14511f2f5564650d129ca7cabc333278">async_overflow_policy::block</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_class" href="classspdlog_1_1async__logger.html">async_logger</a>(std::string logger_name,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                 <a class="code hl_typedef" href="namespacespdlog.html#ae7aee647f9f29f12d7ab4b89277a6721">sink_ptr</a> single_sink,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                 std::weak_ptr&lt;details::thread_pool&gt; tp,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                 <a class="code hl_enumeration" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a> overflow_policy = <a class="code hl_enumvalue" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a14511f2f5564650d129ca7cabc333278">async_overflow_policy::block</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    std::shared_ptr&lt;logger&gt; clone(std::string new_name) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> sink_it_(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> flush_() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> backend_sink_it_(<span class="keyword">const</span> <a class="code hl_struct" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;incoming_log_msg);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> backend_flush_();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classspdlog_1_1async__logger.html#aafddd6cbd1df8c6a27d29da4184dbfe5">   67</a></span>    std::weak_ptr&lt;details::thread_pool&gt; <a class="code hl_variable" href="classspdlog_1_1async__logger.html#aafddd6cbd1df8c6a27d29da4184dbfe5">thread_pool_</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classspdlog_1_1async__logger.html#a544b0d6ea9d6e29b3f5114423f8b1c0a">   68</a></span>    <a class="code hl_enumeration" href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">async_overflow_policy</a> <a class="code hl_variable" href="classspdlog_1_1async__logger.html#a544b0d6ea9d6e29b3f5114423f8b1c0a">overflow_policy_</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}  <span class="comment">// namespace spdlog</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#ifdef SPDLOG_HEADER_ONLY</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">    #include &quot;<a class="code" href="async__logger-inl_8h.html">async_logger-inl.h</a>&quot;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_my_spdlog_2spdlog_2common_8h_html_a52ddbd25f1bb074a1b09e10a3e5b177d"><div class="ttname"><a href="_my_spdlog_2spdlog_2common_8h.html#a52ddbd25f1bb074a1b09e10a3e5b177d">SPDLOG_API</a></div><div class="ttdeci">#define SPDLOG_API</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:45</div></div>
+<div class="ttc" id="aasync__logger-inl_8h_html"><div class="ttname"><a href="async__logger-inl_8h.html">async_logger-inl.h</a></div></div>
+<div class="ttc" id="aclassspdlog_1_1async__logger_html"><div class="ttname"><a href="classspdlog_1_1async__logger.html">spdlog::async_logger</a></div><div class="ttdef"><b>定义</b> async_logger.h:34</div></div>
+<div class="ttc" id="aclassspdlog_1_1async__logger_html_a544b0d6ea9d6e29b3f5114423f8b1c0a"><div class="ttname"><a href="classspdlog_1_1async__logger.html#a544b0d6ea9d6e29b3f5114423f8b1c0a">spdlog::async_logger::overflow_policy_</a></div><div class="ttdeci">async_overflow_policy overflow_policy_</div><div class="ttdef"><b>定义</b> async_logger.h:68</div></div>
+<div class="ttc" id="aclassspdlog_1_1async__logger_html_a78e19f8146d13324b0ef10755aa4a197"><div class="ttname"><a href="classspdlog_1_1async__logger.html#a78e19f8146d13324b0ef10755aa4a197">spdlog::async_logger::async_logger</a></div><div class="ttdeci">async_logger(std::string logger_name, It begin, It end, std::weak_ptr&lt; details::thread_pool &gt; tp, async_overflow_policy overflow_policy=async_overflow_policy::block)</div><div class="ttdef"><b>定义</b> async_logger.h:39</div></div>
+<div class="ttc" id="aclassspdlog_1_1async__logger_html_aafddd6cbd1df8c6a27d29da4184dbfe5"><div class="ttname"><a href="classspdlog_1_1async__logger.html#aafddd6cbd1df8c6a27d29da4184dbfe5">spdlog::async_logger::thread_pool_</a></div><div class="ttdeci">std::weak_ptr&lt; details::thread_pool &gt; thread_pool_</div><div class="ttdef"><b>定义</b> async_logger.h:67</div></div>
+<div class="ttc" id="aclassspdlog_1_1details_1_1thread__pool_html"><div class="ttname"><a href="classspdlog_1_1details_1_1thread__pool.html">spdlog::details::thread_pool</a></div><div class="ttdef"><b>定义</b> thread_pool.h:70</div></div>
+<div class="ttc" id="aclassspdlog_1_1logger_html_ade4c83eafc7d6065a07515ce22ca8faf"><div class="ttname"><a href="classspdlog_1_1logger.html#ade4c83eafc7d6065a07515ce22ca8faf">spdlog::logger::logger</a></div><div class="ttdeci">logger(std::string name)</div><div class="ttdef"><b>定义</b> logger.h:53</div></div>
+<div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="logger_8h.html">logger.h</a></div></div>
+<div class="ttc" id="anamespacespdlog_html"><div class="ttname"><a href="namespacespdlog.html">spdlog</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:25</div></div>
+<div class="ttc" id="anamespacespdlog_html_a1374a23ad79b5ab0f4b1a361ceb12778"><div class="ttname"><a href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778">spdlog::async_overflow_policy</a></div><div class="ttdeci">async_overflow_policy</div><div class="ttdef"><b>定义</b> async_logger.h:22</div></div>
+<div class="ttc" id="anamespacespdlog_html_a1374a23ad79b5ab0f4b1a361ceb12778a01d8a32c7a8e6fe0dcffb13a73b98392"><div class="ttname"><a href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a01d8a32c7a8e6fe0dcffb13a73b98392">spdlog::async_overflow_policy::discard_new</a></div><div class="ttdeci">@ discard_new</div><div class="ttdef"><b>定义</b> async_logger.h:26</div></div>
+<div class="ttc" id="anamespacespdlog_html_a1374a23ad79b5ab0f4b1a361ceb12778a14511f2f5564650d129ca7cabc333278"><div class="ttname"><a href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a14511f2f5564650d129ca7cabc333278">spdlog::async_overflow_policy::block</a></div><div class="ttdeci">@ block</div><div class="ttdef"><b>定义</b> async_logger.h:23</div></div>
+<div class="ttc" id="anamespacespdlog_html_a1374a23ad79b5ab0f4b1a361ceb12778a6d09cc54ae10145444aa2f43fe46d9f2"><div class="ttname"><a href="namespacespdlog.html#a1374a23ad79b5ab0f4b1a361ceb12778a6d09cc54ae10145444aa2f43fe46d9f2">spdlog::async_overflow_policy::overrun_oldest</a></div><div class="ttdeci">@ overrun_oldest</div><div class="ttdef"><b>定义</b> async_logger.h:24</div></div>
+<div class="ttc" id="anamespacespdlog_html_a750bacd8a9e66c5ae91b45673a4902c4"><div class="ttname"><a href="namespacespdlog.html#a750bacd8a9e66c5ae91b45673a4902c4">spdlog::thread_pool</a></div><div class="ttdeci">std::shared_ptr&lt; spdlog::details::thread_pool &gt; thread_pool()</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:97</div></div>
+<div class="ttc" id="anamespacespdlog_html_a7e767daf008105f7b6ea1cc4011114ad"><div class="ttname"><a href="namespacespdlog.html#a7e767daf008105f7b6ea1cc4011114ad">spdlog::sinks_init_list</a></div><div class="ttdeci">std::initializer_list&lt; sink_ptr &gt; sinks_init_list</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:143</div></div>
+<div class="ttc" id="anamespacespdlog_html_ae7aee647f9f29f12d7ab4b89277a6721"><div class="ttname"><a href="namespacespdlog.html#ae7aee647f9f29f12d7ab4b89277a6721">spdlog::sink_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; sinks::sink &gt; sink_ptr</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:142</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>定义</b> format.h:120</div></div>
+<div class="ttc" id="astructspdlog_1_1details_1_1log__msg_html"><div class="ttname"><a href="structspdlog_1_1details_1_1log__msg.html">spdlog::details::log_msg</a></div><div class="ttdef"><b>定义</b> log_msg.h:11</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="async__logger_8h.html">async_logger.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: fifo.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('fifo_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">fifo.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="fifo_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef AVUTIL_FIFO_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define AVUTIL_FIFO_H</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="avutil_8h.html">avutil.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="attributes_8h.html">attributes.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_a_v_fifo_buffer.html">   31</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_a_v_fifo_buffer.html#a56ed84df35de10bdb65e72b184309497">   32</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_variable" href="struct_a_v_fifo_buffer.html#a56ed84df35de10bdb65e72b184309497">buffer</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_a_v_fifo_buffer.html#acb42943bca405a35b29d5b67f4e511f2">   33</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_variable" href="struct_a_v_fifo_buffer.html#a2532afa8f9d80ab84941dd9e6354cf33">rptr</a>, *<a class="code hl_variable" href="struct_a_v_fifo_buffer.html#a1e2ac8fe284e68d2fcce3fd934cf8387">wptr</a>, *<a class="code hl_variable" href="struct_a_v_fifo_buffer.html#acb42943bca405a35b29d5b67f4e511f2">end</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_a_v_fifo_buffer.html#a57e0398bbef4e81bc7b454d9e8d15f5b">   34</a></span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code hl_variable" href="struct_a_v_fifo_buffer.html#a57e0398bbef4e81bc7b454d9e8d15f5b">rndx</a>, <a class="code hl_variable" href="struct_a_v_fifo_buffer.html#a65dd3cfa94f43151e14df9641df8a886">wndx</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="fifo_8h.html#a31bf9be06ded9098c07f7c6b83f0bc6b">   35</a></span>} <a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a>;</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="fifo_8h.html#a5f2a02d3834b41d653da119e8373ffbc">   42</a></span><a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_function" href="fifo_8h.html#a5f2a02d3834b41d653da119e8373ffbc">av_fifo_alloc</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="fifo_8h.html#a88f38ad020aa982a895cfcb5380e1acf">   50</a></span><a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_function" href="fifo_8h.html#a88f38ad020aa982a895cfcb5380e1acf">av_fifo_alloc_array</a>(<span class="keywordtype">size_t</span> <a class="code hl_variable" href="group__lavu__mem__funcs.html#ga79fd723df92f68cf8a6207a1d98b4c01">nmemb</a>, <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="fifo_8h.html#ac41532c140aacb9ad12a22c859f944aa">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="fifo_8h.html#ac41532c140aacb9ad12a22c859f944aa">av_fifo_free</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="fifo_8h.html#a612be59edb6ab388a82d1487d1bd0c4d">   62</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="fifo_8h.html#a612be59edb6ab388a82d1487d1bd0c4d">av_fifo_freep</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> **<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="fifo_8h.html#a2f257d5cd93686b047c9b29ef6493e51">   68</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="fifo_8h.html#a2f257d5cd93686b047c9b29ef6493e51">av_fifo_reset</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="fifo_8h.html#a81f4cea70d96846df7111daccc5ecce2">   76</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="fifo_8h.html#a81f4cea70d96846df7111daccc5ecce2">av_fifo_size</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="fifo_8h.html#ac1e0d8ee7f1568cb40fa95a740c60f13">   84</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="fifo_8h.html#ac1e0d8ee7f1568cb40fa95a740c60f13">av_fifo_space</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="fifo_8h.html#ae44de4980b66c0695a4cf7808c140181">   95</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="fifo_8h.html#ae44de4980b66c0695a4cf7808c140181">av_fifo_generic_peek_at</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <span class="keywordtype">void</span> *dest, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a2003032e3d6cfe0acd020119b0204242">offset</a>, <span class="keywordtype">int</span> buf_size, <span class="keywordtype">void</span> (*<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a18ae3ab36a07e388833b568cfdfa90c8">func</a>)(<span class="keywordtype">void</span>*, <span class="keywordtype">void</span>*, <span class="keywordtype">int</span>));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="fifo_8h.html#a9fbc6be8766f3389eda0e37ca92cee65">  105</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="fifo_8h.html#a9fbc6be8766f3389eda0e37ca92cee65">av_fifo_generic_peek</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <span class="keywordtype">void</span> *dest, <span class="keywordtype">int</span> buf_size, <span class="keywordtype">void</span> (*<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a18ae3ab36a07e388833b568cfdfa90c8">func</a>)(<span class="keywordtype">void</span>*, <span class="keywordtype">void</span>*, <span class="keywordtype">int</span>));</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="fifo_8h.html#ab708d2f19b7a9592caa278256787adb6">  114</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="fifo_8h.html#ab708d2f19b7a9592caa278256787adb6">av_fifo_generic_read</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <span class="keywordtype">void</span> *dest, <span class="keywordtype">int</span> buf_size, <span class="keywordtype">void</span> (*<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a18ae3ab36a07e388833b568cfdfa90c8">func</a>)(<span class="keywordtype">void</span>*, <span class="keywordtype">void</span>*, <span class="keywordtype">int</span>));</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="fifo_8h.html#ae95c15dcdd266b4005f8919e4f571180">  129</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="fifo_8h.html#ae95c15dcdd266b4005f8919e4f571180">av_fifo_generic_write</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <span class="keywordtype">void</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>, <span class="keywordtype">int</span> (*<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a18ae3ab36a07e388833b568cfdfa90c8">func</a>)(<span class="keywordtype">void</span>*, <span class="keywordtype">void</span>*, <span class="keywordtype">int</span>));</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="fifo_8h.html#af50c043864cf09925aa4986e00a57067">  139</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="fifo_8h.html#af50c043864cf09925aa4986e00a57067">av_fifo_realloc2</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="fifo_8h.html#a44a36b44adf5b278eeea1cb6d5b7033b">  150</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="fifo_8h.html#a44a36b44adf5b278eeea1cb6d5b7033b">av_fifo_grow</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> additional_space);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="fifo_8h.html#a037f66cc2b92aebbc363617387d39f6f">  157</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="fifo_8h.html#a037f66cc2b92aebbc363617387d39f6f">av_fifo_drain</a>(<a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <span class="keywordtype">int</span> <a class="code hl_typedef" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="foldopen" id="foldopen00169" data-start="{" data-end="}">
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="fifo_8h.html#a4668ffc129f5d0329ecb038934a475e5">  169</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_function" href="fifo_8h.html#a4668ffc129f5d0329ecb038934a475e5">av_fifo_peek2</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <span class="keywordtype">int</span> offs)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>{</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a> = <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>-&gt;rptr + offs;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a> &gt;= <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>-&gt;end)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a> = <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>-&gt;buffer + (<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a> - <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>-&gt;end);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr &lt; f-&gt;</a><a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a76461e97a098d2c9ae20ac193d3825ae">buffer</a>)</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a> = <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>-&gt;end - (<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>-&gt;buffer - <a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_FIFO_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdoc">32 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:33</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:29</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a18ae3ab36a07e388833b568cfdfa90c8"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a18ae3ab36a07e388833b568cfdfa90c8">func</a></div><div class="ttdeci">GLenum func</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:949</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a2003032e3d6cfe0acd020119b0204242"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a2003032e3d6cfe0acd020119b0204242">offset</a></div><div class="ttdeci">GLintptr offset</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:830</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a691492ec0bd6383f91200e49f6ae40ed"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a></div><div class="ttdeci">GLfloat f</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2144</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a72e0fdf0f845ded60b1fada9e9195cd7"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a></div><div class="ttdeci">GLenum src</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:2011</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a76461e97a098d2c9ae20ac193d3825ae"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a76461e97a098d2c9ae20ac193d3825ae">buffer</a></div><div class="ttdeci">GLuint buffer</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:825</div></div>
+<div class="ttc" id="aattributes_8h_html"><div class="ttname"><a href="attributes_8h.html">attributes.h</a></div><div class="ttdoc">Macro definitions for various function/variable attributes</div></div>
+<div class="ttc" id="aavutil_8h_html"><div class="ttname"><a href="avutil_8h.html">avutil.h</a></div><div class="ttdoc">Convenience header that includes libavutil&#39;s core.</div></div>
+<div class="ttc" id="afifo_8h_html_a037f66cc2b92aebbc363617387d39f6f"><div class="ttname"><a href="fifo_8h.html#a037f66cc2b92aebbc363617387d39f6f">av_fifo_drain</a></div><div class="ttdeci">void av_fifo_drain(AVFifoBuffer *f, int size)</div><div class="ttdoc">Read and discard the specified amount of data from an AVFifoBuffer.</div></div>
+<div class="ttc" id="afifo_8h_html_a2f257d5cd93686b047c9b29ef6493e51"><div class="ttname"><a href="fifo_8h.html#a2f257d5cd93686b047c9b29ef6493e51">av_fifo_reset</a></div><div class="ttdeci">void av_fifo_reset(AVFifoBuffer *f)</div><div class="ttdoc">Reset the AVFifoBuffer to the state right after av_fifo_alloc, in particular it is emptied.</div></div>
+<div class="ttc" id="afifo_8h_html_a44a36b44adf5b278eeea1cb6d5b7033b"><div class="ttname"><a href="fifo_8h.html#a44a36b44adf5b278eeea1cb6d5b7033b">av_fifo_grow</a></div><div class="ttdeci">int av_fifo_grow(AVFifoBuffer *f, unsigned int additional_space)</div><div class="ttdoc">Enlarge an AVFifoBuffer.</div></div>
+<div class="ttc" id="afifo_8h_html_a4668ffc129f5d0329ecb038934a475e5"><div class="ttname"><a href="fifo_8h.html#a4668ffc129f5d0329ecb038934a475e5">av_fifo_peek2</a></div><div class="ttdeci">static uint8_t * av_fifo_peek2(const AVFifoBuffer *f, int offs)</div><div class="ttdoc">Return a pointer to the data stored in a FIFO buffer at a certain offset.</div><div class="ttdef"><b>定义</b> fifo.h:169</div></div>
+<div class="ttc" id="afifo_8h_html_a5f2a02d3834b41d653da119e8373ffbc"><div class="ttname"><a href="fifo_8h.html#a5f2a02d3834b41d653da119e8373ffbc">av_fifo_alloc</a></div><div class="ttdeci">AVFifoBuffer * av_fifo_alloc(unsigned int size)</div><div class="ttdoc">Initialize an AVFifoBuffer.</div></div>
+<div class="ttc" id="afifo_8h_html_a612be59edb6ab388a82d1487d1bd0c4d"><div class="ttname"><a href="fifo_8h.html#a612be59edb6ab388a82d1487d1bd0c4d">av_fifo_freep</a></div><div class="ttdeci">void av_fifo_freep(AVFifoBuffer **f)</div><div class="ttdoc">Free an AVFifoBuffer and reset pointer to NULL.</div></div>
+<div class="ttc" id="afifo_8h_html_a81f4cea70d96846df7111daccc5ecce2"><div class="ttname"><a href="fifo_8h.html#a81f4cea70d96846df7111daccc5ecce2">av_fifo_size</a></div><div class="ttdeci">int av_fifo_size(const AVFifoBuffer *f)</div><div class="ttdoc">Return the amount of data in bytes in the AVFifoBuffer, that is the amount of data you can read from ...</div></div>
+<div class="ttc" id="afifo_8h_html_a88f38ad020aa982a895cfcb5380e1acf"><div class="ttname"><a href="fifo_8h.html#a88f38ad020aa982a895cfcb5380e1acf">av_fifo_alloc_array</a></div><div class="ttdeci">AVFifoBuffer * av_fifo_alloc_array(size_t nmemb, size_t size)</div><div class="ttdoc">Initialize an AVFifoBuffer.</div></div>
+<div class="ttc" id="afifo_8h_html_a9fbc6be8766f3389eda0e37ca92cee65"><div class="ttname"><a href="fifo_8h.html#a9fbc6be8766f3389eda0e37ca92cee65">av_fifo_generic_peek</a></div><div class="ttdeci">int av_fifo_generic_peek(AVFifoBuffer *f, void *dest, int buf_size, void(*func)(void *, void *, int))</div><div class="ttdoc">Feed data from an AVFifoBuffer to a user-supplied callback.</div></div>
+<div class="ttc" id="afifo_8h_html_ab708d2f19b7a9592caa278256787adb6"><div class="ttname"><a href="fifo_8h.html#ab708d2f19b7a9592caa278256787adb6">av_fifo_generic_read</a></div><div class="ttdeci">int av_fifo_generic_read(AVFifoBuffer *f, void *dest, int buf_size, void(*func)(void *, void *, int))</div><div class="ttdoc">Feed data from an AVFifoBuffer to a user-supplied callback.</div></div>
+<div class="ttc" id="afifo_8h_html_ac1e0d8ee7f1568cb40fa95a740c60f13"><div class="ttname"><a href="fifo_8h.html#ac1e0d8ee7f1568cb40fa95a740c60f13">av_fifo_space</a></div><div class="ttdeci">int av_fifo_space(const AVFifoBuffer *f)</div><div class="ttdoc">Return the amount of space in bytes in the AVFifoBuffer, that is the amount of data you can write int...</div></div>
+<div class="ttc" id="afifo_8h_html_ac41532c140aacb9ad12a22c859f944aa"><div class="ttname"><a href="fifo_8h.html#ac41532c140aacb9ad12a22c859f944aa">av_fifo_free</a></div><div class="ttdeci">void av_fifo_free(AVFifoBuffer *f)</div><div class="ttdoc">Free an AVFifoBuffer.</div></div>
+<div class="ttc" id="afifo_8h_html_ae44de4980b66c0695a4cf7808c140181"><div class="ttname"><a href="fifo_8h.html#ae44de4980b66c0695a4cf7808c140181">av_fifo_generic_peek_at</a></div><div class="ttdeci">int av_fifo_generic_peek_at(AVFifoBuffer *f, void *dest, int offset, int buf_size, void(*func)(void *, void *, int))</div><div class="ttdoc">Feed data at specific position from an AVFifoBuffer to a user-supplied callback.</div></div>
+<div class="ttc" id="afifo_8h_html_ae95c15dcdd266b4005f8919e4f571180"><div class="ttname"><a href="fifo_8h.html#ae95c15dcdd266b4005f8919e4f571180">av_fifo_generic_write</a></div><div class="ttdeci">int av_fifo_generic_write(AVFifoBuffer *f, void *src, int size, int(*func)(void *, void *, int))</div><div class="ttdoc">Feed data from a user-supplied callback to an AVFifoBuffer.</div></div>
+<div class="ttc" id="afifo_8h_html_af50c043864cf09925aa4986e00a57067"><div class="ttname"><a href="fifo_8h.html#af50c043864cf09925aa4986e00a57067">av_fifo_realloc2</a></div><div class="ttdeci">int av_fifo_realloc2(AVFifoBuffer *f, unsigned int size)</div><div class="ttdoc">Resize an AVFifoBuffer.</div></div>
+<div class="ttc" id="aformat_8h_html_adb6e274f8eb0b74b2865215e1b49c535"><div class="ttname"><a href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a></div><div class="ttdeci">auto ptr(T p) -&gt; const void *</div><div class="ttdoc">Converts p to const void* for pointer formatting.</div><div class="ttdef"><b>定义</b> format.h:3817</div></div>
+<div class="ttc" id="agroup__lavu__mem__funcs_html_ga79fd723df92f68cf8a6207a1d98b4c01"><div class="ttname"><a href="group__lavu__mem__funcs.html#ga79fd723df92f68cf8a6207a1d98b4c01">nmemb</a></div><div class="ttdeci">size_t nmemb</div><div class="ttdef"><b>定义</b> mem.h:323</div></div>
+<div class="ttc" id="agroup__lavu__mem__funcs_html_ga9f139c614d49f2a707b6037305b0fec0"><div class="ttname"><a href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a></div><div class="ttdeci">GLsizeiptr size</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:829</div></div>
+<div class="ttc" id="astruct_a_v_fifo_buffer_html"><div class="ttname"><a href="struct_a_v_fifo_buffer.html">AVFifoBuffer</a></div><div class="ttdef"><b>定义</b> fifo.h:31</div></div>
+<div class="ttc" id="astruct_a_v_fifo_buffer_html_a1e2ac8fe284e68d2fcce3fd934cf8387"><div class="ttname"><a href="struct_a_v_fifo_buffer.html#a1e2ac8fe284e68d2fcce3fd934cf8387">AVFifoBuffer::wptr</a></div><div class="ttdeci">uint8_t * wptr</div><div class="ttdef"><b>定义</b> fifo.h:33</div></div>
+<div class="ttc" id="astruct_a_v_fifo_buffer_html_a2532afa8f9d80ab84941dd9e6354cf33"><div class="ttname"><a href="struct_a_v_fifo_buffer.html#a2532afa8f9d80ab84941dd9e6354cf33">AVFifoBuffer::rptr</a></div><div class="ttdeci">uint8_t * rptr</div><div class="ttdef"><b>定义</b> fifo.h:33</div></div>
+<div class="ttc" id="astruct_a_v_fifo_buffer_html_a56ed84df35de10bdb65e72b184309497"><div class="ttname"><a href="struct_a_v_fifo_buffer.html#a56ed84df35de10bdb65e72b184309497">AVFifoBuffer::buffer</a></div><div class="ttdeci">uint8_t * buffer</div><div class="ttdef"><b>定义</b> fifo.h:32</div></div>
+<div class="ttc" id="astruct_a_v_fifo_buffer_html_a57e0398bbef4e81bc7b454d9e8d15f5b"><div class="ttname"><a href="struct_a_v_fifo_buffer.html#a57e0398bbef4e81bc7b454d9e8d15f5b">AVFifoBuffer::rndx</a></div><div class="ttdeci">uint32_t rndx</div><div class="ttdef"><b>定义</b> fifo.h:34</div></div>
+<div class="ttc" id="astruct_a_v_fifo_buffer_html_a65dd3cfa94f43151e14df9641df8a886"><div class="ttname"><a href="struct_a_v_fifo_buffer.html#a65dd3cfa94f43151e14df9641df8a886">AVFifoBuffer::wndx</a></div><div class="ttdeci">uint32_t wndx</div><div class="ttdef"><b>定义</b> fifo.h:34</div></div>
+<div class="ttc" id="astruct_a_v_fifo_buffer_html_acb42943bca405a35b29d5b67f4e511f2"><div class="ttname"><a href="struct_a_v_fifo_buffer.html#acb42943bca405a35b29d5b67f4e511f2">AVFifoBuffer::end</a></div><div class="ttdeci">uint8_t * end</div><div class="ttdef"><b>定义</b> fifo.h:33</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="fifo_8h.html">fifo.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

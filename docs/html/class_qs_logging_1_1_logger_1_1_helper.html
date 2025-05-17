@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Logger::Helper类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_qs_logging_1_1_logger_1_1_helper.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_qs_logging_1_1_logger_1_1_helper-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Logger::Helper类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>The helper forwards the streaming to QDebug and builds the final log message.  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_qs_log_8h_source.html">QsLog.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a939b796c6c5789c7009c0c2fc300862b" id="r_a939b796c6c5789c7009c0c2fc300862b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a939b796c6c5789c7009c0c2fc300862b">Helper</a> (<a class="el" href="namespace_qs_logging.html#a221b779e6bb7b8d40677d7642bfefac5">Level</a> logLevel)</td></tr>
+<tr class="separator:a939b796c6c5789c7009c0c2fc300862b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f97cec0bbbb2980d0df1b0c11af998" id="r_ad4f97cec0bbbb2980d0df1b0c11af998"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4f97cec0bbbb2980d0df1b0c11af998">~Helper</a> ()</td></tr>
+<tr class="separator:ad4f97cec0bbbb2980d0df1b0c11af998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc74bbef793a46bfc077d5e33a7c4fa" id="r_afbc74bbef793a46bfc077d5e33a7c4fa"><td class="memItemLeft" align="right" valign="top">QDebug &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbc74bbef793a46bfc077d5e33a7c4fa">stream</a> ()</td></tr>
+<tr class="separator:afbc74bbef793a46bfc077d5e33a7c4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a7dab77e1476c4c6a5c9a4b0c029c1a9d" id="r_a7dab77e1476c4c6a5c9a4b0c029c1a9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dab77e1476c4c6a5c9a4b0c029c1a9d">writeToLog</a> ()</td></tr>
+<tr class="memdesc:a7dab77e1476c4c6a5c9a4b0c029c1a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates the complete log message and passes it to the logger  <br /></td></tr>
+<tr class="separator:a7dab77e1476c4c6a5c9a4b0c029c1a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a083b6d36ebd55b2e07bedb04440cb325" id="r_a083b6d36ebd55b2e07bedb04440cb325"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_qs_logging.html#a221b779e6bb7b8d40677d7642bfefac5">Level</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a083b6d36ebd55b2e07bedb04440cb325">level</a></td></tr>
+<tr class="separator:a083b6d36ebd55b2e07bedb04440cb325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de8f2859dd7f4b5166e341f9008e1a3" id="r_a0de8f2859dd7f4b5166e341f9008e1a3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0de8f2859dd7f4b5166e341f9008e1a3">buffer</a></td></tr>
+<tr class="separator:a0de8f2859dd7f4b5166e341f9008e1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab5cbef0fd16be5e0c930e4df0ee7dc" id="r_a9ab5cbef0fd16be5e0c930e4df0ee7dc"><td class="memItemLeft" align="right" valign="top">QDebug&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ab5cbef0fd16be5e0c930e4df0ee7dc">qtDebug</a></td></tr>
+<tr class="separator:a9ab5cbef0fd16be5e0c930e4df0ee7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The helper forwards the streaming to QDebug and builds the final log message. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a939b796c6c5789c7009c0c2fc300862b" name="a939b796c6c5789c7009c0c2fc300862b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a939b796c6c5789c7009c0c2fc300862b">&#9670;&#160;</a></span>Helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qs_logging_1_1_logger_1_1_helper.html">Helper</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_qs_logging.html#a221b779e6bb7b8d40677d7642bfefac5">Level</a></td>          <td class="paramname"><span class="paramname"><em>logLevel</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4f97cec0bbbb2980d0df1b0c11af998" name="ad4f97cec0bbbb2980d0df1b0c11af998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4f97cec0bbbb2980d0df1b0c11af998">&#9670;&#160;</a></span>~Helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_qs_logging_1_1_logger_1_1_helper.html">Helper</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qs_logging_1_1_logger_1_1_helper_ad4f97cec0bbbb2980d0df1b0c11af998_cgraph.png" border="0" usemap="#aclass_qs_logging_1_1_logger_1_1_helper_ad4f97cec0bbbb2980d0df1b0c11af998_cgraph" alt=""/></div>
+<map name="aclass_qs_logging_1_1_logger_1_1_helper_ad4f97cec0bbbb2980d0df1b0c11af998_cgraph" id="aclass_qs_logging_1_1_logger_1_1_helper_ad4f97cec0bbbb2980d0df1b0c11af998_cgraph">
+<area shape="rect" title=" " alt="" coords="5,255,73,281"/>
+<area shape="rect" href="class_qs_logging_1_1_logger_1_1_helper.html#a7dab77e1476c4c6a5c9a4b0c029c1a9d" title="creates the complete log message and passes it to the logger" alt="" coords="121,255,205,281"/>
+<area shape="poly" title=" " alt="" coords="73,265,105,265,105,271,73,271"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#afbaaae69412bee67954e7b5026b97f8b" title="directs the message to the task queue or writes it directly" alt="" coords="268,63,406,105"/>
+<area shape="poly" title=" " alt="" coords="166,253,195,188,220,150,251,115,255,112,259,116,255,119,224,153,200,191,171,255"/>
+<area shape="rect" href="namespace_qs_logging.html#af7cedab36ef768b4e00a7bdbbe1a693a" title=" " alt="" coords="253,129,420,156"/>
+<area shape="poly" title=" " alt="" coords="171,253,203,210,225,186,252,166,261,160,264,165,254,170,229,190,207,213,175,256"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a6a2a0368b894c50688732893c142391e" title="Default value is true." alt="" coords="268,180,406,223"/>
+<area shape="poly" title=" " alt="" coords="199,252,264,226,266,231,201,257"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a57b1732659004a5755fbc6881fb2e982" title="Default value is true." alt="" coords="268,247,406,289"/>
+<area shape="poly" title=" " alt="" coords="206,265,252,265,252,271,206,271"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#af7691807bd78c60d98238e0f64d361c9" title=" " alt="" coords="268,313,406,356"/>
+<area shape="poly" title=" " alt="" coords="201,279,266,305,264,310,199,284"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a4fac0c9f6ee2dce6abd726264b9195f7" title=" " alt="" coords="468,343,607,385"/>
+<area shape="poly" title=" " alt="" coords="174,280,204,325,227,348,254,366,303,381,355,387,406,386,453,380,453,386,406,391,354,392,302,386,252,370,224,352,200,329,169,284"/>
+<area shape="rect" href="namespace_qs_logging.html#a9976739112ffb9c25dae38fdd865ad12" title=" " alt="" coords="256,431,417,457"/>
+<area shape="poly" title=" " alt="" coords="172,281,201,342,225,378,255,410,272,421,269,426,251,414,221,382,196,345,167,283"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a27d33fe348fa48f5be163ad876cdb699" title=" " alt="" coords="468,29,607,72"/>
+<area shape="poly" title=" " alt="" coords="406,70,453,62,454,67,407,75"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a4203871c59d5d5988d11d8315eb64390" title="Sends the message to all the destinations." alt="" coords="468,96,607,139"/>
+<area shape="poly" title=" " alt="" coords="407,93,454,101,453,106,406,98"/>
+<area shape="poly" title=" " alt="" coords="499,29,498,19,504,10,517,5,538,3,559,5,572,11,570,16,558,10,537,8,519,10,507,15,503,21,504,28"/>
+<area shape="poly" title=" " alt="" coords="407,342,453,349,453,354,406,347"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="afbc74bbef793a46bfc077d5e33a7c4fa" name="afbc74bbef793a46bfc077d5e33a7c4fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc74bbef793a46bfc077d5e33a7c4fa">&#9670;&#160;</a></span>stream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDebug &amp; stream </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7dab77e1476c4c6a5c9a4b0c029c1a9d" name="a7dab77e1476c4c6a5c9a4b0c029c1a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dab77e1476c4c6a5c9a4b0c029c1a9d">&#9670;&#160;</a></span>writeToLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeToLog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>creates the complete log message and passes it to the logger </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qs_logging_1_1_logger_1_1_helper_a7dab77e1476c4c6a5c9a4b0c029c1a9d_cgraph.png" border="0" usemap="#aclass_qs_logging_1_1_logger_1_1_helper_a7dab77e1476c4c6a5c9a4b0c029c1a9d_cgraph" alt=""/></div>
+<map name="aclass_qs_logging_1_1_logger_1_1_helper_a7dab77e1476c4c6a5c9a4b0c029c1a9d_cgraph" id="aclass_qs_logging_1_1_logger_1_1_helper_a7dab77e1476c4c6a5c9a4b0c029c1a9d_cgraph">
+<area shape="rect" title="creates the complete log message and passes it to the logger" alt="" coords="5,255,90,281"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#afbaaae69412bee67954e7b5026b97f8b" title="directs the message to the task queue or writes it directly" alt="" coords="152,63,290,105"/>
+<area shape="poly" title=" " alt="" coords="51,253,80,188,105,150,136,115,140,112,143,116,139,119,109,153,85,191,56,255"/>
+<area shape="rect" href="namespace_qs_logging.html#af7cedab36ef768b4e00a7bdbbe1a693a" title=" " alt="" coords="138,129,305,156"/>
+<area shape="poly" title=" " alt="" coords="55,253,87,210,110,186,136,166,146,160,148,165,139,170,114,190,91,213,60,256"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a6a2a0368b894c50688732893c142391e" title="Default value is true." alt="" coords="152,180,290,223"/>
+<area shape="poly" title=" " alt="" coords="84,252,149,226,151,231,86,257"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a57b1732659004a5755fbc6881fb2e982" title="Default value is true." alt="" coords="152,247,290,289"/>
+<area shape="poly" title=" " alt="" coords="90,265,136,265,136,271,90,271"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#af7691807bd78c60d98238e0f64d361c9" title=" " alt="" coords="152,313,290,356"/>
+<area shape="poly" title=" " alt="" coords="86,279,151,305,149,310,84,284"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a4fac0c9f6ee2dce6abd726264b9195f7" title=" " alt="" coords="353,343,491,385"/>
+<area shape="poly" title=" " alt="" coords="58,280,89,325,112,348,139,366,188,381,239,387,290,386,337,380,338,386,291,391,239,392,187,386,137,370,108,352,85,329,54,284"/>
+<area shape="rect" href="namespace_qs_logging.html#a9976739112ffb9c25dae38fdd865ad12" title=" " alt="" coords="141,431,302,457"/>
+<area shape="poly" title=" " alt="" coords="56,281,86,342,110,378,139,410,156,421,154,426,136,414,105,382,81,345,51,283"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a27d33fe348fa48f5be163ad876cdb699" title=" " alt="" coords="353,29,491,72"/>
+<area shape="poly" title=" " alt="" coords="290,70,337,62,338,67,291,75"/>
+<area shape="rect" href="class_qs_logging_1_1_logger.html#a4203871c59d5d5988d11d8315eb64390" title="Sends the message to all the destinations." alt="" coords="353,96,491,139"/>
+<area shape="poly" title=" " alt="" coords="291,93,338,101,337,106,290,98"/>
+<area shape="poly" title=" " alt="" coords="384,29,382,19,389,10,402,5,422,3,444,5,457,11,454,16,442,10,422,8,403,10,392,15,387,21,389,28"/>
+<area shape="poly" title=" " alt="" coords="291,342,338,349,337,354,290,347"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qs_logging_1_1_logger_1_1_helper_a7dab77e1476c4c6a5c9a4b0c029c1a9d_icgraph.png" border="0" usemap="#aclass_qs_logging_1_1_logger_1_1_helper_a7dab77e1476c4c6a5c9a4b0c029c1a9d_icgraph" alt=""/></div>
+<map name="aclass_qs_logging_1_1_logger_1_1_helper_a7dab77e1476c4c6a5c9a4b0c029c1a9d_icgraph" id="aclass_qs_logging_1_1_logger_1_1_helper_a7dab77e1476c4c6a5c9a4b0c029c1a9d_icgraph">
+<area shape="rect" title="creates the complete log message and passes it to the logger" alt="" coords="121,5,205,32"/>
+<area shape="rect" href="class_qs_logging_1_1_logger_1_1_helper.html#ad4f97cec0bbbb2980d0df1b0c11af998" title=" " alt="" coords="5,5,73,32"/>
+<area shape="poly" title=" " alt="" coords="105,21,73,21,73,16,105,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a0de8f2859dd7f4b5166e341f9008e1a3" name="a0de8f2859dd7f4b5166e341f9008e1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de8f2859dd7f4b5166e341f9008e1a3">&#9670;&#160;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a083b6d36ebd55b2e07bedb04440cb325" name="a083b6d36ebd55b2e07bedb04440cb325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a083b6d36ebd55b2e07bedb04440cb325">&#9670;&#160;</a></span>level</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_qs_logging.html#a221b779e6bb7b8d40677d7642bfefac5">Level</a> level</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ab5cbef0fd16be5e0c930e4df0ee7dc" name="a9ab5cbef0fd16be5e0c930e4df0ee7dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ab5cbef0fd16be5e0c930e4df0ee7dc">&#9670;&#160;</a></span>qtDebug</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDebug qtDebug</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_qs_log_8h_source.html">QsLog.h</a></li>
+<li><a class="el" href="_qs_log_8cpp.html">QsLog.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_qs_logging.html">QsLogging</a></li><li class="navelem"><a class="el" href="class_qs_logging_1_1_logger.html">Logger</a></li><li class="navelem"><a class="el" href="class_qs_logging_1_1_logger_1_1_helper.html">Helper</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

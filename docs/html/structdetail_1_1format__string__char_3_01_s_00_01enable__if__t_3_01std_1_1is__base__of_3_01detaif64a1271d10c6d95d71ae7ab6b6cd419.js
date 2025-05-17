@@ -1,0 +1,4 @@
+var structdetail_1_1format__string__char_3_01_s_00_01enable__if__t_3_01std_1_1is__base__of_3_01detaif64a1271d10c6d95d71ae7ab6b6cd419 =
+[
+    [ "type", "structdetail_1_1format__string__char_3_01_s_00_01enable__if__t_3_01std_1_1is__base__of_3_01detaif64a1271d10c6d95d71ae7ab6b6cd419.html#a391fbec142ae10c0ed006b5f7c6c23f8", null ]
+];

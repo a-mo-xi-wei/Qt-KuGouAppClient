@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: rational.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('rational_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">rational.h 文件参考<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__math.html">Mathematics</a> &raquo; <a class="el" href="group__lavu__math__rational.html">AVRational</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Utilties for rational number calculation.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="attributes_8h_source.html">attributes.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rational.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rational_8h__incl.png" border="0" usemap="#arational_8h" alt=""/></div>
+<map name="arational_8h" id="arational_8h">
+<area shape="rect" title="Utilties for rational number calculation." alt="" coords="88,5,163,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,70,107"/>
+<area shape="poly" title=" " alt="" coords="112,35,66,72,63,68,108,30"/>
+<area shape="rect" title=" " alt="" coords="94,80,157,107"/>
+<area shape="poly" title=" " alt="" coords="128,33,128,64,123,64,123,33"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="181,80,267,107"/>
+<area shape="poly" title=" " alt="" coords="144,30,197,69,194,73,141,35"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="rational_8h__dep__incl.png" border="0" usemap="#arational_8hdep" alt=""/></div>
+<map name="arational_8hdep" id="arational_8hdep">
+<area shape="rect" title="Utilties for rational number calculation." alt="" coords="1251,5,1325,32"/>
+<area shape="rect" href="avcodec_8h.html" title="Libavcodec external API header" alt="" coords="754,453,835,480"/>
+<area shape="poly" title=" " alt="" coords="1341,22,1420,39,1462,55,1500,78,1542,130,1603,223,1659,318,1689,378,1694,393,1689,407,1670,419,1641,429,1553,444,1436,455,1302,462,1031,468,836,468,836,463,1031,463,1302,457,1436,450,1552,439,1639,423,1668,414,1685,404,1688,393,1684,380,1655,321,1598,225,1538,133,1497,82,1459,60,1418,44,1340,27"/>
+<area shape="rect" href="dv__profile_8h.html" title=" " alt="" coords="318,528,407,555"/>
+<area shape="poly" title=" " alt="" coords="1235,24,962,32,778,41,585,55,404,74,251,98,192,113,147,130,119,148,112,157,109,167,109,244,117,275,139,312,171,352,209,394,289,472,350,526,346,530,285,476,205,398,167,356,134,315,112,277,104,244,104,166,107,155,115,144,145,125,190,108,250,93,403,68,585,50,777,36,962,27,1235,18"/>
+<area shape="rect" href="avfilter_8h.html" title="Main libavfilter public API header" alt="" coords="1011,379,1082,405"/>
+<area shape="poly" title=" " alt="" coords="1291,48,1291,167,1291,244,1284,276,1268,298,1213,333,1156,358,1084,382,1082,377,1154,353,1211,328,1264,294,1280,274,1285,244,1285,167,1285,48"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="698,155,761,181"/>
+<area shape="poly" title=" " alt="" coords="1236,36,762,161,761,156,1235,31"/>
+<area shape="rect" href="frame_8h.html" title="reference&#45;counted frame API" alt="" coords="1134,304,1199,331"/>
+<area shape="poly" title=" " alt="" coords="1280,47,1174,305,1169,303,1275,45"/>
+<area shape="rect" href="mastering__display__metadata_8h.html" title=" " alt="" coords="1477,379,1675,405"/>
+<area shape="poly" title=" " alt="" coords="1341,27,1397,43,1456,70,1481,89,1501,111,1515,137,1520,166,1520,244,1525,283,1538,321,1569,377,1565,379,1534,323,1520,284,1515,244,1515,167,1510,138,1497,114,1477,93,1453,75,1396,48,1340,32"/>
+<area shape="rect" href="imgutils_8h.html" title="misc image utilities" alt="" coords="1635,229,1712,256"/>
+<area shape="poly" title=" " alt="" coords="1340,21,1412,27,1494,38,1568,55,1597,65,1618,78,1634,95,1646,114,1664,157,1672,198,1676,229,1670,229,1667,199,1659,159,1642,117,1630,98,1614,82,1595,70,1566,60,1493,44,1412,32,1340,26"/>
+<area shape="rect" href="opt_8h.html" title="AVOptions" alt="" coords="123,379,173,405"/>
+<area shape="poly" title=" " alt="" coords="1236,23,979,26,620,35,440,43,281,53,159,66,116,74,89,82,56,98,30,114,14,135,8,167,8,244,11,267,20,289,34,309,50,327,88,356,124,377,121,381,85,361,47,331,29,312,16,291,6,269,3,244,3,166,9,133,27,110,53,93,87,78,115,69,158,61,281,48,440,38,620,30,979,21,1235,18"/>
+<area shape="rect" href="mathematics_8h.html" title=" " alt="" coords="772,80,879,107"/>
+<area shape="poly" title=" " alt="" coords="1236,31,880,86,879,81,1235,26"/>
+<area shape="rect" href="parseutils_8h.html" title="misc parsing utilities" alt="" coords="1685,80,1774,107"/>
+<area shape="poly" title=" " alt="" coords="1341,25,1667,77,1685,81,1684,86,1666,83,1340,30"/>
+<area shape="rect" href="timecode_8h.html" title="Timecode helpers header" alt="" coords="1797,80,1883,107"/>
+<area shape="poly" title=" " alt="" coords="1341,22,1537,43,1786,77,1798,80,1797,85,1785,83,1536,48,1340,27"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="936,752,1038,779"/>
+<area shape="poly" title=" " alt="" coords="739,478,694,488,652,503,637,513,628,525,625,538,630,553,652,578,686,606,779,662,879,713,959,749,956,754,877,718,776,667,683,610,648,582,626,556,620,538,623,523,634,509,650,498,692,482,738,472"/>
+<area shape="rect" href="avformat_8h.html" title="Main libavformat public API header" alt="" coords="482,528,566,555"/>
+<area shape="poly" title=" " alt="" coords="740,485,567,531,565,526,738,480"/>
+<area shape="rect" href="dirac_8h.html" title="Interface to Dirac Decoder/Encoder" alt="" coords="950,528,1010,555"/>
+<area shape="poly" title=" " alt="" coords="842,484,950,526,948,531,840,489"/>
+<area shape="poly" title=" " alt="" coords="739,480,408,535,407,530,738,475"/>
+<area shape="rect" href="mediacodec_8h.html" title=" " alt="" coords="1034,528,1136,555"/>
+<area shape="poly" title=" " alt="" coords="851,479,1035,525,1034,530,850,484"/>
+<area shape="rect" href="vdpau_8h.html" title="Public libavcodec VDPAU header." alt="" coords="640,528,707,555"/>
+<area shape="poly" title=" " alt="" coords="762,491,696,530,693,525,759,486"/>
+<area shape="rect" href="videotoolbox_8h.html" title="Public libavcodec Videotoolbox header." alt="" coords="731,528,837,555"/>
+<area shape="poly" title=" " alt="" coords="793,496,788,528,783,527,788,495"/>
+<area shape="rect" href="xvmc_8h.html" title="Public libavcodec XvMC header." alt="" coords="861,528,926,555"/>
+<area shape="poly" title=" " alt="" coords="826,487,878,525,875,530,822,492"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="720,827,816,853"/>
+<area shape="poly" title=" " alt="" coords="935,786,807,829,806,823,933,781"/>
+<area shape="rect" href="_video_player_8cpp.html" title=" " alt="" coords="839,827,956,853"/>
+<area shape="poly" title=" " alt="" coords="961,791,914,828,911,824,958,787"/>
+<area shape="rect" href="_video_player___audio_thread_8cpp.html" title=" " alt="" coords="979,827,1176,853"/>
+<area shape="poly" title=" " alt="" coords="1016,786,1063,824,1060,828,1012,791"/>
+<area shape="rect" href="_video_player___video_thread_8cpp.html" title=" " alt="" coords="1199,827,1396,853"/>
+<area shape="poly" title=" " alt="" coords="1054,780,1244,823,1242,829,1053,785"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="656,901,765,928"/>
+<area shape="poly" title=" " alt="" coords="751,867,723,903,718,899,747,864"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="790,901,864,928"/>
+<area shape="poly" title=" " alt="" coords="790,864,819,899,814,903,786,867"/>
+<area shape="poly" title=" " alt="" coords="513,570,501,600,493,636,494,672,499,688,508,702,529,713,569,723,687,739,935,759,935,764,687,745,568,728,527,718,505,706,494,690,488,673,488,635,496,599,508,568"/>
+<area shape="rect" href="_p_c_m_frame_8h.html" title=" " alt="" coords="518,603,618,629"/>
+<area shape="poly" title=" " alt="" coords="542,567,563,601,558,604,537,570"/>
+<area shape="rect" href="avdevice_8h.html" title="Main libavdevice API header" alt="" coords="359,603,444,629"/>
+<area shape="poly" title=" " alt="" coords="491,565,424,604,422,600,488,561"/>
+<area shape="rect" href="_p_c_m_frame_8cpp.html" title=" " alt="" coords="639,677,753,704"/>
+<area shape="poly" title=" " alt="" coords="605,635,675,674,672,679,602,640"/>
+<area shape="rect" href="_pcm_player_8h.html" title=" " alt="" coords="518,677,615,704"/>
+<area shape="poly" title=" " alt="" coords="570,645,570,677,564,677,565,645"/>
+<area shape="poly" title=" " alt="" coords="630,702,935,753,934,758,629,707"/>
+<area shape="poly" title=" " alt="" coords="1098,408,1140,428,1182,456,1200,474,1214,493,1223,516,1227,540,1227,618,1221,648,1207,675,1185,697,1159,716,1098,743,1039,758,1037,753,1096,738,1156,711,1182,693,1203,672,1216,647,1221,617,1221,540,1218,517,1209,496,1196,477,1179,460,1138,433,1096,413"/>
+<area shape="rect" href="buffersink_8h.html" title="memory buffer sink API for audio and video" alt="" coords="1261,677,1350,704"/>
+<area shape="poly" title=" " alt="" coords="1098,404,1187,428,1224,441,1244,451,1266,479,1282,509,1301,575,1308,635,1309,677,1303,677,1303,635,1296,576,1277,511,1261,481,1241,455,1222,446,1186,434,1097,409"/>
+<area shape="rect" href="buffersrc_8h.html" title="Memory buffer source API." alt="" coords="1075,603,1157,629"/>
+<area shape="poly" title=" " alt="" coords="1073,414,1116,463,1136,494,1151,527,1153,549,1148,570,1128,604,1124,601,1143,568,1147,548,1145,529,1131,496,1111,466,1069,418"/>
+<area shape="poly" title=" " alt="" coords="1246,708,1039,755,1038,750,1245,703"/>
+<area shape="poly" title=" " alt="" coords="1097,643,1000,753,996,750,1093,639"/>
+<area shape="poly" title=" " alt="" coords="738,196,795,452,789,454,733,197"/>
+<area shape="poly" title=" " alt="" coords="777,167,860,170,959,179,1048,197,1082,211,1105,228,1116,247,1118,268,1115,289,1107,311,1084,351,1060,380,1056,377,1079,348,1102,309,1110,288,1113,268,1110,248,1101,231,1079,215,1046,202,958,185,860,176,777,172"/>
+<area shape="rect" href="audio__fifo_8h.html" title="Audio FIFO Buffer" alt="" coords="322,304,411,331"/>
+<area shape="poly" title=" " alt="" coords="683,179,592,197,541,213,492,232,429,269,383,306,379,301,426,265,489,227,539,207,591,192,682,173"/>
+<area shape="rect" href="avassert_8h.html" title="simple assert() macros that are a bit more flexible than ISO C assert()." alt="" coords="635,379,717,405"/>
+<area shape="poly" title=" " alt="" coords="725,197,682,379,676,378,720,196"/>
+<area shape="rect" href="eval_8h.html" title="simple arithmetic expression evaluator" alt="" coords="960,229,1016,256"/>
+<area shape="poly" title=" " alt="" coords="777,180,960,231,959,236,775,185"/>
+<area shape="rect" href="fifo_8h.html" title="a very simple circular buffer FIFO implementation" alt="" coords="343,229,393,256"/>
+<area shape="poly" title=" " alt="" coords="683,180,419,232,394,238,393,232,418,227,682,175"/>
+<area shape="rect" href="file_8h.html" title="Misc file utilities." alt="" coords="1041,229,1090,256"/>
+<area shape="poly" title=" " alt="" coords="777,174,892,196,1029,227,1041,230,1039,235,1027,232,891,201,776,180"/>
+<area shape="poly" title=" " alt="" coords="777,181,898,227,924,241,949,254,1049,286,1134,307,1133,312,1048,291,947,258,921,245,896,232,775,186"/>
+<area shape="poly" title=" " alt="" coords="777,170,1635,236,1634,241,776,176"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="617,304,666,331"/>
+<area shape="poly" title=" " alt="" coords="702,194,676,231,654,271,641,305,636,303,649,269,671,228,698,191"/>
+<area shape="poly" title=" " alt="" coords="683,174,556,181,399,193,258,210,209,220,183,231,169,247,160,266,149,307,147,348,149,378,144,378,141,348,144,307,155,264,165,244,180,227,207,215,257,204,398,187,556,176,682,169"/>
+<area shape="rect" href="swscale_8h.html" title="external API header" alt="" coords="248,379,328,405"/>
+<area shape="poly" title=" " alt="" coords="682,172,572,173,434,181,365,189,303,199,252,214,216,232,192,253,178,276,175,301,185,329,197,345,213,358,249,377,246,381,210,363,193,349,180,332,170,302,173,274,188,250,213,227,250,209,302,194,365,184,433,176,572,168,682,166"/>
+<area shape="rect" href="mem_8h.html" title="Memory handling functions" alt="" coords="529,229,591,256"/>
+<area shape="poly" title=" " alt="" coords="687,190,591,231,589,226,685,185"/>
+<area shape="rect" href="samplefmt_8h.html" title=" " alt="" coords="792,229,885,256"/>
+<area shape="poly" title=" " alt="" coords="763,188,821,226,818,231,760,193"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libpostproc_2version_8h.html" title="Libpostproc version macros" alt="" coords="227,229,301,256"/>
+<area shape="poly" title=" " alt="" coords="682,179,331,232,302,237,301,232,330,227,682,173"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libswresample_2version_8h.html" title="Libswresample version macros" alt="" coords="1346,304,1420,331"/>
+<area shape="poly" title=" " alt="" coords="776,170,941,188,1044,205,1147,227,1264,264,1355,301,1353,306,1262,269,1146,232,1043,210,941,194,776,175"/>
+<area shape="poly" title=" " alt="" coords="370,272,370,304,364,304,365,272"/>
+<area shape="poly" title=" " alt="" coords="1121,336,1000,381,949,408,831,455,829,450,947,403,998,376,1119,331"/>
+<area shape="poly" title=" " alt="" coords="1134,341,1069,380,1066,376,1132,337"/>
+<area shape="rect" href="downmix__info_8h.html" title="audio downmix medatata" alt="" coords="1213,379,1326,405"/>
+<area shape="poly" title=" " alt="" coords="1199,338,1253,376,1250,380,1196,342"/>
+<area shape="rect" href="hwcontext_8h.html" title=" " alt="" coords="843,379,936,405"/>
+<area shape="poly" title=" " alt="" coords="1120,333,937,381,935,376,1119,328"/>
+<area shape="poly" title=" " alt="" coords="1215,325,1505,375,1504,381,1214,330"/>
+<area shape="rect" href="stereo3d_8h.html" title="Stereoscopic video" alt="" coords="1107,379,1189,405"/>
+<area shape="poly" title=" " alt="" coords="1162,346,1154,379,1149,378,1157,345"/>
+<area shape="rect" href="swresample_8h.html" title="libswresample public header" alt="" coords="1350,379,1452,405"/>
+<area shape="poly" title=" " alt="" coords="1215,331,1361,375,1359,381,1213,336"/>
+<area shape="poly" title=" " alt="" coords="862,417,813,455,809,451,859,413"/>
+<area shape="poly" title=" " alt="" coords="1402,421,1396,540,1396,617,1395,645,1392,667,1382,687,1363,706,1338,720,1304,732,1216,749,1120,759,1038,765,1038,759,1120,754,1215,744,1302,727,1336,715,1360,702,1378,684,1387,665,1390,644,1391,617,1391,540,1396,421"/>
+<area shape="poly" title=" " alt="" coords="1701,265,1722,289,1743,319,1759,353,1765,390,1765,618,1759,633,1740,646,1675,671,1580,694,1466,713,1225,744,1038,762,1038,757,1224,739,1465,708,1579,688,1673,666,1737,642,1754,629,1760,617,1760,391,1754,355,1738,322,1718,292,1697,269"/>
+<area shape="poly" title=" " alt="" coords="629,345,619,375,619,390,625,404,651,429,685,446,720,456,754,461,753,466,719,461,683,451,648,434,620,407,614,391,614,375,623,344"/>
+<area shape="poly" title=" " alt="" coords="630,346,533,529,528,526,625,343"/>
+<area shape="poly" title=" " alt="" coords="624,344,594,380,473,530,413,604,409,601,469,526,590,377,619,341"/>
+<area shape="poly" title=" " alt="" coords="681,323,1011,382,1010,387,680,328"/>
+<area shape="poly" title=" " alt="" coords="660,290,695,228,726,180,731,183,700,231,665,293"/>
+<area shape="poly" title=" " alt="" coords="656,344,672,377,668,379,652,346"/>
+<area shape="poly" title=" " alt="" coords="682,328,847,375,845,381,680,333"/>
+<area shape="rect" href="avio_8h.html" title="Buffered I/O operations" alt="" coords="377,379,434,405"/>
+<area shape="poly" title=" " alt="" coords="603,333,435,384,433,379,601,328"/>
+<area shape="poly" title=" " alt="" coords="602,332,598,333,497,351,418,361,236,381,174,390,173,384,236,376,417,356,496,346,597,328,601,327"/>
+<area shape="poly" title=" " alt="" coords="602,332,598,333,450,364,329,386,328,381,449,359,597,328,601,327"/>
+<area shape="poly" title=" " alt="" coords="427,416,516,526,512,529,423,419"/>
+<area shape="poly" title=" " alt="" coords="133,420,106,474,96,506,92,540,92,617,97,651,112,672,135,684,165,690,240,693,281,695,322,701,408,719,496,732,670,750,823,759,935,761,935,767,823,764,670,755,496,737,407,724,321,707,280,700,240,698,165,695,134,689,109,676,92,653,87,618,87,540,91,505,101,472,129,417"/>
+<area shape="poly" title=" " alt="" coords="172,415,243,490,308,553,345,579,380,600,377,604,342,583,305,557,239,494,168,419"/>
+<area shape="rect" href="avdct_8h.html" title=" " alt="" coords="126,453,191,480"/>
+<area shape="poly" title=" " alt="" coords="155,420,159,453,154,453,149,421"/>
+<area shape="poly" title=" " alt="" coords="288,421,281,540,281,617,287,640,302,660,327,678,359,694,444,720,546,738,656,750,764,757,935,762,935,767,764,763,656,756,545,744,443,725,357,699,324,683,298,664,282,642,276,618,276,540,283,421"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="435,304,517,331"/>
+<area shape="poly" title=" " alt="" coords="535,269,492,306,489,302,532,264"/>
+<area shape="poly" title=" " alt="" coords="480,288,493,256,516,227,560,200,609,182,657,172,697,168,697,173,658,177,611,187,562,204,519,231,498,259,485,290"/>
+<area shape="poly" title=" " alt="" coords="455,344,419,380,416,376,451,340"/>
+<area shape="poly" title=" " alt="" coords="534,304,541,309,544,318,536,330,518,334,517,329,533,326,539,317,537,312,531,308"/>
+<area shape="poly" title=" " alt="" coords="836,272,800,453,795,452,831,271"/>
+<area shape="poly" title=" " alt="" coords="870,263,1031,376,1027,380,867,267"/>
+<area shape="poly" title=" " alt="" coords="777,254,617,276,423,307,412,309,411,304,422,301,616,271,776,249"/>
+<area shape="poly" title=" " alt="" coords="901,255,1134,306,1133,311,900,260"/>
+<area shape="poly" title=" " alt="" coords="901,249,1069,273,1153,288,1213,301,1308,339,1381,376,1378,381,1305,344,1211,307,1152,293,1068,279,900,255"/>
+<area shape="poly" title=" " alt="" coords="778,259,695,278,606,306,581,320,554,333,389,359,174,390,173,385,388,354,553,328,578,315,604,302,694,273,776,253"/>
+<area shape="rect" href="postprocess_8h.html" title="external API header" alt="" coords="195,304,298,331"/>
+<area shape="poly" title=" " alt="" coords="260,272,252,304,247,303,255,271"/>
+<area shape="poly" title=" " alt="" coords="1392,345,1401,378,1396,379,1387,346"/>
+<area shape="poly" title=" " alt="" coords="798,118,747,156,744,152,795,114"/>
+</map>
+</div>
+</div>
+<p><a href="rational_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_rational.html">AVRational</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rational number (pair of numerator and denominator).  <a href="struct_a_v_rational.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga6eff035c271caa5a533987a1e00ad43e" id="r_ga6eff035c271caa5a533987a1e00ad43e"><td class="memItemLeft" align="right" valign="top">typedef struct AVRational&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga6eff035c271caa5a533987a1e00ad43e">AVRational</a></td></tr>
+<tr class="memdesc:ga6eff035c271caa5a533987a1e00ad43e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rational number (pair of numerator and denominator).  <br /></td></tr>
+<tr class="separator:ga6eff035c271caa5a533987a1e00ad43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga7778b1d209ceb3e4bf34e40150d3b882" id="r_ga7778b1d209ceb3e4bf34e40150d3b882"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga7778b1d209ceb3e4bf34e40150d3b882">av_make_q</a> (int <a class="el" href="_s_d_l__opengl__glext_8h.html#abb50fc1ead3a02a46fb52daa2045f95c">num</a>, int den)</td></tr>
+<tr class="memdesc:ga7778b1d209ceb3e4bf34e40150d3b882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a>.  <br /></td></tr>
+<tr class="separator:ga7778b1d209ceb3e4bf34e40150d3b882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa440bf42ede128219a571ae4ce0f90b8" id="r_gaa440bf42ede128219a571ae4ce0f90b8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#gaa440bf42ede128219a571ae4ce0f90b8">av_cmp_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>)</td></tr>
+<tr class="memdesc:gaa440bf42ede128219a571ae4ce0f90b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two rationals.  <br /></td></tr>
+<tr class="separator:gaa440bf42ede128219a571ae4ce0f90b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga935dbbf6bde8dfe5fa7ddb1da582eb07" id="r_ga935dbbf6bde8dfe5fa7ddb1da582eb07"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga935dbbf6bde8dfe5fa7ddb1da582eb07">av_q2d</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>)</td></tr>
+<tr class="memdesc:ga935dbbf6bde8dfe5fa7ddb1da582eb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> to a <code>double</code>.  <br /></td></tr>
+<tr class="separator:ga935dbbf6bde8dfe5fa7ddb1da582eb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fd9c0b8e663cf3d55e89fbc6ce71602" id="r_ga4fd9c0b8e663cf3d55e89fbc6ce71602"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga4fd9c0b8e663cf3d55e89fbc6ce71602">av_reduce</a> (int *dst_num, int *dst_den, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#abb50fc1ead3a02a46fb52daa2045f95c">num</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> den, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> max)</td></tr>
+<tr class="memdesc:ga4fd9c0b8e663cf3d55e89fbc6ce71602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce a fraction.  <br /></td></tr>
+<tr class="separator:ga4fd9c0b8e663cf3d55e89fbc6ce71602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f9c69432582e2857147bcba3c75dc32" id="r_ga3f9c69432582e2857147bcba3c75dc32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga3f9c69432582e2857147bcba3c75dc32">av_mul_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:ga3f9c69432582e2857147bcba3c75dc32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply two rationals.  <br /></td></tr>
+<tr class="separator:ga3f9c69432582e2857147bcba3c75dc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffa24e7bd38e12dbac540d8b66461f97" id="r_gaffa24e7bd38e12dbac540d8b66461f97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#gaffa24e7bd38e12dbac540d8b66461f97">av_div_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:gaffa24e7bd38e12dbac540d8b66461f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide one rational by another.  <br /></td></tr>
+<tr class="separator:gaffa24e7bd38e12dbac540d8b66461f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2eb3a275aabacd8421f140a12bab4a91" id="r_ga2eb3a275aabacd8421f140a12bab4a91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga2eb3a275aabacd8421f140a12bab4a91">av_add_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:ga2eb3a275aabacd8421f140a12bab4a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add two rationals.  <br /></td></tr>
+<tr class="separator:ga2eb3a275aabacd8421f140a12bab4a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac66c6198ce5e8a8caf88dfc20782fa59" id="r_gac66c6198ce5e8a8caf88dfc20782fa59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#gac66c6198ce5e8a8caf88dfc20782fa59">av_sub_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a1f2d7f8147412c43ba2303a56f97ee73">c</a>) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:gac66c6198ce5e8a8caf88dfc20782fa59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract one rational from another.  <br /></td></tr>
+<tr class="separator:gac66c6198ce5e8a8caf88dfc20782fa59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab646f0a7cc30af543ba4a91b37f9de6e" id="r_gab646f0a7cc30af543ba4a91b37f9de6e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="attributes_8h.html#a28f50f4c125959216885f01d56dbe866">av_always_inline</a> <a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#gab646f0a7cc30af543ba4a91b37f9de6e">av_inv_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>)</td></tr>
+<tr class="memdesc:gab646f0a7cc30af543ba4a91b37f9de6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert a rational.  <br /></td></tr>
+<tr class="separator:gab646f0a7cc30af543ba4a91b37f9de6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dfd5ba1eb1edf5845ac32b338de9e76" id="r_ga7dfd5ba1eb1edf5845ac32b338de9e76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_rational.html">AVRational</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga7dfd5ba1eb1edf5845ac32b338de9e76">av_d2q</a> (double d, int max) <a class="el" href="attributes_8h.html#a9eaead3cde73464fd66bab4cef9307ad">av_const</a></td></tr>
+<tr class="memdesc:ga7dfd5ba1eb1edf5845ac32b338de9e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a double precision floating point number to a rational.  <br /></td></tr>
+<tr class="separator:ga7dfd5ba1eb1edf5845ac32b338de9e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga111810c563749cd3081aaa19004f44df" id="r_ga111810c563749cd3081aaa19004f44df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga111810c563749cd3081aaa19004f44df">av_nearer_q</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>, <a class="el" href="struct_a_v_rational.html">AVRational</a> q1, <a class="el" href="struct_a_v_rational.html">AVRational</a> q2)</td></tr>
+<tr class="memdesc:ga111810c563749cd3081aaa19004f44df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find which of the two rationals is closer to another rational.  <br /></td></tr>
+<tr class="separator:ga111810c563749cd3081aaa19004f44df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5" id="r_ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5">av_find_nearest_q_idx</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_rational.html">AVRational</a> *q_list)</td></tr>
+<tr class="memdesc:ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the value in a list of rationals nearest a given reference rational.  <br /></td></tr>
+<tr class="separator:ga63d5ef1c2f77a5fdccb2b3a1c8cc77f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafbcd96878344ade957d5bccc6bc705b2" id="r_gafbcd96878344ade957d5bccc6bc705b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__math__rational.html#gafbcd96878344ade957d5bccc6bc705b2">av_q2intfloat</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> <a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>)</td></tr>
+<tr class="memdesc:gafbcd96878344ade957d5bccc6bc705b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> to a IEEE 32-bit <code>float</code> expressed in fixed-point format.  <br /></td></tr>
+<tr class="separator:gafbcd96878344ade957d5bccc6bc705b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Utilties for rational number calculation. </p>
+<dl class="section author"><dt>作者</dt><dd>Michael Niedermayer <a href="#" onclick="location.href='mai'+'lto:'+'mic'+'ha'+'eln'+'i@'+'gmx'+'.a'+'t'; return false;">micha<span class="obfuscator">.nosp@m.</span>elni<span class="obfuscator">.nosp@m.</span>@gmx.<span class="obfuscator">.nosp@m.</span>at</a> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="rational_8h.html">rational.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

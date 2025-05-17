@@ -1,0 +1,28 @@
+var class_ui___listen_recommend =
+[
+    [ "retranslateUi", "class_ui___listen_recommend.html#aa14b4a290fc86c6aee5a97060d586de9", null ],
+    [ "retranslateUi", "class_ui___listen_recommend.html#aa14b4a290fc86c6aee5a97060d586de9", null ],
+    [ "retranslateUi", "class_ui___listen_recommend.html#aa14b4a290fc86c6aee5a97060d586de9", null ],
+    [ "setupUi", "class_ui___listen_recommend.html#a6e03e3d508539329081d54b96df63b45", null ],
+    [ "setupUi", "class_ui___listen_recommend.html#a6e03e3d508539329081d54b96df63b45", null ],
+    [ "setupUi", "class_ui___listen_recommend.html#a6e03e3d508539329081d54b96df63b45", null ],
+    [ "all_classify_toolButton", "class_ui___listen_recommend.html#a4ee68b02aec7eafabbc67cedb23ef088", null ],
+    [ "classify_widget", "class_ui___listen_recommend.html#ac84dd3c5176e3583987435523b308ec0", null ],
+    [ "daily_recommend_widget", "class_ui___listen_recommend.html#a9685c783210db8b2e8c8121334bdc577", null ],
+    [ "gridLayout", "class_ui___listen_recommend.html#a835e96c8de98ae8b60810d64698e5d16", null ],
+    [ "rank_widget", "class_ui___listen_recommend.html#a7603f14165b1e1ac01800cd701013e30", null ],
+    [ "scrollArea", "class_ui___listen_recommend.html#a88886b4ad3c673bf32101ac57faecef7", null ],
+    [ "scrollAreaWidgetContents", "class_ui___listen_recommend.html#a184ba0b7fc5e2214c7cb8de5de41da15", null ],
+    [ "table_widgets", "class_ui___listen_recommend.html#afc0fd9733b80d005195e8f889ba1d4bf", null ],
+    [ "toolButton_10", "class_ui___listen_recommend.html#a759b76ada2eac5e60b7d7d0f1c892dc8", null ],
+    [ "toolButton_11", "class_ui___listen_recommend.html#ae93bed71c95e0c81ac3b5c8c408a927d", null ],
+    [ "toolButton_12", "class_ui___listen_recommend.html#af58bfd567e6ed10ee9c2014116054f55", null ],
+    [ "toolButton_13", "class_ui___listen_recommend.html#ab12a6ca5c64552ad8df5e2307591a049", null ],
+    [ "toolButton_5", "class_ui___listen_recommend.html#abf921675cf6893d3d4907f8f8cde99ff", null ],
+    [ "toolButton_6", "class_ui___listen_recommend.html#aba90b6b43c5fad2541f1d76ef090f5ba", null ],
+    [ "toolButton_7", "class_ui___listen_recommend.html#a8424219e382105c1aaaec91c006e1eea", null ],
+    [ "toolButton_8", "class_ui___listen_recommend.html#ab4a3e83f16f3e6bc16205eb250745020", null ],
+    [ "toolButton_9", "class_ui___listen_recommend.html#aee99f60bc162544cb9c2710c2f27a9e7", null ],
+    [ "verticalLayout", "class_ui___listen_recommend.html#a0abb4548dbd3db49a137e05541123090", null ],
+    [ "verticalLayout_2", "class_ui___listen_recommend.html#af336a6593002d0419ec0e4fb23129da9", null ]
+];

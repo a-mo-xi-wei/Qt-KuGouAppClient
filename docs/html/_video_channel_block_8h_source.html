@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: VideoChannelBlock.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_video_channel_block_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VideoChannelBlock.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_video_channel_block_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef VIDEOCHANNELBLOCK_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define VIDEOCHANNELBLOCK_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QMouseEvent&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span><a class="code hl_class" href="class_q_label.html">QLabel</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a> { <span class="keyword">class </span>VideoChannelBlock; }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_video_channel_block.html">   29</a></span><span class="keyword">class </span><a class="code hl_function" href="class_video_channel_block.html#a79b1c60d850e190908a9f1bc2f3b51c6">VideoChannelBlock</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Q_OBJECT</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_video_channel_block.html#a79b1c60d850e190908a9f1bc2f3b51c6">VideoChannelBlock</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="class_video_channel_block.html#a67b113248b34fdf5978b7ee66cf2d86c">~VideoChannelBlock</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_channel_block.html#a577e699921fb58de1d51f2352a6088e1">setCoverPix</a>(<span class="keyword">const</span> QString &amp;pixmapPath) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_channel_block.html#a7bdaf90c6d6901c720641f3445248cd4">setDescription</a>(<span class="keyword">const</span> QString &amp;description);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_channel_block.html#abcbb3dfaf1485fb6bd77fb1c98b038a8">setCoverText</a>(<span class="keyword">const</span> QString &amp;text) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_channel_block.html#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_channel_block.html#a784cd2809d2b67e82e15b9f324fad370">initCoverTextFont</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_channel_block.html#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_channel_block.html#a2de3e1806dc8e5d659fc1f35545a5b87">mouseReleaseEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_video_channel_block.html#aa7cbd844218ae8d806339f58a33a3699">mouseDoubleClickEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_video_channel_block.html#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a>(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_video_channel_block.html#adfb4c787b6c7c1149c540c916d2fcd73">  106</a></span>    Ui::VideoChannelBlock *<a class="code hl_variable" href="class_video_channel_block.html#adfb4c787b6c7c1149c540c916d2fcd73">ui</a>;                 </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_video_channel_block.html#a48d963679d89fa829a99dcd391d59ab2">  107</a></span>    <a class="code hl_class" href="class_q_label.html">QLabel</a>                *<a class="code hl_variable" href="class_video_channel_block.html#a48d963679d89fa829a99dcd391d59ab2">m_coverTextLab</a>{};   </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_video_channel_block.html#ac121666d5bd1cb846079589876c52fea">  108</a></span>    QString                <a class="code hl_variable" href="class_video_channel_block.html#ac121666d5bd1cb846079589876c52fea">m_descriptionText</a>;  </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_video_channel_block.html#ac34147ffe3691ad2b9af59782f25f342">  109</a></span>    QFont                  <a class="code hl_variable" href="class_video_channel_block.html#ac34147ffe3691ad2b9af59782f25f342">m_coverTextFont</a>;    </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>};</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif </span><span class="comment">// VIDEOCHANNELBLOCK_H</span></div>
+<div class="ttc" id="aclass_q_label_html"><div class="ttname"><a href="class_q_label.html">QLabel</a></div><div class="ttdoc">标签控件类</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a2de3e1806dc8e5d659fc1f35545a5b87"><div class="ttname"><a href="class_video_channel_block.html#a2de3e1806dc8e5d659fc1f35545a5b87">VideoChannelBlock::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标释放事件</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:136</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a48d963679d89fa829a99dcd391d59ab2"><div class="ttname"><a href="class_video_channel_block.html#a48d963679d89fa829a99dcd391d59ab2">VideoChannelBlock::m_coverTextLab</a></div><div class="ttdeci">QLabel * m_coverTextLab</div><div class="ttdoc">封面文本标签</div><div class="ttdef"><b>定义</b> VideoChannelBlock.h:107</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a577e699921fb58de1d51f2352a6088e1"><div class="ttname"><a href="class_video_channel_block.html#a577e699921fb58de1d51f2352a6088e1">VideoChannelBlock::setCoverPix</a></div><div class="ttdeci">void setCoverPix(const QString &amp;pixmapPath) const</div><div class="ttdoc">设置封面图片</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:60</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a67b113248b34fdf5978b7ee66cf2d86c"><div class="ttname"><a href="class_video_channel_block.html#a67b113248b34fdf5978b7ee66cf2d86c">VideoChannelBlock::~VideoChannelBlock</a></div><div class="ttdeci">~VideoChannelBlock() override</div><div class="ttdoc">析构函数，清理资源</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:51</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a7523c71b2bf60975302287ec8923f80e"><div class="ttname"><a href="class_video_channel_block.html#a7523c71b2bf60975302287ec8923f80e">VideoChannelBlock::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标按下事件</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:126</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a784cd2809d2b67e82e15b9f324fad370"><div class="ttname"><a href="class_video_channel_block.html#a784cd2809d2b67e82e15b9f324fad370">VideoChannelBlock::initCoverTextFont</a></div><div class="ttdeci">void initCoverTextFont()</div><div class="ttdoc">初始化封面文本字体</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:115</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a79b1c60d850e190908a9f1bc2f3b51c6"><div class="ttname"><a href="class_video_channel_block.html#a79b1c60d850e190908a9f1bc2f3b51c6">VideoChannelBlock::VideoChannelBlock</a></div><div class="ttdeci">VideoChannelBlock(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化视频频道块控件</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:24</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a7bdaf90c6d6901c720641f3445248cd4"><div class="ttname"><a href="class_video_channel_block.html#a7bdaf90c6d6901c720641f3445248cd4">VideoChannelBlock::setDescription</a></div><div class="ttdeci">void setDescription(const QString &amp;description)</div><div class="ttdoc">设置描述</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:69</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_a7eb87a6d4464680c455d278d1d32eba6"><div class="ttname"><a href="class_video_channel_block.html#a7eb87a6d4464680c455d278d1d32eba6">VideoChannelBlock::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) override</div><div class="ttdoc">事件过滤器</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:158</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_aa7cbd844218ae8d806339f58a33a3699"><div class="ttname"><a href="class_video_channel_block.html#aa7cbd844218ae8d806339f58a33a3699">VideoChannelBlock::mouseDoubleClickEvent</a></div><div class="ttdeci">void mouseDoubleClickEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标双击事件</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:146</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_abcbb3dfaf1485fb6bd77fb1c98b038a8"><div class="ttname"><a href="class_video_channel_block.html#abcbb3dfaf1485fb6bd77fb1c98b038a8">VideoChannelBlock::setCoverText</a></div><div class="ttdeci">void setCoverText(const QString &amp;text) const</div><div class="ttdoc">设置封面文本</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:78</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_ac121666d5bd1cb846079589876c52fea"><div class="ttname"><a href="class_video_channel_block.html#ac121666d5bd1cb846079589876c52fea">VideoChannelBlock::m_descriptionText</a></div><div class="ttdeci">QString m_descriptionText</div><div class="ttdoc">描述文本</div><div class="ttdef"><b>定义</b> VideoChannelBlock.h:108</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_ac34147ffe3691ad2b9af59782f25f342"><div class="ttname"><a href="class_video_channel_block.html#ac34147ffe3691ad2b9af59782f25f342">VideoChannelBlock::m_coverTextFont</a></div><div class="ttdeci">QFont m_coverTextFont</div><div class="ttdoc">封面文本字体</div><div class="ttdef"><b>定义</b> VideoChannelBlock.h:109</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_adfb4c787b6c7c1149c540c916d2fcd73"><div class="ttname"><a href="class_video_channel_block.html#adfb4c787b6c7c1149c540c916d2fcd73">VideoChannelBlock::ui</a></div><div class="ttdeci">Ui::VideoChannelBlock * ui</div><div class="ttdoc">UI 指针</div><div class="ttdef"><b>定义</b> VideoChannelBlock.h:106</div></div>
+<div class="ttc" id="aclass_video_channel_block_html_afba6e95967cc3eb25fd518f7bde6ec04"><div class="ttname"><a href="class_video_channel_block.html#afba6e95967cc3eb25fd518f7bde6ec04">VideoChannelBlock::initUi</a></div><div class="ttdeci">void initUi()</div><div class="ttdoc">初始化界面</div><div class="ttdef"><b>定义</b> VideoChannelBlock.cpp:92</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_90e279afbf7087a5af4c74d8ed8b8ff6.html">Video</a></li><li class="navelem"><a class="el" href="dir_9787f0500ca10414ff00cdf185b3c74b.html">VideoChannelWidget</a></li><li class="navelem"><a class="el" href="_video_channel_block_8h.html">VideoChannelBlock.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

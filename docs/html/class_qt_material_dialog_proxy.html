@@ -1,0 +1,755 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: QtMaterialDialogProxy类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_qt_material_dialog_proxy.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-slots">Protected 槽</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#properties">属性</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_qt_material_dialog_proxy-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">QtMaterialDialogProxy类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>对话框代理类，管理透明度过渡和内容同步  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qtmaterialdialog__internal_8h_source.html">qtmaterialdialog_internal.h</a>&gt;</code></p>
+<div class="dynheader">
+类 QtMaterialDialogProxy 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_dialog_proxy__inherit__graph.png" border="0" usemap="#a_qt_material_dialog_proxy_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_qt_material_dialog_proxy_inherit__map" id="a_qt_material_dialog_proxy_inherit__map">
+<area shape="rect" title="对话框代理类，管理透明度过渡和内容同步" alt="" coords="5,80,158,107"/>
+<area shape="rect" title=" " alt="" coords="45,5,118,32"/>
+<area shape="poly" title=" " alt="" coords="84,48,84,80,79,80,79,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+QtMaterialDialogProxy 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_dialog_proxy__coll__graph.png" border="0" usemap="#a_qt_material_dialog_proxy_coll__map" alt="Collaboration graph"/></div>
+<map name="a_qt_material_dialog_proxy_coll__map" id="a_qt_material_dialog_proxy_coll__map">
+<area shape="rect" title="对话框代理类，管理透明度过渡和内容同步" alt="" coords="49,339,202,365"/>
+<area shape="rect" title=" " alt="" coords="32,5,104,32"/>
+<area shape="poly" title=" " alt="" coords="37,44,17,66,10,79,8,94,8,262,15,288,32,308,56,324,82,336,80,341,54,329,29,312,10,290,3,263,3,93,5,78,12,63,33,40"/>
+<area shape="rect" href="class_qt_material_dialog_window.html" title="对话框内容窗口类，管理内容和偏移" alt="" coords="43,248,208,275"/>
+<area shape="poly" title=" " alt="" coords="77,46,125,247,120,248,72,48"/>
+<area shape="rect" href="class_qt_material_overlay_widget.html" title="覆盖层控件类，继承自 QWidget，用于在父窗口上绘制覆盖效果" alt="" coords="106,81,273,108"/>
+<area shape="poly" title=" " alt="" coords="102,38,170,79,167,83,100,42"/>
+<area shape="poly" title=" " alt="" coords="128,290,128,338,123,338,123,290"/>
+<area shape="rect" href="class_qt_material_dialog.html" title="对话框类，继承自 QtMaterialOverlayWidget，支持 Material Design 风格" alt="" coords="130,157,248,184"/>
+<area shape="poly" title=" " alt="" coords="219,194,227,207,230,236,223,276,212,298,194,317,157,340,154,336,190,313,207,295,217,274,225,236,221,209,214,197"/>
+<area shape="poly" title=" " alt="" coords="174,198,137,249,132,246,169,195"/>
+<area shape="poly" title=" " alt="" coords="192,123,192,157,187,157,187,123"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1aeae64e223d570e24006e5b01cf9103" id="r_a1aeae64e223d570e24006e5b01cf9103"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1aeae64e223d570e24006e5b01cf9103">QtMaterialDialogProxy</a> (<a class="el" href="class_qt_material_dialog_window.html">QtMaterialDialogWindow</a> *source, QStackedLayout *layout, <a class="el" href="class_qt_material_dialog.html">QtMaterialDialog</a> *dialog, QWidget *parent=0)</td></tr>
+<tr class="memdesc:a1aeae64e223d570e24006e5b01cf9103"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化代理窗口  <br /></td></tr>
+<tr class="separator:a1aeae64e223d570e24006e5b01cf9103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15203966e2c8641329b80bfa799a268e" id="r_a15203966e2c8641329b80bfa799a268e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15203966e2c8641329b80bfa799a268e">~QtMaterialDialogProxy</a> ()</td></tr>
+<tr class="memdesc:a15203966e2c8641329b80bfa799a268e"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，清理资源  <br /></td></tr>
+<tr class="separator:a15203966e2c8641329b80bfa799a268e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6846686a8f69771c037863b8eb6ae7d2" id="r_a6846686a8f69771c037863b8eb6ae7d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6846686a8f69771c037863b8eb6ae7d2">setOpacity</a> (qreal <a class="el" href="#a8f43a55564929023562098df56968667">opacity</a>)</td></tr>
+<tr class="memdesc:a6846686a8f69771c037863b8eb6ae7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置透明度  <br /></td></tr>
+<tr class="separator:a6846686a8f69771c037863b8eb6ae7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95eb6d87b79498a950c867dba2a1cbad" id="r_a95eb6d87b79498a950c867dba2a1cbad"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95eb6d87b79498a950c867dba2a1cbad">opacity</a> () const</td></tr>
+<tr class="memdesc:a95eb6d87b79498a950c867dba2a1cbad"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取透明度  <br /></td></tr>
+<tr class="separator:a95eb6d87b79498a950c867dba2a1cbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-slots" name="pro-slots"></a>
+Protected 槽</h2></td></tr>
+<tr class="memitem:a0c0e125749d2d43b518de8de9d9f7df8" id="r_a0c0e125749d2d43b518de8de9d9f7df8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c0e125749d2d43b518de8de9d9f7df8">makeOpaque</a> ()</td></tr>
+<tr class="memdesc:a0c0e125749d2d43b518de8de9d9f7df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换为完全不透明  <br /></td></tr>
+<tr class="separator:a0c0e125749d2d43b518de8de9d9f7df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287315ce1a1ec0c4a8f3801611faf466" id="r_a287315ce1a1ec0c4a8f3801611faf466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a287315ce1a1ec0c4a8f3801611faf466">makeTransparent</a> ()</td></tr>
+<tr class="memdesc:a287315ce1a1ec0c4a8f3801611faf466"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换为完全透明  <br /></td></tr>
+<tr class="separator:a287315ce1a1ec0c4a8f3801611faf466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae00fe0e222a3c5416f35adfcba0f55" id="r_a3ae00fe0e222a3c5416f35adfcba0f55"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ae00fe0e222a3c5416f35adfcba0f55">sizeHint</a> () const Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a3ae00fe0e222a3c5416f35adfcba0f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取推荐尺寸  <br /></td></tr>
+<tr class="separator:a3ae00fe0e222a3c5416f35adfcba0f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a53659a59434a35628675cf119bbd5468" id="r_a53659a59434a35628675cf119bbd5468"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53659a59434a35628675cf119bbd5468">event</a> (QEvent *event) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a53659a59434a35628675cf119bbd5468"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理事件  <br /></td></tr>
+<tr class="separator:a53659a59434a35628675cf119bbd5468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22aafd70af538e89f7310d494a7f2b15" id="r_a22aafd70af538e89f7310d494a7f2b15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22aafd70af538e89f7310d494a7f2b15">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *<a class="el" href="#a53659a59434a35628675cf119bbd5468">event</a>) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a22aafd70af538e89f7310d494a7f2b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制事件  <br /></td></tr>
+<tr class="separator:a22aafd70af538e89f7310d494a7f2b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+属性</h2></td></tr>
+<tr class="memitem:a8f43a55564929023562098df56968667" id="r_a8f43a55564929023562098df56968667"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f43a55564929023562098df56968667">opacity</a></td></tr>
+<tr class="memdesc:a8f43a55564929023562098df56968667"><td class="mdescLeft">&#160;</td><td class="mdescRight">透明度属性  <br /></td></tr>
+<tr class="separator:a8f43a55564929023562098df56968667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:a77fa8095027a8d2496a901d00cae92c2" id="r_a77fa8095027a8d2496a901d00cae92c2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77fa8095027a8d2496a901d00cae92c2">TransparencyMode</a> { <a class="el" href="#a77fa8095027a8d2496a901d00cae92c2ac719d3f34968bcf992d4c0c48841cf63">Transparent</a>
+, <a class="el" href="#a77fa8095027a8d2496a901d00cae92c2a8987881c740e8ad095775bbafd444ad5">SemiTransparent</a>
+, <a class="el" href="#a77fa8095027a8d2496a901d00cae92c2a91f3631322e3be62bc14912a3001c14f">Opaque</a>
+ }</td></tr>
+<tr class="memdesc:a77fa8095027a8d2496a901d00cae92c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">透明度模式  <a href="#a77fa8095027a8d2496a901d00cae92c2">更多...</a><br /></td></tr>
+<tr class="separator:a77fa8095027a8d2496a901d00cae92c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a5be2edaea4bc6562aa3a7414de7e9e50" id="r_a5be2edaea4bc6562aa3a7414de7e9e50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_qt_material_dialog_window.html">QtMaterialDialogWindow</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5be2edaea4bc6562aa3a7414de7e9e50">m_source</a></td></tr>
+<tr class="memdesc:a5be2edaea4bc6562aa3a7414de7e9e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; 禁用拷贝  <br /></td></tr>
+<tr class="separator:a5be2edaea4bc6562aa3a7414de7e9e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09daf8dfbd8645a9ed7196a9b1951d8c" id="r_a09daf8dfbd8645a9ed7196a9b1951d8c"><td class="memItemLeft" align="right" valign="top">QStackedLayout *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09daf8dfbd8645a9ed7196a9b1951d8c">m_layout</a></td></tr>
+<tr class="memdesc:a09daf8dfbd8645a9ed7196a9b1951d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">堆叠布局  <br /></td></tr>
+<tr class="separator:a09daf8dfbd8645a9ed7196a9b1951d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bad895c1814892417720a1996b27c10" id="r_a1bad895c1814892417720a1996b27c10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_qt_material_dialog.html">QtMaterialDialog</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bad895c1814892417720a1996b27c10">m_dialog</a></td></tr>
+<tr class="memdesc:a1bad895c1814892417720a1996b27c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">对话框  <br /></td></tr>
+<tr class="separator:a1bad895c1814892417720a1996b27c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc688efa5c3a85be3411b07a1384a815" id="r_acc688efa5c3a85be3411b07a1384a815"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc688efa5c3a85be3411b07a1384a815">m_opacity</a></td></tr>
+<tr class="memdesc:acc688efa5c3a85be3411b07a1384a815"><td class="mdescLeft">&#160;</td><td class="mdescRight">透明度  <br /></td></tr>
+<tr class="separator:acc688efa5c3a85be3411b07a1384a815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f562ee5afa7627e3de3c25321aed885" id="r_a9f562ee5afa7627e3de3c25321aed885"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a77fa8095027a8d2496a901d00cae92c2">TransparencyMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f562ee5afa7627e3de3c25321aed885">m_mode</a></td></tr>
+<tr class="memdesc:a9f562ee5afa7627e3de3c25321aed885"><td class="mdescLeft">&#160;</td><td class="mdescRight">透明度模式  <br /></td></tr>
+<tr class="separator:a9f562ee5afa7627e3de3c25321aed885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>对话框代理类，管理透明度过渡和内容同步 </p>
+<dl class="section note"><dt>注解</dt><dd>内部实现 </dd></dl>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a77fa8095027a8d2496a901d00cae92c2" name="a77fa8095027a8d2496a901d00cae92c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77fa8095027a8d2496a901d00cae92c2">&#9670;&#160;</a></span>TransparencyMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a77fa8095027a8d2496a901d00cae92c2">TransparencyMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>透明度模式 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a77fa8095027a8d2496a901d00cae92c2ac719d3f34968bcf992d4c0c48841cf63" name="a77fa8095027a8d2496a901d00cae92c2ac719d3f34968bcf992d4c0c48841cf63"></a>Transparent&#160;</td><td class="fielddoc"><p>完全透明 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a77fa8095027a8d2496a901d00cae92c2a8987881c740e8ad095775bbafd444ad5" name="a77fa8095027a8d2496a901d00cae92c2a8987881c740e8ad095775bbafd444ad5"></a>SemiTransparent&#160;</td><td class="fielddoc"><p>半透明 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a77fa8095027a8d2496a901d00cae92c2a91f3631322e3be62bc14912a3001c14f" name="a77fa8095027a8d2496a901d00cae92c2a91f3631322e3be62bc14912a3001c14f"></a>Opaque&#160;</td><td class="fielddoc"><p>完全不透明 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1aeae64e223d570e24006e5b01cf9103" name="a1aeae64e223d570e24006e5b01cf9103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aeae64e223d570e24006e5b01cf9103">&#9670;&#160;</a></span>QtMaterialDialogProxy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_dialog_proxy.html">QtMaterialDialogProxy</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_qt_material_dialog_window.html">QtMaterialDialogWindow</a> *</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStackedLayout *</td>          <td class="paramname"><span class="paramname"><em>layout</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_qt_material_dialog.html">QtMaterialDialog</a> *</td>          <td class="paramname"><span class="paramname"><em>dialog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化代理窗口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>对话框窗口指针 </td></tr>
+    <tr><td class="paramname">layout</td><td>堆叠布局指针 </td></tr>
+    <tr><td class="paramname">dialog</td><td>对话框指针 </td></tr>
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr</td></tr>
+    <tr><td class="paramname">source</td><td>对话框窗口指针 </td></tr>
+    <tr><td class="paramname">layout</td><td>堆叠布局指针 </td></tr>
+    <tr><td class="paramname">dialog</td><td>对话框指针 </td></tr>
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>内部实现 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_dialog_proxy_a1aeae64e223d570e24006e5b01cf9103_icgraph.png" border="0" usemap="#aclass_qt_material_dialog_proxy_a1aeae64e223d570e24006e5b01cf9103_icgraph" alt=""/></div>
+<map name="aclass_qt_material_dialog_proxy_a1aeae64e223d570e24006e5b01cf9103_icgraph" id="aclass_qt_material_dialog_proxy_a1aeae64e223d570e24006e5b01cf9103_icgraph">
+<area shape="rect" title="构造函数，初始化代理窗口" alt="" coords="117,5,269,32"/>
+<area shape="rect" href="class_qt_material_dialog_proxy.html#a95eb6d87b79498a950c867dba2a1cbad" title="获取透明度" alt="" coords="5,5,69,32"/>
+<area shape="poly" title=" " alt="" coords="101,21,69,21,69,16,101,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a15203966e2c8641329b80bfa799a268e" name="a15203966e2c8641329b80bfa799a268e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15203966e2c8641329b80bfa799a268e">&#9670;&#160;</a></span>~QtMaterialDialogProxy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_qt_material_dialog_proxy.html">QtMaterialDialogProxy</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>析构函数，清理资源 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a53659a59434a35628675cf119bbd5468" name="a53659a59434a35628675cf119bbd5468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53659a59434a35628675cf119bbd5468">&#9670;&#160;</a></span>event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool event </td>
+          <td>(</td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>重写基类方法 </dd></dl>
+<p>&lt; 同步对话框窗口几何</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_dialog_proxy_a53659a59434a35628675cf119bbd5468_cgraph.png" border="0" usemap="#aclass_qt_material_dialog_proxy_a53659a59434a35628675cf119bbd5468_cgraph" alt=""/></div>
+<map name="aclass_qt_material_dialog_proxy_a53659a59434a35628675cf119bbd5468_cgraph" id="aclass_qt_material_dialog_proxy_a53659a59434a35628675cf119bbd5468_cgraph">
+<area shape="rect" title="处理事件" alt="" coords="5,29,59,56"/>
+<area shape="poly" title=" " alt="" coords="21,29,20,12,25,5,32,3,40,6,44,12,39,15,36,10,32,8,28,9,26,13,26,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_dialog_proxy_a53659a59434a35628675cf119bbd5468_icgraph.png" border="0" usemap="#aclass_qt_material_dialog_proxy_a53659a59434a35628675cf119bbd5468_icgraph" alt=""/></div>
+<map name="aclass_qt_material_dialog_proxy_a53659a59434a35628675cf119bbd5468_icgraph" id="aclass_qt_material_dialog_proxy_a53659a59434a35628675cf119bbd5468_icgraph">
+<area shape="rect" title="处理事件" alt="" coords="137,29,190,56"/>
+<area shape="poly" title=" " alt="" coords="182,16,176,10,163,8,152,10,146,14,144,20,147,28,142,30,139,20,141,11,150,5,163,3,178,5,186,12"/>
+<area shape="rect" href="class_qt_material_dialog_proxy.html#a22aafd70af538e89f7310d494a7f2b15" title="绘制事件" alt="" coords="5,29,89,56"/>
+<area shape="poly" title=" " alt="" coords="121,45,89,45,89,40,121,40"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c0e125749d2d43b518de8de9d9f7df8" name="a0c0e125749d2d43b518de8de9d9f7df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0e125749d2d43b518de8de9d9f7df8">&#9670;&#160;</a></span>makeOpaque</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void makeOpaque </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>切换为完全不透明 </p>
+<p>&lt; 启用鼠标事件</p>
+<p>&lt; 切换到对话框窗口</p>
+<p>&lt; 设置完全不透明</p>
+<p>&lt; 设置不透明模式</p>
+<p>&lt; 刷新界面</p>
+
+</div>
+</div>
+<a id="a287315ce1a1ec0c4a8f3801611faf466" name="a287315ce1a1ec0c4a8f3801611faf466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a287315ce1a1ec0c4a8f3801611faf466">&#9670;&#160;</a></span>makeTransparent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void makeTransparent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>切换为完全透明 </p>
+<p>&lt; 设置完全透明</p>
+<p>&lt; 设置透明模式</p>
+<p>&lt; 刷新界面</p>
+
+</div>
+</div>
+<a id="a95eb6d87b79498a950c867dba2a1cbad" name="a95eb6d87b79498a950c867dba2a1cbad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95eb6d87b79498a950c867dba2a1cbad">&#9670;&#160;</a></span>opacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal opacity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取透明度 </p>
+<dl class="section return"><dt>返回</dt><dd>透明度值 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_dialog_proxy_a95eb6d87b79498a950c867dba2a1cbad_cgraph.png" border="0" usemap="#aclass_qt_material_dialog_proxy_a95eb6d87b79498a950c867dba2a1cbad_cgraph" alt=""/></div>
+<map name="aclass_qt_material_dialog_proxy_a95eb6d87b79498a950c867dba2a1cbad_cgraph" id="aclass_qt_material_dialog_proxy_a95eb6d87b79498a950c867dba2a1cbad_cgraph">
+<area shape="rect" title="获取透明度" alt="" coords="5,5,69,32"/>
+<area shape="rect" href="class_qt_material_dialog_proxy.html#a1aeae64e223d570e24006e5b01cf9103" title="构造函数，初始化代理窗口" alt="" coords="117,5,269,32"/>
+<area shape="poly" title=" " alt="" coords="69,16,101,16,101,21,69,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a22aafd70af538e89f7310d494a7f2b15" name="a22aafd70af538e89f7310d494a7f2b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22aafd70af538e89f7310d494a7f2b15">&#9670;&#160;</a></span>paintEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void paintEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_paint_event.html">QPaintEvent</a> *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绘制事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>绘制事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>重写基类方法 </dd></dl>
+<p>&lt; 透明模式不绘制</p>
+<p>&lt; 设置半透明</p>
+<p>&lt; 捕获对话框窗口内容</p>
+<p>&lt; 绘制内容</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_dialog_proxy_a22aafd70af538e89f7310d494a7f2b15_cgraph.png" border="0" usemap="#aclass_qt_material_dialog_proxy_a22aafd70af538e89f7310d494a7f2b15_cgraph" alt=""/></div>
+<map name="aclass_qt_material_dialog_proxy_a22aafd70af538e89f7310d494a7f2b15_cgraph" id="aclass_qt_material_dialog_proxy_a22aafd70af538e89f7310d494a7f2b15_cgraph">
+<area shape="rect" title="绘制事件" alt="" coords="5,29,89,56"/>
+<area shape="rect" href="class_qt_material_dialog_proxy.html#a53659a59434a35628675cf119bbd5468" title="处理事件" alt="" coords="137,29,190,56"/>
+<area shape="poly" title=" " alt="" coords="89,40,121,40,121,45,89,45"/>
+<area shape="poly" title=" " alt="" coords="142,30,139,20,141,11,150,5,163,3,178,5,186,12,182,16,176,10,163,8,152,10,146,14,144,20,147,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6846686a8f69771c037863b8eb6ae7d2" name="a6846686a8f69771c037863b8eb6ae7d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6846686a8f69771c037863b8eb6ae7d2">&#9670;&#160;</a></span>setOpacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setOpacity </td>
+          <td>(</td>
+          <td class="paramtype">qreal</td>          <td class="paramname"><span class="paramname"><em>opacity</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置透明度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opacity</td><td>透明度值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置为半透明模式</p>
+<p>&lt; 刷新代理窗口</p>
+<p>&lt; 刷新对话框</p>
+
+</div>
+</div>
+<a id="a3ae00fe0e222a3c5416f35adfcba0f55" name="a3ae00fe0e222a3c5416f35adfcba0f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ae00fe0e222a3c5416f35adfcba0f55">&#9670;&#160;</a></span>sizeHint</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize sizeHint </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取推荐尺寸 </p>
+<dl class="section return"><dt>返回</dt><dd>推荐尺寸 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>重写基类方法 </dd></dl>
+<p>&lt; 返回对话框窗口的推荐尺寸</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a1bad895c1814892417720a1996b27c10" name="a1bad895c1814892417720a1996b27c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bad895c1814892417720a1996b27c10">&#9670;&#160;</a></span>m_dialog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_dialog.html">QtMaterialDialog</a>* const m_dialog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>对话框 </p>
+
+</div>
+</div>
+<a id="a09daf8dfbd8645a9ed7196a9b1951d8c" name="a09daf8dfbd8645a9ed7196a9b1951d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09daf8dfbd8645a9ed7196a9b1951d8c">&#9670;&#160;</a></span>m_layout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStackedLayout* const m_layout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>堆叠布局 </p>
+
+</div>
+</div>
+<a id="a9f562ee5afa7627e3de3c25321aed885" name="a9f562ee5afa7627e3de3c25321aed885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f562ee5afa7627e3de3c25321aed885">&#9670;&#160;</a></span>m_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a77fa8095027a8d2496a901d00cae92c2">TransparencyMode</a> m_mode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>透明度模式 </p>
+
+</div>
+</div>
+<a id="acc688efa5c3a85be3411b07a1384a815" name="acc688efa5c3a85be3411b07a1384a815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc688efa5c3a85be3411b07a1384a815">&#9670;&#160;</a></span>m_opacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal m_opacity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>透明度 </p>
+
+</div>
+</div>
+<a id="a5be2edaea4bc6562aa3a7414de7e9e50" name="a5be2edaea4bc6562aa3a7414de7e9e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be2edaea4bc6562aa3a7414de7e9e50">&#9670;&#160;</a></span>m_source</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_dialog_window.html">QtMaterialDialogWindow</a>* const m_source</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&lt; 禁用拷贝 </p>
+<p>对话框窗口 </p>
+
+</div>
+</div>
+<h2 class="groupheader">属性说明</h2>
+<a id="a8f43a55564929023562098df56968667" name="a8f43a55564929023562098df56968667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f43a55564929023562098df56968667">&#9670;&#160;</a></span>opacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal opacity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel read">read</span><span class="mlabel write">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>透明度属性 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="qtmaterialdialog__internal_8h_source.html">qtmaterialdialog_internal.h</a></li>
+<li><a class="el" href="qtmaterialdialog__internal_8cpp.html">qtmaterialdialog_internal.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_qt_material_dialog_proxy.html">QtMaterialDialogProxy</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

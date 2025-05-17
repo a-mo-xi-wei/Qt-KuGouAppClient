@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: qtmaterialsnackbar.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('qtmaterialsnackbar_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">qtmaterialsnackbar.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="qtmaterialsnackbar_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef QTMATERIALSNACKBAR_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define QTMATERIALSNACKBAR_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="qtmaterialoverlaywidget_8h.html">qtmaterialoverlaywidget.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#if defined(QTMATERIALWIDGET_LIBRARY)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="qtmaterialsnackbar_8h.html#a8763e143fe5ea4f504ee20145af89474">   18</a></span><span class="preprocessor">#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// 前向声明</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span><a class="code hl_class" href="class_qt_material_snackbar_private.html">QtMaterialSnackbarPrivate</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_qt_material_snackbar.html">   28</a></span><span class="keyword">class </span><a class="code hl_define" href="qtmaterialsnackbar_8h.html#a8763e143fe5ea4f504ee20145af89474">QTMATERIALWIDGET_EXPORT</a> <a class="code hl_function" href="class_qt_material_snackbar.html#acf69cbe4a486605c0cb838d935e256ac">QtMaterialSnackbar</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_qt_material_overlay_widget.html#a0bf5c14047a2303a827e91fadde18b5b">QtMaterialOverlayWidget</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Q_OBJECT</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_qt_material_snackbar.html#acf69cbe4a486605c0cb838d935e256ac">QtMaterialSnackbar</a>(QWidget *parent = 0);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="class_qt_material_snackbar.html#acf69cbe4a486605c0cb838d935e256ac">~QtMaterialSnackbar</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#afe6b30a09dc0c178d169909dd2b3f995">setAutoHideDuration</a>(<span class="keywordtype">int</span> duration);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_qt_material_snackbar.html#ae7674d81c242aa5858aa10b7356b2960">autoHideDuration</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#ac18ecdbb1119e3d1ce7ce2de14a7a480">setUseThemeColors</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_qt_material_snackbar.html#ad7b84e79d6f30f98abd019b886d8a2b5">useThemeColors</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#a70d4e21190fdc47edd88f078dd2037cb">setBackgroundColor</a>(<span class="keyword">const</span> QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    QColor <a class="code hl_function" href="class_qt_material_snackbar.html#ad908e5c524cf9bf566e7f00618666ca0">backgroundColor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#a7ed29fffc1c75033db100a293fafde3a">setBackgroundOpacity</a>(qreal opacity);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    qreal <a class="code hl_function" href="class_qt_material_snackbar.html#a8218e705bf351057eaa8bd262bbdd4de">backgroundOpacity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#a0645f11d8fd2445ad3829dfc4001dbab">setTextColor</a>(<span class="keyword">const</span> QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    QColor <a class="code hl_function" href="class_qt_material_snackbar.html#aacfdfd22c988bc5f31a7cec67dcb4a73">textColor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#acee19e4cbf953df6a922e1d3c85ff2b8">setFontSize</a>(qreal size);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    qreal <a class="code hl_function" href="class_qt_material_snackbar.html#ab06727560c58769d09f2e4487a56e9fa">fontSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#a331fad66cf28d3ee488eceed5806463f">setBoxWidth</a>(<span class="keywordtype">int</span> width);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_qt_material_snackbar.html#a0e7cfa120ddbf701773b6c60984f23cc">boxWidth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#a0480283360a5e8540a7bd6b4edf8decd">setClickToDismissMode</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_qt_material_snackbar.html#a43df4c8691e64542636b99254cc469fb">clickToDismissMode</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_material_snackbar.html#a08067db10a777f56de7a2da4d2462ace">addMessage</a>(<span class="keyword">const</span> QString &amp;message);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_material_snackbar.html#a0c0f348482b0d9b728dedb59a1d77428">addInstantMessage</a>(<span class="keyword">const</span> QString &amp;message);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">protected</span> slots:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_material_snackbar.html#a851b6644e3e336c07f8e6fe77234b97f">dequeue</a>();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_snackbar.html#a22aafd70af538e89f7310d494a7f2b15">paintEvent</a>(<a class="code hl_class" href="class_q_paint_event.html">QPaintEvent</a> *<a class="code hl_function" href="class_qt_material_overlay_widget.html#a53659a59434a35628675cf119bbd5468">event</a>) Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="class_qt_material_snackbar.html#ad32fe799dfd950944afc6556b3321f35">  167</a></span>    <span class="keyword">const</span> QScopedPointer&lt;QtMaterialSnackbarPrivate&gt; <a class="code hl_variable" href="class_qt_material_snackbar.html#ad32fe799dfd950944afc6556b3321f35">d_ptr</a>; </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    Q_DISABLE_COPY(<a class="code hl_function" href="class_qt_material_snackbar.html#acf69cbe4a486605c0cb838d935e256ac">QtMaterialSnackbar</a>) </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    Q_DECLARE_PRIVATE(<a class="code hl_function" href="class_qt_material_snackbar.html#acf69cbe4a486605c0cb838d935e256ac">QtMaterialSnackbar</a>) </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>};</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#endif </span><span class="comment">// QTMATERIALSNACKBAR_H</span></div>
+<div class="ttc" id="aclass_q_paint_event_html"><div class="ttname"><a href="class_q_paint_event.html">QPaintEvent</a></div><div class="ttdoc">绘制事件类</div></div>
+<div class="ttc" id="aclass_qt_material_overlay_widget_html_a0bf5c14047a2303a827e91fadde18b5b"><div class="ttname"><a href="class_qt_material_overlay_widget.html#a0bf5c14047a2303a827e91fadde18b5b">QtMaterialOverlayWidget::QtMaterialOverlayWidget</a></div><div class="ttdeci">QtMaterialOverlayWidget(QWidget *parent=0)</div><div class="ttdoc">构造函数，初始化覆盖层控件</div><div class="ttdef"><b>定义</b> qtmaterialoverlaywidget.cpp:17</div></div>
+<div class="ttc" id="aclass_qt_material_overlay_widget_html_a53659a59434a35628675cf119bbd5468"><div class="ttname"><a href="class_qt_material_overlay_widget.html#a53659a59434a35628675cf119bbd5468">QtMaterialOverlayWidget::event</a></div><div class="ttdeci">bool event(QEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">重写事件处理函数，处理父窗口变化</div><div class="ttdef"><b>定义</b> qtmaterialoverlaywidget.cpp:37</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a0480283360a5e8540a7bd6b4edf8decd"><div class="ttname"><a href="class_qt_material_snackbar.html#a0480283360a5e8540a7bd6b4edf8decd">QtMaterialSnackbar::setClickToDismissMode</a></div><div class="ttdeci">void setClickToDismissMode(bool value)</div><div class="ttdoc">设置点击隐藏模式</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:255</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a0645f11d8fd2445ad3829dfc4001dbab"><div class="ttname"><a href="class_qt_material_snackbar.html#a0645f11d8fd2445ad3829dfc4001dbab">QtMaterialSnackbar::setTextColor</a></div><div class="ttdeci">void setTextColor(const QColor &amp;color)</div><div class="ttdoc">设置文本颜色</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:181</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a08067db10a777f56de7a2da4d2462ace"><div class="ttname"><a href="class_qt_material_snackbar.html#a08067db10a777f56de7a2da4d2462ace">QtMaterialSnackbar::addMessage</a></div><div class="ttdeci">void addMessage(const QString &amp;message)</div><div class="ttdoc">添加消息到队列</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:277</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a0c0f348482b0d9b728dedb59a1d77428"><div class="ttname"><a href="class_qt_material_snackbar.html#a0c0f348482b0d9b728dedb59a1d77428">QtMaterialSnackbar::addInstantMessage</a></div><div class="ttdeci">void addInstantMessage(const QString &amp;message)</div><div class="ttdoc">立即添加消息</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:290</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a0e7cfa120ddbf701773b6c60984f23cc"><div class="ttname"><a href="class_qt_material_snackbar.html#a0e7cfa120ddbf701773b6c60984f23cc">QtMaterialSnackbar::boxWidth</a></div><div class="ttdeci">int boxWidth() const</div><div class="ttdoc">获取提示条宽度</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:244</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a22aafd70af538e89f7310d494a7f2b15"><div class="ttname"><a href="class_qt_material_snackbar.html#a22aafd70af538e89f7310d494a7f2b15">QtMaterialSnackbar::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">绘制事件</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:328</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a331fad66cf28d3ee488eceed5806463f"><div class="ttname"><a href="class_qt_material_snackbar.html#a331fad66cf28d3ee488eceed5806463f">QtMaterialSnackbar::setBoxWidth</a></div><div class="ttdeci">void setBoxWidth(int width)</div><div class="ttdoc">设置提示条宽度</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:232</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a43df4c8691e64542636b99254cc469fb"><div class="ttname"><a href="class_qt_material_snackbar.html#a43df4c8691e64542636b99254cc469fb">QtMaterialSnackbar::clickToDismissMode</a></div><div class="ttdeci">bool clickToDismissMode() const</div><div class="ttdoc">获取点击隐藏模式</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:266</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a70d4e21190fdc47edd88f078dd2037cb"><div class="ttname"><a href="class_qt_material_snackbar.html#a70d4e21190fdc47edd88f078dd2037cb">QtMaterialSnackbar::setBackgroundColor</a></div><div class="ttdeci">void setBackgroundColor(const QColor &amp;color)</div><div class="ttdoc">设置背景颜色</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:129</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a7ed29fffc1c75033db100a293fafde3a"><div class="ttname"><a href="class_qt_material_snackbar.html#a7ed29fffc1c75033db100a293fafde3a">QtMaterialSnackbar::setBackgroundOpacity</a></div><div class="ttdeci">void setBackgroundOpacity(qreal opacity)</div><div class="ttdoc">设置背景透明度</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:158</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a8218e705bf351057eaa8bd262bbdd4de"><div class="ttname"><a href="class_qt_material_snackbar.html#a8218e705bf351057eaa8bd262bbdd4de">QtMaterialSnackbar::backgroundOpacity</a></div><div class="ttdeci">qreal backgroundOpacity() const</div><div class="ttdoc">获取背景透明度</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:170</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_a851b6644e3e336c07f8e6fe77234b97f"><div class="ttname"><a href="class_qt_material_snackbar.html#a851b6644e3e336c07f8e6fe77234b97f">QtMaterialSnackbar::dequeue</a></div><div class="ttdeci">void dequeue()</div><div class="ttdoc">移除并处理队列中的消息</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:306</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_aacfdfd22c988bc5f31a7cec67dcb4a73"><div class="ttname"><a href="class_qt_material_snackbar.html#aacfdfd22c988bc5f31a7cec67dcb4a73">QtMaterialSnackbar::textColor</a></div><div class="ttdeci">QColor textColor() const</div><div class="ttdoc">获取文本颜色</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:195</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_ab06727560c58769d09f2e4487a56e9fa"><div class="ttname"><a href="class_qt_material_snackbar.html#ab06727560c58769d09f2e4487a56e9fa">QtMaterialSnackbar::fontSize</a></div><div class="ttdeci">qreal fontSize() const</div><div class="ttdoc">获取字体大小</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:223</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_ac18ecdbb1119e3d1ce7ce2de14a7a480"><div class="ttname"><a href="class_qt_material_snackbar.html#ac18ecdbb1119e3d1ce7ce2de14a7a480">QtMaterialSnackbar::setUseThemeColors</a></div><div class="ttdeci">void setUseThemeColors(bool value)</div><div class="ttdoc">设置是否使用主题颜色</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:102</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_acee19e4cbf953df6a922e1d3c85ff2b8"><div class="ttname"><a href="class_qt_material_snackbar.html#acee19e4cbf953df6a922e1d3c85ff2b8">QtMaterialSnackbar::setFontSize</a></div><div class="ttdeci">void setFontSize(qreal size)</div><div class="ttdoc">设置字体大小</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:210</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_acf69cbe4a486605c0cb838d935e256ac"><div class="ttname"><a href="class_qt_material_snackbar.html#acf69cbe4a486605c0cb838d935e256ac">QtMaterialSnackbar::QtMaterialSnackbar</a></div><div class="ttdeci">QtMaterialSnackbar(QWidget *parent=0)</div><div class="ttdoc">构造函数，初始化提示条</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:62</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_ad32fe799dfd950944afc6556b3321f35"><div class="ttname"><a href="class_qt_material_snackbar.html#ad32fe799dfd950944afc6556b3321f35">QtMaterialSnackbar::d_ptr</a></div><div class="ttdeci">const QScopedPointer&lt; QtMaterialSnackbarPrivate &gt; d_ptr</div><div class="ttdoc">私有类指针</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.h:167</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_ad7b84e79d6f30f98abd019b886d8a2b5"><div class="ttname"><a href="class_qt_material_snackbar.html#ad7b84e79d6f30f98abd019b886d8a2b5">QtMaterialSnackbar::useThemeColors</a></div><div class="ttdeci">bool useThemeColors() const</div><div class="ttdoc">获取是否使用主题颜色</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:118</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_ad908e5c524cf9bf566e7f00618666ca0"><div class="ttname"><a href="class_qt_material_snackbar.html#ad908e5c524cf9bf566e7f00618666ca0">QtMaterialSnackbar::backgroundColor</a></div><div class="ttdeci">QColor backgroundColor() const</div><div class="ttdoc">获取背景颜色</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:143</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_ae7674d81c242aa5858aa10b7356b2960"><div class="ttname"><a href="class_qt_material_snackbar.html#ae7674d81c242aa5858aa10b7356b2960">QtMaterialSnackbar::autoHideDuration</a></div><div class="ttdeci">int autoHideDuration() const</div><div class="ttdoc">获取自动隐藏持续时间</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:91</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_html_afe6b30a09dc0c178d169909dd2b3f995"><div class="ttname"><a href="class_qt_material_snackbar.html#afe6b30a09dc0c178d169909dd2b3f995">QtMaterialSnackbar::setAutoHideDuration</a></div><div class="ttdeci">void setAutoHideDuration(int duration)</div><div class="ttdoc">设置自动隐藏持续时间</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.cpp:80</div></div>
+<div class="ttc" id="aclass_qt_material_snackbar_private_html"><div class="ttname"><a href="class_qt_material_snackbar_private.html">QtMaterialSnackbarPrivate</a></div><div class="ttdoc">QtMaterialSnackbar 的私有实现类，管理属性和消息队列</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar_p.h:22</div></div>
+<div class="ttc" id="acolor_8h_html_a80d1dc5f416b97f92939a4166d41203c"><div class="ttname"><a href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a></div><div class="ttdeci">color</div><div class="ttdef"><b>定义</b> color.h:16</div></div>
+<div class="ttc" id="aqtmaterialoverlaywidget_8h_html"><div class="ttname"><a href="qtmaterialoverlaywidget_8h.html">qtmaterialoverlaywidget.h</a></div><div class="ttdoc">定义 QtMaterialOverlayWidget 类，提供覆盖层控件功能</div></div>
+<div class="ttc" id="aqtmaterialsnackbar_8h_html_a8763e143fe5ea4f504ee20145af89474"><div class="ttname"><a href="qtmaterialsnackbar_8h.html#a8763e143fe5ea4f504ee20145af89474">QTMATERIALWIDGET_EXPORT</a></div><div class="ttdeci">#define QTMATERIALWIDGET_EXPORT</div><div class="ttdoc">动态库导出宏，定义库的导出/导入行为</div><div class="ttdef"><b>定义</b> qtmaterialsnackbar.h:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_b95b73a9da1c57040a996fcdd774df29.html">QtMaterialWidget</a></li><li class="navelem"><a class="el" href="dir_c40e5d532415c5ac5ae84bf254f566c5.html">QtMaterialSnackbar</a></li><li class="navelem"><a class="el" href="qtmaterialsnackbar_8h.html">qtmaterialsnackbar.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

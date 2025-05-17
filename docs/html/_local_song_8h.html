@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: LocalSong.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_local_song_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle"><div class="title">LocalSong.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>定义 <a class="el" href="class_local_song.html" title="本地歌曲管理界面类，支持播放、排序、搜索、上传和服务器同步">LocalSong</a> 类，提供本地歌曲管理界面  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_music_item_widget_8h_source.html">MusicItemWidget.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_sort_option_menu_8h_source.html">SortOptionMenu/SortOptionMenu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="libhttp_8h_source.html">libhttp.h</a>&quot;</code><br />
+<code>#include &lt;QQueue&gt;</code><br />
+<code>#include &lt;QWidget&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+LocalSong.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_local_song_8h__incl.png" border="0" usemap="#a_local_song_8h" alt=""/></div>
+<map name="a_local_song_8h" id="a_local_song_8h">
+<area shape="rect" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="708,5,801,32"/>
+<area shape="rect" href="_music_item_widget_8h.html" title="定义 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="509,80,643,107"/>
+<area shape="poly" title=" " alt="" coords="725,35,622,76,620,71,723,30"/>
+<area shape="rect" title=" " alt="" coords="678,245,751,272"/>
+<area shape="poly" title=" " alt="" coords="756,33,747,103,732,198,724,231,719,230,727,197,742,102,751,32"/>
+<area shape="rect" href="_sort_option_menu_8h.html" title="定义 SortOptionMenu 类，提供歌曲排序选项菜单功能" alt="" coords="5,155,187,197"/>
+<area shape="poly" title=" " alt="" coords="708,34,498,83,199,153,197,148,497,77,707,28"/>
+<area shape="rect" href="libhttp_8h.html" title=" " alt="" coords="804,80,871,107"/>
+<area shape="poly" title=" " alt="" coords="771,31,813,68,810,72,767,35"/>
+<area shape="rect" title=" " alt="" coords="895,80,964,107"/>
+<area shape="poly" title=" " alt="" coords="786,30,886,71,884,76,784,35"/>
+<area shape="rect" href="_my_menu_8h.html" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="635,163,717,189"/>
+<area shape="poly" title=" " alt="" coords="593,105,651,151,647,155,590,109"/>
+<area shape="rect" href="_song_option_menu_8h.html" title="定义 SongOptionMenu 类，提供歌曲操作选项菜单功能" alt="" coords="211,155,405,197"/>
+<area shape="poly" title=" " alt="" coords="535,110,392,152,391,147,533,105"/>
+<area shape="rect" title=" " alt="" coords="429,163,518,189"/>
+<area shape="poly" title=" " alt="" coords="562,109,503,155,500,151,558,105"/>
+<area shape="rect" title=" " alt="" coords="542,163,610,189"/>
+<area shape="poly" title=" " alt="" coords="579,107,579,147,573,147,573,107"/>
+<area shape="rect" href="_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="208,245,302,272"/>
+<area shape="poly" title=" " alt="" coords="647,192,623,200,541,219,459,234,318,254,317,248,458,229,540,214,622,195,645,187"/>
+<area shape="poly" title=" " alt="" coords="684,189,705,230,700,233,680,191"/>
+<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="87,320,185,347"/>
+<area shape="poly" title=" " alt="" coords="235,275,171,314,168,309,233,270"/>
+<area shape="rect" title=" " alt="" coords="223,320,286,347"/>
+<area shape="poly" title=" " alt="" coords="257,273,257,304,252,304,252,273"/>
+<area shape="rect" title=" " alt="" coords="37,395,131,421"/>
+<area shape="poly" title=" " alt="" coords="129,349,104,384,100,381,125,346"/>
+<area shape="rect" title=" " alt="" coords="155,395,221,421"/>
+<area shape="poly" title=" " alt="" coords="147,346,172,381,168,384,143,349"/>
+<area shape="poly" title=" " alt="" coords="296,199,274,234,269,231,292,196"/>
+<area shape="poly" title=" " alt="" coords="138,196,217,236,215,240,136,200"/>
+<area shape="poly" title=" " alt="" coords="104,197,132,304,126,306,99,198"/>
+<area shape="rect" title=" " alt="" coords="792,163,906,189"/>
+<area shape="poly" title=" " alt="" coords="842,107,848,147,843,148,837,108"/>
+<area shape="rect" title=" " alt="" coords="930,163,1011,189"/>
+<area shape="poly" title=" " alt="" coords="860,105,938,152,935,157,857,109"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_local_song_8h__dep__incl.png" border="0" usemap="#a_local_song_8hdep" alt=""/></div>
+<map name="a_local_song_8hdep" id="a_local_song_8hdep">
+<area shape="rect" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="209,5,303,32"/>
+<area shape="rect" href="_local_download_8h.html" title="定义 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="126,80,247,107"/>
+<area shape="poly" title=" " alt="" coords="236,45,201,81,197,78,232,41"/>
+<area shape="rect" href="_local_song_8cpp.html" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="272,80,379,107"/>
+<area shape="poly" title=" " alt="" coords="280,41,315,78,311,81,276,45"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="70,155,165,181"/>
+<area shape="poly" title=" " alt="" coords="166,120,131,156,127,152,162,116"/>
+<area shape="rect" href="_local_download_8cpp.html" title="实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="190,155,325,181"/>
+<area shape="poly" title=" " alt="" coords="211,116,247,152,243,156,208,120"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="5,229,115,256"/>
+<area shape="poly" title=" " alt="" coords="100,195,72,231,68,227,96,192"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="139,229,213,256"/>
+<area shape="poly" title=" " alt="" coords="139,192,168,227,164,231,135,195"/>
+</map>
+</div>
+</div>
+<p><a href="_local_song_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_local_song.html">LocalSong</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">本地歌曲管理界面类，支持播放、排序、搜索、上传和服务器同步  <a href="class_local_song.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ui.html">Ui</a></td></tr>
+<tr class="memdesc:namespace_ui"><td class="mdescLeft">&#160;</td><td class="mdescRight">包含 UI 类的命名空间 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>定义 <a class="el" href="class_local_song.html" title="本地歌曲管理界面类，支持播放、排序、搜索、上传和服务器同步">LocalSong</a> 类，提供本地歌曲管理界面 </p>
+<dl class="section author"><dt>作者</dt><dd>WeiWang </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-01-27 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_4903e9fdd90aaa64abf2216a2ba9b10e.html">LocalDownload</a></li><li class="navelem"><a class="el" href="dir_79c127b7d31c03f48d8e3a6cdf4b9e90.html">LocalSong</a></li><li class="navelem"><a class="el" href="_local_song_8h.html">LocalSong.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: channel_layout.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('channel__layout_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">channel_layout.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>audio channel layout utility functions  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+channel_layout.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="channel__layout_8h__incl.png" border="0" usemap="#achannel__layout_8h" alt=""/></div>
+<map name="achannel__layout_8h" id="achannel__layout_8h">
+<area shape="rect" title="audio channel layout utility functions" alt="" coords="5,5,125,32"/>
+<area shape="rect" title=" " alt="" coords="33,80,97,107"/>
+<area shape="poly" title=" " alt="" coords="68,33,68,64,62,64,62,33"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="channel__layout_8h__dep__incl.png" border="0" usemap="#achannel__layout_8hdep" alt=""/></div>
+<map name="achannel__layout_8hdep" id="achannel__layout_8hdep">
+<area shape="rect" title="audio channel layout utility functions" alt="" coords="484,5,603,32"/>
+<area shape="rect" href="avcodec_8h.html" title="Libavcodec external API header" alt="" coords="445,80,527,107"/>
+<area shape="poly" title=" " alt="" coords="526,46,498,81,494,78,522,43"/>
+<area shape="rect" href="swresample_8h.html" title="libswresample public header" alt="" coords="663,80,765,107"/>
+<area shape="poly" title=" " alt="" coords="588,36,685,77,683,82,586,41"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="694,379,796,405"/>
+<area shape="poly" title=" " alt="" coords="543,97,601,104,663,115,718,131,738,141,752,153,769,181,778,212,780,245,779,278,766,337,752,379,747,377,761,336,773,277,775,245,772,213,764,183,748,156,735,146,716,136,662,120,600,109,542,102"/>
+<area shape="rect" href="avformat_8h.html" title="Main libavformat public API header" alt="" coords="20,155,104,181"/>
+<area shape="poly" title=" " alt="" coords="430,105,287,127,116,157,104,160,103,154,115,152,286,122,429,100"/>
+<area shape="rect" href="dirac_8h.html" title="Interface to Dirac Decoder/Encoder" alt="" coords="128,155,188,181"/>
+<area shape="poly" title=" " alt="" coords="430,108,201,157,189,160,188,155,200,152,429,103"/>
+<area shape="rect" href="dv__profile_8h.html" title=" " alt="" coords="212,155,301,181"/>
+<area shape="poly" title=" " alt="" coords="432,114,298,157,296,151,431,109"/>
+<area shape="rect" href="mediacodec_8h.html" title=" " alt="" coords="326,155,428,181"/>
+<area shape="poly" title=" " alt="" coords="456,118,397,156,394,152,453,113"/>
+<area shape="rect" href="vdpau_8h.html" title="Public libavcodec VDPAU header." alt="" coords="452,155,520,181"/>
+<area shape="poly" title=" " alt="" coords="489,122,489,154,483,154,483,122"/>
+<area shape="rect" href="videotoolbox_8h.html" title="Public libavcodec Videotoolbox header." alt="" coords="544,155,649,181"/>
+<area shape="poly" title=" " alt="" coords="519,113,579,152,576,156,516,118"/>
+<area shape="rect" href="xvmc_8h.html" title="Public libavcodec XvMC header." alt="" coords="674,155,738,181"/>
+<area shape="poly" title=" " alt="" coords="539,109,674,153,673,159,538,114"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="1024,453,1119,480"/>
+<area shape="poly" title=" " alt="" coords="812,405,1024,452,1022,457,811,411"/>
+<area shape="rect" href="_video_player_8cpp.html" title=" " alt="" coords="444,453,560,480"/>
+<area shape="poly" title=" " alt="" coords="689,413,545,455,544,450,687,408"/>
+<area shape="rect" href="_video_player___audio_thread_8cpp.html" title=" " alt="" coords="584,453,780,480"/>
+<area shape="poly" title=" " alt="" coords="726,419,695,455,691,451,722,416"/>
+<area shape="rect" href="_video_player___video_thread_8cpp.html" title=" " alt="" coords="804,453,1000,480"/>
+<area shape="poly" title=" " alt="" coords="787,410,875,450,873,455,785,415"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="958,528,1067,555"/>
+<area shape="poly" title=" " alt="" coords="1054,494,1025,529,1021,526,1049,491"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="1092,528,1166,555"/>
+<area shape="poly" title=" " alt="" coords="1093,491,1121,526,1117,529,1089,494"/>
+<area shape="poly" title=" " alt="" coords="116,184,707,376,705,381,114,189"/>
+<area shape="rect" href="_p_c_m_frame_8h.html" title=" " alt="" coords="12,229,112,256"/>
+<area shape="poly" title=" " alt="" coords="65,197,65,229,59,229,59,197"/>
+<area shape="rect" href="avdevice_8h.html" title="Main libavdevice API header" alt="" coords="136,229,220,256"/>
+<area shape="poly" title=" " alt="" coords="97,188,159,226,156,231,94,192"/>
+<area shape="rect" href="_p_c_m_frame_8cpp.html" title=" " alt="" coords="5,304,119,331"/>
+<area shape="poly" title=" " alt="" coords="65,272,65,304,59,304,59,272"/>
+<area shape="rect" href="_pcm_player_8h.html" title=" " alt="" coords="268,304,365,331"/>
+<area shape="poly" title=" " alt="" coords="121,258,273,301,271,306,120,263"/>
+<area shape="poly" title=" " alt="" coords="381,327,693,379,693,385,380,332"/>
+<area shape="rect" href="_pcm_player_8cpp.html" title=" " alt="" coords="134,379,244,405"/>
+<area shape="poly" title=" " alt="" coords="283,341,212,380,210,376,280,336"/>
+<area shape="rect" href="_pcm_player___s_d_l_8h.html" title=" " alt="" coords="268,379,397,405"/>
+<area shape="poly" title=" " alt="" coords="325,346,333,378,327,379,320,347"/>
+<area shape="rect" href="_pcm_player___s_d_l_8cpp.html" title=" " alt="" coords="261,453,404,480"/>
+<area shape="poly" title=" " alt="" coords="335,421,335,453,330,453,330,421"/>
+<area shape="poly" title=" " alt="" coords="757,113,779,130,796,153,815,201,820,241,813,283,796,332,781,359,761,380,758,376,777,356,792,330,807,281,814,241,810,202,792,156,775,134,753,117"/>
+</map>
+</div>
+</div>
+<p><a href="channel__layout_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:gaf9c5619f74c99ea8a8606719c01fe7df" id="r_gaf9c5619f74c99ea8a8606719c01fe7df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#gaf9c5619f74c99ea8a8606719c01fe7df">AV_CH_FRONT_LEFT</a>&#160;&#160;&#160;0x00000001</td></tr>
+<tr class="separator:gaf9c5619f74c99ea8a8606719c01fe7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga394b4b2c87790178bf7b683b45320f31" id="r_ga394b4b2c87790178bf7b683b45320f31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga394b4b2c87790178bf7b683b45320f31">AV_CH_FRONT_RIGHT</a>&#160;&#160;&#160;0x00000002</td></tr>
+<tr class="separator:ga394b4b2c87790178bf7b683b45320f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88f2868b232a89fd11ad9d6c39d502a1" id="r_ga88f2868b232a89fd11ad9d6c39d502a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga88f2868b232a89fd11ad9d6c39d502a1">AV_CH_FRONT_CENTER</a>&#160;&#160;&#160;0x00000004</td></tr>
+<tr class="separator:ga88f2868b232a89fd11ad9d6c39d502a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab19b66e345cf1f9d50ffc26c28862bcc" id="r_gab19b66e345cf1f9d50ffc26c28862bcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#gab19b66e345cf1f9d50ffc26c28862bcc">AV_CH_LOW_FREQUENCY</a>&#160;&#160;&#160;0x00000008</td></tr>
+<tr class="separator:gab19b66e345cf1f9d50ffc26c28862bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3cae8c6d0eaab3dc3ce178f6af81ae2" id="r_gaa3cae8c6d0eaab3dc3ce178f6af81ae2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#gaa3cae8c6d0eaab3dc3ce178f6af81ae2">AV_CH_BACK_LEFT</a>&#160;&#160;&#160;0x00000010</td></tr>
+<tr class="separator:gaa3cae8c6d0eaab3dc3ce178f6af81ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a7ab3bb418bf9672dcdf6554346e5eb" id="r_ga7a7ab3bb418bf9672dcdf6554346e5eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga7a7ab3bb418bf9672dcdf6554346e5eb">AV_CH_BACK_RIGHT</a>&#160;&#160;&#160;0x00000020</td></tr>
+<tr class="separator:ga7a7ab3bb418bf9672dcdf6554346e5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c9ea2ea60044bfe844174300b237386" id="r_ga6c9ea2ea60044bfe844174300b237386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga6c9ea2ea60044bfe844174300b237386">AV_CH_FRONT_LEFT_OF_CENTER</a>&#160;&#160;&#160;0x00000040</td></tr>
+<tr class="separator:ga6c9ea2ea60044bfe844174300b237386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga558dc25b0ce327d2547d3cc9e4bd6a4e" id="r_ga558dc25b0ce327d2547d3cc9e4bd6a4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga558dc25b0ce327d2547d3cc9e4bd6a4e">AV_CH_FRONT_RIGHT_OF_CENTER</a>&#160;&#160;&#160;0x00000080</td></tr>
+<tr class="separator:ga558dc25b0ce327d2547d3cc9e4bd6a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga68650a364e52edb62d5984dddec4f935" id="r_ga68650a364e52edb62d5984dddec4f935"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga68650a364e52edb62d5984dddec4f935">AV_CH_BACK_CENTER</a>&#160;&#160;&#160;0x00000100</td></tr>
+<tr class="separator:ga68650a364e52edb62d5984dddec4f935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02e55f35249dfa57a2e4edfd3acfec4f" id="r_ga02e55f35249dfa57a2e4edfd3acfec4f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga02e55f35249dfa57a2e4edfd3acfec4f">AV_CH_SIDE_LEFT</a>&#160;&#160;&#160;0x00000200</td></tr>
+<tr class="separator:ga02e55f35249dfa57a2e4edfd3acfec4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga947b60ab70c428ebb07c8b9c87023b39" id="r_ga947b60ab70c428ebb07c8b9c87023b39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga947b60ab70c428ebb07c8b9c87023b39">AV_CH_SIDE_RIGHT</a>&#160;&#160;&#160;0x00000400</td></tr>
+<tr class="separator:ga947b60ab70c428ebb07c8b9c87023b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga922199ce7638a651d66a423379b4c5dc" id="r_ga922199ce7638a651d66a423379b4c5dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga922199ce7638a651d66a423379b4c5dc">AV_CH_TOP_CENTER</a>&#160;&#160;&#160;0x00000800</td></tr>
+<tr class="separator:ga922199ce7638a651d66a423379b4c5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga352bec66d2e1bef67efe5b7f0a4207f3" id="r_ga352bec66d2e1bef67efe5b7f0a4207f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga352bec66d2e1bef67efe5b7f0a4207f3">AV_CH_TOP_FRONT_LEFT</a>&#160;&#160;&#160;0x00001000</td></tr>
+<tr class="separator:ga352bec66d2e1bef67efe5b7f0a4207f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b558fe85e67383a5b04e56b97b145d0" id="r_ga6b558fe85e67383a5b04e56b97b145d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga6b558fe85e67383a5b04e56b97b145d0">AV_CH_TOP_FRONT_CENTER</a>&#160;&#160;&#160;0x00002000</td></tr>
+<tr class="separator:ga6b558fe85e67383a5b04e56b97b145d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabce29ea1d7e2d433263b2cbf28232360" id="r_gabce29ea1d7e2d433263b2cbf28232360"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#gabce29ea1d7e2d433263b2cbf28232360">AV_CH_TOP_FRONT_RIGHT</a>&#160;&#160;&#160;0x00004000</td></tr>
+<tr class="separator:gabce29ea1d7e2d433263b2cbf28232360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac082f244f37f9c5d8e4f7bf96cc76dc" id="r_gaac082f244f37f9c5d8e4f7bf96cc76dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#gaac082f244f37f9c5d8e4f7bf96cc76dc">AV_CH_TOP_BACK_LEFT</a>&#160;&#160;&#160;0x00008000</td></tr>
+<tr class="separator:gaac082f244f37f9c5d8e4f7bf96cc76dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga439a8664c452f9782b460f61a3908451" id="r_ga439a8664c452f9782b460f61a3908451"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga439a8664c452f9782b460f61a3908451">AV_CH_TOP_BACK_CENTER</a>&#160;&#160;&#160;0x00010000</td></tr>
+<tr class="separator:ga439a8664c452f9782b460f61a3908451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8fa88c3c74339f4218a3e70286fdbdaa" id="r_ga8fa88c3c74339f4218a3e70286fdbdaa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga8fa88c3c74339f4218a3e70286fdbdaa">AV_CH_TOP_BACK_RIGHT</a>&#160;&#160;&#160;0x00020000</td></tr>
+<tr class="separator:ga8fa88c3c74339f4218a3e70286fdbdaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea8f62dcaa4774307a8fa9b52172c688" id="r_gaea8f62dcaa4774307a8fa9b52172c688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#gaea8f62dcaa4774307a8fa9b52172c688">AV_CH_STEREO_LEFT</a>&#160;&#160;&#160;0x20000000</td></tr>
+<tr class="memdesc:gaea8f62dcaa4774307a8fa9b52172c688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stereo downmix.  <br /></td></tr>
+<tr class="separator:gaea8f62dcaa4774307a8fa9b52172c688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab68e7edb9182b1b22898b960707143c1" id="r_gab68e7edb9182b1b22898b960707143c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#gab68e7edb9182b1b22898b960707143c1">AV_CH_STEREO_RIGHT</a>&#160;&#160;&#160;0x40000000</td></tr>
+<tr class="memdesc:gab68e7edb9182b1b22898b960707143c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AV_CH_STEREO_LEFT.  <br /></td></tr>
+<tr class="separator:gab68e7edb9182b1b22898b960707143c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11e273c4872335063b5059cca52218c0" id="r_ga11e273c4872335063b5059cca52218c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga11e273c4872335063b5059cca52218c0">AV_CH_WIDE_LEFT</a>&#160;&#160;&#160;0x0000000080000000ULL</td></tr>
+<tr class="separator:ga11e273c4872335063b5059cca52218c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c7ff738c3481d2891d052f5bca55248" id="r_ga2c7ff738c3481d2891d052f5bca55248"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga2c7ff738c3481d2891d052f5bca55248">AV_CH_WIDE_RIGHT</a>&#160;&#160;&#160;0x0000000100000000ULL</td></tr>
+<tr class="separator:ga2c7ff738c3481d2891d052f5bca55248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc04912a8294d8788e4162092df8a549" id="r_gafc04912a8294d8788e4162092df8a549"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#gafc04912a8294d8788e4162092df8a549">AV_CH_SURROUND_DIRECT_LEFT</a>&#160;&#160;&#160;0x0000000200000000ULL</td></tr>
+<tr class="separator:gafc04912a8294d8788e4162092df8a549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c9137cc9fd60d15be588e2eff3cfa23" id="r_ga0c9137cc9fd60d15be588e2eff3cfa23"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga0c9137cc9fd60d15be588e2eff3cfa23">AV_CH_SURROUND_DIRECT_RIGHT</a>&#160;&#160;&#160;0x0000000400000000ULL</td></tr>
+<tr class="separator:ga0c9137cc9fd60d15be588e2eff3cfa23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72d2eaef6727608379ab29859f5d5ee2" id="r_ga72d2eaef6727608379ab29859f5d5ee2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga72d2eaef6727608379ab29859f5d5ee2">AV_CH_LOW_FREQUENCY_2</a>&#160;&#160;&#160;0x0000000800000000ULL</td></tr>
+<tr class="separator:ga72d2eaef6727608379ab29859f5d5ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ab04ac641edef25c03de0a577eab57d" id="r_ga7ab04ac641edef25c03de0a577eab57d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__masks.html#ga7ab04ac641edef25c03de0a577eab57d">AV_CH_LAYOUT_NATIVE</a>&#160;&#160;&#160;0x8000000000000000ULL</td></tr>
+<tr class="memdesc:ga7ab04ac641edef25c03de0a577eab57d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_channel.html" title="音乐频道主界面类，支持分类导航、滚动和音乐块展示">Channel</a> mask value used for <a class="el" href="struct_a_v_codec_context.html#ac9e212d94cec2e89d04deb4f7687000f" title="Request decoder to use this channel layout if it can (0 for default)">AVCodecContext.request_channel_layout</a> to indicate that the user requests the channel order of the decoder output to be the native codec channel order.  <br /></td></tr>
+<tr class="separator:ga7ab04ac641edef25c03de0a577eab57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53d6da2dcd56f5f87c7afd8b33fa15ba" id="r_ga53d6da2dcd56f5f87c7afd8b33fa15ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga53d6da2dcd56f5f87c7afd8b33fa15ba">AV_CH_LAYOUT_MONO</a>&#160;&#160;&#160;(<a class="el" href="group__channel__masks.html#ga88f2868b232a89fd11ad9d6c39d502a1">AV_CH_FRONT_CENTER</a>)</td></tr>
+<tr class="separator:ga53d6da2dcd56f5f87c7afd8b33fa15ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc6d6651bba254cd0fa2c42a57228e65" id="r_gabc6d6651bba254cd0fa2c42a57228e65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gabc6d6651bba254cd0fa2c42a57228e65">AV_CH_LAYOUT_STEREO</a>&#160;&#160;&#160;(<a class="el" href="group__channel__masks.html#gaf9c5619f74c99ea8a8606719c01fe7df">AV_CH_FRONT_LEFT</a>|<a class="el" href="group__channel__masks.html#ga394b4b2c87790178bf7b683b45320f31">AV_CH_FRONT_RIGHT</a>)</td></tr>
+<tr class="separator:gabc6d6651bba254cd0fa2c42a57228e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03f59e18b3598aa0cab9ed675c287a36" id="r_ga03f59e18b3598aa0cab9ed675c287a36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga03f59e18b3598aa0cab9ed675c287a36">AV_CH_LAYOUT_2POINT1</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gabc6d6651bba254cd0fa2c42a57228e65">AV_CH_LAYOUT_STEREO</a>|<a class="el" href="group__channel__masks.html#gab19b66e345cf1f9d50ffc26c28862bcc">AV_CH_LOW_FREQUENCY</a>)</td></tr>
+<tr class="separator:ga03f59e18b3598aa0cab9ed675c287a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad0badd9c9984bc74290f26c2edfdfe44" id="r_gad0badd9c9984bc74290f26c2edfdfe44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gad0badd9c9984bc74290f26c2edfdfe44">AV_CH_LAYOUT_2_1</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gabc6d6651bba254cd0fa2c42a57228e65">AV_CH_LAYOUT_STEREO</a>|<a class="el" href="group__channel__masks.html#ga68650a364e52edb62d5984dddec4f935">AV_CH_BACK_CENTER</a>)</td></tr>
+<tr class="separator:gad0badd9c9984bc74290f26c2edfdfe44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga625aec7f2285dc35e3ed801e91889564" id="r_ga625aec7f2285dc35e3ed801e91889564"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga625aec7f2285dc35e3ed801e91889564">AV_CH_LAYOUT_SURROUND</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gabc6d6651bba254cd0fa2c42a57228e65">AV_CH_LAYOUT_STEREO</a>|<a class="el" href="group__channel__masks.html#ga88f2868b232a89fd11ad9d6c39d502a1">AV_CH_FRONT_CENTER</a>)</td></tr>
+<tr class="separator:ga625aec7f2285dc35e3ed801e91889564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3fc8d83d40cfbd4910b16d526beb294" id="r_gae3fc8d83d40cfbd4910b16d526beb294"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gae3fc8d83d40cfbd4910b16d526beb294">AV_CH_LAYOUT_3POINT1</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga625aec7f2285dc35e3ed801e91889564">AV_CH_LAYOUT_SURROUND</a>|<a class="el" href="group__channel__masks.html#gab19b66e345cf1f9d50ffc26c28862bcc">AV_CH_LOW_FREQUENCY</a>)</td></tr>
+<tr class="separator:gae3fc8d83d40cfbd4910b16d526beb294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bcbe41f2d3214b0a3fd2698ebe0caf9" id="r_ga0bcbe41f2d3214b0a3fd2698ebe0caf9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga0bcbe41f2d3214b0a3fd2698ebe0caf9">AV_CH_LAYOUT_4POINT0</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga625aec7f2285dc35e3ed801e91889564">AV_CH_LAYOUT_SURROUND</a>|<a class="el" href="group__channel__masks.html#ga68650a364e52edb62d5984dddec4f935">AV_CH_BACK_CENTER</a>)</td></tr>
+<tr class="separator:ga0bcbe41f2d3214b0a3fd2698ebe0caf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc48c498c05b3b3c2549f715ba4f1d1b" id="r_gacc48c498c05b3b3c2549f715ba4f1d1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gacc48c498c05b3b3c2549f715ba4f1d1b">AV_CH_LAYOUT_4POINT1</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga0bcbe41f2d3214b0a3fd2698ebe0caf9">AV_CH_LAYOUT_4POINT0</a>|<a class="el" href="group__channel__masks.html#gab19b66e345cf1f9d50ffc26c28862bcc">AV_CH_LOW_FREQUENCY</a>)</td></tr>
+<tr class="separator:gacc48c498c05b3b3c2549f715ba4f1d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c25ee8b976d0cb15e0b6d2cf923d19d" id="r_ga5c25ee8b976d0cb15e0b6d2cf923d19d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga5c25ee8b976d0cb15e0b6d2cf923d19d">AV_CH_LAYOUT_2_2</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gabc6d6651bba254cd0fa2c42a57228e65">AV_CH_LAYOUT_STEREO</a>|<a class="el" href="group__channel__masks.html#ga02e55f35249dfa57a2e4edfd3acfec4f">AV_CH_SIDE_LEFT</a>|<a class="el" href="group__channel__masks.html#ga947b60ab70c428ebb07c8b9c87023b39">AV_CH_SIDE_RIGHT</a>)</td></tr>
+<tr class="separator:ga5c25ee8b976d0cb15e0b6d2cf923d19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0982ce29eced939dfcfb5b52416810ae" id="r_ga0982ce29eced939dfcfb5b52416810ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga0982ce29eced939dfcfb5b52416810ae">AV_CH_LAYOUT_QUAD</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gabc6d6651bba254cd0fa2c42a57228e65">AV_CH_LAYOUT_STEREO</a>|<a class="el" href="group__channel__masks.html#gaa3cae8c6d0eaab3dc3ce178f6af81ae2">AV_CH_BACK_LEFT</a>|<a class="el" href="group__channel__masks.html#ga7a7ab3bb418bf9672dcdf6554346e5eb">AV_CH_BACK_RIGHT</a>)</td></tr>
+<tr class="separator:ga0982ce29eced939dfcfb5b52416810ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10eddec555bcf849efce5158b0cbdb50" id="r_ga10eddec555bcf849efce5158b0cbdb50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga10eddec555bcf849efce5158b0cbdb50">AV_CH_LAYOUT_5POINT0</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga625aec7f2285dc35e3ed801e91889564">AV_CH_LAYOUT_SURROUND</a>|<a class="el" href="group__channel__masks.html#ga02e55f35249dfa57a2e4edfd3acfec4f">AV_CH_SIDE_LEFT</a>|<a class="el" href="group__channel__masks.html#ga947b60ab70c428ebb07c8b9c87023b39">AV_CH_SIDE_RIGHT</a>)</td></tr>
+<tr class="separator:ga10eddec555bcf849efce5158b0cbdb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac36a042dc21866f9043ce930f300d0df" id="r_gac36a042dc21866f9043ce930f300d0df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gac36a042dc21866f9043ce930f300d0df">AV_CH_LAYOUT_5POINT1</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga10eddec555bcf849efce5158b0cbdb50">AV_CH_LAYOUT_5POINT0</a>|<a class="el" href="group__channel__masks.html#gab19b66e345cf1f9d50ffc26c28862bcc">AV_CH_LOW_FREQUENCY</a>)</td></tr>
+<tr class="separator:gac36a042dc21866f9043ce930f300d0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab057e9fd36b7e929d000d663badbafc6" id="r_gab057e9fd36b7e929d000d663badbafc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gab057e9fd36b7e929d000d663badbafc6">AV_CH_LAYOUT_5POINT0_BACK</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga625aec7f2285dc35e3ed801e91889564">AV_CH_LAYOUT_SURROUND</a>|<a class="el" href="group__channel__masks.html#gaa3cae8c6d0eaab3dc3ce178f6af81ae2">AV_CH_BACK_LEFT</a>|<a class="el" href="group__channel__masks.html#ga7a7ab3bb418bf9672dcdf6554346e5eb">AV_CH_BACK_RIGHT</a>)</td></tr>
+<tr class="separator:gab057e9fd36b7e929d000d663badbafc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9da5d6069701241a22f3af19b152662" id="r_gae9da5d6069701241a22f3af19b152662"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gae9da5d6069701241a22f3af19b152662">AV_CH_LAYOUT_5POINT1_BACK</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gab057e9fd36b7e929d000d663badbafc6">AV_CH_LAYOUT_5POINT0_BACK</a>|<a class="el" href="group__channel__masks.html#gab19b66e345cf1f9d50ffc26c28862bcc">AV_CH_LOW_FREQUENCY</a>)</td></tr>
+<tr class="separator:gae9da5d6069701241a22f3af19b152662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fbea70d397140a524b55018128fca77" id="r_ga0fbea70d397140a524b55018128fca77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga0fbea70d397140a524b55018128fca77">AV_CH_LAYOUT_6POINT0</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga10eddec555bcf849efce5158b0cbdb50">AV_CH_LAYOUT_5POINT0</a>|<a class="el" href="group__channel__masks.html#ga68650a364e52edb62d5984dddec4f935">AV_CH_BACK_CENTER</a>)</td></tr>
+<tr class="separator:ga0fbea70d397140a524b55018128fca77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga735985d89e38896a0cb9e5a1e96cb9b8" id="r_ga735985d89e38896a0cb9e5a1e96cb9b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga735985d89e38896a0cb9e5a1e96cb9b8">AV_CH_LAYOUT_6POINT0_FRONT</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga5c25ee8b976d0cb15e0b6d2cf923d19d">AV_CH_LAYOUT_2_2</a>|<a class="el" href="group__channel__masks.html#ga6c9ea2ea60044bfe844174300b237386">AV_CH_FRONT_LEFT_OF_CENTER</a>|<a class="el" href="group__channel__masks.html#ga558dc25b0ce327d2547d3cc9e4bd6a4e">AV_CH_FRONT_RIGHT_OF_CENTER</a>)</td></tr>
+<tr class="separator:ga735985d89e38896a0cb9e5a1e96cb9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44e719835fe17c5af5e619083918d1ca" id="r_ga44e719835fe17c5af5e619083918d1ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga44e719835fe17c5af5e619083918d1ca">AV_CH_LAYOUT_HEXAGONAL</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gab057e9fd36b7e929d000d663badbafc6">AV_CH_LAYOUT_5POINT0_BACK</a>|<a class="el" href="group__channel__masks.html#ga68650a364e52edb62d5984dddec4f935">AV_CH_BACK_CENTER</a>)</td></tr>
+<tr class="separator:ga44e719835fe17c5af5e619083918d1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b63b18f49c294bfbc22afa8b59b6685" id="r_ga0b63b18f49c294bfbc22afa8b59b6685"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga0b63b18f49c294bfbc22afa8b59b6685">AV_CH_LAYOUT_6POINT1</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gac36a042dc21866f9043ce930f300d0df">AV_CH_LAYOUT_5POINT1</a>|<a class="el" href="group__channel__masks.html#ga68650a364e52edb62d5984dddec4f935">AV_CH_BACK_CENTER</a>)</td></tr>
+<tr class="separator:ga0b63b18f49c294bfbc22afa8b59b6685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf1920f827888aeb99540f3ee5a78cea" id="r_gaaf1920f827888aeb99540f3ee5a78cea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gaaf1920f827888aeb99540f3ee5a78cea">AV_CH_LAYOUT_6POINT1_BACK</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gae9da5d6069701241a22f3af19b152662">AV_CH_LAYOUT_5POINT1_BACK</a>|<a class="el" href="group__channel__masks.html#ga68650a364e52edb62d5984dddec4f935">AV_CH_BACK_CENTER</a>)</td></tr>
+<tr class="separator:gaaf1920f827888aeb99540f3ee5a78cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga934ec29833f0cbc4a1fe8f97cc914664" id="r_ga934ec29833f0cbc4a1fe8f97cc914664"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga934ec29833f0cbc4a1fe8f97cc914664">AV_CH_LAYOUT_6POINT1_FRONT</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga735985d89e38896a0cb9e5a1e96cb9b8">AV_CH_LAYOUT_6POINT0_FRONT</a>|<a class="el" href="group__channel__masks.html#gab19b66e345cf1f9d50ffc26c28862bcc">AV_CH_LOW_FREQUENCY</a>)</td></tr>
+<tr class="separator:ga934ec29833f0cbc4a1fe8f97cc914664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab843d4e87bc747c7a81f082589023f98" id="r_gab843d4e87bc747c7a81f082589023f98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gab843d4e87bc747c7a81f082589023f98">AV_CH_LAYOUT_7POINT0</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga10eddec555bcf849efce5158b0cbdb50">AV_CH_LAYOUT_5POINT0</a>|<a class="el" href="group__channel__masks.html#gaa3cae8c6d0eaab3dc3ce178f6af81ae2">AV_CH_BACK_LEFT</a>|<a class="el" href="group__channel__masks.html#ga7a7ab3bb418bf9672dcdf6554346e5eb">AV_CH_BACK_RIGHT</a>)</td></tr>
+<tr class="separator:gab843d4e87bc747c7a81f082589023f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4c21d7abb460730295f99c7f0098259" id="r_gaa4c21d7abb460730295f99c7f0098259"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gaa4c21d7abb460730295f99c7f0098259">AV_CH_LAYOUT_7POINT0_FRONT</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga10eddec555bcf849efce5158b0cbdb50">AV_CH_LAYOUT_5POINT0</a>|<a class="el" href="group__channel__masks.html#ga6c9ea2ea60044bfe844174300b237386">AV_CH_FRONT_LEFT_OF_CENTER</a>|<a class="el" href="group__channel__masks.html#ga558dc25b0ce327d2547d3cc9e4bd6a4e">AV_CH_FRONT_RIGHT_OF_CENTER</a>)</td></tr>
+<tr class="separator:gaa4c21d7abb460730295f99c7f0098259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2006ce652a95bad74291db52fa346464" id="r_ga2006ce652a95bad74291db52fa346464"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga2006ce652a95bad74291db52fa346464">AV_CH_LAYOUT_7POINT1</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gac36a042dc21866f9043ce930f300d0df">AV_CH_LAYOUT_5POINT1</a>|<a class="el" href="group__channel__masks.html#gaa3cae8c6d0eaab3dc3ce178f6af81ae2">AV_CH_BACK_LEFT</a>|<a class="el" href="group__channel__masks.html#ga7a7ab3bb418bf9672dcdf6554346e5eb">AV_CH_BACK_RIGHT</a>)</td></tr>
+<tr class="separator:ga2006ce652a95bad74291db52fa346464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga883478469aa86f5c3f57ce864a12745b" id="r_ga883478469aa86f5c3f57ce864a12745b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga883478469aa86f5c3f57ce864a12745b">AV_CH_LAYOUT_7POINT1_WIDE</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gac36a042dc21866f9043ce930f300d0df">AV_CH_LAYOUT_5POINT1</a>|<a class="el" href="group__channel__masks.html#ga6c9ea2ea60044bfe844174300b237386">AV_CH_FRONT_LEFT_OF_CENTER</a>|<a class="el" href="group__channel__masks.html#ga558dc25b0ce327d2547d3cc9e4bd6a4e">AV_CH_FRONT_RIGHT_OF_CENTER</a>)</td></tr>
+<tr class="separator:ga883478469aa86f5c3f57ce864a12745b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9702d40a7d1f6e2b00e02d8ecb83bd63" id="r_ga9702d40a7d1f6e2b00e02d8ecb83bd63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga9702d40a7d1f6e2b00e02d8ecb83bd63">AV_CH_LAYOUT_7POINT1_WIDE_BACK</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gae9da5d6069701241a22f3af19b152662">AV_CH_LAYOUT_5POINT1_BACK</a>|<a class="el" href="group__channel__masks.html#ga6c9ea2ea60044bfe844174300b237386">AV_CH_FRONT_LEFT_OF_CENTER</a>|<a class="el" href="group__channel__masks.html#ga558dc25b0ce327d2547d3cc9e4bd6a4e">AV_CH_FRONT_RIGHT_OF_CENTER</a>)</td></tr>
+<tr class="separator:ga9702d40a7d1f6e2b00e02d8ecb83bd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa760931c084e33a254fca038b7de8dae" id="r_gaa760931c084e33a254fca038b7de8dae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gaa760931c084e33a254fca038b7de8dae">AV_CH_LAYOUT_OCTAGONAL</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#ga10eddec555bcf849efce5158b0cbdb50">AV_CH_LAYOUT_5POINT0</a>|<a class="el" href="group__channel__masks.html#gaa3cae8c6d0eaab3dc3ce178f6af81ae2">AV_CH_BACK_LEFT</a>|<a class="el" href="group__channel__masks.html#ga68650a364e52edb62d5984dddec4f935">AV_CH_BACK_CENTER</a>|<a class="el" href="group__channel__masks.html#ga7a7ab3bb418bf9672dcdf6554346e5eb">AV_CH_BACK_RIGHT</a>)</td></tr>
+<tr class="separator:gaa760931c084e33a254fca038b7de8dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdbfe62b38dd3c6b1f89023f7aa6994c" id="r_gafdbfe62b38dd3c6b1f89023f7aa6994c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gafdbfe62b38dd3c6b1f89023f7aa6994c">AV_CH_LAYOUT_HEXADECAGONAL</a>&#160;&#160;&#160;(<a class="el" href="group__channel__mask__c.html#gaa760931c084e33a254fca038b7de8dae">AV_CH_LAYOUT_OCTAGONAL</a>|<a class="el" href="group__channel__masks.html#ga11e273c4872335063b5059cca52218c0">AV_CH_WIDE_LEFT</a>|<a class="el" href="group__channel__masks.html#ga2c7ff738c3481d2891d052f5bca55248">AV_CH_WIDE_RIGHT</a>|<a class="el" href="group__channel__masks.html#gaac082f244f37f9c5d8e4f7bf96cc76dc">AV_CH_TOP_BACK_LEFT</a>|<a class="el" href="group__channel__masks.html#ga8fa88c3c74339f4218a3e70286fdbdaa">AV_CH_TOP_BACK_RIGHT</a>|<a class="el" href="group__channel__masks.html#ga439a8664c452f9782b460f61a3908451">AV_CH_TOP_BACK_CENTER</a>|<a class="el" href="group__channel__masks.html#ga6b558fe85e67383a5b04e56b97b145d0">AV_CH_TOP_FRONT_CENTER</a>|<a class="el" href="group__channel__masks.html#ga352bec66d2e1bef67efe5b7f0a4207f3">AV_CH_TOP_FRONT_LEFT</a>|<a class="el" href="group__channel__masks.html#gabce29ea1d7e2d433263b2cbf28232360">AV_CH_TOP_FRONT_RIGHT</a>)</td></tr>
+<tr class="separator:gafdbfe62b38dd3c6b1f89023f7aa6994c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3004e784b29fd907a0d4aebeca0e6933" id="r_ga3004e784b29fd907a0d4aebeca0e6933"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga3004e784b29fd907a0d4aebeca0e6933">AV_CH_LAYOUT_STEREO_DOWNMIX</a>&#160;&#160;&#160;(<a class="el" href="group__channel__masks.html#gaea8f62dcaa4774307a8fa9b52172c688">AV_CH_STEREO_LEFT</a>|<a class="el" href="group__channel__masks.html#gab68e7edb9182b1b22898b960707143c1">AV_CH_STEREO_RIGHT</a>)</td></tr>
+<tr class="separator:ga3004e784b29fd907a0d4aebeca0e6933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:gabd576ea664e3ac5d31f3362064fe13e6" id="r_gabd576ea664e3ac5d31f3362064fe13e6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gabd576ea664e3ac5d31f3362064fe13e6">AVMatrixEncoding</a> { <br />
+&#160;&#160;<a class="el" href="group__channel__mask__c.html#ggabd576ea664e3ac5d31f3362064fe13e6a04179fd7b3339556603020ae88e02793">AV_MATRIX_ENCODING_NONE</a>
+, <a class="el" href="group__channel__mask__c.html#ggabd576ea664e3ac5d31f3362064fe13e6a0578f715ed49986a6e4c40884c174dbd">AV_MATRIX_ENCODING_DOLBY</a>
+, <a class="el" href="group__channel__mask__c.html#ggabd576ea664e3ac5d31f3362064fe13e6a068d30f3ce95f82781b0052bf86bc10e">AV_MATRIX_ENCODING_DPLII</a>
+, <a class="el" href="group__channel__mask__c.html#ggabd576ea664e3ac5d31f3362064fe13e6a03124652d3e9efb6ce687971c7abbfa1">AV_MATRIX_ENCODING_DPLIIX</a>
+, <br />
+&#160;&#160;<a class="el" href="group__channel__mask__c.html#ggabd576ea664e3ac5d31f3362064fe13e6a927893de2c83ddb117fb89dcc579e363">AV_MATRIX_ENCODING_DPLIIZ</a>
+, <a class="el" href="group__channel__mask__c.html#ggabd576ea664e3ac5d31f3362064fe13e6aa155505a7fb9f2b45778b1d7776dcfb7">AV_MATRIX_ENCODING_DOLBYEX</a>
+, <a class="el" href="group__channel__mask__c.html#ggabd576ea664e3ac5d31f3362064fe13e6ad9089736c1dd449617a2805d37e502d3">AV_MATRIX_ENCODING_DOLBYHEADPHONE</a>
+, <a class="el" href="group__channel__mask__c.html#ggabd576ea664e3ac5d31f3362064fe13e6a3a3acaf62825a3b21c7631ddf1dcc648">AV_MATRIX_ENCODING_NB</a>
+<br />
+ }</td></tr>
+<tr class="separator:gabd576ea664e3ac5d31f3362064fe13e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga3e8a7ab3d4c1ac98b902ab6b00741343" id="r_ga3e8a7ab3d4c1ac98b902ab6b00741343"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga3e8a7ab3d4c1ac98b902ab6b00741343">av_get_channel_layout</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>)</td></tr>
+<tr class="memdesc:ga3e8a7ab3d4c1ac98b902ab6b00741343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a channel layout id that matches name, or 0 if no match is found.  <br /></td></tr>
+<tr class="separator:ga3e8a7ab3d4c1ac98b902ab6b00741343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2336dae5569ae7fe509a9ea12df6a60" id="r_gad2336dae5569ae7fe509a9ea12df6a60"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gad2336dae5569ae7fe509a9ea12df6a60">av_get_extended_channel_layout</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> *channel_layout, int *nb_channels)</td></tr>
+<tr class="memdesc:gad2336dae5569ae7fe509a9ea12df6a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a channel layout and the number of channels based on the specified name.  <br /></td></tr>
+<tr class="separator:gad2336dae5569ae7fe509a9ea12df6a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99d0b5bb80534d13a6cc96336cf9076a" id="r_ga99d0b5bb80534d13a6cc96336cf9076a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga99d0b5bb80534d13a6cc96336cf9076a">av_get_channel_layout_string</a> (char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int buf_size, int nb_channels, <a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> channel_layout)</td></tr>
+<tr class="memdesc:ga99d0b5bb80534d13a6cc96336cf9076a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a description of a channel layout.  <br /></td></tr>
+<tr class="separator:ga99d0b5bb80534d13a6cc96336cf9076a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48cdbfac1bbb45835eae8bcdc9877b0e" id="r_ga48cdbfac1bbb45835eae8bcdc9877b0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga48cdbfac1bbb45835eae8bcdc9877b0e">av_bprint_channel_layout</a> (struct AVBPrint *bp, int nb_channels, <a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> channel_layout)</td></tr>
+<tr class="memdesc:ga48cdbfac1bbb45835eae8bcdc9877b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a description of a channel layout to a bprint buffer.  <br /></td></tr>
+<tr class="separator:ga48cdbfac1bbb45835eae8bcdc9877b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac95619abeb32e4a3daa18e3ff3419380" id="r_gac95619abeb32e4a3daa18e3ff3419380"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gac95619abeb32e4a3daa18e3ff3419380">av_get_channel_layout_nb_channels</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> channel_layout)</td></tr>
+<tr class="memdesc:gac95619abeb32e4a3daa18e3ff3419380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of channels in the channel layout.  <br /></td></tr>
+<tr class="separator:gac95619abeb32e4a3daa18e3ff3419380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb84f3e93a583e1f84a5283162a606a2" id="r_gacb84f3e93a583e1f84a5283162a606a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gacb84f3e93a583e1f84a5283162a606a2">av_get_default_channel_layout</a> (int nb_channels)</td></tr>
+<tr class="memdesc:gacb84f3e93a583e1f84a5283162a606a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return default channel layout for a given number of channels.  <br /></td></tr>
+<tr class="separator:gacb84f3e93a583e1f84a5283162a606a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0669978493902b5ae723e386013da3ce" id="r_ga0669978493902b5ae723e386013da3ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga0669978493902b5ae723e386013da3ce">av_get_channel_layout_channel_index</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> channel_layout, <a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> channel)</td></tr>
+<tr class="memdesc:ga0669978493902b5ae723e386013da3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of a channel in channel_layout.  <br /></td></tr>
+<tr class="separator:ga0669978493902b5ae723e386013da3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf492843360fb4ecee6b5ec4166b04fcd" id="r_gaf492843360fb4ecee6b5ec4166b04fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gaf492843360fb4ecee6b5ec4166b04fcd">av_channel_layout_extract_channel</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> channel_layout, int <a class="el" href="_s_d_l__opengl__glext_8h.html#ab47dd9958bcadea08866b42bf358e95e">index</a>)</td></tr>
+<tr class="memdesc:gaf492843360fb4ecee6b5ec4166b04fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the channel with the given index in channel_layout.  <br /></td></tr>
+<tr class="separator:gaf492843360fb4ecee6b5ec4166b04fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1da0f7e72aa5fc5e91880e465afe135" id="r_gaa1da0f7e72aa5fc5e91880e465afe135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#gaa1da0f7e72aa5fc5e91880e465afe135">av_get_channel_name</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> channel)</td></tr>
+<tr class="memdesc:gaa1da0f7e72aa5fc5e91880e465afe135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of a given channel.  <br /></td></tr>
+<tr class="separator:gaa1da0f7e72aa5fc5e91880e465afe135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga318244b07ff9b91fd26456df55fce66a" id="r_ga318244b07ff9b91fd26456df55fce66a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga318244b07ff9b91fd26456df55fce66a">av_get_channel_description</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> channel)</td></tr>
+<tr class="memdesc:ga318244b07ff9b91fd26456df55fce66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the description of a given channel.  <br /></td></tr>
+<tr class="separator:ga318244b07ff9b91fd26456df55fce66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00447bfae43d690f1f549a9e2521bf85" id="r_ga00447bfae43d690f1f549a9e2521bf85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__channel__mask__c.html#ga00447bfae43d690f1f549a9e2521bf85">av_get_standard_channel_layout</a> (unsigned <a class="el" href="_s_d_l__opengl__glext_8h.html#ab47dd9958bcadea08866b42bf358e95e">index</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> *layout, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **<a class="el" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>)</td></tr>
+<tr class="memdesc:ga00447bfae43d690f1f549a9e2521bf85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value and name of a standard channel layout.  <br /></td></tr>
+<tr class="separator:ga00447bfae43d690f1f549a9e2521bf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>audio channel layout utility functions </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="channel__layout_8h.html">channel_layout.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

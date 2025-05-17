@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: parseutils.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('parseutils_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">parseutils.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="parseutils_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef AVUTIL_PARSEUTILS_H</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define AVUTIL_PARSEUTILS_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="time_8h.html">time.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="rational_8h.html">rational.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="parseutils_8h.html#a8535b8693aa5a188cfb1356133c0e94e">   49</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="parseutils_8h.html#a8535b8693aa5a188cfb1356133c0e94e">av_parse_ratio</a>(<a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a> *<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *str, <span class="keywordtype">int</span> max,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                   <span class="keywordtype">int</span> log_offset, <span class="keywordtype">void</span> *log_ctx);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="" data-end="">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="parseutils_8h.html#a8ac8244d56fd4eeb9557038f80d60560">   52</a></span><span class="preprocessor">#define av_parse_ratio_quiet(rate, str, max) \</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">    av_parse_ratio(rate, str, max, AV_LOG_MAX_OFFSET, NULL)</span></div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="parseutils_8h.html#a4dcdb8a2792f2074ca4a1e1f4ddce2bf">   66</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="parseutils_8h.html#a4dcdb8a2792f2074ca4a1e1f4ddce2bf">av_parse_video_size</a>(<span class="keywordtype">int</span> *width_ptr, <span class="keywordtype">int</span> *height_ptr, <span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="parseutils_8h.html#abbc4de8c071538f5bbde8e5b7466b676">   77</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="parseutils_8h.html#abbc4de8c071538f5bbde8e5b7466b676">av_parse_video_rate</a>(<a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="parseutils_8h.html#a4be8779c7c2afd9c57c8b962bea76d03">   98</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="parseutils_8h.html#a4be8779c7c2afd9c57c8b962bea76d03">av_parse_color</a>(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *rgba_color, <span class="keyword">const</span> <span class="keywordtype">char</span> *color_string, <span class="keywordtype">int</span> slen,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                   <span class="keywordtype">void</span> *log_ctx);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="parseutils_8h.html#a6d8cfb62989c8dc657954b33214f599d">  112</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="parseutils_8h.html#a6d8cfb62989c8dc657954b33214f599d">av_get_known_color_name</a>(<span class="keywordtype">int</span> color_idx, <span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> **<a class="code hl_struct" href="structrgb.html">rgb</a>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="parseutils_8h.html#a98590feafe82e074f61f38c8faaa4cef">  146</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="parseutils_8h.html#a98590feafe82e074f61f38c8faaa4cef">av_parse_time</a>(<a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> *timeval, <span class="keyword">const</span> <span class="keywordtype">char</span> *timestr, <span class="keywordtype">int</span> duration);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="parseutils_8h.html#ad97f06e907c14c253c2bf3e775f51ccb">  154</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="parseutils_8h.html#ad97f06e907c14c253c2bf3e775f51ccb">av_find_info_tag</a>(<span class="keywordtype">char</span> *<a class="code hl_function" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, <span class="keywordtype">int</span> arg_size, <span class="keyword">const</span> <span class="keywordtype">char</span> *tag1, <span class="keyword">const</span> <span class="keywordtype">char</span> *info);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="parseutils_8h.html#aa9fc9ede1311e05ea453a1de0ec4dafd">  186</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="parseutils_8h.html#aa9fc9ede1311e05ea453a1de0ec4dafd">av_small_strptime</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_namespace" href="namespacefmt.html">fmt</a>, <span class="keyword">struct</span> tm *dt);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="parseutils_8h.html#ae9bf34b50b9762f3c733721d5210b52d">  191</a></span>time_t <a class="code hl_function" href="parseutils_8h.html#ae9bf34b50b9762f3c733721d5210b52d">av_timegm</a>(<span class="keyword">struct</span> tm *tm);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#endif </span><span class="comment">/* AVUTIL_PARSEUTILS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdoc">8 位无符号整数</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:29</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_adec1df1b8b51cb32b77e5b86fff46471"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></div><div class="ttdeci">signed long long int64_t</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:34</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a8fc1e7b9baaae687804c7eed46ca09c6"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a></div><div class="ttdeci">GLdouble GLdouble GLdouble GLdouble q</div><div class="ttdef"><b>定义</b> SDL_opengl.h:2087</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a43852a2c335d759d3298864e65def49f"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a></div><div class="ttdeci">GLuint GLenum * rate</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:11461</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa5367c14d90f462230c2611b81b41d23"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a></div><div class="ttdeci">GLfloat GLfloat p</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:13126</div></div>
+<div class="ttc" id="abase_8h_html_a2c8e80c1b1c8b7747e99b8e9a24a0429"><div class="ttname"><a href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a></div><div class="ttdeci">auto arg(const Char *name, const T &amp;arg) -&gt; detail::named_arg&lt; Char, T &gt;</div><div class="ttdoc">Returns a named argument to be used in a formatting function.</div><div class="ttdef"><b>定义</b> base.h:2798</div></div>
+<div class="ttc" id="anamespacefmt_html"><div class="ttname"><a href="namespacefmt.html">fmt</a></div><div class="ttdef"><b>定义</b> bin_to_hex.h:101</div></div>
+<div class="ttc" id="aparseutils_8h_html_a4be8779c7c2afd9c57c8b962bea76d03"><div class="ttname"><a href="parseutils_8h.html#a4be8779c7c2afd9c57c8b962bea76d03">av_parse_color</a></div><div class="ttdeci">int av_parse_color(uint8_t *rgba_color, const char *color_string, int slen, void *log_ctx)</div><div class="ttdoc">Put the RGBA values that correspond to color_string in rgba_color.</div></div>
+<div class="ttc" id="aparseutils_8h_html_a4dcdb8a2792f2074ca4a1e1f4ddce2bf"><div class="ttname"><a href="parseutils_8h.html#a4dcdb8a2792f2074ca4a1e1f4ddce2bf">av_parse_video_size</a></div><div class="ttdeci">int av_parse_video_size(int *width_ptr, int *height_ptr, const char *str)</div><div class="ttdoc">Parse str and put in width_ptr and height_ptr the detected values.</div></div>
+<div class="ttc" id="aparseutils_8h_html_a6d8cfb62989c8dc657954b33214f599d"><div class="ttname"><a href="parseutils_8h.html#a6d8cfb62989c8dc657954b33214f599d">av_get_known_color_name</a></div><div class="ttdeci">const char * av_get_known_color_name(int color_idx, const uint8_t **rgb)</div><div class="ttdoc">Get the name of a color from the internal table of hard-coded named colors.</div></div>
+<div class="ttc" id="aparseutils_8h_html_a8535b8693aa5a188cfb1356133c0e94e"><div class="ttname"><a href="parseutils_8h.html#a8535b8693aa5a188cfb1356133c0e94e">av_parse_ratio</a></div><div class="ttdeci">int av_parse_ratio(AVRational *q, const char *str, int max, int log_offset, void *log_ctx)</div><div class="ttdoc">Parse str and store the parsed ratio in q.</div></div>
+<div class="ttc" id="aparseutils_8h_html_a98590feafe82e074f61f38c8faaa4cef"><div class="ttname"><a href="parseutils_8h.html#a98590feafe82e074f61f38c8faaa4cef">av_parse_time</a></div><div class="ttdeci">int av_parse_time(int64_t *timeval, const char *timestr, int duration)</div><div class="ttdoc">Parse timestr and return in *time a corresponding number of microseconds.</div></div>
+<div class="ttc" id="aparseutils_8h_html_aa9fc9ede1311e05ea453a1de0ec4dafd"><div class="ttname"><a href="parseutils_8h.html#aa9fc9ede1311e05ea453a1de0ec4dafd">av_small_strptime</a></div><div class="ttdeci">char * av_small_strptime(const char *p, const char *fmt, struct tm *dt)</div><div class="ttdoc">Simplified version of strptime</div></div>
+<div class="ttc" id="aparseutils_8h_html_abbc4de8c071538f5bbde8e5b7466b676"><div class="ttname"><a href="parseutils_8h.html#abbc4de8c071538f5bbde8e5b7466b676">av_parse_video_rate</a></div><div class="ttdeci">int av_parse_video_rate(AVRational *rate, const char *str)</div><div class="ttdoc">Parse str and store the detected values in *rate.</div></div>
+<div class="ttc" id="aparseutils_8h_html_ad97f06e907c14c253c2bf3e775f51ccb"><div class="ttname"><a href="parseutils_8h.html#ad97f06e907c14c253c2bf3e775f51ccb">av_find_info_tag</a></div><div class="ttdeci">int av_find_info_tag(char *arg, int arg_size, const char *tag1, const char *info)</div><div class="ttdoc">Attempt to find a specific tag in a URL.</div></div>
+<div class="ttc" id="aparseutils_8h_html_ae9bf34b50b9762f3c733721d5210b52d"><div class="ttname"><a href="parseutils_8h.html#ae9bf34b50b9762f3c733721d5210b52d">av_timegm</a></div><div class="ttdeci">time_t av_timegm(struct tm *tm)</div><div class="ttdoc">Convert the decomposed UTC time in tm to a time_t value.</div></div>
+<div class="ttc" id="arational_8h_html"><div class="ttname"><a href="rational_8h.html">rational.h</a></div><div class="ttdoc">Utilties for rational number calculation.</div></div>
+<div class="ttc" id="astruct_a_v_rational_html"><div class="ttname"><a href="struct_a_v_rational.html">AVRational</a></div><div class="ttdoc">Rational number (pair of numerator and denominator).</div><div class="ttdef"><b>定义</b> rational.h:58</div></div>
+<div class="ttc" id="astructrgb_html"><div class="ttname"><a href="structrgb.html">rgb</a></div><div class="ttdef"><b>定义</b> color.h:192</div></div>
+<div class="ttc" id="atime_8h_html"><div class="ttname"><a href="time_8h.html">time.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="parseutils_8h.html">parseutils.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

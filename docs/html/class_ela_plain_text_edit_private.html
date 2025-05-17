@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ElaPlainTextEditPrivate类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_ela_plain_text_edit_private.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_ela_plain_text_edit_private-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ElaPlainTextEditPrivate类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>纯文本编辑框私有实现类，管理事件和主题切换  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ela_plain_text_edit_private_8h_source.html">ElaPlainTextEditPrivate.h</a>&gt;</code></p>
+<div class="dynheader">
+类 ElaPlainTextEditPrivate 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_plain_text_edit_private__inherit__graph.png" border="0" usemap="#a_ela_plain_text_edit_private_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_ela_plain_text_edit_private_inherit__map" id="a_ela_plain_text_edit_private_inherit__map">
+<area shape="rect" title="纯文本编辑框私有实现类，管理事件和主题切换" alt="" coords="5,80,164,107"/>
+<area shape="rect" title=" " alt="" coords="50,5,119,32"/>
+<area shape="poly" title=" " alt="" coords="87,48,87,80,82,80,82,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+ElaPlainTextEditPrivate 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_plain_text_edit_private__coll__graph.png" border="0" usemap="#a_ela_plain_text_edit_private_coll__map" alt="Collaboration graph"/></div>
+<map name="a_ela_plain_text_edit_private_coll__map" id="a_ela_plain_text_edit_private_coll__map">
+<area shape="rect" title="纯文本编辑框私有实现类，管理事件和主题切换" alt="" coords="8,172,166,199"/>
+<area shape="rect" title=" " alt="" coords="5,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="38,47,36,77,40,107,57,143,78,170,73,173,52,145,35,109,30,77,32,47"/>
+<area shape="rect" href="class_ela_event.html" title="事件类，用于定义和管理事件名称、函数名称和连接类型" alt="" coords="50,81,124,108"/>
+<area shape="poly" title=" " alt="" coords="58,43,81,80,77,82,53,46"/>
+<area shape="rect" href="class_ela_plain_text_edit_style.html" title="纯文本编辑框自定义样式类，管理边框和焦点指示器绘制" alt="" coords="148,81,295,108"/>
+<area shape="poly" title=" " alt="" coords="203,122,171,150,125,174,122,169,168,146,199,118"/>
+<area shape="rect" title=" " alt="" coords="174,5,269,32"/>
+<area shape="poly" title=" " alt="" coords="224,47,224,81,219,81,219,47"/>
+<area shape="poly" title=" " alt="" coords="89,124,89,171,84,171,84,124"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:acf666a8d5ef3e8a42f3c41d767d252db" id="r_acf666a8d5ef3e8a42f3c41d767d252db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf666a8d5ef3e8a42f3c41d767d252db">onThemeChanged</a> (ElaThemeType::ThemeMode themeMode)</td></tr>
+<tr class="memdesc:acf666a8d5ef3e8a42f3c41d767d252db"><td class="mdescLeft">&#160;</td><td class="mdescRight">主题切换事件处理  <br /></td></tr>
+<tr class="separator:acf666a8d5ef3e8a42f3c41d767d252db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ace67394a5041ecaa256807dfd2e773e7" id="r_ace67394a5041ecaa256807dfd2e773e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace67394a5041ecaa256807dfd2e773e7">ElaPlainTextEditPrivate</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:ace67394a5041ecaa256807dfd2e773e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化纯文本编辑框私有对象  <br /></td></tr>
+<tr class="separator:ace67394a5041ecaa256807dfd2e773e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0d47bc3e4fbf24eb7b25750db63bfa8" id="r_ab0d47bc3e4fbf24eb7b25750db63bfa8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0d47bc3e4fbf24eb7b25750db63bfa8">~ElaPlainTextEditPrivate</a> () override</td></tr>
+<tr class="memdesc:ab0d47bc3e4fbf24eb7b25750db63bfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，释放纯文本编辑框私有资源  <br /></td></tr>
+<tr class="separator:ab0d47bc3e4fbf24eb7b25750db63bfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af183d3fca7ab63c7a634e901de2cd616" id="r_af183d3fca7ab63c7a634e901de2cd616"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af183d3fca7ab63c7a634e901de2cd616">onWMWindowClickedEvent</a> (QVariantMap data)</td></tr>
+<tr class="memdesc:af183d3fca7ab63c7a634e901de2cd616"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理窗口点击事件  <br /></td></tr>
+<tr class="separator:af183d3fca7ab63c7a634e901de2cd616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a7493212f486e2bde81d9f172374c8f48" id="r_a7493212f486e2bde81d9f172374c8f48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7493212f486e2bde81d9f172374c8f48">containsCursorToItem</a> (QWidget *item)</td></tr>
+<tr class="memdesc:a7493212f486e2bde81d9f172374c8f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断光标是否在控件内  <br /></td></tr>
+<tr class="separator:a7493212f486e2bde81d9f172374c8f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b03deaf658f6c6f614d0dba062b07a5" id="r_a9b03deaf658f6c6f614d0dba062b07a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b03deaf658f6c6f614d0dba062b07a5">_changeTheme</a> ()</td></tr>
+<tr class="memdesc:a9b03deaf658f6c6f614d0dba062b07a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">更改主题  <br /></td></tr>
+<tr class="separator:a9b03deaf658f6c6f614d0dba062b07a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:abab7c56bd707e57041aaca2f2b3906b1" id="r_abab7c56bd707e57041aaca2f2b3906b1"><td class="memItemLeft" align="right" valign="top">ElaThemeType::ThemeMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abab7c56bd707e57041aaca2f2b3906b1">_themeMode</a></td></tr>
+<tr class="memdesc:abab7c56bd707e57041aaca2f2b3906b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前主题模式  <br /></td></tr>
+<tr class="separator:abab7c56bd707e57041aaca2f2b3906b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f815916593f8e36894e85090ffafbb5" id="r_a0f815916593f8e36894e85090ffafbb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_plain_text_edit_style.html">ElaPlainTextEditStyle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f815916593f8e36894e85090ffafbb5">_style</a> {nullptr}</td></tr>
+<tr class="memdesc:a0f815916593f8e36894e85090ffafbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">自定义样式对象  <br /></td></tr>
+<tr class="separator:a0f815916593f8e36894e85090ffafbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66cfb9dc6fdecda9bed664038fca699d" id="r_a66cfb9dc6fdecda9bed664038fca699d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_event.html">ElaEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66cfb9dc6fdecda9bed664038fca699d">_focusEvent</a> {nullptr}</td></tr>
+<tr class="memdesc:a66cfb9dc6fdecda9bed664038fca699d"><td class="mdescLeft">&#160;</td><td class="mdescRight">焦点事件对象  <br /></td></tr>
+<tr class="separator:a66cfb9dc6fdecda9bed664038fca699d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>纯文本编辑框私有实现类，管理事件和主题切换 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ace67394a5041ecaa256807dfd2e773e7" name="ace67394a5041ecaa256807dfd2e773e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace67394a5041ecaa256807dfd2e773e7">&#9670;&#160;</a></span>ElaPlainTextEditPrivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ela_plain_text_edit_private.html">ElaPlainTextEditPrivate</a> </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化纯文本编辑框私有对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父对象指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab0d47bc3e4fbf24eb7b25750db63bfa8" name="ab0d47bc3e4fbf24eb7b25750db63bfa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d47bc3e4fbf24eb7b25750db63bfa8">&#9670;&#160;</a></span>~ElaPlainTextEditPrivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_ela_plain_text_edit_private.html">ElaPlainTextEditPrivate</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，释放纯文本编辑框私有资源 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a9b03deaf658f6c6f614d0dba062b07a5" name="a9b03deaf658f6c6f614d0dba062b07a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b03deaf658f6c6f614d0dba062b07a5">&#9670;&#160;</a></span>_changeTheme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _changeTheme </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更改主题 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_plain_text_edit_private_a9b03deaf658f6c6f614d0dba062b07a5_icgraph.png" border="0" usemap="#aclass_ela_plain_text_edit_private_a9b03deaf658f6c6f614d0dba062b07a5_icgraph" alt=""/></div>
+<map name="aclass_ela_plain_text_edit_private_a9b03deaf658f6c6f614d0dba062b07a5_icgraph" id="aclass_ela_plain_text_edit_private_a9b03deaf658f6c6f614d0dba062b07a5_icgraph">
+<area shape="rect" title="更改主题" alt="" coords="628,80,739,107"/>
+<area shape="rect" href="class_ela_plain_text_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db" title="主题切换事件处理" alt="" coords="453,80,580,107"/>
+<area shape="poly" title=" " alt="" coords="613,96,581,96,581,91,613,91"/>
+<area shape="rect" href="class_ela_plain_text_edit.html#a312bf86030663f9d51c6e2b9e0e94e85" title="构造函数，初始化纯文本编辑框" alt="" coords="232,72,405,115"/>
+<area shape="poly" title=" " alt="" coords="437,96,405,96,405,91,437,91"/>
+<area shape="poly" title=" " alt="" coords="350,59,338,53,318,51,300,53,288,57,284,63,286,71,280,72,279,62,285,53,298,47,318,45,340,48,353,54"/>
+<area shape="rect" href="class_ela_plain_text_edit.html#ad39110927e3babb9a98230617318438d" title="构造函数，初始化带文本的纯文本编辑框" alt="" coords="8,5,181,48"/>
+<area shape="poly" title=" " alt="" coords="229,70,168,51,170,46,231,65"/>
+<area shape="rect" href="class_ela_plain_text_edit.html#abe839d2e8f13054e4eaf762f8ec98e50" title="焦点进入事件处理" alt="" coords="10,72,179,115"/>
+<area shape="poly" title=" " alt="" coords="216,96,179,96,179,91,216,91"/>
+<area shape="rect" href="class_ela_plain_text_edit.html#a34b9c9f85e5a9f57123a2ac7398fa7d2" title="焦点离开事件处理" alt="" coords="5,139,184,181"/>
+<area shape="poly" title=" " alt="" coords="231,122,170,141,168,135,229,117"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7493212f486e2bde81d9f172374c8f48" name="a7493212f486e2bde81d9f172374c8f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7493212f486e2bde81d9f172374c8f48">&#9670;&#160;</a></span>containsCursorToItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool containsCursorToItem </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断光标是否在控件内 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>目标控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否包含光标 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_plain_text_edit_private_a7493212f486e2bde81d9f172374c8f48_icgraph.png" border="0" usemap="#aclass_ela_plain_text_edit_private_a7493212f486e2bde81d9f172374c8f48_icgraph" alt=""/></div>
+<map name="aclass_ela_plain_text_edit_private_a7493212f486e2bde81d9f172374c8f48_icgraph" id="aclass_ela_plain_text_edit_private_a7493212f486e2bde81d9f172374c8f48_icgraph">
+<area shape="rect" title="判断光标是否在控件内" alt="" coords="238,5,387,32"/>
+<area shape="rect" href="class_ela_plain_text_edit_private.html#af183d3fca7ab63c7a634e901de2cd616" title="处理窗口点击事件" alt="" coords="5,5,190,32"/>
+<area shape="poly" title=" " alt="" coords="222,21,190,21,190,16,222,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acf666a8d5ef3e8a42f3c41d767d252db" name="acf666a8d5ef3e8a42f3c41d767d252db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf666a8d5ef3e8a42f3c41d767d252db">&#9670;&#160;</a></span>onThemeChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onThemeChanged </td>
+          <td>(</td>
+          <td class="paramtype">ElaThemeType::ThemeMode</td>          <td class="paramname"><span class="paramname"><em>themeMode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>主题切换事件处理 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">themeMode</td><td>主题模式 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_plain_text_edit_private_acf666a8d5ef3e8a42f3c41d767d252db_cgraph.png" border="0" usemap="#aclass_ela_plain_text_edit_private_acf666a8d5ef3e8a42f3c41d767d252db_cgraph" alt=""/></div>
+<map name="aclass_ela_plain_text_edit_private_acf666a8d5ef3e8a42f3c41d767d252db_cgraph" id="aclass_ela_plain_text_edit_private_acf666a8d5ef3e8a42f3c41d767d252db_cgraph">
+<area shape="rect" title="主题切换事件处理" alt="" coords="5,5,133,32"/>
+<area shape="rect" href="class_ela_plain_text_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5" title="更改主题" alt="" coords="181,5,291,32"/>
+<area shape="poly" title=" " alt="" coords="133,16,165,16,165,21,133,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_plain_text_edit_private_acf666a8d5ef3e8a42f3c41d767d252db_icgraph.png" border="0" usemap="#aclass_ela_plain_text_edit_private_acf666a8d5ef3e8a42f3c41d767d252db_icgraph" alt=""/></div>
+<map name="aclass_ela_plain_text_edit_private_acf666a8d5ef3e8a42f3c41d767d252db_icgraph" id="aclass_ela_plain_text_edit_private_acf666a8d5ef3e8a42f3c41d767d252db_icgraph">
+<area shape="rect" title="主题切换事件处理" alt="" coords="453,80,580,107"/>
+<area shape="rect" href="class_ela_plain_text_edit.html#a312bf86030663f9d51c6e2b9e0e94e85" title="构造函数，初始化纯文本编辑框" alt="" coords="232,72,405,115"/>
+<area shape="poly" title=" " alt="" coords="437,96,405,96,405,91,437,91"/>
+<area shape="poly" title=" " alt="" coords="350,59,338,53,318,51,300,53,288,57,284,63,286,71,280,72,279,62,285,53,298,47,318,45,340,48,353,54"/>
+<area shape="rect" href="class_ela_plain_text_edit.html#ad39110927e3babb9a98230617318438d" title="构造函数，初始化带文本的纯文本编辑框" alt="" coords="8,5,181,48"/>
+<area shape="poly" title=" " alt="" coords="229,70,168,51,170,46,231,65"/>
+<area shape="rect" href="class_ela_plain_text_edit.html#abe839d2e8f13054e4eaf762f8ec98e50" title="焦点进入事件处理" alt="" coords="10,72,179,115"/>
+<area shape="poly" title=" " alt="" coords="216,96,179,96,179,91,216,91"/>
+<area shape="rect" href="class_ela_plain_text_edit.html#a34b9c9f85e5a9f57123a2ac7398fa7d2" title="焦点离开事件处理" alt="" coords="5,139,184,181"/>
+<area shape="poly" title=" " alt="" coords="231,122,170,141,168,135,229,117"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af183d3fca7ab63c7a634e901de2cd616" name="af183d3fca7ab63c7a634e901de2cd616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af183d3fca7ab63c7a634e901de2cd616">&#9670;&#160;</a></span>onWMWindowClickedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onWMWindowClickedEvent </td>
+          <td>(</td>
+          <td class="paramtype">QVariantMap</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>处理窗口点击事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>事件数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_plain_text_edit_private_af183d3fca7ab63c7a634e901de2cd616_cgraph.png" border="0" usemap="#aclass_ela_plain_text_edit_private_af183d3fca7ab63c7a634e901de2cd616_cgraph" alt=""/></div>
+<map name="aclass_ela_plain_text_edit_private_af183d3fca7ab63c7a634e901de2cd616_cgraph" id="aclass_ela_plain_text_edit_private_af183d3fca7ab63c7a634e901de2cd616_cgraph">
+<area shape="rect" title="处理窗口点击事件" alt="" coords="5,5,190,32"/>
+<area shape="rect" href="class_ela_plain_text_edit_private.html#a7493212f486e2bde81d9f172374c8f48" title="判断光标是否在控件内" alt="" coords="238,5,387,32"/>
+<area shape="poly" title=" " alt="" coords="190,16,222,16,222,21,190,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a66cfb9dc6fdecda9bed664038fca699d" name="a66cfb9dc6fdecda9bed664038fca699d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66cfb9dc6fdecda9bed664038fca699d">&#9670;&#160;</a></span>_focusEvent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ela_event.html">ElaEvent</a>* _focusEvent {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>焦点事件对象 </p>
+
+</div>
+</div>
+<a id="a0f815916593f8e36894e85090ffafbb5" name="a0f815916593f8e36894e85090ffafbb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f815916593f8e36894e85090ffafbb5">&#9670;&#160;</a></span>_style</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ela_plain_text_edit_style.html">ElaPlainTextEditStyle</a>* _style {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>自定义样式对象 </p>
+
+</div>
+</div>
+<a id="abab7c56bd707e57041aaca2f2b3906b1" name="abab7c56bd707e57041aaca2f2b3906b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab7c56bd707e57041aaca2f2b3906b1">&#9670;&#160;</a></span>_themeMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ElaThemeType::ThemeMode _themeMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前主题模式 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_ela_plain_text_edit_private_8h_source.html">ElaPlainTextEditPrivate.h</a></li>
+<li><a class="el" href="_ela_plain_text_edit_private_8cpp.html">ElaPlainTextEditPrivate.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_ela_plain_text_edit_private.html">ElaPlainTextEditPrivate</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

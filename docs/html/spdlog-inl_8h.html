@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: spdlog-inl.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('spdlog-inl_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">spdlog-inl.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="spdlog_8h_source.html">spdlog/spdlog.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_my_spdlog_2spdlog_2common_8h_source.html">spdlog/common.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="pattern__formatter_8h_source.html">spdlog/pattern_formatter.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+spdlog-inl.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="spdlog-inl_8h__incl.png" border="0" usemap="#aspdlog-inl_8h" alt=""/></div>
+<map name="aspdlog-inl_8h" id="aspdlog-inl_8h">
+<area shape="rect" title=" " alt="" coords="1838,5,1926,32"/>
+<area shape="rect" href="spdlog_8h.html" title=" " alt="" coords="519,80,632,107"/>
+<area shape="poly" title=" " alt="" coords="1838,25,647,91,647,85,1838,20"/>
+<area shape="rect" href="_my_spdlog_2spdlog_2common_8h.html" title=" " alt="" coords="1181,509,1306,536"/>
+<area shape="poly" title=" " alt="" coords="1891,31,1919,91,1930,132,1935,175,1935,343,1930,366,1916,387,1893,407,1864,424,1787,453,1695,476,1594,493,1493,506,1321,520,1321,515,1492,501,1593,488,1694,470,1786,448,1861,419,1890,402,1912,384,1925,364,1930,342,1930,175,1925,133,1914,93,1887,33"/>
+<area shape="rect" href="pattern__formatter_8h.html" title=" " alt="" coords="1245,245,1418,272"/>
+<area shape="poly" title=" " alt="" coords="1854,35,1376,241,1373,236,1852,30"/>
+<area shape="poly" title=" " alt="" coords="632,95,826,113,924,130,963,140,993,152,1028,172,1055,193,1073,219,1079,257,1079,342,1083,369,1092,394,1106,417,1124,438,1165,473,1206,499,1203,504,1162,477,1120,441,1102,420,1087,396,1078,370,1074,343,1074,258,1068,221,1051,196,1025,177,990,157,962,145,923,135,826,119,632,100"/>
+<area shape="rect" title=" " alt="" coords="508,600,568,627"/>
+<area shape="poly" title=" " alt="" coords="577,107,559,320,542,585,537,584,554,320,572,107"/>
+<area shape="rect" title=" " alt="" coords="318,600,395,627"/>
+<area shape="poly" title=" " alt="" coords="519,96,419,97,303,105,247,113,197,123,158,138,132,156,124,171,121,191,123,214,129,240,153,300,188,365,271,493,340,586,335,589,267,496,183,368,148,302,124,242,118,215,115,190,119,170,128,153,155,133,196,118,246,107,302,100,419,92,519,91"/>
+<area shape="rect" title=" " alt="" coords="850,600,919,627"/>
+<area shape="poly" title=" " alt="" coords="582,106,610,177,651,271,697,365,720,404,753,452,776,476,800,500,869,586,865,589,796,503,772,480,749,455,715,407,692,367,646,273,605,179,577,108"/>
+<area shape="rect" title=" " alt="" coords="1574,848,1627,875"/>
+<area shape="poly" title=" " alt="" coords="632,96,954,122,1175,143,1406,171,1625,204,1810,243,1882,265,1937,288,1973,313,1983,326,1986,340,1986,705,1984,733,1978,757,1968,776,1955,791,1939,803,1920,812,1876,823,1766,832,1705,838,1643,850,1642,845,1704,833,1765,827,1875,818,1918,807,1936,799,1952,787,1964,773,1973,755,1979,733,1981,705,1981,340,1978,328,1969,316,1935,293,1880,270,1808,248,1624,210,1406,176,1175,149,954,127,632,101"/>
+<area shape="rect" href="registry_8h.html" title=" " alt="" coords="350,419,508,445"/>
+<area shape="poly" title=" " alt="" coords="519,103,463,110,405,121,354,137,336,146,324,156,308,187,304,221,311,256,325,291,344,325,366,356,408,406,404,409,362,360,339,328,320,293,306,257,299,221,303,186,320,153,333,142,352,132,404,116,463,105,518,97"/>
+<area shape="rect" href="synchronous__factory_8h.html" title=" " alt="" coords="334,155,513,197"/>
+<area shape="poly" title=" " alt="" coords="553,110,477,149,474,145,550,105"/>
+<area shape="rect" href="logger_8h.html" title=" " alt="" coords="870,163,979,189"/>
+<area shape="poly" title=" " alt="" coords="631,105,855,156,854,161,630,110"/>
+<area shape="rect" href="version_8h.html" title=" " alt="" coords="142,163,259,189"/>
+<area shape="poly" title=" " alt="" coords="519,108,279,157,263,161,262,156,277,152,518,103"/>
+<area shape="rect" href="null__mutex_8h.html" title=" " alt="" coords="1045,592,1170,635"/>
+<area shape="poly" title=" " alt="" coords="1225,539,1153,586,1150,581,1222,534"/>
+<area shape="rect" title=" " alt="" coords="1045,691,1106,717"/>
+<area shape="poly" title=" " alt="" coords="1195,539,1096,568,1055,582,1035,594,1028,614,1031,636,1042,658,1056,677,1052,680,1037,660,1026,637,1022,613,1031,590,1053,577,1094,563,1194,534"/>
+<area shape="rect" href="tweakme_8h.html" title=" " alt="" coords="1717,691,1844,717"/>
+<area shape="poly" title=" " alt="" coords="1306,526,1443,546,1523,565,1600,590,1644,609,1686,633,1754,679,1751,683,1684,638,1642,614,1598,594,1521,570,1442,552,1305,532"/>
+<area shape="poly" title=" " alt="" coords="1181,534,584,609,584,604,1180,529"/>
+<area shape="rect" title=" " alt="" coords="1316,600,1373,627"/>
+<area shape="poly" title=" " alt="" coords="1260,535,1321,588,1317,592,1256,539"/>
+<area shape="rect" title=" " alt="" coords="1787,923,1865,949"/>
+<area shape="poly" title=" " alt="" coords="1306,530,1421,553,1473,570,1506,590,1526,616,1533,642,1533,703,1533,788,1533,815,1537,836,1546,854,1564,873,1599,891,1654,906,1772,926,1772,931,1653,911,1597,896,1560,877,1542,857,1532,837,1528,815,1527,788,1527,703,1528,642,1521,619,1503,594,1471,575,1420,558,1305,535"/>
+<area shape="poly" title=" " alt="" coords="1181,531,885,555,496,595,411,606,410,601,495,589,885,550,1180,526"/>
+<area shape="rect" title=" " alt="" coords="1396,600,1493,627"/>
+<area shape="poly" title=" " alt="" coords="1273,534,1403,591,1401,596,1271,539"/>
+<area shape="poly" title=" " alt="" coords="1194,539,1163,547,1050,568,1001,578,939,595,931,597,930,592,937,589,1000,573,1049,563,1161,541,1192,534"/>
+<area shape="poly" title=" " alt="" coords="1306,527,1373,536,1445,549,1509,567,1533,578,1551,590,1572,618,1588,649,1599,682,1605,717,1610,782,1607,833,1602,833,1604,782,1600,717,1593,684,1583,651,1568,621,1547,594,1531,582,1507,572,1444,554,1372,541,1306,533"/>
+<area shape="rect" title=" " alt="" coords="1182,923,1264,949"/>
+<area shape="poly" title=" " alt="" coords="1181,533,1142,540,1100,553,1059,570,1021,594,993,618,974,641,963,667,959,703,959,788,965,820,981,847,1004,869,1034,887,1067,902,1102,913,1167,926,1166,931,1100,918,1065,907,1031,892,1001,873,976,850,960,822,954,788,954,703,958,666,969,638,989,614,1018,590,1056,565,1098,548,1141,535,1180,528"/>
+<area shape="rect" href="fmt_8h.html" title=" " alt="" coords="1722,600,1839,627"/>
+<area shape="poly" title=" " alt="" coords="1306,532,1707,597,1707,603,1306,537"/>
+<area shape="rect" href="common-inl_8h.html" title=" " alt="" coords="1194,600,1293,627"/>
+<area shape="poly" title=" " alt="" coords="1239,537,1238,585,1232,584,1234,537"/>
+<area shape="poly" title=" " alt="" coords="1102,636,1088,677,1083,675,1097,634"/>
+<area shape="rect" title=" " alt="" coords="1129,691,1182,717"/>
+<area shape="poly" title=" " alt="" coords="1121,634,1144,676,1139,678,1116,636"/>
+<area shape="poly" title=" " alt="" coords="1783,627,1783,675,1778,675,1778,627"/>
+<area shape="rect" href="core_8h.html" title=" " alt="" coords="2020,683,2152,725"/>
+<area shape="poly" title=" " alt="" coords="1825,625,2006,677,2004,682,1824,630"/>
+<area shape="rect" href="format_8h.html" title=" " alt="" coords="2021,773,2090,800"/>
+<area shape="poly" title=" " alt="" coords="1802,625,2024,762,2021,767,1799,629"/>
+<area shape="poly" title=" " alt="" coords="2081,727,2068,760,2063,758,2076,725"/>
+<area shape="poly" title=" " alt="" coords="2021,799,2002,803,1903,817,1824,824,1744,833,1643,850,1642,845,1743,827,1823,819,1902,812,2002,797,2020,794"/>
+<area shape="rect" href="base_8h.html" title=" " alt="" coords="1652,848,1712,875"/>
+<area shape="poly" title=" " alt="" coords="2021,799,2002,803,1867,825,1728,850,1727,845,1866,820,2002,797,2020,794"/>
+<area shape="rect" title=" " alt="" coords="2051,923,2108,949"/>
+<area shape="poly" title=" " alt="" coords="2090,785,2180,786,2292,794,2347,802,2397,812,2437,827,2464,846,2470,861,2464,876,2440,894,2404,908,2360,918,2311,926,2209,935,2123,937,2123,932,2208,929,2310,920,2359,913,2403,903,2437,889,2460,873,2465,861,2460,850,2435,832,2396,818,2346,807,2291,800,2179,792,2090,790"/>
+<area shape="rect" title=" " alt="" coords="1736,848,1801,875"/>
+<area shape="poly" title=" " alt="" coords="2021,799,1816,850,1815,845,2020,794"/>
+<area shape="rect" title=" " alt="" coords="1825,848,1886,875"/>
+<area shape="poly" title=" " alt="" coords="2021,803,1901,846,1899,841,2020,798"/>
+<area shape="rect" title=" " alt="" coords="2020,848,2080,875"/>
+<area shape="poly" title=" " alt="" coords="2057,801,2055,833,2049,832,2052,800"/>
+<area shape="rect" title=" " alt="" coords="2104,848,2156,875"/>
+<area shape="poly" title=" " alt="" coords="2070,799,2108,835,2105,839,2066,802"/>
+<area shape="rect" title=" " alt="" coords="2181,848,2226,875"/>
+<area shape="poly" title=" " alt="" coords="2082,798,2168,840,2165,844,2080,803"/>
+<area shape="rect" title=" " alt="" coords="2250,848,2328,875"/>
+<area shape="poly" title=" " alt="" coords="2091,796,2236,841,2234,846,2089,801"/>
+<area shape="rect" title=" " alt="" coords="2352,848,2449,875"/>
+<area shape="poly" title=" " alt="" coords="2091,793,2338,844,2336,849,2090,798"/>
+<area shape="rect" href="format-inl_8h.html" title=" " alt="" coords="1910,848,1996,875"/>
+<area shape="poly" title=" " alt="" coords="2032,803,1977,841,1974,836,2029,798"/>
+<area shape="poly" title=" " alt="" coords="1652,874,1640,877,1443,911,1280,932,1280,926,1442,906,1639,872,1651,869"/>
+<area shape="poly" title=" " alt="" coords="1932,878,1863,917,1860,912,1929,873"/>
+<area shape="poly" title=" " alt="" coords="1976,845,2031,807,2034,812,1979,850"/>
+<area shape="poly" title=" " alt="" coords="1976,873,2045,912,2043,917,1973,878"/>
+<area shape="rect" title=" " alt="" coords="1369,923,1443,949"/>
+<area shape="poly" title=" " alt="" coords="1910,875,1898,877,1653,912,1459,933,1459,927,1653,907,1898,872,1909,870"/>
+<area shape="poly" title=" " alt="" coords="1247,599,1249,552,1254,552,1253,600"/>
+<area shape="poly" title=" " alt="" coords="1244,627,1240,671,1241,698,1247,724,1274,782,1311,834,1349,877,1382,910,1379,914,1345,881,1306,837,1270,784,1242,726,1236,699,1234,671,1238,627"/>
+<area shape="rect" title=" " alt="" coords="1257,691,1318,717"/>
+<area shape="poly" title=" " alt="" coords="1252,626,1277,675,1272,678,1247,628"/>
+<area shape="poly" title=" " alt="" coords="509,439,1166,510,1165,516,508,445"/>
+<area shape="poly" title=" " alt="" coords="438,444,525,586,520,588,434,447"/>
+<area shape="poly" title=" " alt="" coords="426,447,370,586,365,584,421,445"/>
+<area shape="poly" title=" " alt="" coords="453,443,545,489,666,542,756,573,836,596,835,601,754,578,664,546,543,494,451,448"/>
+<area shape="poly" title=" " alt="" coords="431,445,434,482,443,533,463,587,478,612,497,633,534,659,582,683,640,705,706,726,856,762,1020,792,1186,816,1339,834,1559,854,1558,860,1338,839,1185,821,1020,797,855,767,704,731,638,710,579,688,531,663,494,637,474,615,458,590,438,535,429,483,426,446"/>
+<area shape="rect" href="periodic__worker_8h.html" title=" " alt="" coords="98,501,248,544"/>
+<area shape="poly" title=" " alt="" coords="393,448,248,498,246,493,391,443"/>
+<area shape="rect" title=" " alt="" coords="5,600,63,627"/>
+<area shape="poly" title=" " alt="" coords="350,448,190,475,123,490,87,504,71,521,58,542,42,586,37,584,53,540,66,518,85,499,122,485,189,470,349,443"/>
+<area shape="rect" title=" " alt="" coords="676,509,786,536"/>
+<area shape="poly" title=" " alt="" coords="473,443,674,502,673,507,471,449"/>
+<area shape="poly" title=" " alt="" coords="249,540,493,598,492,604,248,545"/>
+<area shape="poly" title=" " alt="" coords="217,542,318,590,315,595,215,547"/>
+<area shape="rect" title=" " alt="" coords="169,600,294,627"/>
+<area shape="poly" title=" " alt="" coords="188,543,217,585,212,588,184,546"/>
+<area shape="poly" title=" " alt="" coords="142,547,68,594,65,589,139,542"/>
+<area shape="rect" title=" " alt="" coords="87,600,144,627"/>
+<area shape="poly" title=" " alt="" coords="162,546,134,588,129,585,157,543"/>
+<area shape="poly" title=" " alt="" coords="420,198,407,271,404,317,407,362,420,404,415,405,402,363,399,317,402,270,415,197"/>
+<area shape="poly" title=" " alt="" coords="932,189,987,324,1024,401,1043,431,1060,451,1084,470,1111,484,1167,505,1165,510,1109,489,1081,474,1056,455,1039,434,1020,404,982,326,927,191"/>
+<area shape="rect" href="backtracer_8h.html" title=" " alt="" coords="661,245,839,272"/>
+<area shape="poly" title=" " alt="" coords="898,192,792,241,790,236,896,187"/>
+<area shape="rect" title=" " alt="" coords="903,419,960,445"/>
+<area shape="poly" title=" " alt="" coords="928,190,933,403,928,403,922,190"/>
+<area shape="rect" href="log__msg_8h.html" title=" " alt="" coords="1572,411,1694,453"/>
+<area shape="poly" title=" " alt="" coords="980,175,1168,179,1291,186,1420,198,1545,216,1658,241,1707,257,1749,275,1783,295,1808,318,1817,335,1817,351,1809,365,1795,378,1756,399,1710,415,1708,410,1754,394,1792,373,1805,362,1812,349,1812,336,1804,322,1780,299,1746,279,1705,262,1657,246,1544,221,1419,204,1290,192,1168,185,979,180"/>
+<area shape="poly" title=" " alt="" coords="738,274,719,295,705,321,701,341,705,362,713,389,723,409,753,452,777,475,789,485,800,500,809,520,814,538,816,572,820,602,827,617,840,633,862,651,883,661,904,666,925,668,971,670,997,673,1027,680,1033,682,1031,687,1025,685,996,678,971,675,924,674,903,672,881,666,859,655,836,637,823,620,815,604,810,572,809,539,804,521,796,503,785,488,774,479,749,455,718,412,708,391,699,363,695,341,699,319,715,292,734,271"/>
+<area shape="poly" title=" " alt="" coords="722,275,621,317,493,365,446,375,406,377,388,379,372,384,356,395,340,412,329,432,323,455,323,502,333,548,347,585,342,587,328,549,317,503,318,454,324,430,336,409,352,391,369,380,387,374,406,371,446,370,492,360,619,312,720,270"/>
+<area shape="poly" title=" " alt="" coords="684,275,593,295,493,323,421,342,356,355,244,374,194,389,146,413,99,450,51,503,40,522,35,543,33,584,28,584,29,542,35,520,46,500,95,446,143,409,192,384,243,369,355,349,420,337,492,317,591,290,683,270"/>
+<area shape="rect" href="circular__q_8h.html" title=" " alt="" coords="714,328,887,355"/>
+<area shape="poly" title=" " alt="" coords="760,271,787,314,783,316,756,274"/>
+<area shape="rect" href="log__msg__buffer_8h.html" title=" " alt="" coords="1421,320,1543,363"/>
+<area shape="poly" title=" " alt="" coords="839,260,1090,277,1246,293,1406,317,1405,322,1246,299,1090,282,839,266"/>
+<area shape="poly" title=" " alt="" coords="809,354,840,402,863,429,891,451,959,483,1032,503,1103,514,1166,519,1165,524,1102,519,1031,508,957,488,889,456,860,433,836,405,805,356"/>
+<area shape="rect" title=" " alt="" coords="763,419,828,445"/>
+<area shape="poly" title=" " alt="" coords="803,355,800,403,794,403,797,355"/>
+<area shape="poly" title=" " alt="" coords="821,353,902,407,899,412,818,357"/>
+<area shape="poly" title=" " alt="" coords="1519,361,1586,400,1583,405,1516,366"/>
+<area shape="poly" title=" " alt="" coords="1572,450,1314,508,1313,503,1570,445"/>
+<area shape="poly" title=" " alt="" coords="1638,454,1643,513,1646,600,1642,700,1629,801,1617,835,1612,833,1623,799,1637,699,1640,600,1637,514,1632,454"/>
+<area shape="poly" title=" " alt="" coords="1307,275,1279,294,1256,321,1241,366,1235,413,1236,458,1241,494,1235,494,1231,458,1230,413,1236,365,1252,319,1275,290,1304,270"/>
+<area shape="poly" title=" " alt="" coords="1245,266,929,287,783,303,732,312,703,322,684,340,663,367,620,441,580,522,552,586,547,584,575,520,615,439,659,364,680,336,701,318,731,307,782,297,929,281,1244,261"/>
+<area shape="poly" title=" " alt="" coords="1311,275,1236,322,1139,396,1046,472,911,591,907,587,1043,468,1135,392,1232,318,1308,270"/>
+<area shape="poly" title=" " alt="" coords="1419,260,1521,266,1634,276,1736,293,1777,304,1807,318,1841,340,1865,363,1880,392,1885,431,1885,706,1877,727,1857,749,1828,769,1793,789,1714,824,1643,849,1641,844,1712,819,1790,784,1825,765,1854,745,1873,724,1879,705,1879,431,1875,393,1861,366,1838,344,1805,322,1775,309,1735,298,1633,281,1520,271,1418,265"/>
+<area shape="poly" title=" " alt="" coords="1285,275,1224,295,1161,322,1106,357,1068,390,1028,423,972,456,885,489,802,511,801,505,884,484,970,451,1025,418,1064,386,1103,352,1158,318,1222,290,1283,270"/>
+<area shape="poly" title=" " alt="" coords="1265,275,1189,294,1110,322,1027,367,961,412,958,407,1024,362,1108,318,1188,289,1264,270"/>
+<area shape="poly" title=" " alt="" coords="1419,260,1459,267,1501,278,1542,294,1580,318,1596,335,1609,354,1626,395,1621,397,1605,357,1592,338,1576,322,1540,299,1500,283,1458,272,1418,266"/>
+<area shape="rect" href="details_2os_8h.html" title=" " alt="" coords="1266,328,1396,355"/>
+<area shape="poly" title=" " alt="" coords="1334,272,1334,313,1329,313,1329,272"/>
+<area shape="rect" title=" " alt="" coords="1433,419,1486,445"/>
+<area shape="poly" title=" " alt="" coords="1419,270,1502,289,1536,302,1557,318,1564,330,1566,341,1558,364,1533,394,1502,415,1499,411,1529,390,1553,361,1560,340,1559,332,1553,322,1533,307,1500,294,1418,275"/>
+<area shape="rect" href="formatter_8h.html" title=" " alt="" coords="1668,328,1794,355"/>
+<area shape="poly" title=" " alt="" coords="1405,270,1651,317,1668,321,1667,327,1649,323,1404,275"/>
+<area shape="poly" title=" " alt="" coords="1328,356,1259,497,1254,494,1323,354"/>
+<area shape="poly" title=" " alt="" coords="1351,353,1430,407,1427,412,1348,357"/>
+<area shape="poly" title=" " alt="" coords="1736,355,1778,584,1773,585,1731,356"/>
+<area shape="poly" title=" " alt="" coords="1719,357,1669,402,1665,398,1715,353"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="spdlog-inl_8h__dep__incl.png" border="0" usemap="#aspdlog-inl_8hdep" alt=""/></div>
+<map name="aspdlog-inl_8hdep" id="aspdlog-inl_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" href="spdlog_8cpp.html" title=" " alt="" coords="7,80,91,107"/>
+<area shape="poly" title=" " alt="" coords="52,48,52,80,46,80,46,48"/>
+</map>
+</div>
+</div>
+<p><a href="spdlog-inl_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html">spdlog</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a24397a10a663b9f6729c8ee223a782fe" id="r_a24397a10a663b9f6729c8ee223a782fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a24397a10a663b9f6729c8ee223a782fe">initialize_logger</a> (std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt; <a class="el" href="classspdlog_1_1logger.html">logger</a>)</td></tr>
+<tr class="separator:a24397a10a663b9f6729c8ee223a782fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cbceba6fe6f0a9fd99f72b36c1d354c" id="r_a8cbceba6fe6f0a9fd99f72b36c1d354c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a8cbceba6fe6f0a9fd99f72b36c1d354c">get</a> (const std::string &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>)</td></tr>
+<tr class="separator:a8cbceba6fe6f0a9fd99f72b36c1d354c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12570b5050c29125646193fe4831628c" id="r_a12570b5050c29125646193fe4831628c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a12570b5050c29125646193fe4831628c">set_formatter</a> (std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">spdlog::formatter</a> &gt; <a class="el" href="classspdlog_1_1formatter.html">formatter</a>)</td></tr>
+<tr class="separator:a12570b5050c29125646193fe4831628c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a847acd21b9eb74785303fd0a0414da" id="r_a1a847acd21b9eb74785303fd0a0414da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a1a847acd21b9eb74785303fd0a0414da">set_pattern</a> (std::string pattern, <a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a> time_type)</td></tr>
+<tr class="separator:a1a847acd21b9eb74785303fd0a0414da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a551e683f7594f9c858d48f712b9a5" id="r_ac7a551e683f7594f9c858d48f712b9a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#ac7a551e683f7594f9c858d48f712b9a5">enable_backtrace</a> (size_t n_messages)</td></tr>
+<tr class="separator:ac7a551e683f7594f9c858d48f712b9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1fb05cd031e32501de0632d92e63ce9" id="r_ac1fb05cd031e32501de0632d92e63ce9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#ac1fb05cd031e32501de0632d92e63ce9">disable_backtrace</a> ()</td></tr>
+<tr class="separator:ac1fb05cd031e32501de0632d92e63ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a926b904a27ac4fea7b8e8843594b8225" id="r_a926b904a27ac4fea7b8e8843594b8225"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a926b904a27ac4fea7b8e8843594b8225">dump_backtrace</a> ()</td></tr>
+<tr class="separator:a926b904a27ac4fea7b8e8843594b8225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4458879d061615675272ddee84efda" id="r_adb4458879d061615675272ddee84efda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#adb4458879d061615675272ddee84efda">get_level</a> ()</td></tr>
+<tr class="separator:adb4458879d061615675272ddee84efda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7259085ea8c96761c85423ed52b5aee8" id="r_a7259085ea8c96761c85423ed52b5aee8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a7259085ea8c96761c85423ed52b5aee8">should_log</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> log_level)</td></tr>
+<tr class="separator:a7259085ea8c96761c85423ed52b5aee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af921e11c9f5b4a0c1f8c3aabd27b7325" id="r_af921e11c9f5b4a0c1f8c3aabd27b7325"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#af921e11c9f5b4a0c1f8c3aabd27b7325">set_level</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> log_level)</td></tr>
+<tr class="separator:af921e11c9f5b4a0c1f8c3aabd27b7325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08274a24d08e4881a651d693d6c370d9" id="r_a08274a24d08e4881a651d693d6c370d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a08274a24d08e4881a651d693d6c370d9">flush_on</a> (<a class="el" href="namespacespdlog_1_1level.html#a2d7067eeba79a9aae6ce1f5ec7d2e109">level::level_enum</a> log_level)</td></tr>
+<tr class="separator:a08274a24d08e4881a651d693d6c370d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee4b2edc95d177b6919c2c00baad659" id="r_a3ee4b2edc95d177b6919c2c00baad659"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a3ee4b2edc95d177b6919c2c00baad659">set_error_handler</a> (void(*handler)(const std::string &amp;msg))</td></tr>
+<tr class="separator:a3ee4b2edc95d177b6919c2c00baad659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01e9a9895396ecdc3f4f30fb6e080ad8" id="r_a01e9a9895396ecdc3f4f30fb6e080ad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a01e9a9895396ecdc3f4f30fb6e080ad8">register_logger</a> (std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt; <a class="el" href="classspdlog_1_1logger.html">logger</a>)</td></tr>
+<tr class="separator:a01e9a9895396ecdc3f4f30fb6e080ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa15bc702c8af7eb99be98ca15565284" id="r_aaa15bc702c8af7eb99be98ca15565284"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#aaa15bc702c8af7eb99be98ca15565284">apply_all</a> (const std::function&lt; void(std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt;)&gt; &amp;fun)</td></tr>
+<tr class="separator:aaa15bc702c8af7eb99be98ca15565284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cdac34901f09a8ac955161e3a89b2bd" id="r_a0cdac34901f09a8ac955161e3a89b2bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a0cdac34901f09a8ac955161e3a89b2bd">drop</a> (const std::string &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>)</td></tr>
+<tr class="separator:a0cdac34901f09a8ac955161e3a89b2bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76da1ac2a67c8f53ec8d2b32f5042f2b" id="r_a76da1ac2a67c8f53ec8d2b32f5042f2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a76da1ac2a67c8f53ec8d2b32f5042f2b">drop_all</a> ()</td></tr>
+<tr class="separator:a76da1ac2a67c8f53ec8d2b32f5042f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bcc5aa16e076bf772f662ad1f3fb8b0" id="r_a8bcc5aa16e076bf772f662ad1f3fb8b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a8bcc5aa16e076bf772f662ad1f3fb8b0">shutdown</a> ()</td></tr>
+<tr class="separator:a8bcc5aa16e076bf772f662ad1f3fb8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa96458c50144268cd8a0312e2e57bb" id="r_abaa96458c50144268cd8a0312e2e57bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#abaa96458c50144268cd8a0312e2e57bb">set_automatic_registration</a> (bool automatic_registration)</td></tr>
+<tr class="separator:abaa96458c50144268cd8a0312e2e57bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3dc5a1c90dbb5a3b92b69245df7eee9" id="r_ab3dc5a1c90dbb5a3b92b69245df7eee9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">spdlog::logger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#ab3dc5a1c90dbb5a3b92b69245df7eee9">default_logger</a> ()</td></tr>
+<tr class="separator:ab3dc5a1c90dbb5a3b92b69245df7eee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90396e8b0e996aa25620b98a72a10c32" id="r_a90396e8b0e996aa25620b98a72a10c32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1logger.html">spdlog::logger</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#a90396e8b0e996aa25620b98a72a10c32">default_logger_raw</a> ()</td></tr>
+<tr class="separator:a90396e8b0e996aa25620b98a72a10c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf7abb61f4604a4d4af6017b4ecce0d7" id="r_aaf7abb61f4604a4d4af6017b4ecce0d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#aaf7abb61f4604a4d4af6017b4ecce0d7">set_default_logger</a> (std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">spdlog::logger</a> &gt; <a class="el" href="namespacespdlog.html#ab3dc5a1c90dbb5a3b92b69245df7eee9">default_logger</a>)</td></tr>
+<tr class="separator:aaf7abb61f4604a4d4af6017b4ecce0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca43d7d268b517be0c17b098ef2ff7e6" id="r_aca43d7d268b517be0c17b098ef2ff7e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespdlog.html#aca43d7d268b517be0c17b098ef2ff7e6">apply_logger_env_levels</a> (std::shared_ptr&lt; <a class="el" href="classspdlog_1_1logger.html">logger</a> &gt; <a class="el" href="classspdlog_1_1logger.html">logger</a>)</td></tr>
+<tr class="separator:aca43d7d268b517be0c17b098ef2ff7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="spdlog-inl_8h.html">spdlog-inl.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

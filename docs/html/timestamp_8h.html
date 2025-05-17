@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: timestamp.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('timestamp_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">timestamp.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>timestamp utils, mostly useful for debugging/logging purposes  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h_source.html">common.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+timestamp.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="timestamp_8h__incl.png" border="0" usemap="#atimestamp_8h" alt=""/></div>
+<map name="atimestamp_8h" id="atimestamp_8h">
+<area shape="rect" title="timestamp utils, mostly useful for debugging/logging purposes" alt="" coords="1089,5,1183,32"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="1095,80,1177,107"/>
+<area shape="poly" title=" " alt="" coords="1139,33,1139,64,1133,64,1133,33"/>
+<area shape="poly" title=" " alt="" coords="1178,77,1196,81,1204,93,1201,102,1194,107,1191,103,1197,99,1199,94,1193,85,1177,82"/>
+<area shape="rect" title=" " alt="" coords="144,379,205,405"/>
+<area shape="poly" title=" " alt="" coords="1094,97,897,98,621,106,485,113,366,124,275,138,245,147,227,157,208,178,193,203,183,231,176,260,172,317,174,363,168,363,166,317,171,259,178,230,188,201,203,175,224,153,243,142,274,133,365,118,485,108,621,100,896,93,1094,92"/>
+<area shape="rect" title=" " alt="" coords="1353,155,1431,181"/>
+<area shape="poly" title=" " alt="" coords="1178,104,1338,149,1337,154,1177,109"/>
+<area shape="rect" title=" " alt="" coords="24,453,88,480"/>
+<area shape="poly" title=" " alt="" coords="1094,98,912,102,652,113,389,130,280,142,198,157,129,167,68,174,43,181,24,193,12,213,8,242,8,319,11,352,20,384,44,438,39,441,15,386,6,353,3,319,3,241,7,211,21,190,41,176,67,169,129,162,197,152,279,137,388,125,651,107,912,97,1094,93"/>
+<area shape="rect" title=" " alt="" coords="424,379,485,405"/>
+<area shape="poly" title=" " alt="" coords="1095,108,999,136,867,179,718,237,643,270,572,306,523,338,482,370,478,366,520,334,569,302,641,265,716,232,865,174,997,131,1094,103"/>
+<area shape="rect" title=" " alt="" coords="514,453,579,480"/>
+<area shape="poly" title=" " alt="" coords="1095,97,918,98,802,104,682,115,570,133,520,145,476,159,440,176,412,195,395,217,389,242,389,319,392,365,399,383,414,404,433,421,455,434,501,453,499,458,452,439,430,425,410,407,395,386,387,366,384,319,384,241,390,215,409,191,437,171,474,154,519,140,569,128,681,110,801,99,918,93,1095,91"/>
+<area shape="rect" title=" " alt="" coords="1455,155,1516,181"/>
+<area shape="poly" title=" " alt="" coords="1178,99,1292,120,1441,152,1440,157,1291,125,1177,104"/>
+<area shape="rect" title=" " alt="" coords="1539,155,1602,181"/>
+<area shape="poly" title=" " alt="" coords="1178,97,1327,117,1524,151,1523,157,1326,122,1177,102"/>
+<area shape="rect" title=" " alt="" coords="1626,155,1691,181"/>
+<area shape="poly" title=" " alt="" coords="1178,95,1362,114,1485,130,1612,152,1611,157,1484,135,1361,119,1177,101"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="688,453,774,480"/>
+<area shape="poly" title=" " alt="" coords="1161,105,1193,126,1228,157,1256,195,1265,218,1268,241,1268,319,1267,368,1259,388,1242,407,1217,418,1174,428,1050,444,790,465,789,459,1049,439,1173,423,1215,413,1238,403,1255,385,1262,367,1263,319,1263,242,1260,219,1252,198,1224,160,1190,130,1158,109"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="1000,453,1075,480"/>
+<area shape="poly" title=" " alt="" coords="1178,99,1233,118,1261,133,1286,153,1303,173,1313,193,1318,214,1319,241,1319,319,1318,346,1314,368,1304,388,1286,407,1264,424,1240,437,1189,455,1137,465,1091,469,1090,464,1136,460,1187,450,1238,432,1261,419,1282,403,1300,385,1309,366,1313,345,1313,319,1313,241,1312,215,1308,195,1299,176,1282,157,1258,137,1231,123,1177,104"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="1000,379,1074,405"/>
+<area shape="poly" title=" " alt="" coords="1134,108,1049,365,1044,363,1129,106"/>
+<area shape="rect" href="avconfig_8h.html" title=" " alt="" coords="1098,379,1227,405"/>
+<area shape="poly" title=" " alt="" coords="1144,106,1159,144,1176,199,1187,264,1188,298,1185,331,1176,364,1171,363,1180,330,1183,298,1182,265,1170,200,1154,145,1139,108"/>
+<area shape="rect" href="mem_8h.html" title="Memory handling functions" alt="" coords="237,155,299,181"/>
+<area shape="poly" title=" " alt="" coords="1095,100,792,121,368,157,314,163,314,158,368,152,791,116,1094,95"/>
+<area shape="poly" title=" " alt="" coords="1040,406,1040,438,1035,438,1035,406"/>
+<area shape="poly" title=" " alt="" coords="238,179,188,197,163,212,141,231,122,255,106,282,83,339,69,394,61,438,56,437,63,393,78,337,101,280,117,252,137,227,159,208,186,193,236,174"/>
+<area shape="poly" title=" " alt="" coords="252,184,204,224,176,251,150,281,130,313,119,344,119,375,124,390,134,403,158,421,196,435,243,446,296,453,407,461,499,463,499,469,406,467,296,459,242,451,195,440,156,426,130,407,120,392,114,376,113,343,125,310,146,278,172,247,200,220,249,180"/>
+<area shape="poly" title=" " alt="" coords="266,182,252,224,241,284,240,316,244,348,253,377,270,403,285,409,320,416,430,431,672,457,672,462,429,436,319,421,283,414,266,407,248,380,238,349,235,316,236,283,247,223,261,181"/>
+<area shape="rect" href="error_8h.html" title="error code definitions" alt="" coords="283,304,341,331"/>
+<area shape="poly" title=" " alt="" coords="274,181,306,288,301,290,269,183"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="868,229,932,256"/>
+<area shape="poly" title=" " alt="" coords="299,170,853,233,853,239,299,176"/>
+<area shape="poly" title=" " alt="" coords="289,334,213,373,211,369,287,329"/>
+<area shape="rect" title=" " alt="" coords="280,379,349,405"/>
+<area shape="poly" title=" " alt="" coords="315,331,316,363,311,363,310,331"/>
+<area shape="poly" title=" " alt="" coords="919,227,1102,113,1104,117,921,231"/>
+<area shape="poly" title=" " alt="" coords="910,255,940,303,964,354,990,404,1018,440,1014,443,986,407,959,357,935,305,906,258"/>
+<area shape="poly" title=" " alt="" coords="923,254,953,275,983,302,1008,333,1027,364,1022,367,1003,336,979,306,949,279,919,259"/>
+<area shape="poly" title=" " alt="" coords="868,251,357,313,356,308,868,245"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="510,379,584,405"/>
+<area shape="poly" title=" " alt="" coords="868,250,726,270,652,286,623,296,603,306,576,334,559,366,554,363,572,331,600,302,621,291,651,281,725,265,868,245"/>
+<area shape="rect" href="mathematics_8h.html" title=" " alt="" coords="613,304,720,331"/>
+<area shape="poly" title=" " alt="" coords="869,256,723,302,721,296,867,251"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="875,304,925,331"/>
+<area shape="poly" title=" " alt="" coords="896,257,894,289,889,288,890,256"/>
+<area shape="rect" href="pixfmt_8h.html" title="pixel format definitions" alt="" coords="1102,304,1170,331"/>
+<area shape="poly" title=" " alt="" coords="933,251,1088,299,1086,304,932,256"/>
+<area shape="poly" title=" " alt="" coords="510,406,498,408,278,442,104,463,103,458,277,437,497,403,509,400"/>
+<area shape="poly" title=" " alt="" coords="549,406,549,438,544,438,544,406"/>
+<area shape="poly" title=" " alt="" coords="580,403,685,445,684,450,578,408"/>
+<area shape="poly" title=" " alt="" coords="631,334,501,378,500,373,629,329"/>
+<area shape="poly" title=" " alt="" coords="659,333,598,407,569,443,564,440,594,404,655,329"/>
+<area shape="poly" title=" " alt="" coords="694,329,722,349,745,377,750,393,751,409,744,439,739,438,745,409,745,394,740,380,719,353,691,333"/>
+<area shape="poly" title=" " alt="" coords="647,333,582,373,579,368,644,329"/>
+<area shape="rect" href="intfloat_8h.html" title=" " alt="" coords="659,379,730,405"/>
+<area shape="poly" title=" " alt="" coords="674,330,687,363,682,365,669,332"/>
+<area shape="poly" title=" " alt="" coords="670,408,587,448,585,444,668,403"/>
+<area shape="poly" title=" " alt="" coords="703,405,720,438,715,440,699,407"/>
+<area shape="poly" title=" " alt="" coords="904,331,904,367,899,388,889,407,868,427,843,442,790,460,788,455,841,437,865,423,885,404,894,386,899,367,899,331"/>
+<area shape="poly" title=" " alt="" coords="925,329,1001,369,999,373,923,334"/>
+<area shape="poly" title=" " alt="" coords="904,303,906,271,911,272,910,304"/>
+<area shape="rect" title=" " alt="" coords="806,379,874,405"/>
+<area shape="poly" title=" " alt="" coords="892,333,862,369,858,365,888,330"/>
+<area shape="poly" title=" " alt="" coords="1120,333,1068,372,1065,367,1117,329"/>
+<area shape="poly" title=" " alt="" coords="1143,330,1155,363,1150,365,1138,332"/>
+</map>
+</div>
+</div>
+<p><a href="timestamp_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ae37ff84f45d95eb72f7bef6cd6b06bb9" id="r_ae37ff84f45d95eb72f7bef6cd6b06bb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae37ff84f45d95eb72f7bef6cd6b06bb9">AV_TS_MAX_STRING_SIZE</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:ae37ff84f45d95eb72f7bef6cd6b06bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86d797e907fa454ed5fd34bfb0bcd747" id="r_a86d797e907fa454ed5fd34bfb0bcd747"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86d797e907fa454ed5fd34bfb0bcd747">av_ts2str</a>(ts)</td></tr>
+<tr class="memdesc:a86d797e907fa454ed5fd34bfb0bcd747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience macro, the return value should be used only directly in function arguments but never stand-alone.  <br /></td></tr>
+<tr class="separator:a86d797e907fa454ed5fd34bfb0bcd747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad344b91ede6b86fc0a530611293f42da" id="r_ad344b91ede6b86fc0a530611293f42da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad344b91ede6b86fc0a530611293f42da">av_ts2timestr</a>(ts,  tb)</td></tr>
+<tr class="memdesc:ad344b91ede6b86fc0a530611293f42da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience macro, the return value should be used only directly in function arguments but never stand-alone.  <br /></td></tr>
+<tr class="separator:ad344b91ede6b86fc0a530611293f42da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ace65ab40150f436da450c620c0e9839d" id="r_ace65ab40150f436da450c620c0e9839d"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace65ab40150f436da450c620c0e9839d">av_ts_make_string</a> (char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> ts)</td></tr>
+<tr class="memdesc:ace65ab40150f436da450c620c0e9839d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the provided buffer with a string containing a timestamp representation.  <br /></td></tr>
+<tr class="separator:ace65ab40150f436da450c620c0e9839d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a314aa97ebb4a4d2a5ec7d1fb99905979" id="r_a314aa97ebb4a4d2a5ec7d1fb99905979"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a314aa97ebb4a4d2a5ec7d1fb99905979">av_ts_make_time_string</a> (char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> ts, <a class="el" href="struct_a_v_rational.html">AVRational</a> *tb)</td></tr>
+<tr class="memdesc:a314aa97ebb4a4d2a5ec7d1fb99905979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the provided buffer with a string containing a timestamp time representation.  <br /></td></tr>
+<tr class="separator:a314aa97ebb4a4d2a5ec7d1fb99905979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>timestamp utils, mostly useful for debugging/logging purposes </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a86d797e907fa454ed5fd34bfb0bcd747" name="a86d797e907fa454ed5fd34bfb0bcd747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86d797e907fa454ed5fd34bfb0bcd747">&#9670;&#160;</a></span>av_ts2str</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define av_ts2str</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#ace65ab40150f436da450c620c0e9839d">av_ts_make_string</a>((<span class="keywordtype">char</span>[<a class="code hl_define" href="#ae37ff84f45d95eb72f7bef6cd6b06bb9">AV_TS_MAX_STRING_SIZE</a>]){0}, ts)</div>
+<div class="ttc" id="atimestamp_8h_html_ace65ab40150f436da450c620c0e9839d"><div class="ttname"><a href="#ace65ab40150f436da450c620c0e9839d">av_ts_make_string</a></div><div class="ttdeci">static char * av_ts_make_string(char *buf, int64_t ts)</div><div class="ttdoc">Fill the provided buffer with a string containing a timestamp representation.</div><div class="ttdef"><b>定义</b> timestamp.h:43</div></div>
+<div class="ttc" id="atimestamp_8h_html_ae37ff84f45d95eb72f7bef6cd6b06bb9"><div class="ttname"><a href="#ae37ff84f45d95eb72f7bef6cd6b06bb9">AV_TS_MAX_STRING_SIZE</a></div><div class="ttdeci">#define AV_TS_MAX_STRING_SIZE</div><div class="ttdef"><b>定义</b> timestamp.h:33</div></div>
+</div><!-- fragment -->
+<p>Convenience macro, the return value should be used only directly in function arguments but never stand-alone. </p>
+
+</div>
+</div>
+<a id="ad344b91ede6b86fc0a530611293f42da" name="ad344b91ede6b86fc0a530611293f42da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad344b91ede6b86fc0a530611293f42da">&#9670;&#160;</a></span>av_ts2timestr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define av_ts2timestr</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a314aa97ebb4a4d2a5ec7d1fb99905979">av_ts_make_time_string</a>((<span class="keywordtype">char</span>[<a class="code hl_define" href="#ae37ff84f45d95eb72f7bef6cd6b06bb9">AV_TS_MAX_STRING_SIZE</a>]){0}, ts, tb)</div>
+<div class="ttc" id="atimestamp_8h_html_a314aa97ebb4a4d2a5ec7d1fb99905979"><div class="ttname"><a href="#a314aa97ebb4a4d2a5ec7d1fb99905979">av_ts_make_time_string</a></div><div class="ttdeci">static char * av_ts_make_time_string(char *buf, int64_t ts, AVRational *tb)</div><div class="ttdoc">Fill the provided buffer with a string containing a timestamp time representation.</div><div class="ttdef"><b>定义</b> timestamp.h:65</div></div>
+</div><!-- fragment -->
+<p>Convenience macro, the return value should be used only directly in function arguments but never stand-alone. </p>
+
+</div>
+</div>
+<a id="ae37ff84f45d95eb72f7bef6cd6b06bb9" name="ae37ff84f45d95eb72f7bef6cd6b06bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37ff84f45d95eb72f7bef6cd6b06bb9">&#9670;&#160;</a></span>AV_TS_MAX_STRING_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_TS_MAX_STRING_SIZE&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ace65ab40150f436da450c620c0e9839d" name="ace65ab40150f436da450c620c0e9839d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace65ab40150f436da450c620c0e9839d">&#9670;&#160;</a></span>av_ts_make_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char * av_ts_make_string </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill the provided buffer with a string containing a timestamp representation. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>a buffer with size in bytes of at least AV_TS_MAX_STRING_SIZE </td></tr>
+    <tr><td class="paramname">ts</td><td>the timestamp to represent </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the buffer in input </dd></dl>
+
+</div>
+</div>
+<a id="a314aa97ebb4a4d2a5ec7d1fb99905979" name="a314aa97ebb4a4d2a5ec7d1fb99905979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a314aa97ebb4a4d2a5ec7d1fb99905979">&#9670;&#160;</a></span>av_ts_make_time_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char * av_ts_make_time_string </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a> *</td>          <td class="paramname"><span class="paramname"><em>tb</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill the provided buffer with a string containing a timestamp time representation. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>a buffer with size in bytes of at least AV_TS_MAX_STRING_SIZE </td></tr>
+    <tr><td class="paramname">ts</td><td>the timestamp to represent </td></tr>
+    <tr><td class="paramname">tb</td><td>the timebase of the timestamp </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the buffer in input </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="timestamp_8h_a314aa97ebb4a4d2a5ec7d1fb99905979_cgraph.png" border="0" usemap="#atimestamp_8h_a314aa97ebb4a4d2a5ec7d1fb99905979_cgraph" alt=""/></div>
+<map name="atimestamp_8h_a314aa97ebb4a4d2a5ec7d1fb99905979_cgraph" id="atimestamp_8h_a314aa97ebb4a4d2a5ec7d1fb99905979_cgraph">
+<area shape="rect" title="Fill the provided buffer with a string containing a timestamp time representation." alt="" coords="5,5,169,32"/>
+<area shape="rect" href="group__lavu__math__rational.html#ga935dbbf6bde8dfe5fa7ddb1da582eb07" title="Convert an AVRational to a double." alt="" coords="217,5,280,32"/>
+<area shape="poly" title=" " alt="" coords="169,16,201,16,201,21,169,21"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="timestamp_8h.html">timestamp.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

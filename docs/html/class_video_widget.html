@@ -1,0 +1,1210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: VideoWidget类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_video_widget.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_video_widget-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">VideoWidget类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>视频界面类，管理多个视频分区和滚动区域  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_video_widget_8h_source.html">VideoWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+类 VideoWidget 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget__inherit__graph.png" border="0" usemap="#a_video_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_video_widget_inherit__map" id="a_video_widget_inherit__map">
+<area shape="rect" title="视频界面类，管理多个视频分区和滚动区域" alt="" coords="5,80,101,107"/>
+<area shape="rect" title=" " alt="" coords="17,5,89,32"/>
+<area shape="poly" title=" " alt="" coords="56,48,56,80,50,80,50,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+VideoWidget 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget__coll__graph.png" border="0" usemap="#a_video_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="a_video_widget_coll__map" id="a_video_widget_coll__map">
+<area shape="rect" title="视频界面类，管理多个视频分区和滚动区域" alt="" coords="44,96,140,123"/>
+<area shape="rect" title=" " alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="59,44,87,94,83,97,54,47"/>
+<area shape="rect" href="class_q_scroll_bar.html" title="滚动条控件类" alt="" coords="102,5,186,32"/>
+<area shape="poly" title=" " alt="" coords="131,47,102,97,97,94,127,44"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5b8cbe5292225372193f9f1937e84476" id="r_a5b8cbe5292225372193f9f1937e84476"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b8cbe5292225372193f9f1937e84476">VideoWidget</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a5b8cbe5292225372193f9f1937e84476"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a5b8cbe5292225372193f9f1937e84476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfac5d1044eb68e0356ecb1208cd2f9" id="r_a0dfac5d1044eb68e0356ecb1208cd2f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dfac5d1044eb68e0356ecb1208cd2f9">~VideoWidget</a> () override</td></tr>
+<tr class="memdesc:a0dfac5d1044eb68e0356ecb1208cd2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a0dfac5d1044eb68e0356ecb1208cd2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整大小事件  <br /></td></tr>
+<tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7523c71b2bf60975302287ec8923f80e" id="r_a7523c71b2bf60975302287ec8923f80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a7523c71b2bf60975302287ec8923f80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标按下事件  <br /></td></tr>
+<tr class="separator:a7523c71b2bf60975302287ec8923f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:aeacbba7c7d4483c2310411cd9e0daca7" id="r_aeacbba7c7d4483c2310411cd9e0daca7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeacbba7c7d4483c2310411cd9e0daca7">on_all_toolButton_toggled</a> ()</td></tr>
+<tr class="memdesc:aeacbba7c7d4483c2310411cd9e0daca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">全部按钮切换槽函数  <br /></td></tr>
+<tr class="separator:aeacbba7c7d4483c2310411cd9e0daca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef54bde0283ca9a6b5060253ec1b8a6" id="r_a6ef54bde0283ca9a6b5060253ec1b8a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef54bde0283ca9a6b5060253ec1b8a6">handleWheelValue</a> (const int &amp;value)</td></tr>
+<tr class="memdesc:a6ef54bde0283ca9a6b5060253ec1b8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理滚轮值  <br /></td></tr>
+<tr class="separator:a6ef54bde0283ca9a6b5060253ec1b8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a9437cac5c81c06f98ff94541bf7da588" id="r_a9437cac5c81c06f98ff94541bf7da588"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9437cac5c81c06f98ff94541bf7da588">initButtonGroup</a> () const</td></tr>
+<tr class="memdesc:a9437cac5c81c06f98ff94541bf7da588"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化按钮组  <br /></td></tr>
+<tr class="separator:a9437cac5c81c06f98ff94541bf7da588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4817b6d2e9c0626d8af42b4439d0ded4" id="r_a4817b6d2e9c0626d8af42b4439d0ded4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4817b6d2e9c0626d8af42b4439d0ded4">initTotalWidget</a> () const</td></tr>
+<tr class="memdesc:a4817b6d2e9c0626d8af42b4439d0ded4"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化视频分区  <br /></td></tr>
+<tr class="separator:a4817b6d2e9c0626d8af42b4439d0ded4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90c20eba367d53522d3fcbb6b03111ba" id="r_a90c20eba367d53522d3fcbb6b03111ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90c20eba367d53522d3fcbb6b03111ba">initVector</a> ()</td></tr>
+<tr class="memdesc:a90c20eba367d53522d3fcbb6b03111ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化图片路径  <br /></td></tr>
+<tr class="separator:a90c20eba367d53522d3fcbb6b03111ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba6e95967cc3eb25fd518f7bde6ec04" id="r_afba6e95967cc3eb25fd518f7bde6ec04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a> ()</td></tr>
+<tr class="memdesc:afba6e95967cc3eb25fd518f7bde6ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化界面  <br /></td></tr>
+<tr class="separator:afba6e95967cc3eb25fd518f7bde6ec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a9f4adb79c8fdc6b3d98a8b1b39202b53" id="r_a9f4adb79c8fdc6b3d98a8b1b39202b53"><td class="memItemLeft" align="right" valign="top">Ui::VideoWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f4adb79c8fdc6b3d98a8b1b39202b53">ui</a></td></tr>
+<tr class="memdesc:a9f4adb79c8fdc6b3d98a8b1b39202b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 界面指针  <br /></td></tr>
+<tr class="separator:a9f4adb79c8fdc6b3d98a8b1b39202b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47442fcf7db8bd0dab09d79ad4c1d47" id="r_ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_q_button_group.html">QButtonGroup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad47442fcf7db8bd0dab09d79ad4c1d47">m_buttonGroup</a></td></tr>
+<tr class="memdesc:ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">按钮组  <br /></td></tr>
+<tr class="separator:ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa19ca407db8b89227de7c4d6c038844f" id="r_aa19ca407db8b89227de7c4d6c038844f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa19ca407db8b89227de7c4d6c038844f">m_recommendWidget</a></td></tr>
+<tr class="memdesc:aa19ca407db8b89227de7c4d6c038844f"><td class="mdescLeft">&#160;</td><td class="mdescRight">推荐分区  <br /></td></tr>
+<tr class="separator:aa19ca407db8b89227de7c4d6c038844f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ffa9c4f0547c817f5f5fc04038265f" id="r_ac3ffa9c4f0547c817f5f5fc04038265f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3ffa9c4f0547c817f5f5fc04038265f">m_videoRankWidget</a></td></tr>
+<tr class="memdesc:ac3ffa9c4f0547c817f5f5fc04038265f"><td class="mdescLeft">&#160;</td><td class="mdescRight">视频榜分区  <br /></td></tr>
+<tr class="separator:ac3ffa9c4f0547c817f5f5fc04038265f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf445b5000cc5231b766b7c575465c7f" id="r_acf445b5000cc5231b766b7c575465c7f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf445b5000cc5231b766b7c575465c7f">m_MVWidget</a></td></tr>
+<tr class="memdesc:acf445b5000cc5231b766b7c575465c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">MV 分区  <br /></td></tr>
+<tr class="separator:acf445b5000cc5231b766b7c575465c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81196a444fadfa53c155aa1612104fdc" id="r_a81196a444fadfa53c155aa1612104fdc"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81196a444fadfa53c155aa1612104fdc">m_siteWidget</a></td></tr>
+<tr class="memdesc:a81196a444fadfa53c155aa1612104fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">现场分区  <br /></td></tr>
+<tr class="separator:a81196a444fadfa53c155aa1612104fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b9e1a61ae8844f169b3e52d4efd327b" id="r_a5b9e1a61ae8844f169b3e52d4efd327b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b9e1a61ae8844f169b3e52d4efd327b">m_coverWidget</a></td></tr>
+<tr class="memdesc:a5b9e1a61ae8844f169b3e52d4efd327b"><td class="mdescLeft">&#160;</td><td class="mdescRight">翻唱分区  <br /></td></tr>
+<tr class="separator:a5b9e1a61ae8844f169b3e52d4efd327b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b60891aa1ba639243b9868fd094b67c" id="r_a1b60891aa1ba639243b9868fd094b67c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b60891aa1ba639243b9868fd094b67c">m_danceWidget</a></td></tr>
+<tr class="memdesc:a1b60891aa1ba639243b9868fd094b67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">舞蹈分区  <br /></td></tr>
+<tr class="separator:a1b60891aa1ba639243b9868fd094b67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1d42618759d3b9be39e585ce57ce3d" id="r_a2c1d42618759d3b9be39e585ce57ce3d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c1d42618759d3b9be39e585ce57ce3d">m_childrenWidget</a></td></tr>
+<tr class="memdesc:a2c1d42618759d3b9be39e585ce57ce3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">儿童分区  <br /></td></tr>
+<tr class="separator:a2c1d42618759d3b9be39e585ce57ce3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e720ab163ccc3945e7b5f31322a40e" id="r_ad8e720ab163ccc3945e7b5f31322a40e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8e720ab163ccc3945e7b5f31322a40e">m_liveWidget</a></td></tr>
+<tr class="memdesc:ad8e720ab163ccc3945e7b5f31322a40e"><td class="mdescLeft">&#160;</td><td class="mdescRight">TME LIVE 分区  <br /></td></tr>
+<tr class="separator:ad8e720ab163ccc3945e7b5f31322a40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d3b65cdf7a4e2437702536a774127a7" id="r_a4d3b65cdf7a4e2437702536a774127a7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d3b65cdf7a4e2437702536a774127a7">m_firstConcertWidget</a></td></tr>
+<tr class="memdesc:a4d3b65cdf7a4e2437702536a774127a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">首唱会分区  <br /></td></tr>
+<tr class="separator:a4d3b65cdf7a4e2437702536a774127a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18787899dd8115728d5d1c659b6fb221" id="r_a18787899dd8115728d5d1c659b6fb221"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18787899dd8115728d5d1c659b6fb221">m_chineseLanguageWidget</a></td></tr>
+<tr class="memdesc:a18787899dd8115728d5d1c659b6fb221"><td class="mdescLeft">&#160;</td><td class="mdescRight">华语分区  <br /></td></tr>
+<tr class="separator:a18787899dd8115728d5d1c659b6fb221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a0db4e78609047ba3bb0d7fa3596a2" id="r_ad1a0db4e78609047ba3bb0d7fa3596a2"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1a0db4e78609047ba3bb0d7fa3596a2">m_southKoreaWidget</a></td></tr>
+<tr class="memdesc:ad1a0db4e78609047ba3bb0d7fa3596a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">韩国分区  <br /></td></tr>
+<tr class="separator:ad1a0db4e78609047ba3bb0d7fa3596a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b00ae1280aa3cc7f743c6902e12527" id="r_a60b00ae1280aa3cc7f743c6902e12527"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60b00ae1280aa3cc7f743c6902e12527">m_japanWidget</a></td></tr>
+<tr class="memdesc:a60b00ae1280aa3cc7f743c6902e12527"><td class="mdescLeft">&#160;</td><td class="mdescRight">日本分区  <br /></td></tr>
+<tr class="separator:a60b00ae1280aa3cc7f743c6902e12527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b1e8d236b551cfcde273b4a8fdd1cb" id="r_ab5b1e8d236b551cfcde273b4a8fdd1cb"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_part_widget.html">VideoPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5b1e8d236b551cfcde273b4a8fdd1cb">m_americanWidget</a></td></tr>
+<tr class="memdesc:ab5b1e8d236b551cfcde273b4a8fdd1cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">欧美分区  <br /></td></tr>
+<tr class="separator:ab5b1e8d236b551cfcde273b4a8fdd1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d724096bc909086a836bdf73296c34" id="r_a58d724096bc909086a836bdf73296c34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d724096bc909086a836bdf73296c34">m_pixPathVector</a></td></tr>
+<tr class="memdesc:a58d724096bc909086a836bdf73296c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">封面图片路径列表  <br /></td></tr>
+<tr class="separator:a58d724096bc909086a836bdf73296c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cd20ec8edf7d3af0f64fd52bd13110f" id="r_a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_scroll_bar.html">QScrollBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cd20ec8edf7d3af0f64fd52bd13110f">m_vScrollBar</a> {}</td></tr>
+<tr class="memdesc:a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直滚动条  <br /></td></tr>
+<tr class="separator:a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>视频界面类，管理多个视频分区和滚动区域 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5b8cbe5292225372193f9f1937e84476" name="a5b8cbe5292225372193f9f1937e84476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8cbe5292225372193f9f1937e84476">&#9670;&#160;</a></span>VideoWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_video_widget.html">VideoWidget</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<p>构造函数，初始化视频界面</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置 UI 布局</p>
+<p>&lt; 加载样式表</p>
+<p>&lt; 应用样式表</p>
+<p>&lt; 记录错误日志</p>
+<p>&lt; 初始化按钮组</p>
+<p>&lt; 初始化视频分区</p>
+<p>&lt; 初始化图片路径</p>
+<p>&lt; 初始化界面</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_a5b8cbe5292225372193f9f1937e84476_cgraph.png" border="0" usemap="#aclass_video_widget_a5b8cbe5292225372193f9f1937e84476_cgraph" alt=""/></div>
+<map name="aclass_video_widget_a5b8cbe5292225372193f9f1937e84476_cgraph" id="aclass_video_widget_a5b8cbe5292225372193f9f1937e84476_cgraph">
+<area shape="rect" title="构造函数" alt="" coords="5,81,101,108"/>
+<area shape="poly" title=" " alt="" coords="27,82,22,73,25,63,36,57,53,55,71,57,81,64,78,68,70,62,53,60,38,62,29,66,27,72,31,80"/>
+<area shape="rect" href="class_video_widget.html#a9437cac5c81c06f98ff94541bf7da588" title="初始化按钮组" alt="" coords="149,5,260,32"/>
+<area shape="poly" title=" " alt="" coords="78,78,147,42,157,37,160,42,150,46,81,83"/>
+<area shape="rect" href="class_video_widget.html#a4817b6d2e9c0626d8af42b4439d0ded4" title="初始化视频分区" alt="" coords="151,56,258,83"/>
+<area shape="poly" title=" " alt="" coords="101,84,135,78,136,84,101,89"/>
+<area shape="rect" href="class_video_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="179,107,230,133"/>
+<area shape="poly" title=" " alt="" coords="101,100,164,111,163,116,101,105"/>
+<area shape="rect" href="class_video_widget.html#a90c20eba367d53522d3fcbb6b03111ba" title="初始化图片路径" alt="" coords="167,169,242,196"/>
+<area shape="poly" title=" " alt="" coords="79,106,168,159,165,163,76,111"/>
+<area shape="rect" href="class_video_widget.html#a6ef54bde0283ca9a6b5060253ec1b8a6" title="处理滚轮值" alt="" coords="330,56,459,83"/>
+<area shape="poly" title=" " alt="" coords="230,111,327,85,328,90,231,116"/>
+<area shape="rect" href="class_my_scroll_area.html#ad95e84387b161599e4f845564314e8f8" title="滚轮事件触发的信号，传递当前滚动条值" alt="" coords="308,107,481,133"/>
+<area shape="poly" title=" " alt="" coords="231,117,292,117,292,123,231,123"/>
+<area shape="rect" href="class_my_scroll_area.html#a34a36bc029671530891b2162e67be3ad" title="处理返回顶部按钮点击事件" alt="" coords="529,77,732,104"/>
+<area shape="poly" title=" " alt="" coords="481,107,514,102,514,108,482,112"/>
+<area shape="rect" href="class_my_scroll_area.html#a7b8409999a54d69dfabbb8f50efc68a5" title="处理返回顶部按钮的显示或隐藏逻辑" alt="" coords="535,128,726,171"/>
+<area shape="poly" title=" " alt="" coords="482,128,520,133,519,138,481,133"/>
+<area shape="rect" href="class_my_scroll_area.html#a3326ecf53695a34cfe929674811c486c" title="设置动画状态" alt="" coords="780,77,963,104"/>
+<area shape="poly" title=" " alt="" coords="732,88,764,88,764,93,732,93"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="375,181,414,208"/>
+<area shape="poly" title=" " alt="" coords="242,182,360,190,359,195,242,188"/>
+<area shape="poly" title=" " alt="" coords="373,189,359,178,358,166,370,158,395,155,415,157,428,162,433,170,430,179,425,178,428,171,424,166,413,162,395,160,372,163,362,169,363,176,376,185"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_a5b8cbe5292225372193f9f1937e84476_icgraph.png" border="0" usemap="#aclass_video_widget_a5b8cbe5292225372193f9f1937e84476_icgraph" alt=""/></div>
+<map name="aclass_video_widget_a5b8cbe5292225372193f9f1937e84476_icgraph" id="aclass_video_widget_a5b8cbe5292225372193f9f1937e84476_icgraph">
+<area shape="rect" title="构造函数" alt="" coords="5,29,101,56"/>
+<area shape="poly" title=" " alt="" coords="68,16,62,10,53,8,44,10,39,14,38,20,40,28,35,30,32,20,34,11,42,5,53,3,65,5,72,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0dfac5d1044eb68e0356ecb1208cd2f9" name="a0dfac5d1044eb68e0356ecb1208cd2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfac5d1044eb68e0356ecb1208cd2f9">&#9670;&#160;</a></span>~VideoWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_video_widget.html">VideoWidget</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+<dl class="section note"><dt>注解</dt><dd>释放 UI 资源 </dd></dl>
+<p>&lt; 释放 UI 界面</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6ef54bde0283ca9a6b5060253ec1b8a6" name="a6ef54bde0283ca9a6b5060253ec1b8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef54bde0283ca9a6b5060253ec1b8a6">&#9670;&#160;</a></span>handleWheelValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handleWheelValue </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理滚轮值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>滚动条值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>根据滚动位置切换按钮选中状态 </dd></dl>
+<p>&lt; 选中推荐按钮</p>
+<p>&lt; 选中视频榜按钮</p>
+<p>&lt; 选中 MV 按钮</p>
+<p>&lt; 选中现场按钮</p>
+<p>&lt; 选中翻唱按钮</p>
+<p>&lt; 选中舞蹈按钮</p>
+<p>&lt; 选中儿童按钮</p>
+<p>&lt; 选中 TME LIVE 按钮</p>
+<p>&lt; 选中首唱会按钮</p>
+<p>&lt; 选中华语按钮</p>
+<p>&lt; 选中韩国按钮</p>
+<p>&lt; 选中日本按钮</p>
+<p>&lt; 选中欧美按钮</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_a6ef54bde0283ca9a6b5060253ec1b8a6_icgraph.png" border="0" usemap="#aclass_video_widget_a6ef54bde0283ca9a6b5060253ec1b8a6_icgraph" alt=""/></div>
+<map name="aclass_video_widget_a6ef54bde0283ca9a6b5060253ec1b8a6_icgraph" id="aclass_video_widget_a6ef54bde0283ca9a6b5060253ec1b8a6_icgraph">
+<area shape="rect" title="处理滚轮值" alt="" coords="248,29,376,56"/>
+<area shape="rect" href="class_video_widget.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="149,29,200,56"/>
+<area shape="poly" title=" " alt="" coords="232,45,200,45,200,40,232,40"/>
+<area shape="rect" href="class_video_widget.html#a5b8cbe5292225372193f9f1937e84476" title="构造函数" alt="" coords="5,29,101,56"/>
+<area shape="poly" title=" " alt="" coords="133,45,101,45,101,40,133,40"/>
+<area shape="poly" title=" " alt="" coords="73,16,66,10,53,8,41,10,35,14,33,20,36,28,31,30,28,20,30,11,39,5,53,3,68,5,76,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9437cac5c81c06f98ff94541bf7da588" name="a9437cac5c81c06f98ff94541bf7da588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9437cac5c81c06f98ff94541bf7da588">&#9670;&#160;</a></span>initButtonGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initButtonGroup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化按钮组 </p>
+<dl class="section note"><dt>注解</dt><dd>设置互斥按钮 </dd></dl>
+<p>&lt; 添加推荐按钮</p>
+<p>&lt; 添加视频榜按钮</p>
+<p>&lt; 添加 MV 按钮</p>
+<p>&lt; 添加现场按钮</p>
+<p>&lt; 添加翻唱按钮</p>
+<p>&lt; 添加舞蹈按钮</p>
+<p>&lt; 添加儿童按钮</p>
+<p>&lt; 添加 TME LIVE 按钮</p>
+<p>&lt; 添加首唱会按钮</p>
+<p>&lt; 添加华语按钮</p>
+<p>&lt; 添加韩国按钮</p>
+<p>&lt; 添加日本按钮</p>
+<p>&lt; 添加欧美按钮</p>
+<p>&lt; 设置互斥</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_a9437cac5c81c06f98ff94541bf7da588_icgraph.png" border="0" usemap="#aclass_video_widget_a9437cac5c81c06f98ff94541bf7da588_icgraph" alt=""/></div>
+<map name="aclass_video_widget_a9437cac5c81c06f98ff94541bf7da588_icgraph" id="aclass_video_widget_a9437cac5c81c06f98ff94541bf7da588_icgraph">
+<area shape="rect" title="初始化按钮组" alt="" coords="149,29,260,56"/>
+<area shape="rect" href="class_video_widget.html#a5b8cbe5292225372193f9f1937e84476" title="构造函数" alt="" coords="5,29,101,56"/>
+<area shape="poly" title=" " alt="" coords="133,45,101,45,101,40,133,40"/>
+<area shape="poly" title=" " alt="" coords="78,16,70,10,53,8,38,10,29,14,27,20,31,28,27,30,22,21,25,11,36,5,53,3,71,5,81,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4817b6d2e9c0626d8af42b4439d0ded4" name="a4817b6d2e9c0626d8af42b4439d0ded4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4817b6d2e9c0626d8af42b4439d0ded4">&#9670;&#160;</a></span>initTotalWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initTotalWidget </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化视频分区 </p>
+<dl class="section note"><dt>注解</dt><dd>设置 13 个分区的标题 </dd></dl>
+<p>&lt; 设置推荐标题</p>
+<p>&lt; 设置视频榜标题</p>
+<p>&lt; 设置 MV 标题</p>
+<p>&lt; 设置现场标题</p>
+<p>&lt; 设置翻唱标题</p>
+<p>&lt; 设置舞蹈标题</p>
+<p>&lt; 设置儿童标题</p>
+<p>&lt; 设置 TME LIVE 标题</p>
+<p>&lt; 设置首唱会标题</p>
+<p>&lt; 设置华语标题</p>
+<p>&lt; 设置韩国标题</p>
+<p>&lt; 设置日本标题</p>
+<p>&lt; 设置欧美标题</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_a4817b6d2e9c0626d8af42b4439d0ded4_icgraph.png" border="0" usemap="#aclass_video_widget_a4817b6d2e9c0626d8af42b4439d0ded4_icgraph" alt=""/></div>
+<map name="aclass_video_widget_a4817b6d2e9c0626d8af42b4439d0ded4_icgraph" id="aclass_video_widget_a4817b6d2e9c0626d8af42b4439d0ded4_icgraph">
+<area shape="rect" title="初始化视频分区" alt="" coords="149,29,256,56"/>
+<area shape="rect" href="class_video_widget.html#a5b8cbe5292225372193f9f1937e84476" title="构造函数" alt="" coords="5,29,101,56"/>
+<area shape="poly" title=" " alt="" coords="133,45,101,45,101,40,133,40"/>
+<area shape="poly" title=" " alt="" coords="78,16,69,10,53,8,38,10,30,14,28,20,32,28,27,30,22,21,26,11,36,5,53,3,71,5,81,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afba6e95967cc3eb25fd518f7bde6ec04" name="afba6e95967cc3eb25fd518f7bde6ec04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba6e95967cc3eb25fd518f7bde6ec04">&#9670;&#160;</a></span>initUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initUi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化界面 </p>
+<dl class="section note"><dt>注解</dt><dd>设置布局、信号和视频块 </dd></dl>
+<p>&lt; 获取垂直布局</p>
+<p>&lt; 设置间距</p>
+<p>&lt; 添加推荐分区</p>
+<p>&lt; 添加视频榜分区</p>
+<p>&lt; 添加 MV 分区</p>
+<p>&lt; 添加现场分区</p>
+<p>&lt; 添加翻唱分区</p>
+<p>&lt; 添加舞蹈分区</p>
+<p>&lt; 添加儿童分区</p>
+<p>&lt; 添加 TME LIVE 分区</p>
+<p>&lt; 添加首唱会分区</p>
+<p>&lt; 添加华语分区</p>
+<p>&lt; 添加韩国分区</p>
+<p>&lt; 添加日本分区</p>
+<p>&lt; 添加欧美分区</p>
+<p>&lt; 获取垂直滚动条</p>
+<p>&lt; 平滑滚动到目标分区</p>
+<p>&lt; 连接推荐按钮</p>
+<p>&lt; 连接视频榜按钮</p>
+<p>&lt; 连接 MV 按钮</p>
+<p>&lt; 连接现场按钮</p>
+<p>&lt; 连接翻唱按钮</p>
+<p>&lt; 连接舞蹈按钮</p>
+<p>&lt; 连接儿童按钮</p>
+<p>&lt; 连接 TME LIVE 按钮</p>
+<p>&lt; 连接首唱会按钮</p>
+<p>&lt; 连接华语按钮</p>
+<p>&lt; 连接韩国按钮</p>
+<p>&lt; 连接日本按钮</p>
+<p>&lt; 连接欧美按钮</p>
+<p>&lt; 连接滚轮信号</p>
+<p>&lt; 连接滚动条值变化信号</p>
+<p>&lt; 创建视频块</p>
+<p>&lt; 设置封面</p>
+<p>&lt; 显示提示</p>
+<p>&lt; 设置提示文本</p>
+<p>&lt; 设置视频名称</p>
+<p>&lt; 设置作者</p>
+<p>&lt; 设置图标</p>
+<p>&lt; 添加到推荐分区</p>
+<p>&lt; 设置悬停字体颜色</p>
+<p>&lt; 启用接近效果</p>
+<p>&lt; 设置图标大小</p>
+<p>&lt; 设置默认图标</p>
+<p>&lt; 设置悬停图标</p>
+<p>&lt; 设置离开图标</p>
+<p>&lt; 初始隐藏第二标题区域</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph.png" border="0" usemap="#aclass_video_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" alt=""/></div>
+<map name="aclass_video_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" id="aclass_video_widget_afba6e95967cc3eb25fd518f7bde6ec04_cgraph">
+<area shape="rect" title="初始化界面" alt="" coords="5,31,57,57"/>
+<area shape="rect" href="class_video_widget.html#a6ef54bde0283ca9a6b5060253ec1b8a6" title="处理滚轮值" alt="" coords="127,5,256,32"/>
+<area shape="poly" title=" " alt="" coords="57,37,111,29,112,34,58,43"/>
+<area shape="rect" href="class_my_scroll_area.html#ad95e84387b161599e4f845564314e8f8" title="滚轮事件触发的信号，传递当前滚动条值" alt="" coords="105,56,278,83"/>
+<area shape="poly" title=" " alt="" coords="58,45,90,51,89,56,57,51"/>
+<area shape="rect" href="class_my_scroll_area.html#a34a36bc029671530891b2162e67be3ad" title="处理返回顶部按钮点击事件" alt="" coords="326,27,528,53"/>
+<area shape="poly" title=" " alt="" coords="278,56,310,52,311,57,278,61"/>
+<area shape="rect" href="class_my_scroll_area.html#a7b8409999a54d69dfabbb8f50efc68a5" title="处理返回顶部按钮的显示或隐藏逻辑" alt="" coords="332,77,523,120"/>
+<area shape="poly" title=" " alt="" coords="278,77,316,82,316,88,278,83"/>
+<area shape="rect" href="class_my_scroll_area.html#a3326ecf53695a34cfe929674811c486c" title="设置动画状态" alt="" coords="576,27,760,53"/>
+<area shape="poly" title=" " alt="" coords="529,37,561,37,561,43,529,43"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph.png" border="0" usemap="#aclass_video_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" alt=""/></div>
+<map name="aclass_video_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" id="aclass_video_widget_afba6e95967cc3eb25fd518f7bde6ec04_icgraph">
+<area shape="rect" title="初始化界面" alt="" coords="149,29,200,56"/>
+<area shape="rect" href="class_video_widget.html#a5b8cbe5292225372193f9f1937e84476" title="构造函数" alt="" coords="5,29,101,56"/>
+<area shape="poly" title=" " alt="" coords="133,45,101,45,101,40,133,40"/>
+<area shape="poly" title=" " alt="" coords="73,16,66,10,53,8,41,10,35,14,33,20,36,28,31,30,28,20,30,11,39,5,53,3,68,5,76,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a90c20eba367d53522d3fcbb6b03111ba" name="a90c20eba367d53522d3fcbb6b03111ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c20eba367d53522d3fcbb6b03111ba">&#9670;&#160;</a></span>initVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initVector </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化图片路径 </p>
+<dl class="section note"><dt>注解</dt><dd>加载并打乱 120 张封面图片 </dd></dl>
+<p>&lt; 添加封面图片</p>
+<p>&lt; 使用当前时间作为随机种子</p>
+<p>&lt; 打乱图片列表</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_a90c20eba367d53522d3fcbb6b03111ba_cgraph.png" border="0" usemap="#aclass_video_widget_a90c20eba367d53522d3fcbb6b03111ba_cgraph" alt=""/></div>
+<map name="aclass_video_widget_a90c20eba367d53522d3fcbb6b03111ba_cgraph" id="aclass_video_widget_a90c20eba367d53522d3fcbb6b03111ba_cgraph">
+<area shape="rect" title="初始化图片路径" alt="" coords="5,29,81,56"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="129,29,168,56"/>
+<area shape="poly" title=" " alt="" coords="81,40,113,40,113,45,81,45"/>
+<area shape="poly" title=" " alt="" coords="129,30,126,20,128,11,136,5,148,3,161,5,169,12,165,16,159,10,148,8,138,10,133,14,131,20,134,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_widget_a90c20eba367d53522d3fcbb6b03111ba_icgraph.png" border="0" usemap="#aclass_video_widget_a90c20eba367d53522d3fcbb6b03111ba_icgraph" alt=""/></div>
+<map name="aclass_video_widget_a90c20eba367d53522d3fcbb6b03111ba_icgraph" id="aclass_video_widget_a90c20eba367d53522d3fcbb6b03111ba_icgraph">
+<area shape="rect" title="初始化图片路径" alt="" coords="149,29,224,56"/>
+<area shape="rect" href="class_video_widget.html#a5b8cbe5292225372193f9f1937e84476" title="构造函数" alt="" coords="5,29,101,56"/>
+<area shape="poly" title=" " alt="" coords="133,45,101,45,101,40,133,40"/>
+<area shape="poly" title=" " alt="" coords="75,16,67,10,53,8,40,10,32,14,31,20,34,28,29,30,25,21,28,11,38,5,53,3,69,5,78,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7523c71b2bf60975302287ec8923f80e" name="a7523c71b2bf60975302287ec8923f80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7523c71b2bf60975302287ec8923f80e">&#9670;&#160;</a></span>mousePressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标按下事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>默认实现 </dd></dl>
+<p>&lt; 调用父类处理</p>
+
+</div>
+</div>
+<a id="aeacbba7c7d4483c2310411cd9e0daca7" name="aeacbba7c7d4483c2310411cd9e0daca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeacbba7c7d4483c2310411cd9e0daca7">&#9670;&#160;</a></span>on_all_toolButton_toggled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_all_toolButton_toggled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>全部按钮切换槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>切换标题区域显示并调整滚动高度 </dd></dl>
+<p>&lt; 设置按钮文本</p>
+<p>&lt; 设置向上图标</p>
+<p>&lt; 设置悬停向上图标</p>
+<p>&lt; 设置离开向上图标</p>
+<p>&lt; 显示第二标题区域</p>
+<p>&lt; 设置偏移量</p>
+<p>&lt; 设置按钮文本</p>
+<p>&lt; 设置向下图标</p>
+<p>&lt; 设置悬停向下图标</p>
+<p>&lt; 设置离开向下图标</p>
+<p>&lt; 隐藏第二标题区域</p>
+<p>&lt; 设置偏移量</p>
+<p>&lt; 获取顶级窗口</p>
+<p>&lt; 调整滚动区域高度</p>
+<p>&lt; 触发重绘</p>
+
+</div>
+</div>
+<a id="a9a27ed4ceb22d2a19bdb88ed785085a1" name="a9a27ed4ceb22d2a19bdb88ed785085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a27ed4ceb22d2a19bdb88ed785085a1">&#9670;&#160;</a></span>resizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>调整大小事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>调整大小事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>调整滚动区域高度 </dd></dl>
+<p>&lt; 调用父类处理</p>
+<p>&lt; 获取顶级窗口</p>
+<p>&lt; 设置滚动区域高度</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab5b1e8d236b551cfcde273b4a8fdd1cb" name="ab5b1e8d236b551cfcde273b4a8fdd1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b1e8d236b551cfcde273b4a8fdd1cb">&#9670;&#160;</a></span>m_americanWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_americanWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>欧美分区 </p>
+
+</div>
+</div>
+<a id="ad47442fcf7db8bd0dab09d79ad4c1d47" name="ad47442fcf7db8bd0dab09d79ad4c1d47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad47442fcf7db8bd0dab09d79ad4c1d47">&#9670;&#160;</a></span>m_buttonGroup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_q_button_group.html">QButtonGroup</a>&gt; m_buttonGroup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>按钮组 </p>
+
+</div>
+</div>
+<a id="a2c1d42618759d3b9be39e585ce57ce3d" name="a2c1d42618759d3b9be39e585ce57ce3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1d42618759d3b9be39e585ce57ce3d">&#9670;&#160;</a></span>m_childrenWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_childrenWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>儿童分区 </p>
+
+</div>
+</div>
+<a id="a18787899dd8115728d5d1c659b6fb221" name="a18787899dd8115728d5d1c659b6fb221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18787899dd8115728d5d1c659b6fb221">&#9670;&#160;</a></span>m_chineseLanguageWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_chineseLanguageWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>华语分区 </p>
+
+</div>
+</div>
+<a id="a5b9e1a61ae8844f169b3e52d4efd327b" name="a5b9e1a61ae8844f169b3e52d4efd327b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b9e1a61ae8844f169b3e52d4efd327b">&#9670;&#160;</a></span>m_coverWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_coverWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>翻唱分区 </p>
+
+</div>
+</div>
+<a id="a1b60891aa1ba639243b9868fd094b67c" name="a1b60891aa1ba639243b9868fd094b67c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b60891aa1ba639243b9868fd094b67c">&#9670;&#160;</a></span>m_danceWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_danceWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>舞蹈分区 </p>
+
+</div>
+</div>
+<a id="a4d3b65cdf7a4e2437702536a774127a7" name="a4d3b65cdf7a4e2437702536a774127a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d3b65cdf7a4e2437702536a774127a7">&#9670;&#160;</a></span>m_firstConcertWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_firstConcertWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>首唱会分区 </p>
+
+</div>
+</div>
+<a id="a60b00ae1280aa3cc7f743c6902e12527" name="a60b00ae1280aa3cc7f743c6902e12527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60b00ae1280aa3cc7f743c6902e12527">&#9670;&#160;</a></span>m_japanWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_japanWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>日本分区 </p>
+
+</div>
+</div>
+<a id="ad8e720ab163ccc3945e7b5f31322a40e" name="ad8e720ab163ccc3945e7b5f31322a40e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e720ab163ccc3945e7b5f31322a40e">&#9670;&#160;</a></span>m_liveWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_liveWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TME LIVE 分区 </p>
+
+</div>
+</div>
+<a id="acf445b5000cc5231b766b7c575465c7f" name="acf445b5000cc5231b766b7c575465c7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf445b5000cc5231b766b7c575465c7f">&#9670;&#160;</a></span>m_MVWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_MVWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>MV 分区 </p>
+
+</div>
+</div>
+<a id="a58d724096bc909086a836bdf73296c34" name="a58d724096bc909086a836bdf73296c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d724096bc909086a836bdf73296c34">&#9670;&#160;</a></span>m_pixPathVector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;QString&gt; m_pixPathVector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>封面图片路径列表 </p>
+
+</div>
+</div>
+<a id="aa19ca407db8b89227de7c4d6c038844f" name="aa19ca407db8b89227de7c4d6c038844f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa19ca407db8b89227de7c4d6c038844f">&#9670;&#160;</a></span>m_recommendWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_recommendWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>推荐分区 </p>
+
+</div>
+</div>
+<a id="a81196a444fadfa53c155aa1612104fdc" name="a81196a444fadfa53c155aa1612104fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81196a444fadfa53c155aa1612104fdc">&#9670;&#160;</a></span>m_siteWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_siteWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>现场分区 </p>
+
+</div>
+</div>
+<a id="ad1a0db4e78609047ba3bb0d7fa3596a2" name="ad1a0db4e78609047ba3bb0d7fa3596a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a0db4e78609047ba3bb0d7fa3596a2">&#9670;&#160;</a></span>m_southKoreaWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_southKoreaWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>韩国分区 </p>
+
+</div>
+</div>
+<a id="ac3ffa9c4f0547c817f5f5fc04038265f" name="ac3ffa9c4f0547c817f5f5fc04038265f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3ffa9c4f0547c817f5f5fc04038265f">&#9670;&#160;</a></span>m_videoRankWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_video_part_widget.html">VideoPartWidget</a>&gt; m_videoRankWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视频榜分区 </p>
+
+</div>
+</div>
+<a id="a5cd20ec8edf7d3af0f64fd52bd13110f" name="a5cd20ec8edf7d3af0f64fd52bd13110f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cd20ec8edf7d3af0f64fd52bd13110f">&#9670;&#160;</a></span>m_vScrollBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_scroll_bar.html">QScrollBar</a>* m_vScrollBar {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>垂直滚动条 </p>
+
+</div>
+</div>
+<a id="a9f4adb79c8fdc6b3d98a8b1b39202b53" name="a9f4adb79c8fdc6b3d98a8b1b39202b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f4adb79c8fdc6b3d98a8b1b39202b53">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::VideoWidget* ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI 界面指针 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_video_widget_8h_source.html">VideoWidget.h</a></li>
+<li><a class="el" href="_video_widget_8cpp.html">VideoWidget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_video_widget.html">VideoWidget</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

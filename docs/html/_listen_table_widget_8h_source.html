@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ListenTableWidget.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_listen_table_widget_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ListenTableWidget.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_listen_table_widget_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef LISTENTABLEWIDGET_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define LISTENTABLEWIDGET_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_gallery_widget_8h.html">GalleryWidget.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">class </span>ListenTableWidget;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_listen_table_widget.html">   31</a></span><span class="keyword">class </span><a class="code hl_function" href="class_listen_table_widget.html#af7164455e40de9aa6c5a6484e6277a23">ListenTableWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Q_OBJECT</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_listen_table_widget.html#af7164455e40de9aa6c5a6484e6277a23">ListenTableWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="class_listen_table_widget.html#a1b4a1479725532690c13e237c17151e2">~ListenTableWidget</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_listen_table_widget.html#a44ff8825bd46777be9d5c3d1d4410d90">setTitle</a>(<span class="keyword">const</span> QString &amp;title) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="class_gallery_widget.html">GalleryWidget</a> *<a class="code hl_function" href="class_listen_table_widget.html#a161fffd85148656deb802327129d459b">getGalleryWidget</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_listen_table_widget.html#a486c0d2dd7a975812abec6e48b84e931">setCnt</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;cnt);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_listen_table_widget.html#aec03768a7c40300f362e75f4a6c8a6db">getCnt</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    QString <a class="code hl_function" href="class_listen_table_widget.html#af44609608a11a3709adfdb60da3d84b5">getTitle</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_listen_table_widget.html#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_listen_table_widget.html#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a>(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">void</span> <a class="code hl_slot" href="class_listen_table_widget.html#ae87c6205ac53b76ec5e71a259e455950">on_toolButton_clicked</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    signals:</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_listen_table_widget.html#a1c01d0d9f50ce4f07b7b16680687abc8">  104</a></span>        <span class="keywordtype">void</span> <a class="code hl_signal" href="class_listen_table_widget.html#a1c01d0d9f50ce4f07b7b16680687abc8">toolBtnClicked</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_listen_table_widget.html#a1df01116cfbaa7aa1501484a91f7e629">  107</a></span>    Ui::ListenTableWidget *<a class="code hl_variable" href="class_listen_table_widget.html#a1df01116cfbaa7aa1501484a91f7e629">ui</a>; </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_listen_table_widget.html#a9763af48bcacf71af7d733efe09a6a66">  108</a></span>    <span class="keywordtype">int</span>             <a class="code hl_variable" href="class_listen_table_widget.html#a9763af48bcacf71af7d733efe09a6a66">m_cnt</a> = 0; </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif </span><span class="comment">// LISTENTABLEWIDGET_H</span></div>
+<div class="ttc" id="a_gallery_widget_8h_html"><div class="ttname"><a href="_gallery_widget_8h.html">GalleryWidget.h</a></div><div class="ttdoc">定义 GalleryWidget 类，提供照片画廊控件</div></div>
+<div class="ttc" id="aclass_gallery_widget_html"><div class="ttname"><a href="class_gallery_widget.html">GalleryWidget</a></div><div class="ttdoc">照片画廊控件类，管理照片卡片并支持动态布局和动画</div><div class="ttdef"><b>定义</b> GalleryWidget.h:26</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_a161fffd85148656deb802327129d459b"><div class="ttname"><a href="class_listen_table_widget.html#a161fffd85148656deb802327129d459b">ListenTableWidget::getGalleryWidget</a></div><div class="ttdeci">GalleryWidget * getGalleryWidget() const</div><div class="ttdoc">获取画廊控件</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:45</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_a1b4a1479725532690c13e237c17151e2"><div class="ttname"><a href="class_listen_table_widget.html#a1b4a1479725532690c13e237c17151e2">ListenTableWidget::~ListenTableWidget</a></div><div class="ttdeci">~ListenTableWidget() override</div><div class="ttdoc">析构函数，清理资源</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:27</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_a1c01d0d9f50ce4f07b7b16680687abc8"><div class="ttname"><a href="class_listen_table_widget.html#a1c01d0d9f50ce4f07b7b16680687abc8">ListenTableWidget::toolBtnClicked</a></div><div class="ttdeci">void toolBtnClicked()</div><div class="ttdoc">刷新按钮点击信号</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_a1df01116cfbaa7aa1501484a91f7e629"><div class="ttname"><a href="class_listen_table_widget.html#a1df01116cfbaa7aa1501484a91f7e629">ListenTableWidget::ui</a></div><div class="ttdeci">Ui::ListenTableWidget * ui</div><div class="ttdoc">UI 指针</div><div class="ttdef"><b>定义</b> ListenTableWidget.h:107</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_a44ff8825bd46777be9d5c3d1d4410d90"><div class="ttname"><a href="class_listen_table_widget.html#a44ff8825bd46777be9d5c3d1d4410d90">ListenTableWidget::setTitle</a></div><div class="ttdeci">void setTitle(const QString &amp;title) const</div><div class="ttdoc">设置标题</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:36</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_a486c0d2dd7a975812abec6e48b84e931"><div class="ttname"><a href="class_listen_table_widget.html#a486c0d2dd7a975812abec6e48b84e931">ListenTableWidget::setCnt</a></div><div class="ttdeci">void setCnt(const int &amp;cnt)</div><div class="ttdoc">设置计数</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:54</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_a7eb87a6d4464680c455d278d1d32eba6"><div class="ttname"><a href="class_listen_table_widget.html#a7eb87a6d4464680c455d278d1d32eba6">ListenTableWidget::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) override</div><div class="ttdoc">事件过滤器，处理刷新按钮的鼠标事件</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:101</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_a9763af48bcacf71af7d733efe09a6a66"><div class="ttname"><a href="class_listen_table_widget.html#a9763af48bcacf71af7d733efe09a6a66">ListenTableWidget::m_cnt</a></div><div class="ttdeci">int m_cnt</div><div class="ttdoc">计数值，用于标识表格</div><div class="ttdef"><b>定义</b> ListenTableWidget.h:108</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_ae87c6205ac53b76ec5e71a259e455950"><div class="ttname"><a href="class_listen_table_widget.html#ae87c6205ac53b76ec5e71a259e455950">ListenTableWidget::on_toolButton_clicked</a></div><div class="ttdeci">void on_toolButton_clicked()</div><div class="ttdoc">刷新按钮点击槽函数</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:123</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_aec03768a7c40300f362e75f4a6c8a6db"><div class="ttname"><a href="class_listen_table_widget.html#aec03768a7c40300f362e75f4a6c8a6db">ListenTableWidget::getCnt</a></div><div class="ttdeci">int getCnt() const</div><div class="ttdoc">获取计数</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:63</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_af44609608a11a3709adfdb60da3d84b5"><div class="ttname"><a href="class_listen_table_widget.html#af44609608a11a3709adfdb60da3d84b5">ListenTableWidget::getTitle</a></div><div class="ttdeci">QString getTitle() const</div><div class="ttdoc">获取标题</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:72</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_af7164455e40de9aa6c5a6484e6277a23"><div class="ttname"><a href="class_listen_table_widget.html#af7164455e40de9aa6c5a6484e6277a23">ListenTableWidget::ListenTableWidget</a></div><div class="ttdeci">ListenTableWidget(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化表格控件</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:16</div></div>
+<div class="ttc" id="aclass_listen_table_widget_html_afba6e95967cc3eb25fd518f7bde6ec04"><div class="ttname"><a href="class_listen_table_widget.html#afba6e95967cc3eb25fd518f7bde6ec04">ListenTableWidget::initUi</a></div><div class="ttdeci">void initUi()</div><div class="ttdoc">初始化界面</div><div class="ttdef"><b>定义</b> ListenTableWidget.cpp:81</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e60601b218beddc6af0778ac41ea9cb2.html">KuGouStart</a></li><li class="navelem"><a class="el" href="dir_29569673e22270499a2cc1cc3faeb787.html">ListenBook</a></li><li class="navelem"><a class="el" href="dir_c99e693e283b556be7ac59ab98eef996.html">ListenRecommend</a></li><li class="navelem"><a class="el" href="dir_516e8078259537229e78d810ddd6e3e1.html">ListenTableWidget</a></li><li class="navelem"><a class="el" href="_listen_table_widget_8h.html">ListenTableWidget.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

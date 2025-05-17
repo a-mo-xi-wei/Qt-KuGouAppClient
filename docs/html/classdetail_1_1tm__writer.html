@@ -1,0 +1,2747 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: tm_writer&lt; OutputIt, Char, Duration &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classdetail_1_1tm__writer.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="classdetail_1_1tm__writer-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">tm_writer&lt; OutputIt, Char, Duration &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="bundled_2chrono_8h_source.html">chrono.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:af323eddff1b77411cc0916612c821ce0" id="r_af323eddff1b77411cc0916612c821ce0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af323eddff1b77411cc0916612c821ce0">tm_writer</a> (const std::locale &amp;loc, OutputIt <a class="el" href="#a4b580a1854fa23eab237e8fa121a87fa">out</a>, const std::tm &amp;tm, const Duration *subsecs=nullptr)</td></tr>
+<tr class="separator:af323eddff1b77411cc0916612c821ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b580a1854fa23eab237e8fa121a87fa" id="r_a4b580a1854fa23eab237e8fa121a87fa"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b580a1854fa23eab237e8fa121a87fa">out</a> () const -&gt; OutputIt</td></tr>
+<tr class="separator:a4b580a1854fa23eab237e8fa121a87fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db3c9cd510af6fb4e112e0250d34afb" id="r_a1db3c9cd510af6fb4e112e0250d34afb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1db3c9cd510af6fb4e112e0250d34afb">on_text</a> (const Char *begin, const Char *end)</td></tr>
+<tr class="separator:a1db3c9cd510af6fb4e112e0250d34afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce547e644b499f05adacf0744ac083b" id="r_a9ce547e644b499f05adacf0744ac083b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ce547e644b499f05adacf0744ac083b">on_abbr_weekday</a> ()</td></tr>
+<tr class="separator:a9ce547e644b499f05adacf0744ac083b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea3f5bfd23611718eb4f10150db3380" id="r_aeea3f5bfd23611718eb4f10150db3380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeea3f5bfd23611718eb4f10150db3380">on_full_weekday</a> ()</td></tr>
+<tr class="separator:aeea3f5bfd23611718eb4f10150db3380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8162cb78ab3aabd5ba9e040a65eac3f2" id="r_a8162cb78ab3aabd5ba9e040a65eac3f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8162cb78ab3aabd5ba9e040a65eac3f2">on_dec0_weekday</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:a8162cb78ab3aabd5ba9e040a65eac3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679edfa7428fc381ed0783a964e6dd48" id="r_a679edfa7428fc381ed0783a964e6dd48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a679edfa7428fc381ed0783a964e6dd48">on_dec1_weekday</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:a679edfa7428fc381ed0783a964e6dd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ab83f6e8d7164ea844fb37cdfc6587c" id="r_a7ab83f6e8d7164ea844fb37cdfc6587c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ab83f6e8d7164ea844fb37cdfc6587c">on_abbr_month</a> ()</td></tr>
+<tr class="separator:a7ab83f6e8d7164ea844fb37cdfc6587c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76f9931915777185fc9edc95f5b8a26a" id="r_a76f9931915777185fc9edc95f5b8a26a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76f9931915777185fc9edc95f5b8a26a">on_full_month</a> ()</td></tr>
+<tr class="separator:a76f9931915777185fc9edc95f5b8a26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14628e25b1511902b6935f2fc7946ec8" id="r_a14628e25b1511902b6935f2fc7946ec8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14628e25b1511902b6935f2fc7946ec8">on_datetime</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:a14628e25b1511902b6935f2fc7946ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f8e30a0b277c6e44457abd24466301a" id="r_a3f8e30a0b277c6e44457abd24466301a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f8e30a0b277c6e44457abd24466301a">on_loc_date</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:a3f8e30a0b277c6e44457abd24466301a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a21a4ea27d2569cb470f16f66b3438" id="r_a45a21a4ea27d2569cb470f16f66b3438"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45a21a4ea27d2569cb470f16f66b3438">on_loc_time</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:a45a21a4ea27d2569cb470f16f66b3438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe51a54407933aca94f3f33297ea2d93" id="r_afe51a54407933aca94f3f33297ea2d93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe51a54407933aca94f3f33297ea2d93">on_us_date</a> ()</td></tr>
+<tr class="separator:afe51a54407933aca94f3f33297ea2d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea707828446626d840d3cb1e6187179e" id="r_aea707828446626d840d3cb1e6187179e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea707828446626d840d3cb1e6187179e">on_iso_date</a> ()</td></tr>
+<tr class="separator:aea707828446626d840d3cb1e6187179e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5f862e84ddd9b6b52799c4cc542f5f6" id="r_af5f862e84ddd9b6b52799c4cc542f5f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5f862e84ddd9b6b52799c4cc542f5f6">on_utc_offset</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:af5f862e84ddd9b6b52799c4cc542f5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e9e5df6250f1be1a01c27592c03384" id="r_a30e9e5df6250f1be1a01c27592c03384"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30e9e5df6250f1be1a01c27592c03384">on_tz_name</a> ()</td></tr>
+<tr class="separator:a30e9e5df6250f1be1a01c27592c03384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfe084fc2709498497e33a982d583ecb" id="r_abfe084fc2709498497e33a982d583ecb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfe084fc2709498497e33a982d583ecb">on_year</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:abfe084fc2709498497e33a982d583ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7e779c516d46cf7d5ef69aa435fc663" id="r_ae7e779c516d46cf7d5ef69aa435fc663"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7e779c516d46cf7d5ef69aa435fc663">on_short_year</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:ae7e779c516d46cf7d5ef69aa435fc663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae50333b178a2570837bfa9183f2080e9" id="r_ae50333b178a2570837bfa9183f2080e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae50333b178a2570837bfa9183f2080e9">on_offset_year</a> ()</td></tr>
+<tr class="separator:ae50333b178a2570837bfa9183f2080e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add5cace4ce043e2c76a4eb59ddce4999" id="r_add5cace4ce043e2c76a4eb59ddce4999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add5cace4ce043e2c76a4eb59ddce4999">on_century</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:add5cace4ce043e2c76a4eb59ddce4999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea3c0f4bc061e5beffdba26cf733991" id="r_a6ea3c0f4bc061e5beffdba26cf733991"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ea3c0f4bc061e5beffdba26cf733991">on_dec_month</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a6ea3c0f4bc061e5beffdba26cf733991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe29367b0aae3c833a25bcc0a10bad83" id="r_afe29367b0aae3c833a25bcc0a10bad83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe29367b0aae3c833a25bcc0a10bad83">on_dec0_week_of_year</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:afe29367b0aae3c833a25bcc0a10bad83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d26ae8243223caa192ea3d767e52461" id="r_a8d26ae8243223caa192ea3d767e52461"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d26ae8243223caa192ea3d767e52461">on_dec1_week_of_year</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a8d26ae8243223caa192ea3d767e52461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435a0f2ffedd5823ca243f81485dfe4d" id="r_a435a0f2ffedd5823ca243f81485dfe4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a435a0f2ffedd5823ca243f81485dfe4d">on_iso_week_of_year</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a435a0f2ffedd5823ca243f81485dfe4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4106057d565e8a9da42083855768404" id="r_ae4106057d565e8a9da42083855768404"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4106057d565e8a9da42083855768404">on_iso_week_based_year</a> ()</td></tr>
+<tr class="separator:ae4106057d565e8a9da42083855768404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea6a6b5e3f3a59354190dcf47ef741e" id="r_a4ea6a6b5e3f3a59354190dcf47ef741e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ea6a6b5e3f3a59354190dcf47ef741e">on_iso_week_based_short_year</a> ()</td></tr>
+<tr class="separator:a4ea6a6b5e3f3a59354190dcf47ef741e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a17b2978b5fa77838cc6b438218ad73" id="r_a9a17b2978b5fa77838cc6b438218ad73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a17b2978b5fa77838cc6b438218ad73">on_day_of_year</a> (<a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a9a17b2978b5fa77838cc6b438218ad73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada5f2a4171635377991f51ecebd16735" id="r_ada5f2a4171635377991f51ecebd16735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada5f2a4171635377991f51ecebd16735">on_day_of_month</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:ada5f2a4171635377991f51ecebd16735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea488566e3e4ca46319ef5f5151755a0" id="r_aea488566e3e4ca46319ef5f5151755a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea488566e3e4ca46319ef5f5151755a0">on_24_hour</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:aea488566e3e4ca46319ef5f5151755a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7aacce265226c5965e6081c4799336" id="r_a3f7aacce265226c5965e6081c4799336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f7aacce265226c5965e6081c4799336">on_12_hour</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a3f7aacce265226c5965e6081c4799336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa9e34decab3a88e4c9543effa54e31" id="r_a5fa9e34decab3a88e4c9543effa54e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fa9e34decab3a88e4c9543effa54e31">on_minute</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a5fa9e34decab3a88e4c9543effa54e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb9a0eff4398874cbff0b5466c5f56c" id="r_afcb9a0eff4398874cbff0b5466c5f56c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcb9a0eff4398874cbff0b5466c5f56c">on_second</a> (<a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:afcb9a0eff4398874cbff0b5466c5f56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acac60187a1bae85bc87379c974bc6e45" id="r_acac60187a1bae85bc87379c974bc6e45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acac60187a1bae85bc87379c974bc6e45">on_12_hour_time</a> ()</td></tr>
+<tr class="separator:acac60187a1bae85bc87379c974bc6e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a36b23ef9bc29633a52e995ea2dd23a" id="r_a1a36b23ef9bc29633a52e995ea2dd23a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a36b23ef9bc29633a52e995ea2dd23a">on_24_hour_time</a> ()</td></tr>
+<tr class="separator:a1a36b23ef9bc29633a52e995ea2dd23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c937acaca8bfa7b3d319d1bd237ef9" id="r_a94c937acaca8bfa7b3d319d1bd237ef9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94c937acaca8bfa7b3d319d1bd237ef9">on_iso_time</a> ()</td></tr>
+<tr class="separator:a94c937acaca8bfa7b3d319d1bd237ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f690e3b9e7e188c9bdbb95e37527528" id="r_a6f690e3b9e7e188c9bdbb95e37527528"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f690e3b9e7e188c9bdbb95e37527528">on_am_pm</a> ()</td></tr>
+<tr class="separator:a6f690e3b9e7e188c9bdbb95e37527528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3133bb75d16e1080b2c1086eea387c" id="r_abc3133bb75d16e1080b2c1086eea387c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc3133bb75d16e1080b2c1086eea387c">on_duration_value</a> ()</td></tr>
+<tr class="separator:abc3133bb75d16e1080b2c1086eea387c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426efbda8fcbda88cf75c76685700307" id="r_a426efbda8fcbda88cf75c76685700307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a426efbda8fcbda88cf75c76685700307">on_duration_unit</a> ()</td></tr>
+<tr class="separator:a426efbda8fcbda88cf75c76685700307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a20daa134a690045326c9382b809bd363" id="r_a20daa134a690045326c9382b809bd363"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20daa134a690045326c9382b809bd363">tm_sec</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:a20daa134a690045326c9382b809bd363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f40cf27851452a91decfaaac531c1f" id="r_a34f40cf27851452a91decfaaac531c1f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34f40cf27851452a91decfaaac531c1f">tm_min</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:a34f40cf27851452a91decfaaac531c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86dab1599005ff1f4e16d9fb6d440cbd" id="r_a86dab1599005ff1f4e16d9fb6d440cbd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86dab1599005ff1f4e16d9fb6d440cbd">tm_hour</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:a86dab1599005ff1f4e16d9fb6d440cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c10d21af1896b400b67f48007d6a2c" id="r_a93c10d21af1896b400b67f48007d6a2c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93c10d21af1896b400b67f48007d6a2c">tm_mday</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:a93c10d21af1896b400b67f48007d6a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06fb7fc31af69c8eddc995b90cf2a459" id="r_a06fb7fc31af69c8eddc995b90cf2a459"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06fb7fc31af69c8eddc995b90cf2a459">tm_mon</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:a06fb7fc31af69c8eddc995b90cf2a459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e5b4d48f6ce80cecbe99ba772c1c3d" id="r_a86e5b4d48f6ce80cecbe99ba772c1c3d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86e5b4d48f6ce80cecbe99ba772c1c3d">tm_year</a> () const noexcept -&gt; long long</td></tr>
+<tr class="separator:a86e5b4d48f6ce80cecbe99ba772c1c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e42475cc175953a5e1bebad8bd9388" id="r_ad7e42475cc175953a5e1bebad8bd9388"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7e42475cc175953a5e1bebad8bd9388">tm_wday</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:ad7e42475cc175953a5e1bebad8bd9388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea64b41991c428ee952551e7d8553c2" id="r_acea64b41991c428ee952551e7d8553c2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acea64b41991c428ee952551e7d8553c2">tm_yday</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:acea64b41991c428ee952551e7d8553c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76660c701b4c16d2c110a83fbeff7a68" id="r_a76660c701b4c16d2c110a83fbeff7a68"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76660c701b4c16d2c110a83fbeff7a68">tm_hour12</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:a76660c701b4c16d2c110a83fbeff7a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f96a1e269efb1581b4bed4e874ff57" id="r_a85f96a1e269efb1581b4bed4e874ff57"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85f96a1e269efb1581b4bed4e874ff57">split_year_lower</a> (long long <a class="el" href="classyear.html">year</a>) const noexcept -&gt; int</td></tr>
+<tr class="separator:a85f96a1e269efb1581b4bed4e874ff57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae4e94b39a4e8a5534f17d3d99f6e44" id="r_a2ae4e94b39a4e8a5534f17d3d99f6e44"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ae4e94b39a4e8a5534f17d3d99f6e44">iso_year_weeks</a> (long long curr_year) const noexcept -&gt; int</td></tr>
+<tr class="separator:a2ae4e94b39a4e8a5534f17d3d99f6e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8464e885c43faeddad9f7ce2e93ed71f" id="r_a8464e885c43faeddad9f7ce2e93ed71f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8464e885c43faeddad9f7ce2e93ed71f">iso_week_num</a> (int <a class="el" href="#acea64b41991c428ee952551e7d8553c2">tm_yday</a>, int <a class="el" href="#ad7e42475cc175953a5e1bebad8bd9388">tm_wday</a>) const noexcept -&gt; int</td></tr>
+<tr class="separator:a8464e885c43faeddad9f7ce2e93ed71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded27b51cab2ebb577b2337b00659af0" id="r_aded27b51cab2ebb577b2337b00659af0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aded27b51cab2ebb577b2337b00659af0">tm_iso_week_year</a> () const noexcept -&gt; long long</td></tr>
+<tr class="separator:aded27b51cab2ebb577b2337b00659af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c54a248c70fc475ade1a75d43f56c16" id="r_a9c54a248c70fc475ade1a75d43f56c16"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c54a248c70fc475ade1a75d43f56c16">tm_iso_week_of_year</a> () const noexcept -&gt; int</td></tr>
+<tr class="separator:a9c54a248c70fc475ade1a75d43f56c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af43ac321b98c0c61dcdeaec3171a3311" id="r_af43ac321b98c0c61dcdeaec3171a3311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af43ac321b98c0c61dcdeaec3171a3311">write1</a> (int <a class="el" href="classdetail_1_1value.html">value</a>)</td></tr>
+<tr class="separator:af43ac321b98c0c61dcdeaec3171a3311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c21431b9665821910a1d2f8a6b74551" id="r_a9c21431b9665821910a1d2f8a6b74551"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c21431b9665821910a1d2f8a6b74551">write2</a> (int <a class="el" href="classdetail_1_1value.html">value</a>)</td></tr>
+<tr class="separator:a9c21431b9665821910a1d2f8a6b74551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c208c29cca477ac9f618147bdd06aae" id="r_a0c208c29cca477ac9f618147bdd06aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c208c29cca477ac9f618147bdd06aae">write2</a> (int <a class="el" href="classdetail_1_1value.html">value</a>, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a0c208c29cca477ac9f618147bdd06aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c8e1c5bcc7c5f16f4ebc76838f8c39" id="r_a81c8e1c5bcc7c5f16f4ebc76838f8c39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81c8e1c5bcc7c5f16f4ebc76838f8c39">write_year_extended</a> (long long <a class="el" href="classyear.html">year</a>, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a81c8e1c5bcc7c5f16f4ebc76838f8c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565aadb4c4de125a4bff9de9a3a79a1f" id="r_a565aadb4c4de125a4bff9de9a3a79a1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a565aadb4c4de125a4bff9de9a3a79a1f">write_year</a> (long long <a class="el" href="classyear.html">year</a>, <a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a> pad)</td></tr>
+<tr class="separator:a565aadb4c4de125a4bff9de9a3a79a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9523baa665da918526edc8a36f88ccb8" id="r_a9523baa665da918526edc8a36f88ccb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9523baa665da918526edc8a36f88ccb8">write_utc_offset</a> (long long offset, <a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:a9523baa665da918526edc8a36f88ccb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d16042db5dbfa6666911df592543d4a" id="r_a0d16042db5dbfa6666911df592543d4a"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(<a class="el" href="structdetail_1_1has__member__data__tm__gmtoff.html">has_member_data_tm_gmtoff</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </td></tr>
+<tr class="memitem:a0d16042db5dbfa6666911df592543d4a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0d16042db5dbfa6666911df592543d4a">format_utc_offset_impl</a> (const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;tm, <a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:a0d16042db5dbfa6666911df592543d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d16042db5dbfa6666911df592543d4a" id="r_a0d16042db5dbfa6666911df592543d4a"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!<a class="el" href="structdetail_1_1has__member__data__tm__gmtoff.html">has_member_data_tm_gmtoff</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </td></tr>
+<tr class="memitem:a0d16042db5dbfa6666911df592543d4a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0d16042db5dbfa6666911df592543d4a">format_utc_offset_impl</a> (const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;tm, <a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a> ns)</td></tr>
+<tr class="separator:a0d16042db5dbfa6666911df592543d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6467342855364c7172b25504ace87fe9" id="r_a6467342855364c7172b25504ace87fe9"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(<a class="el" href="structdetail_1_1has__member__data__tm__zone.html">has_member_data_tm_zone</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </td></tr>
+<tr class="memitem:a6467342855364c7172b25504ace87fe9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6467342855364c7172b25504ace87fe9">format_tz_name_impl</a> (const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;tm)</td></tr>
+<tr class="separator:a6467342855364c7172b25504ace87fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2b4e25a85fb4dedf16161b4b5e6cb3" id="r_a1e2b4e25a85fb4dedf16161b4b5e6cb3"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!<a class="el" href="structdetail_1_1has__member__data__tm__zone.html">has_member_data_tm_zone</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </td></tr>
+<tr class="memitem:a1e2b4e25a85fb4dedf16161b4b5e6cb3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1e2b4e25a85fb4dedf16161b4b5e6cb3">format_tz_name_impl</a> (const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;)</td></tr>
+<tr class="separator:a1e2b4e25a85fb4dedf16161b4b5e6cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca51cad781172a3dc960dd509f0c4828" id="r_aca51cad781172a3dc960dd509f0c4828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca51cad781172a3dc960dd509f0c4828">format_localized</a> (char <a class="el" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c">format</a>, char modifier=0)</td></tr>
+<tr class="separator:aca51cad781172a3dc960dd509f0c4828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:adb0d0fc6806c569e9f2c08ddc4a23fd9" id="r_adb0d0fc6806c569e9f2c08ddc4a23fd9"><td class="memItemLeft" align="right" valign="top">const std::locale &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb0d0fc6806c569e9f2c08ddc4a23fd9">loc_</a></td></tr>
+<tr class="separator:adb0d0fc6806c569e9f2c08ddc4a23fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe98282ba4cfc5de7cbef8aa0f479181" id="r_abe98282ba4cfc5de7cbef8aa0f479181"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe98282ba4cfc5de7cbef8aa0f479181">is_classic_</a></td></tr>
+<tr class="separator:abe98282ba4cfc5de7cbef8aa0f479181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af409b276d6d28b84bc1d8b2aedb8be" id="r_a4af409b276d6d28b84bc1d8b2aedb8be"><td class="memItemLeft" align="right" valign="top">OutputIt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4af409b276d6d28b84bc1d8b2aedb8be">out_</a></td></tr>
+<tr class="separator:a4af409b276d6d28b84bc1d8b2aedb8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6049126e5abcb3a9d364fe4316c87bf6" id="r_a6049126e5abcb3a9d364fe4316c87bf6"><td class="memItemLeft" align="right" valign="top">const Duration *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6049126e5abcb3a9d364fe4316c87bf6">subsecs_</a></td></tr>
+<tr class="separator:a6049126e5abcb3a9d364fe4316c87bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae43044cccb283c54be2deae70f9188dc" id="r_ae43044cccb283c54be2deae70f9188dc"><td class="memItemLeft" align="right" valign="top">const std::tm &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae43044cccb283c54be2deae70f9188dc">tm_</a></td></tr>
+<tr class="separator:ae43044cccb283c54be2deae70f9188dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a43d964757616b096845a34cf7cc0396d" id="r_a43d964757616b096845a34cf7cc0396d"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43d964757616b096845a34cf7cc0396d">days_per_week</a> = 7</td></tr>
+<tr class="separator:a43d964757616b096845a34cf7cc0396d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="af323eddff1b77411cc0916612c821ce0" name="af323eddff1b77411cc0916612c821ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af323eddff1b77411cc0916612c821ce0">&#9670;&#160;</a></span>tm_writer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1tm__writer.html">tm_writer</a> </td>
+          <td>(</td>
+          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">OutputIt</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::tm &amp;</td>          <td class="paramname"><span class="paramname"><em>tm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Duration *</td>          <td class="paramname"><span class="paramname"><em>subsecs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aca51cad781172a3dc960dd509f0c4828" name="aca51cad781172a3dc960dd509f0c4828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca51cad781172a3dc960dd509f0c4828">&#9670;&#160;</a></span>format_localized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void format_localized </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>modifier</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_aca51cad781172a3dc960dd509f0c4828_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_aca51cad781172a3dc960dd509f0c4828_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_aca51cad781172a3dc960dd509f0c4828_icgraph" id="aclassdetail_1_1tm__writer_aca51cad781172a3dc960dd509f0c4828_icgraph">
+<area shape="rect" title=" " alt="" coords="644,1096,761,1123"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a1e2b4e25a85fb4dedf16161b4b5e6cb3" title=" " alt="" coords="424,5,590,64"/>
+<area shape="poly" title=" " alt="" coords="697,1081,686,869,665,551,651,389,634,247,615,137,605,100,594,77,584,66,588,63,599,75,610,99,620,136,639,246,656,389,671,550,692,868,703,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a6467342855364c7172b25504ace87fe9" title=" " alt="" coords="424,88,590,147"/>
+<area shape="poly" title=" " alt="" coords="699,1080,699,897,695,766,688,623,676,480,657,348,630,237,613,194,594,160,584,149,588,145,598,157,618,191,635,235,662,347,681,479,693,623,701,766,704,897,704,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a0d16042db5dbfa6666911df592543d4a" title=" " alt="" coords="420,171,594,229"/>
+<area shape="poly" title=" " alt="" coords="699,1081,696,912,684,663,671,533,652,413,627,312,612,273,594,243,584,232,588,228,598,240,616,271,632,311,658,411,676,532,689,662,702,912,704,1081"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a3f7aacce265226c5965e6081c4799336" title=" " alt="" coords="438,253,576,312"/>
+<area shape="poly" title=" " alt="" coords="698,1081,694,927,679,702,666,585,648,477,624,388,610,353,594,326,574,308,578,304,598,322,615,350,629,386,653,476,672,584,685,701,699,926,704,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="437,336,577,395"/>
+<area shape="poly" title=" " alt="" coords="698,1080,691,941,675,740,661,637,644,542,622,463,609,432,594,408,576,391,580,387,598,405,613,430,627,461,649,541,667,636,680,740,697,940,703,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aea488566e3e4ca46319ef5f5151755a0" title=" " alt="" coords="438,419,576,477"/>
+<area shape="poly" title=" " alt="" coords="697,1081,689,956,670,780,657,690,640,607,619,539,594,491,575,473,578,469,598,488,624,537,645,606,662,689,676,779,694,955,702,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a7ab83f6e8d7164ea844fb37cdfc6587c" title=" " alt="" coords="438,501,576,560"/>
+<area shape="poly" title=" " alt="" coords="696,1081,686,971,666,820,652,743,635,672,616,614,594,574,574,556,578,552,598,570,621,612,640,671,657,742,671,819,691,970,702,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9ce547e644b499f05adacf0744ac083b" title=" " alt="" coords="434,584,580,643"/>
+<area shape="poly" title=" " alt="" coords="695,1081,682,986,661,860,631,738,613,690,594,656,579,642,583,638,598,653,618,687,636,736,666,859,688,985,700,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a6f690e3b9e7e188c9bdbb95e37527528" title=" " alt="" coords="438,667,576,725"/>
+<area shape="poly" title=" " alt="" coords="698,1081,693,1013,678,923,665,874,647,826,624,780,594,739,574,722,578,718,598,736,628,778,652,824,670,873,683,922,699,1012,703,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#add5cace4ce043e2c76a4eb59ddce4999" title=" " alt="" coords="438,749,576,808"/>
+<area shape="poly" title=" " alt="" coords="695,1081,686,1027,668,959,638,886,618,852,594,822,574,806,578,801,598,818,623,849,643,884,673,957,691,1026,701,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a14628e25b1511902b6935f2fc7946ec8" title=" " alt="" coords="438,832,576,891"/>
+<area shape="poly" title=" " alt="" coords="691,1082,677,1043,657,996,630,947,594,905,575,890,578,885,598,901,634,944,662,993,682,1041,696,1080"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ada5f2a4171635377991f51ecebd16735" title=" " alt="" coords="435,915,579,973"/>
+<area shape="poly" title=" " alt="" coords="682,1085,645,1036,621,1010,595,987,578,976,581,972,598,983,625,1007,649,1033,686,1081"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afe29367b0aae3c833a25bcc0a10bad83" title=" " alt="" coords="418,997,596,1056"/>
+<area shape="poly" title=" " alt="" coords="654,1092,577,1059,579,1054,656,1087"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a8162cb78ab3aabd5ba9e040a65eac3f2" title=" " alt="" coords="432,1080,582,1139"/>
+<area shape="poly" title=" " alt="" coords="629,1112,582,1112,582,1107,629,1107"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a8d26ae8243223caa192ea3d767e52461" title=" " alt="" coords="418,1163,596,1221"/>
+<area shape="poly" title=" " alt="" coords="656,1131,579,1165,577,1160,654,1127"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a679edfa7428fc381ed0783a964e6dd48" title=" " alt="" coords="432,1245,582,1304"/>
+<area shape="poly" title=" " alt="" coords="686,1137,649,1186,625,1212,598,1235,581,1247,578,1243,595,1231,621,1208,645,1183,682,1134"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a6ea3c0f4bc061e5beffdba26cf733991" title=" " alt="" coords="438,1328,576,1387"/>
+<area shape="poly" title=" " alt="" coords="696,1139,682,1178,662,1225,634,1274,598,1318,578,1333,575,1329,594,1314,630,1271,657,1223,677,1176,691,1137"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a76f9931915777185fc9edc95f5b8a26a" title=" " alt="" coords="438,1411,576,1469"/>
+<area shape="poly" title=" " alt="" coords="701,1139,691,1193,673,1262,643,1335,623,1369,598,1401,578,1417,574,1413,594,1397,618,1366,638,1332,668,1260,686,1191,695,1138"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aeea3f5bfd23611718eb4f10150db3380" title=" " alt="" coords="438,1493,576,1552"/>
+<area shape="poly" title=" " alt="" coords="703,1138,699,1206,683,1297,670,1346,652,1395,628,1441,598,1483,578,1500,575,1496,594,1480,624,1438,647,1393,665,1344,678,1296,693,1206,698,1138"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a435a0f2ffedd5823ca243f81485dfe4d" title=" " alt="" coords="424,1576,591,1635"/>
+<area shape="poly" title=" " alt="" coords="700,1138,688,1233,666,1360,636,1482,618,1531,598,1566,587,1577,583,1574,594,1562,613,1529,631,1481,661,1359,682,1232,695,1138"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a3f8e30a0b277c6e44457abd24466301a" title=" " alt="" coords="438,1659,576,1717"/>
+<area shape="poly" title=" " alt="" coords="702,1138,691,1248,671,1400,657,1477,640,1548,621,1607,598,1648,578,1667,574,1663,594,1645,616,1605,635,1546,652,1476,666,1399,686,1248,696,1138"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a45a21a4ea27d2569cb470f16f66b3438" title=" " alt="" coords="438,1741,576,1800"/>
+<area shape="poly" title=" " alt="" coords="702,1138,694,1263,676,1439,662,1530,645,1613,624,1682,598,1731,578,1749,575,1745,594,1728,619,1680,640,1611,657,1529,670,1439,689,1263,697,1138"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a5fa9e34decab3a88e4c9543effa54e31" title=" " alt="" coords="438,1824,576,1883"/>
+<area shape="poly" title=" " alt="" coords="703,1139,697,1278,680,1479,667,1582,649,1678,627,1757,613,1789,598,1814,578,1832,574,1828,594,1810,609,1786,622,1756,644,1677,661,1582,675,1478,691,1278,698,1138"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae50333b178a2570837bfa9183f2080e9" title=" " alt="" coords="438,1907,576,1965"/>
+<area shape="poly" title=" " alt="" coords="704,1138,699,1292,685,1518,672,1635,653,1742,629,1833,615,1868,598,1896,578,1915,574,1911,594,1893,610,1866,624,1831,648,1741,666,1634,679,1517,694,1292,698,1138"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afcb9a0eff4398874cbff0b5466c5f56c" title=" " alt="" coords="438,1989,576,2048"/>
+<area shape="poly" title=" " alt="" coords="704,1138,702,1307,689,1556,676,1687,658,1807,632,1908,616,1948,598,1979,578,1998,574,1994,594,1976,612,1945,627,1906,652,1806,671,1686,684,1556,696,1306,699,1138"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae7e779c516d46cf7d5ef69aa435fc663" title=" " alt="" coords="438,2072,576,2131"/>
+<area shape="poly" title=" " alt="" coords="704,1139,704,1321,701,1453,693,1596,681,1739,662,1872,635,1983,618,2027,598,2062,578,2081,575,2077,594,2058,613,2025,630,1982,657,1871,676,1739,688,1595,695,1453,699,1321,699,1139"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#abfe084fc2709498497e33a982d583ecb" title=" " alt="" coords="438,2155,576,2213"/>
+<area shape="poly" title=" " alt="" coords="703,1138,692,1350,671,1669,656,1830,639,1973,620,2082,610,2120,598,2144,578,2163,575,2159,594,2141,605,2118,615,2081,634,1972,651,1829,665,1668,686,1350,697,1138"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a3f7aacce265226c5965e6081c4799336" title=" " alt="" coords="212,261,370,304"/>
+<area shape="poly" title=" " alt="" coords="423,285,371,285,371,280,423,280"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="212,344,370,387"/>
+<area shape="poly" title=" " alt="" coords="421,368,370,368,370,363,421,363"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#aea488566e3e4ca46319ef5f5151755a0" title=" " alt="" coords="212,427,370,469"/>
+<area shape="poly" title=" " alt="" coords="423,451,371,451,371,445,423,445"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a6f690e3b9e7e188c9bdbb95e37527528" title=" " alt="" coords="212,675,370,717"/>
+<area shape="poly" title=" " alt="" coords="423,699,371,699,371,693,423,693"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a5fa9e34decab3a88e4c9543effa54e31" title=" " alt="" coords="212,1832,370,1875"/>
+<area shape="poly" title=" " alt="" coords="423,1856,371,1856,371,1851,423,1851"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#afcb9a0eff4398874cbff0b5466c5f56c" title=" " alt="" coords="212,1997,370,2040"/>
+<area shape="poly" title=" " alt="" coords="423,2021,371,2021,371,2016,423,2016"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a94c937acaca8bfa7b3d319d1bd237ef9" title=" " alt="" coords="5,1997,164,2040"/>
+<area shape="poly" title=" " alt="" coords="196,2021,164,2021,164,2016,196,2016"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e2b4e25a85fb4dedf16161b4b5e6cb3" name="a1e2b4e25a85fb4dedf16161b4b5e6cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2b4e25a85fb4dedf16161b4b5e6cb3">&#9670;&#160;</a></span>format_tz_name_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!<a class="el" href="structdetail_1_1has__member__data__tm__zone.html">has_member_data_tm_zone</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void format_tz_name_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6467342855364c7172b25504ace87fe9" name="a6467342855364c7172b25504ace87fe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6467342855364c7172b25504ace87fe9">&#9670;&#160;</a></span>format_tz_name_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(<a class="el" href="structdetail_1_1has__member__data__tm__zone.html">has_member_data_tm_zone</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void format_tz_name_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a6467342855364c7172b25504ace87fe9_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a6467342855364c7172b25504ace87fe9_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a6467342855364c7172b25504ace87fe9_icgraph" id="aclassdetail_1_1tm__writer_a6467342855364c7172b25504ace87fe9_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,337,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a30e9e5df6250f1be1a01c27592c03384" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0d16042db5dbfa6666911df592543d4a" name="a0d16042db5dbfa6666911df592543d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d16042db5dbfa6666911df592543d4a">&#9670;&#160;</a></span>format_utc_offset_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(<a class="el" href="structdetail_1_1has__member__data__tm__gmtoff.html">has_member_data_tm_gmtoff</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void format_utc_offset_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a0d16042db5dbfa6666911df592543d4a_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a0d16042db5dbfa6666911df592543d4a_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a0d16042db5dbfa6666911df592543d4a_icgraph" id="aclassdetail_1_1tm__writer_a0d16042db5dbfa6666911df592543d4a_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,344,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#af5f862e84ddd9b6b52799c4cc542f5f6" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0d16042db5dbfa6666911df592543d4a" name="a0d16042db5dbfa6666911df592543d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d16042db5dbfa6666911df592543d4a">&#9670;&#160;</a></span>format_utc_offset_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!<a class="el" href="structdetail_1_1has__member__data__tm__gmtoff.html">has_member_data_tm_gmtoff</a>&lt; <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &gt;::value)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void format_utc_offset_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8464e885c43faeddad9f7ce2e93ed71f" name="a8464e885c43faeddad9f7ce2e93ed71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8464e885c43faeddad9f7ce2e93ed71f">&#9670;&#160;</a></span>iso_week_num()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto iso_week_num </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tm_yday</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tm_wday</em></span>&#160;) const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a8464e885c43faeddad9f7ce2e93ed71f_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a8464e885c43faeddad9f7ce2e93ed71f_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a8464e885c43faeddad9f7ce2e93ed71f_icgraph" id="aclassdetail_1_1tm__writer_a8464e885c43faeddad9f7ce2e93ed71f_icgraph">
+<area shape="rect" title=" " alt="" coords="222,63,330,89"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9c54a248c70fc475ade1a75d43f56c16" title=" " alt="" coords="5,5,174,64"/>
+<area shape="poly" title=" " alt="" coords="206,63,174,56,175,51,207,58"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aded27b51cab2ebb577b2337b00659af0" title=" " alt="" coords="14,88,165,147"/>
+<area shape="poly" title=" " alt="" coords="207,94,166,103,164,98,206,89"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2ae4e94b39a4e8a5534f17d3d99f6e44" name="a2ae4e94b39a4e8a5534f17d3d99f6e44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae4e94b39a4e8a5534f17d3d99f6e44">&#9670;&#160;</a></span>iso_year_weeks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto iso_year_weeks </td>
+          <td>(</td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>curr_year</em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a2ae4e94b39a4e8a5534f17d3d99f6e44_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a2ae4e94b39a4e8a5534f17d3d99f6e44_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a2ae4e94b39a4e8a5534f17d3d99f6e44_icgraph" id="aclassdetail_1_1tm__writer_a2ae4e94b39a4e8a5534f17d3d99f6e44_icgraph">
+<area shape="rect" title=" " alt="" coords="222,63,337,89"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9c54a248c70fc475ade1a75d43f56c16" title=" " alt="" coords="5,5,174,64"/>
+<area shape="poly" title=" " alt="" coords="206,63,174,56,175,50,207,58"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aded27b51cab2ebb577b2337b00659af0" title=" " alt="" coords="14,88,165,147"/>
+<area shape="poly" title=" " alt="" coords="207,94,166,103,165,98,206,89"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3f7aacce265226c5965e6081c4799336" name="a3f7aacce265226c5965e6081c4799336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7aacce265226c5965e6081c4799336">&#9670;&#160;</a></span>on_12_hour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_12_hour </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acac60187a1bae85bc87379c974bc6e45" name="acac60187a1bae85bc87379c974bc6e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac60187a1bae85bc87379c974bc6e45">&#9670;&#160;</a></span>on_12_hour_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_12_hour_time </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea488566e3e4ca46319ef5f5151755a0" name="aea488566e3e4ca46319ef5f5151755a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea488566e3e4ca46319ef5f5151755a0">&#9670;&#160;</a></span>on_24_hour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_24_hour </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a36b23ef9bc29633a52e995ea2dd23a" name="a1a36b23ef9bc29633a52e995ea2dd23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a36b23ef9bc29633a52e995ea2dd23a">&#9670;&#160;</a></span>on_24_hour_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_24_hour_time </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a1a36b23ef9bc29633a52e995ea2dd23a_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a1a36b23ef9bc29633a52e995ea2dd23a_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a1a36b23ef9bc29633a52e995ea2dd23a_icgraph" id="aclassdetail_1_1tm__writer_a1a36b23ef9bc29633a52e995ea2dd23a_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,311,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a94c937acaca8bfa7b3d319d1bd237ef9" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7ab83f6e8d7164ea844fb37cdfc6587c" name="a7ab83f6e8d7164ea844fb37cdfc6587c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ab83f6e8d7164ea844fb37cdfc6587c">&#9670;&#160;</a></span>on_abbr_month()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_abbr_month </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a7ab83f6e8d7164ea844fb37cdfc6587c_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a7ab83f6e8d7164ea844fb37cdfc6587c_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a7ab83f6e8d7164ea844fb37cdfc6587c_icgraph" id="aclassdetail_1_1tm__writer_a7ab83f6e8d7164ea844fb37cdfc6587c_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,301,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a14628e25b1511902b6935f2fc7946ec8" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9ce547e644b499f05adacf0744ac083b" name="a9ce547e644b499f05adacf0744ac083b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ce547e644b499f05adacf0744ac083b">&#9670;&#160;</a></span>on_abbr_weekday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_abbr_weekday </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a9ce547e644b499f05adacf0744ac083b_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a9ce547e644b499f05adacf0744ac083b_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a9ce547e644b499f05adacf0744ac083b_icgraph" id="aclassdetail_1_1tm__writer_a9ce547e644b499f05adacf0744ac083b_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,317,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a14628e25b1511902b6935f2fc7946ec8" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f690e3b9e7e188c9bdbb95e37527528" name="a6f690e3b9e7e188c9bdbb95e37527528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f690e3b9e7e188c9bdbb95e37527528">&#9670;&#160;</a></span>on_am_pm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_am_pm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a6f690e3b9e7e188c9bdbb95e37527528_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a6f690e3b9e7e188c9bdbb95e37527528_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a6f690e3b9e7e188c9bdbb95e37527528_icgraph" id="aclassdetail_1_1tm__writer_a6f690e3b9e7e188c9bdbb95e37527528_icgraph">
+<area shape="rect" title=" " alt="" coords="400,21,485,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="212,5,352,64"/>
+<area shape="poly" title=" " alt="" coords="384,37,352,37,352,32,384,32"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="5,13,164,56"/>
+<area shape="poly" title=" " alt="" coords="196,37,164,37,164,32,196,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="add5cace4ce043e2c76a4eb59ddce4999" name="add5cace4ce043e2c76a4eb59ddce4999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add5cace4ce043e2c76a4eb59ddce4999">&#9670;&#160;</a></span>on_century()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_century </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14628e25b1511902b6935f2fc7946ec8" name="a14628e25b1511902b6935f2fc7946ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14628e25b1511902b6935f2fc7946ec8">&#9670;&#160;</a></span>on_datetime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_datetime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada5f2a4171635377991f51ecebd16735" name="ada5f2a4171635377991f51ecebd16735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada5f2a4171635377991f51ecebd16735">&#9670;&#160;</a></span>on_day_of_month()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_day_of_month </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_ada5f2a4171635377991f51ecebd16735_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_ada5f2a4171635377991f51ecebd16735_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_ada5f2a4171635377991f51ecebd16735_icgraph" id="aclassdetail_1_1tm__writer_ada5f2a4171635377991f51ecebd16735_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,315,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a14628e25b1511902b6935f2fc7946ec8" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a17b2978b5fa77838cc6b438218ad73" name="a9a17b2978b5fa77838cc6b438218ad73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a17b2978b5fa77838cc6b438218ad73">&#9670;&#160;</a></span>on_day_of_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_day_of_year </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe29367b0aae3c833a25bcc0a10bad83" name="afe29367b0aae3c833a25bcc0a10bad83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe29367b0aae3c833a25bcc0a10bad83">&#9670;&#160;</a></span>on_dec0_week_of_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_dec0_week_of_year </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8162cb78ab3aabd5ba9e040a65eac3f2" name="a8162cb78ab3aabd5ba9e040a65eac3f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8162cb78ab3aabd5ba9e040a65eac3f2">&#9670;&#160;</a></span>on_dec0_weekday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_dec0_weekday </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d26ae8243223caa192ea3d767e52461" name="a8d26ae8243223caa192ea3d767e52461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d26ae8243223caa192ea3d767e52461">&#9670;&#160;</a></span>on_dec1_week_of_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_dec1_week_of_year </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a679edfa7428fc381ed0783a964e6dd48" name="a679edfa7428fc381ed0783a964e6dd48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679edfa7428fc381ed0783a964e6dd48">&#9670;&#160;</a></span>on_dec1_weekday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_dec1_weekday </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ea3c0f4bc061e5beffdba26cf733991" name="a6ea3c0f4bc061e5beffdba26cf733991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea3c0f4bc061e5beffdba26cf733991">&#9670;&#160;</a></span>on_dec_month()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_dec_month </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a426efbda8fcbda88cf75c76685700307" name="a426efbda8fcbda88cf75c76685700307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a426efbda8fcbda88cf75c76685700307">&#9670;&#160;</a></span>on_duration_unit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_duration_unit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc3133bb75d16e1080b2c1086eea387c" name="abc3133bb75d16e1080b2c1086eea387c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3133bb75d16e1080b2c1086eea387c">&#9670;&#160;</a></span>on_duration_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_duration_value </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76f9931915777185fc9edc95f5b8a26a" name="a76f9931915777185fc9edc95f5b8a26a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76f9931915777185fc9edc95f5b8a26a">&#9670;&#160;</a></span>on_full_month()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_full_month </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeea3f5bfd23611718eb4f10150db3380" name="aeea3f5bfd23611718eb4f10150db3380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeea3f5bfd23611718eb4f10150db3380">&#9670;&#160;</a></span>on_full_weekday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_full_weekday </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea707828446626d840d3cb1e6187179e" name="aea707828446626d840d3cb1e6187179e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea707828446626d840d3cb1e6187179e">&#9670;&#160;</a></span>on_iso_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_iso_date </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94c937acaca8bfa7b3d319d1bd237ef9" name="a94c937acaca8bfa7b3d319d1bd237ef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c937acaca8bfa7b3d319d1bd237ef9">&#9670;&#160;</a></span>on_iso_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_iso_time </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a94c937acaca8bfa7b3d319d1bd237ef9_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a94c937acaca8bfa7b3d319d1bd237ef9_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a94c937acaca8bfa7b3d319d1bd237ef9_icgraph" id="aclassdetail_1_1tm__writer_a94c937acaca8bfa7b3d319d1bd237ef9_icgraph">
+<area shape="rect" title=" " alt="" coords="191,63,282,89"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a14628e25b1511902b6935f2fc7946ec8" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,63,142,55,144,50,176,58"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a45a21a4ea27d2569cb470f16f66b3438" title=" " alt="" coords="5,88,143,147"/>
+<area shape="poly" title=" " alt="" coords="176,94,144,102,142,97,175,89"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4ea6a6b5e3f3a59354190dcf47ef741e" name="a4ea6a6b5e3f3a59354190dcf47ef741e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea6a6b5e3f3a59354190dcf47ef741e">&#9670;&#160;</a></span>on_iso_week_based_short_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_iso_week_based_short_year </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4106057d565e8a9da42083855768404" name="ae4106057d565e8a9da42083855768404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4106057d565e8a9da42083855768404">&#9670;&#160;</a></span>on_iso_week_based_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_iso_week_based_year </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a435a0f2ffedd5823ca243f81485dfe4d" name="a435a0f2ffedd5823ca243f81485dfe4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a435a0f2ffedd5823ca243f81485dfe4d">&#9670;&#160;</a></span>on_iso_week_of_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_iso_week_of_year </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f8e30a0b277c6e44457abd24466301a" name="a3f8e30a0b277c6e44457abd24466301a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8e30a0b277c6e44457abd24466301a">&#9670;&#160;</a></span>on_loc_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_loc_date </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45a21a4ea27d2569cb470f16f66b3438" name="a45a21a4ea27d2569cb470f16f66b3438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45a21a4ea27d2569cb470f16f66b3438">&#9670;&#160;</a></span>on_loc_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_loc_time </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fa9e34decab3a88e4c9543effa54e31" name="a5fa9e34decab3a88e4c9543effa54e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa9e34decab3a88e4c9543effa54e31">&#9670;&#160;</a></span>on_minute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_minute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae50333b178a2570837bfa9183f2080e9" name="ae50333b178a2570837bfa9183f2080e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50333b178a2570837bfa9183f2080e9">&#9670;&#160;</a></span>on_offset_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_offset_year </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afcb9a0eff4398874cbff0b5466c5f56c" name="afcb9a0eff4398874cbff0b5466c5f56c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb9a0eff4398874cbff0b5466c5f56c">&#9670;&#160;</a></span>on_second()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_second </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_afcb9a0eff4398874cbff0b5466c5f56c_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_afcb9a0eff4398874cbff0b5466c5f56c_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_afcb9a0eff4398874cbff0b5466c5f56c_icgraph" id="aclassdetail_1_1tm__writer_afcb9a0eff4398874cbff0b5466c5f56c_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,275,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a94c937acaca8bfa7b3d319d1bd237ef9" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae7e779c516d46cf7d5ef69aa435fc663" name="ae7e779c516d46cf7d5ef69aa435fc663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7e779c516d46cf7d5ef69aa435fc663">&#9670;&#160;</a></span>on_short_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_short_year </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1db3c9cd510af6fb4e112e0250d34afb" name="a1db3c9cd510af6fb4e112e0250d34afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db3c9cd510af6fb4e112e0250d34afb">&#9670;&#160;</a></span>on_text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> void on_text </td>
+          <td>(</td>
+          <td class="paramtype">const Char *</td>          <td class="paramname"><span class="paramname"><em>begin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Char *</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30e9e5df6250f1be1a01c27592c03384" name="a30e9e5df6250f1be1a01c27592c03384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e9e5df6250f1be1a01c27592c03384">&#9670;&#160;</a></span>on_tz_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_tz_name </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe51a54407933aca94f3f33297ea2d93" name="afe51a54407933aca94f3f33297ea2d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe51a54407933aca94f3f33297ea2d93">&#9670;&#160;</a></span>on_us_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_us_date </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_afe51a54407933aca94f3f33297ea2d93_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_afe51a54407933aca94f3f33297ea2d93_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_afe51a54407933aca94f3f33297ea2d93_icgraph" id="aclassdetail_1_1tm__writer_afe51a54407933aca94f3f33297ea2d93_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,279,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a3f8e30a0b277c6e44457abd24466301a" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af5f862e84ddd9b6b52799c4cc542f5f6" name="af5f862e84ddd9b6b52799c4cc542f5f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5f862e84ddd9b6b52799c4cc542f5f6">&#9670;&#160;</a></span>on_utc_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_utc_offset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfe084fc2709498497e33a982d583ecb" name="abfe084fc2709498497e33a982d583ecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe084fc2709498497e33a982d583ecb">&#9670;&#160;</a></span>on_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_year </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_abfe084fc2709498497e33a982d583ecb_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_abfe084fc2709498497e33a982d583ecb_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_abfe084fc2709498497e33a982d583ecb_icgraph" id="aclassdetail_1_1tm__writer_abfe084fc2709498497e33a982d583ecb_icgraph">
+<area shape="rect" title=" " alt="" coords="191,21,258,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a14628e25b1511902b6935f2fc7946ec8" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="175,37,143,37,143,32,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b580a1854fa23eab237e8fa121a87fa" name="a4b580a1854fa23eab237e8fa121a87fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b580a1854fa23eab237e8fa121a87fa">&#9670;&#160;</a></span>out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto out </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; OutputIt </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85f96a1e269efb1581b4bed4e874ff57" name="a85f96a1e269efb1581b4bed4e874ff57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f96a1e269efb1581b4bed4e874ff57">&#9670;&#160;</a></span>split_year_lower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto split_year_lower </td>
+          <td>(</td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>year</em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a85f96a1e269efb1581b4bed4e874ff57_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a85f96a1e269efb1581b4bed4e874ff57_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a85f96a1e269efb1581b4bed4e874ff57_icgraph" id="aclassdetail_1_1tm__writer_a85f96a1e269efb1581b4bed4e874ff57_icgraph">
+<area shape="rect" title=" " alt="" coords="213,161,328,188"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a4ea6a6b5e3f3a59354190dcf47ef741e" title=" " alt="" coords="5,5,165,80"/>
+<area shape="poly" title=" " alt="" coords="239,153,163,94,146,83,149,78,166,90,243,149"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae50333b178a2570837bfa9183f2080e9" title=" " alt="" coords="16,104,154,163"/>
+<area shape="poly" title=" " alt="" coords="197,161,153,151,155,146,198,156"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae7e779c516d46cf7d5ef69aa435fc663" title=" " alt="" coords="16,187,154,245"/>
+<area shape="poly" title=" " alt="" coords="198,193,155,203,153,198,197,188"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afe51a54407933aca94f3f33297ea2d93" title=" " alt="" coords="16,269,154,328"/>
+<area shape="poly" title=" " alt="" coords="244,201,166,260,147,271,144,267,163,255,240,196"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a86dab1599005ff1f4e16d9fb6d440cbd" name="a86dab1599005ff1f4e16d9fb6d440cbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86dab1599005ff1f4e16d9fb6d440cbd">&#9670;&#160;</a></span>tm_hour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_hour </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a86dab1599005ff1f4e16d9fb6d440cbd_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a86dab1599005ff1f4e16d9fb6d440cbd_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a86dab1599005ff1f4e16d9fb6d440cbd_icgraph" id="aclassdetail_1_1tm__writer_a86dab1599005ff1f4e16d9fb6d440cbd_icgraph">
+<area shape="rect" title=" " alt="" coords="400,145,468,172"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aea488566e3e4ca46319ef5f5151755a0" title=" " alt="" coords="213,5,350,64"/>
+<area shape="poly" title=" " alt="" coords="409,135,382,107,350,78,334,67,338,62,354,74,386,103,413,131"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a1a36b23ef9bc29633a52e995ea2dd23a" title=" " alt="" coords="212,88,352,147"/>
+<area shape="poly" title=" " alt="" coords="384,148,352,139,353,134,386,143"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a6f690e3b9e7e188c9bdbb95e37527528" title=" " alt="" coords="213,171,350,229"/>
+<area shape="poly" title=" " alt="" coords="386,174,351,184,350,179,384,169"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a76660c701b4c16d2c110a83fbeff7a68" title=" " alt="" coords="213,253,350,312"/>
+<area shape="poly" title=" " alt="" coords="413,186,386,215,354,243,338,255,334,251,350,239,382,211,409,182"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#aea488566e3e4ca46319ef5f5151755a0" title=" " alt="" coords="5,13,164,56"/>
+<area shape="poly" title=" " alt="" coords="198,37,164,37,164,32,198,32"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a6f690e3b9e7e188c9bdbb95e37527528" title=" " alt="" coords="5,179,164,221"/>
+<area shape="poly" title=" " alt="" coords="198,203,164,203,164,197,198,197"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a76660c701b4c16d2c110a83fbeff7a68" name="a76660c701b4c16d2c110a83fbeff7a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76660c701b4c16d2c110a83fbeff7a68">&#9670;&#160;</a></span>tm_hour12()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_hour12 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a76660c701b4c16d2c110a83fbeff7a68_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a76660c701b4c16d2c110a83fbeff7a68_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a76660c701b4c16d2c110a83fbeff7a68_icgraph" id="aclassdetail_1_1tm__writer_a76660c701b4c16d2c110a83fbeff7a68_icgraph">
+<area shape="rect" title=" " alt="" coords="400,63,482,89"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a3f7aacce265226c5965e6081c4799336" title=" " alt="" coords="213,5,350,64"/>
+<area shape="poly" title=" " alt="" coords="384,64,350,55,351,50,386,59"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="212,88,352,147"/>
+<area shape="poly" title=" " alt="" coords="385,93,353,102,352,96,384,88"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a3f7aacce265226c5965e6081c4799336" title=" " alt="" coords="5,13,164,56"/>
+<area shape="poly" title=" " alt="" coords="198,37,164,37,164,32,198,32"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="5,96,164,139"/>
+<area shape="poly" title=" " alt="" coords="196,120,164,120,164,115,196,115"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c54a248c70fc475ade1a75d43f56c16" name="a9c54a248c70fc475ade1a75d43f56c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c54a248c70fc475ade1a75d43f56c16">&#9670;&#160;</a></span>tm_iso_week_of_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_iso_week_of_year </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a9c54a248c70fc475ade1a75d43f56c16_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a9c54a248c70fc475ade1a75d43f56c16_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a9c54a248c70fc475ade1a75d43f56c16_icgraph" id="aclassdetail_1_1tm__writer_a9c54a248c70fc475ade1a75d43f56c16_icgraph">
+<area shape="rect" title=" " alt="" coords="221,21,369,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a435a0f2ffedd5823ca243f81485dfe4d" title=" " alt="" coords="5,5,173,64"/>
+<area shape="poly" title=" " alt="" coords="205,37,173,37,173,32,205,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aded27b51cab2ebb577b2337b00659af0" name="aded27b51cab2ebb577b2337b00659af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aded27b51cab2ebb577b2337b00659af0">&#9670;&#160;</a></span>tm_iso_week_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_iso_week_year </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; long long </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_aded27b51cab2ebb577b2337b00659af0_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_aded27b51cab2ebb577b2337b00659af0_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_aded27b51cab2ebb577b2337b00659af0_icgraph" id="aclassdetail_1_1tm__writer_aded27b51cab2ebb577b2337b00659af0_icgraph">
+<area shape="rect" title=" " alt="" coords="245,75,375,101"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a4ea6a6b5e3f3a59354190dcf47ef741e" title=" " alt="" coords="21,5,181,80"/>
+<area shape="poly" title=" " alt="" coords="229,73,181,63,182,57,231,68"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae4106057d565e8a9da42083855768404" title=" " alt="" coords="5,104,197,163"/>
+<area shape="poly" title=" " alt="" coords="231,108,198,115,197,110,229,103"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93c10d21af1896b400b67f48007d6a2c" name="a93c10d21af1896b400b67f48007d6a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c10d21af1896b400b67f48007d6a2c">&#9670;&#160;</a></span>tm_mday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_mday </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a93c10d21af1896b400b67f48007d6a2c_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a93c10d21af1896b400b67f48007d6a2c_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a93c10d21af1896b400b67f48007d6a2c_icgraph" id="aclassdetail_1_1tm__writer_a93c10d21af1896b400b67f48007d6a2c_icgraph">
+<area shape="rect" title=" " alt="" coords="198,104,273,131"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ada5f2a4171635377991f51ecebd16735" title=" " alt="" coords="5,5,150,64"/>
+<area shape="poly" title=" " alt="" coords="194,99,133,67,136,62,196,94"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aea707828446626d840d3cb1e6187179e" title=" " alt="" coords="9,88,146,147"/>
+<area shape="poly" title=" " alt="" coords="182,120,146,120,146,115,182,115"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afe51a54407933aca94f3f33297ea2d93" title=" " alt="" coords="9,171,146,229"/>
+<area shape="poly" title=" " alt="" coords="196,141,136,173,133,168,194,136"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a34f40cf27851452a91decfaaac531c1f" name="a34f40cf27851452a91decfaaac531c1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f40cf27851452a91decfaaac531c1f">&#9670;&#160;</a></span>tm_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_min </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a34f40cf27851452a91decfaaac531c1f_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a34f40cf27851452a91decfaaac531c1f_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a34f40cf27851452a91decfaaac531c1f_icgraph" id="aclassdetail_1_1tm__writer_a34f40cf27851452a91decfaaac531c1f_icgraph">
+<area shape="rect" title=" " alt="" coords="400,104,464,131"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="212,5,352,64"/>
+<area shape="poly" title=" " alt="" coords="392,99,335,67,338,62,395,94"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a1a36b23ef9bc29633a52e995ea2dd23a" title=" " alt="" coords="212,88,352,147"/>
+<area shape="poly" title=" " alt="" coords="384,120,352,120,352,115,384,115"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a5fa9e34decab3a88e4c9543effa54e31" title=" " alt="" coords="213,171,350,229"/>
+<area shape="poly" title=" " alt="" coords="395,141,338,173,335,168,392,136"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="5,13,164,56"/>
+<area shape="poly" title=" " alt="" coords="196,37,164,37,164,32,196,32"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a5fa9e34decab3a88e4c9543effa54e31" title=" " alt="" coords="5,179,164,221"/>
+<area shape="poly" title=" " alt="" coords="198,203,164,203,164,197,198,197"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06fb7fc31af69c8eddc995b90cf2a459" name="a06fb7fc31af69c8eddc995b90cf2a459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fb7fc31af69c8eddc995b90cf2a459">&#9670;&#160;</a></span>tm_mon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_mon </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a06fb7fc31af69c8eddc995b90cf2a459_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a06fb7fc31af69c8eddc995b90cf2a459_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a06fb7fc31af69c8eddc995b90cf2a459_icgraph" id="aclassdetail_1_1tm__writer_a06fb7fc31af69c8eddc995b90cf2a459_icgraph">
+<area shape="rect" title=" " alt="" coords="191,187,259,213"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a7ab83f6e8d7164ea844fb37cdfc6587c" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="208,174,180,126,141,78,127,67,131,63,145,74,184,123,213,171"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a6ea3c0f4bc061e5beffdba26cf733991" title=" " alt="" coords="5,88,143,147"/>
+<area shape="poly" title=" " alt="" coords="184,181,127,149,130,145,187,177"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a76f9931915777185fc9edc95f5b8a26a" title=" " alt="" coords="5,171,143,229"/>
+<area shape="poly" title=" " alt="" coords="175,203,143,203,143,197,175,197"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aea707828446626d840d3cb1e6187179e" title=" " alt="" coords="5,253,143,312"/>
+<area shape="poly" title=" " alt="" coords="187,223,130,255,127,251,184,219"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afe51a54407933aca94f3f33297ea2d93" title=" " alt="" coords="5,336,143,395"/>
+<area shape="poly" title=" " alt="" coords="213,229,184,277,145,326,131,337,127,333,141,322,180,274,208,226"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a20daa134a690045326c9382b809bd363" name="a20daa134a690045326c9382b809bd363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20daa134a690045326c9382b809bd363">&#9670;&#160;</a></span>tm_sec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_sec </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a20daa134a690045326c9382b809bd363_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a20daa134a690045326c9382b809bd363_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a20daa134a690045326c9382b809bd363_icgraph" id="aclassdetail_1_1tm__writer_a20daa134a690045326c9382b809bd363_icgraph">
+<area shape="rect" title=" " alt="" coords="606,63,671,89"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="418,5,558,64"/>
+<area shape="poly" title=" " alt="" coords="591,66,558,57,559,51,592,61"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afcb9a0eff4398874cbff0b5466c5f56c" title=" " alt="" coords="420,88,557,147"/>
+<area shape="poly" title=" " alt="" coords="592,91,558,101,557,96,591,86"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#acac60187a1bae85bc87379c974bc6e45" title=" " alt="" coords="212,13,370,56"/>
+<area shape="poly" title=" " alt="" coords="402,37,370,37,370,32,402,32"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#afcb9a0eff4398874cbff0b5466c5f56c" title=" " alt="" coords="212,96,370,139"/>
+<area shape="poly" title=" " alt="" coords="404,120,371,120,371,115,404,115"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a94c937acaca8bfa7b3d319d1bd237ef9" title=" " alt="" coords="5,96,164,139"/>
+<area shape="poly" title=" " alt="" coords="196,120,164,120,164,115,196,115"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad7e42475cc175953a5e1bebad8bd9388" name="ad7e42475cc175953a5e1bebad8bd9388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e42475cc175953a5e1bebad8bd9388">&#9670;&#160;</a></span>tm_wday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_wday </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_ad7e42475cc175953a5e1bebad8bd9388_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_ad7e42475cc175953a5e1bebad8bd9388_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_ad7e42475cc175953a5e1bebad8bd9388_icgraph" id="aclassdetail_1_1tm__writer_ad7e42475cc175953a5e1bebad8bd9388_icgraph">
+<area shape="rect" title=" " alt="" coords="232,311,306,337"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9ce547e644b499f05adacf0744ac083b" title=" " alt="" coords="21,5,168,64"/>
+<area shape="poly" title=" " alt="" coords="262,296,255,250,241,192,217,132,201,103,182,78,167,65,170,61,186,74,206,100,222,129,246,190,261,249,268,295"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afe29367b0aae3c833a25bcc0a10bad83" title=" " alt="" coords="5,88,184,147"/>
+<area shape="poly" title=" " alt="" coords="257,297,230,229,209,193,182,161,168,149,171,145,186,157,213,190,235,227,262,295"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a8162cb78ab3aabd5ba9e040a65eac3f2" title=" " alt="" coords="20,171,169,229"/>
+<area shape="poly" title=" " alt="" coords="244,301,216,272,182,243,164,232,167,228,185,239,220,268,248,297"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a8d26ae8243223caa192ea3d767e52461" title=" " alt="" coords="5,253,184,312"/>
+<area shape="poly" title=" " alt="" coords="216,314,183,307,185,301,217,309"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a679edfa7428fc381ed0783a964e6dd48" title=" " alt="" coords="20,336,169,395"/>
+<area shape="poly" title=" " alt="" coords="217,339,170,350,169,345,216,334"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aeea3f5bfd23611718eb4f10150db3380" title=" " alt="" coords="25,419,164,477"/>
+<area shape="poly" title=" " alt="" coords="248,351,220,380,185,409,166,421,163,416,182,405,216,376,244,347"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9c54a248c70fc475ade1a75d43f56c16" title=" " alt="" coords="10,501,179,560"/>
+<area shape="poly" title=" " alt="" coords="262,353,235,421,213,458,186,491,171,503,168,499,182,487,209,455,230,419,257,351"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aded27b51cab2ebb577b2337b00659af0" title=" " alt="" coords="19,584,170,643"/>
+<area shape="poly" title=" " alt="" coords="268,353,261,399,246,458,222,519,206,548,186,574,172,586,168,582,182,570,201,545,217,516,241,456,255,398,262,352"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acea64b41991c428ee952551e7d8553c2" name="acea64b41991c428ee952551e7d8553c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea64b41991c428ee952551e7d8553c2">&#9670;&#160;</a></span>tm_yday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_yday </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_acea64b41991c428ee952551e7d8553c2_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_acea64b41991c428ee952551e7d8553c2_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_acea64b41991c428ee952551e7d8553c2_icgraph" id="aclassdetail_1_1tm__writer_acea64b41991c428ee952551e7d8553c2_icgraph">
+<area shape="rect" title=" " alt="" coords="232,187,303,213"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9a17b2978b5fa77838cc6b438218ad73" title=" " alt="" coords="26,5,163,64"/>
+<area shape="poly" title=" " alt="" coords="251,174,223,126,204,100,182,78,162,64,165,60,185,74,208,97,227,123,256,171"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afe29367b0aae3c833a25bcc0a10bad83" title=" " alt="" coords="5,88,184,147"/>
+<area shape="poly" title=" " alt="" coords="224,182,182,161,159,150,161,145,185,156,226,177"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a8d26ae8243223caa192ea3d767e52461" title=" " alt="" coords="5,171,184,229"/>
+<area shape="poly" title=" " alt="" coords="216,203,184,203,184,197,216,197"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9c54a248c70fc475ade1a75d43f56c16" title=" " alt="" coords="10,253,179,312"/>
+<area shape="poly" title=" " alt="" coords="226,223,185,244,161,255,159,250,182,239,224,218"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aded27b51cab2ebb577b2337b00659af0" title=" " alt="" coords="19,336,170,395"/>
+<area shape="poly" title=" " alt="" coords="256,229,227,277,208,303,185,326,169,338,166,333,182,322,204,300,223,274,251,226"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a86e5b4d48f6ce80cecbe99ba772c1c3d" name="a86e5b4d48f6ce80cecbe99ba772c1c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e5b4d48f6ce80cecbe99ba772c1c3d">&#9670;&#160;</a></span>tm_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto tm_year </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; long long </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a86e5b4d48f6ce80cecbe99ba772c1c3d_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a86e5b4d48f6ce80cecbe99ba772c1c3d_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a86e5b4d48f6ce80cecbe99ba772c1c3d_icgraph" id="aclassdetail_1_1tm__writer_a86e5b4d48f6ce80cecbe99ba772c1c3d_icgraph">
+<area shape="rect" title=" " alt="" coords="222,311,290,337"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#add5cace4ce043e2c76a4eb59ddce4999" title=" " alt="" coords="21,5,158,64"/>
+<area shape="poly" title=" " alt="" coords="250,296,243,250,230,192,206,132,191,104,172,78,157,64,160,60,176,74,195,101,211,130,235,191,248,249,255,295"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aea707828446626d840d3cb1e6187179e" title=" " alt="" coords="21,88,158,147"/>
+<area shape="poly" title=" " alt="" coords="244,297,218,230,198,193,172,161,157,148,160,144,176,157,202,190,223,227,249,295"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae50333b178a2570837bfa9183f2080e9" title=" " alt="" coords="21,171,158,229"/>
+<area shape="poly" title=" " alt="" coords="232,300,205,272,172,243,154,232,157,228,175,239,208,268,236,297"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae7e779c516d46cf7d5ef69aa435fc663" title=" " alt="" coords="21,253,158,312"/>
+<area shape="poly" title=" " alt="" coords="206,314,158,302,159,297,207,309"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afe51a54407933aca94f3f33297ea2d93" title=" " alt="" coords="21,336,158,395"/>
+<area shape="poly" title=" " alt="" coords="207,339,159,351,158,346,206,334"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#abfe084fc2709498497e33a982d583ecb" title=" " alt="" coords="21,419,158,477"/>
+<area shape="poly" title=" " alt="" coords="236,351,208,380,175,409,157,420,154,416,172,405,205,376,232,348"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9c54a248c70fc475ade1a75d43f56c16" title=" " alt="" coords="5,501,174,560"/>
+<area shape="poly" title=" " alt="" coords="249,353,223,421,202,458,176,491,161,503,158,499,172,487,198,455,218,418,244,351"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aded27b51cab2ebb577b2337b00659af0" title=" " alt="" coords="14,584,165,643"/>
+<area shape="poly" title=" " alt="" coords="255,353,248,399,235,457,211,518,195,547,176,574,163,586,159,582,172,570,191,544,206,516,230,456,243,398,250,352"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af43ac321b98c0c61dcdeaec3171a3311" name="af43ac321b98c0c61dcdeaec3171a3311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af43ac321b98c0c61dcdeaec3171a3311">&#9670;&#160;</a></span>write1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write1 </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_af43ac321b98c0c61dcdeaec3171a3311_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_af43ac321b98c0c61dcdeaec3171a3311_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_af43ac321b98c0c61dcdeaec3171a3311_icgraph" id="aclassdetail_1_1tm__writer_af43ac321b98c0c61dcdeaec3171a3311_icgraph">
+<area shape="rect" title=" " alt="" coords="203,104,259,131"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9a17b2978b5fa77838cc6b438218ad73" title=" " alt="" coords="11,5,149,64"/>
+<area shape="poly" title=" " alt="" coords="190,99,133,67,136,62,193,94"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a8162cb78ab3aabd5ba9e040a65eac3f2" title=" " alt="" coords="5,88,155,147"/>
+<area shape="poly" title=" " alt="" coords="187,120,155,120,155,115,187,115"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a679edfa7428fc381ed0783a964e6dd48" title=" " alt="" coords="5,171,155,229"/>
+<area shape="poly" title=" " alt="" coords="193,141,136,173,133,168,190,136"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c21431b9665821910a1d2f8a6b74551" name="a9c21431b9665821910a1d2f8a6b74551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c21431b9665821910a1d2f8a6b74551">&#9670;&#160;</a></span>write2() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write2 </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a9c21431b9665821910a1d2f8a6b74551_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a9c21431b9665821910a1d2f8a6b74551_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a9c21431b9665821910a1d2f8a6b74551_icgraph" id="aclassdetail_1_1tm__writer_a9c21431b9665821910a1d2f8a6b74551_icgraph">
+<area shape="rect" title=" " alt="" coords="644,641,701,668"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a3f7aacce265226c5965e6081c4799336" title=" " alt="" coords="438,5,576,64"/>
+<area shape="poly" title=" " alt="" coords="668,626,665,509,655,346,646,262,633,185,616,122,594,78,574,59,578,56,598,74,621,120,638,184,651,261,660,345,671,508,674,626"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aea488566e3e4ca46319ef5f5151755a0" title=" " alt="" coords="438,88,576,147"/>
+<area shape="poly" title=" " alt="" coords="668,626,663,524,650,385,641,315,628,251,613,197,594,160,574,142,578,138,598,157,618,195,634,249,646,314,656,385,668,523,673,626"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a1a36b23ef9bc29633a52e995ea2dd23a" title=" " alt="" coords="437,171,577,229"/>
+<area shape="poly" title=" " alt="" coords="667,626,659,539,646,426,624,316,610,273,594,243,576,226,579,222,598,240,615,271,629,315,651,425,665,539,672,626"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#add5cace4ce043e2c76a4eb59ddce4999" title=" " alt="" coords="438,253,576,312"/>
+<area shape="poly" title=" " alt="" coords="665,627,640,467,620,382,607,349,594,326,575,309,578,305,598,322,612,346,625,380,646,465,671,626"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ada5f2a4171635377991f51ecebd16735" title=" " alt="" coords="435,336,579,395"/>
+<area shape="poly" title=" " alt="" coords="667,627,662,580,650,523,628,462,613,434,594,408,578,394,582,390,598,405,618,431,633,460,655,521,667,579,673,626"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9a17b2978b5fa77838cc6b438218ad73" title=" " alt="" coords="438,419,576,477"/>
+<area shape="poly" title=" " alt="" coords="662,627,639,560,620,524,594,491,574,476,578,471,598,487,624,521,644,558,667,625"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afe29367b0aae3c833a25bcc0a10bad83" title=" " alt="" coords="418,501,596,560"/>
+<area shape="poly" title=" " alt="" coords="650,631,625,602,595,574,577,563,580,558,598,570,629,598,654,627"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a8d26ae8243223caa192ea3d767e52461" title=" " alt="" coords="418,584,596,643"/>
+<area shape="poly" title=" " alt="" coords="629,647,596,638,598,633,630,641"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a6ea3c0f4bc061e5beffdba26cf733991" title=" " alt="" coords="438,667,576,725"/>
+<area shape="poly" title=" " alt="" coords="630,668,577,681,576,676,629,663"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a4ea6a6b5e3f3a59354190dcf47ef741e" title=" " alt="" coords="428,749,587,824"/>
+<area shape="poly" title=" " alt="" coords="654,682,629,711,598,739,582,751,579,747,595,735,625,707,650,678"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a435a0f2ffedd5823ca243f81485dfe4d" title=" " alt="" coords="424,848,591,907"/>
+<area shape="poly" title=" " alt="" coords="669,684,660,718,646,759,626,800,598,838,585,849,581,845,594,834,621,798,641,757,655,716,664,682"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a5fa9e34decab3a88e4c9543effa54e31" title=" " alt="" coords="438,931,576,989"/>
+<area shape="poly" title=" " alt="" coords="673,684,669,733,657,796,635,861,619,892,598,920,578,938,574,934,594,917,614,889,630,859,652,794,663,733,668,684"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae50333b178a2570837bfa9183f2080e9" title=" " alt="" coords="438,1013,576,1072"/>
+<area shape="poly" title=" " alt="" coords="671,684,662,758,647,852,626,942,613,978,598,1003,578,1021,574,1017,594,1000,608,975,621,940,641,851,657,757,666,683"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afcb9a0eff4398874cbff0b5466c5f56c" title=" " alt="" coords="438,1096,576,1155"/>
+<area shape="poly" title=" " alt="" coords="672,684,665,773,652,892,630,1007,616,1053,598,1086,578,1104,575,1100,594,1082,611,1051,625,1006,647,892,660,773,667,683"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae7e779c516d46cf7d5ef69aa435fc663" title=" " alt="" coords="438,1179,576,1237"/>
+<area shape="poly" title=" " alt="" coords="673,683,668,788,657,932,647,1005,634,1072,618,1128,598,1168,578,1187,574,1183,594,1165,613,1127,629,1071,642,1004,651,931,663,788,668,683"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a9523baa665da918526edc8a36f88ccb8" title=" " alt="" coords="438,1261,576,1320"/>
+<area shape="poly" title=" " alt="" coords="674,684,671,804,661,972,652,1058,639,1138,621,1204,598,1251,578,1270,574,1266,594,1248,616,1202,633,1137,646,1058,656,972,666,804,668,683"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a3f7aacce265226c5965e6081c4799336" title=" " alt="" coords="212,13,370,56"/>
+<area shape="poly" title=" " alt="" coords="423,37,371,37,371,32,423,32"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#aea488566e3e4ca46319ef5f5151755a0" title=" " alt="" coords="212,96,370,139"/>
+<area shape="poly" title=" " alt="" coords="423,120,371,120,371,115,423,115"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a5fa9e34decab3a88e4c9543effa54e31" title=" " alt="" coords="212,939,370,981"/>
+<area shape="poly" title=" " alt="" coords="423,963,371,963,371,957,423,957"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#afcb9a0eff4398874cbff0b5466c5f56c" title=" " alt="" coords="212,1104,370,1147"/>
+<area shape="poly" title=" " alt="" coords="423,1128,371,1128,371,1123,423,1123"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a94c937acaca8bfa7b3d319d1bd237ef9" title=" " alt="" coords="5,1104,164,1147"/>
+<area shape="poly" title=" " alt="" coords="196,1128,164,1128,164,1123,196,1123"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c208c29cca477ac9f618147bdd06aae" name="a0c208c29cca477ac9f618147bdd06aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c208c29cca477ac9f618147bdd06aae">&#9670;&#160;</a></span>write2() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write2 </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9523baa665da918526edc8a36f88ccb8" name="a9523baa665da918526edc8a36f88ccb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9523baa665da918526edc8a36f88ccb8">&#9670;&#160;</a></span>write_utc_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_utc_offset </td>
+          <td>(</td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a4ed3bdd2ae5dcb224f0e84141a87179d">numeric_system</a></td>          <td class="paramname"><span class="paramname"><em>ns</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a9523baa665da918526edc8a36f88ccb8_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a9523baa665da918526edc8a36f88ccb8_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a9523baa665da918526edc8a36f88ccb8_icgraph" id="aclassdetail_1_1tm__writer_a9523baa665da918526edc8a36f88ccb8_icgraph">
+<area shape="rect" title=" " alt="" coords="227,21,340,48"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a0d16042db5dbfa6666911df592543d4a" title=" " alt="" coords="5,5,179,64"/>
+<area shape="poly" title=" " alt="" coords="211,37,179,37,179,32,211,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a565aadb4c4de125a4bff9de9a3a79a1f" name="a565aadb4c4de125a4bff9de9a3a79a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565aadb4c4de125a4bff9de9a3a79a1f">&#9670;&#160;</a></span>write_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_year </td>
+          <td>(</td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a565aadb4c4de125a4bff9de9a3a79a1f_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a565aadb4c4de125a4bff9de9a3a79a1f_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a565aadb4c4de125a4bff9de9a3a79a1f_icgraph" id="aclassdetail_1_1tm__writer_a565aadb4c4de125a4bff9de9a3a79a1f_icgraph">
+<area shape="rect" title=" " alt="" coords="245,63,326,89"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#ae4106057d565e8a9da42083855768404" title=" " alt="" coords="5,5,197,64"/>
+<area shape="poly" title=" " alt="" coords="229,66,197,59,198,54,230,61"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#abfe084fc2709498497e33a982d583ecb" title=" " alt="" coords="32,88,170,147"/>
+<area shape="poly" title=" " alt="" coords="230,91,171,104,170,99,229,86"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a81c8e1c5bcc7c5f16f4ebc76838f8c39" name="a81c8e1c5bcc7c5f16f4ebc76838f8c39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c8e1c5bcc7c5f16f4ebc76838f8c39">&#9670;&#160;</a></span>write_year_extended()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_year_extended </td>
+          <td>(</td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#af8b75c966f5e415f5d5de1e747f95153">pad_type</a></td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdetail_1_1tm__writer_a81c8e1c5bcc7c5f16f4ebc76838f8c39_icgraph.png" border="0" usemap="#aclassdetail_1_1tm__writer_a81c8e1c5bcc7c5f16f4ebc76838f8c39_icgraph" alt=""/></div>
+<map name="aclassdetail_1_1tm__writer_a81c8e1c5bcc7c5f16f4ebc76838f8c39_icgraph" id="aclassdetail_1_1tm__writer_a81c8e1c5bcc7c5f16f4ebc76838f8c39_icgraph">
+<area shape="rect" title=" " alt="" coords="191,63,332,89"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#aea707828446626d840d3cb1e6187179e" title=" " alt="" coords="5,5,143,64"/>
+<area shape="poly" title=" " alt="" coords="182,61,142,52,143,47,183,56"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#a565aadb4c4de125a4bff9de9a3a79a1f" title=" " alt="" coords="5,88,143,147"/>
+<area shape="poly" title=" " alt="" coords="183,96,143,105,142,100,182,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a43d964757616b096845a34cf7cc0396d" name="a43d964757616b096845a34cf7cc0396d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43d964757616b096845a34cf7cc0396d">&#9670;&#160;</a></span>days_per_week</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int days_per_week = 7</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe98282ba4cfc5de7cbef8aa0f479181" name="abe98282ba4cfc5de7cbef8aa0f479181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe98282ba4cfc5de7cbef8aa0f479181">&#9670;&#160;</a></span>is_classic_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool is_classic_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb0d0fc6806c569e9f2c08ddc4a23fd9" name="adb0d0fc6806c569e9f2c08ddc4a23fd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb0d0fc6806c569e9f2c08ddc4a23fd9">&#9670;&#160;</a></span>loc_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::locale&amp; loc_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4af409b276d6d28b84bc1d8b2aedb8be" name="a4af409b276d6d28b84bc1d8b2aedb8be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af409b276d6d28b84bc1d8b2aedb8be">&#9670;&#160;</a></span>out_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OutputIt out_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6049126e5abcb3a9d364fe4316c87bf6" name="a6049126e5abcb3a9d364fe4316c87bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6049126e5abcb3a9d364fe4316c87bf6">&#9670;&#160;</a></span>subsecs_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Duration* subsecs_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae43044cccb283c54be2deae70f9188dc" name="ae43044cccb283c54be2deae70f9188dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae43044cccb283c54be2deae70f9188dc">&#9670;&#160;</a></span>tm_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputIt, typename Char, typename Duration = std::chrono::seconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::tm&amp; tm_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="bundled_2chrono_8h_source.html">bundled/chrono.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacedetail.html">detail</a></li><li class="navelem"><a class="el" href="classdetail_1_1tm__writer.html">tm_writer</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

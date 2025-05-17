@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Chat类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_chat.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_chat-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Chat类 参考<span class="mlabels"><span class="mlabel final">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>聊天类，与硅基流动 API 交互，支持流式响应  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_chat_8h_source.html">Chat.h</a>&gt;</code></p>
+<div class="dynheader">
+类 Chat 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat__inherit__graph.png" border="0" usemap="#a_chat_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_chat_inherit__map" id="a_chat_inherit__map">
+<area shape="rect" title="聊天类，与硅基流动 API 交互，支持流式响应" alt="" coords="15,80,65,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="43,48,43,80,37,80,37,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+Chat 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat__coll__graph.png" border="0" usemap="#a_chat_coll__map" alt="Collaboration graph"/></div>
+<map name="a_chat_coll__map" id="a_chat_coll__map">
+<area shape="rect" title="聊天类，与硅基流动 API 交互，支持流式响应" alt="" coords="15,80,65,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="43,48,43,80,37,80,37,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:ab8dc8c354792856d8dcf5ce6f91c3afb" id="r_ab8dc8c354792856d8dcf5ce6f91c3afb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8dc8c354792856d8dcf5ce6f91c3afb">answered</a> (const QString &amp;word)</td></tr>
+<tr class="memdesc:ab8dc8c354792856d8dcf5ce6f91c3afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">接收到回答信号  <br /></td></tr>
+<tr class="separator:ab8dc8c354792856d8dcf5ce6f91c3afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a16072a024e4c655024ad9a2a07030c" id="r_a2a16072a024e4c655024ad9a2a07030c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a16072a024e4c655024ad9a2a07030c">streamFinished</a> ()</td></tr>
+<tr class="memdesc:a2a16072a024e4c655024ad9a2a07030c"><td class="mdescLeft">&#160;</td><td class="mdescRight">流式响应结束信号  <br /></td></tr>
+<tr class="separator:a2a16072a024e4c655024ad9a2a07030c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d66d3942655f6a4ae32d89e303673c4" id="r_a3d66d3942655f6a4ae32d89e303673c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d66d3942655f6a4ae32d89e303673c4">errorOccurred</a> (const QString &amp;error)</td></tr>
+<tr class="memdesc:a3d66d3942655f6a4ae32d89e303673c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">错误发生信号  <br /></td></tr>
+<tr class="separator:a3d66d3942655f6a4ae32d89e303673c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5ab8a085d97c09addcbf5f8909db84df" id="r_a5ab8a085d97c09addcbf5f8909db84df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ab8a085d97c09addcbf5f8909db84df">Chat</a> ()</td></tr>
+<tr class="memdesc:a5ab8a085d97c09addcbf5f8909db84df"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化聊天对象  <br /></td></tr>
+<tr class="separator:a5ab8a085d97c09addcbf5f8909db84df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6422ae636e1482b803cd7056d30b2803" id="r_a6422ae636e1482b803cd7056d30b2803"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6422ae636e1482b803cd7056d30b2803">send</a> (const QString &amp;word)</td></tr>
+<tr class="memdesc:a6422ae636e1482b803cd7056d30b2803"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送聊天请求  <br /></td></tr>
+<tr class="separator:a6422ae636e1482b803cd7056d30b2803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a304012c13cd76db2e9c2e5e8f26e3514" id="r_a304012c13cd76db2e9c2e5e8f26e3514"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a304012c13cd76db2e9c2e5e8f26e3514">processStream</a> ()</td></tr>
+<tr class="memdesc:a304012c13cd76db2e9c2e5e8f26e3514"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理流式响应数据  <br /></td></tr>
+<tr class="separator:a304012c13cd76db2e9c2e5e8f26e3514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f60511b54d241ee625edf4975f0ec6" id="r_ac8f60511b54d241ee625edf4975f0ec6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8f60511b54d241ee625edf4975f0ec6">finalizeStream</a> ()</td></tr>
+<tr class="memdesc:ac8f60511b54d241ee625edf4975f0ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">结束流式响应  <br /></td></tr>
+<tr class="separator:ac8f60511b54d241ee625edf4975f0ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947" id="r_a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
+<tr class="memdesc:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化网络请求  <br /></td></tr>
+<tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ab5d3add00780b28577750014a6607faf" id="r_ab5d3add00780b28577750014a6607faf"><td class="memItemLeft" align="right" valign="top">QNetworkRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5d3add00780b28577750014a6607faf">_request</a></td></tr>
+<tr class="memdesc:ab5d3add00780b28577750014a6607faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">网络请求对象  <br /></td></tr>
+<tr class="separator:ab5d3add00780b28577750014a6607faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02963baed97781da6084ae0150a7fed3" id="r_a02963baed97781da6084ae0150a7fed3"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02963baed97781da6084ae0150a7fed3">_manager</a> {}</td></tr>
+<tr class="memdesc:a02963baed97781da6084ae0150a7fed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">网络管理器  <br /></td></tr>
+<tr class="separator:a02963baed97781da6084ae0150a7fed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb73fa3cf852d8d913aa79b8fb575dd" id="r_aafb73fa3cf852d8d913aa79b8fb575dd"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafb73fa3cf852d8d913aa79b8fb575dd">_reply</a> {}</td></tr>
+<tr class="memdesc:aafb73fa3cf852d8d913aa79b8fb575dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">网络响应  <br /></td></tr>
+<tr class="separator:aafb73fa3cf852d8d913aa79b8fb575dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ce7d51da1c95a5be468bb1f28eb623" id="r_a95ce7d51da1c95a5be468bb1f28eb623"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95ce7d51da1c95a5be468bb1f28eb623">_curl_https</a> = &quot;https://api.siliconflow.cn/v1/chat/completions&quot;</td></tr>
+<tr class="memdesc:a95ce7d51da1c95a5be468bb1f28eb623"><td class="mdescLeft">&#160;</td><td class="mdescRight">API 地址  <br /></td></tr>
+<tr class="separator:a95ce7d51da1c95a5be468bb1f28eb623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5be7086eec9b43654f14c001dbf5d530" id="r_a5be7086eec9b43654f14c001dbf5d530"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5be7086eec9b43654f14c001dbf5d530">_model</a> = &quot;deepseek-ai/DeepSeek-V3&quot;</td></tr>
+<tr class="memdesc:a5be7086eec9b43654f14c001dbf5d530"><td class="mdescLeft">&#160;</td><td class="mdescRight">模型名称  <br /></td></tr>
+<tr class="separator:a5be7086eec9b43654f14c001dbf5d530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac378701bb4e7d4c918aeceedc32dec26" id="r_ac378701bb4e7d4c918aeceedc32dec26"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac378701bb4e7d4c918aeceedc32dec26">_api_key</a> = &quot;Your API Key&quot;</td></tr>
+<tr class="memdesc:ac378701bb4e7d4c918aeceedc32dec26"><td class="mdescLeft">&#160;</td><td class="mdescRight">API 密钥,可参考 <a href="https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D">https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D</a>  <br /></td></tr>
+<tr class="separator:ac378701bb4e7d4c918aeceedc32dec26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abda60a5d18e2600dc1c7d1a08c2404de" id="r_abda60a5d18e2600dc1c7d1a08c2404de"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda60a5d18e2600dc1c7d1a08c2404de">_read_text</a></td></tr>
+<tr class="memdesc:abda60a5d18e2600dc1c7d1a08c2404de"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取文本  <br /></td></tr>
+<tr class="separator:abda60a5d18e2600dc1c7d1a08c2404de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a245f4d189e76161c92da521c29a09642" id="r_a245f4d189e76161c92da521c29a09642"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a245f4d189e76161c92da521c29a09642">m_buffer</a></td></tr>
+<tr class="memdesc:a245f4d189e76161c92da521c29a09642"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据缓冲区  <br /></td></tr>
+<tr class="separator:a245f4d189e76161c92da521c29a09642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>聊天类，与硅基流动 API 交互，支持流式响应 </p>
+<dl class="section note"><dt>注解</dt><dd>API 手册：https://docs.siliconflow.cn/cn/api-reference/chat-completions/chat-completions </dd></dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5ab8a085d97c09addcbf5f8909db84df" name="a5ab8a085d97c09addcbf5f8909db84df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab8a085d97c09addcbf5f8909db84df">&#9670;&#160;</a></span>Chat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_chat.html">Chat</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化聊天对象 </p>
+<p>&lt; 初始化网络请求</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_a5ab8a085d97c09addcbf5f8909db84df_cgraph.png" border="0" usemap="#aclass_chat_a5ab8a085d97c09addcbf5f8909db84df_cgraph" alt=""/></div>
+<map name="aclass_chat_a5ab8a085d97c09addcbf5f8909db84df_cgraph" id="aclass_chat_a5ab8a085d97c09addcbf5f8909db84df_cgraph">
+<area shape="rect" title="构造函数，初始化聊天对象" alt="" coords="5,5,55,32"/>
+<area shape="rect" href="class_chat.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="初始化网络请求" alt="" coords="103,5,141,32"/>
+<area shape="poly" title=" " alt="" coords="55,16,87,16,87,21,55,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab8dc8c354792856d8dcf5ce6f91c3afb" name="ab8dc8c354792856d8dcf5ce6f91c3afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8dc8c354792856d8dcf5ce6f91c3afb">&#9670;&#160;</a></span>answered</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void answered </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>word</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>接收到回答信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>回答内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_ab8dc8c354792856d8dcf5ce6f91c3afb_icgraph.png" border="0" usemap="#aclass_chat_ab8dc8c354792856d8dcf5ce6f91c3afb_icgraph" alt=""/></div>
+<map name="aclass_chat_ab8dc8c354792856d8dcf5ce6f91c3afb_icgraph" id="aclass_chat_ab8dc8c354792856d8dcf5ce6f91c3afb_icgraph">
+<area shape="rect" title="接收到回答信号" alt="" coords="412,55,490,81"/>
+<area shape="rect" href="class_ai_chat.html#aa81ad890a1cfb2189b3fa29fea2fb3e4" title="构造函数，初始化 AI 聊天界面" alt="" coords="255,29,364,56"/>
+<area shape="poly" title=" " alt="" coords="396,61,364,55,365,50,397,56"/>
+<area shape="rect" href="class_chat.html#a304012c13cd76db2e9c2e5e8f26e3514" title="处理流式响应数据" alt="" coords="255,80,364,107"/>
+<area shape="poly" title=" " alt="" coords="397,80,365,86,364,81,396,75"/>
+<area shape="poly" title=" " alt="" coords="333,16,325,10,310,8,295,10,288,14,286,20,290,28,285,30,281,21,284,11,294,5,310,3,327,5,336,12"/>
+<area shape="rect" href="class_chat.html#ac8f60511b54d241ee625edf4975f0ec6" title="结束流式响应" alt="" coords="103,55,207,81"/>
+<area shape="poly" title=" " alt="" coords="239,85,207,79,208,74,240,79"/>
+<area shape="rect" href="class_chat.html#a6422ae636e1482b803cd7056d30b2803" title="发送聊天请求" alt="" coords="5,80,55,107"/>
+<area shape="poly" title=" " alt="" coords="240,96,55,96,55,91,240,91"/>
+<area shape="poly" title=" " alt="" coords="88,84,55,91,54,86,87,79"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3d66d3942655f6a4ae32d89e303673c4" name="a3d66d3942655f6a4ae32d89e303673c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d66d3942655f6a4ae32d89e303673c4">&#9670;&#160;</a></span>errorOccurred</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void errorOccurred </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>错误发生信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>错误信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_a3d66d3942655f6a4ae32d89e303673c4_icgraph.png" border="0" usemap="#aclass_chat_a3d66d3942655f6a4ae32d89e303673c4_icgraph" alt=""/></div>
+<map name="aclass_chat_a3d66d3942655f6a4ae32d89e303673c4_icgraph" id="aclass_chat_a3d66d3942655f6a4ae32d89e303673c4_icgraph">
+<area shape="rect" title="错误发生信号" alt="" coords="163,55,263,81"/>
+<area shape="rect" href="class_ai_chat.html#aa81ad890a1cfb2189b3fa29fea2fb3e4" title="构造函数，初始化 AI 聊天界面" alt="" coords="5,29,115,56"/>
+<area shape="poly" title=" " alt="" coords="147,60,115,54,116,49,148,55"/>
+<area shape="rect" href="class_chat.html#a6422ae636e1482b803cd7056d30b2803" title="发送聊天请求" alt="" coords="35,80,85,107"/>
+<area shape="poly" title=" " alt="" coords="148,81,86,92,85,87,147,76"/>
+<area shape="poly" title=" " alt="" coords="86,16,77,10,60,8,44,10,36,14,34,20,38,28,33,30,29,21,32,11,43,5,60,3,79,5,89,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8f60511b54d241ee625edf4975f0ec6" name="ac8f60511b54d241ee625edf4975f0ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8f60511b54d241ee625edf4975f0ec6">&#9670;&#160;</a></span>finalizeStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void finalizeStream </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>结束流式响应 </p>
+<p>&lt; 处理剩余数据</p>
+<p>&lt; 安全删除回复</p>
+<p>&lt; 清空缓冲区</p>
+<p>&lt; 发射结束信号</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_ac8f60511b54d241ee625edf4975f0ec6_cgraph.png" border="0" usemap="#aclass_chat_ac8f60511b54d241ee625edf4975f0ec6_cgraph" alt=""/></div>
+<map name="aclass_chat_ac8f60511b54d241ee625edf4975f0ec6_cgraph" id="aclass_chat_ac8f60511b54d241ee625edf4975f0ec6_cgraph">
+<area shape="rect" title="结束流式响应" alt="" coords="5,31,110,57"/>
+<area shape="rect" href="class_chat.html#a304012c13cd76db2e9c2e5e8f26e3514" title="处理流式响应数据" alt="" coords="158,5,267,32"/>
+<area shape="poly" title=" " alt="" coords="109,33,142,28,143,33,110,38"/>
+<area shape="rect" href="class_chat.html#a2a16072a024e4c655024ad9a2a07030c" title="流式响应结束信号" alt="" coords="315,56,425,83"/>
+<area shape="poly" title=" " alt="" coords="110,46,299,61,299,66,110,51"/>
+<area shape="rect" href="class_chat.html#ab8dc8c354792856d8dcf5ce6f91c3afb" title="接收到回答信号" alt="" coords="332,5,409,32"/>
+<area shape="poly" title=" " alt="" coords="268,16,316,16,316,21,268,21"/>
+<area shape="poly" title=" " alt="" coords="257,30,313,48,311,53,256,35"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_ac8f60511b54d241ee625edf4975f0ec6_icgraph.png" border="0" usemap="#aclass_chat_ac8f60511b54d241ee625edf4975f0ec6_icgraph" alt=""/></div>
+<map name="aclass_chat_ac8f60511b54d241ee625edf4975f0ec6_icgraph" id="aclass_chat_ac8f60511b54d241ee625edf4975f0ec6_icgraph">
+<area shape="rect" title="结束流式响应" alt="" coords="103,5,207,32"/>
+<area shape="rect" href="class_chat.html#a6422ae636e1482b803cd7056d30b2803" title="发送聊天请求" alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a02fd73d861ef2e4aabb38c0c9ff82947" name="a02fd73d861ef2e4aabb38c0c9ff82947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02fd73d861ef2e4aabb38c0c9ff82947">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化网络请求 </p>
+<p>&lt; 创建网络管理器</p>
+<p>&lt; 设置 API 地址</p>
+<p>&lt; 设置授权头</p>
+<p>&lt; 设置内容类型</p>
+<p>&lt; 输出 SSL 版本</p>
+<p>&lt; 输出 OpenSSL 支持情况</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph.png" border="0" usemap="#aclass_chat_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph" alt=""/></div>
+<map name="aclass_chat_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph" id="aclass_chat_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph">
+<area shape="rect" title="初始化网络请求" alt="" coords="103,5,141,32"/>
+<area shape="rect" href="class_chat.html#a5ab8a085d97c09addcbf5f8909db84df" title="构造函数，初始化聊天对象" alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a304012c13cd76db2e9c2e5e8f26e3514" name="a304012c13cd76db2e9c2e5e8f26e3514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a304012c13cd76db2e9c2e5e8f26e3514">&#9670;&#160;</a></span>processStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void processStream </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理流式响应数据 </p>
+<p>&lt; 检查回复有效性</p>
+<p>&lt; 累积数据</p>
+<p>&lt; 查找数据分隔</p>
+<p>&lt; 提取事件数据</p>
+<p>&lt; 更新缓冲区</p>
+<p>&lt; 提取 JSON 数据</p>
+<p>&lt; 发射结束信号</p>
+<p>&lt; 解析 JSON</p>
+<p>&lt; 获取选项</p>
+<p>&lt; 获取增量</p>
+<p>&lt; 获取内容</p>
+<p>&lt; 发射回答信号</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_a304012c13cd76db2e9c2e5e8f26e3514_cgraph.png" border="0" usemap="#aclass_chat_a304012c13cd76db2e9c2e5e8f26e3514_cgraph" alt=""/></div>
+<map name="aclass_chat_a304012c13cd76db2e9c2e5e8f26e3514_cgraph" id="aclass_chat_a304012c13cd76db2e9c2e5e8f26e3514_cgraph">
+<area shape="rect" title="处理流式响应数据" alt="" coords="5,31,115,57"/>
+<area shape="rect" href="class_chat.html#ab8dc8c354792856d8dcf5ce6f91c3afb" title="接收到回答信号" alt="" coords="179,5,256,32"/>
+<area shape="poly" title=" " alt="" coords="115,33,163,25,164,30,116,38"/>
+<area shape="rect" href="class_chat.html#a2a16072a024e4c655024ad9a2a07030c" title="流式响应结束信号" alt="" coords="163,56,273,83"/>
+<area shape="poly" title=" " alt="" coords="116,50,148,55,147,61,115,55"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_a304012c13cd76db2e9c2e5e8f26e3514_icgraph.png" border="0" usemap="#aclass_chat_a304012c13cd76db2e9c2e5e8f26e3514_icgraph" alt=""/></div>
+<map name="aclass_chat_a304012c13cd76db2e9c2e5e8f26e3514_icgraph" id="aclass_chat_a304012c13cd76db2e9c2e5e8f26e3514_icgraph">
+<area shape="rect" title="处理流式响应数据" alt="" coords="255,31,364,57"/>
+<area shape="rect" href="class_chat.html#ac8f60511b54d241ee625edf4975f0ec6" title="结束流式响应" alt="" coords="103,5,207,32"/>
+<area shape="poly" title=" " alt="" coords="239,35,207,30,208,25,240,30"/>
+<area shape="rect" href="class_chat.html#a6422ae636e1482b803cd7056d30b2803" title="发送聊天请求" alt="" coords="5,31,55,57"/>
+<area shape="poly" title=" " alt="" coords="240,47,55,47,55,41,240,41"/>
+<area shape="poly" title=" " alt="" coords="88,35,55,42,54,37,87,30"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6422ae636e1482b803cd7056d30b2803" name="a6422ae636e1482b803cd7056d30b2803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6422ae636e1482b803cd7056d30b2803">&#9670;&#160;</a></span>send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void send </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>word</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>发送聊天请求 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>用户输入的问题 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 输出问题</p>
+<p>&lt; 设置用户角色</p>
+<p>&lt; 设置问题内容</p>
+<p>&lt; 添加消息</p>
+<p>&lt; 设置模型</p>
+<p>&lt; 设置消息数组</p>
+<p>&lt; 启用流式响应</p>
+<p>&lt; 设置最大令牌数</p>
+<p>&lt; 设置停止条件</p>
+<p>&lt; 设置温度</p>
+<p>&lt; 设置 Top P</p>
+<p>&lt; 设置 Top K</p>
+<p>&lt; 设置频率惩罚</p>
+<p>&lt; 设置响应数量</p>
+<p>&lt; 设置响应格式</p>
+<p>&lt; 设置工具类型</p>
+<p>&lt; 工具描述（待填充）</p>
+<p>&lt; 工具名称（待填充）</p>
+<p>&lt; 工具参数</p>
+<p>&lt; 设置非严格模式</p>
+<p>&lt; 设置工具数组</p>
+<p>&lt; 转换为 JSON</p>
+<p>&lt; 获取默认 SSL 配置</p>
+<p>&lt; 设置任意协议</p>
+<p>&lt; 禁用对等验证</p>
+<p>&lt; 设置 SSL 配置</p>
+<p>&lt; 发送 POST 请求</p>
+<p>&lt; 连接流式数据信号</p>
+<p>&lt; 连接结束信号</p>
+<p>&lt; 发射错误信号</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_a6422ae636e1482b803cd7056d30b2803_cgraph.png" border="0" usemap="#aclass_chat_a6422ae636e1482b803cd7056d30b2803_cgraph" alt=""/></div>
+<map name="aclass_chat_a6422ae636e1482b803cd7056d30b2803_cgraph" id="aclass_chat_a6422ae636e1482b803cd7056d30b2803_cgraph">
+<area shape="rect" title="发送聊天请求" alt="" coords="5,56,55,83"/>
+<area shape="rect" href="class_chat.html#a3d66d3942655f6a4ae32d89e303673c4" title="错误发生信号" alt="" coords="105,5,205,32"/>
+<area shape="poly" title=" " alt="" coords="54,57,105,36,107,41,56,62"/>
+<area shape="rect" href="class_chat.html#ac8f60511b54d241ee625edf4975f0ec6" title="结束流式响应" alt="" coords="103,107,207,133"/>
+<area shape="poly" title=" " alt="" coords="56,77,107,98,105,103,54,82"/>
+<area shape="rect" href="class_chat.html#a304012c13cd76db2e9c2e5e8f26e3514" title="处理流式响应数据" alt="" coords="255,56,364,83"/>
+<area shape="poly" title=" " alt="" coords="55,67,240,67,240,72,55,72"/>
+<area shape="poly" title=" " alt="" coords="197,103,251,86,253,91,199,109"/>
+<area shape="rect" href="class_chat.html#a2a16072a024e4c655024ad9a2a07030c" title="流式响应结束信号" alt="" coords="412,107,523,133"/>
+<area shape="poly" title=" " alt="" coords="207,117,397,117,397,123,207,123"/>
+<area shape="rect" href="class_chat.html#ab8dc8c354792856d8dcf5ce6f91c3afb" title="接收到回答信号" alt="" coords="429,56,506,83"/>
+<area shape="poly" title=" " alt="" coords="365,67,413,67,413,72,365,72"/>
+<area shape="poly" title=" " alt="" coords="355,81,410,99,408,104,353,86"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a16072a024e4c655024ad9a2a07030c" name="a2a16072a024e4c655024ad9a2a07030c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a16072a024e4c655024ad9a2a07030c">&#9670;&#160;</a></span>streamFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void streamFinished </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>流式响应结束信号 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_a2a16072a024e4c655024ad9a2a07030c_icgraph.png" border="0" usemap="#aclass_chat_a2a16072a024e4c655024ad9a2a07030c_icgraph" alt=""/></div>
+<map name="aclass_chat_a2a16072a024e4c655024ad9a2a07030c_icgraph" id="aclass_chat_a2a16072a024e4c655024ad9a2a07030c_icgraph">
+<area shape="rect" title="流式响应结束信号" alt="" coords="412,80,523,107"/>
+<area shape="rect" href="class_ai_chat.html#aa81ad890a1cfb2189b3fa29fea2fb3e4" title="构造函数，初始化 AI 聊天界面" alt="" coords="255,29,364,56"/>
+<area shape="poly" title=" " alt="" coords="408,77,353,59,354,54,410,72"/>
+<area shape="rect" href="class_chat.html#ac8f60511b54d241ee625edf4975f0ec6" title="结束流式响应" alt="" coords="103,80,207,107"/>
+<area shape="poly" title=" " alt="" coords="397,96,207,96,207,91,397,91"/>
+<area shape="rect" href="class_chat.html#a304012c13cd76db2e9c2e5e8f26e3514" title="处理流式响应数据" alt="" coords="255,131,364,157"/>
+<area shape="poly" title=" " alt="" coords="410,115,354,133,353,128,408,109"/>
+<area shape="poly" title=" " alt="" coords="336,16,327,10,310,8,294,10,285,15,283,20,287,28,283,30,278,21,281,11,292,5,310,3,328,5,339,12"/>
+<area shape="rect" href="class_chat.html#a6422ae636e1482b803cd7056d30b2803" title="发送聊天请求" alt="" coords="5,105,55,132"/>
+<area shape="poly" title=" " alt="" coords="88,110,55,116,54,111,87,104"/>
+<area shape="poly" title=" " alt="" coords="251,128,197,110,199,105,253,123"/>
+<area shape="poly" title=" " alt="" coords="240,140,55,124,56,118,240,135"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac378701bb4e7d4c918aeceedc32dec26" name="ac378701bb4e7d4c918aeceedc32dec26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac378701bb4e7d4c918aeceedc32dec26">&#9670;&#160;</a></span>_api_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString _api_key = &quot;Your API Key&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>API 密钥,可参考 <a href="https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D">https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D</a> </p>
+
+</div>
+</div>
+<a id="a95ce7d51da1c95a5be468bb1f28eb623" name="a95ce7d51da1c95a5be468bb1f28eb623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95ce7d51da1c95a5be468bb1f28eb623">&#9670;&#160;</a></span>_curl_https</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString _curl_https = &quot;https://api.siliconflow.cn/v1/chat/completions&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>API 地址 </p>
+
+</div>
+</div>
+<a id="a02963baed97781da6084ae0150a7fed3" name="a02963baed97781da6084ae0150a7fed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02963baed97781da6084ae0150a7fed3">&#9670;&#160;</a></span>_manager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkAccessManager* _manager {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>网络管理器 </p>
+
+</div>
+</div>
+<a id="a5be7086eec9b43654f14c001dbf5d530" name="a5be7086eec9b43654f14c001dbf5d530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be7086eec9b43654f14c001dbf5d530">&#9670;&#160;</a></span>_model</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString _model = &quot;deepseek-ai/DeepSeek-V3&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>模型名称 </p>
+
+</div>
+</div>
+<a id="abda60a5d18e2600dc1c7d1a08c2404de" name="abda60a5d18e2600dc1c7d1a08c2404de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abda60a5d18e2600dc1c7d1a08c2404de">&#9670;&#160;</a></span>_read_text</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString _read_text</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>读取文本 </p>
+
+</div>
+</div>
+<a id="aafb73fa3cf852d8d913aa79b8fb575dd" name="aafb73fa3cf852d8d913aa79b8fb575dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb73fa3cf852d8d913aa79b8fb575dd">&#9670;&#160;</a></span>_reply</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* _reply {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>网络响应 </p>
+
+</div>
+</div>
+<a id="ab5d3add00780b28577750014a6607faf" name="ab5d3add00780b28577750014a6607faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5d3add00780b28577750014a6607faf">&#9670;&#160;</a></span>_request</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkRequest _request</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>网络请求对象 </p>
+
+</div>
+</div>
+<a id="a245f4d189e76161c92da521c29a09642" name="a245f4d189e76161c92da521c29a09642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a245f4d189e76161c92da521c29a09642">&#9670;&#160;</a></span>m_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray m_buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>数据缓冲区 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_chat_8h_source.html">Chat.h</a></li>
+<li><a class="el" href="_chat_8cpp.html">Chat.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_chat.html">Chat</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

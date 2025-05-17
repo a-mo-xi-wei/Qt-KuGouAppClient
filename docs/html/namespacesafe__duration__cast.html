@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: safe_duration_cast 命名空间参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('namespacesafe__duration__cast.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">safe_duration_cast 命名空间参考</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aeb329dc4be0bab60f163b3c8625baac0" id="r_aeb329dc4be0bab60f163b3c8625baac0"><td class="memTemplParams" colspan="2">template&lt;typename To, typename From, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; From, To &gt;::value &amp;&amp; std::numeric_limits&lt; From &gt;::is_signed== std::numeric_limits&lt; To &gt;::is_signed)&gt; </td></tr>
+<tr class="memitem:aeb329dc4be0bab60f163b3c8625baac0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aeb329dc4be0bab60f163b3c8625baac0">lossless_integral_conversion</a> (const From from, int &amp;ec) -&gt; To</td></tr>
+<tr class="memdesc:aeb329dc4be0bab60f163b3c8625baac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts From to To, without loss.  <br /></td></tr>
+<tr class="separator:aeb329dc4be0bab60f163b3c8625baac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff7ac2bf64a788e3e576fda2f3758053" id="r_aff7ac2bf64a788e3e576fda2f3758053"><td class="memTemplParams" colspan="2">template&lt;typename To, typename From, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; From, To &gt;::value)&gt; </td></tr>
+<tr class="memitem:aff7ac2bf64a788e3e576fda2f3758053"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aff7ac2bf64a788e3e576fda2f3758053">safe_float_conversion</a> (const From from, int &amp;ec) -&gt; To</td></tr>
+<tr class="memdesc:aff7ac2bf64a788e3e576fda2f3758053"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts From to To if possible, otherwise ec is set.  <br /></td></tr>
+<tr class="separator:aff7ac2bf64a788e3e576fda2f3758053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a653f2a1cc545ab18e52d93e1227caa" id="r_a8a653f2a1cc545ab18e52d93e1227caa"><td class="memTemplParams" colspan="2">template&lt;typename To, typename FromRep, typename FromPeriod, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_floating_point&lt; FromRep &gt;::value), <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_floating_point&lt; typename To::rep &gt;::value)&gt; </td></tr>
+<tr class="memitem:a8a653f2a1cc545ab18e52d93e1227caa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8a653f2a1cc545ab18e52d93e1227caa">safe_duration_cast</a> (std::chrono::duration&lt; FromRep, FromPeriod &gt; from, int &amp;ec) -&gt; To</td></tr>
+<tr class="memdesc:a8a653f2a1cc545ab18e52d93e1227caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe duration_cast between floating point durations  <br /></td></tr>
+<tr class="separator:a8a653f2a1cc545ab18e52d93e1227caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="aeb329dc4be0bab60f163b3c8625baac0" name="aeb329dc4be0bab60f163b3c8625baac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb329dc4be0bab60f163b3c8625baac0">&#9670;&#160;</a></span>lossless_integral_conversion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename To, typename From, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; From, To &gt;::value &amp;&amp; std::numeric_limits&lt; From &gt;::is_signed== std::numeric_limits&lt; To &gt;::is_signed)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto lossless_integral_conversion </td>
+          <td>(</td>
+          <td class="paramtype">const From</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>ec</em></span>&#160;) -&gt;  To</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts From to To, without loss. </p>
+<p>If the dynamic value of from can't be converted to To without loss, ec is set. </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesafe__duration__cast_aeb329dc4be0bab60f163b3c8625baac0_cgraph.png" border="0" usemap="#anamespacesafe__duration__cast_aeb329dc4be0bab60f163b3c8625baac0_cgraph" alt=""/></div>
+<map name="anamespacesafe__duration__cast_aeb329dc4be0bab60f163b3c8625baac0_cgraph" id="anamespacesafe__duration__cast_aeb329dc4be0bab60f163b3c8625baac0_cgraph">
+<area shape="rect" title="Converts From to To, without loss." alt="" coords="5,5,194,32"/>
+<area shape="rect" href="namespacedetail.html#a3279dca70405e483511edbe9c391a376" title=" " alt="" coords="242,5,376,32"/>
+<area shape="poly" title=" " alt="" coords="194,16,226,16,226,21,194,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesafe__duration__cast_aeb329dc4be0bab60f163b3c8625baac0_icgraph.png" border="0" usemap="#anamespacesafe__duration__cast_aeb329dc4be0bab60f163b3c8625baac0_icgraph" alt=""/></div>
+<map name="anamespacesafe__duration__cast_aeb329dc4be0bab60f163b3c8625baac0_icgraph" id="anamespacesafe__duration__cast_aeb329dc4be0bab60f163b3c8625baac0_icgraph">
+<area shape="rect" title="Converts From to To, without loss." alt="" coords="996,204,1184,231"/>
+<area shape="rect" href="namespacedetail.html#aa4e8a7bfd4c67725575c44238eb10970" title=" " alt="" coords="810,204,948,231"/>
+<area shape="poly" title=" " alt="" coords="980,220,948,220,948,215,980,215"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a48bafe99b1deeba642ee13de90388a6f" title=" " alt="" coords="603,5,762,48"/>
+<area shape="poly" title=" " alt="" coords="861,192,821,127,792,93,760,62,742,51,745,46,763,58,796,89,825,124,866,189"/>
+<area shape="rect" href="structformatter_3_01local__time_3_01_duration_01_4_00_01_char_01_4.html#a52e8eb3c7a015c7e59294f5860239717" title=" " alt="" coords="610,72,755,131"/>
+<area shape="poly" title=" " alt="" coords="843,198,760,145,740,134,743,129,763,140,846,193"/>
+<area shape="rect" href="structformatter_3_01sys__time_3_01_duration_01_4_00_01_char_01_4.html#ae4c5680a88f8b97963455a2c6af36203" title=" " alt="" coords="611,155,754,213"/>
+<area shape="poly" title=" " alt="" coords="794,206,754,199,755,193,795,200"/>
+<area shape="rect" href="namespacedetail.html#a1ec0b994e150d44d0a32c6cce3e5adfd" title=" " alt="" coords="604,237,761,264"/>
+<area shape="poly" title=" " alt="" coords="795,234,762,240,761,235,794,229"/>
+<area shape="rect" href="namespacedetail.html#a4f86046fc16db3907eb4bd0c9c7833e2" title=" " alt="" coords="625,288,740,315"/>
+<area shape="poly" title=" " alt="" coords="841,241,763,278,732,290,730,285,761,274,839,236"/>
+<area shape="rect" href="namespacedetail.html#a3bc10bfc5890885892eed90dd1ebbacb" title=" " alt="" coords="608,339,757,381"/>
+<area shape="poly" title=" " alt="" coords="858,244,816,287,763,329,743,340,740,336,760,324,812,283,854,241"/>
+<area shape="rect" href="bundled_2chrono_8h.html#a36146ff53ad660e32b27ddad663628a9" title=" " alt="" coords="454,288,519,315"/>
+<area shape="poly" title=" " alt="" coords="610,304,519,304,519,299,610,299"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#afcb9a0eff4398874cbff0b5466c5f56c" title=" " alt="" coords="212,368,370,411"/>
+<area shape="poly" title=" " alt="" coords="593,369,371,386,370,381,593,364"/>
+<area shape="rect" href="classdetail_1_1tm__writer.html#afcb9a0eff4398874cbff0b5466c5f56c" title=" " alt="" coords="418,393,555,452"/>
+<area shape="poly" title=" " alt="" coords="600,389,557,403,555,398,598,384"/>
+<area shape="rect" href="structdetail_1_1chrono__formatter.html#a94c937acaca8bfa7b3d319d1bd237ef9" title=" " alt="" coords="5,368,164,411"/>
+<area shape="poly" title=" " alt="" coords="196,392,164,392,164,387,196,387"/>
+<area shape="poly" title=" " alt="" coords="402,411,370,405,371,400,403,406"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8a653f2a1cc545ab18e52d93e1227caa" name="a8a653f2a1cc545ab18e52d93e1227caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a653f2a1cc545ab18e52d93e1227caa">&#9670;&#160;</a></span>safe_duration_cast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename To, typename FromRep, typename FromPeriod, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_floating_point&lt; FromRep &gt;::value), <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(std::is_floating_point&lt; typename To::rep &gt;::value)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto safe_duration_cast </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::duration&lt; FromRep, FromPeriod &gt;</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>ec</em></span>&#160;) -&gt; To </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Safe duration_cast between floating point durations </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesafe__duration__cast_a8a653f2a1cc545ab18e52d93e1227caa_cgraph.png" border="0" usemap="#anamespacesafe__duration__cast_a8a653f2a1cc545ab18e52d93e1227caa_cgraph" alt=""/></div>
+<map name="anamespacesafe__duration__cast_a8a653f2a1cc545ab18e52d93e1227caa_cgraph" id="anamespacesafe__duration__cast_a8a653f2a1cc545ab18e52d93e1227caa_cgraph">
+<area shape="rect" title="Safe duration_cast between floating point durations" alt="" coords="5,56,137,83"/>
+<area shape="rect" href="namespacedetail.html#a3279dca70405e483511edbe9c391a376" title=" " alt="" coords="192,5,326,32"/>
+<area shape="poly" title=" " alt="" coords="123,53,191,34,193,39,124,58"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="197,56,320,83"/>
+<area shape="poly" title=" " alt="" coords="137,67,182,67,182,72,137,72"/>
+<area shape="rect" href="namespacesafe__duration__cast.html#aff7ac2bf64a788e3e576fda2f3758053" title="converts From to To if possible, otherwise ec is set." alt="" coords="185,107,333,133"/>
+<area shape="poly" title=" " alt="" coords="124,81,193,100,191,105,123,86"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aff7ac2bf64a788e3e576fda2f3758053" name="aff7ac2bf64a788e3e576fda2f3758053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff7ac2bf64a788e3e576fda2f3758053">&#9670;&#160;</a></span>safe_float_conversion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename To, typename From, <a class="el" href="base_8h.html#ab02671eb0d43965fe2957e844f427451">FMT_ENABLE_IF</a>(!std::is_same&lt; From, To &gt;::value)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> auto safe_float_conversion </td>
+          <td>(</td>
+          <td class="paramtype">const From</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>ec</em></span>&#160;) -&gt; To </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>converts From to To if possible, otherwise ec is set. </p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">input   </th><th class="markdownTableHeadNone">output    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">NaN   </td><td class="markdownTableBodyNone">NaN    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Inf   </td><td class="markdownTableBodyNone">Inf    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">normal, fits in output   </td><td class="markdownTableBodyNone">converted (possibly lossy)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">normal, does not fit in output   </td><td class="markdownTableBodyNone">ec is set    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">subnormal   </td><td class="markdownTableBodyNone">best effort    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">-Inf   </td><td class="markdownTableBodyNone">-Inf   </td></tr>
+</table>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesafe__duration__cast_aff7ac2bf64a788e3e576fda2f3758053_icgraph.png" border="0" usemap="#anamespacesafe__duration__cast_aff7ac2bf64a788e3e576fda2f3758053_icgraph" alt=""/></div>
+<map name="anamespacesafe__duration__cast_aff7ac2bf64a788e3e576fda2f3758053_icgraph" id="anamespacesafe__duration__cast_aff7ac2bf64a788e3e576fda2f3758053_icgraph">
+<area shape="rect" title="converts From to To if possible, otherwise ec is set." alt="" coords="185,5,333,32"/>
+<area shape="rect" href="namespacesafe__duration__cast.html#a8a653f2a1cc545ab18e52d93e1227caa" title="Safe duration_cast between floating point durations" alt="" coords="5,5,137,32"/>
+<area shape="poly" title=" " alt="" coords="169,21,137,21,137,16,169,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacesafe__duration__cast.html">safe_duration_cast</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

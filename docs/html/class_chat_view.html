@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ChatView类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_chat_view.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_chat_view-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ChatView类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_chat_view_8h_source.html">ChatView.h</a>&gt;</code></p>
+<div class="dynheader">
+类 ChatView 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view__inherit__graph.png" border="0" usemap="#a_chat_view_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_chat_view_inherit__map" id="a_chat_view_inherit__map">
+<area shape="rect" title="聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果" alt="" coords="5,80,84,107"/>
+<area shape="rect" title=" " alt="" coords="8,5,81,32"/>
+<area shape="poly" title=" " alt="" coords="47,48,47,80,42,80,42,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+ChatView 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view__coll__graph.png" border="0" usemap="#a_chat_view_coll__map" alt="Collaboration graph"/></div>
+<map name="a_chat_view_coll__map" id="a_chat_view_coll__map">
+<area shape="rect" title="聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果" alt="" coords="48,128,126,155"/>
+<area shape="rect" title=" " alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="54,46,85,127,80,128,49,48"/>
+<area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="102,5,165,32"/>
+<area shape="poly" title=" " alt="" coords="126,48,94,128,89,127,121,46"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:acbd5dad378b2dae7c52936385733abaf" id="r_acbd5dad378b2dae7c52936385733abaf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbd5dad378b2dae7c52936385733abaf">ChatView</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:acbd5dad378b2dae7c52936385733abaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化聊天视图  <br /></td></tr>
+<tr class="separator:acbd5dad378b2dae7c52936385733abaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22892659cbae53c70d2700f1185cd8f6" id="r_a22892659cbae53c70d2700f1185cd8f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22892659cbae53c70d2700f1185cd8f6">appendChatItem</a> (QWidget *item)</td></tr>
+<tr class="memdesc:a22892659cbae53c70d2700f1185cd8f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">尾部插入聊天项  <br /></td></tr>
+<tr class="separator:a22892659cbae53c70d2700f1185cd8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae475029786888f5b79e1155c03105c72" id="r_ae475029786888f5b79e1155c03105c72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae475029786888f5b79e1155c03105c72">prependChatItem</a> (QWidget *item)</td></tr>
+<tr class="memdesc:ae475029786888f5b79e1155c03105c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">头部插入聊天项  <br /></td></tr>
+<tr class="separator:ae475029786888f5b79e1155c03105c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2c34a1330e88fd456106b4512cf122" id="r_adf2c34a1330e88fd456106b4512cf122"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf2c34a1330e88fd456106b4512cf122">insertChatItem</a> (QWidget *before, QWidget *item)</td></tr>
+<tr class="memdesc:adf2c34a1330e88fd456106b4512cf122"><td class="mdescLeft">&#160;</td><td class="mdescRight">中间插入聊天项  <br /></td></tr>
+<tr class="separator:adf2c34a1330e88fd456106b4512cf122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc0afb07db51ffb3d25fa7baa982f73" id="r_a2bc0afb07db51ffb3d25fa7baa982f73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bc0afb07db51ffb3d25fa7baa982f73">removeLastItem</a> ()</td></tr>
+<tr class="memdesc:a2bc0afb07db51ffb3d25fa7baa982f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除最后一个聊天项  <br /></td></tr>
+<tr class="separator:a2bc0afb07db51ffb3d25fa7baa982f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c0d53816415eb4b4358228b330a113" id="r_ae5c0d53816415eb4b4358228b330a113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5c0d53816415eb4b4358228b330a113">removeAllItem</a> ()</td></tr>
+<tr class="memdesc:ae5c0d53816415eb4b4358228b330a113"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除所有聊天项  <br /></td></tr>
+<tr class="separator:ae5c0d53816415eb4b4358228b330a113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795462e11c4a2de614792508f7c64b68" id="r_a795462e11c4a2de614792508f7c64b68"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795462e11c4a2de614792508f7c64b68">getLayout</a> () const</td></tr>
+<tr class="memdesc:a795462e11c4a2de614792508f7c64b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取垂直布局  <br /></td></tr>
+<tr class="separator:a795462e11c4a2de614792508f7c64b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a21a97d51efa77b8fced8a5939afa2ab7" id="r_a21a97d51efa77b8fced8a5939afa2ab7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21a97d51efa77b8fced8a5939afa2ab7">eventFilter</a> (QObject *o, QEvent *e) override</td></tr>
+<tr class="memdesc:a21a97d51efa77b8fced8a5939afa2ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤器  <br /></td></tr>
+<tr class="separator:a21a97d51efa77b8fced8a5939afa2ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71936647c7e332ab07cbec003a8c9a2" id="r_aa71936647c7e332ab07cbec003a8c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71936647c7e332ab07cbec003a8c9a2">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *event) override</td></tr>
+<tr class="memdesc:aa71936647c7e332ab07cbec003a8c9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制事件  <br /></td></tr>
+<tr class="separator:aa71936647c7e332ab07cbec003a8c9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整大小事件  <br /></td></tr>
+<tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a17ce2662b1b7f19a59cddebef710f7ec" id="r_a17ce2662b1b7f19a59cddebef710f7ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17ce2662b1b7f19a59cddebef710f7ec">onVScrollBarMoved</a> (int min, int max)</td></tr>
+<tr class="memdesc:a17ce2662b1b7f19a59cddebef710f7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理垂直滚动条范围变化  <br /></td></tr>
+<tr class="separator:a17ce2662b1b7f19a59cddebef710f7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ad86057da9ac648ff24c26adef0c08249" id="r_ad86057da9ac648ff24c26adef0c08249"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad86057da9ac648ff24c26adef0c08249">updateCenterWidgetPosition</a> ()</td></tr>
+<tr class="memdesc:ad86057da9ac648ff24c26adef0c08249"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新居中部件位置  <br /></td></tr>
+<tr class="separator:ad86057da9ac648ff24c26adef0c08249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd89f5702ef420aad0371391f6212f9d" id="r_acd89f5702ef420aad0371391f6212f9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd89f5702ef420aad0371391f6212f9d">startFadeOutAnimation</a> ()</td></tr>
+<tr class="memdesc:acd89f5702ef420aad0371391f6212f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动淡出动画  <br /></td></tr>
+<tr class="separator:acd89f5702ef420aad0371391f6212f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1154df5ad643129f599cf411c71dc5ff" id="r_a1154df5ad643129f599cf411c71dc5ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1154df5ad643129f599cf411c71dc5ff">startFadeInAnimation</a> ()</td></tr>
+<tr class="memdesc:a1154df5ad643129f599cf411c71dc5ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动淡入动画  <br /></td></tr>
+<tr class="separator:a1154df5ad643129f599cf411c71dc5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a1869a14ca92ea188a114a98792c0238f" id="r_a1869a14ca92ea188a114a98792c0238f"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1869a14ca92ea188a114a98792c0238f">m_pVl</a></td></tr>
+<tr class="memdesc:a1869a14ca92ea188a114a98792c0238f"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直布局  <br /></td></tr>
+<tr class="separator:a1869a14ca92ea188a114a98792c0238f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c729e5fdab0464c0044ba0145a08557" id="r_a5c729e5fdab0464c0044ba0145a08557"><td class="memItemLeft" align="right" valign="top">QScrollArea *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c729e5fdab0464c0044ba0145a08557">m_pScrollArea</a></td></tr>
+<tr class="memdesc:a5c729e5fdab0464c0044ba0145a08557"><td class="mdescLeft">&#160;</td><td class="mdescRight">滚动区域  <br /></td></tr>
+<tr class="separator:a5c729e5fdab0464c0044ba0145a08557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb63ba2342e3413cc2cd7f2bd4762442" id="r_acb63ba2342e3413cc2cd7f2bd4762442"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb63ba2342e3413cc2cd7f2bd4762442">isAppended</a></td></tr>
+<tr class="memdesc:acb63ba2342e3413cc2cd7f2bd4762442"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否追加聊天项  <br /></td></tr>
+<tr class="separator:acb63ba2342e3413cc2cd7f2bd4762442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76efe19fa23d16eae732af921dc898cf" id="r_a76efe19fa23d16eae732af921dc898cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_label.html">QLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76efe19fa23d16eae732af921dc898cf">m_logo</a> {}</td></tr>
+<tr class="memdesc:a76efe19fa23d16eae732af921dc898cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logo 标签  <br /></td></tr>
+<tr class="separator:a76efe19fa23d16eae732af921dc898cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9b4306263b8829ef9cb4e44c8be7f9" id="r_a3a9b4306263b8829ef9cb4e44c8be7f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_label.html">QLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a9b4306263b8829ef9cb4e44c8be7f9">m_helloText</a> {}</td></tr>
+<tr class="memdesc:a3a9b4306263b8829ef9cb4e44c8be7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">欢迎文本标签  <br /></td></tr>
+<tr class="separator:a3a9b4306263b8829ef9cb4e44c8be7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ac64a46254f83f7a6240650893d643" id="r_aa5ac64a46254f83f7a6240650893d643"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_label.html">QLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ac64a46254f83f7a6240650893d643">m_funcText</a> {}</td></tr>
+<tr class="memdesc:aa5ac64a46254f83f7a6240650893d643"><td class="mdescLeft">&#160;</td><td class="mdescRight">功能描述标签  <br /></td></tr>
+<tr class="separator:aa5ac64a46254f83f7a6240650893d643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeee108cd649c3633a1fd719824747f1" id="r_adeee108cd649c3633a1fd719824747f1"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adeee108cd649c3633a1fd719824747f1">m_centerInitWidget</a> {}</td></tr>
+<tr class="memdesc:adeee108cd649c3633a1fd719824747f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">居中初始化部件  <br /></td></tr>
+<tr class="separator:adeee108cd649c3633a1fd719824747f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="acbd5dad378b2dae7c52936385733abaf" name="acbd5dad378b2dae7c52936385733abaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd5dad378b2dae7c52936385733abaf">&#9670;&#160;</a></span>ChatView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_chat_view.html">ChatView</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化聊天视图 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置 Logo 尺寸</p>
+<p>&lt; 设置 Logo 图片</p>
+<p>&lt; 设置欢迎文本高度</p>
+<p>&lt; 设置欢迎文本</p>
+<p>&lt; 设置欢迎文本样式</p>
+<p>&lt; 创建水平布局</p>
+<p>&lt; 设置间距</p>
+<p>&lt; 设置居中对齐</p>
+<p>&lt; 添加 Logo</p>
+<p>&lt; 添加欢迎文本</p>
+<p>&lt; 设置功能描述</p>
+<p>&lt; 设置功能描述样式</p>
+<p>&lt; 创建垂直布局</p>
+<p>&lt; 设置居中对齐</p>
+<p>&lt; 设置间距</p>
+<p>&lt; 添加水平布局</p>
+<p>&lt; 添加功能描述</p>
+<p>&lt; 设置扩展策略</p>
+<p>&lt; 创建主布局</p>
+<p>&lt; 设置边距</p>
+<p>&lt; 创建滚动区域</p>
+<p>&lt; 设置扩展策略</p>
+<p>&lt; 设置对象名称</p>
+<p>&lt; 设置无边框</p>
+<p>&lt; 添加滚动区域</p>
+<p>&lt; 创建内容控件</p>
+<p>&lt; 设置对象名称</p>
+<p>&lt; 启用背景填充</p>
+<p>&lt; 设置扩展策略</p>
+<p>&lt; 创建垂直布局</p>
+<p>&lt; 添加底部拉伸</p>
+<p>&lt; 设置滚动区域内容</p>
+<p>&lt; 显示垂直滚动条</p>
+<p>&lt; 隐藏水平滚动条</p>
+<p>&lt; 获取垂直滚动条</p>
+<p>&lt; 连接滚动条范围变化信号</p>
+<p>&lt; 启用控件大小调整</p>
+<p>&lt; 安装事件过滤器</p>
+<p>&lt; 设置居中部件父对象</p>
+<p>&lt; 穿透鼠标事件</p>
+<p>&lt; 置于顶层</p>
+<p>&lt; 创建透明度效果</p>
+<p>&lt; 设置初始透明度</p>
+<p>&lt; 设置透明度效果</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_acbd5dad378b2dae7c52936385733abaf_cgraph.png" border="0" usemap="#aclass_chat_view_acbd5dad378b2dae7c52936385733abaf_cgraph" alt=""/></div>
+<map name="aclass_chat_view_acbd5dad378b2dae7c52936385733abaf_cgraph" id="aclass_chat_view_acbd5dad378b2dae7c52936385733abaf_cgraph">
+<area shape="rect" title="构造函数，初始化聊天视图" alt="" coords="5,5,84,32"/>
+<area shape="rect" href="class_chat_view.html#a17ce2662b1b7f19a59cddebef710f7ec" title="处理垂直滚动条范围变化" alt="" coords="132,5,268,32"/>
+<area shape="poly" title=" " alt="" coords="84,16,116,16,116,21,84,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a22892659cbae53c70d2700f1185cd8f6" name="a22892659cbae53c70d2700f1185cd8f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22892659cbae53c70d2700f1185cd8f6">&#9670;&#160;</a></span>appendChatItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendChatItem </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>尾部插入聊天项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>聊天项控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 获取垂直布局</p>
+<p>&lt; 插入聊天项（前于拉伸项）</p>
+<p>&lt; 触发淡出动画</p>
+<p>&lt; 记录警告日志</p>
+<p>&lt; 标记追加状态</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_a22892659cbae53c70d2700f1185cd8f6_cgraph.png" border="0" usemap="#aclass_chat_view_a22892659cbae53c70d2700f1185cd8f6_cgraph" alt=""/></div>
+<map name="aclass_chat_view_a22892659cbae53c70d2700f1185cd8f6_cgraph" id="aclass_chat_view_a22892659cbae53c70d2700f1185cd8f6_cgraph">
+<area shape="rect" title="尾部插入聊天项" alt="" coords="5,31,123,57"/>
+<area shape="rect" href="class_chat_view.html#a795462e11c4a2de614792508f7c64b68" title="获取垂直布局" alt="" coords="209,5,288,32"/>
+<area shape="poly" title=" " alt="" coords="123,33,194,23,195,29,124,39"/>
+<area shape="rect" href="class_chat_view.html#acd89f5702ef420aad0371391f6212f9d" title="启动淡出动画" alt="" coords="171,56,326,83"/>
+<area shape="poly" title=" " alt="" coords="124,49,156,54,155,59,123,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a21a97d51efa77b8fced8a5939afa2ab7" name="a21a97d51efa77b8fced8a5939afa2ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a97d51efa77b8fced8a5939afa2ab7">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>事件过滤器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>目标对象 </td></tr>
+    <tr><td class="paramname">e</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>重写基类方法</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>目标对象 </td></tr>
+    <tr><td class="paramname">e</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<p>&lt; 显示滚动条</p>
+<p>&lt; 隐藏滚动条</p>
+<p>&lt; 调用基类方法</p>
+
+</div>
+</div>
+<a id="a795462e11c4a2de614792508f7c64b68" name="a795462e11c4a2de614792508f7c64b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795462e11c4a2de614792508f7c64b68">&#9670;&#160;</a></span>getLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * getLayout </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取垂直布局 </p>
+<dl class="section return"><dt>返回</dt><dd>垂直布局指针 </dd></dl>
+<p>&lt; 记录警告日志</p>
+<p>&lt; 记录警告日志</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_a795462e11c4a2de614792508f7c64b68_icgraph.png" border="0" usemap="#aclass_chat_view_a795462e11c4a2de614792508f7c64b68_icgraph" alt=""/></div>
+<map name="aclass_chat_view_a795462e11c4a2de614792508f7c64b68_icgraph" id="aclass_chat_view_a795462e11c4a2de614792508f7c64b68_icgraph">
+<area shape="rect" title="获取垂直布局" alt="" coords="171,56,249,83"/>
+<area shape="rect" href="class_chat_view.html#a22892659cbae53c70d2700f1185cd8f6" title="尾部插入聊天项" alt="" coords="5,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="155,53,104,35,106,30,157,48"/>
+<area shape="rect" href="class_chat_view.html#ae5c0d53816415eb4b4358228b330a113" title="删除所有聊天项" alt="" coords="11,56,117,83"/>
+<area shape="poly" title=" " alt="" coords="155,72,117,72,117,67,155,67"/>
+<area shape="rect" href="class_chat_view.html#a2bc0afb07db51ffb3d25fa7baa982f73" title="删除最后一个聊天项" alt="" coords="6,107,122,133"/>
+<area shape="poly" title=" " alt="" coords="157,90,106,109,104,104,155,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adf2c34a1330e88fd456106b4512cf122" name="adf2c34a1330e88fd456106b4512cf122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2c34a1330e88fd456106b4512cf122">&#9670;&#160;</a></span>insertChatItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void insertChatItem </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>before</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>item</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>中间插入聊天项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">before</td><td>前置控件 </td></tr>
+    <tr><td class="paramname">item</td><td>聊天项控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a17ce2662b1b7f19a59cddebef710f7ec" name="a17ce2662b1b7f19a59cddebef710f7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ce2662b1b7f19a59cddebef710f7ec">&#9670;&#160;</a></span>onVScrollBarMoved</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onVScrollBarMoved </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理垂直滚动条范围变化 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>最小值 </td></tr>
+    <tr><td class="paramname">max</td><td>最大值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 检查追加状态</p>
+<p>&lt; 获取滚动条</p>
+<p>&lt; 滚动到底部</p>
+<p>&lt; 重置追加状态</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_a17ce2662b1b7f19a59cddebef710f7ec_icgraph.png" border="0" usemap="#aclass_chat_view_a17ce2662b1b7f19a59cddebef710f7ec_icgraph" alt=""/></div>
+<map name="aclass_chat_view_a17ce2662b1b7f19a59cddebef710f7ec_icgraph" id="aclass_chat_view_a17ce2662b1b7f19a59cddebef710f7ec_icgraph">
+<area shape="rect" title="处理垂直滚动条范围变化" alt="" coords="132,5,268,32"/>
+<area shape="rect" href="class_chat_view.html#acbd5dad378b2dae7c52936385733abaf" title="构造函数，初始化聊天视图" alt="" coords="5,5,84,32"/>
+<area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa71936647c7e332ab07cbec003a8c9a2" name="aa71936647c7e332ab07cbec003a8c9a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa71936647c7e332ab07cbec003a8c9a2">&#9670;&#160;</a></span>paintEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void paintEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_paint_event.html">QPaintEvent</a> *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绘制事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>绘制事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>重写基类方法</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>绘制事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 绘制控件</p>
+
+</div>
+</div>
+<a id="ae475029786888f5b79e1155c03105c72" name="ae475029786888f5b79e1155c03105c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae475029786888f5b79e1155c03105c72">&#9670;&#160;</a></span>prependChatItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void prependChatItem </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>头部插入聊天项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>聊天项控件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae5c0d53816415eb4b4358228b330a113" name="ae5c0d53816415eb4b4358228b330a113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c0d53816415eb4b4358228b330a113">&#9670;&#160;</a></span>removeAllItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeAllItem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除所有聊天项 </p>
+<p>&lt; 获取垂直布局</p>
+<p>&lt; 仅包含拉伸项时跳过</p>
+<p>&lt; 收集非居中部件</p>
+<p>&lt; 移除布局项</p>
+<p>&lt; 安全删除控件</p>
+<p>&lt; 删除布局项</p>
+<p>&lt; 更新居中部件位置</p>
+<p>&lt; 触发淡入动画</p>
+<p>&lt; 更新视图</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_ae5c0d53816415eb4b4358228b330a113_cgraph.png" border="0" usemap="#aclass_chat_view_ae5c0d53816415eb4b4358228b330a113_cgraph" alt=""/></div>
+<map name="aclass_chat_view_ae5c0d53816415eb4b4358228b330a113_cgraph" id="aclass_chat_view_ae5c0d53816415eb4b4358228b330a113_cgraph">
+<area shape="rect" title="删除所有聊天项" alt="" coords="5,56,111,83"/>
+<area shape="rect" href="class_chat_view.html#a795462e11c4a2de614792508f7c64b68" title="获取垂直布局" alt="" coords="192,5,270,32"/>
+<area shape="poly" title=" " alt="" coords="106,53,177,32,178,37,107,58"/>
+<area shape="rect" href="class_chat_view.html#a1154df5ad643129f599cf411c71dc5ff" title="启动淡入动画" alt="" coords="159,56,304,83"/>
+<area shape="poly" title=" " alt="" coords="111,67,143,67,143,72,111,72"/>
+<area shape="rect" href="class_chat_view.html#ad86057da9ac648ff24c26adef0c08249" title="更新居中部件位置" alt="" coords="352,81,539,108"/>
+<area shape="poly" title=" " alt="" coords="104,81,159,92,249,98,336,98,336,104,249,104,158,97,103,86"/>
+<area shape="poly" title=" " alt="" coords="305,75,336,79,336,84,304,81"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2bc0afb07db51ffb3d25fa7baa982f73" name="a2bc0afb07db51ffb3d25fa7baa982f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc0afb07db51ffb3d25fa7baa982f73">&#9670;&#160;</a></span>removeLastItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeLastItem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除最后一个聊天项 </p>
+<p>&lt; 获取垂直布局</p>
+<p>&lt; 记录警告日志</p>
+<p>&lt; 检查是否存在聊天项</p>
+<p>&lt; 最后一个聊天项索引</p>
+<p>&lt; 安全删除控件</p>
+<p>&lt; 删除布局项</p>
+<p>&lt; 更新视图</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_a2bc0afb07db51ffb3d25fa7baa982f73_cgraph.png" border="0" usemap="#aclass_chat_view_a2bc0afb07db51ffb3d25fa7baa982f73_cgraph" alt=""/></div>
+<map name="aclass_chat_view_a2bc0afb07db51ffb3d25fa7baa982f73_cgraph" id="aclass_chat_view_a2bc0afb07db51ffb3d25fa7baa982f73_cgraph">
+<area shape="rect" title="删除最后一个聊天项" alt="" coords="5,5,121,32"/>
+<area shape="rect" href="class_chat_view.html#a795462e11c4a2de614792508f7c64b68" title="获取垂直布局" alt="" coords="169,5,247,32"/>
+<area shape="poly" title=" " alt="" coords="121,16,153,16,153,21,121,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a27ed4ceb22d2a19bdb88ed785085a1" name="a9a27ed4ceb22d2a19bdb88ed785085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a27ed4ceb22d2a19bdb88ed785085a1">&#9670;&#160;</a></span>resizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>调整大小事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>调整大小事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>重写基类方法</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>调整大小事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 更新居中部件位置</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph.png" border="0" usemap="#aclass_chat_view_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph" alt=""/></div>
+<map name="aclass_chat_view_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph" id="aclass_chat_view_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph">
+<area shape="rect" title="调整大小事件" alt="" coords="5,5,96,32"/>
+<area shape="rect" href="class_chat_view.html#ad86057da9ac648ff24c26adef0c08249" title="更新居中部件位置" alt="" coords="144,5,331,32"/>
+<area shape="poly" title=" " alt="" coords="96,16,128,16,128,21,96,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1154df5ad643129f599cf411c71dc5ff" name="a1154df5ad643129f599cf411c71dc5ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1154df5ad643129f599cf411c71dc5ff">&#9670;&#160;</a></span>startFadeInAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void startFadeInAnimation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>启动淡入动画 </p>
+<p>&lt; 更新位置</p>
+<p>&lt; 确保可见</p>
+<p>&lt; 获取透明度效果</p>
+<p>&lt; 设置初始透明度</p>
+<p>&lt; 创建动画</p>
+<p>&lt; 设置持续时间</p>
+<p>&lt; 设置起始透明度</p>
+<p>&lt; 设置结束透明度</p>
+<p>&lt; 设置缓动曲线</p>
+<p>&lt; 启动动画并自动删除</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_a1154df5ad643129f599cf411c71dc5ff_cgraph.png" border="0" usemap="#aclass_chat_view_a1154df5ad643129f599cf411c71dc5ff_cgraph" alt=""/></div>
+<map name="aclass_chat_view_a1154df5ad643129f599cf411c71dc5ff_cgraph" id="aclass_chat_view_a1154df5ad643129f599cf411c71dc5ff_cgraph">
+<area shape="rect" title="启动淡入动画" alt="" coords="5,5,151,32"/>
+<area shape="rect" href="class_chat_view.html#ad86057da9ac648ff24c26adef0c08249" title="更新居中部件位置" alt="" coords="199,5,386,32"/>
+<area shape="poly" title=" " alt="" coords="151,16,183,16,183,21,151,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_a1154df5ad643129f599cf411c71dc5ff_icgraph.png" border="0" usemap="#aclass_chat_view_a1154df5ad643129f599cf411c71dc5ff_icgraph" alt=""/></div>
+<map name="aclass_chat_view_a1154df5ad643129f599cf411c71dc5ff_icgraph" id="aclass_chat_view_a1154df5ad643129f599cf411c71dc5ff_icgraph">
+<area shape="rect" title="启动淡入动画" alt="" coords="159,5,304,32"/>
+<area shape="rect" href="class_chat_view.html#ae5c0d53816415eb4b4358228b330a113" title="删除所有聊天项" alt="" coords="5,5,111,32"/>
+<area shape="poly" title=" " alt="" coords="143,21,111,21,111,16,143,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acd89f5702ef420aad0371391f6212f9d" name="acd89f5702ef420aad0371391f6212f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd89f5702ef420aad0371391f6212f9d">&#9670;&#160;</a></span>startFadeOutAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void startFadeOutAnimation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>启动淡出动画 </p>
+<p>&lt; 确保可见</p>
+<p>&lt; 获取透明度效果</p>
+<p>&lt; 创建动画</p>
+<p>&lt; 设置持续时间</p>
+<p>&lt; 设置起始透明度</p>
+<p>&lt; 设置结束透明度</p>
+<p>&lt; 设置缓动曲线</p>
+<p>&lt; 动画完成时隐藏</p>
+<p>&lt; 启动动画并自动删除</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_acd89f5702ef420aad0371391f6212f9d_icgraph.png" border="0" usemap="#aclass_chat_view_acd89f5702ef420aad0371391f6212f9d_icgraph" alt=""/></div>
+<map name="aclass_chat_view_acd89f5702ef420aad0371391f6212f9d_icgraph" id="aclass_chat_view_acd89f5702ef420aad0371391f6212f9d_icgraph">
+<area shape="rect" title="启动淡出动画" alt="" coords="171,5,326,32"/>
+<area shape="rect" href="class_chat_view.html#a22892659cbae53c70d2700f1185cd8f6" title="尾部插入聊天项" alt="" coords="5,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="155,21,123,21,123,16,155,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad86057da9ac648ff24c26adef0c08249" name="ad86057da9ac648ff24c26adef0c08249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86057da9ac648ff24c26adef0c08249">&#9670;&#160;</a></span>updateCenterWidgetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateCenterWidgetPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新居中部件位置 </p>
+<p>&lt; 获取视口尺寸</p>
+<p>&lt; 获取部件尺寸</p>
+<p>&lt; 计算 X 坐标</p>
+<p>&lt; 计算 Y 坐标</p>
+<p>&lt; 更新位置</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_ad86057da9ac648ff24c26adef0c08249_icgraph.png" border="0" usemap="#aclass_chat_view_ad86057da9ac648ff24c26adef0c08249_icgraph" alt=""/></div>
+<map name="aclass_chat_view_ad86057da9ac648ff24c26adef0c08249_icgraph" id="aclass_chat_view_ad86057da9ac648ff24c26adef0c08249_icgraph">
+<area shape="rect" title="更新居中部件位置" alt="" coords="352,23,539,49"/>
+<area shape="rect" href="class_chat_view.html#ae5c0d53816415eb4b4358228b330a113" title="删除所有聊天项" alt="" coords="5,23,111,49"/>
+<area shape="poly" title=" " alt="" coords="365,22,304,13,231,8,159,13,104,25,103,20,158,8,231,3,304,8,366,17"/>
+<area shape="rect" href="class_chat_view.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title="调整大小事件" alt="" coords="186,23,276,49"/>
+<area shape="poly" title=" " alt="" coords="336,39,277,39,277,33,336,33"/>
+<area shape="rect" href="class_chat_view.html#a1154df5ad643129f599cf411c71dc5ff" title="启动淡入动画" alt="" coords="159,73,304,100"/>
+<area shape="poly" title=" " alt="" coords="372,56,291,75,290,70,371,51"/>
+<area shape="poly" title=" " alt="" coords="168,71,106,53,107,48,169,66"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="acb63ba2342e3413cc2cd7f2bd4762442" name="acb63ba2342e3413cc2cd7f2bd4762442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb63ba2342e3413cc2cd7f2bd4762442">&#9670;&#160;</a></span>isAppended</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isAppended</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否追加聊天项 </p>
+
+</div>
+</div>
+<a id="adeee108cd649c3633a1fd719824747f1" name="adeee108cd649c3633a1fd719824747f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeee108cd649c3633a1fd719824747f1">&#9670;&#160;</a></span>m_centerInitWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* m_centerInitWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>居中初始化部件 </p>
+
+</div>
+</div>
+<a id="aa5ac64a46254f83f7a6240650893d643" name="aa5ac64a46254f83f7a6240650893d643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ac64a46254f83f7a6240650893d643">&#9670;&#160;</a></span>m_funcText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_label.html">QLabel</a>* m_funcText {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>功能描述标签 </p>
+
+</div>
+</div>
+<a id="a3a9b4306263b8829ef9cb4e44c8be7f9" name="a3a9b4306263b8829ef9cb4e44c8be7f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a9b4306263b8829ef9cb4e44c8be7f9">&#9670;&#160;</a></span>m_helloText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_label.html">QLabel</a>* m_helloText {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>欢迎文本标签 </p>
+
+</div>
+</div>
+<a id="a76efe19fa23d16eae732af921dc898cf" name="a76efe19fa23d16eae732af921dc898cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76efe19fa23d16eae732af921dc898cf">&#9670;&#160;</a></span>m_logo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_label.html">QLabel</a>* m_logo {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logo 标签 </p>
+
+</div>
+</div>
+<a id="a5c729e5fdab0464c0044ba0145a08557" name="a5c729e5fdab0464c0044ba0145a08557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c729e5fdab0464c0044ba0145a08557">&#9670;&#160;</a></span>m_pScrollArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QScrollArea* m_pScrollArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滚动区域 </p>
+
+</div>
+</div>
+<a id="a1869a14ca92ea188a114a98792c0238f" name="a1869a14ca92ea188a114a98792c0238f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1869a14ca92ea188a114a98792c0238f">&#9670;&#160;</a></span>m_pVl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout* m_pVl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>垂直布局 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_chat_view_8h_source.html">ChatView.h</a></li>
+<li><a class="el" href="_chat_view_8cpp.html">ChatView.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_chat_view.html">ChatView</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

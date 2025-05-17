@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: CentralFileHeader结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_central_file_header.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="struct_central_file_header-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">CentralFileHeader结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a086ff3269e8b74e0f05b9120d4cac23b" id="r_a086ff3269e8b74e0f05b9120d4cac23b"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a086ff3269e8b74e0f05b9120d4cac23b">signature</a> [4]</td></tr>
+<tr class="separator:a086ff3269e8b74e0f05b9120d4cac23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d8c0b6657fc2a38ca729712224d1c5" id="r_a04d8c0b6657fc2a38ca729712224d1c5"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04d8c0b6657fc2a38ca729712224d1c5">version_made</a> [2]</td></tr>
+<tr class="separator:a04d8c0b6657fc2a38ca729712224d1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb7df2a70f27a2232c6ea27259da8cd" id="r_abbb7df2a70f27a2232c6ea27259da8cd"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbb7df2a70f27a2232c6ea27259da8cd">version_needed</a> [2]</td></tr>
+<tr class="separator:abbb7df2a70f27a2232c6ea27259da8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab990a884ebc0d3ba8e521066e0dc743f" id="r_ab990a884ebc0d3ba8e521066e0dc743f"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab990a884ebc0d3ba8e521066e0dc743f">general_purpose_bits</a> [2]</td></tr>
+<tr class="separator:ab990a884ebc0d3ba8e521066e0dc743f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b13d7b5a48248d92f57e5ef0d06fde" id="r_af9b13d7b5a48248d92f57e5ef0d06fde"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9b13d7b5a48248d92f57e5ef0d06fde">compression_method</a> [2]</td></tr>
+<tr class="separator:af9b13d7b5a48248d92f57e5ef0d06fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97302de35e4521db914a51e1a0ef3d97" id="r_a97302de35e4521db914a51e1a0ef3d97"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97302de35e4521db914a51e1a0ef3d97">last_mod_file</a> [4]</td></tr>
+<tr class="separator:a97302de35e4521db914a51e1a0ef3d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824ec00dcaf851a77b9be36128b0be81" id="r_a824ec00dcaf851a77b9be36128b0be81"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a824ec00dcaf851a77b9be36128b0be81">crc_32</a> [4]</td></tr>
+<tr class="separator:a824ec00dcaf851a77b9be36128b0be81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae483d54c6ed71f5a102bf814dc04f053" id="r_ae483d54c6ed71f5a102bf814dc04f053"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae483d54c6ed71f5a102bf814dc04f053">compressed_size</a> [4]</td></tr>
+<tr class="separator:ae483d54c6ed71f5a102bf814dc04f053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a060e4127e624a0777bdaa1af95dfe352" id="r_a060e4127e624a0777bdaa1af95dfe352"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a060e4127e624a0777bdaa1af95dfe352">uncompressed_size</a> [4]</td></tr>
+<tr class="separator:a060e4127e624a0777bdaa1af95dfe352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47463a22413e50fbe71c5a6bd8e6864a" id="r_a47463a22413e50fbe71c5a6bd8e6864a"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47463a22413e50fbe71c5a6bd8e6864a">file_name_length</a> [2]</td></tr>
+<tr class="separator:a47463a22413e50fbe71c5a6bd8e6864a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeaa1c3c93b8d9041fff4d6b81faeb22" id="r_abeaa1c3c93b8d9041fff4d6b81faeb22"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeaa1c3c93b8d9041fff4d6b81faeb22">extra_field_length</a> [2]</td></tr>
+<tr class="separator:abeaa1c3c93b8d9041fff4d6b81faeb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae07e5292d6df39cae75abcadc317dbd4" id="r_ae07e5292d6df39cae75abcadc317dbd4"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae07e5292d6df39cae75abcadc317dbd4">file_comment_length</a> [2]</td></tr>
+<tr class="separator:ae07e5292d6df39cae75abcadc317dbd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bfc4b73d0af89dab7bcaa63a9bdb7f" id="r_ae3bfc4b73d0af89dab7bcaa63a9bdb7f"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3bfc4b73d0af89dab7bcaa63a9bdb7f">disk_start</a> [2]</td></tr>
+<tr class="separator:ae3bfc4b73d0af89dab7bcaa63a9bdb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545a79a40a05d23f00e908fa10756b1c" id="r_a545a79a40a05d23f00e908fa10756b1c"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a545a79a40a05d23f00e908fa10756b1c">internal_file_attributes</a> [2]</td></tr>
+<tr class="separator:a545a79a40a05d23f00e908fa10756b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f7ddeafc4a39b8e1b686e4d92cc68e" id="r_a41f7ddeafc4a39b8e1b686e4d92cc68e"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41f7ddeafc4a39b8e1b686e4d92cc68e">external_file_attributes</a> [4]</td></tr>
+<tr class="separator:a41f7ddeafc4a39b8e1b686e4d92cc68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af334a716034c42986a1b55848342e5b2" id="r_af334a716034c42986a1b55848342e5b2"><td class="memItemLeft" align="right" valign="top">uchar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af334a716034c42986a1b55848342e5b2">offset_local_header</a> [4]</td></tr>
+<tr class="separator:af334a716034c42986a1b55848342e5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ae483d54c6ed71f5a102bf814dc04f053" name="ae483d54c6ed71f5a102bf814dc04f053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae483d54c6ed71f5a102bf814dc04f053">&#9670;&#160;</a></span>compressed_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar compressed_size[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9b13d7b5a48248d92f57e5ef0d06fde" name="af9b13d7b5a48248d92f57e5ef0d06fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b13d7b5a48248d92f57e5ef0d06fde">&#9670;&#160;</a></span>compression_method</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar compression_method[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a824ec00dcaf851a77b9be36128b0be81" name="a824ec00dcaf851a77b9be36128b0be81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a824ec00dcaf851a77b9be36128b0be81">&#9670;&#160;</a></span>crc_32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar crc_32[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae3bfc4b73d0af89dab7bcaa63a9bdb7f" name="ae3bfc4b73d0af89dab7bcaa63a9bdb7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3bfc4b73d0af89dab7bcaa63a9bdb7f">&#9670;&#160;</a></span>disk_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar disk_start[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41f7ddeafc4a39b8e1b686e4d92cc68e" name="a41f7ddeafc4a39b8e1b686e4d92cc68e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f7ddeafc4a39b8e1b686e4d92cc68e">&#9670;&#160;</a></span>external_file_attributes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar external_file_attributes[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abeaa1c3c93b8d9041fff4d6b81faeb22" name="abeaa1c3c93b8d9041fff4d6b81faeb22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeaa1c3c93b8d9041fff4d6b81faeb22">&#9670;&#160;</a></span>extra_field_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar extra_field_length[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae07e5292d6df39cae75abcadc317dbd4" name="ae07e5292d6df39cae75abcadc317dbd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae07e5292d6df39cae75abcadc317dbd4">&#9670;&#160;</a></span>file_comment_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar file_comment_length[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47463a22413e50fbe71c5a6bd8e6864a" name="a47463a22413e50fbe71c5a6bd8e6864a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47463a22413e50fbe71c5a6bd8e6864a">&#9670;&#160;</a></span>file_name_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar file_name_length[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab990a884ebc0d3ba8e521066e0dc743f" name="ab990a884ebc0d3ba8e521066e0dc743f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab990a884ebc0d3ba8e521066e0dc743f">&#9670;&#160;</a></span>general_purpose_bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar general_purpose_bits[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a545a79a40a05d23f00e908fa10756b1c" name="a545a79a40a05d23f00e908fa10756b1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545a79a40a05d23f00e908fa10756b1c">&#9670;&#160;</a></span>internal_file_attributes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar internal_file_attributes[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97302de35e4521db914a51e1a0ef3d97" name="a97302de35e4521db914a51e1a0ef3d97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97302de35e4521db914a51e1a0ef3d97">&#9670;&#160;</a></span>last_mod_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar last_mod_file[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af334a716034c42986a1b55848342e5b2" name="af334a716034c42986a1b55848342e5b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af334a716034c42986a1b55848342e5b2">&#9670;&#160;</a></span>offset_local_header</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar offset_local_header[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a086ff3269e8b74e0f05b9120d4cac23b" name="a086ff3269e8b74e0f05b9120d4cac23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a086ff3269e8b74e0f05b9120d4cac23b">&#9670;&#160;</a></span>signature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar signature[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a060e4127e624a0777bdaa1af95dfe352" name="a060e4127e624a0777bdaa1af95dfe352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a060e4127e624a0777bdaa1af95dfe352">&#9670;&#160;</a></span>uncompressed_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar uncompressed_size[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04d8c0b6657fc2a38ca729712224d1c5" name="a04d8c0b6657fc2a38ca729712224d1c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d8c0b6657fc2a38ca729712224d1c5">&#9670;&#160;</a></span>version_made</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar version_made[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbb7df2a70f27a2232c6ea27259da8cd" name="abbb7df2a70f27a2232c6ea27259da8cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb7df2a70f27a2232c6ea27259da8cd">&#9670;&#160;</a></span>version_needed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uchar version_needed[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="qzipreader__p_8cpp.html">qzipreader_p.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_central_file_header.html">CentralFileHeader</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

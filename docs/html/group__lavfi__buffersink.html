@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Buffer sink API</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavfi__buffersink.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">专题</a> &#124;
+<a href="#files">文件</a> &#124;
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Buffer sink API<div class="ingroups"><a class="el" href="group__lavfi.html">libavfilter</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Buffer sink API 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavfi__buffersink.png" border="0" usemap="#agroup____lavfi____buffersink" alt=""/></div>
+<map name="agroup____lavfi____buffersink" id="agroup____lavfi____buffersink">
+<area shape="rect" href="group__lavfi.html" title="Graph&#45;based frame editing library." alt="" coords="5,5,79,32"/>
+<area shape="rect" title=" " alt="" coords="127,5,235,32"/>
+<area shape="rect" href="group__lavfi__buffersink__accessors.html" title="Get the properties of the stream" alt="" coords="283,5,430,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+专题</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavfi__buffersink__accessors.html">Buffer sink accessors</a></td></tr>
+<tr class="memdesc:group__lavfi__buffersink__accessors"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the properties of the stream <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+文件</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">文件 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffersink_8h.html">buffersink.h</a></td></tr>
+<tr class="memdesc:buffersink_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory buffer sink API for audio and video <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to use for initializing a buffersink context.  <a href="struct_a_v_buffer_sink_params.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to use for initializing an abuffersink context.  <a href="struct_a_v_a_buffer_sink_params.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga9453fc0e81d30237080b51575da0f0d8" id="r_ga9453fc0e81d30237080b51575da0f0d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9453fc0e81d30237080b51575da0f0d8">AV_BUFFERSINK_FLAG_PEEK</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga9453fc0e81d30237080b51575da0f0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell av_buffersink_get_buffer_ref() to read video/samples buffer reference, but not remove it from the buffer.  <br /></td></tr>
+<tr class="separator:ga9453fc0e81d30237080b51575da0f0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade670e86ece8d740194c916fa1ea6cc0" id="r_gade670e86ece8d740194c916fa1ea6cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gade670e86ece8d740194c916fa1ea6cc0">AV_BUFFERSINK_FLAG_NO_REQUEST</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:gade670e86ece8d740194c916fa1ea6cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell av_buffersink_get_buffer_ref() not to request a frame from its input.  <br /></td></tr>
+<tr class="separator:gade670e86ece8d740194c916fa1ea6cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:gaef17fdaa5cb0fb9211aa6687e46a2ebc" id="r_gaef17fdaa5cb0fb9211aa6687e46a2ebc"><td class="memItemLeft" align="right" valign="top">typedef struct AVBufferSinkParams&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaef17fdaa5cb0fb9211aa6687e46a2ebc">AVBufferSinkParams</a></td></tr>
+<tr class="memdesc:gaef17fdaa5cb0fb9211aa6687e46a2ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to use for initializing a buffersink context.  <br /></td></tr>
+<tr class="separator:gaef17fdaa5cb0fb9211aa6687e46a2ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35467dbd36daf6334721b8f663ae86e0" id="r_ga35467dbd36daf6334721b8f663ae86e0"><td class="memItemLeft" align="right" valign="top">typedef struct AVABufferSinkParams&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga35467dbd36daf6334721b8f663ae86e0">AVABufferSinkParams</a></td></tr>
+<tr class="memdesc:ga35467dbd36daf6334721b8f663ae86e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to use for initializing an abuffersink context.  <br /></td></tr>
+<tr class="separator:ga35467dbd36daf6334721b8f663ae86e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga71ae9c529c8da51681e12faa37d1a395" id="r_ga71ae9c529c8da51681e12faa37d1a395"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga71ae9c529c8da51681e12faa37d1a395">av_buffersink_get_frame_flags</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:ga71ae9c529c8da51681e12faa37d1a395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a frame with filtered data from sink and put it in frame.  <br /></td></tr>
+<tr class="separator:ga71ae9c529c8da51681e12faa37d1a395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe42a76b75acd9eac283f084b38486e4" id="r_gabe42a76b75acd9eac283f084b38486e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabe42a76b75acd9eac283f084b38486e4">av_buffersink_params_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gabe42a76b75acd9eac283f084b38486e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="struct_a_v_buffer_sink_params.html" title="Struct to use for initializing a buffersink context.">AVBufferSinkParams</a> structure.  <br /></td></tr>
+<tr class="separator:gabe42a76b75acd9eac283f084b38486e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f9dfe2525d8114c4b9574aa1a1b0ca3" id="r_ga4f9dfe2525d8114c4b9574aa1a1b0ca3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4f9dfe2525d8114c4b9574aa1a1b0ca3">av_abuffersink_params_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ga4f9dfe2525d8114c4b9574aa1a1b0ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="struct_a_v_a_buffer_sink_params.html" title="Struct to use for initializing an abuffersink context.">AVABufferSinkParams</a> structure.  <br /></td></tr>
+<tr class="separator:ga4f9dfe2525d8114c4b9574aa1a1b0ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga359d7d1e42c27ca14c07559d4e9adba7" id="r_ga359d7d1e42c27ca14c07559d4e9adba7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga359d7d1e42c27ca14c07559d4e9adba7">av_buffersink_set_frame_size</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, unsigned frame_size)</td></tr>
+<tr class="memdesc:ga359d7d1e42c27ca14c07559d4e9adba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frame size for an audio buffer sink.  <br /></td></tr>
+<tr class="separator:ga359d7d1e42c27ca14c07559d4e9adba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga653228f4cbca427c654d844a5fc59cfa" id="r_ga653228f4cbca427c654d844a5fc59cfa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga653228f4cbca427c654d844a5fc59cfa">av_buffersink_get_frame</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:ga653228f4cbca427c654d844a5fc59cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a frame with filtered data from sink and put it in frame.  <br /></td></tr>
+<tr class="separator:ga653228f4cbca427c654d844a5fc59cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c06b3744579f165cc032160c154828a" id="r_ga9c06b3744579f165cc032160c154828a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c06b3744579f165cc032160c154828a">av_buffersink_get_samples</a> (<a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int nb_samples)</td></tr>
+<tr class="memdesc:ga9c06b3744579f165cc032160c154828a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="#ga653228f4cbca427c654d844a5fc59cfa" title="Get a frame with filtered data from sink and put it in frame.">av_buffersink_get_frame()</a>, but with the ability to specify the number of samples read.  <br /></td></tr>
+<tr class="separator:ga9c06b3744579f165cc032160c154828a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="gade670e86ece8d740194c916fa1ea6cc0" name="gade670e86ece8d740194c916fa1ea6cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade670e86ece8d740194c916fa1ea6cc0">&#9670;&#160;</a></span>AV_BUFFERSINK_FLAG_NO_REQUEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_BUFFERSINK_FLAG_NO_REQUEST&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tell av_buffersink_get_buffer_ref() not to request a frame from its input. </p>
+<p>If a frame is already buffered, it is read (and removed from the buffer), but if no frame is present, return <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a>. </p>
+
+</div>
+</div>
+<a id="ga9453fc0e81d30237080b51575da0f0d8" name="ga9453fc0e81d30237080b51575da0f0d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9453fc0e81d30237080b51575da0f0d8">&#9670;&#160;</a></span>AV_BUFFERSINK_FLAG_PEEK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_BUFFERSINK_FLAG_PEEK&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tell av_buffersink_get_buffer_ref() to read video/samples buffer reference, but not remove it from the buffer. </p>
+<p>This is useful if you need only to read a video/samples buffer, without to fetch it. </p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ga35467dbd36daf6334721b8f663ae86e0" name="ga35467dbd36daf6334721b8f663ae86e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35467dbd36daf6334721b8f663ae86e0">&#9670;&#160;</a></span>AVABufferSinkParams</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVABufferSinkParams AVABufferSinkParams</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Struct to use for initializing an abuffersink context. </p>
+
+</div>
+</div>
+<a id="gaef17fdaa5cb0fb9211aa6687e46a2ebc" name="gaef17fdaa5cb0fb9211aa6687e46a2ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef17fdaa5cb0fb9211aa6687e46a2ebc">&#9670;&#160;</a></span>AVBufferSinkParams</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVBufferSinkParams AVBufferSinkParams</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Struct to use for initializing a buffersink context. </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga4f9dfe2525d8114c4b9574aa1a1b0ca3" name="ga4f9dfe2525d8114c4b9574aa1a1b0ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f9dfe2525d8114c4b9574aa1a1b0ca3">&#9670;&#160;</a></span>av_abuffersink_params_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a> * av_abuffersink_params_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create an <a class="el" href="struct_a_v_a_buffer_sink_params.html" title="Struct to use for initializing an abuffersink context.">AVABufferSinkParams</a> structure. </p>
+<p>Must be freed with <a class="el" href="group__lavu__mem__funcs.html#ga0c9096f498624c525aa2315b8a20c411" title="Free a memory block which has been allocated with a function of av_malloc() or av_realloc() family.">av_free()</a>. </p>
+
+</div>
+</div>
+<a id="ga653228f4cbca427c654d844a5fc59cfa" name="ga653228f4cbca427c654d844a5fc59cfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga653228f4cbca427c654d844a5fc59cfa">&#9670;&#160;</a></span>av_buffersink_get_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_buffersink_get_frame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a frame with filtered data from sink and put it in frame. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>pointer to a context of a buffersink or abuffersink <a class="el" href="struct_a_v_filter.html" title="Filter definition.">AVFilter</a>. </td></tr>
+    <tr><td class="paramname">frame</td><td>pointer to an allocated frame that will be filled with data. The data must be freed using <a class="el" href="group__lavu__frame.html#ga0a2b687f9c1c5ed0089b01fd61227108" title="Unreference all the buffers referenced by frame and reset the frame fields.">av_frame_unref()</a> / <a class="el" href="group__lavu__frame.html#ga979d73f3228814aee56aeca0636e37cc" title="Free the frame and any dynamically allocated objects in it, e.g.">av_frame_free()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>&gt;= 0 if a frame was successfully returned.</li>
+<li><a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a> if no frames are available at this point; more input frames must be added to the filtergraph to get more output.</li>
+<li>AVERROR_EOF if there will be no more output frames on this sink.</li>
+<li>A different negative AVERROR code in other failure cases. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ga71ae9c529c8da51681e12faa37d1a395" name="ga71ae9c529c8da51681e12faa37d1a395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga71ae9c529c8da51681e12faa37d1a395">&#9670;&#160;</a></span>av_buffersink_get_frame_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_buffersink_get_frame_flags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a frame with filtered data from sink and put it in frame. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>pointer to a buffersink or abuffersink filter context. </td></tr>
+    <tr><td class="paramname">frame</td><td>pointer to an allocated frame that will be filled with data. The data must be freed using <a class="el" href="group__lavu__frame.html#ga0a2b687f9c1c5ed0089b01fd61227108" title="Unreference all the buffers referenced by frame and reset the frame fields.">av_frame_unref()</a> / <a class="el" href="group__lavu__frame.html#ga979d73f3228814aee56aeca0636e37cc" title="Free the frame and any dynamically allocated objects in it, e.g.">av_frame_free()</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>a combination of AV_BUFFERSINK_FLAG_* flags</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 in for success, a negative AVERROR code for failure. </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavfi__buffersink_ga71ae9c529c8da51681e12faa37d1a395_icgraph.png" border="0" usemap="#agroup__lavfi__buffersink_ga71ae9c529c8da51681e12faa37d1a395_icgraph" alt=""/></div>
+<map name="agroup__lavfi__buffersink_ga71ae9c529c8da51681e12faa37d1a395_icgraph" id="agroup__lavfi__buffersink_ga71ae9c529c8da51681e12faa37d1a395_icgraph">
+<area shape="rect" title="Get a frame with filtered data from sink and put it in frame." alt="" coords="1095,44,1258,86"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="873,44,1047,86"/>
+<area shape="poly" title=" " alt="" coords="1079,68,1048,68,1048,62,1079,62"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="660,52,820,78"/>
+<area shape="poly" title=" " alt="" coords="857,68,821,68,821,62,857,62"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="655,102,825,129"/>
+<area shape="poly" title=" " alt="" coords="858,91,801,104,800,99,857,86"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="409,22,607,49"/>
+<area shape="poly" title=" " alt="" coords="644,56,608,51,608,46,645,50"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="420,73,597,116"/>
+<area shape="poly" title=" " alt="" coords="645,80,597,86,597,80,645,74"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="420,140,596,166"/>
+<area shape="poly" title=" " alt="" coords="670,87,657,93,633,111,609,130,579,142,577,137,606,125,630,107,654,88,668,82"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="209,14,361,57"/>
+<area shape="poly" title=" " alt="" coords="393,38,361,38,361,33,393,33"/>
+<area shape="poly" title=" " alt="" coords="376,12,409,8,471,3,535,3,662,11,778,26,873,43,872,48,777,31,661,16,535,8,472,9,409,13,376,18"/>
+<area shape="poly" title=" " alt="" coords="409,71,361,58,362,53,411,66"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="226,81,344,108"/>
+<area shape="poly" title=" " alt="" coords="404,97,344,97,344,92,404,92"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="224,140,346,166"/>
+<area shape="poly" title=" " alt="" coords="404,156,346,156,346,150,404,150"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,140,161,166"/>
+<area shape="poly" title=" " alt="" coords="208,156,161,156,161,150,208,150"/>
+<area shape="poly" title=" " alt="" coords="117,127,106,121,83,118,62,120,51,125,48,130,53,138,49,141,43,131,47,121,61,115,83,113,107,116,120,122"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga9c06b3744579f165cc032160c154828a" name="ga9c06b3744579f165cc032160c154828a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c06b3744579f165cc032160c154828a">&#9670;&#160;</a></span>av_buffersink_get_samples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_buffersink_get_samples </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_samples</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="#ga653228f4cbca427c654d844a5fc59cfa" title="Get a frame with filtered data from sink and put it in frame.">av_buffersink_get_frame()</a>, but with the ability to specify the number of samples read. </p>
+<p>This function is less efficient than <a class="el" href="#ga653228f4cbca427c654d844a5fc59cfa" title="Get a frame with filtered data from sink and put it in frame.">av_buffersink_get_frame()</a>, because it copies the data around.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>pointer to a context of the abuffersink <a class="el" href="struct_a_v_filter.html" title="Filter definition.">AVFilter</a>. </td></tr>
+    <tr><td class="paramname">frame</td><td>pointer to an allocated frame that will be filled with data. The data must be freed using <a class="el" href="group__lavu__frame.html#ga0a2b687f9c1c5ed0089b01fd61227108" title="Unreference all the buffers referenced by frame and reset the frame fields.">av_frame_unref()</a> / <a class="el" href="group__lavu__frame.html#ga979d73f3228814aee56aeca0636e37cc" title="Free the frame and any dynamically allocated objects in it, e.g.">av_frame_free()</a> frame will contain exactly nb_samples audio samples, except at the end of stream, when it can contain less than nb_samples.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>The return codes have the same meaning as for <a class="el" href="#ga9c06b3744579f165cc032160c154828a" title="Same as av_buffersink_get_frame(), but with the ability to specify the number of samples read.">av_buffersink_get_samples()</a>.</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>do not mix this function with <a class="el" href="#ga653228f4cbca427c654d844a5fc59cfa" title="Get a frame with filtered data from sink and put it in frame.">av_buffersink_get_frame()</a>. Use only one or the other with a single sink, not both. </dd></dl>
+
+</div>
+</div>
+<a id="gabe42a76b75acd9eac283f084b38486e4" name="gabe42a76b75acd9eac283f084b38486e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe42a76b75acd9eac283f084b38486e4">&#9670;&#160;</a></span>av_buffersink_params_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a> * av_buffersink_params_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create an <a class="el" href="struct_a_v_buffer_sink_params.html" title="Struct to use for initializing a buffersink context.">AVBufferSinkParams</a> structure. </p>
+<p>Must be freed with <a class="el" href="group__lavu__mem__funcs.html#ga0c9096f498624c525aa2315b8a20c411" title="Free a memory block which has been allocated with a function of av_malloc() or av_realloc() family.">av_free()</a>. </p>
+
+</div>
+</div>
+<a id="ga359d7d1e42c27ca14c07559d4e9adba7" name="ga359d7d1e42c27ca14c07559d4e9adba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga359d7d1e42c27ca14c07559d4e9adba7">&#9670;&#160;</a></span>av_buffersink_set_frame_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_buffersink_set_frame_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_filter_context.html">AVFilterContext</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>frame_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the frame size for an audio buffer sink. </p>
+<p>All calls to av_buffersink_get_buffer_ref will return a buffer with exactly the specified number of samples, or <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a> if there is not enough. The last buffer at EOF will be padded with 0. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AbstractManage类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_j_q_http_server_1_1_abstract_manage.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-slots">Protected 槽</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_j_q_http_server_1_1_abstract_manage-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">AbstractManage类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>服务器管理抽象基类  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="jqhttpserver_8h_source.html">jqhttpserver.h</a>&gt;</code></p>
+<div class="dynheader">
+类 AbstractManage 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage__inherit__graph.png" border="0" usemap="#a_abstract_manage_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_abstract_manage_inherit__map" id="a_abstract_manage_inherit__map">
+<area shape="rect" title="服务器管理抽象基类" alt="" coords="84,80,200,107"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html" title="SSL 服务器管理类，继承自 AbstractManage。" alt="" coords="5,155,130,181"/>
+<area shape="poly" title=" " alt="" coords="120,119,82,156,79,152,117,116"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html" title="TCP协议HTTP服务器管理类" alt="" coords="154,155,280,181"/>
+<area shape="poly" title=" " alt="" coords="168,116,206,152,202,156,164,119"/>
+<area shape="rect" title=" " alt="" coords="108,5,177,32"/>
+<area shape="poly" title=" " alt="" coords="145,48,145,80,140,80,140,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+AbstractManage 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage__coll__graph.png" border="0" usemap="#a_abstract_manage_coll__map" alt="Collaboration graph"/></div>
+<map name="a_abstract_manage_coll__map" id="a_abstract_manage_coll__map">
+<area shape="rect" title="服务器管理抽象基类" alt="" coords="5,80,122,107"/>
+<area shape="rect" title=" " alt="" coords="29,5,98,32"/>
+<area shape="poly" title=" " alt="" coords="66,48,66,80,61,80,61,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:ad53315fbc476080ccbab3462f8729831" id="r_ad53315fbc476080ccbab3462f8729831"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad53315fbc476080ccbab3462f8729831">readyToClose</a> ()</td></tr>
+<tr class="memdesc:ad53315fbc476080ccbab3462f8729831"><td class="mdescLeft">&#160;</td><td class="mdescRight">准备关闭信号。  <br /></td></tr>
+<tr class="separator:ad53315fbc476080ccbab3462f8729831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a864bb6718dee19516f99928c5f68b887" id="r_a864bb6718dee19516f99928c5f68b887"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a864bb6718dee19516f99928c5f68b887">AbstractManage</a> (const int &amp;handleMaxThreadCount)</td></tr>
+<tr class="memdesc:a864bb6718dee19516f99928c5f68b887"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数。  <br /></td></tr>
+<tr class="separator:a864bb6718dee19516f99928c5f68b887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d86e7261e194cb9b83dc30bebd6a2f" id="r_a45d86e7261e194cb9b83dc30bebd6a2f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45d86e7261e194cb9b83dc30bebd6a2f">~AbstractManage</a> ()</td></tr>
+<tr class="memdesc:a45d86e7261e194cb9b83dc30bebd6a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚析构函数。  <br /></td></tr>
+<tr class="separator:a45d86e7261e194cb9b83dc30bebd6a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c44a1dc3dee880d529b3b4d22550bed" id="r_a7c44a1dc3dee880d529b3b4d22550bed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c44a1dc3dee880d529b3b4d22550bed">setMainObject</a> (QObject *obj)</td></tr>
+<tr class="memdesc:a7c44a1dc3dee880d529b3b4d22550bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置主对象。  <br /></td></tr>
+<tr class="separator:a7c44a1dc3dee880d529b3b4d22550bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae25ad3541349fe4f97a5b759f9f57ddf" id="r_ae25ad3541349fe4f97a5b759f9f57ddf"><td class="memItemLeft" align="right" valign="top">QObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae25ad3541349fe4f97a5b759f9f57ddf">getMainObject</a> ()</td></tr>
+<tr class="memdesc:ae25ad3541349fe4f97a5b759f9f57ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取主对象。  <br /></td></tr>
+<tr class="separator:ae25ad3541349fe4f97a5b759f9f57ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cace93653678dd057330eca3c0c6d16" id="r_a3cace93653678dd057330eca3c0c6d16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cace93653678dd057330eca3c0c6d16">setHttpAcceptedCallback</a> (const std::function&lt; void(const QPointer&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> &gt; &amp;session, QObject *mainObj)&gt; &amp;httpAcceptedCallback)</td></tr>
+<tr class="memdesc:a3cace93653678dd057330eca3c0c6d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 接受回调。  <br /></td></tr>
+<tr class="separator:a3cace93653678dd057330eca3c0c6d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4aa72928adc2de8567585a46ffcd63" id="r_a5f4aa72928adc2de8567585a46ffcd63"><td class="memItemLeft" align="right" valign="top">QSharedPointer&lt; QThreadPool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f4aa72928adc2de8567585a46ffcd63">handleThreadPool</a> ()</td></tr>
+<tr class="memdesc:a5f4aa72928adc2de8567585a46ffcd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取处理线程池。  <br /></td></tr>
+<tr class="separator:a5f4aa72928adc2de8567585a46ffcd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e6c516a0fe90246b5a24fae98a1ac17" id="r_a0e6c516a0fe90246b5a24fae98a1ac17"><td class="memItemLeft" align="right" valign="top">QSharedPointer&lt; QThreadPool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e6c516a0fe90246b5a24fae98a1ac17">serverThreadPool</a> ()</td></tr>
+<tr class="memdesc:a0e6c516a0fe90246b5a24fae98a1ac17"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取服务器线程池。  <br /></td></tr>
+<tr class="separator:a0e6c516a0fe90246b5a24fae98a1ac17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae18fdecaaf0c007c3063f6f673633b91" id="r_ae18fdecaaf0c007c3063f6f673633b91"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae18fdecaaf0c007c3063f6f673633b91">isRunning</a> ()=0</td></tr>
+<tr class="memdesc:ae18fdecaaf0c007c3063f6f673633b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否正在运行。  <br /></td></tr>
+<tr class="separator:ae18fdecaaf0c007c3063f6f673633b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-slots" name="pro-slots"></a>
+Protected 槽</h2></td></tr>
+<tr class="memitem:ab3e7cc706c522b3231f9156bba461436" id="r_ab3e7cc706c522b3231f9156bba461436"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3e7cc706c522b3231f9156bba461436">initialize</a> ()</td></tr>
+<tr class="memdesc:ab3e7cc706c522b3231f9156bba461436"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化。  <br /></td></tr>
+<tr class="separator:ab3e7cc706c522b3231f9156bba461436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f040a4635c90c304d5d3d0a760ed383" id="r_a5f040a4635c90c304d5d3d0a760ed383"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f040a4635c90c304d5d3d0a760ed383">deinitialize</a> ()</td></tr>
+<tr class="memdesc:a5f040a4635c90c304d5d3d0a760ed383"><td class="mdescLeft">&#160;</td><td class="mdescRight">反初始化。  <br /></td></tr>
+<tr class="separator:a5f040a4635c90c304d5d3d0a760ed383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a0ce8294e61635dabe56eb65c0f0e1935" id="r_a0ce8294e61635dabe56eb65c0f0e1935"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ce8294e61635dabe56eb65c0f0e1935">onStart</a> ()=0</td></tr>
+<tr class="memdesc:a0ce8294e61635dabe56eb65c0f0e1935"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始时调用。  <br /></td></tr>
+<tr class="separator:a0ce8294e61635dabe56eb65c0f0e1935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef200f77a155c73fff25a83b105c1ed" id="r_acef200f77a155c73fff25a83b105c1ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acef200f77a155c73fff25a83b105c1ed">onFinish</a> ()=0</td></tr>
+<tr class="memdesc:acef200f77a155c73fff25a83b105c1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">完成时调用。  <br /></td></tr>
+<tr class="separator:acef200f77a155c73fff25a83b105c1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab71f4bb117d2f7b8a7b816356171a7e8" id="r_ab71f4bb117d2f7b8a7b816356171a7e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab71f4bb117d2f7b8a7b816356171a7e8">startServerThread</a> ()</td></tr>
+<tr class="memdesc:ab71f4bb117d2f7b8a7b816356171a7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动服务器线程。  <br /></td></tr>
+<tr class="separator:ab71f4bb117d2f7b8a7b816356171a7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608d2c9929167b0773373f9addabca0e" id="r_a608d2c9929167b0773373f9addabca0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a608d2c9929167b0773373f9addabca0e">stopHandleThread</a> ()</td></tr>
+<tr class="memdesc:a608d2c9929167b0773373f9addabca0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止处理线程。  <br /></td></tr>
+<tr class="separator:a608d2c9929167b0773373f9addabca0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0014bed2e9d54d7bc2acec94a9a876" id="r_a1f0014bed2e9d54d7bc2acec94a9a876"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f0014bed2e9d54d7bc2acec94a9a876">stopServerThread</a> ()</td></tr>
+<tr class="memdesc:a1f0014bed2e9d54d7bc2acec94a9a876"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止服务器线程。  <br /></td></tr>
+<tr class="separator:a1f0014bed2e9d54d7bc2acec94a9a876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b10d9da8dd53ee7063b34013e0b633d" id="r_a7b10d9da8dd53ee7063b34013e0b633d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b10d9da8dd53ee7063b34013e0b633d">newSession</a> (const QPointer&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> &gt; &amp;session)</td></tr>
+<tr class="memdesc:a7b10d9da8dd53ee7063b34013e0b633d"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建新会话。  <br /></td></tr>
+<tr class="separator:a7b10d9da8dd53ee7063b34013e0b633d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6773c8bd0376408a236ab98aba9b92b8" id="r_a6773c8bd0376408a236ab98aba9b92b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6773c8bd0376408a236ab98aba9b92b8">handleAccepted</a> (const QPointer&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> &gt; &amp;session)</td></tr>
+<tr class="memdesc:a6773c8bd0376408a236ab98aba9b92b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理接受的会话。  <br /></td></tr>
+<tr class="separator:a6773c8bd0376408a236ab98aba9b92b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:adb315cdbd1a119e0e41b69157200d347" id="r_adb315cdbd1a119e0e41b69157200d347"><td class="memItemLeft" align="right" valign="top">QSharedPointer&lt; QThreadPool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb315cdbd1a119e0e41b69157200d347">serverThreadPool_</a></td></tr>
+<tr class="memdesc:adb315cdbd1a119e0e41b69157200d347"><td class="mdescLeft">&#160;</td><td class="mdescRight">服务器线程池(用于接受连接)  <br /></td></tr>
+<tr class="separator:adb315cdbd1a119e0e41b69157200d347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae345283b994f2dad60b0473dc869ad15" id="r_ae345283b994f2dad60b0473dc869ad15"><td class="memItemLeft" align="right" valign="top">QSharedPointer&lt; QThreadPool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae345283b994f2dad60b0473dc869ad15">handleThreadPool_</a></td></tr>
+<tr class="memdesc:ae345283b994f2dad60b0473dc869ad15"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理线程池(用于业务逻辑)  <br /></td></tr>
+<tr class="separator:ae345283b994f2dad60b0473dc869ad15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accff2ace0dcd0f590a54dba9f7ffb8a6" id="r_accff2ace0dcd0f590a54dba9f7ffb8a6"><td class="memItemLeft" align="right" valign="top">QMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accff2ace0dcd0f590a54dba9f7ffb8a6">mutex_</a></td></tr>
+<tr class="memdesc:accff2ace0dcd0f590a54dba9f7ffb8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">线程同步互斥锁  <br /></td></tr>
+<tr class="separator:accff2ace0dcd0f590a54dba9f7ffb8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a139894f4649f9152690d4b6b6150158f" id="r_a139894f4649f9152690d4b6b6150158f"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(const QPointer&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> &gt; &amp;session, QObject *mainObj)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a139894f4649f9152690d4b6b6150158f">httpAcceptedCallback_</a></td></tr>
+<tr class="memdesc:a139894f4649f9152690d4b6b6150158f"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP请求接受回调函数  <br /></td></tr>
+<tr class="separator:a139894f4649f9152690d4b6b6150158f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8cef0462726430e4b57d8f27bcfde7" id="r_a2f8cef0462726430e4b57d8f27bcfde7"><td class="memItemLeft" align="right" valign="top">QSet&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f8cef0462726430e4b57d8f27bcfde7">availableSessions_</a></td></tr>
+<tr class="memdesc:a2f8cef0462726430e4b57d8f27bcfde7"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前活跃会话集合  <br /></td></tr>
+<tr class="separator:a2f8cef0462726430e4b57d8f27bcfde7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62063b49fd9d8c887533496ee3fae8a" id="r_ad62063b49fd9d8c887533496ee3fae8a"><td class="memItemLeft" align="right" valign="top">QObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad62063b49fd9d8c887533496ee3fae8a">m_mainObj</a></td></tr>
+<tr class="memdesc:ad62063b49fd9d8c887533496ee3fae8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">主业务逻辑对象指针  <br /></td></tr>
+<tr class="separator:ad62063b49fd9d8c887533496ee3fae8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>服务器管理抽象基类 </p>
+<p>提供线程池管理、会话处理等基础功能 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a864bb6718dee19516f99928c5f68b887" name="a864bb6718dee19516f99928c5f68b887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a864bb6718dee19516f99928c5f68b887">&#9670;&#160;</a></span>AbstractManage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_j_q_http_server_1_1_abstract_manage.html">AbstractManage</a> </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>handleMaxThreadCount</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handleMaxThreadCount</td><td>处理线程的最大数量。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a864bb6718dee19516f99928c5f68b887_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a864bb6718dee19516f99928c5f68b887_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a864bb6718dee19516f99928c5f68b887_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a864bb6718dee19516f99928c5f68b887_icgraph">
+<area shape="rect" title="构造函数。" alt="" coords="268,47,384,73"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#ad1fad80e47f620cf78f89893a6843e7c" title="构造函数。" alt="" coords="6,5,219,48"/>
+<area shape="poly" title=" " alt="" coords="252,51,219,46,220,41,253,46"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a260cd31702820ce84f1c29080cf1c069" title="构造函数。" alt="" coords="5,72,220,115"/>
+<area shape="poly" title=" " alt="" coords="253,74,220,79,220,74,252,69"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45d86e7261e194cb9b83dc30bebd6a2f" name="a45d86e7261e194cb9b83dc30bebd6a2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d86e7261e194cb9b83dc30bebd6a2f">&#9670;&#160;</a></span>~AbstractManage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_j_q_http_server_1_1_abstract_manage.html">AbstractManage</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>虚析构函数。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a45d86e7261e194cb9b83dc30bebd6a2f_cgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a45d86e7261e194cb9b83dc30bebd6a2f_cgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a45d86e7261e194cb9b83dc30bebd6a2f_cgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a45d86e7261e194cb9b83dc30bebd6a2f_cgraph">
+<area shape="rect" title="虚析构函数。" alt="" coords="5,5,130,32"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a608d2c9929167b0773373f9addabca0e" title="停止处理线程。" alt="" coords="178,5,305,32"/>
+<area shape="poly" title=" " alt="" coords="130,16,162,16,162,21,130,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a5f040a4635c90c304d5d3d0a760ed383" name="a5f040a4635c90c304d5d3d0a760ed383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f040a4635c90c304d5d3d0a760ed383">&#9670;&#160;</a></span>deinitialize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deinitialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>反初始化。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a5f040a4635c90c304d5d3d0a760ed383_cgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a5f040a4635c90c304d5d3d0a760ed383_cgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a5f040a4635c90c304d5d3d0a760ed383_cgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a5f040a4635c90c304d5d3d0a760ed383_cgraph">
+<area shape="rect" title="反初始化。" alt="" coords="5,31,88,57"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ae18fdecaaf0c007c3063f6f673633b91" title="检查是否正在运行。" alt="" coords="158,5,238,32"/>
+<area shape="poly" title=" " alt="" coords="88,43,146,33,147,38,88,48"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ad53315fbc476080ccbab3462f8729831" title="准备关闭信号。" alt="" coords="147,56,248,83"/>
+<area shape="poly" title=" " alt="" coords="89,48,132,56,131,61,88,53"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a1f0014bed2e9d54d7bc2acec94a9a876" title="停止服务器线程。" alt="" coords="136,107,260,133"/>
+<area shape="poly" title=" " alt="" coords="71,56,137,92,148,98,146,102,134,97,69,60"/>
+<area shape="poly" title=" " alt="" coords="158,20,99,29,98,24,157,15"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab3e7cc706c522b3231f9156bba461436" title="初始化。" alt="" coords="308,5,376,32"/>
+<area shape="poly" title=" " alt="" coords="238,24,293,25,292,30,238,29"/>
+<area shape="poly" title=" " alt="" coords="307,14,253,13,253,7,308,8"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab71f4bb117d2f7b8a7b816356171a7e8" title="启动服务器线程。" alt="" coords="424,5,550,32"/>
+<area shape="poly" title=" " alt="" coords="377,16,409,16,409,21,377,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a5f040a4635c90c304d5d3d0a760ed383_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a5f040a4635c90c304d5d3d0a760ed383_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a5f040a4635c90c304d5d3d0a760ed383_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a5f040a4635c90c304d5d3d0a760ed383_icgraph">
+<area shape="rect" title="反初始化。" alt="" coords="646,76,729,103"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ae18fdecaaf0c007c3063f6f673633b91" title="检查是否正在运行。" alt="" coords="452,47,531,73"/>
+<area shape="poly" title=" " alt="" coords="631,92,531,76,532,71,631,87"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a247227d292dd8bcf91459962e6f62542" title="析构函数。" alt="" coords="385,97,597,140"/>
+<area shape="poly" title=" " alt="" coords="632,100,598,105,597,100,631,95"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a2c6f25d74941e636f40a974564ba0e20" title="析构函数。" alt="" coords="384,164,598,207"/>
+<area shape="poly" title=" " alt="" coords="660,114,632,135,600,154,573,166,571,161,597,150,629,131,657,110"/>
+<area shape="poly" title=" " alt="" coords="547,57,646,73,646,78,546,63"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab3e7cc706c522b3231f9156bba461436" title="初始化。" alt="" coords="268,47,336,73"/>
+<area shape="poly" title=" " alt="" coords="436,71,336,70,336,64,436,66"/>
+<area shape="poly" title=" " alt="" coords="352,49,451,50,451,55,351,55"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a643d4c1cb7c9ccedbc20b61bf3d381d5" title="监听。" alt="" coords="6,5,219,48"/>
+<area shape="poly" title=" " alt="" coords="252,54,218,48,219,43,253,49"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a3507638c85bec2a3f3d7a621c9fe8fa8" title="监听。" alt="" coords="5,72,220,115"/>
+<area shape="poly" title=" " alt="" coords="253,71,221,77,220,72,252,66"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae25ad3541349fe4f97a5b759f9f57ddf" name="ae25ad3541349fe4f97a5b759f9f57ddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae25ad3541349fe4f97a5b759f9f57ddf">&#9670;&#160;</a></span>getMainObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QObject * getMainObject </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取主对象。 </p>
+<dl class="section return"><dt>返回</dt><dd>主对象。 </dd></dl>
+
+</div>
+</div>
+<a id="a6773c8bd0376408a236ab98aba9b92b8" name="a6773c8bd0376408a236ab98aba9b92b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6773c8bd0376408a236ab98aba9b92b8">&#9670;&#160;</a></span>handleAccepted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handleAccepted </td>
+          <td>(</td>
+          <td class="paramtype">const QPointer&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>session</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理接受的会话。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td>会话。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a6773c8bd0376408a236ab98aba9b92b8_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a6773c8bd0376408a236ab98aba9b92b8_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a6773c8bd0376408a236ab98aba9b92b8_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a6773c8bd0376408a236ab98aba9b92b8_icgraph">
+<area shape="rect" title="处理接受的会话。" alt="" coords="406,31,520,57"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a7b10d9da8dd53ee7063b34013e0b633d" title="创建新会话。" alt="" coords="266,56,358,83"/>
+<area shape="poly" title=" " alt="" coords="391,59,359,64,358,59,390,53"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#acef200f77a155c73fff25a83b105c1ed" title="完成时调用。" alt="" coords="76,5,147,32"/>
+<area shape="poly" title=" " alt="" coords="390,41,147,24,147,18,390,36"/>
+<area shape="poly" title=" " alt="" coords="250,55,217,47,146,29,148,24,218,41,251,50"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a688d08caa9641e8b1d7d8ef452cff54c" title="开始时调用。" alt="" coords="5,56,218,99"/>
+<area shape="poly" title=" " alt="" coords="250,74,218,76,218,70,250,69"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5f4aa72928adc2de8567585a46ffcd63" name="a5f4aa72928adc2de8567585a46ffcd63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4aa72928adc2de8567585a46ffcd63">&#9670;&#160;</a></span>handleThreadPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSharedPointer&lt; QThreadPool &gt; handleThreadPool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取处理线程池。 </p>
+<dl class="section return"><dt>返回</dt><dd>处理线程池。 </dd></dl>
+
+</div>
+</div>
+<a id="ab3e7cc706c522b3231f9156bba461436" name="ab3e7cc706c522b3231f9156bba461436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e7cc706c522b3231f9156bba461436">&#9670;&#160;</a></span>initialize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool initialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化。 </p>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_ab3e7cc706c522b3231f9156bba461436_cgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_ab3e7cc706c522b3231f9156bba461436_cgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_ab3e7cc706c522b3231f9156bba461436_cgraph" id="aclass_j_q_http_server_1_1_abstract_manage_ab3e7cc706c522b3231f9156bba461436_cgraph">
+<area shape="rect" title="初始化。" alt="" coords="5,31,74,57"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ae18fdecaaf0c007c3063f6f673633b91" title="检查是否正在运行。" alt="" coords="145,31,224,57"/>
+<area shape="poly" title=" " alt="" coords="74,49,129,50,129,55,74,54"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab71f4bb117d2f7b8a7b816356171a7e8" title="启动服务器线程。" alt="" coords="122,81,247,108"/>
+<area shape="poly" title=" " alt="" coords="75,53,130,73,129,78,73,58"/>
+<area shape="poly" title=" " alt="" coords="144,39,89,38,89,33,144,33"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a5f040a4635c90c304d5d3d0a760ed383" title="反初始化。" alt="" coords="295,31,377,57"/>
+<area shape="poly" title=" " alt="" coords="225,49,280,50,280,55,224,55"/>
+<area shape="poly" title=" " alt="" coords="295,39,239,38,239,33,295,33"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ad53315fbc476080ccbab3462f8729831" title="准备关闭信号。" alt="" coords="437,5,538,32"/>
+<area shape="poly" title=" " alt="" coords="377,35,421,27,422,32,378,40"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a1f0014bed2e9d54d7bc2acec94a9a876" title="停止服务器线程。" alt="" coords="425,56,550,83"/>
+<area shape="poly" title=" " alt="" coords="378,48,411,54,410,59,377,53"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_ab3e7cc706c522b3231f9156bba461436_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_ab3e7cc706c522b3231f9156bba461436_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_ab3e7cc706c522b3231f9156bba461436_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_ab3e7cc706c522b3231f9156bba461436_icgraph">
+<area shape="rect" title="初始化。" alt="" coords="660,76,729,103"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ae18fdecaaf0c007c3063f6f673633b91" title="检查是否正在运行。" alt="" coords="466,47,545,73"/>
+<area shape="poly" title=" " alt="" coords="644,92,545,76,546,71,645,87"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a643d4c1cb7c9ccedbc20b61bf3d381d5" title="监听。" alt="" coords="399,97,611,140"/>
+<area shape="poly" title=" " alt="" coords="645,100,612,105,611,100,644,94"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a3507638c85bec2a3f3d7a621c9fe8fa8" title="监听。" alt="" coords="398,164,612,207"/>
+<area shape="poly" title=" " alt="" coords="669,115,643,136,614,154,588,166,586,161,611,150,640,131,666,111"/>
+<area shape="poly" title=" " alt="" coords="561,58,660,74,659,80,560,63"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a5f040a4635c90c304d5d3d0a760ed383" title="反初始化。" alt="" coords="268,47,350,73"/>
+<area shape="poly" title=" " alt="" coords="450,71,350,70,351,65,450,65"/>
+<area shape="poly" title=" " alt="" coords="365,49,465,50,465,55,365,54"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a247227d292dd8bcf91459962e6f62542" title="析构函数。" alt="" coords="6,5,219,48"/>
+<area shape="poly" title=" " alt="" coords="252,53,219,47,220,42,253,48"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a2c6f25d74941e636f40a974564ba0e20" title="析构函数。" alt="" coords="5,72,220,115"/>
+<area shape="poly" title=" " alt="" coords="253,72,221,78,220,72,252,67"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae18fdecaaf0c007c3063f6f673633b91" name="ae18fdecaaf0c007c3063f6f673633b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae18fdecaaf0c007c3063f6f673633b91">&#9670;&#160;</a></span>isRunning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool isRunning </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查是否正在运行。 </p>
+<dl class="section return"><dt>返回</dt><dd>是否正在运行。 </dd></dl>
+
+<p>在 <a class="el" href="class_j_q_http_server_1_1_ssl_server_manage.html#a40e5881f9c001c5cc38554084751adbc">SslServerManage</a> , 以及 <a class="el" href="class_j_q_http_server_1_1_tcp_server_manage.html#a40e5881f9c001c5cc38554084751adbc">TcpServerManage</a> 内被实现.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_ae18fdecaaf0c007c3063f6f673633b91_cgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_ae18fdecaaf0c007c3063f6f673633b91_cgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_ae18fdecaaf0c007c3063f6f673633b91_cgraph" id="aclass_j_q_http_server_1_1_abstract_manage_ae18fdecaaf0c007c3063f6f673633b91_cgraph">
+<area shape="rect" title="检查是否正在运行。" alt="" coords="5,81,85,108"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a5f040a4635c90c304d5d3d0a760ed383" title="反初始化。" alt="" coords="133,56,215,83"/>
+<area shape="poly" title=" " alt="" coords="85,93,127,85,128,90,86,98"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab3e7cc706c522b3231f9156bba461436" title="初始化。" alt="" coords="140,107,208,133"/>
+<area shape="poly" title=" " alt="" coords="77,106,125,117,124,122,76,111"/>
+<area shape="poly" title=" " alt="" coords="133,72,92,79,91,74,132,66"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ad53315fbc476080ccbab3462f8729831" title="准备关闭信号。" alt="" coords="275,5,376,32"/>
+<area shape="poly" title=" " alt="" coords="215,53,268,35,270,40,216,58"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a1f0014bed2e9d54d7bc2acec94a9a876" title="停止服务器线程。" alt="" coords="264,56,388,83"/>
+<area shape="poly" title=" " alt="" coords="216,67,248,67,248,72,216,72"/>
+<area shape="poly" title=" " alt="" coords="141,109,100,99,101,94,143,103"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab71f4bb117d2f7b8a7b816356171a7e8" title="启动服务器线程。" alt="" coords="263,107,388,133"/>
+<area shape="poly" title=" " alt="" coords="209,117,247,117,247,123,209,123"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_ae18fdecaaf0c007c3063f6f673633b91_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_ae18fdecaaf0c007c3063f6f673633b91_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_ae18fdecaaf0c007c3063f6f673633b91_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_ae18fdecaaf0c007c3063f6f673633b91_icgraph">
+<area shape="rect" title="检查是否正在运行。" alt="" coords="398,113,477,140"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a5f040a4635c90c304d5d3d0a760ed383" title="反初始化。" alt="" coords="268,84,350,111"/>
+<area shape="poly" title=" " alt="" coords="382,126,337,114,338,109,384,121"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab3e7cc706c522b3231f9156bba461436" title="初始化。" alt="" coords="275,139,343,165"/>
+<area shape="poly" title=" " alt="" coords="392,147,344,156,343,151,391,142"/>
+<area shape="poly" title=" " alt="" coords="366,99,410,110,408,115,365,104"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a247227d292dd8bcf91459962e6f62542" title="析构函数。" alt="" coords="6,5,219,48"/>
+<area shape="poly" title=" " alt="" coords="262,80,219,62,186,51,187,46,221,58,264,75"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a2c6f25d74941e636f40a974564ba0e20" title="析构函数。" alt="" coords="5,72,220,115"/>
+<area shape="poly" title=" " alt="" coords="252,99,220,98,220,93,252,94"/>
+<area shape="poly" title=" " alt="" coords="355,132,397,123,398,129,356,137"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a643d4c1cb7c9ccedbc20b61bf3d381d5" title="监听。" alt="" coords="6,139,219,181"/>
+<area shape="poly" title=" " alt="" coords="259,157,219,158,219,153,259,151"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a3507638c85bec2a3f3d7a621c9fe8fa8" title="监听。" alt="" coords="5,205,220,248"/>
+<area shape="poly" title=" " alt="" coords="268,175,221,196,189,207,187,202,219,191,265,170"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7b10d9da8dd53ee7063b34013e0b633d" name="a7b10d9da8dd53ee7063b34013e0b633d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b10d9da8dd53ee7063b34013e0b633d">&#9670;&#160;</a></span>newSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void newSession </td>
+          <td>(</td>
+          <td class="paramtype">const QPointer&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>session</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>创建新会话。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td>会话。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a7b10d9da8dd53ee7063b34013e0b633d_cgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a7b10d9da8dd53ee7063b34013e0b633d_cgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a7b10d9da8dd53ee7063b34013e0b633d_cgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a7b10d9da8dd53ee7063b34013e0b633d_cgraph">
+<area shape="rect" title="创建新会话。" alt="" coords="5,5,98,32"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a6773c8bd0376408a236ab98aba9b92b8" title="处理接受的会话。" alt="" coords="146,5,260,32"/>
+<area shape="poly" title=" " alt="" coords="98,16,130,16,130,21,98,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a7b10d9da8dd53ee7063b34013e0b633d_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a7b10d9da8dd53ee7063b34013e0b633d_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a7b10d9da8dd53ee7063b34013e0b633d_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a7b10d9da8dd53ee7063b34013e0b633d_icgraph">
+<area shape="rect" title="创建新会话。" alt="" coords="266,35,358,61"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#acef200f77a155c73fff25a83b105c1ed" title="完成时调用。" alt="" coords="76,5,147,32"/>
+<area shape="poly" title=" " alt="" coords="250,42,146,26,147,21,251,36"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a688d08caa9641e8b1d7d8ef452cff54c" title="开始时调用。" alt="" coords="5,56,218,99"/>
+<area shape="poly" title=" " alt="" coords="251,60,219,64,218,59,250,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acef200f77a155c73fff25a83b105c1ed" name="acef200f77a155c73fff25a83b105c1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef200f77a155c73fff25a83b105c1ed">&#9670;&#160;</a></span>onFinish()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void onFinish </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>完成时调用。 </p>
+
+<p>在 <a class="el" href="class_j_q_http_server_1_1_ssl_server_manage.html#a420ab3e3d557a7514af5ae4c9e6f2fb8">SslServerManage</a> , 以及 <a class="el" href="class_j_q_http_server_1_1_tcp_server_manage.html#a420ab3e3d557a7514af5ae4c9e6f2fb8">TcpServerManage</a> 内被实现.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_acef200f77a155c73fff25a83b105c1ed_cgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_acef200f77a155c73fff25a83b105c1ed_cgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_acef200f77a155c73fff25a83b105c1ed_cgraph" id="aclass_j_q_http_server_1_1_abstract_manage_acef200f77a155c73fff25a83b105c1ed_cgraph">
+<area shape="rect" title="完成时调用。" alt="" coords="5,86,76,112"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a6773c8bd0376408a236ab98aba9b92b8" title="处理接受的会话。" alt="" coords="299,10,413,36"/>
+<area shape="poly" title=" " alt="" coords="50,83,79,50,99,33,123,20,163,9,205,4,284,7,284,13,205,9,164,14,125,25,102,38,83,54,54,87"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a7b10d9da8dd53ee7063b34013e0b633d" title="创建新会话。" alt="" coords="141,35,234,62"/>
+<area shape="poly" title=" " alt="" coords="75,84,132,65,133,70,77,89"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab71f4bb117d2f7b8a7b816356171a7e8" title="启动服务器线程。" alt="" coords="125,86,250,112"/>
+<area shape="poly" title=" " alt="" coords="76,96,109,96,109,102,76,102"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a608d2c9929167b0773373f9addabca0e" title="停止处理线程。" alt="" coords="124,136,251,163"/>
+<area shape="poly" title=" " alt="" coords="77,108,133,128,132,133,75,113"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a1f0014bed2e9d54d7bc2acec94a9a876" title="停止服务器线程。" alt="" coords="125,187,250,214"/>
+<area shape="poly" title=" " alt="" coords="56,111,86,142,125,173,134,178,131,182,122,177,82,146,52,115"/>
+<area shape="poly" title=" " alt="" coords="234,39,283,31,284,36,234,44"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ce8294e61635dabe56eb65c0f0e1935" name="a0ce8294e61635dabe56eb65c0f0e1935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ce8294e61635dabe56eb65c0f0e1935">&#9670;&#160;</a></span>onStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool onStart </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>开始时调用。 </p>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+
+<p>在 <a class="el" href="class_j_q_http_server_1_1_ssl_server_manage.html#a688d08caa9641e8b1d7d8ef452cff54c">SslServerManage</a> , 以及 <a class="el" href="class_j_q_http_server_1_1_tcp_server_manage.html#a688d08caa9641e8b1d7d8ef452cff54c">TcpServerManage</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad53315fbc476080ccbab3462f8729831" name="ad53315fbc476080ccbab3462f8729831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53315fbc476080ccbab3462f8729831">&#9670;&#160;</a></span>readyToClose</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void readyToClose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>准备关闭信号。 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_ad53315fbc476080ccbab3462f8729831_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_ad53315fbc476080ccbab3462f8729831_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_ad53315fbc476080ccbab3462f8729831_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_ad53315fbc476080ccbab3462f8729831_icgraph">
+<area shape="rect" title="准备关闭信号。" alt="" coords="777,76,878,103"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a5f040a4635c90c304d5d3d0a760ed383" title="反初始化。" alt="" coords="646,76,729,103"/>
+<area shape="poly" title=" " alt="" coords="761,92,729,92,729,87,761,87"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ae18fdecaaf0c007c3063f6f673633b91" title="检查是否正在运行。" alt="" coords="452,47,531,73"/>
+<area shape="poly" title=" " alt="" coords="631,92,531,76,532,71,631,87"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a247227d292dd8bcf91459962e6f62542" title="析构函数。" alt="" coords="385,97,597,140"/>
+<area shape="poly" title=" " alt="" coords="632,100,598,105,597,100,631,95"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a2c6f25d74941e636f40a974564ba0e20" title="析构函数。" alt="" coords="384,164,598,207"/>
+<area shape="poly" title=" " alt="" coords="660,114,632,135,600,154,573,166,571,161,597,150,629,131,657,110"/>
+<area shape="poly" title=" " alt="" coords="547,57,646,73,646,78,546,63"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab3e7cc706c522b3231f9156bba461436" title="初始化。" alt="" coords="268,47,336,73"/>
+<area shape="poly" title=" " alt="" coords="436,71,336,70,336,64,436,66"/>
+<area shape="poly" title=" " alt="" coords="352,49,451,50,451,55,351,55"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a643d4c1cb7c9ccedbc20b61bf3d381d5" title="监听。" alt="" coords="6,5,219,48"/>
+<area shape="poly" title=" " alt="" coords="252,54,218,48,219,43,253,49"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a3507638c85bec2a3f3d7a621c9fe8fa8" title="监听。" alt="" coords="5,72,220,115"/>
+<area shape="poly" title=" " alt="" coords="253,71,221,77,220,72,252,66"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0e6c516a0fe90246b5a24fae98a1ac17" name="a0e6c516a0fe90246b5a24fae98a1ac17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e6c516a0fe90246b5a24fae98a1ac17">&#9670;&#160;</a></span>serverThreadPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSharedPointer&lt; QThreadPool &gt; serverThreadPool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取服务器线程池。 </p>
+<dl class="section return"><dt>返回</dt><dd>服务器线程池。 </dd></dl>
+
+</div>
+</div>
+<a id="a3cace93653678dd057330eca3c0c6d16" name="a3cace93653678dd057330eca3c0c6d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cace93653678dd057330eca3c0c6d16">&#9670;&#160;</a></span>setHttpAcceptedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setHttpAcceptedCallback </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; void(const QPointer&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> &gt; &amp;session, QObject *mainObj)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>httpAcceptedCallback</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 接受回调。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpAcceptedCallback</td><td>HTTP 接受回调。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7c44a1dc3dee880d529b3b4d22550bed" name="a7c44a1dc3dee880d529b3b4d22550bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c44a1dc3dee880d529b3b4d22550bed">&#9670;&#160;</a></span>setMainObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setMainObject </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置主对象。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>主对象。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab71f4bb117d2f7b8a7b816356171a7e8" name="ab71f4bb117d2f7b8a7b816356171a7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab71f4bb117d2f7b8a7b816356171a7e8">&#9670;&#160;</a></span>startServerThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool startServerThread </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>启动服务器线程。 </p>
+<dl class="section return"><dt>返回</dt><dd>是否成功。 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_ab71f4bb117d2f7b8a7b816356171a7e8_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_ab71f4bb117d2f7b8a7b816356171a7e8_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_ab71f4bb117d2f7b8a7b816356171a7e8_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_ab71f4bb117d2f7b8a7b816356171a7e8_icgraph">
+<area shape="rect" title="启动服务器线程。" alt="" coords="779,101,904,128"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab3e7cc706c522b3231f9156bba461436" title="初始化。" alt="" coords="661,76,730,103"/>
+<area shape="poly" title=" " alt="" coords="763,104,730,98,731,93,764,98"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#acef200f77a155c73fff25a83b105c1ed" title="完成时调用。" alt="" coords="660,127,731,153"/>
+<area shape="poly" title=" " alt="" coords="763,131,732,137,731,131,762,126"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ae18fdecaaf0c007c3063f6f673633b91" title="检查是否正在运行。" alt="" coords="466,47,545,73"/>
+<area shape="poly" title=" " alt="" coords="646,92,545,76,546,71,647,87"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a643d4c1cb7c9ccedbc20b61bf3d381d5" title="监听。" alt="" coords="399,97,611,140"/>
+<area shape="poly" title=" " alt="" coords="647,99,612,105,611,100,646,94"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a3507638c85bec2a3f3d7a621c9fe8fa8" title="监听。" alt="" coords="398,164,612,207"/>
+<area shape="poly" title=" " alt="" coords="665,114,662,117,639,137,614,154,588,166,586,161,611,150,636,133,659,113,662,110"/>
+<area shape="poly" title=" " alt="" coords="561,58,661,74,661,80,560,63"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a5f040a4635c90c304d5d3d0a760ed383" title="反初始化。" alt="" coords="268,47,350,73"/>
+<area shape="poly" title=" " alt="" coords="450,71,350,70,351,65,450,65"/>
+<area shape="poly" title=" " alt="" coords="365,49,465,50,465,55,365,54"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a247227d292dd8bcf91459962e6f62542" title="析构函数。" alt="" coords="6,5,219,48"/>
+<area shape="poly" title=" " alt="" coords="252,53,219,47,220,42,253,48"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a2c6f25d74941e636f40a974564ba0e20" title="析构函数。" alt="" coords="5,72,220,115"/>
+<area shape="poly" title=" " alt="" coords="253,72,221,78,220,72,252,67"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a608d2c9929167b0773373f9addabca0e" name="a608d2c9929167b0773373f9addabca0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a608d2c9929167b0773373f9addabca0e">&#9670;&#160;</a></span>stopHandleThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stopHandleThread </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>停止处理线程。 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a608d2c9929167b0773373f9addabca0e_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a608d2c9929167b0773373f9addabca0e_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a608d2c9929167b0773373f9addabca0e_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a608d2c9929167b0773373f9addabca0e_icgraph">
+<area shape="rect" title="停止处理线程。" alt="" coords="178,31,305,57"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#acef200f77a155c73fff25a83b105c1ed" title="完成时调用。" alt="" coords="32,5,103,32"/>
+<area shape="poly" title=" " alt="" coords="162,35,103,26,104,21,163,30"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a45d86e7261e194cb9b83dc30bebd6a2f" title="虚析构函数。" alt="" coords="5,56,130,83"/>
+<area shape="poly" title=" " alt="" coords="163,58,130,63,129,58,162,53"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1f0014bed2e9d54d7bc2acec94a9a876" name="a1f0014bed2e9d54d7bc2acec94a9a876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f0014bed2e9d54d7bc2acec94a9a876">&#9670;&#160;</a></span>stopServerThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stopServerThread </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>停止服务器线程。 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_j_q_http_server_1_1_abstract_manage_a1f0014bed2e9d54d7bc2acec94a9a876_icgraph.png" border="0" usemap="#aclass_j_q_http_server_1_1_abstract_manage_a1f0014bed2e9d54d7bc2acec94a9a876_icgraph" alt=""/></div>
+<map name="aclass_j_q_http_server_1_1_abstract_manage_a1f0014bed2e9d54d7bc2acec94a9a876_icgraph" id="aclass_j_q_http_server_1_1_abstract_manage_a1f0014bed2e9d54d7bc2acec94a9a876_icgraph">
+<area shape="rect" title="停止服务器线程。" alt="" coords="777,101,901,128"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#a5f040a4635c90c304d5d3d0a760ed383" title="反初始化。" alt="" coords="646,76,729,103"/>
+<area shape="poly" title=" " alt="" coords="761,104,729,99,730,94,762,99"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#acef200f77a155c73fff25a83b105c1ed" title="完成时调用。" alt="" coords="652,127,723,153"/>
+<area shape="poly" title=" " alt="" coords="762,130,724,137,723,132,761,125"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ae18fdecaaf0c007c3063f6f673633b91" title="检查是否正在运行。" alt="" coords="452,47,531,73"/>
+<area shape="poly" title=" " alt="" coords="631,92,531,76,532,71,631,87"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a247227d292dd8bcf91459962e6f62542" title="析构函数。" alt="" coords="385,97,597,140"/>
+<area shape="poly" title=" " alt="" coords="632,100,598,105,597,100,631,95"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a2c6f25d74941e636f40a974564ba0e20" title="析构函数。" alt="" coords="384,164,598,207"/>
+<area shape="poly" title=" " alt="" coords="653,114,648,117,625,137,600,154,574,166,572,161,597,150,621,132,645,113,650,109"/>
+<area shape="poly" title=" " alt="" coords="547,57,646,73,646,78,546,63"/>
+<area shape="rect" href="class_j_q_http_server_1_1_abstract_manage.html#ab3e7cc706c522b3231f9156bba461436" title="初始化。" alt="" coords="268,47,336,73"/>
+<area shape="poly" title=" " alt="" coords="436,71,336,70,336,64,436,66"/>
+<area shape="poly" title=" " alt="" coords="352,49,451,50,451,55,351,55"/>
+<area shape="rect" href="class_j_q_http_server_1_1_ssl_server_manage.html#a643d4c1cb7c9ccedbc20b61bf3d381d5" title="监听。" alt="" coords="6,5,219,48"/>
+<area shape="poly" title=" " alt="" coords="252,54,218,48,219,43,253,49"/>
+<area shape="rect" href="class_j_q_http_server_1_1_tcp_server_manage.html#a3507638c85bec2a3f3d7a621c9fe8fa8" title="监听。" alt="" coords="5,72,220,115"/>
+<area shape="poly" title=" " alt="" coords="253,71,221,77,220,72,252,66"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a2f8cef0462726430e4b57d8f27bcfde7" name="a2f8cef0462726430e4b57d8f27bcfde7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f8cef0462726430e4b57d8f27bcfde7">&#9670;&#160;</a></span>availableSessions_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSet&lt;<a class="el" href="class_j_q_http_server_1_1_session.html">Session</a> *&gt; availableSessions_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前活跃会话集合 </p>
+
+</div>
+</div>
+<a id="ae345283b994f2dad60b0473dc869ad15" name="ae345283b994f2dad60b0473dc869ad15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae345283b994f2dad60b0473dc869ad15">&#9670;&#160;</a></span>handleThreadPool_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSharedPointer&lt;QThreadPool&gt; handleThreadPool_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理线程池(用于业务逻辑) </p>
+
+</div>
+</div>
+<a id="a139894f4649f9152690d4b6b6150158f" name="a139894f4649f9152690d4b6b6150158f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a139894f4649f9152690d4b6b6150158f">&#9670;&#160;</a></span>httpAcceptedCallback_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(const QPointer&lt;<a class="el" href="class_j_q_http_server_1_1_session.html">Session</a>&gt; &amp;session,QObject *mainObj)&gt; httpAcceptedCallback_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>HTTP请求接受回调函数 </p>
+
+</div>
+</div>
+<a id="ad62063b49fd9d8c887533496ee3fae8a" name="ad62063b49fd9d8c887533496ee3fae8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad62063b49fd9d8c887533496ee3fae8a">&#9670;&#160;</a></span>m_mainObj</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QObject* m_mainObj</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>主业务逻辑对象指针 </p>
+
+</div>
+</div>
+<a id="accff2ace0dcd0f590a54dba9f7ffb8a6" name="accff2ace0dcd0f590a54dba9f7ffb8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accff2ace0dcd0f590a54dba9f7ffb8a6">&#9670;&#160;</a></span>mutex_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMutex mutex_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>线程同步互斥锁 </p>
+
+</div>
+</div>
+<a id="adb315cdbd1a119e0e41b69157200d347" name="adb315cdbd1a119e0e41b69157200d347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb315cdbd1a119e0e41b69157200d347">&#9670;&#160;</a></span>serverThreadPool_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSharedPointer&lt;QThreadPool&gt; serverThreadPool_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>服务器线程池(用于接受连接) </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="jqhttpserver_8h_source.html">jqhttpserver.h</a></li>
+<li><a class="el" href="jqhttpserver_8cpp.html">jqhttpserver.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_j_q_http_server.html">JQHttpServer</a></li><li class="navelem"><a class="el" href="class_j_q_http_server_1_1_abstract_manage.html">AbstractManage</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

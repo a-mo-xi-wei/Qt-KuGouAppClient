@@ -1,0 +1,15 @@
+<map id="BaseMenu" name="BaseMenu">
+<area shape="rect" id="Node000001" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="312,80,395,107"/>
+<area shape="rect" id="Node000003" href="$class_list_option_menu.html" title="歌曲分类选项菜单类，继承自 BaseMenu，提供场景、主题等分类选择" alt="" coords="5,155,118,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="298,111,113,157,112,151,296,106"/>
+<area shape="rect" id="Node000004" href="$class_listen_option_menu.html" title="听单选项菜单类，继承自 BaseMenu，提供分类音频内容选择" alt="" coords="142,155,269,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="315,116,233,156,230,152,313,111"/>
+<area shape="rect" id="Node000005" href="$class_song_option_menu.html" title="歌曲操作选项菜单类，继承自 BaseMenu，提供播放、添加、删除等功能" alt="" coords="293,155,414,181"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="356,122,356,154,351,154,351,122"/>
+<area shape="rect" id="Node000006" href="$class_sort_option_menu.html" title="歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式" alt="" coords="438,155,554,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="393,112,472,152,470,156,391,116"/>
+<area shape="rect" id="Node000007" href="$class_title_option_menu.html" title="标题栏选项菜单类，继承自 BaseMenu，提供壁纸、设置、退出等功能" alt="" coords="578,155,694,181"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="411,107,588,152,586,157,410,112"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="322,5,385,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="356,48,356,80,351,80,351,48"/>
+</map>

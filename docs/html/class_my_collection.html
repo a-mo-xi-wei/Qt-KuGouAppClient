@@ -1,0 +1,1675 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: MyCollection类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_my_collection.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_my_collection-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">MyCollection类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>收藏界面类，集成单曲、歌单、专辑、视频、歌手和设备界面  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_my_collection_8h_source.html">MyCollection.h</a>&gt;</code></p>
+<div class="dynheader">
+类 MyCollection 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection__inherit__graph.png" border="0" usemap="#a_my_collection_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_my_collection_inherit__map" id="a_my_collection_inherit__map">
+<area shape="rect" title="收藏界面类，集成单曲、歌单、专辑、视频、歌手和设备界面" alt="" coords="5,80,103,107"/>
+<area shape="rect" title=" " alt="" coords="18,5,90,32"/>
+<area shape="poly" title=" " alt="" coords="57,48,57,80,51,80,51,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+MyCollection 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection__coll__graph.png" border="0" usemap="#a_my_collection_coll__map" alt="Collaboration graph"/></div>
+<map name="a_my_collection_coll__map" id="a_my_collection_coll__map">
+<area shape="rect" title="收藏界面类，集成单曲、歌单、专辑、视频、歌手和设备界面" alt="" coords="5,80,103,107"/>
+<area shape="rect" title=" " alt="" coords="18,5,90,32"/>
+<area shape="poly" title=" " alt="" coords="57,48,57,80,51,80,51,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:aa23356daca3ed71116d6ae55df2991f4" id="r_aa23356daca3ed71116d6ae55df2991f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa23356daca3ed71116d6ae55df2991f4">find_more_music</a> ()</td></tr>
+<tr class="memdesc:aa23356daca3ed71116d6ae55df2991f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">搜索更多音乐的信号  <br /></td></tr>
+<tr class="separator:aa23356daca3ed71116d6ae55df2991f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a512490534a0678d9f30ca0dc7fd134aa" id="r_a512490534a0678d9f30ca0dc7fd134aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a512490534a0678d9f30ca0dc7fd134aa">MyCollection</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a512490534a0678d9f30ca0dc7fd134aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化收藏界面  <br /></td></tr>
+<tr class="separator:a512490534a0678d9f30ca0dc7fd134aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4430436f5d98ab942d77ed9c8427634c" id="r_a4430436f5d98ab942d77ed9c8427634c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4430436f5d98ab942d77ed9c8427634c">~MyCollection</a> () override</td></tr>
+<tr class="memdesc:a4430436f5d98ab942d77ed9c8427634c"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，清理资源  <br /></td></tr>
+<tr class="separator:a4430436f5d98ab942d77ed9c8427634c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a7eb87a6d4464680c455d278d1d32eba6" id="r_a7eb87a6d4464680c455d278d1d32eba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a> (QObject *watched, QEvent *event) override</td></tr>
+<tr class="memdesc:a7eb87a6d4464680c455d278d1d32eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤器  <br /></td></tr>
+<tr class="separator:a7eb87a6d4464680c455d278d1d32eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7523c71b2bf60975302287ec8923f80e" id="r_a7523c71b2bf60975302287ec8923f80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a7523c71b2bf60975302287ec8923f80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标按下事件  <br /></td></tr>
+<tr class="separator:a7523c71b2bf60975302287ec8923f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a2a9bea9bb21529ea83bf0be77446fa04" id="r_a2a9bea9bb21529ea83bf0be77446fa04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a9bea9bb21529ea83bf0be77446fa04">on_singleSong_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a2a9bea9bb21529ea83bf0be77446fa04"><td class="mdescLeft">&#160;</td><td class="mdescRight">单曲按钮点击槽函数  <br /></td></tr>
+<tr class="separator:a2a9bea9bb21529ea83bf0be77446fa04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955813f9138793e730e4d73b4ad5dca9" id="r_a955813f9138793e730e4d73b4ad5dca9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a955813f9138793e730e4d73b4ad5dca9">on_songList_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a955813f9138793e730e4d73b4ad5dca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌单按钮点击槽函数  <br /></td></tr>
+<tr class="separator:a955813f9138793e730e4d73b4ad5dca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d2a9b8dd7218807b72ec01cf79ba4c" id="r_aa1d2a9b8dd7218807b72ec01cf79ba4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1d2a9b8dd7218807b72ec01cf79ba4c">on_specialAlbum_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:aa1d2a9b8dd7218807b72ec01cf79ba4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">专辑按钮点击槽函数  <br /></td></tr>
+<tr class="separator:aa1d2a9b8dd7218807b72ec01cf79ba4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf3eb1de5aea1bda093068c9ecbd001d" id="r_acf3eb1de5aea1bda093068c9ecbd001d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf3eb1de5aea1bda093068c9ecbd001d">on_collectVideo_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:acf3eb1de5aea1bda093068c9ecbd001d"><td class="mdescLeft">&#160;</td><td class="mdescRight">视频按钮点击槽函数  <br /></td></tr>
+<tr class="separator:acf3eb1de5aea1bda093068c9ecbd001d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb261a504d790292a58fedec0b63820d" id="r_afb261a504d790292a58fedec0b63820d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb261a504d790292a58fedec0b63820d">on_singer_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:afb261a504d790292a58fedec0b63820d"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌手按钮点击槽函数  <br /></td></tr>
+<tr class="separator:afb261a504d790292a58fedec0b63820d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b5d53ac5814c17ffce3684c7a9c340e" id="r_a9b5d53ac5814c17ffce3684c7a9c340e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b5d53ac5814c17ffce3684c7a9c340e">on_device_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a9b5d53ac5814c17ffce3684c7a9c340e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备按钮点击槽函数  <br /></td></tr>
+<tr class="separator:a9b5d53ac5814c17ffce3684c7a9c340e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a0880fc715278119401b0b218adc8ade6" id="r_a0880fc715278119401b0b218adc8ade6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0880fc715278119401b0b218adc8ade6">initStackedWidget</a> ()</td></tr>
+<tr class="memdesc:a0880fc715278119401b0b218adc8ade6"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化堆栈窗口  <br /></td></tr>
+<tr class="separator:a0880fc715278119401b0b218adc8ade6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba6e95967cc3eb25fd518f7bde6ec04" id="r_afba6e95967cc3eb25fd518f7bde6ec04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a> ()</td></tr>
+<tr class="memdesc:afba6e95967cc3eb25fd518f7bde6ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化界面  <br /></td></tr>
+<tr class="separator:afba6e95967cc3eb25fd518f7bde6ec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc31945fa34b123ada488d5710cce62" id="r_aebc31945fa34b123ada488d5710cce62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebc31945fa34b123ada488d5710cce62">initIndexLab</a> ()</td></tr>
+<tr class="memdesc:aebc31945fa34b123ada488d5710cce62"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化索引标签  <br /></td></tr>
+<tr class="separator:aebc31945fa34b123ada488d5710cce62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a51b4fffd47353441cbc3b66534c08" id="r_a67a51b4fffd47353441cbc3b66534c08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67a51b4fffd47353441cbc3b66534c08">initSingleSong</a> ()</td></tr>
+<tr class="memdesc:a67a51b4fffd47353441cbc3b66534c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化单曲界面  <br /></td></tr>
+<tr class="separator:a67a51b4fffd47353441cbc3b66534c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05868a688d1a36771864c8ddd30adcb" id="r_ae05868a688d1a36771864c8ddd30adcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae05868a688d1a36771864c8ddd30adcb">initSongList</a> ()</td></tr>
+<tr class="memdesc:ae05868a688d1a36771864c8ddd30adcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化歌单界面  <br /></td></tr>
+<tr class="separator:ae05868a688d1a36771864c8ddd30adcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac415e1efe105750fb4fccd6c62774980" id="r_ac415e1efe105750fb4fccd6c62774980"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac415e1efe105750fb4fccd6c62774980">initSpecialAlbum</a> ()</td></tr>
+<tr class="memdesc:ac415e1efe105750fb4fccd6c62774980"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化专辑界面  <br /></td></tr>
+<tr class="separator:ac415e1efe105750fb4fccd6c62774980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b678960dc63ae8988d14538bb301c4e" id="r_a0b678960dc63ae8988d14538bb301c4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b678960dc63ae8988d14538bb301c4e">initCollectVideo</a> ()</td></tr>
+<tr class="memdesc:a0b678960dc63ae8988d14538bb301c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化视频界面  <br /></td></tr>
+<tr class="separator:a0b678960dc63ae8988d14538bb301c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c996bcb271aacaa0b682dc7d9246245" id="r_a1c996bcb271aacaa0b682dc7d9246245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c996bcb271aacaa0b682dc7d9246245">initSinger</a> ()</td></tr>
+<tr class="memdesc:a1c996bcb271aacaa0b682dc7d9246245"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化歌手界面  <br /></td></tr>
+<tr class="separator:a1c996bcb271aacaa0b682dc7d9246245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d2043bb6ede9c12212992591d63d91" id="r_ac1d2043bb6ede9c12212992591d63d91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1d2043bb6ede9c12212992591d63d91">initDevice</a> ()</td></tr>
+<tr class="memdesc:ac1d2043bb6ede9c12212992591d63d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化设备界面  <br /></td></tr>
+<tr class="separator:ac1d2043bb6ede9c12212992591d63d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab868524a9562cda1f7b60b4220e2248e" id="r_ab868524a9562cda1f7b60b4220e2248e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab868524a9562cda1f7b60b4220e2248e">enableButton</a> (const bool &amp;<a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>) const</td></tr>
+<tr class="memdesc:ab868524a9562cda1f7b60b4220e2248e"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用/禁用按钮  <br /></td></tr>
+<tr class="separator:ab868524a9562cda1f7b60b4220e2248e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ab393cca48703413c623866fd55cd5917" id="r_ab393cca48703413c623866fd55cd5917"><td class="memItemLeft" align="right" valign="top">Ui::MyCollection *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab393cca48703413c623866fd55cd5917">ui</a></td></tr>
+<tr class="memdesc:ab393cca48703413c623866fd55cd5917"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 指针  <br /></td></tr>
+<tr class="separator:ab393cca48703413c623866fd55cd5917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47442fcf7db8bd0dab09d79ad4c1d47" id="r_ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_q_button_group.html">QButtonGroup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad47442fcf7db8bd0dab09d79ad4c1d47">m_buttonGroup</a></td></tr>
+<tr class="memdesc:ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">按钮组  <br /></td></tr>
+<tr class="separator:ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a207379fe637c8c4eb4c21f1221128e11" id="r_a207379fe637c8c4eb4c21f1221128e11"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_single_song.html">SingleSong</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a207379fe637c8c4eb4c21f1221128e11">m_singleSong</a></td></tr>
+<tr class="memdesc:a207379fe637c8c4eb4c21f1221128e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">单曲界面  <br /></td></tr>
+<tr class="separator:a207379fe637c8c4eb4c21f1221128e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdcb53e0450ebd6c1411628a891d57d3" id="r_afdcb53e0450ebd6c1411628a891d57d3"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_song_list_widget.html">SongListWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdcb53e0450ebd6c1411628a891d57d3">m_songList</a></td></tr>
+<tr class="memdesc:afdcb53e0450ebd6c1411628a891d57d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌单界面  <br /></td></tr>
+<tr class="separator:afdcb53e0450ebd6c1411628a891d57d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7561be9bde85d7b068b227dea635ea7" id="r_af7561be9bde85d7b068b227dea635ea7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_special_album.html">SpecialAlbum</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7561be9bde85d7b068b227dea635ea7">m_specialAlbum</a></td></tr>
+<tr class="memdesc:af7561be9bde85d7b068b227dea635ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">专辑界面  <br /></td></tr>
+<tr class="separator:af7561be9bde85d7b068b227dea635ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e054cc754418c18209e39a2eed8a93" id="r_ae3e054cc754418c18209e39a2eed8a93"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_collect_video.html">CollectVideo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3e054cc754418c18209e39a2eed8a93">m_collectVideo</a></td></tr>
+<tr class="memdesc:ae3e054cc754418c18209e39a2eed8a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">视频界面  <br /></td></tr>
+<tr class="separator:ae3e054cc754418c18209e39a2eed8a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace11d9c75a439dca6455f9dec5a6c804" id="r_ace11d9c75a439dca6455f9dec5a6c804"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_singer_widget.html">SingerWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace11d9c75a439dca6455f9dec5a6c804">m_singerWidget</a></td></tr>
+<tr class="memdesc:ace11d9c75a439dca6455f9dec5a6c804"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌手界面  <br /></td></tr>
+<tr class="separator:ace11d9c75a439dca6455f9dec5a6c804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98d358f2f8005a15156173085a66509" id="r_ab98d358f2f8005a15156173085a66509"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_device_widget.html">DeviceWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab98d358f2f8005a15156173085a66509">m_deviceWidget</a></td></tr>
+<tr class="memdesc:ab98d358f2f8005a15156173085a66509"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备界面  <br /></td></tr>
+<tr class="separator:ab98d358f2f8005a15156173085a66509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>收藏界面类，集成单曲、歌单、专辑、视频、歌手和设备界面 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a512490534a0678d9f30ca0dc7fd134aa" name="a512490534a0678d9f30ca0dc7fd134aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512490534a0678d9f30ca0dc7fd134aa">&#9670;&#160;</a></span>MyCollection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_collection.html">MyCollection</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化收藏界面 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 加载样式表</p>
+<p>&lt; 应用样式表</p>
+<p>&lt; 记录错误日志</p>
+<p>&lt; 初始化界面</p>
+<p>&lt; 连接动画完成信号</p>
+<p>&lt; 启用按钮</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a512490534a0678d9f30ca0dc7fd134aa_cgraph.png" border="0" usemap="#aclass_my_collection_a512490534a0678d9f30ca0dc7fd134aa_cgraph" alt=""/></div>
+<map name="aclass_my_collection_a512490534a0678d9f30ca0dc7fd134aa_cgraph" id="aclass_my_collection_a512490534a0678d9f30ca0dc7fd134aa_cgraph">
+<area shape="rect" title="构造函数，初始化收藏界面" alt="" coords="5,92,103,119"/>
+<area shape="poly" title=" " alt="" coords="24,93,19,83,23,74,35,68,54,65,75,68,86,74,83,79,73,73,54,71,36,73,27,77,25,83,29,90"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="151,25,300,68"/>
+<area shape="poly" title=" " alt="" coords="94,89,146,71,148,76,96,94"/>
+<area shape="rect" href="class_my_collection.html#ab868524a9562cda1f7b60b4220e2248e" title="启用/禁用按钮" alt="" coords="177,92,274,119"/>
+<area shape="poly" title=" " alt="" coords="103,103,162,103,162,108,103,108"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="200,143,251,169"/>
+<area shape="poly" title=" " alt="" coords="103,117,186,142,184,147,101,122"/>
+<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="348,25,497,68"/>
+<area shape="poly" title=" " alt="" coords="300,53,333,53,333,58,300,58"/>
+<area shape="poly" title=" " alt="" coords="348,41,315,40,315,35,348,35"/>
+<area shape="rect" href="class_my_collection.html#aebc31945fa34b123ada488d5710cce62" title="初始化索引标签" alt="" coords="377,117,468,144"/>
+<area shape="poly" title=" " alt="" coords="251,150,361,136,362,141,252,155"/>
+<area shape="rect" href="class_my_collection.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="359,168,486,195"/>
+<area shape="poly" title=" " alt="" coords="252,157,344,169,343,174,251,162"/>
+<area shape="rect" href="class_my_collection.html#a0b678960dc63ae8988d14538bb301c4e" title="初始化视频界面" alt="" coords="548,25,661,52"/>
+<area shape="poly" title=" " alt="" coords="477,165,496,154,512,134,520,114,527,93,543,70,558,58,561,62,547,74,532,95,525,116,517,137,499,158,480,170"/>
+<area shape="rect" href="class_my_collection.html#ac1d2043bb6ede9c12212992591d63d91" title="初始化设备界面" alt="" coords="565,84,644,111"/>
+<area shape="poly" title=" " alt="" coords="467,165,496,154,565,116,568,121,498,158,469,170"/>
+<area shape="rect" href="class_my_collection.html#a1c996bcb271aacaa0b682dc7d9246245" title="初始化歌手界面" alt="" coords="567,143,642,169"/>
+<area shape="poly" title=" " alt="" coords="486,170,551,161,552,166,487,175"/>
+<area shape="rect" href="class_my_collection.html#a67a51b4fffd47353441cbc3b66534c08" title="初始化单曲界面" alt="" coords="552,193,657,220"/>
+<area shape="poly" title=" " alt="" coords="487,188,538,195,537,200,486,193"/>
+<area shape="rect" href="class_my_collection.html#ae05868a688d1a36771864c8ddd30adcb" title="初始化歌单界面" alt="" coords="560,244,649,271"/>
+<area shape="poly" title=" " alt="" coords="458,193,557,235,555,240,456,198"/>
+<area shape="rect" href="class_my_collection.html#ac415e1efe105750fb4fccd6c62774980" title="初始化专辑界面" alt="" coords="545,295,664,321"/>
+<area shape="poly" title=" " alt="" coords="440,193,485,235,547,280,555,285,552,290,544,285,482,239,436,197"/>
+<area shape="rect" href="class_collect_video.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="726,5,850,48"/>
+<area shape="poly" title=" " alt="" coords="661,32,710,29,711,34,661,38"/>
+<area shape="rect" href="class_device_widget.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="722,72,854,115"/>
+<area shape="poly" title=" " alt="" coords="645,94,706,92,706,98,645,99"/>
+<area shape="rect" href="class_singer_widget.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="724,139,852,181"/>
+<area shape="poly" title=" " alt="" coords="643,154,709,156,708,161,643,159"/>
+<area shape="rect" href="class_single_song.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="712,205,864,248"/>
+<area shape="poly" title=" " alt="" coords="657,210,696,214,696,219,657,215"/>
+<area shape="rect" href="class_special_album.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="723,287,853,329"/>
+<area shape="poly" title=" " alt="" coords="664,305,707,305,707,311,664,311"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a512490534a0678d9f30ca0dc7fd134aa_icgraph.png" border="0" usemap="#aclass_my_collection_a512490534a0678d9f30ca0dc7fd134aa_icgraph" alt=""/></div>
+<map name="aclass_my_collection_a512490534a0678d9f30ca0dc7fd134aa_icgraph" id="aclass_my_collection_a512490534a0678d9f30ca0dc7fd134aa_icgraph">
+<area shape="rect" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="69,16,64,10,54,8,45,10,40,14,38,20,41,28,36,30,33,20,35,11,42,5,54,3,66,5,73,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4430436f5d98ab942d77ed9c8427634c" name="a4430436f5d98ab942d77ed9c8427634c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4430436f5d98ab942d77ed9c8427634c">&#9670;&#160;</a></span>~MyCollection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_my_collection.html">MyCollection</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，清理资源 </p>
+<p>&lt; 删除 UI</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab868524a9562cda1f7b60b4220e2248e" name="ab868524a9562cda1f7b60b4220e2248e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab868524a9562cda1f7b60b4220e2248e">&#9670;&#160;</a></span>enableButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enableButton </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>启用/禁用按钮 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>是否启用 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置单曲按钮状态</p>
+<p>&lt; 设置歌单按钮状态</p>
+<p>&lt; 设置专辑按钮状态</p>
+<p>&lt; 设置视频按钮状态</p>
+<p>&lt; 设置歌手按钮状态</p>
+<p>&lt; 设置设备按钮状态</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_ab868524a9562cda1f7b60b4220e2248e_icgraph.png" border="0" usemap="#aclass_my_collection_ab868524a9562cda1f7b60b4220e2248e_icgraph" alt=""/></div>
+<map name="aclass_my_collection_ab868524a9562cda1f7b60b4220e2248e_icgraph" id="aclass_my_collection_ab868524a9562cda1f7b60b4220e2248e_icgraph">
+<area shape="rect" title="启用/禁用按钮" alt="" coords="247,221,344,248"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="53,29,151,56"/>
+<area shape="poly" title=" " alt="" coords="283,207,271,175,252,138,228,101,197,70,175,58,150,50,152,45,177,53,200,66,232,98,257,135,276,173,288,206"/>
+<area shape="rect" href="class_my_collection.html#acf3eb1de5aea1bda093068c9ecbd001d" title="视频按钮点击槽函数" alt="" coords="9,80,195,123"/>
+<area shape="poly" title=" " alt="" coords="273,211,240,173,197,137,176,126,179,121,200,132,244,169,277,207"/>
+<area shape="rect" href="class_my_collection.html#a9b5d53ac5814c17ffce3684c7a9c340e" title="设备按钮点击槽函数" alt="" coords="25,147,179,189"/>
+<area shape="poly" title=" " alt="" coords="239,218,165,192,167,187,240,213"/>
+<area shape="rect" href="class_my_collection.html#afb261a504d790292a58fedec0b63820d" title="歌手按钮点击槽函数" alt="" coords="27,213,177,256"/>
+<area shape="poly" title=" " alt="" coords="231,237,178,237,178,232,231,232"/>
+<area shape="rect" href="class_my_collection.html#a2a9bea9bb21529ea83bf0be77446fa04" title="单曲按钮点击槽函数" alt="" coords="12,280,192,323"/>
+<area shape="poly" title=" " alt="" coords="240,256,167,282,165,277,239,251"/>
+<area shape="rect" href="class_my_collection.html#a955813f9138793e730e4d73b4ad5dca9" title="歌单按钮点击槽函数" alt="" coords="20,347,184,389"/>
+<area shape="poly" title=" " alt="" coords="277,262,244,300,200,337,179,348,176,344,197,332,240,297,273,259"/>
+<area shape="rect" href="class_my_collection.html#aa1d2a9b8dd7218807b72ec01cf79ba4c" title="专辑按钮点击槽函数" alt="" coords="5,413,199,456"/>
+<area shape="poly" title=" " alt="" coords="287,264,256,333,231,371,200,403,183,415,180,411,197,399,227,367,251,331,282,262"/>
+<area shape="poly" title=" " alt="" coords="135,16,124,10,102,8,82,10,71,15,68,20,74,27,69,30,63,21,67,11,80,5,102,3,125,5,137,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7eb87a6d4464680c455d278d1d32eba6" name="a7eb87a6d4464680c455d278d1d32eba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb87a6d4464680c455d278d1d32eba6">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>事件过滤器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>监听对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>动态切换按钮和标签样式 </dd></dl>
+<p>&lt; 设置单曲按钮悬停样式</p>
+<p>&lt; 设置单曲标签样式</p>
+<p>&lt; 设置单曲按钮离开样式</p>
+<p>&lt; 设置单曲标签样式</p>
+<p>&lt; 设置歌单按钮悬停样式</p>
+<p>&lt; 设置歌单标签样式</p>
+<p>&lt; 设置歌单按钮离开样式</p>
+<p>&lt; 设置歌单标签样式</p>
+<p>&lt; 设置专辑按钮悬停样式</p>
+<p>&lt; 设置专辑标签样式</p>
+<p>&lt; 设置专辑按钮离开样式</p>
+<p>&lt; 设置专辑标签样式</p>
+<p>&lt; 设置视频按钮悬停样式</p>
+<p>&lt; 设置视频标签样式</p>
+<p>&lt; 设置视频按钮离开样式</p>
+<p>&lt; 设置视频标签样式</p>
+<p>&lt; 设置歌手按钮悬停样式</p>
+<p>&lt; 设置歌手标签样式</p>
+<p>&lt; 设置歌手按钮离开样式</p>
+<p>&lt; 设置歌手标签样式</p>
+<p>&lt; 设置设备按钮悬停样式</p>
+<p>&lt; 设置设备标签样式</p>
+<p>&lt; 设置设备按钮离开样式</p>
+<p>&lt; 设置设备标签样式</p>
+<p>&lt; 调用父类过滤器</p>
+
+</div>
+</div>
+<a id="aa23356daca3ed71116d6ae55df2991f4" name="aa23356daca3ed71116d6ae55df2991f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa23356daca3ed71116d6ae55df2991f4">&#9670;&#160;</a></span>find_more_music</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void find_more_music </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>搜索更多音乐的信号 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_aa23356daca3ed71116d6ae55df2991f4_icgraph.png" border="0" usemap="#aclass_my_collection_aa23356daca3ed71116d6ae55df2991f4_icgraph" alt=""/></div>
+<map name="aclass_my_collection_aa23356daca3ed71116d6ae55df2991f4_icgraph" id="aclass_my_collection_aa23356daca3ed71116d6ae55df2991f4_icgraph">
+<area shape="rect" title="搜索更多音乐的信号" alt="" coords="625,29,746,56"/>
+<area shape="rect" href="class_ku_gou_app.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="379,29,577,56"/>
+<area shape="poly" title=" " alt="" coords="610,45,578,45,578,40,610,40"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="209,29,331,56"/>
+<area shape="poly" title=" " alt="" coords="364,45,332,45,332,40,364,40"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,29,161,56"/>
+<area shape="poly" title=" " alt="" coords="193,45,161,45,161,40,193,40"/>
+<area shape="poly" title=" " alt="" coords="115,16,104,10,83,8,64,10,53,15,51,20,56,27,51,30,45,21,49,11,62,5,83,3,105,5,117,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0b678960dc63ae8988d14538bb301c4e" name="a0b678960dc63ae8988d14538bb301c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b678960dc63ae8988d14538bb301c4e">&#9670;&#160;</a></span>initCollectVideo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initCollectVideo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化视频界面 </p>
+<dl class="section note"><dt>注解</dt><dd>创建视频界面并连接信号 </dd></dl>
+<p>&lt; 创建视频界面</p>
+<p>&lt; 连接搜索信号</p>
+<p>&lt; 添加到堆栈窗口</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a0b678960dc63ae8988d14538bb301c4e_cgraph.png" border="0" usemap="#aclass_my_collection_a0b678960dc63ae8988d14538bb301c4e_cgraph" alt=""/></div>
+<map name="aclass_my_collection_a0b678960dc63ae8988d14538bb301c4e_cgraph" id="aclass_my_collection_a0b678960dc63ae8988d14538bb301c4e_cgraph">
+<area shape="rect" title="初始化视频界面" alt="" coords="5,13,118,40"/>
+<area shape="rect" href="class_collect_video.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="166,5,290,48"/>
+<area shape="poly" title=" " alt="" coords="118,24,150,24,150,29,118,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a0b678960dc63ae8988d14538bb301c4e_icgraph.png" border="0" usemap="#aclass_my_collection_a0b678960dc63ae8988d14538bb301c4e_icgraph" alt=""/></div>
+<map name="aclass_my_collection_a0b678960dc63ae8988d14538bb301c4e_icgraph" id="aclass_my_collection_a0b678960dc63ae8988d14538bb301c4e_icgraph">
+<area shape="rect" title="初始化视频界面" alt="" coords="425,29,538,56"/>
+<area shape="rect" href="class_my_collection.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="250,29,377,56"/>
+<area shape="poly" title=" " alt="" coords="409,45,377,45,377,40,409,40"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="poly" title=" " alt="" coords="234,45,202,45,202,40,234,40"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac1d2043bb6ede9c12212992591d63d91" name="ac1d2043bb6ede9c12212992591d63d91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1d2043bb6ede9c12212992591d63d91">&#9670;&#160;</a></span>initDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initDevice </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化设备界面 </p>
+<dl class="section note"><dt>注解</dt><dd>创建设备界面并连接信号 </dd></dl>
+<p>&lt; 创建设备界面</p>
+<p>&lt; 连接搜索信号</p>
+<p>&lt; 添加到堆栈窗口</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_ac1d2043bb6ede9c12212992591d63d91_cgraph.png" border="0" usemap="#aclass_my_collection_ac1d2043bb6ede9c12212992591d63d91_cgraph" alt=""/></div>
+<map name="aclass_my_collection_ac1d2043bb6ede9c12212992591d63d91_cgraph" id="aclass_my_collection_ac1d2043bb6ede9c12212992591d63d91_cgraph">
+<area shape="rect" title="初始化设备界面" alt="" coords="5,13,85,40"/>
+<area shape="rect" href="class_device_widget.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="133,5,265,48"/>
+<area shape="poly" title=" " alt="" coords="85,24,117,24,117,29,85,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_ac1d2043bb6ede9c12212992591d63d91_icgraph.png" border="0" usemap="#aclass_my_collection_ac1d2043bb6ede9c12212992591d63d91_icgraph" alt=""/></div>
+<map name="aclass_my_collection_ac1d2043bb6ede9c12212992591d63d91_icgraph" id="aclass_my_collection_ac1d2043bb6ede9c12212992591d63d91_icgraph">
+<area shape="rect" title="初始化设备界面" alt="" coords="425,29,505,56"/>
+<area shape="rect" href="class_my_collection.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="250,29,377,56"/>
+<area shape="poly" title=" " alt="" coords="410,45,378,45,378,40,410,40"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="poly" title=" " alt="" coords="234,45,202,45,202,40,234,40"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aebc31945fa34b123ada488d5710cce62" name="aebc31945fa34b123ada488d5710cce62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc31945fa34b123ada488d5710cce62">&#9670;&#160;</a></span>initIndexLab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initIndexLab </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化索引标签 </p>
+<dl class="section note"><dt>注解</dt><dd>设置索引图片和事件过滤器 </dd></dl>
+<p>&lt; 设置单曲索引图片</p>
+<p>&lt; 设置歌单索引图片</p>
+<p>&lt; 设置专辑索引图片</p>
+<p>&lt; 设置视频索引图片</p>
+<p>&lt; 设置歌手索引图片</p>
+<p>&lt; 设置设备索引图片</p>
+<p>&lt; 设置单曲标签样式</p>
+<p>&lt; 隐藏歌单索引</p>
+<p>&lt; 隐藏专辑索引</p>
+<p>&lt; 隐藏视频索引</p>
+<p>&lt; 隐藏歌手索引</p>
+<p>&lt; 隐藏设备索引</p>
+<p>&lt; 安装单曲事件过滤器</p>
+<p>&lt; 安装歌单事件过滤器</p>
+<p>&lt; 安装专辑事件过滤器</p>
+<p>&lt; 安装视频事件过滤器</p>
+<p>&lt; 安装歌手事件过滤器</p>
+<p>&lt; 安装设备事件过滤器</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_aebc31945fa34b123ada488d5710cce62_icgraph.png" border="0" usemap="#aclass_my_collection_aebc31945fa34b123ada488d5710cce62_icgraph" alt=""/></div>
+<map name="aclass_my_collection_aebc31945fa34b123ada488d5710cce62_icgraph" id="aclass_my_collection_aebc31945fa34b123ada488d5710cce62_icgraph">
+<area shape="rect" title="初始化索引标签" alt="" coords="250,29,341,56"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="poly" title=" " alt="" coords="234,45,203,45,203,40,234,40"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1c996bcb271aacaa0b682dc7d9246245" name="a1c996bcb271aacaa0b682dc7d9246245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c996bcb271aacaa0b682dc7d9246245">&#9670;&#160;</a></span>initSinger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSinger </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化歌手界面 </p>
+<dl class="section note"><dt>注解</dt><dd>创建歌手界面并连接信号 </dd></dl>
+<p>&lt; 创建歌手界面</p>
+<p>&lt; 连接搜索信号</p>
+<p>&lt; 添加到堆栈窗口</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a1c996bcb271aacaa0b682dc7d9246245_cgraph.png" border="0" usemap="#aclass_my_collection_a1c996bcb271aacaa0b682dc7d9246245_cgraph" alt=""/></div>
+<map name="aclass_my_collection_a1c996bcb271aacaa0b682dc7d9246245_cgraph" id="aclass_my_collection_a1c996bcb271aacaa0b682dc7d9246245_cgraph">
+<area shape="rect" title="初始化歌手界面" alt="" coords="5,13,81,40"/>
+<area shape="rect" href="class_singer_widget.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="129,5,257,48"/>
+<area shape="poly" title=" " alt="" coords="81,24,113,24,113,29,81,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a1c996bcb271aacaa0b682dc7d9246245_icgraph.png" border="0" usemap="#aclass_my_collection_a1c996bcb271aacaa0b682dc7d9246245_icgraph" alt=""/></div>
+<map name="aclass_my_collection_a1c996bcb271aacaa0b682dc7d9246245_icgraph" id="aclass_my_collection_a1c996bcb271aacaa0b682dc7d9246245_icgraph">
+<area shape="rect" title="初始化歌手界面" alt="" coords="425,29,501,56"/>
+<area shape="rect" href="class_my_collection.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="250,29,377,56"/>
+<area shape="poly" title=" " alt="" coords="410,45,378,45,378,40,410,40"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="poly" title=" " alt="" coords="234,45,202,45,202,40,234,40"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a67a51b4fffd47353441cbc3b66534c08" name="a67a51b4fffd47353441cbc3b66534c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a51b4fffd47353441cbc3b66534c08">&#9670;&#160;</a></span>initSingleSong()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSingleSong </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化单曲界面 </p>
+<dl class="section note"><dt>注解</dt><dd>创建单曲界面并连接信号 </dd></dl>
+<p>&lt; 创建单曲界面</p>
+<p>&lt; 连接搜索信号</p>
+<p>&lt; 添加到堆栈窗口</p>
+<p>&lt; 设置当前界面</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a67a51b4fffd47353441cbc3b66534c08_cgraph.png" border="0" usemap="#aclass_my_collection_a67a51b4fffd47353441cbc3b66534c08_cgraph" alt=""/></div>
+<map name="aclass_my_collection_a67a51b4fffd47353441cbc3b66534c08_cgraph" id="aclass_my_collection_a67a51b4fffd47353441cbc3b66534c08_cgraph">
+<area shape="rect" title="初始化单曲界面" alt="" coords="5,13,110,40"/>
+<area shape="rect" href="class_single_song.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="158,5,310,48"/>
+<area shape="poly" title=" " alt="" coords="110,24,142,24,142,29,110,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a67a51b4fffd47353441cbc3b66534c08_icgraph.png" border="0" usemap="#aclass_my_collection_a67a51b4fffd47353441cbc3b66534c08_icgraph" alt=""/></div>
+<map name="aclass_my_collection_a67a51b4fffd47353441cbc3b66534c08_icgraph" id="aclass_my_collection_a67a51b4fffd47353441cbc3b66534c08_icgraph">
+<area shape="rect" title="初始化单曲界面" alt="" coords="425,29,530,56"/>
+<area shape="rect" href="class_my_collection.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="250,29,377,56"/>
+<area shape="poly" title=" " alt="" coords="410,45,378,45,378,40,410,40"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="poly" title=" " alt="" coords="234,45,202,45,202,40,234,40"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae05868a688d1a36771864c8ddd30adcb" name="ae05868a688d1a36771864c8ddd30adcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05868a688d1a36771864c8ddd30adcb">&#9670;&#160;</a></span>initSongList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSongList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化歌单界面 </p>
+<dl class="section note"><dt>注解</dt><dd>创建歌单界面 </dd></dl>
+<p>&lt; 创建歌单界面</p>
+<p>&lt; 添加到堆栈窗口</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_ae05868a688d1a36771864c8ddd30adcb_icgraph.png" border="0" usemap="#aclass_my_collection_ae05868a688d1a36771864c8ddd30adcb_icgraph" alt=""/></div>
+<map name="aclass_my_collection_ae05868a688d1a36771864c8ddd30adcb_icgraph" id="aclass_my_collection_ae05868a688d1a36771864c8ddd30adcb_icgraph">
+<area shape="rect" title="初始化歌单界面" alt="" coords="425,29,515,56"/>
+<area shape="rect" href="class_my_collection.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="250,29,377,56"/>
+<area shape="poly" title=" " alt="" coords="410,45,378,45,378,40,410,40"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="poly" title=" " alt="" coords="234,45,202,45,202,40,234,40"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac415e1efe105750fb4fccd6c62774980" name="ac415e1efe105750fb4fccd6c62774980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac415e1efe105750fb4fccd6c62774980">&#9670;&#160;</a></span>initSpecialAlbum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initSpecialAlbum </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化专辑界面 </p>
+<dl class="section note"><dt>注解</dt><dd>创建专辑界面并连接信号 </dd></dl>
+<p>&lt; 创建专辑界面</p>
+<p>&lt; 连接搜索信号</p>
+<p>&lt; 添加到堆栈窗口</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_ac415e1efe105750fb4fccd6c62774980_cgraph.png" border="0" usemap="#aclass_my_collection_ac415e1efe105750fb4fccd6c62774980_cgraph" alt=""/></div>
+<map name="aclass_my_collection_ac415e1efe105750fb4fccd6c62774980_cgraph" id="aclass_my_collection_ac415e1efe105750fb4fccd6c62774980_cgraph">
+<area shape="rect" title="初始化专辑界面" alt="" coords="5,13,124,40"/>
+<area shape="rect" href="class_special_album.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="172,5,302,48"/>
+<area shape="poly" title=" " alt="" coords="124,24,156,24,156,29,124,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_ac415e1efe105750fb4fccd6c62774980_icgraph.png" border="0" usemap="#aclass_my_collection_ac415e1efe105750fb4fccd6c62774980_icgraph" alt=""/></div>
+<map name="aclass_my_collection_ac415e1efe105750fb4fccd6c62774980_icgraph" id="aclass_my_collection_ac415e1efe105750fb4fccd6c62774980_icgraph">
+<area shape="rect" title="初始化专辑界面" alt="" coords="425,29,544,56"/>
+<area shape="rect" href="class_my_collection.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="250,29,377,56"/>
+<area shape="poly" title=" " alt="" coords="410,45,378,45,378,40,410,40"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="poly" title=" " alt="" coords="234,45,202,45,202,40,234,40"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0880fc715278119401b0b218adc8ade6" name="a0880fc715278119401b0b218adc8ade6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0880fc715278119401b0b218adc8ade6">&#9670;&#160;</a></span>initStackedWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initStackedWidget </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化堆栈窗口 </p>
+<dl class="section note"><dt>注解</dt><dd>初始化子界面并设置按钮互斥 </dd></dl>
+<p>&lt; 初始化单曲界面</p>
+<p>&lt; 初始化歌单界面</p>
+<p>&lt; 初始化专辑界面</p>
+<p>&lt; 初始化视频界面</p>
+<p>&lt; 初始化歌手界面</p>
+<p>&lt; 初始化设备界面</p>
+<p>&lt; 添加单曲按钮</p>
+<p>&lt; 添加歌单按钮</p>
+<p>&lt; 添加专辑按钮</p>
+<p>&lt; 添加视频按钮</p>
+<p>&lt; 添加歌手按钮</p>
+<p>&lt; 添加设备按钮</p>
+<p>&lt; 设置按钮互斥</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a0880fc715278119401b0b218adc8ade6_cgraph.png" border="0" usemap="#aclass_my_collection_a0880fc715278119401b0b218adc8ade6_cgraph" alt=""/></div>
+<map name="aclass_my_collection_a0880fc715278119401b0b218adc8ade6_cgraph" id="aclass_my_collection_a0880fc715278119401b0b218adc8ade6_cgraph">
+<area shape="rect" title="初始化堆栈窗口" alt="" coords="5,168,133,195"/>
+<area shape="rect" href="class_my_collection.html#a0b678960dc63ae8988d14538bb301c4e" title="初始化视频界面" alt="" coords="184,25,296,52"/>
+<area shape="poly" title=" " alt="" coords="80,166,122,121,179,70,197,58,200,62,182,74,126,125,84,169"/>
+<area shape="rect" href="class_my_collection.html#ac1d2043bb6ede9c12212992591d63d91" title="初始化设备界面" alt="" coords="200,84,280,111"/>
+<area shape="poly" title=" " alt="" coords="97,165,196,116,199,120,99,170"/>
+<area shape="rect" href="class_my_collection.html#a1c996bcb271aacaa0b682dc7d9246245" title="初始化歌手界面" alt="" coords="202,143,278,169"/>
+<area shape="poly" title=" " alt="" coords="133,169,186,161,187,166,133,175"/>
+<area shape="rect" href="class_my_collection.html#a67a51b4fffd47353441cbc3b66534c08" title="初始化单曲界面" alt="" coords="188,193,292,220"/>
+<area shape="poly" title=" " alt="" coords="133,188,173,194,172,199,133,193"/>
+<area shape="rect" href="class_my_collection.html#ae05868a688d1a36771864c8ddd30adcb" title="初始化歌单界面" alt="" coords="195,244,284,271"/>
+<area shape="poly" title=" " alt="" coords="101,193,182,230,194,235,192,240,180,234,99,198"/>
+<area shape="rect" href="class_my_collection.html#ac415e1efe105750fb4fccd6c62774980" title="初始化专辑界面" alt="" coords="181,295,299,321"/>
+<area shape="poly" title=" " alt="" coords="84,193,126,235,182,280,190,285,187,290,179,285,122,239,81,197"/>
+<area shape="rect" href="class_collect_video.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="361,5,485,48"/>
+<area shape="poly" title=" " alt="" coords="296,32,346,29,346,34,297,38"/>
+<area shape="rect" href="class_device_widget.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="357,72,489,115"/>
+<area shape="poly" title=" " alt="" coords="280,94,341,92,341,98,280,99"/>
+<area shape="rect" href="class_singer_widget.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="359,139,487,181"/>
+<area shape="poly" title=" " alt="" coords="278,154,344,156,344,161,278,159"/>
+<area shape="rect" href="class_single_song.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="347,205,499,248"/>
+<area shape="poly" title=" " alt="" coords="293,210,332,214,331,219,292,215"/>
+<area shape="rect" href="class_special_album.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="358,287,488,329"/>
+<area shape="poly" title=" " alt="" coords="299,305,343,305,343,311,299,311"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a0880fc715278119401b0b218adc8ade6_icgraph.png" border="0" usemap="#aclass_my_collection_a0880fc715278119401b0b218adc8ade6_icgraph" alt=""/></div>
+<map name="aclass_my_collection_a0880fc715278119401b0b218adc8ade6_icgraph" id="aclass_my_collection_a0880fc715278119401b0b218adc8ade6_icgraph">
+<area shape="rect" title="初始化堆栈窗口" alt="" coords="250,29,377,56"/>
+<area shape="rect" href="class_my_collection.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="poly" title=" " alt="" coords="234,45,202,45,202,40,234,40"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afba6e95967cc3eb25fd518f7bde6ec04" name="afba6e95967cc3eb25fd518f7bde6ec04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba6e95967cc3eb25fd518f7bde6ec04">&#9670;&#160;</a></span>initUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initUi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化界面 </p>
+<dl class="section note"><dt>注解</dt><dd>初始化堆栈窗口、索引标签和默认单曲界面 </dd></dl>
+<p>&lt; 初始化堆栈窗口</p>
+<p>&lt; 初始化索引标签</p>
+<p>&lt; 默认点击单曲按钮</p>
+<p>&lt; 设置动画曲线</p>
+<p>&lt; 设置动画速度</p>
+<p>&lt; 设置边距</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_afba6e95967cc3eb25fd518f7bde6ec04_cgraph.png" border="0" usemap="#aclass_my_collection_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" alt=""/></div>
+<map name="aclass_my_collection_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" id="aclass_my_collection_afba6e95967cc3eb25fd518f7bde6ec04_cgraph">
+<area shape="rect" title="初始化界面" alt="" coords="5,143,57,169"/>
+<area shape="rect" href="class_my_collection.html#aebc31945fa34b123ada488d5710cce62" title="初始化索引标签" alt="" coords="123,117,214,144"/>
+<area shape="poly" title=" " alt="" coords="57,149,107,139,108,144,58,154"/>
+<area shape="rect" href="class_my_collection.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="105,168,232,195"/>
+<area shape="poly" title=" " alt="" coords="58,158,90,164,89,169,57,163"/>
+<area shape="rect" href="class_my_collection.html#a0b678960dc63ae8988d14538bb301c4e" title="初始化视频界面" alt="" coords="283,25,395,52"/>
+<area shape="poly" title=" " alt="" coords="213,165,230,154,247,134,254,114,262,93,278,70,292,58,296,62,282,74,267,95,259,116,251,137,234,158,216,170"/>
+<area shape="rect" href="class_my_collection.html#ac1d2043bb6ede9c12212992591d63d91" title="初始化设备界面" alt="" coords="300,84,379,111"/>
+<area shape="poly" title=" " alt="" coords="205,165,231,154,299,116,302,121,233,158,207,170"/>
+<area shape="rect" href="class_my_collection.html#a1c996bcb271aacaa0b682dc7d9246245" title="初始化歌手界面" alt="" coords="302,143,377,169"/>
+<area shape="poly" title=" " alt="" coords="232,169,286,161,287,166,233,175"/>
+<area shape="rect" href="class_my_collection.html#a67a51b4fffd47353441cbc3b66534c08" title="初始化单曲界面" alt="" coords="287,193,391,220"/>
+<area shape="poly" title=" " alt="" coords="233,188,272,194,271,199,232,193"/>
+<area shape="rect" href="class_my_collection.html#ae05868a688d1a36771864c8ddd30adcb" title="初始化歌单界面" alt="" coords="294,244,384,271"/>
+<area shape="poly" title=" " alt="" coords="201,193,281,230,293,235,291,240,279,234,198,198"/>
+<area shape="rect" href="class_my_collection.html#ac415e1efe105750fb4fccd6c62774980" title="初始化专辑界面" alt="" coords="280,295,398,321"/>
+<area shape="poly" title=" " alt="" coords="184,193,225,235,282,280,289,285,286,290,278,285,221,239,180,197"/>
+<area shape="rect" href="class_collect_video.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="460,5,585,48"/>
+<area shape="poly" title=" " alt="" coords="396,32,445,29,445,34,396,38"/>
+<area shape="rect" href="class_device_widget.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="456,72,589,115"/>
+<area shape="poly" title=" " alt="" coords="379,94,440,92,441,98,379,99"/>
+<area shape="rect" href="class_singer_widget.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="458,139,587,181"/>
+<area shape="poly" title=" " alt="" coords="378,154,443,156,443,161,377,159"/>
+<area shape="rect" href="class_single_song.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="446,205,599,248"/>
+<area shape="poly" title=" " alt="" coords="392,210,431,214,430,219,391,215"/>
+<area shape="rect" href="class_special_album.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐的信号" alt="" coords="457,287,588,329"/>
+<area shape="poly" title=" " alt="" coords="399,305,442,305,442,311,399,311"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_afba6e95967cc3eb25fd518f7bde6ec04_icgraph.png" border="0" usemap="#aclass_my_collection_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" alt=""/></div>
+<map name="aclass_my_collection_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" id="aclass_my_collection_afba6e95967cc3eb25fd518f7bde6ec04_icgraph">
+<area shape="rect" title="初始化界面" alt="" coords="151,29,202,56"/>
+<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="5,29,103,56"/>
+<area shape="poly" title=" " alt="" coords="135,45,103,45,103,40,135,40"/>
+<area shape="poly" title=" " alt="" coords="74,16,67,10,54,8,42,10,35,14,34,20,37,28,32,30,28,20,31,11,40,5,54,3,69,5,77,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7523c71b2bf60975302287ec8923f80e" name="a7523c71b2bf60975302287ec8923f80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7523c71b2bf60975302287ec8923f80e">&#9670;&#160;</a></span>mousePressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标按下事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>点击标签切换界面 </dd></dl>
+<p>&lt; 获取单曲标签区域</p>
+<p>&lt; 获取歌单标签区域</p>
+<p>&lt; 获取专辑标签区域</p>
+<p>&lt; 获取视频标签区域</p>
+<p>&lt; 获取歌手标签区域</p>
+<p>&lt; 获取设备标签区域</p>
+<p>&lt; 转换单曲点击坐标</p>
+<p>&lt; 转换歌单点击坐标</p>
+<p>&lt; 转换专辑点击坐标</p>
+<p>&lt; 转换视频点击坐标</p>
+<p>&lt; 转换歌手点击坐标</p>
+<p>&lt; 转换设备点击坐标</p>
+<p>&lt; 触发单曲按钮点击</p>
+<p>&lt; 触发歌单按钮点击</p>
+<p>&lt; 触发专辑按钮点击</p>
+<p>&lt; 触发视频按钮点击</p>
+<p>&lt; 触发歌手按钮点击</p>
+<p>&lt; 触发设备按钮点击</p>
+<p>&lt; 调用父类事件</p>
+
+</div>
+</div>
+<a id="acf3eb1de5aea1bda093068c9ecbd001d" name="acf3eb1de5aea1bda093068c9ecbd001d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3eb1de5aea1bda093068c9ecbd001d">&#9670;&#160;</a></span>on_collectVideo_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_collectVideo_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视频按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>切换到视频界面 </dd></dl>
+<p>&lt; 当前已是视频界面</p>
+<p>&lt; 设置视频按钮选中</p>
+<p>&lt; 记录日志</p>
+<p>&lt; 禁用按钮</p>
+<p>&lt; 滑动到视频界面</p>
+<p>&lt; 隐藏单曲索引</p>
+<p>&lt; 隐藏歌单索引</p>
+<p>&lt; 隐藏专辑索引</p>
+<p>&lt; 显示视频索引</p>
+<p>&lt; 隐藏歌手索引</p>
+<p>&lt; 隐藏设备索引</p>
+<p>&lt; 重置单曲标签样式</p>
+<p>&lt; 重置歌单标签样式</p>
+<p>&lt; 重置专辑标签样式</p>
+<p>&lt; 设置视频标签样式</p>
+<p>&lt; 重置歌手标签样式</p>
+<p>&lt; 重置设备标签样式</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_acf3eb1de5aea1bda093068c9ecbd001d_cgraph.png" border="0" usemap="#aclass_my_collection_acf3eb1de5aea1bda093068c9ecbd001d_cgraph" alt=""/></div>
+<map name="aclass_my_collection_acf3eb1de5aea1bda093068c9ecbd001d_cgraph" id="aclass_my_collection_acf3eb1de5aea1bda093068c9ecbd001d_cgraph">
+<area shape="rect" title="视频按钮点击槽函数" alt="" coords="5,5,192,48"/>
+<area shape="rect" href="class_my_collection.html#ab868524a9562cda1f7b60b4220e2248e" title="启用/禁用按钮" alt="" coords="240,13,337,40"/>
+<area shape="poly" title=" " alt="" coords="192,24,224,24,224,29,192,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b5d53ac5814c17ffce3684c7a9c340e" name="a9b5d53ac5814c17ffce3684c7a9c340e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b5d53ac5814c17ffce3684c7a9c340e">&#9670;&#160;</a></span>on_device_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_device_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设备按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>切换到设备界面 </dd></dl>
+<p>&lt; 当前已是设备界面</p>
+<p>&lt; 设置设备按钮选中</p>
+<p>&lt; 记录日志</p>
+<p>&lt; 禁用按钮</p>
+<p>&lt; 滑动到设备界面</p>
+<p>&lt; 隐藏单曲索引</p>
+<p>&lt; 隐藏歌单索引</p>
+<p>&lt; 隐藏专辑索引</p>
+<p>&lt; 隐藏视频索引</p>
+<p>&lt; 隐藏歌手索引</p>
+<p>&lt; 显示设备索引</p>
+<p>&lt; 重置单曲标签样式</p>
+<p>&lt; 重置歌单标签样式</p>
+<p>&lt; 重置专辑标签样式</p>
+<p>&lt; 重置视频标签样式</p>
+<p>&lt; 重置歌手标签样式</p>
+<p>&lt; 设置设备标签样式</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a9b5d53ac5814c17ffce3684c7a9c340e_cgraph.png" border="0" usemap="#aclass_my_collection_a9b5d53ac5814c17ffce3684c7a9c340e_cgraph" alt=""/></div>
+<map name="aclass_my_collection_a9b5d53ac5814c17ffce3684c7a9c340e_cgraph" id="aclass_my_collection_a9b5d53ac5814c17ffce3684c7a9c340e_cgraph">
+<area shape="rect" title="设备按钮点击槽函数" alt="" coords="5,5,159,48"/>
+<area shape="rect" href="class_my_collection.html#ab868524a9562cda1f7b60b4220e2248e" title="启用/禁用按钮" alt="" coords="207,13,304,40"/>
+<area shape="poly" title=" " alt="" coords="159,24,191,24,191,29,159,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afb261a504d790292a58fedec0b63820d" name="afb261a504d790292a58fedec0b63820d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb261a504d790292a58fedec0b63820d">&#9670;&#160;</a></span>on_singer_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_singer_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>歌手按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>切换到歌手界面 </dd></dl>
+<p>&lt; 当前已是歌手界面</p>
+<p>&lt; 设置歌手按钮选中</p>
+<p>&lt; 记录日志</p>
+<p>&lt; 禁用按钮</p>
+<p>&lt; 滑动到歌手界面</p>
+<p>&lt; 隐藏单曲索引</p>
+<p>&lt; 隐藏歌单索引</p>
+<p>&lt; 隐藏专辑索引</p>
+<p>&lt; 隐藏视频索引</p>
+<p>&lt; 显示歌手索引</p>
+<p>&lt; 隐藏设备索引</p>
+<p>&lt; 重置单曲标签样式</p>
+<p>&lt; 重置歌单标签样式</p>
+<p>&lt; 重置专辑标签样式</p>
+<p>&lt; 重置视频标签样式</p>
+<p>&lt; 设置歌手标签样式</p>
+<p>&lt; 重置设备标签样式</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_afb261a504d790292a58fedec0b63820d_cgraph.png" border="0" usemap="#aclass_my_collection_afb261a504d790292a58fedec0b63820d_cgraph" alt=""/></div>
+<map name="aclass_my_collection_afb261a504d790292a58fedec0b63820d_cgraph" id="aclass_my_collection_afb261a504d790292a58fedec0b63820d_cgraph">
+<area shape="rect" title="歌手按钮点击槽函数" alt="" coords="5,5,156,48"/>
+<area shape="rect" href="class_my_collection.html#ab868524a9562cda1f7b60b4220e2248e" title="启用/禁用按钮" alt="" coords="204,13,301,40"/>
+<area shape="poly" title=" " alt="" coords="156,24,188,24,188,29,156,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a9bea9bb21529ea83bf0be77446fa04" name="a2a9bea9bb21529ea83bf0be77446fa04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a9bea9bb21529ea83bf0be77446fa04">&#9670;&#160;</a></span>on_singleSong_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_singleSong_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>单曲按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>切换到单曲界面 </dd></dl>
+<p>&lt; 当前已是单曲界面</p>
+<p>&lt; 设置单曲按钮选中</p>
+<p>&lt; 记录日志</p>
+<p>&lt; 禁用按钮</p>
+<p>&lt; 滑动到单曲界面</p>
+<p>&lt; 显示单曲索引</p>
+<p>&lt; 隐藏歌单索引</p>
+<p>&lt; 隐藏专辑索引</p>
+<p>&lt; 隐藏视频索引</p>
+<p>&lt; 隐藏歌手索引</p>
+<p>&lt; 隐藏设备索引</p>
+<p>&lt; 设置单曲标签样式</p>
+<p>&lt; 重置歌单标签样式</p>
+<p>&lt; 重置专辑标签样式</p>
+<p>&lt; 重置视频标签样式</p>
+<p>&lt; 重置歌手标签样式</p>
+<p>&lt; 重置设备标签样式</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a2a9bea9bb21529ea83bf0be77446fa04_cgraph.png" border="0" usemap="#aclass_my_collection_a2a9bea9bb21529ea83bf0be77446fa04_cgraph" alt=""/></div>
+<map name="aclass_my_collection_a2a9bea9bb21529ea83bf0be77446fa04_cgraph" id="aclass_my_collection_a2a9bea9bb21529ea83bf0be77446fa04_cgraph">
+<area shape="rect" title="单曲按钮点击槽函数" alt="" coords="5,5,185,48"/>
+<area shape="rect" href="class_my_collection.html#ab868524a9562cda1f7b60b4220e2248e" title="启用/禁用按钮" alt="" coords="233,13,330,40"/>
+<area shape="poly" title=" " alt="" coords="185,24,217,24,217,29,185,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a955813f9138793e730e4d73b4ad5dca9" name="a955813f9138793e730e4d73b4ad5dca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a955813f9138793e730e4d73b4ad5dca9">&#9670;&#160;</a></span>on_songList_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_songList_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>歌单按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>切换到歌单界面 </dd></dl>
+<p>&lt; 当前已是歌单界面</p>
+<p>&lt; 设置歌单按钮选中</p>
+<p>&lt; 记录日志</p>
+<p>&lt; 禁用按钮</p>
+<p>&lt; 滑动到歌单界面</p>
+<p>&lt; 隐藏单曲索引</p>
+<p>&lt; 显示歌单索引</p>
+<p>&lt; 隐藏专辑索引</p>
+<p>&lt; 隐藏视频索引</p>
+<p>&lt; 隐藏歌手索引</p>
+<p>&lt; 隐藏设备索引</p>
+<p>&lt; 重置单曲标签样式</p>
+<p>&lt; 设置歌单标签样式</p>
+<p>&lt; 重置专辑标签样式</p>
+<p>&lt; 重置视频标签样式</p>
+<p>&lt; 重置歌手标签样式</p>
+<p>&lt; 重置设备标签样式</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_a955813f9138793e730e4d73b4ad5dca9_cgraph.png" border="0" usemap="#aclass_my_collection_a955813f9138793e730e4d73b4ad5dca9_cgraph" alt=""/></div>
+<map name="aclass_my_collection_a955813f9138793e730e4d73b4ad5dca9_cgraph" id="aclass_my_collection_a955813f9138793e730e4d73b4ad5dca9_cgraph">
+<area shape="rect" title="歌单按钮点击槽函数" alt="" coords="5,5,170,48"/>
+<area shape="rect" href="class_my_collection.html#ab868524a9562cda1f7b60b4220e2248e" title="启用/禁用按钮" alt="" coords="218,13,315,40"/>
+<area shape="poly" title=" " alt="" coords="170,24,202,24,202,29,170,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa1d2a9b8dd7218807b72ec01cf79ba4c" name="aa1d2a9b8dd7218807b72ec01cf79ba4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d2a9b8dd7218807b72ec01cf79ba4c">&#9670;&#160;</a></span>on_specialAlbum_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_specialAlbum_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>专辑按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>切换到专辑界面 </dd></dl>
+<p>&lt; 当前已是专辑界面</p>
+<p>&lt; 设置专辑按钮选中</p>
+<p>&lt; 记录日志</p>
+<p>&lt; 禁用按钮</p>
+<p>&lt; 滑动到专辑界面</p>
+<p>&lt; 隐藏单曲索引</p>
+<p>&lt; 隐藏歌单索引</p>
+<p>&lt; 显示专辑索引</p>
+<p>&lt; 隐藏视频索引</p>
+<p>&lt; 隐藏歌手索引</p>
+<p>&lt; 隐藏设备索引</p>
+<p>&lt; 重置单曲标签样式</p>
+<p>&lt; 重置歌单标签样式</p>
+<p>&lt; 设置专辑标签样式</p>
+<p>&lt; 重置视频标签样式</p>
+<p>&lt; 重置歌手标签样式</p>
+<p>&lt; 重置设备标签样式</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_collection_aa1d2a9b8dd7218807b72ec01cf79ba4c_cgraph.png" border="0" usemap="#aclass_my_collection_aa1d2a9b8dd7218807b72ec01cf79ba4c_cgraph" alt=""/></div>
+<map name="aclass_my_collection_aa1d2a9b8dd7218807b72ec01cf79ba4c_cgraph" id="aclass_my_collection_aa1d2a9b8dd7218807b72ec01cf79ba4c_cgraph">
+<area shape="rect" title="专辑按钮点击槽函数" alt="" coords="5,5,199,48"/>
+<area shape="rect" href="class_my_collection.html#ab868524a9562cda1f7b60b4220e2248e" title="启用/禁用按钮" alt="" coords="247,13,344,40"/>
+<area shape="poly" title=" " alt="" coords="199,24,231,24,231,29,199,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad47442fcf7db8bd0dab09d79ad4c1d47" name="ad47442fcf7db8bd0dab09d79ad4c1d47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad47442fcf7db8bd0dab09d79ad4c1d47">&#9670;&#160;</a></span>m_buttonGroup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_q_button_group.html">QButtonGroup</a>&gt; m_buttonGroup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>按钮组 </p>
+
+</div>
+</div>
+<a id="ae3e054cc754418c18209e39a2eed8a93" name="ae3e054cc754418c18209e39a2eed8a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e054cc754418c18209e39a2eed8a93">&#9670;&#160;</a></span>m_collectVideo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_collect_video.html">CollectVideo</a>&gt; m_collectVideo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视频界面 </p>
+
+</div>
+</div>
+<a id="ab98d358f2f8005a15156173085a66509" name="ab98d358f2f8005a15156173085a66509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab98d358f2f8005a15156173085a66509">&#9670;&#160;</a></span>m_deviceWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_device_widget.html">DeviceWidget</a>&gt; m_deviceWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设备界面 </p>
+
+</div>
+</div>
+<a id="ace11d9c75a439dca6455f9dec5a6c804" name="ace11d9c75a439dca6455f9dec5a6c804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace11d9c75a439dca6455f9dec5a6c804">&#9670;&#160;</a></span>m_singerWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_singer_widget.html">SingerWidget</a>&gt; m_singerWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>歌手界面 </p>
+
+</div>
+</div>
+<a id="a207379fe637c8c4eb4c21f1221128e11" name="a207379fe637c8c4eb4c21f1221128e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a207379fe637c8c4eb4c21f1221128e11">&#9670;&#160;</a></span>m_singleSong</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_single_song.html">SingleSong</a>&gt; m_singleSong</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>单曲界面 </p>
+
+</div>
+</div>
+<a id="afdcb53e0450ebd6c1411628a891d57d3" name="afdcb53e0450ebd6c1411628a891d57d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdcb53e0450ebd6c1411628a891d57d3">&#9670;&#160;</a></span>m_songList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_song_list_widget.html">SongListWidget</a>&gt; m_songList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>歌单界面 </p>
+
+</div>
+</div>
+<a id="af7561be9bde85d7b068b227dea635ea7" name="af7561be9bde85d7b068b227dea635ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7561be9bde85d7b068b227dea635ea7">&#9670;&#160;</a></span>m_specialAlbum</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_special_album.html">SpecialAlbum</a>&gt; m_specialAlbum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>专辑界面 </p>
+
+</div>
+</div>
+<a id="ab393cca48703413c623866fd55cd5917" name="ab393cca48703413c623866fd55cd5917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab393cca48703413c623866fd55cd5917">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::MyCollection* ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI 指针 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_my_collection_8h_source.html">MyCollection.h</a></li>
+<li><a class="el" href="_my_collection_8cpp.html">MyCollection.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_my_collection.html">MyCollection</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

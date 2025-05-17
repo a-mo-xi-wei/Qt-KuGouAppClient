@@ -1,0 +1,1510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ElaMessageBarPrivate类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_ela_message_bar_private.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="class_ela_message_bar_private-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ElaMessageBarPrivate类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>消息通知栏私有实现类，管理动画、绘制和位置逻辑  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ela_message_bar_private_8h_source.html">ElaMessageBarPrivate.h</a>&gt;</code></p>
+<div class="dynheader">
+类 ElaMessageBarPrivate 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private__inherit__graph.png" border="0" usemap="#a_ela_message_bar_private_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_ela_message_bar_private_inherit__map" id="a_ela_message_bar_private_inherit__map">
+<area shape="rect" title="消息通知栏私有实现类，管理动画、绘制和位置逻辑" alt="" coords="5,80,160,107"/>
+<area shape="rect" title=" " alt="" coords="48,5,117,32"/>
+<area shape="poly" title=" " alt="" coords="85,48,85,80,80,80,80,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+ElaMessageBarPrivate 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private__coll__graph.png" border="0" usemap="#a_ela_message_bar_private_coll__map" alt="Collaboration graph"/></div>
+<map name="a_ela_message_bar_private_coll__map" id="a_ela_message_bar_private_coll__map">
+<area shape="rect" title="消息通知栏私有实现类，管理动画、绘制和位置逻辑" alt="" coords="5,172,160,199"/>
+<area shape="rect" title=" " alt="" coords="26,81,96,108"/>
+<area shape="poly" title=" " alt="" coords="70,123,82,171,77,172,65,124"/>
+<area shape="rect" href="class_ela_icon_button.html" title="自定义图标按钮类，支持图标、透明度和悬停效果" alt="" coords="120,81,224,108"/>
+<area shape="poly" title=" " alt="" coords="150,121,97,173,93,170,146,117"/>
+<area shape="rect" title=" " alt="" coords="122,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="174,47,174,81,169,81,169,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac8d4ad68a0bcba585114995f3fef90ae" id="r_ac8d4ad68a0bcba585114995f3fef90ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8d4ad68a0bcba585114995f3fef90ae">ElaMessageBarPrivate</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:ac8d4ad68a0bcba585114995f3fef90ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化消息栏私有对象  <br /></td></tr>
+<tr class="separator:ac8d4ad68a0bcba585114995f3fef90ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f746baaf1f89b263a0cf5f1d8f10b65" id="r_a2f746baaf1f89b263a0cf5f1d8f10b65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f746baaf1f89b263a0cf5f1d8f10b65">~ElaMessageBarPrivate</a> ()</td></tr>
+<tr class="memdesc:a2f746baaf1f89b263a0cf5f1d8f10b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，释放消息栏私有资源  <br /></td></tr>
+<tr class="separator:a2f746baaf1f89b263a0cf5f1d8f10b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349bcd692f2f7742f9c2d9c456608576" id="r_a349bcd692f2f7742f9c2d9c456608576"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a349bcd692f2f7742f9c2d9c456608576">tryToRequestMessageBarEvent</a> ()</td></tr>
+<tr class="memdesc:a349bcd692f2f7742f9c2d9c456608576"><td class="mdescLeft">&#160;</td><td class="mdescRight">尝试请求消息栏事件  <br /></td></tr>
+<tr class="separator:a349bcd692f2f7742f9c2d9c456608576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa779e368f00ccdf9026a049522edca86" id="r_aa779e368f00ccdf9026a049522edca86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ela_message_bar_private_8h.html#a2e31831ef90e0650de12624dfd7efb76">WorkStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa779e368f00ccdf9026a049522edca86">getWorkMode</a> () const</td></tr>
+<tr class="memdesc:aa779e368f00ccdf9026a049522edca86"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前工作模式  <br /></td></tr>
+<tr class="separator:aa779e368f00ccdf9026a049522edca86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b7e9884ceea662439e68643cdaff6f6" id="r_a9b7e9884ceea662439e68643cdaff6f6"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b7e9884ceea662439e68643cdaff6f6">onOtherMessageBarEnd</a> (QVariantMap eventData)</td></tr>
+<tr class="memdesc:a9b7e9884ceea662439e68643cdaff6f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理其他消息栏终止事件  <br /></td></tr>
+<tr class="separator:a9b7e9884ceea662439e68643cdaff6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad609f9ff4198b501f49f7bdb0b2cc47f" id="r_ad609f9ff4198b501f49f7bdb0b2cc47f"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad609f9ff4198b501f49f7bdb0b2cc47f">messageBarEnd</a> (QVariantMap eventData)</td></tr>
+<tr class="memdesc:ad609f9ff4198b501f49f7bdb0b2cc47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">终止消息栏  <br /></td></tr>
+<tr class="separator:ad609f9ff4198b501f49f7bdb0b2cc47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826ca8fdb2ca90af2c67cebd15f19bae" id="r_a826ca8fdb2ca90af2c67cebd15f19bae"><td class="memItemLeft" align="right" valign="top">Q_SLOT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a826ca8fdb2ca90af2c67cebd15f19bae">onCloseButtonClicked</a> ()</td></tr>
+<tr class="memdesc:a826ca8fdb2ca90af2c67cebd15f19bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭按钮点击事件处理  <br /></td></tr>
+<tr class="separator:a826ca8fdb2ca90af2c67cebd15f19bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a3b96e31ee7d8c4871c137ef4f7fd316a" id="r_a3b96e31ee7d8c4871c137ef4f7fd316a"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b96e31ee7d8c4871c137ef4f7fd316a">_messageBarCreate</a> (int displayMsec)</td></tr>
+<tr class="memdesc:a3b96e31ee7d8c4871c137ef4f7fd316a"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建消息栏  <br /></td></tr>
+<tr class="separator:a3b96e31ee7d8c4871c137ef4f7fd316a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0141e2f56d4d0eb651bb6e62b8e5758e" id="r_a0141e2f56d4d0eb651bb6e62b8e5758e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0141e2f56d4d0eb651bb6e62b8e5758e">_calculateInitialPos</a> (int &amp;startX, int &amp;startY, int &amp;endX, int &amp;endY)</td></tr>
+<tr class="memdesc:a0141e2f56d4d0eb651bb6e62b8e5758e"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算初始位置  <br /></td></tr>
+<tr class="separator:a0141e2f56d4d0eb651bb6e62b8e5758e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e3570e0a97c45d2b1bd8386b53ed81" id="r_a71e3570e0a97c45d2b1bd8386b53ed81"><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71e3570e0a97c45d2b1bd8386b53ed81">_getOtherMessageBarTotalData</a> (bool isJudgeCreateOrder=false)</td></tr>
+<tr class="memdesc:a71e3570e0a97c45d2b1bd8386b53ed81"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取其他消息栏的总高度和次序信息  <br /></td></tr>
+<tr class="separator:a71e3570e0a97c45d2b1bd8386b53ed81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273b87f7067214488b07ede54d9ca114" id="r_a273b87f7067214488b07ede54d9ca114"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a273b87f7067214488b07ede54d9ca114">_calculateTargetPosY</a> ()</td></tr>
+<tr class="memdesc:a273b87f7067214488b07ede54d9ca114"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算目标Y坐标  <br /></td></tr>
+<tr class="separator:a273b87f7067214488b07ede54d9ca114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6d8241c8039a74eec452722d6af4a7" id="r_a9e6d8241c8039a74eec452722d6af4a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e6d8241c8039a74eec452722d6af4a7">_judgeCreateOrder</a> (<a class="el" href="class_ela_message_bar.html">ElaMessageBar</a> *otherMessageBar)</td></tr>
+<tr class="memdesc:a9e6d8241c8039a74eec452722d6af4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断消息栏创建顺序  <br /></td></tr>
+<tr class="separator:a9e6d8241c8039a74eec452722d6af4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeda22ef41bd0eff0308ba1aeb55dc9b0" id="r_aeda22ef41bd0eff0308ba1aeb55dc9b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeda22ef41bd0eff0308ba1aeb55dc9b0">_drawSuccess</a> (QPainter *painter)</td></tr>
+<tr class="memdesc:aeda22ef41bd0eff0308ba1aeb55dc9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制成功消息  <br /></td></tr>
+<tr class="separator:aeda22ef41bd0eff0308ba1aeb55dc9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6fe18acfadd4ddf0dabae90e532efe" id="r_acd6fe18acfadd4ddf0dabae90e532efe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd6fe18acfadd4ddf0dabae90e532efe">_drawWarning</a> (QPainter *painter)</td></tr>
+<tr class="memdesc:acd6fe18acfadd4ddf0dabae90e532efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制警告消息  <br /></td></tr>
+<tr class="separator:acd6fe18acfadd4ddf0dabae90e532efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085cf0cbad2089112d3392f23cba4074" id="r_a085cf0cbad2089112d3392f23cba4074"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a085cf0cbad2089112d3392f23cba4074">_drawInformation</a> (QPainter *painter)</td></tr>
+<tr class="memdesc:a085cf0cbad2089112d3392f23cba4074"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制信息消息  <br /></td></tr>
+<tr class="separator:a085cf0cbad2089112d3392f23cba4074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf350a3eb9a6347aedba9f8493b599af" id="r_abf350a3eb9a6347aedba9f8493b599af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf350a3eb9a6347aedba9f8493b599af">_drawError</a> (QPainter *painter)</td></tr>
+<tr class="memdesc:abf350a3eb9a6347aedba9f8493b599af"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制错误消息  <br /></td></tr>
+<tr class="separator:abf350a3eb9a6347aedba9f8493b599af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:abab7c56bd707e57041aaca2f2b3906b1" id="r_abab7c56bd707e57041aaca2f2b3906b1"><td class="memItemLeft" align="right" valign="top">ElaThemeType::ThemeMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abab7c56bd707e57041aaca2f2b3906b1">_themeMode</a></td></tr>
+<tr class="memdesc:abab7c56bd707e57041aaca2f2b3906b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前主题模式  <br /></td></tr>
+<tr class="separator:abab7c56bd707e57041aaca2f2b3906b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2a10466efa0aa88c9fc3e9bb598d0a" id="r_a0c2a10466efa0aa88c9fc3e9bb598d0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c2a10466efa0aa88c9fc3e9bb598d0a">_borderRadius</a> {6}</td></tr>
+<tr class="memdesc:a0c2a10466efa0aa88c9fc3e9bb598d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">边框圆角半径  <br /></td></tr>
+<tr class="separator:a0c2a10466efa0aa88c9fc3e9bb598d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af590180b01913186166310e0ceff3301" id="r_af590180b01913186166310e0ceff3301"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af590180b01913186166310e0ceff3301">_title</a> {&quot;&quot;}</td></tr>
+<tr class="memdesc:af590180b01913186166310e0ceff3301"><td class="mdescLeft">&#160;</td><td class="mdescRight">消息标题  <br /></td></tr>
+<tr class="separator:af590180b01913186166310e0ceff3301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a3c9b82e5b3f365cad26cb46d5c994" id="r_ad9a3c9b82e5b3f365cad26cb46d5c994"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9a3c9b82e5b3f365cad26cb46d5c994">_text</a> {&quot;&quot;}</td></tr>
+<tr class="memdesc:ad9a3c9b82e5b3f365cad26cb46d5c994"><td class="mdescLeft">&#160;</td><td class="mdescRight">消息内容  <br /></td></tr>
+<tr class="separator:ad9a3c9b82e5b3f365cad26cb46d5c994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035c596db1eae953c44225f7212a6c26" id="r_a035c596db1eae953c44225f7212a6c26"><td class="memItemLeft" align="right" valign="top">ElaMessageBarType::PositionPolicy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a035c596db1eae953c44225f7212a6c26">_policy</a></td></tr>
+<tr class="memdesc:a035c596db1eae953c44225f7212a6c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置策略  <br /></td></tr>
+<tr class="separator:a035c596db1eae953c44225f7212a6c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739ef02d1d318af8f07efb67aea4f5fb" id="r_a739ef02d1d318af8f07efb67aea4f5fb"><td class="memItemLeft" align="right" valign="top">ElaMessageBarType::MessageMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a739ef02d1d318af8f07efb67aea4f5fb">_messageMode</a></td></tr>
+<tr class="memdesc:a739ef02d1d318af8f07efb67aea4f5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">消息类型  <br /></td></tr>
+<tr class="separator:a739ef02d1d318af8f07efb67aea4f5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e02262c5817a6e921a2a30533ab32b" id="r_aa6e02262c5817a6e921a2a30533ab32b"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6e02262c5817a6e921a2a30533ab32b">_createTime</a> {0}</td></tr>
+<tr class="memdesc:aa6e02262c5817a6e921a2a30533ab32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建时间  <br /></td></tr>
+<tr class="separator:aa6e02262c5817a6e921a2a30533ab32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa056ba85411cd139b761a0397c8d63" id="r_abfa056ba85411cd139b761a0397c8d63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfa056ba85411cd139b761a0397c8d63">_leftPadding</a> {20}</td></tr>
+<tr class="memdesc:abfa056ba85411cd139b761a0397c8d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">左边框到图标中心的距离  <br /></td></tr>
+<tr class="separator:abfa056ba85411cd139b761a0397c8d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188d68182efbd9e939a6010661d5f67c" id="r_a188d68182efbd9e939a6010661d5f67c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a188d68182efbd9e939a6010661d5f67c">_titleLeftSpacing</a> {30}</td></tr>
+<tr class="memdesc:a188d68182efbd9e939a6010661d5f67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">图标中心到标题左侧的距离  <br /></td></tr>
+<tr class="separator:a188d68182efbd9e939a6010661d5f67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada2b1deced6953649d6c6b36cbbbe8f8" id="r_ada2b1deced6953649d6c6b36cbbbe8f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada2b1deced6953649d6c6b36cbbbe8f8">_textLeftSpacing</a> {15}</td></tr>
+<tr class="memdesc:ada2b1deced6953649d6c6b36cbbbe8f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">标题右侧到正文左侧的距离  <br /></td></tr>
+<tr class="separator:ada2b1deced6953649d6c6b36cbbbe8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3628c97e3561f2fff21aad9da54622e5" id="r_a3628c97e3561f2fff21aad9da54622e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3628c97e3561f2fff21aad9da54622e5">_closeButtonLeftRightMargin</a> {20}</td></tr>
+<tr class="memdesc:a3628c97e3561f2fff21aad9da54622e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭按钮左右总边距  <br /></td></tr>
+<tr class="separator:a3628c97e3561f2fff21aad9da54622e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2500f54e2a05920a3e95a2b3eb4ed4aa" id="r_a2500f54e2a05920a3e95a2b3eb4ed4aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2500f54e2a05920a3e95a2b3eb4ed4aa">_closeButtonWidth</a> {30}</td></tr>
+<tr class="memdesc:a2500f54e2a05920a3e95a2b3eb4ed4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭按钮宽度  <br /></td></tr>
+<tr class="separator:a2500f54e2a05920a3e95a2b3eb4ed4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37a83b7a3de8e5b869dd825bc27d9e0" id="r_ad37a83b7a3de8e5b869dd825bc27d9e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad37a83b7a3de8e5b869dd825bc27d9e0">_messageBarHorizontalMargin</a> {20}</td></tr>
+<tr class="memdesc:ad37a83b7a3de8e5b869dd825bc27d9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">消息栏水平边距  <br /></td></tr>
+<tr class="separator:ad37a83b7a3de8e5b869dd825bc27d9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8598f3aad7052740c0c4a9bf28ecc6ac" id="r_a8598f3aad7052740c0c4a9bf28ecc6ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8598f3aad7052740c0c4a9bf28ecc6ac">_messageBarVerticalBottomMargin</a> {20}</td></tr>
+<tr class="memdesc:a8598f3aad7052740c0c4a9bf28ecc6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">消息栏底部垂直边距  <br /></td></tr>
+<tr class="separator:a8598f3aad7052740c0c4a9bf28ecc6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ae517613f0b44c9d9321734643ec5d" id="r_a27ae517613f0b44c9d9321734643ec5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27ae517613f0b44c9d9321734643ec5d">_messageBarVerticalTopMargin</a> {50}</td></tr>
+<tr class="memdesc:a27ae517613f0b44c9d9321734643ec5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">消息栏顶部垂直边距  <br /></td></tr>
+<tr class="separator:a27ae517613f0b44c9d9321734643ec5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8dbae5a1289a693584bd692199fdcec" id="r_ad8dbae5a1289a693584bd692199fdcec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8dbae5a1289a693584bd692199fdcec">_messageBarSpacing</a> {15}</td></tr>
+<tr class="memdesc:ad8dbae5a1289a693584bd692199fdcec"><td class="mdescLeft">&#160;</td><td class="mdescRight">消息栏间距  <br /></td></tr>
+<tr class="separator:ad8dbae5a1289a693584bd692199fdcec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7648977c8435178f73745799497d85a" id="r_ab7648977c8435178f73745799497d85a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7648977c8435178f73745799497d85a">_shadowBorderWidth</a> {6}</td></tr>
+<tr class="memdesc:ab7648977c8435178f73745799497d85a"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影边框宽度  <br /></td></tr>
+<tr class="separator:ab7648977c8435178f73745799497d85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f3caf97ddc0bcf60d3a333f3c62c27" id="r_ad2f3caf97ddc0bcf60d3a333f3c62c27"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2f3caf97ddc0bcf60d3a333f3c62c27">_isMessageBarCreateAnimationFinished</a> {false}</td></tr>
+<tr class="memdesc:ad2f3caf97ddc0bcf60d3a333f3c62c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建动画是否完成  <br /></td></tr>
+<tr class="separator:ad2f3caf97ddc0bcf60d3a333f3c62c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3923b150759b9d6a872ee63fa7ec6f4" id="r_ad3923b150759b9d6a872ee63fa7ec6f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3923b150759b9d6a872ee63fa7ec6f4">_isReadyToEnd</a> {false}</td></tr>
+<tr class="memdesc:ad3923b150759b9d6a872ee63fa7ec6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否准备终止  <br /></td></tr>
+<tr class="separator:ad3923b150759b9d6a872ee63fa7ec6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a61d889327f0cbc1bb35083bcd2767" id="r_af3a61d889327f0cbc1bb35083bcd2767"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3a61d889327f0cbc1bb35083bcd2767">_isNormalDisplay</a> {false}</td></tr>
+<tr class="memdesc:af3a61d889327f0cbc1bb35083bcd2767"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否正常显示  <br /></td></tr>
+<tr class="separator:af3a61d889327f0cbc1bb35083bcd2767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20598220959538c76d6674d87934367a" id="r_a20598220959538c76d6674d87934367a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20598220959538c76d6674d87934367a">_isMessageBarEventAnimationStart</a> {false}</td></tr>
+<tr class="memdesc:a20598220959538c76d6674d87934367a"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件动画是否开始  <br /></td></tr>
+<tr class="separator:a20598220959538c76d6674d87934367a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbebc940c4500522d2863c10719e391" id="r_a5cbebc940c4500522d2863c10719e391"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_icon_button.html">ElaIconButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cbebc940c4500522d2863c10719e391">_closeButton</a> {nullptr}</td></tr>
+<tr class="memdesc:a5cbebc940c4500522d2863c10719e391"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭按钮  <br /></td></tr>
+<tr class="separator:a5cbebc940c4500522d2863c10719e391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:ab382ecab26b8cd084c4cf1c310629a1a" id="r_ab382ecab26b8cd084c4cf1c310629a1a"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab382ecab26b8cd084c4cf1c310629a1a">ElaMessageBarManager</a></td></tr>
+<tr class="separator:ab382ecab26b8cd084c4cf1c310629a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>消息通知栏私有实现类，管理动画、绘制和位置逻辑 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ac8d4ad68a0bcba585114995f3fef90ae" name="ac8d4ad68a0bcba585114995f3fef90ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d4ad68a0bcba585114995f3fef90ae">&#9670;&#160;</a></span>ElaMessageBarPrivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ela_message_bar_private.html">ElaMessageBarPrivate</a> </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化消息栏私有对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父对象指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2f746baaf1f89b263a0cf5f1d8f10b65" name="a2f746baaf1f89b263a0cf5f1d8f10b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f746baaf1f89b263a0cf5f1d8f10b65">&#9670;&#160;</a></span>~ElaMessageBarPrivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_ela_message_bar_private.html">ElaMessageBarPrivate</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>析构函数，释放消息栏私有资源 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0141e2f56d4d0eb651bb6e62b8e5758e" name="a0141e2f56d4d0eb651bb6e62b8e5758e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0141e2f56d4d0eb651bb6e62b8e5758e">&#9670;&#160;</a></span>_calculateInitialPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _calculateInitialPos </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>startX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>startY</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>endX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>endY</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算初始位置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startX</td><td>起始X坐标 </td></tr>
+    <tr><td class="paramname">startY</td><td>起始Y坐标 </td></tr>
+    <tr><td class="paramname">endX</td><td>结束X坐标 </td></tr>
+    <tr><td class="paramname">endY</td><td>结束Y坐标 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private_a0141e2f56d4d0eb651bb6e62b8e5758e_cgraph.png" border="0" usemap="#aclass_ela_message_bar_private_a0141e2f56d4d0eb651bb6e62b8e5758e_cgraph" alt=""/></div>
+<map name="aclass_ela_message_bar_private_a0141e2f56d4d0eb651bb6e62b8e5758e_cgraph" id="aclass_ela_message_bar_private_a0141e2f56d4d0eb651bb6e62b8e5758e_cgraph">
+<area shape="rect" title="计算初始位置" alt="" coords="5,5,140,32"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a71e3570e0a97c45d2b1bd8386b53ed81" title="获取其他消息栏的总高度和次序信息" alt="" coords="188,5,395,32"/>
+<area shape="poly" title=" " alt="" coords="140,16,172,16,172,21,140,21"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a9e6d8241c8039a74eec452722d6af4a7" title="判断消息栏创建顺序" alt="" coords="443,5,573,32"/>
+<area shape="poly" title=" " alt="" coords="395,16,428,16,428,21,395,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private_a0141e2f56d4d0eb651bb6e62b8e5758e_icgraph.png" border="0" usemap="#aclass_ela_message_bar_private_a0141e2f56d4d0eb651bb6e62b8e5758e_icgraph" alt=""/></div>
+<map name="aclass_ela_message_bar_private_a0141e2f56d4d0eb651bb6e62b8e5758e_icgraph" id="aclass_ela_message_bar_private_a0141e2f56d4d0eb651bb6e62b8e5758e_icgraph">
+<area shape="rect" title="计算初始位置" alt="" coords="194,5,328,32"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a3b96e31ee7d8c4871c137ef4f7fd316a" title="创建消息栏" alt="" coords="5,5,146,32"/>
+<area shape="poly" title=" " alt="" coords="178,21,146,21,146,16,178,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a273b87f7067214488b07ede54d9ca114" name="a273b87f7067214488b07ede54d9ca114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273b87f7067214488b07ede54d9ca114">&#9670;&#160;</a></span>_calculateTargetPosY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal _calculateTargetPosY </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算目标Y坐标 </p>
+<dl class="section return"><dt>返回</dt><dd>目标Y坐标 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private_a273b87f7067214488b07ede54d9ca114_cgraph.png" border="0" usemap="#aclass_ela_message_bar_private_a273b87f7067214488b07ede54d9ca114_cgraph" alt=""/></div>
+<map name="aclass_ela_message_bar_private_a273b87f7067214488b07ede54d9ca114_cgraph" id="aclass_ela_message_bar_private_a273b87f7067214488b07ede54d9ca114_cgraph">
+<area shape="rect" title="计算目标Y坐标" alt="" coords="5,5,154,32"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a71e3570e0a97c45d2b1bd8386b53ed81" title="获取其他消息栏的总高度和次序信息" alt="" coords="202,5,409,32"/>
+<area shape="poly" title=" " alt="" coords="154,16,186,16,186,21,154,21"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a9e6d8241c8039a74eec452722d6af4a7" title="判断消息栏创建顺序" alt="" coords="457,5,587,32"/>
+<area shape="poly" title=" " alt="" coords="409,16,442,16,442,21,409,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf350a3eb9a6347aedba9f8493b599af" name="abf350a3eb9a6347aedba9f8493b599af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf350a3eb9a6347aedba9f8493b599af">&#9670;&#160;</a></span>_drawError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _drawError </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *</td>          <td class="paramname"><span class="paramname"><em>painter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绘制错误消息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">painter</td><td>绘图对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a085cf0cbad2089112d3392f23cba4074" name="a085cf0cbad2089112d3392f23cba4074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085cf0cbad2089112d3392f23cba4074">&#9670;&#160;</a></span>_drawInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _drawInformation </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *</td>          <td class="paramname"><span class="paramname"><em>painter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绘制信息消息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">painter</td><td>绘图对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeda22ef41bd0eff0308ba1aeb55dc9b0" name="aeda22ef41bd0eff0308ba1aeb55dc9b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda22ef41bd0eff0308ba1aeb55dc9b0">&#9670;&#160;</a></span>_drawSuccess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _drawSuccess </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *</td>          <td class="paramname"><span class="paramname"><em>painter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绘制成功消息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">painter</td><td>绘图对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acd6fe18acfadd4ddf0dabae90e532efe" name="acd6fe18acfadd4ddf0dabae90e532efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd6fe18acfadd4ddf0dabae90e532efe">&#9670;&#160;</a></span>_drawWarning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _drawWarning </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *</td>          <td class="paramname"><span class="paramname"><em>painter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绘制警告消息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">painter</td><td>绘图对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a71e3570e0a97c45d2b1bd8386b53ed81" name="a71e3570e0a97c45d2b1bd8386b53ed81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e3570e0a97c45d2b1bd8386b53ed81">&#9670;&#160;</a></span>_getOtherMessageBarTotalData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; int &gt; _getOtherMessageBarTotalData </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isJudgeCreateOrder</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取其他消息栏的总高度和次序信息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isJudgeCreateOrder</td><td>是否判断创建顺序 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>包含总高度和次序的列表 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private_a71e3570e0a97c45d2b1bd8386b53ed81_cgraph.png" border="0" usemap="#aclass_ela_message_bar_private_a71e3570e0a97c45d2b1bd8386b53ed81_cgraph" alt=""/></div>
+<map name="aclass_ela_message_bar_private_a71e3570e0a97c45d2b1bd8386b53ed81_cgraph" id="aclass_ela_message_bar_private_a71e3570e0a97c45d2b1bd8386b53ed81_cgraph">
+<area shape="rect" title="获取其他消息栏的总高度和次序信息" alt="" coords="5,5,213,32"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a9e6d8241c8039a74eec452722d6af4a7" title="判断消息栏创建顺序" alt="" coords="261,5,391,32"/>
+<area shape="poly" title=" " alt="" coords="213,16,245,16,245,21,213,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private_a71e3570e0a97c45d2b1bd8386b53ed81_icgraph.png" border="0" usemap="#aclass_ela_message_bar_private_a71e3570e0a97c45d2b1bd8386b53ed81_icgraph" alt=""/></div>
+<map name="aclass_ela_message_bar_private_a71e3570e0a97c45d2b1bd8386b53ed81_icgraph" id="aclass_ela_message_bar_private_a71e3570e0a97c45d2b1bd8386b53ed81_icgraph">
+<area shape="rect" title="获取其他消息栏的总高度和次序信息" alt="" coords="390,31,597,57"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a0141e2f56d4d0eb651bb6e62b8e5758e" title="计算初始位置" alt="" coords="201,5,335,32"/>
+<area shape="poly" title=" " alt="" coords="375,33,335,29,336,24,375,28"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a273b87f7067214488b07ede54d9ca114" title="计算目标Y坐标" alt="" coords="194,56,342,83"/>
+<area shape="poly" title=" " alt="" coords="375,60,343,64,342,58,375,55"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a3b96e31ee7d8c4871c137ef4f7fd316a" title="创建消息栏" alt="" coords="5,5,146,32"/>
+<area shape="poly" title=" " alt="" coords="185,21,146,21,146,16,185,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9e6d8241c8039a74eec452722d6af4a7" name="a9e6d8241c8039a74eec452722d6af4a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e6d8241c8039a74eec452722d6af4a7">&#9670;&#160;</a></span>_judgeCreateOrder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _judgeCreateOrder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_ela_message_bar.html">ElaMessageBar</a> *</td>          <td class="paramname"><span class="paramname"><em>otherMessageBar</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断消息栏创建顺序 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">otherMessageBar</td><td>其他消息栏对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否其他消息栏先创建 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private_a9e6d8241c8039a74eec452722d6af4a7_icgraph.png" border="0" usemap="#aclass_ela_message_bar_private_a9e6d8241c8039a74eec452722d6af4a7_icgraph" alt=""/></div>
+<map name="aclass_ela_message_bar_private_a9e6d8241c8039a74eec452722d6af4a7_icgraph" id="aclass_ela_message_bar_private_a9e6d8241c8039a74eec452722d6af4a7_icgraph">
+<area shape="rect" title="判断消息栏创建顺序" alt="" coords="645,31,776,57"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a71e3570e0a97c45d2b1bd8386b53ed81" title="获取其他消息栏的总高度和次序信息" alt="" coords="390,31,597,57"/>
+<area shape="poly" title=" " alt="" coords="630,47,598,47,598,41,630,41"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a0141e2f56d4d0eb651bb6e62b8e5758e" title="计算初始位置" alt="" coords="201,5,335,32"/>
+<area shape="poly" title=" " alt="" coords="375,33,335,29,336,24,375,28"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a273b87f7067214488b07ede54d9ca114" title="计算目标Y坐标" alt="" coords="194,56,342,83"/>
+<area shape="poly" title=" " alt="" coords="375,60,343,64,342,58,375,55"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a3b96e31ee7d8c4871c137ef4f7fd316a" title="创建消息栏" alt="" coords="5,5,146,32"/>
+<area shape="poly" title=" " alt="" coords="185,21,146,21,146,16,185,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3b96e31ee7d8c4871c137ef4f7fd316a" name="a3b96e31ee7d8c4871c137ef4f7fd316a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b96e31ee7d8c4871c137ef4f7fd316a">&#9670;&#160;</a></span>_messageBarCreate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _messageBarCreate </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>displayMsec</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>创建消息栏 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">displayMsec</td><td>显示时长（毫秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private_a3b96e31ee7d8c4871c137ef4f7fd316a_cgraph.png" border="0" usemap="#aclass_ela_message_bar_private_a3b96e31ee7d8c4871c137ef4f7fd316a_cgraph" alt=""/></div>
+<map name="aclass_ela_message_bar_private_a3b96e31ee7d8c4871c137ef4f7fd316a_cgraph" id="aclass_ela_message_bar_private_a3b96e31ee7d8c4871c137ef4f7fd316a_cgraph">
+<area shape="rect" title="创建消息栏" alt="" coords="5,5,146,32"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a0141e2f56d4d0eb651bb6e62b8e5758e" title="计算初始位置" alt="" coords="194,5,328,32"/>
+<area shape="poly" title=" " alt="" coords="146,16,178,16,178,21,146,21"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a71e3570e0a97c45d2b1bd8386b53ed81" title="获取其他消息栏的总高度和次序信息" alt="" coords="376,5,583,32"/>
+<area shape="poly" title=" " alt="" coords="328,16,361,16,361,21,328,21"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a9e6d8241c8039a74eec452722d6af4a7" title="判断消息栏创建顺序" alt="" coords="631,5,762,32"/>
+<area shape="poly" title=" " alt="" coords="584,16,616,16,616,21,584,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa779e368f00ccdf9026a049522edca86" name="aa779e368f00ccdf9026a049522edca86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa779e368f00ccdf9026a049522edca86">&#9670;&#160;</a></span>getWorkMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ela_message_bar_private_8h.html#a2e31831ef90e0650de12624dfd7efb76">WorkStatus</a> getWorkMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前工作模式 </p>
+<dl class="section return"><dt>返回</dt><dd>当前工作状态 </dd></dl>
+
+</div>
+</div>
+<a id="ad609f9ff4198b501f49f7bdb0b2cc47f" name="ad609f9ff4198b501f49f7bdb0b2cc47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad609f9ff4198b501f49f7bdb0b2cc47f">&#9670;&#160;</a></span>messageBarEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void messageBarEnd </td>
+          <td>(</td>
+          <td class="paramtype">QVariantMap</td>          <td class="paramname"><span class="paramname"><em>eventData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>终止消息栏 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventData</td><td>事件数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a826ca8fdb2ca90af2c67cebd15f19bae" name="a826ca8fdb2ca90af2c67cebd15f19bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a826ca8fdb2ca90af2c67cebd15f19bae">&#9670;&#160;</a></span>onCloseButtonClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onCloseButtonClicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>关闭按钮点击事件处理 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_message_bar_private_a826ca8fdb2ca90af2c67cebd15f19bae_icgraph.png" border="0" usemap="#aclass_ela_message_bar_private_a826ca8fdb2ca90af2c67cebd15f19bae_icgraph" alt=""/></div>
+<map name="aclass_ela_message_bar_private_a826ca8fdb2ca90af2c67cebd15f19bae_icgraph" id="aclass_ela_message_bar_private_a826ca8fdb2ca90af2c67cebd15f19bae_icgraph">
+<area shape="rect" title="关闭按钮点击事件处理" alt="" coords="776,215,928,241"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="515,215,728,241"/>
+<area shape="poly" title=" " alt="" coords="761,231,729,231,729,225,761,225"/>
+<area shape="poly" title=" " alt="" coords="662,202,648,196,622,193,597,195,584,200,581,205,587,213,583,216,576,206,581,196,596,190,622,188,650,191,664,197"/>
+<area shape="rect" href="class_ela_message_bar.html#ab382ecab26b8cd084c4cf1c310629a1a" title=" " alt="" coords="274,47,467,89"/>
+<area shape="poly" title=" " alt="" coords="595,205,538,155,503,128,466,104,442,92,444,87,468,99,506,123,542,151,598,202"/>
+<area shape="rect" href="class_ela_message_bar.html#ae88944cbca6cf0cc02953a28ed45af83" title="显示错误消息" alt="" coords="297,113,444,140"/>
+<area shape="poly" title=" " alt="" coords="581,209,528,181,466,154,431,143,433,138,468,150,530,176,584,204"/>
+<area shape="rect" href="class_ela_message_bar.html#a7eb87a6d4464680c455d278d1d32eba6" title="事件过滤器，处理父控件事件" alt="" coords="279,1324,462,1351"/>
+<area shape="poly" title=" " alt="" coords="623,257,619,465,612,616,600,782,581,948,554,1101,537,1168,517,1227,495,1276,469,1314,454,1326,451,1322,465,1310,490,1274,513,1225,532,1167,549,1100,576,947,595,782,607,616,614,464,618,257"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="278,1273,463,1300"/>
+<area shape="poly" title=" " alt="" coords="616,257,377,1273,372,1272,611,256"/>
+<area shape="rect" href="class_ela_message_bar.html#aa71936647c7e332ab07cbec003a8c9a2" title="绘制事件，绘制消息栏外观" alt="" coords="279,1375,462,1401"/>
+<area shape="poly" title=" " alt="" coords="623,257,621,473,615,632,603,806,585,980,557,1141,540,1211,519,1274,496,1325,469,1364,455,1376,452,1372,465,1361,491,1323,514,1272,535,1210,552,1140,579,979,598,805,609,631,616,473,618,257"/>
+<area shape="rect" href="class_ela_message_bar.html#af8ac00160c4a557adfbba2c9508fa5e8" title="显示成功消息" alt="" coords="285,164,456,191"/>
+<area shape="poly" title=" " alt="" coords="537,214,440,194,441,189,538,208"/>
+<area shape="rect" href="class_ela_message_bar.html#aaf06af29d4b610224fbb14636ce07b32" title="显示警告消息" alt="" coords="287,215,454,241"/>
+<area shape="poly" title=" " alt="" coords="499,231,454,231,454,225,499,225"/>
+<area shape="poly" title=" " alt="" coords="411,34,396,28,370,25,347,27,332,32,326,38,328,46,323,47,321,37,329,28,345,22,370,20,397,22,413,29"/>
+<area shape="rect" href="class_ela_message_button.html#ad697d17c791aeddec311d54c29f62406" title="构造函数，初始化消息按钮" alt="" coords="10,131,221,173"/>
+<area shape="poly" title=" " alt="" coords="281,138,222,144,221,139,281,133"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="27,5,204,32"/>
+<area shape="poly" title=" " alt="" coords="282,109,272,103,256,89,247,74,239,59,224,46,200,35,203,30,227,42,243,56,252,71,260,86,275,99,285,104"/>
+<area shape="rect" href="class_ku_gou_app.html#a876901294f75b33c450c6453c893e1ae" title="播放本地音乐槽函数" alt="" coords="16,56,215,83"/>
+<area shape="poly" title=" " alt="" coords="293,112,178,86,179,81,294,107"/>
+<area shape="poly" title=" " alt="" coords="157,118,141,112,115,109,91,111,76,116,71,122,73,130,67,131,65,121,74,112,90,106,116,104,143,106,159,113"/>
+<area shape="poly" title=" " alt="" coords="367,1258,365,1048,359,894,349,726,331,558,306,403,289,334,270,274,248,225,224,187,211,176,215,172,228,184,253,222,275,272,294,333,311,402,337,557,354,726,365,894,370,1048,372,1258"/>
+<area shape="rect" href="class_live_big_left_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="事件过滤器" alt="" coords="48,197,183,240"/>
+<area shape="poly" title=" " alt="" coords="366,1258,363,1059,356,915,345,758,327,600,302,455,286,391,268,335,247,289,224,254,205,239,183,229,185,224,208,234,228,250,252,286,273,333,291,390,307,454,332,599,350,757,362,915,368,1059,372,1258"/>
+<area shape="rect" href="class_live_common_part_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="事件过滤器" alt="" coords="34,264,197,307"/>
+<area shape="poly" title=" " alt="" coords="366,1258,361,1071,353,937,341,790,323,643,298,508,283,448,265,396,246,353,224,320,211,309,196,301,199,296,214,305,228,317,250,350,270,394,288,447,303,506,328,642,346,789,359,936,366,1071,371,1258"/>
+<area shape="rect" href="class_live_music_part_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="事件过滤器" alt="" coords="43,331,188,373"/>
+<area shape="poly" title=" " alt="" coords="366,1258,358,1082,350,956,337,820,319,684,294,560,263,457,244,417,224,387,207,373,187,364,190,359,210,369,228,384,249,415,268,455,300,558,324,684,342,820,355,956,364,1082,371,1258"/>
+<area shape="rect" href="class_table_widget.html#a7eb87a6d4464680c455d278d1d32eba6" title="事件过滤器" alt="" coords="34,397,197,424"/>
+<area shape="poly" title=" " alt="" coords="366,1258,358,1090,349,971,336,843,318,715,294,598,262,502,244,465,224,438,211,428,196,420,198,415,214,423,228,434,249,463,267,500,299,597,323,714,341,842,355,971,363,1090,371,1258"/>
+<area shape="rect" href="class_listen_recommend.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="31,448,200,475"/>
+<area shape="poly" title=" " alt="" coords="365,1258,356,1099,333,867,315,748,291,638,260,548,243,514,224,489,199,472,202,468,227,485,247,511,265,546,296,637,320,747,338,867,361,1099,371,1258"/>
+<area shape="rect" href="class_song_list.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="60,499,171,525"/>
+<area shape="poly" title=" " alt="" coords="365,1258,354,1108,330,891,311,780,288,678,258,595,242,563,224,539,199,523,170,515,172,510,202,518,227,535,246,560,263,593,293,677,316,779,335,890,360,1108,370,1258"/>
+<area shape="rect" href="class_ku_gou_app.html#aa7dffb86fdd69b145520689756ce5a82" title="音效按钮点击槽函数" alt="" coords="31,549,200,592"/>
+<area shape="poly" title=" " alt="" coords="364,1258,351,1121,324,925,305,824,282,732,255,657,240,628,224,606,199,588,202,584,228,602,244,625,260,655,287,731,310,823,329,924,356,1120,369,1258"/>
+<area shape="rect" href="class_all_music.html#a09def86a7fb828301cda3661d5643003" title="处理批量操作按钮点击" alt="" coords="39,616,192,659"/>
+<area shape="poly" title=" " alt="" coords="363,1258,348,1132,320,956,301,867,278,785,252,718,238,692,224,673,209,660,191,651,193,647,212,656,228,669,243,689,257,716,283,783,306,865,325,955,353,1132,369,1257"/>
+<area shape="rect" href="class_all_music.html#a5a83c2a1a01b6ca11afa5b2dee86efa6" title="处理下载按钮点击" alt="" coords="28,683,203,725"/>
+<area shape="poly" title=" " alt="" coords="363,1259,345,1145,315,989,296,910,274,838,250,779,224,739,202,723,205,719,228,735,255,777,279,836,301,909,321,988,351,1144,368,1258"/>
+<area shape="rect" href="class_live_big_left_widget.html#a856eaeee6a1f7ac6d6dccda800d0c73e" title="全部按钮点击槽函数" alt="" coords="27,749,204,792"/>
+<area shape="poly" title=" " alt="" coords="367,1258,362,1170,355,1112,343,1049,325,984,300,919,267,859,224,806,202,791,206,786,227,802,271,856,305,917,330,982,348,1048,360,1112,367,1170,372,1258"/>
+<area shape="rect" href="class_live_common_part_widget.html#a856eaeee6a1f7ac6d6dccda800d0c73e" title="全部按钮点击槽函数" alt="" coords="23,816,208,859"/>
+<area shape="poly" title=" " alt="" coords="365,1258,357,1181,335,1078,317,1022,293,968,262,917,224,873,206,860,210,855,227,869,266,914,297,965,321,1020,340,1076,362,1181,370,1257"/>
+<area shape="rect" href="class_live_music_part_widget.html#a856eaeee6a1f7ac6d6dccda800d0c73e" title="全部按钮点击槽函数" alt="" coords="43,883,188,941"/>
+<area shape="poly" title=" " alt="" coords="362,1259,348,1196,322,1115,304,1072,282,1030,255,990,224,955,207,942,187,932,190,927,210,938,227,951,259,987,286,1027,309,1070,327,1114,353,1195,367,1257"/>
+<area shape="rect" href="class_all_music.html#a3bf0900994ed5bb1214f318f4b4dfa8e" title="处理分享按钮点击" alt="" coords="39,965,192,1008"/>
+<area shape="poly" title=" " alt="" coords="359,1259,342,1209,315,1144,276,1078,252,1048,224,1022,191,1004,193,999,227,1018,255,1045,280,1075,320,1142,347,1207,364,1258"/>
+<area shape="rect" href="class_live.html#ae1c54bcbe42b11a9741ad91c663fbe3c" title="全部按钮点击槽函数" alt="" coords="39,1032,192,1075"/>
+<area shape="poly" title=" " alt="" coords="355,1261,334,1222,305,1176,268,1129,224,1089,191,1072,194,1067,227,1084,272,1125,310,1173,339,1220,359,1259"/>
+<area shape="rect" href="class_daily_recommend.html#ab4d3c795be146b123cb6496f5da4cbb9" title="批量操作按钮点击槽函数" alt="" coords="28,1099,203,1141"/>
+<area shape="poly" title=" " alt="" coords="346,1263,294,1209,261,1180,224,1156,200,1144,203,1139,227,1151,264,1176,298,1205,350,1259"/>
+<area shape="rect" href="class_song_list_widget.html#ab4d3c795be146b123cb6496f5da4cbb9" title="批量操作按钮点击槽函数" alt="" coords="28,1165,203,1208"/>
+<area shape="poly" title=" " alt="" coords="328,1268,225,1222,193,1211,194,1206,227,1218,330,1264"/>
+<area shape="rect" href="class_uploaded_song.html#a0068c14fabda4e674d4e3d7ddda66a95" title="批量操作按钮点击槽函数" alt="" coords="28,1232,203,1275"/>
+<area shape="poly" title=" " alt="" coords="262,1275,203,1267,203,1262,263,1270"/>
+<area shape="rect" href="class_uploaded_song.html#a850a384576c3e36cb83c2e7c47a32db7" title="分享按钮点击槽函数" alt="" coords="28,1299,203,1341"/>
+<area shape="poly" title=" " alt="" coords="263,1303,203,1311,203,1306,262,1298"/>
+<area shape="rect" href="class_uploaded_song.html#a4274120611acfd922650f8df62627ceb" title="上传按钮点击槽函数" alt="" coords="25,1365,206,1408"/>
+<area shape="poly" title=" " alt="" coords="288,1308,275,1314,261,1324,252,1334,242,1345,227,1356,202,1367,200,1362,224,1351,238,1341,248,1331,257,1320,272,1310,286,1303"/>
+<area shape="rect" href="class_uploading_song.html#a4274120611acfd922650f8df62627ceb" title="上传按钮点击槽函数" alt="" coords="25,1432,206,1475"/>
+<area shape="poly" title=" " alt="" coords="280,1310,275,1314,264,1327,257,1339,252,1366,247,1394,240,1408,227,1422,207,1436,204,1431,224,1418,235,1405,242,1392,247,1365,252,1337,260,1323,272,1310,277,1306"/>
+<area shape="rect" href="class_single_song.html#ac7ba208f35150db122ca98246c827606" title="专辑按钮点击槽函数" alt="" coords="27,1499,204,1541"/>
+<area shape="poly" title=" " alt="" coords="279,1311,276,1314,260,1335,253,1356,252,1399,251,1443,244,1466,228,1489,206,1504,203,1500,224,1485,239,1464,246,1443,247,1399,247,1355,255,1332,272,1310,275,1307"/>
+<area shape="rect" href="class_single_song.html#a1f25a4e1bbbf331fb682b582c832ad74" title="批量操作按钮点击槽函数" alt="" coords="28,1565,203,1608"/>
+<area shape="poly" title=" " alt="" coords="278,1311,276,1314,256,1343,248,1372,248,1402,252,1432,256,1462,256,1493,248,1524,228,1555,205,1572,201,1568,224,1552,243,1522,251,1492,251,1463,246,1433,242,1402,242,1372,251,1341,272,1310,275,1307"/>
+<area shape="rect" href="class_single_song.html#ad9f731f9c8785157c3d9bf6df168b6ad" title="下载按钮点击槽函数" alt="" coords="17,1632,214,1675"/>
+<area shape="poly" title=" " alt="" coords="278,1311,276,1314,261,1333,251,1351,242,1389,244,1427,252,1465,259,1503,261,1542,252,1582,242,1602,228,1622,215,1633,211,1629,224,1618,238,1599,247,1580,256,1542,254,1504,246,1466,239,1427,237,1389,246,1350,257,1330,272,1310,274,1308"/>
+<area shape="rect" href="class_single_song.html#afb2333ac8f71caedc741b1707974dfc1" title="分享按钮点击槽函数" alt="" coords="28,1699,203,1741"/>
+<area shape="poly" title=" " alt="" coords="278,1312,276,1314,258,1337,247,1360,240,1383,237,1406,241,1452,251,1498,262,1545,266,1592,263,1616,257,1640,245,1664,228,1689,205,1706,201,1702,224,1685,241,1661,252,1638,258,1615,261,1592,257,1545,246,1499,236,1453,232,1406,235,1382,242,1358,254,1334,272,1310,274,1308"/>
+<area shape="rect" href="class_daily_recommend.html#a4c010533bcee743a2630c68f1ac292b0" title="收藏按钮点击槽函数" alt="" coords="42,1765,189,1824"/>
+<area shape="poly" title=" " alt="" coords="278,1312,276,1314,256,1341,242,1368,234,1395,232,1422,236,1476,249,1530,263,1584,269,1640,267,1668,260,1697,247,1726,228,1755,211,1771,191,1782,188,1777,208,1767,224,1752,242,1723,255,1695,261,1667,263,1640,257,1585,244,1531,231,1477,226,1422,229,1394,237,1367,251,1339,272,1310,274,1308"/>
+<area shape="rect" href="class_local_download.html#a21b63b12df31e8009a5d1644b8ec3d43" title="下载历史按钮点击槽函数" alt="" coords="18,1848,213,1891"/>
+<area shape="poly" title=" " alt="" coords="278,1312,276,1314,264,1333,256,1357,247,1419,247,1493,252,1573,256,1654,256,1729,248,1792,240,1817,228,1838,215,1850,211,1846,224,1834,235,1815,243,1791,251,1728,251,1654,246,1574,242,1493,242,1419,250,1356,259,1330,272,1310,274,1308"/>
+<area shape="rect" href="class_daily_recommend.html#ac1085b0a0fc437c5346f83cb5f1eb184" title="下载按钮点击槽函数" alt="" coords="41,1915,190,1973"/>
+<area shape="poly" title=" " alt="" coords="278,1312,276,1314,262,1335,253,1363,244,1432,245,1515,250,1606,256,1696,257,1780,250,1852,241,1881,228,1904,211,1920,192,1931,189,1927,208,1916,224,1901,236,1879,244,1851,252,1780,251,1696,245,1606,240,1516,239,1432,248,1361,258,1333,272,1310,274,1308"/>
+<area shape="rect" href="class_daily_recommend.html#a839c37ccb7bcd014f252a8f2b9c400f9" title="历史推荐按钮点击槽函数" alt="" coords="11,1997,220,2056"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1314,261,1338,250,1370,244,1407,241,1449,243,1544,250,1647,258,1750,260,1846,252,1927,242,1960,228,1987,217,1999,213,1995,224,1984,237,1958,247,1926,255,1846,252,1750,245,1647,237,1544,236,1449,239,1406,245,1369,256,1336,272,1310,273,1309"/>
+<area shape="rect" href="class_song_list_widget.html#a63ddf64ee2f48649476d7938232ea7f3" title="导入按钮点击槽函数" alt="" coords="26,2080,205,2123"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1314,259,1342,248,1377,241,1419,238,1466,242,1573,251,1689,261,1805,265,1912,262,1961,256,2004,245,2040,228,2070,207,2087,203,2083,224,2066,240,2038,251,2002,257,1960,259,1912,256,1805,246,1689,236,1574,233,1466,236,1418,243,1376,254,1339,272,1310,273,1309"/>
+<area shape="rect" href="class_title_widget.html#a9964105982edb38f6951c4e3ac2bb24d" title="听歌识曲按钮点击事件，显示未实现提示" alt="" coords="42,2147,189,2189"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1314,258,1344,246,1383,239,1429,236,1480,240,1596,251,1722,263,1848,267,1965,265,2018,258,2064,246,2104,228,2136,211,2152,191,2161,188,2157,208,2147,224,2133,241,2102,253,2063,260,2017,262,1965,257,1849,246,1723,235,1597,231,1480,233,1428,240,1382,253,1342,271,1310,273,1309"/>
+<area shape="rect" href="class_local_song.html#a4c814291ca99d3e9d95fde833f93ece0" title="专辑按钮点击槽函数" alt="" coords="27,2213,204,2256"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1314,256,1347,243,1389,236,1438,233,1494,238,1620,251,1756,264,1892,270,2018,267,2075,260,2125,247,2168,228,2203,206,2221,203,2217,224,2200,242,2166,255,2124,262,2074,264,2018,259,1892,246,1756,233,1620,228,1494,231,1437,238,1387,251,1345,271,1310,273,1309"/>
+<area shape="rect" href="class_downloaded_song.html#a40d482af13dee0a73555d807c0f3d390" title="批量操作按钮点击槽函数" alt="" coords="35,2280,196,2339"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1314,255,1349,241,1394,233,1447,230,1507,235,1642,249,1787,263,1933,270,2069,268,2130,261,2185,248,2232,228,2270,214,2284,197,2294,194,2290,211,2280,224,2266,243,2230,256,2184,262,2130,264,2069,258,1934,244,1788,230,1642,225,1507,228,1447,236,1393,250,1347,271,1310,273,1309"/>
+<area shape="rect" href="class_local_song.html#a40d482af13dee0a73555d807c0f3d390" title="批量操作按钮点击槽函数" alt="" coords="28,2363,203,2405"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1313,264,1338,256,1379,248,1499,248,1656,252,1831,256,2006,256,2163,248,2284,240,2326,228,2352,205,2371,201,2367,224,2349,235,2324,242,2283,250,2162,250,2006,246,1831,243,1656,243,1499,251,1378,259,1337,271,1311,273,1309"/>
+<area shape="rect" href="class_local_song.html#ac0e33dc9107118d828086f3e3ff279fb" title="分享按钮点击槽函数" alt="" coords="28,2429,203,2472"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1313,264,1340,255,1383,247,1512,247,1678,252,1864,256,2050,257,2217,249,2346,240,2391,228,2419,205,2438,201,2434,224,2416,235,2389,244,2346,251,2217,251,2050,246,1864,242,1678,242,1511,250,1383,259,1338,271,1311,273,1309"/>
+<area shape="rect" href="class_title_widget.html#a7a772da40ed6adf3f250fa2b6549513f" title="消息按钮点击事件，显示未实现提示" alt="" coords="31,2496,200,2539"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1313,263,1342,254,1388,246,1524,246,1700,252,1897,257,2095,258,2272,250,2409,241,2456,228,2486,202,2506,199,2502,224,2482,236,2454,245,2408,253,2272,252,2095,246,1898,241,1700,240,1523,249,1387,258,1340,271,1311,273,1309"/>
+<area shape="rect" href="class_music_repository.html#aab24de7fec7437a91e0ab5d770ca481a" title="更多按钮 1 点击槽函数" alt="" coords="23,2563,208,2605"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1313,262,1343,253,1392,247,1457,244,1536,245,1722,252,1931,258,2139,259,2326,257,2405,251,2471,242,2521,228,2552,211,2568,207,2564,224,2549,237,2519,246,2470,251,2405,254,2326,252,2139,246,1931,240,1722,239,1536,242,1457,248,1391,257,1342,271,1311,273,1309"/>
+<area shape="rect" href="class_m_v_widget.html#aab24de7fec7437a91e0ab5d770ca481a" title="更多按钮 1 点击槽" alt="" coords="5,2629,226,2672"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1313,262,1345,252,1396,246,1465,243,1548,245,1744,252,1964,259,2184,260,2381,258,2464,252,2533,242,2586,228,2619,216,2631,212,2627,223,2616,237,2584,247,2533,253,2464,255,2381,253,2184,246,1964,239,1745,238,1548,241,1465,247,1396,257,1343,271,1311,273,1309"/>
+<area shape="rect" href="class_music_repository.html#a2711b1250e1f9d26dd76217b7a8cc699" title="更多按钮 2 点击槽函数" alt="" coords="23,2696,208,2739"/>
+<area shape="poly" title=" " alt="" coords="277,1312,276,1313,261,1347,251,1401,245,1473,242,1560,244,1767,251,1997,259,2228,262,2435,259,2523,253,2596,243,2651,228,2686,211,2701,207,2697,224,2682,238,2649,248,2595,254,2523,256,2435,254,2228,246,1997,239,1767,236,1560,239,1472,245,1400,256,1345,271,1311,273,1309"/>
+<area shape="poly" title=" " alt="" coords="269,170,221,165,222,160,270,165"/>
+<area shape="poly" title=" " alt="" coords="298,213,273,205,225,188,189,176,191,171,227,183,274,200,300,208"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b7e9884ceea662439e68643cdaff6f6" name="a9b7e9884ceea662439e68643cdaff6f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b7e9884ceea662439e68643cdaff6f6">&#9670;&#160;</a></span>onOtherMessageBarEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onOtherMessageBarEnd </td>
+          <td>(</td>
+          <td class="paramtype">QVariantMap</td>          <td class="paramname"><span class="paramname"><em>eventData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>处理其他消息栏终止事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventData</td><td>事件数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a349bcd692f2f7742f9c2d9c456608576" name="a349bcd692f2f7742f9c2d9c456608576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349bcd692f2f7742f9c2d9c456608576">&#9670;&#160;</a></span>tryToRequestMessageBarEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tryToRequestMessageBarEvent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>尝试请求消息栏事件 </p>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关符号说明</h2>
+<a id="ab382ecab26b8cd084c4cf1c310629a1a" name="ab382ecab26b8cd084c4cf1c310629a1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab382ecab26b8cd084c4cf1c310629a1a">&#9670;&#160;</a></span>ElaMessageBarManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_ela_message_bar_manager.html">ElaMessageBarManager</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a0c2a10466efa0aa88c9fc3e9bb598d0a" name="a0c2a10466efa0aa88c9fc3e9bb598d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2a10466efa0aa88c9fc3e9bb598d0a">&#9670;&#160;</a></span>_borderRadius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _borderRadius {6}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>边框圆角半径 </p>
+
+</div>
+</div>
+<a id="a5cbebc940c4500522d2863c10719e391" name="a5cbebc940c4500522d2863c10719e391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbebc940c4500522d2863c10719e391">&#9670;&#160;</a></span>_closeButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ela_icon_button.html">ElaIconButton</a>* _closeButton {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关闭按钮 </p>
+
+</div>
+</div>
+<a id="a3628c97e3561f2fff21aad9da54622e5" name="a3628c97e3561f2fff21aad9da54622e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3628c97e3561f2fff21aad9da54622e5">&#9670;&#160;</a></span>_closeButtonLeftRightMargin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _closeButtonLeftRightMargin {20}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关闭按钮左右总边距 </p>
+
+</div>
+</div>
+<a id="a2500f54e2a05920a3e95a2b3eb4ed4aa" name="a2500f54e2a05920a3e95a2b3eb4ed4aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2500f54e2a05920a3e95a2b3eb4ed4aa">&#9670;&#160;</a></span>_closeButtonWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _closeButtonWidth {30}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关闭按钮宽度 </p>
+
+</div>
+</div>
+<a id="aa6e02262c5817a6e921a2a30533ab32b" name="aa6e02262c5817a6e921a2a30533ab32b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6e02262c5817a6e921a2a30533ab32b">&#9670;&#160;</a></span>_createTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal _createTime {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>创建时间 </p>
+
+</div>
+</div>
+<a id="ad2f3caf97ddc0bcf60d3a333f3c62c27" name="ad2f3caf97ddc0bcf60d3a333f3c62c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2f3caf97ddc0bcf60d3a333f3c62c27">&#9670;&#160;</a></span>_isMessageBarCreateAnimationFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _isMessageBarCreateAnimationFinished {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>创建动画是否完成 </p>
+
+</div>
+</div>
+<a id="a20598220959538c76d6674d87934367a" name="a20598220959538c76d6674d87934367a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20598220959538c76d6674d87934367a">&#9670;&#160;</a></span>_isMessageBarEventAnimationStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _isMessageBarEventAnimationStart {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>事件动画是否开始 </p>
+
+</div>
+</div>
+<a id="af3a61d889327f0cbc1bb35083bcd2767" name="af3a61d889327f0cbc1bb35083bcd2767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a61d889327f0cbc1bb35083bcd2767">&#9670;&#160;</a></span>_isNormalDisplay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _isNormalDisplay {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否正常显示 </p>
+
+</div>
+</div>
+<a id="ad3923b150759b9d6a872ee63fa7ec6f4" name="ad3923b150759b9d6a872ee63fa7ec6f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3923b150759b9d6a872ee63fa7ec6f4">&#9670;&#160;</a></span>_isReadyToEnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _isReadyToEnd {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否准备终止 </p>
+
+</div>
+</div>
+<a id="abfa056ba85411cd139b761a0397c8d63" name="abfa056ba85411cd139b761a0397c8d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa056ba85411cd139b761a0397c8d63">&#9670;&#160;</a></span>_leftPadding</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _leftPadding {20}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左边框到图标中心的距离 </p>
+
+</div>
+</div>
+<a id="ad37a83b7a3de8e5b869dd825bc27d9e0" name="ad37a83b7a3de8e5b869dd825bc27d9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37a83b7a3de8e5b869dd825bc27d9e0">&#9670;&#160;</a></span>_messageBarHorizontalMargin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _messageBarHorizontalMargin {20}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消息栏水平边距 </p>
+
+</div>
+</div>
+<a id="ad8dbae5a1289a693584bd692199fdcec" name="ad8dbae5a1289a693584bd692199fdcec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8dbae5a1289a693584bd692199fdcec">&#9670;&#160;</a></span>_messageBarSpacing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _messageBarSpacing {15}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消息栏间距 </p>
+
+</div>
+</div>
+<a id="a8598f3aad7052740c0c4a9bf28ecc6ac" name="a8598f3aad7052740c0c4a9bf28ecc6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8598f3aad7052740c0c4a9bf28ecc6ac">&#9670;&#160;</a></span>_messageBarVerticalBottomMargin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _messageBarVerticalBottomMargin {20}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消息栏底部垂直边距 </p>
+
+</div>
+</div>
+<a id="a27ae517613f0b44c9d9321734643ec5d" name="a27ae517613f0b44c9d9321734643ec5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ae517613f0b44c9d9321734643ec5d">&#9670;&#160;</a></span>_messageBarVerticalTopMargin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _messageBarVerticalTopMargin {50}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消息栏顶部垂直边距 </p>
+
+</div>
+</div>
+<a id="a739ef02d1d318af8f07efb67aea4f5fb" name="a739ef02d1d318af8f07efb67aea4f5fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739ef02d1d318af8f07efb67aea4f5fb">&#9670;&#160;</a></span>_messageMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ElaMessageBarType::MessageMode _messageMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消息类型 </p>
+
+</div>
+</div>
+<a id="a035c596db1eae953c44225f7212a6c26" name="a035c596db1eae953c44225f7212a6c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035c596db1eae953c44225f7212a6c26">&#9670;&#160;</a></span>_policy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ElaMessageBarType::PositionPolicy _policy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>位置策略 </p>
+
+</div>
+</div>
+<a id="ab7648977c8435178f73745799497d85a" name="ab7648977c8435178f73745799497d85a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7648977c8435178f73745799497d85a">&#9670;&#160;</a></span>_shadowBorderWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _shadowBorderWidth {6}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>阴影边框宽度 </p>
+
+</div>
+</div>
+<a id="ad9a3c9b82e5b3f365cad26cb46d5c994" name="ad9a3c9b82e5b3f365cad26cb46d5c994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a3c9b82e5b3f365cad26cb46d5c994">&#9670;&#160;</a></span>_text</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString _text {&quot;&quot;}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消息内容 </p>
+
+</div>
+</div>
+<a id="ada2b1deced6953649d6c6b36cbbbe8f8" name="ada2b1deced6953649d6c6b36cbbbe8f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2b1deced6953649d6c6b36cbbbe8f8">&#9670;&#160;</a></span>_textLeftSpacing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _textLeftSpacing {15}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>标题右侧到正文左侧的距离 </p>
+
+</div>
+</div>
+<a id="abab7c56bd707e57041aaca2f2b3906b1" name="abab7c56bd707e57041aaca2f2b3906b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab7c56bd707e57041aaca2f2b3906b1">&#9670;&#160;</a></span>_themeMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ElaThemeType::ThemeMode _themeMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前主题模式 </p>
+
+</div>
+</div>
+<a id="af590180b01913186166310e0ceff3301" name="af590180b01913186166310e0ceff3301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af590180b01913186166310e0ceff3301">&#9670;&#160;</a></span>_title</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString _title {&quot;&quot;}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>消息标题 </p>
+
+</div>
+</div>
+<a id="a188d68182efbd9e939a6010661d5f67c" name="a188d68182efbd9e939a6010661d5f67c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188d68182efbd9e939a6010661d5f67c">&#9670;&#160;</a></span>_titleLeftSpacing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _titleLeftSpacing {30}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>图标中心到标题左侧的距离 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_ela_message_bar_private_8h_source.html">ElaMessageBarPrivate.h</a></li>
+<li><a class="el" href="_ela_message_bar_private_8cpp.html">ElaMessageBarPrivate.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_ela_message_bar_private.html">ElaMessageBarPrivate</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

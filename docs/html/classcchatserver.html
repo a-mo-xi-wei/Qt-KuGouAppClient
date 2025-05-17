@@ -1,0 +1,2362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: cchatserver类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classcchatserver.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classcchatserver-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">cchatserver类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="cchatserver_8h_source.html">cchatserver.h</a>&gt;</code></p>
+<div class="dynheader">
+类 cchatserver 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver__inherit__graph.png" border="0" usemap="#acchatserver_inherit__map" alt="Inheritance graph"/></div>
+<map name="acchatserver_inherit__map" id="acchatserver_inherit__map">
+<area shape="rect" title=" " alt="" coords="63,80,153,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,75,32"/>
+<area shape="poly" title=" " alt="" coords="64,42,98,78,94,81,60,45"/>
+<area shape="rect" href="class_network_frame_manager.html" title=" " alt="" coords="99,5,256,32"/>
+<area shape="poly" title=" " alt="" coords="157,45,122,81,118,78,153,41"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+cchatserver 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver__coll__graph.png" border="0" usemap="#acchatserver_coll__map" alt="Collaboration graph"/></div>
+<map name="acchatserver_coll__map" id="acchatserver_coll__map">
+<area shape="rect" title=" " alt="" coords="188,187,278,213"/>
+<area shape="rect" title=" " alt="" coords="162,5,232,32"/>
+<area shape="poly" title=" " alt="" coords="205,46,233,186,228,187,200,47"/>
+<area shape="rect" href="class_c_web_socket_server.html" title=" " alt="" coords="234,96,371,123"/>
+<area shape="poly" title=" " alt="" coords="225,40,289,93,286,97,222,44"/>
+<area shape="rect" href="class_sqlite_data_provider.html" title=" " alt="" coords="5,96,136,123"/>
+<area shape="poly" title=" " alt="" coords="168,43,90,98,87,93,165,39"/>
+<area shape="rect" href="class_network_frame_manager.html" title=" " alt="" coords="314,5,472,32"/>
+<area shape="poly" title=" " alt="" coords="440,39,454,54,468,74,477,94,477,108,470,123,436,165,409,179,368,189,279,199,278,194,368,184,407,174,433,161,466,120,471,106,472,95,463,77,450,58,436,43"/>
+<area shape="poly" title=" " alt="" coords="313,42,296,57,293,66,292,76,298,95,293,97,287,76,287,65,292,55,309,38"/>
+<area shape="poly" title=" " alt="" coords="285,137,245,188,241,184,281,134"/>
+<area shape="poly" title=" " alt="" coords="51,137,46,150,50,161,71,174,107,183,189,194,188,199,105,189,69,179,45,164,41,150,46,135"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:aaa495be72663b923dd43ffcb1f8c7ef7" id="r_aaa495be72663b923dd43ffcb1f8c7ef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa495be72663b923dd43ffcb1f8c7ef7">showlog</a> (QString msg)</td></tr>
+<tr class="memdesc:aaa495be72663b923dd43ffcb1f8c7ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志消息  <br /></td></tr>
+<tr class="separator:aaa495be72663b923dd43ffcb1f8c7ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a032f4c5c91fd9e4b322bb1d027aa27ae" id="r_a032f4c5c91fd9e4b322bb1d027aa27ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a032f4c5c91fd9e4b322bb1d027aa27ae">cchatserver</a> (QObject *parent=nullptr)</td></tr>
+<tr class="separator:a032f4c5c91fd9e4b322bb1d027aa27ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3af86ce2cf7146b400cd9720931fa0" id="r_a7f3af86ce2cf7146b400cd9720931fa0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f3af86ce2cf7146b400cd9720931fa0">~cchatserver</a> () override</td></tr>
+<tr class="separator:a7f3af86ce2cf7146b400cd9720931fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6113e9508c51c4e8d9af59aac864372b" id="r_a6113e9508c51c4e8d9af59aac864372b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6113e9508c51c4e8d9af59aac864372b">startServer</a> (int port)</td></tr>
+<tr class="memdesc:a6113e9508c51c4e8d9af59aac864372b"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动服务器  <br /></td></tr>
+<tr class="separator:a6113e9508c51c4e8d9af59aac864372b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912a4e0983416e8adeda19aa3c88e495" id="r_a912a4e0983416e8adeda19aa3c88e495"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a912a4e0983416e8adeda19aa3c88e495">closeServer</a> (bool isprintlog=true)</td></tr>
+<tr class="memdesc:a912a4e0983416e8adeda19aa3c88e495"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭服务器  <br /></td></tr>
+<tr class="separator:a912a4e0983416e8adeda19aa3c88e495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf039b5e86aa110ea4d9cdc634287c1" id="r_a2bf039b5e86aa110ea4d9cdc634287c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf039b5e86aa110ea4d9cdc634287c1">isListening</a> ()</td></tr>
+<tr class="memdesc:a2bf039b5e86aa110ea4d9cdc634287c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测服务器是否启动  <br /></td></tr>
+<tr class="separator:a2bf039b5e86aa110ea4d9cdc634287c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d9eb7149172c89e23494bf3aef20e1" id="r_a02d9eb7149172c89e23494bf3aef20e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02d9eb7149172c89e23494bf3aef20e1">openDB</a> (const QString &amp;dbpath)</td></tr>
+<tr class="memdesc:a02d9eb7149172c89e23494bf3aef20e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开指定的数据库  <br /></td></tr>
+<tr class="separator:a02d9eb7149172c89e23494bf3aef20e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08f2934bb22fcb055175b79a519bde1" id="r_aa08f2934bb22fcb055175b79a519bde1"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa08f2934bb22fcb055175b79a519bde1">getCurrentServerInfo</a> ()</td></tr>
+<tr class="memdesc:aa08f2934bb22fcb055175b79a519bde1"><td class="mdescLeft">&#160;</td><td class="mdescRight">得到当前服务器信息  <br /></td></tr>
+<tr class="separator:aa08f2934bb22fcb055175b79a519bde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_network_frame_manager"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_network_frame_manager')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_network_frame_manager.html">NetworkFrameManager</a></td></tr>
+<tr class="memitem:a04ce84509ba6acfc016f4efe03abb56f inherit pub_methods_class_network_frame_manager" id="r_a04ce84509ba6acfc016f4efe03abb56f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a04ce84509ba6acfc016f4efe03abb56f">NetworkFrameManager</a> ()</td></tr>
+<tr class="separator:a04ce84509ba6acfc016f4efe03abb56f inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf320573ad3a3d10cf26d14240f4791 inherit pub_methods_class_network_frame_manager" id="r_adbf320573ad3a3d10cf26d14240f4791"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#adbf320573ad3a3d10cf26d14240f4791">~NetworkFrameManager</a> ()</td></tr>
+<tr class="separator:adbf320573ad3a3d10cf26d14240f4791 inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81aed607133209dade63a226818224d inherit pub_methods_class_network_frame_manager" id="r_aa81aed607133209dade63a226818224d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#aa81aed607133209dade63a226818224d">lock</a> ()</td></tr>
+<tr class="separator:aa81aed607133209dade63a226818224d inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9278be8203e1c42e2619179882ae4403 inherit pub_methods_class_network_frame_manager" id="r_a9278be8203e1c42e2619179882ae4403"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a9278be8203e1c42e2619179882ae4403">unlock</a> ()</td></tr>
+<tr class="separator:a9278be8203e1c42e2619179882ae4403 inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095321efcb14a1a230fdc2ce9f68df73 inherit pub_methods_class_network_frame_manager" id="r_a095321efcb14a1a230fdc2ce9f68df73"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a095321efcb14a1a230fdc2ce9f68df73">OnProcessNetBinary</a> (QWebSocket *conn, QByteArray &amp;data)</td></tr>
+<tr class="memdesc:a095321efcb14a1a230fdc2ce9f68df73 inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#a095321efcb14a1a230fdc2ce9f68df73" title="NetworkFrameManager::OnProcessNetBinary 处理网络二进制消息">NetworkFrameManager::OnProcessNetBinary</a> 处理网络二进制消息  <br /></td></tr>
+<tr class="separator:a095321efcb14a1a230fdc2ce9f68df73 inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff04b5c6777a9c347f7a4e6e03d51ab inherit pub_methods_class_network_frame_manager" id="r_aaff04b5c6777a9c347f7a4e6e03d51ab"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#aaff04b5c6777a9c347f7a4e6e03d51ab">OnProcessSendFile</a> (QWebSocket *conn, QString file, qint64 sendsize, qint64 totalsize)</td></tr>
+<tr class="memdesc:aaff04b5c6777a9c347f7a4e6e03d51ab inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#aaff04b5c6777a9c347f7a4e6e03d51ab" title="NetworkFrameManager::OnProcessSendFile 处理文件发送（客户端使用）">NetworkFrameManager::OnProcessSendFile</a> 处理文件发送（客户端使用）  <br /></td></tr>
+<tr class="separator:aaff04b5c6777a9c347f7a4e6e03d51ab inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fafd79162c0c15c79c7f069517f0c5b inherit pub_methods_class_network_frame_manager" id="r_a0fafd79162c0c15c79c7f069517f0c5b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a0fafd79162c0c15c79c7f069517f0c5b">OnProcessRecvFile</a> (QWebSocket *conn, QString srcfile, QString decfile, <a class="el" href="_my_common_2common_8h.html#a37f5d0b07678558bfa1271ce28a357c1">FileRecvError</a> pFileRecvError)</td></tr>
+<tr class="memdesc:a0fafd79162c0c15c79c7f069517f0c5b inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#a0fafd79162c0c15c79c7f069517f0c5b" title="NetworkFrameManager::OnProcessRecvFile 处理文件接收">NetworkFrameManager::OnProcessRecvFile</a> 处理文件接收  <br /></td></tr>
+<tr class="separator:a0fafd79162c0c15c79c7f069517f0c5b inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1ebe8108fdb19655ef0f0d992cd4e6 inherit pub_methods_class_network_frame_manager" id="r_a8f1ebe8108fdb19655ef0f0d992cd4e6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a8f1ebe8108fdb19655ef0f0d992cd4e6">OnProcessBinaryOperProcess</a> (QWebSocket *conn, int type, qint64 sendsize, qint64 totalsize)</td></tr>
+<tr class="memdesc:a8f1ebe8108fdb19655ef0f0d992cd4e6 inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#a8f1ebe8108fdb19655ef0f0d992cd4e6" title="NetworkFrameManager::OnProcessBinaryOperProcess 处理二进制文件发送，接收进度，type:0发送，1接收">NetworkFrameManager::OnProcessBinaryOperProcess</a> 处理二进制文件发送，接收进度，type:0发送，1接收  <br /></td></tr>
+<tr class="separator:a8f1ebe8108fdb19655ef0f0d992cd4e6 inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea1611bdecf148107e1daa028b643cf inherit pub_methods_class_network_frame_manager" id="r_a5ea1611bdecf148107e1daa028b643cf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a5ea1611bdecf148107e1daa028b643cf">OnProcessNetBinary</a> (QTcpSocket *conn, QByteArray &amp;data)</td></tr>
+<tr class="memdesc:a5ea1611bdecf148107e1daa028b643cf inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#a095321efcb14a1a230fdc2ce9f68df73" title="NetworkFrameManager::OnProcessNetBinary 处理网络二进制消息">NetworkFrameManager::OnProcessNetBinary</a> 处理网络二进制消息  <br /></td></tr>
+<tr class="separator:a5ea1611bdecf148107e1daa028b643cf inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79ef632daeb6a58b1e581fac49c1473 inherit pub_methods_class_network_frame_manager" id="r_aa79ef632daeb6a58b1e581fac49c1473"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#aa79ef632daeb6a58b1e581fac49c1473">OnProcessConnectedNetMes</a> (QTcpSocket *conn)</td></tr>
+<tr class="memdesc:aa79ef632daeb6a58b1e581fac49c1473 inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#a8b788563768272a255b92940013f7c93" title="NetworkFrameManager::OnProcessConnectedNetMes 处理一个新的连接到达">NetworkFrameManager::OnProcessConnectedNetMes</a> 处理一个新的连接到达  <br /></td></tr>
+<tr class="separator:aa79ef632daeb6a58b1e581fac49c1473 inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3416f311e9ef3d0cee77d1bf4f5d901 inherit pub_methods_class_network_frame_manager" id="r_ac3416f311e9ef3d0cee77d1bf4f5d901"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#ac3416f311e9ef3d0cee77d1bf4f5d901">OnProcessDisconnectedNetMes</a> (QTcpSocket *conn)</td></tr>
+<tr class="memdesc:ac3416f311e9ef3d0cee77d1bf4f5d901 inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#a56e7177220478f1ce106e2da7c7a7ddb" title="NetworkFrameManager::OnProcessDisconnectedNetMes 处理一个连接关闭">NetworkFrameManager::OnProcessDisconnectedNetMes</a> 处理一个连接关闭  <br /></td></tr>
+<tr class="separator:ac3416f311e9ef3d0cee77d1bf4f5d901 inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0935f6b98010d3097ff23779fbb5535d inherit pub_methods_class_network_frame_manager" id="r_a0935f6b98010d3097ff23779fbb5535d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a0935f6b98010d3097ff23779fbb5535d">OnProcessSerialPortBinary</a> (QSerialPort *serialport, QByteArray &amp;data)</td></tr>
+<tr class="memdesc:a0935f6b98010d3097ff23779fbb5535d inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#a0935f6b98010d3097ff23779fbb5535d" title="NetworkFrameManager::OnProcessSerialPortBinary 处理串口二进制消息">NetworkFrameManager::OnProcessSerialPortBinary</a> 处理串口二进制消息  <br /></td></tr>
+<tr class="separator:a0935f6b98010d3097ff23779fbb5535d inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6049c0443618449c2e482a37e8c7ad54 inherit pub_methods_class_network_frame_manager" id="r_a6049c0443618449c2e482a37e8c7ad54"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a6049c0443618449c2e482a37e8c7ad54">OnProcessHttpAccepted</a> (QObject *obj, const QPointer&lt; <a class="el" href="class_j_q_http_server_1_1_session.html">JQHttpServer::Session</a> &gt; &amp;session)</td></tr>
+<tr class="memdesc:a6049c0443618449c2e482a37e8c7ad54 inherit pub_methods_class_network_frame_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_network_frame_manager.html#a6049c0443618449c2e482a37e8c7ad54" title="NetworkFrameManager::OnProcessHttpAccepted 处理http请求">NetworkFrameManager::OnProcessHttpAccepted</a> 处理http请求  <br /></td></tr>
+<tr class="separator:a6049c0443618449c2e482a37e8c7ad54 inherit pub_methods_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a2122f43bc76cad23f89fc7d696f6c2e2" id="r_a2122f43bc76cad23f89fc7d696f6c2e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2122f43bc76cad23f89fc7d696f6c2e2">OnProcessNetText</a> (QWebSocket *conn, QString mes)</td></tr>
+<tr class="memdesc:a2122f43bc76cad23f89fc7d696f6c2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理网络字符串消息  <br /></td></tr>
+<tr class="separator:a2122f43bc76cad23f89fc7d696f6c2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b788563768272a255b92940013f7c93" id="r_a8b788563768272a255b92940013f7c93"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b788563768272a255b92940013f7c93">OnProcessConnectedNetMes</a> (QWebSocket *conn)</td></tr>
+<tr class="memdesc:a8b788563768272a255b92940013f7c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理一个新的连接到达  <br /></td></tr>
+<tr class="separator:a8b788563768272a255b92940013f7c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e7177220478f1ce106e2da7c7a7ddb" id="r_a56e7177220478f1ce106e2da7c7a7ddb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56e7177220478f1ce106e2da7c7a7ddb">OnProcessDisconnectedNetMes</a> (QWebSocket *conn)</td></tr>
+<tr class="memdesc:a56e7177220478f1ce106e2da7c7a7ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理一个连接关闭  <br /></td></tr>
+<tr class="separator:a56e7177220478f1ce106e2da7c7a7ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:abc269f2177376830062b9e0c68c556f6" id="r_abc269f2177376830062b9e0c68c556f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc269f2177376830062b9e0c68c556f6">printLog</a> (<a class="el" href="namespace_qs_logging.html#a221b779e6bb7b8d40677d7642bfefac5">QsLogging::Level</a> type, const QString &amp;msg)</td></tr>
+<tr class="memdesc:abc269f2177376830062b9e0c68c556f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">打印用户日志  <br /></td></tr>
+<tr class="separator:abc269f2177376830062b9e0c68c556f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9793b5694d7c2405cc04c5ec797d8fd" id="r_ae9793b5694d7c2405cc04c5ec797d8fd"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9793b5694d7c2405cc04c5ec797d8fd">getCurrentDate</a> ()</td></tr>
+<tr class="memdesc:ae9793b5694d7c2405cc04c5ec797d8fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">得到当前时间  <br /></td></tr>
+<tr class="separator:ae9793b5694d7c2405cc04c5ec797d8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2736b496347fde708dcbc2e8c878f997" id="r_a2736b496347fde708dcbc2e8c878f997"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2736b496347fde708dcbc2e8c878f997">isUserOnline</a> (int userId)</td></tr>
+<tr class="memdesc:a2736b496347fde708dcbc2e8c878f997"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测指定ID的用户是否在线  <br /></td></tr>
+<tr class="separator:a2736b496347fde708dcbc2e8c878f997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636d41db607fe78c503a8c685c570488" id="r_a636d41db607fe78c503a8c685c570488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtag_user_info.html">tagUserInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a636d41db607fe78c503a8c685c570488">getUserInfo</a> (int userId)</td></tr>
+<tr class="memdesc:a636d41db607fe78c503a8c685c570488"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据用户ID得到用户数据  <br /></td></tr>
+<tr class="separator:a636d41db607fe78c503a8c685c570488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9205d3e7b242ab885f84c58815ba89e" id="r_ad9205d3e7b242ab885f84c58815ba89e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtag_group_info.html">tagGroupInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9205d3e7b242ab885f84c58815ba89e">getGroupInfo</a> (int groupId)</td></tr>
+<tr class="memdesc:ad9205d3e7b242ab885f84c58815ba89e"><td class="mdescLeft">&#160;</td><td class="mdescRight">得到指定ID的群信息  <br /></td></tr>
+<tr class="separator:ad9205d3e7b242ab885f84c58815ba89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6260336467e2514a5982dd19b620f90e" id="r_a6260336467e2514a5982dd19b620f90e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6260336467e2514a5982dd19b620f90e">deletegroup</a> (int groupId)</td></tr>
+<tr class="memdesc:a6260336467e2514a5982dd19b620f90e"><td class="mdescLeft">&#160;</td><td class="mdescRight">解散指定ID的群  <br /></td></tr>
+<tr class="separator:a6260336467e2514a5982dd19b620f90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c69838deb9c3a2db759a220857bf93d" id="r_a2c69838deb9c3a2db759a220857bf93d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c69838deb9c3a2db759a220857bf93d">getAllGroup</a> ()</td></tr>
+<tr class="memdesc:a2c69838deb9c3a2db759a220857bf93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">得到所有的群  <br /></td></tr>
+<tr class="separator:a2c69838deb9c3a2db759a220857bf93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f22e0713e14c2850ef507d25c5dfb5" id="r_a15f22e0713e14c2850ef507d25c5dfb5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15f22e0713e14c2850ef507d25c5dfb5">inClientOnline</a> (QWebSocket *conn)</td></tr>
+<tr class="memdesc:a15f22e0713e14c2850ef507d25c5dfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测指定客户端是否在线  <br /></td></tr>
+<tr class="separator:a15f22e0713e14c2850ef507d25c5dfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fbbd299dc5a3127e42568fbf2c43ea4" id="r_a8fbbd299dc5a3127e42568fbf2c43ea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fbbd299dc5a3127e42568fbf2c43ea4">onProcessNetUserRegister</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a8fbbd299dc5a3127e42568fbf2c43ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户注册消息  <br /></td></tr>
+<tr class="separator:a8fbbd299dc5a3127e42568fbf2c43ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99460fbbfcb7b9d4e670577362a5a0a" id="r_aa99460fbbfcb7b9d4e670577362a5a0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa99460fbbfcb7b9d4e670577362a5a0a">onProcessNetUserUpdateInfo</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:aa99460fbbfcb7b9d4e670577362a5a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户修改信息消息  <br /></td></tr>
+<tr class="separator:aa99460fbbfcb7b9d4e670577362a5a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce6b0bc94751e35733c662712e35468" id="r_a9ce6b0bc94751e35733c662712e35468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ce6b0bc94751e35733c662712e35468">onProcessNetUserCancel</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a9ce6b0bc94751e35733c662712e35468"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户注销消息  <br /></td></tr>
+<tr class="separator:a9ce6b0bc94751e35733c662712e35468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadbe4c57bd2af80db55ddce2356d8b86" id="r_aadbe4c57bd2af80db55ddce2356d8b86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadbe4c57bd2af80db55ddce2356d8b86">onProcessNetUserLogin</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:aadbe4c57bd2af80db55ddce2356d8b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户登录消息  <br /></td></tr>
+<tr class="separator:aadbe4c57bd2af80db55ddce2356d8b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab73b9518159b62f4fcd9e532a23f9dd2" id="r_ab73b9518159b62f4fcd9e532a23f9dd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab73b9518159b62f4fcd9e532a23f9dd2">onProcessNetUserGetAllonlineUsers</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:ab73b9518159b62f4fcd9e532a23f9dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户得到当前所有在线用户信息  <br /></td></tr>
+<tr class="separator:ab73b9518159b62f4fcd9e532a23f9dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bcd636062d08310d6871cdc56e0fd35" id="r_a3bcd636062d08310d6871cdc56e0fd35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bcd636062d08310d6871cdc56e0fd35">onProcessNetUserAddFriends</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a3bcd636062d08310d6871cdc56e0fd35"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户加好友消息  <br /></td></tr>
+<tr class="separator:a3bcd636062d08310d6871cdc56e0fd35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ed182a0484cab37577ab5f919a59f2" id="r_a63ed182a0484cab37577ab5f919a59f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63ed182a0484cab37577ab5f919a59f2">onProcessNetUserDeleteFriends</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a63ed182a0484cab37577ab5f919a59f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户删除好友消息  <br /></td></tr>
+<tr class="separator:a63ed182a0484cab37577ab5f919a59f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf2b0f9d7a9e8eb603a93ff8f39f6fb" id="r_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cf2b0f9d7a9e8eb603a93ff8f39f6fb">onProcessNetUserGetFriends</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a2cf2b0f9d7a9e8eb603a93ff8f39f6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户得到好友消息  <br /></td></tr>
+<tr class="separator:a2cf2b0f9d7a9e8eb603a93ff8f39f6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a432eb6af8b7153bffb6399c3f4cf31cf" id="r_a432eb6af8b7153bffb6399c3f4cf31cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a432eb6af8b7153bffb6399c3f4cf31cf">onProcessNetUserChat</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a432eb6af8b7153bffb6399c3f4cf31cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户聊天消息  <br /></td></tr>
+<tr class="separator:a432eb6af8b7153bffb6399c3f4cf31cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa67f0487ca6b985190556dbec7eb1c" id="r_a1fa67f0487ca6b985190556dbec7eb1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fa67f0487ca6b985190556dbec7eb1c">onProcessNetUserGetChatRecord</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a1fa67f0487ca6b985190556dbec7eb1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户获取聊天记录消息  <br /></td></tr>
+<tr class="separator:a1fa67f0487ca6b985190556dbec7eb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a453b2b64e6b75694abf3dc04ac9c0e" id="r_a9a453b2b64e6b75694abf3dc04ac9c0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a453b2b64e6b75694abf3dc04ac9c0e">onProcessNetUserCreateGroup</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a9a453b2b64e6b75694abf3dc04ac9c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理建立新群消息  <br /></td></tr>
+<tr class="separator:a9a453b2b64e6b75694abf3dc04ac9c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17f04b24b5c267cc9525a5fff7b371c" id="r_ae17f04b24b5c267cc9525a5fff7b371c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae17f04b24b5c267cc9525a5fff7b371c">onProcessNetUserDeleteGroup</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:ae17f04b24b5c267cc9525a5fff7b371c"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理解散群消息  <br /></td></tr>
+<tr class="separator:ae17f04b24b5c267cc9525a5fff7b371c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e01efd3c5ff1323ab11d1179c25d5bf" id="r_a6e01efd3c5ff1323ab11d1179c25d5bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e01efd3c5ff1323ab11d1179c25d5bf">onProcessNetUserJoinGroup</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:a6e01efd3c5ff1323ab11d1179c25d5bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理加入群消息  <br /></td></tr>
+<tr class="separator:a6e01efd3c5ff1323ab11d1179c25d5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af143a16110da7c8584f24e4f5406c4d7" id="r_af143a16110da7c8584f24e4f5406c4d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af143a16110da7c8584f24e4f5406c4d7">onProcessNetUserLeaveGroup</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:af143a16110da7c8584f24e4f5406c4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理离开群消息  <br /></td></tr>
+<tr class="separator:af143a16110da7c8584f24e4f5406c4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30087229532fedfbc73faf40bdd1863" id="r_ae30087229532fedfbc73faf40bdd1863"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae30087229532fedfbc73faf40bdd1863">onProcessNetUserGroupChat</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:ae30087229532fedfbc73faf40bdd1863"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户聊天消息  <br /></td></tr>
+<tr class="separator:ae30087229532fedfbc73faf40bdd1863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ab0dc1708dd364652cbd59040531ba" id="r_af8ab0dc1708dd364652cbd59040531ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8ab0dc1708dd364652cbd59040531ba">onProcessNetUserGroupGetChatRecord</a> (QWebSocket *conn, QJsonObject &amp;msgObj)</td></tr>
+<tr class="memdesc:af8ab0dc1708dd364652cbd59040531ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理用户获取聊天记录消息  <br /></td></tr>
+<tr class="separator:af8ab0dc1708dd364652cbd59040531ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aa5eded6bef04d6065a24407d3fe863f5" id="r_aa5eded6bef04d6065a24407d3fe863f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_web_socket_server.html">CWebSocketServer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5eded6bef04d6065a24407d3fe863f5">m_MainWebSocketServer</a></td></tr>
+<tr class="memdesc:aa5eded6bef04d6065a24407d3fe863f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">websocket服务器  <br /></td></tr>
+<tr class="separator:aa5eded6bef04d6065a24407d3fe863f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc8763c605d659f56dd11d8a4981911" id="r_a4fc8763c605d659f56dd11d8a4981911"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sqlite_data_provider.html">SqliteDataProvider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fc8763c605d659f56dd11d8a4981911">m_SqliteDataProvider</a></td></tr>
+<tr class="memdesc:a4fc8763c605d659f56dd11d8a4981911"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据库操作  <br /></td></tr>
+<tr class="separator:a4fc8763c605d659f56dd11d8a4981911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0360c8fc31545ccc7a0a997394df7f96" id="r_a0360c8fc31545ccc7a0a997394df7f96"><td class="memItemLeft" align="right" valign="top">QHash&lt; QWebSocket *, <a class="el" href="structtag_user_info.html">tagUserInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0360c8fc31545ccc7a0a997394df7f96">m_onlineUsers</a></td></tr>
+<tr class="memdesc:a0360c8fc31545ccc7a0a997394df7f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">在线用户列表  <br /></td></tr>
+<tr class="separator:a0360c8fc31545ccc7a0a997394df7f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0774af8ac8b8b1f9c8ef0060cd8fb223" id="r_a0774af8ac8b8b1f9c8ef0060cd8fb223"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, <a class="el" href="structtag_group_info.html">tagGroupInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0774af8ac8b8b1f9c8ef0060cd8fb223">m_allgrounps</a></td></tr>
+<tr class="memdesc:a0774af8ac8b8b1f9c8ef0060cd8fb223"><td class="mdescLeft">&#160;</td><td class="mdescRight">管理所有的群  <br /></td></tr>
+<tr class="separator:a0774af8ac8b8b1f9c8ef0060cd8fb223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_network_frame_manager"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_network_frame_manager')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="class_network_frame_manager.html">NetworkFrameManager</a></td></tr>
+<tr class="memitem:a94776e4c438ac5bb9bbc96c9e4545c2f inherit pro_attribs_class_network_frame_manager" id="r_a94776e4c438ac5bb9bbc96c9e4545c2f"><td class="memItemLeft" align="right" valign="top">QMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_frame_manager.html#a94776e4c438ac5bb9bbc96c9e4545c2f">m_Mutex</a></td></tr>
+<tr class="separator:a94776e4c438ac5bb9bbc96c9e4545c2f inherit pro_attribs_class_network_frame_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a032f4c5c91fd9e4b322bb1d027aa27ae" name="a032f4c5c91fd9e4b322bb1d027aa27ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a032f4c5c91fd9e4b322bb1d027aa27ae">&#9670;&#160;</a></span>cchatserver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcchatserver.html">cchatserver</a> </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a032f4c5c91fd9e4b322bb1d027aa27ae_cgraph.png" border="0" usemap="#aclasscchatserver_a032f4c5c91fd9e4b322bb1d027aa27ae_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a032f4c5c91fd9e4b322bb1d027aa27ae_cgraph" id="aclasscchatserver_a032f4c5c91fd9e4b322bb1d027aa27ae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,95,32"/>
+<area shape="rect" href="common_8cpp.html#a60797bf326249255d5381c7af5c95029" title="初始化数据库连接池。" alt="" coords="143,5,226,32"/>
+<area shape="poly" title=" " alt="" coords="95,16,127,16,127,21,95,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7f3af86ce2cf7146b400cd9720931fa0" name="a7f3af86ce2cf7146b400cd9720931fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3af86ce2cf7146b400cd9720931fa0">&#9670;&#160;</a></span>~cchatserver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="classcchatserver.html">cchatserver</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a7f3af86ce2cf7146b400cd9720931fa0_cgraph.png" border="0" usemap="#aclasscchatserver_a7f3af86ce2cf7146b400cd9720931fa0_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a7f3af86ce2cf7146b400cd9720931fa0_cgraph" id="aclasscchatserver_a7f3af86ce2cf7146b400cd9720931fa0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,103,57"/>
+<area shape="rect" href="common_8cpp.html#a5ed34d8da52476a3aaf1ae7fdf3e74ee" title="clean_dbpool 卸载数据库连接池" alt="" coords="151,5,248,32"/>
+<area shape="poly" title=" " alt="" coords="103,33,135,27,136,32,104,38"/>
+<area shape="rect" href="classcchatserver.html#a912a4e0983416e8adeda19aa3c88e495" title="关闭服务器" alt="" coords="154,56,244,83"/>
+<area shape="poly" title=" " alt="" coords="104,50,140,56,139,61,103,55"/>
+<area shape="rect" href="classcchatserver.html#abc269f2177376830062b9e0c68c556f6" title="打印用户日志" alt="" coords="296,56,363,83"/>
+<area shape="poly" title=" " alt="" coords="245,67,280,67,280,72,245,72"/>
+<area shape="rect" href="classcchatserver.html#ae9793b5694d7c2405cc04c5ec797d8fd" title="得到当前时间" alt="" coords="411,31,522,57"/>
+<area shape="poly" title=" " alt="" coords="363,61,395,55,396,60,364,66"/>
+<area shape="rect" href="classcchatserver.html#aaa495be72663b923dd43ffcb1f8c7ef7" title="日志消息" alt="" coords="432,81,501,108"/>
+<area shape="poly" title=" " alt="" coords="364,73,417,83,416,88,363,78"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a912a4e0983416e8adeda19aa3c88e495" name="a912a4e0983416e8adeda19aa3c88e495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912a4e0983416e8adeda19aa3c88e495">&#9670;&#160;</a></span>closeServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void closeServer </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isprintlog</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>关闭服务器 </p>
+<p><a class="el" href="#a912a4e0983416e8adeda19aa3c88e495" title="关闭服务器">cchatserver::closeServer</a> 关闭服务器 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a912a4e0983416e8adeda19aa3c88e495_cgraph.png" border="0" usemap="#aclasscchatserver_a912a4e0983416e8adeda19aa3c88e495_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a912a4e0983416e8adeda19aa3c88e495_cgraph" id="aclasscchatserver_a912a4e0983416e8adeda19aa3c88e495_cgraph">
+<area shape="rect" title="关闭服务器" alt="" coords="5,31,96,57"/>
+<area shape="rect" href="classcchatserver.html#abc269f2177376830062b9e0c68c556f6" title="打印用户日志" alt="" coords="144,31,211,57"/>
+<area shape="poly" title=" " alt="" coords="96,41,128,41,128,47,96,47"/>
+<area shape="rect" href="classcchatserver.html#ae9793b5694d7c2405cc04c5ec797d8fd" title="得到当前时间" alt="" coords="259,5,369,32"/>
+<area shape="poly" title=" " alt="" coords="211,35,243,29,244,34,212,40"/>
+<area shape="rect" href="classcchatserver.html#aaa495be72663b923dd43ffcb1f8c7ef7" title="日志消息" alt="" coords="280,56,349,83"/>
+<area shape="poly" title=" " alt="" coords="212,48,265,58,264,63,211,53"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a912a4e0983416e8adeda19aa3c88e495_icgraph.png" border="0" usemap="#aclasscchatserver_a912a4e0983416e8adeda19aa3c88e495_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a912a4e0983416e8adeda19aa3c88e495_icgraph" id="aclasscchatserver_a912a4e0983416e8adeda19aa3c88e495_icgraph">
+<area shape="rect" title="关闭服务器" alt="" coords="151,5,241,32"/>
+<area shape="rect" href="classcchatserver.html#a7f3af86ce2cf7146b400cd9720931fa0" title=" " alt="" coords="5,5,103,32"/>
+<area shape="poly" title=" " alt="" coords="135,21,103,21,103,16,135,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6260336467e2514a5982dd19b620f90e" name="a6260336467e2514a5982dd19b620f90e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6260336467e2514a5982dd19b620f90e">&#9670;&#160;</a></span>deletegroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool deletegroup </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>groupId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解散指定ID的群 </p>
+<p><a class="el" href="#a6260336467e2514a5982dd19b620f90e" title="解散指定ID的群">cchatserver::deletegroup</a> 解散指定ID的群</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">groupId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a6260336467e2514a5982dd19b620f90e_icgraph.png" border="0" usemap="#aclasscchatserver_a6260336467e2514a5982dd19b620f90e_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a6260336467e2514a5982dd19b620f90e_icgraph" id="aclasscchatserver_a6260336467e2514a5982dd19b620f90e_icgraph">
+<area shape="rect" title="解散指定ID的群" alt="" coords="439,5,527,32"/>
+<area shape="rect" href="classcchatserver.html#ae17f04b24b5c267cc9525a5fff7b371c" title="处理解散群消息" alt="" coords="186,5,391,32"/>
+<area shape="poly" title=" " alt="" coords="423,21,392,21,392,16,423,16"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2c69838deb9c3a2db759a220857bf93d" name="a2c69838deb9c3a2db759a220857bf93d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c69838deb9c3a2db759a220857bf93d">&#9670;&#160;</a></span>getAllGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getAllGroup </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>得到所有的群 </p>
+<p><a class="el" href="#a2c69838deb9c3a2db759a220857bf93d" title="得到所有的群">cchatserver::getAllGroup</a> 得到所有的群 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a2c69838deb9c3a2db759a220857bf93d_cgraph.png" border="0" usemap="#aclasscchatserver_a2c69838deb9c3a2db759a220857bf93d_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a2c69838deb9c3a2db759a220857bf93d_cgraph" id="aclasscchatserver_a2c69838deb9c3a2db759a220857bf93d_cgraph">
+<area shape="rect" title="得到所有的群" alt="" coords="5,5,95,32"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="143,5,303,32"/>
+<area shape="poly" title=" " alt="" coords="95,16,127,16,127,21,95,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a2c69838deb9c3a2db759a220857bf93d_icgraph.png" border="0" usemap="#aclasscchatserver_a2c69838deb9c3a2db759a220857bf93d_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a2c69838deb9c3a2db759a220857bf93d_icgraph" id="aclasscchatserver_a2c69838deb9c3a2db759a220857bf93d_icgraph">
+<area shape="rect" title="得到所有的群" alt="" coords="139,5,228,32"/>
+<area shape="rect" href="classcchatserver.html#a6113e9508c51c4e8d9af59aac864372b" title="启动服务器" alt="" coords="5,5,91,32"/>
+<area shape="poly" title=" " alt="" coords="123,21,91,21,91,16,123,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae9793b5694d7c2405cc04c5ec797d8fd" name="ae9793b5694d7c2405cc04c5ec797d8fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9793b5694d7c2405cc04c5ec797d8fd">&#9670;&#160;</a></span>getCurrentDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString getCurrentDate </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>得到当前时间 </p>
+<p><a class="el" href="#ae9793b5694d7c2405cc04c5ec797d8fd" title="得到当前时间">cchatserver::getCurrentDate</a> 得到当前时间</p>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_ae9793b5694d7c2405cc04c5ec797d8fd_icgraph.png" border="0" usemap="#aclasscchatserver_ae9793b5694d7c2405cc04c5ec797d8fd_icgraph" alt=""/></div>
+<map name="aclasscchatserver_ae9793b5694d7c2405cc04c5ec797d8fd_icgraph" id="aclasscchatserver_ae9793b5694d7c2405cc04c5ec797d8fd_icgraph">
+<area shape="rect" title="得到当前时间" alt="" coords="456,56,567,83"/>
+<area shape="rect" href="classcchatserver.html#abc269f2177376830062b9e0c68c556f6" title="打印用户日志" alt="" coords="341,56,408,83"/>
+<area shape="poly" title=" " alt="" coords="441,72,409,72,409,67,441,67"/>
+<area shape="rect" href="classcchatserver.html#a912a4e0983416e8adeda19aa3c88e495" title="关闭服务器" alt="" coords="177,5,267,32"/>
+<area shape="poly" title=" " alt="" coords="325,56,264,35,265,30,327,51"/>
+<area shape="rect" href="classcchatserver.html#aa08f2934bb22fcb055175b79a519bde1" title="得到当前服务器信息" alt="" coords="151,56,293,83"/>
+<area shape="poly" title=" " alt="" coords="325,72,294,72,294,67,325,67"/>
+<area shape="rect" href="classcchatserver.html#a6113e9508c51c4e8d9af59aac864372b" title="启动服务器" alt="" coords="179,107,264,133"/>
+<area shape="poly" title=" " alt="" coords="327,88,265,109,264,103,325,83"/>
+<area shape="rect" href="classcchatserver.html#a7f3af86ce2cf7146b400cd9720931fa0" title=" " alt="" coords="5,5,103,32"/>
+<area shape="poly" title=" " alt="" coords="161,21,103,21,103,16,161,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa08f2934bb22fcb055175b79a519bde1" name="aa08f2934bb22fcb055175b79a519bde1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08f2934bb22fcb055175b79a519bde1">&#9670;&#160;</a></span>getCurrentServerInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString getCurrentServerInfo </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>得到当前服务器信息 </p>
+<p><a class="el" href="#aa08f2934bb22fcb055175b79a519bde1" title="得到当前服务器信息">cchatserver::getCurrentServerInfo</a> 得到当前服务器信息</p>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_aa08f2934bb22fcb055175b79a519bde1_cgraph.png" border="0" usemap="#aclasscchatserver_aa08f2934bb22fcb055175b79a519bde1_cgraph" alt=""/></div>
+<map name="aclasscchatserver_aa08f2934bb22fcb055175b79a519bde1_cgraph" id="aclasscchatserver_aa08f2934bb22fcb055175b79a519bde1_cgraph">
+<area shape="rect" title="得到当前服务器信息" alt="" coords="5,31,148,57"/>
+<area shape="rect" href="classcchatserver.html#abc269f2177376830062b9e0c68c556f6" title="打印用户日志" alt="" coords="196,31,263,57"/>
+<area shape="poly" title=" " alt="" coords="148,41,180,41,180,47,148,47"/>
+<area shape="rect" href="classcchatserver.html#ae9793b5694d7c2405cc04c5ec797d8fd" title="得到当前时间" alt="" coords="311,5,421,32"/>
+<area shape="poly" title=" " alt="" coords="263,35,295,29,296,34,264,40"/>
+<area shape="rect" href="classcchatserver.html#aaa495be72663b923dd43ffcb1f8c7ef7" title="日志消息" alt="" coords="332,56,401,83"/>
+<area shape="poly" title=" " alt="" coords="264,48,317,58,316,63,263,53"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad9205d3e7b242ab885f84c58815ba89e" name="ad9205d3e7b242ab885f84c58815ba89e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9205d3e7b242ab885f84c58815ba89e">&#9670;&#160;</a></span>getGroupInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtag_group_info.html">tagGroupInfo</a> * getGroupInfo </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>groupId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>得到指定ID的群信息 </p>
+<p><a class="el" href="#ad9205d3e7b242ab885f84c58815ba89e" title="得到指定ID的群信息">cchatserver::getGroupInfo</a> 得到指定ID的群信息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">groupId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_ad9205d3e7b242ab885f84c58815ba89e_icgraph.png" border="0" usemap="#aclasscchatserver_ad9205d3e7b242ab885f84c58815ba89e_icgraph" alt=""/></div>
+<map name="aclasscchatserver_ad9205d3e7b242ab885f84c58815ba89e_icgraph" id="aclasscchatserver_ad9205d3e7b242ab885f84c58815ba89e_icgraph">
+<area shape="rect" title="得到指定ID的群信息" alt="" coords="439,115,535,141"/>
+<area shape="rect" href="classcchatserver.html#ae17f04b24b5c267cc9525a5fff7b371c" title="处理解散群消息" alt="" coords="186,5,391,32"/>
+<area shape="poly" title=" " alt="" coords="462,105,430,74,390,46,362,35,364,30,392,42,433,70,466,101"/>
+<area shape="rect" href="classcchatserver.html#ae30087229532fedfbc73faf40bdd1863" title="处理用户聊天消息" alt="" coords="191,56,386,83"/>
+<area shape="poly" title=" " alt="" coords="434,112,390,97,349,86,350,81,392,92,435,106"/>
+<area shape="rect" href="classcchatserver.html#af8ab0dc1708dd364652cbd59040531ba" title="处理用户获取聊天记录消息" alt="" coords="194,107,382,149"/>
+<area shape="poly" title=" " alt="" coords="423,131,383,131,383,125,423,125"/>
+<area shape="rect" href="classcchatserver.html#a6e01efd3c5ff1323ab11d1179c25d5bf" title="处理加入群消息" alt="" coords="193,173,384,200"/>
+<area shape="poly" title=" " alt="" coords="435,150,392,164,350,175,349,170,390,159,434,144"/>
+<area shape="rect" href="classcchatserver.html#af143a16110da7c8584f24e4f5406c4d7" title="处理离开群消息" alt="" coords="187,224,390,251"/>
+<area shape="poly" title=" " alt="" coords="466,155,433,186,392,214,364,226,362,221,390,210,430,182,462,151"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,115,138,141"/>
+<area shape="poly" title=" " alt="" coords="202,40,187,46,131,81,89,116,86,112,128,77,184,42,200,35"/>
+<area shape="poly" title=" " alt="" coords="216,90,186,97,119,117,118,112,185,92,214,84"/>
+<area shape="poly" title=" " alt="" coords="179,131,138,131,138,125,179,125"/>
+<area shape="poly" title=" " alt="" coords="214,172,185,164,118,144,119,139,186,159,216,166"/>
+<area shape="poly" title=" " alt="" coords="200,221,184,214,128,179,86,144,89,140,131,175,187,210,202,216"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a636d41db607fe78c503a8c685c570488" name="a636d41db607fe78c503a8c685c570488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636d41db607fe78c503a8c685c570488">&#9670;&#160;</a></span>getUserInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtag_user_info.html">tagUserInfo</a> * getUserInfo </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>userId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>根据用户ID得到用户数据 </p>
+<p><a class="el" href="#a636d41db607fe78c503a8c685c570488" title="根据用户ID得到用户数据">cchatserver::getUserInfo</a> 根据用户ID得到用户数据</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a636d41db607fe78c503a8c685c570488_icgraph.png" border="0" usemap="#aclasscchatserver_a636d41db607fe78c503a8c685c570488_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a636d41db607fe78c503a8c685c570488_icgraph" id="aclasscchatserver_a636d41db607fe78c503a8c685c570488_icgraph">
+<area shape="rect" title="根据用户ID得到用户数据" alt="" coords="429,31,518,57"/>
+<area shape="rect" href="classcchatserver.html#a432eb6af8b7153bffb6399c3f4cf31cf" title="处理用户聊天消息" alt="" coords="203,5,364,32"/>
+<area shape="poly" title=" " alt="" coords="413,39,364,32,364,27,414,33"/>
+<area shape="rect" href="classcchatserver.html#ae30087229532fedfbc73faf40bdd1863" title="处理用户聊天消息" alt="" coords="186,56,381,83"/>
+<area shape="poly" title=" " alt="" coords="414,55,382,59,381,54,413,49"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,31,138,57"/>
+<area shape="poly" title=" " alt="" coords="188,33,138,39,137,33,188,27"/>
+<area shape="poly" title=" " alt="" coords="170,58,138,55,138,49,171,53"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a15f22e0713e14c2850ef507d25c5dfb5" name="a15f22e0713e14c2850ef507d25c5dfb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f22e0713e14c2850ef507d25c5dfb5">&#9670;&#160;</a></span>inClientOnline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool inClientOnline </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检测指定客户端是否在线 </p>
+<p><a class="el" href="#a15f22e0713e14c2850ef507d25c5dfb5" title="检测指定客户端是否在线">cchatserver::inClientOnline</a> 检测指定客户端是否在线</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a2bf039b5e86aa110ea4d9cdc634287c1" name="a2bf039b5e86aa110ea4d9cdc634287c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf039b5e86aa110ea4d9cdc634287c1">&#9670;&#160;</a></span>isListening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isListening </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检测服务器是否启动 </p>
+<p><a class="el" href="#a2bf039b5e86aa110ea4d9cdc634287c1" title="检测服务器是否启动">cchatserver::isListening</a> 检测服务器是否启动</p>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a2736b496347fde708dcbc2e8c878f997" name="a2736b496347fde708dcbc2e8c878f997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2736b496347fde708dcbc2e8c878f997">&#9670;&#160;</a></span>isUserOnline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isUserOnline </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>userId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检测指定ID的用户是否在线 </p>
+<p><a class="el" href="#a2736b496347fde708dcbc2e8c878f997" title="检测指定ID的用户是否在线">cchatserver::isUserOnline</a> 检测指定ID的用户是否在线</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a8b788563768272a255b92940013f7c93" name="a8b788563768272a255b92940013f7c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b788563768272a255b92940013f7c93">&#9670;&#160;</a></span>OnProcessConnectedNetMes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OnProcessConnectedNetMes </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理一个新的连接到达 </p>
+<p><a class="el" href="#a8b788563768272a255b92940013f7c93" title="处理一个新的连接到达">cchatserver::OnProcessConnectedNetMes</a> 处理一个新的连接到达</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>重载 <a class="el" href="class_network_frame_manager.html#a8b788563768272a255b92940013f7c93">NetworkFrameManager</a> .</p>
+
+</div>
+</div>
+<a id="a56e7177220478f1ce106e2da7c7a7ddb" name="a56e7177220478f1ce106e2da7c7a7ddb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56e7177220478f1ce106e2da7c7a7ddb">&#9670;&#160;</a></span>OnProcessDisconnectedNetMes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OnProcessDisconnectedNetMes </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理一个连接关闭 </p>
+<p><a class="el" href="#a56e7177220478f1ce106e2da7c7a7ddb" title="处理一个连接关闭">cchatserver::OnProcessDisconnectedNetMes</a> 处理一个连接关闭</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>重载 <a class="el" href="class_network_frame_manager.html#a56e7177220478f1ce106e2da7c7a7ddb">NetworkFrameManager</a> .</p>
+
+</div>
+</div>
+<a id="a2122f43bc76cad23f89fc7d696f6c2e2" name="a2122f43bc76cad23f89fc7d696f6c2e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2122f43bc76cad23f89fc7d696f6c2e2">&#9670;&#160;</a></span>OnProcessNetText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OnProcessNetText </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>mes</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理网络字符串消息 </p>
+<p><a class="el" href="#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息">cchatserver::OnProcessNetText</a> 处理网络字符串消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">mes</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>重载 <a class="el" href="class_network_frame_manager.html#a2122f43bc76cad23f89fc7d696f6c2e2">NetworkFrameManager</a> .</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a2122f43bc76cad23f89fc7d696f6c2e2_cgraph.png" border="0" usemap="#aclasscchatserver_a2122f43bc76cad23f89fc7d696f6c2e2_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a2122f43bc76cad23f89fc7d696f6c2e2_cgraph" id="aclasscchatserver_a2122f43bc76cad23f89fc7d696f6c2e2_cgraph">
+<area shape="rect" title="处理网络字符串消息" alt="" coords="5,427,138,453"/>
+<area shape="rect" href="classcchatserver.html#a3bcd636062d08310d6871cdc56e0fd35" title="处理用户加好友消息" alt="" coords="198,275,396,301"/>
+<area shape="poly" title=" " alt="" coords="79,424,119,369,149,337,184,311,195,305,198,310,187,316,153,341,123,372,83,428"/>
+<area shape="rect" href="classcchatserver.html#a9ce6b0bc94751e35733c662712e35468" title="处理用户注销消息" alt="" coords="211,123,384,149"/>
+<area shape="poly" title=" " alt="" coords="71,426,79,376,97,303,112,264,131,226,154,190,184,159,195,151,198,156,187,163,159,193,135,228,116,266,102,305,84,377,77,427"/>
+<area shape="rect" href="classcchatserver.html#a432eb6af8b7153bffb6399c3f4cf31cf" title="处理用户聊天消息" alt="" coords="217,5,378,32"/>
+<area shape="poly" title=" " alt="" coords="70,426,70,358,74,309,83,254,96,197,117,141,146,88,184,42,201,30,204,34,187,46,150,91,122,143,101,199,88,255,80,310,76,358,75,426"/>
+<area shape="rect" href="classcchatserver.html#a9a453b2b64e6b75694abf3dc04ac9c0e" title="处理建立新群消息" alt="" coords="194,528,400,555"/>
+<area shape="poly" title=" " alt="" coords="91,452,133,483,187,514,205,521,204,526,185,518,130,488,88,456"/>
+<area shape="rect" href="classcchatserver.html#a63ed182a0484cab37577ab5f919a59f2" title="处理用户删除好友消息" alt="" coords="191,224,404,251"/>
+<area shape="poly" title=" " alt="" coords="75,425,88,392,111,347,143,300,162,279,184,261,192,256,195,260,187,265,166,283,147,303,115,349,93,394,80,427"/>
+<area shape="rect" href="classcchatserver.html#ae17f04b24b5c267cc9525a5fff7b371c" title="处理解散群消息" alt="" coords="195,173,400,200"/>
+<area shape="poly" title=" " alt="" coords="73,425,83,383,104,325,137,263,158,234,184,210,190,205,193,210,187,214,162,238,141,266,109,327,88,385,78,427"/>
+<area shape="rect" href="classcchatserver.html#ab73b9518159b62f4fcd9e532a23f9dd2" title="处理用户得到当前所有在线用户信息" alt="" coords="196,56,398,99"/>
+<area shape="poly" title=" " alt="" coords="71,426,76,368,92,283,107,236,126,190,152,147,184,109,187,106,191,110,188,113,156,150,131,193,112,238,98,284,81,369,76,426"/>
+<area shape="rect" href="classcchatserver.html#a1fa67f0487ca6b985190556dbec7eb1c" title="处理用户获取聊天记录消息" alt="" coords="186,579,409,605"/>
+<area shape="poly" title=" " alt="" coords="83,452,123,508,153,539,187,564,198,570,195,575,184,569,149,543,119,511,79,456"/>
+<area shape="rect" href="classcchatserver.html#a2cf2b0f9d7a9e8eb603a93ff8f39f6fb" title="处理用户得到好友消息" alt="" coords="199,325,396,352"/>
+<area shape="poly" title=" " alt="" coords="88,424,130,392,185,362,204,354,205,359,187,366,133,397,91,428"/>
+<area shape="rect" href="classcchatserver.html#ae30087229532fedfbc73faf40bdd1863" title="处理用户聊天消息" alt="" coords="200,629,395,656"/>
+<area shape="poly" title=" " alt="" coords="80,453,93,486,115,531,147,577,166,597,187,615,195,620,192,624,184,619,162,601,143,580,111,533,88,488,75,455"/>
+<area shape="rect" href="classcchatserver.html#af8ab0dc1708dd364652cbd59040531ba" title="处理用户获取聊天记录消息" alt="" coords="203,680,392,723"/>
+<area shape="poly" title=" " alt="" coords="78,453,89,495,110,552,142,613,163,641,187,666,192,669,189,674,184,670,159,645,138,616,105,554,84,496,73,454"/>
+<area shape="rect" href="classcchatserver.html#a6e01efd3c5ff1323ab11d1179c25d5bf" title="处理加入群消息" alt="" coords="202,747,393,773"/>
+<area shape="poly" title=" " alt="" coords="76,454,83,506,100,582,115,623,133,664,158,701,187,733,192,736,189,740,184,737,153,704,129,666,110,625,95,584,78,507,71,454"/>
+<area shape="rect" href="classcchatserver.html#af143a16110da7c8584f24e4f5406c4d7" title="处理离开群消息" alt="" coords="196,797,398,824"/>
+<area shape="poly" title=" " alt="" coords="75,454,79,514,94,603,108,652,128,700,154,745,188,783,191,787,188,791,184,787,149,748,123,703,103,654,89,605,74,515,70,454"/>
+<area shape="rect" href="classcchatserver.html#aadbe4c57bd2af80db55ddce2356d8b86" title="处理用户登录消息" alt="" coords="216,376,379,403"/>
+<area shape="poly" title=" " alt="" coords="134,423,219,404,221,409,135,429"/>
+<area shape="rect" href="classcchatserver.html#a8fbbd299dc5a3127e42568fbf2c43ea4" title="处理用户注册消息" alt="" coords="207,427,388,453"/>
+<area shape="poly" title=" " alt="" coords="138,437,191,437,191,443,138,443"/>
+<area shape="rect" href="classcchatserver.html#aa99460fbbfcb7b9d4e670577362a5a0a" title="处理用户修改信息消息" alt="" coords="199,477,396,504"/>
+<area shape="poly" title=" " alt="" coords="135,451,221,471,219,476,134,457"/>
+<area shape="rect" href="common_8cpp.html#a8fcc3313b56f7f871f6f1fb39073215b" title="QString 转 QJsonObject。" alt="" coords="249,848,346,875"/>
+<area shape="poly" title=" " alt="" coords="75,454,76,522,80,570,88,625,101,681,122,737,150,789,187,834,209,848,234,856,233,861,207,853,184,838,146,792,117,739,96,683,83,626,74,571,70,522,70,454"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="539,439,578,465"/>
+<area shape="poly" title=" " alt="" coords="391,300,411,311,429,333,437,356,443,378,459,401,491,424,525,439,523,444,489,428,455,405,438,380,432,357,425,336,407,315,388,304"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="510,364,607,391"/>
+<area shape="poly" title=" " alt="" coords="369,299,410,311,466,332,517,354,515,359,464,337,408,316,367,304"/>
+<area shape="poly" title=" " alt="" coords="537,450,513,439,508,432,508,425,524,415,559,412,590,415,607,422,609,434,595,444,592,440,604,431,603,425,589,420,559,417,526,420,513,427,513,430,516,434,539,445"/>
+<area shape="poly" title=" " alt="" coords="386,143,411,159,433,189,442,220,443,249,439,279,435,309,435,339,441,370,459,401,473,415,490,426,525,442,523,446,487,431,470,419,455,404,436,372,429,340,430,309,434,279,437,249,437,220,428,192,407,163,383,147"/>
+<area shape="poly" title=" " alt="" coords="386,144,411,159,426,177,435,195,439,230,442,267,448,286,459,305,486,332,517,354,514,358,482,336,455,308,443,288,437,268,434,231,429,196,422,180,407,163,383,148"/>
+<area shape="poly" title=" " alt="" coords="379,22,396,30,411,42,429,65,441,87,448,109,452,132,450,176,441,219,432,264,428,308,435,354,445,377,459,401,473,416,489,427,525,442,523,447,487,432,469,420,455,404,440,380,430,355,422,308,426,263,436,218,444,175,446,132,443,111,436,89,424,68,407,46,393,35,377,27"/>
+<area shape="poly" title=" " alt="" coords="379,22,396,30,411,42,434,75,445,107,446,139,442,170,438,202,437,235,442,269,459,305,484,333,514,354,511,358,481,337,455,308,437,271,431,236,433,202,437,170,441,138,439,108,430,77,407,46,393,35,377,27"/>
+<area shape="rect" href="classcchatserver.html#a636d41db607fe78c503a8c685c570488" title="根据用户ID得到用户数据" alt="" coords="514,268,603,295"/>
+<area shape="poly" title=" " alt="" coords="379,24,396,31,411,42,428,63,436,83,440,124,441,166,447,188,459,210,485,237,515,258,512,262,481,241,455,214,442,190,436,167,434,125,431,85,423,65,407,46,393,36,377,28"/>
+<area shape="poly" title=" " alt="" coords="378,525,408,514,422,505,431,495,441,485,456,475,490,462,523,454,524,459,491,467,458,480,444,489,435,499,425,509,410,518,380,530"/>
+<area shape="poly" title=" " alt="" coords="390,525,407,514,419,501,426,488,431,459,435,430,443,415,455,401,474,389,494,381,496,386,476,394,459,405,447,418,440,431,436,460,431,489,424,504,411,518,392,530"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="478,489,639,516"/>
+<area shape="poly" title=" " alt="" coords="392,525,463,514,464,519,392,530"/>
+<area shape="poly" title=" " alt="" coords="393,249,411,261,426,278,434,295,438,330,441,366,447,383,459,401,490,425,525,440,523,445,487,430,455,404,442,385,435,367,432,331,428,297,421,281,407,265,390,253"/>
+<area shape="poly" title=" " alt="" coords="382,249,410,260,426,271,436,281,459,305,525,353,522,357,455,309,432,285,422,275,408,265,380,254"/>
+<area shape="poly" title=" " alt="" coords="395,198,411,210,429,234,438,257,440,281,438,305,438,352,444,376,459,401,473,415,490,426,525,441,523,446,487,431,470,419,455,404,439,379,432,353,433,305,434,281,433,259,424,236,407,214,392,203"/>
+<area shape="poly" title=" " alt="" coords="391,198,411,210,430,233,438,256,444,280,459,305,488,332,519,353,516,358,484,336,455,308,439,282,433,258,426,235,407,214,388,203"/>
+<area shape="rect" href="classcchatserver.html#a6260336467e2514a5982dd19b620f90e" title="解散指定ID的群" alt="" coords="514,173,603,200"/>
+<area shape="poly" title=" " alt="" coords="401,184,499,184,499,189,401,189"/>
+<area shape="rect" href="classcchatserver.html#ad9205d3e7b242ab885f84c58815ba89e" title="得到指定ID的群信息" alt="" coords="510,688,607,715"/>
+<area shape="poly" title=" " alt="" coords="397,199,411,210,439,249,453,286,457,322,454,359,446,437,448,480,460,527,477,569,498,609,540,674,536,676,494,612,472,571,454,529,443,481,441,437,449,359,452,322,448,287,435,251,407,214,393,203"/>
+<area shape="poly" title=" " alt="" coords="397,97,411,109,429,133,438,158,441,182,440,205,440,254,445,279,459,305,485,333,515,354,512,358,481,337,455,308,440,281,434,254,435,205,435,182,433,159,424,136,407,112,393,101"/>
+<area shape="poly" title=" " alt="" coords="388,576,407,565,424,544,431,521,437,498,455,475,489,458,523,451,524,456,490,463,459,479,442,500,436,523,429,546,411,569,391,580"/>
+<area shape="poly" title=" " alt="" coords="391,576,407,565,422,546,430,526,431,485,432,443,439,421,455,401,473,388,494,380,496,385,476,393,459,405,444,424,437,444,436,485,435,527,427,548,411,569,394,580"/>
+<area shape="poly" title=" " alt="" coords="367,576,408,564,464,543,515,521,517,526,466,548,410,569,369,581"/>
+<area shape="poly" title=" " alt="" coords="380,350,410,362,435,380,459,400,526,436,524,441,455,405,432,384,408,366,378,355"/>
+<area shape="poly" title=" " alt="" coords="392,350,495,365,494,371,392,355"/>
+<area shape="poly" title=" " alt="" coords="392,350,411,362,424,376,431,391,436,420,440,449,447,462,459,475,467,481,464,485,455,479,443,465,435,450,431,421,426,392,419,379,407,366,390,355"/>
+<area shape="poly" title=" " alt="" coords="390,627,407,615,421,599,428,583,431,547,433,511,441,493,455,475,471,464,488,457,523,450,524,455,490,462,473,469,459,479,445,496,439,512,436,548,433,584,425,602,411,619,393,631"/>
+<area shape="poly" title=" " alt="" coords="392,627,407,615,426,590,433,564,434,538,431,511,427,483,428,456,436,428,455,401,473,388,494,380,496,385,476,392,459,405,441,430,433,456,433,483,436,510,439,537,439,565,430,592,411,619,395,631"/>
+<area shape="poly" title=" " alt="" coords="393,627,407,615,430,584,440,553,441,522,437,490,433,458,431,424,437,388,455,351,481,322,511,300,514,305,484,326,459,353,442,390,437,424,438,457,442,490,446,522,445,554,435,586,411,619,396,631"/>
+<area shape="poly" title=" " alt="" coords="361,654,496,685,495,690,359,659"/>
+<area shape="rect" href="structtag_group_info.html#a657053cb53a4625d635b8b18e7bbd3f4" title="查找指定ID的成员是否存在" alt="" coords="463,743,654,769"/>
+<area shape="poly" title=" " alt="" coords="386,654,410,666,427,680,436,696,444,711,459,725,476,734,474,739,455,729,440,714,431,698,423,684,408,670,384,659"/>
+<area shape="poly" title=" " alt="" coords="390,679,407,666,423,643,431,620,432,596,430,572,428,548,429,524,437,499,455,475,470,464,488,456,523,449,524,455,489,461,473,469,459,479,442,502,435,525,433,548,435,572,437,596,436,621,428,645,411,670,394,683"/>
+<area shape="poly" title=" " alt="" coords="390,680,407,666,428,633,436,601,435,568,430,535,424,502,424,468,432,434,455,401,473,387,494,379,496,384,476,392,459,405,437,437,429,469,430,501,435,534,440,568,441,601,433,636,411,670,394,684"/>
+<area shape="poly" title=" " alt="" coords="386,677,408,666,449,634,485,597,539,527,543,531,489,600,452,638,410,670,389,682"/>
+<area shape="poly" title=" " alt="" coords="392,699,495,699,495,704,392,704"/>
+<area shape="poly" title=" " alt="" coords="392,745,407,733,428,702,437,671,436,639,431,607,425,574,425,541,433,508,455,476,470,464,488,456,523,449,524,454,489,461,473,468,459,479,438,510,430,542,431,574,436,606,441,638,442,671,433,704,411,737,395,749"/>
+<area shape="poly" title=" " alt="" coords="392,745,407,733,423,713,433,693,442,652,440,611,431,570,422,528,419,486,428,443,439,422,455,401,473,387,494,379,496,384,476,392,459,405,443,425,433,445,424,486,427,527,436,569,445,610,448,652,438,694,427,716,411,737,395,749"/>
+<area shape="poly" title=" " alt="" coords="359,743,495,713,496,718,361,749"/>
+<area shape="poly" title=" " alt="" coords="393,756,448,755,448,760,394,761"/>
+<area shape="rect" href="structtag_group_info.html#a2fba07083c9940d1ac9e8805092c23b5" title="得到群成员转字符串" alt="" coords="457,793,660,820"/>
+<area shape="poly" title=" " alt="" coords="376,771,466,787,465,793,375,777"/>
+<area shape="poly" title=" " alt="" coords="393,795,407,783,422,765,432,746,441,709,438,671,431,632,423,593,421,554,430,515,440,495,455,475,470,464,487,456,523,449,524,454,489,461,473,468,459,479,444,498,435,517,426,555,428,593,436,631,444,670,446,709,437,748,426,768,411,787,397,799"/>
+<area shape="poly" title=" " alt="" coords="393,795,407,783,425,760,437,737,444,713,446,690,442,643,431,595,420,547,415,499,418,474,425,450,437,425,455,401,473,387,494,379,496,384,475,392,459,405,441,428,430,452,423,475,420,499,425,546,436,594,447,642,452,690,449,714,442,739,429,763,411,787,397,799"/>
+<area shape="poly" title=" " alt="" coords="383,794,408,783,422,770,431,757,440,742,456,728,494,711,496,716,458,733,444,746,435,760,426,774,410,788,385,799"/>
+<area shape="poly" title=" " alt="" coords="364,794,476,770,478,776,365,799"/>
+<area shape="poly" title=" " alt="" coords="399,806,441,806,441,811,399,812"/>
+<area shape="rect" href="structtag_group_info.html#a4378bd2310c5e8db1965cfd00993a2ca" title="删除指定ID的成员" alt="" coords="466,844,652,871"/>
+<area shape="poly" title=" " alt="" coords="376,822,466,838,465,843,375,827"/>
+<area shape="poly" title=" " alt="" coords="361,401,410,412,525,441,523,446,408,417,360,406"/>
+<area shape="poly" title=" " alt="" coords="379,383,494,378,494,383,380,388"/>
+<area shape="poly" title=" " alt="" coords="380,398,410,412,427,428,435,445,443,460,459,475,467,480,464,485,455,479,439,464,431,447,423,431,408,417,378,403"/>
+<area shape="poly" title=" " alt="" coords="389,441,524,448,523,453,388,447"/>
+<area shape="poly" title=" " alt="" coords="360,423,408,412,494,391,495,396,410,417,361,429"/>
+<area shape="poly" title=" " alt="" coords="361,451,410,463,488,482,487,488,408,468,360,457"/>
+<area shape="poly" title=" " alt="" coords="392,474,523,454,524,460,392,479"/>
+<area shape="poly" title=" " alt="" coords="385,474,407,463,423,449,431,433,439,416,456,400,494,384,496,389,458,405,443,420,435,435,427,452,411,468,387,479"/>
+<area shape="poly" title=" " alt="" coords="396,493,463,496,463,501,396,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3bcd636062d08310d6871cdc56e0fd35" name="a3bcd636062d08310d6871cdc56e0fd35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bcd636062d08310d6871cdc56e0fd35">&#9670;&#160;</a></span>onProcessNetUserAddFriends()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserAddFriends </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户加好友消息 </p>
+<p><a class="el" href="#a3bcd636062d08310d6871cdc56e0fd35" title="处理用户加好友消息">cchatserver::onProcessNetUserAddFriends</a> 处理用户加好友消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a3bcd636062d08310d6871cdc56e0fd35_cgraph.png" border="0" usemap="#aclasscchatserver_a3bcd636062d08310d6871cdc56e0fd35_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a3bcd636062d08310d6871cdc56e0fd35_cgraph" id="aclasscchatserver_a3bcd636062d08310d6871cdc56e0fd35_cgraph">
+<area shape="rect" title="处理用户加好友消息" alt="" coords="5,55,204,81"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="281,29,320,56"/>
+<area shape="poly" title=" " alt="" coords="204,52,265,44,266,50,204,58"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="252,80,349,107"/>
+<area shape="poly" title=" " alt="" coords="204,78,236,82,236,88,204,84"/>
+<area shape="poly" title=" " alt="" coords="279,38,264,27,262,15,275,6,300,3,321,5,335,10,340,19,335,29,331,26,334,19,331,14,320,10,300,8,277,11,267,17,268,24,282,34"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a3bcd636062d08310d6871cdc56e0fd35_icgraph.png" border="0" usemap="#aclasscchatserver_a3bcd636062d08310d6871cdc56e0fd35_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a3bcd636062d08310d6871cdc56e0fd35_icgraph" id="aclasscchatserver_a3bcd636062d08310d6871cdc56e0fd35_icgraph">
+<area shape="rect" title="处理用户加好友消息" alt="" coords="186,5,384,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9ce6b0bc94751e35733c662712e35468" name="a9ce6b0bc94751e35733c662712e35468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ce6b0bc94751e35733c662712e35468">&#9670;&#160;</a></span>onProcessNetUserCancel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserCancel </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户注销消息 </p>
+<p><a class="el" href="#a9ce6b0bc94751e35733c662712e35468" title="处理用户注销消息">cchatserver::onProcessNetUserCancel</a> 处理用户注销消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a9ce6b0bc94751e35733c662712e35468_cgraph.png" border="0" usemap="#aclasscchatserver_a9ce6b0bc94751e35733c662712e35468_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a9ce6b0bc94751e35733c662712e35468_cgraph" id="aclasscchatserver_a9ce6b0bc94751e35733c662712e35468_cgraph">
+<area shape="rect" title="处理用户注销消息" alt="" coords="5,55,179,81"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="256,29,295,56"/>
+<area shape="poly" title=" " alt="" coords="179,53,240,45,240,50,179,59"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="227,80,324,107"/>
+<area shape="poly" title=" " alt="" coords="179,77,212,82,211,87,179,83"/>
+<area shape="poly" title=" " alt="" coords="253,37,240,26,240,14,252,6,275,3,294,4,307,9,312,18,310,26,305,25,307,18,303,14,293,10,275,8,254,11,244,16,245,24,257,33"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a9ce6b0bc94751e35733c662712e35468_icgraph.png" border="0" usemap="#aclasscchatserver_a9ce6b0bc94751e35733c662712e35468_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a9ce6b0bc94751e35733c662712e35468_icgraph" id="aclasscchatserver_a9ce6b0bc94751e35733c662712e35468_icgraph">
+<area shape="rect" title="处理用户注销消息" alt="" coords="186,5,359,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a432eb6af8b7153bffb6399c3f4cf31cf" name="a432eb6af8b7153bffb6399c3f4cf31cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a432eb6af8b7153bffb6399c3f4cf31cf">&#9670;&#160;</a></span>onProcessNetUserChat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserChat </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户聊天消息 </p>
+<p><a class="el" href="#a432eb6af8b7153bffb6399c3f4cf31cf" title="处理用户聊天消息">cchatserver::onProcessNetUserChat</a> 处理用户聊天消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a432eb6af8b7153bffb6399c3f4cf31cf_cgraph.png" border="0" usemap="#aclasscchatserver_a432eb6af8b7153bffb6399c3f4cf31cf_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a432eb6af8b7153bffb6399c3f4cf31cf_cgraph" id="aclasscchatserver_a432eb6af8b7153bffb6399c3f4cf31cf_cgraph">
+<area shape="rect" title="处理用户聊天消息" alt="" coords="5,80,166,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="243,29,282,56"/>
+<area shape="poly" title=" " alt="" coords="134,77,227,50,228,55,136,82"/>
+<area shape="rect" href="classcchatserver.html#a636d41db607fe78c503a8c685c570488" title="根据用户ID得到用户数据" alt="" coords="218,80,307,107"/>
+<area shape="poly" title=" " alt="" coords="166,91,202,91,202,96,166,96"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="214,131,311,157"/>
+<area shape="poly" title=" " alt="" coords="136,105,200,123,198,129,134,110"/>
+<area shape="poly" title=" " alt="" coords="240,37,228,26,228,14,240,6,262,3,280,4,292,9,298,17,297,25,291,24,293,18,289,13,279,10,262,8,242,11,233,16,233,23,244,33"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a432eb6af8b7153bffb6399c3f4cf31cf_icgraph.png" border="0" usemap="#aclasscchatserver_a432eb6af8b7153bffb6399c3f4cf31cf_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a432eb6af8b7153bffb6399c3f4cf31cf_icgraph" id="aclasscchatserver_a432eb6af8b7153bffb6399c3f4cf31cf_icgraph">
+<area shape="rect" title="处理用户聊天消息" alt="" coords="186,5,346,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a453b2b64e6b75694abf3dc04ac9c0e" name="a9a453b2b64e6b75694abf3dc04ac9c0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a453b2b64e6b75694abf3dc04ac9c0e">&#9670;&#160;</a></span>onProcessNetUserCreateGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserCreateGroup </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理建立新群消息 </p>
+<p><a class="el" href="#a9a453b2b64e6b75694abf3dc04ac9c0e" title="处理建立新群消息">cchatserver::onProcessNetUserCreateGroup</a> 处理建立新群消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a9a453b2b64e6b75694abf3dc04ac9c0e_cgraph.png" border="0" usemap="#aclasscchatserver_a9a453b2b64e6b75694abf3dc04ac9c0e_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a9a453b2b64e6b75694abf3dc04ac9c0e_cgraph" id="aclasscchatserver_a9a453b2b64e6b75694abf3dc04ac9c0e_cgraph">
+<area shape="rect" title="处理建立新群消息" alt="" coords="5,80,212,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="320,29,360,56"/>
+<area shape="poly" title=" " alt="" coords="172,77,304,48,305,53,173,82"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="260,80,420,107"/>
+<area shape="poly" title=" " alt="" coords="212,91,244,91,244,96,212,96"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="291,131,388,157"/>
+<area shape="poly" title=" " alt="" coords="173,105,277,128,276,133,172,110"/>
+<area shape="poly" title=" " alt="" coords="319,39,298,28,295,15,310,6,340,3,367,5,382,12,385,23,375,33,371,29,380,21,378,15,365,10,340,8,311,11,300,17,302,25,321,35"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a9a453b2b64e6b75694abf3dc04ac9c0e_icgraph.png" border="0" usemap="#aclasscchatserver_a9a453b2b64e6b75694abf3dc04ac9c0e_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a9a453b2b64e6b75694abf3dc04ac9c0e_icgraph" id="aclasscchatserver_a9a453b2b64e6b75694abf3dc04ac9c0e_icgraph">
+<area shape="rect" title="处理建立新群消息" alt="" coords="186,5,392,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63ed182a0484cab37577ab5f919a59f2" name="a63ed182a0484cab37577ab5f919a59f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ed182a0484cab37577ab5f919a59f2">&#9670;&#160;</a></span>onProcessNetUserDeleteFriends()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserDeleteFriends </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户删除好友消息 </p>
+<p><a class="el" href="#a63ed182a0484cab37577ab5f919a59f2" title="处理用户删除好友消息">cchatserver::onProcessNetUserDeleteFriends</a> 处理用户删除好友消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a63ed182a0484cab37577ab5f919a59f2_cgraph.png" border="0" usemap="#aclasscchatserver_a63ed182a0484cab37577ab5f919a59f2_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a63ed182a0484cab37577ab5f919a59f2_cgraph" id="aclasscchatserver_a63ed182a0484cab37577ab5f919a59f2_cgraph">
+<area shape="rect" title="处理用户删除好友消息" alt="" coords="5,55,219,81"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="296,29,335,56"/>
+<area shape="poly" title=" " alt="" coords="219,52,280,44,281,50,219,57"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="267,80,364,107"/>
+<area shape="poly" title=" " alt="" coords="219,79,252,83,251,88,219,84"/>
+<area shape="poly" title=" " alt="" coords="294,38,278,27,276,15,289,6,315,3,338,5,352,11,356,20,350,30,346,27,351,20,348,15,336,10,315,8,291,11,281,17,282,24,297,34"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a63ed182a0484cab37577ab5f919a59f2_icgraph.png" border="0" usemap="#aclasscchatserver_a63ed182a0484cab37577ab5f919a59f2_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a63ed182a0484cab37577ab5f919a59f2_icgraph" id="aclasscchatserver_a63ed182a0484cab37577ab5f919a59f2_icgraph">
+<area shape="rect" title="处理用户删除好友消息" alt="" coords="186,5,399,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae17f04b24b5c267cc9525a5fff7b371c" name="ae17f04b24b5c267cc9525a5fff7b371c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae17f04b24b5c267cc9525a5fff7b371c">&#9670;&#160;</a></span>onProcessNetUserDeleteGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserDeleteGroup </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理解散群消息 </p>
+<p><a class="el" href="#ae17f04b24b5c267cc9525a5fff7b371c" title="处理解散群消息">cchatserver::onProcessNetUserDeleteGroup</a> 处理解散群消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_ae17f04b24b5c267cc9525a5fff7b371c_cgraph.png" border="0" usemap="#aclasscchatserver_ae17f04b24b5c267cc9525a5fff7b371c_cgraph" alt=""/></div>
+<map name="aclasscchatserver_ae17f04b24b5c267cc9525a5fff7b371c_cgraph" id="aclasscchatserver_ae17f04b24b5c267cc9525a5fff7b371c_cgraph">
+<area shape="rect" title="处理解散群消息" alt="" coords="5,105,211,132"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="288,29,327,56"/>
+<area shape="poly" title=" " alt="" coords="144,102,272,53,274,58,146,107"/>
+<area shape="rect" href="classcchatserver.html#a6260336467e2514a5982dd19b620f90e" title="解散指定ID的群" alt="" coords="263,80,352,107"/>
+<area shape="poly" title=" " alt="" coords="211,103,247,98,248,104,211,108"/>
+<area shape="rect" href="classcchatserver.html#ad9205d3e7b242ab885f84c58815ba89e" title="得到指定ID的群信息" alt="" coords="259,131,356,157"/>
+<area shape="poly" title=" " alt="" coords="211,129,244,133,244,139,211,134"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="259,181,356,208"/>
+<area shape="poly" title=" " alt="" coords="146,130,257,173,255,178,144,135"/>
+<area shape="poly" title=" " alt="" coords="286,38,270,27,268,15,282,6,307,3,329,5,343,11,347,20,342,30,337,27,342,20,339,14,328,10,307,8,283,11,273,17,275,24,289,34"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_ae17f04b24b5c267cc9525a5fff7b371c_icgraph.png" border="0" usemap="#aclasscchatserver_ae17f04b24b5c267cc9525a5fff7b371c_icgraph" alt=""/></div>
+<map name="aclasscchatserver_ae17f04b24b5c267cc9525a5fff7b371c_icgraph" id="aclasscchatserver_ae17f04b24b5c267cc9525a5fff7b371c_icgraph">
+<area shape="rect" title="处理解散群消息" alt="" coords="186,5,391,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab73b9518159b62f4fcd9e532a23f9dd2" name="ab73b9518159b62f4fcd9e532a23f9dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab73b9518159b62f4fcd9e532a23f9dd2">&#9670;&#160;</a></span>onProcessNetUserGetAllonlineUsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserGetAllonlineUsers </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户得到当前所有在线用户信息 </p>
+<p><a class="el" href="#ab73b9518159b62f4fcd9e532a23f9dd2" title="处理用户得到当前所有在线用户信息">cchatserver::onProcessNetUserGetAllonlineUsers</a> 处理用户得到当前所有在线用户信息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_ab73b9518159b62f4fcd9e532a23f9dd2_cgraph.png" border="0" usemap="#aclasscchatserver_ab73b9518159b62f4fcd9e532a23f9dd2_cgraph" alt=""/></div>
+<map name="aclasscchatserver_ab73b9518159b62f4fcd9e532a23f9dd2_cgraph" id="aclasscchatserver_ab73b9518159b62f4fcd9e532a23f9dd2_cgraph">
+<area shape="rect" title="处理用户得到当前所有在线用户信息" alt="" coords="5,5,208,48"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="256,13,353,40"/>
+<area shape="poly" title=" " alt="" coords="208,24,240,24,240,29,208,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_ab73b9518159b62f4fcd9e532a23f9dd2_icgraph.png" border="0" usemap="#aclasscchatserver_ab73b9518159b62f4fcd9e532a23f9dd2_icgraph" alt=""/></div>
+<map name="aclasscchatserver_ab73b9518159b62f4fcd9e532a23f9dd2_icgraph" id="aclasscchatserver_ab73b9518159b62f4fcd9e532a23f9dd2_icgraph">
+<area shape="rect" title="处理用户得到当前所有在线用户信息" alt="" coords="186,5,388,48"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,13,138,40"/>
+<area shape="poly" title=" " alt="" coords="170,29,138,29,138,24,170,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1fa67f0487ca6b985190556dbec7eb1c" name="a1fa67f0487ca6b985190556dbec7eb1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa67f0487ca6b985190556dbec7eb1c">&#9670;&#160;</a></span>onProcessNetUserGetChatRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserGetChatRecord </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户获取聊天记录消息 </p>
+<p><a class="el" href="#a1fa67f0487ca6b985190556dbec7eb1c" title="处理用户获取聊天记录消息">cchatserver::onProcessNetUserGetChatRecord</a> 处理用户获取聊天记录消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a1fa67f0487ca6b985190556dbec7eb1c_cgraph.png" border="0" usemap="#aclasscchatserver_a1fa67f0487ca6b985190556dbec7eb1c_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a1fa67f0487ca6b985190556dbec7eb1c_cgraph" id="aclasscchatserver_a1fa67f0487ca6b985190556dbec7eb1c_cgraph">
+<area shape="rect" title="处理用户获取聊天记录消息" alt="" coords="5,80,229,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="337,29,376,56"/>
+<area shape="poly" title=" " alt="" coords="183,77,322,47,323,52,184,82"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="277,80,437,107"/>
+<area shape="poly" title=" " alt="" coords="229,91,261,91,261,96,229,96"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="308,131,406,157"/>
+<area shape="poly" title=" " alt="" coords="184,105,293,128,292,133,183,110"/>
+<area shape="poly" title=" " alt="" coords="335,40,314,29,310,15,325,6,357,3,385,5,401,12,404,23,392,34,389,30,399,21,397,16,384,10,357,8,327,11,315,17,318,25,338,35"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a1fa67f0487ca6b985190556dbec7eb1c_icgraph.png" border="0" usemap="#aclasscchatserver_a1fa67f0487ca6b985190556dbec7eb1c_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a1fa67f0487ca6b985190556dbec7eb1c_icgraph" id="aclasscchatserver_a1fa67f0487ca6b985190556dbec7eb1c_icgraph">
+<area shape="rect" title="处理用户获取聊天记录消息" alt="" coords="186,5,409,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2cf2b0f9d7a9e8eb603a93ff8f39f6fb" name="a2cf2b0f9d7a9e8eb603a93ff8f39f6fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf2b0f9d7a9e8eb603a93ff8f39f6fb">&#9670;&#160;</a></span>onProcessNetUserGetFriends()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserGetFriends </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户得到好友消息 </p>
+<p><a class="el" href="#a2cf2b0f9d7a9e8eb603a93ff8f39f6fb" title="处理用户得到好友消息">cchatserver::onProcessNetUserGetFriends</a> 处理用户得到好友消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb_cgraph.png" border="0" usemap="#aclasscchatserver_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb_cgraph" id="aclasscchatserver_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb_cgraph">
+<area shape="rect" title="处理用户得到好友消息" alt="" coords="5,80,202,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="310,29,350,56"/>
+<area shape="poly" title=" " alt="" coords="166,77,294,48,295,53,167,82"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="250,80,410,107"/>
+<area shape="poly" title=" " alt="" coords="202,91,234,91,234,96,202,96"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="281,131,378,157"/>
+<area shape="poly" title=" " alt="" coords="167,105,267,127,266,132,166,110"/>
+<area shape="poly" title=" " alt="" coords="308,39,289,28,286,15,300,6,330,3,356,5,371,12,375,22,365,32,361,29,369,21,367,15,354,10,330,8,302,11,291,17,293,25,311,35"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb_icgraph.png" border="0" usemap="#aclasscchatserver_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb_icgraph" id="aclasscchatserver_a2cf2b0f9d7a9e8eb603a93ff8f39f6fb_icgraph">
+<area shape="rect" title="处理用户得到好友消息" alt="" coords="186,5,382,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae30087229532fedfbc73faf40bdd1863" name="ae30087229532fedfbc73faf40bdd1863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30087229532fedfbc73faf40bdd1863">&#9670;&#160;</a></span>onProcessNetUserGroupChat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserGroupChat </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户聊天消息 </p>
+<p><a class="el" href="#ae30087229532fedfbc73faf40bdd1863" title="处理用户聊天消息">cchatserver::onProcessNetUserGroupChat</a> 处理用户聊天消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_ae30087229532fedfbc73faf40bdd1863_cgraph.png" border="0" usemap="#aclasscchatserver_ae30087229532fedfbc73faf40bdd1863_cgraph" alt=""/></div>
+<map name="aclasscchatserver_ae30087229532fedfbc73faf40bdd1863_cgraph" id="aclasscchatserver_ae30087229532fedfbc73faf40bdd1863_cgraph">
+<area shape="rect" title="处理用户聊天消息" alt="" coords="5,131,201,157"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="325,29,364,56"/>
+<area shape="poly" title=" " alt="" coords="125,128,180,97,248,66,309,47,310,52,250,70,182,102,128,133"/>
+<area shape="rect" href="classcchatserver.html#ad9205d3e7b242ab885f84c58815ba89e" title="得到指定ID的群信息" alt="" coords="296,80,392,107"/>
+<area shape="poly" title=" " alt="" coords="170,127,280,104,281,109,171,133"/>
+<area shape="rect" href="classcchatserver.html#a636d41db607fe78c503a8c685c570488" title="根据用户ID得到用户数据" alt="" coords="300,131,389,157"/>
+<area shape="poly" title=" " alt="" coords="201,141,284,141,284,147,201,147"/>
+<area shape="rect" href="structtag_group_info.html#a657053cb53a4625d635b8b18e7bbd3f4" title="查找指定ID的成员是否存在" alt="" coords="249,181,440,208"/>
+<area shape="poly" title=" " alt="" coords="171,155,263,175,262,180,170,161"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="296,232,393,259"/>
+<area shape="poly" title=" " alt="" coords="128,155,182,186,250,218,282,228,280,233,248,222,180,191,125,160"/>
+<area shape="poly" title=" " alt="" coords="323,40,301,29,297,15,313,6,344,3,372,5,389,12,391,23,380,34,377,30,386,21,385,16,371,10,344,8,314,11,302,17,305,25,325,35"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_ae30087229532fedfbc73faf40bdd1863_icgraph.png" border="0" usemap="#aclasscchatserver_ae30087229532fedfbc73faf40bdd1863_icgraph" alt=""/></div>
+<map name="aclasscchatserver_ae30087229532fedfbc73faf40bdd1863_icgraph" id="aclasscchatserver_ae30087229532fedfbc73faf40bdd1863_icgraph">
+<area shape="rect" title="处理用户聊天消息" alt="" coords="186,5,381,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af8ab0dc1708dd364652cbd59040531ba" name="af8ab0dc1708dd364652cbd59040531ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ab0dc1708dd364652cbd59040531ba">&#9670;&#160;</a></span>onProcessNetUserGroupGetChatRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserGroupGetChatRecord </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户获取聊天记录消息 </p>
+<p><a class="el" href="#af8ab0dc1708dd364652cbd59040531ba" title="处理用户获取聊天记录消息">cchatserver::onProcessNetUserGroupGetChatRecord</a> 处理用户获取聊天记录消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_af8ab0dc1708dd364652cbd59040531ba_cgraph.png" border="0" usemap="#aclasscchatserver_af8ab0dc1708dd364652cbd59040531ba_cgraph" alt=""/></div>
+<map name="aclasscchatserver_af8ab0dc1708dd364652cbd59040531ba_cgraph" id="aclasscchatserver_af8ab0dc1708dd364652cbd59040531ba_cgraph">
+<area shape="rect" title="处理用户获取聊天记录消息" alt="" coords="5,97,194,140"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="302,29,342,56"/>
+<area shape="poly" title=" " alt="" coords="159,94,241,65,286,51,288,56,243,71,161,99"/>
+<area shape="rect" href="classcchatserver.html#ad9205d3e7b242ab885f84c58815ba89e" title="得到指定ID的群信息" alt="" coords="274,80,370,107"/>
+<area shape="poly" title=" " alt="" coords="194,105,258,98,259,103,194,111"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="242,131,402,157"/>
+<area shape="poly" title=" " alt="" coords="194,127,226,130,226,136,194,132"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="273,181,370,208"/>
+<area shape="poly" title=" " alt="" coords="161,138,243,167,262,173,261,179,241,172,159,143"/>
+<area shape="poly" title=" " alt="" coords="300,39,282,28,278,15,293,6,322,3,347,5,362,11,366,22,358,32,354,28,361,21,358,15,346,10,322,8,295,11,283,17,286,25,303,34"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_af8ab0dc1708dd364652cbd59040531ba_icgraph.png" border="0" usemap="#aclasscchatserver_af8ab0dc1708dd364652cbd59040531ba_icgraph" alt=""/></div>
+<map name="aclasscchatserver_af8ab0dc1708dd364652cbd59040531ba_icgraph" id="aclasscchatserver_af8ab0dc1708dd364652cbd59040531ba_icgraph">
+<area shape="rect" title="处理用户获取聊天记录消息" alt="" coords="186,5,374,48"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,13,138,40"/>
+<area shape="poly" title=" " alt="" coords="170,29,138,29,138,24,170,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6e01efd3c5ff1323ab11d1179c25d5bf" name="a6e01efd3c5ff1323ab11d1179c25d5bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e01efd3c5ff1323ab11d1179c25d5bf">&#9670;&#160;</a></span>onProcessNetUserJoinGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserJoinGroup </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理加入群消息 </p>
+<p><a class="el" href="#a6e01efd3c5ff1323ab11d1179c25d5bf" title="处理加入群消息">cchatserver::onProcessNetUserJoinGroup</a> 处理加入群消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a6e01efd3c5ff1323ab11d1179c25d5bf_cgraph.png" border="0" usemap="#aclasscchatserver_a6e01efd3c5ff1323ab11d1179c25d5bf_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a6e01efd3c5ff1323ab11d1179c25d5bf_cgraph" id="aclasscchatserver_a6e01efd3c5ff1323ab11d1179c25d5bf_cgraph">
+<area shape="rect" title="处理加入群消息" alt="" coords="5,131,197,157"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="327,29,366,56"/>
+<area shape="poly" title=" " alt="" coords="123,128,177,97,244,66,311,46,312,52,246,70,179,102,126,132"/>
+<area shape="rect" href="classcchatserver.html#ad9205d3e7b242ab885f84c58815ba89e" title="得到指定ID的群信息" alt="" coords="298,80,394,107"/>
+<area shape="poly" title=" " alt="" coords="169,127,283,104,284,109,170,133"/>
+<area shape="rect" href="structtag_group_info.html#a2fba07083c9940d1ac9e8805092c23b5" title="得到群成员转字符串" alt="" coords="245,131,448,157"/>
+<area shape="poly" title=" " alt="" coords="197,141,229,141,229,147,197,147"/>
+<area shape="rect" href="structtag_group_info.html#a657053cb53a4625d635b8b18e7bbd3f4" title="查找指定ID的成员是否存在" alt="" coords="251,181,442,208"/>
+<area shape="poly" title=" " alt="" coords="170,155,264,175,263,180,169,161"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="298,232,395,259"/>
+<area shape="poly" title=" " alt="" coords="126,156,179,186,246,218,283,230,282,235,244,222,177,191,123,160"/>
+<area shape="poly" title=" " alt="" coords="325,40,303,29,298,22,299,15,314,6,346,3,375,5,392,12,394,23,382,34,379,30,389,22,387,16,374,10,346,8,316,11,303,18,303,21,307,25,327,35"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a6e01efd3c5ff1323ab11d1179c25d5bf_icgraph.png" border="0" usemap="#aclasscchatserver_a6e01efd3c5ff1323ab11d1179c25d5bf_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a6e01efd3c5ff1323ab11d1179c25d5bf_icgraph" id="aclasscchatserver_a6e01efd3c5ff1323ab11d1179c25d5bf_icgraph">
+<area shape="rect" title="处理加入群消息" alt="" coords="186,5,377,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af143a16110da7c8584f24e4f5406c4d7" name="af143a16110da7c8584f24e4f5406c4d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af143a16110da7c8584f24e4f5406c4d7">&#9670;&#160;</a></span>onProcessNetUserLeaveGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserLeaveGroup </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理离开群消息 </p>
+<p><a class="el" href="#af143a16110da7c8584f24e4f5406c4d7" title="处理离开群消息">cchatserver::onProcessNetUserLeaveGroup</a> 处理离开群消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_af143a16110da7c8584f24e4f5406c4d7_cgraph.png" border="0" usemap="#aclasscchatserver_af143a16110da7c8584f24e4f5406c4d7_cgraph" alt=""/></div>
+<map name="aclasscchatserver_af143a16110da7c8584f24e4f5406c4d7_cgraph" id="aclasscchatserver_af143a16110da7c8584f24e4f5406c4d7_cgraph">
+<area shape="rect" title="处理离开群消息" alt="" coords="5,156,208,183"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="338,29,377,56"/>
+<area shape="poly" title=" " alt="" coords="122,153,178,110,215,86,255,66,289,53,322,45,323,51,290,58,257,70,218,91,182,115,126,158"/>
+<area shape="rect" href="structtag_group_info.html#a4378bd2310c5e8db1965cfd00993a2ca" title="删除指定ID的成员" alt="" coords="264,80,450,107"/>
+<area shape="poly" title=" " alt="" coords="145,153,255,116,282,108,284,114,256,121,147,158"/>
+<area shape="rect" href="classcchatserver.html#ad9205d3e7b242ab885f84c58815ba89e" title="得到指定ID的群信息" alt="" coords="309,131,406,157"/>
+<area shape="poly" title=" " alt="" coords="208,156,293,148,294,153,208,162"/>
+<area shape="rect" href="structtag_group_info.html#a2fba07083c9940d1ac9e8805092c23b5" title="得到群成员转字符串" alt="" coords="256,181,459,208"/>
+<area shape="poly" title=" " alt="" coords="208,177,241,180,240,186,208,182"/>
+<area shape="rect" href="structtag_group_info.html#a657053cb53a4625d635b8b18e7bbd3f4" title="查找指定ID的成员是否存在" alt="" coords="262,232,453,259"/>
+<area shape="poly" title=" " alt="" coords="147,181,256,217,284,225,282,230,255,223,145,186"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="309,283,406,309"/>
+<area shape="poly" title=" " alt="" coords="126,181,182,224,218,248,257,268,294,281,293,286,255,273,215,252,178,228,122,185"/>
+<area shape="poly" title=" " alt="" coords="336,40,313,29,308,22,309,15,324,6,357,3,387,5,404,12,406,24,393,34,390,30,401,22,400,16,386,10,357,8,326,11,313,18,313,21,317,25,338,35"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_af143a16110da7c8584f24e4f5406c4d7_icgraph.png" border="0" usemap="#aclasscchatserver_af143a16110da7c8584f24e4f5406c4d7_icgraph" alt=""/></div>
+<map name="aclasscchatserver_af143a16110da7c8584f24e4f5406c4d7_icgraph" id="aclasscchatserver_af143a16110da7c8584f24e4f5406c4d7_icgraph">
+<area shape="rect" title="处理离开群消息" alt="" coords="186,5,388,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aadbe4c57bd2af80db55ddce2356d8b86" name="aadbe4c57bd2af80db55ddce2356d8b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadbe4c57bd2af80db55ddce2356d8b86">&#9670;&#160;</a></span>onProcessNetUserLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserLogin </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户登录消息 </p>
+<p><a class="el" href="#aadbe4c57bd2af80db55ddce2356d8b86" title="处理用户登录消息">cchatserver::onProcessNetUserLogin</a> 处理用户登录消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_aadbe4c57bd2af80db55ddce2356d8b86_cgraph.png" border="0" usemap="#aclasscchatserver_aadbe4c57bd2af80db55ddce2356d8b86_cgraph" alt=""/></div>
+<map name="aclasscchatserver_aadbe4c57bd2af80db55ddce2356d8b86_cgraph" id="aclasscchatserver_aadbe4c57bd2af80db55ddce2356d8b86_cgraph">
+<area shape="rect" title="处理用户登录消息" alt="" coords="5,80,169,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="277,29,316,56"/>
+<area shape="poly" title=" " alt="" coords="145,77,261,48,262,54,146,82"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="217,80,377,107"/>
+<area shape="poly" title=" " alt="" coords="169,91,201,91,201,96,169,96"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="248,131,346,157"/>
+<area shape="poly" title=" " alt="" coords="146,105,233,126,232,131,145,110"/>
+<area shape="poly" title=" " alt="" coords="275,38,258,27,256,15,270,6,297,3,320,5,334,11,339,21,332,30,328,27,333,20,331,15,319,10,297,8,271,11,261,17,263,24,278,34"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_aadbe4c57bd2af80db55ddce2356d8b86_icgraph.png" border="0" usemap="#aclasscchatserver_aadbe4c57bd2af80db55ddce2356d8b86_icgraph" alt=""/></div>
+<map name="aclasscchatserver_aadbe4c57bd2af80db55ddce2356d8b86_icgraph" id="aclasscchatserver_aadbe4c57bd2af80db55ddce2356d8b86_icgraph">
+<area shape="rect" title="处理用户登录消息" alt="" coords="186,5,349,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8fbbd299dc5a3127e42568fbf2c43ea4" name="a8fbbd299dc5a3127e42568fbf2c43ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fbbd299dc5a3127e42568fbf2c43ea4">&#9670;&#160;</a></span>onProcessNetUserRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserRegister </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户注册消息 </p>
+<p><a class="el" href="#a8fbbd299dc5a3127e42568fbf2c43ea4" title="处理用户注册消息">cchatserver::onProcessNetUserRegister</a> 处理用户注册消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a8fbbd299dc5a3127e42568fbf2c43ea4_cgraph.png" border="0" usemap="#aclasscchatserver_a8fbbd299dc5a3127e42568fbf2c43ea4_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a8fbbd299dc5a3127e42568fbf2c43ea4_cgraph" id="aclasscchatserver_a8fbbd299dc5a3127e42568fbf2c43ea4_cgraph">
+<area shape="rect" title="处理用户注册消息" alt="" coords="5,80,187,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="295,29,334,56"/>
+<area shape="poly" title=" " alt="" coords="156,77,280,48,281,53,158,82"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="235,80,395,107"/>
+<area shape="poly" title=" " alt="" coords="187,91,219,91,219,96,187,96"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="266,131,364,157"/>
+<area shape="poly" title=" " alt="" coords="158,105,251,127,250,132,156,110"/>
+<area shape="poly" title=" " alt="" coords="293,39,275,28,272,15,286,6,315,3,339,5,354,11,358,21,351,31,347,28,353,20,351,15,338,10,315,8,288,11,277,17,279,25,296,34"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a8fbbd299dc5a3127e42568fbf2c43ea4_icgraph.png" border="0" usemap="#aclasscchatserver_a8fbbd299dc5a3127e42568fbf2c43ea4_icgraph" alt=""/></div>
+<map name="aclasscchatserver_a8fbbd299dc5a3127e42568fbf2c43ea4_icgraph" id="aclasscchatserver_a8fbbd299dc5a3127e42568fbf2c43ea4_icgraph">
+<area shape="rect" title="处理用户注册消息" alt="" coords="186,5,367,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa99460fbbfcb7b9d4e670577362a5a0a" name="aa99460fbbfcb7b9d4e670577362a5a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99460fbbfcb7b9d4e670577362a5a0a">&#9670;&#160;</a></span>onProcessNetUserUpdateInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onProcessNetUserUpdateInfo </td>
+          <td>(</td>
+          <td class="paramtype">QWebSocket *</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>msgObj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理用户修改信息消息 </p>
+<p><a class="el" href="#aa99460fbbfcb7b9d4e670577362a5a0a" title="处理用户修改信息消息">cchatserver::onProcessNetUserUpdateInfo</a> 处理用户修改信息消息</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td></td></tr>
+    <tr><td class="paramname">msgObj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_aa99460fbbfcb7b9d4e670577362a5a0a_cgraph.png" border="0" usemap="#aclasscchatserver_aa99460fbbfcb7b9d4e670577362a5a0a_cgraph" alt=""/></div>
+<map name="aclasscchatserver_aa99460fbbfcb7b9d4e670577362a5a0a_cgraph" id="aclasscchatserver_aa99460fbbfcb7b9d4e670577362a5a0a_cgraph">
+<area shape="rect" title="处理用户修改信息消息" alt="" coords="5,80,202,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="310,29,350,56"/>
+<area shape="poly" title=" " alt="" coords="166,77,294,48,295,53,167,82"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="250,80,410,107"/>
+<area shape="poly" title=" " alt="" coords="202,91,234,91,234,96,202,96"/>
+<area shape="rect" href="common_8cpp.html#a0da9e1bc99c2bef736af3cf15aa6328d" title="QJsonObject 转 QString。" alt="" coords="281,131,378,157"/>
+<area shape="poly" title=" " alt="" coords="167,105,267,127,266,132,166,110"/>
+<area shape="poly" title=" " alt="" coords="308,39,289,28,286,15,300,6,330,3,356,5,371,12,375,22,365,32,361,29,369,21,367,15,354,10,330,8,302,11,291,17,293,25,311,35"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_aa99460fbbfcb7b9d4e670577362a5a0a_icgraph.png" border="0" usemap="#aclasscchatserver_aa99460fbbfcb7b9d4e670577362a5a0a_icgraph" alt=""/></div>
+<map name="aclasscchatserver_aa99460fbbfcb7b9d4e670577362a5a0a_icgraph" id="aclasscchatserver_aa99460fbbfcb7b9d4e670577362a5a0a_icgraph">
+<area shape="rect" title="处理用户修改信息消息" alt="" coords="186,5,382,32"/>
+<area shape="rect" href="classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2" title="处理网络字符串消息" alt="" coords="5,5,138,32"/>
+<area shape="poly" title=" " alt="" coords="170,21,138,21,138,16,170,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a02d9eb7149172c89e23494bf3aef20e1" name="a02d9eb7149172c89e23494bf3aef20e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d9eb7149172c89e23494bf3aef20e1">&#9670;&#160;</a></span>openDB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool openDB </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dbpath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>打开指定的数据库 </p>
+<p><a class="el" href="#a02d9eb7149172c89e23494bf3aef20e1" title="打开指定的数据库">cchatserver::openDB</a> 打开指定的数据库</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dbpath</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="abc269f2177376830062b9e0c68c556f6" name="abc269f2177376830062b9e0c68c556f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc269f2177376830062b9e0c68c556f6">&#9670;&#160;</a></span>printLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printLog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_qs_logging.html#a221b779e6bb7b8d40677d7642bfefac5">QsLogging::Level</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>打印用户日志 </p>
+<p><a class="el" href="#abc269f2177376830062b9e0c68c556f6" title="打印用户日志">cchatserver::printLog</a> 打印用户日志</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td></td></tr>
+    <tr><td class="paramname">msg</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_abc269f2177376830062b9e0c68c556f6_cgraph.png" border="0" usemap="#aclasscchatserver_abc269f2177376830062b9e0c68c556f6_cgraph" alt=""/></div>
+<map name="aclasscchatserver_abc269f2177376830062b9e0c68c556f6_cgraph" id="aclasscchatserver_abc269f2177376830062b9e0c68c556f6_cgraph">
+<area shape="rect" title="打印用户日志" alt="" coords="5,31,73,57"/>
+<area shape="rect" href="classcchatserver.html#ae9793b5694d7c2405cc04c5ec797d8fd" title="得到当前时间" alt="" coords="121,5,231,32"/>
+<area shape="poly" title=" " alt="" coords="73,35,104,29,105,34,74,40"/>
+<area shape="rect" href="classcchatserver.html#aaa495be72663b923dd43ffcb1f8c7ef7" title="日志消息" alt="" coords="141,56,210,83"/>
+<area shape="poly" title=" " alt="" coords="74,48,126,58,125,63,73,53"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_abc269f2177376830062b9e0c68c556f6_icgraph.png" border="0" usemap="#aclasscchatserver_abc269f2177376830062b9e0c68c556f6_icgraph" alt=""/></div>
+<map name="aclasscchatserver_abc269f2177376830062b9e0c68c556f6_icgraph" id="aclasscchatserver_abc269f2177376830062b9e0c68c556f6_icgraph">
+<area shape="rect" title="打印用户日志" alt="" coords="341,56,408,83"/>
+<area shape="rect" href="classcchatserver.html#a912a4e0983416e8adeda19aa3c88e495" title="关闭服务器" alt="" coords="177,5,267,32"/>
+<area shape="poly" title=" " alt="" coords="325,56,264,35,265,30,327,51"/>
+<area shape="rect" href="classcchatserver.html#aa08f2934bb22fcb055175b79a519bde1" title="得到当前服务器信息" alt="" coords="151,56,293,83"/>
+<area shape="poly" title=" " alt="" coords="325,72,294,72,294,67,325,67"/>
+<area shape="rect" href="classcchatserver.html#a6113e9508c51c4e8d9af59aac864372b" title="启动服务器" alt="" coords="179,107,264,133"/>
+<area shape="poly" title=" " alt="" coords="327,88,265,109,264,103,325,83"/>
+<area shape="rect" href="classcchatserver.html#a7f3af86ce2cf7146b400cd9720931fa0" title=" " alt="" coords="5,5,103,32"/>
+<area shape="poly" title=" " alt="" coords="161,21,103,21,103,16,161,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaa495be72663b923dd43ffcb1f8c7ef7" name="aaa495be72663b923dd43ffcb1f8c7ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa495be72663b923dd43ffcb1f8c7ef7">&#9670;&#160;</a></span>showlog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showlog </td>
+          <td>(</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>日志消息 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_aaa495be72663b923dd43ffcb1f8c7ef7_icgraph.png" border="0" usemap="#aclasscchatserver_aaa495be72663b923dd43ffcb1f8c7ef7_icgraph" alt=""/></div>
+<map name="aclasscchatserver_aaa495be72663b923dd43ffcb1f8c7ef7_icgraph" id="aclasscchatserver_aaa495be72663b923dd43ffcb1f8c7ef7_icgraph">
+<area shape="rect" title="日志消息" alt="" coords="456,56,526,83"/>
+<area shape="rect" href="classcchatserver.html#abc269f2177376830062b9e0c68c556f6" title="打印用户日志" alt="" coords="341,56,408,83"/>
+<area shape="poly" title=" " alt="" coords="441,72,409,72,409,67,441,67"/>
+<area shape="rect" href="classcchatserver.html#a912a4e0983416e8adeda19aa3c88e495" title="关闭服务器" alt="" coords="177,5,267,32"/>
+<area shape="poly" title=" " alt="" coords="325,56,264,35,265,30,327,51"/>
+<area shape="rect" href="classcchatserver.html#aa08f2934bb22fcb055175b79a519bde1" title="得到当前服务器信息" alt="" coords="151,56,293,83"/>
+<area shape="poly" title=" " alt="" coords="325,72,294,72,294,67,325,67"/>
+<area shape="rect" href="classcchatserver.html#a6113e9508c51c4e8d9af59aac864372b" title="启动服务器" alt="" coords="179,107,264,133"/>
+<area shape="poly" title=" " alt="" coords="327,88,265,109,264,103,325,83"/>
+<area shape="rect" href="classcchatserver.html#a7f3af86ce2cf7146b400cd9720931fa0" title=" " alt="" coords="5,5,103,32"/>
+<area shape="poly" title=" " alt="" coords="161,21,103,21,103,16,161,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6113e9508c51c4e8d9af59aac864372b" name="a6113e9508c51c4e8d9af59aac864372b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6113e9508c51c4e8d9af59aac864372b">&#9670;&#160;</a></span>startServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool startServer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>启动服务器 </p>
+<p><a class="el" href="#a6113e9508c51c4e8d9af59aac864372b" title="启动服务器">cchatserver::startServer</a> 启动服务器</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcchatserver_a6113e9508c51c4e8d9af59aac864372b_cgraph.png" border="0" usemap="#aclasscchatserver_a6113e9508c51c4e8d9af59aac864372b_cgraph" alt=""/></div>
+<map name="aclasscchatserver_a6113e9508c51c4e8d9af59aac864372b_cgraph" id="aclasscchatserver_a6113e9508c51c4e8d9af59aac864372b_cgraph">
+<area shape="rect" title="启动服务器" alt="" coords="5,31,91,57"/>
+<area shape="rect" href="classcchatserver.html#a2c69838deb9c3a2db759a220857bf93d" title="得到所有的群" alt="" coords="139,5,228,32"/>
+<area shape="poly" title=" " alt="" coords="91,33,123,27,124,33,92,39"/>
+<area shape="rect" href="classcchatserver.html#abc269f2177376830062b9e0c68c556f6" title="打印用户日志" alt="" coords="150,56,217,83"/>
+<area shape="poly" title=" " alt="" coords="92,49,135,58,134,63,91,55"/>
+<area shape="rect" href="class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312" title="检查记录是否为空" alt="" coords="276,5,436,32"/>
+<area shape="poly" title=" " alt="" coords="228,16,260,16,260,21,228,21"/>
+<area shape="rect" href="classcchatserver.html#ae9793b5694d7c2405cc04c5ec797d8fd" title="得到当前时间" alt="" coords="301,56,411,83"/>
+<area shape="poly" title=" " alt="" coords="217,67,285,67,285,72,217,72"/>
+<area shape="rect" href="classcchatserver.html#aaa495be72663b923dd43ffcb1f8c7ef7" title="日志消息" alt="" coords="322,107,391,133"/>
+<area shape="poly" title=" " alt="" coords="218,77,307,103,306,108,217,82"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a0774af8ac8b8b1f9c8ef0060cd8fb223" name="a0774af8ac8b8b1f9c8ef0060cd8fb223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0774af8ac8b8b1f9c8ef0060cd8fb223">&#9670;&#160;</a></span>m_allgrounps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QString,<a class="el" href="structtag_group_info.html">tagGroupInfo</a>&gt; m_allgrounps</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>管理所有的群 </p>
+
+</div>
+</div>
+<a id="aa5eded6bef04d6065a24407d3fe863f5" name="aa5eded6bef04d6065a24407d3fe863f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5eded6bef04d6065a24407d3fe863f5">&#9670;&#160;</a></span>m_MainWebSocketServer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_web_socket_server.html">CWebSocketServer</a> m_MainWebSocketServer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>websocket服务器 </p>
+
+</div>
+</div>
+<a id="a0360c8fc31545ccc7a0a997394df7f96" name="a0360c8fc31545ccc7a0a997394df7f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0360c8fc31545ccc7a0a997394df7f96">&#9670;&#160;</a></span>m_onlineUsers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QWebSocket*,<a class="el" href="structtag_user_info.html">tagUserInfo</a>&gt; m_onlineUsers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在线用户列表 </p>
+
+</div>
+</div>
+<a id="a4fc8763c605d659f56dd11d8a4981911" name="a4fc8763c605d659f56dd11d8a4981911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc8763c605d659f56dd11d8a4981911">&#9670;&#160;</a></span>m_SqliteDataProvider</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sqlite_data_provider.html">SqliteDataProvider</a> m_SqliteDataProvider</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>数据库操作 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="cchatserver_8h_source.html">cchatserver.h</a></li>
+<li><a class="el" href="cchatserver_8cpp.html">cchatserver.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classcchatserver.html">cchatserver</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

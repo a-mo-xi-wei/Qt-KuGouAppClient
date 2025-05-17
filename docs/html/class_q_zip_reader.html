@@ -1,0 +1,683 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: QZipReader类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_q_zip_reader.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_q_zip_reader-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">QZipReader类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="qzipreader__p_8h_source.html">qzipreader_p.h</a>&gt;</code></p>
+<div class="dynheader">
+QZipReader 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader__coll__graph.png" border="0" usemap="#a_q_zip_reader_coll__map" alt="Collaboration graph"/></div>
+<map name="a_q_zip_reader_coll__map" id="a_q_zip_reader_coll__map">
+<area shape="rect" title=" " alt="" coords="26,172,117,199"/>
+<area shape="rect" href="class_q_zip_reader_private.html" title=" " alt="" coords="5,81,138,108"/>
+<area shape="poly" title=" " alt="" coords="74,124,74,171,69,171,69,124"/>
+<area shape="rect" href="class_q_zip_private.html" title=" " alt="" coords="26,5,117,32"/>
+<area shape="poly" title=" " alt="" coords="74,47,74,81,69,81,69,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_q_zip_reader_1_1_file_info.html">FileInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a67a0db04d321a74b7e7fcfd3f1a3f70b" id="r_a67a0db04d321a74b7e7fcfd3f1a3f70b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> { <br />
+&#160;&#160;<a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70baef9104c292609ba6db320509be8fe27f">NoError</a>
+, <a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70badcd3522d756376531fe1cdbe85921be3">FileReadError</a>
+, <a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70ba46a03d351ccdccb3dbe712e3c34a0db8">FileOpenError</a>
+, <a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70ba660083b0fc40bc88a4f08fe128566ee1">FilePermissionsError</a>
+, <br />
+&#160;&#160;<a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70ba16710632ec8111b8b1b7e79d3538700d">FileError</a>
+<br />
+ }</td></tr>
+<tr class="separator:a67a0db04d321a74b7e7fcfd3f1a3f70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a749143fca058a0affcb2431be0b2dc5b" id="r_a749143fca058a0affcb2431be0b2dc5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a749143fca058a0affcb2431be0b2dc5b">QZipReader</a> (const QString &amp;fileName, QIODevice::OpenMode mode=QIODevice::ReadOnly)</td></tr>
+<tr class="separator:a749143fca058a0affcb2431be0b2dc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a410adf443e748d6c435902fc21ec2d7b" id="r_a410adf443e748d6c435902fc21ec2d7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a410adf443e748d6c435902fc21ec2d7b">QZipReader</a> (QIODevice *<a class="el" href="#a6c00fbe46edac8c18edee1018a37fb04">device</a>)</td></tr>
+<tr class="memdesc:a410adf443e748d6c435902fc21ec2d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new zip archive that operates on the archive found in <em class="arg">device</em>.  <br /></td></tr>
+<tr class="separator:a410adf443e748d6c435902fc21ec2d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61cf46d904d61cce69008736d90a49c0" id="r_a61cf46d904d61cce69008736d90a49c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61cf46d904d61cce69008736d90a49c0">~QZipReader</a> ()</td></tr>
+<tr class="memdesc:a61cf46d904d61cce69008736d90a49c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor  <br /></td></tr>
+<tr class="separator:a61cf46d904d61cce69008736d90a49c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c00fbe46edac8c18edee1018a37fb04" id="r_a6c00fbe46edac8c18edee1018a37fb04"><td class="memItemLeft" align="right" valign="top">QIODevice *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c00fbe46edac8c18edee1018a37fb04">device</a> () const</td></tr>
+<tr class="memdesc:a6c00fbe46edac8c18edee1018a37fb04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns device used for reading zip archive.  <br /></td></tr>
+<tr class="separator:a6c00fbe46edac8c18edee1018a37fb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8d5f051609fd46406407e5fc33eb3ce" id="r_ad8d5f051609fd46406407e5fc33eb3ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8d5f051609fd46406407e5fc33eb3ce">isReadable</a> () const</td></tr>
+<tr class="memdesc:ad8d5f051609fd46406407e5fc33eb3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if the user can read the file; otherwise returns <code>false</code>.  <br /></td></tr>
+<tr class="separator:ad8d5f051609fd46406407e5fc33eb3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d8623150e6d43ab4bf7493aa8cbc1a" id="r_aa7d8623150e6d43ab4bf7493aa8cbc1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7d8623150e6d43ab4bf7493aa8cbc1a">exists</a> () const</td></tr>
+<tr class="memdesc:aa7d8623150e6d43ab4bf7493aa8cbc1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if the file exists; otherwise returns <code>false</code>.  <br /></td></tr>
+<tr class="separator:aa7d8623150e6d43ab4bf7493aa8cbc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dec3ba8663180feee8a71df9ca9d68c" id="r_a7dec3ba8663180feee8a71df9ca9d68c"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="struct_q_zip_reader_1_1_file_info.html">FileInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dec3ba8663180feee8a71df9ca9d68c">fileInfoList</a> () const</td></tr>
+<tr class="memdesc:a7dec3ba8663180feee8a71df9ca9d68c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of files the archive contains.  <br /></td></tr>
+<tr class="separator:a7dec3ba8663180feee8a71df9ca9d68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2c15c517007b91c37b2aa68bf2484a" id="r_a0e2c15c517007b91c37b2aa68bf2484a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e2c15c517007b91c37b2aa68bf2484a">count</a> () const</td></tr>
+<tr class="memdesc:a0e2c15c517007b91c37b2aa68bf2484a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of items in the zip archive.  <br /></td></tr>
+<tr class="separator:a0e2c15c517007b91c37b2aa68bf2484a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a029c8d87f1403e8e30b853adec98d" id="r_a31a029c8d87f1403e8e30b853adec98d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_q_zip_reader_1_1_file_info.html">FileInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31a029c8d87f1403e8e30b853adec98d">entryInfoAt</a> (int <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) const</td></tr>
+<tr class="memdesc:a31a029c8d87f1403e8e30b853adec98d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="struct_q_zip_reader_1_1_file_info.html">FileInfo</a> of an entry in the zipfile.  <br /></td></tr>
+<tr class="separator:a31a029c8d87f1403e8e30b853adec98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac174d3404eb2fbba391ac60403409b9" id="r_aac174d3404eb2fbba391ac60403409b9"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac174d3404eb2fbba391ac60403409b9">fileData</a> (const QString &amp;fileName) const</td></tr>
+<tr class="memdesc:aac174d3404eb2fbba391ac60403409b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the file contents from the zip archive and return the uncompressed bytes.  <br /></td></tr>
+<tr class="separator:aac174d3404eb2fbba391ac60403409b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fcbedd0d2285a53980b4d1eb701c941" id="r_a2fcbedd0d2285a53980b4d1eb701c941"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fcbedd0d2285a53980b4d1eb701c941">extractAll</a> (const QString &amp;destinationDir) const</td></tr>
+<tr class="memdesc:a2fcbedd0d2285a53980b4d1eb701c941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the full contents of the zip file into <em class="arg">destinationDir</em> on the local filesystem.  <br /></td></tr>
+<tr class="separator:a2fcbedd0d2285a53980b4d1eb701c941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19148f1f2426078b672ac95d2b0c65ec" id="r_a19148f1f2426078b672ac95d2b0c65ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19148f1f2426078b672ac95d2b0c65ec">status</a> () const</td></tr>
+<tr class="separator:a19148f1f2426078b672ac95d2b0c65ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae591df94fc66ccb85cbb6565368bca" id="r_a5ae591df94fc66ccb85cbb6565368bca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ae591df94fc66ccb85cbb6565368bca">close</a> ()</td></tr>
+<tr class="memdesc:a5ae591df94fc66ccb85cbb6565368bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the zip file.  <br /></td></tr>
+<tr class="separator:a5ae591df94fc66ccb85cbb6565368bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a4c181673bba5a91719a67f1340fa5742" id="r_a4c181673bba5a91719a67f1340fa5742"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_zip_reader_private.html">QZipReaderPrivate</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c181673bba5a91719a67f1340fa5742">d</a></td></tr>
+<tr class="separator:a4c181673bba5a91719a67f1340fa5742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a67a0db04d321a74b7e7fcfd3f1a3f70b" name="a67a0db04d321a74b7e7fcfd3f1a3f70b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a0db04d321a74b7e7fcfd3f1a3f70b">&#9670;&#160;</a></span>Status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a67a0db04d321a74b7e7fcfd3f1a3f70baef9104c292609ba6db320509be8fe27f" name="a67a0db04d321a74b7e7fcfd3f1a3f70baef9104c292609ba6db320509be8fe27f"></a>NoError&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a67a0db04d321a74b7e7fcfd3f1a3f70badcd3522d756376531fe1cdbe85921be3" name="a67a0db04d321a74b7e7fcfd3f1a3f70badcd3522d756376531fe1cdbe85921be3"></a>FileReadError&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a67a0db04d321a74b7e7fcfd3f1a3f70ba46a03d351ccdccb3dbe712e3c34a0db8" name="a67a0db04d321a74b7e7fcfd3f1a3f70ba46a03d351ccdccb3dbe712e3c34a0db8"></a>FileOpenError&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a67a0db04d321a74b7e7fcfd3f1a3f70ba660083b0fc40bc88a4f08fe128566ee1" name="a67a0db04d321a74b7e7fcfd3f1a3f70ba660083b0fc40bc88a4f08fe128566ee1"></a>FilePermissionsError&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a67a0db04d321a74b7e7fcfd3f1a3f70ba16710632ec8111b8b1b7e79d3538700d" name="a67a0db04d321a74b7e7fcfd3f1a3f70ba16710632ec8111b8b1b7e79d3538700d"></a>FileError&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a749143fca058a0affcb2431be0b2dc5b" name="a749143fca058a0affcb2431be0b2dc5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a749143fca058a0affcb2431be0b2dc5b">&#9670;&#160;</a></span>QZipReader() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_zip_reader.html">QZipReader</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QIODevice::OpenMode</td>          <td class="paramname"><span class="paramname"><em>mode</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QIODevice::ReadOnly</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_a749143fca058a0affcb2431be0b2dc5b_cgraph.png" border="0" usemap="#aclass_q_zip_reader_a749143fca058a0affcb2431be0b2dc5b_cgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_a749143fca058a0affcb2431be0b2dc5b_cgraph" id="aclass_q_zip_reader_a749143fca058a0affcb2431be0b2dc5b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,97,32"/>
+<area shape="rect" href="class_q_zip_reader.html#a19148f1f2426078b672ac95d2b0c65ec" title=" " alt="" coords="145,5,202,32"/>
+<area shape="poly" title=" " alt="" coords="97,16,129,16,129,21,97,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a410adf443e748d6c435902fc21ec2d7b" name="a410adf443e748d6c435902fc21ec2d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410adf443e748d6c435902fc21ec2d7b">&#9670;&#160;</a></span>QZipReader() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_zip_reader.html">QZipReader</a> </td>
+          <td>(</td>
+          <td class="paramtype">QIODevice *</td>          <td class="paramname"><span class="paramname"><em>device</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new zip archive that operates on the archive found in <em class="arg">device</em>. </p>
+<p>You have to open the device previous to calling the constructor and only a device that is readable will be scanned for zip filecontent. </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_a410adf443e748d6c435902fc21ec2d7b_cgraph.png" border="0" usemap="#aclass_q_zip_reader_a410adf443e748d6c435902fc21ec2d7b_cgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_a410adf443e748d6c435902fc21ec2d7b_cgraph" id="aclass_q_zip_reader_a410adf443e748d6c435902fc21ec2d7b_cgraph">
+<area shape="rect" title="Create a new zip archive that operates on the archive found in device." alt="" coords="5,5,97,32"/>
+<area shape="rect" href="class_q_zip_reader.html#a6c00fbe46edac8c18edee1018a37fb04" title="Returns device used for reading zip archive." alt="" coords="145,5,204,32"/>
+<area shape="poly" title=" " alt="" coords="97,16,129,16,129,21,97,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a61cf46d904d61cce69008736d90a49c0" name="a61cf46d904d61cce69008736d90a49c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61cf46d904d61cce69008736d90a49c0">&#9670;&#160;</a></span>~QZipReader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_q_zip_reader.html">QZipReader</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_a61cf46d904d61cce69008736d90a49c0_cgraph.png" border="0" usemap="#aclass_q_zip_reader_a61cf46d904d61cce69008736d90a49c0_cgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_a61cf46d904d61cce69008736d90a49c0_cgraph" id="aclass_q_zip_reader_a61cf46d904d61cce69008736d90a49c0_cgraph">
+<area shape="rect" title="Destructor" alt="" coords="5,5,105,32"/>
+<area shape="rect" href="class_q_zip_reader.html#a5ae591df94fc66ccb85cbb6565368bca" title="Close the zip file." alt="" coords="153,5,205,32"/>
+<area shape="poly" title=" " alt="" coords="105,16,137,16,137,21,105,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a5ae591df94fc66ccb85cbb6565368bca" name="a5ae591df94fc66ccb85cbb6565368bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ae591df94fc66ccb85cbb6565368bca">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close the zip file. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_a5ae591df94fc66ccb85cbb6565368bca_icgraph.png" border="0" usemap="#aclass_q_zip_reader_a5ae591df94fc66ccb85cbb6565368bca_icgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_a5ae591df94fc66ccb85cbb6565368bca_icgraph" id="aclass_q_zip_reader_a5ae591df94fc66ccb85cbb6565368bca_icgraph">
+<area shape="rect" title="Close the zip file." alt="" coords="153,5,205,32"/>
+<area shape="rect" href="class_q_zip_reader.html#a61cf46d904d61cce69008736d90a49c0" title="Destructor" alt="" coords="5,5,105,32"/>
+<area shape="poly" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0e2c15c517007b91c37b2aa68bf2484a" name="a0e2c15c517007b91c37b2aa68bf2484a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e2c15c517007b91c37b2aa68bf2484a">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the number of items in the zip archive. </p>
+
+</div>
+</div>
+<a id="a6c00fbe46edac8c18edee1018a37fb04" name="a6c00fbe46edac8c18edee1018a37fb04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c00fbe46edac8c18edee1018a37fb04">&#9670;&#160;</a></span>device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QIODevice * device </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns device used for reading zip archive. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_a6c00fbe46edac8c18edee1018a37fb04_icgraph.png" border="0" usemap="#aclass_q_zip_reader_a6c00fbe46edac8c18edee1018a37fb04_icgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_a6c00fbe46edac8c18edee1018a37fb04_icgraph" id="aclass_q_zip_reader_a6c00fbe46edac8c18edee1018a37fb04_icgraph">
+<area shape="rect" title="Returns device used for reading zip archive." alt="" coords="145,5,204,32"/>
+<area shape="rect" href="class_q_zip_reader.html#a410adf443e748d6c435902fc21ec2d7b" title="Create a new zip archive that operates on the archive found in device." alt="" coords="5,5,97,32"/>
+<area shape="poly" title=" " alt="" coords="129,21,97,21,97,16,129,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a31a029c8d87f1403e8e30b853adec98d" name="a31a029c8d87f1403e8e30b853adec98d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a029c8d87f1403e8e30b853adec98d">&#9670;&#160;</a></span>entryInfoAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_q_zip_reader_1_1_file_info.html">QZipReader::FileInfo</a> entryInfoAt </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="struct_q_zip_reader_1_1_file_info.html">FileInfo</a> of an entry in the zipfile. </p>
+<p>The <em class="arg">index</em> is the index into the directory listing of the zipfile. Returns an invalid <a class="el" href="struct_q_zip_reader_1_1_file_info.html">FileInfo</a> if <em class="arg">index</em> is out of boundaries.</p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a7dec3ba8663180feee8a71df9ca9d68c" title="Returns the list of files the archive contains.">fileInfoList()</a> </dd></dl>
+
+</div>
+</div>
+<a id="aa7d8623150e6d43ab4bf7493aa8cbc1a" name="aa7d8623150e6d43ab4bf7493aa8cbc1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d8623150e6d43ab4bf7493aa8cbc1a">&#9670;&#160;</a></span>exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool exists </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns <code>true</code> if the file exists; otherwise returns <code>false</code>. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_aa7d8623150e6d43ab4bf7493aa8cbc1a_icgraph.png" border="0" usemap="#aclass_q_zip_reader_aa7d8623150e6d43ab4bf7493aa8cbc1a_icgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_aa7d8623150e6d43ab4bf7493aa8cbc1a_icgraph" id="aclass_q_zip_reader_aa7d8623150e6d43ab4bf7493aa8cbc1a_icgraph">
+<area shape="rect" title="Returns true if the file exists; otherwise returns false." alt="" coords="775,35,832,61"/>
+<area shape="rect" href="class_c_resource_manager.html#a2e27bc63fdd14bfb4afb34d0af4ef2f1" title="添加 ZIP 文件" alt="" coords="522,5,727,32"/>
+<area shape="poly" title=" " alt="" coords="760,44,710,35,710,30,761,38"/>
+<area shape="rect" href="class_c_resource_manager.html#a67add8a4e5c036fcd1bb19028746c150" title="加载文件资源" alt="" coords="530,56,720,99"/>
+<area shape="poly" title=" " alt="" coords="761,58,721,64,720,59,760,52"/>
+<area shape="rect" href="class_c_resource_manager.html#ab1008d2784e4a61905cda1e24ec38111" title="获取指定路径的文件资源" alt="" coords="277,33,462,60"/>
+<area shape="poly" title=" " alt="" coords="514,67,462,60,462,55,514,61"/>
+<area shape="rect" href="class_c_resource_manager.html#adad0e8429435dfeac6a3c15162fdbeb8" title="处理文件变化完成" alt="" coords="265,85,474,128"/>
+<area shape="poly" title=" " alt="" coords="514,93,475,97,474,92,513,87"/>
+<area shape="rect" href="classchttpserver.html#a7f47ba6b730e696cad8c56eedb195c5a" title="chttpserver::onProcessLocalFileLoad 处理内部文件导入" alt="" coords="17,23,205,65"/>
+<area shape="poly" title=" " alt="" coords="262,48,205,48,205,42,262,43"/>
+<area shape="rect" href="class_c_resource_manager.html#a5671a29a1df6a6ba2c654053276c1f39" title="构造函数" alt="" coords="5,89,217,132"/>
+<area shape="poly" title=" " alt="" coords="249,111,217,112,217,106,249,106"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2fcbedd0d2285a53980b4d1eb701c941" name="a2fcbedd0d2285a53980b4d1eb701c941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fcbedd0d2285a53980b4d1eb701c941">&#9670;&#160;</a></span>extractAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool extractAll </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>destinationDir</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extracts the full contents of the zip file into <em class="arg">destinationDir</em> on the local filesystem. </p>
+<p>In case writing or linking a file fails, the extraction will be aborted. </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_a2fcbedd0d2285a53980b4d1eb701c941_cgraph.png" border="0" usemap="#aclass_q_zip_reader_a2fcbedd0d2285a53980b4d1eb701c941_cgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_a2fcbedd0d2285a53980b4d1eb701c941_cgraph" id="aclass_q_zip_reader_a2fcbedd0d2285a53980b4d1eb701c941_cgraph">
+<area shape="rect" title="Extracts the full contents of the zip file into destinationDir on the local filesystem." alt="" coords="5,105,82,132"/>
+<area shape="rect" href="class_q_zip_reader.html#aac174d3404eb2fbba391ac60403409b9" title="Fetch the file contents from the zip archive and return the uncompressed bytes." alt="" coords="137,80,204,107"/>
+<area shape="poly" title=" " alt="" coords="82,108,121,100,122,106,83,114"/>
+<area shape="rect" href="class_q_zip_reader.html#a7dec3ba8663180feee8a71df9ca9d68c" title="Returns the list of files the archive contains." alt="" coords="130,131,211,157"/>
+<area shape="poly" title=" " alt="" coords="83,124,115,130,114,135,82,129"/>
+<area shape="rect" href="qzipreader__p_8cpp.html#ab4688369270959ff58403ab3f3869e4e" title=" " alt="" coords="274,29,331,56"/>
+<area shape="poly" title=" " alt="" coords="203,78,259,56,261,61,205,83"/>
+<area shape="rect" href="qzipreader__p_8cpp.html#a231f9b6c255d6ffb10f5af3cb4e8c349" title=" " alt="" coords="267,80,338,107"/>
+<area shape="poly" title=" " alt="" coords="204,91,252,91,252,96,204,96"/>
+<area shape="rect" href="qzipreader__p_8cpp.html#ad18a8d4268cfaee2e666bf2d61adde25" title=" " alt="" coords="259,131,346,157"/>
+<area shape="poly" title=" " alt="" coords="205,103,252,122,250,127,203,108"/>
+<area shape="poly" title=" " alt="" coords="279,30,275,21,278,11,287,5,303,3,319,5,328,12,324,16,317,10,303,8,289,10,282,14,281,20,284,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aac174d3404eb2fbba391ac60403409b9" name="aac174d3404eb2fbba391ac60403409b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac174d3404eb2fbba391ac60403409b9">&#9670;&#160;</a></span>fileData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray fileData </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetch the file contents from the zip archive and return the uncompressed bytes. </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_aac174d3404eb2fbba391ac60403409b9_cgraph.png" border="0" usemap="#aclass_q_zip_reader_aac174d3404eb2fbba391ac60403409b9_cgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_aac174d3404eb2fbba391ac60403409b9_cgraph" id="aclass_q_zip_reader_aac174d3404eb2fbba391ac60403409b9_cgraph">
+<area shape="rect" title="Fetch the file contents from the zip archive and return the uncompressed bytes." alt="" coords="5,80,72,107"/>
+<area shape="rect" href="qzipreader__p_8cpp.html#ab4688369270959ff58403ab3f3869e4e" title=" " alt="" coords="135,29,192,56"/>
+<area shape="poly" title=" " alt="" coords="71,78,120,57,122,62,73,82"/>
+<area shape="rect" href="qzipreader__p_8cpp.html#a231f9b6c255d6ffb10f5af3cb4e8c349" title=" " alt="" coords="128,80,199,107"/>
+<area shape="poly" title=" " alt="" coords="72,91,112,91,112,96,72,96"/>
+<area shape="rect" href="qzipreader__p_8cpp.html#ad18a8d4268cfaee2e666bf2d61adde25" title=" " alt="" coords="120,131,207,157"/>
+<area shape="poly" title=" " alt="" coords="73,104,116,122,114,127,71,109"/>
+<area shape="poly" title=" " alt="" coords="141,30,137,21,140,11,149,5,163,3,179,5,187,12,184,16,177,10,163,8,151,10,144,14,143,20,146,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_aac174d3404eb2fbba391ac60403409b9_icgraph.png" border="0" usemap="#aclass_q_zip_reader_aac174d3404eb2fbba391ac60403409b9_icgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_aac174d3404eb2fbba391ac60403409b9_icgraph" id="aclass_q_zip_reader_aac174d3404eb2fbba391ac60403409b9_icgraph">
+<area shape="rect" title="Fetch the file contents from the zip archive and return the uncompressed bytes." alt="" coords="130,5,196,32"/>
+<area shape="rect" href="class_q_zip_reader.html#a2fcbedd0d2285a53980b4d1eb701c941" title="Extracts the full contents of the zip file into destinationDir on the local filesystem." alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7dec3ba8663180feee8a71df9ca9d68c" name="a7dec3ba8663180feee8a71df9ca9d68c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dec3ba8663180feee8a71df9ca9d68c">&#9670;&#160;</a></span>fileInfoList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="struct_q_zip_reader_1_1_file_info.html">QZipReader::FileInfo</a> &gt; fileInfoList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the list of files the archive contains. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_a7dec3ba8663180feee8a71df9ca9d68c_icgraph.png" border="0" usemap="#aclass_q_zip_reader_a7dec3ba8663180feee8a71df9ca9d68c_icgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_a7dec3ba8663180feee8a71df9ca9d68c_icgraph" id="aclass_q_zip_reader_a7dec3ba8663180feee8a71df9ca9d68c_icgraph">
+<area shape="rect" title="Returns the list of files the archive contains." alt="" coords="775,56,857,83"/>
+<area shape="rect" href="class_c_resource_manager.html#a2e27bc63fdd14bfb4afb34d0af4ef2f1" title="添加 ZIP 文件" alt="" coords="522,5,727,32"/>
+<area shape="poly" title=" " alt="" coords="760,56,727,47,683,35,684,30,728,41,761,51"/>
+<area shape="rect" href="class_q_zip_reader.html#a2fcbedd0d2285a53980b4d1eb701c941" title="Extracts the full contents of the zip file into destinationDir on the local filesystem." alt="" coords="586,56,663,83"/>
+<area shape="poly" title=" " alt="" coords="760,72,663,72,663,67,760,67"/>
+<area shape="rect" href="class_c_resource_manager.html#a67add8a4e5c036fcd1bb19028746c150" title="加载文件资源" alt="" coords="530,107,720,149"/>
+<area shape="poly" title=" " alt="" coords="761,89,697,109,696,104,760,84"/>
+<area shape="rect" href="class_c_resource_manager.html#ab1008d2784e4a61905cda1e24ec38111" title="获取指定路径的文件资源" alt="" coords="277,84,462,111"/>
+<area shape="poly" title=" " alt="" coords="514,117,462,111,462,106,514,112"/>
+<area shape="rect" href="class_c_resource_manager.html#adad0e8429435dfeac6a3c15162fdbeb8" title="处理文件变化完成" alt="" coords="265,136,474,179"/>
+<area shape="poly" title=" " alt="" coords="514,143,475,148,474,143,513,138"/>
+<area shape="rect" href="classchttpserver.html#a7f47ba6b730e696cad8c56eedb195c5a" title="chttpserver::onProcessLocalFileLoad 处理内部文件导入" alt="" coords="17,73,205,116"/>
+<area shape="poly" title=" " alt="" coords="262,99,205,98,205,93,262,94"/>
+<area shape="rect" href="class_c_resource_manager.html#a5671a29a1df6a6ba2c654053276c1f39" title="构造函数" alt="" coords="5,140,217,183"/>
+<area shape="poly" title=" " alt="" coords="249,162,217,162,217,157,249,157"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad8d5f051609fd46406407e5fc33eb3ce" name="ad8d5f051609fd46406407e5fc33eb3ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8d5f051609fd46406407e5fc33eb3ce">&#9670;&#160;</a></span>isReadable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isReadable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns <code>true</code> if the user can read the file; otherwise returns <code>false</code>. </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_ad8d5f051609fd46406407e5fc33eb3ce_icgraph.png" border="0" usemap="#aclass_q_zip_reader_ad8d5f051609fd46406407e5fc33eb3ce_icgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_ad8d5f051609fd46406407e5fc33eb3ce_icgraph" id="aclass_q_zip_reader_ad8d5f051609fd46406407e5fc33eb3ce_icgraph">
+<area shape="rect" title="Returns true if the user can read the file; otherwise returns false." alt="" coords="775,35,862,61"/>
+<area shape="rect" href="class_c_resource_manager.html#a2e27bc63fdd14bfb4afb34d0af4ef2f1" title="添加 ZIP 文件" alt="" coords="522,5,727,32"/>
+<area shape="poly" title=" " alt="" coords="759,42,717,35,718,30,760,37"/>
+<area shape="rect" href="class_c_resource_manager.html#a67add8a4e5c036fcd1bb19028746c150" title="加载文件资源" alt="" coords="530,56,720,99"/>
+<area shape="poly" title=" " alt="" coords="760,59,721,65,720,60,759,54"/>
+<area shape="rect" href="class_c_resource_manager.html#ab1008d2784e4a61905cda1e24ec38111" title="获取指定路径的文件资源" alt="" coords="277,33,462,60"/>
+<area shape="poly" title=" " alt="" coords="514,67,462,60,462,55,514,61"/>
+<area shape="rect" href="class_c_resource_manager.html#adad0e8429435dfeac6a3c15162fdbeb8" title="处理文件变化完成" alt="" coords="265,85,474,128"/>
+<area shape="poly" title=" " alt="" coords="514,93,475,97,474,92,513,87"/>
+<area shape="rect" href="classchttpserver.html#a7f47ba6b730e696cad8c56eedb195c5a" title="chttpserver::onProcessLocalFileLoad 处理内部文件导入" alt="" coords="17,23,205,65"/>
+<area shape="poly" title=" " alt="" coords="262,48,205,48,205,42,262,43"/>
+<area shape="rect" href="class_c_resource_manager.html#a5671a29a1df6a6ba2c654053276c1f39" title="构造函数" alt="" coords="5,89,217,132"/>
+<area shape="poly" title=" " alt="" coords="249,111,217,112,217,106,249,106"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a19148f1f2426078b672ac95d2b0c65ec" name="a19148f1f2426078b672ac95d2b0c65ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19148f1f2426078b672ac95d2b0c65ec">&#9670;&#160;</a></span>status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a67a0db04d321a74b7e7fcfd3f1a3f70b">QZipReader::Status</a> status </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_zip_reader_a19148f1f2426078b672ac95d2b0c65ec_icgraph.png" border="0" usemap="#aclass_q_zip_reader_a19148f1f2426078b672ac95d2b0c65ec_icgraph" alt=""/></div>
+<map name="aclass_q_zip_reader_a19148f1f2426078b672ac95d2b0c65ec_icgraph" id="aclass_q_zip_reader_a19148f1f2426078b672ac95d2b0c65ec_icgraph">
+<area shape="rect" title=" " alt="" coords="145,5,202,32"/>
+<area shape="rect" href="class_q_zip_reader.html#a749143fca058a0affcb2431be0b2dc5b" title=" " alt="" coords="5,5,97,32"/>
+<area shape="poly" title=" " alt="" coords="129,21,97,21,97,16,129,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a4c181673bba5a91719a67f1340fa5742" name="a4c181673bba5a91719a67f1340fa5742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c181673bba5a91719a67f1340fa5742">&#9670;&#160;</a></span>d</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_zip_reader_private.html">QZipReaderPrivate</a>* d</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="qzipreader__p_8h_source.html">qzipreader_p.h</a></li>
+<li><a class="el" href="qzipreader__p_8cpp.html">qzipreader_p.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_q_zip_reader.html">QZipReader</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

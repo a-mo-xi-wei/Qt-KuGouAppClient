@@ -1,0 +1,1078 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: pattern_formatter类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classspdlog_1_1pattern__formatter.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classspdlog_1_1pattern__formatter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">pattern_formatter类 参考<span class="mlabels"><span class="mlabel final">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="pattern__formatter_8h_source.html">pattern_formatter.h</a>&gt;</code></p>
+<div class="dynheader">
+类 pattern_formatter 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter__inherit__graph.png" border="0" usemap="#apattern__formatter_inherit__map" alt="Inheritance graph"/></div>
+<map name="apattern__formatter_inherit__map" id="apattern__formatter_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,80,126,107"/>
+<area shape="rect" href="classspdlog_1_1formatter.html" title=" " alt="" coords="29,5,102,32"/>
+<area shape="poly" title=" " alt="" coords="68,48,68,80,63,80,63,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+pattern_formatter 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter__coll__graph.png" border="0" usemap="#apattern__formatter_coll__map" alt="Collaboration graph"/></div>
+<map name="apattern__formatter_coll__map" id="apattern__formatter_coll__map">
+<area shape="rect" title=" " alt="" coords="5,80,126,107"/>
+<area shape="rect" href="classspdlog_1_1formatter.html" title=" " alt="" coords="29,5,102,32"/>
+<area shape="poly" title=" " alt="" coords="68,48,68,80,63,80,63,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a9f95a768324c6141e7aa733db9ed20ad" id="r_a9f95a768324c6141e7aa733db9ed20ad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a> = std::unordered_map&lt;char, std::unique_ptr&lt;<a class="el" href="classspdlog_1_1custom__flag__formatter.html">custom_flag_formatter</a>&gt;&gt;</td></tr>
+<tr class="separator:a9f95a768324c6141e7aa733db9ed20ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a6ef3713322fbd977b57c1bb06936599d" id="r_a6ef3713322fbd977b57c1bb06936599d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef3713322fbd977b57c1bb06936599d">pattern_formatter</a> (std::string pattern, <a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a> time_type=<a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19af5ddaf0ca7929578b408c909429f68f2">pattern_time_type::local</a>, std::string eol=<a class="el" href="namespacespdlog_1_1details_1_1os.html#a60b692e75f5803901c4418be4e4f0bb2">spdlog::details::os::default_eol</a>, <a class="el" href="#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a> custom_user_flags=<a class="el" href="#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a>())</td></tr>
+<tr class="separator:a6ef3713322fbd977b57c1bb06936599d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2c16cd9a0e1712122462f8bef69c8f" id="r_a6d2c16cd9a0e1712122462f8bef69c8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d2c16cd9a0e1712122462f8bef69c8f">pattern_formatter</a> (<a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a> time_type=<a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19af5ddaf0ca7929578b408c909429f68f2">pattern_time_type::local</a>, std::string eol=<a class="el" href="namespacespdlog_1_1details_1_1os.html#a60b692e75f5803901c4418be4e4f0bb2">spdlog::details::os::default_eol</a>)</td></tr>
+<tr class="separator:a6d2c16cd9a0e1712122462f8bef69c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f7f9506e33545c9e8e708f0d2892d3" id="r_a64f7f9506e33545c9e8e708f0d2892d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64f7f9506e33545c9e8e708f0d2892d3">pattern_formatter</a> (const <a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> &amp;other)=delete</td></tr>
+<tr class="separator:a64f7f9506e33545c9e8e708f0d2892d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ad2daba958591389f4ac306f6cafbb" id="r_a48ad2daba958591389f4ac306f6cafbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48ad2daba958591389f4ac306f6cafbb">operator=</a> (const <a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> &amp;other)=delete</td></tr>
+<tr class="separator:a48ad2daba958591389f4ac306f6cafbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb96787ee06ffac94f71f61245934fe7" id="r_acb96787ee06ffac94f71f61245934fe7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">formatter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb96787ee06ffac94f71f61245934fe7">clone</a> () const override</td></tr>
+<tr class="separator:acb96787ee06ffac94f71f61245934fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196bb20b577f827b5b9b0fa39139295e" id="r_a196bb20b577f827b5b9b0fa39139295e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a196bb20b577f827b5b9b0fa39139295e">format</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg, <a class="el" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> &amp;dest) override</td></tr>
+<tr class="separator:a196bb20b577f827b5b9b0fa39139295e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64d9b36490b7357fcc7d008aaf141d9" id="r_ab64d9b36490b7357fcc7d008aaf141d9"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename... Args&gt; </td></tr>
+<tr class="memitem:ab64d9b36490b7357fcc7d008aaf141d9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab64d9b36490b7357fcc7d008aaf141d9">add_flag</a> (char <a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>, Args &amp;&amp;...args)</td></tr>
+<tr class="separator:ab64d9b36490b7357fcc7d008aaf141d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96a322354fb0703ad10b373c9415b14" id="r_af96a322354fb0703ad10b373c9415b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af96a322354fb0703ad10b373c9415b14">set_pattern</a> (std::string pattern)</td></tr>
+<tr class="separator:af96a322354fb0703ad10b373c9415b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66270507101326658c700dd7aacefa9f" id="r_a66270507101326658c700dd7aacefa9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66270507101326658c700dd7aacefa9f">need_localtime</a> (bool need=true)</td></tr>
+<tr class="separator:a66270507101326658c700dd7aacefa9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0fed3adeb901f55c8b8b9ce745e5be" id="r_a5c0fed3adeb901f55c8b8b9ce745e5be"><td class="memTemplParams" colspan="2">template&lt;typename Padder&gt; </td></tr>
+<tr class="memitem:a5c0fed3adeb901f55c8b8b9ce745e5be"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5c0fed3adeb901f55c8b8b9ce745e5be">handle_flag_</a> (char <a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>, <a class="el" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a> padding)</td></tr>
+<tr class="separator:a5c0fed3adeb901f55c8b8b9ce745e5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classspdlog_1_1formatter"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classspdlog_1_1formatter')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classspdlog_1_1formatter.html">formatter</a></td></tr>
+<tr class="memitem:ac1fac85c2449837170a099c0cf8b0ce2 inherit pub_methods_classspdlog_1_1formatter" id="r_ac1fac85c2449837170a099c0cf8b0ce2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspdlog_1_1formatter.html#ac1fac85c2449837170a099c0cf8b0ce2">~formatter</a> ()=default</td></tr>
+<tr class="separator:ac1fac85c2449837170a099c0cf8b0ce2 inherit pub_methods_classspdlog_1_1formatter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a1e6f9117c476958ad9ffa2ad816db6fa" id="r_a1e6f9117c476958ad9ffa2ad816db6fa"><td class="memItemLeft" align="right" valign="top">std::tm&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e6f9117c476958ad9ffa2ad816db6fa">get_time_</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg)</td></tr>
+<tr class="separator:a1e6f9117c476958ad9ffa2ad816db6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae28f7a22786c99b3cac2e9f12cc17f" id="r_aaae28f7a22786c99b3cac2e9f12cc17f"><td class="memTemplParams" colspan="2">template&lt;typename Padder&gt; </td></tr>
+<tr class="memitem:aaae28f7a22786c99b3cac2e9f12cc17f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aaae28f7a22786c99b3cac2e9f12cc17f">handle_flag_</a> (char <a class="el" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>, <a class="el" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a> padding)</td></tr>
+<tr class="separator:aaae28f7a22786c99b3cac2e9f12cc17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f127613916b4738f5b31f89ef71a2d" id="r_af0f127613916b4738f5b31f89ef71a2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0f127613916b4738f5b31f89ef71a2d">compile_pattern_</a> (const std::string &amp;pattern)</td></tr>
+<tr class="separator:af0f127613916b4738f5b31f89ef71a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:ace1f279be0a13d47470db704c1a786a0" id="r_ace1f279be0a13d47470db704c1a786a0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace1f279be0a13d47470db704c1a786a0">handle_padspec_</a> (std::string::const_iterator &amp;it, std::string::const_iterator end)</td></tr>
+<tr class="separator:ace1f279be0a13d47470db704c1a786a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aefc6d649e2e6e2a0c5a0824479a0fdfb" id="r_aefc6d649e2e6e2a0c5a0824479a0fdfb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefc6d649e2e6e2a0c5a0824479a0fdfb">pattern_</a></td></tr>
+<tr class="separator:aefc6d649e2e6e2a0c5a0824479a0fdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade62022bda8b1be2ac9a5f80672bcc32" id="r_ade62022bda8b1be2ac9a5f80672bcc32"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade62022bda8b1be2ac9a5f80672bcc32">eol_</a></td></tr>
+<tr class="separator:ade62022bda8b1be2ac9a5f80672bcc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c45d3c18571b1e0eb801f03b587b8d" id="r_a08c45d3c18571b1e0eb801f03b587b8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08c45d3c18571b1e0eb801f03b587b8d">pattern_time_type_</a></td></tr>
+<tr class="separator:a08c45d3c18571b1e0eb801f03b587b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426fa205fb1e4127ab2ec54891f0430e" id="r_a426fa205fb1e4127ab2ec54891f0430e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a426fa205fb1e4127ab2ec54891f0430e">need_localtime_</a></td></tr>
+<tr class="separator:a426fa205fb1e4127ab2ec54891f0430e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84e05de65ddd06394c7348bb6eecda1" id="r_ae84e05de65ddd06394c7348bb6eecda1"><td class="memItemLeft" align="right" valign="top">std::tm&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae84e05de65ddd06394c7348bb6eecda1">cached_tm_</a></td></tr>
+<tr class="separator:ae84e05de65ddd06394c7348bb6eecda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94aee3e2a7b16b25ae40f2a341f168fc" id="r_a94aee3e2a7b16b25ae40f2a341f168fc"><td class="memItemLeft" align="right" valign="top">std::chrono::seconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94aee3e2a7b16b25ae40f2a341f168fc">last_log_secs_</a></td></tr>
+<tr class="separator:a94aee3e2a7b16b25ae40f2a341f168fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2071d2a2bfe9ff2f9bda41c00452e0a" id="r_ae2071d2a2bfe9ff2f9bda41c00452e0a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classspdlog_1_1details_1_1flag__formatter.html">details::flag_formatter</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2071d2a2bfe9ff2f9bda41c00452e0a">formatters_</a></td></tr>
+<tr class="separator:ae2071d2a2bfe9ff2f9bda41c00452e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd9469f9c39e3ae74e5b8c6500bfa7b3" id="r_abd9469f9c39e3ae74e5b8c6500bfa7b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd9469f9c39e3ae74e5b8c6500bfa7b3">custom_handlers_</a></td></tr>
+<tr class="separator:abd9469f9c39e3ae74e5b8c6500bfa7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员类型定义说明</h2>
+<a id="a9f95a768324c6141e7aa733db9ed20ad" name="a9f95a768324c6141e7aa733db9ed20ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f95a768324c6141e7aa733db9ed20ad">&#9670;&#160;</a></span>custom_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a> = std::unordered_map&lt;char, std::unique_ptr&lt;<a class="el" href="classspdlog_1_1custom__flag__formatter.html">custom_flag_formatter</a>&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a6ef3713322fbd977b57c1bb06936599d" name="a6ef3713322fbd977b57c1bb06936599d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef3713322fbd977b57c1bb06936599d">&#9670;&#160;</a></span>pattern_formatter() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a></td>          <td class="paramname"><span class="paramname"><em>time_type</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19af5ddaf0ca7929578b408c909429f68f2">pattern_time_type::local</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>eol</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacespdlog_1_1details_1_1os.html#a60b692e75f5803901c4418be4e4f0bb2">spdlog::details::os::default_eol</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a></td>          <td class="paramname"><span class="paramname"><em>custom_user_flags</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a>()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a6ef3713322fbd977b57c1bb06936599d_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a6ef3713322fbd977b57c1bb06936599d_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a6ef3713322fbd977b57c1bb06936599d_cgraph" id="aclassspdlog_1_1pattern__formatter_a6ef3713322fbd977b57c1bb06936599d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,126,57"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d" title=" " alt="" coords="174,31,294,57"/>
+<area shape="poly" title=" " alt="" coords="126,41,158,41,158,47,126,47"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f" title=" " alt="" coords="368,5,462,32"/>
+<area shape="poly" title=" " alt="" coords="294,41,355,33,356,38,295,47"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0" title=" " alt="" coords="535,31,658,57"/>
+<area shape="poly" title=" " alt="" coords="295,41,520,41,520,47,295,47"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="342,107,487,149"/>
+<area shape="poly" title=" " alt="" coords="266,55,354,97,352,102,263,60"/>
+<area shape="poly" title=" " alt="" coords="367,20,294,30,293,25,366,15"/>
+<area shape="poly" title=" " alt="" coords="463,23,521,31,520,36,462,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a6ef3713322fbd977b57c1bb06936599d_icgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a6ef3713322fbd977b57c1bb06936599d_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a6ef3713322fbd977b57c1bb06936599d_icgraph" id="aclassspdlog_1_1pattern__formatter_a6ef3713322fbd977b57c1bb06936599d_icgraph">
+<area shape="rect" title=" " alt="" coords="174,56,294,83"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ab64d9b36490b7357fcc7d008aaf141d9" title=" " alt="" coords="30,5,101,32"/>
+<area shape="poly" title=" " alt="" coords="171,53,100,32,102,27,173,48"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a48ad2daba958591389f4ac306f6cafbb" title=" " alt="" coords="27,56,104,83"/>
+<area shape="poly" title=" " alt="" coords="158,72,104,72,104,67,158,67"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a64f7f9506e33545c9e8e708f0d2892d3" title=" " alt="" coords="5,107,126,133"/>
+<area shape="poly" title=" " alt="" coords="173,90,113,109,112,104,171,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6d2c16cd9a0e1712122462f8bef69c8f" name="a6d2c16cd9a0e1712122462f8bef69c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d2c16cd9a0e1712122462f8bef69c8f">&#9670;&#160;</a></span>pattern_formatter() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a></td>          <td class="paramname"><span class="paramname"><em>time_type</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19af5ddaf0ca7929578b408c909429f68f2">pattern_time_type::local</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>eol</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacespdlog_1_1details_1_1os.html#a60b692e75f5803901c4418be4e4f0bb2">spdlog::details::os::default_eol</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a6d2c16cd9a0e1712122462f8bef69c8f_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a6d2c16cd9a0e1712122462f8bef69c8f_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a6d2c16cd9a0e1712122462f8bef69c8f_cgraph" id="aclassspdlog_1_1pattern__formatter_a6d2c16cd9a0e1712122462f8bef69c8f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,126,40"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="174,5,319,48"/>
+<area shape="poly" title=" " alt="" coords="126,24,158,24,158,29,126,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a64f7f9506e33545c9e8e708f0d2892d3" name="a64f7f9506e33545c9e8e708f0d2892d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f7f9506e33545c9e8e708f0d2892d3">&#9670;&#160;</a></span>pattern_formatter() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a64f7f9506e33545c9e8e708f0d2892d3_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a64f7f9506e33545c9e8e708f0d2892d3_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a64f7f9506e33545c9e8e708f0d2892d3_cgraph" id="aclassspdlog_1_1pattern__formatter_a64f7f9506e33545c9e8e708f0d2892d3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,126,57"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d" title=" " alt="" coords="174,31,294,57"/>
+<area shape="poly" title=" " alt="" coords="126,41,158,41,158,47,126,47"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d" title=" " alt="" coords="342,31,462,57"/>
+<area shape="poly" title=" " alt="" coords="295,41,326,41,326,47,295,47"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f" title=" " alt="" coords="536,5,630,32"/>
+<area shape="poly" title=" " alt="" coords="462,41,523,33,524,38,463,47"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0" title=" " alt="" coords="704,31,826,57"/>
+<area shape="poly" title=" " alt="" coords="463,41,688,41,688,47,463,47"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="510,107,656,149"/>
+<area shape="poly" title=" " alt="" coords="434,55,523,97,520,102,432,60"/>
+<area shape="poly" title=" " alt="" coords="536,20,462,30,461,25,535,15"/>
+<area shape="poly" title=" " alt="" coords="631,23,689,31,688,36,630,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab64d9b36490b7357fcc7d008aaf141d9" name="ab64d9b36490b7357fcc7d008aaf141d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64d9b36490b7357fcc7d008aaf141d9">&#9670;&#160;</a></span>add_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> &amp; add_flag </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>flag</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_ab64d9b36490b7357fcc7d008aaf141d9_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_ab64d9b36490b7357fcc7d008aaf141d9_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_ab64d9b36490b7357fcc7d008aaf141d9_cgraph" id="aclassspdlog_1_1pattern__formatter_ab64d9b36490b7357fcc7d008aaf141d9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,43,76,69"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="460,5,606,48"/>
+<area shape="poly" title=" " alt="" coords="76,51,444,29,445,35,76,57"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d" title=" " alt="" coords="124,68,244,95"/>
+<area shape="poly" title=" " alt="" coords="77,60,109,65,108,71,76,65"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d" title=" " alt="" coords="292,72,412,99"/>
+<area shape="poly" title=" " alt="" coords="245,80,276,81,276,86,244,85"/>
+<area shape="poly" title=" " alt="" coords="395,69,450,51,451,56,397,74"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f" title=" " alt="" coords="486,72,580,99"/>
+<area shape="poly" title=" " alt="" coords="413,91,470,91,470,97,413,97"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0" title=" " alt="" coords="654,97,776,124"/>
+<area shape="poly" title=" " alt="" coords="402,97,461,108,553,114,638,113,638,118,553,119,460,113,401,102"/>
+<area shape="poly" title=" " alt="" coords="486,80,428,79,428,74,486,75"/>
+<area shape="poly" title=" " alt="" coords="581,89,639,97,638,103,580,94"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acb96787ee06ffac94f71f61245934fe7" name="acb96787ee06ffac94f71f61245934fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb96787ee06ffac94f71f61245934fe7">&#9670;&#160;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> std::unique_ptr&lt; <a class="el" href="classspdlog_1_1formatter.html">formatter</a> &gt; clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classspdlog_1_1formatter.html#aa5d4acb03216f2dab006c7d2302b2676">formatter</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_acb96787ee06ffac94f71f61245934fe7_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_acb96787ee06ffac94f71f61245934fe7_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_acb96787ee06ffac94f71f61245934fe7_cgraph" id="aclassspdlog_1_1pattern__formatter_acb96787ee06ffac94f71f61245934fe7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,58,40"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="106,5,251,48"/>
+<area shape="poly" title=" " alt="" coords="58,24,90,24,90,29,58,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_acb96787ee06ffac94f71f61245934fe7_icgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_acb96787ee06ffac94f71f61245934fe7_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_acb96787ee06ffac94f71f61245934fe7_icgraph" id="aclassspdlog_1_1pattern__formatter_acb96787ee06ffac94f71f61245934fe7_icgraph">
+<area shape="rect" title=" " alt="" coords="130,5,182,32"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a48ad2daba958591389f4ac306f6cafbb" title=" " alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="114,21,82,21,82,16,114,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af0f127613916b4738f5b31f89ef71a2d" name="af0f127613916b4738f5b31f89ef71a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f127613916b4738f5b31f89ef71a2d">&#9670;&#160;</a></span>compile_pattern_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void compile_pattern_ </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_af0f127613916b4738f5b31f89ef71a2d_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_af0f127613916b4738f5b31f89ef71a2d_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_af0f127613916b4738f5b31f89ef71a2d_cgraph" id="aclassspdlog_1_1pattern__formatter_af0f127613916b4738f5b31f89ef71a2d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,126,57"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f" title=" " alt="" coords="199,5,294,32"/>
+<area shape="poly" title=" " alt="" coords="126,41,187,33,188,38,127,47"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0" title=" " alt="" coords="367,31,489,57"/>
+<area shape="poly" title=" " alt="" coords="126,41,352,41,352,47,126,47"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="174,107,319,149"/>
+<area shape="poly" title=" " alt="" coords="97,55,186,97,184,102,95,60"/>
+<area shape="poly" title=" " alt="" coords="199,20,125,30,125,25,198,15"/>
+<area shape="poly" title=" " alt="" coords="294,23,352,31,351,36,293,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_af0f127613916b4738f5b31f89ef71a2d_icgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_af0f127613916b4738f5b31f89ef71a2d_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_af0f127613916b4738f5b31f89ef71a2d_icgraph" id="aclassspdlog_1_1pattern__formatter_af0f127613916b4738f5b31f89ef71a2d_icgraph">
+<area shape="rect" title=" " alt="" coords="342,31,462,57"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f" title=" " alt="" coords="187,5,281,32"/>
+<area shape="poly" title=" " alt="" coords="326,44,274,35,275,30,327,39"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d" title=" " alt="" coords="174,56,294,83"/>
+<area shape="poly" title=" " alt="" coords="327,58,295,63,294,58,326,53"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af96a322354fb0703ad10b373c9415b14" title=" " alt="" coords="191,107,277,133"/>
+<area shape="poly" title=" " alt="" coords="360,67,295,97,269,108,267,104,293,92,358,62"/>
+<area shape="poly" title=" " alt="" coords="297,17,361,27,360,33,296,22"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ab64d9b36490b7357fcc7d008aaf141d9" title=" " alt="" coords="30,5,101,32"/>
+<area shape="poly" title=" " alt="" coords="171,53,100,32,102,27,173,48"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a48ad2daba958591389f4ac306f6cafbb" title=" " alt="" coords="27,56,104,83"/>
+<area shape="poly" title=" " alt="" coords="158,72,104,72,104,67,158,67"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a64f7f9506e33545c9e8e708f0d2892d3" title=" " alt="" coords="5,107,126,133"/>
+<area shape="poly" title=" " alt="" coords="173,90,113,109,112,104,171,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a196bb20b577f827b5b9b0fa39139295e" name="a196bb20b577f827b5b9b0fa39139295e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196bb20b577f827b5b9b0fa39139295e">&#9670;&#160;</a></span>format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void format </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classspdlog_1_1formatter.html#abc88270e8e0362f16eb0e5ab3121b72d">formatter</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a196bb20b577f827b5b9b0fa39139295e_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a196bb20b577f827b5b9b0fa39139295e_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a196bb20b577f827b5b9b0fa39139295e_cgraph" id="aclassspdlog_1_1pattern__formatter_a196bb20b577f827b5b9b0fa39139295e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,53,64,80"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1fmt__helper.html#a9b133cfeb950ba03f41ce7226e8b5d12" title=" " alt="" coords="112,16,298,59"/>
+<area shape="poly" title=" " alt="" coords="64,59,96,53,97,59,65,64"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a1e6f9117c476958ad9ffa2ad816db6fa" title=" " alt="" coords="166,83,244,109"/>
+<area shape="poly" title=" " alt="" coords="65,69,151,84,150,89,64,74"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#adabd49306751291e33b77b3cab1813fa" title=" " alt="" coords="346,29,473,72"/>
+<area shape="poly" title=" " alt="" coords="244,85,330,65,331,71,245,90"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a599dd5b8e37c78e66e405a86612f7277" title=" " alt="" coords="346,120,473,163"/>
+<area shape="poly" title=" " alt="" coords="245,102,331,121,330,127,244,107"/>
+<area shape="poly" title=" " alt="" coords="370,29,369,19,375,10,389,5,410,3,432,5,445,11,443,16,430,10,410,8,390,10,379,15,374,21,376,28"/>
+<area shape="poly" title=" " alt="" coords="370,120,369,110,375,101,389,95,410,93,432,96,445,102,443,107,430,101,410,99,390,101,379,105,374,111,376,119"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e6f9117c476958ad9ffa2ad816db6fa" name="a1e6f9117c476958ad9ffa2ad816db6fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6f9117c476958ad9ffa2ad816db6fa">&#9670;&#160;</a></span>get_time_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> std::tm get_time_ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a1e6f9117c476958ad9ffa2ad816db6fa_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a1e6f9117c476958ad9ffa2ad816db6fa_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a1e6f9117c476958ad9ffa2ad816db6fa_cgraph" id="aclassspdlog_1_1pattern__formatter_a1e6f9117c476958ad9ffa2ad816db6fa_cgraph">
+<area shape="rect" title=" " alt="" coords="5,83,84,109"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#adabd49306751291e33b77b3cab1813fa" title=" " alt="" coords="132,29,259,72"/>
+<area shape="poly" title=" " alt="" coords="83,82,116,72,118,77,85,87"/>
+<area shape="rect" href="namespacespdlog_1_1details_1_1os.html#a599dd5b8e37c78e66e405a86612f7277" title=" " alt="" coords="132,120,259,163"/>
+<area shape="poly" title=" " alt="" coords="85,105,118,115,116,120,83,110"/>
+<area shape="poly" title=" " alt="" coords="166,29,165,19,169,11,180,5,195,3,212,5,222,11,219,16,210,10,195,8,182,10,173,14,170,20,171,28"/>
+<area shape="poly" title=" " alt="" coords="166,120,165,110,169,101,180,95,195,93,212,96,222,102,219,107,210,101,195,99,182,100,173,105,170,111,171,119"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a1e6f9117c476958ad9ffa2ad816db6fa_icgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a1e6f9117c476958ad9ffa2ad816db6fa_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a1e6f9117c476958ad9ffa2ad816db6fa_icgraph" id="aclassspdlog_1_1pattern__formatter_a1e6f9117c476958ad9ffa2ad816db6fa_icgraph">
+<area shape="rect" title=" " alt="" coords="112,5,190,32"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a196bb20b577f827b5b9b0fa39139295e" title=" " alt="" coords="5,5,64,32"/>
+<area shape="poly" title=" " alt="" coords="96,21,64,21,64,16,96,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5c0fed3adeb901f55c8b8b9ce745e5be" name="a5c0fed3adeb901f55c8b8b9ce745e5be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0fed3adeb901f55c8b8b9ce745e5be">&#9670;&#160;</a></span>handle_flag_() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Padder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void handle_flag_ </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>flag</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a></td>          <td class="paramname"><span class="paramname"><em>padding</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a5c0fed3adeb901f55c8b8b9ce745e5be_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a5c0fed3adeb901f55c8b8b9ce745e5be_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a5c0fed3adeb901f55c8b8b9ce745e5be_cgraph" id="aclassspdlog_1_1pattern__formatter_a5c0fed3adeb901f55c8b8b9ce745e5be_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,100,40"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="148,5,293,48"/>
+<area shape="poly" title=" " alt="" coords="100,24,132,24,132,29,100,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaae28f7a22786c99b3cac2e9f12cc17f" name="aaae28f7a22786c99b3cac2e9f12cc17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae28f7a22786c99b3cac2e9f12cc17f">&#9670;&#160;</a></span>handle_flag_() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Padder&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handle_flag_ </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>flag</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a></td>          <td class="paramname"><span class="paramname"><em>padding</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_aaae28f7a22786c99b3cac2e9f12cc17f_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_aaae28f7a22786c99b3cac2e9f12cc17f_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_aaae28f7a22786c99b3cac2e9f12cc17f_cgraph" id="aclassspdlog_1_1pattern__formatter_aaae28f7a22786c99b3cac2e9f12cc17f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,100,83"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d" title=" " alt="" coords="148,56,268,83"/>
+<area shape="poly" title=" " alt="" coords="100,75,132,76,132,81,100,80"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0" title=" " alt="" coords="328,5,450,32"/>
+<area shape="poly" title=" " alt="" coords="99,53,147,41,232,29,312,21,312,26,233,34,148,47,100,58"/>
+<area shape="poly" title=" " alt="" coords="147,63,115,63,115,58,147,58"/>
+<area shape="poly" title=" " alt="" coords="258,53,323,34,325,39,259,58"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="316,56,461,99"/>
+<area shape="poly" title=" " alt="" coords="269,69,301,71,300,76,268,75"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_aaae28f7a22786c99b3cac2e9f12cc17f_icgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_aaae28f7a22786c99b3cac2e9f12cc17f_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_aaae28f7a22786c99b3cac2e9f12cc17f_icgraph" id="aclassspdlog_1_1pattern__formatter_aaae28f7a22786c99b3cac2e9f12cc17f_icgraph">
+<area shape="rect" title=" " alt="" coords="510,81,605,108"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d" title=" " alt="" coords="342,81,462,108"/>
+<area shape="poly" title=" " alt="" coords="495,106,463,106,463,101,495,101"/>
+<area shape="poly" title=" " alt="" coords="478,83,510,84,510,89,478,88"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d" title=" " alt="" coords="174,56,294,83"/>
+<area shape="poly" title=" " alt="" coords="326,86,294,81,295,76,327,81"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af96a322354fb0703ad10b373c9415b14" title=" " alt="" coords="191,107,277,133"/>
+<area shape="poly" title=" " alt="" coords="327,109,278,116,277,111,326,103"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ab64d9b36490b7357fcc7d008aaf141d9" title=" " alt="" coords="30,5,101,32"/>
+<area shape="poly" title=" " alt="" coords="171,53,100,32,102,27,173,48"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a48ad2daba958591389f4ac306f6cafbb" title=" " alt="" coords="27,56,104,83"/>
+<area shape="poly" title=" " alt="" coords="158,72,104,72,104,67,158,67"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a64f7f9506e33545c9e8e708f0d2892d3" title=" " alt="" coords="5,107,126,133"/>
+<area shape="poly" title=" " alt="" coords="173,90,113,109,112,104,171,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ace1f279be0a13d47470db704c1a786a0" name="ace1f279be0a13d47470db704c1a786a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace1f279be0a13d47470db704c1a786a0">&#9670;&#160;</a></span>handle_padspec_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> <a class="el" href="structspdlog_1_1details_1_1padding__info.html">details::padding_info</a> handle_padspec_ </td>
+          <td>(</td>
+          <td class="paramtype">std::string::const_iterator &amp;</td>          <td class="paramname"><span class="paramname"><em>it</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string::const_iterator</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_ace1f279be0a13d47470db704c1a786a0_icgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_ace1f279be0a13d47470db704c1a786a0_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_ace1f279be0a13d47470db704c1a786a0_icgraph" id="aclassspdlog_1_1pattern__formatter_ace1f279be0a13d47470db704c1a786a0_icgraph">
+<area shape="rect" title=" " alt="" coords="510,31,633,57"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d" title=" " alt="" coords="342,56,462,83"/>
+<area shape="poly" title=" " alt="" coords="495,58,463,63,462,58,494,53"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f" title=" " alt="" coords="187,5,281,32"/>
+<area shape="poly" title=" " alt="" coords="494,41,281,25,282,20,495,36"/>
+<area shape="poly" title=" " alt="" coords="326,58,258,35,260,30,328,53"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d" title=" " alt="" coords="174,56,294,83"/>
+<area shape="poly" title=" " alt="" coords="326,72,295,72,295,67,326,67"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af96a322354fb0703ad10b373c9415b14" title=" " alt="" coords="191,107,277,133"/>
+<area shape="poly" title=" " alt="" coords="342,90,278,110,277,105,340,85"/>
+<area shape="poly" title=" " alt="" coords="297,26,378,53,376,58,295,31"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ab64d9b36490b7357fcc7d008aaf141d9" title=" " alt="" coords="30,5,101,32"/>
+<area shape="poly" title=" " alt="" coords="171,53,100,32,102,27,173,48"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a48ad2daba958591389f4ac306f6cafbb" title=" " alt="" coords="27,56,104,83"/>
+<area shape="poly" title=" " alt="" coords="158,72,104,72,104,67,158,67"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a64f7f9506e33545c9e8e708f0d2892d3" title=" " alt="" coords="5,107,126,133"/>
+<area shape="poly" title=" " alt="" coords="173,90,113,109,112,104,171,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a66270507101326658c700dd7aacefa9f" name="a66270507101326658c700dd7aacefa9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66270507101326658c700dd7aacefa9f">&#9670;&#160;</a></span>need_localtime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void need_localtime </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>need</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48ad2daba958591389f4ac306f6cafbb" name="a48ad2daba958591389f4ac306f6cafbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ad2daba958591389f4ac306f6cafbb">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> &amp; operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_a48ad2daba958591389f4ac306f6cafbb_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_a48ad2daba958591389f4ac306f6cafbb_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_a48ad2daba958591389f4ac306f6cafbb_cgraph" id="aclassspdlog_1_1pattern__formatter_a48ad2daba958591389f4ac306f6cafbb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,43,82,69"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#acb96787ee06ffac94f71f61245934fe7" title=" " alt="" coords="332,15,384,41"/>
+<area shape="poly" title=" " alt="" coords="82,50,316,29,317,34,82,55"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#a6ef3713322fbd977b57c1bb06936599d" title=" " alt="" coords="130,68,250,95"/>
+<area shape="poly" title=" " alt="" coords="83,60,115,66,114,71,82,65"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="466,5,612,48"/>
+<area shape="poly" title=" " alt="" coords="385,25,450,25,450,30,385,30"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d" title=" " alt="" coords="298,72,418,99"/>
+<area shape="poly" title=" " alt="" coords="251,80,282,81,282,86,250,85"/>
+<area shape="poly" title=" " alt="" coords="401,69,456,51,457,56,403,74"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f" title=" " alt="" coords="492,72,586,99"/>
+<area shape="poly" title=" " alt="" coords="419,91,476,91,476,97,419,97"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0" title=" " alt="" coords="660,97,782,124"/>
+<area shape="poly" title=" " alt="" coords="408,97,467,108,559,114,644,113,644,118,559,119,466,113,407,102"/>
+<area shape="poly" title=" " alt="" coords="492,80,434,79,434,74,492,75"/>
+<area shape="poly" title=" " alt="" coords="587,89,645,97,644,103,586,94"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af96a322354fb0703ad10b373c9415b14" name="af96a322354fb0703ad10b373c9415b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96a322354fb0703ad10b373c9415b14">&#9670;&#160;</a></span>set_pattern()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_my_spdlog_2spdlog_2common_8h.html#a81ecc4703fe6ce0f7820fc3652ee2b21">SPDLOG_INLINE</a> void set_pattern </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1pattern__formatter_af96a322354fb0703ad10b373c9415b14_cgraph.png" border="0" usemap="#aclassspdlog_1_1pattern__formatter_af96a322354fb0703ad10b373c9415b14_cgraph" alt=""/></div>
+<map name="aclassspdlog_1_1pattern__formatter_af96a322354fb0703ad10b373c9415b14_cgraph" id="aclassspdlog_1_1pattern__formatter_af96a322354fb0703ad10b373c9415b14_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,92,57"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#af0f127613916b4738f5b31f89ef71a2d" title=" " alt="" coords="140,31,260,57"/>
+<area shape="poly" title=" " alt="" coords="92,41,124,41,124,47,92,47"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#aaae28f7a22786c99b3cac2e9f12cc17f" title=" " alt="" coords="334,5,428,32"/>
+<area shape="poly" title=" " alt="" coords="260,41,321,33,322,38,261,47"/>
+<area shape="rect" href="classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0" title=" " alt="" coords="501,31,624,57"/>
+<area shape="poly" title=" " alt="" coords="261,41,486,41,486,47,261,47"/>
+<area shape="rect" href="namespacespdlog_1_1details.html#a2d5a8a422b22079ac963f0bbfdddbcef" title=" " alt="" coords="308,107,453,149"/>
+<area shape="poly" title=" " alt="" coords="232,55,320,97,318,102,229,60"/>
+<area shape="poly" title=" " alt="" coords="333,20,260,30,259,25,332,15"/>
+<area shape="poly" title=" " alt="" coords="429,23,487,31,486,36,428,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ae84e05de65ddd06394c7348bb6eecda1" name="ae84e05de65ddd06394c7348bb6eecda1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84e05de65ddd06394c7348bb6eecda1">&#9670;&#160;</a></span>cached_tm_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tm cached_tm_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd9469f9c39e3ae74e5b8c6500bfa7b3" name="abd9469f9c39e3ae74e5b8c6500bfa7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd9469f9c39e3ae74e5b8c6500bfa7b3">&#9670;&#160;</a></span>custom_handlers_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a9f95a768324c6141e7aa733db9ed20ad">custom_flags</a> custom_handlers_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade62022bda8b1be2ac9a5f80672bcc32" name="ade62022bda8b1be2ac9a5f80672bcc32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade62022bda8b1be2ac9a5f80672bcc32">&#9670;&#160;</a></span>eol_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string eol_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2071d2a2bfe9ff2f9bda41c00452e0a" name="ae2071d2a2bfe9ff2f9bda41c00452e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2071d2a2bfe9ff2f9bda41c00452e0a">&#9670;&#160;</a></span>formatters_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="classspdlog_1_1details_1_1flag__formatter.html">details::flag_formatter</a>&gt; &gt; formatters_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94aee3e2a7b16b25ae40f2a341f168fc" name="a94aee3e2a7b16b25ae40f2a341f168fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94aee3e2a7b16b25ae40f2a341f168fc">&#9670;&#160;</a></span>last_log_secs_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::seconds last_log_secs_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a426fa205fb1e4127ab2ec54891f0430e" name="a426fa205fb1e4127ab2ec54891f0430e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a426fa205fb1e4127ab2ec54891f0430e">&#9670;&#160;</a></span>need_localtime_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool need_localtime_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefc6d649e2e6e2a0c5a0824479a0fdfb" name="aefc6d649e2e6e2a0c5a0824479a0fdfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefc6d649e2e6e2a0c5a0824479a0fdfb">&#9670;&#160;</a></span>pattern_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string pattern_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08c45d3c18571b1e0eb801f03b587b8d" name="a08c45d3c18571b1e0eb801f03b587b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c45d3c18571b1e0eb801f03b587b8d">&#9670;&#160;</a></span>pattern_time_type_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacespdlog.html#a9d0b77a62b7a20fc1ca92b779eb5ed19">pattern_time_type</a> pattern_time_type_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="pattern__formatter_8h_source.html">pattern_formatter.h</a></li>
+<li><a class="el" href="pattern__formatter-inl_8h_source.html">pattern_formatter-inl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="classspdlog_1_1pattern__formatter.html">pattern_formatter</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

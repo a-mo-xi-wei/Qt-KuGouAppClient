@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_keyboard.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__keyboard_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SDL_keyboard.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_s_d_l__keyboard_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Simple DirectMedia Layer</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  Copyright (C) 1997-2025 Sam Lantinga &lt;slouken@libsdl.org&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  This software is provided &#39;as-is&#39;, without any express or implied</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  warranty.  In no event will the authors be held liable for any damages</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  arising from the use of this software.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  Permission is granted to anyone to use this software for any purpose,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  including commercial applications, and to alter it and redistribute it</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  freely, subject to the following restrictions:</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  1. The origin of this software must not be misrepresented; you must not</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">     claim that you wrote the original software. If you use this software</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">     in a product, an acknowledgment in the product documentation would be</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">     appreciated but is not required.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  2. Altered source versions must be plainly marked as such, and must not be</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">     misrepresented as being the original software.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  3. This notice may not be removed or altered from any source distribution.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef SDL_keyboard_h_</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define SDL_keyboard_h_</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="_s_d_l__stdinc_8h.html">SDL_stdinc.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="_s_d_l__error_8h.html">SDL_error.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="_s_d_l__keycode_8h.html">SDL_keycode.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="_s_d_l__video_8h.html">SDL_video.h</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="begin__code_8h.html">begin_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">/* Set up for C function definitions, even when using C++ */</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_s_d_l___keysym.html">   47</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_s_d_l___keysym.html">SDL_Keysym</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_s_d_l___keysym.html#a9c8d3b45ebf0a9f0673325d40755c066">   49</a></span>    <a class="code hl_enumeration" href="_s_d_l__scancode_8h.html#a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</a> <a class="code hl_variable" href="struct_s_d_l___keysym.html#a9c8d3b45ebf0a9f0673325d40755c066">scancode</a>;      </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_s_d_l___keysym.html#a20cf23ed00a5cd751fa49ad19e93305a">   50</a></span>    <a class="code hl_typedef" href="_s_d_l__keycode_8h.html#ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</a> <a class="code hl_variable" href="struct_s_d_l___keysym.html#a20cf23ed00a5cd751fa49ad19e93305a">sym</a>;            </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_s_d_l___keysym.html#a09294cbc86473d2bcb27513748b81aec">   51</a></span>    <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a31fcc0a076c9068668173ee26d33e42b">Uint16</a> <a class="code hl_variable" href="struct_s_d_l___keysym.html#a09294cbc86473d2bcb27513748b81aec">mod</a>;                 </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_s_d_l___keysym.html#acdefb820f1317fee3507aa00d3d77468">   52</a></span>    <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a> <a class="code hl_variable" href="struct_s_d_l___keysym.html#acdefb820f1317fee3507aa00d3d77468">unused</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a074ae08acbe79dba712775b95267f4d2">   53</a></span>} <a class="code hl_struct" href="struct_s_d_l___keysym.html">SDL_Keysym</a>;</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/* Function prototypes */</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a3b552fc22887b0f67b2463301698078e">   64</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_typedef" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> * <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a3b552fc22887b0f67b2463301698078e">SDL_GetKeyboardFocus</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a6df72a92c606bfcf9ef00dc1b049270f">   95</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a> *<a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a6df72a92c606bfcf9ef00dc1b049270f">SDL_GetKeyboardState</a>(<span class="keywordtype">int</span> *numkeys);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a8631a8c97a224492e9b35a00761beb15">  106</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a8631a8c97a224492e9b35a00761beb15">SDL_ResetKeyboard</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a7b2ee63de74c442ac456cac9db5f8ed0">  119</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_enumeration" href="_s_d_l__keycode_8h.html#afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a7b2ee63de74c442ac456cac9db5f8ed0">SDL_GetModState</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a705c85881304eab01f00abeca2ef5846">  138</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a705c85881304eab01f00abeca2ef5846">SDL_SetModState</a>(<a class="code hl_enumeration" href="_s_d_l__keycode_8h.html#afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</a> modstate);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#aa74e6944ede98feeb09408fd97aaad57">  154</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_typedef" href="_s_d_l__keycode_8h.html#ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#aa74e6944ede98feeb09408fd97aaad57">SDL_GetKeyFromScancode</a>(<a class="code hl_enumeration" href="_s_d_l__scancode_8h.html#a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</a> scancode);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a36216054a385bea6898a35ded18d9c0f">  170</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_enumeration" href="_s_d_l__scancode_8h.html#a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a36216054a385bea6898a35ded18d9c0f">SDL_GetScancodeFromKey</a>(<a class="code hl_typedef" href="_s_d_l__keycode_8h.html#ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a2c826a83964b85167f50f7bf527badf1">key</a>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a092c44261fe9c44f77a46a705f59eb57">  195</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a092c44261fe9c44f77a46a705f59eb57">SDL_GetScancodeName</a>(<a class="code hl_enumeration" href="_s_d_l__scancode_8h.html#a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</a> scancode);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a0cb32dd58d3dc5b77c9daf0b6000f93c">  210</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_enumeration" href="_s_d_l__scancode_8h.html#a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a0cb32dd58d3dc5b77c9daf0b6000f93c">SDL_GetScancodeFromName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a25e699451e621cd1ce29ae20f352f318">  229</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a25e699451e621cd1ce29ae20f352f318">SDL_GetKeyName</a>(<a class="code hl_typedef" href="_s_d_l__keycode_8h.html#ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a2c826a83964b85167f50f7bf527badf1">key</a>);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#ad4d4e79f117a9092ec269601c5423337">  244</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_typedef" href="_s_d_l__keycode_8h.html#ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#ad4d4e79f117a9092ec269601c5423337">SDL_GetKeyFromName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#ab2c8474b9a8b6d07cae4f8eceab38870">  261</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#ab2c8474b9a8b6d07cae4f8eceab38870">SDL_StartTextInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a6c84ed1daac21f8224d43bcb9d5bc597">  272</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a6c84ed1daac21f8224d43bcb9d5bc597">SDL_IsTextInputActive</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#ab08b914cdfb2eaed26165cb2f6b110ec">  281</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#ab08b914cdfb2eaed26165cb2f6b110ec">SDL_StopTextInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a1b619a22759e8e833b46a06a6b0b7115">  291</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a1b619a22759e8e833b46a06a6b0b7115">SDL_ClearComposition</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a026985a9c6b23a6c71828542cc679ebf">  298</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a026985a9c6b23a6c71828542cc679ebf">SDL_IsTextInputShown</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a3de0c0f774c835db2131838c25a6c949">  320</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <span class="keywordtype">void</span> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a3de0c0f774c835db2131838c25a6c949">SDL_SetTextInputRect</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_s_d_l___rect.html">SDL_Rect</a> *rect);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a106356274c192b53844c8f1a821b00d7">  333</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a106356274c192b53844c8f1a821b00d7">SDL_HasScreenKeyboardSupport</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="_s_d_l__keyboard_8h.html#a92f5b73c7b71efeb68f5e9616cb918b7">  345</a></span><span class="keyword">extern</span> <a class="code hl_define" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code hl_enumeration" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> <a class="code hl_define" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> <a class="code hl_function" href="_s_d_l__keyboard_8h.html#a92f5b73c7b71efeb68f5e9616cb918b7">SDL_IsScreenKeyboardShown</a>(<a class="code hl_typedef" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *window);</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="comment">/* Ends C function definitions when using C++ */</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>}</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">#include &quot;<a class="code" href="close__code_8h.html">close_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="preprocessor">#endif </span><span class="comment">/* SDL_keyboard_h_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="comment">/* vi: set ts=4 sw=4 expandtab: */</span></div>
+<div class="ttc" id="a_s_d_l__error_8h_html"><div class="ttname"><a href="_s_d_l__error_8h.html">SDL_error.h</a></div><div class="ttdoc">Simple error message routines for SDL.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a026985a9c6b23a6c71828542cc679ebf"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a026985a9c6b23a6c71828542cc679ebf">SDL_IsTextInputShown</a></div><div class="ttdeci">DECLSPEC SDL_bool SDLCALL SDL_IsTextInputShown(void)</div><div class="ttdoc">Returns if an IME Composite or Candidate window is currently shown.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a092c44261fe9c44f77a46a705f59eb57"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a092c44261fe9c44f77a46a705f59eb57">SDL_GetScancodeName</a></div><div class="ttdeci">DECLSPEC const char *SDLCALL SDL_GetScancodeName(SDL_Scancode scancode)</div><div class="ttdoc">Get a human-readable name for a scancode.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a0cb32dd58d3dc5b77c9daf0b6000f93c"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a0cb32dd58d3dc5b77c9daf0b6000f93c">SDL_GetScancodeFromName</a></div><div class="ttdeci">DECLSPEC SDL_Scancode SDLCALL SDL_GetScancodeFromName(const char *name)</div><div class="ttdoc">Get a scancode from a human-readable name.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a106356274c192b53844c8f1a821b00d7"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a106356274c192b53844c8f1a821b00d7">SDL_HasScreenKeyboardSupport</a></div><div class="ttdeci">DECLSPEC SDL_bool SDLCALL SDL_HasScreenKeyboardSupport(void)</div><div class="ttdoc">Check whether the platform has screen keyboard support.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a1b619a22759e8e833b46a06a6b0b7115"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a1b619a22759e8e833b46a06a6b0b7115">SDL_ClearComposition</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_ClearComposition(void)</div><div class="ttdoc">Dismiss the composition window/IME without disabling the subsystem.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a25e699451e621cd1ce29ae20f352f318"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a25e699451e621cd1ce29ae20f352f318">SDL_GetKeyName</a></div><div class="ttdeci">DECLSPEC const char *SDLCALL SDL_GetKeyName(SDL_Keycode key)</div><div class="ttdoc">Get a human-readable name for a key.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a36216054a385bea6898a35ded18d9c0f"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a36216054a385bea6898a35ded18d9c0f">SDL_GetScancodeFromKey</a></div><div class="ttdeci">DECLSPEC SDL_Scancode SDLCALL SDL_GetScancodeFromKey(SDL_Keycode key)</div><div class="ttdoc">Get the scancode corresponding to the given key code according to the current keyboard layout.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a3b552fc22887b0f67b2463301698078e"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a3b552fc22887b0f67b2463301698078e">SDL_GetKeyboardFocus</a></div><div class="ttdeci">DECLSPEC SDL_Window *SDLCALL SDL_GetKeyboardFocus(void)</div><div class="ttdoc">Query the window which currently has keyboard focus.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a3de0c0f774c835db2131838c25a6c949"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a3de0c0f774c835db2131838c25a6c949">SDL_SetTextInputRect</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_SetTextInputRect(const SDL_Rect *rect)</div><div class="ttdoc">Set the rectangle used to type Unicode text inputs.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a6c84ed1daac21f8224d43bcb9d5bc597"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a6c84ed1daac21f8224d43bcb9d5bc597">SDL_IsTextInputActive</a></div><div class="ttdeci">DECLSPEC SDL_bool SDLCALL SDL_IsTextInputActive(void)</div><div class="ttdoc">Check whether or not Unicode text input events are enabled.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a6df72a92c606bfcf9ef00dc1b049270f"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a6df72a92c606bfcf9ef00dc1b049270f">SDL_GetKeyboardState</a></div><div class="ttdeci">DECLSPEC const Uint8 *SDLCALL SDL_GetKeyboardState(int *numkeys)</div><div class="ttdoc">Get a snapshot of the current state of the keyboard.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a705c85881304eab01f00abeca2ef5846"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a705c85881304eab01f00abeca2ef5846">SDL_SetModState</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_SetModState(SDL_Keymod modstate)</div><div class="ttdoc">Set the current key modifier state for the keyboard.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a7b2ee63de74c442ac456cac9db5f8ed0"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a7b2ee63de74c442ac456cac9db5f8ed0">SDL_GetModState</a></div><div class="ttdeci">DECLSPEC SDL_Keymod SDLCALL SDL_GetModState(void)</div><div class="ttdoc">Get the current key modifier state for the keyboard.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a8631a8c97a224492e9b35a00761beb15"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a8631a8c97a224492e9b35a00761beb15">SDL_ResetKeyboard</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_ResetKeyboard(void)</div><div class="ttdoc">Clear the state of the keyboard</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_a92f5b73c7b71efeb68f5e9616cb918b7"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#a92f5b73c7b71efeb68f5e9616cb918b7">SDL_IsScreenKeyboardShown</a></div><div class="ttdeci">DECLSPEC SDL_bool SDLCALL SDL_IsScreenKeyboardShown(SDL_Window *window)</div><div class="ttdoc">Check whether the screen keyboard is shown for given window.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_aa74e6944ede98feeb09408fd97aaad57"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#aa74e6944ede98feeb09408fd97aaad57">SDL_GetKeyFromScancode</a></div><div class="ttdeci">DECLSPEC SDL_Keycode SDLCALL SDL_GetKeyFromScancode(SDL_Scancode scancode)</div><div class="ttdoc">Get the key code corresponding to the given scancode according to the current keyboard layout.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_ab08b914cdfb2eaed26165cb2f6b110ec"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#ab08b914cdfb2eaed26165cb2f6b110ec">SDL_StopTextInput</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_StopTextInput(void)</div><div class="ttdoc">Stop receiving any text input events.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_ab2c8474b9a8b6d07cae4f8eceab38870"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#ab2c8474b9a8b6d07cae4f8eceab38870">SDL_StartTextInput</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_StartTextInput(void)</div><div class="ttdoc">Start accepting Unicode text input events.</div></div>
+<div class="ttc" id="a_s_d_l__keyboard_8h_html_ad4d4e79f117a9092ec269601c5423337"><div class="ttname"><a href="_s_d_l__keyboard_8h.html#ad4d4e79f117a9092ec269601c5423337">SDL_GetKeyFromName</a></div><div class="ttdeci">DECLSPEC SDL_Keycode SDLCALL SDL_GetKeyFromName(const char *name)</div><div class="ttdoc">Get a key code from a human-readable name.</div></div>
+<div class="ttc" id="a_s_d_l__keycode_8h_html"><div class="ttname"><a href="_s_d_l__keycode_8h.html">SDL_keycode.h</a></div><div class="ttdoc">Defines constants which identify keyboard keys and modifiers.</div></div>
+<div class="ttc" id="a_s_d_l__keycode_8h_html_ae9265f064f13f0f74dfca26a67875171"><div class="ttname"><a href="_s_d_l__keycode_8h.html#ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</a></div><div class="ttdeci">Sint32 SDL_Keycode</div><div class="ttdoc">The SDL virtual key representation.</div><div class="ttdef"><b>定义</b> SDL_keycode.h:45</div></div>
+<div class="ttc" id="a_s_d_l__keycode_8h_html_afa050ad71f0a5b86aa05cb13f542d747"><div class="ttname"><a href="_s_d_l__keycode_8h.html#afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</a></div><div class="ttdeci">SDL_Keymod</div><div class="ttdoc">Enumeration of valid key mods (possibly OR&#39;d together).</div><div class="ttdef"><b>定义</b> SDL_keycode.h:333</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a2c826a83964b85167f50f7bf527badf1"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a2c826a83964b85167f50f7bf527badf1">key</a></div><div class="ttdeci">GLuint64 key</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:9357</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a8e1a4ccadfc12dbf9a8e411d68adfe8e"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a8e1a4ccadfc12dbf9a8e411d68adfe8e">name</a></div><div class="ttdeci">GLuint const GLchar * name</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:952</div></div>
+<div class="ttc" id="a_s_d_l__scancode_8h_html_a82ab7cff701034fb40a47b5b3a02777b"><div class="ttname"><a href="_s_d_l__scancode_8h.html#a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</a></div><div class="ttdeci">SDL_Scancode</div><div class="ttdoc">The SDL keyboard scancode representation.</div><div class="ttdef"><b>定义</b> SDL_scancode.h:44</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html"><div class="ttname"><a href="_s_d_l__stdinc_8h.html">SDL_stdinc.h</a></div><div class="ttdoc">This is a general header that includes C language support.</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a2944638813a090aa23e62f4da842c3e2"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a2944638813a090aa23e62f4da842c3e2">Uint8</a></div><div class="ttdeci">uint8_t Uint8</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:198</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a31fcc0a076c9068668173ee26d33e42b"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a31fcc0a076c9068668173ee26d33e42b">Uint16</a></div><div class="ttdeci">uint16_t Uint16</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:210</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_a8fca68df0f976765230fe589a7c7733b"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a></div><div class="ttdeci">SDL_bool</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:181</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_add440eff171ea5f55cb00c4a9ab8672d"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#add440eff171ea5f55cb00c4a9ab8672d">Uint32</a></div><div class="ttdeci">uint32_t Uint32</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:222</div></div>
+<div class="ttc" id="a_s_d_l__video_8h_html"><div class="ttname"><a href="_s_d_l__video_8h.html">SDL_video.h</a></div><div class="ttdoc">Header file for SDL video functions.</div></div>
+<div class="ttc" id="a_s_d_l__video_8h_html_a55a196c7d3b8497538632c79ae1e6392"><div class="ttname"><a href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a></div><div class="ttdeci">struct SDL_Window SDL_Window</div><div class="ttdoc">The type used to identify a window</div><div class="ttdef"><b>定义</b> SDL_video.h:95</div></div>
+<div class="ttc" id="abegin__code_8h_html"><div class="ttname"><a href="begin__code_8h.html">begin_code.h</a></div><div class="ttdoc">This file sets things up for C dynamic library function definitions, static inlined functions,...</div></div>
+<div class="ttc" id="abegin__code_8h_html_a81faf4ba0455dc75f2e0507eddb79401"><div class="ttname"><a href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a></div><div class="ttdeci">#define SDLCALL</div><div class="ttdef"><b>定义</b> begin_code.h:87</div></div>
+<div class="ttc" id="abegin__code_8h_html_aa4c7a931f4a968f818b2a1b10a432185"><div class="ttname"><a href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a></div><div class="ttdeci">#define DECLSPEC</div><div class="ttdef"><b>定义</b> begin_code.h:72</div></div>
+<div class="ttc" id="aclose__code_8h_html"><div class="ttname"><a href="close__code_8h.html">close_code.h</a></div><div class="ttdoc">This file reverses the effects of begin_code.h and should be included after you finish any function a...</div></div>
+<div class="ttc" id="astruct_s_d_l___keysym_html"><div class="ttname"><a href="struct_s_d_l___keysym.html">SDL_Keysym</a></div><div class="ttdoc">The SDL keysym structure, used in key events.</div><div class="ttdef"><b>定义</b> SDL_keyboard.h:48</div></div>
+<div class="ttc" id="astruct_s_d_l___keysym_html_a09294cbc86473d2bcb27513748b81aec"><div class="ttname"><a href="struct_s_d_l___keysym.html#a09294cbc86473d2bcb27513748b81aec">SDL_Keysym::mod</a></div><div class="ttdeci">Uint16 mod</div><div class="ttdoc">current key modifiers</div><div class="ttdef"><b>定义</b> SDL_keyboard.h:51</div></div>
+<div class="ttc" id="astruct_s_d_l___keysym_html_a20cf23ed00a5cd751fa49ad19e93305a"><div class="ttname"><a href="struct_s_d_l___keysym.html#a20cf23ed00a5cd751fa49ad19e93305a">SDL_Keysym::sym</a></div><div class="ttdeci">SDL_Keycode sym</div><div class="ttdoc">SDL virtual key code - see SDL_Keycode for details</div><div class="ttdef"><b>定义</b> SDL_keyboard.h:50</div></div>
+<div class="ttc" id="astruct_s_d_l___keysym_html_a9c8d3b45ebf0a9f0673325d40755c066"><div class="ttname"><a href="struct_s_d_l___keysym.html#a9c8d3b45ebf0a9f0673325d40755c066">SDL_Keysym::scancode</a></div><div class="ttdeci">SDL_Scancode scancode</div><div class="ttdoc">SDL physical key code - see SDL_Scancode for details</div><div class="ttdef"><b>定义</b> SDL_keyboard.h:49</div></div>
+<div class="ttc" id="astruct_s_d_l___keysym_html_acdefb820f1317fee3507aa00d3d77468"><div class="ttname"><a href="struct_s_d_l___keysym.html#acdefb820f1317fee3507aa00d3d77468">SDL_Keysym::unused</a></div><div class="ttdeci">Uint32 unused</div><div class="ttdef"><b>定义</b> SDL_keyboard.h:52</div></div>
+<div class="ttc" id="astruct_s_d_l___rect_html"><div class="ttname"><a href="struct_s_d_l___rect.html">SDL_Rect</a></div><div class="ttdoc">A rectangle, with the origin at the upper left (integer).</div><div class="ttdef"><b>定义</b> SDL_rect.h:79</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__keyboard_8h.html">SDL_keyboard.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

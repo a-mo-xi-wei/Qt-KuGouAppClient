@@ -1,0 +1,1226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: Channel类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_channel.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_channel-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Channel类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>音乐频道主界面类，支持分类导航、滚动和音乐块展示  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_channel_8h_source.html">Channel.h</a>&gt;</code></p>
+<div class="dynheader">
+类 Channel 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel__inherit__graph.png" border="0" usemap="#a_channel_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_channel_inherit__map" id="a_channel_inherit__map">
+<area shape="rect" title="音乐频道主界面类，支持分类导航、滚动和音乐块展示" alt="" coords="7,80,76,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="44,48,44,80,39,80,39,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+Channel 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel__coll__graph.png" border="0" usemap="#a_channel_coll__map" alt="Collaboration graph"/></div>
+<map name="a_channel_coll__map" id="a_channel_coll__map">
+<area shape="rect" title="音乐频道主界面类，支持分类导航、滚动和音乐块展示" alt="" coords="58,96,127,123"/>
+<area shape="rect" title=" " alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="59,44,87,94,83,97,54,47"/>
+<area shape="rect" href="class_q_scroll_bar.html" title="滚动条控件类" alt="" coords="102,5,186,32"/>
+<area shape="poly" title=" " alt="" coords="131,47,102,97,97,94,127,44"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa56e0d97e9870af7099a2dd20a88b890" id="r_aa56e0d97e9870af7099a2dd20a88b890"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa56e0d97e9870af7099a2dd20a88b890">Channel</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aa56e0d97e9870af7099a2dd20a88b890"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化音乐频道主界面  <br /></td></tr>
+<tr class="separator:aa56e0d97e9870af7099a2dd20a88b890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8863915fb41c44128ad3f5b8175bcca" id="r_ab8863915fb41c44128ad3f5b8175bcca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8863915fb41c44128ad3f5b8175bcca">~Channel</a> () override</td></tr>
+<tr class="memdesc:ab8863915fb41c44128ad3f5b8175bcca"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，清理资源  <br /></td></tr>
+<tr class="separator:ab8863915fb41c44128ad3f5b8175bcca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整大小事件，调整滚动区域高度  <br /></td></tr>
+<tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7523c71b2bf60975302287ec8923f80e" id="r_a7523c71b2bf60975302287ec8923f80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a7523c71b2bf60975302287ec8923f80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标按下事件  <br /></td></tr>
+<tr class="separator:a7523c71b2bf60975302287ec8923f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a6ef54bde0283ca9a6b5060253ec1b8a6" id="r_a6ef54bde0283ca9a6b5060253ec1b8a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef54bde0283ca9a6b5060253ec1b8a6">handleWheelValue</a> (const int &amp;value)</td></tr>
+<tr class="memdesc:a6ef54bde0283ca9a6b5060253ec1b8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理滚动条值变化  <br /></td></tr>
+<tr class="separator:a6ef54bde0283ca9a6b5060253ec1b8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a9437cac5c81c06f98ff94541bf7da588" id="r_a9437cac5c81c06f98ff94541bf7da588"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9437cac5c81c06f98ff94541bf7da588">initButtonGroup</a> () const</td></tr>
+<tr class="memdesc:a9437cac5c81c06f98ff94541bf7da588"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化按钮组  <br /></td></tr>
+<tr class="separator:a9437cac5c81c06f98ff94541bf7da588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4817b6d2e9c0626d8af42b4439d0ded4" id="r_a4817b6d2e9c0626d8af42b4439d0ded4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4817b6d2e9c0626d8af42b4439d0ded4">initTotalWidget</a> () const</td></tr>
+<tr class="memdesc:a4817b6d2e9c0626d8af42b4439d0ded4"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化分区控件  <br /></td></tr>
+<tr class="separator:a4817b6d2e9c0626d8af42b4439d0ded4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba6e95967cc3eb25fd518f7bde6ec04" id="r_afba6e95967cc3eb25fd518f7bde6ec04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a> ()</td></tr>
+<tr class="memdesc:afba6e95967cc3eb25fd518f7bde6ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化界面  <br /></td></tr>
+<tr class="separator:afba6e95967cc3eb25fd518f7bde6ec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90c20eba367d53522d3fcbb6b03111ba" id="r_a90c20eba367d53522d3fcbb6b03111ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90c20eba367d53522d3fcbb6b03111ba">initVector</a> ()</td></tr>
+<tr class="memdesc:a90c20eba367d53522d3fcbb6b03111ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化歌曲-歌手和封面图片向量  <br /></td></tr>
+<tr class="separator:a90c20eba367d53522d3fcbb6b03111ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ad7c27da674e7ef6bf95285b6c5f6a069" id="r_ad7c27da674e7ef6bf95285b6c5f6a069"><td class="memItemLeft" align="right" valign="top">Ui::Channel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7c27da674e7ef6bf95285b6c5f6a069">ui</a></td></tr>
+<tr class="memdesc:ad7c27da674e7ef6bf95285b6c5f6a069"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 指针  <br /></td></tr>
+<tr class="separator:ad7c27da674e7ef6bf95285b6c5f6a069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47442fcf7db8bd0dab09d79ad4c1d47" id="r_ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_q_button_group.html">QButtonGroup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad47442fcf7db8bd0dab09d79ad4c1d47">m_buttonGroup</a> {}</td></tr>
+<tr class="memdesc:ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">按钮组  <br /></td></tr>
+<tr class="separator:ad47442fcf7db8bd0dab09d79ad4c1d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58bb52ef9a7ef23b2b242d0430f33625" id="r_a58bb52ef9a7ef23b2b242d0430f33625"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58bb52ef9a7ef23b2b242d0430f33625">m_recommendWidget</a> {}</td></tr>
+<tr class="memdesc:a58bb52ef9a7ef23b2b242d0430f33625"><td class="mdescLeft">&#160;</td><td class="mdescRight">推荐分区控件  <br /></td></tr>
+<tr class="separator:a58bb52ef9a7ef23b2b242d0430f33625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f0a314cc2bfa497fb0aa05da83e45c" id="r_ae8f0a314cc2bfa497fb0aa05da83e45c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8f0a314cc2bfa497fb0aa05da83e45c">m_djWidget</a> {}</td></tr>
+<tr class="memdesc:ae8f0a314cc2bfa497fb0aa05da83e45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">DJ 分区控件  <br /></td></tr>
+<tr class="separator:ae8f0a314cc2bfa497fb0aa05da83e45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd74ede1c6a6e5c1c7c6ae3603eca149" id="r_acd74ede1c6a6e5c1c7c6ae3603eca149"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd74ede1c6a6e5c1c7c6ae3603eca149">m_languageWidget</a> {}</td></tr>
+<tr class="memdesc:acd74ede1c6a6e5c1c7c6ae3603eca149"><td class="mdescLeft">&#160;</td><td class="mdescRight">语言分区控件  <br /></td></tr>
+<tr class="separator:acd74ede1c6a6e5c1c7c6ae3603eca149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e1db2efa5b9579a9200830d9989ad5" id="r_aa3e1db2efa5b9579a9200830d9989ad5"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3e1db2efa5b9579a9200830d9989ad5">m_themeWidget</a> {}</td></tr>
+<tr class="memdesc:aa3e1db2efa5b9579a9200830d9989ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">主题分区控件  <br /></td></tr>
+<tr class="separator:aa3e1db2efa5b9579a9200830d9989ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a299db5a1217ce86fae932754ead73b56" id="r_a299db5a1217ce86fae932754ead73b56"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a299db5a1217ce86fae932754ead73b56">m_sceneWidget</a> {}</td></tr>
+<tr class="memdesc:a299db5a1217ce86fae932754ead73b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景分区控件  <br /></td></tr>
+<tr class="separator:a299db5a1217ce86fae932754ead73b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f64c6720c86c7f7d1710cb3448f0e4" id="r_ad0f64c6720c86c7f7d1710cb3448f0e4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0f64c6720c86c7f7d1710cb3448f0e4">m_moodWidget</a> {}</td></tr>
+<tr class="memdesc:ad0f64c6720c86c7f7d1710cb3448f0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">心情分区控件  <br /></td></tr>
+<tr class="separator:ad0f64c6720c86c7f7d1710cb3448f0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3577c3fb8adbdd4457f4bb8c3b80f2a6" id="r_a3577c3fb8adbdd4457f4bb8c3b80f2a6"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3577c3fb8adbdd4457f4bb8c3b80f2a6">m_styleWidget</a> {}</td></tr>
+<tr class="memdesc:a3577c3fb8adbdd4457f4bb8c3b80f2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">风格分区控件  <br /></td></tr>
+<tr class="separator:a3577c3fb8adbdd4457f4bb8c3b80f2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52c4de146df8262cdd19877994b0a1b" id="r_aa52c4de146df8262cdd19877994b0a1b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa52c4de146df8262cdd19877994b0a1b">m_crowdWidget</a> {}</td></tr>
+<tr class="memdesc:aa52c4de146df8262cdd19877994b0a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">人群分区控件  <br /></td></tr>
+<tr class="separator:aa52c4de146df8262cdd19877994b0a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5524969a3988b46d2637746aadd64eeb" id="r_a5524969a3988b46d2637746aadd64eeb"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5524969a3988b46d2637746aadd64eeb">m_childrenWidget</a> {}</td></tr>
+<tr class="memdesc:a5524969a3988b46d2637746aadd64eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">儿童分区控件  <br /></td></tr>
+<tr class="separator:a5524969a3988b46d2637746aadd64eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42b9e50f36dc6f38d863625134f6169" id="r_aa42b9e50f36dc6f38d863625134f6169"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa42b9e50f36dc6f38d863625134f6169">m_musicalInstrumentWidget</a> {}</td></tr>
+<tr class="memdesc:aa42b9e50f36dc6f38d863625134f6169"><td class="mdescLeft">&#160;</td><td class="mdescRight">乐器分区控件  <br /></td></tr>
+<tr class="separator:aa42b9e50f36dc6f38d863625134f6169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad929d6ae1f5101ac3f2f8b9bdfeaffef" id="r_ad929d6ae1f5101ac3f2f8b9bdfeaffef"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad929d6ae1f5101ac3f2f8b9bdfeaffef">m_labelWidget</a> {}</td></tr>
+<tr class="memdesc:ad929d6ae1f5101ac3f2f8b9bdfeaffef"><td class="mdescLeft">&#160;</td><td class="mdescRight">厂牌分区控件  <br /></td></tr>
+<tr class="separator:ad929d6ae1f5101ac3f2f8b9bdfeaffef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf779d280418f5054ea8471a4258b95a" id="r_adf779d280418f5054ea8471a4258b95a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf779d280418f5054ea8471a4258b95a">m_varietyWidget</a> {}</td></tr>
+<tr class="memdesc:adf779d280418f5054ea8471a4258b95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">综艺分区控件  <br /></td></tr>
+<tr class="separator:adf779d280418f5054ea8471a4258b95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed923b3a6d44d7b73ee68244f5fe797" id="r_a0ed923b3a6d44d7b73ee68244f5fe797"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ed923b3a6d44d7b73ee68244f5fe797">m_nationalCustomsWidget</a> {}</td></tr>
+<tr class="memdesc:a0ed923b3a6d44d7b73ee68244f5fe797"><td class="mdescLeft">&#160;</td><td class="mdescRight">国风分区控件  <br /></td></tr>
+<tr class="separator:a0ed923b3a6d44d7b73ee68244f5fe797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76cf20ffd5936d7c01e5bb44b60f71c" id="r_ac76cf20ffd5936d7c01e5bb44b60f71c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac76cf20ffd5936d7c01e5bb44b60f71c">m_sportsWidget</a> {}</td></tr>
+<tr class="memdesc:ac76cf20ffd5936d7c01e5bb44b60f71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">运动分区控件  <br /></td></tr>
+<tr class="separator:ac76cf20ffd5936d7c01e5bb44b60f71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a983fe65b2c78fa75551ae04f021ee0bd" id="r_a983fe65b2c78fa75551ae04f021ee0bd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; QString, QString &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a983fe65b2c78fa75551ae04f021ee0bd">m_songAndsinger</a> {}</td></tr>
+<tr class="memdesc:a983fe65b2c78fa75551ae04f021ee0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌曲-歌手配对  <br /></td></tr>
+<tr class="separator:a983fe65b2c78fa75551ae04f021ee0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d724096bc909086a836bdf73296c34" id="r_a58d724096bc909086a836bdf73296c34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d724096bc909086a836bdf73296c34">m_pixPathVector</a> {}</td></tr>
+<tr class="memdesc:a58d724096bc909086a836bdf73296c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">封面图片路径  <br /></td></tr>
+<tr class="separator:a58d724096bc909086a836bdf73296c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cd20ec8edf7d3af0f64fd52bd13110f" id="r_a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_scroll_bar.html">QScrollBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cd20ec8edf7d3af0f64fd52bd13110f">m_vScrollBar</a> {}</td></tr>
+<tr class="memdesc:a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直滚动条  <br /></td></tr>
+<tr class="separator:a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>音乐频道主界面类，支持分类导航、滚动和音乐块展示 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa56e0d97e9870af7099a2dd20a88b890" name="aa56e0d97e9870af7099a2dd20a88b890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa56e0d97e9870af7099a2dd20a88b890">&#9670;&#160;</a></span>Channel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_channel.html">Channel</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化音乐频道主界面 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 初始化 UI</p>
+<p>&lt; 加载样式表</p>
+<p>&lt; 应用样式表</p>
+<p>&lt; 记录错误日志</p>
+<p>&lt; 设置标题图片</p>
+<p>&lt; 初始化按钮组</p>
+<p>&lt; 初始化分区控件</p>
+<p>&lt; 初始化向量</p>
+<p>&lt; 初始化界面</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_aa56e0d97e9870af7099a2dd20a88b890_cgraph.png" border="0" usemap="#aclass_channel_aa56e0d97e9870af7099a2dd20a88b890_cgraph" alt=""/></div>
+<map name="aclass_channel_aa56e0d97e9870af7099a2dd20a88b890_cgraph" id="aclass_channel_aa56e0d97e9870af7099a2dd20a88b890_cgraph">
+<area shape="rect" title="构造函数，初始化音乐频道主界面" alt="" coords="5,80,75,107"/>
+<area shape="poly" title=" " alt="" coords="16,81,11,71,14,62,24,56,40,53,57,56,66,63,63,67,55,61,40,59,26,61,19,65,17,71,20,79"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="349,43,388,69"/>
+<area shape="poly" title=" " alt="" coords="49,78,78,44,99,28,122,15,150,7,179,3,238,8,292,22,336,38,334,43,291,27,237,13,180,9,151,12,124,20,102,32,82,48,53,81"/>
+<area shape="rect" href="class_channel.html#a9437cac5c81c06f98ff94541bf7da588" title="初始化按钮组" alt="" coords="123,29,234,56"/>
+<area shape="poly" title=" " alt="" coords="74,78,125,60,126,65,76,83"/>
+<area shape="rect" href="class_channel.html#a4817b6d2e9c0626d8af42b4439d0ded4" title="初始化分区控件" alt="" coords="125,80,232,107"/>
+<area shape="poly" title=" " alt="" coords="75,91,109,91,109,96,75,96"/>
+<area shape="rect" href="class_channel.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="153,181,204,208"/>
+<area shape="poly" title=" " alt="" coords="55,105,85,136,124,167,140,176,137,181,121,172,82,140,52,109"/>
+<area shape="rect" href="class_channel.html#a90c20eba367d53522d3fcbb6b03111ba" title="初始化歌曲&#45;歌手和封面图片向量" alt="" coords="141,131,216,157"/>
+<area shape="poly" title=" " alt="" coords="76,104,127,122,125,127,74,109"/>
+<area shape="poly" title=" " alt="" coords="347,51,333,40,332,28,344,19,369,16,389,18,402,23,407,32,404,41,399,39,402,32,398,27,387,23,369,21,346,24,336,30,337,37,350,47"/>
+<area shape="rect" href="class_channel.html#a6ef54bde0283ca9a6b5060253ec1b8a6" title="处理滚动条值变化" alt="" coords="304,156,433,183"/>
+<area shape="poly" title=" " alt="" coords="204,189,288,177,289,183,205,194"/>
+<area shape="rect" href="class_my_scroll_area.html#ad95e84387b161599e4f845564314e8f8" title="滚轮事件触发的信号，传递当前滚动条值" alt="" coords="282,207,455,233"/>
+<area shape="poly" title=" " alt="" coords="205,195,267,204,266,209,204,201"/>
+<area shape="rect" href="class_my_scroll_area.html#a34a36bc029671530891b2162e67be3ad" title="处理返回顶部按钮点击事件" alt="" coords="503,177,706,204"/>
+<area shape="poly" title=" " alt="" coords="455,207,488,203,488,208,456,212"/>
+<area shape="rect" href="class_my_scroll_area.html#a7b8409999a54d69dfabbb8f50efc68a5" title="处理返回顶部按钮的显示或隐藏逻辑" alt="" coords="509,228,700,271"/>
+<area shape="poly" title=" " alt="" coords="456,228,494,233,493,238,455,234"/>
+<area shape="rect" href="class_my_scroll_area.html#a3326ecf53695a34cfe929674811c486c" title="设置动画状态" alt="" coords="754,177,937,204"/>
+<area shape="poly" title=" " alt="" coords="706,188,738,188,738,193,706,193"/>
+<area shape="poly" title=" " alt="" coords="208,128,233,116,334,69,336,74,235,121,211,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_aa56e0d97e9870af7099a2dd20a88b890_icgraph.png" border="0" usemap="#aclass_channel_aa56e0d97e9870af7099a2dd20a88b890_icgraph" alt=""/></div>
+<map name="aclass_channel_aa56e0d97e9870af7099a2dd20a88b890_icgraph" id="aclass_channel_aa56e0d97e9870af7099a2dd20a88b890_icgraph">
+<area shape="rect" title="构造函数，初始化音乐频道主界面" alt="" coords="5,29,75,56"/>
+<area shape="poly" title=" " alt="" coords="50,15,46,10,40,8,34,10,31,14,32,29,26,29,26,12,31,5,40,3,49,5,54,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab8863915fb41c44128ad3f5b8175bcca" name="ab8863915fb41c44128ad3f5b8175bcca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8863915fb41c44128ad3f5b8175bcca">&#9670;&#160;</a></span>~Channel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_channel.html">Channel</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，清理资源 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6ef54bde0283ca9a6b5060253ec1b8a6" name="a6ef54bde0283ca9a6b5060253ec1b8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef54bde0283ca9a6b5060253ec1b8a6">&#9670;&#160;</a></span>handleWheelValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handleWheelValue </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理滚动条值变化 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>滚动条值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 选中推荐按钮</p>
+<p>&lt; 选中 DJ 按钮</p>
+<p>&lt; 选中语言按钮</p>
+<p>&lt; 选中主题按钮</p>
+<p>&lt; 选中场景按钮</p>
+<p>&lt; 选中心情按钮</p>
+<p>&lt; 选中风格按钮</p>
+<p>&lt; 选中人群按钮</p>
+<p>&lt; 选中儿童按钮</p>
+<p>&lt; 选中乐器按钮</p>
+<p>&lt; 选中厂牌按钮</p>
+<p>&lt; 选中综艺按钮</p>
+<p>&lt; 选中国风按钮</p>
+<p>&lt; 选中运动按钮</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_a6ef54bde0283ca9a6b5060253ec1b8a6_icgraph.png" border="0" usemap="#aclass_channel_a6ef54bde0283ca9a6b5060253ec1b8a6_icgraph" alt=""/></div>
+<map name="aclass_channel_a6ef54bde0283ca9a6b5060253ec1b8a6_icgraph" id="aclass_channel_a6ef54bde0283ca9a6b5060253ec1b8a6_icgraph">
+<area shape="rect" title="处理滚动条值变化" alt="" coords="222,29,350,56"/>
+<area shape="rect" href="class_channel.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="123,29,174,56"/>
+<area shape="poly" title=" " alt="" coords="206,45,174,45,174,40,206,40"/>
+<area shape="rect" href="class_channel.html#aa56e0d97e9870af7099a2dd20a88b890" title="构造函数，初始化音乐频道主界面" alt="" coords="5,29,75,56"/>
+<area shape="poly" title=" " alt="" coords="107,45,75,45,75,40,107,40"/>
+<area shape="poly" title=" " alt="" coords="57,16,51,10,40,8,29,10,24,14,22,20,25,28,20,30,17,20,19,11,27,5,40,3,53,5,61,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9437cac5c81c06f98ff94541bf7da588" name="a9437cac5c81c06f98ff94541bf7da588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9437cac5c81c06f98ff94541bf7da588">&#9670;&#160;</a></span>initButtonGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initButtonGroup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化按钮组 </p>
+<dl class="section note"><dt>注解</dt><dd>设置按钮互斥 </dd></dl>
+<p>&lt; 添加推荐按钮</p>
+<p>&lt; 添加 DJ 按钮</p>
+<p>&lt; 添加语言按钮</p>
+<p>&lt; 添加主题按钮</p>
+<p>&lt; 添加场景按钮</p>
+<p>&lt; 添加心情按钮</p>
+<p>&lt; 添加风格按钮</p>
+<p>&lt; 添加人群按钮</p>
+<p>&lt; 添加儿童按钮</p>
+<p>&lt; 添加乐器按钮</p>
+<p>&lt; 添加厂牌按钮</p>
+<p>&lt; 添加综艺按钮</p>
+<p>&lt; 添加国风按钮</p>
+<p>&lt; 添加运动按钮</p>
+<p>&lt; 设置按钮组互斥</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_a9437cac5c81c06f98ff94541bf7da588_icgraph.png" border="0" usemap="#aclass_channel_a9437cac5c81c06f98ff94541bf7da588_icgraph" alt=""/></div>
+<map name="aclass_channel_a9437cac5c81c06f98ff94541bf7da588_icgraph" id="aclass_channel_a9437cac5c81c06f98ff94541bf7da588_icgraph">
+<area shape="rect" title="初始化按钮组" alt="" coords="123,29,234,56"/>
+<area shape="rect" href="class_channel.html#aa56e0d97e9870af7099a2dd20a88b890" title="构造函数，初始化音乐频道主界面" alt="" coords="5,29,75,56"/>
+<area shape="poly" title=" " alt="" coords="107,45,75,45,75,40,107,40"/>
+<area shape="poly" title=" " alt="" coords="63,16,55,10,40,8,26,10,19,14,17,20,20,28,16,30,11,21,14,11,24,5,40,3,57,5,66,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4817b6d2e9c0626d8af42b4439d0ded4" name="a4817b6d2e9c0626d8af42b4439d0ded4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4817b6d2e9c0626d8af42b4439d0ded4">&#9670;&#160;</a></span>initTotalWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initTotalWidget </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化分区控件 </p>
+<p>&lt; 设置推荐分区标题</p>
+<p>&lt; 设置 DJ 分区标题</p>
+<p>&lt; 设置语言分区标题</p>
+<p>&lt; 设置主题分区标题</p>
+<p>&lt; 设置场景分区标题</p>
+<p>&lt; 设置心情分区标题</p>
+<p>&lt; 设置风格分区标题</p>
+<p>&lt; 设置人群分区标题</p>
+<p>&lt; 设置儿童分区标题</p>
+<p>&lt; 设置乐器分区标题</p>
+<p>&lt; 设置厂牌分区标题</p>
+<p>&lt; 设置综艺分区标题</p>
+<p>&lt; 设置国风分区标题</p>
+<p>&lt; 设置运动分区标题</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_a4817b6d2e9c0626d8af42b4439d0ded4_icgraph.png" border="0" usemap="#aclass_channel_a4817b6d2e9c0626d8af42b4439d0ded4_icgraph" alt=""/></div>
+<map name="aclass_channel_a4817b6d2e9c0626d8af42b4439d0ded4_icgraph" id="aclass_channel_a4817b6d2e9c0626d8af42b4439d0ded4_icgraph">
+<area shape="rect" title="初始化分区控件" alt="" coords="123,29,230,56"/>
+<area shape="rect" href="class_channel.html#aa56e0d97e9870af7099a2dd20a88b890" title="构造函数，初始化音乐频道主界面" alt="" coords="5,29,75,56"/>
+<area shape="poly" title=" " alt="" coords="107,45,75,45,75,40,107,40"/>
+<area shape="poly" title=" " alt="" coords="62,16,55,10,40,8,26,10,19,14,17,20,21,28,16,30,12,21,15,11,24,5,40,3,57,5,66,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afba6e95967cc3eb25fd518f7bde6ec04" name="afba6e95967cc3eb25fd518f7bde6ec04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba6e95967cc3eb25fd518f7bde6ec04">&#9670;&#160;</a></span>initUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initUi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化界面 </p>
+<dl class="section note"><dt>注解</dt><dd>添加分区控件到布局，连接按钮信号，优化滚动 </dd></dl>
+<p>&lt; 获取表格布局</p>
+<p>&lt; 记录警告日志</p>
+<p>&lt; 添加推荐分区</p>
+<p>&lt; 添加 DJ 分区</p>
+<p>&lt; 添加语言分区</p>
+<p>&lt; 添加主题分区</p>
+<p>&lt; 添加场景分区</p>
+<p>&lt; 添加心情分区</p>
+<p>&lt; 添加风格分区</p>
+<p>&lt; 添加人群分区</p>
+<p>&lt; 添加儿童分区</p>
+<p>&lt; 添加乐器分区</p>
+<p>&lt; 添加厂牌分区</p>
+<p>&lt; 添加综艺分区</p>
+<p>&lt; 添加国风分区</p>
+<p>&lt; 添加运动分区</p>
+<p>&lt; 获取垂直滚动条</p>
+<p>&lt; 平滑滚动到目标位置</p>
+<p>&lt; 批量连接按钮信号</p>
+<p>&lt; 连接推荐按钮</p>
+<p>&lt; 连接 DJ 按钮</p>
+<p>&lt; 连接语言按钮</p>
+<p>&lt; 连接主题按钮</p>
+<p>&lt; 连接场景按钮</p>
+<p>&lt; 连接心情按钮</p>
+<p>&lt; 连接风格按钮</p>
+<p>&lt; 连接人群按钮</p>
+<p>&lt; 连接儿童按钮</p>
+<p>&lt; 连接乐器按钮</p>
+<p>&lt; 连接厂牌按钮</p>
+<p>&lt; 连接综艺按钮</p>
+<p>&lt; 连接国风按钮</p>
+<p>&lt; 连接运动按钮</p>
+<p>&lt; 连接滚动区域信号</p>
+<p>&lt; 连接滚动条信号</p>
+<p>&lt; 音乐块索引</p>
+<p>&lt; 推荐分区标题</p>
+<p>&lt; 创建音乐块</p>
+<p>&lt; 设置封面</p>
+<p>&lt; 设置标题</p>
+<p>&lt; 设置歌手歌曲</p>
+<p>&lt; 添加到推荐分区</p>
+<p>&lt; 更新索引</p>
+<p>&lt; DJ 分区标题</p>
+<p>&lt; 语言分区标题</p>
+<p>&lt; 主题分区标题</p>
+<p>&lt; 场景分区标题</p>
+<p>&lt; 心情分区标题</p>
+<p>&lt; 风格分区标题</p>
+<p>&lt; 人群分区标题</p>
+<p>&lt; 儿童分区标题</p>
+<p>&lt; 乐器分区标题</p>
+<p>&lt; 厂牌分区标题</p>
+<p>&lt; 综艺分区标题</p>
+<p>&lt; 国风分区标题</p>
+<p>&lt; 运动分区标题</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_afba6e95967cc3eb25fd518f7bde6ec04_cgraph.png" border="0" usemap="#aclass_channel_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" alt=""/></div>
+<map name="aclass_channel_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" id="aclass_channel_afba6e95967cc3eb25fd518f7bde6ec04_cgraph">
+<area shape="rect" title="初始化界面" alt="" coords="5,31,57,57"/>
+<area shape="rect" href="class_channel.html#a6ef54bde0283ca9a6b5060253ec1b8a6" title="处理滚动条值变化" alt="" coords="127,5,256,32"/>
+<area shape="poly" title=" " alt="" coords="57,37,111,29,112,34,58,43"/>
+<area shape="rect" href="class_my_scroll_area.html#ad95e84387b161599e4f845564314e8f8" title="滚轮事件触发的信号，传递当前滚动条值" alt="" coords="105,56,278,83"/>
+<area shape="poly" title=" " alt="" coords="58,45,90,51,89,56,57,51"/>
+<area shape="rect" href="class_my_scroll_area.html#a34a36bc029671530891b2162e67be3ad" title="处理返回顶部按钮点击事件" alt="" coords="326,27,528,53"/>
+<area shape="poly" title=" " alt="" coords="278,56,310,52,311,57,278,61"/>
+<area shape="rect" href="class_my_scroll_area.html#a7b8409999a54d69dfabbb8f50efc68a5" title="处理返回顶部按钮的显示或隐藏逻辑" alt="" coords="332,77,523,120"/>
+<area shape="poly" title=" " alt="" coords="278,77,316,82,316,88,278,83"/>
+<area shape="rect" href="class_my_scroll_area.html#a3326ecf53695a34cfe929674811c486c" title="设置动画状态" alt="" coords="576,27,760,53"/>
+<area shape="poly" title=" " alt="" coords="529,37,561,37,561,43,529,43"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_afba6e95967cc3eb25fd518f7bde6ec04_icgraph.png" border="0" usemap="#aclass_channel_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" alt=""/></div>
+<map name="aclass_channel_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" id="aclass_channel_afba6e95967cc3eb25fd518f7bde6ec04_icgraph">
+<area shape="rect" title="初始化界面" alt="" coords="123,29,174,56"/>
+<area shape="rect" href="class_channel.html#aa56e0d97e9870af7099a2dd20a88b890" title="构造函数，初始化音乐频道主界面" alt="" coords="5,29,75,56"/>
+<area shape="poly" title=" " alt="" coords="107,45,75,45,75,40,107,40"/>
+<area shape="poly" title=" " alt="" coords="57,16,51,10,40,8,29,10,24,14,22,20,25,28,20,30,17,20,19,11,27,5,40,3,53,5,61,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a90c20eba367d53522d3fcbb6b03111ba" name="a90c20eba367d53522d3fcbb6b03111ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c20eba367d53522d3fcbb6b03111ba">&#9670;&#160;</a></span>initVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initVector </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化歌曲-歌手和封面图片向量 </p>
+<dl class="section note"><dt>注解</dt><dd>使用随机种子打乱顺序 </dd></dl>
+<p>&lt; 添加歌曲-歌手配对</p>
+<p>&lt; 添加封面图片路径</p>
+<p>&lt; 获取当前时间作为随机种子</p>
+<p>&lt; 随机打乱歌曲-歌手</p>
+<p>&lt; 随机打乱封面图片</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_a90c20eba367d53522d3fcbb6b03111ba_cgraph.png" border="0" usemap="#aclass_channel_a90c20eba367d53522d3fcbb6b03111ba_cgraph" alt=""/></div>
+<map name="aclass_channel_a90c20eba367d53522d3fcbb6b03111ba_cgraph" id="aclass_channel_a90c20eba367d53522d3fcbb6b03111ba_cgraph">
+<area shape="rect" title="初始化歌曲&#45;歌手和封面图片向量" alt="" coords="5,29,81,56"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="129,29,168,56"/>
+<area shape="poly" title=" " alt="" coords="81,40,113,40,113,45,81,45"/>
+<area shape="poly" title=" " alt="" coords="129,30,126,20,128,11,136,5,148,3,161,5,169,12,165,16,159,10,148,8,138,10,133,14,131,20,134,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_channel_a90c20eba367d53522d3fcbb6b03111ba_icgraph.png" border="0" usemap="#aclass_channel_a90c20eba367d53522d3fcbb6b03111ba_icgraph" alt=""/></div>
+<map name="aclass_channel_a90c20eba367d53522d3fcbb6b03111ba_icgraph" id="aclass_channel_a90c20eba367d53522d3fcbb6b03111ba_icgraph">
+<area shape="rect" title="初始化歌曲&#45;歌手和封面图片向量" alt="" coords="123,29,198,56"/>
+<area shape="rect" href="class_channel.html#aa56e0d97e9870af7099a2dd20a88b890" title="构造函数，初始化音乐频道主界面" alt="" coords="5,29,75,56"/>
+<area shape="poly" title=" " alt="" coords="107,45,75,45,75,40,107,40"/>
+<area shape="poly" title=" " alt="" coords="60,16,53,10,40,8,28,10,22,14,20,20,23,28,18,30,15,20,17,11,26,5,40,3,55,5,63,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7523c71b2bf60975302287ec8923f80e" name="a7523c71b2bf60975302287ec8923f80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7523c71b2bf60975302287ec8923f80e">&#9670;&#160;</a></span>mousePressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标按下事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 调用父类鼠标按下事件</p>
+
+</div>
+</div>
+<a id="a9a27ed4ceb22d2a19bdb88ed785085a1" name="a9a27ed4ceb22d2a19bdb88ed785085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a27ed4ceb22d2a19bdb88ed785085a1">&#9670;&#160;</a></span>resizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>调整大小事件，调整滚动区域高度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>调整大小事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 调用父类调整大小事件</p>
+<p>&lt; 设置滚动区域高度</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad47442fcf7db8bd0dab09d79ad4c1d47" name="ad47442fcf7db8bd0dab09d79ad4c1d47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad47442fcf7db8bd0dab09d79ad4c1d47">&#9670;&#160;</a></span>m_buttonGroup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_q_button_group.html">QButtonGroup</a>&gt; m_buttonGroup {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>按钮组 </p>
+
+</div>
+</div>
+<a id="a5524969a3988b46d2637746aadd64eeb" name="a5524969a3988b46d2637746aadd64eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5524969a3988b46d2637746aadd64eeb">&#9670;&#160;</a></span>m_childrenWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_childrenWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>儿童分区控件 </p>
+
+</div>
+</div>
+<a id="aa52c4de146df8262cdd19877994b0a1b" name="aa52c4de146df8262cdd19877994b0a1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52c4de146df8262cdd19877994b0a1b">&#9670;&#160;</a></span>m_crowdWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_crowdWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>人群分区控件 </p>
+
+</div>
+</div>
+<a id="ae8f0a314cc2bfa497fb0aa05da83e45c" name="ae8f0a314cc2bfa497fb0aa05da83e45c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f0a314cc2bfa497fb0aa05da83e45c">&#9670;&#160;</a></span>m_djWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_djWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DJ 分区控件 </p>
+
+</div>
+</div>
+<a id="ad929d6ae1f5101ac3f2f8b9bdfeaffef" name="ad929d6ae1f5101ac3f2f8b9bdfeaffef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad929d6ae1f5101ac3f2f8b9bdfeaffef">&#9670;&#160;</a></span>m_labelWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_labelWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>厂牌分区控件 </p>
+
+</div>
+</div>
+<a id="acd74ede1c6a6e5c1c7c6ae3603eca149" name="acd74ede1c6a6e5c1c7c6ae3603eca149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd74ede1c6a6e5c1c7c6ae3603eca149">&#9670;&#160;</a></span>m_languageWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_languageWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>语言分区控件 </p>
+
+</div>
+</div>
+<a id="ad0f64c6720c86c7f7d1710cb3448f0e4" name="ad0f64c6720c86c7f7d1710cb3448f0e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0f64c6720c86c7f7d1710cb3448f0e4">&#9670;&#160;</a></span>m_moodWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_moodWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>心情分区控件 </p>
+
+</div>
+</div>
+<a id="aa42b9e50f36dc6f38d863625134f6169" name="aa42b9e50f36dc6f38d863625134f6169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42b9e50f36dc6f38d863625134f6169">&#9670;&#160;</a></span>m_musicalInstrumentWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_musicalInstrumentWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>乐器分区控件 </p>
+
+</div>
+</div>
+<a id="a0ed923b3a6d44d7b73ee68244f5fe797" name="a0ed923b3a6d44d7b73ee68244f5fe797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ed923b3a6d44d7b73ee68244f5fe797">&#9670;&#160;</a></span>m_nationalCustomsWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_nationalCustomsWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>国风分区控件 </p>
+
+</div>
+</div>
+<a id="a58d724096bc909086a836bdf73296c34" name="a58d724096bc909086a836bdf73296c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d724096bc909086a836bdf73296c34">&#9670;&#160;</a></span>m_pixPathVector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;QString&gt; m_pixPathVector {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>封面图片路径 </p>
+
+</div>
+</div>
+<a id="a58bb52ef9a7ef23b2b242d0430f33625" name="a58bb52ef9a7ef23b2b242d0430f33625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58bb52ef9a7ef23b2b242d0430f33625">&#9670;&#160;</a></span>m_recommendWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_recommendWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>推荐分区控件 </p>
+
+</div>
+</div>
+<a id="a299db5a1217ce86fae932754ead73b56" name="a299db5a1217ce86fae932754ead73b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a299db5a1217ce86fae932754ead73b56">&#9670;&#160;</a></span>m_sceneWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_sceneWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>场景分区控件 </p>
+
+</div>
+</div>
+<a id="a983fe65b2c78fa75551ae04f021ee0bd" name="a983fe65b2c78fa75551ae04f021ee0bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a983fe65b2c78fa75551ae04f021ee0bd">&#9670;&#160;</a></span>m_songAndsinger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;QString, QString&gt; &gt; m_songAndsinger {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>歌曲-歌手配对 </p>
+
+</div>
+</div>
+<a id="ac76cf20ffd5936d7c01e5bb44b60f71c" name="ac76cf20ffd5936d7c01e5bb44b60f71c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac76cf20ffd5936d7c01e5bb44b60f71c">&#9670;&#160;</a></span>m_sportsWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_sportsWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>运动分区控件 </p>
+
+</div>
+</div>
+<a id="a3577c3fb8adbdd4457f4bb8c3b80f2a6" name="a3577c3fb8adbdd4457f4bb8c3b80f2a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3577c3fb8adbdd4457f4bb8c3b80f2a6">&#9670;&#160;</a></span>m_styleWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_styleWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>风格分区控件 </p>
+
+</div>
+</div>
+<a id="aa3e1db2efa5b9579a9200830d9989ad5" name="aa3e1db2efa5b9579a9200830d9989ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e1db2efa5b9579a9200830d9989ad5">&#9670;&#160;</a></span>m_themeWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_themeWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>主题分区控件 </p>
+
+</div>
+</div>
+<a id="adf779d280418f5054ea8471a4258b95a" name="adf779d280418f5054ea8471a4258b95a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf779d280418f5054ea8471a4258b95a">&#9670;&#160;</a></span>m_varietyWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_part_widget.html">PartWidget</a>&gt; m_varietyWidget {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>综艺分区控件 </p>
+
+</div>
+</div>
+<a id="a5cd20ec8edf7d3af0f64fd52bd13110f" name="a5cd20ec8edf7d3af0f64fd52bd13110f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cd20ec8edf7d3af0f64fd52bd13110f">&#9670;&#160;</a></span>m_vScrollBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_scroll_bar.html">QScrollBar</a>* m_vScrollBar {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>垂直滚动条 </p>
+
+</div>
+</div>
+<a id="ad7c27da674e7ef6bf95285b6c5f6a069" name="ad7c27da674e7ef6bf95285b6c5f6a069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7c27da674e7ef6bf95285b6c5f6a069">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::Channel* ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI 指针 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_channel_8h_source.html">Channel.h</a></li>
+<li><a class="el" href="_channel_8cpp.html">Channel.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_channel.html">Channel</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

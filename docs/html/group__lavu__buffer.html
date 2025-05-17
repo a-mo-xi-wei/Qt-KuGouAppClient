@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AVBuffer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavu__buffer.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">文件</a> &#124;
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">AVBuffer<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__data.html">Data Structures</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> is an API for reference-counted data buffers.  
+<a href="#details">更多...</a></p>
+<div class="dynheader">
+AVBuffer 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__buffer.png" border="0" usemap="#agroup____lavu____buffer" alt=""/></div>
+<map name="agroup____lavu____buffer" id="agroup____lavu____buffer">
+<area shape="rect" title="AVBuffer is an API for reference&#45;counted data buffers." alt="" coords="167,5,239,32"/>
+<area shape="rect" href="group__lavu__data.html" title=" " alt="" coords="5,5,119,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+文件</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">文件 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffer_8h.html">buffer.h</a></td></tr>
+<tr class="memdesc:buffer_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">refcounted data buffer API <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to a data buffer.  <a href="struct_a_v_buffer_ref.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:gaa818f8f1011d69acc50c1f29cb85e576" id="r_gaa818f8f1011d69acc50c1f29cb85e576"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa818f8f1011d69acc50c1f29cb85e576">AV_BUFFER_FLAG_READONLY</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memdesc:gaa818f8f1011d69acc50c1f29cb85e576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Always treat the buffer as read-only, even when it has only one reference.  <br /></td></tr>
+<tr class="separator:gaa818f8f1011d69acc50c1f29cb85e576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga501d49df442180d584f255aa97b2549d" id="r_ga501d49df442180d584f255aa97b2549d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#ga501d49df442180d584f255aa97b2549d">AVBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga501d49df442180d584f255aa97b2549d">AVBuffer</a></td></tr>
+<tr class="memdesc:ga501d49df442180d584f255aa97b2549d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference counted buffer type.  <br /></td></tr>
+<tr class="separator:ga501d49df442180d584f255aa97b2549d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a4e1b9f08ad932631e15ff01adf2085" id="r_ga7a4e1b9f08ad932631e15ff01adf2085"><td class="memItemLeft" align="right" valign="top">typedef struct AVBufferRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7a4e1b9f08ad932631e15ff01adf2085">AVBufferRef</a></td></tr>
+<tr class="memdesc:ga7a4e1b9f08ad932631e15ff01adf2085"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to a data buffer.  <br /></td></tr>
+<tr class="separator:ga7a4e1b9f08ad932631e15ff01adf2085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gab4b5af239de8e774ed8550a9b3ed8398" id="r_gab4b5af239de8e774ed8550a9b3ed8398"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab4b5af239de8e774ed8550a9b3ed8398">av_buffer_alloc</a> (int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="memdesc:gab4b5af239de8e774ed8550a9b3ed8398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> of the given size using <a class="el" href="group__lavu__mem__funcs.html#gaba88a97429de6874c1a0b64381034b98" title="Allocate a memory block with alignment suitable for all memory accesses (including vectors if availab...">av_malloc()</a>.  <br /></td></tr>
+<tr class="separator:gab4b5af239de8e774ed8550a9b3ed8398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0026d271987134a1ed215c41717cf37e" id="r_ga0026d271987134a1ed215c41717cf37e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0026d271987134a1ed215c41717cf37e">av_buffer_allocz</a> (int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="memdesc:ga0026d271987134a1ed215c41717cf37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="#gab4b5af239de8e774ed8550a9b3ed8398" title="Allocate an AVBuffer of the given size using av_malloc().">av_buffer_alloc()</a>, except the returned buffer will be initialized to zero.  <br /></td></tr>
+<tr class="separator:ga0026d271987134a1ed215c41717cf37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3abf50f35acbc914af7be26462d9fa9" id="r_gad3abf50f35acbc914af7be26462d9fa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3abf50f35acbc914af7be26462d9fa9">av_buffer_create</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>, int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>(*free)(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *opaque, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>), <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *opaque, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:gad3abf50f35acbc914af7be26462d9fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> from an existing array.  <br /></td></tr>
+<tr class="separator:gad3abf50f35acbc914af7be26462d9fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37d620e8cfc9f2f3261c2b4c5d4adfe0" id="r_ga37d620e8cfc9f2f3261c2b4c5d4adfe0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga37d620e8cfc9f2f3261c2b4c5d4adfe0">av_buffer_default_free</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *opaque, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>)</td></tr>
+<tr class="memdesc:ga37d620e8cfc9f2f3261c2b4c5d4adfe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default free callback, which calls <a class="el" href="group__lavu__mem__funcs.html#ga0c9096f498624c525aa2315b8a20c411" title="Free a memory block which has been allocated with a function of av_malloc() or av_realloc() family.">av_free()</a> on the buffer data.  <br /></td></tr>
+<tr class="separator:ga37d620e8cfc9f2f3261c2b4c5d4adfe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8c6e41e6063c2210bfe0b54dc63e8ed" id="r_gab8c6e41e6063c2210bfe0b54dc63e8ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab8c6e41e6063c2210bfe0b54dc63e8ed">av_buffer_ref</a> (<a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>)</td></tr>
+<tr class="memdesc:gab8c6e41e6063c2210bfe0b54dc63e8ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new reference to an <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a>.  <br /></td></tr>
+<tr class="separator:gab8c6e41e6063c2210bfe0b54dc63e8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga135e9e929b5033bb8f68322497b2effc" id="r_ga135e9e929b5033bb8f68322497b2effc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga135e9e929b5033bb8f68322497b2effc">av_buffer_unref</a> (<a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> **<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>)</td></tr>
+<tr class="memdesc:ga135e9e929b5033bb8f68322497b2effc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a given reference and automatically free the buffer if there are no more references to it.  <br /></td></tr>
+<tr class="separator:ga135e9e929b5033bb8f68322497b2effc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga060be34ace567ae378fd0a786e847053" id="r_ga060be34ace567ae378fd0a786e847053"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga060be34ace567ae378fd0a786e847053">av_buffer_is_writable</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>)</td></tr>
+<tr class="separator:ga060be34ace567ae378fd0a786e847053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa68265370a808d3b9f55a518a958ba3c" id="r_gaa68265370a808d3b9f55a518a958ba3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa68265370a808d3b9f55a518a958ba3c">av_buffer_get_opaque</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>)</td></tr>
+<tr class="separator:gaa68265370a808d3b9f55a518a958ba3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b16c3976dc555f71d0843bbd023dfcd" id="r_ga7b16c3976dc555f71d0843bbd023dfcd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7b16c3976dc555f71d0843bbd023dfcd">av_buffer_get_ref_count</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>)</td></tr>
+<tr class="separator:ga7b16c3976dc555f71d0843bbd023dfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c2a1be1b7bb80eec8613fdb62a19074" id="r_ga9c2a1be1b7bb80eec8613fdb62a19074"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c2a1be1b7bb80eec8613fdb62a19074">av_buffer_make_writable</a> (<a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> **<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>)</td></tr>
+<tr class="memdesc:ga9c2a1be1b7bb80eec8613fdb62a19074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a writable reference from a given buffer reference, avoiding data copy if possible.  <br /></td></tr>
+<tr class="separator:ga9c2a1be1b7bb80eec8613fdb62a19074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7c228f9ed54e246dcd270503bed7291" id="r_gac7c228f9ed54e246dcd270503bed7291"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac7c228f9ed54e246dcd270503bed7291">av_buffer_realloc</a> (<a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> **<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="memdesc:gac7c228f9ed54e246dcd270503bed7291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reallocate a given buffer.  <br /></td></tr>
+<tr class="separator:gac7c228f9ed54e246dcd270503bed7291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p><a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> is an API for reference-counted data buffers. </p>
+<p>There are two core objects in this API &ndash; <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> and <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a>. <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> represents the data buffer itself; it is opaque and not meant to be accessed by the caller directly, but only through <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a>. However, the caller may e.g. compare two <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> pointers to check whether two different references are describing the same data buffer. <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> represents a single reference to an <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> and it is the object that may be manipulated by the caller directly.</p>
+<p>There are two functions provided for creating a new <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> with a single reference &ndash; <a class="el" href="#gab4b5af239de8e774ed8550a9b3ed8398" title="Allocate an AVBuffer of the given size using av_malloc().">av_buffer_alloc()</a> to just allocate a new buffer, and <a class="el" href="#gad3abf50f35acbc914af7be26462d9fa9" title="Create an AVBuffer from an existing array.">av_buffer_create()</a> to wrap an existing array in an <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a>. From an existing reference, additional references may be created with <a class="el" href="#gab8c6e41e6063c2210bfe0b54dc63e8ed" title="Create a new reference to an AVBuffer.">av_buffer_ref()</a>. Use <a class="el" href="#ga135e9e929b5033bb8f68322497b2effc" title="Free a given reference and automatically free the buffer if there are no more references to it.">av_buffer_unref()</a> to free a reference (this will automatically free the data once all the references are freed).</p>
+<p>The convention throughout this API and the rest of FFmpeg is such that the buffer is considered writable if there exists only one reference to it (and it has not been marked as read-only). The <a class="el" href="#ga060be34ace567ae378fd0a786e847053">av_buffer_is_writable()</a> function is provided to check whether this is true and <a class="el" href="#ga9c2a1be1b7bb80eec8613fdb62a19074" title="Create a writable reference from a given buffer reference, avoiding data copy if possible.">av_buffer_make_writable()</a> will automatically create a new writable buffer when necessary. Of course nothing prevents the calling code from violating this convention, however that is safe only when all the existing references are under its control.</p>
+<dl class="section note"><dt>注解</dt><dd>Referencing and unreferencing the buffers is thread-safe and thus may be done from multiple threads simultaneously without any need for additional locking.</dd>
+<dd>
+Two different references to the same buffer can point to different parts of the buffer (i.e. their <a class="el" href="struct_a_v_buffer_ref.html#abe222f6d3581e7920dcad5306cc906a8" title="The data buffer.">AVBufferRef.data</a> will not be equal). </dd></dl>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="gaa818f8f1011d69acc50c1f29cb85e576" name="gaa818f8f1011d69acc50c1f29cb85e576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa818f8f1011d69acc50c1f29cb85e576">&#9670;&#160;</a></span>AV_BUFFER_FLAG_READONLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AV_BUFFER_FLAG_READONLY&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Always treat the buffer as read-only, even when it has only one reference. </p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ga501d49df442180d584f255aa97b2549d" name="ga501d49df442180d584f255aa97b2549d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga501d49df442180d584f255aa97b2549d">&#9670;&#160;</a></span>AVBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#ga501d49df442180d584f255aa97b2549d">AVBuffer</a> <a class="el" href="#ga501d49df442180d584f255aa97b2549d">AVBuffer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A reference counted buffer type. </p>
+<p>It is opaque and is meant to be used through references (<a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a>). </p>
+
+</div>
+</div>
+<a id="ga7a4e1b9f08ad932631e15ff01adf2085" name="ga7a4e1b9f08ad932631e15ff01adf2085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7a4e1b9f08ad932631e15ff01adf2085">&#9670;&#160;</a></span>AVBufferRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVBufferRef AVBufferRef</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A reference to a data buffer. </p>
+<p>The size of this struct is not a part of the public ABI and it is not meant to be allocated directly. </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="gab4b5af239de8e774ed8550a9b3ed8398" name="gab4b5af239de8e774ed8550a9b3ed8398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4b5af239de8e774ed8550a9b3ed8398">&#9670;&#160;</a></span>av_buffer_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> * av_buffer_alloc </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate an <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> of the given size using <a class="el" href="group__lavu__mem__funcs.html#gaba88a97429de6874c1a0b64381034b98" title="Allocate a memory block with alignment suitable for all memory accesses (including vectors if availab...">av_malloc()</a>. </p>
+<dl class="section return"><dt>返回</dt><dd>an <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> of given size or NULL when out of memory </dd></dl>
+
+</div>
+</div>
+<a id="ga0026d271987134a1ed215c41717cf37e" name="ga0026d271987134a1ed215c41717cf37e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0026d271987134a1ed215c41717cf37e">&#9670;&#160;</a></span>av_buffer_allocz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> * av_buffer_allocz </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="#gab4b5af239de8e774ed8550a9b3ed8398" title="Allocate an AVBuffer of the given size using av_malloc().">av_buffer_alloc()</a>, except the returned buffer will be initialized to zero. </p>
+
+</div>
+</div>
+<a id="gad3abf50f35acbc914af7be26462d9fa9" name="gad3abf50f35acbc914af7be26462d9fa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3abf50f35acbc914af7be26462d9fa9">&#9670;&#160;</a></span>av_buffer_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> * av_buffer_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>(*</td>          <td class="paramname"><span class="paramname"><em>free&#160;</em></span>)(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *opaque, <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl_8h.html#a740d7f00b044f54a556c7208e01f9f02">data</a>), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create an <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> from an existing array. </p>
+<p>If this function is successful, data is owned by the <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a>. The caller may only access data through the returned <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> and references derived from it. If this function fails, data is left untouched. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>data array </td></tr>
+    <tr><td class="paramname">size</td><td>size of data in bytes </td></tr>
+    <tr><td class="paramname">free</td><td>a callback for freeing this buffer's data </td></tr>
+    <tr><td class="paramname">opaque</td><td>parameter to be got for processing or passed to free </td></tr>
+    <tr><td class="paramname">flags</td><td>a combination of AV_BUFFER_FLAG_*</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>an <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> referring to data on success, NULL on failure. </dd></dl>
+
+</div>
+</div>
+<a id="ga37d620e8cfc9f2f3261c2b4c5d4adfe0" name="ga37d620e8cfc9f2f3261c2b4c5d4adfe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37d620e8cfc9f2f3261c2b4c5d4adfe0">&#9670;&#160;</a></span>av_buffer_default_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_buffer_default_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>opaque</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default free callback, which calls <a class="el" href="group__lavu__mem__funcs.html#ga0c9096f498624c525aa2315b8a20c411" title="Free a memory block which has been allocated with a function of av_malloc() or av_realloc() family.">av_free()</a> on the buffer data. </p>
+<p>This function is meant to be passed to <a class="el" href="#gad3abf50f35acbc914af7be26462d9fa9" title="Create an AVBuffer from an existing array.">av_buffer_create()</a>, not called directly. </p>
+
+</div>
+</div>
+<a id="gaa68265370a808d3b9f55a518a958ba3c" name="gaa68265370a808d3b9f55a518a958ba3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa68265370a808d3b9f55a518a958ba3c">&#9670;&#160;</a></span>av_buffer_get_opaque()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> * av_buffer_get_opaque </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the opaque parameter set by av_buffer_create. </dd></dl>
+
+</div>
+</div>
+<a id="ga7b16c3976dc555f71d0843bbd023dfcd" name="ga7b16c3976dc555f71d0843bbd023dfcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b16c3976dc555f71d0843bbd023dfcd">&#9670;&#160;</a></span>av_buffer_get_ref_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_buffer_get_ref_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga060be34ace567ae378fd0a786e847053" name="ga060be34ace567ae378fd0a786e847053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga060be34ace567ae378fd0a786e847053">&#9670;&#160;</a></span>av_buffer_is_writable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_buffer_is_writable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>1 if the caller may write to the data referred to by buf (which is true if and only if buf is the only reference to the underlying <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a>). Return 0 otherwise. A positive answer is valid until <a class="el" href="#gab8c6e41e6063c2210bfe0b54dc63e8ed" title="Create a new reference to an AVBuffer.">av_buffer_ref()</a> is called on buf. </dd></dl>
+
+</div>
+</div>
+<a id="ga9c2a1be1b7bb80eec8613fdb62a19074" name="ga9c2a1be1b7bb80eec8613fdb62a19074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c2a1be1b7bb80eec8613fdb62a19074">&#9670;&#160;</a></span>av_buffer_make_writable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_buffer_make_writable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> **</td>          <td class="paramname"><span class="paramname"><em>buf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a writable reference from a given buffer reference, avoiding data copy if possible. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>buffer reference to make writable. On success, buf is either left untouched, or it is unreferenced and a new writable <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> is written in its place. On failure, buf is left untouched. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on failure. </dd></dl>
+
+</div>
+</div>
+<a id="gac7c228f9ed54e246dcd270503bed7291" name="gac7c228f9ed54e246dcd270503bed7291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7c228f9ed54e246dcd270503bed7291">&#9670;&#160;</a></span>av_buffer_realloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_buffer_realloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> **</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reallocate a given buffer. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>a buffer reference to reallocate. On success, buf will be unreferenced and a new reference with the required size will be written in its place. On failure buf will be left untouched. *buf may be NULL, then a new buffer is allocated. </td></tr>
+    <tr><td class="paramname">size</td><td>required new buffer size. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on failure.</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>the buffer is actually reallocated with <a class="el" href="group__lavu__mem__funcs.html#gacd8bfddb4c457ba5f99278f7020d1aa5" title="Allocate, reallocate, or free a block of memory.">av_realloc()</a> only if it was initially allocated through av_buffer_realloc(NULL) and there is only one reference to it (i.e. the one passed to this function). In all other cases a new buffer is allocated and the data is copied. </dd></dl>
+
+</div>
+</div>
+<a id="gab8c6e41e6063c2210bfe0b54dc63e8ed" name="gab8c6e41e6063c2210bfe0b54dc63e8ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8c6e41e6063c2210bfe0b54dc63e8ed">&#9670;&#160;</a></span>av_buffer_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> * av_buffer_ref </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a new reference to an <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a>. </p>
+<dl class="section return"><dt>返回</dt><dd>a new <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> referring to the same <a class="el" href="#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> as buf or NULL on failure. </dd></dl>
+
+</div>
+</div>
+<a id="ga135e9e929b5033bb8f68322497b2effc" name="ga135e9e929b5033bb8f68322497b2effc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga135e9e929b5033bb8f68322497b2effc">&#9670;&#160;</a></span>av_buffer_unref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_buffer_unref </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> **</td>          <td class="paramname"><span class="paramname"><em>buf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free a given reference and automatically free the buffer if there are no more references to it. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>the reference to be freed. The pointer is set to NULL on return. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

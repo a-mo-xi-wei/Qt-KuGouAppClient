@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: RotationStrategy类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_qs_logging_1_1_rotation_strategy.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_qs_logging_1_1_rotation_strategy-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">RotationStrategy类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_qs_log_dest_file_8h_source.html">QsLogDestFile.h</a>&gt;</code></p>
+<div class="dynheader">
+类 RotationStrategy 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qs_logging_1_1_rotation_strategy__inherit__graph.png" border="0" usemap="#a_rotation_strategy_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_rotation_strategy_inherit__map" id="a_rotation_strategy_inherit__map">
+<area shape="rect" title=" " alt="" coords="101,5,220,32"/>
+<area shape="rect" href="class_qs_logging_1_1_null_rotation_strategy.html" title=" " alt="" coords="5,80,148,107"/>
+<area shape="poly" title=" " alt="" coords="136,45,93,82,89,78,133,40"/>
+<area shape="rect" href="class_qs_logging_1_1_size_rotation_strategy.html" title=" " alt="" coords="172,80,317,107"/>
+<area shape="poly" title=" " alt="" coords="188,40,232,78,228,82,185,45"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5fa10e7e64ee1dacbd3e9a36e3a7b03f" id="r_a5fa10e7e64ee1dacbd3e9a36e3a7b03f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fa10e7e64ee1dacbd3e9a36e3a7b03f">~RotationStrategy</a> ()</td></tr>
+<tr class="separator:a5fa10e7e64ee1dacbd3e9a36e3a7b03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2e9e3447be1717a261187d0a3065fe" id="r_a3a2e9e3447be1717a261187d0a3065fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2e9e3447be1717a261187d0a3065fe">setInitialInfo</a> (const QFile &amp;file)=0</td></tr>
+<tr class="separator:a3a2e9e3447be1717a261187d0a3065fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4712740c075a66d048aabf78b4f3ee6" id="r_ac4712740c075a66d048aabf78b4f3ee6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4712740c075a66d048aabf78b4f3ee6">includeMessageInCalculation</a> (const QString &amp;message)=0</td></tr>
+<tr class="separator:ac4712740c075a66d048aabf78b4f3ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496e2d9f3441caa34339355ceb195fa3" id="r_a496e2d9f3441caa34339355ceb195fa3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a496e2d9f3441caa34339355ceb195fa3">shouldRotate</a> ()=0</td></tr>
+<tr class="separator:a496e2d9f3441caa34339355ceb195fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af17efaef23aba7cdf9cf262df6478fb2" id="r_af17efaef23aba7cdf9cf262df6478fb2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af17efaef23aba7cdf9cf262df6478fb2">rotate</a> ()=0</td></tr>
+<tr class="separator:af17efaef23aba7cdf9cf262df6478fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b7a4eb4ae0a64bbf4ac6e605027f513" id="r_a8b7a4eb4ae0a64bbf4ac6e605027f513"><td class="memItemLeft" align="right" valign="top">virtual QIODevice::OpenMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b7a4eb4ae0a64bbf4ac6e605027f513">recommendedOpenModeFlag</a> ()=0</td></tr>
+<tr class="separator:a8b7a4eb4ae0a64bbf4ac6e605027f513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5fa10e7e64ee1dacbd3e9a36e3a7b03f" name="a5fa10e7e64ee1dacbd3e9a36e3a7b03f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa10e7e64ee1dacbd3e9a36e3a7b03f">&#9670;&#160;</a></span>~RotationStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_qs_logging_1_1_rotation_strategy.html">RotationStrategy</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac4712740c075a66d048aabf78b4f3ee6" name="ac4712740c075a66d048aabf78b4f3ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4712740c075a66d048aabf78b4f3ee6">&#9670;&#160;</a></span>includeMessageInCalculation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void includeMessageInCalculation </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_qs_logging_1_1_null_rotation_strategy.html#aa4583aa8446a64d352aaf6c2a5c46342">NullRotationStrategy</a> , 以及 <a class="el" href="class_qs_logging_1_1_size_rotation_strategy.html#a5a4831691417249b5b3e58eca362365f">SizeRotationStrategy</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a8b7a4eb4ae0a64bbf4ac6e605027f513" name="a8b7a4eb4ae0a64bbf4ac6e605027f513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b7a4eb4ae0a64bbf4ac6e605027f513">&#9670;&#160;</a></span>recommendedOpenModeFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QIODevice::OpenMode recommendedOpenModeFlag </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_qs_logging_1_1_null_rotation_strategy.html#a1189da63ac7f38f51c27d84c37dd3e29">NullRotationStrategy</a> , 以及 <a class="el" href="class_qs_logging_1_1_size_rotation_strategy.html#a25c573b125be9846805c566a6e15a6d2">SizeRotationStrategy</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="af17efaef23aba7cdf9cf262df6478fb2" name="af17efaef23aba7cdf9cf262df6478fb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af17efaef23aba7cdf9cf262df6478fb2">&#9670;&#160;</a></span>rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rotate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_qs_logging_1_1_null_rotation_strategy.html#a0cf04f2b22cafbcbb1e548724aa839b1">NullRotationStrategy</a> , 以及 <a class="el" href="class_qs_logging_1_1_size_rotation_strategy.html#a15a76598a144447da51866d50bf65d58">SizeRotationStrategy</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a3a2e9e3447be1717a261187d0a3065fe" name="a3a2e9e3447be1717a261187d0a3065fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2e9e3447be1717a261187d0a3065fe">&#9670;&#160;</a></span>setInitialInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void setInitialInfo </td>
+          <td>(</td>
+          <td class="paramtype">const QFile &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_qs_logging_1_1_null_rotation_strategy.html#ad91bb1c3979dd927373f339ee0ff008a">NullRotationStrategy</a> , 以及 <a class="el" href="class_qs_logging_1_1_size_rotation_strategy.html#a593327961d200b6fb0842302049c2b25">SizeRotationStrategy</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a496e2d9f3441caa34339355ceb195fa3" name="a496e2d9f3441caa34339355ceb195fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496e2d9f3441caa34339355ceb195fa3">&#9670;&#160;</a></span>shouldRotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool shouldRotate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_qs_logging_1_1_null_rotation_strategy.html#aefa94fefb00b060f95b539a7f552749b">NullRotationStrategy</a> , 以及 <a class="el" href="class_qs_logging_1_1_size_rotation_strategy.html#a2ef17c4e318488c2b57488c21b9aa3ff">SizeRotationStrategy</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_qs_log_dest_file_8h_source.html">QsLogDestFile.h</a></li>
+<li><a class="el" href="_qs_log_dest_file_8cpp.html">QsLogDestFile.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_qs_logging.html">QsLogging</a></li><li class="navelem"><a class="el" href="class_qs_logging_1_1_rotation_strategy.html">RotationStrategy</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

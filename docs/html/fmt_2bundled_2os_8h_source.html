@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: os.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('fmt_2bundled_2os_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">fmt/bundled/os.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="fmt_2bundled_2os_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Formatting library for C++ - optional OS-specific functionality</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Copyright (c) 2012 - present, Victor Zverovich</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// All rights reserved.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// For the license information refer to format.h.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef FMT_OS_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define FMT_OS_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="format_8h.html">format.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef FMT_MODULE</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#  include &lt;cerrno&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#  include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#  include &lt;cstdio&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#  include &lt;system_error&gt;</span>  <span class="comment">// std::system_error</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#  if FMT_HAS_INCLUDE(&lt;xlocale.h&gt;)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#    include &lt;xlocale.h&gt;</span>  <span class="comment">// LC_NUMERIC_MASK on macOS</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif  </span><span class="comment">// FMT_MODULE</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef FMT_USE_FCNTL</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// UWP doesn&#39;t provide _pipe.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#  if FMT_HAS_INCLUDE(&quot;winapifamily.h&quot;)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#    include &lt;winapifamily.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#  if (FMT_HAS_INCLUDE(&lt;fcntl.h&gt;) || defined(__APPLE__) || \</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">       defined(__linux__)) &amp;&amp;                              \</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">      (!defined(WINAPI_FAMILY) ||                          \</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">       (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP))</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#    include &lt;fcntl.h&gt;</span>  <span class="comment">// for O_RDONLY</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#    define FMT_USE_FCNTL 1</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#  else</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#a4107274242b7f99d9559aabd297f7534">   36</a></span><span class="preprocessor">#    define FMT_USE_FCNTL 0</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#ifndef FMT_POSIX</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#  if defined(_WIN32) &amp;&amp; !defined(__MINGW32__)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// Fix warnings about deprecated symbols.</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#    define FMT_POSIX(call) _##call</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#  else</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#a6fa0773ef89920062fe6ab8b6e3cf337">   45</a></span><span class="preprocessor">#    define FMT_POSIX(call) call</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// Calls to system functions are wrapped in FMT_SYSTEM for testability.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifdef FMT_SYSTEM</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#  define FMT_HAS_SYSTEM</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#  define FMT_POSIX_CALL(call) FMT_SYSTEM(call)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#acca658935a0993e7cf549b4a5be255a3">   54</a></span><span class="preprocessor">#  define FMT_SYSTEM(call) ::call</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#  ifdef _WIN32</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">// Fix warnings about deprecated symbols.</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#    define FMT_POSIX_CALL(call) ::_##call</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#  else</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#aa693a9f0c55e9b081f1ea5bf04968dd7">   59</a></span><span class="preprocessor">#    define FMT_POSIX_CALL(call) ::call</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// Retries the expression while it evaluates to error_result and errno</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// equals to EINTR.</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="foldopen" id="foldopen00066" data-start="" data-end="">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#a54f7e73fc1fc6ded8358c6339b51bde7">   66</a></span><span class="preprocessor">#  define FMT_RETRY_VAL(result, expression, error_result) \</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">    do {                                                  \</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">      (result) = (expression);                            \</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">    } while ((result) == (error_result) &amp;&amp; errno == EINTR)</span></div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#  define FMT_RETRY_VAL(result, expression, error_result) result = (expression)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#a9d6790ac79298b8abd2472500422e138">   74</a></span><span class="preprocessor">#define FMT_RETRY(result, expression) FMT_RETRY_VAL(result, expression, -1)</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><a class="code hl_define" href="base_8h.html#a887c191adf8cfaf06ed40b5c4d487343">FMT_BEGIN_NAMESPACE</a></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><a class="code hl_define" href="base_8h.html#ab09e1860f362e7828106dfa9963d884f">FMT_BEGIN_EXPORT</a></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="};">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classbasic__cstring__view.html">   95</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Char&gt; <span class="keyword">class </span><a class="code hl_function" href="classbasic__cstring__view.html#a2c976605f05b811a7c0ea853afcab574">basic_cstring_view</a> {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classbasic__cstring__view.html#aff67994a63fef7f0dd43e813f9b69ec5">   97</a></span>  <span class="keyword">const</span> Char* <a class="code hl_variable" href="classbasic__cstring__view.html#aff67994a63fef7f0dd43e813f9b69ec5">data_</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classbasic__cstring__view.html#a2c976605f05b811a7c0ea853afcab574">  101</a></span>  <a class="code hl_function" href="classbasic__cstring__view.html#a2c976605f05b811a7c0ea853afcab574">basic_cstring_view</a>(<span class="keyword">const</span> Char* s) : <a class="code hl_variable" href="classbasic__cstring__view.html#aff67994a63fef7f0dd43e813f9b69ec5">data_</a>(s) {}</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classbasic__cstring__view.html#a5b223c58f89d9ccffdd019914385ad72">  104</a></span>  <a class="code hl_function" href="classbasic__cstring__view.html#a5b223c58f89d9ccffdd019914385ad72">basic_cstring_view</a>(<span class="keyword">const</span> std::basic_string&lt;Char&gt;&amp; s) : <a class="code hl_variable" href="classbasic__cstring__view.html#aff67994a63fef7f0dd43e813f9b69ec5">data_</a>(s.<a class="code hl_function" href="classbasic__cstring__view.html#a77128ffc0726e65189b558382254551f">c_str</a>()) {}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classbasic__cstring__view.html#a77128ffc0726e65189b558382254551f">  107</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="classbasic__cstring__view.html#a77128ffc0726e65189b558382254551f">c_str</a>() const -&gt; const Char* { <span class="keywordflow">return</span> <a class="code hl_variable" href="classbasic__cstring__view.html#aff67994a63fef7f0dd43e813f9b69ec5">data_</a>; }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>};</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">  110</a></span><span class="keyword">using </span><a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">cstring_view</a> = <a class="code hl_class" href="classbasic__cstring__view.html">basic_cstring_view&lt;char&gt;</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#a98fc52506266131c4391a72514b66272">  111</a></span><span class="keyword">using </span><a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#a98fc52506266131c4391a72514b66272">wcstring_view</a> = <a class="code hl_class" href="classbasic__cstring__view.html">basic_cstring_view&lt;wchar_t&gt;</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> <span class="keyword">const</span> std::error_category&amp; <a class="code hl_function" href="fmt_2bundled_2os_8h.html#aabc3a27f0113a25ee0a1de28b644778f">system_category</a>() noexcept;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>namespace <a class="code hl_namespace" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> <span class="keywordtype">void</span> format_windows_error(buffer&lt;char&gt;&amp; out, <span class="keywordtype">int</span> error_code,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                  <span class="keyword">const</span> <span class="keywordtype">char</span>* message) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> std::system_error vwindows_error(<span class="keywordtype">int</span> error_code, <a class="code hl_typedef" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> <a class="code hl_namespace" href="namespacefmt.html">fmt</a>,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                                         <a class="code hl_typedef" href="base_8h.html#ac4c741bdfc6ee1c9cdba611f0887eecd">format_args</a> args);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="keyword">auto</span> windows_error(<span class="keywordtype">int</span> error_code, <a class="code hl_typedef" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> message, <span class="keyword">const</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&amp;... args)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    -&gt; std::system_error {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordflow">return</span> vwindows_error(error_code, message, <a class="code hl_typedef" href="base_8h.html#a35565a226d6b1c02705562edc06b3aa5">vargs&lt;T...&gt;</a>{{args...}});</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>}</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">// Reports a Windows error without throwing an exception.</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">// Can be used to report errors from destructors.</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> <span class="keywordtype">void</span> report_windows_error(<span class="keywordtype">int</span> error_code, <span class="keyword">const</span> <span class="keywordtype">char</span>* message) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#else</span></div>
+<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="fmt_2bundled_2os_8h.html#aabc3a27f0113a25ee0a1de28b644778f">  159</a></span><span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="fmt_2bundled_2os_8h.html#aabc3a27f0113a25ee0a1de28b644778f">system_category</a>() noexcept -&gt; const <a class="code hl_namespace" href="namespacestd.html">std</a>::error_category&amp; {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordflow">return</span> std::system_category();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif  </span><span class="comment">// _WIN32</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">// std::system is not available on some platforms such as iOS (#2248).</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#ifdef __OSX__</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a>, <span class="keyword">typename</span>... Args, <span class="keyword">typename</span> Char = char_t&lt;S&gt;&gt;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="keywordtype">void</span> say(<span class="keyword">const</span> <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a>&amp; <a class="code hl_namespace" href="namespacefmt.html">fmt</a>, Args&amp;&amp;... args) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  std::system(<a class="code hl_function" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c">format</a>(<span class="stringliteral">&quot;say \&quot;{}\&quot;&quot;</span>, <a class="code hl_function" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c">format</a>(<a class="code hl_namespace" href="namespacefmt.html">fmt</a>, args...)).c_str());</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment">// A buffered file.</span></div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="};">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classbuffered__file.html">  173</a></span><span class="keyword">class </span><a class="code hl_function" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file</a> {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">  175</a></span>  FILE* <a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classbuffered__file.html#a686a90482e62dd1618201a3c79f9aae6">  177</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_friend" href="classbuffered__file.html#a686a90482e62dd1618201a3c79f9aae6">file</a>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">  179</a></span>  <span class="keyword">inline</span> <span class="keyword">explicit</span> <a class="code hl_function" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file</a>(FILE* f) : <a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>(f) {}</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classbuffered__file.html#ac7c5fa068b9a0fc6e82a212baaa633c3">  182</a></span>  <a class="code hl_function" href="classbuffered__file.html#ac7c5fa068b9a0fc6e82a212baaa633c3">buffered_file</a>(<span class="keyword">const</span> <a class="code hl_function" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classbuffered__file.html#a880a21f90e5bbf0a6ac69259731499fa">  183</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classbuffered__file.html#a880a21f90e5bbf0a6ac69259731499fa">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  <span class="comment">// Constructs a buffered_file object which doesn&#39;t represent any file.</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classbuffered__file.html#aa08b9c5600fcc1522a976fa6bf8bfaae">  186</a></span>  <span class="keyword">inline</span> <a class="code hl_function" href="classbuffered__file.html#aa08b9c5600fcc1522a976fa6bf8bfaae">buffered_file</a>() noexcept : <a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>(<span class="keywordtype">nullptr</span>) {}</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="comment">// Destroys the object closing the file it represents if any.</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classbuffered__file.html#a85237d4faf7e99ba1959584f94d56a77">  189</a></span>  <a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> <a class="code hl_function" href="classbuffered__file.html#a85237d4faf7e99ba1959584f94d56a77">~buffered_file</a>() noexcept;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> public:</div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classbuffered__file.html#a9e020e433b58b2b92e1889fd5ffa2f97">  192</a></span>  <a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> <a class="code hl_function" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file</a>(<a class="code hl_function" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file</a>&amp;&amp; other) noexcept : <a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>(other.<a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>) {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    other.file_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  }</div>
+</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classbuffered__file.html#aff857cfa36821ce79b2771a4b4f243a6">  196</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="classbuffered__file.html#aff857cfa36821ce79b2771a4b4f243a6">operator=</a>(<a class="code hl_function" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file</a>&amp;&amp; other) -&gt; <a class="code hl_function" href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file</a>&amp; {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <a class="code hl_function" href="classbuffered__file.html#a85b3eaf2f10c265660ef438b7adc6516">close</a>();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a> = other.file_;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    other.file_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  }</div>
+</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="comment">// Opens a file.</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classbuffered__file.html#a3ff4c7f0d94f763e55bedc04f4a3c718">  204</a></span>  <a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> <a class="code hl_function" href="classbuffered__file.html#a3ff4c7f0d94f763e55bedc04f4a3c718">buffered_file</a>(<a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">cstring_view</a> filename, <a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">cstring_view</a> mode);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="comment">// Closes the file.</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classbuffered__file.html#a85b3eaf2f10c265660ef438b7adc6516">  207</a></span>  <a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> <span class="keywordtype">void</span> <a class="code hl_function" href="classbuffered__file.html#a85b3eaf2f10c265660ef438b7adc6516">close</a>();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="comment">// Returns the pointer to a FILE object representing this file.</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classbuffered__file.html#aa28576971f7989e437aad1af8741c20b">  210</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="classbuffered__file.html#aa28576971f7989e437aad1af8741c20b">get</a>() const noexcept -&gt; FILE* { <span class="keywordflow">return</span> <a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>; }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classbuffered__file.html#adc7b277384fc50b0b27dcff8e1ab2c1c">  212</a></span>  <a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> <span class="keyword">auto</span> <a class="code hl_function" href="classbuffered__file.html#adc7b277384fc50b0b27dcff8e1ab2c1c">descriptor</a>() const -&gt; <span class="keywordtype">int</span>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  template &lt;typename... <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classbuffered__file.html#a5e7418bbe3f33ba70dba8dafacc6b132">  215</a></span>  <a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> <span class="keywordtype">void</span> <a class="code hl_function" href="classbuffered__file.html#a5e7418bbe3f33ba70dba8dafacc6b132">print</a>(<a class="code hl_typedef" href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a> <a class="code hl_namespace" href="namespacefmt.html">fmt</a>, const <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&amp;... args) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    fmt::vargs&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>...&gt; <a class="code hl_typedef" href="base_8h.html#a35565a226d6b1c02705562edc06b3aa5">vargs</a> = {{args...}};</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_function" href="namespacedetail.html#a618ec61badbd26907407e9fbe03d7816">detail::is_locking</a>&lt;<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>...&gt;() ? fmt::vprint_buffered(<a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>, <a class="code hl_namespace" href="namespacefmt.html">fmt</a>, <a class="code hl_typedef" href="base_8h.html#a35565a226d6b1c02705562edc06b3aa5">vargs</a>)</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                               : fmt::vprint(<a class="code hl_variable" href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">file_</a>, <a class="code hl_namespace" href="namespacefmt.html">fmt</a>, <a class="code hl_typedef" href="base_8h.html#a35565a226d6b1c02705562edc06b3aa5">vargs</a>);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  }</div>
+</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>};</div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="preprocessor">#if FMT_USE_FCNTL</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">// A file. Closed file is represented by a file object with descriptor -1.</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">// Methods that are not declared with noexcept may throw</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment">// fmt::system_error in case of failure. Note that some errors such as</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">// closing the file multiple times will cause a crash on Windows rather</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">// than an exception. You can get standard behavior by overriding the</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">// invalid parameter handler with _set_invalid_parameter_handler.</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">class </span><a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> file {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="keywordtype">int</span> fd_;  <span class="comment">// File descriptor.</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="comment">// Constructs a file object with a given descriptor.</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keyword">explicit</span> file(<span class="keywordtype">int</span> fd) : fd_(fd) {}</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  <span class="keyword">friend</span> <span class="keyword">struct </span>pipe;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="comment">// Possible values for the oflag argument to the constructor.</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    RDONLY = <a class="code hl_define" href="fmt_2bundled_2os_8h.html#a6fa0773ef89920062fe6ab8b6e3cf337">FMT_POSIX</a>(O_RDONLY),  <span class="comment">// Open for reading only.</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    WRONLY = <a class="code hl_define" href="fmt_2bundled_2os_8h.html#a6fa0773ef89920062fe6ab8b6e3cf337">FMT_POSIX</a>(O_WRONLY),  <span class="comment">// Open for writing only.</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    RDWR = <a class="code hl_define" href="fmt_2bundled_2os_8h.html#a6fa0773ef89920062fe6ab8b6e3cf337">FMT_POSIX</a>(O_RDWR),      <span class="comment">// Open for reading and writing.</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    CREATE = <a class="code hl_define" href="fmt_2bundled_2os_8h.html#a6fa0773ef89920062fe6ab8b6e3cf337">FMT_POSIX</a>(O_CREAT),   <span class="comment">// Create if the file doesn&#39;t exist.</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    APPEND = <a class="code hl_define" href="fmt_2bundled_2os_8h.html#a6fa0773ef89920062fe6ab8b6e3cf337">FMT_POSIX</a>(O_APPEND),  <span class="comment">// Open in append mode.</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    TRUNC = <a class="code hl_define" href="fmt_2bundled_2os_8h.html#a6fa0773ef89920062fe6ab8b6e3cf337">FMT_POSIX</a>(O_TRUNC)     <span class="comment">// Truncate the content of the file.</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  };</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="comment">// Constructs a file object which doesn&#39;t represent any file.</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="keyword">inline</span> file() noexcept : fd_(-1) {}</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  <span class="comment">// Opens a file and constructs a file object representing this file.</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  file(<a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">cstring_view</a> path, <span class="keywordtype">int</span> oflag);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  file(<span class="keyword">const</span> file&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> file&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="keyword">inline</span> file(file&amp;&amp; other) noexcept : fd_(other.fd_) { other.fd_ = -1; }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <span class="comment">// Move assignment is not noexcept because close may throw.</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  <span class="keyword">inline</span> <span class="keyword">auto</span> operator=(file&amp;&amp; other) -&gt; file&amp; {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    close();</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    fd_ = other.fd_;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    other.fd_ = -1;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  }</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  <span class="comment">// Destroys the object closing the file it represents if any.</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  ~file() noexcept;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="comment">// Returns the file descriptor.</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> auto descriptor() const noexcept -&gt; <span class="keywordtype">int</span> { <span class="keywordflow">return</span> fd_; }</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="comment">// Closes the file.</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keywordtype">void</span> close();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="comment">// Returns the file size. The size has signed type for consistency with</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="comment">// stat::st_size.</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keyword">auto</span> size() const -&gt; <span class="keywordtype">long</span> <span class="keywordtype">long</span>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <span class="comment">// Attempts to read count bytes from the file into the specified buffer.</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  auto read(<span class="keywordtype">void</span>* buffer, <span class="keywordtype">size_t</span> count) -&gt; <span class="keywordtype">size_t</span>;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="comment">// Attempts to write count bytes from the specified buffer to the file.</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  auto write(const <span class="keywordtype">void</span>* buffer, <span class="keywordtype">size_t</span> count) -&gt; <span class="keywordtype">size_t</span>;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="comment">// Duplicates a file descriptor with the dup function and returns</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="comment">// the duplicate as a file object.</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  static auto dup(<span class="keywordtype">int</span> fd) -&gt; file;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="comment">// Makes fd be the copy of this file descriptor, closing fd first if</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="comment">// necessary.</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keywordtype">void</span> dup2(<span class="keywordtype">int</span> fd);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  <span class="comment">// Makes fd be the copy of this file descriptor, closing fd first if</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  <span class="comment">// necessary.</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  <span class="keywordtype">void</span> dup2(<span class="keywordtype">int</span> fd, std::error_code&amp; ec) noexcept;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="comment">// Creates a buffered_file object associated with this file and detaches</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <span class="comment">// this file object from the file.</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  auto fdopen(const <span class="keywordtype">char</span>* mode) -&gt; buffered_file;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="preprocessor">#  if defined(_WIN32) &amp;&amp; !defined(__MINGW32__)</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="comment">// Opens a file and constructs a file object representing this file by</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="comment">// wcstring_view filename. Windows only.</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  <span class="keyword">static</span> file open_windows_file(<a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#a98fc52506266131c4391a72514b66272">wcstring_view</a> path, <span class="keywordtype">int</span> oflag);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>};</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="keyword">struct </span><a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> pipe {</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  file read_end;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  file write_end;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  <span class="comment">// Creates a pipe setting up read_end and write_end file objects for reading</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  <span class="comment">// and writing respectively.</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  pipe();</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>};</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="comment">// Returns the memory page size.</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="keyword">auto</span> getpagesize() -&gt; long;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="keyword">struct </span>buffer_size {</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="keyword">constexpr</span> buffer_size() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keywordtype">size_t</span> value = 0;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <a class="code hl_define" href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a> <span class="keyword">auto</span> operator=(<span class="keywordtype">size_t</span> val) <span class="keyword">const</span> -&gt; buffer_size {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keyword">auto</span> bs = buffer_size();</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    bs.value = val;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="keywordflow">return</span> bs;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  }</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>};</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="keyword">struct </span>ostream_params {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  <span class="keywordtype">int</span> oflag = file::WRONLY | file::CREATE | file::TRUNC;</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="keywordtype">size_t</span> buffer_size = BUFSIZ &gt; 32768 ? BUFSIZ : 32768;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  <span class="keyword">constexpr</span> ostream_params() {}</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  ostream_params(<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>... params, <span class="keywordtype">int</span> new_oflag) : ostream_params(params...) {</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    oflag = new_oflag;</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  }</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>  ostream_params(<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>... params, detail::buffer_size bs)</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>      : ostream_params(params...) {</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    this-&gt;buffer_size = bs.value;</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="comment">// Intel has a bug that results in failure to deduce a constructor</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="comment">// for empty parameter packs.</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="preprocessor">#  if defined(__INTEL_COMPILER) &amp;&amp; __INTEL_COMPILER &lt; 2000</span></div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  ostream_params(<span class="keywordtype">int</span> new_oflag) : oflag(new_oflag) {}</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  ostream_params(detail::buffer_size bs) : buffer_size(bs.value) {}</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>};</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>}  <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><a class="code hl_define" href="format_8h.html#acc3bd24c06a43f7c43b560151b166e16">FMT_INLINE_VARIABLE</a> <span class="keyword">constexpr</span> <span class="keyword">auto</span> buffer_size = detail::buffer_size();</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="keyword">class </span><a class="code hl_define" href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a> ostream : <span class="keyword">private</span> <a class="code hl_class" href="classdetail_1_1buffer.html">detail::buffer</a>&lt;char&gt; {</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  file file_;</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  ostream(<a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">cstring_view</a> path, <span class="keyword">const</span> detail::ostream_params&amp; params);</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> grow(buffer&lt;char&gt;&amp; buf, <span class="keywordtype">size_t</span>);</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  ostream(ostream&amp;&amp; other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  ~ostream();</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  <span class="keyword">operator</span> writer() {</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    detail::buffer&lt;char&gt;&amp; buf = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    <span class="keywordflow">return</span> buf;</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  }</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="namespacespdlog_1_1details.html#ae08c1e88063d86888cfeae2df6acf6daa86f354b8575a1a736775ae003fa344e5">flush</a>() {</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    <span class="keywordflow">if</span> (size() == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>    file_.write(data(), size() * <span class="keyword">sizeof</span>(data()[0]));</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    clear();</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>  }</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  <span class="keyword">friend</span> <span class="keyword">auto</span> output_file(<a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">cstring_view</a> path, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>... params) -&gt; ostream;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> close() {</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    <a class="code hl_enumvalue" href="namespacespdlog_1_1details.html#ae08c1e88063d86888cfeae2df6acf6daa86f354b8575a1a736775ae003fa344e5">flush</a>();</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>    file_.close();</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  }</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span></div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="base_8h.html#a59025bfaf390e425b4e274c966a77557">print</a>(<a class="code hl_typedef" href="base_8h.html#a49f7ca2836740c64e60d413274377621">format_string&lt;T...&gt;</a> fmt, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&amp;&amp;... args) {</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    <a class="code hl_function" href="base_8h.html#a3683dd5284154b2cc412c5623a3a850c">vformat_to</a>(<a class="code hl_typedef" href="base_8h.html#a6572319cff9106ebe28538bf10641524">appender</a>(*<span class="keyword">this</span>), fmt.str, <a class="code hl_typedef" href="base_8h.html#a35565a226d6b1c02705562edc06b3aa5">vargs&lt;T...&gt;</a>{{args...}});</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>  }</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>};</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span></div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt;</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span><span class="keyword">inline</span> <span class="keyword">auto</span> output_file(<a class="code hl_typedef" href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">cstring_view</a> path, <a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>... params) -&gt; ostream {</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  <span class="keywordflow">return</span> {path, detail::ostream_params(params...)};</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>}</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span><span class="preprocessor">#endif  </span><span class="comment">// FMT_USE_FCNTL</span></div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span><a class="code hl_define" href="base_8h.html#a06c2cd8d4ba997d81bcb06c0cdb47410">FMT_END_EXPORT</a></div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span><a class="code hl_define" href="base_8h.html#ae0d2fbdf031547a949fc7e1c0b3c97f1">FMT_END_NAMESPACE</a></div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span><span class="preprocessor">#endif  </span><span class="comment">// FMT_OS_H_</span></div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></div><div class="ttdeci">@ T</div><div class="ttdoc">字母T</div><div class="ttdef"><b>定义</b> Def.h:3259</div></div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a></div><div class="ttdeci">@ S</div><div class="ttdoc">字母S</div><div class="ttdef"><b>定义</b> Def.h:2884</div></div>
+<div class="ttc" id="abase_8h_html_a06c2cd8d4ba997d81bcb06c0cdb47410"><div class="ttname"><a href="base_8h.html#a06c2cd8d4ba997d81bcb06c0cdb47410">FMT_END_EXPORT</a></div><div class="ttdeci">#define FMT_END_EXPORT</div><div class="ttdef"><b>定义</b> base.h:264</div></div>
+<div class="ttc" id="abase_8h_html_a204ca715c2febee035464fa53dfc50c4"><div class="ttname"><a href="base_8h.html#a204ca715c2febee035464fa53dfc50c4">string_view</a></div><div class="ttdeci">basic_string_view&lt; char &gt; string_view</div><div class="ttdef"><b>定义</b> base.h:617</div></div>
+<div class="ttc" id="abase_8h_html_a35565a226d6b1c02705562edc06b3aa5"><div class="ttname"><a href="base_8h.html#a35565a226d6b1c02705562edc06b3aa5">vargs</a></div><div class="ttdeci">detail::format_arg_store&lt; context, sizeof...(T), detail::count_named_args&lt; T... &gt;(), detail::make_descriptor&lt; context, T... &gt;()&gt; vargs</div><div class="ttdef"><b>定义</b> base.h:2784</div></div>
+<div class="ttc" id="abase_8h_html_a3683dd5284154b2cc412c5623a3a850c"><div class="ttname"><a href="base_8h.html#a3683dd5284154b2cc412c5623a3a850c">vformat_to</a></div><div class="ttdeci">auto vformat_to(OutputIt &amp;&amp;out, string_view fmt, format_args args) -&gt; remove_cvref_t&lt; OutputIt &gt;</div><div class="ttdoc">Formats a string and writes the output to out.</div><div class="ttdef"><b>定义</b> base.h:2806</div></div>
+<div class="ttc" id="abase_8h_html_a49f7ca2836740c64e60d413274377621"><div class="ttname"><a href="base_8h.html#a49f7ca2836740c64e60d413274377621">format_string</a></div><div class="ttdeci">typename fstring&lt; T... &gt;::t format_string</div><div class="ttdef"><b>定义</b> base.h:2743</div></div>
+<div class="ttc" id="abase_8h_html_a59025bfaf390e425b4e274c966a77557"><div class="ttname"><a href="base_8h.html#a59025bfaf390e425b4e274c966a77557">print</a></div><div class="ttdeci">FMT_INLINE void print(format_string&lt; T... &gt; fmt, T &amp;&amp;... args)</div><div class="ttdoc">Formats args according to specifications in fmt and writes the output to stdout.</div><div class="ttdef"><b>定义</b> base.h:2911</div></div>
+<div class="ttc" id="abase_8h_html_a6572319cff9106ebe28538bf10641524"><div class="ttname"><a href="base_8h.html#a6572319cff9106ebe28538bf10641524">appender</a></div><div class="ttdeci">basic_appender&lt; char &gt; appender</div><div class="ttdef"><b>定义</b> base.h:633</div></div>
+<div class="ttc" id="abase_8h_html_a69201cb276383873487bf68b4ef8b4cd"><div class="ttname"><a href="base_8h.html#a69201cb276383873487bf68b4ef8b4cd">FMT_CONSTEXPR</a></div><div class="ttdeci">#define FMT_CONSTEXPR</div><div class="ttdef"><b>定义</b> base.h:113</div></div>
+<div class="ttc" id="abase_8h_html_a887c191adf8cfaf06ed40b5c4d487343"><div class="ttname"><a href="base_8h.html#a887c191adf8cfaf06ed40b5c4d487343">FMT_BEGIN_NAMESPACE</a></div><div class="ttdeci">#define FMT_BEGIN_NAMESPACE</div><div class="ttdef"><b>定义</b> base.h:253</div></div>
+<div class="ttc" id="abase_8h_html_a9a4960b70582ed2620911a0b75dce0b5"><div class="ttname"><a href="base_8h.html#a9a4960b70582ed2620911a0b75dce0b5">FMT_API</a></div><div class="ttdeci">#define FMT_API</div><div class="ttdef"><b>定义</b> base.h:283</div></div>
+<div class="ttc" id="abase_8h_html_ab09e1860f362e7828106dfa9963d884f"><div class="ttname"><a href="base_8h.html#ab09e1860f362e7828106dfa9963d884f">FMT_BEGIN_EXPORT</a></div><div class="ttdeci">#define FMT_BEGIN_EXPORT</div><div class="ttdef"><b>定义</b> base.h:263</div></div>
+<div class="ttc" id="abase_8h_html_ac4c741bdfc6ee1c9cdba611f0887eecd"><div class="ttname"><a href="base_8h.html#ac4c741bdfc6ee1c9cdba611f0887eecd">format_args</a></div><div class="ttdeci">basic_format_args&lt; context &gt; format_args</div><div class="ttdef"><b>定义</b> base.h:661</div></div>
+<div class="ttc" id="abase_8h_html_ae0d2fbdf031547a949fc7e1c0b3c97f1"><div class="ttname"><a href="base_8h.html#ae0d2fbdf031547a949fc7e1c0b3c97f1">FMT_END_NAMESPACE</a></div><div class="ttdeci">#define FMT_END_NAMESPACE</div><div class="ttdef"><b>定义</b> base.h:256</div></div>
+<div class="ttc" id="aclassbasic__cstring__view_html"><div class="ttname"><a href="classbasic__cstring__view.html">basic_cstring_view</a></div><div class="ttdoc">A reference to a null-terminated string.</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:95</div></div>
+<div class="ttc" id="aclassbasic__cstring__view_html_a2c976605f05b811a7c0ea853afcab574"><div class="ttname"><a href="classbasic__cstring__view.html#a2c976605f05b811a7c0ea853afcab574">basic_cstring_view::basic_cstring_view</a></div><div class="ttdeci">basic_cstring_view(const Char *s)</div><div class="ttdoc">Constructs a string reference object from a C string.</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:101</div></div>
+<div class="ttc" id="aclassbasic__cstring__view_html_a5b223c58f89d9ccffdd019914385ad72"><div class="ttname"><a href="classbasic__cstring__view.html#a5b223c58f89d9ccffdd019914385ad72">basic_cstring_view::basic_cstring_view</a></div><div class="ttdeci">basic_cstring_view(const std::basic_string&lt; Char &gt; &amp;s)</div><div class="ttdoc">Constructs a string reference from an std::string object.</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:104</div></div>
+<div class="ttc" id="aclassbasic__cstring__view_html_a77128ffc0726e65189b558382254551f"><div class="ttname"><a href="classbasic__cstring__view.html#a77128ffc0726e65189b558382254551f">basic_cstring_view&lt; char &gt;::c_str</a></div><div class="ttdeci">auto c_str() const -&gt; const char *</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:107</div></div>
+<div class="ttc" id="aclassbasic__cstring__view_html_aff67994a63fef7f0dd43e813f9b69ec5"><div class="ttname"><a href="classbasic__cstring__view.html#aff67994a63fef7f0dd43e813f9b69ec5">basic_cstring_view&lt; char &gt;::data_</a></div><div class="ttdeci">const char * data_</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:97</div></div>
+<div class="ttc" id="aclassbuffered__file_html_a3ff4c7f0d94f763e55bedc04f4a3c718"><div class="ttname"><a href="classbuffered__file.html#a3ff4c7f0d94f763e55bedc04f4a3c718">buffered_file::buffered_file</a></div><div class="ttdeci">FMT_API buffered_file(cstring_view filename, cstring_view mode)</div></div>
+<div class="ttc" id="aclassbuffered__file_html_a5e7418bbe3f33ba70dba8dafacc6b132"><div class="ttname"><a href="classbuffered__file.html#a5e7418bbe3f33ba70dba8dafacc6b132">buffered_file::print</a></div><div class="ttdeci">void print(string_view fmt, const T &amp;... args)</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:215</div></div>
+<div class="ttc" id="aclassbuffered__file_html_a686a90482e62dd1618201a3c79f9aae6"><div class="ttname"><a href="classbuffered__file.html#a686a90482e62dd1618201a3c79f9aae6">buffered_file::file</a></div><div class="ttdeci">friend class file</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:177</div></div>
+<div class="ttc" id="aclassbuffered__file_html_a715b2a1d4ad04ec0c950d1467f91964e"><div class="ttname"><a href="classbuffered__file.html#a715b2a1d4ad04ec0c950d1467f91964e">buffered_file::file_</a></div><div class="ttdeci">FILE * file_</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:175</div></div>
+<div class="ttc" id="aclassbuffered__file_html_a85237d4faf7e99ba1959584f94d56a77"><div class="ttname"><a href="classbuffered__file.html#a85237d4faf7e99ba1959584f94d56a77">buffered_file::~buffered_file</a></div><div class="ttdeci">FMT_API ~buffered_file() noexcept</div></div>
+<div class="ttc" id="aclassbuffered__file_html_a85b3eaf2f10c265660ef438b7adc6516"><div class="ttname"><a href="classbuffered__file.html#a85b3eaf2f10c265660ef438b7adc6516">buffered_file::close</a></div><div class="ttdeci">FMT_API void close()</div></div>
+<div class="ttc" id="aclassbuffered__file_html_a880a21f90e5bbf0a6ac69259731499fa"><div class="ttname"><a href="classbuffered__file.html#a880a21f90e5bbf0a6ac69259731499fa">buffered_file::operator=</a></div><div class="ttdeci">void operator=(const buffered_file &amp;)=delete</div></div>
+<div class="ttc" id="aclassbuffered__file_html_aa08b9c5600fcc1522a976fa6bf8bfaae"><div class="ttname"><a href="classbuffered__file.html#aa08b9c5600fcc1522a976fa6bf8bfaae">buffered_file::buffered_file</a></div><div class="ttdeci">buffered_file() noexcept</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:186</div></div>
+<div class="ttc" id="aclassbuffered__file_html_aa28576971f7989e437aad1af8741c20b"><div class="ttname"><a href="classbuffered__file.html#aa28576971f7989e437aad1af8741c20b">buffered_file::get</a></div><div class="ttdeci">auto get() const noexcept -&gt; FILE *</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:210</div></div>
+<div class="ttc" id="aclassbuffered__file_html_ac7c5fa068b9a0fc6e82a212baaa633c3"><div class="ttname"><a href="classbuffered__file.html#ac7c5fa068b9a0fc6e82a212baaa633c3">buffered_file::buffered_file</a></div><div class="ttdeci">buffered_file(const buffered_file &amp;)=delete</div></div>
+<div class="ttc" id="aclassbuffered__file_html_ac8c799fd61772da07c6dacac0dbf4802"><div class="ttname"><a href="classbuffered__file.html#ac8c799fd61772da07c6dacac0dbf4802">buffered_file::buffered_file</a></div><div class="ttdeci">buffered_file(FILE *f)</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:179</div></div>
+<div class="ttc" id="aclassbuffered__file_html_adc7b277384fc50b0b27dcff8e1ab2c1c"><div class="ttname"><a href="classbuffered__file.html#adc7b277384fc50b0b27dcff8e1ab2c1c">buffered_file::descriptor</a></div><div class="ttdeci">FMT_API auto descriptor() const -&gt; int</div></div>
+<div class="ttc" id="aclassbuffered__file_html_aff857cfa36821ce79b2771a4b4f243a6"><div class="ttname"><a href="classbuffered__file.html#aff857cfa36821ce79b2771a4b4f243a6">buffered_file::operator=</a></div><div class="ttdeci">auto operator=(buffered_file &amp;&amp;other) -&gt; buffered_file &amp;</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:196</div></div>
+<div class="ttc" id="aclassdetail_1_1buffer_html"><div class="ttname"><a href="classdetail_1_1buffer.html">detail::buffer</a></div><div class="ttdoc">A contiguous memory buffer with an optional growing ability.</div><div class="ttdef"><b>定义</b> base.h:1720</div></div>
+<div class="ttc" id="acolor_8h_html_a12b134d4f21276bc7e0473bd2cdb1c9c"><div class="ttname"><a href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c">format</a></div><div class="ttdeci">auto format(const text_style &amp;ts, format_string&lt; T... &gt; fmt, T &amp;&amp;... args) -&gt; std::string</div><div class="ttdoc">Formats arguments and returns the result as a string using ANSI escape sequences to specify text form...</div><div class="ttdef"><b>定义</b> color.h:524</div></div>
+<div class="ttc" id="afmt_2bundled_2os_8h_html_a6fa0773ef89920062fe6ab8b6e3cf337"><div class="ttname"><a href="fmt_2bundled_2os_8h.html#a6fa0773ef89920062fe6ab8b6e3cf337">FMT_POSIX</a></div><div class="ttdeci">#define FMT_POSIX(call)</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:45</div></div>
+<div class="ttc" id="afmt_2bundled_2os_8h_html_a98fc52506266131c4391a72514b66272"><div class="ttname"><a href="fmt_2bundled_2os_8h.html#a98fc52506266131c4391a72514b66272">wcstring_view</a></div><div class="ttdeci">basic_cstring_view&lt; wchar_t &gt; wcstring_view</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:111</div></div>
+<div class="ttc" id="afmt_2bundled_2os_8h_html_aabc3a27f0113a25ee0a1de28b644778f"><div class="ttname"><a href="fmt_2bundled_2os_8h.html#aabc3a27f0113a25ee0a1de28b644778f">system_category</a></div><div class="ttdeci">auto system_category() noexcept -&gt; const std::error_category &amp;</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:159</div></div>
+<div class="ttc" id="afmt_2bundled_2os_8h_html_ab5093e382f19cf769bbb8fed27dd7b1f"><div class="ttname"><a href="fmt_2bundled_2os_8h.html#ab5093e382f19cf769bbb8fed27dd7b1f">cstring_view</a></div><div class="ttdeci">basic_cstring_view&lt; char &gt; cstring_view</div><div class="ttdef"><b>定义</b> fmt/bundled/os.h:110</div></div>
+<div class="ttc" id="aformat_8h_html"><div class="ttname"><a href="format_8h.html">format.h</a></div></div>
+<div class="ttc" id="aformat_8h_html_acc3bd24c06a43f7c43b560151b166e16"><div class="ttname"><a href="format_8h.html#acc3bd24c06a43f7c43b560151b166e16">FMT_INLINE_VARIABLE</a></div><div class="ttdeci">#define FMT_INLINE_VARIABLE</div><div class="ttdef"><b>定义</b> format.h:93</div></div>
+<div class="ttc" id="aikcp_8h_html_a00d24c7231be28dbaf71f5408f30e44c"><div class="ttname"><a href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a></div><div class="ttdeci">#define inline</div><div class="ttdef"><b>定义</b> ikcp.h:127</div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>定义</b> bundled_fmtlib_format.cpp:14</div></div>
+<div class="ttc" id="anamespacedetail_html_a618ec61badbd26907407e9fbe03d7816"><div class="ttname"><a href="namespacedetail.html#a618ec61badbd26907407e9fbe03d7816">detail::is_locking</a></div><div class="ttdeci">FMT_CONSTEXPR auto is_locking() -&gt; bool</div><div class="ttdef"><b>定义</b> base.h:2387</div></div>
+<div class="ttc" id="anamespacefmt_html"><div class="ttname"><a href="namespacefmt.html">fmt</a></div><div class="ttdef"><b>定义</b> bin_to_hex.h:101</div></div>
+<div class="ttc" id="anamespacespdlog_1_1details_html_ae08c1e88063d86888cfeae2df6acf6daa86f354b8575a1a736775ae003fa344e5"><div class="ttname"><a href="namespacespdlog_1_1details.html#ae08c1e88063d86888cfeae2df6acf6daa86f354b8575a1a736775ae003fa344e5">spdlog::details::async_msg_type::flush</a></div><div class="ttdeci">@ flush</div><div class="ttdef"><b>定义</b> thread_pool.h:23</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>定义</b> format.h:120</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="dir_85fa2da21708816d1375fd12a7eb6aff.html">fmt</a></li><li class="navelem"><a class="el" href="dir_d1c5b6b473b169175f45e03530f40b4d.html">bundled</a></li><li class="navelem"><a class="el" href="fmt_2bundled_2os_8h.html">os.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

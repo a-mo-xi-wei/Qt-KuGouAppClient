@@ -1,0 +1,935 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: LiveCommonPartWidget类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_live_common_part_widget.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_live_common_part_widget-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">LiveCommonPartWidget类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>直播通用部分控件类，支持多行块控件布局  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_live_common_part_widget_8h_source.html">LiveCommonPartWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+类 LiveCommonPartWidget 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget__inherit__graph.png" border="0" usemap="#a_live_common_part_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_live_common_part_widget_inherit__map" id="a_live_common_part_widget_inherit__map">
+<area shape="rect" title="直播通用部分控件类，支持多行块控件布局" alt="" coords="5,80,169,107"/>
+<area shape="rect" title=" " alt="" coords="51,5,123,32"/>
+<area shape="poly" title=" " alt="" coords="90,48,90,80,84,80,84,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+LiveCommonPartWidget 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget__coll__graph.png" border="0" usemap="#a_live_common_part_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="a_live_common_part_widget_coll__map" id="a_live_common_part_widget_coll__map">
+<area shape="rect" title="直播通用部分控件类，支持多行块控件布局" alt="" coords="5,172,169,199"/>
+<area shape="rect" title=" " alt="" coords="46,5,118,32"/>
+<area shape="poly" title=" " alt="" coords="85,47,89,171,84,172,80,47"/>
+<area shape="rect" href="class_live_block_widget.html" title="直播块控件类，显示封面、文本和提示" alt="" coords="103,81,223,108"/>
+<area shape="poly" title=" " alt="" coords="109,41,151,79,148,83,105,45"/>
+<area shape="poly" title=" " alt="" coords="144,122,100,173,96,170,140,118"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a7f7039ea8eeaddfa317c0b1e2c669bd9" id="r_a7f7039ea8eeaddfa317c0b1e2c669bd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f7039ea8eeaddfa317c0b1e2c669bd9">initOK</a> ()</td></tr>
+<tr class="memdesc:a7f7039ea8eeaddfa317c0b1e2c669bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化完成信号  <br /></td></tr>
+<tr class="separator:a7f7039ea8eeaddfa317c0b1e2c669bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aad2052a1f58172bbda7371e1c4343bba" id="r_aad2052a1f58172bbda7371e1c4343bba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad2052a1f58172bbda7371e1c4343bba">LiveCommonPartWidget</a> (QWidget *parent=nullptr, int lines=1)</td></tr>
+<tr class="memdesc:aad2052a1f58172bbda7371e1c4343bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化直播通用部分控件  <br /></td></tr>
+<tr class="separator:aad2052a1f58172bbda7371e1c4343bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37c545d598237cfbbbfb59a765d5df7" id="r_ae37c545d598237cfbbbfb59a765d5df7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae37c545d598237cfbbbfb59a765d5df7">~LiveCommonPartWidget</a> () override</td></tr>
+<tr class="memdesc:ae37c545d598237cfbbbfb59a765d5df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，清理资源  <br /></td></tr>
+<tr class="separator:ae37c545d598237cfbbbfb59a765d5df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73a93ba1b8165a39c80780cee826689" id="r_aa73a93ba1b8165a39c80780cee826689"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa73a93ba1b8165a39c80780cee826689">setTitleName</a> (const QString &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>) const</td></tr>
+<tr class="memdesc:aa73a93ba1b8165a39c80780cee826689"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置标题  <br /></td></tr>
+<tr class="separator:aa73a93ba1b8165a39c80780cee826689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b7594c8abf42bbac3e8c83565ae4ed" id="r_a03b7594c8abf42bbac3e8c83565ae4ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03b7594c8abf42bbac3e8c83565ae4ed">setNoTipLab</a> ()</td></tr>
+<tr class="memdesc:a03b7594c8abf42bbac3e8c83565ae4ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏提示标签  <br /></td></tr>
+<tr class="separator:a03b7594c8abf42bbac3e8c83565ae4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整大小事件  <br /></td></tr>
+<tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb87a6d4464680c455d278d1d32eba6" id="r_a7eb87a6d4464680c455d278d1d32eba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a> (QObject *watched, QEvent *event) override</td></tr>
+<tr class="memdesc:a7eb87a6d4464680c455d278d1d32eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤器  <br /></td></tr>
+<tr class="separator:a7eb87a6d4464680c455d278d1d32eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a856eaeee6a1f7ac6d6dccda800d0c73e" id="r_a856eaeee6a1f7ac6d6dccda800d0c73e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a856eaeee6a1f7ac6d6dccda800d0c73e">on_all_pushButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a856eaeee6a1f7ac6d6dccda800d0c73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">全部按钮点击槽函数  <br /></td></tr>
+<tr class="separator:a856eaeee6a1f7ac6d6dccda800d0c73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ac76e5fd0461eb6c984286d02b0c7ce8a" id="r_ac76e5fd0461eb6c984286d02b0c7ce8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac76e5fd0461eb6c984286d02b0c7ce8a">initUi</a> (const int &amp;lines)</td></tr>
+<tr class="memdesc:ac76e5fd0461eb6c984286d02b0c7ce8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化界面  <br /></td></tr>
+<tr class="separator:ac76e5fd0461eb6c984286d02b0c7ce8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ebeb2cbc821faf67e8652b035024f32" id="r_a8ebeb2cbc821faf67e8652b035024f32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ebeb2cbc821faf67e8652b035024f32">initLineOne</a> ()</td></tr>
+<tr class="memdesc:a8ebeb2cbc821faf67e8652b035024f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化第一行  <br /></td></tr>
+<tr class="separator:a8ebeb2cbc821faf67e8652b035024f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebf8970689c7c2ae36c7f2b205c68fe5" id="r_aebf8970689c7c2ae36c7f2b205c68fe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebf8970689c7c2ae36c7f2b205c68fe5">initLineTwo</a> ()</td></tr>
+<tr class="memdesc:aebf8970689c7c2ae36c7f2b205c68fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化第二行  <br /></td></tr>
+<tr class="separator:aebf8970689c7c2ae36c7f2b205c68fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14447e0d41d420b03f6ffb75fe68d61c" id="r_a14447e0d41d420b03f6ffb75fe68d61c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14447e0d41d420b03f6ffb75fe68d61c">getFileCount</a> (const QString &amp;folderPath)</td></tr>
+<tr class="memdesc:a14447e0d41d420b03f6ffb75fe68d61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取目录文件数量  <br /></td></tr>
+<tr class="separator:a14447e0d41d420b03f6ffb75fe68d61c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ad670fae0406b7fe812eee5e70e14d24d" id="r_ad670fae0406b7fe812eee5e70e14d24d"><td class="memItemLeft" align="right" valign="top">Ui::LiveCommonPartWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad670fae0406b7fe812eee5e70e14d24d">ui</a></td></tr>
+<tr class="memdesc:ad670fae0406b7fe812eee5e70e14d24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 指针  <br /></td></tr>
+<tr class="separator:ad670fae0406b7fe812eee5e70e14d24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9645922299f4024ad758170fc0f44bcb" id="r_a9645922299f4024ad758170fc0f44bcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_live_block_widget.html">LiveBlockWidget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9645922299f4024ad758170fc0f44bcb">m_blockArr</a> [12] = {nullptr}</td></tr>
+<tr class="memdesc:a9645922299f4024ad758170fc0f44bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">块控件数组  <br /></td></tr>
+<tr class="separator:a9645922299f4024ad758170fc0f44bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75f35fcbd13fa8cae316d11923839051" id="r_a75f35fcbd13fa8cae316d11923839051"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75f35fcbd13fa8cae316d11923839051">m_leftBottomTextVec</a></td></tr>
+<tr class="memdesc:a75f35fcbd13fa8cae316d11923839051"><td class="mdescLeft">&#160;</td><td class="mdescRight">底部文本列表  <br /></td></tr>
+<tr class="separator:a75f35fcbd13fa8cae316d11923839051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>直播通用部分控件类，支持多行块控件布局 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aad2052a1f58172bbda7371e1c4343bba" name="aad2052a1f58172bbda7371e1c4343bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad2052a1f58172bbda7371e1c4343bba">&#9670;&#160;</a></span>LiveCommonPartWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_live_common_part_widget.html">LiveCommonPartWidget</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lines</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化直播通用部分控件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+    <tr><td class="paramname">lines</td><td>行数，默认为 1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 初始化 UI</p>
+<p>&lt; 加载样式表</p>
+<p>&lt; 应用样式表</p>
+<p>&lt; 记录错误日志</p>
+<p>&lt; 初始化界面</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_aad2052a1f58172bbda7371e1c4343bba_cgraph.png" border="0" usemap="#aclass_live_common_part_widget_aad2052a1f58172bbda7371e1c4343bba_cgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_aad2052a1f58172bbda7371e1c4343bba_cgraph" id="aclass_live_common_part_widget_aad2052a1f58172bbda7371e1c4343bba_cgraph">
+<area shape="rect" title="构造函数，初始化直播通用部分控件" alt="" coords="5,131,169,157"/>
+<area shape="poly" title=" " alt="" coords="60,131,55,122,59,112,69,106,87,104,106,107,116,113,113,118,104,112,87,109,71,111,63,116,61,121,65,129"/>
+<area shape="rect" href="class_live_common_part_widget.html#ac76e5fd0461eb6c984286d02b0c7ce8a" title="初始化界面" alt="" coords="217,131,268,157"/>
+<area shape="poly" title=" " alt="" coords="169,141,201,141,201,147,169,147"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="548,29,588,56"/>
+<area shape="poly" title=" " alt="" coords="250,129,276,96,294,79,315,66,372,46,432,36,488,34,533,36,533,42,488,40,432,42,373,51,317,70,297,83,280,100,254,132"/>
+<area shape="rect" href="class_live_common_part_widget.html#a8ebeb2cbc821faf67e8652b035024f32" title="初始化第一行" alt="" coords="351,131,437,157"/>
+<area shape="poly" title=" " alt="" coords="269,141,336,141,336,147,269,147"/>
+<area shape="rect" href="class_live_common_part_widget.html#aebf8970689c7c2ae36c7f2b205c68fe5" title="初始化第二行" alt="" coords="351,80,437,107"/>
+<area shape="poly" title=" " alt="" coords="268,133,315,116,335,109,337,114,317,121,269,138"/>
+<area shape="rect" href="namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81" title="执行结果读取函数 创建一个QFutureWatcher读取相应结果传递相应函数中， 如果有更复杂操作就不要使用" alt="" coords="316,181,472,208"/>
+<area shape="poly" title=" " alt="" coords="269,150,317,167,337,173,335,178,315,172,268,155"/>
+<area shape="rect" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79" title="runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface&lt;ResultType&gt;&amp;作为第一个参..." alt="" coords="334,232,455,259"/>
+<area shape="poly" title=" " alt="" coords="255,156,281,187,318,218,327,223,324,228,314,222,278,191,251,159"/>
+<area shape="poly" title=" " alt="" coords="546,37,535,26,534,14,546,6,568,3,585,4,597,9,603,17,602,25,596,24,598,18,594,13,584,10,568,8,548,11,539,16,539,23,550,33"/>
+<area shape="poly" title=" " alt="" coords="437,132,471,116,486,105,495,93,504,80,519,66,533,56,536,61,522,70,508,83,499,96,489,108,474,121,439,137"/>
+<area shape="rect" href="class_live_common_part_widget.html#a14447e0d41d420b03f6ffb75fe68d61c" title="获取目录文件数量" alt="" coords="520,131,616,157"/>
+<area shape="poly" title=" " alt="" coords="438,141,505,141,505,147,438,147"/>
+<area shape="rect" href="class_live_common_part_widget.html#a7f7039ea8eeaddfa317c0b1e2c669bd9" title="初始化完成信号" alt="" coords="539,80,597,107"/>
+<area shape="poly" title=" " alt="" coords="437,129,523,103,525,108,439,134"/>
+<area shape="poly" title=" " alt="" coords="437,78,533,50,534,55,439,83"/>
+<area shape="poly" title=" " alt="" coords="439,103,506,123,505,129,437,108"/>
+<area shape="poly" title=" " alt="" coords="438,91,523,91,523,96,438,96"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_aad2052a1f58172bbda7371e1c4343bba_icgraph.png" border="0" usemap="#aclass_live_common_part_widget_aad2052a1f58172bbda7371e1c4343bba_icgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_aad2052a1f58172bbda7371e1c4343bba_icgraph" id="aclass_live_common_part_widget_aad2052a1f58172bbda7371e1c4343bba_icgraph">
+<area shape="rect" title="构造函数，初始化直播通用部分控件" alt="" coords="5,29,169,56"/>
+<area shape="poly" title=" " alt="" coords="114,16,105,10,87,8,70,10,61,15,59,20,63,28,59,30,54,21,57,11,69,5,87,3,107,5,117,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae37c545d598237cfbbbfb59a765d5df7" name="ae37c545d598237cfbbbfb59a765d5df7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37c545d598237cfbbbfb59a765d5df7">&#9670;&#160;</a></span>~LiveCommonPartWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_live_common_part_widget.html">LiveCommonPartWidget</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，清理资源 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7eb87a6d4464680c455d278d1d32eba6" name="a7eb87a6d4464680c455d278d1d32eba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb87a6d4464680c455d278d1d32eba6">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>事件过滤器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>监视的对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>处理左右按钮点击事件 </dd></dl>
+<p>&lt; 显示左按钮提示</p>
+<p>&lt; 显示右按钮提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_a7eb87a6d4464680c455d278d1d32eba6_cgraph.png" border="0" usemap="#aclass_live_common_part_widget_a7eb87a6d4464680c455d278d1d32eba6_cgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_a7eb87a6d4464680c455d278d1d32eba6_cgraph" id="aclass_live_common_part_widget_a7eb87a6d4464680c455d278d1d32eba6_cgraph">
+<area shape="rect" title="事件过滤器" alt="" coords="5,55,88,81"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="209,29,248,56"/>
+<area shape="poly" title=" " alt="" coords="88,60,193,45,194,50,88,65"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="136,80,321,107"/>
+<area shape="poly" title=" " alt="" coords="88,71,121,76,120,81,88,76"/>
+<area shape="poly" title=" " alt="" coords="207,37,194,26,193,14,205,6,228,3,247,4,259,9,265,18,263,26,258,25,260,18,256,14,246,10,228,8,207,11,198,16,198,24,210,33"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="369,80,582,107"/>
+<area shape="poly" title=" " alt="" coords="321,91,353,91,353,96,321,96"/>
+<area shape="poly" title=" " alt="" coords="436,81,429,71,434,61,450,55,476,53,504,56,519,63,516,68,503,61,476,59,451,61,438,65,434,71,441,78"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="630,72,790,115"/>
+<area shape="poly" title=" " alt="" coords="583,91,615,91,615,96,583,96"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14447e0d41d420b03f6ffb75fe68d61c" name="a14447e0d41d420b03f6ffb75fe68d61c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14447e0d41d420b03f6ffb75fe68d61c">&#9670;&#160;</a></span>getFileCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getFileCount </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>folderPath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取目录文件数量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">folderPath</td><td>目录路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>文件数量 </dd></dl>
+<p>&lt; 创建目录对象</p>
+<p>&lt; 记录警告日志</p>
+<p>&lt; 设置过滤器</p>
+<p>&lt; 获取文件数量</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_a14447e0d41d420b03f6ffb75fe68d61c_icgraph.png" border="0" usemap="#aclass_live_common_part_widget_a14447e0d41d420b03f6ffb75fe68d61c_icgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_a14447e0d41d420b03f6ffb75fe68d61c_icgraph" id="aclass_live_common_part_widget_a14447e0d41d420b03f6ffb75fe68d61c_icgraph">
+<area shape="rect" title="获取目录文件数量" alt="" coords="450,31,546,57"/>
+<area shape="rect" href="class_live_common_part_widget.html#a8ebeb2cbc821faf67e8652b035024f32" title="初始化第一行" alt="" coords="316,5,402,32"/>
+<area shape="poly" title=" " alt="" coords="434,35,402,29,403,24,435,30"/>
+<area shape="rect" href="class_live_common_part_widget.html#aebf8970689c7c2ae36c7f2b205c68fe5" title="初始化第二行" alt="" coords="316,56,402,83"/>
+<area shape="poly" title=" " alt="" coords="435,58,403,64,402,59,434,53"/>
+<area shape="rect" href="class_live_common_part_widget.html#ac76e5fd0461eb6c984286d02b0c7ce8a" title="初始化界面" alt="" coords="217,31,268,57"/>
+<area shape="poly" title=" " alt="" coords="302,34,269,41,268,36,300,29"/>
+<area shape="rect" href="class_live_common_part_widget.html#aad2052a1f58172bbda7371e1c4343bba" title="构造函数，初始化直播通用部分控件" alt="" coords="5,31,169,57"/>
+<area shape="poly" title=" " alt="" coords="201,47,169,47,169,41,201,41"/>
+<area shape="poly" title=" " alt="" coords="113,18,104,12,87,9,71,11,63,16,61,21,65,29,60,31,55,22,59,12,69,6,87,4,106,7,116,13"/>
+<area shape="poly" title=" " alt="" coords="300,59,268,52,269,47,302,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8ebeb2cbc821faf67e8652b035024f32" name="a8ebeb2cbc821faf67e8652b035024f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ebeb2cbc821faf67e8652b035024f32">&#9670;&#160;</a></span>initLineOne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initLineOne </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化第一行 </p>
+<dl class="section note"><dt>注解</dt><dd>创建并布局块控件 </dd></dl>
+<p>&lt; 创建水平布局</p>
+<p>&lt; 设置边距</p>
+<p>&lt; 创建块控件</p>
+<p>&lt; 设置随机封面</p>
+<p>&lt; 设置底部文本</p>
+<p>&lt; 添加到布局</p>
+<p>&lt; 显示控件</p>
+<p>&lt; 隐藏最后一个控件</p>
+<p>&lt; 存储控件指针</p>
+<p>&lt; 设置布局</p>
+<p>&lt; 发出初始化完成信号</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_a8ebeb2cbc821faf67e8652b035024f32_cgraph.png" border="0" usemap="#aclass_live_common_part_widget_a8ebeb2cbc821faf67e8652b035024f32_cgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_a8ebeb2cbc821faf67e8652b035024f32_cgraph" id="aclass_live_common_part_widget_a8ebeb2cbc821faf67e8652b035024f32_cgraph">
+<area shape="rect" title="初始化第一行" alt="" coords="5,80,92,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="168,29,207,56"/>
+<area shape="poly" title=" " alt="" coords="86,77,152,52,154,57,88,82"/>
+<area shape="rect" href="class_live_common_part_widget.html#a14447e0d41d420b03f6ffb75fe68d61c" title="获取目录文件数量" alt="" coords="140,80,235,107"/>
+<area shape="poly" title=" " alt="" coords="92,91,124,91,124,96,92,96"/>
+<area shape="rect" href="class_live_common_part_widget.html#a7f7039ea8eeaddfa317c0b1e2c669bd9" title="初始化完成信号" alt="" coords="159,131,216,157"/>
+<area shape="poly" title=" " alt="" coords="88,105,145,126,143,131,86,110"/>
+<area shape="poly" title=" " alt="" coords="165,32,159,22,161,12,171,5,187,3,206,6,215,15,211,18,204,11,187,8,173,10,165,15,164,21,169,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_a8ebeb2cbc821faf67e8652b035024f32_icgraph.png" border="0" usemap="#aclass_live_common_part_widget_a8ebeb2cbc821faf67e8652b035024f32_icgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_a8ebeb2cbc821faf67e8652b035024f32_icgraph" id="aclass_live_common_part_widget_a8ebeb2cbc821faf67e8652b035024f32_icgraph">
+<area shape="rect" title="初始化第一行" alt="" coords="316,29,402,56"/>
+<area shape="rect" href="class_live_common_part_widget.html#ac76e5fd0461eb6c984286d02b0c7ce8a" title="初始化界面" alt="" coords="217,29,268,56"/>
+<area shape="poly" title=" " alt="" coords="301,45,268,45,268,40,301,40"/>
+<area shape="rect" href="class_live_common_part_widget.html#aad2052a1f58172bbda7371e1c4343bba" title="构造函数，初始化直播通用部分控件" alt="" coords="5,29,169,56"/>
+<area shape="poly" title=" " alt="" coords="201,45,169,45,169,40,201,40"/>
+<area shape="poly" title=" " alt="" coords="113,16,104,10,87,8,71,10,63,15,61,20,65,28,60,30,55,21,59,11,69,5,87,3,106,5,116,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aebf8970689c7c2ae36c7f2b205c68fe5" name="aebf8970689c7c2ae36c7f2b205c68fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebf8970689c7c2ae36c7f2b205c68fe5">&#9670;&#160;</a></span>initLineTwo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initLineTwo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化第二行 </p>
+<dl class="section note"><dt>注解</dt><dd>创建并布局块控件 </dd></dl>
+<p>&lt; 创建水平布局</p>
+<p>&lt; 设置边距</p>
+<p>&lt; 创建块控件</p>
+<p>&lt; 设置随机封面</p>
+<p>&lt; 设置底部文本</p>
+<p>&lt; 添加到布局</p>
+<p>&lt; 显示控件</p>
+<p>&lt; 隐藏最后一个控件</p>
+<p>&lt; 存储控件指针</p>
+<p>&lt; 设置布局</p>
+<p>&lt; 发出初始化完成信号</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_aebf8970689c7c2ae36c7f2b205c68fe5_cgraph.png" border="0" usemap="#aclass_live_common_part_widget_aebf8970689c7c2ae36c7f2b205c68fe5_cgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_aebf8970689c7c2ae36c7f2b205c68fe5_cgraph" id="aclass_live_common_part_widget_aebf8970689c7c2ae36c7f2b205c68fe5_cgraph">
+<area shape="rect" title="初始化第二行" alt="" coords="5,80,92,107"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="168,29,207,56"/>
+<area shape="poly" title=" " alt="" coords="86,77,152,52,154,57,88,82"/>
+<area shape="rect" href="class_live_common_part_widget.html#a14447e0d41d420b03f6ffb75fe68d61c" title="获取目录文件数量" alt="" coords="140,80,235,107"/>
+<area shape="poly" title=" " alt="" coords="92,91,124,91,124,96,92,96"/>
+<area shape="rect" href="class_live_common_part_widget.html#a7f7039ea8eeaddfa317c0b1e2c669bd9" title="初始化完成信号" alt="" coords="159,131,216,157"/>
+<area shape="poly" title=" " alt="" coords="88,105,145,126,143,131,86,110"/>
+<area shape="poly" title=" " alt="" coords="165,32,159,22,161,12,171,5,187,3,206,6,215,15,211,18,204,11,187,8,173,10,165,15,164,21,169,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_aebf8970689c7c2ae36c7f2b205c68fe5_icgraph.png" border="0" usemap="#aclass_live_common_part_widget_aebf8970689c7c2ae36c7f2b205c68fe5_icgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_aebf8970689c7c2ae36c7f2b205c68fe5_icgraph" id="aclass_live_common_part_widget_aebf8970689c7c2ae36c7f2b205c68fe5_icgraph">
+<area shape="rect" title="初始化第二行" alt="" coords="316,29,402,56"/>
+<area shape="rect" href="class_live_common_part_widget.html#ac76e5fd0461eb6c984286d02b0c7ce8a" title="初始化界面" alt="" coords="217,29,268,56"/>
+<area shape="poly" title=" " alt="" coords="301,45,268,45,268,40,301,40"/>
+<area shape="rect" href="class_live_common_part_widget.html#aad2052a1f58172bbda7371e1c4343bba" title="构造函数，初始化直播通用部分控件" alt="" coords="5,29,169,56"/>
+<area shape="poly" title=" " alt="" coords="201,45,169,45,169,40,201,40"/>
+<area shape="poly" title=" " alt="" coords="113,16,104,10,87,8,71,10,63,15,61,20,65,28,60,30,55,21,59,11,69,5,87,3,106,5,116,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7f7039ea8eeaddfa317c0b1e2c669bd9" name="a7f7039ea8eeaddfa317c0b1e2c669bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f7039ea8eeaddfa317c0b1e2c669bd9">&#9670;&#160;</a></span>initOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initOK </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化完成信号 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_a7f7039ea8eeaddfa317c0b1e2c669bd9_icgraph.png" border="0" usemap="#aclass_live_common_part_widget_a7f7039ea8eeaddfa317c0b1e2c669bd9_icgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_a7f7039ea8eeaddfa317c0b1e2c669bd9_icgraph" id="aclass_live_common_part_widget_a7f7039ea8eeaddfa317c0b1e2c669bd9_icgraph">
+<area shape="rect" title="初始化完成信号" alt="" coords="459,56,517,83"/>
+<area shape="rect" href="class_live_common_part_widget.html#a8ebeb2cbc821faf67e8652b035024f32" title="初始化第一行" alt="" coords="320,5,407,32"/>
+<area shape="poly" title=" " alt="" coords="444,55,398,35,400,30,446,50"/>
+<area shape="rect" href="class_live_common_part_widget.html#aebf8970689c7c2ae36c7f2b205c68fe5" title="初始化第二行" alt="" coords="320,56,407,83"/>
+<area shape="poly" title=" " alt="" coords="444,72,407,72,407,67,444,67"/>
+<area shape="rect" href="class_live_common_part_widget.html#a03b7594c8abf42bbac3e8c83565ae4ed" title="隐藏提示标签" alt="" coords="316,107,411,133"/>
+<area shape="poly" title=" " alt="" coords="446,89,400,108,398,104,444,84"/>
+<area shape="rect" href="class_live_common_part_widget.html#ac76e5fd0461eb6c984286d02b0c7ce8a" title="初始化界面" alt="" coords="217,31,268,57"/>
+<area shape="poly" title=" " alt="" coords="306,33,269,41,268,36,305,28"/>
+<area shape="rect" href="class_live_common_part_widget.html#aad2052a1f58172bbda7371e1c4343bba" title="构造函数，初始化直播通用部分控件" alt="" coords="5,31,169,57"/>
+<area shape="poly" title=" " alt="" coords="201,47,169,47,169,41,201,41"/>
+<area shape="poly" title=" " alt="" coords="113,18,104,12,87,9,71,11,63,16,61,21,65,29,60,31,55,22,59,12,69,6,87,4,106,7,116,13"/>
+<area shape="poly" title=" " alt="" coords="305,60,268,52,269,47,306,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac76e5fd0461eb6c984286d02b0c7ce8a" name="ac76e5fd0461eb6c984286d02b0c7ce8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac76e5fd0461eb6c984286d02b0c7ce8a">&#9670;&#160;</a></span>initUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initUi </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>lines</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化界面 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lines</td><td>行数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>设置按钮图标并异步加载 JSON 数据 </dd></dl>
+<p>&lt; 左按钮图标</p>
+<p>&lt; 设置左按钮样式</p>
+<p>&lt; 右按钮图标</p>
+<p>&lt; 设置右按钮样式</p>
+<p>&lt; 安装左按钮事件过滤器</p>
+<p>&lt; 安装右按钮事件过滤器</p>
+<p>&lt; JSON 文件路径</p>
+<p>&lt; 文本列表</p>
+<p>&lt; 打开 JSON 文件</p>
+<p>&lt; 记录警告日志</p>
+<p>&lt; 解析 JSON</p>
+<p>&lt; 记录错误日志</p>
+<p>&lt; 添加文本</p>
+<p>&lt; 记录警告日志</p>
+<p>&lt; 更新文本列表</p>
+<p>&lt; 打乱文本顺序</p>
+<p>&lt; 初始化第一行</p>
+<p>&lt; 初始化第二行</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_ac76e5fd0461eb6c984286d02b0c7ce8a_cgraph.png" border="0" usemap="#aclass_live_common_part_widget_ac76e5fd0461eb6c984286d02b0c7ce8a_cgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_ac76e5fd0461eb6c984286d02b0c7ce8a_cgraph" id="aclass_live_common_part_widget_ac76e5fd0461eb6c984286d02b0c7ce8a_cgraph">
+<area shape="rect" title="初始化界面" alt="" coords="5,131,57,157"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="337,29,376,56"/>
+<area shape="poly" title=" " alt="" coords="39,129,64,96,83,79,103,66,161,46,221,36,276,34,321,36,321,42,276,40,221,42,162,51,106,70,86,83,68,100,43,132"/>
+<area shape="rect" href="class_live_common_part_widget.html#a8ebeb2cbc821faf67e8652b035024f32" title="初始化第一行" alt="" coords="140,131,226,157"/>
+<area shape="poly" title=" " alt="" coords="57,141,125,141,125,147,57,147"/>
+<area shape="rect" href="class_live_common_part_widget.html#aebf8970689c7c2ae36c7f2b205c68fe5" title="初始化第二行" alt="" coords="140,80,226,107"/>
+<area shape="poly" title=" " alt="" coords="56,133,104,116,124,109,125,114,106,121,58,138"/>
+<area shape="rect" href="namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81" title="执行结果读取函数 创建一个QFutureWatcher读取相应结果传递相应函数中， 如果有更复杂操作就不要使用" alt="" coords="105,181,261,208"/>
+<area shape="poly" title=" " alt="" coords="58,150,106,167,125,173,124,178,104,172,56,155"/>
+<area shape="rect" href="namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79" title="runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface&lt;ResultType&gt;&amp;作为第一个参..." alt="" coords="122,232,244,259"/>
+<area shape="poly" title=" " alt="" coords="44,156,70,187,106,218,115,223,113,228,103,222,66,191,40,159"/>
+<area shape="poly" title=" " alt="" coords="335,37,323,26,323,14,335,6,357,3,374,4,386,9,392,17,390,25,385,24,386,18,383,13,373,10,357,8,337,11,328,16,328,23,339,33"/>
+<area shape="poly" title=" " alt="" coords="225,132,260,116,274,105,283,93,293,80,307,66,322,56,325,61,311,70,297,83,288,96,278,108,262,121,228,137"/>
+<area shape="rect" href="class_live_common_part_widget.html#a14447e0d41d420b03f6ffb75fe68d61c" title="获取目录文件数量" alt="" coords="309,131,404,157"/>
+<area shape="poly" title=" " alt="" coords="226,141,294,141,294,147,226,147"/>
+<area shape="rect" href="class_live_common_part_widget.html#a7f7039ea8eeaddfa317c0b1e2c669bd9" title="初始化完成信号" alt="" coords="328,80,385,107"/>
+<area shape="poly" title=" " alt="" coords="226,129,312,103,314,108,227,134"/>
+<area shape="poly" title=" " alt="" coords="226,78,321,50,323,55,227,83"/>
+<area shape="poly" title=" " alt="" coords="227,103,295,123,294,129,226,108"/>
+<area shape="poly" title=" " alt="" coords="226,91,312,91,312,96,226,96"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_ac76e5fd0461eb6c984286d02b0c7ce8a_icgraph.png" border="0" usemap="#aclass_live_common_part_widget_ac76e5fd0461eb6c984286d02b0c7ce8a_icgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_ac76e5fd0461eb6c984286d02b0c7ce8a_icgraph" id="aclass_live_common_part_widget_ac76e5fd0461eb6c984286d02b0c7ce8a_icgraph">
+<area shape="rect" title="初始化界面" alt="" coords="217,29,268,56"/>
+<area shape="rect" href="class_live_common_part_widget.html#aad2052a1f58172bbda7371e1c4343bba" title="构造函数，初始化直播通用部分控件" alt="" coords="5,29,169,56"/>
+<area shape="poly" title=" " alt="" coords="201,45,169,45,169,40,201,40"/>
+<area shape="poly" title=" " alt="" coords="113,16,104,10,87,8,71,10,63,15,61,20,65,28,60,30,55,21,59,11,69,5,87,3,106,5,116,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a856eaeee6a1f7ac6d6dccda800d0c73e" name="a856eaeee6a1f7ac6d6dccda800d0c73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856eaeee6a1f7ac6d6dccda800d0c73e">&#9670;&#160;</a></span>on_all_pushButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_all_pushButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>全部按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示暂无更多提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_a856eaeee6a1f7ac6d6dccda800d0c73e_cgraph.png" border="0" usemap="#aclass_live_common_part_widget_a856eaeee6a1f7ac6d6dccda800d0c73e_cgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_a856eaeee6a1f7ac6d6dccda800d0c73e_cgraph" id="aclass_live_common_part_widget_a856eaeee6a1f7ac6d6dccda800d0c73e_cgraph">
+<area shape="rect" title="全部按钮点击槽函数" alt="" coords="5,55,182,81"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="303,29,342,56"/>
+<area shape="poly" title=" " alt="" coords="182,56,287,44,287,49,183,61"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="230,80,415,107"/>
+<area shape="poly" title=" " alt="" coords="183,75,215,79,214,84,182,80"/>
+<area shape="poly" title=" " alt="" coords="301,39,281,28,278,15,292,6,322,3,349,5,364,12,367,22,358,32,354,29,362,21,360,15,347,10,322,8,294,11,283,17,285,25,303,35"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="463,80,676,107"/>
+<area shape="poly" title=" " alt="" coords="415,91,447,91,447,96,415,96"/>
+<area shape="poly" title=" " alt="" coords="530,81,523,71,528,61,544,55,570,53,598,56,613,63,610,68,597,61,570,59,545,61,532,65,528,71,535,78"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="724,72,884,115"/>
+<area shape="poly" title=" " alt="" coords="677,91,709,91,709,96,677,96"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a27ed4ceb22d2a19bdb88ed785085a1" name="a9a27ed4ceb22d2a19bdb88ed785085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a27ed4ceb22d2a19bdb88ed785085a1">&#9670;&#160;</a></span>resizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>调整大小事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>调整大小事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>动态显示或隐藏块控件 </dd></dl>
+<p>&lt; 调用父类事件</p>
+<p>&lt; 隐藏第一行最后一个控件</p>
+<p>&lt; 隐藏第二行最后一个控件</p>
+<p>&lt; 显示第一行最后一个控件</p>
+<p>&lt; 显示第二行最后一个控件</p>
+
+</div>
+</div>
+<a id="a03b7594c8abf42bbac3e8c83565ae4ed" name="a03b7594c8abf42bbac3e8c83565ae4ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03b7594c8abf42bbac3e8c83565ae4ed">&#9670;&#160;</a></span>setNoTipLab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setNoTipLab </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>隐藏提示标签 </p>
+<dl class="section note"><dt>注解</dt><dd>隐藏所有块控件的提示标签 </dd></dl>
+<p>&lt; 隐藏提示标签</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_live_common_part_widget_a03b7594c8abf42bbac3e8c83565ae4ed_cgraph.png" border="0" usemap="#aclass_live_common_part_widget_a03b7594c8abf42bbac3e8c83565ae4ed_cgraph" alt=""/></div>
+<map name="aclass_live_common_part_widget_a03b7594c8abf42bbac3e8c83565ae4ed_cgraph" id="aclass_live_common_part_widget_a03b7594c8abf42bbac3e8c83565ae4ed_cgraph">
+<area shape="rect" title="隐藏提示标签" alt="" coords="5,5,101,32"/>
+<area shape="rect" href="class_live_common_part_widget.html#a7f7039ea8eeaddfa317c0b1e2c669bd9" title="初始化完成信号" alt="" coords="149,5,206,32"/>
+<area shape="poly" title=" " alt="" coords="101,16,133,16,133,21,101,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa73a93ba1b8165a39c80780cee826689" name="aa73a93ba1b8165a39c80780cee826689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa73a93ba1b8165a39c80780cee826689">&#9670;&#160;</a></span>setTitleName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTitleName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置标题 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>标题文本 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置标题文本</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a9645922299f4024ad758170fc0f44bcb" name="a9645922299f4024ad758170fc0f44bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9645922299f4024ad758170fc0f44bcb">&#9670;&#160;</a></span>m_blockArr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_live_block_widget.html">LiveBlockWidget</a>* m_blockArr[12] = {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>块控件数组 </p>
+
+</div>
+</div>
+<a id="a75f35fcbd13fa8cae316d11923839051" name="a75f35fcbd13fa8cae316d11923839051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f35fcbd13fa8cae316d11923839051">&#9670;&#160;</a></span>m_leftBottomTextVec</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QString&gt; m_leftBottomTextVec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>底部文本列表 </p>
+
+</div>
+</div>
+<a id="ad670fae0406b7fe812eee5e70e14d24d" name="ad670fae0406b7fe812eee5e70e14d24d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad670fae0406b7fe812eee5e70e14d24d">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::LiveCommonPartWidget* ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI 指针 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_live_common_part_widget_8h_source.html">LiveCommonPartWidget.h</a></li>
+<li><a class="el" href="_live_common_part_widget_8cpp.html">LiveCommonPartWidget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_live_common_part_widget.html">LiveCommonPartWidget</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

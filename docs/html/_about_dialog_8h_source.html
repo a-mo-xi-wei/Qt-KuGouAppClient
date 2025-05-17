@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AboutDialog.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_about_dialog_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">AboutDialog.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_about_dialog_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef ABOUTDIALOG_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define ABOUTDIALOG_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="libhttp_8h.html">libhttp.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if defined(MYDIALOG_LIBRARY)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define MYDIALOG_EXPORT Q_DECL_EXPORT</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_about_dialog_8h.html#a65b52e090432de9fce66bf2af4774f3f">   19</a></span><span class="preprocessor">#define MYDIALOG_EXPORT Q_DECL_IMPORT</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span><a class="code hl_class" href="class_ela_text.html">ElaText</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span>QVBoxLayout;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class </span><a class="code hl_class" href="class_qt_material_dialog.html">QtMaterialDialog</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_about_dialog.html">   30</a></span><span class="keyword">class </span><a class="code hl_define" href="_about_dialog_8h.html#a65b52e090432de9fce66bf2af4774f3f">MYDIALOG_EXPORT</a> <a class="code hl_function" href="class_about_dialog.html#a1a9553ce8ca226111b5822aa27d3a772">AboutDialog</a> : <span class="keyword">public</span> QWidget {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Q_OBJECT</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_about_dialog.html#a1a9553ce8ca226111b5822aa27d3a772">AboutDialog</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_about_dialog.html#a589417f264bff3ae9919ac50f8f360a3">initDialog</a>(QVBoxLayout *lay);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_about_dialog.html#a95170a0a271a7e8133ff94cad8a73e45">getGiteeProjectStar</a>(<span class="keyword">const</span> QString &amp;url);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_about_dialog.html#a79ef8295dd75daf4ba242970271bb782">initDescText</a>(<a class="code hl_class" href="class_ela_text.html">ElaText</a>* text);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">void</span> <a class="code hl_slot" href="class_about_dialog.html#ab62adabe3532235f39f07aec32d19723">onShowDialog</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_about_dialog.html#a6c54694d2961ffb9745fc87132fa9171">onHideDialog</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    signals:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_about_dialog.html#a996f4600a8c3089cca11b83778a05cb3">   74</a></span>        <span class="keywordtype">void</span> <a class="code hl_signal" href="class_about_dialog.html#a996f4600a8c3089cca11b83778a05cb3">gotStars</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_about_dialog.html#a4e06b5bea9f64def0976d16bec98c5d1">   80</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_about_dialog.html#a4e06b5bea9f64def0976d16bec98c5d1">showDialog</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; <a class="code hl_variable" href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_about_dialog.html#a1bad895c1814892417720a1996b27c10">   83</a></span>    <a class="code hl_class" href="class_qt_material_dialog.html">QtMaterialDialog</a> *<span class="keyword">const</span> <a class="code hl_variable" href="class_about_dialog.html#a1bad895c1814892417720a1996b27c10">m_dialog</a>;        </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_about_dialog.html#a0d16631c73964e93628c239ba64f564e">   84</a></span>    QWidget*                <a class="code hl_variable" href="class_about_dialog.html#a0d16631c73964e93628c239ba64f564e">m_topWidget</a>;     </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_about_dialog.html#a472ac38d15f106ce6405a67f671010e1">   85</a></span>    QFont                   <a class="code hl_variable" href="class_about_dialog.html#a472ac38d15f106ce6405a67f671010e1">m_font</a>;          </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_about_dialog.html#aa543090ecf88007467052cc7102cd3ef">   86</a></span>    <span class="keywordtype">int</span>                     <a class="code hl_variable" href="class_about_dialog.html#aa543090ecf88007467052cc7102cd3ef">m_stars</a> = 90;    </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_about_dialog.html#a95d746c5f8c79461e6e79c49728c5b65">   87</a></span>    <a class="code hl_class" href="class_c_libhttp.html">CLibhttp</a>                <a class="code hl_variable" href="class_about_dialog.html#a95d746c5f8c79461e6e79c49728c5b65">m_libHttp</a>;       </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif </span><span class="comment">// ABOUTDIALOG_H</span></div>
+<div class="ttc" id="a_about_dialog_8h_html_a65b52e090432de9fce66bf2af4774f3f"><div class="ttname"><a href="_about_dialog_8h.html#a65b52e090432de9fce66bf2af4774f3f">MYDIALOG_EXPORT</a></div><div class="ttdeci">#define MYDIALOG_EXPORT</div><div class="ttdoc">动态库导出宏，定义库的导出/导入行为</div><div class="ttdef"><b>定义</b> AboutDialog.h:19</div></div>
+<div class="ttc" id="a_my_search_line_edit_8cpp_html_aa12d082c0f752ab7313a2cf16522a3df"><div class="ttname"><a href="_my_search_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a></div><div class="ttdeci">std::once_flag flag</div><div class="ttdoc">单次初始化标志，确保原始宽度只设置一次</div><div class="ttdef"><b>定义</b> MySearchLineEdit.cpp:21</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a0d16631c73964e93628c239ba64f564e"><div class="ttname"><a href="class_about_dialog.html#a0d16631c73964e93628c239ba64f564e">AboutDialog::m_topWidget</a></div><div class="ttdeci">QWidget * m_topWidget</div><div class="ttdoc">顶部控件</div><div class="ttdef"><b>定义</b> AboutDialog.h:84</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a1a9553ce8ca226111b5822aa27d3a772"><div class="ttname"><a href="class_about_dialog.html#a1a9553ce8ca226111b5822aa27d3a772">AboutDialog::AboutDialog</a></div><div class="ttdeci">AboutDialog(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化关于对话框</div><div class="ttdef"><b>定义</b> AboutDialog.cpp:29</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a1bad895c1814892417720a1996b27c10"><div class="ttname"><a href="class_about_dialog.html#a1bad895c1814892417720a1996b27c10">AboutDialog::m_dialog</a></div><div class="ttdeci">QtMaterialDialog *const m_dialog</div><div class="ttdoc">对话框对象</div><div class="ttdef"><b>定义</b> AboutDialog.h:83</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a472ac38d15f106ce6405a67f671010e1"><div class="ttname"><a href="class_about_dialog.html#a472ac38d15f106ce6405a67f671010e1">AboutDialog::m_font</a></div><div class="ttdeci">QFont m_font</div><div class="ttdoc">字体对象</div><div class="ttdef"><b>定义</b> AboutDialog.h:85</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a4e06b5bea9f64def0976d16bec98c5d1"><div class="ttname"><a href="class_about_dialog.html#a4e06b5bea9f64def0976d16bec98c5d1">AboutDialog::showDialog</a></div><div class="ttdeci">void showDialog(const bool &amp;flag)</div><div class="ttdoc">对话框显示状态信号</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a589417f264bff3ae9919ac50f8f360a3"><div class="ttname"><a href="class_about_dialog.html#a589417f264bff3ae9919ac50f8f360a3">AboutDialog::initDialog</a></div><div class="ttdeci">void initDialog(QVBoxLayout *lay)</div><div class="ttdoc">初始化对话框布局</div><div class="ttdef"><b>定义</b> AboutDialog.cpp:76</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a6c54694d2961ffb9745fc87132fa9171"><div class="ttname"><a href="class_about_dialog.html#a6c54694d2961ffb9745fc87132fa9171">AboutDialog::onHideDialog</a></div><div class="ttdeci">void onHideDialog()</div><div class="ttdoc">隐藏对话框</div><div class="ttdef"><b>定义</b> AboutDialog.cpp:233</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a79ef8295dd75daf4ba242970271bb782"><div class="ttname"><a href="class_about_dialog.html#a79ef8295dd75daf4ba242970271bb782">AboutDialog::initDescText</a></div><div class="ttdeci">void initDescText(ElaText *text)</div><div class="ttdoc">初始化描述文本</div><div class="ttdef"><b>定义</b> AboutDialog.cpp:203</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a95170a0a271a7e8133ff94cad8a73e45"><div class="ttname"><a href="class_about_dialog.html#a95170a0a271a7e8133ff94cad8a73e45">AboutDialog::getGiteeProjectStar</a></div><div class="ttdeci">void getGiteeProjectStar(const QString &amp;url)</div><div class="ttdoc">获取 Gitee 项目的 Star 数量</div><div class="ttdef"><b>定义</b> AboutDialog.cpp:176</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a95d746c5f8c79461e6e79c49728c5b65"><div class="ttname"><a href="class_about_dialog.html#a95d746c5f8c79461e6e79c49728c5b65">AboutDialog::m_libHttp</a></div><div class="ttdeci">CLibhttp m_libHttp</div><div class="ttdoc">HTTP 请求对象</div><div class="ttdef"><b>定义</b> AboutDialog.h:87</div></div>
+<div class="ttc" id="aclass_about_dialog_html_a996f4600a8c3089cca11b83778a05cb3"><div class="ttname"><a href="class_about_dialog.html#a996f4600a8c3089cca11b83778a05cb3">AboutDialog::gotStars</a></div><div class="ttdeci">void gotStars()</div><div class="ttdoc">获取到 Star 数量信号</div></div>
+<div class="ttc" id="aclass_about_dialog_html_aa543090ecf88007467052cc7102cd3ef"><div class="ttname"><a href="class_about_dialog.html#aa543090ecf88007467052cc7102cd3ef">AboutDialog::m_stars</a></div><div class="ttdeci">int m_stars</div><div class="ttdoc">Gitee Star 数量</div><div class="ttdef"><b>定义</b> AboutDialog.h:86</div></div>
+<div class="ttc" id="aclass_about_dialog_html_ab62adabe3532235f39f07aec32d19723"><div class="ttname"><a href="class_about_dialog.html#ab62adabe3532235f39f07aec32d19723">AboutDialog::onShowDialog</a></div><div class="ttdeci">void onShowDialog()</div><div class="ttdoc">显示对话框</div><div class="ttdef"><b>定义</b> AboutDialog.cpp:222</div></div>
+<div class="ttc" id="aclass_c_libhttp_html"><div class="ttname"><a href="class_c_libhttp.html">CLibhttp</a></div><div class="ttdef"><b>定义</b> libhttp.h:14</div></div>
+<div class="ttc" id="aclass_ela_text_html"><div class="ttname"><a href="class_ela_text.html">ElaText</a></div><div class="ttdoc">自定义文本标签类，支持主题切换、图标和文本样式</div><div class="ttdef"><b>定义</b> ElaText.h:24</div></div>
+<div class="ttc" id="aclass_qt_material_dialog_html"><div class="ttname"><a href="class_qt_material_dialog.html">QtMaterialDialog</a></div><div class="ttdoc">对话框类，继承自 QtMaterialOverlayWidget，支持 Material Design 风格</div><div class="ttdef"><b>定义</b> qtmaterialdialog.h:30</div></div>
+<div class="ttc" id="alibhttp_8h_html"><div class="ttname"><a href="libhttp_8h.html">libhttp.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_d50f460aa812bcbc27a8eae44a412448.html">MyDialog</a></li><li class="navelem"><a class="el" href="dir_ced82f8ed3d7fad83c6c01d366f9b20b.html">AboutDialog</a></li><li class="navelem"><a class="el" href="_about_dialog_8h.html">AboutDialog.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

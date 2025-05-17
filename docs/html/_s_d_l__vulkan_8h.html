@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_vulkan.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__vulkan_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a>  </div>
+  <div class="headertitle"><div class="title">SDL_vulkan.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Header file for functions to creating Vulkan surfaces on SDL windows.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_s_d_l__video_8h_source.html">SDL_video.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="begin__code_8h_source.html">begin_code.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="close__code_8h_source.html">close_code.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+SDL_vulkan.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l__vulkan_8h__incl.png" border="0" usemap="#a_s_d_l__vulkan_8h" alt=""/></div>
+<map name="a_s_d_l__vulkan_8h" id="a_s_d_l__vulkan_8h">
+<area shape="rect" title="Header file for functions to creating Vulkan surfaces on SDL windows." alt="" coords="751,5,854,32"/>
+<area shape="rect" href="_s_d_l__video_8h.html" title="Header file for SDL video functions." alt="" coords="754,80,851,107"/>
+<area shape="poly" title=" " alt="" coords="805,33,805,64,800,64,800,33"/>
+<area shape="rect" href="begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions,..." alt="" coords="210,752,308,779"/>
+<area shape="poly" title=" " alt="" coords="751,27,559,44,312,75,195,95,98,117,31,142,14,154,8,167,8,617,13,647,26,672,47,693,73,711,134,737,195,753,194,758,132,742,70,716,44,698,22,675,8,649,3,618,3,166,10,151,29,137,96,112,194,89,311,70,559,39,750,21"/>
+<area shape="rect" href="close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="1014,752,1112,779"/>
+<area shape="poly" title=" " alt="" coords="855,20,994,31,1078,41,1164,55,1242,74,1307,98,1333,113,1352,129,1365,147,1369,166,1369,618,1363,654,1344,685,1316,709,1281,728,1243,742,1203,752,1127,763,1127,758,1202,747,1241,737,1279,723,1313,705,1340,681,1358,652,1364,617,1364,167,1360,149,1348,132,1330,117,1305,103,1241,79,1163,61,1078,46,993,36,855,25"/>
+<area shape="rect" href="_s_d_l__stdinc_8h.html" title="This is a general header that includes C language support." alt="" coords="747,453,848,480"/>
+<area shape="poly" title=" " alt="" coords="852,99,954,117,1074,146,1129,165,1175,187,1206,212,1214,226,1217,241,1217,319,1215,333,1206,347,1178,371,1136,392,1084,411,968,440,864,459,863,454,967,435,1082,406,1133,387,1175,366,1202,343,1210,331,1212,318,1212,242,1209,228,1202,216,1172,192,1127,170,1073,152,953,122,851,104"/>
+<area shape="poly" title=" " alt="" coords="754,97,575,99,461,105,343,116,234,134,143,160,108,177,81,196,64,217,59,242,59,617,62,641,72,663,86,682,105,698,149,726,195,744,193,749,147,730,101,703,82,685,67,665,57,643,53,618,53,241,60,215,77,192,105,172,141,155,233,129,343,111,460,100,575,93,754,91"/>
+<area shape="poly" title=" " alt="" coords="852,95,978,109,1132,135,1204,154,1263,178,1286,191,1303,206,1315,223,1319,241,1319,618,1313,649,1299,675,1278,698,1251,716,1189,742,1128,758,1126,753,1187,737,1248,711,1274,693,1295,672,1308,647,1313,617,1313,242,1310,225,1299,210,1283,196,1260,182,1202,159,1131,140,978,114,851,101"/>
+<area shape="rect" href="_s_d_l__pixels_8h.html" title="Header for the enumerated pixel format definitions." alt="" coords="620,304,719,331"/>
+<area shape="poly" title=" " alt="" coords="796,109,718,231,685,291,680,289,714,228,792,106"/>
+<area shape="rect" href="_s_d_l__rect_8h.html" title="Header file for SDL_rect definition and management functions." alt="" coords="762,229,849,256"/>
+<area shape="poly" title=" " alt="" coords="799,108,788,141,784,161,785,181,796,214,790,216,780,182,779,161,782,140,794,106"/>
+<area shape="rect" href="_s_d_l__surface_8h.html" title="Header file for SDL_Surface definition and management functions." alt="" coords="795,155,904,181"/>
+<area shape="poly" title=" " alt="" coords="813,106,835,140,831,143,809,109"/>
+<area shape="rect" href="_s_d_l__config_8h.html" title=" " alt="" coords="448,528,549,555"/>
+<area shape="poly" title=" " alt="" coords="747,483,565,527,563,522,746,478"/>
+<area shape="poly" title=" " alt="" coords="747,473,668,478,576,489,492,506,460,517,438,530,420,550,411,570,407,591,407,613,404,658,396,682,381,706,351,731,318,748,316,743,348,726,377,702,392,680,399,657,401,613,402,591,406,569,416,547,434,526,458,512,491,500,575,483,667,473,747,467"/>
+<area shape="poly" title=" " alt="" coords="849,476,896,495,918,509,938,526,955,549,964,571,971,613,976,656,983,678,996,703,1013,723,1033,741,1029,745,1009,727,991,705,978,680,970,657,966,613,959,572,950,552,934,530,915,513,893,500,847,481"/>
+<area shape="rect" title=" " alt="" coords="763,528,832,555"/>
+<area shape="poly" title=" " alt="" coords="800,481,800,512,795,512,795,481"/>
+<area shape="rect" title=" " alt="" coords="855,528,924,555"/>
+<area shape="poly" title=" " alt="" coords="815,478,863,516,860,521,812,483"/>
+<area shape="rect" title=" " alt="" coords="674,528,739,555"/>
+<area shape="poly" title=" " alt="" coords="783,483,736,520,732,516,780,478"/>
+<area shape="rect" href="_s_d_l__platform_8h.html" title="Try to get a standard set of platform defines." alt="" coords="458,677,571,704"/>
+<area shape="poly" title=" " alt="" coords="548,553,584,571,601,585,614,601,619,613,619,624,608,643,588,660,564,673,561,668,585,655,604,640,613,622,613,614,610,604,597,588,582,576,545,558"/>
+<area shape="rect" href="_s_d_l__config__minimal_8h.html" title="This is the minimal configuration that can be used to build SDL." alt="" coords="448,603,600,629"/>
+<area shape="poly" title=" " alt="" coords="506,554,517,587,512,589,501,556"/>
+<area shape="poly" title=" " alt="" coords="471,707,319,750,317,745,469,702"/>
+<area shape="poly" title=" " alt="" coords="572,700,583,701,812,732,998,754,998,760,811,738,582,707,571,705"/>
+<area shape="poly" title=" " alt="" coords="525,630,521,662,516,662,520,630"/>
+<area shape="poly" title=" " alt="" coords="680,329,739,404,775,441,771,444,735,407,676,332"/>
+<area shape="poly" title=" " alt="" coords="619,324,538,331,442,342,353,359,317,369,292,381,251,413,226,447,214,487,211,540,211,617,214,650,223,683,246,737,241,739,218,685,209,651,205,617,205,540,209,486,221,444,247,409,289,376,316,364,351,354,441,337,537,326,619,319"/>
+<area shape="poly" title=" " alt="" coords="720,324,818,343,932,373,983,392,1025,413,1054,438,1062,451,1065,465,1065,617,1065,736,1060,736,1060,617,1060,466,1057,453,1050,441,1022,418,981,397,930,378,817,348,719,329"/>
+<area shape="rect" href="_s_d_l__endian_8h.html" title="Functions for reading and writing endian&#45;specific values" alt="" coords="564,379,668,405"/>
+<area shape="poly" title=" " alt="" coords="662,333,636,368,632,365,658,330"/>
+<area shape="poly" title=" " alt="" coords="649,403,752,445,750,450,647,408"/>
+<area shape="poly" title=" " alt="" coords="565,401,439,421,381,436,359,446,343,455,325,474,316,492,313,513,312,540,312,617,308,651,300,685,276,739,271,737,294,683,303,650,307,617,307,540,307,513,311,491,321,471,340,451,356,441,379,431,438,416,564,396"/>
+<area shape="poly" title=" " alt="" coords="619,406,622,435,629,473,642,515,665,553,701,591,741,625,786,654,832,680,922,719,999,745,998,750,920,724,829,684,783,659,738,629,697,595,661,556,637,517,624,475,616,435,614,406"/>
+<area shape="poly" title=" " alt="" coords="804,257,788,321,783,363,784,405,791,438,786,439,779,406,777,362,783,320,798,256"/>
+<area shape="poly" title=" " alt="" coords="762,253,644,271,494,300,350,338,293,359,252,381,210,415,181,448,165,487,160,540,160,617,167,654,185,688,208,717,232,740,229,744,204,720,180,691,162,656,155,618,155,540,160,486,177,445,206,411,249,376,290,354,348,333,492,295,643,266,761,248"/>
+<area shape="poly" title=" " alt="" coords="850,248,940,267,992,284,1044,307,1091,335,1130,370,1145,391,1157,414,1164,438,1167,465,1167,618,1159,656,1141,691,1117,720,1093,744,1089,740,1113,717,1136,688,1154,654,1161,617,1161,465,1159,439,1152,416,1141,394,1126,374,1088,339,1041,311,990,289,938,273,849,253"/>
+<area shape="poly" title=" " alt="" coords="783,259,708,299,705,294,780,254"/>
+<area shape="rect" href="_s_d_l__error_8h.html" title="Simple error message routines for SDL." alt="" coords="793,379,884,405"/>
+<area shape="poly" title=" " alt="" coords="811,256,835,363,830,364,806,257"/>
+<area shape="rect" href="_s_d_l__rwops_8h.html" title="This file provides a general interface for SDL to read and write data streams." alt="" coords="844,304,945,331"/>
+<area shape="poly" title=" " alt="" coords="823,254,869,292,866,296,819,259"/>
+<area shape="poly" title=" " alt="" coords="834,407,814,441,810,439,829,405"/>
+<area shape="poly" title=" " alt="" coords="793,400,675,415,532,442,466,461,412,484,391,497,376,510,366,525,363,540,363,618,355,656,337,691,313,720,289,744,285,740,309,717,332,688,350,654,357,617,357,540,361,523,372,507,388,492,409,479,464,456,531,437,674,410,792,395"/>
+<area shape="poly" title=" " alt="" coords="877,403,920,423,965,452,984,470,1000,491,1011,514,1015,540,1015,617,1018,650,1027,683,1050,737,1045,739,1022,685,1013,651,1009,617,1009,540,1006,515,996,493,980,473,961,456,917,428,875,408"/>
+<area shape="poly" title=" " alt="" coords="901,330,907,366,905,387,898,407,877,431,851,449,848,444,874,427,894,404,900,386,901,366,896,331"/>
+<area shape="poly" title=" " alt="" coords="845,328,721,345,564,374,486,391,415,411,356,432,315,456,291,474,275,492,265,512,261,540,261,617,261,736,256,736,256,617,256,540,260,510,270,488,288,470,312,451,354,428,413,406,485,386,563,368,720,340,844,322"/>
+<area shape="poly" title=" " alt="" coords="946,327,1025,349,1060,362,1083,377,1101,397,1111,416,1115,438,1116,465,1116,617,1112,651,1104,685,1080,739,1075,737,1098,683,1107,650,1111,617,1111,465,1110,439,1106,418,1097,400,1080,381,1057,367,1023,354,945,332"/>
+<area shape="poly" title=" " alt="" coords="887,333,860,368,855,365,883,330"/>
+<area shape="poly" title=" " alt="" coords="870,180,901,205,934,240,947,261,957,283,962,307,960,331,947,373,921,407,888,432,853,450,850,445,885,427,917,403,942,371,955,330,957,307,952,285,943,264,929,244,897,209,866,184"/>
+<area shape="poly" title=" " alt="" coords="795,171,615,174,502,180,387,192,280,210,191,236,157,252,131,271,115,292,109,316,109,617,112,639,120,658,146,693,181,722,217,743,214,747,178,726,142,697,115,661,107,640,104,618,104,316,110,290,127,267,154,248,189,231,279,205,386,187,501,175,615,169,795,166"/>
+<area shape="poly" title=" " alt="" coords="905,179,1009,210,1069,235,1128,266,1183,304,1227,349,1244,375,1257,403,1265,433,1268,465,1268,618,1264,643,1254,665,1239,685,1220,703,1175,730,1128,749,1126,744,1172,726,1217,698,1235,682,1250,663,1259,641,1263,617,1263,465,1260,434,1252,405,1239,378,1223,353,1179,308,1126,270,1067,239,1007,215,903,184"/>
+<area shape="poly" title=" " alt="" coords="826,184,789,205,751,231,718,263,690,294,686,291,714,259,748,227,786,200,823,179"/>
+<area shape="poly" title=" " alt="" coords="844,183,823,217,819,215,839,180"/>
+<area shape="poly" title=" " alt="" coords="856,181,889,288,884,290,851,183"/>
+<area shape="rect" href="_s_d_l__blendmode_8h.html" title="Header file declaring the SDL_BlendMode enumeration" alt="" coords="594,677,723,704"/>
+<area shape="poly" title=" " alt="" coords="806,184,741,209,667,249,631,275,599,306,573,340,555,380,547,414,550,424,559,437,589,488,610,535,636,602,654,662,649,663,631,604,605,537,584,490,554,440,546,426,542,414,549,378,568,337,595,302,628,271,664,245,739,205,805,179"/>
+<area shape="poly" title=" " alt="" coords="594,706,323,755,322,750,593,701"/>
+<area shape="poly" title=" " alt="" coords="724,701,999,750,998,755,723,706"/>
+</map>
+</div>
+</div>
+<p><a href="_s_d_l__vulkan_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a2c83a74883be356d314441ccc41e7768" id="r_a2c83a74883be356d314441ccc41e7768"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c83a74883be356d314441ccc41e7768">VK_DEFINE_HANDLE</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#ab49790263c78300fbf05719e38246198">object</a>)</td></tr>
+<tr class="separator:a2c83a74883be356d314441ccc41e7768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d8504e79be7e7ff48e313ed88a54ad" id="r_a04d8504e79be7e7ff48e313ed88a54ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04d8504e79be7e7ff48e313ed88a54ad">VK_DEFINE_NON_DISPATCHABLE_HANDLE</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#ab49790263c78300fbf05719e38246198">object</a>)</td></tr>
+<tr class="separator:a04d8504e79be7e7ff48e313ed88a54ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a8e23cebc65f7965cf8e90ae275bc8808" id="r_a8e23cebc65f7965cf8e90ae275bc8808"><td class="memItemLeft" align="right" valign="top">typedef VkInstance&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e23cebc65f7965cf8e90ae275bc8808">SDL_vulkanInstance</a></td></tr>
+<tr class="separator:a8e23cebc65f7965cf8e90ae275bc8808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a974edccc428069558c705abf6d302dee" id="r_a974edccc428069558c705abf6d302dee"><td class="memItemLeft" align="right" valign="top">typedef VkSurfaceKHR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a974edccc428069558c705abf6d302dee">SDL_vulkanSurface</a></td></tr>
+<tr class="separator:a974edccc428069558c705abf6d302dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Vulkan support functions</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><dl class="section note"><dt>注解</dt><dd>SDL_Vulkan_GetInstanceExtensions &amp; SDL_Vulkan_CreateSurface API is compatable with Tizen's implementation of Vulkan in SDL. </dd></dl>
+</div></td></tr>
+<tr class="memitem:a9fcc0942c8eaa67c3eff2e3526304b5b" id="r_a9fcc0942c8eaa67c3eff2e3526304b5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fcc0942c8eaa67c3eff2e3526304b5b">SDL_Vulkan_LoadLibrary</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#ab25d8cd967ccbd19b630d7100ff8f67e">path</a>)</td></tr>
+<tr class="memdesc:a9fcc0942c8eaa67c3eff2e3526304b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically load the Vulkan loader library.  <br /></td></tr>
+<tr class="separator:a9fcc0942c8eaa67c3eff2e3526304b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad44f46b6b48f2f58d08e0f7894d02667" id="r_ad44f46b6b48f2f58d08e0f7894d02667"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad44f46b6b48f2f58d08e0f7894d02667">SDL_Vulkan_GetVkGetInstanceProcAddr</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:ad44f46b6b48f2f58d08e0f7894d02667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the address of the <code>vkGetInstanceProcAddr</code> function.  <br /></td></tr>
+<tr class="separator:ad44f46b6b48f2f58d08e0f7894d02667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92970fb6bc833a8cc65217638d599ff2" id="r_a92970fb6bc833a8cc65217638d599ff2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92970fb6bc833a8cc65217638d599ff2">SDL_Vulkan_UnloadLibrary</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:a92970fb6bc833a8cc65217638d599ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload the Vulkan library previously loaded by <a class="el" href="#a9fcc0942c8eaa67c3eff2e3526304b5b" title="Dynamically load the Vulkan loader library.">SDL_Vulkan_LoadLibrary()</a>  <br /></td></tr>
+<tr class="separator:a92970fb6bc833a8cc65217638d599ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d6b686f9154e972d6254fc3757bd0d" id="r_a46d6b686f9154e972d6254fc3757bd0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d6b686f9154e972d6254fc3757bd0d">SDL_Vulkan_GetInstanceExtensions</a> (<a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *window, unsigned int *pCount, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **pNames)</td></tr>
+<tr class="memdesc:a46d6b686f9154e972d6254fc3757bd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the names of the Vulkan instance extensions needed to create a surface with SDL_Vulkan_CreateSurface.  <br /></td></tr>
+<tr class="separator:a46d6b686f9154e972d6254fc3757bd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1613884948ea2b2671cea8f43462642b" id="r_a1613884948ea2b2671cea8f43462642b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1613884948ea2b2671cea8f43462642b">SDL_Vulkan_CreateSurface</a> (<a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *window, VkInstance instance, VkSurfaceKHR *surface)</td></tr>
+<tr class="memdesc:a1613884948ea2b2671cea8f43462642b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Vulkan rendering surface for a window.  <br /></td></tr>
+<tr class="separator:a1613884948ea2b2671cea8f43462642b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a170ea51b623cbda9f945b37c037d7974" id="r_a170ea51b623cbda9f945b37c037d7974"><td class="memItemLeft" align="right" valign="top"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a170ea51b623cbda9f945b37c037d7974">SDL_Vulkan_GetDrawableSize</a> (<a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *window, int *<a class="el" href="_s_d_l__opengl__glext_8h.html#ac8ad1ddd88b3014a44151599fcd9fad3">w</a>, int *<a class="el" href="_s_d_l__opengl__glext_8h.html#afa0fb1b5e976920c0abeff2dca3ed774">h</a>)</td></tr>
+<tr class="memdesc:a170ea51b623cbda9f945b37c037d7974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the window's underlying drawable dimensions in pixels.  <br /></td></tr>
+<tr class="separator:a170ea51b623cbda9f945b37c037d7974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Header file for functions to creating Vulkan surfaces on SDL windows. </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a2c83a74883be356d314441ccc41e7768" name="a2c83a74883be356d314441ccc41e7768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c83a74883be356d314441ccc41e7768">&#9670;&#160;</a></span>VK_DEFINE_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VK_DEFINE_HANDLE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#ab49790263c78300fbf05719e38246198">object</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab49790263c78300fbf05719e38246198">object</a>##_T* <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab49790263c78300fbf05719e38246198">object</a>;</div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab49790263c78300fbf05719e38246198"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab49790263c78300fbf05719e38246198">object</a></div><div class="ttdeci">GLuint object</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:7064</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a04d8504e79be7e7ff48e313ed88a54ad" name="a04d8504e79be7e7ff48e313ed88a54ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d8504e79be7e7ff48e313ed88a54ad">&#9670;&#160;</a></span>VK_DEFINE_NON_DISPATCHABLE_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VK_DEFINE_NON_DISPATCHABLE_HANDLE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#ab49790263c78300fbf05719e38246198">object</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab49790263c78300fbf05719e38246198">object</a>;</div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aaa5d1cd013383c889537491c3cfd9aad"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></div><div class="ttdeci">unsigned long long uint64_t</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:35</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a8e23cebc65f7965cf8e90ae275bc8808" name="a8e23cebc65f7965cf8e90ae275bc8808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e23cebc65f7965cf8e90ae275bc8808">&#9670;&#160;</a></span>SDL_vulkanInstance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef VkInstance <a class="el" href="#a8e23cebc65f7965cf8e90ae275bc8808">SDL_vulkanInstance</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a974edccc428069558c705abf6d302dee" name="a974edccc428069558c705abf6d302dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a974edccc428069558c705abf6d302dee">&#9670;&#160;</a></span>SDL_vulkanSurface</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef VkSurfaceKHR <a class="el" href="#a974edccc428069558c705abf6d302dee">SDL_vulkanSurface</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a1613884948ea2b2671cea8f43462642b" name="a1613884948ea2b2671cea8f43462642b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1613884948ea2b2671cea8f43462642b">&#9670;&#160;</a></span>SDL_Vulkan_CreateSurface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_Vulkan_CreateSurface </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkInstance</td>          <td class="paramname"><span class="paramname"><em>instance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkSurfaceKHR *</td>          <td class="paramname"><span class="paramname"><em>surface</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a Vulkan rendering surface for a window. </p>
+<p>The <code>window</code> must have been created with the <code>SDL_WINDOW_VULKAN</code> flag and <code>instance</code> must have been created with extensions returned by <a class="el" href="#a46d6b686f9154e972d6254fc3757bd0d" title="Get the names of the Vulkan instance extensions needed to create a surface with SDL_Vulkan_CreateSurf...">SDL_Vulkan_GetInstanceExtensions()</a> enabled.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The window to which to attach the Vulkan surface </td></tr>
+    <tr><td class="paramname">instance</td><td>The Vulkan instance handle </td></tr>
+    <tr><td class="paramname">surface</td><td>A pointer to a VkSurfaceKHR handle to output the newly created surface </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>SDL_TRUE on success, SDL_FALSE on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.6.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a46d6b686f9154e972d6254fc3757bd0d" title="Get the names of the Vulkan instance extensions needed to create a surface with SDL_Vulkan_CreateSurf...">SDL_Vulkan_GetInstanceExtensions</a> </dd>
+<dd>
+<a class="el" href="#a170ea51b623cbda9f945b37c037d7974" title="Get the size of the window&#39;s underlying drawable dimensions in pixels.">SDL_Vulkan_GetDrawableSize</a> </dd></dl>
+
+</div>
+</div>
+<a id="a170ea51b623cbda9f945b37c037d7974" name="a170ea51b623cbda9f945b37c037d7974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a170ea51b623cbda9f945b37c037d7974">&#9670;&#160;</a></span>SDL_Vulkan_GetDrawableSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_Vulkan_GetDrawableSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the size of the window's underlying drawable dimensions in pixels. </p>
+<p>This may differ from <a class="el" href="_s_d_l__video_8h.html#a5cbfffcfec91c22a7ca95fd1d5163db5" title="Get the size of a window&#39;s client area.">SDL_GetWindowSize()</a> if we're rendering to a high-DPI drawable, i.e. the window was created with <code>SDL_WINDOW_ALLOW_HIGHDPI</code> on a platform with high-DPI support (Apple calls this "Retina"), and not disabled by the <code>SDL_HINT_VIDEO_HIGHDPI_DISABLED</code> hint.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>an <a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392" title="The type used to identify a window">SDL_Window</a> for which the size is to be queried </td></tr>
+    <tr><td class="paramname">w</td><td>Pointer to the variable to write the width to or NULL </td></tr>
+    <tr><td class="paramname">h</td><td>Pointer to the variable to write the height to or NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.6.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="_s_d_l__video_8h.html#a5cbfffcfec91c22a7ca95fd1d5163db5" title="Get the size of a window&#39;s client area.">SDL_GetWindowSize</a> </dd>
+<dd>
+<a class="el" href="_s_d_l__video_8h.html#a841edb930dc7cb2c1ec64f831d3abba6" title="Create a window with the specified position, dimensions, and flags.">SDL_CreateWindow</a> </dd>
+<dd>
+<a class="el" href="#a1613884948ea2b2671cea8f43462642b" title="Create a Vulkan rendering surface for a window.">SDL_Vulkan_CreateSurface</a> </dd></dl>
+
+</div>
+</div>
+<a id="a46d6b686f9154e972d6254fc3757bd0d" name="a46d6b686f9154e972d6254fc3757bd0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d6b686f9154e972d6254fc3757bd0d">&#9670;&#160;</a></span>SDL_Vulkan_GetInstanceExtensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__stdinc_8h.html#a8fca68df0f976765230fe589a7c7733b">SDL_bool</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_Vulkan_GetInstanceExtensions </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *</td>          <td class="paramname"><span class="paramname"><em>pCount</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **</td>          <td class="paramname"><span class="paramname"><em>pNames</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the names of the Vulkan instance extensions needed to create a surface with SDL_Vulkan_CreateSurface. </p>
+<p>If <code>pNames</code> is NULL, then the number of required Vulkan instance extensions is returned in <code>pCount</code>. Otherwise, <code>pCount</code> must point to a variable set to the number of elements in the <code>pNames</code> array, and on return the variable is overwritten with the number of names actually written to <code>pNames</code>. If <code>pCount</code> is less than the number of required extensions, at most <code>pCount</code> structures will be written. If <code>pCount</code> is smaller than the number of required extensions, SDL_FALSE will be returned instead of SDL_TRUE, to indicate that not all the required extensions were returned.</p>
+<p>The <code>window</code> parameter is currently needed to be valid as of SDL 2.0.8, however, this parameter will likely be removed in future releases</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>A window for which the required Vulkan instance extensions should be retrieved (will be deprecated in a future release) </td></tr>
+    <tr><td class="paramname">pCount</td><td>A pointer to an unsigned int corresponding to the number of extensions to be returned </td></tr>
+    <tr><td class="paramname">pNames</td><td>NULL or a pointer to an array to be filled with required Vulkan instance extensions </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>SDL_TRUE on success, SDL_FALSE on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.6.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a1613884948ea2b2671cea8f43462642b" title="Create a Vulkan rendering surface for a window.">SDL_Vulkan_CreateSurface</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad44f46b6b48f2f58d08e0f7894d02667" name="ad44f46b6b48f2f58d08e0f7894d02667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad44f46b6b48f2f58d08e0f7894d02667">&#9670;&#160;</a></span>SDL_Vulkan_GetVkGetInstanceProcAddr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_Vulkan_GetVkGetInstanceProcAddr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the address of the <code>vkGetInstanceProcAddr</code> function. </p>
+<p>This should be called after either calling <a class="el" href="#a9fcc0942c8eaa67c3eff2e3526304b5b" title="Dynamically load the Vulkan loader library.">SDL_Vulkan_LoadLibrary()</a> or creating an <a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392" title="The type used to identify a window">SDL_Window</a> with the <code>SDL_WINDOW_VULKAN</code> flag.</p>
+<dl class="section return"><dt>返回</dt><dd>the function pointer for <code>vkGetInstanceProcAddr</code> or NULL on error.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.6. </dd></dl>
+
+</div>
+</div>
+<a id="a9fcc0942c8eaa67c3eff2e3526304b5b" name="a9fcc0942c8eaa67c3eff2e3526304b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fcc0942c8eaa67c3eff2e3526304b5b">&#9670;&#160;</a></span>SDL_Vulkan_LoadLibrary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> int <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_Vulkan_LoadLibrary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dynamically load the Vulkan loader library. </p>
+<p>This should be called after initializing the video driver, but before creating any Vulkan windows. If no Vulkan loader library is loaded, the default library will be loaded upon creation of the first Vulkan window.</p>
+<p>It is fairly common for Vulkan applications to link with libvulkan instead of explicitly loading it at run time. This will work with SDL provided the application links to a dynamic library and both it and SDL use the same search path.</p>
+<p>If you specify a non-NULL <code>path</code>, an application should retrieve all of the Vulkan functions it uses from the dynamic library using SDL_Vulkan_GetVkGetInstanceProcAddr unless you can guarantee <code>path</code> points to the same vulkan loader library the application linked to.</p>
+<p>On Apple devices, if <code>path</code> is NULL, SDL will attempt to find the <code>vkGetInstanceProcAddr</code> address within all the Mach-O images of the current process. This is because it is fairly common for Vulkan applications to link with libvulkan (and historically MoltenVK was provided as a static library). If it is not found, on macOS, SDL will attempt to load <code>vulkan.framework/vulkan</code>, <code>libvulkan.1.dylib</code>, <code>MoltenVK.framework/MoltenVK</code>, and <code>libMoltenVK.dylib</code>, in that order. On iOS, SDL will attempt to load <code>libMoltenVK.dylib</code>. Applications using a dynamic framework or .dylib must ensure it is included in its application bundle.</p>
+<p>On non-Apple devices, application linking with a static libvulkan is not supported. Either do not link to the Vulkan loader or link to a dynamic library version.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The platform dependent Vulkan loader library name or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success or -1 if the library couldn't be loaded; call <a class="el" href="_s_d_l__error_8h.html#adaef317de186f072f8328798de29d51a" title="Retrieve a message about the last error that occurred on the current thread.">SDL_GetError()</a> for more information.</dd></dl>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.6.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd>SDL_Vulkan_GetVkInstanceProcAddr </dd>
+<dd>
+<a class="el" href="#a92970fb6bc833a8cc65217638d599ff2" title="Unload the Vulkan library previously loaded by SDL_Vulkan_LoadLibrary()">SDL_Vulkan_UnloadLibrary</a> </dd></dl>
+
+</div>
+</div>
+<a id="a92970fb6bc833a8cc65217638d599ff2" name="a92970fb6bc833a8cc65217638d599ff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92970fb6bc833a8cc65217638d599ff2">&#9670;&#160;</a></span>SDL_Vulkan_UnloadLibrary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="begin__code_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> <a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> SDL_Vulkan_UnloadLibrary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unload the Vulkan library previously loaded by <a class="el" href="#a9fcc0942c8eaa67c3eff2e3526304b5b" title="Dynamically load the Vulkan loader library.">SDL_Vulkan_LoadLibrary()</a> </p>
+<dl class="section since"><dt>自从</dt><dd>This function is available since SDL 2.0.6.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#a9fcc0942c8eaa67c3eff2e3526304b5b" title="Dynamically load the Vulkan loader library.">SDL_Vulkan_LoadLibrary</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__vulkan_8h.html">SDL_vulkan.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

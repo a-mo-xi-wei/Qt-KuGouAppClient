@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: parseutils.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('parseutils_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">parseutils.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>misc parsing utilities  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="time_8h_source.html">time.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="rational_8h_source.html">rational.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+parseutils.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parseutils_8h__incl.png" border="0" usemap="#aparseutils_8h" alt=""/></div>
+<map name="aparseutils_8h" id="aparseutils_8h">
+<area shape="rect" title="misc parsing utilities" alt="" coords="37,5,126,32"/>
+<area shape="rect" href="time_8h.html" title=" " alt="" coords="9,80,66,107"/>
+<area shape="poly" title=" " alt="" coords="76,34,55,68,51,65,72,31"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="90,80,164,107"/>
+<area shape="poly" title=" " alt="" coords="92,31,113,65,109,68,87,34"/>
+<area shape="rect" title=" " alt="" coords="5,155,70,181"/>
+<area shape="poly" title=" " alt="" coords="40,107,40,139,35,139,35,107"/>
+<area shape="poly" title=" " alt="" coords="113,109,66,147,63,143,110,105"/>
+<area shape="rect" title=" " alt="" coords="94,155,157,181"/>
+<area shape="poly" title=" " alt="" coords="129,107,129,139,123,139,124,107"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="181,155,267,181"/>
+<area shape="poly" title=" " alt="" coords="145,105,197,143,194,148,142,109"/>
+</map>
+</div>
+</div>
+<p><a href="parseutils_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a8ac8244d56fd4eeb9557038f80d60560" id="r_a8ac8244d56fd4eeb9557038f80d60560"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ac8244d56fd4eeb9557038f80d60560">av_parse_ratio_quiet</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>,  str,  max)</td></tr>
+<tr class="separator:a8ac8244d56fd4eeb9557038f80d60560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a8535b8693aa5a188cfb1356133c0e94e" id="r_a8535b8693aa5a188cfb1356133c0e94e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8535b8693aa5a188cfb1356133c0e94e">av_parse_ratio</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> *<a class="el" href="_s_d_l__opengl_8h.html#a8fc1e7b9baaae687804c7eed46ca09c6">q</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *str, int max, int log_offset, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *log_ctx)</td></tr>
+<tr class="memdesc:a8535b8693aa5a188cfb1356133c0e94e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse str and store the parsed ratio in q.  <br /></td></tr>
+<tr class="separator:a8535b8693aa5a188cfb1356133c0e94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dcdb8a2792f2074ca4a1e1f4ddce2bf" id="r_a4dcdb8a2792f2074ca4a1e1f4ddce2bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dcdb8a2792f2074ca4a1e1f4ddce2bf">av_parse_video_size</a> (int *width_ptr, int *height_ptr, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *str)</td></tr>
+<tr class="memdesc:a4dcdb8a2792f2074ca4a1e1f4ddce2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse str and put in width_ptr and height_ptr the detected values.  <br /></td></tr>
+<tr class="separator:a4dcdb8a2792f2074ca4a1e1f4ddce2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc4de8c071538f5bbde8e5b7466b676" id="r_abbc4de8c071538f5bbde8e5b7466b676"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbc4de8c071538f5bbde8e5b7466b676">av_parse_video_rate</a> (<a class="el" href="struct_a_v_rational.html">AVRational</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *str)</td></tr>
+<tr class="memdesc:abbc4de8c071538f5bbde8e5b7466b676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse str and store the detected values in *rate.  <br /></td></tr>
+<tr class="separator:abbc4de8c071538f5bbde8e5b7466b676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4be8779c7c2afd9c57c8b962bea76d03" id="r_a4be8779c7c2afd9c57c8b962bea76d03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4be8779c7c2afd9c57c8b962bea76d03">av_parse_color</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *rgba_color, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *color_string, int slen, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *log_ctx)</td></tr>
+<tr class="memdesc:a4be8779c7c2afd9c57c8b962bea76d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put the RGBA values that correspond to color_string in rgba_color.  <br /></td></tr>
+<tr class="separator:a4be8779c7c2afd9c57c8b962bea76d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d8cfb62989c8dc657954b33214f599d" id="r_a6d8cfb62989c8dc657954b33214f599d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d8cfb62989c8dc657954b33214f599d">av_get_known_color_name</a> (int color_idx, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> **<a class="el" href="structrgb.html">rgb</a>)</td></tr>
+<tr class="memdesc:a6d8cfb62989c8dc657954b33214f599d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of a color from the internal table of hard-coded named colors.  <br /></td></tr>
+<tr class="separator:a6d8cfb62989c8dc657954b33214f599d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98590feafe82e074f61f38c8faaa4cef" id="r_a98590feafe82e074f61f38c8faaa4cef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98590feafe82e074f61f38c8faaa4cef">av_parse_time</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> *timeval, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *timestr, int duration)</td></tr>
+<tr class="memdesc:a98590feafe82e074f61f38c8faaa4cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse timestr and return in *time a corresponding number of microseconds.  <br /></td></tr>
+<tr class="separator:a98590feafe82e074f61f38c8faaa4cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97f06e907c14c253c2bf3e775f51ccb" id="r_ad97f06e907c14c253c2bf3e775f51ccb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad97f06e907c14c253c2bf3e775f51ccb">av_find_info_tag</a> (char *<a class="el" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>, int arg_size, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *tag1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *info)</td></tr>
+<tr class="memdesc:ad97f06e907c14c253c2bf3e775f51ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to find a specific tag in a URL.  <br /></td></tr>
+<tr class="separator:ad97f06e907c14c253c2bf3e775f51ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9fc9ede1311e05ea453a1de0ec4dafd" id="r_aa9fc9ede1311e05ea453a1de0ec4dafd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9fc9ede1311e05ea453a1de0ec4dafd">av_small_strptime</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *fmt, struct tm *dt)</td></tr>
+<tr class="memdesc:aa9fc9ede1311e05ea453a1de0ec4dafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplified version of strptime  <br /></td></tr>
+<tr class="separator:aa9fc9ede1311e05ea453a1de0ec4dafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bf34b50b9762f3c733721d5210b52d" id="r_ae9bf34b50b9762f3c733721d5210b52d"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9bf34b50b9762f3c733721d5210b52d">av_timegm</a> (struct tm *tm)</td></tr>
+<tr class="memdesc:ae9bf34b50b9762f3c733721d5210b52d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the decomposed UTC time in tm to a time_t value.  <br /></td></tr>
+<tr class="separator:ae9bf34b50b9762f3c733721d5210b52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>misc parsing utilities </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a8ac8244d56fd4eeb9557038f80d60560" name="a8ac8244d56fd4eeb9557038f80d60560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac8244d56fd4eeb9557038f80d60560">&#9670;&#160;</a></span>av_parse_ratio_quiet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define av_parse_ratio_quiet</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_function" href="#a8535b8693aa5a188cfb1356133c0e94e">av_parse_ratio</a>(<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a>, str, max, <a class="code hl_define" href="group__lavu__log__constants.html#gad87b54332d00f280bf5db0fd2f56f340">AV_LOG_MAX_OFFSET</a>, <a class="code hl_define" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_a43852a2c335d759d3298864e65def49f"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#a43852a2c335d759d3298864e65def49f">rate</a></div><div class="ttdeci">GLuint GLenum * rate</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:11461</div></div>
+<div class="ttc" id="abegin__code_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>定义</b> begin_code.h:165</div></div>
+<div class="ttc" id="agroup__lavu__log__constants_html_gad87b54332d00f280bf5db0fd2f56f340"><div class="ttname"><a href="group__lavu__log__constants.html#gad87b54332d00f280bf5db0fd2f56f340">AV_LOG_MAX_OFFSET</a></div><div class="ttdeci">#define AV_LOG_MAX_OFFSET</div><div class="ttdef"><b>定义</b> log.h:204</div></div>
+<div class="ttc" id="aparseutils_8h_html_a8535b8693aa5a188cfb1356133c0e94e"><div class="ttname"><a href="#a8535b8693aa5a188cfb1356133c0e94e">av_parse_ratio</a></div><div class="ttdeci">int av_parse_ratio(AVRational *q, const char *str, int max, int log_offset, void *log_ctx)</div><div class="ttdoc">Parse str and store the parsed ratio in q.</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ad97f06e907c14c253c2bf3e775f51ccb" name="ad97f06e907c14c253c2bf3e775f51ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97f06e907c14c253c2bf3e775f51ccb">&#9670;&#160;</a></span>av_find_info_tag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_find_info_tag </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>arg_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>tag1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attempt to find a specific tag in a URL. </p>
+<p>syntax: '?tag1=val1&amp;tag2=val2...'. Little URL decoding is done. Return 1 if found. </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="parseutils_8h_ad97f06e907c14c253c2bf3e775f51ccb_cgraph.png" border="0" usemap="#aparseutils_8h_ad97f06e907c14c253c2bf3e775f51ccb_cgraph" alt=""/></div>
+<map name="aparseutils_8h_ad97f06e907c14c253c2bf3e775f51ccb_cgraph" id="aparseutils_8h_ad97f06e907c14c253c2bf3e775f51ccb_cgraph">
+<area shape="rect" title="Attempt to find a specific tag in a URL." alt="" coords="5,29,122,56"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="170,29,209,56"/>
+<area shape="poly" title=" " alt="" coords="122,40,154,40,154,45,122,45"/>
+<area shape="poly" title=" " alt="" coords="167,30,163,21,166,11,175,5,189,3,205,5,213,12,210,16,203,10,189,8,177,10,170,14,168,20,172,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6d8cfb62989c8dc657954b33214f599d" name="a6d8cfb62989c8dc657954b33214f599d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d8cfb62989c8dc657954b33214f599d">&#9670;&#160;</a></span>av_get_known_color_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * av_get_known_color_name </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>color_idx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> **</td>          <td class="paramname"><span class="paramname"><em>rgb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the name of a color from the internal table of hard-coded named colors. </p>
+<p>This function is meant to enumerate the color names recognized by <a class="el" href="#a4be8779c7c2afd9c57c8b962bea76d03" title="Put the RGBA values that correspond to color_string in rgba_color.">av_parse_color()</a>.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color_idx</td><td>index of the requested color, starting from 0 </td></tr>
+    <tr><td class="paramname">rgbp</td><td>if not NULL, will point to a 3-elements array with the color value in RGB </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the color name string or NULL if color_idx is not in the array </dd></dl>
+
+</div>
+</div>
+<a id="a4be8779c7c2afd9c57c8b962bea76d03" name="a4be8779c7c2afd9c57c8b962bea76d03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4be8779c7c2afd9c57c8b962bea76d03">&#9670;&#160;</a></span>av_parse_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_parse_color </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>rgba_color</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>color_string</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>log_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put the RGBA values that correspond to color_string in rgba_color. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color_string</td><td>a string specifying a color. It can be the name of a color (case insensitive match) or a [0x|#]RRGGBB[AA] sequence, possibly followed by "@" and a string representing the alpha component. The alpha component may be a string composed by "0x" followed by an hexadecimal number or a decimal number between 0.0 and 1.0, which represents the opacity value (0x00/0.0 means completely transparent, 0xff/1.0 completely opaque). If the alpha component is not specified then 0xff is assumed. The string "random" will result in a random color. </td></tr>
+    <tr><td class="paramname">slen</td><td>length of the initial part of color_string containing the color. It can be set to -1 if color_string is a null terminated string containing nothing else than the color. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 in case of success, a negative value in case of failure (for example if color_string cannot be parsed). </dd></dl>
+
+</div>
+</div>
+<a id="a8535b8693aa5a188cfb1356133c0e94e" name="a8535b8693aa5a188cfb1356133c0e94e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8535b8693aa5a188cfb1356133c0e94e">&#9670;&#160;</a></span>av_parse_ratio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_parse_ratio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a> *</td>          <td class="paramname"><span class="paramname"><em>q</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>log_offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *</td>          <td class="paramname"><span class="paramname"><em>log_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse str and store the parsed ratio in q. </p>
+<p>Note that a ratio with infinite (1/0) or negative value is considered valid, so you should check on the returned value if you want to exclude those values.</p>
+<p>The undefined value can be expressed using the "0:0" string.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">q</td><td>pointer to the <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> which will contain the ratio </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>the string to parse: it has to be a string in the format num:den, a float number or an expression </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>the maximum allowed numerator and denominator </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">log_offset</td><td>log level offset which is applied to the log level of log_ctx </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">log_ctx</td><td>parent logging context </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 on success, a negative error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a98590feafe82e074f61f38c8faaa4cef" name="a98590feafe82e074f61f38c8faaa4cef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98590feafe82e074f61f38c8faaa4cef">&#9670;&#160;</a></span>av_parse_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_parse_time </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> *</td>          <td class="paramname"><span class="paramname"><em>timeval</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>timestr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duration</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse timestr and return in *time a corresponding number of microseconds. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeval</td><td>puts here the number of microseconds corresponding to the string in timestr. If the string represents a duration, it is the number of microseconds contained in the time interval. If the string is a date, is the number of microseconds since 1st of January, 1970 up to the time of the parsed date. If timestr cannot be successfully parsed, set *time to INT64_MIN.</td></tr>
+    <tr><td class="paramname">timestr</td><td>a string representing a date or a duration.<ul>
+<li>If a date the syntax is: <div class="fragment"><div class="line">[{YYYY-MM-DD|YYYYMMDD}[<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>|<a class="code hl_typedef" href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a>| ]]{{HH:MM:SS[.m...]]]}|{HHMMSS[.m...]]]}}[<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caa70478ce277ffc322f8e1e3418e07355">Z</a>]</div>
+<div class="line"><a class="code hl_function" href="namespacespdlog_1_1details_1_1os.html#ab628dc1caf18d8cd769602ab5dc802c4">now</a></div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a></div><div class="ttdeci">@ T</div><div class="ttdoc">字母T</div><div class="ttdef"><b>定义</b> Def.h:3259</div></div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9caa70478ce277ffc322f8e1e3418e07355"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caa70478ce277ffc322f8e1e3418e07355">Z</a></div><div class="ttdeci">@ Z</div><div class="ttdoc">字母Z</div><div class="ttdef"><b>定义</b> Def.h:3536</div></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_ade5636ea600ca40c1f2c8cd08c1dcd3e"><div class="ttname"><a href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a></div><div class="ttdeci">GLdouble GLdouble t</div><div class="ttdef"><b>定义</b> SDL_opengl.h:2071</div></div>
+<div class="ttc" id="anamespacespdlog_1_1details_1_1os_html_ab628dc1caf18d8cd769602ab5dc802c4"><div class="ttname"><a href="namespacespdlog_1_1details_1_1os.html#ab628dc1caf18d8cd769602ab5dc802c4">spdlog::details::os::now</a></div><div class="ttdeci">SPDLOG_INLINE spdlog::log_clock::time_point now() SPDLOG_NOEXCEPT</div><div class="ttdef"><b>定义</b> os-inl.h:76</div></div>
+</div><!-- fragment --> If the value is "now" it takes the current time. Time is local time unless Z is appended, in which case it is interpreted as UTC. If the year-month-day part is not specified it takes the current year-month-day.</li>
+<li>If a duration the syntax is: <div class="fragment"><div class="line">[-][HH:]MM:SS[.m...]</div>
+<div class="line">[-]<a class="code hl_enumvalue" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a>+[.m...]</div>
+<div class="ttc" id="a_def_8h_html_ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670"><div class="ttname"><a href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caf1ce01387d2348f8b858721a7db81670">S</a></div><div class="ttdeci">@ S</div><div class="ttdoc">字母S</div><div class="ttdef"><b>定义</b> Def.h:2884</div></div>
+</div><!-- fragment --> </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">duration</td><td>flag which tells how to interpret timestr, if not zero timestr is interpreted as a duration, otherwise as a date </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 in case of success, a negative value corresponding to an AVERROR code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="abbc4de8c071538f5bbde8e5b7466b676" name="abbc4de8c071538f5bbde8e5b7466b676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc4de8c071538f5bbde8e5b7466b676">&#9670;&#160;</a></span>av_parse_video_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_parse_video_rate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_rational.html">AVRational</a> *</td>          <td class="paramname"><span class="paramname"><em>rate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse str and store the detected values in *rate. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">rate</td><td>pointer to the <a class="el" href="struct_a_v_rational.html" title="Rational number (pair of numerator and denominator).">AVRational</a> which will contain the detected frame rate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>the string to parse: it has to be a string in the format rate_num / rate_den, a float number or a valid video rate abbreviation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 on success, a negative error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a4dcdb8a2792f2074ca4a1e1f4ddce2bf" name="a4dcdb8a2792f2074ca4a1e1f4ddce2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dcdb8a2792f2074ca4a1e1f4ddce2bf">&#9670;&#160;</a></span>av_parse_video_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_parse_video_size </td>
+          <td>(</td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>width_ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>height_ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse str and put in width_ptr and height_ptr the detected values. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">width_ptr</td><td>pointer to the variable which will contain the detected width value </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">height_ptr</td><td>pointer to the variable which will contain the detected height value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>the string to parse: it has to be a string in the format width x height or a valid video size abbreviation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 on success, a negative error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa9fc9ede1311e05ea453a1de0ec4dafd" name="aa9fc9ede1311e05ea453a1de0ec4dafd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fc9ede1311e05ea453a1de0ec4dafd">&#9670;&#160;</a></span>av_small_strptime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * av_small_strptime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct tm *</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simplified version of strptime </p>
+<p>Parse the input string p according to the format string fmt and store its results in the structure dt. This implementation supports only a subset of the formats supported by the standard strptime().</p>
+<p>The supported input field descriptors are listed below.</p><ul>
+<li>H: the hour as a decimal number, using a 24-hour clock, in the range '00' through '23'</li>
+<li>J: hours as a decimal number, in the range '0' through INT_MAX</li>
+<li>M: the minute as a decimal number, using a 24-hour clock, in the range '00' through '59'</li>
+<li>S: the second as a decimal number, using a 24-hour clock, in the range '00' through '59'</li>
+<li>Y: the year as a decimal number, using the Gregorian calendar</li>
+<li>m: the month as a decimal number, in the range '1' through '12'</li>
+<li>d: the day of the month as a decimal number, in the range '1' through '31'</li>
+<li>T: alias for 'H:M:S'</li>
+<li>%%: a literal ''</li>
+</ul>
+<dl class="section return"><dt>返回</dt><dd>a pointer to the first character not processed in this function call. In case the input string contains more characters than required by the format string the return value points right after the last consumed input character. In case the whole input string is consumed the return value points to the null byte at the end of the string. On failure NULL is returned. </dd></dl>
+
+</div>
+</div>
+<a id="ae9bf34b50b9762f3c733721d5210b52d" name="ae9bf34b50b9762f3c733721d5210b52d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9bf34b50b9762f3c733721d5210b52d">&#9670;&#160;</a></span>av_timegm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t av_timegm </td>
+          <td>(</td>
+          <td class="paramtype">struct tm *</td>          <td class="paramname"><span class="paramname"><em>tm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert the decomposed UTC time in tm to a time_t value. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="parseutils_8h.html">parseutils.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

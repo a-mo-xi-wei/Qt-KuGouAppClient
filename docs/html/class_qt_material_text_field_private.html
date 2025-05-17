@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: QtMaterialTextFieldPrivate类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_qt_material_text_field_private.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="class_qt_material_text_field_private-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">QtMaterialTextFieldPrivate类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_qt_material_text_field.html" title="文本输入框类，继承自 QLineEdit，支持 Material Design 风格">QtMaterialTextField</a> 的私有实现类，管理状态机和属性  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qtmaterialtextfield__p_8h_source.html">qtmaterialtextfield_p.h</a>&gt;</code></p>
+<div class="dynheader">
+QtMaterialTextFieldPrivate 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_text_field_private__coll__graph.png" border="0" usemap="#a_qt_material_text_field_private_coll__map" alt="Collaboration graph"/></div>
+<map name="a_qt_material_text_field_private_coll__map" id="a_qt_material_text_field_private_coll__map">
+<area shape="rect" title="QtMaterialTextField 的私有实现类，管理状态机和属性" alt="" coords="161,385,336,412"/>
+<area shape="rect" href="class_qt_material_text_field.html" title="文本输入框类，继承自 QLineEdit，支持 Material Design 风格" alt="" coords="115,81,249,108"/>
+<area shape="poly" title=" " alt="" coords="101,114,61,128,28,146,17,157,10,169,8,182,13,198,32,231,56,262,114,315,173,356,222,382,220,387,171,360,111,320,52,266,27,234,8,200,3,183,5,167,13,153,25,142,59,123,99,109"/>
+<area shape="rect" href="class_qt_material_text_field_state_machine.html" title="文本输入框状态机类，管理正常和聚焦状态" alt="" coords="166,279,331,321"/>
+<area shape="poly" title=" " alt="" coords="185,123,188,159,197,198,215,241,237,277,232,280,211,243,192,199,183,160,180,123"/>
+<area shape="rect" href="class_qt_material_text_field_label.html" title="文本输入框标签类，管理浮动标签" alt="" coords="441,172,606,199"/>
+<area shape="poly" title=" " alt="" coords="246,110,475,169,474,174,245,115"/>
+<area shape="rect" title=" " alt="" coords="143,5,221,32"/>
+<area shape="poly" title=" " alt="" coords="185,47,185,81,179,81,179,47"/>
+<area shape="poly" title=" " alt="" coords="251,337,251,385,246,385,246,337"/>
+<area shape="rect" title=" " alt="" coords="22,172,134,199"/>
+<area shape="poly" title=" " alt="" coords="105,207,165,252,206,276,204,280,162,257,102,211"/>
+<area shape="poly" title=" " alt="" coords="523,215,517,236,507,256,485,282,459,305,403,342,346,369,295,387,294,382,343,364,400,337,456,300,481,278,503,253,512,234,518,213"/>
+<area shape="poly" title=" " alt="" coords="483,208,457,225,443,241,426,257,380,277,332,290,331,285,378,272,423,252,439,238,454,221,480,204"/>
+<area shape="rect" title=" " alt="" coords="487,81,560,108"/>
+<area shape="poly" title=" " alt="" coords="526,124,526,171,521,171,521,124"/>
+<area shape="rect" href="class_q_property_animation.html" title="Qt 属性动画类，用于窗口缩放动画" alt="" coords="278,172,417,199"/>
+<area shape="poly" title=" " alt="" coords="329,212,269,280,265,276,325,209"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a003a6d09cb7b2ceb0a48f965296efe3c" id="r_a003a6d09cb7b2ceb0a48f965296efe3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a003a6d09cb7b2ceb0a48f965296efe3c">QtMaterialTextFieldPrivate</a> (<a class="el" href="class_qt_material_text_field.html">QtMaterialTextField</a> *q)</td></tr>
+<tr class="memdesc:a003a6d09cb7b2ceb0a48f965296efe3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; 禁用拷贝  <br /></td></tr>
+<tr class="separator:a003a6d09cb7b2ceb0a48f965296efe3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee69ca4ee7c43c7ec8a62bf6561504d" id="r_afee69ca4ee7c43c7ec8a62bf6561504d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afee69ca4ee7c43c7ec8a62bf6561504d">~QtMaterialTextFieldPrivate</a> ()</td></tr>
+<tr class="memdesc:afee69ca4ee7c43c7ec8a62bf6561504d"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，清理资源  <br /></td></tr>
+<tr class="separator:afee69ca4ee7c43c7ec8a62bf6561504d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947" id="r_a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
+<tr class="memdesc:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化文本输入框  <br /></td></tr>
+<tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a099d3cf169574f02169ac51004db414d" id="r_a099d3cf169574f02169ac51004db414d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_qt_material_text_field.html">QtMaterialTextField</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a099d3cf169574f02169ac51004db414d">q_ptr</a></td></tr>
+<tr class="memdesc:a099d3cf169574f02169ac51004db414d"><td class="mdescLeft">&#160;</td><td class="mdescRight">指向公共类  <br /></td></tr>
+<tr class="separator:a099d3cf169574f02169ac51004db414d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65559559446f9034d7deb890733f94e4" id="r_a65559559446f9034d7deb890733f94e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_qt_material_text_field_state_machine.html">QtMaterialTextFieldStateMachine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65559559446f9034d7deb890733f94e4">stateMachine</a></td></tr>
+<tr class="memdesc:a65559559446f9034d7deb890733f94e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">状态机  <br /></td></tr>
+<tr class="separator:a65559559446f9034d7deb890733f94e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a752eb5697603954bae9002cbc80e7487" id="r_a752eb5697603954bae9002cbc80e7487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_qt_material_text_field_label.html">QtMaterialTextFieldLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a752eb5697603954bae9002cbc80e7487">label</a></td></tr>
+<tr class="memdesc:a752eb5697603954bae9002cbc80e7487"><td class="mdescLeft">&#160;</td><td class="mdescRight">标签控件  <br /></td></tr>
+<tr class="separator:a752eb5697603954bae9002cbc80e7487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac04ac84dc8dc109b2e8e47412c5eaf77" id="r_ac04ac84dc8dc109b2e8e47412c5eaf77"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac04ac84dc8dc109b2e8e47412c5eaf77">textColor</a></td></tr>
+<tr class="memdesc:ac04ac84dc8dc109b2e8e47412c5eaf77"><td class="mdescLeft">&#160;</td><td class="mdescRight">文本颜色  <br /></td></tr>
+<tr class="separator:ac04ac84dc8dc109b2e8e47412c5eaf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a956e259144383cea16f0a41f81c640d2" id="r_a956e259144383cea16f0a41f81c640d2"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a956e259144383cea16f0a41f81c640d2">labelColor</a></td></tr>
+<tr class="memdesc:a956e259144383cea16f0a41f81c640d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">标签颜色  <br /></td></tr>
+<tr class="separator:a956e259144383cea16f0a41f81c640d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218a49803a9dfdd69af3108bbee7d61b" id="r_a218a49803a9dfdd69af3108bbee7d61b"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a218a49803a9dfdd69af3108bbee7d61b">inkColor</a></td></tr>
+<tr class="memdesc:a218a49803a9dfdd69af3108bbee7d61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">墨水颜色  <br /></td></tr>
+<tr class="separator:a218a49803a9dfdd69af3108bbee7d61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa23a3656e6fd3368ded9d33590db13e4" id="r_aa23a3656e6fd3368ded9d33590db13e4"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa23a3656e6fd3368ded9d33590db13e4">inputLineColor</a></td></tr>
+<tr class="memdesc:aa23a3656e6fd3368ded9d33590db13e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入线颜色  <br /></td></tr>
+<tr class="separator:aa23a3656e6fd3368ded9d33590db13e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7361dda1ebc2646e035b947f26708196" id="r_a7361dda1ebc2646e035b947f26708196"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7361dda1ebc2646e035b947f26708196">labelString</a></td></tr>
+<tr class="memdesc:a7361dda1ebc2646e035b947f26708196"><td class="mdescLeft">&#160;</td><td class="mdescRight">标签文本  <br /></td></tr>
+<tr class="separator:a7361dda1ebc2646e035b947f26708196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc360eaf458223c12cc67d8b81e49e1" id="r_a4dc360eaf458223c12cc67d8b81e49e1"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dc360eaf458223c12cc67d8b81e49e1">labelFontSize</a></td></tr>
+<tr class="memdesc:a4dc360eaf458223c12cc67d8b81e49e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">标签字体大小  <br /></td></tr>
+<tr class="separator:a4dc360eaf458223c12cc67d8b81e49e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad579257eafa32fe7f08a86c0254fdaec" id="r_ad579257eafa32fe7f08a86c0254fdaec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad579257eafa32fe7f08a86c0254fdaec">showLabel</a></td></tr>
+<tr class="memdesc:ad579257eafa32fe7f08a86c0254fdaec"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示标签  <br /></td></tr>
+<tr class="separator:ad579257eafa32fe7f08a86c0254fdaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae86f96148fcc643febf0de235b61cec2" id="r_ae86f96148fcc643febf0de235b61cec2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae86f96148fcc643febf0de235b61cec2">showInputLine</a></td></tr>
+<tr class="memdesc:ae86f96148fcc643febf0de235b61cec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示输入线  <br /></td></tr>
+<tr class="separator:ae86f96148fcc643febf0de235b61cec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb005dfe255e9967c9f42e0aaf0dd030" id="r_acb005dfe255e9967c9f42e0aaf0dd030"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb005dfe255e9967c9f42e0aaf0dd030">useThemeColors</a></td></tr>
+<tr class="memdesc:acb005dfe255e9967c9f42e0aaf0dd030"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否使用主题颜色  <br /></td></tr>
+<tr class="separator:acb005dfe255e9967c9f42e0aaf0dd030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="class_qt_material_text_field.html" title="文本输入框类，继承自 QLineEdit，支持 Material Design 风格">QtMaterialTextField</a> 的私有实现类，管理状态机和属性 </p>
+<dl class="section note"><dt>注解</dt><dd>内部实现 </dd></dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a003a6d09cb7b2ceb0a48f965296efe3c" name="a003a6d09cb7b2ceb0a48f965296efe3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003a6d09cb7b2ceb0a48f965296efe3c">&#9670;&#160;</a></span>QtMaterialTextFieldPrivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_text_field_private.html">QtMaterialTextFieldPrivate</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_qt_material_text_field.html">QtMaterialTextField</a> *</td>          <td class="paramname"><span class="paramname"><em>q</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt; 禁用拷贝 </p>
+<p>构造函数，初始化私有类</p>
+<p>&lt; 声明公共类</p>
+<p>构造函数，初始化私有类 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>指向 <a class="el" href="class_qt_material_text_field.html" title="文本输入框类，继承自 QLineEdit，支持 Material Design 风格">QtMaterialTextField</a> 的指针</td></tr>
+    <tr><td class="paramname">q</td><td>指向 <a class="el" href="class_qt_material_text_field.html" title="文本输入框类，继承自 QLineEdit，支持 Material Design 风格">QtMaterialTextField</a> 的指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>内部实现 </dd></dl>
+
+</div>
+</div>
+<a id="afee69ca4ee7c43c7ec8a62bf6561504d" name="afee69ca4ee7c43c7ec8a62bf6561504d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee69ca4ee7c43c7ec8a62bf6561504d">&#9670;&#160;</a></span>~QtMaterialTextFieldPrivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_qt_material_text_field_private.html">QtMaterialTextFieldPrivate</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，清理资源 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a02fd73d861ef2e4aabb38c0c9ff82947" name="a02fd73d861ef2e4aabb38c0c9ff82947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02fd73d861ef2e4aabb38c0c9ff82947">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化文本输入框 </p>
+<p>&lt; 创建状态机</p>
+<p>&lt; 初始无标签</p>
+<p>&lt; 默认标签字体大小</p>
+<p>&lt; 默认隐藏标签</p>
+<p>&lt; 默认显示输入线</p>
+<p>&lt; 默认使用主题颜色</p>
+<p>&lt; 禁用边框</p>
+<p>&lt; 设置 <a class="el" href="namespace_material.html" title="Material Design 相关枚举和类型的命名空间">Material</a> 风格</p>
+<p>&lt; 启用悬停</p>
+<p>&lt; 启用鼠标跟踪</p>
+<p>&lt; 设置文本边距</p>
+<p>&lt; 设置默认字体</p>
+<p>&lt; 启动状态机</p>
+<p>&lt; 处理事件队列</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_text_field_private_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph.png" border="0" usemap="#aclass_qt_material_text_field_private_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph" alt=""/></div>
+<map name="aclass_qt_material_text_field_private_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph" id="aclass_qt_material_text_field_private_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph">
+<area shape="rect" title="初始化文本输入框" alt="" coords="5,29,44,56"/>
+<area shape="rect" href="class_qt_material_style.html#ae88e34c52fff15c9783d3626d670e471" title="获取单例实例" alt="" coords="92,29,260,56"/>
+<area shape="poly" title=" " alt="" coords="44,40,76,40,76,45,44,45"/>
+<area shape="poly" title=" " alt="" coords="149,30,145,21,148,11,159,5,176,3,194,5,204,12,201,16,192,10,176,8,160,10,152,14,150,20,154,28"/>
+<area shape="rect" href="class_qt_material_style.html#a0daadaac95fd2f5a1697685265eb20ee" title="&lt; 声明私有类" alt="" coords="308,21,487,64"/>
+<area shape="poly" title=" " alt="" coords="261,40,293,40,293,45,261,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a218a49803a9dfdd69af3108bbee7d61b" name="a218a49803a9dfdd69af3108bbee7d61b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a218a49803a9dfdd69af3108bbee7d61b">&#9670;&#160;</a></span>inkColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor inkColor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>墨水颜色 </p>
+
+</div>
+</div>
+<a id="aa23a3656e6fd3368ded9d33590db13e4" name="aa23a3656e6fd3368ded9d33590db13e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa23a3656e6fd3368ded9d33590db13e4">&#9670;&#160;</a></span>inputLineColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor inputLineColor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输入线颜色 </p>
+
+</div>
+</div>
+<a id="a752eb5697603954bae9002cbc80e7487" name="a752eb5697603954bae9002cbc80e7487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a752eb5697603954bae9002cbc80e7487">&#9670;&#160;</a></span>label</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_text_field_label.html">QtMaterialTextFieldLabel</a>* label</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>标签控件 </p>
+
+</div>
+</div>
+<a id="a956e259144383cea16f0a41f81c640d2" name="a956e259144383cea16f0a41f81c640d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a956e259144383cea16f0a41f81c640d2">&#9670;&#160;</a></span>labelColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor labelColor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>标签颜色 </p>
+
+</div>
+</div>
+<a id="a4dc360eaf458223c12cc67d8b81e49e1" name="a4dc360eaf458223c12cc67d8b81e49e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc360eaf458223c12cc67d8b81e49e1">&#9670;&#160;</a></span>labelFontSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal labelFontSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>标签字体大小 </p>
+
+</div>
+</div>
+<a id="a7361dda1ebc2646e035b947f26708196" name="a7361dda1ebc2646e035b947f26708196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7361dda1ebc2646e035b947f26708196">&#9670;&#160;</a></span>labelString</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString labelString</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>标签文本 </p>
+
+</div>
+</div>
+<a id="a099d3cf169574f02169ac51004db414d" name="a099d3cf169574f02169ac51004db414d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a099d3cf169574f02169ac51004db414d">&#9670;&#160;</a></span>q_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_text_field.html">QtMaterialTextField</a>* const q_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指向公共类 </p>
+
+</div>
+</div>
+<a id="ae86f96148fcc643febf0de235b61cec2" name="ae86f96148fcc643febf0de235b61cec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86f96148fcc643febf0de235b61cec2">&#9670;&#160;</a></span>showInputLine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool showInputLine</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否显示输入线 </p>
+
+</div>
+</div>
+<a id="ad579257eafa32fe7f08a86c0254fdaec" name="ad579257eafa32fe7f08a86c0254fdaec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad579257eafa32fe7f08a86c0254fdaec">&#9670;&#160;</a></span>showLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool showLabel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否显示标签 </p>
+
+</div>
+</div>
+<a id="a65559559446f9034d7deb890733f94e4" name="a65559559446f9034d7deb890733f94e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65559559446f9034d7deb890733f94e4">&#9670;&#160;</a></span>stateMachine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_text_field_state_machine.html">QtMaterialTextFieldStateMachine</a>* stateMachine</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>状态机 </p>
+
+</div>
+</div>
+<a id="ac04ac84dc8dc109b2e8e47412c5eaf77" name="ac04ac84dc8dc109b2e8e47412c5eaf77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac04ac84dc8dc109b2e8e47412c5eaf77">&#9670;&#160;</a></span>textColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor textColor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>文本颜色 </p>
+
+</div>
+</div>
+<a id="acb005dfe255e9967c9f42e0aaf0dd030" name="acb005dfe255e9967c9f42e0aaf0dd030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb005dfe255e9967c9f42e0aaf0dd030">&#9670;&#160;</a></span>useThemeColors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool useThemeColors</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否使用主题颜色 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="qtmaterialtextfield__p_8h_source.html">qtmaterialtextfield_p.h</a></li>
+<li><a class="el" href="qtmaterialtextfield_8cpp.html">qtmaterialtextfield.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_qt_material_text_field_private.html">QtMaterialTextFieldPrivate</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

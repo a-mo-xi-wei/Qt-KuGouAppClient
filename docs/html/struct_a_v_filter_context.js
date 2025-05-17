@@ -1,0 +1,25 @@
+var struct_a_v_filter_context =
+[
+    [ "av_class", "struct_a_v_filter_context.html#a3c52bb71d909eb63b854c56cc44927b7", null ],
+    [ "command_queue", "struct_a_v_filter_context.html#a7bac33dc50f1afe71292708064dcd75d", null ],
+    [ "enable", "struct_a_v_filter_context.html#ab1400a6a57432699ab60e9afc97fda5a", null ],
+    [ "enable_str", "struct_a_v_filter_context.html#a70bc2cc53fdcb5a9905dac4673a3aa7d", null ],
+    [ "extra_hw_frames", "struct_a_v_filter_context.html#a694d05a8b167ba2ea4f4ac803b722852", null ],
+    [ "filter", "struct_a_v_filter_context.html#a033dc64bb41ae6ca53ea962e72aa6c1d", null ],
+    [ "graph", "struct_a_v_filter_context.html#a61ce313f98e531118de8ce7d587e8cc4", null ],
+    [ "hw_device_ctx", "struct_a_v_filter_context.html#a08d3cd3b71ea4209189c445198b095b8", null ],
+    [ "input_pads", "struct_a_v_filter_context.html#a03bf2b922cf7a134ef2d92aba23bcd15", null ],
+    [ "inputs", "struct_a_v_filter_context.html#a04da7ac74d0129d1d481963dbf1f7ed8", null ],
+    [ "internal", "struct_a_v_filter_context.html#a2ba374360c7048b8e051c224b39e3a8b", null ],
+    [ "is_disabled", "struct_a_v_filter_context.html#afa0741876f8a15951f73fc632dd5119c", null ],
+    [ "name", "struct_a_v_filter_context.html#a5ac083a645d964373f022d03df4849c8", null ],
+    [ "nb_inputs", "struct_a_v_filter_context.html#a87b41d4bd77313274b3563e962f20391", null ],
+    [ "nb_outputs", "struct_a_v_filter_context.html#a44cd113f7e4b6d8b6a0e7933dd4ff1c9", null ],
+    [ "nb_threads", "struct_a_v_filter_context.html#aa36f090371519310478c1392fd4de364", null ],
+    [ "output_pads", "struct_a_v_filter_context.html#a5fbab1e18e50eb6aad41bf4141b276b5", null ],
+    [ "outputs", "struct_a_v_filter_context.html#a9f4eb8424775d9549cdbfa3efae2d3ba", null ],
+    [ "priv", "struct_a_v_filter_context.html#a8b6505c37d4ff95854b8b00527e4d9fa", null ],
+    [ "ready", "struct_a_v_filter_context.html#ae9ddb688ae3a8deb1925c49a851b2a4c", null ],
+    [ "thread_type", "struct_a_v_filter_context.html#aee1073f46dd83493f7ca31db923d5b8b", null ],
+    [ "var_values", "struct_a_v_filter_context.html#abcdedc0dedbe3fc2ccef4f731ac8ee02", null ]
+];

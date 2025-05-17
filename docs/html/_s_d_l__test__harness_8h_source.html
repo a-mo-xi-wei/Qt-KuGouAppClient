@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SDL_test_harness.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_s_d_l__test__harness_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SDL_test_harness.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_s_d_l__test__harness_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Simple DirectMedia Layer</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  Copyright (C) 1997-2025 Sam Lantinga &lt;slouken@libsdl.org&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  This software is provided &#39;as-is&#39;, without any express or implied</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  warranty.  In no event will the authors be held liable for any damages</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  arising from the use of this software.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  Permission is granted to anyone to use this software for any purpose,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  including commercial applications, and to alter it and redistribute it</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  freely, subject to the following restrictions:</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  1. The origin of this software must not be misrepresented; you must not</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">     claim that you wrote the original software. If you use this software</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">     in a product, an acknowledgment in the product documentation would be</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">     appreciated but is not required.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  2. Altered source versions must be plainly marked as such, and must not be</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">     misrepresented as being the original software.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  3. This notice may not be removed or altered from any source distribution.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">  Defines types for test case definitions and the test execution harness API.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"></span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">  Based on original GSOC code by Markus Kauppila &lt;markus.kauppila@gmail.com&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#ifndef SDL_test_h_arness_h</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define SDL_test_h_arness_h</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="begin__code_8h.html">begin_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/* Set up for C function definitions, even when using C++ */</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/* ! Definitions for test case structures */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#a4404f2feb87e68e20e31bd86ec1728b1">   47</a></span><span class="preprocessor">#define TEST_ENABLED  1</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#ac7b13b8aefdada941436332f7559e5f0">   48</a></span><span class="preprocessor">#define TEST_DISABLED 0</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/* ! Definition of all the possible test return values of the test case method */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#ad1b0d362df8510a4a917442ae7173aa1">   51</a></span><span class="preprocessor">#define TEST_ABORTED        -1</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#a24c50cc9207eee59e73f95faff5ef07a">   52</a></span><span class="preprocessor">#define TEST_STARTED         0</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#aa1fcd18bba2a887390bb7e032f177716">   53</a></span><span class="preprocessor">#define TEST_COMPLETED       1</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#adc53d81b0aba42f8a5773a4bd1c3da88">   54</a></span><span class="preprocessor">#define TEST_SKIPPED         2</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/* ! Definition of all the possible test results for the harness */</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#accbb9396b61c19b746505b685275ce82">   57</a></span><span class="preprocessor">#define TEST_RESULT_PASSED              0</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#a25cadd1b04d9f8f342919a53e2b984b7">   58</a></span><span class="preprocessor">#define TEST_RESULT_FAILED              1</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#ab560e79979c20b68710cc24585a2f78f">   59</a></span><span class="preprocessor">#define TEST_RESULT_NO_ASSERT           2</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#aadce13b4d24fe4ac2b58578167e53846">   60</a></span><span class="preprocessor">#define TEST_RESULT_SKIPPED             3</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#aff94de0de0428e277e9c660d755adb1a">   61</a></span><span class="preprocessor">#define TEST_RESULT_SETUP_FAILURE       4</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/* !&lt; Function pointer to a test case setup function (run before every test) */</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#acf5b8d5c6dcbf946fdf7bdb1ceb03e45">   64</a></span><span class="keyword">typedef</span> <a class="code hl_function" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> (*<a class="code hl_typedef" href="_s_d_l__test__harness_8h.html#acf5b8d5c6dcbf946fdf7bdb1ceb03e45">SDLTest_TestCaseSetUpFp</a>)(<span class="keywordtype">void</span> *<a class="code hl_function" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/* !&lt; Function pointer to a test case function */</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#ae1a62d8f725d57dc95faddcc5409afbb">   67</a></span><span class="keyword">typedef</span> int (*<a class="code hl_typedef" href="_s_d_l__test__harness_8h.html#ae1a62d8f725d57dc95faddcc5409afbb">SDLTest_TestCaseFp</a>)(<span class="keywordtype">void</span> *<a class="code hl_function" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/* !&lt; Function pointer to a test case teardown function (run after every test) */</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#a146292b699bf0c95e1c4bcfaced3b1dc">   70</a></span><span class="keyword">typedef</span> <a class="code hl_function" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>  (*<a class="code hl_typedef" href="_s_d_l__test__harness_8h.html#a146292b699bf0c95e1c4bcfaced3b1dc">SDLTest_TestCaseTearDownFp</a>)(<span class="keywordtype">void</span> *<a class="code hl_function" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_case_reference.html">   75</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_s_d_l_test___test_case_reference.html">SDLTest_TestCaseReference</a> {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">/* !&lt; Func2Stress */</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_case_reference.html#a0576a913b1af0c2aa389358522ed2290">   77</a></span>    <a class="code hl_typedef" href="_s_d_l__test__harness_8h.html#ae1a62d8f725d57dc95faddcc5409afbb">SDLTest_TestCaseFp</a> <a class="code hl_variable" href="struct_s_d_l_test___test_case_reference.html#a0576a913b1af0c2aa389358522ed2290">testCase</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">/* !&lt; Short name (or function name) &quot;Func2Stress&quot; */</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_case_reference.html#a8f8f80d37794cde9472343e4487ba3eb">   79</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_s_d_l_test___test_case_reference.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">/* !&lt; Long name or full description &quot;This test pushes func2() to the limit.&quot; */</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_case_reference.html#a68344fa88cf4e86b5079fd69a5c22d57">   81</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_s_d_l_test___test_case_reference.html#a68344fa88cf4e86b5079fd69a5c22d57">description</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">/* !&lt; Set to TEST_ENABLED or TEST_DISABLED (test won&#39;t be run) */</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_case_reference.html#a03e6cca0c879c0443efb431c30c14f76">   83</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_s_d_l_test___test_case_reference.html#a03e6cca0c879c0443efb431c30c14f76">enabled</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#ae02b9535633a86200d7bce94686d1545">   84</a></span>} <a class="code hl_struct" href="struct_s_d_l_test___test_case_reference.html">SDLTest_TestCaseReference</a>;</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="};">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_suite_reference.html">   89</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_s_d_l_test___test_suite_reference.html">SDLTest_TestSuiteReference</a> {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">/* !&lt; &quot;PlatformSuite&quot; */</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_suite_reference.html#a8f8f80d37794cde9472343e4487ba3eb">   91</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_s_d_l_test___test_suite_reference.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">/* !&lt; The function that is run before each test. NULL skips. */</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_suite_reference.html#ab627d8169b6ded0e41636a09f2108282">   93</a></span>    <a class="code hl_typedef" href="_s_d_l__test__harness_8h.html#acf5b8d5c6dcbf946fdf7bdb1ceb03e45">SDLTest_TestCaseSetUpFp</a> <a class="code hl_variable" href="struct_s_d_l_test___test_suite_reference.html#ab627d8169b6ded0e41636a09f2108282">testSetUp</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">/* !&lt; The test cases that are run as part of the suite. Last item should be NULL. */</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_suite_reference.html#ac95fa35cd917c457107a82bf8a3f374f">   95</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_s_d_l_test___test_case_reference.html">SDLTest_TestCaseReference</a> **<a class="code hl_variable" href="struct_s_d_l_test___test_suite_reference.html#ac95fa35cd917c457107a82bf8a3f374f">testCases</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">/* !&lt; The function that is run after each test. NULL skips. */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="struct_s_d_l_test___test_suite_reference.html#a14b9261f301a687508830decf5639d5a">   97</a></span>    <a class="code hl_typedef" href="_s_d_l__test__harness_8h.html#a146292b699bf0c95e1c4bcfaced3b1dc">SDLTest_TestCaseTearDownFp</a> <a class="code hl_variable" href="struct_s_d_l_test___test_suite_reference.html#a14b9261f301a687508830decf5639d5a">testTearDown</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#ae52f136004f974251df5cde2152fc5ad">   98</a></span>} <a class="code hl_struct" href="struct_s_d_l_test___test_suite_reference.html">SDLTest_TestSuiteReference</a>;</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#a44e422204aa15c9a33e17ea74b2442ab">  110</a></span><span class="keywordtype">char</span> *<a class="code hl_function" href="_s_d_l__test__harness_8h.html#a44e422204aa15c9a33e17ea74b2442ab">SDLTest_GenerateRunSeed</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="_s_d_l__test__harness_8h.html#a4999be460499b1cb45e2b2b3bbb582b2">  123</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_s_d_l__test__harness_8h.html#a4999be460499b1cb45e2b2b3bbb582b2">SDLTest_RunSuites</a>(<a class="code hl_struct" href="struct_s_d_l_test___test_suite_reference.html">SDLTest_TestSuiteReference</a> *testSuites[], <span class="keyword">const</span> <span class="keywordtype">char</span> *userRunSeed, <a class="code hl_typedef" href="_s_d_l__stdinc_8h.html#ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</a> userExecKey, <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter</a>, <span class="keywordtype">int</span> testIterations);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">/* Ends C function definitions when using C++ */</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#include &quot;<a class="code" href="close__code_8h.html">close_code.h</a>&quot;</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#endif </span><span class="comment">/* SDL_test_h_arness_h */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">/* vi: set ts=4 sw=4 expandtab: */</span></div>
+<div class="ttc" id="a_s_d_l__opengl_8h_html_a46df6112013cf583e82b25cebd5cb499"><div class="ttname"><a href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></div><div class="ttdeci">typedef void(APIENTRYP PFNGLDRAWRANGEELEMENTSPROC)(GLenum mode</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab3664546554b8fc4b0b5a1a981ad97ec"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab3664546554b8fc4b0b5a1a981ad97ec">filter</a></div><div class="ttdeci">GLint GLint GLint GLint GLint GLint GLint GLbitfield GLenum filter</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1492</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_ab9c919755bde3b34349e23a32b4e0fa7"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#ab9c919755bde3b34349e23a32b4e0fa7">length</a></div><div class="ttdeci">GLuint GLsizei GLsizei * length</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:961</div></div>
+<div class="ttc" id="a_s_d_l__stdinc_8h_html_ac006cf2bd55a42a9cc8ae9f123aa7e13"><div class="ttname"><a href="_s_d_l__stdinc_8h.html#ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</a></div><div class="ttdeci">uint64_t Uint64</div><div class="ttdef"><b>定义</b> SDL_stdinc.h:235</div></div>
+<div class="ttc" id="a_s_d_l__test__harness_8h_html_a146292b699bf0c95e1c4bcfaced3b1dc"><div class="ttname"><a href="_s_d_l__test__harness_8h.html#a146292b699bf0c95e1c4bcfaced3b1dc">SDLTest_TestCaseTearDownFp</a></div><div class="ttdeci">void(* SDLTest_TestCaseTearDownFp)(void *arg)</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:70</div></div>
+<div class="ttc" id="a_s_d_l__test__harness_8h_html_a44e422204aa15c9a33e17ea74b2442ab"><div class="ttname"><a href="_s_d_l__test__harness_8h.html#a44e422204aa15c9a33e17ea74b2442ab">SDLTest_GenerateRunSeed</a></div><div class="ttdeci">char * SDLTest_GenerateRunSeed(const int length)</div><div class="ttdoc">Generates a random run seed string for the harness.</div></div>
+<div class="ttc" id="a_s_d_l__test__harness_8h_html_a4999be460499b1cb45e2b2b3bbb582b2"><div class="ttname"><a href="_s_d_l__test__harness_8h.html#a4999be460499b1cb45e2b2b3bbb582b2">SDLTest_RunSuites</a></div><div class="ttdeci">int SDLTest_RunSuites(SDLTest_TestSuiteReference *testSuites[], const char *userRunSeed, Uint64 userExecKey, const char *filter, int testIterations)</div><div class="ttdoc">Execute a test suite using the given run seed and execution key.</div></div>
+<div class="ttc" id="a_s_d_l__test__harness_8h_html_acf5b8d5c6dcbf946fdf7bdb1ceb03e45"><div class="ttname"><a href="_s_d_l__test__harness_8h.html#acf5b8d5c6dcbf946fdf7bdb1ceb03e45">SDLTest_TestCaseSetUpFp</a></div><div class="ttdeci">void(* SDLTest_TestCaseSetUpFp)(void *arg)</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:64</div></div>
+<div class="ttc" id="a_s_d_l__test__harness_8h_html_ae1a62d8f725d57dc95faddcc5409afbb"><div class="ttname"><a href="_s_d_l__test__harness_8h.html#ae1a62d8f725d57dc95faddcc5409afbb">SDLTest_TestCaseFp</a></div><div class="ttdeci">int(* SDLTest_TestCaseFp)(void *arg)</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:67</div></div>
+<div class="ttc" id="abase_8h_html_a2c8e80c1b1c8b7747e99b8e9a24a0429"><div class="ttname"><a href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429">arg</a></div><div class="ttdeci">auto arg(const Char *name, const T &amp;arg) -&gt; detail::named_arg&lt; Char, T &gt;</div><div class="ttdoc">Returns a named argument to be used in a formatting function.</div><div class="ttdef"><b>定义</b> base.h:2798</div></div>
+<div class="ttc" id="abegin__code_8h_html"><div class="ttname"><a href="begin__code_8h.html">begin_code.h</a></div><div class="ttdoc">This file sets things up for C dynamic library function definitions, static inlined functions,...</div></div>
+<div class="ttc" id="aclose__code_8h_html"><div class="ttname"><a href="close__code_8h.html">close_code.h</a></div><div class="ttdoc">This file reverses the effects of begin_code.h and should be included after you finish any function a...</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_case_reference_html"><div class="ttname"><a href="struct_s_d_l_test___test_case_reference.html">SDLTest_TestCaseReference</a></div><div class="ttdoc">Holds information about a single test case.</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:75</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_case_reference_html_a03e6cca0c879c0443efb431c30c14f76"><div class="ttname"><a href="struct_s_d_l_test___test_case_reference.html#a03e6cca0c879c0443efb431c30c14f76">SDLTest_TestCaseReference::enabled</a></div><div class="ttdeci">int enabled</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:83</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_case_reference_html_a0576a913b1af0c2aa389358522ed2290"><div class="ttname"><a href="struct_s_d_l_test___test_case_reference.html#a0576a913b1af0c2aa389358522ed2290">SDLTest_TestCaseReference::testCase</a></div><div class="ttdeci">SDLTest_TestCaseFp testCase</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:77</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_case_reference_html_a68344fa88cf4e86b5079fd69a5c22d57"><div class="ttname"><a href="struct_s_d_l_test___test_case_reference.html#a68344fa88cf4e86b5079fd69a5c22d57">SDLTest_TestCaseReference::description</a></div><div class="ttdeci">const char * description</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:81</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_case_reference_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="struct_s_d_l_test___test_case_reference.html#a8f8f80d37794cde9472343e4487ba3eb">SDLTest_TestCaseReference::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:79</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_suite_reference_html"><div class="ttname"><a href="struct_s_d_l_test___test_suite_reference.html">SDLTest_TestSuiteReference</a></div><div class="ttdoc">Holds information about a test suite (multiple test cases).</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:89</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_suite_reference_html_a14b9261f301a687508830decf5639d5a"><div class="ttname"><a href="struct_s_d_l_test___test_suite_reference.html#a14b9261f301a687508830decf5639d5a">SDLTest_TestSuiteReference::testTearDown</a></div><div class="ttdeci">SDLTest_TestCaseTearDownFp testTearDown</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:97</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_suite_reference_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="struct_s_d_l_test___test_suite_reference.html#a8f8f80d37794cde9472343e4487ba3eb">SDLTest_TestSuiteReference::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:91</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_suite_reference_html_ab627d8169b6ded0e41636a09f2108282"><div class="ttname"><a href="struct_s_d_l_test___test_suite_reference.html#ab627d8169b6ded0e41636a09f2108282">SDLTest_TestSuiteReference::testSetUp</a></div><div class="ttdeci">SDLTest_TestCaseSetUpFp testSetUp</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:93</div></div>
+<div class="ttc" id="astruct_s_d_l_test___test_suite_reference_html_ac95fa35cd917c457107a82bf8a3f374f"><div class="ttname"><a href="struct_s_d_l_test___test_suite_reference.html#ac95fa35cd917c457107a82bf8a3f374f">SDLTest_TestSuiteReference::testCases</a></div><div class="ttdeci">const SDLTest_TestCaseReference ** testCases</div><div class="ttdef"><b>定义</b> SDL_test_harness.h:95</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_5232c6ad217dfee6d467d1b71e045714.html">SDL2</a></li><li class="navelem"><a class="el" href="dir_2c82b3803b46acacd961d38c65a4a760.html">win64</a></li><li class="navelem"><a class="el" href="dir_f6562d0026321f5d2baef14c2271cb72.html">include</a></li><li class="navelem"><a class="el" href="dir_b8651d0b2c4372cbd5aa0e45bd92e5c3.html">SDL2</a></li><li class="navelem"><a class="el" href="_s_d_l__test__harness_8h.html">SDL_test_harness.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

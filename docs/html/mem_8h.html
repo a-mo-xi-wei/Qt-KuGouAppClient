@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: mem.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('mem_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">mem.h 文件参考<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__mem.html">Memory Management</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Memory handling functions  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="attributes_8h_source.html">attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="error_8h_source.html">error.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="avutil_8h_source.html">avutil.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+mem.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="mem_8h__incl.png" border="0" usemap="#amem_8h" alt=""/></div>
+<map name="amem_8h" id="amem_8h">
+<area shape="rect" title="Memory handling functions" alt="" coords="536,5,597,32"/>
+<area shape="rect" title=" " alt="" coords="702,304,765,331"/>
+<area shape="poly" title=" " alt="" coords="536,25,379,43,278,60,177,84,91,114,56,132,30,153,14,175,8,199,15,225,35,254,62,262,123,271,311,288,686,311,686,316,310,294,123,277,61,268,32,258,10,227,3,199,9,172,26,149,53,128,88,109,176,78,277,55,378,38,535,20"/>
+<area shape="rect" title=" " alt="" coords="1472,304,1536,331"/>
+<area shape="poly" title=" " alt="" coords="598,17,737,22,953,39,1077,56,1206,80,1335,111,1459,152,1528,178,1553,196,1576,228,1580,248,1572,267,1558,283,1541,297,1538,293,1554,279,1568,264,1574,247,1571,230,1549,200,1525,182,1458,157,1334,117,1205,85,1076,61,952,45,737,27,598,23"/>
+<area shape="rect" href="attributes_8h.html" title="Macro definitions for various function/variable attributes" alt="" coords="1051,304,1138,331"/>
+<area shape="poly" title=" " alt="" coords="576,31,603,75,648,137,709,201,744,230,781,254,846,281,915,298,980,308,1037,312,1036,318,980,313,914,303,844,286,779,258,740,234,705,205,644,140,599,78,571,34"/>
+<area shape="rect" href="error_8h.html" title="error code definitions" alt="" coords="260,155,318,181"/>
+<area shape="poly" title=" " alt="" coords="538,35,437,82,323,149,320,144,435,78,536,30"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="448,80,512,107"/>
+<area shape="poly" title=" " alt="" coords="553,35,508,72,505,68,550,30"/>
+<area shape="rect" title=" " alt="" coords="231,229,292,256"/>
+<area shape="poly" title=" " alt="" coords="287,183,274,216,269,214,282,181"/>
+<area shape="rect" title=" " alt="" coords="46,229,114,256"/>
+<area shape="poly" title=" " alt="" coords="261,182,130,227,128,222,259,177"/>
+<area shape="poly" title=" " alt="" coords="449,109,334,153,332,148,447,104"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="717,155,800,181"/>
+<area shape="poly" title=" " alt="" coords="513,100,703,150,702,155,511,106"/>
+<area shape="rect" href="macros_8h.html" title="Utility Preprocessor macros" alt="" coords="366,304,442,331"/>
+<area shape="poly" title=" " alt="" coords="448,102,351,118,224,146,162,164,107,184,63,207,35,231,30,243,35,254,56,270,88,282,173,300,268,309,351,313,351,318,268,315,172,305,86,287,53,274,31,258,25,243,31,228,60,202,105,179,160,159,223,141,350,113,447,97"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2version_8h.html" title="Libavutil version macros" alt="" coords="367,229,441,256"/>
+<area shape="poly" title=" " alt="" coords="476,108,420,217,415,214,471,106"/>
+<area shape="rect" href="rational_8h.html" title="Utilties for rational number calculation." alt="" coords="1319,229,1393,256"/>
+<area shape="poly" title=" " alt="" coords="512,96,831,143,1062,181,1304,226,1303,231,1061,186,830,148,512,102"/>
+<area shape="rect" href="mathematics_8h.html" title=" " alt="" coords="1340,155,1447,181"/>
+<area shape="poly" title=" " alt="" coords="512,95,1324,159,1324,164,512,100"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="357,155,406,181"/>
+<area shape="poly" title=" " alt="" coords="457,109,405,147,401,143,454,105"/>
+<area shape="rect" href="pixfmt_8h.html" title="pixel format definitions" alt="" coords="482,155,550,181"/>
+<area shape="poly" title=" " alt="" coords="489,106,505,139,501,142,484,108"/>
+<area shape="poly" title=" " alt="" coords="742,156,649,82,596,43,599,39,652,78,745,152"/>
+<area shape="poly" title=" " alt="" coords="759,182,741,289,735,288,754,181"/>
+<area shape="poly" title=" " alt="" coords="800,168,872,173,965,183,1069,200,1172,227,1197,240,1222,254,1284,273,1348,288,1457,307,1456,313,1347,293,1283,278,1220,258,1195,245,1170,232,1068,205,964,188,871,178,800,173"/>
+<area shape="poly" title=" " alt="" coords="765,181,781,218,794,237,811,254,850,271,909,286,1036,307,1035,312,908,291,849,276,808,258,790,241,776,220,760,183"/>
+<area shape="poly" title=" " alt="" coords="717,178,308,237,307,232,717,173"/>
+<area shape="poly" title=" " alt="" coords="801,151,818,155,826,168,823,176,816,182,813,177,819,173,821,168,815,160,799,157"/>
+<area shape="rect" title=" " alt="" coords="821,229,899,256"/>
+<area shape="poly" title=" " alt="" coords="778,180,831,218,828,222,775,184"/>
+<area shape="rect" title=" " alt="" coords="1233,229,1295,256"/>
+<area shape="poly" title=" " alt="" coords="801,171,981,191,1215,227,1218,227,1217,233,1214,232,981,196,800,176"/>
+<area shape="rect" title=" " alt="" coords="923,229,983,256"/>
+<area shape="poly" title=" " alt="" coords="793,179,910,222,908,227,792,184"/>
+<area shape="rect" title=" " alt="" coords="1007,229,1070,256"/>
+<area shape="poly" title=" " alt="" coords="801,177,992,226,991,231,800,182"/>
+<area shape="rect" title=" " alt="" coords="1094,229,1159,256"/>
+<area shape="poly" title=" " alt="" coords="801,173,922,194,1080,226,1079,231,921,199,800,179"/>
+<area shape="poly" title=" " alt="" coords="742,184,683,220,608,258,530,287,457,307,456,301,528,281,606,254,681,215,739,179"/>
+<area shape="poly" title=" " alt="" coords="717,179,457,231,456,226,716,174"/>
+<area shape="rect" href="avconfig_8h.html" title=" " alt="" coords="465,229,594,256"/>
+<area shape="poly" title=" " alt="" coords="719,184,585,227,583,222,718,179"/>
+<area shape="poly" title=" " alt="" coords="407,257,407,288,401,288,401,257"/>
+<area shape="poly" title=" " alt="" coords="1319,256,1307,259,1157,281,1008,298,781,316,780,311,1007,292,1156,276,1306,253,1318,251"/>
+<area shape="poly" title=" " alt="" coords="1383,254,1465,294,1463,299,1381,259"/>
+<area shape="poly" title=" " alt="" coords="1319,257,1153,303,1152,298,1318,252"/>
+<area shape="poly" title=" " alt="" coords="1448,172,1477,178,1506,189,1533,205,1554,228,1560,245,1556,263,1546,280,1533,295,1529,292,1541,277,1551,261,1555,246,1550,231,1529,209,1503,194,1475,183,1447,177"/>
+<area shape="poly" title=" " alt="" coords="1403,181,1415,217,1416,238,1407,258,1390,271,1365,283,1298,300,1222,310,1153,316,1153,311,1222,305,1297,294,1363,278,1387,267,1403,254,1411,237,1410,218,1398,182"/>
+<area shape="poly" title=" " alt="" coords="1372,184,1301,224,1299,219,1369,180"/>
+<area shape="poly" title=" " alt="" coords="1389,183,1372,217,1367,214,1384,181"/>
+<area shape="rect" href="intfloat_8h.html" title=" " alt="" coords="1468,229,1540,256"/>
+<area shape="poly" title=" " alt="" coords="1414,180,1474,218,1471,223,1411,184"/>
+<area shape="poly" title=" " alt="" coords="1507,257,1507,288,1501,288,1501,257"/>
+<area shape="poly" title=" " alt="" coords="1469,255,1450,259,1154,310,1153,304,1449,253,1468,250"/>
+<area shape="poly" title=" " alt="" coords="373,183,362,199,353,219,350,238,356,254,384,263,447,272,640,288,1036,311,1036,316,640,294,446,277,383,268,353,258,344,238,348,217,357,197,369,180"/>
+<area shape="poly" title=" " alt="" coords="404,152,457,115,460,119,407,156"/>
+<area shape="poly" title=" " alt="" coords="388,181,398,214,393,215,383,183"/>
+<area shape="rect" title=" " alt="" coords="138,229,206,256"/>
+<area shape="poly" title=" " alt="" coords="357,181,222,227,220,222,355,175"/>
+<area shape="poly" title=" " alt="" coords="498,184,438,223,435,218,495,180"/>
+<area shape="poly" title=" " alt="" coords="521,181,527,214,522,215,516,182"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="mem_8h__dep__incl.png" border="0" usemap="#amem_8hdep" alt=""/></div>
+<map name="amem_8hdep" id="amem_8hdep">
+<area shape="rect" title="Memory handling functions" alt="" coords="332,5,394,32"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libavutil_2common_8h.html" title="common internal and external API header" alt="" coords="271,80,353,107"/>
+<area shape="poly" title=" " alt="" coords="348,46,323,81,319,78,343,43"/>
+<area shape="poly" title=" " alt="" coords="370,80,377,85,380,94,372,106,354,110,353,105,369,102,375,93,373,88,367,84"/>
+<area shape="rect" href="avio_8h.html" title="Buffered I/O operations" alt="" coords="67,379,123,405"/>
+<area shape="poly" title=" " alt="" coords="256,97,217,101,177,111,139,129,108,156,91,183,82,214,77,246,77,278,84,336,93,378,88,379,78,337,71,278,72,245,76,212,87,181,103,153,136,124,175,106,217,96,256,92"/>
+<area shape="rect" href="avutil_8h.html" title="Convenience header that includes libavutil&#39;s core." alt="" coords="862,155,925,181"/>
+<area shape="poly" title=" " alt="" coords="369,99,862,160,861,165,369,104"/>
+<area shape="rect" href="display_8h.html" title="Display matrix" alt="" coords="5,603,78,629"/>
+<area shape="poly" title=" " alt="" coords="329,120,338,151,338,167,332,183,315,203,295,219,273,229,250,236,200,242,150,243,104,244,66,253,52,262,41,275,35,292,32,316,32,468,36,544,42,602,37,602,31,544,27,468,27,316,29,291,37,272,49,258,64,248,103,239,150,237,200,237,249,231,271,224,292,214,311,200,327,180,333,166,333,151,324,121"/>
+<area shape="rect" href="pixelutils_8h.html" title=" " alt="" coords="117,155,200,181"/>
+<area shape="poly" title=" " alt="" coords="273,116,187,156,185,152,271,111"/>
+<area shape="rect" href="timestamp_8h.html" title="timestamp utils, mostly useful for debugging/logging purposes" alt="" coords="224,155,318,181"/>
+<area shape="poly" title=" " alt="" coords="300,122,280,156,276,153,295,119"/>
+<area shape="rect" href="avformat_8h.html" title="Main libavformat public API header" alt="" coords="121,528,204,555"/>
+<area shape="poly" title=" " alt="" coords="109,418,159,526,155,529,105,421"/>
+<area shape="rect" href="_p_c_m_frame_8h.html" title=" " alt="" coords="113,603,212,629"/>
+<area shape="poly" title=" " alt="" coords="166,570,166,602,160,602,160,570"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="1008,752,1110,779"/>
+<area shape="poly" title=" " alt="" coords="208,559,296,593,401,627,574,671,746,707,1008,754,1007,759,745,712,573,676,399,632,295,598,206,563"/>
+<area shape="rect" href="avdevice_8h.html" title="Main libavdevice API header" alt="" coords="413,603,497,629"/>
+<area shape="poly" title=" " alt="" coords="220,554,413,602,411,607,219,559"/>
+<area shape="rect" href="_p_c_m_frame_8cpp.html" title=" " alt="" coords="224,677,337,704"/>
+<area shape="poly" title=" " alt="" coords="197,635,261,674,258,679,194,640"/>
+<area shape="rect" href="_pcm_player_8h.html" title=" " alt="" coords="103,677,199,704"/>
+<area shape="poly" title=" " alt="" coords="161,645,156,677,150,676,156,644"/>
+<area shape="rect" href="_pcm_player_8cpp.html" title=" " alt="" coords="96,752,206,779"/>
+<area shape="poly" title=" " alt="" coords="154,720,154,752,148,752,148,720"/>
+<area shape="poly" title=" " alt="" coords="215,701,451,727,678,744,1007,760,1007,765,677,749,450,732,214,707"/>
+<area shape="rect" href="_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="792,827,888,853"/>
+<area shape="poly" title=" " alt="" coords="1007,786,879,829,878,823,1006,781"/>
+<area shape="rect" href="_video_player_8cpp.html" title=" " alt="" coords="911,827,1028,853"/>
+<area shape="poly" title=" " alt="" coords="1033,791,987,828,983,824,1030,787"/>
+<area shape="rect" href="_video_player___audio_thread_8cpp.html" title=" " alt="" coords="1051,827,1248,853"/>
+<area shape="poly" title=" " alt="" coords="1088,786,1136,824,1132,828,1085,791"/>
+<area shape="rect" href="_video_player___video_thread_8cpp.html" title=" " alt="" coords="1271,827,1468,853"/>
+<area shape="poly" title=" " alt="" coords="1126,780,1316,823,1315,829,1125,785"/>
+<area shape="rect" href="_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="728,901,838,928"/>
+<area shape="poly" title=" " alt="" coords="823,867,795,903,791,899,819,864"/>
+<area shape="rect" href="_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="862,901,936,928"/>
+<area shape="poly" title=" " alt="" coords="862,864,891,899,887,903,858,867"/>
+<area shape="poly" title=" " alt="" coords="846,156,393,31,395,26,847,151"/>
+<area shape="rect" href="audio__fifo_8h.html" title="Audio FIFO Buffer" alt="" coords="1041,304,1130,331"/>
+<area shape="poly" title=" " alt="" coords="923,189,1071,301,1068,306,920,193"/>
+<area shape="rect" href="avassert_8h.html" title="simple assert() macros that are a bit more flexible than ISO C assert()." alt="" coords="198,379,280,405"/>
+<area shape="poly" title=" " alt="" coords="846,176,715,194,636,210,558,232,468,268,383,310,260,380,257,376,380,305,466,263,557,227,635,205,714,189,846,171"/>
+<area shape="rect" href="avcodec_8h.html" title="Libavcodec external API header" alt="" coords="488,453,569,480"/>
+<area shape="poly" title=" " alt="" coords="847,174,686,190,586,207,487,232,391,256,313,276,279,290,247,310,217,339,188,380,183,392,188,404,207,418,238,431,320,448,411,458,488,462,487,467,411,463,319,454,236,436,205,423,183,407,178,392,183,377,213,336,244,306,277,285,311,271,390,251,486,227,585,202,685,185,846,169"/>
+<area shape="rect" href="avfilter_8h.html" title="Main libavfilter public API header" alt="" coords="572,379,644,405"/>
+<area shape="poly" title=" " alt="" coords="852,191,778,232,731,266,689,306,620,380,616,377,685,302,728,262,775,227,850,186"/>
+<area shape="rect" href="eval_8h.html" title="simple arithmetic expression evaluator" alt="" coords="1024,229,1080,256"/>
+<area shape="poly" title=" " alt="" coords="936,186,1025,226,1023,231,934,191"/>
+<area shape="rect" href="fifo_8h.html" title="a very simple circular buffer FIFO implementation" alt="" coords="1178,229,1228,256"/>
+<area shape="poly" title=" " alt="" coords="941,176,1046,197,1168,227,1178,230,1177,235,1166,232,1044,202,940,181"/>
+<area shape="rect" href="file_8h.html" title="Misc file utilities." alt="" coords="1105,229,1154,256"/>
+<area shape="poly" title=" " alt="" coords="941,181,1093,227,1105,231,1103,236,1091,232,939,186"/>
+<area shape="rect" href="frame_8h.html" title="reference&#45;counted frame API" alt="" coords="742,304,808,331"/>
+<area shape="poly" title=" " alt="" coords="849,189,820,207,796,231,786,249,781,269,777,304,772,303,775,268,781,247,791,228,817,203,846,185"/>
+<area shape="rect" href="imgutils_8h.html" title="misc image utilities" alt="" coords="1500,677,1578,704"/>
+<area shape="poly" title=" " alt="" coords="941,167,1101,173,1202,181,1304,194,1400,213,1480,238,1511,254,1535,272,1551,293,1556,316,1556,543,1551,619,1544,677,1538,676,1546,619,1551,543,1551,316,1546,295,1532,276,1509,258,1478,243,1399,218,1304,199,1201,187,1100,179,941,172"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="478,304,528,331"/>
+<area shape="poly" title=" " alt="" coords="846,174,792,179,726,189,657,206,591,232,564,248,540,268,507,305,503,302,536,264,561,244,588,227,655,201,725,183,791,173,846,168"/>
+<area shape="rect" href="opt_8h.html" title="AVOptions" alt="" coords="1235,379,1285,405"/>
+<area shape="poly" title=" " alt="" coords="910,193,958,261,992,298,1031,328,1062,339,1118,355,1235,382,1234,387,1117,360,1060,345,1028,333,988,302,954,265,906,196"/>
+<area shape="rect" href="swscale_8h.html" title="external API header" alt="" coords="1309,379,1390,405"/>
+<area shape="poly" title=" " alt="" coords="940,166,1039,167,1158,175,1217,182,1269,193,1312,208,1341,227,1353,245,1361,265,1366,308,1363,348,1356,379,1351,378,1357,348,1361,308,1356,267,1349,248,1337,231,1309,213,1268,198,1216,187,1158,180,1038,172,940,171"/>
+<area shape="rect" href="samplefmt_8h.html" title=" " alt="" coords="806,229,899,256"/>
+<area shape="poly" title=" " alt="" coords="881,196,862,230,857,228,877,194"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libpostproc_2version_8h.html" title="Libpostproc version macros" alt="" coords="1252,229,1327,256"/>
+<area shape="poly" title=" " alt="" coords="941,174,1076,196,1241,227,1252,229,1251,235,1240,232,1075,201,940,179"/>
+<area shape="rect" href="tools_2ffmpeg_2win64_2include_2libswresample_2version_8h.html" title="Libswresample version macros" alt="" coords="1415,304,1489,331"/>
+<area shape="poly" title=" " alt="" coords="941,168,1045,173,1174,183,1298,200,1347,212,1384,227,1406,243,1424,264,1448,302,1444,305,1420,267,1403,247,1382,232,1346,217,1297,206,1174,188,1045,178,941,173"/>
+<area shape="poly" title=" " alt="" coords="473,482,206,534,204,529,472,476"/>
+<area shape="poly" title=" " alt="" coords="584,467,667,472,761,482,847,499,880,511,903,526,914,538,919,551,921,575,921,600,929,628,956,666,987,700,1043,750,1040,754,983,704,951,670,924,630,915,601,916,575,914,552,909,541,900,530,877,516,845,504,760,487,666,477,584,472"/>
+<area shape="rect" href="dirac_8h.html" title="Interface to Dirac Decoder/Encoder" alt="" coords="279,528,340,555"/>
+<area shape="poly" title=" " alt="" coords="477,488,341,532,339,527,475,483"/>
+<area shape="rect" href="dv__profile_8h.html" title=" " alt="" coords="364,528,452,555"/>
+<area shape="poly" title=" " alt="" coords="496,491,431,530,428,525,493,486"/>
+<area shape="rect" href="mediacodec_8h.html" title=" " alt="" coords="477,528,579,555"/>
+<area shape="poly" title=" " alt="" coords="531,496,531,528,526,528,526,496"/>
+<area shape="rect" href="vdpau_8h.html" title="Public libavcodec VDPAU header." alt="" coords="604,528,671,555"/>
+<area shape="poly" title=" " alt="" coords="561,487,620,525,617,530,559,491"/>
+<area shape="rect" href="videotoolbox_8h.html" title="Public libavcodec Videotoolbox header." alt="" coords="696,528,801,555"/>
+<area shape="poly" title=" " alt="" coords="582,483,710,525,709,530,580,488"/>
+<area shape="rect" href="xvmc_8h.html" title="Public libavcodec XvMC header." alt="" coords="825,528,890,555"/>
+<area shape="poly" title=" " alt="" coords="585,476,814,525,826,528,824,533,813,531,584,481"/>
+<area shape="poly" title=" " alt="" coords="660,399,779,423,836,437,877,451,908,467,930,483,975,526,1010,560,1023,577,1036,602,1050,643,1057,686,1062,751,1056,752,1052,686,1045,645,1031,604,1019,580,1006,564,972,530,927,487,905,472,875,456,835,442,778,428,659,405"/>
+<area shape="rect" href="buffersink_8h.html" title="memory buffer sink API for audio and video" alt="" coords="1065,453,1154,480"/>
+<area shape="poly" title=" " alt="" coords="659,397,1047,451,1065,454,1064,459,1046,456,659,403"/>
+<area shape="rect" href="buffersrc_8h.html" title="Memory buffer source API." alt="" coords="939,603,1021,629"/>
+<area shape="poly" title=" " alt="" coords="660,398,724,412,801,437,879,474,915,498,947,526,961,544,971,565,981,602,976,603,966,567,957,547,944,530,912,502,876,479,799,442,723,418,659,403"/>
+<area shape="poly" title=" " alt="" coords="1110,496,1100,589,1080,705,1066,753,1061,751,1075,703,1094,588,1105,495"/>
+<area shape="poly" title=" " alt="" coords="996,642,1054,750,1050,753,992,644"/>
+<area shape="poly" title=" " alt="" coords="1171,267,1107,306,1105,301,1168,262"/>
+<area shape="poly" title=" " alt="" coords="750,343,707,375,658,408,607,434,560,455,558,450,604,430,655,403,704,370,746,338"/>
+<area shape="poly" title=" " alt="" coords="733,340,638,380,636,376,731,335"/>
+<area shape="rect" href="downmix__info_8h.html" title="audio downmix medatata" alt="" coords="719,379,831,405"/>
+<area shape="poly" title=" " alt="" coords="778,346,778,378,772,378,772,346"/>
+<area shape="rect" href="hwcontext_8h.html" title=" " alt="" coords="457,379,549,405"/>
+<area shape="poly" title=" " alt="" coords="728,334,550,381,549,376,727,329"/>
+<area shape="rect" href="mastering__display__metadata_8h.html" title=" " alt="" coords="856,379,1054,405"/>
+<area shape="poly" title=" " alt="" coords="821,334,924,376,922,381,819,339"/>
+<area shape="rect" href="stereo3d_8h.html" title="Stereoscopic video" alt="" coords="1078,379,1160,405"/>
+<area shape="poly" title=" " alt="" coords="823,326,1066,376,1078,379,1077,384,1065,381,822,331"/>
+<area shape="rect" href="swresample_8h.html" title="libswresample public header" alt="" coords="1414,379,1517,405"/>
+<area shape="poly" title=" " alt="" coords="823,319,1071,339,1236,355,1402,376,1414,378,1413,383,1401,381,1235,361,1071,344,823,324"/>
+<area shape="poly" title=" " alt="" coords="515,419,526,452,521,454,510,421"/>
+<area shape="poly" title=" " alt="" coords="1463,421,1455,476,1451,540,1451,618,1444,651,1426,673,1398,690,1365,706,1300,734,1231,752,1166,761,1111,766,1110,760,1165,756,1230,746,1298,729,1363,702,1396,685,1422,669,1439,649,1446,617,1446,540,1450,475,1458,420"/>
+<area shape="poly" title=" " alt="" coords="1485,704,1467,707,1111,759,1110,754,1466,701,1484,698"/>
+<area shape="poly" title=" " alt="" coords="463,328,124,388,123,383,462,323"/>
+<area shape="poly" title=" " alt="" coords="464,333,409,352,351,381,296,419,246,461,176,529,172,526,243,457,293,415,348,376,407,348,462,328"/>
+<area shape="poly" title=" " alt="" coords="466,341,418,371,362,413,309,466,287,497,269,529,265,542,269,553,291,569,328,583,413,604,411,610,326,589,289,574,265,556,260,542,264,527,283,494,305,463,359,409,415,366,464,336"/>
+<area shape="poly" title=" " alt="" coords="530,291,567,258,612,227,679,201,748,184,811,173,861,168,862,174,812,179,749,189,681,206,615,232,570,262,533,295"/>
+<area shape="poly" title=" " alt="" coords="464,332,281,382,280,377,462,327"/>
+<area shape="poly" title=" " alt="" coords="474,343,459,357,448,372,443,388,447,404,457,419,470,432,500,451,497,455,467,436,453,422,442,406,438,388,444,370,455,353,470,339"/>
+<area shape="poly" title=" " alt="" coords="535,337,591,376,588,380,532,342"/>
+<area shape="poly" title=" " alt="" coords="506,346,506,378,500,378,500,346"/>
+<area shape="poly" title=" " alt="" coords="543,319,807,340,1172,376,1235,384,1234,389,1172,381,807,346,543,324"/>
+<area shape="poly" title=" " alt="" coords="543,318,917,342,1137,359,1298,376,1309,378,1308,383,1297,381,1136,364,917,347,543,324"/>
+<area shape="poly" title=" " alt="" coords="1283,416,1307,452,1326,494,1332,540,1332,618,1326,652,1308,681,1282,705,1251,724,1215,738,1178,749,1111,762,1110,757,1177,744,1213,733,1248,719,1279,701,1304,678,1321,650,1327,617,1327,540,1321,496,1302,455,1279,419"/>
+<area shape="poly" title=" " alt="" coords="1242,419,1209,452,1167,482,1077,525,982,557,885,581,790,598,700,609,619,615,498,618,498,613,619,610,700,604,789,593,884,576,981,552,1075,520,1164,478,1205,448,1238,415"/>
+<area shape="rect" href="avdct_8h.html" title=" " alt="" coords="1228,453,1292,480"/>
+<area shape="poly" title=" " alt="" coords="1263,421,1263,453,1258,453,1258,421"/>
+<area shape="poly" title=" " alt="" coords="1361,419,1375,475,1383,540,1383,617,1381,639,1375,658,1353,691,1320,716,1280,735,1236,748,1191,757,1111,766,1110,760,1191,752,1235,743,1278,730,1317,711,1349,687,1370,656,1376,638,1378,617,1378,540,1370,476,1356,421"/>
+<area shape="poly" title=" " alt="" coords="908,258,1045,301,1044,306,906,263"/>
+<area shape="poly" title=" " alt="" coords="861,270,875,302,885,316,898,329,918,341,942,349,995,358,1051,360,1105,358,1150,358,1180,362,1189,369,1192,378,1187,391,1174,407,1161,416,1141,423,1080,436,907,453,715,463,569,467,569,462,715,458,906,448,1079,430,1139,418,1159,411,1170,403,1182,389,1186,378,1185,372,1179,367,1149,363,1105,364,1051,365,994,364,940,354,916,345,895,333,881,320,870,304,856,272"/>
+<area shape="poly" title=" " alt="" coords="811,265,732,306,673,345,626,380,623,376,670,341,729,302,808,261"/>
+<area shape="poly" title=" " alt="" coords="829,269,790,306,786,302,826,265"/>
+<area shape="poly" title=" " alt="" coords="886,262,951,297,1030,328,1132,352,1214,360,1297,364,1402,376,1414,378,1413,383,1401,381,1296,370,1213,366,1131,357,1029,333,949,301,884,266"/>
+<area shape="poly" title=" " alt="" coords="871,267,899,300,936,328,975,346,1009,357,1071,364,1136,365,1173,369,1217,376,1235,381,1234,386,1216,381,1173,374,1136,371,1071,369,1008,362,973,351,933,333,895,304,867,271"/>
+<area shape="rect" href="postprocess_8h.html" title="external API header" alt="" coords="1223,304,1326,331"/>
+<area shape="poly" title=" " alt="" coords="1287,272,1280,304,1275,303,1281,271"/>
+<area shape="poly" title=" " alt="" coords="1460,346,1466,378,1461,379,1455,347"/>
+<area shape="poly" title=" " alt="" coords="51,643,67,675,78,690,92,702,113,710,145,718,241,731,366,741,508,749,796,758,1008,761,1008,766,796,763,508,754,365,746,240,736,144,723,111,715,89,706,74,694,62,678,47,645"/>
+</map>
+</div>
+</div>
+<p><a href="mem_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga7a422611f83afb33d6e0da44184b548e" id="r_ga7a422611f83afb33d6e0da44184b548e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__macros.html#ga7a422611f83afb33d6e0da44184b548e">DECLARE_ALIGNED</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>,  <a class="el" href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="memdesc:ga7a422611f83afb33d6e0da44184b548e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare a variable that is aligned in memory.  <br /></td></tr>
+<tr class="separator:ga7a422611f83afb33d6e0da44184b548e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22bad389e29a9282737e73da1b74dfd5" id="r_ga22bad389e29a9282737e73da1b74dfd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__macros.html#ga22bad389e29a9282737e73da1b74dfd5">DECLARE_ASM_ALIGNED</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>,  <a class="el" href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="memdesc:ga22bad389e29a9282737e73da1b74dfd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare an aligned variable appropriate for use in inline assembly code.  <br /></td></tr>
+<tr class="separator:ga22bad389e29a9282737e73da1b74dfd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e5cdd0ac639d7dea5033df3b64cfe3c" id="r_ga6e5cdd0ac639d7dea5033df3b64cfe3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__macros.html#ga6e5cdd0ac639d7dea5033df3b64cfe3c">DECLARE_ASM_CONST</a>(<a class="el" href="_s_d_l__opengl__glext_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>,  <a class="el" href="_s_d_l__opengl_8h.html#ade5636ea600ca40c1f2c8cd08c1dcd3e">t</a>,  <a class="el" href="_s_d_l__opengl_8h.html#a55f85da29bf761fde63cc95d26300230">v</a>)</td></tr>
+<tr class="memdesc:ga6e5cdd0ac639d7dea5033df3b64cfe3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare a static constant aligned variable appropriate for use in inline assembly code.  <br /></td></tr>
+<tr class="separator:ga6e5cdd0ac639d7dea5033df3b64cfe3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad48ff724186ef4e602ae7a2547e4287c" id="r_gad48ff724186ef4e602ae7a2547e4287c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__attrs.html#gad48ff724186ef4e602ae7a2547e4287c">av_malloc_attrib</a></td></tr>
+<tr class="memdesc:gad48ff724186ef4e602ae7a2547e4287c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function attribute denoting a malloc-like function.  <br /></td></tr>
+<tr class="separator:gad48ff724186ef4e602ae7a2547e4287c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7ff928d462d1a61b37baa70bf13e0e3" id="r_gad7ff928d462d1a61b37baa70bf13e0e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__attrs.html#gad7ff928d462d1a61b37baa70bf13e0e3">av_alloc_size</a>(...)</td></tr>
+<tr class="memdesc:gad7ff928d462d1a61b37baa70bf13e0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function attribute used on a function that allocates memory, whose size is given by the specified parameter(s).  <br /></td></tr>
+<tr class="separator:gad7ff928d462d1a61b37baa70bf13e0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gaba88a97429de6874c1a0b64381034b98" id="r_gaba88a97429de6874c1a0b64381034b98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#gaba88a97429de6874c1a0b64381034b98">av_malloc</a> (size_t <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>) <a class="el" href="group__lavu__mem__attrs.html#gad48ff724186ef4e602ae7a2547e4287c">av_malloc_attrib</a> <a class="el" href="group__lavu__mem__attrs.html#gad7ff928d462d1a61b37baa70bf13e0e3">av_alloc_size</a>(1)</td></tr>
+<tr class="memdesc:gaba88a97429de6874c1a0b64381034b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a memory block with alignment suitable for all memory accesses (including vectors if available on the CPU).  <br /></td></tr>
+<tr class="separator:gaba88a97429de6874c1a0b64381034b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3dc1cbd0f18fd550b0bfaad4bc5b6d01" id="r_ga3dc1cbd0f18fd550b0bfaad4bc5b6d01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga3dc1cbd0f18fd550b0bfaad4bc5b6d01">av_mallocz</a> (size_t <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>) <a class="el" href="group__lavu__mem__attrs.html#gad48ff724186ef4e602ae7a2547e4287c">av_malloc_attrib</a> <a class="el" href="group__lavu__mem__attrs.html#gad7ff928d462d1a61b37baa70bf13e0e3">av_alloc_size</a>(1)</td></tr>
+<tr class="memdesc:ga3dc1cbd0f18fd550b0bfaad4bc5b6d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a memory block with alignment suitable for all memory accesses (including vectors if available on the CPU) and zero all the bytes of the block.  <br /></td></tr>
+<tr class="separator:ga3dc1cbd0f18fd550b0bfaad4bc5b6d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6531cf9cce83adf3ebf0495c8adc92b6" id="r_ga6531cf9cce83adf3ebf0495c8adc92b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga6531cf9cce83adf3ebf0495c8adc92b6">av_alloc_size</a> (1, 2) <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *av_malloc_array(size_t <a class="el" href="group__lavu__mem__funcs.html#ga79fd723df92f68cf8a6207a1d98b4c01">nmemb</a></td></tr>
+<tr class="memdesc:ga6531cf9cce83adf3ebf0495c8adc92b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a memory block for an array with <a class="el" href="group__lavu__mem__funcs.html#gaba88a97429de6874c1a0b64381034b98" title="Allocate a memory block with alignment suitable for all memory accesses (including vectors if availab...">av_malloc()</a>.  <br /></td></tr>
+<tr class="separator:ga6531cf9cce83adf3ebf0495c8adc92b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf324b11824b95e09d83c7e9f5511e815" id="r_gaf324b11824b95e09d83c7e9f5511e815"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#gaf324b11824b95e09d83c7e9f5511e815">av_calloc</a> (size_t <a class="el" href="group__lavu__mem__funcs.html#ga79fd723df92f68cf8a6207a1d98b4c01">nmemb</a>, size_t <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>) <a class="el" href="group__lavu__mem__attrs.html#gad48ff724186ef4e602ae7a2547e4287c">av_malloc_attrib</a></td></tr>
+<tr class="memdesc:gaf324b11824b95e09d83c7e9f5511e815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-inlined equivalent of av_mallocz_array().  <br /></td></tr>
+<tr class="separator:gaf324b11824b95e09d83c7e9f5511e815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd8bfddb4c457ba5f99278f7020d1aa5" id="r_gacd8bfddb4c457ba5f99278f7020d1aa5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#gacd8bfddb4c457ba5f99278f7020d1aa5">av_realloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, size_t <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>) <a class="el" href="group__lavu__mem__attrs.html#gad7ff928d462d1a61b37baa70bf13e0e3">av_alloc_size</a>(2)</td></tr>
+<tr class="memdesc:gacd8bfddb4c457ba5f99278f7020d1aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate, reallocate, or free a block of memory.  <br /></td></tr>
+<tr class="separator:gacd8bfddb4c457ba5f99278f7020d1aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9665abf3720f9f460790c2c3b224c052" id="r_ga9665abf3720f9f460790c2c3b224c052"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#a93f17e0f0b53a66e7b5eceb3dff2918f">av_warn_unused_result</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga9665abf3720f9f460790c2c3b224c052">av_reallocp</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, size_t <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="memdesc:ga9665abf3720f9f460790c2c3b224c052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate, reallocate, or free a block of memory through a pointer to a pointer.  <br /></td></tr>
+<tr class="separator:ga9665abf3720f9f460790c2c3b224c052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5af878050b68d10ad3c1ef2050eae000" id="r_ga5af878050b68d10ad3c1ef2050eae000"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga5af878050b68d10ad3c1ef2050eae000">av_realloc_f</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, size_t nelem, size_t elsize)</td></tr>
+<tr class="memdesc:ga5af878050b68d10ad3c1ef2050eae000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate, reallocate, or free a block of memory.  <br /></td></tr>
+<tr class="separator:ga5af878050b68d10ad3c1ef2050eae000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3f08c4449fbe1ad6489ad59c625ac9d" id="r_gaf3f08c4449fbe1ad6489ad59c625ac9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#gaf3f08c4449fbe1ad6489ad59c625ac9d">av_alloc_size</a> (2, 3) <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *av_realloc_array(<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a></td></tr>
+<tr class="memdesc:gaf3f08c4449fbe1ad6489ad59c625ac9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate, reallocate, or free an array.  <br /></td></tr>
+<tr class="separator:gaf3f08c4449fbe1ad6489ad59c625ac9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e8e75b89c5fa2966b8fbffbdb6ec774" id="r_ga0e8e75b89c5fa2966b8fbffbdb6ec774"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga0e8e75b89c5fa2966b8fbffbdb6ec774">av_fast_realloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, unsigned int *<a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>, size_t min_size)</td></tr>
+<tr class="memdesc:ga0e8e75b89c5fa2966b8fbffbdb6ec774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reallocate the given buffer if it is not large enough, otherwise do nothing.  <br /></td></tr>
+<tr class="separator:ga0e8e75b89c5fa2966b8fbffbdb6ec774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29d0252b981f157e713a68ffca52f003" id="r_ga29d0252b981f157e713a68ffca52f003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga29d0252b981f157e713a68ffca52f003">av_fast_malloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, unsigned int *<a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>, size_t min_size)</td></tr>
+<tr class="memdesc:ga29d0252b981f157e713a68ffca52f003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a buffer, reusing the given one if large enough.  <br /></td></tr>
+<tr class="separator:ga29d0252b981f157e713a68ffca52f003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bfda4adf7f9e943f9eb1a08eeda3791" id="r_ga0bfda4adf7f9e943f9eb1a08eeda3791"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga0bfda4adf7f9e943f9eb1a08eeda3791">av_fast_mallocz</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>, unsigned int *<a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>, size_t min_size)</td></tr>
+<tr class="memdesc:ga0bfda4adf7f9e943f9eb1a08eeda3791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and clear a buffer, reusing the given one if large enough.  <br /></td></tr>
+<tr class="separator:ga0bfda4adf7f9e943f9eb1a08eeda3791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c9096f498624c525aa2315b8a20c411" id="r_ga0c9096f498624c525aa2315b8a20c411"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga0c9096f498624c525aa2315b8a20c411">av_free</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="memdesc:ga0c9096f498624c525aa2315b8a20c411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a memory block which has been allocated with a function of <a class="el" href="group__lavu__mem__funcs.html#gaba88a97429de6874c1a0b64381034b98" title="Allocate a memory block with alignment suitable for all memory accesses (including vectors if availab...">av_malloc()</a> or <a class="el" href="group__lavu__mem__funcs.html#gacd8bfddb4c457ba5f99278f7020d1aa5" title="Allocate, reallocate, or free a block of memory.">av_realloc()</a> family.  <br /></td></tr>
+<tr class="separator:ga0c9096f498624c525aa2315b8a20c411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cc84043ea2167ad005c86e11d0bcdba" id="r_ga0cc84043ea2167ad005c86e11d0bcdba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga0cc84043ea2167ad005c86e11d0bcdba">av_freep</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="format_8h.html#adb6e274f8eb0b74b2865215e1b49c535">ptr</a>)</td></tr>
+<tr class="memdesc:ga0cc84043ea2167ad005c86e11d0bcdba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a memory block which has been allocated with a function of <a class="el" href="group__lavu__mem__funcs.html#gaba88a97429de6874c1a0b64381034b98" title="Allocate a memory block with alignment suitable for all memory accesses (including vectors if availab...">av_malloc()</a> or <a class="el" href="group__lavu__mem__funcs.html#gacd8bfddb4c457ba5f99278f7020d1aa5" title="Allocate, reallocate, or free a block of memory.">av_realloc()</a> family, and set the pointer pointing to it to <code>NULL</code>.  <br /></td></tr>
+<tr class="separator:ga0cc84043ea2167ad005c86e11d0bcdba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga669091e689cc330998001d79edca9b3e" id="r_ga669091e689cc330998001d79edca9b3e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga669091e689cc330998001d79edca9b3e">av_strdup</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>) <a class="el" href="group__lavu__mem__attrs.html#gad48ff724186ef4e602ae7a2547e4287c">av_malloc_attrib</a></td></tr>
+<tr class="memdesc:ga669091e689cc330998001d79edca9b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicate a string.  <br /></td></tr>
+<tr class="separator:ga669091e689cc330998001d79edca9b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga218fb02c84a1a72e6a81d63c56785a4d" id="r_ga218fb02c84a1a72e6a81d63c56785a4d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga218fb02c84a1a72e6a81d63c56785a4d">av_strndup</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="el" href="_s_d_l__opengl_8h.html#ad585a1393cfa368fa9dc3d8ebff640d5">s</a>, size_t <a class="el" href="_s_d_l__opengl__glext_8h.html#a652168017ea9a8bbcead03d5c16269fb">len</a>) <a class="el" href="group__lavu__mem__attrs.html#gad48ff724186ef4e602ae7a2547e4287c">av_malloc_attrib</a></td></tr>
+<tr class="memdesc:ga218fb02c84a1a72e6a81d63c56785a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicate a substring of a string.  <br /></td></tr>
+<tr class="separator:ga218fb02c84a1a72e6a81d63c56785a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3c6ad87f3cf7f98404653809fb00c63" id="r_gaa3c6ad87f3cf7f98404653809fb00c63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#gaa3c6ad87f3cf7f98404653809fb00c63">av_memdup</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa5367c14d90f462230c2611b81b41d23">p</a>, size_t <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="memdesc:gaa3c6ad87f3cf7f98404653809fb00c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicate a buffer with <a class="el" href="group__lavu__mem__funcs.html#gaba88a97429de6874c1a0b64381034b98" title="Allocate a memory block with alignment suitable for all memory accesses (including vectors if availab...">av_malloc()</a>.  <br /></td></tr>
+<tr class="separator:gaa3c6ad87f3cf7f98404653809fb00c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ea4736dcceab4ba033b8abd2c2a180e" id="r_ga3ea4736dcceab4ba033b8abd2c2a180e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga3ea4736dcceab4ba033b8abd2c2a180e">av_memcpy_backptr</a> (<a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, int back, int cnt)</td></tr>
+<tr class="memdesc:ga3ea4736dcceab4ba033b8abd2c2a180e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlapping memcpy() implementation.  <br /></td></tr>
+<tr class="separator:ga3ea4736dcceab4ba033b8abd2c2a180e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga385b582522cedf5a88ce2cf158c396c9" id="r_ga385b582522cedf5a88ce2cf158c396c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__dynarray.html#ga385b582522cedf5a88ce2cf158c396c9">av_dynarray_add</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *tab_ptr, int *nb_ptr, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *elem)</td></tr>
+<tr class="memdesc:ga385b582522cedf5a88ce2cf158c396c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the pointer to an element to a dynamic array.  <br /></td></tr>
+<tr class="separator:ga385b582522cedf5a88ce2cf158c396c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e3735b4568e78fffd7c4ea2f793996e" id="r_ga5e3735b4568e78fffd7c4ea2f793996e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#a93f17e0f0b53a66e7b5eceb3dff2918f">av_warn_unused_result</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__dynarray.html#ga5e3735b4568e78fffd7c4ea2f793996e">av_dynarray_add_nofree</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *tab_ptr, int *nb_ptr, <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *elem)</td></tr>
+<tr class="memdesc:ga5e3735b4568e78fffd7c4ea2f793996e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an element to a dynamic array.  <br /></td></tr>
+<tr class="separator:ga5e3735b4568e78fffd7c4ea2f793996e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3065fcfabfeff13806c455b7e56300b0" id="r_ga3065fcfabfeff13806c455b7e56300b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__dynarray.html#ga3065fcfabfeff13806c455b7e56300b0">av_dynarray2_add</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> **tab_ptr, int *nb_ptr, size_t elem_size, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *elem_data)</td></tr>
+<tr class="memdesc:ga3065fcfabfeff13806c455b7e56300b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an element of size <code>elem_size</code> to a dynamic array.  <br /></td></tr>
+<tr class="separator:ga3065fcfabfeff13806c455b7e56300b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga368c719d3bdce4de169910a4158df66b" id="r_ga368c719d3bdce4de169910a4158df66b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__misc.html#ga368c719d3bdce4de169910a4158df66b">av_size_mult</a> (size_t <a class="el" href="_s_d_l__opengl__glext_8h.html#a3309789fc188587d666cda5ece79cf82">a</a>, size_t <a class="el" href="_s_d_l__opengl__glext_8h.html#a0f71581a41fd2264c8944126dabbd010">b</a>, size_t *<a class="el" href="_s_d_l__opengl_8h.html#a28666c5860e73f899079b4ee29200aec">r</a>)</td></tr>
+<tr class="memdesc:ga368c719d3bdce4de169910a4158df66b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply two <code>size_t</code> values checking for overflow.  <br /></td></tr>
+<tr class="separator:ga368c719d3bdce4de169910a4158df66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2204fc859b4a3ca2d5bfd1bf4e8c4dfb" id="r_ga2204fc859b4a3ca2d5bfd1bf4e8c4dfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__misc.html#ga2204fc859b4a3ca2d5bfd1bf4e8c4dfb">av_max_alloc</a> (size_t max)</td></tr>
+<tr class="memdesc:ga2204fc859b4a3ca2d5bfd1bf4e8c4dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum size that may be allocated in one block.  <br /></td></tr>
+<tr class="separator:ga2204fc859b4a3ca2d5bfd1bf4e8c4dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ga34e10fdac079a9ca4512b8ccd7f20b8a" id="r_ga34e10fdac079a9ca4512b8ccd7f20b8a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga34e10fdac079a9ca4512b8ccd7f20b8a">size</a></td></tr>
+<tr class="separator:ga34e10fdac079a9ca4512b8ccd7f20b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79fd723df92f68cf8a6207a1d98b4c01" id="r_ga79fd723df92f68cf8a6207a1d98b4c01"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__mem__funcs.html#ga79fd723df92f68cf8a6207a1d98b4c01">nmemb</a></td></tr>
+<tr class="separator:ga79fd723df92f68cf8a6207a1d98b4c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Memory handling functions </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_86a50efe619fea04b3ac917359aa252f.html">libavutil</a></li><li class="navelem"><a class="el" href="mem_8h.html">mem.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

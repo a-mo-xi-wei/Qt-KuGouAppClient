@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: send/receive encoding and decoding API overview</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavc__encdec.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">send/receive encoding and decoding API overview<div class="ingroups"><a class="el" href="group__libavc.html">libavcodec</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a>/avcodec_receive_frame()/avcodec_send_frame()/ <a class="el" href="group__lavc__decoding.html#ga5b8eff59cf259747cf0b31563e38ded6" title="Read encoded data from the encoder.">avcodec_receive_packet()</a> functions provide an encode/decode API, which decouples input and output.  
+</p>
+<div class="dynheader">
+send/receive encoding and decoding API overview 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavc__encdec.png" border="0" usemap="#agroup____lavc____encdec" alt=""/></div>
+<map name="agroup____lavc____encdec" id="agroup____lavc____encdec">
+<area shape="rect" title="The avcodec_send_packet()/avcodec_receive_frame()/avcodec_send_frame()/ avcodec_receive_packet() func..." alt="" coords="137,5,320,48"/>
+<area shape="rect" href="group__libavc.html" title="Encoding/Decoding Library" alt="" coords="5,13,89,40"/>
+</map>
+</div>
+<p>The <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a>/avcodec_receive_frame()/avcodec_send_frame()/ <a class="el" href="group__lavc__decoding.html#ga5b8eff59cf259747cf0b31563e38ded6" title="Read encoded data from the encoder.">avcodec_receive_packet()</a> functions provide an encode/decode API, which decouples input and output. </p>
+<p>The API is very similar for encoding/decoding and audio/video, and works as follows:</p><ul>
+<li>Set up and open the <a class="el" href="struct_a_v_codec_context.html" title="main external API structure.">AVCodecContext</a> as usual.</li>
+<li>Send valid input:<ul>
+<li>For decoding, call <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a> to give the decoder raw compressed data in an <a class="el" href="struct_a_v_packet.html" title="This structure stores compressed data.">AVPacket</a>.</li>
+<li>For encoding, call <a class="el" href="group__lavc__decoding.html#ga9395cb802a5febf1f00df31497779169" title="Supply a raw video or audio frame to the encoder.">avcodec_send_frame()</a> to give the encoder an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> containing uncompressed audio or video. In both cases, it is recommended that AVPackets and AVFrames are refcounted, or libavcodec might have to copy the input data. (libavformat always returns refcounted AVPackets, and <a class="el" href="group__lavu__frame.html#ga6b1acbfa82c79bf7fd78d868572f0ceb" title="Allocate new buffer(s) for audio or video data.">av_frame_get_buffer()</a> allocates refcounted AVFrames.)</li>
+</ul>
+</li>
+<li>Receive output in a loop. Periodically call one of the avcodec_receive_*() functions and process their output:<ul>
+<li>For decoding, call <a class="el" href="group__lavc__decoding.html#ga11e6542c4e66d3028668788a1a74217c" title="Return decoded output data from a decoder.">avcodec_receive_frame()</a>. On success, it will return an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> containing uncompressed audio or video data.</li>
+<li>For encoding, call <a class="el" href="group__lavc__decoding.html#ga5b8eff59cf259747cf0b31563e38ded6" title="Read encoded data from the encoder.">avcodec_receive_packet()</a>. On success, it will return an <a class="el" href="struct_a_v_packet.html" title="This structure stores compressed data.">AVPacket</a> with a compressed frame. Repeat this call until it returns <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a> or an error. The <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a> return value means that new input data is required to return new output. In this case, continue with sending input. For each input frame/packet, the codec will typically return 1 output frame/packet, but it can also be 0 or more than 1.</li>
+</ul>
+</li>
+</ul>
+<p>At the beginning of decoding or encoding, the codec might accept multiple input frames/packets without returning a frame, until its internal buffers are filled. This situation is handled transparently if you follow the steps outlined above.</p>
+<p>In theory, sending input can result in EAGAIN - this should happen only if not all output was received. You can use this to structure alternative decode or encode loops other than the one suggested above. For example, you could try sending new input on each iteration, and try to receive output if that returns EAGAIN.</p>
+<p>End of stream situations. These require "flushing" (aka draining) the codec, as the codec might buffer multiple frames or packets internally for performance or out of necessity (consider B-frames). This is handled as follows:</p><ul>
+<li>Instead of valid input, send NULL to the <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a> (decoding) or <a class="el" href="group__lavc__decoding.html#ga9395cb802a5febf1f00df31497779169" title="Supply a raw video or audio frame to the encoder.">avcodec_send_frame()</a> (encoding) functions. This will enter draining mode.</li>
+<li>Call <a class="el" href="group__lavc__decoding.html#ga11e6542c4e66d3028668788a1a74217c" title="Return decoded output data from a decoder.">avcodec_receive_frame()</a> (decoding) or <a class="el" href="group__lavc__decoding.html#ga5b8eff59cf259747cf0b31563e38ded6" title="Read encoded data from the encoder.">avcodec_receive_packet()</a> (encoding) in a loop until AVERROR_EOF is returned. The functions will not return <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a>, unless you forgot to enter draining mode.</li>
+<li>Before decoding can be resumed again, the codec has to be reset with <a class="el" href="group__lavc__misc.html#gaf60b0e076f822abcb2700eb601d352a6" title="Reset the internal decoder state / flush internal buffers.">avcodec_flush_buffers()</a>.</li>
+</ul>
+<p>Using the API as outlined above is highly recommended. But it is also possible to call functions outside of this rigid schema. For example, you can call <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a> repeatedly without calling <a class="el" href="group__lavc__decoding.html#ga11e6542c4e66d3028668788a1a74217c" title="Return decoded output data from a decoder.">avcodec_receive_frame()</a>. In this case, <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a> will succeed until the codec's internal buffer has been filled up (which is typically of size 1 per output frame, after initial input), and then reject input with <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a>. Once it starts rejecting input, you have no choice but to read at least some output.</p>
+<p>Not all codecs will follow a rigid and predictable dataflow; the only guarantee is that an <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a> return value on a send/receive call on one end implies that a receive/send call on the other end will succeed, or at least will not fail with <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a>. In general, no codec will permit unlimited buffering of input or output.</p>
+<p>This API replaces the following legacy functions:</p><ul>
+<li><a class="el" href="group__lavc__decoding.html#ga3ac51525b7ad8bca4ced9f3446e96532" title="Decode the video frame of size avpkt-&gt;size from avpkt-&gt;data into picture.">avcodec_decode_video2()</a> and <a class="el" href="group__lavc__decoding.html#gaaa1fbe477c04455cdc7a994090100db4" title="Decode the audio frame of size avpkt-&gt;size from avpkt-&gt;data into frame.">avcodec_decode_audio4()</a>: Use <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a> to feed input to the decoder, then use <a class="el" href="group__lavc__decoding.html#ga11e6542c4e66d3028668788a1a74217c" title="Return decoded output data from a decoder.">avcodec_receive_frame()</a> to receive decoded frames after each packet. Unlike with the old video decoding API, multiple frames might result from a packet. For audio, splitting the input packet into frames by partially decoding packets becomes transparent to the API user. You never need to feed an <a class="el" href="struct_a_v_packet.html" title="This structure stores compressed data.">AVPacket</a> to the API twice (unless it is rejected with <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a> - then no data was read from the packet). Additionally, sending a flush/draining packet is required only once.</li>
+<li><a class="el" href="group__lavc__encoding.html#ga2c08a4729f72f9bdac41b5533c4f2642" title="Encode a frame of video.">avcodec_encode_video2()</a>/avcodec_encode_audio2(): Use <a class="el" href="group__lavc__decoding.html#ga9395cb802a5febf1f00df31497779169" title="Supply a raw video or audio frame to the encoder.">avcodec_send_frame()</a> to feed input to the encoder, then use <a class="el" href="group__lavc__decoding.html#ga5b8eff59cf259747cf0b31563e38ded6" title="Read encoded data from the encoder.">avcodec_receive_packet()</a> to receive encoded packets. Providing user-allocated buffers for <a class="el" href="group__lavc__decoding.html#ga5b8eff59cf259747cf0b31563e38ded6" title="Read encoded data from the encoder.">avcodec_receive_packet()</a> is not possible.</li>
+<li>The new API does not handle subtitles yet.</li>
+</ul>
+<p>Mixing new and old function calls on the same <a class="el" href="struct_a_v_codec_context.html" title="main external API structure.">AVCodecContext</a> is not allowed, and will result in undefined behavior.</p>
+<p>Some codecs might require using the new API; using the old API will return an error when calling it. All codecs support the new API.</p>
+<p>A codec is not allowed to return <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a> for both sending and receiving. This would be an invalid state, which could put the codec user into an endless loop. The API has no concept of time either: it cannot happen that trying to do <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a> results in <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a>, but a repeated call 1 second later accepts the packet (with no other receive/flush API calls involved). The API is a strict state machine, and the passage of time is not supposed to influence it. Some timing-dependent behavior might still be deemed acceptable in certain cases. But it must never result in both send/receive returning EAGAIN at the same time at any point. It must also absolutely be avoided that the current state is "unstable" and can "flip-flop" between the send/receive APIs allowing progress. For example, it's not allowed that the codec randomly decides that it actually wants to consume a packet now instead of returning a frame, after it just returned <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(EAGAIN)</a> on an <a class="el" href="group__lavc__decoding.html#ga58bc4bf1e0ac59e27362597e467efff3" title="Supply raw packet data as input to a decoder.">avcodec_send_packet()</a> call. </p>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

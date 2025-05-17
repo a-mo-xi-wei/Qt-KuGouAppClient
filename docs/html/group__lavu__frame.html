@@ -1,0 +1,1510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: AVFrame</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__lavu__frame.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">专题</a> &#124;
+<a href="#files">文件</a> &#124;
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">AVFrame<div class="ingroups"><a class="el" href="group__lavu.html">libavutil</a> &raquo; <a class="el" href="group__lavu__data.html">Data Structures</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> is an abstraction for reference-counted raw multimedia data.  
+<a href="#details">更多...</a></p>
+<div class="dynheader">
+AVFrame 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__frame.png" border="0" usemap="#agroup____lavu____frame" alt=""/></div>
+<map name="agroup____lavu____frame" id="agroup____lavu____frame">
+<area shape="rect" href="group__lavu__data.html" title=" " alt="" coords="5,5,119,32"/>
+<area shape="rect" title="AVFrame is an abstraction for reference&#45;counted raw multimedia data." alt="" coords="167,5,242,32"/>
+<area shape="rect" href="group__lavu__frame__flags.html" title="Flags describing additional frame properties." alt="" coords="290,5,432,32"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+专题</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lavu__frame__flags.html">AV_FRAME_FLAGS</a></td></tr>
+<tr class="memdesc:group__lavu__frame__flags"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags describing additional frame properties. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+文件</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">文件 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html">frame.h</a></td></tr>
+<tr class="memdesc:frame_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">reference-counted frame API <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to hold side data for an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a>.  <a href="struct_a_v_frame_side_data.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_v_frame.html">AVFrame</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure describes decoded (raw) audio or video data.  <a href="struct_a_v_frame.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ga1b8cd016bc806e5420ffe97edc140d12" id="r_ga1b8cd016bc806e5420ffe97edc140d12"><td class="memItemLeft" align="right" valign="top">typedef struct AVFrameSideData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1b8cd016bc806e5420ffe97edc140d12">AVFrameSideData</a></td></tr>
+<tr class="memdesc:ga1b8cd016bc806e5420ffe97edc140d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to hold side data for an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a>.  <br /></td></tr>
+<tr class="separator:ga1b8cd016bc806e5420ffe97edc140d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb9d87a8956751b4fd71791105d65c52" id="r_gadb9d87a8956751b4fd71791105d65c52"><td class="memItemLeft" align="right" valign="top">typedef struct AVFrame&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadb9d87a8956751b4fd71791105d65c52">AVFrame</a></td></tr>
+<tr class="memdesc:gadb9d87a8956751b4fd71791105d65c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure describes decoded (raw) audio or video data.  <br /></td></tr>
+<tr class="separator:gadb9d87a8956751b4fd71791105d65c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:gae01fa7e427274293aacdf2adc17076bc" id="r_gae01fa7e427274293aacdf2adc17076bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> { <br />
+&#160;&#160;<a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca3de91a03b453c956b7274a2392d9a437">AV_FRAME_DATA_PANSCAN</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca4848fd3952b4c2e1c1b85acb628c78a6">AV_FRAME_DATA_A53_CC</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bcacec681d6146e8bd4c61b2e1cc88354a8">AV_FRAME_DATA_STEREO3D</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bcaa69ea5c11a5431bfff9e565714dafe41">AV_FRAME_DATA_MATRIXENCODING</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca71819257ea0bedb7e0740a0ce60e404a">AV_FRAME_DATA_DOWNMIX_INFO</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca66f46a9df9fcb8cf212e0693465794e1">AV_FRAME_DATA_REPLAYGAIN</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca3e01b882b6fa04724076067d6d9f8b69">AV_FRAME_DATA_DISPLAYMATRIX</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca9aabf5c0b8abc7064bfcc59485e54aea">AV_FRAME_DATA_AFD</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggae01fa7e427274293aacdf2adc17076bcaf50d0ed0a9a4517341c221be03a06c42">AV_FRAME_DATA_MOTION_VECTORS</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca6b0b1ee4315f322922710f65d02a146b">AV_FRAME_DATA_SKIP_SAMPLES</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca51023c847159dcc08776f9dcee5e0c90">AV_FRAME_DATA_AUDIO_SERVICE_TYPE</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca6e305f92e325fbd219527452048f16cb">AV_FRAME_DATA_MASTERING_DISPLAY_METADATA</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca03982b828a1069c895d16cda4b3e9fd4">AV_FRAME_DATA_GOP_TIMECODE</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca12806c5fd4b37dca88312c61965f33e8">AV_FRAME_DATA_SPHERICAL</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca311f0afd2dded92ef68ae00f7711aa2d">AV_FRAME_DATA_CONTENT_LIGHT_LEVEL</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca8ef8866b8c04c54c630479bc163196ae">AV_FRAME_DATA_ICC_PROFILE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca716dc238a2bea3693a52ab658c4e8ff7">AV_FRAME_DATA_QP_TABLE_PROPERTIES</a>
+, <a class="el" href="#ggae01fa7e427274293aacdf2adc17076bca880fdfc059a05584749d695cc54e4717">AV_FRAME_DATA_QP_TABLE_DATA</a>
+<br />
+ }</td></tr>
+<tr class="separator:gae01fa7e427274293aacdf2adc17076bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga612627d8f03d52317992979dfa151d76" id="r_ga612627d8f03d52317992979dfa151d76"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga612627d8f03d52317992979dfa151d76">AVActiveFormatDescription</a> { <br />
+&#160;&#160;<a class="el" href="#gga612627d8f03d52317992979dfa151d76a0e9a49946d70eb6ca77cf937ed1a342c">AV_AFD_SAME</a> = 8
+, <a class="el" href="#gga612627d8f03d52317992979dfa151d76ab118e63239595dceb50deea7351dc1cb">AV_AFD_4_3</a> = 9
+, <a class="el" href="#gga612627d8f03d52317992979dfa151d76ad8f8850e69a05765363a4a833adc97d8">AV_AFD_16_9</a> = 10
+, <a class="el" href="#gga612627d8f03d52317992979dfa151d76a0da920de1ba63c73fabe1b9878477a13">AV_AFD_14_9</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="#gga612627d8f03d52317992979dfa151d76a65edb00603a0d7fdb37cecac94b62cc5">AV_AFD_4_3_SP_14_9</a> = 13
+, <a class="el" href="#gga612627d8f03d52317992979dfa151d76a488ce7ad4833c96497000dd03b8f0b55">AV_AFD_16_9_SP_14_9</a> = 14
+, <a class="el" href="#gga612627d8f03d52317992979dfa151d76aac53fd979d24b22c0673d1a0bc59e304">AV_AFD_SP_4_3</a> = 15
+<br />
+ }</td></tr>
+<tr class="separator:ga612627d8f03d52317992979dfa151d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a6b9c9e220a15c957ef715ec7a65532" id="r_ga5a6b9c9e220a15c957ef715ec7a65532"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#gga5a6b9c9e220a15c957ef715ec7a65532a8df6ec39909b8d97c0a6d2d8465d2e0f">AV_FRAME_CROP_UNALIGNED</a> = 1 &lt;&lt; 0
+ }</td></tr>
+<tr class="memdesc:ga5a6b9c9e220a15c957ef715ec7a65532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for frame cropping.  <a href="#ga5a6b9c9e220a15c957ef715ec7a65532">更多...</a><br /></td></tr>
+<tr class="separator:ga5a6b9c9e220a15c957ef715ec7a65532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga925e7d083e99a910b9c21268636cb712" id="r_ga925e7d083e99a910b9c21268636cb712"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga925e7d083e99a910b9c21268636cb712">av_frame_get_best_effort_timestamp</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:ga925e7d083e99a910b9c21268636cb712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessors for some <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> fields.  <br /></td></tr>
+<tr class="separator:ga925e7d083e99a910b9c21268636cb712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7708227eba08ff739576c251b174934" id="r_gad7708227eba08ff739576c251b174934"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad7708227eba08ff739576c251b174934">av_frame_set_best_effort_timestamp</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:gad7708227eba08ff739576c251b174934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50494987e9226a176284ae7f6134efc0" id="r_ga50494987e9226a176284ae7f6134efc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50494987e9226a176284ae7f6134efc0">av_frame_get_pkt_duration</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga50494987e9226a176284ae7f6134efc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58b0960f75af92d98a41b5d640d31af5" id="r_ga58b0960f75af92d98a41b5d640d31af5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga58b0960f75af92d98a41b5d640d31af5">av_frame_set_pkt_duration</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga58b0960f75af92d98a41b5d640d31af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65d2eb53158d00661efbdacdb1eef103" id="r_ga65d2eb53158d00661efbdacdb1eef103"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga65d2eb53158d00661efbdacdb1eef103">av_frame_get_pkt_pos</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga65d2eb53158d00661efbdacdb1eef103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2ebf63faa7bd8855738f8c6825d6da6" id="r_gae2ebf63faa7bd8855738f8c6825d6da6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae2ebf63faa7bd8855738f8c6825d6da6">av_frame_set_pkt_pos</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:gae2ebf63faa7bd8855738f8c6825d6da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b71b6339d48f71999688af70190beee" id="r_ga8b71b6339d48f71999688af70190beee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8b71b6339d48f71999688af70190beee">av_frame_get_channel_layout</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga8b71b6339d48f71999688af70190beee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87a6e7cdf7fe675be91b655dc4ae794e" id="r_ga87a6e7cdf7fe675be91b655dc4ae794e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga87a6e7cdf7fe675be91b655dc4ae794e">av_frame_set_channel_layout</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga87a6e7cdf7fe675be91b655dc4ae794e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga590db2f240eaa6ce998bfe3df5b9cb22" id="r_ga590db2f240eaa6ce998bfe3df5b9cb22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga590db2f240eaa6ce998bfe3df5b9cb22">av_frame_get_channels</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga590db2f240eaa6ce998bfe3df5b9cb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53f781c6fc731399b2cdf63a97978d35" id="r_ga53f781c6fc731399b2cdf63a97978d35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga53f781c6fc731399b2cdf63a97978d35">av_frame_set_channels</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga53f781c6fc731399b2cdf63a97978d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaadbff484111a2603b15cf982a4e710c8" id="r_gaadbff484111a2603b15cf982a4e710c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaadbff484111a2603b15cf982a4e710c8">av_frame_get_sample_rate</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:gaadbff484111a2603b15cf982a4e710c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b97de1236751c84523961595233837b" id="r_ga7b97de1236751c84523961595233837b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7b97de1236751c84523961595233837b">av_frame_set_sample_rate</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga7b97de1236751c84523961595233837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac58f97d515b15381aeff47cb4fb9dbbc" id="r_gac58f97d515b15381aeff47cb4fb9dbbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac58f97d515b15381aeff47cb4fb9dbbc">av_frame_get_metadata</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:gac58f97d515b15381aeff47cb4fb9dbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga627f9f91f1cab9898a5d8c8a6cb259eb" id="r_ga627f9f91f1cab9898a5d8c8a6cb259eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga627f9f91f1cab9898a5d8c8a6cb259eb">av_frame_set_metadata</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga627f9f91f1cab9898a5d8c8a6cb259eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab67e6f896a782de75cc8fc11ce512412" id="r_gab67e6f896a782de75cc8fc11ce512412"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab67e6f896a782de75cc8fc11ce512412">av_frame_get_decode_error_flags</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:gab67e6f896a782de75cc8fc11ce512412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa50e609bbed3256839b77a5b8bf8d3fe" id="r_gaa50e609bbed3256839b77a5b8bf8d3fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa50e609bbed3256839b77a5b8bf8d3fe">av_frame_set_decode_error_flags</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:gaa50e609bbed3256839b77a5b8bf8d3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga758b1631801dd0abe073aa94e69703d4" id="r_ga758b1631801dd0abe073aa94e69703d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga758b1631801dd0abe073aa94e69703d4">av_frame_get_pkt_size</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga758b1631801dd0abe073aa94e69703d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga456f04c3e9c0246e1632f1323f6f2f92" id="r_ga456f04c3e9c0246e1632f1323f6f2f92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga456f04c3e9c0246e1632f1323f6f2f92">av_frame_set_pkt_size</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga456f04c3e9c0246e1632f1323f6f2f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5845ea05a21462e4ec1944e976839735" id="r_ga5845ea05a21462e4ec1944e976839735"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aef44329758059c91c76d334e8fc09700">int8_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5845ea05a21462e4ec1944e976839735">av_frame_get_qp_table</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, int *<a class="el" href="_s_d_l__opengl__glext_8h.html#a0c101456f4ab21f66c7a4553751b9e9b">stride</a>, int *<a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="separator:ga5845ea05a21462e4ec1944e976839735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad08c37260c53f8587fe747dba285dd70" id="r_gad08c37260c53f8587fe747dba285dd70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad08c37260c53f8587fe747dba285dd70">av_frame_set_qp_table</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a691492ec0bd6383f91200e49f6ae40ed">f</a>, <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>, int <a class="el" href="_s_d_l__opengl__glext_8h.html#a0c101456f4ab21f66c7a4553751b9e9b">stride</a>, int <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="separator:gad08c37260c53f8587fe747dba285dd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03cc0788d601ca46675256d56f6c018e" id="r_ga03cc0788d601ca46675256d56f6c018e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga03cc0788d601ca46675256d56f6c018e">av_frame_get_colorspace</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga03cc0788d601ca46675256d56f6c018e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13d84467430d2ad75ce9e0091ca8f4c4" id="r_ga13d84467430d2ad75ce9e0091ca8f4c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga13d84467430d2ad75ce9e0091ca8f4c4">av_frame_set_colorspace</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga13d84467430d2ad75ce9e0091ca8f4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fe34af632554dce15be46f3a89b574d" id="r_ga7fe34af632554dce15be46f3a89b574d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> enum <a class="el" href="pixfmt_8h.html#a3da0bf691418bc22c4bcbe6583ad589a">AVColorRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7fe34af632554dce15be46f3a89b574d">av_frame_get_color_range</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="separator:ga7fe34af632554dce15be46f3a89b574d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24180c5de867fbdc50746cbe7023d624" id="r_ga24180c5de867fbdc50746cbe7023d624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga24180c5de867fbdc50746cbe7023d624">av_frame_set_color_range</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="pixfmt_8h.html#a3da0bf691418bc22c4bcbe6583ad589a">AVColorRange</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="separator:ga24180c5de867fbdc50746cbe7023d624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43da209738677658a2a5a7a80e1ed35a" id="r_ga43da209738677658a2a5a7a80e1ed35a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga43da209738677658a2a5a7a80e1ed35a">av_get_colorspace_name</a> (enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a> <a class="el" href="_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f">val</a>)</td></tr>
+<tr class="memdesc:ga43da209738677658a2a5a7a80e1ed35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of a colorspace.  <br /></td></tr>
+<tr class="separator:ga43da209738677658a2a5a7a80e1ed35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac778d9609ac0c42d0a9445e549de172e" id="r_gac778d9609ac0c42d0a9445e549de172e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac778d9609ac0c42d0a9445e549de172e">av_frame_alloc</a> (<a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>)</td></tr>
+<tr class="memdesc:gac778d9609ac0c42d0a9445e549de172e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> and set its fields to default values.  <br /></td></tr>
+<tr class="separator:gac778d9609ac0c42d0a9445e549de172e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga979d73f3228814aee56aeca0636e37cc" id="r_ga979d73f3228814aee56aeca0636e37cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga979d73f3228814aee56aeca0636e37cc">av_frame_free</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> **frame)</td></tr>
+<tr class="memdesc:ga979d73f3228814aee56aeca0636e37cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the frame and any dynamically allocated objects in it, e.g.  <br /></td></tr>
+<tr class="separator:ga979d73f3228814aee56aeca0636e37cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88b0ecbc4eb3453eef3fbefa3bddeb7c" id="r_ga88b0ecbc4eb3453eef3fbefa3bddeb7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga88b0ecbc4eb3453eef3fbefa3bddeb7c">av_frame_ref</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:ga88b0ecbc4eb3453eef3fbefa3bddeb7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up a new reference to the data described by the source frame.  <br /></td></tr>
+<tr class="separator:ga88b0ecbc4eb3453eef3fbefa3bddeb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb917e6f2b61717390baf2009fe66c06" id="r_gadb917e6f2b61717390baf2009fe66c06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadb917e6f2b61717390baf2009fe66c06">av_frame_clone</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:gadb917e6f2b61717390baf2009fe66c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new frame that references the same data as src.  <br /></td></tr>
+<tr class="separator:gadb917e6f2b61717390baf2009fe66c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a2b687f9c1c5ed0089b01fd61227108" id="r_ga0a2b687f9c1c5ed0089b01fd61227108"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a2b687f9c1c5ed0089b01fd61227108">av_frame_unref</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:ga0a2b687f9c1c5ed0089b01fd61227108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unreference all the buffers referenced by frame and reset the frame fields.  <br /></td></tr>
+<tr class="separator:ga0a2b687f9c1c5ed0089b01fd61227108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga709e62bc2917ffd84c5c0f4e1dfc48f7" id="r_ga709e62bc2917ffd84c5c0f4e1dfc48f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga709e62bc2917ffd84c5c0f4e1dfc48f7">av_frame_move_ref</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:ga709e62bc2917ffd84c5c0f4e1dfc48f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move everything contained in src to dst and reset src.  <br /></td></tr>
+<tr class="separator:ga709e62bc2917ffd84c5c0f4e1dfc48f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b1acbfa82c79bf7fd78d868572f0ceb" id="r_ga6b1acbfa82c79bf7fd78d868572f0ceb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6b1acbfa82c79bf7fd78d868572f0ceb">av_frame_get_buffer</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="base_8h.html#a6c52c4bac77f6744fdc338766e9e8a6f">align</a>)</td></tr>
+<tr class="memdesc:ga6b1acbfa82c79bf7fd78d868572f0ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate new <a class="el" href="_s_d_l__opengl__glext_8h.html#a76461e97a098d2c9ae20ac193d3825ae">buffer(s)</a> for audio or video data.  <br /></td></tr>
+<tr class="separator:ga6b1acbfa82c79bf7fd78d868572f0ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ba755bada5c3c8883361ef43fb5fb7a" id="r_ga3ba755bada5c3c8883361ef43fb5fb7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ba755bada5c3c8883361ef43fb5fb7a">av_frame_is_writable</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:ga3ba755bada5c3c8883361ef43fb5fb7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the frame data is writable.  <br /></td></tr>
+<tr class="separator:ga3ba755bada5c3c8883361ef43fb5fb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd5417c06f5a6b419b0dbd8f0ff363fd" id="r_gadd5417c06f5a6b419b0dbd8f0ff363fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadd5417c06f5a6b419b0dbd8f0ff363fd">av_frame_make_writable</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame)</td></tr>
+<tr class="memdesc:gadd5417c06f5a6b419b0dbd8f0ff363fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure that the frame data is writable, avoiding data copy if possible.  <br /></td></tr>
+<tr class="separator:gadd5417c06f5a6b419b0dbd8f0ff363fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec4e92f6e1e75ffaf76e07586fb0c9ed" id="r_gaec4e92f6e1e75ffaf76e07586fb0c9ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaec4e92f6e1e75ffaf76e07586fb0c9ed">av_frame_copy</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:gaec4e92f6e1e75ffaf76e07586fb0c9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the frame data from src to dst.  <br /></td></tr>
+<tr class="separator:gaec4e92f6e1e75ffaf76e07586fb0c9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9b275b114ace0db95c5796bc71f3012" id="r_gab9b275b114ace0db95c5796bc71f3012"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab9b275b114ace0db95c5796bc71f3012">av_frame_copy_props</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a92034251bfd455d524a9b5610cddba00">dst</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#a72e0fdf0f845ded60b1fada9e9195cd7">src</a>)</td></tr>
+<tr class="memdesc:gab9b275b114ace0db95c5796bc71f3012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy only "metadata" fields from src to dst.  <br /></td></tr>
+<tr class="separator:gab9b275b114ace0db95c5796bc71f3012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91db441648ef2c71dc431a417605a0d6" id="r_ga91db441648ef2c71dc431a417605a0d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga91db441648ef2c71dc431a417605a0d6">av_frame_get_plane_buffer</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int plane)</td></tr>
+<tr class="memdesc:ga91db441648ef2c71dc431a417605a0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the buffer reference a given data plane is stored in.  <br /></td></tr>
+<tr class="separator:ga91db441648ef2c71dc431a417605a0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac169cffd766958d24ea08ca1878f20eb" id="r_gac169cffd766958d24ea08ca1878f20eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac169cffd766958d24ea08ca1878f20eb">av_frame_new_side_data</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, int <a class="el" href="group__lavu__mem__funcs.html#ga9f139c614d49f2a707b6037305b0fec0">size</a>)</td></tr>
+<tr class="memdesc:gac169cffd766958d24ea08ca1878f20eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new side data to a frame.  <br /></td></tr>
+<tr class="separator:gac169cffd766958d24ea08ca1878f20eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2aafcdaafcb1d3e7ce2d0d6f733546a" id="r_gab2aafcdaafcb1d3e7ce2d0d6f733546a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab2aafcdaafcb1d3e7ce2d0d6f733546a">av_frame_new_side_data_from_buf</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>, <a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *<a class="el" href="_s_d_l__opengl__glext_8h.html#aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</a>)</td></tr>
+<tr class="memdesc:gab2aafcdaafcb1d3e7ce2d0d6f733546a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new side data to a frame from an existing <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a>  <br /></td></tr>
+<tr class="separator:gab2aafcdaafcb1d3e7ce2d0d6f733546a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e3085c5a7aa8e8867ec6322983d3bc7" id="r_ga0e3085c5a7aa8e8867ec6322983d3bc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0e3085c5a7aa8e8867ec6322983d3bc7">av_frame_get_side_data</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="separator:ga0e3085c5a7aa8e8867ec6322983d3bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga132d6c01d0a21e5b48b96cd7c988de91" id="r_ga132d6c01d0a21e5b48b96cd7c988de91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga132d6c01d0a21e5b48b96cd7c988de91">av_frame_remove_side_data</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="memdesc:ga132d6c01d0a21e5b48b96cd7c988de91"><td class="mdescLeft">&#160;</td><td class="mdescRight">If side data of the supplied type exists in the frame, free it and remove it from the frame.  <br /></td></tr>
+<tr class="separator:ga132d6c01d0a21e5b48b96cd7c988de91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea6d378ff15d984d4eb67b462b7d70b5" id="r_gaea6d378ff15d984d4eb67b462b7d70b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaea6d378ff15d984d4eb67b462b7d70b5">av_frame_apply_cropping</a> (<a class="el" href="struct_a_v_frame.html">AVFrame</a> *frame, int <a class="el" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>)</td></tr>
+<tr class="memdesc:gaea6d378ff15d984d4eb67b462b7d70b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crop the given video <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> according to its crop_left/crop_top/crop_right/ crop_bottom fields.  <br /></td></tr>
+<tr class="separator:gaea6d378ff15d984d4eb67b462b7d70b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff674f7f4b25bdacf32fc8f3174138ab" id="r_gaff674f7f4b25bdacf32fc8f3174138ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaff674f7f4b25bdacf32fc8f3174138ab">av_frame_side_data_name</a> (enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a> <a class="el" href="_s_d_l__opengl_8h.html#ad5ddf6fca7b585646515660e810e0188">type</a>)</td></tr>
+<tr class="separator:gaff674f7f4b25bdacf32fc8f3174138ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p><a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> is an abstraction for reference-counted raw multimedia data. </p>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="gadb9d87a8956751b4fd71791105d65c52" name="gadb9d87a8956751b4fd71791105d65c52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb9d87a8956751b4fd71791105d65c52">&#9670;&#160;</a></span>AVFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVFrame AVFrame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This structure describes decoded (raw) audio or video data. </p>
+<p><a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> must be allocated using <a class="el" href="#gac778d9609ac0c42d0a9445e549de172e" title="Allocate an AVFrame and set its fields to default values.">av_frame_alloc()</a>. Note that this only allocates the <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> itself, the buffers for the data must be managed through other means (see below). <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> must be freed with <a class="el" href="#ga979d73f3228814aee56aeca0636e37cc" title="Free the frame and any dynamically allocated objects in it, e.g.">av_frame_free()</a>.</p>
+<p><a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> is typically allocated once and then reused multiple times to hold different data (e.g. a single <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> to hold frames received from a decoder). In such a case, <a class="el" href="#ga0a2b687f9c1c5ed0089b01fd61227108" title="Unreference all the buffers referenced by frame and reset the frame fields.">av_frame_unref()</a> will free any references held by the frame and reset it to its original clean state before it is reused again.</p>
+<p>The data described by an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> is usually reference counted through the <a class="el" href="group__lavu__buffer.html#ga501d49df442180d584f255aa97b2549d" title="A reference counted buffer type.">AVBuffer</a> API. The underlying buffer references are stored in <a class="el" href="struct_a_v_frame.html#a396a3321fb4eb0435ddc39e9d0cd15e6" title="AVBuffer references backing the data for this frame.">AVFrame.buf</a> / <a class="el" href="struct_a_v_frame.html#addae9dfaab37ada4faff78ccc9c1327f" title="For planar audio which requires more than AV_NUM_DATA_POINTERS AVBufferRef pointers,...">AVFrame.extended_buf</a>. An <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> is considered to be reference counted if at least one reference is set, i.e. if <a class="el" href="struct_a_v_frame.html#a396a3321fb4eb0435ddc39e9d0cd15e6" title="AVBuffer references backing the data for this frame.">AVFrame.buf</a>[0] != NULL. In such a case, every single data plane must be contained in one of the buffers in <a class="el" href="struct_a_v_frame.html#a396a3321fb4eb0435ddc39e9d0cd15e6" title="AVBuffer references backing the data for this frame.">AVFrame.buf</a> or <a class="el" href="struct_a_v_frame.html#addae9dfaab37ada4faff78ccc9c1327f" title="For planar audio which requires more than AV_NUM_DATA_POINTERS AVBufferRef pointers,...">AVFrame.extended_buf</a>. There may be a single buffer for all the data, or one separate buffer for each plane, or anything in between.</p>
+<p>sizeof(AVFrame) is not a part of the public ABI, so new fields may be added to the end with a minor bump.</p>
+<p>Fields can be accessed through AVOptions, the name string used, matches the C structure field name for fields accessible through AVOptions. The <a class="el" href="struct_a_v_class.html" title="Describe the class of an AVClass context structure.">AVClass</a> for <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> can be obtained from <a class="el" href="group__lavc__core.html#gac31950f119ec1dcb5f679dc42e254f07" title="Get the AVClass for AVFrame.">avcodec_get_frame_class()</a> </p>
+
+</div>
+</div>
+<a id="ga1b8cd016bc806e5420ffe97edc140d12" name="ga1b8cd016bc806e5420ffe97edc140d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b8cd016bc806e5420ffe97edc140d12">&#9670;&#160;</a></span>AVFrameSideData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct AVFrameSideData AVFrameSideData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Structure to hold side data for an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a>. </p>
+<p>sizeof(AVFrameSideData) is not a part of the public ABI, so new fields may be added to the end with a minor bump. </p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="ga5a6b9c9e220a15c957ef715ec7a65532" name="ga5a6b9c9e220a15c957ef715ec7a65532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a6b9c9e220a15c957ef715ec7a65532">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flags for frame cropping. </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="gga5a6b9c9e220a15c957ef715ec7a65532a8df6ec39909b8d97c0a6d2d8465d2e0f" name="gga5a6b9c9e220a15c957ef715ec7a65532a8df6ec39909b8d97c0a6d2d8465d2e0f"></a>AV_FRAME_CROP_UNALIGNED&#160;</td><td class="fielddoc"><p>Apply the maximum possible cropping, even if it requires setting the <a class="el" href="struct_a_v_frame.html#a06f7375844fbf4e97d8277c4947b2589" title="pointer to the picture/channel planes.">AVFrame.data</a>[] entries to unaligned pointers. </p>
+<p>Passing unaligned data to FFmpeg API is generally not allowed, and causes undefined behavior (such as crashes). You can pass unaligned data only to FFmpeg APIs that are explicitly documented to accept it. Use this flag only if you absolutely know what you are doing. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga612627d8f03d52317992979dfa151d76" name="ga612627d8f03d52317992979dfa151d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga612627d8f03d52317992979dfa151d76">&#9670;&#160;</a></span>AVActiveFormatDescription</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ga612627d8f03d52317992979dfa151d76">AVActiveFormatDescription</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="gga612627d8f03d52317992979dfa151d76a0e9a49946d70eb6ca77cf937ed1a342c" name="gga612627d8f03d52317992979dfa151d76a0e9a49946d70eb6ca77cf937ed1a342c"></a>AV_AFD_SAME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga612627d8f03d52317992979dfa151d76ab118e63239595dceb50deea7351dc1cb" name="gga612627d8f03d52317992979dfa151d76ab118e63239595dceb50deea7351dc1cb"></a>AV_AFD_4_3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga612627d8f03d52317992979dfa151d76ad8f8850e69a05765363a4a833adc97d8" name="gga612627d8f03d52317992979dfa151d76ad8f8850e69a05765363a4a833adc97d8"></a>AV_AFD_16_9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga612627d8f03d52317992979dfa151d76a0da920de1ba63c73fabe1b9878477a13" name="gga612627d8f03d52317992979dfa151d76a0da920de1ba63c73fabe1b9878477a13"></a>AV_AFD_14_9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga612627d8f03d52317992979dfa151d76a65edb00603a0d7fdb37cecac94b62cc5" name="gga612627d8f03d52317992979dfa151d76a65edb00603a0d7fdb37cecac94b62cc5"></a>AV_AFD_4_3_SP_14_9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga612627d8f03d52317992979dfa151d76a488ce7ad4833c96497000dd03b8f0b55" name="gga612627d8f03d52317992979dfa151d76a488ce7ad4833c96497000dd03b8f0b55"></a>AV_AFD_16_9_SP_14_9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga612627d8f03d52317992979dfa151d76aac53fd979d24b22c0673d1a0bc59e304" name="gga612627d8f03d52317992979dfa151d76aac53fd979d24b22c0673d1a0bc59e304"></a>AV_AFD_SP_4_3&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="gae01fa7e427274293aacdf2adc17076bc" name="gae01fa7e427274293aacdf2adc17076bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae01fa7e427274293aacdf2adc17076bc">&#9670;&#160;</a></span>AVFrameSideDataType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca3de91a03b453c956b7274a2392d9a437" name="ggae01fa7e427274293aacdf2adc17076bca3de91a03b453c956b7274a2392d9a437"></a>AV_FRAME_DATA_PANSCAN&#160;</td><td class="fielddoc"><p>The data is the <a class="el" href="struct_a_v_pan_scan.html" title="Pan Scan area.">AVPanScan</a> struct defined in libavcodec. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca4848fd3952b4c2e1c1b85acb628c78a6" name="ggae01fa7e427274293aacdf2adc17076bca4848fd3952b4c2e1c1b85acb628c78a6"></a>AV_FRAME_DATA_A53_CC&#160;</td><td class="fielddoc"><p>ATSC A53 Part 4 Closed Captions. </p>
+<p>A53 CC bitstream is stored as <a class="el" href="_s_d_l__config__ngage_8h.html#aba7bc1797add20fe3efdf37ced1182c5" title="8 位无符号整数">uint8_t</a> in <a class="el" href="struct_a_v_frame_side_data.html#abe222f6d3581e7920dcad5306cc906a8">AVFrameSideData.data</a>. The number of bytes of CC data is <a class="el" href="struct_a_v_frame_side_data.html#a439227feff9d7f55384e8780cfc2eb82">AVFrameSideData.size</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bcacec681d6146e8bd4c61b2e1cc88354a8" name="ggae01fa7e427274293aacdf2adc17076bcacec681d6146e8bd4c61b2e1cc88354a8"></a>AV_FRAME_DATA_STEREO3D&#160;</td><td class="fielddoc"><p>Stereoscopic 3d metadata. </p>
+<p>The data is the <a class="el" href="struct_a_v_stereo3_d.html" title="Stereo 3D type: this structure describes how two videos are packed within a single video surface,...">AVStereo3D</a> struct defined in <a class="el" href="stereo3d_8h.html" title="Stereoscopic video">libavutil/stereo3d.h</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bcaa69ea5c11a5431bfff9e565714dafe41" name="ggae01fa7e427274293aacdf2adc17076bcaa69ea5c11a5431bfff9e565714dafe41"></a>AV_FRAME_DATA_MATRIXENCODING&#160;</td><td class="fielddoc"><p>The data is the <a class="el" href="group__channel__mask__c.html#gabd576ea664e3ac5d31f3362064fe13e6">AVMatrixEncoding</a> enum defined in <a class="el" href="channel__layout_8h.html" title="audio channel layout utility functions">libavutil/channel_layout.h</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca71819257ea0bedb7e0740a0ce60e404a" name="ggae01fa7e427274293aacdf2adc17076bca71819257ea0bedb7e0740a0ce60e404a"></a>AV_FRAME_DATA_DOWNMIX_INFO&#160;</td><td class="fielddoc"><p>Metadata relevant to a downmix procedure. </p>
+<p>The data is the <a class="el" href="struct_a_v_downmix_info.html" title="This structure describes optional metadata relevant to a downmix procedure.">AVDownmixInfo</a> struct defined in <a class="el" href="downmix__info_8h.html" title="audio downmix medatata">libavutil/downmix_info.h</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca66f46a9df9fcb8cf212e0693465794e1" name="ggae01fa7e427274293aacdf2adc17076bca66f46a9df9fcb8cf212e0693465794e1"></a>AV_FRAME_DATA_REPLAYGAIN&#160;</td><td class="fielddoc"><p>ReplayGain information in the form of the <a class="el" href="struct_a_v_replay_gain.html" title="ReplayGain information (see http://wiki.hydrogenaudio.org/index.php?title=ReplayGain_1....">AVReplayGain</a> struct. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca3e01b882b6fa04724076067d6d9f8b69" name="ggae01fa7e427274293aacdf2adc17076bca3e01b882b6fa04724076067d6d9f8b69"></a>AV_FRAME_DATA_DISPLAYMATRIX&#160;</td><td class="fielddoc"><p>This side data contains a 3x3 transformation matrix describing an affine transformation that needs to be applied to the frame for correct presentation. </p>
+<p>See <a class="el" href="display_8h.html" title="Display matrix">libavutil/display.h</a> for a detailed description of the data. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca9aabf5c0b8abc7064bfcc59485e54aea" name="ggae01fa7e427274293aacdf2adc17076bca9aabf5c0b8abc7064bfcc59485e54aea"></a>AV_FRAME_DATA_AFD&#160;</td><td class="fielddoc"><p>Active Format Description data consisting of a single byte as specified in ETSI TS 101 154 using <a class="el" href="#ga612627d8f03d52317992979dfa151d76">AVActiveFormatDescription</a> enum. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bcaf50d0ed0a9a4517341c221be03a06c42" name="ggae01fa7e427274293aacdf2adc17076bcaf50d0ed0a9a4517341c221be03a06c42"></a>AV_FRAME_DATA_MOTION_VECTORS&#160;</td><td class="fielddoc"><p>Motion vectors exported by some codecs (on demand through the export_mvs flag set in the libavcodec <a class="el" href="struct_a_v_codec_context.html" title="main external API structure.">AVCodecContext</a> flags2 option). </p>
+<p>The data is the <a class="el" href="struct_a_v_motion_vector.html">AVMotionVector</a> struct defined in <a class="el" href="motion__vector_8h.html">libavutil/motion_vector.h</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca6b0b1ee4315f322922710f65d02a146b" name="ggae01fa7e427274293aacdf2adc17076bca6b0b1ee4315f322922710f65d02a146b"></a>AV_FRAME_DATA_SKIP_SAMPLES&#160;</td><td class="fielddoc"><p>Recommmends skipping the specified number of samples. </p>
+<p>This is exported only if the "skip_manual" <a class="el" href="struct_a_v_option.html" title="AVOption">AVOption</a> is set in libavcodec. This has the same format as AV_PKT_DATA_SKIP_SAMPLES. </p><div class="fragment"><div class="line">u32le number of samples to skip from start of this packet</div>
+<div class="line">u32le number of samples to skip from end of this packet</div>
+<div class="line">u8    reason for start skip</div>
+<div class="line">u8    reason for end   skip (0=padding silence, 1=convergence)</div>
+</div><!-- fragment --> </td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca51023c847159dcc08776f9dcee5e0c90" name="ggae01fa7e427274293aacdf2adc17076bca51023c847159dcc08776f9dcee5e0c90"></a>AV_FRAME_DATA_AUDIO_SERVICE_TYPE&#160;</td><td class="fielddoc"><p>This side data must be associated with an audio frame and corresponds to enum <a class="el" href="group__lavc__core.html#gadcff0a5957a99f6fdf1eec9d5a3fdfaf">AVAudioServiceType</a> defined in <a class="el" href="avcodec_8h.html" title="Libavcodec external API header">avcodec.h</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca6e305f92e325fbd219527452048f16cb" name="ggae01fa7e427274293aacdf2adc17076bca6e305f92e325fbd219527452048f16cb"></a>AV_FRAME_DATA_MASTERING_DISPLAY_METADATA&#160;</td><td class="fielddoc"><p>Mastering display metadata associated with a video frame. </p>
+<p>The payload is an <a class="el" href="struct_a_v_mastering_display_metadata.html" title="Mastering display metadata capable of representing the color volume of the display used to master the...">AVMasteringDisplayMetadata</a> type and contains information about the mastering display color volume. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca03982b828a1069c895d16cda4b3e9fd4" name="ggae01fa7e427274293aacdf2adc17076bca03982b828a1069c895d16cda4b3e9fd4"></a>AV_FRAME_DATA_GOP_TIMECODE&#160;</td><td class="fielddoc"><p>The GOP timecode in 25 bit timecode format. </p>
+<p>Data format is 64-bit integer. This is set on the first frame of a GOP that has a temporal reference of 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca12806c5fd4b37dca88312c61965f33e8" name="ggae01fa7e427274293aacdf2adc17076bca12806c5fd4b37dca88312c61965f33e8"></a>AV_FRAME_DATA_SPHERICAL&#160;</td><td class="fielddoc"><p>The data represents the <a class="el" href="struct_a_v_spherical_mapping.html" title="This structure describes how to handle spherical videos, outlining information about projection,...">AVSphericalMapping</a> structure defined in <a class="el" href="spherical_8h.html" title="Spherical video">libavutil/spherical.h</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca311f0afd2dded92ef68ae00f7711aa2d" name="ggae01fa7e427274293aacdf2adc17076bca311f0afd2dded92ef68ae00f7711aa2d"></a>AV_FRAME_DATA_CONTENT_LIGHT_LEVEL&#160;</td><td class="fielddoc"><p>Content light level (based on CTA-861.3). </p>
+<p>This payload contains data in the form of the <a class="el" href="struct_a_v_content_light_metadata.html" title="Content light level needed by to transmit HDR over HDMI (CTA-861.3).">AVContentLightMetadata</a> struct. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca8ef8866b8c04c54c630479bc163196ae" name="ggae01fa7e427274293aacdf2adc17076bca8ef8866b8c04c54c630479bc163196ae"></a>AV_FRAME_DATA_ICC_PROFILE&#160;</td><td class="fielddoc"><p>The data contains an ICC profile as an opaque octet buffer following the format described by ISO 15076-1 with an optional name defined in the metadata key entry "name". </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca716dc238a2bea3693a52ab658c4e8ff7" name="ggae01fa7e427274293aacdf2adc17076bca716dc238a2bea3693a52ab658c4e8ff7"></a>AV_FRAME_DATA_QP_TABLE_PROPERTIES&#160;</td><td class="fielddoc"><p>Implementation-specific description of the format of AV_FRAME_QP_TABLE_DATA. </p>
+<p>The contents of this side data are undocumented and internal; use <a class="el" href="#gad08c37260c53f8587fe747dba285dd70">av_frame_set_qp_table()</a> and <a class="el" href="#ga5845ea05a21462e4ec1944e976839735">av_frame_get_qp_table()</a> to access this in a meaningful way instead. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae01fa7e427274293aacdf2adc17076bca880fdfc059a05584749d695cc54e4717" name="ggae01fa7e427274293aacdf2adc17076bca880fdfc059a05584749d695cc54e4717"></a>AV_FRAME_DATA_QP_TABLE_DATA&#160;</td><td class="fielddoc"><p>Raw QP table data. </p>
+<p>Its format is described by AV_FRAME_DATA_QP_TABLE_PROPERTIES. Use <a class="el" href="#gad08c37260c53f8587fe747dba285dd70">av_frame_set_qp_table()</a> and <a class="el" href="#ga5845ea05a21462e4ec1944e976839735">av_frame_get_qp_table()</a> to access this instead. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="gac778d9609ac0c42d0a9445e549de172e" name="gac778d9609ac0c42d0a9445e549de172e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac778d9609ac0c42d0a9445e549de172e">&#9670;&#160;</a></span>av_frame_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_frame.html">AVFrame</a> * av_frame_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate an <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> and set its fields to default values. </p>
+<p>The resulting struct must be freed using <a class="el" href="#ga979d73f3228814aee56aeca0636e37cc" title="Free the frame and any dynamically allocated objects in it, e.g.">av_frame_free()</a>.</p>
+<dl class="section return"><dt>返回</dt><dd>An <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> filled with default values or NULL on failure.</dd></dl>
+<dl class="section note"><dt>注解</dt><dd>this only allocates the <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> itself, not the data buffers. Those must be allocated through other means, e.g. with <a class="el" href="#ga6b1acbfa82c79bf7fd78d868572f0ceb" title="Allocate new buffer(s) for audio or video data.">av_frame_get_buffer()</a> or manually. </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__frame_gac778d9609ac0c42d0a9445e549de172e_icgraph.png" border="0" usemap="#agroup__lavu__frame_gac778d9609ac0c42d0a9445e549de172e_icgraph" alt=""/></div>
+<map name="agroup__lavu__frame_gac778d9609ac0c42d0a9445e549de172e_icgraph" id="agroup__lavu__frame_gac778d9609ac0c42d0a9445e549de172e_icgraph">
+<area shape="rect" title="Allocate an AVFrame and set its fields to default values." alt="" coords="1322,261,1432,288"/>
+<area shape="rect" href="class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="1100,312,1274,355"/>
+<area shape="poly" title=" " alt="" coords="1318,296,1259,314,1258,309,1316,291"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="223,64,397,107"/>
+<area shape="poly" title=" " alt="" coords="1354,251,1297,184,1256,144,1209,104,1156,67,1098,36,1037,16,973,8,743,8,659,9,593,14,528,24,446,41,366,66,364,61,444,36,527,18,593,8,659,4,743,3,973,3,1038,10,1100,32,1158,62,1212,100,1260,140,1301,181,1358,247"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="462,160,580,187"/>
+<area shape="poly" title=" " alt="" coords="1307,281,1153,288,960,290,864,287,775,280,700,269,644,252,628,240,618,227,610,214,596,201,573,190,576,185,599,196,614,210,623,224,631,236,646,247,701,263,776,275,864,281,961,284,1153,283,1307,276"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="892,152,1052,179"/>
+<area shape="poly" title=" " alt="" coords="1145,304,989,181,992,177,1148,300"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,211,175,237"/>
+<area shape="poly" title=" " alt="" coords="1084,335,746,332,520,332,462,329,404,322,291,297,194,267,124,240,125,235,196,262,293,292,405,316,463,324,520,327,746,327,1084,329"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="645,93,844,120"/>
+<area shape="poly" title=" " alt="" coords="902,150,843,135,799,123,800,118,844,129,904,145"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="656,144,833,187"/>
+<area shape="poly" title=" " alt="" coords="876,168,834,168,834,163,876,163"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="656,211,833,237"/>
+<area shape="poly" title=" " alt="" coords="904,186,844,201,800,213,799,208,843,196,902,181"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="445,93,597,136"/>
+<area shape="poly" title=" " alt="" coords="630,113,598,115,598,109,630,108"/>
+<area shape="poly" title=" " alt="" coords="429,105,397,100,398,95,430,99"/>
+<area shape="poly" title=" " alt="" coords="412,65,505,54,614,49,731,56,788,65,844,79,879,93,910,112,958,149,954,154,907,116,876,98,843,84,787,70,730,61,614,55,505,59,413,70"/>
+<area shape="poly" title=" " alt="" coords="263,118,114,212,112,208,260,113"/>
+<area shape="poly" title=" " alt="" coords="640,144,597,135,599,129,641,139"/>
+<area shape="poly" title=" " alt="" coords="640,172,580,174,580,169,640,166"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="460,211,582,237"/>
+<area shape="poly" title=" " alt="" coords="641,227,583,227,583,221,641,221"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="232,211,388,237"/>
+<area shape="poly" title=" " alt="" coords="444,227,388,227,388,221,444,221"/>
+<area shape="poly" title=" " alt="" coords="346,198,334,192,310,189,288,191,276,196,273,201,278,209,274,212,268,202,272,192,286,186,310,184,335,187,348,193"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gaea6d378ff15d984d4eb67b462b7d70b5" name="gaea6d378ff15d984d4eb67b462b7d70b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea6d378ff15d984d4eb67b462b7d70b5">&#9670;&#160;</a></span>av_frame_apply_cropping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_frame_apply_cropping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crop the given video <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> according to its crop_left/crop_top/crop_right/ crop_bottom fields. </p>
+<p>If cropping is successful, the function will adjust the data pointers and the width/height fields, and set the crop fields to 0.</p>
+<p>In all cases, the cropping boundaries will be rounded to the inherent alignment of the pixel format. In some cases, such as for opaque hwaccel formats, the left/top cropping is ignored. The crop fields are set to 0 even if the cropping was rounded or ignored.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>the frame which should be cropped </td></tr>
+    <tr><td class="paramname">flags</td><td>Some combination of AV_FRAME_CROP_* flags, or 0.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 on success, a negative AVERROR on error. If the cropping fields were invalid, <a class="el" href="group__lavu__error.html#gae4bb6f165973d09584e0ec0f335f69ca">AVERROR(ERANGE)</a> is returned, and nothing is changed. </dd></dl>
+
+</div>
+</div>
+<a id="gadb917e6f2b61717390baf2009fe66c06" name="gadb917e6f2b61717390baf2009fe66c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb917e6f2b61717390baf2009fe66c06">&#9670;&#160;</a></span>av_frame_clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_frame.html">AVFrame</a> * av_frame_clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a new frame that references the same data as src. </p>
+<p>This is a shortcut for <a class="el" href="#gac778d9609ac0c42d0a9445e549de172e" title="Allocate an AVFrame and set its fields to default values.">av_frame_alloc()</a>+<a class="el" href="#ga88b0ecbc4eb3453eef3fbefa3bddeb7c" title="Set up a new reference to the data described by the source frame.">av_frame_ref()</a>.</p>
+<dl class="section return"><dt>返回</dt><dd>newly created <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> on success, NULL on error. </dd></dl>
+
+</div>
+</div>
+<a id="gaec4e92f6e1e75ffaf76e07586fb0c9ed" name="gaec4e92f6e1e75ffaf76e07586fb0c9ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec4e92f6e1e75ffaf76e07586fb0c9ed">&#9670;&#160;</a></span>av_frame_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_frame_copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy the frame data from src to dst. </p>
+<p>This function does not allocate anything, dst must be already initialized and allocated with the same parameters as src.</p>
+<p>This function only copies the frame data (i.e. the contents of the data / extended data arrays), not any other properties.</p>
+<dl class="section return"><dt>返回</dt><dd>&gt;= 0 on success, a negative AVERROR on error. </dd></dl>
+
+</div>
+</div>
+<a id="gab9b275b114ace0db95c5796bc71f3012" name="gab9b275b114ace0db95c5796bc71f3012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9b275b114ace0db95c5796bc71f3012">&#9670;&#160;</a></span>av_frame_copy_props()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_frame_copy_props </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy only "metadata" fields from src to dst. </p>
+<p>Metadata for the purpose of this function are those fields that do not affect the data layout in the buffers. E.g. pts, sample rate (for audio) or sample aspect ratio (for video), but not width/height or channel layout. Side data is also copied. </p>
+
+</div>
+</div>
+<a id="ga979d73f3228814aee56aeca0636e37cc" name="ga979d73f3228814aee56aeca0636e37cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga979d73f3228814aee56aeca0636e37cc">&#9670;&#160;</a></span>av_frame_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> **</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free the frame and any dynamically allocated objects in it, e.g. </p>
+<p>extended_data. If the frame is reference counted, it will be unreferenced first.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>frame to be freed. The pointer will be set to NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__lavu__frame_ga979d73f3228814aee56aeca0636e37cc_icgraph.png" border="0" usemap="#agroup__lavu__frame_ga979d73f3228814aee56aeca0636e37cc_icgraph" alt=""/></div>
+<map name="agroup__lavu__frame_ga979d73f3228814aee56aeca0636e37cc_icgraph" id="agroup__lavu__frame_ga979d73f3228814aee56aeca0636e37cc_icgraph">
+<area shape="rect" title="Free the frame and any dynamically allocated objects in it, e.g." alt="" coords="1322,189,1427,216"/>
+<area shape="rect" href="class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="1100,123,1274,165"/>
+<area shape="poly" title=" " alt="" coords="1314,187,1257,169,1258,163,1316,182"/>
+<area shape="rect" href="class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="462,248,580,275"/>
+<area shape="poly" title=" " alt="" coords="1308,215,1101,241,973,255,844,264,701,268,580,266,580,261,701,262,844,259,972,249,1100,236,1307,210"/>
+<area shape="rect" href="class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="892,131,1052,157"/>
+<area shape="poly" title=" " alt="" coords="1084,147,1052,147,1052,141,1084,141"/>
+<area shape="rect" href="class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,59,175,85"/>
+<area shape="poly" title=" " alt="" coords="1131,118,1057,84,962,48,855,20,800,11,746,8,520,8,370,11,306,19,223,33,174,46,129,61,127,56,172,41,222,28,305,13,370,6,520,3,746,3,801,6,856,14,964,43,1059,79,1133,113"/>
+<area shape="rect" href="class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="645,156,844,183"/>
+<area shape="poly" title=" " alt="" coords="877,157,844,161,844,156,876,152"/>
+<area shape="rect" href="class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="656,207,833,249"/>
+<area shape="poly" title=" " alt="" coords="924,166,845,197,813,209,811,204,843,192,922,161"/>
+<area shape="rect" href="class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="656,55,833,81"/>
+<area shape="poly" title=" " alt="" coords="916,128,843,103,788,84,790,79,845,98,918,123"/>
+<area shape="rect" href="class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="445,156,597,199"/>
+<area shape="poly" title=" " alt="" coords="630,176,598,177,598,172,630,171"/>
+<area shape="rect" href="class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="223,117,397,160"/>
+<area shape="poly" title=" " alt="" coords="429,163,397,157,398,152,430,158"/>
+<area shape="poly" title=" " alt="" coords="413,137,892,141,892,146,413,142"/>
+<area shape="poly" title=" " alt="" coords="222,115,136,89,137,83,224,110"/>
+<area shape="poly" title=" " alt="" coords="640,207,597,197,599,192,641,202"/>
+<area shape="poly" title=" " alt="" coords="641,246,581,255,580,250,640,241"/>
+<area shape="rect" href="class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="460,55,582,81"/>
+<area shape="poly" title=" " alt="" coords="641,71,583,71,583,65,641,65"/>
+<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="232,67,388,93"/>
+<area shape="poly" title=" " alt="" coords="445,75,388,78,388,73,444,70"/>
+<area shape="poly" title=" " alt="" coords="346,54,334,48,310,45,288,47,276,52,273,58,278,65,274,68,268,58,272,48,286,42,310,40,335,43,348,49"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga925e7d083e99a910b9c21268636cb712" name="ga925e7d083e99a910b9c21268636cb712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga925e7d083e99a910b9c21268636cb712">&#9670;&#160;</a></span>av_frame_get_best_effort_timestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_frame_get_best_effort_timestamp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accessors for some <a class="el" href="struct_a_v_frame.html" title="This structure describes decoded (raw) audio or video data.">AVFrame</a> fields. </p>
+<p>These used to be provided for ABI compatibility, and do not need to be used anymore. </p>
+
+</div>
+</div>
+<a id="ga6b1acbfa82c79bf7fd78d868572f0ceb" name="ga6b1acbfa82c79bf7fd78d868572f0ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b1acbfa82c79bf7fd78d868572f0ceb">&#9670;&#160;</a></span>av_frame_get_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_frame_get_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>align</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate new <a class="el" href="_s_d_l__opengl__glext_8h.html#a76461e97a098d2c9ae20ac193d3825ae">buffer(s)</a> for audio or video data. </p>
+<p>The following fields must be set on frame before calling this function:</p><ul>
+<li>format (pixel format for video, sample format for audio)</li>
+<li>width and height for video</li>
+<li>nb_samples and channel_layout for audio</li>
+</ul>
+<p>This function will fill <a class="el" href="struct_a_v_frame.html#a06f7375844fbf4e97d8277c4947b2589" title="pointer to the picture/channel planes.">AVFrame.data</a> and <a class="el" href="struct_a_v_frame.html#a396a3321fb4eb0435ddc39e9d0cd15e6" title="AVBuffer references backing the data for this frame.">AVFrame.buf</a> arrays and, if necessary, allocate and fill <a class="el" href="struct_a_v_frame.html#aab5d0b9db7cf8017848a83c910bdb89d" title="pointers to the data planes/channels.">AVFrame.extended_data</a> and <a class="el" href="struct_a_v_frame.html#addae9dfaab37ada4faff78ccc9c1327f" title="For planar audio which requires more than AV_NUM_DATA_POINTERS AVBufferRef pointers,...">AVFrame.extended_buf</a>. For planar formats, one buffer will be allocated for each plane.</p>
+<dl class="section warning"><dt>警告</dt><dd>: if frame already has been allocated, calling this function will leak memory. In addition, undefined behavior can occur in certain cases.</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>frame in which to store the new buffers. </td></tr>
+    <tr><td class="paramname">align</td><td>Required buffer size alignment. If equal to 0, alignment will be chosen automatically for the current CPU. It is highly recommended to pass 0 here unless you know what you are doing.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on error. </dd></dl>
+
+</div>
+</div>
+<a id="ga8b71b6339d48f71999688af70190beee" name="ga8b71b6339d48f71999688af70190beee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8b71b6339d48f71999688af70190beee">&#9670;&#160;</a></span>av_frame_get_channel_layout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_frame_get_channel_layout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga590db2f240eaa6ce998bfe3df5b9cb22" name="ga590db2f240eaa6ce998bfe3df5b9cb22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga590db2f240eaa6ce998bfe3df5b9cb22">&#9670;&#160;</a></span>av_frame_get_channels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int av_frame_get_channels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga7fe34af632554dce15be46f3a89b574d" name="ga7fe34af632554dce15be46f3a89b574d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7fe34af632554dce15be46f3a89b574d">&#9670;&#160;</a></span>av_frame_get_color_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> enum <a class="el" href="pixfmt_8h.html#a3da0bf691418bc22c4bcbe6583ad589a">AVColorRange</a> av_frame_get_color_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga03cc0788d601ca46675256d56f6c018e" name="ga03cc0788d601ca46675256d56f6c018e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga03cc0788d601ca46675256d56f6c018e">&#9670;&#160;</a></span>av_frame_get_colorspace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a> av_frame_get_colorspace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab67e6f896a782de75cc8fc11ce512412" name="gab67e6f896a782de75cc8fc11ce512412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab67e6f896a782de75cc8fc11ce512412">&#9670;&#160;</a></span>av_frame_get_decode_error_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int av_frame_get_decode_error_flags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac58f97d515b15381aeff47cb4fb9dbbc" name="gac58f97d515b15381aeff47cb4fb9dbbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac58f97d515b15381aeff47cb4fb9dbbc">&#9670;&#160;</a></span>av_frame_get_metadata()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> * av_frame_get_metadata </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga50494987e9226a176284ae7f6134efc0" name="ga50494987e9226a176284ae7f6134efc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50494987e9226a176284ae7f6134efc0">&#9670;&#160;</a></span>av_frame_get_pkt_duration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_frame_get_pkt_duration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga65d2eb53158d00661efbdacdb1eef103" name="ga65d2eb53158d00661efbdacdb1eef103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65d2eb53158d00661efbdacdb1eef103">&#9670;&#160;</a></span>av_frame_get_pkt_pos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> av_frame_get_pkt_pos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga758b1631801dd0abe073aa94e69703d4" name="ga758b1631801dd0abe073aa94e69703d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga758b1631801dd0abe073aa94e69703d4">&#9670;&#160;</a></span>av_frame_get_pkt_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int av_frame_get_pkt_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga91db441648ef2c71dc431a417605a0d6" name="ga91db441648ef2c71dc431a417605a0d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91db441648ef2c71dc431a417605a0d6">&#9670;&#160;</a></span>av_frame_get_plane_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> * av_frame_get_plane_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>plane</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the buffer reference a given data plane is stored in. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plane</td><td>index of the data plane of interest in frame-&gt;extended_data.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the buffer reference that contains the plane or NULL if the input frame is not valid. </dd></dl>
+
+</div>
+</div>
+<a id="ga5845ea05a21462e4ec1944e976839735" name="ga5845ea05a21462e4ec1944e976839735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5845ea05a21462e4ec1944e976839735">&#9670;&#160;</a></span>av_frame_get_qp_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__config__ngage_8h.html#aef44329758059c91c76d334e8fc09700">int8_t</a> * av_frame_get_qp_table </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>stride</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaadbff484111a2603b15cf982a4e710c8" name="gaadbff484111a2603b15cf982a4e710c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaadbff484111a2603b15cf982a4e710c8">&#9670;&#160;</a></span>av_frame_get_sample_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int av_frame_get_sample_rate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0e3085c5a7aa8e8867ec6322983d3bc7" name="ga0e3085c5a7aa8e8867ec6322983d3bc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e3085c5a7aa8e8867ec6322983d3bc7">&#9670;&#160;</a></span>av_frame_get_side_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> * av_frame_get_side_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>a pointer to the side data of a given type on success, NULL if there is no side data with such type in this frame. </dd></dl>
+
+</div>
+</div>
+<a id="ga3ba755bada5c3c8883361ef43fb5fb7a" name="ga3ba755bada5c3c8883361ef43fb5fb7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ba755bada5c3c8883361ef43fb5fb7a">&#9670;&#160;</a></span>av_frame_is_writable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_frame_is_writable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the frame data is writable. </p>
+<dl class="section return"><dt>返回</dt><dd>A positive value if the frame data is writable (which is true if and only if each of the underlying buffers has only one reference, namely the one stored in this frame). Return 0 otherwise.</dd></dl>
+<p>If 1 is returned the answer is valid until <a class="el" href="group__lavu__buffer.html#gab8c6e41e6063c2210bfe0b54dc63e8ed" title="Create a new reference to an AVBuffer.">av_buffer_ref()</a> is called on any of the underlying AVBufferRefs (e.g. through <a class="el" href="#ga88b0ecbc4eb3453eef3fbefa3bddeb7c" title="Set up a new reference to the data described by the source frame.">av_frame_ref()</a> or directly).</p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#gadd5417c06f5a6b419b0dbd8f0ff363fd" title="Ensure that the frame data is writable, avoiding data copy if possible.">av_frame_make_writable()</a>, <a class="el" href="group__lavu__buffer.html#ga060be34ace567ae378fd0a786e847053">av_buffer_is_writable()</a> </dd></dl>
+
+</div>
+</div>
+<a id="gadd5417c06f5a6b419b0dbd8f0ff363fd" name="gadd5417c06f5a6b419b0dbd8f0ff363fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd5417c06f5a6b419b0dbd8f0ff363fd">&#9670;&#160;</a></span>av_frame_make_writable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_frame_make_writable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ensure that the frame data is writable, avoiding data copy if possible. </p>
+<p>Do nothing if the frame is writable, allocate new buffers and copy the data if it is not.</p>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on error.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga3ba755bada5c3c8883361ef43fb5fb7a" title="Check if the frame data is writable.">av_frame_is_writable()</a>, <a class="el" href="group__lavu__buffer.html#ga060be34ace567ae378fd0a786e847053">av_buffer_is_writable()</a>, <a class="el" href="group__lavu__buffer.html#ga9c2a1be1b7bb80eec8613fdb62a19074" title="Create a writable reference from a given buffer reference, avoiding data copy if possible.">av_buffer_make_writable()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga709e62bc2917ffd84c5c0f4e1dfc48f7" name="ga709e62bc2917ffd84c5c0f4e1dfc48f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga709e62bc2917ffd84c5c0f4e1dfc48f7">&#9670;&#160;</a></span>av_frame_move_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_move_ref </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move everything contained in src to dst and reset src. </p>
+<dl class="section warning"><dt>警告</dt><dd>: dst is not unreferenced, but directly overwritten without reading or deallocating its contents. Call av_frame_unref(dst) manually before calling this function to ensure that no memory is leaked. </dd></dl>
+
+</div>
+</div>
+<a id="gac169cffd766958d24ea08ca1878f20eb" name="gac169cffd766958d24ea08ca1878f20eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac169cffd766958d24ea08ca1878f20eb">&#9670;&#160;</a></span>av_frame_new_side_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> * av_frame_new_side_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a new side data to a frame. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>a frame to which the side data should be added </td></tr>
+    <tr><td class="paramname">type</td><td>type of the added side data </td></tr>
+    <tr><td class="paramname">size</td><td>size of the side data</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>newly added side data on success, NULL on error </dd></dl>
+
+</div>
+</div>
+<a id="gab2aafcdaafcb1d3e7ce2d0d6f733546a" name="gab2aafcdaafcb1d3e7ce2d0d6f733546a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2aafcdaafcb1d3e7ce2d0d6f733546a">&#9670;&#160;</a></span>av_frame_new_side_data_from_buf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_a_v_frame_side_data.html">AVFrameSideData</a> * av_frame_new_side_data_from_buf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a new side data to a frame from an existing <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>a frame to which the side data should be added </td></tr>
+    <tr><td class="paramname">type</td><td>the type of the added side data </td></tr>
+    <tr><td class="paramname">buf</td><td>an <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> to add as side data. The ownership of the reference is transferred to the frame.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>newly added side data on success, NULL on error. On failure the frame is unchanged and the <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> remains owned by the caller. </dd></dl>
+
+</div>
+</div>
+<a id="ga88b0ecbc4eb3453eef3fbefa3bddeb7c" name="ga88b0ecbc4eb3453eef3fbefa3bddeb7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga88b0ecbc4eb3453eef3fbefa3bddeb7c">&#9670;&#160;</a></span>av_frame_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int av_frame_ref </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set up a new reference to the data described by the source frame. </p>
+<p>Copy frame properties from src to dst and create a new reference for each <a class="el" href="struct_a_v_buffer_ref.html" title="A reference to a data buffer.">AVBufferRef</a> from src.</p>
+<p>If src is not reference counted, new buffers are allocated and the data is copied.</p>
+<dl class="section warning"><dt>警告</dt><dd>: dst MUST have been either unreferenced with av_frame_unref(dst), or newly allocated with <a class="el" href="#gac778d9609ac0c42d0a9445e549de172e" title="Allocate an AVFrame and set its fields to default values.">av_frame_alloc()</a> before calling this function, or undefined behavior will occur.</dd></dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, a negative AVERROR on error </dd></dl>
+
+</div>
+</div>
+<a id="ga132d6c01d0a21e5b48b96cd7c988de91" name="ga132d6c01d0a21e5b48b96cd7c988de91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga132d6c01d0a21e5b48b96cd7c988de91">&#9670;&#160;</a></span>av_frame_remove_side_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_remove_side_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If side data of the supplied type exists in the frame, free it and remove it from the frame. </p>
+
+</div>
+</div>
+<a id="gad7708227eba08ff739576c251b174934" name="gad7708227eba08ff739576c251b174934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7708227eba08ff739576c251b174934">&#9670;&#160;</a></span>av_frame_set_best_effort_timestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_best_effort_timestamp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga87a6e7cdf7fe675be91b655dc4ae794e" name="ga87a6e7cdf7fe675be91b655dc4ae794e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87a6e7cdf7fe675be91b655dc4ae794e">&#9670;&#160;</a></span>av_frame_set_channel_layout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_channel_layout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga53f781c6fc731399b2cdf63a97978d35" name="ga53f781c6fc731399b2cdf63a97978d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53f781c6fc731399b2cdf63a97978d35">&#9670;&#160;</a></span>av_frame_set_channels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_channels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga24180c5de867fbdc50746cbe7023d624" name="ga24180c5de867fbdc50746cbe7023d624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24180c5de867fbdc50746cbe7023d624">&#9670;&#160;</a></span>av_frame_set_color_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_color_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="pixfmt_8h.html#a3da0bf691418bc22c4bcbe6583ad589a">AVColorRange</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga13d84467430d2ad75ce9e0091ca8f4c4" name="ga13d84467430d2ad75ce9e0091ca8f4c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga13d84467430d2ad75ce9e0091ca8f4c4">&#9670;&#160;</a></span>av_frame_set_colorspace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_colorspace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa50e609bbed3256839b77a5b8bf8d3fe" name="gaa50e609bbed3256839b77a5b8bf8d3fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa50e609bbed3256839b77a5b8bf8d3fe">&#9670;&#160;</a></span>av_frame_set_decode_error_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_decode_error_flags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga627f9f91f1cab9898a5d8c8a6cb259eb" name="ga627f9f91f1cab9898a5d8c8a6cb259eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga627f9f91f1cab9898a5d8c8a6cb259eb">&#9670;&#160;</a></span>av_frame_set_metadata()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_metadata </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__lavu__dict.html#ga1d7cc0833bee918994a600556410315f">AVDictionary</a> *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga58b0960f75af92d98a41b5d640d31af5" name="ga58b0960f75af92d98a41b5d640d31af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58b0960f75af92d98a41b5d640d31af5">&#9670;&#160;</a></span>av_frame_set_pkt_duration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_pkt_duration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae2ebf63faa7bd8855738f8c6825d6da6" name="gae2ebf63faa7bd8855738f8c6825d6da6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2ebf63faa7bd8855738f8c6825d6da6">&#9670;&#160;</a></span>av_frame_set_pkt_pos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_pkt_pos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga456f04c3e9c0246e1632f1323f6f2f92" name="ga456f04c3e9c0246e1632f1323f6f2f92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga456f04c3e9c0246e1632f1323f6f2f92">&#9670;&#160;</a></span>av_frame_set_pkt_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_pkt_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad08c37260c53f8587fe747dba285dd70" name="gad08c37260c53f8587fe747dba285dd70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad08c37260c53f8587fe747dba285dd70">&#9670;&#160;</a></span>av_frame_set_qp_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> int av_frame_set_qp_table </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>stride</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga7b97de1236751c84523961595233837b" name="ga7b97de1236751c84523961595233837b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b97de1236751c84523961595233837b">&#9670;&#160;</a></span>av_frame_set_sample_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="attributes_8h.html#aa6d076561d3a9eea4729ee632652de02">attribute_deprecated</a> <a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_set_sample_rate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaff674f7f4b25bdacf32fc8f3174138ab" name="gaff674f7f4b25bdacf32fc8f3174138ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff674f7f4b25bdacf32fc8f3174138ab">&#9670;&#160;</a></span>av_frame_side_data_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * av_frame_side_data_name </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="#gae01fa7e427274293aacdf2adc17076bc">AVFrameSideDataType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>a string identifying the side data type </dd></dl>
+
+</div>
+</div>
+<a id="ga0a2b687f9c1c5ed0089b01fd61227108" name="ga0a2b687f9c1c5ed0089b01fd61227108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a2b687f9c1c5ed0089b01fd61227108">&#9670;&#160;</a></span>av_frame_unref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> av_frame_unref </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_a_v_frame.html">AVFrame</a> *</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unreference all the buffers referenced by frame and reset the frame fields. </p>
+
+</div>
+</div>
+<a id="ga43da209738677658a2a5a7a80e1ed35a" name="ga43da209738677658a2a5a7a80e1ed35a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43da209738677658a2a5a7a80e1ed35a">&#9670;&#160;</a></span>av_get_colorspace_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * av_get_colorspace_name </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="pixfmt_8h.html#aff71a069509a1ad3ff54d53a1c894c85">AVColorSpace</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the name of a colorspace. </p>
+<dl class="section return"><dt>返回</dt><dd>a static string identifying the colorspace; can be NULL. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

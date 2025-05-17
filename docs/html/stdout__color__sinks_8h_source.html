@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: stdout_color_sinks.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('stdout__color__sinks_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">stdout_color_sinks.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="stdout__color__sinks_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright(c) 2015-present, Gabi Melman &amp; spdlog contributors.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Distributed under the MIT License (http://opensource.org/licenses/MIT)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    #include &lt;<a class="code" href="wincolor__sink_8h.html">spdlog/sinks/wincolor_sink.h</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">    #include &lt;<a class="code" href="ansicolor__sink_8h.html">spdlog/sinks/ansicolor_sink.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="synchronous__factory_8h.html">spdlog/details/synchronous_factory.h</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog.html">spdlog</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacespdlog_1_1sinks.html">sinks</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a0866026fe261fbbfccded9db95b2d9de">stdout_color_sink_mt</a> = <a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#ab64a6bb691aca5d1721d7a95f83f4fae">wincolor_stdout_sink_mt</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#ad1904c31d0a2cf5a37494abb0f9e9bab">stdout_color_sink_st</a> = <a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a730b4c79a782f8e1a125f6404aaebfe0">wincolor_stdout_sink_st</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a4bbad9e5b490135e85940cbe482a9c51">stderr_color_sink_mt</a> = <a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#acf70787d526933b03e7255788afe0e47">wincolor_stderr_sink_mt</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a9c87dbd702a09207abbe865d87209745">stderr_color_sink_st</a> = <a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#ada6a38550de5943f5d23dff8eda00ec9">wincolor_stderr_sink_st</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#a0866026fe261fbbfccded9db95b2d9de">   22</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a0866026fe261fbbfccded9db95b2d9de">stdout_color_sink_mt</a> = <a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#afedf4664bb45c14cdb7bb295ece3cf31">ansicolor_stdout_sink_mt</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#ad1904c31d0a2cf5a37494abb0f9e9bab">   23</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#ad1904c31d0a2cf5a37494abb0f9e9bab">stdout_color_sink_st</a> = <a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#ab4c57402bd15d4335ebf0276a021dd31">ansicolor_stdout_sink_st</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#a4bbad9e5b490135e85940cbe482a9c51">   24</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a4bbad9e5b490135e85940cbe482a9c51">stderr_color_sink_mt</a> = <a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a80f11f7db29a8f76964c8a06beb349ff">ansicolor_stderr_sink_mt</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespacespdlog_1_1sinks.html#a9c87dbd702a09207abbe865d87209745">   25</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#a9c87dbd702a09207abbe865d87209745">stderr_color_sink_st</a> = <a class="code hl_typedef" href="namespacespdlog_1_1sinks.html#af8c9f976f80ead06de771037242441ec">ansicolor_stderr_sink_st</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}  <span class="comment">// namespace sinks</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#ada62f2bb5985946854bae42708eb1ce3">stdout_color_mt</a>(<span class="keyword">const</span> std::string &amp;logger_name,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                                        <a class="code hl_enumeration" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode = <a class="code hl_enumvalue" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4ba2bd9c0ed00116be1258e0cc66617d7c8">color_mode::automatic</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#ae023ccdbcf7ee8aef7ab64f52b15bf24">stdout_color_st</a>(<span class="keyword">const</span> std::string &amp;logger_name,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                        <a class="code hl_enumeration" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode = <a class="code hl_enumvalue" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4ba2bd9c0ed00116be1258e0cc66617d7c8">color_mode::automatic</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#a52943543636a0f0ad8ee6439e2759536">stderr_color_mt</a>(<span class="keyword">const</span> std::string &amp;logger_name,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                                        <a class="code hl_enumeration" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode = <a class="code hl_enumvalue" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4ba2bd9c0ed00116be1258e0cc66617d7c8">color_mode::automatic</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Factory = spdlog::synchronous_factory&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>std::shared_ptr&lt;logger&gt; <a class="code hl_function" href="namespacespdlog.html#a3fb804a4c6b2e15c5bbbd67c5484a2a3">stderr_color_st</a>(<span class="keyword">const</span> std::string &amp;logger_name,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                        <a class="code hl_enumeration" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">color_mode</a> mode = <a class="code hl_enumvalue" href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4ba2bd9c0ed00116be1258e0cc66617d7c8">color_mode::automatic</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}  <span class="comment">// namespace spdlog</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#ifdef SPDLOG_HEADER_ONLY</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">    #include &quot;<a class="code" href="stdout__color__sinks-inl_8h.html">stdout_color_sinks-inl.h</a>&quot;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aansicolor__sink_8h_html"><div class="ttname"><a href="ansicolor__sink_8h.html">ansicolor_sink.h</a></div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html"><div class="ttname"><a href="namespacespdlog_1_1sinks.html">spdlog::sinks</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:127</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a0866026fe261fbbfccded9db95b2d9de"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a0866026fe261fbbfccded9db95b2d9de">spdlog::sinks::stdout_color_sink_mt</a></div><div class="ttdeci">ansicolor_stdout_sink_mt stdout_color_sink_mt</div><div class="ttdef"><b>定义</b> stdout_color_sinks.h:22</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a4bbad9e5b490135e85940cbe482a9c51"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a4bbad9e5b490135e85940cbe482a9c51">spdlog::sinks::stderr_color_sink_mt</a></div><div class="ttdeci">ansicolor_stderr_sink_mt stderr_color_sink_mt</div><div class="ttdef"><b>定义</b> stdout_color_sinks.h:24</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a730b4c79a782f8e1a125f6404aaebfe0"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a730b4c79a782f8e1a125f6404aaebfe0">spdlog::sinks::wincolor_stdout_sink_st</a></div><div class="ttdeci">wincolor_stdout_sink&lt; details::console_nullmutex &gt; wincolor_stdout_sink_st</div><div class="ttdef"><b>定义</b> wincolor_sink.h:73</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a80f11f7db29a8f76964c8a06beb349ff"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a80f11f7db29a8f76964c8a06beb349ff">spdlog::sinks::ansicolor_stderr_sink_mt</a></div><div class="ttdeci">ansicolor_stderr_sink&lt; details::console_mutex &gt; ansicolor_stderr_sink_mt</div><div class="ttdef"><b>定义</b> ansicolor_sink.h:108</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_a9c87dbd702a09207abbe865d87209745"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#a9c87dbd702a09207abbe865d87209745">spdlog::sinks::stderr_color_sink_st</a></div><div class="ttdeci">ansicolor_stderr_sink_st stderr_color_sink_st</div><div class="ttdef"><b>定义</b> stdout_color_sinks.h:25</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_ab4c57402bd15d4335ebf0276a021dd31"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#ab4c57402bd15d4335ebf0276a021dd31">spdlog::sinks::ansicolor_stdout_sink_st</a></div><div class="ttdeci">ansicolor_stdout_sink&lt; details::console_nullmutex &gt; ansicolor_stdout_sink_st</div><div class="ttdef"><b>定义</b> ansicolor_sink.h:106</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_ab64a6bb691aca5d1721d7a95f83f4fae"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#ab64a6bb691aca5d1721d7a95f83f4fae">spdlog::sinks::wincolor_stdout_sink_mt</a></div><div class="ttdeci">wincolor_stdout_sink&lt; details::console_mutex &gt; wincolor_stdout_sink_mt</div><div class="ttdef"><b>定义</b> wincolor_sink.h:72</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_acf70787d526933b03e7255788afe0e47"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#acf70787d526933b03e7255788afe0e47">spdlog::sinks::wincolor_stderr_sink_mt</a></div><div class="ttdeci">wincolor_stderr_sink&lt; details::console_mutex &gt; wincolor_stderr_sink_mt</div><div class="ttdef"><b>定义</b> wincolor_sink.h:75</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_ad1904c31d0a2cf5a37494abb0f9e9bab"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#ad1904c31d0a2cf5a37494abb0f9e9bab">spdlog::sinks::stdout_color_sink_st</a></div><div class="ttdeci">ansicolor_stdout_sink_st stdout_color_sink_st</div><div class="ttdef"><b>定义</b> stdout_color_sinks.h:23</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_ada6a38550de5943f5d23dff8eda00ec9"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#ada6a38550de5943f5d23dff8eda00ec9">spdlog::sinks::wincolor_stderr_sink_st</a></div><div class="ttdeci">wincolor_stderr_sink&lt; details::console_nullmutex &gt; wincolor_stderr_sink_st</div><div class="ttdef"><b>定义</b> wincolor_sink.h:76</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_af8c9f976f80ead06de771037242441ec"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#af8c9f976f80ead06de771037242441ec">spdlog::sinks::ansicolor_stderr_sink_st</a></div><div class="ttdeci">ansicolor_stderr_sink&lt; details::console_nullmutex &gt; ansicolor_stderr_sink_st</div><div class="ttdef"><b>定义</b> ansicolor_sink.h:109</div></div>
+<div class="ttc" id="anamespacespdlog_1_1sinks_html_afedf4664bb45c14cdb7bb295ece3cf31"><div class="ttname"><a href="namespacespdlog_1_1sinks.html#afedf4664bb45c14cdb7bb295ece3cf31">spdlog::sinks::ansicolor_stdout_sink_mt</a></div><div class="ttdeci">ansicolor_stdout_sink&lt; details::console_mutex &gt; ansicolor_stdout_sink_mt</div><div class="ttdef"><b>定义</b> ansicolor_sink.h:105</div></div>
+<div class="ttc" id="anamespacespdlog_html"><div class="ttname"><a href="namespacespdlog.html">spdlog</a></div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/Async.h:25</div></div>
+<div class="ttc" id="anamespacespdlog_html_a3fb804a4c6b2e15c5bbbd67c5484a2a3"><div class="ttname"><a href="namespacespdlog.html#a3fb804a4c6b2e15c5bbbd67c5484a2a3">spdlog::stderr_color_st</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; stderr_color_st(const std::string &amp;logger_name, color_mode mode)</div><div class="ttdef"><b>定义</b> stdout_color_sinks-inl.h:34</div></div>
+<div class="ttc" id="anamespacespdlog_html_a4a9d1972123365923ce2903dd9919b4b"><div class="ttname"><a href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4b">spdlog::color_mode</a></div><div class="ttdeci">color_mode</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:288</div></div>
+<div class="ttc" id="anamespacespdlog_html_a4a9d1972123365923ce2903dd9919b4ba2bd9c0ed00116be1258e0cc66617d7c8"><div class="ttname"><a href="namespacespdlog.html#a4a9d1972123365923ce2903dd9919b4ba2bd9c0ed00116be1258e0cc66617d7c8">spdlog::color_mode::automatic</a></div><div class="ttdeci">@ automatic</div><div class="ttdef"><b>定义</b> MySpdlog/spdlog/common.h:288</div></div>
+<div class="ttc" id="anamespacespdlog_html_a52943543636a0f0ad8ee6439e2759536"><div class="ttname"><a href="namespacespdlog.html#a52943543636a0f0ad8ee6439e2759536">spdlog::stderr_color_mt</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; stderr_color_mt(const std::string &amp;logger_name, color_mode mode)</div><div class="ttdef"><b>定义</b> stdout_color_sinks-inl.h:28</div></div>
+<div class="ttc" id="anamespacespdlog_html_ada62f2bb5985946854bae42708eb1ce3"><div class="ttname"><a href="namespacespdlog.html#ada62f2bb5985946854bae42708eb1ce3">spdlog::stdout_color_mt</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; stdout_color_mt(const std::string &amp;logger_name, color_mode mode)</div><div class="ttdef"><b>定义</b> stdout_color_sinks-inl.h:16</div></div>
+<div class="ttc" id="anamespacespdlog_html_ae023ccdbcf7ee8aef7ab64f52b15bf24"><div class="ttname"><a href="namespacespdlog.html#ae023ccdbcf7ee8aef7ab64f52b15bf24">spdlog::stdout_color_st</a></div><div class="ttdeci">SPDLOG_INLINE std::shared_ptr&lt; logger &gt; stdout_color_st(const std::string &amp;logger_name, color_mode mode)</div><div class="ttdef"><b>定义</b> stdout_color_sinks-inl.h:22</div></div>
+<div class="ttc" id="astdout__color__sinks-inl_8h_html"><div class="ttname"><a href="stdout__color__sinks-inl_8h.html">stdout_color_sinks-inl.h</a></div></div>
+<div class="ttc" id="asynchronous__factory_8h_html"><div class="ttname"><a href="synchronous__factory_8h.html">synchronous_factory.h</a></div></div>
+<div class="ttc" id="awincolor__sink_8h_html"><div class="ttname"><a href="wincolor__sink_8h.html">wincolor_sink.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_21f5e1ee6caa16fe34abb05953b5993e.html">MySpdlog</a></li><li class="navelem"><a class="el" href="dir_66724ce4a28b15682a3ab6957c76bf9a.html">spdlog</a></li><li class="navelem"><a class="el" href="dir_fa8338fc4b4a83904b44433ebb24174a.html">sinks</a></li><li class="navelem"><a class="el" href="stdout__color__sinks_8h.html">stdout_color_sinks.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

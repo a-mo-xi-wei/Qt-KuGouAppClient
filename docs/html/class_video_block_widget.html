@@ -1,0 +1,927 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: VideoBlockWidget类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_video_block_widget.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_video_block_widget-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">VideoBlockWidget类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>视频块界面类，显示视频封面、名称、作者和图标  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_video_block_widget_8h_source.html">VideoBlockWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+类 VideoBlockWidget 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget__inherit__graph.png" border="0" usemap="#a_video_block_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_video_block_widget_inherit__map" id="a_video_block_widget_inherit__map">
+<area shape="rect" title="视频块界面类，显示视频封面、名称、作者和图标" alt="" coords="5,80,134,107"/>
+<area shape="rect" title=" " alt="" coords="33,5,106,32"/>
+<area shape="poly" title=" " alt="" coords="72,48,72,80,67,80,67,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+VideoBlockWidget 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget__coll__graph.png" border="0" usemap="#a_video_block_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="a_video_block_widget_coll__map" id="a_video_block_widget_coll__map">
+<area shape="rect" title="视频块界面类，显示视频封面、名称、作者和图标" alt="" coords="5,80,134,107"/>
+<area shape="rect" title=" " alt="" coords="33,5,106,32"/>
+<area shape="poly" title=" " alt="" coords="72,48,72,80,67,80,67,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aca89e3c0f221c23188bd01fdbb67cd70" id="r_aca89e3c0f221c23188bd01fdbb67cd70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca89e3c0f221c23188bd01fdbb67cd70">VideoBlockWidget</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aca89e3c0f221c23188bd01fdbb67cd70"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:aca89e3c0f221c23188bd01fdbb67cd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab572a468408c49115d4c7283be92580c" id="r_ab572a468408c49115d4c7283be92580c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab572a468408c49115d4c7283be92580c">~VideoBlockWidget</a> () override</td></tr>
+<tr class="memdesc:ab572a468408c49115d4c7283be92580c"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:ab572a468408c49115d4c7283be92580c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577e699921fb58de1d51f2352a6088e1" id="r_a577e699921fb58de1d51f2352a6088e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a577e699921fb58de1d51f2352a6088e1">setCoverPix</a> (const QString &amp;pixmapPath) const</td></tr>
+<tr class="memdesc:a577e699921fb58de1d51f2352a6088e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置封面图片  <br /></td></tr>
+<tr class="separator:a577e699921fb58de1d51f2352a6088e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93f2a5d2dbe240d905986b12dd601208" id="r_a93f2a5d2dbe240d905986b12dd601208"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f2a5d2dbe240d905986b12dd601208">setVideoName</a> (const QString &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaab068931cc450442b63f5b3d276ea4297">name</a>)</td></tr>
+<tr class="memdesc:a93f2a5d2dbe240d905986b12dd601208"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置视频名称  <br /></td></tr>
+<tr class="separator:a93f2a5d2dbe240d905986b12dd601208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63131f75b21e758751fe1c60fce6ad1d" id="r_a63131f75b21e758751fe1c60fce6ad1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63131f75b21e758751fe1c60fce6ad1d">setIconPix</a> (const QString &amp;pix) const</td></tr>
+<tr class="memdesc:a63131f75b21e758751fe1c60fce6ad1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置图标图片  <br /></td></tr>
+<tr class="separator:a63131f75b21e758751fe1c60fce6ad1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43290dd8483ee5c69ffb82df772af4b0" id="r_a43290dd8483ee5c69ffb82df772af4b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43290dd8483ee5c69ffb82df772af4b0">setAuthor</a> (const QString &amp;author)</td></tr>
+<tr class="memdesc:a43290dd8483ee5c69ffb82df772af4b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置作者  <br /></td></tr>
+<tr class="separator:a43290dd8483ee5c69ffb82df772af4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef980f871cee11755418d3e6b01b576" id="r_a7ef980f871cee11755418d3e6b01b576"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ef980f871cee11755418d3e6b01b576">setShowTip</a> () const</td></tr>
+<tr class="memdesc:a7ef980f871cee11755418d3e6b01b576"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示提示标签  <br /></td></tr>
+<tr class="separator:a7ef980f871cee11755418d3e6b01b576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30b393b3834eb1e1f5872f540cfd141" id="r_ae30b393b3834eb1e1f5872f540cfd141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae30b393b3834eb1e1f5872f540cfd141">setTipText</a> (const QString &amp;text) const</td></tr>
+<tr class="memdesc:ae30b393b3834eb1e1f5872f540cfd141"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置提示文本  <br /></td></tr>
+<tr class="separator:ae30b393b3834eb1e1f5872f540cfd141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a7523c71b2bf60975302287ec8923f80e" id="r_a7523c71b2bf60975302287ec8923f80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a7523c71b2bf60975302287ec8923f80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标按下事件  <br /></td></tr>
+<tr class="separator:a7523c71b2bf60975302287ec8923f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2de3e1806dc8e5d659fc1f35545a5b87" id="r_a2de3e1806dc8e5d659fc1f35545a5b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2de3e1806dc8e5d659fc1f35545a5b87">mouseReleaseEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a2de3e1806dc8e5d659fc1f35545a5b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标释放事件  <br /></td></tr>
+<tr class="separator:a2de3e1806dc8e5d659fc1f35545a5b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7cbd844218ae8d806339f58a33a3699" id="r_aa7cbd844218ae8d806339f58a33a3699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7cbd844218ae8d806339f58a33a3699">mouseDoubleClickEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:aa7cbd844218ae8d806339f58a33a3699"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标双击事件  <br /></td></tr>
+<tr class="separator:aa7cbd844218ae8d806339f58a33a3699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb87a6d4464680c455d278d1d32eba6" id="r_a7eb87a6d4464680c455d278d1d32eba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a> (QObject *watched, QEvent *event) override</td></tr>
+<tr class="memdesc:a7eb87a6d4464680c455d278d1d32eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤器  <br /></td></tr>
+<tr class="separator:a7eb87a6d4464680c455d278d1d32eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整大小事件  <br /></td></tr>
+<tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a92629d5d36c901e16896f80f1c48ad0a" id="r_a92629d5d36c901e16896f80f1c48ad0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92629d5d36c901e16896f80f1c48ad0a">initUi</a> () const</td></tr>
+<tr class="memdesc:a92629d5d36c901e16896f80f1c48ad0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化界面  <br /></td></tr>
+<tr class="separator:a92629d5d36c901e16896f80f1c48ad0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad348df3dcade07302ca6160c721c8f98" id="r_ad348df3dcade07302ca6160c721c8f98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad348df3dcade07302ca6160c721c8f98">updateVideoNameText</a> () const</td></tr>
+<tr class="memdesc:ad348df3dcade07302ca6160c721c8f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新视频名称文本  <br /></td></tr>
+<tr class="separator:ad348df3dcade07302ca6160c721c8f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4524096108d4ff696f94c56312b4af52" id="r_a4524096108d4ff696f94c56312b4af52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4524096108d4ff696f94c56312b4af52">updateVideoAuthorText</a> () const</td></tr>
+<tr class="memdesc:a4524096108d4ff696f94c56312b4af52"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新作者文本  <br /></td></tr>
+<tr class="separator:a4524096108d4ff696f94c56312b4af52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:adcf16d5b5d411c733e27eb857dd02c53" id="r_adcf16d5b5d411c733e27eb857dd02c53"><td class="memItemLeft" align="right" valign="top">Ui::VideoBlockWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcf16d5b5d411c733e27eb857dd02c53">ui</a></td></tr>
+<tr class="memdesc:adcf16d5b5d411c733e27eb857dd02c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 界面指针  <br /></td></tr>
+<tr class="separator:adcf16d5b5d411c733e27eb857dd02c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b17d45603e019805bcd8402ed2cf27b" id="r_a1b17d45603e019805bcd8402ed2cf27b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b17d45603e019805bcd8402ed2cf27b">m_videoName</a></td></tr>
+<tr class="memdesc:a1b17d45603e019805bcd8402ed2cf27b"><td class="mdescLeft">&#160;</td><td class="mdescRight">视频名称  <br /></td></tr>
+<tr class="separator:a1b17d45603e019805bcd8402ed2cf27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1479a3efb9935b395192c0cc28f438" id="r_a9f1479a3efb9935b395192c0cc28f438"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f1479a3efb9935b395192c0cc28f438">m_videoAuthor</a></td></tr>
+<tr class="memdesc:a9f1479a3efb9935b395192c0cc28f438"><td class="mdescLeft">&#160;</td><td class="mdescRight">视频作者  <br /></td></tr>
+<tr class="separator:a9f1479a3efb9935b395192c0cc28f438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>视频块界面类，显示视频封面、名称、作者和图标 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aca89e3c0f221c23188bd01fdbb67cd70" name="aca89e3c0f221c23188bd01fdbb67cd70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca89e3c0f221c23188bd01fdbb67cd70">&#9670;&#160;</a></span>VideoBlockWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_video_block_widget.html">VideoBlockWidget</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<p>构造函数，初始化视频块</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置 UI 布局</p>
+<p>&lt; 加载样式表</p>
+<p>&lt; 应用样式表</p>
+<p>&lt; 记录错误日志</p>
+<p>&lt; 初始化界面</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget_aca89e3c0f221c23188bd01fdbb67cd70_cgraph.png" border="0" usemap="#aclass_video_block_widget_aca89e3c0f221c23188bd01fdbb67cd70_cgraph" alt=""/></div>
+<map name="aclass_video_block_widget_aca89e3c0f221c23188bd01fdbb67cd70_cgraph" id="aclass_video_block_widget_aca89e3c0f221c23188bd01fdbb67cd70_cgraph">
+<area shape="rect" title="构造函数" alt="" coords="5,29,134,56"/>
+<area shape="poly" title=" " alt="" coords="45,30,41,21,44,11,54,5,70,3,86,5,95,12,92,16,84,10,69,8,56,10,48,14,46,20,50,28"/>
+<area shape="rect" href="class_video_block_widget.html#a92629d5d36c901e16896f80f1c48ad0a" title="初始化界面" alt="" coords="182,29,233,56"/>
+<area shape="poly" title=" " alt="" coords="134,40,166,40,166,45,134,45"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget_aca89e3c0f221c23188bd01fdbb67cd70_icgraph.png" border="0" usemap="#aclass_video_block_widget_aca89e3c0f221c23188bd01fdbb67cd70_icgraph" alt=""/></div>
+<map name="aclass_video_block_widget_aca89e3c0f221c23188bd01fdbb67cd70_icgraph" id="aclass_video_block_widget_aca89e3c0f221c23188bd01fdbb67cd70_icgraph">
+<area shape="rect" title="构造函数" alt="" coords="5,29,134,56"/>
+<area shape="poly" title=" " alt="" coords="91,16,83,10,69,8,57,10,50,14,48,20,52,28,47,30,43,21,46,11,55,5,70,3,85,5,94,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab572a468408c49115d4c7283be92580c" name="ab572a468408c49115d4c7283be92580c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab572a468408c49115d4c7283be92580c">&#9670;&#160;</a></span>~VideoBlockWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_video_block_widget.html">VideoBlockWidget</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+<dl class="section note"><dt>注解</dt><dd>释放 UI 资源 </dd></dl>
+<p>&lt; 释放 UI 界面</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7eb87a6d4464680c455d278d1d32eba6" name="a7eb87a6d4464680c455d278d1d32eba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb87a6d4464680c455d278d1d32eba6">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>事件过滤器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>监控对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>默认实现 </dd></dl>
+<p>&lt; 调用父类处理</p>
+
+</div>
+</div>
+<a id="a92629d5d36c901e16896f80f1c48ad0a" name="a92629d5d36c901e16896f80f1c48ad0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92629d5d36c901e16896f80f1c48ad0a">&#9670;&#160;</a></span>initUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initUi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化界面 </p>
+<dl class="section note"><dt>注解</dt><dd>设置遮罩、播放按钮、时长和随机播放量 </dd></dl>
+<p>&lt; 获取遮罩</p>
+<p>&lt; 设置默认圆形填充颜色</p>
+<p>&lt; 设置悬停圆形填充颜色</p>
+<p>&lt; 设置默认三角形填充颜色</p>
+<p>&lt; 设置悬停三角形填充颜色</p>
+<p>&lt; 设置遮罩颜色</p>
+<p>&lt; 设置播放按钮图标</p>
+<p>&lt; 设置流行按钮方向</p>
+<p>&lt; 设置宽高比</p>
+<p>&lt; 默认无单位</p>
+<p>&lt; 显示时长按钮</p>
+<p>&lt; 初始化时长</p>
+<p>&lt; 生成分钟数</p>
+<p>&lt; 生成秒数</p>
+<p>&lt; 补零</p>
+<p>&lt; 设置时长文本</p>
+<p>&lt; 生成随机播放量</p>
+<p>&lt; 设置带单位</p>
+<p>&lt; 生成浮点播放量</p>
+<p>&lt; 设置播放量</p>
+<p>&lt; 设置播放量</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget_a92629d5d36c901e16896f80f1c48ad0a_icgraph.png" border="0" usemap="#aclass_video_block_widget_a92629d5d36c901e16896f80f1c48ad0a_icgraph" alt=""/></div>
+<map name="aclass_video_block_widget_a92629d5d36c901e16896f80f1c48ad0a_icgraph" id="aclass_video_block_widget_a92629d5d36c901e16896f80f1c48ad0a_icgraph">
+<area shape="rect" title="初始化界面" alt="" coords="182,29,233,56"/>
+<area shape="rect" href="class_video_block_widget.html#aca89e3c0f221c23188bd01fdbb67cd70" title="构造函数" alt="" coords="5,29,134,56"/>
+<area shape="poly" title=" " alt="" coords="166,45,134,45,134,40,166,40"/>
+<area shape="poly" title=" " alt="" coords="92,16,84,10,69,8,56,10,48,14,46,20,50,28,45,30,41,21,44,11,54,5,70,3,86,5,95,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa7cbd844218ae8d806339f58a33a3699" name="aa7cbd844218ae8d806339f58a33a3699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cbd844218ae8d806339f58a33a3699">&#9670;&#160;</a></span>mouseDoubleClickEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mouseDoubleClickEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标双击事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>忽略事件 </dd></dl>
+<p>&lt; 忽略事件</p>
+
+</div>
+</div>
+<a id="a7523c71b2bf60975302287ec8923f80e" name="a7523c71b2bf60975302287ec8923f80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7523c71b2bf60975302287ec8923f80e">&#9670;&#160;</a></span>mousePressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标按下事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>忽略事件 </dd></dl>
+<p>&lt; 忽略事件</p>
+
+</div>
+</div>
+<a id="a2de3e1806dc8e5d659fc1f35545a5b87" name="a2de3e1806dc8e5d659fc1f35545a5b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de3e1806dc8e5d659fc1f35545a5b87">&#9670;&#160;</a></span>mouseReleaseEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>鼠标释放事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>忽略事件 </dd></dl>
+<p>&lt; 忽略事件</p>
+
+</div>
+</div>
+<a id="a9a27ed4ceb22d2a19bdb88ed785085a1" name="a9a27ed4ceb22d2a19bdb88ed785085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a27ed4ceb22d2a19bdb88ed785085a1">&#9670;&#160;</a></span>resizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>调整大小事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>调整大小事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新封面高度和文本省略 </dd></dl>
+<p>&lt; 调用父类处理</p>
+<p>&lt; 设置封面高度</p>
+<p>&lt; 更新名称文本</p>
+<p>&lt; 更新作者文本</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph.png" border="0" usemap="#aclass_video_block_widget_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph" alt=""/></div>
+<map name="aclass_video_block_widget_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph" id="aclass_video_block_widget_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph">
+<area shape="rect" title="调整大小事件" alt="" coords="5,31,96,57"/>
+<area shape="rect" href="class_video_block_widget.html#a4524096108d4ff696f94c56312b4af52" title="更新作者文本" alt="" coords="144,5,300,32"/>
+<area shape="poly" title=" " alt="" coords="96,35,128,30,128,35,97,40"/>
+<area shape="rect" href="class_video_block_widget.html#ad348df3dcade07302ca6160c721c8f98" title="更新视频名称文本" alt="" coords="145,56,298,83"/>
+<area shape="poly" title=" " alt="" coords="97,48,130,53,129,58,96,53"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a43290dd8483ee5c69ffb82df772af4b0" name="a43290dd8483ee5c69ffb82df772af4b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43290dd8483ee5c69ffb82df772af4b0">&#9670;&#160;</a></span>setAuthor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setAuthor </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>author</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置作者 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">author</td><td>作者名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新作者标签并添加工具提示 </dd></dl>
+<p>&lt; 存储作者名称</p>
+<p>&lt; 创建工具提示</p>
+<p>&lt; 设置完整作者为提示</p>
+<p>&lt; 更新作者文本</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget_a43290dd8483ee5c69ffb82df772af4b0_cgraph.png" border="0" usemap="#aclass_video_block_widget_a43290dd8483ee5c69ffb82df772af4b0_cgraph" alt=""/></div>
+<map name="aclass_video_block_widget_a43290dd8483ee5c69ffb82df772af4b0_cgraph" id="aclass_video_block_widget_a43290dd8483ee5c69ffb82df772af4b0_cgraph">
+<area shape="rect" title="设置作者" alt="" coords="5,5,83,32"/>
+<area shape="rect" href="class_video_block_widget.html#a4524096108d4ff696f94c56312b4af52" title="更新作者文本" alt="" coords="131,5,287,32"/>
+<area shape="poly" title=" " alt="" coords="83,16,115,16,115,21,83,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a577e699921fb58de1d51f2352a6088e1" name="a577e699921fb58de1d51f2352a6088e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a577e699921fb58de1d51f2352a6088e1">&#9670;&#160;</a></span>setCoverPix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setCoverPix </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>pixmapPath</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置封面图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixmapPath</td><td>图片路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新封面显示</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixmapPath</td><td>图片路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新封面显示，应用圆角 </dd></dl>
+<p>&lt; 设置封面图片，圆角半径 10</p>
+
+</div>
+</div>
+<a id="a63131f75b21e758751fe1c60fce6ad1d" name="a63131f75b21e758751fe1c60fce6ad1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63131f75b21e758751fe1c60fce6ad1d">&#9670;&#160;</a></span>setIconPix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setIconPix </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>pix</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置图标图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pix</td><td>图片路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新图标显示，应用圆角效果 </dd></dl>
+<p>&lt; 加载图片</p>
+<p>&lt; 获取图标标签大小</p>
+<p>&lt; 缩放图片</p>
+<p>&lt; 设置透明背景</p>
+<p>&lt; 启用抗锯齿</p>
+<p>&lt; 创建圆角矩形路径</p>
+<p>&lt; 设置裁剪路径</p>
+<p>&lt; 绘制图片</p>
+<p>&lt; 设置图标</p>
+
+</div>
+</div>
+<a id="a7ef980f871cee11755418d3e6b01b576" name="a7ef980f871cee11755418d3e6b01b576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef980f871cee11755418d3e6b01b576">&#9670;&#160;</a></span>setShowTip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setShowTip </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>显示提示标签 </p>
+<dl class="section note"><dt>注解</dt><dd>启用封面的提示标签 </dd></dl>
+<p>&lt; 显示提示标签</p>
+<p>&lt; 设置提示样式</p>
+
+</div>
+</div>
+<a id="ae30b393b3834eb1e1f5872f540cfd141" name="ae30b393b3834eb1e1f5872f540cfd141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30b393b3834eb1e1f5872f540cfd141">&#9670;&#160;</a></span>setTipText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTipText </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置提示文本 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>提示文本 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新封面的提示标签内容 </dd></dl>
+<p>&lt; 设置提示文本</p>
+
+</div>
+</div>
+<a id="a93f2a5d2dbe240d905986b12dd601208" name="a93f2a5d2dbe240d905986b12dd601208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f2a5d2dbe240d905986b12dd601208">&#9670;&#160;</a></span>setVideoName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setVideoName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置视频名称 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>视频名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新名称标签并添加工具提示 </dd></dl>
+<p>&lt; 存储视频名称</p>
+<p>&lt; 创建工具提示</p>
+<p>&lt; 设置完整名称为提示</p>
+<p>&lt; 更新名称文本</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget_a93f2a5d2dbe240d905986b12dd601208_cgraph.png" border="0" usemap="#aclass_video_block_widget_a93f2a5d2dbe240d905986b12dd601208_cgraph" alt=""/></div>
+<map name="aclass_video_block_widget_a93f2a5d2dbe240d905986b12dd601208_cgraph" id="aclass_video_block_widget_a93f2a5d2dbe240d905986b12dd601208_cgraph">
+<area shape="rect" title="设置视频名称" alt="" coords="5,5,113,32"/>
+<area shape="rect" href="class_video_block_widget.html#ad348df3dcade07302ca6160c721c8f98" title="更新视频名称文本" alt="" coords="161,5,314,32"/>
+<area shape="poly" title=" " alt="" coords="113,16,145,16,145,21,113,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4524096108d4ff696f94c56312b4af52" name="a4524096108d4ff696f94c56312b4af52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4524096108d4ff696f94c56312b4af52">&#9670;&#160;</a></span>updateVideoAuthorText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateVideoAuthorText </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新作者文本 </p>
+<dl class="section note"><dt>注解</dt><dd>处理作者的省略显示 </dd></dl>
+<p>&lt; 获取字体</p>
+<p>&lt; 创建字体测量工具</p>
+<p>&lt; 计算省略文本</p>
+<p>&lt; 设置省略文本</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget_a4524096108d4ff696f94c56312b4af52_icgraph.png" border="0" usemap="#aclass_video_block_widget_a4524096108d4ff696f94c56312b4af52_icgraph" alt=""/></div>
+<map name="aclass_video_block_widget_a4524096108d4ff696f94c56312b4af52_icgraph" id="aclass_video_block_widget_a4524096108d4ff696f94c56312b4af52_icgraph">
+<area shape="rect" title="更新作者文本" alt="" coords="144,31,300,57"/>
+<area shape="rect" href="class_video_block_widget.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title="调整大小事件" alt="" coords="5,5,96,32"/>
+<area shape="poly" title=" " alt="" coords="128,33,96,28,97,23,128,27"/>
+<area shape="rect" href="class_video_block_widget.html#a43290dd8483ee5c69ffb82df772af4b0" title="设置作者" alt="" coords="12,56,89,83"/>
+<area shape="poly" title=" " alt="" coords="129,60,90,66,89,61,128,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad348df3dcade07302ca6160c721c8f98" name="ad348df3dcade07302ca6160c721c8f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad348df3dcade07302ca6160c721c8f98">&#9670;&#160;</a></span>updateVideoNameText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateVideoNameText </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新视频名称文本 </p>
+<dl class="section note"><dt>注解</dt><dd>处理名称的省略显示 </dd></dl>
+<p>&lt; 获取字体</p>
+<p>&lt; 创建字体测量工具</p>
+<p>&lt; 计算省略文本</p>
+<p>&lt; 设置省略文本</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_block_widget_ad348df3dcade07302ca6160c721c8f98_icgraph.png" border="0" usemap="#aclass_video_block_widget_ad348df3dcade07302ca6160c721c8f98_icgraph" alt=""/></div>
+<map name="aclass_video_block_widget_ad348df3dcade07302ca6160c721c8f98_icgraph" id="aclass_video_block_widget_ad348df3dcade07302ca6160c721c8f98_icgraph">
+<area shape="rect" title="更新视频名称文本" alt="" coords="161,31,314,57"/>
+<area shape="rect" href="class_video_block_widget.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title="调整大小事件" alt="" coords="14,5,104,32"/>
+<area shape="poly" title=" " alt="" coords="145,34,104,28,105,22,146,28"/>
+<area shape="rect" href="class_video_block_widget.html#a93f2a5d2dbe240d905986b12dd601208" title="设置视频名称" alt="" coords="5,56,113,83"/>
+<area shape="poly" title=" " alt="" coords="146,60,113,64,113,59,145,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a9f1479a3efb9935b395192c0cc28f438" name="a9f1479a3efb9935b395192c0cc28f438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1479a3efb9935b395192c0cc28f438">&#9670;&#160;</a></span>m_videoAuthor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString m_videoAuthor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视频作者 </p>
+
+</div>
+</div>
+<a id="a1b17d45603e019805bcd8402ed2cf27b" name="a1b17d45603e019805bcd8402ed2cf27b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b17d45603e019805bcd8402ed2cf27b">&#9670;&#160;</a></span>m_videoName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString m_videoName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视频名称 </p>
+
+</div>
+</div>
+<a id="adcf16d5b5d411c733e27eb857dd02c53" name="adcf16d5b5d411c733e27eb857dd02c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcf16d5b5d411c733e27eb857dd02c53">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::VideoBlockWidget* ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI 界面指针 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_video_block_widget_8h_source.html">VideoBlockWidget.h</a></li>
+<li><a class="el" href="_video_block_widget_8cpp.html">VideoBlockWidget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_video_block_widget.html">VideoBlockWidget</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

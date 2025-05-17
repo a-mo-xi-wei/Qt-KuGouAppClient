@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: buffersink.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('buffersink_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">buffersink.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="buffersink_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * This file is part of FFmpeg.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * FFmpeg is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * FFmpeg is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * License along with FFmpeg; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef AVFILTER_BUFFERSINK_H</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define AVFILTER_BUFFERSINK_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="avfilter_8h.html">avfilter.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#ga71ae9c529c8da51681e12faa37d1a395">   46</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__lavfi__buffersink.html#ga71ae9c529c8da51681e12faa37d1a395">av_buffersink_get_frame_flags</a>(<a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="code hl_struct" href="struct_a_v_frame.html">AVFrame</a> *frame, <span class="keywordtype">int</span> <a class="code hl_typedef" href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#ga9453fc0e81d30237080b51575da0f0d8">   53</a></span><span class="preprocessor">#define AV_BUFFERSINK_FLAG_PEEK 1</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#gade670e86ece8d740194c916fa1ea6cc0">   60</a></span><span class="preprocessor">#define AV_BUFFERSINK_FLAG_NO_REQUEST 2</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="struct_a_v_buffer_sink_params.html">   65</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a> {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="struct_a_v_buffer_sink_params.html#a9e4e30d7668f920154a6c93238899a8d">   66</a></span>    <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a> *<a class="code hl_variable" href="struct_a_v_buffer_sink_params.html#a9e4e30d7668f920154a6c93238899a8d">pixel_fmts</a>; </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#gaef17fdaa5cb0fb9211aa6687e46a2ebc">   67</a></span>} <a class="code hl_struct" href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a>;</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#gabe42a76b75acd9eac283f084b38486e4">   74</a></span><a class="code hl_struct" href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a> *<a class="code hl_function" href="group__lavfi__buffersink.html#gabe42a76b75acd9eac283f084b38486e4">av_buffersink_params_alloc</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_a_v_a_buffer_sink_params.html">   79</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a> {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="struct_a_v_a_buffer_sink_params.html#a1d3c618d345c1cc1cc1260dab631b116">   80</a></span>    <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5">AVSampleFormat</a> *<a class="code hl_variable" href="struct_a_v_a_buffer_sink_params.html#a1d3c618d345c1cc1cc1260dab631b116">sample_fmts</a>; </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="struct_a_v_a_buffer_sink_params.html#a282aad4c266eaa81bc0c4eb7472cb782">   81</a></span>    <span class="keyword">const</span> <a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> *<a class="code hl_variable" href="struct_a_v_a_buffer_sink_params.html#a282aad4c266eaa81bc0c4eb7472cb782">channel_layouts</a>;         </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_a_v_a_buffer_sink_params.html#a5d662c61a14c37eb7e1eb177108546bf">   82</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> *<a class="code hl_variable" href="struct_a_v_a_buffer_sink_params.html#a5d662c61a14c37eb7e1eb177108546bf">channel_counts</a>;              </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_a_v_a_buffer_sink_params.html#a7021a499ce03337dda58e3a47375ee8d">   83</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_a_v_a_buffer_sink_params.html#a7021a499ce03337dda58e3a47375ee8d">all_channel_counts</a>;                 </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="struct_a_v_a_buffer_sink_params.html#a24345de7506686e6560424f3bd563e2d">   84</a></span>    <span class="keywordtype">int</span> *<a class="code hl_variable" href="struct_a_v_a_buffer_sink_params.html#a24345de7506686e6560424f3bd563e2d">sample_rates</a>;                      </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#ga35467dbd36daf6334721b8f663ae86e0">   85</a></span>} <a class="code hl_struct" href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a>;</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#ga4f9dfe2525d8114c4b9574aa1a1b0ca3">   92</a></span><a class="code hl_struct" href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a> *<a class="code hl_function" href="group__lavfi__buffersink.html#ga4f9dfe2525d8114c4b9574aa1a1b0ca3">av_abuffersink_params_alloc</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#ga359d7d1e42c27ca14c07559d4e9adba7">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__lavfi__buffersink.html#ga359d7d1e42c27ca14c07559d4e9adba7">av_buffersink_set_frame_size</a>(<a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <span class="keywordtype">unsigned</span> frame_size);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#ga1eb8bbf583ffb7cc29aaa1944b1e699c">  109</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a> <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#ga1eb8bbf583ffb7cc29aaa1944b1e699c">av_buffersink_get_type</a>                (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#gabc82f65ec7f4fa47c5216260639258a1">  110</a></span><a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a>       <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#gabc82f65ec7f4fa47c5216260639258a1">av_buffersink_get_time_base</a>           (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#ga402ddbef6f7347869725696846ac81eb">  111</a></span><span class="keywordtype">int</span>              <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#ga402ddbef6f7347869725696846ac81eb">av_buffersink_get_format</a>              (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#ga55614fd28de2fa05b04f427390061d5b">  113</a></span><a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a>       <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#ga55614fd28de2fa05b04f427390061d5b">av_buffersink_get_frame_rate</a>          (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#gac8c86515d2ef56090395dfd74854c835">  114</a></span><span class="keywordtype">int</span>              <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#gac8c86515d2ef56090395dfd74854c835">av_buffersink_get_w</a>                   (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#ga955ecf3680e71e10429d7500343be25c">  115</a></span><span class="keywordtype">int</span>              <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#ga955ecf3680e71e10429d7500343be25c">av_buffersink_get_h</a>                   (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#gaa38ee33e1c7f6f7cb190bd2330e5f848">  116</a></span><a class="code hl_struct" href="struct_a_v_rational.html">AVRational</a>       <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#gaa38ee33e1c7f6f7cb190bd2330e5f848">av_buffersink_get_sample_aspect_ratio</a> (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#gace78881c41bf449527826b95d21279a2">  118</a></span><span class="keywordtype">int</span>              <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#gace78881c41bf449527826b95d21279a2">av_buffersink_get_channels</a>            (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#ga87e21bf198fd932c30cc3cdc6b16bff1">  119</a></span><a class="code hl_typedef" href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a>         <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#ga87e21bf198fd932c30cc3cdc6b16bff1">av_buffersink_get_channel_layout</a>      (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#ga2af714e82f48759551acdbc4488ded4a">  120</a></span><span class="keywordtype">int</span>              <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#ga2af714e82f48759551acdbc4488ded4a">av_buffersink_get_sample_rate</a>         (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink__accessors.html#ga0e34e0529da6906449524ca1be706794">  122</a></span><a class="code hl_struct" href="struct_a_v_buffer_ref.html">AVBufferRef</a> *    <a class="code hl_function" href="group__lavfi__buffersink__accessors.html#ga0e34e0529da6906449524ca1be706794">av_buffersink_get_hw_frames_ctx</a>       (<span class="keyword">const</span> <a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#ga653228f4cbca427c654d844a5fc59cfa">  140</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__lavfi__buffersink.html#ga653228f4cbca427c654d844a5fc59cfa">av_buffersink_get_frame</a>(<a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="code hl_struct" href="struct_a_v_frame.html">AVFrame</a> *frame);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="group__lavfi__buffersink.html#ga9c06b3744579f165cc032160c154828a">  159</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__lavfi__buffersink.html#ga9c06b3744579f165cc032160c154828a">av_buffersink_get_samples</a>(<a class="code hl_struct" href="struct_a_v_filter_context.html">AVFilterContext</a> *ctx, <a class="code hl_struct" href="struct_a_v_frame.html">AVFrame</a> *frame, <span class="keywordtype">int</span> nb_samples);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#endif </span><span class="comment">/* AVFILTER_BUFFERSINK_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_aaa5d1cd013383c889537491c3cfd9aad"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#aaa5d1cd013383c889537491c3cfd9aad">uint64_t</a></div><div class="ttdeci">unsigned long long uint64_t</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:35</div></div>
+<div class="ttc" id="a_s_d_l__config__ngage_8h_html_adec1df1b8b51cb32b77e5b86fff46471"><div class="ttname"><a href="_s_d_l__config__ngage_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a></div><div class="ttdeci">signed long long int64_t</div><div class="ttdef"><b>定义</b> SDL_config_ngage.h:34</div></div>
+<div class="ttc" id="a_s_d_l__opengl__glext_8h_html_aa9459b47e7388437191d2d9a69c10d98"><div class="ttname"><a href="_s_d_l__opengl__glext_8h.html#aa9459b47e7388437191d2d9a69c10d98">flags</a></div><div class="ttdeci">GLbitfield flags</div><div class="ttdef"><b>定义</b> SDL_opengl_glext.h:1754</div></div>
+<div class="ttc" id="aavfilter_8h_html"><div class="ttname"><a href="avfilter_8h.html">avfilter.h</a></div><div class="ttdoc">Main libavfilter public API header</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_ga0e34e0529da6906449524ca1be706794"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#ga0e34e0529da6906449524ca1be706794">av_buffersink_get_hw_frames_ctx</a></div><div class="ttdeci">AVBufferRef * av_buffersink_get_hw_frames_ctx(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_ga1eb8bbf583ffb7cc29aaa1944b1e699c"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#ga1eb8bbf583ffb7cc29aaa1944b1e699c">av_buffersink_get_type</a></div><div class="ttdeci">enum AVMediaType av_buffersink_get_type(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_ga2af714e82f48759551acdbc4488ded4a"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#ga2af714e82f48759551acdbc4488ded4a">av_buffersink_get_sample_rate</a></div><div class="ttdeci">int av_buffersink_get_sample_rate(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_ga402ddbef6f7347869725696846ac81eb"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#ga402ddbef6f7347869725696846ac81eb">av_buffersink_get_format</a></div><div class="ttdeci">int av_buffersink_get_format(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_ga55614fd28de2fa05b04f427390061d5b"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#ga55614fd28de2fa05b04f427390061d5b">av_buffersink_get_frame_rate</a></div><div class="ttdeci">AVRational av_buffersink_get_frame_rate(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_ga87e21bf198fd932c30cc3cdc6b16bff1"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#ga87e21bf198fd932c30cc3cdc6b16bff1">av_buffersink_get_channel_layout</a></div><div class="ttdeci">uint64_t av_buffersink_get_channel_layout(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_ga955ecf3680e71e10429d7500343be25c"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#ga955ecf3680e71e10429d7500343be25c">av_buffersink_get_h</a></div><div class="ttdeci">int av_buffersink_get_h(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_gaa38ee33e1c7f6f7cb190bd2330e5f848"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#gaa38ee33e1c7f6f7cb190bd2330e5f848">av_buffersink_get_sample_aspect_ratio</a></div><div class="ttdeci">AVRational av_buffersink_get_sample_aspect_ratio(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_gabc82f65ec7f4fa47c5216260639258a1"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#gabc82f65ec7f4fa47c5216260639258a1">av_buffersink_get_time_base</a></div><div class="ttdeci">AVRational av_buffersink_get_time_base(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_gac8c86515d2ef56090395dfd74854c835"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#gac8c86515d2ef56090395dfd74854c835">av_buffersink_get_w</a></div><div class="ttdeci">int av_buffersink_get_w(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink__accessors_html_gace78881c41bf449527826b95d21279a2"><div class="ttname"><a href="group__lavfi__buffersink__accessors.html#gace78881c41bf449527826b95d21279a2">av_buffersink_get_channels</a></div><div class="ttdeci">int av_buffersink_get_channels(const AVFilterContext *ctx)</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink_html_ga359d7d1e42c27ca14c07559d4e9adba7"><div class="ttname"><a href="group__lavfi__buffersink.html#ga359d7d1e42c27ca14c07559d4e9adba7">av_buffersink_set_frame_size</a></div><div class="ttdeci">void av_buffersink_set_frame_size(AVFilterContext *ctx, unsigned frame_size)</div><div class="ttdoc">Set the frame size for an audio buffer sink.</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink_html_ga4f9dfe2525d8114c4b9574aa1a1b0ca3"><div class="ttname"><a href="group__lavfi__buffersink.html#ga4f9dfe2525d8114c4b9574aa1a1b0ca3">av_abuffersink_params_alloc</a></div><div class="ttdeci">AVABufferSinkParams * av_abuffersink_params_alloc(void)</div><div class="ttdoc">Create an AVABufferSinkParams structure.</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink_html_ga653228f4cbca427c654d844a5fc59cfa"><div class="ttname"><a href="group__lavfi__buffersink.html#ga653228f4cbca427c654d844a5fc59cfa">av_buffersink_get_frame</a></div><div class="ttdeci">int av_buffersink_get_frame(AVFilterContext *ctx, AVFrame *frame)</div><div class="ttdoc">Get a frame with filtered data from sink and put it in frame.</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink_html_ga71ae9c529c8da51681e12faa37d1a395"><div class="ttname"><a href="group__lavfi__buffersink.html#ga71ae9c529c8da51681e12faa37d1a395">av_buffersink_get_frame_flags</a></div><div class="ttdeci">int av_buffersink_get_frame_flags(AVFilterContext *ctx, AVFrame *frame, int flags)</div><div class="ttdoc">Get a frame with filtered data from sink and put it in frame.</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink_html_ga9c06b3744579f165cc032160c154828a"><div class="ttname"><a href="group__lavfi__buffersink.html#ga9c06b3744579f165cc032160c154828a">av_buffersink_get_samples</a></div><div class="ttdeci">int av_buffersink_get_samples(AVFilterContext *ctx, AVFrame *frame, int nb_samples)</div><div class="ttdoc">Same as av_buffersink_get_frame(), but with the ability to specify the number of samples read.</div></div>
+<div class="ttc" id="agroup__lavfi__buffersink_html_gabe42a76b75acd9eac283f084b38486e4"><div class="ttname"><a href="group__lavfi__buffersink.html#gabe42a76b75acd9eac283f084b38486e4">av_buffersink_params_alloc</a></div><div class="ttdeci">AVBufferSinkParams * av_buffersink_params_alloc(void)</div><div class="ttdoc">Create an AVBufferSinkParams structure.</div></div>
+<div class="ttc" id="agroup__lavu__misc_html_ga9a84bba4713dfced21a1a56163be1f48"><div class="ttname"><a href="group__lavu__misc.html#ga9a84bba4713dfced21a1a56163be1f48">AVMediaType</a></div><div class="ttdeci">AVMediaType</div><div class="ttdef"><b>定义</b> avutil.h:199</div></div>
+<div class="ttc" id="agroup__lavu__sampfmts_html_gaf9a51ca15301871723577c730b5865c5"><div class="ttname"><a href="group__lavu__sampfmts.html#gaf9a51ca15301871723577c730b5865c5">AVSampleFormat</a></div><div class="ttdeci">AVSampleFormat</div><div class="ttdoc">Audio sample formats</div><div class="ttdef"><b>定义</b> samplefmt.h:58</div></div>
+<div class="ttc" id="apixfmt_8h_html_a9a8e335cf3be472042bc9f0cf80cd4c5"><div class="ttname"><a href="pixfmt_8h.html#a9a8e335cf3be472042bc9f0cf80cd4c5">AVPixelFormat</a></div><div class="ttdeci">AVPixelFormat</div><div class="ttdoc">Pixel format.</div><div class="ttdef"><b>定义</b> pixfmt.h:60</div></div>
+<div class="ttc" id="astruct_a_v_a_buffer_sink_params_html"><div class="ttname"><a href="struct_a_v_a_buffer_sink_params.html">AVABufferSinkParams</a></div><div class="ttdoc">Struct to use for initializing an abuffersink context.</div><div class="ttdef"><b>定义</b> buffersink.h:79</div></div>
+<div class="ttc" id="astruct_a_v_a_buffer_sink_params_html_a1d3c618d345c1cc1cc1260dab631b116"><div class="ttname"><a href="struct_a_v_a_buffer_sink_params.html#a1d3c618d345c1cc1cc1260dab631b116">AVABufferSinkParams::sample_fmts</a></div><div class="ttdeci">enum AVSampleFormat * sample_fmts</div><div class="ttdoc">list of allowed sample formats, terminated by AV_SAMPLE_FMT_NONE</div><div class="ttdef"><b>定义</b> buffersink.h:80</div></div>
+<div class="ttc" id="astruct_a_v_a_buffer_sink_params_html_a24345de7506686e6560424f3bd563e2d"><div class="ttname"><a href="struct_a_v_a_buffer_sink_params.html#a24345de7506686e6560424f3bd563e2d">AVABufferSinkParams::sample_rates</a></div><div class="ttdeci">int * sample_rates</div><div class="ttdoc">list of allowed sample rates, terminated by -1</div><div class="ttdef"><b>定义</b> buffersink.h:84</div></div>
+<div class="ttc" id="astruct_a_v_a_buffer_sink_params_html_a282aad4c266eaa81bc0c4eb7472cb782"><div class="ttname"><a href="struct_a_v_a_buffer_sink_params.html#a282aad4c266eaa81bc0c4eb7472cb782">AVABufferSinkParams::channel_layouts</a></div><div class="ttdeci">const int64_t * channel_layouts</div><div class="ttdoc">list of allowed channel layouts, terminated by -1</div><div class="ttdef"><b>定义</b> buffersink.h:81</div></div>
+<div class="ttc" id="astruct_a_v_a_buffer_sink_params_html_a5d662c61a14c37eb7e1eb177108546bf"><div class="ttname"><a href="struct_a_v_a_buffer_sink_params.html#a5d662c61a14c37eb7e1eb177108546bf">AVABufferSinkParams::channel_counts</a></div><div class="ttdeci">const int * channel_counts</div><div class="ttdoc">list of allowed channel counts, terminated by -1</div><div class="ttdef"><b>定义</b> buffersink.h:82</div></div>
+<div class="ttc" id="astruct_a_v_a_buffer_sink_params_html_a7021a499ce03337dda58e3a47375ee8d"><div class="ttname"><a href="struct_a_v_a_buffer_sink_params.html#a7021a499ce03337dda58e3a47375ee8d">AVABufferSinkParams::all_channel_counts</a></div><div class="ttdeci">int all_channel_counts</div><div class="ttdoc">if not 0, accept any channel count or layout</div><div class="ttdef"><b>定义</b> buffersink.h:83</div></div>
+<div class="ttc" id="astruct_a_v_buffer_ref_html"><div class="ttname"><a href="struct_a_v_buffer_ref.html">AVBufferRef</a></div><div class="ttdoc">A reference to a data buffer.</div><div class="ttdef"><b>定义</b> buffer.h:81</div></div>
+<div class="ttc" id="astruct_a_v_buffer_sink_params_html"><div class="ttname"><a href="struct_a_v_buffer_sink_params.html">AVBufferSinkParams</a></div><div class="ttdoc">Struct to use for initializing a buffersink context.</div><div class="ttdef"><b>定义</b> buffersink.h:65</div></div>
+<div class="ttc" id="astruct_a_v_buffer_sink_params_html_a9e4e30d7668f920154a6c93238899a8d"><div class="ttname"><a href="struct_a_v_buffer_sink_params.html#a9e4e30d7668f920154a6c93238899a8d">AVBufferSinkParams::pixel_fmts</a></div><div class="ttdeci">enum AVPixelFormat * pixel_fmts</div><div class="ttdoc">list of allowed pixel formats, terminated by AV_PIX_FMT_NONE</div><div class="ttdef"><b>定义</b> buffersink.h:66</div></div>
+<div class="ttc" id="astruct_a_v_filter_context_html"><div class="ttname"><a href="struct_a_v_filter_context.html">AVFilterContext</a></div><div class="ttdoc">An instance of a filter</div><div class="ttdef"><b>定义</b> avfilter.h:338</div></div>
+<div class="ttc" id="astruct_a_v_frame_html"><div class="ttname"><a href="struct_a_v_frame.html">AVFrame</a></div><div class="ttdoc">This structure describes decoded (raw) audio or video data.</div><div class="ttdef"><b>定义</b> frame.h:218</div></div>
+<div class="ttc" id="astruct_a_v_rational_html"><div class="ttname"><a href="struct_a_v_rational.html">AVRational</a></div><div class="ttdoc">Rational number (pair of numerator and denominator).</div><div class="ttdef"><b>定义</b> rational.h:58</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html">tools</a></li><li class="navelem"><a class="el" href="dir_69ea6bcb460cf70aaa3f17edbe91275f.html">ffmpeg</a></li><li class="navelem"><a class="el" href="dir_2762e6b7b2e1375f0fc089144ecff299.html">win64</a></li><li class="navelem"><a class="el" href="dir_6e3654a1348fe10ffe5d1a20ace3cd61.html">include</a></li><li class="navelem"><a class="el" href="dir_67f9c38f445dd51fe8a940e2fa50e51c.html">libavfilter</a></li><li class="navelem"><a class="el" href="buffersink_8h.html">buffersink.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

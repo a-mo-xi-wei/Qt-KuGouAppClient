@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: qtmaterialflatbutton_internal.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('qtmaterialflatbutton__internal_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">qtmaterialflatbutton_internal.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="qtmaterialflatbutton__internal_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef QTMATERIALFLATBUTTON_INTERNAL_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define QTMATERIALFLATBUTTON_INTERNAL_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QStateMachine&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// 前向声明</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_qt_material_flat_button.html">QtMaterialFlatButton</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span>QSequentialAnimationGroup;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a4390934945b095bc9388942f428255ed">QtMaterialFlatButtonStateMachine</a> : <span class="keyword">public</span> QStateMachine</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    Q_OBJECT</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a8dfb93fac6f29b7778cbf15bdc83da52">   28</a></span>    Q_PROPERTY(qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a8dfb93fac6f29b7778cbf15bdc83da52">overlayOpacity</a> WRITE <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a37745d2fefc55c52d5cea3e5270e79d6">setOverlayOpacity</a> READ <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a8dfb93fac6f29b7778cbf15bdc83da52">overlayOpacity</a>) </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a10f193b9078751975be5351f15b24387">   29</a></span>    Q_PROPERTY(qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a10f193b9078751975be5351f15b24387">checkedOverlayProgress</a> WRITE <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a2e179a59dbf456a1f2a8b3e2dfe2cf16">setCheckedOverlayProgress</a> READ <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a10f193b9078751975be5351f15b24387">checkedOverlayProgress</a>) </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#acf3811a33cec30a866c761b0099e6a59">   30</a></span>    Q_PROPERTY(qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#acf3811a33cec30a866c761b0099e6a59">haloOpacity</a> WRITE <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a1a997d7fd7ff4c87d63bc50599abfd5d">setHaloOpacity</a> READ <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#acf3811a33cec30a866c761b0099e6a59">haloOpacity</a>) </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#abfe13049ba2ce8e2563f5cb2e9c3f23f">   31</a></span>    Q_PROPERTY(qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#abfe13049ba2ce8e2563f5cb2e9c3f23f">haloSize</a> WRITE <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a97f1f932724da8fccddca90b33f4f9dc">setHaloSize</a> READ <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#abfe13049ba2ce8e2563f5cb2e9c3f23f">haloSize</a>) </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a412e48ae532671ec49ba3aaa28ec587c">   32</a></span>    Q_PROPERTY(qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a412e48ae532671ec49ba3aaa28ec587c">haloScaleFactor</a> WRITE <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#ae7bfb4d96e49b66a50dbead979c7232e">setHaloScaleFactor</a> READ <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a412e48ae532671ec49ba3aaa28ec587c">haloScaleFactor</a>) </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>public:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    explicit <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a4390934945b095bc9388942f428255ed">QtMaterialFlatButtonStateMachine</a>(<a class="code hl_class" href="class_qt_material_flat_button.html">QtMaterialFlatButton</a> *parent);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    ~<a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a4390934945b095bc9388942f428255ed">QtMaterialFlatButtonStateMachine</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a37745d2fefc55c52d5cea3e5270e79d6">setOverlayOpacity</a>(qreal opacity);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a8dfb93fac6f29b7778cbf15bdc83da52">overlayOpacity</a>() const;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a2e179a59dbf456a1f2a8b3e2dfe2cf16">setCheckedOverlayProgress</a>(qreal progress);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a10f193b9078751975be5351f15b24387">checkedOverlayProgress</a>() const;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a1a997d7fd7ff4c87d63bc50599abfd5d">setHaloOpacity</a>(qreal opacity);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#acf3811a33cec30a866c761b0099e6a59">haloOpacity</a>() const;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a97f1f932724da8fccddca90b33f4f9dc">setHaloSize</a>(qreal size);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#abfe13049ba2ce8e2563f5cb2e9c3f23f">haloSize</a>() const;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#ae7bfb4d96e49b66a50dbead979c7232e">setHaloScaleFactor</a>(qreal factor);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a412e48ae532671ec49ba3aaa28ec587c">haloScaleFactor</a>() const;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a24c90251740c0a9fb2f0829253cb2281">startAnimations</a>();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a1f50769ecee8047c922546c8b7fd0fcc">setupProperties</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#adc543c6ccad05d3035308ff5ac090944">updateCheckedStatus</a>();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>signals:</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a54d82e2e60914d150743dcfe6ddbbece">  125</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_material_flat_button_state_machine.html#a54d82e2e60914d150743dcfe6ddbbece">buttonPressed</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a58a667f5d629428f86f1c1347a660301">  130</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_material_flat_button_state_machine.html#a58a667f5d629428f86f1c1347a660301">buttonChecked</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#acea64dcc532a637b2b03649b844cb935">  135</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_material_flat_button_state_machine.html#acea64dcc532a637b2b03649b844cb935">buttonUnchecked</a>();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>protected:</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#ac9dfea1290cfa7f279086f55011a40d6">eventFilter</a>(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>private:</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    Q_DISABLE_COPY(<a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a4390934945b095bc9388942f428255ed">QtMaterialFlatButtonStateMachine</a>) </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#ae4b8f7f9d2ef008da763042633d34f59">addTransition</a>(QObject *<span class="keywordtype">object</span>, QEvent::Type eventType, QState *fromState, QState *toState);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#ae4b8f7f9d2ef008da763042633d34f59">addTransition</a>(QAbstractTransition *transition, QState *fromState, QState *toState);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a6259a4ffdacc0ee2a56fd4a02eef466f">  167</a></span>    <a class="code hl_class" href="class_qt_material_flat_button.html">QtMaterialFlatButton</a> *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a6259a4ffdacc0ee2a56fd4a02eef466f">m_button</a>;               </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#ae83230bb4519eded210de88146704d83">  168</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#ae83230bb4519eded210de88146704d83">m_topLevelState</a>;        </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#aa7fe17567830f90a75f580fd0e0839b7">  169</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#aa7fe17567830f90a75f580fd0e0839b7">m_configState</a>;          </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#ab8ce7b0ef4db7319fab1f59e98fdefe6">  170</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#ab8ce7b0ef4db7319fab1f59e98fdefe6">m_checkableState</a>;       </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#ad8d23c285c28a4a73082f7ce8e197a82">  171</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#ad8d23c285c28a4a73082f7ce8e197a82">m_checkedState</a>;         </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a7b8342eca0c60f675310ff08790b2c5a">  172</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a7b8342eca0c60f675310ff08790b2c5a">m_uncheckedState</a>;       </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#ae9e523d936de3df77c114d831cdf5541">  173</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#ae9e523d936de3df77c114d831cdf5541">m_neutralState</a>;         </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a084582001fa9e889d9ed80f609bbcfdc">  174</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a084582001fa9e889d9ed80f609bbcfdc">m_neutralFocusedState</a>;  </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#ad678814e82dca7cfcd224c9815c6b690">  175</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#ad678814e82dca7cfcd224c9815c6b690">m_hoveredState</a>;         </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#aa4d228a6a41d4cc5f14724903056c392">  176</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#aa4d228a6a41d4cc5f14724903056c392">m_hoveredFocusedState</a>;  </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a077605b76afdf7f76e20fe6a3181ba22">  177</a></span>    QState               *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a077605b76afdf7f76e20fe6a3181ba22">m_pressedState</a>;         </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a8cfe40172fd98711e841468d9cac65e9">  178</a></span>    QSequentialAnimationGroup *const <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a8cfe40172fd98711e841468d9cac65e9">m_haloAnimation</a>;   </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a7beca7abcb666b33742c857b728f0d16">  179</a></span>    qreal                       <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a7beca7abcb666b33742c857b728f0d16">m_overlayOpacity</a>;       </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a866a9741776d2f66d51379b4f2803da6">  180</a></span>    qreal                       <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a866a9741776d2f66d51379b4f2803da6">m_checkedOverlayProgress</a>; </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#ad293c163f2cc17cc4e83d7eb0131dfd0">  181</a></span>    qreal                       <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#ad293c163f2cc17cc4e83d7eb0131dfd0">m_haloOpacity</a>;          </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#af021b5549681d519a15cfce0e44ba444">  182</a></span>    qreal                       <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#af021b5549681d519a15cfce0e44ba444">m_haloSize</a>;             </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a6d8f6960834267e10609b2ee1e59e802">  183</a></span>    qreal                       <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a6d8f6960834267e10609b2ee1e59e802">m_haloScaleFactor</a>;      </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#ad09b1d1bc734f5166f54bb719e247259">  184</a></span>    <span class="keywordtype">bool</span>                        <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#ad09b1d1bc734f5166f54bb719e247259">m_wasChecked</a>;           </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>};</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a4653797998a1637820860aad13cd0f32">  187</a></span><a class="code hl_define" href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a> qreal <a class="code hl_function" href="class_qt_material_flat_button_state_machine.html#a4390934945b095bc9388942f428255ed">QtMaterialFlatButtonStateMachine</a>::<a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a8dfb93fac6f29b7778cbf15bdc83da52">overlayOpacity</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a7beca7abcb666b33742c857b728f0d16">m_overlayOpacity</a>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a02f992ee840e6112833b719e2139a6a7">  192</a></span><span class="keyword">inline</span> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a10f193b9078751975be5351f15b24387">QtMaterialFlatButtonStateMachine::checkedOverlayProgress</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a866a9741776d2f66d51379b4f2803da6">m_checkedOverlayProgress</a>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
+</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#a8c60160e6bc2f235a3aaec4b40f9c9c1">  197</a></span><span class="keyword">inline</span> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#acf3811a33cec30a866c761b0099e6a59">QtMaterialFlatButtonStateMachine::haloOpacity</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#ad293c163f2cc17cc4e83d7eb0131dfd0">m_haloOpacity</a>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
+</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#aa04f1c8f9ec4fb3752dfa0c016ff09b7">  202</a></span><span class="keyword">inline</span> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#abfe13049ba2ce8e2563f5cb2e9c3f23f">QtMaterialFlatButtonStateMachine::haloSize</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#af021b5549681d519a15cfce0e44ba444">m_haloSize</a>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>}</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="foldopen" id="foldopen00207" data-start="{" data-end="}">
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="class_qt_material_flat_button_state_machine.html#ad38a15ad012e39dd9dfb79af0df24282">  207</a></span><span class="keyword">inline</span> qreal <a class="code hl_property" href="class_qt_material_flat_button_state_machine.html#a412e48ae532671ec49ba3aaa28ec587c">QtMaterialFlatButtonStateMachine::haloScaleFactor</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_qt_material_flat_button_state_machine.html#a6d8f6960834267e10609b2ee1e59e802">m_haloScaleFactor</a>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
+</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#endif </span><span class="comment">// QTMATERIALFLATBUTTON_INTERNAL_H</span></div>
+<div class="ttc" id="aclass_qt_material_flat_button_html"><div class="ttname"><a href="class_qt_material_flat_button.html">QtMaterialFlatButton</a></div><div class="ttdoc">扁平按钮类，继承自 QPushButton，支持 Material Design 风格</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton.h:30</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a077605b76afdf7f76e20fe6a3181ba22"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a077605b76afdf7f76e20fe6a3181ba22">QtMaterialFlatButtonStateMachine::m_pressedState</a></div><div class="ttdeci">QState *const m_pressedState</div><div class="ttdoc">按下状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:177</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a084582001fa9e889d9ed80f609bbcfdc"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a084582001fa9e889d9ed80f609bbcfdc">QtMaterialFlatButtonStateMachine::m_neutralFocusedState</a></div><div class="ttdeci">QState *const m_neutralFocusedState</div><div class="ttdoc">中立焦点状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:174</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a10f193b9078751975be5351f15b24387"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a10f193b9078751975be5351f15b24387">QtMaterialFlatButtonStateMachine::checkedOverlayProgress</a></div><div class="ttdeci">qreal checkedOverlayProgress</div><div class="ttdoc">选中覆盖层进度属性</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:29</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a1a997d7fd7ff4c87d63bc50599abfd5d"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a1a997d7fd7ff4c87d63bc50599abfd5d">QtMaterialFlatButtonStateMachine::setHaloOpacity</a></div><div class="ttdeci">void setHaloOpacity(qreal opacity)</div><div class="ttdoc">设置光晕透明度</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:165</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a1f50769ecee8047c922546c8b7fd0fcc"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a1f50769ecee8047c922546c8b7fd0fcc">QtMaterialFlatButtonStateMachine::setupProperties</a></div><div class="ttdeci">void setupProperties()</div><div class="ttdoc">配置状态属性</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:203</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a24c90251740c0a9fb2f0829253cb2281"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a24c90251740c0a9fb2f0829253cb2281">QtMaterialFlatButtonStateMachine::startAnimations</a></div><div class="ttdeci">void startAnimations()</div><div class="ttdoc">启动动画和状态机</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:194</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a2e179a59dbf456a1f2a8b3e2dfe2cf16"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a2e179a59dbf456a1f2a8b3e2dfe2cf16">QtMaterialFlatButtonStateMachine::setCheckedOverlayProgress</a></div><div class="ttdeci">void setCheckedOverlayProgress(qreal progress)</div><div class="ttdoc">设置选中覆盖层进度</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:154</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a37745d2fefc55c52d5cea3e5270e79d6"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a37745d2fefc55c52d5cea3e5270e79d6">QtMaterialFlatButtonStateMachine::setOverlayOpacity</a></div><div class="ttdeci">void setOverlayOpacity(qreal opacity)</div><div class="ttdoc">设置覆盖层透明度</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:144</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a412e48ae532671ec49ba3aaa28ec587c"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a412e48ae532671ec49ba3aaa28ec587c">QtMaterialFlatButtonStateMachine::haloScaleFactor</a></div><div class="ttdeci">qreal haloScaleFactor</div><div class="ttdoc">光晕缩放因子属性</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:32</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a4390934945b095bc9388942f428255ed"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a4390934945b095bc9388942f428255ed">QtMaterialFlatButtonStateMachine::QtMaterialFlatButtonStateMachine</a></div><div class="ttdeci">QtMaterialFlatButtonStateMachine(QtMaterialFlatButton *parent)</div><div class="ttdoc">构造函数，初始化状态机</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:23</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a54d82e2e60914d150743dcfe6ddbbece"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a54d82e2e60914d150743dcfe6ddbbece">QtMaterialFlatButtonStateMachine::buttonPressed</a></div><div class="ttdeci">void buttonPressed()</div><div class="ttdoc">按钮按下信号</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a58a667f5d629428f86f1c1347a660301"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a58a667f5d629428f86f1c1347a660301">QtMaterialFlatButtonStateMachine::buttonChecked</a></div><div class="ttdeci">void buttonChecked()</div><div class="ttdoc">按钮选中信号</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a6259a4ffdacc0ee2a56fd4a02eef466f"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a6259a4ffdacc0ee2a56fd4a02eef466f">QtMaterialFlatButtonStateMachine::m_button</a></div><div class="ttdeci">QtMaterialFlatButton *const m_button</div><div class="ttdoc">关联按钮</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:167</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a6d8f6960834267e10609b2ee1e59e802"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a6d8f6960834267e10609b2ee1e59e802">QtMaterialFlatButtonStateMachine::m_haloScaleFactor</a></div><div class="ttdeci">qreal m_haloScaleFactor</div><div class="ttdoc">光晕缩放因子</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:183</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a7b8342eca0c60f675310ff08790b2c5a"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a7b8342eca0c60f675310ff08790b2c5a">QtMaterialFlatButtonStateMachine::m_uncheckedState</a></div><div class="ttdeci">QState *const m_uncheckedState</div><div class="ttdoc">未选中状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:172</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a7beca7abcb666b33742c857b728f0d16"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a7beca7abcb666b33742c857b728f0d16">QtMaterialFlatButtonStateMachine::m_overlayOpacity</a></div><div class="ttdeci">qreal m_overlayOpacity</div><div class="ttdoc">覆盖层透明度</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:179</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a866a9741776d2f66d51379b4f2803da6"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a866a9741776d2f66d51379b4f2803da6">QtMaterialFlatButtonStateMachine::m_checkedOverlayProgress</a></div><div class="ttdeci">qreal m_checkedOverlayProgress</div><div class="ttdoc">选中覆盖层进度</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:180</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a8cfe40172fd98711e841468d9cac65e9"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a8cfe40172fd98711e841468d9cac65e9">QtMaterialFlatButtonStateMachine::m_haloAnimation</a></div><div class="ttdeci">QSequentialAnimationGroup *const m_haloAnimation</div><div class="ttdoc">光晕动画组</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:178</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a8dfb93fac6f29b7778cbf15bdc83da52"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a8dfb93fac6f29b7778cbf15bdc83da52">QtMaterialFlatButtonStateMachine::overlayOpacity</a></div><div class="ttdeci">qreal overlayOpacity</div><div class="ttdoc">覆盖层透明度属性</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:28</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_a97f1f932724da8fccddca90b33f4f9dc"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#a97f1f932724da8fccddca90b33f4f9dc">QtMaterialFlatButtonStateMachine::setHaloSize</a></div><div class="ttdeci">void setHaloSize(qreal size)</div><div class="ttdoc">设置光晕尺寸</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:175</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_aa4d228a6a41d4cc5f14724903056c392"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#aa4d228a6a41d4cc5f14724903056c392">QtMaterialFlatButtonStateMachine::m_hoveredFocusedState</a></div><div class="ttdeci">QState *const m_hoveredFocusedState</div><div class="ttdoc">悬停焦点状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:176</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_aa7fe17567830f90a75f580fd0e0839b7"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#aa7fe17567830f90a75f580fd0e0839b7">QtMaterialFlatButtonStateMachine::m_configState</a></div><div class="ttdeci">QState *const m_configState</div><div class="ttdoc">配置状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:169</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ab8ce7b0ef4db7319fab1f59e98fdefe6"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ab8ce7b0ef4db7319fab1f59e98fdefe6">QtMaterialFlatButtonStateMachine::m_checkableState</a></div><div class="ttdeci">QState *const m_checkableState</div><div class="ttdoc">可选中状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:170</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_abfe13049ba2ce8e2563f5cb2e9c3f23f"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#abfe13049ba2ce8e2563f5cb2e9c3f23f">QtMaterialFlatButtonStateMachine::haloSize</a></div><div class="ttdeci">qreal haloSize</div><div class="ttdoc">光晕尺寸属性</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:31</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ac9dfea1290cfa7f279086f55011a40d6"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ac9dfea1290cfa7f279086f55011a40d6">QtMaterialFlatButtonStateMachine::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">事件过滤器</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:255</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_acea64dcc532a637b2b03649b844cb935"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#acea64dcc532a637b2b03649b844cb935">QtMaterialFlatButtonStateMachine::buttonUnchecked</a></div><div class="ttdeci">void buttonUnchecked()</div><div class="ttdoc">按钮未选中信号</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_acf3811a33cec30a866c761b0099e6a59"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#acf3811a33cec30a866c761b0099e6a59">QtMaterialFlatButtonStateMachine::haloOpacity</a></div><div class="ttdeci">qreal haloOpacity</div><div class="ttdoc">光晕透明度属性</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:30</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ad09b1d1bc734f5166f54bb719e247259"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ad09b1d1bc734f5166f54bb719e247259">QtMaterialFlatButtonStateMachine::m_wasChecked</a></div><div class="ttdeci">bool m_wasChecked</div><div class="ttdoc">之前选中状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:184</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ad293c163f2cc17cc4e83d7eb0131dfd0"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ad293c163f2cc17cc4e83d7eb0131dfd0">QtMaterialFlatButtonStateMachine::m_haloOpacity</a></div><div class="ttdeci">qreal m_haloOpacity</div><div class="ttdoc">光晕透明度</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:181</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ad678814e82dca7cfcd224c9815c6b690"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ad678814e82dca7cfcd224c9815c6b690">QtMaterialFlatButtonStateMachine::m_hoveredState</a></div><div class="ttdeci">QState *const m_hoveredState</div><div class="ttdoc">悬停状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:175</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ad8d23c285c28a4a73082f7ce8e197a82"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ad8d23c285c28a4a73082f7ce8e197a82">QtMaterialFlatButtonStateMachine::m_checkedState</a></div><div class="ttdeci">QState *const m_checkedState</div><div class="ttdoc">选中状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:171</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_adc543c6ccad05d3035308ff5ac090944"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#adc543c6ccad05d3035308ff5ac090944">QtMaterialFlatButtonStateMachine::updateCheckedStatus</a></div><div class="ttdeci">void updateCheckedStatus()</div><div class="ttdoc">更新选中状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:235</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ae4b8f7f9d2ef008da763042633d34f59"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ae4b8f7f9d2ef008da763042633d34f59">QtMaterialFlatButtonStateMachine::addTransition</a></div><div class="ttdeci">void addTransition(QObject *object, QEvent::Type eventType, QState *fromState, QState *toState)</div><div class="ttdoc">&lt; 禁用拷贝</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:274</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ae7bfb4d96e49b66a50dbead979c7232e"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ae7bfb4d96e49b66a50dbead979c7232e">QtMaterialFlatButtonStateMachine::setHaloScaleFactor</a></div><div class="ttdeci">void setHaloScaleFactor(qreal factor)</div><div class="ttdoc">设置光晕缩放因子</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.cpp:185</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ae83230bb4519eded210de88146704d83"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ae83230bb4519eded210de88146704d83">QtMaterialFlatButtonStateMachine::m_topLevelState</a></div><div class="ttdeci">QState *const m_topLevelState</div><div class="ttdoc">顶级状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:168</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_ae9e523d936de3df77c114d831cdf5541"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#ae9e523d936de3df77c114d831cdf5541">QtMaterialFlatButtonStateMachine::m_neutralState</a></div><div class="ttdeci">QState *const m_neutralState</div><div class="ttdoc">中立状态</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:173</div></div>
+<div class="ttc" id="aclass_qt_material_flat_button_state_machine_html_af021b5549681d519a15cfce0e44ba444"><div class="ttname"><a href="class_qt_material_flat_button_state_machine.html#af021b5549681d519a15cfce0e44ba444">QtMaterialFlatButtonStateMachine::m_haloSize</a></div><div class="ttdeci">qreal m_haloSize</div><div class="ttdoc">光晕尺寸</div><div class="ttdef"><b>定义</b> qtmaterialflatbutton_internal.h:182</div></div>
+<div class="ttc" id="aikcp_8h_html_a00d24c7231be28dbaf71f5408f30e44c"><div class="ttname"><a href="ikcp_8h.html#a00d24c7231be28dbaf71f5408f30e44c">inline</a></div><div class="ttdeci">#define inline</div><div class="ttdef"><b>定义</b> ikcp.h:127</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_b95b73a9da1c57040a996fcdd774df29.html">QtMaterialWidget</a></li><li class="navelem"><a class="el" href="dir_26a8091ed03709f8d58432c3319a3695.html">QtMaterialButton</a></li><li class="navelem"><a class="el" href="qtmaterialflatbutton__internal_8h.html">qtmaterialflatbutton_internal.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

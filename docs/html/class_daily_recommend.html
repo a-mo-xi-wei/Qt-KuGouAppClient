@@ -1,0 +1,984 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: DailyRecommend类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_daily_recommend.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_daily_recommend-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">DailyRecommend类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>每日推荐界面类，显示日期、歌曲列表和操作按钮  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_daily_recommend_8h_source.html">DailyRecommend.h</a>&gt;</code></p>
+<div class="dynheader">
+类 DailyRecommend 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend__inherit__graph.png" border="0" usemap="#a_daily_recommend_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_daily_recommend_inherit__map" id="a_daily_recommend_inherit__map">
+<area shape="rect" title="每日推荐界面类，显示日期、歌曲列表和操作按钮" alt="" coords="5,80,131,107"/>
+<area shape="rect" title=" " alt="" coords="32,5,104,32"/>
+<area shape="poly" title=" " alt="" coords="71,48,71,80,65,80,65,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+DailyRecommend 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend__coll__graph.png" border="0" usemap="#a_daily_recommend_coll__map" alt="Collaboration graph"/></div>
+<map name="a_daily_recommend_coll__map" id="a_daily_recommend_coll__map">
+<area shape="rect" title="每日推荐界面类，显示日期、歌曲列表和操作按钮" alt="" coords="24,112,150,139"/>
+<area shape="rect" title=" " alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="55,45,84,111,79,113,50,47"/>
+<area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="102,5,165,32"/>
+<area shape="poly" title=" " alt="" coords="124,47,95,113,90,111,119,45"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa657bd21b1ef013ac26b9b87c58100db" id="r_aa657bd21b1ef013ac26b9b87c58100db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa657bd21b1ef013ac26b9b87c58100db">DailyRecommend</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aa657bd21b1ef013ac26b9b87c58100db"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化每日推荐界面  <br /></td></tr>
+<tr class="separator:aa657bd21b1ef013ac26b9b87c58100db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9785e43d7191481ed39fb4b1fc9dbbbb" id="r_a9785e43d7191481ed39fb4b1fc9dbbbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9785e43d7191481ed39fb4b1fc9dbbbb">~DailyRecommend</a> () override</td></tr>
+<tr class="memdesc:a9785e43d7191481ed39fb4b1fc9dbbbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，清理资源  <br /></td></tr>
+<tr class="separator:a9785e43d7191481ed39fb4b1fc9dbbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整大小事件，调整滚动区域高度  <br /></td></tr>
+<tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a839c37ccb7bcd014f252a8f2b9c400f9" id="r_a839c37ccb7bcd014f252a8f2b9c400f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a839c37ccb7bcd014f252a8f2b9c400f9">on_history_recommend_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a839c37ccb7bcd014f252a8f2b9c400f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">历史推荐按钮点击槽函数  <br /></td></tr>
+<tr class="separator:a839c37ccb7bcd014f252a8f2b9c400f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99430b6dd77da69da48acbff01374ad" id="r_ae99430b6dd77da69da48acbff01374ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae99430b6dd77da69da48acbff01374ad">on_play_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ae99430b6dd77da69da48acbff01374ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">播放按钮点击槽函数  <br /></td></tr>
+<tr class="separator:ae99430b6dd77da69da48acbff01374ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6753a1d3727e351f69f5ac6e1a7510c" id="r_ac6753a1d3727e351f69f5ac6e1a7510c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6753a1d3727e351f69f5ac6e1a7510c">on_vip_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ac6753a1d3727e351f69f5ac6e1a7510c"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIP 按钮点击槽函数  <br /></td></tr>
+<tr class="separator:ac6753a1d3727e351f69f5ac6e1a7510c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c010533bcee743a2630c68f1ac292b0" id="r_a4c010533bcee743a2630c68f1ac292b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c010533bcee743a2630c68f1ac292b0">on_collect_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a4c010533bcee743a2630c68f1ac292b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">收藏按钮点击槽函数  <br /></td></tr>
+<tr class="separator:a4c010533bcee743a2630c68f1ac292b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1085b0a0fc437c5346f83cb5f1eb184" id="r_ac1085b0a0fc437c5346f83cb5f1eb184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1085b0a0fc437c5346f83cb5f1eb184">on_download_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ac1085b0a0fc437c5346f83cb5f1eb184"><td class="mdescLeft">&#160;</td><td class="mdescRight">下载按钮点击槽函数  <br /></td></tr>
+<tr class="separator:ac1085b0a0fc437c5346f83cb5f1eb184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d3c795be146b123cb6496f5da4cbb9" id="r_ab4d3c795be146b123cb6496f5da4cbb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4d3c795be146b123cb6496f5da4cbb9">on_batch_toolButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ab4d3c795be146b123cb6496f5da4cbb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">批量操作按钮点击槽函数  <br /></td></tr>
+<tr class="separator:ab4d3c795be146b123cb6496f5da4cbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:afba6e95967cc3eb25fd518f7bde6ec04" id="r_afba6e95967cc3eb25fd518f7bde6ec04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a> ()</td></tr>
+<tr class="memdesc:afba6e95967cc3eb25fd518f7bde6ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化界面  <br /></td></tr>
+<tr class="separator:afba6e95967cc3eb25fd518f7bde6ec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af33653a755c92cbe26561696aa130533" id="r_af33653a755c92cbe26561696aa130533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af33653a755c92cbe26561696aa130533">initDateLab</a> ()</td></tr>
+<tr class="memdesc:af33653a755c92cbe26561696aa130533"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化日期标签  <br /></td></tr>
+<tr class="separator:af33653a755c92cbe26561696aa130533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac05465c66c47f2caebb711218a7e118a" id="r_ac05465c66c47f2caebb711218a7e118a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac05465c66c47f2caebb711218a7e118a">initTableWidget</a> ()</td></tr>
+<tr class="memdesc:ac05465c66c47f2caebb711218a7e118a"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化歌曲列表控件  <br /></td></tr>
+<tr class="separator:ac05465c66c47f2caebb711218a7e118a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c31fa17ce6a5cc8533d92486ed88966" id="r_a4c31fa17ce6a5cc8533d92486ed88966"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c31fa17ce6a5cc8533d92486ed88966">initMusicItem</a> (<a class="el" href="class_music_item_widget.html">MusicItemWidget</a> *item)</td></tr>
+<tr class="memdesc:a4c31fa17ce6a5cc8533d92486ed88966"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化音乐项控件  <br /></td></tr>
+<tr class="separator:a4c31fa17ce6a5cc8533d92486ed88966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a05e2e3a0082618757ea79aab07b0ea19" id="r_a05e2e3a0082618757ea79aab07b0ea19"><td class="memItemLeft" align="right" valign="top">Ui::DailyRecommend *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05e2e3a0082618757ea79aab07b0ea19">ui</a></td></tr>
+<tr class="memdesc:a05e2e3a0082618757ea79aab07b0ea19"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 指针  <br /></td></tr>
+<tr class="separator:a05e2e3a0082618757ea79aab07b0ea19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af957bf91a3532d146847f0bcc2c3a1de" id="r_af957bf91a3532d146847f0bcc2c3a1de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_label.html">QLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af957bf91a3532d146847f0bcc2c3a1de">m_monthLab</a> {}</td></tr>
+<tr class="memdesc:af957bf91a3532d146847f0bcc2c3a1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">月份标签  <br /></td></tr>
+<tr class="separator:af957bf91a3532d146847f0bcc2c3a1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55ae59ceed05d5bbbcff90de0ce6c64" id="r_af55ae59ceed05d5bbbcff90de0ce6c64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_label.html">QLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af55ae59ceed05d5bbbcff90de0ce6c64">m_dayLab</a> {}</td></tr>
+<tr class="memdesc:af55ae59ceed05d5bbbcff90de0ce6c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">日期标签  <br /></td></tr>
+<tr class="separator:af55ae59ceed05d5bbbcff90de0ce6c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>每日推荐界面类，显示日期、歌曲列表和操作按钮 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa657bd21b1ef013ac26b9b87c58100db" name="aa657bd21b1ef013ac26b9b87c58100db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa657bd21b1ef013ac26b9b87c58100db">&#9670;&#160;</a></span>DailyRecommend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_daily_recommend.html">DailyRecommend</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，初始化每日推荐界面 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 初始化 UI</p>
+<p>&lt; 加载样式表</p>
+<p>&lt; 应用样式表</p>
+<p>&lt; 记录错误日志</p>
+<p>&lt; 初始化界面</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_aa657bd21b1ef013ac26b9b87c58100db_cgraph.png" border="0" usemap="#aclass_daily_recommend_aa657bd21b1ef013ac26b9b87c58100db_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_aa657bd21b1ef013ac26b9b87c58100db_cgraph" id="aclass_daily_recommend_aa657bd21b1ef013ac26b9b87c58100db_cgraph">
+<area shape="rect" title="构造函数，初始化每日推荐界面" alt="" coords="5,31,131,57"/>
+<area shape="poly" title=" " alt="" coords="44,31,40,22,43,13,52,6,68,4,85,7,94,13,90,18,83,12,68,9,54,11,47,16,45,22,49,29"/>
+<area shape="rect" href="class_daily_recommend.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="179,31,230,57"/>
+<area shape="poly" title=" " alt="" coords="131,41,163,41,163,47,131,47"/>
+<area shape="rect" href="class_daily_recommend.html#af33653a755c92cbe26561696aa130533" title="初始化日期标签" alt="" coords="290,5,377,32"/>
+<area shape="poly" title=" " alt="" coords="230,36,274,28,275,33,231,42"/>
+<area shape="rect" href="class_daily_recommend.html#ac05465c66c47f2caebb711218a7e118a" title="初始化歌曲列表控件" alt="" coords="278,56,388,83"/>
+<area shape="poly" title=" " alt="" coords="231,46,264,53,263,58,230,52"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="466,31,506,57"/>
+<area shape="poly" title=" " alt="" coords="388,58,451,47,452,52,389,63"/>
+<area shape="rect" href="class_daily_recommend.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项控件" alt="" coords="436,81,536,108"/>
+<area shape="poly" title=" " alt="" coords="389,76,422,81,421,87,388,81"/>
+<area shape="poly" title=" " alt="" coords="464,36,456,25,457,14,467,7,486,4,510,9,517,20,512,23,507,13,486,9,469,12,461,17,461,24,468,32"/>
+<area shape="rect" href="class_music_item_widget.html#a63e18b34ea211235a80eeadb450ede32" title="设置涟漪填充颜色" alt="" coords="597,15,763,57"/>
+<area shape="poly" title=" " alt="" coords="532,78,592,60,594,65,533,83"/>
+<area shape="rect" href="class_music_item_widget.html#aa4fd81b36db6f7e28b968918751a17f7" title="设置定时器时间间隔，控制填充速度" alt="" coords="584,81,776,108"/>
+<area shape="poly" title=" " alt="" coords="536,92,568,92,568,97,536,97"/>
+<area shape="rect" href="class_music_item_widget.html#a04ae76275927b43c09f4df15c74691e2" title="设置圆角半径" alt="" coords="585,132,775,159"/>
+<area shape="poly" title=" " alt="" coords="537,105,612,125,611,130,535,110"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_aa657bd21b1ef013ac26b9b87c58100db_icgraph.png" border="0" usemap="#aclass_daily_recommend_aa657bd21b1ef013ac26b9b87c58100db_icgraph" alt=""/></div>
+<map name="aclass_daily_recommend_aa657bd21b1ef013ac26b9b87c58100db_icgraph" id="aclass_daily_recommend_aa657bd21b1ef013ac26b9b87c58100db_icgraph">
+<area shape="rect" title="构造函数，初始化每日推荐界面" alt="" coords="5,29,131,56"/>
+<area shape="poly" title=" " alt="" coords="88,16,81,10,68,8,55,10,49,14,47,20,51,28,46,30,42,21,45,11,54,5,68,3,84,5,92,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9785e43d7191481ed39fb4b1fc9dbbbb" name="a9785e43d7191481ed39fb4b1fc9dbbbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9785e43d7191481ed39fb4b1fc9dbbbb">&#9670;&#160;</a></span>~DailyRecommend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_daily_recommend.html">DailyRecommend</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，清理资源 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="af33653a755c92cbe26561696aa130533" name="af33653a755c92cbe26561696aa130533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af33653a755c92cbe26561696aa130533">&#9670;&#160;</a></span>initDateLab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initDateLab </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化日期标签 </p>
+<dl class="section note"><dt>注解</dt><dd>设置当前日期并调整标签位置 </dd></dl>
+<p>&lt; 设置月份标签对象名称</p>
+<p>&lt; 设置日期标签对象名称</p>
+<p>&lt; 获取当前日期</p>
+<p>&lt; 设置月份文本</p>
+<p>&lt; 应用月份文本</p>
+<p>&lt; 设置日期文本（补零）</p>
+<p>&lt; 设置日期标签固定高度</p>
+<p>&lt; 应用日期文本</p>
+<p>&lt; 启用月份标签内容缩放</p>
+<p>&lt; 启用日期标签内容缩放</p>
+<p>&lt; 获取封面标签位置</p>
+<p>&lt; 移动月份标签</p>
+<p>&lt; 移动日期标签</p>
+<p>&lt; 提升月份标签层级</p>
+<p>&lt; 提升日期标签层级</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_af33653a755c92cbe26561696aa130533_icgraph.png" border="0" usemap="#aclass_daily_recommend_af33653a755c92cbe26561696aa130533_icgraph" alt=""/></div>
+<map name="aclass_daily_recommend_af33653a755c92cbe26561696aa130533_icgraph" id="aclass_daily_recommend_af33653a755c92cbe26561696aa130533_icgraph">
+<area shape="rect" title="初始化日期标签" alt="" coords="278,29,365,56"/>
+<area shape="rect" href="class_daily_recommend.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="179,29,230,56"/>
+<area shape="poly" title=" " alt="" coords="263,45,230,45,230,40,263,40"/>
+<area shape="rect" href="class_daily_recommend.html#aa657bd21b1ef013ac26b9b87c58100db" title="构造函数，初始化每日推荐界面" alt="" coords="5,29,131,56"/>
+<area shape="poly" title=" " alt="" coords="163,45,131,45,131,40,163,40"/>
+<area shape="poly" title=" " alt="" coords="90,16,83,10,68,8,54,10,47,14,45,20,49,28,44,30,40,21,43,11,52,5,68,3,85,5,94,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4c31fa17ce6a5cc8533d92486ed88966" name="a4c31fa17ce6a5cc8533d92486ed88966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c31fa17ce6a5cc8533d92486ed88966">&#9670;&#160;</a></span>initMusicItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initMusicItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_music_item_widget.html">MusicItemWidget</a> *</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化音乐项控件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>音乐项控件指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置填充颜色</p>
+<p>&lt; 设置圆角半径</p>
+<p>&lt; 设置间距</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_a4c31fa17ce6a5cc8533d92486ed88966_cgraph.png" border="0" usemap="#aclass_daily_recommend_a4c31fa17ce6a5cc8533d92486ed88966_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_a4c31fa17ce6a5cc8533d92486ed88966_cgraph" id="aclass_daily_recommend_a4c31fa17ce6a5cc8533d92486ed88966_cgraph">
+<area shape="rect" title="初始化音乐项控件" alt="" coords="5,72,105,99"/>
+<area shape="rect" href="class_music_item_widget.html#a63e18b34ea211235a80eeadb450ede32" title="设置涟漪填充颜色" alt="" coords="166,5,332,48"/>
+<area shape="poly" title=" " alt="" coords="101,69,161,50,163,56,102,74"/>
+<area shape="rect" href="class_music_item_widget.html#aa4fd81b36db6f7e28b968918751a17f7" title="设置定时器时间间隔，控制填充速度" alt="" coords="153,72,345,99"/>
+<area shape="poly" title=" " alt="" coords="105,83,137,83,137,88,105,88"/>
+<area shape="rect" href="class_music_item_widget.html#a04ae76275927b43c09f4df15c74691e2" title="设置圆角半径" alt="" coords="154,123,344,149"/>
+<area shape="poly" title=" " alt="" coords="106,96,181,116,180,121,104,101"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_a4c31fa17ce6a5cc8533d92486ed88966_icgraph.png" border="0" usemap="#aclass_daily_recommend_a4c31fa17ce6a5cc8533d92486ed88966_icgraph" alt=""/></div>
+<map name="aclass_daily_recommend_a4c31fa17ce6a5cc8533d92486ed88966_icgraph" id="aclass_daily_recommend_a4c31fa17ce6a5cc8533d92486ed88966_icgraph">
+<area shape="rect" title="初始化音乐项控件" alt="" coords="436,29,536,56"/>
+<area shape="rect" href="class_daily_recommend.html#ac05465c66c47f2caebb711218a7e118a" title="初始化歌曲列表控件" alt="" coords="278,29,388,56"/>
+<area shape="poly" title=" " alt="" coords="421,45,389,45,389,40,421,40"/>
+<area shape="rect" href="class_daily_recommend.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="179,29,230,56"/>
+<area shape="poly" title=" " alt="" coords="262,45,230,45,230,40,262,40"/>
+<area shape="rect" href="class_daily_recommend.html#aa657bd21b1ef013ac26b9b87c58100db" title="构造函数，初始化每日推荐界面" alt="" coords="5,29,131,56"/>
+<area shape="poly" title=" " alt="" coords="163,45,131,45,131,40,163,40"/>
+<area shape="poly" title=" " alt="" coords="90,16,83,10,68,8,54,10,47,14,45,20,49,28,44,30,40,21,43,11,52,5,68,3,85,5,94,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac05465c66c47f2caebb711218a7e118a" name="ac05465c66c47f2caebb711218a7e118a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05465c66c47f2caebb711218a7e118a">&#9670;&#160;</a></span>initTableWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initTableWidget </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化歌曲列表控件 </p>
+<dl class="section note"><dt>注解</dt><dd>添加 30 首歌曲信息到垂直布局 </dd></dl>
+<p>&lt; 获取垂直布局</p>
+<p>&lt; 布局不存在时返回</p>
+<p>&lt; 临时歌曲信息</p>
+<p>&lt; 设置索引</p>
+<p>&lt; 设置封面</p>
+<p>&lt; 设置歌曲名称</p>
+<p>&lt; 设置歌手</p>
+<p>&lt; 设置时长</p>
+<p>&lt; 设置媒体路径</p>
+<p>&lt; 设置添加时间</p>
+<p>&lt; 设置播放次数</p>
+<p>&lt; 创建音乐项控件</p>
+<p>&lt; 初始化音乐项</p>
+<p>&lt; 添加到布局</p>
+<p>&lt; 添加底部间隔</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_ac05465c66c47f2caebb711218a7e118a_cgraph.png" border="0" usemap="#aclass_daily_recommend_ac05465c66c47f2caebb711218a7e118a_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_ac05465c66c47f2caebb711218a7e118a_cgraph" id="aclass_daily_recommend_ac05465c66c47f2caebb711218a7e118a_cgraph">
+<area shape="rect" title="初始化歌曲列表控件" alt="" coords="5,55,116,81"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="194,29,233,56"/>
+<area shape="poly" title=" " alt="" coords="116,56,178,46,179,51,116,61"/>
+<area shape="rect" href="class_daily_recommend.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项控件" alt="" coords="164,80,263,107"/>
+<area shape="poly" title=" " alt="" coords="116,75,149,80,148,85,116,80"/>
+<area shape="poly" title=" " alt="" coords="191,34,183,24,184,13,194,5,213,3,237,8,244,19,240,22,234,12,213,8,196,10,188,16,188,22,195,31"/>
+<area shape="rect" href="class_music_item_widget.html#a63e18b34ea211235a80eeadb450ede32" title="设置涟漪填充颜色" alt="" coords="324,13,490,56"/>
+<area shape="poly" title=" " alt="" coords="259,77,319,58,321,64,261,82"/>
+<area shape="rect" href="class_music_item_widget.html#aa4fd81b36db6f7e28b968918751a17f7" title="设置定时器时间间隔，控制填充速度" alt="" coords="311,80,503,107"/>
+<area shape="poly" title=" " alt="" coords="263,91,295,91,295,96,263,96"/>
+<area shape="rect" href="class_music_item_widget.html#a04ae76275927b43c09f4df15c74691e2" title="设置圆角半径" alt="" coords="312,131,502,157"/>
+<area shape="poly" title=" " alt="" coords="264,104,339,124,338,129,263,109"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_ac05465c66c47f2caebb711218a7e118a_icgraph.png" border="0" usemap="#aclass_daily_recommend_ac05465c66c47f2caebb711218a7e118a_icgraph" alt=""/></div>
+<map name="aclass_daily_recommend_ac05465c66c47f2caebb711218a7e118a_icgraph" id="aclass_daily_recommend_ac05465c66c47f2caebb711218a7e118a_icgraph">
+<area shape="rect" title="初始化歌曲列表控件" alt="" coords="278,29,388,56"/>
+<area shape="rect" href="class_daily_recommend.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="179,29,230,56"/>
+<area shape="poly" title=" " alt="" coords="262,45,230,45,230,40,262,40"/>
+<area shape="rect" href="class_daily_recommend.html#aa657bd21b1ef013ac26b9b87c58100db" title="构造函数，初始化每日推荐界面" alt="" coords="5,29,131,56"/>
+<area shape="poly" title=" " alt="" coords="163,45,131,45,131,40,163,40"/>
+<area shape="poly" title=" " alt="" coords="90,16,83,10,68,8,54,10,47,14,45,20,49,28,44,30,40,21,43,11,52,5,68,3,85,5,94,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afba6e95967cc3eb25fd518f7bde6ec04" name="afba6e95967cc3eb25fd518f7bde6ec04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba6e95967cc3eb25fd518f7bde6ec04">&#9670;&#160;</a></span>initUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initUi </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化界面 </p>
+<dl class="section note"><dt>注解</dt><dd>初始化日期标签、按钮和歌曲列表 </dd></dl>
+<p>&lt; 初始化日期标签</p>
+<p>&lt; 设置历史推荐按钮图标大小</p>
+<p>&lt; 设置默认图标</p>
+<p>&lt; 设置悬停图标</p>
+<p>&lt; 设置离开图标</p>
+<p>&lt; 启用接近效果</p>
+<p>&lt; 设置悬停字体颜色</p>
+<p>&lt; 设置播放按钮图标</p>
+<p>&lt; 设置播放按钮文本</p>
+<p>&lt; 创建 VIP 按钮工具提示</p>
+<p>&lt; 设置 VIP 工具提示内容</p>
+<p>&lt; 创建收藏按钮工具提示</p>
+<p>&lt; 设置收藏工具提示内容</p>
+<p>&lt; 创建下载按钮工具提示</p>
+<p>&lt; 设置下载工具提示内容</p>
+<p>&lt; 创建批量操作按钮工具提示</p>
+<p>&lt; 设置批量操作工具提示内容</p>
+<p>&lt; 设置 VIP 按钮图标大小</p>
+<p>&lt; 设置 VIP 按钮图标</p>
+<p>&lt; 设置 VIP 按钮文本</p>
+<p>&lt; 启用接近效果</p>
+<p>&lt; 设置收藏按钮图标</p>
+<p>&lt; 设置下载按钮图标</p>
+<p>&lt; 设置批量操作按钮图标</p>
+<p>&lt; 设置歌曲数量标签</p>
+<p>&lt; 设置图标标签</p>
+<p>&lt; 初始化歌曲列表控件</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_afba6e95967cc3eb25fd518f7bde6ec04_cgraph.png" border="0" usemap="#aclass_daily_recommend_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_afba6e95967cc3eb25fd518f7bde6ec04_cgraph" id="aclass_daily_recommend_afba6e95967cc3eb25fd518f7bde6ec04_cgraph">
+<area shape="rect" title="初始化界面" alt="" coords="5,31,57,57"/>
+<area shape="rect" href="class_daily_recommend.html#af33653a755c92cbe26561696aa130533" title="初始化日期标签" alt="" coords="116,5,204,32"/>
+<area shape="poly" title=" " alt="" coords="57,36,100,28,101,33,58,42"/>
+<area shape="rect" href="class_daily_recommend.html#ac05465c66c47f2caebb711218a7e118a" title="初始化歌曲列表控件" alt="" coords="105,56,215,83"/>
+<area shape="poly" title=" " alt="" coords="58,46,90,53,89,58,57,52"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="293,31,332,57"/>
+<area shape="poly" title=" " alt="" coords="215,58,278,47,278,52,216,63"/>
+<area shape="rect" href="class_daily_recommend.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项控件" alt="" coords="263,81,362,108"/>
+<area shape="poly" title=" " alt="" coords="216,76,248,81,247,87,215,81"/>
+<area shape="poly" title=" " alt="" coords="291,36,282,25,283,14,294,7,313,4,336,9,344,20,339,23,333,13,313,9,296,12,288,17,287,24,295,32"/>
+<area shape="rect" href="class_music_item_widget.html#a63e18b34ea211235a80eeadb450ede32" title="设置涟漪填充颜色" alt="" coords="423,15,590,57"/>
+<area shape="poly" title=" " alt="" coords="359,78,419,60,420,65,360,83"/>
+<area shape="rect" href="class_music_item_widget.html#aa4fd81b36db6f7e28b968918751a17f7" title="设置定时器时间间隔，控制填充速度" alt="" coords="410,81,603,108"/>
+<area shape="poly" title=" " alt="" coords="363,92,395,92,395,97,363,97"/>
+<area shape="rect" href="class_music_item_widget.html#a04ae76275927b43c09f4df15c74691e2" title="设置圆角半径" alt="" coords="411,132,602,159"/>
+<area shape="poly" title=" " alt="" coords="363,105,439,125,437,130,362,110"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_afba6e95967cc3eb25fd518f7bde6ec04_icgraph.png" border="0" usemap="#aclass_daily_recommend_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" alt=""/></div>
+<map name="aclass_daily_recommend_afba6e95967cc3eb25fd518f7bde6ec04_icgraph" id="aclass_daily_recommend_afba6e95967cc3eb25fd518f7bde6ec04_icgraph">
+<area shape="rect" title="初始化界面" alt="" coords="179,29,230,56"/>
+<area shape="rect" href="class_daily_recommend.html#aa657bd21b1ef013ac26b9b87c58100db" title="构造函数，初始化每日推荐界面" alt="" coords="5,29,131,56"/>
+<area shape="poly" title=" " alt="" coords="163,45,131,45,131,40,163,40"/>
+<area shape="poly" title=" " alt="" coords="90,16,83,10,68,8,54,10,47,14,45,20,49,28,44,30,40,21,43,11,52,5,68,3,85,5,94,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab4d3c795be146b123cb6496f5da4cbb9" name="ab4d3c795be146b123cb6496f5da4cbb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d3c795be146b123cb6496f5da4cbb9">&#9670;&#160;</a></span>on_batch_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_batch_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>批量操作按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示功能未实现提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_ab4d3c795be146b123cb6496f5da4cbb9_cgraph.png" border="0" usemap="#aclass_daily_recommend_ab4d3c795be146b123cb6496f5da4cbb9_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_ab4d3c795be146b123cb6496f5da4cbb9_cgraph" id="aclass_daily_recommend_ab4d3c795be146b123cb6496f5da4cbb9_cgraph">
+<area shape="rect" title="批量操作按钮点击槽函数" alt="" coords="5,21,146,64"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="194,29,379,56"/>
+<area shape="poly" title=" " alt="" coords="146,40,178,40,178,45,146,45"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="427,29,640,56"/>
+<area shape="poly" title=" " alt="" coords="379,40,411,40,411,45,379,45"/>
+<area shape="poly" title=" " alt="" coords="494,31,487,21,492,11,508,5,534,3,562,5,577,12,574,17,561,10,534,8,509,10,496,15,492,20,499,27"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="688,21,848,64"/>
+<area shape="poly" title=" " alt="" coords="641,40,673,40,673,45,641,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4c010533bcee743a2630c68f1ac292b0" name="a4c010533bcee743a2630c68f1ac292b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c010533bcee743a2630c68f1ac292b0">&#9670;&#160;</a></span>on_collect_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_collect_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>收藏按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示功能未实现提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_a4c010533bcee743a2630c68f1ac292b0_cgraph.png" border="0" usemap="#aclass_daily_recommend_a4c010533bcee743a2630c68f1ac292b0_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_a4c010533bcee743a2630c68f1ac292b0_cgraph" id="aclass_daily_recommend_a4c010533bcee743a2630c68f1ac292b0_cgraph">
+<area shape="rect" title="收藏按钮点击槽函数" alt="" coords="5,47,152,89"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="273,29,312,56"/>
+<area shape="poly" title=" " alt="" coords="152,57,257,44,258,49,152,62"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="200,80,385,107"/>
+<area shape="poly" title=" " alt="" coords="152,74,185,78,184,83,152,79"/>
+<area shape="poly" title=" " alt="" coords="271,39,253,28,251,15,265,6,292,3,316,5,331,11,335,21,328,31,324,28,330,20,327,15,315,10,292,8,266,11,256,17,258,25,273,34"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="433,80,646,107"/>
+<area shape="poly" title=" " alt="" coords="385,91,417,91,417,96,385,96"/>
+<area shape="poly" title=" " alt="" coords="500,81,493,71,498,61,514,55,540,53,568,56,583,63,580,68,567,61,540,59,515,61,502,65,498,71,505,78"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="694,72,854,115"/>
+<area shape="poly" title=" " alt="" coords="647,91,679,91,679,96,647,96"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac1085b0a0fc437c5346f83cb5f1eb184" name="ac1085b0a0fc437c5346f83cb5f1eb184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1085b0a0fc437c5346f83cb5f1eb184">&#9670;&#160;</a></span>on_download_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_download_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>下载按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示功能未实现提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_ac1085b0a0fc437c5346f83cb5f1eb184_cgraph.png" border="0" usemap="#aclass_daily_recommend_ac1085b0a0fc437c5346f83cb5f1eb184_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_ac1085b0a0fc437c5346f83cb5f1eb184_cgraph" id="aclass_daily_recommend_ac1085b0a0fc437c5346f83cb5f1eb184_cgraph">
+<area shape="rect" title="下载按钮点击槽函数" alt="" coords="5,21,169,64"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="217,29,402,56"/>
+<area shape="poly" title=" " alt="" coords="169,40,201,40,201,45,169,45"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="450,29,663,56"/>
+<area shape="poly" title=" " alt="" coords="402,40,434,40,434,45,402,45"/>
+<area shape="poly" title=" " alt="" coords="517,31,510,21,515,11,531,5,557,3,585,5,600,12,597,17,584,10,557,8,532,10,519,15,515,20,522,27"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="711,21,871,64"/>
+<area shape="poly" title=" " alt="" coords="664,40,696,40,696,45,664,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a839c37ccb7bcd014f252a8f2b9c400f9" name="a839c37ccb7bcd014f252a8f2b9c400f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839c37ccb7bcd014f252a8f2b9c400f9">&#9670;&#160;</a></span>on_history_recommend_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_history_recommend_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>历史推荐按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示功能未实现提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_a839c37ccb7bcd014f252a8f2b9c400f9_cgraph.png" border="0" usemap="#aclass_daily_recommend_a839c37ccb7bcd014f252a8f2b9c400f9_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_a839c37ccb7bcd014f252a8f2b9c400f9_cgraph" id="aclass_daily_recommend_a839c37ccb7bcd014f252a8f2b9c400f9_cgraph">
+<area shape="rect" title="历史推荐按钮点击槽函数" alt="" coords="5,47,162,89"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="283,29,322,56"/>
+<area shape="poly" title=" " alt="" coords="162,56,267,44,268,49,163,62"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="210,80,395,107"/>
+<area shape="poly" title=" " alt="" coords="163,74,195,78,194,83,162,80"/>
+<area shape="poly" title=" " alt="" coords="281,39,262,28,260,15,274,6,302,3,327,5,342,11,346,21,338,31,334,28,341,20,338,15,326,10,302,8,276,11,265,17,267,25,283,34"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="443,80,656,107"/>
+<area shape="poly" title=" " alt="" coords="395,91,427,91,427,96,395,96"/>
+<area shape="poly" title=" " alt="" coords="510,81,503,71,508,61,524,55,550,53,578,56,593,63,590,68,577,61,550,59,525,61,512,65,508,71,515,78"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="704,72,864,115"/>
+<area shape="poly" title=" " alt="" coords="657,91,689,91,689,96,657,96"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae99430b6dd77da69da48acbff01374ad" name="ae99430b6dd77da69da48acbff01374ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99430b6dd77da69da48acbff01374ad">&#9670;&#160;</a></span>on_play_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_play_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>播放按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示功能未实现提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_ae99430b6dd77da69da48acbff01374ad_cgraph.png" border="0" usemap="#aclass_daily_recommend_ae99430b6dd77da69da48acbff01374ad_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_ae99430b6dd77da69da48acbff01374ad_cgraph" id="aclass_daily_recommend_ae99430b6dd77da69da48acbff01374ad_cgraph">
+<area shape="rect" title="播放按钮点击槽函数" alt="" coords="5,21,138,64"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="186,29,371,56"/>
+<area shape="poly" title=" " alt="" coords="138,40,170,40,170,45,138,45"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="419,29,632,56"/>
+<area shape="poly" title=" " alt="" coords="371,40,403,40,403,45,371,45"/>
+<area shape="poly" title=" " alt="" coords="486,31,479,21,484,11,500,5,526,3,554,5,569,12,566,17,553,10,526,8,501,10,488,15,484,20,491,27"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="680,21,840,64"/>
+<area shape="poly" title=" " alt="" coords="633,40,665,40,665,45,633,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac6753a1d3727e351f69f5ac6e1a7510c" name="ac6753a1d3727e351f69f5ac6e1a7510c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6753a1d3727e351f69f5ac6e1a7510c">&#9670;&#160;</a></span>on_vip_toolButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_vip_toolButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>VIP 按钮点击槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>显示功能未实现提示 </dd></dl>
+<p>&lt; 显示提示</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_daily_recommend_ac6753a1d3727e351f69f5ac6e1a7510c_cgraph.png" border="0" usemap="#aclass_daily_recommend_ac6753a1d3727e351f69f5ac6e1a7510c_cgraph" alt=""/></div>
+<map name="aclass_daily_recommend_ac6753a1d3727e351f69f5ac6e1a7510c_cgraph" id="aclass_daily_recommend_ac6753a1d3727e351f69f5ac6e1a7510c_cgraph">
+<area shape="rect" title="VIP 按钮点击槽函数" alt="" coords="5,29,179,56"/>
+<area shape="rect" href="class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="227,29,412,56"/>
+<area shape="poly" title=" " alt="" coords="179,40,211,40,211,45,179,45"/>
+<area shape="rect" href="class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="460,29,673,56"/>
+<area shape="poly" title=" " alt="" coords="412,40,444,40,444,45,412,45"/>
+<area shape="poly" title=" " alt="" coords="527,31,520,21,525,11,541,5,567,3,595,5,610,12,607,17,594,10,567,8,542,10,529,15,525,20,532,27"/>
+<area shape="rect" href="class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="721,21,881,64"/>
+<area shape="poly" title=" " alt="" coords="674,40,706,40,706,45,674,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a27ed4ceb22d2a19bdb88ed785085a1" name="a9a27ed4ceb22d2a19bdb88ed785085a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a27ed4ceb22d2a19bdb88ed785085a1">&#9670;&#160;</a></span>resizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>调整大小事件，调整滚动区域高度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>调整大小事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 调用父类调整大小事件</p>
+<p>&lt; 设置滚动区域高度</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="af55ae59ceed05d5bbbcff90de0ce6c64" name="af55ae59ceed05d5bbbcff90de0ce6c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55ae59ceed05d5bbbcff90de0ce6c64">&#9670;&#160;</a></span>m_dayLab</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_label.html">QLabel</a>* m_dayLab {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>日期标签 </p>
+
+</div>
+</div>
+<a id="af957bf91a3532d146847f0bcc2c3a1de" name="af957bf91a3532d146847f0bcc2c3a1de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af957bf91a3532d146847f0bcc2c3a1de">&#9670;&#160;</a></span>m_monthLab</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_label.html">QLabel</a>* m_monthLab {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>月份标签 </p>
+
+</div>
+</div>
+<a id="a05e2e3a0082618757ea79aab07b0ea19" name="a05e2e3a0082618757ea79aab07b0ea19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e2e3a0082618757ea79aab07b0ea19">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::DailyRecommend* ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI 指针 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_daily_recommend_8h_source.html">DailyRecommend.h</a></li>
+<li><a class="el" href="_daily_recommend_8cpp.html">DailyRecommend.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_daily_recommend.html">DailyRecommend</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

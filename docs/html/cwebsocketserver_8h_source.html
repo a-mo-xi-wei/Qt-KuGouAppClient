@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: cwebsocketserver.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('cwebsocketserver_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">cwebsocketserver.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="cwebsocketserver_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CWEBSOCKETSERVER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CWEBSOCKETSERVER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;singleton.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;common.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="networkframemanager_8h.html">networkframemanager.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>QT_FORWARD_DECLARE_CLASS(QWebSocketServer)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>QT_FORWARD_DECLARE_CLASS(QWebSocket)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structtag_web_client.html">   15</a></span>struct <a class="code hl_function" href="structtag_web_client.html#a12c6c2f414a80c0db21eb6e4a0f3e9d3">tagWebClient</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structtag_web_client.html#a12c6c2f414a80c0db21eb6e4a0f3e9d3">   17</a></span>    <a class="code hl_function" href="structtag_web_client.html#a12c6c2f414a80c0db21eb6e4a0f3e9d3">tagWebClient</a>()</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_variable" href="structtag_web_client.html#ac6c655a9d1acf886f54ef2ed3b9f8f62">m_recvFileState</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        memset(&amp;<a class="code hl_variable" href="structtag_web_client.html#a75c98954db7f00bff5d321118024f890">m_tagFileStruct</a>,0,<span class="keyword">sizeof</span>(<a class="code hl_variable" href="structtag_web_client.html#a75c98954db7f00bff5d321118024f890">m_tagFileStruct</a>));</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_variable" href="structtag_web_client.html#acbced4e43c2483f90dd93f5f590e00f0">m_recvDataState</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_variable" href="structtag_web_client.html#aa896e5291cb4d8551a692334339a5883">m_processrecvData</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        memset(&amp;<a class="code hl_variable" href="structtag_web_client.html#a8e0a9ee365a825ae21a08dd845f1efa0">m_tagDataStruct</a>,0,<span class="keyword">sizeof</span>(<a class="code hl_variable" href="structtag_web_client.html#a8e0a9ee365a825ae21a08dd845f1efa0">m_tagDataStruct</a>));</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structtag_web_client.html#ad20897c5c8bd47f5d4005989bead0e55">   27</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="structtag_web_client.html#ad20897c5c8bd47f5d4005989bead0e55">reset</a>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_variable" href="structtag_web_client.html#ac6c655a9d1acf886f54ef2ed3b9f8f62">m_recvFileState</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        memset(&amp;<a class="code hl_variable" href="structtag_web_client.html#a75c98954db7f00bff5d321118024f890">m_tagFileStruct</a>,0,<span class="keyword">sizeof</span>(<a class="code hl_variable" href="structtag_web_client.html#a75c98954db7f00bff5d321118024f890">m_tagFileStruct</a>));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_variable" href="structtag_web_client.html#acbced4e43c2483f90dd93f5f590e00f0">m_recvDataState</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_variable" href="structtag_web_client.html#aa896e5291cb4d8551a692334339a5883">m_processrecvData</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        memset(&amp;<a class="code hl_variable" href="structtag_web_client.html#a8e0a9ee365a825ae21a08dd845f1efa0">m_tagDataStruct</a>,0,<span class="keyword">sizeof</span>(<a class="code hl_variable" href="structtag_web_client.html#a8e0a9ee365a825ae21a08dd845f1efa0">m_tagDataStruct</a>));</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_variable" href="structtag_web_client.html#ac240d89df9e9572ed0e4ae71cb153d7b">m_recvFileBytes</a>.clear();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="structtag_web_client.html#a89b526082ac1526d53385fafe7fc7802">m_recvDataBytes</a>.clear();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structtag_web_client.html#ac240d89df9e9572ed0e4ae71cb153d7b">   40</a></span>    QByteArray <a class="code hl_variable" href="structtag_web_client.html#ac240d89df9e9572ed0e4ae71cb153d7b">m_recvFileBytes</a>;                                         </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structtag_web_client.html#ac6c655a9d1acf886f54ef2ed3b9f8f62">   41</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structtag_web_client.html#ac6c655a9d1acf886f54ef2ed3b9f8f62">m_recvFileState</a>;                                               </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structtag_web_client.html#a75c98954db7f00bff5d321118024f890">   42</a></span>    <a class="code hl_struct" href="structtag_file_struct.html">tagFileStruct</a> <a class="code hl_variable" href="structtag_web_client.html#a75c98954db7f00bff5d321118024f890">m_tagFileStruct</a>;                                      </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structtag_web_client.html#a89b526082ac1526d53385fafe7fc7802">   44</a></span>    QByteArray <a class="code hl_variable" href="structtag_web_client.html#a89b526082ac1526d53385fafe7fc7802">m_recvDataBytes</a>;                                         </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structtag_web_client.html#acbced4e43c2483f90dd93f5f590e00f0">   45</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structtag_web_client.html#acbced4e43c2483f90dd93f5f590e00f0">m_recvDataState</a>;                                               </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structtag_web_client.html#a8e0a9ee365a825ae21a08dd845f1efa0">   46</a></span>    <a class="code hl_struct" href="structtag_data_struct.html">tagDataStruct</a> <a class="code hl_variable" href="structtag_web_client.html#a8e0a9ee365a825ae21a08dd845f1efa0">m_tagDataStruct</a>;                                      </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structtag_web_client.html#aa896e5291cb4d8551a692334339a5883">   47</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structtag_web_client.html#aa896e5291cb4d8551a692334339a5883">m_processrecvData</a>;                                             </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html">   50</a></span><span class="keyword">class </span><a class="code hl_function" href="class_c_web_socket_server.html#a1b8dbffb4778552f357463225f12a918">CWebSocketServer</a> : <span class="keyword">public</span> QObject<span class="comment">/*, public Singleton&lt;CWebSocketServer&gt;*/</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    Q_OBJECT</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_c_web_socket_server.html#a1b8dbffb4778552f357463225f12a918">CWebSocketServer</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="class_c_web_socket_server.html#a01a17fe789b3f9301c6eb11dc2c8ba31">~CWebSocketServer</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#a8392d4048b8f96f6878a838b99c45190">OpenServer</a>(<span class="keywordtype">int</span> port);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#ac73e9118acf94317f4cf4e6a8a71a61c">CloseServer</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#a34deae0011c3d18c02b56bbc0eecb1b3">setMaxPendingConnections</a>(<span class="keywordtype">int</span> maxcount);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#a7768b97aa92145593b535e29aa443ed9">closeClient</a>(QWebSocket *pwebsocket);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#a2bf039b5e86aa110ea4d9cdc634287c1">isListening</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    QHostAddress <a class="code hl_function" href="class_c_web_socket_server.html#ae60f771fc2ca7b18c57aa07829f06ecb">getHostAddress</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    quint16 <a class="code hl_function" href="class_c_web_socket_server.html#a0ecfbf633998a7bd4881014e75f086e9">getServerPort</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#a3af2b2347a1e39f64d4e836d89a7b336">SetNetworkFrameManager</a>(<a class="code hl_class" href="class_network_frame_manager.html">NetworkFrameManager</a> *pNetworkFrameManager);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#abb6485d46b5e618ad7f287ebe3e210fe">sendFile</a>(QWebSocket *pwebsocket, <span class="keyword">const</span> QString &amp;filepath,<span class="keywordtype">bool</span> isExcludeUserInputEvents=<span class="keyword">false</span>,QString rootpath=<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#afdf3899bc46d84bee250670c03db73f1">SendAllFile</a>(<span class="keyword">const</span> QString&amp; filepath,<span class="keywordtype">bool</span> isExcludeUserInputEvents=<span class="keyword">false</span>,<span class="keyword">const</span> QString&amp; rootpath=<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    Q_INVOKABLE qint64 <a class="code hl_function" href="class_c_web_socket_server.html#a2f750f7b1c38ea5c419d56a3d4e676fe">Send</a>(QWebSocket *pwebsocket,<span class="keyword">const</span> QString&amp; msg);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    Q_INVOKABLE qint64 <a class="code hl_function" href="class_c_web_socket_server.html#aca2f6135adf188d8f0700f18d7f78ec4">SendByteArray</a>(QWebSocket *pwebsocket,QByteArray &amp;data,<span class="keywordtype">bool</span> isExcludeUserInputEvents=<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#a9eabd46a6f92969d4f733641424c2a8d">SendAll</a>(<span class="keyword">const</span> QString&amp; msg);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#a886bccad904fa3f0eb167dc96eeef742">SendAllOther</a>(QWebSocket *pwebsocket,<span class="keyword">const</span> QString&amp; msg);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#af0cdc98866730705d187395b623b2cc9">SendAllByteArray</a>(QByteArray &amp;data);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#a9a6c3d19fa14160b15285d583edc4cb8">SendAllOtherByteArray</a>(QWebSocket *pwebsocket,QByteArray &amp;data);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#a99f7efa34aa629961863c390c256d3c2">setIsProcessRecvFile</a>(<span class="keywordtype">bool</span> isProcess,QString recvfiledir=<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#ac68d273f7fd8545606c8c21d48368b1a">   94</a></span>    Q_INVOKABLE <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#ac68d273f7fd8545606c8c21d48368b1a">lockClients</a>() { <a class="code hl_variable" href="class_c_web_socket_server.html#a781aef417ade06d2239777903b808f9f">m_clientsMutex</a>.lock(); }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a594a17fd356b7c04334113d9bde87dd3">   96</a></span>    Q_INVOKABLE <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#a594a17fd356b7c04334113d9bde87dd3">unlockClients</a>() { <a class="code hl_variable" href="class_c_web_socket_server.html#a781aef417ade06d2239777903b808f9f">m_clientsMutex</a>.unlock(); }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    Q_INVOKABLE QList&lt;QWebSocket*&gt; <a class="code hl_function" href="class_c_web_socket_server.html#a1462dee56c9254409a65a572ee99b1ec">getAllClients</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    Q_INVOKABLE QWebSocket* <a class="code hl_function" href="class_c_web_socket_server.html#ae69853841dd85990c542796db21193fe">getClient</a>(<span class="keyword">const</span> QString&amp; objName);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a039ecae889a36b79665896b244a6de2a">  102</a></span>    Q_INVOKABLE <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_c_web_socket_server.html#a039ecae889a36b79665896b244a6de2a">getClientCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_c_web_socket_server.html#acec9ce37c8ab6dac06673dc5fc57cbac">m_clients</a>.size(); }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a4e5720e9ac035dc99b3b1293068c940f">  104</a></span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#a4e5720e9ac035dc99b3b1293068c940f">setAutoDeleteSocket</a>(<span class="keywordtype">bool</span> isDelete) { <a class="code hl_variable" href="class_c_web_socket_server.html#a9e8bcb084904a13d995cc6e22ca4db43">m_isautoDeleteSocket</a> = isDelete; }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#af8fa86f27943793547ae607ecb14fb02">  106</a></span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#af8fa86f27943793547ae607ecb14fb02">isAutoDeleteSocket</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_c_web_socket_server.html#a9e8bcb084904a13d995cc6e22ca4db43">m_isautoDeleteSocket</a>; }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#ab812ca796244779a0f1c87044d097ab0">setClientVariant</a>(QWebSocket *client,<span class="keyword">const</span> QVariant&amp; variant);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    Q_INVOKABLE QVariant <a class="code hl_function" href="class_c_web_socket_server.html#a502c77bd718a894101a7b8bc5abc0cbb">getClientVariant</a>(QWebSocket *client);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    Q_INVOKABLE <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_web_socket_server.html#abdee6460dfcbb3b1011103c362bf7061">deleteClientVariant</a>(QWebSocket *client);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>Q_SIGNALS:</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a6abb0e45eb340a477edd8b892b37373e">  115</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_web_socket_server.html#a6abb0e45eb340a477edd8b892b37373e">closed</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a06c29bb7134269ee237d988efca6fc12">  118</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_web_socket_server.html#a06c29bb7134269ee237d988efca6fc12">signalsNetText</a>(QWebSocket *conn,QString mes);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#afb41c93b8bc86309597870de1de8e670">  120</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_web_socket_server.html#afb41c93b8bc86309597870de1de8e670">signalsNetBinary</a>(QWebSocket *conn,QByteArray &amp;data);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a6a634ccecde2f4a4e7903df0624d7879">  122</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_web_socket_server.html#a6a634ccecde2f4a4e7903df0624d7879">signalsConnectedNetMes</a>(QWebSocket *conn);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a5f2cc7cfcec32f6b7685d312dc87b86c">  124</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_c_web_socket_server.html#a5f2cc7cfcec32f6b7685d312dc87b86c">signalsDisconnectedNetMes</a>(QWebSocket *conn);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">private</span> Q_SLOTS:</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_web_socket_server.html#ac483b966f5e7e55da415fb1ec8a7fdfa">onNewConnection</a>();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_web_socket_server.html#ad676b126e996f7df7dd8d6e8bd33ae6f">processTextMessage</a>(<span class="keyword">const</span> QString&amp; message);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_web_socket_server.html#a140441ea1bea9fc0e02b717da2ec0b09">processBinaryMessage</a>(<span class="keyword">const</span> QByteArray&amp; message);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_web_socket_server.html#a270b32a7b4f3d08e655807d4101acbd7">socketDisconnected</a>();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_c_web_socket_server.html#a5023b21dbe54ec5cc49a649e50e313c8">handleWebSocketHeartTimeOut</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#a361e4338cded968ceb7a9643fc3b7d0c">onPrcessRecvFile</a>(QWebSocket *pwebsocket,<span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_web_socket_server.html#a816c87b64b3034b519b4d9b5d981e49e">onPrcessRecvBinaryData</a>(QWebSocket *pwebsocket,<span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#aa7bcc842409463f30b753f30798e97fc">  145</a></span>    QWebSocketServer *<a class="code hl_variable" href="class_c_web_socket_server.html#aa7bcc842409463f30b753f30798e97fc">m_pWebSocketServer</a>;                                  </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a781aef417ade06d2239777903b808f9f">  146</a></span>    QMutex <a class="code hl_variable" href="class_c_web_socket_server.html#a781aef417ade06d2239777903b808f9f">m_clientsMutex</a>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a9e8bcb084904a13d995cc6e22ca4db43">  147</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_c_web_socket_server.html#a9e8bcb084904a13d995cc6e22ca4db43">m_isautoDeleteSocket</a>;                                             </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#acec9ce37c8ab6dac06673dc5fc57cbac">  148</a></span>    QHash&lt;QWebSocket *,int&gt; <a class="code hl_variable" href="class_c_web_socket_server.html#acec9ce37c8ab6dac06673dc5fc57cbac">m_clients</a>;                                     </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#ab997a959c7be46db43985fc18a280221">  149</a></span>    QHash&lt;QString,QWebSocket*&gt; <a class="code hl_variable" href="class_c_web_socket_server.html#ab997a959c7be46db43985fc18a280221">m_clientNames</a>;                              </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#ab722dcbf7cd9202c2e6d4ead470b3b7f">  150</a></span>    QHash&lt;QWebSocket *,QVariant&gt; <a class="code hl_variable" href="class_c_web_socket_server.html#ab722dcbf7cd9202c2e6d4ead470b3b7f">m_clientVariants</a>;                         </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#ab341fc046c5258cc651dbf662c1cad9c">  151</a></span>    QTimer <a class="code hl_variable" href="class_c_web_socket_server.html#ab341fc046c5258cc651dbf662c1cad9c">m_WebSocketHeartTimeOutTimer</a>;                                   </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#aca7d469173097c057c8393f82dd01bfa">  152</a></span>    <a class="code hl_class" href="class_network_frame_manager.html">NetworkFrameManager</a> *<a class="code hl_variable" href="class_c_web_socket_server.html#aca7d469173097c057c8393f82dd01bfa">m_NetworkFrameManager</a>;                            </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a03ab8f3af25d712459bd4df1e981f1cb">  154</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_c_web_socket_server.html#a03ab8f3af25d712459bd4df1e981f1cb">m_processrecvFile</a>;                                                </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_c_web_socket_server.html#a2a96afc97cf3286a33f64eb58e0c0b7a">  155</a></span>    QString <a class="code hl_variable" href="class_c_web_socket_server.html#a2a96afc97cf3286a33f64eb58e0c0b7a">m_recvFileSaveDir</a>;                                             </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>};</div>
+</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="cwebsocketserver_8h.html#a4b1623196b4892a777cebc624b708777">  158</a></span><span class="preprocessor">#define sCWebSocketServer CWebSocketServer::getSingleton()</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#endif </span><span class="comment">// CWEBSOCKETSERVER_H</span></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a01a17fe789b3f9301c6eb11dc2c8ba31"><div class="ttname"><a href="class_c_web_socket_server.html#a01a17fe789b3f9301c6eb11dc2c8ba31">CWebSocketServer::~CWebSocketServer</a></div><div class="ttdeci">~CWebSocketServer() override</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:30</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a039ecae889a36b79665896b244a6de2a"><div class="ttname"><a href="class_c_web_socket_server.html#a039ecae889a36b79665896b244a6de2a">CWebSocketServer::getClientCount</a></div><div class="ttdeci">Q_INVOKABLE int getClientCount() const</div><div class="ttdoc">得到当前在线客户端数量</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:102</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a03ab8f3af25d712459bd4df1e981f1cb"><div class="ttname"><a href="class_c_web_socket_server.html#a03ab8f3af25d712459bd4df1e981f1cb">CWebSocketServer::m_processrecvFile</a></div><div class="ttdeci">bool m_processrecvFile</div><div class="ttdoc">是否处理接收文件</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:154</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a06c29bb7134269ee237d988efca6fc12"><div class="ttname"><a href="class_c_web_socket_server.html#a06c29bb7134269ee237d988efca6fc12">CWebSocketServer::signalsNetText</a></div><div class="ttdeci">void signalsNetText(QWebSocket *conn, QString mes)</div><div class="ttdoc">处理网络字符串消息</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a0ecfbf633998a7bd4881014e75f086e9"><div class="ttname"><a href="class_c_web_socket_server.html#a0ecfbf633998a7bd4881014e75f086e9">CWebSocketServer::getServerPort</a></div><div class="ttdeci">quint16 getServerPort()</div><div class="ttdoc">得到服务器打开的端口</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:466</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a140441ea1bea9fc0e02b717da2ec0b09"><div class="ttname"><a href="class_c_web_socket_server.html#a140441ea1bea9fc0e02b717da2ec0b09">CWebSocketServer::processBinaryMessage</a></div><div class="ttdeci">void processBinaryMessage(const QByteArray &amp;message)</div><div class="ttdoc">新的二进制数据消息到达</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:642</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a1462dee56c9254409a65a572ee99b1ec"><div class="ttname"><a href="class_c_web_socket_server.html#a1462dee56c9254409a65a572ee99b1ec">CWebSocketServer::getAllClients</a></div><div class="ttdeci">Q_INVOKABLE QList&lt; QWebSocket * &gt; getAllClients()</div><div class="ttdoc">得到当前所有在线的客户端</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:713</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a1b8dbffb4778552f357463225f12a918"><div class="ttname"><a href="class_c_web_socket_server.html#a1b8dbffb4778552f357463225f12a918">CWebSocketServer::CWebSocketServer</a></div><div class="ttdeci">CWebSocketServer(QObject *parent=nullptr)</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:14</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a270b32a7b4f3d08e655807d4101acbd7"><div class="ttname"><a href="class_c_web_socket_server.html#a270b32a7b4f3d08e655807d4101acbd7">CWebSocketServer::socketDisconnected</a></div><div class="ttdeci">void socketDisconnected()</div><div class="ttdoc">一个客户端断开连接</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:661</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a2a96afc97cf3286a33f64eb58e0c0b7a"><div class="ttname"><a href="class_c_web_socket_server.html#a2a96afc97cf3286a33f64eb58e0c0b7a">CWebSocketServer::m_recvFileSaveDir</a></div><div class="ttdeci">QString m_recvFileSaveDir</div><div class="ttdoc">接收文件的保存路径</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:155</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a2bf039b5e86aa110ea4d9cdc634287c1"><div class="ttname"><a href="class_c_web_socket_server.html#a2bf039b5e86aa110ea4d9cdc634287c1">CWebSocketServer::isListening</a></div><div class="ttdeci">Q_INVOKABLE bool isListening()</div><div class="ttdoc">服务器是否启动</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:435</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a2f750f7b1c38ea5c419d56a3d4e676fe"><div class="ttname"><a href="class_c_web_socket_server.html#a2f750f7b1c38ea5c419d56a3d4e676fe">CWebSocketServer::Send</a></div><div class="ttdeci">Q_INVOKABLE qint64 Send(QWebSocket *pwebsocket, const QString &amp;msg)</div><div class="ttdoc">给指定客户端发送字符数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:186</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a34deae0011c3d18c02b56bbc0eecb1b3"><div class="ttname"><a href="class_c_web_socket_server.html#a34deae0011c3d18c02b56bbc0eecb1b3">CWebSocketServer::setMaxPendingConnections</a></div><div class="ttdeci">Q_INVOKABLE void setMaxPendingConnections(int maxcount)</div><div class="ttdoc">设置服务器最大支持连接数量,默认为30个连接</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:52</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a361e4338cded968ceb7a9643fc3b7d0c"><div class="ttname"><a href="class_c_web_socket_server.html#a361e4338cded968ceb7a9643fc3b7d0c">CWebSocketServer::onPrcessRecvFile</a></div><div class="ttdeci">void onPrcessRecvFile(QWebSocket *pwebsocket, const QByteArray &amp;data)</div><div class="ttdoc">处理文件接收</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:740</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a3af2b2347a1e39f64d4e836d89a7b336"><div class="ttname"><a href="class_c_web_socket_server.html#a3af2b2347a1e39f64d4e836d89a7b336">CWebSocketServer::SetNetworkFrameManager</a></div><div class="ttdeci">Q_INVOKABLE void SetNetworkFrameManager(NetworkFrameManager *pNetworkFrameManager)</div><div class="ttdoc">设置网络消息处理框架</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:39</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a4e5720e9ac035dc99b3b1293068c940f"><div class="ttname"><a href="class_c_web_socket_server.html#a4e5720e9ac035dc99b3b1293068c940f">CWebSocketServer::setAutoDeleteSocket</a></div><div class="ttdeci">Q_INVOKABLE void setAutoDeleteSocket(bool isDelete)</div><div class="ttdoc">设置是否自动删除socket</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:104</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a5023b21dbe54ec5cc49a649e50e313c8"><div class="ttname"><a href="class_c_web_socket_server.html#a5023b21dbe54ec5cc49a649e50e313c8">CWebSocketServer::handleWebSocketHeartTimeOut</a></div><div class="ttdeci">void handleWebSocketHeartTimeOut()</div><div class="ttdoc">心跳处理</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:533</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a502c77bd718a894101a7b8bc5abc0cbb"><div class="ttname"><a href="class_c_web_socket_server.html#a502c77bd718a894101a7b8bc5abc0cbb">CWebSocketServer::getClientVariant</a></div><div class="ttdeci">Q_INVOKABLE QVariant getClientVariant(QWebSocket *client)</div><div class="ttdoc">得到指定客户端的关联数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:918</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a594a17fd356b7c04334113d9bde87dd3"><div class="ttname"><a href="class_c_web_socket_server.html#a594a17fd356b7c04334113d9bde87dd3">CWebSocketServer::unlockClients</a></div><div class="ttdeci">Q_INVOKABLE void unlockClients()</div><div class="ttdoc">客户端列表解锁</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:96</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a5f2cc7cfcec32f6b7685d312dc87b86c"><div class="ttname"><a href="class_c_web_socket_server.html#a5f2cc7cfcec32f6b7685d312dc87b86c">CWebSocketServer::signalsDisconnectedNetMes</a></div><div class="ttdeci">void signalsDisconnectedNetMes(QWebSocket *conn)</div><div class="ttdoc">处理一个连接关闭</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a6a634ccecde2f4a4e7903df0624d7879"><div class="ttname"><a href="class_c_web_socket_server.html#a6a634ccecde2f4a4e7903df0624d7879">CWebSocketServer::signalsConnectedNetMes</a></div><div class="ttdeci">void signalsConnectedNetMes(QWebSocket *conn)</div><div class="ttdoc">处理一个新的连接到达</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a6abb0e45eb340a477edd8b892b37373e"><div class="ttname"><a href="class_c_web_socket_server.html#a6abb0e45eb340a477edd8b892b37373e">CWebSocketServer::closed</a></div><div class="ttdeci">void closed()</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a7768b97aa92145593b535e29aa443ed9"><div class="ttname"><a href="class_c_web_socket_server.html#a7768b97aa92145593b535e29aa443ed9">CWebSocketServer::closeClient</a></div><div class="ttdeci">Q_INVOKABLE void closeClient(QWebSocket *pwebsocket)</div><div class="ttdoc">关闭指定的客户端</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:478</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a781aef417ade06d2239777903b808f9f"><div class="ttname"><a href="class_c_web_socket_server.html#a781aef417ade06d2239777903b808f9f">CWebSocketServer::m_clientsMutex</a></div><div class="ttdeci">QMutex m_clientsMutex</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:146</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a816c87b64b3034b519b4d9b5d981e49e"><div class="ttname"><a href="class_c_web_socket_server.html#a816c87b64b3034b519b4d9b5d981e49e">CWebSocketServer::onPrcessRecvBinaryData</a></div><div class="ttdeci">void onPrcessRecvBinaryData(QWebSocket *pwebsocket, const QByteArray &amp;data)</div><div class="ttdoc">处理二进制数据接收</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:847</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a8392d4048b8f96f6878a838b99c45190"><div class="ttname"><a href="class_c_web_socket_server.html#a8392d4048b8f96f6878a838b99c45190">CWebSocketServer::OpenServer</a></div><div class="ttdeci">Q_INVOKABLE bool OpenServer(int port)</div><div class="ttdoc">打开一个指定端口的服务器</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:447</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a886bccad904fa3f0eb167dc96eeef742"><div class="ttname"><a href="class_c_web_socket_server.html#a886bccad904fa3f0eb167dc96eeef742">CWebSocketServer::SendAllOther</a></div><div class="ttdeci">Q_INVOKABLE bool SendAllOther(QWebSocket *pwebsocket, const QString &amp;msg)</div><div class="ttdoc">给除了指定客户端的其它客户端发送字符数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:317</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a99f7efa34aa629961863c390c256d3c2"><div class="ttname"><a href="class_c_web_socket_server.html#a99f7efa34aa629961863c390c256d3c2">CWebSocketServer::setIsProcessRecvFile</a></div><div class="ttdeci">Q_INVOKABLE void setIsProcessRecvFile(bool isProcess, QString recvfiledir=&quot;&quot;)</div><div class="ttdoc">是否处理接收文件</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:702</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a9a6c3d19fa14160b15285d583edc4cb8"><div class="ttname"><a href="class_c_web_socket_server.html#a9a6c3d19fa14160b15285d583edc4cb8">CWebSocketServer::SendAllOtherByteArray</a></div><div class="ttdeci">Q_INVOKABLE bool SendAllOtherByteArray(QWebSocket *pwebsocket, QByteArray &amp;data)</div><div class="ttdoc">给除了指定客户端的其它客户端发送二进制数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:399</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a9e8bcb084904a13d995cc6e22ca4db43"><div class="ttname"><a href="class_c_web_socket_server.html#a9e8bcb084904a13d995cc6e22ca4db43">CWebSocketServer::m_isautoDeleteSocket</a></div><div class="ttdeci">bool m_isautoDeleteSocket</div><div class="ttdoc">是否自动删除socket</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:147</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_a9eabd46a6f92969d4f733641424c2a8d"><div class="ttname"><a href="class_c_web_socket_server.html#a9eabd46a6f92969d4f733641424c2a8d">CWebSocketServer::SendAll</a></div><div class="ttdeci">Q_INVOKABLE bool SendAll(const QString &amp;msg)</div><div class="ttdoc">给所有客户端发送字符数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:280</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_aa7bcc842409463f30b753f30798e97fc"><div class="ttname"><a href="class_c_web_socket_server.html#aa7bcc842409463f30b753f30798e97fc">CWebSocketServer::m_pWebSocketServer</a></div><div class="ttdeci">QWebSocketServer * m_pWebSocketServer</div><div class="ttdoc">网络服务器</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:145</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ab341fc046c5258cc651dbf662c1cad9c"><div class="ttname"><a href="class_c_web_socket_server.html#ab341fc046c5258cc651dbf662c1cad9c">CWebSocketServer::m_WebSocketHeartTimeOutTimer</a></div><div class="ttdeci">QTimer m_WebSocketHeartTimeOutTimer</div><div class="ttdoc">处理心跳的定时器</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:151</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ab722dcbf7cd9202c2e6d4ead470b3b7f"><div class="ttname"><a href="class_c_web_socket_server.html#ab722dcbf7cd9202c2e6d4ead470b3b7f">CWebSocketServer::m_clientVariants</a></div><div class="ttdeci">QHash&lt; QWebSocket *, QVariant &gt; m_clientVariants</div><div class="ttdoc">保存当前所有连接的客户端的关联数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:150</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ab812ca796244779a0f1c87044d097ab0"><div class="ttname"><a href="class_c_web_socket_server.html#ab812ca796244779a0f1c87044d097ab0">CWebSocketServer::setClientVariant</a></div><div class="ttdeci">Q_INVOKABLE bool setClientVariant(QWebSocket *client, const QVariant &amp;variant)</div><div class="ttdoc">设置指定客户端的关联数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:900</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ab997a959c7be46db43985fc18a280221"><div class="ttname"><a href="class_c_web_socket_server.html#ab997a959c7be46db43985fc18a280221">CWebSocketServer::m_clientNames</a></div><div class="ttdeci">QHash&lt; QString, QWebSocket * &gt; m_clientNames</div><div class="ttdoc">保存所有当前连接上的客户端的名称</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:149</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_abb6485d46b5e618ad7f287ebe3e210fe"><div class="ttname"><a href="class_c_web_socket_server.html#abb6485d46b5e618ad7f287ebe3e210fe">CWebSocketServer::sendFile</a></div><div class="ttdeci">Q_INVOKABLE bool sendFile(QWebSocket *pwebsocket, const QString &amp;filepath, bool isExcludeUserInputEvents=false, QString rootpath=&quot;&quot;)</div><div class="ttdoc">给指定客户端发送文件(注意点：在网络中使用时一定要设置isExcludeUserInputEvents为false,这个参数是在界面中做防假卡死的)</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:90</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_abdee6460dfcbb3b1011103c362bf7061"><div class="ttname"><a href="class_c_web_socket_server.html#abdee6460dfcbb3b1011103c362bf7061">CWebSocketServer::deleteClientVariant</a></div><div class="ttdeci">Q_INVOKABLE bool deleteClientVariant(QWebSocket *client)</div><div class="ttdoc">清除指定客户端的管理数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:935</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ac483b966f5e7e55da415fb1ec8a7fdfa"><div class="ttname"><a href="class_c_web_socket_server.html#ac483b966f5e7e55da415fb1ec8a7fdfa">CWebSocketServer::onNewConnection</a></div><div class="ttdeci">void onNewConnection()</div><div class="ttdoc">一个新的连接到达</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:586</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ac68d273f7fd8545606c8c21d48368b1a"><div class="ttname"><a href="class_c_web_socket_server.html#ac68d273f7fd8545606c8c21d48368b1a">CWebSocketServer::lockClients</a></div><div class="ttdeci">Q_INVOKABLE void lockClients()</div><div class="ttdoc">客户端列表锁闭</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:94</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ac73e9118acf94317f4cf4e6a8a71a61c"><div class="ttname"><a href="class_c_web_socket_server.html#ac73e9118acf94317f4cf4e6a8a71a61c">CWebSocketServer::CloseServer</a></div><div class="ttdeci">Q_INVOKABLE void CloseServer()</div><div class="ttdoc">关闭服务器</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:510</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_aca2f6135adf188d8f0700f18d7f78ec4"><div class="ttname"><a href="class_c_web_socket_server.html#aca2f6135adf188d8f0700f18d7f78ec4">CWebSocketServer::SendByteArray</a></div><div class="ttdeci">Q_INVOKABLE qint64 SendByteArray(QWebSocket *pwebsocket, QByteArray &amp;data, bool isExcludeUserInputEvents=false)</div><div class="ttdoc">给指定客户端发送二进制数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:208</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_aca7d469173097c057c8393f82dd01bfa"><div class="ttname"><a href="class_c_web_socket_server.html#aca7d469173097c057c8393f82dd01bfa">CWebSocketServer::m_NetworkFrameManager</a></div><div class="ttdeci">NetworkFrameManager * m_NetworkFrameManager</div><div class="ttdoc">网络处理框架</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:152</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_acec9ce37c8ab6dac06673dc5fc57cbac"><div class="ttname"><a href="class_c_web_socket_server.html#acec9ce37c8ab6dac06673dc5fc57cbac">CWebSocketServer::m_clients</a></div><div class="ttdeci">QHash&lt; QWebSocket *, int &gt; m_clients</div><div class="ttdoc">保存所有当前连接上的客户端</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:148</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ad676b126e996f7df7dd8d6e8bd33ae6f"><div class="ttname"><a href="class_c_web_socket_server.html#ad676b126e996f7df7dd8d6e8bd33ae6f">CWebSocketServer::processTextMessage</a></div><div class="ttdeci">void processTextMessage(const QString &amp;message)</div><div class="ttdoc">新的字符串消息到达</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:616</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ae60f771fc2ca7b18c57aa07829f06ecb"><div class="ttname"><a href="class_c_web_socket_server.html#ae60f771fc2ca7b18c57aa07829f06ecb">CWebSocketServer::getHostAddress</a></div><div class="ttdeci">QHostAddress getHostAddress()</div><div class="ttdoc">得到服务器IP</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:352</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_ae69853841dd85990c542796db21193fe"><div class="ttname"><a href="class_c_web_socket_server.html#ae69853841dd85990c542796db21193fe">CWebSocketServer::getClient</a></div><div class="ttdeci">Q_INVOKABLE QWebSocket * getClient(const QString &amp;objName)</div><div class="ttdoc">根据名称得到指定的客户端</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:723</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_af0cdc98866730705d187395b623b2cc9"><div class="ttname"><a href="class_c_web_socket_server.html#af0cdc98866730705d187395b623b2cc9">CWebSocketServer::SendAllByteArray</a></div><div class="ttdeci">Q_INVOKABLE bool SendAllByteArray(QByteArray &amp;data)</div><div class="ttdoc">给所有客户端发送二进制数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:362</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_af8fa86f27943793547ae607ecb14fb02"><div class="ttname"><a href="class_c_web_socket_server.html#af8fa86f27943793547ae607ecb14fb02">CWebSocketServer::isAutoDeleteSocket</a></div><div class="ttdeci">Q_INVOKABLE bool isAutoDeleteSocket() const</div><div class="ttdoc">得到是否自动删除socket</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:106</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_afb41c93b8bc86309597870de1de8e670"><div class="ttname"><a href="class_c_web_socket_server.html#afb41c93b8bc86309597870de1de8e670">CWebSocketServer::signalsNetBinary</a></div><div class="ttdeci">void signalsNetBinary(QWebSocket *conn, QByteArray &amp;data)</div><div class="ttdoc">处理网络二进制消息</div></div>
+<div class="ttc" id="aclass_c_web_socket_server_html_afdf3899bc46d84bee250670c03db73f1"><div class="ttname"><a href="class_c_web_socket_server.html#afdf3899bc46d84bee250670c03db73f1">CWebSocketServer::SendAllFile</a></div><div class="ttdeci">Q_INVOKABLE bool SendAllFile(const QString &amp;filepath, bool isExcludeUserInputEvents=false, const QString &amp;rootpath=&quot;&quot;)</div><div class="ttdoc">给所有客户端发送文件</div><div class="ttdef"><b>定义</b> cwebsocketserver.cpp:68</div></div>
+<div class="ttc" id="aclass_network_frame_manager_html"><div class="ttname"><a href="class_network_frame_manager.html">NetworkFrameManager</a></div><div class="ttdef"><b>定义</b> networkframemanager.h:12</div></div>
+<div class="ttc" id="anetworkframemanager_8h_html"><div class="ttname"><a href="networkframemanager_8h.html">networkframemanager.h</a></div></div>
+<div class="ttc" id="astructtag_data_struct_html"><div class="ttname"><a href="structtag_data_struct.html">tagDataStruct</a></div><div class="ttdoc">要发送的数据结构。</div><div class="ttdef"><b>定义</b> MyCommon/common.h:225</div></div>
+<div class="ttc" id="astructtag_file_struct_html"><div class="ttname"><a href="structtag_file_struct.html">tagFileStruct</a></div><div class="ttdoc">要发送的文件结构。</div><div class="ttdef"><b>定义</b> MyCommon/common.h:210</div></div>
+<div class="ttc" id="astructtag_web_client_html_a12c6c2f414a80c0db21eb6e4a0f3e9d3"><div class="ttname"><a href="structtag_web_client.html#a12c6c2f414a80c0db21eb6e4a0f3e9d3">tagWebClient::tagWebClient</a></div><div class="ttdeci">tagWebClient()</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:17</div></div>
+<div class="ttc" id="astructtag_web_client_html_a75c98954db7f00bff5d321118024f890"><div class="ttname"><a href="structtag_web_client.html#a75c98954db7f00bff5d321118024f890">tagWebClient::m_tagFileStruct</a></div><div class="ttdeci">tagFileStruct m_tagFileStruct</div><div class="ttdoc">用于文件接收处理</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:42</div></div>
+<div class="ttc" id="astructtag_web_client_html_a89b526082ac1526d53385fafe7fc7802"><div class="ttname"><a href="structtag_web_client.html#a89b526082ac1526d53385fafe7fc7802">tagWebClient::m_recvDataBytes</a></div><div class="ttdeci">QByteArray m_recvDataBytes</div><div class="ttdoc">用于处理接收到的二进制数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:44</div></div>
+<div class="ttc" id="astructtag_web_client_html_a8e0a9ee365a825ae21a08dd845f1efa0"><div class="ttname"><a href="structtag_web_client.html#a8e0a9ee365a825ae21a08dd845f1efa0">tagWebClient::m_tagDataStruct</a></div><div class="ttdeci">tagDataStruct m_tagDataStruct</div><div class="ttdoc">用于二进制数据接收处理</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:46</div></div>
+<div class="ttc" id="astructtag_web_client_html_aa896e5291cb4d8551a692334339a5883"><div class="ttname"><a href="structtag_web_client.html#aa896e5291cb4d8551a692334339a5883">tagWebClient::m_processrecvData</a></div><div class="ttdeci">bool m_processrecvData</div><div class="ttdoc">是否处理接收二进制数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:47</div></div>
+<div class="ttc" id="astructtag_web_client_html_ac240d89df9e9572ed0e4ae71cb153d7b"><div class="ttname"><a href="structtag_web_client.html#ac240d89df9e9572ed0e4ae71cb153d7b">tagWebClient::m_recvFileBytes</a></div><div class="ttdeci">QByteArray m_recvFileBytes</div><div class="ttdoc">用于处理接收到的文件数据</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:40</div></div>
+<div class="ttc" id="astructtag_web_client_html_ac6c655a9d1acf886f54ef2ed3b9f8f62"><div class="ttname"><a href="structtag_web_client.html#ac6c655a9d1acf886f54ef2ed3b9f8f62">tagWebClient::m_recvFileState</a></div><div class="ttdeci">bool m_recvFileState</div><div class="ttdoc">接收文件的状态控制</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:41</div></div>
+<div class="ttc" id="astructtag_web_client_html_acbced4e43c2483f90dd93f5f590e00f0"><div class="ttname"><a href="structtag_web_client.html#acbced4e43c2483f90dd93f5f590e00f0">tagWebClient::m_recvDataState</a></div><div class="ttdeci">bool m_recvDataState</div><div class="ttdoc">接收二进制数据的状态控制</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:45</div></div>
+<div class="ttc" id="astructtag_web_client_html_ad20897c5c8bd47f5d4005989bead0e55"><div class="ttname"><a href="structtag_web_client.html#ad20897c5c8bd47f5d4005989bead0e55">tagWebClient::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>定义</b> cwebsocketserver.h:27</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e72918b9f0e93adee7ec62635d44a38d.html">KuGouServer</a></li><li class="navelem"><a class="el" href="dir_1f4d31eb974542b2ab12d0259d14eb74.html">NetWork</a></li><li class="navelem"><a class="el" href="cwebsocketserver_8h.html">cwebsocketserver.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

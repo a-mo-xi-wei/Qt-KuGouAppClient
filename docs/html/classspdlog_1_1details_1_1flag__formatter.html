@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: flag_formatter类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classspdlog_1_1details_1_1flag__formatter.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classspdlog_1_1details_1_1flag__formatter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">flag_formatter类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="pattern__formatter_8h_source.html">pattern_formatter.h</a>&gt;</code></p>
+<div class="dynheader">
+类 flag_formatter 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1flag__formatter__inherit__graph.png" border="0" usemap="#aflag__formatter_inherit__map" alt="Inheritance graph"/></div>
+<map name="aflag__formatter_inherit__map" id="aflag__formatter_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,1101,107,1128"/>
+<area shape="rect" href="classspdlog_1_1details_1_1mdc__formatter.html" title=" " alt="" coords="188,5,343,64"/>
+<area shape="poly" title=" " alt="" coords="56,1086,64,873,82,552,95,390,111,246,130,136,141,98,153,74,168,60,186,49,189,53,171,64,157,78,146,100,135,137,116,247,101,390,87,553,69,873,61,1086"/>
+<area shape="rect" href="classspdlog_1_1custom__flag__formatter.html" title=" " alt="" coords="190,88,341,115"/>
+<area shape="poly" title=" " alt="" coords="56,1086,64,881,81,576,94,422,110,286,129,182,140,147,153,125,169,111,188,103,191,108,172,116,157,128,145,149,135,183,115,286,100,422,87,576,69,881,61,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_a__formatter.html" title=" " alt="" coords="166,139,364,165"/>
+<area shape="poly" title=" " alt="" coords="56,1085,64,890,83,601,96,455,112,327,130,230,141,196,153,176,167,164,170,168,157,179,146,198,136,231,117,328,101,456,88,601,70,890,61,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_b__formatter.html" title=" " alt="" coords="166,189,364,216"/>
+<area shape="poly" title=" " alt="" coords="56,1086,65,900,84,627,98,490,113,369,131,277,142,246,153,226,167,214,170,219,157,230,146,248,137,278,119,370,103,491,90,628,71,900,61,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_c__formatter.html" title=" " alt="" coords="166,240,365,267"/>
+<area shape="poly" title=" " alt="" coords="56,1085,66,909,86,652,99,524,115,411,132,325,142,295,153,277,167,265,170,269,157,280,147,297,138,326,120,411,105,524,91,653,72,909,61,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_d__formatter.html" title=" " alt="" coords="166,291,365,317"/>
+<area shape="poly" title=" " alt="" coords="56,1085,67,918,88,678,101,558,116,452,133,372,143,345,153,328,167,316,170,320,157,331,148,347,139,373,122,453,106,559,93,679,73,919,62,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_e__formatter.html" title=" " alt="" coords="166,341,364,368"/>
+<area shape="poly" title=" " alt="" coords="54,1086,56,939,67,727,78,617,96,517,120,435,135,403,153,378,167,367,170,371,157,382,140,405,125,437,101,519,84,618,72,727,61,939,60,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_f__formatter.html" title=" " alt="" coords="167,392,364,419"/>
+<area shape="poly" title=" " alt="" coords="55,1086,57,948,70,751,82,650,99,557,122,481,136,452,153,429,167,417,170,421,157,432,141,454,127,483,104,558,87,650,75,751,63,948,60,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_h__formatter.html" title=" " alt="" coords="166,443,365,469"/>
+<area shape="poly" title=" " alt="" coords="55,1086,59,957,73,775,85,682,102,597,124,527,138,500,153,479,167,468,171,472,157,483,142,503,129,529,107,599,90,683,78,776,64,957,60,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_i__formatter.html" title=" " alt="" coords="169,493,362,520"/>
+<area shape="poly" title=" " alt="" coords="55,1086,61,966,76,799,89,715,105,637,126,574,139,549,153,530,168,518,171,523,157,534,143,552,131,576,110,639,94,716,81,800,66,966,61,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_m__formatter.html" title=" " alt="" coords="165,544,366,571"/>
+<area shape="poly" title=" " alt="" coords="56,1086,63,975,79,824,92,747,108,677,128,620,153,581,168,569,171,573,157,584,133,622,113,679,97,748,85,825,68,976,61,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_r__formatter.html" title=" " alt="" coords="166,595,365,621"/>
+<area shape="poly" title=" " alt="" coords="57,1085,65,984,83,848,96,780,111,718,130,667,153,632,168,620,171,624,157,635,135,669,116,719,101,781,88,849,71,985,62,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_s__formatter.html" title=" " alt="" coords="166,645,364,672"/>
+<area shape="poly" title=" " alt="" coords="57,1086,68,994,86,873,99,813,114,758,132,713,153,682,168,670,172,675,157,686,137,715,119,760,104,814,92,874,73,995,63,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_t__formatter.html" title=" " alt="" coords="167,696,364,723"/>
+<area shape="poly" title=" " alt="" coords="58,1085,70,1004,90,898,118,798,134,759,153,733,169,721,172,725,157,737,139,762,123,800,95,899,75,1004,64,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_y__formatter.html" title=" " alt="" coords="166,747,364,773"/>
+<area shape="poly" title=" " alt="" coords="54,1086,57,1023,71,942,83,898,100,857,123,817,153,783,169,772,172,776,156,787,128,821,105,859,88,900,76,943,63,1024,59,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1a__formatter.html" title=" " alt="" coords="167,797,364,824"/>
+<area shape="poly" title=" " alt="" coords="56,1086,62,1032,78,964,90,928,107,894,127,862,153,834,170,822,173,827,156,838,131,865,111,897,95,930,83,965,68,1033,61,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1aggregate__formatter.html" title=" " alt="" coords="197,848,334,875"/>
+<area shape="poly" title=" " alt="" coords="59,1085,68,1041,85,986,113,931,131,906,153,885,173,872,196,864,197,869,175,877,156,889,135,910,117,934,90,988,73,1042,64,1086"/>
+<area shape="rect" href="classspdlog_1_1details_1_1b__formatter.html" title=" " alt="" coords="167,899,364,925"/>
+<area shape="poly" title=" " alt="" coords="62,1086,74,1051,93,1010,119,969,153,935,173,924,176,928,156,939,123,973,98,1013,79,1053,67,1088"/>
+<area shape="rect" href="classspdlog_1_1details_1_1c__formatter.html" title=" " alt="" coords="167,949,364,976"/>
+<area shape="poly" title=" " alt="" coords="69,1086,102,1034,126,1008,153,986,177,974,179,979,156,990,129,1012,106,1038,73,1089"/>
+<area shape="rect" href="classspdlog_1_1details_1_1ch__formatter.html" title=" " alt="" coords="218,1000,312,1027"/>
+<area shape="poly" title=" " alt="" coords="80,1089,113,1061,153,1036,185,1024,217,1017,218,1022,187,1030,156,1041,116,1066,83,1093"/>
+<area shape="rect" href="classspdlog_1_1details_1_1color__start__formatter.html" title=" " alt="" coords="195,1051,336,1077"/>
+<area shape="poly" title=" " alt="" coords="121,1095,154,1087,202,1075,203,1081,155,1092,123,1100"/>
+<area shape="rect" href="classspdlog_1_1details_1_1color__stop__formatter.html" title=" " alt="" coords="195,1101,336,1128"/>
+<area shape="poly" title=" " alt="" coords="122,1112,195,1112,195,1117,122,1117"/>
+<area shape="rect" href="classspdlog_1_1details_1_1d__formatter.html" title=" " alt="" coords="167,1152,364,1179"/>
+<area shape="poly" title=" " alt="" coords="123,1129,155,1137,203,1149,202,1154,154,1143,121,1134"/>
+<area shape="rect" href="classspdlog_1_1details_1_1e__formatter.html" title=" " alt="" coords="167,1203,364,1229"/>
+<area shape="poly" title=" " alt="" coords="83,1136,116,1164,156,1188,186,1200,184,1205,153,1193,113,1168,80,1140"/>
+<area shape="rect" href="classspdlog_1_1details_1_1elapsed__formatter.html" title=" " alt="" coords="185,1253,346,1296"/>
+<area shape="poly" title=" " alt="" coords="74,1140,107,1191,130,1217,156,1239,185,1254,183,1259,153,1244,126,1221,103,1194,69,1143"/>
+<area shape="rect" href="classspdlog_1_1details_1_1f__formatter.html" title=" " alt="" coords="169,1320,362,1347"/>
+<area shape="poly" title=" " alt="" coords="66,1143,77,1180,95,1225,121,1269,156,1306,175,1317,172,1322,153,1310,117,1272,91,1227,72,1182,61,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1full__formatter.html" title=" " alt="" coords="217,1371,314,1397"/>
+<area shape="poly" title=" " alt="" coords="63,1143,71,1190,88,1248,115,1307,134,1334,156,1357,185,1373,217,1380,216,1385,183,1378,153,1361,130,1337,111,1310,83,1250,66,1191,58,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1level__formatter.html" title=" " alt="" coords="157,1421,374,1448"/>
+<area shape="poly" title=" " alt="" coords="61,1144,66,1200,81,1271,93,1309,109,1345,130,1378,156,1407,173,1419,170,1423,153,1411,126,1382,105,1347,88,1311,76,1273,61,1201,55,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1m__formatter.html" title=" " alt="" coords="165,1472,366,1499"/>
+<area shape="poly" title=" " alt="" coords="59,1144,61,1209,74,1294,86,1339,103,1382,127,1423,156,1458,172,1469,169,1474,153,1462,122,1426,99,1385,81,1340,69,1295,56,1209,54,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1mdc__formatter.html" title=" " alt="" coords="158,1523,372,1549"/>
+<area shape="poly" title=" " alt="" coords="63,1143,75,1228,94,1338,122,1442,138,1482,157,1509,172,1520,168,1524,153,1513,134,1485,117,1444,89,1339,69,1229,58,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1name__formatter.html" title=" " alt="" coords="155,1573,376,1600"/>
+<area shape="poly" title=" " alt="" coords="62,1143,72,1237,90,1363,103,1426,118,1482,136,1529,157,1560,172,1571,168,1575,153,1563,132,1531,113,1484,98,1427,85,1364,67,1238,57,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1p__formatter.html" title=" " alt="" coords="167,1624,364,1651"/>
+<area shape="poly" title=" " alt="" coords="62,1143,70,1247,87,1388,100,1459,115,1523,134,1575,157,1610,171,1621,168,1625,153,1614,130,1577,110,1524,94,1460,82,1389,65,1248,56,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1pid__formatter.html" title=" " alt="" coords="162,1675,368,1701"/>
+<area shape="poly" title=" " alt="" coords="61,1144,68,1257,84,1413,96,1492,112,1563,132,1622,144,1644,157,1661,171,1672,168,1676,153,1665,139,1647,128,1624,107,1565,91,1493,78,1413,62,1257,56,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1r__formatter.html" title=" " alt="" coords="169,1725,362,1752"/>
+<area shape="poly" title=" " alt="" coords="61,1144,66,1267,81,1437,93,1524,109,1603,131,1668,143,1693,157,1711,171,1723,167,1727,153,1715,138,1696,126,1670,104,1605,88,1525,75,1438,61,1267,55,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1short__filename__formatter.html" title=" " alt="" coords="183,1776,348,1819"/>
+<area shape="poly" title=" " alt="" coords="60,1144,65,1275,79,1460,91,1555,108,1642,130,1714,142,1741,157,1762,169,1773,184,1782,181,1786,166,1778,153,1766,138,1744,125,1716,103,1644,86,1556,74,1461,60,1275,55,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1short__level__formatter.html" title=" " alt="" coords="194,1843,337,1885"/>
+<area shape="poly" title=" " alt="" coords="60,1143,63,1287,75,1492,87,1598,104,1695,127,1775,141,1805,157,1829,174,1843,195,1853,192,1858,171,1848,153,1832,136,1808,122,1777,99,1696,82,1599,70,1493,57,1287,55,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1source__filename__formatter.html" title=" " alt="" coords="178,1909,353,1952"/>
+<area shape="poly" title=" " alt="" coords="60,1143,60,1298,71,1524,83,1640,100,1747,125,1836,140,1870,157,1896,179,1913,176,1917,153,1899,135,1872,120,1837,95,1748,77,1641,66,1524,55,1298,54,1143"/>
+<area shape="rect" href="classspdlog_1_1details_1_1source__funcname__formatter.html" title=" " alt="" coords="174,1976,357,2019"/>
+<area shape="poly" title=" " alt="" coords="61,1144,72,1322,92,1583,105,1713,121,1828,138,1915,147,1945,157,1962,175,1977,171,1982,153,1966,142,1947,133,1917,115,1829,100,1714,87,1583,67,1323,56,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1source__linenum__formatter.html" title=" " alt="" coords="180,2043,351,2085"/>
+<area shape="poly" title=" " alt="" coords="61,1143,71,1335,90,1616,103,1758,119,1883,137,1978,147,2010,157,2029,181,2048,178,2052,153,2032,142,2012,132,1979,113,1884,98,1759,85,1617,65,1335,56,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1source__location__formatter.html" title=" " alt="" coords="180,2109,351,2152"/>
+<area shape="poly" title=" " alt="" coords="61,1144,70,1347,88,1650,101,1803,117,1938,136,2040,146,2075,157,2096,181,2114,178,2118,153,2099,141,2077,130,2042,112,1939,96,1803,83,1650,64,1348,56,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1t__formatter.html" title=" " alt="" coords="169,2176,362,2203"/>
+<area shape="poly" title=" " alt="" coords="61,1144,68,1360,85,1685,98,1849,114,1994,133,2103,145,2140,157,2162,170,2174,167,2178,153,2166,140,2142,128,2105,108,1994,92,1849,79,1685,63,1360,55,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1v__formatter.html" title=" " alt="" coords="167,2227,364,2253"/>
+<area shape="poly" title=" " alt="" coords="61,1144,67,1369,83,1710,96,1883,112,2035,132,2151,144,2190,157,2213,170,2224,167,2228,153,2216,139,2192,127,2152,107,2036,91,1883,78,1710,62,1369,55,1144"/>
+<area shape="rect" href="classspdlog_1_1details_1_1z__formatter.html" title=" " alt="" coords="167,2277,364,2304"/>
+<area shape="poly" title=" " alt="" coords="60,1143,66,1378,82,1735,94,1916,111,2077,131,2198,144,2239,157,2264,170,2275,167,2279,153,2267,139,2241,126,2200,105,2077,89,1917,76,1735,61,1378,55,1143"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+flag_formatter 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1flag__formatter__coll__graph.png" border="0" usemap="#aflag__formatter_coll__map" alt="Collaboration graph"/></div>
+<map name="aflag__formatter_coll__map" id="aflag__formatter_coll__map">
+<area shape="rect" title=" " alt="" coords="5,96,107,123"/>
+<area shape="rect" href="structspdlog_1_1details_1_1padding__info.html" title=" " alt="" coords="9,5,103,32"/>
+<area shape="poly" title=" " alt="" coords="59,48,59,95,53,95,53,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a3d505996aeb84932630de8de9608ce83" id="r_a3d505996aeb84932630de8de9608ce83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d505996aeb84932630de8de9608ce83">flag_formatter</a> (<a class="el" href="structspdlog_1_1details_1_1padding__info.html">padding_info</a> padinfo)</td></tr>
+<tr class="separator:a3d505996aeb84932630de8de9608ce83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dcea03688b458a7798143483cb6f289" id="r_a4dcea03688b458a7798143483cb6f289"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dcea03688b458a7798143483cb6f289">flag_formatter</a> ()=default</td></tr>
+<tr class="separator:a4dcea03688b458a7798143483cb6f289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54a193babae9cc027f9a750c7cb1fede" id="r_a54a193babae9cc027f9a750c7cb1fede"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54a193babae9cc027f9a750c7cb1fede">~flag_formatter</a> ()=default</td></tr>
+<tr class="separator:a54a193babae9cc027f9a750c7cb1fede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84a876e07c986ab6d12ae4db14e4dfe" id="r_ad84a876e07c986ab6d12ae4db14e4dfe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad84a876e07c986ab6d12ae4db14e4dfe">format</a> (const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;msg, const std::tm &amp;tm_time, <a class="el" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> &amp;dest)=0</td></tr>
+<tr class="separator:ad84a876e07c986ab6d12ae4db14e4dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:afd89f1d2e4979f2efe59e4f6511965d5" id="r_afd89f1d2e4979f2efe59e4f6511965d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structspdlog_1_1details_1_1padding__info.html">padding_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd89f1d2e4979f2efe59e4f6511965d5">padinfo_</a></td></tr>
+<tr class="separator:afd89f1d2e4979f2efe59e4f6511965d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a3d505996aeb84932630de8de9608ce83" name="a3d505996aeb84932630de8de9608ce83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d505996aeb84932630de8de9608ce83">&#9670;&#160;</a></span>flag_formatter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1details_1_1flag__formatter.html">flag_formatter</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structspdlog_1_1details_1_1padding__info.html">padding_info</a></td>          <td class="paramname"><span class="paramname"><em>padinfo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspdlog_1_1details_1_1flag__formatter_a3d505996aeb84932630de8de9608ce83_icgraph.png" border="0" usemap="#aclassspdlog_1_1details_1_1flag__formatter_a3d505996aeb84932630de8de9608ce83_icgraph" alt=""/></div>
+<map name="aclassspdlog_1_1details_1_1flag__formatter_a3d505996aeb84932630de8de9608ce83_icgraph" id="aclassspdlog_1_1details_1_1flag__formatter_a3d505996aeb84932630de8de9608ce83_icgraph">
+<area shape="rect" title=" " alt="" coords="448,1312,549,1339"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_a__formatter.html#aa2145161a465d33cadf75791cc9c79c5" title=" " alt="" coords="226,5,382,48"/>
+<area shape="poly" title=" " alt="" coords="494,1296,489,1042,474,649,462,448,445,271,424,135,411,90,398,62,381,47,384,43,402,58,416,88,429,134,450,270,467,448,479,649,494,1041,500,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1a__formatter.html#aa1f1c815a92b10855726acfbb3b86aa3" title=" " alt="" coords="227,72,381,115"/>
+<area shape="poly" title=" " alt="" coords="494,1296,488,1053,472,682,460,493,443,326,423,198,411,155,398,128,380,113,383,109,402,125,416,153,428,197,448,325,465,492,478,682,493,1053,500,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_b__formatter.html#a2d38199616cdc0ebd636d2af51bb6d8b" title=" " alt="" coords="226,139,382,181"/>
+<area shape="poly" title=" " alt="" coords="494,1296,487,1066,470,715,457,538,441,380,421,260,410,220,398,195,381,180,384,176,402,192,415,218,427,259,447,380,463,537,476,715,492,1065,499,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1b__formatter.html#aff0b74574ad7210fdef8e6ae60a423c6" title=" " alt="" coords="227,205,381,248"/>
+<area shape="poly" title=" " alt="" coords="494,1297,486,1078,468,749,455,582,439,435,420,323,409,285,398,262,380,246,383,242,402,258,414,283,425,321,445,434,461,582,474,749,491,1078,499,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_c__formatter.html#a8d5992042ba2da9e03775bda6af81850" title=" " alt="" coords="225,272,382,315"/>
+<area shape="poly" title=" " alt="" coords="494,1296,485,1090,466,783,453,627,438,490,419,385,409,350,398,328,381,314,385,310,402,325,414,348,424,384,443,489,459,626,472,782,490,1090,499,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1c__formatter.html#a3339ca1bbf9e001517423c031addd016" title=" " alt="" coords="227,339,381,381"/>
+<area shape="poly" title=" " alt="" coords="493,1297,484,1103,465,816,451,672,436,544,418,448,408,415,398,395,380,380,383,375,402,392,413,413,423,446,441,544,457,671,470,816,489,1102,499,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1color__start__formatter.html#a5aa6f5df1ab3047b868e61b94a2e65b5" title=" " alt="" coords="229,405,378,464"/>
+<area shape="poly" title=" " alt="" coords="495,1297,494,1131,484,887,472,760,455,643,430,545,415,507,398,478,377,459,381,455,402,474,420,505,435,544,460,642,478,759,489,887,500,1131,500,1297"/>
+<area shape="rect" href="classspdlog_1_1details_1_1color__stop__formatter.html#a65b5455dcfb7f47e53bc0ac5951126a3" title=" " alt="" coords="230,488,378,547"/>
+<area shape="poly" title=" " alt="" coords="495,1296,492,1145,480,926,467,812,450,707,427,620,413,586,398,560,376,541,380,537,402,557,418,584,432,619,456,706,473,811,485,925,497,1145,500,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_d__formatter.html#a51a53220b9a23576d0a99ea67747fc3a" title=" " alt="" coords="225,571,382,613"/>
+<area shape="poly" title=" " alt="" coords="495,1297,491,1157,478,956,466,853,449,759,426,680,413,650,398,627,381,613,385,609,402,624,418,648,431,679,454,757,471,852,483,956,496,1156,500,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1d__formatter.html#a3456150af25887a990e32a21556e997b" title=" " alt="" coords="227,637,381,680"/>
+<area shape="poly" title=" " alt="" coords="494,1297,489,1169,474,988,462,896,445,811,424,741,412,714,398,694,380,679,383,675,402,690,416,712,429,739,450,810,467,895,479,988,494,1168,499,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_e__formatter.html#afa37db5237f64e7472a03a07c380edec" title=" " alt="" coords="226,704,382,747"/>
+<area shape="poly" title=" " alt="" coords="494,1297,486,1181,470,1021,457,939,441,864,422,802,398,760,381,746,384,742,402,757,427,800,447,863,463,938,475,1020,492,1181,499,1297"/>
+<area shape="rect" href="classspdlog_1_1details_1_1e__formatter.html#a8bdfd3c6c2075d9f68619dc59691728e" title=" " alt="" coords="227,771,381,813"/>
+<area shape="poly" title=" " alt="" coords="493,1297,484,1193,466,1053,453,981,438,917,419,863,398,827,380,812,383,808,402,824,424,861,443,915,458,980,471,1052,489,1193,498,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1elapsed__formatter.html#a864478d67abe88e52678ccb6d85e2512" title=" " alt="" coords="208,837,400,880"/>
+<area shape="poly" title=" " alt="" coords="492,1297,481,1206,462,1085,434,970,417,925,398,894,385,882,388,878,402,890,422,922,439,968,467,1084,486,1205,497,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_f__formatter.html#ad44e82313874d2a949b1efc4f6c90712" title=" " alt="" coords="226,904,382,947"/>
+<area shape="poly" title=" " alt="" coords="496,1296,493,1229,481,1139,468,1091,451,1044,428,1000,398,961,380,947,383,942,402,957,432,997,456,1042,473,1090,486,1138,498,1228,501,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1f__formatter.html#ae4ad33de94116a94c26fe3e8110f0b9e" title=" " alt="" coords="228,971,380,1013"/>
+<area shape="poly" title=" " alt="" coords="494,1297,487,1241,472,1169,460,1131,444,1093,423,1058,398,1027,379,1013,382,1008,402,1023,428,1055,449,1091,465,1129,477,1167,493,1240,499,1297"/>
+<area shape="rect" href="classspdlog_1_1details_1_1full__formatter.html#af2c40234ade783d99d62b20f3cf1277e" title=" " alt="" coords="222,1037,386,1080"/>
+<area shape="poly" title=" " alt="" coords="490,1297,481,1253,463,1198,436,1142,419,1117,398,1094,383,1083,386,1079,402,1090,423,1113,441,1140,468,1196,486,1251,496,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_h__formatter.html#a04e6ea13f84b6f07378888d5847d8367" title=" " alt="" coords="225,1104,382,1147"/>
+<area shape="poly" title=" " alt="" coords="485,1298,453,1229,429,1193,398,1161,381,1149,384,1145,402,1157,433,1189,458,1227,490,1296"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_i__formatter.html#a774ad1e3e5b7e8bee98f3d7f36000a24" title=" " alt="" coords="228,1171,380,1213"/>
+<area shape="poly" title=" " alt="" coords="476,1301,442,1263,399,1228,377,1216,380,1212,401,1223,446,1260,480,1298"/>
+<area shape="rect" href="classspdlog_1_1details_1_1level__formatter.html#a04033e463c5da47e24a47f29a8c5f57c" title=" " alt="" coords="217,1237,391,1280"/>
+<area shape="poly" title=" " alt="" coords="442,1309,368,1283,369,1278,444,1304"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_m__formatter.html#a834d9a68bd67553fd1d8b5d68c5b027a" title=" " alt="" coords="225,1304,383,1347"/>
+<area shape="poly" title=" " alt="" coords="432,1328,384,1328,384,1323,432,1323"/>
+<area shape="rect" href="classspdlog_1_1details_1_1m__formatter.html#aec9023ba5257c87dc0a4d6595f217b1e" title=" " alt="" coords="225,1371,383,1413"/>
+<area shape="poly" title=" " alt="" coords="444,1347,369,1373,368,1368,442,1342"/>
+<area shape="rect" href="classspdlog_1_1details_1_1mdc__formatter.html#a2ae64964a368daf0e626a190e83d3c2d" title=" " alt="" coords="218,1437,390,1480"/>
+<area shape="poly" title=" " alt="" coords="480,1353,446,1391,401,1428,380,1439,377,1434,399,1423,442,1387,476,1349"/>
+<area shape="rect" href="classspdlog_1_1details_1_1name__formatter.html#ab8612b81c94c54592c7f32754a1fb5a5" title=" " alt="" coords="214,1504,394,1547"/>
+<area shape="poly" title=" " alt="" coords="490,1355,458,1424,433,1461,402,1494,384,1506,381,1501,398,1490,429,1458,453,1421,485,1352"/>
+<area shape="rect" href="classspdlog_1_1details_1_1p__formatter.html#a8dc762e430a2c88c771515180df1ad3f" title=" " alt="" coords="227,1571,381,1613"/>
+<area shape="poly" title=" " alt="" coords="496,1355,486,1399,468,1454,441,1511,423,1537,402,1561,383,1574,380,1570,398,1557,419,1534,436,1508,463,1452,481,1398,490,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1pid__formatter.html#a851ae8e29594a0d0c49ed1ebcfc15ffc" title=" " alt="" coords="222,1637,386,1680"/>
+<area shape="poly" title=" " alt="" coords="499,1354,493,1411,477,1483,465,1522,449,1560,428,1595,402,1627,387,1639,384,1635,398,1623,423,1592,444,1557,460,1520,472,1482,487,1410,494,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_r__formatter.html#ab3520e88eac1842bc34d28e2cc1f8fb4" title=" " alt="" coords="225,1704,382,1747"/>
+<area shape="poly" title=" " alt="" coords="501,1355,498,1422,486,1513,473,1561,456,1609,432,1654,402,1694,384,1708,381,1704,398,1690,428,1651,451,1607,468,1559,481,1512,493,1422,496,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1r__formatter.html#a3436b0d54cc92a78b25744d1e2c7c9d3" title=" " alt="" coords="228,1771,380,1813"/>
+<area shape="poly" title=" " alt="" coords="497,1354,486,1446,467,1567,439,1683,422,1728,402,1760,381,1777,378,1772,398,1757,417,1726,434,1681,462,1565,481,1445,492,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_s__formatter.html#afa5533d9b9d9238bb793cde269ba0327" title=" " alt="" coords="226,1837,382,1880"/>
+<area shape="poly" title=" " alt="" coords="498,1354,489,1458,471,1599,458,1670,443,1735,424,1789,402,1827,384,1842,381,1838,398,1824,419,1787,438,1734,453,1669,466,1598,484,1458,493,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1short__filename__formatter.html#a434540f2ef33414bc635f97b071b4a39" title=" " alt="" coords="217,1904,390,1963"/>
+<area shape="poly" title=" " alt="" coords="499,1354,491,1469,474,1629,461,1712,445,1787,426,1850,402,1894,391,1905,387,1902,398,1890,421,1847,440,1786,456,1711,468,1629,485,1469,493,1353"/>
+<area shape="rect" href="classspdlog_1_1details_1_1short__level__formatter.html#a5411a5349964d4d7d27ae8377f2f47fd" title=" " alt="" coords="228,1987,380,2045"/>
+<area shape="poly" title=" " alt="" coords="499,1355,494,1485,478,1670,466,1765,449,1852,428,1925,416,1954,402,1976,382,1995,378,1991,398,1973,411,1951,423,1923,444,1851,461,1764,473,1669,488,1485,494,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1source__filename__formatter.html#aef00eca584ed0287b17b16327a3919c3" title=" " alt="" coords="212,2069,396,2128"/>
+<area shape="poly" title=" " alt="" coords="500,1354,496,1499,483,1709,471,1817,454,1917,431,2000,418,2033,402,2059,391,2071,387,2067,398,2056,413,2031,426,1999,449,1916,465,1816,478,1708,491,1499,495,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1source__funcname__formatter.html#a89c1c936f81710dfbcc4bf23fcbc50ff" title=" " alt="" coords="208,2152,400,2211"/>
+<area shape="poly" title=" " alt="" coords="500,1354,499,1513,487,1748,476,1869,458,1982,434,2076,419,2113,402,2142,391,2154,387,2150,398,2138,414,2110,429,2074,453,1981,470,1869,482,1747,493,1513,495,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1source__linenum__formatter.html#aad2703946510336affb5eb20af1567e9" title=" " alt="" coords="214,2235,394,2293"/>
+<area shape="poly" title=" " alt="" coords="499,1355,488,1542,468,1817,454,1955,439,2078,422,2171,412,2204,402,2224,391,2236,387,2232,398,2221,407,2202,416,2170,434,2077,449,1955,462,1816,483,1542,493,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1source__location__formatter.html#a86a29244fd505ed58e1b236a812e47a6" title=" " alt="" coords="214,2317,394,2376"/>
+<area shape="poly" title=" " alt="" coords="499,1354,489,1557,470,1858,457,2011,441,2145,423,2249,413,2284,402,2307,391,2319,387,2315,398,2304,408,2282,418,2248,436,2145,451,2010,465,1858,484,1556,494,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_t__formatter.html#a4728573e78f309ee870211c29385c58a" title=" " alt="" coords="226,2400,382,2443"/>
+<area shape="poly" title=" " alt="" coords="499,1354,491,1572,474,1900,461,2067,445,2214,425,2327,414,2365,402,2390,384,2406,380,2402,398,2386,409,2363,420,2326,439,2213,455,2066,468,1900,486,1572,494,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1t__formatter.html#a6a8db9ca7e96d88281a7eeda37a21ee1" title=" " alt="" coords="228,2467,380,2509"/>
+<area shape="poly" title=" " alt="" coords="499,1354,492,1585,476,1934,463,2112,446,2269,427,2389,415,2430,402,2456,381,2474,378,2470,398,2453,410,2428,421,2388,441,2268,457,2111,470,1934,487,1584,494,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1v__formatter.html#a96fc730468dd7a4b10b3ab3f1b052588" title=" " alt="" coords="227,2533,381,2576"/>
+<area shape="poly" title=" " alt="" coords="500,1355,493,1597,477,1968,465,2156,448,2324,428,2452,416,2495,402,2523,383,2539,380,2535,398,2520,411,2493,423,2450,443,2323,459,2156,472,1967,488,1597,494,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1_y__formatter.html#a5a32ccf373b23a6d6850fceb47083798" title=" " alt="" coords="226,2600,382,2643"/>
+<area shape="poly" title=" " alt="" coords="500,1354,494,1609,479,2001,467,2201,450,2378,429,2514,416,2560,402,2590,384,2605,381,2601,398,2586,411,2559,424,2513,445,2378,461,2200,474,2000,489,1609,494,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1z__formatter.html#a000dfbb7353990612d9455154e173027" title=" " alt="" coords="227,2667,381,2709"/>
+<area shape="poly" title=" " alt="" coords="500,1354,495,1620,481,2034,469,2245,452,2433,430,2576,417,2625,402,2656,383,2673,380,2669,398,2653,412,2624,425,2575,447,2432,463,2245,476,2033,490,1620,494,1354"/>
+<area shape="rect" href="classspdlog_1_1details_1_1z__formatter.html#a19fe1a4ba9a47e71878ceb335721dc9a" title=" " alt="" coords="11,2633,154,2676"/>
+<area shape="poly" title=" " alt="" coords="211,2677,154,2668,155,2663,212,2671"/>
+<area shape="rect" href="classspdlog_1_1details_1_1z__formatter.html#a452d4d97b41072bc605a31368237e44b" title=" " alt="" coords="5,2700,160,2743"/>
+<area shape="poly" title=" " alt="" coords="212,2705,161,2712,160,2707,211,2699"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4dcea03688b458a7798143483cb6f289" name="a4dcea03688b458a7798143483cb6f289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dcea03688b458a7798143483cb6f289">&#9670;&#160;</a></span>flag_formatter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspdlog_1_1details_1_1flag__formatter.html">flag_formatter</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54a193babae9cc027f9a750c7cb1fede" name="a54a193babae9cc027f9a750c7cb1fede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54a193babae9cc027f9a750c7cb1fede">&#9670;&#160;</a></span>~flag_formatter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ~<a class="el" href="classspdlog_1_1details_1_1flag__formatter.html">flag_formatter</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad84a876e07c986ab6d12ae4db14e4dfe" name="ad84a876e07c986ab6d12ae4db14e4dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84a876e07c986ab6d12ae4db14e4dfe">&#9670;&#160;</a></span>format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void format </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspdlog_1_1details_1_1log__msg.html">details::log_msg</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::tm &amp;</td>          <td class="paramname"><span class="paramname"><em>tm_time</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacespdlog.html#a9ea34fdbca111662f61e7b152fd1f252">memory_buf_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classspdlog_1_1details_1_1_a__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">A_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1a__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">a_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1aggregate__formatter.html#aaba7db73e01b1efcc1911a7f0f4bd3d7">aggregate_formatter</a>, <a class="el" href="classspdlog_1_1details_1_1_b__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">B_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1b__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">b_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_c__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">C_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1c__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">c_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1ch__formatter.html#aaba7db73e01b1efcc1911a7f0f4bd3d7">ch_formatter</a>, <a class="el" href="classspdlog_1_1details_1_1color__start__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">color_start_formatter</a>, <a class="el" href="classspdlog_1_1details_1_1color__stop__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">color_stop_formatter</a>, <a class="el" href="classspdlog_1_1details_1_1_d__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">D_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1d__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">d_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_e__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">E_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1e__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">e_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1elapsed__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">elapsed_formatter&lt; ScopedPadder, Units &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_f__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">F_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1f__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">f_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1full__formatter.html#a5ed50973366c25de18e5fb95be6bbf77">full_formatter</a>, <a class="el" href="classspdlog_1_1details_1_1_h__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">H_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_i__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">I_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1level__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">level_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_m__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">M_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1m__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">m_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1mdc__formatter.html#aaba7db73e01b1efcc1911a7f0f4bd3d7">mdc_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1mdc__formatter.html#aaba7db73e01b1efcc1911a7f0f4bd3d7">mdc_formatter&lt; spdlog::details::null_scoped_padder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1name__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">name_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1p__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">p_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1pid__formatter.html#aaba7db73e01b1efcc1911a7f0f4bd3d7">pid_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_r__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">R_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1r__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">r_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_s__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">S_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1short__filename__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">short_filename_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1short__level__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">short_level_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1source__filename__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">source_filename_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1source__funcname__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">source_funcname_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1source__linenum__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">source_linenum_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1source__location__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">source_location_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_t__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">T_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1t__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">t_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1v__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d">v_formatter&lt; ScopedPadder &gt;</a>, <a class="el" href="classspdlog_1_1details_1_1_y__formatter.html#a25138146c85d6eb6c24c6ba3481b67f5">Y_formatter&lt; ScopedPadder &gt;</a> , 以及 <a class="el" href="classspdlog_1_1details_1_1z__formatter.html#a5ed50973366c25de18e5fb95be6bbf77">z_formatter&lt; ScopedPadder &gt;</a> 内被实现.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="afd89f1d2e4979f2efe59e4f6511965d5" name="afd89f1d2e4979f2efe59e4f6511965d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd89f1d2e4979f2efe59e4f6511965d5">&#9670;&#160;</a></span>padinfo_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspdlog_1_1details_1_1padding__info.html">padding_info</a> padinfo_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="pattern__formatter_8h_source.html">pattern_formatter.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacespdlog.html">spdlog</a></li><li class="navelem"><a class="el" href="namespacespdlog_1_1details.html">details</a></li><li class="navelem"><a class="el" href="classspdlog_1_1details_1_1flag__formatter.html">flag_formatter</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

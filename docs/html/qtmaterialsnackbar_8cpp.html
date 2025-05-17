@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: qtmaterialsnackbar.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('qtmaterialsnackbar_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">qtmaterialsnackbar.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>实现 <a class="el" href="class_qt_material_snackbar.html" title="材质设计风格的消息提示条类">QtMaterialSnackbar</a> 类，提供 <a class="el" href="namespace_material.html" title="Material Design 相关枚举和类型的命名空间">Material</a> Design 提示条  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="qtmaterialsnackbar_8h_source.html">qtmaterialsnackbar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialsnackbar__p_8h_source.html">qtmaterialsnackbar_p.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialsnackbar__internal_8h_source.html">qtmaterialsnackbar_internal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialstyle_8h_source.html">qtmaterialstyle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialstatetransition_8h_source.html">qtmaterialstatetransition.h</a>&quot;</code><br />
+<code>#include &lt;QApplication&gt;</code><br />
+<code>#include &lt;QPainter&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+qtmaterialsnackbar.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="qtmaterialsnackbar_8cpp__incl.png" border="0" usemap="#aqtmaterialsnackbar_8cpp" alt=""/></div>
+<map name="aqtmaterialsnackbar_8cpp" id="aqtmaterialsnackbar_8cpp">
+<area shape="rect" title="实现 QtMaterialSnackbar 类，提供 Material Design 提示条" alt="" coords="501,5,658,32"/>
+<area shape="rect" href="qtmaterialsnackbar_8h.html" title="定义 QtMaterialSnackbar 类，提供 Material Design 提示条" alt="" coords="19,88,161,115"/>
+<area shape="poly" title=" " alt="" coords="501,32,349,53,173,83,154,87,153,81,172,77,348,48,500,27"/>
+<area shape="rect" href="qtmaterialsnackbar__p_8h.html" title="定义 QtMaterialSnackbarPrivate 类，提供 QtMaterialSnackbar 的私有实现" alt="" coords="185,88,342,115"/>
+<area shape="poly" title=" " alt="" coords="530,35,328,86,327,81,529,30"/>
+<area shape="rect" href="qtmaterialsnackbar__internal_8h.html" title="定义 QtMaterialSnackbarStateMachine 类，提供提示条状态管理" alt="" coords="366,80,497,123"/>
+<area shape="poly" title=" " alt="" coords="557,35,484,75,481,70,555,30"/>
+<area shape="rect" href="qtmaterialstyle_8h.html" title="定义 QtMaterialStyle 类，提供 Material Design 风格支持" alt="" coords="521,88,638,115"/>
+<area shape="poly" title=" " alt="" coords="582,32,582,73,577,73,577,32"/>
+<area shape="rect" href="qtmaterialstatetransition_8h.html" title="定义 QtMaterialStateTransition 类，提供状态转换功能" alt="" coords="662,88,833,115"/>
+<area shape="poly" title=" " alt="" coords="607,30,709,79,707,84,604,35"/>
+<area shape="rect" title=" " alt="" coords="857,88,952,115"/>
+<area shape="poly" title=" " alt="" coords="644,30,739,51,845,77,855,80,854,85,844,83,738,56,643,35"/>
+<area shape="rect" title=" " alt="" coords="976,88,1049,115"/>
+<area shape="poly" title=" " alt="" coords="658,24,802,43,885,58,965,77,973,80,971,85,964,83,883,63,801,48,658,29"/>
+<area shape="rect" href="qtmaterialoverlaywidget_8h.html" title="定义 QtMaterialOverlayWidget 类，提供覆盖层控件功能" alt="" coords="5,171,175,197"/>
+<area shape="poly" title=" " alt="" coords="93,115,93,155,87,155,87,115"/>
+<area shape="rect" title=" " alt="" coords="54,245,126,272"/>
+<area shape="poly" title=" " alt="" coords="93,198,93,230,87,230,87,198"/>
+<area shape="rect" title=" " alt="" coords="230,171,342,197"/>
+<area shape="poly" title=" " alt="" coords="395,126,323,165,321,160,393,121"/>
+<area shape="rect" title=" " alt="" coords="366,171,430,197"/>
+<area shape="poly" title=" " alt="" coords="425,124,411,157,407,155,420,122"/>
+<area shape="rect" title=" " alt="" coords="454,171,568,197"/>
+<area shape="poly" title=" " alt="" coords="571,117,533,161,529,157,567,113"/>
+<area shape="rect" href="qtmaterialstyle__p_8h.html" title="定义 QtMaterialStylePrivate 类，提供 QtMaterialStyle 的私有实现" alt="" coords="592,171,724,197"/>
+<area shape="poly" title=" " alt="" coords="594,113,637,158,634,162,590,117"/>
+<area shape="rect" title=" " alt="" coords="748,171,885,197"/>
+<area shape="poly" title=" " alt="" coords="760,113,798,157,794,161,756,117"/>
+<area shape="rect" href="qtmaterialstatetransitionevent_8h.html" title="定义 QtMaterialStateTransitionEvent 类和状态转换类型枚举" alt="" coords="910,171,1113,197"/>
+<area shape="poly" title=" " alt="" coords="789,113,957,163,955,168,788,118"/>
+<area shape="rect" title=" " alt="" coords="979,245,1044,272"/>
+<area shape="poly" title=" " alt="" coords="1014,198,1014,230,1009,230,1009,198"/>
+</map>
+</div>
+</div><a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>实现 <a class="el" href="class_qt_material_snackbar.html" title="材质设计风格的消息提示条类">QtMaterialSnackbar</a> 类，提供 <a class="el" href="namespace_material.html" title="Material Design 相关枚举和类型的命名空间">Material</a> Design 提示条 </p>
+<dl class="section author"><dt>作者</dt><dd>laserpants </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-05-16 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_b95b73a9da1c57040a996fcdd774df29.html">QtMaterialWidget</a></li><li class="navelem"><a class="el" href="dir_c40e5d532415c5ac5ae84bf254f566c5.html">QtMaterialSnackbar</a></li><li class="navelem"><a class="el" href="qtmaterialsnackbar_8cpp.html">qtmaterialsnackbar.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
