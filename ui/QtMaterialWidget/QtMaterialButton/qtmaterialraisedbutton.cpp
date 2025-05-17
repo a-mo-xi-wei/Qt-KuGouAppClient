@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialraisedbutton.cpp
  * @brief 实现 QtMaterialRaisedButton 类，提供 Material Design 凸起按钮
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

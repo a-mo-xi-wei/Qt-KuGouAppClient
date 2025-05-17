@@ -249,8 +249,8 @@ private:
     std::unique_ptr<AllLocal>       m_allLocal;          ///< 本地音乐控件
     std::unique_ptr<AllPaid>        m_allPaid;           ///< 已购音乐控件
     std::unique_ptr<AllCloudDisk>   m_allCloudDisk;      ///< 云盘音乐控件
-    QAction *m_searchAction;                             ///< 搜索动作
-    SortOptionMenu *m_sortOptMenu;                       ///< 排序选项菜单
+    QAction *m_searchAction{};                             ///< 搜索动作
+    SortOptionMenu *m_sortOptMenu{};                       ///< 排序选项菜单
     QPoint m_menuPosition;                               ///< 菜单显示位置
 };
 

@@ -98,7 +98,6 @@ private slots:
 private:
     bool m_isAnimating = false;            ///< 标记动画是否正在进行
     bool m_ignore = false;                 ///< 是否忽略滚轮事件
-    QWidget *m_parent{};                   ///< 父窗口指针
     std::unique_ptr<UpToolButton> m_upBtn{}; ///< 返回顶部按钮
     QTimer *m_scrollBarTimer{};            ///< 控制返回顶部按钮显示的定时器
     QEasingCurve m_curve = QEasingCurve::OutQuad; ///< 默认缓动曲线

@@ -1,7 +1,7 @@
 /**
 * @file qtmaterialstatetransitionevent.h
  * @brief 定义 QtMaterialStateTransitionEvent 类和状态转换类型枚举
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

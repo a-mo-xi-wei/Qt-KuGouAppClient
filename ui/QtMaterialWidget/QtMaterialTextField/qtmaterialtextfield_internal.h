@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialtextfield_internal.h
  * @brief 定义 QtMaterialTextFieldStateMachine 和 QtMaterialTextFieldLabel 类，提供文本输入框内部实现
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

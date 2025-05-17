@@ -1,7 +1,7 @@
 /**
 * @file qtmaterialstyle_p.h
  * @brief 定义 QtMaterialStylePrivate 类，提供 QtMaterialStyle 的私有实现
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

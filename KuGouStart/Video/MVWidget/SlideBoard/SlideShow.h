@@ -148,8 +148,8 @@ private:
     QList<QString>                   texts;              ///< 图片关联文本列表
     QList<InteractiveButtonBase *>   indications;        ///< 指示器按钮列表
     int                              currentIndex = -1;  ///< 当前图片索引
-    QTimer                          *autoSlideTimer;     ///< 自动轮播定时器
-    SideHideLabel                   *hidingLabel;        ///< 正在隐藏的标签
+    QTimer                          *autoSlideTimer{};   ///< 自动轮播定时器
+    SideHideLabel                   *hidingLabel{};      ///< 正在隐藏的标签
     QColor                           normalColor = QColor(172, 128, 58);       ///< 指示器默认颜色
     QColor                           selectColor = Qt::yellow;                          ///< 指示器选中颜色
     QSize                            oneSize;                                           ///< 默认图片大小
@@ -157,7 +157,7 @@ private:
     double                           sideOffside = 0.4;                                 ///< 两侧卡片位置偏移比例
     double                           imgOffside = 0.15;                                 ///< 图片内偏移比例
     bool                             scalePixmap = false;                               ///< 图片缩放标志（已废弃）
-    QHBoxLayout                     *indicationLayout;   ///< 指示器布局
+    QHBoxLayout                     *indicationLayout{}; ///< 指示器布局
     QRect                            centerRect;         ///< 中心卡片区域
     QRect                            leftRect;           ///< 左侧卡片区域
     QRect                            rightRect;          ///< 右侧卡片区域

@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialcircularprogress.cpp
  * @brief 实现 QtMaterialCircularProgress 类，提供 Material Design 圆形进度条
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

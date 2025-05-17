@@ -1,7 +1,7 @@
 /**
 * @file qtmaterialcircularprogress_internal.cpp
  * @brief 实现 QtMaterialCircularProgressDelegate 类，提供圆形进度条动画代理
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

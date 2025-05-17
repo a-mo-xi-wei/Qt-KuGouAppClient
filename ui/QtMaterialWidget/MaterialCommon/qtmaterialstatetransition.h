@@ -1,7 +1,7 @@
 /**
 * @file qtmaterialstatetransition.h
  * @brief 定义 QtMaterialStateTransition 类，提供状态转换功能
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

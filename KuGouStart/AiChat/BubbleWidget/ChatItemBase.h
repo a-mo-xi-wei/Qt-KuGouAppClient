@@ -66,12 +66,12 @@ private:
     void initMovie();
 
 private:
-    ChatRole                   m_role;         ///< 聊天角色
-    QLabel                    *m_pNameLabel;   ///< 用户名标签
-    QLabel                    *m_pIconLabel;   ///< 头像标签
-    std::unique_ptr<QWidget>   m_pBubble;      ///< 气泡控件
-    QLabel                    *m_loading;      ///< 加载动画标签
-    QMovie                    *m_loadingMovie; ///< 加载动画对象
+    ChatRole                   m_role;           ///< 聊天角色
+    QLabel                    *m_pNameLabel{};   ///< 用户名标签
+    QLabel                    *m_pIconLabel{};   ///< 头像标签
+    std::unique_ptr<QWidget>   m_pBubble;        ///< 气泡控件
+    QLabel                    *m_loading{};      ///< 加载动画标签
+    QMovie                    *m_loadingMovie{}; ///< 加载动画对象
 };
 
 #endif // CHATITEMBASE_H

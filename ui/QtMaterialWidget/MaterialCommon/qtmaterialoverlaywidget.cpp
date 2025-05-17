@@ -1,7 +1,7 @@
 /**
 * @file qtmaterialoverlaywidget.cpp
  * @brief 实现 QtMaterialOverlayWidget 类，提供覆盖层控件功能
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

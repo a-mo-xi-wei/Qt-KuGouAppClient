@@ -91,9 +91,9 @@ private slots:
     void finalizeStream();
 
 private:
-    QNetworkRequest      _request;       ///< 网络请求对象
-    QNetworkAccessManager *_manager;     ///< 网络管理器
-    QNetworkReply        *_reply;        ///< 网络响应
+    QNetworkRequest      _request;         ///< 网络请求对象
+    QNetworkAccessManager *_manager{};     ///< 网络管理器
+    QNetworkReply        *_reply{};        ///< 网络响应
     QString              _curl_https    = "https://api.siliconflow.cn/v1/chat/completions";    ///< API 地址
     QString              _model         = "deepseek-ai/DeepSeek-V3";                           ///< 模型名称
     QString              _api_key       = "Your API Key"; ///< API 密钥,可参考 https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D

@@ -62,9 +62,9 @@ protected:
         void loadingFinished();
 
 private:
-    QWidget*                    maskWidget;     ///< 遮罩控件
-    QtMaterialCircularProgress* progress;       ///< 进度条控件
-    QTimer*                     m_timer;        ///< 定时器
+    QWidget*                    maskWidget{};     ///< 遮罩控件
+    QtMaterialCircularProgress* progress{};       ///< 进度条控件
+    QTimer*                     m_timer{};        ///< 定时器
 };
 
 #endif // REFRESHMASK_H

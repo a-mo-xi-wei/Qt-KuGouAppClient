@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialtextfield.h
  * @brief 定义 QtMaterialTextField 类，提供 Material Design 文本输入框
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

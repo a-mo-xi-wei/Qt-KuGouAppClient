@@ -117,15 +117,15 @@ signals:
     void volumeChange(int value);
 
 private:
-    bool                    m_isNoVolume;           ///< 是否静音
-    std::unique_ptr<MyWidget>       m_volumeWidget;         ///< 音量调节控件
-    std::unique_ptr<QLabel>         m_volumeLab;            ///< 音量值标签
-    std::unique_ptr<SliderWidget>   m_volumeSlider;         ///< 音量滑块
-    QVBoxLayout*            m_vBoxLayout;           ///< 音量控件布局
-    QPoint                  m_volumePosition;       ///< 音量控件位置
-    QWidget*                m_volumeParent;         ///< 音量控件父窗口
-    QTimer*                 m_leaveTimer;           ///< 鼠标离开延迟定时器
-    QTimer*                 m_positionCheckTimer;   ///< 鼠标位置检查定时器
+    bool                    m_isNoVolume;             ///< 是否静音
+    std::unique_ptr<MyWidget>       m_volumeWidget;   ///< 音量调节控件
+    std::unique_ptr<QLabel>         m_volumeLab;      ///< 音量值标签
+    std::unique_ptr<SliderWidget>   m_volumeSlider;   ///< 音量滑块
+    QVBoxLayout*            m_vBoxLayout;             ///< 音量控件布局
+    QPoint                  m_volumePosition;         ///< 音量控件位置
+    QWidget*                m_volumeParent{};         ///< 音量控件父窗口
+    QTimer*                 m_leaveTimer{};           ///< 鼠标离开延迟定时器
+    QTimer*                 m_positionCheckTimer{};   ///< 鼠标位置检查定时器
 };
 
 #endif // VOLUMETOOLBTN_H

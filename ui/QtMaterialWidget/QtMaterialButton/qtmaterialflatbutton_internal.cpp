@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialflatbutton_internal.cpp
  * @brief 实现 QtMaterialFlatButtonStateMachine 类，提供扁平按钮状态管理
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

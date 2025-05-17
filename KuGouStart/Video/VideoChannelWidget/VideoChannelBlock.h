@@ -103,10 +103,10 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
-    Ui::VideoChannelBlock *ui;               ///< UI 指针
-    QLabel                *m_coverTextLab;   ///< 封面文本标签
-    QString                m_descriptionText; ///< 描述文本
-    QFont                  m_coverTextFont;  ///< 封面文本字体
+    Ui::VideoChannelBlock *ui;                 ///< UI 指针
+    QLabel                *m_coverTextLab{};   ///< 封面文本标签
+    QString                m_descriptionText;  ///< 描述文本
+    QFont                  m_coverTextFont;    ///< 封面文本字体
 };
 
 #endif // VIDEOCHANNELBLOCK_H

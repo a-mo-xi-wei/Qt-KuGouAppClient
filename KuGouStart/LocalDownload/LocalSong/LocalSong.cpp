@@ -1,8 +1,10 @@
-//
-// Created by WeiWang on 25-1-27.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_LocalSong.h" resolved
+/**
+ * @file LocalSong.cpp
+ * @brief 实现 LocalSong 类，提供本地歌曲管理界面功能
+ * @author WeiWang
+ * @date 2025-01-27
+ * @version 1.0
+ */
 
 #include "LocalSong.h"
 #include "ui_LocalSong.h"
@@ -24,304 +26,241 @@
 #include <QTimer>
 #include <QBuffer>
 
-
+/** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
-//匹配是否有乱码
+
+/** @brief 匹配非乱码字符的正则表达式 */
 static QRegularExpression re(QStringLiteral("^[A-Za-z0-9\\p{Han}\\\\/\\-_\\*]+$"));
 
+/**
+ * @brief 构造函数，初始化本地歌曲界面
+ * @param parent 父控件指针，默认为 nullptr
+ */
 LocalSong::LocalSong(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::LocalSong)
     , m_player(std::make_unique<QMediaPlayer>(this))
     , m_searchAction(new QAction(this))
 {
-    ui->setupUi(this);
+    ui->setupUi(this);                                   ///< 初始化 UI
+    QFile file(GET_CURRENT_DIR + QStringLiteral("/localsong.css")); ///< 加载样式表
+    if (file.open(QIODevice::ReadOnly))
     {
-        QFile file(GET_CURRENT_DIR + QStringLiteral("/localsong.css"));
-        if (file.open(QIODevice::ReadOnly)) {
-            this->setStyleSheet(file.readAll());
-        } else {
-            qDebug() << "样式表打开失败QAQ";
-            STREAM_ERROR() << "样式表打开失败QAQ";
-            return;
-        }
+        this->setStyleSheet(file.readAll());             ///< 应用样式表
     }
-    getMetaData();
-    //选中相关
-    const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
-    m_sortOptMenu = menu->getMenu<SortOptionMenu>();
-
+    else
+    {
+        qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
+        return;
+    }
+    getMetaData();                                       ///< 获取元数据
+    const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this); ///< 创建排序菜单
+    m_sortOptMenu = menu->getMenu<SortOptionMenu>();     ///< 获取排序选项菜单
     connect(m_sortOptMenu, &SortOptionMenu::selected, this, [this] {
-        //ui->local_sort_toolButton->setStyleSheet("border-image:url(':/Res/titlebar/sort-blue.svg');");
-        ui->local_sort_toolButton->setStyleSheet("QToolButton{border-image:url(':/Res/titlebar/sort-blue.svg');}");
+        ui->local_sort_toolButton->setStyleSheet("QToolButton{border-image:url(':/Res/titlebar/sort-blue.svg');}"); ///< 设置选中样式
     });
     connect(m_sortOptMenu, &SortOptionMenu::deselected, this, [this] {
-        //qDebug()<<"接收到无排序状态";
         ui->local_sort_toolButton->setStyleSheet(R"(
                 QToolButton{border-image:url(':/Res/titlebar/sort-gray.svg');}
-                QToolButton:hover{border-image:url(':/Res/titlebar/sort-blue.svg');})");
+                QToolButton:hover{border-image:url(':/Res/titlebar/sort-blue.svg');})"); ///< 设置未选中样式
     });
-    initUi();
-    // 延迟调用 fetchAndSyncServerSongList，确保对象构造完成
-    QTimer::singleShot(0, this, &LocalSong::fetchAndSyncServerSongList);
+    initUi();                                            ///< 初始化界面
+    QTimer::singleShot(0, this, &LocalSong::fetchAndSyncServerSongList); ///< 延迟同步服务器歌曲
 }
 
-LocalSong::~LocalSong() {
-    delete ui;
+/**
+ * @brief 析构函数，清理资源
+ */
+LocalSong::~LocalSong()
+{
+    delete ui;                                           ///< 删除 UI
 }
 
-void LocalSong::playNextSong() {
-    qDebug()<<"播放下一首歌曲";
-    if (this->m_deleteSelf) {
-        //qDebug()<<"播放原来的下标: "<<this->m_curPlayIndex;
-        const auto item = this->m_musicItemVector[m_curPlayIndex];
-        //qDebug()<<"发送播放歌曲："<<item->m_information.mediaPath<<" 的信号";
-        emit playMusic(item->m_information.mediaPath);
-        setPlayItemHighlight(item);
-        this->m_deleteSelf = false;
-        return;
-    }
-    this->m_curPlayIndex = (m_curPlayIndex + 1) % static_cast<int>(this->m_locationMusicVector.size());
-    const auto item = this->m_musicItemVector[m_curPlayIndex];
-    emit playMusic(item->m_information.mediaPath);
-    setPlayItemHighlight(item);
-}
-
-void LocalSong::playPrevSong() {
-    qDebug()<<"播放上一首歌曲";
-    if (this->m_deleteSelf) {
-        //qDebug()<<"播放原来的下标: "<<this->m_curPlayIndex;
-        const auto item = this->m_musicItemVector[m_curPlayIndex];
-        //qDebug()<<"发送播放歌曲："<<item->m_information.mediaPath<<" 的信号";
-        emit playMusic(item->m_information.mediaPath);
-        setPlayItemHighlight(item);
-        this->m_deleteSelf = false;
-        return;
-    }
-    const auto s = static_cast<int>(this->m_locationMusicVector.size());
-    this->m_curPlayIndex = (m_curPlayIndex + s - 1) % s;
-    const auto item = this->m_musicItemVector[m_curPlayIndex];
-    emit playMusic(item->m_information.mediaPath);
-    setPlayItemHighlight(item);
-}
-
-void LocalSong::initUi() {
-
-    //设置toolTip
+/**
+ * @brief 播放下一首歌曲
+ */
+void LocalSong::playNextSong()
+{
+    qDebug() << "播放下一首歌曲";
+    if (this->m_deleteSelf)
     {
-        //upload_toolButton
-        auto upload_toolButton_toolTip = new ElaToolTip(ui->upload_toolButton);
-        upload_toolButton_toolTip->setToolTip(QStringLiteral("上传未备份音乐到音乐云盘"));
-
-        // 设置 local_search_lineEdit 的 tooltip
-        //auto local_search_lineEdit_toolTip = new ElaToolTip(ui->local_search_lineEdit);
-        //local_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
-
-        // 设置 local_share_toolButton 的 tooltip
-        auto local_share_toolButton_toolTip = new ElaToolTip(ui->local_share_toolButton);
-        local_share_toolButton_toolTip->setToolTip(QStringLiteral("分享"));
-
-        // 设置 local_album_toolButton 的 tooltip
-        auto local_album_toolButton_toolTip = new ElaToolTip(ui->local_album_toolButton);
-        local_album_toolButton_toolTip->setToolTip(QStringLiteral("专辑"));
-
-        // 设置 local_sort_toolButton 的 tooltip
-        auto local_sort_toolButton_toolTip = new ElaToolTip(ui->local_sort_toolButton);
-        local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
-        {
-            // 排序相关
-            connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
-                Q_UNUSED(down);
-                onDefaultSort();  // 调用原有的排序槽函数
-                local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
-                local_sort_toolButton_toolTip->adjustSize();
-            });
-
-            connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
-                onAddTimeSort(down);  // 调用原有的排序槽函数
-                if (down)
-                    local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间降序"));
-                else
-                    local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间升序"));
-
-                local_sort_toolButton_toolTip->adjustSize();
-            });
-
-            connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
-                onSongNameSort(down);  // 调用原本的排序槽
-                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序"));
-
-                local_sort_toolButton_toolTip->adjustSize();
-            });
-
-            connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
-                onSingerSort(down);
-                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序"));
-
-                local_sort_toolButton_toolTip->adjustSize();
-            });
-
-            connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
-                onDurationSort(down);
-                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序"));
-
-                local_sort_toolButton_toolTip->adjustSize();
-            });
-
-            connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
-                onPlayCountSort(down);
-                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序"));
-
-                local_sort_toolButton_toolTip->adjustSize();
-            });
-
-            connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, local_sort_toolButton_toolTip] {
-                onRandomSort();
-                local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机"));
-
-                local_sort_toolButton_toolTip->adjustSize();
-            });
-
-        }
-
-        // 设置 local_batch_toolButton 的 tooltip
-        auto local_batch_toolButton_toolTip = new ElaToolTip(ui->local_batch_toolButton);
-        local_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
+        const auto item = this->m_musicItemVector[m_curPlayIndex]; ///< 获取当前歌曲
+        emit playMusic(item->m_information.mediaPath);   ///< 播放当前歌曲
+        setPlayItemHighlight(item);                      ///< 设置高亮
+        this->m_deleteSelf = false;                      ///< 重置删除标志
+        return;
     }
+    this->m_curPlayIndex = (m_curPlayIndex + 1) % static_cast<int>(this->m_locationMusicVector.size()); ///< 更新索引
+    const auto item = this->m_musicItemVector[m_curPlayIndex]; ///< 获取下一首歌曲
+    emit playMusic(item->m_information.mediaPath);       ///< 播放下一首
+    setPlayItemHighlight(item);                          ///< 设置高亮
+}
 
-    const auto layout = ui->local_song_list_widget->layout();
-    layout->setSpacing(2);
-    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed));
-    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
-    layout->setContentsMargins(0, 0, 0, 0);
+/**
+ * @brief 播放上一首歌曲
+ */
+void LocalSong::playPrevSong()
+{
+    qDebug() << "播放上一首歌曲";
+    if (this->m_deleteSelf)
+    {
+        const auto item = this->m_musicItemVector[m_curPlayIndex]; ///< 获取当前歌曲
+        emit playMusic(item->m_information.mediaPath);   ///< 播放当前歌曲
+        setPlayItemHighlight(item);                      ///< 设置高亮
+        this->m_deleteSelf = false;                      ///< 重置删除标志
+        return;
+    }
+    const auto s = static_cast<int>(this->m_locationMusicVector.size()); ///< 获取歌曲总数
+    this->m_curPlayIndex = (m_curPlayIndex + s - 1) % s; ///< 更新索引
+    const auto item = this->m_musicItemVector[m_curPlayIndex]; ///< 获取上一首歌曲
+    emit playMusic(item->m_information.mediaPath);       ///< 播放上一首
+    setPlayItemHighlight(item);                          ///< 设置高亮
+}
 
-    ui->local_all_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
-    ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-gray.svg")));
-    ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/upload-cloud-gray.svg")));
-
-    //使用 addAction 添加右侧图标
-    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
-    this->m_searchAction->setIconVisibleInMenu(false); // 仅显示图标
-    ui->local_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
-    ui->local_search_lineEdit->setMaxWidth(150);
-    auto font = QFont("AaSongLiuKaiTi");
-    font.setWeight(QFont::Bold);
-    ui->local_search_lineEdit->setFont(font);
-    QToolButton* searchButton = nullptr;
-    foreach (QToolButton* btn, ui->local_search_lineEdit->findChildren<QToolButton*>()) {
-        if (btn->defaultAction() == this->m_searchAction) {
-            searchButton = btn;
-            auto search_lineEdit_toolTip = new ElaToolTip(searchButton);
-            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+/**
+ * @brief 初始化界面
+ * @note 设置工具提示、图标、搜索动作和布局
+ */
+void LocalSong::initUi()
+{
+    auto upload_toolButton_toolTip = new ElaToolTip(ui->upload_toolButton); ///< 创建上传按钮工具提示
+    upload_toolButton_toolTip->setToolTip(QStringLiteral("上传未备份音乐到音乐云盘")); ///< 设置上传提示
+    auto local_share_toolButton_toolTip = new ElaToolTip(ui->local_share_toolButton); ///< 创建分享按钮工具提示
+    local_share_toolButton_toolTip->setToolTip(QStringLiteral("分享")); ///< 设置分享提示
+    auto local_album_toolButton_toolTip = new ElaToolTip(ui->local_album_toolButton); ///< 创建专辑按钮工具提示
+    local_album_toolButton_toolTip->setToolTip(QStringLiteral("专辑")); ///< 设置专辑提示
+    auto local_sort_toolButton_toolTip = new ElaToolTip(ui->local_sort_toolButton); ///< 创建排序按钮工具提示
+    local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序")); ///< 设置默认排序提示
+    connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+        Q_UNUSED(down);
+        onDefaultSort();                                 ///< 调用默认排序
+        local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序")); ///< 更新提示
+        local_sort_toolButton_toolTip->adjustSize();     ///< 调整提示大小
+    });
+    connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+        onAddTimeSort(down);                             ///< 调用添加时间排序
+        local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：添加时间降序") : QStringLiteral("当前排序方式：添加时间升序")); ///< 更新提示
+        local_sort_toolButton_toolTip->adjustSize();     ///< 调整提示大小
+    });
+    connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+        onSongNameSort(down);                            ///< 调用歌曲名称排序
+        local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序")); ///< 更新提示
+        local_sort_toolButton_toolTip->adjustSize();     ///< 调整提示大小
+    });
+    connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+        onSingerSort(down);                              ///< 调用歌手排序
+        local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序")); ///< 更新提示
+        local_sort_toolButton_toolTip->adjustSize();     ///< 调整提示大小
+    });
+    connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+        onDurationSort(down);                            ///< 调用时长排序
+        local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序")); ///< 更新提示
+        local_sort_toolButton_toolTip->adjustSize();     ///< 调整提示大小
+    });
+    connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+        onPlayCountSort(down);                           ///< 调用播放次数排序
+        local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序")); ///< 更新提示
+        local_sort_toolButton_toolTip->adjustSize();     ///< 调整提示大小
+    });
+    connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, local_sort_toolButton_toolTip] {
+        onRandomSort();                                  ///< 调用随机排序
+        local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机")); ///< 更新提示
+        local_sort_toolButton_toolTip->adjustSize();     ///< 调整提示大小
+    });
+    auto local_batch_toolButton_toolTip = new ElaToolTip(ui->local_batch_toolButton); ///< 创建批量操作按钮工具提示
+    local_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作")); ///< 设置批量操作提示
+    const auto layout = ui->local_song_list_widget->layout(); ///< 获取歌曲列表布局
+    layout->setSpacing(2);                               ///< 设置间距
+    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed)); ///< 添加固定填充
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding)); ///< 添加扩展填充
+    layout->setContentsMargins(0, 0, 0, 0);             ///< 设置边距
+    ui->local_all_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+    ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-gray.svg"))); ///< 设置添加按钮图标
+    ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/upload-cloud-gray.svg"))); ///< 设置上传按钮图标
+    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标
+    this->m_searchAction->setIconVisibleInMenu(false);   ///< 仅显示图标
+    ui->local_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作
+    ui->local_search_lineEdit->setMaxWidth(150);         ///< 设置搜索框最大宽度
+    auto font = QFont("AaSongLiuKaiTi");                 ///< 设置字体
+    font.setWeight(QFont::Bold);                         ///< 设置粗体
+    ui->local_search_lineEdit->setFont(font);            ///< 应用字体
+    QToolButton *searchButton = nullptr;                 ///< 搜索按钮
+    foreach (QToolButton *btn, ui->local_search_lineEdit->findChildren<QToolButton *>())
+    {
+        if (btn->defaultAction() == this->m_searchAction)
+        {
+            searchButton = btn;                          ///< 找到搜索按钮
+            auto search_lineEdit_toolTip = new ElaToolTip(searchButton); ///< 创建搜索按钮工具提示
+            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索")); ///< 设置搜索提示
             break;
         }
     }
-
-    // 安装事件过滤器
-    if (searchButton) {
-        searchButton->installEventFilter(this);
+    if (searchButton)
+    {
+        searchButton->installEventFilter(this);          ///< 安装事件过滤器
     }
-
-    /*//先直接往里面嵌入两首歌
-    this->m_mediaPath = QStringLiteral("qrc:/Res/audio/zi-jing-hua.mp3");
-    this->m_player->setSource(QUrl(this->m_mediaPath));
-    this->m_player->play(); // 触发状态改变信号，获取元数据信息
-    // 使用 QMetaObject::Connection 跟踪连接
-    QMetaObject::Connection* connection = new QMetaObject::Connection;
-
-    *connection = connect(this, &LocalSong::updateCountLabel, this,
-        [this, connection]() { // 捕获连接指针
-            // 处理第二首歌
-            this->m_mediaPath = QStringLiteral("qrc:/Res/audio/qing-hua-ci.mp3");
-            this->m_player->setSource(QUrl(this->m_mediaPath));
-            this->m_player->play();
-
-            // 断开连接并清理
-            disconnect(*connection);
-            delete connection;
-        },
-        Qt::QueuedConnection // 确保异步执行
-    );*/
-
-    //向服务器发送请求歌曲列表  //一定不能放在此处 !!! 原因： 此处还是处于构造函数的范围！！！尚未构造完成！！！
-    //fetchAndSyncServerSongList();
-
 }
 
-void LocalSong::getMetaData() {
-    //经过一段时间的搜索得到的结论，如果想不调用play()就获得元数据信息是不现实的，能做到的也就只有加载完成之后立马停止
+/**
+ * @brief 获取媒体元数据
+ * @note 提取标题、歌手、封面、时长并上传至服务器
+ */
+void LocalSong::getMetaData()
+{
     connect(m_player.get(), &QMediaPlayer::mediaStatusChanged, [=](const QMediaPlayer::MediaStatus &status) {
-        if (status == QMediaPlayer::LoadedMedia) {
-            //qDebug()<<"媒体状态改变，加载完成";
-            //qDebug()<<"元数据加载完成";
-            const QMediaMetaData data = this->m_player->metaData();
-            //for (auto val: data.keys()) {
-                //qDebug()<<val<<": "<<data.value(val).toString();
-            //}
-            // 停止播放
-            this->m_player->stop();
-            //获取标题
-            auto title = data.value(QMediaMetaData::Title).toString();
-            if (!re.match(title).hasMatch()) {
-                title = QUrl::fromLocalFile(this->m_mediaPath).fileName();
-                title = title.first(title.lastIndexOf('.'));
+        if (status == QMediaPlayer::LoadedMedia)
+        {
+            this->m_player->stop();                      ///< 停止播放
+            const QMediaMetaData data = this->m_player->metaData(); ///< 获取元数据
+            auto title = data.value(QMediaMetaData::Title).toString(); ///< 获取标题
+            if (!re.match(title).hasMatch())
+            {
+                title = QUrl::fromLocalFile(this->m_mediaPath).fileName(); ///< 使用文件名
+                title = title.first(title.lastIndexOf('.')); ///< 去除扩展名
             }
-            //获取歌手
-            auto singer = data.value(QMediaMetaData::ContributingArtist).toString();
-            if (!re.match(singer).hasMatch())singer = QStringLiteral("网络歌手");
-            //获取封面
-            auto cover = data.value(QMediaMetaData::ThumbnailImage).value<QPixmap>();
-            if (cover.isNull()) {
-                //qDebug()<<"封面为空";
-                cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(QRandomGenerator::global()->bounded(1, 11)));
+            auto singer = data.value(QMediaMetaData::ContributingArtist).toString(); ///< 获取歌手
+            if (!re.match(singer).hasMatch())
+                singer = QStringLiteral("网络歌手");     ///< 设置默认歌手
+            auto cover = data.value(QMediaMetaData::ThumbnailImage).value<QPixmap>(); ///< 获取封面
+            if (cover.isNull())
+            {
+                cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(QRandomGenerator::global()->bounded(1, 11))); ///< 设置随机封面
             }
-            //获取时长
-            const auto duration = data.value(QMediaMetaData::Duration).value<qint64>();
-            //信息赋值
-            SongInfor tempInformation;
-            tempInformation.index = static_cast<int>(this->m_locationMusicVector.size());
-            tempInformation.cover = cover;
-            tempInformation.songName = title;
-            tempInformation.singer = singer;
-            tempInformation.duration = QTime::fromMSecsSinceStartOfDay(static_cast<int>(duration)).toString("mm:ss");
-            tempInformation.mediaPath = this->m_mediaPath;
-            tempInformation.addTime = QDateTime::currentDateTime();
-            tempInformation.playCount = 0;
-            //判重（通过元数据信息）
-            const auto it = std::find(this->m_locationMusicVector.begin(),
-                                this->m_locationMusicVector.end(), tempInformation);
-            if (it == this->m_locationMusicVector.end()) {
-                this->m_locationMusicVector.emplace_back(tempInformation);
-                //加载相关信息
-                auto item = new MusicItemWidget(tempInformation, this);
-                //初始化item
-                initMusicItem(item);
-                //插入Item
-                this->m_musicItemVector.emplace_back(item);
-                const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
-                if (!layout)return;
-                layout->insertWidget(layout->count() - 2, item);
-                ui->widget->hide();
-                qDebug()<<"成功添加歌曲 ："<<item->m_information.mediaPath;
-                STREAM_INFO()<<"成功添加歌曲 ："<<item->m_information.mediaPath.toStdString();
-                ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
-                    QString("成功添加音乐 : %1").arg(item->m_information.songName),1000,this->window());
-
-                //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
-                emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
-
-                //加载下一首歌
-                loadNextSong();
-                // 将QPixmap转换为QImage并保存为PNG格式的字节流
-                QByteArray imageData;
+            const auto duration = data.value(QMediaMetaData::Duration).value<qint64>(); ///< 获取时长
+            SongInfor tempInformation;                   ///< 创建歌曲信息
+            tempInformation.index = static_cast<int>(this->m_locationMusicVector.size()); ///< 设置索引
+            tempInformation.cover = cover;                ///< 设置封面
+            tempInformation.songName = title;            ///< 设置标题
+            tempInformation.singer = singer;             ///< 设置歌手
+            tempInformation.duration = QTime::fromMSecsSinceStartOfDay(static_cast<int>(duration)).toString("mm:ss"); ///< 设置时长
+            tempInformation.mediaPath = this->m_mediaPath; ///< 设置路径
+            tempInformation.addTime = QDateTime::currentDateTime(); ///< 设置添加时间
+            tempInformation.playCount = 0;               ///< 设置播放次数
+            const auto it = std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), tempInformation); ///< 检查重复
+            if (it == this->m_locationMusicVector.end())
+            {
+                this->m_locationMusicVector.emplace_back(tempInformation); ///< 添加歌曲信息
+                auto item = new MusicItemWidget(tempInformation, this); ///< 创建音乐项
+                initMusicItem(item);                     ///< 初始化音乐项
+                this->m_musicItemVector.emplace_back(item); ///< 添加音乐项
+                const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
+                if (!layout)
+                    return;
+                layout->insertWidget(layout->count() - 2, item); ///< 插入音乐项
+                ui->widget->hide();                      ///< 隐藏初始界面
+                qDebug() << "成功添加歌曲 ：" << item->m_information.mediaPath;
+                STREAM_INFO() << "成功添加歌曲 ：" << item->m_information.mediaPath.toStdString(); ///< 记录日志
+                ElaMessageBar::success(ElaMessageBarType::BottomRight, "Success", QString("成功添加音乐 : %1").arg(item->m_information.songName), 1000, this->window()); ///< 显示成功提示
+                emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size())); ///< 更新数量标签
+                loadNextSong();                          ///< 加载下一首
+                QByteArray imageData;                    ///< 转换封面为字节流
                 QBuffer buffer(&imageData);
                 buffer.open(QIODevice::WriteOnly);
-                tempInformation.cover.toImage().save(&buffer, "PNG"); // 也可以使用"JPG"
+                tempInformation.cover.toImage().save(&buffer, "PNG"); ///< 保存为 PNG
                 buffer.close();
-
-                // 转换为Base64字符串
-                QString base64Image = QString::fromLatin1(imageData.toBase64().data());
-                auto postJson = QJsonObject{
+                QString base64Image = QString::fromLatin1(imageData.toBase64().data()); ///< 转换为 Base64
+                auto postJson = QJsonObject{             ///< 创建 JSON 数据
                     {"index", tempInformation.index},
                     {"cover", base64Image},
                     {"songName", tempInformation.songName},
@@ -329,525 +268,615 @@ void LocalSong::getMetaData() {
                     {"duration", tempInformation.duration},
                     {"mediaPath", tempInformation.mediaPath},
                     {"addTime", tempInformation.addTime.toString("yyyy-MM-dd hh:mm:ss")},
-                    {"playCount", tempInformation.playCount}
-                };
+                    {"playCount", tempInformation.playCount}};
                 QJsonDocument doc(postJson);
-                QString jsonString = doc.toJson(QJsonDocument::Compact); // 紧凑格式无换行
-                //向服务器发送post请求 添加歌曲信息
-                m_libHttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"),jsonString);
+                QString jsonString = doc.toJson(QJsonDocument::Compact); ///< 转换为 JSON 字符串
+                m_libHttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"), jsonString); ///< 发送添加请求
             }
-            else {
-                STREAM_INFO()<<title.toStdString()<<" 已存在，请勿重复插入";
-                qDebug()<<title<<" 已存在，请勿重复插入";
-                //加载下一首歌
-                loadNextSong();
+            else
+            {
+                STREAM_INFO() << title.toStdString() << " 已存在，请勿重复插入"; ///< 记录日志
+                qDebug() << title << " 已存在，请勿重复插入";
+                loadNextSong();                          ///< 加载下一首
                 return;
             }
         }
     });
-
 }
 
-void LocalSong::loadNextSong() {
-    if (!m_songQueue.isEmpty()) {
-        this->m_mediaPath = m_songQueue.dequeue(); // 取出队列中的下一首歌路径
-        //qDebug()<<"取出歌曲 ： "<<this->m_mediaPath<<"=================";
-
-        /*// 在加载新媒体前，重置媒体状态
-        this->m_player->stop();
-        this->m_player->setSource(QUrl());  // 清空当前媒体源
-        this->m_player->play();*/ //不起效果
-
-        // 释放并重建 QMediaPlayer 对象
-        this->m_player = std::make_unique<QMediaPlayer>(this); //它会自动释放之前的对象
-        getMetaData();
-
-        this->m_player->setSource(QUrl::fromLocalFile(this->m_mediaPath));
-        this->m_player->play(); // 触发状态改变信号，获取元数据信息
+/**
+ * @brief 加载下一首歌曲
+ * @note 从队列中取出并播放
+ */
+void LocalSong::loadNextSong()
+{
+    if (!m_songQueue.isEmpty())
+    {
+        this->m_mediaPath = m_songQueue.dequeue();   ///< 取出歌曲路径
+        this->m_player = std::make_unique<QMediaPlayer>(this); ///< 重建播放器
+        getMetaData();                               ///< 重新连接元数据
+        this->m_player->setSource(QUrl::fromLocalFile(this->m_mediaPath)); ///< 设置媒体源
+        this->m_player->play();                      ///< 播放触发元数据
     }
-    else {
+    else
+    {
         if (this->m_isSorting)
-            this->m_sortOptMenu->btnClickAgain();//新增歌曲，同时要符合当前排序
+            this->m_sortOptMenu->btnClickAgain();    ///< 保持当前排序
     }
 }
 
-void LocalSong::getMenuPosition(const QPoint &pos) {
-    this->m_menuPosition = pos;
-    // 获取屏幕的尺寸
-    const QScreen *screen = QGuiApplication::primaryScreen();
-    const QRect screenGeometry = screen->geometry();
-
-    // 计算菜单右侧的全局位置
-    //int menuLeftPos = pos.x() - m_menu->width();
-    const int menuRightPos = pos.x() + m_sortOptMenu->width();
-    const int menuBottomPos = pos.y() + m_sortOptMenu->height();
-    //int menuTopPos = pos.y() - m_menu->height();
-    // 若菜单左侧超出屏幕左侧 (不存在)
-    //if(menuLeftPos < 0) {
-    //    // 动态调整菜单位置，使其在屏幕内显示
-    //    m_menuPosition.setX(10);
-    //}
-    // 如果菜单右侧超出屏幕右侧
-    if (menuRightPos > screenGeometry.right()) {
-        // 动态调整菜单位置，使其在屏幕内显示
-        const int offset = menuRightPos - screenGeometry.right() + 5;
-        m_menuPosition.setX(pos.x() - offset);
+/**
+ * @brief 获取菜单位置
+ * @param pos 鼠标位置
+ * @note 动态调整菜单位置以适应屏幕
+ */
+void LocalSong::getMenuPosition(const QPoint &pos)
+{
+    this->m_menuPosition = pos;                          ///< 设置菜单位置
+    const QScreen *screen = QGuiApplication::primaryScreen(); ///< 获取主屏幕
+    const QRect screenGeometry = screen->geometry();      ///< 获取屏幕几何
+    const int menuRightPos = pos.x() + m_sortOptMenu->width(); ///< 计算菜单右侧
+    const int menuBottomPos = pos.y() + m_sortOptMenu->height(); ///< 计算菜单底部
+    if (menuRightPos > screenGeometry.right())
+    {
+        const int offset = menuRightPos - screenGeometry.right() + 5; ///< 计算右侧偏移
+        m_menuPosition.setX(pos.x() - offset);           ///< 调整 X 坐标
     }
-    // 如果菜单下侧超出屏幕下侧
-    if (menuBottomPos > screenGeometry.bottom()) {
-        // 动态调整菜单位置，使其在屏幕内显示
-        const int offset = menuBottomPos - screenGeometry.bottom() + 5;
-        m_menuPosition.setY(pos.y() - offset);
+    if (menuBottomPos > screenGeometry.bottom())
+    {
+        const int offset = menuBottomPos - screenGeometry.bottom() + 5; ///< 计算底部偏移
+        m_menuPosition.setY(pos.y() - offset);           ///< 调整 Y 坐标
     }
-    // 如果菜单下侧超出屏幕下侧（不存在）
-    //if(menuTopPos < 0) {
-    //    // 动态调整菜单位置，使其在屏幕内显示
-    //    m_menuPosition.setY(10);
-    //}
 }
 
-void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicItemWidget *)> comparator) {
-    //记录当前的（旧的）vector
-    this->m_lastLocationMusicVector = this->m_locationMusicVector;
-    if (this->m_lastLocationMusicVector.isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
-            QString("暂无音乐"),1000,this->window());
+/**
+ * @brief 自定义排序
+ * @param comparator 比较器函数
+ * @note 根据比较器重新排列歌曲
+ */
+void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicItemWidget *)> comparator)
+{
+    this->m_lastLocationMusicVector = this->m_locationMusicVector; ///< 备份歌曲列表
+    if (this->m_lastLocationMusicVector.isEmpty())
+    {
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QString("暂无音乐"), 1000, this->window()); ///< 显示警告
         return;
     }
-    //初始UI
-    ui->local_song_list_widget->setUpdatesEnabled(false);
-    const auto layout = ui->local_song_list_widget->layout();
+    ui->local_song_list_widget->setUpdatesEnabled(false); ///< 禁用更新
+    const auto layout = ui->local_song_list_widget->layout(); ///< 获取布局
     QLayoutItem *item;
-    while ((item = layout->takeAt(0)) != nullptr) {
-        //if(item->widget())item->widget()->deleteLater();//不得删除他指向的内容
-        delete item;
+    while ((item = layout->takeAt(0)) != nullptr)
+    {
+        delete item;                                     ///< 删除布局项
     }
-    layout->setSpacing(2);
-    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed));
-    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
-    layout->setContentsMargins(0, 0, 0, 0);
-    // 按特定条件排序
-    std::sort(this->m_musicItemVector.begin(), this->m_musicItemVector.end(), std::move(comparator));
-    // 重新添加
-    this->m_locationMusicVector.clear();
-    const auto lay = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
+    layout->setSpacing(2);                               ///< 设置间距
+    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed)); ///< 添加固定填充
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding)); ///< 添加扩展填充
+    layout->setContentsMargins(0, 0, 0, 0);             ///< 设置边距
+    std::sort(this->m_musicItemVector.begin(), this->m_musicItemVector.end(), std::move(comparator)); ///< 排序
+    this->m_locationMusicVector.clear();                 ///< 清空歌曲列表
+    const auto lay = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
     int index = -1;
-    for (const auto &val: this->m_musicItemVector) {
-        val->m_information.index = ++index; //更换下标
-        val->setIndexText(index + 1); //设置indexLab
-        lay->insertWidget(ui->local_song_list_widget->layout()->count() - 2, val);
-        this->m_locationMusicVector.emplace_back(val->m_information);
+    for (const auto &val : this->m_musicItemVector)
+    {
+        val->m_information.index = ++index;              ///< 更新索引
+        val->setIndexText(index + 1);                    ///< 设置索引文本
+        lay->insertWidget(ui->local_song_list_widget->layout()->count() - 2, val); ///< 插入音乐项
+        this->m_locationMusicVector.emplace_back(val->m_information); ///< 添加歌曲信息
     }
-    // 恢复更新
-    ui->local_song_list_widget->setUpdatesEnabled(true);
-    update();
-    updateCurPlayIndex();
+    ui->local_song_list_widget->setUpdatesEnabled(true); ///< 启用更新
+    update();                                            ///< 更新界面
+    updateCurPlayIndex();                                ///< 更新播放索引
 }
 
-void LocalSong::updateCurPlayIndex() {
-    //记录m_curPlayIndex;
-    if (m_curPlayIndex <= -1)return;
-    const auto temp = this->m_lastLocationMusicVector[this->m_curPlayIndex];
-    //重新赋值m_curPlayIndex
-    auto it = std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp);
-    m_deleteSelf = false;
-    if (it == this->m_locationMusicVector.end()) {
-        //没找到，说明删除的是自己
-        qDebug()<<"删除的是自己";
-        if (this->m_curPlayIndex == this->m_locationMusicVector.size()) {
-            this->m_curPlayIndex = 0;
+/**
+ * @brief 更新当前播放索引
+ * @note 在排序或删除后更新播放位置
+ */
+void LocalSong::updateCurPlayIndex()
+{
+    if (m_curPlayIndex <= -1)
+        return;
+    const auto temp = this->m_lastLocationMusicVector[this->m_curPlayIndex]; ///< 获取当前歌曲
+    auto it = std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp); ///< 查找歌曲
+    m_deleteSelf = false;                                ///< 重置删除标志
+    if (it == this->m_locationMusicVector.end())
+    {
+        qDebug() << "删除的是自己";
+        if (this->m_curPlayIndex == this->m_locationMusicVector.size())
+        {
+            this->m_curPlayIndex = 0;                    ///< 重置索引
         }
-        else {
-            qDebug()<<"下标保持不变："<<this->m_curPlayIndex;
-            m_deleteSelf = true;
-            this->m_curPlayItemWidget->deleteLater();
-            this->m_curPlayItemWidget = nullptr;
+        else
+        {
+            qDebug() << "下标保持不变：" << this->m_curPlayIndex;
+            m_deleteSelf = true;                         ///< 设置删除标志
+            this->m_curPlayItemWidget->deleteLater();    ///< 删除当前控件
+            this->m_curPlayItemWidget = nullptr;         ///< 清空当前控件
         }
     }
-    else {
-        this->m_curPlayIndex = static_cast<int>(it - this->m_locationMusicVector.begin());
+    else
+    {
+        this->m_curPlayIndex = static_cast<int>(it - this->m_locationMusicVector.begin()); ///< 更新索引
     }
 }
 
-void LocalSong::initMusicItem(MusicItemWidget *item) {
-    item->setFillColor(QColor(QStringLiteral("#B0EDF6")));
-    item->setRadius(12);
-    item->setInterval(1);
+/**
+ * @brief 初始化音乐项
+ * @param item 音乐项控件
+ * @note 设置高亮颜色、圆角和信号连接
+ */
+void LocalSong::initMusicItem(MusicItemWidget *item)
+{
+    item->setFillColor(QColor(QStringLiteral("#B0EDF6"))); ///< 设置高亮颜色
+    item->setRadius(12);                                 ///< 设置圆角
+    item->setInterval(1);                                ///< 设置间隔
     connect(item, &MusicItemWidget::play, this, [item, this] {
-        //qDebug()<<"播放歌曲下标："<<item->m_information.index<<"===================";
-        emit playMusic(item->m_information.mediaPath);
-        this->m_isOrderPlay = false;
-        setPlayItemHighlight(item);
+        emit playMusic(item->m_information.mediaPath);   ///< 播放歌曲
+        this->m_isOrderPlay = false;                     ///< 关闭顺序播放
+        setPlayItemHighlight(item);                      ///< 设置高亮
     });
-    connect(item, &MusicItemWidget::deleteSong, this, &LocalSong::onItemDeleteSong);
+    connect(item, &MusicItemWidget::deleteSong, this, &LocalSong::onItemDeleteSong); ///< 连接删除信号
 }
 
-void LocalSong::fetchAndSyncServerSongList() {
-    const QString reply = m_libHttp.UrlRequestGet("http://127.0.0.1:8080/api/localSongList", "");
-    const QJsonDocument doc = QJsonDocument::fromJson(reply.toUtf8());
-
-    if (!doc.isObject()) return;
-
-    QJsonArray songs = doc.object()["data"].toArray();
-
-    for (const auto& songVal : songs) {
-        QJsonObject song = songVal.toObject();
-        QString mediaPath = song["media_path"].toString();
-
-        // 检查本地文件是否存在
-        if (!QFile::exists(mediaPath)) {
-            // 向服务器发送删除请求
-            QJsonObject delReq;
+/**
+ * @brief 从服务器同步歌曲列表
+ * @note 获取服务器歌曲列表并更新本地
+ */
+void LocalSong::fetchAndSyncServerSongList()
+{
+    const QString reply = m_libHttp.UrlRequestGet("http://127.0.0.1:8080/api/localSongList", ""); ///< 发送 GET 请求
+    const QJsonDocument doc = QJsonDocument::fromJson(reply.toUtf8()); ///< 解析 JSON
+    if (!doc.isObject())
+        return;
+    QJsonArray songs = doc.object()["data"].toArray();   ///< 获取歌曲数组
+    for (const auto &songVal : songs)
+    {
+        QJsonObject song = songVal.toObject();           ///< 获取歌曲对象
+        QString mediaPath = song["media_path"].toString(); ///< 获取路径
+        if (!QFile::exists(mediaPath))
+        {
+            QJsonObject delReq;                          ///< 创建删除请求
             delReq["song"] = song["song"].toString();
             delReq["singer"] = song["singer"].toString();
             delReq["duration"] = song["duration"].toString();
-            m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact));
+            m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong", QJsonDocument(delReq).toJson(QJsonDocument::Compact)); ///< 发送删除请求
             continue;
         }
-
-        // 创建歌曲信息对象
-        SongInfor info;
-        info.index = song["index"].toInt(); // 保存服务器索引
-        info.mediaPath = mediaPath;
-
-        // 解析Base64封面
-        QByteArray imgData = QByteArray::fromBase64(song["cover"].toString().toLatin1());
-
-        info.cover.loadFromData(imgData);
-        info.songName = song["song"].toString();
-        info.singer = song["singer"].toString();
-        info.duration = song["duration"].toString();
-        info.addTime = QDateTime::fromString(song["add_time"].toString(), "yyyy-MM-dd hh:mm:ss");
-        info.playCount = song["play_count"].toInt();
-
-        m_locationMusicVector.emplace_back(info);
-
-        auto item = new MusicItemWidget(info, this);
-        initMusicItem(item);
-        m_musicItemVector.emplace_back(item);
-
-        // 插入到布局
-        const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
-        if (!layout)return;
-        layout->insertWidget(layout->count() - 2, item);
-        emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
-
+        SongInfor info;                                  ///< 创建歌曲信息
+        info.index = song["index"].toInt();              ///< 设置索引
+        info.mediaPath = mediaPath;                      ///< 设置路径
+        QByteArray imgData = QByteArray::fromBase64(song["cover"].toString().toLatin1()); ///< 解析封面
+        info.cover.loadFromData(imgData);                ///< 加载封面
+        info.songName = song["song"].toString();         ///< 设置标题
+        info.singer = song["singer"].toString();         ///< 设置歌手
+        info.duration = song["duration"].toString();     ///< 设置时长
+        info.addTime = QDateTime::fromString(song["add_time"].toString(), "yyyy-MM-dd hh:mm:ss"); ///< 设置添加时间
+        info.playCount = song["play_count"].toInt();     ///< 设置播放次数
+        m_locationMusicVector.emplace_back(info);         ///< 添加歌曲信息
+        auto item = new MusicItemWidget(info, this);     ///< 创建音乐项
+        initMusicItem(item);                             ///< 初始化音乐项
+        m_musicItemVector.emplace_back(item);             ///< 添加音乐项
+        const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
+        if (!layout)
+            return;
+        layout->insertWidget(layout->count() - 2, item); ///< 插入音乐项
+        emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size())); ///< 更新数量标签
     }
-
-    for (int i = 0; i < m_locationMusicVector.size(); ++i) {
-        m_locationMusicVector[i].index = i;
-        m_musicItemVector[i]->m_information.index = i;
-        m_musicItemVector[i]->setIndexText(i + 1);
+    for (int i = 0; i < m_locationMusicVector.size(); ++i)
+    {
+        m_locationMusicVector[i].index = i;              ///< 更新歌曲索引
+        m_musicItemVector[i]->m_information.index = i;   ///< 更新控件索引
+        m_musicItemVector[i]->setIndexText(i + 1);       ///< 设置索引文本
     }
-    //隐藏初始界面
-    ui->widget->hide();
+    ui->widget->hide();                                  ///< 隐藏初始界面
 }
 
-void LocalSong::setPlayItemHighlight(MusicItemWidget *item) {
-    if (m_locationMusicVector.isEmpty()) return;
-    //设置当前播放的高亮下标
-    this->m_curPlayIndex = item->m_information.index;
-    item->m_information.playCount++;// 增加播放次数
-    if (m_curPlayItemWidget == nullptr) {
-        // 没有歌曲在播放，设置当前歌曲为播放状态
-        m_curPlayItemWidget = item;
-        item->setPlayState(true);
+/**
+ * @brief 设置播放高亮
+ * @param item 音乐项控件
+ * @note 高亮当前播放歌曲并更新播放次数
+ */
+void LocalSong::setPlayItemHighlight(MusicItemWidget *item)
+{
+    if (m_locationMusicVector.isEmpty())
+        return;
+    this->m_curPlayIndex = item->m_information.index;    ///< 设置当前索引
+    item->m_information.playCount++;                     ///< 增加播放次数
+    if (m_curPlayItemWidget == nullptr)
+    {
+        m_curPlayItemWidget = item;                      ///< 设置当前控件
+        item->setPlayState(true);                        ///< 设置播放状态
     }
-    else {
-        // 有歌曲在播放
-        if (item != m_curPlayItemWidget) {
-            m_curPlayItemWidget->setPlayState(false);
-            // 如果选择的歌曲不是当前播放的歌曲，切换状态
-            item->setPlayState(true);
-            m_curPlayItemWidget = item;         //注意 m_curPlayItemWidget 在此处才被重新赋值，不要在之前多此一举
-        } else {
-            // 如果是同一首歌，确保播放状态为 true
-            item->setPlayState(true);
+    else
+    {
+        if (item != m_curPlayItemWidget)
+        {
+            m_curPlayItemWidget->setPlayState(false);    ///< 取消旧高亮
+            item->setPlayState(true);                    ///< 设置新高亮
+            m_curPlayItemWidget = item;                  ///< 更新当前控件
+        }
+        else
+        {
+            item->setPlayState(true);                    ///< 确保播放状态
         }
     }
 }
 
-void LocalSong::on_local_all_play_toolButton_clicked() {
-    if (this->m_locationMusicVector.isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
-                                QStringLiteral("暂无可播放音乐"),
-                                1000,this->window());
+/**
+ * @brief 全部播放按钮点击槽函数
+ * @note 播放第一首歌曲并取消循环
+ */
+void LocalSong::on_local_all_play_toolButton_clicked()
+{
+    if (this->m_locationMusicVector.isEmpty())
+    {
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000, this->window()); ///< 显示警告
         return;
     }
-    //此处需要取消循环播放
-    emit cancelLoopPlay();
-    qDebug()<<"播放歌曲："<<m_musicItemVector.front()->m_information.mediaPath<<"===================";
-    this->m_isOrderPlay = true;
-    this->m_curPlayIndex = 0;
-    setPlayItemHighlight(this->m_musicItemVector.front());
-    emit playMusic(m_musicItemVector.front()->m_information.mediaPath);
+    emit cancelLoopPlay();                               ///< 取消循环播放
+    qDebug() << "播放歌曲：" << m_musicItemVector.front()->m_information.mediaPath << "===================";
+    this->m_isOrderPlay = true;                          ///< 启用顺序播放
+    this->m_curPlayIndex = 0;                            ///< 设置索引
+    setPlayItemHighlight(this->m_musicItemVector.front()); ///< 设置高亮
+    emit playMusic(m_musicItemVector.front()->m_information.mediaPath); ///< 播放第一首
 }
 
-void LocalSong::on_local_add_toolButton_clicked() {
-    const QString musicPath = QStandardPaths::standardLocations(QStandardPaths::MusicLocation).first();
-    QStringList paths = QFileDialog::getOpenFileNames(this, QStringLiteral("添加音乐"), musicPath,
-                                                      "Music (*.mp3 *.aac *.wav)");
-    if (paths.isEmpty())return;
-    //QString fileName = QUrl::fromLocalFile(path).fileName();
-    //qDebug() << "插入："<<paths.size()<<"条数据";
-    for (auto &path: paths) {
-        this->m_songQueue.enqueue(path);
+/**
+ * @brief 添加歌曲按钮点击槽函数
+ * @note 打开文件对话框添加歌曲
+ */
+void LocalSong::on_local_add_toolButton_clicked()
+{
+    const QString musicPath = QStandardPaths::standardLocations(QStandardPaths::MusicLocation).first(); ///< 获取音乐路径
+    QStringList paths = QFileDialog::getOpenFileNames(this, QStringLiteral("添加音乐"), musicPath, "Music (*.mp3 *.aac *.wav)"); ///< 打开文件对话框
+    if (paths.isEmpty())
+        return;
+    for (auto &path : paths)
+    {
+        this->m_songQueue.enqueue(path);                 ///< 添加到队列
     }
-    this->loadNextSong();
+    this->loadNextSong();                                ///< 加载下一首
 }
 
-void LocalSong::on_upload_toolButton_clicked() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            QString("%1 功能暂未实现 敬请期待").arg(ui->upload_toolButton->text()),
-                            1000,this->window());
+/**
+ * @brief 上传按钮点击槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::on_upload_toolButton_clicked()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", QString("%1 功能暂未实现 敬请期待").arg(ui->upload_toolButton->text()), 1000, this->window()); ///< 显示提示
 }
 
-void LocalSong::on_local_share_toolButton_clicked() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            "分享 功能暂未实现 敬请期待", 1000,this->window());
+/**
+ * @brief 分享按钮点击槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::on_local_share_toolButton_clicked()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "分享 功能暂未实现 敬请期待", 1000, this->window()); ///< 显示提示
 }
 
-void LocalSong::on_local_album_toolButton_clicked() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            "专辑 功能暂未实现 敬请期待", 1000,this->window());
+/**
+ * @brief 专辑按钮点击槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::on_local_album_toolButton_clicked()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "专辑 功能暂未实现 敬请期待", 1000, this->window()); ///< 显示提示
 }
 
-void LocalSong::on_local_batch_toolButton_clicked() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            "批量操作 功能暂未实现 敬请期待", 1000,this->window());
+/**
+ * @brief 批量操作按钮点击槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::on_local_batch_toolButton_clicked()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "批量操作 功能暂未实现 敬请期待", 1000, this->window()); ///< 显示提示
 }
 
-void LocalSong::on_search_pushButton_clicked() {
-    emit find_more_music();
+/**
+ * @brief 搜索按钮点击槽函数
+ * @note 触发搜索信号
+ */
+void LocalSong::on_search_pushButton_clicked()
+{
+    emit find_more_music();                              ///< 触发搜索信号
 }
 
-void LocalSong::on_local_sort_toolButton_clicked() {
-    getMenuPosition(QCursor::pos());
-    this->m_sortOptMenu->popup(this->m_menuPosition);
+/**
+ * @brief 排序按钮点击槽函数
+ * @note 显示排序菜单
+ */
+void LocalSong::on_local_sort_toolButton_clicked()
+{
+    getMenuPosition(QCursor::pos());                     ///< 获取菜单位置
+    this->m_sortOptMenu->popup(this->m_menuPosition);    ///< 显示排序菜单
 }
 
-void LocalSong::onAudioFinished() {
-    qDebug()<<"上一首播放结束,当前m_isOrderPlay: "<<this->m_isOrderPlay;
-    if (this->m_isOrderPlay) {
-        playNextSong();
+/**
+ * @brief 音频播放结束槽函数
+ * @note 顺序播放时自动播放下一首
+ */
+void LocalSong::onAudioFinished()
+{
+    qDebug() << "上一首播放结束,当前m_isOrderPlay: " << this->m_isOrderPlay;
+    if (this->m_isOrderPlay)
+    {
+        playNextSong();                                  ///< 播放下一首
     }
 }
 
-void LocalSong::onMaxScreenHandle() {
-    if (this->m_locationMusicVector.isEmpty())return;
-    if (this->m_curPlayIndex != -1) {
-        //qDebug()<<"正在播放第 : "<<this->m_curPlayIndex<<" 首歌";
-        const auto widget = m_musicItemVector[this->m_curPlayIndex];
-        widget->setPlayState(true);
-        //qDebug()<<"收到最大化信号";
+/**
+ * @brief 最大化屏幕处理槽函数
+ * @note 更新当前播放高亮
+ */
+void LocalSong::onMaxScreenHandle()
+{
+    if (this->m_locationMusicVector.isEmpty())
+        return;
+    if (this->m_curPlayIndex != -1)
+    {
+        const auto widget = m_musicItemVector[this->m_curPlayIndex]; ///< 获取当前控件
+        widget->setPlayState(true);                      ///< 设置播放状态
     }
 }
 
-void LocalSong::onDefaultSort() {
-    //ui->local_sort_toolButton->setToolTip("当前排序方式：默认排序");
-    //排序规则
+/**
+ * @brief 默认排序
+ * @note 按添加时间升序
+ */
+void LocalSong::onDefaultSort()
+{
     auto defaultSortItem = [](const MusicItemWidget *item1, const MusicItemWidget *item2) {
-        return item1->m_information.addTime < item2->m_information.addTime;
+        return item1->m_information.addTime < item2->m_information.addTime; ///< 比较添加时间
     };
-    MySort(defaultSortItem);
+    MySort(defaultSortItem);                             ///< 执行排序
 }
 
-void LocalSong::onAddTimeSort(const bool &down) {
-    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：添加时间降序");
-    //else ui->local_sort_toolButton->setToolTip("当前排序方式：添加时间升序");
-
-    //排序规则
+/**
+ * @brief 添加时间排序
+ * @param down 是否降序
+ */
+void LocalSong::onAddTimeSort(const bool &down)
+{
     auto addTimeSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
-        if (down) return item1->m_information.addTime > item2->m_information.addTime;
-        return item1->m_information.addTime < item2->m_information.addTime;
+        return down ? item1->m_information.addTime > item2->m_information.addTime : item1->m_information.addTime < item2->m_information.addTime; ///< 比较添加时间
     };
-
-    MySort(addTimeSortItem);
-    this->m_isSorting = true;
+    MySort(addTimeSortItem);                             ///< 执行排序
+    this->m_isSorting = true;                            ///< 设置排序状态
 }
 
-void LocalSong::onSongNameSort(const bool &down) {
-    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：歌曲名降序");
-    //else ui->local_sort_toolButton->setToolTip("当前排序方式：歌曲名升序");
-    //排序规则
+/**
+ * @brief 歌曲名称排序
+ * @param down 是否降序
+ */
+void LocalSong::onSongNameSort(const bool &down)
+{
     auto songNameSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
-        if (down) return item1->m_information.songName > item2->m_information.songName;
-        return item1->m_information.songName < item2->m_information.songName;
+        return down ? item1->m_information.songName > item2->m_information.songName : item1->m_information.songName < item2->m_information.songName; ///< 比较歌曲名称
     };
-    MySort(songNameSortItem);
-    this->m_isSorting = true;
+    MySort(songNameSortItem);                            ///< 执行排序
+    this->m_isSorting = true;                            ///< 设置排序状态
 }
 
-void LocalSong::onSingerSort(const bool &down) {
-    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：歌手降序");
-    //else ui->local_sort_toolButton->setToolTip("当前排序方式：歌手升序");
-    //排序规则
+/**
+ * @brief 歌手排序
+ * @param down 是否降序
+ */
+void LocalSong::onSingerSort(const bool &down)
+{
     auto singerSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
-        if (down) return item1->m_information.singer > item2->m_information.singer;
-        return item1->m_information.singer < item2->m_information.singer;
+        return down ? item1->m_information.singer > item2->m_information.singer : item1->m_information.singer < item2->m_information.singer; ///< 比较歌手
     };
-    MySort(singerSortItem);
-    this->m_isSorting = true;
+    MySort(singerSortItem);                              ///< 执行排序
+    this->m_isSorting = true;                            ///< 设置排序状态
 }
 
-void LocalSong::onDurationSort(const bool &down) {
-    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：时长降序");
-    //else ui->local_sort_toolButton->setToolTip("当前排序方式：时长升序");
-    //排序规则
+/**
+ * @brief 时长排序
+ * @param down 是否降序
+ */
+void LocalSong::onDurationSort(const bool &down)
+{
     auto durationSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
-        if (down) return item1->m_information.duration > item2->m_information.duration;
-        return item1->m_information.duration < item2->m_information.duration;
+        return down ? item1->m_information.duration > item2->m_information.duration : item1->m_information.duration < item2->m_information.duration; ///< 比较时长
     };
-    MySort(durationSortItem);
-    this->m_isSorting = true;
+    MySort(durationSortItem);                            ///< 执行排序
+    this->m_isSorting = true;                            ///< 设置排序状态
 }
 
-void LocalSong::onPlayCountSort(const bool &down) {
-    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：播放次数降序");
-    //else ui->local_sort_toolButton->setToolTip("当前排序方式：播放次数升序");
-    //排序规则
+/**
+ * @brief 播放次数排序
+ * @param down 是否降序
+ */
+void LocalSong::onPlayCountSort(const bool &down)
+{
     auto playCountSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
-        if (down) return item1->m_information.playCount > item2->m_information.playCount;
-        return item1->m_information.playCount < item2->m_information.playCount;
+        return down ? item1->m_information.playCount > item2->m_information.playCount : item1->m_information.playCount < item2->m_information.playCount; ///< 比较播放次数
     };
-    MySort(playCountSortItem);
-    this->m_isSorting = true;
+    MySort(playCountSortItem);                           ///< 执行排序
+    this->m_isSorting = true;                            ///< 设置排序状态
 }
 
-void LocalSong::onRandomSort() {
-    //记录当前的（旧的）vector
-    this->m_lastLocationMusicVector = this->m_locationMusicVector;
-    if (this->m_lastLocationMusicVector.isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
-            QString("暂无音乐"),1000,this->window());
+/**
+ * @brief 随机排序
+ */
+void LocalSong::onRandomSort()
+{
+    this->m_lastLocationMusicVector = this->m_locationMusicVector; ///< 备份歌曲列表
+    if (this->m_lastLocationMusicVector.isEmpty())
+    {
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QString("暂无音乐"), 1000, this->window()); ///< 显示警告
         return;
     }
-    //初始UI
-    //ui->local_sort_toolButton->setToolTip("当前排序方式：随机排序");
-    ui->local_song_list_widget->setUpdatesEnabled(false);
-    const auto layout = ui->local_song_list_widget->layout();
+    ui->local_song_list_widget->setUpdatesEnabled(false); ///< 禁用更新
+    const auto layout = ui->local_song_list_widget->layout(); ///< 获取布局
     QLayoutItem *item;
-    while ((item = layout->takeAt(0)) != nullptr) {
-        delete item;
+    while ((item = layout->takeAt(0)) != nullptr)
+    {
+        delete item;                                     ///< 删除布局项
     }
-    layout->setSpacing(2);
-    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed));
-    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
-
-    layout->setContentsMargins(0, 0, 0, 0);
-    //排序规则(打乱)
-    // 使用当前时间作为随机数种子
-    const unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    // 随机打乱 QVector
-    std::shuffle(this->m_musicItemVector.begin(), this->m_musicItemVector.end(), std::default_random_engine(seed));
+    layout->setSpacing(2);                               ///< 设置间距
+    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed)); ///< 添加固定填充
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding)); ///< 添加扩展填充
+    layout->setContentsMargins(0, 0, 0, 0);             ///< 设置边距
+    const unsigned seed = std::chrono::system_clock::now().time_since_epoch().count(); ///< 获取随机种子
+    std::shuffle(this->m_musicItemVector.begin(), this->m_musicItemVector.end(), std::default_random_engine(seed)); ///< 随机打乱
     int index = -1;
-    //重新添加
-    this->m_locationMusicVector.clear();
-    const auto lay = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
-    for (const auto &val: this->m_musicItemVector) {
-        val->m_information.index = ++index; //更换下标
-        val->setIndexText(index + 1); //设置indexLab
-        lay->insertWidget(ui->local_song_list_widget->layout()->count() - 2, val);
-        this->m_locationMusicVector.emplace_back(val->m_information);
+    this->m_locationMusicVector.clear();                 ///< 清空歌曲列表
+    const auto lay = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
+    for (const auto &val : this->m_musicItemVector)
+    {
+        val->m_information.index = ++index;              ///< 更新索引
+        val->setIndexText(index + 1);                    ///< 设置索引文本
+        lay->insertWidget(ui->local_song_list_widget->layout()->count() - 2, val); ///< 插入音乐项
+        this->m_locationMusicVector.emplace_back(val->m_information); ///< 添加歌曲信息
     }
-    // 恢复更新
-    ui->local_song_list_widget->setUpdatesEnabled(true);
-    update();
-    updateCurPlayIndex();
+    ui->local_song_list_widget->setUpdatesEnabled(true); ///< 启用更新
+    update();                                            ///< 更新界面
+    updateCurPlayIndex();                                ///< 更新播放索引
 }
 
-void LocalSong::onItemNextPlay() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Play next not implemented", 1000, window());
-    // TODO: Add song to play queue as next item
+/**
+ * @brief 下一首播放槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemNextPlay()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Play next not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemAddToPlayQueue() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to play queue not implemented", 1000, window());
-    // TODO: Append song to play queue
+/**
+ * @brief 添加到播放队列槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemAddToPlayQueue()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to play queue not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemAddToNewSongList() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to new song list not implemented", 1000, window());
-    // TODO: Create new playlist and add song
+/**
+ * @brief 添加到新歌单槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemAddToNewSongList()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to new song list not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemAddToLove() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to loved songs not implemented", 1000, window());
-    // TODO: Mark song as favorite
+/**
+ * @brief 添加到喜爱槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemAddToLove()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to loved songs not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemAddToCollect() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to collection not implemented", 1000, window());
-    // TODO: Add song to user collection
+/**
+ * @brief 添加到收藏槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemAddToCollect()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to collection not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemAddToPlayList() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to playlist not implemented", 1000, window());
-    // TODO: Show playlist selection dialog
+/**
+ * @brief 添加到播放列表槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemAddToPlayList()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to playlist not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemDownload() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Download not implemented", 1000, window());
-    // TODO: Download song if applicable
+/**
+ * @brief 下载槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemDownload()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Download not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemShare() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Share not implemented", 1000, window());
-    // TODO: Implement sharing
+/**
+ * @brief 分享槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemShare()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Share not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemComment() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Comment not implemented", 1000, window());
-    // TODO: Show comment dialog
+/**
+ * @brief 评论槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemComment()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Comment not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemSameSong() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Find similar songs not implemented", 1000, window());
-    // TODO: Search for similar songs
+/**
+ * @brief 相似歌曲槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemSameSong()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Find similar songs not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemViewSongInfo() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "View song info not implemented", 1000, window());
-    // TODO: Show song details dialog
+/**
+ * @brief 查看歌曲信息槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemViewSongInfo()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "View song info not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemDeleteSong(const int &idx) {
-    qDebug()<<"收到删除信号，删除第 "<<idx<<" 项";
-    PRINT_INFO("收到删除信号，删除第 %d 项",idx);
-    //三个属性组成唯一键值
-    auto song = this->m_locationMusicVector[idx].songName;
-    auto singer = this->m_locationMusicVector[idx].singer;
-    auto duration = this->m_locationMusicVector[idx].duration;
-
-    this->m_lastLocationMusicVector = this->m_locationMusicVector;
-    auto widget = this->m_musicItemVector[idx];
-    widget->deleteLater();
-    this->m_locationMusicVector.erase(m_locationMusicVector.cbegin() + idx);
-    this->m_musicItemVector.erase(m_musicItemVector.cbegin() + idx);
-    if (this->m_musicItemVector.isEmpty())ui->widget->show();
-    //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
-    emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
-
-    //更新下标
+/**
+ * @brief 删除歌曲槽函数
+ * @param idx 歌曲索引
+ * @note 删除本地和服务器歌曲
+ */
+void LocalSong::onItemDeleteSong(const int &idx)
+{
+    qDebug() << "收到删除信号，删除第 " << idx << " 项";
+    PRINT_INFO("收到删除信号，删除第 %d 项", idx);      ///< 记录日志
+    auto song = this->m_locationMusicVector[idx].songName; ///< 获取歌曲名称
+    auto singer = this->m_locationMusicVector[idx].singer; ///< 获取歌手
+    auto duration = this->m_locationMusicVector[idx].duration; ///< 获取时长
+    this->m_lastLocationMusicVector = this->m_locationMusicVector; ///< 备份歌曲列表
+    auto widget = this->m_musicItemVector[idx];          ///< 获取控件
+    widget->deleteLater();                               ///< 删除控件
+    this->m_locationMusicVector.erase(m_locationMusicVector.cbegin() + idx); ///< 删除歌曲信息
+    this->m_musicItemVector.erase(m_musicItemVector.cbegin() + idx); ///< 删除音乐项
+    if (this->m_musicItemVector.isEmpty())
+        ui->widget->show();                              ///< 显示初始界面
+    emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size())); ///< 更新数量标签
     int index = -1;
-    for (auto &val: this->m_locationMusicVector) {
-        val.index = ++index;
+    for (auto &val : this->m_locationMusicVector)
+    {
+        val.index = ++index;                             ///< 更新歌曲索引
     }
     index = -1;
-    for (const auto &val: this->m_musicItemVector) {
-        val->m_information.index = ++index; //更换下标
-        val->setIndexText(index + 1); //设置indexLab
+    for (const auto &val : this->m_musicItemVector)
+    {
+        val->m_information.index = ++index;              ///< 更新控件索引
+        val->setIndexText(index + 1);                    ///< 设置索引文本
     }
-    updateCurPlayIndex();
-    // 向服务器发送删除请求
-    QJsonObject delReq;
+    updateCurPlayIndex();                                ///< 更新播放索引
+    QJsonObject delReq;                                  ///< 创建删除请求
     delReq["song"] = song;
     delReq["singer"] = singer;
     delReq["duration"] = duration;
 
     /*Async::runAsync(QThreadPool::globalInstance(),&CLibhttp::UrlRequestGet,
        m_libHttp, QString("http://127.0.0.1:8080/api/delSong"),QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
-*/
+    */
     Async::runAsync(QThreadPool::globalInstance(),
     [this,delReq] {
         return m_libHttp.UrlRequestGet(
@@ -855,41 +884,71 @@ void LocalSong::onItemDeleteSong(const int &idx) {
             QJsonDocument(delReq).toJson(QJsonDocument::Compact),
             1000
         );
-    });
+    }); ///< 异步删除
     //m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
     //qDebug()<<"处理删除请求完成";
     ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
-        QString("成功删除音乐 : %1").arg(song),1000,this->window());
+        QString("成功删除音乐 : %1").arg(song),1000,this->window()); ///< 显示成功提示
 }
 
-void LocalSong::onItemOpenInFile() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Open in file explorer not implemented", 1000, window());
-    // TODO: Open file location in explorer
+/**
+ * @brief 在文件资源管理器中打开槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemOpenInFile()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Open in file explorer not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemSearch() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Search not implemented", 1000, window());
-    // TODO: Implement search functionality
+/**
+ * @brief 搜索槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemSearch()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Search not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::onItemUpLoad() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Upload not implemented", 1000, window());
-    // TODO: Implement upload
+/**
+ * @brief 上传槽函数
+ * @note 显示未实现提示
+ */
+void LocalSong::onItemUpLoad()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Upload not implemented", 1000, window()); ///< 显示提示
 }
 
-void LocalSong::resizeEvent(QResizeEvent *event) {
-    QWidget::resizeEvent(event);
-    ui->scrollArea->setFixedHeight(this->window()->height() - 340);
+/**
+ * @brief 窗口大小调整事件
+ * @param event 大小调整事件
+ * @note 调整滚动区域高度
+ */
+void LocalSong::resizeEvent(QResizeEvent *event)
+{
+    QWidget::resizeEvent(event);                         ///< 调用父类处理
+    ui->scrollArea->setFixedHeight(this->window()->height() - 340); ///< 设置滚动区域高度
 }
 
-bool LocalSong::eventFilter(QObject *watched, QEvent *event) {
-    const auto button = qobject_cast<QToolButton*>(watched);
-    if (button && button->defaultAction() == this->m_searchAction) {
-        if (event->type() == QEvent::Enter) {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg")));
-        } else if (event->type() == QEvent::Leave) {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
+/**
+ * @brief 事件过滤器
+ * @param watched 监听对象
+ * @param event 事件
+ * @return 是否处理事件
+ * @note 处理搜索图标的动态切换
+ */
+bool LocalSong::eventFilter(QObject *watched, QEvent *event)
+{
+    const auto button = qobject_cast<QToolButton *>(watched); ///< 转换为工具按钮
+    if (button && button->defaultAction() == this->m_searchAction)
+    {
+        if (event->type() == QEvent::Enter)
+        {
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg"))); ///< 设置蓝色图标
+        }
+        else if (event->type() == QEvent::Leave)
+        {
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置黑色图标
         }
     }
-    return QObject::eventFilter(watched, event);
+    return QObject::eventFilter(watched, event);         ///< 调用父类过滤器
 }

@@ -33,7 +33,6 @@ MVWidget::MVWidget(QWidget *parent)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
 {
     ui->setupUi(this);
-    this->m_parent = this->window(); ///< 设置父窗口
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/mv.css"));
         if (file.open(QIODevice::ReadOnly))
@@ -339,7 +338,7 @@ void MVWidget::resizeEvent(QResizeEvent *event)
     }
 
     ui->advertise_widget->setFixedHeight(ui->advertise_widget->width() / 5 + 65); ///< 调整广告高度
-    ui->scrollArea->setFixedHeight(this->m_parent->height() - 260); ///< 调整滚动区域高度
+    ui->scrollArea->setFixedHeight(this->window()->height() - 260); ///< 调整滚动区域高度
 }
 
 /**

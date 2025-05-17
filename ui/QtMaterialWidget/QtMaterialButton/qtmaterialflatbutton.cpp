@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialflatbutton.cpp
  * @brief 实现 QtMaterialFlatButton 类，提供 Material Design 扁平按钮
- * @author Unknown
+ * @author laserpants
  * @date 2025-05CU-16
  * @version 1.0
  */

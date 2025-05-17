@@ -83,7 +83,7 @@ protected:
         void changeSize();
 
 private:
-    QTextEdit *m_pTextEdit;       ///< 文本编辑器
+    QTextEdit *m_pTextEdit{};     ///< 文本编辑器
     QString    m_streamBuffer;    ///< 流式缓冲区
     QTimer     m_streamTimer;     ///< 流式定时器
 };

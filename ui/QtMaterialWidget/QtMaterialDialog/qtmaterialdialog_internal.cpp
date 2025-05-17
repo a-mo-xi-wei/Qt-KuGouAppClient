@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialdialog_internal.cpp
  * @brief 实现 QtMaterialDialogProxy 和 QtMaterialDialogWindow 类，提供对话框内部功能
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

@@ -29,7 +29,6 @@ Channel::Channel(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Channel)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
-    , m_parent(this->window())
     , m_recommendWidget(std::make_unique<PartWidget>(this))
     , m_djWidget(std::make_unique<PartWidget>(this))
     , m_languageWidget(std::make_unique<PartWidget>(this))
@@ -683,7 +682,7 @@ void Channel::handleWheelValue(const int &value)
 void Channel::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);                         ///< 调用父类调整大小事件
-    ui->scrollArea->setFixedHeight(this->m_parent->height() - 305); ///< 设置滚动区域高度
+    ui->scrollArea->setFixedHeight(this->window()->height() - 305); ///< 设置滚动区域高度
 }
 
 /**

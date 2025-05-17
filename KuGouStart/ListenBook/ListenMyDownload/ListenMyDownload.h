@@ -112,7 +112,7 @@ signals:
     void switch_to_listen_recommend();
 
 private:
-    Ui::ListenMyDownload                   *ui;                  ///< UI 指针
+    Ui::ListenMyDownload                   *ui;                   ///< UI 指针
     std::unique_ptr<QButtonGroup>           m_buttonGroup{};      ///< 按钮组
     std::unique_ptr<DownloadedWidget>       m_downloaded{};       ///< 已下载控件
     std::unique_ptr<DownloadingWidget>      m_downloading{};      ///< 下载中控件

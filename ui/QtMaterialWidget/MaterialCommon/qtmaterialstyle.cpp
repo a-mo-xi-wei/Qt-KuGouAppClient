@@ -1,7 +1,7 @@
 /**
 * @file qtmaterialstyle.cpp
  * @brief 实现 QtMaterialStyle 类，提供 Material Design 风格支持
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

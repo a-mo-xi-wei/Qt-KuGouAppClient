@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialripple.h
  * @brief 定义 QtMaterialRipple 类，提供水波纹动画效果
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

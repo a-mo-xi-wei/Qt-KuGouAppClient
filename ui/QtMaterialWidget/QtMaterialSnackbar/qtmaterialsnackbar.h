@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialsnackbar.h
  * @brief 定义 QtMaterialSnackbar 类，提供 Material Design 提示条
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

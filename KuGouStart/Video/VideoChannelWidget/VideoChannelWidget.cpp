@@ -42,7 +42,6 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
     , m_singerWidget(std::make_unique<VideoChannelPartWidget>(this))
 {
     ui->setupUi(this);
-    this->m_parent = this->window();                              ///< 设置父窗口
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/channelwidget.css"));
         if (file.open(QIODevice::ReadOnly))
@@ -405,7 +404,7 @@ void VideoChannelWidget::handleWheelValue(const int &value)
 void VideoChannelWidget::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
-    ui->scrollArea->setFixedHeight(this->m_parent->height() - 280); ///< 调整滚动区域高度
+    ui->scrollArea->setFixedHeight(this->window()->height() - 280); ///< 调整滚动区域高度
 }
 
 /**

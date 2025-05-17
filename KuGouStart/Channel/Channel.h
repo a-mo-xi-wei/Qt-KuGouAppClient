@@ -92,7 +92,6 @@ protected:
 private:
     Ui::Channel                                  *ui;                            ///< UI 指针
     std::unique_ptr<QButtonGroup>                 m_buttonGroup{};               ///< 按钮组
-    QWidget                                      *m_parent{};                    ///< 父窗口指针
     std::unique_ptr<PartWidget>                   m_recommendWidget{};           ///< 推荐分区控件
     std::unique_ptr<PartWidget>                   m_djWidget{};                  ///< DJ 分区控件
     std::unique_ptr<PartWidget>                   m_languageWidget{};            ///< 语言分区控件

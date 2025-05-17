@@ -24,7 +24,6 @@ MyScrollArea::MyScrollArea(QWidget *parent)
     , m_upBtn(std::make_unique<UpToolButton>(this))
     , m_scrollBarTimer(new QTimer(this))
 {
-    this->m_parent = this->window();
     this->setMouseTracking(true);
     this->setWidgetResizable(true);
 

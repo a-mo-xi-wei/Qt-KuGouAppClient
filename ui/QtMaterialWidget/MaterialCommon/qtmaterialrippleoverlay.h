@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialrippleoverlay.h
  * @brief 定义 QtMaterialRippleOverlay 类，提供水波纹覆盖层功能
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

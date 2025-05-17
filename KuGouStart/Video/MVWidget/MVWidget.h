@@ -208,8 +208,7 @@ private:
 
     Ui::MVWidget                            *ui;                    ///< UI 指针
     std::unique_ptr<QButtonGroup>            m_buttonGroup;         ///< 按钮组
-    QWidget                                 *m_parent;              ///< 父窗口
-    QAction                                 *m_searchAction;        ///< 搜索动作
+    QAction                                 *m_searchAction{};      ///< 搜索动作
     std::vector<std::pair<QString, QString>> m_titleAndDesc;        ///< 标题和描述对
     std::vector<MusicInfo>                   m_total;               ///< 所有音乐信息
     std::vector<MusicInfo>                   m_recommendVector;     ///< 推荐分类

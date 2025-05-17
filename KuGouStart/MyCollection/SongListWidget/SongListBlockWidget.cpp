@@ -1,77 +1,128 @@
-//
-// Created by WeiWang on 25-1-25.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_SongListBlockWidget.h" resolved
+/**
+ * @file SongListBlockWidget.cpp
+ * @brief 实现 SongListBlockWidget 类，显示歌单块
+ * @author WeiWang
+ * @date 2025-01-25
+ * @version 1.0
+ */
 
 #include "SongListBlockWidget.h"
+#include "ui_SongListBlockWidget.h"
 
 #include <QMouseEvent>
 
-#include "ui_SongListBlockWidget.h"
-
-
+/**
+ * @brief 构造函数，初始化歌单块
+ * @param parent 父控件指针，默认为 nullptr
+ */
 SongListBlockWidget::SongListBlockWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::SongListBlockWidget)
 {
     ui->setupUi(this);
-    initUi();
+    initUi();                                            ///< 初始化界面
 }
 
-SongListBlockWidget::~SongListBlockWidget() {
-    delete ui;
+/**
+ * @brief 析构函数，清理资源
+ */
+SongListBlockWidget::~SongListBlockWidget()
+{
+    delete ui;                                           ///< 删除 UI
 }
 
-void SongListBlockWidget::setCoverPix(const QString &pixmapPath) const {
-    ui->cover_widget->setBorderImage(pixmapPath,10);
+/**
+ * @brief 设置封面图片
+ * @param pixmapPath 图片路径
+ */
+void SongListBlockWidget::setCoverPix(const QString &pixmapPath) const
+{
+    ui->cover_widget->setBorderImage(pixmapPath, 10);    ///< 设置封面图片和圆角
 }
 
-void SongListBlockWidget::setTitleText(const QString &title) const {
-    ui->title_label->setText(title);
+/**
+ * @brief 设置标题文本
+ * @param title 标题文本
+ */
+void SongListBlockWidget::setTitleText(const QString &title) const
+{
+    ui->title_label->setText(title);                     ///< 设置标题文本
 }
 
-void SongListBlockWidget::initUi() const {
-    auto font = ui->title_label->font();
-    font.setWeight(QFont::DemiBold);
-    ui->title_label->setFont(font);
-    //blockWidget设置
-    ui->cover_widget->setExpandRespond(false);
-    ui->cover_widget->setPopularDirection(1);
-    ui->cover_widget->setHaveNumberUnit(false);
-    ui->cover_widget->setLeftPopularBtnIcon("");
-    ui->cover_widget->setLeftPopularBtnWidth(30);
-    ui->cover_widget->setPopularBtnText("0首");
-    ui->cover_widget->setPopularBtnLeftPadding(0);
-    //遮罩设置
-    auto& mask = ui->cover_widget->getMask();
-    mask.setDefaultFillCircleColor(Qt::white);
-    mask.setHoverFillCircleColor(Qt::white);
-    mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666")));
-    mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));
-    mask.setMaskColor(QColor(0, 0, 0, 100));
-    mask.setEnterWidgetChangeCursor(false);
-    mask.setCursor(Qt::ArrowCursor);
+/**
+ * @brief 初始化界面
+ * @note 设置标题字体、封面控件和遮罩样式
+ */
+void SongListBlockWidget::initUi() const
+{
+    auto font = ui->title_label->font();                 ///< 获取标题字体
+    font.setWeight(QFont::DemiBold);                    ///< 设置字体半粗
+    ui->title_label->setFont(font);                     ///< 应用字体
+    ui->cover_widget->setExpandRespond(false);          ///< 禁用扩展响应
+    ui->cover_widget->setPopularDirection(1);           ///< 设置热门方向
+    ui->cover_widget->setHaveNumberUnit(false);         ///< 禁用单位显示
+    ui->cover_widget->setLeftPopularBtnIcon("");        ///< 设置空图标
+    ui->cover_widget->setLeftPopularBtnWidth(30);       ///< 设置按钮宽度
+    ui->cover_widget->setPopularBtnText("0首");         ///< 设置文本
+    ui->cover_widget->setPopularBtnLeftPadding(0);      ///< 设置左填充
+    auto &mask = ui->cover_widget->getMask();           ///< 获取遮罩
+    mask.setDefaultFillCircleColor(Qt::white);          ///< 设置默认圆形填充颜色
+    mask.setHoverFillCircleColor(Qt::white);            ///< 设置悬停圆形填充颜色
+    mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666"))); ///< 设置默认三角形填充颜色
+    mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));   ///< 设置悬停三角形填充颜色
+    mask.setMaskColor(QColor(0, 0, 0, 100));            ///< 设置遮罩颜色
+    mask.setEnterWidgetChangeCursor(false);             ///< 禁用光标变化
+    mask.setCursor(Qt::ArrowCursor);                    ///< 设置箭头光标
 }
 
-void SongListBlockWidget::enterEvent(QEnterEvent *event) {
+/**
+ * @brief 进入事件
+ * @param event 进入事件
+ * @note 遮罩显示（已注释）
+ */
+void SongListBlockWidget::enterEvent(QEnterEvent *event)
+{
     QWidget::enterEvent(event);
-    //ui->cover_widget->onShowMask();
+    // ui->cover_widget->onShowMask();                  ///< 遮罩显示（已注释）
 }
 
-void SongListBlockWidget::leaveEvent(QEvent *event) {
+/**
+ * @brief 离开事件
+ * @param event 离开事件
+ * @note 遮罩隐藏（已注释）
+ */
+void SongListBlockWidget::leaveEvent(QEvent *event)
+{
     QWidget::leaveEvent(event);
-    //ui->cover_widget->onHideMask();
+    // ui->cover_widget->onHideMask();                  ///< 遮罩隐藏（已注释）
 }
 
-void SongListBlockWidget::mousePressEvent(QMouseEvent *event) {
-    event->ignore();
+/**
+ * @brief 鼠标按下事件
+ * @param event 鼠标事件
+ * @note 忽略事件
+ */
+void SongListBlockWidget::mousePressEvent(QMouseEvent *event)
+{
+    event->ignore();                                     ///< 忽略事件
 }
 
-void SongListBlockWidget::mouseReleaseEvent(QMouseEvent *event) {
-    event->ignore();
+/**
+ * @brief 鼠标释放事件
+ * @param event 鼠标事件
+ * @note 忽略事件
+ */
+void SongListBlockWidget::mouseReleaseEvent(QMouseEvent *event)
+{
+    event->ignore();                                     ///< 忽略事件
 }
 
-void SongListBlockWidget::mouseDoubleClickEvent(QMouseEvent *event) {
-    event->ignore();
+/**
+ * @brief 鼠标双击事件
+ * @param event 鼠标事件
+ * @note 忽略事件
+ */
+void SongListBlockWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    event->ignore();                                     ///< 忽略事件
 }

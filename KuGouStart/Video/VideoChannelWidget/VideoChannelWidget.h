@@ -90,7 +90,6 @@ protected:
 private:
     Ui::VideoChannelWidget                  *ui;                    ///< UI 指针
     std::unique_ptr<QButtonGroup>            m_buttonGroup;         ///< 按钮组
-    QWidget                                 *m_parent;              ///< 父窗口
     std::unique_ptr<VideoChannelPartWidget>  m_popularWidget;       ///< 热门分类
     std::unique_ptr<VideoChannelPartWidget>  m_childrenWidget;      ///< 儿童分类
     std::unique_ptr<VideoChannelPartWidget>  m_themeWidget;         ///< 主题分类

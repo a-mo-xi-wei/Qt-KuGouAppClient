@@ -1,7 +1,7 @@
 /**
 * @file qtmaterialdialog.h
  * @brief 定义 QtMaterialDialog 类，提供 Material Design 对话框
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

@@ -57,8 +57,8 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    QLabel  *m_titleLab;    ///< 标题标签
-    QWidget *m_tabWidget;   ///< 视频块容器
+    QLabel  *m_titleLab{};    ///< 标题标签
+    QWidget *m_tabWidget{};   ///< 视频块容器
 };
 
 #endif // VIDEOCHANNELPARTWIDGET_H

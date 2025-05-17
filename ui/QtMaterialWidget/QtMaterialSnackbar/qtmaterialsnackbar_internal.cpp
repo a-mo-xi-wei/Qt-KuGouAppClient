@@ -1,7 +1,7 @@
 /**
  * @file qtmaterialsnackbar_internal.cpp
  * @brief 实现 QtMaterialSnackbarStateMachine 类，提供提示条状态管理
- * @author Unknown
+ * @author laserpants
  * @date 2025-05-16
  * @version 1.0
  */

@@ -116,10 +116,10 @@ private:
     QVBoxLayout *m_pVl;                ///< 垂直布局
     QScrollArea *m_pScrollArea;        ///< 滚动区域
     bool         isAppended;           ///< 是否追加聊天项
-    QLabel      *m_logo;               ///< Logo 标签
-    QLabel      *m_helloText;          ///< 欢迎文本标签
-    QLabel      *m_funcText;           ///< 功能描述标签
-    QWidget     *m_centerInitWidget;   ///< 居中初始化部件
+    QLabel      *m_logo{};               ///< Logo 标签
+    QLabel      *m_helloText{};          ///< 欢迎文本标签
+    QLabel      *m_funcText{};           ///< 功能描述标签
+    QWidget     *m_centerInitWidget{};   ///< 居中初始化部件
 };
 
 #endif // CHATVIEW_H
