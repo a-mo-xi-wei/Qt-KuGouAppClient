@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['探索界面_0',['14.探索界面',['../index.html#autotoc_md22',1,'']]]
+  ['我的收藏界面_0',['8.我的收藏界面',['../index.html#autotoc_md16',1,'']]]
 ];

@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "123456789_abcdefghijklmnopqrstuvwxyz~下为乐全同听已我技探最本核歌每用界略直若虽视音频高🎨🎵📚🔌😊🛠",
+  0: "123456789_abcdefghijklmnopqrstuvwxyz~。下不为乐全同听已我技探最本核歌每用界略直若视音频高🎨🎵📚🔌😊🛠",
   1: "abcdefghijklmnopqrstuvwyz",
   2: "adefhjlmqsuw",
   3: "abcdefghijklmnopqrstuvwx",
