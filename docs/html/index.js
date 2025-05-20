@@ -1,7 +1,7 @@
 var index =
 [
     [ "🎨 界面技术栈", "index.html#autotoc_md6", [
-      [ "本人开发工具用的是CLion，非常简便明了，编译的话，生成器使用Ninja，工具链请使用 **_MinGW_** , VS2022 MSVC 虽然能编译并运行，但是使用体验不如MinGW。构建类型选择R...", "index.html#autotoc_md2", [
+      [ "本人开发工具用的是CLion，非常简便明了，编译的话，生成器使用Ninja，工具链请使用 **_MinGW_** , 不要用VS2022(MSVC)。构建类型选择Release（建议）的话，不管构建还是...", "index.html#autotoc_md2", [
         [ "同时，Ubuntu 下编译虽然能通过且能运行，但是对于鼠标事件的接受和样式渲染有问题，精力有限，不会去维护。。。", "index.html#autotoc_md3", null ]
       ] ],
       [ "Ai对话功能需要预先获取API，有问题请参考：https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#qt6-E6%8EA5E5%85A5deepseek", "index.html#autotoc_md4", null ],
