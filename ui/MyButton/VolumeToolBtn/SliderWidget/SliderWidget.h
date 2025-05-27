@@ -177,7 +177,7 @@ signals:
     void noVolume(bool flag);
 
 public:
-    bool                    m_isPressing;           ///< 是否正在按下
+    bool                    m_isPressing = false;   ///< 是否正在按下
 private:
     int                     m_minValue;             ///< 最小值
     int                     m_maxValue;             ///< 最大值

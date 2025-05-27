@@ -83,6 +83,7 @@ void SliderWidget::mousePressEvent(QMouseEvent *event) {
         emit noVolume(this->m_currentValue == 0);
         //qDebug()<<"m_currentValue : "<<this->m_currentValue;
         // 正在按下
+        //qDebug()<<"设置为正在按下";
         this->m_isPressing = true;
     }
     // 让父类处理其余的鼠标事件
@@ -110,11 +111,13 @@ void SliderWidget::mouseMoveEvent(QMouseEvent *event) {
     moveValue = moveValue <= this->m_maxValue ? moveValue : this->m_maxValue;
 
     this->m_sliderToolTip->setToolTip(QString::number(moveValue) + "%");
-    if (this->m_isPressing) {
-        this->m_currentValue = moveValue;
-        this->setValue(this->m_currentValue);
-        emit noVolume(this->m_currentValue == 0);
+    if (!this->m_isPressing) {
+        //qDebug()<<"并不是按下状态";
+        return;
     }
+    this->m_currentValue = moveValue;
+    this->setValue(this->m_currentValue);
+    emit noVolume(this->m_currentValue == 0);
     QSlider::mouseMoveEvent(event);
 }
 
