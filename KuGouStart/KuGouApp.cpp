@@ -14,6 +14,7 @@
 #include "qtmaterialsnackbar.h"
 #include "ElaToolTip.h"
 #include "ElaMessageBar.h"
+#include "SpeedDialog/SpeedDialog.h"
 
 #include <QPainterPath>
 #include <QPainter>
@@ -1162,6 +1163,27 @@ void KuGouApp::on_next_toolButton_clicked() {
         return;
     }
     this->m_localDownload->playLocalSongNextSong();               ///< 播放下一首
+}
+
+/**
+ * @brief 速度选择按钮点击槽函数
+ * @note 显示速度选择界面
+ */
+void KuGouApp::on_speed_pushButton_clicked() {
+    /// 弹出速度相关界面，并且在隐藏的时候销毁
+    auto speedDialog = new SpeedDialog(this);
+    // @note 未使用，保留用于调试
+    /*
+        connect(speedDialog, &QObject::destroyed, this, [] {
+            qDebug() << "SpeedDialog destroyed";
+        });
+    */
+    auto tmpPos = ui->speed_pushButton->mapToGlobal(QPoint(ui->speed_pushButton->width() / 2 , ui->speed_pushButton->height() / 2));
+    tmpPos.setX(tmpPos.x() - speedDialog->width() / 2);
+    tmpPos.setY(tmpPos.y() - speedDialog->height() - 15);
+    auto pos = mapFromGlobal(tmpPos);
+    speedDialog->move(pos);
+    speedDialog->show();
 }
 
 /**

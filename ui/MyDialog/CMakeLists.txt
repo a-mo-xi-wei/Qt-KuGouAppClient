@@ -5,9 +5,14 @@ project(MyDialog VERSION 1.0 LANGUAGES CXX)
 file(GLOB ABOUTDIALOG_H ${CMAKE_CURRENT_SOURCE_DIR}/AboutDialog/*.h)
 file(GLOB ABOUTDIALOG_CPP ${CMAKE_CURRENT_SOURCE_DIR}/AboutDialog/*.cpp)
 
+file(GLOB SPEEDDIALOG_H ${CMAKE_CURRENT_SOURCE_DIR}/SpeedDialog/*.h)
+file(GLOB SPEEDDIALOG_CPP ${CMAKE_CURRENT_SOURCE_DIR}/SpeedDialog/*.cpp)
+
 set(SOURCE_FILE
     ${ABOUTDIALOG_H}
     ${ABOUTDIALOG_CPP}
+    ${SPEEDDIALOG_H}
+    ${SPEEDDIALOG_CPP}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
@@ -18,6 +23,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE MYDIALOG_LIBRARY)
 target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/AboutDialog
+        ${CMAKE_CURRENT_SOURCE_DIR}/SpeedDialog
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Network QtMaterialWidget

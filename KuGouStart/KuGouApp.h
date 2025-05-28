@@ -372,6 +372,12 @@ private slots:
     void on_next_toolButton_clicked();
 
     /**
+     * @brief 速度选择按钮点击槽函数
+     * @note 打开速度选择界面
+     */
+    void on_speed_pushButton_clicked();
+
+    /**
      * @brief 音质选择按钮点击槽函数
      * @note 打开音质选择界面
      */
