@@ -1184,6 +1184,11 @@ void KuGouApp::on_speed_pushButton_clicked() {
     auto pos = mapFromGlobal(tmpPos);
     speedDialog->move(pos);
     speedDialog->show();
+
+    /// 连接槽
+    connect(speedDialog,  &SpeedDialog::DJ_model, this, [this](const QString& model) {
+            ui->speed_pushButton->setText(model);
+    });
 }
 
 /**
