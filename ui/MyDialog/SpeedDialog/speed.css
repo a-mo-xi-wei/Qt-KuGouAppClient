@@ -31,22 +31,20 @@ QLabel#speedLv1Lab , QLabel#speedLv2Lab , QLabel#speedLv3Lab
     color: #989898;
 }
 
-
-QPushButton{
-    border: 1px solid #d2d2d2;
+QPushButton {
+    border: 2px solid #d2d2d2;
     border-radius: 10px;
     color: #989898;
 }
-QPushButton:hover{
-    border: 1px solid #1296DB;
-    color: #1296DB;
-}
-QPushButton:checked{
-    border: 1px solid #1296DB;
+QPushButton:checked {
+    border: 2px solid #1296DB;
     color: #1296DB;
 }
 QPushButton:!checked {
-    border: 1px solid #d2d2d2;
-    border-radius: 10px;
+    border: 2px solid #d2d2d2;
     color: #989898;
+}
+QPushButton:hover {
+    border: 2px solid #1296DB;
+    color: #1296DB;
 }

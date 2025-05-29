@@ -17,10 +17,10 @@
 /** @brief 获取当前文件目录的宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
-
 SpeedDialog::SpeedDialog(QWidget *parent)
     : QWidget(parent, Qt::Popup)
-      , m_effect(std::make_unique<QGraphicsDropShadowEffect>(this)) {
+    , m_effect(std::make_unique<QGraphicsDropShadowEffect>(this))
+{
     this->setContentsMargins(0, 10, 0, 20);
     setFixedSize(280, 295);
     setWindowFlags(Qt::FramelessWindowHint);
@@ -55,7 +55,7 @@ void SpeedDialog::initUi() {
     /// 第一个水平布局
     auto hlay1 = new QHBoxLayout;
     hlay1->setSpacing(10);
-    hlay1->setContentsMargins(10,0,10,0);
+    hlay1->setContentsMargins(10, 0, 10, 0);
     auto diskLab = new QLabel(this);
     diskLab->setObjectName("diskLab");
     diskLab->setFixedSize(20, 20);
@@ -115,9 +115,9 @@ void SpeedDialog::initUi() {
 
     ///  第三个水平布局
     auto hlay3 = new QHBoxLayout;
-    hlay3->setContentsMargins(0,0,0,0);
+    hlay3->setContentsMargins(0, 0, 0, 0);
     auto adjustmentLab = new QLabel("升降调播放", this);
-    adjustmentLab->setContentsMargins(0,0,0,0);
+    adjustmentLab->setContentsMargins(0, 0, 0, 0);
     adjustmentLab->setFixedHeight(30);
     adjustmentLab->setObjectName("adjustmentLab");
     adjustmentLab->setAlignment(Qt::AlignCenter);
@@ -128,10 +128,10 @@ void SpeedDialog::initUi() {
 
     /// 第四个水平布局
     auto hlay4 = new QHBoxLayout;
-    hlay4->setContentsMargins(0,0,0,0);
+    hlay4->setContentsMargins(0, 0, 0, 0);
     auto adjustmentSlider = new SnapSlider(this);
     /// adjustmentSlider->setFixedWidth(280);
-    adjustmentSlider->setContentsMargins(0,0,0,0);
+    adjustmentSlider->setContentsMargins(0, 0, 0, 0);
     adjustmentSlider->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     adjustmentSlider->setOrientation(Qt::Horizontal);
     adjustmentSlider->setUseThemeColors(false);
@@ -140,9 +140,9 @@ void SpeedDialog::initUi() {
     adjustmentSlider->setThumbColor(QColor("#29A2FF"));
     adjustmentSlider->setMaximum(100); // 设置为100便于计算
     adjustmentSlider->setDisabled(false);
-    // 延迟设置初始值，确保布局完成后再定位
+    // 延迟设置初始值,解决焦点问题
     QTimer::singleShot(0, this, [adjustmentSlider]() {
-        adjustmentSlider->setValue(adjustmentSlider->maximum() / 2);// 50%位置
+        // adjustmentSlider->setValue(adjustmentSlider->maximum() / 2); // 50%位置
         adjustmentSlider->setFocus();
         adjustmentSlider->clearFocus(); // 立即取消焦点，避免永久聚焦状态
     });
@@ -150,17 +150,17 @@ void SpeedDialog::initUi() {
 
     /// 第五个水平布局
     auto hlay5 = new QHBoxLayout;
-    hlay5->setContentsMargins(28,0,28,0);
+    hlay5->setContentsMargins(28, 0, 28, 0);
     /// 三个等级Lab
-    auto adjustmentLv1Lab = new QLabel("降调",this);
+    auto adjustmentLv1Lab = new QLabel("降调", this);
     adjustmentLv1Lab->setObjectName("adjustmentLv1Lab");
-    adjustmentLv1Lab->setContentsMargins(0,0,0,0);
-    auto adjustmentLv2Lab = new QLabel("正常",this);
+    adjustmentLv1Lab->setContentsMargins(0, 0, 0, 0);
+    auto adjustmentLv2Lab = new QLabel("正常", this);
     adjustmentLv2Lab->setObjectName("adjustmentLv2Lab");
-    adjustmentLv2Lab->setContentsMargins(0,0,0,0);
-    auto adjustmentLv3Lab = new QLabel("升调",this);
+    adjustmentLv2Lab->setContentsMargins(0, 0, 0, 0);
+    auto adjustmentLv3Lab = new QLabel("升调", this);
     adjustmentLv3Lab->setObjectName("adjustmentLv3Lab");
-    adjustmentLv3Lab->setContentsMargins(0,0,0,0);
+    adjustmentLv3Lab->setContentsMargins(0, 0, 0, 0);
     hlay5->addWidget(adjustmentLv1Lab);
     hlay5->addStretch();
     hlay5->addWidget(adjustmentLv2Lab);
@@ -169,23 +169,23 @@ void SpeedDialog::initUi() {
 
     /// 第六个水平布局
     auto hlay6 = new QHBoxLayout;
-    hlay6->setContentsMargins(0,0,0,0);
+    hlay6->setContentsMargins(0, 0, 0, 0);
     auto speedLab = new QLabel("倍速播放", this);
-    speedLab->setContentsMargins(0,0,0,0);
+    speedLab->setContentsMargins(0, 0, 0, 0);
     speedLab->setFixedHeight(30);
     speedLab->setObjectName("speedLab");
     speedLab->setAlignment(Qt::AlignCenter);
 
-   hlay6->addStretch();
-   hlay6->addWidget(speedLab);
-   hlay6->addStretch();
+    hlay6->addStretch();
+    hlay6->addWidget(speedLab);
+    hlay6->addStretch();
 
     /// 第七个水平布局
     auto hlay7 = new QHBoxLayout;
-    hlay7->setContentsMargins(0,0,0,0);
+    hlay7->setContentsMargins(0, 0, 0, 0);
     auto speedSlider = new SnapSlider(this);
     /// speedSlider->setFixedWidth(280);
-    speedSlider->setContentsMargins(0,0,0,0);
+    speedSlider->setContentsMargins(0, 0, 0, 0);
     speedSlider->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     speedSlider->setOrientation(Qt::Horizontal);
     speedSlider->setUseThemeColors(false);
@@ -196,7 +196,7 @@ void SpeedDialog::initUi() {
     speedSlider->setDisabled(false);
     // 延迟设置初始值，确保布局完成后再定位
     QTimer::singleShot(0, this, [speedSlider]() {
-        speedSlider->setValue(speedSlider->maximum() / 2);// 50%位置
+        // speedSlider->setValue(speedSlider->maximum() / 2); // 50%位置
         speedSlider->setFocus();
         speedSlider->clearFocus(); // 立即取消焦点，避免永久聚焦状态
     });
@@ -204,17 +204,17 @@ void SpeedDialog::initUi() {
 
     /// 第八个水平布局
     auto hlay8 = new QHBoxLayout;
-    hlay8->setContentsMargins(28,0,28,0);
+    hlay8->setContentsMargins(28, 0, 28, 0);
     /// 三个等级Lab
-    auto speedLv1Lab = new QLabel("减慢",this);
+    auto speedLv1Lab = new QLabel("减慢", this);
     speedLv1Lab->setObjectName("speedLv1Lab");
-    speedLv1Lab->setContentsMargins(0,0,0,0);
-    auto speedLv2Lab = new QLabel("正常",this);
+    speedLv1Lab->setContentsMargins(0, 0, 0, 0);
+    auto speedLv2Lab = new QLabel("正常", this);
     speedLv2Lab->setObjectName("speedLv2Lab");
-    speedLv2Lab->setContentsMargins(0,0,0,0);
-    auto speedLv3Lab = new QLabel("加快",this);
+    speedLv2Lab->setContentsMargins(0, 0, 0, 0);
+    auto speedLv3Lab = new QLabel("加快", this);
     speedLv3Lab->setObjectName("speedLv3Lab");
-    speedLv3Lab->setContentsMargins(0,0,0,0);
+    speedLv3Lab->setContentsMargins(0, 0, 0, 0);
     hlay8->addWidget(speedLv1Lab);
     hlay8->addStretch();
     hlay8->addWidget(speedLv2Lab);
@@ -238,31 +238,94 @@ void SpeedDialog::initUi() {
     mainLay->addLayout(hlay8);
     mainLay->addStretch();
 
+    auto changeText = [this] {
+        if (m_speedText.isEmpty()) {
+            if (m_adjustmentText.isEmpty()) {
+                emit btnTextChanged(m_preText);
+            } else {
+                if (m_preText == "倍速")
+                    emit btnTextChanged(m_adjustmentText);
+                else
+                    emit btnTextChanged(m_preText + "/" + m_adjustmentText);
+            }
+        } else {
+            if (m_preText == "倍速") {
+                emit btnTextChanged(m_speedText);
+            }
+            else
+                emit btnTextChanged(m_preText + "/" + m_speedText);
+        }
+    };
+
     /// 相关信号处理
     connect(btn1, &QPushButton::clicked, this, [=] {
         m_lastBtn = btn1;
-        emit DJ_model("DJ");
+        m_preText = "DJ";
+        changeText();
         switchBtn->setEnabled(true);
         switchBtn->setIsToggled(true);
     });
     connect(btn2, &QPushButton::clicked, this, [=] {
         m_lastBtn = btn2;
-        emit DJ_model("DJ");
+        m_preText = "DJ";
+        changeText();
         switchBtn->setEnabled(true);
         switchBtn->setIsToggled(true);
     });
     connect(btn3, &QPushButton::clicked, this, [=] {
         m_lastBtn = btn3;
-        emit DJ_model("DJ");
+        m_preText = "DJ";
+        changeText();
         switchBtn->setEnabled(true);
         switchBtn->setIsToggled(true);
     });
     connect(btn4, &QPushButton::clicked, this, [=] {
         m_lastBtn = btn4;
-        emit DJ_model("DJ");
+        m_preText = "DJ";
+        changeText();
         switchBtn->setEnabled(true);
         switchBtn->setIsToggled(true);
     });
+
+
+    connect(adjustmentSlider, &SnapSlider::numChanged, this, [this, adjustmentLab,changeText](int num) {
+        if (num != abs(num - 5) % 10) {
+            if (num > 5) {
+                num = (num - 5) % 10;
+                adjustmentLab->setText(QString("升%1调播放").arg(num));
+                m_adjustmentText = "升调";
+            } else if (num < 5) {
+                num = abs(num - 5) % 10;
+                adjustmentLab->setText(QString("降%1调播放").arg(num));
+                m_adjustmentText = "降调";
+            } else {
+                adjustmentLab->setText("升降调播放");
+                m_adjustmentText = "";
+            }
+            changeText();
+        }
+        // qDebug()<<"当前倍数："<<num;
+    });
+
+    connect(speedSlider, &SnapSlider::numChanged, this, [this, speedLab,changeText](int num) {
+        if (num != abs(num - 5) % 10) {
+            if (num > 5) {
+                auto speed = 1 + (num - 5) % 10 / 10.0;
+                speedLab->setText(QString("%1倍播放").arg(speed));
+                m_speedText = QString::number(speed) + "X";
+            } else if (num < 5) {
+                auto speed = 1 - abs(num - 5) % 10 / 10.0;
+                speedLab->setText(QString("%1倍播放").arg(speed));
+                m_speedText = QString::number(speed) + "X";
+            } else {
+                speedLab->setText("倍速播放");
+                m_speedText = "";
+            }
+            changeText();
+        }
+        // qDebug()<<"当前倍数："<<num;
+    });
+
 
     connect(switchBtn, &ElaToggleSwitch::toggled, this, [=](bool checked) {
         /// m_lastBtn必定指向其中一个按钮
@@ -276,11 +339,13 @@ void SpeedDialog::initUi() {
         if (checked) {
             btnGroup->setExclusive(true); // 打开开关时恢复排他性
             m_lastBtn->setChecked(true);
-            emit DJ_model("DJ");
+            m_preText = "DJ";
+            changeText();
         } else {
             btnGroup->setExclusive(false); // 关闭开关时取消排他性
             m_lastBtn->setChecked(false);
-            emit DJ_model("倍速");
+            m_preText = "倍速";
+            changeText();
         }
         // qDebug()<<"m_lastBtn "<<(checked?"true":"false");
     });

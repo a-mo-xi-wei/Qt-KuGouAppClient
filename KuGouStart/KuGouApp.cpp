@@ -1186,8 +1186,15 @@ void KuGouApp::on_speed_pushButton_clicked() {
     speedDialog->show();
 
     /// 连接槽
-    connect(speedDialog,  &SpeedDialog::DJ_model, this, [this](const QString& model) {
-            ui->speed_pushButton->setText(model);
+    connect(speedDialog,  &SpeedDialog::btnTextChanged, this, [this](const QString& text) {
+        ui->speed_pushButton->setText(text);
+        qDebug()<<ui->speed_pushButton->styleSheet();
+        if (text == "倍速") {
+            ui->speed_pushButton->setStyleSheet("background-color: transparent;");
+        }
+        else {
+            ui->speed_pushButton->setStyleSheet("background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:1, y2:0,stop:0 rgb(105, 225, 255), stop:1 rgba(255, 182, 193, 255));");
+        }
     });
 }
 

@@ -5,8 +5,6 @@
 #ifndef SPEEDDIALOG_H
 #define SPEEDDIALOG_H
 
-#include <QWidget>
-
 /** @brief 动态库导出宏，定义库的导出/导入行为 */
 #if defined(MYDIALOG_LIBRARY)
 #define MYDIALOG_EXPORT Q_DECL_EXPORT
@@ -18,6 +16,7 @@
 #include "QtMaterialSlider/qtmaterialslider.h"
 
 class SnapSlider : public QtMaterialSlider {
+    Q_OBJECT
 public:
     using QtMaterialSlider::QtMaterialSlider;
 
@@ -47,6 +46,7 @@ private:
         if (closestPoint == minimum())closestPoint = minimum() + 1;
         // 直接设置到最近的点（跳过中间值）
         setSliderPosition(closestPoint);
+        emit numChanged(closestPoint / 10);
     }
 
 protected:
@@ -71,11 +71,19 @@ protected:
         // 立即跳转到最近的十分之一点
         snapToPosition();
     }
+    void showEvent(QShowEvent* event) override {
+        QWidget::showEvent(event);
+        setValue(maximum() / 2);
+    }
+
+signals:
+    void numChanged(const int& num);
 
 private:
     bool m_isPress = false;
 };
 
+class QLabel;
 class QPushButton;
 class QGraphicsDropShadowEffect;
 
@@ -96,11 +104,14 @@ protected:
     bool eventFilter(QObject *obj, QEvent *event) override;
 
 signals:
-    void DJ_model(const QString &model);
+    void btnTextChanged(const QString &text);
 
 private:
     std::unique_ptr<QGraphicsDropShadowEffect> m_effect; ///< 阴影效果
     QPushButton *m_lastBtn;
+    QString m_preText           = "倍速";
+    QString m_adjustmentText    = "";
+    QString m_speedText         = "";
 };
 
 
