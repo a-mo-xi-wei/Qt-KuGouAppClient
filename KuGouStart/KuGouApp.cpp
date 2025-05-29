@@ -83,6 +83,9 @@ KuGouApp::KuGouApp(MainWindow *parent)
     initPlayer();                                                  ///< 初始化播放器
     initUi();                                                      ///< 初始化界面
 
+    // @note 清除历史记录
+    m_speedDialogState.reset();
+
     // @note 动画结束，恢复按钮可交互
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
     enableButton(true);                                            ///< 启用按钮
@@ -1172,6 +1175,16 @@ void KuGouApp::on_next_toolButton_clicked() {
 void KuGouApp::on_speed_pushButton_clicked() {
     /// 弹出速度相关界面，并且在隐藏的时候销毁
     auto speedDialog = new SpeedDialog(this);
+
+    // 连接关闭信号以保存状态
+    connect(speedDialog, &SpeedDialog::aboutToClose, [this, speedDialog]() {
+        // 获取当前状态并保存到文件
+        m_speedDialogState = speedDialog->getState();
+        m_speedDialogState.save();
+    });
+
+    // 从文件加载并恢复状态
+    speedDialog->setState(m_speedDialogState);
     // @note 未使用，保留用于调试
     /*
         connect(speedDialog, &QObject::destroyed, this, [] {
@@ -1188,7 +1201,6 @@ void KuGouApp::on_speed_pushButton_clicked() {
     /// 连接槽
     connect(speedDialog,  &SpeedDialog::btnTextChanged, this, [this](const QString& text) {
         ui->speed_pushButton->setText(text);
-        qDebug()<<ui->speed_pushButton->styleSheet();
         if (text == "倍速") {
             ui->speed_pushButton->setStyleSheet("background-color: transparent;");
         }

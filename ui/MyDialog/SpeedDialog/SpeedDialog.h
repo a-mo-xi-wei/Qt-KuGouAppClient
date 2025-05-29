@@ -1,26 +1,52 @@
-//
-// Created by WeiWang on 25-5-27.
-//
+/**
+ * @file SpeedDialog.h
+ * @brief 定义 SpeedDialog 和 SnapSlider 类，用于倍速和调音控制弹窗
+ * @author WeiWang
+ * @date 2025-05-27
+ * @version 1.0
+ */
 
 #ifndef SPEEDDIALOG_H
 #define SPEEDDIALOG_H
 
-/** @brief 动态库导出宏，定义库的导出/导入行为 */
+/**
+ * @def MYDIALOG_EXPORT
+ * @brief 动态库导出宏，定义库的导出/导入行为
+ */
 #if defined(MYDIALOG_LIBRARY)
 #define MYDIALOG_EXPORT Q_DECL_EXPORT
 #else
 #define MYDIALOG_EXPORT Q_DECL_IMPORT
 #endif
 
-
 #include "QtMaterialSlider/qtmaterialslider.h"
+#include "SpeedDialogState.h"
 
-class SnapSlider : public QtMaterialSlider {
+class ElaToggleSwitch;
+class QLabel;
+class QPushButton;
+class QGraphicsDropShadowEffect;
+
+/**
+ * @class SnapSlider
+ * @brief 继承 QtMaterialSlider，支持吸附到十分之一位置的滑块
+ */
+class SnapSlider : public QtMaterialSlider
+{
     Q_OBJECT
+
 public:
+    /**
+     * @brief 构造函数
+     * @param parent 父控件指针，默认为 nullptr
+     */
     using QtMaterialSlider::QtMaterialSlider;
 
 private:
+    /**
+     * @brief 吸附到最近的十分之一位置
+     * @note 计算最近点并触发 numChanged 信号
+     */
     void snapToPosition() {
         // 计算最近的十分之一位置
         int value = this->value();
@@ -50,12 +76,22 @@ private:
     }
 
 protected:
+    /**
+     * @brief 鼠标按下事件
+     * @param event 鼠标事件
+     * @note 标记按下状态并调用基类处理
+     */
     void mousePressEvent(QMouseEvent *event) override {
         // 先调用基类处理
         QtMaterialSlider::mousePressEvent(event);
         m_isPress = true;
     }
 
+    /**
+     * @brief 鼠标移动事件
+     * @param event 鼠标事件
+     * @note 更新位置并吸附到十分之一点
+     */
     void mouseMoveEvent(QMouseEvent *event) override {
         // 先调用基类处理（更新位置）
         QtMaterialSlider::mouseMoveEvent(event);
@@ -64,6 +100,11 @@ protected:
         snapToPosition();
     }
 
+    /**
+     * @brief 鼠标释放事件
+     * @param event 鼠标事件
+     * @note 清除按下状态并吸附到十分之一点
+     */
     void mouseReleaseEvent(QMouseEvent *event) override {
         // 先调用基类处理
         QtMaterialSlider::mouseReleaseEvent(event);
@@ -71,48 +112,116 @@ protected:
         // 立即跳转到最近的十分之一点
         snapToPosition();
     }
-    void showEvent(QShowEvent* event) override {
+
+    /**
+     * @brief 显示事件
+     * @param event 显示事件
+     * @note 设置滑块初始值为中间位置
+     */
+    void showEvent(QShowEvent *event) override {
         QWidget::showEvent(event);
         setValue(maximum() / 2);
     }
 
 signals:
-    void numChanged(const int& num);
+    /**
+     * @brief 滑块值变化信号
+     * @param num 吸附后的值（十分之一）
+     */
+    void numChanged(const int &num);
 
 private:
-    bool m_isPress = false;
+    bool m_isPress = false;                                   ///< 鼠标是否按下
 };
 
-class QLabel;
-class QPushButton;
-class QGraphicsDropShadowEffect;
-
-class MYDIALOG_EXPORT SpeedDialog : public QWidget {
+/**
+ * @class SpeedDialog
+ * @brief 倍速和调音控制弹窗，支持 DJ 模式
+ */
+class MYDIALOG_EXPORT SpeedDialog : public QWidget
+{
     Q_OBJECT
 
 public:
+    /**
+     * @brief 构造函数
+     * @param parent 父控件指针，默认为 nullptr
+     */
     explicit SpeedDialog(QWidget *parent = nullptr);
 
+    /**
+     * @brief 析构函数
+     */
     ~SpeedDialog() override;
 
+    /**
+     * @brief 设置弹窗状态
+     * @param state 状态对象
+     */
+    void setState(const SpeedDialogState &state);
+
+    /**
+     * @brief 获取弹窗状态
+     * @return 状态对象
+     */
+    SpeedDialogState getState() const;
+
 private:
+    /**
+     * @brief 初始化界面
+     * @note 设置布局、控件和信号连接
+     */
     void initUi();
 
 protected:
+    /**
+     * @brief 绘制事件
+     * @param ev 绘制事件
+     * @note 绘制圆角背景和小三角形底部
+     */
     void paintEvent(QPaintEvent *ev) override;
 
+    /**
+     * @brief 事件过滤
+     * @param obj 对象
+     * @param event 事件
+     * @return 是否处理事件
+     * @note 处理点击弹窗外关闭
+     */
     bool eventFilter(QObject *obj, QEvent *event) override;
 
+    /**
+     * @brief 关闭事件
+     * @param event 关闭事件
+     * @note 触发 aboutToClose 信号
+     */
+    void closeEvent(QCloseEvent *event) override;
+
 signals:
+    /**
+     * @brief 按钮文本变化信号
+     * @param text 新的文本
+     */
     void btnTextChanged(const QString &text);
 
-private:
-    std::unique_ptr<QGraphicsDropShadowEffect> m_effect; ///< 阴影效果
-    QPushButton *m_lastBtn;
-    QString m_preText           = "倍速";
-    QString m_adjustmentText    = "";
-    QString m_speedText         = "";
-};
+    /**
+     * @brief 即将关闭信号
+     */
+    void aboutToClose();
 
+private:
+    std::unique_ptr<QGraphicsDropShadowEffect> m_effect;      ///< 阴影效果
+    QPushButton *m_lastBtn;                                   ///< 最后选中的 DJ 按钮
+    QPushButton *m_btn1 = nullptr;                            ///< DJ 按钮 - 劲爆
+    QPushButton *m_btn2 = nullptr;                            ///< DJ 按钮 - 社会摇
+    QPushButton *m_btn3 = nullptr;                            ///< DJ 按钮 - 慢摇
+    QPushButton *m_btn4 = nullptr;                            ///< DJ 按钮 - 抖腿
+    ElaToggleSwitch *m_switchBtn = nullptr;                   ///< DJ 模式开关
+    SnapSlider *m_adjustmentSlider = nullptr;                 ///< 升降调滑块
+    SnapSlider *m_speedSlider = nullptr;                      ///< 倍速滑块
+    QString m_preText = "倍速";                                ///< 前缀文本
+    QString m_adjustmentText = "";                            ///< 升降调文本
+    QString m_speedText = "";                                 ///< 倍速文本
+};
 
 #endif //SPEEDDIALOG_H
