@@ -35,6 +35,9 @@ file(GLOB ELAMENU_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaMenu/*.cpp)
 file(GLOB ELASCROLLBAR_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaScrollBar/*.h)
 file(GLOB ELASCROLLBAR_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaScrollBar/*.cpp)
 
+file(GLOB ELATOGGLESWITCH_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaToggleSwitch/*.h)
+file(GLOB ELATOGGLESWITCH_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaToggleSwitch/*.cpp)
+
 set(SOURCE_FILE
         ${COMMON_H}
         ${COMMON_CPP}
@@ -58,6 +61,8 @@ set(SOURCE_FILE
         ${ELAMENU_CPP}
         ${ELASCROLLBAR_H}
         ${ELASCROLLBAR_CPP}
+        ${ELATOGGLESWITCH_H}
+        ${ELATOGGLESWITCH_CPP}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
@@ -78,6 +83,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaEventBus
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaMenu
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaScrollBar
+        ${CMAKE_CURRENT_SOURCE_DIR}/ElaToggleSwitch
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog)
