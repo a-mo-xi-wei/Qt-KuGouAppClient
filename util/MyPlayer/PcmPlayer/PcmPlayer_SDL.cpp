@@ -1,28 +1,15 @@
-﻿/*
-  PcmPlayer_SDL - SDL 音频播放器类实现
-*/
+﻿#include "PcmPlayer_SDL.h"
 
-#include "PcmPlayer_SDL.h"
-
-/** @brief SDL 音频回调函数
- *
- *  静态回调函数，调用 PcmPlayer_SDL 的播放缓冲区处理逻辑。
- *
- *  @param userdata 用户数据（PcmPlayer_SDL 实例）
- *  @param stream 输出音频流
- *  @param len 输出流长度
- */
-void PcmPlayer_SDL::sdlAudioCallBackFunc(void *userdata, Uint8 *stream, int len) {
+void PcmPlayer_SDL::sdlAudioCallBackFunc(void *userdata, Uint8 *stream, int len)
+{
     //fprintf(stderr, "%s function called and \n", __FUNCTION__);
+
     PcmPlayer_SDL *player = (PcmPlayer_SDL*)userdata;
     player->playAudioBuffer(stream, len);
 }
 
-/** @brief 构造函数
- *
- *  初始化 PcmPlayer_SDL 对象。
- */
-PcmPlayer_SDL::PcmPlayer_SDL() {
+PcmPlayer_SDL::PcmPlayer_SDL()
+{
 //    ///SDL初始化需要放入子线程中，否则有些电脑会有问题。
 //    if (SDL_Init(SDL_INIT_AUDIO))
 //    {
@@ -30,23 +17,18 @@ PcmPlayer_SDL::PcmPlayer_SDL() {
 //    }
 }
 
-/** @brief 析构函数
- *
- *  销毁 PcmPlayer_SDL 对象，释放 SDL 资源。
- */
-PcmPlayer_SDL::~PcmPlayer_SDL() {
+PcmPlayer_SDL::~PcmPlayer_SDL()
+{
     SDL_Quit();
 }
 
-/** @brief 获取音频设备列表
- *
- *  @return 音频设备列表
- */
-std::list<AudioDevice> PcmPlayer_SDL::getAudiDeviceList() {
+std::list<AudioDevice> PcmPlayer_SDL::getAudiDeviceList()
+{
     std::list<AudioDevice> deviceList;
 
     int num = SDL_GetNumAudioDevices(0);
-    for (int i = 0; i < num; i++) {
+    for (int i=0;i<num;i++)
+    {
         AudioDevice device;
         device.deviceId = i;
         device.deviceName = SDL_GetAudioDeviceName(i, 0);
@@ -57,20 +39,16 @@ std::list<AudioDevice> PcmPlayer_SDL::getAudiDeviceList() {
     return deviceList;
 }
 
-/** @brief 打开音频设备
- *
- *  初始化 SDL 音频设备并设置播放格式（AUDIO_S16SYS，双声道，44100Hz）。
- *
- *  @return true 表示成功
- */
-bool PcmPlayer_SDL::openDevice() {
-    ///< SDL初始化需要放入子线程中，否则有些电脑会有问题。
-    if (SDL_Init(SDL_INIT_AUDIO)) {
+bool PcmPlayer_SDL::openDevice()
+{
+    ///SDL初始化需要放入子线程中，否则有些电脑会有问题。
+    if (SDL_Init(SDL_INIT_AUDIO))
+    {
         fprintf(stderr, "Could not initialize SDL - %s. \n", SDL_GetError());
     }
 
-    ///< 打开SDL，并设置播放的格式为:AUDIO_S16LSB 双声道，44100hz
-    ///< 后期使用ffmpeg解码完音频后，需要重采样成和这个一样的格式，否则播放会有杂音
+    ///打开SDL，并设置播放的格式为:AUDIO_S16LSB 双声道，44100hz
+    ///后期使用ffmpeg解码完音频后，需要重采样成和这个一样的格式，否则播放会有杂音
     SDL_AudioSpec wanted_spec, spec;
 //    int wanted_nb_channels = 2;
 //    int samplerate = 44100;
@@ -86,9 +64,11 @@ bool PcmPlayer_SDL::openDevice() {
     wanted_spec.userdata = this;                  // 传给上面回调函数的外带数据
 
     int num = SDL_GetNumAudioDevices(0);
-    for (int i = 0; i < num; i++) {
-        mAudioID = SDL_OpenAudioDevice(SDL_GetAudioDeviceName(i, 0), false, &wanted_spec, &spec, 0);
-        if (mAudioID > 0) {
+    for (int i=0;i<num;i++)
+    {
+        mAudioID = SDL_OpenAudioDevice(SDL_GetAudioDeviceName(i,0), false, &wanted_spec, &spec,0);
+        if (mAudioID > 0)
+        {
             break;
         }
     }
@@ -110,15 +90,11 @@ bool PcmPlayer_SDL::openDevice() {
     return true;
 }
 
-/** @brief 关闭音频设备
- *
- *  关闭 SDL 音频设备并清理资源。
- *
- *  @return true 表示成功
- */
-bool PcmPlayer_SDL::closeDevice() {
+bool PcmPlayer_SDL::closeDevice()
+{
     //fprintf(stderr, "%s function called and \n", __FUNCTION__);
-    if (mAudioID > 0) {
+    if (mAudioID > 0)
+    {
         SDL_LockAudioDevice(mAudioID);
         SDL_PauseAudioDevice(mAudioID, 1);
         SDL_UnlockAudioDevice(mAudioID);
@@ -132,10 +108,10 @@ bool PcmPlayer_SDL::closeDevice() {
     return true;
 }
 
-/** @brief 暂停音频设备
- */
-void PcmPlayer_SDL::pauseDevice() {
-    if (mAudioID > 0) {
+void PcmPlayer_SDL::pauseDevice()
+{
+    if (mAudioID > 0)
+    {
         SDL_LockAudioDevice(mAudioID);
         SDL_PauseAudioDevice(mAudioID, 1); // 暂停音频设备
         SDL_UnlockAudioDevice(mAudioID);
@@ -143,10 +119,10 @@ void PcmPlayer_SDL::pauseDevice() {
     }
 }
 
-/** @brief 恢复音频设备
- */
-void PcmPlayer_SDL::resumeDevice() {
-    if (mAudioID > 0) {
+void PcmPlayer_SDL::resumeDevice()
+{
+    if (mAudioID > 0)
+    {
         SDL_LockAudioDevice(mAudioID);
         SDL_PauseAudioDevice(mAudioID, 0); // 恢复音频设备
         SDL_UnlockAudioDevice(mAudioID);

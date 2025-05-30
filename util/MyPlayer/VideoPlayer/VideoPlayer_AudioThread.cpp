@@ -1,6 +1,8 @@
-﻿/*
-  VideoPlayer - 音频解码线程实现
-*/
+﻿/**
+ * 叶海辉
+ * QQ群121376426
+ * http://blog.yundiantech.com/
+ */
 
 #include "VideoPlayer/VideoPlayer.h"
 
@@ -8,14 +10,7 @@
 
 #include <qDebug>
 
-/** @brief 添加 ADTS 头到 AAC 数据包
- *
- *  @param packet 数据包缓冲区
- *  @param packetLen 数据包长度
- *  @param channel 声道数
- *  @param sample_rate 采样率
- */
-static void addADTStoPacket(uint8_t *packet, int packetLen, int channel, int sample_rate)
+static void addADTStoPacket(uint8_t* packet, int packetLen, int channel, int sample_rate)
 {
     int profile = 2;  //AAC LC，MediaCodecInfo.CodecProfileLevel.AACObjectLC;
     int freqIdx = 8;  //16K, 见后面注释avpriv_mpeg4audio_sample_rates中32000对应的数组下标，来自ffmpeg源码
@@ -56,8 +51,6 @@ static void addADTStoPacket(uint8_t *packet, int packetLen, int channel, int sam
     packet[6] = (uint8_t)0xFC;
 }
 
-/** @brief 音频解码线程函数
- */
 void VideoPlayer::decodeAudioThread()
 {
     qDebug() << "decodeAudioThread starting for" << m_file_path.c_str();
@@ -72,7 +65,8 @@ void VideoPlayer::decodeAudioThread()
             clearAudioQuene(); //清空队列
             break;
         }
-        if (mIsPause)
+
+        if (mIsPause == true) //判断暂停
         {
             mSleep(10);
             continue;
@@ -111,11 +105,19 @@ void VideoPlayer::decodeAudioThread()
         {
             int64_t audio_pts = 0; //音频pts
             if (packet->dts != AV_NOPTS_VALUE)
+            {
                 audio_pts = packet->dts;
+            }
             else
+            {
                 audio_pts = 0;
+            }
+
             if (audio_pts < 0)
+            {
                 audio_pts = 0;
+            }
+
             audio_pts *= av_q2d(mAudioStream->time_base) * m_speed * 1000;
             audio_clock = audio_pts;
             ///音频同步到外部时钟
@@ -123,8 +125,8 @@ void VideoPlayer::decodeAudioThread()
             do
             {
                 mSleep(5);
-                realTime = (av_gettime() - mVideoStartTime) * m_speed / 1000;
-            } while (!m_is_stop && audio_pts > (realTime - 10));
+                realTime = (av_gettime() - mVideoStartTime) * m_speed / 1000; //毫秒
+            }while(!m_is_stop && audio_pts > (realTime-10));
         }
 
         if (m_event_handle && m_enable_encoded_audio_callback)
@@ -141,7 +143,7 @@ void VideoPlayer::decodeAudioThread()
                 aac_frame->setPts(audio_clock);
                 m_event_handle->onAudioBuffer(aac_frame);
             }
-            else if (mAudioStream->codecpar->codec_id == AV_CODEC_ID_PCM_MULAW)
+            else if(mAudioStream->codecpar->codec_id == AV_CODEC_ID_PCM_MULAW)
             {
                 //回调PCMU数据
                 PCMFramePtr audio_frame = std::make_shared<PCMFrame>();
@@ -149,7 +151,7 @@ void VideoPlayer::decodeAudioThread()
                 audio_frame->setFrameInfo(aCodecCtx->sample_rate, aCodecCtx->channels, audio_clock, PCMFrame::PCMFRAME_TYPE_PCMU);
                 m_event_handle->onAudioBuffer(audio_frame);
             }
-            else if (mAudioStream->codecpar->codec_id == AV_CODEC_ID_PCM_ALAW)
+            else if(mAudioStream->codecpar->codec_id == AV_CODEC_ID_PCM_ALAW)
             {
                 //回调PCMA数据
                 PCMFramePtr audio_frame = std::make_shared<PCMFrame>();
@@ -176,10 +178,14 @@ void VideoPlayer::decodeAudioThread()
         if (seek_flag_audio)
         {
             //发生了跳转 则跳过关键帧到目的时间的这几帧
-            if (pts_ms < seek_time)
-                continue;
-            else
-                seek_flag_audio = 0;
+           if (pts_ms < seek_time)
+           {
+               continue;
+           }
+           else
+           {
+               seek_flag_audio = 0;
+           }
         }
 #ifdef USE_PCM_PLAYER
         ///直播流为了保证降低延迟，当音频播放队列过大时，会提高播放的采样率
@@ -189,13 +195,13 @@ void VideoPlayer::decodeAudioThread()
             while (m_pcm_player->getPcmFrameSize() > 15)
             {
                 mSleep(5);
-        }
+            }
         }
 #endif
         //解码AVPacket->AVFrame
         if (int ret = avcodec_send_packet(aCodecCtx, packet) && ret != 0)
         {
-            char buffer[1024] = {0};
+           char buffer[1024] = {0};
            av_strerror(ret, buffer, 1024);
            fprintf(stderr, "input AVPacket to decoder failed! ret = %d %s\n", ret, buffer);
         }
@@ -228,8 +234,8 @@ void VideoPlayer::decodeAudioThread()
                 /// 因此就需要重新计算采样点个数（使用下面的函数）
                 /// 将in_sample_rate的采样次数换算成out_sample_rate对应的采样次数
                 int nb_samples = av_rescale_rnd(swr_get_delay(swrCtx, out_sample_rate) + aFrame->nb_samples, out_sample_rate, m_in_sample_rate, AV_ROUND_UP);
-                // std::cout<<swr_get_delay(swrCtx, out_sample_rate) + aFrame->nb_samples<<aFrame->nb_samples<<nb_samples<<std::endl;
-                // int nb_samples = av_rescale_rnd(aFrame->nb_samples, out_sample_rate, m_in_sample_rate, AV_ROUND_INF);
+// std::cout<<swr_get_delay(swrCtx, out_sample_rate) + aFrame->nb_samples<<aFrame->nb_samples<<nb_samples<<std::endl;
+    //            int nb_samples = av_rescale_rnd(aFrame->nb_samples, out_sample_rate, m_in_sample_rate, AV_ROUND_INF);
                 if (aFrame_ReSample != nullptr)
                 {
                     if (aFrame_ReSample->nb_samples != nb_samples || aFrame_ReSample->sample_rate != out_sample_rate)
@@ -250,11 +256,11 @@ void VideoPlayer::decodeAudioThread()
                     aFrame_ReSample->nb_samples = nb_samples;
 
                     int ret = av_samples_fill_arrays(aFrame_ReSample->data, aFrame_ReSample->linesize, audio_buf, audio_tgt_channels, aFrame_ReSample->nb_samples, out_sample_fmt, 0);
-                    // int ret = av_frame_get_buffer(aFrame_ReSample, 0);
+    //                int ret = av_frame_get_buffer(aFrame_ReSample, 0);
                     if (ret < 0)
                     {
                         fprintf(stderr, "Error allocating an audio buffer\n");
-                        // exit(1);
+    //                        exit(1);
                     }
                 }
 
@@ -299,7 +305,7 @@ void VideoPlayer::decodeAudioThread()
                         audio_clock = m_pcm_player->getCurrentPts();
                     }
 #endif
-                    // std::cout<<resampled_data_size<<" "<<audio_frame_size<<" "<<audio_clock<<" "<<pts_ms<<std::endl;
+// std::cout<<resampled_data_size<<" "<<audio_frame_size<<" "<<audio_clock<<" "<<pts_ms<<std::endl;
                 }
             }
         }

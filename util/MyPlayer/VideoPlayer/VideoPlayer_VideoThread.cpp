@@ -1,6 +1,8 @@
-﻿/*
-  VideoPlayer - 视频解码线程实现
-*/
+﻿/**
+ * 叶海辉
+ * QQ群121376426
+ * http://blog.yundiantech.com/
+ */
 
 #include "VideoPlayer/VideoPlayer.h"
 
@@ -33,60 +35,48 @@
 //};
 
 #if CONFIG_AVFILTER
-/** @brief 配置滤镜图
- *
- *  @param graph 滤镜图
- *  @param filtergraph 滤镜描述
- *  @param source_ctx 源滤镜上下文
- *  @param sink_ctx 输出滤镜上下文
- *  @return 配置结果
- */
 int VideoPlayer::configure_filtergraph(AVFilterGraph *graph, const char *filtergraph, AVFilterContext *source_ctx, AVFilterContext *sink_ctx)
 {
     int ret, i;
     int nb_filters = graph->nb_filters;
-    AVFilterInOut *outputs = nullptr, *inputs = nullptr;
-    if (filtergraph)
-    {
+    AVFilterInOut *outputs = NULL, *inputs = NULL;
+
+    if (filtergraph) {
         outputs = avfilter_inout_alloc();
-        inputs = avfilter_inout_alloc();
-        if (!outputs || !inputs)
-        {
+        inputs  = avfilter_inout_alloc();
+        if (!outputs || !inputs) {
             ret = AVERROR(ENOMEM);
             goto fail;
         }
-        outputs->name = av_strdup("in");
+
+        outputs->name       = av_strdup("in");
         outputs->filter_ctx = source_ctx;
-        outputs->pad_idx = 0;
-        outputs->next = nullptr;
-        inputs->name = av_strdup("out");
-        inputs->filter_ctx = sink_ctx;
-        inputs->pad_idx = 0;
-        inputs->next = nullptr;
-        if ((ret = avfilter_graph_parse_ptr(graph, filtergraph, &inputs, &outputs, nullptr)) < 0)
+        outputs->pad_idx    = 0;
+        outputs->next       = NULL;
+
+        inputs->name        = av_strdup("out");
+        inputs->filter_ctx  = sink_ctx;
+        inputs->pad_idx     = 0;
+        inputs->next        = NULL;
+
+        if ((ret = avfilter_graph_parse_ptr(graph, filtergraph, &inputs, &outputs, NULL)) < 0)
             goto fail;
-    }
-    else
-    {
+    } else {
         if ((ret = avfilter_link(source_ctx, 0, sink_ctx, 0)) < 0)
             goto fail;
     }
 
     /* Reorder the filters to ensure that inputs of the custom filters are merged first */
     for (i = 0; i < graph->nb_filters - nb_filters; i++)
-        FFSWAP(AVFilterContext *, graph->filters[i], graph->filters[i + nb_filters]);
-    ret = avfilter_graph_config(graph, nullptr);
+        FFSWAP(AVFilterContext*, graph->filters[i], graph->filters[i + nb_filters]);
+
+    ret = avfilter_graph_config(graph, NULL);
 fail:
     avfilter_inout_free(&outputs);
     avfilter_inout_free(&inputs);
     return ret;
 }
 
-/** @brief 获取视频旋转角度
- *
- *  @param st 视频流
- *  @return 旋转角度
- */
 double get_rotation(AVStream *st)
 {
     uint8_t* displaymatrix = av_stream_get_side_data(st,
@@ -106,16 +96,9 @@ double get_rotation(AVStream *st)
     return theta;
 }
 
-/** @brief 配置视频滤镜
- *
- *  @param graph 滤镜图
- *  @param vfilters 视频滤镜描述
- *  @param frame 视频帧
- *  @return 配置结果
- */
 int VideoPlayer::configure_video_filters(AVFilterGraph *graph, const char *vfilters, AVFrame *frame)
 {
-    // enum AVPixelFormat pix_fmts[FF_ARRAY_ELEMS(sdl_texture_format_map)];
+//    enum AVPixelFormat pix_fmts[FF_ARRAY_ELEMS(sdl_texture_format_map)];
     char sws_flags_str[512] = "";
     char buffersrc_args[256];
     int ret;
@@ -152,7 +135,8 @@ int VideoPlayer::configure_video_filters(AVFilterGraph *graph, const char *vfilt
 //    }
 
     if (strlen(sws_flags_str))
-        sws_flags_str[strlen(sws_flags_str) - 1] = '\0';
+        sws_flags_str[strlen(sws_flags_str)-1] = '\0';
+
     graph->scale_sws_opts = av_strdup(sws_flags_str);
 
     snprintf(buffersrc_args, sizeof(buffersrc_args),
@@ -200,20 +184,19 @@ int VideoPlayer::configure_video_filters(AVFilterGraph *graph, const char *vfilt
                                                                              \
     last_filter = filt_ctx;                                                  \
 } while (0)
-    if (autorotate)
-    {
-        double theta = get_rotation(this->mVideoStream);
-        if (fabs(theta - 90) < 1.0)
+
+    if (autorotate) {
+        double theta  = get_rotation(this->mVideoStream);
+//        theta = 90.0f; //测试用
+// fprintf(stderr, "%s get_rotation：%d \n", __FUNCTION__, theta);
+        if (fabs(theta - 90) < 1.0) {
             INSERT_FILT("transpose", "clock");
-        else if (fabs(theta - 180) < 1.0)
-        {
-            INSERT_FILT("hflip", nullptr);
-            INSERT_FILT("vflip", nullptr);
-        }
-        else if (fabs(theta - 270) < 1.0)
+        } else if (fabs(theta - 180) < 1.0) {
+            INSERT_FILT("hflip", NULL);
+            INSERT_FILT("vflip", NULL);
+        } else if (fabs(theta - 270) < 1.0) {
             INSERT_FILT("transpose", "cclock");
-        else if (fabs(theta) > 1.0)
-        {
+        } else if (fabs(theta) > 1.0) {
             char rotate_buf[64];
             snprintf(rotate_buf, sizeof(rotate_buf), "%f*PI/180", theta);
             INSERT_FILT("rotate", rotate_buf);
@@ -222,15 +205,16 @@ int VideoPlayer::configure_video_filters(AVFilterGraph *graph, const char *vfilt
 
     if ((ret = configure_filtergraph(graph, vfilters, filt_src, last_filter)) < 0)
         goto fail;
-    this->in_video_filter = filt_src;
+
+    this->in_video_filter  = filt_src;
     this->out_video_filter = filt_out;
+
 fail:
     return ret;
 }
-#endif /* CONFIG_AVFILTER */
 
-/** @brief 视频解码线程函数
- */
+#endif  /* CONFIG_AVFILTER */
+
 void VideoPlayer::decodeVideoThread()
 {
     fprintf(stderr, "%s start pointer=%d file_path=%s \n", __FUNCTION__, this, m_file_path.c_str());
@@ -270,19 +254,22 @@ void VideoPlayer::decodeVideoThread()
     {
         ///视频同步到音频
         ///音视频同步，实现的原理就是，判断是否到显示此帧图像的时间了，没到则休眠5ms，然后继续判断
-        while(true)
+        while(1)
         {
             if (mIsQuit)
+            {
                 break;
-            if (mAudioStream != nullptr && !mIsAudioThreadFinished
+            }
+
+            if (mAudioStream != NULL && !mIsAudioThreadFinished 
 #ifdef USE_PCM_PLAYER
-                && !m_pcm_player->deviceOpenFailed()
+            && !m_pcm_player->deviceOpenFailed()
 #endif
             )
             {
-                if (mIsReadFinished && m_audio_pkt_list.size() <= 0
+                if (mIsReadFinished && m_audio_pkt_list.size() <= 0 
 #ifdef USE_PCM_PLAYER
-                    && m_pcm_player->getPcmFrameSize() <= 0
+                && m_pcm_player->getPcmFrameSize() <= 0
 #endif
                 )
                 {//读取完了 且音频数据也播放完了 就剩下视频数据了  直接显示出来了 不用同步了
@@ -321,14 +308,16 @@ void VideoPlayer::decodeVideoThread()
             }
         }
     };
-    while (true)
+
+    while(1)
     {
         if (mIsQuit)
         {
             clearVideoQuene(); //清空队列
             break;
         }
-        if (mIsPause) //判断暂停
+
+        if (mIsPause == true) //判断暂停
         {
             mSleep(10);
             continue;
@@ -343,7 +332,9 @@ void VideoPlayer::decodeVideoThread()
         if (m_video_pkt_list.empty())
         {
             if (mIsReadFinished)
+            {
                 break;
+            }
             continue;
         }
 
@@ -356,13 +347,18 @@ void VideoPlayer::decodeVideoThread()
         if (!m_enable_video_decode)
         {
             if (packet->dts != AV_NOPTS_VALUE)
+            {
                 video_pts = packet->dts;
+            }
             else
+            {
                 video_pts = 0;
-            video_pts *= (av_q2d(mVideoStream->time_base) * 1000);
+            }
+
+            video_pts *= (av_q2d(mVideoStream->time_base) * 1000); //毫秒
             video_clock = video_pts;
-            // printf("%s %lld %lld %lld %lld\n", __FUNCTION__, video_pts, video_clock, audio_pts, packet->dts);
-            // printf("%s %d m_audio_pkt_list.size()=%d m_video_pkt_list.size()=%d \n", __FILE__, __LINE__, m_audio_pkt_list.size(), m_video_pkt_list.size());
+// printf("%s %lld %lld %lld %lld\n", __FUNCTION__, video_pts, video_clock, audio_pts, packet->dts);
+// printf("%s %d m_audio_pkt_list.size()=%d m_video_pkt_list.size()=%d \n", __FILE__, __LINE__, m_audio_pkt_list.size(), m_video_pkt_list.size());
             avSyncFunc(); //音视频同步
         }
 
@@ -373,11 +369,11 @@ void VideoPlayer::decodeVideoThread()
 
             T_NALU_TYPE nalu_type = T_NALU_H264;
 
-            if (mVideoStream->codecpar->codec_id == AV_CODEC_ID_H264)
+            if (mVideoStream->codecpar->codec_id == AV_CODEC_ID_H264) 
             {
                 nalu_type = T_NALU_H264;
-            }
-            else if (mVideoStream->codecpar->codec_id == AV_CODEC_ID_HEVC)
+            } 
+            else if (mVideoStream->codecpar->codec_id == AV_CODEC_ID_HEVC) 
             {
                 nalu_type = T_NALU_H265;
             }
@@ -397,7 +393,7 @@ void VideoPlayer::decodeVideoThread()
             else
             {
                 videoFrame->setNalu(packet->data, packet->size, true, nalu_type, video_clock);
-            }
+            }   
 
             videoFrame->setIsKeyFrame(key_frame);
             m_event_handle->onVideoBuffer(videoFrame);
@@ -420,54 +416,66 @@ void VideoPlayer::decodeVideoThread()
         if (avcodec_send_packet(pCodecCtx, packet) != 0)
         {
            printf("input AVPacket to decoder failed!\n");
-            av_packet_unref(packet);
-            continue;
+           av_packet_unref(packet);
+           continue;
         }
-        while (avcodec_receive_frame(pCodecCtx, pFrame) == 0)
+
+        while (0 == avcodec_receive_frame(pCodecCtx, pFrame))
         {
-            if (packet->dts == AV_NOPTS_VALUE && pFrame->opaque && *(uint64_t *)pFrame->opaque != AV_NOPTS_VALUE)
-                video_pts = *(uint64_t *)pFrame->opaque;
+            if (packet->dts == AV_NOPTS_VALUE && pFrame->opaque&& *(uint64_t*) pFrame->opaque != AV_NOPTS_VALUE)
+            {
+                video_pts = *(uint64_t *) pFrame->opaque;
+            }
             else if (packet->dts != AV_NOPTS_VALUE)
+            {
                 video_pts = packet->dts;
+            }
             else
+            {
                 video_pts = 0;
-            video_pts *= (av_q2d(mVideoStream->time_base) * 1000);
+            }
+
+            video_pts *= (av_q2d(mVideoStream->time_base) * 1000); //毫秒
             video_clock = video_pts;
-            //OUTPUT("%s %f \n", __FUNCTION__, video_pts);
+    //OUTPUT("%s %f \n", __FUNCTION__, video_pts);
             if (seek_flag_video)
             {
                 //发生了跳转 则跳过关键帧到目的时间的这几帧
-                if (video_pts < seek_time)
-                {
-                    av_packet_unref(packet);
-                    continue;
-                }
-                else
-                    seek_flag_video = 0;
+               if (video_pts < seek_time)
+               {
+                   av_packet_unref(packet);
+                   continue;
+               }
+               else
+               {
+                   seek_flag_video = 0;
+               }
             }
+
             avSyncFunc();
+
 #if CONFIG_AVFILTER
         if (   last_w != pFrame->width
             || last_h != pFrame->height
             || last_format != pFrame->format
 //            || last_serial != is->viddec.pkt_serial
             || last_vfilter_idx != vfilter_idx)
-            {
+        {
 //            av_log(NULL, AV_LOG_DEBUG,
 //                   "Video frame changed from size:%dx%d format:%s serial:%d to size:%dx%d format:%s serial:%d\n",
 //                   last_w, last_h,
 //                   (const char *)av_x_if_null(av_get_pix_fmt_name(last_format), "none"), last_serial, pFrame->width, pFrame->height,
 //                   (const char *)av_x_if_null(av_get_pix_fmt_name(pFrame->format), "none"), is->viddec.pkt_serial);
 
-                avfilter_graph_free(&graph);
-                graph = avfilter_graph_alloc();
-                if (!graph)
+            avfilter_graph_free(&graph);
+            graph = avfilter_graph_alloc();
+            if (!graph)
             {
 //                ret = AVERROR(ENOMEM);
 //                goto the_end;
-                    continue;
+                continue;
             }
-                graph->nb_threads = filter_nbthreads;
+            graph->nb_threads = filter_nbthreads;
 
             int ret = configure_video_filters(graph, vfilters_list ? vfilters_list[vfilter_idx] : NULL, pFrame);
             if (ret < 0)
@@ -477,37 +485,37 @@ void VideoPlayer::decodeVideoThread()
 //                event.user.data1 = is;
 //                SDL_PushEvent(&event);
 //                goto the_end;
-                    continue;
+                continue;
             }
             filt_in  = in_video_filter;
-                filt_out = out_video_filter;
-                last_w = pFrame->width;
-                last_h = pFrame->height;
-                last_format = pFrame->format;
+            filt_out = out_video_filter;
+            last_w = pFrame->width;
+            last_h = pFrame->height;
+            last_format = pFrame->format;
 //            last_serial = is->viddec.pkt_serial;
-                last_vfilter_idx = vfilter_idx;
+            last_vfilter_idx = vfilter_idx;
 //            frame_rate = av_buffersink_get_frame_rate(filt_out);
-            }
-
-            int ret = av_buffersrc_add_frame(filt_in, pFrame);
-            if (ret < 0)
-        {
-//            goto the_end;
-                continue;
         }
 
-            while (ret >= 0)
-            {
+        int ret = av_buffersrc_add_frame(filt_in, pFrame);
+        if (ret < 0)
+        {
+//            goto the_end;
+            continue;
+        }
+
+        while (ret >= 0)
+        {
 //            is->frame_last_returned_time = av_gettime_relative() / 1000000.0;
 
-                ret = av_buffersink_get_frame_flags(filt_out, pFrame, 0);
-                if (ret < 0)
-                {
+            ret = av_buffersink_get_frame_flags(filt_out, pFrame, 0);
+            if (ret < 0)
+            {
 //                if (ret == AVERROR_EOF)
 //                    is->viddec.finished = is->viddec.pkt_serial;
-                    ret = 0;
-                    break;
-                }
+                ret = 0;
+                break;
+            }
 
 //            frame_last_filter_delay = av_gettime_relative() / 1000000.0 - is->frame_last_returned_time;
 //            if (fabs(is->frame_last_filter_delay) > AV_NOSYNC_THRESHOLD / 10.0)
@@ -515,32 +523,42 @@ void VideoPlayer::decodeVideoThread()
 //            tb = av_buffersink_get_time_base(filt_out);
 #endif
 
-                if (pFrame->width != videoWidth || pFrame->height != videoHeight)
+            if (pFrame->width != videoWidth || pFrame->height != videoHeight)
+            {
+                videoWidth  = pFrame->width;
+                videoHeight = pFrame->height;
+
+                if (pFrameYUV != nullptr)
                 {
-                    videoWidth = pFrame->width;
-                    videoHeight = pFrame->height;
-                    if (pFrameYUV)
-                        av_free(pFrameYUV);
-                    if (yuv420pBuffer)
-                        av_free(yuv420pBuffer);
-                    if (imgConvertCtx)
-                        sws_freeContext(imgConvertCtx);
-                    pFrameYUV = av_frame_alloc();
+                    av_free(pFrameYUV);
+                }
+
+                if (yuv420pBuffer != nullptr)
+                {
+                    av_free(yuv420pBuffer);
+                }
+
+                if (imgConvertCtx != nullptr)
+                {
+                    sws_freeContext(imgConvertCtx);
+                }
+
+                pFrameYUV = av_frame_alloc();
 
                 int yuvSize = av_image_get_buffer_size(AV_PIX_FMT_YUV420P, videoWidth, videoHeight, 1);  //按1字节进行内存对齐,得到的内存大小最接近实际大小
             //    int yuvSize = av_image_get_buffer_size(AV_PIX_FMT_YUV420P, pCodecCtx->width, pCodecCtx->height, 0);  //按0字节进行内存对齐，得到的内存大小是0
             //    int yuvSize = av_image_get_buffer_size(AV_PIX_FMT_YUV420P, pCodecCtx->width, pCodecCtx->height, 4);   //按4字节进行内存对齐，得到的内存大小稍微大一些
 
-                    unsigned int numBytes = static_cast<unsigned int>(yuvSize);
-                    yuv420pBuffer = static_cast<uint8_t *>(av_malloc(numBytes * sizeof(uint8_t)));
-                    av_image_fill_arrays(pFrameYUV->data, pFrameYUV->linesize, yuv420pBuffer, AV_PIX_FMT_YUV420P, videoWidth, videoHeight, 1);
+                unsigned int numBytes = static_cast<unsigned int>(yuvSize);
+                yuv420pBuffer = static_cast<uint8_t *>(av_malloc(numBytes * sizeof(uint8_t)));
+                av_image_fill_arrays(pFrameYUV->data, pFrameYUV->linesize, yuv420pBuffer, AV_PIX_FMT_YUV420P, videoWidth, videoHeight, 1);
 
                 ///由于解码后的数据不一定都是yuv420p，因此需要将解码后的数据统一转换成YUV420P
                 imgConvertCtx = sws_getContext(videoWidth, videoHeight,
                         (AVPixelFormat)pFrame->format, videoWidth, videoHeight,
                         AV_PIX_FMT_YUV420P, SWS_BICUBIC, NULL, NULL, NULL);
 
-                }
+            }
 
             sws_scale(imgConvertCtx,
                     (uint8_t const * const *) pFrame->data,
@@ -550,18 +568,18 @@ void VideoPlayer::decodeVideoThread()
 // printf("(packet->flags & AV_PKT_FLAG_KEY) = %d\n", packet->flags & AV_PKT_FLAG_KEY);
             if (!is_key_frame_getted && (packet->flags & AV_PKT_FLAG_KEY)) // is keyframe
             {
-                    is_key_frame_getted = true;
+                is_key_frame_getted = true;
             }
 
             if (!m_is_live_mode || is_key_frame_getted) //只有获取到第一帧关键帧后才进行显示，rtsp流最开始的部分会花屏
             {
-                    doDisplayVideo(yuv420pBuffer, videoWidth, videoHeight);
+                doDisplayVideo(yuv420pBuffer, videoWidth, videoHeight);
             }
 
 #if CONFIG_AVFILTER
 //            if (is->videoq.serial != is->viddec.pkt_serial)
 //                break;
-            }
+        }
 #endif
             if (mIsNeedPause)
             {
@@ -578,14 +596,27 @@ void VideoPlayer::decodeVideoThread()
 #endif
 
     av_free(pFrame);
-    if (pFrameYUV)
+
+    if (pFrameYUV != nullptr)
+    {
         av_free(pFrameYUV);
-    if (yuv420pBuffer)
+    }
+
+    if (yuv420pBuffer != nullptr)
+    {
         av_free(yuv420pBuffer);
-    if (imgConvertCtx)
+    }
+
+    if (imgConvertCtx != nullptr)
+    {
         sws_freeContext(imgConvertCtx);
+    }
+
     if (!mIsQuit)
+    {
         mIsQuit = true;
+    }
+
     mIsVideoThreadFinished = true;
 
     fprintf(stderr, "%s finished \n", __FUNCTION__);
