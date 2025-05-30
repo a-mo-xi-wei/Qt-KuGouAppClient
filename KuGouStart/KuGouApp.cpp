@@ -352,10 +352,10 @@ void KuGouApp::initPlayWidget() {
     // @note 设置快捷键
     new QShortcut(QKeySequence("Space"), this, SLOT(onKeyPause())); ///< 空格键暂停/播放
     new QShortcut(QKeySequence("Right"), this, SLOT(onKeyRight())); ///< 右箭头快进
-    new QShortcut(QKeySequence("Left"), this, SLOT(onKeyLeft()));  ///< 左箭头快退
+    new QShortcut(QKeySequence("Left"), this, SLOT(onKeyLeft()));   ///< 左箭头快退
 
     // @note 设置工具提示
-    MainWindow::setElaToolTip(ui->love_toolButton, "我喜欢");     ///< 收藏按钮提示
+    MainWindow::setElaToolTip(ui->love_toolButton, "我喜欢");      ///< 收藏按钮提示
     MainWindow::setElaToolTip(ui->download_toolButton, "下载");    ///< 下载按钮提示
     MainWindow::setElaToolTip(ui->comment_toolButton, "评论");     ///< 评论按钮提示
     MainWindow::setElaToolTip(ui->share_toolButton, "分享");       ///< 分享按钮提示
@@ -363,8 +363,8 @@ void KuGouApp::initPlayWidget() {
     MainWindow::setElaToolTip(ui->circle_toolButton, "循环播放");  ///< 循环播放按钮提示
     MainWindow::setElaToolTip(ui->pre_toolButton, "上一首");       ///< 上一首按钮提示
     MainWindow::setElaToolTip(ui->play_or_pause_toolButton, "播放/暂停"); ///< 播放/暂停按钮提示
-    MainWindow::setElaToolTip(ui->next_toolButton, "下一首");      ///< 下一首按钮提示
-    MainWindow::setElaToolTip(ui->stander_pushButton, "音质选择"); ///< 音质选择按钮提示
+    MainWindow::setElaToolTip(ui->next_toolButton, "下一首");       ///< 下一首按钮提示
+    MainWindow::setElaToolTip(ui->stander_pushButton, "音质选择");  ///< 音质选择按钮提示
     MainWindow::setElaToolTip(ui->acoustics_pushButton, "音效");   ///< 音效按钮提示
     MainWindow::setElaToolTip(ui->erji_toolButton, "邀请好友一起听"); ///< 一起听按钮提示
     MainWindow::setElaToolTip(ui->lyrics_toolButton, "打开桌面歌词"); ///< 歌词按钮提示
@@ -1207,6 +1207,11 @@ void KuGouApp::on_speed_pushButton_clicked() {
         else {
             ui->speed_pushButton->setStyleSheet("background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:1, y2:0,stop:0 rgb(105, 225, 255), stop:1 rgba(255, 182, 193, 255));");
         }
+    });
+
+    connect(speedDialog, &SpeedDialog::speedChanged, this, [this](const float &speed) {
+       // @note 调试用 qDebug() << "设置速度为：" << speed;
+       if (this->m_player)this->m_player->setSpeed(speed);
     });
 }
 

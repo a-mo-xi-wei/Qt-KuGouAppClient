@@ -42,7 +42,6 @@ public:
      */
     using QtMaterialSlider::QtMaterialSlider;
 
-private:
     /**
      * @brief 吸附到最近的十分之一位置
      * @note 计算最近点并触发 numChanged 信号
@@ -121,6 +120,8 @@ protected:
     void showEvent(QShowEvent *event) override {
         QWidget::showEvent(event);
         setValue(maximum() / 2);
+        // 立即跳转到最近的十分之一点
+        snapToPosition();
     }
 
 signals:
@@ -208,6 +209,10 @@ signals:
      * @brief 即将关闭信号
      */
     void aboutToClose();
+
+    // void adjustmentChanged(const int& adjustment); ///< 实现不来，我不会
+
+    void speedChanged(const float& speed);
 
 private:
     std::unique_ptr<QGraphicsDropShadowEffect> m_effect;      ///< 阴影效果

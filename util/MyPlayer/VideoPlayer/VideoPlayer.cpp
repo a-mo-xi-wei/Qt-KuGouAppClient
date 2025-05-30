@@ -258,6 +258,17 @@ void VideoPlayer::setVolume(float value)
 #endif
 }
 
+/** @brief 设置播放速度
+ *
+ *  @param value 播放速度值
+ */
+void VideoPlayer::setSpeed(const float &value) {
+    m_speed = value;
+#ifdef USE_PCM_PLAYER
+    m_pcm_player->setSpeed(m_speed);
+#endif
+}
+
 /** @brief 获取当前播放时间
  *
  *  @return 当前时间（秒）

@@ -219,6 +219,18 @@ public:
      */
     float getVolume() { return mVolume; }
 
+    /** @brief 设置播放速度
+     *
+     *  @param value 播放速度值（0.5~1.5，超过1表示放大）
+     */
+    void setSpeed(const float& value);
+
+    /** @brief 获取播放速度
+     *
+     *  @return 当前播放速度值
+     */
+    float getSpeed() { return m_speed; }
+
     /** @brief 获取总时长
      *
      *  @return 总时长（微秒）

@@ -90,6 +90,9 @@ void SpeedDialog::setState(const SpeedDialogState& state)
         m_adjustmentSlider->setValue(state.adjustmentValue);  ///< 设置升降调值
         m_speedSlider->setValue(state.speedValue);            ///< 设置倍速值
 
+        m_adjustmentSlider->snapToPosition();
+        m_speedSlider->snapToPosition();
+
         // @note 强制更新文本显示
         Q_EMIT m_adjustmentSlider->numChanged(state.adjustmentValue / 10);
         Q_EMIT m_speedSlider->numChanged(state.speedValue / 10);
@@ -394,15 +397,16 @@ void SpeedDialog::initUi()
     connect(m_speedSlider, &SnapSlider::numChanged, this, [this, speedLab, changeText](int num) {
         if (num != abs(num - 5) % 10)
         {
+            float speed = 1.0;
             if (num > 5)
             {
-                auto speed = 1 + (num - 5) % 10 / 10.0;
+                speed += (num - 5) % 10 / 10.0;
                 speedLab->setText(QString("%1倍播放").arg(speed)); ///< 加快显示
                 m_speedText = QString::number(speed) + "X";
             }
             else if (num < 5)
             {
-                auto speed = 1 - abs(num - 5) % 10 / 10.0;
+                speed -= abs(num - 5) % 10 / 10.0;
                 speedLab->setText(QString("%1倍播放").arg(speed)); ///< 减慢显示
                 m_speedText = QString::number(speed) + "X";
             }
@@ -411,6 +415,7 @@ void SpeedDialog::initUi()
                 speedLab->setText("倍速播放");                ///< 正常显示
                 m_speedText = "";
             }
+            emit speedChanged(speed);
             changeText();
         }
     });
