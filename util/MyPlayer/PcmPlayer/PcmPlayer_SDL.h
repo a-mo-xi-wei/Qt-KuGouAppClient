@@ -67,6 +67,10 @@ private:
      */
     bool closeDevice() override;
 
+
+    /// void sdlAudioCallBack(Uint8 *stream, int len);
+
+protected:
     /** @brief SDL 音频回调函数
      *
      *  静态回调函数，传递给 SDL 处理音频数据。

@@ -30,7 +30,7 @@ void print_ffmpeg_error(int errnum)
  */
 VideoPlayer::VideoPlayer(QObject *parent)
     : QObject(parent),
-      m_positionUpdateTimer(this)
+      m_positionUpdateTimer(new QTimer(this))
 {
     m_state = VideoPlayer::Stop;
     mIsMute = false;
