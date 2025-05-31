@@ -1,5 +1,6 @@
 var NAVTREEINDEX167 =
 {
+"cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a02481ce2087724d8a2fb2322dbc549da":[3,0,1,2,10,0,8,27],
 "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a0339860575b32aee352802f38c52f9c2":[3,0,1,2,10,0,8,20],
 "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a035c056d72e677daa49cc2c7dbeed083":[3,0,1,2,10,0,8,257],
 "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a03ba3b89bb8a4cbcbc890b6ec0e594f1":[3,0,1,2,10,0,8,159],
@@ -248,6 +249,5 @@ var NAVTREEINDEX167 =
 "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a7a76473a66d022aee2c9f661405d8fbb":[3,0,1,2,10,0,8,354],
 "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a7ac5a3b1dc00b508a391f8c6c37e2165":[3,0,1,2,10,0,8,230],
 "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a7b37ac70dc218969bf0176916a957f6f":[3,0,1,2,10,0,8,451],
-"cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a7b63d9780e8127a88ad9554ff35e0a01":[3,0,1,2,10,0,8,360],
-"cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a7b75a4368336da9b4f83fef8875cfd19":[3,0,1,2,10,0,8,259]
+"cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a7b63d9780e8127a88ad9554ff35e0a01":[3,0,1,2,10,0,8,360]
 };

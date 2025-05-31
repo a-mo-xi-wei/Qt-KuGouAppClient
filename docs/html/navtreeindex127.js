@@ -1,5 +1,6 @@
 var NAVTREEINDEX127 =
 {
+"cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h.html#aff6bf0ff0fa3b5cbd23a8ae1131c87a9":[3,0,0,3,13,0,7,442],
 "cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h_source.html":[3,0,0,3,13,0,7],
 "cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2mocs__compilation_8cpp.html":[3,0,0,3,13,0,8],
 "cmake-build-debug-mingw_2util_2_j_q_http_server_2_j_q_http_server__autogen_2_e_w_i_e_g_a46_w_w_2moc__jqhttpserver_8cpp.html":[3,0,0,4,0,0,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX127 =
 "cmake-build-debug-mingw_2util_2_j_q_http_server_2_j_q_http_server__autogen_2moc__predefs_8h.html#a7237ce09defceeebe3ba0afc528275ac":[3,0,0,4,0,0,1,263],
 "cmake-build-debug-mingw_2util_2_j_q_http_server_2_j_q_http_server__autogen_2moc__predefs_8h.html#a726a020189392103a9404da070536e07":[3,0,0,4,0,0,1,364],
 "cmake-build-debug-mingw_2util_2_j_q_http_server_2_j_q_http_server__autogen_2moc__predefs_8h.html#a72e3c30a05bd2bb63d76550e451a438e":[3,0,0,4,0,0,1,3],
-"cmake-build-debug-mingw_2util_2_j_q_http_server_2_j_q_http_server__autogen_2moc__predefs_8h.html#a72f76585ea7d1131d4e9be0110fb0ec3":[3,0,0,4,0,0,1,289],
-"cmake-build-debug-mingw_2util_2_j_q_http_server_2_j_q_http_server__autogen_2moc__predefs_8h.html#a731bd57ce12918b6118b6a3e37c20d8e":[3,0,0,4,0,0,1,174]
+"cmake-build-debug-mingw_2util_2_j_q_http_server_2_j_q_http_server__autogen_2moc__predefs_8h.html#a72f76585ea7d1131d4e9be0110fb0ec3":[3,0,0,4,0,0,1,289]
 };

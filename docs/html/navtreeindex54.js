@@ -1,5 +1,6 @@
 var NAVTREEINDEX54 =
 {
+"classspdlog_1_1details_1_1mdc__formatter.html":[1,0,27,1,35],
 "classspdlog_1_1details_1_1mdc__formatter.html":[2,0,11,0,33],
 "classspdlog_1_1details_1_1mdc__formatter.html#a2ae64964a368daf0e626a190e83d3c2d":[1,0,27,1,35,0],
 "classspdlog_1_1details_1_1mdc__formatter.html#a2ae64964a368daf0e626a190e83d3c2d":[2,0,11,0,33,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX54 =
 "classspdlog_1_1details_1_1t__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d":[1,0,27,1,57,1],
 "classspdlog_1_1details_1_1t__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d":[2,0,11,0,55,1],
 "classspdlog_1_1details_1_1tcp__client.html":[1,0,27,1,58],
-"classspdlog_1_1details_1_1tcp__client.html":[2,0,11,0,56],
-"classspdlog_1_1details_1_1tcp__client.html#a15c74d4ca82365be46d6368d8bba2d57":[1,0,27,1,58,9]
+"classspdlog_1_1details_1_1tcp__client.html":[2,0,11,0,56]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX42 =
 {
+"class_ui___music_cloud_disk.html#a5aebe6edcfd960626fa439ac5fbd74fd":[2,0,415,31],
 "class_ui___music_cloud_disk.html#a6081098840a0363816f4d3f8bfa14b03":[2,0,415,2],
 "class_ui___music_cloud_disk.html#a6081098840a0363816f4d3f8bfa14b03":[2,0,415,3],
 "class_ui___music_cloud_disk.html#a614f5c101d3acd42bd0d848c6db2e6ea":[2,0,415,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX42 =
 "class_ui___purchased_albums.html#ad66db15e0b927f95b9dfe53f2b9bbd0d":[2,0,424,7],
 "class_ui___purchased_albums.html#af00316ecae881d64e197381c8ccf1dd0":[2,0,424,13],
 "class_ui___purchased_albums.html#af336a6593002d0419ec0e4fb23129da9":[2,0,424,12],
-"class_ui___purchased_albums.html#af39df08c05fe7bbd356989967796b0d1":[2,0,424,0],
-"class_ui___purchased_albums.html#af39df08c05fe7bbd356989967796b0d1":[2,0,424,1]
+"class_ui___purchased_albums.html#af39df08c05fe7bbd356989967796b0d1":[2,0,424,0]
 };

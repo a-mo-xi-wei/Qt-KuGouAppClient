@@ -1,5 +1,6 @@
 var NAVTREEINDEX31 =
 {
+"class_qs_logging_1_1_destination.html":[1,0,22,1],
 "class_qs_logging_1_1_destination.html":[2,0,8,1],
 "class_qs_logging_1_1_destination.html#a2fc82837864087e3b50ebb62fab91d14":[1,0,22,1,2],
 "class_qs_logging_1_1_destination.html#a2fc82837864087e3b50ebb62fab91d14":[2,0,8,1,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX31 =
 "class_qt_material_dialog_proxy.html#a5be2edaea4bc6562aa3a7414de7e9e50":[2,0,271,14],
 "class_qt_material_dialog_proxy.html#a6846686a8f69771c037863b8eb6ae7d2":[2,0,271,8],
 "class_qt_material_dialog_proxy.html#a77fa8095027a8d2496a901d00cae92c2":[2,0,271,0],
-"class_qt_material_dialog_proxy.html#a77fa8095027a8d2496a901d00cae92c2a8987881c740e8ad095775bbafd444ad5":[2,0,271,0,1],
-"class_qt_material_dialog_proxy.html#a77fa8095027a8d2496a901d00cae92c2a91f3631322e3be62bc14912a3001c14f":[2,0,271,0,2]
+"class_qt_material_dialog_proxy.html#a77fa8095027a8d2496a901d00cae92c2a8987881c740e8ad095775bbafd444ad5":[2,0,271,0,1]
 };

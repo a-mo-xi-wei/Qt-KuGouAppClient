@@ -1,5 +1,6 @@
 var NAVTREEINDEX262 =
 {
+"structformatter_3_01weekday_00_01_char_01_4.html#afe0316f32771722167e29544a70e4a18":[2,0,161,3],
 "structformatter_3_01year_00_01_char_01_4.html":[2,0,162],
 "structformatter_3_01year_00_01_char_01_4.html#a4d065b81d0eecf6e73026a2e82c30a8c":[2,0,162,1],
 "structformatter_3_01year_00_01_char_01_4.html#a806ed1fa5388a1ba675f2585a3a26c6b":[2,0,162,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX262 =
 "structspdlog_1_1sinks_1_1hourly__filename__calculator.html#ab89e53843c27212f05028001d1a356f2":[2,0,11,1,14,0],
 "structspdlog_1_1sinks_1_1kafka__sink__config.html":[1,0,27,3,16],
 "structspdlog_1_1sinks_1_1kafka__sink__config.html":[2,0,11,1,16],
-"structspdlog_1_1sinks_1_1kafka__sink__config.html#a029e251ec8a0ba9d324567ea8bf6f929":[1,0,27,3,16,3],
-"structspdlog_1_1sinks_1_1kafka__sink__config.html#a029e251ec8a0ba9d324567ea8bf6f929":[2,0,11,1,16,3]
+"structspdlog_1_1sinks_1_1kafka__sink__config.html#a029e251ec8a0ba9d324567ea8bf6f929":[1,0,27,3,16,3]
 };

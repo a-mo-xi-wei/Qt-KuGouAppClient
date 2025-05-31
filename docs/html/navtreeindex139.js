@@ -1,5 +1,6 @@
 var NAVTREEINDEX139 =
 {
+"cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a0958474253d23ca2c87e817c16f74eda":[3,0,0,4,6,0,0,52],
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a098c7fe44eed71241990da5db8f99bc3":[3,0,0,4,6,0,0,214],
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a09ecca53f2cd1b8d1c566bedb245e141":[3,0,0,4,6,0,0,476],
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a0a3bd26d0b040f0781a238e4aedd3dbe":[3,0,0,4,6,0,0,266],
@@ -248,6 +249,5 @@ var NAVTREEINDEX139 =
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a868c5b1405b26bc9592fa9f3248e99aa":[3,0,0,4,6,0,0,201],
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a86bb5059d696b19082c1aff4ae93a87a":[3,0,0,4,6,0,0,265],
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a87140cc80075e8907e7bbfd910c5642a":[3,0,0,4,6,0,0,334],
-"cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a87b7ceac2198cab045e40c9a64b11679":[3,0,0,4,6,0,0,367],
-"cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a87baa4e50d6b00b4be6c3173a4280f2f":[3,0,0,4,6,0,0,193]
+"cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a87b7ceac2198cab045e40c9a64b11679":[3,0,0,4,6,0,0,367]
 };

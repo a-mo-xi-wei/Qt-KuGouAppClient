@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"class_ui___purchased_albums.html#af39df08c05fe7bbd356989967796b0d1":[2,0,424,1],
 "class_ui___purchased_albums.html#af4227c743ba42fac1593dd5212c53fe9":[2,0,424,2],
 "class_ui___purchased_albums.html#af4227c743ba42fac1593dd5212c53fe9":[2,0,424,3],
 "class_ui___purchased_albums.html#afb94ed8c0a8f17ea2a8ac62d33302bc0":[2,0,424,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "class_ui___recommend_for_you.html#a1920440a8ee10ee1af824c8fe9492d97":[2,0,436,8],
 "class_ui___recommend_for_you.html#a3a55739c31e3bf74b4fe61364219c067":[2,0,436,20],
 "class_ui___recommend_for_you.html#a4463dbab69542915e25d73e3afba02d9":[2,0,436,26],
-"class_ui___recommend_for_you.html#a452b9406d7323b2434ff2172cb290206":[2,0,436,7],
-"class_ui___recommend_for_you.html#a6cb703f72df955e543b31f482351422f":[2,0,436,13]
+"class_ui___recommend_for_you.html#a452b9406d7323b2434ff2172cb290206":[2,0,436,7]
 };

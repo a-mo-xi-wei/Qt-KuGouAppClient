@@ -1,5 +1,6 @@
 var NAVTREEINDEX55 =
 {
+"classspdlog_1_1details_1_1tcp__client.html#a15c74d4ca82365be46d6368d8bba2d57":[1,0,27,1,58,9],
 "classspdlog_1_1details_1_1tcp__client.html#a15c74d4ca82365be46d6368d8bba2d57":[2,0,11,0,56,9],
 "classspdlog_1_1details_1_1tcp__client.html#a1d7273be71eeb9dfa29322e316f60ed4":[1,0,27,1,58,16],
 "classspdlog_1_1details_1_1tcp__client.html#a1d7273be71eeb9dfa29322e316f60ed4":[2,0,11,0,56,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX55 =
 "classspdlog_1_1logger.html#adcacf4e03ae0ab6aec92766537745a8a":[1,0,27,11,19],
 "classspdlog_1_1logger.html#adcacf4e03ae0ab6aec92766537745a8a":[2,0,11,9,19],
 "classspdlog_1_1logger.html#adde4fa11bc7a2fe3f67c2bc42e9edd52":[1,0,27,11,18],
-"classspdlog_1_1logger.html#adde4fa11bc7a2fe3f67c2bc42e9edd52":[2,0,11,9,18],
-"classspdlog_1_1logger.html#ade4c83eafc7d6065a07515ce22ca8faf":[1,0,27,11,0]
+"classspdlog_1_1logger.html#adde4fa11bc7a2fe3f67c2bc42e9edd52":[2,0,11,9,18]
 };

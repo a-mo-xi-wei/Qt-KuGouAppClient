@@ -1,5 +1,6 @@
 var NAVTREEINDEX240 =
 {
+"qzipreader__p_8cpp.html#a2d1c84f42aba1a9a70afe0d6f30ca91caf543e685e890471ed7d9a747bf626f6f":[3,0,5,2,8,9,14],
 "qzipreader__p_8cpp.html#a33620c1888dbf8eba5a0ba1642fd75fd":[3,0,5,2,8,22],
 "qzipreader__p_8cpp.html#a40f9c3c339088af7bc5a037c452f99a6":[3,0,5,2,8,31],
 "qzipreader__p_8cpp.html#a4158138ea36292a83a9e614b4a69451f":[3,0,5,2,8,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX240 =
 "struct_async_1_1function_traits.html#ae7173072e5bd323969561a398ecb34b9":[2,0,0,14,2],
 "struct_async_1_1function_traits.html#ae7173072e5bd323969561a398ecb34b9":[2,0,0,15,2],
 "struct_async_1_1function_traits_1_1argument.html":[1,0,1,5,0],
-"struct_async_1_1function_traits_1_1argument.html":[2,0,0,5,0],
-"struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8":[1,0,1,5,0,0]
+"struct_async_1_1function_traits_1_1argument.html":[2,0,0,5,0]
 };

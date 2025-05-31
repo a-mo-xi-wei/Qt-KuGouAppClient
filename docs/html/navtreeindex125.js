@@ -1,5 +1,6 @@
 var NAVTREEINDEX125 =
 {
+"cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2_q_h_w_a_r_d_r_q_v_d_2moc__qtmaterialfab_8cpp.html#a39a3a18c138e5fedb36ee0864ee386a9":[3,0,0,3,13,0,6,0,3],
 "cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2_q_h_w_a_r_d_r_q_v_d_2moc__qtmaterialfab_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc":[3,0,0,3,13,0,6,0,2],
 "cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2_q_h_w_a_r_d_r_q_v_d_2moc__qtmaterialfab_8cpp.html#ad83b2306f94b5b9e5625794fc238c8a0":[3,0,0,3,13,0,6,0,1],
 "cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2_q_h_w_a_r_d_r_q_v_d_2moc__qtmaterialfab_8cpp_source.html":[3,0,0,3,13,0,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX125 =
 "cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h.html#a7237ce09defceeebe3ba0afc528275ac":[3,0,0,3,13,0,7,263],
 "cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h.html#a726a020189392103a9404da070536e07":[3,0,0,3,13,0,7,364],
 "cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h.html#a72e3c30a05bd2bb63d76550e451a438e":[3,0,0,3,13,0,7,3],
-"cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h.html#a72f76585ea7d1131d4e9be0110fb0ec3":[3,0,0,3,13,0,7,289],
-"cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h.html#a731bd57ce12918b6118b6a3e37c20d8e":[3,0,0,3,13,0,7,174]
+"cmake-build-debug-mingw_2ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h.html#a72f76585ea7d1131d4e9be0110fb0ec3":[3,0,0,3,13,0,7,289]
 };

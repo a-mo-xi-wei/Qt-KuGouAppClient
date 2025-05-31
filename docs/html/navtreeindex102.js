@@ -1,5 +1,6 @@
 var NAVTREEINDEX102 =
 {
+"cmake-build-debug-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#ac070fafc444399b9243e0366b4ce4ef7":[3,0,0,3,1,0,1,219],
 "cmake-build-debug-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#ac0d3ec4a0da0333c68602f6874eeddd3":[3,0,0,3,1,0,1,16],
 "cmake-build-debug-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#ac0fe3e739d0b847c07dde20eabf2ab3d":[3,0,0,3,1,0,1,212],
 "cmake-build-debug-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#ac1175c9478c586edee06d1f788a03b83":[3,0,0,3,1,0,1,167],
@@ -248,6 +249,5 @@ var NAVTREEINDEX102 =
 "cmake-build-debug-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#a3d4fe0f0b2e3ae12569d4a663dee8a0c":[3,0,0,3,2,0,1,118],
 "cmake-build-debug-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#a3dd03066dbb351dfa51353c80a7902a2":[3,0,0,3,2,0,1,90],
 "cmake-build-debug-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#a3dda013c532cea311e9a22bf90dcec86":[3,0,0,3,2,0,1,46],
-"cmake-build-debug-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#a3e026eb4d36813e9c8ae788b0165bfc3":[3,0,0,3,2,0,1,141],
-"cmake-build-debug-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#a3e2be49a2ed02cf3eaf2b8ff2ff76afd":[3,0,0,3,2,0,1,482]
+"cmake-build-debug-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#a3e026eb4d36813e9c8ae788b0165bfc3":[3,0,0,3,2,0,1,141]
 };

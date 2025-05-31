@@ -1,5 +1,6 @@
 var NAVTREEINDEX232 =
 {
+"ikcp_8cpp.html#a9d0be6f5277c1cbabc23da5841927383":[3,0,2,0,0,0,40],
 "ikcp_8cpp.html#a9e4dab2edc7c00370965c0623705a831":[3,0,2,0,0,0,53],
 "ikcp_8cpp.html#aa57723466b099571367b9f4de3ece54c":[3,0,2,0,0,0,17],
 "ikcp_8cpp.html#aad1837b09c86ce3e965bc2e0a21599a4":[3,0,2,0,0,0,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX232 =
 "namespace_area.html#a46a36aa6165daa3c3eec3f941e46ced7":[1,0,0,3],
 "namespace_area.html#a5565b851ad7633aa0b643a5c52ce9030":[1,0,0,1],
 "namespace_area.html#a77337f65d8c01c5fee17565da6b4d27c":[1,0,0,0],
-"namespace_async.html":[1,0,1],
-"namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79":[1,0,1,53]
+"namespace_async.html":[1,0,1]
 };

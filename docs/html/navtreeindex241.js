@@ -1,5 +1,6 @@
 var NAVTREEINDEX241 =
 {
+"struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8":[1,0,1,5,0,0],
 "struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8":[1,0,1,11,0,3],
 "struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8":[2,0,0,5,0,0],
 "struct_async_1_1function_traits_1_1argument.html#a60dd543e55aeaa7f416dda65d59d7ad8":[2,0,0,11,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX241 =
 "struct_m_v_widget_1_1_music_info.html#ae773b100dbfe10ba024e86ef8a4c060f":[2,0,223,0,0],
 "struct_msg_info.html":[2,0,215],
 "struct_msg_info.html#a722bb2b3c62fe5d997bae9d0ad35f95d":[2,0,215,1],
-"struct_msg_info.html#a734934801a260897766516dac3a878bd":[2,0,215,2],
-"struct_msg_info.html#a905138d15f4fa191b5e40a55d633c5c9":[2,0,215,0]
+"struct_msg_info.html#a734934801a260897766516dac3a878bd":[2,0,215,2]
 };

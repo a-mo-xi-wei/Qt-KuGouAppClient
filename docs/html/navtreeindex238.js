@@ -1,5 +1,6 @@
 var NAVTREEINDEX238 =
 {
+"namespacemembers_l.html":[1,1,0,12],
 "namespacemembers_m.html":[1,1,0,13],
 "namespacemembers_n.html":[1,1,0,14],
 "namespacemembers_o.html":[1,1,0,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX238 =
 "namespacespdlog_1_1sinks.html#a0bc3e3126e3984c789c68bc8d2c04c49":[1,0,27,3,82],
 "namespacespdlog_1_1sinks.html#a0ef35d03a3dde921f3e4b05fdbcf09a7":[1,0,27,3,84],
 "namespacespdlog_1_1sinks.html#a157ead948d5f0a2a5ffb45f0919b2118":[1,0,27,3,60],
-"namespacespdlog_1_1sinks.html#a24b1b3759623f49844f1400c61138b0a":[1,0,27,3,48],
-"namespacespdlog_1_1sinks.html#a27c94ea23e6f7bbc3b818bf7d9217323":[1,0,27,3,57]
+"namespacespdlog_1_1sinks.html#a24b1b3759623f49844f1400c61138b0a":[1,0,27,3,48]
 };

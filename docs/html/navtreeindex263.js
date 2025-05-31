@@ -1,5 +1,6 @@
 var NAVTREEINDEX263 =
 {
+"structspdlog_1_1sinks_1_1kafka__sink__config.html#a029e251ec8a0ba9d324567ea8bf6f929":[2,0,11,1,16,3],
 "structspdlog_1_1sinks_1_1kafka__sink__config.html#aac8708ea9d7fb2b4fa10fa1556945556":[1,0,27,3,16,1],
 "structspdlog_1_1sinks_1_1kafka__sink__config.html#aac8708ea9d7fb2b4fa10fa1556945556":[2,0,11,1,16,1],
 "structspdlog_1_1sinks_1_1kafka__sink__config.html#ab59b8a274646d56cb405ae43611cbd94":[1,0,27,3,16,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX263 =
 "structtag_user_info.html#ad6a222392dd884ea1a93cec0f3316413":[2,0,374,8],
 "structtag_user_info.html#af7ae8c4217c4f5045a73f75989c2fd83":[2,0,374,3],
 "structtag_user_info.html#afad6d37d40b4d6e3ebab4329722840d0":[2,0,374,5],
-"structtag_version_oper.html":[2,0,375],
-"structtag_version_oper.html#a2b34660dfecc9922e6fa58edc5101a35":[2,0,375,1]
+"structtag_version_oper.html":[2,0,375]
 };

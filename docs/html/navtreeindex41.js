@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"class_ui___live_music_part_widget.html#a50310f6943721e1b1e2144669828c3bb":[2,0,412,33],
 "class_ui___live_music_part_widget.html#a55cb9fd53006b423899b44377bd2008c":[2,0,412,50],
 "class_ui___live_music_part_widget.html#a633ca39a7fca7598fb7346916539acde":[2,0,412,49],
 "class_ui___live_music_part_widget.html#a64459ebe647bc0ee20c237e916ec0e8a":[2,0,412,51],
@@ -248,6 +249,5 @@ var NAVTREEINDEX41 =
 "class_ui___music_cloud_disk.html#a2d8565e2ba1a026f4f5d393c560529d2":[2,0,415,1],
 "class_ui___music_cloud_disk.html#a3800fb191e4308d7dff577d0e6d557dd":[2,0,415,23],
 "class_ui___music_cloud_disk.html#a3827f9e6fd408bab5d3fc8b36c14bf5b":[2,0,415,18],
-"class_ui___music_cloud_disk.html#a4e58fbbaa762d96bb36345dbbcd0f2f2":[2,0,415,17],
-"class_ui___music_cloud_disk.html#a5aebe6edcfd960626fa439ac5fbd74fd":[2,0,415,31]
+"class_ui___music_cloud_disk.html#a4e58fbbaa762d96bb36345dbbcd0f2f2":[2,0,415,17]
 };

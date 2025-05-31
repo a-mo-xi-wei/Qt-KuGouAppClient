@@ -1,5 +1,6 @@
 var NAVTREEINDEX184 =
 {
+"cmake-build-release-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#ad22737f11009b4bf60ba233eee7420dd":[3,0,1,3,0,0,12,274],
 "cmake-build-release-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#ad2396317be1036fdc4481d54343487de":[3,0,1,3,0,0,12,223],
 "cmake-build-release-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#ad28bf9a476eedcf65a5763f008383cc7":[3,0,1,3,0,0,12,260],
 "cmake-build-release-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#ad293ff29c0ac9a6b4187d366d6de3772":[3,0,1,3,0,0,12,198],
@@ -248,6 +249,5 @@ var NAVTREEINDEX184 =
 "cmake-build-release-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#a540709593f5c426ab0072c45df10beb1":[3,0,1,3,1,0,1,194],
 "cmake-build-release-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#a5436993e3c0ddb7caee4b9b01021cde4":[3,0,1,3,1,0,1,330],
 "cmake-build-release-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#a54983bc256dc296a42fe88b9be24f268":[3,0,1,3,1,0,1,88],
-"cmake-build-release-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#a54d5cd9e48fafbf09cb25d950b215277":[3,0,1,3,1,0,1,464],
-"cmake-build-release-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#a559dd2b0792fc2b0b30ba1dd66ca7cdc":[3,0,1,3,1,0,1,83]
+"cmake-build-release-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2moc__predefs_8h.html#a54d5cd9e48fafbf09cb25d950b215277":[3,0,1,3,1,0,1,464]
 };

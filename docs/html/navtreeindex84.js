@@ -1,5 +1,6 @@
 var NAVTREEINDEX84 =
 {
+"cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a65ff7d0e95dab0167cbd46d117cfa74a":[3,0,0,2,10,0,8,298],
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a6605c8368985e3b1885a84d1d44ff798":[3,0,0,2,10,0,8,190],
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a66fbb70a69c9f66830f95a20e46091a6":[3,0,0,2,10,0,8,378],
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#a67027d30bfa46fdf4215324d56a41d7d":[3,0,0,2,10,0,8,218],
@@ -248,6 +249,5 @@ var NAVTREEINDEX84 =
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#aebcb90b5d573b6877d51550d61c8b0cc":[3,0,0,2,10,0,8,100],
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#aecf76d7a7f56ec1ed686b2bb99c6d863":[3,0,0,2,10,0,8,37],
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#aecf8ca9049a43aa4fc14e8feea7ccccc":[3,0,0,2,10,0,8,350],
-"cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#aee4eb3a89493f1c9251a5a52f700f21d":[3,0,0,2,10,0,8,437],
-"cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#aee5d0901405056d87e3bd47fee83128d":[3,0,0,2,10,0,8,277]
+"cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html#aee4eb3a89493f1c9251a5a52f700f21d":[3,0,0,2,10,0,8,437]
 };

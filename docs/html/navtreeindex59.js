@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"classwriter.html#af90357f15bb82c5440ff6ab4dc8e6a42":[2,0,471,1],
 "classyear.html":[2,0,472],
 "classyear.html#a328f72ebfe17314b0f47fbf099b850c9":[2,0,472,1],
 "classyear.html#a6599b41959fd1c8dec417e5b3e565694":[2,0,472,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "cmake-build-debug-mingw_2_ku_gou_server_2_ku_gou-_server__autogen_2moc__predefs_8h.html#a2b46de6050feed05210bef65feef9c42":[3,0,0,1,0,4,56],
 "cmake-build-debug-mingw_2_ku_gou_server_2_ku_gou-_server__autogen_2moc__predefs_8h.html#a2b695357ce4b46971d54e8e9dfe5724f":[3,0,0,1,0,4,358],
 "cmake-build-debug-mingw_2_ku_gou_server_2_ku_gou-_server__autogen_2moc__predefs_8h.html#a2be4465d5ab61bdc56ec106696d884d4":[3,0,0,1,0,4,49],
-"cmake-build-debug-mingw_2_ku_gou_server_2_ku_gou-_server__autogen_2moc__predefs_8h.html#a2c1c95a99789b8c9721e896c48257f53":[3,0,0,1,0,4,391],
-"cmake-build-debug-mingw_2_ku_gou_server_2_ku_gou-_server__autogen_2moc__predefs_8h.html#a2c25ec0f0ae74f9d8a7c373288a28dd1":[3,0,0,1,0,4,26]
+"cmake-build-debug-mingw_2_ku_gou_server_2_ku_gou-_server__autogen_2moc__predefs_8h.html#a2c1c95a99789b8c9721e896c48257f53":[3,0,0,1,0,4,391]
 };

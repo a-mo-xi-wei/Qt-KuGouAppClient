@@ -1,5 +1,6 @@
 var NAVTREEINDEX38 =
 {
+"class_ui___all_cloud_disk.html#a0f3dd435abdcd6357b1a3e4ebdf04574":[2,0,384,3],
 "class_ui___all_cloud_disk.html#a21eeb2a352156d4aed868aaae10162bb":[2,0,384,10],
 "class_ui___all_cloud_disk.html#a3e97f6d5f9734f76e116f981da954cfa":[2,0,384,14],
 "class_ui___all_cloud_disk.html#a4b40c0ff8d9afe2f04f73cc608edcebc":[2,0,384,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX38 =
 "class_ui___collect_video.html#a8fc05b813bc8de44431cba2d26ad066e":[2,0,394,0],
 "class_ui___collect_video.html#a8fc05b813bc8de44431cba2d26ad066e":[2,0,394,1],
 "class_ui___collect_video.html#aa0ac20ca049c2caf20e575506c589f7c":[2,0,394,8],
-"class_ui___collect_video.html#aa9dcb10598caa776d859879c05261512":[2,0,394,2],
-"class_ui___collect_video.html#aa9dcb10598caa776d859879c05261512":[2,0,394,3]
+"class_ui___collect_video.html#aa9dcb10598caa776d859879c05261512":[2,0,394,2]
 };

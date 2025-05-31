@@ -14,6 +14,7 @@ var class_pcm_player =
     [ "isFrameFull", "class_pcm_player.html#acae23f9591e3ecb3e52ecf2e25cdd63e", null ],
     [ "openDevice", "class_pcm_player.html#a51f73d561fdeb70eeb9df680d6444272", null ],
     [ "playAudioBuffer", "class_pcm_player.html#ac0c97dd747079cf25a7420c7ef3eb721", null ],
+    [ "resampleAudio", "class_pcm_player.html#a3f08603857e35f01aeb56d558d829fa9", null ],
     [ "setMute", "class_pcm_player.html#a85a115ce4b3dd4b64d6cbd26cbfc6cb4", null ],
     [ "setPause", "class_pcm_player.html#accf6a3148ef52d25bf4f7ab4a492603f", null ],
     [ "setSpeed", "class_pcm_player.html#a5466c67c5ec22359c0702dc4ac8ffb19", null ],

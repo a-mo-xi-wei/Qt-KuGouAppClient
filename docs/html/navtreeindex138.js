@@ -1,5 +1,6 @@
 var NAVTREEINDEX138 =
 {
+"cmake-build-debug-mingw_2util_2_my_qs_log_2_my_qs_log__autogen_2moc__predefs_8h.html#a7cb6a2aeb6e528ac59bedb98ebeac198":[3,0,0,4,5,0,1,79],
 "cmake-build-debug-mingw_2util_2_my_qs_log_2_my_qs_log__autogen_2moc__predefs_8h.html#a7cf72a6f42a229ef52ea84f696861c4e":[3,0,0,4,5,0,1,275],
 "cmake-build-debug-mingw_2util_2_my_qs_log_2_my_qs_log__autogen_2moc__predefs_8h.html#a7d7e5874cd6f169187aac7db998625f3":[3,0,0,4,5,0,1,469],
 "cmake-build-debug-mingw_2util_2_my_qs_log_2_my_qs_log__autogen_2moc__predefs_8h.html#a7df1cb434b3b8baae4bf6053cb2a3a4a":[3,0,0,4,5,0,1,301],
@@ -248,6 +249,5 @@ var NAVTREEINDEX138 =
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a0746bdc61f4500f26c2b7408814ebfcf":[3,0,0,4,6,0,0,424],
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a0771b97068ff4aad35a9110055b27247":[3,0,0,4,6,0,0,146],
 "cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a08d4062230ffc8494f4be4f6447497e4":[3,0,0,4,6,0,0,366],
-"cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a08d72e99946502a0987c6355e67bb39c":[3,0,0,4,6,0,0,226],
-"cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a0958474253d23ca2c87e817c16f74eda":[3,0,0,4,6,0,0,52]
+"cmake-build-debug-mingw_2util_2_my_spdlog_2_my_spdlog__autogen_2moc__predefs_8h.html#a08d72e99946502a0987c6355e67bb39c":[3,0,0,4,6,0,0,226]
 };

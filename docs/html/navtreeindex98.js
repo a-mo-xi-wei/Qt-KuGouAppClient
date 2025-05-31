@@ -1,5 +1,6 @@
 var NAVTREEINDEX98 =
 {
+"cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2_e_r_o_o_k3_w7_l7_2md8718ec7bbdec825b9a2929845619995.html#ad83b2306f94b5b9e5625794fc238c8a0":[3,0,0,3,0,0,5,2,1],
 "cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2_e_r_o_o_k3_w7_l7_2md8718ec7bbdec825b9a2929845619995.html#afa9b8f480e76ab8ead76b5e0a4449c4e":[3,0,0,3,0,0,5,2,3],
 "cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2_e_r_o_o_k3_w7_l7_2md8718ec7bbdec825b9a2929845619995_source.html":[3,0,0,3,0,0,5,2],
 "cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2_e_r_o_o_k3_w7_l7_2moc___ela_exit_dialog_8cpp.html":[3,0,0,3,0,0,5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX98 =
 "cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a33433eca9e18e14156165252746f4d44":[3,0,0,3,0,0,12,261],
 "cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a3560d7ad1d35c5022a04819e47710f06":[3,0,0,3,0,0,12,10],
 "cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a3641a65e329884d817848ba5d6163f07":[3,0,0,3,0,0,12,238],
-"cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a36b3a5bf25feeef4fbdca37900522f3c":[3,0,0,3,0,0,12,438],
-"cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a3764f041b8bf4c5ebd0bf19c071f416c":[3,0,0,3,0,0,12,476]
+"cmake-build-debug-mingw_2ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a36b3a5bf25feeef4fbdca37900522f3c":[3,0,0,3,0,0,12,438]
 };

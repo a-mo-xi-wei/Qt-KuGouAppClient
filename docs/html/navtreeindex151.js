@@ -1,5 +1,6 @@
 var NAVTREEINDEX151 =
 {
+"cmake-build-release-mingw_2_ku_gou_start_2_channel_2_channel__autogen_2moc__predefs_8h.html#aa808bc3159395526ac0c07d36b87dec1":[3,0,1,2,2,0,2,255],
 "cmake-build-release-mingw_2_ku_gou_start_2_channel_2_channel__autogen_2moc__predefs_8h.html#aa860a111dcff819d3502dda14f8ac778":[3,0,1,2,2,0,2,409],
 "cmake-build-release-mingw_2_ku_gou_start_2_channel_2_channel__autogen_2moc__predefs_8h.html#aa9e067f885a7396c1427d1547a89e063":[3,0,1,2,2,0,2,134],
 "cmake-build-release-mingw_2_ku_gou_start_2_channel_2_channel__autogen_2moc__predefs_8h.html#aaa322b38474911c60e45134194bd6e8f":[3,0,1,2,2,0,2,78],
@@ -248,6 +249,5 @@ var NAVTREEINDEX151 =
 "cmake-build-release-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#a27b5eb7cfda61c7f1baeb4d95f3052bb":[3,0,1,2,3,0,2,427],
 "cmake-build-release-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#a280f0a9058cc03c2dac890a19881b1fb":[3,0,1,2,3,0,2,94],
 "cmake-build-release-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#a281ab632befbb2d5567ff114e2fa18f9":[3,0,1,2,3,0,2,431],
-"cmake-build-release-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#a287cbae3fb7eb2bdc8906729897524c9":[3,0,1,2,3,0,2,225],
-"cmake-build-release-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#a288f0da315b6019712dedddc325b4120":[3,0,1,2,3,0,2,202]
+"cmake-build-release-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#a287cbae3fb7eb2bdc8906729897524c9":[3,0,1,2,3,0,2,225]
 };

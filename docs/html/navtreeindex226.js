@@ -1,5 +1,6 @@
 var NAVTREEINDEX226 =
 {
+"cmake-build-release-mingw_2util_2_s_jwt_2_s_jwt__autogen_2moc__predefs_8h.html#a9d2226f2d9644bcb9db4e3dda746f559":[3,0,1,4,7,0,0,460],
 "cmake-build-release-mingw_2util_2_s_jwt_2_s_jwt__autogen_2moc__predefs_8h.html#a9e0564ada348dff0b4436b156412f430":[3,0,1,4,7,0,0,199],
 "cmake-build-release-mingw_2util_2_s_jwt_2_s_jwt__autogen_2moc__predefs_8h.html#a9e077def8c310cdb5fef37666a92c5a5":[3,0,1,4,7,0,0,45],
 "cmake-build-release-mingw_2util_2_s_jwt_2_s_jwt__autogen_2moc__predefs_8h.html#a9e75b72378b039587e4fc4006776826d":[3,0,1,4,7,0,0,374],
@@ -248,6 +249,5 @@ var NAVTREEINDEX226 =
 "color_8h.html#a80d1dc5f416b97f92939a4166d41203ca4a0b0dcedd48f780778d1cd1bb8f9877":[3,0,5,8,1,2,0,3,7,109],
 "color_8h.html#a80d1dc5f416b97f92939a4166d41203ca4b1668d660111fbf3b86b4238b285677":[3,0,5,8,1,2,0,3,7,37],
 "color_8h.html#a80d1dc5f416b97f92939a4166d41203ca4c2a4a7078da0ac6733464eacfd00f86":[3,0,5,8,1,2,0,3,7,79],
-"color_8h.html#a80d1dc5f416b97f92939a4166d41203ca4db3022648c31d28b86ad95583d6c3c7":[3,0,5,8,1,2,0,3,7,88],
-"color_8h.html#a80d1dc5f416b97f92939a4166d41203ca4eece7cf37c9db41ed9e016e471fcf2f":[3,0,5,8,1,2,0,3,7,65]
+"color_8h.html#a80d1dc5f416b97f92939a4166d41203ca4db3022648c31d28b86ad95583d6c3c7":[3,0,5,8,1,2,0,3,7,88]
 };

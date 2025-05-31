@@ -1,5 +1,6 @@
 var NAVTREEINDEX122 =
 {
+"cmake-build-debug-mingw_2ui_2_my_sliding_stacked_widget_2_my_sliding_stacked_widget__autogen_2moc__predefs_8h.html#ac1175c9478c586edee06d1f788a03b83":[3,0,0,3,11,0,1,167],
 "cmake-build-debug-mingw_2ui_2_my_sliding_stacked_widget_2_my_sliding_stacked_widget__autogen_2moc__predefs_8h.html#ac15da069257627fefd71d875d538b73d":[3,0,0,3,11,0,1,465],
 "cmake-build-debug-mingw_2ui_2_my_sliding_stacked_widget_2_my_sliding_stacked_widget__autogen_2moc__predefs_8h.html#ac227f24525ec0825a758b2eb0869dc8f":[3,0,0,3,11,0,1,5],
 "cmake-build-debug-mingw_2ui_2_my_sliding_stacked_widget_2_my_sliding_stacked_widget__autogen_2moc__predefs_8h.html#ac29c76a6702808cfc4a5f661d0d33c2c":[3,0,0,3,11,0,1,363],
@@ -248,6 +249,5 @@ var NAVTREEINDEX122 =
 "cmake-build-debug-mingw_2ui_2_my_window_2_my_window__autogen_2moc__predefs_8h.html#a2be4465d5ab61bdc56ec106696d884d4":[3,0,0,3,12,0,5,49],
 "cmake-build-debug-mingw_2ui_2_my_window_2_my_window__autogen_2moc__predefs_8h.html#a2c1c95a99789b8c9721e896c48257f53":[3,0,0,3,12,0,5,391],
 "cmake-build-debug-mingw_2ui_2_my_window_2_my_window__autogen_2moc__predefs_8h.html#a2c25ec0f0ae74f9d8a7c373288a28dd1":[3,0,0,3,12,0,5,26],
-"cmake-build-debug-mingw_2ui_2_my_window_2_my_window__autogen_2moc__predefs_8h.html#a2cadd9d4318f241591500654e3730201":[3,0,0,3,12,0,5,153],
-"cmake-build-debug-mingw_2ui_2_my_window_2_my_window__autogen_2moc__predefs_8h.html#a2db444477ad8f9aa0759310d46694339":[3,0,0,3,12,0,5,130]
+"cmake-build-debug-mingw_2ui_2_my_window_2_my_window__autogen_2moc__predefs_8h.html#a2cadd9d4318f241591500654e3730201":[3,0,0,3,12,0,5,153]
 };

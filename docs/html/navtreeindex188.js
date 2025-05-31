@@ -1,5 +1,6 @@
 var NAVTREEINDEX188 =
 {
+"cmake-build-release-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#ad8885a68f76fac734a20349f9b8cac69":[3,0,1,3,2,0,1,397],
 "cmake-build-release-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#ada3957596c2e4bce8eac43e196c75053":[3,0,1,3,2,0,1,151],
 "cmake-build-release-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#adb0d09cff489746c5456407aa832fced":[3,0,1,3,2,0,1,322],
 "cmake-build-release-mingw_2ui_2_my_block_widget_2_my_block_widget__autogen_2moc__predefs_8h.html#adc1ccadf1d98117e586324ccb189c09f":[3,0,1,3,2,0,1,317],
@@ -248,6 +249,5 @@ var NAVTREEINDEX188 =
 "cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2moc__predefs_8h.html#a45cd9660bf8cfec983f7164063381a41":[3,0,1,3,3,0,5,453],
 "cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2moc__predefs_8h.html#a4a20b2c078ee12e2be450e83e5dacc9d":[3,0,1,3,3,0,5,247],
 "cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2moc__predefs_8h.html#a4b2be09502f3fe1cd13838c6761803b3":[3,0,1,3,3,0,5,386],
-"cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2moc__predefs_8h.html#a4b8971e411b88166747d2a3c2425eaee":[3,0,1,3,3,0,5,290],
-"cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2moc__predefs_8h.html#a4bd7bc94412d84b84388c574770b4549":[3,0,1,3,3,0,5,384]
+"cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2moc__predefs_8h.html#a4b8971e411b88166747d2a3c2425eaee":[3,0,1,3,3,0,5,290]
 };

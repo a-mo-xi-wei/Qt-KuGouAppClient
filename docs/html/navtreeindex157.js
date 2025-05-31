@@ -1,5 +1,6 @@
 var NAVTREEINDEX157 =
 {
+"cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#a4b2be09502f3fe1cd13838c6761803b3":[3,0,1,2,5,0,10,386],
 "cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#a4b8971e411b88166747d2a3c2425eaee":[3,0,1,2,5,0,10,290],
 "cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#a4bd7bc94412d84b84388c574770b4549":[3,0,1,2,5,0,10,384],
 "cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#a4bf843ffcadf9b162b74c1b7e546e8e9":[3,0,1,2,5,0,10,433],
@@ -248,6 +249,5 @@ var NAVTREEINDEX157 =
 "cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#acb072d4167167be73828de722a2def0b":[3,0,1,2,5,0,10,383],
 "cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#acb3a3a30075a9589b520df3b329df29e":[3,0,1,2,5,0,10,235],
 "cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#acd1e46c682808f15749b16266ade0c27":[3,0,1,2,5,0,10,30],
-"cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#acd7b9de9b6bd817027cb37ec6c82cba9":[3,0,1,2,5,0,10,243],
-"cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#acdfdd67de0664b690c42bba327cf7da1":[3,0,1,2,5,0,10,2]
+"cmake-build-release-mingw_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html#acd7b9de9b6bd817027cb37ec6c82cba9":[3,0,1,2,5,0,10,243]
 };

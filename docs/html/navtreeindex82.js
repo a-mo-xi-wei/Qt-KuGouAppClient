@@ -1,5 +1,6 @@
 var NAVTREEINDEX82 =
 {
+"cmake-build-debug-mingw_2_ku_gou_start_2_music_repository_2_music_repository__autogen_2moc__predefs_8h.html#a7958d6a294134e4e73756f7361994c1f":[3,0,0,2,9,0,2,224],
 "cmake-build-debug-mingw_2_ku_gou_start_2_music_repository_2_music_repository__autogen_2moc__predefs_8h.html#a79e289c54a8c9851b2b118d442bbc26c":[3,0,0,2,9,0,2,113],
 "cmake-build-debug-mingw_2_ku_gou_start_2_music_repository_2_music_repository__autogen_2moc__predefs_8h.html#a7a06acb3945879bcc985dde7bf0bcbdc":[3,0,0,2,9,0,2,207],
 "cmake-build-debug-mingw_2_ku_gou_start_2_music_repository_2_music_repository__autogen_2moc__predefs_8h.html#a7a76473a66d022aee2c9f661405d8fbb":[3,0,0,2,9,0,2,354],
@@ -248,6 +249,5 @@ var NAVTREEINDEX82 =
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_c_m_m_m_z7_p_p_b_o_2moc___single_song_8cpp_8d.html":[3,0,0,2,10,0,1,1],
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_c_m_m_m_z7_p_p_b_o_2moc___single_song_8cpp_source.html":[3,0,0,2,10,0,1,0],
 "cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_e_w_i_e_g_a46_ee4092ed4a3087e7e69d92639ad5613d.html":[3,0,0,2,10,0,2,1],
-"cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_e_w_i_e_g_a46_w_w_2moc___my_collection_8cpp.html":[3,0,0,2,10,0,2,0],
-"cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_e_w_i_e_g_a46_w_w_2moc___my_collection_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc":[3,0,0,2,10,0,2,0,2]
+"cmake-build-debug-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_e_w_i_e_g_a46_w_w_2moc___my_collection_8cpp.html":[3,0,0,2,10,0,2,0]
 };

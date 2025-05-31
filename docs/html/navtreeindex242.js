@@ -1,5 +1,6 @@
 var NAVTREEINDEX242 =
 {
+"struct_msg_info.html#a905138d15f4fa191b5e40a55d633c5c9":[2,0,215,0],
 "struct_music_repository_1_1_music_info.html":[2,0,220,0],
 "struct_music_repository_1_1_music_info.html#a663b5ae0da3db92f6168f4ae33a7df0c":[2,0,220,0,2],
 "struct_music_repository_1_1_music_info.html#a8a65cdc9701dbc75df70f9dc012a2c40":[2,0,220,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX242 =
 "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0faad3969f139e61fbc4699567ebef86.html#a94a3b6eed5d110acfe258a87bc73de00":[1,0,23,172,1],
 "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0faad3969f139e61fbc4699567ebef86.html#a94a3b6eed5d110acfe258a87bc73de00":[2,0,9,172,1],
 "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0faad3969f139e61fbc4699567ebef86.html#a971322d332e0479c40d50a182535f366":[1,0,23,172,5],
-"struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0faad3969f139e61fbc4699567ebef86.html#a971322d332e0479c40d50a182535f366":[2,0,9,172,5],
-"struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0faad3969f139e61fbc4699567ebef86.html#a9ffe1590b19c7fcb0907410e3cc0ddb1":[1,0,23,172,2]
+"struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0faad3969f139e61fbc4699567ebef86.html#a971322d332e0479c40d50a182535f366":[2,0,9,172,5]
 };
