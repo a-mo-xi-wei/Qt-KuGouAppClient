@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: SpeedDialog.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_speed_dialog_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SpeedDialog.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_speed_dialog_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef SPEEDDIALOG_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define SPEEDDIALOG_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if defined(MYDIALOG_LIBRARY)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define MYDIALOG_EXPORT Q_DECL_EXPORT</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_speed_dialog_8h.html#a65b52e090432de9fce66bf2af4774f3f">   19</a></span><span class="preprocessor">#define MYDIALOG_EXPORT Q_DECL_IMPORT</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="qtmaterialslider_8h.html">QtMaterialSlider/qtmaterialslider.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_speed_dialog_state_8h.html">SpeedDialogState.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">class </span><a class="code hl_class" href="class_ela_toggle_switch.html">ElaToggleSwitch</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">class </span><a class="code hl_class" href="class_q_label.html">QLabel</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">class </span>QPushButton;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span>QGraphicsDropShadowEffect;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_snap_slider.html">   34</a></span><span class="keyword">class </span><a class="code hl_class" href="class_snap_slider.html">SnapSlider</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_snap_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    Q_OBJECT</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">using </span><a class="code hl_function" href="class_qt_material_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider::QtMaterialSlider</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_snap_slider.html#a54982da728d9318ca92607eb437814d5">   49</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_snap_slider.html#a54982da728d9318ca92607eb437814d5">snapToPosition</a>() {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="comment">// 计算最近的十分之一位置</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">int</span> value = this-&gt;value();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">int</span> min = this-&gt;minimum();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">int</span> max = this-&gt;maximum();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="comment">// 计算步长</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">double</span> step = (max - min) / 10.0;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="comment">// 找到最近的十分之一点</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">int</span> closestPoint = min;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordtype">double</span> minDistance = std::numeric_limits&lt;double&gt;::max();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= 10; i++) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordtype">int</span> point = min + qRound(i * step);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordtype">double</span> distance = std::abs(value - point);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">if</span> (distance &lt; minDistance) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                minDistance = distance;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                closestPoint = point;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (closestPoint == minimum())closestPoint = minimum() + 1;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="comment">// 直接设置到最近的点（跳过中间值）</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        setSliderPosition(closestPoint);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        emit <a class="code hl_signal" href="class_snap_slider.html#a433d894967d7b26de78daa3f4731e345">numChanged</a>(closestPoint / 10);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_snap_slider.html#a7523c71b2bf60975302287ec8923f80e">   83</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_snap_slider.html#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a>(QMouseEvent *event)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="comment">// 先调用基类处理</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_function" href="class_qt_material_slider.html#ad42823c78fefc7a77bd5ce1d22e43a89">QtMaterialSlider::mousePressEvent</a>(event);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_variable" href="class_snap_slider.html#a412b4e67de22e0994badb7619ed49e5e">m_isPress</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_snap_slider.html#a4d538d95963e25c7a27250e441321d72">   94</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_snap_slider.html#a4d538d95963e25c7a27250e441321d72">mouseMoveEvent</a>(QMouseEvent *event)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="comment">// 先调用基类处理（更新位置）</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_function" href="class_qt_material_slider.html#a640ab8b18d41d6488344e10a825426ba">QtMaterialSlider::mouseMoveEvent</a>(event);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_snap_slider.html#a412b4e67de22e0994badb7619ed49e5e">m_isPress</a>)<span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="comment">// 立即跳转到最近的十分之一点</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_function" href="class_snap_slider.html#a54982da728d9318ca92607eb437814d5">snapToPosition</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_snap_slider.html#a2de3e1806dc8e5d659fc1f35545a5b87">  107</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_snap_slider.html#a2de3e1806dc8e5d659fc1f35545a5b87">mouseReleaseEvent</a>(QMouseEvent *event)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="comment">// 先调用基类处理</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_function" href="class_qt_material_slider.html#a2af1ef690b0504bb681854d26146464c">QtMaterialSlider::mouseReleaseEvent</a>(event);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_variable" href="class_snap_slider.html#a412b4e67de22e0994badb7619ed49e5e">m_isPress</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="comment">// 立即跳转到最近的十分之一点</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_function" href="class_snap_slider.html#a54982da728d9318ca92607eb437814d5">snapToPosition</a>();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_snap_slider.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">  120</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_snap_slider.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">showEvent</a>(QShowEvent *event)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        QWidget::showEvent(event);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        setValue(maximum() / 2);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="comment">// 立即跳转到最近的十分之一点</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <a class="code hl_function" href="class_snap_slider.html#a54982da728d9318ca92607eb437814d5">snapToPosition</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>signals:</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_snap_slider.html#a433d894967d7b26de78daa3f4731e345">numChanged</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;num);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_snap_slider.html#a412b4e67de22e0994badb7619ed49e5e">  135</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_snap_slider.html#a412b4e67de22e0994badb7619ed49e5e">m_isPress</a> = <span class="keyword">false</span>;                                   </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>};</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="};">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="class_speed_dialog.html">  142</a></span><span class="keyword">class </span><a class="code hl_define" href="_speed_dialog_8h.html#a65b52e090432de9fce66bf2af4774f3f">MYDIALOG_EXPORT</a> <a class="code hl_function" href="class_speed_dialog.html#ada6e58819a0fcd5c0f4603415a88a628">SpeedDialog</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>{</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    Q_OBJECT</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_speed_dialog.html#ada6e58819a0fcd5c0f4603415a88a628">SpeedDialog</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_function" href="class_speed_dialog.html#ada6e58819a0fcd5c0f4603415a88a628">~SpeedDialog</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_speed_dialog.html#aafd536bc6494c9bdede30af3c196768f">setState</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_speed_dialog_state.html">SpeedDialogState</a> &amp;state);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_class" href="class_speed_dialog_state.html">SpeedDialogState</a> <a class="code hl_function" href="class_speed_dialog.html#a3c705d1fd986a960971692cd99c4002e">getState</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_speed_dialog.html#afba6e95967cc3eb25fd518f7bde6ec04">initUi</a>();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_speed_dialog.html#ad0c46958bfd7ba4df70598d4ef29ce8d">paintEvent</a>(<a class="code hl_class" href="class_q_paint_event.html">QPaintEvent</a> *ev) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_speed_dialog.html#aa8f242b451f8b90c2bf758c631f72e21">eventFilter</a>(QObject *obj, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_speed_dialog.html#a734e48502f247ab4495ae832e4c2ae2e">closeEvent</a>(QCloseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>signals:</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_speed_dialog.html#ad954ebf4f6976f0c57d0b2c74267e1b8">btnTextChanged</a>(<span class="keyword">const</span> QString &amp;text);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_speed_dialog.html#a6afaf61e04a56bd5f5ce76d6a1db8cdb">aboutToClose</a>();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="comment">// void adjustmentChanged(const int&amp; adjustment); ///&lt; 实现不来，我不会</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_speed_dialog.html#a87cd65d217d9c52587820a2ffc3a8bd1">speedChanged</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; speed);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a8b39eef2ef506d1398de9a8bf30fa767">  218</a></span>    std::unique_ptr&lt;QGraphicsDropShadowEffect&gt; <a class="code hl_variable" href="class_speed_dialog.html#a8b39eef2ef506d1398de9a8bf30fa767">m_effect</a>;      </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a0d118e2d4387adbbfc83b288a34b87a8">  219</a></span>    QPushButton *<a class="code hl_variable" href="class_speed_dialog.html#a0d118e2d4387adbbfc83b288a34b87a8">m_lastBtn</a>;                                   </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#aa9ca915b5c5f1e18de39d28dd1fde73c">  220</a></span>    QPushButton *<a class="code hl_variable" href="class_speed_dialog.html#aa9ca915b5c5f1e18de39d28dd1fde73c">m_btn1</a> = <span class="keyword">nullptr</span>;                            </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a2c181058547a89e14ef5220634573205">  221</a></span>    QPushButton *<a class="code hl_variable" href="class_speed_dialog.html#a2c181058547a89e14ef5220634573205">m_btn2</a> = <span class="keyword">nullptr</span>;                            </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a49bd8954cc10ab06ffa543bf9cf6925d">  222</a></span>    QPushButton *<a class="code hl_variable" href="class_speed_dialog.html#a49bd8954cc10ab06ffa543bf9cf6925d">m_btn3</a> = <span class="keyword">nullptr</span>;                            </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a76feaa341efbaa94d955e9c14193a3d9">  223</a></span>    QPushButton *<a class="code hl_variable" href="class_speed_dialog.html#a76feaa341efbaa94d955e9c14193a3d9">m_btn4</a> = <span class="keyword">nullptr</span>;                            </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#ad99745b501cb91c1438384ebe8302ef2">  224</a></span>    <a class="code hl_class" href="class_ela_toggle_switch.html">ElaToggleSwitch</a> *<a class="code hl_variable" href="class_speed_dialog.html#ad99745b501cb91c1438384ebe8302ef2">m_switchBtn</a> = <span class="keyword">nullptr</span>;                   </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a87dd2c8d0e5618d78514cb6c684c7d1b">  225</a></span>    <a class="code hl_class" href="class_snap_slider.html">SnapSlider</a> *<a class="code hl_variable" href="class_speed_dialog.html#a87dd2c8d0e5618d78514cb6c684c7d1b">m_adjustmentSlider</a> = <span class="keyword">nullptr</span>;                 </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a759ddfde1e1b2d56e9eb15ac97e1821f">  226</a></span>    <a class="code hl_class" href="class_snap_slider.html">SnapSlider</a> *<a class="code hl_variable" href="class_speed_dialog.html#a759ddfde1e1b2d56e9eb15ac97e1821f">m_speedSlider</a> = <span class="keyword">nullptr</span>;                      </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a5a8e68787697ef753682de866ee2a1aa">  227</a></span>    QString <a class="code hl_variable" href="class_speed_dialog.html#a5a8e68787697ef753682de866ee2a1aa">m_preText</a> = <span class="stringliteral">&quot;倍速&quot;</span>;                                </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a205111094ec306a1651752bd08853012">  228</a></span>    QString <a class="code hl_variable" href="class_speed_dialog.html#a205111094ec306a1651752bd08853012">m_adjustmentText</a> = <span class="stringliteral">&quot;&quot;</span>;                            </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="class_speed_dialog.html#a67854c07afe67d706f3e4b4f1f9d2477">  229</a></span>    QString <a class="code hl_variable" href="class_speed_dialog.html#a67854c07afe67d706f3e4b4f1f9d2477">m_speedText</a> = <span class="stringliteral">&quot;&quot;</span>;                                 </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>};</div>
+</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">#endif </span><span class="comment">//SPEEDDIALOG_H</span></div>
+<div class="ttc" id="a_speed_dialog_8h_html_a65b52e090432de9fce66bf2af4774f3f"><div class="ttname"><a href="_speed_dialog_8h.html#a65b52e090432de9fce66bf2af4774f3f">MYDIALOG_EXPORT</a></div><div class="ttdeci">#define MYDIALOG_EXPORT</div><div class="ttdoc">动态库导出宏，定义库的导出/导入行为</div><div class="ttdef"><b>定义</b> SpeedDialog.h:19</div></div>
+<div class="ttc" id="a_speed_dialog_state_8h_html"><div class="ttname"><a href="_speed_dialog_state_8h.html">SpeedDialogState.h</a></div><div class="ttdoc">定义 SpeedDialogState 类，用于管理弹窗状态</div></div>
+<div class="ttc" id="aclass_ela_toggle_switch_html"><div class="ttname"><a href="class_ela_toggle_switch.html">ElaToggleSwitch</a></div><div class="ttdoc">开关控件，支持滑动动画和主题切换</div><div class="ttdef"><b>定义</b> ElaToggleSwitch.h:22</div></div>
+<div class="ttc" id="aclass_q_label_html"><div class="ttname"><a href="class_q_label.html">QLabel</a></div><div class="ttdoc">标签控件类</div></div>
+<div class="ttc" id="aclass_q_paint_event_html"><div class="ttname"><a href="class_q_paint_event.html">QPaintEvent</a></div><div class="ttdoc">绘制事件类</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a2af1ef690b0504bb681854d26146464c"><div class="ttname"><a href="class_qt_material_slider.html#a2af1ef690b0504bb681854d26146464c">QtMaterialSlider::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">鼠标释放事件</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:476</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a640ab8b18d41d6488344e10a825426ba"><div class="ttname"><a href="class_qt_material_slider.html#a640ab8b18d41d6488344e10a825426ba">QtMaterialSlider::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">鼠标移动事件</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:401</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_aca4b3f4fc19f287254cfdc870bf82ead"><div class="ttname"><a href="class_qt_material_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider::QtMaterialSlider</a></div><div class="ttdeci">QtMaterialSlider(QWidget *parent=0)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:172</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_ad42823c78fefc7a77bd5ce1d22e43a89"><div class="ttname"><a href="class_qt_material_slider.html#ad42823c78fefc7a77bd5ce1d22e43a89">QtMaterialSlider::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">鼠标按下事件</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:438</div></div>
+<div class="ttc" id="aclass_snap_slider_html"><div class="ttname"><a href="class_snap_slider.html">SnapSlider</a></div><div class="ttdoc">继承 QtMaterialSlider，支持吸附到十分之一位置的滑块</div><div class="ttdef"><b>定义</b> SpeedDialog.h:35</div></div>
+<div class="ttc" id="aclass_snap_slider_html_a26eb1890b4d4dfb7bf76fb7c44cbdebf"><div class="ttname"><a href="class_snap_slider.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf">SnapSlider::showEvent</a></div><div class="ttdeci">void showEvent(QShowEvent *event) override</div><div class="ttdoc">显示事件</div><div class="ttdef"><b>定义</b> SpeedDialog.h:120</div></div>
+<div class="ttc" id="aclass_snap_slider_html_a2de3e1806dc8e5d659fc1f35545a5b87"><div class="ttname"><a href="class_snap_slider.html#a2de3e1806dc8e5d659fc1f35545a5b87">SnapSlider::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标释放事件</div><div class="ttdef"><b>定义</b> SpeedDialog.h:107</div></div>
+<div class="ttc" id="aclass_snap_slider_html_a412b4e67de22e0994badb7619ed49e5e"><div class="ttname"><a href="class_snap_slider.html#a412b4e67de22e0994badb7619ed49e5e">SnapSlider::m_isPress</a></div><div class="ttdeci">bool m_isPress</div><div class="ttdoc">鼠标是否按下</div><div class="ttdef"><b>定义</b> SpeedDialog.h:135</div></div>
+<div class="ttc" id="aclass_snap_slider_html_a433d894967d7b26de78daa3f4731e345"><div class="ttname"><a href="class_snap_slider.html#a433d894967d7b26de78daa3f4731e345">SnapSlider::numChanged</a></div><div class="ttdeci">void numChanged(const int &amp;num)</div><div class="ttdoc">滑块值变化信号</div><div class="ttdef"><b>定义</b> cmake-build-debug-mingw/ui/MyDialog/MyDialog_autogen/ZN5RGVQAUS/moc_SpeedDialog.cpp:162</div></div>
+<div class="ttc" id="aclass_snap_slider_html_a4d538d95963e25c7a27250e441321d72"><div class="ttname"><a href="class_snap_slider.html#a4d538d95963e25c7a27250e441321d72">SnapSlider::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标移动事件</div><div class="ttdef"><b>定义</b> SpeedDialog.h:94</div></div>
+<div class="ttc" id="aclass_snap_slider_html_a54982da728d9318ca92607eb437814d5"><div class="ttname"><a href="class_snap_slider.html#a54982da728d9318ca92607eb437814d5">SnapSlider::snapToPosition</a></div><div class="ttdeci">void snapToPosition()</div><div class="ttdoc">吸附到最近的十分之一位置</div><div class="ttdef"><b>定义</b> SpeedDialog.h:49</div></div>
+<div class="ttc" id="aclass_snap_slider_html_a7523c71b2bf60975302287ec8923f80e"><div class="ttname"><a href="class_snap_slider.html#a7523c71b2bf60975302287ec8923f80e">SnapSlider::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) override</div><div class="ttdoc">鼠标按下事件</div><div class="ttdef"><b>定义</b> SpeedDialog.h:83</div></div>
+<div class="ttc" id="aclass_snap_slider_html_aca4b3f4fc19f287254cfdc870bf82ead"><div class="ttname"><a href="class_snap_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">SnapSlider::QtMaterialSlider</a></div><div class="ttdeci">QtMaterialSlider(QWidget *parent=0)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:172</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a0d118e2d4387adbbfc83b288a34b87a8"><div class="ttname"><a href="class_speed_dialog.html#a0d118e2d4387adbbfc83b288a34b87a8">SpeedDialog::m_lastBtn</a></div><div class="ttdeci">QPushButton * m_lastBtn</div><div class="ttdoc">最后选中的 DJ 按钮</div><div class="ttdef"><b>定义</b> SpeedDialog.h:219</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a205111094ec306a1651752bd08853012"><div class="ttname"><a href="class_speed_dialog.html#a205111094ec306a1651752bd08853012">SpeedDialog::m_adjustmentText</a></div><div class="ttdeci">QString m_adjustmentText</div><div class="ttdoc">升降调文本</div><div class="ttdef"><b>定义</b> SpeedDialog.h:228</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a2c181058547a89e14ef5220634573205"><div class="ttname"><a href="class_speed_dialog.html#a2c181058547a89e14ef5220634573205">SpeedDialog::m_btn2</a></div><div class="ttdeci">QPushButton * m_btn2</div><div class="ttdoc">DJ 按钮 - 社会摇</div><div class="ttdef"><b>定义</b> SpeedDialog.h:221</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a3c705d1fd986a960971692cd99c4002e"><div class="ttname"><a href="class_speed_dialog.html#a3c705d1fd986a960971692cd99c4002e">SpeedDialog::getState</a></div><div class="ttdeci">SpeedDialogState getState() const</div><div class="ttdoc">获取弹窗状态</div><div class="ttdef"><b>定义</b> SpeedDialog.cpp:106</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a49bd8954cc10ab06ffa543bf9cf6925d"><div class="ttname"><a href="class_speed_dialog.html#a49bd8954cc10ab06ffa543bf9cf6925d">SpeedDialog::m_btn3</a></div><div class="ttdeci">QPushButton * m_btn3</div><div class="ttdoc">DJ 按钮 - 慢摇</div><div class="ttdef"><b>定义</b> SpeedDialog.h:222</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a5a8e68787697ef753682de866ee2a1aa"><div class="ttname"><a href="class_speed_dialog.html#a5a8e68787697ef753682de866ee2a1aa">SpeedDialog::m_preText</a></div><div class="ttdeci">QString m_preText</div><div class="ttdoc">前缀文本</div><div class="ttdef"><b>定义</b> SpeedDialog.h:227</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a67854c07afe67d706f3e4b4f1f9d2477"><div class="ttname"><a href="class_speed_dialog.html#a67854c07afe67d706f3e4b4f1f9d2477">SpeedDialog::m_speedText</a></div><div class="ttdeci">QString m_speedText</div><div class="ttdoc">倍速文本</div><div class="ttdef"><b>定义</b> SpeedDialog.h:229</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a6afaf61e04a56bd5f5ce76d6a1db8cdb"><div class="ttname"><a href="class_speed_dialog.html#a6afaf61e04a56bd5f5ce76d6a1db8cdb">SpeedDialog::aboutToClose</a></div><div class="ttdeci">void aboutToClose()</div><div class="ttdoc">即将关闭信号</div><div class="ttdef"><b>定义</b> cmake-build-debug-mingw/ui/MyDialog/MyDialog_autogen/ZN5RGVQAUS/moc_SpeedDialog.cpp:337</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a734e48502f247ab4495ae832e4c2ae2e"><div class="ttname"><a href="class_speed_dialog.html#a734e48502f247ab4495ae832e4c2ae2e">SpeedDialog::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">关闭事件</div><div class="ttdef"><b>定义</b> SpeedDialog.cpp:473</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a759ddfde1e1b2d56e9eb15ac97e1821f"><div class="ttname"><a href="class_speed_dialog.html#a759ddfde1e1b2d56e9eb15ac97e1821f">SpeedDialog::m_speedSlider</a></div><div class="ttdeci">SnapSlider * m_speedSlider</div><div class="ttdoc">倍速滑块</div><div class="ttdef"><b>定义</b> SpeedDialog.h:226</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a76feaa341efbaa94d955e9c14193a3d9"><div class="ttname"><a href="class_speed_dialog.html#a76feaa341efbaa94d955e9c14193a3d9">SpeedDialog::m_btn4</a></div><div class="ttdeci">QPushButton * m_btn4</div><div class="ttdoc">DJ 按钮 - 抖腿</div><div class="ttdef"><b>定义</b> SpeedDialog.h:223</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a87cd65d217d9c52587820a2ffc3a8bd1"><div class="ttname"><a href="class_speed_dialog.html#a87cd65d217d9c52587820a2ffc3a8bd1">SpeedDialog::speedChanged</a></div><div class="ttdeci">void speedChanged(const float &amp;speed)</div><div class="ttdef"><b>定义</b> cmake-build-debug-mingw/ui/MyDialog/MyDialog_autogen/ZN5RGVQAUS/moc_SpeedDialog.cpp:343</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a87dd2c8d0e5618d78514cb6c684c7d1b"><div class="ttname"><a href="class_speed_dialog.html#a87dd2c8d0e5618d78514cb6c684c7d1b">SpeedDialog::m_adjustmentSlider</a></div><div class="ttdeci">SnapSlider * m_adjustmentSlider</div><div class="ttdoc">升降调滑块</div><div class="ttdef"><b>定义</b> SpeedDialog.h:225</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_a8b39eef2ef506d1398de9a8bf30fa767"><div class="ttname"><a href="class_speed_dialog.html#a8b39eef2ef506d1398de9a8bf30fa767">SpeedDialog::m_effect</a></div><div class="ttdeci">std::unique_ptr&lt; QGraphicsDropShadowEffect &gt; m_effect</div><div class="ttdoc">阴影效果</div><div class="ttdef"><b>定义</b> SpeedDialog.h:218</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_aa8f242b451f8b90c2bf758c631f72e21"><div class="ttname"><a href="class_speed_dialog.html#aa8f242b451f8b90c2bf758c631f72e21">SpeedDialog::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *obj, QEvent *event) override</div><div class="ttdoc">事件过滤</div><div class="ttdef"><b>定义</b> SpeedDialog.cpp:455</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_aa9ca915b5c5f1e18de39d28dd1fde73c"><div class="ttname"><a href="class_speed_dialog.html#aa9ca915b5c5f1e18de39d28dd1fde73c">SpeedDialog::m_btn1</a></div><div class="ttdeci">QPushButton * m_btn1</div><div class="ttdoc">DJ 按钮 - 劲爆</div><div class="ttdef"><b>定义</b> SpeedDialog.h:220</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_aafd536bc6494c9bdede30af3c196768f"><div class="ttname"><a href="class_speed_dialog.html#aafd536bc6494c9bdede30af3c196768f">SpeedDialog::setState</a></div><div class="ttdeci">void setState(const SpeedDialogState &amp;state)</div><div class="ttdoc">设置弹窗状态</div><div class="ttdef"><b>定义</b> SpeedDialog.cpp:77</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_ad0c46958bfd7ba4df70598d4ef29ce8d"><div class="ttname"><a href="class_speed_dialog.html#ad0c46958bfd7ba4df70598d4ef29ce8d">SpeedDialog::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *ev) override</div><div class="ttdoc">绘制事件</div><div class="ttdef"><b>定义</b> SpeedDialog.cpp:484</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_ad954ebf4f6976f0c57d0b2c74267e1b8"><div class="ttname"><a href="class_speed_dialog.html#ad954ebf4f6976f0c57d0b2c74267e1b8">SpeedDialog::btnTextChanged</a></div><div class="ttdeci">void btnTextChanged(const QString &amp;text)</div><div class="ttdoc">按钮文本变化信号</div><div class="ttdef"><b>定义</b> cmake-build-debug-mingw/ui/MyDialog/MyDialog_autogen/ZN5RGVQAUS/moc_SpeedDialog.cpp:330</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_ad99745b501cb91c1438384ebe8302ef2"><div class="ttname"><a href="class_speed_dialog.html#ad99745b501cb91c1438384ebe8302ef2">SpeedDialog::m_switchBtn</a></div><div class="ttdeci">ElaToggleSwitch * m_switchBtn</div><div class="ttdoc">DJ 模式开关</div><div class="ttdef"><b>定义</b> SpeedDialog.h:224</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_ada6e58819a0fcd5c0f4603415a88a628"><div class="ttname"><a href="class_speed_dialog.html#ada6e58819a0fcd5c0f4603415a88a628">SpeedDialog::SpeedDialog</a></div><div class="ttdeci">SpeedDialog(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> SpeedDialog.cpp:36</div></div>
+<div class="ttc" id="aclass_speed_dialog_html_afba6e95967cc3eb25fd518f7bde6ec04"><div class="ttname"><a href="class_speed_dialog.html#afba6e95967cc3eb25fd518f7bde6ec04">SpeedDialog::initUi</a></div><div class="ttdeci">void initUi()</div><div class="ttdoc">初始化界面</div><div class="ttdef"><b>定义</b> SpeedDialog.cpp:128</div></div>
+<div class="ttc" id="aclass_speed_dialog_state_html"><div class="ttname"><a href="class_speed_dialog_state.html">SpeedDialogState</a></div><div class="ttdoc">管理 SpeedDialog 的状态，包含 DJ 模式和滑块值</div><div class="ttdef"><b>定义</b> SpeedDialogState.h:29</div></div>
+<div class="ttc" id="aqtmaterialslider_8h_html"><div class="ttname"><a href="qtmaterialslider_8h.html">qtmaterialslider.h</a></div><div class="ttdoc">定义 QtMaterialSlider 类，Material 风格滑块控件</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_d50f460aa812bcbc27a8eae44a412448.html">MyDialog</a></li><li class="navelem"><a class="el" href="dir_a9b7c549775b88a9a2dbd570754ddd01.html">SpeedDialog</a></li><li class="navelem"><a class="el" href="_speed_dialog_8h.html">SpeedDialog.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

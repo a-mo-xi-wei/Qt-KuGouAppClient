@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: qtmaterialslider.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('qtmaterialslider_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">qtmaterialslider.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="qtmaterialslider_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef QTMATERIALSLIDER_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define QTMATERIALSLIDER_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QAbstractSlider&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QScopedPointer&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="qtmaterialslider_8h.html#a5ce550d243c8866834e373dc93202fb4">   19</a></span><span class="preprocessor">#define QT_MATERIAL_SLIDER_MARGIN 30</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#if defined(QTMATERIALWIDGET_LIBRARY)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="qtmaterialslider_8h.html#a8763e143fe5ea4f504ee20145af89474">   28</a></span><span class="preprocessor">#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">class </span><a class="code hl_class" href="class_qt_material_slider_private.html">QtMaterialSliderPrivate</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_qt_material_slider.html">   37</a></span><span class="keyword">class </span><a class="code hl_define" href="qtmaterialslider_8h.html#a8763e143fe5ea4f504ee20145af89474">QTMATERIALWIDGET_EXPORT</a> <a class="code hl_function" href="class_qt_material_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider</a> : <span class="keyword">public</span> QAbstractSlider {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    Q_OBJECT</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_qt_material_slider.html#a83920caca2e4ff2d2bc32e8c06ca3a5f">   40</a></span>    Q_PROPERTY(QColor <a class="code hl_property" href="class_qt_material_slider.html#a83920caca2e4ff2d2bc32e8c06ca3a5f">thumbColor</a> WRITE <a class="code hl_function" href="class_qt_material_slider.html#a2b9e2c6696613f9e9aca5a40ea096918">setThumbColor</a> READ <a class="code hl_property" href="class_qt_material_slider.html#a83920caca2e4ff2d2bc32e8c06ca3a5f">thumbColor</a>) </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_qt_material_slider.html#a99f67c5538312c8bc1fa57f9bde32352">   41</a></span>    Q_PROPERTY(QColor <a class="code hl_property" href="class_qt_material_slider.html#a99f67c5538312c8bc1fa57f9bde32352">trackColor</a> WRITE <a class="code hl_function" href="class_qt_material_slider.html#a157fee591a9834f5a7a0245c65cac6ab">setTrackColor</a> READ <a class="code hl_property" href="class_qt_material_slider.html#a99f67c5538312c8bc1fa57f9bde32352">trackColor</a>) </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_qt_material_slider.html#ad35341a49be1872f98602d8d53815054">   42</a></span>    Q_PROPERTY(QColor <a class="code hl_property" href="class_qt_material_slider.html#ad35341a49be1872f98602d8d53815054">disabledColor</a> WRITE <a class="code hl_function" href="class_qt_material_slider.html#a9e602a8bafb2087f01c50b99901f7539">setDisabledColor</a> READ <a class="code hl_property" href="class_qt_material_slider.html#ad35341a49be1872f98602d8d53815054">disabledColor</a>) </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>public:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    explicit <a class="code hl_function" href="class_qt_material_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider</a>(QWidget *parent = 0);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    ~<a class="code hl_function" href="class_qt_material_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#ac18ecdbb1119e3d1ce7ce2de14a7a480">setUseThemeColors</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_qt_material_slider.html#ad7b84e79d6f30f98abd019b886d8a2b5">useThemeColors</a>() const;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a2b9e2c6696613f9e9aca5a40ea096918">setThumbColor</a>(const QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    QColor <a class="code hl_property" href="class_qt_material_slider.html#a83920caca2e4ff2d2bc32e8c06ca3a5f">thumbColor</a>() const;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a157fee591a9834f5a7a0245c65cac6ab">setTrackColor</a>(const QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    QColor <a class="code hl_property" href="class_qt_material_slider.html#a99f67c5538312c8bc1fa57f9bde32352">trackColor</a>() const;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a9e602a8bafb2087f01c50b99901f7539">setDisabledColor</a>(const QColor &amp;<a class="code hl_enumeration" href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    QColor <a class="code hl_property" href="class_qt_material_slider.html#ad35341a49be1872f98602d8d53815054">disabledColor</a>() const;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#af6907beb3c8db0b1148759f1b7540eae">setPageStepMode</a>(<span class="keywordtype">bool</span> pageStep);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_qt_material_slider.html#a6755c6d675bbb3ba9f6fa60db4f36786">pageStepMode</a>() const;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    QSize <a class="code hl_function" href="class_qt_material_slider.html#a929d400a908144fe015d16fc10026a82">minimumSizeHint</a>() const Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a908b8712c9a7e277e2b06bc448e54b25">setInvertedAppearance</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>protected:</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a02f607a38780b689371ce743c5e9d109">sliderChange</a>(SliderChange change) Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a640ab8b18d41d6488344e10a825426ba">mouseMoveEvent</a>(QMouseEvent *event) Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#ad42823c78fefc7a77bd5ce1d22e43a89">mousePressEvent</a>(QMouseEvent *event) Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a2af1ef690b0504bb681854d26146464c">mouseReleaseEvent</a>(QMouseEvent *event) Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a151107dacc9d04b1eec4f1b431e61c40">leaveEvent</a>(QEvent *event) Q_DECL_OVERRIDE;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_material_slider.html#a6e0f6973b0542076789befbff6a42cc9">updateThumbOffset</a>();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="class_qt_material_slider.html#a78a67b4fd1e9ff5c1e960e0b04fa09e4">  169</a></span>    const QScopedPointer&lt;<a class="code hl_class" href="class_qt_material_slider_private.html">QtMaterialSliderPrivate</a>&gt; <a class="code hl_variable" href="class_qt_material_slider.html#a78a67b4fd1e9ff5c1e960e0b04fa09e4">d_ptr</a>; </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>private:</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    Q_DISABLE_COPY(<a class="code hl_function" href="class_qt_material_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider</a>) </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    Q_DECLARE_PRIVATE(<a class="code hl_function" href="class_qt_material_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider</a>) </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>};</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#endif </span><span class="comment">// QTMATERIALSLIDER_H</span></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a02f607a38780b689371ce743c5e9d109"><div class="ttname"><a href="class_qt_material_slider.html#a02f607a38780b689371ce743c5e9d109">QtMaterialSlider::sliderChange</a></div><div class="ttdeci">void sliderChange(SliderChange change) Q_DECL_OVERRIDE</div><div class="ttdoc">滑块变化处理</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:361</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a151107dacc9d04b1eec4f1b431e61c40"><div class="ttname"><a href="class_qt_material_slider.html#a151107dacc9d04b1eec4f1b431e61c40">QtMaterialSlider::leaveEvent</a></div><div class="ttdeci">void leaveEvent(QEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">鼠标离开事件</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:497</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a157fee591a9834f5a7a0245c65cac6ab"><div class="ttname"><a href="class_qt_material_slider.html#a157fee591a9834f5a7a0245c65cac6ab">QtMaterialSlider::setTrackColor</a></div><div class="ttdeci">void setTrackColor(const QColor &amp;color)</div><div class="ttdoc">设置轨道颜色</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:251</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a2af1ef690b0504bb681854d26146464c"><div class="ttname"><a href="class_qt_material_slider.html#a2af1ef690b0504bb681854d26146464c">QtMaterialSlider::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">鼠标释放事件</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:476</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a2b9e2c6696613f9e9aca5a40ea096918"><div class="ttname"><a href="class_qt_material_slider.html#a2b9e2c6696613f9e9aca5a40ea096918">QtMaterialSlider::setThumbColor</a></div><div class="ttdeci">void setThumbColor(const QColor &amp;color)</div><div class="ttdoc">设置滑块颜色</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:218</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a640ab8b18d41d6488344e10a825426ba"><div class="ttname"><a href="class_qt_material_slider.html#a640ab8b18d41d6488344e10a825426ba">QtMaterialSlider::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">鼠标移动事件</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:401</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a6755c6d675bbb3ba9f6fa60db4f36786"><div class="ttname"><a href="class_qt_material_slider.html#a6755c6d675bbb3ba9f6fa60db4f36786">QtMaterialSlider::pageStepMode</a></div><div class="ttdeci">bool pageStepMode() const</div><div class="ttdoc">获取页面步进模式</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:328</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a6e0f6973b0542076789befbff6a42cc9"><div class="ttname"><a href="class_qt_material_slider.html#a6e0f6973b0542076789befbff6a42cc9">QtMaterialSlider::updateThumbOffset</a></div><div class="ttdeci">void updateThumbOffset()</div><div class="ttdoc">更新滑块偏移</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:520</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a78a67b4fd1e9ff5c1e960e0b04fa09e4"><div class="ttname"><a href="class_qt_material_slider.html#a78a67b4fd1e9ff5c1e960e0b04fa09e4">QtMaterialSlider::d_ptr</a></div><div class="ttdeci">const QScopedPointer&lt; QtMaterialSliderPrivate &gt; d_ptr</div><div class="ttdoc">私有类指针</div><div class="ttdef"><b>定义</b> qtmaterialslider.h:169</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a83920caca2e4ff2d2bc32e8c06ca3a5f"><div class="ttname"><a href="class_qt_material_slider.html#a83920caca2e4ff2d2bc32e8c06ca3a5f">QtMaterialSlider::thumbColor</a></div><div class="ttdeci">QColor thumbColor</div><div class="ttdoc">滑块颜色属性</div><div class="ttdef"><b>定义</b> qtmaterialslider.h:40</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a908b8712c9a7e277e2b06bc448e54b25"><div class="ttname"><a href="class_qt_material_slider.html#a908b8712c9a7e277e2b06bc448e54b25">QtMaterialSlider::setInvertedAppearance</a></div><div class="ttdeci">void setInvertedAppearance(bool value)</div><div class="ttdoc">设置反向外观</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:350</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a929d400a908144fe015d16fc10026a82"><div class="ttname"><a href="class_qt_material_slider.html#a929d400a908144fe015d16fc10026a82">QtMaterialSlider::minimumSizeHint</a></div><div class="ttdeci">QSize minimumSizeHint() const Q_DECL_OVERRIDE</div><div class="ttdoc">获取最小尺寸提示</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:339</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a99f67c5538312c8bc1fa57f9bde32352"><div class="ttname"><a href="class_qt_material_slider.html#a99f67c5538312c8bc1fa57f9bde32352">QtMaterialSlider::trackColor</a></div><div class="ttdeci">QColor trackColor</div><div class="ttdoc">轨道颜色属性</div><div class="ttdef"><b>定义</b> qtmaterialslider.h:41</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_a9e602a8bafb2087f01c50b99901f7539"><div class="ttname"><a href="class_qt_material_slider.html#a9e602a8bafb2087f01c50b99901f7539">QtMaterialSlider::setDisabledColor</a></div><div class="ttdeci">void setDisabledColor(const QColor &amp;color)</div><div class="ttdoc">设置禁用状态颜色</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:284</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_ac18ecdbb1119e3d1ce7ce2de14a7a480"><div class="ttname"><a href="class_qt_material_slider.html#ac18ecdbb1119e3d1ce7ce2de14a7a480">QtMaterialSlider::setUseThemeColors</a></div><div class="ttdeci">void setUseThemeColors(bool value)</div><div class="ttdoc">设置是否使用主题颜色</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:190</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_aca4b3f4fc19f287254cfdc870bf82ead"><div class="ttname"><a href="class_qt_material_slider.html#aca4b3f4fc19f287254cfdc870bf82ead">QtMaterialSlider::QtMaterialSlider</a></div><div class="ttdeci">QtMaterialSlider(QWidget *parent=0)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:172</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_ad35341a49be1872f98602d8d53815054"><div class="ttname"><a href="class_qt_material_slider.html#ad35341a49be1872f98602d8d53815054">QtMaterialSlider::disabledColor</a></div><div class="ttdeci">QColor disabledColor</div><div class="ttdoc">禁用状态颜色属性</div><div class="ttdef"><b>定义</b> qtmaterialslider.h:42</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_ad42823c78fefc7a77bd5ce1d22e43a89"><div class="ttname"><a href="class_qt_material_slider.html#ad42823c78fefc7a77bd5ce1d22e43a89">QtMaterialSlider::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE</div><div class="ttdoc">鼠标按下事件</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:438</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_ad7b84e79d6f30f98abd019b886d8a2b5"><div class="ttname"><a href="class_qt_material_slider.html#ad7b84e79d6f30f98abd019b886d8a2b5">QtMaterialSlider::useThemeColors</a></div><div class="ttdeci">bool useThemeColors() const</div><div class="ttdoc">获取是否使用主题颜色</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:207</div></div>
+<div class="ttc" id="aclass_qt_material_slider_html_af6907beb3c8db0b1148759f1b7540eae"><div class="ttname"><a href="class_qt_material_slider.html#af6907beb3c8db0b1148759f1b7540eae">QtMaterialSlider::setPageStepMode</a></div><div class="ttdeci">void setPageStepMode(bool pageStep)</div><div class="ttdoc">设置页面步进模式</div><div class="ttdef"><b>定义</b> qtmaterialslider.cpp:317</div></div>
+<div class="ttc" id="aclass_qt_material_slider_private_html"><div class="ttname"><a href="class_qt_material_slider_private.html">QtMaterialSliderPrivate</a></div><div class="ttdoc">滑块控件的私有实现</div><div class="ttdef"><b>定义</b> qtmaterialslider_p.h:27</div></div>
+<div class="ttc" id="acolor_8h_html_a80d1dc5f416b97f92939a4166d41203c"><div class="ttname"><a href="color_8h.html#a80d1dc5f416b97f92939a4166d41203c">color</a></div><div class="ttdeci">color</div><div class="ttdef"><b>定义</b> color.h:16</div></div>
+<div class="ttc" id="aqtmaterialslider_8h_html_a8763e143fe5ea4f504ee20145af89474"><div class="ttname"><a href="qtmaterialslider_8h.html#a8763e143fe5ea4f504ee20145af89474">QTMATERIALWIDGET_EXPORT</a></div><div class="ttdeci">#define QTMATERIALWIDGET_EXPORT</div><div class="ttdoc">动态库导出宏，定义库的导出/导入行为</div><div class="ttdef"><b>定义</b> qtmaterialslider.h:28</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_b95b73a9da1c57040a996fcdd774df29.html">QtMaterialWidget</a></li><li class="navelem"><a class="el" href="dir_1cbd6db815ded4908c72a914d82ba7c2.html">QtMaterialSlider</a></li><li class="navelem"><a class="el" href="qtmaterialslider_8h.html">qtmaterialslider.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

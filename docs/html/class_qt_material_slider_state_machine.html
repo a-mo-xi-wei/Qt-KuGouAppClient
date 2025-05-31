@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: QtMaterialSliderStateMachine类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_qt_material_slider_state_machine.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_qt_material_slider_state_machine-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">QtMaterialSliderStateMachine类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>滑块控件的状态机，管理交互状态  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qtmaterialslider__internal_8h_source.html">qtmaterialslider_internal.h</a>&gt;</code></p>
+<div class="dynheader">
+类 QtMaterialSliderStateMachine 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_slider_state_machine__inherit__graph.png" border="0" usemap="#a_qt_material_slider_state_machine_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_qt_material_slider_state_machine_inherit__map" id="a_qt_material_slider_state_machine_inherit__map">
+<area shape="rect" title="滑块控件的状态机，管理交互状态" alt="" coords="5,80,200,107"/>
+<area shape="rect" title=" " alt="" coords="47,5,158,32"/>
+<area shape="poly" title=" " alt="" coords="105,48,105,80,100,80,100,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+QtMaterialSliderStateMachine 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_slider_state_machine__coll__graph.png" border="0" usemap="#a_qt_material_slider_state_machine_coll__map" alt="Collaboration graph"/></div>
+<map name="a_qt_material_slider_state_machine_coll__map" id="a_qt_material_slider_state_machine_coll__map">
+<area shape="rect" title="滑块控件的状态机，管理交互状态" alt="" coords="108,353,302,380"/>
+<area shape="rect" title=" " alt="" coords="5,263,117,289"/>
+<area shape="poly" title=" " alt="" coords="91,296,137,327,180,350,178,355,134,332,88,301"/>
+<area shape="rect" href="class_qt_material_slider.html" title="Material 风格滑块控件" alt="" coords="164,81,278,108"/>
+<area shape="poly" title=" " alt="" coords="216,124,205,170,196,223,195,260,197,296,205,352,200,353,191,297,189,260,191,222,200,169,211,122"/>
+<area shape="rect" href="class_qt_material_slider_thumb.html" title="滑块控件的手柄，绘制滑块和光晕" alt="" coords="349,172,504,199"/>
+<area shape="poly" title=" " alt="" coords="265,112,398,169,396,174,263,117"/>
+<area shape="rect" href="class_qt_material_slider_track.html" title="滑块控件的轨道，绘制轨道区域" alt="" coords="215,263,363,289"/>
+<area shape="poly" title=" " alt="" coords="226,123,231,159,242,198,261,233,281,261,276,264,256,235,238,200,226,160,221,124"/>
+<area shape="rect" title=" " alt="" coords="164,5,278,32"/>
+<area shape="poly" title=" " alt="" coords="224,47,224,81,218,81,218,47"/>
+<area shape="poly" title=" " alt="" coords="426,215,418,240,401,268,376,291,347,313,315,331,253,355,251,350,312,326,344,309,373,287,396,265,413,238,421,213"/>
+<area shape="poly" title=" " alt="" coords="388,208,359,225,305,265,302,260,356,220,385,204"/>
+<area shape="rect" href="class_qt_material_overlay_widget.html" title="覆盖层控件类，继承自 QWidget，用于在父窗口上绘制覆盖效果" alt="" coords="312,81,479,108"/>
+<area shape="poly" title=" " alt="" coords="407,122,424,171,419,172,402,124"/>
+<area shape="poly" title=" " alt="" coords="377,121,339,173,314,222,296,263,291,261,309,220,335,171,373,118"/>
+<area shape="rect" title=" " alt="" coords="360,5,432,32"/>
+<area shape="poly" title=" " alt="" coords="398,47,398,81,393,81,393,47"/>
+<area shape="poly" title=" " alt="" coords="268,303,219,355,215,351,264,299"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aebed158738fa7c42cf77203f698682ba" id="r_aebed158738fa7c42cf77203f698682ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebed158738fa7c42cf77203f698682ba">QtMaterialSliderStateMachine</a> (<a class="el" href="class_qt_material_slider.html">QtMaterialSlider</a> *slider, <a class="el" href="class_qt_material_slider_thumb.html">QtMaterialSliderThumb</a> *thumb, <a class="el" href="class_qt_material_slider_track.html">QtMaterialSliderTrack</a> *track)</td></tr>
+<tr class="memdesc:aebed158738fa7c42cf77203f698682ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:aebed158738fa7c42cf77203f698682ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a089c1657ed04a07c427c053f0abe7299" id="r_a089c1657ed04a07c427c053f0abe7299"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a089c1657ed04a07c427c053f0abe7299">~QtMaterialSliderStateMachine</a> ()</td></tr>
+<tr class="memdesc:a089c1657ed04a07c427c053f0abe7299"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a089c1657ed04a07c427c053f0abe7299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f50769ecee8047c922546c8b7fd0fcc" id="r_a1f50769ecee8047c922546c8b7fd0fcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f50769ecee8047c922546c8b7fd0fcc">setupProperties</a> ()</td></tr>
+<tr class="memdesc:a1f50769ecee8047c922546c8b7fd0fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置状态机属性  <br /></td></tr>
+<tr class="separator:a1f50769ecee8047c922546c8b7fd0fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a750bbee0306fe8184c9b5e40471cd5a6" id="r_a750bbee0306fe8184c9b5e40471cd5a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_qt_material_slider.html">QtMaterialSlider</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a750bbee0306fe8184c9b5e40471cd5a6">m_slider</a></td></tr>
+<tr class="memdesc:a750bbee0306fe8184c9b5e40471cd5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; 禁用拷贝  <br /></td></tr>
+<tr class="separator:a750bbee0306fe8184c9b5e40471cd5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae87a01c08191367ba422aeed30826d42" id="r_ae87a01c08191367ba422aeed30826d42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_qt_material_slider_thumb.html">QtMaterialSliderThumb</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae87a01c08191367ba422aeed30826d42">m_thumb</a></td></tr>
+<tr class="memdesc:ae87a01c08191367ba422aeed30826d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑块对象  <br /></td></tr>
+<tr class="separator:ae87a01c08191367ba422aeed30826d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37fe0584ef4692cec2200c1931aa2ef" id="r_ae37fe0584ef4692cec2200c1931aa2ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_qt_material_slider_track.html">QtMaterialSliderTrack</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae37fe0584ef4692cec2200c1931aa2ef">m_track</a></td></tr>
+<tr class="memdesc:ae37fe0584ef4692cec2200c1931aa2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">轨道对象  <br /></td></tr>
+<tr class="separator:ae37fe0584ef4692cec2200c1931aa2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab13572acbeb413604ec99db54d044d" id="r_a5ab13572acbeb413604ec99db54d044d"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ab13572acbeb413604ec99db54d044d">m_topState</a></td></tr>
+<tr class="memdesc:a5ab13572acbeb413604ec99db54d044d"><td class="mdescLeft">&#160;</td><td class="mdescRight">顶层状态  <br /></td></tr>
+<tr class="separator:a5ab13572acbeb413604ec99db54d044d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db36022bed8e823c22fb5044a57983b" id="r_a9db36022bed8e823c22fb5044a57983b"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9db36022bed8e823c22fb5044a57983b">m_fstState</a></td></tr>
+<tr class="memdesc:a9db36022bed8e823c22fb5044a57983b"><td class="mdescLeft">&#160;</td><td class="mdescRight">第一状态组  <br /></td></tr>
+<tr class="separator:a9db36022bed8e823c22fb5044a57983b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8fdeb45199180dc7c404235a82b747" id="r_a2e8fdeb45199180dc7c404235a82b747"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e8fdeb45199180dc7c404235a82b747">m_sndState</a></td></tr>
+<tr class="memdesc:a2e8fdeb45199180dc7c404235a82b747"><td class="mdescLeft">&#160;</td><td class="mdescRight">第二状态组  <br /></td></tr>
+<tr class="separator:a2e8fdeb45199180dc7c404235a82b747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a691726f96608a17250a7666764233" id="r_a46a691726f96608a17250a7666764233"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46a691726f96608a17250a7666764233">m_inactiveState</a></td></tr>
+<tr class="memdesc:a46a691726f96608a17250a7666764233"><td class="mdescLeft">&#160;</td><td class="mdescRight">非激活状态  <br /></td></tr>
+<tr class="separator:a46a691726f96608a17250a7666764233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10987eac6025e89d38dfe831dfc9ce68" id="r_a10987eac6025e89d38dfe831dfc9ce68"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10987eac6025e89d38dfe831dfc9ce68">m_focusState</a></td></tr>
+<tr class="memdesc:a10987eac6025e89d38dfe831dfc9ce68"><td class="mdescLeft">&#160;</td><td class="mdescRight">焦点状态  <br /></td></tr>
+<tr class="separator:a10987eac6025e89d38dfe831dfc9ce68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c503f7538160ec681858ae099c942ff" id="r_a0c503f7538160ec681858ae099c942ff"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c503f7538160ec681858ae099c942ff">m_slidingState</a></td></tr>
+<tr class="memdesc:a0c503f7538160ec681858ae099c942ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑动状态  <br /></td></tr>
+<tr class="separator:a0c503f7538160ec681858ae099c942ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f4a24564cab8923ebf62597cc11916" id="r_ad0f4a24564cab8923ebf62597cc11916"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0f4a24564cab8923ebf62597cc11916">m_pulseOutState</a></td></tr>
+<tr class="memdesc:ad0f4a24564cab8923ebf62597cc11916"><td class="mdescLeft">&#160;</td><td class="mdescRight">光晕放大状态  <br /></td></tr>
+<tr class="separator:ad0f4a24564cab8923ebf62597cc11916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81166bfc010cb011471a9c13af400d55" id="r_a81166bfc010cb011471a9c13af400d55"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81166bfc010cb011471a9c13af400d55">m_pulseInState</a></td></tr>
+<tr class="memdesc:a81166bfc010cb011471a9c13af400d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">光晕缩小状态  <br /></td></tr>
+<tr class="separator:a81166bfc010cb011471a9c13af400d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b8a52be17c414abb50061cf2d1353f" id="r_a93b8a52be17c414abb50061cf2d1353f"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93b8a52be17c414abb50061cf2d1353f">m_minState</a></td></tr>
+<tr class="memdesc:a93b8a52be17c414abb50061cf2d1353f"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小值状态  <br /></td></tr>
+<tr class="separator:a93b8a52be17c414abb50061cf2d1353f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd6139c71b1094368247fc352f972043" id="r_afd6139c71b1094368247fc352f972043"><td class="memItemLeft" align="right" valign="top">QState *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd6139c71b1094368247fc352f972043">m_normalState</a></td></tr>
+<tr class="memdesc:afd6139c71b1094368247fc352f972043"><td class="mdescLeft">&#160;</td><td class="mdescRight">正常状态  <br /></td></tr>
+<tr class="separator:afd6139c71b1094368247fc352f972043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>滑块控件的状态机，管理交互状态 </p>
+<dl class="section note"><dt>注解</dt><dd>内部使用 </dd></dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aebed158738fa7c42cf77203f698682ba" name="aebed158738fa7c42cf77203f698682ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebed158738fa7c42cf77203f698682ba">&#9670;&#160;</a></span>QtMaterialSliderStateMachine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_slider_state_machine.html">QtMaterialSliderStateMachine</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_qt_material_slider.html">QtMaterialSlider</a> *</td>          <td class="paramname"><span class="paramname"><em>slider</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_qt_material_slider_thumb.html">QtMaterialSliderThumb</a> *</td>          <td class="paramname"><span class="paramname"><em>thumb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_qt_material_slider_track.html">QtMaterialSliderTrack</a> *</td>          <td class="paramname"><span class="paramname"><em>track</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slider</td><td>滑块控件 </td></tr>
+    <tr><td class="paramname">thumb</td><td>滑块对象 </td></tr>
+    <tr><td class="paramname">track</td><td>轨道对象</td></tr>
+    <tr><td class="paramname">slider</td><td>滑块控件 </td></tr>
+    <tr><td class="paramname">thumb</td><td>滑块对象 </td></tr>
+    <tr><td class="paramname">track</td><td>轨道对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>初始化并行状态机，包含焦点、滑动和最小值状态 </dd></dl>
+<p>&lt; 添加顶层状态</p>
+<p>&lt; 设置初始状态</p>
+<p>&lt; 设置第一状态组初始状态</p>
+<p>&lt; 设置焦点状态初始状态</p>
+<p>&lt; 非激活状态无光晕</p>
+<p>&lt; 滑动状态无光晕</p>
+<p>&lt; 光晕放大状态</p>
+<p>&lt; 光晕缩小状态</p>
+<p>&lt; 非激活状态滑块直径</p>
+<p>&lt; 焦点状态滑块直径</p>
+<p>&lt; 滑动状态滑块直径</p>
+<p>&lt; 最小值边框宽度</p>
+<p>&lt; 正常状态无边框</p>
+<p>&lt; 设置第二状态组初始状态</p>
+<p>&lt; 设置状态机属性</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_slider_state_machine_aebed158738fa7c42cf77203f698682ba_cgraph.png" border="0" usemap="#aclass_qt_material_slider_state_machine_aebed158738fa7c42cf77203f698682ba_cgraph" alt=""/></div>
+<map name="aclass_qt_material_slider_state_machine_aebed158738fa7c42cf77203f698682ba_cgraph" id="aclass_qt_material_slider_state_machine_aebed158738fa7c42cf77203f698682ba_cgraph">
+<area shape="rect" title="构造函数" alt="" coords="5,5,200,32"/>
+<area shape="rect" href="class_qt_material_slider_state_machine.html#a1f50769ecee8047c922546c8b7fd0fcc" title="设置状态机属性" alt="" coords="248,5,360,32"/>
+<area shape="poly" title=" " alt="" coords="200,16,232,16,232,21,200,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a089c1657ed04a07c427c053f0abe7299" name="a089c1657ed04a07c427c053f0abe7299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a089c1657ed04a07c427c053f0abe7299">&#9670;&#160;</a></span>~QtMaterialSliderStateMachine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_qt_material_slider_state_machine.html">QtMaterialSliderStateMachine</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a1f50769ecee8047c922546c8b7fd0fcc" name="a1f50769ecee8047c922546c8b7fd0fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f50769ecee8047c922546c8b7fd0fcc">&#9670;&#160;</a></span>setupProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setupProperties </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置状态机属性 </p>
+<dl class="section note"><dt>注解</dt><dd>配置轨道和滑块的颜色属性 </dd></dl>
+<p>&lt; 获取轨道颜色</p>
+<p>&lt; 获取滑块颜色</p>
+<p>&lt; 非激活状态轨道颜色</p>
+<p>&lt; 滑动状态轨道颜色</p>
+<p>&lt; 焦点状态轨道颜色</p>
+<p>&lt; 获取背景颜色</p>
+<p>&lt; 使用父控件背景色</p>
+<p>&lt; 最小值状态填充颜色</p>
+<p>&lt; 最小值状态光晕颜色</p>
+<p>&lt; 最小值状态边框颜色</p>
+<p>&lt; 正常状态填充颜色</p>
+<p>&lt; 正常状态光晕颜色</p>
+<p>&lt; 正常状态边框颜色</p>
+<p>&lt; 触发重绘</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_qt_material_slider_state_machine_a1f50769ecee8047c922546c8b7fd0fcc_icgraph.png" border="0" usemap="#aclass_qt_material_slider_state_machine_a1f50769ecee8047c922546c8b7fd0fcc_icgraph" alt=""/></div>
+<map name="aclass_qt_material_slider_state_machine_a1f50769ecee8047c922546c8b7fd0fcc_icgraph" id="aclass_qt_material_slider_state_machine_a1f50769ecee8047c922546c8b7fd0fcc_icgraph">
+<area shape="rect" title="设置状态机属性" alt="" coords="248,5,360,32"/>
+<area shape="rect" href="class_qt_material_slider_state_machine.html#aebed158738fa7c42cf77203f698682ba" title="构造函数" alt="" coords="5,5,200,32"/>
+<area shape="poly" title=" " alt="" coords="232,21,200,21,200,16,232,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a10987eac6025e89d38dfe831dfc9ce68" name="a10987eac6025e89d38dfe831dfc9ce68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10987eac6025e89d38dfe831dfc9ce68">&#9670;&#160;</a></span>m_focusState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_focusState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>焦点状态 </p>
+
+</div>
+</div>
+<a id="a9db36022bed8e823c22fb5044a57983b" name="a9db36022bed8e823c22fb5044a57983b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db36022bed8e823c22fb5044a57983b">&#9670;&#160;</a></span>m_fstState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_fstState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>第一状态组 </p>
+
+</div>
+</div>
+<a id="a46a691726f96608a17250a7666764233" name="a46a691726f96608a17250a7666764233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a691726f96608a17250a7666764233">&#9670;&#160;</a></span>m_inactiveState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_inactiveState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>非激活状态 </p>
+
+</div>
+</div>
+<a id="a93b8a52be17c414abb50061cf2d1353f" name="a93b8a52be17c414abb50061cf2d1353f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93b8a52be17c414abb50061cf2d1353f">&#9670;&#160;</a></span>m_minState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_minState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最小值状态 </p>
+
+</div>
+</div>
+<a id="afd6139c71b1094368247fc352f972043" name="afd6139c71b1094368247fc352f972043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd6139c71b1094368247fc352f972043">&#9670;&#160;</a></span>m_normalState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_normalState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>正常状态 </p>
+
+</div>
+</div>
+<a id="a81166bfc010cb011471a9c13af400d55" name="a81166bfc010cb011471a9c13af400d55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81166bfc010cb011471a9c13af400d55">&#9670;&#160;</a></span>m_pulseInState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_pulseInState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>光晕缩小状态 </p>
+
+</div>
+</div>
+<a id="ad0f4a24564cab8923ebf62597cc11916" name="ad0f4a24564cab8923ebf62597cc11916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0f4a24564cab8923ebf62597cc11916">&#9670;&#160;</a></span>m_pulseOutState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_pulseOutState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>光晕放大状态 </p>
+
+</div>
+</div>
+<a id="a750bbee0306fe8184c9b5e40471cd5a6" name="a750bbee0306fe8184c9b5e40471cd5a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750bbee0306fe8184c9b5e40471cd5a6">&#9670;&#160;</a></span>m_slider</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_slider.html">QtMaterialSlider</a>* const m_slider</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&lt; 禁用拷贝 </p>
+<p>滑块控件 </p>
+
+</div>
+</div>
+<a id="a0c503f7538160ec681858ae099c942ff" name="a0c503f7538160ec681858ae099c942ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c503f7538160ec681858ae099c942ff">&#9670;&#160;</a></span>m_slidingState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_slidingState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滑动状态 </p>
+
+</div>
+</div>
+<a id="a2e8fdeb45199180dc7c404235a82b747" name="a2e8fdeb45199180dc7c404235a82b747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e8fdeb45199180dc7c404235a82b747">&#9670;&#160;</a></span>m_sndState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_sndState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>第二状态组 </p>
+
+</div>
+</div>
+<a id="ae87a01c08191367ba422aeed30826d42" name="ae87a01c08191367ba422aeed30826d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae87a01c08191367ba422aeed30826d42">&#9670;&#160;</a></span>m_thumb</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_slider_thumb.html">QtMaterialSliderThumb</a>* const m_thumb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>滑块对象 </p>
+
+</div>
+</div>
+<a id="a5ab13572acbeb413604ec99db54d044d" name="a5ab13572acbeb413604ec99db54d044d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab13572acbeb413604ec99db54d044d">&#9670;&#160;</a></span>m_topState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QState* const m_topState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>顶层状态 </p>
+
+</div>
+</div>
+<a id="ae37fe0584ef4692cec2200c1931aa2ef" name="ae37fe0584ef4692cec2200c1931aa2ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37fe0584ef4692cec2200c1931aa2ef">&#9670;&#160;</a></span>m_track</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_qt_material_slider_track.html">QtMaterialSliderTrack</a>* const m_track</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>轨道对象 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="qtmaterialslider__internal_8h_source.html">qtmaterialslider_internal.h</a></li>
+<li><a class="el" href="qtmaterialslider__internal_8cpp.html">qtmaterialslider_internal.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_qt_material_slider_state_machine.html">QtMaterialSliderStateMachine</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

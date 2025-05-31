@@ -1,0 +1,26 @@
+var class_speed_dialog =
+[
+    [ "SpeedDialog", "class_speed_dialog.html#ada6e58819a0fcd5c0f4603415a88a628", null ],
+    [ "~SpeedDialog", "class_speed_dialog.html#a6368785974e5ed55054ecb7f05b515c5", null ],
+    [ "aboutToClose", "class_speed_dialog.html#a6afaf61e04a56bd5f5ce76d6a1db8cdb", null ],
+    [ "btnTextChanged", "class_speed_dialog.html#ad954ebf4f6976f0c57d0b2c74267e1b8", null ],
+    [ "closeEvent", "class_speed_dialog.html#a734e48502f247ab4495ae832e4c2ae2e", null ],
+    [ "eventFilter", "class_speed_dialog.html#aa8f242b451f8b90c2bf758c631f72e21", null ],
+    [ "getState", "class_speed_dialog.html#a3c705d1fd986a960971692cd99c4002e", null ],
+    [ "initUi", "class_speed_dialog.html#afba6e95967cc3eb25fd518f7bde6ec04", null ],
+    [ "paintEvent", "class_speed_dialog.html#ad0c46958bfd7ba4df70598d4ef29ce8d", null ],
+    [ "setState", "class_speed_dialog.html#aafd536bc6494c9bdede30af3c196768f", null ],
+    [ "speedChanged", "class_speed_dialog.html#a87cd65d217d9c52587820a2ffc3a8bd1", null ],
+    [ "m_adjustmentSlider", "class_speed_dialog.html#a87dd2c8d0e5618d78514cb6c684c7d1b", null ],
+    [ "m_adjustmentText", "class_speed_dialog.html#a205111094ec306a1651752bd08853012", null ],
+    [ "m_btn1", "class_speed_dialog.html#aa9ca915b5c5f1e18de39d28dd1fde73c", null ],
+    [ "m_btn2", "class_speed_dialog.html#a2c181058547a89e14ef5220634573205", null ],
+    [ "m_btn3", "class_speed_dialog.html#a49bd8954cc10ab06ffa543bf9cf6925d", null ],
+    [ "m_btn4", "class_speed_dialog.html#a76feaa341efbaa94d955e9c14193a3d9", null ],
+    [ "m_effect", "class_speed_dialog.html#a8b39eef2ef506d1398de9a8bf30fa767", null ],
+    [ "m_lastBtn", "class_speed_dialog.html#a0d118e2d4387adbbfc83b288a34b87a8", null ],
+    [ "m_preText", "class_speed_dialog.html#a5a8e68787697ef753682de866ee2a1aa", null ],
+    [ "m_speedSlider", "class_speed_dialog.html#a759ddfde1e1b2d56e9eb15ac97e1821f", null ],
+    [ "m_speedText", "class_speed_dialog.html#a67854c07afe67d706f3e4b4f1f9d2477", null ],
+    [ "m_switchBtn", "class_speed_dialog.html#ad99745b501cb91c1438384ebe8302ef2", null ]
+];
