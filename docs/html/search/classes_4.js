@@ -38,9 +38,11 @@ var searchData=
   ['elatextprivate_35',['ElaTextPrivate',['../class_ela_text_private.html',1,'']]],
   ['elatheme_36',['ElaTheme',['../class_ela_theme.html',1,'']]],
   ['elathemeprivate_37',['ElaThemePrivate',['../class_ela_theme_private.html',1,'']]],
-  ['elatooltip_38',['ElaToolTip',['../class_ela_tool_tip.html',1,'']]],
-  ['elatooltipprivate_39',['ElaToolTipPrivate',['../class_ela_tool_tip_private.html',1,'']]],
-  ['endofdirectory_40',['EndOfDirectory',['../struct_end_of_directory.html',1,'']]],
-  ['eventhandle_41',['EventHandle',['../class_video_player_1_1_event_handle.html',1,'VideoPlayer']]],
-  ['eventlog_42',['eventlog',['../structspdlog_1_1sinks_1_1win__eventlog_1_1internal_1_1eventlog.html',1,'spdlog::sinks::win_eventlog::internal']]]
+  ['elatoggleswitch_38',['ElaToggleSwitch',['../class_ela_toggle_switch.html',1,'']]],
+  ['elatoggleswitchprivate_39',['ElaToggleSwitchPrivate',['../class_ela_toggle_switch_private.html',1,'']]],
+  ['elatooltip_40',['ElaToolTip',['../class_ela_tool_tip.html',1,'']]],
+  ['elatooltipprivate_41',['ElaToolTipPrivate',['../class_ela_tool_tip_private.html',1,'']]],
+  ['endofdirectory_42',['EndOfDirectory',['../struct_end_of_directory.html',1,'']]],
+  ['eventhandle_43',['EventHandle',['../class_video_player_1_1_event_handle.html',1,'VideoPlayer']]],
+  ['eventlog_44',['eventlog',['../structspdlog_1_1sinks_1_1win__eventlog_1_1internal_1_1eventlog.html',1,'spdlog::sinks::win_eventlog::internal']]]
 ];

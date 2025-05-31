@@ -1,48 +1,94 @@
 <map id="MyMenu.h" name="MyMenu.h">
-<area shape="rect" id="Node000001" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="855,5,937,32"/>
-<area shape="rect" id="Node000002" href="$_all_music_8cpp.html" title="实现 AllMusic 类，提供音乐管理界面功能" alt="" coords="5,80,102,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="839,25,529,42,323,59,114,83,102,84,101,79,113,77,322,53,529,36,839,19"/>
-<area shape="rect" id="Node000003" href="$_downloaded_song_8cpp.html" title="实现 DownloadedSong 类，提供已下载歌曲界面功能" alt="" coords="126,80,274,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="840,27,598,49,286,83,275,84,274,79,285,77,598,44,839,22"/>
-<area shape="rect" id="Node000004" href="$_g_l_tab_widget_8cpp.html" title="实现 GLTabWidget 类，管理“猜你喜欢”推荐界面" alt="" coords="298,80,422,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="840,29,435,83,423,84,422,79,434,77,840,24"/>
-<area shape="rect" id="Node000005" href="$_listen_recommend_8cpp.html" title="实现 ListenRecommend 类，提供推荐界面功能" alt="" coords="446,80,602,107"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="840,34,590,82,589,77,839,28"/>
-<area shape="rect" id="Node000006" href="$_music_item_widget_8h.html" title="定义 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="626,80,761,107"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="847,40,730,82,728,77,846,35"/>
-<area shape="rect" id="Node000017" href="$_my_menu_8cpp.html" title="实现 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="785,80,882,107"/>
-<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="877,46,846,81,842,78,873,42"/>
-<area shape="rect" id="Node000018" href="$_paid_single_8cpp.html" title="实现 PaidSingle 类，管理付费单曲界面" alt="" coords="906,80,1014,107"/>
-<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="919,42,951,78,947,81,916,46"/>
-<area shape="rect" id="Node000019" href="$_recently_single_song_8cpp.html" title="实现 RecentlySingleSong 类，管理最近单曲界面" alt="" coords="1038,80,1202,107"/>
-<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="950,35,1082,77,1080,82,949,40"/>
-<area shape="rect" id="Node000020" href="$_single_song_8cpp.html" title="实现 SingleSong 类，管理单曲界面" alt="" coords="1227,80,1339,107"/>
-<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="953,28,1227,79,1226,84,952,33"/>
-<area shape="rect" id="Node000021" href="$_song_list_8cpp.html" title="实现 SongList 类，管理歌曲列表界面" alt="" coords="1364,80,1461,107"/>
-<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="953,24,1131,45,1351,77,1363,79,1363,85,1350,83,1130,51,952,29"/>
-<area shape="rect" id="Node000022" href="$_title_widget_8cpp.html" title="实现 TitleWidget 类，提供标题栏功能和界面导航管理" alt="" coords="1485,80,1598,107"/>
-<area shape="poly" id="edge22_Node000001_Node000022" title=" " alt="" coords="953,22,1181,43,1474,77,1485,79,1484,84,1473,83,1181,48,953,27"/>
-<area shape="rect" id="Node000023" href="$_uploaded_song_8cpp.html" title="实现 UploadedSong 类，管理已上传云端歌曲界面" alt="" coords="1621,80,1752,107"/>
-<area shape="poly" id="edge23_Node000001_Node000023" title=" " alt="" coords="953,21,1235,41,1421,57,1610,77,1621,79,1620,84,1609,83,1421,63,1235,46,953,26"/>
-<area shape="rect" id="Node000007" href="$_daily_recommend_8h.html" title="定义 DailyRecommend 类，提供每日推荐界面" alt="" coords="487,155,623,181"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="657,117,580,156,578,152,655,112"/>
-<area shape="rect" id="Node000012" href="$_local_song_8h.html" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="647,155,740,181"/>
-<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="696,122,696,154,691,154,691,122"/>
-<area shape="rect" id="Node000016" href="$_music_item_widget_8cpp.html" title="实现 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="765,155,913,181"/>
-<area shape="poly" id="edge16_Node000006_Node000016" title=" " alt="" coords="733,111,815,152,812,156,731,116"/>
-<area shape="rect" id="Node000008" href="$_daily_recommend_8cpp.html" title="实现 DailyRecommend 类，提供每日推荐界面功能" alt="" coords="388,229,538,256"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="529,193,480,231,477,227,525,189"/>
-<area shape="rect" id="Node000009" href="$_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="527,304,622,331"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="561,197,576,303,570,304,556,197"/>
-<area shape="rect" id="Node000010" href="$_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="463,379,572,405"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="558,345,529,380,525,377,553,341"/>
-<area shape="rect" id="Node000011" href="$_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="596,379,671,405"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="597,341,625,377,621,380,593,345"/>
-<area shape="rect" id="Node000013" href="$_local_download_8h.html" title="定义 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="624,229,745,256"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="693,197,688,229,683,229,687,196"/>
-<area shape="rect" id="Node000015" href="$_local_song_8cpp.html" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="769,229,876,256"/>
-<area shape="poly" id="edge15_Node000012_Node000015" title=" " alt="" coords="731,187,801,226,799,231,728,192"/>
-<area shape="poly" id="edge13_Node000013_Node000009" title=" " alt="" coords="654,267,595,306,593,301,651,263"/>
-<area shape="rect" id="Node000014" href="$_local_download_8cpp.html" title="实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="647,304,782,331"/>
-<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="698,270,712,303,707,305,693,272"/>
+<area shape="rect" id="Node000001" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="1060,5,1143,32"/>
+<area shape="rect" id="Node000002" href="$_all_music_8cpp.html" title="实现 AllMusic 类，提供音乐管理界面功能" alt="" coords="67,80,163,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1045,24,678,38,429,56,175,83,164,84,163,79,175,77,428,50,678,33,1045,18"/>
+<area shape="rect" id="Node000003" href="$_downloaded_song_8cpp.html" title="实现 DownloadedSong 类，提供已下载歌曲界面功能" alt="" coords="188,80,336,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1045,26,746,46,347,83,336,84,336,79,347,77,746,41,1045,21"/>
+<area shape="rect" id="Node000004" href="$_g_l_tab_widget_8cpp.html" title="实现 GLTabWidget 类，管理“猜你喜欢”推荐界面" alt="" coords="360,80,484,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1046,27,806,48,497,83,485,84,484,79,496,77,806,43,1045,22"/>
+<area shape="rect" id="Node000005" href="$_listen_recommend_8cpp.html" title="实现 ListenRecommend 类，提供推荐界面功能" alt="" coords="508,80,663,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1045,31,664,84,663,78,1044,25"/>
+<area shape="rect" id="Node000006" href="$_music_item_widget_8h.html" title="定义 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="688,80,822,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1046,34,816,82,815,77,1045,29"/>
+<area shape="rect" id="Node000035" href="$_my_menu_8cpp.html" title="实现 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="847,80,943,107"/>
+<area shape="poly" id="edge37_Node000001_Node000035" title=" " alt="" coords="1052,40,932,82,930,77,1051,35"/>
+<area shape="rect" id="Node000036" href="$_paid_single_8cpp.html" title="实现 PaidSingle 类，管理付费单曲界面" alt="" coords="968,80,1076,107"/>
+<area shape="poly" id="edge38_Node000001_Node000036" title=" " alt="" coords="1078,44,1037,82,1034,78,1075,41"/>
+<area shape="rect" id="Node000037" href="$_recently_single_song_8cpp.html" title="实现 RecentlySingleSong 类，管理最近单曲界面" alt="" coords="1100,80,1264,107"/>
+<area shape="poly" id="edge39_Node000001_Node000037" title=" " alt="" coords="1128,41,1170,78,1166,82,1125,44"/>
+<area shape="rect" id="Node000038" href="$_single_song_8cpp.html" title="实现 SingleSong 类，管理单曲界面" alt="" coords="1288,80,1400,107"/>
+<area shape="poly" id="edge40_Node000001_Node000038" title=" " alt="" coords="1158,34,1303,77,1301,82,1157,39"/>
+<area shape="rect" id="Node000039" href="$_song_list_8cpp.html" title="实现 SongList 类，管理歌曲列表界面" alt="" coords="1425,80,1522,107"/>
+<area shape="poly" id="edge41_Node000001_Node000039" title=" " alt="" coords="1159,28,1413,77,1425,80,1424,85,1412,83,1158,34"/>
+<area shape="rect" id="Node000040" href="$_title_widget_8cpp.html" title="实现 TitleWidget 类，提供标题栏功能和界面导航管理" alt="" coords="1547,80,1659,107"/>
+<area shape="poly" id="edge42_Node000001_Node000040" title=" " alt="" coords="1158,24,1535,77,1547,79,1546,84,1535,83,1158,30"/>
+<area shape="rect" id="Node000041" href="$_uploaded_song_8cpp.html" title="实现 UploadedSong 类，管理已上传云端歌曲界面" alt="" coords="1683,80,1814,107"/>
+<area shape="poly" id="edge43_Node000001_Node000041" title=" " alt="" coords="1158,22,1383,44,1671,77,1682,79,1682,84,1671,83,1382,49,1158,28"/>
+<area shape="rect" id="Node000042" href="$cmake-build-debug-mingw_2ui_2_my_menu_2_my_menu__autogen_2_e_w_i_e_g_a46_w_w_2moc___my_menu_8cpp.html" title=" " alt="" coords="1838,80,1966,107"/>
+<area shape="poly" id="edge44_Node000001_Node000042" title=" " alt="" coords="1159,21,1445,41,1634,57,1826,77,1837,79,1837,84,1825,83,1634,62,1445,46,1158,26"/>
+<area shape="rect" id="Node000044" href="$cmake-build-release-mingw_2ui_2_my_menu_2_my_menu__autogen_2_e_w_i_e_g_a46_w_w_2moc___my_menu_8cpp.html" title=" " alt="" coords="2002,80,2130,107"/>
+<area shape="poly" id="edge46_Node000001_Node000044" title=" " alt="" coords="1158,20,1505,39,1739,56,1978,77,2001,80,2001,85,1977,83,1739,61,1504,45,1158,25"/>
+<area shape="rect" id="Node000007" href="$_daily_recommend_8h.html" title="定义 DailyRecommend 类，提供每日推荐界面" alt="" coords="1104,155,1240,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="838,106,1104,152,1103,157,837,112"/>
+<area shape="rect" id="Node000020" href="$_local_song_8h.html" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="375,155,468,181"/>
+<area shape="poly" id="edge19_Node000006_Node000020" title=" " alt="" coords="683,113,469,159,468,154,681,108"/>
+<area shape="rect" id="Node000030" href="$_music_item_widget_8cpp.html" title="实现 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="493,155,641,181"/>
+<area shape="poly" id="edge32_Node000006_Node000030" title=" " alt="" coords="709,115,601,157,599,152,707,110"/>
+<area shape="rect" id="Node000031" href="$cmake-build-debug-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2_e_w_i_e_g_a46_w_w_2moc___music_item_widget_8cpp.html" title=" " alt="" coords="665,155,845,181"/>
+<area shape="poly" id="edge33_Node000006_Node000031" title=" " alt="" coords="758,122,758,154,752,154,752,122"/>
+<area shape="rect" id="Node000033" href="$cmake-build-release-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2_e_w_i_e_g_a46_wf24e1685fb2c926083cc473b62c77d0b.html" title=" " alt="" coords="869,155,1049,181"/>
+<area shape="poly" id="edge35_Node000006_Node000033" title=" " alt="" coords="806,110,924,152,922,157,804,115"/>
+<area shape="rect" id="Node000008" href="$_daily_recommend_8cpp.html" title="实现 DailyRecommend 类，提供每日推荐界面功能" alt="" coords="1494,229,1645,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1257,182,1501,226,1500,231,1256,187"/>
+<area shape="rect" id="Node000009" href="$_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="958,304,1053,331"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1132,191,1101,209,1071,231,1038,270,1015,305,1010,302,1034,267,1068,227,1098,205,1129,186"/>
+<area shape="rect" id="Node000016" href="$cmake-build-debug-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2_e_w_i_e_g_d24b5cc85d4e32c559dcc2ba1df28ffb.html" title=" " alt="" coords="1081,229,1264,256"/>
+<area shape="poly" id="edge15_Node000007_Node000016" title=" " alt="" coords="1175,197,1175,229,1170,229,1170,197"/>
+<area shape="rect" id="Node000018" href="$cmake-build-release-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2_e_w_i_e_711462c10aac3fee4fc6c0a1c3952d7f.html" title=" " alt="" coords="1288,229,1470,256"/>
+<area shape="poly" id="edge17_Node000007_Node000018" title=" " alt="" coords="1223,184,1344,226,1342,231,1222,189"/>
+<area shape="rect" id="Node000010" href="$_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="1091,379,1200,405"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1045,336,1122,376,1120,380,1042,341"/>
+<area shape="rect" id="Node000011" href="$_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和单实例应用程序" alt="" coords="1224,379,1299,405"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="1066,333,1225,378,1224,383,1064,338"/>
+<area shape="rect" id="Node000012" href="$cmake-build-debug-mingw_2_ku_gou_start_2_ku_gou_app_start__autogen_2_e_w_i_e_g_a46_w_w_2moc___ku_gou_app_8cpp.html" title=" " alt="" coords="755,379,896,405"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="961,339,858,381,856,376,959,334"/>
+<area shape="rect" id="Node000014" href="$cmake-build-release-mingw_2_ku_gou_start_2_ku_gou_app_start__autogen_2_e_w_i_e_g_a46_w_w_2moc___ku_gou_app_8cpp.html" title=" " alt="" coords="926,379,1067,405"/>
+<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="1005,346,1001,379,995,378,999,346"/>
+<area shape="rect" id="Node000013" href="$cmake-build-debug-mingw_2_ku_gou_start_2_ku_gou_app_start__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="747,453,899,480"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="827,421,826,453,821,453,822,421"/>
+<area shape="rect" id="Node000015" href="$cmake-build-release-mingw_2_ku_gou_start_2_ku_gou_app_start__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="923,453,1075,480"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="1000,421,1001,453,996,453,995,421"/>
+<area shape="rect" id="Node000017" href="$cmake-build-debug-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="1097,304,1248,331"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="1175,272,1175,304,1170,304,1170,272"/>
+<area shape="rect" id="Node000019" href="$cmake-build-release-mingw_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="1303,304,1455,331"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="1382,272,1382,304,1376,304,1376,272"/>
+<area shape="rect" id="Node000021" href="$_local_download_8h.html" title="定义 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="352,229,473,256"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="421,197,417,229,411,229,415,196"/>
+<area shape="rect" id="Node000027" href="$_local_song_8cpp.html" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="497,229,605,256"/>
+<area shape="poly" id="edge27_Node000020_Node000027" title=" " alt="" coords="459,187,530,226,527,231,456,192"/>
+<area shape="rect" id="Node000028" href="$cmake-build-debug-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_24_j_f6_g_m_y_w_i_q_2moc___local_song_8cpp.html" title=" " alt="" coords="5,304,145,331"/>
+<area shape="poly" id="edge28_Node000020_Node000028" title=" " alt="" coords="379,190,106,306,103,301,377,185"/>
+<area shape="rect" id="Node000029" href="$cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_24_j_f6_g_m_y_w_i_q_2moc___local_song_8cpp.html" title=" " alt="" coords="712,304,851,331"/>
+<area shape="poly" id="edge30_Node000020_Node000029" title=" " alt="" coords="484,183,549,202,617,227,668,254,759,301,756,306,666,258,615,232,547,207,483,188"/>
+<area shape="poly" id="edge21_Node000021_Node000009" title=" " alt="" coords="489,254,758,287,958,309,957,314,757,292,488,259"/>
+<area shape="rect" id="Node000022" href="$_local_download_8cpp.html" title="实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="169,304,304,331"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="369,265,268,306,266,301,367,260"/>
+<area shape="rect" id="Node000023" href="$cmake-build-debug-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2_e_w_i_e_g_a425cb35a283617a263b823b8c4fa9cbbc.html" title=" " alt="" coords="329,304,496,331"/>
+<area shape="poly" id="edge23_Node000021_Node000023" title=" " alt="" coords="415,272,415,304,410,304,410,272"/>
+<area shape="rect" id="Node000025" href="$cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2_e_w_i_e_g_6b14983232d45b258693295484903abc.html" title=" " alt="" coords="521,304,688,331"/>
+<area shape="poly" id="edge25_Node000021_Node000025" title=" " alt="" coords="461,259,572,301,570,306,459,264"/>
+<area shape="rect" id="Node000024" href="$cmake-build-debug-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="169,379,320,405"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="370,340,275,380,273,376,368,335"/>
+<area shape="rect" id="Node000026" href="$cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="538,379,689,405"/>
+<area shape="poly" id="edge26_Node000025_Node000026" title=" " alt="" coords="611,346,615,378,609,379,605,346"/>
+<area shape="poly" id="edge29_Node000028_Node000024" title=" " alt="" coords="120,335,216,376,214,380,117,340"/>
+<area shape="poly" id="edge31_Node000029_Node000026" title=" " alt="" coords="740,340,644,380,642,376,737,335"/>
+<area shape="rect" id="Node000032" href="$cmake-build-debug-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="679,229,831,256"/>
+<area shape="poly" id="edge34_Node000031_Node000032" title=" " alt="" coords="758,197,758,229,752,229,752,197"/>
+<area shape="rect" id="Node000034" href="$cmake-build-release-mingw_2ui_2_music_item_widget_2_music_item_widget__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="855,229,1007,256"/>
+<area shape="poly" id="edge36_Node000033_Node000034" title=" " alt="" coords="951,197,938,230,933,228,946,195"/>
+<area shape="rect" id="Node000043" href="$cmake-build-debug-mingw_2ui_2_my_menu_2_my_menu__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="1819,155,1971,181"/>
+<area shape="poly" id="edge45_Node000042_Node000043" title=" " alt="" coords="1902,123,1899,155,1893,154,1896,122"/>
+<area shape="rect" id="Node000045" href="$cmake-build-release-mingw_2ui_2_my_menu_2_my_menu__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="1995,155,2147,181"/>
+<area shape="poly" id="edge47_Node000044_Node000045" title=" " alt="" coords="2070,122,2073,154,2067,154,2065,123"/>
 </map>

@@ -10,5 +10,6 @@ var dir_c41e0d0e814e23de337c335e201650d3 =
     [ "ElaPushButton", "dir_1c5de58e70c5189df6851f9c4fbb9ad4.html", "dir_1c5de58e70c5189df6851f9c4fbb9ad4" ],
     [ "ElaScrollBar", "dir_ec6e2ea1cd2bd8b04e56dcddaa716808.html", "dir_ec6e2ea1cd2bd8b04e56dcddaa716808" ],
     [ "ElaText", "dir_c416eb619e17872362c99e65bafb432c.html", "dir_c416eb619e17872362c99e65bafb432c" ],
+    [ "ElaToggleSwitch", "dir_71543a97bf1bd3ebf13a4990c86ff1c3.html", "dir_71543a97bf1bd3ebf13a4990c86ff1c3" ],
     [ "ElaToolTip", "dir_b9ce0dd2fe69e2c138858fe37c8e31c1.html", "dir_b9ce0dd2fe69e2c138858fe37c8e31c1" ]
 ];

@@ -37,5 +37,6 @@ var searchData=
   ['num_5fbits_3c_20int128_5fopt_20_3e_34',['num_bits&lt; int128_opt &gt;',['../namespacedetail.html#ad88059fa48bcb38bf3ed36f5f6bd558b',1,'detail']]],
   ['num_5fbits_3c_20uint128_5ffallback_20_3e_35',['num_bits&lt; uint128_fallback &gt;',['../namespacedetail.html#af33e765f35bbcb6afb1577e995e7575d',1,'detail']]],
   ['num_5fbits_3c_20uint128_5fopt_20_3e_36',['num_bits&lt; uint128_opt &gt;',['../namespacedetail.html#a009da6965510ec26db3e66f3096ad4f3',1,'detail']]],
-  ['num_5fsignificand_5fbits_37',['num_significand_bits',['../namespacedetail.html#a36882d055510ea5e9ee8edcafac0fa9d',1,'detail']]]
+  ['num_5fsignificand_5fbits_37',['num_significand_bits',['../namespacedetail.html#a36882d055510ea5e9ee8edcafac0fa9d',1,'detail']]],
+  ['numchanged_38',['numChanged',['../class_snap_slider.html#a433d894967d7b26de78daa3f4731e345',1,'SnapSlider']]]
 ];

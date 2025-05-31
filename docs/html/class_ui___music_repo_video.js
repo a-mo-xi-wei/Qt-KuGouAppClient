@@ -2,8 +2,6 @@ var class_ui___music_repo_video =
 [
     [ "retranslateUi", "class_ui___music_repo_video.html#a561936cbd3ee99bba15139f0f7bd3832", null ],
     [ "retranslateUi", "class_ui___music_repo_video.html#a561936cbd3ee99bba15139f0f7bd3832", null ],
-    [ "retranslateUi", "class_ui___music_repo_video.html#a561936cbd3ee99bba15139f0f7bd3832", null ],
-    [ "setupUi", "class_ui___music_repo_video.html#adf0cec61b7cad539b205ea1b727d0bec", null ],
     [ "setupUi", "class_ui___music_repo_video.html#adf0cec61b7cad539b205ea1b727d0bec", null ],
     [ "setupUi", "class_ui___music_repo_video.html#adf0cec61b7cad539b205ea1b727d0bec", null ],
     [ "cover_widget", "class_ui___music_repo_video.html#ab8e3839fdd65cde9fe4acf9b27781f49", null ],

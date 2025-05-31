@@ -2,8 +2,6 @@ var class_ui___my_collection =
 [
     [ "retranslateUi", "class_ui___my_collection.html#a84a71e967d846038111261247c245c69", null ],
     [ "retranslateUi", "class_ui___my_collection.html#a84a71e967d846038111261247c245c69", null ],
-    [ "retranslateUi", "class_ui___my_collection.html#a84a71e967d846038111261247c245c69", null ],
-    [ "setupUi", "class_ui___my_collection.html#aa8d0666945c644cb4568ebffb0af3b8b", null ],
     [ "setupUi", "class_ui___my_collection.html#aa8d0666945c644cb4568ebffb0af3b8b", null ],
     [ "setupUi", "class_ui___my_collection.html#aa8d0666945c644cb4568ebffb0af3b8b", null ],
     [ "collectVideo_number_label", "class_ui___my_collection.html#a743680804126fc36884b01ca09f165c9", null ],

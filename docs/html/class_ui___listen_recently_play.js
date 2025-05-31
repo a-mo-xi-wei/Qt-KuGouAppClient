@@ -2,8 +2,6 @@ var class_ui___listen_recently_play =
 [
     [ "retranslateUi", "class_ui___listen_recently_play.html#a49af514e7a160bba77781c2592b343bb", null ],
     [ "retranslateUi", "class_ui___listen_recently_play.html#a49af514e7a160bba77781c2592b343bb", null ],
-    [ "retranslateUi", "class_ui___listen_recently_play.html#a49af514e7a160bba77781c2592b343bb", null ],
-    [ "setupUi", "class_ui___listen_recently_play.html#a8291453750f60918f4a91a4dd189b9eb", null ],
     [ "setupUi", "class_ui___listen_recently_play.html#a8291453750f60918f4a91a4dd189b9eb", null ],
     [ "setupUi", "class_ui___listen_recently_play.html#a8291453750f60918f4a91a4dd189b9eb", null ],
     [ "gridLayout", "class_ui___listen_recently_play.html#a835e96c8de98ae8b60810d64698e5d16", null ],

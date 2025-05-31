@@ -62,10 +62,14 @@ var searchData=
   ['elatheme_2eh_59',['ElaTheme.h',['../_ela_theme_8h.html',1,'']]],
   ['elathemeprivate_2ecpp_60',['ElaThemePrivate.cpp',['../_ela_theme_private_8cpp.html',1,'']]],
   ['elathemeprivate_2eh_61',['ElaThemePrivate.h',['../_ela_theme_private_8h.html',1,'']]],
-  ['elatooltip_2ecpp_62',['ElaToolTip.cpp',['../_ela_tool_tip_8cpp.html',1,'']]],
-  ['elatooltip_2eh_63',['ElaToolTip.h',['../_ela_tool_tip_8h.html',1,'']]],
-  ['elatooltipprivate_2ecpp_64',['ElaToolTipPrivate.cpp',['../_ela_tool_tip_private_8cpp.html',1,'']]],
-  ['elatooltipprivate_2eh_65',['ElaToolTipPrivate.h',['../_ela_tool_tip_private_8h.html',1,'']]],
-  ['elawinshadowhelper_2eh_66',['ElaWinShadowHelper.h',['../_ela_win_shadow_helper_8h.html',1,'']]],
-  ['env_2eh_67',['env.h',['../env_8h.html',1,'']]]
+  ['elatoggleswitch_2ecpp_62',['ElaToggleSwitch.cpp',['../_ela_toggle_switch_8cpp.html',1,'']]],
+  ['elatoggleswitch_2eh_63',['ElaToggleSwitch.h',['../_ela_toggle_switch_8h.html',1,'']]],
+  ['elatoggleswitchprivate_2ecpp_64',['ElaToggleSwitchPrivate.cpp',['../_ela_toggle_switch_private_8cpp.html',1,'']]],
+  ['elatoggleswitchprivate_2eh_65',['ElaToggleSwitchPrivate.h',['../_ela_toggle_switch_private_8h.html',1,'']]],
+  ['elatooltip_2ecpp_66',['ElaToolTip.cpp',['../_ela_tool_tip_8cpp.html',1,'']]],
+  ['elatooltip_2eh_67',['ElaToolTip.h',['../_ela_tool_tip_8h.html',1,'']]],
+  ['elatooltipprivate_2ecpp_68',['ElaToolTipPrivate.cpp',['../_ela_tool_tip_private_8cpp.html',1,'']]],
+  ['elatooltipprivate_2eh_69',['ElaToolTipPrivate.h',['../_ela_tool_tip_private_8h.html',1,'']]],
+  ['elawinshadowhelper_2eh_70',['ElaWinShadowHelper.h',['../_ela_win_shadow_helper_8h.html',1,'']]],
+  ['env_2eh_71',['env.h',['../env_8h.html',1,'']]]
 ];

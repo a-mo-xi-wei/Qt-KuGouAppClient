@@ -2,8 +2,6 @@ var class_ui___listen_recommend =
 [
     [ "retranslateUi", "class_ui___listen_recommend.html#aa14b4a290fc86c6aee5a97060d586de9", null ],
     [ "retranslateUi", "class_ui___listen_recommend.html#aa14b4a290fc86c6aee5a97060d586de9", null ],
-    [ "retranslateUi", "class_ui___listen_recommend.html#aa14b4a290fc86c6aee5a97060d586de9", null ],
-    [ "setupUi", "class_ui___listen_recommend.html#a6e03e3d508539329081d54b96df63b45", null ],
     [ "setupUi", "class_ui___listen_recommend.html#a6e03e3d508539329081d54b96df63b45", null ],
     [ "setupUi", "class_ui___listen_recommend.html#a6e03e3d508539329081d54b96df63b45", null ],
     [ "all_classify_toolButton", "class_ui___listen_recommend.html#a4ee68b02aec7eafabbc67cedb23ef088", null ],

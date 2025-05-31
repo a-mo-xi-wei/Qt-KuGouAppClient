@@ -2,8 +2,6 @@ var class_ui___recently_song_channel =
 [
     [ "retranslateUi", "class_ui___recently_song_channel.html#a6bf935b01d97d32d666ba7cd47359559", null ],
     [ "retranslateUi", "class_ui___recently_song_channel.html#a6bf935b01d97d32d666ba7cd47359559", null ],
-    [ "retranslateUi", "class_ui___recently_song_channel.html#a6bf935b01d97d32d666ba7cd47359559", null ],
-    [ "setupUi", "class_ui___recently_song_channel.html#a9223b041b88671c0c5fe5fc6f767e918", null ],
     [ "setupUi", "class_ui___recently_song_channel.html#a9223b041b88671c0c5fe5fc6f767e918", null ],
     [ "setupUi", "class_ui___recently_song_channel.html#a9223b041b88671c0c5fe5fc6f767e918", null ],
     [ "horizontalLayout", "class_ui___recently_song_channel.html#a7c14973bdfbbeb38bda94999653647c8", null ],

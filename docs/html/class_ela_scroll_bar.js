@@ -10,6 +10,6 @@ var class_ela_scroll_bar =
     [ "mouseMoveEvent", "class_ela_scroll_bar.html#a4d538d95963e25c7a27250e441321d72", null ],
     [ "mousePressEvent", "class_ela_scroll_bar.html#a7523c71b2bf60975302287ec8923f80e", null ],
     [ "mouseReleaseEvent", "class_ela_scroll_bar.html#a2de3e1806dc8e5d659fc1f35545a5b87", null ],
-    [ "rangeAnimationFinished", "class_ela_scroll_bar.html#a281f89ecec6a03bb2b7e3df3b05d1368", null ],
+    [ "rangeAnimationFinished", "class_ela_scroll_bar.html#a956312b44453dc86cb466254b21d6c8f", null ],
     [ "wheelEvent", "class_ela_scroll_bar.html#ab587e4e2fb0fcdf9ef13c64ee030ee7f", null ]
 ];

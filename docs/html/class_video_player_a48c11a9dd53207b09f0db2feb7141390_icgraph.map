@@ -1,30 +1,20 @@
 <map id="durationChanged" name="durationChanged">
-<area shape="rect" id="Node000001" title="总时长变更信号" alt="" coords="1319,169,1438,196"/>
-<area shape="rect" id="Node000002" href="$class_video_player.html#adccbc43146f9eb5b35c8e1c054c2065e" title="视频时长变更回调" alt="" coords="1126,93,1271,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1329,165,1231,123,1233,118,1332,160"/>
-<area shape="rect" id="Node000009" href="$class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="379,220,555,247"/>
-<area shape="poly" id="edge16_Node000001_Node000009" title=" " alt="" coords="1322,204,1258,222,1179,241,1092,256,1004,261,809,261,676,256,556,246,556,241,676,251,810,256,1004,256,1092,250,1178,236,1257,217,1321,199"/>
-<area shape="rect" id="Node000003" href="$class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="927,93,1078,120"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1111,109,1079,109,1079,104,1111,104"/>
-<area shape="rect" id="Node000008" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="250,17,290,44"/>
-<area shape="poly" id="edge15_Node000002_Node000008" title=" " alt="" coords="1152,89,1086,64,1003,38,908,17,860,10,812,8,648,8,542,11,438,17,290,31,290,26,438,12,541,5,648,3,812,3,861,5,909,11,1004,32,1088,59,1153,84"/>
-<area shape="rect" id="Node000004" href="$class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="743,144,879,171"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="935,127,865,146,863,141,934,122"/>
-<area shape="rect" id="Node000005" href="$class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="608,195,690,221"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="752,178,692,198,690,193,751,173"/>
-<area shape="rect" id="Node000012" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="603,144,695,171"/>
-<area shape="poly" id="edge14_Node000004_Node000012" title=" " alt="" coords="727,160,695,160,695,155,727,155"/>
-<area shape="rect" id="Node000006" href="$class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="407,131,527,157"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="593,191,506,160,508,155,595,186"/>
-<area shape="rect" id="Node000007" href="$class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="390,43,545,69"/>
-<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="605,188,601,185,586,168,577,153,568,137,553,121,521,94,490,72,493,68,525,89,557,117,572,134,581,150,590,165,605,181,609,184"/>
-<area shape="poly" id="edge10_Node000005_Node000009" title=" " alt="" coords="593,218,556,224,555,218,592,213"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="542,134,603,129,926,108,927,114,604,135,543,140"/>
-<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="560,62,927,97,926,102,560,67"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="374,47,290,36,290,30,374,41"/>
-<area shape="rect" id="Node000010" href="$class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="209,220,331,247"/>
-<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="364,236,331,236,331,231,364,231"/>
-<area shape="rect" id="Node000011" href="$class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,220,161,247"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="193,236,161,236,161,231,193,231"/>
-<area shape="poly" id="edge13_Node000011_Node000011" title=" " alt="" coords="115,207,104,201,83,199,64,201,53,205,51,211,56,218,51,221,45,211,49,202,62,195,83,193,105,196,117,202"/>
+<area shape="rect" id="Node000001" title="总时长变更信号" alt="" coords="772,81,891,108"/>
+<area shape="rect" id="Node000002" href="$class_video_player.html#adccbc43146f9eb5b35c8e1c054c2065e" title="视频时长变更回调" alt="" coords="563,56,708,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="756,88,708,81,708,76,757,82"/>
+<area shape="rect" id="Node000007" href="$class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="547,107,724,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="757,107,724,111,724,106,756,102"/>
+<area shape="rect" id="Node000003" href="$class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="348,5,499,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="561,54,482,35,483,30,562,49"/>
+<area shape="rect" id="Node000006" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="404,56,443,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="548,72,444,72,444,67,548,67"/>
+<area shape="rect" id="Node000004" href="$class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="154,5,290,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="333,21,291,21,291,16,333,16"/>
+<area shape="rect" id="Node000005" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,5,97,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="139,21,97,21,97,16,139,16"/>
+<area shape="rect" id="Node000008" href="$class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="362,107,485,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="532,123,485,123,485,117,532,117"/>
+<area shape="rect" id="Node000009" href="$class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="145,107,300,133"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="347,123,301,123,301,117,347,117"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="251,94,241,88,222,85,205,87,195,92,193,97,197,105,193,108,188,98,191,88,203,82,222,80,243,83,254,89"/>
 </map>

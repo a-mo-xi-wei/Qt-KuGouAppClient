@@ -2,8 +2,6 @@ var class_ui___music_repo_list =
 [
     [ "retranslateUi", "class_ui___music_repo_list.html#a1aa94f4edc18f1c0208c65e342756969", null ],
     [ "retranslateUi", "class_ui___music_repo_list.html#a1aa94f4edc18f1c0208c65e342756969", null ],
-    [ "retranslateUi", "class_ui___music_repo_list.html#a1aa94f4edc18f1c0208c65e342756969", null ],
-    [ "setupUi", "class_ui___music_repo_list.html#a17b3b4e2453e891102b39e6410b45ee5", null ],
     [ "setupUi", "class_ui___music_repo_list.html#a17b3b4e2453e891102b39e6410b45ee5", null ],
     [ "setupUi", "class_ui___music_repo_list.html#a17b3b4e2453e891102b39e6410b45ee5", null ],
     [ "comment_toolButton", "class_ui___music_repo_list.html#a156a50cd1d7f3e5c7d12d3412b14a557", null ],

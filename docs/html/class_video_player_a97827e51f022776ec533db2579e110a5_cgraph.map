@@ -1,25 +1,27 @@
 <map id="replay" name="replay">
-<area shape="rect" id="Node000001" title="重新播放" alt="" coords="5,409,62,436"/>
-<area shape="rect" id="Node000002" href="$class_video_player.html#a162d83f6026c9f6be69d9c74a9979bc9" title="开始播放" alt="" coords="110,435,183,461"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,426,95,434,94,439,61,432"/>
-<area shape="rect" id="Node000003" href="$class_video_player.html#a509af965f457b475f0b6d7f68073f629" title="播放开始信号" alt="" coords="476,485,555,512"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,458,232,471,354,487,461,494,460,500,354,493,230,476,183,463"/>
-<area shape="rect" id="Node000004" href="$class_video_player.html#a22bc616c65129c31d2c75f4ed881c44a" title="播放器状态变更回调" alt="" coords="231,384,386,411"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="183,434,249,413,250,418,184,439"/>
-<area shape="rect" id="Node000041" href="$class_util_1_1_thread.html#a60de64d75454385b23995437f1d72669" title="启动线程" alt="" coords="247,536,370,563"/>
-<area shape="poly" id="edge53_Node000002_Node000041" title=" " alt="" coords="163,460,194,487,232,515,255,527,253,532,230,520,190,491,160,464"/>
-<area shape="rect" id="Node000045" href="$class_util_1_1_thread.html#a8c528baf37154d347366083f0f816846" title="停止线程" alt="" coords="248,435,370,461"/>
-<area shape="poly" id="edge57_Node000002_Node000045" title=" " alt="" coords="183,445,232,445,232,451,183,451"/>
-<area shape="poly" id="edge51_Node000004_Node000001" title=" " alt="" coords="231,407,77,421,77,416,230,402"/>
-<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="364,409,388,420,403,433,412,447,421,459,436,471,462,484,460,488,433,476,417,463,408,450,399,437,385,425,362,414"/>
+<area shape="rect" id="Node000001" title="重新播放" alt="" coords="5,536,62,563"/>
+<area shape="rect" id="Node000002" href="$class_video_player.html#a162d83f6026c9f6be69d9c74a9979bc9" title="开始播放" alt="" coords="110,561,183,588"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,553,95,560,94,566,61,558"/>
+<area shape="rect" id="Node000003" href="$class_video_player.html#a509af965f457b475f0b6d7f68073f629" title="播放开始信号" alt="" coords="476,536,555,563"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="183,570,461,550,461,556,184,575"/>
+<area shape="rect" id="Node000004" href="$class_video_player.html#a22bc616c65129c31d2c75f4ed881c44a" title="播放器状态变更回调" alt="" coords="231,485,386,512"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="171,558,230,528,257,516,260,521,232,533,174,563"/>
+<area shape="rect" id="Node000041" href="$util_8cpp.html#af63aadf5a7dfc51dcb87717112e1e04b" title="跨平台毫秒级睡眠函数" alt="" coords="276,587,341,613"/>
+<area shape="poly" id="edge53_Node000002_Node000041" title=" " alt="" coords="184,578,261,590,260,595,183,583"/>
+<area shape="rect" id="Node000043" href="$class_util_1_1_thread.html#a60de64d75454385b23995437f1d72669" title="启动线程" alt="" coords="247,637,370,664"/>
+<area shape="poly" id="edge55_Node000002_Node000043" title=" " alt="" coords="169,586,232,623,247,629,245,634,230,628,166,591"/>
+<area shape="rect" id="Node000047" href="$class_util_1_1_thread.html#a8c528baf37154d347366083f0f816846" title="停止线程" alt="" coords="248,688,370,715"/>
+<area shape="poly" id="edge59_Node000002_Node000047" title=" " alt="" coords="158,587,187,630,208,653,233,674,240,679,238,683,229,678,205,657,183,633,153,590"/>
+<area shape="poly" id="edge51_Node000004_Node000001" title=" " alt="" coords="233,515,77,544,76,539,232,510"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="367,510,462,534,461,539,366,515"/>
 <area shape="rect" id="Node000005" href="$class_video_player.html#a485acf191409d3a0e427e72600b540b8" title="播放暂停信号" alt="" coords="471,333,560,360"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="366,381,455,359,456,364,367,386"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="318,483,364,428,396,397,433,370,455,359,457,364,436,374,400,401,367,432,322,486"/>
 <area shape="rect" id="Node000006" href="$printf_8h.html#a9f315126362cae9675de1642105e631e" title="Formats args according to specifications in fmt and writes the output to f." alt="" coords="488,384,543,411"/>
-<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="387,395,473,395,473,400,387,400"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="328,483,375,452,433,420,472,406,474,411,435,425,377,456,331,487"/>
 <area shape="rect" id="Node000039" href="$class_video_player.html#aad3a36958bda571878a49469beb6d204" title="播放位置变更信号" alt="" coords="456,435,575,461"/>
-<area shape="poly" id="edge50_Node000004_Node000039" title=" " alt="" coords="367,409,444,428,443,433,366,414"/>
-<area shape="rect" id="Node000040" href="$class_video_player.html#acf42de6572f1e3e6aca988477c3662cf" title="获取播放器状态" alt="" coords="490,283,541,309"/>
-<area shape="poly" id="edge52_Node000004_Node000040" title=" " alt="" coords="328,381,375,351,433,319,474,304,476,309,435,324,377,355,331,386"/>
+<area shape="poly" id="edge50_Node000004_Node000039" title=" " alt="" coords="366,482,443,463,444,468,367,487"/>
+<area shape="rect" id="Node000040" href="$class_video_player.html#acf42de6572f1e3e6aca988477c3662cf" title="获取播放器状态" alt="" coords="490,485,541,512"/>
+<area shape="poly" id="edge52_Node000004_Node000040" title=" " alt="" coords="387,496,475,496,475,501,387,501"/>
 <area shape="rect" id="Node000007" href="$printf_8h.html#a27dcc0efcda04388971dbea3c875f122" title="Constructs an format_arg_store object that contains references to arguments and can be implicitly con..." alt="" coords="656,333,778,360"/>
 <area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="543,388,645,362,647,367,544,393"/>
 <area shape="rect" id="Node000008" href="$namespacedetail.html#af3fca38e6688d36bd47d0c690b16e49a" title=" " alt="" coords="645,384,789,411"/>
@@ -95,10 +97,12 @@
 <area shape="rect" id="Node000038" href="$namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="1228,536,1354,563"/>
 <area shape="poly" id="edge49_Node000035_Node000038" title=" " alt="" coords="1109,547,1213,547,1213,552,1109,552"/>
 <area shape="poly" id="edge46_Node000036_Node000015" title=" " alt="" coords="1345,636,1466,607,1468,613,1347,641"/>
-<area shape="rect" id="Node000042" href="$class_util_1_1_thread.html#a41de8150eff044a237990c271d57ea27" title="恢复线程" alt="" coords="445,587,586,613"/>
-<area shape="poly" id="edge54_Node000041_Node000042" title=" " alt="" coords="367,561,444,580,443,585,366,566"/>
-<area shape="rect" id="Node000043" href="$class_util_1_1_thread.html#a539feb3c59a20db3b260b312fa7dea34" title="线程入口函数" alt="" coords="434,536,597,563"/>
-<area shape="poly" id="edge55_Node000041_Node000043" title=" " alt="" coords="371,547,419,547,419,552,371,552"/>
-<area shape="rect" id="Node000044" href="$class_util_1_1_thread.html#a13a43e6d814de94978c515cb084873b1" title="线程执行函数" alt="" coords="659,536,774,563"/>
-<area shape="poly" id="edge56_Node000043_Node000044" title=" " alt="" coords="597,547,643,547,643,552,597,552"/>
+<area shape="rect" id="Node000042" href="$util_8cpp.html#adb8bf6f8fadfa5e88a7da603d0cc1b28" title="跨平台睡眠函数（非 Windows 平台）" alt="" coords="488,587,543,613"/>
+<area shape="poly" id="edge54_Node000041_Node000042" title=" " alt="" coords="342,597,473,597,473,603,342,603"/>
+<area shape="rect" id="Node000044" href="$class_util_1_1_thread.html#a41de8150eff044a237990c271d57ea27" title="恢复线程" alt="" coords="445,688,586,715"/>
+<area shape="poly" id="edge56_Node000043_Node000044" title=" " alt="" coords="367,662,444,681,443,686,366,667"/>
+<area shape="rect" id="Node000045" href="$class_util_1_1_thread.html#a539feb3c59a20db3b260b312fa7dea34" title="线程入口函数" alt="" coords="434,637,597,664"/>
+<area shape="poly" id="edge57_Node000043_Node000045" title=" " alt="" coords="371,648,419,648,419,653,371,653"/>
+<area shape="rect" id="Node000046" href="$class_util_1_1_thread.html#a13a43e6d814de94978c515cb084873b1" title="线程执行函数" alt="" coords="659,637,774,664"/>
+<area shape="poly" id="edge58_Node000045_Node000046" title=" " alt="" coords="597,648,643,648,643,653,597,653"/>
 </map>

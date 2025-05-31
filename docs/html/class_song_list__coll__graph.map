@@ -1,17 +1,32 @@
 <map id="SongList" name="SongList">
-<area shape="rect" id="Node000001" title="歌曲列表界面类，管理歌曲块和菜单" alt="" coords="27,355,99,381"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,264,78,291"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,305,62,353,57,355,45,306"/>
-<area shape="rect" id="Node000003" href="$class_list_option_menu.html" title="歌曲分类选项菜单类，继承自 BaseMenu，提供场景、主题等分类选择" alt="" coords="101,264,214,291"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,303,78,356,75,352,131,299"/>
-<area shape="rect" id="Node000004" href="$class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="116,188,199,215"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="160,230,160,264,155,264,155,230"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="34,81,97,108"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="88,118,149,186,145,189,84,121"/>
-<area shape="rect" id="Node000006" href="$class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="121,81,194,108"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="160,123,160,188,155,188,155,123"/>
-<area shape="rect" id="Node000007" href="$class_q_tool_button.html" title="工具按钮类" alt="" coords="111,5,204,32"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="160,47,160,81,155,81,155,47"/>
-<area shape="rect" id="Node000008" href="$class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="218,81,380,108"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="284,123,265,145,242,166,197,190,195,185,239,162,261,141,280,119"/>
+<area shape="rect" id="Node000001" title="歌曲列表界面类，管理歌曲块和菜单" alt="" coords="823,275,896,301"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="629,224,701,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="717,244,800,264,824,272,822,277,799,269,716,249"/>
+<area shape="rect" id="Node000003" href="$class_ui_1_1_song_list.html" title=" " alt="" coords="629,275,701,301"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="717,285,823,285,823,291,717,291"/>
+<area shape="rect" id="Node000004" href="$class_ui___song_list.html" title=" " alt="" coords="467,275,560,301"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="575,294,628,293,628,298,575,300"/>
+<area shape="poly" id="edge10_Node000003_Node000004" title=" " alt="" coords="575,276,628,278,628,283,575,282"/>
+<area shape="rect" id="Node000005" href="$class_my_scroll_area.html" title="自定义滚动区域类，继承自 QScrollArea，支持平滑滚动和返回顶部功能" alt="" coords="185,5,284,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="300,23,337,31,375,44,412,62,445,87,464,110,478,134,499,188,510,237,514,274,509,275,505,238,494,189,474,137,459,113,441,91,410,67,373,49,335,36,299,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="6,5,98,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="113,16,185,16,185,21,113,21"/>
+<area shape="rect" id="Node000007" href="$class_q_label.html" title="标签控件类" alt="" coords="204,61,266,88"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="282,85,323,104,380,147,432,195,503,272,499,276,429,198,377,151,320,109,279,90"/>
+<area shape="rect" id="Node000008" href="$class_q_tool_button.html" title="工具按钮类" alt="" coords="5,336,99,363"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="113,329,148,321,236,308,324,298,467,287,467,293,324,303,236,313,148,327,114,334"/>
+<area shape="rect" id="Node000009" href="$class_icon_beside_text_tool_button.html" title="自定义工具按钮类，图标与文本并排" alt="" coords="148,336,321,363"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="114,347,148,347,148,352,114,352"/>
+<area shape="rect" id="Node000013" href="$class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="198,387,271,413"/>
+<area shape="poly" id="edge15_Node000013_Node000008" title=" " alt="" coords="114,364,198,387,197,393,113,369"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="336,341,390,333,442,320,488,299,491,304,444,325,391,338,337,346"/>
+<area shape="rect" id="Node000010" href="$class_list_option_menu.html" title="歌曲分类选项菜单类，继承自 BaseMenu，提供场景、主题等分类选择" alt="" coords="609,343,721,369"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="720,334,798,307,822,298,824,303,800,312,722,340"/>
+<area shape="rect" id="Node000011" href="$class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="472,412,555,439"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="557,403,633,367,635,372,559,408"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="203,437,266,464"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="282,444,443,429,471,427,472,432,444,435,282,449"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="287,402,472,419,471,424,286,407"/>
+<area shape="rect" id="Node000014" href="$class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="154,488,316,515"/>
+<area shape="poly" id="edge16_Node000011_Node000014" title=" " alt="" coords="331,487,387,476,442,460,489,437,492,442,444,465,388,481,332,493"/>
 </map>

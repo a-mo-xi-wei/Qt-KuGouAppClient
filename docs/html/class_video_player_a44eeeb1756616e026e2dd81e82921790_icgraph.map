@@ -1,33 +1,11 @@
 <map id="clearAudioQuene" name="clearAudioQuene">
-<area shape="rect" id="Node000001" title="清空音频队列" alt="" coords="1086,233,1207,260"/>
-<area shape="rect" id="Node000002" href="$class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="902,157,1038,184"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1099,229,1002,187,1004,182,1101,224"/>
-<area shape="rect" id="Node000003" href="$class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="772,157,854,184"/>
-<area shape="poly" id="edge16_Node000001_Node000003" title=" " alt="" coords="1071,235,901,198,854,185,855,180,903,193,1072,230"/>
-<area shape="rect" id="Node000009" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="404,233,443,260"/>
-<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="1071,249,444,249,444,244,1071,244"/>
-<area shape="rect" id="Node000013" href="$class_video_player.html#af116cf31ffdcae8c9cd5bb184d339a77" title="停止播放" alt="" coords="947,309,993,336"/>
-<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="1101,269,995,315,993,310,1098,264"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="886,173,855,173,855,168,886,168"/>
-<area shape="rect" id="Node000007" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,56,97,82"/>
-<area shape="poly" id="edge15_Node000002_Node000007" title=" " alt="" coords="940,148,888,107,815,62,773,41,729,24,683,13,637,9,422,9,282,11,222,18,145,34,81,58,79,53,144,29,221,13,282,5,422,4,637,4,684,8,731,19,775,36,818,57,891,103,944,144"/>
-<area shape="rect" id="Node000004" href="$class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="575,157,696,184"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="757,173,696,173,696,168,757,168"/>
-<area shape="rect" id="Node000008" href="$class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="558,208,713,234"/>
-<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="758,189,686,210,684,204,756,184"/>
-<area shape="rect" id="Node000010" href="$class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="547,56,724,82"/>
-<area shape="poly" id="edge11_Node000003_Node000010" title=" " alt="" coords="784,149,755,125,722,103,682,85,684,80,725,99,759,121,788,145"/>
-<area shape="rect" id="Node000005" href="$class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="348,157,499,184"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="560,173,500,173,500,168,560,168"/>
-<area shape="rect" id="Node000006" href="$class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="154,118,290,145"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="335,156,290,147,291,142,336,151"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="306,125,497,124,611,130,724,142,772,154,771,159,723,148,611,135,497,129,306,130"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="162,115,144,109,84,85,86,80,146,104,164,110"/>
-<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="561,206,482,187,483,182,562,201"/>
-<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="543,235,444,247,443,241,542,229"/>
-<area shape="rect" id="Node000011" href="$class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="362,56,485,82"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="532,72,485,72,485,66,532,66"/>
-<area shape="rect" id="Node000012" href="$class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="145,68,300,94"/>
-<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="347,76,301,79,300,74,347,71"/>
-<area shape="poly" id="edge14_Node000012_Node000012" title=" " alt="" coords="251,55,241,49,222,46,205,48,195,53,193,58,197,66,193,68,188,59,191,49,203,43,222,41,243,44,254,50"/>
+<area shape="rect" id="Node000001" title="清空音频队列" alt="" coords="329,56,449,83"/>
+<area shape="rect" id="Node000002" href="$class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="145,5,281,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="325,54,261,35,263,30,327,49"/>
+<area shape="rect" id="Node000004" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="193,56,232,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="313,72,233,72,233,67,313,67"/>
+<area shape="rect" id="Node000005" href="$class_video_player.html#af116cf31ffdcae8c9cd5bb184d339a77" title="停止播放" alt="" coords="190,107,236,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="326,90,237,116,236,111,325,85"/>
+<area shape="rect" id="Node000003" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,5,97,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,21,97,21,97,16,129,16"/>
 </map>

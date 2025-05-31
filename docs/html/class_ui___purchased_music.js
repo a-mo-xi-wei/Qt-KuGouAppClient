@@ -2,8 +2,6 @@ var class_ui___purchased_music =
 [
     [ "retranslateUi", "class_ui___purchased_music.html#a62a4dab3e090daff988dc8b6f3dbcb4b", null ],
     [ "retranslateUi", "class_ui___purchased_music.html#a62a4dab3e090daff988dc8b6f3dbcb4b", null ],
-    [ "retranslateUi", "class_ui___purchased_music.html#a62a4dab3e090daff988dc8b6f3dbcb4b", null ],
-    [ "setupUi", "class_ui___purchased_music.html#a029fc6868f83e6494912d60d6fcbedfc", null ],
     [ "setupUi", "class_ui___purchased_music.html#a029fc6868f83e6494912d60d6fcbedfc", null ],
     [ "setupUi", "class_ui___purchased_music.html#a029fc6868f83e6494912d60d6fcbedfc", null ],
     [ "guide_widget", "class_ui___purchased_music.html#ae181944de97064febb497417e9824e84", null ],

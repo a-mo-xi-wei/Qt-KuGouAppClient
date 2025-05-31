@@ -2,8 +2,6 @@ var class_ui___purchased_videos =
 [
     [ "retranslateUi", "class_ui___purchased_videos.html#a22d64d2469c18c364043ba5bd985bb48", null ],
     [ "retranslateUi", "class_ui___purchased_videos.html#a22d64d2469c18c364043ba5bd985bb48", null ],
-    [ "retranslateUi", "class_ui___purchased_videos.html#a22d64d2469c18c364043ba5bd985bb48", null ],
-    [ "setupUi", "class_ui___purchased_videos.html#a72f13e7f5ec0c8e929522bf725b641e7", null ],
     [ "setupUi", "class_ui___purchased_videos.html#a72f13e7f5ec0c8e929522bf725b641e7", null ],
     [ "setupUi", "class_ui___purchased_videos.html#a72f13e7f5ec0c8e929522bf725b641e7", null ],
     [ "gridLayout", "class_ui___purchased_videos.html#a835e96c8de98ae8b60810d64698e5d16", null ],

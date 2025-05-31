@@ -1,32 +1,18 @@
 <map id="albumFound" name="albumFound">
-<area shape="rect" id="Node000001" title="专辑信息变更信号" alt="" coords="1282,31,1374,57"/>
-<area shape="rect" id="Node000002" href="$class_ku_gou_app.html#a1dca549e20947032febfdf3cda5dbd8b" title="初始化播放器" alt="" coords="930,5,1076,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1266,42,1076,27,1076,22,1266,37"/>
-<area shape="rect" id="Node000004" href="$class_video_player.html#a64b5e8d13b972e77c929b7acdc807f33" title="解析元数据" alt="" coords="1126,56,1234,83"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="1267,57,1235,63,1234,58,1266,52"/>
-<area shape="rect" id="Node000003" href="$class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="5,56,161,83"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="914,21,650,21,466,21,380,25,294,34,150,58,149,53,294,29,380,20,466,16,650,16,914,16"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="115,43,104,37,83,35,64,37,53,41,51,47,56,54,51,57,45,47,49,38,62,31,83,29,105,32,117,38"/>
-<area shape="rect" id="Node000005" href="$class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="927,132,1078,159"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="1134,92,1037,134,1035,129,1132,87"/>
-<area shape="rect" id="Node000010" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="250,68,290,95"/>
-<area shape="poly" id="edge17_Node000004_Node000010" title=" " alt="" coords="1111,72,812,72,648,72,438,76,290,83,290,78,438,71,648,67,812,67,1111,67"/>
-<area shape="rect" id="Node000006" href="$class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="743,157,879,184"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="912,160,880,164,879,159,911,155"/>
-<area shape="rect" id="Node000007" href="$class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="608,157,690,184"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="727,173,691,173,691,168,727,168"/>
-<area shape="rect" id="Node000013" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="603,208,695,235"/>
-<area shape="poly" id="edge16_Node000006_Node000013" title=" " alt="" coords="752,192,695,210,693,205,751,187"/>
-<area shape="rect" id="Node000008" href="$class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="407,233,527,260"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="602,193,502,235,500,230,600,188"/>
-<area shape="rect" id="Node000009" href="$class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="390,107,545,133"/>
-<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="592,158,517,136,518,131,593,153"/>
-<area shape="rect" id="Node000011" href="$class_ku_gou_app.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="379,157,555,184"/>
-<area shape="poly" id="edge13_Node000007_Node000011" title=" " alt="" coords="592,173,556,173,556,168,592,168"/>
-<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="543,249,616,250,694,244,747,235,788,225,878,194,970,157,972,162,880,198,789,230,748,240,695,249,617,255,543,254"/>
-<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="560,122,927,139,927,144,560,127"/>
-<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="380,106,290,88,291,82,381,100"/>
-<area shape="rect" id="Node000012" href="$class_ku_gou_app.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="209,132,331,159"/>
-<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="363,160,331,156,332,151,364,155"/>
-<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="220,128,117,86,119,81,222,123"/>
+<area shape="rect" id="Node000001" title="专辑信息变更信号" alt="" coords="727,55,819,81"/>
+<area shape="rect" id="Node000002" href="$class_ku_gou_app.html#a1dca549e20947032febfdf3cda5dbd8b" title="初始化播放器" alt="" coords="532,29,679,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="711,61,679,56,680,51,711,56"/>
+<area shape="rect" id="Node000004" href="$class_video_player.html#a64b5e8d13b972e77c929b7acdc807f33" title="解析元数据" alt="" coords="552,80,659,107"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="711,80,660,88,659,83,711,75"/>
+<area shape="rect" id="Node000003" href="$class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="329,29,484,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="516,45,485,45,485,40,516,40"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="440,16,428,10,407,8,386,10,376,15,373,20,378,27,374,30,368,21,372,11,385,5,407,3,430,5,442,12"/>
+<area shape="rect" id="Node000005" href="$class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="331,80,482,107"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="537,96,483,96,483,91,537,91"/>
+<area shape="rect" id="Node000008" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="387,131,426,157"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="538,113,427,142,426,137,536,108"/>
+<area shape="rect" id="Node000006" href="$class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="145,80,281,107"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="316,96,281,96,281,91,316,91"/>
+<area shape="rect" id="Node000007" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,80,97,107"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="129,96,97,96,97,91,129,91"/>
 </map>

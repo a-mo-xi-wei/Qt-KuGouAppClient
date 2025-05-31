@@ -2,8 +2,6 @@ var class_ui___all_cloud_disk =
 [
     [ "retranslateUi", "class_ui___all_cloud_disk.html#a70aa7f385906c9fd3ab6766b50ab9a49", null ],
     [ "retranslateUi", "class_ui___all_cloud_disk.html#a70aa7f385906c9fd3ab6766b50ab9a49", null ],
-    [ "retranslateUi", "class_ui___all_cloud_disk.html#a70aa7f385906c9fd3ab6766b50ab9a49", null ],
-    [ "setupUi", "class_ui___all_cloud_disk.html#a0f3dd435abdcd6357b1a3e4ebdf04574", null ],
     [ "setupUi", "class_ui___all_cloud_disk.html#a0f3dd435abdcd6357b1a3e4ebdf04574", null ],
     [ "setupUi", "class_ui___all_cloud_disk.html#a0f3dd435abdcd6357b1a3e4ebdf04574", null ],
     [ "gridLayout", "class_ui___all_cloud_disk.html#a835e96c8de98ae8b60810d64698e5d16", null ],

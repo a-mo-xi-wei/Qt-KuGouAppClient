@@ -2,8 +2,6 @@ var class_ui___live =
 [
     [ "retranslateUi", "class_ui___live.html#aa95a0a5c9d721c0cb09ded0c451c7dd7", null ],
     [ "retranslateUi", "class_ui___live.html#aa95a0a5c9d721c0cb09ded0c451c7dd7", null ],
-    [ "retranslateUi", "class_ui___live.html#aa95a0a5c9d721c0cb09ded0c451c7dd7", null ],
-    [ "setupUi", "class_ui___live.html#a89189a14cd59752659ed2bbefb89a216", null ],
     [ "setupUi", "class_ui___live.html#a89189a14cd59752659ed2bbefb89a216", null ],
     [ "setupUi", "class_ui___live.html#a89189a14cd59752659ed2bbefb89a216", null ],
     [ "all_toolButton", "class_ui___live.html#a86cd17efbaee8ba3a68b572bd7987a4b", null ],

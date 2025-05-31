@@ -2,8 +2,6 @@ var class_ui___recommend_for_you =
 [
     [ "retranslateUi", "class_ui___recommend_for_you.html#af4846827fc69763934141a2fbd64c081", null ],
     [ "retranslateUi", "class_ui___recommend_for_you.html#af4846827fc69763934141a2fbd64c081", null ],
-    [ "retranslateUi", "class_ui___recommend_for_you.html#af4846827fc69763934141a2fbd64c081", null ],
-    [ "setupUi", "class_ui___recommend_for_you.html#aea313ed7c502e6e084e567c40340f643", null ],
     [ "setupUi", "class_ui___recommend_for_you.html#aea313ed7c502e6e084e567c40340f643", null ],
     [ "setupUi", "class_ui___recommend_for_you.html#aea313ed7c502e6e084e567c40340f643", null ],
     [ "advertise_board_widget", "class_ui___recommend_for_you.html#adb7283acf3544a8d3ac4bd367ee8a336", null ],

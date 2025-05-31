@@ -2,8 +2,6 @@ var class_ui___rank_list_widget =
 [
     [ "retranslateUi", "class_ui___rank_list_widget.html#a74e65cd134eeb7f4d385be909ef6b310", null ],
     [ "retranslateUi", "class_ui___rank_list_widget.html#a74e65cd134eeb7f4d385be909ef6b310", null ],
-    [ "retranslateUi", "class_ui___rank_list_widget.html#a74e65cd134eeb7f4d385be909ef6b310", null ],
-    [ "setupUi", "class_ui___rank_list_widget.html#aaf2f046b6dcce44491bea0dd9ea7574e", null ],
     [ "setupUi", "class_ui___rank_list_widget.html#aaf2f046b6dcce44491bea0dd9ea7574e", null ],
     [ "setupUi", "class_ui___rank_list_widget.html#aaf2f046b6dcce44491bea0dd9ea7574e", null ],
     [ "desc_label", "class_ui___rank_list_widget.html#a45c0f38ae3835318641b95e6d45e15b4", null ],

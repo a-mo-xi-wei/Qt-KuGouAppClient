@@ -2,8 +2,6 @@ var class_ui___rank_part_widget =
 [
     [ "retranslateUi", "class_ui___rank_part_widget.html#a3bef44726ae434bb6ec0dd151ee99ff4", null ],
     [ "retranslateUi", "class_ui___rank_part_widget.html#a3bef44726ae434bb6ec0dd151ee99ff4", null ],
-    [ "retranslateUi", "class_ui___rank_part_widget.html#a3bef44726ae434bb6ec0dd151ee99ff4", null ],
-    [ "setupUi", "class_ui___rank_part_widget.html#a1696359280a27b2e2f08ec5ad7670530", null ],
     [ "setupUi", "class_ui___rank_part_widget.html#a1696359280a27b2e2f08ec5ad7670530", null ],
     [ "setupUi", "class_ui___rank_part_widget.html#a1696359280a27b2e2f08ec5ad7670530", null ],
     [ "title_label", "class_ui___rank_part_widget.html#a745d38a0aa6aa533345c40d321988446", null ],

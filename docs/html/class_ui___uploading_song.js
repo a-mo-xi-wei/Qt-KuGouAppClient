@@ -2,8 +2,6 @@ var class_ui___uploading_song =
 [
     [ "retranslateUi", "class_ui___uploading_song.html#a4c1bd07e8438e779073621e1b74bd72f", null ],
     [ "retranslateUi", "class_ui___uploading_song.html#a4c1bd07e8438e779073621e1b74bd72f", null ],
-    [ "retranslateUi", "class_ui___uploading_song.html#a4c1bd07e8438e779073621e1b74bd72f", null ],
-    [ "setupUi", "class_ui___uploading_song.html#a96cac630fb40461c6c91c8f5dae487dc", null ],
     [ "setupUi", "class_ui___uploading_song.html#a96cac630fb40461c6c91c8f5dae487dc", null ],
     [ "setupUi", "class_ui___uploading_song.html#a96cac630fb40461c6c91c8f5dae487dc", null ],
     [ "cloud_clear_toolButton", "class_ui___uploading_song.html#a9050adcbce6903f18c99619518467092", null ],

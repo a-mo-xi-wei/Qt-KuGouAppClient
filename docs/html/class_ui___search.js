@@ -2,8 +2,6 @@ var class_ui___search =
 [
     [ "retranslateUi", "class_ui___search.html#a98f6b13bdea85648887573626aad4160", null ],
     [ "retranslateUi", "class_ui___search.html#a98f6b13bdea85648887573626aad4160", null ],
-    [ "retranslateUi", "class_ui___search.html#a98f6b13bdea85648887573626aad4160", null ],
-    [ "setupUi", "class_ui___search.html#adce1625b2bcbb644633f646e3a6713f1", null ],
     [ "setupUi", "class_ui___search.html#adce1625b2bcbb644633f646e3a6713f1", null ],
     [ "setupUi", "class_ui___search.html#adce1625b2bcbb644633f646e3a6713f1", null ],
     [ "channel_pushButton", "class_ui___search.html#abec5bd8315a1746e44af8184dbb3c171", null ],

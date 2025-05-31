@@ -2,8 +2,6 @@ var class_ui___music_cloud_disk =
 [
     [ "retranslateUi", "class_ui___music_cloud_disk.html#a2d8565e2ba1a026f4f5d393c560529d2", null ],
     [ "retranslateUi", "class_ui___music_cloud_disk.html#a2d8565e2ba1a026f4f5d393c560529d2", null ],
-    [ "retranslateUi", "class_ui___music_cloud_disk.html#a2d8565e2ba1a026f4f5d393c560529d2", null ],
-    [ "setupUi", "class_ui___music_cloud_disk.html#a6081098840a0363816f4d3f8bfa14b03", null ],
     [ "setupUi", "class_ui___music_cloud_disk.html#a6081098840a0363816f4d3f8bfa14b03", null ],
     [ "setupUi", "class_ui___music_cloud_disk.html#a6081098840a0363816f4d3f8bfa14b03", null ],
     [ "guide_widget", "class_ui___music_cloud_disk.html#ae181944de97064febb497417e9824e84", null ],

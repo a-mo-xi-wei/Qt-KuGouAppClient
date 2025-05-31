@@ -2,8 +2,6 @@ var class_ui___purchased_albums =
 [
     [ "retranslateUi", "class_ui___purchased_albums.html#af39df08c05fe7bbd356989967796b0d1", null ],
     [ "retranslateUi", "class_ui___purchased_albums.html#af39df08c05fe7bbd356989967796b0d1", null ],
-    [ "retranslateUi", "class_ui___purchased_albums.html#af39df08c05fe7bbd356989967796b0d1", null ],
-    [ "setupUi", "class_ui___purchased_albums.html#af4227c743ba42fac1593dd5212c53fe9", null ],
     [ "setupUi", "class_ui___purchased_albums.html#af4227c743ba42fac1593dd5212c53fe9", null ],
     [ "setupUi", "class_ui___purchased_albums.html#af4227c743ba42fac1593dd5212c53fe9", null ],
     [ "gridLayout", "class_ui___purchased_albums.html#a835e96c8de98ae8b60810d64698e5d16", null ],

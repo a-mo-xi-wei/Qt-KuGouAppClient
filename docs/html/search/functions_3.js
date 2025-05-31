@@ -68,7 +68,7 @@ var searchData=
   ['closeconnection_65',['closeConnection',['../class_n_d_b_pool.html#a9f44e37b09b7c44b71fe15914da4b0c0',1,'NDBPool::closeConnection()'],['../class_n_d_b_pool__p.html#a042ef63e25f34b27254cec1bf42923a2',1,'NDBPool_p::closeConnection()']]],
   ['closed_66',['closed',['../class_c_web_socket_client.html#a6abb0e45eb340a477edd8b892b37373e',1,'CWebSocketClient::closed()'],['../class_c_web_socket_server.html#a6abb0e45eb340a477edd8b892b37373e',1,'CWebSocketServer::closed()']]],
   ['closedevice_67',['closeDevice',['../class_pcm_player.html#a3d37276da651c5d476ca66d6d6031d92',1,'PcmPlayer::closeDevice()'],['../class_pcm_player___s_d_l.html#ac82f11da965333b34c8a795ef0307e95',1,'PcmPlayer_SDL::closeDevice()']]],
-  ['closeevent_68',['closeEvent',['../class_ku_gou_app.html#a734e48502f247ab4495ae832e4c2ae2e',1,'KuGouApp::closeEvent()'],['../class_main_window.html#a734e48502f247ab4495ae832e4c2ae2e',1,'MainWindow::closeEvent()']]],
+  ['closeevent_68',['closeEvent',['../class_ku_gou_app.html#a734e48502f247ab4495ae832e4c2ae2e',1,'KuGouApp::closeEvent()'],['../class_speed_dialog.html#a734e48502f247ab4495ae832e4c2ae2e',1,'SpeedDialog::closeEvent()'],['../class_main_window.html#a734e48502f247ab4495ae832e4c2ae2e',1,'MainWindow::closeEvent()']]],
   ['closeserver_69',['CloseServer',['../class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c',1,'CTcpServer::CloseServer()'],['../class_c_web_socket_server.html#ac73e9118acf94317f4cf4e6a8a71a61c',1,'CWebSocketServer::CloseServer()']]],
   ['closeserver_70',['closeServer',['../classcchatserver.html#a912a4e0983416e8adeda19aa3c88e495',1,'cchatserver']]],
   ['closesocket_71',['closeSocket',['../class_c_udp_server.html#ad93959a590e20f0755b3d53c4176f74a',1,'CUdpServer']]],

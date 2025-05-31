@@ -99,6 +99,8 @@ $(function(){initNavTree('_ai_chat_8cpp.html',''); initResizable(true); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
   <div class="headertitle"><div class="title">AiChat.cpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -110,65 +112,167 @@ $(function(){initNavTree('_ai_chat_8cpp.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="_text_bubble_8h_source.html">TextBubble.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_chat_item_base_8h_source.html">ChatItemBase.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_ela_message_bar_8h_source.html">ElaMessageBar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8hpp_source.html">logger.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialfab_8h_source.html">qtmaterialfab.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialsnackbar_8h_source.html">qtmaterialsnackbar.h</a>&quot;</code><br />
+<code>#include &lt;QMouseEvent&gt;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;QPainter&gt;</code><br />
+<code>#include &lt;QPainterPath&gt;</code><br />
+<code>#include &lt;QMovie&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 AiChat.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_ai_chat_8cpp__incl.png" border="0" usemap="#a_ai_chat_8cpp" alt=""/></div>
 <map name="a_ai_chat_8cpp" id="a_ai_chat_8cpp">
-<area shape="rect" title="实现 AiChat 类，提供 AI 聊天界面功能" alt="" coords="612,5,699,32"/>
-<area shape="rect" href="_ai_chat_8h.html" title="定义 AiChat 类，提供 AI 聊天界面" alt="" coords="169,80,241,107"/>
-<area shape="poly" title=" " alt="" coords="612,30,257,86,256,81,612,24"/>
-<area shape="rect" title=" " alt="" coords="910,80,999,107"/>
-<area shape="poly" title=" " alt="" coords="700,28,895,75,894,80,698,33"/>
-<area shape="rect" href="_text_bubble_8h.html" title="定义 TextBubble 类，提供文本气泡功能" alt="" coords="607,80,704,107"/>
-<area shape="poly" title=" " alt="" coords="658,33,658,64,653,64,653,33"/>
-<area shape="rect" href="_chat_item_base_8h.html" title="定义 ChatItemBase 类，提供聊天项基类" alt="" coords="770,80,886,107"/>
-<area shape="poly" title=" " alt="" coords="687,30,785,71,783,76,685,35"/>
-<area shape="rect" href="_ela_message_bar_8h.html" title="定义 ElaMessageBar 类，提供消息通知栏功能" alt="" coords="414,80,538,107"/>
-<area shape="poly" title=" " alt="" coords="625,35,522,76,520,71,623,30"/>
-<area shape="rect" href="_chat_8h.html" title="定义 Chat 类，提供与硅基流动 API 的聊天交互" alt="" coords="140,155,200,181"/>
-<area shape="poly" title=" " alt="" coords="201,108,185,142,180,139,197,106"/>
-<area shape="rect" title=" " alt="" coords="440,304,512,331"/>
-<area shape="poly" title=" " alt="" coords="208,107,212,137,222,177,239,218,265,254,292,269,333,283,425,304,424,310,331,288,290,274,262,258,234,221,217,178,207,138,203,108"/>
-<area shape="rect" title=" " alt="" coords="5,155,117,181"/>
-<area shape="poly" title=" " alt="" coords="181,110,101,150,99,145,179,105"/>
-<area shape="rect" title=" " alt="" coords="27,229,202,256"/>
-<area shape="poly" title=" " alt="" coords="163,184,135,219,131,215,158,180"/>
-<area shape="rect" href="_bubble_frame_8h.html" title="定义 BubbleFrame 类，提供聊天气泡框架" alt="" coords="601,155,710,181"/>
-<area shape="poly" title=" " alt="" coords="658,107,658,139,653,139,653,107"/>
-<area shape="rect" title=" " alt="" coords="735,155,814,181"/>
-<area shape="poly" title=" " alt="" coords="678,105,742,144,739,149,675,109"/>
-<area shape="rect" title=" " alt="" coords="513,155,577,181"/>
-<area shape="poly" title=" " alt="" coords="638,109,578,148,575,144,635,105"/>
-<area shape="rect" href="global_8h.html" title="定义全局变量、枚举和结构体" alt="" coords="733,229,800,256"/>
-<area shape="poly" title=" " alt="" coords="676,180,736,218,733,223,673,184"/>
-<area shape="rect" title=" " alt="" coords="640,229,708,256"/>
-<area shape="poly" title=" " alt="" coords="661,181,670,213,665,215,656,183"/>
-<area shape="rect" title=" " alt="" coords="513,229,617,256"/>
-<area shape="poly" title=" " alt="" coords="642,184,594,222,591,218,638,180"/>
-<area shape="poly" title=" " alt="" coords="733,256,722,259,527,306,526,301,720,253,732,250"/>
-<area shape="rect" title=" " alt="" coords="728,304,805,331"/>
-<area shape="poly" title=" " alt="" coords="769,257,769,288,764,288,764,257"/>
-<area shape="poly" title=" " alt="" coords="857,105,882,119,905,137,918,159,919,171,914,183,894,204,869,220,842,231,816,238,815,233,840,226,867,215,891,200,909,180,914,170,913,160,901,141,879,123,855,109"/>
-<area shape="rect" title=" " alt="" coords="838,155,900,181"/>
-<area shape="poly" title=" " alt="" coords="837,106,857,140,852,143,833,109"/>
-<area shape="poly" title=" " alt="" coords="478,107,478,289,473,289,473,107"/>
-<area shape="rect" href="_def_8h.html" title=" " alt="" coords="377,155,430,181"/>
-<area shape="poly" title=" " alt="" coords="465,109,429,145,425,142,461,105"/>
-<area shape="rect" title=" " alt="" coords="369,229,438,256"/>
-<area shape="poly" title=" " alt="" coords="406,182,406,214,401,214,401,182"/>
-<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="276,229,344,256"/>
-<area shape="poly" title=" " alt="" coords="389,184,340,222,337,218,386,180"/>
-<area shape="rect" title=" " alt="" coords="251,304,370,331"/>
-<area shape="poly" title=" " alt="" coords="313,257,313,288,308,288,308,257"/>
+<area shape="rect" title="实现 AiChat 类，提供 AI 聊天界面功能" alt="" coords="1212,5,1298,32"/>
+<area shape="rect" href="_ai_chat_8h.html" title="定义 AiChat 类，提供 AI 聊天界面" alt="" coords="212,80,285,107"/>
+<area shape="poly" title=" " alt="" coords="1212,25,860,46,361,83,301,89,300,83,360,77,859,40,1211,20"/>
+<area shape="rect" title=" " alt="" coords="1210,80,1300,107"/>
+<area shape="poly" title=" " alt="" coords="1258,33,1258,64,1252,64,1252,33"/>
+<area shape="rect" href="_text_bubble_8h.html" title="定义 TextBubble 类，提供文本气泡功能" alt="" coords="630,80,728,107"/>
+<area shape="poly" title=" " alt="" coords="1212,28,744,87,743,81,1211,23"/>
+<area shape="rect" href="_chat_item_base_8h.html" title="定义 ChatItemBase 类，提供聊天项基类" alt="" coords="373,80,489,107"/>
+<area shape="poly" title=" " alt="" coords="1212,26,505,88,504,83,1211,21"/>
+<area shape="rect" href="_ela_message_bar_8h.html" title="定义 ElaMessageBar 类，提供消息通知栏功能" alt="" coords="957,80,1081,107"/>
+<area shape="poly" title=" " alt="" coords="1215,35,1076,78,1074,72,1213,30"/>
+<area shape="rect" href="logger_8hpp.html" title=" " alt="" coords="1105,80,1186,107"/>
+<area shape="poly" title=" " alt="" coords="1238,35,1179,74,1176,69,1235,30"/>
+<area shape="rect" href="qtmaterialfab_8h.html" title="定义 QtMaterialFloatingActionButton 类，提供 Material Design 浮动动作按钮" alt="" coords="1324,80,1432,107"/>
+<area shape="poly" title=" " alt="" coords="1278,30,1344,69,1342,74,1275,35"/>
+<area shape="rect" href="qtmaterialsnackbar_8h.html" title="定义 QtMaterialSnackbar 类，提供 Material Design 提示条" alt="" coords="791,80,933,107"/>
+<area shape="poly" title=" " alt="" coords="1212,31,946,79,945,74,1211,25"/>
+<area shape="rect" title=" " alt="" coords="1455,80,1559,107"/>
+<area shape="poly" title=" " alt="" coords="1299,30,1450,73,1448,78,1298,35"/>
+<area shape="rect" title=" " alt="" coords="1584,80,1636,107"/>
+<area shape="poly" title=" " alt="" coords="1299,24,1417,45,1569,77,1568,82,1416,50,1298,29"/>
+<area shape="rect" title=" " alt="" coords="1660,80,1733,107"/>
+<area shape="poly" title=" " alt="" coords="1299,23,1448,43,1645,77,1644,82,1447,48,1298,28"/>
+<area shape="rect" title=" " alt="" coords="1756,80,1856,107"/>
+<area shape="poly" title=" " alt="" coords="1299,22,1487,42,1741,77,1740,82,1487,48,1299,27"/>
+<area shape="rect" title=" " alt="" coords="1879,80,1946,107"/>
+<area shape="poly" title=" " alt="" coords="1299,19,1536,36,1697,53,1864,77,1864,82,1697,58,1536,41,1299,25"/>
+<area shape="rect" href="_chat_8h.html" title="定义 Chat 类，提供与硅基流动 API 的聊天交互" alt="" coords="62,155,123,181"/>
+<area shape="poly" title=" " alt="" coords="222,110,135,150,132,145,220,105"/>
+<area shape="rect" title=" " alt="" coords="635,320,707,347"/>
+<area shape="poly" title=" " alt="" coords="259,106,283,139,322,185,370,231,427,270,476,291,527,306,620,324,619,329,526,311,474,296,425,274,367,236,318,188,279,143,255,109"/>
+<area shape="rect" title=" " alt="" coords="146,155,258,181"/>
+<area shape="poly" title=" " alt="" coords="243,109,220,143,216,140,238,106"/>
+<area shape="rect" title=" " alt="" coords="5,237,180,264"/>
+<area shape="poly" title=" " alt="" coords="95,182,95,222,90,222,90,182"/>
+<area shape="rect" href="_bubble_frame_8h.html" title="定义 BubbleFrame 类，提供聊天气泡框架" alt="" coords="468,155,578,181"/>
+<area shape="poly" title=" " alt="" coords="653,110,565,150,563,145,651,105"/>
+<area shape="rect" title=" " alt="" coords="602,155,682,181"/>
+<area shape="poly" title=" " alt="" coords="675,108,658,142,653,140,670,106"/>
+<area shape="rect" title=" " alt="" coords="706,155,770,181"/>
+<area shape="poly" title=" " alt="" coords="691,106,720,141,716,144,687,109"/>
+<area shape="rect" href="global_8h.html" title="定义全局变量、枚举和结构体" alt="" coords="438,237,504,264"/>
+<area shape="poly" title=" " alt="" coords="517,183,490,226,485,223,513,180"/>
+<area shape="rect" title=" " alt="" coords="529,237,597,264"/>
+<area shape="poly" title=" " alt="" coords="532,181,553,222,548,225,527,183"/>
+<area shape="rect" title=" " alt="" coords="621,237,724,264"/>
+<area shape="poly" title=" " alt="" coords="548,179,637,228,635,232,545,184"/>
+<area shape="poly" title=" " alt="" coords="500,262,518,270,625,312,623,317,515,274,498,267"/>
+<area shape="rect" title=" " alt="" coords="1754,469,1831,496"/>
+<area shape="poly" title=" " alt="" coords="488,262,545,304,583,326,624,344,724,370,859,394,1016,415,1185,433,1509,460,1739,476,1738,481,1509,466,1184,438,1015,420,858,399,723,376,622,349,581,331,542,308,484,267"/>
+<area shape="poly" title=" " alt="" coords="437,107,467,222,462,223,432,108"/>
+<area shape="rect" title=" " alt="" coords="332,155,394,181"/>
+<area shape="poly" title=" " alt="" coords="421,109,387,145,383,141,417,105"/>
+<area shape="poly" title=" " alt="" coords="1018,108,1004,144,992,165,977,183,948,209,916,232,847,271,780,300,723,320,722,315,778,295,845,267,913,228,944,205,973,179,988,162,999,142,1013,106"/>
+<area shape="rect" href="_def_8h.html" title=" " alt="" coords="1039,155,1092,181"/>
+<area shape="poly" title=" " alt="" coords="1030,106,1052,140,1047,143,1025,109"/>
+<area shape="rect" title=" " alt="" coords="1067,237,1136,264"/>
+<area shape="poly" title=" " alt="" coords="1074,181,1093,222,1088,225,1069,183"/>
+<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="974,237,1043,264"/>
+<area shape="poly" title=" " alt="" coords="1059,183,1028,226,1024,223,1055,180"/>
+<area shape="rect" title=" " alt="" coords="949,320,1068,347"/>
+<area shape="poly" title=" " alt="" coords="1011,264,1011,305,1006,305,1006,264"/>
+<area shape="rect" href="mylog_8h.html" title=" " alt="" coords="1875,155,1942,181"/>
+<area shape="poly" title=" " alt="" coords="1187,102,1198,104,1389,129,1578,146,1859,162,1859,168,1577,151,1389,134,1197,109,1186,107"/>
+<area shape="poly" title=" " alt="" coords="1874,173,1516,191,1303,209,1215,220,1149,232,1142,234,1140,229,1148,227,1214,214,1303,204,1516,186,1874,168"/>
+<area shape="rect" title=" " alt="" coords="2282,237,2364,264"/>
+<area shape="poly" title=" " alt="" coords="1943,170,2086,189,2178,205,2271,227,2279,229,2278,234,2269,232,2177,211,2086,194,1942,175"/>
+<area shape="rect" title=" " alt="" coords="2314,320,2383,347"/>
+<area shape="poly" title=" " alt="" coords="1943,168,2188,188,2312,205,2355,215,2378,227,2388,247,2387,268,2379,289,2369,308,2364,306,2375,287,2381,267,2382,248,2375,231,2353,220,2311,210,2187,193,1942,174"/>
+<area shape="rect" title=" " alt="" coords="1898,469,1967,496"/>
+<area shape="poly" title=" " alt="" coords="1912,182,1933,454,1928,454,1907,182"/>
+<area shape="rect" href="spdlog_8h.html" title=" " alt="" coords="1946,237,2058,264"/>
+<area shape="poly" title=" " alt="" coords="1925,180,1978,225,1974,229,1921,184"/>
+<area shape="rect" href="fmt_8h.html" title=" " alt="" coords="2186,469,2303,496"/>
+<area shape="poly" title=" " alt="" coords="1943,168,2055,175,2200,187,2331,204,2376,215,2401,228,2407,249,2407,284,2404,321,2398,348,2374,385,2344,417,2312,443,2282,463,2279,459,2309,439,2340,413,2370,381,2393,346,2399,321,2402,284,2401,250,2397,231,2374,220,2330,209,2199,192,2055,180,1943,174"/>
+<area shape="rect" href="logger_8h.html" title=" " alt="" coords="2047,320,2156,347"/>
+<area shape="poly" title=" " alt="" coords="1943,171,1973,177,2008,188,2042,204,2072,227,2085,245,2093,265,2102,304,2097,305,2088,267,2080,248,2068,231,2039,209,2006,192,1972,182,1942,176"/>
+<area shape="rect" href="_my_spdlog_2spdlog_2_async_8h.html" title=" " alt="" coords="1762,395,1871,421"/>
+<area shape="poly" title=" " alt="" coords="1906,182,1829,381,1824,379,1901,180"/>
+<area shape="rect" href="printf_8h.html" title=" " alt="" coords="2490,229,2621,272"/>
+<area shape="poly" title=" " alt="" coords="1943,169,2165,187,2317,204,2472,227,2474,227,2473,232,2471,232,2317,209,2165,192,1942,174"/>
+<area shape="rect" href="basic__file__sink_8h.html" title=" " alt="" coords="2645,229,2774,272"/>
+<area shape="poly" title=" " alt="" coords="1943,167,2055,172,2223,181,2422,199,2630,226,2629,232,2422,204,2222,187,2055,177,1943,173"/>
+<area shape="rect" href="daily__file__sink_8h.html" title=" " alt="" coords="2132,229,2258,272"/>
+<area shape="poly" title=" " alt="" coords="1943,176,2118,225,2117,230,1942,181"/>
+<area shape="rect" href="msvc__sink_8h.html" title=" " alt="" coords="1161,237,1333,264"/>
+<area shape="poly" title=" " alt="" coords="1875,174,1653,194,1501,211,1346,232,1320,236,1319,231,1345,227,1500,206,1652,189,1875,169"/>
+<area shape="rect" href="stdout__sinks_8h.html" title=" " alt="" coords="1357,229,1492,272"/>
+<area shape="poly" title=" " alt="" coords="1875,176,1720,196,1507,232,1506,226,1719,191,1874,171"/>
+<area shape="rect" href="stdout__color__sinks_8h.html" title=" " alt="" coords="1516,229,1650,272"/>
+<area shape="poly" title=" " alt="" coords="1875,180,1666,231,1665,226,1874,175"/>
+<area shape="rect" title=" " alt="" coords="1674,237,1743,264"/>
+<area shape="poly" title=" " alt="" coords="1876,184,1756,232,1752,233,1750,228,1754,227,1874,179"/>
+<area shape="rect" title=" " alt="" coords="1768,237,1820,264"/>
+<area shape="poly" title=" " alt="" coords="1892,184,1825,231,1822,226,1889,180"/>
+<area shape="poly" title=" " alt="" coords="1951,267,1900,285,1845,311,1792,348,1770,370,1752,396,1748,411,1751,426,1770,456,1766,459,1746,428,1743,411,1747,394,1766,367,1789,344,1842,306,1898,280,1949,262"/>
+<area shape="poly" title=" " alt="" coords="2001,265,1943,455,1938,454,1995,264"/>
+<area shape="rect" href="_my_spdlog_2spdlog_2common_8h.html" title=" " alt="" coords="2018,395,2143,421"/>
+<area shape="poly" title=" " alt="" coords="2007,263,2019,301,2038,345,2062,381,2057,384,2033,348,2014,303,2002,265"/>
+<area shape="poly" title=" " alt="" coords="2019,262,2077,308,2073,313,2016,267"/>
+<area shape="poly" title=" " alt="" coords="2031,424,1847,470,1846,465,2030,419"/>
+<area shape="poly" title=" " alt="" coords="2056,424,1973,464,1971,460,2054,419"/>
+<area shape="poly" title=" " alt="" coords="2110,419,2203,460,2201,465,2108,424"/>
+<area shape="poly" title=" " alt="" coords="2101,348,2091,381,2086,379,2096,346"/>
+<area shape="poly" title=" " alt="" coords="1815,423,1804,455,1799,454,1810,421"/>
+<area shape="poly" title=" " alt="" coords="1838,420,1901,458,1898,463,1835,424"/>
+<area shape="poly" title=" " alt="" coords="2236,270,2312,310,2310,315,2233,275"/>
+<area shape="poly" title=" " alt="" coords="2196,273,2189,310,2171,348,2149,371,2123,389,2120,385,2145,367,2166,345,2183,308,2191,272"/>
+<area shape="poly" title=" " alt="" coords="2202,272,2241,454,2236,455,2197,273"/>
+<area shape="rect" href="qtmaterialraisedbutton_8h.html" title="定义 QtMaterialRaisedButton 类，提供 Material Design 凸起按钮" alt="" coords="2378,155,2538,181"/>
+<area shape="poly" title=" " alt="" coords="1432,102,1443,104,1703,130,1961,147,2362,162,2362,168,1961,152,1703,135,1443,109,1432,108"/>
+<area shape="rect" href="qtmaterialflatbutton_8h.html" title="定义 QtMaterialFlatButton 类，提供 Material Design 扁平按钮" alt="" coords="2798,237,2942,264"/>
+<area shape="poly" title=" " alt="" coords="2534,179,2788,227,2805,231,2804,236,2787,232,2533,185"/>
+<area shape="rect" href="qtmaterialoverlaywidget_8h.html" title="定义 QtMaterialOverlayWidget 类，提供覆盖层控件功能" alt="" coords="794,155,964,181"/>
+<area shape="poly" title=" " alt="" coords="867,107,875,139,870,140,862,108"/>
+<area shape="poly" title=" " alt="" coords="865,184,700,313,697,308,862,180"/>
 </map>
 </div>
-</div><a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a7da49cee97dfd7405e8595862fd266de" id="r_a7da49cee97dfd7405e8595862fd266de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7da49cee97dfd7405e8595862fd266de">GET_CURRENT_DIR</a>&#160;&#160;&#160;(QString(__FILE__).<a class="el" href="base_8h.html#a6c52c4bac77f6744fdc338766e9e8a6fa811882fecd5c7618d7099ebbd39ea254">left</a>(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))</td></tr>
+<tr class="memdesc:a7da49cee97dfd7405e8595862fd266de"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前文件所在目录宏  <br /></td></tr>
+<tr class="separator:a7da49cee97dfd7405e8595862fd266de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>实现 <a class="el" href="class_ai_chat.html" title="AI 聊天界面类，集成问题输入、聊天视图和流式回答">AiChat</a> 类，提供 AI 聊天界面功能 </p>
 <dl class="section author"><dt>作者</dt><dd>WeiWang </dd></dl>
 <dl class="section date"><dt>日期</dt><dd>2025-04-14 </dd></dl>
 <dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a7da49cee97dfd7405e8595862fd266de" name="a7da49cee97dfd7405e8595862fd266de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da49cee97dfd7405e8595862fd266de">&#9670;&#160;</a></span>GET_CURRENT_DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_CURRENT_DIR&#160;&#160;&#160;(QString(__FILE__).<a class="el" href="base_8h.html#a6c52c4bac77f6744fdc338766e9e8a6fa811882fecd5c7618d7099ebbd39ea254">left</a>(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前文件所在目录宏 </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

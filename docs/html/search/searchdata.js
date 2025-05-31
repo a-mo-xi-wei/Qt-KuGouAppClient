@@ -11,7 +11,7 @@ var indexSectionsWithContent =
   8: "abcdefghijklmnopqrstuvwxyz",
   9: "abcdfhiloprstw",
   10: "abcdefglos",
-  11: "_abcdefghijlmnpqrsvwz",
+  11: "_abcdefghijlmnpqrstuvwz",
   12: "用高🎵"
 };
 

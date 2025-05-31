@@ -100,22 +100,39 @@ $(function(){initNavTree('_ku_gou_server_2main_8cpp.html',''); initResizable(tru
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
 <a href="#func-members">函数</a>  </div>
   <div class="headertitle"><div class="title">main.cpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>程序入口点，负责初始化并启动服务器。  
+<p>程序入口点，负责初始化并启动单实例服务器。  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_server_8h_source.html">Server.h</a>&quot;</code><br />
+<code>#include &lt;QCoreApplication&gt;</code><br />
+<code>#include &lt;QFileInfo&gt;</code><br />
+<code>#include &lt;QLocalSocket&gt;</code><br />
+<code>#include &lt;QLocalServer&gt;</code><br />
+<code>#include &quot;main.moc&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 KuGouServer/main.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_ku_gou_server_2main_8cpp__incl.png" border="0" usemap="#amain_8cpp" alt=""/></div>
 <map name="amain_8cpp" id="amain_8cpp">
-<area shape="rect" title="程序入口点，负责初始化并启动服务器。" alt="" coords="780,5,854,32"/>
+<area shape="rect" title="程序入口点，负责初始化并启动单实例服务器。" alt="" coords="1080,5,1154,32"/>
 <area shape="rect" href="_server_8h.html" title="HTTP 服务器主类头文件，定义了 Server 类的接口。" alt="" coords="782,80,852,107"/>
-<area shape="poly" title=" " alt="" coords="820,33,820,64,815,64,815,33"/>
+<area shape="poly" title=" " alt="" coords="1080,31,868,82,867,77,1079,26"/>
+<area shape="rect" title=" " alt="" coords="877,80,1000,107"/>
+<area shape="poly" title=" " alt="" coords="1087,35,985,76,983,71,1085,30"/>
+<area shape="rect" title=" " alt="" coords="1024,80,1098,107"/>
+<area shape="poly" title=" " alt="" coords="1110,34,1082,69,1078,66,1105,31"/>
+<area shape="rect" title=" " alt="" coords="1123,80,1226,107"/>
+<area shape="poly" title=" " alt="" coords="1129,31,1157,66,1153,69,1125,34"/>
+<area shape="rect" title=" " alt="" coords="1250,80,1350,107"/>
+<area shape="poly" title=" " alt="" coords="1150,30,1255,71,1253,76,1148,35"/>
+<area shape="rect" title=" " alt="" coords="1374,80,1452,107"/>
+<area shape="poly" title=" " alt="" coords="1155,27,1360,76,1359,81,1154,32"/>
 <area shape="rect" href="chttpserver_8h.html" title=" " alt="" coords="821,155,918,181"/>
 <area shape="poly" title=" " alt="" coords="829,106,854,141,849,144,824,109"/>
 <area shape="rect" href="sqlitedataprovider_8h.html" title=" " alt="" coords="698,229,832,256"/>
@@ -214,6 +231,18 @@ KuGouServer/main.cpp 的引用(Include)关系图:</div>
 </map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_single_core_application.html">QSingleCoreApplication</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">单实例核心应用程序类，继承自 QCoreApplication  <a href="class_q_single_core_application.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a799517031a8334a42807b119bb456c53" id="r_a799517031a8334a42807b119bb456c53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a799517031a8334a42807b119bb456c53">TIME_OUT</a>&#160;&#160;&#160;(500)</td></tr>
+<tr class="memdesc:a799517031a8334a42807b119bb456c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">本地 socket 通信超时时间（毫秒）  <br /></td></tr>
+<tr class="separator:a799517031a8334a42807b119bb456c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
@@ -221,11 +250,28 @@ KuGouServer/main.cpp 的引用(Include)关系图:</div>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>程序入口点，负责初始化并启动服务器。 </p>
-<p>此文件是服务器应用程序的入口，负责创建并启动服务器实例。</p>
+<div class="textblock"><p>程序入口点，负责初始化并启动单实例服务器。 </p>
+<p>此文件是服务器应用程序的入口，负责创建并启动单实例服务器，确保同一时刻只有一个实例运行。</p>
 <dl class="section author"><dt>作者</dt><dd>WeiWang </dd></dl>
 <dl class="section date"><dt>日期</dt><dd>2025-05-12 </dd></dl>
-</div><h2 class="groupheader">函数说明</h2>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a799517031a8334a42807b119bb456c53" name="a799517031a8334a42807b119bb456c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a799517031a8334a42807b119bb456c53">&#9670;&#160;</a></span>TIME_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIME_OUT&#160;&#160;&#160;(500)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>本地 socket 通信超时时间（毫秒） </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
 <a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
 
@@ -246,7 +292,7 @@ KuGouServer/main.cpp 的引用(Include)关系图:</div>
 </div><div class="memdoc">
 
 <p>主函数，程序的入口点。 </p>
-<p>此函数初始化 Qt 核心应用程序，创建 <a class="el" href="class_server.html" title="HTTP服务器主类，管理数据库、路由及请求处理">Server</a> 实例，并启动事件循环以处理服务器操作。</p>
+<p>此函数初始化 Qt 核心应用程序，创建单实例 Server，确保只有一个实例运行，并启动事件循环以处理服务器操作。</p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>命令行参数的数量。 </td></tr>
@@ -255,6 +301,97 @@ KuGouServer/main.cpp 的引用(Include)关系图:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>int 程序退出状态。 </dd></dl>
+<p>&lt; 创建单实例核心应用程序</p>
+<p>&lt; 已有实例运行，退出程序</p>
+<p>&lt; 创建服务器实例</p>
+<p>&lt; 进入事件循环</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_ku_gou_server_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#a_ku_gou_server_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
+<map name="a_ku_gou_server_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="a_ku_gou_server_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
+<area shape="rect" title="主函数，程序的入口点。" alt="" coords="5,413,55,440"/>
+<area shape="rect" href="printf_8h.html#a9f315126362cae9675de1642105e631e" title="Formats args according to specifications in fmt and writes the output to f." alt="" coords="155,384,210,411"/>
+<area shape="poly" title=" " alt="" coords="55,419,139,403,140,408,56,425"/>
+<area shape="rect" href="class_q_single_core_application.html#a40e5881f9c001c5cc38554084751adbc" title=" " alt="" coords="103,435,262,477"/>
+<area shape="poly" title=" " alt="" coords="56,429,88,435,87,440,55,434"/>
+<area shape="rect" href="printf_8h.html#a27dcc0efcda04388971dbea3c875f122" title="Constructs an format_arg_store object that contains references to arguments and can be implicitly con..." alt="" coords="322,333,443,360"/>
+<area shape="poly" title=" " alt="" coords="209,388,311,362,313,367,211,393"/>
+<area shape="rect" href="namespacedetail.html#af3fca38e6688d36bd47d0c690b16e49a" title=" " alt="" coords="310,384,454,411"/>
+<area shape="poly" title=" " alt="" coords="210,395,294,395,294,400,210,400"/>
+<area shape="rect" href="printf_8h.html#abb30aad964fc771fb52cf3ad88649df2" title=" " alt="" coords="352,435,413,461"/>
+<area shape="poly" title=" " alt="" coords="211,401,337,434,336,439,209,407"/>
+<area shape="rect" href="namespacedetail.html#a755ec613824f57d29068751f166ad91b" title=" " alt="" coords="502,435,599,461"/>
+<area shape="poly" title=" " alt="" coords="413,445,487,445,487,451,413,451"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="1157,56,1196,83"/>
+<area shape="poly" title=" " alt="" coords="549,434,550,378,561,296,573,251,590,207,614,166,645,131,684,109,740,93,808,81,882,73,1031,66,1142,66,1142,71,1031,71,883,78,808,86,741,98,686,114,648,135,618,169,595,209,578,252,567,297,555,378,554,434"/>
+<area shape="rect" href="namespacedetail.html#a1092422aa9ff50b4eaa2068e31ccff0f" title=" " alt="" coords="666,5,794,32"/>
+<area shape="poly" title=" " alt="" coords="551,434,561,356,581,241,609,126,626,81,645,49,657,38,660,42,649,52,630,83,614,128,586,242,566,356,556,435"/>
+<area shape="rect" href="namespacedetail.html#a02307ec0131a3aa9df2db7c2f10b69f2" title=" " alt="" coords="689,435,770,461"/>
+<area shape="poly" title=" " alt="" coords="599,445,674,445,674,451,599,451"/>
+<area shape="rect" href="color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="1147,587,1206,613"/>
+<area shape="poly" title=" " alt="" coords="599,459,647,471,708,480,761,485,852,487,941,493,993,503,1052,522,1094,544,1144,576,1141,580,1091,548,1050,526,991,509,941,498,851,492,761,490,708,486,646,476,598,465"/>
+<area shape="rect" href="namespacedetail.html#a727b5e700f6f0e3aca7e0181e45240f3" title=" " alt="" coords="904,131,1008,157"/>
+<area shape="poly" title=" " alt="" coords="549,434,553,384,565,313,577,274,594,237,616,203,645,174,673,156,703,143,768,128,832,125,889,129,889,135,832,130,768,133,705,148,675,161,648,178,620,206,599,239,582,276,571,314,558,385,555,435"/>
+<area shape="rect" href="format-inl_8h.html#a5555893692b00b61b3886349332fd01f" title="Reports a format error at compile time or, via a format_error exception, at runtime." alt="" coords="1133,181,1220,208"/>
+<area shape="poly" title=" " alt="" coords="554,433,585,367,611,328,645,294,702,257,764,230,829,210,895,197,959,189,1019,186,1117,187,1117,192,1019,191,959,195,896,202,830,215,766,235,704,262,648,298,616,331,590,370,559,436"/>
+<area shape="rect" href="namespacedetail.html#a21ef35f3306ada700061355953e35f4d" title=" " alt="" coords="647,587,813,613"/>
+<area shape="poly" title=" " alt="" coords="561,460,593,515,618,546,648,573,656,577,653,582,645,577,614,550,589,518,556,463"/>
+<area shape="rect" href="namespacedetail.html#a4bed1b172ef600201e6d59ec7f532d0f" title=" " alt="" coords="654,637,806,664"/>
+<area shape="poly" title=" " alt="" coords="558,461,568,494,586,538,613,584,648,623,654,627,650,631,645,627,608,587,582,540,563,496,553,463"/>
+<area shape="rect" href="namespacedetail.html#af191853bad5ee9cfad04aad57ce3f761" title=" " alt="" coords="661,308,799,335"/>
+<area shape="poly" title=" " alt="" coords="569,432,645,376,695,342,698,346,648,381,572,436"/>
+<area shape="rect" href="namespacedetail.html#ac51bc4cc7c73f12b3605eee5c2d29700" title=" " alt="" coords="861,384,1051,411"/>
+<area shape="poly" title=" " alt="" coords="597,431,646,420,748,407,845,399,846,404,749,412,647,425,598,437"/>
+<area shape="rect" href="namespacedetail.html#ab32eb7489f534b4b7afa8efd2f3c770e" title=" " alt="" coords="664,688,796,731"/>
+<area shape="poly" title=" " alt="" coords="556,461,565,502,581,559,609,620,627,649,649,674,653,678,650,682,645,678,623,652,604,623,576,561,559,504,551,462"/>
+<area shape="rect" href="namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b" title=" " alt="" coords="665,755,795,781"/>
+<area shape="poly" title=" " alt="" coords="555,461,558,513,571,588,583,629,600,670,621,708,649,741,653,745,650,749,645,745,617,711,595,672,578,631,566,589,553,514,549,462"/>
+<area shape="rect" href="namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a" title=" " alt="" coords="686,536,774,563"/>
+<area shape="poly" title=" " alt="" coords="569,460,604,487,648,515,674,527,672,532,645,520,601,491,566,464"/>
+<area shape="poly" title=" " alt="" coords="1155,65,1138,54,1135,42,1149,33,1176,29,1200,31,1214,38,1219,47,1212,57,1208,54,1213,47,1211,41,1199,37,1177,35,1151,38,1140,44,1142,51,1158,61"/>
+<area shape="poly" title=" " alt="" coords="795,21,1052,48,1142,61,1141,66,1051,53,794,27"/>
+<area shape="rect" href="namespacedetail.html#a1fad02034db0164c9a959f0ffe148dbc" title=" " alt="" coords="915,435,997,461"/>
+<area shape="poly" title=" " alt="" coords="771,445,899,445,899,451,771,451"/>
+<area shape="poly" title=" " alt="" coords="997,128,1141,78,1143,83,999,133"/>
+<area shape="poly" title=" " alt="" coords="919,132,912,122,917,112,932,106,956,104,982,107,996,113,994,118,981,112,956,109,933,111,920,116,918,121,923,129"/>
+<area shape="poly" title=" " alt="" coords="1009,153,1118,179,1117,184,1007,158"/>
+<area shape="poly" title=" " alt="" coords="747,305,924,165,928,169,750,310"/>
+<area shape="poly" title=" " alt="" coords="762,305,860,268,998,230,1117,204,1118,209,999,236,862,273,764,310"/>
+<area shape="rect" href="namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f" title=" " alt="" coords="894,283,1018,309"/>
+<area shape="poly" title=" " alt="" coords="799,311,879,302,879,307,800,316"/>
+<area shape="rect" href="namespacedetail.html#a90149e7cc7db72a2c4b8186f52e77d6c" title=" " alt="" coords="892,333,1020,360"/>
+<area shape="poly" title=" " alt="" coords="800,326,877,335,877,340,799,332"/>
+<area shape="poly" title=" " alt="" coords="765,333,862,369,886,377,884,382,860,375,763,338"/>
+<area shape="rect" href="classbasic__specs.html#af764698dbe47aaeef3cb198972593f78" title=" " alt="" coords="1099,232,1254,259"/>
+<area shape="poly" title=" " alt="" coords="1019,333,1050,319,1064,307,1073,295,1083,282,1098,268,1107,263,1110,268,1101,273,1087,285,1078,298,1068,311,1053,324,1021,337"/>
+<area shape="rect" href="classbasic__specs.html#a192d822d1b986f70a10bfd2c438abce1" title=" " alt="" coords="1106,283,1247,309"/>
+<area shape="poly" title=" " alt="" coords="1017,330,1100,311,1101,316,1018,335"/>
+<area shape="rect" href="classbasic__specs.html#a3c56b1a9d662b03cd2b4b1b774781462" title=" " alt="" coords="1106,333,1247,360"/>
+<area shape="poly" title=" " alt="" coords="1020,344,1091,344,1091,349,1020,349"/>
+<area shape="rect" href="classbasic__specs.html#ad7b2fcf7e62cb3cc6b9d8ec72484338d" title=" " alt="" coords="1101,384,1252,411"/>
+<area shape="poly" title=" " alt="" coords="1018,358,1101,377,1100,383,1017,363"/>
+<area shape="rect" href="classbasic__specs.html#a1147588dbb7187d9e8d5022e6da843af" title=" " alt="" coords="1113,459,1240,485"/>
+<area shape="poly" title=" " alt="" coords="1021,356,1053,370,1069,382,1078,394,1101,421,1139,448,1136,452,1098,425,1074,398,1065,386,1050,374,1019,361"/>
+<area shape="rect" href="classbasic__specs.html#a625b0fd2cf9eda4a3e3e94af7f49ef6a" title=" " alt="" coords="1302,333,1473,360"/>
+<area shape="poly" title=" " alt="" coords="1247,344,1286,344,1286,349,1247,349"/>
+<area shape="poly" title=" " alt="" coords="1141,460,1134,450,1139,440,1153,434,1177,432,1202,435,1215,441,1213,446,1200,440,1176,437,1154,439,1142,444,1140,449,1145,457"/>
+<area shape="rect" href="namespacedetail.html#a0ff2a6d81d2949ea20ee638c8e2790ca" title=" " alt="" coords="1124,509,1229,536"/>
+<area shape="poly" title=" " alt="" coords="1032,409,1053,421,1070,439,1078,459,1085,477,1101,495,1111,502,1108,506,1098,499,1081,480,1073,461,1066,442,1050,425,1029,414"/>
+<area shape="rect" href="namespacedetail.html#a093c072169fc67025b7709efbfe48171" title=" " alt="" coords="921,739,991,765"/>
+<area shape="poly" title=" " alt="" coords="796,719,906,740,905,745,795,724"/>
+<area shape="rect" href="namespacedetail.html#a94fd8fb87672f6ca33ea17019096e098" title=" " alt="" coords="1137,739,1216,765"/>
+<area shape="poly" title=" " alt="" coords="992,749,1122,749,1122,755,992,755"/>
+<area shape="poly" title=" " alt="" coords="775,556,861,572,1010,588,1132,595,1132,601,1010,593,861,577,774,562"/>
+<area shape="rect" href="namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486" title=" " alt="" coords="902,637,1011,664"/>
+<area shape="poly" title=" " alt="" coords="775,556,814,572,829,584,839,595,848,606,862,616,888,629,886,634,860,621,845,610,835,598,826,587,812,577,773,561"/>
+<area shape="rect" href="namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83" title=" " alt="" coords="898,688,1015,715"/>
+<area shape="poly" title=" " alt="" coords="775,553,796,561,815,573,826,586,834,599,839,625,845,650,852,662,863,674,884,687,881,691,859,678,847,665,840,652,834,626,829,601,822,589,811,577,794,565,774,558"/>
+<area shape="rect" href="namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2" title=" " alt="" coords="894,536,1019,563"/>
+<area shape="poly" title=" " alt="" coords="774,547,878,547,878,552,774,552"/>
+<area shape="poly" title=" " alt="" coords="1011,636,1132,607,1133,613,1012,641"/>
+</map>
+</div>
 
 </div>
 </div>

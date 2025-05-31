@@ -2,8 +2,6 @@ var class_ui___daily_recommend =
 [
     [ "retranslateUi", "class_ui___daily_recommend.html#aca29b7756b42bd1f20bbd6393e137fd9", null ],
     [ "retranslateUi", "class_ui___daily_recommend.html#aca29b7756b42bd1f20bbd6393e137fd9", null ],
-    [ "retranslateUi", "class_ui___daily_recommend.html#aca29b7756b42bd1f20bbd6393e137fd9", null ],
-    [ "setupUi", "class_ui___daily_recommend.html#aee21e30a6d03307ae79dc4025d793032", null ],
     [ "setupUi", "class_ui___daily_recommend.html#aee21e30a6d03307ae79dc4025d793032", null ],
     [ "setupUi", "class_ui___daily_recommend.html#aee21e30a6d03307ae79dc4025d793032", null ],
     [ "batch_toolButton", "class_ui___daily_recommend.html#a70705b64f99c7b916e7834125818d0ec", null ],

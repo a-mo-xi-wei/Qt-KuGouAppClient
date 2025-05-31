@@ -527,8 +527,16 @@ var hierarchy =
     [ "printf_formatter< T >", "structprintf__formatter.html", null ],
     [ "printf_precision_handler", "structdetail_1_1printf__precision__handler.html", null ],
     [ "printf_width_handler", "classdetail_1_1printf__width__handler.html", null ],
+    [ "QAbstractSlider", null, [
+      [ "QtMaterialSlider", "class_qt_material_slider.html", [
+        [ "SnapSlider", "class_snap_slider.html", null ]
+      ] ]
+    ] ],
     [ "QAbstractTransition", null, [
       [ "QtMaterialStateTransition", "class_qt_material_state_transition.html", null ]
+    ] ],
+    [ "QApplication", null, [
+      [ "QSingleApplication", "class_q_single_application.html", null ]
     ] ],
     [ "QButtonGroup", "class_q_button_group.html", null ],
     [ "QCheckBox", null, [
@@ -538,6 +546,9 @@ var hierarchy =
     ] ],
     [ "QCommonStyle", null, [
       [ "QtMaterialStyle", "class_qt_material_style.html", null ]
+    ] ],
+    [ "QCoreApplication", null, [
+      [ "QSingleCoreApplication", "class_q_single_core_application.html", null ]
     ] ],
     [ "QDialog", null, [
       [ "ElaExitDialog", "class_ela_exit_dialog.html", null ]
@@ -603,6 +614,7 @@ var hierarchy =
       [ "ElaTextPrivate", "class_ela_text_private.html", null ],
       [ "ElaTheme", "class_ela_theme.html", null ],
       [ "ElaThemePrivate", "class_ela_theme_private.html", null ],
+      [ "ElaToggleSwitchPrivate", "class_ela_toggle_switch_private.html", null ],
       [ "ElaToolTipPrivate", "class_ela_tool_tip_private.html", null ],
       [ "KcpObj", "class_h_y_k_t_1_1_kcp_obj.html", null ],
       [ "AbstractManage", "class_j_q_http_server_1_1_abstract_manage.html", [
@@ -676,12 +688,203 @@ var hierarchy =
     ] ],
     [ "QStateMachine", null, [
       [ "QtMaterialFlatButtonStateMachine", "class_qt_material_flat_button_state_machine.html", null ],
+      [ "QtMaterialSliderStateMachine", "class_qt_material_slider_state_machine.html", null ],
       [ "QtMaterialSnackbarStateMachine", "class_qt_material_snackbar_state_machine.html", null ],
       [ "QtMaterialTextFieldStateMachine", "class_qt_material_text_field_state_machine.html", null ]
     ] ],
     [ "QSystemTrayIcon", null, [
       [ "MyTrayIcon", "class_my_tray_icon.html", null ]
     ] ],
+    [ "qt_meta_stringdata_CLASSAboutDialogENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_afb2a40069d1de3f9aecba886091ee6e4.html", null ],
+    [ "qt_meta_stringdata_CLASSAiChatENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_ai_chat_e_n_d_c_l_a_s_s__t.html", null ],
+    [ "qt_meta_stringdata_CLASSAllCloudDiskENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a751ece1f20c1e1bdf084541dff72e483.html", null ],
+    [ "qt_meta_stringdata_CLASSAllLocalENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_afb5aa6d8d3e73e083792742c60366fab.html", null ],
+    [ "qt_meta_stringdata_CLASSAllLoveENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a76e6e8d424e98dd63d39e36794da8a8c.html", null ],
+    [ "qt_meta_stringdata_CLASSAllMusicENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a86ba6e68fb063ca0ffa4b8c2eb7890a6.html", null ],
+    [ "qt_meta_stringdata_CLASSAllPaidENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac9b7b49597a541b45a2aa170331b19b3.html", null ],
+    [ "qt_meta_stringdata_CLASSAllRecentENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7a82f8977e91b20eb8cbf671e0537b08.html", null ],
+    [ "qt_meta_stringdata_CLASSAllSongListENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a4f4dd7d1d0d0a47d4e38a6454c52270c.html", null ],
+    [ "qt_meta_stringdata_CLASSAllWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6b6dcccbda3411b79216995efb2eb3c7.html", null ],
+    [ "qt_meta_stringdata_CLASSAniCheckBoxENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac994417476e81bd7e04fd1d5ab9b0b82.html", null ],
+    [ "qt_meta_stringdata_CLASSBaseMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad8efb1acc42b94df47fda121765e2322.html", null ],
+    [ "qt_meta_stringdata_CLASSBubbleFrameENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af6345ce6cf3ccd6506bde84471fd443c.html", null ],
+    [ "qt_meta_stringdata_CLASScchatserverENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aa5448d289134819073daf025b4cc6c61.html", null ],
+    [ "qt_meta_stringdata_CLASSCenterWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0ac2d1c3eaf787e39bcd899da4d8e72c.html", null ],
+    [ "qt_meta_stringdata_CLASSChannelBlockENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a829f8b4702770a182b4eb2a4d8f358e9.html", null ],
+    [ "qt_meta_stringdata_CLASSChannelENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_channel_e_n_d_c_l_a_s_s__t.html", null ],
+    [ "qt_meta_stringdata_CLASSChatENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_chat_e_n_d_c_l_a_s_s__t.html", null ],
+    [ "qt_meta_stringdata_CLASSChatItemBaseENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a1b5d07a9cce42df93a5f402a4c59bb05.html", null ],
+    [ "qt_meta_stringdata_CLASSChatViewENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae4e696b3b45a9e1ba2122f25c6c7e109.html", null ],
+    [ "qt_meta_stringdata_CLASSchttpserverENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3bc13cafc784682dd86a4416e7885a49.html", null ],
+    [ "qt_meta_stringdata_CLASSCLibhttpENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abd0758157bc6c468a97bbc115bc2f1eb.html", null ],
+    [ "qt_meta_stringdata_CLASSCollectVideoENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a98f1c5b0aa56df2f95eb3100fe9cbb68.html", null ],
+    [ "qt_meta_stringdata_CLASSCResourceManagerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3b35638be9214c8d31cd7c63f9187cb4.html", null ],
+    [ "qt_meta_stringdata_CLASSCTcpServerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6131714051143455498a4c6dc5b52f3d.html", null ],
+    [ "qt_meta_stringdata_CLASSCTcpSocketENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab0d9c44c42dfd4ae6454f0afcec093b7.html", null ],
+    [ "qt_meta_stringdata_CLASSCUdpSocketENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab3ccfae1727d7d26935bdf446f7fb7a3.html", null ],
+    [ "qt_meta_stringdata_CLASSCWebSocketClientENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a23708b03207265b9924d9fd5771b07b7.html", null ],
+    [ "qt_meta_stringdata_CLASSCWebSocketServerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a82f38bbfda19c225a0cc39a4b279de20.html", null ],
+    [ "qt_meta_stringdata_CLASSDailyRecommendENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9e2e81ddf3e0c60af3aec601729a6c03.html", null ],
+    [ "qt_meta_stringdata_CLASSDeviceWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a759d7a5a6d181a2f6a88d4670228e37c.html", null ],
+    [ "qt_meta_stringdata_CLASSDownloadedSongENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6d0ecc9956c230c395bd67141efa6375.html", null ],
+    [ "qt_meta_stringdata_CLASSDownloadedVideoENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3755bbbd2900e7b8e83fe4fe01cab86a.html", null ],
+    [ "qt_meta_stringdata_CLASSDownloadedWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7ae2510b4d84536833dcbbf9f20df750.html", null ],
+    [ "qt_meta_stringdata_CLASSDownloadingENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9207599451d54bdaea5b3059186322f9.html", null ],
+    [ "qt_meta_stringdata_CLASSDownloadingWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a938e7ad2b514a3735fd49d21ba5f6fa4.html", null ],
+    [ "qt_meta_stringdata_CLASSElaEventENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aea6da9a2a818d372a3cfa1cbb41dcf1c.html", null ],
+    [ "qt_meta_stringdata_CLASSElaEventPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a56d15f0572a3210e12261be0c06df481.html", null ],
+    [ "qt_meta_stringdata_CLASSElaExitDialogENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aadedbc7dcb896a32925886d91ca624e8.html", null ],
+    [ "qt_meta_stringdata_CLASSElaExitDialogPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7755f82dbe6604ae6f736efc8e0ca7de.html", null ],
+    [ "qt_meta_stringdata_CLASSElaFlowLayoutENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad016075b4847a23862bb9a0b391c791d.html", null ],
+    [ "qt_meta_stringdata_CLASSElaFlowLayoutPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af9d3a4e30d2890e0562d0a05f6dfe5f8.html", null ],
+    [ "qt_meta_stringdata_CLASSElaIconButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a19e4cf9b74edc56f85fec4b98d2e857d.html", null ],
+    [ "qt_meta_stringdata_CLASSElaIconButtonPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a46e609dbcd9245df17489260835080d1.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMaskWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abb436ae4fb6353f96250731f549b2ecc.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMenuBarENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a003c18a6ee257702240296f03ef86780.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMenuBarStyleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a42a53bcc0264404106146bb1ac8ea837.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af90360a781053800805fae53b22b78bb.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMenuPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0a13f8137154de2e30541b518a84633d.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMenuStyleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a09eeb4dd22d98daaa183b81c4971b354.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMessageBarENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0a7566e71ae2d9c0d95b7dbf58c90b2e.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMessageBarManagerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a8ba68ea9ed9137646c3cd15136a149cd.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMessageButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a49fa8bfa6827361a430777f027c318d0.html", null ],
+    [ "qt_meta_stringdata_CLASSElaMessageButtonPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abbf5dad115c2891c794919df8dca2ffe.html", null ],
+    [ "qt_meta_stringdata_CLASSElaPlainTextEditENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_afb69d0bc389d02f0911e1698a86a92cf.html", null ],
+    [ "qt_meta_stringdata_CLASSElaPlainTextEditPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad8c1f9aff8df635633608522e00b7f6d.html", null ],
+    [ "qt_meta_stringdata_CLASSElaPlainTextEditStyleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aeae0fd9b200fd68c61d9ed323ff410ae.html", null ],
+    [ "qt_meta_stringdata_CLASSElaPushButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a012b1b3f4b22404aeed6b11d585c3121.html", null ],
+    [ "qt_meta_stringdata_CLASSElaPushButtonPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a40e10b860fac513e5baa5eb81ed8ea6e.html", null ],
+    [ "qt_meta_stringdata_CLASSElaScrollBarENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae6046d5feb2030442f88728dcebd9699.html", null ],
+    [ "qt_meta_stringdata_CLASSElaScrollBarPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a5a7a0fa90053a5e21c02dedc00101db9.html", null ],
+    [ "qt_meta_stringdata_CLASSElaScrollBarStyleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a404047bf38553bd73528d061feb4b2ea.html", null ],
+    [ "qt_meta_stringdata_CLASSElaTextENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2e3dfe55614b1412aba131ddb5b0d49e.html", null ],
+    [ "qt_meta_stringdata_CLASSElaTextPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad25296ddc74e38ae778b30e2e33a9ee9.html", null ],
+    [ "qt_meta_stringdata_CLASSElaThemeENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a214b2dda9116d64b59fb74587aafb615.html", null ],
+    [ "qt_meta_stringdata_CLASSElaThemePrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad6285204bb6a3d620fca2eff5d7f763a.html", null ],
+    [ "qt_meta_stringdata_CLASSElaThemeTypeENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7a8a8cc391e8105a9e27f5f335500470.html", null ],
+    [ "qt_meta_stringdata_CLASSElaToggleSwitchENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae160a94d0842368a10dad611ca8cdf5c.html", null ],
+    [ "qt_meta_stringdata_CLASSElaToggleSwitchPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ace806561dd6fecd44f26aafa14e981e9.html", null ],
+    [ "qt_meta_stringdata_CLASSElaToolTipENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac9f32810293288058fa4007bfccef8fd.html", null ],
+    [ "qt_meta_stringdata_CLASSElaToolTipPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ade832096bb321617ff5342f760484ed8.html", null ],
+    [ "qt_meta_stringdata_CLASSGalleryPhotoWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a718a3f74c27358272be53ef14c40cb31.html", null ],
+    [ "qt_meta_stringdata_CLASSGalleryWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a4b74bb6886710bcfacd5c4cae7b1dede.html", null ],
+    [ "qt_meta_stringdata_CLASSGLTabWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aa2cb33345086270aedf509d3cb9367fd.html", null ],
+    [ "qt_meta_stringdata_CLASSHYKTSCOPEKcpObjENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af1dd7b87e61d03002b8eb2e389f562c9.html", null ],
+    [ "qt_meta_stringdata_CLASSIconBesideTextToolButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a98c0cdbe626497abb2ecbf523731b6ed.html", null ],
+    [ "qt_meta_stringdata_CLASSInteractiveButtonBaseENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abe3c45fbd4b2362e0926f366f21e3dc3.html", null ],
+    [ "qt_meta_stringdata_CLASSJQHttpServerSCOPESessionENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af5430e30edfe65ce7833b54b2c3ca58d.html", null ],
+    [ "qt_meta_stringdata_CLASSKuGouAppENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0edc5c0c0ac9e195d83e83fa573bd7dd.html", null ],
+    [ "qt_meta_stringdata_CLASSListenBookENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af6247df4af7e0848c2ec41be06200b53.html", null ],
+    [ "qt_meta_stringdata_CLASSListenMyDownloadENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0e00c166cda11d7993a30c8b9f6c4cb0.html", null ],
+    [ "qt_meta_stringdata_CLASSListenOptionMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_afc80fa874ffade037761ddf8c60f48a3.html", null ],
+    [ "qt_meta_stringdata_CLASSListenRankWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6708b0ce9748c693c83a8864eee0b7fa.html", null ],
+    [ "qt_meta_stringdata_CLASSListenRecentlyPlayENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab6035af869ee131ec365f8a8aebeac51.html", null ],
+    [ "qt_meta_stringdata_CLASSListenRecommendENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a8d6ecf1aac59136fa7dccd9ff487af33.html", null ],
+    [ "qt_meta_stringdata_CLASSListenTableWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2c61f8738ed5dabc120e3b74791437b7.html", null ],
+    [ "qt_meta_stringdata_CLASSListOptionMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a48301dc7c33bba0d5c7fbad42514d5a1.html", null ],
+    [ "qt_meta_stringdata_CLASSLiveBigLeftWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3a2809526b6fed5992ddd86fd123c9c6.html", null ],
+    [ "qt_meta_stringdata_CLASSLiveBlockWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3add07a9e769227f3b14e67a503ffec8.html", null ],
+    [ "qt_meta_stringdata_CLASSLiveCommonPartWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a39f7a78ee8ffda86ce5b93a14031632c.html", null ],
+    [ "qt_meta_stringdata_CLASSLiveENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_live_e_n_d_c_l_a_s_s__t.html", null ],
+    [ "qt_meta_stringdata_CLASSLiveMusicPartWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abd0417dc58b144d1abde6d18d6e436b9.html", null ],
+    [ "qt_meta_stringdata_CLASSLocalDownloadENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a32caf72e7ea48f06d0c9007003b033bc.html", null ],
+    [ "qt_meta_stringdata_CLASSLocalSongENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7b420b00173ab0691235e3649957ac6e.html", null ],
+    [ "qt_meta_stringdata_CLASSMainWindowENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aa48c4f7148681482a19d10736c6999b5.html", null ],
+    [ "qt_meta_stringdata_CLASSMenuBtnENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab6d1ae939a90efdc648e7bd04a554238.html", null ],
+    [ "qt_meta_stringdata_CLASSMusicCloudDiskENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2b012612b5d76a4c27ae5f35d8a3bd9b.html", null ],
+    [ "qt_meta_stringdata_CLASSMusicItemWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a37a7cc455ca54afb2aeb723bf609cc7f.html", null ],
+    [ "qt_meta_stringdata_CLASSMusicRepoBlockENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab049c8d853fb1fca123210f6d3b97353.html", null ],
+    [ "qt_meta_stringdata_CLASSMusicRepoListENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a911fa8236692e79983190f5e59482cec.html", null ],
+    [ "qt_meta_stringdata_CLASSMusicRepositoryENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9db58303539331ce43725421267eeb71.html", null ],
+    [ "qt_meta_stringdata_CLASSMusicRepoVideoENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a4dd0c1f711ee123d6dd4ab439b58f46f.html", null ],
+    [ "qt_meta_stringdata_CLASSMVBlockWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7387a79d80347ea451615632c97b4654.html", null ],
+    [ "qt_meta_stringdata_CLASSMVWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab0f1827929369bd2a883400152f720d6.html", null ],
+    [ "qt_meta_stringdata_CLASSMyBlockWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad296775aadf0ae8e882c284474ccc22e.html", null ],
+    [ "qt_meta_stringdata_CLASSMyCollectionENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_acc37b56ac5e4bc8f0c05b74874428fed.html", null ],
+    [ "qt_meta_stringdata_CLASSMyMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_my_menu_e_n_d_c_l_a_s_s__t.html", null ],
+    [ "qt_meta_stringdata_CLASSMyScrollAreaENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2da4c75529225279c144a07b45c92be1.html", null ],
+    [ "qt_meta_stringdata_CLASSMySearchLineEditENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a060da67c1f6ad6c72248374e8ce72229.html", null ],
+    [ "qt_meta_stringdata_CLASSMyTrayIconENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2ab3a50b926d7f1d5841d6d5fcb7e2ab.html", null ],
+    [ "qt_meta_stringdata_CLASSMyWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac2f7f7f936a534b877c84b7b2d3bea9d.html", null ],
+    [ "qt_meta_stringdata_CLASSNavButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a1151035db7a3cd46fcbd653e7a909cd7.html", null ],
+    [ "qt_meta_stringdata_CLASSNDBPoolENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a50f1051c1b78793e629e5ccb466473fe.html", null ],
+    [ "qt_meta_stringdata_CLASSPaidSingleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9893e854ff6dd54dfe951fa5d9bfb40e.html", null ],
+    [ "qt_meta_stringdata_CLASSPartWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a19d8c7d88ba1ba4210b8271b0d3d1c79.html", null ],
+    [ "qt_meta_stringdata_CLASSPcmPlayer_SDLENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a62a17d960e959c30b71c92127f8a6dbd.html", null ],
+    [ "qt_meta_stringdata_CLASSPcmPlayerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad24a11eceec7752bb2598b95adbcaabd.html", null ],
+    [ "qt_meta_stringdata_CLASSPlayWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a579d2164a746c7d638f7baa6a5fe95f6.html", null ],
+    [ "qt_meta_stringdata_CLASSPopularLeftWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a4957c5f1a38bf415bf9e779c3a3a0077.html", null ],
+    [ "qt_meta_stringdata_CLASSPopularRightToolButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2218c1a84eb692a9c49d88db542a4881.html", null ],
+    [ "qt_meta_stringdata_CLASSPurchasedAlbumsENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7e69abe919901dfff3f6888c7f684451.html", null ],
+    [ "qt_meta_stringdata_CLASSPurchasedMusicENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a027b87e459aa554ce18b4bc33e02c314.html", null ],
+    [ "qt_meta_stringdata_CLASSPurchasedVideosENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a288aab0aa3ac2648f7924b31afb8b779.html", null ],
+    [ "qt_meta_stringdata_CLASSQsLoggingSCOPEFunctorDestinationENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3eed60a09dd1951bea13c4c7a63d369c.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialCircularProgressDelegateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a182ad33e2bf725e511ac8ac56ddb6f3e.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialCircularProgressENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a4c0dd116e36c6d0e4e1306e3d9dd3535.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialDialogENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abc405e26c51de412014391f53e417fea.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialDialogProxyENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aa44c2ddfe762a7ac510d4dd2d08624a1.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialFlatButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_adac8d0416c13b0b0e7f474edacc03ff0.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialFlatButtonStateMachineENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_acc56bcac1fdada3c1d2a830190766b2b.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialFloatingActionButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a33bf0ede9f0305e63aac06beadc1f6cf.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialOverlayWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0ed5cb563c8fbacd651606d0c04f9676.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialRaisedButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abb1eaa50687b7ed7bf5bf0adcd97006b.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialRippleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2b507e73b77870bd036213b472a5cbe0.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialRippleOverlayENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a88e9c13b4f67b4808f2c122a0386037c.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialSliderENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a8ff94512925174d720f4ccca9d4360b3.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialSliderStateMachineENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aff2d0f8787d2b70ccdabf021b89a1fb6.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialSnackbarENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_acae9f73bd595957f20e96fe9d2989f6f.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialSnackbarStateMachineENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac5481faece56db370329db43e37b0734.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialStateTransitionENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac6d02fe644a733dc51da0651efc209a8.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialStyleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0df0de894bd109f6e63204b89c7bcc0d.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialTextFieldENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2c113b14e9a3d555c7f130efa329bae5.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialTextFieldStateMachineENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aa0c6c889e6c9db2952e9aeac089dbf48.html", null ],
+    [ "qt_meta_stringdata_CLASSQtMaterialThemeENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a1694e6cdd86ca6619ab25fdff65e83a5.html", null ],
+    [ "qt_meta_stringdata_CLASSRankListWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a5669cc439295257446a5e5dd3928a642.html", null ],
+    [ "qt_meta_stringdata_CLASSRankPartWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a63dd8bbb5cde1debb649cdfd3352e8f3.html", null ],
+    [ "qt_meta_stringdata_CLASSRecentlyChannelBlockENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7fd1438a54eee94472c1ba73a737d19b.html", null ],
+    [ "qt_meta_stringdata_CLASSRecentlyMVChannelENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9faaed9b4a209a8732b9dab634db6429.html", null ],
+    [ "qt_meta_stringdata_CLASSRecentlyPlayedENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae2c4aced379f5529ab587c8300d741e7.html", null ],
+    [ "qt_meta_stringdata_CLASSRecentlySingleSongENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a438b86f0c6f46956d6d23a4e518a82c5.html", null ],
+    [ "qt_meta_stringdata_CLASSRecentlySongChannelENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae7639ea1046eb880cda1a81a6899f23c.html", null ],
+    [ "qt_meta_stringdata_CLASSRecentlySongListENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae7a1834f98165e6cb2816bbe35338d09.html", null ],
+    [ "qt_meta_stringdata_CLASSRecentlyVideoWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2822f5f0470d05217fd8fb249265f420.html", null ],
+    [ "qt_meta_stringdata_CLASSRecommendForYouENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a47606e32bf67392518636a1334d986e3.html", null ],
+    [ "qt_meta_stringdata_CLASSRefreshMaskENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_adaf96700d5827f4f1ceb1b4842e518cc.html", null ],
+    [ "qt_meta_stringdata_CLASSSearchENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_search_e_n_d_c_l_a_s_s__t.html", null ],
+    [ "qt_meta_stringdata_CLASSServerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_server_e_n_d_c_l_a_s_s__t.html", null ],
+    [ "qt_meta_stringdata_CLASSSideHideLabelENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a54ba3c1cf880cd19be743ff5b3f34415.html", null ],
+    [ "qt_meta_stringdata_CLASSSingerWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7f77ce726f148369654bf35d4136ddd1.html", null ],
+    [ "qt_meta_stringdata_CLASSSingleSongENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae80fd0470fd4bcada86c640efb93ff17.html", null ],
+    [ "qt_meta_stringdata_CLASSSlideShowENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aeea4be9dce7305be19039bbcb188df59.html", null ],
+    [ "qt_meta_stringdata_CLASSSlidingStackedWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6452204d68e627ae65342715e356abdf.html", null ],
+    [ "qt_meta_stringdata_CLASSSMaskWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab5b422e31640c72e48c9b08ca77401f8.html", null ],
+    [ "qt_meta_stringdata_CLASSSnapSliderENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af103a94f3b296664daba2be6f0d4f674.html", null ],
+    [ "qt_meta_stringdata_CLASSSongBlockENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6c2dd3611f8a01a6cd422b73747c30e5.html", null ],
+    [ "qt_meta_stringdata_CLASSSongListBlockWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a5a9de6eb46872d3b654262d155924bda.html", null ],
+    [ "qt_meta_stringdata_CLASSSongListENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a87b417c86d59d7b74a4c0fa31cd34c89.html", null ],
+    [ "qt_meta_stringdata_CLASSSongListWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae876548fa3a5027e23f2e84c6469116b.html", null ],
+    [ "qt_meta_stringdata_CLASSSongOptionMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a874dd76fb8b543a5b8fdc7080db89cf8.html", null ],
+    [ "qt_meta_stringdata_CLASSSortOptionMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a5de7dd28d7354b58c64e8e469e243c23.html", null ],
+    [ "qt_meta_stringdata_CLASSSpecialAlbumENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2648e149b6f42dbadfad9bf4db51b799.html", null ],
+    [ "qt_meta_stringdata_CLASSSqliteDataProviderENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a40a1b365a4b5bbee47847f2752b90e72.html", null ],
+    [ "qt_meta_stringdata_CLASSTableWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0faad3969f139e61fbc4699567ebef86.html", null ],
+    [ "qt_meta_stringdata_CLASSTextBubbleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a43f1f33c399020c768220142483c7d32.html", null ],
+    [ "qt_meta_stringdata_CLASSTitleOptionMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae6b087682e85f1294653d0905f8fbcb9.html", null ],
+    [ "qt_meta_stringdata_CLASSTitleWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_acb0f246f8fe9d6e9bd51f034d4545ad8.html", null ],
+    [ "qt_meta_stringdata_CLASSUploadedSongENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aeb894b0bccefbf687b72cdc195c595b6.html", null ],
+    [ "qt_meta_stringdata_CLASSUploadingSongENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a12f3a71a5780182ecc8b818ed436d211.html", null ],
+    [ "qt_meta_stringdata_CLASSUpToolButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3e17ab7d0f0904a6957739a227555aa3.html", null ],
+    [ "qt_meta_stringdata_CLASSVideoBlockWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a40c8d79be8c1a7a70d8222b35973b00f.html", null ],
+    [ "qt_meta_stringdata_CLASSVideoChannelBlockENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a676ccf00164527d9ca194d1f8b62e35d.html", null ],
+    [ "qt_meta_stringdata_CLASSVideoChannelPartWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a80a26a4f599db9427158b0827da99a86.html", null ],
+    [ "qt_meta_stringdata_CLASSVideoChannelWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac00797bd987c2b9be071f26028f7dca3.html", null ],
+    [ "qt_meta_stringdata_CLASSVideoENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_video_e_n_d_c_l_a_s_s__t.html", null ],
+    [ "qt_meta_stringdata_CLASSVideoPartWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_acd2a9c79b5c5e08d7b6216a12f1024b2.html", null ],
+    [ "qt_meta_stringdata_CLASSVideoPlayerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a28512a2b9055f4d7d93e9321a1dc5944.html", null ],
+    [ "qt_meta_stringdata_CLASSVideoWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a28ede3f084fdf8af108a3ac9a84124ff.html", null ],
+    [ "qt_meta_stringdata_CLASSVolumeToolBtnENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a1dc10502ad859c8f1fc9a1fa007c3f58.html", null ],
+    [ "qt_meta_stringdata_CLASSWaterDropENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a708c521dec29d8ea4302121b3cb4bca6.html", null ],
+    [ "qt_meta_stringdata_CLASSWaterZoomButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab7cf7a6deaccbef1a0529b671d7f3be0.html", null ],
     [ "QTcpServer", null, [
       [ "CTcpServer", "class_c_tcp_server.html", null ],
       [ "SslServerHelper", "class_j_q_http_server_1_1_ssl_server_helper.html", null ]
@@ -699,6 +902,7 @@ var hierarchy =
         [ "QtMaterialFloatingActionButtonPrivate", "class_qt_material_floating_action_button_private.html", null ]
       ] ]
     ] ],
+    [ "QtMaterialSliderPrivate", "class_qt_material_slider_private.html", null ],
     [ "QtMaterialSnackbarPrivate", "class_qt_material_snackbar_private.html", null ],
     [ "QtMaterialStylePrivate", "class_qt_material_style_private.html", null ],
     [ "QtMaterialTextFieldPrivate", "class_qt_material_text_field_private.html", null ],
@@ -738,6 +942,7 @@ var hierarchy =
       [ "DownloadingWidget", "class_downloading_widget.html", null ],
       [ "ElaMaskWidget", "class_ela_mask_widget.html", null ],
       [ "ElaMessageBar", "class_ela_message_bar.html", null ],
+      [ "ElaToggleSwitch", "class_ela_toggle_switch.html", null ],
       [ "ElaToolTip", "class_ela_tool_tip.html", null ],
       [ "GLTabWidget", "class_g_l_tab_widget.html", null ],
       [ "GalleryWidget", "class_gallery_widget.html", null ],
@@ -782,6 +987,8 @@ var hierarchy =
       [ "QtMaterialOverlayWidget", "class_qt_material_overlay_widget.html", [
         [ "QtMaterialDialog", "class_qt_material_dialog.html", null ],
         [ "QtMaterialRippleOverlay", "class_qt_material_ripple_overlay.html", null ],
+        [ "QtMaterialSliderThumb", "class_qt_material_slider_thumb.html", null ],
+        [ "QtMaterialSliderTrack", "class_qt_material_slider_track.html", null ],
         [ "QtMaterialSnackbar", "class_qt_material_snackbar.html", null ]
       ] ],
       [ "QtMaterialTextFieldLabel", "class_qt_material_text_field_label.html", null ],
@@ -806,6 +1013,7 @@ var hierarchy =
       [ "SongListBlockWidget", "class_song_list_block_widget.html", null ],
       [ "SongListWidget", "class_song_list_widget.html", null ],
       [ "SpecialAlbum", "class_special_album.html", null ],
+      [ "SpeedDialog", "class_speed_dialog.html", null ],
       [ "TableWidget", "class_table_widget.html", null ],
       [ "TitleWidget", "class_title_widget.html", null ],
       [ "UploadedSong", "class_uploaded_song.html", null ],
@@ -976,6 +1184,7 @@ var hierarchy =
     [ "SongInformation", "struct_song_information.html", null ],
     [ "source_loc", "structspdlog_1_1source__loc.html", null ],
     [ "span< T >", "structdetail_1_1span.html", null ],
+    [ "SpeedDialogState", "class_speed_dialog_state.html", null ],
     [ "SResult", "class_s_result.html", null ],
     [ "SResultCode", "class_s_result_code.html", null ],
     [ "std_string_view< Char >", "structdetail_1_1std__string__view.html", null ],
@@ -1068,6 +1277,282 @@ var hierarchy =
     [ "udl_arg< Char >", "structdetail_1_1udl__arg.html", null ],
     [ "udp_client", "classspdlog_1_1details_1_1udp__client.html", null ],
     [ "udp_sink_config", "structspdlog_1_1sinks_1_1udp__sink__config.html", null ],
+    [ "Ui_AiChat", "class_ui___ai_chat.html", [
+      [ "AiChat", "class_ui_1_1_ai_chat.html", null ],
+      [ "AiChat", "class_ui_1_1_ai_chat.html", null ]
+    ] ],
+    [ "Ui_AllCloudDisk", "class_ui___all_cloud_disk.html", [
+      [ "AllCloudDisk", "class_ui_1_1_all_cloud_disk.html", null ],
+      [ "AllCloudDisk", "class_ui_1_1_all_cloud_disk.html", null ]
+    ] ],
+    [ "Ui_AllLocal", "class_ui___all_local.html", [
+      [ "AllLocal", "class_ui_1_1_all_local.html", null ],
+      [ "AllLocal", "class_ui_1_1_all_local.html", null ]
+    ] ],
+    [ "Ui_AllLove", "class_ui___all_love.html", [
+      [ "AllLove", "class_ui_1_1_all_love.html", null ],
+      [ "AllLove", "class_ui_1_1_all_love.html", null ]
+    ] ],
+    [ "Ui_AllMusic", "class_ui___all_music.html", [
+      [ "AllMusic", "class_ui_1_1_all_music.html", null ],
+      [ "AllMusic", "class_ui_1_1_all_music.html", null ]
+    ] ],
+    [ "Ui_AllPaid", "class_ui___all_paid.html", [
+      [ "AllPaid", "class_ui_1_1_all_paid.html", null ],
+      [ "AllPaid", "class_ui_1_1_all_paid.html", null ]
+    ] ],
+    [ "Ui_AllRecent", "class_ui___all_recent.html", [
+      [ "AllRecent", "class_ui_1_1_all_recent.html", null ],
+      [ "AllRecent", "class_ui_1_1_all_recent.html", null ]
+    ] ],
+    [ "Ui_AllSongList", "class_ui___all_song_list.html", [
+      [ "AllSongList", "class_ui_1_1_all_song_list.html", null ],
+      [ "AllSongList", "class_ui_1_1_all_song_list.html", null ]
+    ] ],
+    [ "Ui_AllWidget", "class_ui___all_widget.html", [
+      [ "AllWidget", "class_ui_1_1_all_widget.html", null ],
+      [ "AllWidget", "class_ui_1_1_all_widget.html", null ]
+    ] ],
+    [ "Ui_Channel", "class_ui___channel.html", [
+      [ "Channel", "class_ui_1_1_channel.html", null ],
+      [ "Channel", "class_ui_1_1_channel.html", null ]
+    ] ],
+    [ "Ui_ChannelBlock", "class_ui___channel_block.html", [
+      [ "ChannelBlock", "class_ui_1_1_channel_block.html", null ],
+      [ "ChannelBlock", "class_ui_1_1_channel_block.html", null ]
+    ] ],
+    [ "Ui_CollectVideo", "class_ui___collect_video.html", [
+      [ "CollectVideo", "class_ui_1_1_collect_video.html", null ],
+      [ "CollectVideo", "class_ui_1_1_collect_video.html", null ]
+    ] ],
+    [ "Ui_DailyRecommend", "class_ui___daily_recommend.html", [
+      [ "DailyRecommend", "class_ui_1_1_daily_recommend.html", null ],
+      [ "DailyRecommend", "class_ui_1_1_daily_recommend.html", null ]
+    ] ],
+    [ "Ui_DeviceWidget", "class_ui___device_widget.html", [
+      [ "DeviceWidget", "class_ui_1_1_device_widget.html", null ],
+      [ "DeviceWidget", "class_ui_1_1_device_widget.html", null ]
+    ] ],
+    [ "Ui_DownloadedSong", "class_ui___downloaded_song.html", [
+      [ "DownloadedSong", "class_ui_1_1_downloaded_song.html", null ],
+      [ "DownloadedSong", "class_ui_1_1_downloaded_song.html", null ]
+    ] ],
+    [ "Ui_DownloadedVideo", "class_ui___downloaded_video.html", [
+      [ "DownloadedVideo", "class_ui_1_1_downloaded_video.html", null ],
+      [ "DownloadedVideo", "class_ui_1_1_downloaded_video.html", null ]
+    ] ],
+    [ "Ui_DownloadedWidget", "class_ui___downloaded_widget.html", [
+      [ "DownloadedWidget", "class_ui_1_1_downloaded_widget.html", null ],
+      [ "DownloadedWidget", "class_ui_1_1_downloaded_widget.html", null ]
+    ] ],
+    [ "Ui_Downloading", "class_ui___downloading.html", [
+      [ "Downloading", "class_ui_1_1_downloading.html", null ],
+      [ "Downloading", "class_ui_1_1_downloading.html", null ]
+    ] ],
+    [ "Ui_DownloadingWidget", "class_ui___downloading_widget.html", [
+      [ "DownloadingWidget", "class_ui_1_1_downloading_widget.html", null ],
+      [ "DownloadingWidget", "class_ui_1_1_downloading_widget.html", null ]
+    ] ],
+    [ "Ui_KuGouApp", "class_ui___ku_gou_app.html", [
+      [ "KuGouApp", "class_ui_1_1_ku_gou_app.html", null ],
+      [ "KuGouApp", "class_ui_1_1_ku_gou_app.html", null ]
+    ] ],
+    [ "Ui_ListenBook", "class_ui___listen_book.html", [
+      [ "ListenBook", "class_ui_1_1_listen_book.html", null ],
+      [ "ListenBook", "class_ui_1_1_listen_book.html", null ]
+    ] ],
+    [ "Ui_ListenMyDownload", "class_ui___listen_my_download.html", [
+      [ "ListenMyDownload", "class_ui_1_1_listen_my_download.html", null ],
+      [ "ListenMyDownload", "class_ui_1_1_listen_my_download.html", null ]
+    ] ],
+    [ "Ui_ListenRecentlyPlay", "class_ui___listen_recently_play.html", [
+      [ "ListenRecentlyPlay", "class_ui_1_1_listen_recently_play.html", null ],
+      [ "ListenRecentlyPlay", "class_ui_1_1_listen_recently_play.html", null ]
+    ] ],
+    [ "Ui_ListenRecommend", "class_ui___listen_recommend.html", [
+      [ "ListenRecommend", "class_ui_1_1_listen_recommend.html", null ],
+      [ "ListenRecommend", "class_ui_1_1_listen_recommend.html", null ]
+    ] ],
+    [ "Ui_ListenTableWidget", "class_ui___listen_table_widget.html", [
+      [ "ListenTableWidget", "class_ui_1_1_listen_table_widget.html", null ],
+      [ "ListenTableWidget", "class_ui_1_1_listen_table_widget.html", null ]
+    ] ],
+    [ "Ui_Live", "class_ui___live.html", [
+      [ "Live", "class_ui_1_1_live.html", null ],
+      [ "Live", "class_ui_1_1_live.html", null ]
+    ] ],
+    [ "Ui_LiveBigLeftWidget", "class_ui___live_big_left_widget.html", [
+      [ "LiveBigLeftWidget", "class_ui_1_1_live_big_left_widget.html", null ],
+      [ "LiveBigLeftWidget", "class_ui_1_1_live_big_left_widget.html", null ]
+    ] ],
+    [ "Ui_LiveBlockWidget", "class_ui___live_block_widget.html", [
+      [ "LiveBlockWidget", "class_ui_1_1_live_block_widget.html", null ],
+      [ "LiveBlockWidget", "class_ui_1_1_live_block_widget.html", null ]
+    ] ],
+    [ "Ui_LiveCommonPartWidget", "class_ui___live_common_part_widget.html", [
+      [ "LiveCommonPartWidget", "class_ui_1_1_live_common_part_widget.html", null ],
+      [ "LiveCommonPartWidget", "class_ui_1_1_live_common_part_widget.html", null ]
+    ] ],
+    [ "Ui_LiveMusicPartWidget", "class_ui___live_music_part_widget.html", [
+      [ "LiveMusicPartWidget", "class_ui_1_1_live_music_part_widget.html", null ],
+      [ "LiveMusicPartWidget", "class_ui_1_1_live_music_part_widget.html", null ]
+    ] ],
+    [ "Ui_LocalDownload", "class_ui___local_download.html", [
+      [ "LocalDownload", "class_ui_1_1_local_download.html", null ],
+      [ "LocalDownload", "class_ui_1_1_local_download.html", null ]
+    ] ],
+    [ "Ui_LocalSong", "class_ui___local_song.html", [
+      [ "LocalSong", "class_ui_1_1_local_song.html", null ],
+      [ "LocalSong", "class_ui_1_1_local_song.html", null ]
+    ] ],
+    [ "Ui_MusicCloudDisk", "class_ui___music_cloud_disk.html", [
+      [ "MusicCloudDisk", "class_ui_1_1_music_cloud_disk.html", null ],
+      [ "MusicCloudDisk", "class_ui_1_1_music_cloud_disk.html", null ]
+    ] ],
+    [ "Ui_MusicRepoBlock", "class_ui___music_repo_block.html", [
+      [ "MusicRepoBlock", "class_ui_1_1_music_repo_block.html", null ],
+      [ "MusicRepoBlock", "class_ui_1_1_music_repo_block.html", null ]
+    ] ],
+    [ "Ui_MusicRepoList", "class_ui___music_repo_list.html", [
+      [ "MusicRepoList", "class_ui_1_1_music_repo_list.html", null ],
+      [ "MusicRepoList", "class_ui_1_1_music_repo_list.html", null ]
+    ] ],
+    [ "Ui_MusicRepository", "class_ui___music_repository.html", [
+      [ "MusicRepository", "class_ui_1_1_music_repository.html", null ],
+      [ "MusicRepository", "class_ui_1_1_music_repository.html", null ]
+    ] ],
+    [ "Ui_MusicRepoVideo", "class_ui___music_repo_video.html", [
+      [ "MusicRepoVideo", "class_ui_1_1_music_repo_video.html", null ],
+      [ "MusicRepoVideo", "class_ui_1_1_music_repo_video.html", null ]
+    ] ],
+    [ "Ui_MVBlockWidget", "class_ui___m_v_block_widget.html", [
+      [ "MVBlockWidget", "class_ui_1_1_m_v_block_widget.html", null ],
+      [ "MVBlockWidget", "class_ui_1_1_m_v_block_widget.html", null ]
+    ] ],
+    [ "Ui_MVWidget", "class_ui___m_v_widget.html", [
+      [ "MVWidget", "class_ui_1_1_m_v_widget.html", null ],
+      [ "MVWidget", "class_ui_1_1_m_v_widget.html", null ]
+    ] ],
+    [ "Ui_MyCollection", "class_ui___my_collection.html", [
+      [ "MyCollection", "class_ui_1_1_my_collection.html", null ],
+      [ "MyCollection", "class_ui_1_1_my_collection.html", null ]
+    ] ],
+    [ "Ui_PaidSingle", "class_ui___paid_single.html", [
+      [ "PaidSingle", "class_ui_1_1_paid_single.html", null ],
+      [ "PaidSingle", "class_ui_1_1_paid_single.html", null ]
+    ] ],
+    [ "Ui_PurchasedAlbums", "class_ui___purchased_albums.html", [
+      [ "PurchasedAlbums", "class_ui_1_1_purchased_albums.html", null ],
+      [ "PurchasedAlbums", "class_ui_1_1_purchased_albums.html", null ]
+    ] ],
+    [ "Ui_PurchasedMusic", "class_ui___purchased_music.html", [
+      [ "PurchasedMusic", "class_ui_1_1_purchased_music.html", null ],
+      [ "PurchasedMusic", "class_ui_1_1_purchased_music.html", null ]
+    ] ],
+    [ "Ui_PurchasedVideos", "class_ui___purchased_videos.html", [
+      [ "PurchasedVideos", "class_ui_1_1_purchased_videos.html", null ],
+      [ "PurchasedVideos", "class_ui_1_1_purchased_videos.html", null ]
+    ] ],
+    [ "Ui_RankListWidget", "class_ui___rank_list_widget.html", [
+      [ "RankListWidget", "class_ui_1_1_rank_list_widget.html", null ],
+      [ "RankListWidget", "class_ui_1_1_rank_list_widget.html", null ]
+    ] ],
+    [ "Ui_RankPartWidget", "class_ui___rank_part_widget.html", [
+      [ "RankPartWidget", "class_ui_1_1_rank_part_widget.html", null ],
+      [ "RankPartWidget", "class_ui_1_1_rank_part_widget.html", null ]
+    ] ],
+    [ "Ui_RecentlyChannelBlock", "class_ui___recently_channel_block.html", [
+      [ "RecentlyChannelBlock", "class_ui_1_1_recently_channel_block.html", null ],
+      [ "RecentlyChannelBlock", "class_ui_1_1_recently_channel_block.html", null ]
+    ] ],
+    [ "Ui_RecentlyMVChannel", "class_ui___recently_m_v_channel.html", [
+      [ "RecentlyMVChannel", "class_ui_1_1_recently_m_v_channel.html", null ],
+      [ "RecentlyMVChannel", "class_ui_1_1_recently_m_v_channel.html", null ]
+    ] ],
+    [ "Ui_RecentlyPlayed", "class_ui___recently_played.html", [
+      [ "RecentlyPlayed", "class_ui_1_1_recently_played.html", null ],
+      [ "RecentlyPlayed", "class_ui_1_1_recently_played.html", null ]
+    ] ],
+    [ "Ui_RecentlySingleSong", "class_ui___recently_single_song.html", [
+      [ "RecentlySingleSong", "class_ui_1_1_recently_single_song.html", null ],
+      [ "RecentlySingleSong", "class_ui_1_1_recently_single_song.html", null ]
+    ] ],
+    [ "Ui_RecentlySongChannel", "class_ui___recently_song_channel.html", [
+      [ "RecentlySongChannel", "class_ui_1_1_recently_song_channel.html", null ],
+      [ "RecentlySongChannel", "class_ui_1_1_recently_song_channel.html", null ]
+    ] ],
+    [ "Ui_RecentlySongList", "class_ui___recently_song_list.html", [
+      [ "RecentlySongList", "class_ui_1_1_recently_song_list.html", null ],
+      [ "RecentlySongList", "class_ui_1_1_recently_song_list.html", null ]
+    ] ],
+    [ "Ui_RecentlyVideoWidget", "class_ui___recently_video_widget.html", [
+      [ "RecentlyVideoWidget", "class_ui_1_1_recently_video_widget.html", null ],
+      [ "RecentlyVideoWidget", "class_ui_1_1_recently_video_widget.html", null ]
+    ] ],
+    [ "Ui_RecommendForYou", "class_ui___recommend_for_you.html", [
+      [ "RecommendForYou", "class_ui_1_1_recommend_for_you.html", null ],
+      [ "RecommendForYou", "class_ui_1_1_recommend_for_you.html", null ]
+    ] ],
+    [ "Ui_Search", "class_ui___search.html", [
+      [ "Search", "class_ui_1_1_search.html", null ],
+      [ "Search", "class_ui_1_1_search.html", null ]
+    ] ],
+    [ "Ui_SingerWidget", "class_ui___singer_widget.html", [
+      [ "SingerWidget", "class_ui_1_1_singer_widget.html", null ],
+      [ "SingerWidget", "class_ui_1_1_singer_widget.html", null ]
+    ] ],
+    [ "Ui_SingleSong", "class_ui___single_song.html", [
+      [ "SingleSong", "class_ui_1_1_single_song.html", null ],
+      [ "SingleSong", "class_ui_1_1_single_song.html", null ]
+    ] ],
+    [ "Ui_SongList", "class_ui___song_list.html", [
+      [ "SongList", "class_ui_1_1_song_list.html", null ],
+      [ "SongList", "class_ui_1_1_song_list.html", null ]
+    ] ],
+    [ "Ui_SongListBlockWidget", "class_ui___song_list_block_widget.html", [
+      [ "SongListBlockWidget", "class_ui_1_1_song_list_block_widget.html", null ],
+      [ "SongListBlockWidget", "class_ui_1_1_song_list_block_widget.html", null ]
+    ] ],
+    [ "Ui_SongListWidget", "class_ui___song_list_widget.html", [
+      [ "SongListWidget", "class_ui_1_1_song_list_widget.html", null ],
+      [ "SongListWidget", "class_ui_1_1_song_list_widget.html", null ]
+    ] ],
+    [ "Ui_SpecialAlbum", "class_ui___special_album.html", [
+      [ "SpecialAlbum", "class_ui_1_1_special_album.html", null ],
+      [ "SpecialAlbum", "class_ui_1_1_special_album.html", null ]
+    ] ],
+    [ "Ui_TitleWidget", "class_ui___title_widget.html", [
+      [ "TitleWidget", "class_ui_1_1_title_widget.html", null ],
+      [ "TitleWidget", "class_ui_1_1_title_widget.html", null ]
+    ] ],
+    [ "Ui_UploadedSong", "class_ui___uploaded_song.html", [
+      [ "UploadedSong", "class_ui_1_1_uploaded_song.html", null ],
+      [ "UploadedSong", "class_ui_1_1_uploaded_song.html", null ]
+    ] ],
+    [ "Ui_UploadingSong", "class_ui___uploading_song.html", [
+      [ "UploadingSong", "class_ui_1_1_uploading_song.html", null ],
+      [ "UploadingSong", "class_ui_1_1_uploading_song.html", null ]
+    ] ],
+    [ "Ui_Video", "class_ui___video.html", [
+      [ "Video", "class_ui_1_1_video.html", null ],
+      [ "Video", "class_ui_1_1_video.html", null ]
+    ] ],
+    [ "Ui_VideoBlockWidget", "class_ui___video_block_widget.html", [
+      [ "VideoBlockWidget", "class_ui_1_1_video_block_widget.html", null ],
+      [ "VideoBlockWidget", "class_ui_1_1_video_block_widget.html", null ]
+    ] ],
+    [ "Ui_VideoChannelBlock", "class_ui___video_channel_block.html", [
+      [ "VideoChannelBlock", "class_ui_1_1_video_channel_block.html", null ],
+      [ "VideoChannelBlock", "class_ui_1_1_video_channel_block.html", null ]
+    ] ],
+    [ "Ui_VideoChannelWidget", "class_ui___video_channel_widget.html", [
+      [ "VideoChannelWidget", "class_ui_1_1_video_channel_widget.html", null ],
+      [ "VideoChannelWidget", "class_ui_1_1_video_channel_widget.html", null ]
+    ] ],
+    [ "Ui_VideoWidget", "class_ui___video_widget.html", [
+      [ "VideoWidget", "class_ui_1_1_video_widget.html", null ],
+      [ "VideoWidget", "class_ui_1_1_video_widget.html", null ]
+    ] ],
     [ "uint128_fallback", "classdetail_1_1uint128__fallback.html", null ],
     [ "utc_clock", "structdetail_1_1utc__clock.html", null ],
     [ "utf8_to_utf16", "classdetail_1_1utf8__to__utf16.html", null ],

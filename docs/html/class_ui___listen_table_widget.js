@@ -2,8 +2,6 @@ var class_ui___listen_table_widget =
 [
     [ "retranslateUi", "class_ui___listen_table_widget.html#a58b801596484146ae187ebc27ae68a90", null ],
     [ "retranslateUi", "class_ui___listen_table_widget.html#a58b801596484146ae187ebc27ae68a90", null ],
-    [ "retranslateUi", "class_ui___listen_table_widget.html#a58b801596484146ae187ebc27ae68a90", null ],
-    [ "setupUi", "class_ui___listen_table_widget.html#aa458bf1c40f6ff4861fb75bf4e14a6f5", null ],
     [ "setupUi", "class_ui___listen_table_widget.html#aa458bf1c40f6ff4861fb75bf4e14a6f5", null ],
     [ "setupUi", "class_ui___listen_table_widget.html#aa458bf1c40f6ff4861fb75bf4e14a6f5", null ],
     [ "gallery_widget", "class_ui___listen_table_widget.html#a68edd935eb336efcdcc17167403643d4", null ],

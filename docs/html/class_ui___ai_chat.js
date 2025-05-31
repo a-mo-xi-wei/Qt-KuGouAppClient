@@ -2,8 +2,6 @@ var class_ui___ai_chat =
 [
     [ "retranslateUi", "class_ui___ai_chat.html#a0d9f29503e6bcb4d4e0a576dc41dc23a", null ],
     [ "retranslateUi", "class_ui___ai_chat.html#a0d9f29503e6bcb4d4e0a576dc41dc23a", null ],
-    [ "retranslateUi", "class_ui___ai_chat.html#a0d9f29503e6bcb4d4e0a576dc41dc23a", null ],
-    [ "setupUi", "class_ui___ai_chat.html#a1c29a2e572768ed35f86c3dc331b1b88", null ],
     [ "setupUi", "class_ui___ai_chat.html#a1c29a2e572768ed35f86c3dc331b1b88", null ],
     [ "setupUi", "class_ui___ai_chat.html#a1c29a2e572768ed35f86c3dc331b1b88", null ],
     [ "button_widget", "class_ui___ai_chat.html#a9bd79d249d97568a8f9550a5c2827b74", null ],

@@ -2,8 +2,6 @@ var class_ui___listen_book =
 [
     [ "retranslateUi", "class_ui___listen_book.html#ad5f3917c374cdf8dc70fe99048ad237a", null ],
     [ "retranslateUi", "class_ui___listen_book.html#ad5f3917c374cdf8dc70fe99048ad237a", null ],
-    [ "retranslateUi", "class_ui___listen_book.html#ad5f3917c374cdf8dc70fe99048ad237a", null ],
-    [ "setupUi", "class_ui___listen_book.html#ace5578a5c67f607dc5786b6bf70ee1de", null ],
     [ "setupUi", "class_ui___listen_book.html#ace5578a5c67f607dc5786b6bf70ee1de", null ],
     [ "setupUi", "class_ui___listen_book.html#ace5578a5c67f607dc5786b6bf70ee1de", null ],
     [ "horizontalLayout", "class_ui___listen_book.html#a7c14973bdfbbeb38bda94999653647c8", null ],

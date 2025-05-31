@@ -1,28 +1,43 @@
 <map id="AiChat" name="AiChat">
-<area shape="rect" id="Node000001" title="AI 聊天界面类，集成问题输入、聊天视图和流式回答" alt="" coords="260,387,322,413"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,157,78,184"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,200,48,258,56,291,69,321,86,343,107,361,132,374,159,384,213,394,260,397,260,402,213,400,157,389,130,379,104,365,82,347,65,324,51,293,43,259,38,200"/>
-<area shape="rect" id="Node000012" href="$class_chat_item_base.html" title="聊天项基类，包含用户名、头像、气泡和加载动画" alt="" coords="80,288,185,315"/>
-<area shape="poly" id="edge12_Node000012_Node000002" title=" " alt="" coords="61,195,126,286,121,289,57,198"/>
-<area shape="rect" id="Node000003" href="$class_chat.html" title="聊天类，与硅基流动 API 交互，支持流式响应" alt="" coords="242,288,292,315"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="276,329,290,386,285,387,271,331"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="228,157,298,184"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="266,200,269,287,264,288,261,200"/>
-<area shape="rect" id="Node000005" href="$class_qt_material_floating_action_button.html" title="浮动动作按钮类，继承自 QtMaterialRaisedButton，支持 Material Design 风格" alt="" coords="319,280,484,323"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="389,338,369,365,346,380,323,391,321,386,344,376,365,361,385,335"/>
-<area shape="rect" id="Node000006" href="$class_qt_material_raised_button.html" title="凸起按钮类，继承自 QtMaterialFlatButton，支持 Material Design 风格" alt="" coords="321,157,482,184"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="404,199,404,280,399,280,399,199"/>
-<area shape="rect" id="Node000007" href="$class_qt_material_flat_button.html" title="扁平按钮类，继承自 QPushButton，支持 Material Design 风格" alt="" coords="331,81,472,108"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="404,123,404,157,399,157,399,123"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="352,5,451,32"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="404,47,404,81,399,81,399,47"/>
-<area shape="rect" id="Node000009" href="$class_text_bubble.html" title="文本气泡类，支持流式显示和动态尺寸调整" alt="" coords="509,288,595,315"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="525,326,494,347,457,365,385,387,322,398,321,393,384,381,455,360,491,342,523,322"/>
-<area shape="rect" id="Node000010" href="$class_bubble_frame.html" title="聊天气泡框架类，支持自己、他人和时间角色" alt="" coords="506,157,604,184"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="557,200,555,288,550,288,552,200"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="521,81,589,108"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="558,123,558,157,552,157,552,123"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="124,330,122,346,127,361,148,374,183,383,260,394,259,399,182,388,146,379,123,364,117,347,118,329"/>
-<area shape="rect" id="Node000013" href="$class_q_label.html" title="标签控件类" alt="" coords="102,157,165,184"/>
-<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="136,200,135,288,130,288,131,200"/>
+<area shape="rect" id="Node000001" title="AI 聊天界面类，集成问题输入、聊天视图和流式回答" alt="" coords="283,416,344,443"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="60,5,132,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,43,47,62,28,85,14,111,8,140,8,332,10,341,16,350,39,367,73,382,115,394,206,412,282,422,282,428,205,418,114,400,71,387,36,372,12,354,5,343,3,332,3,140,9,109,24,82,43,58,64,40"/>
+<area shape="rect" id="Node000005" href="$class_chat_view.html" title="聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果" alt="" coords="290,128,368,155"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="113,44,135,78,155,102,186,117,213,121,243,121,279,125,290,128,289,133,278,131,242,126,213,126,184,122,152,106,130,82,108,47"/>
+<area shape="rect" id="Node000019" href="$class_chat_item_base.html" title="聊天项基类，包含用户名、头像、气泡和加载动画" alt="" coords="43,128,149,155"/>
+<area shape="poly" id="edge21_Node000019_Node000002" title=" " alt="" coords="99,48,99,127,93,127,93,48"/>
+<area shape="rect" id="Node000003" href="$class_ui_1_1_ai_chat.html" title=" " alt="" coords="337,317,399,344"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="360,359,342,393,326,417,321,414,338,391,355,357"/>
+<area shape="rect" id="Node000004" href="$class_ui___ai_chat.html" title=" " alt="" coords="327,219,409,245"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="362,261,364,317,359,317,357,261"/>
+<area shape="poly" id="edge10_Node000003_Node000004" title=" " alt="" coords="379,261,377,317,372,317,374,261"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="343,168,365,217,360,219,339,170"/>
+<area shape="rect" id="Node000006" href="$class_q_label.html" title="标签控件类" alt="" coords="220,5,282,32"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="275,42,285,54,309,93,326,126,321,129,304,96,280,58,271,45"/>
+<area shape="poly" id="edge22_Node000019_Node000006" title=" " alt="" coords="214,42,188,58,143,96,109,129,106,126,140,92,185,54,211,37"/>
+<area shape="rect" id="Node000007" href="$class_q_tool_button.html" title="工具按钮类" alt="" coords="173,128,267,155"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="229,168,235,182,244,193,275,204,327,218,326,223,273,209,240,197,230,184,224,171"/>
+<area shape="rect" id="Node000008" href="$class_ela_plain_text_edit.html" title="自定义纯文本编辑框类，支持主题切换和上下文菜单" alt="" coords="392,128,509,155"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="436,169,414,197,387,220,383,216,410,193,432,166"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="396,5,505,32"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="453,48,453,127,448,127,448,48"/>
+<area shape="rect" id="Node000010" href="$class_chat.html" title="聊天类，与硅基流动 API 交互，支持流式响应" alt="" coords="235,317,285,344"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="257,359,258,375,262,391,272,403,286,413,283,418,269,407,258,393,252,376,252,359"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="228,219,297,245"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="265,261,263,317,258,317,259,261"/>
+<area shape="rect" id="Node000012" href="$class_qt_material_floating_action_button.html" title="浮动动作按钮类，继承自 QtMaterialRaisedButton，支持 Material Design 风格" alt="" coords="579,309,744,352"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="625,364,597,381,568,394,507,412,445,423,345,430,344,425,445,417,506,407,566,390,595,376,622,359"/>
+<area shape="rect" id="Node000013" href="$class_qt_material_raised_button.html" title="凸起按钮类，继承自 QtMaterialFlatButton，支持 Material Design 风格" alt="" coords="609,219,770,245"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="684,261,670,309,665,308,679,259"/>
+<area shape="rect" id="Node000014" href="$class_qt_material_flat_button.html" title="扁平按钮类，继承自 QPushButton，支持 Material Design 风格" alt="" coords="627,128,768,155"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="697,171,693,218,688,218,692,170"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="648,5,747,32"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="700,48,700,127,695,127,695,48"/>
+<area shape="rect" id="Node000016" href="$class_text_bubble.html" title="文本气泡类，支持流式显示和动态尺寸调整" alt="" coords="434,317,520,344"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="444,354,336,418,333,413,442,350"/>
+<area shape="rect" id="Node000017" href="$class_bubble_frame.html" title="聊天气泡框架类，支持自己、他人和时间角色" alt="" coords="456,219,554,245"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="500,261,483,318,478,316,495,260"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="534,128,602,155"/>
+<area shape="poly" id="edge19_Node000017_Node000018" title=" " alt="" coords="564,170,551,196,527,220,523,216,547,193,559,168"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="95,170,95,225,100,256,111,284,128,308,147,330,194,368,242,396,283,414,281,419,240,400,191,372,144,334,123,312,107,287,95,257,89,226,90,170"/>
 </map>

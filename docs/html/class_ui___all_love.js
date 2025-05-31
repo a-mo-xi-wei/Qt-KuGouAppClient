@@ -2,8 +2,6 @@ var class_ui___all_love =
 [
     [ "retranslateUi", "class_ui___all_love.html#a65a950c2f5174997d2251ef42a971765", null ],
     [ "retranslateUi", "class_ui___all_love.html#a65a950c2f5174997d2251ef42a971765", null ],
-    [ "retranslateUi", "class_ui___all_love.html#a65a950c2f5174997d2251ef42a971765", null ],
-    [ "setupUi", "class_ui___all_love.html#ab8db856d8a00fbd3c9a33caf99df090f", null ],
     [ "setupUi", "class_ui___all_love.html#ab8db856d8a00fbd3c9a33caf99df090f", null ],
     [ "setupUi", "class_ui___all_love.html#ab8db856d8a00fbd3c9a33caf99df090f", null ],
     [ "gridLayout", "class_ui___all_love.html#a835e96c8de98ae8b60810d64698e5d16", null ],

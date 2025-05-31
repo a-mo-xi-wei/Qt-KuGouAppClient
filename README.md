@@ -125,6 +125,7 @@ flowchart TD
 ![输入图片说明](image-show/image01-2.png)
 ![输入图片说明](image-show/image01-3.png)
 ![输入图片说明](image-show/image01-4.png)
+![输入图片说明](image-show/image01-5.png)
 ![输入图片说明](image-show/image02.png)
 ![输入图片说明](image-show/image03.png)
 ![输入图片说明](image-show/image04.png)
@@ -199,5 +200,10 @@ flowchart TD
 
 ---
 ## 😊打赏
-<img src="image-show/reward_1.png" style="width: 50%;" /><img src="image-show/reward_2.jpg" style="width: 46%;" />
+<table>
+  <tr>
+    <td><img src="image-show/reward_1.png" width="300"/></td>
+    <td><img src="image-show/reward_2.png" width="300"/></td>
+  </tr>
+</table>
 ### 若文章有所感所获，亦可请我共饮一杯肥宅冰阔落~~

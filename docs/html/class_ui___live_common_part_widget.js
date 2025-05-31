@@ -2,8 +2,6 @@ var class_ui___live_common_part_widget =
 [
     [ "retranslateUi", "class_ui___live_common_part_widget.html#a2da26876d7afb883a8e631b4f544ae71", null ],
     [ "retranslateUi", "class_ui___live_common_part_widget.html#a2da26876d7afb883a8e631b4f544ae71", null ],
-    [ "retranslateUi", "class_ui___live_common_part_widget.html#a2da26876d7afb883a8e631b4f544ae71", null ],
-    [ "setupUi", "class_ui___live_common_part_widget.html#a638bb2dc9b581f9070970c7e274d0bbd", null ],
     [ "setupUi", "class_ui___live_common_part_widget.html#a638bb2dc9b581f9070970c7e274d0bbd", null ],
     [ "setupUi", "class_ui___live_common_part_widget.html#a638bb2dc9b581f9070970c7e274d0bbd", null ],
     [ "all_pushButton", "class_ui___live_common_part_widget.html#aca621c3556b4fa8e8770f30800afd40c", null ],

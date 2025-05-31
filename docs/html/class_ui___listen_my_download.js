@@ -2,8 +2,6 @@ var class_ui___listen_my_download =
 [
     [ "retranslateUi", "class_ui___listen_my_download.html#affff776afe93ab4aba3ada85281f966c", null ],
     [ "retranslateUi", "class_ui___listen_my_download.html#affff776afe93ab4aba3ada85281f966c", null ],
-    [ "retranslateUi", "class_ui___listen_my_download.html#affff776afe93ab4aba3ada85281f966c", null ],
-    [ "setupUi", "class_ui___listen_my_download.html#a221f1e812d3ef9d011a91d0473923e44", null ],
     [ "setupUi", "class_ui___listen_my_download.html#a221f1e812d3ef9d011a91d0473923e44", null ],
     [ "setupUi", "class_ui___listen_my_download.html#a221f1e812d3ef9d011a91d0473923e44", null ],
     [ "downloaded_number_label", "class_ui___listen_my_download.html#aa88913552a271a2b57b7a007929f56fc", null ],

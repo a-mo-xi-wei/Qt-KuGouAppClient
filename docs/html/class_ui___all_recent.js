@@ -2,8 +2,6 @@ var class_ui___all_recent =
 [
     [ "retranslateUi", "class_ui___all_recent.html#ab51ef77660cfebefb25af088510f3f51", null ],
     [ "retranslateUi", "class_ui___all_recent.html#ab51ef77660cfebefb25af088510f3f51", null ],
-    [ "retranslateUi", "class_ui___all_recent.html#ab51ef77660cfebefb25af088510f3f51", null ],
-    [ "setupUi", "class_ui___all_recent.html#aee84677c093f5050effedfc50dc47108", null ],
     [ "setupUi", "class_ui___all_recent.html#aee84677c093f5050effedfc50dc47108", null ],
     [ "setupUi", "class_ui___all_recent.html#aee84677c093f5050effedfc50dc47108", null ],
     [ "gridLayout", "class_ui___all_recent.html#a835e96c8de98ae8b60810d64698e5d16", null ],

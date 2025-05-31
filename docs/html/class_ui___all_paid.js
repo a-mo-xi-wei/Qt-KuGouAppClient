@@ -2,8 +2,6 @@ var class_ui___all_paid =
 [
     [ "retranslateUi", "class_ui___all_paid.html#a4102d6817b040869e0157082113cfe0d", null ],
     [ "retranslateUi", "class_ui___all_paid.html#a4102d6817b040869e0157082113cfe0d", null ],
-    [ "retranslateUi", "class_ui___all_paid.html#a4102d6817b040869e0157082113cfe0d", null ],
-    [ "setupUi", "class_ui___all_paid.html#ae18539da62f2085f865a29211870da7b", null ],
     [ "setupUi", "class_ui___all_paid.html#ae18539da62f2085f865a29211870da7b", null ],
     [ "setupUi", "class_ui___all_paid.html#ae18539da62f2085f865a29211870da7b", null ],
     [ "gridLayout", "class_ui___all_paid.html#a835e96c8de98ae8b60810d64698e5d16", null ],

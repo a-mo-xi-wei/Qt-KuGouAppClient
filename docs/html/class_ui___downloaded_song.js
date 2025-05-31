@@ -2,8 +2,6 @@ var class_ui___downloaded_song =
 [
     [ "retranslateUi", "class_ui___downloaded_song.html#a4e035fd8b54c23b5f6896e3ee7742ce5", null ],
     [ "retranslateUi", "class_ui___downloaded_song.html#a4e035fd8b54c23b5f6896e3ee7742ce5", null ],
-    [ "retranslateUi", "class_ui___downloaded_song.html#a4e035fd8b54c23b5f6896e3ee7742ce5", null ],
-    [ "setupUi", "class_ui___downloaded_song.html#a2b4d7dfbaf27a29b730b536d4d905a1f", null ],
     [ "setupUi", "class_ui___downloaded_song.html#a2b4d7dfbaf27a29b730b536d4d905a1f", null ],
     [ "setupUi", "class_ui___downloaded_song.html#a2b4d7dfbaf27a29b730b536d4d905a1f", null ],
     [ "gridLayout", "class_ui___downloaded_song.html#a835e96c8de98ae8b60810d64698e5d16", null ],

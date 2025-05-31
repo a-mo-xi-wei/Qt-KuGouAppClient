@@ -2,8 +2,6 @@ var class_ui___ku_gou_app =
 [
     [ "retranslateUi", "class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d", null ],
     [ "retranslateUi", "class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d", null ],
-    [ "retranslateUi", "class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d", null ],
-    [ "setupUi", "class_ui___ku_gou_app.html#a382f7bf20634588b4279381b32a98d44", null ],
     [ "setupUi", "class_ui___ku_gou_app.html#a382f7bf20634588b4279381b32a98d44", null ],
     [ "setupUi", "class_ui___ku_gou_app.html#a382f7bf20634588b4279381b32a98d44", null ],
     [ "acoustics_pushButton", "class_ui___ku_gou_app.html#aeaa23d9a20c124610d9db07c3e136292", null ],

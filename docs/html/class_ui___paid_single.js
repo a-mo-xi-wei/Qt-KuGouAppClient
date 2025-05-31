@@ -2,8 +2,6 @@ var class_ui___paid_single =
 [
     [ "retranslateUi", "class_ui___paid_single.html#aa81f1ea270d5502a030aff9c019d1b82", null ],
     [ "retranslateUi", "class_ui___paid_single.html#aa81f1ea270d5502a030aff9c019d1b82", null ],
-    [ "retranslateUi", "class_ui___paid_single.html#aa81f1ea270d5502a030aff9c019d1b82", null ],
-    [ "setupUi", "class_ui___paid_single.html#ab9d9ec5869cdedb998f71ebe31691df0", null ],
     [ "setupUi", "class_ui___paid_single.html#ab9d9ec5869cdedb998f71ebe31691df0", null ],
     [ "setupUi", "class_ui___paid_single.html#ab9d9ec5869cdedb998f71ebe31691df0", null ],
     [ "gridLayout_2", "class_ui___paid_single.html#aaa4a20eba88c8ef610f75ea8b4b9a3a0", null ],

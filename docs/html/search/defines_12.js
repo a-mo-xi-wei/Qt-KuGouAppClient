@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['videoencodedframeptr_0',['VideoEncodedFramePtr',['../_video_encoded_frame_8h.html#abef69b2356d6e817327a28b2aa30e85e',1,'VideoEncodedFrame.h']]],
-  ['videoframeptr_1',['VideoFramePtr',['../_video_frame_8h.html#a7601a66a9b0be38c38d602250b80f2f9',1,'VideoFrame.h']]],
-  ['videorawframeptr_2',['VideoRawFramePtr',['../_video_raw_frame_8h.html#a08da9a7e91ea8592a519581ee228c24d',1,'VideoRawFrame.h']]]
+  ['time_5fout_0',['TIME_OUT',['../_ku_gou_server_2main_8cpp.html#a799517031a8334a42807b119bb456c53',1,'TIME_OUT:&#160;main.cpp'],['../_ku_gou_start_2main_8cpp.html#a799517031a8334a42807b119bb456c53',1,'TIME_OUT:&#160;main.cpp']]]
 ];

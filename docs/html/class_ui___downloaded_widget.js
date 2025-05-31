@@ -2,8 +2,6 @@ var class_ui___downloaded_widget =
 [
     [ "retranslateUi", "class_ui___downloaded_widget.html#aa0b8bfd5cc44e8f786691f072981d88c", null ],
     [ "retranslateUi", "class_ui___downloaded_widget.html#aa0b8bfd5cc44e8f786691f072981d88c", null ],
-    [ "retranslateUi", "class_ui___downloaded_widget.html#aa0b8bfd5cc44e8f786691f072981d88c", null ],
-    [ "setupUi", "class_ui___downloaded_widget.html#a38b36a3ec8a9a85a6325148fb2718a11", null ],
     [ "setupUi", "class_ui___downloaded_widget.html#a38b36a3ec8a9a85a6325148fb2718a11", null ],
     [ "setupUi", "class_ui___downloaded_widget.html#a38b36a3ec8a9a85a6325148fb2718a11", null ],
     [ "gridLayout", "class_ui___downloaded_widget.html#a835e96c8de98ae8b60810d64698e5d16", null ],

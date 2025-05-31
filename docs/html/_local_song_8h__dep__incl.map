@@ -1,15 +1,37 @@
 <map id="LocalSong.h" name="LocalSong.h">
-<area shape="rect" id="Node000001" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="209,5,303,32"/>
-<area shape="rect" id="Node000002" href="$_local_download_8h.html" title="定义 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="126,80,247,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,45,201,81,197,78,232,41"/>
-<area shape="rect" id="Node000007" href="$_local_song_8cpp.html" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="272,80,379,107"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="280,41,315,78,311,81,276,45"/>
-<area shape="rect" id="Node000003" href="$_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="70,155,165,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="166,120,131,156,127,152,162,116"/>
-<area shape="rect" id="Node000006" href="$_local_download_8cpp.html" title="实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="190,155,325,181"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="211,116,247,152,243,156,208,120"/>
-<area shape="rect" id="Node000004" href="$_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="5,229,115,256"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="100,195,72,231,68,227,96,192"/>
-<area shape="rect" id="Node000005" href="$_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和应用程序" alt="" coords="139,229,213,256"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="139,192,168,227,164,231,135,195"/>
+<area shape="rect" id="Node000001" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="453,5,546,32"/>
+<area shape="rect" id="Node000002" href="$_local_download_8h.html" title="定义 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="362,80,483,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="477,45,437,82,434,78,473,41"/>
+<area shape="rect" id="Node000015" href="$_local_song_8cpp.html" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="671,80,779,107"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="554,35,686,77,685,82,552,40"/>
+<area shape="rect" id="Node000016" href="$cmake-build-debug-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_24_j_f6_g_m_y_w_i_q_2moc___local_song_8cpp.html" title=" " alt="" coords="135,80,275,107"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="439,38,257,82,256,77,437,32"/>
+<area shape="rect" id="Node000017" href="$cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_24_j_f6_g_m_y_w_i_q_2moc___local_song_8cpp.html" title=" " alt="" coords="507,80,647,107"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="526,41,566,78,562,82,522,45"/>
+<area shape="rect" id="Node000003" href="$_ku_gou_app_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouApp 类" alt="" coords="453,155,549,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,116,489,152,486,156,446,120"/>
+<area shape="rect" id="Node000010" href="$_local_download_8cpp.html" title="实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="101,155,237,181"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="365,114,214,157,213,151,363,109"/>
+<area shape="rect" id="Node000011" href="$cmake-build-debug-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2_e_w_i_e_g_a425cb35a283617a263b823b8c4fa9cbbc.html" title=" " alt="" coords="261,155,429,181"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="400,119,360,156,356,152,396,116"/>
+<area shape="rect" id="Node000013" href="$cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2_e_w_i_e_g_6b14983232d45b258693295484903abc.html" title=" " alt="" coords="597,155,765,181"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="483,109,636,151,635,157,481,114"/>
+<area shape="rect" id="Node000004" href="$_ku_gou_app_8cpp.html" title="实现 KuGouApp 类，管理酷狗音乐主界面" alt="" coords="189,229,298,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="442,188,290,231,288,226,441,183"/>
+<area shape="rect" id="Node000005" href="$_ku_gou_start_2main_8cpp.html" title="程序入口文件，初始化日志和单实例应用程序" alt="" coords="322,229,397,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="464,191,386,231,383,226,462,186"/>
+<area shape="rect" id="Node000006" href="$cmake-build-debug-mingw_2_ku_gou_start_2_ku_gou_app_start__autogen_2_e_w_i_e_g_a46_w_w_2moc___ku_gou_app_8cpp.html" title=" " alt="" coords="421,229,562,256"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="500,197,496,229,491,229,495,196"/>
+<area shape="rect" id="Node000008" href="$cmake-build-release-mingw_2_ku_gou_start_2_ku_gou_app_start__autogen_2_e_w_i_e_g_a46_w_w_2moc___ku_gou_app_8cpp.html" title=" " alt="" coords="586,229,728,256"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="543,186,631,226,628,231,541,191"/>
+<area shape="rect" id="Node000007" href="$cmake-build-debug-mingw_2_ku_gou_start_2_ku_gou_app_start__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="411,304,562,331"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="492,272,490,304,485,303,487,272"/>
+<area shape="rect" id="Node000009" href="$cmake-build-release-mingw_2_ku_gou_start_2_ku_gou_app_start__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="587,304,738,331"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="662,272,664,303,659,304,656,272"/>
+<area shape="rect" id="Node000012" href="$cmake-build-debug-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="5,229,157,256"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="286,188,128,231,127,226,284,183"/>
+<area shape="rect" id="Node000014" href="$cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="752,229,903,256"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="721,186,803,226,801,231,719,191"/>
+<area shape="poly" id="edge16_Node000016_Node000012" title=" " alt="" coords="145,115,115,132,91,156,83,174,80,194,81,229,76,229,74,193,78,172,87,153,112,128,142,111"/>
+<area shape="poly" id="edge18_Node000017_Node000014" title=" " alt="" coords="651,108,725,129,757,140,779,153,796,170,810,191,826,228,821,230,805,193,792,174,775,157,755,145,724,134,650,113"/>
 </map>

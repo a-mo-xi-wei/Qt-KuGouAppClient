@@ -2,8 +2,6 @@ var class_ui___special_album =
 [
     [ "retranslateUi", "class_ui___special_album.html#afdf159b7b175974e0aebcf1c1c36a038", null ],
     [ "retranslateUi", "class_ui___special_album.html#afdf159b7b175974e0aebcf1c1c36a038", null ],
-    [ "retranslateUi", "class_ui___special_album.html#afdf159b7b175974e0aebcf1c1c36a038", null ],
-    [ "setupUi", "class_ui___special_album.html#a4abd600c0a6811626c9fe000b20dc1fd", null ],
     [ "setupUi", "class_ui___special_album.html#a4abd600c0a6811626c9fe000b20dc1fd", null ],
     [ "setupUi", "class_ui___special_album.html#a4abd600c0a6811626c9fe000b20dc1fd", null ],
     [ "gridLayout", "class_ui___special_album.html#a835e96c8de98ae8b60810d64698e5d16", null ],

@@ -2,8 +2,6 @@ var class_ui___song_list_widget =
 [
     [ "retranslateUi", "class_ui___song_list_widget.html#a298c5f8a0cc612b2de22c51ce2a69913", null ],
     [ "retranslateUi", "class_ui___song_list_widget.html#a298c5f8a0cc612b2de22c51ce2a69913", null ],
-    [ "retranslateUi", "class_ui___song_list_widget.html#a298c5f8a0cc612b2de22c51ce2a69913", null ],
-    [ "setupUi", "class_ui___song_list_widget.html#a04f7fdd968377c14bbe53359ee8d070f", null ],
     [ "setupUi", "class_ui___song_list_widget.html#a04f7fdd968377c14bbe53359ee8d070f", null ],
     [ "setupUi", "class_ui___song_list_widget.html#a04f7fdd968377c14bbe53359ee8d070f", null ],
     [ "batch_toolButton", "class_ui___song_list_widget.html#a70705b64f99c7b916e7834125818d0ec", null ],

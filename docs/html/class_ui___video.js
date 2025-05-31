@@ -2,8 +2,6 @@ var class_ui___video =
 [
     [ "retranslateUi", "class_ui___video.html#a7a7434f2a0fa5ab871d9d3e29b2689d6", null ],
     [ "retranslateUi", "class_ui___video.html#a7a7434f2a0fa5ab871d9d3e29b2689d6", null ],
-    [ "retranslateUi", "class_ui___video.html#a7a7434f2a0fa5ab871d9d3e29b2689d6", null ],
-    [ "setupUi", "class_ui___video.html#a66cf75cd89f4a0141e4dbc4fc2e00a1c", null ],
     [ "setupUi", "class_ui___video.html#a66cf75cd89f4a0141e4dbc4fc2e00a1c", null ],
     [ "setupUi", "class_ui___video.html#a66cf75cd89f4a0141e4dbc4fc2e00a1c", null ],
     [ "horizontalLayout", "class_ui___video.html#a7c14973bdfbbeb38bda94999653647c8", null ],

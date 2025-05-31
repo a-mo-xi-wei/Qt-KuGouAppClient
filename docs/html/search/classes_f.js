@@ -2,7 +2,7 @@ var searchData=
 [
   ['p_5fformatter_0',['p_formatter',['../classspdlog_1_1details_1_1p__formatter.html',1,'spdlog::details']]],
   ['padding_5finfo_1',['padding_info',['../structspdlog_1_1details_1_1padding__info.html',1,'spdlog::details']]],
-  ['paidsingle_2',['PaidSingle',['../class_paid_single.html',1,'']]],
+  ['paidsingle_2',['PaidSingle',['../class_paid_single.html',1,'PaidSingle'],['../class_ui_1_1_paid_single.html',1,'PaidSingle']]],
   ['paintaddin_3',['PaintAddin',['../struct_interactive_button_base_1_1_paint_addin.html',1,'InteractiveButtonBase']]],
   ['parse_5fcontext_4',['parse_context',['../classparse__context.html',1,'']]],
   ['parse_5fcontext_3c_20char_20_3e_5',['parse_context&lt; Char &gt;',['../classparse__context.html',1,'']]],
@@ -25,7 +25,7 @@ var searchData=
   ['printf_5fformatter_22',['printf_formatter',['../structprintf__formatter.html',1,'']]],
   ['printf_5fprecision_5fhandler_23',['printf_precision_handler',['../structdetail_1_1printf__precision__handler.html',1,'detail']]],
   ['printf_5fwidth_5fhandler_24',['printf_width_handler',['../classdetail_1_1printf__width__handler.html',1,'detail']]],
-  ['purchasedalbums_25',['PurchasedAlbums',['../class_purchased_albums.html',1,'']]],
-  ['purchasedmusic_26',['PurchasedMusic',['../class_purchased_music.html',1,'']]],
-  ['purchasedvideos_27',['PurchasedVideos',['../class_purchased_videos.html',1,'']]]
+  ['purchasedalbums_25',['PurchasedAlbums',['../class_purchased_albums.html',1,'PurchasedAlbums'],['../class_ui_1_1_purchased_albums.html',1,'PurchasedAlbums']]],
+  ['purchasedmusic_26',['PurchasedMusic',['../class_purchased_music.html',1,'PurchasedMusic'],['../class_ui_1_1_purchased_music.html',1,'PurchasedMusic']]],
+  ['purchasedvideos_27',['PurchasedVideos',['../class_purchased_videos.html',1,'PurchasedVideos'],['../class_ui_1_1_purchased_videos.html',1,'PurchasedVideos']]]
 ];
