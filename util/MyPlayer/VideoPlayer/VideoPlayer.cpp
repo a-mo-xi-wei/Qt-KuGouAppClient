@@ -1,8 +1,6 @@
-﻿/**
- * 叶海辉
- * QQ群121376426
- * http://blog.yundiantech.com/
- */
+﻿/*
+VideoPlayer - 多媒体播放器类实现
+*/
 
 #include "VideoPlayer.h"
 
@@ -11,9 +9,14 @@
 #endif
 
 #include <QFileInfo>
+#include <unistd.h>
 #include <libavutil/error.h>
 
-void print_ffmpeg_error(int errnum) 
+/** @brief 打印 FFmpeg 错误信息
+ *
+ *  @param errnum 错误码
+ */
+void print_ffmpeg_error(int errnum)
 {
     char errbuf[128];
     const char *errbuf_ptr = errbuf;
@@ -22,70 +25,81 @@ void print_ffmpeg_error(int errnum)
     fprintf(stderr, "Error: %s\n", errbuf_ptr);
 }
 
-VideoPlayer::VideoPlayer(QObject *parent):
-    QObject(parent),
-    m_positionUpdateTimer(new QTimer(this))
+/** @brief 构造函数
+ *
+ *  @param parent 父对象
+ */
+VideoPlayer::VideoPlayer(QObject *parent)
+    : QObject(parent),
+      m_positionUpdateTimer(new QTimer(this))
 {
     m_state = VideoPlayer::Stop;
-
     mIsMute = false;
-
     mIsNeedPause = false;
-
     mVolume = 1;
 #ifdef USE_PCM_PLAYER
     m_pcm_player = new PcmPlayer_SDL();
     m_pcm_player->setSpeed(m_speed);
 #endif
     this->setSingleMode(true);
-
     m_thread_video = new Thread();
     m_thread_video->setSingleMode(true);
-    m_thread_video->setThreadFunc(std::bind(&VideoPlayer::decodeVideoThread, this));
-
+    m_thread_video->setThreadFunc([this] { decodeVideoThread(); });
     m_thread_audio = new Thread();
     m_thread_audio->setSingleMode(true);
-    m_thread_audio->setThreadFunc(std::bind(&VideoPlayer::decodeAudioThread, this));
+    m_thread_audio->setThreadFunc([this] { decodeAudioThread(); });
 
-    //设置发送播放位置改变信号事件间隔
+    ///< 设置发送播放位置改变信号事件间隔
     m_positionUpdateTimer.setInterval(300);
-    connect(&m_positionUpdateTimer, &QTimer::timeout, this, [this]{ emit positionChanged(getCurrentTime());});
+    connect(&m_positionUpdateTimer, &QTimer::timeout, this, [this] { emit positionChanged(getCurrentTime()); });
 }
 
+/** @brief 析构函数
+ */
 VideoPlayer::~VideoPlayer()
 {
-
 }
 
+/** @brief 初始化播放器
+ *
+ *  @return 初始化是否成功
+ */
 bool VideoPlayer::initPlayer()
 {
     static int isInited = false;
-
     if (!isInited)
     {
-//        av_register_all(); //初始化FFMPEG  调用了这个才能正常使用编码器和解码器
-        avformat_network_init(); //支持打开网络文件
+        // av_register_all(); ///< 初始化FFMPEG  调用了这个才能正常使用编码器和解码器
+        avformat_network_init(); ///< 支持打开网络文件
 
         isInited = true;
     }
 
-//SDL初始化需要放入子线程中，否则有些电脑会有问题。
-//    if (SDL_Init(SDL_INIT_AUDIO))
-//    {
-//        fprintf(stderr, "Could not initialize SDL - %s. \n", SDL_GetError());
-//        return false;
-//    }
+    //SDL初始化需要放入子线程中，否则有些电脑会有问题。
+    //    if (SDL_Init(SDL_INIT_AUDIO))
+    //    {
+    //        fprintf(stderr, "Could not initialize SDL - %s. \n", SDL_GetError());
+    //        return false;
+    //    }
 
     return true;
 }
 
+/** @brief 开始播放
+ *
+ *  @param filePath 文件路径
+ *  @return 是否成功开始播放
+ */
 bool VideoPlayer::startPlay(const std::string &filePath)
 {
-    qDebug() << "startPlay: mIsQuit=" << mIsQuit << "mIsAudioThreadFinished=" << mIsAudioThreadFinished;
+    /// qDebug() << "startPlay: mIsQuit=" << mIsQuit << "mIsAudioThreadFinished=" << mIsAudioThreadFinished;
     emit audioPlay();
     stop(true); // 强制等待线程结束
-    qDebug()<<"--------------当前状态："<<m_state;
-    qDebug() << "Stop completed, starting play...";
+    /// qDebug()<<"--------------当前状态："<<m_state;
+    /// qDebug() << "Stop completed, starting play...";
+    if (mIsReadThreadFinished && mIsAudioThreadFinished) {  ///< 此处一定要停止一段时间
+        mSleep(10); // 等待线程完全结束
+    }
 
     // 重置所有关键状态
     mIsQuit = false;
@@ -97,11 +111,11 @@ bool VideoPlayer::startPlay(const std::string &filePath)
     m_file_path = filePath;
     mIsNaturalEnd = false; // 新增：每次开始播放时重置标志
 
-    //启动新的线程实现读取视频文件
+    ///< 启动新的线程实现读取视频文件
     this->start();
 
 #ifdef USE_PCM_PLAYER
-    m_pcm_player->setPause(false); // 设置暂停标志
+    m_pcm_player->setPause(false); ///< 设置暂停标志
 #endif
 
     doPlayerStateChanged(VideoPlayer::Playing, mVideoStream != nullptr, mAudioStream != nullptr);
@@ -111,7 +125,6 @@ bool VideoPlayer::startPlay(const std::string &filePath)
     qDebug()<<"++++++++++++++++当前状态："<<m_state;
 
     return true;
-
 }
 
 bool VideoPlayer::replay(bool isWait)
