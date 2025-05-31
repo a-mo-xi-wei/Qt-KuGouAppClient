@@ -200,10 +200,10 @@ flowchart TD
 
 ---
 ## 😊打赏
-<table>
-  <tr>
-    <td><img src="image-show/reward_1.png" width="300"/></td>
-    <td><img src="image-show/reward_2.png" width="300"/></td>
-  </tr>
-</table>
+
+<div style="display: flex; justify-content: flex-start; gap: 2cm;">
+  <img src="image-show/reward_1.png" width="300"/>
+  <img src="image-show/reward_2.png" width="300"/>
+</div>
+
 ### 若文章有所感所获，亦可请我共饮一杯肥宅冰阔落~~
