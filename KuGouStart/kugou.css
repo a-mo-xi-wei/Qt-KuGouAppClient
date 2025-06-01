@@ -48,6 +48,9 @@ QWidget#play_widget QLabel {
     background-color: rgba(255,255,255,0);
     border: none;
 }
+QWidget#play_widget QLabel#singer_text {
+    color: #7e7e7e;
+}
 QWidget#play_widget QPushButton {
     border-radius:5px;
     border:1px solid #6fafa7;
@@ -62,12 +65,6 @@ QWidget#play_widget QPushButton:checked {
 }
 QToolButton#volume_toolButton{
     background-color:rgba(255,255,255,0);
-}
-QLabel#song_name_label:hover{
-    color: #006fff;
-}
-QLabel#singer_label:hover{
-    color: #006fff;
 }
 QToolButton#circle_toolButton{
     border-image:url(':/Res/playbar/list-loop-gray.svg');

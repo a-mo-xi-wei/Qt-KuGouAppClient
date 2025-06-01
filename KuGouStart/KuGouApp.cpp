@@ -379,22 +379,37 @@ void KuGouApp::initPlayWidget() {
     font.setWeight(QFont::Medium);
     ui->song_name_text->setFont(font);                             ///< 应用歌曲名称字体
     ui->singer_text->setFont(font);                                ///< 应用歌手名称字体
+    ui->song_name_text->adjustSize();
+    ui->singer_text->adjustSize();
 
     connect(this, &KuGouApp::curPlaySongNameChange, [this, song_name_text_toolTip](const QString &songName) {
         song_name_text_toolTip->setToolTip(songName);              ///< 更新歌曲名称提示
-        ui->song_name_text->updateGeometry();                      ///< 强制布局更新
         const QFontMetrics fm(ui->song_name_text->font());
+        constexpr int maxWidth = 100;
+        /// qDebug()<<"歌曲文本长度："<<fm.horizontalAdvance(songName);
+        if (fm.horizontalAdvance(songName) > 60)ui->song_name_text->setFixedWidth(fm.horizontalAdvance(songName) > maxWidth ?
+            maxWidth : fm.horizontalAdvance(songName));
+        else ui->song_name_text->setFixedWidth(fm.horizontalAdvance(songName));
         QString elidedText = fm.elidedText(songName, Qt::ElideRight, ui->song_name_text->width()); ///< 计算省略文本
+        /// qDebug()<<"elidedText: "<<elidedText<<" 歌曲文本长度："<<fm.horizontalAdvance(songName) << " ui->song_name_text->width() : "<<ui->song_name_text->width();
         ui->song_name_text->setText(elidedText);                   ///< 设置省略文本
+        ui->song_name_text->adjustSize();                          ///< 适应文本
         song_name_text_toolTip->adjustSize();                      ///< 调整提示尺寸
+        ui->singer_song_HLayout->update();
     });                                                            ///< 连接歌曲名称变化信号
 
     connect(this, &KuGouApp::curPlaySingerChange, [this, singer_text_toolTip](const QString &singerName) {
         singer_text_toolTip->setToolTip(singerName);               ///< 更新歌手名称提示
-        ui->singer_text->updateGeometry();                         ///< 强制布局更新
         const QFontMetrics fm(ui->singer_text->font());
+        constexpr int maxWidth = 120;
+        /// qDebug()<<"歌手文本长度："<<fm.horizontalAdvance(singerName);
+        if (fm.horizontalAdvance(singerName) > 60)ui->singer_text->setFixedWidth(fm.horizontalAdvance(singerName)> maxWidth ?
+            maxWidth : fm.horizontalAdvance(singerName));
+        else  ui->singer_text->setFixedWidth(fm.horizontalAdvance(singerName));
         ui->singer_text->setText(fm.elidedText(singerName, Qt::ElideRight, ui->singer_text->width())); ///< 设置省略文本
+        ui->singer_text->adjustSize();                             ///< 适应文本
         singer_text_toolTip->adjustSize();                         ///< 调整提示尺寸
+        ui->singer_song_HLayout->update();
     });                                                            ///< 连接歌手名称变化信号
 
     connect(ui->volume_toolButton, &VolumeToolBtn::volumeChange, this, [this](const int value) {

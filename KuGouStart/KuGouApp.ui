@@ -1196,64 +1196,108 @@
             <number>5</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="singer_song_HLayout">
+            <layout class="QHBoxLayout" name="singer_song_HLayout" stretch="0,0,0,0">
              <property name="spacing">
+              <number>2</number>
+             </property>
+             <property name="rightMargin">
               <number>0</number>
              </property>
              <item>
-              <widget class="ElaText" name="song_name_text">
+              <widget class="QLabel" name="song_name_text">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="minimumSize">
+               <property name="maximumSize">
                 <size>
-                 <width>69</width>
-                 <height>0</height>
+                 <width>100</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="text">
                 <string>网络歌曲</string>
                </property>
                <property name="scaledContents">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="ElaText" name="singer_text">
+              <widget class="QLabel" name="label">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>69</width>
+                 <width>10</width>
                  <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>-</string>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="singer_text">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>130</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="text">
                 <string>网络歌手</string>
                </property>
                <property name="scaledContents">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </spacer>
              </item>
             </layout>
            </item>
            <item>
             <layout class="QHBoxLayout" name="song_option_HLayout">
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QToolButton" name="love_toolButton">
                <property name="toolTip">
@@ -1624,11 +1668,6 @@
    <extends>QStackedWidget</extends>
    <header>slidingstackedwidget.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ElaText</class>
-   <extends>QLabel</extends>
-   <header>ElaText.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
