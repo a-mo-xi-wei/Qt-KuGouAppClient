@@ -83,6 +83,10 @@ LocalSong::~LocalSong()
 void LocalSong::playNextSong()
 {
     qDebug() << "播放下一首歌曲";
+    if (this->m_musicItemVector.isEmpty()) {
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000, this->window()); ///< 显示无音乐提示
+        return;
+    }
     if (this->m_deleteSelf)
     {
         const auto item = this->m_musicItemVector[m_curPlayIndex]; ///< 获取当前歌曲
@@ -103,6 +107,10 @@ void LocalSong::playNextSong()
 void LocalSong::playPrevSong()
 {
     qDebug() << "播放上一首歌曲";
+    if (this->m_musicItemVector.isEmpty()) {
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000, this->window()); ///< 显示无音乐提示
+        return;
+    }
     if (this->m_deleteSelf)
     {
         const auto item = this->m_musicItemVector[m_curPlayIndex]; ///< 获取当前歌曲
@@ -377,13 +385,27 @@ void LocalSong::updateCurPlayIndex()
 {
     if (m_curPlayIndex <= -1)
         return;
+    // 添加空向量检查
+    if (m_lastLocationMusicVector.empty()) {
+        m_curPlayIndex = -1;
+        m_curPlayItemWidget = nullptr;
+        return;
+    }
     const auto temp = this->m_lastLocationMusicVector[this->m_curPlayIndex]; ///< 获取当前歌曲
     auto it = std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp); ///< 查找歌曲
     m_deleteSelf = false;                                ///< 重置删除标志
     if (it == this->m_locationMusicVector.end())
     {
         qDebug() << "删除的是自己";
-        if (this->m_curPlayIndex == this->m_locationMusicVector.size())
+
+        // 重点修改：空向量时重置索引
+        if (m_locationMusicVector.empty()) {
+            m_curPlayIndex = -1;
+            m_curPlayItemWidget = nullptr;
+            return;
+        }
+
+        if (this->m_curPlayIndex >= this->m_locationMusicVector.size())
         {
             this->m_curPlayIndex = 0;                    ///< 重置索引
         }
@@ -596,11 +618,12 @@ void LocalSong::on_local_sort_toolButton_clicked()
 
 /**
  * @brief 音频播放结束槽函数
- * @note 顺序播放时自动播放下一首
+ * @note 上一首自然播放结束后，顺序播放时自动播放下一首
  */
 void LocalSong::onAudioFinished()
 {
     qDebug() << "上一首播放结束,当前m_isOrderPlay: " << this->m_isOrderPlay;
+    ///< 此处存在疑点，因为：此处接收到的播放结束信号可能是自然结束也可能是外部中断结束，自然结束的话自然可以调用播放下一首但若是中断结束的话则不应该，所以应该明确该信号的发出前提
     if (this->m_isOrderPlay)
     {
         playNextSong();                                  ///< 播放下一首
