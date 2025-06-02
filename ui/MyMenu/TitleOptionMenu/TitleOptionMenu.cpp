@@ -1,4 +1,4 @@
-/**
+    /**
  * @file TitleOptionMenu.cpp
  * @brief 实现 TitleOptionMenu 类，提供标题栏选项菜单功能
  * @author WeiWang
@@ -105,6 +105,8 @@ void TitleOptionMenu::initMenu() {
         // 顶部按钮容器
         auto a_listWidget = new QWidget(this);
         a_listWidget->setMouseTracking(true);
+        a_listWidget->setAttribute(Qt::WA_Hover);        // 启用悬停检测
+        a_listWidget->setFocusPolicy(Qt::NoFocus);        // 避免抢夺焦点
         a_listWidget->setObjectName(QStringLiteral("listWidget"));
         a_listWidget->setFixedSize(365, 100);
         a_listWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);

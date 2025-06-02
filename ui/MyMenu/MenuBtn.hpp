@@ -55,14 +55,22 @@ protected:
      * @return 是否处理事件
      */
     bool eventFilter(QObject *watched, QEvent *event) override {
-        if (event->type() == QEvent::Enter) {
-            //qDebug()<<"进入";
-            this->setIcon(m_icon2);
-        } else if (event->type() == QEvent::Leave) {
-            //qDebug()<<"离开";
-            this->setIcon(m_icon1);
+
+        // 确保只处理当前按钮的事件
+        if(watched != this) return QToolButton::eventFilter(watched, event);
+
+        switch(event->type()) {
+            case QEvent::Enter:
+            case QEvent::HoverEnter:  // 增加Hover事件支持
+                setIcon(m_icon2);
+                return true;          // 事件已处理
+            case QEvent::Leave:
+            case QEvent::HoverLeave:
+                setIcon(m_icon1);
+                return true;          // 事件已处理
+            default:
+                return QToolButton::eventFilter(watched, event);
         }
-        return QToolButton::eventFilter(watched, event);
     }
 
 private:
