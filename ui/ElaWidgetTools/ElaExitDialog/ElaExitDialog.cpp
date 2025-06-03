@@ -11,7 +11,6 @@
 #include "ElaMaskWidget.h"
 #include "ElaText.h"
 #include "ElaTheme.h"
-#include "ElaWinShadowHelper.h"
 #include "ElaExitDialogPrivate.h"
 #include "logger.hpp"
 
