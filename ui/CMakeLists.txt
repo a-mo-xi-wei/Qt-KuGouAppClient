@@ -2,6 +2,16 @@ cmake_minimum_required(VERSION 3.10)
 
 project(Ui VERSION 1.0 LANGUAGES CXX)
 
+#Material模块
+add_subdirectory(QtMaterialWidget)
+
+#ElaWidget模块
+add_subdirectory(ElaWidgetTools)
+
+#登录模块
+add_subdirectory(LoginInterface)
+
+#主窗口模块
 add_subdirectory(MyWindow)
 
 #自定义堆栈窗口模块
@@ -36,9 +46,3 @@ add_subdirectory(MyCheckBox)
 
 #对话框模块
 add_subdirectory(MyDialog)
-
-#Material模块
-add_subdirectory(QtMaterialWidget)
-
-#ElaWidget模块
-add_subdirectory(ElaWidgetTools)
