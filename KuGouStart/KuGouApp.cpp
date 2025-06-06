@@ -69,6 +69,8 @@ KuGouApp::KuGouApp(MainWindow *parent)
     , m_refreshMask(std::make_unique<RefreshMask>())               ///< 初始化刷新遮罩
     , m_snackbar(std::make_unique<QtMaterialSnackbar>())           ///< 初始化消息提示条
 {
+    // @note 初始化字体资源
+    initFontRes();
     ui->setupUi(this);                                             ///< 设置 UI 布局
 
     QFile file(GET_CURRENT_DIR + QStringLiteral("/kugou.css"));   ///< 加载样式表
@@ -206,9 +208,6 @@ void KuGouApp::initFontRes() {
  * @note 初始化字体、窗口属性和子组件
  */
 void KuGouApp::initUi() {
-    // @note 初始化字体资源
-    initFontRes();
-
     this->setWindowIcon(QIcon(QStringLiteral(":/Res/window/windowIcon.png"))); ///< 设置窗口图标
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint); ///< 设置无边框和无阴影
     // @note 移动窗口到屏幕中央
