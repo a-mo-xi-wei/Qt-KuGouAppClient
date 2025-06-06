@@ -5,11 +5,8 @@
  * @date 2024-10-10
  * @version 1.0
  */
-
 #include "MySearchLineEdit.h"
-#include "ElaMenu.h"
 
-#include <QApplication>
 #include <QClipboard>
 #include <QMouseEvent>
 #include <QPropertyAnimation>
@@ -25,11 +22,9 @@ std::once_flag flag;
  * @param parent 父控件指针，默认为 nullptr
  */
 MySearchLineEdit::MySearchLineEdit(QWidget *parent)
-    : QLineEdit(parent)
-    , m_animation(new QPropertyAnimation(this, "minimumWidth", this))
+    : ElaLineEdit(parent)
     , m_maxWidth(250)
 {
-    this->installEventFilter(this); ///< 安装事件过滤器
 }
 
 /**
@@ -44,61 +39,33 @@ void MySearchLineEdit::setMaxWidth(const int &width) {
  * @brief 重写焦点获取事件，触发展开动画
  * @param event 焦点事件
  */
-void MySearchLineEdit::focusInEvent(QFocusEvent *event) {
-    QLineEdit::focusInEvent(event);
+void MySearchLineEdit::focusInEvent(QFocusEvent* event) {
+    // 先调用基类处理焦点事件
+    ElaLineEdit::focusInEvent(event);
 
-    if (this->width() == this->m_maxWidth) return; ///< 已展开则无需动画
-    QApplication::instance()->installEventFilter(this); ///< 安装应用程序级事件过滤器
+    if (width() == m_maxWidth) {
+        m_expanded = true;
+        return;
+    }
 
-    std::call_once(flag, [this] { this->m_originalWidth = this->width(); }); ///< 初始化原始宽度
+    // 设置初始值
+    std::call_once(flag, [this] { m_originalWidth = width(); });
 
-    this->m_animation->setDuration(200); ///< 动画持续 200 毫秒
-    this->m_animation->setStartValue(this->m_originalWidth); ///< 从原始宽度开始
-    this->m_animation->setEndValue(this->m_maxWidth); ///< 展开到最大宽度
-    this->m_animation->start();
+    startExpandAnimation();
 }
 
 /**
  * @brief 重写焦点丢失事件，触发收起动画
  * @param event 焦点事件
  */
-void MySearchLineEdit::focusOutEvent(QFocusEvent *event) {
-    if (event->reason() == Qt::PopupFocusReason) {
-        event->ignore(); ///< 忽略由菜单弹出引起的焦点丢失
-        return;
+void MySearchLineEdit::focusOutEvent(QFocusEvent* event) {
+    // 只在已展开状态下执行收缩动画
+    if (m_expanded) {
+        startCollapseAnimation();
     }
-    QLineEdit::focusOutEvent(event);
-    // qDebug() << "焦点丢失"; ///< 调试用，记录焦点丢失
-    QApplication::instance()->installEventFilter(this); ///< 安装应用程序级事件过滤器
 
-    this->m_animation->setDuration(200); ///< 动画持续 200 毫秒
-    this->m_animation->setStartValue(this->m_maxWidth); ///< 从最大宽度开始
-    this->m_animation->setEndValue(this->m_originalWidth); ///< 收起到原始宽度
-    this->m_animation->start();
-}
-
-/**
- * @brief 重写事件过滤器，处理鼠标点击外部区域的焦点丢失
- * @param watched 监视的对象
- * @param event 事件对象
- * @return 是否处理事件
- */
-bool MySearchLineEdit::eventFilter(QObject *watched, QEvent *event) {
-    if (event->type() == QEvent::MouseButtonPress) {
-        auto me = static_cast<QMouseEvent *>(event);
-
-        QWidget *activePopup = QApplication::activePopupWidget();
-        if (activePopup && activePopup->inherits("QMenu")) {
-            return QLineEdit::eventFilter(watched, event); ///< 菜单弹出时不处理
-        }
-
-        // qDebug() << "鼠标按下 : " << mapFromGlobal(me->globalPosition().toPoint()); ///< 调试用，记录鼠标位置
-        if (!rect().contains(mapFromGlobal(me->globalPosition().toPoint()))) {
-            this->clearFocus(); ///< 点击外部区域时清除焦点
-            // qDebug() << "清除焦点"; ///< 调试用，记录焦点清除
-        }
-    }
-    return QLineEdit::eventFilter(watched, event);
+    // 调用基类处理焦点离开
+    ElaLineEdit::focusOutEvent(event);
 }
 
 /**
@@ -120,66 +87,106 @@ void MySearchLineEdit::keyPressEvent(QKeyEvent *event) {
     QLineEdit::keyPressEvent(event);
 }
 
-/**
- * @brief 重写右键菜单事件，显示自定义菜单
- * @param event 右键菜单事件
- */
-void MySearchLineEdit::contextMenuEvent(QContextMenuEvent *event) {
-    ElaMenu *menu = new ElaMenu(this);
-    menu->setMenuItemHeight(27);
-    menu->setAttribute(Qt::WA_DeleteOnClose); ///< 菜单关闭时自动删除
-    QAction *action = nullptr;
+void MySearchLineEdit::resizeEvent(QResizeEvent* event) {
+    ElaLineEdit::resizeEvent(event);
 
-    if (!isReadOnly()) {
-        action = menu->addElaIconAction(ElaIconType::ArrowRotateLeft, tr("撤销"), QKeySequence::Undo);
-        action->setEnabled(isUndoAvailable());
-        connect(action, &QAction::triggered, this, &MySearchLineEdit::undo);
-
-        action = menu->addElaIconAction(ElaIconType::ArrowRotateRight, tr("恢复"), QKeySequence::Redo);
-        action->setEnabled(isRedoAvailable());
-        connect(action, &QAction::triggered, this, &MySearchLineEdit::redo);
-        menu->addSeparator();
+    // 只有在展开状态且宽度变化时才更新标记动画
+    if (m_expanded && !m_animatingWidth) {
+        updateMarkAnimationTarget();
     }
+}
 
-#ifndef QT_NO_CLIPBOARD
-    if (!isReadOnly()) {
-        action = menu->addElaIconAction(ElaIconType::KnifeKitchen, tr("剪切"), QKeySequence::Cut);
-        action->setEnabled(!isReadOnly() && hasSelectedText() && echoMode() == QLineEdit::Normal);
-        connect(action, &QAction::triggered, this, &MySearchLineEdit::cut);
-    }
+void MySearchLineEdit::startExpandAnimation() {
+    // 确保动画对象存在
+    if (!m_widthAnimation) {
+        m_widthAnimation = new QPropertyAnimation(this, "minimumWidth", this);
+        m_widthAnimation->setEasingCurve(QEasingCurve::InOutSine);
+        m_widthAnimation->setDuration(200);
 
-    action = menu->addElaIconAction(ElaIconType::Copy, tr("复制"), QKeySequence::Copy);
-    action->setEnabled(hasSelectedText() && echoMode() == QLineEdit::Normal);
-    connect(action, &QAction::triggered, this, &MySearchLineEdit::copy);
+        connect(m_widthAnimation, &QPropertyAnimation::valueChanged, [this] {
+            m_animatingWidth = true;
+            updateMarkAnimationTarget();
+        });
 
-    if (!isReadOnly()) {
-        action = menu->addElaIconAction(ElaIconType::Paste, tr("粘贴"), QKeySequence::Paste);
-        action->setEnabled(!isReadOnly() && !QGuiApplication::clipboard()->text().isEmpty());
-        connect(action, &QAction::triggered, this, &MySearchLineEdit::paste);
-    }
-#endif
-
-    if (!isReadOnly()) {
-        action = menu->addElaIconAction(ElaIconType::DeleteLeft, tr("删除"));
-        action->setEnabled(!isReadOnly() && !text().isEmpty() && hasSelectedText());
-        connect(action, &QAction::triggered, this, [=](bool checked) {
-            if (hasSelectedText()) {
-                int startIndex = selectionStart();
-                int endIndex = selectionEnd();
-                setText(text().remove(startIndex, endIndex - startIndex)); ///< 删除选中文本
-            }
+        connect(m_widthAnimation, &QPropertyAnimation::finished, [this] {
+            m_animatingWidth = false;
+            m_expanded = true;
         });
     }
 
-    if (!menu->isEmpty()) {
-        menu->addSeparator();
+    if (!m_markAnimation) {
+        m_markAnimation = new QPropertyAnimation(this, "expandMarkWidth", this);
+        m_markAnimation->setEasingCurve(QEasingCurve::InOutSine);
+        m_markAnimation->setDuration(300);
     }
 
-    action = menu->addAction(tr("全选"));
-    action->setShortcut(QKeySequence::SelectAll);
-    action->setEnabled(!text().isEmpty() && !(selectedText() == text()));
-    connect(action, &QAction::triggered, this, &MySearchLineEdit::selectAll);
+    // 开始宽度展开动画
+    m_widthAnimation->stop();
+    m_widthAnimation->setStartValue(width());
+    m_widthAnimation->setEndValue(m_maxWidth);
+    m_widthAnimation->start();
 
-    menu->popup(event->globalPos()); ///< 显示右键菜单
-    this->setFocus(); ///< 保持输入框焦点
+    // 开始标记展开动画
+    m_markAnimation->stop();
+    m_markAnimation->setStartValue(expandMarkWidth());
+    m_markAnimation->setEndValue(m_maxWidth / 2 - getBorderRadius() / 2);
+    m_markAnimation->start();
+}
+
+void MySearchLineEdit::startCollapseAnimation() {
+    // 确保动画对象存在
+    if (!m_widthAnimation) {
+        m_widthAnimation = new QPropertyAnimation(this, "minimumWidth", this);
+        m_widthAnimation->setEasingCurve(QEasingCurve::InOutSine);
+        m_widthAnimation->setDuration(200);
+
+        connect(m_widthAnimation, &QPropertyAnimation::valueChanged, [this] {
+            m_animatingWidth = true;
+            updateMarkAnimationTarget();
+        });
+
+        connect(m_widthAnimation, &QPropertyAnimation::finished, [this] {
+            m_animatingWidth = false;
+            m_expanded = false;
+        });
+    }
+
+    if (!m_markAnimation) {
+        m_markAnimation = new QPropertyAnimation(this, "expandMarkWidth", this);
+        m_markAnimation->setEasingCurve(QEasingCurve::InOutSine);
+        m_markAnimation->setDuration(300);
+    }
+
+    // 开始宽度收缩动画
+    m_widthAnimation->stop();
+    m_widthAnimation->setStartValue(width());
+    m_widthAnimation->setEndValue(m_originalWidth);
+    m_widthAnimation->start();
+
+    // 开始标记收缩动画（跟随基类行为收缩到0）
+    m_markAnimation->stop();
+    m_markAnimation->setStartValue(expandMarkWidth());
+    m_markAnimation->setEndValue(0);
+    m_markAnimation->start();
+}
+
+void MySearchLineEdit::updateMarkAnimationTarget() {
+    if (!m_markAnimation || m_markAnimation->state() != QAbstractAnimation::Running)
+        return;
+
+    // 计算当前应达到的标记宽度
+    const int targetValue = width() / 2 - getBorderRadius() / 2;
+
+    // 获取动画当前状态
+    const qreal currentValue = m_markAnimation->currentValue().toInt();
+    const qreal progress = m_markAnimation->currentTime() / static_cast<qreal>(m_markAnimation->duration());
+
+    // 平滑更新目标值
+    m_markAnimation->setEndValue(targetValue);
+
+    // 避免动画初期跳跃
+    if (progress > 0.1) {
+        const qreal newValue = currentValue + (targetValue - currentValue) * 0.3;
+        setExpandMarkWidth(static_cast<int>(newValue));
+    }
 }

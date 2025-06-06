@@ -9,7 +9,7 @@
 #ifndef MYSEARCHLINEEDIT_H
 #define MYSEARCHLINEEDIT_H
 
-#include <QLineEdit>
+#include "ElaLineEdit.h"
 
 /** @brief 动态库导出宏，定义库的导出/导入行为 */
 #if defined(MYSEARCHLINEEDIT_LIBRARY)
@@ -25,9 +25,9 @@ class QPropertyAnimation;
  * @class MySearchLineEdit
  * @brief 自定义搜索输入框类，继承自 QLineEdit，支持焦点动画和自定义右键菜单
  */
-class MYSEARCHLINEEDIT_EXPORT MySearchLineEdit : public QLineEdit {
+class MYSEARCHLINEEDIT_EXPORT MySearchLineEdit : public ElaLineEdit {
     Q_OBJECT
-
+    Q_PROPERTY(int expandMarkWidth READ expandMarkWidth WRITE setExpandMarkWidth)
 public:
     /**
      * @brief 构造函数，初始化搜索输入框
@@ -55,29 +55,25 @@ protected:
     void focusOutEvent(QFocusEvent *event) override;
 
     /**
-     * @brief 重写事件过滤器，处理鼠标点击外部区域的焦点丢失
-     * @param watched 监视的对象
-     * @param event 事件对象
-     * @return 是否处理事件
-     */
-    bool eventFilter(QObject *watched, QEvent *event) override;
-
-    /**
      * @brief 重写按键事件，限制密码模式下的复制粘贴等操作
      * @param event 按键事件
      */
     void keyPressEvent(QKeyEvent *event) override;
 
-    /**
-     * @brief 重写右键菜单事件，显示自定义菜单
-     * @param event 右键菜单事件
-     */
-    void contextMenuEvent(QContextMenuEvent *event) override;
+    void resizeEvent(QResizeEvent *event) override;
 
 private:
-    QPropertyAnimation *m_animation{}; ///< 宽度动画对象
+    void startExpandAnimation();
+    void startCollapseAnimation();
+    void updateMarkAnimationTarget();
+
+    QPropertyAnimation* m_widthAnimation = nullptr;
+    QPropertyAnimation* m_markAnimation = nullptr;
+
     int m_originalWidth{};            ///< 原始宽度
     int m_maxWidth{};                 ///< 最大宽度
+    bool m_animatingWidth = false;
+    bool m_expanded = false; // 标记当前是否处于展开状态
 };
 
 #endif // MYSEARCHLINEEDIT_H
