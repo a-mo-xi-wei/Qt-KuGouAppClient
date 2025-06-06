@@ -17,6 +17,9 @@ file(GLOB ELATEXT_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaText/*.cpp)
 file(GLOB ELAPLAINTEXTEDIT_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaPlainTextEdit/*.h)
 file(GLOB ELAPLAINTEXTEDIT_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaPlainTextEdit/*.cpp)
 
+file(GLOB ELALINEEDIT_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaLineEdit/*.h)
+file(GLOB ELALINEEDIT_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaLineEdit/*.cpp)
+
 file(GLOB ELATOOLTIP_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaToolTip/*.h)
 file(GLOB ELATOOLTIP_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaToolTip/*.cpp)
 
@@ -38,6 +41,9 @@ file(GLOB ELASCROLLBAR_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaScrollBar/*.cpp)
 file(GLOB ELATOGGLESWITCH_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaToggleSwitch/*.h)
 file(GLOB ELATOGGLESWITCH_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaToggleSwitch/*.cpp)
 
+file(GLOB ELASUGGESTBOX_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaSuggestBox/*.h)
+file(GLOB ELASUGGESTBOX_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaSuggestBox/*.cpp)
+
 set(SOURCE_FILE
         ${COMMON_H}
         ${COMMON_CPP}
@@ -49,6 +55,8 @@ set(SOURCE_FILE
         ${ELATEXT_CPP}
         ${ELAPLAINTEXTEDIT_H}
         ${ELAPLAINTEXTEDIT_CPP}
+        ${ELALINEEDIT_H}
+        ${ELALINEEDIT_CPP}
         ${ELATOOLTIP_H}
         ${ELATOOLTIP_CPP}
         ${ELAEXITDIALOG_H}
@@ -63,6 +71,8 @@ set(SOURCE_FILE
         ${ELASCROLLBAR_CPP}
         ${ELATOGGLESWITCH_H}
         ${ELATOGGLESWITCH_CPP}
+        ${ELASUGGESTBOX_H}
+        ${ELASUGGESTBOX_CPP}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
@@ -77,6 +87,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaMessageButton
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaText
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaPlainTextEdit
+        ${CMAKE_CURRENT_SOURCE_DIR}/ElaLineEdit
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaToolTip
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaExitDialog
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaPushButton
@@ -84,6 +95,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaMenu
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaScrollBar
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaToggleSwitch
+        ${CMAKE_CURRENT_SOURCE_DIR}/ElaSuggestBox
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core Qt6::Network MySpdlog)

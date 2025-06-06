@@ -65,7 +65,7 @@ protected:
      * @param event 事件对象
      * @return 是否处理事件
      */
-    virtual bool event(QEvent* event) override;
+    bool event(QEvent* event) override;
 
     /**
      * @brief 事件过滤器
@@ -73,37 +73,37 @@ protected:
      * @param event 事件对象
      * @return 是否处理事件
      */
-    virtual bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
     /**
      * @brief 鼠标按下事件处理
      * @param event 鼠标事件对象
      */
-    virtual void mousePressEvent(QMouseEvent* event) override;
+    void mousePressEvent(QMouseEvent* event) override;
 
     /**
      * @brief 鼠标释放事件处理
      * @param event 鼠标事件对象
      */
-    virtual void mouseReleaseEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
 
     /**
      * @brief 鼠标移动事件处理
      * @param event 鼠标事件对象
      */
-    virtual void mouseMoveEvent(QMouseEvent* event) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
 
     /**
      * @brief 鼠标滚轮事件处理
      * @param event 滚轮事件对象
      */
-    virtual void wheelEvent(QWheelEvent* event) override;
+    void wheelEvent(QWheelEvent* event) override;
 
     /**
      * @brief 上下文菜单事件处理
      * @param event 上下文菜单事件对象
      */
-    virtual void contextMenuEvent(QContextMenuEvent* event) override;
+    void contextMenuEvent(QContextMenuEvent* event) override;
 };
 
 #endif // ELASCROLLBAR_H
