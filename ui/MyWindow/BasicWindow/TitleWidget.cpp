@@ -22,6 +22,8 @@
 #include <QShortcut>
 #include <QFile>
 
+#include "MySearchLineEdit.h"
+
 /**
  * @brief 获取当前文件所在目录路径
  */
@@ -38,7 +40,6 @@ TitleWidget::TitleWidget(QWidget *parent)
 {
     ui->setupUi(this);
     initUi();
-    this->setAttribute(Qt::WA_StyledBackground, true); ///< 启用样式背景
     qApp->installEventFilter(this); ///< 安装应用程序级事件过滤器
 
     // 加载样式表
@@ -157,13 +158,24 @@ void TitleWidget::initUi()
 
     // 设置搜索框和图标
     ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
-    ui->search_lineEdit->addAction(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),
-                                   QLineEdit::LeadingPosition);
 
-    // 设置搜索框字体
+    auto searchLineEdit = new MySearchLineEdit();
+    searchLineEdit->setObjectName("searchLineEdit");
+    searchLineEdit->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
+    searchLineEdit->setMinimumSize(100,40);
+    searchLineEdit->setMaximumHeight(40);
+    searchLineEdit->setBorderRadius(8);
+    searchLineEdit->setClearButtonEnabled(true);
+    searchLineEdit->setStyleSheet("padding-left: 10px;");
     auto font = QFont("AaSongLiuKaiTi");
     font.setWeight(QFont::Bold);
-    ui->search_lineEdit->setFont(font);
+    font.setPointSize(12);
+    searchLineEdit->setFont(font);
+    ui->search_song_suggest_box->setMinimumWidth(0);
+    ui->search_song_suggest_box->setLineEdit(searchLineEdit);
+    searchLineEdit->setPlaceholderText("搜索歌曲");
+
+
     //除非自定义QToolButton否则达不到 CSS 中 border-image 的效果
     //ui->listen_toolButton->setIcon(QIcon(":/Res/titlebar/listen-music-black.svg"));
 

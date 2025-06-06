@@ -390,34 +390,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="MySearchLineEdit" name="search_lineEdit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="placeholderText">
-         <string> 搜索音乐</string>
-        </property>
-       </widget>
+       <widget class="ElaSuggestBox" name="search_song_suggest_box" native="true"/>
       </item>
       <item>
        <widget class="QToolButton" name="listen_toolButton">
@@ -721,9 +694,10 @@
    <header>RippleButton.h</header>
   </customwidget>
   <customwidget>
-   <class>MySearchLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>MySearchLineEdit.h</header>
+   <class>ElaSuggestBox</class>
+   <extends>QWidget</extends>
+   <header>ElaSuggestBox.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

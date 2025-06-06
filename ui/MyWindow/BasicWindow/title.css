@@ -29,16 +29,6 @@ QWidget#title_widget QPushButton:checked {
     color: #3366FF;
     font-size: 25px;
 }
-/*--------------------QLineEdit------------------------------*/
-QLineEdit#search_lineEdit{
-    border-radius: 12px;
-    background-color: #d1e8f6;
-    border:1px solid #6fafa7;
-    font-size: 16px;
-}
-QLineEdit#search_lineEdit:hover{
-    background-color: #bcddfa;
-}
 
 QToolButton#listen_toolButton {
     background-color:rgba(255,255,255,0);
