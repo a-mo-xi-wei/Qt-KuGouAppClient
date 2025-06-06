@@ -119,6 +119,9 @@ flowchart TD
 <!-- ![核心架构](image-show/architecture.png)] -->
 
 ## 🛠️ 技术全景图
+### 0.登录注册界面
+![输入图片说明](image-show/image00.png)
+![输入图片说明](image-show/image00-1.png)
 ### 1.为你推荐界面
 ![输入图片说明](image-show/image01.png)
 ![输入图片说明](image-show/image01-1.png)
