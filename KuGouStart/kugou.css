@@ -102,37 +102,36 @@ QSlider::sub-page:horizontal {
 }
 
 /*-------------------滚动区域滚动条----------------------*/
-QScrollBar:vertical {
-    border: 0px solid rgb(231,166,190);
+.QScrollBar:vertical {
+    border: 0px solid rgb(173,216,230);
     border-radius:4px;
-    background-color: rgb(231,166,190);
+    background-color: rgb(173,216,230);
     width: 10px;
     margin: 20px 0px 20px 0px;
 }
-QScrollBar:vertical:hover {
-    border: 1px solid rgb(231,166,190);
+.QScrollBar:vertical:hover {
+    border: 1px solid rgb(173,216,230);
     border-radius:4px;
-    background-color: rgb(231,166,190);
+    background-color: rgb(173,216,230);
     width: 10px;
     margin: 20px 0px 20px 0px;
 }
 /*--滑块---*/
-QScrollBar::handle:vertical {
-    background-color: rgb(237,188,206);
+.QScrollBar::handle:vertical {
+    background-color: rgb(95, 159, 211);
     border-radius: 4px;
 }
-QScrollBar::handle:vertical:hover {
-    background-color: rgb(248,129,161);
+.QScrollBar::handle:vertical:hover {
+    background-color: rgb(80, 143, 206);
 }
 /*---箭头---*/
-QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+.QScrollBar::up-arrow:vertical, .QScrollBar::down-arrow:vertical {
     background: none; /* 确保没有箭头 */
 }
 /*---空白区域---*/
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+.QScrollBar::add-page:vertical, .QScrollBar::sub-page:vertical {
     background: none; /* 防止长按时的背景色 */
 }
-QScrollBar::sub-line:vertical, QScrollBar::add-line:vertical {
+.QScrollBar::sub-line:vertical, .QScrollBar::add-line:vertical {
     background: none;
 }
-
