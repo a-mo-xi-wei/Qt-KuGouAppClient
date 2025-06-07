@@ -65,7 +65,8 @@ void ElaScrollBarStyle::drawComplexControl(ComplexControl control, const QStyleO
                 painter->drawRoundedRect(scrollBarRect, 6, 6);
                 //指示器绘制 center()在此处不适用 存在外围边距宽度 需手动计算
                 int sideLength = 8;
-                painter->setBrush(ElaThemeColor(_themeMode, ScrollBarHandle));
+                //painter->setBrush(ElaThemeColor(_themeMode, ScrollBarHandle));
+                painter->setBrush(QColor(95, 159, 211));
                 if (sopt->orientation == Qt::Horizontal)
                 {
                     QRect leftIndicatorRect = subControlRect(control, sopt, QStyle::SC_ScrollBarSubLine, widget);
@@ -118,7 +119,8 @@ void ElaScrollBarStyle::drawComplexControl(ComplexControl control, const QStyleO
             painter->setOpacity(1);
             //滑块绘制
             QRectF sliderRect = subControlRect(control, sopt, QStyle::SC_ScrollBarSlider, widget);
-            painter->setBrush(ElaThemeColor(_themeMode, ScrollBarHandle));
+            //painter->setBrush(ElaThemeColor(_themeMode, ScrollBarHandle));
+            painter->setBrush(QColor(95, 159, 211));
             if (sopt->orientation == Qt::Horizontal)
             {
                 sliderRect.setRect(sliderRect.x(), sliderRect.bottom() - _sliderMargin - _pSliderExtent, sliderRect.width(), _pSliderExtent);

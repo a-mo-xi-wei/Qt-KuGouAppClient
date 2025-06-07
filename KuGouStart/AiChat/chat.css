@@ -26,7 +26,7 @@
 /*-------------------滚动区域滚动条----------------------*/
 /* 只作用于 #chat_scroll_area 里的纵向滚动条 */
 #chat_scroll_area QScrollBar:vertical {
-    border: 0px solid rgb(231,166,190);
+    border: 0px solid rgb(173,216,230);
     border-radius:4px;
     /*background-color: rgb(231,166,190);*/
     width: 10px;
@@ -34,17 +34,17 @@
 }
 
 #chat_scroll_area QScrollBar:vertical:hover {
-    border: 1px solid rgb(231,166,190);
+    border: 1px solid rgb(173,216,230);
     /*background-color: rgb(231,166,190);*/
 }
 
 /* 滑块 */
 #chat_scroll_area QScrollBar::handle:vertical {
-    background-color: rgb(237,188,206);
+    background-color: rgb(95, 159, 211);
     border-radius: 4px;
 }
 #chat_scroll_area QScrollBar::handle:vertical:hover {
-    background-color: rgb(248,129,161);
+    background-color: rgb(80, 143, 206);
 }
 
 /* 箭头和空白区域 */
