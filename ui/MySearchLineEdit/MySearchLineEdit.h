@@ -28,6 +28,7 @@ class QPropertyAnimation;
 class MYSEARCHLINEEDIT_EXPORT MySearchLineEdit : public ElaLineEdit {
     Q_OBJECT
     Q_PROPERTY(int expandMarkWidth READ expandMarkWidth WRITE setExpandMarkWidth)
+
 public:
     /**
      * @brief 构造函数，初始化搜索输入框
@@ -64,7 +65,9 @@ protected:
 
 private:
     void startExpandAnimation();
+
     void startCollapseAnimation();
+
     void updateMarkAnimationTarget();
 
     QPropertyAnimation* m_widthAnimation = nullptr;

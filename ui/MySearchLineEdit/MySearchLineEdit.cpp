@@ -23,8 +23,7 @@ std::once_flag flag;
  */
 MySearchLineEdit::MySearchLineEdit(QWidget *parent)
     : ElaLineEdit(parent)
-    , m_maxWidth(250)
-{
+      , m_maxWidth(250) {
 }
 
 /**
@@ -39,7 +38,7 @@ void MySearchLineEdit::setMaxWidth(const int &width) {
  * @brief 重写焦点获取事件，触发展开动画
  * @param event 焦点事件
  */
-void MySearchLineEdit::focusInEvent(QFocusEvent* event) {
+void MySearchLineEdit::focusInEvent(QFocusEvent *event) {
     // 先调用基类处理焦点事件
     ElaLineEdit::focusInEvent(event);
 
@@ -58,7 +57,7 @@ void MySearchLineEdit::focusInEvent(QFocusEvent* event) {
  * @brief 重写焦点丢失事件，触发收起动画
  * @param event 焦点事件
  */
-void MySearchLineEdit::focusOutEvent(QFocusEvent* event) {
+void MySearchLineEdit::focusOutEvent(QFocusEvent *event) {
     // 只在已展开状态下执行收缩动画
     if (m_expanded) {
         startCollapseAnimation();
@@ -87,7 +86,7 @@ void MySearchLineEdit::keyPressEvent(QKeyEvent *event) {
     QLineEdit::keyPressEvent(event);
 }
 
-void MySearchLineEdit::resizeEvent(QResizeEvent* event) {
+void MySearchLineEdit::resizeEvent(QResizeEvent *event) {
     ElaLineEdit::resizeEvent(event);
 
     // 只有在展开状态且宽度变化时才更新标记动画
@@ -171,6 +170,8 @@ void MySearchLineEdit::startCollapseAnimation() {
 }
 
 void MySearchLineEdit::updateMarkAnimationTarget() {
+    //发送当前宽度改变信号
+    emit widthChanged(width());
     if (!m_markAnimation || m_markAnimation->state() != QAbstractAnimation::Running)
         return;
 

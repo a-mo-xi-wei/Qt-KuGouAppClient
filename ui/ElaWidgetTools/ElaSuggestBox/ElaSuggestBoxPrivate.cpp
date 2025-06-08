@@ -89,78 +89,79 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
         return;
     }
     q->removeAllSuggestion();
-    QNetworkRequest request;
-    QNetworkAccessManager manger;
-    request.setUrl(QUrl(
-        "https://c6.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?key=" + searchText +
-        "&format=json&inCharset=utf-8&outCharset=utf-8"));
-    request.setRawHeader("Accept", "application/json");
-    request.setRawHeader("Accept-Language", "zh-CN");
-    request.setRawHeader("User-Agent",
-                         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36");
-    request.setRawHeader("Content-Type", "text/html");
-    request.setRawHeader("Accept-Encoding", "deflate");
-    QNetworkReply *reply = manger.get(request);
-    QEventLoop loop;
-    connect(reply,SIGNAL(finished()), &loop,SLOT(quit()));
-    loop.exec();
+    {
+        QNetworkRequest request;
+        QNetworkAccessManager manger;
+        request.setUrl(QUrl(
+            "https://c6.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?key=" + searchText +
+            "&format=json&inCharset=utf-8&outCharset=utf-8"));
+        request.setRawHeader("Accept", "application/json");
+        request.setRawHeader("Accept-Language", "zh-CN");
+        request.setRawHeader("User-Agent",
+                             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36");
+        request.setRawHeader("Content-Type", "text/html");
+        request.setRawHeader("Accept-Encoding", "deflate");
+        QNetworkReply *reply = manger.get(request);
+        QEventLoop loop;
+        connect(reply,SIGNAL(finished()), &loop,SLOT(quit()));
+        loop.exec();
 
-    if (reply->error() == QNetworkReply::NoError) {
-        auto byt = reply->readAll();
-        auto doc = QJsonDocument::fromJson(byt);
-        QJsonObject objTemp = doc.object();
-        objTemp = objTemp.value("data").toObject();
-        objTemp = objTemp.value("song").toObject();
-        QJsonArray arrayTemp = objTemp.value("itemlist").toArray();
-        for (int i = 0; i < arrayTemp.count(); i++) {
-            objTemp = arrayTemp.at(i).toObject();
-            const QString songName = objTemp.value("name").toString();
-            const QString songSinger = objTemp.value("singer").toString();
-            /// qDebug()<<"resp text: "<<songSinger + "-" + songName;
-            q->addSuggestion(songSinger + "-" + songName);
+        if (reply->error() == QNetworkReply::NoError) {
+            auto byt = reply->readAll();
+            auto doc = QJsonDocument::fromJson(byt);
+            QJsonObject objTemp = doc.object();
+            objTemp = objTemp.value("data").toObject();
+            objTemp = objTemp.value("song").toObject();
+            QJsonArray arrayTemp = objTemp.value("itemlist").toArray();
+            for (int i = 0; i < arrayTemp.count(); i++) {
+                objTemp = arrayTemp.at(i).toObject();
+                const QString songName = objTemp.value("name").toString();
+                const QString songSinger = objTemp.value("singer").toString();
+                /// qDebug()<<"resp text: "<<songSinger + "-" + songName;
+                q->addSuggestion(songSinger + "-" + songName);
+            }
         }
-    }
 
-    QNetworkRequest request1;
-    request1.setUrl(QUrl("http://music.163.com/api/search/get/web"));
-    request1.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-    request1.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
-    request1.setRawHeader("Referer", "https://music.163.com/");
-    request1.setRawHeader("Origin", "https://music.163.com");
+        QNetworkRequest request1;
+        request1.setUrl(QUrl("http://music.163.com/api/search/get/web"));
+        request1.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+        request1.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+        request1.setRawHeader("Referer", "https://music.163.com/");
+        request1.setRawHeader("Origin", "https://music.163.com");
 
-    QByteArray postData;
-    postData.append("s=" + QUrl::toPercentEncoding(searchText));
-    postData.append("&type=1&offset=0&limit=10");
+        QByteArray postData;
+        postData.append("s=" + QUrl::toPercentEncoding(searchText));
+        postData.append("&type=1&offset=0&limit=10");
 
-    QNetworkReply *reply1 = manger.post(request1, postData);
-    QEventLoop loop1;
-    connect(reply1, SIGNAL(finished()), &loop1, SLOT(quit()));
-    loop1.exec();
+        QNetworkReply *reply1 = manger.post(request1, postData);
+        QEventLoop loop1;
+        connect(reply1, SIGNAL(finished()), &loop1, SLOT(quit()));
+        loop1.exec();
 
-    if (reply1->error() == QNetworkReply::NoError) {
-        QByteArray byt = reply1->readAll();
-        /// qDebug() << "Raw response:" << byt;
+        if (reply1->error() == QNetworkReply::NoError) {
+            QByteArray byt = reply1->readAll();
+            /// qDebug() << "Raw response:" << byt;
 
-        QJsonDocument doc = QJsonDocument::fromJson(byt);
-        if (!doc.isObject()) return;
+            QJsonDocument doc = QJsonDocument::fromJson(byt);
+            if (!doc.isObject()) return;
 
-        QJsonObject rootObj = doc.object();
-        QJsonArray songsArray = rootObj["result"].toObject()["songs"].toArray();
+            QJsonObject rootObj = doc.object();
+            QJsonArray songsArray = rootObj["result"].toObject()["songs"].toArray();
 
-        for (const QJsonValue &val : songsArray) {
-            QJsonObject songObj = val.toObject();
-            QString songName = songObj["name"].toString();
-            QJsonArray artists = songObj["artists"].toArray();
-            QString artist = !artists.isEmpty() ? artists[0].toObject()["name"].toString() : "";
-            /// qDebug() << artist + "-" + songName;
-            q->addSuggestion(artist + "-" + songName);
+            for (const QJsonValue &val : songsArray) {
+                QJsonObject songObj = val.toObject();
+                QString songName = songObj["name"].toString();
+                QJsonArray artists = songObj["artists"].toArray();
+                QString artist = !artists.isEmpty() ? artists[0].toObject()["name"].toString() : "";
+                /// qDebug() << artist + "-" + songName;
+                q->addSuggestion(artist + "-" + songName);
+            }
         }
+
+
+        reply->deleteLater();
+        reply1->deleteLater();
     }
-
-
-    reply->deleteLater();
-    reply1->deleteLater();
-
     if (!_suggestionVector.isEmpty()) {
         _searchModel->setSearchSuggestion(_suggestionVector);
         int rowCount = static_cast<int>(_suggestionVector.count());
@@ -169,19 +170,39 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
             q->raise();
             _searchViewBaseWidget->show();
             _searchViewBaseWidget->raise();
-            QPoint cyclePoint = _searchViewBaseWidget->mapFromGlobal(q->mapToGlobal(QPoint(-5, q->height())));
-            if (cyclePoint != QPoint(0, 0)) {
-                _searchViewBaseWidget->move(cyclePoint);
-            }
+
+            // 修复位置计算 - 正确计算全局位置
+            QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+            _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
+
             _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
             _searchView->move(_searchView->x(), -(40 * rowCount + 16));
-        } else {
+        }
+        else {
             _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 12, 40 * rowCount + 16));
         }
         _startExpandAnimation();
     } else {
         _startCloseAnimation();
     }
+}
+
+void ElaSuggestBoxPrivate::onSearchEditWidthChanged(const int &width) {
+    Q_Q(ElaSuggestBox);
+
+    // 更新下拉框宽度
+    if (_searchViewBaseWidget->isVisible()) {
+        int rowCount = static_cast<int>(_suggestionVector.count());
+        rowCount = rowCount > 8 ? 8 : rowCount;
+
+        // 使用新的宽度值
+        _startSizeAnimation(_searchViewBaseWidget->size(),
+                            QSize(width + 12, 40 * rowCount + 16));
+    }
+
+    // 更新位置（确保宽度变化后位置仍正确）
+    QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+    _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
 }
 
 void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index) {
@@ -202,10 +223,10 @@ void ElaSuggestBoxPrivate::_startSizeAnimation(QSize oldSize, QSize newSize) {
     }
     _shadowLayout->removeWidget(_searchView);
     auto expandAnimation = new QPropertyAnimation(_searchViewBaseWidget, "size");
-    connect(expandAnimation, &QPropertyAnimation::valueChanged, this, [=]() {
+    connect(expandAnimation, &QPropertyAnimation::valueChanged, this, [=] {
         _searchView->resize(_searchViewBaseWidget->size());
     });
-    connect(expandAnimation, &QPropertyAnimation::finished, this, [=]() {
+    connect(expandAnimation, &QPropertyAnimation::finished, this, [=] {
         _shadowLayout->addWidget(_searchView);
     });
     expandAnimation->setDuration(300);
@@ -223,7 +244,7 @@ void ElaSuggestBoxPrivate::_startExpandAnimation() {
     _isCloseAnimationFinished = true;
     _isExpandAnimationFinished = false;
     QPropertyAnimation *expandAnimation = new QPropertyAnimation(_searchView, "pos");
-    connect(expandAnimation, &QPropertyAnimation::finished, this, [=]() {
+    connect(expandAnimation, &QPropertyAnimation::finished, this, [=] {
         _isExpandAnimationFinished = true;
         _searchView->clearSelection();
     });

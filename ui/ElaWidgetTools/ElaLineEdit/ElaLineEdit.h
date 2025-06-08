@@ -30,6 +30,10 @@ Q_SIGNALS:
 
     Q_SIGNAL void wmFocusOut(QString text);
 
+    //新增
+signals:
+    void widthChanged(const int &width);
+
 protected:
     void focusInEvent(QFocusEvent *event) override;
 

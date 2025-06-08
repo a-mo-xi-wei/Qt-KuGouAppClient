@@ -37,8 +37,7 @@ ElaLineEdit::ElaLineEdit(QWidget *parent)
     setVisible(true);
 }
 
-ElaLineEdit::~ElaLineEdit() {
-}
+ElaLineEdit::~ElaLineEdit() = default;
 
 int ElaLineEdit::expandMarkWidth() const {
     Q_D(const ElaLineEdit);

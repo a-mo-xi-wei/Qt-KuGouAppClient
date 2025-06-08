@@ -22,7 +22,6 @@ ElaSuggestBox::ElaSuggestBox(QWidget *parent)
     Q_D(ElaSuggestBox);
     setFixedSize(280, 35);
     setAttribute(Qt::WA_StyledBackground, true); // 阻止继承样式
-    setStyleSheet(""); // 清除主程序样式表的影响
     d->q_ptr = this;
     d->_pBorderRadius = 8;
     d->_pCaseSensitivity = Qt::CaseInsensitive;
@@ -30,6 +29,7 @@ ElaSuggestBox::ElaSuggestBox(QWidget *parent)
     d->_searchEdit->setFixedHeight(35);
     d->_searchEdit->setPlaceholderText("查找功能");
     d->_searchEdit->setClearButtonEnabled(true);
+    d->_searchEdit->setIsClearButtonEnable(true);
     d->_lightSearchAction = new QAction(ElaIcon::getInstance()->getElaIcon(ElaIconType::MagnifyingGlass), "Search",
                                         this);
     d->_darkSearchAction = new QAction(
@@ -76,6 +76,7 @@ ElaSuggestBox::ElaSuggestBox(QWidget *parent)
     connect(d->_searchEdit, &ElaLineEdit::wmFocusOut, this, [d] {
         d->_startCloseAnimation();
     });
+
     QApplication::instance()->installEventFilter(this); ///< 安装应用程序级事件过滤器
 
 }
@@ -135,7 +136,7 @@ void ElaSuggestBox::removeAllSuggestion() {
     }
 }
 
-void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit) {
+void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit) {    //该函数仅供MySearchLineEdit使用
     Q_D(ElaSuggestBox);
 
     if (!lineEdit) {
@@ -167,6 +168,7 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit) {
     d->_searchEdit->setFixedHeight(35);
     d->_searchEdit->setPlaceholderText("查找功能");
     d->_searchEdit->setClearButtonEnabled(true);
+    d->_searchEdit->setIsClearButtonEnable(true);
 
     // 5. 把原先的图标 action 重新加到 new _searchEdit 上
     //    （假设 d->_lightSearchAction / d->_darkSearchAction 已经在私有成员初始化好）
@@ -182,6 +184,7 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit) {
     connect(d->_searchEdit, &ElaLineEdit::wmFocusOut, this, [d] {
         d->_startCloseAnimation();
     });
+    connect(d->_searchEdit, &ElaLineEdit::widthChanged,  d, &ElaSuggestBoxPrivate::onSearchEditWidthChanged);
 
     // 7. 把它插回原来的布局（假设它是放在最上层的第 0 个位置）
     if (mainLayout) {

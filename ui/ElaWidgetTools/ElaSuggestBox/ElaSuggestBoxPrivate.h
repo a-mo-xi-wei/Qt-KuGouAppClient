@@ -46,6 +46,9 @@ public:
 
     Q_SLOT void onSearchViewClicked(const QModelIndex &index);
 
+private slots:
+    void onSearchEditWidthChanged(const int &width);
+
 private:
     ElaThemeType::ThemeMode _themeMode;
     QAction *_lightSearchAction{nullptr};

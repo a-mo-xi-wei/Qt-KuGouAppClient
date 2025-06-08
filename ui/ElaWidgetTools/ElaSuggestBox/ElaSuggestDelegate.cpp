@@ -17,8 +17,7 @@ ElaSuggestDelegate::ElaSuggestDelegate(QObject *parent)
     });
 }
 
-ElaSuggestDelegate::~ElaSuggestDelegate() {
-}
+ElaSuggestDelegate::~ElaSuggestDelegate() = default;
 
 void ElaSuggestDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const {
     int margin = 2;
@@ -60,7 +59,7 @@ void ElaSuggestDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
     textRect.setRight(textRect.right() - 10); // 右边留出10px边距
 
     // 获取原始文本
-    QString originalText = suggest->getSuggestText();
+    const QString originalText = suggest->getSuggestText();
 
     // 使用QFontMetrics计算裁剪文本
     QFontMetrics metrics(painter->font());
