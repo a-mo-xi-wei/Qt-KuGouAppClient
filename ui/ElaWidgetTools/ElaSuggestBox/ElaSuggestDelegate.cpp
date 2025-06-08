@@ -1,11 +1,13 @@
 #include "ElaSuggestDelegate.h"
-
-#include <QPainter>
-#include <QPainterPath>
-
 #include "ElaSuggestBoxPrivate.h"
 #include "ElaSuggestModel.h"
 #include "ElaTheme.h"
+#include "ElaToolTip.h"
+#include "ElaBaseListView.h"
+
+#include <QPainter>
+#include <QPainterPath>
+#include <qevent.h>
 
 ElaSuggestDelegate::ElaSuggestDelegate(QObject *parent)
     : QStyledItemDelegate{parent} {
@@ -25,6 +27,7 @@ void ElaSuggestDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
 
     ElaSuggestModel *model = dynamic_cast<ElaSuggestModel *>(const_cast<QAbstractItemModel *>(index.model()));
     ElaSuggestion *suggest = model->getSearchSuggestion(index.row());
+
     if (option.state.testFlag(QStyle::State_HasFocus)) {
         viewOption.state &= ~QStyle::State_HasFocus;
     }
@@ -49,8 +52,27 @@ void ElaSuggestDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
         }
     }
     //文字绘制
+    //painter->setPen(ElaThemeColor(_themeMode, BasicText));
+    //painter->drawText(option.rect.x() + 30, option.rect.y() + 25, suggest->getSuggestText());
+    // 计算可用文本区域（考虑图标空间和边距）
+        QRect textRect = option.rect;
+    textRect.setLeft(textRect.left() + 30); // 图标区域
+    textRect.setRight(textRect.right() - 10); // 右边留出10px边距
+
+    // 获取原始文本
+    QString originalText = suggest->getSuggestText();
+
+    // 使用QFontMetrics计算裁剪文本
+    QFontMetrics metrics(painter->font());
+    QString clippedText = metrics.elidedText(
+        originalText,
+        Qt::ElideRight,
+        textRect.width()
+    );
+
+    // 绘制裁剪后的文本
     painter->setPen(ElaThemeColor(_themeMode, BasicText));
-    painter->drawText(option.rect.x() + 37, option.rect.y() + 25, suggest->getSuggestText());
+    painter->drawText(textRect, Qt::AlignVCenter | Qt::AlignLeft, clippedText);
 
     //图标绘制
     if (suggest->getElaIcon() != ElaIconType::None) {
