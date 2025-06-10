@@ -13,6 +13,9 @@
 #include <QApplication>
 #include <QEvent>
 #include <QMouseEvent>
+#include <QTimer>
+
+#include "ElaLineEditPrivate.h"
 
 Q_PROPERTY_CREATE_Q_CPP(ElaSuggestBox, int, BorderRadius)
 Q_PROPERTY_CREATE_Q_CPP(ElaSuggestBox, Qt::CaseSensitivity, CaseSensitivity)
@@ -60,7 +63,7 @@ ElaSuggestBox::ElaSuggestBox(QWidget *parent)
     d->_searchView = new ElaBaseListView(d->_searchViewBaseWidget);
     auto floatVScrollBar = new ElaScrollBar(d->_searchView->verticalScrollBar(), d->_searchView);
     floatVScrollBar->setIsAnimation(true);
-    d->_searchViewBaseWidget->resize(292, 300);
+    d->_searchViewBaseWidget->resize(270, 300);
     d->_shadowLayout->addWidget(d->_searchView);
     d->_searchModel = new ElaSuggestModel(this);
     d->_searchDelegate = new ElaSuggestDelegate(this);
@@ -68,7 +71,7 @@ ElaSuggestBox::ElaSuggestBox(QWidget *parent)
     d->_searchView->setItemDelegate(d->_searchDelegate);
     d->_searchViewBaseWidget->hide();
     connect(d->_searchEdit, &ElaLineEdit::textChanged, d, &ElaSuggestBoxPrivate::onSearchEditTextEdit);
-    connect(d->_searchEdit, &ElaLineEdit::focusIn, d, &ElaSuggestBoxPrivate::onSearchEditTextEdit);
+    //connect(d->_searchEdit, &ElaLineEdit::focusIn, d, &ElaSuggestBoxPrivate::onSearchEditTextEdit);
 
     connect(d->_searchView, &ElaBaseListView::clicked, d, &ElaSuggestBoxPrivate::onSearchViewClicked);
 
@@ -180,11 +183,18 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit) {    //该函数仅供MyS
 
     // 6. 重新绑定原来对 _searchEdit 的所有信号槽
     connect(d->_searchEdit, &ElaLineEdit::textChanged, d, &ElaSuggestBoxPrivate::onSearchEditTextEdit);
-    connect(d->_searchEdit, &ElaLineEdit::focusIn, d, &ElaSuggestBoxPrivate::onSearchEditTextEdit);
+    //connect(d->_searchEdit, &ElaLineEdit::focusIn, d, &ElaSuggestBoxPrivate::onSearchEditTextEdit);
     connect(d->_searchEdit, &ElaLineEdit::wmFocusOut, this, [d] {
-        d->_startCloseAnimation();
+        // 第一步：收缩宽度至搜索框宽度，高度保持不变
+        QSize targetSize(d->_searchEdit->getOriginalWidth() + 10, d->_searchViewBaseWidget->height());
+        d->_startSizeAnimation(d->_searchViewBaseWidget->size(), targetSize);
+
+        // 延迟执行关闭动画（确保宽度收缩完成）
+        QTimer::singleShot(300, d, [d] {
+            d->_startCloseAnimation();
+        });
     });
-    connect(d->_searchEdit, &ElaLineEdit::widthChanged,  d, &ElaSuggestBoxPrivate::onSearchEditWidthChanged);
+    connect(d->_searchEdit, &ElaLineEdit::widthChanged, d, &ElaSuggestBoxPrivate::onSearchEditWidthChanged);
 
     // 7. 把它插回原来的布局（假设它是放在最上层的第 0 个位置）
     if (mainLayout) {
@@ -193,20 +203,26 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit) {    //该函数仅供MyS
     d->_searchEdit->show();
 }
 
+void ElaSuggestBox::suggestBoxPositionChanged() {
+    Q_D(ElaSuggestBox);
+    ///< 此处需要取消聚焦，动画才会自然
+    d->_searchEdit->clearFocus();
+}
+
 bool ElaSuggestBox::eventFilter(QObject *watched, QEvent *event) {
-    if (event->type() == QEvent::MouseButtonPress) {
-        const auto ev = static_cast<QMouseEvent *>(event);
+   if (event->type() == QEvent::MouseButtonPress) {
+       const auto ev = static_cast<QMouseEvent *>(event);
 
-        QWidget *activePopup = QApplication::activePopupWidget();
-        if (activePopup && (activePopup->inherits("QMenu") || activePopup->inherits("QWidget"))) {
-            return QWidget::eventFilter(watched, event); ///< 菜单弹出时不处理
-        }
+       QWidget *activePopup = QApplication::activePopupWidget();
+       if (activePopup && (activePopup->inherits("QMenu") || activePopup->inherits("QWidget"))) {
+           return QWidget::eventFilter(watched, event); ///< 菜单弹出时不处理
+       }
 
-        // qDebug() << "鼠标按下 : " << mapFromGlobal(me->globalPosition().toPoint()); ///< 调试用，记录鼠标位置
-        if (!rect().contains(mapFromGlobal(ev->globalPosition().toPoint()))) {
-            this->clearFocus(); ///< 点击外部区域时清除焦点
-            // qDebug() << "清除焦点"; ///< 调试用，记录焦点清除
-        }
-    }
-    return QWidget::eventFilter(watched, event);
+       // qDebug() << "鼠标按下 : " << mapFromGlobal(me->globalPosition().toPoint()); ///< 调试用，记录鼠标位置
+       if (!rect().contains(mapFromGlobal(ev->globalPosition().toPoint()))) {
+           this->clearFocus(); ///< 点击外部区域时清除焦点
+           // qDebug() << "清除焦点"; ///< 调试用，记录焦点清除
+       }
+   }
+   return QWidget::eventFilter(watched, event);
 }

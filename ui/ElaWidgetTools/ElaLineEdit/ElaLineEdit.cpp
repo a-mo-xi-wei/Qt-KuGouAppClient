@@ -1,4 +1,7 @@
 #include "ElaLineEdit.h"
+
+#include <mutex>
+
 #include "ElaEventBus.h"
 #include "ElaLineEditStyle.h"
 #include "ElaMenu.h"
@@ -10,6 +13,11 @@
 #include <QGuiApplication>
 #include <QPainter>
 #include <QPropertyAnimation>
+
+/**
+ * @brief 单次初始化标志，确保原始宽度只设置一次
+ */
+std::once_flag flag;
 
 Q_PROPERTY_CREATE_Q_CPP(ElaLineEdit, int, BorderRadius)
 
@@ -50,6 +58,11 @@ void ElaLineEdit::setExpandMarkWidth(int width) {
     update();
 }
 
+int ElaLineEdit::getOriginalWidth() {
+    Q_D(ElaLineEdit);
+    return d->_originalWidth;
+}
+
 void ElaLineEdit::setIsClearButtonEnable(bool isClearButtonEnable) {
     Q_D(ElaLineEdit);
     d->_pIsClearButtonEnable = isClearButtonEnable;
@@ -64,7 +77,9 @@ bool ElaLineEdit::getIsClearButtonEnable() const {
 
 void ElaLineEdit::focusInEvent(QFocusEvent *event) {
     Q_D(ElaLineEdit);
-    Q_EMIT focusIn(this->text());
+    Q_EMIT textChanged(this->text());
+    // 设置初始值
+    std::call_once(flag, [d, this] { d->_originalWidth = width(); });
     if (event->reason() == Qt::MouseFocusReason) {
         if (d->_pIsClearButtonEnable) {
             setClearButtonEnabled(true);

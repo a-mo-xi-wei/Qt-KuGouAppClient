@@ -1,4 +1,7 @@
 #include "ElaSuggestBoxPrivate.h"
+
+#include <io.h>
+
 #include "ElaBaseListView.h"
 #include "ElaLineEdit.h"
 #include "ElaSuggestBox.h"
@@ -13,6 +16,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QTimer>
 
 class QNetworkReply;
 
@@ -31,8 +35,7 @@ ElaSuggestBoxPrivate::ElaSuggestBoxPrivate(QObject *parent)
     : QObject{parent} {
 }
 
-ElaSuggestBoxPrivate::~ElaSuggestBoxPrivate() {
-}
+ElaSuggestBoxPrivate::~ElaSuggestBoxPrivate() = default;
 
 void ElaSuggestBoxPrivate::onThemeModeChanged(ElaThemeType::ThemeMode themeMode) {
     _themeMode = themeMode;
@@ -165,7 +168,7 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
     if (!_suggestionVector.isEmpty()) {
         _searchModel->setSearchSuggestion(_suggestionVector);
         int rowCount = static_cast<int>(_suggestionVector.count());
-        rowCount = rowCount > 8 ? 8 : rowCount;
+        rowCount = rowCount > 6 ? 6 : rowCount;
         if (!_searchViewBaseWidget->isVisible()) {
             q->raise();
             _searchViewBaseWidget->show();
@@ -179,7 +182,7 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
             _searchView->move(_searchView->x(), -(40 * rowCount + 16));
         }
         else {
-            _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 12, 40 * rowCount + 16));
+            _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
         }
         _startExpandAnimation();
     } else {
@@ -187,22 +190,22 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
     }
 }
 
-void ElaSuggestBoxPrivate::onSearchEditWidthChanged(const int &width) {
+void ElaSuggestBoxPrivate::onSearchEditWidthChanged() {
     Q_Q(ElaSuggestBox);
-
-    // 更新下拉框宽度
+    int rowCount = static_cast<int>(_suggestionVector.count());
+    rowCount = rowCount > 6 ? 6 : rowCount;
     if (_searchViewBaseWidget->isVisible()) {
-        int rowCount = static_cast<int>(_suggestionVector.count());
-        rowCount = rowCount > 8 ? 8 : rowCount;
+        // 修复位置计算 - 正确计算全局位置
+        QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+        _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
 
-        // 使用新的宽度值
-        _startSizeAnimation(_searchViewBaseWidget->size(),
-                            QSize(width + 12, 40 * rowCount + 16));
+        //qDebug()<<"oldSize : "<< _searchViewBaseWidget->size() << " newSize : "<< QSize(q->width() + 10, 40 * rowCount + 16);
+
+        _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
+
+        _searchView->move(_searchView->x(), -(40 * rowCount + 16));
     }
-
-    // 更新位置（确保宽度变化后位置仍正确）
-    QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
-    _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
+    //qDebug()<<__LINE__<<" _searchViewBaseWidget->pos(): "<<_searchViewBaseWidget->pos();
 }
 
 void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index) {
@@ -217,14 +220,18 @@ void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index) {
     _startCloseAnimation();
 }
 
-void ElaSuggestBoxPrivate::_startSizeAnimation(QSize oldSize, QSize newSize) {
+void ElaSuggestBoxPrivate::_startSizeAnimation(const QSize oldSize, const QSize newSize) {
+    Q_Q(ElaSuggestBox);
     if (_lastSize.isValid() && _lastSize == newSize) {
         return;
     }
     _shadowLayout->removeWidget(_searchView);
     auto expandAnimation = new QPropertyAnimation(_searchViewBaseWidget, "size");
     connect(expandAnimation, &QPropertyAnimation::valueChanged, this, [=] {
+        //qDebug()<< "当前下拉框的宽度："<<_searchViewBaseWidget->width()<<" 高度 ： "<< _searchViewBaseWidget->height()<<" EndValue: "<<newSize;
         _searchView->resize(_searchViewBaseWidget->size());
+        QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+        _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
     });
     connect(expandAnimation, &QPropertyAnimation::finished, this, [=] {
         _shadowLayout->addWidget(_searchView);

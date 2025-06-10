@@ -28,6 +28,7 @@ private:
     ElaThemeType::ThemeMode _themeMode;
     ElaEvent *_focusEvent{nullptr};
     qreal _textSpacing{0.5};
+    int _originalWidth{};            ///< 原始宽度
 
     void _changeTheme();
 

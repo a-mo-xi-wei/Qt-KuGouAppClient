@@ -12,6 +12,8 @@
 #include "logger.hpp"
 #include "ElaToolTip.h"
 #include "ElaMessageBar.h"
+#include "MySearchLineEdit.h"
+#include "ElaSuggestBox.h"
 
 #include <QGuiApplication>
 #include <QPainter>
@@ -21,8 +23,6 @@
 #include <QSequentialAnimationGroup>
 #include <QShortcut>
 #include <QFile>
-
-#include "MySearchLineEdit.h"
 
 /**
  * @brief 获取当前文件所在目录路径
@@ -538,6 +538,11 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
         return true;
     }
     return QWidget::eventFilter(watched, event);
+}
+
+void TitleWidget::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    ui->search_song_suggest_box->suggestBoxPositionChanged();
 }
 
 /**

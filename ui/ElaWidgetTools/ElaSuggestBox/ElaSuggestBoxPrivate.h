@@ -47,7 +47,7 @@ public:
     Q_SLOT void onSearchViewClicked(const QModelIndex &index);
 
 private slots:
-    void onSearchEditWidthChanged(const int &width);
+    void onSearchEditWidthChanged();
 
 private:
     ElaThemeType::ThemeMode _themeMode;

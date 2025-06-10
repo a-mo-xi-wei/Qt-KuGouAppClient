@@ -61,8 +61,6 @@ protected:
      */
     void keyPressEvent(QKeyEvent *event) override;
 
-    void resizeEvent(QResizeEvent *event) override;
-
 private:
     void startExpandAnimation();
 
@@ -73,7 +71,6 @@ private:
     QPropertyAnimation* m_widthAnimation = nullptr;
     QPropertyAnimation* m_markAnimation = nullptr;
 
-    int m_originalWidth{};            ///< 原始宽度
     int m_maxWidth{};                 ///< 最大宽度
     bool m_animatingWidth = false;
     bool m_expanded = false; // 标记当前是否处于展开状态

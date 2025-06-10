@@ -36,6 +36,8 @@ public:
 
     void setLineEdit(ElaLineEdit* lineEdit);
 
+    void suggestBoxPositionChanged();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

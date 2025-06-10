@@ -139,6 +139,12 @@ protected:
      */
     bool eventFilter(QObject *watched, QEvent *event) override;
 
+    /**
+     * @brief 重写窗口大小改变事件，更新界面元素，初衷：发送信号给ElaSuggestBox，防止下拉框位置不改变
+     * @param event 事件对象
+     */
+    void resizeEvent(QResizeEvent *event) override;
+
 private slots:
     /**
      * @brief 返回按钮点击事件，触发界面回退

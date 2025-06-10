@@ -10,12 +10,7 @@
 #include <QClipboard>
 #include <QMouseEvent>
 #include <QPropertyAnimation>
-#include <mutex>
 
-/**
- * @brief 单次初始化标志，确保原始宽度只设置一次
- */
-std::once_flag flag;
 
 /**
  * @brief 构造函数，初始化搜索输入框
@@ -23,7 +18,27 @@ std::once_flag flag;
  */
 MySearchLineEdit::MySearchLineEdit(QWidget *parent)
     : ElaLineEdit(parent)
-      , m_maxWidth(250) {
+    , m_maxWidth(250)
+    , m_widthAnimation(new QPropertyAnimation(this, "minimumWidth", this))
+    , m_markAnimation(new QPropertyAnimation(this, "expandMarkWidth", this))
+{
+    // 通用动画设置
+    m_widthAnimation->setEasingCurve(QEasingCurve::InOutSine);
+    m_widthAnimation->setDuration(300);
+    connect(m_widthAnimation, &QPropertyAnimation::valueChanged, this, [this]() {
+        m_animatingWidth = true;
+        if (!m_expanded)emit widthChanged();
+        //qDebug() << "MySearchLineEdit 宽度动画进行中";
+        updateMarkAnimationTarget();
+    });
+    connect(m_widthAnimation, &QPropertyAnimation::finished, this, [this]() {
+        m_animatingWidth = false;
+        m_expanded = !m_expanded;
+        //qDebug() << "MySearchLineEdit 动画完成，expanded =" << m_expanded;
+    });
+    // 标记动画设置
+    m_markAnimation->setEasingCurve(QEasingCurve::InOutSine);
+    m_markAnimation->setDuration(300);
 }
 
 /**
@@ -47,8 +62,6 @@ void MySearchLineEdit::focusInEvent(QFocusEvent *event) {
         return;
     }
 
-    // 设置初始值
-    std::call_once(flag, [this] { m_originalWidth = width(); });
 
     startExpandAnimation();
 }
@@ -58,11 +71,8 @@ void MySearchLineEdit::focusInEvent(QFocusEvent *event) {
  * @param event 焦点事件
  */
 void MySearchLineEdit::focusOutEvent(QFocusEvent *event) {
-    // 只在已展开状态下执行收缩动画
-    if (m_expanded) {
-        startCollapseAnimation();
-    }
-
+    /// qDebug()<<"MySearchLineEdit 失去焦点";
+    startCollapseAnimation();
     // 调用基类处理焦点离开
     ElaLineEdit::focusOutEvent(event);
 }
@@ -86,39 +96,7 @@ void MySearchLineEdit::keyPressEvent(QKeyEvent *event) {
     QLineEdit::keyPressEvent(event);
 }
 
-void MySearchLineEdit::resizeEvent(QResizeEvent *event) {
-    ElaLineEdit::resizeEvent(event);
-
-    // 只有在展开状态且宽度变化时才更新标记动画
-    if (m_expanded && !m_animatingWidth) {
-        updateMarkAnimationTarget();
-    }
-}
-
 void MySearchLineEdit::startExpandAnimation() {
-    // 确保动画对象存在
-    if (!m_widthAnimation) {
-        m_widthAnimation = new QPropertyAnimation(this, "minimumWidth", this);
-        m_widthAnimation->setEasingCurve(QEasingCurve::InOutSine);
-        m_widthAnimation->setDuration(200);
-
-        connect(m_widthAnimation, &QPropertyAnimation::valueChanged, [this] {
-            m_animatingWidth = true;
-            updateMarkAnimationTarget();
-        });
-
-        connect(m_widthAnimation, &QPropertyAnimation::finished, [this] {
-            m_animatingWidth = false;
-            m_expanded = true;
-        });
-    }
-
-    if (!m_markAnimation) {
-        m_markAnimation = new QPropertyAnimation(this, "expandMarkWidth", this);
-        m_markAnimation->setEasingCurve(QEasingCurve::InOutSine);
-        m_markAnimation->setDuration(300);
-    }
-
     // 开始宽度展开动画
     m_widthAnimation->stop();
     m_widthAnimation->setStartValue(width());
@@ -133,33 +111,10 @@ void MySearchLineEdit::startExpandAnimation() {
 }
 
 void MySearchLineEdit::startCollapseAnimation() {
-    // 确保动画对象存在
-    if (!m_widthAnimation) {
-        m_widthAnimation = new QPropertyAnimation(this, "minimumWidth", this);
-        m_widthAnimation->setEasingCurve(QEasingCurve::InOutSine);
-        m_widthAnimation->setDuration(200);
-
-        connect(m_widthAnimation, &QPropertyAnimation::valueChanged, [this] {
-            m_animatingWidth = true;
-            updateMarkAnimationTarget();
-        });
-
-        connect(m_widthAnimation, &QPropertyAnimation::finished, [this] {
-            m_animatingWidth = false;
-            m_expanded = false;
-        });
-    }
-
-    if (!m_markAnimation) {
-        m_markAnimation = new QPropertyAnimation(this, "expandMarkWidth", this);
-        m_markAnimation->setEasingCurve(QEasingCurve::InOutSine);
-        m_markAnimation->setDuration(300);
-    }
-
     // 开始宽度收缩动画
     m_widthAnimation->stop();
     m_widthAnimation->setStartValue(width());
-    m_widthAnimation->setEndValue(m_originalWidth);
+    m_widthAnimation->setEndValue(getOriginalWidth());
     m_widthAnimation->start();
 
     // 开始标记收缩动画（跟随基类行为收缩到0）
@@ -170,13 +125,11 @@ void MySearchLineEdit::startCollapseAnimation() {
 }
 
 void MySearchLineEdit::updateMarkAnimationTarget() {
-    //发送当前宽度改变信号
-    emit widthChanged(width());
     if (!m_markAnimation || m_markAnimation->state() != QAbstractAnimation::Running)
         return;
 
     // 计算当前应达到的标记宽度
-    const int targetValue = width() / 2 - getBorderRadius() / 2;
+    const int targetValue = qMax(0, width() / 2 - getBorderRadius() / 2);
 
     // 获取动画当前状态
     const qreal currentValue = m_markAnimation->currentValue().toInt();
@@ -188,6 +141,6 @@ void MySearchLineEdit::updateMarkAnimationTarget() {
     // 避免动画初期跳跃
     if (progress > 0.1) {
         const qreal newValue = currentValue + (targetValue - currentValue) * 0.3;
-        setExpandMarkWidth(static_cast<int>(newValue));
+        setExpandMarkWidth(qRound(newValue));
     }
 }

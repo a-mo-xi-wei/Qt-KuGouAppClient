@@ -23,8 +23,10 @@ public:
 
     void setExpandMarkWidth(int width);
 
+    int getOriginalWidth();
+
 Q_SIGNALS:
-    Q_SIGNAL void focusIn(QString text);
+    /// Q_SIGNAL void focusIn(QString text);
 
     Q_SIGNAL void focusOut(QString text);
 
@@ -32,7 +34,7 @@ Q_SIGNALS:
 
     //新增
 signals:
-    void widthChanged(const int &width);
+    void widthChanged();
 
 protected:
     void focusInEvent(QFocusEvent *event) override;
