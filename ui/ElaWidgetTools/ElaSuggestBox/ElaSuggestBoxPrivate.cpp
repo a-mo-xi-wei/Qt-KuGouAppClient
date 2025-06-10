@@ -26,6 +26,7 @@ ElaSuggestion::ElaSuggestion(QObject *parent)
     _pSuggestText = "";
     _pSuggestKey = QUuid::createUuid().toString().remove("{").remove("}").remove("-");
     _pSuggestData = QVariantMap();
+
 }
 
 ElaSuggestion::~ElaSuggestion() {
@@ -33,6 +34,9 @@ ElaSuggestion::~ElaSuggestion() {
 
 ElaSuggestBoxPrivate::ElaSuggestBoxPrivate(QObject *parent)
     : QObject{parent} {
+    _animationTimer = new QTimer(this);
+    _animationTimer->setSingleShot(true); // 单次触发
+    connect(_animationTimer, &QTimer::timeout, this, &ElaSuggestBoxPrivate::_doStartSizeAnimation);
 }
 
 ElaSuggestBoxPrivate::~ElaSuggestBoxPrivate() = default;
@@ -221,27 +225,10 @@ void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index) {
 }
 
 void ElaSuggestBoxPrivate::_startSizeAnimation(const QSize oldSize, const QSize newSize) {
-    Q_Q(ElaSuggestBox);
-    if (_lastSize.isValid() && _lastSize == newSize) {
-        return;
+    _pendingSize = newSize; // 更新待处理的目标尺寸
+    if (!_animationTimer->isActive()) {
+        _animationTimer->start(10); // 启动定时器，延迟 50ms
     }
-    _shadowLayout->removeWidget(_searchView);
-    auto expandAnimation = new QPropertyAnimation(_searchViewBaseWidget, "size");
-    connect(expandAnimation, &QPropertyAnimation::valueChanged, this, [=] {
-        //qDebug()<< "当前下拉框的宽度："<<_searchViewBaseWidget->width()<<" 高度 ： "<< _searchViewBaseWidget->height()<<" EndValue: "<<newSize;
-        _searchView->resize(_searchViewBaseWidget->size());
-        QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
-        _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
-    });
-    connect(expandAnimation, &QPropertyAnimation::finished, this, [=] {
-        _shadowLayout->addWidget(_searchView);
-    });
-    expandAnimation->setDuration(300);
-    expandAnimation->setEasingCurve(QEasingCurve::InOutSine);
-    expandAnimation->setStartValue(oldSize);
-    expandAnimation->setEndValue(newSize);
-    expandAnimation->start(QAbstractAnimation::DeleteWhenStopped);
-    _lastSize = newSize;
 }
 
 void ElaSuggestBoxPrivate::_startExpandAnimation() {
@@ -286,4 +273,30 @@ void ElaSuggestBoxPrivate::_startCloseAnimation() {
     closeAnimation->setEndValue(QPoint(_searchView->pos().x(), -_searchView->height()));
     closeAnimation->start(QAbstractAnimation::DeleteWhenStopped);
     _lastSize = baseWidgetsAnimation->endValue().toSize();
+}
+
+void ElaSuggestBoxPrivate::_doStartSizeAnimation() {
+    if (_pendingSize.isValid()) {
+        Q_Q(ElaSuggestBox);
+        if (_lastSize.isValid() && _lastSize == _pendingSize) {
+            return; // 如果目标尺寸未变，则无需动画
+        }
+        _shadowLayout->removeWidget(_searchView);
+        auto expandAnimation = new QPropertyAnimation(_searchViewBaseWidget, "size");
+        connect(expandAnimation, &QPropertyAnimation::valueChanged, this, [=] {
+            _searchView->resize(_searchViewBaseWidget->size());
+            QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+            _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
+        });
+        connect(expandAnimation, &QPropertyAnimation::finished, this, [=] {
+            _shadowLayout->addWidget(_searchView);
+        });
+        expandAnimation->setDuration(300);
+        expandAnimation->setEasingCurve(QEasingCurve::InOutSine);
+        expandAnimation->setStartValue(_searchViewBaseWidget->size()); // 从当前尺寸开始
+        expandAnimation->setEndValue(_pendingSize); // 使用最新的目标尺寸
+        expandAnimation->start(QAbstractAnimation::DeleteWhenStopped);
+        _lastSize = _pendingSize;
+        _pendingSize = QSize(); // 清空待处理尺寸
+    }
 }

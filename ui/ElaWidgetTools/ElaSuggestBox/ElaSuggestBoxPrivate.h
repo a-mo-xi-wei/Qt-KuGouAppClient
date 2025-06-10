@@ -69,6 +69,12 @@ private:
     void _startExpandAnimation();
 
     void _startCloseAnimation();
+
+    void _doStartSizeAnimation();
+
+    /*---------------*/
+    QSize _pendingSize;           // 存储待处理的最新目标尺寸
+    QTimer* _animationTimer;      // 用于延迟启动动画的定时器
 };
 
 #endif // ELASUGGESTBOXPRIVATE_H
