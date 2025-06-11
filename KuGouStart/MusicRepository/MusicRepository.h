@@ -176,13 +176,13 @@ private:
 
     Ui::MusicRepository                         *ui;                    ///< UI 指针
     std::unique_ptr<QButtonGroup>               m_buttonGroup;          ///< 按钮组
-    std::vector<std::pair<QString, QString>>    m_songAndsinger;        ///< 歌曲和歌手配对
-    std::vector<MusicInfo>                      m_total;                ///< 全部音乐信息
-    std::vector<MusicInfo>                      m_chineseVector;        ///< 华语音乐信息
-    std::vector<MusicInfo>                      m_westVector;           ///< 欧美音乐信息
-    std::vector<MusicInfo>                      m_koreaVector;          ///< 韩国音乐信息
-    std::vector<MusicInfo>                      m_japanVector;          ///< 日本音乐信息
-    std::vector<MusicInfo>                      m_videoVector;          ///< 视频信息
+    QList<std::pair<QString, QString>>    m_songAndsinger;        ///< 歌曲和歌手配对
+    QList<MusicInfo>                      m_total;                ///< 全部音乐信息
+    QList<MusicInfo>                      m_chineseVector;        ///< 华语音乐信息
+    QList<MusicInfo>                      m_westVector;           ///< 欧美音乐信息
+    QList<MusicInfo>                      m_koreaVector;          ///< 韩国音乐信息
+    QList<MusicInfo>                      m_japanVector;          ///< 日本音乐信息
+    QList<MusicInfo>                      m_videoVector;          ///< 视频信息
 };
 
 #endif // MUSICREPOSITORY_H

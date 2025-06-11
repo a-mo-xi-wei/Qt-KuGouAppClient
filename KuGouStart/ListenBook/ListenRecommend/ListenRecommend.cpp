@@ -261,7 +261,7 @@ void ListenRecommend::initDailyRecommendGalleryWidget()
             STREAM_WARN() << "Daily recommend data is empty or failed to parse"; ///< 记录警告日志
             return;
         }
-        this->m_galleryVector[0] = std::vector(data.cbegin(), data.cend()); ///< 转换为向量
+        this->m_galleryVector[0] = QList(data.cbegin(), data.cend()); ///< 转换为向量
         const QString subTitle = "哈,哈,哈,没有提示文本哦,官网爬不到,我是搬砖的小行家,哒哒哒,哒哒哒。。。"; ///< 默认描述
         for (int i = 0; i < 10; ++i)
         {
@@ -312,7 +312,7 @@ void ListenRecommend::initOtherGalleryWidget(const QString &jsonFileName, const 
             STREAM_WARN() << QString("%1.json is empty or failed to parse").arg(gallery->objectName()).toStdString(); ///< 记录警告日志
             return;
         }
-        this->m_galleryVector[cnt] = std::vector(data.cbegin(), data.cend()); ///< 转换为向量
+        this->m_galleryVector[cnt] = QList(data.cbegin(), data.cend()); ///< 转换为向量
         const QString subTitle = "哈,哈,哈,没有提示文本哦,官网爬不到,我是搬砖的小行家,哒哒哒,哒哒哒。。。"; ///< 默认描述
         for (int i = 0; i < 10; ++i)
         {

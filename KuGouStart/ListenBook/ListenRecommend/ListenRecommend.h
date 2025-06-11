@@ -104,7 +104,7 @@ private slots:
 private:
     Ui::ListenRecommend                                   *ui;              ///< UI 指针
     ListenOptionMenu                                      *m_menu{};        ///< 分类菜单
-    std::vector<std::pair<QString, QString>>               m_galleryVector[17]; ///< 画廊数据数组
+    QList<std::pair<QString, QString>>               m_galleryVector[17]; ///< 画廊数据数组
     QTimer                                                *m_refreshTimer{};  ///< 刷新定时器
 };
 

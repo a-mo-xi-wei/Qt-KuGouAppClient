@@ -128,7 +128,7 @@ void LiveBlockWidget::setTipStyleSheet(const QString &styleSheet) const
  */
 void LiveBlockWidget::initUi() const
 {
-    std::vector<QString> tipArr{
+    QList<QString> tipArr{
         "第一开播", "第二天开播", "第三天开播", "第四天开播", "第五天开播", "第六天开播",
         "德州", "葫芦岛", "淄博", "深圳", "洛阳", "哈尔滨", "临沂",
         "福州", "东莞", "常德", "宝山", "昆明", "长沙", "厦门",

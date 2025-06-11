@@ -101,7 +101,7 @@ private:
     std::unique_ptr<VideoChannelPartWidget>  m_danceWidget;         ///< 舞蹈分类
     std::unique_ptr<VideoChannelPartWidget>  m_siteWidget;          ///< 现场分类
     std::unique_ptr<VideoChannelPartWidget>  m_singerWidget;        ///< 歌手分类
-    std::vector<QString>                     m_pixPathVector;       ///< 图片路径容器
+    QList<QString>                     m_pixPathVector;       ///< 图片路径容器
     QScrollBar                              *m_vScrollBar;          ///< 垂直滚动条
 };
 

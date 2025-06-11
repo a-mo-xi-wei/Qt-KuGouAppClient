@@ -1070,7 +1070,7 @@ void ItemListWidget::onHide()
 #define DescribeLabHeight 25
 
 /** @brief 推荐标签数组 */
-std::vector<QString> tipArr =
+QList<QString> tipArr =
 {
     QStringLiteral("日语"), QStringLiteral("经典"),
     QStringLiteral("国语"), QStringLiteral("流行"),

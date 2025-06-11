@@ -83,8 +83,8 @@ private:
 
 private:
     Ui::SongList *ui;                   ///< UI 界面指针
-    std::vector<QString> m_coverVector; ///< 封面图片列表
-    std::vector<QString> m_descVector;  ///< 描述文本列表
+    QList<QString> m_coverVector; ///< 封面图片列表
+    QList<QString> m_descVector;  ///< 描述文本列表
     ListOptionMenu *m_menu{};           ///< 选项菜单
 };
 

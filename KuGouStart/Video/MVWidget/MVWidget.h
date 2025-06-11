@@ -209,16 +209,16 @@ private:
     Ui::MVWidget                            *ui;                    ///< UI 指针
     std::unique_ptr<QButtonGroup>            m_buttonGroup;         ///< 按钮组
     QAction                                 *m_searchAction{};      ///< 搜索动作
-    std::vector<std::pair<QString, QString>> m_titleAndDesc;        ///< 标题和描述对
-    std::vector<MusicInfo>                   m_total;               ///< 所有音乐信息
-    std::vector<MusicInfo>                   m_recommendVector;     ///< 推荐分类
-    std::vector<MusicInfo>                   m_chineseVector;       ///< 华语分类
-    std::vector<MusicInfo>                   m_westVector;          ///< 欧美分类
-    std::vector<MusicInfo>                   m_koreaAndJapanVector; ///< 日韩分类
-    std::vector<MusicInfo>                   m_liveSceneVector;     ///< 直播场景分类
-    std::vector<MusicInfo>                   m_honorOfKingsVector;  ///< 王者荣耀分类
-    std::vector<MusicInfo>                   m_awardCeremonyVector; ///< 颁奖典礼分类
-    std::vector<MusicInfo>                   m_hotMVVector;         ///< 热门 MV 分类
+    QList<std::pair<QString, QString>> m_titleAndDesc;        ///< 标题和描述对
+    QList<MusicInfo>                   m_total;               ///< 所有音乐信息
+    QList<MusicInfo>                   m_recommendVector;     ///< 推荐分类
+    QList<MusicInfo>                   m_chineseVector;       ///< 华语分类
+    QList<MusicInfo>                   m_westVector;          ///< 欧美分类
+    QList<MusicInfo>                   m_koreaAndJapanVector; ///< 日韩分类
+    QList<MusicInfo>                   m_liveSceneVector;     ///< 直播场景分类
+    QList<MusicInfo>                   m_honorOfKingsVector;  ///< 王者荣耀分类
+    QList<MusicInfo>                   m_awardCeremonyVector; ///< 颁奖典礼分类
+    QList<MusicInfo>                   m_hotMVVector;         ///< 热门 MV 分类
 };
 
 #endif // MVWIDGET_H

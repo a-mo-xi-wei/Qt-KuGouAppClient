@@ -106,8 +106,8 @@ private:
     std::unique_ptr<PartWidget>                   m_varietyWidget{};             ///< 综艺分区控件
     std::unique_ptr<PartWidget>                   m_nationalCustomsWidget{};     ///< 国风分区控件
     std::unique_ptr<PartWidget>                   m_sportsWidget{};              ///< 运动分区控件
-    std::vector<std::pair<QString, QString>>      m_songAndsinger{};             ///< 歌曲-歌手配对
-    std::vector<QString>                          m_pixPathVector{};             ///< 封面图片路径
+    QList<std::pair<QString, QString>>      m_songAndsinger{};             ///< 歌曲-歌手配对
+    QList<QString>                          m_pixPathVector{};             ///< 封面图片路径
     QScrollBar                                   *m_vScrollBar{};                ///< 垂直滚动条
 };
 

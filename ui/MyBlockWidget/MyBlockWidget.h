@@ -132,7 +132,7 @@ public:
      * @brief 设置提示标签数组
      * @param tipArr 提示标签数组
      */
-    void setTipArr(const std::vector<QString> &tipArr);
+    void setTipArr(const QList<QString> &tipArr);
 
     /**
      * @brief 设置提示标签样式
@@ -233,7 +233,7 @@ private:
     QString                 m_rightPopularBtnStyle; ///< 右侧流行度按钮样式
     QString                 m_leftPopularBtnStyle;  ///< 左侧流行度按钮样式
     bool                    m_isHoverCover = false; ///< 是否悬停在封面上
-    std::vector<QString>    m_tipArr;              ///< 提示标签数组
+    QList<QString>    m_tipArr;              ///< 提示标签数组
     bool                    m_isExpandRespond = false; ///< 是否扩展响应范围
     float                   m_aspectRatio = 1;     ///< 宽高比
     bool                    m_haveUnit = true;     ///< 是否带单位（万）

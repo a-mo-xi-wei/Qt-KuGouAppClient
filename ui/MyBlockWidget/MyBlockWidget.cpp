@@ -341,7 +341,7 @@ void MyBlockWidget::setHaveNumberUnit(const bool &haveNumberUnit)
  * @brief 设置提示标签数组
  * @param tipArr 提示标签数组
  */
-void MyBlockWidget::setTipArr(const std::vector<QString> &tipArr)
+void MyBlockWidget::setTipArr(const QList<QString> &tipArr)
 {
     m_tipArr = tipArr;
     setTipLabText(m_tipArr[QRandomGenerator::global()->bounded(0, static_cast<int>(m_tipArr.size()))]);

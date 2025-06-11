@@ -125,7 +125,7 @@ private:
     std::unique_ptr<VideoPartWidget> m_southKoreaWidget;     ///< 韩国分区
     std::unique_ptr<VideoPartWidget> m_japanWidget;          ///< 日本分区
     std::unique_ptr<VideoPartWidget> m_americanWidget;       ///< 欧美分区
-    std::vector<QString> m_pixPathVector;                    ///< 封面图片路径列表
+    QList<QString> m_pixPathVector;                    ///< 封面图片路径列表
     QScrollBar *m_vScrollBar{};                              ///< 垂直滚动条
 };
 

@@ -127,8 +127,8 @@ private:
     Ui::Search *ui;                              ///< UI 界面指针
     QPushButton *m_currentBtn{};                 ///< 当前选中的按钮
     std::unique_ptr<QButtonGroup> m_buttonGroup; ///< 按钮组，管理互斥按钮
-    std::vector<QPixmap> m_coverVector;          ///< 封面图片列表
-    std::vector<QString> m_descVector;           ///< 描述文本列表
+    QList<QPixmap> m_coverVector;          ///< 封面图片列表
+    QList<QString> m_descVector;           ///< 描述文本列表
     std::unique_ptr<QWidget> m_recommendWidget;  ///< 推荐页面
     std::unique_ptr<QWidget> m_rankWidget;       ///< 排行页面
     std::unique_ptr<QWidget> m_specialWidget;    ///< 专题页面
