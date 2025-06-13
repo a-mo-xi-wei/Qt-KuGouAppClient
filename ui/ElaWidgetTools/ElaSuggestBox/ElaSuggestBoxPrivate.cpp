@@ -227,7 +227,7 @@ void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index) {
 void ElaSuggestBoxPrivate::_startSizeAnimation(const QSize oldSize, const QSize newSize) {
     _pendingSize = newSize; // 更新待处理的目标尺寸
     if (!_animationTimer->isActive()) {
-        _animationTimer->start(10); // 启动定时器，延迟 50ms
+        _animationTimer->start(30); // 启动定时器，延迟 30ms
     }
 }
 
