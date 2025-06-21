@@ -1,0 +1,14 @@
+digraph "ZN5RGVQAUS"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_c52ba512c9203cac7fa609a694af481d {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="MyDialog_autogen", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_c52ba512c9203cac7fa609a694af481d.html",tooltip=""]
+  dir_3a8c6a8b4d79cf4482aa26d4a57a1d91 [label="ZN5RGVQAUS", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_3a8c6a8b4d79cf4482aa26d4a57a1d91.html",tooltip=""];
+  }
+  dir_1788f8309b1a812dcb800a185471cf6c [label="ui", fillcolor="#edf0f7", color="red", style="filled", URL="dir_1788f8309b1a812dcb800a185471cf6c.html",tooltip=""];
+  dir_3a8c6a8b4d79cf4482aa26d4a57a1d91->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="1", labeldistance=1.5 headhref="dir_000365_000335.html" href="dir_000365_000335.html" color="steelblue1" fontcolor="steelblue1"];
+}

@@ -1,8 +1,8 @@
 var dir_8f28061ef212dc3b8dcf5607e2ba715f =
 [
-    [ "ui_DownloadedSong.h", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___downloaded_song_8h.html", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___downloaded_song_8h" ],
-    [ "ui_DownloadedVideo.h", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___downloaded_video_8h.html", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___downloaded_video_8h" ],
-    [ "ui_Downloading.h", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___downloading_8h.html", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___downloading_8h" ],
-    [ "ui_LocalDownload.h", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___local_download_8h.html", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___local_download_8h" ],
-    [ "ui_LocalSong.h", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___local_song_8h.html", "cmake-build-release-mingw_2_ku_gou_start_2_local_download_2_local_download__autogen_2include_2ui___local_song_8h" ]
+    [ "ui_DownloadedSong.h", "ui___downloaded_song_8h.html", "ui___downloaded_song_8h" ],
+    [ "ui_DownloadedVideo.h", "ui___downloaded_video_8h.html", "ui___downloaded_video_8h" ],
+    [ "ui_Downloading.h", "ui___downloading_8h.html", "ui___downloading_8h" ],
+    [ "ui_LocalDownload.h", "ui___local_download_8h.html", "ui___local_download_8h" ],
+    [ "ui_LocalSong.h", "ui___local_song_8h.html", "ui___local_song_8h" ]
 ];

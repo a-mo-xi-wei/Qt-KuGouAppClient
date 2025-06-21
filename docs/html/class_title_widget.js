@@ -60,6 +60,7 @@ var class_title_widget =
     [ "onLeftMenu_video_clicked", "class_title_widget.html#a9d3591d50396b3c07cdcdf9ac1f4e968", null ],
     [ "paintEvent", "class_title_widget.html#ad0c46958bfd7ba4df70598d4ef29ce8d", null ],
     [ "refresh", "class_title_widget.html#a5f2e190b8261a98c97c2ea4e86670d54", null ],
+    [ "resizeEvent", "class_title_widget.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
     [ "setEnableChange", "class_title_widget.html#a93f9d0763b80a0b3aa3476e3770de66c", null ],
     [ "setMenuPosition", "class_title_widget.html#a0af7e99bd8f28620179c2875b5700c08", null ],
     [ "setTitleIndex", "class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b", null ],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['7_20每日推荐界面_0',['7.每日推荐界面',['../index.html#autotoc_md15',1,'']]]
+  ['6_20歌单界面_0',['6.歌单界面',['../index.html#autotoc_md15',1,'']]]
 ];

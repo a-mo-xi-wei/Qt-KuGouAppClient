@@ -1,19 +1,17 @@
 var class_ui___singer_widget =
 [
     [ "retranslateUi", "class_ui___singer_widget.html#a9fcf638373df41ecd558b1269139c433", null ],
-    [ "retranslateUi", "class_ui___singer_widget.html#a9fcf638373df41ecd558b1269139c433", null ],
     [ "setupUi", "class_ui___singer_widget.html#aff1fcdefd1689d18b7d28c4125b31f70", null ],
-    [ "setupUi", "class_ui___singer_widget.html#aff1fcdefd1689d18b7d28c4125b31f70", null ],
-    [ "gridLayout", "class_ui___singer_widget.html#a835e96c8de98ae8b60810d64698e5d16", null ],
-    [ "horizontalSpacer_10", "class_ui___singer_widget.html#afb94ed8c0a8f17ea2a8ac62d33302bc0", null ],
-    [ "horizontalSpacer_11", "class_ui___singer_widget.html#a4b40c0ff8d9afe2f04f73cc608edcebc", null ],
-    [ "horizontalSpacer_8", "class_ui___singer_widget.html#ad66db15e0b927f95b9dfe53f2b9bbd0d", null ],
-    [ "horizontalSpacer_9", "class_ui___singer_widget.html#aa0ac20ca049c2caf20e575506c589f7c", null ],
-    [ "prompt_label", "class_ui___singer_widget.html#ab96b6dd113355637e646fa3606505a3b", null ],
-    [ "search_pushButton", "class_ui___singer_widget.html#a21eeb2a352156d4aed868aaae10162bb", null ],
-    [ "table_widget", "class_ui___singer_widget.html#addccd64a2690a86b5b62a4699fdecdcb", null ],
-    [ "verticalLayout", "class_ui___singer_widget.html#a0abb4548dbd3db49a137e05541123090", null ],
-    [ "verticalLayout_2", "class_ui___singer_widget.html#af336a6593002d0419ec0e4fb23129da9", null ],
-    [ "verticalSpacer", "class_ui___singer_widget.html#af00316ecae881d64e197381c8ccf1dd0", null ],
-    [ "verticalSpacer_2", "class_ui___singer_widget.html#a3e97f6d5f9734f76e116f981da954cfa", null ]
+    [ "gridLayout", "class_ui___singer_widget.html#ac1dae5cc62a10f373d1bba5e661250e2", null ],
+    [ "horizontalSpacer_10", "class_ui___singer_widget.html#affb48e5d78cca381b1d4db154749e6e7", null ],
+    [ "horizontalSpacer_11", "class_ui___singer_widget.html#a8d40268d7b9b537aea22d8576b499fec", null ],
+    [ "horizontalSpacer_8", "class_ui___singer_widget.html#ade7676de20ad1f49b7ffe9b22699ac2e", null ],
+    [ "horizontalSpacer_9", "class_ui___singer_widget.html#a00c6744c7b97611fcf5d8e84d5e2f232", null ],
+    [ "prompt_label", "class_ui___singer_widget.html#aeec3dfa49c5d95c9ff86175f27cd730e", null ],
+    [ "search_pushButton", "class_ui___singer_widget.html#ae1f905f66b5a320262a5da5c2d5a4bbd", null ],
+    [ "table_widget", "class_ui___singer_widget.html#aee0076979a3c69bf4df87daa329bcac6", null ],
+    [ "verticalLayout", "class_ui___singer_widget.html#ad85f9339d941aa92fe82db7dcba6664c", null ],
+    [ "verticalLayout_2", "class_ui___singer_widget.html#a1f81b7e95162efcbe551b64ca41869c8", null ],
+    [ "verticalSpacer", "class_ui___singer_widget.html#a44688d6431366ee6bbd048722061c6f4", null ],
+    [ "verticalSpacer_2", "class_ui___singer_widget.html#afa0b0dc74950dbcc4d386cac27a01976", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['4_20视频界面_0',['4.视频界面',['../index.html#autotoc_md12',1,'']]]
+  ['3_20频道界面_0',['3.频道界面',['../index.html#autotoc_md12',1,'']]]
 ];

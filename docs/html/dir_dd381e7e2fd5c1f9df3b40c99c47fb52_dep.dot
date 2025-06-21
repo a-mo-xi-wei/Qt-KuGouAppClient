@@ -1,0 +1,14 @@
+digraph "SJVZYQZTWX"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_6d3fa8905a7d28e4737d371d52c3460d {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="ElaWidgetTools_autogen", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_6d3fa8905a7d28e4737d371d52c3460d.html",tooltip=""]
+  dir_dd381e7e2fd5c1f9df3b40c99c47fb52 [label="SJVZYQZTWX", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_dd381e7e2fd5c1f9df3b40c99c47fb52.html",tooltip=""];
+  }
+  dir_1788f8309b1a812dcb800a185471cf6c [label="ui", fillcolor="#edf0f7", color="red", style="filled", URL="dir_1788f8309b1a812dcb800a185471cf6c.html",tooltip=""];
+  dir_dd381e7e2fd5c1f9df3b40c99c47fb52->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="3", labeldistance=1.5 headhref="dir_000312_000335.html" href="dir_000312_000335.html" color="steelblue1" fontcolor="steelblue1"];
+}

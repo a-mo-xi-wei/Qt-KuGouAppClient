@@ -1,0 +1,13 @@
+digraph "udp_client"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="udp_client",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="cleanup_",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1details_1_1udp__client.html#ae3c5fd76d5f5264e28ad6fca64e90de5",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="spdlog::throw_spdlog_ex",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacespdlog.html#a601563456cc60312e9c8cc18ba168be4",tooltip=" "];
+}

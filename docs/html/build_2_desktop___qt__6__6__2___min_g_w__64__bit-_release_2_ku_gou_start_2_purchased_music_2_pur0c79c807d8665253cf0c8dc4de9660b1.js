@@ -1,0 +1,8 @@
+var build_2_desktop___qt__6__6__2___min_g_w__64__bit__release_2_ku_gou_start_2_purchased_music_2_pur0c79c807d8665253cf0c8dc4de9660b1 =
+[
+    [ "qt_meta_stringdata_CLASSPurchasedVideosENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a288aab0aa3ac2648f7924b31afb8b779.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a288aab0aa3ac2648f7924b31afb8b779" ],
+    [ "Q_CONSTINIT", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur0c79c807d8665253cf0c8dc4de9660b1.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
+    [ "QT_MOC_LITERAL", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur0c79c807d8665253cf0c8dc4de9660b1.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
+    [ "qt_meta_data_CLASSPurchasedVideosENDCLASS", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur0c79c807d8665253cf0c8dc4de9660b1.html#a86adc065567e4e3fbd696980663f3b82", null ],
+    [ "qt_meta_stringdata_CLASSPurchasedVideosENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#a1f7e750114930e552c05335d18d17638", null ]
+];

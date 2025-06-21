@@ -1,0 +1,5 @@
+var dir_191e4bdad26b1e0044231141b5a9a7c8 =
+[
+    [ "moc_DownloadingWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_d0a8a50786e79590d673e32ea2894e2e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_d0a8a50786e79590d673e32ea2894e2e" ],
+    [ "moc_DownloadingWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_98f56cbdf9765bd159c46f1b9d76d9a4.html", null ]
+];

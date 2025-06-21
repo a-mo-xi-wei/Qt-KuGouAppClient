@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: ElaLineEditPrivate.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_ela_line_edit_private_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ElaLineEditPrivate.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_ela_line_edit_private_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ELALINEEDITPRIVATE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ELALINEEDITPRIVATE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_def_8h.html">Def.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="class_ela_event.html">ElaEvent</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="class_ela_line_edit.html">ElaLineEdit</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_ela_line_edit_private.html">   10</a></span><span class="keyword">class </span><a class="code hl_function" href="class_ela_line_edit_private.html#ae4c4cbfe4bbd77c11e4f2314a9acd869">ElaLineEditPrivate</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    Q_OBJECT</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_define" href="stdafx_8h.html#a7dfd44162fad9c0d8377cea8b93c6b5f">Q_D_CREATE</a>(<a class="code hl_class" href="class_ela_line_edit.html">ElaLineEdit</a>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_define" href="stdafx_8h.html#a57bb06270a144d2fda2ff92dfe999ef5">Q_PROPERTY_CREATE_D</a>(<span class="keywordtype">int</span>, BorderRadius)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_define" href="stdafx_8h.html#a57bb06270a144d2fda2ff92dfe999ef5">Q_PROPERTY_CREATE_D</a>(<span class="keywordtype">bool</span>, IsClearButtonEnable)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_define" href="stdafx_8h.html#aa4e369dd4ddb60619226f24c14ad1d14">Q_PROPERTY_CREATE</a>(qreal, ExpandMarkWidth)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_ela_line_edit_private.html#ae4c4cbfe4bbd77c11e4f2314a9acd869">ElaLineEditPrivate</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_ela_line_edit_private.html#a20c023532dba329dcd1b5ed7373e2149">~ElaLineEditPrivate</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_line_edit_private.html#af183d3fca7ab63c7a634e901de2cd616">onWMWindowClickedEvent</a>(QVariantMap data);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    Q_SLOT <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_line_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db">onThemeChanged</a>(ElaThemeType::ThemeMode themeMode);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_ela_line_edit_private.html#abab7c56bd707e57041aaca2f2b3906b1">   28</a></span>    ElaThemeType::ThemeMode <a class="code hl_variable" href="class_ela_line_edit_private.html#abab7c56bd707e57041aaca2f2b3906b1">_themeMode</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_ela_line_edit_private.html#a66cfb9dc6fdecda9bed664038fca699d">   29</a></span>    <a class="code hl_class" href="class_ela_event.html">ElaEvent</a> *<a class="code hl_variable" href="class_ela_line_edit_private.html#a66cfb9dc6fdecda9bed664038fca699d">_focusEvent</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_ela_line_edit_private.html#aa9d31fbbfde9f48df15867926bdc8ad7">   30</a></span>    qreal <a class="code hl_variable" href="class_ela_line_edit_private.html#aa9d31fbbfde9f48df15867926bdc8ad7">_textSpacing</a>{0.5};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_ela_line_edit_private.html#af58605d519b446eab11a61a741590a07">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_ela_line_edit_private.html#af58605d519b446eab11a61a741590a07">_originalWidth</a>{};            </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_line_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5">_changeTheme</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_ela_line_edit_private.html#a7493212f486e2bde81d9f172374c8f48">containsCursorToItem</a>(QWidget *item);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">// ELALINEEDITPRIVATE_H</span></div>
+<div class="ttc" id="a_def_8h_html"><div class="ttname"><a href="_def_8h.html">Def.h</a></div></div>
+<div class="ttc" id="aclass_ela_event_html"><div class="ttname"><a href="class_ela_event.html">ElaEvent</a></div><div class="ttdoc">事件类，用于定义和管理事件名称、函数名称和连接类型</div><div class="ttdef"><b>定义</b> ElaEventBus.h:26</div></div>
+<div class="ttc" id="aclass_ela_line_edit_html"><div class="ttname"><a href="class_ela_line_edit.html">ElaLineEdit</a></div><div class="ttdef"><b>定义</b> ElaLineEdit.h:10</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_a20c023532dba329dcd1b5ed7373e2149"><div class="ttname"><a href="class_ela_line_edit_private.html#a20c023532dba329dcd1b5ed7373e2149">ElaLineEditPrivate::~ElaLineEditPrivate</a></div><div class="ttdeci">~ElaLineEditPrivate() override</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.cpp:10</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_a66cfb9dc6fdecda9bed664038fca699d"><div class="ttname"><a href="class_ela_line_edit_private.html#a66cfb9dc6fdecda9bed664038fca699d">ElaLineEditPrivate::_focusEvent</a></div><div class="ttdeci">ElaEvent * _focusEvent</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.h:29</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_a7493212f486e2bde81d9f172374c8f48"><div class="ttname"><a href="class_ela_line_edit_private.html#a7493212f486e2bde81d9f172374c8f48">ElaLineEditPrivate::containsCursorToItem</a></div><div class="ttdeci">static bool containsCursorToItem(QWidget *item)</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.cpp:56</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_a9b03deaf658f6c6f614d0dba062b07a5"><div class="ttname"><a href="class_ela_line_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5">ElaLineEditPrivate::_changeTheme</a></div><div class="ttdeci">void _changeTheme()</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.cpp:43</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_aa9d31fbbfde9f48df15867926bdc8ad7"><div class="ttname"><a href="class_ela_line_edit_private.html#aa9d31fbbfde9f48df15867926bdc8ad7">ElaLineEditPrivate::_textSpacing</a></div><div class="ttdeci">qreal _textSpacing</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.h:30</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_abab7c56bd707e57041aaca2f2b3906b1"><div class="ttname"><a href="class_ela_line_edit_private.html#abab7c56bd707e57041aaca2f2b3906b1">ElaLineEditPrivate::_themeMode</a></div><div class="ttdeci">ElaThemeType::ThemeMode _themeMode</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.h:28</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_acf666a8d5ef3e8a42f3c41d767d252db"><div class="ttname"><a href="class_ela_line_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db">ElaLineEditPrivate::onThemeChanged</a></div><div class="ttdeci">Q_SLOT void onThemeChanged(ElaThemeType::ThemeMode themeMode)</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.cpp:31</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_ae4c4cbfe4bbd77c11e4f2314a9acd869"><div class="ttname"><a href="class_ela_line_edit_private.html#ae4c4cbfe4bbd77c11e4f2314a9acd869">ElaLineEditPrivate::ElaLineEditPrivate</a></div><div class="ttdeci">ElaLineEditPrivate(QObject *parent=nullptr)</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.cpp:6</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_af183d3fca7ab63c7a634e901de2cd616"><div class="ttname"><a href="class_ela_line_edit_private.html#af183d3fca7ab63c7a634e901de2cd616">ElaLineEditPrivate::onWMWindowClickedEvent</a></div><div class="ttdeci">Q_INVOKABLE void onWMWindowClickedEvent(QVariantMap data)</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.cpp:13</div></div>
+<div class="ttc" id="aclass_ela_line_edit_private_html_af58605d519b446eab11a61a741590a07"><div class="ttname"><a href="class_ela_line_edit_private.html#af58605d519b446eab11a61a741590a07">ElaLineEditPrivate::_originalWidth</a></div><div class="ttdeci">int _originalWidth</div><div class="ttdoc">原始宽度</div><div class="ttdef"><b>定义</b> ElaLineEditPrivate.h:31</div></div>
+<div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
+<div class="ttc" id="astdafx_8h_html_a57bb06270a144d2fda2ff92dfe999ef5"><div class="ttname"><a href="stdafx_8h.html#a57bb06270a144d2fda2ff92dfe999ef5">Q_PROPERTY_CREATE_D</a></div><div class="ttdeci">#define Q_PROPERTY_CREATE_D(TYPE, M)</div><div class="ttdoc">创建私有成员变量</div><div class="ttdef"><b>定义</b> stdafx.h:120</div></div>
+<div class="ttc" id="astdafx_8h_html_a7dfd44162fad9c0d8377cea8b93c6b5f"><div class="ttname"><a href="stdafx_8h.html#a7dfd44162fad9c0d8377cea8b93c6b5f">Q_D_CREATE</a></div><div class="ttdeci">#define Q_D_CREATE(CLASS)</div><div class="ttdoc">创建 Q_D 模式的私有类声明</div><div class="ttdef"><b>定义</b> stdafx.h:181</div></div>
+<div class="ttc" id="astdafx_8h_html_aa4e369dd4ddb60619226f24c14ad1d14"><div class="ttname"><a href="stdafx_8h.html#aa4e369dd4ddb60619226f24c14ad1d14">Q_PROPERTY_CREATE</a></div><div class="ttdeci">#define Q_PROPERTY_CREATE(TYPE, M)</div><div class="ttdoc">创建普通属性的宏</div><div class="ttdef"><b>定义</b> stdafx.h:26</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_c41e0d0e814e23de337c335e201650d3.html">ElaWidgetTools</a></li><li class="navelem"><a class="el" href="dir_4d48378954380cc2880042b14f3651d9.html">ElaLineEdit</a></li><li class="navelem"><a class="el" href="_ela_line_edit_private_8h.html">ElaLineEditPrivate.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

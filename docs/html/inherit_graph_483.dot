@@ -1,0 +1,9 @@
+digraph "类继承关系图"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="resultTypeTakesArguments\l\< Function, index, bool \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_takes_arguments.html",tooltip=" "];
+}

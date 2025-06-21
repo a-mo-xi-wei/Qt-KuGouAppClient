@@ -128,22 +128,7 @@ $(function(){initNavTree('class_video_channel_widget.html',''); initResizable(tr
 VideoChannelWidget 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_video_channel_widget__coll__graph.png" border="0" usemap="#a_video_channel_widget_coll__map" alt="Collaboration graph"/></div>
-<map name="a_video_channel_widget_coll__map" id="a_video_channel_widget_coll__map">
-<area shape="rect" title="视频频道分类界面类，支持热门、儿童、主题等分类" alt="" coords="102,339,245,365"/>
-<area shape="rect" title=" " alt="" coords="5,248,78,275"/>
-<area shape="poly" title=" " alt="" coords="75,281,156,336,153,340,72,286"/>
-<area shape="rect" href="class_ui_1_1_video_channel_widget.html" title=" " alt="" coords="102,248,245,275"/>
-<area shape="poly" title=" " alt="" coords="176,290,176,338,171,338,171,290"/>
-<area shape="rect" href="class_ui___video_channel_widget.html" title=" " alt="" coords="92,172,255,199"/>
-<area shape="poly" title=" " alt="" coords="167,214,169,247,164,248,162,214"/>
-<area shape="poly" title=" " alt="" coords="185,214,183,248,178,247,180,214"/>
-<area shape="rect" href="class_my_scroll_area.html" title="自定义滚动区域类，继承自 QScrollArea，支持平滑滚动和返回顶部功能" alt="" coords="124,81,223,108"/>
-<area shape="poly" title=" " alt="" coords="176,124,176,171,171,171,171,124"/>
-<area shape="rect" title=" " alt="" coords="128,5,219,32"/>
-<area shape="poly" title=" " alt="" coords="176,47,176,81,171,81,171,47"/>
-<area shape="rect" href="class_q_scroll_bar.html" title="滚动条控件类" alt="" coords="269,248,353,275"/>
-<area shape="poly" title=" " alt="" coords="280,286,195,340,192,336,277,281"/>
-</map>
+<!-- MAP 0 -->
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -226,9 +211,9 @@ Private 属性</h2></td></tr>
 <tr class="memitem:a08acb641c5f0836a877d2b5d4faa1375" id="r_a08acb641c5f0836a877d2b5d4faa1375"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_video_channel_part_widget.html">VideoChannelPartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08acb641c5f0836a877d2b5d4faa1375">m_singerWidget</a></td></tr>
 <tr class="memdesc:a08acb641c5f0836a877d2b5d4faa1375"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌手分类  <br /></td></tr>
 <tr class="separator:a08acb641c5f0836a877d2b5d4faa1375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58d724096bc909086a836bdf73296c34" id="r_a58d724096bc909086a836bdf73296c34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d724096bc909086a836bdf73296c34">m_pixPathVector</a></td></tr>
-<tr class="memdesc:a58d724096bc909086a836bdf73296c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片路径容器  <br /></td></tr>
-<tr class="separator:a58d724096bc909086a836bdf73296c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a918deb763e99af56290c7d7115530992" id="r_a918deb763e99af56290c7d7115530992"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a918deb763e99af56290c7d7115530992">m_pixPathVector</a></td></tr>
+<tr class="memdesc:a918deb763e99af56290c7d7115530992"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片路径容器  <br /></td></tr>
+<tr class="separator:a918deb763e99af56290c7d7115530992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cd20ec8edf7d3af0f64fd52bd13110f" id="r_a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_scroll_bar.html">QScrollBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cd20ec8edf7d3af0f64fd52bd13110f">m_vScrollBar</a></td></tr>
 <tr class="memdesc:a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直滚动条  <br /></td></tr>
 <tr class="separator:a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -868,8 +853,8 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a58d724096bc909086a836bdf73296c34" name="a58d724096bc909086a836bdf73296c34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58d724096bc909086a836bdf73296c34">&#9670;&#160;</a></span>m_pixPathVector</h2>
+<a id="a918deb763e99af56290c7d7115530992" name="a918deb763e99af56290c7d7115530992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a918deb763e99af56290c7d7115530992">&#9670;&#160;</a></span>m_pixPathVector</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -878,7 +863,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;QString&gt; m_pixPathVector</td>
+          <td class="memname">QList&lt;QString&gt; m_pixPathVector</td>
         </tr>
       </table>
   </td>

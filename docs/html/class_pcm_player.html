@@ -191,8 +191,6 @@ Public 成员函数</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
-<tr class="memitem:a3f08603857e35f01aeb56d558d829fa9" id="r_a3f08603857e35f01aeb56d558d829fa9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f08603857e35f01aeb56d558d829fa9">resampleAudio</a> (const <a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *input, int input_len, <a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *output, int output_len, int channels, float speed)</td></tr>
-<tr class="separator:a3f08603857e35f01aeb56d558d829fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51f73d561fdeb70eeb9df680d6444272" id="r_a51f73d561fdeb70eeb9df680d6444272"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51f73d561fdeb70eeb9df680d6444272">openDevice</a> ()=0</td></tr>
 <tr class="memdesc:a51f73d561fdeb70eeb9df680d6444272"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开音频设备  <br /></td></tr>
 <tr class="separator:a51f73d561fdeb70eeb9df680d6444272"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -758,17 +756,13 @@ Protected 属性</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>&lt; 检查暂停或停止状态</p>
+<p>&lt; 输出静音</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_cgraph.png" border="0" usemap="#aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_cgraph" alt=""/></div>
-<map name="aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_cgraph" id="aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_cgraph">
-<area shape="rect" title="播放音频缓冲区" alt="" coords="5,31,118,57"/>
-<area shape="rect" href="class_pcm_volume_control.html#adf71b3485196765131b2bea822e6f252" title="调节音量" alt="" coords="166,5,384,32"/>
-<area shape="poly" title=" " alt="" coords="118,35,150,31,150,36,119,40"/>
-<area shape="rect" href="class_pcm_player.html#a3f08603857e35f01aeb56d558d829fa9" title=" " alt="" coords="221,56,328,83"/>
-<area shape="poly" title=" " alt="" coords="119,48,206,59,205,64,118,53"/>
-</map>
+<!-- MAP 0 -->
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
@@ -776,69 +770,6 @@ Protected 属性</h2></td></tr>
 <div class="center"><img src="class_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_icgraph.png" border="0" usemap="#aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_icgraph" alt=""/></div>
 <map name="aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_icgraph" id="aclass_pcm_player_ac0c97dd747079cf25a7420c7ef3eb721_icgraph">
 <area shape="rect" title="播放音频缓冲区" alt="" coords="496,13,608,40"/>
-<area shape="rect" href="class_pcm_player___s_d_l.html#ab08b7af07f9fd42329c6780b2a85cb7a" title="void sdlAudioCallBack(Uint8 *stream, int len);" alt="" coords="249,5,448,48"/>
-<area shape="poly" title=" " alt="" coords="481,29,449,29,449,24,481,24"/>
-<area shape="rect" href="class_pcm_player___s_d_l.html#a48c0c97b8de3bf8202cda6e525e2bdc6" title="打开音频设备" alt="" coords="5,13,201,40"/>
-<area shape="poly" title=" " alt="" coords="233,29,201,29,201,24,233,24"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a3f08603857e35f01aeb56d558d829fa9" name="a3f08603857e35f01aeb56d558d829fa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f08603857e35f01aeb56d558d829fa9">&#9670;&#160;</a></span>resampleAudio()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int resampleAudio </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>input_len</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_pcm_volume_control_8cpp.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>output_len</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>channels</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-这是这个函数的调用关系图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_pcm_player_a3f08603857e35f01aeb56d558d829fa9_icgraph.png" border="0" usemap="#aclass_pcm_player_a3f08603857e35f01aeb56d558d829fa9_icgraph" alt=""/></div>
-<map name="aclass_pcm_player_a3f08603857e35f01aeb56d558d829fa9_icgraph" id="aclass_pcm_player_a3f08603857e35f01aeb56d558d829fa9_icgraph">
-<area shape="rect" title=" " alt="" coords="656,13,764,40"/>
-<area shape="rect" href="class_pcm_player.html#ac0c97dd747079cf25a7420c7ef3eb721" title="播放音频缓冲区" alt="" coords="496,13,608,40"/>
-<area shape="poly" title=" " alt="" coords="640,29,609,29,609,24,640,24"/>
 <area shape="rect" href="class_pcm_player___s_d_l.html#ab08b7af07f9fd42329c6780b2a85cb7a" title="void sdlAudioCallBack(Uint8 *stream, int len);" alt="" coords="249,5,448,48"/>
 <area shape="poly" title=" " alt="" coords="481,29,449,29,449,24,481,24"/>
 <area shape="rect" href="class_pcm_player___s_d_l.html#a48c0c97b8de3bf8202cda6e525e2bdc6" title="打开音频设备" alt="" coords="5,13,201,40"/>

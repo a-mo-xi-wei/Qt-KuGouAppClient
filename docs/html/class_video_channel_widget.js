@@ -15,7 +15,7 @@ var class_video_channel_widget =
     [ "m_danceWidget", "class_video_channel_widget.html#ac9eb8f891b8beb64acaece9c223332ad", null ],
     [ "m_filmWidget", "class_video_channel_widget.html#aded2be75c2793fcf78f55905e54860fc", null ],
     [ "m_languageWidget", "class_video_channel_widget.html#a1e87e526fb9a79fe48b687183442e3be", null ],
-    [ "m_pixPathVector", "class_video_channel_widget.html#a58d724096bc909086a836bdf73296c34", null ],
+    [ "m_pixPathVector", "class_video_channel_widget.html#a918deb763e99af56290c7d7115530992", null ],
     [ "m_popularWidget", "class_video_channel_widget.html#aed737dc7c1af4c6c832785b3769c3b79", null ],
     [ "m_sceneWidget", "class_video_channel_widget.html#a97c91b20e7860858115ec203d19c362d", null ],
     [ "m_singerWidget", "class_video_channel_widget.html#a08acb641c5f0836a877d2b5d4faa1375", null ],

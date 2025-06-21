@@ -1,0 +1,48 @@
+digraph "mocs_compilation.cpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="mocs_compilation.cpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="44B5CDACKS/moc_Advertise\lBoard.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_r785d1c56b0b10dd6455ab991267774a4.html",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="../../../../../../KuGouStart\l/RecommendForYou/AdvertiseBoardWidget\l/AdvertiseBoard.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_advertise_board_8h.html",tooltip="广告轮播界面的头文件，定义 NavButton 和 AdvertiseBoard 类"];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="QLabel",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node3 -> Node5 [id="edge4_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="QList",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node6 [id="edge5_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="QtGui/qtextcursor.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node7 [id="edge6_Node000002_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="QtCore/qmetatype.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node8 [id="edge7_Node000002_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="memory",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node9 [id="edge8_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="UATTHKFFUL/moc_GLTabWidget.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_rda83937d4b46bbc3105680f404b4d1a4.html",tooltip=" "];
+  Node9 -> Node10 [id="edge9_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="../../../../../../KuGouStart\l/RecommendForYou/GuessLoveWidget\l/GLTabWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_l_tab_widget_8h.html",tooltip="定义 GLTabWidget 类，管理“猜你喜欢”推荐界面"];
+  Node10 -> Node11 [id="edge10_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="QWidget",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node9 -> Node7 [id="edge11_Node000009_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node9 -> Node8 [id="edge12_Node000009_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node12 [id="edge13_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="EWIEGA46WW/moc_Recommend\lForYou.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_r9f9870360eabde09e359d3b11249cc91.html",tooltip=" "];
+  Node12 -> Node13 [id="edge14_Node000012_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="../../../../../../KuGouStart\l/RecommendForYou/RecommendForYou.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_recommend_for_you_8h.html",tooltip="推荐界面类的头文件，定义 RecommendForYou 类"];
+  Node13 -> Node11 [id="edge15_Node000013_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node7 [id="edge16_Node000012_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node8 [id="edge17_Node000012_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node14 [id="edge18_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="UDCNJIELZL/moc_TableWidget.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_raff15064de8eada24eec3df39e84fc6e.html",tooltip=" "];
+  Node14 -> Node15 [id="edge19_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="../../../../../../KuGouStart\l/RecommendForYou/TableWidget\l/TableWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_table_widget_8h.html",tooltip="定义 TableWidget 类，管理表格布局推荐界面"];
+  Node15 -> Node16 [id="edge20_Node000015_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="QGridLayout",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node15 -> Node17 [id="edge21_Node000015_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="SMaskWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_s_mask_widget_8h.html",tooltip="定义 SMaskWidget 类，提供带动画的遮罩控件"];
+  Node17 -> Node11 [id="edge22_Node000017_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node7 [id="edge23_Node000014_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node8 [id="edge24_Node000014_Node000008",color="steelblue1",style="solid",tooltip=" "];
+}

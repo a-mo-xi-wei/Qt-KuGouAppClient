@@ -5,6 +5,6 @@ var dir_3e3944b392442dab4c7f436389b50d8c =
     [ "OJICXN4OTE", "dir_2616a37d860f34969f234c13fdeca625.html", "dir_2616a37d860f34969f234c13fdeca625" ],
     [ "SQLYB456MA", "dir_84abe74dbf70e39d976366ff02717886.html", "dir_84abe74dbf70e39d976366ff02717886" ],
     [ "VKBXDEJ5S6", "dir_ac5d9ea5e8bfbd862c7fb443bec58f97.html", "dir_ac5d9ea5e8bfbd862c7fb443bec58f97" ],
-    [ "moc_predefs.h", "cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2moc__predefs_8h.html", "cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2moc__predefs_8h" ],
-    [ "mocs_compilation.cpp", "cmake-build-release-mingw_2ui_2_my_button_2_my_button__autogen_2mocs__compilation_8cpp.html", null ]
+    [ "moc_predefs.h", "ui_2_my_button_2_my_button__autogen_2moc__predefs_8h.html", "ui_2_my_button_2_my_button__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "ui_2_my_button_2_my_button__autogen_2mocs__compilation_8cpp.html", null ]
 ];

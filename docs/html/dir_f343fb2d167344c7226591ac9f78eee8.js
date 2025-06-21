@@ -1,0 +1,4 @@
+var dir_f343fb2d167344c7226591ac9f78eee8 =
+[
+    [ "ui_DailyRecommend.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_daily_recommend_2_dai04509c80150c128b42561eb6e8259f29.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_daily_recommend_2_dai04509c80150c128b42561eb6e8259f29" ]
+];

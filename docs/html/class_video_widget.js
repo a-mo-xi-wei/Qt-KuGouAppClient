@@ -20,7 +20,7 @@ var class_video_widget =
     [ "m_japanWidget", "class_video_widget.html#a60b00ae1280aa3cc7f743c6902e12527", null ],
     [ "m_liveWidget", "class_video_widget.html#ad8e720ab163ccc3945e7b5f31322a40e", null ],
     [ "m_MVWidget", "class_video_widget.html#acf445b5000cc5231b766b7c575465c7f", null ],
-    [ "m_pixPathVector", "class_video_widget.html#a58d724096bc909086a836bdf73296c34", null ],
+    [ "m_pixPathVector", "class_video_widget.html#a918deb763e99af56290c7d7115530992", null ],
     [ "m_recommendWidget", "class_video_widget.html#aa19ca407db8b89227de7c4d6c038844f", null ],
     [ "m_siteWidget", "class_video_widget.html#a81196a444fadfa53c155aa1612104fdc", null ],
     [ "m_southKoreaWidget", "class_video_widget.html#ad1a0db4e78609047ba3bb0d7fa3596a2", null ],

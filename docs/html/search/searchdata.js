@@ -1,15 +1,15 @@
 var indexSectionsWithContent =
 {
-  0: "123456789_abcdefghijklmnopqrstuvwxyz~。下不为乐全同听已我技探最本核歌每用界略直若视音频高🎨🎵📚🔌😊🛠",
+  0: "0123456789_abcdefghijklmnopqrstuvwxyz~。下不为乐全同听已我技探最本核歌每用界略登直若视音频高🎨🎵📚🔌😊🛠",
   1: "abcdefghijklmnopqrstuvwyz",
   2: "adefhjlmqsuw",
   3: "abcdefghijklmnopqrstuvwx",
   4: "_abcdefghijklmnopqrstuvwxyz~",
-  5: "_abcdefghijklmnopqrstuvwxy",
+  5: "_abcdefghijklmnopqrstuvwxyz",
   6: "abcdefghiklmnopqrstuvw",
   7: "abcdefghiklmnopqrstuw",
   8: "abcdefghijklmnopqrstuvwxyz",
-  9: "abcdfhiloprstw",
+  9: "abcdefhiloprstw",
   10: "abcdefglos",
   11: "_abcdefghijlmnpqrstuvwz",
   12: "用高🎵"

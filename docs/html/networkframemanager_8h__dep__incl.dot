@@ -1,0 +1,42 @@
+digraph "networkframemanager.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="networkframemanager.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="cchatserver.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cchatserver_8h.html",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="cchatserver.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cchatserver_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="chttpserver.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$chttpserver_8h.html",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Server.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_server_8h.html",tooltip="HTTP 服务器主类头文件，定义了 Server 类的接口。"];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Server.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_server_8cpp.html",tooltip="HTTP 服务器核心实现，处理请求路由、数据库操作及业务逻辑。"];
+  Node5 -> Node7 [id="edge6_Node000005_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="main.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ku_gou_server_2main_8cpp.html",tooltip="程序入口点，负责初始化并启动单实例服务器。"];
+  Node4 -> Node8 [id="edge7_Node000004_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="chttpserver.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$chttpserver_8cpp.html",tooltip=" "];
+  Node1 -> Node9 [id="edge8_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="ctcpsocketclient.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ctcpsocketclient_8h.html",tooltip=" "];
+  Node9 -> Node10 [id="edge9_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="ctcpsocketclient.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ctcpsocketclient_8cpp.html",tooltip=" "];
+  Node9 -> Node11 [id="edge10_Node000009_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="ctcpsocketserver.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ctcpsocketserver_8h.html",tooltip=" "];
+  Node11 -> Node12 [id="edge11_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="ctcpsocketserver.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ctcpsocketserver_8cpp.html",tooltip=" "];
+  Node1 -> Node11 [id="edge12_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node13 [id="edge13_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="cwebsocketclient.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cwebsocketclient_8h.html",tooltip=" "];
+  Node13 -> Node14 [id="edge14_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="cwebsocketclient.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cwebsocketclient_8cpp.html",tooltip=" "];
+  Node1 -> Node15 [id="edge15_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="cwebsocketserver.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cwebsocketserver_8h.html",tooltip=" "];
+  Node15 -> Node2 [id="edge16_Node000015_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node16 [id="edge17_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="cwebsocketserver.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cwebsocketserver_8cpp.html",tooltip=" "];
+  Node1 -> Node17 [id="edge18_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="networkframemanager.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$networkframemanager_8cpp.html",tooltip=" "];
+}

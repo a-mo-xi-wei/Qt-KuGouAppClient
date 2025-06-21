@@ -1,0 +1,5 @@
+var build_2_desktop___qt__6__6__2___min_g_w__64__bit__release_2_ku_gou_start_2_purchased_music_2_pur9eecd18c9648dbaebc1700e6c87b227e =
+[
+    [ "Ui_PurchasedMusic", "class_ui___purchased_music.html", "class_ui___purchased_music" ],
+    [ "PurchasedMusic", "class_ui_1_1_purchased_music.html", null ]
+];

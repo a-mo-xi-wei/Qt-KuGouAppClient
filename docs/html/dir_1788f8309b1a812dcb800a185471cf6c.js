@@ -1,6 +1,7 @@
 var dir_1788f8309b1a812dcb800a185471cf6c =
 [
     [ "ElaWidgetTools", "dir_c41e0d0e814e23de337c335e201650d3.html", "dir_c41e0d0e814e23de337c335e201650d3" ],
+    [ "LoginInterface", "dir_90bef8ce3c5dcc77d6e08e1a3b707e1d.html", "dir_90bef8ce3c5dcc77d6e08e1a3b707e1d" ],
     [ "MusicItemWidget", "dir_6b36e6a8a50ca1992e0e7844fb151009.html", "dir_6b36e6a8a50ca1992e0e7844fb151009" ],
     [ "MyBlockWidget", "dir_f36b9dad9399c2a2afdfc78ff1b4bd19.html", "dir_f36b9dad9399c2a2afdfc78ff1b4bd19" ],
     [ "MyButton", "dir_64e62a3da93a71e7cadfe52a7a3289db.html", "dir_64e62a3da93a71e7cadfe52a7a3289db" ],

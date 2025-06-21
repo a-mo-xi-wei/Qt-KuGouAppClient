@@ -1,17 +1,15 @@
 var class_ui___ai_chat =
 [
     [ "retranslateUi", "class_ui___ai_chat.html#a0d9f29503e6bcb4d4e0a576dc41dc23a", null ],
-    [ "retranslateUi", "class_ui___ai_chat.html#a0d9f29503e6bcb4d4e0a576dc41dc23a", null ],
     [ "setupUi", "class_ui___ai_chat.html#a1c29a2e572768ed35f86c3dc331b1b88", null ],
-    [ "setupUi", "class_ui___ai_chat.html#a1c29a2e572768ed35f86c3dc331b1b88", null ],
-    [ "button_widget", "class_ui___ai_chat.html#a9bd79d249d97568a8f9550a5c2827b74", null ],
-    [ "chatView", "class_ui___ai_chat.html#a3a24b8fea5d12df21cb0fa0261f06229", null ],
-    [ "clear_toolButton", "class_ui___ai_chat.html#a287cab8b052b9b65caccf12357ee7cdb", null ],
-    [ "horizontalLayout", "class_ui___ai_chat.html#a7c14973bdfbbeb38bda94999653647c8", null ],
-    [ "horizontalLayout_2", "class_ui___ai_chat.html#a7e5d02c58468fbd767b6aac210a07e8b", null ],
-    [ "horizontalSpacer", "class_ui___ai_chat.html#a9d676d27dda009afd9790e4c39f1af6a", null ],
-    [ "question_textEdit", "class_ui___ai_chat.html#af7e40caccfa7d9a7ef58527b06c81027", null ],
-    [ "send_widget", "class_ui___ai_chat.html#ac34086d01bb267bce88d51d579d94896", null ],
-    [ "verticalLayout", "class_ui___ai_chat.html#a0abb4548dbd3db49a137e05541123090", null ],
-    [ "widget", "class_ui___ai_chat.html#a5aebe6edcfd960626fa439ac5fbd74fd", null ]
+    [ "button_widget", "class_ui___ai_chat.html#a9605b6df1184846266388eabccb07111", null ],
+    [ "chatView", "class_ui___ai_chat.html#a42b9901840c08f8986d63e31997cff5c", null ],
+    [ "clear_toolButton", "class_ui___ai_chat.html#a02e6ca7505c282dbe11179ae7319c6f1", null ],
+    [ "horizontalLayout", "class_ui___ai_chat.html#a9ca831b3e7278c1cc7cebba2329486b4", null ],
+    [ "horizontalLayout_2", "class_ui___ai_chat.html#a535a43287b7a5605cfc11580d146d3fb", null ],
+    [ "horizontalSpacer", "class_ui___ai_chat.html#a7e1d33086b18025c1f6a73ee4b080442", null ],
+    [ "question_textEdit", "class_ui___ai_chat.html#a7661a53cb37d511804a29c4716291cee", null ],
+    [ "send_widget", "class_ui___ai_chat.html#af30b7ab2d115995bb0dc2d2e53b9e077", null ],
+    [ "verticalLayout", "class_ui___ai_chat.html#ad85f9339d941aa92fe82db7dcba6664c", null ],
+    [ "widget", "class_ui___ai_chat.html#a549c5bee62879e34e9d21701730a2907", null ]
 ];

@@ -1103,7 +1103,9 @@ EXCLUDE                = cmake-build-debug \
                          out \
                          .git \
                          tools \
-                         util/MySpdlog/doc.md
+                         util/MySpdlog/doc.md \
+                         build \
+                         CMakeLists.txt.user
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

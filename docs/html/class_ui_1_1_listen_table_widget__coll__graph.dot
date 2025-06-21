@@ -1,0 +1,18 @@
+digraph "ListenTableWidget"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="ListenTableWidget",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Ui_ListenTableWidget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ui___listen_table_widget.html",tooltip=" "];
+  Node3 -> Node2 [id="edge2_Node000002_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" title_label",fontcolor="grey" ];
+  Node3 [id="Node000003",label="QLabel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_label.html",tooltip="标签控件类"];
+  Node4 -> Node2 [id="edge3_Node000002_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" toolButton",fontcolor="grey" ];
+  Node4 [id="Node000004",label="QToolButton",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_tool_button.html",tooltip="工具按钮类"];
+  Node5 -> Node2 [id="edge4_Node000002_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" gallery_widget",fontcolor="grey" ];
+  Node5 [id="Node000005",label="GalleryWidget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_gallery_widget.html",tooltip="照片画廊控件类，管理照片卡片并支持动态布局和动画"];
+  Node6 -> Node5 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="QWidget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -99,8 +99,6 @@ $(function(){initNavTree('_my_search_line_edit_8cpp.html',''); initResizable(tru
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#var-members">变量</a>  </div>
   <div class="headertitle"><div class="title">MySearchLineEdit.cpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,79 +106,39 @@ $(function(){initNavTree('_my_search_line_edit_8cpp.html',''); initResizable(tru
 <p>实现 <a class="el" href="class_my_search_line_edit.html" title="自定义搜索输入框类，继承自 QLineEdit，支持焦点动画和自定义右键菜单">MySearchLineEdit</a> 类，提供带动画效果的搜索输入框  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_my_search_line_edit_8h_source.html">MySearchLineEdit.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_ela_menu_8h_source.html">ElaMenu.h</a>&quot;</code><br />
-<code>#include &lt;QApplication&gt;</code><br />
 <code>#include &lt;QClipboard&gt;</code><br />
 <code>#include &lt;QMouseEvent&gt;</code><br />
 <code>#include &lt;QPropertyAnimation&gt;</code><br />
-<code>#include &lt;mutex&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 MySearchLineEdit.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_my_search_line_edit_8cpp__incl.png" border="0" usemap="#a_my_search_line_edit_8cpp" alt=""/></div>
 <map name="a_my_search_line_edit_8cpp" id="a_my_search_line_edit_8cpp">
-<area shape="rect" title="实现 MySearchLineEdit 类，提供带动画效果的搜索输入框" alt="" coords="386,5,539,32"/>
-<area shape="rect" href="_my_search_line_edit_8h.html" title="定义 MySearchLineEdit 类，提供带动画效果的搜索输入框" alt="" coords="5,80,144,107"/>
-<area shape="poly" title=" " alt="" coords="395,35,158,79,157,74,394,30"/>
-<area shape="rect" href="_ela_menu_8h.html" title="定义 ElaMenu 类，提供自定义菜单功能" alt="" coords="193,80,276,107"/>
-<area shape="poly" title=" " alt="" coords="424,35,290,77,288,72,422,30"/>
-<area shape="rect" title=" " alt="" coords="300,80,396,107"/>
-<area shape="poly" title=" " alt="" coords="444,35,382,74,379,69,441,30"/>
-<area shape="rect" title=" " alt="" coords="419,80,506,107"/>
-<area shape="poly" title=" " alt="" coords="465,33,465,64,460,64,460,33"/>
-<area shape="rect" title=" " alt="" coords="530,80,635,107"/>
-<area shape="poly" title=" " alt="" coords="485,30,550,69,547,74,482,35"/>
-<area shape="rect" title=" " alt="" coords="659,80,797,107"/>
-<area shape="poly" title=" " alt="" coords="509,30,668,73,666,78,508,35"/>
-<area shape="rect" title=" " alt="" coords="820,80,878,107"/>
-<area shape="poly" title=" " alt="" coords="540,28,661,48,806,77,805,82,660,53,539,33"/>
-<area shape="rect" title=" " alt="" coords="9,155,87,181"/>
-<area shape="poly" title=" " alt="" coords="72,108,60,141,55,139,67,106"/>
-<area shape="rect" title=" " alt="" coords="111,155,174,181"/>
-<area shape="poly" title=" " alt="" coords="220,109,172,147,168,143,217,105"/>
-<area shape="rect" title=" " alt="" coords="198,155,271,181"/>
-<area shape="poly" title=" " alt="" coords="237,107,237,139,232,139,232,107"/>
-<area shape="rect" href="_def_8h.html" title=" " alt="" coords="294,155,348,181"/>
-<area shape="poly" title=" " alt="" coords="251,105,296,143,293,147,248,109"/>
-<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="351,229,419,256"/>
-<area shape="poly" title=" " alt="" coords="278,103,322,121,343,135,362,153,378,183,386,213,380,215,373,185,358,156,340,140,319,126,276,108"/>
-<area shape="rect" title=" " alt="" coords="257,229,326,256"/>
-<area shape="poly" title=" " alt="" coords="319,183,305,216,300,214,314,181"/>
-<area shape="poly" title=" " alt="" coords="334,180,366,216,362,219,330,184"/>
-<area shape="rect" title=" " alt="" coords="326,304,445,331"/>
-<area shape="poly" title=" " alt="" coords="388,257,388,288,382,288,382,257"/>
+<area shape="rect" title="实现 MySearchLineEdit 类，提供带动画效果的搜索输入框" alt="" coords="212,5,365,32"/>
+<area shape="rect" href="_my_search_line_edit_8h.html" title="定义 MySearchLineEdit 类，提供带动画效果的搜索输入框" alt="" coords="23,80,162,107"/>
+<area shape="poly" title=" " alt="" coords="255,35,142,77,140,72,253,30"/>
+<area shape="rect" title=" " alt="" coords="185,80,272,107"/>
+<area shape="poly" title=" " alt="" coords="280,34,250,70,246,66,276,31"/>
+<area shape="rect" title=" " alt="" coords="296,80,401,107"/>
+<area shape="poly" title=" " alt="" coords="301,31,331,66,327,70,297,34"/>
+<area shape="rect" title=" " alt="" coords="425,80,563,107"/>
+<area shape="poly" title=" " alt="" coords="325,30,445,72,443,77,323,35"/>
+<area shape="rect" href="_ela_line_edit_8h.html" title=" " alt="" coords="43,155,142,181"/>
+<area shape="poly" title=" " alt="" coords="95,107,95,139,90,139,90,107"/>
+<area shape="rect" title=" " alt="" coords="5,229,84,256"/>
+<area shape="poly" title=" " alt="" coords="86,183,63,218,59,215,82,180"/>
+<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="108,229,176,256"/>
+<area shape="poly" title=" " alt="" coords="103,180,127,215,123,218,99,183"/>
+<area shape="rect" title=" " alt="" coords="82,304,202,331"/>
+<area shape="poly" title=" " alt="" coords="144,257,144,288,139,288,139,257"/>
 </map>
 </div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-变量</h2></td></tr>
-<tr class="memitem:aa12d082c0f752ab7313a2cf16522a3df" id="r_aa12d082c0f752ab7313a2cf16522a3df"><td class="memItemLeft" align="right" valign="top">std::once_flag&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa12d082c0f752ab7313a2cf16522a3df">flag</a></td></tr>
-<tr class="memdesc:aa12d082c0f752ab7313a2cf16522a3df"><td class="mdescLeft">&#160;</td><td class="mdescRight">单次初始化标志，确保原始宽度只设置一次  <br /></td></tr>
-<tr class="separator:aa12d082c0f752ab7313a2cf16522a3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+</div><a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>实现 <a class="el" href="class_my_search_line_edit.html" title="自定义搜索输入框类，继承自 QLineEdit，支持焦点动画和自定义右键菜单">MySearchLineEdit</a> 类，提供带动画效果的搜索输入框 </p>
 <dl class="section author"><dt>作者</dt><dd>WeiWang </dd></dl>
 <dl class="section date"><dt>日期</dt><dd>2024-10-10 </dd></dl>
 <dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
-</div><h2 class="groupheader">变量说明</h2>
-<a id="aa12d082c0f752ab7313a2cf16522a3df" name="aa12d082c0f752ab7313a2cf16522a3df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa12d082c0f752ab7313a2cf16522a3df">&#9670;&#160;</a></span>flag</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::once_flag flag</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>单次初始化标志，确保原始宽度只设置一次 </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

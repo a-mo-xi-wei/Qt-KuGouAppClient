@@ -29,7 +29,7 @@ var class_my_block_widget =
     [ "setRightPopularBtnIcon", "class_my_block_widget.html#a342036b03c5cab22700b8a058f1f68f7", null ],
     [ "setRightPopularBtnWidth", "class_my_block_widget.html#a9b1978cfa938573c7da21785f267f43b", null ],
     [ "setShowTip", "class_my_block_widget.html#a0027cbe7576fa551853985fc64a63c1b", null ],
-    [ "setTipArr", "class_my_block_widget.html#a83a3951bd0290267175c855ecb6c9de8", null ],
+    [ "setTipArr", "class_my_block_widget.html#a4744c39ed0b7cc186620273bdea6548c", null ],
     [ "setTipLabText", "class_my_block_widget.html#a250d3097015de6ae0bddada45b9c5677", null ],
     [ "setTipStyleSheet", "class_my_block_widget.html#a40bc9bf1fddc2d09f2940f61125a1673", null ],
     [ "m_aspectRatio", "class_my_block_widget.html#ad2bc8099242704a8bed917598d330047", null ],
@@ -44,6 +44,6 @@ var class_my_block_widget =
     [ "m_popularDirection", "class_my_block_widget.html#a618f627954fa6d19bed59f1cb0c2e282", null ],
     [ "m_rightPopularBtn", "class_my_block_widget.html#a238511349da148e75674952b337f9449", null ],
     [ "m_rightPopularBtnStyle", "class_my_block_widget.html#a8eb4fd404f964eb60aa69731dcd7f357", null ],
-    [ "m_tipArr", "class_my_block_widget.html#aa70b9e45c487456108631fd37c38d728", null ],
+    [ "m_tipArr", "class_my_block_widget.html#a3e15856ea3d21b2f0ee233188fbe2050", null ],
     [ "m_tipLab", "class_my_block_widget.html#a6a3f85da419084ca5a6b9b33de38ead6", null ]
 ];

@@ -1,0 +1,14 @@
+digraph "paintEvent"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="paintEvent",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="绘制事件"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="QtMaterialOverlayWidget\l::event",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_overlay_widget.html#a53659a59434a35628675cf119bbd5468",tooltip="重写事件处理函数，处理父窗口变化"];
+  Node2 -> Node2 [id="edge2_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge3_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="QtMaterialOverlayWidget\l::overlayGeometry",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_overlay_widget.html#adabd54aa291ae3012501d2b31e93e396",tooltip="获取覆盖层几何区域"];
+}

@@ -1,0 +1,8 @@
+var build_2_desktop___qt__6__6__2___min_g_w__64__bit__release_2ui_2_my_button_2_my_button__autogen_29e6aaed553524de2d8a58589de32c2e2 =
+[
+    [ "qt_meta_stringdata_CLASSVolumeToolBtnENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a1dc10502ad859c8f1fc9a1fa007c3f58.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a1dc10502ad859c8f1fc9a1fa007c3f58" ],
+    [ "Q_CONSTINIT", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_button_2_my_button__autogen_29e6aaed553524de2d8a58589de32c2e2.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
+    [ "QT_MOC_LITERAL", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_button_2_my_button__autogen_29e6aaed553524de2d8a58589de32c2e2.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
+    [ "qt_meta_data_CLASSVolumeToolBtnENDCLASS", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_button_2_my_button__autogen_29e6aaed553524de2d8a58589de32c2e2.html#a84e2481d3653719c0e97525031f527f5", null ],
+    [ "qt_meta_stringdata_CLASSVolumeToolBtnENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#ade962b0f5142f83a5c0747009d41c338", null ]
+];

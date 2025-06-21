@@ -15,5 +15,7 @@ var searchData=
   ['titleoptionmenu_2eh_12',['TitleOptionMenu.h',['../_title_option_menu_8h.html',1,'']]],
   ['titlewidget_2ecpp_13',['TitleWidget.cpp',['../_title_widget_8cpp.html',1,'']]],
   ['titlewidget_2eh_14',['TitleWidget.h',['../_title_widget_8h.html',1,'']]],
-  ['tweakme_2eh_15',['tweakme.h',['../tweakme_8h.html',1,'']]]
+  ['transparent_5ftransition_5finterface_2ecpp_15',['transparent_transition_interface.cpp',['../transparent__transition__interface_8cpp.html',1,'']]],
+  ['transparent_5ftransition_5finterface_2eh_16',['transparent_transition_interface.h',['../transparent__transition__interface_8h.html',1,'']]],
+  ['tweakme_2eh_17',['tweakme.h',['../tweakme_8h.html',1,'']]]
 ];

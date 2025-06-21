@@ -1,0 +1,8 @@
+var moc___local_download_8cpp =
+[
+    [ "qt_meta_stringdata_CLASSLocalDownloadENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a32caf72e7ea48f06d0c9007003b033bc.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a32caf72e7ea48f06d0c9007003b033bc" ],
+    [ "Q_CONSTINIT", "moc___local_download_8cpp.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
+    [ "QT_MOC_LITERAL", "moc___local_download_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
+    [ "qt_meta_data_CLASSLocalDownloadENDCLASS", "moc___local_download_8cpp.html#af98455128d64eac1029f861d671fad5d", null ],
+    [ "qt_meta_stringdata_CLASSLocalDownloadENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#a2f2396e8e6432b6e1ae01242862118e6", null ]
+];

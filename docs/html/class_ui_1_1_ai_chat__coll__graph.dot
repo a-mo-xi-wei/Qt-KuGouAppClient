@@ -1,0 +1,22 @@
+digraph "AiChat"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="AiChat",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Ui_AiChat",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ui___ai_chat.html",tooltip=" "];
+  Node3 -> Node2 [id="edge2_Node000002_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" chatView",fontcolor="grey" ];
+  Node3 [id="Node000003",label="ChatView",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_chat_view.html",tooltip="聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果"];
+  Node4 -> Node3 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="QWidget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node3 [id="edge4_Node000003_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" m_funcText\nm_helloText\nm_logo",fontcolor="grey" ];
+  Node5 [id="Node000005",label="QLabel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_label.html",tooltip="标签控件类"];
+  Node6 -> Node2 [id="edge5_Node000002_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" clear_toolButton",fontcolor="grey" ];
+  Node6 [id="Node000006",label="QToolButton",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_tool_button.html",tooltip="工具按钮类"];
+  Node7 -> Node2 [id="edge6_Node000002_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" question_textEdit",fontcolor="grey" ];
+  Node7 [id="Node000007",label="ElaPlainTextEdit",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_plain_text_edit.html",tooltip="自定义纯文本编辑框类，支持主题切换和上下文菜单"];
+  Node8 -> Node7 [id="edge7_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="QPlainTextEdit",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

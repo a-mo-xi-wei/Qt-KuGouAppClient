@@ -1,0 +1,8 @@
+var build_2_desktop___qt__6__6__2___min_g_w__64__bit__release_2_ku_gou_start_2_my_collection_2_my_co2efcceefc8da03d1d1212b307fcb390e =
+[
+    [ "qt_meta_stringdata_CLASSSongListWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae876548fa3a5027e23f2e84c6469116b.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae876548fa3a5027e23f2e84c6469116b" ],
+    [ "Q_CONSTINIT", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co2efcceefc8da03d1d1212b307fcb390e.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
+    [ "QT_MOC_LITERAL", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co2efcceefc8da03d1d1212b307fcb390e.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
+    [ "qt_meta_data_CLASSSongListWidgetENDCLASS", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co2efcceefc8da03d1d1212b307fcb390e.html#a81d27c3b1e6b95499ea85eed9549d166", null ],
+    [ "qt_meta_stringdata_CLASSSongListWidgetENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#a8fdac50d13bc954f4f38122d1bb3398e", null ]
+];

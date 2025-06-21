@@ -24,9 +24,10 @@ var searchData=
   ['has_5fto_5fstring_5fview_3c_20t_2c_20void_5ft_3c_20decltype_28detail_3a_3ato_5fstring_5fview_28std_3a_3adeclval_3c_20t_20_3e_28_29_29_29_3e_20_3e_21',['has_to_string_view&lt; T, void_t&lt; decltype(detail::to_string_view(std::declval&lt; T &gt;()))&gt; &gt;',['../structdetail_1_1has__to__string__view_3_01_t_00_01void__t_3_01decltype_07detail_1_1to__string__v35685b851a440ed2bd0db3bb781127a0.html',1,'detail']]],
   ['hascalloperator_22',['hasCallOperator',['../struct_async_1_1has_call_operator.html',1,'Async']]],
   ['helper_23',['Helper',['../class_qs_logging_1_1_logger_1_1_helper.html',1,'QsLogging::Logger']]],
-  ['hourly_5ffile_5fsink_24',['hourly_file_sink',['../classspdlog_1_1sinks_1_1hourly__file__sink.html',1,'spdlog::sinks']]],
-  ['hourly_5ffile_5fsink_3c_20details_3a_3anull_5fmutex_20_3e_25',['hourly_file_sink&lt; details::null_mutex &gt;',['../classspdlog_1_1sinks_1_1hourly__file__sink.html',1,'spdlog::sinks']]],
-  ['hourly_5ffile_5fsink_3c_20std_3a_3amutex_20_3e_26',['hourly_file_sink&lt; std::mutex &gt;',['../classspdlog_1_1sinks_1_1hourly__file__sink.html',1,'spdlog::sinks']]],
-  ['hourly_5ffilename_5fcalculator_27',['hourly_filename_calculator',['../structspdlog_1_1sinks_1_1hourly__filename__calculator.html',1,'spdlog::sinks']]],
-  ['http_28',['HTTP',['../class_j_q_net_1_1_h_t_t_p.html',1,'JQNet']]]
+  ['hollow_5fbutton_24',['Hollow_button',['../class_hollow__button.html',1,'']]],
+  ['hourly_5ffile_5fsink_25',['hourly_file_sink',['../classspdlog_1_1sinks_1_1hourly__file__sink.html',1,'spdlog::sinks']]],
+  ['hourly_5ffile_5fsink_3c_20details_3a_3anull_5fmutex_20_3e_26',['hourly_file_sink&lt; details::null_mutex &gt;',['../classspdlog_1_1sinks_1_1hourly__file__sink.html',1,'spdlog::sinks']]],
+  ['hourly_5ffile_5fsink_3c_20std_3a_3amutex_20_3e_27',['hourly_file_sink&lt; std::mutex &gt;',['../classspdlog_1_1sinks_1_1hourly__file__sink.html',1,'spdlog::sinks']]],
+  ['hourly_5ffilename_5fcalculator_28',['hourly_filename_calculator',['../structspdlog_1_1sinks_1_1hourly__filename__calculator.html',1,'spdlog::sinks']]],
+  ['http_29',['HTTP',['../class_j_q_net_1_1_h_t_t_p.html',1,'JQNet']]]
 ];

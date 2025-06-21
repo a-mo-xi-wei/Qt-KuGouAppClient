@@ -7,5 +7,7 @@ var searchData=
   ['win_5feventlog_5fsink_2eh_4',['win_eventlog_sink.h',['../win__eventlog__sink_8h.html',1,'']]],
   ['wincolor_5fsink_2dinl_2eh_5',['wincolor_sink-inl.h',['../wincolor__sink-inl_8h.html',1,'']]],
   ['wincolor_5fsink_2eh_6',['wincolor_sink.h',['../wincolor__sink_8h.html',1,'']]],
-  ['windows_5finclude_2eh_7',['windows_include.h',['../windows__include_8h.html',1,'']]]
+  ['windoweffect_2ecpp_7',['windoweffect.cpp',['../windoweffect_8cpp.html',1,'']]],
+  ['windoweffect_2eh_8',['windoweffect.h',['../windoweffect_8h.html',1,'']]],
+  ['windows_5finclude_2eh_9',['windows_include.h',['../windows__include_8h.html',1,'']]]
 ];

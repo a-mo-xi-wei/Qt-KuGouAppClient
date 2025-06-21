@@ -1,0 +1,45 @@
+digraph "qRegisterResourceData"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="qRegisterResourceData",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="qInitResources_BlockCover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___block_cover_8cpp.html#ad265daf21cd259883ba28542337b3955",tooltip=" "];
+  Node2 -> Node2 [id="edge2_Node000002_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge3_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="qInitResources_ListCover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___list_cover_8cpp.html#aa3f926ea6e5a061d5a81136ceeed34e5",tooltip=" "];
+  Node3 -> Node3 [id="edge4_Node000003_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge5_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="qInitResources_ListenBook",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___listen_book_8cpp.html#a53497936e260c4ea556c241555f2b44a",tooltip=" "];
+  Node4 -> Node4 [id="edge6_Node000004_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge7_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="qInitResources_Live",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___live_8cpp.html#a558bd638fabe971db7409d99e980ebee",tooltip=" "];
+  Node5 -> Node5 [id="edge8_Node000005_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge9_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="qInitResources_MenuIcon",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___menu_icon_8cpp.html#a5973de6aad0dff59776e3bd34ac3a619",tooltip=" "];
+  Node6 -> Node6 [id="edge10_Node000006_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge11_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="qInitResources_MusicRepository",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___music_repository_8cpp.html#ae33999dd76405b5e4c04bd7858adc18a",tooltip=" "];
+  Node7 -> Node7 [id="edge12_Node000007_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node8 [id="edge13_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="qInitResources_MVPoster",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___m_v_poster_8cpp.html#a58a8610b0174a0f0aaf7f485d64cd4e7",tooltip=" "];
+  Node8 -> Node8 [id="edge14_Node000008_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node9 [id="edge15_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="qInitResources_Recommend\lForYou",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___recommend_for_you_8cpp.html#a6132cba156a4bbeba9c5d5f1bc196ee8",tooltip=" "];
+  Node9 -> Node9 [id="edge16_Node000009_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node10 [id="edge17_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="qInitResources_RectCover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___rect_cover_8cpp.html#a158e73154a7d5529247df6b1f4ee00da",tooltip=" "];
+  Node10 -> Node10 [id="edge18_Node000010_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node11 [id="edge19_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="qInitResources_Res",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___res_8cpp.html#a0d6f90de65a6604f410c8d8d0f3d1811",tooltip=" "];
+  Node11 -> Node11 [id="edge20_Node000011_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node12 [id="edge21_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="qInitResources_Search",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___search_8cpp.html#ad9e02487ac7b2f2e47188b77721ac308",tooltip=" "];
+  Node12 -> Node12 [id="edge22_Node000012_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node13 [id="edge23_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="qInitResources_StandCover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qrc___stand_cover_8cpp.html#ae9f328736e4ac9d26fa6914dfead4960",tooltip=" "];
+  Node13 -> Node13 [id="edge24_Node000013_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

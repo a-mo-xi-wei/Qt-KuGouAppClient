@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['最近播放界面_0',['12.最近播放界面',['../index.html#autotoc_md20',1,'']]]
+  ['探索界面_0',['14.探索界面',['../index.html#autotoc_md23',1,'']]]
 ];

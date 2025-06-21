@@ -8,6 +8,6 @@ var dir_2a1b32107d87af5cf5712d080e00ae7f =
     [ "IXBAKM5AEZ", "dir_b78732ba819363d9b7bbda01b00818ba.html", "dir_b78732ba819363d9b7bbda01b00818ba" ],
     [ "LQF5J24HMX", "dir_5185c36e5840fe7142c23a1605765ddf.html", "dir_5185c36e5840fe7142c23a1605765ddf" ],
     [ "ZFXYM54VNF", "dir_8129a45698f9654825808d7af34848d2.html", "dir_8129a45698f9654825808d7af34848d2" ],
-    [ "moc_predefs.h", "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html", "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h" ],
-    [ "mocs_compilation.cpp", "cmake-build-release-mingw_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2mocs__compilation_8cpp.html", null ]
+    [ "moc_predefs.h", "_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html", "_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "_ku_gou_start_2_my_collection_2_my_collection__autogen_2mocs__compilation_8cpp.html", null ]
 ];

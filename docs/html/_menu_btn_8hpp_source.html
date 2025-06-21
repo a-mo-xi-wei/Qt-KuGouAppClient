@@ -139,33 +139,41 @@ $(function(){initNavTree('_menu_btn_8hpp_source.html',''); initResizable(true); 
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">protected</span>:</div>
 <div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_menu_btn.html#a7eb87a6d4464680c455d278d1d32eba6">   57</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_menu_btn.html#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a>(QObject *watched, QEvent *event)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span> (event-&gt;type() == QEvent::Enter) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="comment">//qDebug()&lt;&lt;&quot;进入&quot;;</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            this-&gt;setIcon(<a class="code hl_variable" href="class_menu_btn.html#a180aeb782fbec6161ba3cb7a762dbee3">m_icon2</a>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event-&gt;type() == QEvent::Leave) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="comment">//qDebug()&lt;&lt;&quot;离开&quot;;</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            this-&gt;setIcon(<a class="code hl_variable" href="class_menu_btn.html#aff233e5e0274db3d46a97f9f610a77cc">m_icon1</a>);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> QToolButton::eventFilter(watched, event);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="comment">// 确保只处理当前按钮的事件</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span>(watched != <span class="keyword">this</span>) <span class="keywordflow">return</span> QToolButton::eventFilter(watched, event);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">switch</span>(event-&gt;type()) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">case</span> QEvent::Enter:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">case</span> QEvent::HoverEnter:  <span class="comment">// 增加Hover事件支持</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                setIcon(<a class="code hl_variable" href="class_menu_btn.html#a180aeb782fbec6161ba3cb7a762dbee3">m_icon2</a>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;          <span class="comment">// 事件已处理</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">case</span> QEvent::Leave:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">case</span> QEvent::HoverLeave:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                setIcon(<a class="code hl_variable" href="class_menu_btn.html#aff233e5e0274db3d46a97f9f610a77cc">m_icon1</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;          <span class="comment">// 事件已处理</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">return</span> QToolButton::eventFilter(watched, event);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
 </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_menu_btn.html#aff233e5e0274db3d46a97f9f610a77cc">   69</a></span>    QIcon <a class="code hl_variable" href="class_menu_btn.html#aff233e5e0274db3d46a97f9f610a77cc">m_icon1</a>{}; </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_menu_btn.html#a180aeb782fbec6161ba3cb7a762dbee3">   70</a></span>    QIcon <a class="code hl_variable" href="class_menu_btn.html#a180aeb782fbec6161ba3cb7a762dbee3">m_icon2</a>{}; </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_menu_btn.html#a9763af48bcacf71af7d733efe09a6a66">   72</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_menu_btn.html#a9763af48bcacf71af7d733efe09a6a66">m_cnt</a> = 0;   </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_menu_btn.html#aff233e5e0274db3d46a97f9f610a77cc">   77</a></span>    QIcon <a class="code hl_variable" href="class_menu_btn.html#aff233e5e0274db3d46a97f9f610a77cc">m_icon1</a>{}; </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_menu_btn.html#a180aeb782fbec6161ba3cb7a762dbee3">   78</a></span>    QIcon <a class="code hl_variable" href="class_menu_btn.html#a180aeb782fbec6161ba3cb7a762dbee3">m_icon2</a>{}; </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_menu_btn.html#a9763af48bcacf71af7d733efe09a6a66">   80</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_menu_btn.html#a9763af48bcacf71af7d733efe09a6a66">m_cnt</a> = 0;   </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// MENUBTN_H</span></div>
-<div class="ttc" id="aclass_menu_btn_html_a180aeb782fbec6161ba3cb7a762dbee3"><div class="ttname"><a href="class_menu_btn.html#a180aeb782fbec6161ba3cb7a762dbee3">MenuBtn::m_icon2</a></div><div class="ttdeci">QIcon m_icon2</div><div class="ttdoc">悬停状态图标</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:70</div></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif </span><span class="comment">// MENUBTN_H</span></div>
+<div class="ttc" id="aclass_menu_btn_html_a180aeb782fbec6161ba3cb7a762dbee3"><div class="ttname"><a href="class_menu_btn.html#a180aeb782fbec6161ba3cb7a762dbee3">MenuBtn::m_icon2</a></div><div class="ttdeci">QIcon m_icon2</div><div class="ttdoc">悬停状态图标</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:78</div></div>
 <div class="ttc" id="aclass_menu_btn_html_a5c26c9076181bb09297968242ca6499e"><div class="ttname"><a href="class_menu_btn.html#a5c26c9076181bb09297968242ca6499e">MenuBtn::removeFilter</a></div><div class="ttdeci">void removeFilter()</div><div class="ttdoc">移除事件过滤器</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:46</div></div>
 <div class="ttc" id="aclass_menu_btn_html_a7eb87a6d4464680c455d278d1d32eba6"><div class="ttname"><a href="class_menu_btn.html#a7eb87a6d4464680c455d278d1d32eba6">MenuBtn::eventFilter</a></div><div class="ttdeci">bool eventFilter(QObject *watched, QEvent *event) override</div><div class="ttdoc">重写事件过滤器，处理进入和离开事件以切换图标</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:57</div></div>
-<div class="ttc" id="aclass_menu_btn_html_a9763af48bcacf71af7d733efe09a6a66"><div class="ttname"><a href="class_menu_btn.html#a9763af48bcacf71af7d733efe09a6a66">MenuBtn::m_cnt</a></div><div class="ttdeci">int m_cnt</div><div class="ttdoc">记录排序状态的计数器（如在 SortOptionMenu 中用于升降序切换）</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:72</div></div>
+<div class="ttc" id="aclass_menu_btn_html_a9763af48bcacf71af7d733efe09a6a66"><div class="ttname"><a href="class_menu_btn.html#a9763af48bcacf71af7d733efe09a6a66">MenuBtn::m_cnt</a></div><div class="ttdeci">int m_cnt</div><div class="ttdoc">记录排序状态的计数器（如在 SortOptionMenu 中用于升降序切换）</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:80</div></div>
 <div class="ttc" id="aclass_menu_btn_html_aa4cd6abc04465b5f3dc94413754252e3"><div class="ttname"><a href="class_menu_btn.html#aa4cd6abc04465b5f3dc94413754252e3">MenuBtn::MenuBtn</a></div><div class="ttdeci">MenuBtn(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化菜单按钮</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:27</div></div>
 <div class="ttc" id="aclass_menu_btn_html_ab6b3e48aadb22b82441f661749b9c2e1"><div class="ttname"><a href="class_menu_btn.html#ab6b3e48aadb22b82441f661749b9c2e1">MenuBtn::initIcon</a></div><div class="ttdeci">void initIcon(const QIcon &amp;icon1, const QIcon &amp;icon2)</div><div class="ttdoc">初始化按钮的正常和悬停状态图标</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:38</div></div>
-<div class="ttc" id="aclass_menu_btn_html_aff233e5e0274db3d46a97f9f610a77cc"><div class="ttname"><a href="class_menu_btn.html#aff233e5e0274db3d46a97f9f610a77cc">MenuBtn::m_icon1</a></div><div class="ttdeci">QIcon m_icon1</div><div class="ttdoc">正常状态图标</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:69</div></div>
+<div class="ttc" id="aclass_menu_btn_html_aff233e5e0274db3d46a97f9f610a77cc"><div class="ttname"><a href="class_menu_btn.html#aff233e5e0274db3d46a97f9f610a77cc">MenuBtn::m_icon1</a></div><div class="ttdeci">QIcon m_icon1</div><div class="ttdoc">正常状态图标</div><div class="ttdef"><b>定义</b> MenuBtn.hpp:77</div></div>
 <div class="ttc" id="aclass_q_tool_button_html"><div class="ttname"><a href="class_q_tool_button.html">QToolButton</a></div><div class="ttdoc">工具按钮类</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

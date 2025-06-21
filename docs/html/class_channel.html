@@ -128,24 +128,7 @@ $(function(){initNavTree('class_channel.html',''); initResizable(true); });
 Channel 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_channel__coll__graph.png" border="0" usemap="#a_channel_coll__map" alt="Collaboration graph"/></div>
-<map name="a_channel_coll__map" id="a_channel_coll__map">
-<area shape="rect" title="音乐频道主界面类，支持分类导航、滚动和音乐块展示" alt="" coords="102,339,171,365"/>
-<area shape="rect" title=" " alt="" coords="5,248,78,275"/>
-<area shape="poly" title=" " alt="" coords="68,283,124,336,121,340,64,287"/>
-<area shape="rect" href="class_ui_1_1_channel.html" title=" " alt="" coords="102,248,171,275"/>
-<area shape="poly" title=" " alt="" coords="139,290,139,338,134,338,134,290"/>
-<area shape="rect" href="class_ui___channel.html" title=" " alt="" coords="92,172,181,199"/>
-<area shape="poly" title=" " alt="" coords="130,214,132,247,127,248,125,214"/>
-<area shape="poly" title=" " alt="" coords="148,214,146,248,140,247,142,214"/>
-<area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="61,81,123,108"/>
-<area shape="poly" title=" " alt="" coords="96,123,104,147,122,170,118,173,99,149,91,124"/>
-<area shape="rect" href="class_my_scroll_area.html" title="自定义滚动区域类，继承自 QScrollArea，支持平滑滚动和返回顶部功能" alt="" coords="148,81,247,108"/>
-<area shape="poly" title=" " alt="" coords="182,123,147,173,143,170,178,120"/>
-<area shape="rect" title=" " alt="" coords="152,5,243,32"/>
-<area shape="poly" title=" " alt="" coords="200,47,200,81,195,81,195,47"/>
-<area shape="rect" href="class_q_scroll_bar.html" title="滚动条控件类" alt="" coords="195,248,280,275"/>
-<area shape="poly" title=" " alt="" coords="214,287,152,340,149,336,210,283"/>
-</map>
+<!-- MAP 0 -->
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -237,12 +220,12 @@ Private 属性</h2></td></tr>
 <tr class="memitem:ac76cf20ffd5936d7c01e5bb44b60f71c" id="r_ac76cf20ffd5936d7c01e5bb44b60f71c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_part_widget.html">PartWidget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac76cf20ffd5936d7c01e5bb44b60f71c">m_sportsWidget</a> {}</td></tr>
 <tr class="memdesc:ac76cf20ffd5936d7c01e5bb44b60f71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">运动分区控件  <br /></td></tr>
 <tr class="separator:ac76cf20ffd5936d7c01e5bb44b60f71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a983fe65b2c78fa75551ae04f021ee0bd" id="r_a983fe65b2c78fa75551ae04f021ee0bd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; QString, QString &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a983fe65b2c78fa75551ae04f021ee0bd">m_songAndsinger</a> {}</td></tr>
-<tr class="memdesc:a983fe65b2c78fa75551ae04f021ee0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌曲-歌手配对  <br /></td></tr>
-<tr class="separator:a983fe65b2c78fa75551ae04f021ee0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58d724096bc909086a836bdf73296c34" id="r_a58d724096bc909086a836bdf73296c34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d724096bc909086a836bdf73296c34">m_pixPathVector</a> {}</td></tr>
-<tr class="memdesc:a58d724096bc909086a836bdf73296c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">封面图片路径  <br /></td></tr>
-<tr class="separator:a58d724096bc909086a836bdf73296c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e4709ec3546f6d9cd4964ab9c2f977" id="r_a93e4709ec3546f6d9cd4964ab9c2f977"><td class="memItemLeft" align="right" valign="top">QList&lt; std::pair&lt; QString, QString &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93e4709ec3546f6d9cd4964ab9c2f977">m_songAndsinger</a> {}</td></tr>
+<tr class="memdesc:a93e4709ec3546f6d9cd4964ab9c2f977"><td class="mdescLeft">&#160;</td><td class="mdescRight">歌曲-歌手配对  <br /></td></tr>
+<tr class="separator:a93e4709ec3546f6d9cd4964ab9c2f977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a918deb763e99af56290c7d7115530992" id="r_a918deb763e99af56290c7d7115530992"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a918deb763e99af56290c7d7115530992">m_pixPathVector</a> {}</td></tr>
+<tr class="memdesc:a918deb763e99af56290c7d7115530992"><td class="mdescLeft">&#160;</td><td class="mdescRight">封面图片路径  <br /></td></tr>
+<tr class="separator:a918deb763e99af56290c7d7115530992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cd20ec8edf7d3af0f64fd52bd13110f" id="r_a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_scroll_bar.html">QScrollBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cd20ec8edf7d3af0f64fd52bd13110f">m_vScrollBar</a> {}</td></tr>
 <tr class="memdesc:a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直滚动条  <br /></td></tr>
 <tr class="separator:a5cd20ec8edf7d3af0f64fd52bd13110f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -968,8 +951,8 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a58d724096bc909086a836bdf73296c34" name="a58d724096bc909086a836bdf73296c34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58d724096bc909086a836bdf73296c34">&#9670;&#160;</a></span>m_pixPathVector</h2>
+<a id="a918deb763e99af56290c7d7115530992" name="a918deb763e99af56290c7d7115530992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a918deb763e99af56290c7d7115530992">&#9670;&#160;</a></span>m_pixPathVector</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -978,7 +961,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;QString&gt; m_pixPathVector {}</td>
+          <td class="memname">QList&lt;QString&gt; m_pixPathVector {}</td>
         </tr>
       </table>
   </td>
@@ -1040,8 +1023,8 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a983fe65b2c78fa75551ae04f021ee0bd" name="a983fe65b2c78fa75551ae04f021ee0bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a983fe65b2c78fa75551ae04f021ee0bd">&#9670;&#160;</a></span>m_songAndsinger</h2>
+<a id="a93e4709ec3546f6d9cd4964ab9c2f977" name="a93e4709ec3546f6d9cd4964ab9c2f977"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e4709ec3546f6d9cd4964ab9c2f977">&#9670;&#160;</a></span>m_songAndsinger</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1050,7 +1033,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::pair&lt;QString, QString&gt; &gt; m_songAndsinger {}</td>
+          <td class="memname">QList&lt;std::pair&lt;QString, QString&gt; &gt; m_songAndsinger {}</td>
         </tr>
       </table>
   </td>

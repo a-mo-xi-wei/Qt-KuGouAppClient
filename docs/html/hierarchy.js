@@ -527,6 +527,9 @@ var hierarchy =
     [ "printf_formatter< T >", "structprintf__formatter.html", null ],
     [ "printf_precision_handler", "structdetail_1_1printf__precision__handler.html", null ],
     [ "printf_width_handler", "classdetail_1_1printf__width__handler.html", null ],
+    [ "QAbstractListModel", null, [
+      [ "ElaSuggestModel", "class_ela_suggest_model.html", null ]
+    ] ],
     [ "QAbstractSlider", null, [
       [ "QtMaterialSlider", "class_qt_material_slider.html", [
         [ "SnapSlider", "class_snap_slider.html", null ]
@@ -573,8 +576,14 @@ var hierarchy =
       [ "MyFlowLayout", "class_my_flow_layout.html", null ]
     ] ],
     [ "QLineEdit", null, [
-      [ "MySearchLineEdit", "class_my_search_line_edit.html", null ],
+      [ "ElaLineEdit", "class_ela_line_edit.html", [
+        [ "Input_box", "class_input__box.html", null ],
+        [ "MySearchLineEdit", "class_my_search_line_edit.html", null ]
+      ] ],
       [ "QtMaterialTextField", "class_qt_material_text_field.html", null ]
+    ] ],
+    [ "QListView", null, [
+      [ "ElaBaseListView", "class_ela_base_list_view.html", null ]
     ] ],
     [ "QMenu", null, [
       [ "BaseMenu", "class_base_menu.html", [
@@ -604,6 +613,7 @@ var hierarchy =
       [ "ElaExitDialogPrivate", "class_ela_exit_dialog_private.html", null ],
       [ "ElaFlowLayoutPrivate", "class_ela_flow_layout_private.html", null ],
       [ "ElaIconButtonPrivate", "class_ela_icon_button_private.html", null ],
+      [ "ElaLineEditPrivate", "class_ela_line_edit_private.html", null ],
       [ "ElaMenuPrivate", "class_ela_menu_private.html", null ],
       [ "ElaMessageBarManager", "class_ela_message_bar_manager.html", null ],
       [ "ElaMessageBarPrivate", "class_ela_message_bar_private.html", null ],
@@ -611,6 +621,8 @@ var hierarchy =
       [ "ElaPlainTextEditPrivate", "class_ela_plain_text_edit_private.html", null ],
       [ "ElaPushButtonPrivate", "class_ela_push_button_private.html", null ],
       [ "ElaScrollBarPrivate", "class_ela_scroll_bar_private.html", null ],
+      [ "ElaSuggestBoxPrivate", "class_ela_suggest_box_private.html", null ],
+      [ "ElaSuggestion", "class_ela_suggestion.html", null ],
       [ "ElaTextPrivate", "class_ela_text_private.html", null ],
       [ "ElaTheme", "class_ela_theme.html", null ],
       [ "ElaThemePrivate", "class_ela_theme_private.html", null ],
@@ -649,6 +661,7 @@ var hierarchy =
     ] ],
     [ "QPropertyAnimation", "class_q_property_animation.html", null ],
     [ "QProxyStyle", null, [
+      [ "ElaLineEditStyle", "class_ela_line_edit_style.html", null ],
       [ "ElaMenuBarStyle", "class_ela_menu_bar_style.html", null ],
       [ "ElaMenuStyle", "class_ela_menu_style.html", null ],
       [ "ElaPlainTextEditStyle", "class_ela_plain_text_edit_style.html", null ],
@@ -658,11 +671,13 @@ var hierarchy =
       [ "ElaIconButton", "class_ela_icon_button.html", null ],
       [ "ElaMessageButton", "class_ela_message_button.html", null ],
       [ "ElaPushButton", "class_ela_push_button.html", null ],
+      [ "Hollow_button", "class_hollow__button.html", null ],
       [ "InteractiveButtonBase", "class_interactive_button_base.html", [
         [ "WaterZoomButton", "class_water_zoom_button.html", [
           [ "GalleryPhotoWidget", "class_gallery_photo_widget.html", null ]
         ] ]
       ] ],
+      [ "Login_button", "class_login__button.html", null ],
       [ "QtMaterialFlatButton", "class_qt_material_flat_button.html", [
         [ "QtMaterialRaisedButton", "class_qt_material_raised_button.html", [
           [ "QtMaterialFloatingActionButton", "class_qt_material_floating_action_button.html", null ]
@@ -692,6 +707,9 @@ var hierarchy =
       [ "QtMaterialSnackbarStateMachine", "class_qt_material_snackbar_state_machine.html", null ],
       [ "QtMaterialTextFieldStateMachine", "class_qt_material_text_field_state_machine.html", null ]
     ] ],
+    [ "QStyledItemDelegate", null, [
+      [ "ElaSuggestDelegate", "class_ela_suggest_delegate.html", null ]
+    ] ],
     [ "QSystemTrayIcon", null, [
       [ "MyTrayIcon", "class_my_tray_icon.html", null ]
     ] ],
@@ -708,22 +726,14 @@ var hierarchy =
     [ "qt_meta_stringdata_CLASSAniCheckBoxENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac994417476e81bd7e04fd1d5ab9b0b82.html", null ],
     [ "qt_meta_stringdata_CLASSBaseMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad8efb1acc42b94df47fda121765e2322.html", null ],
     [ "qt_meta_stringdata_CLASSBubbleFrameENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af6345ce6cf3ccd6506bde84471fd443c.html", null ],
-    [ "qt_meta_stringdata_CLASScchatserverENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aa5448d289134819073daf025b4cc6c61.html", null ],
     [ "qt_meta_stringdata_CLASSCenterWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0ac2d1c3eaf787e39bcd899da4d8e72c.html", null ],
     [ "qt_meta_stringdata_CLASSChannelBlockENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a829f8b4702770a182b4eb2a4d8f358e9.html", null ],
     [ "qt_meta_stringdata_CLASSChannelENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_channel_e_n_d_c_l_a_s_s__t.html", null ],
     [ "qt_meta_stringdata_CLASSChatENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_chat_e_n_d_c_l_a_s_s__t.html", null ],
     [ "qt_meta_stringdata_CLASSChatItemBaseENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a1b5d07a9cce42df93a5f402a4c59bb05.html", null ],
     [ "qt_meta_stringdata_CLASSChatViewENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae4e696b3b45a9e1ba2122f25c6c7e109.html", null ],
-    [ "qt_meta_stringdata_CLASSchttpserverENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3bc13cafc784682dd86a4416e7885a49.html", null ],
     [ "qt_meta_stringdata_CLASSCLibhttpENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abd0758157bc6c468a97bbc115bc2f1eb.html", null ],
     [ "qt_meta_stringdata_CLASSCollectVideoENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a98f1c5b0aa56df2f95eb3100fe9cbb68.html", null ],
-    [ "qt_meta_stringdata_CLASSCResourceManagerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3b35638be9214c8d31cd7c63f9187cb4.html", null ],
-    [ "qt_meta_stringdata_CLASSCTcpServerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6131714051143455498a4c6dc5b52f3d.html", null ],
-    [ "qt_meta_stringdata_CLASSCTcpSocketENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab0d9c44c42dfd4ae6454f0afcec093b7.html", null ],
-    [ "qt_meta_stringdata_CLASSCUdpSocketENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab3ccfae1727d7d26935bdf446f7fb7a3.html", null ],
-    [ "qt_meta_stringdata_CLASSCWebSocketClientENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a23708b03207265b9924d9fd5771b07b7.html", null ],
-    [ "qt_meta_stringdata_CLASSCWebSocketServerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a82f38bbfda19c225a0cc39a4b279de20.html", null ],
     [ "qt_meta_stringdata_CLASSDailyRecommendENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9e2e81ddf3e0c60af3aec601729a6c03.html", null ],
     [ "qt_meta_stringdata_CLASSDeviceWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a759d7a5a6d181a2f6a88d4670228e37c.html", null ],
     [ "qt_meta_stringdata_CLASSDownloadedSongENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6d0ecc9956c230c395bd67141efa6375.html", null ],
@@ -731,6 +741,7 @@ var hierarchy =
     [ "qt_meta_stringdata_CLASSDownloadedWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7ae2510b4d84536833dcbbf9f20df750.html", null ],
     [ "qt_meta_stringdata_CLASSDownloadingENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9207599451d54bdaea5b3059186322f9.html", null ],
     [ "qt_meta_stringdata_CLASSDownloadingWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a938e7ad2b514a3735fd49d21ba5f6fa4.html", null ],
+    [ "qt_meta_stringdata_CLASSElaBaseListViewENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac319dc2a78d7bb32e800aa05455ec3c0.html", null ],
     [ "qt_meta_stringdata_CLASSElaEventENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aea6da9a2a818d372a3cfa1cbb41dcf1c.html", null ],
     [ "qt_meta_stringdata_CLASSElaEventPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a56d15f0572a3210e12261be0c06df481.html", null ],
     [ "qt_meta_stringdata_CLASSElaExitDialogENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aadedbc7dcb896a32925886d91ca624e8.html", null ],
@@ -739,6 +750,9 @@ var hierarchy =
     [ "qt_meta_stringdata_CLASSElaFlowLayoutPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af9d3a4e30d2890e0562d0a05f6dfe5f8.html", null ],
     [ "qt_meta_stringdata_CLASSElaIconButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a19e4cf9b74edc56f85fec4b98d2e857d.html", null ],
     [ "qt_meta_stringdata_CLASSElaIconButtonPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a46e609dbcd9245df17489260835080d1.html", null ],
+    [ "qt_meta_stringdata_CLASSElaLineEditENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac62fbf76acee069d9b62b8ee53b5a402.html", null ],
+    [ "qt_meta_stringdata_CLASSElaLineEditPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9728c9ca2d4b483fba2794f5d2f39fa8.html", null ],
+    [ "qt_meta_stringdata_CLASSElaLineEditStyleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a5dde560b48f332f81430ae5e031a3a4b.html", null ],
     [ "qt_meta_stringdata_CLASSElaMaskWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abb436ae4fb6353f96250731f549b2ecc.html", null ],
     [ "qt_meta_stringdata_CLASSElaMenuBarENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a003c18a6ee257702240296f03ef86780.html", null ],
     [ "qt_meta_stringdata_CLASSElaMenuBarStyleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a42a53bcc0264404106146bb1ac8ea837.html", null ],
@@ -756,7 +770,11 @@ var hierarchy =
     [ "qt_meta_stringdata_CLASSElaPushButtonPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a40e10b860fac513e5baa5eb81ed8ea6e.html", null ],
     [ "qt_meta_stringdata_CLASSElaScrollBarENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae6046d5feb2030442f88728dcebd9699.html", null ],
     [ "qt_meta_stringdata_CLASSElaScrollBarPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a5a7a0fa90053a5e21c02dedc00101db9.html", null ],
-    [ "qt_meta_stringdata_CLASSElaScrollBarStyleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a404047bf38553bd73528d061feb4b2ea.html", null ],
+    [ "qt_meta_stringdata_CLASSElaSuggestBoxENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a6ec9cf2976be0eaeaf1da7d443dce71e.html", null ],
+    [ "qt_meta_stringdata_CLASSElaSuggestBoxSearchViewContainerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae156724fe8ffcdd9349aff54f2d94eb6.html", null ],
+    [ "qt_meta_stringdata_CLASSElaSuggestDelegateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a3e438041db3805696946a635a21b87ec.html", null ],
+    [ "qt_meta_stringdata_CLASSElaSuggestionENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a8104da7a459bcad90b51a67f105b8a6a.html", null ],
+    [ "qt_meta_stringdata_CLASSElaSuggestModelENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a336e05d28d8a7187039bf1c079ef14dd.html", null ],
     [ "qt_meta_stringdata_CLASSElaTextENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2e3dfe55614b1412aba131ddb5b0d49e.html", null ],
     [ "qt_meta_stringdata_CLASSElaTextPrivateENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ad25296ddc74e38ae778b30e2e33a9ee9.html", null ],
     [ "qt_meta_stringdata_CLASSElaThemeENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a214b2dda9116d64b59fb74587aafb615.html", null ],
@@ -769,10 +787,8 @@ var hierarchy =
     [ "qt_meta_stringdata_CLASSGalleryPhotoWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a718a3f74c27358272be53ef14c40cb31.html", null ],
     [ "qt_meta_stringdata_CLASSGalleryWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a4b74bb6886710bcfacd5c4cae7b1dede.html", null ],
     [ "qt_meta_stringdata_CLASSGLTabWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_aa2cb33345086270aedf509d3cb9367fd.html", null ],
-    [ "qt_meta_stringdata_CLASSHYKTSCOPEKcpObjENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af1dd7b87e61d03002b8eb2e389f562c9.html", null ],
     [ "qt_meta_stringdata_CLASSIconBesideTextToolButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a98c0cdbe626497abb2ecbf523731b6ed.html", null ],
     [ "qt_meta_stringdata_CLASSInteractiveButtonBaseENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_abe3c45fbd4b2362e0926f366f21e3dc3.html", null ],
-    [ "qt_meta_stringdata_CLASSJQHttpServerSCOPESessionENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af5430e30edfe65ce7833b54b2c3ca58d.html", null ],
     [ "qt_meta_stringdata_CLASSKuGouAppENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0edc5c0c0ac9e195d83e83fa573bd7dd.html", null ],
     [ "qt_meta_stringdata_CLASSListenBookENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_af6247df4af7e0848c2ec41be06200b53.html", null ],
     [ "qt_meta_stringdata_CLASSListenMyDownloadENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0e00c166cda11d7993a30c8b9f6c4cb0.html", null ],
@@ -807,7 +823,6 @@ var hierarchy =
     [ "qt_meta_stringdata_CLASSMyTrayIconENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2ab3a50b926d7f1d5841d6d5fcb7e2ab.html", null ],
     [ "qt_meta_stringdata_CLASSMyWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ac2f7f7f936a534b877c84b7b2d3bea9d.html", null ],
     [ "qt_meta_stringdata_CLASSNavButtonENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a1151035db7a3cd46fcbd653e7a909cd7.html", null ],
-    [ "qt_meta_stringdata_CLASSNDBPoolENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a50f1051c1b78793e629e5ccb466473fe.html", null ],
     [ "qt_meta_stringdata_CLASSPaidSingleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a9893e854ff6dd54dfe951fa5d9bfb40e.html", null ],
     [ "qt_meta_stringdata_CLASSPartWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a19d8c7d88ba1ba4210b8271b0d3d1c79.html", null ],
     [ "qt_meta_stringdata_CLASSPcmPlayer_SDLENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a62a17d960e959c30b71c92127f8a6dbd.html", null ],
@@ -851,7 +866,6 @@ var hierarchy =
     [ "qt_meta_stringdata_CLASSRecommendForYouENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a47606e32bf67392518636a1334d986e3.html", null ],
     [ "qt_meta_stringdata_CLASSRefreshMaskENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_adaf96700d5827f4f1ceb1b4842e518cc.html", null ],
     [ "qt_meta_stringdata_CLASSSearchENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_search_e_n_d_c_l_a_s_s__t.html", null ],
-    [ "qt_meta_stringdata_CLASSServerENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a_s_s_server_e_n_d_c_l_a_s_s__t.html", null ],
     [ "qt_meta_stringdata_CLASSSideHideLabelENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a54ba3c1cf880cd19be743ff5b3f34415.html", null ],
     [ "qt_meta_stringdata_CLASSSingerWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a7f77ce726f148369654bf35d4136ddd1.html", null ],
     [ "qt_meta_stringdata_CLASSSingleSongENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae80fd0470fd4bcada86c640efb93ff17.html", null ],
@@ -866,7 +880,6 @@ var hierarchy =
     [ "qt_meta_stringdata_CLASSSongOptionMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a874dd76fb8b543a5b8fdc7080db89cf8.html", null ],
     [ "qt_meta_stringdata_CLASSSortOptionMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a5de7dd28d7354b58c64e8e469e243c23.html", null ],
     [ "qt_meta_stringdata_CLASSSpecialAlbumENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2648e149b6f42dbadfad9bf4db51b799.html", null ],
-    [ "qt_meta_stringdata_CLASSSqliteDataProviderENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a40a1b365a4b5bbee47847f2752b90e72.html", null ],
     [ "qt_meta_stringdata_CLASSTableWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0faad3969f139e61fbc4699567ebef86.html", null ],
     [ "qt_meta_stringdata_CLASSTextBubbleENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a43f1f33c399020c768220142483c7d32.html", null ],
     [ "qt_meta_stringdata_CLASSTitleOptionMenuENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ae6b087682e85f1294653d0905f8fbcb9.html", null ],
@@ -942,6 +955,8 @@ var hierarchy =
       [ "DownloadingWidget", "class_downloading_widget.html", null ],
       [ "ElaMaskWidget", "class_ela_mask_widget.html", null ],
       [ "ElaMessageBar", "class_ela_message_bar.html", null ],
+      [ "ElaSuggestBox", "class_ela_suggest_box.html", null ],
+      [ "ElaSuggestBoxSearchViewContainer", "class_ela_suggest_box_search_view_container.html", null ],
       [ "ElaToggleSwitch", "class_ela_toggle_switch.html", null ],
       [ "ElaToolTip", "class_ela_tool_tip.html", null ],
       [ "GLTabWidget", "class_g_l_tab_widget.html", null ],
@@ -961,6 +976,8 @@ var hierarchy =
       [ "LiveMusicPartWidget", "class_live_music_part_widget.html", null ],
       [ "LocalDownload", "class_local_download.html", null ],
       [ "LocalSong", "class_local_song.html", null ],
+      [ "LoginRegisterForm", "class_login_register_form.html", null ],
+      [ "Login_form", "class_login__form.html", null ],
       [ "MVBlockWidget", "class_m_v_block_widget.html", null ],
       [ "MVWidget", "class_m_v_widget.html", null ],
       [ "MainWindow", "class_main_window.html", [
@@ -1003,7 +1020,9 @@ var hierarchy =
       [ "RecentlyVideoWidget", "class_recently_video_widget.html", null ],
       [ "RecommendForYou", "class_recommend_for_you.html", null ],
       [ "RefreshMask", "class_refresh_mask.html", null ],
+      [ "Registration_form", "class_registration__form.html", null ],
       [ "SMaskWidget", "class_s_mask_widget.html", null ],
+      [ "Scroll_bar", "class_scroll__bar.html", null ],
       [ "Search", "class_search.html", null ],
       [ "SingerWidget", "class_singer_widget.html", null ],
       [ "SingleSong", "class_single_song.html", null ],
@@ -1016,6 +1035,7 @@ var hierarchy =
       [ "SpeedDialog", "class_speed_dialog.html", null ],
       [ "TableWidget", "class_table_widget.html", null ],
       [ "TitleWidget", "class_title_widget.html", null ],
+      [ "Transparent_transition_interface", "class_transparent__transition__interface.html", null ],
       [ "UploadedSong", "class_uploaded_song.html", null ],
       [ "UploadingSong", "class_uploading_song.html", null ],
       [ "Video", "class_video.html", null ],
@@ -1278,279 +1298,210 @@ var hierarchy =
     [ "udp_client", "classspdlog_1_1details_1_1udp__client.html", null ],
     [ "udp_sink_config", "structspdlog_1_1sinks_1_1udp__sink__config.html", null ],
     [ "Ui_AiChat", "class_ui___ai_chat.html", [
-      [ "AiChat", "class_ui_1_1_ai_chat.html", null ],
       [ "AiChat", "class_ui_1_1_ai_chat.html", null ]
     ] ],
     [ "Ui_AllCloudDisk", "class_ui___all_cloud_disk.html", [
-      [ "AllCloudDisk", "class_ui_1_1_all_cloud_disk.html", null ],
       [ "AllCloudDisk", "class_ui_1_1_all_cloud_disk.html", null ]
     ] ],
     [ "Ui_AllLocal", "class_ui___all_local.html", [
-      [ "AllLocal", "class_ui_1_1_all_local.html", null ],
       [ "AllLocal", "class_ui_1_1_all_local.html", null ]
     ] ],
     [ "Ui_AllLove", "class_ui___all_love.html", [
-      [ "AllLove", "class_ui_1_1_all_love.html", null ],
       [ "AllLove", "class_ui_1_1_all_love.html", null ]
     ] ],
     [ "Ui_AllMusic", "class_ui___all_music.html", [
-      [ "AllMusic", "class_ui_1_1_all_music.html", null ],
       [ "AllMusic", "class_ui_1_1_all_music.html", null ]
     ] ],
     [ "Ui_AllPaid", "class_ui___all_paid.html", [
-      [ "AllPaid", "class_ui_1_1_all_paid.html", null ],
       [ "AllPaid", "class_ui_1_1_all_paid.html", null ]
     ] ],
     [ "Ui_AllRecent", "class_ui___all_recent.html", [
-      [ "AllRecent", "class_ui_1_1_all_recent.html", null ],
       [ "AllRecent", "class_ui_1_1_all_recent.html", null ]
     ] ],
     [ "Ui_AllSongList", "class_ui___all_song_list.html", [
-      [ "AllSongList", "class_ui_1_1_all_song_list.html", null ],
       [ "AllSongList", "class_ui_1_1_all_song_list.html", null ]
     ] ],
     [ "Ui_AllWidget", "class_ui___all_widget.html", [
-      [ "AllWidget", "class_ui_1_1_all_widget.html", null ],
       [ "AllWidget", "class_ui_1_1_all_widget.html", null ]
     ] ],
     [ "Ui_Channel", "class_ui___channel.html", [
-      [ "Channel", "class_ui_1_1_channel.html", null ],
       [ "Channel", "class_ui_1_1_channel.html", null ]
     ] ],
     [ "Ui_ChannelBlock", "class_ui___channel_block.html", [
-      [ "ChannelBlock", "class_ui_1_1_channel_block.html", null ],
       [ "ChannelBlock", "class_ui_1_1_channel_block.html", null ]
     ] ],
     [ "Ui_CollectVideo", "class_ui___collect_video.html", [
-      [ "CollectVideo", "class_ui_1_1_collect_video.html", null ],
       [ "CollectVideo", "class_ui_1_1_collect_video.html", null ]
     ] ],
     [ "Ui_DailyRecommend", "class_ui___daily_recommend.html", [
-      [ "DailyRecommend", "class_ui_1_1_daily_recommend.html", null ],
       [ "DailyRecommend", "class_ui_1_1_daily_recommend.html", null ]
     ] ],
     [ "Ui_DeviceWidget", "class_ui___device_widget.html", [
-      [ "DeviceWidget", "class_ui_1_1_device_widget.html", null ],
       [ "DeviceWidget", "class_ui_1_1_device_widget.html", null ]
     ] ],
     [ "Ui_DownloadedSong", "class_ui___downloaded_song.html", [
-      [ "DownloadedSong", "class_ui_1_1_downloaded_song.html", null ],
       [ "DownloadedSong", "class_ui_1_1_downloaded_song.html", null ]
     ] ],
     [ "Ui_DownloadedVideo", "class_ui___downloaded_video.html", [
-      [ "DownloadedVideo", "class_ui_1_1_downloaded_video.html", null ],
       [ "DownloadedVideo", "class_ui_1_1_downloaded_video.html", null ]
     ] ],
     [ "Ui_DownloadedWidget", "class_ui___downloaded_widget.html", [
-      [ "DownloadedWidget", "class_ui_1_1_downloaded_widget.html", null ],
       [ "DownloadedWidget", "class_ui_1_1_downloaded_widget.html", null ]
     ] ],
     [ "Ui_Downloading", "class_ui___downloading.html", [
-      [ "Downloading", "class_ui_1_1_downloading.html", null ],
       [ "Downloading", "class_ui_1_1_downloading.html", null ]
     ] ],
     [ "Ui_DownloadingWidget", "class_ui___downloading_widget.html", [
-      [ "DownloadingWidget", "class_ui_1_1_downloading_widget.html", null ],
       [ "DownloadingWidget", "class_ui_1_1_downloading_widget.html", null ]
     ] ],
     [ "Ui_KuGouApp", "class_ui___ku_gou_app.html", [
-      [ "KuGouApp", "class_ui_1_1_ku_gou_app.html", null ],
       [ "KuGouApp", "class_ui_1_1_ku_gou_app.html", null ]
     ] ],
     [ "Ui_ListenBook", "class_ui___listen_book.html", [
-      [ "ListenBook", "class_ui_1_1_listen_book.html", null ],
       [ "ListenBook", "class_ui_1_1_listen_book.html", null ]
     ] ],
     [ "Ui_ListenMyDownload", "class_ui___listen_my_download.html", [
-      [ "ListenMyDownload", "class_ui_1_1_listen_my_download.html", null ],
       [ "ListenMyDownload", "class_ui_1_1_listen_my_download.html", null ]
     ] ],
     [ "Ui_ListenRecentlyPlay", "class_ui___listen_recently_play.html", [
-      [ "ListenRecentlyPlay", "class_ui_1_1_listen_recently_play.html", null ],
       [ "ListenRecentlyPlay", "class_ui_1_1_listen_recently_play.html", null ]
     ] ],
     [ "Ui_ListenRecommend", "class_ui___listen_recommend.html", [
-      [ "ListenRecommend", "class_ui_1_1_listen_recommend.html", null ],
       [ "ListenRecommend", "class_ui_1_1_listen_recommend.html", null ]
     ] ],
     [ "Ui_ListenTableWidget", "class_ui___listen_table_widget.html", [
-      [ "ListenTableWidget", "class_ui_1_1_listen_table_widget.html", null ],
       [ "ListenTableWidget", "class_ui_1_1_listen_table_widget.html", null ]
     ] ],
     [ "Ui_Live", "class_ui___live.html", [
-      [ "Live", "class_ui_1_1_live.html", null ],
       [ "Live", "class_ui_1_1_live.html", null ]
     ] ],
     [ "Ui_LiveBigLeftWidget", "class_ui___live_big_left_widget.html", [
-      [ "LiveBigLeftWidget", "class_ui_1_1_live_big_left_widget.html", null ],
       [ "LiveBigLeftWidget", "class_ui_1_1_live_big_left_widget.html", null ]
     ] ],
     [ "Ui_LiveBlockWidget", "class_ui___live_block_widget.html", [
-      [ "LiveBlockWidget", "class_ui_1_1_live_block_widget.html", null ],
       [ "LiveBlockWidget", "class_ui_1_1_live_block_widget.html", null ]
     ] ],
     [ "Ui_LiveCommonPartWidget", "class_ui___live_common_part_widget.html", [
-      [ "LiveCommonPartWidget", "class_ui_1_1_live_common_part_widget.html", null ],
       [ "LiveCommonPartWidget", "class_ui_1_1_live_common_part_widget.html", null ]
     ] ],
     [ "Ui_LiveMusicPartWidget", "class_ui___live_music_part_widget.html", [
-      [ "LiveMusicPartWidget", "class_ui_1_1_live_music_part_widget.html", null ],
       [ "LiveMusicPartWidget", "class_ui_1_1_live_music_part_widget.html", null ]
     ] ],
     [ "Ui_LocalDownload", "class_ui___local_download.html", [
-      [ "LocalDownload", "class_ui_1_1_local_download.html", null ],
       [ "LocalDownload", "class_ui_1_1_local_download.html", null ]
     ] ],
     [ "Ui_LocalSong", "class_ui___local_song.html", [
-      [ "LocalSong", "class_ui_1_1_local_song.html", null ],
       [ "LocalSong", "class_ui_1_1_local_song.html", null ]
     ] ],
     [ "Ui_MusicCloudDisk", "class_ui___music_cloud_disk.html", [
-      [ "MusicCloudDisk", "class_ui_1_1_music_cloud_disk.html", null ],
       [ "MusicCloudDisk", "class_ui_1_1_music_cloud_disk.html", null ]
     ] ],
     [ "Ui_MusicRepoBlock", "class_ui___music_repo_block.html", [
-      [ "MusicRepoBlock", "class_ui_1_1_music_repo_block.html", null ],
       [ "MusicRepoBlock", "class_ui_1_1_music_repo_block.html", null ]
     ] ],
     [ "Ui_MusicRepoList", "class_ui___music_repo_list.html", [
-      [ "MusicRepoList", "class_ui_1_1_music_repo_list.html", null ],
       [ "MusicRepoList", "class_ui_1_1_music_repo_list.html", null ]
     ] ],
     [ "Ui_MusicRepository", "class_ui___music_repository.html", [
-      [ "MusicRepository", "class_ui_1_1_music_repository.html", null ],
       [ "MusicRepository", "class_ui_1_1_music_repository.html", null ]
     ] ],
     [ "Ui_MusicRepoVideo", "class_ui___music_repo_video.html", [
-      [ "MusicRepoVideo", "class_ui_1_1_music_repo_video.html", null ],
       [ "MusicRepoVideo", "class_ui_1_1_music_repo_video.html", null ]
     ] ],
     [ "Ui_MVBlockWidget", "class_ui___m_v_block_widget.html", [
-      [ "MVBlockWidget", "class_ui_1_1_m_v_block_widget.html", null ],
       [ "MVBlockWidget", "class_ui_1_1_m_v_block_widget.html", null ]
     ] ],
     [ "Ui_MVWidget", "class_ui___m_v_widget.html", [
-      [ "MVWidget", "class_ui_1_1_m_v_widget.html", null ],
       [ "MVWidget", "class_ui_1_1_m_v_widget.html", null ]
     ] ],
     [ "Ui_MyCollection", "class_ui___my_collection.html", [
-      [ "MyCollection", "class_ui_1_1_my_collection.html", null ],
       [ "MyCollection", "class_ui_1_1_my_collection.html", null ]
     ] ],
     [ "Ui_PaidSingle", "class_ui___paid_single.html", [
-      [ "PaidSingle", "class_ui_1_1_paid_single.html", null ],
       [ "PaidSingle", "class_ui_1_1_paid_single.html", null ]
     ] ],
     [ "Ui_PurchasedAlbums", "class_ui___purchased_albums.html", [
-      [ "PurchasedAlbums", "class_ui_1_1_purchased_albums.html", null ],
       [ "PurchasedAlbums", "class_ui_1_1_purchased_albums.html", null ]
     ] ],
     [ "Ui_PurchasedMusic", "class_ui___purchased_music.html", [
-      [ "PurchasedMusic", "class_ui_1_1_purchased_music.html", null ],
       [ "PurchasedMusic", "class_ui_1_1_purchased_music.html", null ]
     ] ],
     [ "Ui_PurchasedVideos", "class_ui___purchased_videos.html", [
-      [ "PurchasedVideos", "class_ui_1_1_purchased_videos.html", null ],
       [ "PurchasedVideos", "class_ui_1_1_purchased_videos.html", null ]
     ] ],
     [ "Ui_RankListWidget", "class_ui___rank_list_widget.html", [
-      [ "RankListWidget", "class_ui_1_1_rank_list_widget.html", null ],
       [ "RankListWidget", "class_ui_1_1_rank_list_widget.html", null ]
     ] ],
     [ "Ui_RankPartWidget", "class_ui___rank_part_widget.html", [
-      [ "RankPartWidget", "class_ui_1_1_rank_part_widget.html", null ],
       [ "RankPartWidget", "class_ui_1_1_rank_part_widget.html", null ]
     ] ],
     [ "Ui_RecentlyChannelBlock", "class_ui___recently_channel_block.html", [
-      [ "RecentlyChannelBlock", "class_ui_1_1_recently_channel_block.html", null ],
       [ "RecentlyChannelBlock", "class_ui_1_1_recently_channel_block.html", null ]
     ] ],
     [ "Ui_RecentlyMVChannel", "class_ui___recently_m_v_channel.html", [
-      [ "RecentlyMVChannel", "class_ui_1_1_recently_m_v_channel.html", null ],
       [ "RecentlyMVChannel", "class_ui_1_1_recently_m_v_channel.html", null ]
     ] ],
     [ "Ui_RecentlyPlayed", "class_ui___recently_played.html", [
-      [ "RecentlyPlayed", "class_ui_1_1_recently_played.html", null ],
       [ "RecentlyPlayed", "class_ui_1_1_recently_played.html", null ]
     ] ],
     [ "Ui_RecentlySingleSong", "class_ui___recently_single_song.html", [
-      [ "RecentlySingleSong", "class_ui_1_1_recently_single_song.html", null ],
       [ "RecentlySingleSong", "class_ui_1_1_recently_single_song.html", null ]
     ] ],
     [ "Ui_RecentlySongChannel", "class_ui___recently_song_channel.html", [
-      [ "RecentlySongChannel", "class_ui_1_1_recently_song_channel.html", null ],
       [ "RecentlySongChannel", "class_ui_1_1_recently_song_channel.html", null ]
     ] ],
     [ "Ui_RecentlySongList", "class_ui___recently_song_list.html", [
-      [ "RecentlySongList", "class_ui_1_1_recently_song_list.html", null ],
       [ "RecentlySongList", "class_ui_1_1_recently_song_list.html", null ]
     ] ],
     [ "Ui_RecentlyVideoWidget", "class_ui___recently_video_widget.html", [
-      [ "RecentlyVideoWidget", "class_ui_1_1_recently_video_widget.html", null ],
       [ "RecentlyVideoWidget", "class_ui_1_1_recently_video_widget.html", null ]
     ] ],
     [ "Ui_RecommendForYou", "class_ui___recommend_for_you.html", [
-      [ "RecommendForYou", "class_ui_1_1_recommend_for_you.html", null ],
       [ "RecommendForYou", "class_ui_1_1_recommend_for_you.html", null ]
     ] ],
     [ "Ui_Search", "class_ui___search.html", [
-      [ "Search", "class_ui_1_1_search.html", null ],
       [ "Search", "class_ui_1_1_search.html", null ]
     ] ],
     [ "Ui_SingerWidget", "class_ui___singer_widget.html", [
-      [ "SingerWidget", "class_ui_1_1_singer_widget.html", null ],
       [ "SingerWidget", "class_ui_1_1_singer_widget.html", null ]
     ] ],
     [ "Ui_SingleSong", "class_ui___single_song.html", [
-      [ "SingleSong", "class_ui_1_1_single_song.html", null ],
       [ "SingleSong", "class_ui_1_1_single_song.html", null ]
     ] ],
     [ "Ui_SongList", "class_ui___song_list.html", [
-      [ "SongList", "class_ui_1_1_song_list.html", null ],
       [ "SongList", "class_ui_1_1_song_list.html", null ]
     ] ],
     [ "Ui_SongListBlockWidget", "class_ui___song_list_block_widget.html", [
-      [ "SongListBlockWidget", "class_ui_1_1_song_list_block_widget.html", null ],
       [ "SongListBlockWidget", "class_ui_1_1_song_list_block_widget.html", null ]
     ] ],
     [ "Ui_SongListWidget", "class_ui___song_list_widget.html", [
-      [ "SongListWidget", "class_ui_1_1_song_list_widget.html", null ],
       [ "SongListWidget", "class_ui_1_1_song_list_widget.html", null ]
     ] ],
     [ "Ui_SpecialAlbum", "class_ui___special_album.html", [
-      [ "SpecialAlbum", "class_ui_1_1_special_album.html", null ],
       [ "SpecialAlbum", "class_ui_1_1_special_album.html", null ]
     ] ],
     [ "Ui_TitleWidget", "class_ui___title_widget.html", [
-      [ "TitleWidget", "class_ui_1_1_title_widget.html", null ],
       [ "TitleWidget", "class_ui_1_1_title_widget.html", null ]
     ] ],
     [ "Ui_UploadedSong", "class_ui___uploaded_song.html", [
-      [ "UploadedSong", "class_ui_1_1_uploaded_song.html", null ],
       [ "UploadedSong", "class_ui_1_1_uploaded_song.html", null ]
     ] ],
     [ "Ui_UploadingSong", "class_ui___uploading_song.html", [
-      [ "UploadingSong", "class_ui_1_1_uploading_song.html", null ],
       [ "UploadingSong", "class_ui_1_1_uploading_song.html", null ]
     ] ],
     [ "Ui_Video", "class_ui___video.html", [
-      [ "Video", "class_ui_1_1_video.html", null ],
       [ "Video", "class_ui_1_1_video.html", null ]
     ] ],
     [ "Ui_VideoBlockWidget", "class_ui___video_block_widget.html", [
-      [ "VideoBlockWidget", "class_ui_1_1_video_block_widget.html", null ],
       [ "VideoBlockWidget", "class_ui_1_1_video_block_widget.html", null ]
     ] ],
     [ "Ui_VideoChannelBlock", "class_ui___video_channel_block.html", [
-      [ "VideoChannelBlock", "class_ui_1_1_video_channel_block.html", null ],
       [ "VideoChannelBlock", "class_ui_1_1_video_channel_block.html", null ]
     ] ],
     [ "Ui_VideoChannelWidget", "class_ui___video_channel_widget.html", [
-      [ "VideoChannelWidget", "class_ui_1_1_video_channel_widget.html", null ],
       [ "VideoChannelWidget", "class_ui_1_1_video_channel_widget.html", null ]
     ] ],
     [ "Ui_VideoWidget", "class_ui___video_widget.html", [
-      [ "VideoWidget", "class_ui_1_1_video_widget.html", null ],
       [ "VideoWidget", "class_ui_1_1_video_widget.html", null ]
     ] ],
     [ "uint128_fallback", "classdetail_1_1uint128__fallback.html", null ],

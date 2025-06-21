@@ -5,6 +5,5 @@ var dir_bcd0bc981f21dd18366807150307fa10 =
     [ "ElaExitDialogPrivate.cpp", "_ela_exit_dialog_private_8cpp.html", null ],
     [ "ElaExitDialogPrivate.h", "_ela_exit_dialog_private_8h.html", "_ela_exit_dialog_private_8h" ],
     [ "ElaMaskWidget.cpp", "_ela_mask_widget_8cpp.html", null ],
-    [ "ElaMaskWidget.h", "_ela_mask_widget_8h.html", "_ela_mask_widget_8h" ],
-    [ "ElaWinShadowHelper.h", "_ela_win_shadow_helper_8h.html", null ]
+    [ "ElaMaskWidget.h", "_ela_mask_widget_8h.html", "_ela_mask_widget_8h" ]
 ];

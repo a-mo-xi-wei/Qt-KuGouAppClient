@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['zalloc_0',['zalloc',['../structz__stream__s.html#a0b2f68e949d83a93be0e4d0b88148c80',1,'z_stream_s']]],
-  ['zfree_1',['zfree',['../structz__stream__s.html#a7587bb1e332fc8f57ef74071eeec8070',1,'z_stream_s']]]
+  ['zoom_5frate_0',['zoom_rate',['../class_login__form.html#a3258bbe1ca7ac0f3cf70eeac90dfb812',1,'Login_form::zoom_rate'],['../class_registration__form.html#a3258bbe1ca7ac0f3cf70eeac90dfb812',1,'Registration_form::zoom_rate']]]
 ];

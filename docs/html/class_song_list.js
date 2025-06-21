@@ -8,8 +8,8 @@ var class_song_list =
     [ "on_all_toolButton_clicked", "class_song_list.html#ae1c54bcbe42b11a9741ad91c663fbe3c", null ],
     [ "onMenuFuncClicked", "class_song_list.html#a3376021aaa9cfd16e6cb0c4692df187d", null ],
     [ "shuffleVector", "class_song_list.html#af15e04d7e7cf5cff3e7bd02e6421f467", null ],
-    [ "m_coverVector", "class_song_list.html#abcfdebeaccf8ea928d6f1d62f8b237e3", null ],
-    [ "m_descVector", "class_song_list.html#a8f9c26adb885bb8a6dbbb7daf76e03dc", null ],
+    [ "m_coverVector", "class_song_list.html#a04df82141c94aed7bbfa0aea6641b19d", null ],
+    [ "m_descVector", "class_song_list.html#af291de573f33db84d0baf7f1ea41e0e3", null ],
     [ "m_menu", "class_song_list.html#a713f08fc66345de376a1e79106d24270", null ],
     [ "ui", "class_song_list.html#a85efe5ce73e66349f6b90156c0fb6baf", null ]
 ];

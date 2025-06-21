@@ -1,0 +1,43 @@
+digraph "ui"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_d3305b01cebad1f13f311f52d3f850d2 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="cmake-build-release\l-mingw", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_d3305b01cebad1f13f311f52d3f850d2.html",tooltip=""]
+  subgraph clusterdir_3514edb95387b97f754a71ab42f43bfa {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_3514edb95387b97f754a71ab42f43bfa.html",tooltip=""]
+    dir_3514edb95387b97f754a71ab42f43bfa [shape=plaintext, label="ui"];
+  dir_c1a624130338c0281fc7bad7e5d5d543 [label="ElaWidgetTools", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_c1a624130338c0281fc7bad7e5d5d543.html",tooltip=""];
+  dir_8414a2a7337221cb196311fb7fdc75e6 [label="MusicItemWidget", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_8414a2a7337221cb196311fb7fdc75e6.html",tooltip=""];
+  dir_7e754dd253d7343f42444169fa139a14 [label="MyBlockWidget", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_7e754dd253d7343f42444169fa139a14.html",tooltip=""];
+  dir_d03728d12e37185e74c7414756ea6a47 [label="MyButton", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_d03728d12e37185e74c7414756ea6a47.html",tooltip=""];
+  dir_2e5486be9dfc4e74933f653ddd94c432 [label="MyCheckBox", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_2e5486be9dfc4e74933f653ddd94c432.html",tooltip=""];
+  dir_90809b165c2d1d87c38d523491bbf32e [label="MyDialog", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_90809b165c2d1d87c38d523491bbf32e.html",tooltip=""];
+  dir_7c33fd1d262029a0ff2675a6a65df26d [label="MyFlowLayout", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_7c33fd1d262029a0ff2675a6a65df26d.html",tooltip=""];
+  dir_36d60833d543654137012bb8387b9726 [label="MyMaskWidget", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_36d60833d543654137012bb8387b9726.html",tooltip=""];
+  dir_2061c549940e9286be1dc05de7b5adea [label="MyMenu", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_2061c549940e9286be1dc05de7b5adea.html",tooltip=""];
+  dir_851eff9c320cf74848a7357b0c308a47 [label="MyScrollArea", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_851eff9c320cf74848a7357b0c308a47.html",tooltip=""];
+  dir_4abb7802f3d8abda06bfe95470ca495c [label="MySearchLineEdit", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_4abb7802f3d8abda06bfe95470ca495c.html",tooltip=""];
+  dir_edb1968feefe83468a8fdac4dfaf0c08 [label="MySlidingStackedWidget", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_edb1968feefe83468a8fdac4dfaf0c08.html",tooltip=""];
+  dir_acbfe3bc1992ec283a767e01a1dc1836 [label="MyWindow", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_acbfe3bc1992ec283a767e01a1dc1836.html",tooltip=""];
+  dir_36146b9b01a39797fff0083f32bcaa60 [label="QtMaterialWidget", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_36146b9b01a39797fff0083f32bcaa60.html",tooltip=""];
+  }
+  }
+  dir_1788f8309b1a812dcb800a185471cf6c [label="ui", fillcolor="#edf0f7", color="red", style="filled", URL="dir_1788f8309b1a812dcb800a185471cf6c.html",tooltip=""];
+  dir_c1a624130338c0281fc7bad7e5d5d543->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="44", labeldistance=1.5 headhref="dir_000088_000335.html" href="dir_000088_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_8414a2a7337221cb196311fb7fdc75e6->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="1", labeldistance=1.5 headhref="dir_000199_000335.html" href="dir_000199_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_7e754dd253d7343f42444169fa139a14->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="1", labeldistance=1.5 headhref="dir_000210_000335.html" href="dir_000210_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d03728d12e37185e74c7414756ea6a47->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="6", labeldistance=1.5 headhref="dir_000213_000335.html" href="dir_000213_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_2e5486be9dfc4e74933f653ddd94c432->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="1", labeldistance=1.5 headhref="dir_000216_000335.html" href="dir_000216_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_90809b165c2d1d87c38d523491bbf32e->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="2", labeldistance=1.5 headhref="dir_000225_000335.html" href="dir_000225_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_36d60833d543654137012bb8387b9726->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="2", labeldistance=1.5 headhref="dir_000234_000335.html" href="dir_000234_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_2061c549940e9286be1dc05de7b5adea->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="8", labeldistance=1.5 headhref="dir_000237_000335.html" href="dir_000237_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_851eff9c320cf74848a7357b0c308a47->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="1", labeldistance=1.5 headhref="dir_000246_000335.html" href="dir_000246_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_4abb7802f3d8abda06bfe95470ca495c->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="1", labeldistance=1.5 headhref="dir_000249_000335.html" href="dir_000249_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_edb1968feefe83468a8fdac4dfaf0c08->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="1", labeldistance=1.5 headhref="dir_000252_000335.html" href="dir_000252_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_acbfe3bc1992ec283a767e01a1dc1836->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="8", labeldistance=1.5 headhref="dir_000259_000335.html" href="dir_000259_000335.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_36146b9b01a39797fff0083f32bcaa60->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="20", labeldistance=1.5 headhref="dir_000288_000335.html" href="dir_000288_000335.html" color="steelblue1" fontcolor="steelblue1"];
+}

@@ -1,0 +1,28 @@
+digraph "qtmaterialstatetransitionevent.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="qtmaterialstatetransitionevent.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="定义 QtMaterialStateTransitionEvent 类和状态转换类型枚举"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="qtmaterialslider.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qtmaterialslider_8cpp.html",tooltip="实现 QtMaterialSlider 类，Material 风格滑块控件"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="qtmaterialstatetransition.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qtmaterialstatetransition_8h.html",tooltip="定义 QtMaterialStateTransition 类，提供状态转换功能"];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="moc_qtmaterialstatetransition.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc__qtmaterialstatetransition_8cpp.html",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="mocs_compilation.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ui_2_qt_material_widget_2_qt_material_widget__autogen_2mocs__compilation_8cpp.html",tooltip=" "];
+  Node3 -> Node6 [id="edge5_Node000003_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="qtmaterialdialog.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qtmaterialdialog_8cpp.html",tooltip="实现 QtMaterialDialog 类，提供 Material Design 对话框"];
+  Node3 -> Node7 [id="edge6_Node000003_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="qtmaterialflatbutton\l_internal.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qtmaterialflatbutton__internal_8cpp.html",tooltip="实现 QtMaterialFlatButtonStateMachine 类，提供扁平按钮状态管理"];
+  Node3 -> Node8 [id="edge7_Node000003_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="qtmaterialslider_internal.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qtmaterialslider__internal_8cpp.html",tooltip="实现滑块控件的内部实现类"];
+  Node3 -> Node9 [id="edge8_Node000003_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="qtmaterialsnackbar.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qtmaterialsnackbar_8cpp.html",tooltip="实现 QtMaterialSnackbar 类，提供 Material Design 提示条"];
+  Node3 -> Node10 [id="edge9_Node000003_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="qtmaterialsnackbar\l_internal.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qtmaterialsnackbar__internal_8cpp.html",tooltip="实现 QtMaterialSnackbarStateMachine 类，提供提示条状态管理"];
+  Node3 -> Node11 [id="edge10_Node000003_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="qtmaterialstatetransition.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$qtmaterialstatetransition_8cpp.html",tooltip="实现 QtMaterialStateTransition 类，提供状态转换功能"];
+}
