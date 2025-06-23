@@ -65,6 +65,7 @@ void RecentlySongChannel::initUi()
     this->m_searchAction->setIconVisibleInMenu(false); ///< 仅显示图标
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作到搜索框
     ui->search_lineEdit->setMaxWidth(150);              ///< 设置搜索框最大宽度
+    ui->search_lineEdit->setBorderRadius(10);
     auto font = QFont("AaSongLiuKaiTi");                ///< 设置搜索框字体
     font.setWeight(QFont::Bold);
     ui->search_lineEdit->setFont(font);

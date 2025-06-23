@@ -13,7 +13,6 @@
 #include "ElaToolTip.h"
 #include "ElaMessageBar.h"
 #include "MySearchLineEdit.h"
-#include "ElaSuggestBox.h"
 
 #include <QGuiApplication>
 #include <QPainter>
@@ -160,13 +159,11 @@ void TitleWidget::initUi()
     ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
 
     auto searchLineEdit = new MySearchLineEdit();
-    searchLineEdit->setObjectName("searchLineEdit");
     searchLineEdit->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
     searchLineEdit->setMinimumSize(100,40);
     searchLineEdit->setMaximumHeight(40);
     searchLineEdit->setBorderRadius(8);
     searchLineEdit->setClearButtonEnabled(true);
-    searchLineEdit->setStyleSheet("padding-left: 10px;");
     auto font = QFont("AaSongLiuKaiTi");
     font.setWeight(QFont::Bold);
     font.setPointSize(12);
@@ -174,7 +171,7 @@ void TitleWidget::initUi()
     ui->search_song_suggest_box->setMinimumWidth(0);
     ui->search_song_suggest_box->setLineEdit(searchLineEdit);
     searchLineEdit->setPlaceholderText("搜索歌曲");
-
+    ///< qDebug()<<"当前样式："<<searchLineEdit->styleSheet();
 
     //除非自定义QToolButton否则达不到 CSS 中 border-image 的效果
     //ui->listen_toolButton->setIcon(QIcon(":/Res/titlebar/listen-music-black.svg"));

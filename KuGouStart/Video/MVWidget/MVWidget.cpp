@@ -272,8 +272,10 @@ void MVWidget::initUi()
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置图标
     this->m_searchAction->setIconVisibleInMenu(false);
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加到搜索框
+    ui->search_lineEdit->setBorderRadius(10);
     auto font = QFont("AaSongLiuKaiTi");     ///< 设置字体
     font.setWeight(QFont::Bold);
+    font.setPixelSize(12);
     ui->search_lineEdit->setFont(font);
 
     QToolButton *searchButton = nullptr;

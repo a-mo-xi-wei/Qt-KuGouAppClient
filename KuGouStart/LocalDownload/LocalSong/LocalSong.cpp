@@ -190,8 +190,10 @@ void LocalSong::initUi()
     this->m_searchAction->setIconVisibleInMenu(false);   ///< 仅显示图标
     ui->local_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作
     ui->local_search_lineEdit->setMaxWidth(150);         ///< 设置搜索框最大宽度
+    ui->local_search_lineEdit->setBorderRadius(10);
     auto font = QFont("AaSongLiuKaiTi");                 ///< 设置字体
-    font.setWeight(QFont::Bold);                         ///< 设置粗体
+    font.setWeight(QFont::Bold);
+    font.setPointSize(12);                      ///< 设置粗体
     ui->local_search_lineEdit->setFont(font);            ///< 应用字体
     QToolButton *searchButton = nullptr;                 ///< 搜索按钮
     foreach (QToolButton *btn, ui->local_search_lineEdit->findChildren<QToolButton *>())

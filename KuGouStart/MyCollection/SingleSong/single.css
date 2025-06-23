@@ -71,16 +71,11 @@ QToolButton#collect_sort_toolButton:hover {
 }
 
 QLineEdit#search_lineEdit {
-     border-radius: 12px;
+    border-radius: 10px;
      padding-left: 5px;
-     background-color: #d1e8f6;
      border:1px solid #6fafa7;
-     font-size: 16px;
+     background-color:transparent;
  }
-
-QLineEdit#search_lineEdit:hover {
-    background-color: #bcddfa;
-}
 
 /**************content_widget*************/
 QLabel#prompt_label{

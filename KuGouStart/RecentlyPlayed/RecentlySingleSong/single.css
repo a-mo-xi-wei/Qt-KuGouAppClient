@@ -53,15 +53,11 @@ QToolButton#recently_sort_toolButton:hover {
     border-image:url(":/Res/titlebar/sort-blue.svg");
 }
 
-QLineEdit#search_lineEdit{
-    border-radius: 12px;
-    background-color: #d1e8f6;
-    border:1px solid #6fafa7;
+QLineEdit{
+    border-radius: 10px;
     padding-left: 5px;
-    font-size: 16px;
-}
-QLineEdit#search_lineEdit:hover{
-    background-color: #bcddfa;
+    border:1px solid #6fafa7;
+    background-color:transparent;
 }
 /**************content_widget*************/
 QLabel#prompt_label{

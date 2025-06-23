@@ -105,6 +105,7 @@ void UploadedSong::initUi()
     auto font = QFont("AaSongLiuKaiTi");                 ///< 设置字体
     font.setWeight(QFont::Bold);                         ///< 设置粗体
     ui->search_lineEdit->setFont(font);                  ///< 应用字体
+    ui->search_lineEdit->setBorderRadius(10);
     QToolButton *searchButton = nullptr;                 ///< 搜索按钮
     foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton *>())
     {

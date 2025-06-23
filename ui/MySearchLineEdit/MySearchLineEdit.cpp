@@ -22,6 +22,7 @@ MySearchLineEdit::MySearchLineEdit(QWidget *parent)
     , m_widthAnimation(new QPropertyAnimation(this, "minimumWidth", this))
     , m_markAnimation(new QPropertyAnimation(this, "expandMarkWidth", this))
 {
+    setObjectName("ElaLineEdit");
     // 通用动画设置
     m_widthAnimation->setEasingCurve(QEasingCurve::InOutSine);
     m_widthAnimation->setDuration(300);

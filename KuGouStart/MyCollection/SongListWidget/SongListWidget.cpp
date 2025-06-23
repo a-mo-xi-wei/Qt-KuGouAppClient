@@ -59,8 +59,10 @@ void SongListWidget::initUi()
     ui->search_lineEdit->setPlaceholderText(QStringLiteral("搜索")); ///< 设置搜索栏占位文本
     ui->search_lineEdit->setMaxWidth(200);               ///< 设置搜索栏最大宽度
     auto font = QFont("AaSongLiuKaiTi");                ///< 设置搜索栏字体
-    font.setWeight(QFont::Bold);                        ///< 设置字体加粗
+    font.setWeight(QFont::Bold);
+    font.setPointSize(12);                  ///< 设置字体加粗
     ui->search_lineEdit->setFont(font);                 ///< 应用字体
+    ui->search_lineEdit->setBorderRadius(10);
     this->m_searchAction = new QAction(QIcon(":/MenuIcon/Res/menuIcon/search-black.svg"), "搜索", ui->search_lineEdit); ///< 创建搜索动作
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作到右侧
     QToolButton *searchButton = nullptr;

@@ -107,6 +107,7 @@ void PaidSingle::initUi()
     auto font = QFont("AaSongLiuKaiTi");                ///< 设置搜索框字体
     font.setWeight(QFont::Bold);
     ui->paid_search_lineEdit->setFont(font);
+    ui->paid_search_lineEdit->setBorderRadius(10);
     QToolButton *searchButton = nullptr;
     foreach (QToolButton *btn, ui->paid_search_lineEdit->findChildren<QToolButton *>()) {
         if (btn->defaultAction() == this->m_searchAction) {

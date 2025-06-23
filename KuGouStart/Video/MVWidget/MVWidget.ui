@@ -44,7 +44,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-271</y>
+        <y>0</y>
         <width>862</width>
         <height>719</height>
        </rect>
@@ -316,7 +316,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLineEdit" name="search_lineEdit">
+           <widget class="ElaLineEdit" name="search_lineEdit">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1065,6 +1065,11 @@
    <extends>QWidget</extends>
    <header>MVBlockWidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ElaLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>ElaLineEdit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

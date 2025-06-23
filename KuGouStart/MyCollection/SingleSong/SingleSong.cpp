@@ -107,8 +107,10 @@ void SingleSong::initUi()
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作
     ui->search_lineEdit->setMaxWidth(150);                   ///< 设置搜索框最大宽度
     auto font = QFont("AaSongLiuKaiTi");                    ///< 设置搜索框字体
-    font.setWeight(QFont::Bold);                            ///< 设置字体加粗
+    font.setWeight(QFont::Bold);
+    font.setPointSize(12);                          ///< 设置字体加粗
     ui->search_lineEdit->setFont(font);                     ///< 应用字体
+    ui->search_lineEdit->setBorderRadius(10);
     QToolButton *searchButton = nullptr;
     foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton *>()) {
         if (btn->defaultAction() == this->m_searchAction) {
