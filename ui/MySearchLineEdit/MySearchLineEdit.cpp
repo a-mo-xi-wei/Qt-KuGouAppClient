@@ -50,11 +50,31 @@ void MySearchLineEdit::setMaxWidth(const int &width) {
     this->m_maxWidth = width;
 }
 
+void MySearchLineEdit::stopAnimations() {
+    if (m_widthAnimation && m_widthAnimation->state() == QAbstractAnimation::Running) {
+        m_widthAnimation->stop();
+    }
+    if (m_markAnimation && m_markAnimation->state() == QAbstractAnimation::Running) {
+        m_markAnimation->stop();
+    }
+}
+
+void MySearchLineEdit::resetState() {
+    if (m_expanded) {
+        // 强制完成收缩动画
+        setMinimumWidth(getOriginalWidth());
+        setExpandMarkWidth(0);
+        m_expanded = false;
+    }
+}
+
 /**
  * @brief 重写焦点获取事件，触发展开动画
  * @param event 焦点事件
  */
 void MySearchLineEdit::focusInEvent(QFocusEvent *event) {
+    // 先停止可能正在进行的动画
+    stopAnimations();
     // 先调用基类处理焦点事件
     ElaLineEdit::focusInEvent(event);
 
@@ -72,6 +92,8 @@ void MySearchLineEdit::focusInEvent(QFocusEvent *event) {
  * @param event 焦点事件
  */
 void MySearchLineEdit::focusOutEvent(QFocusEvent *event) {
+    // 先停止可能正在进行的动画
+    stopAnimations();
     /// qDebug()<<"MySearchLineEdit 失去焦点";
     startCollapseAnimation();
     // 调用基类处理焦点离开

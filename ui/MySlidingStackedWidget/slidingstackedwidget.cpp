@@ -25,9 +25,12 @@
  */
 
 #include "slidingstackedwidget.h"
+#include "MySearchLineEdit.h"   ///< 仅仅是为了切换窗口的时候停止扩张动画，否则会闪烁
+
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
 #include <QGraphicsOpacityEffect>
+#include <QApplication>
 
 /**
  * @brief 构造函数，初始化堆栈窗口
@@ -125,6 +128,24 @@ void SlidingStackedWidget::slideInIdx(int idx, enum t_direction direction) {
 void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direction direction) {
     if (m_active) {
         return; ///< 动画进行中，直接返回
+    }
+    ///< 停止当前页面中所有输入框的动画
+    {
+        // 停止当前页面中所有输入框的动画
+        QWidget* currentPage = currentWidget();
+        if (currentPage) {
+            // 查找并停止所有 MySearchLineEdit 的动画
+            QList<MySearchLineEdit*> lineEdits = currentPage->findChildren<MySearchLineEdit*>();
+            for (MySearchLineEdit* edit : lineEdits) {
+                edit->stopAnimations();
+                edit->resetState();
+            }
+        }
+
+        // 确保输入框失去焦点
+        if (QApplication::focusWidget()) {
+            QApplication::focusWidget()->clearFocus();
+        }
     }
     m_active = true;
 

@@ -42,6 +42,16 @@ public:
      */
     void setMaxWidth(const int &width);
 
+    /**
+     * @brief 停止正在执行的动画
+     */
+    void stopAnimations();
+
+    /**
+     * @brief 重置状态
+     */
+    void resetState();
+
 protected:
     /**
      * @brief 重写焦点获取事件，触发展开动画
@@ -68,10 +78,10 @@ private:
 
     void updateMarkAnimationTarget();
 
-    QPropertyAnimation* m_widthAnimation = nullptr;
-    QPropertyAnimation* m_markAnimation = nullptr;
+    QPropertyAnimation *m_widthAnimation = nullptr;
+    QPropertyAnimation *m_markAnimation = nullptr;
 
-    int m_maxWidth{};                 ///< 最大宽度
+    int m_maxWidth{}; ///< 最大宽度
     bool m_animatingWidth = false;
     bool m_expanded = false; // 标记当前是否处于展开状态
 };
