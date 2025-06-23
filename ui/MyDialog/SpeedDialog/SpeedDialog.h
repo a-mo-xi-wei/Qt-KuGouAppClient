@@ -19,6 +19,8 @@
 #define MYDIALOG_EXPORT Q_DECL_IMPORT
 #endif
 
+#include <QMouseEvent>
+
 #include "QtMaterialSlider/qtmaterialslider.h"
 #include "SpeedDialogState.h"
 
@@ -36,12 +38,15 @@ class SnapSlider : public QtMaterialSlider
     Q_OBJECT
 
 public:
+    using QtMaterialSlider::QtMaterialSlider;
     /**
      * @brief 构造函数
      * @param parent 父控件指针，默认为 nullptr
      */
-    using QtMaterialSlider::QtMaterialSlider;
-
+    explicit SnapSlider(QWidget *parent) : QtMaterialSlider(parent) {
+        setCursor(Qt::OpenHandCursor); // 默认悬停光标
+        setMouseTracking(true);
+    }
     /**
      * @brief 吸附到最近的十分之一位置
      * @note 计算最近点并触发 numChanged 信号
@@ -83,6 +88,9 @@ protected:
     void mousePressEvent(QMouseEvent *event) override {
         // 先调用基类处理
         QtMaterialSlider::mousePressEvent(event);
+        if (event->button() == Qt::LeftButton) {
+            setCursor(Qt::ClosedHandCursor); // 按下时变为闭合手型
+        }
         m_isPress = true;
     }
 
@@ -94,6 +102,10 @@ protected:
     void mouseMoveEvent(QMouseEvent *event) override {
         // 先调用基类处理（更新位置）
         QtMaterialSlider::mouseMoveEvent(event);
+        if (event->buttons() & Qt::LeftButton) {
+            // 拖拽时保持闭合手型
+            setCursor(Qt::ClosedHandCursor);
+        }
         if (!m_isPress)return;
         // 立即跳转到最近的十分之一点
         snapToPosition();
@@ -107,6 +119,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event) override {
         // 先调用基类处理
         QtMaterialSlider::mouseReleaseEvent(event);
+        setCursor(Qt::OpenHandCursor); // 释放时恢复打开手型
         m_isPress = false;
         // 立即跳转到最近的十分之一点
         snapToPosition();

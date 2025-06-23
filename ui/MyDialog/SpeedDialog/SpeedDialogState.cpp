@@ -64,8 +64,7 @@ void SpeedDialogState::load()
  * @brief 保存状态
  * @note 将状态值写入 QSettings
  */
-void SpeedDialogState::save()
-{
+void SpeedDialogState::save() const {
     QSettings settings(SETTINGS_ORG, SETTINGS_APP);
     settings.setValue(KEY_DJ_MODE, isDJMode);                 ///< 保存 DJ 模式
     settings.setValue(KEY_DJ_BUTTON, selectedDJButton);       ///< 保存 DJ 按钮

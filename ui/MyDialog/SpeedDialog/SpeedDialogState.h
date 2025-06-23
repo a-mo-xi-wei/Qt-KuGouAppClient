@@ -44,7 +44,7 @@ public:
      * @brief 保存状态
      * @note 写入 QSettings
      */
-    void save();
+    void save() const;
 
     /**
      * @brief 重置状态
