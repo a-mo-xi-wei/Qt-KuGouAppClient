@@ -49,54 +49,14 @@ void ElaSuggestBoxPrivate::onThemeModeChanged(ElaThemeType::ThemeMode themeMode)
     _searchEdit->update();
 }
 
-/*
 void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
     Q_Q(ElaSuggestBox);
     if (searchText.isEmpty()) {
         _startCloseAnimation();
         return;
     }
-    QVector<ElaSuggestion *> suggestionVector;
-    for (const auto &suggest: _suggestionVector) {
-        qDebug()<<"suggest->getSuggestText()： "<<suggest->getSuggestText()<<" searchText: "<<searchText;
-        if (suggest->getSuggestText().contains(searchText, _pCaseSensitivity)) {
-            suggestionVector.append(suggest);
-        }
-    }
-    if (!suggestionVector.isEmpty()) {
-        _searchModel->setSearchSuggestion(suggestionVector);
-        int rowCount = suggestionVector.count();
-        if (rowCount > 4) {
-            rowCount = 4;
-        }
-        if (!_searchViewBaseWidget->isVisible()) {
-            q->raise();
-            _searchViewBaseWidget->show();
-            _searchViewBaseWidget->raise();
-            QPoint cyclePoint = _searchViewBaseWidget->mapFromGlobal(q->mapToGlobal(QPoint(-5, q->height())));
-            if (cyclePoint != QPoint(0, 0)) {
-                _searchViewBaseWidget->move(cyclePoint);
-            }
-            _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
-            _searchView->move(_searchView->x(), -(40 * rowCount + 16));
-        } else {
-            _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 12, 40 * rowCount + 16));
-        }
-        _startExpandAnimation();
-    } else {
-        _startCloseAnimation();
-    }
-}
-*/
-
-void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
-    Q_Q(ElaSuggestBox);
-    if (searchText.isEmpty()) {
-        _startCloseAnimation();
-        return;
-    }
-    q->removeAllSuggestion();
-    {
+    if (sender()->property("searchWay").toString() == "search_net_song"){
+        q->removeAllSuggestion();
         QNetworkRequest request;
         QNetworkAccessManager manger;
         request.setUrl(QUrl(
@@ -110,12 +70,12 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
         request.setRawHeader("Accept-Encoding", "deflate");
         QNetworkReply *reply = manger.get(request);
         QEventLoop loop;
-        connect(reply,SIGNAL(finished()), &loop,SLOT(quit()));
+        connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
         loop.exec();
 
         if (reply->error() == QNetworkReply::NoError) {
-            auto byt = reply->readAll();
-            auto doc = QJsonDocument::fromJson(byt);
+            const auto byt = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(byt);
             QJsonObject objTemp = doc.object();
             objTemp = objTemp.value("data").toObject();
             objTemp = objTemp.value("song").toObject();
@@ -142,11 +102,12 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
 
         QNetworkReply *reply1 = manger.post(request1, postData);
         QEventLoop loop1;
-        connect(reply1, SIGNAL(finished()), &loop1, SLOT(quit()));
+        connect(reply1, &QNetworkReply::finished, &loop1, &QEventLoop::quit);
+
         loop1.exec();
 
         if (reply1->error() == QNetworkReply::NoError) {
-            QByteArray byt = reply1->readAll();
+            const QByteArray byt = reply1->readAll();
             /// qDebug() << "Raw response:" << byt;
 
             QJsonDocument doc = QJsonDocument::fromJson(byt);
@@ -169,6 +130,15 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
         reply->deleteLater();
         reply1->deleteLater();
     }
+    else {
+        QVector<ElaSuggestion *> suggestionVector;
+        for (const auto &suggest: _suggestionVector) {
+            qDebug()<<"suggest->getSuggestText()： "<<suggest->getSuggestText()<<" searchText: "<<searchText;
+            if (suggest->getSuggestText().contains(searchText, _pCaseSensitivity)) {
+                suggestionVector.append(suggest);
+            }
+        }
+    }
     if (!_suggestionVector.isEmpty()) {
         _searchModel->setSearchSuggestion(_suggestionVector);
         int rowCount = static_cast<int>(_suggestionVector.count());
@@ -179,7 +149,7 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
             _searchViewBaseWidget->raise();
 
             // 修复位置计算 - 正确计算全局位置
-            QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+            const QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
             _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
 
             _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));

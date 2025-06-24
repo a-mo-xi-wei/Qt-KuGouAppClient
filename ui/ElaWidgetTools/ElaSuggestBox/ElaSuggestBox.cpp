@@ -15,8 +15,6 @@
 #include <QMouseEvent>
 #include <QTimer>
 
-#include "ElaLineEditPrivate.h"
-
 Q_PROPERTY_CREATE_Q_CPP(ElaSuggestBox, int, BorderRadius)
 Q_PROPERTY_CREATE_Q_CPP(ElaSuggestBox, Qt::CaseSensitivity, CaseSensitivity)
 
@@ -55,7 +53,7 @@ ElaSuggestBox::ElaSuggestBox(QWidget *parent)
     });
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setSpacing(0);
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins(1, 0, 1, 0);
     mainLayout->addWidget(d->_searchEdit);
     d->_searchViewBaseWidget = new ElaSuggestBoxSearchViewContainer(window());
     d->_shadowLayout = new QVBoxLayout(d->_searchViewBaseWidget);
@@ -201,6 +199,15 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit) {    //该函数仅供MyS
         mainLayout->insertWidget(0, d->_searchEdit);
     }
     d->_searchEdit->show();
+}
+
+void ElaSuggestBox::removeDefaultTrailAction() {
+    Q_D(ElaSuggestBox);
+    if (d->_themeMode == ElaThemeType::Light) {
+        d->_searchEdit->removeAction(d->_lightSearchAction);
+    } else {
+        d->_searchEdit->removeAction(d->_darkSearchAction);
+    }
 }
 
 void ElaSuggestBox::suggestBoxPositionChanged() {

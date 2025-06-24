@@ -24,8 +24,8 @@ MySearchLineEdit::MySearchLineEdit(QWidget *parent)
 {
     setObjectName("ElaLineEdit");
     // 通用动画设置
-    m_widthAnimation->setEasingCurve(QEasingCurve::InOutSine);
-    m_widthAnimation->setDuration(300);
+    m_widthAnimation->setEasingCurve(QEasingCurve::InOutQuart);
+    m_widthAnimation->setDuration(400);
     connect(m_widthAnimation, &QPropertyAnimation::valueChanged, this, [this]() {
         m_animatingWidth = true;
         if (!m_expanded)emit widthChanged();
@@ -38,7 +38,7 @@ MySearchLineEdit::MySearchLineEdit(QWidget *parent)
         //qDebug() << "MySearchLineEdit 动画完成，expanded =" << m_expanded;
     });
     // 标记动画设置
-    m_markAnimation->setEasingCurve(QEasingCurve::InOutSine);
+    m_markAnimation->setEasingCurve(QEasingCurve::InOutQuart);
     m_markAnimation->setDuration(300);
 }
 

@@ -36,6 +36,8 @@ public:
 
     void setLineEdit(ElaLineEdit* lineEdit);
 
+    void removeDefaultTrailAction();
+
     void suggestBoxPositionChanged();
 
 protected:

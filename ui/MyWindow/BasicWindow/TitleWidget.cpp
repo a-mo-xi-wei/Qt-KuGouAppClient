@@ -159,6 +159,7 @@ void TitleWidget::initUi()
     ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
 
     auto searchLineEdit = new MySearchLineEdit();
+    searchLineEdit->setProperty("searchWay","search_net_song");
     searchLineEdit->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
     searchLineEdit->setMinimumSize(100,40);
     searchLineEdit->setMaximumHeight(40);

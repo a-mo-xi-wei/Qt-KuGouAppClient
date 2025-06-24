@@ -25,8 +25,16 @@ void ElaSuggestDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
     initStyleOption(&viewOption, index);
 
     ElaSuggestModel *model = dynamic_cast<ElaSuggestModel *>(const_cast<QAbstractItemModel *>(index.model()));
-    ElaSuggestion *suggest = model->getSearchSuggestion(index.row());
+    if (!model) {
+        painter->restore();
+        return;
+    }
 
+    ElaSuggestion *suggest = model->getSearchSuggestion(index.row());
+    if (!suggest) { // 关键检查
+        painter->restore();
+        return;
+    }
     if (option.state.testFlag(QStyle::State_HasFocus)) {
         viewOption.state &= ~QStyle::State_HasFocus;
     }
@@ -54,7 +62,7 @@ void ElaSuggestDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
     //painter->setPen(ElaThemeColor(_themeMode, BasicText));
     //painter->drawText(option.rect.x() + 30, option.rect.y() + 25, suggest->getSuggestText());
     // 计算可用文本区域（考虑图标空间和边距）
-        QRect textRect = option.rect;
+    QRect textRect = option.rect;
     textRect.setLeft(textRect.left() + 30); // 图标区域
     textRect.setRight(textRect.right() - 10); // 右边留出10px边距
 

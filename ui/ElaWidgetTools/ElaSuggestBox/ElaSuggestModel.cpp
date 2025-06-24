@@ -33,5 +33,6 @@ ElaSuggestion *ElaSuggestModel::getSearchSuggestion(int row) {
     if (row >= _suggestionVector.count()) {
         return nullptr;
     }
+    if (_suggestionVector.isEmpty())return nullptr;
     return _suggestionVector[row];
 }
