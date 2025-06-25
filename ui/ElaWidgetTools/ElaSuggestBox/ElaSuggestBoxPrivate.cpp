@@ -1,3 +1,11 @@
+/**
+ * @file ElaSuggestBoxPrivate.cpp
+ * @brief 实现 ElaSuggestBoxPrivate 类，搜索建议框的私有实现
+ * @author WeiWang
+ * @date 2025-06-25
+ * @version 1.0
+ */
+
 #include "ElaSuggestBoxPrivate.h"
 
 #include <io.h>
@@ -20,52 +28,78 @@
 
 class QNetworkReply;
 
+/**
+ * @brief 构造函数
+ * @param parent 父对象指针，默认为 nullptr
+ */
 ElaSuggestion::ElaSuggestion(QObject *parent)
-    : QObject(parent) {
-    _pElaIcon = ElaIconType::None;
-    _pSuggestText = "";
-    _pSuggestKey = QUuid::createUuid().toString().remove("{").remove("}").remove("-");
-    _pSuggestData = QVariantMap();
-
+    : QObject(parent)
+{
+    _pElaIcon = ElaIconType::None;                            ///< 初始化图标
+    _pSuggestText = "";                                       ///< 初始化文本
+    _pSuggestKey = QUuid::createUuid().toString().remove("{").remove("}").remove("-"); ///< 生成唯一键
+    _pSuggestData = QVariantMap();                            ///< 初始化数据
 }
 
-ElaSuggestion::~ElaSuggestion() {
+/**
+ * @brief 析构函数
+ */
+ElaSuggestion::~ElaSuggestion()
+{
 }
 
+/**
+ * @brief 构造函数
+ * @param parent 父对象指针，默认为 nullptr
+ */
 ElaSuggestBoxPrivate::ElaSuggestBoxPrivate(QObject *parent)
-    : QObject{parent} {
-    _animationTimer = new QTimer(this);
-    _animationTimer->setSingleShot(true); // 单次触发
-    connect(_animationTimer, &QTimer::timeout, this, &ElaSuggestBoxPrivate::_doStartSizeAnimation);
+    : QObject{parent}
+{
+    _animationTimer = new QTimer(this);                       ///< 创建动画定时器
+    _animationTimer->setSingleShot(true);                     ///< 设置单次触发
+    connect(_animationTimer, &QTimer::timeout, this, &ElaSuggestBoxPrivate::_doStartSizeAnimation); ///< 连接超时信号
 }
 
+/**
+ * @brief 析构函数
+ */
 ElaSuggestBoxPrivate::~ElaSuggestBoxPrivate() = default;
 
-void ElaSuggestBoxPrivate::onThemeModeChanged(ElaThemeType::ThemeMode themeMode) {
-    _themeMode = themeMode;
-    _searchEdit->removeAction(_themeMode == ElaThemeType::Light ? _darkSearchAction : _lightSearchAction);
-    _searchEdit->addAction(_themeMode == ElaThemeType::Light ? _lightSearchAction : _darkSearchAction,
-                           QLineEdit::TrailingPosition);
-    _searchEdit->update();
+/**
+ * @brief 主题模式变化槽函数
+ * @param themeMode 主题模式
+ * @note 更新搜索图标
+ */
+void ElaSuggestBoxPrivate::onThemeModeChanged(ElaThemeType::ThemeMode themeMode)
+{
+    _themeMode = themeMode;                                   ///< 更新主题模式
+    _searchEdit->removeAction(_themeMode == ElaThemeType::Light ? _darkSearchAction : _lightSearchAction); ///< 移除旧图标
+    _searchEdit->addAction(_themeMode == ElaThemeType::Light ? _lightSearchAction : _darkSearchAction, QLineEdit::TrailingPosition); ///< 添加新图标
+    _searchEdit->update();                                    ///< 刷新编辑框
 }
 
-void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
+/**
+ * @brief 搜索编辑框文本编辑槽函数
+ * @param searchText 搜索文本
+ * @note 根据文本获取建议项并显示，包括网络请求（QQ音乐和网易云音乐API）
+ */
+void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
+{
     Q_Q(ElaSuggestBox);
-    if (searchText.isEmpty()) {
-        _startCloseAnimation();
+    if (searchText.isEmpty())
+    {
+        _startCloseAnimation();                               ///< 关闭建议框
         return;
     }
-    if (sender()->property("searchWay").toString() == "search_net_song"){
-        q->removeAllSuggestion();
+    if (sender()->property("searchWay").toString() == "search_net_song")
+    {
+        q->removeAllSuggestion();                             ///< 清除现有建议项
         QNetworkRequest request;
         QNetworkAccessManager manger;
-        request.setUrl(QUrl(
-            "https://c6.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?key=" + searchText +
-            "&format=json&inCharset=utf-8&outCharset=utf-8"));
+        request.setUrl(QUrl("https://c6.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?key=" + searchText + "&format=json&inCharset=utf-8&outCharset=utf-8"));
         request.setRawHeader("Accept", "application/json");
         request.setRawHeader("Accept-Language", "zh-CN");
-        request.setRawHeader("User-Agent",
-                             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36");
+        request.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36");
         request.setRawHeader("Content-Type", "text/html");
         request.setRawHeader("Accept-Encoding", "deflate");
         QNetworkReply *reply = manger.get(request);
@@ -73,19 +107,20 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
         connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
         loop.exec();
 
-        if (reply->error() == QNetworkReply::NoError) {
+        if (reply->error() == QNetworkReply::NoError)
+        {
             const auto byt = reply->readAll();
             const auto doc = QJsonDocument::fromJson(byt);
             QJsonObject objTemp = doc.object();
             objTemp = objTemp.value("data").toObject();
             objTemp = objTemp.value("song").toObject();
             QJsonArray arrayTemp = objTemp.value("itemlist").toArray();
-            for (int i = 0; i < arrayTemp.count(); i++) {
+            for (int i = 0; i < arrayTemp.count(); i++)
+            {
                 objTemp = arrayTemp.at(i).toObject();
                 const QString songName = objTemp.value("name").toString();
                 const QString songSinger = objTemp.value("singer").toString();
-                /// qDebug()<<"resp text: "<<songSinger + "-" + songName;
-                q->addSuggestion(songSinger + "-" + songName);
+                q->addSuggestion(songSinger + "-" + songName); ///< 添加 QQ 音乐建议项
             }
         }
 
@@ -106,132 +141,167 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
 
         loop1.exec();
 
-        if (reply1->error() == QNetworkReply::NoError) {
+        if (reply1->error() == QNetworkReply::NoError)
+        {
             const QByteArray byt = reply1->readAll();
-            /// qDebug() << "Raw response:" << byt;
-
             QJsonDocument doc = QJsonDocument::fromJson(byt);
             if (!doc.isObject()) return;
 
             QJsonObject rootObj = doc.object();
             QJsonArray songsArray = rootObj["result"].toObject()["songs"].toArray();
 
-            for (const QJsonValue &val : songsArray) {
+            for (const QJsonValue &val : songsArray)
+            {
                 QJsonObject songObj = val.toObject();
                 QString songName = songObj["name"].toString();
                 QJsonArray artists = songObj["artists"].toArray();
                 QString artist = !artists.isEmpty() ? artists[0].toObject()["name"].toString() : "";
-                /// qDebug() << artist + "-" + songName;
-                q->addSuggestion(artist + "-" + songName);
+                q->addSuggestion(artist + "-" + songName); ///< 添加网易云音乐建议项
             }
         }
 
         reply->deleteLater();
         reply1->deleteLater();
-        if (!_suggestionVector.isEmpty()) {
-            _searchModel->setSearchSuggestion(_suggestionVector);
+        if (!_suggestionVector.isEmpty())
+        {
+            _searchModel->setSearchSuggestion(_suggestionVector); ///< 设置模型建议项
             int rowCount = static_cast<int>(_suggestionVector.count());
             rowCount = rowCount > 6 ? 6 : rowCount;
-            if (!_searchViewBaseWidget->isVisible()) {
+            if (!_searchViewBaseWidget->isVisible())
+            {
                 q->raise();
                 _searchViewBaseWidget->show();
                 _searchViewBaseWidget->raise();
 
-                // 修复位置计算 - 正确计算全局位置
+                // @note 修复位置计算 - 正确计算全局位置
                 const QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
                 _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
 
                 _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
                 _searchView->move(_searchView->x(), -(40 * rowCount + 16));
             }
-            else {
+            else
+            {
                 _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
             }
-            _startExpandAnimation();
+            _startExpandAnimation();                          ///< 启动展开动画
         }
-        else {
-            _startCloseAnimation();
+        else
+        {
+            _startCloseAnimation();                           ///< 启动关闭动画
         }
     }
-    else {
+    else
+    {
         QVector<ElaSuggestion *> suggestionVector;
-        for (const auto &suggest: _suggestionVector) {
-            //qDebug()<<"suggest->getSuggestText()： "<<suggest->getSuggestText()<<" searchText: "<<searchText;
-            if (suggest->getSuggestText().contains(searchText, _pCaseSensitivity)) {
-                suggestionVector.append(suggest);
-                ///< qDebug()<<suggest->getSuggestText()<< " contains : "<<searchText;
+        for (const auto &suggest : _suggestionVector)
+        {
+            if (suggest->getSuggestText().contains(searchText, _pCaseSensitivity))
+            {
+                suggestionVector.append(suggest);             ///< 筛选匹配建议项
             }
         }
-        if (!suggestionVector.isEmpty()) {
-            _searchModel->setSearchSuggestion(suggestionVector);
+        if (!suggestionVector.isEmpty())
+        {
+            _searchModel->setSearchSuggestion(suggestionVector); ///< 设置模型建议项
             int rowCount = static_cast<int>(suggestionVector.count());
             rowCount = rowCount > 6 ? 6 : rowCount;
-            if (!_searchViewBaseWidget->isVisible()) {
+            if (!_searchViewBaseWidget->isVisible())
+            {
                 q->raise();
                 _searchViewBaseWidget->show();
                 _searchViewBaseWidget->raise();
 
-                // 修复位置计算 - 正确计算全局位置
+                // @note 修复位置计算 - 正确计算全局位置
                 const QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
                 _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
 
                 _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
                 _searchView->move(_searchView->x(), -(40 * rowCount + 16));
             }
-            else {
+            else
+            {
                 _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
             }
-            _startExpandAnimation();
+            _startExpandAnimation();                          ///< 启动展开动画
         }
-        else {
-            _startCloseAnimation();
+        else
+        {
+            _startCloseAnimation();                           ///< 启动关闭动画
         }
     }
 }
 
-void ElaSuggestBoxPrivate::onSearchEditWidthChanged() {
+/**
+ * @brief 搜索编辑框宽度变化槽函数
+ * @note 更新建议框位置和尺寸
+ */
+void ElaSuggestBoxPrivate::onSearchEditWidthChanged()
+{
     Q_Q(ElaSuggestBox);
     int rowCount = 0;
-    if (sender()->property("searchWay").toString() == "search_net_song") {
-       rowCount = static_cast<int>(_suggestionVector.count());
+    if (sender()->property("searchWay").toString() == "search_net_song")
+    {
+        rowCount = static_cast<int>(_suggestionVector.count());
     }
-    else rowCount = _searchModel->rowCount(QModelIndex());
+    else
+    {
+        rowCount = _searchModel->rowCount(QModelIndex());
+    }
     rowCount = rowCount > 6 ? 6 : rowCount;
-    if (_searchViewBaseWidget->isVisible()) {
-        // 修复位置计算 - 正确计算全局位置
+    if (_searchViewBaseWidget->isVisible())
+    {
+        // @note 修复位置计算 - 正确计算全局位置
         QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
         _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
-
-        //qDebug()<<"oldSize : "<< _searchViewBaseWidget->size() << " newSize : "<< QSize(q->width() + 10, 40 * rowCount + 16);
 
         _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
 
         _searchView->move(_searchView->x(), -(40 * rowCount + 16));
     }
-    //qDebug()<<__LINE__<<" _searchViewBaseWidget->pos(): "<<_searchViewBaseWidget->pos();
 }
 
-void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index) {
+/**
+ * @brief 搜索视图点击槽函数
+ * @param index 模型索引
+ * @note 处理建议项点击
+ */
+void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index)
+{
     Q_Q(ElaSuggestBox);
-    _searchEdit->clear();
-    _searchView->clearSelection();
-    if (!index.isValid()) {
+    _searchView->clearSelection();                            ///< 清除选择
+    if (!index.isValid())
+    {
         return;
     }
     ElaSuggestion *suggest = _searchModel->getSearchSuggestion(index.row());
-    Q_EMIT q->suggestionClicked(suggest->getSuggestText(), suggest->getSuggestData());
-    _startCloseAnimation();
+    Q_EMIT q->suggestionClicked(suggest->getSuggestText(), suggest->getSuggestData()); ///< 发射点击信号
+    _searchEdit->setText(suggest->getSuggestText());          ///< 设置编辑框文本
+    _startCloseAnimation();                                   ///< 关闭建议框
 }
 
-void ElaSuggestBoxPrivate::_startSizeAnimation(const QSize oldSize, const QSize newSize) {
-    _pendingSize = newSize; // 更新待处理的目标尺寸
-    if (!_animationTimer->isActive()) {
-        _animationTimer->start(30); // 启动定时器，延迟 30ms
+/**
+ * @brief 启动尺寸动画
+ * @param oldSize 旧尺寸
+ * @param newSize 新尺寸
+ * @note 使用定时器延迟启动动画
+ */
+void ElaSuggestBoxPrivate::_startSizeAnimation(const QSize oldSize, const QSize newSize)
+{
+    _pendingSize = newSize;                                   ///< 更新待处理尺寸
+    if (!_animationTimer->isActive())
+    {
+        _animationTimer->start(30);                           ///< 启动定时器，延迟 30ms
     }
 }
 
-void ElaSuggestBoxPrivate::_startExpandAnimation() {
-    if (!_isExpandAnimationFinished) {
+/**
+ * @brief 启动展开动画
+ */
+void ElaSuggestBoxPrivate::_startExpandAnimation()
+{
+    if (!_isExpandAnimationFinished)
+    {
         return;
     }
     _isCloseAnimationFinished = true;
@@ -248,8 +318,13 @@ void ElaSuggestBoxPrivate::_startExpandAnimation() {
     expandAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
-void ElaSuggestBoxPrivate::_startCloseAnimation() {
-    if (!_isCloseAnimationFinished) {
+/**
+ * @brief 启动关闭动画
+ */
+void ElaSuggestBoxPrivate::_startCloseAnimation()
+{
+    if (!_isCloseAnimationFinished)
+    {
         return;
     }
     _isExpandAnimationFinished = true;
@@ -274,10 +349,17 @@ void ElaSuggestBoxPrivate::_startCloseAnimation() {
     _lastSize = baseWidgetsAnimation->endValue().toSize();
 }
 
-void ElaSuggestBoxPrivate::_doStartSizeAnimation() {
-    if (_pendingSize.isValid()) {
+/**
+ * @brief 执行尺寸动画
+ * @note 实际启动尺寸变化动画
+ */
+void ElaSuggestBoxPrivate::_doStartSizeAnimation()
+{
+    if (_pendingSize.isValid())
+    {
         Q_Q(ElaSuggestBox);
-        if (_lastSize.isValid() && _lastSize == _pendingSize) {
+        if (_lastSize.isValid() && _lastSize == _pendingSize)
+        {
             return; // 如果目标尺寸未变，则无需动画
         }
         _shadowLayout->removeWidget(_searchView);
