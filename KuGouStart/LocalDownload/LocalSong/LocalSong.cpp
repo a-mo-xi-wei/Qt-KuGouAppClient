@@ -12,6 +12,7 @@
 #include "ElaMessageBar.h"
 #include "Async.h"
 #include "ElaToolTip.h"
+#include "MySearchLineEdit.h"
 
 #include <QFileDialog>
 #include <QJsonArray>
@@ -186,17 +187,26 @@ void LocalSong::initUi()
     ui->local_all_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
     ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-gray.svg"))); ///< 设置添加按钮图标
     ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/upload-cloud-gray.svg"))); ///< 设置上传按钮图标
+
+    auto searchLineEdit = new MySearchLineEdit();
+    searchLineEdit->setProperty("searchWay","search_net_song");
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标
     this->m_searchAction->setIconVisibleInMenu(false);   ///< 仅显示图标
-    ui->local_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作
-    ui->local_search_lineEdit->setMaxWidth(150);         ///< 设置搜索框最大宽度
-    ui->local_search_lineEdit->setBorderRadius(10);
-    auto font = QFont("AaSongLiuKaiTi");                 ///< 设置字体
+    searchLineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作
+    searchLineEdit->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
+    searchLineEdit->setFixedWidth(30);
+    searchLineEdit->setMaxWidth(150);               ///< 设置搜索框最大宽度
+    searchLineEdit->setBorderRadius(10);
+    auto font = QFont("AaSongLiuKaiTi"); ///< 设置字体
     font.setWeight(QFont::Bold);
-    font.setPointSize(12);                      ///< 设置粗体
-    ui->local_search_lineEdit->setFont(font);            ///< 应用字体
+    font.setPointSize(12);                    ///< 设置粗体
+    searchLineEdit->setFont(font);            ///< 应用字体
+    ui->local_search_suggest_box->setMinimumWidth(0);
+    ui->local_search_suggest_box->setLineEdit(searchLineEdit);
+    ui->local_search_suggest_box->removeDefaultTrailAction();
+    searchLineEdit->setPlaceholderText("");
     QToolButton *searchButton = nullptr;                 ///< 搜索按钮
-    foreach (QToolButton *btn, ui->local_search_lineEdit->findChildren<QToolButton *>())
+    foreach (QToolButton *btn, searchLineEdit->findChildren<QToolButton *>())
     {
         if (btn->defaultAction() == this->m_searchAction)
         {

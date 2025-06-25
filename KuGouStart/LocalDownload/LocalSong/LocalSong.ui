@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>886</width>
-    <height>388</height>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
    </property>
    <item>
     <widget class="QWidget" name="operation_widget" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,0,0,0,0,0">
       <item>
        <widget class="QToolButton" name="local_all_play_toolButton">
         <property name="minimumSize">
@@ -124,6 +124,9 @@
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
@@ -133,32 +136,26 @@
        </spacer>
       </item>
       <item>
-       <widget class="MySearchLineEdit" name="local_search_lineEdit">
+       <widget class="ElaSuggestBox" name="local_search_suggest_box" native="true">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="minimumSize">
-         <size>
-          <width>30</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>30</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="placeholderText">
-         <string/>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QWidget" name="small_widget" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <layout class="QHBoxLayout" name="horizontalLayout_14">
          <property name="spacing">
           <number>4</number>
@@ -576,14 +573,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>MySearchLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>MySearchLineEdit.h</header>
-  </customwidget>
-  <customwidget>
    <class>MyScrollArea</class>
    <extends>QScrollArea</extends>
    <header>MyScrollArea.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ElaSuggestBox</class>
+   <extends>QWidget</extends>
+   <header>ElaSuggestBox.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

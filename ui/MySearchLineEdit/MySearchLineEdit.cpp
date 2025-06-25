@@ -18,21 +18,20 @@
  */
 MySearchLineEdit::MySearchLineEdit(QWidget *parent)
     : ElaLineEdit(parent)
-    , m_maxWidth(250)
-    , m_widthAnimation(new QPropertyAnimation(this, "minimumWidth", this))
-    , m_markAnimation(new QPropertyAnimation(this, "expandMarkWidth", this))
-{
+      , m_maxWidth(250)
+      , m_widthAnimation(new QPropertyAnimation(this, "minimumWidth", this))
+      , m_markAnimation(new QPropertyAnimation(this, "expandMarkWidth", this)) {
     setObjectName("ElaLineEdit");
     // 通用动画设置
     m_widthAnimation->setEasingCurve(QEasingCurve::InOutQuart);
-    m_widthAnimation->setDuration(400);
-    connect(m_widthAnimation, &QPropertyAnimation::valueChanged, this, [this]() {
+    m_widthAnimation->setDuration(300);
+    connect(m_widthAnimation, &QPropertyAnimation::valueChanged, this, [this] {
         m_animatingWidth = true;
         if (!m_expanded)emit widthChanged();
         //qDebug() << "MySearchLineEdit 宽度动画进行中";
         updateMarkAnimationTarget();
     });
-    connect(m_widthAnimation, &QPropertyAnimation::finished, this, [this]() {
+    connect(m_widthAnimation, &QPropertyAnimation::finished, this, [this] {
         m_animatingWidth = false;
         m_expanded = !m_expanded;
         //qDebug() << "MySearchLineEdit 动画完成，expanded =" << m_expanded;
@@ -83,7 +82,6 @@ void MySearchLineEdit::focusInEvent(QFocusEvent *event) {
         return;
     }
 
-
     startExpandAnimation();
 }
 
@@ -125,7 +123,6 @@ void MySearchLineEdit::startExpandAnimation() {
     m_widthAnimation->setStartValue(width());
     m_widthAnimation->setEndValue(m_maxWidth);
     m_widthAnimation->start();
-
     // 开始标记展开动画
     m_markAnimation->stop();
     m_markAnimation->setStartValue(expandMarkWidth());
