@@ -9,12 +9,25 @@
 #ifndef LOCALSONG_H
 #define LOCALSONG_H
 
+
 #include "MusicItemWidget.h"
 #include "SortOptionMenu/SortOptionMenu.h"
 #include "libhttp.h"
 
 #include <QQueue>
 #include <QWidget>
+#include <QJsonObject>
+
+struct JsonObjectHash {
+    size_t operator()(const QJsonObject& obj) const {
+        // 使用关键字段生成哈希值
+        return qHash(
+            obj["song"].toString() + "|" +
+            obj["singer"].toString() + "|" +
+            obj["duration"].toString()
+        );
+    }
+};
 
 class QMediaPlayer;
 class QScrollBar;
@@ -361,6 +374,7 @@ private:
     QVector<SongInfor>                   m_locationMusicVector;     ///< 本地歌曲信息
     QVector<SongInfor>                   m_lastLocationMusicVector; ///< 上次歌曲信息
     QVector<MusicItemWidget *>           m_musicItemVector;         ///< 音乐项控件
+    std::unordered_map<QJsonObject, QString, JsonObjectHash> m_songSingerToKey;         ///< 歌曲信息 --> suggestion Key
     MusicItemWidget                     *m_curPlayItemWidget{};     ///< 当前播放控件
     bool                                 m_isOrderPlay = false;     ///< 是否顺序播放
     QAction                             *m_searchAction{};          ///< 搜索动作

@@ -17,7 +17,6 @@
 #include <QFileDialog>
 #include <QJsonArray>
 #include <QJsonDocument>
-#include <QJsonObject>
 #include <QMediaMetaData>
 #include <QMediaPlayer>
 #include <QRandomGenerator>
@@ -189,7 +188,6 @@ void LocalSong::initUi()
     ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/upload-cloud-gray.svg"))); ///< 设置上传按钮图标
 
     auto searchLineEdit = new MySearchLineEdit();
-    searchLineEdit->setProperty("searchWay","search_net_song");
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标
     this->m_searchAction->setIconVisibleInMenu(false);   ///< 仅显示图标
     searchLineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作
@@ -268,6 +266,14 @@ void LocalSong::getMetaData()
                 if (!layout)
                     return;
                 layout->insertWidget(layout->count() - 2, item); ///< 插入音乐项
+
+                ///< 添加suggestion
+                QJsonObject obj;
+                obj["song"] = tempInformation.songName;
+                obj["singer"] = tempInformation.singer;
+                obj["duration"] = tempInformation.duration;
+                m_songSingerToKey[obj] = ui->local_search_suggest_box->addSuggestion(tempInformation.songName + " - " + tempInformation.singer);
+
                 ui->widget->hide();                      ///< 隐藏初始界面
                 qDebug() << "成功添加歌曲 ：" << item->m_information.mediaPath;
                 STREAM_INFO() << "成功添加歌曲 ：" << item->m_information.mediaPath.toStdString(); ///< 记录日志
@@ -280,7 +286,7 @@ void LocalSong::getMetaData()
                 tempInformation.cover.toImage().save(&buffer, "PNG"); ///< 保存为 PNG
                 buffer.close();
                 QString base64Image = QString::fromLatin1(imageData.toBase64().data()); ///< 转换为 Base64
-                auto postJson = QJsonObject{             ///< 创建 JSON 数据
+                auto postJson = QJsonObject {             ///< 创建 JSON 数据
                     {"index", tempInformation.index},
                     {"cover", base64Image},
                     {"songName", tempInformation.songName},
@@ -908,6 +914,13 @@ void LocalSong::onItemDeleteSong(const int &idx)
     delReq["song"] = song;
     delReq["singer"] = singer;
     delReq["duration"] = duration;
+
+    ///< 删除suggestion
+    auto it = m_songSingerToKey.find(delReq);
+    if (it != m_songSingerToKey.end()) {
+        ui->local_search_suggest_box->removeSuggestion(it->second);
+        m_songSingerToKey.erase(it);
+    }
 
     /*Async::runAsync(QThreadPool::globalInstance(),&CLibhttp::UrlRequestGet,
        m_libHttp, QString("http://127.0.0.1:8080/api/delSong"),QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
