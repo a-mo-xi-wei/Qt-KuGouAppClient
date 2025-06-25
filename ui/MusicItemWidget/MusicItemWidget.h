@@ -111,6 +111,13 @@ public:
      */
     void getMenuPosition(const QPoint &pos);
 
+    /**
+     * @brief 设置高亮提示
+     * @param highlight 是否高亮
+     * @note 高亮item项
+     */
+    void setHighlight(bool highlight);
+
 protected:
     /**
      * @brief 鼠标进入事件
@@ -358,6 +365,7 @@ private:
     QToolButton*            m_collectToolBtn{};    ///< 收藏按钮
     QToolButton*            m_moreToolBtn{};       ///< 更多按钮
 
+    bool m_isHighlighted = false;                  ///< 是否高亮
     bool                    m_isPlaying = false;   ///< 是否正在播放
     //菜单相关
     SongOptionMenu*         m_songOptMenu{};       ///< 歌曲选项菜单

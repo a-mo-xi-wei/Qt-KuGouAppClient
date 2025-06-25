@@ -132,6 +132,12 @@ private:
      */
     void setPlayItemHighlight(MusicItemWidget *item);
 
+    /**
+    * @brief 滚动到指定歌曲项
+     * @param mediaPath
+     */
+    void scrollToItem(const QString& mediaPath);
+
 private slots:
     /**
      * @brief 全部播放按钮点击槽函数
@@ -150,6 +156,13 @@ private slots:
      * @note 显示未实现提示
      */
     void on_upload_toolButton_clicked();
+
+    /**
+     * @brief 搜索框选项跳转槽函数
+     * @param suggestText 建议文本
+     * @param suggestData 建议数据
+     */
+    void handleSuggestBoxSuggestionClicked(const QString& suggestText,const  QVariantMap& suggestData);
 
     /**
      * @brief 分享按钮点击槽函数

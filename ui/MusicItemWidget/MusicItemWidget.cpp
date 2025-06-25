@@ -277,6 +277,11 @@ void MusicItemWidget::getMenuPosition(const QPoint &pos)
 
 }
 
+void MusicItemWidget::setHighlight(bool highlight) {
+    m_isHighlighted = highlight;
+    update();  // 触发重绘
+}
+
 /**
  * @brief 鼠标进入事件
  * @param event 进入事件对象
@@ -328,9 +333,9 @@ void MusicItemWidget::leaveEvent(QEvent *event)
 void MusicItemWidget::paintEvent(QPaintEvent *event)
 {
     QFrame::paintEvent(event);
+    QPainter painter(this);
     if (!mouse_point.isNull() && radius > 0)
     {
-        QPainter painter(this);
         QPainterPath path;
         painter.setRenderHint(QPainter::Antialiasing);
         painter.setBrush(QBrush(fill_color));
@@ -338,6 +343,12 @@ void MusicItemWidget::paintEvent(QPaintEvent *event)
         path.addRoundedRect(rect(), frame_radius, frame_radius);
         painter.setClipPath(path);
         painter.drawEllipse(mouse_point, radius, radius); // 画圆
+        painter.setClipping(false);  // 禁用剪切路径
+    }
+    // 添加高亮效果
+    if (m_isHighlighted) {
+        painter.setPen(QPen(QColor(0x2486b9), 3));  // 金色边框
+        painter.drawRoundedRect(rect(), frame_radius, frame_radius);
     }
 }
 

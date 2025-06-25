@@ -193,7 +193,7 @@ void LocalSong::initUi()
     searchLineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作
     searchLineEdit->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
     searchLineEdit->setFixedWidth(30);
-    searchLineEdit->setMaxWidth(150);               ///< 设置搜索框最大宽度
+    searchLineEdit->setMaxWidth(200);               ///< 设置搜索框最大宽度
     searchLineEdit->setBorderRadius(10);
     auto font = QFont("AaSongLiuKaiTi"); ///< 设置字体
     font.setWeight(QFont::Bold);
@@ -218,6 +218,8 @@ void LocalSong::initUi()
     {
         searchButton->installEventFilter(this);          ///< 安装事件过滤器
     }
+
+    connect(ui->local_search_suggest_box,&ElaSuggestBox::suggestionClicked,this,&LocalSong::handleSuggestBoxSuggestionClicked);
 }
 
 /**
@@ -272,7 +274,12 @@ void LocalSong::getMetaData()
                 obj["song"] = tempInformation.songName;
                 obj["singer"] = tempInformation.singer;
                 obj["duration"] = tempInformation.duration;
-                m_songSingerToKey[obj] = ui->local_search_suggest_box->addSuggestion(tempInformation.songName + " - " + tempInformation.singer);
+                ///< 添加媒体路径作为附加数据
+                QVariantMap suggestData;
+                suggestData["mediaPath"] = tempInformation.mediaPath;
+                m_songSingerToKey[obj] = ui->local_search_suggest_box->addSuggestion(
+                    tempInformation.songName + " - " + tempInformation.singer,
+                    suggestData);
 
                 ui->widget->hide();                      ///< 隐藏初始界面
                 qDebug() << "成功添加歌曲 ：" << item->m_information.mediaPath;
@@ -543,6 +550,26 @@ void LocalSong::setPlayItemHighlight(MusicItemWidget *item)
     }
 }
 
+void LocalSong::scrollToItem(const QString &mediaPath) {
+    // 查找匹配的歌曲项
+    for (const auto & i : m_musicItemVector) {
+        if (i->m_information.mediaPath == mediaPath) {
+            MusicItemWidget* item = i;
+
+            // 确保滚动区域可见
+            //ui->scrollArea->ensureWidgetVisible(item);
+            ui->scrollArea->smoothScrollTo(item->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
+            // 设置临时高亮效果
+            item->setHighlight(true);
+            QTimer::singleShot(2000, item, [item]() {
+                item->setHighlight(false);
+            });
+
+            break;
+        }
+    }
+}
+
 /**
  * @brief 全部播放按钮点击槽函数
  * @note 播放第一首歌曲并取消循环
@@ -586,6 +613,17 @@ void LocalSong::on_local_add_toolButton_clicked()
 void LocalSong::on_upload_toolButton_clicked()
 {
     ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", QString("%1 功能暂未实现 敬请期待").arg(ui->upload_toolButton->text()), 1000, this->window()); ///< 显示提示
+}
+
+void LocalSong::handleSuggestBoxSuggestionClicked(const QString &suggestText, const QVariantMap &suggestData) {
+    qDebug()<<suggestText<<" 被点击";
+    ///< 检查是否包含媒体路径
+    if (suggestData.contains("mediaPath")) {
+        QString mediaPath = suggestData["mediaPath"].toString();
+        scrollToItem(mediaPath);
+    } else {
+        qWarning() << "未找到媒体路径数据：" << suggestText;
+    }
 }
 
 /**
