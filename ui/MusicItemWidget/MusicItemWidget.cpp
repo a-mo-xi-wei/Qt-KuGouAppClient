@@ -120,6 +120,24 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
     m_songOptMenu = menu->getMenu<SongOptionMenu>();
     connect(m_songOptMenu, &SongOptionMenu::play, this, &MusicItemWidget::onPlay);
     connect(m_songOptMenu, &SongOptionMenu::deleteSong, this, &MusicItemWidget::onDeleteSong);
+
+    //跳转选中
+    m_blinkTimer = new QTimer(this);
+    connect(m_blinkTimer, &QTimer::timeout, this, [this]() {
+        // 更新透明度
+        m_highlightAlpha += (10 * m_highlightDirection);
+
+        // 反转方向
+        if (m_highlightAlpha >= 255) {
+            m_highlightAlpha = 255;
+            m_highlightDirection = -1;
+        } else if (m_highlightAlpha <= 0) {
+            m_highlightAlpha = 0;
+            m_highlightDirection = 1;
+        }
+
+        update(); // 触发重绘
+    });
 }
 
 /**
@@ -278,8 +296,15 @@ void MusicItemWidget::getMenuPosition(const QPoint &pos)
 }
 
 void MusicItemWidget::setHighlight(bool highlight) {
-    m_isHighlighted = highlight;
-    update();  // 触发重绘
+    if (highlight) {
+        m_highlightAlpha = 0;       // 从完全透明开始
+        m_highlightDirection = 1;   // 向不透明变化
+        m_blinkTimer->start(30);    // 30ms刷新一次 (约33FPS)
+    } else {
+        m_blinkTimer->stop();
+        m_highlightAlpha = 0;       // 重置为透明
+        update();                   // 清除高亮
+    }
 }
 
 /**
@@ -345,9 +370,14 @@ void MusicItemWidget::paintEvent(QPaintEvent *event)
         painter.drawEllipse(mouse_point, radius, radius); // 画圆
         painter.setClipping(false);  // 禁用剪切路径
     }
-    // 添加高亮效果
-    if (m_isHighlighted) {
-        painter.setPen(QPen(QColor(0x2486b9), 3));  // 金色边框
+    // 添加高亮效果：闪烁动画
+    if (m_highlightAlpha > 0) {
+        QColor highlightColor(0x8a, 0xbc, 0xd1); // 原始颜色
+        highlightColor.setAlpha(m_highlightAlpha); // 应用当前透明度
+
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setBrush(highlightColor);
+        painter.setPen(Qt::NoPen);
         painter.drawRoundedRect(rect(), frame_radius, frame_radius);
     }
 }

@@ -365,7 +365,12 @@ private:
     QToolButton*            m_collectToolBtn{};    ///< 收藏按钮
     QToolButton*            m_moreToolBtn{};       ///< 更多按钮
 
+    //跳转选中高亮
     bool m_isHighlighted = false;                  ///< 是否高亮
+    int m_highlightAlpha = 0;                      ///< 当前透明度 (0-255)
+    int m_highlightDirection = 1;                  ///< 透明度变化方向 (1增加, -1减少)
+    QTimer* m_blinkTimer;                          ///< 闪烁定时器
+
     bool                    m_isPlaying = false;   ///< 是否正在播放
     //菜单相关
     SongOptionMenu*         m_songOptMenu{};       ///< 歌曲选项菜单
