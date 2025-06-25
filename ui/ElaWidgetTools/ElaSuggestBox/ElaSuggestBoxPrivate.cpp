@@ -126,47 +126,76 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText) {
             }
         }
 
-
         reply->deleteLater();
         reply1->deleteLater();
+        if (!_suggestionVector.isEmpty()) {
+            _searchModel->setSearchSuggestion(_suggestionVector);
+            int rowCount = static_cast<int>(_suggestionVector.count());
+            rowCount = rowCount > 6 ? 6 : rowCount;
+            if (!_searchViewBaseWidget->isVisible()) {
+                q->raise();
+                _searchViewBaseWidget->show();
+                _searchViewBaseWidget->raise();
+
+                // 修复位置计算 - 正确计算全局位置
+                const QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+                _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
+
+                _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
+                _searchView->move(_searchView->x(), -(40 * rowCount + 16));
+            }
+            else {
+                _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
+            }
+            _startExpandAnimation();
+        }
+        else {
+            _startCloseAnimation();
+        }
     }
     else {
         QVector<ElaSuggestion *> suggestionVector;
         for (const auto &suggest: _suggestionVector) {
-            qDebug()<<"suggest->getSuggestText()： "<<suggest->getSuggestText()<<" searchText: "<<searchText;
+            //qDebug()<<"suggest->getSuggestText()： "<<suggest->getSuggestText()<<" searchText: "<<searchText;
             if (suggest->getSuggestText().contains(searchText, _pCaseSensitivity)) {
                 suggestionVector.append(suggest);
+                ///< qDebug()<<suggest->getSuggestText()<< " contains : "<<searchText;
             }
         }
-    }
-    if (!_suggestionVector.isEmpty()) {
-        _searchModel->setSearchSuggestion(_suggestionVector);
-        int rowCount = static_cast<int>(_suggestionVector.count());
-        rowCount = rowCount > 6 ? 6 : rowCount;
-        if (!_searchViewBaseWidget->isVisible()) {
-            q->raise();
-            _searchViewBaseWidget->show();
-            _searchViewBaseWidget->raise();
+        if (!suggestionVector.isEmpty()) {
+            _searchModel->setSearchSuggestion(suggestionVector);
+            int rowCount = static_cast<int>(suggestionVector.count());
+            rowCount = rowCount > 6 ? 6 : rowCount;
+            if (!_searchViewBaseWidget->isVisible()) {
+                q->raise();
+                _searchViewBaseWidget->show();
+                _searchViewBaseWidget->raise();
 
-            // 修复位置计算 - 正确计算全局位置
-            const QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
-            _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
+                // 修复位置计算 - 正确计算全局位置
+                const QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+                _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
 
-            _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
-            _searchView->move(_searchView->x(), -(40 * rowCount + 16));
+                _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
+                _searchView->move(_searchView->x(), -(40 * rowCount + 16));
+            }
+            else {
+                _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
+            }
+            _startExpandAnimation();
         }
         else {
-            _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
+            _startCloseAnimation();
         }
-        _startExpandAnimation();
-    } else {
-        _startCloseAnimation();
     }
 }
 
 void ElaSuggestBoxPrivate::onSearchEditWidthChanged() {
     Q_Q(ElaSuggestBox);
-    int rowCount = static_cast<int>(_suggestionVector.count());
+    int rowCount = 0;
+    if (sender()->property("searchWay").toString() == "search_net_song") {
+       rowCount = static_cast<int>(_suggestionVector.count());
+    }
+    else rowCount = _searchModel->rowCount(QModelIndex());
     rowCount = rowCount > 6 ? 6 : rowCount;
     if (_searchViewBaseWidget->isVisible()) {
         // 修复位置计算 - 正确计算全局位置
