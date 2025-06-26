@@ -1,0 +1,13 @@
+digraph "iso_year_weeks"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="iso_year_weeks",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="detail::tm_writer\<\l OutputIt, char_type\l \>::tm_iso_week_of_year",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1tm__writer.html#a9c54a248c70fc475ade1a75d43f56c16",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="detail::tm_writer\<\l OutputIt, char_type\l \>::tm_iso_week_year",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1tm__writer.html#aded27b51cab2ebb577b2337b00659af0",tooltip=" "];
+}

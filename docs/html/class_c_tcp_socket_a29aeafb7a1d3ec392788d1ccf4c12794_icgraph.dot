@@ -1,0 +1,16 @@
+digraph "onDisconnected"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="onDisconnected",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="处理连接关闭"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CTcpSocket",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#a8b430ff04f84435384348676718d1b9d",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="reconnectTcpServer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#a9054b4ea7262131f3de25a6cb165ffd5",tooltip="重新连接服务器"];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#ad5f2547df548318c3aa558f274b68298",tooltip="错误处理"];
+  Node4 -> Node2 [id="edge4_Node000004_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

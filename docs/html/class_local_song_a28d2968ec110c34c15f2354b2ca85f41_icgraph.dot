@@ -1,0 +1,11 @@
+digraph "playNextSong"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="playNextSong",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="播放下一首歌曲"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="onAudioFinished",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_local_song.html#ace5c0f56d15596ca0b32a709a9a0b6f6",tooltip="音频播放结束槽函数"];
+}

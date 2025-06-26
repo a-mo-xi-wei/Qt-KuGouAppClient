@@ -1,0 +1,15 @@
+digraph "emplace_arg"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="emplace_arg",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="push_back",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdynamic__format__arg__store.html#a19e6a475c1abb7060fe63561128dabe0",tooltip="Adds named argument into the dynamic store for later passing to a formatting function."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="push_back",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdynamic__format__arg__store.html#a3b154cbe2d4187867fc44f0a5b269212",tooltip="Adds an argument into the dynamic store for later passing to a formatting function."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="push_back",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdynamic__format__arg__store.html#a926f1ce877c18b30a0e52a7f4a65603c",tooltip="Adds a reference to the argument into the dynamic store for later passing to a formatting function."];
+}

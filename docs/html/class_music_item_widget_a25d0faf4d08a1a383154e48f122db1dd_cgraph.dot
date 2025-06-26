@@ -1,0 +1,45 @@
+digraph "MusicItemWidget"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="MusicItemWidget",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="构造函数，初始化音乐条目控件"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="SongOptionMenu::deleteSong",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_song_option_menu.html#af1643adccdb3db443b2d770ffa55728f",tooltip="删除歌曲信号"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="initUi",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#afba6e95967cc3eb25fd518f7bde6ec04",tooltip="初始化用户界面"];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="arg",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429",tooltip="Returns a named argument to be used in a formatting function."];
+  Node4 -> Node4 [id="edge4_Node000004_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node3 -> Node5 [id="edge5_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="roundedPix",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_music_item_widget_8cpp.html#a576ca65ebb105355024779fb458fe476",tooltip="创建圆角图片"];
+  Node1 -> Node6 [id="edge6_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="onCollectToolBtnClicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a182f9ec2c9836647053e75e873b5863c",tooltip="收藏按钮点击处理"];
+  Node1 -> Node7 [id="edge7_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="onDeleteSong",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a979b45da17daf103479c85150c8d87e3",tooltip="删除歌曲菜单项处理"];
+  Node7 -> Node8 [id="edge8_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="deleteSong",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#af1643adccdb3db443b2d770ffa55728f",tooltip="删除歌曲信号"];
+  Node1 -> Node9 [id="edge9_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="onDownloadToolBtnClicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a4e4529add72c895657203080f0a6b76b",tooltip="下载按钮点击处理"];
+  Node1 -> Node10 [id="edge10_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="onMoreToolBtnClicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a0c4bc242cb3b8f9f8dbdfa12dc1a4b09",tooltip="更多按钮点击处理"];
+  Node10 -> Node11 [id="edge11_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="getMenuPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#aeab41b278e449a68fbd1c98c9e1516a8",tooltip="获取菜单显示位置"];
+  Node1 -> Node12 [id="edge12_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="onPlay",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a1d28ca2a9a560fb537c6b93071c70dfd",tooltip="播放菜单项处理"];
+  Node12 -> Node13 [id="edge13_Node000012_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="play",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a6d58098c6cf63c241ed03bc797256bb1",tooltip="播放信号"];
+  Node1 -> Node14 [id="edge14_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="onPlayNextToolBtnClicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a1db0fcc0b08a8f433b8c967a4d1bb13e",tooltip="下一首按钮点击处理"];
+  Node1 -> Node15 [id="edge15_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="onPlayToolBtnClicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#ae21b351f287b5d0040692cebea9b6872",tooltip="播放按钮点击处理"];
+  Node15 -> Node13 [id="edge16_Node000015_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node16 [id="edge17_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="SongOptionMenu::play",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_song_option_menu.html#a6d58098c6cf63c241ed03bc797256bb1",tooltip="播放歌曲信号"];
+  Node1 -> Node17 [id="edge18_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="setInformation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a3257c611e6f2d35712663a6e298ba76e",tooltip="设置歌曲信息"];
+  Node17 -> Node4 [id="edge19_Node000017_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node5 [id="edge20_Node000017_Node000005",color="steelblue1",style="solid",tooltip=" "];
+}

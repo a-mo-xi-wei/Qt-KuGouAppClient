@@ -1,0 +1,11 @@
+digraph "fabGeometry"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="fabGeometry",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="计算按钮几何位置"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_floating_action_button_private.html#a02fd73d861ef2e4aabb38c0c9ff82947",tooltip="初始化浮动动作按钮"];
+}

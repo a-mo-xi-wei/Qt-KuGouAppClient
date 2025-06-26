@@ -1,0 +1,13 @@
+digraph "stdout_color_st"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="stdout_color_st",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="stdout_color_st\< spdlog\l::async_factory \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$color__sinks_8cpp.html#a1d975615eed5eea3589bb3ec02d70adc",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="stdout_color_st\< spdlog\l::synchronous_factory \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$color__sinks_8cpp.html#a5d9d9313c254b6a1e8d37eb816f4781f",tooltip=" "];
+}

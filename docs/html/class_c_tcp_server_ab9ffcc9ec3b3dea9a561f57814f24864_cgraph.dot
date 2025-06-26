@@ -1,0 +1,56 @@
+digraph "incomingConnection"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="incomingConnection",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="覆盖已获取多线程"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="connectClient",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#a5f8102e726a69644d1a7a943cf4c3d35",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CTcpSocket::disConTcp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#a5a0f4b8698ff513f6f2a36f8fe2367b6",tooltip="断开socket的连接"];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="ThreadHandle::getClass",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#ad28ce2d8b771f377f46741b64eee292d",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="ThreadHandle::ThreadHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#aebf2d610a3a92180a8d1da5c8ebb4011",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="ThreadHandle::getThread",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#a30a57a06887949e611bbeec4cb1e2fb7",tooltip=" "];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="ThreadHandle::findHandleSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#ac8d6dd2a0ed1097bfc29d86db6786692",tooltip=" "];
+  Node6 -> Node8 [id="edge7_Node000006_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="ThreadHandle::findThreadSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#a061005ad9e72849713d54099ba8229ad",tooltip=" "];
+  Node6 -> Node9 [id="edge8_Node000006_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="ThreadHandle::initThreadType",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#a049cf031b1bde5fb39f80f526c1349ce",tooltip=" "];
+  Node9 -> Node10 [id="edge9_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="ThreadHandle::initThreadSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#a90f095240a2a6b96bf2e5cf32033d1e2",tooltip=" "];
+  Node1 -> Node11 [id="edge10_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="CTcpSocket::newconnectClient",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#ac9ca2e4183a7d45904115cadddec132b",tooltip="发送新用户连接信息"];
+  Node11 -> Node12 [id="edge11_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="CTcpSocket::onConnected",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#a683f5665bf529328a56ade89e73c40b7",tooltip="处理连接成功"];
+  Node1 -> Node13 [id="edge12_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="sentDisConnect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#a5a529674e353df317f0e9497d0983ac6",tooltip=" "];
+  Node1 -> Node14 [id="edge13_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="CTcpSocket::setUsingThread",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#a3ccb5a0dc92a9646a3e0fb1601c08adb",tooltip="设置当前使用线程"];
+  Node1 -> Node15 [id="edge14_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="CTcpSocket::signalsNetBinary",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#afe5866cc6bdbd2261aab3baa87f4309a",tooltip="处理网络二进制消息"];
+  Node1 -> Node16 [id="edge15_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="sockBinMessageSlot",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#a5adea3128cd4fa723acd38bb253cd8da",tooltip=" "];
+  Node16 -> Node17 [id="edge16_Node000016_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="sockNetMessage",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#a13574cf35ce070afdcd65537782c2d2d",tooltip=" "];
+  Node1 -> Node18 [id="edge17_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="CTcpSocket::sockDisConnect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_socket.html#a1ed5a5dccfa6f662ce0edb5aa4961d67",tooltip=" "];
+  Node1 -> Node19 [id="edge18_Node000001_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="sockDisConnectSlot",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#a912e3c6921d9bb6945c73142926de7d4",tooltip=" "];
+  Node19 -> Node20 [id="edge19_Node000019_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="closeClient",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#a79a0060f0b5d36f39a112b90b1cd79f3",tooltip="关闭指定的客户端"];
+  Node20 -> Node4 [id="edge20_Node000020_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node20 -> Node21 [id="edge21_Node000020_Node000021",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="ThreadHandle::removeThread",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#a7021b8fcc7893486feeffc4bc645b4ff",tooltip=" "];
+  Node20 -> Node15 [id="edge22_Node000020_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node20 -> Node16 [id="edge23_Node000020_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node20 -> Node18 [id="edge24_Node000020_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node20 -> Node19 [id="edge25_Node000020_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 -> Node22 [id="edge26_Node000019_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="sockDisConnect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#ad955201562ecc4f8916b20de749d3bc7",tooltip=" "];
+}

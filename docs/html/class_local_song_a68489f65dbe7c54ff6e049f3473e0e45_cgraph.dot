@@ -1,0 +1,13 @@
+digraph "on_local_add_toolButton_clicked"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="on_local_add_toolButton\l_clicked",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="添加歌曲按钮点击槽函数"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="loadNextSong",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_local_song.html#a6219ec9f188d024275d4f70f10278df7",tooltip="加载下一首歌曲"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="getMetaData",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_local_song.html#ac8878f7731a414cdea15e292e1abb1c6",tooltip="获取媒体元数据"];
+}

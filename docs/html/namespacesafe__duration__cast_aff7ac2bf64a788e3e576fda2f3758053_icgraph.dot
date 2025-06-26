@@ -1,0 +1,11 @@
+digraph "safe_float_conversion"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="safe_float_conversion",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="converts From to To if possible, otherwise ec is set."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="safe_duration_cast",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacesafe__duration__cast.html#a8a653f2a1cc545ab18e52d93e1227caa",tooltip="Safe duration_cast between floating point durations"];
+}

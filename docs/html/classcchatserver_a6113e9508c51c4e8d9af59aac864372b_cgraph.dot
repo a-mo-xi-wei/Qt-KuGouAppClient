@@ -1,0 +1,19 @@
+digraph "startServer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="startServer",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="启动服务器"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="getAllGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#a2c69838deb9c3a2db759a220857bf93d",tooltip="得到所有的群"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="RecordSetList::isEmpty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_record_set_list.html#acf82f9b2937375c7b1cf3dccb3df3312",tooltip="检查记录是否为空"];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="printLog",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#abc269f2177376830062b9e0c68c556f6",tooltip="打印用户日志"];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="getCurrentDate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#ae9793b5694d7c2405cc04c5ec797d8fd",tooltip="得到当前时间"];
+  Node4 -> Node6 [id="edge5_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="showlog",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#aaa495be72663b923dd43ffcb1f8c7ef7",tooltip="日志消息"];
+}

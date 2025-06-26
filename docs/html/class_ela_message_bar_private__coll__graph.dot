@@ -1,0 +1,14 @@
+digraph "ElaMessageBarPrivate"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="ElaMessageBarPrivate",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="消息通知栏私有实现类，管理动画、绘制和位置逻辑"];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="QObject",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [id="edge2_Node000001_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" _closeButton",fontcolor="grey" ];
+  Node3 [id="Node000003",label="ElaIconButton",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_icon_button.html",tooltip="自定义图标按钮类，支持图标、透明度和悬停效果"];
+  Node4 -> Node3 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="QPushButton",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,0 +1,17 @@
+digraph "run"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="run",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="重写 QRunnable 的 run 方法。"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="runHelper",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_async_1_1_async_job.html#a8d6ba1d847504642c3e7cc051872d924",tooltip="运行辅助函数。"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Async::runAsyncImpl",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_async.html#a19847196fcbc60399aa41e4f7a0c6edb",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Async::runAsyncMemberDispatch",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_async.html#a0b7a98a9ec58bdd53d5570be1d2b486d",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Async::runAsyncQFutureInterface\lDispatch",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_async.html#ac0afcd98f4a652219c15628c5853a881",tooltip=" "];
+}

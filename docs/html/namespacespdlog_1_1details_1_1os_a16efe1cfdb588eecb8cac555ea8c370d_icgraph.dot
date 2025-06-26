@@ -1,0 +1,11 @@
+digraph "_thread_id"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="_thread_id",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="thread_id",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacespdlog_1_1details_1_1os.html#ac2e5ef72eec58599c86c80a1623f01c5",tooltip=" "];
+}

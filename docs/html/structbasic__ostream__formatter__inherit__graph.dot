@@ -1,0 +1,14 @@
+digraph "basic_ostream_formatter&lt; Char &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="basic_ostream_formatter\l\< Char \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="formatter\< basic_string\l_view\< Char \>, Char \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structformatter.html",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="formatter\< detail::\lstreamed_view\< T \>,\l Char \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structformatter_3_01detail_1_1streamed__view_3_01_t_01_4_00_01_char_01_4.html",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="formatter\< std::thread\l::id, Char \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structformatter_3_01std_1_1thread_1_1id_00_01_char_01_4.html",tooltip=" "];
+}

@@ -1,0 +1,15 @@
+digraph "to_string_view"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="to_string_view",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="spdlog::details::full\l_formatter::format",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1details_1_1full__formatter.html#a5ed50973366c25de18e5fb95be6bbf77",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="spdlog::details::level\l_formatter::format",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1details_1_1level__formatter.html#af601ebc095d6f89b1546cf6360c6ea2d",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="spdlog::sinks::mongo\l_sink\< std::mutex \>::\lsink_it_",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1mongo__sink.html#a218d132667a573552a90e2bfc260c982",tooltip=" "];
+}

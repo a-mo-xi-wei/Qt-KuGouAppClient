@@ -1,0 +1,17 @@
+digraph "leaveEvent"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="leaveEvent",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="鼠标离开事件"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="discardHoverPress",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_interactive_button_base.html#a2305ba027b63917e3e42f881fb41a7a5",tooltip="取消悬浮和按下状态"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="GalleryPhotoWidget\l::leaveEvent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_gallery_photo_widget.html#a5389554336d47de8a8249cf2aaf682a2",tooltip="鼠标离开事件，恢复标题颜色和阴影"];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="setBlockHover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_interactive_button_base.html#a48b47bae39bb66fac8d303d374197f8c",tooltip="设置是否屏蔽悬浮效果"];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="simulateHover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_interactive_button_base.html#a4f1950a9b78331a1cce8846ac293d508",tooltip="模拟悬浮状态"];
+}

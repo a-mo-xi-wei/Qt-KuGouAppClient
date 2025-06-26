@@ -1,0 +1,14 @@
+digraph "paintEvent"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="paintEvent",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="绘制事件，绘制按钮外观"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ElaPushButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_push_button.html#aa96d543684d5c101e9556339dd03e519",tooltip="构造函数，初始化按钮"];
+  Node2 -> Node2 [id="edge2_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge3_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="ElaTheme::themeModeChanged",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba",tooltip="主题模式更改信号"];
+}

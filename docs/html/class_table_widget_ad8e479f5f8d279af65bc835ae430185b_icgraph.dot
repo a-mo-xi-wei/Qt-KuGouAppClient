@@ -1,0 +1,13 @@
+digraph "hideTitle"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="hideTitle",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="隐藏标题信号"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ItemListWidget::ItemList\lWidget",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_item_list_widget.html#a91ffb4dffa775c52eae34d5906edf5d8",tooltip="构造函数，初始化列表推荐项"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TableWidget",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_table_widget.html#a92cc8621af5844d5c47ff7273b149580",tooltip="构造函数，初始化推荐界面"];
+}

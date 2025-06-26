@@ -1,0 +1,15 @@
+digraph "updateActiveMap"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="updateActiveMap",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="更新活动消息栏映射"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="postMessageBarCreateEvent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_message_bar_manager.html#a3541599c8fc1b6d40c6aeb250a593078",tooltip="发布消息栏创建事件"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="postMessageBarEndEvent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_message_bar_manager.html#afd6ebc269036b67dff850c5c0d18cda3",tooltip="发布消息栏终止事件"];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="forcePostMessageBarEndEvent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_message_bar_manager.html#af71e000453ed1e87bcf9b309a079a008",tooltip="强制发布消息栏终止事件"];
+}

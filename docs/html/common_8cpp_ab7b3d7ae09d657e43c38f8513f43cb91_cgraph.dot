@@ -1,0 +1,11 @@
+digraph "DeleteTheFileOrFolder"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="DeleteTheFileOrFolder",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="删除指定路径的文件或者文件夹。"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="removeFolderContent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$common_8cpp.html#a577fa84f5158b882148dc72783217b59",tooltip="删除目录下所有文件和文件夹。"];
+}

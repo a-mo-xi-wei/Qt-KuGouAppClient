@@ -1,0 +1,30 @@
+digraph "format_duration_unit"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="format_duration_unit",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="const_check",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a3279dca70405e483511edbe9c391a376",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="copy_unit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a5677da16167e10dbf7f82ea3fab75a58",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="copy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a424ac455d7b099551299db1be2e6e355",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="get_container",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a2fad900275a3d2338d5393a4a5c38d92",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="get_units",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a35a82ebbc7f802460357160c26e33ff5",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="write",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a",tooltip=" "];
+  Node7 -> Node8 [id="edge7_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="do_write",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486",tooltip=" "];
+  Node8 -> Node9 [id="edge8_Node000008_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="format",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c",tooltip="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..."];
+  Node7 -> Node9 [id="edge9_Node000007_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node10 [id="edge10_Node000007_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="get_buffer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83",tooltip=" "];
+  Node7 -> Node11 [id="edge11_Node000007_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="get_iterator",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "dynamic_format_arg_store&lt; Context &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="dynamic_format_arg\l_store\< Context \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="A dynamic list of formatting arguments with storage."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" dynamic_args_",fontcolor="grey" ];
+  Node2 [id="Node000002",label="dynamic_arg_list",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classdetail_1_1dynamic__arg__list.html",tooltip=" "];
+}
