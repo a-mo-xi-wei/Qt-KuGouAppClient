@@ -1,4 +1,0 @@
-var structdetail_1_1dragonbox_1_1float__info_3_01_t_00_01enable__if__t_3_01is__double__double_3_01_t_01_4_1_1value_01_4_01_4 =
-[
-    [ "carrier_uint", "structdetail_1_1dragonbox_1_1float__info_3_01_t_00_01enable__if__t_3_01is__double__double_3_01_t_01_4_1_1value_01_4_01_4.html#ab8c8aa297bb11f06a3ec3e27a7e60fa2", null ]
-];

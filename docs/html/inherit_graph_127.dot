@@ -1,9 +1,0 @@
-digraph "类继承关系图"
-{
- // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  rankdir="LR";
-  Node0 [id="Node000000",label="formatter\< Tuple, Char,\l enable_if_t\< fmt::is\l_tuple_like\< Tuple \>::value\l &&fmt::is_tuple_formattable\l\< Tuple, Char \>::value \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structformatter_3_01_tuple_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple_0858257f959bf6fea2bf2f677029fa45e.html",tooltip=" "];
-}

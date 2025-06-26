@@ -1,9 +1,0 @@
-digraph "类继承关系图"
-{
- // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  rankdir="LR";
-  Node0 [id="Node000000",label="float_info\< T, enable\l_if_t\< std::numeric_limits\l\< T \>::digits==64\|\|std::numeric\l_limits\< T \>::digits==113\|\|is\l_float128\< T \>::value \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structdetail_1_1dragonbox_1_1float__info_3_01_t_00_01enable__if__t_3_01std_1_1numeric__limits_3_56700b8c54532473c108e77cbed6fae3.html",tooltip=" "];
-}

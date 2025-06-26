@@ -1,8 +1,0 @@
-var moc___downloading_widget_8cpp =
-[
-    [ "qt_meta_stringdata_CLASSDownloadingWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a938e7ad2b514a3735fd49d21ba5f6fa4.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a938e7ad2b514a3735fd49d21ba5f6fa4" ],
-    [ "Q_CONSTINIT", "moc___downloading_widget_8cpp.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
-    [ "QT_MOC_LITERAL", "moc___downloading_widget_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
-    [ "qt_meta_data_CLASSDownloadingWidgetENDCLASS", "moc___downloading_widget_8cpp.html#a65e9b2ce5d176109df5f6953d2d91c85", null ],
-    [ "qt_meta_stringdata_CLASSDownloadingWidgetENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#a38b450db08f6835aaa3177b2e660ba4d", null ]
-];
