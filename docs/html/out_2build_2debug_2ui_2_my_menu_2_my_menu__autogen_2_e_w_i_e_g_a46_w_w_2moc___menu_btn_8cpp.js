@@ -1,8 +1,0 @@
-var out_2build_2debug_2ui_2_my_menu_2_my_menu__autogen_2_e_w_i_e_g_a46_w_w_2moc___menu_btn_8cpp =
-[
-    [ "qt_meta_stringdata_CLASSMenuBtnENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab6d1ae939a90efdc648e7bd04a554238.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_ab6d1ae939a90efdc648e7bd04a554238" ],
-    [ "Q_CONSTINIT", "out_2build_2debug_2ui_2_my_menu_2_my_menu__autogen_2_e_w_i_e_g_a46_w_w_2moc___menu_btn_8cpp.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
-    [ "QT_MOC_LITERAL", "out_2build_2debug_2ui_2_my_menu_2_my_menu__autogen_2_e_w_i_e_g_a46_w_w_2moc___menu_btn_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
-    [ "qt_meta_data_CLASSMenuBtnENDCLASS", "out_2build_2debug_2ui_2_my_menu_2_my_menu__autogen_2_e_w_i_e_g_a46_w_w_2moc___menu_btn_8cpp.html#a25a626df84ee1b09d05deed4d9082d70", null ],
-    [ "qt_meta_stringdata_CLASSMenuBtnENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#ae379aec531baab71477d5f836bdfeaba", null ]
-];

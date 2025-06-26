@@ -1,6 +1,0 @@
-var struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a060da67c1f6ad6c72248374e8ce72229 =
-[
-    [ "offsetsAndSizes", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a060da67c1f6ad6c72248374e8ce72229.html#adc7c8166232451d74092190db051f704", null ],
-    [ "stringdata0", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a060da67c1f6ad6c72248374e8ce72229.html#a1db5b18164a528d617bc37d0c5775d49", null ],
-    [ "stringdata1", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a060da67c1f6ad6c72248374e8ce72229.html#a8093419cde929594e099ec0aeb3cde30", null ]
-];

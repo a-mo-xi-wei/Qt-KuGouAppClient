@@ -1,8 +1,0 @@
-var build_2_desktop___qt__6__6__2___min_g_w__64__bit__release_2ui_2_my_window_2_my_window__autogen_246b869b6ccd8b54b0bf939e72a2449d9 =
-[
-    [ "qt_meta_stringdata_CLASSMyTrayIconENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2ab3a50b926d7f1d5841d6d5fcb7e2ab.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a2ab3a50b926d7f1d5841d6d5fcb7e2ab" ],
-    [ "Q_CONSTINIT", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_246b869b6ccd8b54b0bf939e72a2449d9.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
-    [ "QT_MOC_LITERAL", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_246b869b6ccd8b54b0bf939e72a2449d9.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
-    [ "qt_meta_data_CLASSMyTrayIconENDCLASS", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_246b869b6ccd8b54b0bf939e72a2449d9.html#af599659fa25593fe290d8f51f98035b9", null ],
-    [ "qt_meta_stringdata_CLASSMyTrayIconENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#a34084f6f86bdb3ca5763bdf82888bcb7", null ]
-];

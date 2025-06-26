@@ -1,4 +1,0 @@
-var dir_7a34c1d91342fcac0f2dd1b50b330f80 =
-[
-    [ "ui_DailyRecommend.h", "out_2build_2debug_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2include_2ui___daily_recommend_8h.html", "out_2build_2debug_2_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2include_2ui___daily_recommend_8h" ]
-];
