@@ -10,9 +10,9 @@ digraph "LiveMusicPartWidget"
   dir_39bbb252c302b355dca98e904763e4c4 [label="LiveMusicPartWidget", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_39bbb252c302b355dca98e904763e4c4.html",tooltip=""];
   }
   dir_1788f8309b1a812dcb800a185471cf6c [label="ui", fillcolor="#edf0f7", color="red", style="filled", URL="dir_1788f8309b1a812dcb800a185471cf6c.html",tooltip=""];
-  dir_d3305b01cebad1f13f311f52d3f850d2 [label="cmake-build-release\l-mingw", fillcolor="#edf0f7", color="red", style="filled", URL="dir_d3305b01cebad1f13f311f52d3f850d2.html",tooltip=""];
   dir_23ec12649285f9fabf3a6b7380226c28 [label="util", fillcolor="#edf0f7", color="red", style="filled", URL="dir_23ec12649285f9fabf3a6b7380226c28.html",tooltip=""];
-  dir_39bbb252c302b355dca98e904763e4c4->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="2", labeldistance=1.5 headhref="dir_000183_000335.html" href="dir_000183_000335.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_39bbb252c302b355dca98e904763e4c4->dir_23ec12649285f9fabf3a6b7380226c28 [headlabel="1", labeldistance=1.5 headhref="dir_000183_000341.html" href="dir_000183_000341.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_39bbb252c302b355dca98e904763e4c4->dir_d3305b01cebad1f13f311f52d3f850d2 [headlabel="1", labeldistance=1.5 headhref="dir_000183_000050.html" href="dir_000183_000050.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_4fef79e7177ba769987a8da36c892c5f [label="build", fillcolor="#edf0f7", color="red", style="filled", URL="dir_4fef79e7177ba769987a8da36c892c5f.html",tooltip=""];
+  dir_39bbb252c302b355dca98e904763e4c4->dir_1788f8309b1a812dcb800a185471cf6c [headlabel="2", labeldistance=1.5 headhref="dir_000190_000351.html" href="dir_000190_000351.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_39bbb252c302b355dca98e904763e4c4->dir_23ec12649285f9fabf3a6b7380226c28 [headlabel="1", labeldistance=1.5 headhref="dir_000190_000357.html" href="dir_000190_000357.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_39bbb252c302b355dca98e904763e4c4->dir_4fef79e7177ba769987a8da36c892c5f [headlabel="1", labeldistance=1.5 headhref="dir_000190_000041.html" href="dir_000190_000041.html" color="steelblue1" fontcolor="steelblue1"];
 }

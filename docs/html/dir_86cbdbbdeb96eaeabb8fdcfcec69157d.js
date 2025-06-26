@@ -1,4 +1,4 @@
 var dir_86cbdbbdeb96eaeabb8fdcfcec69157d =
 [
-    [ "ui_AiChat.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_ai_chat_2_ai_chat__autogen_2include_2ui___ai_chat_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_ai_chat_2_ai_chat__autogen_2include_2ui___ai_chat_8h" ]
+    [ "ui_AiChat.h", "ui___ai_chat_8h.html", "ui___ai_chat_8h" ]
 ];

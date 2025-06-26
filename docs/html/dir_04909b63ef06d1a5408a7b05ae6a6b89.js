@@ -1,5 +1,5 @@
 var dir_04909b63ef06d1a5408a7b05ae6a6b89 =
 [
-    [ "ui_Channel.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__autogen_2include_2ui___channel_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__autogen_2include_2ui___channel_8h" ],
-    [ "ui_ChannelBlock.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__aubc9adf2f62b8859908d0cedb91e36af9.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__aubc9adf2f62b8859908d0cedb91e36af9" ]
+    [ "ui_Channel.h", "ui___channel_8h.html", "ui___channel_8h" ],
+    [ "ui_ChannelBlock.h", "ui___channel_block_8h.html", "ui___channel_block_8h" ]
 ];

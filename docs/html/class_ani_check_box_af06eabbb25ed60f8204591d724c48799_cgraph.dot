@@ -1,0 +1,13 @@
+digraph "enterEvent"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="enterEvent",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="鼠标进入事件，触发悬浮动画"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="getHoverProg",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ani_check_box.html#a35a1bef250c536bfc287cadd1eb72b14",tooltip="获取悬浮进度"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="startAnimation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ani_check_box.html#a5ef01aa9918425b827ecd50e91925e10",tooltip="启动动画"];
+}

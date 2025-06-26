@@ -1,0 +1,15 @@
+digraph "buffer_traits"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="buffer_traits",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="iterator_buffer\< OutputIt,\l enable_if_t\< is_back_insert\l_iterator\< OutputIt \>::value\l &&is_contiguous\< typename OutputIt\l::container_type \>::value, typename\l OutputIt::container_type::value_type \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classdetail_1_1iterator__buffer_3_01_output_it_00_01enable__if__t_3_01is__back__insert__iteratorc14756b7678d539799ac167e35d72bcb.html",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="iterator_buffer\< T\l *, T \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classdetail_1_1iterator__buffer_3_01_t_01_5_00_01_t_01_4.html",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="iterator_buffer\< OutputIt,\l T, Traits \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classdetail_1_1iterator__buffer.html",tooltip=" "];
+}

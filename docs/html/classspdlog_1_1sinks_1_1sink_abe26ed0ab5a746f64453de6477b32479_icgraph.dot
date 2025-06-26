@@ -1,0 +1,15 @@
+digraph "level"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="level",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="spdlog::sinks::wincolor\l_sink::operator=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1wincolor__sink.html#a29223439e0f8c9b9c942f02630299bf9",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="spdlog::sinks::wincolor\l_sink::set_color",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1wincolor__sink.html#a4bd6f06c3b20e89b92ca386a17c2f069",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="set_formatter",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1sink.html#ae9d95f00967d75a84d76570dd6ea5196",tooltip=" "];
+}

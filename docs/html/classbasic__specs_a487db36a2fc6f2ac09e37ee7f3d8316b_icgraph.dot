@@ -1,0 +1,16 @@
+digraph "fill_unit"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="fill_unit",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="detail::write_nonfinite",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a1446334f70e1fd5b2840071f79580331",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="detail::write",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a6da38163e1b603603b3deb3d8ad67b30",tooltip=" "];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="detail::write_float",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a503a3fdae408f07dae7003840f786b53",tooltip=" "];
+  Node2 -> Node2 [id="edge4_Node000002_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

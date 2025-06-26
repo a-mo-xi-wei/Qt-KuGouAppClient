@@ -5,7 +5,5 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="nested_formatter\< basic\l_string_view\< Char \>,\l Char \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structnested__formatter.html",tooltip=" "];
-  Node0 -> Node1 [id="edge286_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="formatter\< std::bitset\l\< N \>, Char \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structformatter_3_01std_1_1bitset_3_01_n_01_4_00_01_char_01_4.html",tooltip=" "];
+  Node0 [id="Node000000",label="native_formatter\< T,\l Char, TYPE \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structdetail_1_1native__formatter.html",tooltip=" "];
 }

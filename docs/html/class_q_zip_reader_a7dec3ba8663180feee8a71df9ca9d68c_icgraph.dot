@@ -1,0 +1,23 @@
+digraph "fileInfoList"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="fileInfoList",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Returns the list of files the archive contains."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CResourceManager::addZipFile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_resource_manager.html#a2e27bc63fdd14bfb4afb34d0af4ef2f1",tooltip="添加 ZIP 文件"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="extractAll",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_zip_reader.html#a2fcbedd0d2285a53980b4d1eb701c941",tooltip="Extracts the full contents of the zip file into destinationDir on the local filesystem."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="CResourceManager::loadFile\lResource",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_resource_manager.html#a67add8a4e5c036fcd1bb19028746c150",tooltip="加载文件资源"];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="CResourceManager::getFile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_resource_manager.html#ab1008d2784e4a61905cda1e24ec38111",tooltip="获取指定路径的文件资源"];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="chttpserver::onProcessLocal\lFileLoad",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classchttpserver.html#a7f47ba6b730e696cad8c56eedb195c5a",tooltip="chttpserver::onProcessLocalFileLoad 处理内部文件导入"];
+  Node4 -> Node7 [id="edge6_Node000004_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="CResourceManager::Workingfile\lChanged",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_resource_manager.html#adad0e8429435dfeac6a3c15162fdbeb8",tooltip="处理文件变化完成"];
+  Node7 -> Node8 [id="edge7_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="CResourceManager::CResource\lManager",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_resource_manager.html#a5671a29a1df6a6ba2c654053276c1f39",tooltip="构造函数"];
+}

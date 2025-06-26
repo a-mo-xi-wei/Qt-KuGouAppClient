@@ -1,0 +1,17 @@
+digraph "slideInPrev"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="slideInPrev",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="滑动到上一页"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="slideInIdx",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c",tooltip="滑动到指定索引的页面"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="slideInWidget",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77",tooltip="滑动到指定控件页面"];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="animationDoneSlot",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c",tooltip="处理动画完成事件"];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="animationFinished",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d",tooltip="动画完成信号"];
+}

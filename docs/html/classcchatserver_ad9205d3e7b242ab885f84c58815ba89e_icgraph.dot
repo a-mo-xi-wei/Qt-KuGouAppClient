@@ -1,0 +1,25 @@
+digraph "getGroupInfo"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="getGroupInfo",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="得到指定ID的群信息"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="onProcessNetUserDeleteGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#ae17f04b24b5c267cc9525a5fff7b371c",tooltip="处理解散群消息"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="OnProcessNetText",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#a2122f43bc76cad23f89fc7d696f6c2e2",tooltip="处理网络字符串消息"];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="onProcessNetUserGroupChat",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#ae30087229532fedfbc73faf40bdd1863",tooltip="处理用户聊天消息"];
+  Node4 -> Node3 [id="edge4_Node000004_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge5_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="onProcessNetUserGroupGet\lChatRecord",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#af8ab0dc1708dd364652cbd59040531ba",tooltip="处理用户获取聊天记录消息"];
+  Node5 -> Node3 [id="edge6_Node000005_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge7_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="onProcessNetUserJoinGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#a6e01efd3c5ff1323ab11d1179c25d5bf",tooltip="处理加入群消息"];
+  Node6 -> Node3 [id="edge8_Node000006_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge9_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="onProcessNetUserLeaveGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcchatserver.html#af143a16110da7c8584f24e4f5406c4d7",tooltip="处理离开群消息"];
+  Node7 -> Node3 [id="edge10_Node000007_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

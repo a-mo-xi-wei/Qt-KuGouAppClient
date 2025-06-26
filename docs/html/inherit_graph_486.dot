@@ -5,7 +5,17 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="resultTypeWithArgument\l\< Function, functionTraits\l\< Function \>::template argument\l\< index \>::type \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_with_argument.html",tooltip=" "];
-  Node0 -> Node1 [id="edge382_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="resultTypeTakesArguments\l\< Function, index, true \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_takes_arguments_3_01_function_00_01index_00_01true_01_4.html",tooltip=" "];
+  Node0 [id="Node000000",label="QToolButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_tool_button.html",tooltip="工具按钮类"];
+  Node0 -> Node1 [id="edge359_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="IconBesideTextToolButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_icon_beside_text_tool_button.html",tooltip="自定义工具按钮类，图标与文本并排"];
+  Node0 -> Node2 [id="edge360_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="MenuBtn",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_menu_btn.html",tooltip="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤"];
+  Node0 -> Node3 [id="edge361_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="PopularRightToolButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_popular_right_tool_button.html",tooltip="热门右侧工具按钮类，显示背景图和左下角文本"];
+  Node0 -> Node4 [id="edge362_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="RippleButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ripple_button.html",tooltip="带涟漪效果的按钮类，支持阴影和自定义图标"];
+  Node0 -> Node5 [id="edge363_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="UpToolButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_up_tool_button.html",tooltip="上移按钮类，继承自 QToolButton，支持悬浮效果"];
+  Node0 -> Node6 [id="edge364_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="VolumeToolBtn",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_volume_tool_btn.html",tooltip="音量调节按钮类，继承自 QToolButton，支持音量滑块和静音功能"];
 }

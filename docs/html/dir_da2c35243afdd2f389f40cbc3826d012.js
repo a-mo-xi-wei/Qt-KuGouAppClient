@@ -1,5 +1,5 @@
 var dir_da2c35243afdd2f389f40cbc3826d012 =
 [
-    [ "moc_PurchasedVideos.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur0c79c807d8665253cf0c8dc4de9660b1.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur0c79c807d8665253cf0c8dc4de9660b1" ],
-    [ "moc_PurchasedVideos.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur70806f246f7ba40c638b0ca8474ff6ed.html", null ]
+    [ "moc_PurchasedVideos.cpp", "moc___purchased_videos_8cpp.html", "moc___purchased_videos_8cpp" ],
+    [ "moc_PurchasedVideos.cpp.d", "moc___purchased_videos_8cpp_8d.html", null ]
 ];

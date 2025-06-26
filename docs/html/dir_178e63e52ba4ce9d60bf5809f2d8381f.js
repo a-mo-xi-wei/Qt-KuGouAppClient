@@ -1,7 +1,7 @@
 var dir_178e63e52ba4ce9d60bf5809f2d8381f =
 [
-    [ "moc_SideHideLabel.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__97cd798acc7b884277345c0df7e25c44.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__97cd798acc7b884277345c0df7e25c44" ],
-    [ "moc_SideHideLabel.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__e1789b23cb63ce22264b6248e4a0fd74.html", null ],
-    [ "moc_SlideShow.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__fd1f3a6f5043d37529ee7f48da290d1a.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__fd1f3a6f5043d37529ee7f48da290d1a" ],
-    [ "moc_SlideShow.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__66b4bdd27211587327aaabdbb243211a.html", null ]
+    [ "moc_SideHideLabel.cpp", "moc___side_hide_label_8cpp.html", "moc___side_hide_label_8cpp" ],
+    [ "moc_SideHideLabel.cpp.d", "moc___side_hide_label_8cpp_8d.html", null ],
+    [ "moc_SlideShow.cpp", "moc___slide_show_8cpp.html", "moc___slide_show_8cpp" ],
+    [ "moc_SlideShow.cpp.d", "moc___slide_show_8cpp_8d.html", null ]
 ];

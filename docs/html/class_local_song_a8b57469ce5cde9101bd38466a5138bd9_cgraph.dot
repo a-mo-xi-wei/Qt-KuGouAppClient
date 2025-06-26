@@ -1,0 +1,20 @@
+digraph "onSongNameSort"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="onSongNameSort",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="歌曲名称排序"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="MySort",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_local_song.html#a4d900ad455fbe7001a3f4e5a4abce74f",tooltip="自定义排序"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="updateCurPlayIndex",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_local_song.html#ac8c5ea460f7dfd2af0f743eabb55e876",tooltip="更新当前播放索引"];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="ElaMessageBar::warning",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_message_bar.html#aaf06af29d4b610224fbb14636ce07b32",tooltip="显示警告消息"];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="ElaMessageBar::ElaMessageBar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca",tooltip="构造函数，初始化消息栏"];
+  Node5 -> Node5 [id="edge5_Node000005_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 -> Node6 [id="edge6_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="ElaMessageBarPrivate\l::onCloseButtonClicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae",tooltip="关闭按钮点击事件处理"];
+}

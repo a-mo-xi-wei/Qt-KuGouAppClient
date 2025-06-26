@@ -1,4 +1,4 @@
 var dir_6335133afd8e3bcf3abf37c143d8b8b4 =
 [
-    [ "ui_RecommendForYou.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_r9d29849f202f20922bfa2882cf8b62ca.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_r9d29849f202f20922bfa2882cf8b62ca" ]
+    [ "ui_RecommendForYou.h", "ui___recommend_for_you_8h.html", "ui___recommend_for_you_8h" ]
 ];

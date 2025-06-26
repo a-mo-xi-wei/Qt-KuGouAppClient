@@ -5,7 +5,9 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="QCommonStyle",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node0 -> Node1 [id="edge299_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="QtMaterialStyle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_style.html",tooltip="Material Design 风格类，继承自 QCommonStyle，管理主题和颜色"];
+  Node0 [id="Node000000",label="QCheckBox",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge297_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="AniCheckBox",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ani_check_box.html",tooltip="带动画的复选框基类，继承自 QCheckBox"];
+  Node1 -> Node2 [id="edge298_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CheckBox1",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_check_box1.html",tooltip="自定义复选框类，继承自 AniCheckBox，支持动画效果"];
 }

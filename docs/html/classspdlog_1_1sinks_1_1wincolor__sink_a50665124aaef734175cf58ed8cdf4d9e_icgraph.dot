@@ -1,0 +1,22 @@
+digraph "set_color_mode_impl"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="set_color_mode_impl",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="set_color_mode",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1wincolor__sink.html#aee8e2bdb0a8886186331a6f4587b1a1a",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="operator=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1wincolor__sink.html#a29223439e0f8c9b9c942f02630299bf9",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="wincolor_sink",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1wincolor__sink.html#ae28a2fb9f3cce178c02c0c4915bf2d35",tooltip=" "];
+  Node4 -> Node3 [id="edge4_Node000004_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node5 [id="edge5_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="wincolor_sink",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1wincolor__sink.html#aec0accdb5190bfdbf1234b295a68d97f",tooltip=" "];
+  Node4 -> Node6 [id="edge6_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="spdlog::sinks::wincolor\l_stderr_sink::wincolor\l_stderr_sink",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1wincolor__stderr__sink.html#aaed7c5c3d1d032e6f81ed446384f9f3b",tooltip=" "];
+  Node4 -> Node7 [id="edge7_Node000004_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="spdlog::sinks::wincolor\l_stdout_sink::wincolor\l_stdout_sink",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classspdlog_1_1sinks_1_1wincolor__stdout__sink.html#a02f14dca872e161c0cc7d4e5188bc5f9",tooltip=" "];
+}

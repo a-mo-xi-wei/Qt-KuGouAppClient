@@ -5,7 +5,7 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="Ui_VideoBlockWidget",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui___video_block_widget.html",tooltip=" "];
-  Node0 -> Node1 [id="edge529_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="VideoBlockWidget",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_1_1_video_block_widget.html",tooltip=" "];
+  Node0 [id="Node000000",label="Ui_PurchasedVideos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui___purchased_videos.html",tooltip=" "];
+  Node0 -> Node1 [id="edge507_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="PurchasedVideos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_1_1_purchased_videos.html",tooltip=" "];
 }

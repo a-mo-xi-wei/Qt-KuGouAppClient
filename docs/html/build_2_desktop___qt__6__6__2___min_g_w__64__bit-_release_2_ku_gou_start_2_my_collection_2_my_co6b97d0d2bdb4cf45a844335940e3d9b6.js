@@ -1,8 +1,0 @@
-var build_2_desktop___qt__6__6__2___min_g_w__64__bit__release_2_ku_gou_start_2_my_collection_2_my_co6b97d0d2bdb4cf45a844335940e3d9b6 =
-[
-    [ "qt_meta_stringdata_CLASSDeviceWidgetENDCLASS_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a759d7a5a6d181a2f6a88d4670228e37c.html", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a759d7a5a6d181a2f6a88d4670228e37c" ],
-    [ "Q_CONSTINIT", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co6b97d0d2bdb4cf45a844335940e3d9b6.html#ad83b2306f94b5b9e5625794fc238c8a0", null ],
-    [ "QT_MOC_LITERAL", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co6b97d0d2bdb4cf45a844335940e3d9b6.html#a3c6e81753001d10d51e62d0a29c273bc", null ],
-    [ "qt_meta_data_CLASSDeviceWidgetENDCLASS", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co6b97d0d2bdb4cf45a844335940e3d9b6.html#a88a23353659bc5f7eb1ec8ca6a68e71c", null ],
-    [ "qt_meta_stringdata_CLASSDeviceWidgetENDCLASS", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#ae0beb89e5f2f6db2aee847ee75318281", null ]
-];

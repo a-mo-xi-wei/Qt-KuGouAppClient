@@ -1,0 +1,23 @@
+digraph "~CTcpServer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="~CTcpServer",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CloseServer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c",tooltip="关闭服务器"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="clear",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#ac8bb3912a3ce86b15842e79d0b421204",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="ThreadHandle::clear",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#ac8bb3912a3ce86b15842e79d0b421204",tooltip="ThreadHandle::clear 清除所有的线程"];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="ThreadHandle::removeThread",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#a7021b8fcc7893486feeffc4bc645b4ff",tooltip=" "];
+  Node3 -> Node6 [id="edge5_Node000003_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="ThreadHandle::getClass",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#ad28ce2d8b771f377f46741b64eee292d",tooltip=" "];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="ThreadHandle::ThreadHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_thread_handle.html#aebf2d610a3a92180a8d1da5c8ebb4011",tooltip=" "];
+  Node3 -> Node8 [id="edge7_Node000003_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="sentDisConnect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tcp_server.html#a5a529674e353df317f0e9497d0983ac6",tooltip=" "];
+}

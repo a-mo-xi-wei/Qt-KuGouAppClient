@@ -1,4 +1,0 @@
-var dir_7c75d118885c1f20c9e13e05f4332441 =
-[
-    [ "ui_RecommendForYou.h", "cmake-build-release_2_ku_gou_start_2_recommend_for_you_2_recommend_for_you__autogen_2include_2ui___recommend_for_you_8h.html", "cmake-build-release_2_ku_gou_start_2_recommend_for_you_2_recommend_for_you__autogen_2include_2ui___recommend_for_you_8h" ]
-];

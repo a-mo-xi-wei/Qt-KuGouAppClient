@@ -10,7 +10,7 @@ digraph "Ui_TitleWidget"
   Node3 -> Node1 [id="edge2_Node000001_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" title_gender_label\ntitle_index_label1\ntitle_index_label2\ntitle_index_label3\ntitle_index_label4\ntitle_line\ntitle_name_label\ntitle_portrait_label",fontcolor="grey" ];
   Node3 [id="Node000003",label="QLabel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_label.html",tooltip="标签控件类"];
   Node4 -> Node1 [id="edge3_Node000001_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" search_song_suggest_box",fontcolor="grey" ];
-  Node4 [id="Node000004",label="ElaSuggestBox",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_suggest_box.html",tooltip=" "];
+  Node4 [id="Node000004",label="ElaSuggestBox",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_suggest_box.html",tooltip="搜索建议框控件，支持添加/移除建议项和事件过滤"];
   Node5 -> Node4 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="QWidget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node6 -> Node1 [id="edge5_Node000001_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" close_toolButton\nmax_toolButton\nmin_toolButton",fontcolor="grey" ];

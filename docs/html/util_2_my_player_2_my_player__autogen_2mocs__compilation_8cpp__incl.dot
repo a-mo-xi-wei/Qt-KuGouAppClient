@@ -8,7 +8,7 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="VSP72HEYOY/moc_PcmPlayer.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___pcm_player_8cpp.html",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="../../../../../util\l/MyPlayer/PcmPlayer\l/PcmPlayer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_pcm_player_8h.html",tooltip=" "];
+  Node3 [id="Node000003",label="../../../../../../util\l/MyPlayer/PcmPlayer/PcmPlayer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_pcm_player_8h.html",tooltip=" "];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="QPixmap",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node3 -> Node5 [id="edge4_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];
@@ -34,7 +34,7 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node15 [id="edge14_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="VSP72HEYOY/moc_PcmPlayer\l_SDL.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___pcm_player___s_d_l_8cpp.html",tooltip=" "];
   Node15 -> Node16 [id="edge15_Node000015_Node000016",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="../../../../../util\l/MyPlayer/PcmPlayer\l/PcmPlayer_SDL.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_pcm_player___s_d_l_8h.html",tooltip=" "];
+  Node16 [id="Node000016",label="../../../../../../util\l/MyPlayer/PcmPlayer/PcmPlayer_SDL.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_pcm_player___s_d_l_8h.html",tooltip=" "];
   Node16 -> Node17 [id="edge16_Node000016_Node000017",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="SDL2/SDL.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node16 -> Node18 [id="edge17_Node000016_Node000018",color="steelblue1",style="solid",tooltip=" "];
@@ -45,7 +45,7 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node19 [id="edge21_Node000001_Node000019",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="YUMUZI6FUH/moc_VideoPlayer.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___video_player_8cpp.html",tooltip=" "];
   Node19 -> Node20 [id="edge22_Node000019_Node000020",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="../../../../../util\l/MyPlayer/VideoPlayer\l/VideoPlayer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_video_player_8h.html",tooltip=" "];
+  Node20 [id="Node000020",label="../../../../../../util\l/MyPlayer/VideoPlayer\l/VideoPlayer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_video_player_8h.html",tooltip=" "];
   Node20 -> Node21 [id="edge23_Node000020_Node000021",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="QTimer",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node20 -> Node22 [id="edge24_Node000020_Node000022",color="steelblue1",style="solid",tooltip=" "];

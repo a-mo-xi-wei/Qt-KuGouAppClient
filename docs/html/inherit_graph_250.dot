@@ -5,7 +5,19 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="QMenuBar",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node0 -> Node1 [id="edge323_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="ElaMenuBar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_menu_bar.html",tooltip="自定义菜单栏类，支持图标、文本和快捷键的菜单项添加"];
+  Node0 [id="Node000000",label="QMenu",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge316_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="BaseMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_base_menu.html",tooltip="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能"];
+  Node1 -> Node2 [id="edge317_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ListOptionMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_list_option_menu.html",tooltip="歌曲分类选项菜单类，继承自 BaseMenu，提供场景、主题等分类选择"];
+  Node1 -> Node3 [id="edge318_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="ListenOptionMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_listen_option_menu.html",tooltip="听单选项菜单类，继承自 BaseMenu，提供分类音频内容选择"];
+  Node1 -> Node4 [id="edge319_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="SongOptionMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_song_option_menu.html",tooltip="歌曲操作选项菜单类，继承自 BaseMenu，提供播放、添加、删除等功能"];
+  Node1 -> Node5 [id="edge320_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="SortOptionMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_sort_option_menu.html",tooltip="歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式"];
+  Node1 -> Node6 [id="edge321_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TitleOptionMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_title_option_menu.html",tooltip="标题栏选项菜单类，继承自 BaseMenu，提供壁纸、设置、退出等功能"];
+  Node0 -> Node7 [id="edge322_Node000000_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="ElaMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_menu.html",tooltip="自定义菜单类，支持动画、图标和子菜单"];
 }

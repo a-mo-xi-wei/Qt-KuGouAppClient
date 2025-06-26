@@ -3,7 +3,7 @@ var class_speed_dialog_state =
     [ "SpeedDialogState", "class_speed_dialog_state.html#a9b783a8a6cfd8f28f371225f2c4ba89f", null ],
     [ "load", "class_speed_dialog_state.html#a78f61ac2dd03bcba8e09ca20cd7d68e3", null ],
     [ "reset", "class_speed_dialog_state.html#ad20897c5c8bd47f5d4005989bead0e55", null ],
-    [ "save", "class_speed_dialog_state.html#aae2c382151ef7c9aa913361172b30db6", null ],
+    [ "save", "class_speed_dialog_state.html#af0e2dc89849bf699e347f217fffd2bf2", null ],
     [ "adjustmentValue", "class_speed_dialog_state.html#ab25f64d9b5d936807db806626222c1f7", null ],
     [ "isDJMode", "class_speed_dialog_state.html#a5e567063c9d048d5cfdbcb67afa8088c", null ],
     [ "KEY_ADJUSTMENT", "class_speed_dialog_state.html#a5281484010ac5f9f35617a9242ac8d97", null ],

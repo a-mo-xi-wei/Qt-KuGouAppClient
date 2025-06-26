@@ -5,7 +5,7 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="QScrollArea",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node0 -> Node1 [id="edge344_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="MyScrollArea",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_my_scroll_area.html",tooltip="自定义滚动区域类，继承自 QScrollArea，支持平滑滚动和返回顶部功能"];
+  Node0 [id="Node000000",label="QRunnable",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge343_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="AsyncJob\< ResultType,\l Function, Args \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_async_1_1_async_job.html",tooltip="异步任务类。"];
 }

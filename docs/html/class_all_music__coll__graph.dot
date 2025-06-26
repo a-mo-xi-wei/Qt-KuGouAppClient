@@ -1,0 +1,44 @@
+digraph "AllMusic"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="AllMusic",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="音乐管理界面类，支持全部、收藏、歌单、最近、本地、已购、云盘子界面切换及排序"];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="QWidget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [id="edge2_Node000001_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" ui",fontcolor="grey" ];
+  Node3 [id="Node000003",label="AllMusic",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ui_1_1_all_music.html",tooltip=" "];
+  Node4 -> Node3 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Ui_AllMusic",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ui___all_music.html",tooltip=" "];
+  Node5 -> Node4 [id="edge4_Node000004_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" all_label\ncloud_disk_label\nidx1_lab\nidx2_lab\nidx3_lab\nidx4_lab\nidx5_lab\nidx6_lab\nidx7_lab\nlocal_label\n...",fontcolor="grey" ];
+  Node5 [id="Node000005",label="QLabel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_label.html",tooltip="标签控件类"];
+  Node6 -> Node4 [id="edge5_Node000004_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" all_batch_toolButton\nall_download_toolButton\nall_play_toolButton\nall_share_toolButton\nall_sort_toolButton",fontcolor="grey" ];
+  Node6 [id="Node000006",label="QToolButton",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_tool_button.html",tooltip="工具按钮类"];
+  Node7 -> Node4 [id="edge6_Node000004_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" search_lineEdit",fontcolor="grey" ];
+  Node7 [id="Node000007",label="MySearchLineEdit",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_my_search_line_edit.html",tooltip="自定义搜索输入框类，继承自 QLineEdit，支持焦点动画和自定义右键菜单"];
+  Node8 -> Node7 [id="edge7_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="ElaLineEdit",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_line_edit.html",tooltip=" "];
+  Node9 -> Node8 [id="edge8_Node000008_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="QLineEdit",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node10 -> Node7 [id="edge9_Node000007_Node000010",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" m_markAnimation\nm_widthAnimation",fontcolor="grey" ];
+  Node10 [id="Node000010",label="QPropertyAnimation",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_property_animation.html",tooltip="Qt 属性动画类，用于窗口缩放动画"];
+  Node11 -> Node4 [id="edge10_Node000004_Node000011",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" stackedWidget",fontcolor="grey" ];
+  Node11 [id="Node000011",label="SlidingStackedWidget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_sliding_stacked_widget.html",tooltip="自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画"];
+  Node12 -> Node11 [id="edge11_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="QStackedWidget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node13 -> Node11 [id="edge12_Node000011_Node000013",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" animgroup",fontcolor="grey" ];
+  Node13 [id="Node000013",label="QParallelAnimationGroup",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_parallel_animation_group.html",tooltip="并行动画组类"];
+  Node14 -> Node1 [id="edge13_Node000001_Node000014",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" m_sortOptMenu",fontcolor="grey" ];
+  Node14 [id="Node000014",label="SortOptionMenu",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_sort_option_menu.html",tooltip="歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式"];
+  Node15 -> Node14 [id="edge14_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="BaseMenu",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_base_menu.html",tooltip="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能"];
+  Node16 -> Node15 [id="edge15_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="QMenu",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node17 -> Node15 [id="edge16_Node000015_Node000017",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" m_curSelect\nm_lastSelect",fontcolor="grey" ];
+  Node17 [id="Node000017",label="MenuBtn",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_menu_btn.html",tooltip="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤"];
+  Node6 -> Node17 [id="edge17_Node000017_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 -> Node15 [id="edge18_Node000015_Node000018",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" m_opacityEffect",fontcolor="grey" ];
+  Node18 [id="Node000018",label="QGraphicsOpacityEffect",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_graphics_opacity_effect.html",tooltip="图形透明效果类"];
+  Node17 -> Node14 [id="edge19_Node000014_Node000017",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" m_sortBtn",fontcolor="grey" ];
+}

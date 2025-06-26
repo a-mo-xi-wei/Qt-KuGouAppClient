@@ -1,0 +1,9 @@
+digraph "类继承关系图"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="formatter\< R, Char,\l enable_if_t\< conjunction\l\< bool_constant\< range_format\l_kind\< R, Char \>::value !=range\l_format::disabled &&range_format\l_kind\< R, Char \>::value !=range_format\l::map &&range_format_kind\< R, Char \>\l::value !=range_format::string &&range\l_format_kind\< R, Char \>::value !=range\l_format::debug_string \>, detail::is_formattable\l_delayed\< R, Char \> \>::value \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01bool__constant_3_01rang0fba9db9d2a77e9ada06b2f190c4dd4a.html",tooltip=" "];
+}

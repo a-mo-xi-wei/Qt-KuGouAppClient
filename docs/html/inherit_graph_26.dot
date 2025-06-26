@@ -1,0 +1,17 @@
+digraph "类继承关系图"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="buffer\< char \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1buffer.html",tooltip=" "];
+  Node0 -> Node1 [id="edge113_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="basic_memory_buffer\l\< char \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classbasic__memory__buffer.html",tooltip=" "];
+  Node0 -> Node2 [id="edge114_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="file_print_buffer\<\l F, enable_if_t\< has\l_flockfile\< F \>::value \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1file__print__buffer_3_01_f_00_01enable__if__t_3_01has__flockfile_3_01_f_01_4_1_1value_01_4_01_4.html",tooltip=" "];
+  Node0 -> Node3 [id="edge115_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="counting_buffer\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1counting__buffer.html",tooltip=" "];
+  Node0 -> Node4 [id="edge116_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="file_print_buffer\<\l F, Enable \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1file__print__buffer.html",tooltip=" "];
+}

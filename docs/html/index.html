@@ -19,7 +19,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -111,9 +110,10 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
  <b>本项目代码仅限研究和学习使用，资源版权归音乐平台所有</b> </p>
 <hr  />
  <h2><a class="anchor" id="autotoc_md2"></a>
-本人开发工具用的是CLion，非常简便明了，编译的话，生成器使用Ninja，工具链请使用 **_MinGW_** , 不要用VS2022(MSVC)。构建类型选择Release（建议）的话，不管构建还是运行都会快很多，分支的话Windows 10/11用户可以选择Stable稳定版，master分支（功能更多）一直在开发中，能用是能用，但不保证稳定😜。</h2>
+本人开发工具用的是CLion，非常简便明了，编译的话，生成器使用Ninja，工具链请使用 **_MinGW_** , 不要用VS2022(MSVC)。构建类型选择Release（建议）的话，构建会快很多，Windows 10/11用户可以选择master分支(功能更多)一直在开发中，不保证稳定😜，master-no-docs无文档版(文档体积过大)，Stable稳定版(功能落后，不再维护)。</h2>
+<p><img src="settings00.png" alt="" class="inline" title="配置如图"/>    </p>
 <p><img src="settings01.png" alt="" class="inline" title="配置如图"/>    </p>
-<p>Ubuntu 下如果报错： </p><div class="fragment"><div class="line">/home/weiwang/Desktop/KuGou/tools/ccache/ccache: error while loading shared libraries: libhiredis.so.0.14: cannot open shared object file: No such file or directory</div>
+<p>Ubuntu 下如果出现类似如下报错： </p><div class="fragment"><div class="line">/home/xxx/Desktop/KuGou/tools/ccache/ccache: error while loading shared libraries: libhiredis.so.0.14: cannot open shared object file: No such file or directory</div>
 </div><!-- fragment --><p> 请执行以下命令： </p><div class="fragment"><div class="line">sudo apt install ccache</div>
 <div class="line">rm YourProjectPath/KuGou/tools/ccache/ccache</div>
 <div class="line">cp /usr/bin/ccache YourProjectPath/KuGou/tools/ccache</div>
@@ -225,12 +225,10 @@ Ai对话功能需要预先获取API，有问题请参考：https://gitee.com/a-m
 8.我的收藏界面</h2>
 <p><img src="image14.png" alt="" class="inline" title="输入图片说明"/>    </p>
 <p><img src="image15.png" alt="" class="inline" title="输入图片说明"/>    </p>
-<p><img src="image16.png" alt="" class="inline" title="输入图片说明"/>    </p>
 <h2><a class="anchor" id="autotoc_md18"></a>
 9.本地与下载界面</h2>
 <p><img src="image17.png" alt="" class="inline" title="输入图片说明"/>    </p>
 <p><img src="image18.png" alt="" class="inline" title="输入图片说明"/>    </p>
-<p><img src="image19.png" alt="" class="inline" title="输入图片说明"/>    </p>
 <p><img src="image20.png" alt="" class="inline" title="输入图片说明"/>    </p>
 <p><img src="image21.png" alt="" class="inline" title="输入图片说明"/>    </p>
 <h2><a class="anchor" id="autotoc_md19"></a>

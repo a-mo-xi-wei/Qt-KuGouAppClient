@@ -1,7 +1,7 @@
 var dir_81a6ea741fb994f9e63ef3e01cfec7ae =
 [
-    [ "ui_MusicRepoBlock.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_music_repository_2_mua68420f26f4f1972c305fd15b9211d2b.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_music_repository_2_mua68420f26f4f1972c305fd15b9211d2b" ],
-    [ "ui_MusicRepoList.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_music_repository_2_mub9fc2412d2d9f644a3fe0d0f79e2d522.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_music_repository_2_mub9fc2412d2d9f644a3fe0d0f79e2d522" ],
-    [ "ui_MusicRepository.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_music_repository_2_mu010e98cbb5d7bde9e94b6a41a9d816c6.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_music_repository_2_mu010e98cbb5d7bde9e94b6a41a9d816c6" ],
-    [ "ui_MusicRepoVideo.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_music_repository_2_mu84e822a75feffa90c92a58739a7f09d4.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_music_repository_2_mu84e822a75feffa90c92a58739a7f09d4" ]
+    [ "ui_MusicRepoBlock.h", "ui___music_repo_block_8h.html", "ui___music_repo_block_8h" ],
+    [ "ui_MusicRepoList.h", "ui___music_repo_list_8h.html", "ui___music_repo_list_8h" ],
+    [ "ui_MusicRepository.h", "ui___music_repository_8h.html", "ui___music_repository_8h" ],
+    [ "ui_MusicRepoVideo.h", "ui___music_repo_video_8h.html", "ui___music_repo_video_8h" ]
 ];

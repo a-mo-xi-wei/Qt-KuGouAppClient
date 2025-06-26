@@ -6,7 +6,7 @@ digraph "moc_LocalSong.cpp"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="moc_LocalSong.cpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="../../../../../KuGouStart\l/LocalDownload/LocalSong\l/LocalSong.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_local_song_8h.html",tooltip="定义 LocalSong 类，提供本地歌曲管理界面"];
+  Node2 [id="Node000002",label="../../../../../../KuGouStart\l/LocalDownload/LocalSong\l/LocalSong.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_local_song_8h.html",tooltip="定义 LocalSong 类，提供本地歌曲管理界面"];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="MusicItemWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_music_item_widget_8h.html",tooltip="定义 MusicItemWidget 类，提供音乐条目控件功能"];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
@@ -43,10 +43,12 @@ digraph "moc_LocalSong.cpp"
   Node2 -> Node18 [id="edge20_Node000002_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="QQueue",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node2 -> Node10 [id="edge21_Node000002_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node19 [id="edge22_Node000001_Node000019",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="QtNetwork/QSslError",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node19 [id="edge22_Node000002_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="QJsonObject",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node20 [id="edge23_Node000001_Node000020",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="QtCore/qmetatype.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node20 [id="Node000020",label="QtNetwork/QSslError",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node21 [id="edge24_Node000001_Node000021",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="memory",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node21 [id="Node000021",label="QtCore/qmetatype.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node22 [id="edge25_Node000001_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="memory",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }

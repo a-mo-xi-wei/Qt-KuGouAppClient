@@ -1,0 +1,13 @@
+digraph "finishStreaming"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="finishStreaming",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="结束流式显示"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="adjustTextHeight",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_text_bubble.html#a8b432e082f6242771cc25ca9926621c9",tooltip="调整文本高度"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="setPlainText",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_text_bubble.html#ad95b7d6dc93287c2e4c2ad3f3c95570b",tooltip="设置纯文本内容"];
+}

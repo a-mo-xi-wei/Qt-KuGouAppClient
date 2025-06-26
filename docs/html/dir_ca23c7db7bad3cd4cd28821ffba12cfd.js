@@ -6,6 +6,6 @@ var dir_ca23c7db7bad3cd4cd28821ffba12cfd =
     [ "FHGTCAHYIX", "dir_4f3b46a425f9c37f98a536662f21f532.html", "dir_4f3b46a425f9c37f98a536662f21f532" ],
     [ "include", "dir_8ab60eee09ee78125f4c31c81f786f3e.html", "dir_8ab60eee09ee78125f4c31c81f786f3e" ],
     [ "KT7EBRQNGF", "dir_54d0566f2dbce44b8743fc487566b0e1.html", "dir_54d0566f2dbce44b8743fc487566b0e1" ],
-    [ "moc_predefs.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__autogen_2moc__predefs_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__autogen_2moc__predefs_8h" ],
-    [ "mocs_compilation.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__autogen_2mocs__compilation_8cpp.html", null ]
+    [ "moc_predefs.h", "_ku_gou_start_2_video_2_start_video__autogen_2moc__predefs_8h.html", "_ku_gou_start_2_video_2_start_video__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "_ku_gou_start_2_video_2_start_video__autogen_2mocs__compilation_8cpp.html", null ]
 ];

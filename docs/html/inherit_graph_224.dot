@@ -5,7 +5,5 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="parse_context\< Char \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classparse__context.html",tooltip=" "];
-  Node0 -> Node1 [id="edge291_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="compile_parse_context\l\< Char \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1compile__parse__context.html",tooltip=" "];
+  Node0 [id="Node000000",label="parse_context\< Char \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classparse__context.html",tooltip="Parsing context consisting of a format string range being parsed and an argument counter for automati..."];
 }

@@ -16,7 +16,7 @@ digraph "TitleWidget"
   Node6 -> Node4 [id="edge5_Node000004_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" title_gender_label\ntitle_index_label1\ntitle_index_label2\ntitle_index_label3\ntitle_index_label4\ntitle_line\ntitle_name_label\ntitle_portrait_label",fontcolor="grey" ];
   Node6 [id="Node000006",label="QLabel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_label.html",tooltip="标签控件类"];
   Node7 -> Node4 [id="edge6_Node000004_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" search_song_suggest_box",fontcolor="grey" ];
-  Node7 [id="Node000007",label="ElaSuggestBox",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_suggest_box.html",tooltip=" "];
+  Node7 [id="Node000007",label="ElaSuggestBox",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_suggest_box.html",tooltip="搜索建议框控件，支持添加/移除建议项和事件过滤"];
   Node2 -> Node7 [id="edge7_Node000007_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 -> Node4 [id="edge8_Node000004_Node000008",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" close_toolButton\nmax_toolButton\nmin_toolButton",fontcolor="grey" ];
   Node8 [id="Node000008",label="RippleButton",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ripple_button.html",tooltip="带涟漪效果的按钮类，支持阴影和自定义图标"];

@@ -62,9 +62,9 @@ digraph "类继承关系图"
   Node3 -> Node29 [id="edge559_Node000003_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node29 [id="Node000029",label="ElaMessageBar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_message_bar.html",tooltip="消息通知栏类，支持多种消息类型和位置策略"];
   Node3 -> Node30 [id="edge560_Node000003_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node30 [id="Node000030",label="ElaSuggestBox",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_suggest_box.html",tooltip=" "];
+  Node30 [id="Node000030",label="ElaSuggestBox",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_suggest_box.html",tooltip="搜索建议框控件，支持添加/移除建议项和事件过滤"];
   Node3 -> Node31 [id="edge561_Node000003_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="ElaSuggestBoxSearchViewContainer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_suggest_box_search_view_container.html",tooltip=" "];
+  Node31 [id="Node000031",label="ElaSuggestBoxSearchViewContainer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_suggest_box_search_view_container.html",tooltip="建议框容器，负责绘制阴影和圆角背景"];
   Node3 -> Node32 [id="edge562_Node000003_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node32 [id="Node000032",label="ElaToggleSwitch",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_toggle_switch.html",tooltip="开关控件，支持滑动动画和主题切换"];
   Node3 -> Node33 [id="edge563_Node000003_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];

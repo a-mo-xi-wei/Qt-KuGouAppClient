@@ -7,6 +7,6 @@ var dir_ef79c2e318cccb174faf66af28e4f96b =
     [ "KPW4Y7QBIC", "dir_235aab1ba7179a5b5a91920324809391.html", "dir_235aab1ba7179a5b5a91920324809391" ],
     [ "LUMGY6CZP6", "dir_597ad5f1dcef93faf0a8f8090354e7aa.html", "dir_597ad5f1dcef93faf0a8f8090354e7aa" ],
     [ "QHWARDRQVD", "dir_3fa592cd46f968e94aa0a8232567f2e7.html", "dir_3fa592cd46f968e94aa0a8232567f2e7" ],
-    [ "moc_predefs.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_material94e67c82c80b6c05bad3ae36b9cf7d47.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_material94e67c82c80b6c05bad3ae36b9cf7d47" ],
-    [ "mocs_compilation.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_materiala7f71cc5110fd70a0449a8e5a057d9b1.html", null ]
+    [ "moc_predefs.h", "ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h.html", "ui_2_qt_material_widget_2_qt_material_widget__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "ui_2_qt_material_widget_2_qt_material_widget__autogen_2mocs__compilation_8cpp.html", null ]
 ];

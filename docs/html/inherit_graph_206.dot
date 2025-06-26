@@ -5,7 +5,7 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="native_formatter\< T,\l Char, detail::type\l_constant\< T, Char \>\l::value \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structdetail_1_1native__formatter.html",tooltip=" "];
-  Node0 -> Node1 [id="edge285_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="formatter\< T, Char,\l enable_if_t\< detail\l::type_constant\< T, Char\l \>::value !=detail::type\l::custom_type \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b.html",tooltip=" "];
+  Node0 [id="Node000000",label="native_formatter\< detail\l::float128, Char, detail\l::type::float_type \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structdetail_1_1native__formatter.html",tooltip=" "];
+  Node0 -> Node1 [id="edge284_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="formatter\< detail::\lfloat128, Char \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structformatter_3_01detail_1_1float128_00_01_char_01_4.html",tooltip=" "];
 }

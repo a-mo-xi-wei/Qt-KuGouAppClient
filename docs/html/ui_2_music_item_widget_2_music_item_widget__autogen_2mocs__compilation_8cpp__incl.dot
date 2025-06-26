@@ -8,7 +8,7 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="EWIEGA46WW/moc_MusicItem\lWidget.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___music_item_widget_8cpp.html",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="../../../../../ui/MusicItem\lWidget/MusicItemWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_music_item_widget_8h.html",tooltip="定义 MusicItemWidget 类，提供音乐条目控件功能"];
+  Node3 [id="Node000003",label="../../../../../../ui\l/MusicItemWidget/MusicItemWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_music_item_widget_8h.html",tooltip="定义 MusicItemWidget 类，提供音乐条目控件功能"];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="MyMenu.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_my_menu_8h.html",tooltip="定义 MyMenu 类，使用策略模式管理不同类型的菜单"];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];

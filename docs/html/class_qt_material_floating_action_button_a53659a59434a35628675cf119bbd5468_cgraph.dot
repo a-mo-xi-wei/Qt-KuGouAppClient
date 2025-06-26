@@ -1,0 +1,31 @@
+digraph "event"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="event",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="处理事件"];
+  Node1 -> Node1 [id="edge1_Node000001_Node000001",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="QtMaterialRaisedButton\l::event",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_raised_button.html#a53659a59434a35628675cf119bbd5468",tooltip="处理事件"];
+  Node2 -> Node2 [id="edge3_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge4_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="QtMaterialRaisedButton\l::QtMaterialRaisedButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_raised_button.html#afc13bb3664d3ad98ff032593ab3c05cc",tooltip="构造函数，初始化凸起按钮"];
+  Node3 -> Node4 [id="edge5_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="QtMaterialFlatButton\l::QtMaterialFlatButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_flat_button.html#a65ea12ca4f16ac2e30c3cf50dce44d02",tooltip="构造函数，初始化扁平按钮"];
+  Node4 -> Node5 [id="edge6_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="QtMaterialFlatButton\l::applyPreset",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_flat_button.html#a16a0579d86840d107b4e4a2f80261ba1",tooltip="应用预设样式"];
+  Node5 -> Node6 [id="edge7_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="QtMaterialFlatButton\l::setCheckable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_flat_button.html#a409fc91669595864490584b1a8b8c107",tooltip="设置是否可选中"];
+  Node6 -> Node4 [id="edge8_Node000006_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node5 -> Node7 [id="edge9_Node000005_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="QtMaterialFlatButton\l::setHaloVisible",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_flat_button.html#a99f4eca549b112a5bf5385c01ffdae6a",tooltip="设置光晕是否可见"];
+  Node7 -> Node4 [id="edge10_Node000007_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node5 -> Node8 [id="edge11_Node000005_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="QtMaterialFlatButton\l::setOverlayStyle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_flat_button.html#a0daf5cb2646fc6572dc5afa17b9a4e8d",tooltip="设置覆盖层样式"];
+  Node8 -> Node4 [id="edge12_Node000008_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node9 [id="edge13_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="QtMaterialFloatingAction\lButton",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_material_floating_action_button.html#af023d67852c850b2cf304222ae3dfe97",tooltip="构造函数，初始化浮动动作按钮"];
+  Node9 -> Node3 [id="edge14_Node000009_Node000003",color="steelblue1",style="solid",tooltip=" "];
+}

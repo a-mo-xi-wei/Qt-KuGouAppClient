@@ -19,7 +19,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -108,6 +107,9 @@ $(function(){initNavTree('class_ela_suggest_box_search_view_container.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>建议框容器，负责绘制阴影和圆角背景  
+ <a href="#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_ela_suggest_box_search_view_container_8h_source.html">ElaSuggestBoxSearchViewContainer.h</a>&gt;</code></p>
 <div class="dynheader">
 类 ElaSuggestBoxSearchViewContainer 继承关系图:</div>
@@ -125,21 +127,27 @@ ElaSuggestBoxSearchViewContainer 的协作图:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:add55defb826a8ed574d7ec2c28c9c21d" id="r_add55defb826a8ed574d7ec2c28c9c21d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add55defb826a8ed574d7ec2c28c9c21d">ElaSuggestBoxSearchViewContainer</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:add55defb826a8ed574d7ec2c28c9c21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
 <tr class="separator:add55defb826a8ed574d7ec2c28c9c21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaccc3afb8b1b7d261d8b5265ff9cde8" id="r_afaccc3afb8b1b7d261d8b5265ff9cde8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaccc3afb8b1b7d261d8b5265ff9cde8">~ElaSuggestBoxSearchViewContainer</a> () override</td></tr>
+<tr class="memdesc:afaccc3afb8b1b7d261d8b5265ff9cde8"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
 <tr class="separator:afaccc3afb8b1b7d261d8b5265ff9cde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
 <tr class="memitem:aa71936647c7e332ab07cbec003a8c9a2" id="r_aa71936647c7e332ab07cbec003a8c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71936647c7e332ab07cbec003a8c9a2">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *event) override</td></tr>
+<tr class="memdesc:aa71936647c7e332ab07cbec003a8c9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制事件  <br /></td></tr>
 <tr class="separator:aa71936647c7e332ab07cbec003a8c9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
 <tr class="memitem:abab7c56bd707e57041aaca2f2b3906b1" id="r_abab7c56bd707e57041aaca2f2b3906b1"><td class="memItemLeft" align="right" valign="top">ElaThemeType::ThemeMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abab7c56bd707e57041aaca2f2b3906b1">_themeMode</a></td></tr>
+<tr class="memdesc:abab7c56bd707e57041aaca2f2b3906b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前主题模式  <br /></td></tr>
 <tr class="separator:abab7c56bd707e57041aaca2f2b3906b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>建议框容器，负责绘制阴影和圆角背景 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
 <a id="add55defb826a8ed574d7ec2c28c9c21d" name="add55defb826a8ed574d7ec2c28c9c21d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add55defb826a8ed574d7ec2c28c9c21d">&#9670;&#160;</a></span>ElaSuggestBoxSearchViewContainer()</h2>
 
@@ -162,6 +170,18 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置边距</p>
+<p>&lt; 设置样式</p>
+<p>&lt; 获取主题模式</p>
+<p>&lt; 更新主题模式</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
@@ -194,6 +214,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>析构函数 </p>
+
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
@@ -220,6 +242,21 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>绘制事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>绘制事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>绘制阴影和圆角矩形背景 </dd></dl>
+<p>&lt; 启用抗锯齿</p>
+<p>&lt; 绘制阴影，宽度 6，偏移 8</p>
+<p>&lt; 设置边框颜色</p>
+<p>&lt; 设置背景颜色</p>
+<p>&lt; 前景矩形</p>
+<p>&lt; 绘制圆角矩形，半径 8</p>
+
 </div>
 </div>
 <h2 class="groupheader">类成员变量说明</h2>
@@ -242,6 +279,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>当前主题模式 </p>
 
 </div>
 </div>

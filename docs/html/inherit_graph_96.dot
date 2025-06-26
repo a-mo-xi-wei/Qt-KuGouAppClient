@@ -1,0 +1,9 @@
+digraph "类继承关系图"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="format_string_char\l\< S, enable_if_t\< std\l::is_base_of\< detail::\lcompile_string, S \>::value \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structdetail_1_1format__string__char_3_01_s_00_01enable__if__t_3_01std_1_1is__base__of_3_01detaif64a1271d10c6d95d71ae7ab6b6cd419.html",tooltip=" "];
+}

@@ -1,0 +1,51 @@
+digraph "write"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="write",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="count_digits",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a38d4dda9709bd099ccaa8307de424263",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="count_digits_fallback",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a3f502baff13ba9676c2a6632349d2e3d",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a25e934f3e2c5280160c34cb21a8db91c",tooltip=" "];
+  Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="is_constant_evaluated",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#aa88c553e0935b1aa6f21ac8045cf2335",tooltip=" "];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="ignore_unused",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a039aa82d5bc3557c97ae98da6aec04ce",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="format_decimal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a0141c49ca50a97445980498f75432aee",tooltip=" "];
+  Node7 -> Node8 [id="edge7_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="do_format_decimal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a6a78284fcaf4f89d8febe648ac5a688d",tooltip=" "];
+  Node8 -> Node2 [id="edge8_Node000008_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node8 -> Node9 [id="edge9_Node000008_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="to_unsigned",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a99ea2582e6e3388c7c7b0d58027cbe0b",tooltip=" "];
+  Node8 -> Node10 [id="edge10_Node000008_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="write2digits",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#ab5f59fc44586297ecd385bcf8416eb9c",tooltip=" "];
+  Node10 -> Node11 [id="edge11_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="digits2",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a43f4dfb530d295d8618f7c334df4dc0f",tooltip=" "];
+  Node10 -> Node5 [id="edge12_Node000010_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node12 [id="edge13_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="is_negative",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a78a97f55529aa98f083315e674ea1c9d",tooltip=" "];
+  Node1 -> Node13 [id="edge14_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="ptr",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$format_8h.html#adb6e274f8eb0b74b2865215e1b49c535",tooltip="Converts p to const void* for pointer formatting."];
+  Node13 -> Node14 [id="edge15_Node000013_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="bit_cast",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a68cc0da968a823f01db50bc3958c996a",tooltip=" "];
+  Node14 -> Node5 [id="edge16_Node000014_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node15 [id="edge17_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="to_pointer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#ad4a0a06e0985f4a9246a7db58143c471",tooltip=" "];
+  Node1 -> Node16 [id="edge18_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="write",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#abb5bb7d57c9cc36020fa5c0bc10fa57a",tooltip=" "];
+  Node16 -> Node17 [id="edge19_Node000016_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="do_write",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#aa599006d5579cc1efe74d57fc8f13486",tooltip=" "];
+  Node17 -> Node18 [id="edge20_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="format",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c",tooltip="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..."];
+  Node16 -> Node18 [id="edge21_Node000016_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node16 -> Node19 [id="edge22_Node000016_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="get_buffer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a24cf13eee2e2f21b4ace6908bb675f83",tooltip=" "];
+  Node16 -> Node20 [id="edge23_Node000016_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="get_iterator",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a768fb651f0fd1f8bf43076caaea18ad2",tooltip=" "];
+}

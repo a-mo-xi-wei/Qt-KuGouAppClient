@@ -1,0 +1,14 @@
+digraph "setMiddleButtonText"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="setMiddleButtonText",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="设置中间按钮文本"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ElaExitDialog",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_exit_dialog.html#a7e42279a906937fc42f9e9b4a15a6897",tooltip="构造函数，初始化退出对话框"];
+  Node2 -> Node2 [id="edge2_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge3_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="ElaTheme::themeModeChanged",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba",tooltip="主题模式更改信号"];
+}

@@ -1,0 +1,22 @@
+digraph "get_milliseconds"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="get_milliseconds",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="duration_cast",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#aa4e8a7bfd4c67725575c44238eb10970",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="const_check",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a3279dca70405e483511edbe9c391a376",tooltip=" "];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a25e934f3e2c5280160c34cb21a8db91c",tooltip=" "];
+  Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="safe_duration_cast\l::lossless_integral\l_conversion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacesafe__duration__cast.html#aeb329dc4be0bab60f163b3c8625baac0",tooltip="Converts From to To, without loss."];
+  Node5 -> Node3 [id="edge5_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node6 [id="edge6_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="max_value",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#af945a554ca47dfab2f9ff9f2121ad18f",tooltip=" "];
+  Node2 -> Node7 [id="edge7_Node000002_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="throw_duration_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a215439fa28b18f96d283efba24822f20",tooltip=" "];
+}

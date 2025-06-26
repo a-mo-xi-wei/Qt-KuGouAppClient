@@ -22,4 +22,6 @@ digraph "readyToClose"
   Node7 [id="Node000007",label="JQHttpServer::SslServerManage\l::~SslServerManage",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_j_q_http_server_1_1_ssl_server_manage.html#a247227d292dd8bcf91459962e6f62542",tooltip="析构函数。"];
   Node2 -> Node8 [id="edge9_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="JQHttpServer::TcpServerManage\l::~TcpServerManage",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_j_q_http_server_1_1_tcp_server_manage.html#a2c6f25d74941e636f40a974564ba0e20",tooltip="析构函数。"];
+  Node1 -> Node9 [id="edge10_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="onFinish",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_j_q_http_server_1_1_abstract_manage.html#acef200f77a155c73fff25a83b105c1ed",tooltip="完成时调用。"];
 }

@@ -1,0 +1,9 @@
+digraph "类继承关系图"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="NALUParsing",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_n_a_l_u_parsing.html",tooltip="解析 H.264/H.265 视频流中的 NAL 单元"];
+}

@@ -1,5 +1,5 @@
 var dir_fa84e62d4af2276c1a8cf257e509b849 =
 [
-    [ "moc_RecentlySongList.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_recfb02e202b4f04f44ed88b591127ea495.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_recfb02e202b4f04f44ed88b591127ea495" ],
-    [ "moc_RecentlySongList.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec069d72358f5396ab07e78056bd3c0bc4.html", null ]
+    [ "moc_RecentlySongList.cpp", "moc___recently_song_list_8cpp.html", "moc___recently_song_list_8cpp" ],
+    [ "moc_RecentlySongList.cpp.d", "moc___recently_song_list_8cpp_8d.html", null ]
 ];

@@ -1,7 +1,7 @@
 var dir_5c56e563ab87510e9d0bf355fc302d53 =
 [
-    [ "moc_PcmPlayer.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_player_2_my_player__autogen9832b79e69821a894c409bfcb5a8960e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_player_2_my_player__autogen9832b79e69821a894c409bfcb5a8960e" ],
-    [ "moc_PcmPlayer.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_player_2_my_player__autogen372a85ade3708a73db50877b1f49ec72.html", null ],
-    [ "moc_PcmPlayer_SDL.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_player_2_my_player__autogenbfdf7c1e2882ac500171eefab68da9fa.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_player_2_my_player__autogenbfdf7c1e2882ac500171eefab68da9fa" ],
-    [ "moc_PcmPlayer_SDL.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_player_2_my_player__autogen534a6b04163908e9bb1e6bfca375336c.html", null ]
+    [ "moc_PcmPlayer.cpp", "moc___pcm_player_8cpp.html", "moc___pcm_player_8cpp" ],
+    [ "moc_PcmPlayer.cpp.d", "moc___pcm_player_8cpp_8d.html", null ],
+    [ "moc_PcmPlayer_SDL.cpp", "moc___pcm_player___s_d_l_8cpp.html", "moc___pcm_player___s_d_l_8cpp" ],
+    [ "moc_PcmPlayer_SDL.cpp.d", "moc___pcm_player___s_d_l_8cpp_8d.html", null ]
 ];

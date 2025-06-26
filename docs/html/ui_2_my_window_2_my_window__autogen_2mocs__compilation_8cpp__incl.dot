@@ -8,7 +8,7 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="QUJHFPBYWV/moc_CenterWidget.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___center_widget_8cpp.html",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="../../../../../ui/MyWindow\l/BasicWindow/CenterWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_center_widget_8h.html",tooltip="定义 CenterWidget 类，提供带线性渐变阴影的中心控件"];
+  Node3 [id="Node000003",label="../../../../../../ui\l/MyWindow/BasicWindow\l/CenterWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_center_widget_8h.html",tooltip="定义 CenterWidget 类，提供带线性渐变阴影的中心控件"];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="QWidget",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
@@ -18,14 +18,14 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node7 [id="edge6_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="QUJHFPBYWV/moc_PlayWidget.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___play_widget_8cpp.html",tooltip=" "];
   Node7 -> Node8 [id="edge7_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="../../../../../ui/MyWindow\l/BasicWindow/PlayWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_play_widget_8h.html",tooltip="定义 PlayWidget 类，提供带圆角阴影和双击信号的播放控件"];
+  Node8 [id="Node000008",label="../../../../../../ui\l/MyWindow/BasicWindow\l/PlayWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_play_widget_8h.html",tooltip="定义 PlayWidget 类，提供带圆角阴影和双击信号的播放控件"];
   Node8 -> Node4 [id="edge8_Node000008_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node5 [id="edge9_Node000007_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node6 [id="edge10_Node000007_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node9 [id="edge11_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="QUJHFPBYWV/moc_TitleWidget.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___title_widget_8cpp.html",tooltip=" "];
   Node9 -> Node10 [id="edge12_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="../../../../../ui/MyWindow\l/BasicWindow/TitleWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_title_widget_8h.html",tooltip="定义 TitleWidget 类，提供标题栏功能和界面导航管理"];
+  Node10 [id="Node000010",label="../../../../../../ui\l/MyWindow/BasicWindow\l/TitleWidget.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_title_widget_8h.html",tooltip="定义 TitleWidget 类，提供标题栏功能和界面导航管理"];
   Node10 -> Node11 [id="edge13_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="QStack",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node10 -> Node12 [id="edge14_Node000010_Node000012",color="steelblue1",style="solid",tooltip=" "];
@@ -55,7 +55,7 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node23 [id="edge27_Node000001_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="WCPGUQ57CZ/moc_MainWindow.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___main_window_8cpp.html",tooltip=" "];
   Node23 -> Node24 [id="edge28_Node000023_Node000024",color="steelblue1",style="solid",tooltip=" "];
-  Node24 [id="Node000024",label="../../../../../ui/MyWindow\l/MainWindow/MainWindow.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_main_window_8h.html",tooltip="定义 MainWindow 类，提供主窗口功能和交互"];
+  Node24 [id="Node000024",label="../../../../../../ui\l/MyWindow/MainWindow\l/MainWindow.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_main_window_8h.html",tooltip="定义 MainWindow 类，提供主窗口功能和交互"];
   Node24 -> Node4 [id="edge29_Node000024_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node25 [id="edge30_Node000024_Node000025",color="steelblue1",style="solid",tooltip=" "];
   Node25 [id="Node000025",label="AboutDialog.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_about_dialog_8h.html",tooltip="定义 AboutDialog 类，提供关于对话框功能"];
@@ -73,7 +73,7 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node30 [id="edge38_Node000001_Node000030",color="steelblue1",style="solid",tooltip=" "];
   Node30 [id="Node000030",label="QGOHT232YT/moc_MyTrayIcon.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___my_tray_icon_8cpp.html",tooltip=" "];
   Node30 -> Node31 [id="edge39_Node000030_Node000031",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="../../../../../ui/MyWindow\l/MainWindow/MyTrayIcon/MyTrayIcon.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_my_tray_icon_8h.html",tooltip="定义 MyTrayIcon 类，提供系统托盘图标功能"];
+  Node31 [id="Node000031",label="../../../../../../ui\l/MyWindow/MainWindow\l/MyTrayIcon/MyTrayIcon.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_my_tray_icon_8h.html",tooltip="定义 MyTrayIcon 类，提供系统托盘图标功能"];
   Node31 -> Node32 [id="edge40_Node000031_Node000032",color="steelblue1",style="solid",tooltip=" "];
   Node32 [id="Node000032",label="QSystemTrayIcon",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node31 -> Node17 [id="edge41_Node000031_Node000017",color="steelblue1",style="solid",tooltip=" "];
@@ -82,7 +82,7 @@ digraph "mocs_compilation.cpp"
   Node1 -> Node33 [id="edge44_Node000001_Node000033",color="steelblue1",style="solid",tooltip=" "];
   Node33 [id="Node000033",label="2VPVCAO2GP/moc_WaterDrop.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$moc___water_drop_8cpp.html",tooltip=" "];
   Node33 -> Node34 [id="edge45_Node000033_Node000034",color="steelblue1",style="solid",tooltip=" "];
-  Node34 [id="Node000034",label="../../../../../ui/MyWindow\l/MainWindow/WaterDrop/WaterDrop.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_water_drop_8h.html",tooltip="定义 WaterDrop 类，提供水滴动画效果"];
+  Node34 [id="Node000034",label="../../../../../../ui\l/MyWindow/MainWindow\l/WaterDrop/WaterDrop.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_water_drop_8h.html",tooltip="定义 WaterDrop 类，提供水滴动画效果"];
   Node34 -> Node4 [id="edge46_Node000034_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node33 -> Node5 [id="edge47_Node000033_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node33 -> Node6 [id="edge48_Node000033_Node000006",color="steelblue1",style="solid",tooltip=" "];

@@ -12,7 +12,7 @@ digraph "singleton.h"
   Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="ElaMenuBar.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_menu_bar_8cpp.html",tooltip="实现 ElaMenuBar 类，提供自定义菜单栏功能"];
   Node2 -> Node5 [id="edge4_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="ElaSuggestBox.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_suggest_box_8cpp.html",tooltip=" "];
+  Node5 [id="Node000005",label="ElaSuggestBox.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_suggest_box_8cpp.html",tooltip="实现 ElaSuggestBox 类，搜索建议框控件"];
   Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="ElaTheme.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_theme_8h.html",tooltip="定义 ElaTheme 类，提供主题管理和颜色配置功能"];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -41,9 +41,9 @@ digraph "singleton.h"
   Node18 [id="Node000018",label="ElaScrollBarStyle.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_scroll_bar_style_8cpp.html",tooltip="实现 ElaScrollBarStyle 类，提供自定义滚动条样式"];
   Node6 -> Node5 [id="edge18_Node000006_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 -> Node19 [id="edge19_Node000006_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="ElaSuggestBoxSearchViewContainer.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_suggest_box_search_view_container_8cpp.html",tooltip=" "];
+  Node19 [id="Node000019",label="ElaSuggestBoxSearchViewContainer.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_suggest_box_search_view_container_8cpp.html",tooltip="实现 ElaSuggestBoxSearchViewContainer 类，建议框容器"];
   Node6 -> Node20 [id="edge20_Node000006_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="ElaSuggestDelegate.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_suggest_delegate_8cpp.html",tooltip=" "];
+  Node20 [id="Node000020",label="ElaSuggestDelegate.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_suggest_delegate_8cpp.html",tooltip="实现 ElaSuggestDelegate 类，建议项委托"];
   Node6 -> Node21 [id="edge21_Node000006_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="ElaText.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_ela_text_8cpp.html",tooltip="实现 ElaText 类，提供自定义文本标签功能"];
   Node6 -> Node22 [id="edge22_Node000006_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];

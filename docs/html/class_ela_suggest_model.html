@@ -19,7 +19,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -107,6 +106,9 @@ $(function(){initNavTree('class_ela_suggest_model.html',''); initResizable(true)
 </div><!--header-->
 <div class="contents">
 
+<p>建议项模型，管理搜索建议项列表  
+ <a href="#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_ela_suggest_model_8h_source.html">ElaSuggestModel.h</a>&gt;</code></p>
 <div class="dynheader">
 类 ElaSuggestModel 继承关系图:</div>
@@ -124,26 +126,36 @@ ElaSuggestModel 的协作图:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a8ff650e99b60b422e66fcc7b3e8e4386" id="r_a8ff650e99b60b422e66fcc7b3e8e4386"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ff650e99b60b422e66fcc7b3e8e4386">ElaSuggestModel</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a8ff650e99b60b422e66fcc7b3e8e4386"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
 <tr class="separator:a8ff650e99b60b422e66fcc7b3e8e4386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a580dfe17f67de9e4daf9f4f2dfa5026a" id="r_a580dfe17f67de9e4daf9f4f2dfa5026a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a580dfe17f67de9e4daf9f4f2dfa5026a">~ElaSuggestModel</a> () override</td></tr>
+<tr class="memdesc:a580dfe17f67de9e4daf9f4f2dfa5026a"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
 <tr class="separator:a580dfe17f67de9e4daf9f4f2dfa5026a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9832d26ca09bab67c22ea84c499ebdc" id="r_ad9832d26ca09bab67c22ea84c499ebdc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9832d26ca09bab67c22ea84c499ebdc">rowCount</a> (const QModelIndex &amp;parent) const</td></tr>
+<tr class="memdesc:ad9832d26ca09bab67c22ea84c499ebdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取行数  <br /></td></tr>
 <tr class="separator:ad9832d26ca09bab67c22ea84c499ebdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae93b915598cdbe5ae59dddf41d917a53" id="r_ae93b915598cdbe5ae59dddf41d917a53"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae93b915598cdbe5ae59dddf41d917a53">data</a> (const QModelIndex &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, int role) const override</td></tr>
+<tr class="memdesc:ae93b915598cdbe5ae59dddf41d917a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取数据  <br /></td></tr>
 <tr class="separator:ae93b915598cdbe5ae59dddf41d917a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a639bb4d2b6636eaf009f6a39bc3cbbce" id="r_a639bb4d2b6636eaf009f6a39bc3cbbce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a639bb4d2b6636eaf009f6a39bc3cbbce">setSearchSuggestion</a> (QVector&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> * &gt; suggestionVector)</td></tr>
+<tr class="memdesc:a639bb4d2b6636eaf009f6a39bc3cbbce"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置搜索建议项  <br /></td></tr>
 <tr class="separator:a639bb4d2b6636eaf009f6a39bc3cbbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a068c2779d321ad502869276c93e95257" id="r_a068c2779d321ad502869276c93e95257"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a068c2779d321ad502869276c93e95257">clearSearchNode</a> ()</td></tr>
+<tr class="memdesc:a068c2779d321ad502869276c93e95257"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除搜索节点  <br /></td></tr>
 <tr class="separator:a068c2779d321ad502869276c93e95257"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a505f459b254967ca8449d2a715a52" id="r_a88a505f459b254967ca8449d2a715a52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88a505f459b254967ca8449d2a715a52">getSearchSuggestion</a> (int row)</td></tr>
+<tr class="memdesc:a88a505f459b254967ca8449d2a715a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取搜索建议项  <br /></td></tr>
 <tr class="separator:a88a505f459b254967ca8449d2a715a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
 <tr class="memitem:aa1c4b2f6626009acb7da1633101f4d6b" id="r_aa1c4b2f6626009acb7da1633101f4d6b"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1c4b2f6626009acb7da1633101f4d6b">_suggestionVector</a></td></tr>
+<tr class="memdesc:aa1c4b2f6626009acb7da1633101f4d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">符合搜索的建议项列表  <br /></td></tr>
 <tr class="separator:aa1c4b2f6626009acb7da1633101f4d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>建议项模型，管理搜索建议项列表 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
 <a id="a8ff650e99b60b422e66fcc7b3e8e4386" name="a8ff650e99b60b422e66fcc7b3e8e4386"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ff650e99b60b422e66fcc7b3e8e4386">&#9670;&#160;</a></span>ElaSuggestModel()</h2>
 
@@ -166,6 +178,14 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父对象指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -192,6 +212,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>析构函数 </p>
+
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
@@ -209,6 +231,10 @@ Private 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>清除搜索节点 </p>
+<dl class="section note"><dt>注解</dt><dd>清空建议项列表 </dd></dl>
+<p>&lt; 清空列表</p>
 
 </div>
 </div>
@@ -239,6 +265,17 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>获取数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>模型索引 </td></tr>
+    <tr><td class="paramname">role</td><td>数据角色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>数据（当前未使用） </dd></dl>
+<p>&lt; 当前未使用</p>
+
 </div>
 </div>
 <a id="a88a505f459b254967ca8449d2a715a52" name="a88a505f459b254967ca8449d2a715a52"></a>
@@ -255,6 +292,18 @@ Private 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>获取搜索建议项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>行号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>建议项指针 </dd></dl>
+<p>&lt; 行号超出范围</p>
+<p>&lt; 列表为空</p>
+<p>&lt; 返回建议项</p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
@@ -279,6 +328,16 @@ Private 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>获取行数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>建议项数量 </dd></dl>
+<p>&lt; 返回建议项数量</p>
+
 </div>
 </div>
 <a id="a639bb4d2b6636eaf009f6a39bc3cbbce" name="a639bb4d2b6636eaf009f6a39bc3cbbce"></a>
@@ -295,6 +354,19 @@ Private 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置搜索建议项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suggestionVector</td><td>建议项列表 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新模型数据 </dd></dl>
+<p>&lt; 空列表直接返回</p>
+<p>&lt; 开始重置模型</p>
+<p>&lt; 更新建议项列表</p>
+<p>&lt; 结束重置模型</p>
 
 </div>
 </div>
@@ -318,6 +390,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>符合搜索的建议项列表 </p>
 
 </div>
 </div>

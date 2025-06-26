@@ -1,9 +1,9 @@
 var dir_3666360d48734720abf64a92323b2bab =
 [
-    [ "moc_CenterWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_28ffa86878a5ccd6df3e8df43d9b7f2fe.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_28ffa86878a5ccd6df3e8df43d9b7f2fe" ],
-    [ "moc_CenterWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_2a88efd36e7790072d0db2e9808aa60e5.html", null ],
-    [ "moc_PlayWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_29231c32f293b033c89912813f1e94f8a.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_29231c32f293b033c89912813f1e94f8a" ],
-    [ "moc_PlayWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_21beba2c4a8e5d7374ef16846bd713504.html", null ],
-    [ "moc_TitleWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_26e0ccb506b9e09e0810cd50e4bced01d.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_26e0ccb506b9e09e0810cd50e4bced01d" ],
-    [ "moc_TitleWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_2b64c07191cb78018731fc89b6dac080a.html", null ]
+    [ "moc_CenterWidget.cpp", "moc___center_widget_8cpp.html", "moc___center_widget_8cpp" ],
+    [ "moc_CenterWidget.cpp.d", "moc___center_widget_8cpp_8d.html", null ],
+    [ "moc_PlayWidget.cpp", "moc___play_widget_8cpp.html", "moc___play_widget_8cpp" ],
+    [ "moc_PlayWidget.cpp.d", "moc___play_widget_8cpp_8d.html", null ],
+    [ "moc_TitleWidget.cpp", "moc___title_widget_8cpp.html", "moc___title_widget_8cpp" ],
+    [ "moc_TitleWidget.cpp.d", "moc___title_widget_8cpp_8d.html", null ]
 ];

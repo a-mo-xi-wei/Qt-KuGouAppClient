@@ -1,5 +1,0 @@
-var dir_6933c8939d3aae29d56a86874197efd2 =
-[
-    [ "moc_SingerWidget.cpp", "out_2build_2debug_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_f_m_a_z_m_k_x_d5_a_2moc___singer_widget_8cpp.html", "out_2build_2debug_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_f_m_a_z_m_k_x_d5_a_2moc___singer_widget_8cpp" ],
-    [ "moc_SingerWidget.cpp.d", "out_2build_2debug_2_ku_gou_start_2_my_collection_2_my_collection__autogen_2_f_m_a_z_m_k_x_d5_a_2moc___singer_widget_8cpp_8d.html", null ]
-];

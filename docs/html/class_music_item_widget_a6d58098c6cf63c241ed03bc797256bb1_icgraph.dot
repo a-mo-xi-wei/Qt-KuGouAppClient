@@ -1,0 +1,23 @@
+digraph "play"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="play",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="播放信号"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="LocalSong::initMusicItem",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_local_song.html#a4c31fa17ce6a5cc8533d92486ed88966",tooltip="初始化音乐项"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="LocalSong::fetchAndSyncServer\lSongList",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_local_song.html#a97a0739f99953381d5aecf97d7776609",tooltip="从服务器同步歌曲列表"];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="LocalSong::LocalSong",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237",tooltip="构造函数，初始化本地歌曲界面"];
+  Node4 -> Node4 [id="edge4_Node000004_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge5_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="onPlay",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a1d28ca2a9a560fb537c6b93071c70dfd",tooltip="播放菜单项处理"];
+  Node5 -> Node6 [id="edge6_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="MusicItemWidget",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#a25d0faf4d08a1a383154e48f122db1dd",tooltip="构造函数，初始化音乐条目控件"];
+  Node1 -> Node7 [id="edge7_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="onPlayToolBtnClicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_music_item_widget.html#ae21b351f287b5d0040692cebea9b6872",tooltip="播放按钮点击处理"];
+  Node7 -> Node6 [id="edge8_Node000007_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

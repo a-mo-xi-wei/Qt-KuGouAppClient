@@ -1,7 +1,7 @@
 var dir_f12aaa43ec36b12c5e35a1b0283f66bc =
 [
-    [ "ui_PaidSingle.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur2df6f3f745e1d65fc5846a1562771703.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur2df6f3f745e1d65fc5846a1562771703" ],
-    [ "ui_PurchasedAlbums.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur59788b2a78205e28477c5ae7b03359a7.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur59788b2a78205e28477c5ae7b03359a7" ],
-    [ "ui_PurchasedMusic.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur9eecd18c9648dbaebc1700e6c87b227e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur9eecd18c9648dbaebc1700e6c87b227e" ],
-    [ "ui_PurchasedVideos.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur1c568f85decd8ecc2c50ab9d3bd52a11.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_purchased_music_2_pur1c568f85decd8ecc2c50ab9d3bd52a11" ]
+    [ "ui_PaidSingle.h", "ui___paid_single_8h.html", "ui___paid_single_8h" ],
+    [ "ui_PurchasedAlbums.h", "ui___purchased_albums_8h.html", "ui___purchased_albums_8h" ],
+    [ "ui_PurchasedMusic.h", "ui___purchased_music_8h.html", "ui___purchased_music_8h" ],
+    [ "ui_PurchasedVideos.h", "ui___purchased_videos_8h.html", "ui___purchased_videos_8h" ]
 ];

@@ -1,0 +1,15 @@
+digraph "get_classic_locale"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="get_classic_locale",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="detail::get_locale\l::locale &",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1get__locale.html#a3ba0bce4add3f1b4e289d92b4e3941a9",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="detail::tm_writer\<\l OutputIt, char_type\l \>::tm_writer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdetail_1_1tm__writer.html#af323eddff1b77411cc0916612c821ce0",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="write_encoded_tm_str",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacedetail.html#a0199d4ab13906cdd7763188a2287bb74",tooltip=" "];
+}

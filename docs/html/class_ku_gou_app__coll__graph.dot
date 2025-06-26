@@ -36,7 +36,7 @@ digraph "KuGouApp"
   Node15 -> Node13 [id="edge15_Node000013_Node000015",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" title_gender_label\ntitle_index_label1\ntitle_index_label2\ntitle_index_label3\ntitle_index_label4\ntitle_line\ntitle_name_label\ntitle_portrait_label",fontcolor="grey" ];
   Node15 [id="Node000015",label="QLabel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_label.html",tooltip="标签控件类"];
   Node16 -> Node13 [id="edge16_Node000013_Node000016",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" search_song_suggest_box",fontcolor="grey" ];
-  Node16 [id="Node000016",label="ElaSuggestBox",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_suggest_box.html",tooltip=" "];
+  Node16 [id="Node000016",label="ElaSuggestBox",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ela_suggest_box.html",tooltip="搜索建议框控件，支持添加/移除建议项和事件过滤"];
   Node3 -> Node16 [id="edge17_Node000016_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 -> Node13 [id="edge18_Node000013_Node000017",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" close_toolButton\nmax_toolButton\nmin_toolButton",fontcolor="grey" ];
   Node17 [id="Node000017",label="RippleButton",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_ripple_button.html",tooltip="带涟漪效果的按钮类，支持阴影和自定义图标"];

@@ -19,7 +19,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -119,23 +118,13 @@ $(function(){initNavTree('class_sliding_stacked_widget.html',''); initResizable(
 类 SlidingStackedWidget 继承关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget__inherit__graph.png" border="0" usemap="#a_sliding_stacked_widget_inherit__map" alt="Inheritance graph"/></div>
-<map name="a_sliding_stacked_widget_inherit__map" id="a_sliding_stacked_widget_inherit__map">
-<area shape="rect" title="自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画" alt="" coords="5,80,155,107"/>
-<area shape="rect" title=" " alt="" coords="20,5,140,32"/>
-<area shape="poly" title=" " alt="" coords="83,48,83,80,77,80,77,48"/>
-</map>
+<!-- MAP 0 -->
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <div class="dynheader">
 SlidingStackedWidget 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget__coll__graph.png" border="0" usemap="#a_sliding_stacked_widget_coll__map" alt="Collaboration graph"/></div>
-<map name="a_sliding_stacked_widget_coll__map" id="a_sliding_stacked_widget_coll__map">
-<area shape="rect" title="自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画" alt="" coords="75,96,224,123"/>
-<area shape="rect" title=" " alt="" coords="5,5,126,32"/>
-<area shape="poly" title=" " alt="" coords="90,42,139,94,136,97,86,46"/>
-<area shape="rect" href="class_q_parallel_animation_group.html" title="并行动画组类" alt="" coords="150,5,317,32"/>
-<area shape="poly" title=" " alt="" coords="213,46,163,97,160,94,209,42"/>
-</map>
+<!-- MAP 1 -->
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -289,7 +278,14 @@ Protected 属性</h2></td></tr>
 </div><div class="memdoc">
 
 <p>构造函数，初始化堆栈窗口 </p>
+<p>&lt; 仅仅是为了切换窗口的时候停止扩张动画，否则会闪烁</p>
 <dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>构造函数，初始化堆栈窗口 </p><dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
   </table>
@@ -332,27 +328,13 @@ Protected 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_cgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_cgraph" id="aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_cgraph">
-<area shape="rect" title="处理动画完成事件" alt="" coords="5,5,137,32"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="185,5,311,32"/>
-<area shape="poly" title=" " alt="" coords="137,16,169,16,169,21,137,21"/>
-</map>
+<!-- MAP 2 -->
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_icgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_icgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_icgraph" id="aclass_sliding_stacked_widget_ad26ebe0ef714ed60832c9d3e9d85082c_icgraph">
-<area shape="rect" title="处理动画完成事件" alt="" coords="414,31,546,57"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="266,31,366,57"/>
-<area shape="poly" title=" " alt="" coords="399,47,367,47,367,41,399,41"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="141,31,218,57"/>
-<area shape="poly" title=" " alt="" coords="250,47,219,47,219,41,250,41"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ae642f667696bbe63a40b1aa8b0bc3bf1" title="滑动到下一页" alt="" coords="5,5,93,32"/>
-<area shape="poly" title=" " alt="" coords="124,36,93,30,94,25,126,31"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a9c1474752209751a834548b423f4284a" title="滑动到上一页" alt="" coords="6,56,92,83"/>
-<area shape="poly" title=" " alt="" coords="126,57,93,64,92,58,125,52"/>
-</map>
+<!-- MAP 3 -->
 </div>
 
 </div>
@@ -385,52 +367,7 @@ Protected 属性</h2></td></tr>
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_icgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_icgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_icgraph" id="aclass_sliding_stacked_widget_a82607af1dd17a4c691295ae63aaf7a2d_icgraph">
-<area shape="rect" title="动画完成信号" alt="" coords="684,432,810,459"/>
-<area shape="rect" href="class_all_music.html#a64c818ba8964b8bb3b244005b4c57afb" title="构造函数，初始化音乐管理界面" alt="" coords="460,29,590,56"/>
-<area shape="poly" title=" " alt="" coords="744,417,741,346,726,252,713,202,693,154,667,109,634,70,613,56,589,49,591,43,616,52,637,66,672,106,698,152,718,201,732,251,746,345,749,416"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="459,80,591,107"/>
-<area shape="poly" title=" " alt="" coords="742,417,736,355,720,274,706,232,687,191,663,154,634,121,614,108,590,100,592,95,616,103,637,117,668,150,692,189,711,230,725,273,741,354,747,416"/>
-<area shape="rect" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622" title="构造函数" alt="" coords="447,155,603,181"/>
-<area shape="poly" title=" " alt="" coords="739,417,729,369,709,308,678,247,658,219,634,195,602,178,604,174,637,191,662,216,683,244,714,306,734,367,744,416"/>
-<area shape="rect" href="class_listen_book.html#a54945cd55a7bf9a0461163744f0875ed" title="构造函数，初始化听书主界面" alt="" coords="445,229,605,256"/>
-<area shape="poly" title=" " alt="" coords="734,418,719,384,698,343,670,303,634,270,604,255,606,250,637,266,674,300,702,341,724,381,739,416"/>
-<area shape="rect" href="class_listen_my_download.html#aa431dd59faceea3de531be41aff7caee" title="构造函数，初始化下载管理界面" alt="" coords="437,304,613,347"/>
-<area shape="poly" title=" " alt="" coords="719,423,681,391,634,361,609,350,611,345,637,356,684,387,722,419"/>
-<area shape="rect" href="class_local_download.html#aab413ca86e136b2f69074a5fbb2aa4c1" title="构造函数，初始化本地下载界面" alt="" coords="421,395,629,421"/>
-<area shape="poly" title=" " alt="" coords="668,435,608,425,609,419,669,430"/>
-<area shape="rect" href="class_music_cloud_disk.html#afa69b1618886c136af9ebb6e47d95468" title="构造函数，初始化云端歌曲界面" alt="" coords="414,469,636,496"/>
-<area shape="poly" title=" " alt="" coords="669,461,609,471,608,466,668,456"/>
-<area shape="rect" href="class_my_collection.html#a512490534a0678d9f30ca0dc7fd134aa" title="构造函数，初始化收藏界面" alt="" coords="434,544,616,571"/>
-<area shape="poly" title=" " alt="" coords="711,469,637,510,560,546,558,541,634,506,708,465"/>
-<area shape="rect" href="class_purchased_music.html#aa7a6832fd17cd0e41d11c4501c0659cf" title="构造函数，初始化付费音乐界面" alt="" coords="431,619,619,661"/>
-<area shape="poly" title=" " alt="" coords="731,473,692,528,666,558,637,585,609,604,580,620,577,616,606,600,634,581,662,554,688,524,727,470"/>
-<area shape="rect" href="class_recently_played.html#ad3e1fddc8d112a919ec2ff75f1d681e0" title="构造函数，初始化最近播放界面" alt="" coords="438,709,612,752"/>
-<area shape="poly" title=" " alt="" coords="741,474,727,517,706,570,676,625,638,675,613,695,586,711,583,706,610,691,634,671,672,622,701,567,722,515,736,472"/>
-<area shape="rect" href="class_search.html#ac51573714b74893be7f0d569b3b87790" title="构造函数" alt="" coords="469,800,581,827"/>
-<area shape="poly" title=" " alt="" coords="746,474,737,533,719,610,705,652,687,692,665,731,638,766,611,787,580,802,578,797,608,783,634,762,660,728,682,690,700,650,714,609,732,532,741,473"/>
-<area shape="rect" href="class_video.html#a5d96128f407e3b6b3725d20c097f8a97" title="构造函数，初始化视频界面" alt="" coords="477,875,573,901"/>
-<area shape="poly" title=" " alt="" coords="748,474,743,546,728,642,714,695,695,746,670,796,638,841,608,864,574,879,572,874,605,860,634,837,665,793,690,744,709,693,723,641,738,545,743,474"/>
-<area shape="poly" title=" " alt="" coords="561,16,548,10,525,8,503,10,491,15,489,20,494,27,490,30,483,21,488,11,502,5,525,3,550,5,563,12"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="266,80,366,107"/>
-<area shape="poly" title=" " alt="" coords="444,96,367,96,367,91,444,91"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="141,80,218,107"/>
-<area shape="poly" title=" " alt="" coords="250,96,219,96,219,91,250,91"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ae642f667696bbe63a40b1aa8b0bc3bf1" title="滑动到下一页" alt="" coords="5,55,93,81"/>
-<area shape="poly" title=" " alt="" coords="124,85,93,79,94,74,126,80"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a9c1474752209751a834548b423f4284a" title="滑动到上一页" alt="" coords="6,105,92,132"/>
-<area shape="poly" title=" " alt="" coords="126,106,93,113,92,108,125,101"/>
-<area shape="poly" title=" " alt="" coords="561,142,548,136,525,133,503,135,491,140,489,145,494,153,490,156,483,146,488,136,502,130,525,128,550,131,563,137"/>
-<area shape="poly" title=" " alt="" coords="561,216,548,210,525,208,503,210,491,215,489,220,494,227,490,230,483,221,488,211,502,205,525,203,550,205,563,212"/>
-<area shape="poly" title=" " alt="" coords="559,291,546,285,525,283,505,285,493,289,489,295,490,303,485,304,484,294,490,285,504,279,525,277,547,280,561,286"/>
-<area shape="poly" title=" " alt="" coords="561,382,548,376,525,373,503,375,491,380,489,385,494,393,490,396,483,386,488,376,502,370,525,368,550,371,563,377"/>
-<area shape="poly" title=" " alt="" coords="561,456,548,450,525,448,503,450,491,455,489,460,494,467,490,470,483,461,488,451,502,445,525,443,550,445,563,452"/>
-<area shape="poly" title=" " alt="" coords="561,531,548,525,525,523,503,525,491,529,489,535,494,542,490,545,483,535,488,526,502,519,525,517,550,520,563,526"/>
-<area shape="poly" title=" " alt="" coords="559,605,546,600,525,597,505,599,493,604,489,610,490,618,485,619,484,609,490,600,504,594,525,592,547,594,561,601"/>
-<area shape="poly" title=" " alt="" coords="559,696,546,690,525,688,505,690,493,695,489,701,490,708,485,709,484,699,490,690,504,685,525,683,547,685,561,691"/>
-<area shape="poly" title=" " alt="" coords="561,787,548,781,525,779,503,781,491,785,489,791,494,798,490,801,483,791,488,782,502,775,525,773,550,776,563,782"/>
-<area shape="poly" title=" " alt="" coords="561,862,548,856,525,853,503,855,491,860,489,865,494,873,490,876,483,866,488,856,502,850,525,848,550,851,563,857"/>
-</map>
+<!-- MAP 4 -->
 </div>
 
 </div>
@@ -609,27 +546,13 @@ Protected 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_cgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_cgraph" id="aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_cgraph">
-<area shape="rect" title="滑动到指定索引的页面" alt="" coords="5,5,83,32"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="131,5,231,32"/>
-<area shape="poly" title=" " alt="" coords="83,16,115,16,115,21,83,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="279,5,410,32"/>
-<area shape="poly" title=" " alt="" coords="231,16,263,16,263,21,231,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="458,5,585,32"/>
-<area shape="poly" title=" " alt="" coords="411,16,443,16,443,21,411,21"/>
-</map>
+<!-- MAP 5 -->
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_icgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_icgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_icgraph" id="aclass_sliding_stacked_widget_a1fa9b516b8589ea014b4f589b80cc23c_icgraph">
-<area shape="rect" title="滑动到指定索引的页面" alt="" coords="141,31,218,57"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ae642f667696bbe63a40b1aa8b0bc3bf1" title="滑动到下一页" alt="" coords="5,5,93,32"/>
-<area shape="poly" title=" " alt="" coords="124,36,93,30,94,25,126,31"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a9c1474752209751a834548b423f4284a" title="滑动到上一页" alt="" coords="6,56,92,83"/>
-<area shape="poly" title=" " alt="" coords="126,57,93,64,92,58,125,52"/>
-</map>
+<!-- MAP 6 -->
 </div>
 
 </div>
@@ -664,17 +587,7 @@ Protected 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_ae642f667696bbe63a40b1aa8b0bc3bf1_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_ae642f667696bbe63a40b1aa8b0bc3bf1_cgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_ae642f667696bbe63a40b1aa8b0bc3bf1_cgraph" id="aclass_sliding_stacked_widget_ae642f667696bbe63a40b1aa8b0bc3bf1_cgraph">
-<area shape="rect" title="滑动到下一页" alt="" coords="5,5,93,32"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="141,5,218,32"/>
-<area shape="poly" title=" " alt="" coords="93,16,125,16,125,21,93,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="266,5,366,32"/>
-<area shape="poly" title=" " alt="" coords="218,16,250,16,250,21,218,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="414,5,546,32"/>
-<area shape="poly" title=" " alt="" coords="367,16,398,16,398,21,367,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="594,5,720,32"/>
-<area shape="poly" title=" " alt="" coords="546,16,578,16,578,21,546,21"/>
-</map>
+<!-- MAP 7 -->
 </div>
 
 </div>
@@ -709,17 +622,7 @@ Protected 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_a9c1474752209751a834548b423f4284a_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a9c1474752209751a834548b423f4284a_cgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_a9c1474752209751a834548b423f4284a_cgraph" id="aclass_sliding_stacked_widget_a9c1474752209751a834548b423f4284a_cgraph">
-<area shape="rect" title="滑动到上一页" alt="" coords="5,5,92,32"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="140,5,217,32"/>
-<area shape="poly" title=" " alt="" coords="92,16,124,16,124,21,92,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a6d94b241005e412c477aa1b1a0da1b77" title="滑动到指定控件页面" alt="" coords="265,5,365,32"/>
-<area shape="poly" title=" " alt="" coords="217,16,249,16,249,21,217,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="413,5,545,32"/>
-<area shape="poly" title=" " alt="" coords="366,16,397,16,397,21,366,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="593,5,719,32"/>
-<area shape="poly" title=" " alt="" coords="545,16,577,16,577,21,545,21"/>
-</map>
+<!-- MAP 8 -->
 </div>
 
 </div>
@@ -773,27 +676,13 @@ Protected 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_cgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_cgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_cgraph" id="aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_cgraph">
-<area shape="rect" title="滑动到指定控件页面" alt="" coords="5,5,106,32"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ad26ebe0ef714ed60832c9d3e9d85082c" title="处理动画完成事件" alt="" coords="154,5,285,32"/>
-<area shape="poly" title=" " alt="" coords="106,16,138,16,138,21,106,21"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a82607af1dd17a4c691295ae63aaf7a2d" title="动画完成信号" alt="" coords="333,5,459,32"/>
-<area shape="poly" title=" " alt="" coords="286,16,318,16,318,21,286,21"/>
-</map>
+<!-- MAP 9 -->
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_icgraph.png" border="0" usemap="#aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_icgraph" alt=""/></div>
-<map name="aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_icgraph" id="aclass_sliding_stacked_widget_a6d94b241005e412c477aa1b1a0da1b77_icgraph">
-<area shape="rect" title="滑动到指定控件页面" alt="" coords="266,31,366,57"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a1fa9b516b8589ea014b4f589b80cc23c" title="滑动到指定索引的页面" alt="" coords="141,31,218,57"/>
-<area shape="poly" title=" " alt="" coords="250,47,219,47,219,41,250,41"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#ae642f667696bbe63a40b1aa8b0bc3bf1" title="滑动到下一页" alt="" coords="5,5,93,32"/>
-<area shape="poly" title=" " alt="" coords="124,36,93,30,94,25,126,31"/>
-<area shape="rect" href="class_sliding_stacked_widget.html#a9c1474752209751a834548b423f4284a" title="滑动到上一页" alt="" coords="6,56,92,83"/>
-<area shape="poly" title=" " alt="" coords="126,57,93,64,92,58,125,52"/>
-</map>
+<!-- MAP 10 -->
 </div>
 
 </div>

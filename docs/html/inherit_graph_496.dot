@@ -5,7 +5,22 @@ digraph "类继承关系图"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="Singleton\< CWebSocketClient\lManager \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_singleton.html",tooltip=" "];
-  Node0 -> Node1 [id="edge385_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="CWebSocketClientManager",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_web_socket_client_manager.html",tooltip=" "];
+  Node0 [id="Node000000",label="resultTypeHasCallOperator\l\< Function, hasCallOperator\l\< Function \>::value \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_has_call_operator.html",tooltip=" "];
+  Node0 -> Node1 [id="edge366_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="resultType\< Function & \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_3_01_function_01_6_01_4.html",tooltip=" "];
+  Node0 -> Node3 [id="edge367_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="resultType\< Function && \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_3_01_function_01_6_6_01_4.html",tooltip=" "];
+  Node0 -> Node4 [id="edge368_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="resultType\< const Function & \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_3_01const_01_function_01_6_01_4.html",tooltip=" "];
+  Node0 -> Node5 [id="edge369_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="resultType\< std::reference\l_wrapper\< Function \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_3_01std_1_1reference__wrapper_3_01_function_01_4_01_4.html",tooltip=" "];
+  Node0 -> Node6 [id="edge370_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="resultType\< std::reference\l_wrapper\< const Function \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type_3_01std_1_1reference__wrapper_3_01const_01_function_01_4_01_4.html",tooltip=" "];
+  Node0 -> Node2 [id="edge371_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="resultType\< Function \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_async_1_1result_type.html",tooltip=" "];
+  Node2 -> Node1 [id="edge372_Node000002_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge373_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node4 [id="edge374_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node5 [id="edge375_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node6 [id="edge376_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

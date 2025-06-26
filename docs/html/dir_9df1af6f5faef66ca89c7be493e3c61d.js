@@ -8,6 +8,6 @@ var dir_9df1af6f5faef66ca89c7be493e3c61d =
     [ "IXBAKM5AEZ", "dir_7bdfb906f172dba81488785d39eb33bb.html", "dir_7bdfb906f172dba81488785d39eb33bb" ],
     [ "LQF5J24HMX", "dir_18636c718a3b84f3a913f68d93a17921.html", "dir_18636c718a3b84f3a913f68d93a17921" ],
     [ "ZFXYM54VNF", "dir_495245321c3a1bcd9d7598fe60c54eb3.html", "dir_495245321c3a1bcd9d7598fe60c54eb3" ],
-    [ "moc_predefs.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co46266d67edb1b285faf2883cc959951f.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co46266d67edb1b285faf2883cc959951f" ],
-    [ "mocs_compilation.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co166ff9c944ca42f8dd5b62fb6f87661b.html", null ]
+    [ "moc_predefs.h", "_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h.html", "_ku_gou_start_2_my_collection_2_my_collection__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "_ku_gou_start_2_my_collection_2_my_collection__autogen_2mocs__compilation_8cpp.html", null ]
 ];

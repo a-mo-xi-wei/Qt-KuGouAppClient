@@ -1,0 +1,13 @@
+digraph "SendByteArray"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="SendByteArray",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="给指定客户端发送二进制数据"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="SendAllByteArray",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_web_socket_server.html#af0cdc98866730705d187395b623b2cc9",tooltip="给所有客户端发送二进制数据"];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="SendAllOtherByteArray",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_web_socket_server.html#a9a6c3d19fa14160b15285d583edc4cb8",tooltip="给除了指定客户端的其它客户端发送二进制数据"];
+}

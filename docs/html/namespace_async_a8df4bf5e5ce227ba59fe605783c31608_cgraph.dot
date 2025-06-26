@@ -1,0 +1,11 @@
+digraph "runAsync"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="runAsync",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="创建一个线程(QThread::InheritPriority)执行函数"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="runAsync",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79",tooltip="runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface<ResultType>&作为第一个参..."];
+}
