@@ -561,7 +561,7 @@ void LocalSong::scrollToItem(const QString &mediaPath) {
             ui->scrollArea->smoothScrollTo(item->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
             // 设置临时高亮效果
             item->setHighlight(true);
-            QTimer::singleShot(2000, item, [item]() {
+            QTimer::singleShot(3000, item, [item]() {
                 item->setHighlight(false);
             });
 

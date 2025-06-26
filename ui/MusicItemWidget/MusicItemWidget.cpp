@@ -359,10 +359,10 @@ void MusicItemWidget::paintEvent(QPaintEvent *event)
 {
     QFrame::paintEvent(event);
     QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
     if (!mouse_point.isNull() && radius > 0)
     {
         QPainterPath path;
-        painter.setRenderHint(QPainter::Antialiasing);
         painter.setBrush(QBrush(fill_color));
         painter.setPen(Qt::NoPen);
         path.addRoundedRect(rect(), frame_radius, frame_radius);
@@ -374,8 +374,6 @@ void MusicItemWidget::paintEvent(QPaintEvent *event)
     if (m_highlightAlpha > 0) {
         QColor highlightColor(0x8a, 0xbc, 0xd1); // 原始颜色
         highlightColor.setAlpha(m_highlightAlpha); // 应用当前透明度
-
-        painter.setRenderHint(QPainter::Antialiasing);
         painter.setBrush(highlightColor);
         painter.setPen(Qt::NoPen);
         painter.drawRoundedRect(rect(), frame_radius, frame_radius);
