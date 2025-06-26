@@ -19,7 +19,8 @@
 </p>
 
 ---
-### 本人开发工具用的是CLion，非常简便明了，编译的话，生成器使用Ninja，工具链请使用 **_MinGW_** , 不要用VS2022(MSVC)。构建类型选择Release（建议）的话，不管构建还是运行都会快很多，分支的话Windows 10/11用户可以选择Stable稳定版，master分支（功能更多）一直在开发中，能用是能用，但不保证稳定😜。
+### 本人开发工具用的是CLion，非常简便明了，编译的话，生成器使用Ninja，工具链请使用 **_MinGW_** , 不要用VS2022(MSVC)。构建类型选择Release（建议）的话，构建会快很多，Windows 10/11用户可以选择master分支(功能更多)一直在开发中，不保证稳定😜，master-no-docs无文档版(文档体积过大)，Stable稳定版(功能落后，不再维护)。
+![配置如图](image-show/settings00.png)
 ![配置如图](image-show/settings01.png)
 
 Ubuntu 下如果出现类似如下报错：
@@ -152,11 +153,9 @@ flowchart TD
 ### 8.我的收藏界面
 ![输入图片说明](image-show/image14.png)
 ![输入图片说明](image-show/image15.png)
-![输入图片说明](image-show/image16.png)
 ### 9.本地与下载界面
 ![输入图片说明](image-show/image17.png)
 ![输入图片说明](image-show/image18.png)
-![输入图片说明](image-show/image19.png)
 ![输入图片说明](image-show/image20.png)
 ![输入图片说明](image-show/image21.png)
 ### 10.音乐云盘界面
