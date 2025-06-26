@@ -190,7 +190,7 @@ bool MusicRepoVideo::eventFilter(QObject *watched, QEvent *event)
             if (!this->m_isEnter)
             {
                 this->m_isEnter = true;                  ///< 设置进入状态
-                ui->cover_widget->setPopularDirection(0); ///< 设置悬停方向
+                ui->cover_widget->setPopularDirection(0); ///< 取消设置流行人数
             }
         }
         else if (event->type() == QEvent::Leave)
@@ -198,7 +198,7 @@ bool MusicRepoVideo::eventFilter(QObject *watched, QEvent *event)
             if (this->m_isEnter)
             {
                 this->m_isEnter = false;                 ///< 清除进入状态
-                ui->cover_widget->setPopularDirection(2); ///< 设置离开方向
+                ui->cover_widget->setPopularDirection(2); ///< 设置流行人数在右下角
             }
         }
     }

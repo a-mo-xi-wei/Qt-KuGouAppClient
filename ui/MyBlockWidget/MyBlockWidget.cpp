@@ -185,7 +185,7 @@ void MyBlockWidget::setPopularBtnText(const QString &text)const {
         else {
             this->m_rightPopularBtn->setFixedWidth(this->m_rightPopularBtn->fontMetrics().horizontalAdvance(this->m_rightPopularBtn->text()) +
             this->m_rightPopularBtn->contentsMargins().left() + this->m_rightPopularBtn->contentsMargins().right() +
-            this->m_rightPopularBtn->iconSize().width());
+            this->m_rightPopularBtn->iconSize().width() + 10);
         }
     }
 }
