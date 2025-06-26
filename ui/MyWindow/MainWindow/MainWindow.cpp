@@ -70,6 +70,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     //QPainterPath path1;
     //path1.setFillRule(Qt::WindingFill);
     //path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
+    /*
     QColor color(150, 150, 150, 55);
     for (int i = 0; i != SHADOW_WIDTH; ++i) {
         QPainterPath path;
@@ -81,6 +82,35 @@ void MainWindow::paintEvent(QPaintEvent *event)
         painter.setPen(color);
         painter.drawPath(path);
     }
+    */
+    // 绘制阴影（从外向内，黑色渐变为透明）
+    for (int i = 0; i != SHADOW_WIDTH; ++i) {
+        QPainterPath path;
+        path.setFillRule(Qt::WindingFill);
+        path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH - i,
+                            this->width() - (SHADOW_WIDTH - i) * 2,
+                            this->height() - (SHADOW_WIDTH - i) * 2, RADIUS, RADIUS);
+
+        // 关键修改：使用灰色作为基础色，并动态计算透明度
+        int maxAlpha = 150;  // 最外层阴影的最大透明度（0-255）
+        float progress = static_cast<float>(i) / SHADOW_WIDTH; // 进度 0.0~1.0
+        int alpha = static_cast<int>(maxAlpha * (1.0f - progress));
+
+        QColor color(122, 115, 116, alpha); // 灰色 + 动态透明度
+        painter.setPen(color);
+        painter.drawPath(path);
+    }
+
+    // 绘制背景（在阴影上方）
+    QBrush brush(QColor(QStringLiteral("#eef2ff")));
+    painter.setBrush(brush);
+    painter.setPen(Qt::NoPen);
+    QPainterPath bgPath;
+    bgPath.addRoundedRect(SHADOW_WIDTH, SHADOW_WIDTH,
+                          this->width() - SHADOW_WIDTH * 2,
+                          this->height() - SHADOW_WIDTH * 2,
+                          RADIUS, RADIUS);
+    painter.drawPath(bgPath);
 }
 
 /**
