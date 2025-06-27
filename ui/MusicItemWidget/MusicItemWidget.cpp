@@ -63,6 +63,7 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
     this->m_duration = m_information.duration;
     this->m_cover = m_information.cover;
     this->m_singer = m_information.singer;
+    this->m_album = m_information.album;
     //qDebug()<<"m_index: "<<m_index<<" name: "<<m_name<<" duration: "<<m_duration;
     //    " cover: "<<m_cover<<"m_singer: "<<m_singer;
     //PRINT_INFO("index: %d , name: %s , duration: %s , singer: %s ",
@@ -74,6 +75,7 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
     m_coverLab->setObjectName(QStringLiteral("coverLab"));
     m_nameLab->setObjectName(QStringLiteral("nameLab"));
     m_singerLab->setObjectName(QStringLiteral("singerLab"));
+    m_albumLab->setObjectName(QStringLiteral("albumLab"));
     m_durationLab->setObjectName(QStringLiteral("durationLab"));
     m_playToolBtn->setObjectName(QStringLiteral("playToolBtn"));
     m_playNextToolBtn->setObjectName(QStringLiteral("playNextToolBtn"));
@@ -186,6 +188,7 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
     this->m_duration = info.duration;
     this->m_cover = info.cover;
     this->m_singer = info.singer;
+    this->m_album = info.album;
     this->m_indexLab->setText(QString("%1").arg(this->m_index+1, 2, 10, QChar('0')));
     this->m_coverLab->setPixmap(roundedPix(this->m_cover, this->m_coverLab->size(), PIX_RADIUS));
     /*this->m_nameLab->setText(this->m_name);
@@ -205,6 +208,11 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
 
     QString elidedSinger = metrics.elidedText(this->m_singer, Qt::ElideRight, this->m_singerLab->width());
     this->m_singerLab->setText(elidedSinger);
+
+    auto albumLab_toolTip = new ElaToolTip(this->m_albumLab);
+    albumLab_toolTip->setToolTip(this->m_album);
+    QString elidedAlbum = metrics.elidedText(this->m_album, Qt::ElideRight, this->m_albumLab->width());
+    this->m_albumLab->setText("<span style='color:gray;'>《" + elidedAlbum + "》</span>");
 
     this->m_durationLab->setText(this->m_duration);
     update(); // 重绘
@@ -593,6 +601,7 @@ void MusicItemWidget::initUi()
     this->m_coverLab->setPixmap(roundedPix(this->m_cover,this->m_coverLab->size(),PIX_RADIUS));
     this->m_nameLab         = new QLabel(this);
     this->m_singerLab       = new QLabel(this);
+    this->m_albumLab        = new QLabel(this);
     this->m_durationLab     = new QLabel(this);
     this->m_playToolBtn     = new QToolButton(this);
     this->m_playNextToolBtn = new QToolButton(this);
@@ -602,6 +611,7 @@ void MusicItemWidget::initUi()
 
     this->m_nameLab->setFixedWidth(100);
     this->m_singerLab->setFixedWidth(100);
+    this->m_albumLab->setFixedWidth(100);
 
     this->m_playToolBtn     ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-gray.svg")));
     this->m_playNextToolBtn ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-music-list-gray.svg")));
@@ -623,7 +633,9 @@ void MusicItemWidget::initUi()
     vlayout->addWidget(m_singerLab);
     hlayout->addLayout(vlayout);
     // 添加第一个弹簧，拉伸系数为 2
-    hlayout->addStretch(2);
+    hlayout->addStretch(1);
+    hlayout->addWidget(m_albumLab);
+    hlayout->addStretch(1);
     hlayout->addWidget(m_durationLab);
     // 添加第二个弹簧，拉伸系数为 1
     hlayout->addStretch(1);

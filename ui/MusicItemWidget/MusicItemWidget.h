@@ -38,6 +38,7 @@ typedef struct SongInformation
     QString                 songName;     ///< 歌曲名称
     QString                 singer;       ///< 歌手名称
     QString                 duration;     ///< 歌曲时长
+    QString                 album;        ///< 专辑名称
     QString                 mediaPath;    ///< 媒体文件路径
     QDateTime               addTime;      ///< 添加时间
     int                     playCount;    ///< 播放次数
@@ -358,6 +359,7 @@ private:
     QLabel*                 m_coverLab{};          ///< 封面标签
     QLabel*                 m_nameLab{};           ///< 歌曲名称标签
     QLabel*                 m_singerLab{};         ///< 歌手名称标签
+    QLabel*                 m_albumLab{};          ///< 专辑名称标签
     QLabel*                 m_durationLab{};       ///< 时长标签
     QToolButton*            m_playToolBtn{};       ///< 播放按钮
     QToolButton*            m_playNextToolBtn{};   ///< 下一首按钮
@@ -380,6 +382,7 @@ private:
     QPixmap                 m_cover;               ///< 封面图片
     QString                 m_name;                ///< 歌曲名称
     QString                 m_singer;              ///< 歌手名称
+    QString                 m_album ;              ///< 专辑名称
     QString                 m_duration;            ///< 歌曲时长
 
 public:
