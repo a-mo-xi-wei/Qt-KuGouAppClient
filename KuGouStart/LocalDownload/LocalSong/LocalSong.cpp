@@ -242,6 +242,9 @@ void LocalSong::getMetaData()
             auto singer = data.value(QMediaMetaData::ContributingArtist).toString(); ///< 获取歌手
             if (!re.match(singer).hasMatch())
                 singer = QStringLiteral("网络歌手");     ///< 设置默认歌手
+            auto album = data.value(QMediaMetaData::AlbumTitle).toString();
+            if (!re.match(album).hasMatch())
+                album = QStringLiteral("网络专辑");
             auto cover = data.value(QMediaMetaData::ThumbnailImage).value<QPixmap>(); ///< 获取封面
             if (cover.isNull())
             {
@@ -253,6 +256,7 @@ void LocalSong::getMetaData()
             tempInformation.cover = cover;                ///< 设置封面
             tempInformation.songName = title;            ///< 设置标题
             tempInformation.singer = singer;             ///< 设置歌手
+            tempInformation.album = album;               ///< 设置专辑
             tempInformation.duration = QTime::fromMSecsSinceStartOfDay(static_cast<int>(duration)).toString("mm:ss"); ///< 设置时长
             tempInformation.mediaPath = this->m_mediaPath; ///< 设置路径
             tempInformation.addTime = QDateTime::currentDateTime(); ///< 设置添加时间
@@ -298,6 +302,7 @@ void LocalSong::getMetaData()
                     {"cover", base64Image},
                     {"songName", tempInformation.songName},
                     {"singer", tempInformation.singer},
+                    {"album", tempInformation.album},
                     {"duration", tempInformation.duration},
                     {"mediaPath", tempInformation.mediaPath},
                     {"addTime", tempInformation.addTime.toString("yyyy-MM-dd hh:mm:ss")},
