@@ -1,7 +1,7 @@
 var dir_235aab1ba7179a5b5a91920324809391 =
 [
-    [ "moc_qtmaterialslider.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_materiala9933b0c0b3fbd05bdd5a1f919395cc4.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_materiala9933b0c0b3fbd05bdd5a1f919395cc4" ],
-    [ "moc_qtmaterialslider.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_material213f7ee8bb69b1767bf09f74b49e4eea.html", null ],
-    [ "moc_qtmaterialslider_internal.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_material493f86dd4a39e3e18e0cd4db09ecd95c.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_material493f86dd4a39e3e18e0cd4db09ecd95c" ],
-    [ "moc_qtmaterialslider_internal.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_materialf2bc8fd7a9ebe5fb7020c8456761dd4b.html", null ]
+    [ "moc_qtmaterialslider.cpp", "moc__qtmaterialslider_8cpp.html", "moc__qtmaterialslider_8cpp" ],
+    [ "moc_qtmaterialslider.cpp.d", "moc__qtmaterialslider_8cpp_8d.html", null ],
+    [ "moc_qtmaterialslider_internal.cpp", "moc__qtmaterialslider__internal_8cpp.html", "moc__qtmaterialslider__internal_8cpp" ],
+    [ "moc_qtmaterialslider_internal.cpp.d", "moc__qtmaterialslider__internal_8cpp_8d.html", null ]
 ];

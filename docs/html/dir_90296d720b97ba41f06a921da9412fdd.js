@@ -5,6 +5,6 @@ var dir_90296d720b97ba41f06a921da9412fdd =
     [ "QGOHT232YT", "dir_5c895995ccbfd6b6383faca720f4f5bb.html", "dir_5c895995ccbfd6b6383faca720f4f5bb" ],
     [ "QUJHFPBYWV", "dir_3666360d48734720abf64a92323b2bab.html", "dir_3666360d48734720abf64a92323b2bab" ],
     [ "WCPGUQ57CZ", "dir_b66bc03c5eb3b8aa55bffd1a37a2f7e0.html", "dir_b66bc03c5eb3b8aa55bffd1a37a2f7e0" ],
-    [ "moc_predefs.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_2moc__predefs_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_2moc__predefs_8h" ],
-    [ "mocs_compilation.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_window_2_my_window__autogen_2mocs__compilation_8cpp.html", null ]
+    [ "moc_predefs.h", "ui_2_my_window_2_my_window__autogen_2moc__predefs_8h.html", "ui_2_my_window_2_my_window__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "ui_2_my_window_2_my_window__autogen_2mocs__compilation_8cpp.html", null ]
 ];

@@ -231,6 +231,9 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:aeab41b278e449a68fbd1c98c9e1516a8" id="r_aeab41b278e449a68fbd1c98c9e1516a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeab41b278e449a68fbd1c98c9e1516a8">getMenuPosition</a> (const QPoint &amp;pos)</td></tr>
 <tr class="memdesc:aeab41b278e449a68fbd1c98c9e1516a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取菜单显示位置  <br /></td></tr>
 <tr class="separator:aeab41b278e449a68fbd1c98c9e1516a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fbb7963ff8b26328805582ec091b7a2" id="r_a3fbb7963ff8b26328805582ec091b7a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fbb7963ff8b26328805582ec091b7a2">setHighlight</a> (bool highlight)</td></tr>
+<tr class="memdesc:a3fbb7963ff8b26328805582ec091b7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置高亮提示  <br /></td></tr>
+<tr class="separator:a3fbb7963ff8b26328805582ec091b7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
@@ -363,6 +366,18 @@ Private 属性</h2></td></tr>
 <tr class="memitem:a16a7323a6c813dc0bacfc934a67a9416" id="r_a16a7323a6c813dc0bacfc934a67a9416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_tool_button.html">QToolButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16a7323a6c813dc0bacfc934a67a9416">m_moreToolBtn</a> {}</td></tr>
 <tr class="memdesc:a16a7323a6c813dc0bacfc934a67a9416"><td class="mdescLeft">&#160;</td><td class="mdescRight">更多按钮  <br /></td></tr>
 <tr class="separator:a16a7323a6c813dc0bacfc934a67a9416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22791ac75d969e23b61ba2b0cf5390f" id="r_ad22791ac75d969e23b61ba2b0cf5390f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad22791ac75d969e23b61ba2b0cf5390f">m_isHighlighted</a> = false</td></tr>
+<tr class="memdesc:ad22791ac75d969e23b61ba2b0cf5390f"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否高亮  <br /></td></tr>
+<tr class="separator:ad22791ac75d969e23b61ba2b0cf5390f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba06440f68455ad7b7de89f5daec835" id="r_a8ba06440f68455ad7b7de89f5daec835"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ba06440f68455ad7b7de89f5daec835">m_highlightAlpha</a> = 0</td></tr>
+<tr class="memdesc:a8ba06440f68455ad7b7de89f5daec835"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前透明度 (0-255)  <br /></td></tr>
+<tr class="separator:a8ba06440f68455ad7b7de89f5daec835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de4bd44f061d77846d29b23c2cf1a90" id="r_a7de4bd44f061d77846d29b23c2cf1a90"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7de4bd44f061d77846d29b23c2cf1a90">m_highlightDirection</a> = 1</td></tr>
+<tr class="memdesc:a7de4bd44f061d77846d29b23c2cf1a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">透明度变化方向 (1增加, -1减少)  <br /></td></tr>
+<tr class="separator:a7de4bd44f061d77846d29b23c2cf1a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac50e21e4a14f9acf69ac0fe02047c64a" id="r_ac50e21e4a14f9acf69ac0fe02047c64a"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac50e21e4a14f9acf69ac0fe02047c64a">m_blinkTimer</a></td></tr>
+<tr class="memdesc:ac50e21e4a14f9acf69ac0fe02047c64a"><td class="mdescLeft">&#160;</td><td class="mdescRight">闪烁定时器  <br /></td></tr>
+<tr class="separator:ac50e21e4a14f9acf69ac0fe02047c64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeeb2f74f794dfa8896f9d5d706159ac9" id="r_aeeb2f74f794dfa8896f9d5d706159ac9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeb2f74f794dfa8896f9d5d706159ac9">m_isPlaying</a> = false</td></tr>
 <tr class="memdesc:aeeb2f74f794dfa8896f9d5d706159ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否正在播放  <br /></td></tr>
 <tr class="separator:aeeb2f74f794dfa8896f9d5d706159ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1925,6 +1940,49 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
+<a id="a3fbb7963ff8b26328805582ec091b7a2" name="a3fbb7963ff8b26328805582ec091b7a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fbb7963ff8b26328805582ec091b7a2">&#9670;&#160;</a></span>setHighlight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setHighlight </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>highlight</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置高亮提示 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">highlight</td><td>是否高亮 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>高亮item项 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_music_item_widget_a3fbb7963ff8b26328805582ec091b7a2_icgraph.png" border="0" usemap="#aclass_music_item_widget_a3fbb7963ff8b26328805582ec091b7a2_icgraph" alt=""/></div>
+<map name="aclass_music_item_widget_a3fbb7963ff8b26328805582ec091b7a2_icgraph" id="aclass_music_item_widget_a3fbb7963ff8b26328805582ec091b7a2_icgraph">
+<area shape="rect" title="设置高亮提示" alt="" coords="807,29,897,56"/>
+<area shape="rect" href="class_local_song.html#a09a9f9a11a92f99bc63be245778c0903" title="滚动到指定歌曲项" alt="" coords="597,29,759,56"/>
+<area shape="poly" title=" " alt="" coords="791,45,759,45,759,40,791,40"/>
+<area shape="rect" href="class_local_song.html#afd928c0268a021fbb05d4357f3c2de66" title="搜索框选项跳转槽函数" alt="" coords="373,21,549,64"/>
+<area shape="poly" title=" " alt="" coords="582,45,550,45,550,40,582,40"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="205,29,325,56"/>
+<area shape="poly" title=" " alt="" coords="358,45,325,45,325,40,358,40"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="5,29,157,56"/>
+<area shape="poly" title=" " alt="" coords="189,45,157,45,157,40,189,40"/>
+<area shape="poly" title=" " alt="" coords="112,16,101,10,81,8,62,10,52,15,49,20,54,27,50,30,44,21,48,11,60,5,81,3,103,5,115,12"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a4f6157cb660ea03c17be0f5621d8f697" name="a4f6157cb660ea03c17be0f5621d8f697"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f6157cb660ea03c17be0f5621d8f697">&#9670;&#160;</a></span>setIndexText()</h2>
 
@@ -2287,6 +2345,30 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
+<a id="ac50e21e4a14f9acf69ac0fe02047c64a" name="ac50e21e4a14f9acf69ac0fe02047c64a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50e21e4a14f9acf69ac0fe02047c64a">&#9670;&#160;</a></span>m_blinkTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* m_blinkTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>闪烁定时器 </p>
+
+</div>
+</div>
 <a id="af7249fe4f84cf0a8baa61eab47a4ef13" name="af7249fe4f84cf0a8baa61eab47a4ef13"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7249fe4f84cf0a8baa61eab47a4ef13">&#9670;&#160;</a></span>m_collectToolBtn</h2>
 
@@ -2431,6 +2513,54 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
+<a id="a8ba06440f68455ad7b7de89f5daec835" name="a8ba06440f68455ad7b7de89f5daec835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ba06440f68455ad7b7de89f5daec835">&#9670;&#160;</a></span>m_highlightAlpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_highlightAlpha = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前透明度 (0-255) </p>
+
+</div>
+</div>
+<a id="a7de4bd44f061d77846d29b23c2cf1a90" name="a7de4bd44f061d77846d29b23c2cf1a90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7de4bd44f061d77846d29b23c2cf1a90">&#9670;&#160;</a></span>m_highlightDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int m_highlightDirection = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>透明度变化方向 (1增加, -1减少) </p>
+
+</div>
+</div>
 <a id="acf7aaf60aa15e1b783095ab17b2adc9c" name="acf7aaf60aa15e1b783095ab17b2adc9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf7aaf60aa15e1b783095ab17b2adc9c">&#9670;&#160;</a></span>m_index</h2>
 
@@ -2492,6 +2622,30 @@ Private 属性</h2></td></tr>
 </div><div class="memdoc">
 
 <p>歌曲信息 </p>
+
+</div>
+</div>
+<a id="ad22791ac75d969e23b61ba2b0cf5390f" name="ad22791ac75d969e23b61ba2b0cf5390f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad22791ac75d969e23b61ba2b0cf5390f">&#9670;&#160;</a></span>m_isHighlighted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool m_isHighlighted = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否高亮 </p>
 
 </div>
 </div>

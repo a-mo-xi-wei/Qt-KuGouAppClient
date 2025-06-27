@@ -1,11 +1,11 @@
 var dir_fbc07b66791ecc8fd626426c676ef0be =
 [
-    [ "ui_AllCloudDisk.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_musicb0f01311f0dc007004a43be3027f6ee8.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_musicb0f01311f0dc007004a43be3027f6ee8" ],
-    [ "ui_AllLocal.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music5c37bb291b688d7040d4f64ef0c1eee7.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music5c37bb291b688d7040d4f64ef0c1eee7" ],
-    [ "ui_AllLove.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music24e11ad82cb6a5cc3e7ce84c8ee711a4.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music24e11ad82cb6a5cc3e7ce84c8ee711a4" ],
-    [ "ui_AllMusic.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music2a8491305d56bd3abf535eb925b098db.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music2a8491305d56bd3abf535eb925b098db" ],
-    [ "ui_AllPaid.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music1ffb84f9088387efeee2632d3d24494e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music1ffb84f9088387efeee2632d3d24494e" ],
-    [ "ui_AllRecent.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music65cfaeed415a0b8f84df603e2b32ed5e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music65cfaeed415a0b8f84df603e2b32ed5e" ],
-    [ "ui_AllSongList.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_musiccd97d69286eb940f2dce593626950536.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_musiccd97d69286eb940f2dce593626950536" ],
-    [ "ui_AllWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_musicb7b6fe31752905ef8445e65cf81f921e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_musicb7b6fe31752905ef8445e65cf81f921e" ]
+    [ "ui_AllCloudDisk.h", "ui___all_cloud_disk_8h.html", "ui___all_cloud_disk_8h" ],
+    [ "ui_AllLocal.h", "ui___all_local_8h.html", "ui___all_local_8h" ],
+    [ "ui_AllLove.h", "ui___all_love_8h.html", "ui___all_love_8h" ],
+    [ "ui_AllMusic.h", "ui___all_music_8h.html", "ui___all_music_8h" ],
+    [ "ui_AllPaid.h", "ui___all_paid_8h.html", "ui___all_paid_8h" ],
+    [ "ui_AllRecent.h", "ui___all_recent_8h.html", "ui___all_recent_8h" ],
+    [ "ui_AllSongList.h", "ui___all_song_list_8h.html", "ui___all_song_list_8h" ],
+    [ "ui_AllWidget.h", "ui___all_widget_8h.html", "ui___all_widget_8h" ]
 ];

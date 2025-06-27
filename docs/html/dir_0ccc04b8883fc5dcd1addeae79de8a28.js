@@ -1,5 +1,5 @@
 var dir_0ccc04b8883fc5dcd1addeae79de8a28 =
 [
-    [ "moc_RecommendForYou.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_r9f9870360eabde09e359d3b11249cc91.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_r9f9870360eabde09e359d3b11249cc91" ],
-    [ "moc_RecommendForYou.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recommend_for_you_2_rf2fa141456bf95d1d5d9fb252f3fc119.html", null ]
+    [ "moc_RecommendForYou.cpp", "moc___recommend_for_you_8cpp.html", "moc___recommend_for_you_8cpp" ],
+    [ "moc_RecommendForYou.cpp.d", "moc___recommend_for_you_8cpp_8d.html", null ]
 ];

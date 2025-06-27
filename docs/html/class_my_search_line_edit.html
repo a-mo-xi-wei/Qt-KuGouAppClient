@@ -118,13 +118,27 @@ $(function(){initNavTree('class_my_search_line_edit.html',''); initResizable(tru
 类 MySearchLineEdit 继承关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit__inherit__graph.png" border="0" usemap="#a_my_search_line_edit_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="a_my_search_line_edit_inherit__map" id="a_my_search_line_edit_inherit__map">
+<area shape="rect" title="自定义搜索输入框类，继承自 QLineEdit，支持焦点动画和自定义右键菜单" alt="" coords="5,155,133,181"/>
+<area shape="rect" href="class_ela_line_edit.html" title=" " alt="" coords="25,80,113,107"/>
+<area shape="poly" title=" " alt="" coords="72,122,72,154,66,154,66,122"/>
+<area shape="rect" title=" " alt="" coords="30,5,108,32"/>
+<area shape="poly" title=" " alt="" coords="72,48,72,80,66,80,66,48"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <div class="dynheader">
 MySearchLineEdit 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit__coll__graph.png" border="0" usemap="#a_my_search_line_edit_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="a_my_search_line_edit_coll__map" id="a_my_search_line_edit_coll__map">
+<area shape="rect" title="自定义搜索输入框类，继承自 QLineEdit，支持焦点动画和自定义右键菜单" alt="" coords="53,188,181,215"/>
+<area shape="rect" href="class_ela_line_edit.html" title=" " alt="" coords="5,81,93,108"/>
+<area shape="poly" title=" " alt="" coords="67,119,111,186,107,189,63,122"/>
+<area shape="rect" title=" " alt="" coords="10,5,88,32"/>
+<area shape="poly" title=" " alt="" coords="52,47,52,81,46,81,46,47"/>
+<area shape="rect" href="class_q_property_animation.html" title="Qt 属性动画类，用于窗口缩放动画" alt="" coords="117,81,256,108"/>
+<area shape="poly" title=" " alt="" coords="172,122,127,189,123,186,168,119"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -135,6 +149,12 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a7795cf59ce610712594c0087946dd4b7" id="r_a7795cf59ce610712594c0087946dd4b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7795cf59ce610712594c0087946dd4b7">setMaxWidth</a> (const int &amp;width)</td></tr>
 <tr class="memdesc:a7795cf59ce610712594c0087946dd4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置输入框最大宽度  <br /></td></tr>
 <tr class="separator:a7795cf59ce610712594c0087946dd4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4503e82cdc694bf52608498b8c81edb8" id="r_a4503e82cdc694bf52608498b8c81edb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4503e82cdc694bf52608498b8c81edb8">stopAnimations</a> ()</td></tr>
+<tr class="memdesc:a4503e82cdc694bf52608498b8c81edb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止正在执行的动画  <br /></td></tr>
+<tr class="separator:a4503e82cdc694bf52608498b8c81edb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a755ee993c2d4e9d422c37990b15afa37" id="r_a755ee993c2d4e9d422c37990b15afa37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a755ee993c2d4e9d422c37990b15afa37">resetState</a> ()</td></tr>
+<tr class="memdesc:a755ee993c2d4e9d422c37990b15afa37"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置状态  <br /></td></tr>
+<tr class="separator:a755ee993c2d4e9d422c37990b15afa37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_ela_line_edit"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_ela_line_edit')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_ela_line_edit.html">ElaLineEdit</a></td></tr>
 <tr class="memitem:ad5b1bd2b489835fea5bdeadd9e8a79d6 inherit pub_methods_class_ela_line_edit" id="r_ad5b1bd2b489835fea5bdeadd9e8a79d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ela_line_edit.html#ad5b1bd2b489835fea5bdeadd9e8a79d6">ElaLineEdit</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:ad5b1bd2b489835fea5bdeadd9e8a79d6 inherit pub_methods_class_ela_line_edit"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,7 +265,25 @@ Private 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit_ab5080d3863379b58461217d6651429d2_cgraph.png" border="0" usemap="#aclass_my_search_line_edit_ab5080d3863379b58461217d6651429d2_cgraph" alt=""/></div>
-<!-- MAP 2 -->
+<map name="aclass_my_search_line_edit_ab5080d3863379b58461217d6651429d2_cgraph" id="aclass_my_search_line_edit_ab5080d3863379b58461217d6651429d2_cgraph">
+<area shape="rect" title="构造函数，初始化搜索输入框" alt="" coords="5,68,133,95"/>
+<area shape="rect" href="class_ela_line_edit.html#ad5b1bd2b489835fea5bdeadd9e8a79d6" title=" " alt="" coords="646,43,808,69"/>
+<area shape="poly" title=" " alt="" coords="121,65,180,53,297,43,389,42,598,49,631,50,631,55,598,55,389,47,298,48,181,59,122,70"/>
+<area shape="rect" href="class_my_search_line_edit.html#a939cb715f5c952ace717a4751494e5bb" title=" " alt="" coords="181,68,364,95"/>
+<area shape="poly" title=" " alt="" coords="133,79,165,79,165,84,133,84"/>
+<area shape="rect" href="class_ela_line_edit.html#ab015c904aad52d248359777dfb7bdf31" title=" " alt="" coords="183,119,362,145"/>
+<area shape="poly" title=" " alt="" coords="126,93,202,112,201,117,125,98"/>
+<area shape="poly" title=" " alt="" coords="690,44,683,34,687,24,703,18,727,16,753,19,767,25,765,30,752,24,727,21,704,23,691,28,688,33,694,41"/>
+<area shape="rect" href="class_ela_line_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db" title=" " alt="" coords="892,5,1028,48"/>
+<area shape="poly" title=" " alt="" coords="808,43,876,34,877,40,809,48"/>
+<area shape="rect" href="class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba" title="主题模式更改信号" alt="" coords="856,72,1064,99"/>
+<area shape="poly" title=" " alt="" coords="809,64,841,68,840,73,808,69"/>
+<area shape="rect" href="class_ela_line_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5" title=" " alt="" coords="1112,5,1240,48"/>
+<area shape="poly" title=" " alt="" coords="1028,24,1096,24,1096,29,1028,29"/>
+<area shape="rect" href="class_ela_line_edit.html#ae5a81c2f46cd331edceca9c48d292086" title=" " alt="" coords="412,64,598,107"/>
+<area shape="poly" title=" " alt="" coords="365,80,397,81,397,86,365,86"/>
+<area shape="poly" title=" " alt="" coords="598,70,631,66,631,71,599,76"/>
+</map>
 </div>
 
 </div>
@@ -285,7 +323,24 @@ Private 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit_abe839d2e8f13054e4eaf762f8ec98e50_cgraph.png" border="0" usemap="#aclass_my_search_line_edit_abe839d2e8f13054e4eaf762f8ec98e50_cgraph" alt=""/></div>
-<!-- MAP 3 -->
+<map name="aclass_my_search_line_edit_abe839d2e8f13054e4eaf762f8ec98e50_cgraph" id="aclass_my_search_line_edit_abe839d2e8f13054e4eaf762f8ec98e50_cgraph">
+<area shape="rect" title="重写焦点获取事件，触发展开动画" alt="" coords="5,93,104,120"/>
+<area shape="rect" href="class_ela_line_edit.html#abe839d2e8f13054e4eaf762f8ec98e50" title=" " alt="" coords="152,43,324,69"/>
+<area shape="poly" title=" " alt="" coords="104,91,172,71,173,77,105,96"/>
+<area shape="rect" href="class_my_search_line_edit.html#ab692568bf31a987d3805260158411674" title=" " alt="" coords="163,93,312,120"/>
+<area shape="poly" title=" " alt="" coords="104,104,148,104,148,109,104,109"/>
+<area shape="rect" href="class_my_search_line_edit.html#a4503e82cdc694bf52608498b8c81edb8" title="停止正在执行的动画" alt="" coords="182,144,294,171"/>
+<area shape="poly" title=" " alt="" coords="105,118,173,137,172,142,104,123"/>
+<area shape="rect" href="class_ela_line_edit.html#ad5b1bd2b489835fea5bdeadd9e8a79d6" title=" " alt="" coords="372,43,533,69"/>
+<area shape="poly" title=" " alt="" coords="324,53,356,53,356,59,324,59"/>
+<area shape="poly" title=" " alt="" coords="416,44,410,34,414,24,429,18,453,16,478,19,492,25,489,30,477,24,453,21,430,23,418,28,415,33,421,41"/>
+<area shape="rect" href="class_ela_line_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db" title=" " alt="" coords="618,5,753,48"/>
+<area shape="poly" title=" " alt="" coords="534,43,602,34,603,40,534,48"/>
+<area shape="rect" href="class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba" title="主题模式更改信号" alt="" coords="581,72,790,99"/>
+<area shape="poly" title=" " alt="" coords="534,64,566,68,566,73,534,69"/>
+<area shape="rect" href="class_ela_line_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5" title=" " alt="" coords="838,5,966,48"/>
+<area shape="poly" title=" " alt="" coords="753,24,822,24,822,29,753,29"/>
+</map>
 </div>
 
 </div>
@@ -325,7 +380,31 @@ Private 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit_a34b9c9f85e5a9f57123a2ac7398fa7d2_cgraph.png" border="0" usemap="#aclass_my_search_line_edit_a34b9c9f85e5a9f57123a2ac7398fa7d2_cgraph" alt=""/></div>
-<!-- MAP 4 -->
+<map name="aclass_my_search_line_edit_a34b9c9f85e5a9f57123a2ac7398fa7d2_cgraph" id="aclass_my_search_line_edit_a34b9c9f85e5a9f57123a2ac7398fa7d2_cgraph">
+<area shape="rect" title="重写焦点丢失事件，触发收起动画" alt="" coords="5,122,114,149"/>
+<area shape="rect" href="class_ela_line_edit.html#a34b9c9f85e5a9f57123a2ac7398fa7d2" title=" " alt="" coords="162,42,344,69"/>
+<area shape="poly" title=" " alt="" coords="93,119,204,73,206,78,95,124"/>
+<area shape="rect" href="class_my_search_line_edit.html#a24c96b10e0e5c009bed6f1a44cf86c24" title=" " alt="" coords="175,122,331,149"/>
+<area shape="poly" title=" " alt="" coords="114,133,159,133,159,138,114,138"/>
+<area shape="rect" href="class_my_search_line_edit.html#a4503e82cdc694bf52608498b8c81edb8" title="停止正在执行的动画" alt="" coords="197,173,308,200"/>
+<area shape="poly" title=" " alt="" coords="114,147,186,166,184,171,113,152"/>
+<area shape="rect" href="class_ela_line_edit.html#ad5b1bd2b489835fea5bdeadd9e8a79d6" title=" " alt="" coords="613,57,775,84"/>
+<area shape="poly" title=" " alt="" coords="291,39,338,24,392,13,479,3,517,5,566,13,614,28,656,47,654,52,612,33,565,18,517,10,479,8,392,18,340,29,292,44"/>
+<area shape="rect" href="class_ela_line_edit.html#a5c86f9afeb83fd0867048e53a9155e23" title="Q_SIGNAL void focusIn(QString text);" alt="" coords="404,28,553,54"/>
+<area shape="poly" title=" " alt="" coords="344,47,389,44,389,49,344,52"/>
+<area shape="rect" href="class_ela_line_edit.html#ad2186a7e07bf5a1aabba616dac8f77cb" title=" " alt="" coords="392,78,565,105"/>
+<area shape="poly" title=" " alt="" coords="341,67,377,73,376,78,340,72"/>
+<area shape="poly" title=" " alt="" coords="658,58,651,48,656,38,670,32,694,30,720,33,733,39,731,44,718,38,694,36,671,37,659,42,656,48,662,55"/>
+<area shape="rect" href="class_ela_line_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db" title=" " alt="" coords="859,20,994,62"/>
+<area shape="poly" title=" " alt="" coords="775,57,843,49,844,54,776,63"/>
+<area shape="rect" href="class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba" title="主题模式更改信号" alt="" coords="823,86,1031,113"/>
+<area shape="poly" title=" " alt="" coords="776,78,808,82,807,87,775,83"/>
+<area shape="rect" href="class_ela_line_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5" title=" " alt="" coords="1079,20,1207,62"/>
+<area shape="poly" title=" " alt="" coords="995,38,1063,38,1063,44,995,44"/>
+<area shape="rect" href="class_ela_line_edit.html#a8810f8850c96d963290ef5151d80b53d" title=" " alt="" coords="400,129,557,172"/>
+<area shape="poly" title=" " alt="" coords="332,138,385,141,384,147,331,143"/>
+<area shape="poly" title=" " alt="" coords="537,126,641,87,643,92,539,131"/>
+</map>
 </div>
 
 </div>
@@ -363,6 +442,47 @@ Private 属性</h2></td></tr>
 <p>&lt; 密码模式禁用全选</p>
 <p>&lt; 密码模式禁用复制</p>
 <p>&lt; 密码模式禁用粘贴</p>
+
+</div>
+</div>
+<a id="a755ee993c2d4e9d422c37990b15afa37" name="a755ee993c2d4e9d422c37990b15afa37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a755ee993c2d4e9d422c37990b15afa37">&#9670;&#160;</a></span>resetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重置状态 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_search_line_edit_a755ee993c2d4e9d422c37990b15afa37_cgraph.png" border="0" usemap="#aclass_my_search_line_edit_a755ee993c2d4e9d422c37990b15afa37_cgraph" alt=""/></div>
+<map name="aclass_my_search_line_edit_a755ee993c2d4e9d422c37990b15afa37_cgraph" id="aclass_my_search_line_edit_a755ee993c2d4e9d422c37990b15afa37_cgraph">
+<area shape="rect" title="重置状态" alt="" coords="5,47,87,73"/>
+<area shape="rect" href="class_ela_line_edit.html#a8810f8850c96d963290ef5151d80b53d" title=" " alt="" coords="149,5,306,48"/>
+<area shape="poly" title=" " alt="" coords="87,50,133,41,134,47,88,55"/>
+<area shape="rect" href="class_ela_line_edit.html#ae5a81c2f46cd331edceca9c48d292086" title=" " alt="" coords="135,72,321,115"/>
+<area shape="poly" title=" " alt="" coords="88,65,120,71,119,76,87,70"/>
+<area shape="rect" href="class_ela_line_edit.html#ad5b1bd2b489835fea5bdeadd9e8a79d6" title=" " alt="" coords="369,47,530,73"/>
+<area shape="poly" title=" " alt="" coords="307,36,354,43,353,48,307,41"/>
+<area shape="poly" title=" " alt="" coords="412,48,405,38,410,28,425,22,450,20,476,23,490,29,488,34,475,28,450,25,426,27,414,32,411,37,417,45"/>
+<area shape="rect" href="class_ela_line_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db" title=" " alt="" coords="615,9,750,52"/>
+<area shape="poly" title=" " alt="" coords="531,47,599,38,600,44,531,52"/>
+<area shape="rect" href="class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba" title="主题模式更改信号" alt="" coords="578,76,787,103"/>
+<area shape="poly" title=" " alt="" coords="531,68,563,72,563,77,531,73"/>
+<area shape="rect" href="class_ela_line_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5" title=" " alt="" coords="835,9,963,52"/>
+<area shape="poly" title=" " alt="" coords="750,28,819,28,819,33,750,33"/>
+<area shape="poly" title=" " alt="" coords="321,77,353,72,354,77,322,82"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -417,13 +537,30 @@ Private 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit_a24c96b10e0e5c009bed6f1a44cf86c24_cgraph.png" border="0" usemap="#aclass_my_search_line_edit_a24c96b10e0e5c009bed6f1a44cf86c24_cgraph" alt=""/></div>
-<!-- MAP 5 -->
+<map name="aclass_my_search_line_edit_a24c96b10e0e5c009bed6f1a44cf86c24_cgraph" id="aclass_my_search_line_edit_a24c96b10e0e5c009bed6f1a44cf86c24_cgraph">
+<area shape="rect" title=" " alt="" coords="5,43,162,69"/>
+<area shape="rect" href="class_ela_line_edit.html#a8810f8850c96d963290ef5151d80b53d" title=" " alt="" coords="210,35,367,77"/>
+<area shape="poly" title=" " alt="" coords="162,53,194,53,194,59,162,59"/>
+<area shape="rect" href="class_ela_line_edit.html#ad5b1bd2b489835fea5bdeadd9e8a79d6" title=" " alt="" coords="415,43,576,69"/>
+<area shape="poly" title=" " alt="" coords="368,53,400,53,400,59,368,59"/>
+<area shape="poly" title=" " alt="" coords="461,44,454,34,459,24,473,18,496,16,520,19,533,25,531,30,519,24,496,21,474,23,462,28,460,33,465,41"/>
+<area shape="rect" href="class_ela_line_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db" title=" " alt="" coords="661,5,796,48"/>
+<area shape="poly" title=" " alt="" coords="577,43,645,34,646,40,577,48"/>
+<area shape="rect" href="class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba" title="主题模式更改信号" alt="" coords="624,72,833,99"/>
+<area shape="poly" title=" " alt="" coords="577,64,609,68,609,73,577,69"/>
+<area shape="rect" href="class_ela_line_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5" title=" " alt="" coords="881,5,1009,48"/>
+<area shape="poly" title=" " alt="" coords="796,24,865,24,865,29,796,29"/>
+</map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit_a24c96b10e0e5c009bed6f1a44cf86c24_icgraph.png" border="0" usemap="#aclass_my_search_line_edit_a24c96b10e0e5c009bed6f1a44cf86c24_icgraph" alt=""/></div>
-<!-- MAP 6 -->
+<map name="aclass_my_search_line_edit_a24c96b10e0e5c009bed6f1a44cf86c24_icgraph" id="aclass_my_search_line_edit_a24c96b10e0e5c009bed6f1a44cf86c24_icgraph">
+<area shape="rect" title=" " alt="" coords="162,5,318,32"/>
+<area shape="rect" href="class_my_search_line_edit.html#a34b9c9f85e5a9f57123a2ac7398fa7d2" title="重写焦点丢失事件，触发收起动画" alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
 </div>
 
 </div>
@@ -454,7 +591,42 @@ Private 属性</h2></td></tr>
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit_ab692568bf31a987d3805260158411674_icgraph.png" border="0" usemap="#aclass_my_search_line_edit_ab692568bf31a987d3805260158411674_icgraph" alt=""/></div>
-<!-- MAP 7 -->
+<map name="aclass_my_search_line_edit_ab692568bf31a987d3805260158411674_icgraph" id="aclass_my_search_line_edit_ab692568bf31a987d3805260158411674_icgraph">
+<area shape="rect" title=" " alt="" coords="152,5,301,32"/>
+<area shape="rect" href="class_my_search_line_edit.html#abe839d2e8f13054e4eaf762f8ec98e50" title="重写焦点获取事件，触发展开动画" alt="" coords="5,5,104,32"/>
+<area shape="poly" title=" " alt="" coords="136,21,104,21,104,16,136,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4503e82cdc694bf52608498b8c81edb8" name="a4503e82cdc694bf52608498b8c81edb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4503e82cdc694bf52608498b8c81edb8">&#9670;&#160;</a></span>stopAnimations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stopAnimations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>停止正在执行的动画 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_search_line_edit_a4503e82cdc694bf52608498b8c81edb8_icgraph.png" border="0" usemap="#aclass_my_search_line_edit_a4503e82cdc694bf52608498b8c81edb8_icgraph" alt=""/></div>
+<map name="aclass_my_search_line_edit_a4503e82cdc694bf52608498b8c81edb8_icgraph" id="aclass_my_search_line_edit_a4503e82cdc694bf52608498b8c81edb8_icgraph">
+<area shape="rect" title="停止正在执行的动画" alt="" coords="162,31,273,57"/>
+<area shape="rect" href="class_my_search_line_edit.html#abe839d2e8f13054e4eaf762f8ec98e50" title="重写焦点获取事件，触发展开动画" alt="" coords="10,5,109,32"/>
+<area shape="poly" title=" " alt="" coords="146,35,108,29,109,24,147,30"/>
+<area shape="rect" href="class_my_search_line_edit.html#a34b9c9f85e5a9f57123a2ac7398fa7d2" title="重写焦点丢失事件，触发收起动画" alt="" coords="5,56,114,83"/>
+<area shape="poly" title=" " alt="" coords="147,58,114,63,114,58,146,53"/>
+</map>
 </div>
 
 </div>
@@ -485,13 +657,30 @@ Private 属性</h2></td></tr>
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit_a939cb715f5c952ace717a4751494e5bb_cgraph.png" border="0" usemap="#aclass_my_search_line_edit_a939cb715f5c952ace717a4751494e5bb_cgraph" alt=""/></div>
-<!-- MAP 8 -->
+<map name="aclass_my_search_line_edit_a939cb715f5c952ace717a4751494e5bb_cgraph" id="aclass_my_search_line_edit_a939cb715f5c952ace717a4751494e5bb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,43,189,69"/>
+<area shape="rect" href="class_ela_line_edit.html#ae5a81c2f46cd331edceca9c48d292086" title=" " alt="" coords="237,35,423,77"/>
+<area shape="poly" title=" " alt="" coords="189,53,221,53,221,59,189,59"/>
+<area shape="rect" href="class_ela_line_edit.html#ad5b1bd2b489835fea5bdeadd9e8a79d6" title=" " alt="" coords="471,43,632,69"/>
+<area shape="poly" title=" " alt="" coords="423,53,455,53,455,59,423,59"/>
+<area shape="poly" title=" " alt="" coords="514,44,507,34,512,24,527,18,552,16,578,19,592,25,590,30,577,24,552,21,528,23,516,28,513,33,519,41"/>
+<area shape="rect" href="class_ela_line_edit_private.html#acf666a8d5ef3e8a42f3c41d767d252db" title=" " alt="" coords="717,5,852,48"/>
+<area shape="poly" title=" " alt="" coords="633,43,701,34,702,40,633,48"/>
+<area shape="rect" href="class_ela_theme.html#a05ec2e3192ae77de87b167093330d9ba" title="主题模式更改信号" alt="" coords="680,72,889,99"/>
+<area shape="poly" title=" " alt="" coords="633,64,665,68,665,73,633,69"/>
+<area shape="rect" href="class_ela_line_edit_private.html#a9b03deaf658f6c6f614d0dba062b07a5" title=" " alt="" coords="937,5,1065,48"/>
+<area shape="poly" title=" " alt="" coords="852,24,921,24,921,29,852,29"/>
+</map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_search_line_edit_a939cb715f5c952ace717a4751494e5bb_icgraph.png" border="0" usemap="#aclass_my_search_line_edit_a939cb715f5c952ace717a4751494e5bb_icgraph" alt=""/></div>
-<!-- MAP 9 -->
+<map name="aclass_my_search_line_edit_a939cb715f5c952ace717a4751494e5bb_icgraph" id="aclass_my_search_line_edit_a939cb715f5c952ace717a4751494e5bb_icgraph">
+<area shape="rect" title=" " alt="" coords="181,5,364,32"/>
+<area shape="rect" href="class_my_search_line_edit.html#ab5080d3863379b58461217d6651429d2" title="构造函数，初始化搜索输入框" alt="" coords="5,5,133,32"/>
+<area shape="poly" title=" " alt="" coords="165,21,133,21,133,16,165,16"/>
+</map>
 </div>
 
 </div>

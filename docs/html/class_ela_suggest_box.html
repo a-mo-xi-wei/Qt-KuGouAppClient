@@ -108,54 +108,82 @@ $(function(){initNavTree('class_ela_suggest_box.html',''); initResizable(true); 
 </div><!--header-->
 <div class="contents">
 
+<p>搜索建议框控件，支持添加/移除建议项和事件过滤  
+ <a href="#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_ela_suggest_box_8h_source.html">ElaSuggestBox.h</a>&gt;</code></p>
 <div class="dynheader">
 类 ElaSuggestBox 继承关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box__inherit__graph.png" border="0" usemap="#a_ela_suggest_box_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="a_ela_suggest_box_inherit__map" id="a_ela_suggest_box_inherit__map">
+<area shape="rect" title="搜索建议框控件，支持添加/移除建议项和事件过滤" alt="" coords="5,80,117,107"/>
+<area shape="rect" title=" " alt="" coords="25,5,97,32"/>
+<area shape="poly" title=" " alt="" coords="64,48,64,80,58,80,58,48"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <div class="dynheader">
 ElaSuggestBox 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box__coll__graph.png" border="0" usemap="#a_ela_suggest_box_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="a_ela_suggest_box_coll__map" id="a_ela_suggest_box_coll__map">
+<area shape="rect" title="搜索建议框控件，支持添加/移除建议项和事件过滤" alt="" coords="5,80,117,107"/>
+<area shape="rect" title=" " alt="" coords="25,5,97,32"/>
+<area shape="poly" title=" " alt="" coords="64,48,64,80,58,80,58,48"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 信号</h2></td></tr>
-<tr class="memitem:a2b4e8c3c9046572eec83c77a42e0048e" id="r_a2b4e8c3c9046572eec83c77a42e0048e"><td class="memItemLeft" align="right" valign="top">Q_SIGNAL void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b4e8c3c9046572eec83c77a42e0048e">suggestionClicked</a> (QString suggestText, QVariantMap suggestData)</td></tr>
-<tr class="separator:a2b4e8c3c9046572eec83c77a42e0048e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07bab45c7aa4c49e3534926e4451b5a7" id="r_a07bab45c7aa4c49e3534926e4451b5a7"><td class="memItemLeft" align="right" valign="top">Q_SIGNAL void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07bab45c7aa4c49e3534926e4451b5a7">suggestionClicked</a> (const QString &amp;suggestText, const QVariantMap &amp;suggestData)</td></tr>
+<tr class="memdesc:a07bab45c7aa4c49e3534926e4451b5a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">建议项点击信号  <br /></td></tr>
+<tr class="separator:a07bab45c7aa4c49e3534926e4451b5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:aec7af087a466cf49eb70708e83c70608" id="r_aec7af087a466cf49eb70708e83c70608"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec7af087a466cf49eb70708e83c70608">ElaSuggestBox</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aec7af087a466cf49eb70708e83c70608"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; 声明私有类指针  <br /></td></tr>
 <tr class="separator:aec7af087a466cf49eb70708e83c70608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afab7637a449fea4a908e156f2eb270a1" id="r_afab7637a449fea4a908e156f2eb270a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afab7637a449fea4a908e156f2eb270a1">~ElaSuggestBox</a> () override</td></tr>
+<tr class="memdesc:afab7637a449fea4a908e156f2eb270a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
 <tr class="separator:afab7637a449fea4a908e156f2eb270a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7e59fb643e69dd6e97f55fd3a3b376a" id="r_af7e59fb643e69dd6e97f55fd3a3b376a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7e59fb643e69dd6e97f55fd3a3b376a">setPlaceholderText</a> (const QString &amp;placeholderText)</td></tr>
+<tr class="memdesc:af7e59fb643e69dd6e97f55fd3a3b376a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置占位文本  <br /></td></tr>
 <tr class="separator:af7e59fb643e69dd6e97f55fd3a3b376a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a396d656e7d9459262ccfaaba2a915213" id="r_a396d656e7d9459262ccfaaba2a915213"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a396d656e7d9459262ccfaaba2a915213">addSuggestion</a> (const QString &amp;suggestText, const QVariantMap &amp;suggestData={})</td></tr>
+<tr class="memdesc:a396d656e7d9459262ccfaaba2a915213"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加建议项  <br /></td></tr>
 <tr class="separator:a396d656e7d9459262ccfaaba2a915213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad04f11c28aa976a2ac0527203325036f" id="r_ad04f11c28aa976a2ac0527203325036f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad04f11c28aa976a2ac0527203325036f">addSuggestion</a> (ElaIconType::IconName icon, const QString &amp;suggestText, const QVariantMap &amp;suggestData={})</td></tr>
+<tr class="memdesc:ad04f11c28aa976a2ac0527203325036f"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加带图标的建议项  <br /></td></tr>
 <tr class="separator:ad04f11c28aa976a2ac0527203325036f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9c239f11549a5c91d7daca39b4372e4" id="r_ab9c239f11549a5c91d7daca39b4372e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9c239f11549a5c91d7daca39b4372e4">removeSuggestion</a> (const QString &amp;suggestKey)</td></tr>
+<tr class="memdesc:ab9c239f11549a5c91d7daca39b4372e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除建议项  <br /></td></tr>
 <tr class="separator:ab9c239f11549a5c91d7daca39b4372e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add0a51c21750636dc99c85306d43acff" id="r_add0a51c21750636dc99c85306d43acff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add0a51c21750636dc99c85306d43acff">removeSuggestion</a> (int <a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>)</td></tr>
+<tr class="memdesc:add0a51c21750636dc99c85306d43acff"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除指定索引的建议项  <br /></td></tr>
 <tr class="separator:add0a51c21750636dc99c85306d43acff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade7503e129cb5510b13d824434a5edfb" id="r_ade7503e129cb5510b13d824434a5edfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade7503e129cb5510b13d824434a5edfb">removeAllSuggestion</a> ()</td></tr>
+<tr class="memdesc:ade7503e129cb5510b13d824434a5edfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除所有建议项  <br /></td></tr>
 <tr class="separator:ade7503e129cb5510b13d824434a5edfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a1979e9a91786a372ef65f799160517" id="r_a3a1979e9a91786a372ef65f799160517"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a1979e9a91786a372ef65f799160517">setLineEdit</a> (<a class="el" href="class_ela_line_edit.html">ElaLineEdit</a> *lineEdit)</td></tr>
+<tr class="memdesc:a3a1979e9a91786a372ef65f799160517"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置搜索编辑框  <br /></td></tr>
 <tr class="separator:a3a1979e9a91786a372ef65f799160517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a0efdeef6a5adf72535b25924781be" id="r_a19a0efdeef6a5adf72535b25924781be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19a0efdeef6a5adf72535b25924781be">removeDefaultTrailAction</a> ()</td></tr>
+<tr class="memdesc:a19a0efdeef6a5adf72535b25924781be"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除默认尾部动作  <br /></td></tr>
+<tr class="separator:a19a0efdeef6a5adf72535b25924781be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaae4c802233b120dc13fb6abd02b8daf" id="r_aaae4c802233b120dc13fb6abd02b8daf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaae4c802233b120dc13fb6abd02b8daf">suggestBoxPositionChanged</a> ()</td></tr>
+<tr class="memdesc:aaae4c802233b120dc13fb6abd02b8daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">建议框位置变化  <br /></td></tr>
 <tr class="separator:aaae4c802233b120dc13fb6abd02b8daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
 <tr class="memitem:a7eb87a6d4464680c455d278d1d32eba6" id="r_a7eb87a6d4464680c455d278d1d32eba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb87a6d4464680c455d278d1d32eba6">eventFilter</a> (QObject *watched, QEvent *event) override</td></tr>
+<tr class="memdesc:a7eb87a6d4464680c455d278d1d32eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤  <br /></td></tr>
 <tr class="separator:a7eb87a6d4464680c455d278d1d32eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>搜索建议框控件，支持添加/移除建议项和事件过滤 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
 <a id="aec7af087a466cf49eb70708e83c70608" name="aec7af087a466cf49eb70708e83c70608"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec7af087a466cf49eb70708e83c70608">&#9670;&#160;</a></span>ElaSuggestBox()</h2>
 
@@ -178,18 +206,96 @@ Protected 成员函数</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>&lt; 声明私有类指针 </p>
+<p>&lt; 实现 BorderRadius 属性</p>
+<p>&lt; 边框圆角半径 &lt; 搜索大小写敏感性</p>
+<p>构造函数 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 实现 CaseSensitivity 属性</p>
+<p>构造函数 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置固定尺寸</p>
+<p>&lt; 启用样式背景</p>
+<p>&lt; 初始化圆角半径</p>
+<p>&lt; 初始化大小写敏感性</p>
+<p>&lt; 创建搜索编辑框</p>
+<p>&lt; 设置编辑框高度</p>
+<p>&lt; 设置占位文本</p>
+<p>&lt; 启用清除按钮</p>
+<p>&lt; 启用清除按钮</p>
+<p>&lt; 亮色搜索图标</p>
+<p>&lt; 暗色搜索图标</p>
+<p>&lt; 获取当前主题模式</p>
+<p>&lt; 连接主题变化信号</p>
+<p>&lt; 添加亮色图标</p>
+<p>&lt; 添加暗色图标</p>
+<p>&lt; 连接亮色搜索动作</p>
+<p>&lt; 连接暗色搜索动作</p>
+<p>&lt; 创建主布局</p>
+<p>&lt; 添加编辑框</p>
+<p>&lt; 创建建议框容器</p>
+<p>&lt; 创建阴影布局</p>
+<p>&lt; 创建建议项视图</p>
+<p>&lt; 创建浮动滚动条</p>
+<p>&lt; 启用滚动条动画</p>
+<p>&lt; 设置建议框尺寸</p>
+<p>&lt; 添加视图到布局</p>
+<p>&lt; 创建建议项模型</p>
+<p>&lt; 创建建议项委托</p>
+<p>&lt; 设置视图模型</p>
+<p>&lt; 设置视图委托</p>
+<p>&lt; 初始隐藏建议框</p>
+<p>&lt; 连接文本变化信号</p>
+<p>&lt; 连接点击信号</p>
+<p>&lt; 失去焦点时关闭建议框</p>
 <p>&lt; 安装应用程序级事件过滤器</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_aec7af087a466cf49eb70708e83c70608_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_aec7af087a466cf49eb70708e83c70608_cgraph" alt=""/></div>
-<!-- MAP 2 -->
+<map name="aclass_ela_suggest_box_aec7af087a466cf49eb70708e83c70608_cgraph" id="aclass_ela_suggest_box_aec7af087a466cf49eb70708e83c70608_cgraph">
+<area shape="rect" title="&lt; 声明私有类指针" alt="" coords="5,29,117,56"/>
+<area shape="poly" title=" " alt="" coords="41,30,38,20,40,11,48,5,61,3,75,5,82,12,79,16,72,10,61,8,50,10,44,14,43,20,46,28"/>
+</map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_aec7af087a466cf49eb70708e83c70608_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_aec7af087a466cf49eb70708e83c70608_icgraph" alt=""/></div>
-<!-- MAP 3 -->
+<map name="aclass_ela_suggest_box_aec7af087a466cf49eb70708e83c70608_icgraph" id="aclass_ela_suggest_box_aec7af087a466cf49eb70708e83c70608_icgraph">
+<area shape="rect" title="&lt; 声明私有类指针" alt="" coords="410,208,521,235"/>
+<area shape="poly" title=" " alt="" coords="499,195,488,189,466,187,445,189,434,193,431,199,436,206,432,209,426,199,430,190,444,183,466,181,489,184,502,190"/>
+<area shape="rect" href="class_ela_suggest_box.html#a396d656e7d9459262ccfaaba2a915213" title="添加建议项" alt="" coords="214,5,321,32"/>
+<area shape="poly" title=" " alt="" coords="453,194,440,160,420,120,394,80,360,46,342,35,321,28,322,23,344,30,364,42,398,76,425,117,445,157,458,192"/>
+<area shape="rect" href="class_ela_suggest_box.html#ad04f11c28aa976a2ac0527203325036f" title="添加带图标的建议项" alt="" coords="214,56,321,83"/>
+<area shape="poly" title=" " alt="" coords="447,196,412,145,388,119,361,97,320,80,323,75,363,92,392,115,416,142,452,193"/>
+<area shape="rect" href="class_ela_suggest_box.html#ade7503e129cb5510b13d824434a5edfb" title="移除所有建议项" alt="" coords="195,107,340,133"/>
+<area shape="poly" title=" " alt="" coords="437,200,402,173,361,148,332,136,334,131,363,143,405,168,440,196"/>
+<area shape="rect" href="class_ela_suggest_box.html#a19a0efdeef6a5adf72535b25924781be" title="移除默认尾部动作" alt="" coords="183,157,352,184"/>
+<area shape="poly" title=" " alt="" coords="395,206,322,187,323,182,396,201"/>
+<area shape="rect" href="class_ela_suggest_box.html#ab9c239f11549a5c91d7daca39b4372e4" title="移除建议项" alt="" coords="203,208,332,235"/>
+<area shape="poly" title=" " alt="" coords="395,224,333,224,333,219,395,219"/>
+<area shape="rect" href="class_ela_suggest_box.html#add0a51c21750636dc99c85306d43acff" title="移除指定索引的建议项" alt="" coords="203,259,332,285"/>
+<area shape="poly" title=" " alt="" coords="396,242,323,261,322,255,395,237"/>
+<area shape="rect" href="class_ela_suggest_box.html#a3a1979e9a91786a372ef65f799160517" title="设置搜索编辑框" alt="" coords="224,309,310,336"/>
+<area shape="poly" title=" " alt="" coords="440,247,405,274,363,300,312,317,310,312,361,295,402,270,437,243"/>
+<area shape="rect" href="class_ela_suggest_box.html#af7e59fb643e69dd6e97f55fd3a3b376a" title="设置占位文本" alt="" coords="201,360,334,387"/>
+<area shape="poly" title=" " alt="" coords="452,250,416,301,392,328,363,350,335,364,333,359,361,346,388,324,412,298,447,247"/>
+<area shape="rect" href="class_ela_suggest_box.html#aaae4c802233b120dc13fb6abd02b8daf" title="建议框位置变化" alt="" coords="173,411,362,437"/>
+<area shape="poly" title=" " alt="" coords="458,251,445,285,425,326,398,366,364,401,343,412,341,408,360,397,394,363,420,323,440,283,453,249"/>
+<area shape="rect" href="class_ela_suggest_box.html#afab7637a449fea4a908e156f2eb270a1" title="析构函数" alt="" coords="5,183,125,209"/>
+<area shape="poly" title=" " alt="" coords="200,33,174,46,139,79,110,117,74,183,70,181,105,114,135,75,171,42,198,28"/>
+<area shape="poly" title=" " alt="" coords="185,358,171,350,135,317,105,278,70,211,74,209,110,275,139,313,174,346,188,354"/>
+</map>
 </div>
 
 </div>
@@ -216,11 +322,23 @@ Protected 成员函数</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>析构函数 </p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_afab7637a449fea4a908e156f2eb270a1_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_afab7637a449fea4a908e156f2eb270a1_cgraph" alt=""/></div>
-<!-- MAP 4 -->
+<map name="aclass_ela_suggest_box_afab7637a449fea4a908e156f2eb270a1_cgraph" id="aclass_ela_suggest_box_afab7637a449fea4a908e156f2eb270a1_cgraph">
+<area shape="rect" title="析构函数" alt="" coords="5,31,125,57"/>
+<area shape="rect" href="class_ela_suggest_box.html#a396d656e7d9459262ccfaaba2a915213" title="添加建议项" alt="" coords="185,5,292,32"/>
+<area shape="poly" title=" " alt="" coords="125,33,169,26,170,31,126,38"/>
+<area shape="rect" href="class_ela_suggest_box.html#af7e59fb643e69dd6e97f55fd3a3b376a" title="设置占位文本" alt="" coords="173,56,305,83"/>
+<area shape="poly" title=" " alt="" coords="126,50,157,55,157,60,125,55"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="353,31,464,57"/>
+<area shape="poly" title=" " alt="" coords="293,24,338,31,337,36,293,29"/>
+<area shape="poly" title=" " alt="" coords="379,32,374,22,378,12,390,6,409,4,429,7,440,13,437,18,427,12,409,9,391,11,382,16,380,21,384,29"/>
+<area shape="poly" title=" " alt="" coords="305,57,337,52,338,57,306,62"/>
+</map>
 </div>
 
 </div>
@@ -244,17 +362,41 @@ Protected 成员函数</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>添加建议项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suggestText</td><td>建议文本 </td></tr>
+    <tr><td class="paramname">suggestData</td><td>建议数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>建议项唯一键 </dd></dl>
+<p>&lt; 创建建议项</p>
+<p>&lt; 设置文本</p>
+<p>&lt; 设置数据</p>
+<p>&lt; 添加到列表</p>
+<p>&lt; 返回唯一键</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_a396d656e7d9459262ccfaaba2a915213_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_a396d656e7d9459262ccfaaba2a915213_cgraph" alt=""/></div>
-<!-- MAP 5 -->
+<map name="aclass_ela_suggest_box_a396d656e7d9459262ccfaaba2a915213_cgraph" id="aclass_ela_suggest_box_a396d656e7d9459262ccfaaba2a915213_cgraph">
+<area shape="rect" title="添加建议项" alt="" coords="5,29,113,56"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="161,29,272,56"/>
+<area shape="poly" title=" " alt="" coords="113,40,145,40,145,45,113,45"/>
+<area shape="poly" title=" " alt="" coords="189,30,184,21,188,11,199,5,216,3,235,5,246,12,243,16,234,10,216,8,200,10,192,15,190,20,194,28"/>
+</map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_a396d656e7d9459262ccfaaba2a915213_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_a396d656e7d9459262ccfaaba2a915213_icgraph" alt=""/></div>
-<!-- MAP 6 -->
+<map name="aclass_ela_suggest_box_a396d656e7d9459262ccfaaba2a915213_icgraph" id="aclass_ela_suggest_box_a396d656e7d9459262ccfaaba2a915213_icgraph">
+<area shape="rect" title="添加建议项" alt="" coords="173,5,280,32"/>
+<area shape="rect" href="class_ela_suggest_box.html#afab7637a449fea4a908e156f2eb270a1" title="析构函数" alt="" coords="5,5,125,32"/>
+<area shape="poly" title=" " alt="" coords="157,21,125,21,125,16,157,16"/>
+</map>
 </div>
 
 </div>
@@ -282,11 +424,33 @@ Protected 成员函数</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>添加带图标的建议项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">icon</td><td>图标 </td></tr>
+    <tr><td class="paramname">suggestText</td><td>建议文本 </td></tr>
+    <tr><td class="paramname">suggestData</td><td>建议数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>建议项唯一键 </dd></dl>
+<p>&lt; 创建建议项</p>
+<p>&lt; 设置图标</p>
+<p>&lt; 设置文本</p>
+<p>&lt; 设置数据</p>
+<p>&lt; 添加到列表</p>
+<p>&lt; 返回唯一键</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_ad04f11c28aa976a2ac0527203325036f_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_ad04f11c28aa976a2ac0527203325036f_cgraph" alt=""/></div>
-<!-- MAP 7 -->
+<map name="aclass_ela_suggest_box_ad04f11c28aa976a2ac0527203325036f_cgraph" id="aclass_ela_suggest_box_ad04f11c28aa976a2ac0527203325036f_cgraph">
+<area shape="rect" title="添加带图标的建议项" alt="" coords="5,29,113,56"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="161,29,272,56"/>
+<area shape="poly" title=" " alt="" coords="113,40,145,40,145,45,113,45"/>
+<area shape="poly" title=" " alt="" coords="189,30,184,21,188,11,199,5,216,3,235,5,246,12,243,16,234,10,216,8,200,10,192,15,190,20,194,28"/>
+</map>
 </div>
 
 </div>
@@ -317,8 +481,29 @@ Protected 成员函数</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>&lt; 菜单弹出时不处理</p>
-<p>&lt; 点击外部区域时清除焦点</p>
+
+<p>事件过滤 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>监控对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>处理点击外部关闭建议框</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>监控对象 </td></tr>
+    <tr><td class="paramname">event</td><td>事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>处理点击外部关闭建议框，特殊处理弹出菜单 </dd></dl>
+<p>&lt; 弹出菜单时不处理</p>
+<p>&lt; 点击外部清除焦点</p>
+<p>&lt; 调用父类处理</p>
 
 </div>
 </div>
@@ -336,11 +521,52 @@ Protected 成员函数</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>移除所有建议项 </p>
+<p>&lt; 移除建议项</p>
+<p>&lt; 延迟删除</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_ade7503e129cb5510b13d824434a5edfb_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_ade7503e129cb5510b13d824434a5edfb_cgraph" alt=""/></div>
-<!-- MAP 8 -->
+<map name="aclass_ela_suggest_box_ade7503e129cb5510b13d824434a5edfb_cgraph" id="aclass_ela_suggest_box_ade7503e129cb5510b13d824434a5edfb_cgraph">
+<area shape="rect" title="移除所有建议项" alt="" coords="5,29,150,56"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="198,29,309,56"/>
+<area shape="poly" title=" " alt="" coords="150,40,182,40,182,45,150,45"/>
+<area shape="poly" title=" " alt="" coords="223,30,218,21,221,11,234,5,253,3,274,5,286,12,283,16,273,10,253,8,235,10,225,15,223,20,228,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a19a0efdeef6a5adf72535b25924781be" name="a19a0efdeef6a5adf72535b25924781be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a0efdeef6a5adf72535b25924781be">&#9670;&#160;</a></span>removeDefaultTrailAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeDefaultTrailAction </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>移除默认尾部动作 </p>
+<p>&lt; 移除亮色动作</p>
+<p>&lt; 移除暗色动作</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_suggest_box_a19a0efdeef6a5adf72535b25924781be_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_a19a0efdeef6a5adf72535b25924781be_cgraph" alt=""/></div>
+<map name="aclass_ela_suggest_box_a19a0efdeef6a5adf72535b25924781be_cgraph" id="aclass_ela_suggest_box_a19a0efdeef6a5adf72535b25924781be_cgraph">
+<area shape="rect" title="移除默认尾部动作" alt="" coords="5,29,174,56"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="222,29,333,56"/>
+<area shape="poly" title=" " alt="" coords="174,40,206,40,206,45,174,45"/>
+<area shape="poly" title=" " alt="" coords="245,30,240,21,243,11,256,5,277,3,300,5,312,12,309,16,298,10,277,8,258,10,247,15,245,20,250,27"/>
+</map>
 </div>
 
 </div>
@@ -359,11 +585,26 @@ Protected 成员函数</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>移除建议项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suggestKey</td><td>建议项唯一键 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 移除建议项</p>
+<p>&lt; 延迟删除</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_ab9c239f11549a5c91d7daca39b4372e4_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_ab9c239f11549a5c91d7daca39b4372e4_cgraph" alt=""/></div>
-<!-- MAP 9 -->
+<map name="aclass_ela_suggest_box_ab9c239f11549a5c91d7daca39b4372e4_cgraph" id="aclass_ela_suggest_box_ab9c239f11549a5c91d7daca39b4372e4_cgraph">
+<area shape="rect" title="移除建议项" alt="" coords="5,29,135,56"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="183,29,294,56"/>
+<area shape="poly" title=" " alt="" coords="135,40,168,40,168,45,135,45"/>
+<area shape="poly" title=" " alt="" coords="209,30,204,21,208,11,219,5,238,3,259,5,269,12,267,16,257,10,238,8,221,10,212,15,209,20,214,28"/>
+</map>
 </div>
 
 </div>
@@ -382,11 +623,26 @@ Protected 成员函数</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>移除指定索引的建议项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 移除建议项</p>
+<p>&lt; 延迟删除</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_add0a51c21750636dc99c85306d43acff_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_add0a51c21750636dc99c85306d43acff_cgraph" alt=""/></div>
-<!-- MAP 10 -->
+<map name="aclass_ela_suggest_box_add0a51c21750636dc99c85306d43acff_cgraph" id="aclass_ela_suggest_box_add0a51c21750636dc99c85306d43acff_cgraph">
+<area shape="rect" title="移除指定索引的建议项" alt="" coords="5,29,135,56"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="183,29,294,56"/>
+<area shape="poly" title=" " alt="" coords="135,40,168,40,168,45,135,45"/>
+<area shape="poly" title=" " alt="" coords="209,30,204,21,208,11,219,5,238,3,259,5,269,12,267,16,257,10,238,8,221,10,212,15,209,20,214,28"/>
+</map>
 </div>
 
 </div>
@@ -405,11 +661,55 @@ Protected 成员函数</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置搜索编辑框 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineEdit</td><td>编辑框指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>替换默认编辑框</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineEdit</td><td>编辑框指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>替换默认编辑框，包括移除旧控件、设置新控件、重新连接信号槽 </dd></dl>
+<p>&lt; 警告</p>
+<p>&lt; 移除旧编辑框</p>
+<p>&lt; 隐藏旧编辑框</p>
+<p>&lt; 断开信号槽</p>
+<p>&lt; 延迟删除</p>
+<p>&lt; 脱离旧父对象</p>
+<p>&lt; 设置新父对象</p>
+<p>&lt; 更新私有成员</p>
+<p>&lt; 设置高度</p>
+<p>&lt; 设置占位文本</p>
+<p>&lt; 启用清除按钮</p>
+<p>&lt; 启用清除按钮</p>
+<p>&lt; 显示新编辑框</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_a3a1979e9a91786a372ef65f799160517_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_a3a1979e9a91786a372ef65f799160517_cgraph" alt=""/></div>
-<!-- MAP 11 -->
+<map name="aclass_ela_suggest_box_a3a1979e9a91786a372ef65f799160517_cgraph" id="aclass_ela_suggest_box_a3a1979e9a91786a372ef65f799160517_cgraph">
+<area shape="rect" title="设置搜索编辑框" alt="" coords="5,88,92,115"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="171,29,282,56"/>
+<area shape="poly" title=" " alt="" coords="85,85,139,65,161,58,163,63,141,71,86,90"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a003b06d2a96f9912b720d959698984f5" title="搜索编辑框文本编辑槽函数" alt="" coords="149,80,304,123"/>
+<area shape="poly" title=" " alt="" coords="92,99,133,99,133,104,92,104"/>
+<area shape="rect" href="class_ela_line_edit.html#ad2186a7e07bf5a1aabba616dac8f77cb" title=" " alt="" coords="140,147,313,173"/>
+<area shape="poly" title=" " alt="" coords="86,113,141,132,163,139,161,144,139,137,85,118"/>
+<area shape="poly" title=" " alt="" coords="196,30,190,21,194,11,206,5,226,3,248,5,259,12,256,16,246,10,226,8,208,10,198,15,196,20,200,28"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a3979b45fc563a819149dda72308f87e7" title="启动关闭动画" alt="" coords="366,13,520,56"/>
+<area shape="poly" title=" " alt="" coords="297,77,356,58,358,64,299,82"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a2595ea995b808dfc7ecc769a59d02bb7" title="启动展开动画" alt="" coords="361,80,525,123"/>
+<area shape="poly" title=" " alt="" coords="304,99,345,99,345,104,304,104"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#ad3fe64acd0c974f31263e3c5c7899434" title="启动尺寸动画" alt="" coords="367,147,519,189"/>
+<area shape="poly" title=" " alt="" coords="299,121,358,139,356,144,297,126"/>
+</map>
 </div>
 
 </div>
@@ -428,17 +728,35 @@ Protected 成员函数</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置占位文本 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">placeholderText</td><td>占位文本 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 设置编辑框占位文本</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_af7e59fb643e69dd6e97f55fd3a3b376a_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_af7e59fb643e69dd6e97f55fd3a3b376a_cgraph" alt=""/></div>
-<!-- MAP 12 -->
+<map name="aclass_ela_suggest_box_af7e59fb643e69dd6e97f55fd3a3b376a_cgraph" id="aclass_ela_suggest_box_af7e59fb643e69dd6e97f55fd3a3b376a_cgraph">
+<area shape="rect" title="设置占位文本" alt="" coords="5,29,138,56"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="186,29,297,56"/>
+<area shape="poly" title=" " alt="" coords="138,40,170,40,170,45,138,45"/>
+<area shape="poly" title=" " alt="" coords="212,30,207,21,210,11,222,5,241,3,262,5,273,12,270,16,260,10,241,8,224,10,214,15,212,20,217,28"/>
+</map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_af7e59fb643e69dd6e97f55fd3a3b376a_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_af7e59fb643e69dd6e97f55fd3a3b376a_icgraph" alt=""/></div>
-<!-- MAP 13 -->
+<map name="aclass_ela_suggest_box_af7e59fb643e69dd6e97f55fd3a3b376a_icgraph" id="aclass_ela_suggest_box_af7e59fb643e69dd6e97f55fd3a3b376a_icgraph">
+<area shape="rect" title="设置占位文本" alt="" coords="173,5,305,32"/>
+<area shape="rect" href="class_ela_suggest_box.html#afab7637a449fea4a908e156f2eb270a1" title="析构函数" alt="" coords="5,5,125,32"/>
+<area shape="poly" title=" " alt="" coords="157,21,125,21,125,16,157,16"/>
+</map>
 </div>
 
 </div>
@@ -457,18 +775,26 @@ Protected 成员函数</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>&lt; 此处需要取消聚焦，动画才会自然</p>
+
+<p>建议框位置变化 </p>
+<dl class="section note"><dt>注解</dt><dd>取消编辑框焦点 </dd></dl>
+<p>&lt; 取消焦点</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_aaae4c802233b120dc13fb6abd02b8daf_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_aaae4c802233b120dc13fb6abd02b8daf_cgraph" alt=""/></div>
-<!-- MAP 14 -->
+<map name="aclass_ela_suggest_box_aaae4c802233b120dc13fb6abd02b8daf_cgraph" id="aclass_ela_suggest_box_aaae4c802233b120dc13fb6abd02b8daf_cgraph">
+<area shape="rect" title="建议框位置变化" alt="" coords="5,29,195,56"/>
+<area shape="rect" href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608" title="&lt; 声明私有类指针" alt="" coords="243,29,354,56"/>
+<area shape="poly" title=" " alt="" coords="195,40,227,40,227,45,195,45"/>
+<area shape="poly" title=" " alt="" coords="265,30,259,21,263,11,276,5,298,3,322,5,335,12,332,16,320,10,298,8,278,10,266,15,264,20,269,27"/>
+</map>
 </div>
 
 </div>
 </div>
-<a id="a2b4e8c3c9046572eec83c77a42e0048e" name="a2b4e8c3c9046572eec83c77a42e0048e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b4e8c3c9046572eec83c77a42e0048e">&#9670;&#160;</a></span>suggestionClicked</h2>
+<a id="a07bab45c7aa4c49e3534926e4451b5a7" name="a07bab45c7aa4c49e3534926e4451b5a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07bab45c7aa4c49e3534926e4451b5a7">&#9670;&#160;</a></span>suggestionClicked</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -479,12 +805,12 @@ Protected 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void suggestionClicked </td>
           <td>(</td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>suggestText</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>suggestText</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QVariantMap</td>          <td class="paramname"><span class="paramname"><em>suggestData</em></span>&#160;)</td>
+          <td class="paramtype">const QVariantMap &amp;</td>          <td class="paramname"><span class="paramname"><em>suggestData</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -493,6 +819,28 @@ Protected 成员函数</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>建议项点击信号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suggestText</td><td>建议文本 </td></tr>
+    <tr><td class="paramname">suggestData</td><td>建议数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ela_suggest_box_a07bab45c7aa4c49e3534926e4451b5a7_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_a07bab45c7aa4c49e3534926e4451b5a7_icgraph" alt=""/></div>
+<map name="aclass_ela_suggest_box_a07bab45c7aa4c49e3534926e4451b5a7_icgraph" id="aclass_ela_suggest_box_a07bab45c7aa4c49e3534926e4451b5a7_icgraph">
+<area shape="rect" title="建议项点击信号" alt="" coords="373,29,501,56"/>
+<area shape="rect" href="class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="205,29,325,56"/>
+<area shape="poly" title=" " alt="" coords="358,45,325,45,325,40,358,40"/>
+<area shape="rect" href="class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="5,29,157,56"/>
+<area shape="poly" title=" " alt="" coords="189,45,157,45,157,40,189,40"/>
+<area shape="poly" title=" " alt="" coords="112,16,101,10,81,8,62,10,52,15,49,20,54,27,50,30,44,21,48,11,60,5,81,3,103,5,115,12"/>
+</map>
+</div>
 
 </div>
 </div>

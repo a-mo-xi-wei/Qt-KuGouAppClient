@@ -1,9 +1,9 @@
 var dir_76553f08822fd43264643e8a1ea7d41c =
 [
-    [ "moc_VideoChannelBlock.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__4cd8dd0e474d9609e2a3d75ca4ed55f7.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__4cd8dd0e474d9609e2a3d75ca4ed55f7" ],
-    [ "moc_VideoChannelBlock.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__1afa26c63a09c3a8531231105e57a094.html", null ],
-    [ "moc_VideoChannelPartWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__e2a3436cb102a25ff32cca02aee2c239.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__e2a3436cb102a25ff32cca02aee2c239" ],
-    [ "moc_VideoChannelPartWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__0544088630e942f769d33725de4d53bd.html", null ],
-    [ "moc_VideoChannelWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__a5f2f470236ec266a3fbdc791b365720.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__a5f2f470236ec266a3fbdc791b365720" ],
-    [ "moc_VideoChannelWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__ca34c29df8e87a4bdd4af0c88d54f15e.html", null ]
+    [ "moc_VideoChannelBlock.cpp", "moc___video_channel_block_8cpp.html", "moc___video_channel_block_8cpp" ],
+    [ "moc_VideoChannelBlock.cpp.d", "moc___video_channel_block_8cpp_8d.html", null ],
+    [ "moc_VideoChannelPartWidget.cpp", "moc___video_channel_part_widget_8cpp.html", "moc___video_channel_part_widget_8cpp" ],
+    [ "moc_VideoChannelPartWidget.cpp.d", "moc___video_channel_part_widget_8cpp_8d.html", null ],
+    [ "moc_VideoChannelWidget.cpp", "moc___video_channel_widget_8cpp.html", "moc___video_channel_widget_8cpp" ],
+    [ "moc_VideoChannelWidget.cpp.d", "moc___video_channel_widget_8cpp_8d.html", null ]
 ];

@@ -1,7 +1,7 @@
 var dir_88d75b0ed8db588ed5c079bce835a2b8 =
 [
-    [ "moc_qtmaterialdialog.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_materialfe2c22d299a81661fccde37d2f44977f.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_materialfe2c22d299a81661fccde37d2f44977f" ],
-    [ "moc_qtmaterialdialog.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_material8da5c858087abaf97250acbffe45fa90.html", null ],
-    [ "moc_qtmaterialdialog_internal.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_materialea3c655688692b607c393df067782806.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_materialea3c655688692b607c393df067782806" ],
-    [ "moc_qtmaterialdialog_internal.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_qt_material_widget_2_qt_material9b3cf2d6d82cd4b22268382850fec14c.html", null ]
+    [ "moc_qtmaterialdialog.cpp", "moc__qtmaterialdialog_8cpp.html", "moc__qtmaterialdialog_8cpp" ],
+    [ "moc_qtmaterialdialog.cpp.d", "moc__qtmaterialdialog_8cpp_8d.html", null ],
+    [ "moc_qtmaterialdialog_internal.cpp", "moc__qtmaterialdialog__internal_8cpp.html", "moc__qtmaterialdialog__internal_8cpp" ],
+    [ "moc_qtmaterialdialog_internal.cpp.d", "moc__qtmaterialdialog__internal_8cpp_8d.html", null ]
 ];

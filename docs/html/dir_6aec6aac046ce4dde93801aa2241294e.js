@@ -9,6 +9,6 @@ var dir_6aec6aac046ce4dde93801aa2241294e =
     [ "PZBJKWU62W", "dir_0e6e06cfa11c68a6bb1c6751d2ae0a6f.html", "dir_0e6e06cfa11c68a6bb1c6751d2ae0a6f" ],
     [ "XIIZY2LRGK", "dir_33f80894668d792917bf891f0b498fd7.html", "dir_33f80894668d792917bf891f0b498fd7" ],
     [ "ZSB54D2PD7", "dir_52c75143f316b6cb315e917a73e15db4.html", "dir_52c75143f316b6cb315e917a73e15db4" ],
-    [ "moc_predefs.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music__autogen_2moc__predefs_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_music__autogen_2moc__predefs_8h" ],
-    [ "mocs_compilation.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_all_music_2_all_musica68760e3934678b28fdaa6775a1dcb54.html", null ]
+    [ "moc_predefs.h", "_ku_gou_start_2_all_music_2_all_music__autogen_2moc__predefs_8h.html", "_ku_gou_start_2_all_music_2_all_music__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "_ku_gou_start_2_all_music_2_all_music__autogen_2mocs__compilation_8cpp.html", null ]
 ];

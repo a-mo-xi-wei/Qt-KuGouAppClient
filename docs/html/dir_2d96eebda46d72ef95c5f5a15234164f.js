@@ -1,5 +1,5 @@
 var dir_2d96eebda46d72ef95c5f5a15234164f =
 [
-    [ "moc_TitleOptionMenu.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_g_ubfd26362dc58311bcca807d6599fe520.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_g_ubfd26362dc58311bcca807d6599fe520" ],
-    [ "moc_TitleOptionMenu.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_g_uaf997ac055230d2b12b5c6d4f03ea627.html", null ]
+    [ "moc_TitleOptionMenu.cpp", "moc___title_option_menu_8cpp.html", "moc___title_option_menu_8cpp" ],
+    [ "moc_TitleOptionMenu.cpp.d", "moc___title_option_menu_8cpp_8d.html", null ]
 ];

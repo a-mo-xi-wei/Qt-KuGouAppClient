@@ -1,5 +1,5 @@
 var dir_d00d264c4348ddc590e6b084fb811b0c =
 [
-    [ "moc_RecentlyVideoWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec3434947d81ed2ff235ce87c94f266942.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec3434947d81ed2ff235ce87c94f266942" ],
-    [ "moc_RecentlyVideoWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec9c29401fba7f9aced324f5039a40c3c7.html", null ]
+    [ "moc_RecentlyVideoWidget.cpp", "moc___recently_video_widget_8cpp.html", "moc___recently_video_widget_8cpp" ],
+    [ "moc_RecentlyVideoWidget.cpp.d", "moc___recently_video_widget_8cpp_8d.html", null ]
 ];

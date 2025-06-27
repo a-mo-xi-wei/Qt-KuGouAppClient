@@ -1,5 +1,5 @@
 var dir_eb2323121bb735c7e5bc35bf0571e177 =
 [
-    [ "moc_MusicItemWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_music_item_widget_2_music_item_wc251b27b8dea8d63f2f9fc9c6658e19e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_music_item_widget_2_music_item_wc251b27b8dea8d63f2f9fc9c6658e19e" ],
-    [ "moc_MusicItemWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_music_item_widget_2_music_item_w312f8f94b9edddae07dae0a2865146f8.html", null ]
+    [ "moc_MusicItemWidget.cpp", "moc___music_item_widget_8cpp.html", "moc___music_item_widget_8cpp" ],
+    [ "moc_MusicItemWidget.cpp.d", "moc___music_item_widget_8cpp_8d.html", null ]
 ];

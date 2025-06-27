@@ -1,9 +1,9 @@
 var dir_daacb10dc95b40c37d68fdeee22195b3 =
 [
-    [ "moc_Channel.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__au996950920bdeda2bc4ec768701356f33.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__au996950920bdeda2bc4ec768701356f33" ],
-    [ "moc_Channel.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__au02015002d0071dadb8acee1dfe2c46c4.html", null ],
-    [ "moc_ChannelBlock.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__au071a5654a999c965ed067ba363c354e0.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__au071a5654a999c965ed067ba363c354e0" ],
-    [ "moc_ChannelBlock.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__aub0a1d26c026090d0779af3aa11191865.html", null ],
-    [ "moc_PartWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__au9ed2818cec8720df74cdf4bb996a20ce.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__au9ed2818cec8720df74cdf4bb996a20ce" ],
-    [ "moc_PartWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_channel_2_channel__au056d19508f0a91313806b66674b5e978.html", null ]
+    [ "moc_Channel.cpp", "moc___channel_8cpp.html", "moc___channel_8cpp" ],
+    [ "moc_Channel.cpp.d", "moc___channel_8cpp_8d.html", null ],
+    [ "moc_ChannelBlock.cpp", "moc___channel_block_8cpp.html", "moc___channel_block_8cpp" ],
+    [ "moc_ChannelBlock.cpp.d", "moc___channel_block_8cpp_8d.html", null ],
+    [ "moc_PartWidget.cpp", "moc___part_widget_8cpp.html", "moc___part_widget_8cpp" ],
+    [ "moc_PartWidget.cpp.d", "moc___part_widget_8cpp_8d.html", null ]
 ];

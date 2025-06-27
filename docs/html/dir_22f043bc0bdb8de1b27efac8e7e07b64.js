@@ -1,7 +1,7 @@
 var dir_22f043bc0bdb8de1b27efac8e7e07b64 =
 [
-    [ "moc_GalleryPhotoWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_04a04c4c405bda611d7ba11b114e6f08.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_04a04c4c405bda611d7ba11b114e6f08" ],
-    [ "moc_GalleryPhotoWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_a1c8f5f679aab95f775b2bb1019ed02b.html", null ],
-    [ "moc_GalleryWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_7204770724a67abbdebb414084d74de5.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_7204770724a67abbdebb414084d74de5" ],
-    [ "moc_GalleryWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_f27d9b71d69c5b34244deb444e108d1f.html", null ]
+    [ "moc_GalleryPhotoWidget.cpp", "moc___gallery_photo_widget_8cpp.html", "moc___gallery_photo_widget_8cpp" ],
+    [ "moc_GalleryPhotoWidget.cpp.d", "moc___gallery_photo_widget_8cpp_8d.html", null ],
+    [ "moc_GalleryWidget.cpp", "moc___gallery_widget_8cpp.html", "moc___gallery_widget_8cpp" ],
+    [ "moc_GalleryWidget.cpp.d", "moc___gallery_widget_8cpp_8d.html", null ]
 ];

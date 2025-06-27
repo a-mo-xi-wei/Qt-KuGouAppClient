@@ -1,4 +1,4 @@
 var dir_3770a44f3ac86e9f503133d6ac8b1e3c =
 [
-    [ "ui_Search.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_search_2_search__autogen_2include_2ui___search_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_search_2_search__autogen_2include_2ui___search_8h" ]
+    [ "ui_Search.h", "ui___search_8h.html", "ui___search_8h" ]
 ];

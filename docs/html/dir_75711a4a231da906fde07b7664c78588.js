@@ -10,6 +10,6 @@ var dir_75711a4a231da906fde07b7664c78588 =
     [ "U4XLXN5XW3", "dir_4e781e22b31f62f08710e7a16dbce195.html", "dir_4e781e22b31f62f08710e7a16dbce195" ],
     [ "UIGVJNGLT5", "dir_6819abda59bab6830bdb5a884a0f2c0a.html", "dir_6819abda59bab6830bdb5a884a0f2c0a" ],
     [ "WLO3RC3UBT", "dir_1500242ace400548378abbb54ef4d02e.html", "dir_1500242ace400548378abbb54ef4d02e" ],
-    [ "moc_predefs.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h" ],
-    [ "mocs_compilation.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_8dc1a2adb90ac60457e73edbce032b95.html", null ]
+    [ "moc_predefs.h", "_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h.html", "_ku_gou_start_2_listen_book_2_listen_book__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "_ku_gou_start_2_listen_book_2_listen_book__autogen_2mocs__compilation_8cpp.html", null ]
 ];

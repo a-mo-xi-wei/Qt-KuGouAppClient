@@ -7,6 +7,6 @@ var dir_59197031cc6b18dd33550ff51d027882 =
     [ "FEAMR2VYIZ", "dir_5e5dce0630be5d6837ae19a569378b45.html", "dir_5e5dce0630be5d6837ae19a569378b45" ],
     [ "include", "dir_5fae648f1170da669bfe915b9065426c.html", "dir_5fae648f1170da669bfe915b9065426c" ],
     [ "OHNSFAHOC3", "dir_99c7375bb65f4ab3120e3356034c7a56.html", "dir_99c7375bb65f4ab3120e3356034c7a56" ],
-    [ "moc_predefs.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_2moc__predefs_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_2moc__predefs_8h" ],
-    [ "mocs_compilation.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_2mocs__compilation_8cpp.html", null ]
+    [ "moc_predefs.h", "_ku_gou_start_2_live_2_live__autogen_2moc__predefs_8h.html", "_ku_gou_start_2_live_2_live__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "_ku_gou_start_2_live_2_live__autogen_2mocs__compilation_8cpp.html", null ]
 ];

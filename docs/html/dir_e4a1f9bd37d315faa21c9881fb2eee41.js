@@ -1,5 +1,5 @@
 var dir_e4a1f9bd37d315faa21c9881fb2eee41 =
 [
-    [ "moc_predefs.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_config_file_2_my_config_file__autogen_2moc__predefs_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_config_file_2_my_config_file__autogen_2moc__predefs_8h" ],
-    [ "mocs_compilation.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_config_file_2_my_config_fil743e01f8e80019f4baab1936a53b59ad.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2util_2_my_config_file_2_my_config_fil743e01f8e80019f4baab1936a53b59ad" ]
+    [ "moc_predefs.h", "util_2_my_config_file_2_my_config_file__autogen_2moc__predefs_8h.html", "util_2_my_config_file_2_my_config_file__autogen_2moc__predefs_8h" ],
+    [ "mocs_compilation.cpp", "util_2_my_config_file_2_my_config_file__autogen_2mocs__compilation_8cpp.html", "util_2_my_config_file_2_my_config_file__autogen_2mocs__compilation_8cpp" ]
 ];

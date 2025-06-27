@@ -1,5 +1,5 @@
 var dir_08498609d790b455abad1edd5c292d81 =
 [
-    [ "moc_IconBesideTextToolButton.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_button_2_my_button__autogen_26f2a3f80634b2889368db35850956a5d.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_button_2_my_button__autogen_26f2a3f80634b2889368db35850956a5d" ],
-    [ "moc_IconBesideTextToolButton.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_button_2_my_button__autogen_2981ebde7fdb08e52fb917a92f0c9614e.html", null ]
+    [ "moc_IconBesideTextToolButton.cpp", "moc___icon_beside_text_tool_button_8cpp.html", "moc___icon_beside_text_tool_button_8cpp" ],
+    [ "moc_IconBesideTextToolButton.cpp.d", "moc___icon_beside_text_tool_button_8cpp_8d.html", null ]
 ];

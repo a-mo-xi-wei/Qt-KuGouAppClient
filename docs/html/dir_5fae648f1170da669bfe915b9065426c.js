@@ -1,8 +1,8 @@
 var dir_5fae648f1170da669bfe915b9065426c =
 [
-    [ "ui_Live.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_2include_2ui___live_8h.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_2include_2ui___live_8h" ],
-    [ "ui_LiveBigLeftWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_99ac1d08e35df0ca69e3bfd7edcba7b7.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_99ac1d08e35df0ca69e3bfd7edcba7b7" ],
-    [ "ui_LiveBlockWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_421ee4dc3538723df55b6b15bf9a0753.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_421ee4dc3538723df55b6b15bf9a0753" ],
-    [ "ui_LiveCommonPartWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_3d6ee3c60be6e4b9f9b208a0762b1865.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_3d6ee3c60be6e4b9f9b208a0762b1865" ],
-    [ "ui_LiveMusicPartWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_6bea78c8c9f7743bb1f3ddff4615cb8d.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_6bea78c8c9f7743bb1f3ddff4615cb8d" ]
+    [ "ui_Live.h", "ui___live_8h.html", "ui___live_8h" ],
+    [ "ui_LiveBigLeftWidget.h", "ui___live_big_left_widget_8h.html", "ui___live_big_left_widget_8h" ],
+    [ "ui_LiveBlockWidget.h", "ui___live_block_widget_8h.html", "ui___live_block_widget_8h" ],
+    [ "ui_LiveCommonPartWidget.h", "ui___live_common_part_widget_8h.html", "ui___live_common_part_widget_8h" ],
+    [ "ui_LiveMusicPartWidget.h", "ui___live_music_part_widget_8h.html", "ui___live_music_part_widget_8h" ]
 ];

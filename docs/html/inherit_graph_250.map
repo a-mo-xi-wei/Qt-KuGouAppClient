@@ -1,5 +1,17 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="Node000000" href="$class_q_parallel_animation_group.html" title="并行动画组类" alt="" coords="5,5,173,32"/>
-<area shape="rect" id="Node000001" href="$class_qt_material_ripple.html" title="水波纹动画类，继承自 QParallelAnimationGroup，管理半径和透明度动画" alt="" coords="221,5,339,32"/>
-<area shape="poly" id="edge317_Node000000_Node000001" title=" " alt="" coords="188,16,220,16,220,21,188,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,132,69,159"/>
+<area shape="rect" id="Node000001" href="$class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="117,107,200,133"/>
+<area shape="poly" id="edge316_Node000000_Node000001" title=" " alt="" coords="83,133,116,126,117,131,84,138"/>
+<area shape="rect" id="Node000007" href="$class_ela_menu.html" title="自定义菜单类，支持动画、图标和子菜单" alt="" coords="122,157,194,184"/>
+<area shape="poly" id="edge322_Node000000_Node000007" title=" " alt="" coords="84,152,122,161,121,166,83,158"/>
+<area shape="rect" id="Node000002" href="$class_list_option_menu.html" title="歌曲分类选项菜单类，继承自 BaseMenu，提供场景、主题等分类选择" alt="" coords="255,5,367,32"/>
+<area shape="poly" id="edge317_Node000001_Node000002" title=" " alt="" coords="182,94,211,67,247,42,269,30,272,35,249,46,215,71,185,98"/>
+<area shape="rect" id="Node000003" href="$class_listen_option_menu.html" title="听单选项菜单类，继承自 BaseMenu，提供分类音频内容选择" alt="" coords="248,56,374,83"/>
+<area shape="poly" id="edge318_Node000001_Node000003" title=" " alt="" coords="214,99,268,81,269,86,216,104"/>
+<area shape="rect" id="Node000004" href="$class_song_option_menu.html" title="歌曲操作选项菜单类，继承自 BaseMenu，提供播放、添加、删除等功能" alt="" coords="250,107,372,133"/>
+<area shape="poly" id="edge319_Node000001_Node000004" title=" " alt="" coords="216,117,250,117,250,123,216,123"/>
+<area shape="rect" id="Node000005" href="$class_sort_option_menu.html" title="歌曲排序选项菜单类，继承自 BaseMenu，提供多种排序方式" alt="" coords="254,157,369,184"/>
+<area shape="poly" id="edge320_Node000001_Node000005" title=" " alt="" coords="216,136,269,154,268,159,214,141"/>
+<area shape="rect" id="Node000006" href="$class_title_option_menu.html" title="标题栏选项菜单类，继承自 BaseMenu，提供壁纸、设置、退出等功能" alt="" coords="253,208,369,235"/>
+<area shape="poly" id="edge321_Node000001_Node000006" title=" " alt="" coords="198,140,202,143,225,170,235,182,250,194,270,205,267,210,246,198,231,185,221,173,198,147,194,144"/>
 </map>

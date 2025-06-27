@@ -1,59 +1,51 @@
 <map id="KuGouApp" name="KuGouApp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1665,567,1749,593"/>
-<area shape="rect" id="Node000002" href="$class_ui___ku_gou_app.html" title=" " alt="" coords="1511,567,1616,593"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1631,586,1664,586,1665,591,1631,592"/>
-<area shape="poly" id="edge33_Node000001_Node000002" title=" " alt="" coords="1631,568,1665,569,1664,574,1631,574"/>
-<area shape="rect" id="Node000003" href="$class_title_widget.html" title="自定义标题栏控件类，继承自 QWidget，支持界面导航、菜单显示和窗口控制" alt="" coords="1254,487,1341,513"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1357,507,1421,522,1488,541,1538,564,1536,569,1486,547,1419,527,1356,513"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="959,565,1032,592"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1046,563,1253,509,1254,514,1047,568"/>
-<area shape="rect" id="Node000018" href="$class_center_widget.html" title="自定义中心控件类，继承自 QWidget，支持线性渐变阴影" alt="" coords="1247,593,1348,620"/>
-<area shape="poly" id="edge21_Node000018_Node000004" title=" " alt="" coords="1047,581,1247,599,1246,605,1046,586"/>
-<area shape="rect" id="Node000022" href="$class_play_widget.html" title="自定义播放控件类，继承自 QWidget，支持圆角阴影和双击信号" alt="" coords="1254,543,1342,569"/>
-<area shape="poly" id="edge28_Node000022_Node000004" title=" " alt="" coords="1047,572,1253,557,1253,562,1047,578"/>
-<area shape="rect" id="Node000005" href="$class_ui_1_1_title_widget.html" title=" " alt="" coords="952,515,1039,541"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="1055,520,1253,501,1254,507,1055,525"/>
-<area shape="rect" id="Node000006" href="$class_ui___title_widget.html" title=" " alt="" coords="588,548,696,575"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="711,560,835,549,951,536,952,541,836,555,711,565"/>
-<area shape="poly" id="edge13_Node000005_Node000006" title=" " alt="" coords="711,545,835,531,951,523,951,529,836,537,711,550"/>
-<area shape="rect" id="Node000007" href="$class_q_tool_button.html" title="工具按钮类" alt="" coords="28,371,121,397"/>
-<area shape="poly" id="edge23_Node000002_Node000007" title=" " alt="" coords="90,356,122,312,166,267,211,230,250,202,292,185,349,179,1299,179,1333,182,1365,193,1394,209,1420,230,1443,255,1464,283,1498,346,1525,413,1544,476,1563,566,1558,567,1539,477,1520,415,1494,349,1459,286,1439,258,1416,234,1391,213,1363,197,1332,187,1299,184,350,184,294,190,253,207,215,234,169,271,126,315,94,359"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="97,408,126,444,167,485,216,524,271,554,312,566,354,575,441,581,522,578,588,569,588,574,522,583,441,587,354,580,310,572,269,558,213,528,163,489,122,447,93,412"/>
-<area shape="rect" id="Node000012" href="$class_ripple_button.html" title="带涟漪效果的按钮类，支持阴影和自定义图标" alt="" coords="303,421,399,448"/>
-<area shape="poly" id="edge12_Node000012_Node000007" title=" " alt="" coords="137,393,303,423,302,429,136,398"/>
-<area shape="rect" id="Node000016" href="$class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="314,371,388,397"/>
-<area shape="poly" id="edge18_Node000016_Node000007" title=" " alt="" coords="137,381,314,381,314,387,137,387"/>
-<area shape="rect" id="Node000024" href="$class_volume_tool_btn.html" title="音量调节按钮类，继承自 QToolButton，支持音量滑块和静音功能" alt="" coords="456,220,564,247"/>
-<area shape="poly" id="edge32_Node000024_Node000007" title=" " alt="" coords="101,358,173,304,220,277,269,255,317,242,367,234,455,229,456,234,367,239,318,247,271,260,222,281,176,309,104,362"/>
-<area shape="rect" id="Node000008" href="$class_q_label.html" title="标签控件类" alt="" coords="320,793,382,820"/>
-<area shape="poly" id="edge22_Node000002_Node000008" title=" " alt="" coords="398,804,641,804,1299,804,1346,797,1389,778,1429,750,1464,717,1495,681,1520,646,1553,592,1557,595,1524,649,1499,684,1468,721,1432,754,1392,783,1347,802,1299,809,641,809,398,809"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="397,798,492,782,535,770,563,755,582,735,597,712,619,660,632,611,637,575,642,576,637,612,624,662,602,714,586,739,566,759,537,775,493,787,398,804"/>
-<area shape="rect" id="Node000023" href="$class_ela_text.html" title="自定义文本标签类，支持主题切换、图标和文本样式" alt="" coords="771,852,836,879"/>
-<area shape="poly" id="edge30_Node000023_Node000008" title=" " alt="" coords="398,813,456,823,634,845,771,860,770,865,634,851,456,828,397,818"/>
-<area shape="rect" id="Node000009" href="$class_my_search_line_edit.html" title="自定义搜索输入框类，继承自 QLineEdit，支持焦点动画和自定义右键菜单" alt="" coords="287,616,414,643"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="430,624,496,616,564,600,593,588,619,573,622,577,595,592,565,605,497,621,430,629"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="35,653,114,680"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="129,657,286,635,287,641,129,662"/>
-<area shape="rect" id="Node000011" href="$class_q_property_animation.html" title="Qt 属性动画类，用于窗口缩放动画" alt="" coords="5,603,144,629"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="160,617,287,624,287,629,159,623"/>
-<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="403,452,433,464,612,545,610,550,431,469,401,457"/>
-<area shape="rect" id="Node000013" href="$class_title_option_menu.html" title="标题栏选项菜单类，继承自 BaseMenu，提供壁纸、设置、退出等功能" alt="" coords="937,412,1054,439"/>
-<area shape="poly" id="edge14_Node000003_Node000013" title=" " alt="" coords="1068,440,1254,487,1253,492,1067,446"/>
-<area shape="rect" id="Node000014" href="$class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="600,345,684,372"/>
-<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="700,367,937,412,936,417,699,372"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="319,320,382,347"/>
-<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="398,335,600,352,600,358,398,340"/>
-<area shape="poly" id="edge17_Node000014_Node000016" title=" " alt="" coords="403,389,479,393,522,392,564,387,613,370,614,375,565,392,522,397,479,399,403,394"/>
-<area shape="rect" id="Node000017" href="$class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="270,269,432,296"/>
-<area shape="poly" id="edge19_Node000014_Node000017" title=" " alt="" coords="444,297,565,327,608,342,607,347,564,332,443,302"/>
-<area shape="poly" id="edge20_Node000002_Node000018" title=" " alt="" coords="1363,602,1487,592,1510,588,1511,594,1488,597,1364,607"/>
-<area shape="rect" id="Node000019" href="$class_sliding_stacked_widget.html" title="自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画" alt="" coords="1223,644,1372,671"/>
-<area shape="poly" id="edge24_Node000002_Node000019" title=" " alt="" coords="1387,646,1437,636,1486,622,1516,608,1541,592,1544,596,1518,612,1488,626,1438,641,1388,651"/>
-<area shape="rect" id="Node000020" title=" " alt="" coords="935,676,1056,703"/>
-<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="1071,679,1222,663,1223,668,1071,684"/>
-<area shape="rect" id="Node000021" href="$class_q_parallel_animation_group.html" title="并行动画组类" alt="" coords="912,625,1079,652"/>
-<area shape="poly" id="edge26_Node000019_Node000021" title=" " alt="" coords="1095,642,1223,650,1222,655,1094,647"/>
-<area shape="poly" id="edge27_Node000002_Node000022" title=" " alt="" coords="1358,559,1511,573,1511,578,1357,564"/>
-<area shape="poly" id="edge29_Node000002_Node000023" title=" " alt="" coords="852,877,976,904,1056,915,1144,921,1235,917,1325,902,1368,889,1410,871,1449,850,1486,823,1509,798,1528,769,1541,736,1550,702,1559,639,1560,594,1565,594,1564,640,1555,703,1546,738,1532,771,1514,801,1489,827,1452,854,1412,876,1370,894,1326,907,1236,922,1144,926,1056,920,975,909,851,882"/>
-<area shape="poly" id="edge31_Node000002_Node000024" title=" " alt="" coords="580,244,685,260,802,268,1299,268,1328,271,1356,278,1381,290,1405,306,1447,347,1483,395,1512,445,1534,494,1561,565,1556,567,1530,496,1507,448,1478,397,1443,350,1402,311,1379,295,1354,283,1327,276,1299,273,802,273,684,266,579,250"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1610,611,1694,637"/>
+<area shape="rect" id="Node000002" href="$class_ui___ku_gou_app.html" title=" " alt="" coords="1456,611,1561,637"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1576,621,1609,621,1609,627,1576,627"/>
+<area shape="rect" id="Node000003" href="$class_title_widget.html" title="自定义标题栏控件类，继承自 QWidget，支持界面导航、菜单显示和窗口控制" alt="" coords="1199,319,1286,345"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1268,355,1497,609,1493,612,1265,359"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="16,95,88,121"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="104,117,163,126,228,131,926,131,957,137,995,153,1082,207,1166,268,1226,316,1223,320,1163,272,1079,211,993,158,955,142,925,136,228,136,163,131,103,122"/>
+<area shape="rect" id="Node000009" href="$class_ela_suggest_box.html" title="搜索建议框控件，支持添加/移除建议项和事件过滤" alt="" coords="174,272,285,299"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="66,135,98,197,121,230,150,258,174,271,172,276,146,262,117,233,93,200,61,137"/>
+<area shape="rect" id="Node000016" href="$class_center_widget.html" title="自定义中心控件类，继承自 QWidget，支持线性渐变阴影" alt="" coords="1037,77,1139,104"/>
+<area shape="poly" id="edge19_Node000016_Node000004" title=" " alt="" coords="103,94,163,85,228,80,734,80,1037,86,1037,91,734,85,228,85,163,90,104,99"/>
+<area shape="rect" id="Node000020" href="$class_play_widget.html" title="自定义播放控件类，继承自 QWidget，支持圆角阴影和双击信号" alt="" coords="370,11,458,37"/>
+<area shape="poly" id="edge26_Node000020_Node000004" title=" " alt="" coords="81,83,122,62,188,42,255,31,369,22,370,27,256,36,189,48,124,66,84,88"/>
+<area shape="rect" id="Node000005" href="$class_ui_1_1_title_widget.html" title=" " alt="" coords="881,368,968,395"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="983,370,1198,336,1199,341,984,375"/>
+<area shape="rect" id="Node000006" href="$class_ui___title_widget.html" title=" " alt="" coords="517,392,625,419"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="640,398,880,382,880,387,640,403"/>
+<area shape="rect" id="Node000007" href="$class_q_tool_button.html" title="工具按钮类" alt="" coords="5,507,99,533"/>
+<area shape="poly" id="edge21_Node000002_Node000007" title=" " alt="" coords="58,549,68,630,79,680,95,731,117,777,146,815,163,830,182,841,204,848,228,851,1244,851,1291,844,1335,824,1375,796,1410,762,1440,726,1465,691,1498,636,1503,639,1470,694,1445,729,1414,766,1378,800,1337,829,1293,849,1244,856,228,856,203,853,180,846,160,834,142,819,112,780,90,732,74,682,63,631,52,549"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="114,530,160,534,210,534,262,525,309,506,317,498,320,488,324,477,333,466,366,450,413,435,516,412,518,417,415,440,367,455,336,470,328,479,325,490,322,500,312,510,263,530,211,539,160,540,114,535"/>
+<area shape="rect" id="Node000010" href="$class_ripple_button.html" title="带涟漪效果的按钮类，支持阴影和自定义图标" alt="" coords="181,373,277,400"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="70,492,103,454,147,416,182,398,184,403,149,421,107,458,74,496"/>
+<area shape="rect" id="Node000014" href="$class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="192,323,266,349"/>
+<area shape="poly" id="edge16_Node000014_Node000007" title=" " alt="" coords="61,491,92,425,116,390,146,359,168,347,191,339,193,344,170,351,150,363,120,393,96,428,65,493"/>
+<area shape="rect" id="Node000021" href="$class_volume_tool_btn.html" title="音量调节按钮类，继承自 QToolButton，支持音量滑块和静音功能" alt="" coords="678,644,787,671"/>
+<area shape="poly" id="edge28_Node000021_Node000007" title=" " alt="" coords="69,545,101,593,124,615,149,634,192,649,251,659,322,665,399,668,554,665,678,659,678,664,555,670,399,673,322,670,251,664,191,654,147,638,120,619,97,596,65,548"/>
+<area shape="rect" id="Node000008" href="$class_q_label.html" title="标签控件类" alt="" coords="198,597,260,624"/>
+<area shape="poly" id="edge20_Node000002_Node000008" title=" " alt="" coords="276,614,334,619,533,624,731,621,1244,621,1456,621,1456,627,1244,627,731,627,533,629,334,624,276,619"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="276,611,396,613,454,607,476,601,492,594,512,576,528,554,550,504,562,455,566,419,572,419,567,456,555,506,532,557,516,579,495,598,478,606,455,612,397,618,276,616"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="299,302,312,308,324,318,336,327,378,339,413,341,450,342,494,354,527,370,554,389,551,394,524,375,492,358,449,348,413,346,377,345,333,332,321,322,309,313,297,307"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="293,396,335,401,431,406,517,405,517,410,431,411,334,407,292,401"/>
+<area shape="rect" id="Node000011" href="$class_title_option_menu.html" title="标题栏选项菜单类，继承自 BaseMenu，提供壁纸、设置、退出等功能" alt="" coords="866,255,982,281"/>
+<area shape="poly" id="edge12_Node000003_Node000011" title=" " alt="" coords="998,280,1199,321,1198,326,997,285"/>
+<area shape="rect" id="Node000012" href="$class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="529,240,613,267"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="629,253,866,263,865,268,628,258"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="198,221,261,248"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="276,234,494,244,529,247,529,252,493,249,276,239"/>
+<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="281,319,334,307,414,296,449,291,493,281,538,265,540,270,494,287,450,297,415,301,335,312,282,325"/>
+<area shape="rect" id="Node000015" href="$class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="148,171,310,197"/>
+<area shape="poly" id="edge17_Node000012_Node000015" title=" " alt="" coords="326,191,409,203,494,221,539,237,537,242,493,227,408,208,326,196"/>
+<area shape="poly" id="edge18_Node000002_Node000016" title=" " alt="" coords="1141,109,1146,112,1241,184,1310,247,1369,320,1435,420,1462,472,1483,527,1507,610,1502,611,1478,528,1457,475,1430,423,1365,323,1307,251,1238,188,1142,117,1138,114"/>
+<area shape="rect" id="Node000017" href="$class_sliding_stacked_widget.html" title="自定义堆栈窗口类，继承自 QStackedWidget，支持页面滑动动画" alt="" coords="1168,891,1317,917"/>
+<area shape="poly" id="edge22_Node000002_Node000017" title=" " alt="" coords="1332,914,1385,908,1409,900,1431,886,1444,868,1457,841,1479,769,1494,693,1503,637,1508,638,1499,694,1484,770,1462,843,1449,871,1434,890,1411,904,1386,913,1333,919"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="864,891,984,917"/>
+<area shape="poly" id="edge23_Node000017_Node000018" title=" " alt="" coords="1000,901,1168,901,1168,907,1000,907"/>
+<area shape="rect" id="Node000019" href="$class_q_parallel_animation_group.html" title="并行动画组类" alt="" coords="841,941,1008,968"/>
+<area shape="poly" id="edge24_Node000017_Node000019" title=" " alt="" coords="1023,941,1144,923,1181,915,1182,921,1144,928,1023,946"/>
+<area shape="poly" id="edge25_Node000002_Node000020" title=" " alt="" coords="474,21,731,19,1244,19,1291,24,1333,41,1369,66,1400,99,1426,139,1447,183,1465,231,1479,282,1498,384,1507,480,1510,610,1505,610,1502,481,1493,385,1474,283,1460,233,1442,185,1421,141,1396,102,1366,70,1331,45,1290,30,1244,24,731,24,474,26"/>
+<area shape="poly" id="edge27_Node000002_Node000021" title=" " alt="" coords="803,659,922,664,1079,665,1255,658,1432,640,1456,635,1457,641,1433,645,1255,664,1079,670,922,669,803,664"/>
 </map>

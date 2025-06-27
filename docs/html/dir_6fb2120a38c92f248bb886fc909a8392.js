@@ -1,11 +1,11 @@
 var dir_6fb2120a38c92f248bb886fc909a8392 =
 [
-    [ "ui_CollectVideo.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co2017da4bea9bb601f667dfcce41a9ba5.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co2017da4bea9bb601f667dfcce41a9ba5" ],
-    [ "ui_DeviceWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_cob05d033c50f8fb258158aec2a538363e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_cob05d033c50f8fb258158aec2a538363e" ],
-    [ "ui_MyCollection.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_cod705e8a6dd8bc953a928cc471eec5551.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_cod705e8a6dd8bc953a928cc471eec5551" ],
-    [ "ui_SingerWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_cod073d9e9b3f7e7f455e603c6555712f9.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_cod073d9e9b3f7e7f455e603c6555712f9" ],
-    [ "ui_SingleSong.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co3af85269747c9f618b2a68303ef49599.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co3af85269747c9f618b2a68303ef49599" ],
-    [ "ui_SongListBlockWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co5b6fd66dcbcc3dcd4a377503ba263fd3.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co5b6fd66dcbcc3dcd4a377503ba263fd3" ],
-    [ "ui_SongListWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_cod4403eabbc4759b8f3d0dec73a879f85.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_cod4403eabbc4759b8f3d0dec73a879f85" ],
-    [ "ui_SpecialAlbum.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co596747357f4a898990e000b82ad83c1f.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_my_collection_2_my_co596747357f4a898990e000b82ad83c1f" ]
+    [ "ui_CollectVideo.h", "ui___collect_video_8h.html", "ui___collect_video_8h" ],
+    [ "ui_DeviceWidget.h", "ui___device_widget_8h.html", "ui___device_widget_8h" ],
+    [ "ui_MyCollection.h", "ui___my_collection_8h.html", "ui___my_collection_8h" ],
+    [ "ui_SingerWidget.h", "ui___singer_widget_8h.html", "ui___singer_widget_8h" ],
+    [ "ui_SingleSong.h", "ui___single_song_8h.html", "ui___single_song_8h" ],
+    [ "ui_SongListBlockWidget.h", "ui___song_list_block_widget_8h.html", "ui___song_list_block_widget_8h" ],
+    [ "ui_SongListWidget.h", "ui___song_list_widget_8h.html", "ui___song_list_widget_8h" ],
+    [ "ui_SpecialAlbum.h", "ui___special_album_8h.html", "ui___special_album_8h" ]
 ];

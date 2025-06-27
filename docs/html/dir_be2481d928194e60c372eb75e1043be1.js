@@ -1,5 +1,5 @@
 var dir_be2481d928194e60c372eb75e1043be1 =
 [
-    [ "moc_LiveCommonPartWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_7722bf9b1ca3dc6faf454ac7fb29d30d.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_7722bf9b1ca3dc6faf454ac7fb29d30d" ],
-    [ "moc_LiveCommonPartWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_048a485a353a7a69a4d2cbc7e325333d.html", null ]
+    [ "moc_LiveCommonPartWidget.cpp", "moc___live_common_part_widget_8cpp.html", "moc___live_common_part_widget_8cpp" ],
+    [ "moc_LiveCommonPartWidget.cpp.d", "moc___live_common_part_widget_8cpp_8d.html", null ]
 ];

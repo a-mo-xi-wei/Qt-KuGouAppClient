@@ -1,8 +1,8 @@
 var dir_e7c84ef6a969c2490931d3027de84947 =
 [
-    [ "ui_DownloadedSong.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_loca7dcb147e6bf246ac44f1528f401e7dc4.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_loca7dcb147e6bf246ac44f1528f401e7dc4" ],
-    [ "ui_DownloadedVideo.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_loca6889272f8e00d7d416949407f4a9d6ad.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_loca6889272f8e00d7d416949407f4a9d6ad" ],
-    [ "ui_Downloading.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_locabd14afb4045398681222f899244155d2.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_locabd14afb4045398681222f899244155d2" ],
-    [ "ui_LocalDownload.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_loca44bc704f8d02f4f44551a588d656936b.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_loca44bc704f8d02f4f44551a588d656936b" ],
-    [ "ui_LocalSong.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_locaa8151e71dbf31892b8dd36085283b0f4.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_local_download_2_locaa8151e71dbf31892b8dd36085283b0f4" ]
+    [ "ui_DownloadedSong.h", "ui___downloaded_song_8h.html", "ui___downloaded_song_8h" ],
+    [ "ui_DownloadedVideo.h", "ui___downloaded_video_8h.html", "ui___downloaded_video_8h" ],
+    [ "ui_Downloading.h", "ui___downloading_8h.html", "ui___downloading_8h" ],
+    [ "ui_LocalDownload.h", "ui___local_download_8h.html", "ui___local_download_8h" ],
+    [ "ui_LocalSong.h", "ui___local_song_8h.html", "ui___local_song_8h" ]
 ];

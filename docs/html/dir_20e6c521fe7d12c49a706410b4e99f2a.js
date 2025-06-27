@@ -1,10 +1,10 @@
 var dir_20e6c521fe7d12c49a706410b4e99f2a =
 [
-    [ "ui_RecentlyChannelBlock.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec3253354c8660ba3266932329e004f2c5.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec3253354c8660ba3266932329e004f2c5" ],
-    [ "ui_RecentlyMVChannel.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec4157f71ab5cd7f9497b57fd9ed556aea.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec4157f71ab5cd7f9497b57fd9ed556aea" ],
-    [ "ui_RecentlyPlayed.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec95179ce2b8af3035ec35d8927a960d68.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec95179ce2b8af3035ec35d8927a960d68" ],
-    [ "ui_RecentlySingleSong.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec984586a1b2dbb7ae005bc5638669c6e6.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec984586a1b2dbb7ae005bc5638669c6e6" ],
-    [ "ui_RecentlySongChannel.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rececc9cba776c0637e0d07bdd17d24e6f1.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rececc9cba776c0637e0d07bdd17d24e6f1" ],
-    [ "ui_RecentlySongList.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec4724d088f7a36c62ecfc10ce8e972f71.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec4724d088f7a36c62ecfc10ce8e972f71" ],
-    [ "ui_RecentlyVideoWidget.h", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec31c25bb97ee515e30e307bb53f663d86.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_recently_played_2_rec31c25bb97ee515e30e307bb53f663d86" ]
+    [ "ui_RecentlyChannelBlock.h", "ui___recently_channel_block_8h.html", "ui___recently_channel_block_8h" ],
+    [ "ui_RecentlyMVChannel.h", "ui___recently_m_v_channel_8h.html", "ui___recently_m_v_channel_8h" ],
+    [ "ui_RecentlyPlayed.h", "ui___recently_played_8h.html", "ui___recently_played_8h" ],
+    [ "ui_RecentlySingleSong.h", "ui___recently_single_song_8h.html", "ui___recently_single_song_8h" ],
+    [ "ui_RecentlySongChannel.h", "ui___recently_song_channel_8h.html", "ui___recently_song_channel_8h" ],
+    [ "ui_RecentlySongList.h", "ui___recently_song_list_8h.html", "ui___recently_song_list_8h" ],
+    [ "ui_RecentlyVideoWidget.h", "ui___recently_video_widget_8h.html", "ui___recently_video_widget_8h" ]
 ];

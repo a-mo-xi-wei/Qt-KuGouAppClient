@@ -1,5 +1,5 @@
 var dir_1b0e33f4332ae97ff3245b56b8716615 =
 [
-    [ "moc_LiveBlockWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_1413141a46bdddc47490691c9af55cb0.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_1413141a46bdddc47490691c9af55cb0" ],
-    [ "moc_LiveBlockWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_live_2_live__autogen_e5b831a1d0edaecc2ab47c8e671cd957.html", null ]
+    [ "moc_LiveBlockWidget.cpp", "moc___live_block_widget_8cpp.html", "moc___live_block_widget_8cpp" ],
+    [ "moc_LiveBlockWidget.cpp.d", "moc___live_block_widget_8cpp_8d.html", null ]
 ];

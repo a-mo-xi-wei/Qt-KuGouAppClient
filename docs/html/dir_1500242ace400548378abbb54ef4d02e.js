@@ -1,5 +1,5 @@
 var dir_1500242ace400548378abbb54ef4d02e =
 [
-    [ "moc_DownloadedWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_ede00d4de60059a4aff4f8fb50070983.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_ede00d4de60059a4aff4f8fb50070983" ],
-    [ "moc_DownloadedWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_listen_book_2_listen_e28fbdcf96fb88cc9ba54bc87461ed06.html", null ]
+    [ "moc_DownloadedWidget.cpp", "moc___downloaded_widget_8cpp.html", "moc___downloaded_widget_8cpp" ],
+    [ "moc_DownloadedWidget.cpp.d", "moc___downloaded_widget_8cpp_8d.html", null ]
 ];

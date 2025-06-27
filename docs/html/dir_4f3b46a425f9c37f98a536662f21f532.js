@@ -1,9 +1,9 @@
 var dir_4f3b46a425f9c37f98a536662f21f532 =
 [
-    [ "moc_VideoBlockWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__4fb8580925fe28a1e234d8ea9b6bfba0.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__4fb8580925fe28a1e234d8ea9b6bfba0" ],
-    [ "moc_VideoBlockWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__efd9f5d734629c6197392ce2cf891347.html", null ],
-    [ "moc_VideoPartWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__74fd256d9fc76b2737815c03f250895e.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__74fd256d9fc76b2737815c03f250895e" ],
-    [ "moc_VideoPartWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__9ec4b89e94917586d4995a5c6b5bc494.html", null ],
-    [ "moc_VideoWidget.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__55da61e4fee65324851495219add3baf.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__55da61e4fee65324851495219add3baf" ],
-    [ "moc_VideoWidget.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2_ku_gou_start_2_video_2_start_video__44c832bc5b9694288ab253a6045399b1.html", null ]
+    [ "moc_VideoBlockWidget.cpp", "moc___video_block_widget_8cpp.html", "moc___video_block_widget_8cpp" ],
+    [ "moc_VideoBlockWidget.cpp.d", "moc___video_block_widget_8cpp_8d.html", null ],
+    [ "moc_VideoPartWidget.cpp", "moc___video_part_widget_8cpp.html", "moc___video_part_widget_8cpp" ],
+    [ "moc_VideoPartWidget.cpp.d", "moc___video_part_widget_8cpp_8d.html", null ],
+    [ "moc_VideoWidget.cpp", "moc___video_widget_8cpp.html", "moc___video_widget_8cpp" ],
+    [ "moc_VideoWidget.cpp.d", "moc___video_widget_8cpp_8d.html", null ]
 ];

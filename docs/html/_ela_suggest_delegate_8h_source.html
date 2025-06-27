@@ -102,40 +102,43 @@ $(function(){initNavTree('_ela_suggest_delegate_8h_source.html',''); initResizab
   <div class="headertitle"><div class="title">ElaSuggestDelegate.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_ela_suggest_delegate_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ELASUGGESTDELEGATE_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ELASUGGESTDELEGATE_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QStyledItemDelegate&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_def_8h.html">Def.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_ela_suggest_delegate.html">    8</a></span><span class="keyword">class </span><a class="code hl_function" href="class_ela_suggest_delegate.html#aa831ddd874c915d2e8f39aa9424258d1">ElaSuggestDelegate</a> : <span class="keyword">public</span> QStyledItemDelegate {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    Q_OBJECT</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_ela_suggest_delegate.html#aa831ddd874c915d2e8f39aa9424258d1">ElaSuggestDelegate</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<a href="_ela_suggest_delegate_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef ELASUGGESTDELEGATE_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define ELASUGGESTDELEGATE_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QStyledItemDelegate&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_ela_suggest_delegate.html#a880259e32ad82d0ec996fbfcbbc05319">   14</a></span>    <a class="code hl_function" href="class_ela_suggest_delegate.html#a880259e32ad82d0ec996fbfcbbc05319">~ElaSuggestDelegate</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_suggest_delegate.html#a4be278789c7b5a3693b38c066e7541f6">paint</a>(QPainter *painter, <span class="keyword">const</span> QStyleOptionViewItem &amp;option, <span class="keyword">const</span> QModelIndex &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    QSize <a class="code hl_function" href="class_ela_suggest_delegate.html#af83b00f4c72f3192572ad0e4e2e985da">sizeHint</a>(<span class="keyword">const</span> QStyleOptionViewItem &amp;option, <span class="keyword">const</span> QModelIndex &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_ela_suggest_delegate.html#abab7c56bd707e57041aaca2f2b3906b1">   22</a></span>    ElaThemeType::ThemeMode <a class="code hl_variable" href="class_ela_suggest_delegate.html#abab7c56bd707e57041aaca2f2b3906b1">_themeMode</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_def_8h.html">Def.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_ela_suggest_delegate.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="class_ela_suggest_delegate.html#aa831ddd874c915d2e8f39aa9424258d1">ElaSuggestDelegate</a> : <span class="keyword">public</span> QStyledItemDelegate</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Q_OBJECT</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_ela_suggest_delegate.html#aa831ddd874c915d2e8f39aa9424258d1">ElaSuggestDelegate</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_ela_suggest_delegate.html#a880259e32ad82d0ec996fbfcbbc05319">   34</a></span>    <a class="code hl_function" href="class_ela_suggest_delegate.html#a880259e32ad82d0ec996fbfcbbc05319">~ElaSuggestDelegate</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ela_suggest_delegate.html#a4be278789c7b5a3693b38c066e7541f6">paint</a>(QPainter *painter, <span class="keyword">const</span> QStyleOptionViewItem &amp;option, <span class="keyword">const</span> QModelIndex &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    QSize <a class="code hl_function" href="class_ela_suggest_delegate.html#af83b00f4c72f3192572ad0e4e2e985da">sizeHint</a>(<span class="keyword">const</span> QStyleOptionViewItem &amp;option, <span class="keyword">const</span> QModelIndex &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_ela_suggest_delegate.html#abab7c56bd707e57041aaca2f2b3906b1">   55</a></span>    ElaThemeType::ThemeMode <a class="code hl_variable" href="class_ela_suggest_delegate.html#abab7c56bd707e57041aaca2f2b3906b1">_themeMode</a>;                       </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif </span><span class="comment">// ELASUGGESTDELEGATE_H</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif </span><span class="comment">// ELASUGGESTDELEGATE_H</span></div>
 <div class="ttc" id="a_def_8h_html"><div class="ttname"><a href="_def_8h.html">Def.h</a></div></div>
 <div class="ttc" id="abase_8h_html_a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86"><div class="ttname"><a href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">arg_id_kind::index</a></div><div class="ttdeci">@ index</div><div class="ttdef"><b>定义</b> base.h:700</div></div>
-<div class="ttc" id="aclass_ela_suggest_delegate_html_a4be278789c7b5a3693b38c066e7541f6"><div class="ttname"><a href="class_ela_suggest_delegate.html#a4be278789c7b5a3693b38c066e7541f6">ElaSuggestDelegate::paint</a></div><div class="ttdeci">void paint(QPainter *painter, const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const override</div><div class="ttdef"><b>定义</b> ElaSuggestDelegate.cpp:22</div></div>
-<div class="ttc" id="aclass_ela_suggest_delegate_html_a880259e32ad82d0ec996fbfcbbc05319"><div class="ttname"><a href="class_ela_suggest_delegate.html#a880259e32ad82d0ec996fbfcbbc05319">ElaSuggestDelegate::~ElaSuggestDelegate</a></div><div class="ttdeci">~ElaSuggestDelegate() override</div></div>
-<div class="ttc" id="aclass_ela_suggest_delegate_html_aa831ddd874c915d2e8f39aa9424258d1"><div class="ttname"><a href="class_ela_suggest_delegate.html#aa831ddd874c915d2e8f39aa9424258d1">ElaSuggestDelegate::ElaSuggestDelegate</a></div><div class="ttdeci">ElaSuggestDelegate(QObject *parent=nullptr)</div><div class="ttdef"><b>定义</b> ElaSuggestDelegate.cpp:12</div></div>
-<div class="ttc" id="aclass_ela_suggest_delegate_html_abab7c56bd707e57041aaca2f2b3906b1"><div class="ttname"><a href="class_ela_suggest_delegate.html#abab7c56bd707e57041aaca2f2b3906b1">ElaSuggestDelegate::_themeMode</a></div><div class="ttdeci">ElaThemeType::ThemeMode _themeMode</div><div class="ttdef"><b>定义</b> ElaSuggestDelegate.h:22</div></div>
-<div class="ttc" id="aclass_ela_suggest_delegate_html_af83b00f4c72f3192572ad0e4e2e985da"><div class="ttname"><a href="class_ela_suggest_delegate.html#af83b00f4c72f3192572ad0e4e2e985da">ElaSuggestDelegate::sizeHint</a></div><div class="ttdeci">QSize sizeHint(const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const override</div><div class="ttdef"><b>定义</b> ElaSuggestDelegate.cpp:86</div></div>
+<div class="ttc" id="aclass_ela_suggest_delegate_html_a4be278789c7b5a3693b38c066e7541f6"><div class="ttname"><a href="class_ela_suggest_delegate.html#a4be278789c7b5a3693b38c066e7541f6">ElaSuggestDelegate::paint</a></div><div class="ttdeci">void paint(QPainter *painter, const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const override</div><div class="ttdoc">绘制函数</div><div class="ttdef"><b>定义</b> ElaSuggestDelegate.cpp:45</div></div>
+<div class="ttc" id="aclass_ela_suggest_delegate_html_a880259e32ad82d0ec996fbfcbbc05319"><div class="ttname"><a href="class_ela_suggest_delegate.html#a880259e32ad82d0ec996fbfcbbc05319">ElaSuggestDelegate::~ElaSuggestDelegate</a></div><div class="ttdeci">~ElaSuggestDelegate() override</div><div class="ttdoc">析构函数</div></div>
+<div class="ttc" id="aclass_ela_suggest_delegate_html_aa831ddd874c915d2e8f39aa9424258d1"><div class="ttname"><a href="class_ela_suggest_delegate.html#aa831ddd874c915d2e8f39aa9424258d1">ElaSuggestDelegate::ElaSuggestDelegate</a></div><div class="ttdeci">ElaSuggestDelegate(QObject *parent=nullptr)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> ElaSuggestDelegate.cpp:24</div></div>
+<div class="ttc" id="aclass_ela_suggest_delegate_html_abab7c56bd707e57041aaca2f2b3906b1"><div class="ttname"><a href="class_ela_suggest_delegate.html#abab7c56bd707e57041aaca2f2b3906b1">ElaSuggestDelegate::_themeMode</a></div><div class="ttdeci">ElaThemeType::ThemeMode _themeMode</div><div class="ttdoc">当前主题模式</div><div class="ttdef"><b>定义</b> ElaSuggestDelegate.h:55</div></div>
+<div class="ttc" id="aclass_ela_suggest_delegate_html_af83b00f4c72f3192572ad0e4e2e985da"><div class="ttname"><a href="class_ela_suggest_delegate.html#af83b00f4c72f3192572ad0e4e2e985da">ElaSuggestDelegate::sizeHint</a></div><div class="ttdeci">QSize sizeHint(const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const override</div><div class="ttdoc">大小提示</div><div class="ttdef"><b>定义</b> ElaSuggestDelegate.cpp:122</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

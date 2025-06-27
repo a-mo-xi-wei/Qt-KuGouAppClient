@@ -109,83 +109,141 @@ $(function(){initNavTree('class_ela_suggest_box_private.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 
+<p>搜索建议框的私有实现，管理建议项和界面  
+ <a href="#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_ela_suggest_box_private_8h_source.html">ElaSuggestBoxPrivate.h</a>&gt;</code></p>
 <div class="dynheader">
 类 ElaSuggestBoxPrivate 继承关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private__inherit__graph.png" border="0" usemap="#a_ela_suggest_box_private_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="a_ela_suggest_box_private_inherit__map" id="a_ela_suggest_box_private_inherit__map">
+<area shape="rect" title="搜索建议框的私有实现，管理建议项和界面" alt="" coords="5,80,158,107"/>
+<area shape="rect" title=" " alt="" coords="47,5,116,32"/>
+<area shape="poly" title=" " alt="" coords="84,48,84,80,79,80,79,48"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <div class="dynheader">
 ElaSuggestBoxPrivate 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private__coll__graph.png" border="0" usemap="#a_ela_suggest_box_private_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="a_ela_suggest_box_private_coll__map" id="a_ela_suggest_box_private_coll__map">
+<area shape="rect" title="搜索建议框的私有实现，管理建议项和界面" alt="" coords="636,133,789,160"/>
+<area shape="rect" title=" " alt="" coords="285,5,354,32"/>
+<area shape="poly" title=" " alt="" coords="370,15,422,17,484,23,550,37,613,59,641,75,666,94,702,131,698,135,662,98,638,79,611,64,549,42,483,29,422,22,370,20"/>
+<area shape="rect" href="class_ela_suggest_box_search_view_container.html" title="建议框容器，负责绘制阴影和圆角背景" alt="" coords="201,56,438,83"/>
+<area shape="poly" title=" " alt="" coords="454,79,533,90,613,107,681,130,679,135,612,112,532,95,453,84"/>
+<area shape="rect" title=" " alt="" coords="42,56,115,83"/>
+<area shape="poly" title=" " alt="" coords="130,67,201,67,201,72,130,72"/>
+<area shape="rect" href="class_ela_line_edit.html" title=" " alt="" coords="276,107,363,133"/>
+<area shape="poly" title=" " alt="" coords="379,121,636,139,636,144,379,127"/>
+<area shape="rect" title=" " alt="" coords="39,107,118,133"/>
+<area shape="poly" title=" " alt="" coords="133,117,276,117,276,123,133,123"/>
+<area shape="rect" href="class_ela_suggest_model.html" title="建议项模型，管理搜索建议项列表" alt="" coords="258,157,381,184"/>
+<area shape="poly" title=" " alt="" coords="397,171,499,171,612,164,651,158,652,163,613,169,499,176,397,176"/>
+<area shape="rect" title=" " alt="" coords="10,157,147,184"/>
+<area shape="poly" title=" " alt="" coords="162,168,257,168,257,173,162,173"/>
+<area shape="rect" href="class_ela_base_list_view.html" title="基础列表视图，支持自定义滚动条和鼠标事件信号" alt="" coords="260,208,380,235"/>
+<area shape="poly" title=" " alt="" coords="395,219,499,213,556,205,612,192,652,177,687,158,690,163,655,181,613,197,557,210,499,218,395,225"/>
+<area shape="rect" title=" " alt="" coords="38,208,119,235"/>
+<area shape="poly" title=" " alt="" coords="135,219,259,219,259,224,135,224"/>
+<area shape="rect" href="class_ela_suggest_delegate.html" title="建议项委托，负责绘制建议项" alt="" coords="250,259,390,285"/>
+<area shape="poly" title=" " alt="" coords="405,274,454,273,507,267,560,256,611,238,639,221,664,199,699,159,703,162,668,203,642,225,613,242,562,261,508,272,454,278,406,279"/>
+<area shape="rect" title=" " alt="" coords="5,259,152,285"/>
+<area shape="poly" title=" " alt="" coords="167,269,249,269,249,275,167,275"/>
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a8014c5dd64290de6536abe9c072ffcce" id="r_a8014c5dd64290de6536abe9c072ffcce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8014c5dd64290de6536abe9c072ffcce">ElaSuggestBoxPrivate</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a8014c5dd64290de6536abe9c072ffcce"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; 声明控件指针  <br /></td></tr>
 <tr class="separator:a8014c5dd64290de6536abe9c072ffcce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc9f76aff20a45e95b9e7efae43a9fe1" id="r_adc9f76aff20a45e95b9e7efae43a9fe1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc9f76aff20a45e95b9e7efae43a9fe1">~ElaSuggestBoxPrivate</a> () override</td></tr>
+<tr class="memdesc:adc9f76aff20a45e95b9e7efae43a9fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
 <tr class="separator:adc9f76aff20a45e95b9e7efae43a9fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86298c6f8772e74bf4d37a40a8564d72" id="r_a86298c6f8772e74bf4d37a40a8564d72"><td class="memItemLeft" align="right" valign="top">Q_SLOT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86298c6f8772e74bf4d37a40a8564d72">onThemeModeChanged</a> (ElaThemeType::ThemeMode themeMode)</td></tr>
+<tr class="memdesc:a86298c6f8772e74bf4d37a40a8564d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">主题模式变化槽函数  <br /></td></tr>
 <tr class="separator:a86298c6f8772e74bf4d37a40a8564d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a003b06d2a96f9912b720d959698984f5" id="r_a003b06d2a96f9912b720d959698984f5"><td class="memItemLeft" align="right" valign="top">Q_SLOT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a003b06d2a96f9912b720d959698984f5">onSearchEditTextEdit</a> (const QString &amp;searchText)</td></tr>
+<tr class="memdesc:a003b06d2a96f9912b720d959698984f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">搜索编辑框文本编辑槽函数  <br /></td></tr>
 <tr class="separator:a003b06d2a96f9912b720d959698984f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5be4fb6c9094292f0f7fa4f412ed5390" id="r_a5be4fb6c9094292f0f7fa4f412ed5390"><td class="memItemLeft" align="right" valign="top">Q_SLOT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5be4fb6c9094292f0f7fa4f412ed5390">onSearchViewClicked</a> (const QModelIndex &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>)</td></tr>
+<tr class="memdesc:a5be4fb6c9094292f0f7fa4f412ed5390"><td class="mdescLeft">&#160;</td><td class="mdescRight">搜索视图点击槽函数  <br /></td></tr>
 <tr class="separator:a5be4fb6c9094292f0f7fa4f412ed5390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private 槽</h2></td></tr>
 <tr class="memitem:ad24c7d67e1053d48e7cb260a3881956a" id="r_ad24c7d67e1053d48e7cb260a3881956a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad24c7d67e1053d48e7cb260a3881956a">onSearchEditWidthChanged</a> ()</td></tr>
+<tr class="memdesc:ad24c7d67e1053d48e7cb260a3881956a"><td class="mdescLeft">&#160;</td><td class="mdescRight">搜索编辑框宽度变化槽函数  <br /></td></tr>
 <tr class="separator:ad24c7d67e1053d48e7cb260a3881956a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private 成员函数</h2></td></tr>
 <tr class="memitem:ad3fe64acd0c974f31263e3c5c7899434" id="r_ad3fe64acd0c974f31263e3c5c7899434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3fe64acd0c974f31263e3c5c7899434">_startSizeAnimation</a> (QSize oldSize, QSize newSize)</td></tr>
+<tr class="memdesc:ad3fe64acd0c974f31263e3c5c7899434"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动尺寸动画  <br /></td></tr>
 <tr class="separator:ad3fe64acd0c974f31263e3c5c7899434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2595ea995b808dfc7ecc769a59d02bb7" id="r_a2595ea995b808dfc7ecc769a59d02bb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2595ea995b808dfc7ecc769a59d02bb7">_startExpandAnimation</a> ()</td></tr>
+<tr class="memdesc:a2595ea995b808dfc7ecc769a59d02bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动展开动画  <br /></td></tr>
 <tr class="separator:a2595ea995b808dfc7ecc769a59d02bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3979b45fc563a819149dda72308f87e7" id="r_a3979b45fc563a819149dda72308f87e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3979b45fc563a819149dda72308f87e7">_startCloseAnimation</a> ()</td></tr>
+<tr class="memdesc:a3979b45fc563a819149dda72308f87e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动关闭动画  <br /></td></tr>
 <tr class="separator:a3979b45fc563a819149dda72308f87e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c6d17f4805d6f81e1510347aadf28ac" id="r_a3c6d17f4805d6f81e1510347aadf28ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c6d17f4805d6f81e1510347aadf28ac">_doStartSizeAnimation</a> ()</td></tr>
+<tr class="memdesc:a3c6d17f4805d6f81e1510347aadf28ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行尺寸动画  <br /></td></tr>
 <tr class="separator:a3c6d17f4805d6f81e1510347aadf28ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
 <tr class="memitem:abab7c56bd707e57041aaca2f2b3906b1" id="r_abab7c56bd707e57041aaca2f2b3906b1"><td class="memItemLeft" align="right" valign="top">ElaThemeType::ThemeMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abab7c56bd707e57041aaca2f2b3906b1">_themeMode</a></td></tr>
+<tr class="memdesc:abab7c56bd707e57041aaca2f2b3906b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前主题模式  <br /></td></tr>
 <tr class="separator:abab7c56bd707e57041aaca2f2b3906b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeadf73827a7d19242ee71e2858e910d" id="r_aaeadf73827a7d19242ee71e2858e910d"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaeadf73827a7d19242ee71e2858e910d">_lightSearchAction</a> {nullptr}</td></tr>
+<tr class="memdesc:aaeadf73827a7d19242ee71e2858e910d"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮色搜索图标动作  <br /></td></tr>
 <tr class="separator:aaeadf73827a7d19242ee71e2858e910d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94bc6cfb834752f0b38d82a56e770626" id="r_a94bc6cfb834752f0b38d82a56e770626"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94bc6cfb834752f0b38d82a56e770626">_darkSearchAction</a> {nullptr}</td></tr>
+<tr class="memdesc:a94bc6cfb834752f0b38d82a56e770626"><td class="mdescLeft">&#160;</td><td class="mdescRight">暗色搜索图标动作  <br /></td></tr>
 <tr class="separator:a94bc6cfb834752f0b38d82a56e770626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1c4b2f6626009acb7da1633101f4d6b" id="r_aa1c4b2f6626009acb7da1633101f4d6b"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1c4b2f6626009acb7da1633101f4d6b">_suggestionVector</a></td></tr>
+<tr class="memdesc:aa1c4b2f6626009acb7da1633101f4d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">建议项列表  <br /></td></tr>
 <tr class="separator:aa1c4b2f6626009acb7da1633101f4d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98c6dbb6359ae1f8ed7da7b8b86608ee" id="r_a98c6dbb6359ae1f8ed7da7b8b86608ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_suggest_box_search_view_container.html">ElaSuggestBoxSearchViewContainer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98c6dbb6359ae1f8ed7da7b8b86608ee">_searchViewBaseWidget</a> {nullptr}</td></tr>
+<tr class="memdesc:a98c6dbb6359ae1f8ed7da7b8b86608ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">建议框容器  <br /></td></tr>
 <tr class="separator:a98c6dbb6359ae1f8ed7da7b8b86608ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa617199ffacfe37120826d8931edb3b2" id="r_aa617199ffacfe37120826d8931edb3b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_line_edit.html">ElaLineEdit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa617199ffacfe37120826d8931edb3b2">_searchEdit</a> {nullptr}</td></tr>
+<tr class="memdesc:aa617199ffacfe37120826d8931edb3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">搜索编辑框  <br /></td></tr>
 <tr class="separator:aa617199ffacfe37120826d8931edb3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24038ac5893e69407d85932d8eaf09ad" id="r_a24038ac5893e69407d85932d8eaf09ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_suggest_model.html">ElaSuggestModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24038ac5893e69407d85932d8eaf09ad">_searchModel</a> {nullptr}</td></tr>
+<tr class="memdesc:a24038ac5893e69407d85932d8eaf09ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">建议项模型  <br /></td></tr>
 <tr class="separator:a24038ac5893e69407d85932d8eaf09ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8965ede634ffaf4ce9c6c5b40ee59f2" id="r_ad8965ede634ffaf4ce9c6c5b40ee59f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_base_list_view.html">ElaBaseListView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8965ede634ffaf4ce9c6c5b40ee59f2">_searchView</a> {nullptr}</td></tr>
+<tr class="memdesc:ad8965ede634ffaf4ce9c6c5b40ee59f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">建议项视图  <br /></td></tr>
 <tr class="separator:ad8965ede634ffaf4ce9c6c5b40ee59f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7dbd05160ada665c1bea8ecd781bbeb" id="r_ab7dbd05160ada665c1bea8ecd781bbeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ela_suggest_delegate.html">ElaSuggestDelegate</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7dbd05160ada665c1bea8ecd781bbeb">_searchDelegate</a> {nullptr}</td></tr>
+<tr class="memdesc:ab7dbd05160ada665c1bea8ecd781bbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">建议项委托  <br /></td></tr>
 <tr class="separator:ab7dbd05160ada665c1bea8ecd781bbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a645d2fe55e68ff05247de36c948e35" id="r_a8a645d2fe55e68ff05247de36c948e35"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a645d2fe55e68ff05247de36c948e35">_shadowLayout</a> {nullptr}</td></tr>
+<tr class="memdesc:a8a645d2fe55e68ff05247de36c948e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">阴影布局  <br /></td></tr>
 <tr class="separator:a8a645d2fe55e68ff05247de36c948e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b4c7a00c4802fb4b836e83aab634399" id="r_a7b4c7a00c4802fb4b836e83aab634399"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b4c7a00c4802fb4b836e83aab634399">_lastSize</a></td></tr>
+<tr class="memdesc:a7b4c7a00c4802fb4b836e83aab634399"><td class="mdescLeft">&#160;</td><td class="mdescRight">上次尺寸  <br /></td></tr>
 <tr class="separator:a7b4c7a00c4802fb4b836e83aab634399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4e81dd61846b5dbad637229cd9d52ff" id="r_af4e81dd61846b5dbad637229cd9d52ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4e81dd61846b5dbad637229cd9d52ff">_isExpandAnimationFinished</a> {true}</td></tr>
+<tr class="memdesc:af4e81dd61846b5dbad637229cd9d52ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">展开动画完成标志  <br /></td></tr>
 <tr class="separator:af4e81dd61846b5dbad637229cd9d52ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55800ab001c5d0dd1cd6544026065175" id="r_a55800ab001c5d0dd1cd6544026065175"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55800ab001c5d0dd1cd6544026065175">_isCloseAnimationFinished</a> {true}</td></tr>
+<tr class="memdesc:a55800ab001c5d0dd1cd6544026065175"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭动画完成标志  <br /></td></tr>
 <tr class="separator:a55800ab001c5d0dd1cd6544026065175"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe92b1df1d898a8c1b99c472dad27313" id="r_abe92b1df1d898a8c1b99c472dad27313"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe92b1df1d898a8c1b99c472dad27313">_pendingSize</a></td></tr>
+<tr class="memdesc:abe92b1df1d898a8c1b99c472dad27313"><td class="mdescLeft">&#160;</td><td class="mdescRight">待处理的目标尺寸  <br /></td></tr>
 <tr class="separator:abe92b1df1d898a8c1b99c472dad27313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a223b5e51f29f7f50db20b5ac4df21bc5" id="r_a223b5e51f29f7f50db20b5ac4df21bc5"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a223b5e51f29f7f50db20b5ac4df21bc5">_animationTimer</a></td></tr>
+<tr class="memdesc:a223b5e51f29f7f50db20b5ac4df21bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">延迟启动动画的定时器  <br /></td></tr>
 <tr class="separator:a223b5e51f29f7f50db20b5ac4df21bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>搜索建议框的私有实现，管理建议项和界面 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
 <a id="a8014c5dd64290de6536abe9c072ffcce" name="a8014c5dd64290de6536abe9c072ffcce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8014c5dd64290de6536abe9c072ffcce">&#9670;&#160;</a></span>ElaSuggestBoxPrivate()</h2>
 
@@ -208,11 +266,29 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>&lt; 声明控件指针 </p>
+<p>构造函数</p>
+<p>&lt; 边框圆角半径 &lt; 搜索大小写敏感性</p>
+<p>构造函数 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父对象指针，默认为 nullptr</td></tr>
+    <tr><td class="paramname">parent</td><td>父对象指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; 创建动画定时器</p>
+<p>&lt; 设置单次触发</p>
+<p>&lt; 连接超时信号</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_a8014c5dd64290de6536abe9c072ffcce_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_a8014c5dd64290de6536abe9c072ffcce_cgraph" alt=""/></div>
-<!-- MAP 2 -->
+<map name="aclass_ela_suggest_box_private_a8014c5dd64290de6536abe9c072ffcce_cgraph" id="aclass_ela_suggest_box_private_a8014c5dd64290de6536abe9c072ffcce_cgraph">
+<area shape="rect" title="&lt; 声明控件指针" alt="" coords="5,5,158,32"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a3c6d17f4805d6f81e1510347aadf28ac" title="执行尺寸动画" alt="" coords="206,5,360,32"/>
+<area shape="poly" title=" " alt="" coords="158,16,190,16,190,21,158,21"/>
+</map>
 </div>
 
 </div>
@@ -240,6 +316,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>析构函数 </p>
+
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
@@ -265,11 +343,18 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>执行尺寸动画 </p>
+<dl class="section note"><dt>注解</dt><dd>实际启动尺寸变化动画 </dd></dl>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_a3c6d17f4805d6f81e1510347aadf28ac_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_a3c6d17f4805d6f81e1510347aadf28ac_icgraph" alt=""/></div>
-<!-- MAP 3 -->
+<map name="aclass_ela_suggest_box_private_a3c6d17f4805d6f81e1510347aadf28ac_icgraph" id="aclass_ela_suggest_box_private_a3c6d17f4805d6f81e1510347aadf28ac_icgraph">
+<area shape="rect" title="执行尺寸动画" alt="" coords="206,5,360,32"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a8014c5dd64290de6536abe9c072ffcce" title="&lt; 声明控件指针" alt="" coords="5,5,158,32"/>
+<area shape="poly" title=" " alt="" coords="190,21,158,21,158,16,190,16"/>
+</map>
 </div>
 
 </div>
@@ -296,11 +381,21 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>启动关闭动画 </p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_a3979b45fc563a819149dda72308f87e7_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_a3979b45fc563a819149dda72308f87e7_icgraph" alt=""/></div>
-<!-- MAP 4 -->
+<map name="aclass_ela_suggest_box_private_a3979b45fc563a819149dda72308f87e7_icgraph" id="aclass_ela_suggest_box_private_a3979b45fc563a819149dda72308f87e7_icgraph">
+<area shape="rect" title="启动关闭动画" alt="" coords="435,31,581,57"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a003b06d2a96f9912b720d959698984f5" title="搜索编辑框文本编辑槽函数" alt="" coords="239,5,386,32"/>
+<area shape="poly" title=" " alt="" coords="419,35,386,31,387,26,420,30"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a5be4fb6c9094292f0f7fa4f412ed5390" title="搜索视图点击槽函数" alt="" coords="238,56,387,83"/>
+<area shape="poly" title=" " alt="" coords="420,58,388,62,387,57,419,53"/>
+<area shape="rect" href="class_ela_suggest_box.html#a3a1979e9a91786a372ef65f799160517" title="设置搜索编辑框" alt="" coords="5,5,190,32"/>
+<area shape="poly" title=" " alt="" coords="223,21,190,21,190,16,223,16"/>
+</map>
 </div>
 
 </div>
@@ -327,11 +422,19 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>启动展开动画 </p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_a2595ea995b808dfc7ecc769a59d02bb7_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_a2595ea995b808dfc7ecc769a59d02bb7_icgraph" alt=""/></div>
-<!-- MAP 5 -->
+<map name="aclass_ela_suggest_box_private_a2595ea995b808dfc7ecc769a59d02bb7_icgraph" id="aclass_ela_suggest_box_private_a2595ea995b808dfc7ecc769a59d02bb7_icgraph">
+<area shape="rect" title="启动展开动画" alt="" coords="433,5,589,32"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a003b06d2a96f9912b720d959698984f5" title="搜索编辑框文本编辑槽函数" alt="" coords="238,5,385,32"/>
+<area shape="poly" title=" " alt="" coords="417,21,385,21,385,16,417,16"/>
+<area shape="rect" href="class_ela_suggest_box.html#a3a1979e9a91786a372ef65f799160517" title="设置搜索编辑框" alt="" coords="5,5,190,32"/>
+<area shape="poly" title=" " alt="" coords="222,21,190,21,190,16,222,16"/>
+</map>
 </div>
 
 </div>
@@ -362,11 +465,33 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>启动尺寸动画 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldSize</td><td>旧尺寸 </td></tr>
+    <tr><td class="paramname">newSize</td><td>新尺寸</td></tr>
+    <tr><td class="paramname">oldSize</td><td>旧尺寸 </td></tr>
+    <tr><td class="paramname">newSize</td><td>新尺寸 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>使用定时器延迟启动动画 </dd></dl>
+<p>&lt; 更新待处理尺寸</p>
+<p>&lt; 启动定时器，延迟 30ms</p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_ad3fe64acd0c974f31263e3c5c7899434_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_ad3fe64acd0c974f31263e3c5c7899434_icgraph" alt=""/></div>
-<!-- MAP 6 -->
+<map name="aclass_ela_suggest_box_private_ad3fe64acd0c974f31263e3c5c7899434_icgraph" id="aclass_ela_suggest_box_private_ad3fe64acd0c974f31263e3c5c7899434_icgraph">
+<area shape="rect" title="启动尺寸动画" alt="" coords="471,31,609,57"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a003b06d2a96f9912b720d959698984f5" title="搜索编辑框文本编辑槽函数" alt="" coords="257,5,404,32"/>
+<area shape="poly" title=" " alt="" coords="455,36,404,30,405,25,456,31"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#ad24c7d67e1053d48e7cb260a3881956a" title="搜索编辑框宽度变化槽函数" alt="" coords="238,56,423,83"/>
+<area shape="poly" title=" " alt="" coords="456,57,424,61,423,55,455,52"/>
+<area shape="rect" href="class_ela_suggest_box.html#a3a1979e9a91786a372ef65f799160517" title="设置搜索编辑框" alt="" coords="5,5,190,32"/>
+<area shape="poly" title=" " alt="" coords="241,21,190,21,190,16,241,16"/>
+</map>
 </div>
 
 </div>
@@ -385,20 +510,56 @@ Private 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>qDebug()&lt;&lt;"resp text: "&lt;&lt;songSinger + "-" + songName;</p>
-<p>qDebug() &lt;&lt; "Raw response:" &lt;&lt; byt;</p>
-<p>qDebug() &lt;&lt; artist + "-" + songName;</p>
+
+<p>搜索编辑框文本编辑槽函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">searchText</td><td>搜索文本 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>根据文本获取建议项并显示</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">searchText</td><td>搜索文本 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>根据文本获取建议项并显示，包括网络请求（QQ音乐和网易云音乐API） </dd></dl>
+<p>&lt; 关闭建议框</p>
+<p>&lt; 清除现有建议项</p>
+<p>&lt; 添加 QQ 音乐建议项</p>
+<p>&lt; 添加网易云音乐建议项</p>
+<p>&lt; 设置模型建议项</p>
+<p>&lt; 启动展开动画</p>
+<p>&lt; 启动关闭动画</p>
+<p>&lt; 筛选匹配建议项</p>
+<p>&lt; 设置模型建议项</p>
+<p>&lt; 启动展开动画</p>
+<p>&lt; 启动关闭动画</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_a003b06d2a96f9912b720d959698984f5_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_a003b06d2a96f9912b720d959698984f5_cgraph" alt=""/></div>
-<!-- MAP 7 -->
+<map name="aclass_ela_suggest_box_private_a003b06d2a96f9912b720d959698984f5_cgraph" id="aclass_ela_suggest_box_private_a003b06d2a96f9912b720d959698984f5_cgraph">
+<area shape="rect" title="搜索编辑框文本编辑槽函数" alt="" coords="5,56,153,83"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a3979b45fc563a819149dda72308f87e7" title="启动关闭动画" alt="" coords="206,5,352,32"/>
+<area shape="poly" title=" " alt="" coords="134,53,208,34,209,39,135,58"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a2595ea995b808dfc7ecc769a59d02bb7" title="启动展开动画" alt="" coords="201,56,357,83"/>
+<area shape="poly" title=" " alt="" coords="153,67,185,67,185,72,153,72"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#ad3fe64acd0c974f31263e3c5c7899434" title="启动尺寸动画" alt="" coords="210,107,348,133"/>
+<area shape="poly" title=" " alt="" coords="135,81,209,100,208,105,134,86"/>
+</map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_a003b06d2a96f9912b720d959698984f5_icgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_a003b06d2a96f9912b720d959698984f5_icgraph" alt=""/></div>
-<!-- MAP 8 -->
+<map name="aclass_ela_suggest_box_private_a003b06d2a96f9912b720d959698984f5_icgraph" id="aclass_ela_suggest_box_private_a003b06d2a96f9912b720d959698984f5_icgraph">
+<area shape="rect" title="搜索编辑框文本编辑槽函数" alt="" coords="238,5,385,32"/>
+<area shape="rect" href="class_ela_suggest_box.html#a3a1979e9a91786a372ef65f799160517" title="设置搜索编辑框" alt="" coords="5,5,190,32"/>
+<area shape="poly" title=" " alt="" coords="222,21,190,21,190,16,222,16"/>
+</map>
 </div>
 
 </div>
@@ -425,11 +586,18 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>搜索编辑框宽度变化槽函数 </p>
+<dl class="section note"><dt>注解</dt><dd>更新建议框位置和尺寸 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_ad24c7d67e1053d48e7cb260a3881956a_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_ad24c7d67e1053d48e7cb260a3881956a_cgraph" alt=""/></div>
-<!-- MAP 9 -->
+<map name="aclass_ela_suggest_box_private_ad24c7d67e1053d48e7cb260a3881956a_cgraph" id="aclass_ela_suggest_box_private_ad24c7d67e1053d48e7cb260a3881956a_cgraph">
+<area shape="rect" title="搜索编辑框宽度变化槽函数" alt="" coords="5,5,191,32"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#ad3fe64acd0c974f31263e3c5c7899434" title="启动尺寸动画" alt="" coords="239,5,377,32"/>
+<area shape="poly" title=" " alt="" coords="191,16,223,16,223,21,191,21"/>
+</map>
 </div>
 
 </div>
@@ -448,11 +616,28 @@ Private 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>搜索视图点击槽函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>模型索引 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>处理建议项点击 </dd></dl>
+<p>&lt; 清除选择</p>
+<p>&lt; 发射点击信号</p>
+<p>&lt; 设置编辑框文本</p>
+<p>&lt; 关闭建议框</p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ela_suggest_box_private_a5be4fb6c9094292f0f7fa4f412ed5390_cgraph.png" border="0" usemap="#aclass_ela_suggest_box_private_a5be4fb6c9094292f0f7fa4f412ed5390_cgraph" alt=""/></div>
-<!-- MAP 10 -->
+<map name="aclass_ela_suggest_box_private_a5be4fb6c9094292f0f7fa4f412ed5390_cgraph" id="aclass_ela_suggest_box_private_a5be4fb6c9094292f0f7fa4f412ed5390_cgraph">
+<area shape="rect" title="搜索视图点击槽函数" alt="" coords="5,5,155,32"/>
+<area shape="rect" href="class_ela_suggest_box_private.html#a3979b45fc563a819149dda72308f87e7" title="启动关闭动画" alt="" coords="203,5,349,32"/>
+<area shape="poly" title=" " alt="" coords="155,16,187,16,187,21,155,21"/>
+</map>
 </div>
 
 </div>
@@ -471,6 +656,19 @@ Private 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>主题模式变化槽函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">themeMode</td><td>主题模式 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>更新搜索图标 </dd></dl>
+<p>&lt; 更新主题模式</p>
+<p>&lt; 移除旧图标</p>
+<p>&lt; 添加新图标</p>
+<p>&lt; 刷新编辑框</p>
 
 </div>
 </div>
@@ -495,6 +693,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>延迟启动动画的定时器 </p>
+
 </div>
 </div>
 <a id="a94bc6cfb834752f0b38d82a56e770626" name="a94bc6cfb834752f0b38d82a56e770626"></a>
@@ -516,6 +716,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>暗色搜索图标动作 </p>
 
 </div>
 </div>
@@ -539,6 +741,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>关闭动画完成标志 </p>
+
 </div>
 </div>
 <a id="af4e81dd61846b5dbad637229cd9d52ff" name="af4e81dd61846b5dbad637229cd9d52ff"></a>
@@ -560,6 +764,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>展开动画完成标志 </p>
 
 </div>
 </div>
@@ -583,6 +789,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>上次尺寸 </p>
+
 </div>
 </div>
 <a id="aaeadf73827a7d19242ee71e2858e910d" name="aaeadf73827a7d19242ee71e2858e910d"></a>
@@ -604,6 +812,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>亮色搜索图标动作 </p>
 
 </div>
 </div>
@@ -627,6 +837,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>待处理的目标尺寸 </p>
+
 </div>
 </div>
 <a id="ab7dbd05160ada665c1bea8ecd781bbeb" name="ab7dbd05160ada665c1bea8ecd781bbeb"></a>
@@ -648,6 +860,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>建议项委托 </p>
 
 </div>
 </div>
@@ -671,6 +885,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>搜索编辑框 </p>
+
 </div>
 </div>
 <a id="a24038ac5893e69407d85932d8eaf09ad" name="a24038ac5893e69407d85932d8eaf09ad"></a>
@@ -692,6 +908,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>建议项模型 </p>
 
 </div>
 </div>
@@ -715,6 +933,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>建议项视图 </p>
+
 </div>
 </div>
 <a id="a98c6dbb6359ae1f8ed7da7b8b86608ee" name="a98c6dbb6359ae1f8ed7da7b8b86608ee"></a>
@@ -736,6 +956,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>建议框容器 </p>
 
 </div>
 </div>
@@ -759,6 +981,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>阴影布局 </p>
+
 </div>
 </div>
 <a id="aa1c4b2f6626009acb7da1633101f4d6b" name="aa1c4b2f6626009acb7da1633101f4d6b"></a>
@@ -781,6 +1005,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>建议项列表 </p>
+
 </div>
 </div>
 <a id="abab7c56bd707e57041aaca2f2b3906b1" name="abab7c56bd707e57041aaca2f2b3906b1"></a>
@@ -802,6 +1028,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>当前主题模式 </p>
 
 </div>
 </div>

@@ -1,9 +1,9 @@
 var dir_cf1ffdc92c26a120e325aa3deba09a13 =
 [
-    [ "moc_BaseMenu.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_w8913f2dc2dff71bea40838433e2e6aad.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_w8913f2dc2dff71bea40838433e2e6aad" ],
-    [ "moc_BaseMenu.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_wd7653e93f1961be4bd0732852106cd95.html", null ],
-    [ "moc_MenuBtn.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_wd456cb6bb6d50fdeb45f2c0250caefc0.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_wd456cb6bb6d50fdeb45f2c0250caefc0" ],
-    [ "moc_MenuBtn.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_w91d3af01ab019d27f47e16aa70e09828.html", null ],
-    [ "moc_MyMenu.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_wb802d761038213fc77e2bb33d089ce70.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_wb802d761038213fc77e2bb33d089ce70" ],
-    [ "moc_MyMenu.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_my_menu_2_my_menu__autogen_2_e_w7fa1f7a13eb5c4f0ce0e6aadd52562b1.html", null ]
+    [ "moc_BaseMenu.cpp", "moc___base_menu_8cpp.html", "moc___base_menu_8cpp" ],
+    [ "moc_BaseMenu.cpp.d", "moc___base_menu_8cpp_8d.html", null ],
+    [ "moc_MenuBtn.cpp", "moc___menu_btn_8cpp.html", "moc___menu_btn_8cpp" ],
+    [ "moc_MenuBtn.cpp.d", "moc___menu_btn_8cpp_8d.html", null ],
+    [ "moc_MyMenu.cpp", "moc___my_menu_8cpp.html", "moc___my_menu_8cpp" ],
+    [ "moc_MyMenu.cpp.d", "moc___my_menu_8cpp_8d.html", null ]
 ];

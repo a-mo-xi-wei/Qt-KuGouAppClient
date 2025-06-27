@@ -8,6 +8,7 @@ var class_local_song =
     [ "find_more_music", "class_local_song.html#aa23356daca3ed71116d6ae55df2991f4", null ],
     [ "getMenuPosition", "class_local_song.html#aeab41b278e449a68fbd1c98c9e1516a8", null ],
     [ "getMetaData", "class_local_song.html#ac8878f7731a414cdea15e292e1abb1c6", null ],
+    [ "handleSuggestBoxSuggestionClicked", "class_local_song.html#afd928c0268a021fbb05d4357f3c2de66", null ],
     [ "initMusicItem", "class_local_song.html#a4c31fa17ce6a5cc8533d92486ed88966", null ],
     [ "initUi", "class_local_song.html#afba6e95967cc3eb25fd518f7bde6ec04", null ],
     [ "loadNextSong", "class_local_song.html#a6219ec9f188d024275d4f70f10278df7", null ],
@@ -48,6 +49,7 @@ var class_local_song =
     [ "playNextSong", "class_local_song.html#a28d2968ec110c34c15f2354b2ca85f41", null ],
     [ "playPrevSong", "class_local_song.html#a6d7933cb6403dc2a79154add780b1e19", null ],
     [ "resizeEvent", "class_local_song.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
+    [ "scrollToItem", "class_local_song.html#a09a9f9a11a92f99bc63be245778c0903", null ],
     [ "setPlayItemHighlight", "class_local_song.html#acdf3c8266ececd2ce19f0116af28fc89", null ],
     [ "updateCountLabel", "class_local_song.html#afe21a797d3d22561398cb2e4d360bc96", null ],
     [ "updateCurPlayIndex", "class_local_song.html#ac8c5ea460f7dfd2af0f743eabb55e876", null ],
@@ -66,6 +68,7 @@ var class_local_song =
     [ "m_searchAction", "class_local_song.html#ab6c42d383d83d4acdfb5081e799c29da", null ],
     [ "m_setPlayIndex", "class_local_song.html#aaa73e333e4ba9c9f8db86096111e8e99", null ],
     [ "m_songQueue", "class_local_song.html#ab49f1da5acac0dccb404483557094ee0", null ],
+    [ "m_songSingerToKey", "class_local_song.html#a3bdaf3d5d6c37a8dfc99ce99649e2646", null ],
     [ "m_sortOptMenu", "class_local_song.html#ad67a8f8c13a90fda48f45117bdcdb4fd", null ],
     [ "ui", "class_local_song.html#ab37e6623266f853afef0564624d42fc6", null ]
 ];

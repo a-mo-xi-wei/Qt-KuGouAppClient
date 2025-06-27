@@ -1,7 +1,7 @@
 var dir_49b8190676e13f22bda6b2b3b4d75f28 =
 [
-    [ "moc_ElaText.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_ela_widget_tools_2_ela_widget_todd66ea55bac98b3d3e13dd41630ba290.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_ela_widget_tools_2_ela_widget_todd66ea55bac98b3d3e13dd41630ba290" ],
-    [ "moc_ElaText.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_ela_widget_tools_2_ela_widget_to31190094e64ebc49f61cc021e8c533f8.html", null ],
-    [ "moc_ElaTextPrivate.cpp", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_ela_widget_tools_2_ela_widget_to1501e06587500630ba4ee184102de714.html", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_ela_widget_tools_2_ela_widget_to1501e06587500630ba4ee184102de714" ],
-    [ "moc_ElaTextPrivate.cpp.d", "build_2_desktop___qt__6__6__2___min_g_w__64__bit-_release_2ui_2_ela_widget_tools_2_ela_widget_toc3aed617da822512067c331a616ef113.html", null ]
+    [ "moc_ElaText.cpp", "moc___ela_text_8cpp.html", "moc___ela_text_8cpp" ],
+    [ "moc_ElaText.cpp.d", "moc___ela_text_8cpp_8d.html", null ],
+    [ "moc_ElaTextPrivate.cpp", "moc___ela_text_private_8cpp.html", "moc___ela_text_private_8cpp" ],
+    [ "moc_ElaTextPrivate.cpp.d", "moc___ela_text_private_8cpp_8d.html", null ]
 ];

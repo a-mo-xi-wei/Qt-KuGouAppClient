@@ -1,5 +1,6 @@
 var class_snap_slider =
 [
+    [ "SnapSlider", "class_snap_slider.html#a06cc982955b84d16d8eb3b1d00ef8e6e", null ],
     [ "mouseMoveEvent", "class_snap_slider.html#a4d538d95963e25c7a27250e441321d72", null ],
     [ "mousePressEvent", "class_snap_slider.html#a7523c71b2bf60975302287ec8923f80e", null ],
     [ "mouseReleaseEvent", "class_snap_slider.html#a2de3e1806dc8e5d659fc1f35545a5b87", null ],
