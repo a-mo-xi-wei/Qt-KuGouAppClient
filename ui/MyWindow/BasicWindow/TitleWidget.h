@@ -321,6 +321,11 @@ signals:
      */
     void refresh();
 
+    /**
+     * @brief 搜索信号，通知搜索界面显示
+     */
+    void suggestionClicked(const QString &suggestText, const QVariantMap &suggestData);
+
 private:
     Ui::TitleWidget *ui;                        ///< UI 界面对象
     QStack<StackType> m_backTypeStack;          ///< 后退导航栈

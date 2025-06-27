@@ -172,6 +172,8 @@ void TitleWidget::initUi()
     ui->search_song_suggest_box->setMinimumWidth(0);
     ui->search_song_suggest_box->setLineEdit(searchLineEdit);
     searchLineEdit->setPlaceholderText("搜索歌曲");
+
+    connect(ui->search_song_suggest_box,&ElaSuggestBox::suggestionClicked,this,&TitleWidget::suggestionClicked);
     ///< qDebug()<<"当前样式："<<searchLineEdit->styleSheet();
 
     //除非自定义QToolButton否则达不到 CSS 中 border-image 的效果
