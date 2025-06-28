@@ -121,6 +121,24 @@ private:
     void initStackedWidget();
 
     /**
+     * @brief 初始化搜索结果界面
+     */
+    void initSearchResultWidget();
+
+    /**
+     * @brief 初始化搜索结果音乐项
+     * @param item 音乐项
+     */
+    void initSearchResultMusicItem(MusicItemWidget *item);
+
+    /**
+     * @brief 异步加载搜索结果里面的封面图片
+     * @param item 音乐项
+     * @param imageUrl 封面图片的网络路径
+     */
+    void loadCoverAsync(MusicItemWidget *item, const QString &imageUrl);
+
+    /**
      * @brief 模板函数，初始化堆栈窗口组件
      * @tparam T 组件类型
      * @param component 组件智能指针
@@ -315,6 +333,12 @@ private slots:
      * @note 切换到全部音乐界面
      */
     void on_all_music_toolButton_clicked();
+
+    /**
+    * @brief 处理suggestBox选中项槽函数
+     * @note 切换搜索结果界面
+     */
+    void handleSuggestBoxSuggestionClicked(const QString &suggestText, const QVariantMap &suggestData);
 
     // 播放控件槽函数
     /**
@@ -539,29 +563,31 @@ protected:
 private:
     Ui::KuGouApp *ui;                                   ///< UI 界面指针
     VideoPlayer* m_player;                              ///< 音频播放器实例
-    std::unique_ptr<QButtonGroup> m_menuBtnGroup;       ///< 菜单按钮组
-    std::unique_ptr<QSizeGrip> m_sizeGrip;              ///< 窗口大小调整控件
+    std::unique_ptr<QButtonGroup>       m_menuBtnGroup; ///< 菜单按钮组
+    std::unique_ptr<QSizeGrip>          m_sizeGrip;     ///< 窗口大小调整控件
     std::unique_ptr<QPropertyAnimation> m_animation;    ///< 窗口缩放动画
-    std::unique_ptr<RefreshMask> m_refreshMask;         ///< 刷新遮罩
+    std::unique_ptr<RefreshMask>        m_refreshMask;  ///< 刷新遮罩
     std::unique_ptr<QtMaterialSnackbar> m_snackbar;     ///< 消息提示条
-    SpeedDialogState m_speedDialogState;                ///< 状态管理对象
+    SpeedDialogState                    m_speedDialogState;  ///< 状态管理对象
     // 堆栈窗口组件
-    std::unique_ptr<RecommendForYou> m_recommendForYou; ///< 推荐界面
-    std::unique_ptr<MusicRepository> m_musicRepository; ///< 音乐库界面
-    std::unique_ptr<Channel> m_channel;                 ///< 频道界面
-    std::unique_ptr<Video> m_video;                     ///< 视频界面
-    std::unique_ptr<Live> m_live;                       ///< 直播界面
-    std::unique_ptr<AiChat> m_aiChat;                   ///< AI 聊天界面
-    std::unique_ptr<SongList> m_songList;               ///< 歌单界面
-    std::unique_ptr<DailyRecommend> m_dailyRecommend;   ///< 每日推荐界面
-    std::unique_ptr<MyCollection> m_collection;         ///< 我的收藏界面
-    std::unique_ptr<LocalDownload> m_localDownload;     ///< 本地下载界面
-    std::unique_ptr<MusicCloudDisk> m_musicCloudDisk;   ///< 音乐云盘界面
-    std::unique_ptr<PurchasedMusic> m_purchasedMusic;   ///< 已购音乐界面
-    std::unique_ptr<RecentlyPlayed> m_recentlyPlayed;   ///< 最近播放界面
-    std::unique_ptr<AllMusic> m_allMusic;               ///< 全部音乐界面
-    std::unique_ptr<ListenBook> m_listenBook;           ///< 听书界面
-    std::unique_ptr<Search> m_search;                   ///< 搜索界面
+    std::unique_ptr<RecommendForYou>    m_recommendForYou; ///< 推荐界面
+    std::unique_ptr<MusicRepository>    m_musicRepository; ///< 音乐库界面
+    std::unique_ptr<Channel>            m_channel;         ///< 频道界面
+    std::unique_ptr<Video>              m_video;           ///< 视频界面
+    std::unique_ptr<Live>               m_live;            ///< 直播界面
+    std::unique_ptr<AiChat>             m_aiChat;          ///< AI 聊天界面
+    std::unique_ptr<SongList>           m_songList;        ///< 歌单界面
+    std::unique_ptr<DailyRecommend>     m_dailyRecommend;  ///< 每日推荐界面
+    std::unique_ptr<MyCollection>       m_collection;      ///< 我的收藏界面
+    std::unique_ptr<LocalDownload>      m_localDownload;   ///< 本地下载界面
+    std::unique_ptr<MusicCloudDisk>     m_musicCloudDisk;  ///< 音乐云盘界面
+    std::unique_ptr<PurchasedMusic>     m_purchasedMusic;  ///< 已购音乐界面
+    std::unique_ptr<RecentlyPlayed>     m_recentlyPlayed;  ///< 最近播放界面
+    std::unique_ptr<AllMusic>           m_allMusic;        ///< 全部音乐界面
+    std::unique_ptr<ListenBook>         m_listenBook;      ///< 听书界面
+    std::unique_ptr<Search>             m_search;          ///< 搜索界面
+    std::unique_ptr<QWidget>            m_searchResultWidget;    ///< 搜索结果界面
+    QVector<MusicItemWidget *>          m_searchMusicItemVector; ///< 音乐项容器
     // 窗口缩放相关
     bool m_isTransForming = false;                      ///< 是否正在执行缩放动画
     bool m_isSingleCircle = false;                      ///< 是否单曲循环

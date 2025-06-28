@@ -36,6 +36,9 @@
  */
 QPixmap roundedPix(const QPixmap &src, QSize size, int radius)
 {
+    if (src.isNull()) {
+        return QPixmap(); // 返回空图片而不是尝试处理
+    }
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
     QPixmap dest(size);
     dest.fill(Qt::transparent);
@@ -63,6 +66,7 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
     this->m_duration = m_information.duration;
     this->m_cover = m_information.cover;
     this->m_singer = m_information.singer;
+    m_information.album = m_information.album.isEmpty() ? "未知专辑" : m_information.album;
     this->m_album = m_information.album;
     //qDebug()<<"m_index: "<<m_index<<" name: "<<m_name<<" duration: "<<m_duration;
     //    " cover: "<<m_cover<<"m_singer: "<<m_singer;
@@ -142,12 +146,22 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
     });
 }
 
+void MusicItemWidget::setCover(const QPixmap &pix) {
+    this->m_cover = pix;
+    // 更新封面标签的显示
+    if (m_coverLab && !pix.isNull()) {
+        m_coverLab->setPixmap(roundedPix(pix, m_coverLab->size(), PIX_RADIUS));
+    }
+    update();
+}
+
 /**
  * @brief 设置索引文本
  * @param index 索引值
  */
-void MusicItemWidget::setIndexText(const int &index) const
+void MusicItemWidget::setIndexText(const int &index)
 {
+    this->m_index = index;
     m_indexLab->setText(QString("%1").arg(index, 2, 10, QChar('0')));
 }
 
@@ -190,7 +204,15 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
     this->m_singer = info.singer;
     this->m_album = info.album;
     this->m_indexLab->setText(QString("%1").arg(this->m_index+1, 2, 10, QChar('0')));
-    this->m_coverLab->setPixmap(roundedPix(this->m_cover, this->m_coverLab->size(), PIX_RADIUS));
+
+    // 确保初始化时设置封面
+    if (!info.cover.isNull()) {
+        m_coverLab->setPixmap(roundedPix(info.cover, m_coverLab->size(), PIX_RADIUS));
+    } else if (!info.coverUrl.isEmpty()) {
+        // 如果有封面URL但还没加载，可以显示占位图
+        m_coverLab->setPixmap(roundedPix(QPixmap(":/Res/tablisticon/pix4.png"), m_coverLab->size(), PIX_RADIUS));
+    }
+
     /*this->m_nameLab->setText(this->m_name);
     this->m_singerLab->setText(this->m_singer);*/
     //qDebug() << "m_nameLab width:" << m_nameLab->width();
@@ -212,7 +234,7 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
     auto albumLab_toolTip = new ElaToolTip(this->m_albumLab);
     albumLab_toolTip->setToolTip(this->m_album);
     QString elidedAlbum = metrics.elidedText(this->m_album, Qt::ElideRight, this->m_albumLab->width());
-    this->m_albumLab->setText("<span style='color:gray;'>《" + elidedAlbum + "》</span>");
+    this->m_albumLab->setText("<span style='color:gray;'>《" + elidedAlbum + "》&nbsp;</span>");
 
     this->m_durationLab->setText(this->m_duration);
     update(); // 重绘
@@ -402,6 +424,16 @@ void MusicItemWidget::resizeEvent(QResizeEvent *event)
     //qDebug()<<"当前宽度："<<this->width();
     //qDebug()<<"event->size().width() = "<<event->size().width();
     //qDebug()<<"父对象宽度："<<qobject_cast<QWidget*>(this->parent())->width();
+    QFontMetrics metrics(this->m_nameLab->font());
+    QString elidedName = metrics.elidedText(this->m_name, Qt::ElideRight, this->m_nameLab->width());
+    this->m_nameLab->setText(elidedName);
+    //qDebug() << "m_singerLab width:" << m_singerLab->width();
+
+    QString elidedSinger = metrics.elidedText(this->m_singer, Qt::ElideRight, this->m_singerLab->width());
+    this->m_singerLab->setText(elidedSinger);
+
+    QString elidedAlbum = metrics.elidedText(this->m_album, Qt::ElideRight, this->m_albumLab->width());
+    this->m_albumLab->setText("<span style='color:gray;'>《" + elidedAlbum + "》</span>");
 }
 
 /**
@@ -608,6 +640,10 @@ void MusicItemWidget::initUi()
     this->m_downloadToolBtn = new QToolButton(this);
     this->m_collectToolBtn  = new QToolButton(this);
     this->m_moreToolBtn     = new QToolButton(this);
+
+    m_nameLab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    m_singerLab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    m_albumLab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 
     this->m_nameLab->setFixedWidth(100);
     this->m_singerLab->setFixedWidth(100);
