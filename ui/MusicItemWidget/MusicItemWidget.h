@@ -80,6 +80,12 @@ public:
     void setCover(const QPixmap& pix);
 
     /**
+     * @brief 设置歌曲热度
+     * @param popular 热度值
+     */
+    void setPopular(const int&  popular) const;
+
+    /**
      * @brief 设置索引文本
      * @param index 索引值
      */
@@ -369,6 +375,7 @@ private:
     QLabel*                 m_nameLab{};           ///< 歌曲名称标签
     QLabel*                 m_singerLab{};         ///< 歌手名称标签
     QLabel*                 m_albumLab{};          ///< 专辑名称标签
+    QLabel*                 m_popularLab{};        ///< 热度标签
     QLabel*                 m_durationLab{};       ///< 时长标签
     QToolButton*            m_playToolBtn{};       ///< 播放按钮
     QToolButton*            m_playNextToolBtn{};   ///< 下一首按钮

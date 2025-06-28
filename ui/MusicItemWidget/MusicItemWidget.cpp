@@ -19,6 +19,7 @@
 #include <QPaintEvent>
 #include <QGuiApplication>
 #include <QPainterPath>
+#include <QRandomGenerator>
 
 #define PIX_SIZE 50 ///< 图片大小
 
@@ -153,6 +154,14 @@ void MusicItemWidget::setCover(const QPixmap &pix) {
         m_coverLab->setPixmap(roundedPix(pix, m_coverLab->size(), PIX_RADIUS));
     }
     update();
+}
+
+void MusicItemWidget::setPopular(const int &popular) const {
+    if (popular < 0)
+        this->m_popularLab->setPixmap(QPixmap(QString(":/Res/tabIcon/%1-grid-popular.svg").arg(QRandomGenerator::global()->bounded(0, 7))));
+    else
+        this->m_popularLab->setPixmap(QPixmap(QString(":/Res/tabIcon/%1-grid-popular.svg").arg(popular)));
+    this->m_popularLab->show();
 }
 
 /**
@@ -634,6 +643,7 @@ void MusicItemWidget::initUi()
     this->m_nameLab         = new QLabel(this);
     this->m_singerLab       = new QLabel(this);
     this->m_albumLab        = new QLabel(this);
+    this->m_popularLab      = new QLabel(this);
     this->m_durationLab     = new QLabel(this);
     this->m_playToolBtn     = new QToolButton(this);
     this->m_playNextToolBtn = new QToolButton(this);
@@ -647,7 +657,12 @@ void MusicItemWidget::initUi()
 
     this->m_nameLab->setFixedWidth(100);
     this->m_singerLab->setFixedWidth(100);
-    this->m_albumLab->setFixedWidth(100);
+    this->m_albumLab->setFixedWidth(110);
+
+    this->m_popularLab->setPixmap(QPixmap(QString(":/Res/tabIcon/%1-grid-popular.svg").arg(QRandomGenerator::global()->bounded(0, 7))));
+    this->m_popularLab->hide(); ///< 默认不显示
+    auto popularLab_toolTip = new ElaToolTip(this->m_popularLab);
+    popularLab_toolTip->setToolTip("热度");
 
     this->m_playToolBtn     ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-gray.svg")));
     this->m_playNextToolBtn ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-music-list-gray.svg")));
@@ -672,6 +687,8 @@ void MusicItemWidget::initUi()
     hlayout->addStretch(1);
     hlayout->addWidget(m_albumLab);
     hlayout->addStretch(1);
+    hlayout->addWidget(m_popularLab);
+    hlayout->addSpacing(10);
     hlayout->addWidget(m_durationLab);
     // 添加第二个弹簧，拉伸系数为 1
     hlayout->addStretch(1);
