@@ -1014,7 +1014,7 @@ void KuGouApp::handleSuggestBoxSuggestionClicked(const QString &suggestText, con
 
         QNetworkRequest request(requestUrl);
         auto reply = manager.get(request);
-        QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+        connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
         loop.exec();
 
         if (reply->error() != QNetworkReply::NoError) {
@@ -1102,6 +1102,7 @@ void KuGouApp::handleSuggestBoxSuggestionClicked(const QString &suggestText, con
                      << " 时长：" << song.duration<< " 播放链接："<< song.netUrl<<" 封面图片链接："<<song.coverUrl;
 
             auto item = new MusicItemWidget(song, this);
+            item->setPopular(6-i);
             item->setIndexText(i);
             initSearchResultMusicItem(item);
             m_searchMusicItemVector.append(item);
