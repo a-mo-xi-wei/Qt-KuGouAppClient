@@ -85,15 +85,14 @@ ElaSuggestBox::ElaSuggestBox(QWidget *parent)
     d->_searchView->setModel(d->_searchModel);                ///< 设置视图模型
     d->_searchView->setItemDelegate(d->_searchDelegate);      ///< 设置视图委托
     d->_searchViewBaseWidget->hide();                         ///< 初始隐藏建议框
+    connect(d->_searchView, &ElaBaseListView::clicked, d, &ElaSuggestBoxPrivate::onSearchViewClicked); ///< 连接点击信号
     connect(d->_searchEdit, &ElaLineEdit::textChanged, d, &ElaSuggestBoxPrivate::onSearchEditTextEdit); ///< 连接文本变化信号
     //connect(d->_searchEdit, &ElaLineEdit::focusIn, d, &ElaSuggestBoxPrivate::onSearchEditTextEdit);
-    connect(d->_searchView, &ElaBaseListView::clicked, d, &ElaSuggestBoxPrivate::onSearchViewClicked); ///< 连接点击信号
 
     // @note 焦点事件
     connect(d->_searchEdit, &ElaLineEdit::wmFocusOut, this, [d] {
         d->_startCloseAnimation();                            ///< 失去焦点时关闭建议框
     });
-
     QApplication::instance()->installEventFilter(this);       ///< 安装应用程序级事件过滤器
 }
 
@@ -252,7 +251,10 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit)
         });
     });
     connect(d->_searchEdit, &ElaLineEdit::widthChanged, d, &ElaSuggestBoxPrivate::onSearchEditWidthChanged);
-
+    connect(d->_searchEdit,&ElaLineEdit::returnPressed, d, [d, this] {
+        d->_searchEdit->clearFocus();
+        emit searchTextReturnPressed(d->_searchEdit->text());
+    });
     // @note 添加到布局
     if (mainLayout)
     {

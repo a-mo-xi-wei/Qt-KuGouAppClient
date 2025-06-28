@@ -34,12 +34,15 @@ class QSpacerItem;
 typedef struct SongInformation
 {
     int                     index;        ///< 音乐索引
+    QString                 coverUrl;     ///< 网络封面图片路径
     QPixmap                 cover;        ///< 封面图片
     QString                 songName;     ///< 歌曲名称
     QString                 singer;       ///< 歌手名称
     QString                 duration;     ///< 歌曲时长
     QString                 album;        ///< 专辑名称
-    QString                 mediaPath;    ///< 媒体文件路径
+    QString                 hash;         ///< 歌曲hash值
+    QString                 mediaPath;    ///< 本地媒体文件路径
+    QString                 netUrl;       ///< 网络文件路径
     QDateTime               addTime;      ///< 添加时间
     int                     playCount;    ///< 播放次数
 
@@ -71,10 +74,16 @@ public:
     explicit MusicItemWidget(SongInfor info, QWidget *parent = nullptr);
 
     /**
+     * @brief 额外添加的设置封面图片的接口
+     * @param pix 封面图片
+     */
+    void setCover(const QPixmap& pix);
+
+    /**
      * @brief 设置索引文本
      * @param index 索引值
      */
-    void setIndexText(const int &index) const;
+    void setIndexText(const int &index);
 
     /**
      * @brief 设置定时器时间间隔，控制填充速度

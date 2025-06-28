@@ -135,3 +135,76 @@ QSlider::sub-page:horizontal {
 .QScrollBar::sub-line:vertical, .QScrollBar::add-line:vertical {
     background: none;
 }
+
+
+/*--------------------searchResultWidget-operationWidget------------------------------*/
+QToolButton#searchResultWidget-playAllBtn ,
+QToolButton#searchResultWidget-highListenBtn {
+    background-color: qlineargradient(x1: 0, y1: 0,x2: 1, y2: 0,stop: 0 #67BDFF,stop: 1 #29A2FF);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    padding-left: 14px;
+}
+QToolButton#searchResultWidget-playAllBtn:hover ,
+QToolButton#searchResultWidget-highListenBtn:hover {
+    background-color: #29A2FF;
+}
+QToolButton#searchResultWidget-downloadAllBtn ,
+QToolButton#searchResultWidget-batchOperationBtn {
+    background-color: #E8EDF5;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    font-size: 13px;
+    padding-left: 14px;
+}
+QLabel#searchResultTopLabel{
+    font-size: 13px;
+}
+/* 只作用于 #searchResultWidgetScrollArea 里的纵向滚动条 */
+QScrollArea#searchResultWidgetScrollArea {
+    background-color: transparent;
+}
+
+/* 单独设置视口（viewport）透明 */
+QScrollArea#searchResultWidgetScrollArea::viewport {
+    background-color: transparent;
+}
+
+/* 设置内容区域透明（scrollAreaWidgetContents） */
+QScrollArea#searchResultWidgetScrollArea > QWidget > QWidget#searchResultWidgetScrollWidget {
+    background-color: transparent;
+}
+#searchResultWidgetScrollArea QScrollBar:vertical {
+    border: 0px solid rgb(173,216,230);
+    border-radius:4px;
+    /*background-color: rgb(231,166,190);*/
+    width: 10px;
+    margin: 20px 0px 20px 0px;
+}
+
+#searchResultWidgetScrollArea QScrollBar:vertical:hover {
+    border: 1px solid rgb(173,216,230);
+    /*background-color: rgb(231,166,190);*/
+}
+
+/* 滑块 */
+#searchResultWidgetScrollArea QScrollBar::handle:vertical {
+    background-color: rgb(95, 159, 211);
+    border-radius: 4px;
+}
+#searchResultWidgetScrollArea QScrollBar::handle:vertical:hover {
+    background-color: rgb(80, 143, 206);
+}
+
+/* 箭头和空白区域 */
+#searchResultWidgetScrollArea QScrollBar::up-arrow:vertical,
+#searchResultWidgetScrollArea QScrollBar::down-arrow:vertical,
+#searchResultWidgetScrollArea QScrollBar::add-page:vertical,
+#searchResultWidgetScrollArea QScrollBar::sub-page:vertical,
+#searchResultWidgetScrollArea QScrollBar::add-line:vertical,
+#searchResultWidgetScrollArea QScrollBar::sub-line:vertical {
+    background: none;
+}

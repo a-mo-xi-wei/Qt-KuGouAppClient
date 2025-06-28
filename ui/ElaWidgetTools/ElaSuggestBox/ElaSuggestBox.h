@@ -116,6 +116,8 @@ Q_SIGNALS:
      * @param suggestData 建议数据
      */
     Q_SIGNAL void suggestionClicked(const QString& suggestText, const QVariantMap& suggestData);
+
+    Q_SIGNAL void searchTextReturnPressed(const QString &searchText, const QVariantMap &suggestData = {});
 };
 
 #endif // ELASUGGESTBOX_H
