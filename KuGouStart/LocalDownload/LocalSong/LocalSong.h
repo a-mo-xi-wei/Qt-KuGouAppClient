@@ -93,6 +93,16 @@ private:
     void loadNextSong();
 
     /**
+     * @brief 开始串行加载歌曲
+     */
+    void startSerialLoading();
+
+    /**
+     * @brief 结束加载
+     */
+    void finishLoading();
+
+    /**
      * @brief 获取菜单位置
      * @param pos 鼠标位置
      * @note 动态调整菜单位置以适应屏幕
@@ -389,6 +399,10 @@ private:
     QVector<MusicItemWidget *>           m_musicItemVector;         ///< 音乐项控件
     std::unordered_map<QJsonObject, QString, JsonObjectHash> m_songSingerToKey;         ///< 歌曲信息 --> suggestion Key
     MusicItemWidget                     *m_curPlayItemWidget{};     ///< 当前播放控件
+    QTimer* m_loadTimer = nullptr;                                  ///< 加载定时器
+    int m_currentLoadIndex = 0;                                     ///< 当前加载索引
+    bool m_isLoading = false;                                       ///< 是否正在加载
+
     bool                                 m_isOrderPlay = false;     ///< 是否顺序播放
     QAction                             *m_searchAction{};          ///< 搜索动作
     QString                              m_mediaPath;               ///< 当前媒体路径
