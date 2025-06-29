@@ -35,7 +35,12 @@ public:
     /**
      * @brief 显示加载遮罩
      */
-    void showLoading();
+    void showLoading(const int& loadingTime = 2000);
+
+    /**
+     * @brief 保持加载遮罩
+     */
+    void keepLoading();
 
     /**
      * @brief 隐藏加载遮罩
