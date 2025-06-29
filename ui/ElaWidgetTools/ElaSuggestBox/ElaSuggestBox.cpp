@@ -21,6 +21,7 @@
 #include <QApplication>
 #include <QEvent>
 #include <QMouseEvent>
+#include <QToolButton>
 #include <QTimer>
 
 Q_PROPERTY_CREATE_Q_CPP(ElaSuggestBox, int, BorderRadius)    ///< 实现 BorderRadius 属性
@@ -49,13 +50,30 @@ ElaSuggestBox::ElaSuggestBox(QWidget *parent)
 
     d->_themeMode = eTheme->getThemeMode();                   ///< 获取当前主题模式
     connect(eTheme, &ElaTheme::themeModeChanged, d, &ElaSuggestBoxPrivate::onThemeModeChanged); ///< 连接主题变化信号
+    // 获取关联的QToolButton
+    QToolButton* searchButton = nullptr;
     if (d->_themeMode == ElaThemeType::Light)
     {
         d->_searchEdit->addAction(d->_lightSearchAction, QLineEdit::TrailingPosition); ///< 添加亮色图标
+        foreach (QToolButton* btn, d->_searchEdit->findChildren<QToolButton*>()) {
+            if (btn->defaultAction() == d->_lightSearchAction) {
+                searchButton = btn;
+                break;
+            }
+        }
     }
     else
     {
         d->_searchEdit->addAction(d->_darkSearchAction, QLineEdit::TrailingPosition); ///< 添加暗色图标
+        foreach (QToolButton* btn, d->_searchEdit->findChildren<QToolButton*>()) {
+            if (btn->defaultAction() == d->_darkSearchAction) {
+                searchButton = btn;
+                break;
+            }
+        }
+    }
+    if (searchButton) {
+        searchButton->setCursor(Qt::PointingHandCursor);
     }
 
     connect(d->_lightSearchAction, &QAction::triggered, this, [=](bool checked) {
@@ -228,14 +246,39 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit)
     d->_searchEdit->setClearButtonEnabled(true);              ///< 启用清除按钮
     d->_searchEdit->setIsClearButtonEnable(true);             ///< 启用清除按钮
 
+    // 获取关联的QToolButton
+    QToolButton* searchButton = nullptr;
     // @note 添加图标动作
     if (d->_themeMode == ElaThemeType::Light)
     {
-        d->_searchEdit->addAction(d->_lightSearchAction, QLineEdit::TrailingPosition);
+        d->_searchEdit->addAction(d->_lightSearchAction, QLineEdit::TrailingPosition);///< 添加亮色图标
+        connect(d->_lightSearchAction, &QAction::triggered, d, [d, this] {
+            d->_searchEdit->clearFocus();
+            emit searchTextReturnPressed(d->_searchEdit->text());
+        });
+        foreach (QToolButton* btn, d->_searchEdit->findChildren<QToolButton*>()) {
+            if (btn->defaultAction() == d->_lightSearchAction) {
+                searchButton = btn;
+                break;
+            }
+        }
     }
     else
     {
-        d->_searchEdit->addAction(d->_darkSearchAction, QLineEdit::TrailingPosition);
+        d->_searchEdit->addAction(d->_darkSearchAction, QLineEdit::TrailingPosition);///< 添加暗色图标
+        connect(d->_darkSearchAction, &QAction::triggered, d, [d, this] {
+            d->_searchEdit->clearFocus();
+            emit searchTextReturnPressed(d->_searchEdit->text());
+        });
+        foreach (QToolButton* btn, d->_searchEdit->findChildren<QToolButton*>()) {
+            if (btn->defaultAction() == d->_darkSearchAction) {
+                searchButton = btn;
+                break;
+            }
+        }
+    }
+    if (searchButton) {
+        searchButton->setCursor(Qt::PointingHandCursor);
     }
 
     // @note 重新连接信号槽
