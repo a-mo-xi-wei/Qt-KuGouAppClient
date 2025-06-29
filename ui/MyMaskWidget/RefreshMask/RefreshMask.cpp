@@ -70,14 +70,31 @@ void RefreshMask::initUi()
 /**
  * @brief 显示加载遮罩
  */
-void RefreshMask::showLoading()
+void RefreshMask::showLoading(const int& loadingTime)
 {
+    if (!maskWidget->isHidden() || !progress->isHidden())return;
     //this->resize(this->parentWidget()->size());
     this->raise();          // 确保位于父部件最上层
     this->show();           // 显示 RefreshMask 自身
     maskWidget->show();
     progress->show(); // 开始旋转动画
-    m_timer->start(2000); // 启动定时器
+    m_timer->start(loadingTime); // 启动定时器
+}
+
+/**
+ * @brief 保持加载遮罩
+ */
+void RefreshMask::keepLoading()
+{
+    if (!maskWidget->isHidden() || !progress->isHidden())return;
+    // 确保遮罩位于最上层并显示
+    this->raise();
+    this->show();
+    maskWidget->show();
+    progress->show();
+
+    // 停止定时器以防止自动隐藏
+    m_timer->stop();
 }
 
 /**
