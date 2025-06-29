@@ -358,6 +358,26 @@ void KuGouApp::initSearchResultWidget() {
         hlay2->addWidget(downloadAllBtn);
         hlay2->addWidget(batchOperationBtn);
         hlay2->addStretch();
+        connect(playAllBtn,&QToolButton::clicked, [this,playAllBtn] {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                             QString("%1 功能暂未实现 敬请期待").arg(playAllBtn->text()),
+                             1000, this->window());    ///< 显示提示
+        });
+        connect(highListenBtn,&QToolButton::clicked, [this,highListenBtn] {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                             QString("%1 功能暂未实现 敬请期待").arg(highListenBtn->text()),
+                             1000, this->window());    ///< 显示提示
+            });
+        connect(downloadAllBtn,&QToolButton::clicked, [this,downloadAllBtn] {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                             QString("%1 功能暂未实现 敬请期待").arg(downloadAllBtn->text()),
+                             1000, this->window());    ///< 显示提示
+        });
+        connect(batchOperationBtn,&QToolButton::clicked, [this,batchOperationBtn] {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                             QString("%1 功能暂未实现 敬请期待").arg(batchOperationBtn->text()),
+                             1000, this->window());    ///< 显示提示
+        });
     }
 
     auto scrollArea = new MyScrollArea;
@@ -1094,25 +1114,35 @@ void KuGouApp::handleSuggestBoxSuggestionClicked(const QString &suggestText, con
             return;
         }
 
-        // 添加歌曲项
-        for (int i = 0; i < songs.size(); ++i) {
-            auto &song = songs[i];
-            qDebug() << "获取到音乐：" << i + 1 << " 歌曲名：" << song.songName
-                     << " 歌手：" << song.singer << " 专辑：" << song.album
-                     << " 时长：" << song.duration<< " 播放链接："<< song.netUrl<<" 封面图片链接："<<song.coverUrl;
+        // 使用定时器实现逐项添加
+        int currentIndex = 0;
+        QTimer* addTimer = new QTimer(this);
+        this->m_refreshMask->keepLoading();
+        connect(addTimer, &QTimer::timeout, this, [=]() mutable {
+            if (currentIndex >= songs.size()) {
+                addTimer->deleteLater();
+                return;
+            }
 
+            auto &song = songs[currentIndex];
             auto item = new MusicItemWidget(song, this);
-            item->setPopular(6-i);
-            item->setIndexText(i);
+            item->setPopular(6 - currentIndex);
+            item->setIndexText(currentIndex + 1);
             initSearchResultMusicItem(item);
-            m_searchMusicItemVector.append(item);
-            layout->insertWidget(layout->count() - 1, item);
 
-            // 异步加载封面（如果URL有效）
+            layout->insertWidget(layout->count() - 1, item);
+            m_searchMusicItemVector.append(item);
+
+            // 异步加载封面
             if (!song.coverUrl.isEmpty()) {
                 loadCoverAsync(item, song.coverUrl);
             }
-        }
+
+            currentIndex++;
+        });
+        connect(addTimer, &QTimer::destroyed, [this]{ this->m_refreshMask->hideLoading(); });
+        // 设置添加间隔（100ms添加一个）
+        addTimer->start(100);
     });
 }
 

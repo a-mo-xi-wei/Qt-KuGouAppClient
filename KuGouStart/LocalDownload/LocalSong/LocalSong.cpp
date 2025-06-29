@@ -228,29 +228,41 @@ void LocalSong::initUi()
  */
 void LocalSong::getMetaData()
 {
+    // 保存当前媒体路径，因为可能在异步操作中发生变化
+    QString currentMediaPath = this->m_mediaPath;
     connect(m_player.get(), &QMediaPlayer::mediaStatusChanged, [=](const QMediaPlayer::MediaStatus &status) {
+        // 确保处理的是当前请求的媒体
+        if (this->m_mediaPath != currentMediaPath) {
+            return;
+        }
         if (status == QMediaPlayer::LoadedMedia)
         {
             this->m_player->stop();                      ///< 停止播放
             const QMediaMetaData data = this->m_player->metaData(); ///< 获取元数据
+
             auto title = data.value(QMediaMetaData::Title).toString(); ///< 获取标题
             if (!re.match(title).hasMatch())
             {
                 title = QUrl::fromLocalFile(this->m_mediaPath).fileName(); ///< 使用文件名
                 title = title.first(title.lastIndexOf('.')); ///< 去除扩展名
             }
+
             auto singer = data.value(QMediaMetaData::ContributingArtist).toString(); ///< 获取歌手
             if (!re.match(singer).hasMatch())
                 singer = QStringLiteral("网络歌手");     ///< 设置默认歌手
+
             auto album = data.value(QMediaMetaData::AlbumTitle).toString();
             if (!re.match(album).hasMatch())
                 album = QStringLiteral("网络专辑");
+
             auto cover = data.value(QMediaMetaData::ThumbnailImage).value<QPixmap>(); ///< 获取封面
             if (cover.isNull())
             {
                 cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(QRandomGenerator::global()->bounded(1, 11))); ///< 设置随机封面
             }
+
             const auto duration = data.value(QMediaMetaData::Duration).value<qint64>(); ///< 获取时长
+
             SongInfor tempInformation;                   ///< 创建歌曲信息
             tempInformation.index = static_cast<int>(this->m_locationMusicVector.size()); ///< 设置索引
             tempInformation.cover = cover;                ///< 设置封面
@@ -261,6 +273,7 @@ void LocalSong::getMetaData()
             tempInformation.mediaPath = this->m_mediaPath; ///< 设置路径
             tempInformation.addTime = QDateTime::currentDateTime(); ///< 设置添加时间
             tempInformation.playCount = 0;               ///< 设置播放次数
+
             const auto it = std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), tempInformation); ///< 检查重复
             if (it == this->m_locationMusicVector.end())
             {
@@ -269,8 +282,7 @@ void LocalSong::getMetaData()
                 initMusicItem(item);                     ///< 初始化音乐项
                 this->m_musicItemVector.emplace_back(item); ///< 添加音乐项
                 const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
-                if (!layout)
-                    return;
+                if (!layout) return;
                 layout->insertWidget(layout->count() - 2, item); ///< 插入音乐项
 
                 ///< 添加suggestion
@@ -286,11 +298,13 @@ void LocalSong::getMetaData()
                     suggestData);
 
                 ui->widget->hide();                      ///< 隐藏初始界面
+
                 qDebug() << "成功添加歌曲 ：" << item->m_information.mediaPath;
                 STREAM_INFO() << "成功添加歌曲 ：" << item->m_information.mediaPath.toStdString(); ///< 记录日志
-                ElaMessageBar::success(ElaMessageBarType::BottomRight, "Success", QString("成功添加音乐 : %1").arg(item->m_information.songName), 1000, this->window()); ///< 显示成功提示
+                ElaMessageBar::success(ElaMessageBarType::BottomRight, "Success", QString("成功添加音乐 : %1").arg(item->m_information.songName), 500, this->window()); ///< 显示成功提示
+
                 emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size())); ///< 更新数量标签
-                loadNextSong();                          ///< 加载下一首
+
                 QByteArray imageData;                    ///< 转换封面为字节流
                 QBuffer buffer(&imageData);
                 buffer.open(QIODevice::WriteOnly);
@@ -315,10 +329,15 @@ void LocalSong::getMetaData()
             {
                 STREAM_INFO() << title.toStdString() << " 已存在，请勿重复插入"; ///< 记录日志
                 qDebug() << title << " 已存在，请勿重复插入";
-                loadNextSong();                          ///< 加载下一首
                 return;
             }
         }
+        else if (status == QMediaPlayer::InvalidMedia) {
+            qWarning() << "无效媒体文件:" << currentMediaPath;
+        }
+
+        // 无论成功失败，都断开这个连接，避免多次触发
+        disconnect(m_player.get(), &QMediaPlayer::mediaStatusChanged, this, nullptr);
     });
 }
 
@@ -328,19 +347,69 @@ void LocalSong::getMetaData()
  */
 void LocalSong::loadNextSong()
 {
-    if (!m_songQueue.isEmpty())
-    {
-        this->m_mediaPath = m_songQueue.dequeue();   ///< 取出歌曲路径
-        this->m_player = std::make_unique<QMediaPlayer>(this); ///< 重建播放器
-        getMetaData();                               ///< 重新连接元数据
-        this->m_player->setSource(QUrl::fromLocalFile(this->m_mediaPath)); ///< 设置媒体源
-        this->m_player->play();                      ///< 播放触发元数据
+    // 检查是否完成加载
+    if (m_currentLoadIndex >= m_songQueue.size()) {
+        finishLoading();
+        return;
     }
-    else
-    {
-        if (this->m_isSorting)
-            this->m_sortOptMenu->btnClickAgain();    ///< 保持当前排序
+
+    // 取出当前歌曲路径
+    this->m_mediaPath = m_songQueue.at(m_currentLoadIndex);
+    m_currentLoadIndex++;
+
+    // 创建播放器
+    this->m_player = std::make_unique<QMediaPlayer>(this);
+    getMetaData();
+    this->m_player->setSource(QUrl::fromLocalFile(this->m_mediaPath));
+    this->m_player->play();
+}
+
+/**
+ * @brief 串行加载歌曲
+ */
+void LocalSong::startSerialLoading()
+{
+    if (m_songQueue.isEmpty()) return;
+
+    // 如果已经在加载中，停止当前加载
+    if (m_loadTimer && m_loadTimer->isActive()) {
+        m_loadTimer->stop();
     }
+
+    // 重置状态
+    m_currentLoadIndex = 0;
+    m_isLoading = true;
+
+    // 创建定时器
+    if (!m_loadTimer) {
+        m_loadTimer = new QTimer(this);
+        connect(m_loadTimer, &QTimer::timeout, this, &LocalSong::loadNextSong);
+    }
+
+    // 设置加载间隔（200ms）
+    m_loadTimer->start(200);
+
+    // 立即加载第一首
+    loadNextSong();
+}
+
+void LocalSong::finishLoading()
+{
+    if (m_loadTimer && m_loadTimer->isActive()) {
+        m_loadTimer->stop();
+    }
+
+    m_songQueue.clear();
+    m_isLoading = false;
+
+    if (this->m_isSorting) {
+        this->m_sortOptMenu->btnClickAgain();
+    }
+
+    // 显示完成提示
+    ElaMessageBar::success(ElaMessageBarType::BottomRight, "完成",
+                          QString("成功添加 %1 首歌曲").arg(m_currentLoadIndex),
+                          1500, this->window());
 }
 
 /**
@@ -608,7 +677,8 @@ void LocalSong::on_local_add_toolButton_clicked()
     {
         this->m_songQueue.enqueue(path);                 ///< 添加到队列
     }
-    this->loadNextSong();                                ///< 加载下一首
+    // 启动串行加载
+    startSerialLoading();                                ///< 加载下一首
 }
 
 /**
