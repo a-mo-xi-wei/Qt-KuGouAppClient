@@ -398,6 +398,7 @@ void KuGouApp::initSearchResultWidget() {
     auto vlay = new QVBoxLayout(this->m_searchResultWidget.get()); ///< 搜索结果中间垂直布局
     vlay->setSpacing(10);
     vlay->addLayout(hlay1);
+    vlay->addSpacing(5);
     vlay->addLayout(hlay2);
     vlay->addWidget(scrollArea);
     vlay->addSpacerItem(new QSpacerItem(QSizePolicy::Preferred, QSizePolicy::Preferred));
@@ -1008,10 +1009,16 @@ void KuGouApp::handleSuggestBoxSuggestionClicked(const QString &suggestText, con
     ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
     auto topLab = m_searchResultWidget->findChild<QLabel *>("searchResultTopLabel");
     if (topLab) {
-        QString htmlText = QString(
-                    R"(<span style="color:gray;">搜索到 </span><span style="color:red;">%1</span><span style="color:gray;"> 的相关歌曲</span>)")
-                .arg(suggestText);
-        topLab->setText(htmlText);
+        if (!suggestText.trimmed().isEmpty()){
+            QString htmlText = QString(
+                       R"(<span style="color:gray;">搜索到 </span><span style="color:red;">%1</span><span style="color:gray;"> 的相关歌曲</span>)")
+                   .arg(suggestText);
+            topLab->setText(htmlText);
+        }
+        else {
+            const auto htmlText = QString(R"(<span style="color:gray;">搜索到今日推荐歌曲</span>)");
+            topLab->setText(htmlText);
+        }
     }
     ///< 清空容器
     for (MusicItemWidget *item: m_searchMusicItemVector) {

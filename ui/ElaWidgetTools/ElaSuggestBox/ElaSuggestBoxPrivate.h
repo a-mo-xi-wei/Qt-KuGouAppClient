@@ -110,6 +110,7 @@ private:
     QSize _lastSize;                                         ///< 上次尺寸
     bool _isExpandAnimationFinished{true};                   ///< 展开动画完成标志
     bool _isCloseAnimationFinished{true};                    ///< 关闭动画完成标志
+    bool m_ignoreTextChanges = false;                        ///< 忽略文本变化标志
 
     /**
      * @brief 启动尺寸动画

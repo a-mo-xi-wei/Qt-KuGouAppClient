@@ -86,7 +86,7 @@ void ElaSuggestBoxPrivate::onThemeModeChanged(ElaThemeType::ThemeMode themeMode)
 void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
 {
     Q_Q(ElaSuggestBox);
-    if (searchText.isEmpty())
+    if (searchText.isEmpty() || m_ignoreTextChanges)
     {
         _startCloseAnimation();                               ///< 关闭建议框
         return;
@@ -150,7 +150,7 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
             QJsonObject rootObj = doc.object();
             QJsonArray songsArray = rootObj["result"].toObject()["songs"].toArray();
 
-            for (const QJsonValue &val : songsArray)
+            for (const auto &val : songsArray)
             {
                 QJsonObject songObj = val.toObject();
                 QString songName = songObj["name"].toString();
@@ -162,6 +162,7 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
 
         reply->deleteLater();
         reply1->deleteLater();
+        if (m_ignoreTextChanges) return;
         if (!_suggestionVector.isEmpty())
         {
             _searchModel->setSearchSuggestion(_suggestionVector); ///< 设置模型建议项
@@ -201,6 +202,7 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
                 suggestionVector.append(suggest);             ///< 筛选匹配建议项
             }
         }
+        if (m_ignoreTextChanges) return;
         if (!suggestionVector.isEmpty())
         {
             _searchModel->setSearchSuggestion(suggestionVector); ///< 设置模型建议项
@@ -256,7 +258,6 @@ void ElaSuggestBoxPrivate::onSearchEditWidthChanged()
         _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
 
         _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
-
         _searchView->move(_searchView->x(), -(40 * rowCount + 16));
     }
 }
@@ -270,13 +271,16 @@ void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index)
 {
     Q_Q(ElaSuggestBox);
     _searchView->clearSelection();                            ///< 清除选择
-    if (!index.isValid())
-    {
+    if (!index.isValid()) {
         return;
     }
+    // 立即禁用视图交互
+    _searchView->setEnabled(false);
+
     ElaSuggestion *suggest = _searchModel->getSearchSuggestion(index.row());
     Q_EMIT q->suggestionClicked(suggest->getSuggestText(), suggest->getSuggestData()); ///< 发射点击信号
     _searchEdit->setText(suggest->getSuggestText());          ///< 设置编辑框文本
+    _searchEdit->clearFocus();
     _startCloseAnimation();                                   ///< 关闭建议框
 }
 
@@ -323,10 +327,13 @@ void ElaSuggestBoxPrivate::_startExpandAnimation()
  */
 void ElaSuggestBoxPrivate::_startCloseAnimation()
 {
-    if (!_isCloseAnimationFinished)
-    {
+    qDebug() << "_isCloseAnimationFinished:" << _isCloseAnimationFinished;
+    if (!_isCloseAnimationFinished){
         return;
     }
+    // 确保视图已禁用（双重保障）
+    _searchView->setEnabled(false);
+
     _isExpandAnimationFinished = true;
     _isCloseAnimationFinished = false;
     QPropertyAnimation *baseWidgetsAnimation = new QPropertyAnimation(_searchViewBaseWidget, "size");
@@ -336,10 +343,13 @@ void ElaSuggestBoxPrivate::_startCloseAnimation()
     baseWidgetsAnimation->setEndValue(QSize(_searchViewBaseWidget->width(), 0));
     baseWidgetsAnimation->start(QAbstractAnimation::DeleteWhenStopped);
     QPropertyAnimation *closeAnimation = new QPropertyAnimation(_searchView, "pos");
-    connect(closeAnimation, &QPropertyAnimation::finished, this, [=]() {
+    connect(closeAnimation, &QPropertyAnimation::finished, this, [=] {
         _isCloseAnimationFinished = true;
         _searchModel->clearSearchNode();
         _searchViewBaseWidget->hide();
+        // 重新启用视图（为下次显示准备）
+        _searchView->setEnabled(true);
+        qDebug() << "===========隐藏OK";
     });
     closeAnimation->setDuration(300);
     closeAnimation->setEasingCurve(QEasingCurve::InOutSine);
