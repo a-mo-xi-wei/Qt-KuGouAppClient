@@ -1,7 +1,7 @@
 /**
  * @file ElaSuggestBox.h
  * @brief 定义 ElaSuggestBox 类，搜索建议框控件
- * @author WeiWang
+ * @author [Liniyous]
  * @date 2025-06-25
  * @version 1.0
  */

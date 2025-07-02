@@ -1,7 +1,7 @@
 /**
 * @file ElaSuggestDelegate.h
  * @brief 定义 ElaSuggestDelegate 类，建议项委托
- * @author WeiWang
+ * @author [Liniyous]
  * @date 2025-06-25
  * @version 1.0
  */
