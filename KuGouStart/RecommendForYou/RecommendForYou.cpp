@@ -137,7 +137,7 @@ void RecommendForYou::initTabWidget()
         return;                                          ///< 空指针保护
     }
     layout->insertWidget(layout->count() - 1,
-                         new TableWidget(QStringLiteral("今日专属推荐"), TableWidget::KIND::BlockList, this)); ///< 添加今日专属推荐
+                         new TableWidget(QStringLiteral(" 今日专属推荐"), TableWidget::KIND::BlockList, this)); ///< 添加今日专属推荐
     layout->insertWidget(layout->count() - 1,
                          new TableWidget(QStringLiteral("潮流音乐站 "), TableWidget::KIND::ItemList, this)); ///< 添加潮流音乐站
     layout->insertWidget(layout->count() - 1,
