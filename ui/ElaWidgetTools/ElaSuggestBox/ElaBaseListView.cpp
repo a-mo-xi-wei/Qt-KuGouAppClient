@@ -1,7 +1,7 @@
 /**
  * @file ElaBaseListView.cpp
  * @brief 实现 ElaBaseListView 类，基础列表视图
- * @author WeiWang
+ * @author [Liniyous]
  * @date 2025-06-25
  * @version 1.0
  */

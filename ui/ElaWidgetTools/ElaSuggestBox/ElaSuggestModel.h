@@ -1,7 +1,7 @@
 /**
 * @file ElaSuggestModel.h
  * @brief 定义 ElaSuggestModel 类，建议项模型
- * @author WeiWang
+ * @author [Liniyous]
  * @date 2025-06-25
  * @version 1.0
  */

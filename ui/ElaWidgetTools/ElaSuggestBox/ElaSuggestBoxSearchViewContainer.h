@@ -1,7 +1,7 @@
 /**
 * @file ElaSuggestBoxSearchViewContainer.h
  * @brief 定义 ElaSuggestBoxSearchViewContainer 类，建议框容器
- * @author WeiWang
+ * @author [Liniyous]
  * @date 2025-06-25
  * @version 1.0
  */

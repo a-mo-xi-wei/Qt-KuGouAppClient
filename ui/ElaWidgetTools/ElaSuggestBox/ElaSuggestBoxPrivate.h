@@ -1,7 +1,7 @@
 /**
  * @file ElaSuggestBoxPrivate.h
  * @brief 定义 ElaSuggestBoxPrivate 类，搜索建议框的私有实现
- * @author WeiWang
+ * @author [Liniyous]
  * @date 2025-06-25
  * @version 1.0
  */
