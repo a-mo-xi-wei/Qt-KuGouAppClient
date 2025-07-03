@@ -24,48 +24,44 @@ void Transparent_transition_interface::paintEvent(QPaintEvent *event) {
     painter.setViewport(0, 0, 477, 620);
     painter.setWindow(0, 0, 477, 620);
 
-    this->draw_text();
-    this->draw_text2();
+    draw_text(&painter);
+    draw_text2(&painter);
 }
 
-void Transparent_transition_interface::draw_text() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setRenderHint(QPainter::TextAntialiasing);
+void Transparent_transition_interface::draw_text(QPainter *painter) {
+    painter->setRenderHint(QPainter::TextAntialiasing);
 
     QRect rect1(0, 0, 0, 0);
     QFont font1;
     font1.setPointSize(29);
     font1.setBold(true);
     font1.setWordSpacing(1);
-    painter.setFont(font1);
+    painter->setFont(font1);
     QColor semiTransparent(255, 255, 255, 255);
-    painter.setPen(semiTransparent);
+    painter->setPen(semiTransparent);
 
-    QRect actualRect = painter.boundingRect(rect1, Qt::AlignCenter, large_text);
+    QRect actualRect = painter->boundingRect(rect1, Qt::AlignCenter, large_text);
     rect1.setHeight(actualRect.height());
     rect1.setWidth(actualRect.width());
     rect1.moveCenter(QPoint(width() / 2, height() * 0.41));
-    painter.drawText(rect1, large_text);
+    painter->drawText(rect1, large_text);
 }
 
-void Transparent_transition_interface::draw_text2() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setRenderHint(QPainter::TextAntialiasing);
+void Transparent_transition_interface::draw_text2(QPainter *painter) {
+    painter->setRenderHint(QPainter::TextAntialiasing);
 
     QRect rect1(0, 0, 0, 0);
     QFont font1;
     font1.setPointSize(11);
     font1.setBold(true);
     font1.setWordSpacing(1);
-    painter.setFont(font1);
+    painter->setFont(font1);
     QColor semiTransparent(255, 255, 255, 255);
-    painter.setPen(semiTransparent);
+    painter->setPen(semiTransparent);
 
-    QRect actualRect = painter.boundingRect(rect1, Qt::AlignCenter, small_text);
+    QRect actualRect = painter->boundingRect(rect1, Qt::AlignCenter, small_text);
     rect1.setHeight(actualRect.height());
     rect1.setWidth(actualRect.width());
     rect1.moveCenter(QPoint(width() / 2, height() * 0.49));
-    painter.drawText(rect1, small_text);
+    painter->drawText(rect1, small_text);
 }

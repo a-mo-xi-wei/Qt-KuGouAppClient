@@ -12,9 +12,9 @@ class Login_form : public QWidget {
 public:
     explicit Login_form(QWidget *parent = nullptr);
 
-    void crop_corner();
+    void crop_corner(QPainter *painter);
 
-    void draw_text();
+    void draw_text(QPainter *painter);
 
     void animations();
 

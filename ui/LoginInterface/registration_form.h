@@ -14,9 +14,9 @@ public:
 
     void animations();
 
-    void crop_corner();
+    void crop_corner(QPainter *painter);
 
-    void draw_text();
+    void draw_text(QPainter *painter);
 
 public slots:
     void execute_animation(Login_button::AnimationState State);

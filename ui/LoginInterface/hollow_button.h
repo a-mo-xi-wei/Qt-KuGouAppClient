@@ -37,11 +37,11 @@ public:
     void animation_status(bool status);
 
 private:
-    void draw_disappearing_circle();
+    void draw_disappearing_circle(QPainter *event);
 
-    void draw_border();
+    void draw_border(QPainter *event);
 
-    void draw_text();
+    void draw_text(QPainter *event);
 
 signals:
     void page_changed(AnimationState status);

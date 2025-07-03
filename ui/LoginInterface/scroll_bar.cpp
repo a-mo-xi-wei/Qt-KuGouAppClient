@@ -16,19 +16,16 @@ void Scroll_bar::paintEvent(QPaintEvent *event) {
     painter.setViewport(0, 0, width(), height());
     painter.setWindow(0, 0, width(), height());
 
-    this->crop_corner();
+    crop_corner(&painter);
 }
 
-void Scroll_bar::crop_corner() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-
+void Scroll_bar::crop_corner(QPainter *painter) {
     QPainterPath path;
     path.addRoundedRect(0, 0, width(), height(), height() / 4, height() / 4);
-    painter.setClipPath(path);
-    painter.setPen(Qt::NoPen);
+    painter->setClipPath(path);
+    painter->setPen(Qt::NoPen);
 
     QBrush Brush(QColor(123, 150, 228, 255));
-    painter.setBrush(Brush);
-    painter.drawRect(0, 0, width(), height());
+    painter->setBrush(Brush);
+    painter->drawRect(0, 0, width(), height());
 }

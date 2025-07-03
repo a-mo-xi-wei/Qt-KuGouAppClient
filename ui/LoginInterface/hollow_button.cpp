@@ -31,61 +31,54 @@ void Hollow_button::paintEvent(QPaintEvent *event) {
     painter.setViewport(0, 0, width(), height());
     painter.setWindow(0, 0, width(), height());
 
-    this->draw_border();
-    this->draw_text();
-    this->draw_disappearing_circle();
+    draw_border(&painter);
+    draw_text(&painter);
+    draw_disappearing_circle(&painter);
 }
 
-void Hollow_button::draw_border() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-
+void Hollow_button::draw_border(QPainter *painter) {
     QPainterPath path;
     path.addRoundedRect(0, 0, width(), height(), height() / 4, height() / 4);
-    painter.setClipPath(path);
+    painter->setClipPath(path);
 
     QPen pen;
     pen.setWidth(5);
     pen.setColor(QColor(255, 255, 255, 255));
-    painter.setPen(pen);
-    painter.drawRoundedRect(0, 0, width(), height(), height() / 4, height() / 4);
+    painter->setPen(pen);
+    painter->drawRoundedRect(0, 0, width(), height(), height() / 4, height() / 4);
 }
 
-void Hollow_button::draw_text() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setRenderHint(QPainter::TextAntialiasing);
+void Hollow_button::draw_text(QPainter *painter) {
+    painter->setRenderHint(QPainter::TextAntialiasing);
 
     QRect rect1(0, 0, 0, 0);
     QFont font1;
     font1.setPointSize(13);
     font1.setBold(true);
     font1.setWordSpacing(1);
-    painter.setFont(font1);
+    painter->setFont(font1);
 
     QColor semiTransparent(255, 255, 255, 255);
-    painter.setPen(semiTransparent);
+    painter->setPen(semiTransparent);
 
-    QRect actualRect = painter.boundingRect(rect1, Qt::AlignCenter, m_center_text);
+    QRect actualRect = painter->boundingRect(rect1, Qt::AlignCenter, m_center_text);
     rect1.setHeight(actualRect.height());
     rect1.setWidth(actualRect.width());
     rect1.moveCenter(QPoint(width() / 2, height() / 2));
-    painter.drawText(rect1, m_center_text);
+    painter->drawText(rect1, m_center_text);
 }
 
-void Hollow_button::draw_disappearing_circle() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-
+void Hollow_button::draw_disappearing_circle(QPainter *painter) {
     QPainterPath path;
     path.addRoundedRect(0, 0, width(), height(), height() / 4, height() / 4);
-    painter.setClipPath(path);
+    painter->setClipPath(path);
 
-    painter.setPen(Qt::NoPen);
+    painter->setPen(Qt::NoPen);
     QBrush brush(QColor(255, 255, 255, m_opacity));
-    painter.setBrush(brush);
-    painter.drawEllipse(mouse_coordinates, m_radius, m_radius);
+    painter->setBrush(brush);
+    painter->drawEllipse(mouse_coordinates, m_radius, m_radius);
 }
+
 
 void Hollow_button::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
