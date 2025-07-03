@@ -142,25 +142,30 @@ if(WIN32)
     if (NOT EXISTS ${FFMPEG_IMPORT_LIB_PATH})
         message(FATAL_ERROR "FFmpeg library directory not found at ${FFMPEG_IMPORT_LIB_PATH}")
     else()
-        message(STATUS "Found FFmpeg library directory at ${FFMPEG_IMPORT_LIB_PATH}")
+        message(STATUS "found FFmpeg library directory at ${FFMPEG_IMPORT_LIB_PATH}")
     endif()
 
     if (NOT EXISTS ${FFMPEG_BIN_PATH})
         message(FATAL_ERROR "FFmpeg binary directory not found at ${FFMPEG_BIN_PATH}")
     else()
-        message(STATUS "Found FFmpeg binary directory at ${FFMPEG_BIN_PATH}")
+        message(STATUS "found FFmpeg binary directory at ${FFMPEG_BIN_PATH}")
     endif()
 
 endif ()
 
 file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/*.qrc)
 
+message(STATUS "found qrc files :")
+foreach(qrc ${QRC_FILE})
+    message(STATUS "  ${qrc}")
+endforeach()
+
 set(SOURCE_FILE
     AppController.h
     AppController.cpp
     main.cpp
     ${QRC_FILE}
-    ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/Res/titleIcon.rc
+    #${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/Res/titleIcon.rc
 )
 
 #ui目录
@@ -178,6 +183,9 @@ add_subdirectory(KuGouServer)
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient ${CMAKE_CURRENT_SOURCE_DIR}/KuGouServer)
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient
+        ${CMAKE_CURRENT_SOURCE_DIR}/KuGouServer
+)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE KuGouClient KuGouServer)
+target_link_libraries(${PROJECT_NAME} PRIVATE KuGouClient KuGouServer LoginInterface)
