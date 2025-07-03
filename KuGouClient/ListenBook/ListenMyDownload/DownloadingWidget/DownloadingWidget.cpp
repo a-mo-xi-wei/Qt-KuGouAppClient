@@ -57,8 +57,8 @@ void DownloadingWidget::initUi()
 {
     auto downloading_setting_toolButton_toolTip = new ElaToolTip(ui->downloading_setting_toolButton); ///< 创建设置按钮工具提示
     downloading_setting_toolButton_toolTip->setToolTip(ui->downloading_setting_toolButton->text()); ///< 设置工具提示内容
-    ui->downloading_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
-    ui->downloading_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/stop-gray.svg"))); ///< 设置暂停按钮图标
+    ui->downloading_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+    ui->downloading_pause_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/stop-gray.svg"))); ///< 设置暂停按钮图标
     ui->downloading_clear_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-black.svg"))); ///< 设置清除按钮图标
 }
 

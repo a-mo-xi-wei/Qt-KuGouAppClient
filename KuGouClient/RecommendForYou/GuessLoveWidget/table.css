@@ -1,6 +1,6 @@
 /*--------------------guess_love_widget------------------------------*/
 GLTabWidget{
-    border-image: url(":/Res/tabIcon/cover.jpg");
+    border-image: url(":/TabIcon/Res/tabIcon/cover.jpg");
     border-radius:10px;
     border:none;
     background-color: rgba(255,255,255,0);
@@ -20,28 +20,28 @@ QLabel#singerLab{
 QToolButton#playToolBtn {
     height: 30px;
     width: 30px;
-    border-image: url(":/Res/tabIcon/play-white.svg");
+    border-image: url(":/TabIcon/Res/tabIcon/play-white.svg");
 }
 QToolButton#playToolBtn:hover {
-    border-image: url(":/Res/tabIcon/play-blue.svg");
+    border-image: url(":/TabIcon/Res/tabIcon/play-blue.svg");
 }
 QToolButton#nextToolBtn {
-    border-image: url(":/Res/tabIcon/next-song-white.svg");
+    border-image: url(":/TabIcon/Res/tabIcon/next-song-white.svg");
 }
 QToolButton#nextToolBtn:hover {
-    border-image: url(":/Res/tabIcon/next-song-blue.svg");
+    border-image: url(":/TabIcon/Res/tabIcon/next-song-blue.svg");
 }
 QToolButton#likeToolBtn {
-    border-image: url(":/Res/tabIcon/like-white.svg");
+    border-image: url(":/TabIcon/Res/tabIcon/like-white.svg");
 }
 QToolButton#likeToolBtn:hover {
-    border-image: url(":/Res/tabIcon/like-blue.svg");
+    border-image: url(":/TabIcon/Res/tabIcon/like-blue.svg");
 }
 QToolButton#dislikeToolBtn {
-    border-image: url(":/Res/tabIcon/dislike-white.svg");
+    border-image: url(":/TabIcon/Res/tabIcon/dislike-white.svg");
 }
 QToolButton#dislikeToolBtn:hover {
-    border-image: url(":/Res/tabIcon/dislike-blue.svg");
+    border-image: url(":/TabIcon/Res/tabIcon/dislike-blue.svg");
 }
 QToolButton#modelBtn{
     color: white;

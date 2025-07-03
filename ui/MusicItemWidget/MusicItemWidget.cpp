@@ -158,9 +158,9 @@ void MusicItemWidget::setCover(const QPixmap &pix) {
 
 void MusicItemWidget::setPopular(const int &popular) const {
     if (popular < 0)
-        this->m_popularLab->setPixmap(QPixmap(QString(":/Res/tabIcon/%1-grid-popular.svg").arg(QRandomGenerator::global()->bounded(0, 7))));
+        this->m_popularLab->setPixmap(QPixmap(QString(":/TabIcon/Res/tabIcon/%1-grid-popular.svg").arg(QRandomGenerator::global()->bounded(0, 7))));
     else
-        this->m_popularLab->setPixmap(QPixmap(QString(":/Res/tabIcon/%1-grid-popular.svg").arg(popular)));
+        this->m_popularLab->setPixmap(QPixmap(QString(":/TabIcon/Res/tabIcon/%1-grid-popular.svg").arg(popular)));
     this->m_popularLab->show();
 }
 
@@ -659,16 +659,16 @@ void MusicItemWidget::initUi()
     this->m_singerLab->setFixedWidth(100);
     this->m_albumLab->setFixedWidth(110);
 
-    this->m_popularLab->setPixmap(QPixmap(QString(":/Res/tabIcon/%1-grid-popular.svg").arg(QRandomGenerator::global()->bounded(0, 7))));
+    this->m_popularLab->setPixmap(QPixmap(QString(":/TabIcon/Res/tabIcon/%1-grid-popular.svg").arg(QRandomGenerator::global()->bounded(0, 7))));
     this->m_popularLab->hide(); ///< 默认不显示
     auto popularLab_toolTip = new ElaToolTip(this->m_popularLab);
     popularLab_toolTip->setToolTip("热度");
 
-    this->m_playToolBtn     ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-gray.svg")));
-    this->m_playNextToolBtn ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-music-list-gray.svg")));
+    this->m_playToolBtn     ->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-gray.svg")));
+    this->m_playNextToolBtn ->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/add-music-list-gray.svg")));
     this->m_downloadToolBtn ->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg")));
     this->m_collectToolBtn  ->setIcon(QIcon(QStringLiteral(":/Res/window/collect.svg")));
-    this->m_moreToolBtn     ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/more2-gray.svg")));
+    this->m_moreToolBtn     ->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/more2-gray.svg")));
 
     this->m_playToolBtn     ->setCursor(Qt::PointingHandCursor);
     this->m_playNextToolBtn ->setCursor(Qt::PointingHandCursor);

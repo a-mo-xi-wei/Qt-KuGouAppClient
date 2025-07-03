@@ -156,7 +156,7 @@ void TitleWidget::initUi()
     setTitleIndex(1);
 
     // 设置搜索框和图标
-    ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
+    ui->title_line->setPixmap(QPixmap(QStringLiteral(":/TabIcon/Res/tabIcon/line-black.svg")));
 
     auto searchLineEdit = new MySearchLineEdit();
     searchLineEdit->setProperty("searchWay","search_net_song");

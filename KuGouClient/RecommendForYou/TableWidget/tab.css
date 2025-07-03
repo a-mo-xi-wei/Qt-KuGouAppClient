@@ -13,17 +13,17 @@ QToolButton{
     background-color:rgba(255,255,255,0);
 }
 QToolButton#adjust_ToolBtn{
-    border-image: url(':/Res/tabIcon/adjust-column-gray.svg');
+    border-image: url(':/TabIcon/Res/tabIcon/adjust-column-gray.svg');
 }
 QToolButton#adjust_ToolBtn:hover{
-    border-image: url(':/Res/tabIcon/adjust-column-blue.svg');
+    border-image: url(':/TabIcon/Res/tabIcon/adjust-column-blue.svg');
 }
 QToolButton#refresh_ToolBtn{
-    border-image: url(':/Res/tabIcon/refresh-gray.svg');
+    border-image: url(':/TabIcon/Res/tabIcon/refresh-gray.svg');
 }
 QToolButton#refresh_ToolBtn:hover{
-    border-image: url(':/Res/tabIcon/refresh-blue.svg');
+    border-image: url(':/TabIcon/Res/tabIcon/refresh-blue.svg');
 }
 QToolButton#play_ToolBtn{
-    border-image: url(':/Res/tabIcon/titlePlay.svg');
+    border-image: url(':/TabIcon/Res/tabIcon/titlePlay.svg');
 }

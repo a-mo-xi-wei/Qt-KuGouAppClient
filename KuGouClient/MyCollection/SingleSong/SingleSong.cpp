@@ -99,8 +99,8 @@ void SingleSong::initUi()
         onRandomSort();                                      ///< 调用随机排序
         collect_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机")); ///< 更新提示
     });
-    ui->collect_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放图标
-    ui->collect_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg"))); ///< 设置下载图标
+    ui->collect_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放图标
+    ui->collect_download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 设置下载图标
     ui->collect_download_toolButton->installEventFilter(this); ///< 安装下载按钮事件过滤器
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索图标
     this->m_searchAction->setIconVisibleInMenu(false);       ///< 仅显示图标
@@ -301,7 +301,7 @@ bool SingleSong::eventFilter(QObject *watched, QEvent *event)
         }
         else if (event->type() == QEvent::Leave)
         {
-            ui->collect_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg"))); ///< 设置灰色下载图标
+            ui->collect_download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 设置灰色下载图标
         }
     }
     if (const auto button = qobject_cast<QToolButton *>(watched); button && button->defaultAction() == this->m_searchAction)

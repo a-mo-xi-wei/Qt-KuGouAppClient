@@ -92,7 +92,7 @@ void DownloadedSong::initUi()
     });
     auto local_batch_toolButton_toolTip = new ElaToolTip(ui->local_batch_toolButton); ///< 创建批量操作按钮工具提示
     local_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作")); ///< 设置批量操作提示
-    ui->local_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+    ui->local_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标
     this->m_searchAction->setIconVisibleInMenu(false);   ///< 仅显示图标
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加搜索动作
