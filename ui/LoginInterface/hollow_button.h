@@ -18,16 +18,6 @@ public:
         ANIMATION_STATE_RESET
     };
 
-    void draw_disappearing_circle();
-
-    void draw_border();
-
-    void draw_text();
-
-    QPoint mouse_coordinates;
-    QPropertyAnimation *animation1;
-    QPropertyAnimation *animation3;
-
     QString center_text() const;
 
     void setCenter_text(const QString &newCenter_text);
@@ -46,6 +36,13 @@ public:
 
     void animation_status(bool status);
 
+private:
+    void draw_disappearing_circle();
+
+    void draw_border();
+
+    void draw_text();
+
 signals:
     void page_changed(AnimationState status);
 
@@ -57,6 +54,9 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
+    QPoint mouse_coordinates;
+    QPropertyAnimation *animation1;
+    QPropertyAnimation *animation3;
     QString m_center_text;
     int m_radius = 0;
     int m_opacity = 255;

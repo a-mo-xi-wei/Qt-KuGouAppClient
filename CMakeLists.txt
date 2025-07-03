@@ -153,9 +153,15 @@ if(WIN32)
 
 endif ()
 
+file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/*.qrc)
 
-
-
+set(SOURCE_FILE
+    AppController.h
+    AppController.cpp
+    main.cpp
+    ${QRC_FILE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/Res/titleIcon.rc
+)
 
 #ui目录
 add_subdirectory(ui)
@@ -164,7 +170,14 @@ add_subdirectory(ui)
 add_subdirectory(util)
 
 #开始模块
-add_subdirectory(KuGouStart)
+add_subdirectory(KuGouClient)
 
 #服务器模块
 add_subdirectory(KuGouServer)
+
+add_executable(${PROJECT_NAME} ${SOURCE_FILE})
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient ${CMAKE_CURRENT_SOURCE_DIR}/KuGouServer)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE KuGouClient KuGouServer)

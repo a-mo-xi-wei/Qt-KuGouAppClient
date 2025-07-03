@@ -129,11 +129,7 @@ public:
      *
      *  @param parent 父对象
      */
-    VideoPlayer(QObject *parent = nullptr);
-
-    /** @brief 析构函数
-     */
-    ~VideoPlayer();
+    explicit VideoPlayer(QObject *parent = nullptr);
 
     /** @brief 初始化播放器
      *
