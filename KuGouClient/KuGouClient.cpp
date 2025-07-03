@@ -343,14 +343,14 @@ void KuGouClient::initSearchResultWidget() {
         playAllBtn->setCursor(Qt::PointingHandCursor);
         playAllBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置播放全部按钮样式
         playAllBtn->setFixedSize(100, 30); ///< 设置播放全部按钮大小
-        playAllBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+        playAllBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
         playAllBtn->setText("播放全部");
         auto highListenBtn = new QToolButton;
         highListenBtn->setObjectName("searchResultWidget-highListenBtn");
         highListenBtn->setCursor(Qt::PointingHandCursor);
         highListenBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置高音质按钮样式
         highListenBtn->setFixedSize(100, 30); ///< 设置高音质按钮大小
-        highListenBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/highListen-white.svg"))); ///< 设置高音质按钮图标
+        highListenBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/highListen-white.svg"))); ///< 设置高音质按钮图标
         highListenBtn->setText("高潮试听");
         auto downloadAllBtn = new QToolButton;
         downloadAllBtn->setObjectName("searchResultWidget-downloadAllBtn");
@@ -364,7 +364,7 @@ void KuGouClient::initSearchResultWidget() {
         batchOperationBtn->setCursor(Qt::PointingHandCursor);
         batchOperationBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置批量操作按钮样式
         batchOperationBtn->setFixedSize(100, 30); ///< 设置批量操作按钮大小
-        batchOperationBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/batch-operation-black.svg"))); ///< 设置批量操作按钮图标
+        batchOperationBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/batch-operation-black.svg"))); ///< 设置批量操作按钮图标
         batchOperationBtn->setText("批量操作");
         hlay2->addSpacing(15);
         hlay2->addWidget(playAllBtn);

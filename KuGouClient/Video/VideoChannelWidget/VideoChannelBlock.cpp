@@ -105,7 +105,7 @@ void VideoChannelBlock::initUi()
     this->m_coverTextLab->setFixedWidth(this->width() - 20);      ///< 设置固定宽度
 
     ui->desc_toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置工具按钮样式
-    ui->desc_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/eye-gray.svg"))); ///< 设置图标
+    ui->desc_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/eye-gray.svg"))); ///< 设置图标
     ui->desc_toolButton->setText(QString::number(QRandomGenerator::global()->bounded(1, 500)) + "人在看"); ///< 设置随机观看人数
 }
 

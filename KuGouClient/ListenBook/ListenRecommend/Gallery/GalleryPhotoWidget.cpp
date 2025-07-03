@@ -145,7 +145,7 @@ void GalleryPhotoWidget::initUi()
     mask.setStander(120);                                ///< 设置遮罩标准值
     this->m_coverWidget->setPopularDirection(1);         ///< 设置流行度按钮方向
     this->m_coverWidget->setHaveNumberUnit(false);       ///< 禁用数字单位
-    this->m_coverWidget->setLeftPopularBtnIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")); ///< 设置左流行度按钮图标
+    this->m_coverWidget->setLeftPopularBtnIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg")); ///< 设置左流行度按钮图标
 }
 
 /**

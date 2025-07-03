@@ -61,7 +61,7 @@ void MyBlockWidget::initUi() {
     this->m_rightPopularBtn->setEnabled(false);
     this->m_rightPopularBtn->setFixedSize(80, 20);
     this->m_rightPopularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    this->m_rightPopularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/popular-white.svg")));
+    this->m_rightPopularBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/popular-white.svg")));
     this->setPopularBtnText(QString::number(QRandomGenerator::global()->generateDouble() * 1000, 'f', 1));
     this->m_rightPopularBtn->setContentsMargins(5, 0, 5, 0);
     this->m_rightPopularBtnStyle = "color:white;border:none;border-radius:10px;";
@@ -70,7 +70,7 @@ void MyBlockWidget::initUi() {
     this->m_leftPopularBtn->setEnabled(false);
     this->m_leftPopularBtn->setFixedSize(80, 20);
     this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    this->m_leftPopularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/person-white.svg")));
+    this->m_leftPopularBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/person-white.svg")));
     this->m_leftPopularBtn->setContentsMargins(5, 0, 5, 0);
     this->m_leftPopularBtnStyle = "color:white;border:none;border-radius:10px;background-color: rgba(255,255,255,0);";
     this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);

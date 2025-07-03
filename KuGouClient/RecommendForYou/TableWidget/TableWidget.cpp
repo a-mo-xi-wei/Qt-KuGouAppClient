@@ -236,13 +236,13 @@ void TableWidget::initUi()
     line1->hide();                                           ///< 初始隐藏分隔线
     line1->setScaledContents(true);                          ///< 设置分隔线内容缩放
     line1->setFixedSize(20, 15);                             ///< 设置分隔线大小
-    line1->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-gray.svg"))); ///< 设置分隔线图片
+    line1->setPixmap(QPixmap(QStringLiteral(":/TabIcon/Res/tabIcon/line-gray.svg"))); ///< 设置分隔线图片
     m_tabHLayout->addWidget(line1);                          ///< 添加分隔线
     m_tabHLayout->addWidget(this->m_refresh_ToolBtn);        ///< 添加刷新按钮
     const auto line2 = new QLabel(this);                     ///< 初始化第二分隔线
     line2->setScaledContents(true);                          ///< 设置第二分隔线内容缩放
     line2->setFixedSize(20, 15);                             ///< 设置第二分隔线大小
-    line2->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-gray.svg"))); ///< 设置第二分隔线图片
+    line2->setPixmap(QPixmap(QStringLiteral(":/TabIcon/Res/tabIcon/line-gray.svg"))); ///< 设置第二分隔线图片
     m_tabHLayout->addWidget(line2);                          ///< 添加第二分隔线
     m_tabHLayout->addWidget(this->m_more_Lab);               ///< 添加更多标签
     this->m_gridContainer->setAttribute(Qt::WA_OpaquePaintEvent); ///< 设置网格容器不透明绘制
@@ -1271,7 +1271,7 @@ void ItemBlockWidget::initUi()
     this->m_tipLab->move(6, 6);                          ///< 设置提示标签位置
 
     this->m_popularBtn->setFixedSize(70, 20);            ///< 设置流行按钮大小
-    this->m_popularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/popular-white.svg"))); ///< 设置流行按钮图标
+    this->m_popularBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/popular-white.svg"))); ///< 设置流行按钮图标
     this->setPopularBtnText(QString::number(QRandomGenerator::global()->generateDouble() * 1000, 'f', 1)); ///< 设置随机播放量
     this->m_popularBtn->setContentsMargins(5, 0, 5, 0);  ///< 设置流行按钮边距
     this->m_popularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置按钮文本图标样式

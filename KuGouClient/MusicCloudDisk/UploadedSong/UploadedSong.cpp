@@ -94,9 +94,9 @@ void UploadedSong::initUi()
     });
     auto cloud_batch_toolButton_toolTip = new ElaToolTip(ui->cloud_batch_toolButton); ///< 创建批量操作按钮工具提示
     cloud_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作")); ///< 设置批量操作提示
-    ui->cloud_play_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/play3-gray.svg"))); ///< 设置播放按钮图标
+    ui->cloud_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-gray.svg"))); ///< 设置播放按钮图标
     ui->cloud_upload_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-white.svg"))); ///< 设置上传按钮图标
-    ui->cloud_download_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
+    ui->cloud_download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
     ui->cloud_delete_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-gray.svg"))); ///< 设置删除按钮图标
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标
     this->m_searchAction->setIconVisibleInMenu(false);   ///< 仅显示图标

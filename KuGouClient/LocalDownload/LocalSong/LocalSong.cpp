@@ -183,9 +183,9 @@ void LocalSong::initUi()
     layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed)); ///< 添加固定填充
     layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding)); ///< 添加扩展填充
     layout->setContentsMargins(0, 0, 0, 0);             ///< 设置边距
-    ui->local_all_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
-    ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-gray.svg"))); ///< 设置添加按钮图标
-    ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/upload-cloud-gray.svg"))); ///< 设置上传按钮图标
+    ui->local_all_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+    ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/add-gray.svg"))); ///< 设置添加按钮图标
+    ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/upload-cloud-gray.svg"))); ///< 设置上传按钮图标
 
     auto searchLineEdit = new MySearchLineEdit();
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标

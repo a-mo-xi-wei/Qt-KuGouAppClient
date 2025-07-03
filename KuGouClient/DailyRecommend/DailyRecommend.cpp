@@ -67,7 +67,7 @@ void DailyRecommend::initUi()
     ui->history_recommend_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置离开图标
     ui->history_recommend_toolButton->setApproach(true); ///< 启用接近效果
     ui->history_recommend_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF"))); ///< 设置悬停字体颜色
-    ui->play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+    ui->play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
     ui->play_toolButton->setText(QStringLiteral("播放")); ///< 设置播放按钮文本
     auto vip_toolButton_toolTip = new ElaToolTip(ui->vip_toolButton); ///< 创建 VIP 按钮工具提示
     vip_toolButton_toolTip->setToolTip(QStringLiteral("威哥出品，不存在VIP")); ///< 设置 VIP 工具提示内容
@@ -78,14 +78,14 @@ void DailyRecommend::initUi()
     auto batch_toolButton_toolTip = new ElaToolTip(ui->batch_toolButton); ///< 创建批量操作按钮工具提示
     batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作")); ///< 设置批量操作工具提示内容
     ui->vip_toolButton->setIconSize(QSize(18, 18));      ///< 设置 VIP 按钮图标大小
-    ui->vip_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/yellow-diamond.svg"))); ///< 设置 VIP 按钮图标
+    ui->vip_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/yellow-diamond.svg"))); ///< 设置 VIP 按钮图标
     ui->vip_toolButton->setText(QStringLiteral("+30"));   ///< 设置 VIP 按钮文本
     ui->vip_toolButton->setApproach(true);               ///< 启用接近效果
-    ui->collect_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/like-gray.svg"))); ///< 设置收藏按钮图标
-    ui->download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
-    ui->batch_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/batch-gray.svg"))); ///< 设置批量操作按钮图标
+    ui->collect_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/like-gray.svg"))); ///< 设置收藏按钮图标
+    ui->download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
+    ui->batch_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/batch-gray.svg"))); ///< 设置批量操作按钮图标
     ui->count_label->setText(QStringLiteral("30"));       ///< 设置歌曲数量标签
-    ui->ico_label->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/yellow-diamond.svg")).scaled(18, 18)); ///< 设置图标标签
+    ui->ico_label->setPixmap(QPixmap(QStringLiteral(":/TabIcon/Res/tabIcon/yellow-diamond.svg")).scaled(18, 18)); ///< 设置图标标签
     initTableWidget();                                   ///< 初始化歌曲列表控件
 }
 

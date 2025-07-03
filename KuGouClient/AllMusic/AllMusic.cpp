@@ -122,8 +122,8 @@ void AllMusic::initUi()
     initStackedWidget();                                 ///< 初始化堆栈窗口
     initIndexLab();                                      ///< 初始化索引标签
     ui->all_pushButton->clicked();                       ///< 默认触发全部按钮
-    ui->all_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
-    ui->all_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
+    ui->all_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+    ui->all_download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
     ui->all_download_toolButton->installEventFilter(this); ///< 安装下载按钮事件过滤器
 
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标
@@ -621,7 +621,7 @@ bool AllMusic::eventFilter(QObject *watched, QEvent *event)
         if (event->type() == QEvent::Enter) {
             ui->all_download_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/download-blue.svg"))); ///< 设置下载按钮悬停图标
         } else if (event->type() == QEvent::Leave) {
-            ui->all_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg"))); ///< 恢复下载按钮默认图标
+            ui->all_download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 恢复下载按钮默认图标
         }
     }
     if (const auto button = qobject_cast<QToolButton *>(watched); button && button->defaultAction() == this->m_searchAction) {

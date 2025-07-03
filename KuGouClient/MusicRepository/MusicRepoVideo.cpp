@@ -112,7 +112,7 @@ void MusicRepoVideo::setAuthor(const QString &author)
  */
 void MusicRepoVideo::initUi()
 {
-    ui->cover_widget->setRightPopularBtnIcon(QStringLiteral(":/Res/tabIcon/video-white.svg")); ///< 设置播放图标
+    ui->cover_widget->setRightPopularBtnIcon(QStringLiteral(":/TabIcon/Res/tabIcon/video-white.svg")); ///< 设置播放图标
     ui->cover_widget->setPopularDirection(2);            ///< 设置播放量方向
     ui->cover_widget->setAspectRatio(2);                 ///< 设置宽高比
     ui->cover_widget->setPopularBtnText(QString::number(QRandomGenerator::global()->generateDouble() * 10, 'f', 1)); ///< 设置随机播放量

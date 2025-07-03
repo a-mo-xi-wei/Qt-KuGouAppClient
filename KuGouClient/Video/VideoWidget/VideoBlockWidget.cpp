@@ -146,7 +146,7 @@ void VideoBlockWidget::initUi() const
     mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666"))); ///< 设置默认三角形填充颜色
     mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666"))); ///< 设置悬停三角形填充颜色
     mask.setMaskColor(QColor(0, 0, 0, 20));             ///< 设置遮罩颜色
-    ui->cover_widget->setLeftPopularBtnIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")); ///< 设置播放按钮图标
+    ui->cover_widget->setLeftPopularBtnIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg")); ///< 设置播放按钮图标
     ui->cover_widget->setPopularDirection(1);           ///< 设置流行按钮方向
     ui->cover_widget->setAspectRatio(AspectRation);     ///< 设置宽高比
     ui->cover_widget->setHaveNumberUnit(false);         ///< 默认无单位

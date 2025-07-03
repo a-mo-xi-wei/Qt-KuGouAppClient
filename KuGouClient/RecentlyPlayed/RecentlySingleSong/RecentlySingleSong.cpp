@@ -96,8 +96,8 @@ void RecentlySingleSong::initUi()
     });
     auto recently_batch_toolButton_toolTip = new ElaToolTip(ui->recently_batch_toolButton); ///< 批量操作按钮工具提示
     recently_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
-    ui->recently_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
-    ui->recently_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
+    ui->recently_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+    ui->recently_download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
     ui->recently_download_toolButton->installEventFilter(this); ///< 安装下载按钮事件过滤器
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标
     this->m_searchAction->setIconVisibleInMenu(false); ///< 仅显示图标
@@ -279,7 +279,7 @@ bool RecentlySingleSong::eventFilter(QObject *watched, QEvent *event)
         if (event->type() == QEvent::Enter) {
             ui->recently_download_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/download-blue.svg"))); ///< 设置下载按钮悬停图标
         } else if (event->type() == QEvent::Leave) {
-            ui->recently_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮默认图标
+            ui->recently_download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮默认图标
         }
     }
     if (const auto button = qobject_cast<QToolButton *>(watched); button && button->defaultAction() == this->m_searchAction) {
