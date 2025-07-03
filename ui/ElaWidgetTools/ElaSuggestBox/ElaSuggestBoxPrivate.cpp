@@ -327,7 +327,7 @@ void ElaSuggestBoxPrivate::_startExpandAnimation()
  */
 void ElaSuggestBoxPrivate::_startCloseAnimation()
 {
-    qDebug() << "_isCloseAnimationFinished:" << _isCloseAnimationFinished;
+    // qDebug() << "_isCloseAnimationFinished:" << _isCloseAnimationFinished;
     if (!_isCloseAnimationFinished){
         return;
     }
@@ -349,7 +349,7 @@ void ElaSuggestBoxPrivate::_startCloseAnimation()
         _searchViewBaseWidget->hide();
         // 重新启用视图（为下次显示准备）
         _searchView->setEnabled(true);
-        qDebug() << "===========隐藏OK";
+        // qDebug() << "===========隐藏OK";
     });
     closeAnimation->setDuration(300);
     closeAnimation->setEasingCurve(QEasingCurve::InOutSine);
