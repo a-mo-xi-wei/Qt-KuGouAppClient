@@ -6,8 +6,8 @@
  * @version 1.0
  */
 
-#ifndef KUGOUAPP_H
-#define KUGOUAPP_H
+#ifndef KUGOUCLIENT_H
+#define KUGOUCLIENT_H
 
 #include "MainWindow.h"
 #include "VideoPlayer/VideoPlayer.h"
@@ -31,8 +31,6 @@
 // 标题栏
 #include "ListenBook.h"
 #include "Search.h"
-#include <ui_KuGouApp.h>
-
 #include "SpeedDialogState.h"
 
 /**
@@ -71,15 +69,15 @@ class QtMaterialSnackbar;
  */
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    class KuGouApp;
+    class KuGouClient;
 }
 QT_END_NAMESPACE
 
 /**
- * @class KuGouApp
+ * @class KuGouClient
  * @brief 酷狗音乐应用主窗口类，管理音乐播放和界面切换
  */
-class KuGouApp : public MainWindow, public VideoPlayer::EventHandle {
+class KuGouClient : public MainWindow, public VideoPlayer::EventHandle {
     Q_OBJECT
 
 public:
@@ -87,13 +85,13 @@ public:
      * @brief 构造函数
      * @param parent 父窗口指针，默认为 nullptr
      */
-    explicit KuGouApp(MainWindow *parent = nullptr);
+    explicit KuGouClient(MainWindow *parent = nullptr);
 
     /**
      * @brief 析构函数
      * @note 释放 UI 资源和日志
      */
-    ~KuGouApp() override;
+    ~KuGouClient() override;
 
 private:
     /**
@@ -146,10 +144,7 @@ private:
      * @note 将组件插入到堆栈窗口的指定位置
      */
     template<typename T>
-    void initComponent(std::unique_ptr<T>& component, const int& index) {
-        component = std::make_unique<T>(ui->stackedWidget);
-        ui->stackedWidget->insertWidget(index, component.get());
-    }
+    void initComponent(std::unique_ptr<T>& component, const int& index);
 
     /**
      * @brief 初始化标题栏
@@ -561,7 +556,7 @@ protected:
     }
 
 private:
-    Ui::KuGouApp *ui;                                   ///< UI 界面指针
+    Ui::KuGouClient *ui;                                   ///< UI 界面指针
     VideoPlayer* m_player;                              ///< 音频播放器实例
     std::unique_ptr<QButtonGroup>       m_menuBtnGroup; ///< 菜单按钮组
     std::unique_ptr<QSizeGrip>          m_sizeGrip;     ///< 窗口大小调整控件
@@ -602,4 +597,4 @@ private:
     QString m_musicArtist;                              ///< 当前歌曲艺术家
 };
 
-#endif // KUGOUAPP_H
+#endif // KUGOUCLIENT_H

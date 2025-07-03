@@ -14,13 +14,13 @@
 #include "chttpserver.h"
 #include "sqlitedataprovider.h"
 
-class Server : public QObject , public NetworkFrameManager {
+class KuGouServer : public QObject , public NetworkFrameManager {
     Q_OBJECT
 public:
     /**
      * @brief 构造函数。
      */
-    Server();
+    KuGouServer();
 
 private:
     /**

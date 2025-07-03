@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>KuGouApp</class>
- <widget class="QWidget" name="KuGouApp">
+ <class>KuGouClient</class>
+ <widget class="QWidget" name="KuGouClient">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -20,7 +20,7 @@
    <bool>false</bool>
   </property>
   <property name="windowTitle">
-   <string>KuGouApp</string>
+   <string>KuGouClient</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_5">
    <property name="spacing">

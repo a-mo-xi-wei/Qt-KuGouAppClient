@@ -36,9 +36,9 @@ TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
     : QWidget(parent)
     , m_titleLab(new QLabel(title, this))            ///< 初始化标题标签
     , m_kind(kind)                                   ///< 初始化界面类型
-    , m_tabHLayout(std::make_unique<QHBoxLayout>())  ///< 初始化标题栏布局
-    , m_gridLayout(std::make_unique<QGridLayout>())  ///< 初始化网格布局
-    , m_gridContainer(std::make_unique<QWidget>(this)) ///< 初始化网格容器
+    , m_tabHLayout(new QHBoxLayout)  ///< 初始化标题栏布局
+    , m_gridLayout(new QGridLayout)  ///< 初始化网格布局
+    , m_gridContainer(new QWidget(this)) ///< 初始化网格容器
     , m_refreshTimer(new QTimer(this))               ///< 初始化刷新定时器
 {
     this->m_play_ToolBtn = new QToolButton(this);    ///< 初始化播放按钮
@@ -479,7 +479,7 @@ void TableWidget::initDescVector()
  */
 void TableWidget::initItemBlockWidget()
 {
-    this->m_gridContainer->setLayout(m_gridLayout.get()); ///< 设置网格容器布局
+    this->m_gridContainer->setLayout(m_gridLayout); ///< 设置网格容器布局
     this->m_gridLayout->setVerticalSpacing(10);          ///< 设置垂直间距
     this->m_gridLayout->setHorizontalSpacing(5);         ///< 设置水平间距
     this->m_gridLayout->setContentsMargins(0, 5, 0, 5);  ///< 设置边距
@@ -504,8 +504,8 @@ void TableWidget::initItemBlockWidget()
     auto vlayout = new QVBoxLayout(this);                ///< 创建主垂直布局
     vlayout->setSpacing(16);                             ///< 设置间距
     vlayout->setContentsMargins(0, 5, 0, 5);             ///< 设置边距
-    vlayout->addLayout(m_tabHLayout.get());              ///< 添加标题栏布局
-    vlayout->addWidget(this->m_gridContainer.get());     ///< 添加网格容器
+    vlayout->addLayout(m_tabHLayout);              ///< 添加标题栏布局
+    vlayout->addWidget(this->m_gridContainer);     ///< 添加网格容器
 }
 
 /**
@@ -534,10 +534,10 @@ void TableWidget::initItemListWidget()
         }
     }
 
-    auto vlayout = new QVBoxLayout(this);                ///< 创建主垂直布局
+    auto vlayout = new QVBoxLayout(this);        ///< 创建主垂直布局
     vlayout->setSpacing(16);                             ///< 设置间距
-    vlayout->addLayout(m_tabHLayout.get());              ///< 添加标题栏布局
-    vlayout->addLayout(this->m_gridLayout.get());        ///< 添加网格布局
+    vlayout->addLayout(m_tabHLayout);                    ///< 添加标题栏布局
+    vlayout->addLayout(this->m_gridLayout);              ///< 添加网格布局
 }
 
 /**
