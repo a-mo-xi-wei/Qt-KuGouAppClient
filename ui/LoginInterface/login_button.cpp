@@ -37,30 +37,28 @@ void Login_button::paintEvent(QPaintEvent* event)
     painter.setBrush(Brush);
     painter.drawRect(0, 0, width(), height());
 
-    this->draw_text();
+    draw_text(&painter);
 }
 
-void Login_button::draw_text()
+void Login_button::draw_text(QPainter *painter)
 {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setRenderHint(QPainter::TextAntialiasing);
+    painter->setRenderHint(QPainter::TextAntialiasing);
 
     QRect rect1(0, 0, 0, 0);
     QFont font1;
     font1.setPointSize(13);
     font1.setBold(true);
     font1.setWordSpacing(1);
-    painter.setFont(font1);
+    painter->setFont(font1);
 
     QColor semiTransparent(255, 255, 255, 255);
-    painter.setPen(semiTransparent);
+    painter->setPen(semiTransparent);
 
-    QRect actualRect = painter.boundingRect(rect1, Qt::AlignCenter, m_center_text);
+    QRect actualRect = painter->boundingRect(rect1, Qt::AlignCenter, m_center_text);
     rect1.setHeight(actualRect.height());
     rect1.setWidth(actualRect.width());
     rect1.moveCenter(QPoint(width() / 2, height() / 2));
-    painter.drawText(rect1, m_center_text);
+    painter->drawText(rect1, m_center_text);
 }
 
 bool Login_button::event(QEvent* e)

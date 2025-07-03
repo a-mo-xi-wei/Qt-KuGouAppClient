@@ -13,7 +13,7 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 public:
-    void crop_corner();
+    void crop_corner(QPainter *painter);
 };
 
 #endif // SCROLL_BAR_H

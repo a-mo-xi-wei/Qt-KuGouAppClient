@@ -8,21 +8,21 @@ Registration_form::Registration_form(QWidget *parent)
     : QWidget{parent} {
     this->resize(477, 620);
 
-    username = new Input_box(":/img/account.png", this);
+    username = new Input_box(":/Res/login/account.png", this);
     username->move(46, 130);
     username->setPlaceholderText("Username");
     username->setMaxLength(20);
     username->setValidator(
         new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9_\\-!@#$%^&*()+=.,?:;\"'{}<>/|]{0,20}"), this));
 
-    email = new Input_box(":/img/email.png", this);
+    email = new Input_box(":/Res/login/email.png", this);
     email->move(46, 220);
     email->setPlaceholderText("Email");
     email->setMaxLength(16);
     email->setValidator(
         new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"), this));
 
-    password = new Input_box(":/img/password.png", this);
+    password = new Input_box(":/Res/login/password.png", this);
     password->move(46, 310);
     password->setPlaceholderText("Password");
     password->setEchoMode(QLineEdit::Password);
@@ -33,7 +33,7 @@ Registration_form::Registration_form(QWidget *parent)
     login_button->setCenter_text("Registration");
     login_button->move(46, 400);
 
-    other_login_buttons1 = new QtMaterialFloatingActionButton(QIcon(":/img/qq.png"), this);
+    other_login_buttons1 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/qq.png"), this);
     other_login_buttons1->setCursor(Qt::PointingHandCursor); ///< 设置发送按钮光标
     other_login_buttons1->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
     other_login_buttons1->setCorner(Qt::BottomLeftCorner); ///< 设置按钮位置
@@ -41,7 +41,7 @@ Registration_form::Registration_form(QWidget *parent)
     other_login_buttons1->setYOffset(90); ///< 设置 Y 偏移
     other_login_buttons1->setBackgroundColor(QColor(0xa5bbe4)); ///< 设置背景色
 
-    other_login_buttons2 = new QtMaterialFloatingActionButton(QIcon(":/img/wechat.png"), this);
+    other_login_buttons2 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/wechat.png"), this);
     other_login_buttons2->setCursor(Qt::PointingHandCursor); ///< 设置发送按钮光标
     other_login_buttons2->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
     other_login_buttons2->setCorner(Qt::BottomLeftCorner); ///< 设置按钮位置
@@ -49,7 +49,7 @@ Registration_form::Registration_form(QWidget *parent)
     other_login_buttons2->setYOffset(90); ///< 设置 Y 偏移
     other_login_buttons2->setBackgroundColor(QColor(0xa5bbe4)); ///< 设置背景色
 
-    other_login_buttons3 = new QtMaterialFloatingActionButton(QIcon(":/img/logo_google.png"), this);
+    other_login_buttons3 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/logo_google.png"), this);
     other_login_buttons3->setCursor(Qt::PointingHandCursor); ///< 设置发送按钮光标
     other_login_buttons3->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
     other_login_buttons3->setCorner(Qt::BottomLeftCorner); ///< 设置按钮位置
@@ -57,7 +57,7 @@ Registration_form::Registration_form(QWidget *parent)
     other_login_buttons3->setYOffset(90); ///< 设置 Y 偏移
     other_login_buttons3->setBackgroundColor(QColor(0xa5bbe4)); ///< 设置背景色
 
-    other_login_buttons4 = new QtMaterialFloatingActionButton(QIcon(":/img/github-fill.png"), this);
+    other_login_buttons4 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/github-fill.png"), this);
     other_login_buttons4->setCursor(Qt::PointingHandCursor); ///< 设置发送按钮光标
     other_login_buttons4->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
     other_login_buttons4->setCorner(Qt::BottomLeftCorner); ///< 设置按钮位置
@@ -76,7 +76,7 @@ Registration_form::Registration_form(QWidget *parent)
         password->setEchoMode(m_isPasswordVisible ? QLineEdit::Normal : QLineEdit::Password);
 
         // 切换图标（需要准备两个图标）
-        password->setIcon(m_isPasswordVisible ? ":/img/password-unlock.png" : ":/img/password-lock.png");
+        password->setIcon(m_isPasswordVisible ? ":/Res/login/password-unlock.png" : ":/Res/login/password-lock.png");
     });
 }
 
@@ -107,36 +107,32 @@ void Registration_form::paintEvent(QPaintEvent *event) {
     painter.setViewport(0, 0, 477, 620);
     painter.setWindow(0, 0, 477, 620);
 
-    this->crop_corner();
-    this->draw_text();
+    crop_corner(&painter);
+    draw_text(&painter);
 }
 
-void Registration_form::crop_corner() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setPen(Qt::NoPen);
+void Registration_form::crop_corner(QPainter *painter) {
+    painter->setPen(Qt::NoPen);
     QBrush Brush(QColor(255, 255, 255, 255));
-    painter.setBrush(Brush);
-    painter.drawRect(0, 0, width(), height());
+    painter->setBrush(Brush);
+    painter->drawRect(0, 0, width(), height());
 }
 
-void Registration_form::draw_text() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setRenderHint(QPainter::TextAntialiasing);
+void Registration_form::draw_text(QPainter *painter) {
+    painter->setRenderHint(QPainter::TextAntialiasing);
 
     QRect rect1(0, 0, 0, 0);
     QFont font1;
     font1.setPointSize(30);
     font1.setBold(true);
     font1.setWordSpacing(1);
-    painter.setFont(font1);
+    painter->setFont(font1);
     QColor semiTransparent(0, 0, 0, 255);
-    painter.setPen(semiTransparent);
+    painter->setPen(semiTransparent);
 
-    QRect actualRect = painter.boundingRect(rect1, Qt::AlignCenter, "Registration");
+    QRect actualRect = painter->boundingRect(rect1, Qt::AlignCenter, "Registration");
     rect1.setHeight(actualRect.height());
     rect1.setWidth(actualRect.width());
     rect1.moveCenter(QPoint(width() / 2, height() / 8));
-    painter.drawText(rect1, "Registration");
+    painter->drawText(rect1, "Registration");
 }

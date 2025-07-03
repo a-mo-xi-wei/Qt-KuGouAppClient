@@ -19,7 +19,7 @@ public:
         Restore
     };
 
-    void draw_text();
+    void draw_text(QPainter *painter);
 
     void start_animation();
 

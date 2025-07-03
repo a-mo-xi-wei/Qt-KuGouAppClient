@@ -7,6 +7,8 @@
 #include <QPainterPath>
 #include <QPushButton>
 
+#include "ElaToolTip.h"
+
 LoginRegisterForm::LoginRegisterForm(QWidget *parent)
     : QDialog{parent} {
     this->setFixedSize(955, 620);
@@ -14,76 +16,10 @@ LoginRegisterForm::LoginRegisterForm(QWidget *parent)
     setWindowFlags(Qt::FramelessWindowHint);
     WindowEffect::addShadowEffect((HWND)winId());
 
-    auto minBtn = new QPushButton(this);
-    minBtn->setText("min");
-    minBtn->setCursor(Qt::PointingHandCursor);
-    auto closeBtn = new QPushButton(this);
-    closeBtn->setText("close");
-    closeBtn->setCursor(Qt::PointingHandCursor);
-    closeBtn->setStyleSheet(R"(
-        QPushButton {
-            color: black;
-            background: transparent;
-            border: none;
-        }
-        QPushButton:hover {
-            color: #00A1FF;
-        }
-    )");
-
-    minBtn->setStyleSheet(R"(
-        QPushButton {
-            color: black;
-            background: transparent;
-            border: none;
-        }
-        QPushButton:hover {
-            color: #00A1FF;
-        }
-    )");
-
-
-    // 按钮尺寸
-    int btnWidth = 40;
-    int btnHeight = 30;
-
-    minBtn->resize(btnWidth, btnHeight);
-    closeBtn->resize(btnWidth, btnHeight);
-
-    // 移动到右上角（比如间隔 0 或 5 像素）
-    closeBtn->move(width() - btnWidth, 0);                   // 最右
-    minBtn->move(width() - 2 * btnWidth, 0);                 // 紧挨着关闭按钮左边
-
-    connect(minBtn, &QPushButton::clicked, this, &QDialog::showMinimized);
-    connect(closeBtn, &QPushButton::clicked, this, &QDialog::accept);
-
-
-
-    transparent_transition_interface2 = new Transparent_transition_interface(
-        "Welcome Back!", "Already have an account?", "Login", this);
-    transparent_transition_interface2->button->animation_status(false);
-    transparent_transition_interface2->move(this->width(), 0);
-
-    registration_form = new Registration_form(this);
-    registration_form->move(width(), 0);
-
-    login_form = new Login_form(this);
-    login_form->move(this->width() / 2, 0);
-
-    scroll_bar = new Scroll_bar(this);
-    scroll_bar->move(-width() * 1.5, 0);
-
-    transparent_transition_interface = new Transparent_transition_interface(
-        "Hello, Welcome!", "Don't have an account?", "Register", this);
-    transparent_transition_interface->move(0, 0);
-
+    initUi();
     setRightShow();
     build_animation();
 
-    connect(transparent_transition_interface->button, &Hollow_button::page_changed, this,
-            &LoginRegisterForm::execute_animation);
-    connect(transparent_transition_interface2->button, &Hollow_button::page_changed, this,
-            &LoginRegisterForm::execute_animation);
 
 }
 
@@ -164,6 +100,10 @@ void LoginRegisterForm::onAnimation3Finished() {
         animation5->setDirection(QAbstractAnimation::Forward);
         animation5->start();
     }
+    for (auto btn : findChildren<QPushButton*>()) {
+        if (btn->objectName() == "minBtn" || btn->objectName() == "closeBtn")
+            btn->raise();
+    }
 }
 
 void LoginRegisterForm::onAnimation4Finished() {
@@ -228,6 +168,112 @@ void LoginRegisterForm::mouseMoveEvent(QMouseEvent *event) {
     } else {
         QDialog::mouseMoveEvent(event);
     }
+}
+
+bool LoginRegisterForm::eventFilter(QObject *watched, QEvent *event) {  ///< 仅仅用来识别最小化和关闭按钮
+    auto btn = qobject_cast<QPushButton*>(watched);
+    if (!btn)
+        return QDialog::eventFilter(watched, event);
+
+    const QString name = btn->objectName();
+
+    if (event->type() == QEvent::Enter) {
+        if (name == "minBtn") {
+            btn->setIcon(QIcon(":/Res/titlebar/minimize-blue.svg"));
+        } else if (name == "closeBtn") {
+            btn->setIcon(QIcon(":/Res/titlebar/close-blue.svg"));
+        }
+    } else if (event->type() == QEvent::Leave) {
+        if (name == "minBtn") {
+            btn->setIcon(QIcon(":/Res/titlebar/minimize-black.svg"));
+        } else if (name == "closeBtn") {
+            btn->setIcon(QIcon(":/Res/titlebar/close-black.svg"));
+        }
+    }
+    return QDialog::eventFilter(watched, event);
+}
+
+void LoginRegisterForm::initUi() {
+    auto minBtn = new QPushButton(this);
+    minBtn->setObjectName("minBtn");
+    minBtn->setIcon(QIcon(QStringLiteral(":/Res/titlebar/minimize-black.svg")));
+    minBtn->setCursor(Qt::PointingHandCursor);
+    minBtn->installEventFilter(this);
+    auto closeBtn = new QPushButton(this);
+    closeBtn->setObjectName("closeBtn");
+    closeBtn->setIcon(QIcon(QStringLiteral(":/Res/titlebar/close-black.svg")));
+    closeBtn->setCursor(Qt::PointingHandCursor);
+    closeBtn->installEventFilter(this);
+    closeBtn->setStyleSheet(R"(
+        QPushButton {
+            color: black;
+            background: transparent;
+            border: none;
+            icon-size: 15px;
+        }
+        QPushButton:hover {
+            color: #00A1FF;
+        }
+    )");
+
+    minBtn->setStyleSheet(R"(
+        QPushButton {
+            color: black;
+            background: transparent;
+            border: none;
+            icon-size: 15px;
+        }
+        QPushButton:hover {
+            color: #00A1FF;
+        }
+    )");
+
+
+    // 按钮尺寸
+    int btnWidth = 40;
+    int btnHeight = 30;
+
+    minBtn->resize(btnWidth, btnHeight);
+    closeBtn->resize(btnWidth, btnHeight);
+
+    // 移动到右上角（比如间隔 0 或 5 像素）
+    closeBtn->move(width() - btnWidth, 0);                   // 最右
+    minBtn->move(width() - 2 * btnWidth, 0);                 // 紧挨着关闭按钮左边
+
+    //min_toolButton
+    auto min_toolButton_toolTip = new ElaToolTip(minBtn);
+    min_toolButton_toolTip->setToolTip(QStringLiteral("最小化"));
+
+    //close_toolButton
+    auto close_toolButton_toolTip = new ElaToolTip(closeBtn);
+    close_toolButton_toolTip->setToolTip(QStringLiteral("关闭"));
+
+    connect(minBtn, &QPushButton::clicked, this, &QDialog::showMinimized);
+    connect(closeBtn, &QPushButton::clicked, this, &QDialog::accept);
+
+    transparent_transition_interface2 = new Transparent_transition_interface(
+        "Welcome Back!", "Already have an account?", "Login", this);
+    transparent_transition_interface2->button->animation_status(false);
+    transparent_transition_interface2->move(this->width(), 0);
+
+    registration_form = new Registration_form(this);
+    registration_form->move(width(), 0);
+
+    login_form = new Login_form(this);
+    login_form->move(this->width() / 2, 0);
+
+    scroll_bar = new Scroll_bar(this);
+    scroll_bar->move(-width() * 1.5, 0);
+
+    transparent_transition_interface = new Transparent_transition_interface(
+        "Hello, Welcome!", "Don't have an account?", "Register", this);
+    transparent_transition_interface->move(0, 0);
+
+    connect(transparent_transition_interface->button, &Hollow_button::page_changed, this,
+            &LoginRegisterForm::execute_animation);
+    connect(transparent_transition_interface2->button, &Hollow_button::page_changed, this,
+            &LoginRegisterForm::execute_animation);
+
 }
 
 int LoginRegisterForm::animation_duration() const {

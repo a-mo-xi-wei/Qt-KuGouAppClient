@@ -11,9 +11,9 @@ public:
     explicit Transparent_transition_interface(const QString &large_text, const QString &small_text, const QString& btn_text,
                                               QWidget *parent = nullptr);
 
-    void draw_text();
+    void draw_text(QPainter *painter);
 
-    void draw_text2();
+    void draw_text2(QPainter *painter);
 
     Hollow_button *button;
 

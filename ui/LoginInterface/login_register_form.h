@@ -23,6 +23,8 @@ public:
     ~LoginRegisterForm() override = default;
 
 private:
+    void initUi();
+
     int animation_duration() const;
 
     void setAnimation_duration(const int& newAnimation_duration);
@@ -35,6 +37,8 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
 
     void mouseMoveEvent(QMouseEvent *event) override;
+
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
 public slots:
     void setRightShow() const;
