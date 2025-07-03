@@ -3,6 +3,7 @@
 
 #include "KuGouClient.h"  // 客户端模块
 #include "KuGouServer.h"    // 服务器模块
+#include "login_register_form.h"
 
 class AppController : public QObject
 {
@@ -15,8 +16,9 @@ private:
     AppController();                   // 私有构造函数
     ~AppController() override;
 
-    KuGouClient *client;               // 客户端实例
-    KuGouServer *server;               // 服务器实例
+    LoginRegisterForm   *login;                // 登录界面实例
+    KuGouClient         *client;               // 客户端实例
+    KuGouServer         *server;               // 服务器实例
 };
 
 #endif // APPCONTROLLER_H
