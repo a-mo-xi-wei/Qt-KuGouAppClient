@@ -95,7 +95,7 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     title->setTextStyle(ElaTextType::Title);
     ElaText* subTitle = new ElaText("确定要退出程序吗", this);
     subTitle->setTextStyle(ElaTextType::BodyStrong);
-    font = QFont("AaSongLiuKaiTi");//需要通过KuGouApp::initFontRes()打印得知真实字体名
+    font = QFont("AaSongLiuKaiTi");//需要通过KuGouClient::initFontRes()打印得知真实字体名
     font.setPixelSize(15);
     subTitle->setFont(font);
     centralVLayout->addWidget(title);

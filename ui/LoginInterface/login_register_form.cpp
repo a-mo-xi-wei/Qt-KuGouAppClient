@@ -5,13 +5,59 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
+#include <QPushButton>
 
 LoginRegisterForm::LoginRegisterForm(QWidget *parent)
-    : QWidget{parent} {
+    : QDialog{parent} {
     this->setFixedSize(955, 620);
     //设置窗体透明
     setWindowFlags(Qt::FramelessWindowHint);
     WindowEffect::addShadowEffect((HWND)winId());
+
+    auto minBtn = new QPushButton(this);
+    minBtn->setText("min");
+    minBtn->setCursor(Qt::PointingHandCursor);
+    auto closeBtn = new QPushButton(this);
+    closeBtn->setText("close");
+    closeBtn->setCursor(Qt::PointingHandCursor);
+    closeBtn->setStyleSheet(R"(
+        QPushButton {
+            color: black;
+            background: transparent;
+            border: none;
+        }
+        QPushButton:hover {
+            color: #00A1FF;
+        }
+    )");
+
+    minBtn->setStyleSheet(R"(
+        QPushButton {
+            color: black;
+            background: transparent;
+            border: none;
+        }
+        QPushButton:hover {
+            color: #00A1FF;
+        }
+    )");
+
+
+    // 按钮尺寸
+    int btnWidth = 40;
+    int btnHeight = 30;
+
+    minBtn->resize(btnWidth, btnHeight);
+    closeBtn->resize(btnWidth, btnHeight);
+
+    // 移动到右上角（比如间隔 0 或 5 像素）
+    closeBtn->move(width() - btnWidth, 0);                   // 最右
+    minBtn->move(width() - 2 * btnWidth, 0);                 // 紧挨着关闭按钮左边
+
+    connect(minBtn, &QPushButton::clicked, this, &QDialog::showMinimized);
+    connect(closeBtn, &QPushButton::clicked, this, &QDialog::accept);
+
+
 
     transparent_transition_interface2 = new Transparent_transition_interface(
         "Welcome Back!", "Already have an account?", "Login", this);
@@ -31,13 +77,14 @@ LoginRegisterForm::LoginRegisterForm(QWidget *parent)
         "Hello, Welcome!", "Don't have an account?", "Register", this);
     transparent_transition_interface->move(0, 0);
 
-    this->setRightShow();
-    this->build_animation();
+    setRightShow();
+    build_animation();
 
     connect(transparent_transition_interface->button, &Hollow_button::page_changed, this,
             &LoginRegisterForm::execute_animation);
     connect(transparent_transition_interface2->button, &Hollow_button::page_changed, this,
             &LoginRegisterForm::execute_animation);
+
 }
 
 void LoginRegisterForm::setRightShow() const {
@@ -151,7 +198,7 @@ void LoginRegisterForm::execute_animation(Hollow_button::AnimationState status) 
 }
 
 void LoginRegisterForm::paintEvent(QPaintEvent *event) {
-    QWidget::paintEvent(event);
+    QDialog::paintEvent(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     QPainterPath path;
@@ -169,7 +216,7 @@ void LoginRegisterForm::mousePressEvent(QMouseEvent *event) {
         m_startWindowPosition = this->pos();
         event->accept();
     } else {
-        QWidget::mousePressEvent(event);
+        QDialog::mousePressEvent(event);
     }
 }
 
@@ -179,7 +226,7 @@ void LoginRegisterForm::mouseMoveEvent(QMouseEvent *event) {
         this->move(m_startWindowPosition + delta);
         event->accept();
     } else {
-        QWidget::mouseMoveEvent(event);
+        QDialog::mouseMoveEvent(event);
     }
 }
 

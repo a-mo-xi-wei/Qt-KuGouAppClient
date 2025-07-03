@@ -54,12 +54,6 @@ VideoPlayer::VideoPlayer(QObject *parent)
     connect(&m_positionUpdateTimer, &QTimer::timeout, this, [this] { emit positionChanged(getCurrentTime()); });
 }
 
-/** @brief 析构函数
- */
-VideoPlayer::~VideoPlayer()
-{
-}
-
 /** @brief 初始化播放器
  *
  *  @return 初始化是否成功
