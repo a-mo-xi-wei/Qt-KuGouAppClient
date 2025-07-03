@@ -5,7 +5,7 @@ var searchData=
   ['c_5fstd_5f23_2',['C_STD_23',['../_c_make_c_compiler_id_8c.html#a81af617e8f7b5417689ca478ce9f4d69',1,'CMakeCCompilerId.c']]],
   ['c_5fstd_5f99_3',['C_STD_99',['../_c_make_c_compiler_id_8c.html#af6079dc519dac099ee85a1df6ae5e5e8',1,'CMakeCCompilerId.c']]],
   ['c_5fversion_4',['C_VERSION',['../_c_make_c_compiler_id_8c.html#adaee3ee7c5a7a22451ea25e762e1d7d5',1,'CMakeCCompilerId.c']]],
-  ['checkjsonparse_5',['CheckJsonParse',['../_server_8cpp.html#aa1e6035fa819267e2d29878d787dcc1b',1,'Server.cpp']]],
+  ['checkjsonparse_5',['CheckJsonParse',['../_ku_gou_server_8cpp.html#aa1e6035fa819267e2d29878d787dcc1b',1,'KuGouServer.cpp']]],
   ['code_6',['CODE',['../_s_result_code_8h.html#aa8629e3643a20e51f367c1e69607b479',1,'SResultCode.h']]],
   ['color_5finterpolate_7',['COLOR_INTERPOLATE',['../qtmaterialflatbutton_8cpp.html#a221240b9012d2e25b12146d31a87aea2',1,'qtmaterialflatbutton.cpp']]],
   ['compiler_5fid_8',['COMPILER_ID',['../_c_make_c_compiler_id_8c.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID:&#160;CMakeCXXCompilerId.cpp']]],

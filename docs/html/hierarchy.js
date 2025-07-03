@@ -130,7 +130,7 @@ var hierarchy =
     ] ],
     [ "EndOfDirectory", "struct_end_of_directory.html", null ],
     [ "EventHandle", "class_video_player_1_1_event_handle.html", [
-      [ "KuGouApp", "class_ku_gou_app.html", null ]
+      [ "KuGouClient", "class_ku_gou_client.html", null ]
     ] ],
     [ "eventlog", "structspdlog_1_1sinks_1_1win__eventlog_1_1internal_1_1eventlog.html", null ],
     [ "exception", null, [
@@ -488,7 +488,7 @@ var hierarchy =
     ] ],
     [ "nested_view< T, Char >", "structnested__view.html", null ],
     [ "NetworkFrameManager", "class_network_frame_manager.html", [
-      [ "Server", "class_server.html", null ],
+      [ "KuGouServer", "class_ku_gou_server.html", null ],
       [ "cchatserver", "classcchatserver.html", null ]
     ] ],
     [ "next_state", "structdetail_1_1digit__grouping_1_1next__state.html", null ],
@@ -539,9 +539,6 @@ var hierarchy =
     [ "QAbstractTransition", null, [
       [ "QtMaterialStateTransition", "class_qt_material_state_transition.html", null ]
     ] ],
-    [ "QApplication", null, [
-      [ "QSingleApplication", "class_q_single_application.html", null ]
-    ] ],
     [ "QButtonGroup", "class_q_button_group.html", null ],
     [ "QCheckBox", null, [
       [ "AniCheckBox", "class_ani_check_box.html", [
@@ -551,11 +548,9 @@ var hierarchy =
     [ "QCommonStyle", null, [
       [ "QtMaterialStyle", "class_qt_material_style.html", null ]
     ] ],
-    [ "QCoreApplication", null, [
-      [ "QSingleCoreApplication", "class_q_single_core_application.html", null ]
-    ] ],
     [ "QDialog", null, [
-      [ "ElaExitDialog", "class_ela_exit_dialog.html", null ]
+      [ "ElaExitDialog", "class_ela_exit_dialog.html", null ],
+      [ "LoginRegisterForm", "class_login_register_form.html", null ]
     ] ],
     [ "QEvent", null, [
       [ "QtMaterialStateTransitionEvent", "struct_qt_material_state_transition_event.html", null ]
@@ -600,6 +595,7 @@ var hierarchy =
       [ "ElaMenuBar", "class_ela_menu_bar.html", null ]
     ] ],
     [ "QObject", null, [
+      [ "AppController", "class_app_controller.html", null ],
       [ "CLibhttp", "class_c_libhttp.html", null ],
       [ "CResourceManager", "class_c_resource_manager.html", null ],
       [ "CUdpServer", "class_c_udp_server.html", null ],
@@ -636,6 +632,7 @@ var hierarchy =
       ] ],
       [ "Service", "class_j_q_http_server_1_1_service.html", null ],
       [ "Session", "class_j_q_http_server_1_1_session.html", null ],
+      [ "KuGouServer", "class_ku_gou_server.html", null ],
       [ "NDBPool", "class_n_d_b_pool.html", null ],
       [ "NDBPool_p", "class_n_d_b_pool__p.html", null ],
       [ "PcmPlayer", "class_pcm_player.html", [
@@ -644,7 +641,6 @@ var hierarchy =
       [ "FunctorDestination", "class_qs_logging_1_1_functor_destination.html", null ],
       [ "QtMaterialCircularProgressDelegate", "class_qt_material_circular_progress_delegate.html", null ],
       [ "QtMaterialTheme", "class_qt_material_theme.html", null ],
-      [ "Server", "class_server.html", null ],
       [ "SqliteDataProvider", "class_sqlite_data_provider.html", null ],
       [ "VideoPlayer", "class_video_player.html", null ],
       [ "cchatserver", "classcchatserver.html", null ],
@@ -998,12 +994,11 @@ var hierarchy =
       [ "LiveMusicPartWidget", "class_live_music_part_widget.html", null ],
       [ "LocalDownload", "class_local_download.html", null ],
       [ "LocalSong", "class_local_song.html", null ],
-      [ "LoginRegisterForm", "class_login_register_form.html", null ],
       [ "Login_form", "class_login__form.html", null ],
       [ "MVBlockWidget", "class_m_v_block_widget.html", null ],
       [ "MVWidget", "class_m_v_widget.html", null ],
       [ "MainWindow", "class_main_window.html", [
-        [ "KuGouApp", "class_ku_gou_app.html", null ]
+        [ "KuGouClient", "class_ku_gou_client.html", null ]
       ] ],
       [ "MusicCloudDisk", "class_music_cloud_disk.html", null ],
       [ "MusicRepoBlock", "class_music_repo_block.html", null ],

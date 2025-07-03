@@ -1,78 +1,68 @@
 <map id="make_printf_args" name="make_printf_args">
-<area shape="rect" id="Node000001" title="Constructs an format_arg_store object that contains references to arguments and can be implicitly con..." alt="" coords="1256,611,1378,637"/>
-<area shape="rect" id="Node000002" href="$printf_8h.html#a9f315126362cae9675de1642105e631e" title="Formats args according to specifications in fmt and writes the output to f." alt="" coords="1154,371,1208,397"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1298,598,1188,399,1193,397,1303,595"/>
-<area shape="rect" id="Node000025" href="$printf_8h.html#a98ff17de0e9c70261310363fb2bc8560" title=" " alt="" coords="1156,661,1206,688"/>
-<area shape="poly" id="edge34_Node000001_Node000025" title=" " alt="" coords="1266,646,1208,668,1206,663,1264,641"/>
-<area shape="rect" id="Node000026" href="$printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout." alt="" coords="982,829,1032,856"/>
-<area shape="poly" id="edge35_Node000001_Node000026" title=" " alt="" coords="1241,625,1197,633,1156,652,1137,669,1129,688,1122,709,1108,733,1063,788,1024,831,1020,827,1059,785,1104,731,1117,707,1124,686,1133,666,1152,647,1195,628,1240,620"/>
-<area shape="rect" id="Node000003" href="$class_q_single_application.html#afd55f6277775e4d2d2b30be2b2a833c7" title="初始化本地连接，检测是否已有实例运行" alt="" coords="932,56,1082,99"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1178,356,1175,304,1165,239,1143,172,1126,140,1104,113,1081,96,1084,91,1108,109,1130,137,1147,169,1170,238,1180,304,1183,355"/>
-<area shape="rect" id="Node000005" href="$class_q_single_core_application.html#afd55f6277775e4d2d2b30be2b2a833c7" title="初始化本地连接，检测是否已有实例运行" alt="" coords="927,123,1086,165"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="1175,356,1168,316,1156,269,1135,221,1121,199,1104,179,1085,165,1088,161,1108,175,1125,196,1140,218,1161,267,1174,315,1180,355"/>
-<area shape="rect" id="Node000007" href="$namespacedetail.html#a3aef7c3d156f7d6772703621279dbdc4" title=" " alt="" coords="947,189,1067,216"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="1171,357,1148,296,1129,264,1104,237,1087,225,1066,216,1069,211,1089,220,1108,233,1133,261,1152,294,1176,355"/>
-<area shape="rect" id="Node000008" href="$class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="438,256,612,299"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1163,359,1139,325,1123,310,1105,298,1043,274,977,257,910,247,844,244,717,248,613,262,612,257,717,243,844,238,911,242,979,252,1045,269,1107,294,1126,306,1143,322,1168,355"/>
-<area shape="rect" id="Node000010" href="$class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="438,345,612,388"/>
-<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="1154,362,1131,345,1105,332,1038,315,969,306,899,304,830,307,702,324,601,347,600,342,702,319,830,302,899,298,969,301,1039,310,1107,327,1134,340,1157,358"/>
-<area shape="rect" id="Node000011" href="$class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="908,341,1106,368"/>
-<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="1138,380,1090,371,1090,366,1139,374"/>
-<area shape="rect" id="Node000013" href="$class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="918,392,1096,435"/>
-<area shape="poly" id="edge14_Node000002_Node000013" title=" " alt="" coords="1139,394,1097,401,1096,396,1138,388"/>
-<area shape="rect" id="Node000014" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="701,475,819,501"/>
-<area shape="poly" id="edge33_Node000002_Node000014" title=" " alt="" coords="1175,413,1166,439,1152,468,1133,495,1107,516,1084,524,1053,528,977,526,893,515,819,503,820,497,894,510,977,520,1053,522,1083,519,1105,511,1129,491,1148,465,1161,437,1170,411"/>
-<area shape="rect" id="Node000015" href="$class_video_player.html#a22bc616c65129c31d2c75f4ed881c44a" title="播放器状态变更回调" alt="" coords="916,627,1098,669"/>
-<area shape="poly" id="edge17_Node000002_Node000015" title=" " alt="" coords="1181,413,1176,457,1164,511,1143,567,1127,593,1108,617,1093,628,1090,624,1104,613,1123,590,1138,565,1159,510,1171,456,1176,412"/>
-<area shape="rect" id="Node000021" href="$class_video_player.html#adccbc43146f9eb5b35c8e1c054c2065e" title="视频时长变更回调" alt="" coords="922,459,1092,501"/>
-<area shape="poly" id="edge26_Node000002_Node000021" title=" " alt="" coords="1158,410,1134,430,1107,449,1083,461,1081,456,1105,444,1131,426,1154,406"/>
-<area shape="rect" id="Node000022" href="$_ku_gou_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="主函数，程序的入口点。" alt="" coords="982,693,1032,720"/>
-<area shape="poly" id="edge29_Node000002_Node000022" title=" " alt="" coords="1179,413,1170,478,1155,559,1134,634,1122,663,1108,683,1091,696,1071,704,1032,710,1032,704,1069,699,1088,691,1104,679,1117,660,1129,632,1150,557,1164,478,1174,413"/>
-<area shape="rect" id="Node000023" href="$class_pcm_player___s_d_l.html#a48c0c97b8de3bf8202cda6e525e2bdc6" title="打开音频设备" alt="" coords="909,5,1104,32"/>
-<area shape="poly" id="edge30_Node000002_Node000023" title=" " alt="" coords="1175,356,1167,282,1153,189,1132,102,1119,68,1104,46,1089,35,1093,30,1108,42,1124,66,1137,100,1158,188,1172,282,1180,355"/>
-<area shape="rect" id="Node000024" href="$_video_player_8cpp.html#ac47f93d8b17eafd380ba474d7878a522" title="打印 FFmpeg 错误信息" alt="" coords="944,576,1070,603"/>
-<area shape="poly" id="edge31_Node000002_Node000024" title=" " alt="" coords="1178,413,1170,447,1156,486,1136,525,1108,559,1090,572,1071,580,1069,575,1088,567,1104,555,1131,522,1151,484,1164,445,1173,412"/>
-<area shape="rect" id="Node000004" href="$class_q_single_application.html#acafbeb1a610718181bbe7de6d1ae3cb3" title=" " alt="" coords="690,56,830,99"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="916,80,830,80,830,75,916,75"/>
-<area shape="rect" id="Node000006" href="$class_q_single_core_application.html#a79ca304e6fa087ebb213cef00782f729" title=" " alt="" coords="676,123,844,165"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="911,147,844,147,844,141,911,141"/>
-<area shape="rect" id="Node000009" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="221,320,390,347"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="425,306,361,322,360,317,424,300"/>
-<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="422,354,390,349,391,344,423,348"/>
-<area shape="rect" id="Node000012" href="$class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="684,392,836,435"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="933,375,837,398,836,393,932,370"/>
-<area shape="poly" id="edge13_Node000012_Node000010" title=" " alt="" coords="668,398,612,387,613,381,669,393"/>
-<area shape="poly" id="edge15_Node000013_Node000012" title=" " alt="" coords="903,416,837,416,837,411,903,411"/>
-<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="920,442,808,477,806,471,919,437"/>
-<area shape="poly" id="edge18_Node000015_Node000012" title=" " alt="" coords="908,619,906,616,891,597,883,578,880,540,877,503,871,484,858,464,841,449,822,438,825,433,845,445,862,461,875,481,882,502,885,540,888,577,896,594,910,613,912,615"/>
-<area shape="poly" id="edge21_Node000015_Node000014" title=" " alt="" coords="910,620,906,617,894,604,887,590,882,564,876,539,869,527,858,515,839,504,818,497,820,492,842,499,861,511,873,524,881,537,887,563,892,588,899,601,910,613,913,616"/>
-<area shape="rect" id="Node000016" href="$class_video_player.html#a2853250ac5b9806e29d41f6f37b3b7f0" title="暂停播放" alt="" coords="693,576,827,603"/>
-<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="900,625,819,606,820,601,901,620"/>
-<area shape="rect" id="Node000017" href="$class_video_player.html#a0fd902a086b972b820de2959bc9dcaea" title="继续播放" alt="" coords="698,627,822,653"/>
-<area shape="poly" id="edge20_Node000015_Node000017" title=" " alt="" coords="900,647,822,645,822,639,901,642"/>
-<area shape="rect" id="Node000018" href="$class_video_player.html#a162d83f6026c9f6be69d9c74a9979bc9" title="开始播放" alt="" coords="684,677,836,704"/>
-<area shape="poly" id="edge22_Node000015_Node000018" title=" " alt="" coords="901,669,837,680,836,675,900,664"/>
-<area shape="rect" id="Node000020" href="$class_video_player.html#af116cf31ffdcae8c9cd5bb184d339a77" title="停止播放" alt="" coords="698,525,822,552"/>
-<area shape="poly" id="edge25_Node000015_Node000020" title=" " alt="" coords="914,622,906,617,891,604,882,590,873,578,858,566,822,551,824,546,861,562,877,574,886,587,895,600,909,613,917,617"/>
-<area shape="rect" id="Node000019" href="$class_video_player.html#a97827e51f022776ec533db2579e110a5" title="重新播放" alt="" coords="458,703,592,729"/>
-<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="669,703,593,711,593,706,669,698"/>
-<area shape="poly" id="edge24_Node000019_Node000015" title=" " alt="" coords="608,727,665,732,729,733,795,728,859,713,873,707,883,698,906,679,932,667,934,672,909,684,886,702,876,711,861,719,796,733,729,739,665,738,608,732"/>
-<area shape="poly" id="edge27_Node000021_Node000012" title=" " alt="" coords="910,457,836,436,837,431,911,452"/>
-<area shape="poly" id="edge28_Node000021_Node000014" title=" " alt="" coords="906,486,819,489,819,483,906,481"/>
-<area shape="poly" id="edge32_Node000024_Node000014" title=" " alt="" coords="934,573,906,560,891,548,882,537,873,526,858,516,818,500,820,495,861,511,876,522,886,533,895,544,909,555,936,568"/>
-<area shape="poly" id="edge36_Node000026_Node000010" title=" " alt="" coords="968,863,904,886,822,904,779,907,736,903,696,891,658,870,530,389,535,387,662,866,698,886,737,898,779,901,821,899,902,881,966,858"/>
-<area shape="poly" id="edge43_Node000026_Node000014" title=" " alt="" coords="976,821,939,782,905,733,893,701,888,671,890,616,891,591,887,566,877,541,858,515,840,502,818,494,820,489,842,497,862,511,882,538,893,565,896,590,895,616,894,670,898,699,910,731,943,779,980,817"/>
-<area shape="rect" id="Node000027" href="$ikcp_8cpp.html#a2a561d3f82169973fcdf2c2211925190" title=" " alt="" coords="467,956,583,983"/>
-<area shape="poly" id="edge37_Node000026_Node000027" title=" " alt="" coords="969,866,919,892,861,915,787,934,712,949,584,967,583,962,711,944,786,929,859,909,916,887,967,862"/>
-<area shape="rect" id="Node000030" href="$ikcp_8cpp.html#a4666efe40d211a24c49078218784e1ba" title=" " alt="" coords="718,981,802,1008"/>
-<area shape="poly" id="edge40_Node000026_Node000030" title=" " alt="" coords="983,869,930,917,896,943,861,965,803,987,801,983,858,960,893,938,927,913,980,865"/>
-<area shape="rect" id="Node000031" href="$class_pcm_player.html#ae4b8dd06370f1663e4546ac1b56f51c3" title="输入 PCM 帧" alt="" coords="666,779,854,805"/>
-<area shape="poly" id="edge42_Node000026_Node000031" title=" " alt="" coords="966,837,828,809,829,803,967,832"/>
-<area shape="rect" id="Node000032" href="$class_video_raw_frame.html#a32af978a5a2abdb0db26a84155eb7cf5" title="设置帧缓冲区" alt="" coords="660,829,860,856"/>
-<area shape="poly" id="edge44_Node000026_Node000032" title=" " alt="" coords="966,845,860,845,860,840,966,840"/>
-<area shape="rect" id="Node000028" href="$ikcp_8cpp.html#af4ce33146ddd2b9c55b2f3ba2472f888" title=" " alt="" coords="265,956,346,983"/>
-<area shape="poly" id="edge38_Node000027_Node000028" title=" " alt="" coords="452,972,346,972,346,967,452,967"/>
-<area shape="rect" id="Node000029" href="$class_h_y_k_t_1_1_kcp_obj.html#a4ac504bffb3f38656d14792df1744fee" title=" " alt="" coords="5,956,173,983"/>
-<area shape="poly" id="edge39_Node000028_Node000029" title=" " alt="" coords="250,972,173,972,173,967,250,967"/>
-<area shape="poly" id="edge41_Node000030_Node000027" title=" " alt="" coords="702,991,583,978,584,973,703,986"/>
+<area shape="rect" id="Node000001" title="Constructs an format_arg_store object that contains references to arguments and can be implicitly con..." alt="" coords="1256,635,1378,661"/>
+<area shape="rect" id="Node000002" href="$printf_8h.html#a9f315126362cae9675de1642105e631e" title="Formats args according to specifications in fmt and writes the output to f." alt="" coords="1154,459,1208,485"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1294,624,1191,487,1195,484,1298,621"/>
+<area shape="rect" id="Node000020" href="$printf_8h.html#a98ff17de0e9c70261310363fb2bc8560" title=" " alt="" coords="1156,685,1206,712"/>
+<area shape="poly" id="edge29_Node000001_Node000020" title=" " alt="" coords="1266,670,1208,692,1206,687,1264,665"/>
+<area shape="rect" id="Node000021" href="$printf_8h.html#aee3ed3a831f25f07e7be3919fff2203a" title="Formats args according to specifications in fmt and writes the output to stdout." alt="" coords="982,761,1032,788"/>
+<area shape="poly" id="edge30_Node000001_Node000021" title=" " alt="" coords="1242,653,1198,661,1155,676,1140,685,1131,695,1108,719,1034,765,1031,760,1104,715,1127,692,1137,681,1153,671,1196,656,1241,648"/>
+<area shape="rect" id="Node000003" href="$namespacedetail.html#a3aef7c3d156f7d6772703621279dbdc4" title=" " alt="" coords="947,349,1067,376"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1161,448,1137,417,1105,390,1066,374,1068,370,1107,386,1140,414,1165,444"/>
+<area shape="rect" id="Node000004" href="$class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="438,297,612,340"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1175,444,1170,406,1157,363,1136,322,1122,304,1104,289,1073,270,1040,256,969,238,895,232,821,237,750,248,684,264,579,299,577,294,682,259,749,243,821,231,895,227,970,233,1041,251,1075,266,1108,284,1126,300,1141,319,1162,361,1175,405,1181,443"/>
+<area shape="rect" id="Node000006" href="$class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="438,539,612,581"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="1182,501,1177,542,1165,591,1143,638,1127,658,1107,676,1089,685,1065,691,1007,693,938,685,862,670,708,627,584,584,585,579,710,622,863,665,939,680,1007,688,1064,686,1087,680,1105,671,1123,655,1138,635,1160,589,1172,541,1176,501"/>
+<area shape="rect" id="Node000007" href="$class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="908,400,1106,427"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="1139,455,1105,441,1068,430,1069,425,1107,436,1141,450"/>
+<area shape="rect" id="Node000009" href="$class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="918,451,1096,493"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="1138,475,1096,475,1096,469,1138,469"/>
+<area shape="rect" id="Node000010" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="701,555,819,581"/>
+<area shape="poly" id="edge28_Node000002_Node000010" title=" " alt="" coords="1170,501,1146,541,1128,560,1107,574,1070,590,1030,599,989,604,948,604,872,597,810,585,811,579,873,592,949,599,989,598,1029,594,1068,584,1105,570,1125,556,1142,538,1166,498"/>
+<area shape="rect" id="Node000011" href="$class_video_player.html#a22bc616c65129c31d2c75f4ed881c44a" title="播放器状态变更回调" alt="" coords="916,171,1098,213"/>
+<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="1175,444,1169,401,1156,348,1135,294,1104,244,1087,229,1067,216,1070,212,1090,224,1108,241,1140,291,1161,347,1174,400,1180,443"/>
+<area shape="rect" id="Node000017" href="$class_video_player.html#adccbc43146f9eb5b35c8e1c054c2065e" title="视频时长变更回调" alt="" coords="922,517,1092,560"/>
+<area shape="poly" id="edge22_Node000002_Node000017" title=" " alt="" coords="1141,493,1107,508,1076,519,1074,514,1105,503,1139,488"/>
+<area shape="rect" id="Node000018" href="$class_pcm_player___s_d_l.html#a48c0c97b8de3bf8202cda6e525e2bdc6" title="打开音频设备" alt="" coords="909,299,1104,325"/>
+<area shape="poly" id="edge25_Node000002_Node000018" title=" " alt="" coords="1169,445,1146,391,1128,363,1104,339,1085,328,1088,324,1108,335,1132,359,1151,388,1174,443"/>
+<area shape="rect" id="Node000019" href="$_video_player_8cpp.html#ac47f93d8b17eafd380ba474d7878a522" title="打印 FFmpeg 错误信息" alt="" coords="944,635,1070,661"/>
+<area shape="poly" id="edge26_Node000002_Node000019" title=" " alt="" coords="1175,501,1151,560,1132,591,1108,618,1090,630,1071,638,1069,633,1088,625,1104,614,1128,588,1147,558,1170,499"/>
+<area shape="rect" id="Node000005" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="221,467,390,493"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="484,351,327,468,324,464,481,347"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="449,535,343,496,345,491,451,530"/>
+<area shape="rect" id="Node000008" href="$class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="684,451,836,493"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="933,433,837,456,836,451,932,428"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="687,502,585,541,583,536,686,497"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="903,475,837,475,837,469,903,469"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="926,502,909,508,793,557,791,552,907,503,924,497"/>
+<area shape="poly" id="edge14_Node000011_Node000008" title=" " alt="" coords="972,226,910,288,835,378,779,452,775,449,831,375,906,285,968,222"/>
+<area shape="poly" id="edge17_Node000011_Node000010" title=" " alt="" coords="965,225,935,254,910,288,897,318,890,346,890,398,887,449,879,477,862,507,832,536,798,556,795,552,829,532,858,504,874,475,882,449,884,398,885,346,891,317,905,285,931,250,961,222"/>
+<area shape="rect" id="Node000012" href="$class_video_player.html#a2853250ac5b9806e29d41f6f37b3b7f0" title="暂停播放" alt="" coords="693,107,827,133"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="925,168,859,148,817,136,818,131,860,143,926,163"/>
+<area shape="rect" id="Node000013" href="$class_video_player.html#a0fd902a086b972b820de2959bc9dcaea" title="继续播放" alt="" coords="698,157,822,184"/>
+<area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="900,185,822,179,822,173,901,180"/>
+<area shape="rect" id="Node000014" href="$class_video_player.html#a162d83f6026c9f6be69d9c74a9979bc9" title="开始播放" alt="" coords="684,5,836,32"/>
+<area shape="poly" id="edge18_Node000011_Node000014" title=" " alt="" coords="979,160,928,101,895,71,858,46,833,35,835,30,861,42,898,67,931,97,983,156"/>
+<area shape="rect" id="Node000016" href="$class_video_player.html#af116cf31ffdcae8c9cd5bb184d339a77" title="停止播放" alt="" coords="698,56,822,83"/>
+<area shape="poly" id="edge21_Node000011_Node000016" title=" " alt="" coords="966,163,916,129,859,97,822,84,824,79,861,92,919,124,969,159"/>
+<area shape="rect" id="Node000015" href="$class_video_player.html#a97827e51f022776ec533db2579e110a5" title="重新播放" alt="" coords="458,163,592,189"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="674,40,662,46,622,74,587,106,539,164,535,160,583,103,619,70,659,42,671,35"/>
+<area shape="poly" id="edge20_Node000015_Node000011" title=" " alt="" coords="608,187,661,193,794,198,916,195,916,200,794,203,660,199,608,193"/>
+<area shape="poly" id="edge23_Node000017_Node000008" title=" " alt="" coords="910,515,836,495,837,490,911,510"/>
+<area shape="poly" id="edge24_Node000017_Node000010" title=" " alt="" coords="906,553,820,564,819,558,906,548"/>
+<area shape="poly" id="edge27_Node000019_Node000010" title=" " alt="" coords="948,632,907,619,803,584,804,579,908,613,950,627"/>
+<area shape="poly" id="edge31_Node000021_Node000006" title=" " alt="" coords="966,771,803,738,719,717,659,694,622,669,589,639,540,584,544,580,593,636,625,665,662,690,720,712,804,733,967,765"/>
+<area shape="poly" id="edge38_Node000021_Node000010" title=" " alt="" coords="976,753,776,584,779,580,980,749"/>
+<area shape="rect" id="Node000022" href="$ikcp_8cpp.html#a2a561d3f82169973fcdf2c2211925190" title=" " alt="" coords="467,888,583,915"/>
+<area shape="poly" id="edge32_Node000021_Node000022" title=" " alt="" coords="973,799,921,828,861,853,787,873,712,887,584,901,584,896,712,882,786,868,859,848,919,823,970,794"/>
+<area shape="rect" id="Node000025" href="$ikcp_8cpp.html#a4666efe40d211a24c49078218784e1ba" title=" " alt="" coords="718,913,802,940"/>
+<area shape="poly" id="edge35_Node000021_Node000025" title=" " alt="" coords="983,801,930,849,896,875,861,897,803,919,801,915,858,892,893,870,927,845,980,797"/>
+<area shape="rect" id="Node000026" href="$class_pcm_player.html#ae4b8dd06370f1663e4546ac1b56f51c3" title="输入 PCM 帧" alt="" coords="666,761,854,788"/>
+<area shape="poly" id="edge37_Node000021_Node000026" title=" " alt="" coords="966,777,855,777,855,772,966,772"/>
+<area shape="rect" id="Node000027" href="$class_video_raw_frame.html#a32af978a5a2abdb0db26a84155eb7cf5" title="设置帧缓冲区" alt="" coords="660,812,860,839"/>
+<area shape="poly" id="edge39_Node000021_Node000027" title=" " alt="" coords="967,785,829,814,828,809,966,780"/>
+<area shape="rect" id="Node000023" href="$ikcp_8cpp.html#af4ce33146ddd2b9c55b2f3ba2472f888" title=" " alt="" coords="265,888,346,915"/>
+<area shape="poly" id="edge33_Node000022_Node000023" title=" " alt="" coords="452,904,346,904,346,899,452,899"/>
+<area shape="rect" id="Node000024" href="$class_h_y_k_t_1_1_kcp_obj.html#a4ac504bffb3f38656d14792df1744fee" title=" " alt="" coords="5,888,173,915"/>
+<area shape="poly" id="edge34_Node000023_Node000024" title=" " alt="" coords="250,904,173,904,173,899,250,899"/>
+<area shape="poly" id="edge36_Node000025_Node000022" title=" " alt="" coords="702,923,583,910,584,905,703,918"/>
 </map>

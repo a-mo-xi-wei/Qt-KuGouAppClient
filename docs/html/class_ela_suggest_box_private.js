@@ -24,5 +24,6 @@ var class_ela_suggest_box_private =
     [ "_searchViewBaseWidget", "class_ela_suggest_box_private.html#a98c6dbb6359ae1f8ed7da7b8b86608ee", null ],
     [ "_shadowLayout", "class_ela_suggest_box_private.html#a8a645d2fe55e68ff05247de36c948e35", null ],
     [ "_suggestionVector", "class_ela_suggest_box_private.html#aa1c4b2f6626009acb7da1633101f4d6b", null ],
-    [ "_themeMode", "class_ela_suggest_box_private.html#abab7c56bd707e57041aaca2f2b3906b1", null ]
+    [ "_themeMode", "class_ela_suggest_box_private.html#abab7c56bd707e57041aaca2f2b3906b1", null ],
+    [ "m_ignoreTextChanges", "class_ela_suggest_box_private.html#a1838fd113d02828b84bbb01760ed577e", null ]
 ];

@@ -27,7 +27,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
   <td id="projectalign">
    <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
    </div>
@@ -203,6 +202,7 @@ $(function(){initNavTree('functions_c.html',''); initResizable(true); });
 <li>clicked()&#160;:&#160;<a class="el" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8">NavButton</a></li>
 <li>clickedFuncName()&#160;:&#160;<a class="el" href="class_listen_option_menu.html#a28588b3aa1fe32e9a2416e6d055a3800">ListenOptionMenu</a>, <a class="el" href="class_list_option_menu.html#a28588b3aa1fe32e9a2416e6d055a3800">ListOptionMenu</a></li>
 <li>clickToDismissMode()&#160;:&#160;<a class="el" href="class_qt_material_snackbar.html#a43df4c8691e64542636b99254cc469fb">QtMaterialSnackbar</a></li>
+<li>client&#160;:&#160;<a class="el" href="class_app_controller.html#a8006eac0b62a2169c63f35aa9641fbe9">AppController</a></li>
 <li>client_&#160;:&#160;<a class="el" href="classspdlog_1_1sinks_1_1mongo__sink.html#a280bc0be2d9efef11cfe3922539ed41a">mongo_sink&lt; Mutex &gt;</a>, <a class="el" href="classspdlog_1_1sinks_1_1udp__sink.html#a0333343ef734020cb4920be6d9400014">udp_sink&lt; Mutex &gt;</a></li>
 <li>clock&#160;:&#160;<a class="el" href="classspdlog_1_1stopwatch.html#a5416ef5623955b5210ee09ce14d24a58">stopwatch</a></li>
 <li>clone()&#160;:&#160;<a class="el" href="classspdlog_1_1async__logger.html#ae1b15ddbafa4d9b4335f8d9da864972b">async_logger</a>, <a class="el" href="classspdlog_1_1custom__flag__formatter.html#a6eb943d5187f1e10fefb093598523435">custom_flag_formatter</a>, <a class="el" href="classspdlog_1_1formatter.html#aa5d4acb03216f2dab006c7d2302b2676">formatter</a>, <a class="el" href="classspdlog_1_1logger.html#a2e417140b1693427cf2c4e580bf92765">logger</a>, <a class="el" href="classspdlog_1_1pattern__formatter.html#acb96787ee06ffac94f71f61245934fe7">pattern_formatter</a></li>
@@ -213,7 +213,7 @@ $(function(){initNavTree('functions_c.html',''); initResizable(true); });
 <li>closeConnection()&#160;:&#160;<a class="el" href="class_n_d_b_pool.html#a9f44e37b09b7c44b71fe15914da4b0c0">NDBPool</a>, <a class="el" href="class_n_d_b_pool__p.html#a042ef63e25f34b27254cec1bf42923a2">NDBPool_p</a></li>
 <li>closed()&#160;:&#160;<a class="el" href="class_c_web_socket_client.html#a6abb0e45eb340a477edd8b892b37373e">CWebSocketClient</a>, <a class="el" href="class_c_web_socket_server.html#a6abb0e45eb340a477edd8b892b37373e">CWebSocketServer</a></li>
 <li>closeDevice()&#160;:&#160;<a class="el" href="class_pcm_player.html#a3d37276da651c5d476ca66d6d6031d92">PcmPlayer</a>, <a class="el" href="class_pcm_player___s_d_l.html#ac82f11da965333b34c8a795ef0307e95">PcmPlayer_SDL</a></li>
-<li>closeEvent()&#160;:&#160;<a class="el" href="class_ku_gou_app.html#a734e48502f247ab4495ae832e4c2ae2e">KuGouApp</a>, <a class="el" href="class_main_window.html#a734e48502f247ab4495ae832e4c2ae2e">MainWindow</a>, <a class="el" href="class_speed_dialog.html#a734e48502f247ab4495ae832e4c2ae2e">SpeedDialog</a></li>
+<li>closeEvent()&#160;:&#160;<a class="el" href="class_ku_gou_client.html#a734e48502f247ab4495ae832e4c2ae2e">KuGouClient</a>, <a class="el" href="class_main_window.html#a734e48502f247ab4495ae832e4c2ae2e">MainWindow</a>, <a class="el" href="class_speed_dialog.html#a734e48502f247ab4495ae832e4c2ae2e">SpeedDialog</a></li>
 <li>CloseServer()&#160;:&#160;<a class="el" href="class_c_tcp_server.html#ac73e9118acf94317f4cf4e6a8a71a61c">CTcpServer</a>, <a class="el" href="class_c_web_socket_server.html#ac73e9118acf94317f4cf4e6a8a71a61c">CWebSocketServer</a></li>
 <li>closeServer()&#160;:&#160;<a class="el" href="classcchatserver.html#a912a4e0983416e8adeda19aa3c88e495">cchatserver</a></li>
 <li>closeSocket()&#160;:&#160;<a class="el" href="class_c_udp_server.html#ad93959a590e20f0755b3d53c4176f74a">CUdpServer</a></li>
@@ -332,6 +332,7 @@ $(function(){initNavTree('functions_c.html',''); initResizable(true); });
 <li>cover_pushButton&#160;:&#160;<a class="el" href="class_ui___video_widget.html#a8448e8d52d3673702e494232e71971d7">Ui_VideoWidget</a></li>
 <li>cover_toolButton&#160;:&#160;<a class="el" href="class_ui___song_list.html#ae493f05c0ed688df0a12d983653df139">Ui_SongList</a></li>
 <li>cover_widget&#160;:&#160;<a class="el" href="class_ui___channel_block.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_ChannelBlock</a>, <a class="el" href="class_ui___live_block_widget.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_LiveBlockWidget</a>, <a class="el" href="class_ui___music_repo_block.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_MusicRepoBlock</a>, <a class="el" href="class_ui___music_repo_list.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_MusicRepoList</a>, <a class="el" href="class_ui___music_repo_video.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_MusicRepoVideo</a>, <a class="el" href="class_ui___m_v_block_widget.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_MVBlockWidget</a>, <a class="el" href="class_ui___recently_channel_block.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_RecentlyChannelBlock</a>, <a class="el" href="class_ui___song_list_block_widget.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_SongListBlockWidget</a>, <a class="el" href="class_ui___video_block_widget.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_VideoBlockWidget</a>, <a class="el" href="class_ui___video_channel_block.html#a74abba0ff420532e9808a1d3bcb59dec">Ui_VideoChannelBlock</a></li>
+<li>coverUrl&#160;:&#160;<a class="el" href="struct_song_information.html#af83348af75ff093c072e7eee26d8588f">SongInformation</a></li>
 <li>cp&#160;:&#160;<a class="el" href="structdetail_1_1find__escape__result.html#a5e7f03f198700b5b3b939ad1085b2300">find_escape_result&lt; Char &gt;</a></li>
 <li>crc&#160;:&#160;<a class="el" href="struct_q_zip_reader_1_1_file_info.html#ab8fb39686bd4da953d6a2b06090d9430">QZipReader::FileInfo</a></li>
 <li>crc_32&#160;:&#160;<a class="el" href="struct_central_file_header.html#a824ec00dcaf851a77b9be36128b0be81">CentralFileHeader</a>, <a class="el" href="struct_data_descriptor.html#a824ec00dcaf851a77b9be36128b0be81">DataDescriptor</a>, <a class="el" href="struct_local_file_header.html#a824ec00dcaf851a77b9be36128b0be81">LocalFileHeader</a></li>
@@ -347,8 +348,8 @@ $(function(){initNavTree('functions_c.html',''); initResizable(true); });
 <li>ctx&#160;:&#160;<a class="el" href="structdetail_1_1dynamic__spec__handler.html#a8ed87bc860a637d49efa30947015ca62">dynamic_spec_handler&lt; Char &gt;</a>, <a class="el" href="structdetail_1_1format__handler.html#a70f552133ee7bde7a9acae8dbc0b2308">format_handler&lt; Char &gt;</a>, <a class="el" href="structdetail_1_1format__tuple__element.html#a8e78891ac6bc57c35cae49dcef5edc57">format_tuple_element&lt; FormatContext &gt;</a>, <a class="el" href="structdetail_1_1parse__empty__specs.html#a8ed87bc860a637d49efa30947015ca62">parse_empty_specs&lt; Char &gt;</a></li>
 <li>CUdpServer()&#160;:&#160;<a class="el" href="class_c_udp_server.html#a2fe69e76d8f3a04f48fb6d829552d5c9">CUdpServer</a></li>
 <li>CUdpSocket()&#160;:&#160;<a class="el" href="class_c_udp_socket.html#a10b374e4c9a9fc55d3193dec04ecb77a">CUdpSocket</a></li>
-<li>curPlaySingerChange()&#160;:&#160;<a class="el" href="class_ku_gou_app.html#ab8bf4bef8da02076c4092c0ae1540e01">KuGouApp</a>, <a class="el" href="class_music_repo_list.html#ab8bf4bef8da02076c4092c0ae1540e01">MusicRepoList</a></li>
-<li>curPlaySongNameChange()&#160;:&#160;<a class="el" href="class_ku_gou_app.html#a6a38569e7356dd6fbb4af98bdf80772e">KuGouApp</a>, <a class="el" href="class_music_repo_list.html#a6a38569e7356dd6fbb4af98bdf80772e">MusicRepoList</a></li>
+<li>curPlaySingerChange()&#160;:&#160;<a class="el" href="class_ku_gou_client.html#ab8bf4bef8da02076c4092c0ae1540e01">KuGouClient</a>, <a class="el" href="class_music_repo_list.html#ab8bf4bef8da02076c4092c0ae1540e01">MusicRepoList</a></li>
+<li>curPlaySongNameChange()&#160;:&#160;<a class="el" href="class_ku_gou_client.html#a6a38569e7356dd6fbb4af98bdf80772e">KuGouClient</a>, <a class="el" href="class_music_repo_list.html#a6a38569e7356dd6fbb4af98bdf80772e">MusicRepoList</a></li>
 <li>current&#160;:&#160;<a class="el" href="struct_i_k_c_p_c_b.html#a11b9f0bb3f4e06f65f48a7cf9e0c9c62">IKCPCB</a></li>
 <li>current_size_&#160;:&#160;<a class="el" href="classspdlog_1_1sinks_1_1rotating__file__sink.html#a0bb5d03ef3a062032d85166809396adb">rotating_file_sink&lt; Mutex &gt;</a></li>
 <li>current_user_sid_&#160;:&#160;<a class="el" href="classspdlog_1_1sinks_1_1win__eventlog_1_1win__eventlog__sink.html#ad668dd2258bc3325a881d78792fe798a">win_eventlog_sink&lt; Mutex &gt;</a></li>

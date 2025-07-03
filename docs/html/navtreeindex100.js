@@ -1,5 +1,10 @@
 var NAVTREEINDEX100 =
 {
+"moc___live_8cpp_8d.html":[3,0,0,0,2,6,0,3,1],
+"moc___live_8cpp_source.html":[3,0,0,0,2,6,0,3,0],
+"moc___live_big_left_widget_8cpp.html":[3,0,0,0,2,6,0,6,0],
+"moc___live_big_left_widget_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc":[3,0,0,0,2,6,0,6,0,2],
+"moc___live_big_left_widget_8cpp.html#aa3ae2dbc4e9b5b3c1d479233a1d09e0e":[3,0,0,0,2,6,0,6,0,3],
 "moc___live_big_left_widget_8cpp.html#ad83b2306f94b5b9e5625794fc238c8a0":[3,0,0,0,2,6,0,6,0,1],
 "moc___live_big_left_widget_8cpp_8d.html":[3,0,0,0,2,6,0,6,1],
 "moc___live_big_left_widget_8cpp_source.html":[3,0,0,0,2,6,0,6,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX100 =
 "moc___recently_song_list_8cpp_8d.html":[3,0,0,0,2,12,0,3,1],
 "moc___recently_song_list_8cpp_source.html":[3,0,0,0,2,12,0,3,0],
 "moc___recently_video_widget_8cpp.html":[3,0,0,0,2,12,0,5,0],
-"moc___recently_video_widget_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc":[3,0,0,0,2,12,0,5,0,2],
-"moc___recently_video_widget_8cpp.html#a9fe591f118ecf017c5e3755eadeb58f2":[3,0,0,0,2,12,0,5,0,3],
-"moc___recently_video_widget_8cpp.html#ad83b2306f94b5b9e5625794fc238c8a0":[3,0,0,0,2,12,0,5,0,1],
-"moc___recently_video_widget_8cpp_8d.html":[3,0,0,0,2,12,0,5,1],
-"moc___recently_video_widget_8cpp_source.html":[3,0,0,0,2,12,0,5,0],
-"moc___recommend_for_you_8cpp.html":[3,0,0,0,2,13,0,1,0]
+"moc___recently_video_widget_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc":[3,0,0,0,2,12,0,5,0,2]
 };

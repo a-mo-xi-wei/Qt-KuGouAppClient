@@ -27,7 +27,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
   <td id="projectalign">
    <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
    </div>
@@ -152,16 +151,19 @@ $(function(){initNavTree('_ela_suggest_box_8h_source.html',''); initResizable(tr
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>Q_SIGNALS:</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    Q_SIGNAL <span class="keywordtype">void</span> suggestionClicked(<span class="keyword">const</span> QString&amp; suggestText, <span class="keyword">const</span> QVariantMap&amp; suggestData);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>};</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_ela_suggest_box.html#a1656a8344fdb2f6b7d09c19d1a81cc89">  120</a></span>    Q_SIGNAL <span class="keywordtype">void</span> <a class="code hl_signal" href="class_ela_suggest_box.html#a1656a8344fdb2f6b7d09c19d1a81cc89">searchTextReturnPressed</a>(<span class="keyword">const</span> QString &amp;searchText, <span class="keyword">const</span> QVariantMap &amp;suggestData = {});</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>};</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif </span><span class="comment">// ELASUGGESTBOX_H</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif </span><span class="comment">// ELASUGGESTBOX_H</span></div>
 <div class="ttc" id="a_def_8h_html"><div class="ttname"><a href="_def_8h.html">Def.h</a></div></div>
 <div class="ttc" id="abase_8h_html_a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86"><div class="ttname"><a href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">arg_id_kind::index</a></div><div class="ttdeci">@ index</div><div class="ttdef"><b>定义</b> base.h:700</div></div>
 <div class="ttc" id="aclass_ela_line_edit_html"><div class="ttname"><a href="class_ela_line_edit.html">ElaLineEdit</a></div><div class="ttdef"><b>定义</b> ElaLineEdit.h:10</div></div>
-<div class="ttc" id="aclass_ela_suggest_box_html_a396d656e7d9459262ccfaaba2a915213"><div class="ttname"><a href="class_ela_suggest_box.html#a396d656e7d9459262ccfaaba2a915213">ElaSuggestBox::addSuggestion</a></div><div class="ttdeci">QString addSuggestion(const QString &amp;suggestText, const QVariantMap &amp;suggestData={})</div><div class="ttdoc">添加建议项</div><div class="ttdef"><b>定义</b> ElaSuggestBox.cpp:121</div></div>
-<div class="ttc" id="aclass_ela_suggest_box_html_aec7af087a466cf49eb70708e83c70608"><div class="ttname"><a href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608">ElaSuggestBox::ElaSuggestBox</a></div><div class="ttdeci">ElaSuggestBox(QWidget *parent=nullptr)</div><div class="ttdoc">&lt; 声明私有类指针</div><div class="ttdef"><b>定义</b> ElaSuggestBox.cpp:33</div></div>
-<div class="ttc" id="aclass_ela_suggest_box_html_af7e59fb643e69dd6e97f55fd3a3b376a"><div class="ttname"><a href="class_ela_suggest_box.html#af7e59fb643e69dd6e97f55fd3a3b376a">ElaSuggestBox::setPlaceholderText</a></div><div class="ttdeci">void setPlaceholderText(const QString &amp;placeholderText)</div><div class="ttdoc">设置占位文本</div><div class="ttdef"><b>定义</b> ElaSuggestBox.cpp:109</div></div>
+<div class="ttc" id="aclass_ela_suggest_box_html_a1656a8344fdb2f6b7d09c19d1a81cc89"><div class="ttname"><a href="class_ela_suggest_box.html#a1656a8344fdb2f6b7d09c19d1a81cc89">ElaSuggestBox::searchTextReturnPressed</a></div><div class="ttdeci">Q_SIGNAL void searchTextReturnPressed(const QString &amp;searchText, const QVariantMap &amp;suggestData={})</div></div>
+<div class="ttc" id="aclass_ela_suggest_box_html_a396d656e7d9459262ccfaaba2a915213"><div class="ttname"><a href="class_ela_suggest_box.html#a396d656e7d9459262ccfaaba2a915213">ElaSuggestBox::addSuggestion</a></div><div class="ttdeci">QString addSuggestion(const QString &amp;suggestText, const QVariantMap &amp;suggestData={})</div><div class="ttdoc">添加建议项</div><div class="ttdef"><b>定义</b> ElaSuggestBox.cpp:138</div></div>
+<div class="ttc" id="aclass_ela_suggest_box_html_aec7af087a466cf49eb70708e83c70608"><div class="ttname"><a href="class_ela_suggest_box.html#aec7af087a466cf49eb70708e83c70608">ElaSuggestBox::ElaSuggestBox</a></div><div class="ttdeci">ElaSuggestBox(QWidget *parent=nullptr)</div><div class="ttdoc">&lt; 声明私有类指针</div><div class="ttdef"><b>定义</b> ElaSuggestBox.cpp:34</div></div>
+<div class="ttc" id="aclass_ela_suggest_box_html_af7e59fb643e69dd6e97f55fd3a3b376a"><div class="ttname"><a href="class_ela_suggest_box.html#af7e59fb643e69dd6e97f55fd3a3b376a">ElaSuggestBox::setPlaceholderText</a></div><div class="ttdeci">void setPlaceholderText(const QString &amp;placeholderText)</div><div class="ttdoc">设置占位文本</div><div class="ttdef"><b>定义</b> ElaSuggestBox.cpp:126</div></div>
 <div class="ttc" id="aclass_ela_suggest_box_html_afab7637a449fea4a908e156f2eb270a1"><div class="ttname"><a href="class_ela_suggest_box.html#afab7637a449fea4a908e156f2eb270a1">ElaSuggestBox::~ElaSuggestBox</a></div><div class="ttdeci">~ElaSuggestBox() override</div><div class="ttdoc">析构函数</div></div>
 <div class="ttc" id="aclass_ela_suggest_box_private_html"><div class="ttname"><a href="class_ela_suggest_box_private.html">ElaSuggestBoxPrivate</a></div><div class="ttdoc">搜索建议框的私有实现，管理建议项和界面</div><div class="ttdef"><b>定义</b> ElaSuggestBoxPrivate.h:52</div></div>
 <div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>

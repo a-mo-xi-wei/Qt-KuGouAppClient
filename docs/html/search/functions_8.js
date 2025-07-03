@@ -12,7 +12,7 @@ var searchData=
   ['handle_5fpadspec_5f_9',['handle_padspec_',['../classspdlog_1_1pattern__formatter.html#ace1f279be0a13d47470db704c1a786a0',1,'spdlog::pattern_formatter']]],
   ['handleaccepted_10',['handleAccepted',['../class_j_q_http_server_1_1_abstract_manage.html#a6773c8bd0376408a236ab98aba9b92b8',1,'JQHttpServer::AbstractManage']]],
   ['handledelta_11',['handleDelta',['../class_slider_widget.html#ace6a4368b55cb96075530d6e0b28c850',1,'SliderWidget']]],
-  ['handlesuggestboxsuggestionclicked_12',['handleSuggestBoxSuggestionClicked',['../class_local_song.html#afd928c0268a021fbb05d4357f3c2de66',1,'LocalSong']]],
+  ['handlesuggestboxsuggestionclicked_12',['handleSuggestBoxSuggestionClicked',['../class_ku_gou_client.html#afd928c0268a021fbb05d4357f3c2de66',1,'KuGouClient::handleSuggestBoxSuggestionClicked()'],['../class_local_song.html#afd928c0268a021fbb05d4357f3c2de66',1,'LocalSong::handleSuggestBoxSuggestionClicked()']]],
   ['handletcpsockethearttimeout_13',['handleTcpSocketHeartTimeOut',['../class_c_tcp_socket.html#a1e90a25b36445082c31a82160af2e931',1,'CTcpSocket']]],
   ['handletcpsocketreconnect_14',['handleTcpSocketReconnect',['../class_c_tcp_socket.html#a819fa8d7db930fd6643e954f152861bb',1,'CTcpSocket']]],
   ['handlethreadpool_15',['handleThreadPool',['../class_j_q_http_server_1_1_abstract_manage.html#a5f4aa72928adc2de8567585a46ffcd63',1,'JQHttpServer::AbstractManage']]],

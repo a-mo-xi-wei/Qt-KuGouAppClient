@@ -27,7 +27,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
   <td id="projectalign">
    <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
    </div>
@@ -110,7 +109,7 @@ $(function(){initNavTree('moc___ku_gou_app_8cpp_source.html',''); initResizable(
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">** WARNING! All changes made in this file will be lost!</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">*****************************************************************************/</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_ku_gou_app_8h.html">../../../../../KuGouStart/KuGouApp.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../../../../../KuGouStart/KuGouApp.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QtNetwork/QSslError&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QtCore/qmetatype.h&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
@@ -577,7 +576,7 @@ $(function(){initNavTree('moc___ku_gou_app_8cpp_source.html',''); initResizable(
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span><span class="keywordtype">void</span> KuGouApp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, <span class="keywordtype">int</span> _id, <span class="keywordtype">void</span> **_a)</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>{</div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    <span class="keywordflow">if</span> (_c == QMetaObject::InvokeMetaMethod) {</div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        <span class="keyword">auto</span> *_t = <span class="keyword">static_cast&lt;</span><a class="code hl_function" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622">KuGouApp</a> *<span class="keyword">&gt;</span>(_o);</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        <span class="keyword">auto</span> *_t = <span class="keyword">static_cast&lt;</span>KuGouApp *<span class="keyword">&gt;</span>(_o);</div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>        (void)_t;</div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>        <span class="keywordflow">switch</span> (_id) {</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>        <span class="keywordflow">case</span> 0: _t-&gt;maxScreen(); <span class="keywordflow">break</span>;</div>
@@ -626,22 +625,22 @@ $(function(){initNavTree('moc___ku_gou_app_8cpp_source.html',''); initResizable(
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_c == QMetaObject::IndexOfMethod) {</div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        <span class="keywordtype">int</span> *result = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">int</span> *<span class="keyword">&gt;</span>(_a[0]);</div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        {</div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>            <span class="keyword">using </span>_t = void (<a class="code hl_function" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622">KuGouApp</a>::*)();</div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>            <span class="keywordflow">if</span> (_t _q_method = &amp;<a class="code hl_signal" href="class_ku_gou_app.html#a992988d596e79194a707af831db3f4ea">KuGouApp::maxScreen</a>; *<span class="keyword">reinterpret_cast&lt;</span>_t *<span class="keyword">&gt;</span>(_a[1]) == _q_method) {</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>            <span class="keyword">using </span>_t = void (KuGouApp::*)();</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>            <span class="keywordflow">if</span> (_t _q_method = &amp;KuGouApp::maxScreen; *<span class="keyword">reinterpret_cast&lt;</span>_t *<span class="keyword">&gt;</span>(_a[1]) == _q_method) {</div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>                *result = 0;</div>
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>            }</div>
 <div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>        }</div>
 <div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>        {</div>
-<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>            <span class="keyword">using </span>_t = void (<a class="code hl_function" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622">KuGouApp</a>::*)(<span class="keyword">const</span> QString &amp; );</div>
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>            <span class="keywordflow">if</span> (_t _q_method = &amp;<a class="code hl_signal" href="class_ku_gou_app.html#a6a38569e7356dd6fbb4af98bdf80772e">KuGouApp::curPlaySongNameChange</a>; *<span class="keyword">reinterpret_cast&lt;</span>_t *<span class="keyword">&gt;</span>(_a[1]) == _q_method) {</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>            <span class="keyword">using </span>_t = void (KuGouApp::*)(<span class="keyword">const</span> QString &amp; );</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>            <span class="keywordflow">if</span> (_t _q_method = &amp;KuGouApp::curPlaySongNameChange; *<span class="keyword">reinterpret_cast&lt;</span>_t *<span class="keyword">&gt;</span>(_a[1]) == _q_method) {</div>
 <div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>                *result = 1;</div>
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>            }</div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>        }</div>
 <div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>        {</div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>            <span class="keyword">using </span>_t = void (<a class="code hl_function" href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622">KuGouApp</a>::*)(<span class="keyword">const</span> QString &amp; );</div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>            <span class="keywordflow">if</span> (_t _q_method = &amp;<a class="code hl_signal" href="class_ku_gou_app.html#ab8bf4bef8da02076c4092c0ae1540e01">KuGouApp::curPlaySingerChange</a>; *<span class="keyword">reinterpret_cast&lt;</span>_t *<span class="keyword">&gt;</span>(_a[1]) == _q_method) {</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>            <span class="keyword">using </span>_t = void (KuGouApp::*)(<span class="keyword">const</span> QString &amp; );</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>            <span class="keywordflow">if</span> (_t _q_method = &amp;KuGouApp::curPlaySingerChange; *<span class="keyword">reinterpret_cast&lt;</span>_t *<span class="keyword">&gt;</span>(_a[1]) == _q_method) {</div>
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>                *result = 2;</div>
 <div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>            }</div>
@@ -660,7 +659,7 @@ $(function(){initNavTree('moc___ku_gou_app_8cpp_source.html',''); initResizable(
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>    <span class="keywordflow">if</span> (!strcmp(_clname, <a class="code hl_variable" href="namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html#a3915d88a7f114f6daec3d6ac8109dfd5">qt_meta_stringdata_CLASSKuGouAppENDCLASS</a>.<a class="code hl_variable" href="struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__stringdata___c_l_a0edc5c0c0ac9e195d83e83fa573bd7dd.html#aa47622a50e109d79d974d926e9de301b">stringdata0</a>))</div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    <span class="keywordflow">if</span> (!strcmp(_clname, <span class="stringliteral">&quot;VideoPlayer::EventHandle&quot;</span>))</div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> VideoPlayer::EventHandle*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> <a class="code hl_class" href="class_video_player_1_1_event_handle.html">VideoPlayer::EventHandle</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>    <span class="keywordflow">return</span> MainWindow::qt_metacast(_clname);</div>
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>}</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span> </div>
@@ -682,36 +681,26 @@ $(function(){initNavTree('moc___ku_gou_app_8cpp_source.html',''); initResizable(
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>}</div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span><span class="comment">// SIGNAL 0</span></div>
-<div class="foldopen" id="foldopen00573" data-start="{" data-end="}">
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno"><a class="line" href="class_ku_gou_app.html#a992988d596e79194a707af831db3f4ea">  573</a></span><span class="keywordtype">void</span> <a class="code hl_signal" href="class_ku_gou_app.html#a992988d596e79194a707af831db3f4ea">KuGouApp::maxScreen</a>()</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span><span class="keywordtype">void</span> KuGouApp::maxScreen()</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>{</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 0, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>}</div>
-</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="comment">// SIGNAL 1</span></div>
-<div class="foldopen" id="foldopen00579" data-start="{" data-end="}">
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno"><a class="line" href="class_ku_gou_app.html#a6a38569e7356dd6fbb4af98bdf80772e">  579</a></span><span class="keywordtype">void</span> <a class="code hl_signal" href="class_ku_gou_app.html#a6a38569e7356dd6fbb4af98bdf80772e">KuGouApp::curPlaySongNameChange</a>(<span class="keyword">const</span> QString &amp; _t1)</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keywordtype">void</span> KuGouApp::curPlaySongNameChange(<span class="keyword">const</span> QString &amp; _t1)</div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>{</div>
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    <span class="keywordtype">void</span> *_a[] = { <span class="keyword">nullptr</span>, <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t1))) };</div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 1, _a);</div>
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>}</div>
-</div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
 <div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="comment">// SIGNAL 2</span></div>
-<div class="foldopen" id="foldopen00586" data-start="{" data-end="}">
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno"><a class="line" href="class_ku_gou_app.html#ab8bf4bef8da02076c4092c0ae1540e01">  586</a></span><span class="keywordtype">void</span> <a class="code hl_signal" href="class_ku_gou_app.html#ab8bf4bef8da02076c4092c0ae1540e01">KuGouApp::curPlaySingerChange</a>(<span class="keyword">const</span> QString &amp; _t1)</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span><span class="keywordtype">void</span> KuGouApp::curPlaySingerChange(<span class="keyword">const</span> QString &amp; _t1)</div>
 <div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>{</div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    <span class="keywordtype">void</span> *_a[] = { <span class="keyword">nullptr</span>, <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(std::addressof(_t1))) };</div>
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>    QMetaObject::activate(<span class="keyword">this</span>, &amp;staticMetaObject, 2, _a);</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>}</div>
-</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>QT_WARNING_POP</div>
-<div class="ttc" id="a_ku_gou_app_8h_html"><div class="ttname"><a href="_ku_gou_app_8h.html">KuGouApp.h</a></div><div class="ttdoc">酷狗音乐应用主窗口的头文件，定义 KuGouApp 类</div></div>
-<div class="ttc" id="aclass_ku_gou_app_html_a6a38569e7356dd6fbb4af98bdf80772e"><div class="ttname"><a href="class_ku_gou_app.html#a6a38569e7356dd6fbb4af98bdf80772e">KuGouApp::curPlaySongNameChange</a></div><div class="ttdeci">void curPlaySongNameChange(const QString &amp;songName)</div><div class="ttdoc">当前播放歌曲名称改变信号</div><div class="ttdef"><b>定义</b> moc_KuGouApp.cpp:579</div></div>
-<div class="ttc" id="aclass_ku_gou_app_html_a992988d596e79194a707af831db3f4ea"><div class="ttname"><a href="class_ku_gou_app.html#a992988d596e79194a707af831db3f4ea">KuGouApp::maxScreen</a></div><div class="ttdeci">void maxScreen()</div><div class="ttdoc">最大化信号</div><div class="ttdef"><b>定义</b> moc_KuGouApp.cpp:573</div></div>
-<div class="ttc" id="aclass_ku_gou_app_html_ab8bf4bef8da02076c4092c0ae1540e01"><div class="ttname"><a href="class_ku_gou_app.html#ab8bf4bef8da02076c4092c0ae1540e01">KuGouApp::curPlaySingerChange</a></div><div class="ttdeci">void curPlaySingerChange(const QString &amp;singer)</div><div class="ttdoc">当前播放歌手改变信号</div><div class="ttdef"><b>定义</b> moc_KuGouApp.cpp:586</div></div>
-<div class="ttc" id="aclass_ku_gou_app_html_af7467d6f774dc85cb961cd95c055f622"><div class="ttname"><a href="class_ku_gou_app.html#af7467d6f774dc85cb961cd95c055f622">KuGouApp::KuGouApp</a></div><div class="ttdeci">KuGouApp(MainWindow *parent=nullptr)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> KuGouApp.cpp:63</div></div>
+<div class="ttc" id="aclass_video_player_1_1_event_handle_html"><div class="ttname"><a href="class_video_player_1_1_event_handle.html">VideoPlayer::EventHandle</a></div><div class="ttdoc">事件处理接口</div><div class="ttdef"><b>定义</b> VideoPlayer.h:75</div></div>
 <div class="ttc" id="amoc___ela_scroll_bar_style_8cpp_html_ace595738616fb719b4f1cb5c6146bfe9"><div class="ttname"><a href="moc___ela_scroll_bar_style_8cpp.html#ace595738616fb719b4f1cb5c6146bfe9">QT_WARNING_DISABLE_GCC</a></div><div class="ttdeci">QT_WARNING_PUSH QT_WARNING_DISABLE_DEPRECATED QT_WARNING_DISABLE_GCC(&quot;-Wuseless-cast&quot;) namespace</div><div class="ttdef"><b>定义</b> moc_ElaScrollBarStyle.cpp:35</div></div>
 <div class="ttc" id="amoc___ku_gou_app_8cpp_html_a3c6e81753001d10d51e62d0a29c273bc"><div class="ttname"><a href="moc___ku_gou_app_8cpp.html#a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</a></div><div class="ttdeci">#define QT_MOC_LITERAL(ofs, len)</div><div class="ttdef"><b>定义</b> moc_KuGouApp.cpp:147</div></div>
 <div class="ttc" id="amoc___ku_gou_app_8cpp_html_a65fc26e9dafeb1ef2193e736bddd43b6"><div class="ttname"><a href="moc___ku_gou_app_8cpp.html#a65fc26e9dafeb1ef2193e736bddd43b6">qt_meta_data_CLASSKuGouAppENDCLASS</a></div><div class="ttdeci">static Q_CONSTINIT const uint qt_meta_data_CLASSKuGouAppENDCLASS[]</div><div class="ttdef"><b>定义</b> moc_KuGouApp.cpp:257</div></div>

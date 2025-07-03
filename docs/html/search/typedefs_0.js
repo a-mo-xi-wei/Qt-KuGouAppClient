@@ -5,7 +5,7 @@ var searchData=
   ['ansicolor_5fstderr_5fsink_5fst_2',['ansicolor_stderr_sink_st',['../namespacespdlog_1_1sinks.html#af8c9f976f80ead06de771037242441ec',1,'spdlog::sinks']]],
   ['ansicolor_5fstdout_5fsink_5fmt_3',['ansicolor_stdout_sink_mt',['../namespacespdlog_1_1sinks.html#afedf4664bb45c14cdb7bb295ece3cf31',1,'spdlog::sinks']]],
   ['ansicolor_5fstdout_5fsink_5fst_4',['ansicolor_stdout_sink_st',['../namespacespdlog_1_1sinks.html#ab4c57402bd15d4335ebf0276a021dd31',1,'spdlog::sinks']]],
-  ['apihandler_5',['ApiHandler',['../class_server.html#a84c06c1fc58f5d98b9b1522976aee01e',1,'Server']]],
+  ['apihandler_5',['ApiHandler',['../class_ku_gou_server.html#a84c06c1fc58f5d98b9b1522976aee01e',1,'KuGouServer']]],
   ['appender_6',['appender',['../base_8h.html#a6572319cff9106ebe28538bf10641524',1,'base.h']]],
   ['arg_5fpack_7',['arg_pack',['../structfstring.html#a5426359f6ec93af7b8fc9cac0b37a17f',1,'fstring::arg_pack'],['../structbasic__fstring.html#a5426359f6ec93af7b8fc9cac0b37a17f',1,'basic_fstring::arg_pack']]],
   ['arg_5ft_8',['arg_t',['../namespacedetail.html#ac47d513a34d434a5c3c3a04f2286bc74',1,'detail']]],

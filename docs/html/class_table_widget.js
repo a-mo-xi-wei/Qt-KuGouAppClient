@@ -31,8 +31,8 @@ var class_table_widget =
     [ "m_adjust_ToolBtn", "class_table_widget.html#a3087fead8d17682909da1697552d70c8", null ],
     [ "m_blockCoverPaths", "class_table_widget.html#aff276fb5bf1a8287edcdf9f4d3c9c6fb", null ],
     [ "m_descVector", "class_table_widget.html#a798937eaec870b62ed212268d402aae9", null ],
-    [ "m_gridContainer", "class_table_widget.html#a7eaef42516a13c5333e0a341d3fd4518", null ],
-    [ "m_gridLayout", "class_table_widget.html#a314512b1a2932c08ca1587aa5323cfa5", null ],
+    [ "m_gridContainer", "class_table_widget.html#a61e4f1c1a926c1ce40cc39f20103d0d9", null ],
+    [ "m_gridLayout", "class_table_widget.html#a4d88d7bfa0246083543b5ff600f6086a", null ],
     [ "m_hide_col_6", "class_table_widget.html#a430687bb54259673af42609e7257e277", null ],
     [ "m_hide_col_7", "class_table_widget.html#a932c24ec7869d7c7393f825583a60b33", null ],
     [ "m_kind", "class_table_widget.html#a67000ef0b8a9878105456a00ce96a112", null ],
@@ -43,6 +43,6 @@ var class_table_widget =
     [ "m_refreshTimer", "class_table_widget.html#a50fa904a76720ab53f12c8e658b6da51", null ],
     [ "m_showCol", "class_table_widget.html#a12bd673ce03b09935e30ecf4d2d312e8", null ],
     [ "m_songInfo", "class_table_widget.html#a2cff5d2d82235cf6d4307881f52bacd2", null ],
-    [ "m_tabHLayout", "class_table_widget.html#a9864f7c596bab794b6d9da20f3025c31", null ],
+    [ "m_tabHLayout", "class_table_widget.html#ac3b95d14c9c2c63f04573e032a3eb51c", null ],
     [ "m_titleLab", "class_table_widget.html#abf13fc9a8aa0c7699dbbab93b272d344", null ]
 ];

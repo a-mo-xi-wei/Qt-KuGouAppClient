@@ -441,7 +441,6 @@ var menudata={children:[
 {text:"q",url:"globals_defs_q.html#index_q"},
 {text:"r",url:"globals_defs_r.html#index_r"},
 {text:"s",url:"globals_defs_s.html#index_s"},
-{text:"t",url:"globals_defs_t.html#index_t"},
 {text:"u",url:"globals_defs_u.html#index_u"},
 {text:"v",url:"globals_defs_v.html#index_v"},
 {text:"w",url:"globals_defs_w.html#index_w"},

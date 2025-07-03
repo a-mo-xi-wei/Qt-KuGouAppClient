@@ -27,7 +27,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
   <td id="projectalign">
    <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
    </div>
@@ -103,7 +102,7 @@ $(function(){initNavTree('ui___ku_gou_app_8h_source.html',''); initResizable(tru
 </div><!--header-->
 <div class="contents">
 <a href="ui___ku_gou_app_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/********************************************************************************</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">** Form generated from reading UI file &#39;KuGouApp.ui&#39;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">** Form generated from reading UI file &#39;KuGouClient.ui&#39;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">**</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">** Created by: Qt User Interface Compiler version 6.6.2</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">**</span></div>
@@ -204,18 +203,18 @@ $(function(){initNavTree('ui___ku_gou_app_8h_source.html',''); initResizable(tru
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_ui___ku_gou_app.html#a54530bc7945119d571dba8dda87a0128">   99</a></span>    <a class="code hl_class" href="class_q_tool_button.html">QToolButton</a> *<a class="code hl_variable" href="class_ui___ku_gou_app.html#a54530bc7945119d571dba8dda87a0128">song_queue_toolButton</a>;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_ui___ku_gou_app.html#a382f7bf20634588b4279381b32a98d44">  101</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ui___ku_gou_app.html#a382f7bf20634588b4279381b32a98d44">setupUi</a>(QWidget *<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_ui___ku_gou_app.html#a382f7bf20634588b4279381b32a98d44">  101</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ui___ku_gou_app.html#a382f7bf20634588b4279381b32a98d44">setupUi</a>(QWidget *KuGouApp)</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>-&gt;objectName().isEmpty())</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>-&gt;setObjectName(<span class="stringliteral">&quot;KuGouApp&quot;</span>);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>-&gt;resize(1060, 735);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>-&gt;setMinimumSize(QSize(1060, 735));</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>-&gt;setMouseTracking(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acbe0600e63ca9c63fe807730289e677a">verticalLayout_5</a> = <span class="keyword">new</span> QVBoxLayout(<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> (KuGouApp-&gt;objectName().isEmpty())</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            KuGouApp-&gt;setObjectName(<span class="stringliteral">&quot;KuGouApp&quot;</span>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        KuGouApp-&gt;resize(1060, 735);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        KuGouApp-&gt;setMinimumSize(QSize(1060, 735));</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        KuGouApp-&gt;setMouseTracking(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acbe0600e63ca9c63fe807730289e677a">verticalLayout_5</a> = <span class="keyword">new</span> QVBoxLayout(KuGouApp);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acbe0600e63ca9c63fe807730289e677a">verticalLayout_5</a>-&gt;setSpacing(0);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acbe0600e63ca9c63fe807730289e677a">verticalLayout_5</a>-&gt;setObjectName(<span class="stringliteral">&quot;verticalLayout_5&quot;</span>);</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acbe0600e63ca9c63fe807730289e677a">verticalLayout_5</a>-&gt;setContentsMargins(0, 0, 0, 0);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a527152271aac2a944d4d8e03dbac895a">title_widget</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_title_widget.html">TitleWidget</a>(<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a527152271aac2a944d4d8e03dbac895a">title_widget</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_title_widget.html">TitleWidget</a>(KuGouApp);</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a527152271aac2a944d4d8e03dbac895a">title_widget</a>-&gt;setObjectName(<span class="stringliteral">&quot;title_widget&quot;</span>);</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        sizePolicy.setHorizontalStretch(0);</div>
@@ -227,7 +226,7 @@ $(function(){initNavTree('ui___ku_gou_app_8h_source.html',''); initResizable(tru
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acbe0600e63ca9c63fe807730289e677a">verticalLayout_5</a>-&gt;addWidget(<a class="code hl_variable" href="class_ui___ku_gou_app.html#a527152271aac2a944d4d8e03dbac895a">title_widget</a>);</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a4fa5fd3a30ae28e11006254af049c24a">center_widget</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_center_widget.html">CenterWidget</a>(<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a4fa5fd3a30ae28e11006254af049c24a">center_widget</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_center_widget.html">CenterWidget</a>(KuGouApp);</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a4fa5fd3a30ae28e11006254af049c24a">center_widget</a>-&gt;setObjectName(<span class="stringliteral">&quot;center_widget&quot;</span>);</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        QSizePolicy sizePolicy1(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Expanding);</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        sizePolicy1.setHorizontalStretch(0);</div>
@@ -561,7 +560,7 @@ $(function(){initNavTree('ui___ku_gou_app_8h_source.html',''); initResizable(tru
 <div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acbe0600e63ca9c63fe807730289e677a">verticalLayout_5</a>-&gt;addWidget(<a class="code hl_variable" href="class_ui___ku_gou_app.html#a4fa5fd3a30ae28e11006254af049c24a">center_widget</a>);</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span> </div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acec654862c052675b823cd2ae4bdb0ab">play_widget</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_play_widget.html">PlayWidget</a>(<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>);</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acec654862c052675b823cd2ae4bdb0ab">play_widget</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_play_widget.html">PlayWidget</a>(KuGouApp);</div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acec654862c052675b823cd2ae4bdb0ab">play_widget</a>-&gt;setObjectName(<span class="stringliteral">&quot;play_widget&quot;</span>);</div>
 <div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>        sizePolicy.setHeightForWidth(<a class="code hl_variable" href="class_ui___ku_gou_app.html#acec654862c052675b823cd2ae4bdb0ab">play_widget</a>-&gt;sizePolicy().hasHeightForWidth());</div>
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acec654862c052675b823cd2ae4bdb0ab">play_widget</a>-&gt;setSizePolicy(sizePolicy);</div>
@@ -822,19 +821,19 @@ $(function(){initNavTree('ui___ku_gou_app_8h_source.html',''); initResizable(tru
 <div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#acbe0600e63ca9c63fe807730289e677a">verticalLayout_5</a>-&gt;addWidget(<a class="code hl_variable" href="class_ui___ku_gou_app.html#acec654862c052675b823cd2ae4bdb0ab">play_widget</a>);</div>
 <div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span> </div>
 <div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span> </div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        <a class="code hl_function" href="class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d">retranslateUi</a>(<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>);</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        <a class="code hl_function" href="class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d">retranslateUi</a>(KuGouApp);</div>
 <div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span> </div>
 <div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a602927be686180cccfcf19980746ec4e">stackedWidget</a>-&gt;setCurrentIndex(-1);</div>
 <div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span> </div>
 <div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span> </div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        QMetaObject::connectSlotsByName(<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>);</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        QMetaObject::connectSlotsByName(KuGouApp);</div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    } <span class="comment">// setupUi</span></div>
 </div>
 <div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span> </div>
 <div class="foldopen" id="foldopen00727" data-start="{" data-end="}">
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno"><a class="line" href="class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d">  727</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d">retranslateUi</a>(QWidget *<a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>)</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno"><a class="line" href="class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d">  727</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ui___ku_gou_app.html#a1a71beacaf4a2b5135dff8e9e6fa6f2d">retranslateUi</a>(QWidget *KuGouApp)</div>
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>    {</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>        <a class="code hl_class" href="class_ku_gou_app.html">KuGouApp</a>-&gt;setWindowTitle(QCoreApplication::translate(<span class="stringliteral">&quot;KuGouApp&quot;</span>, <span class="stringliteral">&quot;KuGouApp&quot;</span>, <span class="keyword">nullptr</span>));</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>        KuGouApp-&gt;setWindowTitle(QCoreApplication::translate(<span class="stringliteral">&quot;KuGouApp&quot;</span>, <span class="stringliteral">&quot;KuGouApp&quot;</span>, <span class="keyword">nullptr</span>));</div>
 <div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a62a70d30b6b0d4d1444426f2cac85190">menu_find_music_label</a>-&gt;setText(QCoreApplication::translate(<span class="stringliteral">&quot;KuGouApp&quot;</span>, <span class="stringliteral">&quot;    \345\217\221\347\216\260\351\237\263\344\271\220&quot;</span>, <span class="keyword">nullptr</span>));</div>
 <div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a19b63f63cdd560be6b534f48a461c694">recommend_you_toolButton</a>-&gt;setText(QCoreApplication::translate(<span class="stringliteral">&quot;KuGouApp&quot;</span>, <span class="stringliteral">&quot;   \344\270\272\344\275\240\346\216\250\350\215\220&quot;</span>, <span class="keyword">nullptr</span>));</div>
 <div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <a class="code hl_variable" href="class_ui___ku_gou_app.html#a5870aa000fd612cd830ad60d898f9565">music_repository_toolButton</a>-&gt;setText(QCoreApplication::translate(<span class="stringliteral">&quot;KuGouApp&quot;</span>, <span class="stringliteral">&quot;   \344\271\220\345\272\223&quot;</span>, <span class="keyword">nullptr</span>));</div>
@@ -942,7 +941,6 @@ $(function(){initNavTree('ui___ku_gou_app_8h_source.html',''); initResizable(tru
 <div class="ttc" id="a_title_widget_8h_html"><div class="ttname"><a href="_title_widget_8h.html">TitleWidget.h</a></div><div class="ttdoc">定义 TitleWidget 类，提供标题栏功能和界面导航管理</div></div>
 <div class="ttc" id="a_volume_tool_btn_8h_html"><div class="ttname"><a href="_volume_tool_btn_8h.html">VolumeToolBtn.h</a></div><div class="ttdoc">定义 VolumeToolBtn 类，提供音量调节按钮功能</div></div>
 <div class="ttc" id="aclass_center_widget_html"><div class="ttname"><a href="class_center_widget.html">CenterWidget</a></div><div class="ttdoc">自定义中心控件类，继承自 QWidget，支持线性渐变阴影</div><div class="ttdef"><b>定义</b> CenterWidget.h:25</div></div>
-<div class="ttc" id="aclass_ku_gou_app_html"><div class="ttname"><a href="class_ku_gou_app.html">KuGouApp</a></div><div class="ttdoc">酷狗音乐应用主窗口类，管理音乐播放和界面切换</div><div class="ttdef"><b>定义</b> KuGouApp.h:82</div></div>
 <div class="ttc" id="aclass_play_widget_html"><div class="ttname"><a href="class_play_widget.html">PlayWidget</a></div><div class="ttdoc">自定义播放控件类，继承自 QWidget，支持圆角阴影和双击信号</div><div class="ttdef"><b>定义</b> PlayWidget.h:25</div></div>
 <div class="ttc" id="aclass_q_label_html"><div class="ttname"><a href="class_q_label.html">QLabel</a></div><div class="ttdoc">标签控件类</div></div>
 <div class="ttc" id="aclass_q_tool_button_html"><div class="ttname"><a href="class_q_tool_button.html">QToolButton</a></div><div class="ttdoc">工具按钮类</div></div>

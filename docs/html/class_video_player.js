@@ -8,7 +8,6 @@ var class_video_player =
       [ "ReadError", "class_video_player.html#a5d74787dedbc4e11c1ab15bf487e61f8aa80dc4a54feec4063c5d0461e8a5f078", null ]
     ] ],
     [ "VideoPlayer", "class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b", null ],
-    [ "~VideoPlayer", "class_video_player.html#ac48117af63bf01cc7b67e39b7656dd15", null ],
     [ "albumFound", "class_video_player.html#ad5897ae0950fb974f6336d38bcdbcacf", null ],
     [ "artistFound", "class_video_player.html#a2bb9587899e3502d992dfedd8096ea28", null ],
     [ "audioFinish", "class_video_player.html#a152e72ea596a49859e4d28978f7ce5e7", null ],

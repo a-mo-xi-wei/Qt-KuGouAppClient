@@ -27,7 +27,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="windowIcon.ico"/></td>
   <td id="projectalign">
    <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
    </div>
@@ -103,9 +102,9 @@ $(function(){initNavTree('class_hollow__button.html',''); initResizable(true); }
 <a href="#pub-types">Public 类型</a> &#124;
 <a href="#signals">信号</a> &#124;
 <a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="#pub-attribs">Public 属性</a> &#124;
 <a href="#pro-methods">Protected 成员函数</a> &#124;
 <a href="#properties">属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
 <a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_hollow__button-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">Hollow_button类 参考</div></div>
@@ -152,12 +151,6 @@ Public 类型</h2></td></tr>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a2d5c1a10f651fa6c3b3db96e97811dfe" id="r_a2d5c1a10f651fa6c3b3db96e97811dfe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d5c1a10f651fa6c3b3db96e97811dfe">Hollow_button</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:a2d5c1a10f651fa6c3b3db96e97811dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50d69681960844652b852daac83ed97b" id="r_a50d69681960844652b852daac83ed97b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50d69681960844652b852daac83ed97b">draw_disappearing_circle</a> ()</td></tr>
-<tr class="separator:a50d69681960844652b852daac83ed97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1262d50df15ae1b8949491eacc691749" id="r_a1262d50df15ae1b8949491eacc691749"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1262d50df15ae1b8949491eacc691749">draw_border</a> ()</td></tr>
-<tr class="separator:a1262d50df15ae1b8949491eacc691749"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af69de6b382a44a68ff96c18d03e078be" id="r_af69de6b382a44a68ff96c18d03e078be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af69de6b382a44a68ff96c18d03e078be">draw_text</a> ()</td></tr>
-<tr class="separator:af69de6b382a44a68ff96c18d03e078be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d01717e4ca55a9a3e344b6412275846" id="r_a9d01717e4ca55a9a3e344b6412275846"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d01717e4ca55a9a3e344b6412275846">center_text</a> () const</td></tr>
 <tr class="separator:a9d01717e4ca55a9a3e344b6412275846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fba70fde951e147670a555719ff9f16" id="r_a4fba70fde951e147670a555719ff9f16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fba70fde951e147670a555719ff9f16">setCenter_text</a> (const QString &amp;newCenter_text)</td></tr>
@@ -177,15 +170,6 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:aa233d03ff52e992cc1f9a1935220dd56" id="r_aa233d03ff52e992cc1f9a1935220dd56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa233d03ff52e992cc1f9a1935220dd56">animation_status</a> (bool <a class="el" href="#ad1f0bff7112206922c9d5a87adad6f2b">status</a>)</td></tr>
 <tr class="separator:aa233d03ff52e992cc1f9a1935220dd56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public 属性</h2></td></tr>
-<tr class="memitem:a0ead783b03161e9d6ae8ebb6c2d5bcea" id="r_a0ead783b03161e9d6ae8ebb6c2d5bcea"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ead783b03161e9d6ae8ebb6c2d5bcea">mouse_coordinates</a></td></tr>
-<tr class="separator:a0ead783b03161e9d6ae8ebb6c2d5bcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31a0ef9ea882abaf3aa5dfe392334c39" id="r_a31a0ef9ea882abaf3aa5dfe392334c39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31a0ef9ea882abaf3aa5dfe392334c39">animation1</a></td></tr>
-<tr class="separator:a31a0ef9ea882abaf3aa5dfe392334c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a225e7d434be1ccb787af960a87332757" id="r_a225e7d434be1ccb787af960a87332757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a225e7d434be1ccb787af960a87332757">animation3</a></td></tr>
-<tr class="separator:a225e7d434be1ccb787af960a87332757"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
 <tr class="memitem:aa71936647c7e332ab07cbec003a8c9a2" id="r_aa71936647c7e332ab07cbec003a8c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71936647c7e332ab07cbec003a8c9a2">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *event) override</td></tr>
@@ -204,8 +188,23 @@ Protected 成员函数</h2></td></tr>
 <tr class="memitem:ab86f8ec3f0949a133a694bba7f166a05" id="r_ab86f8ec3f0949a133a694bba7f166a05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86f8ec3f0949a133a694bba7f166a05">opacity</a></td></tr>
 <tr class="separator:ab86f8ec3f0949a133a694bba7f166a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a50d69681960844652b852daac83ed97b" id="r_a50d69681960844652b852daac83ed97b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50d69681960844652b852daac83ed97b">draw_disappearing_circle</a> ()</td></tr>
+<tr class="separator:a50d69681960844652b852daac83ed97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1262d50df15ae1b8949491eacc691749" id="r_a1262d50df15ae1b8949491eacc691749"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1262d50df15ae1b8949491eacc691749">draw_border</a> ()</td></tr>
+<tr class="separator:a1262d50df15ae1b8949491eacc691749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af69de6b382a44a68ff96c18d03e078be" id="r_af69de6b382a44a68ff96c18d03e078be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af69de6b382a44a68ff96c18d03e078be">draw_text</a> ()</td></tr>
+<tr class="separator:af69de6b382a44a68ff96c18d03e078be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
+<tr class="memitem:a0ead783b03161e9d6ae8ebb6c2d5bcea" id="r_a0ead783b03161e9d6ae8ebb6c2d5bcea"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ead783b03161e9d6ae8ebb6c2d5bcea">mouse_coordinates</a></td></tr>
+<tr class="separator:a0ead783b03161e9d6ae8ebb6c2d5bcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a0ef9ea882abaf3aa5dfe392334c39" id="r_a31a0ef9ea882abaf3aa5dfe392334c39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31a0ef9ea882abaf3aa5dfe392334c39">animation1</a></td></tr>
+<tr class="separator:a31a0ef9ea882abaf3aa5dfe392334c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225e7d434be1ccb787af960a87332757" id="r_a225e7d434be1ccb787af960a87332757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a225e7d434be1ccb787af960a87332757">animation3</a></td></tr>
+<tr class="separator:a225e7d434be1ccb787af960a87332757"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d0446dfb1bceab1a47f44be2ddede1b" id="r_a8d0446dfb1bceab1a47f44be2ddede1b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d0446dfb1bceab1a47f44be2ddede1b">m_center_text</a></td></tr>
 <tr class="separator:a8d0446dfb1bceab1a47f44be2ddede1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d300daafe6b0ba0ddf2e95628acc1a0" id="r_a2d300daafe6b0ba0ddf2e95628acc1a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d300daafe6b0ba0ddf2e95628acc1a0">m_radius</a> = 0</td></tr>
@@ -310,6 +309,9 @@ Private 属性</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void draw_border </td>
@@ -318,6 +320,11 @@ Private 属性</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
@@ -337,6 +344,9 @@ Private 属性</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void draw_disappearing_circle </td>
@@ -345,6 +355,11 @@ Private 属性</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
@@ -364,6 +379,9 @@ Private 属性</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void draw_text </td>
@@ -372,6 +390,11 @@ Private 属性</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
@@ -677,11 +700,19 @@ Private 属性</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a>* animation1</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -691,11 +722,19 @@ Private 属性</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a>* animation3</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -771,11 +810,19 @@ Private 属性</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">QPoint mouse_coordinates</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

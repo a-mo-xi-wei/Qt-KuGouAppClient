@@ -1,5 +1,11 @@
 var NAVTREEINDEX24 =
 {
+"_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#afb5a2a4891df4551832357e97c6c3c59":[3,0,0,0,2,3,0,2,248],
+"_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#afc45bfe4241907d615bb96ed6f4fd142":[3,0,0,0,2,3,0,2,251],
+"_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#afc6ac46966747a9423f4a6bb3af94b55":[3,0,0,0,2,3,0,2,304],
+"_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#afd12ac7489bdbbed7fa3cc51023b8f73":[3,0,0,0,2,3,0,2,386],
+"_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#afd642241f9f058f6a24f550d74d79db4":[3,0,0,0,2,3,0,2,321],
+"_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#afdaf15e6e8b224aeef55f7debc5b3ba6":[3,0,0,0,2,3,0,2,138],
 "_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#afdb25925e44f4b07eedb1dbdd1a99713":[3,0,0,0,2,3,0,2,417],
 "_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h.html#aff6bf0ff0fa3b5cbd23a8ae1131c87a9":[3,0,0,0,2,3,0,2,409],
 "_ku_gou_start_2_daily_recommend_2_daily_recommend__autogen_2moc__predefs_8h_source.html":[3,0,0,0,2,3,0,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX24 =
 "_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7a06acb3945879bcc985dde7bf0bcbdc":[3,0,0,0,2,4,3,175],
 "_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7a76473a66d022aee2c9f661405d8fbb":[3,0,0,0,2,4,3,320],
 "_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7ac5a3b1dc00b508a391f8c6c37e2165":[3,0,0,0,2,4,3,198],
-"_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7b37ac70dc218969bf0176916a957f6f":[3,0,0,0,2,4,3,418],
-"_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7b63d9780e8127a88ad9554ff35e0a01":[3,0,0,0,2,4,3,326],
-"_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7cb6a2aeb6e528ac59bedb98ebeac198":[3,0,0,0,2,4,3,63],
-"_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7cf72a6f42a229ef52ea84f696861c4e":[3,0,0,0,2,4,3,241],
-"_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7d7e5874cd6f169187aac7db998625f3":[3,0,0,0,2,4,3,436],
-"_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7df1cb434b3b8baae4bf6053cb2a3a4a":[3,0,0,0,2,4,3,267],
-"_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7e0518c0e5573e3c636ce77ae39f7c58":[3,0,0,0,2,4,3,327]
+"_ku_gou_start_2_ku_gou_app_start__autogen_2moc__predefs_8h.html#a7b37ac70dc218969bf0176916a957f6f":[3,0,0,0,2,4,3,418]
 };

@@ -1,5 +1,14 @@
 var NAVTREEINDEX135 =
 {
+"structtuple__join__view.html#aeffb3d46baa13b673faa2fa95e8b12b3":[2,0,400,0],
+"structvprintf__args.html":[2,0,485],
+"structvprintf__args.html#ac2d8b83b20cc77b835126725b54a93d0":[2,0,485,0],
+"synchronous__factory_8h.html":[3,0,4,8,1,1,19],
+"synchronous__factory_8h_source.html":[3,0,4,8,1,1,19],
+"syslog__sink_8h.html":[3,0,4,8,1,3,27],
+"syslog__sink_8h_source.html":[3,0,4,8,1,3,27],
+"systemd__sink_8h.html":[3,0,4,8,1,3,28],
+"systemd__sink_8h.html#ae2434162e872ec8189ca11e53257fad6":[3,0,4,8,1,3,28,1],
 "systemd__sink_8h_source.html":[3,0,4,8,1,3,28],
 "tcp__client-windows_8h.html":[3,0,4,8,1,1,20],
 "tcp__client-windows_8h.html#ac7bef5d85e3dcd73eef56ad39ffc84a9":[3,0,4,8,1,1,20,1],
@@ -240,14 +249,5 @@ var NAVTREEINDEX135 =
 "ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a6e1c7832e61ad4da9c2487d38fdb1773":[3,0,0,0,3,0,0,14,235],
 "ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a6e4065bb57fe77e1d8635f8108bf3c64":[3,0,0,0,3,0,0,14,55],
 "ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a6e947aa0a2cb4808d560339fef0d4793":[3,0,0,0,3,0,0,14,210],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a6f2032bd7e6248b526a2c13e37c7b972":[3,0,0,0,3,0,0,14,275],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a70ffee09638ac75a263b1a2e5a473c85":[3,0,0,0,3,0,0,14,121],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a711d7b7f27671b10b11a74c37f653ad7":[3,0,0,0,3,0,0,14,79],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a7237ce09defceeebe3ba0afc528275ac":[3,0,0,0,3,0,0,14,229],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a726a020189392103a9404da070536e07":[3,0,0,0,3,0,0,14,330],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a72e3c30a05bd2bb63d76550e451a438e":[3,0,0,0,3,0,0,14,3],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a72f76585ea7d1131d4e9be0110fb0ec3":[3,0,0,0,3,0,0,14,255],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a731bd57ce12918b6118b6a3e37c20d8e":[3,0,0,0,3,0,0,14,142],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a7377e1bc6bd2fd9bcfe98283ab0e9037":[3,0,0,0,3,0,0,14,50],
-"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a737828904768e0ab49acbdb3371d8445":[3,0,0,0,3,0,0,14,199]
+"ui_2_ela_widget_tools_2_ela_widget_tools__autogen_2moc__predefs_8h.html#a6f2032bd7e6248b526a2c13e37c7b972":[3,0,0,0,3,0,0,14,275]
 };

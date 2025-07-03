@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>KuGouApp: KuGouClient.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">KuGouApp<span id="projectnumber">&#160;beta 0.01</span>
+   </div>
+   <div id="projectbrief">KuGouDocs build by doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_ku_gou_client_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">KuGouClient.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_ku_gou_client_8h_source.html">KuGouClient.h</a>&quot;</code><br />
+<code>#include &quot;ui_KuGouClient.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8hpp_source.html">logger.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ripple_button_8h_source.html">RippleButton.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_refresh_mask_8h_source.html">RefreshMask.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="qtmaterialsnackbar_8h_source.html">qtmaterialsnackbar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ela_tool_tip_8h_source.html">ElaToolTip.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ela_message_bar_8h_source.html">ElaMessageBar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_speed_dialog_8h_source.html">SpeedDialog/SpeedDialog.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_my_scroll_area_8h_source.html">MyScrollArea.h</a>&quot;</code><br />
+<code>#include &quot;Async.h&quot;</code><br />
+<code>#include &lt;QPainterPath&gt;</code><br />
+<code>#include &lt;QPainter&gt;</code><br />
+<code>#include &lt;QPixmap&gt;</code><br />
+<code>#include &lt;QDir&gt;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;QPoint&gt;</code><br />
+<code>#include &lt;QMouseEvent&gt;</code><br />
+<code>#include &lt;QButtonGroup&gt;</code><br />
+<code>#include &lt;QFontDatabase&gt;</code><br />
+<code>#include &lt;QJsonArray&gt;</code><br />
+<code>#include &lt;QJsonDocument&gt;</code><br />
+<code>#include &lt;QSizeGrip&gt;</code><br />
+<code>#include &lt;QPropertyAnimation&gt;</code><br />
+<code>#include &lt;QShortcut&gt;</code><br />
+<code>#include &lt;QTimer&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+KuGouClient.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_ku_gou_client_8cpp__incl.png" border="0" usemap="#a_ku_gou_client_8cpp" alt=""/></div>
+<map name="a_ku_gou_client_8cpp" id="a_ku_gou_client_8cpp">
+<area shape="rect" title=" " alt="" coords="3713,5,3834,32"/>
+<area shape="rect" href="_ku_gou_client_8h.html" title=" " alt="" coords="1399,80,1505,107"/>
+<area shape="poly" title=" " alt="" coords="3713,25,1521,93,1520,87,3713,19"/>
+<area shape="rect" title=" " alt="" coords="2588,229,2652,256"/>
+<area shape="poly" title=" " alt="" coords="3713,23,3507,27,3237,36,3106,44,2991,54,2903,67,2873,74,2855,82,2843,93,2836,104,2829,129,2823,156,2816,170,2804,183,2772,205,2737,221,2668,239,2667,233,2735,216,2770,200,2801,179,2812,167,2818,155,2824,128,2831,102,2839,89,2852,78,2872,69,2902,61,2990,48,3105,38,3237,31,3507,21,3713,18"/>
+<area shape="rect" title=" " alt="" coords="2997,80,3120,107"/>
+<area shape="poly" title=" " alt="" coords="3713,27,3466,47,3136,82,3136,77,3465,42,3713,22"/>
+<area shape="rect" href="logger_8hpp.html" title=" " alt="" coords="3145,80,3226,107"/>
+<area shape="poly" title=" " alt="" coords="3713,27,3508,47,3378,62,3242,82,3241,77,3377,57,3508,41,3713,22"/>
+<area shape="rect" href="_ripple_button_8h.html" title="定义 RippleButton 类，提供带涟漪效果的按钮功能" alt="" coords="2865,80,2972,107"/>
+<area shape="poly" title=" " alt="" coords="3713,25,3406,43,3201,60,2988,83,2987,77,3200,54,3406,38,3713,20"/>
+<area shape="rect" href="_refresh_mask_8h.html" title="定义 RefreshMask 类，提供加载遮罩功能" alt="" coords="3250,80,3360,107"/>
+<area shape="poly" title=" " alt="" coords="3713,31,3376,82,3375,77,3712,26"/>
+<area shape="rect" href="qtmaterialsnackbar_8h.html" title="定义 QtMaterialSnackbar 类，提供 Material Design 提示条" alt="" coords="3385,80,3527,107"/>
+<area shape="poly" title=" " alt="" coords="3718,35,3527,79,3526,73,3717,30"/>
+<area shape="rect" href="_ela_tool_tip_8h.html" title="定义 ElaToolTip 类，提供自定义工具提示功能" alt="" coords="5,155,99,181"/>
+<area shape="poly" title=" " alt="" coords="3713,22,3312,23,2641,29,1819,47,1390,62,968,83,737,98,558,113,150,157,114,161,114,156,149,152,558,108,737,92,968,77,1389,57,1819,42,2641,24,3312,17,3713,17"/>
+<area shape="rect" href="_ela_message_bar_8h.html" title="定义 ElaMessageBar 类，提供消息通知栏功能" alt="" coords="980,80,1105,107"/>
+<area shape="poly" title=" " alt="" coords="3713,24,2796,45,1387,83,1121,92,1121,86,1387,77,2796,40,3713,19"/>
+<area shape="rect" href="_speed_dialog_8h.html" title="定义 SpeedDialog 和 SnapSlider 类，用于倍速和调音控制弹窗" alt="" coords="2556,80,2740,107"/>
+<area shape="poly" title=" " alt="" coords="3713,25,3312,45,3038,62,2759,83,2756,83,2755,78,2758,77,3038,57,3312,40,3713,20"/>
+<area shape="rect" title=" " alt="" coords="2686,155,2791,181"/>
+<area shape="poly" title=" " alt="" coords="3713,24,3499,29,3216,39,2957,57,2863,68,2810,82,2793,94,2777,110,2754,143,2750,140,2773,106,2789,90,2808,78,2862,63,2956,51,3216,34,3499,23,3712,18"/>
+<area shape="rect" href="_my_scroll_area_8h.html" title="定义 MyScrollArea 类，提供带平滑滚动和返回顶部按钮的滚动区域" alt="" coords="3552,80,3662,107"/>
+<area shape="poly" title=" " alt="" coords="3745,35,3651,76,3649,71,3743,30"/>
+<area shape="rect" title=" " alt="" coords="3685,80,3755,107"/>
+<area shape="poly" title=" " alt="" coords="3766,34,3740,69,3736,66,3762,31"/>
+<area shape="rect" title=" " alt="" coords="3778,80,3878,107"/>
+<area shape="poly" title=" " alt="" coords="3785,31,3811,66,3807,69,3781,34"/>
+<area shape="rect" title=" " alt="" coords="3901,80,3974,107"/>
+<area shape="poly" title=" " alt="" coords="3803,30,3896,71,3894,76,3801,35"/>
+<area shape="rect" title=" " alt="" coords="3997,80,4072,107"/>
+<area shape="poly" title=" " alt="" coords="3820,30,3982,75,3981,80,3818,35"/>
+<area shape="rect" title=" " alt="" coords="4096,80,4144,107"/>
+<area shape="poly" title=" " alt="" coords="3834,27,3946,46,4081,77,4080,82,3944,52,3834,32"/>
+<area shape="rect" title=" " alt="" coords="4168,80,4221,107"/>
+<area shape="poly" title=" " alt="" coords="3834,24,3976,44,4154,77,4153,82,3975,49,3833,29"/>
+<area shape="rect" title=" " alt="" coords="4245,80,4307,107"/>
+<area shape="poly" title=" " alt="" coords="3834,22,4009,41,4118,57,4231,77,4230,82,4117,62,4008,47,3834,28"/>
+<area shape="rect" title=" " alt="" coords="4330,80,4435,107"/>
+<area shape="poly" title=" " alt="" coords="3834,23,4043,43,4316,77,4315,82,4043,48,3834,28"/>
+<area shape="rect" title=" " alt="" coords="4459,80,4573,107"/>
+<area shape="poly" title=" " alt="" coords="3834,21,4095,41,4267,57,4444,77,4444,82,4266,62,4094,46,3834,26"/>
+<area shape="rect" title=" " alt="" coords="4596,80,4686,107"/>
+<area shape="poly" title=" " alt="" coords="3834,19,4150,34,4362,52,4581,77,4580,82,4362,57,4150,40,3834,24"/>
+<area shape="rect" title=" " alt="" coords="4711,80,4830,107"/>
+<area shape="poly" title=" " alt="" coords="3834,19,4195,36,4441,53,4696,77,4696,82,4441,58,4195,41,3834,24"/>
+<area shape="rect" title=" " alt="" coords="4854,80,4935,107"/>
+<area shape="poly" title=" " alt="" coords="3834,17,4005,19,4251,27,4540,45,4691,59,4839,77,4838,82,4690,64,4540,50,4251,32,4004,24,3834,22"/>
+<area shape="rect" title=" " alt="" coords="4959,80,5097,107"/>
+<area shape="poly" title=" " alt="" coords="3834,18,4291,33,4612,50,4944,77,4943,82,4612,56,4291,38,3834,24"/>
+<area shape="rect" title=" " alt="" coords="5121,80,5202,107"/>
+<area shape="poly" title=" " alt="" coords="3834,19,4449,37,4821,54,4981,65,5106,77,5105,83,4980,70,4821,59,4449,42,3834,24"/>
+<area shape="rect" href="_main_window_8h.html" title="定义 MainWindow 类，提供主窗口功能和交互" alt="" coords="1166,155,1272,181"/>
+<area shape="poly" title=" " alt="" coords="1412,110,1275,152,1273,147,1411,105"/>
+<area shape="rect" href="_video_player_8h.html" title=" " alt="" coords="2324,155,2500,181"/>
+<area shape="poly" title=" " alt="" coords="1506,95,1840,115,2309,152,2309,157,1839,120,1505,100"/>
+<area shape="rect" href="_recommend_for_you_8h.html" title="推荐界面类的头文件，定义 RecommendForYou 类" alt="" coords="1296,155,1443,181"/>
+<area shape="poly" title=" " alt="" coords="1439,109,1397,146,1393,142,1436,105"/>
+<area shape="rect" href="_music_repository_8h.html" title="定义 MusicRepository 类，管理音乐仓库（歌曲和视频）界面" alt="" coords="1627,155,1757,181"/>
+<area shape="poly" title=" " alt="" coords="1495,105,1636,147,1634,152,1493,110"/>
+<area shape="rect" href="_channel_8h.html" title="定义 Channel 类，提供音乐频道主界面" alt="" coords="1926,155,2007,181"/>
+<area shape="poly" title=" " alt="" coords="1506,97,1682,118,1911,152,1911,157,1681,123,1505,103"/>
+<area shape="rect" href="_video_8h.html" title="定义 Video 类，提供视频界面管理" alt="" coords="2031,155,2097,181"/>
+<area shape="poly" title=" " alt="" coords="1506,95,1725,113,1868,129,2017,152,2016,157,1868,134,1724,118,1505,100"/>
+<area shape="rect" href="_live_8h.html" title="定义 Live 类，提供直播主界面" alt="" coords="173,155,230,181"/>
+<area shape="poly" title=" " alt="" coords="1398,99,804,123,465,140,245,158,245,152,465,135,804,118,1398,94"/>
+<area shape="rect" href="_ai_chat_8h.html" title="定义 AiChat 类，提供 AI 聊天界面" alt="" coords="2121,155,2194,181"/>
+<area shape="poly" title=" " alt="" coords="1506,94,1761,111,1930,128,2106,152,2106,157,1930,133,1760,116,1505,100"/>
+<area shape="rect" href="_song_list_8h.html" title="歌曲列表界面的头文件，定义 SongList 类" alt="" coords="2217,155,2300,181"/>
+<area shape="poly" title=" " alt="" coords="1506,94,1799,109,1997,127,2202,152,2201,157,1997,132,1798,115,1506,99"/>
+<area shape="rect" href="_daily_recommend_8h.html" title="定义 DailyRecommend 类，提供每日推荐界面" alt="" coords="1466,155,1603,181"/>
+<area shape="poly" title=" " alt="" coords="1468,105,1511,142,1507,146,1465,109"/>
+<area shape="rect" href="_my_collection_8h.html" title="定义 MyCollection 类，管理收藏界面" alt="" coords="254,155,362,181"/>
+<area shape="poly" title=" " alt="" coords="1399,99,904,122,607,139,378,157,377,152,607,133,904,116,1399,94"/>
+<area shape="rect" href="_local_download_8h.html" title="定义 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面" alt="" coords="1781,155,1902,181"/>
+<area shape="poly" title=" " alt="" coords="1506,102,1766,150,1765,155,1505,107"/>
+<area shape="rect" href="_music_cloud_disk_8h.html" title="定义 MusicCloudDisk 类，管理云端歌曲（已上传和正在上传）界面" alt="" coords="386,155,515,181"/>
+<area shape="poly" title=" " alt="" coords="1399,99,1039,116,789,133,531,157,530,152,789,128,1039,111,1399,94"/>
+<area shape="rect" href="_purchased_music_8h.html" title="定义 PurchasedMusic 类，管理付费音乐界面" alt="" coords="539,155,669,181"/>
+<area shape="poly" title=" " alt="" coords="1399,100,1099,119,895,135,685,157,684,152,895,130,1099,114,1398,95"/>
+<area shape="rect" href="_recently_played_8h.html" title="定义 RecentlyPlayed 类，管理最近播放界面" alt="" coords="692,155,817,181"/>
+<area shape="poly" title=" " alt="" coords="1399,101,1158,122,833,157,832,152,1158,117,1398,96"/>
+<area shape="rect" href="_all_music_8h.html" title="定义 AllMusic 类，提供音乐管理界面" alt="" coords="842,155,924,181"/>
+<area shape="poly" title=" " alt="" coords="1399,102,1200,121,1072,137,939,157,938,152,1071,131,1200,116,1398,96"/>
+<area shape="rect" href="_listen_book_8h.html" title="定义 ListenBook 类，提供听书主界面" alt="" coords="947,155,1045,181"/>
+<area shape="poly" title=" " alt="" coords="1399,105,1060,157,1060,151,1398,99"/>
+<area shape="rect" href="_search_8h.html" title="搜索界面类的头文件，定义 Search 类" alt="" coords="1069,155,1142,181"/>
+<area shape="poly" title=" " alt="" coords="1399,107,1158,157,1157,151,1398,102"/>
+<area shape="rect" href="_speed_dialog_state_8h.html" title="定义 SpeedDialogState 类，用于管理弹窗状态" alt="" coords="2525,155,2662,181"/>
+<area shape="poly" title=" " alt="" coords="1506,93,1918,109,2208,127,2509,152,2509,157,2208,132,1917,115,1506,99"/>
+<area shape="rect" title=" " alt="" coords="1182,229,1255,256"/>
+<area shape="poly" title=" " alt="" coords="1221,182,1221,214,1216,214,1216,182"/>
+<area shape="poly" title=" " alt="" coords="2449,179,2574,223,2572,228,2447,184"/>
+<area shape="poly" title=" " alt="" coords="1344,184,1260,225,1258,220,1342,179"/>
+<area shape="poly" title=" " alt="" coords="1627,182,1615,184,1271,236,1270,231,1614,179,1627,177"/>
+<area shape="poly" title=" " alt="" coords="1926,182,1914,184,1729,208,1546,225,1271,242,1270,237,1546,220,1728,203,1913,179,1926,176"/>
+<area shape="poly" title=" " alt="" coords="2032,181,2019,184,1802,213,1588,231,1402,240,1271,243,1270,238,1402,234,1588,225,1802,208,2018,179,2030,176"/>
+<area shape="poly" title=" " alt="" coords="2121,182,2108,184,1864,214,1623,231,1415,240,1271,244,1270,238,1415,235,1622,226,1863,208,2108,179,2120,176"/>
+<area shape="poly" title=" " alt="" coords="2217,182,2206,184,2070,201,1930,214,1660,232,1429,241,1271,244,1270,238,1429,236,1660,227,1930,209,2069,196,2205,179,2216,177"/>
+<area shape="poly" title=" " alt="" coords="1480,185,1271,232,1270,227,1479,179"/>
+<area shape="poly" title=" " alt="" coords="363,177,375,179,606,203,833,220,1167,237,1167,242,833,225,606,208,374,184,362,182"/>
+<area shape="poly" title=" " alt="" coords="1781,182,1768,184,1488,218,1271,239,1270,234,1487,212,1768,179,1780,177"/>
+<area shape="poly" title=" " alt="" coords="516,177,527,179,711,199,893,215,1167,235,1167,241,893,221,711,204,526,184,515,182"/>
+<area shape="poly" title=" " alt="" coords="669,177,680,179,955,212,1167,234,1167,239,954,217,680,184,669,182"/>
+<area shape="poly" title=" " alt="" coords="818,177,830,179,1168,231,1167,236,829,184,817,182"/>
+<area shape="poly" title=" " alt="" coords="925,176,935,179,1168,228,1167,233,934,184,924,182"/>
+<area shape="poly" title=" " alt="" coords="1036,179,1169,222,1167,227,1034,184"/>
+<area shape="poly" title=" " alt="" coords="1127,180,1187,218,1185,223,1124,184"/>
+<area shape="rect" href="mylog_8h.html" title=" " alt="" coords="3249,155,3316,181"/>
+<area shape="poly" title=" " alt="" coords="3204,105,3256,143,3252,148,3201,109"/>
+<area shape="poly" title=" " alt="" coords="2909,109,2866,148,2836,168,2804,184,2765,193,2705,201,2538,215,2321,226,2078,233,1598,241,1271,244,1271,239,1598,236,2078,228,2321,220,2537,210,2705,196,2764,188,2802,179,2834,164,2863,144,2905,105"/>
+<area shape="rect" title=" " alt="" coords="2916,155,3009,181"/>
+<area shape="poly" title=" " alt="" coords="2929,106,2949,140,2945,143,2924,109"/>
+<area shape="rect" title=" " alt="" coords="3033,155,3226,181"/>
+<area shape="poly" title=" " alt="" coords="2956,105,3079,147,3077,152,2954,110"/>
+<area shape="poly" title=" " alt="" coords="99,176,118,179,429,208,734,226,993,235,1167,238,1167,244,993,240,734,231,429,213,117,184,99,181"/>
+<area shape="poly" title=" " alt="" coords="980,97,779,97,520,104,394,112,286,123,205,137,179,147,163,156,158,168,163,179,177,186,207,192,304,203,600,220,928,232,1167,238,1167,243,928,237,600,226,304,208,206,197,175,191,159,183,153,168,159,153,176,142,204,132,285,117,394,106,520,99,779,92,980,91"/>
+<area shape="poly" title=" " alt="" coords="2641,109,2614,144,2610,140,2636,106"/>
+<area shape="poly" title=" " alt="" coords="2665,105,2713,143,2710,147,2662,109"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a7da49cee97dfd7405e8595862fd266de" id="r_a7da49cee97dfd7405e8595862fd266de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7da49cee97dfd7405e8595862fd266de">GET_CURRENT_DIR</a>&#160;&#160;&#160;(QString(__FILE__).<a class="el" href="base_8h.html#a6c52c4bac77f6744fdc338766e9e8a6fa811882fecd5c7618d7099ebbd39ea254">left</a>(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))</td></tr>
+<tr class="memdesc:a7da49cee97dfd7405e8595862fd266de"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前文件所在目录宏  <br /></td></tr>
+<tr class="separator:a7da49cee97dfd7405e8595862fd266de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aed7c82f547f297918671c35b9507a819" id="r_aed7c82f547f297918671c35b9507a819"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed7c82f547f297918671c35b9507a819">roundedPixmap</a> (const QPixmap &amp;src, QSize size, int radius)</td></tr>
+<tr class="memdesc:aed7c82f547f297918671c35b9507a819"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成圆角图片  <br /></td></tr>
+<tr class="separator:aed7c82f547f297918671c35b9507a819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a7da49cee97dfd7405e8595862fd266de" name="a7da49cee97dfd7405e8595862fd266de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da49cee97dfd7405e8595862fd266de">&#9670;&#160;</a></span>GET_CURRENT_DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_CURRENT_DIR&#160;&#160;&#160;(QString(__FILE__).<a class="el" href="base_8h.html#a6c52c4bac77f6744fdc338766e9e8a6fa811882fecd5c7618d7099ebbd39ea254">left</a>(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前文件所在目录宏 </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aed7c82f547f297918671c35b9507a819" name="aed7c82f547f297918671c35b9507a819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed7c82f547f297918671c35b9507a819">&#9670;&#160;</a></span>roundedPixmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap roundedPixmap </td>
+          <td>(</td>
+          <td class="paramtype">const QPixmap &amp;</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QSize</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>radius</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>生成圆角图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>源图片 </td></tr>
+    <tr><td class="paramname">size</td><td>目标大小 </td></tr>
+    <tr><td class="paramname">radius</td><td>圆角半径 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的圆角图片 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>使用抗锯齿和裁剪路径生成圆角效果 </dd></dl>
+<p>&lt; 缩放图片</p>
+<p>&lt; 设置透明背景</p>
+<p>&lt; 启用抗锯齿</p>
+<p>&lt; 创建圆角矩形路径</p>
+<p>&lt; 设置裁剪路径</p>
+<p>&lt; 绘制图片</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_ku_gou_client_8cpp_aed7c82f547f297918671c35b9507a819_icgraph.png" border="0" usemap="#a_ku_gou_client_8cpp_aed7c82f547f297918671c35b9507a819_icgraph" alt=""/></div>
+<map name="a_ku_gou_client_8cpp_aed7c82f547f297918671c35b9507a819_icgraph" id="a_ku_gou_client_8cpp_aed7c82f547f297918671c35b9507a819_icgraph">
+<area shape="rect" title="生成圆角图片" alt="" coords="647,56,759,83"/>
+<area shape="rect" href="class_ku_gou_client.html#a7eb87a6d4464680c455d278d1d32eba6" title="事件过滤器" alt="" coords="424,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="632,54,560,35,561,30,634,49"/>
+<area shape="rect" href="class_ku_gou_client.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="412,56,599,83"/>
+<area shape="poly" title=" " alt="" coords="632,72,600,72,600,67,632,67"/>
+<area shape="rect" href="class_item_list_widget.html#a91ffb4dffa775c52eae34d5906edf5d8" title="构造函数，初始化列表推荐项" alt="" coords="424,107,588,149"/>
+<area shape="poly" title=" " alt="" coords="642,90,581,109,579,104,640,85"/>
+<area shape="rect" href="class_ku_gou_client.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="231,56,364,83"/>
+<area shape="poly" title=" " alt="" coords="397,72,364,72,364,67,397,67"/>
+<area shape="rect" href="class_ku_gou_client.html#aebf8cf13c1c3e57f51bf5f3acd245baf" title="构造函数" alt="" coords="5,56,183,83"/>
+<area shape="poly" title=" " alt="" coords="215,72,183,72,183,67,215,67"/>
+<area shape="poly" title=" " alt="" coords="129,43,117,37,94,35,73,37,61,41,59,47,64,54,59,57,53,47,58,38,71,31,94,29,118,32,131,38"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4f2e4108869dca1a6cdf796f54ed578a.html">KuGouClient</a></li><li class="navelem"><a class="el" href="_ku_gou_client_8cpp.html">KuGouClient.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
