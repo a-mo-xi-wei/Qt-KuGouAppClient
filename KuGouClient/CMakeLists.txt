@@ -1,18 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(KuGouAppStart VERSION 1.0 LANGUAGES CXX)
+project(KuGouClient VERSION 1.0 LANGUAGES CXX)
 
 #file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 #file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Res_Qrc/*.qrc)
 
 set(SOURCE_FILE
-    KuGouApp.h
-    KuGouApp.cpp
-    KuGouApp.ui
-    main.cpp
-    ${QRC_FILE}
-    Res_Qrc/Res/titleIcon.rc
+    KuGouClient.h
+    KuGouClient.cpp
+    KuGouClient.ui
 )
 
 ####       发现音乐       ####
@@ -51,9 +48,9 @@ add_subdirectory(ListenBook)
 #包含搜索模块
 add_subdirectory(Search)
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILE})
+add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MyWindow
+target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Widgets Qt6::Multimedia MyWindow
         AllMusic Channel DailyRecommend ListenBook Live AiChat LocalDownload MusicCloudDisk
         MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
         Search SongList StartVideo MyMaskWidget QtMaterialWidget MyPlayer)

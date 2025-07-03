@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(KuGou-Server VERSION 1.0 LANGUAGES CXX)
+project(KuGouServer VERSION 1.0 LANGUAGES CXX)
 
 find_package(Qt6 REQUIRED Core Sql WebSockets)
 
@@ -11,28 +11,27 @@ file(GLOB KUGOU_SERVER_KCP_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/NetWork/kcp/*.cpp
 file(GLOB KUGOU_SERVER_KCP_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/NetWork/kcp/*.h)
 
 set(SOURCE_FILE
-    main.cpp
-    Server.h
-    Server.cpp
+    KuGouServer.h
+    KuGouServer.cpp
     ${KUGOU_SERVER_NET_HEADERS}
     ${KUGOU_SERVER_NET_SOURCES}
     ${KUGOU_SERVER_KCP_SOURCES}
     ${KUGOU_SERVER_KCP_HEADERS}
 )
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILE})
+add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
-        PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/NetWork)
+        ${CMAKE_CURRENT_SOURCE_DIR}/NetWork)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Sql Qt6::WebSockets
+target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Core Qt6::Sql Qt6::WebSockets
         SJwt MyQsLog JQHttpServer MyDBPool)
 
 # 动态库需处理 DLL 复制（仅 Windows）
 if(WIN32)
-    add_custom_command(TARGET KuGou-Server POST_BUILD
+    add_custom_command(TARGET KuGouServer POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
             ${ZLIB_DLL}
-            $<TARGET_FILE_DIR:KuGou-Server>
+            $<TARGET_FILE_DIR:KuGouServer>
     )
 endif()

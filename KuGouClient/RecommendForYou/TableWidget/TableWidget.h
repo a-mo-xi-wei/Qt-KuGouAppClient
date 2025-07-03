@@ -197,9 +197,9 @@ public slots:
     void onRefreshTimeout();
 
 private:
-    std::unique_ptr<QHBoxLayout> m_tabHLayout;           ///< 标题栏水平布局
-    std::unique_ptr<QGridLayout> m_gridLayout;           ///< 网格布局
-    std::unique_ptr<QWidget> m_gridContainer;            ///< 网格容器
+    QHBoxLayout*              m_tabHLayout;              ///< 标题栏水平布局
+    QGridLayout*              m_gridLayout;              ///< 网格布局
+    QWidget*                  m_gridContainer;           ///< 网格容器
     QLabel                    *m_titleLab{};             ///< 标题标签
     KIND                      m_kind;                    ///< 推荐界面类型
     QToolButton               *m_play_ToolBtn{};         ///< 播放按钮

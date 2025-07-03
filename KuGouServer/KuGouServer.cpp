@@ -16,7 +16,7 @@
 //-----------------------------------------------------------------------------
 
 /**
- * @class Server
+ * @class KuGouServer
  * @brief HTTP服务器主类，管理数据库、路由及请求处理
  * @details
  * - 使用SQLite作为本地数据库存储用户和歌曲数据
@@ -25,7 +25,7 @@
  * - 提供歌曲列表管理、搜索、增删等RESTful API
  */
 
-#include "Server.h"
+#include "KuGouServer.h"
 #include "SJwt.h"
 #include "SResultCode.h"
 
@@ -90,7 +90,7 @@ std::optional<QByteArray> CheckToken(const QPointer<JQHttpServer::Session> &sess
 /**
  * @brief 构造函数。
  */
-Server::Server() {
+KuGouServer::KuGouServer() {
     initDateBase();
     initRouter();
     // 初始日志系统，设置日志文件路径
@@ -116,13 +116,13 @@ Server::Server() {
  * - local_song_table: 存储歌曲索引、元数据及播放统计。
  * @warning 主键设计使用复合键保证数据唯一性。
  */
-void Server::initDateBase() {
+void KuGouServer::initDateBase() {
     init_dbpool(false, this);
     m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath() + QString("SQLite.db"));
-    //先判断是否存在 usertable 表,不存在则创建
+    //先判断是否存在 user_table 表,不存在则创建
     if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='user_table';","find_user_able",false).isEmpty()) {
         const QString sql =
-           "CREATE TABLE \"usertable\" ("
+           "CREATE TABLE \"user_table\" ("
            "\"portrait\" text,"
            "\"account\" text NOT NULL,"
            "\"password\" text NOT NULL,"
@@ -157,7 +157,7 @@ void Server::initDateBase() {
 /**
  * @brief 初始化路由。
  */
-void Server::initRouter() {
+void KuGouServer::initRouter() {
     m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath()+QString("SQLite.db"));
     //apiRouter["/api/test"] = std::bind(&Server::onApiTest, this, std::placeholders::_1);
     apiRouter["/api/test"] = [this](auto && PH1) { return onApiTest(std::forward<decltype(PH1)>(PH1)); };
@@ -185,7 +185,7 @@ void Server::initRouter() {
  * - 支持GET/POST/PUT/DELETE方法
  * - 记录客户端 IP 用于审计日志
  */
-bool Server::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Session> &session) {
+bool KuGouServer::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Session> &session) {
     //qDebug()<<"看到我，你就有了";
     QString path = session->requestUrl();
     QString method = session->requestMethod(); // GET/POST/PUT/DELETE
@@ -219,7 +219,7 @@ bool Server::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Se
 /**
  * @brief 重排歌曲索引。
  */
-void Server::reorderIndex() {
+void KuGouServer::reorderIndex() {
     const QString sql =
        R"(
         WITH sorted AS (
@@ -241,7 +241,7 @@ void Server::reorderIndex() {
  * @param input 输入字符串。
  * @return 安全处理后的字符串。
  */
-QString Server::safeString(const QString &input) {
+QString KuGouServer::safeString(const QString &input) {
     // 创建输入字符串的副本
     QString escaped = input;
 
@@ -258,7 +258,7 @@ QString Server::safeString(const QString &input) {
  * @param session HTTP 会话对象。
  * @return bool 操作结果。
  */
-bool Server::onApiTest(const QPointer<JQHttpServer::Session> &session) {
+bool KuGouServer::onApiTest(const QPointer<JQHttpServer::Session> &session) {
     // 解析请求数据（假设是 JSON）
     // QJsonDocument requestDoc = QJsonDocument::fromJson(session->requestBody());
     // QJsonObject requestData = requestDoc.object();
@@ -276,7 +276,7 @@ bool Server::onApiTest(const QPointer<JQHttpServer::Session> &session) {
  * @param session HTTP 会话对象。
  * @return bool 操作结果。
  */
-bool Server::onApiVersion(const QPointer<JQHttpServer::Session> &session) {
+bool KuGouServer::onApiVersion(const QPointer<JQHttpServer::Session> &session) {
     QJsonObject response;
     response["App-version"] = "1.0";
     response["App-name"] = "我的酷狗";
@@ -292,7 +292,7 @@ bool Server::onApiVersion(const QPointer<JQHttpServer::Session> &session) {
  * @param session HTTP 会话对象。
  * @return bool 操作结果。
  */
-bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) {
+bool KuGouServer::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) {
     try {
         // 构造带字段别名的 SQL 查询语句
         const QString sql =
@@ -370,7 +370,7 @@ bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) 
  * @param session HTTP 会话对象。
  * @return bool 操作结果。
  */
-bool Server::onApiSearchSong(const QPointer<JQHttpServer::Session> &session) {
+bool KuGouServer::onApiSearchSong(const QPointer<JQHttpServer::Session> &session) {
     return false;
 }
 
@@ -392,7 +392,7 @@ bool Server::onApiSearchSong(const QPointer<JQHttpServer::Session> &session) {
  * @endcode
  * @warning 使用 safeString 防止 SQL 注入攻击。
  */
-bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
+bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
     CheckJsonParse(session);
     QJsonObject requestData = requestDoc.object();
 
@@ -467,7 +467,7 @@ bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
     return true;
 }
 
-bool Server::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
+bool KuGouServer::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
     try {
         QJsonDocument doc = QJsonDocument::fromJson(session->requestBody());
         QString sql = QString(

@@ -6,8 +6,8 @@
  * @version 1.0
  */
 
-#include "KuGouApp.h"
-#include "ui_KuGouApp.h"
+#include "KuGouClient.h"
+#include "ui_KuGouClient.h"
 #include "logger.hpp"
 #include "RippleButton.h"
 #include "RefreshMask.h"
@@ -64,15 +64,29 @@ QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius) {
  * @brief 构造函数，初始化酷狗音乐主界面
  * @param parent 父窗口指针，默认为 nullptr
  */
-KuGouApp::KuGouApp(MainWindow *parent)
+KuGouClient::KuGouClient(MainWindow *parent)
     : MainWindow(parent)
-    , ui(new Ui::KuGouApp)
+    , ui(new Ui::KuGouClient)
     , m_menuBtnGroup(std::make_unique<QButtonGroup>(this))          ///< 初始化菜单按钮组
     , m_sizeGrip(std::make_unique<QSizeGrip>(this))                ///< 初始化窗口大小调整角标
     , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry")) ///< 初始化窗口动画
     , m_refreshMask(std::make_unique<RefreshMask>())               ///< 初始化刷新遮罩
     , m_snackbar(std::make_unique<QtMaterialSnackbar>())           ///< 初始化消息提示条
 {
+    {
+        // 初始化日志
+        if (!mylog::logger::get().init("../logs/main.log"))
+        {
+            qWarning()<<"客户端日志初始化失败";
+            return; ///< 日志初始化失败，退出
+        }
+        mylog::logger::get().set_level(spdlog::level::info); ///< 设置日志级别为 info
+
+        // 三种日志输出方式
+        STREAM_INFO() << "STREAM_INFO : 客户端初始化（info）" << "成功"; ///< 流式日志
+        PRINT_INFO("PRINT_INFO : 客户端初始化（info）%s", "成功");       ///< 格式化日志
+        LOG_INFO("LOG_INFO : 客户端初始化（info）{}", "成功");           ///< 模板日志
+    }
     // @note 初始化字体资源
     initFontRes();
     ui->setupUi(this);                                             ///< 设置 UI 布局
@@ -104,7 +118,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
  * @brief 析构函数
  * @note 释放 UI 资源并关闭日志
  */
-KuGouApp::~KuGouApp() {
+KuGouClient::~KuGouClient() {
     // @note 在 spdlog 静态变量销毁前关闭日志
     mylog::logger::get().shutdown();
     delete ui;  ///< 释放 UI 界面
@@ -114,7 +128,7 @@ KuGouApp::~KuGouApp() {
  * @brief 初始化播放器
  * @note 设置音量、静音和元数据信号连接
  */
-void KuGouApp::initPlayer() {
+void KuGouClient::initPlayer() {
     // @note 初始化播放器
     VideoPlayer::initPlayer();
     qRegisterMetaType<VideoPlayer::State>();                       ///< 注册播放器状态元类型
@@ -145,7 +159,7 @@ void KuGouApp::initPlayer() {
  * @brief 初始化字体资源
  * @note 加载五种字体资源
  */
-void KuGouApp::initFontRes() {
+void KuGouClient::initFontRes() {
     // 加载 dialog.ttf 字体
     auto fontId = QFontDatabase::addApplicationFont(":/Res/font/dialog.ttf"); ///< 加载对话字体
     if (fontId == -1) {
@@ -211,7 +225,7 @@ void KuGouApp::initFontRes() {
  * @brief 初始化界面
  * @note 初始化字体、窗口属性和子组件
  */
-void KuGouApp::initUi() {
+void KuGouClient::initUi() {
     this->setWindowIcon(QIcon(QStringLiteral(":/Res/window/windowIcon.png"))); ///< 设置窗口图标
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint); ///< 设置无边框和无阴影
     // @note 移动窗口到屏幕中央
@@ -251,7 +265,7 @@ void KuGouApp::initUi() {
  * @brief 初始化堆栈窗口
  * @note 初始化指定组件并连接跳转信号
  */
-void KuGouApp::initStackedWidget() {
+void KuGouClient::initStackedWidget() {
     // @note 使用模板函数初始化组件
     {
         // @note 未使用，用于调试以减少编译时间，但可能会有不可预料的bug
@@ -301,14 +315,14 @@ void KuGouApp::initStackedWidget() {
     connect(this->m_allMusic.get(), &AllMusic::find_more_music, [this] { on_music_repository_toolButton_clicked(); }); ///< 连接全部音乐跳转
 
     // @note 本地下载相关信号
-    connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouApp::onPlayLocalMusic); ///< 连接播放本地音乐
+    connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouClient::onPlayLocalMusic); ///< 连接播放本地音乐
     connect(this->m_localDownload.get(), &LocalDownload::cancelLoopPlay, this, [this] {
         if (m_isSingleCircle) ui->circle_toolButton->clicked(); ///< 取消单曲循环
     });                                                           ///< 连接取消循环播放
-    connect(this, &KuGouApp::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle); ///< 连接最大化屏幕处理
+    connect(this, &KuGouClient::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle); ///< 连接最大化屏幕处理
 }
 
-void KuGouApp::initSearchResultWidget() {
+void KuGouClient::initSearchResultWidget() {
     this->m_searchResultWidget = std::make_unique<QWidget>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_searchResultWidget.get()); ///< 添加搜索结果界面
     this->m_searchResultWidget->setObjectName("searchResultWidget");
@@ -404,7 +418,7 @@ void KuGouApp::initSearchResultWidget() {
     vlay->addSpacerItem(new QSpacerItem(QSizePolicy::Preferred, QSizePolicy::Preferred));
 }
 
-void KuGouApp::initSearchResultMusicItem(MusicItemWidget *item) {
+void KuGouClient::initSearchResultMusicItem(MusicItemWidget *item) {
     item->setFillColor(QColor(QStringLiteral("#B0EDF6"))); ///< 设置高亮颜色
     item->setRadius(12); ///< 设置圆角
     item->setInterval(1); ///< 设置间隔
@@ -418,7 +432,7 @@ void KuGouApp::initSearchResultMusicItem(MusicItemWidget *item) {
  * @param item 音乐项
  * @param imageUrl 封面图片的网络路径
  */
-void KuGouApp::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl) {
+void KuGouClient::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl) {
     auto watcher = new QFutureWatcher<QPixmap>(this);
     connect(watcher, &QFutureWatcher<QPixmap>::finished, [item, watcher] {
         item->setCover(watcher->result());
@@ -448,17 +462,24 @@ void KuGouApp::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl) {
     }));
 }
 
+// 模板函数实现
+template<typename T>
+void KuGouClient::initComponent(std::unique_ptr<T>& component, const int& index) {
+    component = std::make_unique<T>(ui->stackedWidget);
+    ui->stackedWidget->insertWidget(index, component.get());
+}
+
 /**
  * @brief 初始化标题栏
  * @note 连接左侧菜单、堆栈切换、最大化和关于对话框信号
  */
-void KuGouApp::initTitleWidget() {
+void KuGouClient::initTitleWidget() {
     // @note 响应左侧菜单显示
-    connect(ui->title_widget, &TitleWidget::leftMenuShow, this, &KuGouApp::onLeftMenuShow);
+    connect(ui->title_widget, &TitleWidget::leftMenuShow, this, &KuGouClient::onLeftMenuShow);
     // @note 响应堆栈窗口切换
-    connect(ui->title_widget, &TitleWidget::currentStackChange, this, &KuGouApp::onTitleCurrentStackChange);
+    connect(ui->title_widget, &TitleWidget::currentStackChange, this, &KuGouClient::onTitleCurrentStackChange);
     // @note 响应最大化窗口
-    connect(ui->title_widget, &TitleWidget::maxScreen, this, &KuGouApp::onTitleMaxScreen);
+    connect(ui->title_widget, &TitleWidget::maxScreen, this, &KuGouClient::onTitleMaxScreen);
     // @note 响应关于对话框显示
     connect(ui->title_widget, &TitleWidget::showAboutDialog, this, [this] {
         MainWindow::onShowAboutDialog(true); ///< 显示关于对话框
@@ -473,15 +494,15 @@ void KuGouApp::initTitleWidget() {
     connect(this, &MainWindow::exit, ui->title_widget, &TitleWidget::on_close_toolButton_clicked);
 
     // @note
-    connect(ui->title_widget, &TitleWidget::suggestionClicked, this, &KuGouApp::handleSuggestBoxSuggestionClicked);
-    connect(ui->title_widget, &TitleWidget::searchTextReturnPressed, this, &KuGouApp::handleSuggestBoxSuggestionClicked);
+    connect(ui->title_widget, &TitleWidget::suggestionClicked, this, &KuGouClient::handleSuggestBoxSuggestionClicked);
+    connect(ui->title_widget, &TitleWidget::searchTextReturnPressed, this, &KuGouClient::handleSuggestBoxSuggestionClicked);
 }
 
 /**
  * @brief 初始化播放栏
  * @note 设置图标、快捷键、工具提示和封面事件
  */
-void KuGouApp::initPlayWidget() {
+void KuGouClient::initPlayWidget() {
     ui->love_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/collect.svg"))); ///< 设置收藏图标
     ui->download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/download.svg"))); ///< 设置下载图标
     ui->comment_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/comment.svg"))); ///< 设置评论图标
@@ -530,7 +551,7 @@ void KuGouApp::initPlayWidget() {
     ui->song_name_text->adjustSize();
     ui->singer_text->adjustSize();
 
-    connect(this, &KuGouApp::curPlaySongNameChange, [this, song_name_text_toolTip](const QString &songName) {
+    connect(this, &KuGouClient::curPlaySongNameChange, [this, song_name_text_toolTip](const QString &songName) {
         song_name_text_toolTip->setToolTip(songName);              ///< 更新歌曲名称提示
         const QFontMetrics fm(ui->song_name_text->font());
         constexpr int maxWidth = 100;
@@ -546,7 +567,7 @@ void KuGouApp::initPlayWidget() {
         ui->singer_song_HLayout->update();
     });                                                            ///< 连接歌曲名称变化信号
 
-    connect(this, &KuGouApp::curPlaySingerChange, [this, singer_text_toolTip](const QString &singerName) {
+    connect(this, &KuGouClient::curPlaySingerChange, [this, singer_text_toolTip](const QString &singerName) {
         singer_text_toolTip->setToolTip(singerName);               ///< 更新歌手名称提示
         const QFontMetrics fm(ui->singer_text->font());
         constexpr int maxWidth = 120;
@@ -577,7 +598,7 @@ void KuGouApp::initPlayWidget() {
         ui->progressSlider->setValue(position);                    ///< 更新进度条
         ui->position_label->setText(QTime::fromMSecsSinceStartOfDay(position).toString("mm:ss")); ///< 更新时间标签
     });                                                            ///< 连接播放位置变化信号
-    connect(this->m_player, &VideoPlayer::durationChanged, this, &KuGouApp::updateSliderRange); ///< 连接时长变化信号
+    connect(this->m_player, &VideoPlayer::durationChanged, this, &KuGouClient::updateSliderRange); ///< 连接时长变化信号
 
     connect(this->m_player, &VideoPlayer::pictureFound, this, [this](const QPixmap &pix) {
         if (pix.isNull()) {
@@ -619,15 +640,15 @@ void KuGouApp::initPlayWidget() {
     });                                                            ///< 连接错误信号
 
     ui->progressSlider->installEventFilter(this);                  ///< 安装进度条事件过滤器
-    connect(ui->progressSlider, &QSlider::sliderReleased, this, &KuGouApp::updateProcess); ///< 连接进度条释放信号
-    connect(ui->play_widget, &PlayWidget::doubleClicked, this, &KuGouApp::onTitleMaxScreen); ///< 连接播放栏双击信号
+    connect(ui->progressSlider, &QSlider::sliderReleased, this, &KuGouClient::updateProcess); ///< 连接进度条释放信号
+    connect(ui->play_widget, &PlayWidget::doubleClicked, this, &KuGouClient::onTitleMaxScreen); ///< 连接播放栏双击信号
 }
 
 /**
  * @brief 初始化菜单
  * @note 设置 14 个互斥按钮的图标和分组
  */
-void KuGouApp::initMenu() {
+void KuGouClient::initMenu() {
     // @note 设置菜单按钮父对象
     this->m_menuBtnGroup->setParent(ui->center_menu_widget);
 
@@ -667,7 +688,7 @@ void KuGouApp::initMenu() {
  * @brief 初始化角标
  * @note 设置窗口大小调整角标
  */
-void KuGouApp::initCornerWidget() {
+void KuGouClient::initCornerWidget() {
     this->m_sizeGrip->setFixedSize(11, 11);                       ///< 设置角标大小
     this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip"));  ///< 设置对象名称
 }
@@ -676,7 +697,7 @@ void KuGouApp::initCornerWidget() {
  * @brief 更新窗口大小
  * @note 触发重绘并同步遮罩大小
  */
-void KuGouApp::updateSize() {
+void KuGouClient::updateSize() {
     QResizeEvent resizeEvent(this->size(), this->size());         ///< 创建调整大小事件
     QApplication::sendEvent(this, &resizeEvent);                   ///< 发送事件
 }
@@ -686,7 +707,7 @@ void KuGouApp::updateSize() {
  * @param flag 是否启用
  * @note 控制 14 个菜单按钮和标题栏的交互
  */
-void KuGouApp::enableButton(const bool &flag) {
+void KuGouClient::enableButton(const bool &flag) {
     ui->recommend_you_toolButton->setEnabled(flag);               ///< 设置推荐按钮
     ui->music_repository_toolButton->setEnabled(flag);            ///< 设置音乐库按钮
     ui->song_list_toolButton->setEnabled(flag);                   ///< 设置歌单按钮
@@ -709,7 +730,7 @@ void KuGouApp::enableButton(const bool &flag) {
  * @param ev 鼠标事件
  * @note 处理窗口拖动逻辑
  */
-void KuGouApp::mousePressEvent(QMouseEvent *ev) {
+void KuGouClient::mousePressEvent(QMouseEvent *ev) {
     MainWindow::mousePressEvent(ev); ///< 调用父类处理
     if (this->m_isTransForming) return;
     if (ev->button() == Qt::LeftButton) {
@@ -722,7 +743,7 @@ void KuGouApp::mousePressEvent(QMouseEvent *ev) {
  * @param event 鼠标事件
  * @note 处理窗口拖动和最大化还原
  */
-void KuGouApp::mouseMoveEvent(QMouseEvent *event) {
+void KuGouClient::mouseMoveEvent(QMouseEvent *event) {
     MainWindow::mouseMoveEvent(event); ///< 调用父类处理
     if (this->m_isTransForming) return;
     point_offset = event->globalPosition().toPoint() - mousePs; ///< 计算鼠标偏移量
@@ -762,7 +783,7 @@ void KuGouApp::mouseMoveEvent(QMouseEvent *event) {
  * @param ev 绘制事件
  * @note 默认实现
  */
-void KuGouApp::paintEvent(QPaintEvent *ev) {
+void KuGouClient::paintEvent(QPaintEvent *ev) {
     MainWindow::paintEvent(ev); ///< 调用父类处理
 }
 
@@ -771,7 +792,7 @@ void KuGouApp::paintEvent(QPaintEvent *ev) {
  * @param event 调整大小事件
  * @note 更新最大化状态、角标位置和文本省略
  */
-void KuGouApp::resizeEvent(QResizeEvent *event) {
+void KuGouClient::resizeEvent(QResizeEvent *event) {
     MainWindow::resizeEvent(event); ///< 调用父类处理
     if (this->geometry() != this->screen()->availableGeometry()) {
         this->m_isMaxScreen = false; ///< 非全屏状态
@@ -805,7 +826,7 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
  * @return 是否处理事件
  * @note 处理鼠标移动事件
  */
-bool KuGouApp::event(QEvent *event) {
+bool KuGouClient::event(QEvent *event) {
     if (QEvent::HoverMove == event->type()) {
         ///< 鼠标移动事件
         auto ev = static_cast<QMouseEvent *>(event);
@@ -822,7 +843,7 @@ bool KuGouApp::event(QEvent *event) {
  * @return 是否处理事件
  * @note 处理进度条和封面标签事件
  */
-bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
+bool KuGouClient::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->progressSlider) {
         // @note 禁用进度条拖拽
         if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::MouseButtonRelease || event->type() ==
@@ -874,7 +895,7 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
  * @param event 显示事件
  * @note 更新窗口大小
  */
-void KuGouApp::showEvent(QShowEvent *event) {
+void KuGouClient::showEvent(QShowEvent *event) {
     MainWindow::showEvent(event); ///< 调用父类处理
     updateSize(); ///< 更新窗口大小
 }
@@ -884,7 +905,7 @@ void KuGouApp::showEvent(QShowEvent *event) {
  * @param event 关闭事件
  * @note 默认实现
  */
-void KuGouApp::closeEvent(QCloseEvent *event) {
+void KuGouClient::closeEvent(QCloseEvent *event) {
     MainWindow::closeEvent(event); ///< 调用父类处理
 }
 
@@ -892,7 +913,7 @@ void KuGouApp::closeEvent(QCloseEvent *event) {
  * @brief 推荐按钮点击槽函数
  * @note 触发标题栏推荐页面切换
  */
-void KuGouApp::on_recommend_you_toolButton_clicked() {
+void KuGouClient::on_recommend_you_toolButton_clicked() {
     ui->title_widget->onLeftMenu_recommend_clicked(); ///< 切换到推荐页面
 }
 
@@ -900,7 +921,7 @@ void KuGouApp::on_recommend_you_toolButton_clicked() {
  * @brief 音乐库按钮点击槽函数
  * @note 触发标题栏音乐库页面切换
  */
-void KuGouApp::on_music_repository_toolButton_clicked() {
+void KuGouClient::on_music_repository_toolButton_clicked() {
     ui->title_widget->onLeftMenu_musicRepository_clicked(); ///< 切换到音乐库页面
 }
 
@@ -908,7 +929,7 @@ void KuGouApp::on_music_repository_toolButton_clicked() {
  * @brief 频道按钮点击槽函数
  * @note 触发标题栏频道页面切换
  */
-void KuGouApp::on_channel_toolButton_clicked() {
+void KuGouClient::on_channel_toolButton_clicked() {
     ui->title_widget->onLeftMenu_channel_clicked(); ///< 切换到频道页面
 }
 
@@ -916,7 +937,7 @@ void KuGouApp::on_channel_toolButton_clicked() {
  * @brief 视频按钮点击槽函数
  * @note 触发标题栏视频页面切换
  */
-void KuGouApp::on_video_toolButton_clicked() {
+void KuGouClient::on_video_toolButton_clicked() {
     ui->title_widget->onLeftMenu_video_clicked(); ///< 切换到视频页面
 }
 
@@ -924,7 +945,7 @@ void KuGouApp::on_video_toolButton_clicked() {
  * @brief 直播按钮点击槽函数
  * @note 触发标题栏直播页面切换
  */
-void KuGouApp::on_live_toolButton_clicked() {
+void KuGouClient::on_live_toolButton_clicked() {
     ui->title_widget->onLeftMenu_live_clicked(); ///< 切换到直播页面
 }
 
@@ -932,7 +953,7 @@ void KuGouApp::on_live_toolButton_clicked() {
  * @brief AI 聊天按钮点击槽函数
  * @note 触发标题栏 AI 聊天页面切换
  */
-void KuGouApp::on_ai_chat_toolButton_clicked() {
+void KuGouClient::on_ai_chat_toolButton_clicked() {
     ui->title_widget->onLeftMenu_ai_chat_clicked(); ///< 切换到 AI 聊天页面
 }
 
@@ -940,7 +961,7 @@ void KuGouApp::on_ai_chat_toolButton_clicked() {
  * @brief 歌单按钮点击槽函数
  * @note 触发标题栏歌单页面切换
  */
-void KuGouApp::on_song_list_toolButton_clicked() {
+void KuGouClient::on_song_list_toolButton_clicked() {
     ui->title_widget->onLeftMenu_songList_clicked(); ///< 切换到歌单页面
 }
 
@@ -948,7 +969,7 @@ void KuGouApp::on_song_list_toolButton_clicked() {
  * @brief 每日推荐按钮点击槽函数
  * @note 触发标题栏每日推荐页面切换
  */
-void KuGouApp::on_daily_recommend_toolButton_clicked() {
+void KuGouClient::on_daily_recommend_toolButton_clicked() {
     ui->title_widget->onLeftMenu_dailyRecommend_clicked(); ///< 切换到每日推荐页面
 }
 
@@ -956,7 +977,7 @@ void KuGouApp::on_daily_recommend_toolButton_clicked() {
  * @brief 收藏按钮点击槽函数
  * @note 触发标题栏收藏页面切换
  */
-void KuGouApp::on_my_collection_toolButton_clicked() {
+void KuGouClient::on_my_collection_toolButton_clicked() {
     ui->title_widget->onLeftMenu_collection_clicked(); ///< 切换到收藏页面
 }
 
@@ -964,7 +985,7 @@ void KuGouApp::on_my_collection_toolButton_clicked() {
  * @brief 本地下载按钮点击槽函数
  * @note 触发标题栏本地下载页面切换
  */
-void KuGouApp::on_local_download_toolButton_clicked() {
+void KuGouClient::on_local_download_toolButton_clicked() {
     ui->title_widget->onLeftMenu_localDownload_clicked(); ///< 切换到本地下载页面
 }
 
@@ -972,7 +993,7 @@ void KuGouApp::on_local_download_toolButton_clicked() {
  * @brief 云盘按钮点击槽函数
  * @note 触发标题栏云盘页面切换
  */
-void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
+void KuGouClient::on_music_cloud_disk_toolButton_clicked() {
     ui->title_widget->onLeftMenu_musicCloudDisk_clicked(); ///< 切换到云盘页面
 }
 
@@ -980,7 +1001,7 @@ void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
  * @brief 已购音乐按钮点击槽函数
  * @note 触发标题栏已购音乐页面切换
  */
-void KuGouApp::on_purchased_music_toolButton_clicked() {
+void KuGouClient::on_purchased_music_toolButton_clicked() {
     ui->title_widget->onLeftMenu_purchasedMusic_clicked(); ///< 切换到已购音乐页面
 }
 
@@ -988,7 +1009,7 @@ void KuGouApp::on_purchased_music_toolButton_clicked() {
  * @brief 最近播放按钮点击槽函数
  * @note 触发标题栏最近播放页面切换
  */
-void KuGouApp::on_recently_played_toolButton_clicked() {
+void KuGouClient::on_recently_played_toolButton_clicked() {
     ui->title_widget->onLeftMenu_recentlyPlayed_clicked(); ///< 切换到最近播放页面
 }
 
@@ -996,7 +1017,7 @@ void KuGouApp::on_recently_played_toolButton_clicked() {
  * @brief 全部音乐按钮点击槽函数
  * @note 触发标题栏全部音乐页面切换
  */
-void KuGouApp::on_all_music_toolButton_clicked() {
+void KuGouClient::on_all_music_toolButton_clicked() {
     ui->title_widget->onLeftMenu_allMusic_clicked(); ///< 切换到全部音乐页面
 }
 
@@ -1004,7 +1025,7 @@ void KuGouApp::on_all_music_toolButton_clicked() {
 * @brief 处理suggestBox选中项槽函数
  * @note 切换搜索结果界面
  */
-void KuGouApp::handleSuggestBoxSuggestionClicked(const QString &suggestText, const QVariantMap &suggestData) {
+void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, const QVariantMap &suggestData) {
     qDebug() << "选中：" << suggestText << " 附带数据：" << suggestData;
     ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
     auto topLab = m_searchResultWidget->findChild<QLabel *>("searchResultTopLabel");
@@ -1157,7 +1178,7 @@ void KuGouApp::handleSuggestBoxSuggestionClicked(const QString &suggestText, con
  * @brief 更新播放进度
  * @note 根据进度条位置调整播放器进度
  */
-void KuGouApp::updateProcess() {
+void KuGouClient::updateProcess() {
     qint64 position = ui->progressSlider->value() * this->m_player->getTotalTime() / ui->progressSlider->maximum();
     ///< 计算播放位置
     // @note 未使用，保留用于调试
@@ -1172,7 +1193,7 @@ void KuGouApp::updateProcess() {
  * @param duration 总时长（毫秒）
  * @note 设置进度条最大值和时长标签
  */
-void KuGouApp::updateSliderRange(const qint64 &duration) {
+void KuGouClient::updateSliderRange(const qint64 &duration) {
     ui->progressSlider->setMaximum(static_cast<int>(duration)); ///< 设置进度条最大值
     // @note 未使用，保留用于调试
     // qDebug() << "改变总时长为：" << duration;
@@ -1184,7 +1205,7 @@ void KuGouApp::updateSliderRange(const qint64 &duration) {
  * @brief 空格键快捷键槽函数
  * @note 切换播放/暂停状态
  */
-void KuGouApp::onKeyPause() {
+void KuGouClient::onKeyPause() {
     if (this->m_player->state() == VideoPlayer::State::Playing) {
         this->m_player->pause(); ///< 暂停播放
     } else {
@@ -1197,7 +1218,7 @@ void KuGouApp::onKeyPause() {
  * @brief 左箭头快捷键槽函数
  * @note 快退 5 秒
  */
-void KuGouApp::onKeyLeft() {
+void KuGouClient::onKeyLeft() {
     // @note 未使用，保留用于调试
     // qDebug() << "getCurrentTime() : " << this->m_player->getCurrentTime();
     this->m_player->seek(this->m_player->getCurrentTime() * 1000 - 5000000); ///< 快退 5 秒
@@ -1210,7 +1231,7 @@ void KuGouApp::onKeyLeft() {
  * @brief 右箭头快捷键槽函数
  * @note 快进 5 秒
  */
-void KuGouApp::onKeyRight() {
+void KuGouClient::onKeyRight() {
     // @note 未使用，保留用于调试
     // qDebug() << "getCurrentTime() : " << this->m_player->getCurrentTime();
     this->m_player->seek(this->m_player->getCurrentTime() * 1000 + 5000000); ///< 快进 5 秒
@@ -1225,7 +1246,7 @@ void KuGouApp::onKeyRight() {
  * @param slide 是否滑动切换
  * @note 更新堆栈页面和按钮状态
  */
-void KuGouApp::onTitleCurrentStackChange(const int &index, const bool &slide) {
+void KuGouClient::onTitleCurrentStackChange(const int &index, const bool &slide) {
     if (ui->stackedWidget->currentIndex() == index) return;
     this->m_refreshMask->hide(); ///< 隐藏刷新遮罩
     this->m_snackbar->hide(); ///< 隐藏消息提示条
@@ -1259,7 +1280,7 @@ void KuGouApp::onTitleCurrentStackChange(const int &index, const bool &slide) {
  * @param flag 是否显示
  * @note 显示或隐藏菜单滚动区域
  */
-void KuGouApp::onLeftMenuShow(const bool &flag) const {
+void KuGouClient::onLeftMenuShow(const bool &flag) const {
     if (flag) {
         ui->menu_scrollArea->show(); ///< 显示菜单
     } else {
@@ -1271,7 +1292,7 @@ void KuGouApp::onLeftMenuShow(const bool &flag) const {
  * @brief 标题栏最大化槽函数
  * @note 切换最大化/正常状态并执行动画
  */
-void KuGouApp::onTitleMaxScreen() {
+void KuGouClient::onTitleMaxScreen() {
     // @note 未使用，保留用于调试
     // STREAM_INFO() << "最大化窗口";
     if (m_isMaxScreen) {
@@ -1325,7 +1346,7 @@ void KuGouApp::onTitleMaxScreen() {
  * @param localPath 本地音乐路径
  * @note 检查文件存在并启动播放
  */
-void KuGouApp::onPlayLocalMusic(const QString &localPath) {
+void KuGouClient::onPlayLocalMusic(const QString &localPath) {
     // @note 未使用，保留用于调试
     // qDebug() << "播放：" << localPath;
     if (!QFile::exists(localPath)) {
@@ -1343,7 +1364,7 @@ void KuGouApp::onPlayLocalMusic(const QString &localPath) {
  * @brief 播放/暂停按钮点击槽函数
  * @note 切换播放/暂停状态
  */
-void KuGouApp::on_play_or_pause_toolButton_clicked() {
+void KuGouClient::on_play_or_pause_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1372,7 +1393,7 @@ void KuGouApp::on_play_or_pause_toolButton_clicked() {
  * @brief 收藏按钮点击槽函数
  * @note 检查音乐路径并显示提示
  */
-void KuGouApp::on_love_toolButton_clicked() {
+void KuGouClient::on_love_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1383,7 +1404,7 @@ void KuGouApp::on_love_toolButton_clicked() {
  * @brief 下载按钮点击槽函数
  * @note 检查音乐路径并显示提示
  */
-void KuGouApp::on_download_toolButton_clicked() {
+void KuGouClient::on_download_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1394,7 +1415,7 @@ void KuGouApp::on_download_toolButton_clicked() {
  * @brief 评论按钮点击槽函数
  * @note 检查音乐路径并显示提示
  */
-void KuGouApp::on_comment_toolButton_clicked() {
+void KuGouClient::on_comment_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1405,7 +1426,7 @@ void KuGouApp::on_comment_toolButton_clicked() {
  * @brief 分享按钮点击槽函数
  * @note 检查音乐路径并显示提示
  */
-void KuGouApp::on_share_toolButton_clicked() {
+void KuGouClient::on_share_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1416,7 +1437,7 @@ void KuGouApp::on_share_toolButton_clicked() {
  * @brief 更多按钮点击槽函数
  * @note 检查音乐路径并显示提示
  */
-void KuGouApp::on_more_toolButton_clicked() {
+void KuGouClient::on_more_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1427,7 +1448,7 @@ void KuGouApp::on_more_toolButton_clicked() {
  * @brief 循环播放按钮点击槽函数
  * @note 切换单曲循环状态
  */
-void KuGouApp::on_circle_toolButton_clicked() {
+void KuGouClient::on_circle_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1483,7 +1504,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
  * @brief 上一首按钮点击槽函数
  * @note 播放上一首本地歌曲
  */
-void KuGouApp::on_pre_toolButton_clicked() {
+void KuGouClient::on_pre_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1496,7 +1517,7 @@ void KuGouApp::on_pre_toolButton_clicked() {
  * @brief 下一首按钮点击槽函数
  * @note 播放下一首本地歌曲
  */
-void KuGouApp::on_next_toolButton_clicked() {
+void KuGouClient::on_next_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1509,7 +1530,7 @@ void KuGouApp::on_next_toolButton_clicked() {
  * @brief 速度选择按钮点击槽函数
  * @note 显示速度选择界面
  */
-void KuGouApp::on_speed_pushButton_clicked() {
+void KuGouClient::on_speed_pushButton_clicked() {
     /// 弹出速度相关界面，并且在隐藏的时候销毁
     auto speedDialog = new SpeedDialog(this);
 
@@ -1557,7 +1578,7 @@ void KuGouApp::on_speed_pushButton_clicked() {
  * @brief 音质选择按钮点击槽函数
  * @note 显示未实现提示
  */
-void KuGouApp::on_stander_pushButton_clicked() {
+void KuGouClient::on_stander_pushButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", QStringLiteral("音质选择功能 暂未实现 敬请期待"), 1000,
                                    this->window()); ///< 显示未实现提示
@@ -1569,7 +1590,7 @@ void KuGouApp::on_stander_pushButton_clicked() {
  * @brief 音效按钮点击槽函数
  * @note 显示未实现提示
  */
-void KuGouApp::on_acoustics_pushButton_clicked() {
+void KuGouClient::on_acoustics_pushButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", QStringLiteral("音效功能 暂未实现 敬请期待"), 1000,
                                    this->window()); ///< 显示未实现提示
@@ -1581,7 +1602,7 @@ void KuGouApp::on_acoustics_pushButton_clicked() {
  * @brief 一起听按钮点击槽函数
  * @note 检查音乐路径并显示提示
  */
-void KuGouApp::on_erji_toolButton_clicked() {
+void KuGouClient::on_erji_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1593,7 +1614,7 @@ void KuGouApp::on_erji_toolButton_clicked() {
  * @brief 歌词按钮点击槽函数
  * @note 检查音乐路径并显示提示
  */
-void KuGouApp::on_lyrics_toolButton_clicked() {
+void KuGouClient::on_lyrics_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
@@ -1605,7 +1626,7 @@ void KuGouApp::on_lyrics_toolButton_clicked() {
  * @brief 播放队列按钮点击槽函数
  * @note 显示未实现提示
  */
-void KuGouApp::on_song_queue_toolButton_clicked() {
+void KuGouClient::on_song_queue_toolButton_clicked() {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", QStringLiteral("播放队列功能 暂未实现 敬请期待"), 1000,
                                    this->window()); ///< 显示未实现提示
