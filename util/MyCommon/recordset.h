@@ -93,7 +93,7 @@ public:
      *  @param col 列索引
      *  @return 指定位置的数据
      */
-    const QString& operator()(const unsigned int row, const unsigned int col) const;
+    const QString& operator()(unsigned int row, unsigned int col) const;
 
     /** @brief 获取指定行和字段名称的数据
      *
@@ -103,7 +103,7 @@ public:
      *  @param name 字段名称
      *  @return 指定位置的数据
      */
-    const QString& operator()(const unsigned int row, const QString& name) const;
+    const QString& operator()(unsigned int row, const QString& name) const;
 
 private:
     /** @brief 存储列头数据
