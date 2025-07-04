@@ -24,6 +24,8 @@ public:
     Q_INVOKABLE RecordSetList execSql(const QString& sql, const QString &connectionName="qt_sql_default_connection",bool longConnect=true);
     // 执行sql的insert语句
     Q_INVOKABLE RecordSetList execInsertSql(const QString& sql, const QString &connectionName="qt_sql_default_connection",bool longConnect=true);
+    // 执行sql的delete语句
+    Q_INVOKABLE RecordSetList execDeleteSql(const QString& sql, const QString &connectionName = "qt_sql_default_connection", bool longConnect = true);
     // 执行多条语句
     Q_INVOKABLE RecordSetList execSqls(const QStringList& sqls,QString connectionName="qt_sql_default_connection",bool longConnect=true);
     // 执行事务

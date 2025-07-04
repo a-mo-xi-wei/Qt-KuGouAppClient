@@ -1038,9 +1038,9 @@ void LocalSong::onItemDeleteSong(const int &idx)
     /*Async::runAsync(QThreadPool::globalInstance(),&CLibhttp::UrlRequestGet,
        m_libHttp, QString("http://127.0.0.1:8080/api/delSong"),QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
     */
-    Async::runAsync(QThreadPool::globalInstance(),
+    const auto future = Async::runAsync(QThreadPool::globalInstance(),
     [this,delReq] {
-        return m_libHttp.UrlRequestGet(
+        return m_libHttp.UrlRequestPost(
             QString("http://127.0.0.1:8080/api/delSong"),
             QJsonDocument(delReq).toJson(QJsonDocument::Compact),
             1000
@@ -1048,8 +1048,25 @@ void LocalSong::onItemDeleteSong(const int &idx)
     }); ///< 异步删除
     //m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
     //qDebug()<<"处理删除请求完成";
-    ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
-        QString("成功删除音乐 : %1").arg(song),1000,this->window()); ///< 显示成功提示
+    // 成功后提示
+    Async::onResultReady(future, this, [this, song](const QString &responseData) {
+        // 可以根据返回内容判断是否删除成功（这里假设服务端返回 JSON 并有 success 字段）
+        QJsonParseError err;
+        const QJsonDocument doc = QJsonDocument::fromJson(responseData.toUtf8(), &err);
+        if (err.error != QJsonParseError::NoError || !doc.isObject()) {
+            qWarning() << "删除请求失败：返回数据解析失败";
+            STREAM_WARN() << "删除请求失败：返回数据解析失败";
+            return;
+        }
+        const QJsonObject obj = doc.object();
+        if (obj.value("code").toInt() == 0) {
+            ElaMessageBar::success(ElaMessageBarType::BottomRight, "Success",
+                QString("成功删除音乐 : %1").arg(song), 1000, this->window());
+        } else {
+            ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error",
+                QString("删除失败 : %1").arg(obj.value("message").toString()), 2000, this->window());
+        }
+    });
 }
 
 /**
