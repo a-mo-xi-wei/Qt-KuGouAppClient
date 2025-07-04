@@ -160,6 +160,7 @@ void KuGouServer::initDateBase() {
 void KuGouServer::initRouter() {
     m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath()+QString("SQLite.db"));
     //apiRouter["/api/test"] = std::bind(&Server::onApiTest, this, std::placeholders::_1);
+    ///< 应用完美转发！！！
     apiRouter["/api/test"] = [this](auto && PH1) { return onApiTest(std::forward<decltype(PH1)>(PH1)); };
     //apiRouter["/api/version"] = std::bind(&Server::onApiVersion, this, std::placeholders::_1);
     apiRouter["/api/version"] = [this](auto && PH1) { return onApiVersion(std::forward<decltype(PH1)>(PH1)); };
@@ -205,6 +206,8 @@ bool KuGouServer::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServe
             static const QRegularExpression fallbackRegex(".*");
             if (fallbackRegex.match(path).hasMatch())
             {
+                qWarning() << "非法访问路径: "<<path;
+                QLOG_ERROR() << "非法访问路径: "<<path;
                 session->replyBytes(SResult::failure(SResultCode::PathIllegal), "application/json");
                 isProcessed = true;
             }
@@ -438,8 +441,8 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
            "INSERT INTO local_song_table "
            "(\"index\", cover, song, singer, duration, media_path, add_time) "
            "VALUES (%1, %2, %3, %4, %5, %6, %7);"
-       )
-        .arg(safeNumber(index))         // 数值类型
+        )
+        .arg(safeNumber(index))         // 下标
         .arg(safeString(coverData))     // Base64 图像数据
         .arg(safeString(songName))
         .arg(safeString(singer))
@@ -476,14 +479,25 @@ bool KuGouServer::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
             .arg(doc["song"].toString().replace("'", "''"))
             .arg(doc["singer"].toString().replace("'", "''"))
             .arg(doc["duration"].toString());
-        m_SqliteDataProvider.execSql(sql, "delete_song", false);
-
-        session->replyBytes(SResult::success(), "application/json");
-        reorderIndex();
-        return true;
+        auto result = m_SqliteDataProvider.execDeleteSql(sql, "delete_song", false);
+        if (!result.isEmpty()){
+            //QJsonObject response;
+            //response["status"] = "success";
+            //response["message"] = "Song deleted successfully";
+            //session->replyBytes(QJsonDocument(response).toJson(), "application/json");
+            session->replyBytes(SResult::success(), "application/json");
+            reorderIndex();
+            //qDebug() << "Song deleted successfully."<< " 删除了" <<  result(0)(0, 0)<< "条记录";
+            QLOG_INFO() << "Song deleted successfully.";
+        } else {
+            qWarning() << "Song deletion failed. SQL:" << sql;
+            QLOG_ERROR() << "Song deletion failed. SQL:" << sql;
+            session->replyBytes(SResult::failure(SResultCode::ServerSqlQueryError), "application/json");
+        }
     }
     catch (const std::exception& e) {
         session->replyBytes(SResult::failure(SResultCode::ServerInnerError),"application/json");
         return false;
     }
+    return true;
 }

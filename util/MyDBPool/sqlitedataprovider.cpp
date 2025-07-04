@@ -326,6 +326,45 @@ RecordSetList SqliteDataProvider::execInsertSql(const QString& sql,
     return pRecordSetList;
 }
 
+RecordSetList SqliteDataProvider::execDeleteSql(const QString &sql, const QString &connectionName, bool longConnect) {
+    RecordSetList pRecordSetList;
+
+    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE, m_dbPath, "", "", "", 1433, longConnect, connectionName);
+
+    if (!tempDB.isOpen())
+    {
+        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is valid:" << tempDB.isOpen();
+        return pRecordSetList;
+    }
+
+    QSqlQuery queryresult(tempDB);
+
+    if (queryresult.exec(sql))
+    {
+        int affected = queryresult.numRowsAffected();
+
+        try {
+            // 构建一个包含影响行数的结果
+            RecordSet pRecordSet;
+            pRecordSet.setColumnHeaders({ "rowsAffected" });
+
+            Row fieldDatas;
+            fieldDatas.push_back(QString::number(affected));
+
+            pRecordSet.add(fieldDatas);
+            pRecordSetList.add(pRecordSet);
+        } catch (...) {
+            QLOG_ERROR() << "delete error:" << queryresult.lastError().text();
+        }
+    }
+    else
+    {
+        QLOG_ERROR() << "delete exec error:" << queryresult.lastError().text();
+    }
+
+    return pRecordSetList;
+}
+
 /**
  * 关闭与数据库的连接
  */
