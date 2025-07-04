@@ -9,10 +9,7 @@
 #ifndef MUSICREPOSITORY_H
 #define MUSICREPOSITORY_H
 
-#include "MyBlockWidget.h"
-
 #include <QWidget>
-#include <vector>
 
 class QButtonGroup;
 

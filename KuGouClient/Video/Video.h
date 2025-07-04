@@ -9,9 +9,9 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
-#include "VideoChannelWidget.h"
-#include "VideoWidget.h"
-#include "MVWidget.h"
+#include "VideoChannelWidget/VideoChannelWidget.h"
+#include "VideoWidget/VideoWidget.h"
+#include "MVWidget/MVWidget.h"
 
 #include <QWidget>
 
