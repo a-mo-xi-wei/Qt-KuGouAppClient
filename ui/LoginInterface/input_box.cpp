@@ -4,7 +4,7 @@
 #include <QPainter>
 #include <QPainterPath>
 
-Input_box::Input_box(QString icon, QWidget *parent) : ElaLineEdit{parent} {
+Input_box::Input_box(const QString& icon, QWidget *parent) : ElaLineEdit{parent} {
     this->icon = QPixmap(icon);
     this->resize(388, 58);
     setTextMargins(10, 0, 25, 0);
@@ -28,9 +28,23 @@ void Input_box::setIcon(const QString &iconPath) {
     update(); // 触发重绘
 }
 
+void Input_box::openToolTip() {
+    m_passwordTip = new ElaToolTip(this);
+    m_passwordTip->hide();
+}
+
+void Input_box::setIconToolTip(const QString &tip) const {
+    this->m_passwordTip->setToolTip(tip);
+}
+
 void Input_box::paintEvent(QPaintEvent *event) {
     ElaLineEdit::paintEvent(event);
-    draw_ico_image();
+
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
+
+    painter.drawPixmap(iconRect(), icon);
 }
 
 void Input_box::mousePressEvent(QMouseEvent *event) {
@@ -46,17 +60,11 @@ void Input_box::mouseMoveEvent(QMouseEvent *event) {
     ElaLineEdit::mouseMoveEvent(event);
     if (iconRect().contains(event->pos())) {
         setCursor(Qt::PointingHandCursor);
+        if (m_passwordTip)m_passwordTip->show();
     } else {
         setCursor(Qt::IBeamCursor);
+        if (m_passwordTip)m_passwordTip->hide();
     }
-}
-
-void Input_box::draw_ico_image() {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setRenderHint(QPainter::SmoothPixmapTransform);
-
-    painter.drawPixmap(iconRect(), icon);
 }
 
 QRect Input_box::iconRect() const {

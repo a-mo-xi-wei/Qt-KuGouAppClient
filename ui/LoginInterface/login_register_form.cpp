@@ -230,8 +230,8 @@ void LoginRegisterForm::initUi() {
 
 
     // 按钮尺寸
-    int btnWidth = 40;
-    int btnHeight = 30;
+    const int btnWidth = 40;
+    const int btnHeight = 30;
 
     minBtn->resize(btnWidth, btnHeight);
     closeBtn->resize(btnWidth, btnHeight);

@@ -2,6 +2,7 @@
 #define INPUT_BOX_H
 
 #include "ElaLineEdit.h"
+#include "ElaToolTip.h"
 
 #if defined(LOGIN_REGISTER_LIBRARY)
 #define LOGIN_REGISTER_EXPORT Q_DECL_EXPORT
@@ -13,13 +14,15 @@ class LOGIN_REGISTER_EXPORT Input_box : public ElaLineEdit {
     Q_OBJECT
 
 public:
-    explicit Input_box(QString icon, QWidget *parent = nullptr);
+    explicit Input_box(const QString& icon, QWidget *parent = nullptr);
 
     void setIcon(const QString &iconPath);
 
-private:
-    void draw_ico_image();
+    void openToolTip();
 
+    void setIconToolTip(const QString& tip) const;
+
+private:
     QRect iconRect() const;
 
 protected:
@@ -34,6 +37,7 @@ signals:
 
 private:
     QPixmap icon;
+    ElaToolTip* m_passwordTip = nullptr;
 };
 
 #endif // INPUT_BOX_H

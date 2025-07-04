@@ -14,13 +14,16 @@ Registration_form::Registration_form(QWidget *parent)
     username->setMaxLength(20);
     username->setValidator(
         new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9_\\-!@#$%^&*()+=.,?:;\"'{}<>/|]{0,20}"), this));
+    username->openToolTip();
+    username->setIconToolTip(QStringLiteral("用户名"));
 
     email = new Input_box(":/Res/login/email.png", this);
     email->move(46, 220);
     email->setPlaceholderText("Email");
     email->setMaxLength(16);
-    email->setValidator(
-        new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"), this));
+    email->setValidator(new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"), this));
+    email->openToolTip();
+    email->setIconToolTip(QStringLiteral("邮箱"));
 
     password = new Input_box(":/Res/login/password.png", this);
     password->move(46, 310);
@@ -28,6 +31,8 @@ Registration_form::Registration_form(QWidget *parent)
     password->setEchoMode(QLineEdit::Password);
     password->setMaxLength(16);
     password->setValidator(new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9]+$"), this));
+    password->openToolTip();
+    password->setIconToolTip(QStringLiteral("解锁"));
 
     login_button = new Login_button(this);
     login_button->setCenter_text("Registration");
@@ -40,6 +45,8 @@ Registration_form::Registration_form(QWidget *parent)
     other_login_buttons1->setXOffset(62); ///< 设置 X 偏移
     other_login_buttons1->setYOffset(90); ///< 设置 Y 偏移
     other_login_buttons1->setBackgroundColor(QColor(0xa5bbe4)); ///< 设置背景色
+    auto qq_tooTip = new ElaToolTip(other_login_buttons1);
+    qq_tooTip->setToolTip(QStringLiteral("QQ登录"));
 
     other_login_buttons2 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/wechat.png"), this);
     other_login_buttons2->setCursor(Qt::PointingHandCursor); ///< 设置发送按钮光标
@@ -48,6 +55,8 @@ Registration_form::Registration_form(QWidget *parent)
     other_login_buttons2->setXOffset(157); ///< 设置 X 偏移
     other_login_buttons2->setYOffset(90); ///< 设置 Y 偏移
     other_login_buttons2->setBackgroundColor(QColor(0xa5bbe4)); ///< 设置背景色
+    auto wechat_tooTip = new ElaToolTip(other_login_buttons2);
+    wechat_tooTip->setToolTip(QStringLiteral("微信登录"));
 
     other_login_buttons3 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/logo_google.png"), this);
     other_login_buttons3->setCursor(Qt::PointingHandCursor); ///< 设置发送按钮光标
@@ -56,6 +65,8 @@ Registration_form::Registration_form(QWidget *parent)
     other_login_buttons3->setXOffset(262); ///< 设置 X 偏移
     other_login_buttons3->setYOffset(90); ///< 设置 Y 偏移
     other_login_buttons3->setBackgroundColor(QColor(0xa5bbe4)); ///< 设置背景色
+    auto google_tooTip = new ElaToolTip(other_login_buttons3);
+    google_tooTip->setToolTip(QStringLiteral("谷歌登录"));
 
     other_login_buttons4 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/github-fill.png"), this);
     other_login_buttons4->setCursor(Qt::PointingHandCursor); ///< 设置发送按钮光标
@@ -64,6 +75,8 @@ Registration_form::Registration_form(QWidget *parent)
     other_login_buttons4->setXOffset(367); ///< 设置 X 偏移
     other_login_buttons4->setYOffset(90); ///< 设置 Y 偏移
     other_login_buttons4->setBackgroundColor(QColor(0xa5bbe4)); ///< 设置背景色
+    auto github_tooTip = new ElaToolTip(other_login_buttons4);
+    github_tooTip->setToolTip(QStringLiteral("Github登录"));
 
     this->animations();
     connect(login_button, &Login_button::execute_animation_signal, this, &Registration_form::execute_animation);
@@ -71,6 +84,8 @@ Registration_form::Registration_form(QWidget *parent)
     // 连接图标点击信号
     connect(password, &Input_box::iconClicked, [this] {
         m_isPasswordVisible = !m_isPasswordVisible;
+
+        password->setIconToolTip(m_isPasswordVisible ? QStringLiteral("锁定") : QStringLiteral("解锁"));
 
         // 切换密码可见性
         password->setEchoMode(m_isPasswordVisible ? QLineEdit::Normal : QLineEdit::Password);
