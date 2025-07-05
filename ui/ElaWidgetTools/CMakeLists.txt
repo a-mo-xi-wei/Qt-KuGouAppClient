@@ -98,4 +98,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaSuggestBox
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core Qt6::Network MySpdlog)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core Qt6::Network MySpdlog MyAsyncThread MyHttpClient)
