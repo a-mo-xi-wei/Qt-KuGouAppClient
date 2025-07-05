@@ -13,6 +13,7 @@
 
 #include "Def.h"
 #include "stdafx.h"
+#include "libhttp.h"
 
 class ElaSuggestion : public QObject
 {
@@ -137,6 +138,8 @@ private:
     /*---------------*/
     QSize _pendingSize;                                      ///< 待处理的目标尺寸
     QTimer* _animationTimer;                                 ///< 延迟启动动画的定时器
+
+    CLibhttp                             m_libHttp;                 ///< HTTP 请求库
 };
 
 #endif // ELASUGGESTBOXPRIVATE_H

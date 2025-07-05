@@ -7,9 +7,6 @@
  */
 
 #include "ElaSuggestBoxPrivate.h"
-
-#include <io.h>
-
 #include "ElaBaseListView.h"
 #include "ElaLineEdit.h"
 #include "ElaSuggestBox.h"
@@ -17,14 +14,13 @@
 #include "ElaSuggestModel.h"
 
 #include <QLayout>
-#include <QNetworkReply>
 #include <QPropertyAnimation>
-#include <QUuid>
-#include <QEventLoop>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTimer>
+
+#include "Async.h"
 
 class QNetworkReply;
 
@@ -93,104 +89,75 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
     }
     if (sender()->property("searchWay").toString() == "search_net_song")
     {
-        q->removeAllSuggestion();                             ///< 清除现有建议项
-        QNetworkRequest request;
-        QNetworkAccessManager manger;
-        request.setUrl(QUrl("https://c6.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?key=" + searchText + "&format=json&inCharset=utf-8&outCharset=utf-8"));
-        request.setRawHeader("Accept", "application/json");
-        request.setRawHeader("Accept-Language", "zh-CN");
-        request.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36");
-        request.setRawHeader("Content-Type", "text/html");
-        request.setRawHeader("Accept-Encoding", "deflate");
-        QNetworkReply *reply = manger.get(request);
-        QEventLoop loop;
-        connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-        loop.exec();
+        q->removeAllSuggestion(); // 清除现有建议项
 
-        if (reply->error() == QNetworkReply::NoError)
-        {
-            const auto byt = reply->readAll();
-            const auto doc = QJsonDocument::fromJson(byt);
-            QJsonObject objTemp = doc.object();
-            objTemp = objTemp.value("data").toObject();
-            objTemp = objTemp.value("song").toObject();
-            QJsonArray arrayTemp = objTemp.value("itemlist").toArray();
-            for (int i = 0; i < arrayTemp.count(); i++)
+        // Send asynchronous POST request to the local server
+        auto future = Async::runAsync(QThreadPool::globalInstance(), [this, searchText] {
+            return m_libHttp.UrlRequestGet(
+                QString("http://127.0.0.1:8080/api/searchSuggestion"),
+                "key=" + QUrl::toPercentEncoding(searchText),
+                ///< 注意：此处不能直接传递纯文本 searchText（如 "123"）而非完整的查询字符串 "key=123"。
+                ///< 否则：浏览器访问：http://127.0.0.1:8080/api/searchSuggestion?key=123（正确格式）
+                ///< 代码生成：http://127.0.0.1:8080/api/searchSuggestion?123（缺少参数名）
+                1000 // Timeout in milliseconds
+            );
+        });
+
+        // Handle the response asynchronously
+        Async::onResultReady(future, this, [this, q](const QString &responseData) {
+            QJsonParseError err;
+            const QJsonDocument doc = QJsonDocument::fromJson(responseData.toUtf8(), &err);
+            if (err.error != QJsonParseError::NoError || !doc.isObject())
             {
-                objTemp = arrayTemp.at(i).toObject();
-                const QString songName = objTemp.value("name").toString();
-                const QString songSinger = objTemp.value("singer").toString();
-                q->addSuggestion(songSinger + "-" + songName); ///< 添加 QQ 音乐建议项
+                qWarning() << "Failed to parse response from server:" << err.errorString();
+                return;
             }
-        }
 
-        QNetworkRequest request1;
-        request1.setUrl(QUrl("http://music.163.com/api/search/get/web"));
-        request1.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-        request1.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
-        request1.setRawHeader("Referer", "https://music.163.com/");
-        request1.setRawHeader("Origin", "https://music.163.com");
-
-        QByteArray postData;
-        postData.append("s=" + QUrl::toPercentEncoding(searchText));
-        postData.append("&type=1&offset=0&limit=10");
-
-        QNetworkReply *reply1 = manger.post(request1, postData);
-        QEventLoop loop1;
-        connect(reply1, &QNetworkReply::finished, &loop1, &QEventLoop::quit);
-
-        loop1.exec();
-
-        if (reply1->error() == QNetworkReply::NoError)
-        {
-            const QByteArray byt = reply1->readAll();
-            QJsonDocument doc = QJsonDocument::fromJson(byt);
-            if (!doc.isObject()) return;
-
-            QJsonObject rootObj = doc.object();
-            QJsonArray songsArray = rootObj["result"].toObject()["songs"].toArray();
-
-            for (const auto &val : songsArray)
+            const QJsonObject obj = doc.object();
+            if (obj.value("status").toString() == "success")
             {
-                QJsonObject songObj = val.toObject();
-                QString songName = songObj["name"].toString();
-                QJsonArray artists = songObj["artists"].toArray();
-                QString artist = !artists.isEmpty() ? artists[0].toObject()["name"].toString() : "";
-                q->addSuggestion(artist + "-" + songName); ///< 添加网易云音乐建议项
-            }
-        }
+                const QJsonArray suggestions = obj.value("data").toArray();
+                for (const auto &suggestion : suggestions)
+                {
+                    q->addSuggestion(suggestion.toString());
+                    ///< @note qDebug()<<"添加："<< suggestion.toString();
+                }
 
-        reply->deleteLater();
-        reply1->deleteLater();
-        if (m_ignoreTextChanges) return;
-        if (!_suggestionVector.isEmpty())
-        {
-            _searchModel->setSearchSuggestion(_suggestionVector); ///< 设置模型建议项
-            int rowCount = static_cast<int>(_suggestionVector.count());
-            rowCount = rowCount > 6 ? 6 : rowCount;
-            if (!_searchViewBaseWidget->isVisible())
-            {
-                q->raise();
-                _searchViewBaseWidget->show();
-                _searchViewBaseWidget->raise();
+                if (m_ignoreTextChanges) return;
+                if (!_suggestionVector.isEmpty())
+                {
+                    _searchModel->setSearchSuggestion(_suggestionVector); // 设置模型建议项
+                    int rowCount = static_cast<int>(_suggestionVector.count());
+                    rowCount = rowCount > 6 ? 6 : rowCount;
+                    if (!_searchViewBaseWidget->isVisible())
+                    {
+                        q->raise();
+                        _searchViewBaseWidget->show();
+                        _searchViewBaseWidget->raise();
 
-                // @note 修复位置计算 - 正确计算全局位置
-                const QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
-                _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
+                        // 修复位置计算 - 正确计算全局位置
+                        const QPoint globalPos = q->mapToGlobal(QPoint(-5, q->height()));
+                        _searchViewBaseWidget->move(globalPos - _searchViewBaseWidget->parentWidget()->mapToGlobal(QPoint(0, 0)));
 
-                _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
-                _searchView->move(_searchView->x(), -(40 * rowCount + 16));
+                        _startSizeAnimation(QSize(q->width() + 10, 0), QSize(q->width() + 10, 40 * rowCount + 16));
+                        _searchView->move(_searchView->x(), -(40 * rowCount + 16));
+                    }
+                    else
+                    {
+                        _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
+                    }
+                    _startExpandAnimation(); // 启动展开动画
+                }
+                else
+                {
+                    _startCloseAnimation(); // 启动关闭动画
+                }
             }
             else
             {
-                _startSizeAnimation(_searchViewBaseWidget->size(), QSize(q->width() + 10, 40 * rowCount + 16));
+                qWarning() << "Server returned error:" << obj.value("message").toString();
             }
-            _startExpandAnimation();                          ///< 启动展开动画
-        }
-        else
-        {
-            _startCloseAnimation();                           ///< 启动关闭动画
-        }
+        });
     }
     else
     {
