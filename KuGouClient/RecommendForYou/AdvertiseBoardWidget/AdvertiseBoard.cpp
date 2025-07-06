@@ -159,7 +159,7 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev)
         {
             bool isActive = (i == m_currentIndex);
             int radius = isActive ? DOT_RADIUS + ACTIVE_DOT_EXTRA : DOT_RADIUS; ///< 设置圆点半径
-            painter.setBrush(isActive ? QColor(255, 100, 100) : QColor(255, 255, 255, 150)); ///< 设置圆点颜色
+            painter.setBrush(isActive ? QColor(80,143,206) : QColor(255, 255, 255, 150)); ///< 设置圆点颜色
             painter.drawEllipse(centers[i], radius, radius); ///< 绘制圆点
         }
     }
