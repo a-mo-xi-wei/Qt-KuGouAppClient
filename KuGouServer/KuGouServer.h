@@ -76,7 +76,6 @@ private:
     // 测试
     /**
      * @brief 处理测试 API。
-     *
      * @param session HTTP 会话对象。
      * @return bool 操作结果。
      */
@@ -84,7 +83,6 @@ private:
     // 版本
     /**
      * @brief 处理版本 API。
-     *
      * @param session HTTP 会话对象。
      * @return bool 操作结果。
      */
@@ -92,15 +90,20 @@ private:
     // 获取本地歌曲列表
     /**
      * @brief 处理获取本地歌曲列表 API。
-     *
      * @param session HTTP 会话对象。
      * @return bool 操作结果。
      */
     bool onApiLocalSongList(const QPointer<JQHttpServer::Session> &session);
+    //搜索建议
+    /**
+     * @brief 处理获取搜索建议 API。
+     * @param session  HTTP 会话对象。
+     * @return bool 操作结果。
+     */
+    bool onApiSearchSuggestion(const QPointer<JQHttpServer::Session> &session);
     // 搜索歌曲
     /**
      * @brief 处理搜索歌曲 API。
-     *
      * @param session HTTP 会话对象。
      * @return bool 操作结果。
      */
@@ -108,7 +111,6 @@ private:
     // 添加歌曲
     /**
      * @brief 处理添加歌曲 API。
-     *
      * @param session HTTP 会话对象。
      * @return bool 操作结果。
      */
@@ -116,7 +118,6 @@ private:
     // 删除歌曲
     /**
      * @brief 处理删除歌曲 API。
-     *
      * @param session HTTP 会话对象。
      * @return bool 操作结果。
      */
