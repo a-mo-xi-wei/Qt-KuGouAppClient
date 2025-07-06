@@ -1047,89 +1047,52 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
         delete item; // 释放堆内存
     }
     m_searchMusicItemVector.clear(); // 清空 QVector 中的所有元素
+    this->m_refreshMask->keepLoading();
 
-    // 启动异步任务获取搜索结果
-    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this,suggestText] {
-        QList<SongInfor> songs;
-
-        // 创建网络管理器（在异步线程内）
-        QNetworkAccessManager manager;
-        QEventLoop loop;
-
-        // 搜索请求
-        auto requestUrl = QString("http://songsearch.kugou.com/song_search_v2?keyword=%1&page=1&pagesize=20")
-            .arg(suggestText);
-
-        QNetworkRequest request(requestUrl);
-        auto reply = manager.get(request);
-        connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-        loop.exec();
-
-        if (reply->error() != QNetworkReply::NoError) {
-            qWarning() << "搜索请求失败：" << reply->errorString();
-            return songs;
-        }
-
-        // 解析搜索结果
-        auto data = reply->readAll();
-        reply->deleteLater();
-
-        QJsonDocument doc = QJsonDocument::fromJson(data);
-        auto rootObj = doc.object().value("data").toObject();
-        auto songsArray = rootObj.value("lists").toArray();
-
-        // 获取所有歌曲的哈希值
-        QStringList hashes;
-        for (int i = 0; i < songsArray.size(); ++i) {
-            auto songObj = songsArray[i].toObject();
-            SongInfor song;
-            song.hash = songObj.value("FileHash").toString();
-            song.songName = songObj.value("SongName").toString();
-            song.singer = songObj.value("SingerName").toString();
-            song.album = songObj.value("AlbumName").toString();
-
-            int duration = songObj.value("Duration").toInt();
-            song.duration = QTime(0, duration / 60, duration % 60).toString("mm:ss");
-
-            // 获取封面URL（不在这里下载）
-            song.coverUrl = songObj.value("Image").toString().replace("{size}", "400");
-            song.cover = song.coverUrl.isEmpty() ? QPixmap(":/Res/tablisticon/pix4.png") : song.cover;
-            hashes.append(song.hash);
-            songs.append(song);
-        }
-
-        // 批量获取播放URL
-        if (!hashes.isEmpty()) {
-            auto batchUrl = QString("http://m.kugou.com/app/i/batchGetSongInfo.php?cmd=playInfo&hash=%1")
-                .arg(hashes.join(","));
-
-            request.setUrl(batchUrl);
-            auto batchReply = manager.get(request);
-            connect(batchReply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-            loop.exec();
-
-            if (batchReply->error() == QNetworkReply::NoError) {
-                auto batchData = batchReply->readAll();
-                auto batchDoc = QJsonDocument::fromJson(batchData);
-                auto batchArray = batchDoc.array();
-
-                for (int i = 0; i < batchArray.size() && i < songs.size(); ++i) {
-                    songs[i].netUrl = batchArray[i].toObject().value("url").toString();
-                }
-            }
-            batchReply->deleteLater();
-        }
-
-        return songs;
+    // 启动异步任务从服务端获取搜索结果
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this, suggestText] {
+        return m_libHttp.UrlRequestGet(
+            QString("http://127.0.0.1:8080/api/searchSong"),
+            "keyword=" + QUrl::toPercentEncoding(suggestText),
+            5000 // 5秒超时
+        );
     });
 
     // 结果回调（在主线程执行）
-    Async::onResultReady(future, this, [this](const QList<SongInfor> &songs) {
-        if (songs.isEmpty()) {
-            qWarning() << "未找到相关歌曲";
+    Async::onResultReady(future, this, [this](const QString &responseData) {
+        QJsonParseError err;
+        QJsonDocument doc = QJsonDocument::fromJson(responseData.toUtf8(), &err);
+
+        if (err.error != QJsonParseError::NoError || !doc.isObject()) {
+            qWarning() << "搜索响应解析失败:" << err.errorString();
             return;
         }
 
+        QJsonObject obj = doc.object();
+        if (obj["status"].toString() != "success") {
+            qWarning() << "搜索失败:" << obj["message"].toString();
+            return;
+        }
+
+        QList<SongInfor> songs;
+        QJsonArray songsArray = obj["data"].toArray();
+
+        for (const auto &item : songsArray) {
+            QJsonObject songObj = item.toObject();
+            SongInfor song;
+
+            song.hash = songObj["hash"].toString();
+            song.songName = songObj["songName"].toString();
+            song.singer = songObj["singer"].toString();
+            song.album = songObj["album"].toString();
+            song.duration = songObj["duration"].toString();
+            song.coverUrl = songObj["coverUrl"].toString();
+            song.netUrl = songObj["netUrl"].toString();
+            song.cover = song.coverUrl.isEmpty() ? QPixmap(":/Res/tablisticon/pix4.png") : song.cover;
+            songs.append(song);
+        }
+
+        // 更新UI（与原始代码相同）
         auto scrollWidget = m_searchResultWidget->findChild<QWidget*>("searchResultWidgetScrollWidget");
         if (!scrollWidget) {
             qWarning() << "未找到滚动窗口部件";
@@ -1142,13 +1105,21 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
             return;
         }
 
-        // 使用定时器实现逐项添加
+        // 清空现有结果
+        for (MusicItemWidget *item : m_searchMusicItemVector) {
+            item->setParent(nullptr);
+            delete item;
+        }
+        m_searchMusicItemVector.clear();
+
+        // 使用定时器逐项添加
         int currentIndex = 0;
         QTimer* addTimer = new QTimer(this);
-        this->m_refreshMask->keepLoading();
+
         connect(addTimer, &QTimer::timeout, this, [=]() mutable {
             if (currentIndex >= songs.size()) {
                 addTimer->deleteLater();
+                this->m_refreshMask->hideLoading();
                 return;
             }
 
@@ -1168,8 +1139,7 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
 
             currentIndex++;
         });
-        connect(addTimer, &QTimer::destroyed, [this]{ this->m_refreshMask->hideLoading(); });
-        // 设置添加间隔（100ms添加一个）
+
         addTimer->start(100);
     });
 }

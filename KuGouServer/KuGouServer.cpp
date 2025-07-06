@@ -31,6 +31,8 @@
 
 #include <QRegularExpression>
 #include <QSqlError>
+#include <QNetworkReply>
+
 
 
 //-----------------------------------------------------------------------------
@@ -165,6 +167,7 @@ void KuGouServer::initRouter() {
     //apiRouter["/api/version"] = std::bind(&Server::onApiVersion, this, std::placeholders::_1);
     apiRouter["/api/version"] = [this](auto && PH1) { return onApiVersion(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/localSongList"] = [this](auto && PH1) { return onApiLocalSongList(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/searchSuggestion"] = [this](auto && PH1) { return onApiSearchSuggestion(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/searchSong"] = [this](auto && PH1) { return onApiSearchSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/addSong"] = [this](auto && PH1) { return onApiAddSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/delSong"] = [this](auto && PH1) { return onApiDelSong(std::forward<decltype(PH1)>(PH1)); };
@@ -188,10 +191,9 @@ void KuGouServer::initRouter() {
  */
 bool KuGouServer::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Session> &session) {
     //qDebug()<<"看到我，你就有了";
-    QString path = session->requestUrl();
+    QString path = session->requestUrlPath();
     QString method = session->requestMethod(); // GET/POST/PUT/DELETE
     // QMap<QString,QString> header = session->requestUrlQuery();
-
     bool isProcessed = false;
 
     if(obj == &m_httpserver)
@@ -206,7 +208,7 @@ bool KuGouServer::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServe
             static const QRegularExpression fallbackRegex(".*");
             if (fallbackRegex.match(path).hasMatch())
             {
-                qWarning() << "非法访问路径: "<<path;
+                //qWarning() << "非法访问路径: "<<path;
                 QLOG_ERROR() << "非法访问路径: "<<path;
                 session->replyBytes(SResult::failure(SResultCode::PathIllegal), "application/json");
                 isProcessed = true;
@@ -367,6 +369,120 @@ bool KuGouServer::onApiLocalSongList(const QPointer<JQHttpServer::Session> &sess
     return false;
 }
 
+bool KuGouServer::onApiSearchSuggestion(const QPointer<JQHttpServer::Session> &session) {   ///< TODO 性能优化方向：分批次发送，传统HTTP只能返回单次响应需多次响应，需要改用：WebSocket（全双工通信）
+    const QString key = session->requestUrlQuery().value("key");
+    if (key.isEmpty()) {
+        session->replyBytes(SResult::failure(SResultCode::ParamLoss), "application/json");
+        return false;
+    }
+
+    // 使用共享指针保持状态
+    auto suggestions = QSharedPointer<QJsonArray>::create();
+    auto weakSession = QPointer<JQHttpServer::Session>(session);
+
+    // 创建工作线程
+    QThread *workerThread = new QThread();
+    QObject *worker = new QObject();
+    worker->moveToThread(workerThread);
+
+    connect(workerThread, &QThread::started, [=]() {
+        // 在工作线程中创建 QNetworkAccessManager，确保与请求在同一线程
+        auto manager = QSharedPointer<QNetworkAccessManager>::create();
+
+        // QQ 音乐请求
+        QNetworkRequest qqRequest(QUrl("https://c6.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?key=" + key + "&format=json"));
+        qqRequest.setRawHeader("Accept", "application/json");
+        qqRequest.setRawHeader("Accept-Language", "zh-CN");
+        qqRequest.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36");
+        qqRequest.setRawHeader("Content-Type", "text/html");
+        qqRequest.setRawHeader("Accept-Encoding", "deflate");
+
+        QNetworkReply *qqReply = manager->get(qqRequest);
+        QEventLoop qqLoop;
+        QTimer qqTimer;
+        qqTimer.setSingleShot(true);
+        connect(&qqTimer, &QTimer::timeout, &qqLoop, &QEventLoop::quit);
+        connect(qqReply, &QNetworkReply::finished, &qqLoop, &QEventLoop::quit);
+        qqTimer.start(5000); // 5秒超时
+        qqLoop.exec();
+
+        if (qqReply->error() == QNetworkReply::NoError) {
+            QJsonDocument doc = QJsonDocument::fromJson(qqReply->readAll());
+            if (!doc.isNull()) {
+                QJsonArray items = doc["data"].toObject()["song"].toObject()["itemlist"].toArray();
+                for (const auto& item : items) {
+                    auto obj = item.toObject();
+                    suggestions->append(obj["singer"].toString() + " - " + obj["name"].toString());
+                }
+            } else {
+                qWarning() << "QQ音乐JSON解析失败";
+            }
+        } else {
+            qWarning() << "QQ音乐请求失败:" << qqReply->errorString();
+        }
+        qqReply->deleteLater();
+
+        // 网易云音乐请求
+        QNetworkRequest neteaseRequest(QUrl("http://music.163.com/api/search/get/web"));
+        neteaseRequest.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+        neteaseRequest.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+        neteaseRequest.setRawHeader("Referer", "https://music.163.com/");
+        neteaseRequest.setRawHeader("Origin", "https://music.163.com");
+
+        QByteArray postData = "s=" + QUrl::toPercentEncoding(key) + "&type=1";
+        QNetworkReply *neteaseReply = manager->post(neteaseRequest, postData);
+        QEventLoop neteaseLoop;
+        QTimer neteaseTimer;
+        neteaseTimer.setSingleShot(true);
+        connect(&neteaseTimer, &QTimer::timeout, &neteaseLoop, &QEventLoop::quit);
+        connect(neteaseReply, &QNetworkReply::finished, &neteaseLoop, &QEventLoop::quit);
+        neteaseTimer.start(5000); // 5秒超时
+        neteaseLoop.exec();
+
+        if (neteaseReply->error() == QNetworkReply::NoError) {
+            QJsonDocument doc = QJsonDocument::fromJson(neteaseReply->readAll());
+            if (!doc.isNull()) {
+                QJsonArray songs = doc["result"].toObject()["songs"].toArray();
+                for (const auto& song : songs) {
+                    auto obj = song.toObject();
+                    QString artist = !obj["artists"].toArray().isEmpty()
+                        ? obj["artists"].toArray()[0].toObject()["name"].toString()
+                        : "";
+                    suggestions->append(artist + " - " + obj["name"].toString());
+                }
+            } else {
+                qWarning() << "网易云音乐JSON解析失败";
+            }
+        } else {
+            qWarning() << "网易云音乐请求失败:" << neteaseReply->errorString();
+        }
+        neteaseReply->deleteLater();
+
+        // 发送响应
+        if (!weakSession.isNull()) {
+            QJsonObject response;
+            response["status"] = "success";
+            response["data"] = *suggestions;
+            weakSession->replyBytes(QJsonDocument(response).toJson(), "application/json");
+        }
+
+        // 清理资源并退出线程
+        manager->deleteLater();
+        worker->deleteLater();
+        workerThread->quit();
+        // 注意：不在工作线程中调用 wait()
+    });
+
+    // 在主线程中清理线程
+    connect(workerThread, &QThread::finished, [=] {
+        workerThread->deleteLater();
+    });
+
+    // 启动线程
+    workerThread->start();
+    return true;  // 已启动异步处理
+}
+
 /**
  * @brief 处理搜索歌曲 API。
  *
@@ -374,7 +490,149 @@ bool KuGouServer::onApiLocalSongList(const QPointer<JQHttpServer::Session> &sess
  * @return bool 操作结果。
  */
 bool KuGouServer::onApiSearchSong(const QPointer<JQHttpServer::Session> &session) {
-    return false;
+    // 获取查询参数
+    const QString keyword = session->requestUrlQuery().value("keyword");
+    if (keyword.isEmpty()) {
+        session->replyBytes(SResult::failure(SResultCode::ParamLoss), "application/json");
+        return false;
+    }
+
+    // 创建共享指针保存结果
+    auto weakSession = QPointer<JQHttpServer::Session>(session);
+
+    // 创建工作线程
+    QThread *workerThread = new QThread();
+    QObject *worker = new QObject();
+    worker->moveToThread(workerThread);
+
+    connect(workerThread, &QThread::started, [=] {
+        // 在工作线程中创建网络管理器
+        auto manager = QSharedPointer<QNetworkAccessManager>::create();
+
+        QTimer timer1;
+        timer1.setSingleShot(true);
+
+        // 第一步：搜索歌曲
+        QNetworkRequest searchRequest(QUrl(
+            QString("http://songsearch.kugou.com/song_search_v2?keyword=%1&page=1&pagesize=20")
+                .arg(QUrl::toPercentEncoding(keyword))
+        ));
+
+        QNetworkReply *searchReply = manager->get(searchRequest);
+        QEventLoop loop1;
+        connect(searchReply, &QNetworkReply::finished, &loop1, &QEventLoop::quit);
+        connect(&timer1, &QTimer::timeout, &loop1, &QEventLoop::quit);
+        timer1.start(5000); // 5秒超时
+        loop1.exec();
+
+        QStringList hashes;
+        QList<QJsonObject> songList;
+
+        if (searchReply->error() == QNetworkReply::NoError) {
+            QJsonDocument doc = QJsonDocument::fromJson(searchReply->readAll());
+            if (!doc.isNull()) {
+                QJsonObject root = doc.object();
+                QJsonObject data = root.value("data").toObject();
+                QJsonArray lists = data.value("lists").toArray();
+
+                for (const auto &item : lists) {
+                    QJsonObject songObj = item.toObject();
+                    QJsonObject songInfo;
+
+                    songInfo["hash"] = songObj.value("FileHash").toString();
+                    songInfo["songName"] = songObj.value("SongName").toString();
+                    songInfo["singer"] = songObj.value("SingerName").toString();
+                    songInfo["album"] = songObj.value("AlbumName").toString();
+
+                    int duration = songObj.value("Duration").toInt();
+                    songInfo["duration"] = QTime(0, duration / 60, duration % 60).toString("mm:ss");
+
+                    QString coverUrl = songObj.value("Image").toString().replace("{size}", "400");
+                    songInfo["coverUrl"] = coverUrl;
+
+                    hashes.append(songInfo["hash"].toString());
+                    songList.append(songInfo);
+                }
+            }
+        }
+        else {
+            qWarning() << "歌曲搜索失败:" << searchReply->errorString();
+        }
+        searchReply->deleteLater();
+
+        // 第二步：为每个歌曲单独获取播放URL
+        if (!hashes.isEmpty()) {
+            // 创建计数器跟踪完成的请求
+            QSharedPointer<int> completedCount = QSharedPointer<int>::create(0);
+            int totalCount = hashes.size();
+
+            // 为每个哈希创建请求
+            for (int i = 0; i < totalCount; i++) {
+                QNetworkRequest urlRequest(QUrl(
+                    QString("http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash=%1")
+                        .arg(hashes[i])
+                ));
+                QNetworkReply *urlReply = manager->get(urlRequest);
+
+                QEventLoop loop2;
+                QTimer timer2;
+                timer2.setSingleShot(true);
+                connect(&timer2, &QTimer::timeout, &loop2, &QEventLoop::quit);
+                // 为每个回复连接完成信号
+                connect(urlReply, &QNetworkReply::finished,  &loop2,&QEventLoop::quit);
+                timer2.start(2000); // 5秒超时
+                loop2.exec();
+                if (urlReply->error() == QNetworkReply::NoError) {
+                    QJsonDocument doc = QJsonDocument::fromJson(urlReply->readAll());
+                    if (!doc.isNull()) {
+                        QJsonObject urlObj = doc.object();
+                        // 更新对应歌曲的URL
+                        songList[i]["netUrl"] = urlObj.value("url").toString();
+                        //qDebug() << "获取到第 "<< i << " 首歌曲的播放路径 : " <<urlObj.value("url").toString();
+                    }
+                }
+                else {
+                    qWarning() << "播放URL获取失败:" << urlReply->errorString();
+                }
+                urlReply->deleteLater();
+                // 增加完成计数
+                (*completedCount)++;
+
+                // 如果所有请求都完成了，退出事件循环
+                if (*completedCount >= totalCount) {
+                    break;
+                }
+            }
+        }
+
+        // 发送响应
+        if (!weakSession.isNull()) {
+            QJsonObject response;
+            response["status"] = "success";
+
+            QJsonArray songsArray;
+            for (const auto &song : songList) {
+                songsArray.append(song);
+                //qDebug()<<"netUrl : "<<song["netUrl"].toString();
+            }
+            response["data"] = songsArray;
+
+            weakSession->replyBytes(QJsonDocument(response).toJson(), "application/json");
+        }
+
+        // 清理资源
+        manager->deleteLater();
+        worker->deleteLater();
+        workerThread->quit();
+    });
+
+    // 清理线程
+    connect(workerThread, &QThread::finished, [=] {
+        workerThread->deleteLater();
+    });
+
+    workerThread->start();
+    return true;
 }
 
 /**
