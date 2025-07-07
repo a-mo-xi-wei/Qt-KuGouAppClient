@@ -170,7 +170,7 @@ QString ElaSuggestBox::addSuggestion(ElaIconType::IconName icon, const QString &
 void ElaSuggestBox::removeSuggestion(const QString &suggestKey)
 {
     Q_D(ElaSuggestBox);
-    for (auto suggest : d->_suggestionVector)
+    for (const auto& suggest : d->_suggestionVector)
     {
         if (suggest->getSuggestKey() == suggestKey)
         {
@@ -202,12 +202,25 @@ void ElaSuggestBox::removeSuggestion(int index)
 void ElaSuggestBox::removeAllSuggestion()
 {
     Q_D(ElaSuggestBox);
-    for (auto suggest : d->_suggestionVector)
-    {
-        d->_suggestionVector.removeOne(suggest);              ///< 移除建议项
-        suggest->deleteLater();                               ///< 延迟删除
-    }
+
+    // 第一步：清空模型（视图不再访问旧数据）
+    d->_searchModel->setSearchSuggestion({});
+
+    // 第二步：复制当前 vector 的指针，延迟删除
+    const auto suggestionsToDelete = d->_suggestionVector;
+    d->_suggestionVector.clear();
+
+    // 第三步：使用事件循环延迟 deleteLater（避免 Qt 视图仍持有指针时访问）
+    QTimer::singleShot(0, this, [suggestionsToDelete]() {
+        for (const auto &suggest : suggestionsToDelete)
+        {
+            if (suggest) {
+                suggest->deleteLater();
+            }
+        }
+    });
 }
+
 
 /**
  * @brief 设置搜索编辑框
@@ -225,7 +238,7 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit)
     }
 
     // @note 移除旧编辑框
-    QVBoxLayout *mainLayout = qobject_cast<QVBoxLayout*>(this->layout());
+    auto *mainLayout = qobject_cast<QVBoxLayout*>(this->layout());
     if (mainLayout)
     {
         mainLayout->removeWidget(d->_searchEdit);             ///< 移除旧编辑框
@@ -297,13 +310,9 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit)
     });
     connect(d->_searchEdit, &ElaLineEdit::widthChanged, d, &ElaSuggestBoxPrivate::onSearchEditWidthChanged);
     connect(d->_searchEdit,&ElaLineEdit::returnPressed, d, [d, this] {    // 设置忽略标志
-        d->m_ignoreTextChanges = true;
         d->_searchEdit->clearFocus();
         d->_startCloseAnimation();
         emit searchTextReturnPressed(d->_searchEdit->text());
-        QTimer::singleShot(1000, d, [d] {
-            d->m_ignoreTextChanges = false;
-        });
     });
     // @note 添加到布局
     if (mainLayout)

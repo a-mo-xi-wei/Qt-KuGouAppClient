@@ -37,6 +37,8 @@ ElaSuggestion::ElaSuggestion(QObject *parent)
     _pSuggestData = QVariantMap();                            ///< 初始化数据
 }
 
+ElaSuggestion::~ElaSuggestion() = default;
+
 /**
  * @brief 构造函数
  * @param parent 父对象指针，默认为 nullptr
@@ -75,14 +77,13 @@ void ElaSuggestBoxPrivate::onThemeModeChanged(ElaThemeType::ThemeMode themeMode)
 void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
 {
     Q_Q(ElaSuggestBox);
-    if (searchText.isEmpty() || m_ignoreTextChanges)
-    {
-        _startCloseAnimation();                               ///< 关闭建议框
-        return;
-    }
+    _startCloseAnimation();
     if (sender()->property("searchWay").toString() == "search_net_song")
     {
-        q->removeAllSuggestion(); // 清除现有建议项
+        _searchView->setModel(nullptr); // 临时解绑视图引用
+        q->removeAllSuggestion();
+        _searchView->setModel(_searchModel); // 重绑定
+
 
         // Send asynchronous POST request to the local server
         auto future = Async::runAsync(QThreadPool::globalInstance(), [this, searchText] {
@@ -116,7 +117,6 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
                     ///< @note qDebug()<<"添加："<< suggestion.toString();
                 }
 
-                if (m_ignoreTextChanges) return;
                 if (!_suggestionVector.isEmpty())
                 {
                     _searchModel->setSearchSuggestion(_suggestionVector); // 设置模型建议项
@@ -162,7 +162,6 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
                 suggestionVector.append(suggest);             ///< 筛选匹配建议项
             }
         }
-        if (m_ignoreTextChanges) return;
         if (!suggestionVector.isEmpty())
         {
             _searchModel->setSearchSuggestion(suggestionVector); ///< 设置模型建议项
@@ -238,11 +237,9 @@ void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index)
     _searchView->setEnabled(false);
 
     ElaSuggestion *suggest = _searchModel->getSearchSuggestion(index.row());
-    if (!suggest) {
-        qDebug()<<"无效的索引 "<<suggest;
-        return;
-    }
+    _searchEdit->blockSignals(true);
     _searchEdit->setText(suggest->getSuggestText());          ///< 设置编辑框文本
+    _searchEdit->blockSignals(false);
     _searchEdit->clearFocus();
     Q_EMIT q->suggestionClicked(suggest->getSuggestText(), suggest->getSuggestData()); ///< 发射点击信号
     _startCloseAnimation();                                   ///< 关闭建议框
@@ -274,7 +271,7 @@ void ElaSuggestBoxPrivate::_startExpandAnimation()
     }
     _isCloseAnimationFinished = true;
     _isExpandAnimationFinished = false;
-    QPropertyAnimation *expandAnimation = new QPropertyAnimation(_searchView, "pos");
+    auto *expandAnimation = new QPropertyAnimation(_searchView, "pos");
     connect(expandAnimation, &QPropertyAnimation::finished, this, [=] {
         _isExpandAnimationFinished = true;
         _searchView->clearSelection();
@@ -300,13 +297,13 @@ void ElaSuggestBoxPrivate::_startCloseAnimation()
 
     _isExpandAnimationFinished = true;
     _isCloseAnimationFinished = false;
-    QPropertyAnimation *baseWidgetsAnimation = new QPropertyAnimation(_searchViewBaseWidget, "size");
+    auto *baseWidgetsAnimation = new QPropertyAnimation(_searchViewBaseWidget, "size");
     baseWidgetsAnimation->setDuration(300);
     baseWidgetsAnimation->setEasingCurve(QEasingCurve::InOutSine);
     baseWidgetsAnimation->setStartValue(_searchViewBaseWidget->size());
     baseWidgetsAnimation->setEndValue(QSize(_searchViewBaseWidget->width(), 0));
     baseWidgetsAnimation->start(QAbstractAnimation::DeleteWhenStopped);
-    QPropertyAnimation *closeAnimation = new QPropertyAnimation(_searchView, "pos");
+    auto *closeAnimation = new QPropertyAnimation(_searchView, "pos");
     connect(closeAnimation, &QPropertyAnimation::finished, this, [=] {
         _isCloseAnimationFinished = true;
         _searchModel->clearSearchNode();

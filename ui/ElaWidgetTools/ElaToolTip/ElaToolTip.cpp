@@ -75,9 +75,7 @@ ElaToolTip::ElaToolTip(QWidget* parent)
 /**
  * @brief 析构函数，释放工具提示资源
  */
-ElaToolTip::~ElaToolTip()
-{
-}
+ElaToolTip::~ElaToolTip() = default;
 
 /**
  * @brief 设置工具提示始终显示
