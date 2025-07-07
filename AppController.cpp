@@ -26,7 +26,6 @@ void AppController::start()
 {
     login->show();
     connect(login,&QDialog::accepted,this,[this] {
-        login->hide();
         //qDebug()<<"登录界面隐藏,显示客户端";
         client->show();  // 再启动客户端
     });

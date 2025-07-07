@@ -22,6 +22,7 @@ public:
 
     ~LoginRegisterForm() override = default;
 
+
 private:
     void initUi();
 
@@ -40,6 +41,8 @@ protected:
 
     bool eventFilter(QObject *watched, QEvent *event) override;
 
+    void showEvent(QShowEvent *event) override;
+
 public slots:
     void setRightShow() const;
 
@@ -49,6 +52,7 @@ public slots:
 
     void onAnimation4Finished();
 
+    void accept() override;
 private:
     Scroll_bar *scroll_bar;
     Transparent_transition_interface *transparent_transition_interface;

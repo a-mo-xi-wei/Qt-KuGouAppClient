@@ -72,6 +72,7 @@ Login_form::Login_form(QWidget *parent)
     github_tooTip->setToolTip(QStringLiteral("Github登录"));
 
     this->animations();
+
     connect(login_button, &Login_button::execute_animation_signal, this, &Login_form::execute_animation);
 
     // 连接图标点击信号
@@ -85,7 +86,6 @@ Login_form::Login_form(QWidget *parent)
         // 切换图标（需要准备两个图标）
         password->setIcon(m_isPasswordVisible ? ":/Res/login/password-unlock.png" : ":/Res/login/password-lock.png");
     });
-
 }
 
 void Login_form::animations() {
@@ -105,6 +105,9 @@ void Login_form::execute_animation(Login_button::AnimationState State) {
     } else if (State == Login_button::Restore) {
         animation->setDirection(QAbstractAnimation::Backward);
         animation->start();
+        ///< 松开鼠标，发送登录信号
+        //m_libHttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"), jsonString); ///< 发送登录请求
+
     }
 }
 
