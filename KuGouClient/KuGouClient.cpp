@@ -287,22 +287,22 @@ void KuGouClient::initStackedWidget() {
          * // initComponent(m_recentlyPlayed,14);
          * // initComponent(m_allMusic,15);
          */
-        // initComponent(m_live,0);                               ///< 初始化直播界面
-        // initComponent(m_listenBook,1);                         ///< 初始化听书界面
-        // initComponent(m_search,2);                             ///< 初始化搜索界面
-        // initComponent(m_recommendForYou,3);                    ///< 初始化为你推荐界面
-        // initComponent(m_musicRepository,4);                    ///< 初始化乐库界面
-        // initComponent(m_channel,5);                            ///< 初始化频道界面
-        // initComponent(m_video,6);                              ///< 初始化视频界面
-        // initComponent(m_aiChat,7);                             ///< 初始化ai对话界面
-        // initComponent(m_songList,8);                           ///< 初始化歌单界面
-        // initComponent(m_dailyRecommend,9);                     ///< 初始化每日推荐界面
-        // initComponent(m_collection,10);                        ///< 初始化收藏界面
+        initComponent(m_live,0);                               ///< 初始化直播界面
+        initComponent(m_listenBook,1);                         ///< 初始化听书界面
+        initComponent(m_search,2);                             ///< 初始化搜索界面
+        initComponent(m_recommendForYou,3);                    ///< 初始化为你推荐界面
+        initComponent(m_musicRepository,4);                    ///< 初始化乐库界面
+        initComponent(m_channel,5);                            ///< 初始化频道界面
+        initComponent(m_video,6);                              ///< 初始化视频界面
+        initComponent(m_aiChat,7);                             ///< 初始化ai对话界面
+        initComponent(m_songList,8);                           ///< 初始化歌单界面
+        initComponent(m_dailyRecommend,9);                     ///< 初始化每日推荐界面
+        initComponent(m_collection,10);                        ///< 初始化收藏界面
         initComponent(m_localDownload,11);                     ///< 初始化本地与下载界面
-        // initComponent(m_musicCloudDisk,12);                    ///< 初始化音乐云盘界面
-        // initComponent(m_purchasedMusic,13);                    ///< 初始化已购音乐界面
-        // initComponent(m_recentlyPlayed,14);                    ///< 初始化最近播放界面
-        // initComponent(m_allMusic,15);                          ///< 初始化全部音乐界面
+        initComponent(m_musicCloudDisk,12);                    ///< 初始化音乐云盘界面
+        initComponent(m_purchasedMusic,13);                    ///< 初始化已购音乐界面
+        initComponent(m_recentlyPlayed,14);                    ///< 初始化最近播放界面
+        initComponent(m_allMusic,15);                          ///< 初始化全部音乐界面
     }
 
     // @note 响应相关跳转
