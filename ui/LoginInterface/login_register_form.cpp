@@ -1,25 +1,26 @@
 ﻿#include "login_register_form.h"
 #include "windoweffect.h"
+#include "ElaToolTip.h"
 
 #include <QGraphicsDropShadowEffect>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
+#include <QParallelAnimationGroup>
 #include <QPushButton>
-
-#include "ElaToolTip.h"
+#include <QTimeLine>
+#include <QTimer>
 
 LoginRegisterForm::LoginRegisterForm(QWidget *parent)
     : QDialog{parent} {
     this->setFixedSize(955, 620);
     //设置窗体透明
-    setWindowFlags(Qt::FramelessWindowHint);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
     WindowEffect::addShadowEffect((HWND)winId());
 
     initUi();
     setRightShow();
     build_animation();
-
 
 }
 
@@ -191,6 +192,66 @@ bool LoginRegisterForm::eventFilter(QObject *watched, QEvent *event) {  ///< 仅
         }
     }
     return QDialog::eventFilter(watched, event);
+}
+
+void LoginRegisterForm::showEvent(QShowEvent *event) {
+    QDialog::showEvent(event); // 确保正常显示
+
+    this->setWindowOpacity(0.0); // 从透明开始
+
+    // 添加模糊效果
+    auto blur = new QGraphicsBlurEffect(this);
+    blur->setBlurRadius(10); // 初始模糊
+    this->setGraphicsEffect(blur);
+
+    // 模糊动画（减弱模糊）
+    auto blurAnim = new QPropertyAnimation(blur, "blurRadius", this);
+    blurAnim->setDuration(300);
+    blurAnim->setStartValue(10);
+    blurAnim->setEndValue(0);
+
+    // 透明度动画（从透明到不透明）
+    auto opacityAnim = new QPropertyAnimation(this, "windowOpacity", this);
+    opacityAnim->setDuration(300);
+    opacityAnim->setStartValue(0.0);
+    opacityAnim->setEndValue(1.0);
+
+    // 并行动画组
+    auto group = new QParallelAnimationGroup(this);
+    group->addAnimation(blurAnim);
+    group->addAnimation(opacityAnim);
+
+    connect(group, &QParallelAnimationGroup::finished, this, [=] {
+        setGraphicsEffect(nullptr); // 移除模糊
+    });
+
+    group->start(QAbstractAnimation::DeleteWhenStopped);
+}
+
+
+void LoginRegisterForm::accept() {
+    auto blur = new QGraphicsBlurEffect(this);
+    this->setGraphicsEffect(blur);
+
+    auto blurAnim = new QPropertyAnimation(blur, "blurRadius");
+    blurAnim->setDuration(300);
+    blurAnim->setStartValue(0);
+    blurAnim->setEndValue(10);
+
+    auto opacityAnim = new QPropertyAnimation(this, "windowOpacity");
+    opacityAnim->setDuration(300);
+    opacityAnim->setStartValue(1.0);
+    opacityAnim->setEndValue(0.0);
+
+    auto group = new QParallelAnimationGroup(this);
+    group->addAnimation(blurAnim);
+    group->addAnimation(opacityAnim);
+
+    connect(group, &QParallelAnimationGroup::finished, this, [=] {
+        setGraphicsEffect(nullptr);
+        QDialog::accept();
+    });
+    group->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
 void LoginRegisterForm::initUi() {

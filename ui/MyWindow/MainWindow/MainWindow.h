@@ -118,6 +118,12 @@ protected:
     void mouseMoveEvent(QMouseEvent *event) override;
 
     /**
+     * @brief 重写显示事件，执行开场动画
+     * @param event 显示事件
+     */
+    void showEvent(QShowEvent *event) override;
+
+    /**
      * @brief 重写关闭事件，执行渐变关闭动画
      * @param event 关闭事件
      */
@@ -174,7 +180,6 @@ public:
     QPoint point_offset;                         ///< 鼠标移动偏移
     std::unique_ptr<AboutDialog> m_aboutDialog{};///< 关于对话框
     bool m_showDialog = false;                   ///< 关于对话框显示标志
-    bool isClosing = false;                      ///< 窗口关闭标志
 };
 
 #endif // MAINWINDOW_H

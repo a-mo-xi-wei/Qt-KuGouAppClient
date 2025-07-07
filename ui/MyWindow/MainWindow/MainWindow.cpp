@@ -17,6 +17,7 @@
 #include <QPainterPath>
 #include <QTimeLine>
 #include <QGraphicsOpacityEffect>
+#include <QTimer>
 
 /**
  * @brief 阴影宽度常量
@@ -199,19 +200,57 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
     }
 }
 
+void MainWindow::showEvent(QShowEvent *event) {
+    static bool firstShow = false;
+    if (!firstShow) {
+        event->ignore(); ///< 忽略首次开启
+
+        auto effect = new QGraphicsOpacityEffect(this);
+        effect->setOpacity(0.0);
+        setGraphicsEffect(effect);
+
+        auto timeLine = new QTimeLine(300, this);
+        connect(timeLine, &QTimeLine::valueChanged, this, [=](const qreal &value) {
+            QLinearGradient gradient(0, 0, 0, height());
+            gradient.setColorAt(0, Qt::white);
+            gradient.setColorAt(value, Qt::white);
+            gradient.setColorAt(1, Qt::transparent);
+            effect->setOpacityMask(gradient); ///< 设置渐变遮罩
+            effect->setOpacity(value); ///< 调整透明度
+        });
+
+        connect(timeLine, &QTimeLine::finished, this, [=] {
+            // 必须延迟 setGraphicsEffect(nullptr)，让 effect->deleteLater() 先执行
+            QTimer::singleShot(0, this, [=]() {
+                setGraphicsEffect(nullptr); // 自动释放，但我们已经 deleteLater 了
+            });
+            effect->deleteLater();
+            firstShow = true;
+        });
+
+        timeLine->start(); // 开始淡入动画
+    }
+    else {
+        event->accept();
+    }
+    QWidget::showEvent(event); ///< 接受显示事件
+}
+
 /**
  * @brief 重写关闭事件，执行渐变关闭动画
  * @param event 关闭事件
  */
 void MainWindow::closeEvent(QCloseEvent *event)
 {
+    static bool isClosing = false;                      ///< 窗口关闭标志
     if (!isClosing) {
         event->ignore(); ///< 忽略首次关闭
+
         auto effect = new QGraphicsOpacityEffect(this);
         effect->setOpacity(1.0);
-        this->setGraphicsEffect(effect);
+        setGraphicsEffect(effect);
 
-        auto timeLine = new QTimeLine(500, this);
+        auto timeLine = new QTimeLine(300, this);
         connect(timeLine, &QTimeLine::valueChanged, this, [=](const qreal &value) {
             QLinearGradient gradient(0, height(), 0, 0);
             gradient.setColorAt(0, Qt::transparent);
@@ -222,8 +261,10 @@ void MainWindow::closeEvent(QCloseEvent *event)
         });
 
         connect(timeLine, &QTimeLine::finished, this, [=] {
-            setGraphicsEffect(nullptr); ///< 移除效果
-            effect->deleteLater(); ///< 安全释放
+            QTimer::singleShot(0, this, [=] {
+                setGraphicsEffect(nullptr); // 自动释放，但我们已经 deleteLater 了
+            });
+            effect->deleteLater();
             isClosing = true;
             close(); ///< 再次触发关闭
         });
