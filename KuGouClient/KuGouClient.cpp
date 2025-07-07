@@ -243,8 +243,8 @@ void KuGouClient::initUi() {
     // @note 隐藏刷新遮罩
     m_refreshMask->hide();
     this->m_refreshMask->setParent(ui->stackedWidget);            ///< 设置遮罩父对象
-    connect(this->m_refreshMask.get(), &RefreshMask::loadingFinished, [this] {
-        m_snackbar->addMessage("加载完成");                       ///< 显示加载完成提示
+    connect(this->m_refreshMask.get(), &RefreshMask::loadingFinished, [this](const QString& message) {
+        m_snackbar->addMessage(message);                         ///< 显示加载完成提示
         m_snackbar->show();
     });                                                           ///< 连接加载完成信号
     // @note 设置消息提示条
@@ -287,22 +287,22 @@ void KuGouClient::initStackedWidget() {
          * // initComponent(m_recentlyPlayed,14);
          * // initComponent(m_allMusic,15);
          */
-        initComponent(m_live,0);                               ///< 初始化直播界面
-        initComponent(m_listenBook,1);                         ///< 初始化听书界面
-        initComponent(m_search,2);                             ///< 初始化搜索界面
-        initComponent(m_recommendForYou,3);                    ///< 初始化为你推荐界面
-        initComponent(m_musicRepository,4);                    ///< 初始化乐库界面
-        initComponent(m_channel,5);                            ///< 初始化频道界面
-        initComponent(m_video,6);                              ///< 初始化视频界面
-        initComponent(m_aiChat,7);                             ///< 初始化ai对话界面
-        initComponent(m_songList,8);                           ///< 初始化歌单界面
-        initComponent(m_dailyRecommend,9);                     ///< 初始化每日推荐界面
-        initComponent(m_collection,10);                        ///< 初始化收藏界面
+        // initComponent(m_live,0);                               ///< 初始化直播界面
+        // initComponent(m_listenBook,1);                         ///< 初始化听书界面
+        // initComponent(m_search,2);                             ///< 初始化搜索界面
+        // initComponent(m_recommendForYou,3);                    ///< 初始化为你推荐界面
+        // initComponent(m_musicRepository,4);                    ///< 初始化乐库界面
+        // initComponent(m_channel,5);                            ///< 初始化频道界面
+        // initComponent(m_video,6);                              ///< 初始化视频界面
+        // initComponent(m_aiChat,7);                             ///< 初始化ai对话界面
+        // initComponent(m_songList,8);                           ///< 初始化歌单界面
+        // initComponent(m_dailyRecommend,9);                     ///< 初始化每日推荐界面
+        // initComponent(m_collection,10);                        ///< 初始化收藏界面
         initComponent(m_localDownload,11);                     ///< 初始化本地与下载界面
-        initComponent(m_musicCloudDisk,12);                    ///< 初始化音乐云盘界面
-        initComponent(m_purchasedMusic,13);                    ///< 初始化已购音乐界面
-        initComponent(m_recentlyPlayed,14);                    ///< 初始化最近播放界面
-        initComponent(m_allMusic,15);                          ///< 初始化全部音乐界面
+        // initComponent(m_musicCloudDisk,12);                    ///< 初始化音乐云盘界面
+        // initComponent(m_purchasedMusic,13);                    ///< 初始化已购音乐界面
+        // initComponent(m_recentlyPlayed,14);                    ///< 初始化最近播放界面
+        // initComponent(m_allMusic,15);                          ///< 初始化全部音乐界面
     }
 
     // @note 响应相关跳转
@@ -1054,7 +1054,7 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
         return m_libHttp.UrlRequestGet(
             QString("http://127.0.0.1:8080/api/searchSong"),
             "keyword=" + QUrl::toPercentEncoding(suggestText),
-            5000 // 5秒超时
+            3000 // 3秒超时
         );
     });
 
@@ -1065,6 +1065,7 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
 
         if (err.error != QJsonParseError::NoError || !doc.isObject()) {
             qWarning() << "搜索响应解析失败:" << err.errorString();
+            this->m_refreshMask->hideLoading("响应失败");
             return;
         }
 
@@ -1119,7 +1120,7 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
         connect(addTimer, &QTimer::timeout, this, [=]() mutable {
             if (currentIndex >= songs.size()) {
                 addTimer->deleteLater();
-                this->m_refreshMask->hideLoading();
+                this->m_refreshMask->hideLoading("加载完成");
                 return;
             }
 

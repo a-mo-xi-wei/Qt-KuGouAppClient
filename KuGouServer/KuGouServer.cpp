@@ -522,10 +522,9 @@ bool KuGouServer::onApiSearchSong(const QPointer<JQHttpServer::Session> &session
         QEventLoop loop1;
         connect(searchReply, &QNetworkReply::finished, &loop1, &QEventLoop::quit);
         connect(&timer1, &QTimer::timeout, &loop1, &QEventLoop::quit);
-        timer1.start(5000); // 5秒超时
+        timer1.start(3000); // 3秒超时
         loop1.exec();
 
-        QStringList hashes;
         QList<QJsonObject> songList;
 
         if (searchReply->error() == QNetworkReply::NoError) {
@@ -550,7 +549,6 @@ bool KuGouServer::onApiSearchSong(const QPointer<JQHttpServer::Session> &session
                     QString coverUrl = songObj.value("Image").toString().replace("{size}", "400");
                     songInfo["coverUrl"] = coverUrl;
 
-                    hashes.append(songInfo["hash"].toString());
                     songList.append(songInfo);
                 }
             }
@@ -559,51 +557,6 @@ bool KuGouServer::onApiSearchSong(const QPointer<JQHttpServer::Session> &session
             qWarning() << "歌曲搜索失败:" << searchReply->errorString();
         }
         searchReply->deleteLater();
-
-        // 第二步：为每个歌曲单独获取播放URL
-        if (!hashes.isEmpty()) {
-            // 创建计数器跟踪完成的请求
-            QSharedPointer<int> completedCount = QSharedPointer<int>::create(0);
-            int totalCount = hashes.size();
-
-            // 为每个哈希创建请求
-            for (int i = 0; i < totalCount; i++) {
-                QNetworkRequest urlRequest(QUrl(
-                    QString("http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash=%1")
-                        .arg(hashes[i])
-                ));
-                QNetworkReply *urlReply = manager->get(urlRequest);
-
-                QEventLoop loop2;
-                QTimer timer2;
-                timer2.setSingleShot(true);
-                connect(&timer2, &QTimer::timeout, &loop2, &QEventLoop::quit);
-                // 为每个回复连接完成信号
-                connect(urlReply, &QNetworkReply::finished,  &loop2,&QEventLoop::quit);
-                timer2.start(2000); // 5秒超时
-                loop2.exec();
-                if (urlReply->error() == QNetworkReply::NoError) {
-                    QJsonDocument doc = QJsonDocument::fromJson(urlReply->readAll());
-                    if (!doc.isNull()) {
-                        QJsonObject urlObj = doc.object();
-                        // 更新对应歌曲的URL
-                        songList[i]["netUrl"] = urlObj.value("url").toString();
-                        //qDebug() << "获取到第 "<< i << " 首歌曲的播放路径 : " <<urlObj.value("url").toString();
-                    }
-                }
-                else {
-                    qWarning() << "播放URL获取失败:" << urlReply->errorString();
-                }
-                urlReply->deleteLater();
-                // 增加完成计数
-                (*completedCount)++;
-
-                // 如果所有请求都完成了，退出事件循环
-                if (*completedCount >= totalCount) {
-                    break;
-                }
-            }
-        }
 
         // 发送响应
         if (!weakSession.isNull()) {

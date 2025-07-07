@@ -45,7 +45,7 @@ public:
     /**
      * @brief 隐藏加载遮罩
      */
-    void hideLoading();
+    void hideLoading(const QString& message = "");
 
 private:
     /**
@@ -64,7 +64,7 @@ protected:
         /**
          * @brief 加载完成信号
          */
-        void loadingFinished();
+        void loadingFinished(const QString&  message = "加载完成");
 
 private:
     QWidget*                    maskWidget{};     ///< 遮罩控件

@@ -51,7 +51,7 @@ QVariant ElaSuggestModel::data(const QModelIndex &index, int role) const
  * @param suggestionVector 建议项列表
  * @note 更新模型数据
  */
-void ElaSuggestModel::setSearchSuggestion(QVector<ElaSuggestion *> suggestionVector)
+void ElaSuggestModel::setSearchSuggestion(QVector<QSharedPointer<ElaSuggestion>> suggestionVector)
 {
     if (suggestionVector.count() == 0)
     {
@@ -78,10 +78,7 @@ void ElaSuggestModel::clearSearchNode()
  */
 ElaSuggestion *ElaSuggestModel::getSearchSuggestion(int row)
 {
-    if (row >= _suggestionVector.count())
-    {
-        return nullptr;                                       ///< 行号超出范围
-    }
-    if (_suggestionVector.isEmpty()) return nullptr;          ///< 列表为空
-    return _suggestionVector[row];                            ///< 返回建议项
+    if (row >= 0 && row < _suggestionVector.size())
+        return _suggestionVector[row].get();
+    return nullptr;
 }

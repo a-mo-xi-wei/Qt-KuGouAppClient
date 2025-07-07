@@ -55,12 +55,13 @@ void ElaSuggestDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
         return;
     }
 
-    ElaSuggestion *suggest = model->getSearchSuggestion(index.row());
-    if (!suggest)
+    QPointer<ElaSuggestion> suggest = model->getSearchSuggestion(index.row());
+    if (!suggest || suggest.isNull())
     {
         painter->restore();
         return;
     }
+
     if (option.state.testFlag(QStyle::State_HasFocus))
     {
         viewOption.state &= ~QStyle::State_HasFocus;          ///< 移除焦点状态
@@ -94,9 +95,9 @@ void ElaSuggestDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
     //painter->drawText(option.rect.x() + 30, option.rect.y() + 25, suggest->getSuggestText());
     // 计算可用文本区域（考虑图标空间和边距）
     QRect textRect = option.rect;
-    textRect.setRight(textRect.right() - 10);                 ///< 右边留出边距
-    textRect.setLeft(textRect.left() + 30);                   ///< 留出图标空间
-    const QString originalText = suggest->getSuggestText();   ///< 获取原始文本
+    textRect.setRight(textRect.right() - 10);                  ///< 右边留出边距
+    textRect.setLeft(textRect.left() + 30);                    ///< 留出图标空间
+    const QString originalText = suggest->getSuggestText();         ///< 获取原始文本
     QFontMetrics metrics(painter->font());
     QString clippedText = metrics.elidedText(originalText, Qt::ElideRight, textRect.width()); ///< 裁剪文本
     painter->setPen(ElaThemeColor(_themeMode, BasicText));    ///< 设置文本颜色
