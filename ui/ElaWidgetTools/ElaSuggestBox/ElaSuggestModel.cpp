@@ -8,6 +8,8 @@
 
 #include "ElaSuggestModel.h"
 
+#include <utility>
+
 /**
  * @brief 构造函数
  * @param parent 父对象指针，默认为 nullptr
@@ -20,9 +22,7 @@ ElaSuggestModel::ElaSuggestModel(QObject *parent)
 /**
  * @brief 析构函数
  */
-ElaSuggestModel::~ElaSuggestModel()
-{
-}
+ElaSuggestModel::~ElaSuggestModel() = default;
 
 /**
  * @brief 获取行数
@@ -32,7 +32,7 @@ ElaSuggestModel::~ElaSuggestModel()
 int ElaSuggestModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return _suggestionVector.count();                         ///< 返回建议项数量
+    return static_cast<int>(_suggestionVector.count()); ///< 返回建议项数量
 }
 
 /**
@@ -43,7 +43,7 @@ int ElaSuggestModel::rowCount(const QModelIndex &parent) const
  */
 QVariant ElaSuggestModel::data(const QModelIndex &index, int role) const
 {
-    return QVariant();                                        ///< 当前未使用
+    return {};                                        ///< 当前未使用
 }
 
 /**
@@ -53,12 +53,8 @@ QVariant ElaSuggestModel::data(const QModelIndex &index, int role) const
  */
 void ElaSuggestModel::setSearchSuggestion(QVector<QSharedPointer<ElaSuggestion>> suggestionVector)
 {
-    if (suggestionVector.count() == 0)
-    {
-        return;                                               ///< 空列表直接返回
-    }
     beginResetModel();                                        ///< 开始重置模型
-    _suggestionVector = suggestionVector;                     ///< 更新建议项列表
+    _suggestionVector = std::move(suggestionVector);         ///< 更新建议项列表
     endResetModel();                                          ///< 结束重置模型
 }
 

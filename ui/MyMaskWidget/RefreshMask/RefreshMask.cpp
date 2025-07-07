@@ -21,7 +21,7 @@ RefreshMask::RefreshMask(QWidget *parent)
 {
     initUi();
     m_timer->setSingleShot(true);
-    connect(m_timer, &QTimer::timeout, this, [this] {hideLoading();});
+    connect(m_timer, &QTimer::timeout, this, [this] {hideLoading("刷新成功");});
 }
 
 /**
