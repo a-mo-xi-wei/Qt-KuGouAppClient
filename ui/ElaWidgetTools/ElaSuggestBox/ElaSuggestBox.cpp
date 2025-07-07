@@ -138,11 +138,11 @@ void ElaSuggestBox::setPlaceholderText(const QString &placeholderText)
 QString ElaSuggestBox::addSuggestion(const QString &suggestText, const QVariantMap &suggestData)
 {
     Q_D(ElaSuggestBox);
-    auto suggest = new ElaSuggestion(this);                   ///< 创建建议项
-    suggest->setSuggestText(suggestText);                     ///< 设置文本
-    suggest->setSuggestData(suggestData);                     ///< 设置数据
-    d->_suggestionVector.append(suggest);                     ///< 添加到列表
-    return suggest->getSuggestKey();                          ///< 返回唯一键
+    auto suggest = QSharedPointer<ElaSuggestion>::create(this);     // 创建智能指针
+    suggest->setSuggestText(suggestText);                       ///< 设置文本
+    suggest->setSuggestData(suggestData);                       ///< 设置数据
+    d->_suggestionVector.append(suggest);                           ///< 添加到列表
+    return suggest->getSuggestKey();                                ///< 返回唯一键
 }
 
 /**
@@ -155,7 +155,7 @@ QString ElaSuggestBox::addSuggestion(const QString &suggestText, const QVariantM
 QString ElaSuggestBox::addSuggestion(ElaIconType::IconName icon, const QString &suggestText, const QVariantMap &suggestData)
 {
     Q_D(ElaSuggestBox);
-    auto suggest = new ElaSuggestion(this);                   ///< 创建建议项
+    auto suggest = QSharedPointer<ElaSuggestion>::create(this); // 创建智能指针
     suggest->setElaIcon(icon);                                ///< 设置图标
     suggest->setSuggestText(suggestText);                     ///< 设置文本
     suggest->setSuggestData(suggestData);                     ///< 设置数据
@@ -191,7 +191,7 @@ void ElaSuggestBox::removeSuggestion(int index)
     {
         return;
     }
-    ElaSuggestion *suggest = d->_suggestionVector[index];
+    ElaSuggestion *suggest = d->_suggestionVector[index].get();
     d->_suggestionVector.removeOne(suggest);                  ///< 移除建议项
     suggest->deleteLater();                                   ///< 延迟删除
 }

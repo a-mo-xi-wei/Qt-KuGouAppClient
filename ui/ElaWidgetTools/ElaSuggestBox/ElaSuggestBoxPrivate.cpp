@@ -38,13 +38,6 @@ ElaSuggestion::ElaSuggestion(QObject *parent)
 }
 
 /**
- * @brief 析构函数
- */
-ElaSuggestion::~ElaSuggestion()
-{
-}
-
-/**
  * @brief 构造函数
  * @param parent 父对象指针，默认为 nullptr
  */
@@ -99,7 +92,7 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
                 ///< 注意：此处不能直接传递纯文本 searchText（如 "123"）而非完整的查询字符串 "key=123"。
                 ///< 否则：浏览器访问：http://127.0.0.1:8080/api/searchSuggestion?key=123（正确格式）
                 ///< 代码生成：http://127.0.0.1:8080/api/searchSuggestion?123（缺少参数名）
-                1000 // Timeout in milliseconds
+                10000 // Timeout in milliseconds
             );
         });
 
@@ -161,7 +154,7 @@ void ElaSuggestBoxPrivate::onSearchEditTextEdit(const QString &searchText)
     }
     else
     {
-        QVector<ElaSuggestion *> suggestionVector;
+        QVector<QSharedPointer<ElaSuggestion>> suggestionVector;
         for (const auto &suggest : _suggestionVector)
         {
             if (suggest->getSuggestText().contains(searchText, _pCaseSensitivity))
@@ -245,9 +238,13 @@ void ElaSuggestBoxPrivate::onSearchViewClicked(const QModelIndex &index)
     _searchView->setEnabled(false);
 
     ElaSuggestion *suggest = _searchModel->getSearchSuggestion(index.row());
-    Q_EMIT q->suggestionClicked(suggest->getSuggestText(), suggest->getSuggestData()); ///< 发射点击信号
+    if (!suggest) {
+        qDebug()<<"无效的索引 "<<suggest;
+        return;
+    }
     _searchEdit->setText(suggest->getSuggestText());          ///< 设置编辑框文本
     _searchEdit->clearFocus();
+    Q_EMIT q->suggestionClicked(suggest->getSuggestText(), suggest->getSuggestData()); ///< 发射点击信号
     _startCloseAnimation();                                   ///< 关闭建议框
 }
 

@@ -55,7 +55,7 @@ public:
      * @param suggestionVector 建议项列表
      * @note 更新模型数据
      */
-    void setSearchSuggestion(QVector<ElaSuggestion *> suggestionVector);
+    void setSearchSuggestion(QVector<QSharedPointer<ElaSuggestion>> suggestionVector);
 
     /**
      * @brief 清除搜索节点
@@ -71,7 +71,7 @@ public:
     ElaSuggestion *getSearchSuggestion(int row);
 
 private:
-    QVector<ElaSuggestion *> _suggestionVector;               ///< 符合搜索的建议项列表
+    QVector<QSharedPointer<ElaSuggestion>> _suggestionVector;               ///< 符合搜索的建议项列表
 };
 
 #endif // ELASUGGESTMODEL_H

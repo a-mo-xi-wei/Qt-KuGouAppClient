@@ -30,10 +30,6 @@ public:
      */
     explicit ElaSuggestion(QObject *parent = nullptr);
 
-    /**
-     * @brief 析构函数
-     */
-    ~ElaSuggestion() override;
 };
 
 class QVBoxLayout;
@@ -101,7 +97,7 @@ private:
     ElaThemeType::ThemeMode _themeMode;                      ///< 当前主题模式
     QAction *_lightSearchAction{nullptr};                    ///< 亮色搜索图标动作
     QAction *_darkSearchAction{nullptr};                     ///< 暗色搜索图标动作
-    QVector<ElaSuggestion *> _suggestionVector;              ///< 建议项列表
+    QVector<QSharedPointer<ElaSuggestion>> _suggestionVector;         ///< 建议项列表
     ElaSuggestBoxSearchViewContainer *_searchViewBaseWidget{nullptr}; ///< 建议框容器
     ElaLineEdit *_searchEdit{nullptr};                       ///< 搜索编辑框
     ElaSuggestModel *_searchModel{nullptr};                  ///< 建议项模型

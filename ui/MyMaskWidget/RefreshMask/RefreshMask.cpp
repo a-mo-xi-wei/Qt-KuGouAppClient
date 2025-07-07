@@ -21,7 +21,7 @@ RefreshMask::RefreshMask(QWidget *parent)
 {
     initUi();
     m_timer->setSingleShot(true);
-    connect(m_timer, &QTimer::timeout, this, &RefreshMask::hideLoading);
+    connect(m_timer, &QTimer::timeout, this, [this] {hideLoading();});
 }
 
 /**
@@ -100,14 +100,14 @@ void RefreshMask::keepLoading()
 /**
  * @brief 隐藏加载遮罩
  */
-void RefreshMask::hideLoading()
+void RefreshMask::hideLoading(const QString& message)
 {
     if (this->isHidden()) return;
     m_timer->stop();
     this->hide();
     maskWidget->hide();
     progress->hide();
-    emit loadingFinished();
+    emit loadingFinished(message);
 }
 
 /**
