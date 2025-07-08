@@ -34,6 +34,7 @@ AdvertiseBoard::AdvertiseBoard(QWidget *parent)
       , m_rightBtn(new NavButton(":/Res/window/right.svg", ":/Res/window/right-pink.svg", this))
       , m_timer(new QTimer(this))
       , m_animation(new QPropertyAnimation(this)) {
+
     // 配置动画
     m_animation->setTargetObject(this);
     m_animation->setPropertyName("slideOffset");
@@ -43,10 +44,8 @@ AdvertiseBoard::AdvertiseBoard(QWidget *parent)
     // 连接动画结束信号
     connect(m_animation, &QPropertyAnimation::finished, this, [this] {
         m_isAnimating = false;
+        m_timer->start();
         m_slideOffset = 0;
-        if (m_timer->isActive()) {
-            m_timer->start();
-        }
         update();
     });
 
@@ -145,15 +144,15 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
             const QPixmap &current = m_scaledPosters[m_currentIndex];
             const QPixmap &previous = m_scaledPosters[m_previousIndex];
 
-            // 根据方向计算新图片位置
+            // 简化绘制逻辑 - 直接使用缩放后的图片
             if (m_slidingToNext) {
-                // 向右滑动：当前图片从右侧进入，旧图片向左移出
-                painter.drawPixmap(m_slideOffset - width(), 0, previous);
-                painter.drawPixmap(m_slideOffset, 0, current);
+                // 向右滑动
+                painter.drawPixmap(m_slideOffset - width(), 0, width(), height(), previous);
+                painter.drawPixmap(m_slideOffset, 0, width(), height(), current);
             } else {
-                // 向左滑动：当前图片从左侧进入，旧图片向右移出
-                painter.drawPixmap(m_slideOffset + width(), 0, previous);
-                painter.drawPixmap(m_slideOffset, 0, current);
+                // 向左滑动
+                painter.drawPixmap(m_slideOffset + width(), 0, width(), height(), previous);
+                painter.drawPixmap(m_slideOffset, 0, width(), height(), current);
             }
         } else {
             // 非动画状态：只绘制当前图片
@@ -177,9 +176,12 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
 }
 
 void AdvertiseBoard::resizeEvent(QResizeEvent *ev) {
+    if (m_isResizing) return; // 避免重复缩放
+    m_isResizing = true;
     updateButtonPosition();
     setFixedHeight(ev->size().width() / m_aspectRatio);
     updateScaledPosters();
+    m_isResizing = false;
     QWidget::resizeEvent(ev);
 }
 

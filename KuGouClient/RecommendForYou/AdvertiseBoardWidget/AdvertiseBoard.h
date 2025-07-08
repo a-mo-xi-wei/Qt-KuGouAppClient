@@ -73,6 +73,7 @@ private:
     qreal m_aspectRatio = 2.0;
     bool m_isAnimating = false;
     bool m_slidingToNext = true;
+    bool m_isResizing = false;
 };
 
 #endif // ADVERTISEBOARD_H
