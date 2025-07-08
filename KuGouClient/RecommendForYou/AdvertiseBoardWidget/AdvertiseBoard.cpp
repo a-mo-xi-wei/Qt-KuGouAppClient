@@ -2,6 +2,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QTimer>
+#include <QPropertyAnimation>
 #include <QResizeEvent>
 
 NavButton::NavButton(const QString &normalImage, const QString &hoverImage, QWidget *parent)
@@ -14,13 +15,13 @@ NavButton::NavButton(const QString &normalImage, const QString &hoverImage, QWid
 }
 
 void NavButton::enterEvent(QEnterEvent *event) {
-    setPixmap(m_hover);
     QLabel::enterEvent(event);
+    setPixmap(m_hover);
 }
 
 void NavButton::leaveEvent(QEvent *event) {
-    setPixmap(m_normal);
     QLabel::leaveEvent(event);
+    setPixmap(m_normal);
 }
 
 void NavButton::mousePressEvent(QMouseEvent *event) {
@@ -33,8 +34,9 @@ AdvertiseBoard::AdvertiseBoard(QWidget *parent)
       , m_leftBtn(new NavButton(":/Res/window/left.svg", ":/Res/window/left-pink.svg", this))
       , m_rightBtn(new NavButton(":/Res/window/right.svg", ":/Res/window/right-pink.svg", this))
       , m_timer(new QTimer(this))
-      , m_animation(new QPropertyAnimation(this)) {
-
+      , m_animation(new QPropertyAnimation(this))
+{
+    setMouseTracking(true);
     // 配置动画
     m_animation->setTargetObject(this);
     m_animation->setPropertyName("slideOffset");
@@ -165,12 +167,20 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
         QList<QPoint> centers;
         int totalWidth;
         calculateDotPositions(centers, totalWidth); ///< 计算导航圆点位置
+        // 清空并重新计算圆点区域
+        m_dotRects.clear();
+
         painter.setPen(Qt::NoPen); ///< 设置无边框
         for (int i = 0; i < centers.size(); ++i) {
             bool isActive = (i == m_currentIndex);
             int radius = isActive ? DOT_RADIUS + ACTIVE_DOT_EXTRA : DOT_RADIUS; ///< 设置圆点半径
             painter.setBrush(isActive ? QColor(80, 143, 206) : QColor(255, 255, 255, 150)); ///< 设置圆点颜色
             painter.drawEllipse(centers[i], radius, radius); ///< 绘制圆点
+
+            // 存储圆点的矩形区域（用于鼠标检测）
+            QRect dotRect(centers[i].x() - radius, centers[i].y() - radius,
+                          radius * 2, radius * 2);
+            m_dotRects.append(dotRect);
         }
     }
 }
@@ -195,6 +205,53 @@ void AdvertiseBoard::leaveEvent(QEvent *ev) {
     m_leftBtn->hide();
     m_rightBtn->hide();
     QWidget::leaveEvent(ev);
+}
+
+void AdvertiseBoard::mouseMoveEvent(QMouseEvent *event) {
+    if (m_originalPosters.size() <= 1) return;
+
+    QPoint mousePos = event->pos();
+    // 检查鼠标是否在圆点区域内
+    for (int i = 0; i < m_dotRects.size(); ++i) {
+        if (m_dotRects[i].contains(mousePos) && i != m_currentIndex) {
+            switchToIndex(i);
+            break;
+        }
+    }
+    QWidget::mouseMoveEvent(event);
+}
+
+void AdvertiseBoard::mouseReleaseEvent(QMouseEvent *event) {
+    if (m_originalPosters.size() <= 1) return;
+
+    QPoint mousePos = event->pos();
+    // 检查鼠标是否在圆点区域内
+    for (int i = 0; i < m_dotRects.size(); ++i) {
+        if (m_dotRects[i].contains(mousePos) && i != m_currentIndex) {
+            switchToIndex(i);
+            break;
+        }
+    }
+    QWidget::mouseReleaseEvent(event);
+}
+
+void AdvertiseBoard::switchToIndex(const int &index) {
+    if (index < 0 || index >= m_originalPosters.size() ||
+        index == m_currentIndex || m_isAnimating) {
+        return;
+        }
+
+    m_previousIndex = m_currentIndex;
+    m_currentIndex = index;
+
+    // 确定滑动方向
+    if (m_currentIndex > m_previousIndex) {
+        m_slidingToNext = true;
+        startAnimation(width(), 0);
+    } else {
+        m_slidingToNext = false;
+        startAnimation(-width(), 0);
+    }
 }
 
 void AdvertiseBoard::updateButtonPosition() {
