@@ -135,7 +135,7 @@ void KuGouServer::initDateBase() {
            "\"area_province\" text,"
            "\"area_city\" text,"
            "\"signature\" text,"
-           "PRIMARY KEY (\"account\", \"id\"));";
+           "PRIMARY KEY (\"account\", \"password\"));";
         m_SqliteDataProvider.execSql(sql,"create_user_table",false);
     }
     // 先判断是否存在 local_song_table 表,不存在则创建
@@ -171,6 +171,9 @@ void KuGouServer::initRouter() {
     apiRouter["/api/searchSong"] = [this](auto && PH1) { return onApiSearchSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/addSong"] = [this](auto && PH1) { return onApiAddSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/delSong"] = [this](auto && PH1) { return onApiDelSong(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/login"] = [this](auto && PH1) { return onApiLogin(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/register"] = [this](auto && PH1) { return onApiRegister(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/userDestroy"] = [this](auto && PH1) { return onApiUserDestroy(std::forward<decltype(PH1)>(PH1)); };
 }
 
 //-----------------------------------------------------------------------------
@@ -682,6 +685,21 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
 }
 
 bool KuGouServer::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
+    CheckJsonParse(session);
+
+    QJsonObject requestData = requestDoc.object();
+
+    // 校验必需字段
+    const QStringList requiredFields = {
+        "song", "singer", "duration"
+    };
+    for (const auto &field : requiredFields) {
+        if (!requestData.contains(field)) {
+            QLOG_ERROR() << "Missing required field: " << field;
+            session->replyBytes(SResult::failure(SResultCode::ParamLoss), "application/json");
+            return false;
+        }
+    }
     try {
         QJsonDocument doc = QJsonDocument::fromJson(session->requestBody());
         QString sql = QString(
@@ -711,4 +729,223 @@ bool KuGouServer::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
         return false;
     }
     return true;
+}
+
+bool KuGouServer::onApiLogin(const QPointer<JQHttpServer::Session> &session) {
+    try {
+        // 解析请求JSON数据
+        CheckJsonParse(session);
+
+        QJsonObject reqObj = requestDoc.object();
+        QString account = reqObj.value("account").toString();
+        QString password = reqObj.value("password").toString();
+
+        // 验证必需参数
+        if (account.isEmpty() || password.isEmpty()) {
+            session->replyBytes(SResult::failure(SResultCode::ParamJsonInvalid), "application/json");
+            QLOG_WARN() << "Missing account or password";
+            return false;
+        }
+
+        // 安全构造SQL查询（防止SQL注入）
+        QString safeAccount = account.replace("'", "''");
+        QString sql = QString(
+            "SELECT "
+            "portrait, account, id, nickname, gender, birthday, "
+            "area_province, area_city, signature "
+            "FROM user_table "
+            "WHERE account = '%1' AND password = '%2';"
+        ).arg(safeAccount).arg(password.replace("'", "''"));
+
+        // 执行数据库查询
+        auto resultRecord = m_SqliteDataProvider.execSql(sql, "user_login", false);
+        if (!resultRecord.isEmpty() && resultRecord(0).rows() > 0) {
+            RecordSet resultSet = resultRecord(0);
+            QJsonObject userData;
+
+            // 提取用户数据（第0行）
+            userData["portrait"] = resultSet(0, "portrait");
+            userData["account"] = resultSet(0, "account");
+            userData["id"] = resultSet(0, "id");
+            userData["nickname"] = resultSet(0, "nickname");
+            userData["gender"] = resultSet(0, "gender").toInt();
+            userData["birthday"] = resultSet(0, "birthday");
+            userData["area_province"] = resultSet(0, "area_province");
+            userData["area_city"] = resultSet(0, "area_city");
+            userData["signature"] = resultSet(0, "signature");
+
+            // 构造成功响应
+            QJsonObject response;
+            response["status"] = "success";
+            response["data"] = userData;
+            session->replyBytes(QJsonDocument(response).toJson(), "application/json");
+
+            QLOG_INFO() << "User logged in:" << account;
+            qDebug() << "User logged in:" << account;
+            return true;
+        }
+
+        // 认证失败处理
+        session->replyBytes(SResult::failure(SResultCode::UserUnauthorized), "application/json");
+        QLOG_WARN() << "Login failed for account:" << account;
+        qWarning() << "Login failed for account:" << account;
+        return false;
+
+    } catch (const std::exception &e) {
+        QLOG_ERROR() << "Exception in onApiLogin:" << e.what();
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
+        return false;
+    }
+}
+
+bool KuGouServer::onApiRegister(const QPointer<JQHttpServer::Session> &session) {
+    try {
+        CheckJsonParse(session);
+
+        QJsonObject reqObj = requestDoc.object();
+        QString account = reqObj.value("account").toString();
+        QString password = reqObj.value("password").toString();
+        QString nickname = reqObj.value("nickname").toString();
+
+        // 验证必需参数
+        if (account.isEmpty() || password.isEmpty()) {
+            session->replyBytes(SResult::failure(SResultCode::ParamJsonInvalid), "application/json");
+            QLOG_WARN() << "Missing account or password";
+            return false;
+        }
+
+        // 设置默认昵称（如果未提供）
+        if (nickname.isEmpty()) {
+            nickname = "新用户";
+        }
+
+        // 安全处理输入
+        QString safeAccount = account.replace("'", "''");
+        QString safePassword = password.replace("'", "''");
+        QString safeNickname = nickname.replace("'", "''");
+
+        // 检查账号是否已存在
+        QString checkSql = QString(
+            "SELECT account FROM user_table WHERE account = '%1';"
+        ).arg(safeAccount);
+
+        auto checkResult = m_SqliteDataProvider.execSql(checkSql, "check_account_exists", false);
+        if (!checkResult.isEmpty() && checkResult(0).rows() > 0) {
+            session->replyBytes(SResult::failure(SResultCode::UserAccountExists), "application/json");
+            QLOG_WARN() << "Account already exists:" << account;
+            return false;
+        }
+
+        // 生成用户ID（使用QUuid）
+        QString userId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+
+        // 准备插入SQL
+        QString insertSql = QString(
+            "INSERT INTO user_table ("
+            "portrait, account, password, id, nickname, gender, "
+            "birthday, area_province, area_city, signature"
+            ") VALUES ("
+            "'', '%1', '%2', '%3', '%4', -1, "
+            "'', '', '', '');"
+        ).arg(safeAccount, safePassword, userId, safeNickname);
+
+        // 执行注册
+        m_SqliteDataProvider.execSql(insertSql, "register_user", false);
+
+        // 构造成功响应
+        QJsonObject response;
+        response["status"] = "success";
+        response["data"] = QJsonObject({
+            {"account", account},
+            {"nickname", nickname},
+            {"id", userId}
+        });
+
+        session->replyBytes(QJsonDocument(response).toJson(), "application/json");
+        QLOG_INFO() << "User registered:" << account;
+        return true;
+
+    }
+    catch (const std::exception &e) {
+        QLOG_ERROR() << "Exception in onApiRegister:" << e.what();
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
+        return false;
+    }
+}
+
+bool KuGouServer::onApiUserDestroy(const QPointer<JQHttpServer::Session> &session) {
+    try {
+        CheckJsonParse(session);
+
+        QJsonObject reqObj = requestDoc.object();
+        QString account = reqObj.value("account").toString();
+        QString password = reqObj.value("password").toString();
+
+        // 验证必需参数
+        if (account.isEmpty() || password.isEmpty()) {
+            session->replyBytes(SResult::failure(SResultCode::ParamJsonInvalid), "application/json");
+            QLOG_WARN() << "Missing account or password for user destroy";
+            return false;
+        }
+
+        // 安全处理输入
+        QString safeAccount = account.replace("'", "''");
+        QString safePassword = password.replace("'", "''");
+
+        // 验证账号和密码（防止未授权删除）
+        QString verifySql = QString(
+            "SELECT id FROM user_table "
+            "WHERE account = '%1' AND password = '%2';"
+        ).arg(safeAccount, safePassword);
+
+        auto verifyResult = m_SqliteDataProvider.execSql(verifySql, "verify_user_destroy", false);
+        if (verifyResult.isEmpty() || verifyResult(0).rows() == 0) {
+            session->replyBytes(SResult::failure(SResultCode::UserUnauthorized), "application/json");
+            QLOG_WARN() << "Authentication failed for user destroy:" << account;
+            return false;
+        }
+
+        // 获取用户ID用于后续操作
+        QString userId = verifyResult(0)(0, "id");
+
+        // 开始事务（确保数据一致性）
+        m_SqliteDataProvider.execSql("BEGIN TRANSACTION;", "begin_transaction", false);
+
+        try {
+            // 删除用户相关数据（根据实际需求扩展）
+            // 1. 删除用户基本信息
+            QString deleteUserSql = QString(
+                "DELETE FROM user_table "
+                "WHERE account = '%1' AND password = '%2';"
+            ).arg(safeAccount, safePassword);
+            m_SqliteDataProvider.execSql(deleteUserSql, "delete_user", false);
+
+            // 2. 删除用户相关歌曲数据（可选）
+            // QString deleteSongsSql = QString(
+            //     "DELETE FROM local_song_table WHERE owner_id = '%1';"
+            // ).arg(userId);
+            // m_SqliteDataProvider.execSql(deleteSongsSql, "delete_user_songs", false);
+
+            // 提交事务
+            m_SqliteDataProvider.execSql("COMMIT;", "commit_transaction", false);
+
+            QLOG_INFO() << "User destroyed:" << account;
+
+            // 构造成功响应
+            QJsonObject response;
+            response["status"] = "success";
+            session->replyBytes(QJsonDocument(response).toJson(), "application/json");
+            return true;
+
+        } catch (const std::exception& e) {
+            // 回滚事务
+            m_SqliteDataProvider.execSql("ROLLBACK;", "rollback_transaction", false);
+            throw; // 重新抛出异常
+        }
+
+    } catch (const std::exception &e) {
+        QLOG_ERROR() << "Exception in onApiUserDestroy:" << e.what();
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
+        return false;
+    }
 }
