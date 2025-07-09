@@ -122,6 +122,12 @@ private:
      * @return bool 操作结果。
      */
     bool onApiDelSong(const QPointer<JQHttpServer::Session> &session);
+    // 登录请求
+    bool onApiLogin(const QPointer<JQHttpServer::Session> &session);
+    // 注册请求
+    bool onApiRegister(const QPointer<JQHttpServer::Session> &session);
+    // 注销请求
+    bool onApiUserDestroy(const QPointer<JQHttpServer::Session> &session);
 
 private:
     /// HTTP 服务器

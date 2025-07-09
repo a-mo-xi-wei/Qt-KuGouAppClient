@@ -130,7 +130,7 @@ public:
 
     /** @brief 未认证用户
      */
-    CODE(UserUnauthorized, 3003, "未认证的用户，请先登录~");
+    CODE(UserUnauthorized, 3003, "未认证的用户，请先注册登录~");
 
     /** @brief 认证格式错误
      */
