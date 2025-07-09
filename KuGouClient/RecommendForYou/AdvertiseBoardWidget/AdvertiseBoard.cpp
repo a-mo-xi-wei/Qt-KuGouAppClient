@@ -178,8 +178,8 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
             painter.drawEllipse(centers[i], radius, radius); ///< 绘制圆点
 
             // 存储圆点的矩形区域（用于鼠标检测）
-            QRect dotRect(centers[i].x() - radius, centers[i].y() - radius,
-                          radius * 2, radius * 2);
+            QRect dotRect(centers[i].x() - radius - 5, centers[i].y() - radius - 5,
+                          radius * 2 + 5 * 2, radius * 2 + 5 * 2);
             m_dotRects.append(dotRect);
         }
     }
