@@ -267,7 +267,9 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit)
         d->_searchEdit->addAction(d->_lightSearchAction, QLineEdit::TrailingPosition);///< 添加亮色图标
         connect(d->_lightSearchAction, &QAction::triggered, d, [d, this] {
             d->_searchEdit->clearFocus();
-            d->_startCloseAnimation();
+            QTimer::singleShot(0, this, [d] {
+                d->_startCloseAnimation();                                   ///< 关闭建议框
+            });
             emit searchTextReturnPressed(d->_searchEdit->text());
         });
         foreach (QToolButton* btn, d->_searchEdit->findChildren<QToolButton*>()) {
@@ -282,7 +284,9 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit)
         d->_searchEdit->addAction(d->_darkSearchAction, QLineEdit::TrailingPosition);///< 添加暗色图标
         connect(d->_darkSearchAction, &QAction::triggered, d, [d, this] {
             d->_searchEdit->clearFocus();
-            d->_startCloseAnimation();
+            QTimer::singleShot(0, this, [d] {
+                d->_startCloseAnimation();                                   ///< 关闭建议框
+            });
             emit searchTextReturnPressed(d->_searchEdit->text());
         });
         foreach (QToolButton* btn, d->_searchEdit->findChildren<QToolButton*>()) {
@@ -311,7 +315,9 @@ void ElaSuggestBox::setLineEdit(ElaLineEdit *lineEdit)
     connect(d->_searchEdit, &ElaLineEdit::widthChanged, d, &ElaSuggestBoxPrivate::onSearchEditWidthChanged);
     connect(d->_searchEdit,&ElaLineEdit::returnPressed, d, [d, this] {    // 设置忽略标志
         d->_searchEdit->clearFocus();
-        d->_startCloseAnimation();
+        QTimer::singleShot(300, this, [d] {
+            d->_startCloseAnimation();                                   ///< 关闭建议框
+        });
         emit searchTextReturnPressed(d->_searchEdit->text());
     });
     // @note 添加到布局
