@@ -101,6 +101,66 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int tim
     return replyData;
 }
 
+QByteArray CLibhttp::UrlRequestGetRaw(const QString &url, const QString &data, int timeout)
+{
+    if (url.isEmpty() || timeout <= 0) {
+        return QByteArray();
+    }
+
+    QLOG_INFO() << ("CLibhttp::UrlRequestGetRaw: " + url);
+
+    QUrl aurl(url);
+    if (!data.isEmpty()) {
+        QUrlQuery query(aurl);
+        query.setQuery(data);
+        aurl.setQuery(query);
+    }
+
+    QNetworkAccessManager qnam;
+    QNetworkRequest qnr(aurl);
+    qnr.setRawHeader("Content-Type", "application/json;charset=utf-8");
+
+    QTimer timeout_timer;
+    timeout_timer.setInterval(timeout);
+    timeout_timer.setSingleShot(true);
+
+    QNetworkReply *reply = qnam.get(qnr);
+    QEventLoop eventloop;
+
+    connect(reply, &QNetworkReply::finished, &eventloop, &QEventLoop::quit);
+    connect(&timeout_timer, &QTimer::timeout, &eventloop, &QEventLoop::quit);
+
+    timeout_timer.start();
+    eventloop.exec();
+
+    QByteArray replyData;
+
+    if (timeout_timer.isActive()) {
+        timeout_timer.stop();
+
+        if (reply->error() != QNetworkReply::NoError) {
+            QLOG_ERROR() << "CLibhttp::UrlRequestGetRaw:http error:" + reply->errorString();
+            qDebug() << "CLibhttp::UrlRequestGetRaw:http error:" + reply->errorString();
+        } else {
+            int nStatusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestGetRaw:status code:%d", nStatusCode));
+            qDebug() << (QString::asprintf("CLibhttp::UrlRequestGetRaw:status code:%d", nStatusCode));
+
+            replyData = reply->readAll(); // 保留原始字节数据
+        }
+    } else {
+        disconnect(reply, &QNetworkReply::finished, &eventloop, &QEventLoop::quit);
+        reply->abort();
+        reply->deleteLater();
+        QLOG_WARN() << ("CLibhttp::UrlRequestGetRaw:timeout");
+        qWarning() << ("CLibhttp::UrlRequestGetRaw:timeout");
+        emit httpTimeout();
+    }
+
+    reply->deleteLater();
+    return replyData;
+}
+
 /**
  * @brief UrlRequestPost 向一个http发送一个post请求
  * @param url 要请求的url

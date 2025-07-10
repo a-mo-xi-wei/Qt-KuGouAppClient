@@ -169,6 +169,7 @@ void KuGouServer::initRouter() {
     apiRouter["/api/localSongList"] = [this](auto && PH1) { return onApiLocalSongList(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/searchSuggestion"] = [this](auto && PH1) { return onApiSearchSuggestion(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/searchSong"] = [this](auto && PH1) { return onApiSearchSong(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/getPicture"] = [this](auto && PH1) { return onApiGetPicture(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/addSong"] = [this](auto && PH1) { return onApiAddSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/delSong"] = [this](auto && PH1) { return onApiDelSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/login"] = [this](auto && PH1) { return onApiLogin(std::forward<decltype(PH1)>(PH1)); };
@@ -591,6 +592,87 @@ bool KuGouServer::onApiSearchSong(const QPointer<JQHttpServer::Session> &session
     return true;
 }
 
+bool KuGouServer::onApiGetPicture(const QPointer<JQHttpServer::Session> &session) {
+    try {
+        // 获取并解码URL参数
+        QString encodedUrl = session->requestUrlQuery().value("url");
+        //qDebug()<<"解码之前"<<encodedUrl;
+        QString imageUrl = QUrl::fromPercentEncoding(encodedUrl.toUtf8());
+        if (imageUrl.isEmpty()) {
+            session->replyBytes(SResult::failure(SResultCode::ParamLoss), "application/json");
+            qWarning() << "Image URL "<< imageUrl<< " parameter missing";
+            QLOG_WARN() << "Image URL "<< imageUrl<< " parameter missing";
+            return false;
+        }
+        //qDebug()<<"通过 "<<imageUrl<<" 搜索网络图片";
+        // 创建弱引用防止会话对象被意外销毁
+        auto weakSession = QPointer<JQHttpServer::Session>(session);
+
+        // 创建工作线程处理网络请求
+        QThread* workerThread = new QThread();
+        QObject* worker = new QObject();
+        worker->moveToThread(workerThread);
+
+        connect(workerThread, &QThread::started, [=]() mutable {
+            QNetworkAccessManager manager;
+            QNetworkRequest request(imageUrl);
+
+            // 设置超时时间
+            QTimer timer;
+            timer.setSingleShot(true);
+
+            // 发起网络请求
+            QNetworkReply* reply = manager.get(request);
+
+            // 创建事件循环等待请求完成
+            QEventLoop loop;
+            connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+            connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
+            timer.start(5000); // 5秒超时
+            loop.exec();
+
+            // 处理响应
+            if (reply->error() == QNetworkReply::NoError && timer.isActive()) {
+                // 成功获取图片数据
+                QByteArray imageData = reply->readAll();
+                QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
+
+                if (!weakSession.isNull()) {
+                    weakSession->replyBytes(imageData, contentType.toUtf8());
+                    QLOG_INFO() << "Image delivered:" << imageUrl;
+                }
+            }
+            else {
+                // 处理错误情况
+                qWarning() << "Image download failed:" << reply->errorString();
+                QLOG_WARN() << "Image download failed:" << reply->errorString();
+                if (!weakSession.isNull()) {
+                    weakSession->replyBytes(
+                        SResult::failure(SResultCode::ServerResourceNotFound),
+                        "application/json"
+                    );
+                }
+            }
+
+            // 清理资源
+            reply->deleteLater();
+            worker->deleteLater();
+            workerThread->quit();
+    });
+
+        // 线程结束时自动清理
+        connect(workerThread, &QThread::finished, workerThread, &QObject::deleteLater);
+
+        workerThread->start();
+        return true;
+    }
+    catch (const std::exception& e) {
+        QLOG_ERROR() << "Exception in onApiAddSong:" << e.what();
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError),"application/json");
+        return false;
+    }
+}
+
 /**
  * @brief 处理添加歌曲 API。
  *
@@ -725,6 +807,7 @@ bool KuGouServer::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
         }
     }
     catch (const std::exception& e) {
+        QLOG_ERROR() << "Exception in onApiAddSong:" << e.what();
         session->replyBytes(SResult::failure(SResultCode::ServerInnerError),"application/json");
         return false;
     }
