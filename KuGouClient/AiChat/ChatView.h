@@ -12,6 +12,7 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 
+class MyScrollArea;
 class QLabel;
 
 /**
@@ -82,22 +83,6 @@ private:
 
 protected:
     /**
-     * @brief 事件过滤器
-     * @param o 目标对象
-     * @param e 事件对象
-     * @return 是否处理事件
-     * @note 重写基类方法
-     */
-    bool eventFilter(QObject *o, QEvent *e) override;
-
-    /**
-     * @brief 绘制事件
-     * @param event 绘制事件对象
-     * @note 重写基类方法
-     */
-    void paintEvent(QPaintEvent *event) override;
-
-    /**
      * @brief 调整大小事件
      * @param event 调整大小事件对象
      * @note 重写基类方法
@@ -113,7 +98,7 @@ private slots:
     void onVScrollBarMoved(int min, int max);
 
 private:
-    QScrollArea *m_pScrollArea;        ///< 滚动区域
+    MyScrollArea *m_pScrollArea;        ///< 滚动区域
     bool         isAppended;           ///< 是否追加聊天项
     QWidget     *m_centerInitWidget{};   ///< 居中初始化部件
 };

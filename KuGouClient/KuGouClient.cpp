@@ -285,7 +285,7 @@ void KuGouClient::initStackedWidget() {
          */
         initComponent(m_live,0);                               ///< 初始化直播界面
         initComponent(m_listenBook,1);                         ///< 初始化听书界面
-        initComponent(m_search,2);                             ///< 初始化搜索界面
+        initComponent(m_search,2);                             ///< 初始化探索界面
         initComponent(m_recommendForYou,3);                    ///< 初始化为你推荐界面
         initComponent(m_musicRepository,4);                    ///< 初始化乐库界面
         initComponent(m_channel,5);                            ///< 初始化频道界面
@@ -396,8 +396,10 @@ void KuGouClient::initSearchResultWidget() {
     scrollArea->setFrameShape(QFrame::NoFrame); ///< 设置无边框
     auto scrollWidget = new QWidget;
     scrollWidget->setObjectName("searchResultWidgetScrollWidget");
-    scrollWidget->setAutoFillBackground(true);
     scrollWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // 设置滚动区域透明
+    scrollWidget->setAttribute(Qt::WA_TranslucentBackground);
+    scrollWidget->setAutoFillBackground(false);
     auto scrollWidgetVLay = new QVBoxLayout(scrollWidget);
     scrollWidgetVLay->addStretch();
     scrollArea->setWidget(scrollWidget);
@@ -696,6 +698,9 @@ void KuGouClient::initPlayWidget() {
  * @note 设置 14 个互斥按钮的图标和分组
  */
 void KuGouClient::initMenu() {
+    ui->menu_scrollAreaWidgetContents->setAttribute(Qt::WA_TranslucentBackground);
+    ui->menu_scrollAreaWidgetContents->setAutoFillBackground(false);
+
     this->m_menuBtnGroup->setParent(ui->center_menu_widget);
 
     ui->recommend_you_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/recommend.svg"))); ///< 设置推荐图标

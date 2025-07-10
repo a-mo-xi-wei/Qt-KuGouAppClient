@@ -109,9 +109,7 @@ ElaScrollBar::ElaScrollBar(QScrollBar* originScrollBar, QAbstractScrollArea* par
 /**
  * @brief 析构函数，释放滚动条资源
  */
-ElaScrollBar::~ElaScrollBar()
-{
-}
+ElaScrollBar::~ElaScrollBar() = default;
 
 /**
  * @brief 事件处理

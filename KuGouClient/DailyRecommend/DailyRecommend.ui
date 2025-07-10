@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_5">
    <property name="rightMargin">
-    <number>0</number>
+    <number>2</number>
    </property>
    <item>
     <widget class="QWidget" name="widget" native="true">
@@ -115,7 +115,7 @@
               <property name="minimumSize">
                <size>
                 <width>100</width>
-                <height>0</height>
+                <height>24</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -495,6 +495,9 @@
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -503,8 +506,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>871</width>
-        <height>127</height>
+        <width>869</width>
+        <height>259</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -529,25 +532,15 @@
           <property name="rightMargin">
            <number>0</number>
           </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
          </layout>
         </widget>
        </item>
       </layout>
      </widget>
     </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>1</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>

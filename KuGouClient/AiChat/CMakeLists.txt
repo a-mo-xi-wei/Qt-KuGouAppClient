@@ -23,4 +23,4 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Network
-        ElaWidgetTools MySpdlog MyScrollArea QtMaterialWidget)
+        MySpdlog MyScrollArea QtMaterialWidget)
