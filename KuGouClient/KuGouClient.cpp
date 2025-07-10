@@ -69,7 +69,6 @@ KuGouClient::KuGouClient(MainWindow *parent)
     , ui(new Ui::KuGouClient)
     , m_menuBtnGroup(std::make_unique<QButtonGroup>(this))          ///< 初始化菜单按钮组
     , m_sizeGrip(std::make_unique<QSizeGrip>(this))                ///< 初始化窗口大小调整角标
-    , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry")) ///< 初始化窗口动画
     , m_refreshMask(std::make_unique<RefreshMask>())               ///< 初始化刷新遮罩
     , m_snackbar(std::make_unique<QtMaterialSnackbar>())           ///< 初始化消息提示条
 {
@@ -102,9 +101,6 @@ KuGouClient::KuGouClient(MainWindow *parent)
     }
     initPlayer();                                                  ///< 初始化播放器
     initUi();                                                      ///< 初始化界面
-
-    // @note 清除历史记录
-    m_speedDialogState.reset();
 
     // @note 动画结束，恢复按钮可交互
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
@@ -700,7 +696,6 @@ void KuGouClient::initPlayWidget() {
  * @note 设置 14 个互斥按钮的图标和分组
  */
 void KuGouClient::initMenu() {
-    // @note 设置菜单按钮父对象
     this->m_menuBtnGroup->setParent(ui->center_menu_widget);
 
     ui->recommend_you_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/recommend.svg"))); ///< 设置推荐图标
@@ -718,21 +713,21 @@ void KuGouClient::initMenu() {
     ui->recently_played_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/history.svg"))); ///< 设置最近播放图标
     ui->all_music_toolButton->setIcon(QIcon(QStringLiteral(":/Res/titlebar/menu-black.svg"))); ///< 设置全部音乐图标
     // @note 设置互斥按钮组
-    m_menuBtnGroup->addButton(ui->recommend_you_toolButton);      ///< 添加推荐按钮
-    m_menuBtnGroup->addButton(ui->music_repository_toolButton);   ///< 添加音乐库按钮
-    m_menuBtnGroup->addButton(ui->channel_toolButton);            ///< 添加频道按钮
-    m_menuBtnGroup->addButton(ui->video_toolButton);              ///< 添加视频按钮
-    m_menuBtnGroup->addButton(ui->live_toolButton);               ///< 添加直播按钮
-    m_menuBtnGroup->addButton(ui->ai_chat_toolButton);            ///< 添加 AI 聊天按钮
-    m_menuBtnGroup->addButton(ui->song_list_toolButton);          ///< 添加歌单按钮
-    m_menuBtnGroup->addButton(ui->daily_recommend_toolButton);    ///< 添加每日推荐按钮
-    m_menuBtnGroup->addButton(ui->my_collection_toolButton);      ///< 添加收藏按钮
-    m_menuBtnGroup->addButton(ui->local_download_toolButton);     ///< 添加本地下载按钮
-    m_menuBtnGroup->addButton(ui->music_cloud_disk_toolButton);   ///< 添加云盘按钮
-    m_menuBtnGroup->addButton(ui->purchased_music_toolButton);    ///< 添加已购音乐按钮
-    m_menuBtnGroup->addButton(ui->recently_played_toolButton);    ///< 添加最近播放按钮
-    m_menuBtnGroup->addButton(ui->all_music_toolButton);          ///< 添加全部音乐按钮
-    m_menuBtnGroup->setExclusive(true);                           ///< 设置互斥
+    this->m_menuBtnGroup->addButton(ui->recommend_you_toolButton);      ///< 添加推荐按钮
+    this->m_menuBtnGroup->addButton(ui->music_repository_toolButton);   ///< 添加音乐库按钮
+    this->m_menuBtnGroup->addButton(ui->channel_toolButton);            ///< 添加频道按钮
+    this->m_menuBtnGroup->addButton(ui->video_toolButton);              ///< 添加视频按钮
+    this->m_menuBtnGroup->addButton(ui->live_toolButton);               ///< 添加直播按钮
+    this->m_menuBtnGroup->addButton(ui->ai_chat_toolButton);            ///< 添加 AI 聊天按钮
+    this->m_menuBtnGroup->addButton(ui->song_list_toolButton);          ///< 添加歌单按钮
+    this->m_menuBtnGroup->addButton(ui->daily_recommend_toolButton);    ///< 添加每日推荐按钮
+    this->m_menuBtnGroup->addButton(ui->my_collection_toolButton);      ///< 添加收藏按钮
+    this->m_menuBtnGroup->addButton(ui->local_download_toolButton);     ///< 添加本地下载按钮
+    this->m_menuBtnGroup->addButton(ui->music_cloud_disk_toolButton);   ///< 添加云盘按钮
+    this->m_menuBtnGroup->addButton(ui->purchased_music_toolButton);    ///< 添加已购音乐按钮
+    this->m_menuBtnGroup->addButton(ui->recently_played_toolButton);    ///< 添加最近播放按钮
+    this->m_menuBtnGroup->addButton(ui->all_music_toolButton);          ///< 添加全部音乐按钮
+    this->m_menuBtnGroup->setExclusive(true);                           ///< 设置互斥
 }
 
 /**
@@ -1320,6 +1315,9 @@ void KuGouClient::onLeftMenuShow(const bool &flag) const {
 void KuGouClient::onTitleMaxScreen() {
     // @note 未使用，保留用于调试
     // STREAM_INFO() << "最大化窗口";
+    ///< 窗口缩放动画
+    auto animation = new QPropertyAnimation(this, "geometry"); ///< 初始化窗口动画
+    
     if (m_isMaxScreen) {
         this->m_isMaxScreen = false; ///< 设置正常状态
         m_endGeometry = m_startGeometry; ///< 记录正常几何形状
@@ -1333,7 +1331,7 @@ void KuGouClient::onTitleMaxScreen() {
                                 icon-size: 12px 12px;
                             })"; ///< 设置最大化按钮样式
         ui->title_widget->max_toolButton()->setMyIcon(QIcon(":/Res/titlebar/maximize-black.svg")); ///< 设置最大化图标
-        this->m_animation->setDuration(500); ///< 设置动画时长
+        animation->setDuration(500); ///< 设置动画时长
     } else {
         this->m_normalGeometry = this->geometry(); ///< 记录正常几何形状
         this->m_isMaxScreen = true; ///< 设置最大化状态
@@ -1348,15 +1346,15 @@ void KuGouClient::onTitleMaxScreen() {
                                 icon-size: 12px 12px;
                             })"; ///< 设置还原按钮样式
         ui->title_widget->max_toolButton()->setMyIcon(QIcon(":/Res/titlebar/resume-black.svg")); ///< 设置还原图标
-        this->m_animation->setDuration(400); ///< 设置动画时长
+        animation->setDuration(300); ///< 设置动画时长
     }
-    this->m_animation->setStartValue(m_startGeometry); ///< 设置动画起始值
-    this->m_animation->setEndValue(m_endGeometry); ///< 设置动画结束值
-    this->m_animation->setEasingCurve(QEasingCurve::InOutQuad); ///< 设置缓动曲线
+    animation->setStartValue(m_startGeometry); ///< 设置动画起始值
+    animation->setEndValue(m_endGeometry); ///< 设置动画结束值
+    animation->setEasingCurve(QEasingCurve::InOutQuad); ///< 设置缓动曲线
 
     this->m_isTransForming = true; ///< 禁用交互
-    this->m_animation->start(); ///< 开始动画
-    connect(this->m_animation.get(), &QPropertyAnimation::finished, this, [this] {
+    animation->start(QAbstractAnimation::DeleteWhenStopped); ///< 开始动画
+    connect(animation, &QPropertyAnimation::finished, this, [this] {
         QTimer::singleShot(100, this, [this] {
             this->m_isTransForming = false; ///< 启用交互
         });
@@ -1558,16 +1556,16 @@ void KuGouClient::on_next_toolButton_clicked() {
 void KuGouClient::on_speed_pushButton_clicked() {
     /// 弹出速度相关界面，并且在隐藏的时候销毁
     auto speedDialog = new SpeedDialog(this);
-
+    auto statePtr = std::make_shared<SpeedDialogState>(); ///< 使用智能指针
     // 连接关闭信号以保存状态
-    connect(speedDialog, &SpeedDialog::aboutToClose, [this, speedDialog]() {
+    connect(speedDialog, &SpeedDialog::aboutToClose, [this, speedDialog, statePtr]() {
         // 获取当前状态并保存到文件
-        m_speedDialogState = speedDialog->getState();
-        m_speedDialogState.save();
+        *statePtr = speedDialog->getState();
+        statePtr->save();
     });
 
     // 从文件加载并恢复状态
-    speedDialog->setState(m_speedDialogState);
+    speedDialog->setState(*statePtr);
     // @note 未使用，保留用于调试
     /*
         connect(speedDialog, &QObject::destroyed, this, [] {
