@@ -156,6 +156,10 @@ void MusicItemWidget::setCover(const QPixmap &pix) {
     update();
 }
 
+void MusicItemWidget::setNetUrl(const QString &netUrl) {
+    this->m_information.netUrl = netUrl;
+}
+
 void MusicItemWidget::setPopular(const int &popular) const {
     if (popular < 0)
         this->m_popularLab->setPixmap(QPixmap(QString(":/TabIcon/Res/tabIcon/%1-grid-popular.svg").arg(QRandomGenerator::global()->bounded(0, 7))));

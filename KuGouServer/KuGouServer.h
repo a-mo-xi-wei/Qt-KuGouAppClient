@@ -110,6 +110,9 @@ private:
     bool onApiSearchSong(const QPointer<JQHttpServer::Session> &session);
     // 获取图片
     bool onApiGetPicture(const QPointer<JQHttpServer::Session> &session);
+    // 获取歌曲网络路径
+    bool onApiGetSongNetUrl(const QPointer<JQHttpServer::Session> &session);
+
     // 添加歌曲
     /**
      * @brief 处理添加歌曲 API。
