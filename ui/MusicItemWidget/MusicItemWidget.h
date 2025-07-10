@@ -80,6 +80,12 @@ public:
     void setCover(const QPixmap& pix);
 
     /**
+     * @brief 设置歌曲网络路径
+     * @param netUrl 歌曲网络路径
+     */
+    void setNetUrl(const QString& netUrl);
+
+    /**
      * @brief 设置歌曲热度
      * @param popular 热度值
      */

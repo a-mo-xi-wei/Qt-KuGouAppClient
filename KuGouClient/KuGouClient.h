@@ -137,6 +137,13 @@ private:
     void loadCoverAsync(MusicItemWidget *item, const QString &imageUrl);
 
     /**
+     * @brief 异步加载搜索结果里的音乐路径
+     * @param item 音乐项
+     * @param songHash 歌曲的网络哈希
+     */
+    void loadSongUrlAsync(MusicItemWidget *item, const QString &songHash);
+
+    /**
      * @brief 模板函数，初始化堆栈窗口组件
      * @tparam T 组件类型
      * @param component 组件智能指针

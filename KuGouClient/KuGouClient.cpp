@@ -475,6 +475,44 @@ void KuGouClient::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl)
     }));
 }
 
+void KuGouClient::loadSongUrlAsync(MusicItemWidget *item, const QString &songHash) {
+    auto watcher = new QFutureWatcher<QString>(this);
+    connect(watcher, &QFutureWatcher<QString>::finished, [item, watcher] {
+        item->setNetUrl(watcher->result());
+        //qDebug()<<"成功设置网络路径 :"<<watcher->result();
+        watcher->deleteLater();
+    });
+    watcher->setFuture(Async::runAsync([this, songHash] {
+        // 向服务端请求歌曲播放链接
+        const QString response = m_libHttp.UrlRequestGet(
+            "http://127.0.0.1:8080/api/getSongNetUrl",
+            "hash=" + QUrl::toPercentEncoding(songHash),
+            3000
+        );
+
+        if (response.isEmpty()) {
+            qWarning() << "播放链接请求失败: 空响应";
+            return QString();
+        }
+
+        QJsonParseError err;
+        QJsonDocument doc = QJsonDocument::fromJson(response.toUtf8(), &err);
+        if (err.error != QJsonParseError::NoError || !doc.isObject()) {
+            qWarning() << "播放链接响应无法解析: " << err.errorString();
+            return QString();
+        }
+
+        QJsonObject obj = doc.object();
+        if (obj["code"].toInt() != 0) {
+            qWarning() << "播放链接请求失败:" << obj["message"].toString();
+            return QString();
+        }
+
+        QString netUrl = obj["data"].toObject().value("url").toString();
+        return netUrl;
+    }));
+}
+
 // 模板函数实现
 template<typename T>
 void KuGouClient::initComponent(std::unique_ptr<T>& component, const int& index) {
@@ -1150,7 +1188,10 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
             if (!song.coverUrl.isEmpty()) {
                 loadCoverAsync(item, song.coverUrl);
             }
-
+            // 异步加载歌曲网络路径
+            if (!song.hash.isEmpty()) {
+                loadSongUrlAsync(item,song.hash);
+            }
             currentIndex++;
         });
 

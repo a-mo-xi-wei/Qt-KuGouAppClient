@@ -170,6 +170,7 @@ void KuGouServer::initRouter() {
     apiRouter["/api/searchSuggestion"] = [this](auto && PH1) { return onApiSearchSuggestion(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/searchSong"] = [this](auto && PH1) { return onApiSearchSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/getPicture"] = [this](auto && PH1) { return onApiGetPicture(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/getSongNetUrl"] = [this](auto && PH1) { return onApiGetSongNetUrl(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/addSong"] = [this](auto && PH1) { return onApiAddSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/delSong"] = [this](auto && PH1) { return onApiDelSong(std::forward<decltype(PH1)>(PH1)); };
     apiRouter["/api/login"] = [this](auto && PH1) { return onApiLogin(std::forward<decltype(PH1)>(PH1)); };
@@ -669,6 +670,103 @@ bool KuGouServer::onApiGetPicture(const QPointer<JQHttpServer::Session> &session
     catch (const std::exception& e) {
         QLOG_ERROR() << "Exception in onApiAddSong:" << e.what();
         session->replyBytes(SResult::failure(SResultCode::ServerInnerError),"application/json");
+        return false;
+    }
+}
+
+bool KuGouServer::onApiGetSongNetUrl(const QPointer<JQHttpServer::Session> &session) {
+    try {
+        QString hash = session->requestUrlQuery().value("hash");
+        if (hash.isEmpty()) {
+            session->replyBytes(SResult::failure(SResultCode::ParamLoss), "application/json");
+            QLOG_WARN() << "hash 参数缺失";
+            return false;
+        }
+
+        QPointer<JQHttpServer::Session> weakSession(session);
+        QThread* workerThread = new QThread();
+        QObject* worker = new QObject();
+        worker->moveToThread(workerThread);
+
+        connect(workerThread, &QThread::started, [=]() mutable {
+            QNetworkAccessManager manager;
+
+            QString kugouUrl = QString("http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash=%1").arg(hash);
+            QNetworkRequest request(kugouUrl);
+
+            QTimer timer;
+            timer.setSingleShot(true);
+
+            QNetworkReply* reply = manager.get(request);
+
+            QEventLoop loop;
+            connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+            connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
+            timer.start(5000);
+            loop.exec();
+
+            if (reply->error() == QNetworkReply::NoError && timer.isActive()) {
+                QByteArray responseData = reply->readAll();
+                QJsonParseError err;
+                QJsonDocument doc = QJsonDocument::fromJson(responseData, &err);
+
+                if (err.error == QJsonParseError::NoError && doc.isObject()) {
+                    QJsonObject obj = doc.object();
+                    QString url = obj.value("url").toString();
+
+                    if (!url.isEmpty()) {
+                        QJsonObject result{
+                            {"code", 0},
+                            {"message", "ok"},
+                            {"data", QJsonObject{
+                                {"url", url}
+                            }}
+                        };
+
+                        if (!weakSession.isNull()) {
+                            weakSession->replyBytes(QJsonDocument(result).toJson(), "application/json");
+                            QLOG_INFO() << "歌曲播放地址获取成功:" << url;
+                        }
+                    } else {
+                        if (!weakSession.isNull()) {
+                            weakSession->replyBytes(
+                                SResult::failure(SResultCode::ServerResourceNotFound),
+                                "application/json"
+                            );
+                            QLOG_WARN() << "未获取到播放地址 (url 为空)";
+                        }
+                    }
+                } else {
+                    QLOG_ERROR() << "解析 JSON 失败: " << err.errorString();
+                    if (!weakSession.isNull()) {
+                        weakSession->replyBytes(
+                            SResult::failure(SResultCode::ServerInnerError),
+                            "application/json"
+                        );
+                    }
+                }
+            } else {
+                QLOG_WARN() << "网络请求失败: " << reply->errorString();
+                if (!weakSession.isNull()) {
+                    weakSession->replyBytes(
+                        SResult::failure(SResultCode::ServerResourceNotFound),
+                        "application/json"
+                    );
+                }
+            }
+
+            reply->deleteLater();
+            worker->deleteLater();
+            workerThread->quit();
+        });
+
+        connect(workerThread, &QThread::finished, workerThread, &QObject::deleteLater);
+
+        workerThread->start();
+        return true;
+    } catch (const std::exception& e) {
+        QLOG_ERROR() << "onApiGetSongNetUrl 异常: " << e.what();
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
         return false;
     }
 }
