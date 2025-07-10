@@ -108,6 +108,8 @@ private:
      * @return bool 操作结果。
      */
     bool onApiSearchSong(const QPointer<JQHttpServer::Session> &session);
+    // 获取图片
+    bool onApiGetPicture(const QPointer<JQHttpServer::Session> &session);
     // 添加歌曲
     /**
      * @brief 处理添加歌曲 API。

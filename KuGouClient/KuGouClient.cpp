@@ -438,27 +438,40 @@ void KuGouClient::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl)
         item->setCover(watcher->result());
         watcher->deleteLater();
     });
+    //qDebug()<<"客户端发出图片请求："<<imageUrl;
+    watcher->setFuture(Async::runAsync([this,imageUrl] {
+        // 通过服务器API获取图片数据
 
-    watcher->setFuture(Async::runAsync([imageUrl] {
-        QNetworkAccessManager manager;
-        QNetworkRequest request(imageUrl);
-        QNetworkReply *imageReply = manager.get(request);
+        const QByteArray response = m_libHttp.UrlRequestGetRaw("http://127.0.0.1:8080/api/getPicture",
+            "url=" + QUrl::toPercentEncoding(imageUrl), 3000);
 
-        QEventLoop loop;
-        connect(&manager, &QNetworkAccessManager::finished, &loop, &QEventLoop::quit);
-        loop.exec();
+        // 检查响应是否有效
+        if (response.isEmpty()) {
+            qWarning() << "封面图片请求失败: 空响应";
+            return QPixmap();
+        }
 
+        // 尝试直接加载为图片
         QPixmap cover;
-        if (imageReply->error() == QNetworkReply::NoError) {
-            cover.loadFromData(imageReply->readAll());
-            //qDebug()<<"加载图片成功："<<cover;
+        if (cover.loadFromData(response)) {
+            //qDebug()<<"成功加载图片："<<cover;
+            return cover;
         }
-        else {
-            //qDebug() << "封面图片下载失败：" << imageReply->errorString();
-            return QPixmap(); // 如果失败，设置为空 QPixmap
+
+        // 如果直接加载失败，尝试解析JSON错误
+        QJsonParseError err;
+        QJsonDocument doc = QJsonDocument::fromJson(response, &err);
+
+        if (err.error == QJsonParseError::NoError && doc.isObject()) {
+            QJsonObject obj = doc.object();
+            qWarning() << "封面图片请求失败:"
+                      << obj["message"].toString()
+                      << "状态码:" << obj["code"].toInt();
+        } else {
+            qWarning() << "封面图片请求失败: 无法解析响应";
         }
-        imageReply->deleteLater();
-        return cover;
+
+        return QPixmap();
     }));
 }
 
