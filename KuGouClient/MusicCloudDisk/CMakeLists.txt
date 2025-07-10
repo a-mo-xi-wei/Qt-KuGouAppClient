@@ -23,5 +23,5 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/UploadingSong
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyMenu MyButton
-        MySlidingStackedWidget MySearchLineEdit ElaWidgetTools)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyMenu MyButton MySlidingStackedWidget
+        MySearchLineEdit ElaWidgetTools)

@@ -30,7 +30,7 @@ GalleryWidget::GalleryWidget(QWidget *parent)
     : QWidget(parent)
 {
     this->setCursor(Qt::PointingHandCursor);             ///< 设置手形光标
-    this->setAttribute(Qt::WA_OpaquePaintEvent);         ///< 启用不透明绘制
+    //this->setAttribute(Qt::WA_OpaquePaintEvent);         ///< 启用不透明绘制
 }
 
 /**

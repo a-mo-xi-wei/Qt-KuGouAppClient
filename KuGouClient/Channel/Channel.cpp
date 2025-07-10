@@ -132,20 +132,20 @@ void Channel::initUi()
             STREAM_WARN() << "布局不存在";               ///< 记录警告日志
             return;
         }
-        lay->insertWidget(lay->count() - 1, this->m_recommendWidget.get()); ///< 添加推荐分区
-        lay->insertWidget(lay->count() - 1, this->m_djWidget.get()); ///< 添加 DJ 分区
-        lay->insertWidget(lay->count() - 1, this->m_languageWidget.get()); ///< 添加语言分区
-        lay->insertWidget(lay->count() - 1, this->m_themeWidget.get()); ///< 添加主题分区
-        lay->insertWidget(lay->count() - 1, this->m_sceneWidget.get()); ///< 添加场景分区
-        lay->insertWidget(lay->count() - 1, this->m_moodWidget.get()); ///< 添加心情分区
-        lay->insertWidget(lay->count() - 1, this->m_styleWidget.get()); ///< 添加风格分区
-        lay->insertWidget(lay->count() - 1, this->m_crowdWidget.get()); ///< 添加人群分区
-        lay->insertWidget(lay->count() - 1, this->m_childrenWidget.get()); ///< 添加儿童分区
-        lay->insertWidget(lay->count() - 1, this->m_musicalInstrumentWidget.get()); ///< 添加乐器分区
-        lay->insertWidget(lay->count() - 1, this->m_labelWidget.get()); ///< 添加厂牌分区
-        lay->insertWidget(lay->count() - 1, this->m_varietyWidget.get()); ///< 添加综艺分区
-        lay->insertWidget(lay->count() - 1, this->m_nationalCustomsWidget.get()); ///< 添加国风分区
-        lay->insertWidget(lay->count() - 1, this->m_sportsWidget.get()); ///< 添加运动分区
+        lay->insertWidget(lay->count(), this->m_recommendWidget.get()); ///< 添加推荐分区
+        lay->insertWidget(lay->count(), this->m_djWidget.get()); ///< 添加 DJ 分区
+        lay->insertWidget(lay->count(), this->m_languageWidget.get()); ///< 添加语言分区
+        lay->insertWidget(lay->count(), this->m_themeWidget.get()); ///< 添加主题分区
+        lay->insertWidget(lay->count(), this->m_sceneWidget.get()); ///< 添加场景分区
+        lay->insertWidget(lay->count(), this->m_moodWidget.get()); ///< 添加心情分区
+        lay->insertWidget(lay->count(), this->m_styleWidget.get()); ///< 添加风格分区
+        lay->insertWidget(lay->count(), this->m_crowdWidget.get()); ///< 添加人群分区
+        lay->insertWidget(lay->count(), this->m_childrenWidget.get()); ///< 添加儿童分区
+        lay->insertWidget(lay->count(), this->m_musicalInstrumentWidget.get()); ///< 添加乐器分区
+        lay->insertWidget(lay->count(), this->m_labelWidget.get()); ///< 添加厂牌分区
+        lay->insertWidget(lay->count(), this->m_varietyWidget.get()); ///< 添加综艺分区
+        lay->insertWidget(lay->count(), this->m_nationalCustomsWidget.get()); ///< 添加国风分区
+        lay->insertWidget(lay->count(), this->m_sportsWidget.get()); ///< 添加运动分区
     }
     {
         this->m_vScrollBar = ui->scrollArea->verticalScrollBar(); ///< 获取垂直滚动条

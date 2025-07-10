@@ -83,6 +83,7 @@ void ListenTableWidget::initUi()
     ui->toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/refresh-gray.svg"))); ///< 设置默认图标
     ui->toolButton->setStyleSheet(R"(
         QToolButton#toolButton{
+            background-color: transparent;
             color: black;
         }
         QToolButton#toolButton:hover{

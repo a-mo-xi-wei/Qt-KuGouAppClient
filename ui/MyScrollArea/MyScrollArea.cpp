@@ -7,12 +7,12 @@
  */
 
 #include "MyScrollArea.h"
+#include "ElaScrollBar.h"
 #include "logger.hpp"
 
 #include <QEasingCurve>
 #include <QPropertyAnimation>
 #include <QWheelEvent>
-#include <QScrollBar>
 #include <QTimer>
 
 /**
@@ -26,7 +26,9 @@ MyScrollArea::MyScrollArea(QWidget *parent)
 {
     this->setMouseTracking(true);
     this->setWidgetResizable(true);
-
+    // 替换垂直滚动条
+    auto vBar = new ElaScrollBar(Qt::Vertical, this);
+    this->setVerticalScrollBar(vBar);
     // 连接返回顶部按钮的点击信号
     connect(this->m_upBtn.get(), &QToolButton::clicked, this, &MyScrollArea::onUpBtnClicked);
     // 连接定时器信号以控制返回顶部按钮的显示

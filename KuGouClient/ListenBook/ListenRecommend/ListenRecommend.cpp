@@ -101,121 +101,48 @@ void ListenRecommend::initUi()
  */
 void ListenRecommend::initTableWidgets()
 {
-    const auto lay = new QVBoxLayout(ui->table_widgets); ///< 创建垂直布局
-    lay->setContentsMargins(0, 0, 0, 0);                ///< 设置布局边距
-    lay->setSpacing(0);                                  ///< 设置控件间距
-    // 有声小说
-    const auto audioNovel = new ListenTableWidget(ui->table_widgets);
-    audioNovel->setCnt(1);                               ///< 设置计数
-    audioNovel->setTitle("有声小说");                    ///< 设置标题
-    connect(audioNovel, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked); ///< 连接刷新信号
-    initOtherGalleryWidget("audioNovel", audioNovel);    ///< 初始化画廊
-    // 儿童天地
-    const auto childrenWorld = new ListenTableWidget(ui->table_widgets);
-    childrenWorld->setCnt(2);
-    childrenWorld->setTitle("儿童天地");
-    connect(childrenWorld, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("childrenWorld", childrenWorld);
-    // 评书
-    const auto commentBook = new ListenTableWidget(ui->table_widgets);
-    commentBook->setCnt(3);
-    commentBook->setTitle("评书");
-    connect(commentBook, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("commentBook", commentBook);
-    // 助眠解压
-    const auto helpSleep = new ListenTableWidget(ui->table_widgets);
-    helpSleep->setCnt(4);
-    helpSleep->setTitle("助眠解压");
-    connect(helpSleep, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("sleepHelp", helpSleep);
-    // 人文
-    const auto humanities = new ListenTableWidget(ui->table_widgets);
-    humanities->setCnt(5);
-    humanities->setTitle("人文");
-    connect(humanities, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("humanity", humanities);
-    // 自我充电
-    const auto selfCharge = new ListenTableWidget(ui->table_widgets);
-    selfCharge->setCnt(6);
-    selfCharge->setTitle("自我充电");
-    connect(selfCharge, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("chongdian", selfCharge);
-    // 相声曲艺
-    const auto voiceArt = new ListenTableWidget(ui->table_widgets);
-    voiceArt->setCnt(7);
-    voiceArt->setTitle("相声曲艺");
-    connect(voiceArt, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("xiangsheng", voiceArt);
-    // 情感生活
-    const auto emotionLife = new ListenTableWidget(ui->table_widgets);
-    emotionLife->setCnt(8);
-    emotionLife->setTitle("情感生活");
-    connect(emotionLife, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("qinggan", emotionLife);
-    // 广播剧
-    const auto radioDrama = new ListenTableWidget(ui->table_widgets);
-    radioDrama->setCnt(9);
-    radioDrama->setTitle("广播剧");
-    connect(radioDrama, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("guangboju", radioDrama);
-    // 娱乐段子
-    const auto entertainmentJoke = new ListenTableWidget(ui->table_widgets);
-    entertainmentJoke->setCnt(10);
-    entertainmentJoke->setTitle("娱乐段子");
-    connect(entertainmentJoke, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("yule", entertainmentJoke);
-    // 二次元
-    const auto anime = new ListenTableWidget(ui->table_widgets);
-    anime->setCnt(11);
-    anime->setTitle("二次元");
-    connect(anime, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("erciyuan", anime);
-    // 播客
-    const auto podcast = new ListenTableWidget(ui->table_widgets);
-    podcast->setCnt(12);
-    podcast->setTitle("播客");
-    connect(podcast, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("boke", podcast);
-    // 粤语
-    const auto yue = new ListenTableWidget(ui->table_widgets);
-    yue->setCnt(13);
-    yue->setTitle("粤语");
-    connect(yue, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("yueyu", yue);
-    // 外语
-    const auto foreignLanguage = new ListenTableWidget(ui->table_widgets);
-    foreignLanguage->setCnt(14);
-    foreignLanguage->setTitle("外语");
-    connect(foreignLanguage, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("waiyu", foreignLanguage);
-    // 创作翻唱
-    const auto creativeSing = new ListenTableWidget(ui->table_widgets);
-    creativeSing->setCnt(15);
-    creativeSing->setTitle("创作翻唱");
-    connect(creativeSing, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("createCover", creativeSing);
-    // DJ电音
-    const auto djElectronic = new ListenTableWidget(ui->table_widgets);
-    djElectronic->setCnt(16);
-    djElectronic->setTitle("DJ电音");
-    connect(djElectronic, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-    initOtherGalleryWidget("djElectronic", djElectronic);
-    lay->addWidget(audioNovel);                          ///< 添加表格控件
-    lay->addWidget(childrenWorld);
-    lay->addWidget(commentBook);
-    lay->addWidget(helpSleep);
-    lay->addWidget(humanities);
-    lay->addWidget(selfCharge);
-    lay->addWidget(voiceArt);
-    lay->addWidget(emotionLife);
-    lay->addWidget(radioDrama);
-    lay->addWidget(entertainmentJoke);
-    lay->addWidget(anime);
-    lay->addWidget(podcast);
-    lay->addWidget(yue);
-    lay->addWidget(foreignLanguage);
-    lay->addWidget(creativeSing);
-    lay->addWidget(djElectronic);
+    // 结构体保存初始化信息
+    struct TableInfo {
+        int cnt;
+        QString title;
+        QString galleryName;
+    };
+
+    // 初始化数据
+    const QVector<TableInfo> tableList = {
+        {1, "有声小说", "audioNovel"},
+        {2, "儿童天地", "childrenWorld"},
+        {3, "评书", "commentBook"},
+        {4, "助眠解压", "sleepHelp"},
+        {5, "人文", "humanity"},
+        {6, "自我充电", "chongdian"},
+        {7, "相声曲艺", "xiangsheng"},
+        {8, "情感生活", "qinggan"},
+        {9, "广播剧", "guangboju"},
+        {10, "娱乐段子", "yule"},
+        {11, "二次元", "erciyuan"},
+        {12, "播客", "boke"},
+        {13, "粤语", "yueyu"},
+        {14, "外语", "waiyu"},
+        {15, "创作翻唱", "createCover"},
+        {16, "DJ电音", "djElectronic"},
+    };
+
+    // 创建布局
+    const auto lay = new QVBoxLayout(ui->table_widgets);
+    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setSpacing(0);
+
+    // 遍历并创建控件
+    for (const auto &info : tableList) {
+        auto widget = new ListenTableWidget(ui->table_widgets);
+        widget->setCnt(info.cnt);
+        widget->setTitle(info.title);
+        connect(widget, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
+        initOtherGalleryWidget(info.galleryName, widget);
+        lay->addWidget(widget);
+    }
+
 }
 
 /**

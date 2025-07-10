@@ -1,21 +1,4 @@
-#LocalSong{
-    background-color: transparent;
-}
 QWidget#widget{
-    background-color: transparent;
-}
-/* 设置QScrollArea本身透明 */
-QScrollArea#scrollArea {
-    background-color: transparent;
-}
-
-/* 单独设置视口（viewport）透明 */
-QScrollArea#scrollArea::viewport {
-    background-color: transparent;
-}
-
-/* 设置内容区域透明（scrollAreaWidgetContents） */
-QScrollArea#scrollArea > QWidget > QWidget#scrollAreaWidgetContents {
     background-color: transparent;
 }
 /*--------------------operation_widget------------------------------*/

@@ -1,5 +1,11 @@
-#chatView *{
-    background-color: rgba(255,255,255,0);
+/* 设置整个聊天视图透明 */
+ChatView {
+    background-color: transparent;
+}
+
+/* 设置滚动区域视口透明 */
+ChatView > QScrollArea {
+    background-color: transparent;
 }
 
 #chat_user_name{
@@ -23,39 +29,6 @@
     border-radius: 15px; /* 设置圆角 */
 }
 
-/*-------------------滚动区域滚动条----------------------*/
-/* 只作用于 #chat_scroll_area 里的纵向滚动条 */
-#chat_scroll_area QScrollBar:vertical {
-    border: 0px solid rgb(173,216,230);
-    border-radius:4px;
-    /*background-color: rgb(231,166,190);*/
-    width: 10px;
-    margin: 20px 0px 20px 0px;
-}
-
-#chat_scroll_area QScrollBar:vertical:hover {
-    border: 1px solid rgb(173,216,230);
-    /*background-color: rgb(231,166,190);*/
-}
-
-/* 滑块 */
-#chat_scroll_area QScrollBar::handle:vertical {
-    background-color: rgb(95, 159, 211);
-    border-radius: 4px;
-}
-#chat_scroll_area QScrollBar::handle:vertical:hover {
-    background-color: rgb(80, 143, 206);
-}
-
-/* 箭头和空白区域 */
-#chat_scroll_area QScrollBar::up-arrow:vertical,
-#chat_scroll_area QScrollBar::down-arrow:vertical,
-#chat_scroll_area QScrollBar::add-page:vertical,
-#chat_scroll_area QScrollBar::sub-page:vertical,
-#chat_scroll_area QScrollBar::add-line:vertical,
-#chat_scroll_area QScrollBar::sub-line:vertical {
-    background: none;
-}
 /*-------------------send_widget----------------------*/
 
 #question_textEdit{

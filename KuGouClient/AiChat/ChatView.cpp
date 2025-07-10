@@ -57,26 +57,25 @@ ChatView::ChatView(QWidget *parent)
     pMainLayout->setContentsMargins(0, 0, 0, 0);        ///< 设置边距
 
     m_pScrollArea = new MyScrollArea();                  ///< 创建滚动区域
+    m_pScrollArea->setObjectName("scrollArea");
     m_pScrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); ///< 设置扩展策略
-    m_pScrollArea->setObjectName("chat_scroll_area");    ///< 设置对象名称
     m_pScrollArea->setFrameShape(QFrame::NoFrame);       ///< 设置无边框
     pMainLayout->addWidget(m_pScrollArea);               ///< 添加滚动区域
 
     auto w = new QWidget(this);                          ///< 创建内容控件
-    w->setObjectName("chat_bg");                         ///< 设置对象名称
-    w->setAutoFillBackground(true);                      ///< 启用背景填充
     w->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); ///< 设置扩展策略
     auto pVLayout_1 = new QVBoxLayout(w);                ///< 创建垂直布局
     pVLayout_1->addStretch();                            ///< 添加底部拉伸
     m_pScrollArea->setWidget(w);                         ///< 设置滚动区域内容
 
+    // 设置滚动区域透明
+    w->setAttribute(Qt::WA_TranslucentBackground);
+    w->setAutoFillBackground(false);
+
     m_pScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn); ///< 显示垂直滚动条
     m_pScrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); ///< 隐藏水平滚动条
     auto pVScrollBar = m_pScrollArea->verticalScrollBar(); ///< 获取垂直滚动条
     connect(pVScrollBar, &QScrollBar::rangeChanged, this, &ChatView::onVScrollBarMoved); ///< 连接滚动条范围变化信号
-
-    m_pScrollArea->setWidgetResizable(true);             ///< 启用控件大小调整
-    m_pScrollArea->installEventFilter(this);             ///< 安装事件过滤器
 
     m_centerInitWidget->setParent(m_pScrollArea->viewport()); ///< 设置居中部件父对象
     m_centerInitWidget->setAttribute(Qt::WA_TransparentForMouseEvents); ///< 穿透鼠标事件
@@ -84,6 +83,7 @@ ChatView::ChatView(QWidget *parent)
     auto *opacityEffect = new QGraphicsOpacityEffect(m_centerInitWidget); ///< 创建透明度效果
     opacityEffect->setOpacity(1.0);                      ///< 设置初始透明度
     m_centerInitWidget->setGraphicsEffect(opacityEffect); ///< 设置透明度效果
+
 }
 
 /**
@@ -259,37 +259,6 @@ void ChatView::startFadeInAnimation()
 }
 
 /**
- * @brief 事件过滤器
- * @param o 目标对象
- * @param e 事件对象
- * @return 是否处理事件
- */
-bool ChatView::eventFilter(QObject *o, QEvent *e)
-{
-    if (e->type() == QEvent::Enter && o == m_pScrollArea)
-    {
-        m_pScrollArea->verticalScrollBar()->setHidden(m_pScrollArea->verticalScrollBar()->maximum() == 0); ///< 显示滚动条
-    }
-    else if (e->type() == QEvent::Leave && o == m_pScrollArea)
-    {
-        m_pScrollArea->verticalScrollBar()->setHidden(true); ///< 隐藏滚动条
-    }
-    return QWidget::eventFilter(o, e);                   ///< 调用基类方法
-}
-
-/**
- * @brief 绘制事件
- * @param event 绘制事件对象
- */
-void ChatView::paintEvent(QPaintEvent *event)
-{
-    QStyleOption opt;
-    opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this); ///< 绘制控件
-}
-
-/**
  * @brief 调整大小事件
  * @param event 调整大小事件对象
  */
@@ -308,7 +277,7 @@ void ChatView::onVScrollBarMoved(int min, int max)
 {
     if (isAppended)                                      ///< 检查追加状态
     {
-        QScrollBar *pVScrollBar = m_pScrollArea->verticalScrollBar(); ///< 获取滚动条
+        auto pVScrollBar = m_pScrollArea->verticalScrollBar(); ///< 获取滚动条
         pVScrollBar->setSliderPosition(pVScrollBar->maximum()); ///< 滚动到底部
         QTimer::singleShot(500, [this]() {
             isAppended = false;                          ///< 重置追加状态
