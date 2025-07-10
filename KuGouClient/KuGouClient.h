@@ -567,10 +567,8 @@ private:
     VideoPlayer* m_player;                                   ///< 音频播放器实例
     std::unique_ptr<QButtonGroup>       m_menuBtnGroup;      ///< 菜单按钮组
     std::unique_ptr<QSizeGrip>          m_sizeGrip;          ///< 窗口大小调整控件
-    std::unique_ptr<QPropertyAnimation> m_animation;         ///< 窗口缩放动画
     std::unique_ptr<RefreshMask>        m_refreshMask;       ///< 刷新遮罩
     std::unique_ptr<QtMaterialSnackbar> m_snackbar;          ///< 消息提示条
-    SpeedDialogState                    m_speedDialogState;  ///< 状态管理对象
     // 堆栈窗口组件
     std::unique_ptr<RecommendForYou>    m_recommendForYou; ///< 推荐界面
     std::unique_ptr<MusicRepository>    m_musicRepository; ///< 音乐库界面
@@ -603,7 +601,7 @@ private:
     QString m_musicTitle;                               ///< 当前歌曲标题
     QString m_musicArtist;                              ///< 当前歌曲艺术家
     // 服务器交互
-    CLibhttp                             m_libHttp;                 ///< HTTP 请求库
+    CLibhttp   m_libHttp;                               ///< HTTP 请求库
 };
 
 #endif // KUGOUCLIENT_H

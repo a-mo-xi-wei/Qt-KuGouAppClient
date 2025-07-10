@@ -26,29 +26,30 @@
 ChatView::ChatView(QWidget *parent)
     : QWidget(parent)
     , isAppended(false)
-    , m_logo(new QLabel(this))
-    , m_helloText(new QLabel(this))
-    , m_funcText(new QLabel(this))
     , m_centerInitWidget(new QWidget(this))
 {
     {
-        this->m_logo->setFixedSize(50, 50);              ///< 设置 Logo 尺寸
-        this->m_logo->setPixmap(QPixmap(":/Res/window/deepseek.png").scaled(this->m_logo->size())); ///< 设置 Logo 图片
-        this->m_helloText->setFixedHeight(70);           ///< 设置欢迎文本高度
-        this->m_helloText->setText("我是DeepSeek, 很高兴见到你!"); ///< 设置欢迎文本
-        this->m_helloText->setStyleSheet("color: black;font-size: 22px;"); ///< 设置欢迎文本样式
+        auto logoLab = new QLabel(this);              ///< Logo 标签
+        logoLab->setFixedSize(50, 50);              ///< 设置 Logo 尺寸
+        logoLab->setPixmap(QPixmap(":/Res/window/deepseek.png").scaled(logoLab->size())); ///< 设置 Logo 图片
+        auto helloTextLab = new QLabel(this);
+        helloTextLab->setFixedHeight(70);           ///< 设置欢迎文本高度
+        helloTextLab->setText("我是DeepSeek, 很高兴见到你!"); ///< 设置欢迎文本
+        helloTextLab->setStyleSheet("color: black;font-size: 22px;"); ///< 设置欢迎文本样式
         auto hlay = new QHBoxLayout;                     ///< 创建水平布局
         hlay->setSpacing(20);                            ///< 设置间距
         hlay->setAlignment(Qt::AlignCenter);             ///< 设置居中对齐
-        hlay->addWidget(this->m_logo);                   ///< 添加 Logo
-        hlay->addWidget(this->m_helloText);              ///< 添加欢迎文本
-        this->m_funcText->setText("我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~"); ///< 设置功能描述
-        this->m_funcText->setStyleSheet("color: #404040;font-size: 13px;"); ///< 设置功能描述样式
+        hlay->addWidget(logoLab);                   ///< 添加 Logo
+        hlay->addWidget(helloTextLab);              ///< 添加欢迎文本
+        auto funcTextLab = new QLabel(this);           ///< 功能描述标签
+        
+        funcTextLab->setText("我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~"); ///< 设置功能描述
+        funcTextLab->setStyleSheet("color: #404040;font-size: 13px;"); ///< 设置功能描述样式
         auto vlay = new QVBoxLayout(this->m_centerInitWidget); ///< 创建垂直布局
         vlay->setAlignment(Qt::AlignCenter);             ///< 设置居中对齐
         vlay->setSpacing(20);                            ///< 设置间距
         vlay->addLayout(hlay);                           ///< 添加水平布局
-        vlay->addWidget(this->m_funcText);               ///< 添加功能描述
+        vlay->addWidget(funcTextLab);               ///< 添加功能描述
         this->m_centerInitWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); ///< 设置扩展策略
     }
 
