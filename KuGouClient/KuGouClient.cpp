@@ -283,22 +283,22 @@ void KuGouClient::initStackedWidget() {
          * // initComponent(m_recentlyPlayed,14);
          * // initComponent(m_allMusic,15);
          */
-        // initComponent(m_live,0);                               ///< 初始化直播界面
-        // initComponent(m_listenBook,1);                         ///< 初始化听书界面
-        // initComponent(m_search,2);                             ///< 初始化探索界面
+        initComponent(m_live,0);                               ///< 初始化直播界面
+        initComponent(m_listenBook,1);                         ///< 初始化听书界面
+        initComponent(m_search,2);                             ///< 初始化探索界面
         initComponent(m_recommendForYou,3);                    ///< 初始化为你推荐界面
         initComponent(m_musicRepository,4);                    ///< 初始化乐库界面
-        // initComponent(m_channel,5);                            ///< 初始化频道界面
-        // initComponent(m_video,6);                              ///< 初始化视频界面
-        // initComponent(m_aiChat,7);                             ///< 初始化ai对话界面
-        // initComponent(m_songList,8);                           ///< 初始化歌单界面
-        // initComponent(m_dailyRecommend,9);                     ///< 初始化每日推荐界面
-        // initComponent(m_collection,10);                        ///< 初始化收藏界面
-        // initComponent(m_localDownload,11);                     ///< 初始化本地与下载界面
-        // initComponent(m_musicCloudDisk,12);                    ///< 初始化音乐云盘界面
-        // initComponent(m_purchasedMusic,13);                    ///< 初始化已购音乐界面
-        // initComponent(m_recentlyPlayed,14);                    ///< 初始化最近播放界面
-        // initComponent(m_allMusic,15);                          ///< 初始化全部音乐界面
+        initComponent(m_channel,5);                            ///< 初始化频道界面
+        initComponent(m_video,6);                              ///< 初始化视频界面
+        initComponent(m_aiChat,7);                             ///< 初始化ai对话界面
+        initComponent(m_songList,8);                           ///< 初始化歌单界面
+        initComponent(m_dailyRecommend,9);                     ///< 初始化每日推荐界面
+        initComponent(m_collection,10);                        ///< 初始化收藏界面
+        initComponent(m_localDownload,11);                     ///< 初始化本地与下载界面
+        initComponent(m_musicCloudDisk,12);                    ///< 初始化音乐云盘界面
+        initComponent(m_purchasedMusic,13);                    ///< 初始化已购音乐界面
+        initComponent(m_recentlyPlayed,14);                    ///< 初始化最近播放界面
+        initComponent(m_allMusic,15);                          ///< 初始化全部音乐界面
     }
 
     // @note 响应相关跳转
@@ -318,111 +318,120 @@ void KuGouClient::initStackedWidget() {
     connect(this, &KuGouClient::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle); ///< 连接最大化屏幕处理
 }
 
+/**
+ * @brief 初始化搜索结果界面
+ */
 void KuGouClient::initSearchResultWidget() {
+    // 初始化搜索结果界面并添加到堆栈窗口
     this->m_searchResultWidget = std::make_unique<QWidget>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_searchResultWidget.get()); ///< 添加搜索结果界面
-    this->m_searchResultWidget->setObjectName("searchResultWidget");
+    ui->stackedWidget->addWidget(this->m_searchResultWidget.get()); ///< 将搜索结果界面添加到堆栈窗口
+    this->m_searchResultWidget->setObjectName("searchResultWidget"); ///< 设置对象名称，便于样式管理
 
+    // 创建顶部水平布局，显示搜索结果标题
     auto hlay1 = new QHBoxLayout; ///< 搜索结果顶部水平布局
     {
         auto topLab = new QLabel("搜索到相关歌曲");
-        topLab->setObjectName("searchResultTopLabel");
-        hlay1->addSpacing(15);
-        hlay1->addWidget(topLab);
-        hlay1->addStretch();
+        topLab->setObjectName("searchResultTopLabel"); ///< 设置标签对象名称
+        hlay1->addSpacing(15); ///< 添加左侧间距
+        hlay1->addWidget(topLab); ///< 添加标题标签
+        hlay1->addStretch(); ///< 添加弹性空间，推右对齐
     }
+
+    // 创建中间水平布局，包含功能按钮
     auto hlay2 = new QHBoxLayout; ///< 搜索结果中间水平布局
     {
-        hlay2->setSpacing(15);
+        hlay2->setSpacing(15); ///< 设置按钮间距
+        // 创建“播放全部”按钮
         auto playAllBtn = new QToolButton;
-        playAllBtn->setObjectName("searchResultWidget-playAllBtn");
-        playAllBtn->setCursor(Qt::PointingHandCursor);
-        playAllBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置播放全部按钮样式
-        playAllBtn->setFixedSize(100, 30); ///< 设置播放全部按钮大小
-        playAllBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
+        playAllBtn->setObjectName("searchResultWidget-playAllBtn"); ///< 设置对象名称
+        playAllBtn->setCursor(Qt::PointingHandCursor); ///< 设置鼠标悬停为手型
+        playAllBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置图标+文本样式
+        playAllBtn->setFixedSize(100, 30); ///< 设置固定大小
+        playAllBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放图标
         playAllBtn->setText("播放全部");
+
+        // 创建“高潮试听”按钮
         auto highListenBtn = new QToolButton;
-        highListenBtn->setObjectName("searchResultWidget-highListenBtn");
-        highListenBtn->setCursor(Qt::PointingHandCursor);
-        highListenBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置高音质按钮样式
-        highListenBtn->setFixedSize(100, 30); ///< 设置高音质按钮大小
-        highListenBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/highListen-white.svg"))); ///< 设置高音质按钮图标
+        highListenBtn->setObjectName("searchResultWidget-highListenBtn"); ///< 设置对象名称
+        highListenBtn->setCursor(Qt::PointingHandCursor); ///< 设置鼠标悬停为手型
+        highListenBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置图标+文本样式
+        highListenBtn->setFixedSize(100, 30); ///< 设置固定大小
+        highListenBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/highListen-white.svg"))); ///< 设置高音质图标
         highListenBtn->setText("高潮试听");
+
+        // 创建“下载全部”按钮
         auto downloadAllBtn = new QToolButton;
-        downloadAllBtn->setObjectName("searchResultWidget-downloadAllBtn");
-        downloadAllBtn->setCursor(Qt::PointingHandCursor);
-        downloadAllBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置下载按钮样式
-        downloadAllBtn->setFixedSize(100, 30); ///< 设置下载按钮大小
-        downloadAllBtn->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg"))); ///< 设置下载按钮图标
+        downloadAllBtn->setObjectName("searchResultWidget-downloadAllBtn"); ///< 设置对象名称
+        downloadAllBtn->setCursor(Qt::PointingHandCursor); ///< 设置鼠标悬停为手型
+        downloadAllBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置图标+文本样式
+        downloadAllBtn->setFixedSize(100, 30); ///< 设置固定大小
+        downloadAllBtn->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg"))); ///< 设置下载图标
         downloadAllBtn->setText("下载全部");
+
+        // 创建“批量操作”按钮
         auto batchOperationBtn = new QToolButton;
-        batchOperationBtn->setObjectName("searchResultWidget-batchOperationBtn");
-        batchOperationBtn->setCursor(Qt::PointingHandCursor);
-        batchOperationBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置批量操作按钮样式
-        batchOperationBtn->setFixedSize(100, 30); ///< 设置批量操作按钮大小
-        batchOperationBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/batch-operation-black.svg"))); ///< 设置批量操作按钮图标
+        batchOperationBtn->setObjectName("searchResultWidget-batchOperationBtn"); ///< 设置对象名称
+        batchOperationBtn->setCursor(Qt::PointingHandCursor); ///< 设置鼠标悬停为手型
+        batchOperationBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置图标+文本样式
+        batchOperationBtn->setFixedSize(100, 30); ///< 设置固定大小
+        batchOperationBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/batch-operation-black.svg"))); ///< 设置批量操作图标
         batchOperationBtn->setText("批量操作");
-        hlay2->addSpacing(15);
+
+        // 将按钮添加到水平布局
+        hlay2->addSpacing(15); ///< 添加左侧间距
         hlay2->addWidget(playAllBtn);
         hlay2->addWidget(highListenBtn);
         hlay2->addWidget(downloadAllBtn);
         hlay2->addWidget(batchOperationBtn);
-        hlay2->addStretch();
-        connect(playAllBtn,&QToolButton::clicked, [this,playAllBtn] {
+        hlay2->addStretch(); ///< 添加弹性空间，推右对齐
+
+        // 连接按钮点击信号，显示功能未实现的提示
+        connect(playAllBtn, &QToolButton::clicked, [this, playAllBtn] {
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
                              QString("%1 功能暂未实现 敬请期待").arg(playAllBtn->text()),
-                             1000, this->window());    ///< 显示提示
+                             1000, this->window()); ///< 显示提示信息
         });
-        connect(highListenBtn,&QToolButton::clicked, [this,highListenBtn] {
+        connect(highListenBtn, &QToolButton::clicked, [this, highListenBtn] {
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
                              QString("%1 功能暂未实现 敬请期待").arg(highListenBtn->text()),
-                             1000, this->window());    ///< 显示提示
-            });
-        connect(downloadAllBtn,&QToolButton::clicked, [this,downloadAllBtn] {
+                             1000, this->window()); ///< 显示提示信息
+        });
+        connect(downloadAllBtn, &QToolButton::clicked, [this, downloadAllBtn] {
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
                              QString("%1 功能暂未实现 敬请期待").arg(downloadAllBtn->text()),
-                             1000, this->window());    ///< 显示提示
+                             1000, this->window()); ///< 显示提示信息
         });
-        connect(batchOperationBtn,&QToolButton::clicked, [this,batchOperationBtn] {
+        connect(batchOperationBtn, &QToolButton::clicked, [this, batchOperationBtn] {
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
                              QString("%1 功能暂未实现 敬请期待").arg(batchOperationBtn->text()),
-                             1000, this->window());    ///< 显示提示
+                             1000, this->window()); ///< 显示提示信息
         });
     }
 
+    // 创建滚动区域
     auto scrollArea = new MyScrollArea;
-    scrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); ///< 设置扩展策略
+    scrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); ///< 设置滚动区域扩展策略
     scrollArea->setObjectName("searchResultWidgetScrollArea"); ///< 设置对象名称
-    scrollArea->setFrameShape(QFrame::NoFrame); ///< 设置无边框
+    scrollArea->setFrameShape(QFrame::NoFrame); ///< 设置无边框样式
     auto scrollWidget = new QWidget;
-    scrollWidget->setObjectName("searchResultWidgetScrollWidget");
-    scrollWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    // 设置滚动区域透明
-    scrollWidget->setAttribute(Qt::WA_TranslucentBackground);
-    scrollWidget->setAutoFillBackground(false);
-    auto scrollWidgetVLay = new QVBoxLayout(scrollWidget);
-    scrollWidgetVLay->addStretch();
-    scrollArea->setWidget(scrollWidget);
-    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn); ///< 显示垂直滚动条
+    scrollWidget->setObjectName("searchResultWidgetScrollWidget"); ///< 设置滚动内容区域对象名称
+    scrollWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); ///< 设置扩展策略
+    scrollWidget->setAttribute(Qt::WA_TranslucentBackground); ///< 设置滚动内容区域透明
+    scrollWidget->setAutoFillBackground(false); ///< 禁用自动填充背景
+    auto scrollWidgetVLay = new QVBoxLayout(scrollWidget); ///< 创建滚动内容垂直布局
+    scrollWidgetVLay->addStretch(); ///< 添加弹性空间，确保内容顶部对齐
+    scrollArea->setWidget(scrollWidget); ///< 将内容区域设置为滚动区域的子控件
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn); ///< 始终显示垂直滚动条
     scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); ///< 隐藏水平滚动条
 
-
-    auto vlay = new QVBoxLayout(this->m_searchResultWidget.get()); ///< 搜索结果中间垂直布局
-    vlay->setSpacing(10);
-    vlay->addLayout(hlay1);
-    vlay->addSpacing(5);
-    vlay->addLayout(hlay2);
-    vlay->addWidget(scrollArea);
-    vlay->addSpacerItem(new QSpacerItem(QSizePolicy::Preferred, QSizePolicy::Preferred));
-}
-
-void KuGouClient::initSearchResultMusicItem(MusicItemWidget *item) {
-    item->setFillColor(QColor(QStringLiteral("#B0EDF6"))); ///< 设置高亮颜色
-    item->setRadius(12); ///< 设置圆角
-    item->setInterval(1); ///< 设置间隔
-    // connect(item, &MusicItemWidget::play, this, [item, this] {
-    //     setPlayItemHighlight(item);                      ///< 设置高亮
-    // });
+    // 创建主垂直布局，组合所有子布局和控件
+    auto vlay = new QVBoxLayout(this->m_searchResultWidget.get()); ///< 主垂直布局
+    vlay->setSpacing(10); ///< 设置子控件间距
+    vlay->addLayout(hlay1); ///< 添加顶部水平布局
+    vlay->addSpacing(5); ///< 添加额外间距
+    vlay->addLayout(hlay2); ///< 添加中间按钮布局
+    vlay->addWidget(scrollArea); ///< 添加滚动区域
+    vlay->addSpacerItem(new QSpacerItem(QSizePolicy::Preferred, QSizePolicy::Preferred)); ///< 添加底部弹性空间
 }
 
 /**
@@ -473,6 +482,11 @@ void KuGouClient::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl)
     }));
 }
 
+/**
+ * @brief 异步加载歌曲播放链接
+ * @param item 音乐项控件，用于设置播放链接
+ * @param songHash 歌曲的唯一标识
+ */
 void KuGouClient::loadSongUrlAsync(MusicItemWidget *item, const QString &songHash) {
     auto watcher = new QFutureWatcher<QString>(this);
     connect(watcher, &QFutureWatcher<QString>::finished, [item, watcher] {
@@ -511,11 +525,11 @@ void KuGouClient::loadSongUrlAsync(MusicItemWidget *item, const QString &songHas
     }));
 }
 
-// 模板函数实现
+// 模板函数实现，初始化堆栈窗口中的组件
 template<typename T>
 void KuGouClient::initComponent(std::unique_ptr<T>& component, const int& index) {
-    component = std::make_unique<T>(ui->stackedWidget);
-    ui->stackedWidget->insertWidget(index, component.get());
+    component = std::make_unique<T>(ui->stackedWidget); ///< 创建组件实例
+    ui->stackedWidget->insertWidget(index, component.get()); ///< 插入到堆栈窗口的指定索引位置
 }
 
 /**
@@ -1183,7 +1197,9 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
             auto item = new MusicItemWidget(song, this);
             item->setPopular(6 - currentIndex);
             item->setIndexText(currentIndex + 1);
-            initSearchResultMusicItem(item);
+            item->setFillColor(QColor(QStringLiteral("#B0EDF6"))); ///< 设置高亮颜色
+            item->setRadius(12); ///< 设置圆角
+            item->setInterval(1); ///< 设置间隔
 
             layout->insertWidget(layout->count() - 1, item);
             m_searchMusicItemVector.append(item);

@@ -124,12 +124,6 @@ private:
     void initSearchResultWidget();
 
     /**
-     * @brief 初始化搜索结果音乐项
-     * @param item 音乐项
-     */
-    void initSearchResultMusicItem(MusicItemWidget *item);
-
-    /**
      * @brief 异步加载搜索结果里面的封面图片
      * @param item 音乐项
      * @param imageUrl 封面图片的网络路径
