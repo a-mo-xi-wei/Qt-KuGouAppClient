@@ -74,13 +74,6 @@ private slots:
 
 protected:
     /**
-     * @brief 调整大小事件
-     * @param event 调整大小事件对象
-     * @note 重写基类方法
-     */
-    void resizeEvent(QResizeEvent *event) override;
-
-    /**
      * @brief 鼠标按下事件
      * @param event 鼠标事件对象
      * @note 重写基类方法

@@ -55,14 +55,6 @@ private:
      */
     void initTabWidget();
 
-protected:
-    /**
-     * @brief 调整大小事件
-     * @param event 调整大小事件
-     * @note 调整滚动区域高度
-     */
-    void resizeEvent(QResizeEvent *event) override;
-
 private:
     Ui::RecommendForYou *ui; ///< UI 界面指针
 };

@@ -67,18 +67,11 @@ private:
      */
     void initMusicItem(MusicItemWidget *item);
 
-protected:
+private slots:
     /**
-     * @brief 调整大小事件，调整滚动区域高度
-     * @param event 调整大小事件
+     * @brief 历史推荐按钮点击槽函数
      */
-    void resizeEvent(QResizeEvent *event) override;
-
-    private slots:
-        /**
-         * @brief 历史推荐按钮点击槽函数
-         */
-        void on_history_recommend_toolButton_clicked();
+    void on_history_recommend_toolButton_clicked();
 
     /**
      * @brief 播放按钮点击槽函数

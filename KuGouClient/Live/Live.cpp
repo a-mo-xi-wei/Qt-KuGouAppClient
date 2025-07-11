@@ -401,7 +401,6 @@ void Live::on_all_toolButton_clicked()
 void Live::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);                         ///< 调用父类事件
-    ui->scrollArea->setFixedHeight(this->window()->height() - 255); ///< 设置滚动区域高度
     ui->popular_widget->setFixedHeight(ui->popular_widget->width() * 2 / 5); ///< 设置热门控件高度
     ui->table_widget->setFixedWidth(this->window()->width() - 50); ///< 设置表格宽度
 }

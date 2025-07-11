@@ -343,7 +343,6 @@ void MusicRepository::resizeEvent(QResizeEvent *event)
         }
         lastVisibleState = newVisibleState;                 ///< 更新可见状态
     }
-    ui->scrollArea->setFixedHeight(this->window()->height() - 180); ///< 设置滚动区域高度
 }
 
 /**

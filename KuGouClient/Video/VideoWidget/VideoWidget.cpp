@@ -140,19 +140,19 @@ void VideoWidget::initUi()
     // 加入布局
     auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout()); ///< 获取垂直布局
     lay->setSpacing(0);                                         ///< 设置间距
-    lay->insertWidget(lay->count() - 1, m_recommendWidget.get());       ///< 添加推荐分区
-    lay->insertWidget(lay->count() - 1, m_videoRankWidget.get());       ///< 添加视频榜分区
-    lay->insertWidget(lay->count() - 1, m_MVWidget.get());             ///< 添加 MV 分区
-    lay->insertWidget(lay->count() - 1, m_siteWidget.get());           ///< 添加现场分区
-    lay->insertWidget(lay->count() - 1, m_coverWidget.get());          ///< 添加翻唱分区
-    lay->insertWidget(lay->count() - 1, m_danceWidget.get());          ///< 添加舞蹈分区
-    lay->insertWidget(lay->count() - 1, m_childrenWidget.get());       ///< 添加儿童分区
-    lay->insertWidget(lay->count() - 1, m_liveWidget.get());           ///< 添加 TME LIVE 分区
-    lay->insertWidget(lay->count() - 1, m_firstConcertWidget.get());   ///< 添加首唱会分区
-    lay->insertWidget(lay->count() - 1, m_chineseLanguageWidget.get());///< 添加华语分区
-    lay->insertWidget(lay->count() - 1, m_southKoreaWidget.get());     ///< 添加韩国分区
-    lay->insertWidget(lay->count() - 1, m_japanWidget.get());          ///< 添加日本分区
-    lay->insertWidget(lay->count() - 1, m_americanWidget.get());       ///< 添加欧美分区
+    lay->insertWidget(lay->count(), m_recommendWidget.get());       ///< 添加推荐分区
+    lay->insertWidget(lay->count(), m_videoRankWidget.get());       ///< 添加视频榜分区
+    lay->insertWidget(lay->count(), m_MVWidget.get());             ///< 添加 MV 分区
+    lay->insertWidget(lay->count(), m_siteWidget.get());           ///< 添加现场分区
+    lay->insertWidget(lay->count(), m_coverWidget.get());          ///< 添加翻唱分区
+    lay->insertWidget(lay->count(), m_danceWidget.get());          ///< 添加舞蹈分区
+    lay->insertWidget(lay->count(), m_childrenWidget.get());       ///< 添加儿童分区
+    lay->insertWidget(lay->count(), m_liveWidget.get());           ///< 添加 TME LIVE 分区
+    lay->insertWidget(lay->count(), m_firstConcertWidget.get());   ///< 添加首唱会分区
+    lay->insertWidget(lay->count(), m_chineseLanguageWidget.get());///< 添加华语分区
+    lay->insertWidget(lay->count(), m_southKoreaWidget.get());     ///< 添加韩国分区
+    lay->insertWidget(lay->count(), m_japanWidget.get());          ///< 添加日本分区
+    lay->insertWidget(lay->count(), m_americanWidget.get());       ///< 添加欧美分区
 
     // 处理信号
     this->m_vScrollBar = ui->scrollArea->verticalScrollBar();          ///< 获取垂直滚动条
@@ -638,18 +638,6 @@ void VideoWidget::handleWheelValue(const int &value)
     {
         ui->American_pushButton->setChecked(true);           ///< 选中欧美按钮
     }
-}
-
-/**
- * @brief 调整大小事件
- * @param event 调整大小事件
- * @note 调整滚动区域高度
- */
-void VideoWidget::resizeEvent(QResizeEvent *event)
-{
-    QWidget::resizeEvent(event);                         ///< 调用父类处理
-    auto parent = this->window();                       ///< 获取顶级窗口
-    ui->scrollArea->setFixedHeight(parent->height() - offY); ///< 设置滚动区域高度
 }
 
 /**

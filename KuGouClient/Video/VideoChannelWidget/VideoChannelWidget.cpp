@@ -119,17 +119,17 @@ void VideoChannelWidget::initUi()
         STREAM_WARN() << "布局不存在";
         return;
     }
-    lay->insertWidget(lay->count() - 1, m_popularWidget.get());   ///< 插入热门部件
-    lay->insertWidget(lay->count() - 1, m_childrenWidget.get());  ///< 插入儿童部件
-    lay->insertWidget(lay->count() - 1, m_themeWidget.get());     ///< 插入主题部件
-    lay->insertWidget(lay->count() - 1, m_filmWidget.get());      ///< 插入影视部件
-    lay->insertWidget(lay->count() - 1, m_varietyWidget.get());   ///< 插入综艺部件
-    lay->insertWidget(lay->count() - 1, m_ACGNWidget.get());      ///< 插入二次元部件
-    lay->insertWidget(lay->count() - 1, m_sceneWidget.get());     ///< 插入场景部件
-    lay->insertWidget(lay->count() - 1, m_languageWidget.get());  ///< 插入语言部件
-    lay->insertWidget(lay->count() - 1, m_danceWidget.get());     ///< 插入舞蹈部件
-    lay->insertWidget(lay->count() - 1, m_siteWidget.get());      ///< 插入现场部件
-    lay->insertWidget(lay->count() - 1, m_singerWidget.get());    ///< 插入歌手部件
+    lay->insertWidget(lay->count(), m_popularWidget.get());   ///< 插入热门部件
+    lay->insertWidget(lay->count(), m_childrenWidget.get());  ///< 插入儿童部件
+    lay->insertWidget(lay->count(), m_themeWidget.get());     ///< 插入主题部件
+    lay->insertWidget(lay->count(), m_filmWidget.get());      ///< 插入影视部件
+    lay->insertWidget(lay->count(), m_varietyWidget.get());   ///< 插入综艺部件
+    lay->insertWidget(lay->count(), m_ACGNWidget.get());      ///< 插入二次元部件
+    lay->insertWidget(lay->count(), m_sceneWidget.get());     ///< 插入场景部件
+    lay->insertWidget(lay->count(), m_languageWidget.get());  ///< 插入语言部件
+    lay->insertWidget(lay->count(), m_danceWidget.get());     ///< 插入舞蹈部件
+    lay->insertWidget(lay->count(), m_siteWidget.get());      ///< 插入现场部件
+    lay->insertWidget(lay->count(), m_singerWidget.get());    ///< 插入歌手部件
 
     this->m_vScrollBar = ui->scrollArea->verticalScrollBar();     ///< 获取垂直滚动条
     auto connectButton = [this](const QPushButton *button, QWidget *targetWidget) {
@@ -394,17 +394,6 @@ void VideoChannelWidget::handleWheelValue(const int &value)
     {
         ui->singer_pushButton->setChecked(true);                  ///< 选中歌手按钮
     }
-}
-
-/**
- * @brief 调整大小事件
- * @param event 调整大小事件对象
- * @note 重写基类方法
- */
-void VideoChannelWidget::resizeEvent(QResizeEvent *event)
-{
-    QWidget::resizeEvent(event);
-    ui->scrollArea->setFixedHeight(this->window()->height() - 280); ///< 调整滚动区域高度
 }
 
 /**

@@ -340,7 +340,6 @@ void MVWidget::resizeEvent(QResizeEvent *event)
     }
 
     ui->advertise_widget->setFixedHeight(ui->advertise_widget->width() / 5 + 65); ///< 调整广告高度
-    ui->scrollArea->setFixedHeight(this->window()->height() - 260); ///< 调整滚动区域高度
 }
 
 /**

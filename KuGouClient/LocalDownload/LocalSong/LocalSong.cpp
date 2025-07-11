@@ -178,11 +178,7 @@ void LocalSong::initUi()
     });
     auto local_batch_toolButton_toolTip = new ElaToolTip(ui->local_batch_toolButton); ///< 创建批量操作按钮工具提示
     local_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作")); ///< 设置批量操作提示
-    const auto layout = ui->local_song_list_widget->layout(); ///< 获取歌曲列表布局
-    layout->setSpacing(2);                               ///< 设置间距
-    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed)); ///< 添加固定填充
-    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding)); ///< 添加扩展填充
-    layout->setContentsMargins(0, 0, 0, 0);             ///< 设置边距
+
     ui->local_all_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
     ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/add-gray.svg"))); ///< 设置添加按钮图标
     ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/upload-cloud-gray.svg"))); ///< 设置上传按钮图标
@@ -283,7 +279,7 @@ void LocalSong::getMetaData()
                 this->m_musicItemVector.emplace_back(item); ///< 添加音乐项
                 const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
                 if (!layout) return;
-                layout->insertWidget(layout->count() - 2, item); ///< 插入音乐项
+                layout->insertWidget(layout->count(), item); ///< 插入音乐项
 
                 ///< 添加suggestion
                 QJsonObject obj;
@@ -468,7 +464,7 @@ void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicIt
     {
         val->m_information.index = ++index;              ///< 更新索引
         val->setIndexText(index + 1);                    ///< 设置索引文本
-        lay->insertWidget(ui->local_song_list_widget->layout()->count() - 2, val); ///< 插入音乐项
+        lay->insertWidget(ui->local_song_list_widget->layout()->count(), val); ///< 插入音乐项
         this->m_locationMusicVector.emplace_back(val->m_information); ///< 添加歌曲信息
     }
     ui->local_song_list_widget->setUpdatesEnabled(true); ///< 启用更新
@@ -581,7 +577,20 @@ void LocalSong::fetchAndSyncServerSongList()
         const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
         if (!layout)
             return;
-        layout->insertWidget(layout->count() - 2, item); ///< 插入音乐项
+        layout->insertWidget(layout->count(), item); ///< 插入音乐项
+
+        ///< 添加suggestion
+        QJsonObject obj;
+        obj["song"] = info.songName;
+        obj["singer"] = info.singer;
+        obj["duration"] = info.duration;
+        ///< 添加媒体路径作为附加数据
+        QVariantMap suggestData;
+        suggestData["mediaPath"] = info.mediaPath;
+        m_songSingerToKey[obj] = ui->local_search_suggest_box->addSuggestion(
+            info.songName + " - " + info.singer,
+            suggestData);
+
         emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size())); ///< 更新数量标签
     }
     for (int i = 0; i < m_locationMusicVector.size(); ++i)
@@ -884,7 +893,7 @@ void LocalSong::onRandomSort()
     {
         val->m_information.index = ++index;              ///< 更新索引
         val->setIndexText(index + 1);                    ///< 设置索引文本
-        lay->insertWidget(ui->local_song_list_widget->layout()->count() - 2, val); ///< 插入音乐项
+        lay->insertWidget(ui->local_song_list_widget->layout()->count(), val); ///< 插入音乐项
         this->m_locationMusicVector.emplace_back(val->m_information); ///< 添加歌曲信息
     }
     ui->local_song_list_widget->setUpdatesEnabled(true); ///< 启用更新
@@ -1094,17 +1103,6 @@ void LocalSong::onItemSearch()
 void LocalSong::onItemUpLoad()
 {
     ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Upload not implemented", 1000, window()); ///< 显示提示
-}
-
-/**
- * @brief 窗口大小调整事件
- * @param event 大小调整事件
- * @note 调整滚动区域高度
- */
-void LocalSong::resizeEvent(QResizeEvent *event)
-{
-    QWidget::resizeEvent(event);                         ///< 调用父类处理
-    ui->scrollArea->setFixedHeight(this->window()->height() - 340); ///< 设置滚动区域高度
 }
 
 /**
