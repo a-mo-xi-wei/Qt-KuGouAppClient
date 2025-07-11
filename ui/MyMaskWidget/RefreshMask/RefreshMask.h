@@ -47,6 +47,12 @@ public:
      */
     void hideLoading(const QString& message = "");
 
+    /**
+     * @brief 判断是否正在加显示
+     * @return 是否正在显示
+     */
+    bool isLoading();
+
 private:
     /**
      * @brief 初始化界面

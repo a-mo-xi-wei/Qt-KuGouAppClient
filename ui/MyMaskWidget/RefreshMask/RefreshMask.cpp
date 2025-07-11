@@ -110,6 +110,10 @@ void RefreshMask::hideLoading(const QString& message)
     emit loadingFinished(message);
 }
 
+bool RefreshMask::isLoading() {
+    return !this->isHidden();
+}
+
 /**
  * @brief 大小调整事件，更新遮罩和进度条位置
  * @param event 大小调整事件
