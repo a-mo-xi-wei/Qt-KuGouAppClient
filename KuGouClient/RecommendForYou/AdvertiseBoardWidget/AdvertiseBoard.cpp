@@ -12,21 +12,50 @@ NavButton::NavButton(const QString &normalImage, const QString &hoverImage, QWid
     setPixmap(m_normal);
     setAttribute(Qt::WA_TranslucentBackground);
     setAlignment(Qt::AlignCenter);
+    // 新增延迟检查定时器
+    m_checkTimer = new QTimer(this);
+    m_checkTimer->setInterval(300);
+    connect(m_checkTimer, &QTimer::timeout, this, &NavButton::checkHoverState);
 }
 
-void NavButton::enterEvent(QEnterEvent *event) {
-    QLabel::enterEvent(event);
-    setPixmap(m_hover);
+void NavButton::setHoverState(bool hover) {
+    setPixmap(hover ? m_hover : m_normal);
 }
 
-void NavButton::leaveEvent(QEvent *event) {
-    QLabel::leaveEvent(event);
-    setPixmap(m_normal);
+void NavButton::checkHoverState() {
+    QPoint globalMousePos = QCursor::pos();
+    QRect globalRect = QRect(mapToGlobal(QPoint(0, 0)), size());
+    bool isInside = globalRect.contains(globalMousePos);
+    //qDebug() << "Global check: mouse at" << globalMousePos << "button at" << globalRect << "is inside:" << isInside;
+    if (!isInside) {
+        setHoverState(false);
+        m_checkTimer->stop();
+    }
 }
 
-void NavButton::mousePressEvent(QMouseEvent *event) {
-    emit clicked();
-    QLabel::mousePressEvent(event);
+bool NavButton::event(QEvent *e) {
+    switch (e->type()) {
+        case QEvent::HoverEnter:
+            setHoverState(true);
+            // 开始持续检查
+            m_checkTimer->start();
+            return true;
+
+        case QEvent::HoverLeave:
+        case QEvent::Leave:
+            setHoverState(false);
+            // 停止检查
+            m_checkTimer->stop();
+            return true;
+
+        case QEvent::MouseButtonPress:
+            emit clicked();
+            return true;
+
+        default:
+            break;
+    }
+    return QLabel::event(e);
 }
 
 AdvertiseBoard::AdvertiseBoard(QWidget *parent)
