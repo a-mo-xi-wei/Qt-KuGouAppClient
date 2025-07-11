@@ -15,19 +15,21 @@ class NavButton : public QLabel {
 public:
     explicit NavButton(const QString &normal, const QString &hover, QWidget *parent = nullptr);
 
+    void setHoverState(bool hover);
+
 signals:
     void clicked();
 
 protected:
-    void enterEvent(QEnterEvent *event) override;
+    bool event(QEvent *event) override;
 
-    void leaveEvent(QEvent *event) override;
-
-    void mousePressEvent(QMouseEvent *event) override;
+private slots:
+    void checkHoverState();
 
 private:
     QPixmap m_normal;
     QPixmap m_hover;
+    QTimer* m_checkTimer; // 延迟检查定时器
 };
 
 class AdvertiseBoard : public QWidget {
