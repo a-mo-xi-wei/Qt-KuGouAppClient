@@ -136,25 +136,12 @@ void RecommendForYou::initTabWidget()
     {
         return;                                          ///< 空指针保护
     }
-    layout->insertWidget(layout->count() - 1,
+    layout->insertWidget(layout->count(),
                          new TableWidget(QStringLiteral(" 今日专属推荐"), TableWidget::KIND::BlockList, this)); ///< 添加今日专属推荐
-    layout->insertWidget(layout->count() - 1,
+    layout->insertWidget(layout->count(),
                          new TableWidget(QStringLiteral("潮流音乐站 "), TableWidget::KIND::ItemList, this)); ///< 添加潮流音乐站
-    layout->insertWidget(layout->count() - 1,
+    layout->insertWidget(layout->count(),
                          new TableWidget(QStringLiteral("热门好歌精选 "), TableWidget::KIND::ItemList, this)); ///< 添加热门好歌精选
-    layout->insertWidget(layout->count() - 1,
+    layout->insertWidget(layout->count(),
                          new TableWidget(QStringLiteral("私人专属好歌 "), TableWidget::KIND::ItemList, this)); ///< 添加私人专属好歌
-}
-
-/**
- * @brief 调整大小事件
- * @param event 调整大小事件
- * @note 调整滚动区域高度
- */
-void RecommendForYou::resizeEvent(QResizeEvent *event)
-{
-    QWidget::resizeEvent(event);                         ///< 调用父类处理
-    ui->scrollArea->setFixedHeight(this->window()->height() - 180); ///< 设置滚动区域高度
-    // @note 未使用，保留用于调试
-    // qDebug() << "width: " << this->width();
 }

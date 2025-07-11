@@ -676,16 +676,6 @@ void Channel::handleWheelValue(const int &value)
 }
 
 /**
- * @brief 调整大小事件，调整滚动区域高度
- * @param event 调整大小事件
- */
-void Channel::resizeEvent(QResizeEvent *event)
-{
-    QWidget::resizeEvent(event);                         ///< 调用父类调整大小事件
-    ui->scrollArea->setFixedHeight(this->window()->height() - 305); ///< 设置滚动区域高度
-}
-
-/**
  * @brief 鼠标按下事件
  * @param event 鼠标事件
  */

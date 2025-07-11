@@ -376,13 +376,6 @@ signals:
 
 protected:
     /**
-     * @brief 窗口大小调整事件
-     * @param event 大小调整事件
-     * @note 调整滚动区域高度
-     */
-    void resizeEvent(QResizeEvent *event) override;
-
-    /**
      * @brief 事件过滤器
      * @param watched 监听对象
      * @param event 事件

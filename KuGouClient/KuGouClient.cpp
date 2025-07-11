@@ -1077,6 +1077,10 @@ void KuGouClient::on_all_music_toolButton_clicked() {
  * @note 切换搜索结果界面
  */
 void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, const QVariantMap &suggestData) {
+    ///< 之前的还没有加载完成就等候
+    if (this->m_refreshMask->isLoading())return;
+    ///< 切换到音乐界面
+    onLeftMenuShow(true);
     qDebug() << "选中：" << suggestText << " 附带数据：" << suggestData;
     ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
     auto topLab = m_searchResultWidget->findChild<QLabel *>("searchResultTopLabel");

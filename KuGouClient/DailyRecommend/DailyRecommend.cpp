@@ -118,7 +118,7 @@ void DailyRecommend::initDateLab()
  */
 void DailyRecommend::initTableWidget()
 {
-    const auto layout = dynamic_cast<QVBoxLayout *>(ui->daily_song_list_widget->layout()); ///< 获取垂直布局
+    const auto layout = dynamic_cast<QVBoxLayout *>(ui->scrollAreaWidgetContents->layout()); ///< 获取垂直布局
     if (!layout)
     {
         return;                                          ///< 布局不存在时返回
@@ -138,7 +138,6 @@ void DailyRecommend::initTableWidget()
         initMusicItem(item);                             ///< 初始化音乐项
         layout->insertWidget(layout->count(), item);     ///< 添加到布局
     }
-    layout->addSpacerItem(new QSpacerItem(1, 30, QSizePolicy::Fixed, QSizePolicy::Fixed)); ///< 添加底部间隔
 }
 
 /**
@@ -150,16 +149,6 @@ void DailyRecommend::initMusicItem(MusicItemWidget *item)
     item->setFillColor(QColor(QStringLiteral("#B0EDF6"))); ///< 设置填充颜色
     item->setRadius(12);                                 ///< 设置圆角半径
     item->setInterval(1);                                ///< 设置间距
-}
-
-/**
- * @brief 调整大小事件，调整滚动区域高度
- * @param event 调整大小事件
- */
-void DailyRecommend::resizeEvent(QResizeEvent *event)
-{
-    QWidget::resizeEvent(event);                         ///< 调用父类调整大小事件
-    ui->scrollArea->setFixedHeight(this->height() - 250); ///< 设置滚动区域高度
 }
 
 /**

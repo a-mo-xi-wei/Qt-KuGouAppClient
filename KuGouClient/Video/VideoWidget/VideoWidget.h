@@ -96,13 +96,6 @@ private slots:
 
 protected:
     /**
-     * @brief 调整大小事件
-     * @param event 调整大小事件
-     * @note 调整滚动区域高度
-     */
-    void resizeEvent(QResizeEvent *event) override;
-
-    /**
      * @brief 鼠标按下事件
      * @param event 鼠标事件
      * @note 默认实现
