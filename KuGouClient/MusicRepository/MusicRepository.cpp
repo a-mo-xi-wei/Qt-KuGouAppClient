@@ -389,41 +389,12 @@ void MusicRepository::resizeEvent(QResizeEvent *event)
 }
 
 /**
- * @brief 鼠标按下事件
- * @param event 鼠标事件
- * @note 忽略事件
- */
-void MusicRepository::mousePressEvent(QMouseEvent *event)
-{
-    event->ignore();                                     ///< 忽略事件
-}
-
-/**
- * @brief 鼠标释放事件
- * @param event 鼠标事件
- * @note 忽略事件
- */
-void MusicRepository::mouseReleaseEvent(QMouseEvent *event)
-{
-    event->ignore();                                     ///< 忽略事件
-}
-
-/**
- * @brief 鼠标双击事件
- * @param event 鼠标事件
- * @note 忽略事件
- */
-void MusicRepository::mouseDoubleClickEvent(QMouseEvent *event)
-{
-    event->ignore();                                     ///< 忽略事件
-}
-
-/**
  * @brief 华语按钮点击槽函数
  * @note 更新网格列表为华语歌曲
  */
 void MusicRepository::on_chinese_pushButton_clicked()
 {
+    if (ui->stackedWidget->currentIndex() == 0) return;
     enableButton(false);
     ui->stackedWidget->slideInIdx(0);
     STREAM_INFO()<<"切换到华语";
@@ -435,6 +406,7 @@ void MusicRepository::on_chinese_pushButton_clicked()
  */
 void MusicRepository::on_west_pushButton_clicked()
 {
+    if (ui->stackedWidget->currentIndex() == 1) return;
     enableButton(false);
     ui->stackedWidget->slideInIdx(1);
     STREAM_INFO()<<"切换到欧美界面";
@@ -446,6 +418,7 @@ void MusicRepository::on_west_pushButton_clicked()
  */
 void MusicRepository::on_korea_pushButton_clicked()
 {
+    if (ui->stackedWidget->currentIndex() == 2) return;
     enableButton(false);
     ui->stackedWidget->slideInIdx(2);
     STREAM_INFO()<<"切换到韩国界面";
@@ -457,6 +430,7 @@ void MusicRepository::on_korea_pushButton_clicked()
  */
 void MusicRepository::on_japan_pushButton_clicked()
 {
+    if (ui->stackedWidget->currentIndex() == 3) return;
     enableButton(false);
     ui->stackedWidget->slideInIdx(3);
     STREAM_INFO()<<"切换到日本界面";

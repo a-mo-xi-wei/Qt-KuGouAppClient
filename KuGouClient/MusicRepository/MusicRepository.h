@@ -92,27 +92,6 @@ protected:
      */
     void resizeEvent(QResizeEvent *event) override;
 
-    /**
-     * @brief 鼠标按下事件
-     * @param event 鼠标事件
-     * @note 忽略事件
-     */
-    void mousePressEvent(QMouseEvent *event) override;
-
-    /**
-     * @brief 鼠标释放事件
-     * @param event 鼠标事件
-     * @note 忽略事件
-     */
-    void mouseReleaseEvent(QMouseEvent *event) override;
-
-    /**
-     * @brief 鼠标双击事件
-     * @param event 鼠标事件
-     * @note 忽略事件
-     */
-    void mouseDoubleClickEvent(QMouseEvent *event) override;
-
 private slots:
     /**
      * @brief 华语按钮点击槽函数
