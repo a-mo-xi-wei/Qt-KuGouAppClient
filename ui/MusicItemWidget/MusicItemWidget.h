@@ -43,6 +43,9 @@ typedef struct SongInformation
     QString                 hash;         ///< 歌曲hash值
     QString                 mediaPath;    ///< 本地媒体文件路径
     QString                 netUrl;       ///< 网络文件路径
+    int                     fileSize;     ///< 网络文件大小
+    QString                 format;       ///< 网络文件格式
+    QDateTime               issueDate;    ///< 发行日期
     QDateTime               addTime;      ///< 添加时间
     int                     playCount;    ///< 播放次数
 
