@@ -16,6 +16,8 @@
 #include <QMouseEvent>
 #include <random>
 
+#include "MusicRepoList.h"
+
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -41,12 +43,10 @@ MusicRepository::MusicRepository(QWidget *parent)
         return;
     }
     initUi();                                            ///< 初始化界面
-    if (!this->window())
-    {
-        qWarning() << "无法获取顶级窗口！";
-        STREAM_WARN() << "无法获取顶级窗口！";          ///< 记录警告日志
-        return;
-    }
+    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] {
+        enableButton(true);                              ///< 动画结束时启用按钮
+    });
+    enableButton(true);                                  ///< 初始启用按钮
 }
 
 /**
@@ -63,11 +63,55 @@ MusicRepository::~MusicRepository()
  */
 void MusicRepository::initButtonGroup()
 {
-    this->m_buttonGroup->addButton(ui->chinese_pushButton); ///< 添加华语按钮
-    this->m_buttonGroup->addButton(ui->west_pushButton);    ///< 添加欧美按钮
-    this->m_buttonGroup->addButton(ui->korea_pushButton);   ///< 添加韩国按钮
-    this->m_buttonGroup->addButton(ui->japan_pushButton);   ///< 添加日本按钮
-    this->m_buttonGroup->setExclusive(true);                ///< 设置互斥
+    auto createRepoPage = [this](const QVector<MusicInfo> &vector) -> QWidget * {
+        auto pageWidget = new QWidget(ui->stackedWidget);
+        auto mainLayout = new QVBoxLayout(pageWidget);
+        mainLayout->setSpacing(10);
+        mainLayout->setContentsMargins(10, 0, 10, 0);
+
+        for (int row = 0; row < 3; ++row) {
+            auto rowLayout = new QHBoxLayout;
+            rowLayout->setSpacing(10);
+            for (int col = 0; col < 3; ++col) {
+                int index = row * 3 + col;
+                if (index >= 9)
+                    break;
+                auto item = new MusicRepoList;
+                item->setCoverPix(vector[index].pixPath);
+                item->setSongName(vector[index].song);
+                item->setSinger(vector[index].singer);
+                rowLayout->addWidget(item);
+                rowLayout->setStretch(col,1);
+            }
+
+            mainLayout->addLayout(rowLayout);
+        }
+
+        return pageWidget;
+    };
+
+    // 创建各区域页面
+    QWidget *chineseWidget = createRepoPage(this->m_chineseVector);
+    QWidget *westWidget    = createRepoPage(this->m_westVector);
+    QWidget *koreaWidget   = createRepoPage(this->m_koreaVector);
+    QWidget *japanWidget   = createRepoPage(this->m_japanVector);
+
+    // 添加到堆栈窗口
+    ui->stackedWidget->insertWidget(0,chineseWidget);
+    ui->stackedWidget->insertWidget(1,westWidget);
+    ui->stackedWidget->insertWidget(2,koreaWidget);
+    ui->stackedWidget->insertWidget(3,japanWidget);
+
+    // 设置默认页（如：华语）
+    ui->stackedWidget->setCurrentWidget(chineseWidget);
+
+    // 设置按钮组（互斥）
+    this->m_buttonGroup->addButton(ui->chinese_pushButton, 0);
+    this->m_buttonGroup->addButton(ui->west_pushButton,    1);
+    this->m_buttonGroup->addButton(ui->korea_pushButton,   2);
+    this->m_buttonGroup->addButton(ui->japan_pushButton,   3);
+    this->m_buttonGroup->setExclusive(true);
+
 }
 
 /**
@@ -79,10 +123,10 @@ void MusicRepository::initUi()
     ui->ranking_list_widget->setCursor(Qt::PointingHandCursor); ///< 设置排行榜鼠标样式
     ui->singer_widget->setCursor(Qt::PointingHandCursor);       ///< 设置歌手鼠标样式
     ui->classify_widget->setCursor(Qt::PointingHandCursor);     ///< 设置分类鼠标样式
-    initButtonGroup();                                          ///< 初始化按钮组
     initVector();                                               ///< 初始化容器
     initNewDiskWidget();                                        ///< 初始化新碟上架
     initSelectWidget();                                         ///< 初始化精选视频
+    initButtonGroup();                                          ///< 初始化按钮组
     ui->chinese_pushButton->clicked();                          ///< 默认点击华语按钮
 }
 
@@ -274,6 +318,13 @@ void MusicRepository::initVector()
     }
 }
 
+void MusicRepository::enableButton(const bool &flag) const {
+    ui->chinese_pushButton->setEnabled(flag);
+    ui->west_pushButton->setEnabled(flag);
+    ui->korea_pushButton->setEnabled(flag);
+    ui->japan_pushButton->setEnabled(flag);
+}
+
 /**
  * @brief 调整大小事件
  * @param event 调整大小事件
@@ -286,15 +337,7 @@ void MusicRepository::resizeEvent(QResizeEvent *event)
     ui->ranking_list_widget->setFixedHeight(average);       ///< 设置排行榜高度
     ui->singer_widget->setFixedHeight(average);             ///< 设置歌手高度
     ui->classify_widget->setFixedHeight(average);           ///< 设置分类高度
-    const auto topLevelWidth = this->window()->width();        ///< 获取顶级窗口宽度
-    average = (topLevelWidth - 290) / 3;                    ///< 计算网格宽度
-    for (int i = 0; i < 3; ++i)
-    {
-        for (int j = 0; j < 3; ++j)
-        {
-            ui->gridLayout->itemAtPosition(i, j)->widget()->setFixedWidth(average); ///< 设置网格控件宽度
-        }
-    }
+
     static int lastVisibleState = -1;                       ///< 记录上一次可见状态
     const int currentWidth = this->width();                 ///< 获取当前宽度
     int newVisibleState;
@@ -381,38 +424,9 @@ void MusicRepository::mouseDoubleClickEvent(QMouseEvent *event)
  */
 void MusicRepository::on_chinese_pushButton_clicked()
 {
-    ui->grid_widget->setUpdatesEnabled(false);           ///< 禁用更新
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
-            int index = row * 3 + col;                   ///< 计算网格索引
-            if (index >= this->m_chineseVector.size())
-            {
-                qWarning() << "m_chineseVector out of range!";
-                STREAM_WARN() << "m_chineseVector out of range!"; ///< 记录警告日志
-                return;
-            }
-            auto item = ui->gridLayout->itemAtPosition(row, col); ///< 获取网格项
-            if (!item)
-            {
-                qWarning() << "item error at position:" << row << col;
-                STREAM_WARN() << "item error at position:" << row << col; ///< 记录警告日志
-                return;
-            }
-            auto widget = static_cast<MusicRepoList *>(item->widget()); ///< 获取控件
-            if (!widget)
-            {
-                qWarning() << "widget error at position:" << row << col;
-                STREAM_WARN() << "widget error at position:" << row << col; ///< 记录警告日志
-                return;
-            }
-            widget->setCoverPix(this->m_chineseVector[index].pixPath); ///< 设置封面
-            widget->setSongName(this->m_chineseVector[index].song);    ///< 设置歌曲
-            widget->setSinger(this->m_chineseVector[index].singer);    ///< 设置歌手
-        }
-    }
-    ui->grid_widget->setUpdatesEnabled(true);            ///< 启用更新
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(0);
+    STREAM_INFO()<<"切换到华语";
 }
 
 /**
@@ -421,20 +435,9 @@ void MusicRepository::on_chinese_pushButton_clicked()
  */
 void MusicRepository::on_west_pushButton_clicked()
 {
-    ui->grid_widget->setUpdatesEnabled(false);           ///< 禁用更新
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
-            int index = row * 3 + col;                   ///< 计算网格索引
-            auto item = ui->gridLayout->itemAtPosition(row, col); ///< 获取网格项
-            auto widget = static_cast<MusicRepoList *>(item->widget()); ///< 获取控件
-            widget->setCoverPix(this->m_westVector[index].pixPath);    ///< 设置封面
-            widget->setSongName(this->m_westVector[index].song);       ///< 设置歌曲
-            widget->setSinger(this->m_westVector[index].singer);       ///< 设置歌手
-        }
-    }
-    ui->grid_widget->setUpdatesEnabled(true);            ///< 启用更新
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(1);
+    STREAM_INFO()<<"切换到欧美界面";
 }
 
 /**
@@ -443,20 +446,9 @@ void MusicRepository::on_west_pushButton_clicked()
  */
 void MusicRepository::on_korea_pushButton_clicked()
 {
-    ui->grid_widget->setUpdatesEnabled(false);           ///< 禁用更新
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
-            int index = row * 3 + col;                   ///< 计算网格索引
-            auto item = ui->gridLayout->itemAtPosition(row, col); ///< 获取网格项
-            auto widget = static_cast<MusicRepoList *>(item->widget()); ///< 获取控件
-            widget->setCoverPix(this->m_koreaVector[index].pixPath);   ///< 设置封面
-            widget->setSongName(this->m_koreaVector[index].song);      ///< 设置歌曲
-            widget->setSinger(this->m_koreaVector[index].singer);      ///< 设置歌手
-        }
-    }
-    ui->grid_widget->setUpdatesEnabled(true);            ///< 启用更新
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(2);
+    STREAM_INFO()<<"切换到韩国界面";
 }
 
 /**
@@ -465,20 +457,9 @@ void MusicRepository::on_korea_pushButton_clicked()
  */
 void MusicRepository::on_japan_pushButton_clicked()
 {
-    ui->grid_widget->setUpdatesEnabled(false);           ///< 禁用更新
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
-            int index = row * 3 + col;                   ///< 计算网格索引
-            auto item = ui->gridLayout->itemAtPosition(row, col); ///< 获取网格项
-            auto widget = static_cast<MusicRepoList *>(item->widget()); ///< 获取控件
-            widget->setCoverPix(this->m_japanVector[index].pixPath);   ///< 设置封面
-            widget->setSongName(this->m_japanVector[index].song);      ///< 设置歌曲
-            widget->setSinger(this->m_japanVector[index].singer);      ///< 设置歌手
-        }
-    }
-    ui->grid_widget->setUpdatesEnabled(true);            ///< 启用更新
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(3);
+    STREAM_INFO()<<"切换到日本界面";
 }
 
 /**
