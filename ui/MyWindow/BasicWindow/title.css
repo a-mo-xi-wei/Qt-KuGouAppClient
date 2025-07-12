@@ -1,13 +1,13 @@
 /*--------------------title_widget------------------------------*/
 QToolButton#title_return_toolButton{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border-image: url(":/Res/titlebar/return-black.svg");
 }
 QToolButton#title_return_toolButton:hover {
     border-image: url(":/Res/titlebar/return-blue.svg");
 }
 QToolButton#title_refresh_toolButton{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border-image: url(":/Res/titlebar/refresh-black.svg");
 }
 QToolButton#title_refresh_toolButton:hover {
@@ -15,10 +15,10 @@ QToolButton#title_refresh_toolButton:hover {
 }
 
 QWidget#title_widget QLabel{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
 }
 QWidget#title_widget QPushButton{
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
     color:rgba(0,0,0,50%);
 }
 QWidget#title_widget QPushButton:hover {
@@ -31,7 +31,7 @@ QWidget#title_widget QPushButton:checked {
 }
 
 QToolButton#listen_toolButton {
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
     border-image: url(":/Res/titlebar/listen-music-black.svg");
     border-radius: 10px;
 }
@@ -40,7 +40,7 @@ QToolButton#listen_toolButton:hover {
 }
 
 QToolButton#theme_toolButton {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border-image: url(":/Res/titlebar/theme-black.svg");
 }
 QToolButton#theme_toolButton:hover {
@@ -48,7 +48,7 @@ QToolButton#theme_toolButton:hover {
 }
 
 QToolButton#message_toolButton {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border-image: url(":/Res/titlebar/message-black.svg");
 }
 QToolButton#message_toolButton:hover {
@@ -56,7 +56,7 @@ QToolButton#message_toolButton:hover {
 }
 
 QToolButton#menu_toolButton {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border-image: url(":/Res/titlebar/menu-black.svg");
 }
 QToolButton#menu_toolButton:hover {
@@ -66,7 +66,7 @@ QToolButton#menu_toolButton:hover {
 QToolButton#min_toolButton,
 QToolButton#max_toolButton,
 QToolButton#close_toolButton {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border-radius: 6px;
     border: none;
     height: 30px;
