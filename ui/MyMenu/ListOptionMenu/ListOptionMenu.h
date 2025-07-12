@@ -89,12 +89,12 @@ protected:
      */
     bool eventFilter(QObject *watched, QEvent *event) override;
 
-    signals:
-        /**
-         * @brief 菜单项点击信号
-         * @param funcName 点击的功能名称
-         */
-        void clickedFuncName(const QString& funcName);
+signals:
+    /**
+     * @brief 菜单项点击信号
+     * @param funcName 点击的功能名称
+     */
+    void clickedFuncName(const QString& funcName);
 };
 
 #endif // LISTOPTIONMENU_H

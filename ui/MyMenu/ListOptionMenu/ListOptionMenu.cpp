@@ -8,12 +8,15 @@
 
 #include "ListOptionMenu.h"
 #include "logger.hpp"
+#include "MyScrollArea.h"
 
 #include <QFile>
 #include <QLabel>
 #include <QMouseEvent>
 #include <QScrollArea>
 #include <QVBoxLayout>
+
+#include "ElaScrollBar.h"
 
 /** @brief 获取当前文件目录的宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -25,6 +28,7 @@
 ListOptionMenu::ListOptionMenu(QWidget *parent)
     : BaseMenu(parent)
 {
+    this->setObjectName("ListOptionMenu");
     // 加载样式表
     QFile file(GET_CURRENT_DIR + QStringLiteral("/listmenu.css"));
     if (file.open(QIODevice::ReadOnly)) {
@@ -43,78 +47,58 @@ void ListOptionMenu::initMenu() {
     this->setMouseTracking(true);
 
     // 设置滚动区域
-    auto area = new QScrollArea(this);
+    auto area = new MyScrollArea(this);
     area->move(10, 15);
     area->setFixedSize(685, 360);
     area->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     area->setContentsMargins(0, 0, 0, 0);
     area->setFrameStyle(QFrame::NoFrame);
+    area->verticalScrollBar()->setStyleSheet("");
+    area->verticalScrollBar()->setAttribute(Qt::WA_StyleSheet, false);
 
     // 创建内容窗口
-    const auto contentWidget = new QWidget(area);
-    contentWidget->setContentsMargins(0, 0, 0, 0);
+    auto contentWidget = new QWidget(area);
+    contentWidget->setObjectName("contentWidget");
+
+    // 主垂直布局
     auto layout = new QVBoxLayout(contentWidget);
+    layout->setContentsMargins(0,0,0,0);
+    layout->setSpacing(0);
 
-    // 初始化分类窗口和分隔线
-    const auto contentWidget_scene = new QWidget(contentWidget);
-    initSceneWidget(contentWidget_scene);
-    const auto separator1 = new QFrame(contentWidget);
-    separator1->setFixedWidth(650);
-    separator1->setObjectName("separator");
-    separator1->setFrameShape(QFrame::HLine);
-    separator1->setFrameShadow(QFrame::Sunken);
+    // 分类组件初始化函数及对应名称
+    const QList<QPair<QString, std::function<void(QWidget*)>>> categories = {
+        {"contentWidget_scene",    [this](QWidget* w){ initSceneWidget(w); }},
+        {"contentWidget_theme",    [this](QWidget* w){ initThemeWidget(w); }},
+        {"contentWidget_language", [this](QWidget* w){ initLanguageWidget(w); }},
+        {"contentWidget_style",    [this](QWidget* w){ initStyleWidget(w); }},
+        {"contentWidget_mood",     [this](QWidget* w){ initMoodWidget(w); }},
+        {"contentWidget_period",   [this](QWidget* w){ initPeriodWidget(w); }}
+    };
 
-    const auto contentWidget_theme = new QWidget(contentWidget);
-    initThemeWidget(contentWidget_theme);
-    const auto separator2 = new QFrame(contentWidget);
-    separator2->setFixedWidth(650);
-    separator2->setObjectName("separator");
-    separator2->setFrameShape(QFrame::HLine);
-    separator2->setFrameShadow(QFrame::Sunken);
+    for (int i = 0; i < categories.size(); ++i) {
+        const auto& [name, initFunc] = categories[i];
 
-    const auto contentWidget_language = new QWidget(contentWidget);
-    initLanguageWidget(contentWidget_language);
-    const auto separator3 = new QFrame(contentWidget);
-    separator3->setFixedWidth(650);
-    separator3->setObjectName("separator");
-    separator3->setFrameShape(QFrame::HLine);
-    separator3->setFrameShadow(QFrame::Sunken);
+        auto sectionWidget = new QWidget(contentWidget);
+        sectionWidget->setContentsMargins(10,0,10,0);
+        sectionWidget->setObjectName(name);
+        sectionWidget->setMouseTracking(true);
+        initFunc(sectionWidget);
+        layout->addWidget(sectionWidget);
 
-    const auto contentWidget_style = new QWidget(contentWidget);
-    initStyleWidget(contentWidget_style);
-    const auto separator4 = new QFrame(contentWidget);
-    separator4->setFixedWidth(650);
-    separator4->setObjectName("separator");
-    separator4->setFrameShape(QFrame::HLine);
-    separator4->setFrameShadow(QFrame::Sunken);
-
-    const auto contentWidget_mood = new QWidget(contentWidget);
-    initMoodWidget(contentWidget_mood);
-    const auto separator5 = new QFrame(contentWidget);
-    separator5->setFixedWidth(650);
-    separator5->setObjectName("separator");
-    separator5->setFrameShape(QFrame::HLine);
-    separator5->setFrameShadow(QFrame::Sunken);
-
-    const auto contentWidget_period = new QWidget(contentWidget);
-    initPeriodWidget(contentWidget_period);
-
-    // 添加到布局
-    layout->addWidget(contentWidget_scene);
-    layout->addWidget(separator1);
-    layout->addWidget(contentWidget_theme);
-    layout->addWidget(separator2);
-    layout->addWidget(contentWidget_language);
-    layout->addWidget(separator3);
-    layout->addWidget(contentWidget_style);
-    layout->addWidget(separator4);
-    layout->addWidget(contentWidget_mood);
-    layout->addWidget(separator5);
-    layout->addWidget(contentWidget_period);
+        if (i != categories.size() - 1) {
+            auto separator = new QFrame(contentWidget);
+            separator->setObjectName("separator");
+            separator->setFrameShape(QFrame::HLine);
+            separator->setFrameShadow(QFrame::Sunken);
+            separator->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+            layout->addWidget(separator);
+        }
+    }
 
     contentWidget->setLayout(layout);
     area->setWidget(contentWidget);
 }
+
 
 /**
  * @brief 初始化场景分类窗口
