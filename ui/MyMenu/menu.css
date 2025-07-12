@@ -1,6 +1,6 @@
 QToolButton{
     border-radius: 6px;
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     font-size: 13px;
     padding-left: 10px;
 }
@@ -24,17 +24,17 @@ QToolButton#wallPaperBtn:hover,QToolButton#phonePlayBtn:hover,QToolButton#upload
 
 QWidget{
     border-radius: 6px;
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
 }
 QWidget:hover{
     background-color: rgb(229, 232, 232);
     color: #268cff;
 }
 QWidget#listWidget{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
 }
 QWidget#listWidget:hover {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
 }
 QMenu{
     border-radius: 9px;

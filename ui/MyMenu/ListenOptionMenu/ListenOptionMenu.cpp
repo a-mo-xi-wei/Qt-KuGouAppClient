@@ -8,11 +8,11 @@
 
 #include "ListenOptionMenu.h"
 #include "logger.hpp"
+#include "MyScrollArea.h"
 
 #include <QFile>
 #include <QLabel>
 #include <QMouseEvent>
-#include <QScrollArea>
 #include <QVBoxLayout>
 
 /** @brief 获取当前文件目录的宏 */
@@ -42,131 +42,63 @@ void ListenOptionMenu::initMenu() {
     this->setFixedSize(740, 370);
     this->setMouseTracking(true);
 
-    // 设置滚动区域
-    auto area = new QScrollArea(this);
+    // 滚动区域设置
+    auto area = new MyScrollArea(this);
     area->move(15, 20);
     area->setFixedSize(720, 330);
     area->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     area->setContentsMargins(0, 0, 0, 0);
     area->setFrameStyle(QFrame::NoFrame);
 
-    // 创建内容窗口
-    const auto contentWidget = new QWidget(area);
-    contentWidget->setContentsMargins(0, 0, 0, 0);
-    auto layout = new QVBoxLayout(contentWidget); // 使用垂直布局管理菜单项
-    // 创建内容窗口（可以是 QWidget 或其他自定义控件）
-    {
-    //有声小说
-    const auto contentWidget_novel = new QWidget(contentWidget);
-    initAudioNovelWidget(contentWidget_novel);
-    const auto separator1 = new QFrame(contentWidget);
-    initSeparator(separator1);
-    //儿童天地
-    const auto contentWidget_children = new QWidget(contentWidget);
-    initChildrenWorldWidget(contentWidget_children);
-    const auto separator2 = new QFrame(contentWidget);
-    initSeparator(separator2);
-    //评书
-    const auto contentWidget_comment = new QWidget(contentWidget);
-    initCommentBookWidget(contentWidget_comment);
-    const auto separator3 = new QFrame(contentWidget);
-    initSeparator(separator3);
-    //助眠解压
-    const auto contentWidget_sleep = new QWidget(contentWidget);
-    initSleepHelpingWidget(contentWidget_sleep);
-    const auto separator4 = new QFrame(contentWidget);
-    initSeparator(separator4);
-    //人文
-    const auto contentWidget_humanity = new QWidget(contentWidget);
-    initHumanityWidget(contentWidget_humanity);
-    const auto separator5 = new QFrame(contentWidget);
-    initSeparator(separator5);
-    //自我充电
-    const auto contentWidget_self = new QWidget(contentWidget);
-    initSelfChargingWidget(contentWidget_self);
-    const auto separator6 = new QFrame(contentWidget);
-    initSeparator(separator6);
-    //相声曲艺
-    const auto contentWidget_crosstalk = new QWidget(contentWidget);
-    initCrosstalkWidget(contentWidget_crosstalk);
-    const auto separator7 = new QFrame(contentWidget);
-    initSeparator(separator7);
-    //情感生活
-    const auto contentWidget_sentimentality = new QWidget(contentWidget);
-    initSentimentalityWidget(contentWidget_sentimentality);
-    const auto separator8 = new QFrame(contentWidget);
-    initSeparator(separator8);
-    //广播剧
-    const auto contentWidget_radio = new QWidget(contentWidget);
-    initRadioDramaWidget(contentWidget_radio);
-    const auto separator9 = new QFrame(contentWidget);
-    initSeparator(separator9);
-    //娱乐段子
-    const auto contentWidget_entertainment = new QWidget(contentWidget);
-    initEntertainmentJokesWidget(contentWidget_entertainment);
-    const auto separator10 = new QFrame(contentWidget);
-    initSeparator(separator10);
-    //二次元
-    const auto contentWidget_acgn = new QWidget(contentWidget);
-    initACGNWidget(contentWidget_acgn);
-    const auto separator11 = new QFrame(contentWidget);
-    initSeparator(separator11);
-    //播客
-    const auto contentWidget_podcast = new QWidget(contentWidget);
-    initPodcastWidget(contentWidget_podcast);
-    const auto separator12 = new QFrame(contentWidget);
-    initSeparator(separator12);
-    //粤语
-    const auto contentWidget_cantonese = new QWidget(contentWidget);
-    initCantoneseWidget(contentWidget_cantonese);
-    const auto separator13 = new QFrame(contentWidget);
-    initSeparator(separator13);
-    //外语
-    const auto contentWidget_foreign = new QWidget(contentWidget);
-    initForeignLanguageWidget(contentWidget_foreign);
-    const auto separator14 = new QFrame(contentWidget);
-    initSeparator(separator14);
-    //创作翻唱
-    const auto contentWidget_createCover = new QWidget(contentWidget);
-    initCreateCoverWidget(contentWidget_createCover);
-    const auto separator15 = new QFrame(contentWidget);
-    initSeparator(separator15);
-    //DJ电音
-    const auto contentWidget_electronicSound = new QWidget(contentWidget);
-    initElectronicSoundWidget(contentWidget_electronicSound);
-    // 设置滚动区域的内容窗口
-    layout->addWidget(contentWidget_novel);
-    layout->addWidget(separator1);
-    layout->addWidget(contentWidget_children);
-    layout->addWidget(separator2);
-    layout->addWidget(contentWidget_comment);
-    layout->addWidget(separator3);
-    layout->addWidget(contentWidget_sleep);
-    layout->addWidget(separator4);
-    layout->addWidget(contentWidget_humanity);
-    layout->addWidget(separator5);
-    layout->addWidget(contentWidget_self);
-    layout->addWidget(separator6);
-    layout->addWidget(contentWidget_crosstalk);
-    layout->addWidget(separator7);
-    layout->addWidget(contentWidget_sentimentality);
-    layout->addWidget(separator8);
-    layout->addWidget(contentWidget_radio);
-    layout->addWidget(separator9);
-    layout->addWidget(contentWidget_entertainment);
-    layout->addWidget(separator10);
-    layout->addWidget(contentWidget_acgn);
-    layout->addWidget(separator11);
-    layout->addWidget(contentWidget_podcast);
-    layout->addWidget(separator12);
-    layout->addWidget(contentWidget_cantonese);
-    layout->addWidget(separator13);
-    layout->addWidget(contentWidget_foreign);
-    layout->addWidget(separator14);
-    layout->addWidget(contentWidget_createCover);
-    layout->addWidget(separator15);
-    layout->addWidget(contentWidget_electronicSound);
+    // 内容窗口
+    auto contentWidget = new QWidget(area);
+    contentWidget->setObjectName("listenContentWidget");
+
+    auto layout = new QVBoxLayout(contentWidget);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
+
+    // 分类及初始化函数
+    const QList<QPair<QString, std::function<void(QWidget*)>>> categories = {
+        {"contentWidget_novel",            [this](QWidget* w){ initAudioNovelWidget(w); }},
+        {"contentWidget_children",         [this](QWidget* w){ initChildrenWorldWidget(w); }},
+        {"contentWidget_comment",          [this](QWidget* w){ initCommentBookWidget(w); }},
+        {"contentWidget_sleep",            [this](QWidget* w){ initSleepHelpingWidget(w); }},
+        {"contentWidget_humanity",         [this](QWidget* w){ initHumanityWidget(w); }},
+        {"contentWidget_self",             [this](QWidget* w){ initSelfChargingWidget(w); }},
+        {"contentWidget_crosstalk",        [this](QWidget* w){ initCrosstalkWidget(w); }},
+        {"contentWidget_sentimentality",   [this](QWidget* w){ initSentimentalityWidget(w); }},
+        {"contentWidget_radio",            [this](QWidget* w){ initRadioDramaWidget(w); }},
+        {"contentWidget_entertainment",    [this](QWidget* w){ initEntertainmentJokesWidget(w); }},
+        {"contentWidget_acgn",             [this](QWidget* w){ initACGNWidget(w); }},
+        {"contentWidget_podcast",          [this](QWidget* w){ initPodcastWidget(w); }},
+        {"contentWidget_cantonese",        [this](QWidget* w){ initCantoneseWidget(w); }},
+        {"contentWidget_foreign",          [this](QWidget* w){ initForeignLanguageWidget(w); }},
+        {"contentWidget_createCover",      [this](QWidget* w){ initCreateCoverWidget(w); }},
+        {"contentWidget_electronicSound",  [this](QWidget* w){ initElectronicSoundWidget(w); }}
+    };
+
+    for (int i = 0; i < categories.size(); ++i) {
+        const auto& [name, initFunc] = categories[i];
+
+        auto sectionWidget = new QWidget(contentWidget);
+        sectionWidget->setObjectName(name);
+        sectionWidget->setMouseTracking(true);
+        sectionWidget->setContentsMargins(10, 0, 10, 0);
+
+        initFunc(sectionWidget);
+        layout->addWidget(sectionWidget);
+
+        if (i != categories.size() - 1) {
+            auto separator = new QFrame(contentWidget);
+            separator->setObjectName("separator");
+            separator->setFrameShape(QFrame::HLine);
+            separator->setFrameShadow(QFrame::Sunken);
+            separator->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+            layout->addWidget(separator);
+        }
     }
+
     contentWidget->setLayout(layout);
     area->setWidget(contentWidget);
 }

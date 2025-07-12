@@ -1,16 +1,19 @@
+#ListOptionMenu{
+    background-color: rgba(233, 249, 255, 0.98);
+}
 QMenu{
-    border-radius: 20px;
-    background-color: #fbfcff;
+    border-radius: 10px;
+    background-color: rgba(233, 249, 255, 0.98);
     margin: 5px;
     padding: 10px 5px 10px 5px;
 }
 QMenu::separator { /* 菜单子控件separator，定义菜单项之间的分隔线 */
     height: 1px;
-    background: #eeeeee;
+    background-color: transparent;
     margin: 2px; /* 距离菜单边界2px */
 }
 QLabel{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     font-size: 13px;
     font-weight: bolder;
     border:none;
@@ -18,18 +21,26 @@ QLabel{
     color: black;
 }
 QLabel:hover{
-    background-color: #f3efef;
+    background-color: rgba(203, 229, 238, 0.98);
     color: #3AA1FF;
 }
 QLabel#titleLab{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     font-size: 18px;
     font-weight: bold;
     color: black;
 }
 QLabel#titleLab:hover{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
 }
-QFrame#separator{
-    background-color: rgba(217, 217, 217, 50);
+QFrame#separator {
+    background-color: #ccfaf3;
+    height: 1px;
+}
+QScrollArea > QWidget{
+    background-color: transparent;
+}
+#contentWidget_scene , #contentWidget_theme , #contentWidget_language ,
+#contentWidget_style , #contentWidget_mood , #contentWidget_period{
+    background-color: rgba(233, 249, 255, 0.98);
 }
