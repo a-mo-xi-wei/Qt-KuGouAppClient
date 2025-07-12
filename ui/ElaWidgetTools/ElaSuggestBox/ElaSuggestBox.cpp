@@ -170,12 +170,11 @@ QString ElaSuggestBox::addSuggestion(ElaIconType::IconName icon, const QString &
 void ElaSuggestBox::removeSuggestion(const QString &suggestKey)
 {
     Q_D(ElaSuggestBox);
-    for (const auto& suggest : d->_suggestionVector)
-    {
-        if (suggest->getSuggestKey() == suggestKey)
-        {
-            d->_suggestionVector.removeOne(suggest);          ///< 移除建议项
-            suggest->deleteLater();                           ///< 延迟删除
+    for (int i = d->_suggestionVector.size() - 1; i >= 0; --i) {
+        auto suggest = d->_suggestionVector.at(i);
+        if (suggest->getSuggestKey() == suggestKey) {
+            d->_suggestionVector.removeAt(i);
+            suggest->deleteLater();
         }
     }
 }
