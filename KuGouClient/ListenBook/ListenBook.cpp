@@ -97,7 +97,7 @@ void ListenBook::initUi()
     //显示隐藏按钮
     {
         ui->indicator_toolButton->setStyleSheet(R"(QToolButton{
-                                                        background-color:rgba(255,255,255,0);
+                                                        background-color:transparent;
                                                         border-image:url(:/ListenBook/Res/listenbook/up-black.svg);
                                                     }
                                                     QToolButton:hover{
@@ -107,7 +107,7 @@ void ListenBook::initUi()
         connect(ui->indicator_toolButton, &QToolButton::toggled, ui->indicator_toolButton, [=](bool checked) {
                 if (checked) {
                     ui->indicator_toolButton->setStyleSheet(R"(QToolButton{
-                                                                background-color:rgba(255,255,255,0);
+                                                                background-color:transparent;
                                                                 border-image:url(:/ListenBook/Res/listenbook/down-black.svg);
                                                             }
                                                             QToolButton:hover{
@@ -115,7 +115,7 @@ void ListenBook::initUi()
                                                             })");
                 } else {
                     ui->indicator_toolButton->setStyleSheet(R"(QToolButton{
-                                                                background-color:rgba(255,255,255,0);
+                                                                background-color:transparent;
                                                                 border-image:url(:/ListenBook/Res/listenbook/up-black.svg);
                                                             }
                                                             QToolButton:hover{

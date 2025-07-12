@@ -2,7 +2,7 @@ QPushButton{
     font-size: 13px;
     color:black;
     border: none;
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
 }
 QPushButton:hover{
     color: #3AA1FF;
@@ -11,6 +11,6 @@ QPushButton:checked{
     font-size: 15px;
     font-weight: bold;
     border-radius: 15px;
-    background-color: #A0A0A0;
+    background-color: #b6d7e5;
     color: #333333;
 }

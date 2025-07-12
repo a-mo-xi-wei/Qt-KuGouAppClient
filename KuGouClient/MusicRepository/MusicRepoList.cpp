@@ -232,7 +232,7 @@ void MusicRepoList::paintEvent(QPaintEvent *event)
     if (this->m_isEnter)
     {
         p.setPen(Qt::NoPen);                             ///< 无边框
-        p.setBrush(QColor(QStringLiteral("#E8EAFB")));   ///< 设置背景颜色
+        p.setBrush(QColor(QStringLiteral("#c6e6e8")));   ///< 设置背景颜色
         p.drawRoundedRect(rect(), 10, 10);               ///< 绘制圆角矩形
     }
     updateSongText();                                    ///< 更新歌曲文本

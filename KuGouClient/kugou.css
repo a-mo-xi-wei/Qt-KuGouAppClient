@@ -48,19 +48,19 @@ QScrollArea#menu_scrollArea QToolButton:checked{
 
 /*--------------------play_widget------------------------------*/
 QWidget#play_widget {
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 QWidget#song_info_widget{
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
 }
 QWidget#play_widget QToolButton {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border: none;
 }
 QWidget#play_widget QLabel {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border: none;
 }
 QWidget#play_widget QLabel#singer_text {
@@ -69,7 +69,7 @@ QWidget#play_widget QLabel#singer_text {
 QWidget#play_widget QPushButton {
     border-radius:5px;
     border:1px solid #6fafa7;
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
 }
 QWidget#play_widget QPushButton:hover {
     border:1px solid #00a6ff;
@@ -79,7 +79,7 @@ QWidget#play_widget QPushButton:checked {
     background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:1, y2:0,stop:0 rgb(105, 225, 255), stop:1 rgba(255, 182, 193, 255)); /* 淡粉色 */
 }
 QToolButton#volume_toolButton{
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
 }
 QToolButton#circle_toolButton{
     border-image:url(':/Res/playbar/list-loop-gray.svg');
@@ -88,7 +88,7 @@ QToolButton#circle_toolButton:hover{
     border-image:url(':/Res/playbar/list-loop-blue.svg');
 }
 QSizeGrip#sizegrip{
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
     border-image:url(':/Res/playbar/bottom-mark.svg');
 }
 

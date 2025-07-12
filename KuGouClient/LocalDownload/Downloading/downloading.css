@@ -42,7 +42,7 @@ QToolButton#clear_toolButton:hover{
 QToolButton#setting_toolButton{
     outline: 1px solid #9f9f9f;/*无用，被覆盖*/
     border-radius: 9px;
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
     border-image: url(":/MenuIcon/Res/menuIcon/settings-black.svg");
 }
 QToolButton#setting_toolButton:hover{
