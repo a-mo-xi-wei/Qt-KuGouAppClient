@@ -85,6 +85,12 @@ private:
      */
     const QString parseTitle(const QString &title);
 
+    /**
+     * @brief 启用或禁用按钮
+     * @param flag 是否启用
+     */
+    void enableButton(const bool &flag) const;
+
 protected:
     /**
      * @brief 调整大小事件
@@ -92,34 +98,6 @@ protected:
      * @note 重写基类方法
      */
     void resizeEvent(QResizeEvent *event) override;
-
-    /**
-     * @brief 显示事件
-     * @param event 显示事件对象
-     * @note 重写基类方法
-     */
-    void showEvent(QShowEvent *event) override;
-
-    /**
-     * @brief 鼠标按下事件
-     * @param event 鼠标事件对象
-     * @note 重写基类方法
-     */
-    void mousePressEvent(QMouseEvent *event) override;
-
-    /**
-     * @brief 鼠标释放事件
-     * @param event 鼠标事件对象
-     * @note 重写基类方法
-     */
-    void mouseReleaseEvent(QMouseEvent *event) override;
-
-    /**
-     * @brief 鼠标双击事件
-     * @param event 鼠标事件对象
-     * @note 重写基类方法
-     */
-    void mouseDoubleClickEvent(QMouseEvent *event) override;
 
     /**
      * @brief 事件过滤器

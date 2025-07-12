@@ -48,6 +48,10 @@ MVWidget::MVWidget(QWidget *parent)
     }
 
     initUi(); ///< 初始化界面
+    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] {
+        enableButton(true);                              ///< 动画结束时启用按钮
+    });
+    enableButton(true);
 }
 
 /**
@@ -63,6 +67,48 @@ MVWidget::~MVWidget()
  */
 void MVWidget::initButtonGroup()
 {
+    auto createRepoPage = [this](const QVector<MusicInfo> &vector) -> QWidget * {
+        auto pageWidget = new QWidget(ui->stackedWidget);
+        auto mainLayout = new QVBoxLayout(pageWidget);
+        mainLayout->setSpacing(10);
+        mainLayout->setContentsMargins(10, 0, 10, 0);
+
+        for (int row = 0; row < 3; ++row) {
+            auto rowLayout = new QHBoxLayout;
+            rowLayout->setSpacing(10);
+            for (int col = 0; col < 3; ++col) {
+                int index = row * 3 + col;
+                if (index >= 9)
+                    break;
+                auto item = new MVBlockWidget;
+                item->setCoverPix(vector[index].pixPath); ///< 设置封面
+                item->setTitle(vector[index].title);      ///< 设置标题
+                item->setDescription(vector[index].description); ///< 设置描述
+                rowLayout->addWidget(item);
+                rowLayout->setStretch(col,1);
+            }
+
+            mainLayout->addLayout(rowLayout);
+        }
+
+        return pageWidget;
+    };
+
+    // 创建各区域页面
+    QWidget *recommendWidget = createRepoPage(this->m_recommendVector);
+    QWidget *chineseWidget    = createRepoPage(this->m_chineseVector);
+    QWidget *koreaWidget   = createRepoPage(this->m_koreaAndJapanVector);
+    QWidget *westWidget   = createRepoPage(this->m_westVector);
+
+    // 添加到堆栈窗口
+    ui->stackedWidget->insertWidget(0,recommendWidget);
+    ui->stackedWidget->insertWidget(1,chineseWidget);
+    ui->stackedWidget->insertWidget(2,koreaWidget);
+    ui->stackedWidget->insertWidget(3,westWidget);
+
+    // 设置默认页（如：华语）
+    ui->stackedWidget->setCurrentWidget(recommendWidget);
+
     this->m_buttonGroup->addButton(ui->recommend_pushButton);      ///< 添加推荐按钮
     this->m_buttonGroup->addButton(ui->chinese_pushButton);        ///< 添加华语按钮
     this->m_buttonGroup->addButton(ui->west_pushButton);           ///< 添加欧美按钮
@@ -245,17 +291,24 @@ const QString MVWidget::parseTitle(const QString &title)
     return str1 + " " + str2;
 }
 
+void MVWidget::enableButton(const bool &flag) const {
+    ui->recommend_pushButton->setEnabled(flag);
+    ui->chinese_pushButton->setEnabled(flag);
+    ui->koreaAndJapan_pushButton->setEnabled(flag);
+    ui->west_pushButton->setEnabled(flag);
+}
+
 /**
  * @brief 初始化界面
  */
 void MVWidget::initUi()
 {
-    initButtonGroup(); ///< 初始化按钮组
     initVector();     ///< 初始化数据容器
     initLiveScene();  ///< 初始化直播场景
     initHonorOfKings(); ///< 初始化王者荣耀
     initAwardCeremony(); ///< 初始化颁奖典礼
     initHotMV();      ///< 初始化热门 MV
+    initButtonGroup(); ///< 初始化按钮组
 
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.png"))); ///< 添加广告图片
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/2.png")));
@@ -343,46 +396,6 @@ void MVWidget::resizeEvent(QResizeEvent *event)
 }
 
 /**
- * @brief 显示事件
- * @param event 显示事件对象
- * @note 重写基类方法
- */
-void MVWidget::showEvent(QShowEvent *event)
-{
-    QWidget::showEvent(event);
-}
-
-/**
- * @brief 鼠标按下事件
- * @param event 鼠标事件对象
- * @note 重写基类方法
- */
-void MVWidget::mousePressEvent(QMouseEvent *event)
-{
-    event->ignore(); ///< 忽略事件
-}
-
-/**
- * @brief 鼠标释放事件
- * @param event 鼠标事件对象
- * @note 重写基类方法
- */
-void MVWidget::mouseReleaseEvent(QMouseEvent *event)
-{
-    event->ignore(); ///< 忽略事件
-}
-
-/**
- * @brief 鼠标双击事件
- * @param event 鼠标事件对象
- * @note 重写基类方法
- */
-void MVWidget::mouseDoubleClickEvent(QMouseEvent *event)
-{
-    event->ignore(); ///< 忽略事件
-}
-
-/**
  * @brief 事件过滤器
  * @param watched 目标对象
  * @param event 事件对象
@@ -411,40 +424,10 @@ bool MVWidget::eventFilter(QObject *watched, QEvent *event)
  */
 void MVWidget::on_recommend_pushButton_clicked()
 {
-    ui->new_song_grid_widget->setUpdatesEnabled(false);
-    const auto layout = static_cast<QGridLayout *>(ui->new_song_grid_widget->layout());
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
-            int index = row * 3 + col;
-            if (index >= this->m_recommendVector.size())
-            {
-                qWarning() << "m_recommendVector out of range!";
-                STREAM_WARN() << "m_recommendVector out of range!";
-                return;
-            }
-            auto item = layout->itemAtPosition(row, col);
-            if (!item)
-            {
-                qWarning() << "item error at position:" << row << col;
-                STREAM_WARN() << "item error at position:" << row << col;
-                return;
-            }
-            auto widget = static_cast<MVBlockWidget *>(item->widget());
-            if (!widget)
-            {
-                qWarning() << "widget error at position:" << row << col;
-                STREAM_WARN() << "widget error at position:" << row << col;
-                return;
-            }
-            widget->setCoverPix(this->m_recommendVector[index].pixPath); ///< 设置封面
-            widget->setTitle(this->m_recommendVector[index].title);      ///< 设置标题
-            widget->setDescription(this->m_recommendVector[index].description); ///< 设置描述
-        }
-    }
-    ui->new_song_grid_widget->setUpdatesEnabled(true);
-    ui->new_song_grid_widget->update(); ///< 刷新界面
+    if (ui->stackedWidget->currentIndex() == 0) return;
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(0);
+    STREAM_INFO()<<"切换到推荐";
 }
 
 /**
@@ -452,21 +435,10 @@ void MVWidget::on_recommend_pushButton_clicked()
  */
 void MVWidget::on_chinese_pushButton_clicked()
 {
-    ui->new_song_grid_widget->setUpdatesEnabled(false);
-    const auto layout = static_cast<QGridLayout *>(ui->new_song_grid_widget->layout());
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
-            int index = row * 3 + col;
-            auto item = layout->itemAtPosition(row, col);
-            auto widget = static_cast<MVBlockWidget *>(item->widget());
-            widget->setCoverPix(this->m_chineseVector[index].pixPath); ///< 设置封面
-            widget->setTitle(this->m_chineseVector[index].title);      ///< 设置标题
-            widget->setDescription(this->m_chineseVector[index].description); ///< 设置描述
-        }
-    }
-    ui->new_song_grid_widget->setUpdatesEnabled(true);
+    if (ui->stackedWidget->currentIndex() == 1) return;
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(1);
+    STREAM_INFO()<<"切换到华语界面";
 }
 
 /**
@@ -474,21 +446,10 @@ void MVWidget::on_chinese_pushButton_clicked()
  */
 void MVWidget::on_west_pushButton_clicked()
 {
-    ui->new_song_grid_widget->setUpdatesEnabled(false);
-    const auto layout = static_cast<QGridLayout *>(ui->new_song_grid_widget->layout());
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
-            int index = row * 3 + col;
-            auto item = layout->itemAtPosition(row, col);
-            auto widget = static_cast<MVBlockWidget *>(item->widget());
-            widget->setCoverPix(this->m_westVector[index].pixPath); ///< 设置封面
-            widget->setTitle(this->m_westVector[index].title);      ///< 设置标题
-            widget->setDescription(this->m_westVector[index].description); ///< 设置描述
-        }
-    }
-    ui->new_song_grid_widget->setUpdatesEnabled(true);
+    if (ui->stackedWidget->currentIndex() == 2) return;
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(2);
+    STREAM_INFO()<<"切换到日韩界面";
 }
 
 /**
@@ -496,21 +457,10 @@ void MVWidget::on_west_pushButton_clicked()
  */
 void MVWidget::on_koreaAndJapan_pushButton_clicked()
 {
-    ui->new_song_grid_widget->setUpdatesEnabled(false);
-    const auto layout = static_cast<QGridLayout *>(ui->new_song_grid_widget->layout());
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
-            int index = row * 3 + col;
-            auto item = layout->itemAtPosition(row, col);
-            auto widget = static_cast<MVBlockWidget *>(item->widget());
-            widget->setCoverPix(this->m_koreaAndJapanVector[index].pixPath); ///< 设置封面
-            widget->setTitle(this->m_koreaAndJapanVector[index].title);      ///< 设置标题
-            widget->setDescription(this->m_koreaAndJapanVector[index].description); ///< 设置描述
-        }
-    }
-    ui->new_song_grid_widget->setUpdatesEnabled(true);
+    if (ui->stackedWidget->currentIndex() == 3) return;
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(3);
+    STREAM_INFO()<<"切换到欧美界面";
 }
 
 /**

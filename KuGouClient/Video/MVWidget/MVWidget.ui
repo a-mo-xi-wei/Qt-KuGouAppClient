@@ -6,29 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>879</width>
-    <height>415</height>
+    <width>851</width>
+    <height>528</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MVWidget</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
-   <property name="spacing">
-    <number>0</number>
-   </property>
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="MyScrollArea" name="scrollArea">
      <property name="frameShape">
@@ -44,9 +29,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-304</y>
-        <width>862</width>
-        <height>719</height>
+        <y>-206</y>
+        <width>842</width>
+        <height>906</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -57,7 +42,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
-        <number>0</number>
+        <number>20</number>
        </property>
        <property name="leftMargin">
         <number>0</number>
@@ -579,54 +564,13 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="new_song_grid_widget" native="true">
+        <widget class="SlidingStackedWidget" name="stackedWidget">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1" columnstretch="1,1,1" rowminimumheight="1,1,1" columnminimumwidth="1,1,1">
-          <property name="leftMargin">
-           <number>5</number>
-          </property>
-          <property name="topMargin">
-           <number>10</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="MVBlockWidget" name="widget_2" native="true"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="MVBlockWidget" name="widget_3" native="true"/>
-          </item>
-          <item row="0" column="2">
-           <widget class="MVBlockWidget" name="widget_4" native="true"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="MVBlockWidget" name="widget_6" native="true"/>
-          </item>
-          <item row="1" column="1">
-           <widget class="MVBlockWidget" name="widget_7" native="true"/>
-          </item>
-          <item row="1" column="2">
-           <widget class="MVBlockWidget" name="widget_5" native="true"/>
-          </item>
-          <item row="2" column="0">
-           <widget class="MVBlockWidget" name="widget_8" native="true"/>
-          </item>
-          <item row="2" column="1">
-           <widget class="MVBlockWidget" name="widget_10" native="true"/>
-          </item>
-          <item row="2" column="2">
-           <widget class="MVBlockWidget" name="widget_9" native="true"/>
-          </item>
-         </layout>
         </widget>
        </item>
        <item>
@@ -1044,6 +988,12 @@
    <class>ElaLineEdit</class>
    <extends>QLineEdit</extends>
    <header>ElaLineEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SlidingStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header>slidingstackedwidget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
