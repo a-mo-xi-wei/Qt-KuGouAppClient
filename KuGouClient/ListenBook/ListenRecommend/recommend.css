@@ -1,6 +1,6 @@
 /*******classify_widget****************/
 QWidget#classify_widget > QToolButton{
-    background-color: #D1D5F6;
+    background-color: #a0cfe3;
     border-radius: 18px;
 }
 QWidget#classify_widget > QToolButton:hover{
@@ -11,7 +11,7 @@ QWidget#classify_widget > QToolButton:hover{
 /*}*/
 /* 组合父控件和子控件的ID，提高特定性 */
 QWidget#classify_widget > QToolButton#all_classify_toolButton {
-    border: 1px solid #D1D5F6;
+    border: 1px solid #a0cfe3;
     background-color: transparent;
 }
 

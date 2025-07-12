@@ -8,7 +8,6 @@
 
 #include "GLTabWidget.h"
 #include "IconBesideTextToolButton.h"
-#include "MyMenu.h"
 #include "logger.hpp"
 #include "ElaMenu.h"
 

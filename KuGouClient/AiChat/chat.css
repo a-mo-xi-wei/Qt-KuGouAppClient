@@ -15,7 +15,7 @@ ChatView > QScrollArea {
 /*-------------------清理按钮----------------------*/
 #clear_toolButton{
     border: none;
-    background-color: #eaeaea;
+    background-color: #b0d5df;
     border-radius: 12px;
     padding-left: 2px;
 }
@@ -32,8 +32,8 @@ ChatView > QScrollArea {
 /*-------------------send_widget----------------------*/
 
 #question_textEdit{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
 }
 #button_widget{
-    background-color: rgba(255,255,255,0);
+    background-color: transparent;
 }

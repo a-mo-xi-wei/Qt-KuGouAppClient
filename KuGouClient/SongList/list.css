@@ -3,7 +3,7 @@
 }
 QToolButton{
     font-size: 13px;
-    background-color: #dee5ea;
+    background-color: #c1e4ef;
     border: none;
     border-radius: 17px;
     color: black;
@@ -12,8 +12,9 @@ QToolButton:hover{
     color: #3AA1FF;
 }
 QToolButton#all_toolButton{
-    background-color: rgba(255,255,255,0);
-    border: 1px solid #e3e3e3;
+    color: #9d9d9d;
+    background-color: transparent;
+    border: 1px solid #83b7ea;
 }
 QToolButton#all_toolButton:hover{
     border: 1px solid #3AA1FF;

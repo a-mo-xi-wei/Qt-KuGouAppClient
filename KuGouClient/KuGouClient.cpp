@@ -1348,7 +1348,7 @@ void KuGouClient::onTitleMaxScreen() {
         m_endGeometry = m_startGeometry; ///< 记录正常几何形状
         m_startGeometry = this->screen()->availableGeometry(); ///< 设置最大化几何形状
         this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
-                                background-color: rgba(255,255,255,0);
+                                background-color: transparent;
                                 qproperty-icon: url(":/Res/titlebar/maximize-black.svg");
                                 border-radius: 6px;
                                 height: 30px;
@@ -1363,7 +1363,7 @@ void KuGouClient::onTitleMaxScreen() {
         m_startGeometry = this->m_normalGeometry; ///< 设置起始几何形状
         m_endGeometry = this->screen()->availableGeometry(); ///< 设置目标几何形状
         this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
-                                background-color: rgba(255,255,255,0);
+                                background-color: transparent;
                                 qproperty-icon: url(":/Res/titlebar/resume-black.svg");
                                 border-radius: 6px;
                                 height: 30px;
