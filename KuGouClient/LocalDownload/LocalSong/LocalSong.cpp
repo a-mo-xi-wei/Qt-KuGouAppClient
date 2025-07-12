@@ -179,6 +179,11 @@ void LocalSong::initUi()
     auto local_batch_toolButton_toolTip = new ElaToolTip(ui->local_batch_toolButton); ///< 创建批量操作按钮工具提示
     local_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作")); ///< 设置批量操作提示
 
+    const auto layout = ui->local_song_list_widget->layout(); ///< 获取歌曲列表布局
+    layout->setSpacing(2);                               ///< 设置间距
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Expanding)); ///< 添加扩展填充
+    layout->setContentsMargins(0, 0, 0, 0);             ///< 设置边距
+
     ui->local_all_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
     ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/add-gray.svg"))); ///< 设置添加按钮图标
     ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/upload-cloud-gray.svg"))); ///< 设置上传按钮图标
@@ -264,7 +269,7 @@ void LocalSong::getMetaData()
 
             /// 获取文件信息
             QFileInfo fileInfo(this->m_mediaPath);
-            int fileSize = fileInfo.exists() ? static_cast<int>(fileInfo.size()) : 0;
+            int fileSize = fileInfo.exists() ? static_cast<int>(fileInfo.size()) : 0;               ///< 获取文件大小
 
             QString format;
             auto formatValue = data.value(QMediaMetaData::FileFormat);                 ///< 获取文件格式（后缀名）如 "MP3", "FLAC"
@@ -308,7 +313,7 @@ void LocalSong::getMetaData()
                 this->m_musicItemVector.emplace_back(item); ///< 添加音乐项
                 const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
                 if (!layout) return;
-                layout->insertWidget(layout->count(), item); ///< 插入音乐项
+                layout->insertWidget(layout->count() - 1, item); ///< 插入音乐项
 
                 ///< 添加suggestion
                 QJsonObject obj;
@@ -486,8 +491,7 @@ void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicIt
         delete item;                                     ///< 删除布局项
     }
     layout->setSpacing(2);                               ///< 设置间距
-    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed)); ///< 添加固定填充
-    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding)); ///< 添加扩展填充
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Expanding)); ///< 添加扩展填充
     layout->setContentsMargins(0, 0, 0, 0);             ///< 设置边距
     std::sort(this->m_musicItemVector.begin(), this->m_musicItemVector.end(), std::move(comparator)); ///< 排序
     this->m_locationMusicVector.clear();                 ///< 清空歌曲列表
@@ -497,7 +501,7 @@ void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicIt
     {
         val->m_information.index = ++index;              ///< 更新索引
         val->setIndexText(index + 1);                    ///< 设置索引文本
-        lay->insertWidget(ui->local_song_list_widget->layout()->count(), val); ///< 插入音乐项
+        lay->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val); ///< 插入音乐项
         this->m_locationMusicVector.emplace_back(val->m_information); ///< 添加歌曲信息
     }
     ui->local_song_list_widget->setUpdatesEnabled(true); ///< 启用更新
@@ -524,7 +528,7 @@ void LocalSong::updateCurPlayIndex()
     m_deleteSelf = false;                                ///< 重置删除标志
     if (it == this->m_locationMusicVector.end())
     {
-        qDebug() << "删除的是自己";
+        // qDebug() << "删除的是自己";
 
         // 重点修改：空向量时重置索引
         if (m_locationMusicVector.empty()) {
@@ -607,14 +611,14 @@ void LocalSong::fetchAndSyncServerSongList()
         info.format = song["format"].toString();         ///< 设置文件格式
         info.issueDate = QDateTime::fromString(song["issueDate"].toString(), "yyyy-MM-dd hh:mm:ss");
 
-        m_locationMusicVector.emplace_back(info);        ///< 添加歌曲信息
+        m_locationMusicVector.emplace_back(info);               ///< 添加歌曲信息
         auto item = new MusicItemWidget(info, this);     ///< 创建音乐项
         initMusicItem(item);                                        ///< 初始化音乐项
         m_musicItemVector.emplace_back(item);                   ///< 添加音乐项
         const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
         if (!layout)
             return;
-        layout->insertWidget(layout->count(), item); ///< 插入音乐项
+        layout->insertWidget(layout->count() - 1, item); ///< 插入音乐项
 
         ///< 添加suggestion
         QJsonObject obj;
@@ -918,8 +922,7 @@ void LocalSong::onRandomSort()
         delete item;                                     ///< 删除布局项
     }
     layout->setSpacing(2);                               ///< 设置间距
-    layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed)); ///< 添加固定填充
-    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding)); ///< 添加扩展填充
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Expanding)); ///< 添加扩展填充
     layout->setContentsMargins(0, 0, 0, 0);             ///< 设置边距
     const unsigned seed = std::chrono::system_clock::now().time_since_epoch().count(); ///< 获取随机种子
     std::shuffle(this->m_musicItemVector.begin(), this->m_musicItemVector.end(), std::default_random_engine(seed)); ///< 随机打乱
@@ -930,7 +933,7 @@ void LocalSong::onRandomSort()
     {
         val->m_information.index = ++index;              ///< 更新索引
         val->setIndexText(index + 1);                    ///< 设置索引文本
-        lay->insertWidget(ui->local_song_list_widget->layout()->count(), val); ///< 插入音乐项
+        lay->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val); ///< 插入音乐项
         this->m_locationMusicVector.emplace_back(val->m_information); ///< 添加歌曲信息
     }
     ui->local_song_list_widget->setUpdatesEnabled(true); ///< 启用更新

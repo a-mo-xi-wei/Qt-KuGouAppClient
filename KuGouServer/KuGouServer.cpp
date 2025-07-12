@@ -151,7 +151,7 @@ void KuGouServer::initDateBase() {
             "\"add_time\" text NOT NULL,"
             "\"play_count\" integer NOT NULL DEFAULT 0,"
             "\"file_size\" integer NOT NULL,"
-            "\"format\" integer NOT NULL DEFAULT 'MP3',"
+            "\"format\" text NOT NULL DEFAULT 'MP3',"
             "\"issue_date\" text,"
             "PRIMARY KEY (\"song\", \"singer\", \"duration\"));";//用歌曲和歌手和时长唯一标识
         m_SqliteDataProvider.execSql(sql,"create_local_song_table",false);
@@ -823,9 +823,9 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
         const QString duration = requestData["duration"].toString();
         const QString mediaPath = requestData["mediaPath"].toString();
         const QString addTime = requestData["addTime"].toString();
-        const QString fileSize = requestData["fileSize"].toString();
+        const int fileSize = requestData["fileSize"].toInt();
         const QString format = requestData["format"].toString();
-        const QString issueDate = requestData["issueDate"].toString("yyyy-MM-dd hh:mm:ss");
+        const QString issueDate = requestData["issueDate"].toString();
 
         // 处理封面图片（Base64或空）
         QString coverData;
@@ -845,8 +845,8 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
         // 构造 SQL 语句（使用参数化查询防注入）
         const QString sql = QString(
            "INSERT INTO local_song_table "
-           "(\"index\", cover, song, singer, duration, media_path, add_time, file_size, format, issueDate) "
-           "VALUES (%1, %2, %3, %4, %5, %6, %7);"
+           "(\"index\", cover, song, singer, duration, media_path, add_time, file_size, format, issue_date) "
+           "VALUES (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10);"
         )
         .arg(safeNumber(index))         // 下标
         .arg(safeString(coverData))     // Base64 图像数据
@@ -855,18 +855,19 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
         .arg(safeString(duration))
         .arg(safeString(mediaPath))
         .arg(safeString(addTime))
-        .arg(safeString(fileSize))
+        .arg(safeNumber(fileSize))
         .arg(safeString(format))
         .arg(safeString(issueDate));
+        // 💡 打印构造好的 SQL 语句
 
-        // 执行 SQL
-        if (!m_SqliteDataProvider.execInsertSql(sql, "add_song", false).isEmpty()) {
+        const auto errorMsg = m_SqliteDataProvider.execInsertSql(sql, "add_song", false);
+
+        if (!errorMsg.isEmpty()) {
+            QLOG_INFO() << "Song added successfully. Index:" << index;
             QJsonObject response;
             response["status"] = "success";
             response["index"] = index;
             session->replyBytes(QJsonDocument(response).toJson(), "application/json");
-
-            QLOG_INFO() << "Song added successfully. Index:" << index;
         } else {
             QLOG_ERROR() << "Song added error for index:" << index;
             session->replyBytes(SResult::failure(SResultCode::ServerSqlQueryError), "application/json");
