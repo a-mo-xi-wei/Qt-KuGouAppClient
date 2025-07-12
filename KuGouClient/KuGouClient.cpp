@@ -101,6 +101,8 @@ KuGouClient::KuGouClient(MainWindow *parent)
     }
     initPlayer();                                                  ///< 初始化播放器
     initUi();                                                      ///< 初始化界面
+    
+    setupButtonConnections(); // 初始化按钮连接
 
     // @note 动画结束，恢复按钮可交互
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
@@ -254,7 +256,9 @@ void KuGouClient::initUi() {
     initSearchResultWidget(); ///< 初始化搜索结果界面
     initPlayWidget(); ///< 初始化播放栏
     initMenu(); ///< 初始化菜单
-    initCornerWidget(); ///< 初始化角标
+
+    this->m_sizeGrip->setFixedSize(11, 11);                       ///< 设置角标大小
+    this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip"));  ///< 设置对象名称
 }
 
 /**
@@ -302,13 +306,13 @@ void KuGouClient::initStackedWidget() {
     }
 
     // @note 响应相关跳转
-    connect(this->m_collection.get(), &MyCollection::find_more_music, [this] { on_music_repository_toolButton_clicked(); }); ///< 连接收藏跳转
-    connect(this->m_localDownload.get(), &LocalDownload::find_more_music, [this] { on_music_repository_toolButton_clicked(); }); ///< 连接本地下载跳转
-    connect(this->m_musicCloudDisk.get(), &MusicCloudDisk::find_more_music, [this] { on_music_repository_toolButton_clicked(); }); ///< 连接云盘跳转
-    connect(this->m_purchasedMusic.get(), &PurchasedMusic::find_more_music, [this] { on_music_repository_toolButton_clicked(); }); ///< 连接已购音乐跳转
-    connect(this->m_recentlyPlayed.get(), &RecentlyPlayed::find_more_music, [this] { on_music_repository_toolButton_clicked(); }); ///< 连接最近播放跳转
-    connect(this->m_recentlyPlayed.get(), &RecentlyPlayed::find_more_channel, [this] { on_channel_toolButton_clicked(); }); ///< 连接频道跳转
-    connect(this->m_allMusic.get(), &AllMusic::find_more_music, [this] { on_music_repository_toolButton_clicked(); }); ///< 连接全部音乐跳转
+    connect(this->m_collection.get(), &MyCollection::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });          ///< 切换到乐库界面
+    connect(this->m_localDownload.get(), &LocalDownload::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });      ///< 切换到乐库界面
+    connect(this->m_musicCloudDisk.get(), &MusicCloudDisk::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });    ///< 切换到乐库界面
+    connect(this->m_purchasedMusic.get(), &PurchasedMusic::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });    ///< 切换到乐库界面
+    connect(this->m_recentlyPlayed.get(), &RecentlyPlayed::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });    ///< 切换到乐库界面
+    connect(this->m_recentlyPlayed.get(), &RecentlyPlayed::find_more_channel, [this] { ui->title_widget->onLeftMenu_channel_clicked(); });          ///< 切换到频道页面
+    connect(this->m_allMusic.get(), &AllMusic::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });                ///< 切换到乐库界面
 
     // @note 本地下载相关信号
     connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouClient::onPlayLocalMusic); ///< 连接播放本地音乐
@@ -750,15 +754,6 @@ void KuGouClient::initMenu() {
 }
 
 /**
- * @brief 初始化角标
- * @note 设置窗口大小调整角标
- */
-void KuGouClient::initCornerWidget() {
-    this->m_sizeGrip->setFixedSize(11, 11);                       ///< 设置角标大小
-    this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip"));  ///< 设置对象名称
-}
-
-/**
  * @brief 更新窗口大小
  * @note 触发重绘并同步遮罩大小
  */
@@ -788,6 +783,35 @@ void KuGouClient::enableButton(const bool &flag) {
     ui->recently_played_toolButton->setEnabled(flag);             ///< 设置最近播放按钮
     ui->all_music_toolButton->setEnabled(flag);                   ///< 设置全部音乐按钮
     ui->title_widget->setEnableChange(flag);                      ///< 设置标题栏交互
+}
+
+// 实现文件
+void KuGouClient::setupButtonConnections()
+{
+    // 建立按钮与对应函数的映射关系
+    m_buttonMap = {
+        {ui->recommend_you_toolButton,         &TitleWidget::onLeftMenu_recommend_clicked},
+        {ui->music_repository_toolButton,       &TitleWidget::onLeftMenu_musicRepository_clicked},
+        {ui->channel_toolButton,                &TitleWidget::onLeftMenu_channel_clicked},
+        {ui->video_toolButton,                 &TitleWidget::onLeftMenu_video_clicked},
+        {ui->live_toolButton,                   &TitleWidget::onLeftMenu_live_clicked},
+        {ui->ai_chat_toolButton,               &TitleWidget::onLeftMenu_ai_chat_clicked},
+        {ui->song_list_toolButton,              &TitleWidget::onLeftMenu_songList_clicked},
+        {ui->daily_recommend_toolButton,        &TitleWidget::onLeftMenu_dailyRecommend_clicked},
+        {ui->my_collection_toolButton,          &TitleWidget::onLeftMenu_collection_clicked},
+        {ui->local_download_toolButton,         &TitleWidget::onLeftMenu_localDownload_clicked},
+        {ui->music_cloud_disk_toolButton,       &TitleWidget::onLeftMenu_musicCloudDisk_clicked},
+        {ui->purchased_music_toolButton,        &TitleWidget::onLeftMenu_purchasedMusic_clicked},
+        {ui->recently_played_toolButton,        &TitleWidget::onLeftMenu_recentlyPlayed_clicked},
+        {ui->all_music_toolButton,              &TitleWidget::onLeftMenu_allMusic_clicked}
+    };
+
+    // 统一连接所有按钮信号
+    for (auto it = m_buttonMap.begin(); it != m_buttonMap.end(); ++it) {
+        connect(it.key(), &QToolButton::clicked, this, [this, func = it.value()] {
+            (ui->title_widget->*func)(); // 调用对应的成员函数
+        });
+    }
 }
 
 /**
@@ -972,118 +996,6 @@ void KuGouClient::showEvent(QShowEvent *event) {
  */
 void KuGouClient::closeEvent(QCloseEvent *event) {
     MainWindow::closeEvent(event); ///< 调用父类处理
-}
-
-/**
- * @brief 推荐按钮点击槽函数
- * @note 触发标题栏推荐页面切换
- */
-void KuGouClient::on_recommend_you_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_recommend_clicked(); ///< 切换到推荐页面
-}
-
-/**
- * @brief 音乐库按钮点击槽函数
- * @note 触发标题栏音乐库页面切换
- */
-void KuGouClient::on_music_repository_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_musicRepository_clicked(); ///< 切换到音乐库页面
-}
-
-/**
- * @brief 频道按钮点击槽函数
- * @note 触发标题栏频道页面切换
- */
-void KuGouClient::on_channel_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_channel_clicked(); ///< 切换到频道页面
-}
-
-/**
- * @brief 视频按钮点击槽函数
- * @note 触发标题栏视频页面切换
- */
-void KuGouClient::on_video_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_video_clicked(); ///< 切换到视频页面
-}
-
-/**
- * @brief 直播按钮点击槽函数
- * @note 触发标题栏直播页面切换
- */
-void KuGouClient::on_live_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_live_clicked(); ///< 切换到直播页面
-}
-
-/**
- * @brief AI 聊天按钮点击槽函数
- * @note 触发标题栏 AI 聊天页面切换
- */
-void KuGouClient::on_ai_chat_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_ai_chat_clicked(); ///< 切换到 AI 聊天页面
-}
-
-/**
- * @brief 歌单按钮点击槽函数
- * @note 触发标题栏歌单页面切换
- */
-void KuGouClient::on_song_list_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_songList_clicked(); ///< 切换到歌单页面
-}
-
-/**
- * @brief 每日推荐按钮点击槽函数
- * @note 触发标题栏每日推荐页面切换
- */
-void KuGouClient::on_daily_recommend_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_dailyRecommend_clicked(); ///< 切换到每日推荐页面
-}
-
-/**
- * @brief 收藏按钮点击槽函数
- * @note 触发标题栏收藏页面切换
- */
-void KuGouClient::on_my_collection_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_collection_clicked(); ///< 切换到收藏页面
-}
-
-/**
- * @brief 本地下载按钮点击槽函数
- * @note 触发标题栏本地下载页面切换
- */
-void KuGouClient::on_local_download_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_localDownload_clicked(); ///< 切换到本地下载页面
-}
-
-/**
- * @brief 云盘按钮点击槽函数
- * @note 触发标题栏云盘页面切换
- */
-void KuGouClient::on_music_cloud_disk_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_musicCloudDisk_clicked(); ///< 切换到云盘页面
-}
-
-/**
- * @brief 已购音乐按钮点击槽函数
- * @note 触发标题栏已购音乐页面切换
- */
-void KuGouClient::on_purchased_music_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_purchasedMusic_clicked(); ///< 切换到已购音乐页面
-}
-
-/**
- * @brief 最近播放按钮点击槽函数
- * @note 触发标题栏最近播放页面切换
- */
-void KuGouClient::on_recently_played_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_recentlyPlayed_clicked(); ///< 切换到最近播放页面
-}
-
-/**
- * @brief 全部音乐按钮点击槽函数
- * @note 触发标题栏全部音乐页面切换
- */
-void KuGouClient::on_all_music_toolButton_clicked() {
-    ui->title_widget->onLeftMenu_allMusic_clicked(); ///< 切换到全部音乐页面
 }
 
 /**
