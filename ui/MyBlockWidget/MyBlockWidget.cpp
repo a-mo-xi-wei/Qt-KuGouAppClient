@@ -72,13 +72,13 @@ void MyBlockWidget::initUi() {
     this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     this->m_leftPopularBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/person-white.svg")));
     this->m_leftPopularBtn->setContentsMargins(5, 0, 5, 0);
-    this->m_leftPopularBtnStyle = "color:white;border:none;border-radius:10px;background-color: rgba(255,255,255,0);";
+    this->m_leftPopularBtnStyle = "color:white;border:none;border-radius:10px;background-color: transparent;";
     this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
 
     this->m_durationBtn->setEnabled(false);
     this->m_durationBtn->setFixedSize(50,20);
     this->m_leftPopularBtn->setContentsMargins(8, 0, 0, 0);
-    this->m_durationBtn->setStyleSheet("color:white;border:none;background-color: rgba(255,255,255,0);");
+    this->m_durationBtn->setStyleSheet("color:white;border:none;background-color: transparent;");
 
 }
 

@@ -3,24 +3,24 @@ QWidget{
     border-radius:8px;
 }
 QLabel#diskLab{
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
     border:none;
     border-image: url(":/Res/playbar/disk-black.png");
 }
 QLabel#textLab1{
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
     border:none;
     color:black;
     font-size: 14px;
 }
 QLabel#textLab2{
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
     border:none;
     color: #989898;
     font-size: 13px;
 }
 QLabel#adjustmentLab{
-    background-color:rgba(255,255,255,0);
+    background-color:transparent;
     border:none;
     color:black;
     font-size: 12px;

@@ -26,7 +26,7 @@ void UpToolButton::initUi() {
     // 设置固定尺寸
     this->setFixedSize(34, 34);
     // 设置样式表
-    this->setStyleSheet(QStringLiteral("border-radius:5px;background-color:rgba(177,177,177,200);"));
+    this->setStyleSheet(QStringLiteral("border-radius:5px;background-color:rgba(199,210,212,200);"));
     // 设置鼠标手型光标
     this->setCursor(Qt::PointingHandCursor);
     // 设置默认图标

@@ -20,7 +20,7 @@ Registration_form::Registration_form(QWidget *parent)
     email = new Input_box(":/Res/login/email.png", this);
     email->move(46, 220);
     email->setPlaceholderText("Email");
-    email->setMaxLength(16);
+    email->setMaxLength(30);    ///< 仅仅考虑正常邮箱
     email->setValidator(new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"), this));
     email->openToolTip();
     email->setIconToolTip(QStringLiteral("邮箱"));
