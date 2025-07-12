@@ -1070,6 +1070,9 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
             song.duration = songObj["duration"].toString();
             song.coverUrl = songObj["coverUrl"].toString();
             song.netUrl = songObj["netUrl"].toString();
+            song.fileSize = songObj["fileSize"].toInt();
+            song.format = songObj["format"].toString();
+            song.issueDate = QDateTime::fromString(songObj["issueDate"].toString(), "yyyy-MM-dd hh:mm:ss");
             song.cover = song.coverUrl.isEmpty() ? QPixmap(":/Res/tablisticon/pix4.png") : song.cover;
             songs.append(song);
         }

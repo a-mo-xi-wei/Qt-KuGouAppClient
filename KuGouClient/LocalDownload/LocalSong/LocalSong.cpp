@@ -234,34 +234,60 @@ void LocalSong::getMetaData()
         if (status == QMediaPlayer::LoadedMedia)
         {
             this->m_player->stop();                      ///< 停止播放
-            const QMediaMetaData data = this->m_player->metaData(); ///< 获取元数据
 
-            auto title = data.value(QMediaMetaData::Title).toString(); ///< 获取标题
+            const QMediaMetaData data = this->m_player->metaData();                                 ///< 获取元数据
+
+            auto title = data.value(QMediaMetaData::Title).toString();                  ///< 获取标题
             if (!re.match(title).hasMatch())
             {
                 title = QUrl::fromLocalFile(this->m_mediaPath).fileName(); ///< 使用文件名
                 title = title.first(title.lastIndexOf('.')); ///< 去除扩展名
             }
 
-            auto singer = data.value(QMediaMetaData::ContributingArtist).toString(); ///< 获取歌手
-            if (!re.match(singer).hasMatch())
+            auto singer = data.value(QMediaMetaData::ContributingArtist).toString();    ///< 获取歌手
+            if (!re.match(singer).hasMatch()) {
                 singer = QStringLiteral("网络歌手");     ///< 设置默认歌手
+            }
 
-            auto album = data.value(QMediaMetaData::AlbumTitle).toString();
-            if (!re.match(album).hasMatch())
+            auto album = data.value(QMediaMetaData::AlbumTitle).toString();             ///< 获取专辑
+            if (!re.match(album).hasMatch()) {
                 album = QStringLiteral("网络专辑");
+            }
 
-            auto cover = data.value(QMediaMetaData::ThumbnailImage).value<QPixmap>(); ///< 获取封面
+            auto cover = data.value(QMediaMetaData::ThumbnailImage).value<QPixmap>();           ///< 获取封面
             if (cover.isNull())
             {
                 cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(QRandomGenerator::global()->bounded(1, 11))); ///< 设置随机封面
             }
 
-            const auto duration = data.value(QMediaMetaData::Duration).value<qint64>(); ///< 获取时长
+            const auto duration = data.value(QMediaMetaData::Duration).value<qint64>();///< 获取时长
+
+            /// 获取文件信息
+            QFileInfo fileInfo(this->m_mediaPath);
+            int fileSize = fileInfo.exists() ? static_cast<int>(fileInfo.size()) : 0;
+
+            QString format;
+            auto formatValue = data.value(QMediaMetaData::FileFormat);                 ///< 获取文件格式（后缀名）如 "MP3", "FLAC"
+            if (formatValue.isValid() && formatValue.canConvert<QString>()) {
+                format = formatValue.toString().toUpper(); // 尽量转成一致格式
+            }
+
+            // 如果元数据获取不到，再使用文件后缀
+            if (format.isEmpty()) {
+                format = fileInfo.suffix().toUpper();
+            }
+
+            QDateTime issueDate;                                                                    ///< 获取发行日期（元数据中的 Date 字段）
+            auto dateValue = data.value(QMediaMetaData::Date);
+            if (dateValue.canConvert<QDate>()) {
+                issueDate.setDate(dateValue.toDate());
+            } else if (dateValue.canConvert<QDateTime>()) {
+                issueDate = dateValue.toDateTime();
+            }
 
             SongInfor tempInformation;                   ///< 创建歌曲信息
             tempInformation.index = static_cast<int>(this->m_locationMusicVector.size()); ///< 设置索引
-            tempInformation.cover = cover;                ///< 设置封面
+            tempInformation.cover = cover;               ///< 设置封面
             tempInformation.songName = title;            ///< 设置标题
             tempInformation.singer = singer;             ///< 设置歌手
             tempInformation.album = album;               ///< 设置专辑
@@ -269,6 +295,9 @@ void LocalSong::getMetaData()
             tempInformation.mediaPath = this->m_mediaPath; ///< 设置路径
             tempInformation.addTime = QDateTime::currentDateTime(); ///< 设置添加时间
             tempInformation.playCount = 0;               ///< 设置播放次数
+            tempInformation.fileSize = fileSize;         ///< 设置文件大小
+            tempInformation.format = format;             ///< 设置文件格式
+            tempInformation.issueDate = issueDate;       ///< 设置发行日期
 
             const auto it = std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), tempInformation); ///< 检查重复
             if (it == this->m_locationMusicVector.end())
@@ -316,7 +345,11 @@ void LocalSong::getMetaData()
                     {"duration", tempInformation.duration},
                     {"mediaPath", tempInformation.mediaPath},
                     {"addTime", tempInformation.addTime.toString("yyyy-MM-dd hh:mm:ss")},
-                    {"playCount", tempInformation.playCount}};
+                    {"playCount", tempInformation.playCount},
+                    {"fileSize", tempInformation.fileSize},
+                    {"format", tempInformation.format},
+                    {"issueDate", tempInformation.issueDate.toString("yyyy-MM-dd hh:mm:ss")}
+                };
                 QJsonDocument doc(postJson);
                 QString jsonString = doc.toJson(QJsonDocument::Compact); ///< 转换为 JSON 字符串
                 m_libHttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"), jsonString); ///< 发送添加请求
@@ -560,20 +593,24 @@ void LocalSong::fetchAndSyncServerSongList()
             m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong", QJsonDocument(delReq).toJson(QJsonDocument::Compact)); ///< 发送删除请求
             continue;
         }
-        SongInfor info;                                  ///< 创建歌曲信息
+        SongInfor info;                                     ///< 创建歌曲信息
         info.index = song["index"].toInt();              ///< 设置索引
-        info.mediaPath = mediaPath;                      ///< 设置路径
+        info.mediaPath = mediaPath;                         ///< 设置路径
         QByteArray imgData = QByteArray::fromBase64(song["cover"].toString().toLatin1()); ///< 解析封面
-        info.cover.loadFromData(imgData);                ///< 加载封面
+        info.cover.loadFromData(imgData);                   ///< 加载封面
         info.songName = song["song"].toString();         ///< 设置标题
         info.singer = song["singer"].toString();         ///< 设置歌手
         info.duration = song["duration"].toString();     ///< 设置时长
         info.addTime = QDateTime::fromString(song["add_time"].toString(), "yyyy-MM-dd hh:mm:ss"); ///< 设置添加时间
         info.playCount = song["play_count"].toInt();     ///< 设置播放次数
-        m_locationMusicVector.emplace_back(info);         ///< 添加歌曲信息
+        info.fileSize = song["file_size"].toInt();       ///< 设置文件大小
+        info.format = song["format"].toString();         ///< 设置文件格式
+        info.issueDate = QDateTime::fromString(song["issueDate"].toString(), "yyyy-MM-dd hh:mm:ss");
+
+        m_locationMusicVector.emplace_back(info);        ///< 添加歌曲信息
         auto item = new MusicItemWidget(info, this);     ///< 创建音乐项
-        initMusicItem(item);                             ///< 初始化音乐项
-        m_musicItemVector.emplace_back(item);             ///< 添加音乐项
+        initMusicItem(item);                                        ///< 初始化音乐项
+        m_musicItemVector.emplace_back(item);                   ///< 添加音乐项
         const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout()); ///< 获取布局
         if (!layout)
             return;

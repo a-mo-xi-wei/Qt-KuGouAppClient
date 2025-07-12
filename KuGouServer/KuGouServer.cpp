@@ -150,6 +150,9 @@ void KuGouServer::initDateBase() {
             "\"media_path\" text NOT NULL,"
             "\"add_time\" text NOT NULL,"
             "\"play_count\" integer NOT NULL DEFAULT 0,"
+            "\"file_size\" integer NOT NULL,"
+            "\"format\" integer NOT NULL DEFAULT 'MP3',"
+            "\"issue_date\" text,"
             "PRIMARY KEY (\"song\", \"singer\", \"duration\"));";//用歌曲和歌手和时长唯一标识
         m_SqliteDataProvider.execSql(sql,"create_local_song_table",false);
     }
@@ -543,10 +546,13 @@ bool KuGouServer::onApiSearchSong(const QPointer<JQHttpServer::Session> &session
                     QJsonObject songObj = item.toObject();
                     QJsonObject songInfo;
 
-                    songInfo["hash"] = songObj.value("FileHash").toString();
-                    songInfo["songName"] = songObj.value("SongName").toString();
-                    songInfo["singer"] = songObj.value("SingerName").toString();
-                    songInfo["album"] = songObj.value("AlbumName").toString();
+                    songInfo["hash"]        = songObj.value("FileHash").toString();
+                    songInfo["songName"]    = songObj.value("SongName").toString();
+                    songInfo["singer"]      = songObj.value("SingerName").toString();
+                    songInfo["album"]       = songObj.value("AlbumName").toString();
+                    songInfo["fileSize"]    = songObj.value("FileSize").toInt();
+                    songInfo["format"]      = songObj.value("ExtName").toInt();
+                    songInfo["issueDate"]   = songObj.value("IssueDate").toString("yyyy-MM-dd hh:mm:ss");
 
                     int duration = songObj.value("Duration").toInt();
                     songInfo["duration"] = QTime(0, duration / 60, duration % 60).toString("mm:ss");
@@ -692,6 +698,7 @@ bool KuGouServer::onApiGetSongNetUrl(const QPointer<JQHttpServer::Session> &sess
             QNetworkAccessManager manager;
 
             QString kugouUrl = QString("http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash=%1").arg(hash);
+            qDebug()<<"请求歌曲网络路径地址："<<kugouUrl;
             QNetworkRequest request(kugouUrl);
 
             QTimer timer;
@@ -715,16 +722,17 @@ bool KuGouServer::onApiGetSongNetUrl(const QPointer<JQHttpServer::Session> &sess
                     QString url = obj.value("url").toString();
 
                     if (!url.isEmpty()) {
-                        QJsonObject result{
-                            {"code", 0},
-                            {"message", "ok"},
-                            {"data", QJsonObject{
-                                {"url", url}
-                            }}
-                        };
+                        //QJsonObject result{
+                        //    {"code", 0},
+                        //    {"message", "ok"},
+                        //    {"data", QJsonObject{
+                        //        {"url", url}
+                        //    }}
+                        //};
 
                         if (!weakSession.isNull()) {
-                            weakSession->replyBytes(QJsonDocument(result).toJson(), "application/json");
+                            //weakSession->replyBytes(QJsonDocument(result).toJson(), "application/json");
+                            weakSession->replyBytes(SResult::success(QJsonObject{{"url", url}}), "application/json");
                             QLOG_INFO() << "歌曲播放地址获取成功:" << url;
                         }
                     } else {
@@ -796,8 +804,9 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
     // 校验必需字段
     const QStringList requiredFields = {
         "index", "songName", "singer",
-        "duration", "mediaPath", "addTime"
-    };
+        "duration", "mediaPath", "addTime",
+        "fileSize", "format", "issueDate",
+    };///< 刚添加的歌曲直接让他的播放次数按默认的来，无需检验
     for (const auto &field : requiredFields) {
         if (!requestData.contains(field)) {
             QLOG_ERROR() << "Missing required field: " << field;
@@ -814,6 +823,9 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
         const QString duration = requestData["duration"].toString();
         const QString mediaPath = requestData["mediaPath"].toString();
         const QString addTime = requestData["addTime"].toString();
+        const QString fileSize = requestData["fileSize"].toString();
+        const QString format = requestData["format"].toString();
+        const QString issueDate = requestData["issueDate"].toString("yyyy-MM-dd hh:mm:ss");
 
         // 处理封面图片（Base64或空）
         QString coverData;
@@ -833,7 +845,7 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
         // 构造 SQL 语句（使用参数化查询防注入）
         const QString sql = QString(
            "INSERT INTO local_song_table "
-           "(\"index\", cover, song, singer, duration, media_path, add_time) "
+           "(\"index\", cover, song, singer, duration, media_path, add_time, file_size, format, issueDate) "
            "VALUES (%1, %2, %3, %4, %5, %6, %7);"
         )
         .arg(safeNumber(index))         // 下标
@@ -842,7 +854,10 @@ bool KuGouServer::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
         .arg(safeString(singer))
         .arg(safeString(duration))
         .arg(safeString(mediaPath))
-        .arg(safeString(addTime));
+        .arg(safeString(addTime))
+        .arg(safeString(fileSize))
+        .arg(safeString(format))
+        .arg(safeString(issueDate));
 
         // 执行 SQL
         if (!m_SqliteDataProvider.execInsertSql(sql, "add_song", false).isEmpty()) {
