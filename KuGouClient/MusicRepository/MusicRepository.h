@@ -75,6 +75,12 @@ private:
      */
     void initVector();
 
+    /**
+     * @brief 启用或禁用按钮
+     * @param flag 是否启用
+     */
+    void enableButton(const bool &flag) const;
+
 protected:
     //想要通过事件过滤器去捕获每个list的 进入、离开事件是不行的，若是单个的话还行，所以还得要提升
     //bool eventFilter(QObject *watched, QEvent *event) override;
