@@ -32,6 +32,7 @@
 #include "ListenBook.h"
 #include "Search.h"
 #include "SpeedDialogState.h"
+#include "TitleWidget.h"
 
 /**
  * @class QButtonGroup
@@ -166,12 +167,6 @@ private:
     void initMenu();
 
     /**
-     * @brief 初始化角标控件
-     * @note 设置窗口大小调整控件
-     */
-    void initCornerWidget();
-
-    /**
      * @brief 更新窗口大小
      * @note 触发调整大小事件
      */
@@ -183,6 +178,11 @@ private:
      * @note 控制菜单按钮和标题栏的交互
      */
     void enableButton(const bool& flag);
+
+    /**
+     * @brief 信号映射表
+     */
+    void setupButtonConnections();
 
 protected:
     /**
@@ -245,91 +245,6 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 private slots:
-    // 菜单按钮槽函数
-    /**
-     * @brief 推荐按钮点击槽函数
-     * @note 切换到推荐界面
-     */
-    void on_recommend_you_toolButton_clicked();
-
-    /**
-     * @brief 音乐库按钮点击槽函数
-     * @note 切换到音乐库界面
-     */
-    void on_music_repository_toolButton_clicked();
-
-    /**
-     * @brief 频道按钮点击槽函数
-     * @note 切换到频道界面
-     */
-    void on_channel_toolButton_clicked();
-
-    /**
-     * @brief 视频按钮点击槽函数
-     * @note 切换到视频界面
-     */
-    void on_video_toolButton_clicked();
-
-    /**
-     * @brief 直播按钮点击槽函数
-     * @note 切换到直播界面
-     */
-    void on_live_toolButton_clicked();
-
-    /**
-     * @brief AI 聊天按钮点击槽函数
-     * @note 切换到 AI 聊天界面
-     */
-    void on_ai_chat_toolButton_clicked();
-
-    /**
-     * @brief 歌单按钮点击槽函数
-     * @note 切换到歌单界面
-     */
-    void on_song_list_toolButton_clicked();
-
-    /**
-     * @brief 每日推荐按钮点击槽函数
-     * @note 切换到每日推荐界面
-     */
-    void on_daily_recommend_toolButton_clicked();
-
-    /**
-     * @brief 我的收藏按钮点击槽函数
-     * @note 切换到我的收藏界面
-     */
-    void on_my_collection_toolButton_clicked();
-
-    /**
-     * @brief 本地下载按钮点击槽函数
-     * @note 切换到本地下载界面
-     */
-    void on_local_download_toolButton_clicked();
-
-    /**
-     * @brief 音乐云盘按钮点击槽函数
-     * @note 切换到音乐云盘界面
-     */
-    void on_music_cloud_disk_toolButton_clicked();
-
-    /**
-     * @brief 已购音乐按钮点击槽函数
-     * @note 切换到已购音乐界面
-     */
-    void on_purchased_music_toolButton_clicked();
-
-    /**
-     * @brief 最近播放按钮点击槽函数
-     * @note 切换到最近播放界面
-     */
-    void on_recently_played_toolButton_clicked();
-
-    /**
-     * @brief 全部音乐按钮点击槽函数
-     * @note 切换到全部音乐界面
-     */
-    void on_all_music_toolButton_clicked();
-
     /**
     * @brief 处理suggestBox选中项槽函数
      * @note 切换搜索结果界面
@@ -582,6 +497,7 @@ private:
     std::unique_ptr<Search>             m_search;          ///< 搜索界面
     std::unique_ptr<QWidget>            m_searchResultWidget;    ///< 搜索结果界面
     QVector<MusicItemWidget *>          m_searchMusicItemVector; ///< 音乐项容器
+    QMap<QToolButton*, void(TitleWidget::*)()> m_buttonMap; ///< 按钮-函数映射
     // 窗口缩放相关
     bool m_isTransForming = false;                      ///< 是否正在执行缩放动画
     bool m_isSingleCircle = false;                      ///< 是否单曲循环
