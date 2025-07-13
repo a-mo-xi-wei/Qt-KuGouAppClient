@@ -63,58 +63,113 @@ MVWidget::~MVWidget()
 }
 
 /**
+ * @brief 创建仓库页面
+ * @param beg 开始索引
+ * @return 创建的页面控件
+ */
+QWidget* MVWidget::createRepoPage(const int& beg)
+{
+    auto pageWidget = new QWidget;
+    auto mainLayout = new QVBoxLayout(pageWidget);
+    mainLayout->setSpacing(10);
+    mainLayout->setContentsMargins(10, 0, 10, 0);
+
+    for (int row = 0; row < 3; ++row) {
+        auto rowLayout = new QHBoxLayout;
+        rowLayout->setSpacing(10);
+        for (int col = 0; col < 3; ++col) {
+            int index = row * 3 + col + beg;
+            if (index >= 9 + beg) break;
+            auto item = new MVBlockWidget;
+            item->setCoverPix(m_total[index].pixPath);
+            item->setTitle(m_total[index].title);
+            item->setDescription(m_total[index].description);
+            rowLayout->addWidget(item);
+            rowLayout->setStretch(col, 1);
+        }
+        mainLayout->addLayout(rowLayout);
+    }
+
+    return pageWidget;
+}
+
+/**
  * @brief 初始化按钮组
  */
 void MVWidget::initButtonGroup()
 {
-    auto createRepoPage = [this](const QVector<MusicInfo> &vector) -> QWidget * {
-        auto pageWidget = new QWidget(ui->stackedWidget);
-        auto mainLayout = new QVBoxLayout(pageWidget);
-        mainLayout->setSpacing(10);
-        mainLayout->setContentsMargins(10, 0, 10, 0);
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::shuffle(this->m_total.begin(), this->m_total.end(), std::default_random_engine(seed)); ///< 随机打乱
 
-        for (int row = 0; row < 3; ++row) {
-            auto rowLayout = new QHBoxLayout;
-            rowLayout->setSpacing(10);
-            for (int col = 0; col < 3; ++col) {
-                int index = row * 3 + col;
-                if (index >= 9)
-                    break;
-                auto item = new MVBlockWidget;
-                item->setCoverPix(vector[index].pixPath); ///< 设置封面
-                item->setTitle(vector[index].title);      ///< 设置标题
-                item->setDescription(vector[index].description); ///< 设置描述
-                rowLayout->addWidget(item);
-                rowLayout->setStretch(col,1);
-            }
+    // 设置按钮组（互斥）
+    this->m_buttonGroup->addButton(ui->recommend_pushButton, 0);
+    this->m_buttonGroup->addButton(ui->chinese_pushButton, 1);
+    this->m_buttonGroup->addButton(ui->koreaAndJapan_pushButton, 2);
+    this->m_buttonGroup->addButton(ui->west_pushButton, 3);
+    this->m_buttonGroup->setExclusive(true);
 
-            mainLayout->addLayout(rowLayout);
+    // 初始化占位页面
+    for (int i = 0; i < 4; ++i) {
+        auto *placeholder = new QWidget;
+        auto *layout = new QVBoxLayout(placeholder);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(0);
+        m_repoPages[i] = placeholder;
+        ui->stackedWidget->insertWidget(i, placeholder);
+    }
+
+    m_repoPages[m_currentIdx]->layout()->addWidget(createRepoPage(1));
+    ui->stackedWidget->slideInIdx(0);
+
+    // 响应按钮点击事件
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](const int& id) {
+        if (m_currentIdx == id) {
+            return;
         }
 
-        return pageWidget;
-    };
+        enableButton(false);
 
-    // 创建各区域页面
-    QWidget *recommendWidget = createRepoPage(this->m_recommendVector);
-    QWidget *chineseWidget    = createRepoPage(this->m_chineseVector);
-    QWidget *koreaWidget   = createRepoPage(this->m_koreaAndJapanVector);
-    QWidget *westWidget   = createRepoPage(this->m_westVector);
+        QWidget *placeholder = m_repoPages[m_currentIdx];
+        if (!placeholder) {
+            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+            enableButton(true);
+            return;
+        }
 
-    // 添加到堆栈窗口
-    ui->stackedWidget->insertWidget(0,recommendWidget);
-    ui->stackedWidget->insertWidget(1,chineseWidget);
-    ui->stackedWidget->insertWidget(2,koreaWidget);
-    ui->stackedWidget->insertWidget(3,westWidget);
+        // 清理目标 placeholder 内旧的控件
+        QLayout *layout = placeholder->layout();
+        if (!layout) {
+            layout = new QVBoxLayout(placeholder);
+            layout->setContentsMargins(0, 0, 0, 0);
+            layout->setSpacing(0);
+        } else {
+            while (QLayoutItem* item = layout->takeAt(0)) {
+                if (QWidget* widget = item->widget()) {
+                    widget->deleteLater();
+                }
+                delete item;
+            }
+        }
+        placeholder = m_repoPages[id];
+        layout = placeholder->layout();
 
-    // 设置默认页（如：华语）
-    ui->stackedWidget->setCurrentWidget(recommendWidget);
+        // 创建新页面
+        int beginIndex = id * 10 + 1;
+        QWidget *realPage = createRepoPage(beginIndex);
+        if (!realPage) {
+            qWarning() << "[WARNING] Failed to create repo page at index:" << id;
+        } else {
+            layout->addWidget(realPage);
+        }
 
-    this->m_buttonGroup->addButton(ui->recommend_pushButton);      ///< 添加推荐按钮
-    this->m_buttonGroup->addButton(ui->chinese_pushButton);        ///< 添加华语按钮
-    this->m_buttonGroup->addButton(ui->west_pushButton);           ///< 添加欧美按钮
-    this->m_buttonGroup->addButton(ui->koreaAndJapan_pushButton);  ///< 添加日韩按钮
-    this->m_buttonGroup->setExclusive(true);                       ///< 设置互斥
+        ui->stackedWidget->slideInIdx(id);
+        m_currentIdx = id;
+
+        enableButton(true);
+        STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString();
+    });
 }
+
 
 /**
  * @brief 初始化直播场景分类
@@ -126,12 +181,12 @@ void MVWidget::initLiveScene()
     {
         for (int col = 0; col < 3; ++col)
         {
-            int index = row * 3 + col;
+            int index = row * 3 + col + 41; // 从索引 41 开始
             auto item = layout->itemAtPosition(row, col);
             auto widget = static_cast<MVBlockWidget *>(item->widget());
-            widget->setCoverPix(this->m_liveSceneVector[index].pixPath); ///< 设置封面
-            widget->setTitle(this->m_liveSceneVector[index].title);      ///< 设置标题
-            widget->hideDesc();                                          ///< 隐藏描述
+            widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
+            widget->setTitle(this->m_total[index].title);      ///< 设置标题
+            widget->hideDesc();                                ///< 隐藏描述
         }
     }
 }
@@ -146,12 +201,12 @@ void MVWidget::initHonorOfKings()
     {
         for (int col = 0; col < 3; ++col)
         {
-            int index = row * 3 + col;
+            int index = row * 3 + col + 51; // 从索引 51 开始
             auto item = layout->itemAtPosition(row, col);
             auto widget = static_cast<MVBlockWidget *>(item->widget());
-            widget->setCoverPix(this->m_honorOfKingsVector[index].pixPath); ///< 设置封面
-            widget->setTitle(this->m_honorOfKingsVector[index].title);      ///< 设置标题
-            widget->hideDesc();                                             ///< 隐藏描述
+            widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
+            widget->setTitle(this->m_total[index].title);      ///< 设置标题
+            widget->hideDesc();                                ///< 隐藏描述
         }
     }
 }
@@ -166,12 +221,12 @@ void MVWidget::initAwardCeremony()
     {
         for (int col = 0; col < 3; ++col)
         {
-            int index = row * 3 + col;
+            int index = row * 3 + col + 61; // 从索引 61 开始
             auto item = layout->itemAtPosition(row, col);
             auto widget = static_cast<MVBlockWidget *>(item->widget());
-            widget->setCoverPix(this->m_awardCeremonyVector[index].pixPath); ///< 设置封面
-            widget->setTitle(this->m_awardCeremonyVector[index].title);      ///< 设置标题
-            widget->hideDesc();                                              ///< 隐藏描述
+            widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
+            widget->setTitle(this->m_total[index].title);      ///< 设置标题
+            widget->hideDesc();                                ///< 隐藏描述
         }
     }
 }
@@ -186,12 +241,12 @@ void MVWidget::initHotMV()
     {
         for (int col = 0; col < 3; ++col)
         {
-            int index = row * 3 + col;
+            int index = row * 3 + col + 71; // 从索引 71 开始
             auto item = layout->itemAtPosition(row, col);
             auto widget = static_cast<MVBlockWidget *>(item->widget());
-            widget->setCoverPix(this->m_hotMVVector[index].pixPath); ///< 设置封面
-            widget->setTitle(this->m_hotMVVector[index].title);      ///< 设置标题
-            widget->hideDesc();                                      ///< 隐藏描述
+            widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
+            widget->setTitle(this->m_total[index].title);      ///< 设置标题
+            widget->hideDesc();                                ///< 隐藏描述
         }
     }
 }
@@ -217,13 +272,9 @@ void MVWidget::initVector()
             this->m_titleAndDesc.emplace_back(title, parseTitle(title)); ///< 解析标题
         }
         file.close();
-        // 对 vector 排序，按 pair 的第一个元素和第二个元素排序
         std::sort(m_titleAndDesc.begin(), m_titleAndDesc.end());
-
-        // 使用 std::unique 去重，并调整容器大小
         auto last = std::unique(m_titleAndDesc.begin(), m_titleAndDesc.end());
         m_titleAndDesc.erase(last, m_titleAndDesc.end());
-        //qDebug() << "现在大小："<<this->m_titleAndDesc.size();
     }
 
     for (int i = 1; i <= 100; i++)
@@ -233,27 +284,8 @@ void MVWidget::initVector()
             m_titleAndDesc[i].first,
             m_titleAndDesc[i].second); ///< 添加音乐信息
     }
-
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count(); ///< 获取随机种子
-    std::shuffle(this->m_total.begin(), this->m_total.end(), std::default_random_engine(seed)); ///< 随机打乱
-
-    for (int i = 1; i <= 10; ++i)
-        this->m_recommendVector.emplace_back(this->m_total[i]); ///< 分配推荐
-    for (int i = 11; i <= 20; ++i)
-        this->m_chineseVector.emplace_back(this->m_total[i]); ///< 分配华语
-    for (int i = 21; i <= 30; ++i)
-        this->m_westVector.emplace_back(this->m_total[i]); ///< 分配欧美
-    for (int i = 31; i <= 40; ++i)
-        this->m_koreaAndJapanVector.emplace_back(this->m_total[i]); ///< 分配日韩
-    for (int i = 41; i <= 50; ++i)
-        this->m_liveSceneVector.emplace_back(this->m_total[i]); ///< 分配直播场景
-    for (int i = 51; i <= 60; ++i)
-        this->m_honorOfKingsVector.emplace_back(this->m_total[i]); ///< 分配王者荣耀
-    for (int i = 61; i <= 70; ++i)
-        this->m_awardCeremonyVector.emplace_back(this->m_total[i]); ///< 分配颁奖典礼
-    for (int i = 71; i <= 80; ++i)
-        this->m_hotMVVector.emplace_back(this->m_total[i]); ///< 分配热门 MV
 }
+
 
 /**
  * @brief 解析标题
@@ -417,50 +449,6 @@ bool MVWidget::eventFilter(QObject *watched, QEvent *event)
         }
     }
     return QObject::eventFilter(watched, event);
-}
-
-/**
- * @brief 推荐按钮点击槽
- */
-void MVWidget::on_recommend_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentIndex() == 0) return;
-    enableButton(false);
-    ui->stackedWidget->slideInIdx(0);
-    STREAM_INFO()<<"切换到推荐";
-}
-
-/**
- * @brief 华语按钮点击槽
- */
-void MVWidget::on_chinese_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentIndex() == 1) return;
-    enableButton(false);
-    ui->stackedWidget->slideInIdx(1);
-    STREAM_INFO()<<"切换到华语界面";
-}
-
-/**
- * @brief 欧美按钮点击槽
- */
-void MVWidget::on_west_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentIndex() == 2) return;
-    enableButton(false);
-    ui->stackedWidget->slideInIdx(2);
-    STREAM_INFO()<<"切换到日韩界面";
-}
-
-/**
- * @brief 日韩按钮点击槽
- */
-void MVWidget::on_koreaAndJapan_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentIndex() == 3) return;
-    enableButton(false);
-    ui->stackedWidget->slideInIdx(3);
-    STREAM_INFO()<<"切换到欧美界面";
 }
 
 /**

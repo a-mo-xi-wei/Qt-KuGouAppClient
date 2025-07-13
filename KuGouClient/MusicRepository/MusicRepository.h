@@ -10,6 +10,8 @@
 #define MUSICREPOSITORY_H
 
 #include <QWidget>
+#include <QPointer>
+#include <array>
 
 class QButtonGroup;
 
@@ -45,6 +47,8 @@ public:
     ~MusicRepository() override;
 
 private:
+    QWidget* createRepoPage(const int& beg);
+
     /**
      * @brief 初始化按钮组
      * @note 设置按钮互斥
@@ -70,12 +74,6 @@ private:
     void initSelectWidget();
 
     /**
-     * @brief 初始化容器
-     * @note 初始化歌曲/歌手配对和分配音乐/视频向量
-     */
-    void initVector();
-
-    /**
      * @brief 启用或禁用按钮
      * @param flag 是否启用
      */
@@ -93,30 +91,6 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private slots:
-    /**
-     * @brief 华语按钮点击槽函数
-     * @note 更新网格列表为华语歌曲
-     */
-    void on_chinese_pushButton_clicked();
-
-    /**
-     * @brief 欧美按钮点击槽函数
-     * @note 更新网格列表为欧美歌曲
-     */
-    void on_west_pushButton_clicked();
-
-    /**
-     * @brief 韩国按钮点击槽函数
-     * @note 更新网格列表为韩国歌曲
-     */
-    void on_korea_pushButton_clicked();
-
-    /**
-     * @brief 日本按钮点击槽函数
-     * @note 更新网格列表为日本歌曲
-     */
-    void on_japan_pushButton_clicked();
-
     /**
      * @brief 更多按钮 1 点击槽函数
      * @note 显示未实现提示
@@ -158,13 +132,17 @@ private:
 
     Ui::MusicRepository                         *ui;                    ///< UI 指针
     std::unique_ptr<QButtonGroup>               m_buttonGroup;          ///< 按钮组
-    QList<std::pair<QString, QString>>    m_songAndsinger;        ///< 歌曲和歌手配对
-    QList<MusicInfo>                      m_total;                ///< 全部音乐信息
-    QList<MusicInfo>                      m_chineseVector;        ///< 华语音乐信息
-    QList<MusicInfo>                      m_westVector;           ///< 欧美音乐信息
-    QList<MusicInfo>                      m_koreaVector;          ///< 韩国音乐信息
-    QList<MusicInfo>                      m_japanVector;          ///< 日本音乐信息
-    QList<MusicInfo>                      m_videoVector;          ///< 视频信息
+    enum class MusicRegion {
+        Chinese,
+        West,
+        Korea,
+        Japan,
+        Video
+    };
+    QList<MusicInfo> m_musicData;
+    QList<MusicInfo> m_videoVector;
+    std::array<QPointer<QWidget>, 4> m_repoPages {};  // QPointer 可检测被释放的页面
+    int m_currentIdx;
 };
 
 #endif // MUSICREPOSITORY_H
