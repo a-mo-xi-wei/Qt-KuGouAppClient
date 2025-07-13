@@ -1,17 +1,10 @@
-/**
- * @file MVWidget.h
- * @brief 定义 MVWidget 类，提供音乐视频分类界面
- * @author WeiWang
- * @date 2024-11-12
- * @version 1.0
- */
-
 #ifndef MVWIDGET_H
 #define MVWIDGET_H
 
 #include <QWidget>
+#include <QPointer>
+#include <array>
 
-class QScrollBar;
 class QButtonGroup;
 
 /**
@@ -43,6 +36,13 @@ public:
     ~MVWidget() override;
 
 private:
+    /**
+     * @brief 创建仓库页面
+     * @param beg 开始索引
+     * @return 创建的页面控件
+     */
+    QWidget* createRepoPage(const int& beg);
+
     /**
      * @brief 初始化按钮组
      */
@@ -110,26 +110,6 @@ protected:
 
 private slots:
     /**
-     * @brief 推荐按钮点击槽
-     */
-    void on_recommend_pushButton_clicked();
-
-    /**
-     * @brief 华语按钮点击槽
-     */
-    void on_chinese_pushButton_clicked();
-
-    /**
-     * @brief 欧美按钮点击槽
-     */
-    void on_west_pushButton_clicked();
-
-    /**
-     * @brief 日韩按钮点击槽
-     */
-    void on_koreaAndJapan_pushButton_clicked();
-
-    /**
      * @brief 更多按钮 1 点击槽
      */
     void on_more_pushButton1_clicked();
@@ -162,22 +142,13 @@ private:
     struct MusicInfo
     {
         /**
-         * @brief 构造函数（左值引用）
+         * @brief 构造函数
          * @param pixmapPath 图片路径
          * @param title 标题
          * @param description 描述
          */
         MusicInfo(const QString &pixmapPath, const QString &title, const QString &description)
             : pixPath(pixmapPath), title(title), description(description) {}
-
-        /**
-         * @brief 构造函数（右值引用）
-         * @param pixmapPath 图片路径
-         * @param title 标题
-         * @param description 描述
-         */
-        MusicInfo(QString &&pixmapPath, QString &&title, QString &&description)
-            : pixPath(std::move(pixmapPath)), title(std::move(title)), description(std::move(description)) {}
 
         QString pixPath;     ///< 图片路径
         QString title;       ///< 标题
@@ -189,14 +160,8 @@ private:
     QAction                                 *m_searchAction{};      ///< 搜索动作
     QList<std::pair<QString, QString>> m_titleAndDesc;        ///< 标题和描述对
     QList<MusicInfo>                   m_total;               ///< 所有音乐信息
-    QList<MusicInfo>                   m_recommendVector;     ///< 推荐分类
-    QList<MusicInfo>                   m_chineseVector;       ///< 华语分类
-    QList<MusicInfo>                   m_westVector;          ///< 欧美分类
-    QList<MusicInfo>                   m_koreaAndJapanVector; ///< 日韩分类
-    QList<MusicInfo>                   m_liveSceneVector;     ///< 直播场景分类
-    QList<MusicInfo>                   m_honorOfKingsVector;  ///< 王者荣耀分类
-    QList<MusicInfo>                   m_awardCeremonyVector; ///< 颁奖典礼分类
-    QList<MusicInfo>                   m_hotMVVector;         ///< 热门 MV 分类
+    std::array<QPointer<QWidget>, 4> m_repoPages{};  // QPointer 可检测被释放的页面
+    int m_currentIdx{0};
 };
 
 #endif // MVWIDGET_H
