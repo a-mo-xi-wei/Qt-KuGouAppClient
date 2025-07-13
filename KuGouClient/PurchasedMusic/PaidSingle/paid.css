@@ -18,10 +18,9 @@ QToolButton#single_download_toolButton:hover{
     background-color: #dadeff;
 }
 
-
 /*--------------------small_widget------------------------------*/
 QWidget#small_widget{
-    border: 1px solid #b4bcff;
+    border: 2px solid #B4DEFC;
     border-radius:15px;
 }
 QWidget#small_widget > QFrame{
@@ -54,7 +53,7 @@ QToolButton#single_sort_toolButton:hover {
 QLineEdit{
     border-radius: 8px;
     padding-left: 5px;
-    border:2px solid #6fafa7;
+    border:2px solid #B4DEFC;
     background-color:transparent;
 }
 /**************content_widget*************/
