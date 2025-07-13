@@ -52,24 +52,145 @@ MyCollection::~MyCollection()
 }
 
 /**
+ * @brief 创建页面
+ * @param id 页面索引
+ * @return 创建的页面控件
+ */
+QWidget* MyCollection::createPage(int id)
+{
+    QWidget* page = nullptr;
+    switch (id) {
+        case 0:
+            m_singleSong = std::make_unique<SingleSong>(ui->stackedWidget);
+            connect(m_singleSong.get(), &SingleSong::find_more_music, this, &MyCollection::find_more_music);
+            page = m_singleSong.get();
+            break;
+        case 1:
+            m_songList = std::make_unique<SongListWidget>(ui->stackedWidget);
+            page = m_songList.get();
+            break;
+        case 2:
+            m_specialAlbum = std::make_unique<SpecialAlbum>(ui->stackedWidget);
+            connect(m_specialAlbum.get(), &SpecialAlbum::find_more_music, this, &MyCollection::find_more_music);
+            page = m_specialAlbum.get();
+            break;
+        case 3:
+            m_collectVideo = std::make_unique<CollectVideo>(ui->stackedWidget);
+            connect(m_collectVideo.get(), &CollectVideo::find_more_music, this, &MyCollection::find_more_music);
+            page = m_collectVideo.get();
+            break;
+        case 4:
+            m_singerWidget = std::make_unique<SingerWidget>(ui->stackedWidget);
+            connect(m_singerWidget.get(), &SingerWidget::find_more_music, this, &MyCollection::find_more_music);
+            page = m_singerWidget.get();
+            break;
+        case 5:
+            m_deviceWidget = std::make_unique<DeviceWidget>(ui->stackedWidget);
+            connect(m_deviceWidget.get(), &DeviceWidget::find_more_music, this, &MyCollection::find_more_music);
+            page = m_deviceWidget.get();
+            break;
+        default:
+            qWarning() << "[WARNING] Invalid page ID:" << id;
+            return nullptr;
+    }
+    return page;
+}
+
+/**
  * @brief 初始化堆栈窗口
  * @note 初始化子界面并设置按钮互斥
  */
 void MyCollection::initStackedWidget()
 {
-    initSingleSong();                                    ///< 初始化单曲界面
-    initSongList();                                      ///< 初始化歌单界面
-    initSpecialAlbum();                                  ///< 初始化专辑界面
-    initCollectVideo();                                  ///< 初始化视频界面
-    initSinger();                                        ///< 初始化歌手界面
-    initDevice();                                        ///< 初始化设备界面
-    this->m_buttonGroup->addButton(ui->singleSong_pushButton); ///< 添加单曲按钮
-    this->m_buttonGroup->addButton(ui->songList_pushButton);   ///< 添加歌单按钮
-    this->m_buttonGroup->addButton(ui->specialAlbum_pushButton); ///< 添加专辑按钮
-    this->m_buttonGroup->addButton(ui->collectVideo_pushButton); ///< 添加视频按钮
-    this->m_buttonGroup->addButton(ui->singer_pushButton);     ///< 添加歌手按钮
-    this->m_buttonGroup->addButton(ui->device_pushButton);     ///< 添加设备按钮
-    this->m_buttonGroup->setExclusive(true);             ///< 设置按钮互斥
+    // 设置按钮组（互斥）
+    m_buttonGroup->addButton(ui->singleSong_pushButton, 0);
+    m_buttonGroup->addButton(ui->songList_pushButton, 1);
+    m_buttonGroup->addButton(ui->specialAlbum_pushButton, 2);
+    m_buttonGroup->addButton(ui->collectVideo_pushButton, 3);
+    m_buttonGroup->addButton(ui->singer_pushButton, 4);
+    m_buttonGroup->addButton(ui->device_pushButton, 5);
+    m_buttonGroup->setExclusive(true);
+
+    // 初始化占位页面
+    for (int i = 0; i < 6; ++i) {
+        auto *placeholder = new QWidget;
+        auto *layout = new QVBoxLayout(placeholder);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(0);
+        m_pages[i] = placeholder;
+        ui->stackedWidget->insertWidget(i, placeholder);
+    }
+
+    // 创建并添加默认页面（单曲）
+    m_pages[0]->layout()->addWidget(createPage(0));
+    ui->stackedWidget->setCurrentIndex(0);
+
+    // 响应按钮点击事件
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](const int& id) {
+        if (m_currentIdx == id) {
+            return;
+        }
+
+        enableButton(false);
+
+        // 清理目标 placeholder 内旧的控件
+        QWidget *placeholder = m_pages[m_currentIdx];
+        if (!placeholder) {
+            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+            enableButton(true);
+            return;
+        }
+
+        QLayout *layout = placeholder->layout();
+        if (!layout) {
+            layout = new QVBoxLayout(placeholder);
+            layout->setContentsMargins(0, 0, 0, 0);
+            layout->setSpacing(0);
+        } else {
+            while (QLayoutItem* item = layout->takeAt(0)) {
+                if (QWidget* widget = item->widget()) {
+                    // qDebug()<<"删除旧的控件";
+                    widget->deleteLater();
+                    switch (m_currentIdx) {
+                        case 0: m_singleSong.reset(); break;
+                        case 1: m_songList.reset(); break;
+                        case 2: m_specialAlbum.reset(); break;
+                        case 3: m_collectVideo.reset(); break;
+                        case 4: m_singerWidget.reset(); break;
+                        case 5: m_deviceWidget.reset(); break;
+                        default: break;
+                    }
+
+                }
+                delete item;
+            }
+        }
+
+        placeholder = m_pages[id];
+        layout = placeholder->layout();
+        // 创建新页面
+        QWidget *realPage = createPage(id);
+        if (!realPage) {
+            qWarning() << "[WARNING] Failed to create page at index:" << id;
+        } else {
+            layout->addWidget(realPage);
+        }
+
+        ui->stackedWidget->slideInIdx(id);
+        m_currentIdx = id;
+
+        // 更新索引标签
+        QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab, ui->idx4_lab, ui->idx5_lab, ui->idx6_lab };
+        QLabel* numLabels[] = { ui->singleSong_number_label, ui->songList_number_label, ui->specialAlbum_number_label,
+                                ui->collectVideo_number_label, ui->singer_number_label, ui->device_number_label };
+        for (int i = 0; i < 6; ++i) {
+            idxLabels[i]->setVisible(i == id);
+            numLabels[i]->setStyleSheet(i == id ? QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") : QString());
+        }
+
+        enableButton(true);
+        STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
+    });
 }
 
 /**
@@ -79,11 +200,11 @@ void MyCollection::initStackedWidget()
 void MyCollection::initUi()
 {
     initStackedWidget();                                 ///< 初始化堆栈窗口
-    initIndexLab();                                      ///< 初始化索引标签
-    ui->singleSong_pushButton->clicked();               ///< 默认点击单曲按钮
+    initIndexLab();                                     ///< 初始化索引标签
+    ui->singleSong_pushButton->click();                ///< 默认点击单曲按钮
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
-    ui->stackedWidget->setSpeed(400);                   ///< 设置动画速度
-    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);  ///< 设置边距
+    ui->stackedWidget->setSpeed(400);                  ///< 设置动画速度
+    ui->stackedWidget->setContentsMargins(0, 0, 0, 0); ///< 设置边距
 }
 
 /**
@@ -92,90 +213,24 @@ void MyCollection::initUi()
  */
 void MyCollection::initIndexLab()
 {
-    ui->idx1_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置单曲索引图片
-    ui->idx2_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置歌单索引图片
-    ui->idx3_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置专辑索引图片
-    ui->idx4_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置视频索引图片
-    ui->idx5_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置歌手索引图片
-    ui->idx6_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置设备索引图片
-    ui->singleSong_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置单曲标签样式
-    ui->idx2_lab->hide();                                ///< 隐藏歌单索引
-    ui->idx3_lab->hide();                                ///< 隐藏专辑索引
-    ui->idx4_lab->hide();                                ///< 隐藏视频索引
-    ui->idx5_lab->hide();                                ///< 隐藏歌手索引
-    ui->idx6_lab->hide();                                ///< 隐藏设备索引
-    ui->guide_widget1->installEventFilter(this);         ///< 安装单曲事件过滤器
-    ui->guide_widget2->installEventFilter(this);         ///< 安装歌单事件过滤器
-    ui->guide_widget3->installEventFilter(this);         ///< 安装专辑事件过滤器
-    ui->guide_widget4->installEventFilter(this);         ///< 安装视频事件过滤器
-    ui->guide_widget5->installEventFilter(this);         ///< 安装歌手事件过滤器
-    ui->guide_widget6->installEventFilter(this);         ///< 安装设备事件过滤器
-}
+    QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab, ui->idx4_lab, ui->idx5_lab, ui->idx6_lab };
+    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3,
+                               ui->guide_widget4, ui->guide_widget5, ui->guide_widget6 };
+    QPushButton* buttons[] = { ui->singleSong_pushButton, ui->songList_pushButton, ui->specialAlbum_pushButton,
+                              ui->collectVideo_pushButton, ui->singer_pushButton, ui->device_pushButton };
+    QLabel* numLabels[] = { ui->singleSong_number_label, ui->songList_number_label, ui->specialAlbum_number_label,
+                           ui->collectVideo_number_label, ui->singer_number_label, ui->device_number_label };
 
-/**
- * @brief 初始化单曲界面
- * @note 创建单曲界面并连接信号
- */
-void MyCollection::initSingleSong()
-{
-    this->m_singleSong = std::make_unique<SingleSong>(ui->stackedWidget); ///< 创建单曲界面
-    connect(this->m_singleSong.get(), &SingleSong::find_more_music, [this] { emit find_more_music(); }); ///< 连接搜索信号
-    ui->stackedWidget->addWidget(this->m_singleSong.get()); ///< 添加到堆栈窗口
-    ui->stackedWidget->setCurrentWidget(this->m_singleSong.get()); ///< 设置当前界面
-}
-
-/**
- * @brief 初始化歌单界面
- * @note 创建歌单界面
- */
-void MyCollection::initSongList()
-{
-    this->m_songList = std::make_unique<SongListWidget>(ui->stackedWidget); ///< 创建歌单界面
-    ui->stackedWidget->addWidget(this->m_songList.get()); ///< 添加到堆栈窗口
-}
-
-/**
- * @brief 初始化专辑界面
- * @note 创建专辑界面并连接信号
- */
-void MyCollection::initSpecialAlbum()
-{
-    this->m_specialAlbum = std::make_unique<SpecialAlbum>(ui->stackedWidget); ///< 创建专辑界面
-    connect(this->m_specialAlbum.get(), &SpecialAlbum::find_more_music, [this] { emit find_more_music(); }); ///< 连接搜索信号
-    ui->stackedWidget->addWidget(this->m_specialAlbum.get()); ///< 添加到堆栈窗口
-}
-
-/**
- * @brief 初始化视频界面
- * @note 创建视频界面并连接信号
- */
-void MyCollection::initCollectVideo()
-{
-    this->m_collectVideo = std::make_unique<CollectVideo>(ui->stackedWidget); ///< 创建视频界面
-    connect(this->m_collectVideo.get(), &CollectVideo::find_more_music, [this] { emit find_more_music(); }); ///< 连接搜索信号
-    ui->stackedWidget->addWidget(this->m_collectVideo.get()); ///< 添加到堆栈窗口
-}
-
-/**
- * @brief 初始化歌手界面
- * @note 创建歌手界面并连接信号
- */
-void MyCollection::initSinger()
-{
-    this->m_singerWidget = std::make_unique<SingerWidget>(ui->stackedWidget); ///< 创建歌手界面
-    connect(this->m_singerWidget.get(), &SingerWidget::find_more_music, [this] { emit find_more_music(); }); ///< 连接搜索信号
-    ui->stackedWidget->addWidget(this->m_singerWidget.get()); ///< 添加到堆栈窗口
-}
-
-/**
- * @brief 初始化设备界面
- * @note 创建设备界面并连接信号
- */
-void MyCollection::initDevice()
-{
-    this->m_deviceWidget = std::make_unique<DeviceWidget>(ui->stackedWidget); ///< 创建设备界面
-    connect(this->m_deviceWidget.get(), &DeviceWidget::find_more_music, [this] { emit find_more_music(); }); ///< 连接搜索信号
-    ui->stackedWidget->addWidget(this->m_deviceWidget.get()); ///< 添加到堆栈窗口
+    for (int i = 0; i < 6; ++i) {
+        idxLabels[i]->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
+        guideWidgets[i]->installEventFilter(this);
+        if (i == 0) {
+            numLabels[i]->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;"));
+        } else {
+            idxLabels[i]->hide();
+            numLabels[i]->setStyleSheet(QString());
+        }
+    }
 }
 
 /**
@@ -184,12 +239,12 @@ void MyCollection::initDevice()
  */
 void MyCollection::enableButton(const bool &flag) const
 {
-    ui->singleSong_pushButton->setEnabled(flag);         ///< 设置单曲按钮状态
-    ui->songList_pushButton->setEnabled(flag);           ///< 设置歌单按钮状态
-    ui->specialAlbum_pushButton->setEnabled(flag);       ///< 设置专辑按钮状态
-    ui->collectVideo_pushButton->setEnabled(flag);       ///< 设置视频按钮状态
-    ui->singer_pushButton->setEnabled(flag);             ///< 设置歌手按钮状态
-    ui->device_pushButton->setEnabled(flag);             ///< 设置设备按钮状态
+    ui->singleSong_pushButton->setEnabled(flag);
+    ui->songList_pushButton->setEnabled(flag);
+    ui->specialAlbum_pushButton->setEnabled(flag);
+    ui->collectVideo_pushButton->setEnabled(flag);
+    ui->singer_pushButton->setEnabled(flag);
+    ui->device_pushButton->setEnabled(flag);
 }
 
 /**
@@ -201,241 +256,56 @@ void MyCollection::enableButton(const bool &flag) const
  */
 bool MyCollection::eventFilter(QObject *watched, QEvent *event)
 {
-    if (watched == ui->guide_widget1) {
-        if (event->type() == QEvent::Enter) {
-            ui->singleSong_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置单曲按钮悬停样式
-            ui->singleSong_number_label->setStyleSheet(ui->singleSong_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置单曲标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->singleSong_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置单曲按钮离开样式
-            ui->singleSong_number_label->setStyleSheet(ui->singleSong_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置单曲标签样式
+    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3,
+                               ui->guide_widget4, ui->guide_widget5, ui->guide_widget6 };
+    QPushButton* buttons[] = { ui->singleSong_pushButton, ui->songList_pushButton, ui->specialAlbum_pushButton,
+                              ui->collectVideo_pushButton, ui->singer_pushButton, ui->device_pushButton };
+    QLabel* numLabels[] = { ui->singleSong_number_label, ui->songList_number_label, ui->specialAlbum_number_label,
+                           ui->collectVideo_number_label, ui->singer_number_label, ui->device_number_label };
+
+    for (int i = 0; i < 6; ++i) {
+        if (watched == guideWidgets[i]) {
+            if (event->type() == QEvent::Enter) {
+                buttons[i]->setStyleSheet(R"(
+                    QPushButton {
+                        color:#26a1ff;
+                        font-size:16px;
+                        border: none;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    QPushButton:checked {
+                        color:#26a1ff;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                )");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
+                    QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
+                    QStringLiteral("color:#26a1ff;"));
+            } else if (event->type() == QEvent::Leave) {
+                buttons[i]->setStyleSheet(R"(
+                    QPushButton {
+                        color:black;
+                        font-size:16px;
+                        border: none;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    QPushButton:checked {
+                        color:#26a1ff;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                )");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
+                    QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
+                    QString());
+            }
+            break;
         }
     }
-    if (watched == ui->guide_widget2) {
-        if (event->type() == QEvent::Enter) {
-            ui->songList_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置歌单按钮悬停样式
-            ui->songList_number_label->setStyleSheet(ui->songList_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置歌单标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->songList_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置歌单按钮离开样式
-            ui->songList_number_label->setStyleSheet(ui->songList_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置歌单标签样式
-        }
-    }
-    if (watched == ui->guide_widget3) {
-        if (event->type() == QEvent::Enter) {
-            ui->specialAlbum_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置专辑按钮悬停样式
-            ui->specialAlbum_number_label->setStyleSheet(ui->specialAlbum_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置专辑标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->specialAlbum_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置专辑按钮离开样式
-            ui->specialAlbum_number_label->setStyleSheet(ui->specialAlbum_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置专辑标签样式
-        }
-    }
-    if (watched == ui->guide_widget4) {
-        if (event->type() == QEvent::Enter) {
-            ui->collectVideo_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置视频按钮悬停样式
-            ui->collectVideo_number_label->setStyleSheet(ui->collectVideo_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置视频标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->collectVideo_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置视频按钮离开样式
-            ui->collectVideo_number_label->setStyleSheet(ui->collectVideo_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置视频标签样式
-        }
-    }
-    if (watched == ui->guide_widget5) {
-        if (event->type() == QEvent::Enter) {
-            ui->singer_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置歌手按钮悬停样式
-            ui->singer_number_label->setStyleSheet(ui->singer_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置歌手标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->singer_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置歌手按钮离开样式
-            ui->singer_number_label->setStyleSheet(ui->singer_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置歌手标签样式
-        }
-    }
-    if (watched == ui->guide_widget6) {
-        if (event->type() == QEvent::Enter) {
-            ui->device_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置设备按钮悬停样式
-            ui->device_number_label->setStyleSheet(ui->device_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置设备标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->device_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置设备按钮离开样式
-            ui->device_number_label->setStyleSheet(ui->device_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置设备标签样式
-        }
-    }
-    return QWidget::eventFilter(watched, event);         ///< 调用父类过滤器
+    return QWidget::eventFilter(watched, event);
 }
 
 /**
@@ -446,198 +316,19 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event)
 void MyCollection::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) {
-        const auto labelRect1 = ui->singleSong_number_label->geometry(); ///< 获取单曲标签区域
-        const auto labelRect2 = ui->songList_number_label->geometry();   ///< 获取歌单标签区域
-        const auto labelRect3 = ui->specialAlbum_number_label->geometry(); ///< 获取专辑标签区域
-        const auto labelRect4 = ui->collectVideo_number_label->geometry(); ///< 获取视频标签区域
-        const auto labelRect5 = ui->singer_number_label->geometry();     ///< 获取歌手标签区域
-        const auto labelRect6 = ui->device_number_label->geometry();     ///< 获取设备标签区域
-        const QPoint clickPos1 = ui->singleSong_number_label->parentWidget()->mapFrom(this, event->pos()); ///< 转换单曲点击坐标
-        const QPoint clickPos2 = ui->songList_number_label->parentWidget()->mapFrom(this, event->pos());   ///< 转换歌单点击坐标
-        const QPoint clickPos3 = ui->specialAlbum_number_label->parentWidget()->mapFrom(this, event->pos()); ///< 转换专辑点击坐标
-        const QPoint clickPos4 = ui->collectVideo_number_label->parentWidget()->mapFrom(this, event->pos()); ///< 转换视频点击坐标
-        const QPoint clickPos5 = ui->singer_number_label->parentWidget()->mapFrom(this, event->pos());     ///< 转换歌手点击坐标
-        const QPoint clickPos6 = ui->device_number_label->parentWidget()->mapFrom(this, event->pos());     ///< 转换设备点击坐标
-        if (labelRect1.contains(clickPos1)) {
-            ui->singleSong_pushButton->clicked();           ///< 触发单曲按钮点击
-        }
-        if (labelRect2.contains(clickPos2)) {
-            ui->songList_pushButton->clicked();             ///< 触发歌单按钮点击
-        }
-        if (labelRect3.contains(clickPos3)) {
-            ui->specialAlbum_pushButton->clicked();         ///< 触发专辑按钮点击
-        }
-        if (labelRect4.contains(clickPos4)) {
-            ui->collectVideo_pushButton->clicked();         ///< 触发视频按钮点击
-        }
-        if (labelRect5.contains(clickPos5)) {
-            ui->singer_pushButton->clicked();               ///< 触发歌手按钮点击
-        }
-        if (labelRect6.contains(clickPos6)) {
-            ui->device_pushButton->clicked();               ///< 触发设备按钮点击
+        QLabel* numLabels[] = { ui->singleSong_number_label, ui->songList_number_label, ui->specialAlbum_number_label,
+                               ui->collectVideo_number_label, ui->singer_number_label, ui->device_number_label };
+        QPushButton* buttons[] = { ui->singleSong_pushButton, ui->songList_pushButton, ui->specialAlbum_pushButton,
+                                  ui->collectVideo_pushButton, ui->singer_pushButton, ui->device_pushButton };
+
+        for (int i = 0; i < 6; ++i) {
+            const auto labelRect = numLabels[i]->geometry();
+            const QPoint clickPos = numLabels[i]->parentWidget()->mapFrom(this, event->pos());
+            if (labelRect.contains(clickPos)) {
+                buttons[i]->click();
+                break;
+            }
         }
     }
-    QWidget::mousePressEvent(event);                     ///< 调用父类事件
-}
-
-/**
- * @brief 单曲按钮点击槽函数
- * @note 切换到单曲界面
- */
-void MyCollection::on_singleSong_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_singleSong.get()) {
-        return;                                          ///< 当前已是单曲界面
-    }
-    ui->singleSong_pushButton->setChecked(true);         ///< 设置单曲按钮选中
-    STREAM_INFO() << "切换单曲界面";                     ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_singleSong.get())); ///< 滑动到单曲界面
-    ui->idx1_lab->show();                               ///< 显示单曲索引
-    ui->idx2_lab->hide();                               ///< 隐藏歌单索引
-    ui->idx3_lab->hide();                               ///< 隐藏专辑索引
-    ui->idx4_lab->hide();                               ///< 隐藏视频索引
-    ui->idx5_lab->hide();                               ///< 隐藏歌手索引
-    ui->idx6_lab->hide();                               ///< 隐藏设备索引
-    ui->singleSong_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置单曲标签样式
-    ui->songList_number_label->setStyleSheet("");        ///< 重置歌单标签样式
-    ui->specialAlbum_number_label->setStyleSheet("");    ///< 重置专辑标签样式
-    ui->collectVideo_number_label->setStyleSheet("");    ///< 重置视频标签样式
-    ui->singer_number_label->setStyleSheet("");          ///< 重置歌手标签样式
-    ui->device_number_label->setStyleSheet("");          ///< 重置设备标签样式
-}
-
-/**
- * @brief 歌单按钮点击槽函数
- * @note 切换到歌单界面
- */
-void MyCollection::on_songList_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_songList.get()) {
-        return;                                          ///< 当前已是歌单界面
-    }
-    ui->songList_pushButton->setChecked(true);           ///< 设置歌单按钮选中
-    STREAM_INFO() << "切换歌单界面";                     ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_songList.get())); ///< 滑动到歌单界面
-    ui->idx1_lab->hide();                               ///< 隐藏单曲索引
-    ui->idx2_lab->show();                               ///< 显示歌单索引
-    ui->idx3_lab->hide();                               ///< 隐藏专辑索引
-    ui->idx4_lab->hide();                               ///< 隐藏视频索引
-    ui->idx5_lab->hide();                               ///< 隐藏歌手索引
-    ui->idx6_lab->hide();                               ///< 隐藏设备索引
-    ui->singleSong_number_label->setStyleSheet("");      ///< 重置单曲标签样式
-    ui->songList_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置歌单标签样式
-    ui->specialAlbum_number_label->setStyleSheet("");    ///< 重置专辑标签样式
-    ui->collectVideo_number_label->setStyleSheet("");    ///< 重置视频标签样式
-    ui->singer_number_label->setStyleSheet("");          ///< 重置歌手标签样式
-    ui->device_number_label->setStyleSheet("");          ///< 重置设备标签样式
-}
-
-/**
- * @brief 专辑按钮点击槽函数
- * @note 切换到专辑界面
- */
-void MyCollection::on_specialAlbum_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_specialAlbum.get()) {
-        return;                                          ///< 当前已是专辑界面
-    }
-    ui->specialAlbum_pushButton->setChecked(true);       ///< 设置专辑按钮选中
-    STREAM_INFO() << "切换专辑界面";                     ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_specialAlbum.get())); ///< 滑动到专辑界面
-    ui->idx1_lab->hide();                               ///< 隐藏单曲索引
-    ui->idx2_lab->hide();                               ///< 隐藏歌单索引
-    ui->idx3_lab->show();                               ///< 显示专辑索引
-    ui->idx4_lab->hide();                               ///< 隐藏视频索引
-    ui->idx5_lab->hide();                               ///< 隐藏歌手索引
-    ui->idx6_lab->hide();                               ///< 隐藏设备索引
-    ui->singleSong_number_label->setStyleSheet("");      ///< 重置单曲标签样式
-    ui->songList_number_label->setStyleSheet("");        ///< 重置歌单标签样式
-    ui->specialAlbum_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置专辑标签样式
-    ui->collectVideo_number_label->setStyleSheet("");    ///< 重置视频标签样式
-    ui->singer_number_label->setStyleSheet("");          ///< 重置歌手标签样式
-    ui->device_number_label->setStyleSheet("");          ///< 重置设备标签样式
-}
-
-/**
- * @brief 视频按钮点击槽函数
- * @note 切换到视频界面
- */
-void MyCollection::on_collectVideo_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_collectVideo.get()) {
-        return;                                          ///< 当前已是视频界面
-    }
-    ui->collectVideo_pushButton->setChecked(true);       ///< 设置视频按钮选中
-    STREAM_INFO() << "切换视频界面";                     ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_collectVideo.get())); ///< 滑动到视频界面
-    ui->idx1_lab->hide();                               ///< 隐藏单曲索引
-    ui->idx2_lab->hide();                               ///< 隐藏歌单索引
-    ui->idx3_lab->hide();                               ///< 隐藏专辑索引
-    ui->idx4_lab->show();                               ///< 显示视频索引
-    ui->idx5_lab->hide();                               ///< 隐藏歌手索引
-    ui->idx6_lab->hide();                               ///< 隐藏设备索引
-    ui->singleSong_number_label->setStyleSheet("");      ///< 重置单曲标签样式
-    ui->songList_number_label->setStyleSheet("");        ///< 重置歌单标签样式
-    ui->specialAlbum_number_label->setStyleSheet("");    ///< 重置专辑标签样式
-    ui->collectVideo_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置视频标签样式
-    ui->singer_number_label->setStyleSheet("");          ///< 重置歌手标签样式
-    ui->device_number_label->setStyleSheet("");          ///< 重置设备标签样式
-}
-
-/**
- * @brief 歌手按钮点击槽函数
- * @note 切换到歌手界面
- */
-void MyCollection::on_singer_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_singerWidget.get()) {
-        return;                                          ///< 当前已是歌手界面
-    }
-    ui->singer_pushButton->setChecked(true);             ///< 设置歌手按钮选中
-    STREAM_INFO() << "切换歌手界面";                     ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_singerWidget.get())); ///< 滑动到歌手界面
-    ui->idx1_lab->hide();                               ///< 隐藏单曲索引
-    ui->idx2_lab->hide();                               ///< 隐藏歌单索引
-    ui->idx3_lab->hide();                               ///< 隐藏专辑索引
-    ui->idx4_lab->hide();                               ///< 隐藏视频索引
-    ui->idx5_lab->show();                               ///< 显示歌手索引
-    ui->idx6_lab->hide();                               ///< 隐藏设备索引
-    ui->singleSong_number_label->setStyleSheet("");      ///< 重置单曲标签样式
-    ui->songList_number_label->setStyleSheet("");        ///< 重置歌单标签样式
-    ui->specialAlbum_number_label->setStyleSheet("");    ///< 重置专辑标签样式
-    ui->collectVideo_number_label->setStyleSheet("");    ///< 重置视频标签样式
-    ui->singer_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置歌手标签样式
-    ui->device_number_label->setStyleSheet("");          ///< 重置设备标签样式
-}
-
-/**
- * @brief 设备按钮点击槽函数
- * @note 切换到设备界面
- */
-void MyCollection::on_device_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_deviceWidget.get()) {
-        return;                                          ///< 当前已是设备界面
-    }
-    ui->device_pushButton->setChecked(true);              ///< 设置设备按钮选中
-    STREAM_INFO() << "切换设备界面";                       ///< 记录日志
-    enableButton(false);                           ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_deviceWidget.get())); ///< 滑动到设备界面
-    ui->idx1_lab->hide();                               ///< 隐藏单曲索引
-    ui->idx2_lab->hide();                               ///< 隐藏歌单索引
-    ui->idx3_lab->hide();                               ///< 隐藏专辑索引
-    ui->idx4_lab->hide();                               ///< 隐藏视频索引
-    ui->idx5_lab->hide();                               ///< 隐藏歌手索引
-    ui->idx6_lab->show();                               ///< 显示设备索引
-    ui->singleSong_number_label->setStyleSheet("");      ///< 重置单曲标签样式
-    ui->songList_number_label->setStyleSheet("");        ///< 重置歌单标签样式
-    ui->specialAlbum_number_label->setStyleSheet("");    ///< 重置专辑标签样式
-    ui->collectVideo_number_label->setStyleSheet("");    ///< 重置视频标签样式
-    ui->singer_number_label->setStyleSheet("");          ///< 重置歌手标签样式
-    ui->device_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置设备标签样式
+    QWidget::mousePressEvent(event);
 }

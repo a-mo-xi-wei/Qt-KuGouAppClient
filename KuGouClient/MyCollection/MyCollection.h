@@ -17,12 +17,10 @@
 #include "DeviceWidget/DeviceWidget.h"
 
 #include <QWidget>
+#include <QPointer>
+#include <array>
 #include <memory>
 
-/**
- * @class QButtonGroup
- * @brief Qt 按钮组类，用于管理互斥按钮
- */
 class QButtonGroup;
 
 /**
@@ -76,40 +74,11 @@ private:
     void initIndexLab();
 
     /**
-     * @brief 初始化单曲界面
-     * @note 创建单曲界面并连接信号
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
      */
-    void initSingleSong();
-
-    /**
-     * @brief 初始化歌单界面
-     * @note 创建歌单界面
-     */
-    void initSongList();
-
-    /**
-     * @brief 初始化专辑界面
-     * @note 创建专辑界面并连接信号
-     */
-    void initSpecialAlbum();
-
-    /**
-     * @brief 初始化视频界面
-     * @note 创建视频界面并连接信号
-     */
-    void initCollectVideo();
-
-    /**
-     * @brief 初始化歌手界面
-     * @note 创建歌手界面并连接信号
-     */
-    void initSinger();
-
-    /**
-     * @brief 初始化设备界面
-     * @note 创建设备界面并连接信号
-     */
-    void initDevice();
+    QWidget* createPage(int id);
 
     /**
      * @brief 启用/禁用按钮
@@ -134,43 +103,6 @@ protected:
      */
     void mousePressEvent(QMouseEvent *event) override;
 
-private slots:
-    /**
-     * @brief 单曲按钮点击槽函数
-     * @note 切换到单曲界面
-     */
-    void on_singleSong_pushButton_clicked();
-
-    /**
-     * @brief 歌单按钮点击槽函数
-     * @note 切换到歌单界面
-     */
-    void on_songList_pushButton_clicked();
-
-    /**
-     * @brief 专辑按钮点击槽函数
-     * @note 切换到专辑界面
-     */
-    void on_specialAlbum_pushButton_clicked();
-
-    /**
-     * @brief 视频按钮点击槽函数
-     * @note 切换到视频界面
-     */
-    void on_collectVideo_pushButton_clicked();
-
-    /**
-     * @brief 歌手按钮点击槽函数
-     * @note 切换到歌手界面
-     */
-    void on_singer_pushButton_clicked();
-
-    /**
-     * @brief 设备按钮点击槽函数
-     * @note 切换到设备界面
-     */
-    void on_device_pushButton_clicked();
-
 signals:
     /**
      * @brief 搜索更多音乐的信号
@@ -186,6 +118,8 @@ private:
     std::unique_ptr<CollectVideo>        m_collectVideo;    ///< 视频界面
     std::unique_ptr<SingerWidget>        m_singerWidget;    ///< 歌手界面
     std::unique_ptr<DeviceWidget>        m_deviceWidget;    ///< 设备界面
+    std::array<QPointer<QWidget>, 6>     m_pages{};         ///< 页面数组
+    int                                  m_currentIdx{0};   ///< 当前页面索引
 };
 
 #endif // MYCOLLECTION_H
