@@ -268,6 +268,11 @@ void ChatView::resizeEvent(QResizeEvent *event)
     updateCenterWidgetPosition();                        ///< 更新居中部件位置
 }
 
+void ChatView::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+    updateCenterWidgetPosition();
+}
+
 /**
  * @brief 处理垂直滚动条范围变化
  * @param min 最小值
