@@ -242,8 +242,10 @@ void KuGouClient::initUi() {
     m_refreshMask->hide();
     this->m_refreshMask->setParent(ui->stackedWidget);            ///< 设置遮罩父对象
     connect(this->m_refreshMask.get(), &RefreshMask::loadingFinished, [this](const QString& message) {
-        m_snackbar->addMessage(message);                         ///< 显示加载完成提示
-        m_snackbar->show();
+        if (!message.isEmpty()) {
+            m_snackbar->addMessage(message);                         ///< 显示加载完成提示
+            m_snackbar->show();
+        }
     });                                                           ///< 连接加载完成信号
     // @note 设置消息提示条
     m_snackbar->setParent(ui->stackedWidget);                     ///< 设置提示条父对象
@@ -1210,7 +1212,7 @@ void KuGouClient::onKeyRight() {
  */
 void KuGouClient::onTitleCurrentStackChange(const int &index, const bool &slide) {
     if (ui->stackedWidget->currentIndex() == index) return;
-    this->m_refreshMask->hide(); ///< 隐藏刷新遮罩
+    this->m_refreshMask->hideLoading(""); ///< 隐藏刷新遮罩
     this->m_snackbar->hide(); ///< 隐藏消息提示条
     if (slide) {
         enableButton(false); ///< 禁用按钮
