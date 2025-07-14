@@ -89,6 +89,8 @@ protected:
      */
     void resizeEvent(QResizeEvent *event) override;
 
+    void showEvent(QShowEvent *event) override;
+
 private slots:
     /**
      * @brief 处理垂直滚动条范围变化
