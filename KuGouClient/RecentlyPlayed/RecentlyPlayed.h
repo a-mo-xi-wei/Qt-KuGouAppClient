@@ -16,12 +16,10 @@
 #include "RecentlyMVChannel/RecentlyMVChannel.h"
 
 #include <QWidget>
+#include <QPointer>
+#include <array>
 #include <memory>
 
-/**
- * @class QButtonGroup
- * @brief 按钮组类，用于管理互斥按钮
- */
 class QButtonGroup;
 
 /**
@@ -75,71 +73,17 @@ private:
     void initStackedWidget();
 
     /**
-     * @brief 初始化单曲界面
-     * @note 创建单曲界面并添加到堆栈窗口
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
      */
-    void initSingleSong();
-
-    /**
-     * @brief 初始化歌单界面
-     * @note 创建歌单界面并添加到堆栈窗口
-     */
-    void initSongList();
-
-    /**
-     * @brief 初始化视频界面
-     * @note 创建视频界面并添加到堆栈窗口
-     */
-    void initVideoWidget();
-
-    /**
-     * @brief 初始化歌曲频道界面
-     * @note 创建歌曲频道界面并添加到堆栈窗口
-     */
-    void initSongChannel();
-
-    /**
-     * @brief 初始化 MV 频道界面
-     * @note 创建 MV 频道界面并添加到堆栈窗口
-     */
-    void initMVChannel();
+    QWidget* createPage(int id);
 
     /**
      * @brief 启用或禁用按钮
      * @param flag 是否启用
      */
-    void enableButton(const bool &flag) const;
-
-private slots:
-    /**
-     * @brief 单曲按钮点击槽函数
-     * @note 切换到单曲界面
-     */
-    void on_single_song_pushButton_clicked();
-
-    /**
-     * @brief 歌单按钮点击槽函数
-     * @note 切换到歌单界面
-     */
-    void on_song_list_pushButton_clicked();
-
-    /**
-     * @brief 视频按钮点击槽函数
-     * @note 切换到视频界面
-     */
-    void on_video_pushButton_clicked();
-
-    /**
-     * @brief 歌曲频道按钮点击槽函数
-     * @note 切换到歌曲频道界面
-     */
-    void on_song_channel_pushButton_clicked();
-
-    /**
-     * @brief MV 频道按钮点击槽函数
-     * @note 切换到 MV 频道界面
-     */
-    void on_MV_channel_pushButton_clicked();
+    void enableButton(bool flag) const;
 
 signals:
     /**
@@ -184,6 +128,8 @@ private:
     std::unique_ptr<RecentlyVideoWidget> m_videoWidget;    ///< 视频界面
     std::unique_ptr<RecentlySongChannel> m_songChannel;    ///< 歌曲频道界面
     std::unique_ptr<RecentlyMVChannel> m_mvChannel;        ///< MV 频道界面
+    std::array<QPointer<QWidget>, 5>   m_pages{};          ///< 页面数组
+    int                                m_currentIdx{0};    ///< 当前页面索引
 };
 
 #endif // RECENTLYPLAYED_H

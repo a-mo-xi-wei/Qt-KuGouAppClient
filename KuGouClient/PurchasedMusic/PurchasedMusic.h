@@ -14,12 +14,10 @@
 #include "PurchasedVideos/PurchasedVideos.h"
 
 #include <QWidget>
+#include <QPointer>
+#include <array>
 #include <memory>
 
-/**
- * @class QButtonGroup
- * @brief Qt 按钮组类，用于管理互斥按钮
- */
 class QButtonGroup;
 
 /**
@@ -73,47 +71,17 @@ private:
     void initStackedWidget();
 
     /**
-     * @brief 初始化付费单曲界面
-     * @note 创建付费单曲界面并连接信号
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
      */
-    void initPaidSingle();
-
-    /**
-     * @brief 初始化已购专辑界面
-     * @note 创建已购专辑界面并连接信号
-     */
-    void initPurchasedAlbums();
-
-    /**
-     * @brief 初始化已购视频界面
-     * @note 创建已购视频界面并连接信号
-     */
-    void initPurchasedVideos();
+    QWidget* createPage(int id);
 
     /**
      * @brief 启用/禁用按钮
      * @param flag 是否启用
      */
-    void enableButton(const bool &flag) const;
-
-private slots:
-    /**
-     * @brief 付费单曲按钮点击槽函数
-     * @note 切换到付费单曲界面
-     */
-    void on_paid_single_pushButton_clicked();
-
-    /**
-     * @brief 已购专辑按钮点击槽函数
-     * @note 切换到已购专辑界面
-     */
-    void on_purchased_albums_pushButton_clicked();
-
-    /**
-     * @brief 已购视频按钮点击槽函数
-     * @note 切换到已购视频界面
-     */
-    void on_purchased_video_pushButton_clicked();
+    void enableButton(bool flag) const;
 
 signals:
     /**
@@ -144,6 +112,8 @@ private:
     std::unique_ptr<PaidSingle>         m_paidSingle;       ///< 付费单曲界面
     std::unique_ptr<PurchasedAlbums>    m_purchasedAlbums;  ///< 已购专辑界面
     std::unique_ptr<PurchasedVideos>    m_purchasedVideos;  ///< 已购视频界面
+    std::array<QPointer<QWidget>, 3>    m_pages{};          ///< 页面数组
+    int                                 m_currentIdx{0};    ///< 当前页面索引
 };
 
 #endif // PURCHASEDMUSIC_H

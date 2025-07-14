@@ -26,23 +26,21 @@ ListenMyDownload::ListenMyDownload(QWidget *parent)
     , ui(new Ui::ListenMyDownload)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
 {
-    ui->setupUi(this);                                   ///< 初始化 UI
+    ui->setupUi(this);
+    QFile file(GET_CURRENT_DIR + QStringLiteral("/download.css"));
+    if (file.open(QIODevice::ReadOnly))
     {
-        QFile file(GET_CURRENT_DIR + QStringLiteral("/download.css")); ///< 加载样式表
-        if (file.open(QIODevice::ReadOnly))
-        {
-            this->setStyleSheet(file.readAll());         ///< 应用样式表
-        }
-        else
-        {
-            qDebug() << "样式表打开失败QAQ";
-            STREAM_ERROR() << "样式表打开失败QAQ";      ///< 记录错误日志
-            return;
-        }
+        setStyleSheet(file.readAll());
     }
-    initUi();                                            ///< 初始化界面
-    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); }); ///< 连接动画完成信号
-    enableButton(true);                                  ///< 启用按钮
+    else
+    {
+        qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
+        return;
+    }
+    initUi();
+    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
+    enableButton(true);
 }
 
 /**
@@ -54,16 +52,33 @@ ListenMyDownload::~ListenMyDownload()
 }
 
 /**
- * @brief 初始化堆栈窗口
- * @note 初始化已下载和下载中控件并设置按钮互斥
+ * @brief 创建页面
+ * @param id 页面索引
+ * @return 创建的页面控件
  */
-void ListenMyDownload::initStackedWidget()
+QWidget* ListenMyDownload::createPage(int id)
 {
-    initDownloadedWidget();                              ///< 初始化已下载控件
-    initDownloadingWidget();                             ///< 初始化下载中控件
-    this->m_buttonGroup->addButton(ui->downloaded_pushButton); ///< 添加已下载按钮
-    this->m_buttonGroup->addButton(ui->downloading_pushButton); ///< 添加下载中按钮
-    this->m_buttonGroup->setExclusive(true);             ///< 设置按钮组互斥
+    QWidget* page = nullptr;
+    switch (id) {
+        case 0:
+            if (!m_downloaded) {
+                m_downloaded = std::make_unique<DownloadedWidget>(ui->stackedWidget);
+                connect(m_downloaded.get(), &DownloadedWidget::find_more_audio_book, this, &ListenMyDownload::switch_to_listen_recommend);
+            }
+            page = m_downloaded.get();
+            break;
+        case 1:
+            if (!m_downloading) {
+                m_downloading = std::make_unique<DownloadingWidget>(ui->stackedWidget);
+                connect(m_downloading.get(), &DownloadingWidget::find_more_audio_book, this, &ListenMyDownload::switch_to_listen_recommend);
+            }
+            page = m_downloading.get();
+            break;
+        default:
+            qWarning() << "[WARNING] Invalid page ID:" << id;
+            return nullptr;
+    }
+    return page;
 }
 
 /**
@@ -72,9 +87,12 @@ void ListenMyDownload::initStackedWidget()
  */
 void ListenMyDownload::initUi()
 {
-    initStackedWidget();                                 ///< 初始化堆栈窗口
-    initIndexLab();                                      ///< 初始化下标标签
-    ui->downloaded_pushButton->clicked();                ///< 触发已下载按钮
+    initIndexLab();
+    initStackedWidget();
+    ui->downloaded_pushButton->click();
+    ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
+    ui->stackedWidget->setSpeed(400);
+    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
 }
 
 /**
@@ -83,43 +101,111 @@ void ListenMyDownload::initUi()
  */
 void ListenMyDownload::initIndexLab()
 {
-    ui->idx1_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置下标 1 图片
-    ui->idx2_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置下标 2 图片
-    ui->downloaded_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置已下载数量标签样式
-    ui->idx2_lab->hide();                                ///< 隐藏下标 2
-    ui->guide_widget1->installEventFilter(this);         ///< 安装事件过滤器 1
-    ui->guide_widget2->installEventFilter(this);         ///< 安装事件过滤器 2
+    QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab };
+    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2 };
+    QLabel* numLabels[] = { ui->downloaded_number_label, ui->downloading_number_label };
+
+    for (int i = 0; i < 2; ++i) {
+        idxLabels[i]->setPixmap(QPixmap(":/Res/window/index_lab.svg"));
+        guideWidgets[i]->installEventFilter(this);
+        numLabels[i]->setStyleSheet(i == 0 ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
+        idxLabels[i]->setVisible(i == 0);
+    }
 }
 
 /**
- * @brief 初始化已下载控件
+ * @brief 初始化堆栈窗口
+ * @note 初始化子界面和按钮组
  */
-void ListenMyDownload::initDownloadedWidget()
+void ListenMyDownload::initStackedWidget()
 {
-    this->m_downloaded = std::make_unique<DownloadedWidget>(ui->stackedWidget); ///< 创建已下载控件
-    ui->stackedWidget->addWidget(this->m_downloaded.get()); ///< 添加到堆栈窗口
-    ui->stackedWidget->setCurrentWidget(this->m_downloaded.get()); ///< 设置当前控件
-    connect(this->m_downloaded.get(), &DownloadedWidget::find_more_audio_book, [this] { emit switch_to_listen_recommend(); }); ///< 连接查找信号
-}
+    // 设置按钮组
+    m_buttonGroup->addButton(ui->downloaded_pushButton, 0);
+    m_buttonGroup->addButton(ui->downloading_pushButton, 1);
+    m_buttonGroup->setExclusive(true);
 
-/**
- * @brief 初始化下载中控件
- */
-void ListenMyDownload::initDownloadingWidget()
-{
-    this->m_downloading = std::make_unique<DownloadingWidget>(ui->stackedWidget); ///< 创建下载中控件
-    ui->stackedWidget->addWidget(this->m_downloading.get()); ///< 添加到堆栈窗口
-    connect(this->m_downloading.get(), &DownloadingWidget::find_more_audio_book, [this] { emit switch_to_listen_recommend(); }); ///< 连接查找信号
+    // 初始化占位页面
+    for (int i = 0; i < 2; ++i) {
+        auto* placeholder = new QWidget;
+        auto* layout = new QVBoxLayout(placeholder);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(0);
+        m_pages[i] = placeholder;
+        ui->stackedWidget->insertWidget(i, placeholder);
+    }
+
+    // 创建并添加默认页面（已下载）
+    m_pages[0]->layout()->addWidget(createPage(0));
+    ui->stackedWidget->setCurrentIndex(0);
+
+    // 按钮点击处理
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id) {
+        if (m_currentIdx == id) {
+            return;
+        }
+
+        enableButton(false);
+
+        // 清理目标 placeholder 内旧的控件
+        QWidget* placeholder = m_pages[m_currentIdx];
+        if (!placeholder) {
+            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+            enableButton(true);
+            return;
+        }
+
+        QLayout* layout = placeholder->layout();
+        if (!layout) {
+            layout = new QVBoxLayout(placeholder);
+            layout->setContentsMargins(0, 0, 0, 0);
+            layout->setSpacing(0);
+        } else {
+            while (QLayoutItem* item = layout->takeAt(0)) {
+                if (QWidget* widget = item->widget()) {
+                    widget->deleteLater();
+                    switch (m_currentIdx) {
+                        case 0: m_downloaded.reset();break;
+                        case 1: m_downloading.reset();break;
+                        default:break;
+                    }
+                }
+                delete item;
+            }
+        }
+
+        placeholder = m_pages[id];
+        layout = placeholder->layout();
+        // 创建新页面
+        QWidget* realPage = createPage(id);
+        if (!realPage) {
+            qWarning() << "[WARNING] Failed to create page at index:" << id;
+        } else {
+            layout->addWidget(realPage);
+        }
+
+        ui->stackedWidget->slideInIdx(id);
+        m_currentIdx = id;
+
+        // 更新标签
+        QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab };
+        QLabel* numLabels[] = { ui->downloaded_number_label, ui->downloading_number_label };
+        for (int i = 0; i < 2; ++i) {
+            idxLabels[i]->setVisible(i == id);
+            numLabels[i]->setStyleSheet(i == id ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
+        }
+
+        STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
+    });
 }
 
 /**
  * @brief 启用或禁用按钮
  * @param flag 启用标志
  */
-void ListenMyDownload::enableButton(const bool &flag) const
+void ListenMyDownload::enableButton(bool flag) const
 {
-    ui->downloaded_pushButton->setEnabled(flag);         ///< 设置已下载按钮状态
-    ui->downloading_pushButton->setEnabled(flag);        ///< 设置下载中按钮状态
+    ui->downloaded_pushButton->setEnabled(flag);
+    ui->downloading_pushButton->setEnabled(flag);
 }
 
 /**
@@ -130,97 +216,53 @@ void ListenMyDownload::enableButton(const bool &flag) const
  */
 bool ListenMyDownload::eventFilter(QObject *watched, QEvent *event)
 {
-    if (watched == ui->guide_widget1)
-    {
-        if (event->type() == QEvent::Enter)
-        {
-            ui->downloaded_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置悬停样式
-            if (ui->downloaded_pushButton->isChecked())
-                ui->downloaded_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置选中样式
-            else
-                ui->downloaded_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;")); ///< 设置未选中样式
-        }
-        else if (event->type() == QEvent::Leave)
-        {
-            ui->downloaded_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置离开样式
-            if (ui->downloaded_pushButton->isChecked())
-                ui->downloaded_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置选中样式
-            else
-                ui->downloaded_number_label->setStyleSheet(""); ///< 清除样式
-        }
-    }
-    if (watched == ui->guide_widget2)
-    {
-        if (event->type() == QEvent::Enter)
-        {
-            ui->downloading_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置悬停样式
-            if (ui->downloading_pushButton->isChecked())
-                ui->downloading_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置选中样式
-            else
-                ui->downloading_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;")); ///< 设置未选中样式
-        }
-        else if (event->type() == QEvent::Leave)
-        {
-            ui->downloading_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置离开样式
-            if (ui->downloading_pushButton->isChecked())
-                ui->downloading_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置选中样式
-            else
-                ui->downloading_number_label->setStyleSheet(""); ///< 清除样式
+    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2 };
+    QPushButton* buttons[] = { ui->downloaded_pushButton, ui->downloading_pushButton };
+    QLabel* numLabels[] = { ui->downloaded_number_label, ui->downloading_number_label };
+
+    for (int i = 0; i < 2; ++i) {
+        if (watched == guideWidgets[i]) {
+            if (event->type() == QEvent::Enter) {
+                buttons[i]->setStyleSheet(R"(
+                    QPushButton {
+                        color:#26a1ff;
+                        font-size:16px;
+                        border: none;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    QPushButton:checked {
+                        color:#26a1ff;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                )");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
+                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
+                    "color:#26a1ff;");
+            } else if (event->type() == QEvent::Leave) {
+                buttons[i]->setStyleSheet(R"(
+                    QPushButton {
+                        color:black;
+                        font-size:16px;
+                        border: none;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    QPushButton:checked {
+                        color:#26a1ff;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                )");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
+                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
+                    "");
+            }
+            break;
         }
     }
-    return QWidget::eventFilter(watched, event);         ///< 调用父类事件过滤器
+    return QWidget::eventFilter(watched, event);
 }
 
 /**
@@ -229,54 +271,18 @@ bool ListenMyDownload::eventFilter(QObject *watched, QEvent *event)
  */
 void ListenMyDownload::mousePressEvent(QMouseEvent *event)
 {
-    QWidget::mousePressEvent(event);                     ///< 调用父类鼠标按下事件
-    if (event->button() == Qt::LeftButton)
-    {
-        const auto labelRect1 = ui->downloaded_number_label->geometry(); ///< 获取已下载标签区域
-        const auto labelRect2 = ui->downloading_number_label->geometry(); ///< 获取下载中标签区域
-        const QPoint clickPos1 = ui->downloaded_number_label->parentWidget()->mapFrom(this, event->pos()); ///< 转换点击坐标
-        const QPoint clickPos2 = ui->downloading_number_label->parentWidget()->mapFrom(this, event->pos()); ///< 转换点击坐标
-        if (labelRect1.contains(clickPos1))
-        {
-            ui->downloaded_pushButton->clicked();            ///< 触发已下载按钮
-        }
-        if (labelRect2.contains(clickPos2))
-        {
-            ui->downloading_pushButton->clicked();           ///< 触发下载中按钮
+    if (event->button() == Qt::LeftButton) {
+        QLabel* numLabels[] = { ui->downloaded_number_label, ui->downloading_number_label };
+        QPushButton* buttons[] = { ui->downloaded_pushButton, ui->downloading_pushButton };
+
+        for (int i = 0; i < 2; ++i) {
+            const auto labelRect = numLabels[i]->geometry();
+            const QPoint clickPos = numLabels[i]->parentWidget()->mapFrom(this, event->pos());
+            if (labelRect.contains(clickPos)) {
+                buttons[i]->click();
+                break;
+            }
         }
     }
-}
-
-/**
- * @brief 已下载按钮点击槽函数
- * @note 切换到已下载页面并更新样式
- */
-void ListenMyDownload::on_downloaded_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_downloaded.get())
-        return;                                          ///< 当前已是目标页面则返回
-    enableButton(false);                                 ///< 禁用按钮
-    ui->downloaded_pushButton->setChecked(true);         ///< 选中已下载按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloaded.get())); ///< 切换到已下载页面
-    ui->idx1_lab->show();                                ///< 显示下标 1
-    ui->idx2_lab->hide();                                ///< 隐藏下标 2
-    ui->downloaded_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置已下载标签样式
-    ui->downloading_number_label->setStyleSheet("");      ///< 清除下载中标签样式
-}
-
-/**
- * @brief 下载中按钮点击槽函数
- * @note 切换到下载中页面并更新样式
- */
-void ListenMyDownload::on_downloading_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_downloading.get())
-        return;                                          ///< 当前已是目标页面则返回
-    enableButton(false);                                 ///< 禁用按钮
-    ui->downloading_pushButton->setChecked(true);        ///< 选中下载中按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloading.get())); ///< 切换到下载中页面
-    ui->idx1_lab->hide();                                ///< 隐藏下标 1
-    ui->idx2_lab->show();                                ///< 显示下标 2
-    ui->downloaded_number_label->setStyleSheet("");       ///< 清除已下载标签样式
-    ui->downloading_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置下载中标签样式
+    QWidget::mousePressEvent(event);
 }

@@ -10,8 +10,10 @@
 #define SEARCH_H
 
 #include <QWidget>
+#include <QPointer>
 #include <memory>
 #include <vector>
+#include <array>
 
 class QButtonGroup;
 class QPushButton;
@@ -56,7 +58,14 @@ private:
      * @brief 初始化堆栈窗口
      * @note 创建推荐、排行、专题和频道页面
      */
-    void initStackWidget();
+    void initStackedWidget();
+
+    /**
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
+     */
+    QWidget* createPage(int id);
 
     /**
      * @brief 初始化封面库
@@ -81,7 +90,7 @@ private:
      * @param flag 是否启用
      * @note 控制按钮交互性
      */
-    void enableButton(const bool &flag) const;
+    void enableButton(bool flag) const;
 
 protected:
     /**
@@ -98,41 +107,18 @@ protected:
      */
     void showEvent(QShowEvent *event) override;
 
-private slots:
-    /**
-     * @brief 推荐按钮点击槽函数
-     * @note 切换到推荐页面并加载内容
-     */
-    void on_recommend_pushButton_clicked();
-
-    /**
-     * @brief 排行按钮点击槽函数
-     * @note 切换到排行页面并加载内容
-     */
-    void on_rank_pushButton_clicked();
-
-    /**
-     * @brief 专题按钮点击槽函数
-     * @note 切换到专题页面并加载内容
-     */
-    void on_special_pushButton_clicked();
-
-    /**
-     * @brief 频道按钮点击槽函数
-     * @note 切换到频道页面并加载内容
-     */
-    void on_channel_pushButton_clicked();
-
 private:
     Ui::Search *ui;                              ///< UI 界面指针
     QPushButton *m_currentBtn{};                 ///< 当前选中的按钮
     std::unique_ptr<QButtonGroup> m_buttonGroup; ///< 按钮组，管理互斥按钮
-    QList<QPixmap> m_coverVector;          ///< 封面图片列表
-    QList<QString> m_descVector;           ///< 描述文本列表
+    QList<QPixmap> m_coverVector;                ///< 封面图片列表
+    QList<QString> m_descVector;                 ///< 描述文本列表
     std::unique_ptr<QWidget> m_recommendWidget;  ///< 推荐页面
     std::unique_ptr<QWidget> m_rankWidget;       ///< 排行页面
     std::unique_ptr<QWidget> m_specialWidget;    ///< 专题页面
     std::unique_ptr<QWidget> m_channelWidget;    ///< 频道页面
+    std::array<QPointer<QWidget>, 4> m_pages{};  ///< 页面数组
+    int m_currentIdx{0};                         ///< 当前页面索引
 };
 
 #endif // SEARCH_H

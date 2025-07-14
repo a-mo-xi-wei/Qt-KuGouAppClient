@@ -28,20 +28,20 @@ PurchasedMusic::PurchasedMusic(QWidget *parent)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
 {
     ui->setupUi(this);
-    QFile file(GET_CURRENT_DIR + QStringLiteral("/purchased.css")); ///< 加载样式表
+    QFile file(GET_CURRENT_DIR + QStringLiteral("/purchased.css"));
     if (file.open(QIODevice::ReadOnly))
     {
-        this->setStyleSheet(file.readAll());             ///< 应用样式表
+        setStyleSheet(file.readAll());
     }
     else
     {
         qDebug() << "样式表打开失败QAQ";
-        STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-    initUi();                                            ///< 初始化界面
-    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); }); ///< 连接动画完成信号
-    enableButton(true);                                  ///< 启用按钮
+    initUi();
+    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
+    enableButton(true);
 }
 
 /**
@@ -49,7 +49,44 @@ PurchasedMusic::PurchasedMusic(QWidget *parent)
  */
 PurchasedMusic::~PurchasedMusic()
 {
-    delete ui;                                           ///< 删除 UI
+    delete ui;
+}
+
+/**
+ * @brief 创建页面
+ * @param id 页面索引
+ * @return 创建的页面控件
+ */
+QWidget* PurchasedMusic::createPage(int id)
+{
+    QWidget* page = nullptr;
+    switch (id) {
+        case 0:
+            if (!m_paidSingle) {
+                m_paidSingle = std::make_unique<PaidSingle>(ui->stackedWidget);
+                connect(m_paidSingle.get(), &PaidSingle::find_more_music, this, &PurchasedMusic::find_more_music);
+            }
+            page = m_paidSingle.get();
+            break;
+        case 1:
+            if (!m_purchasedAlbums) {
+                m_purchasedAlbums = std::make_unique<PurchasedAlbums>(ui->stackedWidget);
+                connect(m_purchasedAlbums.get(), &PurchasedAlbums::find_more_music, this, &PurchasedMusic::find_more_music);
+            }
+            page = m_purchasedAlbums.get();
+            break;
+        case 2:
+            if (!m_purchasedVideos) {
+                m_purchasedVideos = std::make_unique<PurchasedVideos>(ui->stackedWidget);
+                connect(m_purchasedVideos.get(), &PurchasedVideos::find_more_music, this, &PurchasedMusic::find_more_music);
+            }
+            page = m_purchasedVideos.get();
+            break;
+        default:
+            qWarning() << "[WARNING] Invalid page ID:" << id;
+            return nullptr;
+    }
+    return page;
 }
 
 /**
@@ -58,11 +95,12 @@ PurchasedMusic::~PurchasedMusic()
  */
 void PurchasedMusic::initUi()
 {
-    initIndexLab();                                      ///< 初始化索引标签
-    initStackedWidget();                                 ///< 初始化堆栈窗口
-    ui->paid_single_pushButton->clicked();              ///< 默认点击付费单曲按钮
-    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
-    ui->stackedWidget->setSpeed(400);                   ///< 设置动画速度
+    initIndexLab();
+    initStackedWidget();
+    ui->paid_single_pushButton->click();
+    ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
+    ui->stackedWidget->setSpeed(400);
+    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
 }
 
 /**
@@ -71,15 +109,16 @@ void PurchasedMusic::initUi()
  */
 void PurchasedMusic::initIndexLab()
 {
-    ui->idx1_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置付费单曲索引图片
-    ui->idx2_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置已购专辑索引图片
-    ui->idx3_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置已购视频索引图片
-    ui->paid_single_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置付费单曲标签样式
-    ui->idx2_lab->hide();                                ///< 隐藏已购专辑索引
-    ui->idx3_lab->hide();                                ///< 隐藏已购视频索引
-    ui->guide_widget1->installEventFilter(this);         ///< 安装付费单曲事件过滤器
-    ui->guide_widget2->installEventFilter(this);         ///< 安装已购专辑事件过滤器
-    ui->guide_widget3->installEventFilter(this);         ///< 安装已购视频事件过滤器
+    QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab };
+    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3 };
+    QLabel* numLabels[] = { ui->paid_single_number_label, ui->purchased_albums_number_label, ui->purchased_video_number_label };
+
+    for (int i = 0; i < 3; ++i) {
+        idxLabels[i]->setPixmap(QPixmap(":/Res/window/index_lab.svg"));
+        guideWidgets[i]->installEventFilter(this);
+        numLabels[i]->setStyleSheet(i == 0 ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
+        idxLabels[i]->setVisible(i == 0);
+    }
 }
 
 /**
@@ -88,121 +127,97 @@ void PurchasedMusic::initIndexLab()
  */
 void PurchasedMusic::initStackedWidget()
 {
-    initPaidSingle();                                    ///< 初始化付费单曲界面
-    initPurchasedAlbums();                               ///< 初始化已购专辑界面
-    initPurchasedVideos();                               ///< 初始化已购视频界面
-    this->m_buttonGroup->addButton(ui->paid_single_pushButton); ///< 添加付费单曲按钮
-    this->m_buttonGroup->addButton(ui->purchased_albums_pushButton); ///< 添加已购专辑按钮
-    this->m_buttonGroup->addButton(ui->purchased_video_pushButton); ///< 添加已购视频按钮
-    this->m_buttonGroup->setExclusive(true);             ///< 设置按钮互斥
-}
+    // 设置按钮组
+    m_buttonGroup->addButton(ui->paid_single_pushButton, 0);
+    m_buttonGroup->addButton(ui->purchased_albums_pushButton, 1);
+    m_buttonGroup->addButton(ui->purchased_video_pushButton, 2);
+    m_buttonGroup->setExclusive(true);
 
-/**
- * @brief 初始化付费单曲界面
- * @note 创建付费单曲界面并连接信号
- */
-void PurchasedMusic::initPaidSingle()
-{
-    this->m_paidSingle = std::make_unique<PaidSingle>(ui->stackedWidget); ///< 创建付费单曲界面
-    connect(this->m_paidSingle.get(), &PaidSingle::find_more_music, [this] { emit find_more_music(); }); ///< 连接搜索信号
-    ui->stackedWidget->addWidget(this->m_paidSingle.get()); ///< 添加到堆栈窗口
-    ui->stackedWidget->setCurrentWidget(this->m_paidSingle.get()); ///< 设置当前界面
-}
+    // 初始化占位页面
+    for (int i = 0; i < 3; ++i) {
+        auto* placeholder = new QWidget;
+        auto* layout = new QVBoxLayout(placeholder);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(0);
+        m_pages[i] = placeholder;
+        ui->stackedWidget->insertWidget(i, placeholder);
+    }
 
-/**
- * @brief 初始化已购专辑界面
- * @note 创建已购专辑界面并连接信号
- */
-void PurchasedMusic::initPurchasedAlbums()
-{
-    this->m_purchasedAlbums = std::make_unique<PurchasedAlbums>(ui->stackedWidget); ///< 创建已购专辑界面
-    connect(this->m_purchasedAlbums.get(), &PurchasedAlbums::find_more_music, [this] { emit find_more_music(); }); ///< 连接搜索信号
-    ui->stackedWidget->addWidget(this->m_purchasedAlbums.get()); ///< 添加到堆栈窗口
-}
+    // 创建并添加默认页面（付费单曲）
+    m_pages[0]->layout()->addWidget(createPage(0));
+    ui->stackedWidget->setCurrentIndex(0);
 
-/**
- * @brief 初始化已购视频界面
- * @note 创建已购视频界面并连接信号
- */
-void PurchasedMusic::initPurchasedVideos()
-{
-    this->m_purchasedVideos = std::make_unique<PurchasedVideos>(ui->stackedWidget); ///< 创建已购视频界面
-    connect(this->m_purchasedVideos.get(), &PurchasedVideos::find_more_music, [this] { emit find_more_music(); }); ///< 连接搜索信号
-    ui->stackedWidget->addWidget(this->m_purchasedVideos.get()); ///< 添加到堆栈窗口
+    // 按钮点击处理
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id) {
+        if (m_currentIdx == id) {
+            return;
+        }
+
+        enableButton(false);
+
+        // 清理目标 placeholder 内旧的控件
+        QWidget* placeholder = m_pages[m_currentIdx];
+        if (!placeholder) {
+            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+            enableButton(true);
+            return;
+        }
+
+        QLayout* layout = placeholder->layout();
+        if (!layout) {
+            layout = new QVBoxLayout(placeholder);
+            layout->setContentsMargins(0, 0, 0, 0);
+            layout->setSpacing(0);
+        } else {
+            while (QLayoutItem* item = layout->takeAt(0)) {
+                if (QWidget* widget = item->widget()) {
+                    widget->deleteLater();
+                    switch (m_currentIdx) {
+                        case 0: m_paidSingle.reset();break;
+                        case 1: m_purchasedAlbums.reset();break;
+                        case 2: m_purchasedVideos.reset();break;
+                        default: break;
+                    }
+                }
+                delete item;
+            }
+        }
+
+
+        placeholder = m_pages[id];
+        layout = placeholder->layout();
+        // 创建新页面
+        QWidget* realPage = createPage(id);
+        if (!realPage) {
+            qWarning() << "[WARNING] Failed to create page at index:" << id;
+        } else {
+            layout->addWidget(realPage);
+        }
+
+        ui->stackedWidget->slideInIdx(id);
+        m_currentIdx = id;
+
+        // 更新标签
+        QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab };
+        QLabel* numLabels[] = { ui->paid_single_number_label, ui->purchased_albums_number_label, ui->purchased_video_number_label };
+        for (int i = 0; i < 3; ++i) {
+            idxLabels[i]->setVisible(i == id);
+            numLabels[i]->setStyleSheet(i == id ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
+        }
+
+        STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
+    });
 }
 
 /**
  * @brief 启用/禁用按钮
  * @param flag 是否启用
  */
-void PurchasedMusic::enableButton(const bool &flag) const
+void PurchasedMusic::enableButton(bool flag) const
 {
-    ui->paid_single_pushButton->setEnabled(flag);        ///< 设置付费单曲按钮状态
-    ui->purchased_albums_pushButton->setEnabled(flag);   ///< 设置已购专辑按钮状态
-    ui->purchased_video_pushButton->setEnabled(flag);    ///< 设置已购视频按钮状态
-}
-
-/**
- * @brief 付费单曲按钮点击槽函数
- * @note 切换到付费单曲界面
- */
-void PurchasedMusic::on_paid_single_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_paidSingle.get()) {
-        return;                                          ///< 当前已是付费单曲界面
-    }
-    ui->paid_single_pushButton->setChecked(true);        ///< 设置付费单曲按钮选中
-    STREAM_INFO() << "切换付费单曲界面";                 ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_paidSingle.get())); ///< 滑动到付费单曲界面
-    ui->idx1_lab->show();                               ///< 显示付费单曲索引
-    ui->idx2_lab->hide();                               ///< 隐藏已购专辑索引
-    ui->idx3_lab->hide();                               ///< 隐藏已购视频索引
-    ui->paid_single_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置付费单曲标签样式
-    ui->purchased_albums_number_label->setStyleSheet(""); ///< 重置已购专辑标签样式
-    ui->purchased_video_number_label->setStyleSheet(""); ///< 重置已购视频标签样式
-}
-
-/**
- * @brief 已购专辑按钮点击槽函数
- * @note 切换到已购专辑界面
- */
-void PurchasedMusic::on_purchased_albums_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_purchasedAlbums.get()) {
-        return;                                          ///< 当前已是已购专辑界面
-    }
-    ui->purchased_albums_pushButton->setChecked(true);   ///< 设置已购专辑按钮选中
-    STREAM_INFO() << "切换已购专辑界面";                 ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_purchasedAlbums.get())); ///< 滑动到已购专辑界面
-    ui->idx1_lab->hide();                               ///< 隐藏付费单曲索引
-    ui->idx2_lab->show();                               ///< 显示已购专辑索引
-    ui->idx3_lab->hide();                               ///< 隐藏已购视频索引
-    ui->paid_single_number_label->setStyleSheet("");     ///< 重置付费单曲标签样式
-    ui->purchased_albums_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置已购专辑标签样式
-    ui->purchased_video_number_label->setStyleSheet(""); ///< 重置已购视频标签样式
-}
-
-/**
- * @brief 已购视频按钮点击槽函数
- * @note 切换到已购视频界面
- */
-void PurchasedMusic::on_purchased_video_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_purchasedVideos.get()) {
-        return;                                          ///< 当前已是已购视频界面
-    }
-    ui->purchased_video_pushButton->setChecked(true);    ///< 设置已购视频按钮选中
-    STREAM_INFO() << "切换已购视频界面";                 ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_purchasedVideos.get())); ///< 滑动到已购视频界面
-    ui->idx1_lab->hide();                               ///< 隐藏付费单曲索引
-    ui->idx2_lab->hide();                               ///< 隐藏已购专辑索引
-    ui->idx3_lab->show();                               ///< 显示已购视频索引
-    ui->paid_single_number_label->setStyleSheet("");     ///< 重置付费单曲标签样式
-    ui->purchased_albums_number_label->setStyleSheet(""); ///< 重置已购专辑标签样式
-    ui->purchased_video_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置已购视频标签样式
+    ui->paid_single_pushButton->setEnabled(flag);
+    ui->purchased_albums_pushButton->setEnabled(flag);
+    ui->purchased_video_pushButton->setEnabled(flag);
 }
 
 /**
@@ -210,153 +225,76 @@ void PurchasedMusic::on_purchased_video_pushButton_clicked()
  * @param watched 监听对象
  * @param event 事件
  * @return 是否处理事件
- * @note 动态切换按钮和标签样式
  */
 bool PurchasedMusic::eventFilter(QObject *watched, QEvent *event)
 {
-    if (watched == ui->guide_widget1) {
-        if (event->type() == QEvent::Enter) {
-            ui->paid_single_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置付费单曲按钮悬停样式
-            ui->paid_single_number_label->setStyleSheet(ui->paid_single_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置付费单曲标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->paid_single_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置付费单曲按钮离开样式
-            ui->paid_single_number_label->setStyleSheet(ui->paid_single_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置付费单曲标签样式
+    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3 };
+    QPushButton* buttons[] = { ui->paid_single_pushButton, ui->purchased_albums_pushButton, ui->purchased_video_pushButton };
+    QLabel* numLabels[] = { ui->paid_single_number_label, ui->purchased_albums_number_label, ui->purchased_video_number_label };
+
+    for (int i = 0; i < 3; ++i) {
+        if (watched == guideWidgets[i]) {
+            if (event->type() == QEvent::Enter) {
+                buttons[i]->setStyleSheet(R"(
+                    QPushButton {
+                        color:#26a1ff;
+                        font-size:16px;
+                        border: none;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    QPushButton:checked {
+                        color:#26a1ff;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                )");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
+                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
+                    "color:#26a1ff;");
+            } else if (event->type() == QEvent::Leave) {
+                buttons[i]->setStyleSheet(R"(
+                    QPushButton {
+                        color:black;
+                        font-size:16px;
+                        border: none;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    QPushButton:checked {
+                        color:#26a1ff;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                )");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
+                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
+                    "");
+            }
+            break;
         }
     }
-    if (watched == ui->guide_widget2) {
-        if (event->type() == QEvent::Enter) {
-            ui->purchased_albums_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置已购专辑按钮悬停样式
-            ui->purchased_albums_number_label->setStyleSheet(ui->purchased_albums_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置已购专辑标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->purchased_albums_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置已购专辑按钮离开样式
-            ui->purchased_albums_number_label->setStyleSheet(ui->purchased_albums_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置已购专辑标签样式
-        }
-    }
-    if (watched == ui->guide_widget3) {
-        if (event->type() == QEvent::Enter) {
-            ui->purchased_video_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:#26a1ff;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置已购视频按钮悬停样式
-            ui->purchased_video_number_label->setStyleSheet(ui->purchased_video_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QStringLiteral("color:#26a1ff;"));       ///< 设置已购视频标签样式
-        } else if (event->type() == QEvent::Leave) {
-            ui->purchased_video_pushButton->setStyleSheet(R"(
-                QPushButton {
-                    color:black;
-                    font-size:16px;
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                }
-                QPushButton:checked {
-                    color:#26a1ff;
-                    font-size:18px;
-                    font-weight:bold;
-                }
-            )");                                         ///< 设置已购视频按钮离开样式
-            ui->purchased_video_number_label->setStyleSheet(ui->purchased_video_pushButton->isChecked() ?
-                QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
-                QString(""));                            ///< 设置已购视频标签样式
-        }
-    }
-    return QWidget::eventFilter(watched, event);         ///< 调用父类过滤器
+    return QWidget::eventFilter(watched, event);
 }
 
 /**
  * @brief 鼠标按下事件
  * @param event 鼠标事件
- * @note 点击标签切换界面
  */
 void PurchasedMusic::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) {
-        const auto labelRect1 = ui->paid_single_number_label->geometry(); ///< 获取付费单曲标签区域
-        const auto labelRect2 = ui->purchased_albums_number_label->geometry(); ///< 获取已购专辑标签区域
-        const auto labelRect3 = ui->purchased_video_number_label->geometry(); ///< 获取已购视频标签区域
-        const QPoint clickPos1 = ui->paid_single_number_label->parentWidget()->mapFrom(this, event->pos()); ///< 转换付费单曲点击坐标
-        const QPoint clickPos2 = ui->purchased_albums_number_label->parentWidget()->mapFrom(this, event->pos()); ///< 转换已购专辑点击坐标
-        const QPoint clickPos3 = ui->purchased_video_number_label->parentWidget()->mapFrom(this, event->pos()); ///< 转换已购视频点击坐标
-        if (labelRect1.contains(clickPos1)) {
-            ui->paid_single_pushButton->clicked();          ///< 触发付费单曲按钮点击
-        }
-        if (labelRect2.contains(clickPos2)) {
-            ui->purchased_albums_pushButton->clicked();     ///< 触发已购专辑按钮点击
-        }
-        if (labelRect3.contains(clickPos3)) {
-            ui->purchased_video_pushButton->clicked();      ///< 触发已购视频按钮点击
+        QLabel* numLabels[] = { ui->paid_single_number_label, ui->purchased_albums_number_label, ui->purchased_video_number_label };
+        QPushButton* buttons[] = { ui->paid_single_pushButton, ui->purchased_albums_pushButton, ui->purchased_video_pushButton };
+
+        for (int i = 0; i < 3; ++i) {
+            const auto labelRect = numLabels[i]->geometry();
+            const QPoint clickPos = numLabels[i]->parentWidget()->mapFrom(this, event->pos());
+            if (labelRect.contains(clickPos)) {
+                buttons[i]->click();
+                break;
+            }
         }
     }
-    QWidget::mousePressEvent(event);                     ///< 调用父类事件
+    QWidget::mousePressEvent(event);
 }

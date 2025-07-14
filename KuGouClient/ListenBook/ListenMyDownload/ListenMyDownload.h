@@ -13,6 +13,9 @@
 #include "DownloadingWidget/DownloadingWidget.h"
 
 #include <QWidget>
+#include <QPointer>
+#include <array>
+#include <memory>
 
 class QButtonGroup;
 
@@ -49,35 +52,35 @@ public:
 
 private:
     /**
-     * @brief 初始化堆栈窗口
-     */
-    void initStackedWidget();
-
-    /**
      * @brief 初始化界面
+     * @note 初始化堆栈窗口和下标标签
      */
     void initUi();
 
     /**
      * @brief 初始化下标标签
+     * @note 设置下标图片、样式和事件过滤器
      */
     void initIndexLab();
 
     /**
-     * @brief 初始化已下载控件
+     * @brief 初始化堆栈窗口
+     * @note 初始化子界面和按钮组
      */
-    void initDownloadedWidget();
+    void initStackedWidget();
 
     /**
-     * @brief 初始化下载中控件
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
      */
-    void initDownloadingWidget();
+    QWidget* createPage(int id);
 
     /**
      * @brief 启用或禁用按钮
      * @param flag 启用标志
      */
-    void enableButton(const bool &flag) const;
+    void enableButton(bool flag) const;
 
 protected:
     /**
@@ -94,17 +97,6 @@ protected:
      */
     void mousePressEvent(QMouseEvent *event) override;
 
-private slots:
-    /**
-     * @brief 已下载按钮点击槽函数
-     */
-    void on_downloaded_pushButton_clicked();
-
-    /**
-     * @brief 下载中按钮点击槽函数
-     */
-    void on_downloading_pushButton_clicked();
-
 signals:
     /**
      * @brief 切换到推荐界面的信号
@@ -113,9 +105,11 @@ signals:
 
 private:
     Ui::ListenMyDownload                   *ui;                   ///< UI 指针
-    std::unique_ptr<QButtonGroup>           m_buttonGroup{};      ///< 按钮组
-    std::unique_ptr<DownloadedWidget>       m_downloaded{};       ///< 已下载控件
-    std::unique_ptr<DownloadingWidget>      m_downloading{};      ///< 下载中控件
+    std::unique_ptr<QButtonGroup>           m_buttonGroup;        ///< 按钮组
+    std::unique_ptr<DownloadedWidget>       m_downloaded;         ///< 已下载控件
+    std::unique_ptr<DownloadingWidget>      m_downloading;        ///< 下载中控件
+    std::array<QPointer<QWidget>, 2>        m_pages{};            ///< 页面数组
+    int                                     m_currentIdx{0};      ///< 当前页面索引
 };
 
 #endif // LISTENMYDOWNLOAD_H
