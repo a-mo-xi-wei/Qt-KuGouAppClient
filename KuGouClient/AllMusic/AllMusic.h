@@ -19,6 +19,9 @@
 #include "SortOptionMenu.h"
 
 #include <QWidget>
+#include <QPointer>
+#include <array>
+#include <memory>
 
 class QButtonGroup;
 
@@ -70,39 +73,11 @@ private:
     void initStackedWidget();
 
     /**
-     * @brief 初始化全部音乐控件
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
      */
-    void initAllWidget();
-
-    /**
-     * @brief 初始化收藏音乐控件
-     */
-    void initAllLove();
-
-    /**
-     * @brief 初始化歌单控件
-     */
-    void initAllSongList();
-
-    /**
-     * @brief 初始化最近播放控件
-     */
-    void initAllRecent();
-
-    /**
-     * @brief 初始化本地音乐控件
-     */
-    void initAllLocal();
-
-    /**
-     * @brief 初始化已购音乐控件
-     */
-    void initAllPaid();
-
-    /**
-     * @brief 初始化云盘音乐控件
-     */
-    void initAllCloudDisk();
+    QWidget* createPage(int id);
 
     /**
      * @brief 获取菜单显示位置
@@ -114,7 +89,7 @@ private:
      * @brief 启用或禁用按钮
      * @param flag 是否启用
      */
-    void enableButton(const bool &flag) const;
+    void enableButton(bool flag) const;
 
 protected:
     /**
@@ -132,41 +107,6 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
 
 private slots:
-    /**
-     * @brief 处理全部按钮点击
-     */
-    void on_all_pushButton_clicked();
-
-    /**
-     * @brief 处理收藏按钮点击
-     */
-    void on_love_pushButton_clicked();
-
-    /**
-     * @brief 处理歌单按钮点击
-     */
-    void on_song_list_pushButton_clicked();
-
-    /**
-     * @brief 处理最近按钮点击
-     */
-    void on_recent_pushButton_clicked();
-
-    /**
-     * @brief 处理本地按钮点击
-     */
-    void on_local_pushButton_clicked();
-
-    /**
-     * @brief 处理已购按钮点击
-     */
-    void on_paid_pushButton_clicked();
-
-    /**
-     * @brief 处理云盘按钮点击
-     */
-    void on_cloud_disk_pushButton_clicked();
-
     /**
      * @brief 处理全部播放按钮点击
      */
@@ -202,31 +142,31 @@ public slots:
      * @brief 按添加时间排序
      * @param down 是否降序
      */
-    void onAddTimeSort(const bool &down);
+    void onAddTimeSort(bool down);
 
     /**
      * @brief 按歌曲名称排序
      * @param down 是否降序
      */
-    void onSongNameSort(const bool &down);
+    void onSongNameSort(bool down);
 
     /**
      * @brief 按歌手排序
      * @param down 是否降序
      */
-    void onSingerSort(const bool &down);
+    void onSingerSort(bool down);
 
     /**
      * @brief 按时长排序
      * @param down 是否降序
      */
-    void onDurationSort(const bool &down);
+    void onDurationSort(bool down);
 
     /**
      * @brief 按播放次数排序
      * @param down 是否降序
      */
-    void onPlayCountSort(const bool &down);
+    void onPlayCountSort(bool down);
 
     /**
      * @brief 随机排序
@@ -252,6 +192,8 @@ private:
     QAction *m_searchAction{};                             ///< 搜索动作
     SortOptionMenu *m_sortOptMenu{};                       ///< 排序选项菜单
     QPoint m_menuPosition;                               ///< 菜单显示位置
+    std::array<QPointer<QWidget>, 7> m_pages{};          ///< 页面数组
+    int m_currentIdx{0};                                 ///< 当前页面索引
 };
 
 #endif // ALLMUSIC_H
