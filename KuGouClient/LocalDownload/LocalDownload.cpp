@@ -3,16 +3,18 @@
  * @brief 实现 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面
  * @author WeiWang
  * @date 2024-10-10
- * @version 1.0
+ * @version 1.1
  */
 
 #include "LocalDownload.h"
 #include "ui_LocalDownload.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
+#include "RefreshMask.h"
 
 #include <QFile>
 #include <QButtonGroup>
+#include <QMouseEvent>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -25,6 +27,7 @@ LocalDownload::LocalDownload(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::LocalDownload)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
+    , m_refreshMask(std::make_unique<RefreshMask>())               ///< 初始化刷新遮罩
 {
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + QStringLiteral("/local.css")); ///< 加载样式表
@@ -38,17 +41,14 @@ LocalDownload::LocalDownload(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
         return;
     }
-
     initUi();                                            ///< 初始化界面
+    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); }); ///< 连接动画完成信号
     connect(this->m_localSong.get(), &LocalSong::playMusic, this, [this](const QString &localPath) {
         emit playMusic(localPath);                       ///< 中转播放音乐信号
     });
     connect(this->m_localSong.get(), &LocalSong::updateCountLabel, this, &LocalDownload::local_music_label_changed); ///< 连接数量标签更新
     connect(this->m_localSong.get(), &LocalSong::cancelLoopPlay, this, [this] {
         emit cancelLoopPlay();                           ///< 中转取消循环信号
-    });
-    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] {
-        enableButton(true);                              ///< 动画结束恢复交互
     });
     enableButton(true);                                  ///< 初始启用按钮
 }
@@ -67,7 +67,9 @@ LocalDownload::~LocalDownload()
  */
 void LocalDownload::audioFinished()
 {
-    this->m_localSong->onAudioFinished();                ///< 转发音频播放结束
+    if (m_localSong) {
+        m_localSong->onAudioFinished();                  ///< 转发音频播放结束
+    }
 }
 
 /**
@@ -75,7 +77,9 @@ void LocalDownload::audioFinished()
  */
 void LocalDownload::playLocalSongNextSong()
 {
-    this->m_localSong->playNextSong();                   ///< 播放下一首
+    if (m_localSong) {
+        m_localSong->playNextSong();                     ///< 播放下一首
+    }
 }
 
 /**
@@ -83,7 +87,9 @@ void LocalDownload::playLocalSongNextSong()
  */
 void LocalDownload::playLocalSongPrevSong()
 {
-    this->m_localSong->playPrevSong();                   ///< 播放上一首
+    if (m_localSong) {
+        m_localSong->playPrevSong();                     ///< 播放上一首
+    }
 }
 
 /**
@@ -92,93 +98,188 @@ void LocalDownload::playLocalSongPrevSong()
  */
 void LocalDownload::onMaxScreenHandle()
 {
-    this->m_localSong->onMaxScreenHandle();              ///< 转发最大化处理
+    if (m_localSong) {
+        m_localSong->onMaxScreenHandle();                ///< 转发最大化处理
+    }
+}
+
+/**
+ * @brief 创建页面
+ * @param id 页面索引
+ * @return 创建的页面控件
+ */
+QWidget* LocalDownload::createPage(int id)
+{
+    QWidget* page = nullptr;
+    qDebug()<<"遮罩绘制";
+    m_refreshMask->showLoading(1000);
+    switch (id) {
+        case 0:
+            m_localSong = std::make_unique<LocalSong>(ui->stackedWidget);
+            connect(m_localSong.get(), &LocalSong::find_more_music, this, &LocalDownload::find_more_music);
+            connect(m_localSong.get(), &LocalSong::playMusic, this, &LocalDownload::playMusic);
+            connect(m_localSong.get(), &LocalSong::updateCountLabel, this, &LocalDownload::local_music_label_changed);
+            connect(m_localSong.get(), &LocalSong::cancelLoopPlay, this, &LocalDownload::cancelLoopPlay);
+            page = m_localSong.get();
+            break;
+        case 1:
+            m_downloadedSong = std::make_unique<DownloadedSong>(ui->stackedWidget);
+            connect(m_downloadedSong.get(), &DownloadedSong::find_more_music, this, &LocalDownload::find_more_music);
+            page = m_downloadedSong.get();
+            break;
+        case 2:
+            m_downloadedVideo = std::make_unique<DownloadedVideo>(ui->stackedWidget);
+            connect(m_downloadedVideo.get(), &DownloadedVideo::find_more_music, this, &LocalDownload::find_more_music);
+            page = m_downloadedVideo.get();
+            break;
+        case 3:
+            m_downloading = std::make_unique<Downloading>(ui->stackedWidget);
+            connect(m_downloading.get(), &Downloading::find_more_music, this, &LocalDownload::find_more_music);
+            page = m_downloading.get();
+            break;
+        default:
+            qWarning() << "[WARNING] Invalid page ID:" << id;
+            return nullptr;
+    }
+    return page;
 }
 
 /**
  * @brief 初始化堆栈窗口
- * @note 初始化四个子界面并设置按钮互斥
+ * @note 初始化子界面并设置按钮互斥
  */
 void LocalDownload::initStackedWidget()
 {
-    initLocalSong();                                     ///< 初始化本地歌曲
-    initDownloadedSong();                                ///< 初始化已下载歌曲
-    initDownloadedVideo();                               ///< 初始化已下载视频
-    initDownloading();                                   ///< 初始化正在下载
-    this->m_buttonGroup->addButton(ui->local_music_pushButton); ///< 添加按钮到组
-    this->m_buttonGroup->addButton(ui->downloaded_music_pushButton);
-    this->m_buttonGroup->addButton(ui->downloaded_video_pushButton);
-    this->m_buttonGroup->addButton(ui->downloading_pushButton);
-    this->m_buttonGroup->setExclusive(true);             ///< 设置互斥
+    // 设置按钮组（互斥）
+    m_buttonGroup->addButton(ui->local_music_pushButton, 0);
+    m_buttonGroup->addButton(ui->downloaded_music_pushButton, 1);
+    m_buttonGroup->addButton(ui->downloaded_video_pushButton, 2);
+    m_buttonGroup->addButton(ui->downloading_pushButton, 3);
+    m_buttonGroup->setExclusive(true);
+
+    // 初始化占位页面
+    for (int i = 0; i < 4; ++i) {
+        auto *placeholder = new QWidget;
+        auto *layout = new QVBoxLayout(placeholder);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(0);
+        m_pages[i] = placeholder;
+        ui->stackedWidget->insertWidget(i, placeholder);
+    }
+
+    // 创建并添加默认页面（本地歌曲）
+    m_pages[0]->layout()->addWidget(createPage(0));
+
+    ui->stackedWidget->setCurrentIndex(0);
+
+    // 响应按钮点击事件
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](const int& id) {
+        if (m_currentIdx == id) {
+            return;
+        }
+
+        enableButton(false);
+
+        // 清理目标 placeholder 内旧的控件
+        QWidget *placeholder = m_pages[m_currentIdx];
+        if (!placeholder) {
+            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+            enableButton(true);
+            return;
+        }
+
+        QLayout *layout = placeholder->layout();
+        if (!layout) {
+            layout = new QVBoxLayout(placeholder);
+            layout->setContentsMargins(0, 0, 0, 0);
+            layout->setSpacing(0);
+        } else {
+            while (QLayoutItem* item = layout->takeAt(0)) {
+                if (QWidget* widget = item->widget()) {
+                    qDebug()<<"删除旧控件";
+                    widget->deleteLater();
+                    switch (m_currentIdx) {
+                        case 0: m_localSong.reset(); break;
+                        case 1: m_downloadedSong.reset(); break;
+                        case 2: m_downloadedVideo.reset(); break;
+                        case 3: m_downloading.reset(); break;
+                        default: break;
+                    }
+                }
+                delete item;
+            }
+        }
+
+        placeholder = m_pages[id];
+        layout = placeholder->layout();
+        // 创建新页面
+        QWidget *realPage = createPage(id);
+
+        if (!realPage) {
+            qWarning() << "[WARNING] Failed to create page at index:" << id;
+        } else {
+            layout->addWidget(realPage);
+        }
+
+        ui->stackedWidget->slideInIdx(id);
+        m_currentIdx = id;
+
+        // 更新索引标签和样式
+        QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab, ui->idx4_lab };
+        QLabel* numLabels[] = { ui->local_music_number_label, ui->downloaded_music_number_label,
+                               ui->downloaded_video_number_label, ui->downloading_number_label };
+        for (int i = 0; i < 4; ++i) {
+            idxLabels[i]->setVisible(i == id);
+            numLabels[i]->setStyleSheet(i == id ? QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") : QString());
+        }
+
+        // 处理下载历史按钮
+        ui->download_history_toolButton->setVisible(id == 1);
+
+        STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
+    });
 }
 
 /**
  * @brief 初始化界面
- * @note 隐藏下载历史按钮、设置下标图片、初始化堆栈窗口和默认点击本地音乐
+ * @note 初始化堆栈窗口、索引标签和默认本地歌曲界面
  */
 void LocalDownload::initUi()
 {
+    this->m_refreshMask->setParent(this);            ///< 设置遮罩父对象
+
     ui->download_history_toolButton->hide();             ///< 隐藏下载历史按钮
-    ui->idx1_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置下标图片
-    ui->idx2_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
-    ui->idx3_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
-    ui->idx4_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
-    ui->idx2_lab->hide();                                ///< 隐藏下标 2-4
-    ui->idx3_lab->hide();
-    ui->idx4_lab->hide();
     initStackedWidget();                                 ///< 初始化堆栈窗口
-    ui->local_music_pushButton->clicked();               ///< 默认点击本地音乐
+    initIndexLab();                                     ///< 初始化索引标签
+    ui->local_music_pushButton->click();                ///< 默认点击本地音乐按钮
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
-    ui->stackedWidget->setSpeed(400);                    ///< 设置动画速度
+    ui->stackedWidget->setSpeed(400);                   ///< 设置动画速度
+    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);  ///< 设置边距
 }
 
 /**
- * @brief 初始化本地歌曲界面
+ * @brief 初始化索引标签
+ * @note 设置索引图片和事件过滤器
  */
-void LocalDownload::initLocalSong()
+void LocalDownload::initIndexLab()
 {
-    this->m_localSong = std::make_unique<LocalSong>(ui->stackedWidget); ///< 创建本地歌曲界面
-    connect(this->m_localSong.get(), &LocalSong::find_more_music, [this] {
-        emit find_more_music();                          ///< 连接搜索信号
-    });
-    ui->stackedWidget->addWidget(this->m_localSong.get()); ///< 添加到堆栈窗口
-    ui->stackedWidget->setCurrentWidget(this->m_localSong.get()); ///< 设置当前界面
-}
+    QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab, ui->idx4_lab };
+    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3, ui->guide_widget4 };
+    QPushButton* buttons[] = { ui->local_music_pushButton, ui->downloaded_music_pushButton,
+                              ui->downloaded_video_pushButton, ui->downloading_pushButton };
+    QLabel* numLabels[] = { ui->local_music_number_label, ui->downloaded_music_number_label,
+                           ui->downloaded_video_number_label, ui->downloading_number_label };
 
-/**
- * @brief 初始化已下载歌曲界面
- */
-void LocalDownload::initDownloadedSong()
-{
-    this->m_downloadedSong = std::make_unique<DownloadedSong>(ui->stackedWidget); ///< 创建已下载歌曲界面
-    connect(this->m_downloadedSong.get(), &DownloadedSong::find_more_music, [this] {
-        emit find_more_music();                          ///< 连接搜索信号
-    });
-    ui->stackedWidget->addWidget(this->m_downloadedSong.get()); ///< 添加到堆栈窗口
-}
-
-/**
- * @brief 初始化已下载视频界面
- */
-void LocalDownload::initDownloadedVideo()
-{
-    this->m_downloadedVideo = std::make_unique<DownloadedVideo>(ui->stackedWidget); ///< 创建已下载视频界面
-    connect(this->m_downloadedVideo.get(), &DownloadedVideo::find_more_music, [this] {
-        emit find_more_music();                          ///< 连接搜索信号
-    });
-    ui->stackedWidget->addWidget(this->m_downloadedVideo.get()); ///< 添加到堆栈窗口
-}
-
-/**
- * @brief 初始化正在下载界面
- */
-void LocalDownload::initDownloading()
-{
-    this->m_downloading = std::make_unique<Downloading>(ui->stackedWidget); ///< 创建正在下载界面
-    connect(this->m_downloading.get(), &Downloading::find_more_music, [this] {
-        emit find_more_music();                          ///< 连接搜索信号
-    });
-    ui->stackedWidget->addWidget(this->m_downloading.get()); ///< 添加到堆栈窗口
+    for (int i = 0; i < 4; ++i) {
+        idxLabels[i]->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
+        guideWidgets[i]->installEventFilter(this);
+        if (i == 0) {
+            numLabels[i]->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;"));
+        } else {
+            idxLabels[i]->hide();
+            numLabels[i]->setStyleSheet(QString());
+        }
+    }
 }
 
 /**
@@ -187,101 +288,111 @@ void LocalDownload::initDownloading()
  */
 void LocalDownload::enableButton(const bool &flag) const
 {
-    ui->local_music_pushButton->setEnabled(flag);        ///< 启用/禁用本地音乐按钮
-    ui->downloaded_music_pushButton->setEnabled(flag);   ///< 启用/禁用已下载音乐按钮
-    ui->downloaded_video_pushButton->setEnabled(flag);   ///< 启用/禁用已下载视频按钮
-    ui->downloading_pushButton->setEnabled(flag);        ///< 启用/禁用正在下载按钮
+    ui->local_music_pushButton->setEnabled(flag);
+    ui->downloaded_music_pushButton->setEnabled(flag);
+    ui->downloaded_video_pushButton->setEnabled(flag);
+    ui->downloading_pushButton->setEnabled(flag);
 }
 
 /**
- * @brief 本地音乐按钮点击槽函数
- * @note 切换到本地歌曲界面，更新下标和标签样式
+ * @brief 事件过滤器
+ * @param watched 监听对象
+ * @param event 事件
+ * @return 是否处理事件
+ * @note 动态切换按钮和标签样式
  */
-void LocalDownload::on_local_music_pushButton_clicked()
+bool LocalDownload::eventFilter(QObject *watched, QEvent *event)
 {
-    if (ui->stackedWidget->currentWidget() == this->m_localSong.get())
-        return;
-    if (!ui->download_history_toolButton->isHidden())
-        ui->download_history_toolButton->hide();         ///< 隐藏下载历史按钮
-    STREAM_INFO() << "切换本地歌曲界面";                 ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_localSong.get())); ///< 滑动切换界面
-    ui->idx1_lab->show();                                ///< 显示下标 1
-    ui->idx2_lab->hide();                                ///< 隐藏下标 2-4
-    ui->idx3_lab->hide();
-    ui->idx4_lab->hide();
-    ui->local_music_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置标签样式
-    ui->downloaded_music_number_label->setStyleSheet(""); ///< 重置其他标签样式
-    ui->downloaded_video_number_label->setStyleSheet("");
-    ui->downloading_number_label->setStyleSheet("");
+    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3, ui->guide_widget4 };
+    QPushButton* buttons[] = { ui->local_music_pushButton, ui->downloaded_music_pushButton,
+                              ui->downloaded_video_pushButton, ui->downloading_pushButton };
+    QLabel* numLabels[] = { ui->local_music_number_label, ui->downloaded_music_number_label,
+                           ui->downloaded_video_number_label, ui->downloading_number_label };
+
+    for (int i = 0; i < 4; ++i) {
+        if (watched == guideWidgets[i]) {
+            if (event->type() == QEvent::Enter) {
+                buttons[i]->setStyleSheet(R"(
+                    QPushButton {
+                        color:#26a1ff;
+                        font-size:16px;
+                        border: none;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    QPushButton:checked {
+                        color:#26a1ff;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                )");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
+                    QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
+                    QStringLiteral("color:#26a1ff;"));
+            } else if (event->type() == QEvent::Leave) {
+                buttons[i]->setStyleSheet(R"(
+                    QPushButton {
+                        color:black;
+                        font-size:16px;
+                        border: none;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                    QPushButton:checked {
+                        color:#26a1ff;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                )");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
+                    QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") :
+                    QString());
+            }
+            break;
+        }
+    }
+    return QWidget::eventFilter(watched, event);
 }
 
 /**
- * @brief 已下载音乐按钮点击槽函数
- * @note 切换到已下载歌曲界面，更新下标和标签样式
+ * @brief 鼠标按下事件
+ * @param event 鼠标事件
+ * @note 点击标签切换界面
  */
-void LocalDownload::on_downloaded_music_pushButton_clicked()
+void LocalDownload::mousePressEvent(QMouseEvent *event)
 {
-    if (ui->stackedWidget->currentWidget() == this->m_downloadedSong.get())
-        return;
-    ui->download_history_toolButton->show();             ///< 显示下载历史按钮
-    STREAM_INFO() << "切换下载歌曲界面";                 ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloadedSong.get())); ///< 滑动切换界面
-    ui->idx1_lab->hide();                                ///< 隐藏下标 1, 3-4
-    ui->idx2_lab->show();                                ///< 显示下标 2
-    ui->idx3_lab->hide();
-    ui->idx4_lab->hide();
-    ui->downloaded_music_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置标签样式
-    ui->local_music_number_label->setStyleSheet("");     ///< 重置其他标签样式
-    ui->downloaded_video_number_label->setStyleSheet("");
-    ui->downloading_number_label->setStyleSheet("");
+    if (event->button() == Qt::LeftButton) {
+        QLabel* numLabels[] = { ui->local_music_number_label, ui->downloaded_music_number_label,
+                               ui->downloaded_video_number_label, ui->downloading_number_label };
+        QPushButton* buttons[] = { ui->local_music_pushButton, ui->downloaded_music_pushButton,
+                                  ui->downloaded_video_pushButton, ui->downloading_pushButton };
+
+        for (int i = 0; i < 4; ++i) {
+            const auto labelRect = numLabels[i]->geometry();
+            const QPoint clickPos = numLabels[i]->parentWidget()->mapFrom(this, event->pos());
+            if (labelRect.contains(clickPos)) {
+                buttons[i]->click();
+                break;
+            }
+        }
+    }
+    QWidget::mousePressEvent(event);
 }
 
-/**
- * @brief 已下载视频按钮点击槽函数
- * @note 切换到已下载视频界面，更新下标和标签样式
- */
-void LocalDownload::on_downloaded_video_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_downloadedVideo.get())
-        return;
-    if (!ui->download_history_toolButton->isHidden())
-        ui->download_history_toolButton->hide();         ///< 隐藏下载历史按钮
-    STREAM_INFO() << "切换下载视频界面";                 ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloadedVideo.get())); ///< 滑动切换界面
-    ui->idx1_lab->hide();                                ///< 隐藏下标 1-2, 4
-    ui->idx2_lab->hide();
-    ui->idx3_lab->show();                                ///< 显示下标 3
-    ui->idx4_lab->hide();
-    ui->downloaded_video_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置标签样式
-    ui->local_music_number_label->setStyleSheet("");     ///< 重置其他标签样式
-    ui->downloaded_music_number_label->setStyleSheet("");
-    ui->downloading_number_label->setStyleSheet("");
+void LocalDownload::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    auto rect = ui->stackedWidget->geometry();
+    rect.adjust(5, 16, -6, 0);
+    this->m_refreshMask->setGeometry(rect); ///< 设置遮罩几何形状
+    this->m_refreshMask->move(m_refreshMask->parentWidget()->mapFrom(this, ui->stackedWidget->pos()));
 }
 
-/**
- * @brief 正在下载按钮点击槽函数
- * @note 切换到正在下载界面，更新下标和标签样式
- */
-void LocalDownload::on_downloading_pushButton_clicked()
-{
-    if (ui->stackedWidget->currentWidget() == this->m_downloading.get())
-        return;
-    if (!ui->download_history_toolButton->isHidden())
-        ui->download_history_toolButton->hide();         ///< 隐藏下载历史按钮
-    STREAM_INFO() << "切换正在下载界面";                 ///< 记录日志
-    enableButton(false);                                 ///< 禁用按钮
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloading.get())); ///< 滑动切换界面
-    ui->idx1_lab->hide();                                ///< 隐藏下标 1-3
-    ui->idx2_lab->hide();
-    ui->idx3_lab->hide();
-    ui->idx4_lab->show();                                ///< 显示下标 4
-    ui->downloading_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;")); ///< 设置标签样式
-    ui->local_music_number_label->setStyleSheet("");     ///< 重置其他标签样式
-    ui->downloaded_music_number_label->setStyleSheet("");
-    ui->downloaded_video_number_label->setStyleSheet("");
+void LocalDownload::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+    auto rect = ui->stackedWidget->geometry();
+    rect.adjust(5, 16, -6, 0);
+    this->m_refreshMask->setGeometry(rect);
+    this->m_refreshMask->move(m_refreshMask->parentWidget()->mapFrom(this, ui->stackedWidget->pos()));
 }
 
 /**

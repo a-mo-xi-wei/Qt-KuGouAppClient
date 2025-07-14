@@ -164,7 +164,6 @@ void MusicRepository::initButtonGroup() {
         ui->stackedWidget->slideInIdx(id);
         m_currentIdx = id;
 
-        enableButton(true);
         // qDebug() << "[DEBUG] -------------------------------------------------------- ";
         STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString();
     });

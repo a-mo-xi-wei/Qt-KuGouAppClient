@@ -14,6 +14,9 @@
 #include "SlidingStackedWidget.h"
 
 #include <QWidget>
+#include <memory>
+#include <array>
+#include <QPointer>
 
 class QButtonGroup;
 
@@ -67,15 +70,7 @@ private:
      */
     void initStackedWidget();
 
-    /**
-     * @brief 初始化已上传歌曲界面
-     */
-    void initUploadedSong();
-
-    /**
-     * @brief 初始化正在上传歌曲界面
-     */
-    void initUploadingSong();
+    QWidget* createPage(int id);
 
     /**
      * @brief 启用/禁用按钮
@@ -84,18 +79,6 @@ private:
     void enableButton(const bool &flag) const;
 
 private slots:
-    /**
-     * @brief 已上传歌曲按钮点击槽函数
-     * @note 切换到已上传歌曲界面，更新下标和标签样式
-     */
-    void on_uploaded_song_pushButton_clicked();
-
-    /**
-     * @brief 正在上传歌曲按钮点击槽函数
-     * @note 切换到正在上传歌曲界面，更新下标和标签样式
-     */
-    void on_uploading_song_pushButton_clicked();
-
     /**
      * @brief 新增歌曲按钮点击槽函数
      * @note 显示未实现提示
@@ -130,6 +113,8 @@ private:
     std::unique_ptr<QButtonGroup>        m_buttonGroup;         ///< 按钮组
     std::unique_ptr<UploadedSong>        m_uploadedSong;        ///< 已上传歌曲界面
     std::unique_ptr<UploadingSong>       m_uploadingSong;       ///< 正在上传歌曲界面
+    std::array<QPointer<QWidget>, 2> m_pages{};                 ///< 页面占位符数组
+    int m_currentIdx{0};                                        ///< 当前页面索引
 };
 
 #endif // MUSICCLOUDDISK_H

@@ -21,7 +21,7 @@ QWidget#operation_widget QToolButton#local_all_play_toolButton:hover{
 }
 /*--------------------small_widget------------------------------*/
 QWidget#small_widget{
-    border: 1px solid #b4bcff;
+    border: 2px solid #B4DEFC;
     border-radius:15px;
 }
 QWidget#small_widget > QFrame{
@@ -61,9 +61,9 @@ QToolButton#local_sort_toolButton:hover {
 }
 
 QLineEdit{
-    border-radius: 10px;
+    border-radius: 8px;
     padding-left: 5px;
-    border:1px solid #6fafa7;
+    border:2px solid #B4DEFC;
     background-color:transparent;
 }
 

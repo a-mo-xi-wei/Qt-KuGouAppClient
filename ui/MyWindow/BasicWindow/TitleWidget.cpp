@@ -73,6 +73,13 @@ void TitleWidget::setEnableChange(const bool &flag)
     this->m_enableChange = flag;
 }
 
+void TitleWidget::setEnableTitleButton(const bool &flag) {
+    ui->title_music_pushButton->setEnabled(flag);
+    ui->title_live_pushButton->setEnabled(flag);
+    ui->title_listen_book_pushButton->setEnabled(flag);
+    ui->title_search_pushButton->setEnabled(flag);
+}
+
 /**
  * @brief 初始化界面元素
  */
@@ -363,7 +370,7 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
                             condition = (top == MusicCloudDisk || top == DailyRecommend);
                         }
 
-                        // 触发界面更新（与返回逻辑保持模式一致）
+                        // 触发界面更新（与返回逻辑保持模式一致）s
                         switch (nextType) {
                             case RecommendForYou: {
                                 if (condition) {

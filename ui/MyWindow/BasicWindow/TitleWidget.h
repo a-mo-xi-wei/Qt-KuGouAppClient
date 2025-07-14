@@ -85,6 +85,8 @@ public:
      */
     void setEnableChange(const bool &flag);
 
+    void setEnableTitleButton(const bool &flag);
+
 private:
     /**
      * @brief 初始化界面元素
@@ -111,6 +113,7 @@ private:
      * @param index 标题索引（1-4）
      */
     void setTitleIndex(const int &index) const;
+
 
 protected:
     /**

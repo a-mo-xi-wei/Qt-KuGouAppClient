@@ -188,7 +188,6 @@ void MyCollection::initStackedWidget()
             numLabels[i]->setStyleSheet(i == id ? QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;") : QString());
         }
 
-        enableButton(true);
         STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
     });
 }

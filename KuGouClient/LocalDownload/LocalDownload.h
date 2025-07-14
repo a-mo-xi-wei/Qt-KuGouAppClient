@@ -3,7 +3,7 @@
  * @brief 定义 LocalDownload 类，管理本地歌曲、已下载歌曲、已下载视频和正在下载界面
  * @author WeiWang
  * @date 2024-10-10
- * @version 1.0
+ * @version 1.1
  */
 
 #ifndef LOCALDOWNLOAD_H
@@ -16,7 +16,11 @@
 #include "SlidingStackedWidget.h"
 
 #include <QWidget>
+#include <QPointer>
+#include <array>
+#include <memory>
 
+class RefreshMask;
 class QButtonGroup;
 
 /**
@@ -66,7 +70,6 @@ public:
      */
     void playLocalSongPrevSong();
 
-public slots:
     /**
      * @brief 最大化屏幕处理
      * @note 更新当前播放高亮
@@ -76,35 +79,28 @@ public slots:
 private:
     /**
      * @brief 初始化堆栈窗口
-     * @note 初始化四个子界面并设置按钮互斥
+     * @note 初始化子界面并设置按钮互斥
      */
     void initStackedWidget();
 
     /**
      * @brief 初始化界面
-     * @note 隐藏下载历史按钮、设置下标图片、初始化堆栈窗口和默认点击本地音乐
+     * @note 初始化堆栈窗口、索引标签和默认本地歌曲界面
      */
     void initUi();
 
     /**
-     * @brief 初始化本地歌曲界面
+     * @brief 初始化索引标签
+     * @note 设置索引图片和事件过滤器
      */
-    void initLocalSong();
+    void initIndexLab();
 
     /**
-     * @brief 初始化已下载歌曲界面
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
      */
-    void initDownloadedSong();
-
-    /**
-     * @brief 初始化已下载视频界面
-     */
-    void initDownloadedVideo();
-
-    /**
-     * @brief 初始化正在下载界面
-     */
-    void initDownloading();
+    QWidget* createPage(int id);
 
     /**
      * @brief 启用/禁用按钮
@@ -112,43 +108,26 @@ private:
      */
     void enableButton(const bool &flag) const;
 
-private slots:
+protected:
     /**
-     * @brief 本地音乐按钮点击槽函数
-     * @note 切换到本地歌曲界面，更新下标和标签样式
+     * @brief 事件过滤器
+     * @param watched 监听对象
+     * @param event 事件
+     * @return 是否处理事件
+     * @note 动态切换按钮和标签样式
      */
-    void on_local_music_pushButton_clicked();
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
     /**
-     * @brief 已下载音乐按钮点击槽函数
-     * @note 切换到已下载歌曲界面，更新下标和标签样式
+     * @brief 鼠标按下事件
+     * @param event 鼠标事件
+     * @note 点击标签切换界面
      */
-    void on_downloaded_music_pushButton_clicked();
+    void mousePressEvent(QMouseEvent *event) override;
 
-    /**
-     * @brief 已下载视频按钮点击槽函数
-     * @note 切换到已下载视频界面，更新下标和标签样式
-     */
-    void on_downloaded_video_pushButton_clicked();
+    void resizeEvent(QResizeEvent *event) override;
 
-    /**
-     * @brief 正在下载按钮点击槽函数
-     * @note 切换到正在下载界面，更新下标和标签样式
-     */
-    void on_downloading_pushButton_clicked();
-
-    /**
-     * @brief 下载历史按钮点击槽函数
-     * @note 显示未实现提示
-     */
-    void on_download_history_toolButton_clicked();
-
-    /**
-     * @brief 本地音乐数量标签变化槽函数
-     * @param num 歌曲数量
-     * @note 更新本地音乐数量标签
-     */
-    void local_music_label_changed(const int &num);
+    void showEvent(QShowEvent *event) override;
 
 signals:
     /**
@@ -167,6 +146,20 @@ signals:
      */
     void find_more_music();
 
+private slots:
+    /**
+     * @brief 下载历史按钮点击槽函数
+     * @note 显示未实现提示
+     */
+    void on_download_history_toolButton_clicked();
+
+    /**
+     * @brief 本地音乐数量标签变化槽函数
+     * @param num 歌曲数量
+     * @note 更新本地音乐数量标签
+     */
+    void local_music_label_changed(const int &num);
+
 private:
     Ui::LocalDownload                   *ui;                    ///< UI 指针
     std::unique_ptr<QButtonGroup>        m_buttonGroup;         ///< 按钮组
@@ -174,6 +167,9 @@ private:
     std::unique_ptr<DownloadedSong>      m_downloadedSong;      ///< 已下载歌曲界面
     std::unique_ptr<DownloadedVideo>     m_downloadedVideo;     ///< 已下载视频界面
     std::unique_ptr<Downloading>         m_downloading;         ///< 正在下载界面
+    std::array<QPointer<QWidget>, 4>     m_pages{};             ///< 页面数组
+    int                                  m_currentIdx{0};       ///< 当前页面索引
+    std::unique_ptr<RefreshMask>        m_refreshMask;       ///< 刷新遮罩
 };
 
 #endif // LOCALDOWNLOAD_H

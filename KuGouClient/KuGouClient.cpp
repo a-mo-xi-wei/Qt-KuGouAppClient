@@ -430,6 +430,7 @@ void KuGouClient::initSearchResultWidget() {
 
     // 创建主垂直布局，组合所有子布局和控件
     auto vlay = new QVBoxLayout(this->m_searchResultWidget.get()); ///< 主垂直布局
+    vlay->setContentsMargins(8, 3, 3, 5);
     vlay->setSpacing(10); ///< 设置子控件间距
     vlay->addLayout(hlay1); ///< 添加顶部水平布局
     vlay->addSpacing(5); ///< 添加额外间距
@@ -783,6 +784,7 @@ void KuGouClient::enableButton(const bool &flag) {
     ui->recently_played_toolButton->setEnabled(flag);             ///< 设置最近播放按钮
     ui->all_music_toolButton->setEnabled(flag);                   ///< 设置全部音乐按钮
     ui->title_widget->setEnableChange(flag);                      ///< 设置标题栏交互
+    ui->title_widget->setEnableTitleButton(flag);
 }
 
 // 实现文件
